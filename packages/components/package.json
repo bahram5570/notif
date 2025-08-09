@@ -1,5 +1,5 @@
 {
-  "name": "@repo/ui",
+  "name": "@repo/components",
   "version": "0.0.0",
   "private": true,
   "exports": {
@@ -7,13 +7,13 @@
       "import": "./dist/styles/index.css",
       "default": "./dist/styles/index.css"
     },
-    "./*": {
-      "import": "./dist/components/*/index.js",
-      "types": "./dist/components/*/index.d.ts"
+    "./ui/*": {
+      "import": "./dist/ui/*/index.js",
+      "types": "./dist/ui/*/index.d.ts"
     }
   },
   "scripts": {
-    "build": "tsc --project tsconfig.json --outDir dist/components && tailwindcss -i ./src/styles.css -o ./dist/styles/index.css"
+    "build": "tsc --project tsconfig.json && tailwindcss -i ./src/styles.css -o ./dist/styles/index.css"
   },
   "peerDependencies": {
     "react": "^18.0.0",

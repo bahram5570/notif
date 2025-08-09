@@ -8,7 +8,7 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "skipLibCheck": true,
-    "incremental": true,
+    "incremental": false,
     "module": "esnext",
     "jsx": "react-jsx",
     "allowJs": true,
