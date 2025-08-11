@@ -19,8 +19,7 @@
       {
         "name": "next"
       }
-    ],
-    "noEmit": true
+    ]
   },
   "include": [
     "**/*.ts",

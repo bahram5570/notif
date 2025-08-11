@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-const DIRECTORIES_LIST = ['../../apps/pwa/public/assets/shared'];
+const DIRECTORIES_LIST = ['../../apps/pwa/public/assets/shared', '../../apps/web/public/assets/shared'];
 
 async function deleteDirectoryHandler(dir) {
   if (fs.existsSync(dir)) {
