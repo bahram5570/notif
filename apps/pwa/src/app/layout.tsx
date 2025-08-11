@@ -1,6 +1,5 @@
 import './globals.css';
 
-import { getCultureCookie } from '@actions/cookie.actions';
 import { MAX_SCREEN_WIDTH, PORTAL_ID } from '@constants/app.constants';
 import CultureProvider from '@providers/CultureProvider';
 import ErrorProvider from '@providers/ErrorProvider';
@@ -34,9 +33,7 @@ const YekanBakhVF = localFont({
   src: '../../public/assets/shared/fonts/YekanBakh-VF.ttf',
 });
 
-const RootLayout = async ({ children }: { children: React.ReactNode }) => {
-  const cultureCookie = await getCultureCookie();
-
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="fa" className={YekanBakhVF.className}>
       <head>
@@ -75,7 +72,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
         <ScrollToTopProvider />
 
         <OperatingSystemProvider>
-          <CultureProvider defaultValues={cultureCookie}>
+          <CultureProvider>
             <ThemeModeProvider>
               <ReactQueryProvider>
                 <ErrorProvider>
@@ -85,11 +82,10 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
                         <WidgetActionsProvider>
                           <ServiceWorkerProvider>
                             <>
+                              <>{children}</>
                               <ModalsQueryParamsProvider />
                               <PreviewImageProvider />
-
                               <div id={PORTAL_ID} />
-                              <>{children}</>
                             </>
                           </ServiceWorkerProvider>
                         </WidgetActionsProvider>

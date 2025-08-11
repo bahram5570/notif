@@ -29,6 +29,7 @@ const HealthReportContainerPdf = ({ data, backgroundColor }: HealthReportContain
           variant="fill"
           color="primary"
           isDisable={NotData}
+          id="GetHealthReportAsPdf"
           isLoading={downloadStatus !== null}
           onClick={() => downloadStatusHandler('preparing')}
         >
@@ -38,7 +39,7 @@ const HealthReportContainerPdf = ({ data, backgroundColor }: HealthReportContain
 
       {downloadStatus !== null && (
         <>
-          <div className="fixed top-0 left-0 right-0 bottom-0 -z-40 bg-white" />
+          <div className="fixed top-0 left-0 right-0 bottom-0 -z-40 " style={{ backgroundColor: colors.White }} />
 
           <div className="fixed top-0 left-0 right-0 bottom-0 w-full -z-50" style={{ backgroundColor }}>
             <div

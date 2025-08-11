@@ -8,6 +8,7 @@ const NameSelectorActivationCard = ({
   btnText,
   isLoading,
   isDisable,
+  currentStep,
 }: NameSelectorActivationCardProps) => {
   return (
     <div
@@ -25,6 +26,7 @@ const NameSelectorActivationCard = ({
           isLoading={isLoading}
           isDisable={isDisable}
           className="!w-[206px]"
+          id={`BabyNameActivationStep${currentStep}`}
         >
           {btnText}
         </Button>

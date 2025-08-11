@@ -10,7 +10,7 @@ import useNameSelectorActivationSteps from '../../__hooks__/useNameSelectorActiv
 
 const NameSelectorActivationStep1Page = () => {
   const { data } = useNameSelectorActivationData();
-  const { nextStepNavigation, isNextStepLoading } = useNameSelectorActivationSteps();
+  const { nextStepNavigation, isNextStepLoading, stepInfo } = useNameSelectorActivationSteps();
 
   if (!data) {
     return <></>;
@@ -41,6 +41,7 @@ const NameSelectorActivationStep1Page = () => {
           className="!w-[206px]"
           onClick={nextStepNavigation}
           isLoading={isNextStepLoading}
+          id={`BabyNameActivationStep${stepInfo} BabyNameSelectionStart`}
         >
           {data.weclome.btn}
         </Button>

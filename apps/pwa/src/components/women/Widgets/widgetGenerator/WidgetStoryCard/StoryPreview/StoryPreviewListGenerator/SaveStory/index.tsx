@@ -24,6 +24,7 @@ const SaveStory = ({ selectHandler, isBookmarked }: SaveStoryProps) => {
     <div
       className="absolute left-4 bottom-8 w-12 h-12 flex items-center justify-center cursor-pointer z-[30]"
       onClick={isSavedHandler}
+      id="StoryBookMarked"
     >
       {!isSaved && <SaveEmptyIcon className="w-6 h-auto" style={{ stroke: colors.White }} />}
       {isSaved && <SaveFillIcon className="w-6 h-auto" style={{ fill: colors.White }} />}

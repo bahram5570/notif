@@ -16,6 +16,7 @@ import useSubmit from './__hooks__/useSubmit';
 const NoteContainer = () => {
   const { colors } = useTheme();
   const { noteValue, onChangeHandler, isLoading: getDataLoading } = useGetData();
+
   const isEditMode = noteValue.noteId ? true : false;
   const { isLoading, submitHandler } = useSubmit({ isEditMode });
 
@@ -54,6 +55,7 @@ const NoteContainer = () => {
               isDisable={!noteValue.title}
               className="mt-auto py-3 px-2"
               onClick={() => submitHandler(noteValue)}
+              id={isEditMode ? 'NoteEdit' : 'NoteAdd'}
             >
               {isEditMode ? 'ویرایش یادداشت' : 'ثبت یادداشت'}
             </Button>

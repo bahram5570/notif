@@ -42,6 +42,7 @@ const ShareExperienceAvatarModule = ({
             height={88}
             previewImageShape="circle"
             className="!object-cover"
+            id={showChangeAvatarIcon ? 'ShareExperienceSelfProfile' : 'ShareExperienceOtherProfile'}
           />
         </div>
 

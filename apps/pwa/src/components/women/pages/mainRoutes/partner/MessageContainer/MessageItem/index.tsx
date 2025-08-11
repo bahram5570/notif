@@ -14,7 +14,10 @@ const MessageItem = ({ fromMan, text, createTime }: MessageItemPropsType) => {
   return (
     <>
       {fromMan && (
-        <div className=" flex gap-2 px-2 items-center bg-white absolute -top-[6px] right-6">
+        <div
+          className=" flex gap-2 px-2 items-center  absolute -top-[6px] right-6"
+          style={{ backgroundColor: colors.White }}
+        >
           <Typography scale="Lable" size="Medium" textAlign="right" className="w-full">
             پیام همدل شما
           </Typography>

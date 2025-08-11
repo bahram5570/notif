@@ -37,7 +37,8 @@ const HistoryItem = (props: HistoryItemPropsType) => {
                   />
                 </div>
                 <div
-                  className={`w-8 h-8 rounded-full border-2 border-white overflow-hidden  ml-0 absolute left-5 bg-white`}
+                  className={`w-8 h-8 rounded-full border-2 border-white overflow-hidden  ml-0 absolute left-5 `}
+                  style={{ backgroundColor: colors.White }}
                 >
                   <CustomImage
                     src={props.manAvatar}

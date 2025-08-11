@@ -20,7 +20,7 @@ const ChatbotNavbarMode = ({ collapseText1, collapseText2, continueChatText }: C
       style={{ background: 'linear-gradient(to right, #FFB7C9, #B5D3FF)' }}
     >
       <div>
-        <div className="w-12 h-12 bg-white rounded-full ">
+        <div className="w-12 h-12  rounded-full " style={{ borderBlockColor: colors.White }}>
           <LottieJson animationData={chatbotJson} loop={true} />
         </div>
       </div>

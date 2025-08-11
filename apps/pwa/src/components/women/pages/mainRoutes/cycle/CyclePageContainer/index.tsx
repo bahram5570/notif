@@ -1,5 +1,3 @@
-'use client';
-
 import { FOOTER_HEIGTH } from '@components/women/WomenFooter/constants';
 
 import CycleContainer from '../CycleContainer';

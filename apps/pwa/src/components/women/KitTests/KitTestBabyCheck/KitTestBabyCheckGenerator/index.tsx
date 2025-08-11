@@ -21,6 +21,7 @@ const KitTestBabyCheckGenerator = ({
     <div
       className="flex flex-col items-center gap-2  cursor-pointer"
       onClick={() => selectedBabyCheckHandler(babyCheckType)}
+      id={`AddBabyCheckType${babyCheckType}`}
     >
       <div className="w-[72px] h-[72px] relative flex items-center justify-center">
         <div

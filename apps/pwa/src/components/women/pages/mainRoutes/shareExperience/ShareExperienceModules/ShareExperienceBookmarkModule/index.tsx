@@ -11,7 +11,7 @@ const ShareExperienceBookmarkModule = (props: ShareExperienceBookmarkModuleProps
   const { isBookmarked, toggleBookmarkHandler } = useShareExperienceBookmark(props);
 
   return (
-    <div className="w-10 flex justify-center" onClick={toggleBookmarkHandler}>
+    <div className="w-10 flex justify-center" onClick={toggleBookmarkHandler} id="shareExperienceBookmarked">
       {isBookmarked ? (
         <SaveFillIcon className="w-5" style={{ fill: colors.Surface_InverseSurface }} />
       ) : (

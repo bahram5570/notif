@@ -1,5 +1,3 @@
-'use client';
-
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import useTheme from '@hooks/useTheme';
 

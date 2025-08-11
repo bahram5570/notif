@@ -1,4 +1,3 @@
-// useChatbotModalVisibility.js
 import { useEffect } from 'react';
 
 import { SHOULD_SHOW_CHATBOT_MODAL } from '../../constants';

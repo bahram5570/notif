@@ -11,7 +11,7 @@ import useNameSelectorActivationSteps from '../../__hooks__/useNameSelectorActiv
 const NameSelectorActivationStep4Page = () => {
   const { typography, colors } = useTheme();
   const { data, payload, payloadHandler } = useNameSelectorActivationData();
-  const { isNextStepLoading, nextStepNavigation } = useNameSelectorActivationSteps();
+  const { isNextStepLoading, nextStepNavigation, stepInfo } = useNameSelectorActivationSteps();
 
   const valueHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.toString().trim().slice(0, 1);
@@ -36,6 +36,7 @@ const NameSelectorActivationStep4Page = () => {
         btnText={data.charFilter.btn}
         isLoading={isNextStepLoading}
         isDisable={payload.charFilter === ''}
+        currentStep={stepInfo.page}
       >
         <Typography scale="Title" size="Small" color="Surface_InverseSurface" className="pb-4">
           {data.charFilter.title}

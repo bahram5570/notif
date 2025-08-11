@@ -29,9 +29,11 @@ export enum WidgetsEnum {
   PregnancyCheckup = 27,
   WidgetList = 28,
   ProgramCard = 29,
-  PregnancyHomeWidget = 30, // TODO
+  // PregnancyHomeWidget = 30,
   Media = 31,
-  Biorhythm = 32, // TODO
+  Biorhythm = 32,
+  ProgramScrollWidget = 37,
+  WomanPairProgram = 41,
 }
 
 export enum WidgetStoryTypeEnum {

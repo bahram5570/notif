@@ -4,7 +4,7 @@ import { currentDate, toJalaliData } from '@utils/dates';
 
 import { NoteType } from '@components/women/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
 import useApi from '@hooks/useApi';
-import useCurrentDateInSigns from '@hooks/useCurrentDateInSigns';
+import useSignDateState from '@hooks/useSignDateState';
 import moment from 'moment-jalaali';
 
 import { ResponsePropsType } from './type';
@@ -13,7 +13,7 @@ const { gDate } = currentDate();
 
 const useGetData = () => {
   const [currentNoteList, setCurrentNoteList] = useState<NoteType[]>();
-  const { calendarInitailSelectedDate } = useCurrentDateInSigns();
+  const { calendarInitailSelectedDate } = useSignDateState();
   const selectedDate = calendarInitailSelectedDate;
 
   const currentDate = selectedDate ? moment(selectedDate, 'YYYY-MM-DD').format('YYYY-MM-DD HH:mm') : gDate;

@@ -1,8 +1,8 @@
 import PlusIcon from '@assets/icons/plus.svg';
 
 import Typography from '@components/ui/Typography';
-import useCurrentDateInSigns from '@hooks/useCurrentDateInSigns';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import useSignDateState from '@hooks/useSignDateState';
 import useTheme from '@hooks/useTheme';
 
 import { CreateNewNoteBtnPropsType } from './type';
@@ -10,7 +10,7 @@ import { CreateNewNoteBtnPropsType } from './type';
 const CreateNewNoteBtn = ({ date }: CreateNewNoteBtnPropsType) => {
   const { colors } = useTheme();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { changeCurrentDate } = useCurrentDateInSigns();
+  const { changeCurrentDate } = useSignDateState();
 
   const linkTo = () => {
     changeCurrentDate(date);

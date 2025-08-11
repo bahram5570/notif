@@ -5,6 +5,7 @@ import TickIcon from '@assets/icons/CheckCircle-2.svg';
 import Button from '@components/ui/Button';
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
+import useTheme from '@hooks/useTheme';
 import { useRouter } from 'next/navigation';
 
 import useUpdateProfile from '../../ShareExperienceChangeAvatarModal/ShareExperienceChangeAvatarModalContainer/__hooks__/useUpdateProfile';
@@ -15,6 +16,7 @@ const ShareExperienceDefultAvatarListModalContainer = ({
   id,
 }: ShareExperienceDefultAvatarListModalContainerPropsType) => {
   const { profileData } = useGetData(id);
+  const { colors } = useTheme();
   const avatarList: string[] = profileData?.profile.avatars ? profileData?.profile.avatars : [''];
   const [selectedAvatar, setSelectedAvatar] = useState<string>('');
   const { onProfileChangeHandler } = useUpdateProfile();
@@ -68,7 +70,7 @@ const ShareExperienceDefultAvatarListModalContainer = ({
         )}
       </div>
 
-      <div className="py-4 px-2 sticky bottom-0 bg-white w-full">
+      <div className="py-4 px-2 sticky bottom-0 w-full" style={{ backgroundColor: colors.White }}>
         <Button size="medium" variant="fill" color="primary" fullWidth={true} onClick={onClick} className="py-2  ">
           <Typography scale="Lable" size="Large" color="White">
             انتخاب پروفایل

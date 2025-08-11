@@ -1,5 +1,7 @@
 'use client';
 
+import useTheme from '@hooks/useTheme';
+
 import AvatarContainer from './AvatarContainer';
 import Biorhythm from './Biorhythem';
 import Challenge from './Challenge';
@@ -14,6 +16,7 @@ import useGetData from './__hooks__/useGetData';
 
 const PartnerContainer = () => {
   const { data, isLoading } = useGetData();
+  const { colors } = useTheme();
 
   return (
     <>
@@ -23,7 +26,10 @@ const PartnerContainer = () => {
           <>
             <ProfileButton />
 
-            <div className="flex flex-col items-center px-3 py-6 bg-white mx-4 rounded-[32px] relative">
+            <div
+              className="flex flex-col items-center px-3 py-6  mx-4 rounded-[32px] relative"
+              style={{ backgroundColor: colors.White }}
+            >
               <AvatarContainer {...data} />
 
               <div className="flex justify-center items-center flex-col gap-9 relative">

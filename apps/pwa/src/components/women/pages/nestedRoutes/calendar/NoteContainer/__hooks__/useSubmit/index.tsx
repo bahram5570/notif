@@ -1,5 +1,6 @@
 import { toGregorianData } from '@utils/dates';
 
+import { APP_VERSION } from '@constants/app.constants';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
@@ -19,7 +20,7 @@ const useSubmit = ({ isEditMode }: UseSubmitPropsType) => {
   const method = isEditMode ? 'POST' : 'PUT';
 
   const { callApi, isLoading } = useApi({
-    api: `date/note?AppVersion=${process.env.NEXT_PUBLIC_APP_VERSION || ''}`,
+    api: `date/note?AppVersion=${APP_VERSION || ''}`,
     method: method,
     onSuccess: successHandler,
   });

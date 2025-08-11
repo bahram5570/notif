@@ -6,7 +6,7 @@ import useSelectedDigitalBabyCheck from './__hooks__/useSelectedDigitalBabyCheck
 import { KIT_TEST_DIGITAL_BABY_CHECK_LIST } from './constants';
 import { KitTestDigitalBabyCheckProps } from './types';
 
-const KitTestDigitalBabyCheck = ({ submitHandler }: KitTestDigitalBabyCheckProps) => {
+const KitTestDigitalBabyCheck = ({ submitHandler, AnalytisId }: KitTestDigitalBabyCheckProps) => {
   const { selectedDigitalBabyCheck, selectedDigitalBabyCheckHandler } = useSelectedDigitalBabyCheck();
 
   const clickHandler = () => {
@@ -40,6 +40,7 @@ const KitTestDigitalBabyCheck = ({ submitHandler }: KitTestDigitalBabyCheckProps
         color="primary"
         onClick={clickHandler}
         isDisable={selectedDigitalBabyCheck === null}
+        id={AnalytisId}
       >
         ادامه
       </Button>

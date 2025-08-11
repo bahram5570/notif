@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 import Image from 'next/image';
 
+import useTheme from '@hooks/useTheme';
+
 import Spinner from '../Spinner';
 import CustomImageError from './CustomImageError';
 import useImageSrc from './__hooks__/useImageSrc';
@@ -10,6 +12,7 @@ import { CustomImageProps } from './types';
 
 const CustomImage = (props: CustomImageProps) => {
   const [hasError, setHasError] = useState(false);
+  const { colors } = useTheme();
   const { previewImageHandler, previewImageLoading } = usePreviewImage();
 
   const isLoadedHandler = () => {
@@ -45,7 +48,10 @@ const CustomImage = (props: CustomImageProps) => {
         {hasError && <CustomImageError />}
 
         {previewImageLoading && (
-          <div className="absolute inset-0 z-20 flex items-center justify-center bg-surface-variant bg-[#00000066] backdrop-blur-sm">
+          <div
+            className="absolute inset-0 z-20 flex items-center justify-center  backdrop-blur-sm"
+            style={{ backgroundColor: colors.Surface_SurfaceVariant }}
+          >
             <Spinner color="surface" />
           </div>
         )}
@@ -68,6 +74,7 @@ const CustomImage = (props: CustomImageProps) => {
                   hasPreviewImage: props.hasPreviewImage,
                 })
               }
+              id={props.id}
             />
           </>
         )}

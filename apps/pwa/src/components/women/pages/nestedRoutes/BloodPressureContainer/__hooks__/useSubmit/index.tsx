@@ -1,12 +1,12 @@
 import useApi from '@hooks/useApi';
-import useCurrentDateInSigns from '@hooks/useCurrentDateInSigns';
+import useSignDateState from '@hooks/useSignDateState';
 import { useRouter } from 'next/navigation';
 
 import { InputValueType } from '../../type';
 
 const useSubmit = () => {
   const router = useRouter();
-  const { calendarInitailSelectedDate } = useCurrentDateInSigns();
+  const { calendarInitailSelectedDate } = useSignDateState();
 
   const successHandler = () => {
     router.back();

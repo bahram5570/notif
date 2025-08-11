@@ -8,7 +8,7 @@ import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
 import { WidgetCardContainerProps } from './types';
 
-const WidgetCardContainer = ({ title, titleElement, button, children }: WidgetCardContainerProps) => {
+const WidgetCardContainer = ({ title, titleElement, button, children, buttonId }: WidgetCardContainerProps) => {
   const { colors } = useTheme();
   const { actionHandler } = useWidgetActions();
 
@@ -39,6 +39,7 @@ const WidgetCardContainer = ({ title, titleElement, button, children }: WidgetCa
           buttonColor={colorFormatConverter(button.backgroundColor)}
           contentsColor={colorFormatConverter(button.foregroundColor)}
           isDisable={button?.action.actionType === ActionTypeEnum.None}
+          id={buttonId}
         >
           {button.text}
         </Button>

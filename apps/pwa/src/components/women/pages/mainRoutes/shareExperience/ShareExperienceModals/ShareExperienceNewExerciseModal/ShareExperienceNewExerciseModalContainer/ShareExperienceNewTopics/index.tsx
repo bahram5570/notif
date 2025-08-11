@@ -7,6 +7,7 @@ import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME } from '@components/women/pages/mainRoutes/shareExperience/constants';
 import useOverflowHandler from '@hooks/useOverflowHandler';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import useTheme from '@hooks/useTheme';
 
 import ShareExperienceNewTopicsGenerator from './ShareExperienceNewTopicsGenerator';
 import { ShareExperienceNewTopicsProps } from './types';
@@ -21,6 +22,7 @@ const ShareExperienceNewTopics = ({
 }: ShareExperienceNewTopicsProps) => {
   useOverflowHandler();
   const { getQueryParams } = useQueryParamsHandler();
+  const { colors } = useTheme();
 
   const isOpen = getQueryParams(SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME) !== null;
 
@@ -68,7 +70,10 @@ const ShareExperienceNewTopics = ({
                   />
                 ))}
 
-                <div className=" sticky bottom-0 left-0 right-0 top-0 mx-auto w-full mt-auto px-4 py-6 z-[1000] bg-white">
+                <div
+                  className=" sticky bottom-0 left-0 right-0 top-0 mx-auto w-full mt-auto px-4 py-6 z-[1000] "
+                  style={{ backgroundColor: colors.White }}
+                >
                   <Button
                     size="medium"
                     variant="fill"
@@ -76,6 +81,7 @@ const ShareExperienceNewTopics = ({
                     onClick={submitHandler}
                     isLoading={isSubmitLoading}
                     isDisable={topicId === null}
+                    id="Share_Experience"
                   >
                     ثبت تجربه
                   </Button>

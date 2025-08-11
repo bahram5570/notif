@@ -21,6 +21,8 @@ const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGenerat
       newQueryParamsHandler({ [MODALS.STORY_MODAL_ID]: id });
       pageNavigationHandler({ id: loadingId, showProgressBar: false });
     }
+
+    // For debugging purposes, can be removed later
   };
 
   return (
@@ -28,6 +30,7 @@ const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGenerat
       onClick={selectHandler}
       style={{ width: STORY_CIRCLE_WIDTH }}
       className="flex flex-col items-center justify-center gap-2 cursor-pointer"
+      id="StoryClick"
     >
       <div
         style={{

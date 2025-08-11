@@ -19,7 +19,7 @@ const ShareExperienceDeleteModule = (props: ShareExperienceDeleteModuleProps) =>
   };
 
   return (
-    <div className="w-10 flex justify-center" onClick={selectHandler}>
+    <div className="w-10 flex justify-center" onClick={selectHandler} id="shareExperienceDeletePost">
       <TrashIcon className="w-5" style={{ stroke: colors.Surface_InverseSurface }} />
     </div>
   );

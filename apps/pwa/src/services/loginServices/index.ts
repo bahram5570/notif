@@ -1,6 +1,7 @@
 import http from '@services/http';
 import { UserCookieTypes, cookieCreatedTime, getUserExpiresDate } from '@utils/cookies';
 
+import { APP_VERSION } from '@constants/app.constants';
 import { FIREBASE_COOKIE_NAME, USER_COOKIE_NAME } from '@constants/cookie.constants';
 import { ACTIVATION_CR_REGISTER_QUERY_NAME } from '@constants/links.constants';
 import { cookies } from 'next/headers';
@@ -23,7 +24,7 @@ const checkUserStatus = async () => {
       channelVersion: '',
       identity: user.identity,
       password: user.password,
-      version: process.env.NEXT_PUBLIC_APP_VERSION || '',
+      version: APP_VERSION || '',
     };
 
     return await http<LoginResponseTypes>({

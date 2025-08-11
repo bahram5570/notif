@@ -15,6 +15,7 @@ const NewReplyBtn = ({ text, isLoading, submitHandler }: NewReplyBtnProps) => {
         isDisable={isDisable}
         isLoading={isLoading}
         onClick={submitHandler}
+        id="ShareExperienceComment"
       >
         پست کردن
       </Button>

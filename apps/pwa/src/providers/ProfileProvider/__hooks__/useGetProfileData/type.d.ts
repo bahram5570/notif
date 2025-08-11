@@ -1,6 +1,6 @@
 import { CycleThemeEnum } from '@services/loginServices/enum';
 
-import { ChildTypeEnum, PeriodStatusEnum } from '@constants/activation.constants';
+import { ChildTypeEnum, PeriodStatusEnum, WomanStatusEnum } from '@constants/activation.constants';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import { ProfileProviderPropsTypes } from '@providers/ProfileProvider/type';
 import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
@@ -36,7 +36,7 @@ export type ProfileResponseTypes = {
   interfaceText: string;
   interfaceShareText: string;
   calendarType: CalendarTypeEnum;
-  status: number;
+  status: WomanStatusEnum;
   periodStatus: PeriodStatusEnum;
   week: number;
   changeStatusBtns: ChangeStatusBtnsTypes[];

@@ -1,11 +1,14 @@
-import IdentifictionCodeContainer from '@components/women/pages/nestedRoutes/IdentifictionCodeContainer';
+import dynamic from 'next/dynamic';
+
+const DynamicComponentWithNoSSR = dynamic(
+  () => import('@components/women/pages/nestedRoutes/profile/IdentifictionCodePage'),
+  {
+    ssr: false,
+  },
+);
 
 const IdentificationCode = () => {
-  return (
-    <>
-      <IdentifictionCodeContainer />
-    </>
-  );
+  return <DynamicComponentWithNoSSR />;
 };
 
 export default IdentificationCode;

@@ -35,7 +35,10 @@ const AiChatbotHeader = ({ chatTitle }: AiChatbotHeaderPropsType) => {
             {chatTitle}
           </Typography>
 
-          <div className="w-8 h-8 bg-white rounded-full flex justify-center items-center">
+          <div
+            className="w-8 h-8  rounded-full flex justify-center items-center"
+            style={{ backgroundColor: colors.White }}
+          >
             <LottieJson animationData={chatbotJson} loop={false} autoPlay={false} />
           </div>
 

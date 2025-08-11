@@ -27,6 +27,7 @@ const SubmitBtn = ({ isFree, approvedCode, packageId, value, payButtonText }: Su
           color="primary"
           isLoading={isLoading}
           onClick={() => submitHandler(isFree, { discount: approvedCode, isWeb: true, packageId, value })}
+          id="SubscriptionPayment"
         >
           {payButtonText}
         </Button>

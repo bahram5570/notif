@@ -2,13 +2,13 @@ import { ReactElement, useEffect, useState } from 'react';
 
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useCountDown from '@hooks/useCountDown';
-import useCurrentDateInSigns from '@hooks/useCurrentDateInSigns';
+import useSignDateState from '@hooks/useSignDateState';
 import { LottieCanvas } from '@lib/LottieCanvas';
 
 const SignsChangedToast = () => {
   const [showStatus, setShowStatus] = useState(false);
   const [el, setEl] = useState<ReactElement | null>(null);
-  const { hasSignsChanged } = useCurrentDateInSigns();
+  const { hasSignsChanged } = useSignDateState();
 
   const { startCounter: startShow } = useCountDown({
     time: 7,

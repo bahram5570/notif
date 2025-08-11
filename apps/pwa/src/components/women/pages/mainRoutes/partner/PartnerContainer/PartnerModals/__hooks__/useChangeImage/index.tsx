@@ -1,3 +1,4 @@
+import { APP_VERSION } from '@constants/app.constants';
 import useApi from '@hooks/useApi';
 import { useRouter } from 'next/navigation';
 
@@ -13,7 +14,7 @@ const useChangeImage = () => {
   const { callApi, isLoading } = useApi({
     method: 'POST',
     onSuccess: successHandler,
-    api: `pair/cover?AppVersion=${process.env.NEXT_PUBLIC_APP_VERSION || ''}`,
+    api: `pair/cover?AppVersion=${APP_VERSION || ''}`,
   });
 
   const editHandler = (v: ResponseType) => {

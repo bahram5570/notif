@@ -47,6 +47,9 @@ export type WidgetsTypes = IsPdfDownloadingTypes &
     | WidgetMediaTypes
     | WidgetAverageOfcycleLengthsTypes
     | WidgetPregnancyCheckupTypes
+    | WidgetBiorhythmTypes
+    | WidgetWomanPairProgramTypes
+    | WidgetProgramScrollWidgetType
   );
 
 // # ----------------------------------------------------------
@@ -348,7 +351,7 @@ export type WidgetRoutinTypes = IsPdfDownloadingTypes & {
     writerIcon: string;
     writerName: string;
     description: string;
-    backgroundColour: string;
+    backgroundColour?: string;
     writerSpeciality: string;
     button: WidgetsButtonTypes;
   };
@@ -635,5 +638,65 @@ export type WidgetCirculeCycleCardTypes = {
     fertilityStart: number;
     backgroundColour: string;
     button: WidgetsButtonTypes[];
+  };
+};
+
+// # ----------------------------------------------------------
+
+type BiorhythemItem = {
+  description: string;
+  icon: string;
+  title: string;
+};
+
+export type WidgetBiorhythmTypes = IsPdfDownloadingTypes & {
+  type: WidgetsEnum.Biorhythm;
+  data: {
+    backgroundColour: string;
+    description: string;
+    title: string;
+    items: BiorhythemItem[];
+  };
+};
+
+// # ----------------------------------------------------------
+
+type ProgramScrolltemType = {
+  title: string;
+  writerIcon: string;
+  writerName: string;
+  description: string;
+  writerSpeciality: string;
+  button: WidgetsButtonTypes;
+};
+
+export type WidgetProgramScrollType = IsPdfDownloadingTypes & {
+  type: WidgetsEnum.ProgramScrollWidget;
+  data: {
+    backgroundColour: string;
+    description: string;
+    items: ProgramScrolltemType[];
+    title: string;
+  };
+};
+
+// # ----------------------------------------------------------
+
+type WomanPairProgramItemType = {
+  title: string;
+  writerIcon: string;
+  writerName: string;
+  description: string;
+  writerSpeciality: string;
+  button: WidgetsButtonTypes;
+};
+
+export type WidgetWomanPairProgramTypes = IsPdfDownloadingTypes & {
+  type: WidgetsEnum.WomanPairProgram;
+  data: {
+    backgroundColour: string;
+    description: string;
+    items: WomanPairProgramItemType[];
+    title: string;
   };
 };

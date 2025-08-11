@@ -59,7 +59,7 @@ const UploadInput = ({ fileName, uploadImageLoading, valuesHandler }: UploadInpu
             </div>
           </div>
           {uploadImageLoading && (
-            <div className={`w-full h-1 bg-gray-200 rounded-full`}>
+            <div className={`w-full h-1  rounded-full`} style={{ backgroundColor: colors.Grey_200 }}>
               <div
                 className={`h-full rounded-full`}
                 style={{ width: `${progress}%`, background: colors.PrimaryWoman_Primary }}

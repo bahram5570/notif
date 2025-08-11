@@ -4,7 +4,7 @@ import { currentDate } from '@utils/dates';
 
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
-import useCurrentDateInSigns from '@hooks/useCurrentDateInSigns';
+import useSignDateState from '@hooks/useSignDateState';
 import moment from 'moment-jalaali';
 
 import useCalendarGetData from '../useCalendarGetData';
@@ -16,7 +16,7 @@ const { jDate, gDate } = currentDate();
 const useCalendar = () => {
   const [calendarGuideInfo, setCalendarGuideInfo] = useState<CalendarGuideInfoTypes | null>(null);
   const [calendarData, setCalendarData] = useState<CalendarDataTypes | null>(null);
-  const { calendarInitailSelectedDate } = useCurrentDateInSigns();
+  const { calendarInitailSelectedDate } = useSignDateState();
   const { culture } = useCulture();
 
   const valuesHandler = (v: OnValuesTypes) => {

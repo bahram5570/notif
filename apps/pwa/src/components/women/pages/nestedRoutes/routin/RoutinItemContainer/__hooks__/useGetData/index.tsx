@@ -9,6 +9,9 @@ const useGetData = () => {
   const { getQueryParams } = useQueryParamsHandler();
 
   const searchData = getQueryParams('searchData');
+
+  const params = searchData ? new URLSearchParams(searchData) : null;
+  const programId = params ? params.get('catId') : '';
   const api = searchData ? `widgets/program/item/info?${searchData}` : '';
 
   const { callApi, isLoading, data } = useApi<RoutinItemResponseTypes>({
@@ -24,7 +27,7 @@ const useGetData = () => {
     }
   }, [api]);
 
-  return { isLoading, data };
+  return { isLoading, data, programId };
 };
 
 export default useGetData;

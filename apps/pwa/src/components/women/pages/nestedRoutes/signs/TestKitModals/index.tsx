@@ -24,6 +24,7 @@ const TestKitModals = () => {
                 moduleType={modalInfo.moduleType}
                 babyCheckType={modalInfo.babyCheckType}
                 gregorianDate={modalInfo.gregorianDate}
+                AnalytisId="Add_BabyCheck_From_Calendar"
               />
             )}
           </div>

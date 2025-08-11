@@ -13,7 +13,7 @@
 @import 'swiper/css/pagination';
 @import '~react-toastify/dist/ReactToastify.min.css';
 
-* {
+body {
   font-family: YekanBakhVF;
 }
 

@@ -1,6 +1,7 @@
 import CustomImage from '@components/ui/CustomImage';
 import Spinner from '@components/ui/Spinner';
 import Typography from '@components/ui/Typography';
+import useTheme from '@hooks/useTheme';
 
 import BackButton from './BackButton';
 import { ShareExperienceTopicModalContainerLayoutPropsTypes } from './type';
@@ -13,6 +14,7 @@ const ShareExperienceTopicModalContainerLayout = ({
   isLoading,
   bio,
 }: ShareExperienceTopicModalContainerLayoutPropsTypes) => {
+  const { colors } = useTheme();
   return (
     <div className="relative h-screen overflow-hidden">
       <div
@@ -49,9 +51,8 @@ const ShareExperienceTopicModalContainerLayout = ({
 
       <div className="relative z-10">
         <div
-          className={`sticky flex justify-end items-center top-0 z-20 p-4 transition-all duration-300 ease-in-out ${
-            scrolled ? 'bg-white' : 'bg-transparent'
-          }`}
+          className="sticky flex justify-end items-center top-0 z-20 p-4 transition-all duration-300 ease-in-out"
+          style={{ backgroundColor: scrolled ? colors.White : 'transparent' }}
         >
           <BackButton />
         </div>

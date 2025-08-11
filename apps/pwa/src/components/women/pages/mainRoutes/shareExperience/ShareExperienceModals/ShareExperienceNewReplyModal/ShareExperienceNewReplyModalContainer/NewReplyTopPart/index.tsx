@@ -1,10 +1,12 @@
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
+import useTheme from '@hooks/useTheme';
 
 import { NEW_REPLY_MAX_CHARACTERS } from '../constants';
 import { NewReplyTopPartProps } from './types';
 
 const NewReplyTopPart = ({ name, avatar, text }: NewReplyTopPartProps) => {
+  const { colors } = useTheme();
   const countScript = `${text.trim().length}/${NEW_REPLY_MAX_CHARACTERS}`;
 
   return (
@@ -19,7 +21,10 @@ const NewReplyTopPart = ({ name, avatar, text }: NewReplyTopPartProps) => {
             {name}
           </Typography>
 
-          <div className={`w-10 h-10 rounded-full border-2 border-white overflow-hidden ml-0 relative bg-white`}>
+          <div
+            className={`w-10 h-10 rounded-full  overflow-hidden ml-0 relative `}
+            style={{ backgroundColor: colors.White, border: `2px solid ${colors.White}` }}
+          >
             <CustomImage src={avatar} className="!object-cover" />
           </div>
         </div>

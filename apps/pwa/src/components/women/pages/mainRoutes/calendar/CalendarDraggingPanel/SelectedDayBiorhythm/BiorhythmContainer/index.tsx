@@ -19,6 +19,7 @@ const BiorhythmContainer = ({ Icon, percent, text, typeText, type }: BiorhythmCo
         (newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true', typeText, type }),
           pageNavigationHandler({ showProgressBar: true, id: 'BiorhythmModal' }));
       }}
+      id="BiorhythmClicked"
     >
       <div className="flex flex-col justify-center items-center gap-2 p-1">
         <Icon className="w-12 h-12" />

@@ -1,5 +1,6 @@
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
+import useTheme from '@hooks/useTheme';
 
 import CustomLink from '../CustomLink';
 import LinkGenerator from './LinkGenerator';
@@ -11,6 +12,7 @@ import { buttonLinkHandler } from './utilis';
 const Challenge = ({ card, valid, button }: ChallengePropsType) => {
   const { updatedPartnerLinkList } = useUpdateLinkList(button);
   const { MessageNumber } = useGetNotReadMessage({ valid });
+  const { colors } = useTheme();
 
   return (
     <div className="mt-20 flex flex-col gap-3">
@@ -29,7 +31,7 @@ const Challenge = ({ card, valid, button }: ChallengePropsType) => {
       )}
 
       {card.btnText || card.text ? (
-        <div className="bg-white flex flex-col gap-4 p-4 rounded-xl shadow-sm">
+        <div className=" flex flex-col gap-4 p-4 rounded-xl shadow-sm" style={{ backgroundColor: colors.White }}>
           <div className="flex justify-center items-center px-2">
             <CustomImage src={card.leftIcon} style={{ scale: !valid ? '2' : 'inherit' }} />
             <div className="px-3">

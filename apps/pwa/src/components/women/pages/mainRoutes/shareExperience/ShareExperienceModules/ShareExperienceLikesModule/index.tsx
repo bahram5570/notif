@@ -24,7 +24,11 @@ const ShareExperienceLikesModule = (props: ShareExperienceLikesModuleProps) => {
 
   return (
     <>
-      <div className="flex w-10 gap-1" onClick={() => selectHandler(ShareExperienceStateEnum.Dislike)}>
+      <div
+        className="flex w-10 gap-1"
+        onClick={() => selectHandler(ShareExperienceStateEnum.Dislike)}
+        id="shareExperienceDislikePost"
+      >
         <Typography scale="Body" size="Large" color="Surface_InverseSurface" className="!h-5 !w-2/5">
           {props.disliked.toString()}
         </Typography>
@@ -34,7 +38,11 @@ const ShareExperienceLikesModule = (props: ShareExperienceLikesModuleProps) => {
         </div>
       </div>
 
-      <div className="flex w-10 gap-1" onClick={() => selectHandler(ShareExperienceStateEnum.Like)}>
+      <div
+        className="flex w-10 gap-1"
+        onClick={() => selectHandler(ShareExperienceStateEnum.Like)}
+        id="shareExperienceLikePost"
+      >
         <Typography scale="Body" size="Large" color="Surface_InverseSurface" className="!h-5 !w-2/5">
           {props.likeCount.toString()}
         </Typography>

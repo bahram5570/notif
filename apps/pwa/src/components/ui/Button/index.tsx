@@ -53,6 +53,7 @@ function Button(props: ButtonProps) {
       className={`relative min-h-fit rounded-full border-2 px-4 overflow-hidden select-none ${props.isDisable && 'opacity-25'} 
         ${(isLoading || props.isDisable) && 'cursor-not-allowed'} ${props.className}
       `}
+      id={props.id}
     >
       <div className={`w-full h-full flex justify-center gap-2 ${isLoading && 'opacity-0'}`}>
         <div className="flex justify-center items-center">{props.children}</div>

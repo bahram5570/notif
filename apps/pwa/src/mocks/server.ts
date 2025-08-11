@@ -1,11 +1,14 @@
+import { baseUrl } from '@services/http';
+
+import { HttpResponse, http } from 'msw';
 import { setupServer } from 'msw/node';
 
-import { getDataHandler } from './activationHandlers/getDataHandler';
+import responseData from './db.json';
 
-const handlers = [...getDataHandler];
+const handlers = [
+  http.get(`${baseUrl}/date/note`, () => {
+    return HttpResponse.json(responseData);
+  }),
+];
 
 export const server = setupServer(...handlers);
-
-beforeAll(() => server.listen());
-afterEach(() => server.resetHandlers());
-afterAll(() => server.close());

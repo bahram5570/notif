@@ -13,7 +13,7 @@ import useStylesLists from './__hooks__/useStylesLists';
 
 const NameSelectorActivationStep3Page = () => {
   const { data, payload, payloadHandler } = useNameSelectorActivationData();
-  const { isNextStepLoading, nextStepNavigation } = useNameSelectorActivationSteps();
+  const { isNextStepLoading, nextStepNavigation, stepInfo } = useNameSelectorActivationSteps();
 
   if (!data) {
     return <></>;
@@ -41,6 +41,7 @@ const NameSelectorActivationStep3Page = () => {
         onClick={nextStepNavigation}
         isLoading={isNextStepLoading}
         isDisable={currentValue === ''}
+        currentStep={stepInfo.page}
       >
         <Typography scale="Title" size="Small" color="Surface_InverseSurface" className="pb-4">
           {data.style.title}

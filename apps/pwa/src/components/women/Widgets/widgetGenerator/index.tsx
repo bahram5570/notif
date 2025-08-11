@@ -23,6 +23,7 @@ import WidgetPeriodReportEmptyStateCard from './WidgetPeriodReportEmptyStateCard
 import WidgetPragnencyBreastfeedingCard from './WidgetPragnencyBreastfeedingCard';
 import WidgetPredictCard from './WidgetPredictCard';
 import WidgetPregnancyCheckup from './WidgetPregnancyCheckup';
+import WidgetProgramScroll from './WidgetProgramScroll';
 import WidgetReportCard from './WidgetReportCard';
 import WidgetRoutin from './WidgetRoutin';
 import WidgetSexTrackerCard from './WidgetSexTrackerCard';
@@ -30,6 +31,8 @@ import WidgetShareExperienceCard from './WidgetShareExperienceCard';
 import WidgetSignCard from './WidgetSignCard';
 import WidgetStoryCard from './WidgetStoryCard';
 import WidgetSubscriptionCard from './WidgetSubscriptionCard';
+import WidgetWomanPairProgram from './WidgetWomanPairProgram';
+import WidgetsBiorhythm from './WidgetsBiorhythm';
 
 const WidgetGenerator = ({ data, type, isPdfDownloading = false }: WidgetsTypes) => {
   let result: JSX.Element | null = null;
@@ -122,6 +125,15 @@ const WidgetGenerator = ({ data, type, isPdfDownloading = false }: WidgetsTypes)
 
     case WidgetsEnum.Media:
       result = <WidgetMedia data={data} />;
+      break;
+    case WidgetsEnum.Biorhythm:
+      result = <WidgetsBiorhythm data={data} />;
+      break;
+    case WidgetsEnum.ProgramScrollWidget:
+      result = <WidgetProgramScroll data={data} />;
+      break;
+    case WidgetsEnum.WomanPairProgram:
+      result = <WidgetWomanPairProgram data={data} />;
       break;
   }
 

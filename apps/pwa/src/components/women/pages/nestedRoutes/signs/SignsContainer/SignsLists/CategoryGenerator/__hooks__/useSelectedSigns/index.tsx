@@ -1,13 +1,13 @@
 import { useState } from 'react';
 
 import { InitialSelectedSignsTypes } from '@components/women/pages/nestedRoutes/signs/__hooks__/useGetData/types';
-import useCurrentDateInSigns from '@hooks/useCurrentDateInSigns';
+import useSignDateState from '@hooks/useSignDateState';
 
 import { SelectedSignsHandlerTypes } from '../../types';
 
 const useSelectedSigns = (initialSelectedSigns: InitialSelectedSignsTypes) => {
   const [selectedSigns, setSelectedSigns] = useState(initialSelectedSigns);
-  const { changeSignsStaus } = useCurrentDateInSigns();
+  const { changeSignsStaus } = useSignDateState();
 
   const selectedSignsHandler: SelectedSignsHandlerTypes = (category, sign) => {
     const selectedIndex = selectedSigns.findIndex((item) => item.category === category && item.sign === sign);

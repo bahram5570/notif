@@ -88,7 +88,12 @@ export const actionRouteConverter = (serverLink: string) => {
     case '/diet/item':
       result = `/protected/routin/routinItem?searchData=${encodeURIComponent(queries)}`;
       break;
-
+    case '/pairRoutine':
+      result = `/protected/pairRoutin?searchData=${encodeURIComponent(queries)}`;
+      break;
+    case '/pairRoutine/item':
+      result = `/protected/pairRoutin/pairRoutinItem?searchData=${encodeURIComponent(queries)}`;
+      break;
     case '/weight':
       result = `/protected/bmi/weight${queries ? `?${queries}` : ''}`;
       break;

@@ -40,8 +40,8 @@ const ShareExperienceTopicModalContainer = ({ topicId, avatarImage }: ShareExper
           {experiencesData?.expirences.map((item, index) => (
             <Fragment key={index}>
               <div
-                className="w-full border-t-[1px] pt-5 pb-4 px-4 z-20 bg-white"
-                style={{ borderTopColor: colors.Surface_SurfaceVariant }}
+                className="w-full border-t-[1px] pt-5 pb-4 px-4 z-20"
+                style={{ borderTopColor: colors.Surface_SurfaceVariant, backgroundColor: colors.White }}
               >
                 <ShareExperienceTopPart {...item} />
 
@@ -57,7 +57,7 @@ const ShareExperienceTopicModalContainer = ({ topicId, avatarImage }: ShareExper
                   <ShareExperienceBottomPart {...item} />
                 </div>
               </div>
-              <div ref={lastExperienceRef} className="h-10 w-full bg-white" />
+              <div ref={lastExperienceRef} className="h-10 w-full " style={{ backgroundColor: colors.White }} />
             </Fragment>
           ))}
         </div>

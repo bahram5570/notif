@@ -7,4 +7,5 @@ export interface ShareExperienceApproveModalsModuleProps {
   isLoading: boolean;
   isOpen: boolean;
   title: string;
+  id?: string;
 }

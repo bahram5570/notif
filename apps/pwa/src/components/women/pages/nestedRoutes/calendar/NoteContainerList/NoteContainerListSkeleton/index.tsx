@@ -8,6 +8,7 @@ const NoteContainerListSkeleton = () => {
     <div
       className="w-full h-[100dvh] flex flex-col items-center gap-3 px-4 animate-skeleton"
       style={{ paddingTop: HEADER_HEIGHT + 20 }}
+      data-testid={'note-list-skeleton'}
     >
       <div className="w-full h-[80px] rounded-md " style={{ backgroundColor: colors.Neutral_Surface }} />
       <div className="w-full h-[80px] rounded-md " style={{ backgroundColor: colors.Neutral_Surface }} />

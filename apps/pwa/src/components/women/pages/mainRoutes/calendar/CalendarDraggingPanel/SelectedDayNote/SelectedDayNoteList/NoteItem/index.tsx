@@ -25,6 +25,7 @@ const NoteItem = ({ noteItem, hasNoteListPage }: NoteItemPropsType) => {
       <div
         className="flex flex-row-reverse px-3 py-4 rounded-lg items-center"
         style={{ background: hasNoteListPage ? colors.White : colors.Surface_SurfaceVariant }}
+        data-testid={'note-item'}
       >
         <div className="border-l-2 pl-2">
           <CheckListIcon

@@ -3,8 +3,8 @@ import { useEffect, useState } from 'react';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
-import useCurrentDateInSigns from '@hooks/useCurrentDateInSigns';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import useSignDateState from '@hooks/useSignDateState';
 import moment from 'moment-jalaali';
 
 import { INITAIL_NOTE_VALUE } from '../../constants';
@@ -15,7 +15,7 @@ const useGetData = () => {
   const { culture } = useCulture();
   const [noteValue, setNoteValue] = useState<ItemType>(INITAIL_NOTE_VALUE);
   const { getQueryParams } = useQueryParamsHandler();
-  const { calendarInitailSelectedDate } = useCurrentDateInSigns();
+  const { calendarInitailSelectedDate } = useSignDateState();
 
   const noteId = getQueryParams('noteId');
 
@@ -38,7 +38,6 @@ const useGetData = () => {
   const successHandler = (v: ResponsePropsType) => {
     const noteList = v.items;
     const hasNoteListData = noteList.length > 0;
-
     if (hasNoteListData) {
       const findCurrentNote = noteList.find((note) => note.noteId === noteId);
 
@@ -55,7 +54,7 @@ const useGetData = () => {
   const { isLoading } = useApi<ResponsePropsType>({
     api: 'date/note',
     method: 'GET',
-    queryKey: ['NoteList'],
+    queryKey: ['currentNote'],
     onSuccess: successHandler,
   });
 
@@ -65,7 +64,10 @@ const useGetData = () => {
 
   useEffect(() => {
     const selectedDate = calendarInitailSelectedDate;
-    setNoteValue({ ...noteValue, time: selectedDate ? getDisplayDate(selectedDate) : '' });
+
+    if (selectedDate) {
+      setNoteValue({ ...noteValue, time: selectedDate ? getDisplayDate(selectedDate) : '' });
+    }
   }, []);
 
   return { noteValue, isLoading, onChangeHandler };

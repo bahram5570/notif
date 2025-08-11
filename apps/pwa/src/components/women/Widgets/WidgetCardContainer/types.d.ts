@@ -5,4 +5,5 @@ export interface WidgetCardContainerProps {
   titleElement?: JSX.Element;
   children: React.ReactNode;
   title: string;
+  buttonId?: string;
 }

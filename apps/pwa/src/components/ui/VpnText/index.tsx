@@ -4,7 +4,7 @@ import Typography from '../Typography';
 
 const VpnText = () => {
   const { colors } = useTheme();
-  
+
   return (
     <div className="flex flex-row-reverse items-center justify-start gap-1 ">
       <div

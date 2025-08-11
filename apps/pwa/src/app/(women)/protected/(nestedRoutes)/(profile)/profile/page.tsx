@@ -1,11 +1,7 @@
-import ProfileContainer from '@components/women/pages/nestedRoutes/profile/ProfileContainer';
+import ProfilePage from '@components/women/pages/nestedRoutes/profile/ProfilePage';
 
 const Profile = () => {
-  return (
-    <>
-      <ProfileContainer />
-    </>
-  );
+  return <ProfilePage />;
 };
 
 export default Profile;

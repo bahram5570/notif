@@ -40,8 +40,8 @@ const AvatarContainer = ({
       <div className="flex flex-col items-center justify-center gap-4">
         <div className="relative">
           <div
-            className="overflow-hidden rounded-full flex justify-center items-center bg-white"
-            style={{ border: '4px solid #f2eeee' }}
+            className="overflow-hidden rounded-full flex justify-center items-center  "
+            style={{ border: '4px solid #f2eeee', backgroundColor: colors.White }}
           >
             <CustomImage
               src={manAvatar}
@@ -62,8 +62,8 @@ const AvatarContainer = ({
       <div className="flex flex-col items-center justify-center gap-4" onClick={handleClick}>
         <div className="relative">
           <div
-            className="overflow-hidden rounded-full flex justify-center items-center bg-white"
-            style={{ border: '4px solid #f2eeee' }}
+            className="overflow-hidden rounded-full flex justify-center items-center "
+            style={{ border: '4px solid #f2eeee', backgroundColor: colors.White }}
           >
             <CustomImage
               src={womanAvatar || '/assets/images/defaultProfile.webp'}

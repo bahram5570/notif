@@ -11,7 +11,7 @@ export type CultureConextTypes = {
   cultureHandler: CultureHandlerTypes;
 };
 
-export interface CultureProviderTypes {
+export interface CultureContainerTypes {
   children: React.ReactNode;
   defaultValues: CultureTypes | null;
 }

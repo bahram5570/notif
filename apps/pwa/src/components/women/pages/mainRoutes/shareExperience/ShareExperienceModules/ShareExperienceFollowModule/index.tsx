@@ -48,6 +48,7 @@ const ShareExperienceFollowModule = (props: ShareExperienceFollowModuleProps) =>
           borderColor: colors.Neutral_Surface,
           backgroundColor: props.isFollow ? colors.Neutral_Surface : colors.White,
         }}
+        id={props.isFollow ? 'shareExperienceUserUnfollowed' : 'ShareExperienceUserFollowed'}
       >
         <Typography
           scale="Body"

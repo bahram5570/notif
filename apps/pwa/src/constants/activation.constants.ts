@@ -1,6 +1,7 @@
 import { ActivationTabsListTypes } from '@components/activation/ActivationTabs/types';
 import { CULTURE_INITIAL_VALUES } from '@providers/CultureProvider/constants';
 
+import { APP_VERSION } from './app.constants';
 import { CalendarTypeEnum } from './date.constants';
 
 export const ACTIVATION_PAYLOAD_VALUES = {
@@ -42,7 +43,7 @@ export const ACTIVATION_PAYLOAD_VALUES = {
   preventionSexCommited: -1,
   pragnencyHistoryStatus: -1,
   calendarType: CULTURE_INITIAL_VALUES.calendarType,
-  version: process.env.NEXT_PUBLIC_APP_VERSION || '',
+  version: APP_VERSION || '',
 };
 
 export const ACTIVATION_WELCOMING_PREVIEWED_NAME = 'welcomingPreviewed';

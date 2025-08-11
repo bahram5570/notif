@@ -3,4 +3,5 @@ import { TestKistModalBabyCheckTypes } from '../__hooks__/useTestKitModalsInfo/t
 export interface TestKitModalsBabyCheckProps
   extends Pick<TestKistModalBabyCheckTypes, 'babyCheckType' | 'gregorianDate' | 'moduleType'> {
   onComplete?: () => void;
+  AnalytisId?: string;
 }

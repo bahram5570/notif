@@ -1,4 +1,4 @@
-import SupportTicketDetailContainer from '@components/women/pages/nestedRoutes/SupportTickets/SupportTicketRate';
+import SupportTicketDetailContainer from '@components/women/pages/nestedRoutes/profile/support/SupportTicketDetailPage';
 
 const TicketDetail = () => {
   return <SupportTicketDetailContainer />;

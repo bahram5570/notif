@@ -1,4 +1,4 @@
-import RateContainer from '@components/women/pages/nestedRoutes/SupportTickets/SupportTicketRate/RateContainer';
+import RateContainer from '@components/women/pages/nestedRoutes/profile/support/SupportRatePage';
 
 const Rate = () => {
   return <RateContainer />;

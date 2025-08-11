@@ -79,7 +79,14 @@ const SpecialistPaymant = (props: SpecialistPaymantProps) => {
           <InfoSupport support={props.support} />
           <div className="mt-auto flex flex-col w-full gap-2 ">
             <VpnText />
-            <Button size="medium" variant="fill" color="primary" isLoading={isLoading} onClick={submitHandler}>
+            <Button
+              size="medium"
+              variant="fill"
+              color="primary"
+              isLoading={isLoading}
+              onClick={submitHandler}
+              id="Clinic_Payment_Press"
+            >
               {props.submit}
             </Button>
           </div>

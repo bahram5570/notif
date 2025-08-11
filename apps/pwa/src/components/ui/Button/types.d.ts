@@ -14,6 +14,7 @@ export type ButtonProps = ButtonColorsSystemTypes & {
   className?: string;
   hasArrow?: boolean;
   testId?: string;
+  id?: string;
   size: SizeTypes;
 };
 

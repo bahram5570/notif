@@ -16,4 +16,5 @@ export type CustomImageProps = {
   objectFit?: 'cover' | 'contain';
   src: string | FileUploadImageFileTypes;
   previewImageShape?: PreviewImageShapeTypes;
+  id?: string;
 };

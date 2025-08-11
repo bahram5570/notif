@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { isDevelopeMode } from '@utils/system';
 
+import { APP_VERSION } from '@constants/app.constants';
 import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
@@ -11,6 +12,7 @@ import { ProfileResponseTypes, UseGetProfileDataPropsType } from './type';
 const useGetProfileData = (onComplete?: UseGetProfileDataPropsType) => {
   const { cultureHandler } = useCulture();
   const isFirstTime = useRef(isDevelopeMode());
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
   const { newQuery, getQuery } = useCustomReactQuery(['profile']);
 
   const successHandler = (v: ProfileResponseTypes) => {
@@ -34,7 +36,7 @@ const useGetProfileData = (onComplete?: UseGetProfileDataPropsType) => {
     const payload = {
       type: 0,
       packageName: '',
-      version: process.env.NEXT_PUBLIC_APP_VERSION || '',
+      version: APP_VERSION || '',
     };
 
     getData(payload);
@@ -44,21 +46,12 @@ const useGetProfileData = (onComplete?: UseGetProfileDataPropsType) => {
     getDataHandler();
   };
 
-  const [countingDown, setCountingDown] = useState(false);
+  const updateProfileDateByDellay = (seconds?: number) => {
+    const ms = typeof seconds === 'undefined' ? 3 : seconds;
 
-  useEffect(() => {
-    if (countingDown) {
-      const timer = setTimeout(() => {
-        setCountingDown(false);
-        getDataHandler();
-      }, 3000);
-
-      return () => clearTimeout(timer);
-    }
-  }, [countingDown]);
-
-  const updateProfileDateByDellay = () => {
-    setCountingDown(true);
+    timerRef.current = setTimeout(() => {
+      timerRef.current = null;
+    }, ms * 1000);
   };
 
   useEffect(() => {
@@ -71,6 +64,10 @@ const useGetProfileData = (onComplete?: UseGetProfileDataPropsType) => {
       getDataHandler();
     } else {
       newQuery({ payload: data, queryKey: ['profile'] });
+    }
+
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
     }
   }, []);
 

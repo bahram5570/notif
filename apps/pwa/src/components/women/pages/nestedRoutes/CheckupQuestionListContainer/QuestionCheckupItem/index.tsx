@@ -21,7 +21,11 @@ const QuestionCheckupItem = ({ icon, name, type }: QuestionCheckupItemPropsType)
   };
 
   return (
-    <div className="flex flex-row-reverse justify-between items-center p-4 " onClick={linkTo}>
+    <div
+      className="flex flex-row-reverse justify-between items-center p-4 "
+      onClick={linkTo}
+      id="PregnancyCareWeekClick"
+    >
       <div className="flex flex-row items-center gap-3">
         <Typography scale="Body" size="Medium">
           {name}

@@ -15,8 +15,8 @@ const RequestSection = () => {
 
   return (
     <div
-      className="bg-white flex flex-col gap-4 p-3 rounded-xl "
-      style={{ border: `1px solid ${colors.Neutral_Surface}` }}
+      className=" flex flex-col gap-4 p-3 rounded-xl "
+      style={{ border: `1px solid ${colors.Neutral_Surface}`, backgroundColor: colors.White }}
     >
       <div className="flex justify-between items-center ">
         <div onClick={getData}>

@@ -42,7 +42,7 @@ const ReadMoreText = ({ text, maxLines = 3 }: { text: string; maxLines: number }
       </div>
 
       {isTruncated && (
-        <div onClick={() => setIsExpanded(!isExpanded)}>
+        <div onClick={() => setIsExpanded(!isExpanded)} id="PregnancyCheckupCardClick">
           <div className="flex flex-row-reverse gap-1 justify-end mt-3">
             <Typography scale="Lable" size="Small" color="PrimaryWoman_Primary">
               {isExpanded ? 'بستن اطلاعات بیشتر ' : 'خواندن اطلاعات بیشتر'}

@@ -1,8 +1,11 @@
 'use client';
 
 import useActivationCrPayload from '@providers/__activation__/ActivationCrProvider/__hooks__/useActivationCrPayload';
+import dynamic from 'next/dynamic';
 
-import FakeCyclePageContainer from './FakeCyclePageContainer';
+const DynamicComponentWithNoSSR = dynamic(() => import('./FakeCyclePageContainer'), {
+  ssr: false,
+});
 
 const FakeCycle = () => {
   // # چرخه موقت
@@ -10,7 +13,7 @@ const FakeCycle = () => {
 
   return (
     <>
-      <FakeCyclePageContainer payload={payload} payloadHandler={payloadHandler} />
+      <DynamicComponentWithNoSSR payload={payload} payloadHandler={payloadHandler} />
     </>
   );
 };

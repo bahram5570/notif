@@ -1,6 +1,4 @@
-'use client';
-
-import TicketContainer from '@components/women/pages/nestedRoutes/SupportTickets/SupportTicketsContainer';
+import TicketContainer from '@components/women/pages/nestedRoutes/profile/support/SupportTicketsListPage';
 
 const Ticket = () => {
   return <TicketContainer />;

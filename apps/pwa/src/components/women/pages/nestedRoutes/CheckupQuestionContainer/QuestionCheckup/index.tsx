@@ -59,6 +59,7 @@ const QuestionCheckup = ({ question }: QuestionCheckupPropsType) => {
         className="mt-auto"
         isLoading={isLoading}
         isDisable={checkEmptySelectedValueList}
+        id="PregnancyCheckAnswer"
       >
         ثبت اطلاعات
       </Button>

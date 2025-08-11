@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
-import useCurrentDateInSigns from '@hooks/useCurrentDateInSigns';
+import useSignDateState from '@hooks/useSignDateState';
 
 import { SlideHandlerTypes, UseSignsSlideProps } from './types';
 
 const useSignsSlide = ({ infoList }: UseSignsSlideProps) => {
   const [slide, setSlide] = useState(0);
-  const { changeCurrentDate, calendarInitailSelectedDate } = useCurrentDateInSigns();
+  const { changeCurrentDate, calendarInitailSelectedDate } = useSignDateState();
 
   const initialSelectedDateHandler = (i: number) => {
     const date = infoList[i].gregorianDate;

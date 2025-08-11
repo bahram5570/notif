@@ -5,7 +5,7 @@ import { WidgetPregnancyCheckupPropsTypes } from './type';
 
 const WidgetPregnancyCheckup = ({ data }: WidgetPregnancyCheckupPropsTypes) => {
   return (
-    <WidgetCardContainer title={data.title} button={data.button}>
+    <WidgetCardContainer title={data.title} button={data.button} buttonId="CheckupWidgetButton">
       <div className="flex flex-col gap-2">
         {data.items.map((item, index) => {
           return <PregnancyCheckupItem {...item} key={index} />;

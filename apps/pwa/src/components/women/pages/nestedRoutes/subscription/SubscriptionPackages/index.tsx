@@ -28,7 +28,7 @@ const SubscriptionPackages = ({
       ))}
 
       {!showAll && (
-        <div className="w-full flex items-center gap-2 p-4 " onClick={showAllHandler}>
+        <div className="w-full flex items-center gap-2 p-4 " onClick={showAllHandler} id="SubscriptionLoadMore">
           <div className="w-full h-[1px] block" style={{ backgroundColor: colors.Neutral_Surface }} />
 
           <Typography scale="Lable" size="Medium" className="min-w-fit">

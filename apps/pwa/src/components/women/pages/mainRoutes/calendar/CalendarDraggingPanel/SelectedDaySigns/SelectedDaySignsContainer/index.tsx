@@ -1,7 +1,7 @@
 import LinkIcon from '@assets/icons/calendarSignLink.svg';
 
-import useCurrentDateInSigns from '@hooks/useCurrentDateInSigns';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import useSignDateState from '@hooks/useSignDateState';
 
 import { CalendarInitialSelectedDateType } from '../../../__hooks__/useCalendar/types';
 import { CalendarWidgetEnums } from '../../../__hooks__/useCalendarGetData/CalendarEnums';
@@ -11,7 +11,7 @@ import { SelectedDaySignsContainerProps } from './types';
 
 const SelectedDaySignsContainer = ({ selectedDateInfo }: SelectedDaySignsContainerProps) => {
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { changeCurrentDate } = useCurrentDateInSigns();
+  const { changeCurrentDate } = useSignDateState();
 
   const signs = selectedDateInfo.items.find((item) => item.type === CalendarWidgetEnums.Sign)?.data.signs;
 
@@ -30,7 +30,7 @@ const SelectedDaySignsContainer = ({ selectedDateInfo }: SelectedDaySignsContain
     <div className="relative w-full flex items-center justify-end">
       {signs && signs.length > 0 ? <SignsList signs={signs} /> : <NoSigns />}
 
-      <div className="relative cursor-pointer" onClick={linkTo}>
+      <div className="relative cursor-pointer" onClick={linkTo} id="Sign_From_Calendar">
         <LinkIcon className="w-14 h-auto" />
       </div>
     </div>

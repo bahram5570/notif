@@ -45,6 +45,11 @@ const ShareExperienceDeleteModal = () => {
 
   const isLoading = isExperienceLoading || isCommentLoading || isReplyLoading;
 
+  const isExperience = queryData?.type === 'experience';
+  const isComment = queryData?.type === 'comment';
+
+  const idDelete = isExperience ? 'Delete_Experience ' : isComment ? 'shareExperienceDeleteComment' : '';
+
   const Icon = (
     <div
       className="flex items-center justify-center w-10 h-10 rounded-full"
@@ -65,6 +70,7 @@ const ShareExperienceDeleteModal = () => {
         isLoading={isLoading}
         title={title}
         icon={Icon}
+        id={idDelete}
       />
     </>
   );

@@ -7,15 +7,15 @@ import {
   ItemsTypes,
 } from '@components/women/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
 import useApi from '@hooks/useApi';
-import useCurrentDateInSigns from '@hooks/useCurrentDateInSigns';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import useSignDateState from '@hooks/useSignDateState';
 
 const useGetData = () => {
   const [initailBloodSugerList, setInitailBloodSugerList] = useState<BloodSugerType[]>([]);
 
   const { getQuery } = useCustomReactQuery();
   const queryData = getQuery<InfoCalendarResponseTypes>({ queryKey: ['signsInfoCalendar'] });
-  const { calendarInitailSelectedDate } = useCurrentDateInSigns();
+  const { calendarInitailSelectedDate } = useSignDateState();
 
   const selectedDate = calendarInitailSelectedDate;
 

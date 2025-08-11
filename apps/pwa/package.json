@@ -27,9 +27,6 @@
     "jspdf": "^2.5.2",
     "lottie-react": "^2.4.0",
     "moment-jalaali": "^0.10.1",
-    "next": "14.2.5",
-    "react": "^18",
-    "react-dom": "^18",
     "react-intersection-observer": "^9.14.1",
     "react-toastify": "^10.0.5",
     "sharp": "^0.33.5",
@@ -43,15 +40,11 @@
     "@types/jest": "^30.0.0",
     "@types/js-cookie": "^3.0.6",
     "@types/moment-jalaali": "^0.7.9",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
     "@types/swiper": "^5.4.3",
     "jest": "^30.0.5",
     "jest-css-modules-transform": "^4.4.2",
     "jest-environment-jsdom": "^30.0.5",
     "msw": "^2.10.4",
-    "ts-jest": "^29.4.1",
-    "ts-node": "^10.9.2"
+    "ts-jest": "^29.4.1"
   }
 }

@@ -1,3 +1,4 @@
+import { APP_VERSION } from '@constants/app.constants';
 import useApi from '@hooks/useApi';
 import { useRouter } from 'next/navigation';
 
@@ -13,7 +14,7 @@ const useAvatar = () => {
   const { callApi, isLoading } = useApi({
     method: 'POST',
     onSuccess: successHandler,
-    api: `profile/image?AppVersion=${process.env.NEXT_PUBLIC_APP_VERSION || ''}`,
+    api: `profile/image?AppVersion=${APP_VERSION || ''}`,
   });
 
   const editHandler = (v: ResponseType) => {

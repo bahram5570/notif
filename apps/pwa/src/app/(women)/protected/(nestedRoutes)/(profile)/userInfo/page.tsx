@@ -1,6 +1,4 @@
-'use client';
-
-import UserInfoContainer from '@components/women/pages/nestedRoutes/UserInfoContainer';
+import UserInfoContainer from '@components/women/pages/nestedRoutes/profile/UserInfoPage';
 
 const UserInfo = () => {
   return <UserInfoContainer />;

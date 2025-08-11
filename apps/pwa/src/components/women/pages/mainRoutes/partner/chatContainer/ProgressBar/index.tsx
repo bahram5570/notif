@@ -80,7 +80,10 @@ const ProgressBar = ({ progress, avatar, partnerAvatar, className }: ProgressBar
           }}
         >
           <div className="flex items-center relative">
-            <div className={`w-6 h-6 rounded-full border-2 border-white overflow-hidden ml-0 relative bg-white`}>
+            <div
+              className={`w-6 h-6 rounded-full overflow-hidden ml-0 relative `}
+              style={{ backgroundColor: colors.White, border: `2px solid ${colors.White}` }}
+            >
               <CustomImage
                 src={partnerAvatar}
                 className="w-full h-full !object-cover"
@@ -88,7 +91,8 @@ const ProgressBar = ({ progress, avatar, partnerAvatar, className }: ProgressBar
               />
             </div>
             <div
-              className={`w-6 h-6 rounded-full border-2 border-white overflow-hidden  ml-0 absolute left-4 bg-white`}
+              className={`w-6 h-6 rounded-full  overflow-hidden  ml-0 absolute left-4 `}
+              style={{ backgroundColor: colors.White, border: `2px solid ${colors.White}` }}
             >
               <CustomImage
                 src={avatar}

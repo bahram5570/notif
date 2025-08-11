@@ -16,6 +16,7 @@ const ShareExperienceApproveModalsModule = ({
   isOpen,
   title,
   icon,
+  id,
 }: ShareExperienceApproveModalsModuleProps) => {
   const router = useRouter();
   const { colors } = useTheme();
@@ -44,6 +45,7 @@ const ShareExperienceApproveModalsModule = ({
               onClick={applyHandler}
               contentsColor={colors.Error_Error}
               buttonColor={colors.Error_ErrorContainer}
+              id={id}
             >
               {applyButtonText}
             </Button>

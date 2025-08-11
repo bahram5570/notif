@@ -1,3 +1,4 @@
+import { APP_VERSION } from '@constants/app.constants';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -13,7 +14,7 @@ const UploadBackgroundImageModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
   const partnerInfo = getQuery<ChallengeResponseType>({ queryKey: ['partner'] });
   const { deleteHandler } = useDelete({
-    api: `pair/cover/?AppVersion=${process.env.NEXT_PUBLIC_APP_VERSION || ''}`,
+    api: `pair/cover/?AppVersion=${APP_VERSION || ''}`,
     onSuccess: () => updateQuery({ queryKey: ['partner'], payload: { ...partnerInfo, coverImage: '' } }),
   });
 

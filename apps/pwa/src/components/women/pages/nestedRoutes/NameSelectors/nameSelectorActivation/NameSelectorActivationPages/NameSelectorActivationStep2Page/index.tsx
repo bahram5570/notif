@@ -19,7 +19,7 @@ const IMAGES_LIST = {
 
 const NameSelectorActivationStep2Page = () => {
   const { data, payload, payloadHandler } = useNameSelectorActivationData();
-  const { isNextStepLoading, nextStepNavigation } = useNameSelectorActivationSteps();
+  const { isNextStepLoading, nextStepNavigation, stepInfo } = useNameSelectorActivationSteps();
 
   if (!data) {
     return <></>;
@@ -32,6 +32,7 @@ const NameSelectorActivationStep2Page = () => {
         onClick={nextStepNavigation}
         isLoading={isNextStepLoading}
         isDisable={payload.gender === SelectNameGenderEnum.None}
+        currentStep={stepInfo.page}
       >
         <Typography scale="Title" size="Small" color="Surface_InverseSurface" className="mx-auto pb-8">
           {data.gender.title}
