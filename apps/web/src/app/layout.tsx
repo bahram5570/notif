@@ -1,3 +1,5 @@
+import './globals.css';
+
 import { MAX_WIDTH } from '@constants/app.constants';
 import { HOST_URL } from '@constants/links.constants';
 import CustomToastProvider from '@providers/CustomToastProvider';
@@ -7,7 +9,6 @@ import { Metadata } from 'next';
 import Script from 'next/script';
 
 import OperatingSystemProvider from '../providers/OperatingSystemProvider';
-import './globals.css';
 
 export const metadata: Metadata = {
   openGraph: {

@@ -19,12 +19,12 @@
       {
         "name": "next"
       }
-    ]
+    ],
+    "noEmit": true
   },
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    "svgr.d.ts",
     "svgr.jest.ts",
     "next-env.d.ts",
     "jest.setup.ts",

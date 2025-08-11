@@ -4,25 +4,28 @@
   "scripts": {
     "lint": "turbo run lint",
     "format": "prettier --write .",
-    "build:components": "cd packages/components && npm run build",
-    "build:assets": "cd packages/assets && npm run build",
-    "build:core": "cd packages/core && npm run build",
-    "build:pwa": "npm run build:assets && npm run build:core && npm run build:components && cd apps/pwa && npm run build",
-    "test:unit:pwa": "cd apps/pwa && npm run test:unit",
-    "install:pwa": "cd apps/web && npm run install",
-    "start:pwa": "cd apps/pwa && npm run start",
-    "dev:pwa": "cd apps/pwa && npm run dev",
-    "build:web": "npm run build:assets && npm run build:core && npm run build:components && cd apps/web && npm run build",
-    "install:web": "cd apps/web && npm install",
-    "start:web": "cd apps/web && npm run start",
-    "dev:web": "cd apps/web && npm run dev"
+
+    "packages:build": "npm run components:build && npm run assets:build && npm run core:build",
+    "components:build": "cd packages/components && npm run build",
+    "assets:build": "cd packages/assets && npm run build",
+    "core:build": "cd packages/core && npm run build",
+
+    "pwa:build": "npm run packages:build && cd apps/pwa && npm install && npm run build",
+    "pwa:test:unit": "cd apps/pwa && npm run test:unit",
+    "pwa:start": "cd apps/pwa && npm run start",
+    "pwa:dev": "cd apps/pwa && npm run dev",
+
+    "web:build": "npm run packages:build && cd apps/web && npm install && npm run build",
+    "web:install": "cd apps/web && npm install",
+    "web:start": "cd apps/web && npm run start",
+    "web:dev": "cd apps/web && npm run dev"
   },
   "dependencies": {
     "eslint-plugin-jest": "^28.6.0",
-    "next": "14.2.5",
-    "react": "^18",
+    "typescript": "^5.8.3",
     "react-dom": "^18",
-    "typescript": "^5.8.3"
+    "next": "14.2.5",
+    "react": "^18"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.2.5",
@@ -46,7 +49,7 @@
   },
   "packageManager": "npm@10.9.3",
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "packages/*",
+    "apps/*"
   ]
 }
