@@ -1,5 +1,3 @@
-import RepoInput from '@repo/components/ui/RepoInput';
-
 import Achievements from '@components/Achievements';
 import AppFeatures from '@components/AppFeatures';
 import LandingArticles from '@components/Articles/LandingArticles';
@@ -18,7 +16,6 @@ const HomePageContainer = () => {
     <HeaderFooterContainer hasFooterLink={true}>
       <div className="relative w-full flex flex-col items-center gap-12 pb-12">
         <HomeHeading />
-        <RepoInput />
         <QrCode />
         <Achievements list={HOME_ACHIEVEMENTS_LIST} />
         <AppFeatures />

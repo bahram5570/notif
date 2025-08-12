@@ -21,6 +21,13 @@
     },
     "jsx": "preserve"
   },
-  "include": ["**/*.ts", "**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts"],
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "next-env.d.ts",
+    ".next/types/**/*.ts",
+    "dist-maker-file.mts",
+    "dist-maker-file.js"
+  ],
   "exclude": ["node_modules"]
 }

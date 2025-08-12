@@ -2,11 +2,13 @@
   "name": "pwa",
   "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "start": "next start",
     "test:unit": "jest --watch",
-    "start": "next start -p 4001"
+    "export": "node export-maker-file.js"
   },
   "dependencies": {
     "@repo/core": "*",

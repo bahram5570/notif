@@ -1,5 +1,6 @@
 {
   "name": "impo-apps",
+  "version": "0.0.0",
   "private": true,
   "scripts": {
     "lint": "turbo run lint",
@@ -12,24 +13,29 @@
 
     "pwa:build": "npm run packages:build && cd apps/pwa && npm install && npm run build",
     "pwa:test:unit": "cd apps/pwa && npm run test:unit",
+    "pwa:export": "cd apps/pwa && npm run export",
     "pwa:start": "cd apps/pwa && npm run start",
+    "pwa:install": "cd apps/pwa && npm install",
     "pwa:dev": "cd apps/pwa && npm run dev",
-
+    
     "web:build": "npm run packages:build && cd apps/web && npm install && npm run build",
+    "web:export": "cd apps/web && npm run export",
     "web:install": "cd apps/web && npm install",
     "web:start": "cd apps/web && npm run start",
     "web:dev": "cd apps/web && npm run dev"
   },
   "dependencies": {
     "eslint-plugin-jest": "^28.6.0",
-    "typescript": "^5.8.3",
-    "react-dom": "^18",
+    "fs-extra": "^11.3.1",
     "next": "14.2.5",
-    "react": "^18"
+    "react": "^18",
+    "react-dom": "^18",
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^14.2.5",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/fs-extra": "^11.0.4",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
