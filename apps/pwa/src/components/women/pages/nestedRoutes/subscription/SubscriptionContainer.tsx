@@ -6,6 +6,8 @@ import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { LottieCanvas } from '@lib/LottieCanvas';
 
+import ApprovedCodeToast from './ApprovedCodeToast';
+import DiscountLoading from './DiscontLoading';
 import DiscountCode from './DiscountCode';
 import Heading from './Heading';
 import SubmitBtn from './SubmitBtn';
@@ -38,6 +40,7 @@ const SubscriptionContainer = () => {
                 <LottieCanvas src={data?.medias[0]} autoplay={true} style={{ width: '100%', height: '100%' }} />
               </div>
               <Heading title={data.title} description={data.description} />
+              {approvedCode && !loadingResponse && <ApprovedCodeToast />}
 
               <SubscriptionPackages
                 showAll={showAll}
@@ -73,6 +76,7 @@ const SubscriptionContainer = () => {
               />
             </div>
           </div>
+          {loadingResponse && <DiscountLoading loading={loadingResponse} />}
         </WomenPageLayout>
       )}
     </>

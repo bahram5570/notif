@@ -17,7 +17,7 @@ const SubscriptionPackages = ({
   const { updatedList } = useUpdatedList({ packages, showAll, visibleCount });
 
   return (
-    <div className="w-full z-0">
+    <div className="w-full z-0 flex flex-col gap-6 my-4">
       {updatedList.map((items, index) => (
         <SubscriptionGenerator
           onSelect={() => selectedPackageIndexHandler(index)}

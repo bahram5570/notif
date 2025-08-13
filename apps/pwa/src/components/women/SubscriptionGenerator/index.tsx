@@ -21,7 +21,7 @@ const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
   return (
     <div
       onClick={selectHandler}
-      className="w-full rounded-xl border-[1px] my-4 overflow-hidden "
+      className="w-full rounded-xl border-[1px]  relative"
       style={{
         borderColor: isSelected ? colors.PrimaryWoman_Primary : colors.Surface_OutlineVariant,
         backgroundColor: isSelected ? colors.PrimaryWoman_PrimaryContainer : colors.Neutral_Background,
@@ -29,10 +29,11 @@ const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
     >
       {props.specificText && (
         <div
-          className="w-full flex justify-center py-1"
-          style={{ backgroundColor: isSelected ? colors.PrimaryWoman_Primary : colors.Surface_OutlineVariant }}
+          className="flex justify-center py-1 my-2 w-fit rounded-xl px-2 absolute -top-[1.5rem] left-4"
+          // style={{ backgroundColor: isSelected ? colors.PrimaryWoman_Primary : colors.Surface_OutlineVariant }}
+          style={{ background: 'linear-gradient(90deg, #FC6767 0%, #EC008C 100%)' }}
         >
-          <Typography scale="Lable" size="SmallProminet" color={isSelected ? 'White' : 'Surface_Outline'}>
+          <Typography scale="Lable" size="SmallProminet" color="White">
             {props.specificText}
           </Typography>
         </div>
