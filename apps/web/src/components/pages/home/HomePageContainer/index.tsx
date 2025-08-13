@@ -10,6 +10,7 @@ import Scores from '@components/Scores';
 import HomeFooter from './HomeFooter';
 import HomeHeading from './HomeHeading';
 import { HOME_ACHIEVEMENTS_LIST, HOME_COMMENTS_LIST } from './constants';
+import ImpoServices from '@components/ImpoServices';
 
 const HomePageContainer = () => {
   return (
@@ -17,6 +18,7 @@ const HomePageContainer = () => {
       <div className="relative w-full flex flex-col items-center gap-12 pb-12">
         <HomeHeading />
         <QrCode />
+        <ImpoServices />
         <Achievements list={HOME_ACHIEVEMENTS_LIST} />
         <AppFeatures />
         <Scores title="امتیاز کاربران در اَپ‌استور" />
