@@ -12,13 +12,13 @@ import { CustomModalProps } from './types';
 import useModalRendered from './useModalRendered';
 
 const CustomModal = ({
+  zIndex = MODAL_DEFAULT_Z_INDEX,
   isSlidingMode = false,
   isFullScreen = false,
   backgroundColor,
   className,
   children,
   isOpen,
-  zIndex = MODAL_DEFAULT_Z_INDEX,
 }: CustomModalProps) => {
   const router = useRouter();
   const { colors } = useTheme();
@@ -64,22 +64,25 @@ const CustomModal = ({
           onClick={clickHandler}
           id={MODAL_BACKGROUND_ID}
           style={{
+            zIndex,
             maxWidth: MAX_SCREEN_WIDTH,
             opacity: isDelayPassed ? '1' : '0',
             pointerEvents: isModalOpen ? 'all' : 'none',
             alignItems: isSlidingModeTrue ? 'flex-end' : 'center',
-            zIndex,
           }}
-          className={`fixed top-0 left-0 right-0 bottom-0 flex justify-center mx-auto  
-              ${isModalOpen ? 'animate-modalBackgroundOpen' : 'animate-modalBackgroundClose'}`}
+          className={`
+                      fixed top-0 left-0 right-0 bottom-0 flex justify-center mx-auto  
+                      ${isModalOpen ? 'animate-modalBackgroundOpen' : 'animate-modalBackgroundClose'}
+                    `}
         >
           <div
-            className={`px-4 py-6 rounded-xl
-                ${className}
+            className={`
+                px-4 py-6 rounded-xl
                 ${!isSlidingModeTrue && !isModalOpen && 'animate-modalCenterModeClose'}
                 ${!isSlidingModeTrue && isModalOpen && 'animate-modalCenterModeOpen'}
                 ${isSlidingModeTrue && !isModalOpen && 'animate-modalSlidingModeClose'}
                 ${isSlidingModeTrue && isModalOpen && 'animate-modalSlidingModeOpen'}
+                ${className}
             `}
             style={{
               borderRadius,
@@ -90,7 +93,8 @@ const CustomModal = ({
               backgroundColor: typeof backgroundColor === 'undefined' ? colors.White : backgroundColor,
             }}
           >
-            <Fragment key={isModalOpen ? 'k1' : 'k2'}>{children}</Fragment>
+            {/* <Fragment key={isModalOpen ? 'k1' : 'k2'}>{children}</Fragment> */}
+            {isModalOpen && <>{children}</>}
           </div>
         </div>,
         document.getElementById(PORTAL_ID) as Element,
