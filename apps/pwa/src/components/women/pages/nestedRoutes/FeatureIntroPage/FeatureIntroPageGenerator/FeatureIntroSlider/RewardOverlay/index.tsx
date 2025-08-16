@@ -8,8 +8,8 @@ import { RewardOverlayPropsType } from './type';
 const RewardOverlay = ({ initialReward }: RewardOverlayPropsType) => {
   return (
     <div
-      className="absolute inset-0 flex items-center flex-col justify-center z-50"
-      style={{ backgroundColor: 'rgba(0, 0, 0, 0.32)', backdropFilter: 'blur(7.5px)' }}
+      className="absolute inset-0 flex items-center flex-col justify-center z-50 mx-auto pointer-events-none"
+      style={{ backgroundColor: 'rgba(0, 0, 0, 0.32)', backdropFilter: 'blur(7.5px)', maxWidth: MAX_SCREEN_WIDTH }}
     >
       <LottieCanvas
         autoplay={true}
@@ -17,13 +17,9 @@ const RewardOverlay = ({ initialReward }: RewardOverlayPropsType) => {
         src={'/assets/lottie/Confetti1.lottie'}
         className={`fixed left-0 right-0 bottom-[35%] w-full h-[50dvh]  mx-auto select-none pointer-events-none z-30`}
       />
-      <CustomImage
-        // src={item.media}
-        src="/assets/images/reward.webp"
-        className="object-cover z-40"
-      />
+      <CustomImage src="/assets/images/reward.webp" className="object-cover z-40" width={100} height={100} />
       <Typography scale="Title" size="Medium" color="Neutral_Background" textAlign="center">
-        تبریک! تو یک قدم به خود مراقبتی نزدیک شدی🥳
+        {initialReward}
       </Typography>
     </div>
   );

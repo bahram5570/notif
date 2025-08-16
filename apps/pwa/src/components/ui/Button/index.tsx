@@ -54,6 +54,7 @@ function Button(props: ButtonProps) {
         ${(isLoading || props.isDisable) && 'cursor-not-allowed'} ${props.className}
       `}
       id={props.id}
+      disabled={props.isDisable}
     >
       <div className={`w-full h-full flex justify-center gap-2 ${isLoading && 'opacity-0'}`}>
         <div className="flex justify-center items-center">{props.children}</div>

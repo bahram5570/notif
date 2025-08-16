@@ -19,7 +19,12 @@ const RewardModal = ({ data, goToNext, correctAnswer }: RewardModalPropsType) =>
   const backgroundColor = correctAnswer ? colors.Success_SuccessContainer : colors.Error_ErrorContainer;
 
   return (
-    <CustomModal isOpen={isOpenRewardModal} isFullScreen={false} isSlidingMode={true} backgroundColor={backgroundColor}>
+    <CustomModal
+      isOpen={isOpenRewardModal}
+      isFullScreen={false}
+      isSlidingMode={false}
+      backgroundColor={backgroundColor}
+    >
       <div className="flex flex-col items-center pb-4 gap-2" data-testid={'reward-modal-trailonboarding'}>
         <div className="flex flex-col items-end w-full px-4 gap-1">
           <Typography scale="Title" size="Medium" color={correctAnswer ? 'Success_Success' : 'Error_Error'}>

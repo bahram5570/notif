@@ -1,5 +1,6 @@
 'use client';
 
+import Spinner from '@components/ui/Spinner';
 import useFeatureIntro from '@hooks/__featureIntro__/useFeatureIntro';
 import useTheme from '@hooks/useTheme';
 
@@ -14,7 +15,13 @@ const FeatureIntroPage = () => {
 
   return (
     <div className="w-full min-h-[100dvh] " style={{ backgroundColor: colors.Surface_SurfaceVariant }}>
-      {data && (
+      {isLoading && (
+        <div className="w-full h-dvh flex justify-center items-center">
+          <Spinner color="primary" width={50} borderWidth={5} />
+        </div>
+      )}
+
+      {data && !isLoading && (
         <>
           <FeatureIntroPageHeader progress={currentStep} IsLastItem={IsLastItem} totalPages={totalPages} />
           <FeatureIntroPageGenerator {...data.pages[currentStep]} goToNext={goToNext} />

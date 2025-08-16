@@ -1,8 +1,8 @@
-import { RewardModalType } from '@providers/FeatureIntroProvider/__hooks__/useGetData/type';
+import { RewardModalType } from '@providers/__featureIntro__/FeatureIntroProvider/__hooks__/useGetData/type';
 
-import { TrailonboardingQuestionPropsType } from '../type';
+import { FeatureIntroQuestionPropsType } from '../type';
 
-type ItemType = Pick<TrailonboardingQuestionPropsType, 'goToNext'>;
+type ItemType = Pick<FeatureIntroQuestionPropsType, 'goToNext'>;
 
 export interface RewardModalPropsType extends ItemType {
   data: RewardModalType | null;

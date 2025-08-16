@@ -21,12 +21,7 @@ const SlideItemSliderImage = ({ currentIndex, slides }: SlideItemSliderImageProp
                 width: '80%',
               }}
             >
-              <CustomImage
-                // src={item.media}
-                src="/assets/images/Day1L3.webp"
-                alt={`Slide ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
+              <CustomImage src={item.media} alt={`Slide ${index + 1}`} className="w-full h-full object-cover" />
             </div>
           );
         })}

@@ -29,6 +29,8 @@ const OptionListContainer = ({ options, handleClick, selectedIndex }: OptionList
             onClick={() => {
               handleClick(index);
             }}
+            data-testid={'featureIntro-option-item'}
+            role="radio"
           >
             {isSelected && (
               <div

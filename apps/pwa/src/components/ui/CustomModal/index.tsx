@@ -93,8 +93,8 @@ const CustomModal = ({
               backgroundColor: typeof backgroundColor === 'undefined' ? colors.White : backgroundColor,
             }}
           >
-            {/* <Fragment key={isModalOpen ? 'k1' : 'k2'}>{children}</Fragment> */}
-            {isModalOpen && <>{children}</>}
+            <Fragment key={isModalOpen ? 'k1' : 'k2'}>{children}</Fragment>
+            {/* {isModalOpen && <>{children}</>} */}
           </div>
         </div>,
         document.getElementById(PORTAL_ID) as Element,

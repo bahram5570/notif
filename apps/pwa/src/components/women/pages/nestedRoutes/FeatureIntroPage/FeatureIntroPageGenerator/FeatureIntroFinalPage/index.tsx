@@ -1,12 +1,11 @@
 import CustomImage from '@components/ui/CustomImage';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
+import FeatureIntroBtn from '../FeatureIntroBtn';
 import TrailonboardingContainer from '../FeatureIntroContainer';
 import { FeatureIntroFinalPagePropsType } from './type';
 
 const FeatureIntroFinalPage = ({ data }: FeatureIntroFinalPagePropsType) => {
-  const { removeQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const onclick = () => {
@@ -15,17 +14,12 @@ const FeatureIntroFinalPage = ({ data }: FeatureIntroFinalPagePropsType) => {
       linkTo: `/protected/cycle`,
       id: `trailonboarding-finalStep`,
     });
-    // removeQueryParamsHandler('step');
   };
 
   return (
-    <TrailonboardingContainer
-      description={data.description}
-      title={data.title}
-      textBtn={data.textBtn}
-      onClickHandler={onclick}
-    >
+    <TrailonboardingContainer description={data.description} title={data.title}>
       <CustomImage src={data.media} className="w-full h-auto" />
+      <FeatureIntroBtn onClick={onclick} textBtn={data.textBtn} />
     </TrailonboardingContainer>
   );
 };

@@ -39,15 +39,18 @@ const FeatureIntroProvider = ({ children }: { children: React.ReactNode }) => {
   }, [stepParam]);
 
   const goToNext = () => {
+    const searchData = getQueryParams('searchData');
+
     if (currentStep + 1 < totalPages) {
       const nextIndex = currentStep + 1;
       pageNavigationHandler({
         showProgressBar: true,
-        linkTo: `/protected/trailonboarding?step=${nextIndex}`,
-        id: `trailonboarding-${nextIndex}`,
+        linkTo: `/protected/featureIntro?${searchData ? `searchData=${encodeURIComponent(searchData)}&step=${nextIndex}` : `step=${nextIndex}`}`,
+        id: `featureIntro-${nextIndex}`,
       });
     }
   };
+
   return (
     <FeatureIntroContext.Provider value={{ data, isLoading, goToNext, currentStep, totalPages }}>
       {children}

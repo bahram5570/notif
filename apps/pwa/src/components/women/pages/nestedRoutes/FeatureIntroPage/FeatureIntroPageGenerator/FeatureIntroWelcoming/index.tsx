@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
-import Button from '@components/ui/Button';
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import { LottieCanvas } from '@lib/LottieCanvas';
 
+import FeatureIntroBtn from '../FeatureIntroBtn';
 import FeatureIntroContainer from '../FeatureIntroContainer';
 import { FeatureIntroWelcomingPropsType } from './type';
 
@@ -42,17 +42,6 @@ const FeatureIntroWelcoming = ({ data, goToNext }: FeatureIntroWelcomingPropsTyp
             />
           )}
         </div>
-        {isOpen && (
-          <div className="px-4 w-full">
-            <LottieCanvas
-              autoplay={true}
-              style={{ maxWidth: MAX_SCREEN_WIDTH }}
-              src={'/assets/lottie/Confetti1.lottie'}
-              className={`fixed left-0 right-0 bottom-[35%] w-full h-[50dvh]  mx-auto select-none pointer-events-none `}
-            />
-            <CustomImage src={data.footerContent} className="px-4 transition-opacity duration-700 ease-in-out z-10" />
-          </div>
-        )}
         {!isOpen && (
           <Typography scale="Title" size="Small" color="Neutral_OnSurface">
             {data.primaryText}
@@ -60,14 +49,18 @@ const FeatureIntroWelcoming = ({ data, goToNext }: FeatureIntroWelcomingPropsTyp
         )}
 
         {isOpen && (
-          <div
-            className="fixed bottom-0 p-4 mx-auto w-full transition-opacity duration-700 ease-in-out"
-            style={{ maxWidth: MAX_SCREEN_WIDTH }}
-          >
-            <Button size="large" variant="fill" color="onSurface" onClick={goToNext} fullWidth>
-              {data.textBtn}
-            </Button>
-          </div>
+          <>
+            <div className="px-4 w-full">
+              <LottieCanvas
+                autoplay={true}
+                style={{ maxWidth: MAX_SCREEN_WIDTH }}
+                src={data.backgroundAnimation}
+                className={`fixed left-0 right-0 bottom-[35%] w-full h-[50dvh]  mx-auto select-none pointer-events-none `}
+              />
+              <CustomImage src={data.footerContent} className="px-4 transition-opacity duration-700 ease-in-out z-10" />
+            </div>
+            <FeatureIntroBtn onClick={goToNext} textBtn={data.textBtn} />
+          </>
         )}
       </div>
     </FeatureIntroContainer>
