@@ -3,7 +3,9 @@ import { useEffect, useRef } from 'react';
 import Typography from '@components/ui/Typography';
 import useTheme from '@hooks/useTheme';
 
-const ApprovedCodeToast = () => {
+import { ApprovedCodeToastPropsType } from './type';
+
+const ApprovedCodeToast = ({ discountCodeHelper, callApi, onRestHandler }: ApprovedCodeToastPropsType) => {
   const { colors } = useTheme();
   const myDivRef = useRef<HTMLDivElement>(null);
 
@@ -16,6 +18,11 @@ const ApprovedCodeToast = () => {
     }
   }, []);
 
+  const onClickHandler = () => {
+    callApi({});
+    onRestHandler('newKey');
+  };
+
   return (
     <div
       className="py-3 px-4 rounded-lg flex flex-row-reverse w-full justify-between items-center"
@@ -23,10 +30,10 @@ const ApprovedCodeToast = () => {
       ref={myDivRef}
     >
       <Typography scale="Lable" size="SmallProminet" color="Success_Success">
-        کد تخفیف با موفقیت اعمال شد
+        {discountCodeHelper}
       </Typography>
 
-      <div>
+      <div onClick={onClickHandler}>
         <Typography scale="Lable" size="Medium" color="Error_Error">
           لغو کد تخفیف
         </Typography>
