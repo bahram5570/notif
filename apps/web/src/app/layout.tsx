@@ -1,7 +1,7 @@
 import './globals.css';
 
 import { MAX_WIDTH } from '@constants/app.constants';
-import { HOST_URL } from '@constants/links.constants';
+import { HOST_URL, SERVER_URL } from '@constants/links.constants';
 import CustomToastProvider from '@providers/CustomToastProvider';
 import MuiProvider from '@providers/MuiProvider';
 import PageNavigationProvider from '@providers/PageNavigationProvider';
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
         width: 500,
         height: 500,
         alt: 'image',
-        url: `${process.env.NEXT_PUBLIC_BASE_URL_SERVER}/support/article/author/image/10214db39dc74768baac846c560221fd.png`,
+        url: `${SERVER_URL}/support/article/author/image/10214db39dc74768baac846c560221fd.png`,
       },
     ],
   },
