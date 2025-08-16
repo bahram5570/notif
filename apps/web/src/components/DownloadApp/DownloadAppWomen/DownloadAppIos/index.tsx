@@ -1,24 +1,30 @@
-import { APP_STORE_LINK_WOMEN_URL } from '@constants/links.constants';
-import { COLORS_LIST } from '@theme/colors';
-
 import AppStoreDownloadIcon from '@assets/icons/downloads/appStoreDownload.svg';
 import AppleIcon from '@assets/icons/downloads/apple.svg';
+
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import { APP_STORE_LINK_WOMEN_URL } from '@constants/links.constants';
+import useUserTracking from '@hooks/useUserTracking';
+import { COLORS_LIST } from '@theme/colors';
 
 import IranianStores from './IranianStores';
 
 const DownloadAppIos = () => {
+  const { callUserTracking } = useUserTracking();
+
+  const directId = 'women-ios-direct';
+
   return (
     <div className="flex flex-col items-center w-full">
       <CustomTypography fontSize="Title_Small">نسخه iOS</CustomTypography>
 
       <div className="relative w-full mt-4 mb-2">
         <CustomLink
+          id={directId}
           target="_blank"
-          id="women-ios-direct"
           aria-label="DownloadAppAndroid"
           href={APP_STORE_LINK_WOMEN_URL}
+          onClick={() => callUserTracking(directId)}
           style={{ backgroundColor: COLORS_LIST.Neutral_OnBackground }}
           className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 relative z-10"
         >

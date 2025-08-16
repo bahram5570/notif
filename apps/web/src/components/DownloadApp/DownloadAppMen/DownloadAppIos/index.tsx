@@ -1,23 +1,30 @@
-import { APP_STORE_LINK_MEN_URL, PWA_LINK_MEN_URL } from '@constants/links.constants';
-import { COLORS_LIST } from '@theme/colors';
-
 import AppStoreDownloadIcon from '@assets/icons/downloads/appStoreDownload.svg';
 import AppleIcon from '@assets/icons/downloads/apple.svg';
 import PwaIcon from '@assets/icons/downloads/pwa.svg';
+
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import { APP_STORE_LINK_MEN_URL, PWA_LINK_MEN_URL } from '@constants/links.constants';
+import useUserTracking from '@hooks/useUserTracking';
+import { COLORS_LIST } from '@theme/colors';
 
 const DownloadAppIos = () => {
+  const { callUserTracking } = useUserTracking();
+
+  const directId = 'women-ios-direct';
+  const pwaId = 'men-pwa';
+
   return (
     <div className="flex flex-col items-center w-full">
       <CustomTypography fontSize="Title_Small">نسخه iOS</CustomTypography>
 
       <div className="relative w-full flex flex-col gap-2 mt-4 mb-2">
         <CustomLink
+          id={directId}
           target="_blank"
-          id="women-ios-direct"
-          aria-label="DownloadAppAndroid"
           href={APP_STORE_LINK_MEN_URL}
+          aria-label="DownloadAppAndroid"
+          onClick={() => callUserTracking(directId)}
           style={{ backgroundColor: COLORS_LIST.Neutral_OnBackground }}
           className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 relative z-10"
         >
@@ -25,10 +32,11 @@ const DownloadAppIos = () => {
         </CustomLink>
 
         <CustomLink
+          id={pwaId}
           target="_blank"
-          id="men-pwa"
           href={PWA_LINK_MEN_URL}
           aria-label="DownloadAppAndroidMen"
+          onClick={() => callUserTracking(pwaId)}
           style={{ backgroundColor: COLORS_LIST.White, borderColor: COLORS_LIST.Neutral_Surface }}
           className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 relative z-10"
         >

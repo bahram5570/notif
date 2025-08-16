@@ -5,6 +5,7 @@ import { HOST_URL } from '@constants/links.constants';
 import CustomToastProvider from '@providers/CustomToastProvider';
 import MuiProvider from '@providers/MuiProvider';
 import PageNavigationProvider from '@providers/PageNavigationProvider';
+import UserTrackingProvider from '@providers/UserTrackingProvider';
 import { Metadata } from 'next';
 import Script from 'next/script';
 
@@ -28,11 +29,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="fa" dir="rtl">
       <head>
@@ -43,6 +40,21 @@ export default function RootLayout({
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
             })(window,document,'script','dataLayer','GTM-PT95KXQ');
+          `}
+        </Script>
+
+        <Script>
+          {`
+            !function (t, e, n) {
+                t.yektanetAnalyticsObject = n, t[n] = t[n] || function () {
+                    t[n].q.push(arguments)
+                }, t[n].q = t[n].q || [];
+                var a = new Date, r = a.getFullYear().toString() + "0" + a.getMonth() + "0" + a.getDate() + "0" + a.getHours(),
+                    c = e.getElementsByTagName("script")[0], s = e.createElement("script");
+                s.id = "ua-script-ASatuT3o"; s.dataset.analyticsobject = n;
+                s.async = 1; s.type = "text/javascript";
+                s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v3/ASatuT3o/rg.complete.js?v=" + r, c.parentNode.insertBefore(s, c)
+            }(window, document, "yektanet");
           `}
         </Script>
       </head>
@@ -80,21 +92,25 @@ export default function RootLayout({
           `}
         </Script>
 
-        <MuiProvider>
-          <OperatingSystemProvider>
-            <CustomToastProvider>
-              <PageNavigationProvider>
-                <div
-                  className="relative flex flex-col items-center mx-auto min-h-[100dvh]"
-                  style={{ maxWidth: MAX_WIDTH }}
-                >
-                  <>{children}</>
-                </div>
-              </PageNavigationProvider>
-            </CustomToastProvider>
-          </OperatingSystemProvider>
-        </MuiProvider>
+        <UserTrackingProvider>
+          <MuiProvider>
+            <OperatingSystemProvider>
+              <CustomToastProvider>
+                <PageNavigationProvider>
+                  <div
+                    className="relative flex flex-col items-center mx-auto min-h-[100dvh]"
+                    style={{ maxWidth: MAX_WIDTH }}
+                  >
+                    <>{children}</>
+                  </div>
+                </PageNavigationProvider>
+              </CustomToastProvider>
+            </OperatingSystemProvider>
+          </MuiProvider>
+        </UserTrackingProvider>
       </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

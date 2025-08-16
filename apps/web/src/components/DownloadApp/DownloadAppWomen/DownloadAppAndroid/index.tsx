@@ -1,28 +1,34 @@
-import { CAFEBAZAAR_LINK_WOMEN_URL, DIRECT_LINK_WOMEN_URL, MYKET_LINK_WOMEN_URL } from '@constants/links.constants';
-import { COLORS_LIST } from '@theme/colors';
-
 import Bazar1Icon from '@assets/icons/bazar1.svg';
 import Bazar2Icon from '@assets/icons/bazar2.svg';
 import AndroidIcon from '@assets/icons/downloads/android.svg';
 import MyKet1Icon from '@assets/icons/myket1.svg';
 import MyKet2Icon from '@assets/icons/myket2.svg';
+
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import { CAFEBAZAAR_LINK_WOMEN_URL, DIRECT_LINK_WOMEN_URL, MYKET_LINK_WOMEN_URL } from '@constants/links.constants';
+import useUserTracking from '@hooks/useUserTracking';
+import { COLORS_LIST } from '@theme/colors';
 
 import DownloadAppLinkGenerator from '../DownloadAppLinkGenerator';
 
 const DownloadAppAndroid = () => {
+  const { callUserTracking } = useUserTracking();
+
+  const directId = 'women-android-direct';
+
   return (
     <div className="flex flex-col items-center w-full">
       <CustomTypography fontSize="Title_Small">نسخه اندروید</CustomTypography>
 
       <div className="relative w-full mt-4 mb-2">
         <CustomLink
+          id={directId}
           target="_blank"
-          id="women-android-direct"
-          aria-label="DownloadAppAndroid"
-          style={{ backgroundColor: COLORS_LIST.Neutral_OnBackground }}
           href={DIRECT_LINK_WOMEN_URL}
+          aria-label="DownloadAppAndroid"
+          onClick={() => callUserTracking(directId)}
+          style={{ backgroundColor: COLORS_LIST.Neutral_OnBackground }}
           className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2"
         >
           <CustomTypography fontSize="Title_Small" color="Primary_OnPrimary">
