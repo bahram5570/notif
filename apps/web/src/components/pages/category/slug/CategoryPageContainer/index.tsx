@@ -20,7 +20,7 @@ const CategoryPageContainer = ({ categoryData, categoriesList }: CategoryPageCon
         <QrCode className="xl:top-[400px] top-[620px]   lg:top-[415px]" />
         <BlogsBreadcrumb breadcrumbList={breadcrumbList} />
         <CategoryMainTitle title={categoryData.title} />
-        <CategoryArticles id={categoryData.id} />
+        <CategoryArticles id={categoryData.id} slug={categoryData.slug} />
       </div>
 
       <div className="w-full py-12">
