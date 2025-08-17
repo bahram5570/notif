@@ -1,17 +1,25 @@
 'use client';
 
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useEffect } from 'react';
 
 import CustomPagination from '@components/ui/CustomPagination';
+import { CURRENT_CATEGORY } from '@constants/categoryParam.constans';
+import useBreakPoint from '@hooks/useBreakPoint';
+import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import CategoryArticlesGenerator from './CategoryArticlesGenerator';
 import CategorySkeleton from './CategorySkeleton';
 import useCategoryGetData from './__hooks__/useCategoryGetData';
 import { CategoryArticlesTypes } from './types';
 
-const CategoryArticles = ({ id }: CategoryArticlesTypes) => {
+const CategoryArticles = ({ id, slug }: CategoryArticlesTypes) => {
   const { breakPoint } = useBreakPoint();
+  const { newQueryParamsHandler } = useQueryParamsHandler();
   const { isLoading, data, totalPage, page, pageHandler } = useCategoryGetData(id);
+
+  useEffect(() => {
+    newQueryParamsHandler({ [CURRENT_CATEGORY]: slug });
+  }, []);
 
   return (
     <div className="w-full flex flex-col">

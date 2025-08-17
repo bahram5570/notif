@@ -1,17 +1,17 @@
 'use client';
 
-import { FOOTER_HEIGHT } from '@constants/app.constants';
-import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
-import { COLORS_LIST } from '@theme/colors';
-import { usePathname } from 'next/navigation';
-
 import ArticlesIcon from '@assets/icons/deviceFooter/articles.svg';
 import CycleIcon from '@assets/icons/deviceFooter/cycle.svg';
 import HomeIcon from '@assets/icons/deviceFooter/home.svg';
 import LoginIcon from '@assets/icons/deviceFooter/login.svg';
 
-import FooterDownloadApp from '../NormalFooter/FooterDownloadApp';
+import { FOOTER_HEIGHT } from '@constants/app.constants';
+import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
+import { COLORS_LIST } from '@theme/colors';
+import { usePathname } from 'next/navigation';
+
 import DeviceFooterLinkGenerator from './DeviceFooterLinkGenerator';
+import FooterNavLink from './FooterNavLink';
 import { DeviceFooterTypes } from './types';
 
 const DeviceFooter = ({ isArticlePage, hasFooterLink }: DeviceFooterTypes) => {
@@ -19,7 +19,9 @@ const DeviceFooter = ({ isArticlePage, hasFooterLink }: DeviceFooterTypes) => {
 
   return (
     <>
-      {hasFooterLink && <FooterDownloadApp />}
+      {/* {hasFooterLink && <FooterDownloadApp />} */}
+
+      {hasFooterLink && <FooterNavLink />}
 
       <footer
         className="fixed left-0 right-0 bottom-0 w-full flex justify-around gap-2 px-4 pt-2 border-t-[1px] z-10"
