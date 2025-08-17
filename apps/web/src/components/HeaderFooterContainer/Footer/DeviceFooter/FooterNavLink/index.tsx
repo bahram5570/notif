@@ -47,7 +47,7 @@ const FooterNavLink = () => {
           width={40}
           height={40}
         />
-        <CustomTypography fontSize="Title_Small" color="Neutral_Background">
+        <CustomTypography fontSize="Title_Small" color="Neutral_OnBackground">
           {findCurrentBanner.title}
         </CustomTypography>
       </div>
@@ -62,7 +62,7 @@ const FooterNavLink = () => {
         }}
         className="rounded-full w-fit px-6 py-3 h-[38px]  flex items-center justify-center gap-2 relative z-10"
       >
-        <CustomTypography fontSize="Lable_Large" color="Neutral_OnBackground">
+        <CustomTypography fontSize="Lable_Large" color="White">
           {findCurrentBanner.btnData.btnLabel}
         </CustomTypography>
       </CustomLink>
