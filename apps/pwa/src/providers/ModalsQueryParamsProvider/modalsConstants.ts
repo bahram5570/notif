@@ -26,6 +26,9 @@ export const MODALS = {
 
   // # Feedback
   MODAL_FEEDBACK: 'MODAL_FEED_BACK',
+
+  // # Question-onboarding
+  ONBOARDING_QUESTION_REWARD: ' ONBOARDING_QUESTION_REWARD',
 };
 
 export const EXCLUDE_PAGES_MODALS = [

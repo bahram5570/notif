@@ -1,7 +1,6 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -14,19 +13,24 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-
   "eslint.validate": ["javascript", "typescript", "javascriptreact", "typescriptreact"],
   "eslint.enable": true,
 
+  // # Better Comments
   "better-comments.tags": [
     {
       "tag": "#",
-      "color": "#00FFFF",
+      "color": "#F5F527",
       "strikethrough": false,
       "underline": false,
       "backgroundColor": "transparent",
       "bold": false,
-      "italic": false
+      "italic": true
     }
-  ]
+  ],
+
+  // # Node.js Modules Intellisense
+  "node-module-intellisense.scanBuiltinModules": true,
+  "node-module-intellisense.scanDevDependencies": true,
+  "node-module-intellisense.scanFileModules": true
 }

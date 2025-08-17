@@ -133,6 +133,9 @@ export const actionRouteConverter = (serverLink: string) => {
     case '/chatbot':
       result = '/protected/aiChatbot';
       break;
+
+    case '/onboarding':
+      result = `/protected/featureIntro?searchData=${encodeURIComponent(queries)}`;
   }
 
   return result;

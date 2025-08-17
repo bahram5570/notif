@@ -1,7 +1,7 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "paths": {
       "@components/*": ["./src/components/*"],
       "@providers/*": ["./src/providers/*"],
