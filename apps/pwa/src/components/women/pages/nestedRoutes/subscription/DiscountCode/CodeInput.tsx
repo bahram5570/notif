@@ -44,7 +44,7 @@ const CodeInput = ({
         />
       </div>
 
-      {scriptInfo && (
+      {scriptInfo && !isValidDiscountCode && (
         <Typography scale="Body" size="Small" className="ml-auto pt-2" color="FREE-STYLE" freeColor={scriptInfo.color}>
           {scriptInfo.script}
         </Typography>

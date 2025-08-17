@@ -6,6 +6,8 @@ import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { LottieCanvas } from '@lib/LottieCanvas';
 
+import ApprovedCodeToast from './ApprovedCodeToast';
+import DiscountLoading from './DiscontLoading';
 import DiscountCode from './DiscountCode';
 import Heading from './Heading';
 import SubmitBtn from './SubmitBtn';
@@ -19,6 +21,7 @@ import { SUBSCRIPTION_SUBMIT_BUTTON_HEIGHT } from './constants';
 const SubscriptionContainer = () => {
   const { showAll, showAllHandler } = useShowAll();
   const [approvedCode, setApprovedCode] = useState('');
+  const [requestKey, setRequestKey] = useState('initial');
   const { loadingPage, loadingResponse, callApi, data } = useGetData();
   const { selectedPackageIndex, selectedPackageIndexHandler } = useSelectedPackageIndex();
 
@@ -31,13 +34,23 @@ const SubscriptionContainer = () => {
           leftElement1="Profile"
           paddingTop={HEADER_HEIGHT}
           rightElement={data?.hasSubscribtion ? 'BackButton' : undefined}
+          className="relative"
         >
+          {loadingResponse && <DiscountLoading />}
           <div className="relative" style={{ paddingBottom: SUBSCRIPTION_SUBMIT_BUTTON_HEIGHT + 30 }}>
             <div className="flex flex-col items-center px-4 gap-5">
               <div className="min-h-56 w-full h-full">
                 <LottieCanvas src={data?.medias[0]} autoplay={true} style={{ width: '100%', height: '100%' }} />
               </div>
               <Heading title={data.title} description={data.description} />
+
+              {data.isValidDiscountCode && !loadingResponse && (
+                <ApprovedCodeToast
+                  discountCodeHelper={data.discountCodeHelper}
+                  callApi={callApi}
+                  onRestHandler={setRequestKey}
+                />
+              )}
 
               <SubscriptionPackages
                 showAll={showAll}
@@ -48,13 +61,15 @@ const SubscriptionContainer = () => {
                 selectedPackageIndexHandler={selectedPackageIndexHandler}
               />
 
-              <DiscountCode
-                onApply={callApi}
-                loadingResponse={loadingResponse}
-                discountCodeHelper={data.discountCodeHelper}
-                isValidDiscountCode={data.isValidDiscountCode}
-                approvedCodeHandler={(v) => setApprovedCode(v)}
-              />
+              <div key={requestKey} className="w-full">
+                <DiscountCode
+                  onApply={callApi}
+                  loadingResponse={loadingResponse}
+                  discountCodeHelper={data.discountCodeHelper}
+                  isValidDiscountCode={data.isValidDiscountCode}
+                  approvedCodeHandler={(v) => setApprovedCode(v)}
+                />
+              </div>
 
               <a href={`tel:${data.supportPhone}`}>
                 <Typography scale="Body" size="Medium" textAlign="center">
