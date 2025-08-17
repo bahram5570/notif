@@ -10,9 +10,6 @@
     "export": "node export-maker-file.js"
   },
   "dependencies": {
-    "@repo/core": "*",
-    "@repo/assets": "*",
-    "@repo/components": "*",
     "@emotion/cache": "^11.13.5",
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
@@ -20,6 +17,9 @@
     "@mui/icons-material": "^6.1.8",
     "@mui/material": "^6.1.8",
     "@mui/material-nextjs": "^6.1.8",
+    "@repo/assets": "*",
+    "@repo/components": "*",
+    "@repo/core": "*",
     "cheerio": "^1.0.0",
     "js-cookie": "^3.0.5",
     "leaflet": "^1.9.4",

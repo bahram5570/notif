@@ -1,23 +1,26 @@
+import { handleBodyUpdate } from './__utils__';
+import { fileImageUrl } from '@services/http';
+
 import DownloadApp from '@components/DownloadApp/DownloadAppWomen';
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
 import QrCode from '@components/QrCode';
 import CustomImage from '@components/ui/CustomImage';
-import { fileImageUrl } from '@services/http';
+import dynamic from 'next/dynamic';
 
 import ArticleIdBeforeAfter from './ArticleIdBeforeAfter';
 import ArticleIdBreadcrumb from './ArticleIdBreadcrumb';
-import ArticleIdComments from './ArticleIdComments';
 import ArticleIdContents from './ArticleIdContents';
 import ArticleIdFaq from './ArticleIdFaq';
 import ArticleIdHeading from './ArticleIdHeading';
 import ArticleIdProfile from './ArticleIdProfile';
 import ArticleIdSampleArticles from './ArticleIdSampleArticles';
 import ArticleIdScore from './ArticleIdScore';
-import ArticleIdSearch from './ArticleIdSearch';
 import ArticleIdSubjectsList from './ArticleIdSubjectsList';
 import ArticleLandingComponents from './ArticleLandingComponents';
-import { handleBodyUpdate } from './__utils__';
 import { ArticleIdPageContainerTypes } from './types';
+
+const ArticleIdComments = dynamic(() => import('./ArticleIdComments'), { ssr: false });
+const ArticleIdSearch = dynamic(() => import('./ArticleIdSearch'), { ssr: false });
 
 const ArticleIdPageContainer = async (props: ArticleIdPageContainerTypes) => {
   const { updatedBody, articleSubjectList } = await handleBodyUpdate(props.body);
@@ -29,7 +32,9 @@ const ArticleIdPageContainer = async (props: ArticleIdPageContainerTypes) => {
       <div className="relative w-full flex justify-center">
         <article className="w-full flex flex-col gap-6 md:gap-12 pt-[100px] md:pt-[150px] sm:w-9/12 md:w-8/12 lg:w-6/12 px-4 md:px-0">
           <ArticleIdSearch />
-          <QrCode className="xl:top-[400px] top-[620px]   lg:top-[415px]" />
+
+          <QrCode className="xl:top-[400px] top-[620px] lg:top-[415px]" />
+
           <ArticleIdBreadcrumb
             categoryTitle={props.categories[0].title}
             categorySlug={props.categories[0].slug}
@@ -57,8 +62,8 @@ const ArticleIdPageContainer = async (props: ArticleIdPageContainerTypes) => {
 
           {props.doctor && (
             <CustomImage
-              height={0}
-              width={800}
+              height={960}
+              width={960}
               quality={80}
               src={visitCardUrl}
               alt={props.doctor.name}

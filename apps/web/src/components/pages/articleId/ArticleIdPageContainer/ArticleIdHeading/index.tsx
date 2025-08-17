@@ -1,10 +1,10 @@
 'use client';
 
-import useBreakPoint from '@hooks/useBreakPoint';
+import { articleImageUrl } from '@services/http';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { articleImageUrl } from '@services/http';
+import useBreakPoint from '@hooks/useBreakPoint';
 
 import { ArticleIdHeadingTypes } from './types';
 
@@ -20,9 +20,9 @@ const ArticleIdHeading = ({ imageCover, title }: ArticleIdHeadingTypes) => {
       </CustomTypography>
 
       <CustomImage
-        width={800}
+        width={960}
         alt={title}
-        height={800}
+        height={960}
         src={imageUrl}
         priority={true}
         className="w-full h-auto rounded-2xl"
