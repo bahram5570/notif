@@ -10,9 +10,9 @@ const useActivationPregnancyTabs = () => {
     setTab(t);
   };
 
-  const startDate = tab === 1 ? pregnancyPeriodStart : giveBirthStart;
-  const defaultDate = tab === 1 ? pregnancyPeriodEnd : giveBirthStart;
-  const endDate = tab === 1 ? pregnancyPeriodEnd : giveBirthEnd;
+  const startDate = tab === 1 ? giveBirthStart : pregnancyPeriodStart;
+  const defaultDate = tab === 1 ? giveBirthStart : pregnancyPeriodEnd;
+  const endDate = tab === 1 ? giveBirthEnd : pregnancyPeriodEnd;
 
   return { tab, tabHandler, startDate, defaultDate, endDate };
 };

@@ -26,18 +26,19 @@ const SubscriptionContainer = () => {
   const { selectedPackageIndex, selectedPackageIndexHandler } = useSelectedPackageIndex();
 
   return (
-    <>
+    <WomenPageLayout
+      className="relative"
+      leftElement1="Profile"
+      paddingTop={HEADER_HEIGHT}
+      rightElement={data?.hasSubscribtion ? 'BackButton' : undefined}
+    >
       {loadingPage && !data && <SubscriptionSkeleton />}
 
       {!loadingPage && data && (
-        <WomenPageLayout
-          leftElement1="Profile"
-          paddingTop={HEADER_HEIGHT}
-          rightElement={data?.hasSubscribtion ? 'BackButton' : undefined}
-          className="relative"
-        >
+        <>
           {loadingResponse && <DiscountLoading />}
-          <div className="relative" style={{ paddingBottom: SUBSCRIPTION_SUBMIT_BUTTON_HEIGHT + 30 }}>
+
+          <div className="relative" style={{ paddingBottom: SUBSCRIPTION_SUBMIT_BUTTON_HEIGHT + 100 }}>
             <div className="flex flex-col items-center px-4 gap-5">
               <div className="min-h-56 w-full h-full">
                 <LottieCanvas src={data?.medias[0]} autoplay={true} style={{ width: '100%', height: '100%' }} />
@@ -46,9 +47,9 @@ const SubscriptionContainer = () => {
 
               {data.isValidDiscountCode && !loadingResponse && (
                 <ApprovedCodeToast
-                  discountCodeHelper={data.discountCodeHelper}
                   callApi={callApi}
                   onRestHandler={setRequestKey}
+                  discountCodeHelper={data.discountCodeHelper}
                 />
               )}
 
@@ -88,9 +89,9 @@ const SubscriptionContainer = () => {
               />
             </div>
           </div>
-        </WomenPageLayout>
+        </>
       )}
-    </>
+    </WomenPageLayout>
   );
 };
 

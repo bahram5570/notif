@@ -9,9 +9,9 @@ const SubscriptionPackages = ({
   selectedPackageIndexHandler,
   selectedPackageIndex,
   showAllHandler,
+  visibleCount,
   packages,
   showAll,
-  visibleCount,
 }: SubscriptionPackagesProps) => {
   const { colors } = useTheme();
   const { updatedList } = useUpdatedList({ packages, showAll, visibleCount });

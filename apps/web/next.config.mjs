@@ -20,6 +20,10 @@ const nextConfig = {
         hostname: 's3.ir-tbz-sh1.arvanstorage.ir',
       },
       {
+        protocol: 'https',
+        hostname: 'media.impo.app',
+      },
+      {
         hostname: '195.88.208.143',
       },
     ],

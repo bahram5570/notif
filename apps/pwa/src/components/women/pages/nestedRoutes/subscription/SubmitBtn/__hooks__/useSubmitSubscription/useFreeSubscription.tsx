@@ -7,8 +7,9 @@ import { useRouter } from 'next/navigation';
 import { FreeSubscriptionResponseTypes } from './types';
 
 const useFreeSubscription = () => {
-  const [id, setId] = useState<string | null>(null);
   const router = useRouter();
+  const [id, setId] = useState<string | null>(null);
+
   const { updateProfileDateByDellay } = useGetProfileData(() => {
     router.push('/');
   });
@@ -18,9 +19,11 @@ const useFreeSubscription = () => {
   };
 
   const successHandler = ({ valid }: FreeSubscriptionResponseTypes) => {
-    if (valid) {
-      updateProfileDateByDellay();
-    }
+    updateProfileDateByDellay();
+
+    // if (valid) {
+      // updateProfileDateByDellay();
+    // }
   };
 
   const { isLoading, callApi, data } = useApi<FreeSubscriptionResponseTypes>({

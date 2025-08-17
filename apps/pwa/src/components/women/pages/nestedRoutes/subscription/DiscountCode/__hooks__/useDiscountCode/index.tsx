@@ -10,7 +10,6 @@ const useDiscountCode = () => {
 
   const toggleShowHandler = () => {
     setShowDiscountInput(!showDiscountInput);
-    setCode('');
   };
 
   return { showDiscountInput, toggleShowHandler, code, codeHandler };

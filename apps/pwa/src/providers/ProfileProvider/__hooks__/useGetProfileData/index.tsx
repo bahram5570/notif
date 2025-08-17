@@ -50,6 +50,7 @@ const useGetProfileData = (onComplete?: UseGetProfileDataPropsType) => {
     const ms = typeof seconds === 'undefined' ? 3 : seconds;
 
     timerRef.current = setTimeout(() => {
+      getDataHandler();
       timerRef.current = null;
     }, ms * 1000);
   };

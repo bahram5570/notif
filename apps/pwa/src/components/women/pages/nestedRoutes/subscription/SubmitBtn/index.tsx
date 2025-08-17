@@ -12,7 +12,7 @@ const SubmitBtn = ({ isFree, approvedCode, packageId, value, payButtonText }: Su
 
   return (
     <div
-      className="fixed left-0 right-0 bottom-0 mx-auto shadow-[0_0_16px_0_#6c23371f] py-3 z-30"
+      className="fixed left-0 right-0 bottom-0 mx-auto shadow-[0_0_16px_0_#6c23371f] pt-3 pb-8 z-30"
       style={{
         maxWidth: MAX_SCREEN_WIDTH,
         backgroundColor: colors.Neutral_Background,
@@ -26,8 +26,8 @@ const SubmitBtn = ({ isFree, approvedCode, packageId, value, payButtonText }: Su
           variant="fill"
           color="primary"
           isLoading={isLoading}
-          onClick={() => submitHandler(isFree, { discount: approvedCode, isWeb: true, packageId, value })}
           id="SubscriptionPayment"
+          onClick={() => submitHandler(isFree, { discount: approvedCode, isWeb: true, packageId, value })}
         >
           {payButtonText}
         </Button>

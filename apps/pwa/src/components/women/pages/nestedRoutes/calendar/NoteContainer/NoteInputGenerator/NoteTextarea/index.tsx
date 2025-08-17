@@ -21,11 +21,11 @@ const NoteTextarea = ({ description, label, name, onchangeHandler, value }: Note
 
       <textarea
         rows={1}
-        placeholder="اینجا بنویس"
         value={value ?? ''}
+        placeholder="اینجا بنویس"
+        style={{ ...typography.Body.Large, direction: 'rtl' }}
         onChange={(e) => onchangeHandler(e.target.value, name)}
-        className="w-full max-h-[100px]  text-right  resize-none outline-none"
-        style={{ ...typography.Body.Large }}
+        className="w-full max-h-[100px] text-right resize-none outline-none"
       />
     </div>
   );
