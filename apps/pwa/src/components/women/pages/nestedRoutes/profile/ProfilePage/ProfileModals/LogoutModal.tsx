@@ -1,3 +1,5 @@
+import { useTransition } from 'react';
+
 import LogoutIcon from '@assets/icons/logout.svg';
 
 import { deleteUserCookie, setCultureCookie } from '@actions/cookie.actions';
@@ -12,18 +14,21 @@ import { useRouter } from 'next/navigation';
 const LogoutModal = () => {
   const router = useRouter();
   const { colors } = useTheme();
+  const [_, startTransition] = useTransition();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
   const isLoading = pageNavigationLoading === 'LogoutModal';
 
   const logoutHandler = async () => {
-    localStorage.clear();
-    sessionStorage.clear();
-    await deleteUserCookie();
-    await setCultureCookie(CULTURE_INITIAL_VALUES);
-    await caches.delete(STORED_NOTIFICATIONS_CACHE_NAME);
+    startTransition(async () => {
+      localStorage.clear();
+      sessionStorage.clear();
+      await deleteUserCookie();
+      await setCultureCookie(CULTURE_INITIAL_VALUES);
+      await caches.delete(STORED_NOTIFICATIONS_CACHE_NAME);
 
-    pageNavigationHandler({ showProgressBar: false, id: 'LogoutModal', linkTo: '/' });
+      pageNavigationHandler({ showProgressBar: false, id: 'LogoutModal', linkTo: '/' });
+    });
   };
 
   return (
