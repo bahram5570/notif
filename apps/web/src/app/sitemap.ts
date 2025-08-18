@@ -8,6 +8,7 @@ const STATIC_URLS: string[] = [
   `${HOST_URL}/men`,
   `${HOST_URL}/blogs`,
   `${HOST_URL}/sympathy`,
+  `${HOST_URL}/landing/clinic`,
   `${HOST_URL}/landing/tracker`,
   `${HOST_URL}/landing/intention`,
   `${HOST_URL}/landing/pregnancy`,
