@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { NEED_DATE_PATH_LIST } from '@constants/needSignDatePathList.constants';
+import { NEED_DATE_PATH_LIST } from '@constants/routes.constants';
 import { usePathname } from 'next/navigation';
 
 const useInitailSelectedDate = () => {

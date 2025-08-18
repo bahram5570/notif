@@ -1,9 +1,7 @@
-'use client';
-
-import SubscriptionContainer from '@components/women/pages/nestedRoutes/subscription/SubscriptionContainer';
+import SubscriptionPage from '@components/women/pages/nestedRoutes/subscription/SubscriptionPage';
 
 const Subscription = () => {
-  return <SubscriptionContainer />;
+  return <SubscriptionPage />;
 };
 
 export default Subscription;

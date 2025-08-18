@@ -7,11 +7,11 @@ import { ApprovedCodeToastPropsType } from './type';
 
 const ApprovedCodeToast = ({ discountCodeHelper, callApi, onRestHandler }: ApprovedCodeToastPropsType) => {
   const { colors } = useTheme();
-  const myDivRef = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (myDivRef.current) {
-      myDivRef.current.scrollIntoView({
+    if (ref.current) {
+      ref.current.scrollIntoView({
         behavior: 'smooth',
         block: 'center',
       });
@@ -25,9 +25,9 @@ const ApprovedCodeToast = ({ discountCodeHelper, callApi, onRestHandler }: Appro
 
   return (
     <div
+      ref={ref}
       className="py-3 px-4 rounded-lg flex flex-row-reverse w-full justify-between items-center"
       style={{ border: `1px solid ${colors.Success_Success}`, background: colors.Success_SuccessContainer }}
-      ref={myDivRef}
     >
       <Typography scale="Lable" size="SmallProminet" color="Success_Success">
         {discountCodeHelper}

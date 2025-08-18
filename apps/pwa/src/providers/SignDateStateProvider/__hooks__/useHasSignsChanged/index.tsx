@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { NEED_TOAST_PATH_LIST } from '@constants/needToastPathList.constants';
+import { NEED_TOAST_PATH_LIST } from '@constants/routes.constants';
 import { usePathname } from 'next/navigation';
 
 const useHasSignsChanged = () => {

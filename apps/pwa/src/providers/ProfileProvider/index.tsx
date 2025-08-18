@@ -13,7 +13,11 @@ const ProfileProvider = ({ children, onComplete }: ProfileProviderPropsTypes) =>
 
   useSubscriptionGuard(data?.remaindDays);
 
-  return <ProfileContext.Provider value={{ profileData: data, isLoading }}>{children}</ProfileContext.Provider>;
+  return (
+    <ProfileContext.Provider value={{ profileData: data, isLoading }}>
+      <>{children}</>
+    </ProfileContext.Provider>
+  );
 };
 
 export default ProfileProvider;

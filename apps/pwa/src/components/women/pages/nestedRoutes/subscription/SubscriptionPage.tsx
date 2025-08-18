@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 
 import CustomImage from '@components/ui/CustomImage';
@@ -18,7 +20,7 @@ import useSelectedPackageIndex from './__hooks__/useSelectedPackage';
 import useShowAll from './__hooks__/useShowAll';
 import { SUBSCRIPTION_SUBMIT_BUTTON_HEIGHT } from './constants';
 
-const SubscriptionContainer = () => {
+const SubscriptionPage = () => {
   const { showAll, showAllHandler } = useShowAll();
   const [approvedCode, setApprovedCode] = useState('');
   const [requestKey, setRequestKey] = useState('initial');
@@ -43,6 +45,7 @@ const SubscriptionContainer = () => {
               <div className="min-h-56 w-full h-full">
                 <LottieCanvas src={data?.medias[0]} autoplay={true} style={{ width: '100%', height: '100%' }} />
               </div>
+
               <Heading title={data.title} description={data.description} />
 
               {data.isValidDiscountCode && !loadingResponse && (
@@ -80,6 +83,7 @@ const SubscriptionContainer = () => {
 
               <CustomImage src={data.medias[1]} className="pb-10" />
               <CustomImage src={data.medias[2]} />
+
               <SubmitBtn
                 approvedCode={approvedCode}
                 packageId={data.packages[selectedPackageIndex].id}
@@ -95,4 +99,4 @@ const SubscriptionContainer = () => {
   );
 };
 
-export default SubscriptionContainer;
+export default SubscriptionPage;

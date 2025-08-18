@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { NO_NEED_SUBSCRIPTION_PAGES_LIST } from '@providers/ProfileProvider/constants';
+import { NO_NEED_SUBSCRIPTION_PAGES_LIST } from '@constants/routes.constants';
 import { usePathname, useRouter } from 'next/navigation';
 
 const useSubscriptionGuard = (remainDays?: number) => {

@@ -3,7 +3,7 @@ import { paymentStatusService } from '@services/paymentServices';
 
 import { PARTNER_CODE_SHOW_INPUT_QUERY_NAME } from '@components/activation/pages/PartnerCodeContainer/constants';
 import { USER_COOKIE_NAME } from '@constants/cookie.constants';
-import { ACTIVATION_CR_REGISTER_QUERY_NAME } from '@constants/links.constants';
+import { ACTIVATION_CR_REGISTER_QUERY_NAME } from '@constants/routes.constants';
 import { ACTIVATION_FIRST_PATH_OF_SECTION_1 } from '@providers/__activation__/ActivationProvider/__constants__/activationContants';
 import { cookies } from 'next/headers';
 import { type NextRequest, NextResponse } from 'next/server';

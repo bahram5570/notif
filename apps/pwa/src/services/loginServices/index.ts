@@ -3,7 +3,7 @@ import { UserCookieTypes, cookieCreatedTime, getUserExpiresDate } from '@utils/c
 
 import { APP_VERSION } from '@constants/app.constants';
 import { FIREBASE_COOKIE_NAME, USER_COOKIE_NAME } from '@constants/cookie.constants';
-import { ACTIVATION_CR_REGISTER_QUERY_NAME } from '@constants/links.constants';
+import { ACTIVATION_CR_REGISTER_QUERY_NAME } from '@constants/routes.constants';
 import { cookies } from 'next/headers';
 import { NextResponse } from 'next/server';
 

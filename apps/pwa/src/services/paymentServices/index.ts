@@ -1,4 +1,4 @@
-import { BANK_PAYMENT_STATUS_QUERY_NAME, BANK_PAYMENT_TYPE_QUERY_NAME } from '@constants/links.constants';
+import { BANK_PAYMENT_STATUS_QUERY_NAME, BANK_PAYMENT_TYPE_QUERY_NAME } from '@constants/routes.constants';
 import { PAYMENT_QUERY_NAME } from '@providers/PaymentProvider/constants';
 import { PaymentTypeQueryEnum } from '@providers/PaymentProvider/enums';
 import { NextResponse } from 'next/server';

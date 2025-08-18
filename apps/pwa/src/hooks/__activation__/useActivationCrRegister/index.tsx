@@ -1,6 +1,6 @@
 import { UserCookieTypes } from '@utils/cookies';
 
-import { ACTIVATION_CR_REGISTER_QUERY_NAME } from '@constants/links.constants';
+import { ACTIVATION_CR_REGISTER_QUERY_NAME } from '@constants/routes.constants';
 
 const useActivationCrRegister = () => {
   const completeRegisterHandler = (v: UserCookieTypes) => {
