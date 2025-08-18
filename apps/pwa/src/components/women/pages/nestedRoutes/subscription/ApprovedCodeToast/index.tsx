@@ -20,7 +20,7 @@ const ApprovedCodeToast = ({ discountCodeHelper, callApi, onRestHandler }: Appro
 
   const onClickHandler = () => {
     callApi({});
-    onRestHandler('newKey');
+    onRestHandler();
   };
 
   return (

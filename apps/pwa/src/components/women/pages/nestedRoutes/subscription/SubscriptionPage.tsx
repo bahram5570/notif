@@ -23,9 +23,11 @@ import { SUBSCRIPTION_SUBMIT_BUTTON_HEIGHT } from './constants';
 const SubscriptionPage = () => {
   const { showAll, showAllHandler } = useShowAll();
   const [approvedCode, setApprovedCode] = useState('');
-  const [requestKey, setRequestKey] = useState('initial');
+  const [resetKey, setResetKey] = useState(0);
   const { loadingPage, loadingResponse, callApi, data } = useGetData();
   const { selectedPackageIndex, selectedPackageIndexHandler } = useSelectedPackageIndex();
+
+  const handleReset = () => setResetKey((prev) => prev + 1);
 
   return (
     <WomenPageLayout
@@ -51,7 +53,7 @@ const SubscriptionPage = () => {
               {data.isValidDiscountCode && !loadingResponse && (
                 <ApprovedCodeToast
                   callApi={callApi}
-                  onRestHandler={setRequestKey}
+                  onRestHandler={handleReset}
                   discountCodeHelper={data.discountCodeHelper}
                 />
               )}
@@ -65,7 +67,7 @@ const SubscriptionPage = () => {
                 selectedPackageIndexHandler={selectedPackageIndexHandler}
               />
 
-              <div key={requestKey} className="w-full">
+              <div key={resetKey} className="w-full">
                 <DiscountCode
                   onApply={callApi}
                   loadingResponse={loadingResponse}

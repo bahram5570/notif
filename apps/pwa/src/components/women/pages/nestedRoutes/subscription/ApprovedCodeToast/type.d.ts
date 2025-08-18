@@ -4,5 +4,5 @@ type ItemType = Pick<ResponseTypes, 'discountCodeHelper'>;
 
 export interface ApprovedCodeToastPropsType extends ItemType {
   callApi: (v: {}) => void;
-  onRestHandler: (v: string) => void;
+  onRestHandler: () => void;
 }
