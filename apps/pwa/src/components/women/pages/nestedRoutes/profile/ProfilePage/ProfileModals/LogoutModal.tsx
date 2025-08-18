@@ -1,12 +1,12 @@
 import LogoutIcon from '@assets/icons/logout.svg';
 
+import { deleteUserCookie, setCultureCookie } from '@actions/cookie.actions';
 import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
-import { USER_COOKIE_NAME } from '@constants/cookie.constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useTheme from '@hooks/useTheme';
+import { CULTURE_INITIAL_VALUES } from '@providers/CultureProvider/constants';
 import { STORED_NOTIFICATIONS_CACHE_NAME } from '@providers/ServiceWorkerProvider/constants';
-import cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';
 
 const LogoutModal = () => {
@@ -19,10 +19,11 @@ const LogoutModal = () => {
   const logoutHandler = async () => {
     localStorage.clear();
     sessionStorage.clear();
-    cookies.remove(USER_COOKIE_NAME);
-    pageNavigationHandler({ showProgressBar: false, id: 'LogoutModal', linkTo: '/' });
-
+    await deleteUserCookie();
+    await setCultureCookie(CULTURE_INITIAL_VALUES);
     await caches.delete(STORED_NOTIFICATIONS_CACHE_NAME);
+
+    pageNavigationHandler({ showProgressBar: false, id: 'LogoutModal', linkTo: '/' });
   };
 
   return (

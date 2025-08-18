@@ -10,7 +10,7 @@ const PregnancyDatePage = ({ callCreateSampleApi, payloadHandler }: PregnancyDat
   const { tab, tabHandler, defaultDate, endDate, startDate } = useActivationPregnancyTabs();
 
   const valueHandler = (v: string) => {
-    payloadHandler({ pregnancyDate: v, isDeliveryDate: tab === 1 ? false : true });
+    payloadHandler({ pregnancyDate: v, isDeliveryDate: tab === 0 ? false : true });
   };
 
   const continueHandler = () => {
@@ -20,8 +20,8 @@ const PregnancyDatePage = ({ callCreateSampleApi, payloadHandler }: PregnancyDat
   };
 
   const tabsList: ActivationTabsListTypes = [
-    { text: 'تاریخ شروع آخرین پریودت', value: 1 },
-    { text: 'تاریخ زایمان\n (اعلام شده توسط سونوگرافی)', value: 2 },
+    { text: 'تاریخ شروع آخرین پریودت', value: 0 },
+    { text: 'تاریخ زایمان\n (اعلام شده توسط سونوگرافی)', value: 1 },
   ];
 
   return (

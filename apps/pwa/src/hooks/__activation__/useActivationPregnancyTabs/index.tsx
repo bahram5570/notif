@@ -4,7 +4,7 @@ import useDateIntervals from '@providers/__activation__/ActivationProvider/__hoo
 
 const useActivationPregnancyTabs = () => {
   const { pregnancyPeriodStart, pregnancyPeriodEnd, giveBirthStart, giveBirthEnd } = useDateIntervals();
-  const [tab, setTab] = useState(1);
+  const [tab, setTab] = useState(0);
 
   const tabHandler = (t: number) => {
     setTab(t);

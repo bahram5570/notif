@@ -5,12 +5,22 @@ export const BANK_PAYMENT_TYPE_QUERY_NAME = 'paymentType';
 export const NEED_TOAST_PATH_LIST = ['signs', 'calendar'];
 export const NEED_DATE_PATH_LIST = [
   'signs',
+  'addNote',
   'calendar',
+  'noteList',
   'addWeight',
   'bloodSuger',
   'bloodPressure',
-  'addNote',
-  'noteList',
 ];
 
-export const NO_NEED_SUBSCRIPTION_PAGES_LIST = ['/protected/profile', '/protected/subscription'];
+export const NO_NEED_SUBSCRIPTION_PAGES_LIST = [
+  '/protected/profile',
+  '/protected/aboutUs',
+  '/protected/support',
+  '/protected/userInfo',
+  '/protected/subscription',
+  '/protected/partner/start',
+  '/protected/supportTicket',
+  '/protected/partnerSetting',
+  '/protected/identifictionCode',
+];

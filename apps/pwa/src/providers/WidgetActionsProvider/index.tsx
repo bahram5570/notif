@@ -64,7 +64,7 @@ const WidgetActionsProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     if (actionList !== null && actionListIndex !== null) {
       const action = actionList[actionListIndex];
-      const hasIsDismissible = action.actionType === ActionTypeEnum.NextStep && action.nextStep.isDismissible;
+      const hasIsDismissible = action.actionType === ActionTypeEnum.NextStep && !action.nextStep.isDismissible;
 
       if (hasIsDismissible) {
         isDismissibleActionHandler(action);

@@ -77,7 +77,7 @@ const CustomModal = ({
         >
           <div
             className={`
-                px-4 py-6 rounded-xl
+                px-4 pt-6 pb-10 rounded-xl
                 ${!isSlidingModeTrue && !isModalOpen && 'animate-modalCenterModeClose'}
                 ${!isSlidingModeTrue && isModalOpen && 'animate-modalCenterModeOpen'}
                 ${isSlidingModeTrue && !isModalOpen && 'animate-modalSlidingModeClose'}

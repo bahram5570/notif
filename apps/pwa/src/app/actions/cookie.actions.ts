@@ -1,6 +1,6 @@
 'use server';
 
-import { CULTURE_COOKIE_NAME } from '@constants/cookie.constants';
+import { CULTURE_COOKIE_NAME, USER_COOKIE_NAME } from '@constants/cookie.constants';
 import { CultureTypes } from '@providers/CultureProvider/types';
 import { cookies } from 'next/headers';
 
@@ -21,4 +21,8 @@ export const getCultureCookie = async () => {
 
 export const deleteCultureCookie = async () => {
   cookies().delete(CULTURE_COOKIE_NAME);
+};
+
+export const deleteUserCookie = async () => {
+  cookies().delete(USER_COOKIE_NAME);
 };

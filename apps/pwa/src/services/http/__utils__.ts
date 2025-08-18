@@ -1,7 +1,8 @@
 import { getUserCookie } from '@utils/cookies';
 
+import { deleteUserCookie, setCultureCookie } from '@actions/cookie.actions';
 import { USER_COOKIE_NAME } from '@constants/cookie.constants';
-import Cookies from 'js-cookie';
+import { CULTURE_INITIAL_VALUES } from '@providers/CultureProvider/constants';
 
 import { CacheTypes, HttpTypes, OptionsTypes } from './types';
 
@@ -70,7 +71,8 @@ export const applyOptions = async (props: HttpTypes) => {
   return { options };
 };
 
-export const clearCacheHandler = () => {
-  Cookies.remove(USER_COOKIE_NAME);
+export const clearCacheHandler = async () => {
+  await deleteUserCookie();
+  await setCultureCookie(CULTURE_INITIAL_VALUES);
   window.location.href = '/';
 };

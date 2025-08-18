@@ -8,12 +8,12 @@ import usePageInfo from '@providers/__activation__/ActivationProvider/__hooks__/
 import { Pregnancy3ContainerProps } from './types';
 
 const Pregnancy3Container = ({
-  info,
-  payload,
   payloadHandler,
   activationData,
-  isLoading,
   onRegister,
+  isLoading,
+  payload,
+  info,
 }: Pregnancy3ContainerProps) => {
   const { tab, tabHandler, defaultDate, endDate, startDate } = useActivationPregnancyTabs();
   const { nextPageHandler, pageInfo, options } = usePageInfo({ payloadHandler, info, payload, activationData });
@@ -23,7 +23,7 @@ const Pregnancy3Container = ({
   }
 
   const valueHandler = (v: string) => {
-    payloadHandler({ pregnancyDate: v, isDeliveryDate: tab === 1 ? false : true });
+    payloadHandler({ pregnancyDate: v, isDeliveryDate: tab === 0 ? false : true });
 
     nextPageHandler({
       nextActivation: pageInfo.nextActivationList.condition1?.url || '',
@@ -32,8 +32,8 @@ const Pregnancy3Container = ({
   };
 
   const tabsList: ActivationTabsListTypes = [
-    { text: options[0].text, value: 1 },
-    { text: options[1].text, value: 2 },
+    { text: options[0].text, value: 0 },
+    { text: options[1].text, value: 1 },
   ];
 
   return (

@@ -1,10 +1,12 @@
+'use client';
+
 import { FOOTER_HEIGTH } from '@components/women/WomenFooter/constants';
 
 import CycleContainer from '../CycleContainer';
 import ErrorCycleAppBar from '../ErrorCycleAppBar';
 import useGetData from '../__hooks__/useGetData';
 
-const CyclePageContainer = () => {
+const CyclePage = () => {
   const { data, cycleResetKey, hasError } = useGetData();
 
   return (
@@ -15,4 +17,4 @@ const CyclePageContainer = () => {
   );
 };
 
-export default CyclePageContainer;
+export default CyclePage;

@@ -9,7 +9,7 @@ const useSubscriptionGuard = (remainDays?: number) => {
 
   useEffect(() => {
     if (typeof remainDays !== 'undefined' && remainDays <= 0) {
-      const isNoNeedSubscription = NO_NEED_SUBSCRIPTION_PAGES_LIST.find((path) => path === pathname);
+      const isNoNeedSubscription = NO_NEED_SUBSCRIPTION_PAGES_LIST.includes(pathname);
 
       if (!isNoNeedSubscription) {
         router.push('/protected/subscription');

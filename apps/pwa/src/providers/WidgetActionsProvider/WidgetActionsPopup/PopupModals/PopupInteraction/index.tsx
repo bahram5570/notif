@@ -13,8 +13,8 @@ import { useRouter } from 'next/navigation';
 import { ClickHandlerTypes, PopupInteractionProps } from './types';
 
 const PopupInteraction = ({ data }: PopupInteractionProps) => {
-  const { colors } = useTheme();
   const router = useRouter();
+  const { colors } = useTheme();
   const { actionHandler } = useWidgetActions();
 
   const clickHandler: ClickHandlerTypes = (name) => {
@@ -44,48 +44,50 @@ const PopupInteraction = ({ data }: PopupInteractionProps) => {
   }, [data.image]);
 
   return (
-    <div className="relative w-full flex flex-col items-center">
+    <div className="relative h-full -mx-4">
       <div
         onClick={() => router.back()}
-        className="w-12 h-12 flex items-center justify-center absolute top-0 left-0 z-10"
+        className="w-12 h-12 flex items-center justify-center absolute -top-12 left-2 z-10"
       >
-        <CloseIcon className="w-6 h-auto rotate-45 cursor-pointer" style={{ stroke: colors.Neutral_OnSurface }} />
+        <CloseIcon className="w-8 h-auto rotate-45 cursor-pointer" style={{ stroke: colors.Neutral_OnSurface }} />
       </div>
 
-      {jsonFile && <LottieJson loop={true} animationData={jsonFile} width={250} />}
+      {jsonFile && <LottieJson loop={true} animationData={jsonFile} width={250} className="mt-8" />}
 
-      <Typography scale="Title" size="Large">
-        {data.title}
-      </Typography>
+      <div className="flex flex-col items-center px-4">
+        <Typography scale="Title" size="Large" className="pt-5 text-center">
+          {data.title}
+        </Typography>
 
-      <Typography scale="Body" size="Large" className="pt-1 text-center">
-        {data.description}
-      </Typography>
+        <Typography scale="Body" size="Large" className="pt-1 text-center">
+          {data.description}
+        </Typography>
 
-      <div className="w-full flex items-center gap-2 pt-[114px]">
-        <Button
-          size="medium"
-          variant="fill"
-          color="FREE-STYLES"
-          onClick={() => clickHandler('first')}
-          buttonColor={colorFormatConverter(data.button.backgroundColor)}
-          contentsColor={colorFormatConverter(data.button.foregroundColor)}
-        >
-          {data.button.text}
-        </Button>
-
-        {data.secondaryButton && (
+        <div className="w-full flex items-center gap-2 pt-12">
           <Button
             size="medium"
             variant="fill"
             color="FREE-STYLES"
-            onClick={() => clickHandler('second')}
-            buttonColor={colorFormatConverter(data.secondaryButton.backgroundColor)}
-            contentsColor={colorFormatConverter(data.secondaryButton.foregroundColor)}
+            onClick={() => clickHandler('first')}
+            buttonColor={colorFormatConverter(data.button.backgroundColor)}
+            contentsColor={colorFormatConverter(data.button.foregroundColor)}
           >
-            {data.secondaryButton.text}
+            {data.button.text}
           </Button>
-        )}
+
+          {data.secondaryButton && (
+            <Button
+              size="medium"
+              variant="fill"
+              color="FREE-STYLES"
+              onClick={() => clickHandler('second')}
+              buttonColor={colorFormatConverter(data.secondaryButton.backgroundColor)}
+              contentsColor={colorFormatConverter(data.secondaryButton.foregroundColor)}
+            >
+              {data.secondaryButton.text}
+            </Button>
+          )}
+        </div>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
 
 const useIsDismissibleAction = () => {
@@ -13,7 +13,7 @@ const useIsDismissibleAction = () => {
     setIsDismissibleAction(v);
   };
 
-  const isPopupOpen = getQueryParams(MODAL_QUERY_NAME) !== null;
+  const isPopupOpen = getQueryParams(MODALS.WIDGET_POPUP) !== null;
 
   useEffect(() => {
     if (isDismissibleAction !== null && !isPopupOpen) {

@@ -32,7 +32,7 @@ const CreateNewNoteBtn = ({ date }: CreateNewNoteBtnPropsType) => {
           ثبت یادداشت جدید
         </Typography>
 
-        <PlusIcon className="w-[18px]  h-auto" style={{ stroke: colors.White, fill: colors.White }} />
+        <PlusIcon className="w-[18px] h-auto" style={{ stroke: colors.White, fill: colors.White }} />
       </div>
     </div>
   );
