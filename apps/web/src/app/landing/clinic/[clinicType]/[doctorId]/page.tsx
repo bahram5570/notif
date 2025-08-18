@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: { params: { doctorId: string,
     } else {
         return {
             title: '',
-            robots: 'noindex, nofollow',
+            robots: 'index, follow',
             description: '',
             alternates: {
                 canonical: `${HOST_URL}/landing/clinic/${params.clinicType}/${params.doctorId}`,
