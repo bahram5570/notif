@@ -17,6 +17,7 @@ const MenPage = () => {
         <MenHeading />
         <QrCode />
         <Achievements list={MEN_ACHIEVEMENTS_LIST} />
+        <DownloadAppMen />
         <FeaturesIntruduction
           list={MEN_FEATURES_INTRODUCTION_LIST}
           mainTitle="چرا باید ایمپو آقایان را برای مدیریت رابطه همدلی نصب کنیم؟"
@@ -29,7 +30,6 @@ const MenPage = () => {
           subTitle="مقالات ایمپو از به‌روزترین و تخصصی‌ترین منابع و توسط متخصصین هر حوزه نوشته می‌شه و بهت کمک می‌کنه تا جواب سوالاتت رو در کوتاه‌ترین زمان پیدا کنی"
         />
         <Comments list={MEN_COMMENTS_LIST} />
-        <DownloadAppMen />
       </div>
     </HeaderFooterContainer>
   );

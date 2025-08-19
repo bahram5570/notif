@@ -6,6 +6,7 @@ import TimeIcon from '@assets/icons/clinicLanding/time.svg';
 import UsersIcon from '@assets/icons/clinicLanding/users.svg';
 import emptyProfile from '@assets/images/clinicLanding/emptyProfile.webp';
 import { fileImageUrl } from '@services/http';
+import { StaticImageData } from 'next/image';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
@@ -15,18 +16,21 @@ import { COLORS_LIST } from '@theme/colors';
 import { DrCardProps } from './types';
 
 const DrCard = ({ active, id, name, nezam, rate, rateCount, image, speciality, params }: DrCardProps) => {
+  let imageLink: StaticImageData | string = emptyProfile;
+
+  if (image) {
+    if (image.includes('http')) {
+      imageLink = image;
+    } else {
+      imageLink = fileImageUrl + image;
+    }
+  }
+
   return (
     <div className="rounded-xl px-3 pt-2 pb-4" style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}>
       <div className="flex px-2 py-1 rounded-xl items-center gap-x-1" style={{ backgroundColor: COLORS_LIST.White }}>
         <div className="relative w-[48px] h-[48px]">
-          <CustomImage
-            alt={''}
-            height={48}
-            width={48}
-            quality={99}
-            src={image ? fileImageUrl + image : emptyProfile}
-            className="object-cover rounded-full h-full w-full"
-          />
+          <CustomImage alt={''} fill={true} src={imageLink} className="object-cover rounded-full h-full w-full" />
           {active && <OnlineIcon className="absolute left-0 bottom-0" />}
         </div>
         <div className="grid gap-y-1">

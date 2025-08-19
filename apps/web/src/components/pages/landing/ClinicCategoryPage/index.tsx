@@ -1,6 +1,5 @@
-import { SMALL_SCREEN_MAX_WIDTH } from '@constants/app.constants';
-
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
+import { SMALL_SCREEN_MAX_WIDTH } from '@constants/app.constants';
 
 import CategoryDoctorContents from './CategoryDoctorContents';
 import CategoryDrList from './CategoryDrList';
