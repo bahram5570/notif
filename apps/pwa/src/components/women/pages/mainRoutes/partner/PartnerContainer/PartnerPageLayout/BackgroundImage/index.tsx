@@ -7,7 +7,7 @@ import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import useTheme from '@hooks/useTheme';
 
-import { PartnerModalNameEnums } from '../PartnerModals/enums';
+import { PartnerModalNameEnums } from '../../PartnerModals/enums';
 import { BackgroundImagePropsType } from './type';
 
 const BackgroundImage = ({ isValid, coverImage }: BackgroundImagePropsType) => {
@@ -15,6 +15,15 @@ const BackgroundImage = ({ isValid, coverImage }: BackgroundImagePropsType) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
   const canDeleteImage = coverImage ? true : false;
+
+  const onClick = () => {
+    (newQueryParamsHandler({
+      [MODAL_QUERY_NAME]: 'true',
+      name: PartnerModalNameEnums.UploadBackgroundImage,
+      canDeleteImage: String(canDeleteImage),
+    }),
+      pageNavigationHandler({ showProgressBar: true, id: 'UploadBackgroundImage' }));
+  };
 
   return (
     <div className="absolute w-full">
@@ -38,17 +47,7 @@ const BackgroundImage = ({ isValid, coverImage }: BackgroundImagePropsType) => {
           }}
         ></div>
         {isValid && (
-          <div
-            className={`absolute ${coverImage ? ' top-44' : 'top-32'} left-3 z-20 select-none`}
-            onClick={() => {
-              (newQueryParamsHandler({
-                [MODAL_QUERY_NAME]: 'true',
-                name: PartnerModalNameEnums.UploadBackgroundImage,
-                canDeleteImage: String(canDeleteImage),
-              }),
-                pageNavigationHandler({ showProgressBar: true, id: 'UploadBackgroundImage' }));
-            }}
-          >
+          <div className={`absolute ${coverImage ? ' top-44' : 'top-32'} left-3 z-20 select-none`} onClick={onClick}>
             <div
               className="w-8 h-8 flex justify-center items-center rounded-full cursor-pointer"
               style={{

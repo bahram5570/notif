@@ -11,11 +11,7 @@ const ProfileButton = () => {
 
   const clickHandler = () => {
     if (!pageNavigationLoading) {
-      if (path === 'BACK') {
-        pageNavigationHandler({ showProgressBar: false, linkTo: -1, id: 'profile' });
-      } else {
-        pageNavigationHandler({ showProgressBar: false, linkTo: path, id: 'profile' });
-      }
+      pageNavigationHandler({ showProgressBar: false, linkTo: path, id: 'profile' });
     }
   };
 

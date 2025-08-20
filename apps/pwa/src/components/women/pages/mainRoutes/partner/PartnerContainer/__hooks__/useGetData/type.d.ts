@@ -84,4 +84,5 @@ export type ChallengeResponseType = {
   partnerBio: BioType;
   bioRhythemWidget: BioRhythemWidget;
   coverImage: string;
+  womanWidgets: ({ order: number } & WidgetsTypes)[];
 };

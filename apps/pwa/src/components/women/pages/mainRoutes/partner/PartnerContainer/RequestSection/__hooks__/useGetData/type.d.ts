@@ -1,7 +1,7 @@
 export type ItemType = {
   id: string;
   createTime: string;
-  isRecv: true;
+  isRecv: boolean;
   name: string;
   birthdate: string;
   image: string;

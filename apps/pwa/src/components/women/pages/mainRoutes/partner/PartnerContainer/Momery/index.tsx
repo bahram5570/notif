@@ -15,7 +15,7 @@ const Memory = ({ memory, valid }: MemeryPropsType) => {
 
   return (
     <div
-      className="flex flex-col gap-4 p-4 rounded-xl  items-end"
+      className="flex flex-col gap-4 py-4 px-8 rounded-xl  items-end"
       style={{ border: `1px solid ${colors.Neutral_Surface}` }}
     >
       <div className="flex justify-between items-end ">

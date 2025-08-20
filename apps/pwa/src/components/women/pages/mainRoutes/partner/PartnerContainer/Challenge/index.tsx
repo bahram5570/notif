@@ -15,7 +15,7 @@ const Challenge = ({ card, valid, button }: ChallengePropsType) => {
   const { colors } = useTheme();
 
   return (
-    <div className="mt-20 flex flex-col gap-3">
+    <div className="mt-20 flex flex-col gap-3 p-4">
       {valid && (
         <div className="flex flex-row-reverse justify-center items-center gap-3">
           {updatedPartnerLinkList.map((link, index) => {

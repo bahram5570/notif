@@ -11,7 +11,7 @@ const WidgetWomanPairProgram = ({ data }: WomanPairProgramCardPropsPropsType) =>
   const hasOOneWidget = data.items.length === 1;
 
   return (
-    <div>
+    <div style={{ maxWidth: MAX_SCREEN_WIDTH - 60 }}>
       <WidgetCardContainer title={data.title}>
         <div className="overflow-x-auto overflow-y-hidden  max-w-full flex flex-row-reverse gap-3">
           {data.items.map((item, index) => (

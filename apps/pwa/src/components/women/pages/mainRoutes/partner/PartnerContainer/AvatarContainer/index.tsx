@@ -11,17 +11,11 @@ import useTheme from '@hooks/useTheme';
 import { PartnerModalNameEnums } from '../PartnerModals/enums';
 import { AvatarContainerPropsType } from './type';
 
-const AvatarContainer = ({
-  manAvatar,
-  manName,
-  womanAvatar,
-  womanName,
-  canDeleteProfile,
-  valid,
-}: AvatarContainerPropsType) => {
+const AvatarContainer = (props: AvatarContainerPropsType) => {
+  const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { colors } = useTheme();
+  const { canDeleteProfile, manAvatar, manName, valid, womanAvatar, womanName } = props;
 
   const handleClick = () => {
     (newQueryParamsHandler({

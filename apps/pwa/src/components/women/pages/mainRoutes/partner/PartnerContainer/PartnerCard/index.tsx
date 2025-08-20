@@ -12,7 +12,7 @@ const PartnerCard = ({ partner, valid }: PartnerCardPropsType) => {
 
   return (
     <div
-      className="flex flex-col gap-4 py-6 px-4 rounded-xl  items-end"
+      className="flex flex-col gap-4 py-6 px-10 rounded-xl  items-end"
       style={{ border: `1px solid ${colors.Neutral_Surface} ` }}
     >
       {partner.cycleTitle && (
