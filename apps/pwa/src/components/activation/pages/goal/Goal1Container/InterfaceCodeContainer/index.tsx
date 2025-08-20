@@ -1,7 +1,7 @@
 import Button from '@components/ui/Button';
 import CustomModal from '@components/ui/CustomModal';
 import Typography from '@components/ui/Typography';
-import CustomLink from '@components/women/pages/mainRoutes/partner/PartnerContainer/CustomLink';
+import CustomLink from '@components/women/pages/mainRoutes/partner/PartnerPage/CustomLink';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import useTheme from '@hooks/useTheme';
 

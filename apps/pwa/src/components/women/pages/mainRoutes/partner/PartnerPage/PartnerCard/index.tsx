@@ -10,6 +10,9 @@ import { PartnerCardPropsType } from './type';
 const PartnerCard = ({ partner, valid }: PartnerCardPropsType) => {
   const { colors } = useTheme();
 
+  const backgroundColor =
+    partner.cycleCard?.gradient.length > 0 ? generateLinearGradient(partner.cycleCard?.gradient) : colors.White;
+
   return (
     <div
       className="flex flex-col gap-4 py-6 px-10 rounded-xl  items-end"
@@ -26,7 +29,7 @@ const PartnerCard = ({ partner, valid }: PartnerCardPropsType) => {
       <div
         className={`divide-y-[1px] divide-opacity-20 flex flex-col ${!valid ? 'py-5' : 'py-4'} px-4  items-center rounded-[18px]  w-full`}
         style={{
-          background: `${partner.cycleCard?.gradient.length > 0 ? generateLinearGradient(partner.cycleCard?.gradient) : `#fff`} `,
+          background: backgroundColor,
         }}
       >
         <div className=" flex flex-row gap-2  sm:px-4 py-3  items-center rounded-xl  w-full mb-2">

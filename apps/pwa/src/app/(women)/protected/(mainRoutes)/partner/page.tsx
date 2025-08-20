@@ -1,7 +1,7 @@
-import PartnerContainer from '@components/women/pages/mainRoutes/partner/PartnerContainer';
+import PartnerPage from '@components/women/pages/mainRoutes/partner/PartnerPage';
 
 const Partner = () => {
-  return <PartnerContainer />;
+  return <PartnerPage />;
 };
 
 export default Partner;

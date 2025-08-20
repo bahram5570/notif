@@ -29,8 +29,7 @@ const RequestSection = () => {
       </div>
       {isLoading && <RequestListSkeleton />}
 
-      {!isLoading && hadData && <RequestList data={data} />}
-      {!isLoading && !hadData && <NotRequestData />}
+      {!isLoading && hadData ? <RequestList data={data} /> : <NotRequestData />}
     </div>
   );
 };

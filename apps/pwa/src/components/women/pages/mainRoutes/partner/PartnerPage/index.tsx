@@ -13,10 +13,9 @@ import PartnerPageLayout from './PartnerPageLayout';
 import RequestSection from './RequestSection';
 import useGetData from './__hooks__/useGetData';
 
-const PartnerContainer = () => {
+const PartnerPage = () => {
   const { data, isLoading } = useGetData();
   const { colors } = useTheme();
-
   return (
     <>
       {isLoading && <PartnerContainerSkeleton />}
@@ -57,4 +56,4 @@ const PartnerContainer = () => {
   );
 };
 
-export default PartnerContainer;
+export default PartnerPage;

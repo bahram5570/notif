@@ -4,7 +4,6 @@ import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useTheme from '@hooks/useTheme';
-import Link from 'next/link';
 
 import CustomLink from '../CustomLink';
 import { MemeryPropsType } from './type';
@@ -12,6 +11,12 @@ import { MemeryPropsType } from './type';
 const Memory = ({ memory, valid }: MemeryPropsType) => {
   const { colors } = useTheme();
   const { pageNavigationHandler } = usePageNavigationLoading();
+
+  const link = valid ? '/protected/memory/createMemory' : '/protected/partner/start';
+
+  const onClick = () => {
+    pageNavigationHandler({ id: 'memoryList', showProgressBar: true, linkTo: '/protected/partner/memory' });
+  };
 
   return (
     <div
@@ -23,23 +28,14 @@ const Memory = ({ memory, valid }: MemeryPropsType) => {
           {memory.cardTitle}
         </Typography>
       </div>
-      {memory.dateText ? (
-        <Link
-          className="w-full relative"
-          href="/protected/partner/memory"
-          onClick={() => {
-            pageNavigationHandler({ id: 'memoryList', showProgressBar: true });
-          }}
-        >
-          <CustomImage
-            src={memory.image || '/assets/images/partner.webp'}
-            className="w-full object-cover rounded-xl"
-            style={{ aspectRatio: '16/9' }}
-          />
-        </Link>
-      ) : (
-        <CustomImage src={memory.image || '/assets/images/partner.webp'} />
-      )}
+
+      <div className="w-full relative" onClick={onClick}>
+        <CustomImage
+          src={memory.image || '/assets/images/partner.webp'}
+          className="w-full object-cover rounded-xl"
+          style={{ aspectRatio: '16/9' }}
+        />
+      </div>
 
       <div className="flex flex-col justify-end items-end">
         {valid && (
@@ -53,11 +49,7 @@ const Memory = ({ memory, valid }: MemeryPropsType) => {
         </Typography>
       </div>
 
-      <CustomLink
-        lable={memory.buttonText}
-        link={valid ? '/protected/memory/createMemory' : '/protected/partner/start'}
-        id="memory-link"
-      />
+      <CustomLink lable={memory.buttonText} link={link} id="memory-link" />
     </div>
   );
 };
