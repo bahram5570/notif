@@ -2,10 +2,9 @@ import UserTracking from './UserTracking';
 
 const UserTrackingProvider = ({ children }: { children: React.ReactNode }) => {
   return (
-    <>
-      <UserTracking />
+    <UserTracking>
       <>{children}</>
-    </>
+    </UserTracking>
   );
 };
 

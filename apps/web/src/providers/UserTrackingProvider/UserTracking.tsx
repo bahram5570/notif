@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { getUserTracking, newUserTracking, updateUserTracking } from './__utils__';
 
@@ -8,8 +8,9 @@ import { usePathname } from 'next/navigation';
 
 import { UserTrackingInfoTypes } from './types';
 
-const UserTracking = () => {
+const UserTracking = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();
+  const [resetKey, setResetKey] = useState(1);
 
   useEffect(() => {
     const handleUserTrackingData = async () => {
@@ -42,12 +43,14 @@ const UserTracking = () => {
         urls: [firstUrl],
         userAgent: res.userAgent,
       });
+
+      setResetKey(resetKey + 1);
     };
 
     handleUserTrackingData();
   }, [pathname]);
 
-  return <></>;
+  return <React.Fragment key={resetKey}>{children}</React.Fragment>;
 };
 
 export default UserTracking;
