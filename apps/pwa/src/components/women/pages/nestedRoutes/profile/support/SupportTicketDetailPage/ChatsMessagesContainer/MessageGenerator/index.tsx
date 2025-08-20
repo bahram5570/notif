@@ -1,5 +1,5 @@
 import Typography from '@components/ui/Typography';
-import { SideEnum } from '@components/women/pages/mainRoutes/partner/chatContainer/MessageListContainer/Message/constants';
+import { SideEnum } from '@components/women/pages/nestedRoutes/partner/chatContainer/MessageListContainer/Message/constants';
 
 import ChatContainerMaker from './ChatContainerMaker';
 import MessageGeneratorMedia from './MessageGeneratorMedia';

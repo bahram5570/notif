@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 import { textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
