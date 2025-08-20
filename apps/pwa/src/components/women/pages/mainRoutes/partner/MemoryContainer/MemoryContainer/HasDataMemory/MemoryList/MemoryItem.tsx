@@ -21,7 +21,7 @@ const MemoryItem = (props: MemoryItemPropsType) => {
 
   return (
     <Link
-      href={`/protected/partner/memory/${props.id}?page=${props.currentPage}`}
+      href={`/protected/memory/${props.id}?page=${props.currentPage}`}
       onClick={() => pageNavigationHandler({ id: 'memory', showProgressBar: true })}
       className="flex flex-col justify-end items-end p-2 gap-2"
     >

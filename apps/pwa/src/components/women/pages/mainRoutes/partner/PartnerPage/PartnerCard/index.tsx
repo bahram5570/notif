@@ -50,7 +50,7 @@ const PartnerCard = ({ partner, valid }: PartnerCardPropsType) => {
                 lable={partner.cycleCard.buttonText}
                 style={{ width: 'fit-content', padding: '1em' }}
                 labelSize="Medium"
-                link={valid ? '/protected/calendar' : '/protected/partner/start'}
+                link={valid ? '/protected/calendar' : '/protected/partnerStart'}
               />
             )} */}
           </div>

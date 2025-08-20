@@ -12,10 +12,10 @@ const Memory = ({ memory, valid }: MemeryPropsType) => {
   const { colors } = useTheme();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
-  const link = valid ? '/protected/memory/createMemory' : '/protected/partner/start';
+  const link = valid ? '/protected/memory/createMemory' : '/protected/partnerStart';
 
   const onClick = () => {
-    pageNavigationHandler({ id: 'memoryList', showProgressBar: true, linkTo: '/protected/partner/memory' });
+    pageNavigationHandler({ id: 'memoryList', showProgressBar: true, linkTo: '/protected/memory' });
   };
 
   return (

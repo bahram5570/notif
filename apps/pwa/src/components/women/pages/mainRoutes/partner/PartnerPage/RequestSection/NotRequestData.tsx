@@ -11,7 +11,7 @@ const NotRequestData = () => {
       <Typography scale="Body" size="Small" color="Neutral_OnBackground" textAlign="center" className="p-3">
         هنوز هیچکس برات درخواست همدلی نفرستاده! اما خودت می‌تونی همدلی رو شروع کنی
       </Typography>
-      <CustomLink lable="شروع همدلی" link="/protected/partner/start" id="not-request-data-link" />
+      <CustomLink lable="شروع همدلی" link="/protected/partnerStart" id="not-request-data-link" />
     </div>
   );
 };

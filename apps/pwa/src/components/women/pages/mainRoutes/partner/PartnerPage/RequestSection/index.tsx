@@ -13,6 +13,8 @@ const RequestSection = () => {
   const { data, getData, isLoading } = useGetData();
   const hadData = data && data?.list.length > 0;
 
+  const title = hadData ? 'درخواست های همدلی' : ' درخواست ها';
+
   return (
     <div
       className=" flex flex-col gap-4 p-3 rounded-xl "
@@ -24,7 +26,7 @@ const RequestSection = () => {
         </div>
 
         <Typography scale="Title" size="Small">
-          {hadData ? 'درخواست های همدلی' : ' درخواست ها'}
+          {title}
         </Typography>
       </div>
       {isLoading && <RequestListSkeleton />}

@@ -15,7 +15,7 @@ const HistoryItem = (props: HistoryItemPropsType) => {
 
   return (
     <Link
-      href={`/protected/partner/challenge/${props.id}`}
+      href={`/protected/challenge/${props.id}`}
       onClick={() => pageNavigationHandler({ id: 'history', showProgressBar: true })}
     >
       <div
