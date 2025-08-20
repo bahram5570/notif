@@ -8,13 +8,13 @@ import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import useTheme from '@hooks/useTheme';
 import { useRouter } from 'next/navigation';
 
-import RoutinDiets from '../../routin/RoutinContainer/RoutinDiets';
-import RoutinFooter from '../../routin/RoutinContainer/RoutinFooter';
-import RoutinHeading from '../../routin/RoutinContainer/RoutinHeading';
-import RoutinSkeleton from '../../routin/RoutinContainer/RoutinSkeleton';
-import RoutinUnlockTost from '../../routin/RoutinContainer/RoutinUnlockTost';
-import RoutinWriter from '../../routin/RoutinContainer/RoutinWriter';
 import useFeedback from '../PairRoutinItemContainer/__hooks__/useFeedback';
+import RoutinDiets from './RoutinDiets';
+import RoutinFooter from './RoutinFooter';
+import RoutinHeading from './RoutinHeading';
+import RoutinSkeleton from './RoutinSkeleton';
+import RoutinUnlockTost from './RoutinUnlockTost';
+import RoutinWriter from './RoutinWriter';
 import useFinalStepWelcoming from './__hook__/useFinalStepWelcoming';
 import useGetData from './__hook__/useGetData';
 

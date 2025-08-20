@@ -9,10 +9,10 @@ import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import useTheme from '@hooks/useTheme';
 import { useRouter } from 'next/navigation';
 
-import EmptyState from '../../routin/RoutinItemContainer/EmptyState';
-import RoutinItemHeading from '../../routin/RoutinItemContainer/RoutinItemHeading';
-import RoutinItemSkeleton from '../../routin/RoutinItemContainer/RoutinItemSkeleton';
-import { ProgramWidgetItemStatusEnum } from '../../routin/enum';
+import { ProgramWidgetItemStatusEnum } from '../enum';
+import EmptyState from './EmptyState';
+import RoutinItemHeading from './RoutinItemHeading';
+import RoutinItemSkeleton from './RoutinItemSkeleton';
 import useFeedback from './__hooks__/useFeedback';
 import useGetPairRoutinItemData from './__hooks__/useGetData';
 import useSeen from './__hooks__/useSeen';
