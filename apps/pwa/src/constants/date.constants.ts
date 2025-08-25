@@ -12,7 +12,12 @@ export const GREGORIAN_START_DATE = '1970-01-01';
 export const PREGNANCY_INTERVAL = 279;
 export const PERIOD_INTERVAL = 180;
 
+export const CALENDAR_CELL_SIZE = 36;
+
+export const CALENDAR_JALALI_WEEK_NAMES = ['جمعه', 'پنج', 'چهار', 'سه', 'دو', 'یک', 'شنبه'];
 export const WEEK_LIST = ['یکشنبه', 'دوشنبه', 'سه‌شنبه', 'چهارشنبه', 'پنجشنبه', 'جمعه', 'شنبه'];
+export const CALENDAR_GREGORIAN_FARSI_WEEK_NAMES = ['شنبه', 'جمعه', 'پنج', 'چهار', 'سه', 'دو', 'یک'];
+
 export const JALALI_MONTH_LIST = [
   'فروردین',
   'اردیبهشت',

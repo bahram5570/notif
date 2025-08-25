@@ -1,3 +1,4 @@
+import ActivationCalendar from '@components/activation/ActivationCalendar';
 import DateModule from '@components/activation/DateModule';
 import MainActivationModule from '@components/activation/MainActivationModule';
 import useDateIntervals from '@providers/__activation__/ActivationProvider/__hooks__/useDateIntervals';
@@ -32,7 +33,8 @@ const Intention6Container = ({
   return (
     <>
       <MainActivationModule isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
-        <DateModule valueHandler={valueHandler} startDate={periodStart} endDate={periodEnd} />
+        {/* <DateModule valueHandler={valueHandler} startDate={periodStart} endDate={periodEnd} /> */}
+        <ActivationCalendar periodEnd={periodEnd} periodStart={periodStart} />
       </MainActivationModule>
     </>
   );

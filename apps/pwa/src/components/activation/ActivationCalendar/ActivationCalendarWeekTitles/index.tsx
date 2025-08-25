@@ -9,7 +9,7 @@ import {
 } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
 
-const WeekTitles = () => {
+const ActivationCalendarWeekTitles = () => {
   const { culture } = useCulture();
 
   const weeksList = useMemo(() => {
@@ -35,4 +35,4 @@ const WeekTitles = () => {
   );
 };
 
-export default WeekTitles;
+export default ActivationCalendarWeekTitles;

@@ -1,8 +1,8 @@
 import ArrowIcon from '@assets/icons/calendarArrow.svg';
 
 import Typography from '@components/ui/Typography';
+import { CALENDAR_CELL_SIZE } from '@constants/date.constants';
 
-import { CALENDAR_CELL_SIZE } from '../../constants';
 import { CalendarHeadingProps } from './types';
 
 const CalendarHeading = ({ headingScript, navigateHandler }: CalendarHeadingProps) => {
