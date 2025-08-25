@@ -33,6 +33,8 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="fa" dir="rtl">
       <head>
+        <meta name="msvalidate.01" content="0BDDCC0D2CF0B15B4DC64ABB84BB8526" />
+
         <Script id="gtm-init" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -114,14 +116,3 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 };
 
 export default RootLayout;
-
-// !function (t, e, n) {
-//     t.yektanetAnalyticsObject = n, t[n] = t[n] || function () {
-//         t[n].q.push(arguments)
-//     }, t[n].q = t[n].q || [];
-//     var a = new Date, r = a.getFullYear().toString() + "0" + a.getMonth() + "0" + a.getDate() + "0" + a.getHours(),
-//         c = e.getElementsByTagName("script")[0], s = e.createElement("script");
-//     s.id = "ua-script-R73jHTwG"; s.dataset.analyticsobject = n;
-//     s.async = 1; s.type = "text/javascript";
-//     s.src = "https://cdn.yektanet.com/rg_woebegone/scripts_v3/R73jHTwG/rg.complete.js?v=" + r, c.parentNode.insertBefore(s, c)
-// }(window, document, "yektanet");
