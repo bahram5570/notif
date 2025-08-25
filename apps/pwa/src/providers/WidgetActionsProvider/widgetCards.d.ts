@@ -668,6 +668,11 @@ type ProgramScrolltemType = {
   description: string;
   writerSpeciality: string;
   button: WidgetsButtonTypes;
+  commentCount: number;
+  isBookmarked: boolean;
+  rateAvg: number;
+  bmiDescription: string;
+  bmiTitle: string;
 };
 
 export type WidgetProgramScrollType = IsPdfDownloadingTypes & {
