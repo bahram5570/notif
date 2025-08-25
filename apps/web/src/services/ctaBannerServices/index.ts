@@ -1,5 +1,6 @@
-import { CraBannerItemTypes } from '@components/CtaBanner/types';
 import http from '@services/http';
+
+import { CraBannerItemTypes } from '@components/CtaBanner/types';
 
 export const ctaBannerListService = async () => {
   const { data, error } = await http<{ items: CraBannerItemTypes[] }>({

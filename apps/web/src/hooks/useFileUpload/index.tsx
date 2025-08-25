@@ -1,6 +1,6 @@
-import useApi from '@hooks/useApi';
-
 import { useState } from 'react';
+
+import useApi from '@hooks/useApi';
 
 import { FileDataHandlerTypes, FileResponseTypes, FileUploadImageFileTypes, OptionsTypes } from './types';
 

@@ -1,6 +1,7 @@
 'use client';
 
 import StarIcon from '@assets/icons/Stars.svg';
+
 import CustomTypography from '@components/ui/CustomTypography';
 
 import Book from './Book';

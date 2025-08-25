@@ -1,9 +1,9 @@
-import { COLORS_LIST } from '@theme/colors';
-import { FONTS_ANDROID, FONTS_IOS } from '@theme/fonts';
-
 import { cloneElement } from 'react';
 
 import { toEnglishNumbers, toPersianNumbers } from '@utils/numbers';
+
+import { COLORS_LIST } from '@theme/colors';
+import { FONTS_ANDROID, FONTS_IOS } from '@theme/fonts';
 
 import { ColorMakerTypes, ResultMakerTypes, TypographyMakerTypes } from './types';
 

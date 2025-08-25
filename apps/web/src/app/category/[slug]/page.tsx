@@ -1,10 +1,10 @@
+import http from '@services/http';
+
 import { BlogsResponseTypes } from '@app/blogs/types';
+import CategoryPageContainer from '@components/pages/category/slug/CategoryPageContainer';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-
-import CategoryPageContainer from '@components/pages/category/slug/CategoryPageContainer';
-import http from '@services/http';
 
 import CategorySchema from '../../../schema/CategorySchema';
 import { CategoryResponseTypes, CategoryValidationTypes } from './types';

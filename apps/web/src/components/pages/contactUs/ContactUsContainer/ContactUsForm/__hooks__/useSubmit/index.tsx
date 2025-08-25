@@ -1,7 +1,8 @@
+import { handleValidation } from './__utils__';
+
 import useCustomToast from '@hooks/useCustomToast';
 
 import { UserInfoType } from '../../type';
-import { handleValidation } from './__utils__';
 
 const useSubmit = () => {
   const { onToast } = useCustomToast();

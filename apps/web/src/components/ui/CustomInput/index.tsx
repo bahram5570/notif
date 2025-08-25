@@ -1,10 +1,11 @@
 'use client';
 
+import { colorMaker, typographyMaker } from '../CustomTypography/__utils__';
+import { resultMaker } from './__utils__';
+
 import useBreakPoint from '@hooks/useBreakPoint';
 import useOperatingSystem from '@hooks/useOperatingSystem';
 
-import { colorMaker, typographyMaker } from '../CustomTypography/__utils__';
-import { resultMaker } from './__utils__';
 import { CustomInputTypes } from './types';
 
 const CustomInput = ({

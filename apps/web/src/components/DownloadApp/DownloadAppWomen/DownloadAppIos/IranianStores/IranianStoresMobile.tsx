@@ -1,15 +1,15 @@
-import styled from '@emotion/styled';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import { COLORS_LIST } from '@theme/colors';
-import { useRouter } from 'next/navigation';
-
 import React from 'react';
+
+import WebIcon from '@assets/icons/web.svg';
 
 import { Dialog, Slide } from '@mui/material';
 import { TransitionProps } from '@mui/material/transitions';
 
-import WebIcon from '@assets/icons/web.svg';
 import CustomTypography from '@components/ui/CustomTypography';
+import styled from '@emotion/styled';
+import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { COLORS_LIST } from '@theme/colors';
+import { useRouter } from 'next/navigation';
 
 import DownloadAppLinkGenerator from '../../DownloadAppLinkGenerator';
 import { DOWNLOAD_MODAL_QUERY_NAME, IRANIAN_STORES_LIST } from '../constants';

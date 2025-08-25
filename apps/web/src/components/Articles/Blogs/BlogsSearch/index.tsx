@@ -1,11 +1,11 @@
 'use client';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import CrossIcon from '@assets/icons/cross.svg';
 import MagnifierIcon from '@assets/icons/magnifier.svg';
+
 import CustomInput from '@components/ui/CustomInput';
 import Spinner from '@components/ui/Spinner';
+import { COLORS_LIST } from '@theme/colors';
 
 import BlogsSearchList from './BlogsSearchList';
 import useArticlesSearch from './__hooks__/useArticlesSearch';

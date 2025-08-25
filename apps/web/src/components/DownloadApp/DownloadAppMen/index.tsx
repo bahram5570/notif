@@ -1,11 +1,11 @@
 'use client';
 
-import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
-
 import ImpoIcon from '@assets/icons/impoMen.svg';
+
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
+import useBreakPoint from '@hooks/useBreakPoint';
+import { COLORS_LIST } from '@theme/colors';
 
 import { DOWNLOAD_APP_SECTION_ID } from '../DownloadAppWomen/constants';
 import DownloadAppAndroid from './DownloadAppAndroid';

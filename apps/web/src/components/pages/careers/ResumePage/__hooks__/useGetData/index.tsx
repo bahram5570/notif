@@ -1,8 +1,7 @@
-import useApi from '@hooks/useApi';
-
 import { useEffect, useState } from 'react';
 
 import { JobTypes } from '@components/pages/careers/types';
+import useApi from '@hooks/useApi';
 
 const useGetData = () => {
   const [jobId, setJobId] = useState('null');

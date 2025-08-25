@@ -1,7 +1,6 @@
+import SympathyPage from '@components/pages/sympathy/SympathyPage';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
-
-import SympathyPage from '@components/pages/sympathy/SympathyPage';
 
 export const metadata: Metadata = {
   title: 'همدلی',

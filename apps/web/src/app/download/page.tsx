@@ -1,6 +1,5 @@
-import { Metadata } from 'next';
-
 import DownloadPageContainer from '@components/pages/download/DownloadPageContainer';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'راهنمای نصب اپلیکیشن ایمپو',

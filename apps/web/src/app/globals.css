@@ -42,7 +42,7 @@ textarea {
 
 td {
   border: 1px solid;
-  font-size: 14px ;
+  font-size: 14px;
 }
 
 /* # Old banner styles **************************************************************** */
@@ -387,7 +387,6 @@ td {
   }
 }
 
-
 /* swiper style */
 
 .swiper {
@@ -395,5 +394,5 @@ td {
 }
 
 .swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: #7E7E7E;
+  background-color: #7e7e7e;
 }

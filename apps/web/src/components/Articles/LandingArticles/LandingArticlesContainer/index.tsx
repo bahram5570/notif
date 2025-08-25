@@ -1,12 +1,11 @@
 'use client';
 
-import { COLORS_LIST } from '@theme/colors';
-import { FreeMode } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
 import ArticleCardGenerator from '@components/Articles/ArticleCardGenerator';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
+import { FreeMode } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { LandingArticlesContainerTypes } from './types';
 

@@ -1,11 +1,10 @@
 'use client';
 
-import useOperatingSystem from '@hooks/useOperatingSystem';
-
 import FooterInfo from '@components/HeaderFooterContainer/Footer/NormalFooter/FooterInfo';
 import FooterPages from '@components/HeaderFooterContainer/Footer/NormalFooter/FooterPages';
 import FooterSocials from '@components/HeaderFooterContainer/Footer/NormalFooter/FooterSocials';
 import FooterTrust from '@components/HeaderFooterContainer/Footer/NormalFooter/FooterTrust';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 
 const HomeFooter = () => {
   const { operatingSystem } = useOperatingSystem();

@@ -1,6 +1,5 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import CustomButton from '@components/ui/CustomButton';
+import { COLORS_LIST } from '@theme/colors';
 
 import { TAB_LIST } from '../constants';
 import { TabBtnListPropsType } from './type';

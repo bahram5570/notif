@@ -1,4 +1,5 @@
 export interface ActivationCalendarTypes {
-  periodEnd: string;
-  periodStart: string;
+  endDate: string;
+  startDate: string;
+  valueHandler: (v: string) => void;
 }

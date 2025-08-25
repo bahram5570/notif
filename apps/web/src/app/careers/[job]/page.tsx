@@ -1,9 +1,9 @@
-import { HOST_URL } from '@constants/links.constants';
-import { Metadata } from 'next';
+import http from '@services/http';
 
 import JobPage from '@components/pages/careers/JobPage';
 import { JobTypes } from '@components/pages/careers/types';
-import http from '@services/http';
+import { HOST_URL } from '@constants/links.constants';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'فرصت های شغلی ایمپو',

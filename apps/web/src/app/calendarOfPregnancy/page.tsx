@@ -1,7 +1,6 @@
+import CalendarOfPregnancyContainer from '@components/pages/calendarOfPregnancy/CalendarOfPregnancyContainer';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
-
-import CalendarOfPregnancyContainer from '@components/pages/calendarOfPregnancy/CalendarOfPregnancyContainer';
 
 export const metadata: Metadata = {
   title: 'محاسبه سن بارداری آنلاین و تقویم بارداری هفتگی و ماهانه',

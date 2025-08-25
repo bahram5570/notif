@@ -1,7 +1,8 @@
+import { ctaBannerService } from '@services/ctaBannerServices';
+
 import CtaBanner from '@components/CtaBanner';
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
 import QrCode from '@components/QrCode';
-import { ctaBannerService } from '@services/ctaBannerServices';
 
 import CalendarOfPregnancyContent from './CalendarOfPregnancyContent';
 import CalendarOfPregnancyDownloadScript from './CalendarOfPregnancyDownloadScript';

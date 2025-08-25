@@ -1,10 +1,10 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import EyeIcon from '@assets/icons/eye.svg';
 import RulerIcon from '@assets/icons/ruler.svg';
 import WeightIcon from '@assets/icons/weight.svg';
+
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import PregnancyProgressbar from '../PregnancyProgressbar';
 import { ResultModuleTypes } from './types';

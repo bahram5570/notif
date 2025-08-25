@@ -1,18 +1,28 @@
-import CustomTypography from '@components/ui/CustomTypography';
-import CategoryItem from './CategoryItem';
-import { COLORS_LIST } from '@theme/colors';
 import { clinicCategoryService } from '@services/clinicLandingServices';
 
-const ClinicCategory = async () => {
-    const { categoryData } = await clinicCategoryService();
+import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
-    return (
-        <div className='mt-8'>
-            <CustomTypography fontSize="Title_Small" tagType='h4' className='text-center'>دسته‌بندی کلینیک سلامت</CustomTypography>
-            <section className='grid grid-cols-3 gap-x-[25px] gap-y-[24px] mt-[16px] mx-[16px] px-[16px] py-[24px] rounded-[16px] [box-shadow:0px_4px_24px_0px_rgba(58,112,191,0.05)]' style={{ backgroundColor: COLORS_LIST.Neutral_Background }}>
-                {categoryData && categoryData.map((item, index) => (<CategoryItem key={index} image={item.image} name={item.name} type={item.type} />))}
-            </section>
-        </div>
-    )
-}
+import CategoryItem from './CategoryItem';
+
+const ClinicCategory = async () => {
+  const { categoryData } = await clinicCategoryService();
+
+  return (
+    <div className="mt-8">
+      <CustomTypography fontSize="Title_Small" tagType="h4" className="text-center">
+        دسته‌بندی کلینیک سلامت
+      </CustomTypography>
+      <section
+        className="grid grid-cols-3 gap-x-[25px] gap-y-[24px] mt-[16px] mx-[16px] px-[16px] py-[24px] rounded-[16px] [box-shadow:0px_4px_24px_0px_rgba(58,112,191,0.05)]"
+        style={{ backgroundColor: COLORS_LIST.Neutral_Background }}
+      >
+        {categoryData &&
+          categoryData.map((item, index) => (
+            <CategoryItem key={index} image={item.image} name={item.name} type={item.type} />
+          ))}
+      </section>
+    </div>
+  );
+};
 export default ClinicCategory;

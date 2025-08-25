@@ -1,8 +1,8 @@
-import { HOST_URL } from '@constants/links.constants';
-import { Metadata } from 'next';
+import http from '@services/http';
 
 import CareersPage from '@components/pages/careers/CareersPage';
-import http from '@services/http';
+import { HOST_URL } from '@constants/links.constants';
+import { Metadata } from 'next';
 
 import { CareerOpportunitiesResponseTypes } from './types';
 

@@ -1,7 +1,7 @@
+import { AnchorHTMLAttributes } from 'react';
+
 import { COLORS_LIST } from '@theme/colors';
 import { LinkProps } from 'next/link';
-
-import { AnchorHTMLAttributes } from 'react';
 
 type RequiredTypes = AnchorHTMLAttributes<HTMLAnchorElement> & LinkProps;
 export interface CustomLinkTypes extends RequiredTypes {

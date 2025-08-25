@@ -1,9 +1,8 @@
 'use client';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import { CAREER_CONTAINER_MAX_WIDTH } from '@components/pages/careers/constants';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import useSteps from './__hooks__/useSteps';
 import { HIRING_ITEMS_LIST } from './constants';

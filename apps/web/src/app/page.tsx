@@ -1,7 +1,6 @@
+import HomePageContainer from '@components/pages/home/HomePageContainer';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
-
-import HomePageContainer from '@components/pages/home/HomePageContainer';
 
 import HomeSchema from '../schema/HomeSchema';
 

@@ -1,12 +1,12 @@
-import { COLORS_LIST } from '@theme/colors';
-import { useRouter } from 'next/navigation';
-
 import { useState } from 'react';
+
+import { externalLink } from '@utils/navigation';
 
 import ProgressCycleLoading from '@components/ProgressCycleLoading';
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
-import { externalLink } from '@utils/navigation';
+import { COLORS_LIST } from '@theme/colors';
+import { useRouter } from 'next/navigation';
 
 import { CompleteCycleRegisterLoadingTypes } from './types';
 

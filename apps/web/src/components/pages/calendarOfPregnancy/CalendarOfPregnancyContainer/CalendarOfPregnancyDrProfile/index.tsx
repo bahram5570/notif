@@ -1,4 +1,5 @@
 import BlueTickIcon from '@assets/icons/blueTick.svg';
+
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 

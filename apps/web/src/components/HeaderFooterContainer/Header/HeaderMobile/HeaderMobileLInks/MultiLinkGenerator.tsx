@@ -1,8 +1,8 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import ArrowIcon from '@assets/icons/arrow2.svg';
+
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import { MultiLinkGeneratorTypes } from './types';
 

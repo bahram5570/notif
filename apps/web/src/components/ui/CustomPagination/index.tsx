@@ -1,10 +1,10 @@
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import { typographyMaker } from '../CustomTypography/__utils__';
+import { toPersianNumbers } from '@utils/numbers';
 
 import { Pagination, PaginationItem } from '@mui/material';
 
-import { toPersianNumbers } from '@utils/numbers';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 
-import { typographyMaker } from '../CustomTypography/__utils__';
 import { CustomPaginationTypes } from './types';
 
 const CustomPagination = ({

@@ -1,10 +1,12 @@
 import { CalendarTypeEnum } from '@constants/date.constants';
+import { CultureTypes } from '@providers/CultureProvider/types';
 
 import { ActivationCalendarTypes } from '../../types';
 
-export type UseActivationCalendarDataTypes = Pick<ActivationCalendarTypes, 'periodEnd' | 'periodStart'>;
+export type UseActivationCalendarDataTypes = Pick<ActivationCalendarTypes, 'startDate' | 'endDate'> &
+  Pick<CultureTypes, 'calendarType'>;
 
-export type SingleDateTypes = { isToday: boolean; jalaliDate: string; gregorianDate: string };
+export type SingleDateTypes = { isToday: boolean; jalaliDate: string; gregorianDate: string; isValidDate: boolean };
 
 export type CalendarIntervalMakerTypes = (start: string, end: string, calendarType: CalendarTypeEnum) => number;
 
@@ -21,7 +23,9 @@ export type CalendarMonthInfoMakerTypes = (
 };
 
 export type CalendarDayInfoMakerTypes = (
-  start: string,
-  currentDay: number,
-  calendarType: CalendarTypeEnum,
+  props: {
+    beggingOfMonth: string;
+    currentDay: number;
+    calendarType: CalendarTypeEnum;
+  } & Pick<UseActivationCalendarDataTypes, 'startDate' | 'endDate'>,
 ) => SingleDateTypes;

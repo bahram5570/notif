@@ -1,17 +1,11 @@
-import { currentDate, jalaaliMonthNames } from '@utils/dates';
-
 import Typography from '@components/ui/Typography';
 
 import useSampleCycleHeadingInfo from './__hooks__/useSampleCycleHeadingInfo';
 import { SAMPLE_CYCLE_HEADING_HEIGHT } from './constants';
 import { SampleCycleHeadingProps } from './types';
 
-const { jDay, jYear, jMonth } = currentDate();
-
 const SampleCycleHeading = ({ textColor, payload }: SampleCycleHeadingProps) => {
-  const { headingInfo } = useSampleCycleHeadingInfo({ payload });
-
-  const todayScript = `${jDay} ${jalaaliMonthNames(jMonth - 1)} ${jYear}`;
+  const { headingInfo, todayScript } = useSampleCycleHeadingInfo({ payload });
 
   return (
     <>
@@ -32,7 +26,7 @@ const SampleCycleHeading = ({ textColor, payload }: SampleCycleHeadingProps) => 
 
       <div className="absolute left-0 right-0 flex justify-center" style={{ top: SAMPLE_CYCLE_HEADING_HEIGHT + 30 }}>
         <Typography scale="Lable" size="Medium" color="FREE-STYLE" freeColor={textColor}>
-          {`پیش‌بینی برای امروز ${todayScript} :`}
+          {todayScript}
         </Typography>
       </div>
     </>

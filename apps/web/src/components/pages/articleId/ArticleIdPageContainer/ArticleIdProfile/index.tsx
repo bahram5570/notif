@@ -1,10 +1,10 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import BlueTickIcon from '@assets/icons/blueTick.svg';
+import { fileImageUrl } from '@services/http';
+
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { fileImageUrl } from '@services/http';
+import { COLORS_LIST } from '@theme/colors';
 
 import ArticleIdProfileInfo from './ArticleIdProfileInfo';
 import { ArticleIdProfileTypes } from './types';

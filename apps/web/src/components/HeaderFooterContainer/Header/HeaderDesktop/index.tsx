@@ -1,10 +1,10 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import ImpoNameIcon from '@assets/icons/impoName.svg';
+import { scrollToIdHandler } from '@utils/navigation';
+
 import { DOWNLOAD_APP_SECTION_ID } from '@components/DownloadApp/DownloadAppWomen/constants';
 import CustomButton from '@components/ui/CustomButton';
 import CustomLink from '@components/ui/CustomLink';
-import { scrollToIdHandler } from '@utils/navigation';
+import { COLORS_LIST } from '@theme/colors';
 
 import HeaderDesktopLinks from './HeaderDesktopLinks';
 

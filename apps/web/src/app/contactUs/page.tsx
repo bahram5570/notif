@@ -1,7 +1,6 @@
+import ContactUsContainer from '@components/pages/contactUs/ContactUsContainer';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
-
-import ContactUsContainer from '@components/pages/contactUs/ContactUsContainer';
 
 export const metadata: Metadata = {
   title: 'تماس با ما',

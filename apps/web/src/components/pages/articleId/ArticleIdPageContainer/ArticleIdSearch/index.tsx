@@ -1,6 +1,5 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import BlogsSearch from '@components/Articles/Blogs/BlogsSearch';
+import { COLORS_LIST } from '@theme/colors';
 
 const ArticleIdSearch = () => {
   return (

@@ -1,8 +1,7 @@
-import { HOST_URL } from '@constants/links.constants';
-import { Metadata } from 'next';
-
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
 import CyclePage from '@components/pages/cycle/CyclePage';
+import { HOST_URL } from '@constants/links.constants';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'ثبت نام در اپ',

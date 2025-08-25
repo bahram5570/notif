@@ -81,7 +81,7 @@ const MemoryDetailContainer = () => {
                 {findCurrentMemory.text}
               </Typography>
             </div>
-            
+
             {findCurrentMemory.textPartner && (
               <div className=" p-3">
                 <Comment

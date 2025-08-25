@@ -1,35 +1,40 @@
 'use client';
 
-import { useRef } from 'react';
-
+import useCulture from '@hooks/useCulture';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Swiper as SwiperTypes } from 'swiper/types';
 
 import ActivationCalendarHeading from './ActivationCalendarHeading';
 import ActivationCalendarWeekTitles from './ActivationCalendarWeekTitles';
 import ActivationMonthGenerator from './ActivationMonthGenerator';
 import useActivationCalendarData from './__hooks__/useActivationCalendarData';
-import useActivationSelectedDay from './__hooks__/useActivationSelectedDay';
+import useActivationCalendarSelectedDay from './__hooks__/useActivationCalendarSelectedDay';
+import useActivationCalendarSlide from './__hooks__/useActivationCalendarSlide';
 import { ActivationCalendarTypes } from './types';
 
-const ActivationCalendar = ({ periodEnd, periodStart }: ActivationCalendarTypes) => {
-  const { selectedDay, selectedDayHandler } = useActivationSelectedDay();
-  const { calendarData } = useActivationCalendarData({ periodStart, periodEnd });
+const ActivationCalendar = ({ endDate, startDate, valueHandler }: ActivationCalendarTypes) => {
+  const { culture } = useCulture();
 
-  const swiperRef = useRef<SwiperTypes | null>(null);
+  const { swiperRef, currentSlide, currentSlideHandler } = useActivationCalendarSlide();
+  const { selectedDay, selectedDayHandler } = useActivationCalendarSelectedDay(valueHandler);
+  const { calendarData } = useActivationCalendarData({ startDate, endDate, calendarType: culture.calendarType });
 
   return (
-    <div className="relative w-full">
-      {calendarData && (
+    <div className="relative w-full py-10">
+      {calendarData.length > 0 && (
         <>
-          <ActivationCalendarHeading headingScript="ffff" />
+          <ActivationCalendarHeading
+            selectedDay={selectedDay}
+            calendarType={culture.calendarType}
+            currentSlideHandler={currentSlideHandler}
+            currentMonthInfo={calendarData[currentSlide][0]}
+          />
+
           <ActivationCalendarWeekTitles />
 
           <Swiper
-            // key={resetKey}
             initialSlide={0}
             onSwiper={(s) => (swiperRef.current = s)}
-            // onSlideChange={(s) => slideHandler(s.activeIndex)}
+            onSlideChange={(s) => currentSlideHandler(s.activeIndex)}
           >
             {calendarData.map((monthList, index) => (
               <SwiperSlide key={index}>

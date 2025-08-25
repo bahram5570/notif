@@ -1,6 +1,5 @@
-import { Metadata } from 'next';
-
 import SiteContainer from '@components/pages/webView/SiteContainer';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   robots: 'noindex, nofollow',

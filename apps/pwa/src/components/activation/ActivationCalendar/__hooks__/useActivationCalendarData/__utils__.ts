@@ -53,20 +53,33 @@ export const calendarMonthInfoMaker: CalendarMonthInfoMakerTypes = (start, curre
   return result;
 };
 
-export const calendarDayInfoMaker: CalendarDayInfoMakerTypes = (start, currentDay, calendarType) => {
+export const calendarDayInfoMaker: CalendarDayInfoMakerTypes = (props) => {
   const { gDate } = currentDate();
-  const result: SingleDateTypes = { jalaliDate: '', gregorianDate: '', isToday: false };
+  const result: SingleDateTypes = { jalaliDate: '', gregorianDate: '', isToday: false, isValidDate: false };
 
-  if (calendarType === CalendarTypeEnum.Jalali) {
-    const m2 = moment(start, 'jYYYY/jMM/jDD');
-    result.jalaliDate = m2.add(currentDay, 'day').format('jYYYY/jMM/jDD');
+  let validation1 = false;
+  let validation2 = false;
+
+  if (props.calendarType === CalendarTypeEnum.Jalali) {
+    const m = moment(props.beggingOfMonth, 'jYYYY/jMM/jDD');
+    result.jalaliDate = m.add(props.currentDay, 'day').format('jYYYY/jMM/jDD');
     result.gregorianDate = moment(result.jalaliDate, 'jYYYY/jMM/jDD').format('YYYY-MM-DD');
+
+    validation1 = moment(result.jalaliDate, 'jYYYY/jMM/jDD').isSameOrAfter(moment(props.startDate, 'jYYYY/jMM/jDD'));
+    validation2 = moment(result.jalaliDate, 'jYYYY/jMM/jDD').isSameOrBefore(moment(props.endDate, 'jYYYY/jMM/jDD'));
   }
 
-  if (calendarType === CalendarTypeEnum.Gregorian) {
-    const m2 = moment(start, 'YYYY-MM-DD');
-    result.gregorianDate = m2.add(currentDay, 'day').format('YYYY-MM-DD');
+  if (props.calendarType === CalendarTypeEnum.Gregorian) {
+    const m = moment(props.beggingOfMonth, 'YYYY-MM-DD');
+    result.gregorianDate = m.add(props.currentDay, 'day').format('YYYY-MM-DD');
     result.jalaliDate = moment(result.gregorianDate, 'YYYY-MM-DD').format('jYYYY/jMM/jDD');
+
+    validation1 = moment(result.gregorianDate, 'YYYY-MM-DD').isSameOrAfter(moment(props.startDate, 'YYYY-MM-DD'));
+    validation2 = moment(result.gregorianDate, 'YYYY-MM-DD').isSameOrBefore(moment(props.endDate, 'YYYY-MM-DD'));
+  }
+
+  if (validation1 && validation2) {
+    result.isValidDate = true;
   }
 
   result.isToday = gDate === result.gregorianDate;

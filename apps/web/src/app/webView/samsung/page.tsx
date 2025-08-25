@@ -1,6 +1,5 @@
-import { Metadata } from 'next';
-
 import SamsungContainer from '@components/pages/webView/SamsungContainer';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   robots: 'noindex, nofollow',

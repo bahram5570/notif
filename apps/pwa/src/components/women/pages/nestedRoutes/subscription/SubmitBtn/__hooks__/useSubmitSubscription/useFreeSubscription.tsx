@@ -22,7 +22,7 @@ const useFreeSubscription = () => {
     updateProfileDateByDellay();
 
     // if (valid) {
-      // updateProfileDateByDellay();
+    // updateProfileDateByDellay();
     // }
   };
 

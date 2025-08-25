@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 import { daysListUpdater, monthListUpdater, startAndEndDates } from './__utils__';
+
 import { UseListsUpdateProps } from './types';
 
 const useListsUpdate = ({ values, startDate, endDate, onListsUpdate, initialLists }: UseListsUpdateProps) => {

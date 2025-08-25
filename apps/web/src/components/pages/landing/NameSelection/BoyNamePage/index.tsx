@@ -1,8 +1,10 @@
+import { ctaBannerService } from '@services/ctaBannerServices';
+
 import CtaBanner from '@components/CtaBanner';
+import DownloadApp from '@components/DownloadApp/DownloadAppWomen';
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
 import QrCode from '@components/QrCode';
 import CustomTypography from '@components/ui/CustomTypography';
-import { ctaBannerService } from '@services/ctaBannerServices';
 
 import AuthorProfile from '../GirlNamePage/AuthorProfile';
 import AlphabetBtns from './AlphabetBtns';
@@ -11,12 +13,11 @@ import Description from './Description';
 import IntroductionSection from './IntroductionSection';
 import NameSelectionHeading from './NameSelectionHeading';
 import { NAME_SELECTION_BANNER_NAME_2, PERSIAN_BOY_NAME_DICTIONARY } from './constants';
-import DownloadApp from '@components/DownloadApp/DownloadAppWomen';
 
 const BoyNamePage = async () => {
   const { ctaData } = await ctaBannerService(NAME_SELECTION_BANNER_NAME_2);
   const dataEntries = Object.entries(PERSIAN_BOY_NAME_DICTIONARY);
-  
+
   return (
     <HeaderFooterContainer>
       <div className="w-full flex flex-col items-center pb-12 mx-auto">

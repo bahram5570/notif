@@ -1,9 +1,9 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import CloseIcon from '@assets/icons/Close Circle.svg';
 import TickIcon from '@assets/icons/Unread.svg';
+
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 const PhotoGuide = () => {
   return (

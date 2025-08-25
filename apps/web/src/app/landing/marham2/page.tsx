@@ -1,7 +1,6 @@
+import Marhaam2PageContainer from '@components/pages/landing/Marham2';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
-
-import Marhaam2PageContainer from '@components/pages/landing/Marham2';
 
 export const metadata: Metadata = {
   title: 'مرهم',

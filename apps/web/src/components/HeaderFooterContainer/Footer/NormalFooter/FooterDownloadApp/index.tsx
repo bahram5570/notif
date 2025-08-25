@@ -1,14 +1,14 @@
 'use client';
 
-import { FOOTER_HEIGHT } from '@constants/app.constants';
-import { COLORS_LIST } from '@theme/colors';
-import { useRouter } from 'next/navigation';
-
 import ImpoIcon from '@assets/icons/impo.svg';
+import { scrollToIdHandler } from '@utils/navigation';
+
 import { DOWNLOAD_APP_SECTION_ID } from '@components/DownloadApp/DownloadAppWomen/constants';
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
-import { scrollToIdHandler } from '@utils/navigation';
+import { FOOTER_HEIGHT } from '@constants/app.constants';
+import { COLORS_LIST } from '@theme/colors';
+import { useRouter } from 'next/navigation';
 
 const FooterDownloadApp = () => {
   const router = useRouter();

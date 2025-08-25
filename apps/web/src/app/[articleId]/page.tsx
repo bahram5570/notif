@@ -1,12 +1,12 @@
+import { handleUpdateArticleBody, handleUpdateArticleId } from './__utils__';
+import http from '@services/http';
+
+import ArticleIdPageContainer from '@components/pages/articleId/ArticleIdPageContainer';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import ArticleIdPageContainer from '@components/pages/articleId/ArticleIdPageContainer';
-import http from '@services/http';
-
 import ArticleSchema from '../../schema/ArticleSchema';
-import { handleUpdateArticleBody, handleUpdateArticleId } from './__utils__';
 import { ArticleIdResponseTypes } from './types';
 
 const getArticleData = async (id: string) => {

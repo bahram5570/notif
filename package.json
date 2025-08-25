@@ -5,19 +5,16 @@
   "scripts": {
     "lint": "turbo run lint",
     "format": "prettier --write .",
-
     "packages:build": "npm run components:build && npm run assets:build && npm run core:build",
     "components:build": "cd packages/components && npm run build",
     "assets:build": "cd packages/assets && npm run build",
     "core:build": "cd packages/core && npm run build",
-
     "pwa:build": "npm run packages:build && cd apps/pwa && npm install && npm run build",
     "pwa:test:unit": "cd apps/pwa && npm run test:unit",
     "pwa:export": "cd apps/pwa && npm run export",
     "pwa:start": "cd apps/pwa && npm run start",
     "pwa:install": "cd apps/pwa && npm install",
     "pwa:dev": "cd apps/pwa && npm run dev",
-    
     "web:build": "npm run packages:build && cd apps/web && npm install && npm run build",
     "web:export": "cd apps/web && npm run export",
     "web:install": "cd apps/web && npm install",

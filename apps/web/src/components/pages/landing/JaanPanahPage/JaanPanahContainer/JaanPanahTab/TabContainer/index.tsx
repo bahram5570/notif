@@ -1,8 +1,8 @@
 'use client';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import { useState } from 'react';
+
+import { COLORS_LIST } from '@theme/colors';
 
 import { JaanPanahCityConditionEnum } from '../../../enum';
 import CriticalSituation from './CriticalSituation';

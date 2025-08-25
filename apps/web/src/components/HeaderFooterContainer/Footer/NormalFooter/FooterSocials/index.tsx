@@ -1,14 +1,14 @@
-import { APP_VERSION } from '@constants/app.constants';
-import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
-
 import EmailIcon from '@assets/icons/email.svg';
 import InstagramIcon from '@assets/icons/instagram2.svg';
 import TelegramIcon from '@assets/icons/telegram.svg';
 import XIcon from '@assets/icons/x.svg';
+import { currentDate } from '@utils/dates';
+
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { currentDate } from '@utils/dates';
+import { APP_VERSION } from '@constants/app.constants';
+import useBreakPoint from '@hooks/useBreakPoint';
+import { COLORS_LIST } from '@theme/colors';
 
 const { jYear } = currentDate();
 

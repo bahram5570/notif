@@ -32,6 +32,8 @@ const ActivationSingleDay = ({ isSelected, day, calendarType, selectedDayHandler
       style={{
         width: CALENDAR_CELL_SIZE,
         height: CALENDAR_CELL_SIZE,
+        opacity: day.isValidDate ? '1' : '0.5',
+        pointerEvents: day.isValidDate ? 'auto' : 'none',
         backgroundColor: isSelected ? colors.PrimaryWoman_Primary : colors.Transparent,
       }}
     >

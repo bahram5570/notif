@@ -1,7 +1,7 @@
+import { useEffect, useState } from 'react';
+
 import useBreakPoint from '@hooks/useBreakPoint';
 import { COLORS_LIST } from '@theme/colors';
-
-import { useEffect, useState } from 'react';
 
 import { CATEGORY_PAGE_SIZE } from '../__hooks__/useCategoryGetData/constants';
 

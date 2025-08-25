@@ -1,10 +1,9 @@
 'use client';
 
-import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
-
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
+import useBreakPoint from '@hooks/useBreakPoint';
+import { COLORS_LIST } from '@theme/colors';
 
 import { FeaturesIntruductionCardGeneratorTypes } from './types';
 

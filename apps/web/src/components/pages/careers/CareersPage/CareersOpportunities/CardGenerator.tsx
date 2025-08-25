@@ -1,13 +1,13 @@
 'use client';
 
-import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
-
 import { useEffect, useRef, useState } from 'react';
 
 import ArrowIcon from '@assets/icons/arrow1.svg';
+
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import useBreakPoint from '@hooks/useBreakPoint';
+import { COLORS_LIST } from '@theme/colors';
 
 import {
   CAREER_DEPARTMENT_TITLES,

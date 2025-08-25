@@ -1,6 +1,6 @@
-import { headers } from 'next/headers';
-
 import { operatingSystemDetector } from '@utils/system';
+
+import { headers } from 'next/headers';
 
 import OperatingSystemProviderContainer from './OperatingSystemProviderContainer';
 

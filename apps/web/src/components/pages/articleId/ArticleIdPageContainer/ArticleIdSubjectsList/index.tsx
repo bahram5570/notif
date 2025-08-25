@@ -1,11 +1,11 @@
 'use client';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import { useEffect, useRef, useState } from 'react';
 
 import ArrowIcon from '@assets/icons/arrow2.svg';
+
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import ArticleIdSubjectsListGenerator from './ArticleIdSubjectsListGenerator';
 import { ArticleIdSubjectsListTypes } from './types';

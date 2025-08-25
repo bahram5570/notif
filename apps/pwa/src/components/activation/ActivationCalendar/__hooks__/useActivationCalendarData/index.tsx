@@ -2,27 +2,31 @@ import { useEffect, useState } from 'react';
 
 import { calendarDayInfoMaker, calendarIntervalMaker, calendarMonthInfoMaker } from './__utils__';
 
-import useCulture from '@hooks/useCulture';
-
 import { CalendarDataTypes, SingleDateTypes, UseActivationCalendarDataTypes } from './types';
 
-const useActivationCalendarData = ({ periodStart, periodEnd }: UseActivationCalendarDataTypes) => {
-  const { culture } = useCulture();
+const useActivationCalendarData = ({ startDate, endDate, calendarType }: UseActivationCalendarDataTypes) => {
   const [calendarData, setCalendarData] = useState<CalendarDataTypes>([]);
 
   useEffect(() => {
-    const calendarInterval = calendarIntervalMaker(periodStart, periodEnd, culture.calendarType);
+    const calendarInterval = calendarIntervalMaker(startDate, endDate, calendarType);
     let result: CalendarDataTypes = [];
 
     for (let i = 0; i <= calendarInterval; i++) {
-      const monthInfo = calendarMonthInfoMaker(periodStart, i, culture.calendarType);
+      const monthInfo = calendarMonthInfoMaker(startDate, i, calendarType);
       const list: SingleDateTypes[] = [];
 
       for (let j = 0; j < monthInfo.totalDaysOfMonth; j++) {
-        const dayInfo = calendarDayInfoMaker(monthInfo.beggingOfMonth, j, culture.calendarType);
+        const dayInfo = calendarDayInfoMaker({
+          endDate,
+          startDate,
+          calendarType,
+          currentDay: j,
+          beggingOfMonth: monthInfo.beggingOfMonth,
+        });
 
         const singleDate: SingleDateTypes = {
           gregorianDate: dayInfo.gregorianDate,
+          isValidDate: dayInfo.isValidDate,
           jalaliDate: dayInfo.jalaliDate,
           isToday: dayInfo.isToday,
         };
@@ -30,12 +34,11 @@ const useActivationCalendarData = ({ periodStart, periodEnd }: UseActivationCale
         list.push(singleDate);
       }
 
-      // result = { ...result, [monthInfo.yearAndMonth]: list };
       result.push(list);
     }
 
-    setCalendarData(result);
-  }, [periodStart, periodEnd, culture.calendarType]);
+    setCalendarData(result.reverse());
+  }, [startDate, endDate, calendarType]);
 
   return { calendarData };
 };

@@ -1,6 +1,5 @@
-import { Metadata } from 'next';
-
 import DevicesContainer from '@components/pages/webView/DevicesContainer';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   robots: 'noindex, nofollow',

@@ -1,8 +1,8 @@
 'use server';
 
-import { headers } from 'next/headers';
-
 import { operatingSystemDetector } from '@utils/system';
+
+import { headers } from 'next/headers';
 
 import DeviceFooter from './DeviceFooter';
 import NormalFooter from './NormalFooter';
