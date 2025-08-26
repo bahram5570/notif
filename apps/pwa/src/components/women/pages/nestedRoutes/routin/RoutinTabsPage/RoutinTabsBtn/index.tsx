@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import Typography from '@components/ui/Typography';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
+import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useTheme from '@hooks/useTheme';
 
 import { ROUTIN_TABS } from './constants';
@@ -24,8 +25,8 @@ const RoutinTabsBtn = ({ activeTab, handleTabChange }: RoutinTabsBtnPropsType) =
 
   return (
     <div
-      className=" max-w-full overflow-x-auto overflow-y-hidden flex flex-row-reverse fixed gap-3 p-4 z-40"
-      style={{ backgroundColor: colors.White, top: HEADER_HEIGHT }}
+      className=" overflow-x-auto overflow-y-hidden flex flex-row-reverse fixed gap-3 p-4 z-40 mx-auto left-0 right-0"
+      style={{ backgroundColor: colors.White, top: HEADER_HEIGHT, maxWidth: MAX_SCREEN_WIDTH }}
       ref={containerRef}
     >
       {ROUTIN_TABS.map((tab) => {

@@ -1,5 +1,6 @@
 'use client';
 
+import RoutinWriter from '@components/__routin__/RoutinWriter';
 import OnboardingIntro from '@components/ui/OnboardingIntro';
 import FeedbackModal from '@components/women/FeedbackModal';
 import WomenPageLayout from '@components/women/WomenPageLayout';
@@ -14,7 +15,6 @@ import RoutinFooter from './RoutinFooter';
 import RoutinHeading from './RoutinHeading';
 import RoutinSkeleton from './RoutinSkeleton';
 import RoutinUnlockTost from './RoutinUnlockTost';
-import RoutinWriter from './RoutinWriter';
 import useFinalStepWelcoming from './__hooks__/useFinalStepWelcoming';
 import useGetData from './__hooks__/useGetData';
 
@@ -51,16 +51,16 @@ const RoutinContainer = () => {
               <div className="w-full h-[360px] absolute top-0 left-0 right-0 bg-gradient-to-b from-[#FEE8E6] to-[#FEE8E600] -z-10" />
 
               <div className="relative z-10">
-                <RoutinHeading image={data.image} description={data.description} title={data.title} />
+                <RoutinHeading {...data} />
 
                 <div className="w-full rounded-xl p-3" style={{ backgroundColor: colors.White }}>
-                  <RoutinWriter
+                  {/* <RoutinWriter
                     writerName={data.writerName}
                     writerIcon={data.writerIcon}
                     writerSpeciality={data.writerSpeciality}
-                  />
+                  /> */}
 
-                  <div className="w-full h-[1px] my-3" style={{ backgroundColor: colors.Surface_SurfaceVariant }} />
+                  {/* <div className="w-full h-[1px] my-3" style={{ backgroundColor: colors.Surface_SurfaceVariant }} /> */}
 
                   <RoutinDiets name={data.name} items={data.items} />
                 </div>

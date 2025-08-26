@@ -28,7 +28,11 @@ const RoutinCardHeader = ({
       style={{ backgroundColor: backgroundHandler() }}
       className="w-full h-14 rounded-t-2xl flex flex-row-reverse items-center px-4 py-3 gap-2  mb-2"
     >
-      <CustomImage src="/assets/images/test.webp" />
+      {/* <div className="relative w-6 h-6 bg-gray-200">
+        <CustomImage src="/assets/images/1.webp" className="w-full h-full object-cover" />
+      </div> */}
+      {/* <CustomImage src="/assets/images/test.webp" /> */}
+
       <RoutinProgressBar completeRatio={completeRatio} completeTitle={completeTitle} />
       {showBookmark && <RoutinBookmarked isBookmarked={isBookmarked} />}
     </div>

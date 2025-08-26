@@ -1,9 +1,9 @@
+import RoutinRatingStats from '@components/__routin__/RoutinRatingStats';
 import RoutinWriter from '@components/__routin__/RoutinWriter';
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
 import useTheme from '@hooks/useTheme';
 
-import RoutinRatingStats from '../../RoutinRatingStats';
 import { RoutinCardSimpleContextPropsType } from './type';
 
 const RoutinCardSimpleContext = ({ data }: RoutinCardSimpleContextPropsType) => {
