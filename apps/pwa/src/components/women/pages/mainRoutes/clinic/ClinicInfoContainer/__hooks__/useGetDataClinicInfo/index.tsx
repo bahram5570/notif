@@ -2,11 +2,13 @@ import { useEffect } from 'react';
 
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useRouter } from 'next/navigation';
 
 import { ClinicInfoResponseTypes } from './types';
 
 const useGetDataClinicInfo = (clinicInfo: string) => {
   const { newQuery, getQuery } = useCustomReactQuery(['clinicInfo']);
+  const router = useRouter();
 
   const successHandler = (v: ClinicInfoResponseTypes) => {
     newQuery({ queryKey: ['clinicInfo'], payload: v });
@@ -34,6 +36,12 @@ const useGetDataClinicInfo = (clinicInfo: string) => {
   }, []);
 
   const data = getQuery<ClinicInfoResponseTypes>({ queryKey: ['clinicInfo'] });
+
+  useEffect(() => {
+    if (!isLoading && !data) {
+      router.replace('/not-found');
+    }
+  }, [isLoading, data]);
 
   return { isLoading, data };
 };
