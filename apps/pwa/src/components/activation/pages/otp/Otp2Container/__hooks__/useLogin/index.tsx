@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
-import { UserCookieTypes, cookieCreatedTime, getFirebaseCookieToken } from '@utils/cookies';
+import { cookieCreatedTime, getFirebaseCookieToken } from '@utils/cookies';
 import { toEnglishNumbers } from '@utils/numbers';
 
+import { UserCookieTypes } from '@actions/cookie.actions';
 import { APP_VERSION } from '@constants/app.constants';
 import useApi from '@hooks/useApi';
 import useCountDown from '@hooks/useCountDown';

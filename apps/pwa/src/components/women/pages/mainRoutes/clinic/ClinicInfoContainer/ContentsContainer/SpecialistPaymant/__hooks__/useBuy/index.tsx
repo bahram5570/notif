@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
-import { getUserCookie, setPaymentCookie } from '@utils/cookies';
+import { setPaymentCookie } from '@utils/cookies';
 import { externalLink } from '@utils/navigation';
 
+import { gggetUserCookie } from '@actions/cookie.actions';
 import useApi from '@hooks/useApi';
 import useCustomToast from '@hooks/useCustomToast';
 import { useParams, useRouter } from 'next/navigation';
@@ -22,7 +23,7 @@ const useBuy = ({ id, questionValues, type }: UseBuyProps) => {
   const successHandler = async (v: BuyResponseTypes) => {
     if (v.isValid) {
       if (v.redirectBank) {
-        const { user } = getUserCookie();
+        const user = await gggetUserCookie();
 
         if (user?.identity) {
           setPaymentCookie({ route: `/protected/clinic/clinicChat?ticketId=${v.id}` });

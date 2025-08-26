@@ -8,11 +8,17 @@ const useActionTypeInternalRout = (onActionComplete: () => void) => {
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const callInternalRout: CallInternalRoutTypes = ({ actionInternal }) => {
-    pageNavigationHandler({
-      id: Math.random(),
-      showProgressBar: true,
-      linkTo: actionRouteConverter(actionInternal),
-    });
+    const handleRoute = async () =>{
+      const linkTo = await actionRouteConverter(actionInternal)
+
+      pageNavigationHandler({
+        linkTo,
+        id: Math.random(),
+        showProgressBar: true,
+      });
+    }
+
+    handleRoute()
   };
 
   return { callInternalRout };

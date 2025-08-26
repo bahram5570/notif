@@ -1,6 +1,7 @@
 import http from '@services/http';
-import { UserCookieTypes, cookieCreatedTime, getUserExpiresDate } from '@utils/cookies';
+import { cookieCreatedTime, getUserExpiresDate } from '@utils/cookies';
 
+import { UserCookieTypes, gggetUserCookie } from '@actions/cookie.actions';
 import { APP_VERSION } from '@constants/app.constants';
 import { FIREBASE_COOKIE_NAME, USER_COOKIE_NAME } from '@constants/cookie.constants';
 import { ACTIVATION_CR_REGISTER_QUERY_NAME } from '@constants/routes.constants';
@@ -11,30 +12,34 @@ import { HandleActivationCrLogginTypes, HandleUserStatusTypes, LoginResponseType
 
 const checkUserStatus = async () => {
   const cookie = cookies();
-  const user = JSON.parse(cookie.get(USER_COOKIE_NAME)?.value || '');
+  const user = await gggetUserCookie();
 
-  const createdTime = +user?.createdTime;
+  if (user) {
+    const createdTime = user?.createdTime || 0;
 
-  if (Date.now() > createdTime) {
-    const deviceToken = cookie.get(FIREBASE_COOKIE_NAME)?.value || '';
+    if (Date.now() > createdTime) {
+      const deviceToken = cookie.get(FIREBASE_COOKIE_NAME)?.value || '';
 
-    const payload = {
-      deviceToken,
-      phoneModel: '',
-      channelVersion: '',
-      identity: user.identity,
-      password: user.password,
-      version: APP_VERSION || '',
-    };
+      const payload = {
+        deviceToken,
+        phoneModel: '',
+        channelVersion: '',
+        identity: user.identity,
+        password: user.password,
+        version: APP_VERSION || '',
+      };
 
-    return await http<LoginResponseTypes>({
-      payload,
-      method: 'POST',
-      url: 'CustomerAccount/Loginv6',
-    });
-  } else {
+      return await http<LoginResponseTypes>({
+        payload,
+        method: 'POST',
+        url: 'CustomerAccount/Loginv6',
+      });
+    }
+
     return 'hasTime';
   }
+
+  return 'hasTime';
 };
 
 export const handleUserStatus = async (props: HandleUserStatusTypes) => {
@@ -54,7 +59,7 @@ export const handleUserStatus = async (props: HandleUserStatusTypes) => {
         userData.createdTime = cookieCreatedTime();
         userData.installationPurpose = { status: loginData.status, periodStatus: loginData.periodStatus };
 
-        response.cookies.set(USER_COOKIE_NAME, JSON.stringify(userData), { expires: getUserExpiresDate(365) });
+        response.cookies.set(USER_COOKIE_NAME, JSON.stringify(userData), { expires: getUserExpiresDate(30) });
       }
     } else {
       response.cookies.delete(USER_COOKIE_NAME);
