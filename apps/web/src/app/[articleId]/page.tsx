@@ -22,9 +22,9 @@ export async function generateMetadata({ params }: { params: { articleId: string
 
   if (data) {
     return {
-      title: data.title || '',
       robots: 'index, follow',
       description: data.meta || '',
+      title: data.snippetTitle || '',
       alternates: {
         canonical: `${HOST_URL}/${params.articleId}`,
       },

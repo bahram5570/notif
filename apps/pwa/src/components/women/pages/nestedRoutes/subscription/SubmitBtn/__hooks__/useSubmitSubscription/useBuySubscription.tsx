@@ -1,24 +1,23 @@
 import { setPaymentCookie } from '@utils/cookies';
 import { externalLink } from '@utils/navigation';
 
-import { USER_COOKIE_NAME } from '@constants/cookie.constants';
+import { gggetUserCookie } from '@actions/cookie.actions';
 import useApi from '@hooks/useApi';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import Cookies from 'js-cookie';
 
 import { BuySubscriptionResponseTypes } from './types';
 
+const loadingId = 'buySubscription';
+
 const useBuySubscription = () => {
-  const user = Cookies.get(USER_COOKIE_NAME);
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
-  const loadingId = 'buySubscription';
-  const identity = user ? JSON.parse(user).identity : '';
-
   const buySubscriptionSuccessHandler = async (v: BuySubscriptionResponseTypes) => {
+    const user = await gggetUserCookie();
+
     if (v.isSuccess) {
       setPaymentCookie({ route: '/protected/cycle' });
-      externalLink(`https://web.impo.app/financial/AsanPardakht/${v.token}/${identity}`);
+      externalLink(`https://web.impo.app/financial/AsanPardakht/${v.token}/${user?.identity}`);
     }
   };
 

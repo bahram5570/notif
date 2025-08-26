@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import { UserCookieTypes, getUserCookie } from '@utils/cookies';
 import { registerPayloadUpdater } from '@utils/register';
 
+import { UserCookieTypes, gggetUserCookie } from '@actions/cookie.actions';
 import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
 import { ActivationPayloadTypes } from '@providers/__activation__/types';
@@ -16,8 +16,8 @@ const useUpdateOldUser = (payload: ActivationPayloadTypes) => {
   const [pair, setPair] = useState(false);
   const [fetchedUser, setFetchedUser] = useState<UserCookieTypes | null>(null);
 
-  const updateOldUserSuccessHandler: UpdateOldUserSuccessHandlerTypes = (v) => {
-    const { user } = getUserCookie();
+  const updateOldUserSuccessHandler: UpdateOldUserSuccessHandlerTypes = async (v) => {
+    const user = await gggetUserCookie();
 
     if (user) {
       setFetchedUser(user);

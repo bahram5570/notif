@@ -1,25 +1,26 @@
 import { CycleThemeEnum } from '@services/loginServices/enum';
-import { getUserCookie, setUserCookie } from '@utils/cookies';
 
+import { gggetUserCookie, sssetUserCookie } from '@actions/cookie.actions';
 import { APP_VERSION } from '@constants/app.constants';
 import useApi from '@hooks/useApi';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
 
+const loadingId = 'EditCycleContainer';
+
 const useSubmit = (selectedValue: CycleThemeEnum) => {
   const { updateProfileData } = useGetProfileData();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
-  const loadingId = 'EditCycleContainer';
-
-  const successHandler = () => {
-    const { user } = getUserCookie();
+  const successHandler = async () => {
+    const user = await gggetUserCookie();
 
     if (user && user?.cycleTheme) {
       const updatedUser = { ...user };
       updatedUser.cycleTheme = selectedValue;
-      setUserCookie(updatedUser);
+      await sssetUserCookie(updatedUser);
     }
+
     updateProfileData();
     pageNavigationHandler({ showProgressBar: false, id: loadingId, linkTo: '/protected/cycle' });
   };

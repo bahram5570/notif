@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 
 import { LoginResponseTypes } from '@services/loginServices/types';
-import { getFirebaseCookieToken, getUserCookie } from '@utils/cookies';
+import { getFirebaseCookieToken } from '@utils/cookies';
 
+import { gggetUserCookie } from '@actions/cookie.actions';
 import { APP_VERSION } from '@constants/app.constants';
 import useApi from '@hooks/useApi';
 
@@ -17,21 +18,23 @@ const useGetData = () => {
   });
 
   useEffect(() => {
-    if (!subscriptionData) {
-      const { user } = getUserCookie();
+    const handleApi = async () => {
+      const user = await gggetUserCookie();
 
       const payload = {
         phoneModel: '',
         channelVersion: '',
+        version: APP_VERSION || '',
         identity: user?.identity || '',
         password: user?.password || '',
         deviceToken: getFirebaseCookieToken(),
-        version: APP_VERSION || '',
       };
 
       getSubscription(payload);
-    }
-  }, [subscriptionData]);
+    };
+
+    handleApi();
+  }, []);
 
   const hasSubscribtion = subscriptionData?.hasSubscribtion || false;
 
