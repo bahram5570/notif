@@ -673,6 +673,8 @@ type ProgramScrolltemType = {
   rateAvg: number;
   bmiDescription: string;
   bmiTitle: string;
+  completeRatio: number;
+  completeTitle: string;
 };
 
 export type WidgetProgramScrollType = IsPdfDownloadingTypes & {

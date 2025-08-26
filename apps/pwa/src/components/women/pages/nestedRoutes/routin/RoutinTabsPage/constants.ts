@@ -1,10 +1,10 @@
 export const data = [
   {
-    completeTitle: '',
+    completeTitle: 'هنوز شروع نکردی!',
     completeRatio: 0,
     isBookmarked: false,
     commentCount: 1,
-    rateAvg: 0.9,
+    rateAvg: 0.46,
     description: 'توضیحات پریود - کم وزن',
     title: 'ویجت پریود - کم وزن',
     writerIcon: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/writing-pic/DR2.png',
@@ -31,8 +31,8 @@ export const data = [
     bmiTitle: 'BMI شما: 27.343748',
   },
   {
-    completeTitle: '',
-    completeRatio: 0,
+    completeTitle: '20% برنامه رو انجام دادی!',
+    completeRatio: 20,
     isBookmarked: false,
     commentCount: 2,
     rateAvg: 4.67,
@@ -62,8 +62,8 @@ export const data = [
     bmiTitle: 'BMI شما: 27.343748',
   },
   {
-    completeTitle: '',
-    completeRatio: 0,
+    completeTitle: 'تبریک! کامل انجام دادی.',
+    completeRatio: 100,
     isBookmarked: false,
     commentCount: 4,
     rateAvg: 0.83,

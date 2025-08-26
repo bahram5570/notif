@@ -1,5 +1,5 @@
-import CustomSlider from '@components/ui/CustomSlider';
 import Typography from '@components/ui/Typography';
+import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import useTheme from '@hooks/useTheme';
 
 import { ROUTIN_TABS } from './constants';
@@ -9,7 +9,10 @@ const RoutinTabsBtn = ({ activeTab, handleTabChange }: RoutinTabsBtnPropsType) =
   const { colors } = useTheme();
 
   return (
-    <CustomSlider gap={4} sidePadding={16}>
+    <div
+      className=" max-w-full overflow-x-auto overflow-y-hidden flex flex-row-reverse fixed gap-3 p-4 z-40"
+      style={{ backgroundColor: colors.White, top: HEADER_HEIGHT }}
+    >
       {ROUTIN_TABS.map((tab) => {
         return (
           <div
@@ -33,7 +36,7 @@ const RoutinTabsBtn = ({ activeTab, handleTabChange }: RoutinTabsBtnPropsType) =
           </div>
         );
       })}
-    </CustomSlider>
+    </div>
   );
 };
 
