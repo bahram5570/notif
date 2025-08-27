@@ -9,7 +9,7 @@ import { ImpoServiceData } from './constants';
 const ServicesItem = () => {
   return (
     <div
-      className="grid md:grid-flow-col auto-cols-fr grid-cols-3 md:gap-x-[50px] gap-y-6 gap-x-[27px] mt-8 rounded-[24px] p-6 md:py-[25px] md:*:px-[37px]"
+      className="grid md:grid-flow-col auto-cols-fr grid-cols-3 lg:gap-x-[50px] xl:gap-x-[50px] md:gap-x-[28px] gap-y-6 gap-x-[27px] mt-8 rounded-[24px] p-6 md:py-[25px] md:*:px-[37px]"
       style={{ boxShadow: '0 4px 15px 0 rgba(58, 112, 191, 0.10)' }}
     >
       {ImpoServiceData.map((item, index) => (
