@@ -13,7 +13,7 @@ import { COLORS_LIST } from '@theme/colors';
 import DownloadAppLinkGenerator from '../DownloadAppLinkGenerator';
 
 const DownloadAppAndroid = () => {
-  // const { callUserTracking } = useUserTracking();
+  const { callUserTracking } = useUserTracking();
 
   const directId = 'men-android-direct';
 
@@ -27,7 +27,7 @@ const DownloadAppAndroid = () => {
           target="_blank"
           href={DIRECT_LINK_MEN_URL}
           aria-label="DownloadAppAndroid"
-          // onClick={() => callUserTracking(directId)}
+          onClick={() => callUserTracking(directId)}
           style={{ backgroundColor: COLORS_LIST.Neutral_OnBackground }}
           className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2"
         >

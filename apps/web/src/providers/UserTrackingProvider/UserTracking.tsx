@@ -15,7 +15,7 @@ const UserTracking = ({ children }: { children: React.ReactNode }) => {
   const { callUserTracking } = useUserTracking();
 
   const sendRequestHandler = () => {
-    callUserTracking('ignore it!');
+    callUserTracking('-----');
   };
 
   useEffect(() => {
