@@ -1,7 +1,7 @@
 import { setPaymentCookie } from '@utils/cookies';
 import { externalLink } from '@utils/navigation';
 
-import { gggetUserCookie } from '@actions/cookie.actions';
+import { getUserCookie } from '@actions/cookie.actions';
 import useApi from '@hooks/useApi';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
@@ -13,7 +13,7 @@ const useBuySubscription = () => {
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
   const buySubscriptionSuccessHandler = async (v: BuySubscriptionResponseTypes) => {
-    const user = await gggetUserCookie();
+    const user = await getUserCookie();
 
     if (v.isSuccess) {
       setPaymentCookie({ route: '/protected/cycle' });

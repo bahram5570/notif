@@ -1,11 +1,11 @@
-import { gggetUserCookie } from '@actions/cookie.actions';
+import { getUserCookie } from '@actions/cookie.actions';
 import { CyclePhaseEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
 import { currentPhaseFinder } from './currentPhaseFinder';
 
 export const enterphaseHandler = async (queries: string) => {
   let result = '';
-  const user = await gggetUserCookie();
+  const user = await getUserCookie();
   const storedInstallationPurpose = user?.installationPurpose || null;
 
   const queryPhase = new URLSearchParams(queries || '')?.get('phase');

@@ -1,4 +1,4 @@
-import { deleteUserCookie, gggetUserCookie, setCultureCookie } from '@actions/cookie.actions';
+import { deleteUserCookie, getUserCookie, setCultureCookie } from '@actions/cookie.actions';
 import { CULTURE_INITIAL_VALUES } from '@providers/CultureProvider/constants';
 
 import { CacheTypes, HttpTypes, OptionsTypes } from './types';
@@ -17,7 +17,7 @@ const cacheOptionsFinder = (props: HttpTypes) => {
 };
 
 const authTokenFinder = async () => {
-  const user = await gggetUserCookie();
+  const user = await getUserCookie();
   const Authorization = user ? `Bearer ${user.token}` : undefined;
 
   return { Authorization };

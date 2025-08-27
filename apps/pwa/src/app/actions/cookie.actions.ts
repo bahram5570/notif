@@ -39,7 +39,7 @@ export type UserCookieTypes = {
   token: string;
 };
 
-export const sssetUserCookie = async (props: UserCookieTypes) => {
+export const setUserCookie = async (props: UserCookieTypes) => {
   const expires = getUserExpiresDate(30);
   const identity = toEnglishNumbers(props.identity);
   const createdTime = props.createdTime || cookieCreatedTime();
@@ -56,7 +56,7 @@ export const sssetUserCookie = async (props: UserCookieTypes) => {
   cookies().set({ name: USER_COOKIE_NAME, value, httpOnly: true, path: '/', secure: true, expires });
 };
 
-export const gggetUserCookie = async () => {
+export const getUserCookie = async () => {
   const cookie = cookies().get(USER_COOKIE_NAME);
   const result: UserCookieTypes | null = cookie ? JSON.parse(cookie.value) : null;
   return result;

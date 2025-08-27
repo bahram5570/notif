@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { gggetUserCookie } from '@actions/cookie.actions';
+import { getUserCookie } from '@actions/cookie.actions';
 import { LoadingStatusEnum } from '@components/women/pages/mainRoutes/cycle/CycleContainer/__hooks__/useCycleLoadingStatus/loadingStatus.enum';
 import { InstallationPurposeEnum } from '@constants/activation.constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
@@ -19,7 +19,7 @@ const CircleContainer = ({ data, loadingStatus }: CircleContainerProps) => {
 
   useEffect(() => {
     const handleResult = async () => {
-      const user = await gggetUserCookie();
+      const user = await getUserCookie();
 
       const result =
         user !== null &&

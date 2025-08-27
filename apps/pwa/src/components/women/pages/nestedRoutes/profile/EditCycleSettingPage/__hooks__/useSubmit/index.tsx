@@ -1,6 +1,6 @@
 import { CycleThemeEnum } from '@services/loginServices/enum';
 
-import { gggetUserCookie, sssetUserCookie } from '@actions/cookie.actions';
+import { getUserCookie, setUserCookie } from '@actions/cookie.actions';
 import { APP_VERSION } from '@constants/app.constants';
 import useApi from '@hooks/useApi';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
@@ -13,12 +13,12 @@ const useSubmit = (selectedValue: CycleThemeEnum) => {
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
   const successHandler = async () => {
-    const user = await gggetUserCookie();
+    const user = await getUserCookie();
 
     if (user && user?.cycleTheme) {
       const updatedUser = { ...user };
       updatedUser.cycleTheme = selectedValue;
-      await sssetUserCookie(updatedUser);
+      await setUserCookie(updatedUser);
     }
 
     updateProfileData();

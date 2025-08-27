@@ -1,7 +1,7 @@
 import http from '@services/http';
 import { cookieCreatedTime, getUserExpiresDate } from '@utils/cookies';
 
-import { UserCookieTypes, gggetUserCookie } from '@actions/cookie.actions';
+import { UserCookieTypes, getUserCookie } from '@actions/cookie.actions';
 import { APP_VERSION } from '@constants/app.constants';
 import { FIREBASE_COOKIE_NAME, USER_COOKIE_NAME } from '@constants/cookie.constants';
 import { ACTIVATION_CR_REGISTER_QUERY_NAME } from '@constants/routes.constants';
@@ -12,7 +12,7 @@ import { HandleActivationCrLogginTypes, HandleUserStatusTypes, LoginResponseType
 
 const checkUserStatus = async () => {
   const cookie = cookies();
-  const user = await gggetUserCookie();
+  const user = await getUserCookie();
 
   if (user) {
     const createdTime = user?.createdTime || 0;

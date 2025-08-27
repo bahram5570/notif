@@ -2,7 +2,7 @@
 
 import ImpoIcon from '@assets/images/questionsImpo.svg';
 
-import { gggetUserCookie } from '@actions/cookie.actions';
+import { getUserCookie } from '@actions/cookie.actions';
 import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
 import { InstallationPurposeEnum } from '@constants/activation.constants';
@@ -16,7 +16,7 @@ const Step1 = () => {
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
   const selectHandler = async () => {
-    const user = await gggetUserCookie();
+    const user = await getUserCookie();
 
     if (user) {
       const installationPurpose = user.installationPurpose;

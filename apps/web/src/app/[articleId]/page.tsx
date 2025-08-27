@@ -1,4 +1,3 @@
-import { handleUpdateArticleBody, handleUpdateArticleId } from './__utils__';
 import http from '@services/http';
 
 import ArticleIdPageContainer from '@components/pages/articleId/ArticleIdPageContainer';
@@ -37,9 +36,7 @@ export async function generateMetadata({ params }: { params: { articleId: string
 }
 
 const Article = async ({ params }: { params: { articleId: string } }) => {
-  const id = handleUpdateArticleId(params.articleId);
-
-  const { data } = await getArticleData(id);
+  const { data } = await getArticleData(params.articleId);
 
   if (!data) {
     notFound();
@@ -48,7 +45,7 @@ const Article = async ({ params }: { params: { articleId: string } }) => {
   return (
     <>
       <ArticleSchema data={data} />
-      <ArticleIdPageContainer {...data} body={handleUpdateArticleBody(data.body)} articleId={id} />
+      <ArticleIdPageContainer {...data} body={data.body} articleId={params.articleId} />
     </>
   );
 };

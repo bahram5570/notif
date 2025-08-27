@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { LoginResponseTypes } from '@services/loginServices/types';
 import { getFirebaseCookieToken } from '@utils/cookies';
 
-import { gggetUserCookie } from '@actions/cookie.actions';
+import { getUserCookie } from '@actions/cookie.actions';
 import { APP_VERSION } from '@constants/app.constants';
 import useApi from '@hooks/useApi';
 
@@ -19,7 +19,7 @@ const useGetData = () => {
 
   useEffect(() => {
     const handleApi = async () => {
-      const user = await gggetUserCookie();
+      const user = await getUserCookie();
 
       const payload = {
         phoneModel: '',

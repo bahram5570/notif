@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { phaseChangePayloadUpdater } from './__utils__';
 
-import { UserCookieTypes, gggetUserCookie } from '@actions/cookie.actions';
+import { UserCookieTypes, getUserCookie } from '@actions/cookie.actions';
 import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
@@ -15,7 +15,7 @@ const usePhaseChange = ({ payload, api }: UsePhaseChangeProps) => {
   const [fetchedUser, setFetchedUser] = useState<UserCookieTypes | null>(null);
 
   const phaseChangeSuccessHandler = async () => {
-    const user = await gggetUserCookie();
+    const user = await getUserCookie();
 
     updateProfileDateByDellay();
 

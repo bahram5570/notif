@@ -10,7 +10,7 @@ import { COLORS_LIST } from '@theme/colors';
 import IranianStores from './IranianStores';
 
 const DownloadAppIos = () => {
-  const { callUserTracking } = useUserTracking();
+  // const { callUserTracking } = useUserTracking();
 
   const directId = 'women-ios-direct';
 
@@ -24,7 +24,7 @@ const DownloadAppIos = () => {
           target="_blank"
           aria-label="DownloadAppAndroid"
           href={APP_STORE_LINK_WOMEN_URL}
-          onClick={() => callUserTracking(directId)}
+          // onClick={() => callUserTracking(directId)}
           style={{ backgroundColor: COLORS_LIST.Neutral_OnBackground }}
           className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 relative z-10"
         >

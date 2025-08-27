@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-import { UserCookieTypes, sssetUserCookie } from '@actions/cookie.actions';
+import { UserCookieTypes, setUserCookie } from '@actions/cookie.actions';
 import Otp2Container from '@components/activation/pages/otp/Otp2Container';
 import { OtpStatusTypes } from '@components/activation/pages/otp/Otp2Container/__hooks__/useOtpStatus/types';
 import { OTP_COUNT_DOWN_TIME } from '@components/activation/pages/otp/Otp2Container/constants';
@@ -40,7 +40,7 @@ const Otp2 = () => {
   };
 
   const loginHandler = async (v: UserCookieTypes) => {
-    await sssetUserCookie(v);
+    await setUserCookie(v);
     sessionStorage.clear();
     router.replace('/protected/cycle');
   };
