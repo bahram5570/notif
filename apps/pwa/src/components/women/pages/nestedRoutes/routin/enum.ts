@@ -9,3 +9,9 @@ export enum ProgramWidgetItemStatusEnum {
   InCompelet = 1,
   Compelet = 2,
 }
+
+export enum ProgramWidgetCompleteEnum {
+  lockOnlock = 0,
+  simple = 1,
+  checkbox = 2,
+}

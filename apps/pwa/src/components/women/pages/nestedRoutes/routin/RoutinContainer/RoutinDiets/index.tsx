@@ -8,7 +8,7 @@ const RoutinDiets = ({ name, items }: RoutinDietsProps) => {
   const { colors } = useTheme();
 
   return (
-    <>
+    <div className="mt-7">
       <Typography scale="Lable" size="Large" className="pb-3 ml-auto">
         {name}
       </Typography>
@@ -25,7 +25,7 @@ const RoutinDiets = ({ name, items }: RoutinDietsProps) => {
           </div>
         );
       })}
-    </>
+    </div>
   );
 };
 

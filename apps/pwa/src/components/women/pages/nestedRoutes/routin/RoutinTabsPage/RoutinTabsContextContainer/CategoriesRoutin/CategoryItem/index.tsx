@@ -15,10 +15,10 @@ const CategoryItem = () => {
         </Typography>
         <div className=" overflow-x-auto overflow-y-hidden flex flex-row-reverse  gap-3 py-4 max-w-full">
           {data.map((item, index) => {
-            const hasOOneItem = data.length === 1;
+            const hasOneItem = data.length === 1;
             return (
               <div className="flex flex-row w-full" key={index}>
-                <RoutinCard data={item} showDescription={false} className={hasOOneItem ? 'w-full' : 'w-80'} />
+                <RoutinCard data={item} showDescription={false} className={hasOneItem ? 'w-full' : 'w-80'} />
               </div>
             );
           })}

@@ -10,19 +10,25 @@ import useTheme from '@hooks/useTheme';
 import { useRouter } from 'next/navigation';
 
 import useFeedback from '../RoutinItemContainer/__hooks__/useFeedback';
+import RoutinCommentList from './RoutinCommentList';
 import RoutinDiets from './RoutinDiets';
 import RoutinFooter from './RoutinFooter';
 import RoutinHeading from './RoutinHeading';
+import RoutinItemsTab from './RoutinItemsTab';
 import RoutinSkeleton from './RoutinSkeleton';
+import RoutinTab from './RoutinTab';
+import { RoutinTabNameEnum } from './RoutinTab/enum';
 import RoutinUnlockTost from './RoutinUnlockTost';
 import useFinalStepWelcoming from './__hooks__/useFinalStepWelcoming';
 import useGetData from './__hooks__/useGetData';
+import useRoutinTab from './__hooks__/useRoutinTab';
 
 const RoutinContainer = () => {
   const { colors } = useTheme();
   const route = useRouter();
   const { updateQuery } = useCustomReactQuery();
   const { isLoading, data } = useGetData();
+  const { tab, tabHandler } = useRoutinTab();
   const { finalStepHandler } = useFinalStepWelcoming({ programId: data?.programId });
   const {
     isLoading: feedbackLoading,
@@ -53,28 +59,27 @@ const RoutinContainer = () => {
               <div className="relative z-10">
                 <RoutinHeading {...data} />
 
-                <div className="w-full rounded-xl p-3" style={{ backgroundColor: colors.White }}>
-                  {/* <RoutinWriter
-                    writerName={data.writerName}
-                    writerIcon={data.writerIcon}
-                    writerSpeciality={data.writerSpeciality}
-                  /> */}
-
-                  {/* <div className="w-full h-[1px] my-3" style={{ backgroundColor: colors.Surface_SurfaceVariant }} /> */}
-
-                  <RoutinDiets name={data.name} items={data.items} />
+                <div className="w-full rounded-xl p-3 overflow-y-hidden" style={{ backgroundColor: colors.White }}>
+                  <RoutinTab
+                    commentTabName={data.commentTabName}
+                    itemsTabName={data.itemsTabName}
+                    tab={tab}
+                    tabHandler={tabHandler}
+                  />
+                  {tab === RoutinTabNameEnum.Items && <RoutinItemsTab name={data.name} items={data.items} />}
+                  {tab === RoutinTabNameEnum.Comments && <RoutinCommentList programId={data.programId} tab={tab} />}
                 </div>
 
-                <RoutinFooter rate={data.rate} />
+                {/* <RoutinFooter rate={data.rate} /> */}
               </div>
             </div>
           )}
 
-          <FeedbackModal
-            title=" امیدواریم این مرحله واست مفید باشه، به این مرحله از روتین پوستی چه امتیازی میدی؟"
+          {/* <FeedbackModal
+            title=" امیدواریم این مرحله واست مفید باشه، به این مرحله از روتین  چه امتیازی میدی؟"
             onSubmit={rateHandler}
             isLoading={feedbackLoading}
-          />
+          /> */}
         </>
       )}
     </WomenPageLayout>

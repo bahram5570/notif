@@ -5,4 +5,5 @@ export type InfiniteScrollContainerPropsType = {
   isLoading: boolean;
   pageNo: number;
   updatePageNo: (page: number) => void;
+  pageSize?: number;
 };

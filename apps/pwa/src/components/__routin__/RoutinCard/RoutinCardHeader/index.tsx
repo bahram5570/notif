@@ -1,4 +1,7 @@
-import CustomImage from '@components/ui/CustomImage';
+import PartyingFaceIcon from '@assets/icons/Partying Face.svg';
+import SmilingFaceIcon from '@assets/icons/Smiling Face.svg';
+import ThinkingFaceIcon from '@assets/icons/Thinking Face.svg';
+
 import useTheme from '@hooks/useTheme';
 
 import RoutinBookmarked from './RoutinBookmarked';
@@ -28,6 +31,13 @@ const RoutinCardHeader = ({
       style={{ backgroundColor: backgroundHandler() }}
       className="w-full h-14 rounded-t-2xl flex flex-row-reverse items-center px-4 py-3 gap-2  mb-2"
     >
+      <div
+        className="flex justify-center items-center w-8 h-8 rounded-full"
+        style={{ backgroundColor: colors.Pink_400 }}
+      >
+        <PartyingFaceIcon />
+      </div>
+
       {/* <div className="relative w-6 h-6 bg-gray-200">
         <CustomImage src="/assets/images/1.webp" className="w-full h-full object-cover" />
       </div> */}

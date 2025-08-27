@@ -1,15 +1,11 @@
-import InfiniteScrollContainer from '@components/__infiniteScrollContainer__';
-
 import { RoutinTabsEnum } from '../RoutinTabsBtn/enum';
 import ActiveRoutins from './ActiveRoutins';
 import CategoriesRoutin from './CategoriesRoutin';
 import SavedRoutin from './SavedRoutin';
 import SuggestionRoutin from './SuggestionRoutin';
-import useGetRoutinTabsData from './__hooks__/useGetRoutinTabsData';
 import { RoutinTabsContextContainerPropsType } from './type';
 
 const RoutinTabsContextContainer = ({ activeTab }: RoutinTabsContextContainerPropsType) => {
-  // const {} = useGetRoutinTabsData({ activeTab });
   let currentRoutin: JSX.Element | null = null;
 
   switch (activeTab) {
