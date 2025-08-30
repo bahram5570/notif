@@ -3,6 +3,4 @@ import { RoutinResponseTypes } from '../__hooks__/useGetData/types';
 
 type ItemType = Pick<RoutinResponseTypes, 'programId'>;
 
-export interface RoutinCommentListPropsType extends ItemType {
-  tab: RoutinTabNameEnum;
-}
+export interface RoutinCommentListPropsType extends ItemType {}

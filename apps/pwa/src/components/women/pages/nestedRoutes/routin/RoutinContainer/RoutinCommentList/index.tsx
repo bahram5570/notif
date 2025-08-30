@@ -6,12 +6,12 @@ import CommentsListEmpty from './CommentsListEmpty';
 import useGetCommentData from './__hooks__/useGetCommentData';
 import { RoutinCommentListPropsType } from './type';
 
-const RoutinCommentList = ({ programId, tab }: RoutinCommentListPropsType) => {
+const RoutinCommentList = ({ programId }: RoutinCommentListPropsType) => {
   const { callApi, commentsData, isLoading, pageNo, updatePageNo } = useGetCommentData({ programId });
   const hasData = commentsData && commentsData.items.length > 0;
+
   return (
     <>
-      {/* {hasData && ( */}
       <InfiniteScrollContainer
         callApi={callApi}
         isLoading={isLoading}
@@ -30,7 +30,6 @@ const RoutinCommentList = ({ programId, tab }: RoutinCommentListPropsType) => {
             })}
         </div>
       </InfiniteScrollContainer>
-      {/* )} */}
     </>
   );
 };

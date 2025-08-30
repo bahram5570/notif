@@ -66,8 +66,10 @@ const RoutinContainer = () => {
                     tab={tab}
                     tabHandler={tabHandler}
                   />
-                  {tab === RoutinTabNameEnum.Items && <RoutinItemsTab name={data.name} items={data.items} />}
-                  {tab === RoutinTabNameEnum.Comments && <RoutinCommentList programId={data.programId} tab={tab} />}
+                  {tab === RoutinTabNameEnum.Items && (
+                    <RoutinItemsTab name={data.name} items={data.items} cta={data.cta} />
+                  )}
+                  {tab === RoutinTabNameEnum.Comments && <RoutinCommentList programId={data.programId} />}
                 </div>
 
                 {/* <RoutinFooter rate={data.rate} /> */}
