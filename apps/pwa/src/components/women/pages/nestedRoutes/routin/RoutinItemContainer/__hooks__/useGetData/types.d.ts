@@ -1,5 +1,11 @@
 import { ProgramWidgetItemStatusEnum } from '../../../enum';
 
+export type CtaType = {
+  action: ActionTypes;
+  ctaBtnLabel: string;
+  ctaDescription: string;
+};
+
 export type RoutinItemResponseTypes = {
   id: string;
   data: string;
@@ -8,4 +14,5 @@ export type RoutinItemResponseTypes = {
   description: string;
   status: ProgramWidgetItemStatusEnum;
   compeletButtonLabel: string;
+  cta: CtaType;
 };

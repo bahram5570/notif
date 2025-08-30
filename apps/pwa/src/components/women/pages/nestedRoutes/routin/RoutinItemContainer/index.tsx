@@ -1,5 +1,6 @@
 'use client';
 
+import RoutinCta from '@components/__routin__/RoutinCta';
 import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
 import FeedbackModal from '@components/women/FeedbackModal';
@@ -58,6 +59,9 @@ const RoutinItemContainer = () => {
                   style={{ paddingBottom: FOOTER_HEIGTH }}
                   dangerouslySetInnerHTML={{ __html: JSON.parse(data.data) }}
                 />
+
+                {data.cta.ctaBtnLabel && data.cta.ctaDescription && <RoutinCta cta={data.cta} />}
+
                 <div className="mt-auto p-2">
                   <Button
                     color="FREE-STYLES"
