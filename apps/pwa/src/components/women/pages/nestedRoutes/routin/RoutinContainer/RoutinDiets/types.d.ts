@@ -1,3 +1,4 @@
 import { RoutinResponseTypes } from '../__hooks__/useGetData/types';
 
-export interface RoutinDietsProps extends Pick<RoutinResponseTypes, 'name' | 'items'> {}
+export interface RoutinDietsProps
+  extends Pick<RoutinResponseTypes, 'name' | 'items' | 'compeletItemType' | 'programId'> {}

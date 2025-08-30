@@ -27,6 +27,12 @@ const config: Config = {
           '90%': { top: '0' },
           '100%': { top: '-300px' },
         },
+        createCommentToast: {
+          '0%': { bottom: '-300px' },
+          '20%': { bottom: '96px' },
+          '90%': { bottom: '96px' },
+          '100%': { bottom: '-300px' },
+        },
         welcoming: {
           '0%': { transform: 'translateX(100%)' },
           '100%': { transform: 'translateX(0%)' },
@@ -101,6 +107,7 @@ const config: Config = {
         SignsChangedToast: 'SignsChangedToast 10s linear forwards',
         welcoming: 'welcoming 6s linear forwards',
         signsChangedToast: 'signsChangedToast 10s linear forwards',
+        createCommentToast: 'createCommentToast 10s linear forwards',
         pageNavigation: 'pageNavigation 5s linear forwards',
         modalBackgroundOpen: 'modalBackgroundOpen 0.2s linear forwards',
         modalBackgroundClose: 'modalBackgroundClose 0.2s linear forwards',

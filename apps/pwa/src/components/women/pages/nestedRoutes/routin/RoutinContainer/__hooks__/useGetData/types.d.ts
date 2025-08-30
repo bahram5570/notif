@@ -1,6 +1,6 @@
 import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
 
-import { ProgramRateStatusEnum, ProgramWidgetItemStatusEnum } from '../../../enum';
+import { ProgramRateStatusEnum, ProgramWidgetCompleteEnum, ProgramWidgetItemStatusEnum } from '../../../enum';
 
 export type RoutinItemsTypes = {
   id: string;
@@ -58,7 +58,7 @@ export type RoutinResponseTypes = {
   commentCount: number;
   commentPlaceholder: string;
   commentTabName: string;
-  compeletItemType: 2;
+  compeletItemType: ProgramWidgetCompleteEnum;
   cta: CtaType;
   isbookmarked: boolean;
   itemsTabName: string;

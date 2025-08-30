@@ -4,7 +4,7 @@ import useTheme from '@hooks/useTheme';
 import RoutinDietsGenerator from './RoutinDietsGenerator';
 import { RoutinDietsProps } from './types';
 
-const RoutinDiets = ({ name, items }: RoutinDietsProps) => {
+const RoutinDiets = ({ name, items, compeletItemType, programId }: RoutinDietsProps) => {
   const { colors } = useTheme();
 
   return (
@@ -21,7 +21,13 @@ const RoutinDiets = ({ name, items }: RoutinDietsProps) => {
               <div className="w-full h-[1px] my-3" style={{ backgroundColor: colors.Surface_SurfaceVariant }} />
             )}
 
-            <RoutinDietsGenerator item={item} index={index} isLastItem={lastItem} />
+            <RoutinDietsGenerator
+              item={item}
+              index={index}
+              isLastItem={lastItem}
+              compeletItemType={compeletItemType}
+              programId={programId}
+            />
           </div>
         );
       })}

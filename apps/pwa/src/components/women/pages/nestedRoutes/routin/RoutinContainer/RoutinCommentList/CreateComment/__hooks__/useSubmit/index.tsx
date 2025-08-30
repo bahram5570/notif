@@ -2,6 +2,7 @@ import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 
 import { CommentItemType, CommentsResponseTypes } from '../../../__hooks__/useGetCommentData/type';
+import { SHOW_SUCCESS_CREATE_COMMENT } from '../../../constants';
 
 const useSubmit = ({ programId }: { programId: string }) => {
   const { newQuery, updateQuery, getQuery } = useCustomReactQuery(['routinComments' + programId]);
@@ -9,6 +10,7 @@ const useSubmit = ({ programId }: { programId: string }) => {
   const commentsData = getQuery<CommentsResponseTypes>({ queryKey: ['routinComments' + programId] });
 
   const successHandler = (v: CommentItemType) => {
+    localStorage.setItem(SHOW_SUCCESS_CREATE_COMMENT, 'true');
     if (commentsData) {
       const list = { ...v, items: [...commentsData.items, { ...v }] };
 
@@ -25,12 +27,14 @@ const useSubmit = ({ programId }: { programId: string }) => {
   });
 
   const submitHandler = ({ commentText }: { commentText: string }) => {
-    const payload = {
-      programId,
-      commentText,
-    };
+    // const payload = {
+    //   programId,
+    //   commentText,
+    // };
 
-    callApi(payload);
+    // callApi(payload);
+
+    localStorage.setItem(SHOW_SUCCESS_CREATE_COMMENT, 'true');
   };
 
   return { submitHandler, isLoading };

@@ -25,7 +25,7 @@ const CommentItem = (props: CommentItemPropsType) => {
           {props.commentText}
         </Typography>
       </div>
-      {props.reply.replyText && (
+      {props.hasReply && (
         <div className="px-3 py-4">
           <div className="px-3 py-4 flex flex-col justify-end items-end gap-4  border-r-2">
             <div className="flex flex-row-reverse justify-end items-center gap-2">

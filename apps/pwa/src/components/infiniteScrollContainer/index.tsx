@@ -12,19 +12,21 @@ const InfiniteScrollContainer = ({
   isLoading,
   pageNo,
   pageSize = PAGE_SIZE,
+  height,
   updatePageNo,
 }: InfiniteScrollContainerPropsType) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = containerRef.current;
+
     if (!el) return;
 
     const handleScroll = (e: Event) => {
       const target = e.target as HTMLDivElement;
 
       if (target) {
-        const isEndBottom = target.scrollTop + target.clientHeight >= target.scrollHeight - 100;
+        const isEndBottom = target.scrollTop + target.clientHeight >= target.scrollHeight;
 
         if (isEndBottom && !isLoading) {
           const currentItemsCount = (pageNo + 1) * pageSize;
@@ -49,7 +51,7 @@ const InfiniteScrollContainer = ({
   }, [pageNo, isLoading]);
 
   return (
-    <div ref={containerRef} className=" h-[80dvh] overflow-y-auto">
+    <div ref={containerRef} className=" overflow-y-auto" style={{ height }}>
       {children}
       {isLoading && (
         <div className="absolute left-0 right-0 bottom-20 w-full flex justify-center">

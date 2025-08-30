@@ -1,14 +1,27 @@
+import { useEffect } from 'react';
+
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 
 import CommentItem from './CommentItem';
 import CommentsListEmpty from './CommentsListEmpty';
+import CreateComment from './CreateComment';
+import CreatedCommentSuccessTost from './CreatedCommentSuccessTost';
 import useGetCommentData from './__hooks__/useGetCommentData';
 import { RoutinCommentListPropsType } from './type';
 
-const RoutinCommentList = ({ programId }: RoutinCommentListPropsType) => {
+const RoutinCommentList = ({ programId, commentPlaceholder }: RoutinCommentListPropsType) => {
   const { callApi, commentsData, isLoading, pageNo, updatePageNo } = useGetCommentData({ programId });
+
   const hasData = commentsData && commentsData.items.length > 0;
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   return (
     <>
@@ -18,18 +31,18 @@ const RoutinCommentList = ({ programId }: RoutinCommentListPropsType) => {
         pageNo={pageNo}
         updatePageNo={updatePageNo}
         totalCount={commentsData?.totalCount || 10}
+        height={500}
       >
-        <div
-          className="relative flex flex-col px-4 gap-3"
-          style={{ paddingTop: HEADER_HEIGHT + 16, paddingBottom: HEADER_HEIGHT * 2 }}
-        >
-          {!hasData && <CommentsListEmpty />}
+        <CreatedCommentSuccessTost />
+        <div className=" flex flex-col px-4 gap-3 " style={{ paddingTop: 50, paddingBottom: HEADER_HEIGHT * 2 }}>
+          {!hasData && !isLoading && <CommentsListEmpty />}
           {hasData &&
             commentsData.items.map((comment) => {
               return <CommentItem {...comment} key={comment.id} />;
             })}
         </div>
       </InfiniteScrollContainer>
+      <CreateComment commentPlaceholder={commentPlaceholder} programId={programId} />
     </>
   );
 };

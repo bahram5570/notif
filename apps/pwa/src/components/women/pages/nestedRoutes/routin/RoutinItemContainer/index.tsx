@@ -8,7 +8,6 @@ import { FOOTER_HEIGTH } from '@components/women/WomenFooter/constants';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import useTheme from '@hooks/useTheme';
-import { useRouter } from 'next/navigation';
 
 import { ProgramWidgetItemStatusEnum } from '../enum';
 import EmptyState from './EmptyState';
@@ -19,19 +18,12 @@ import useGetData from './__hooks__/useGetData';
 import useSeen from './__hooks__/useSeen';
 
 const RoutinItemContainer = () => {
-  const route = useRouter();
   const { colors } = useTheme();
 
   const { isLoading, data, programId } = useGetData();
   const { onSeenHandler, isLoading: seenLoading } = useSeen();
   const { isLoading: feedbackLoading, rateHandler } = useFeedback({
     programId,
-    onComplete: () => {
-      route.back();
-      setTimeout(() => {
-        route.back();
-      }, 0);
-    },
   });
 
   return (

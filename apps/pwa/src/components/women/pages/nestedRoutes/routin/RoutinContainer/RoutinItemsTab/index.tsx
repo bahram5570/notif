@@ -3,11 +3,11 @@ import RoutinCta from '@components/__routin__/RoutinCta';
 import RoutinDiets from '../RoutinDiets';
 import { RoutinItemsTabPropsType } from './type';
 
-const RoutinItemsTab = ({ items, name, cta }: RoutinItemsTabPropsType) => {
+const RoutinItemsTab = (props: RoutinItemsTabPropsType) => {
   return (
     <>
-      <RoutinDiets name={name} items={items} />
-      {cta.ctaBtnLabel && cta.ctaDescription && <RoutinCta cta={cta} />}
+      <RoutinDiets {...props} />
+      {props.cta.ctaBtnLabel && props.cta.ctaDescription && <RoutinCta cta={props.cta} />}
     </>
   );
 };

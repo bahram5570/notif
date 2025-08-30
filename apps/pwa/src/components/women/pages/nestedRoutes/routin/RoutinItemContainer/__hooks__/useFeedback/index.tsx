@@ -2,11 +2,13 @@ import { useState } from 'react';
 
 import { onSubmitType } from '@components/women/FeedbackModal/type';
 import useApi from '@hooks/useApi';
+import { useRouter } from 'next/navigation';
 
 import { ProgramRateStatusEnum } from '../../../enum';
 import { FeedbackDataType, UseFeedbackPropsType } from './type';
 
-const useFeedback = ({ programId, onComplete }: UseFeedbackPropsType) => {
+const useFeedback = ({ programId }: UseFeedbackPropsType) => {
+  const route = useRouter();
   const [feedbackData, setFeedbackData] = useState<FeedbackDataType>({
     description: '',
     rate: 0,
@@ -15,7 +17,10 @@ const useFeedback = ({ programId, onComplete }: UseFeedbackPropsType) => {
   });
 
   const successHandler = () => {
-    onComplete();
+    route.back();
+    setTimeout(() => {
+      route.back();
+    }, 0);
   };
 
   const { callApi, isLoading } = useApi({

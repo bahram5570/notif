@@ -11,7 +11,7 @@ export enum ProgramWidgetItemStatusEnum {
 }
 
 export enum ProgramWidgetCompleteEnum {
-  lockOnlock = 0,
-  simple = 1,
-  checkbox = 2,
+  LockOnlock = 0,
+  Simple = 1,
+  Checkbox = 2,
 }

@@ -17,6 +17,7 @@ const CreateComment = ({ commentPlaceholder, programId }: CreateCommentPropsType
 
   const onClick = () => {
     submitHandler({ commentText });
+    setCommentText('');
   };
 
   return (

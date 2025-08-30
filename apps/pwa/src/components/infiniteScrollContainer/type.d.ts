@@ -6,4 +6,5 @@ export type InfiniteScrollContainerPropsType = {
   pageNo: number;
   updatePageNo: (page: number) => void;
   pageSize?: number;
+  height?: string | number;
 };
