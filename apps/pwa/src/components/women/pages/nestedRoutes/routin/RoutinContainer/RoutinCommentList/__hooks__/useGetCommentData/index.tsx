@@ -15,7 +15,7 @@ const useGetCommentData = ({ programId }: UseGetCommentDataPropsType) => {
 
   const successHandler = (v: CommentsResponseTypes) => {
     if (commentsData) {
-      const list = { ...v, comments: [...commentsData.items, ...v.items] };
+      const list = { ...v, items: [...commentsData.items, ...v.items] };
       updateQuery({ queryKey: ['routinComments' + programId], payload: list });
     } else {
       newQuery({ payload: v, queryKey: ['routinComments' + programId] });
@@ -25,7 +25,7 @@ const useGetCommentData = ({ programId }: UseGetCommentDataPropsType) => {
   const { callApi, isLoading } = useApi<CommentsResponseTypes>({
     api: `widgets/program/comment?programId=${programId}&pageNo=${pageNo}&pageSize=${PAGE_SIZE}`,
     method: 'GET',
-    queryKey: ['routinComments' + programId],
+    queryKey: ['routinComments'],
     fetchOnMount: false,
     onSuccess: successHandler,
   });
