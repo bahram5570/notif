@@ -4,4 +4,6 @@ type DataType = Pick<RoutinCardDetailedPropsType, 'data'>['data'];
 
 type ItemTypes = Pick<DataType, 'isBookmarked'>;
 
-export interface RoutinBookmarkedPropsType extends ItemTypes {}
+export interface RoutinBookmarkedPropsType extends ItemTypes {
+  programId: string;
+}
