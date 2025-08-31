@@ -1,6 +1,7 @@
-import { FAKE_CYCLE_FOOTER_HEIGTH } from '@app/(activation)/activationCr/(goal)/fakeCycle/FakeCyclePageContainer/PageContainer/FakeCycleContainer/constants';
+// import { FAKE_CYCLE_FOOTER_HEIGTH } from '@app/(activation)/activationCr/(goal)/fakeCycle/FakeCyclePageContainer/PageContainer/FakeCycleContainer/constants';
 import Button from '@components/ui/Button';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import useAnalytics from '@hooks/useAnalytics';
 import useTheme from '@hooks/useTheme';
 import { useRouter } from 'next/navigation';
 
@@ -9,19 +10,21 @@ import { SAMPLE_CYCLE_CONTINUE_BTN_HEIGHT } from './constants';
 const ContinueBtn = () => {
   const router = useRouter();
   const { colors } = useTheme();
+  const { callEvent } = useAnalytics();
 
   const nextHandler = () => {
     router.push('otp_1');
+    callEvent(location.pathname.slice(1));
   };
 
   return (
     <div
       className="fixed left-0 right-0 bottom-0 mx-auto px-4 pt-4 z-30"
       style={{
+        maxWidth: MAX_SCREEN_WIDTH,
         height: SAMPLE_CYCLE_CONTINUE_BTN_HEIGHT,
         // height: FAKE_CYCLE_FOOTER_HEIGTH + SAMPLE_CYCLE_CONTINUE_BTN_HEIGHT,
         backgroundColor: colors.Neutral_Background,
-        maxWidth: MAX_SCREEN_WIDTH,
       }}
     >
       <div className="flex mx-auto w-[204px] min-w-fit">

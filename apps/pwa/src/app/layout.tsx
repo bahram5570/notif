@@ -1,6 +1,7 @@
 import './globals.css';
 
 import { MAX_SCREEN_WIDTH, PORTAL_ID } from '@constants/app.constants';
+import AnalyticsProvider from '@providers/AnalyticsProvider';
 import CultureProvider from '@providers/CultureProvider';
 import ErrorProvider from '@providers/ErrorProvider';
 import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
@@ -71,32 +72,34 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 
         <ScrollToTopProvider />
 
-        <OperatingSystemProvider>
-          <CultureProvider>
-            <ThemeModeProvider>
-              <ReactQueryProvider>
-                <ErrorProvider>
-                  <ToastProvider>
-                    <PageNavigationProvider>
-                      <RouteSequenceProvider>
-                        <WidgetActionsProvider>
-                          <ServiceWorkerProvider>
-                            <>
-                              <>{children}</>
-                              <ModalsQueryParamsProvider />
-                              <PreviewImageProvider />
-                              <div id={PORTAL_ID} />
-                            </>
-                          </ServiceWorkerProvider>
-                        </WidgetActionsProvider>
-                      </RouteSequenceProvider>
-                    </PageNavigationProvider>
-                  </ToastProvider>
-                </ErrorProvider>
-              </ReactQueryProvider>
-            </ThemeModeProvider>
-          </CultureProvider>
-        </OperatingSystemProvider>
+        <AnalyticsProvider>
+          <OperatingSystemProvider>
+            <CultureProvider>
+              <ThemeModeProvider>
+                <ReactQueryProvider>
+                  <ErrorProvider>
+                    <ToastProvider>
+                      <PageNavigationProvider>
+                        <RouteSequenceProvider>
+                          <WidgetActionsProvider>
+                            <ServiceWorkerProvider>
+                              <>
+                                <>{children}</>
+                                <ModalsQueryParamsProvider />
+                                <PreviewImageProvider />
+                                <div id={PORTAL_ID} />
+                              </>
+                            </ServiceWorkerProvider>
+                          </WidgetActionsProvider>
+                        </RouteSequenceProvider>
+                      </PageNavigationProvider>
+                    </ToastProvider>
+                  </ErrorProvider>
+                </ReactQueryProvider>
+              </ThemeModeProvider>
+            </CultureProvider>
+          </OperatingSystemProvider>
+        </AnalyticsProvider>
       </body>
     </html>
   );
