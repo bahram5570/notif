@@ -26,7 +26,7 @@ const useGetCommentData = ({ programId }: UseGetCommentDataPropsType) => {
     api: `widgets/program/comment?programId=${programId}&pageNo=${pageNo}&pageSize=${PAGE_SIZE}`,
     method: 'GET',
     queryKey: ['routinComments'],
-    fetchOnMount: false,
+    // fetchOnMount: false,
     onSuccess: successHandler,
   });
 

@@ -1,24 +1,24 @@
-import { RoutinTabsEnum } from '../RoutinTabsBtn/enum';
+import { ProgramWidgetPageEnum } from '../__hooks__/useConfig/enum';
 import ActiveRoutins from './ActiveRoutins';
 import CategoriesRoutin from './CategoriesRoutin';
 import SavedRoutin from './SavedRoutin';
 import SuggestionRoutin from './SuggestionRoutin';
 import { RoutinTabsContextContainerPropsType } from './type';
 
-const RoutinTabsContextContainer = ({ activeTab }: RoutinTabsContextContainerPropsType) => {
+const RoutinTabsContextContainer = ({ activeTab, tabsOrder }: RoutinTabsContextContainerPropsType) => {
   let currentRoutin: JSX.Element | null = null;
 
-  switch (activeTab) {
-    case RoutinTabsEnum.SUGGESTION:
+  switch (tabsOrder[activeTab]?.tabType) {
+    case ProgramWidgetPageEnum.Recommended:
       currentRoutin = <SuggestionRoutin />;
       break;
-    case RoutinTabsEnum.ACTIVE_PROGRAMS:
+    case ProgramWidgetPageEnum.Active:
       currentRoutin = <ActiveRoutins />;
       break;
-    case RoutinTabsEnum.CATEGORIES:
+    case ProgramWidgetPageEnum.Categorized:
       currentRoutin = <CategoriesRoutin />;
       break;
-    case RoutinTabsEnum.SAVED:
+    case ProgramWidgetPageEnum.Bookmarked:
       currentRoutin = <SavedRoutin />;
       break;
   }

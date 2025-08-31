@@ -1,0 +1,38 @@
+import { useState } from 'react';
+
+import { PAGE_SIZE } from '@components/infiniteScrollContainer/constatns';
+import useApi from '@hooks/useApi';
+import useCustomReactQuery from '@hooks/useCustomReactQuery';
+
+import { RecommendedRoutinResponseType } from './type';
+
+const useGetSuggestionRoutinData = () => {
+  const [pageNo, setPageNo] = useState(0);
+  const { newQuery, updateQuery, getQuery } = useCustomReactQuery();
+
+  const data = getQuery<RecommendedRoutinResponseType>({ queryKey: ['recommendedRoutin'] });
+
+  const successHandler = (v: RecommendedRoutinResponseType) => {
+    if (data) {
+      const list = { ...v, programs: [...data.programs, ...v.programs] };
+      updateQuery({ queryKey: ['recommendedRoutin'], payload: list });
+    } else {
+      newQuery({ payload: v, queryKey: ['recommendedRoutin'] });
+    }
+  };
+
+  const { isLoading, callApi } = useApi<RecommendedRoutinResponseType>({
+    api: `widgets/program/pages/recommended?pageNo=${pageNo}&pageSize=${PAGE_SIZE}`,
+    method: 'GET',
+    queryKey: ['recommended'],
+    onSuccess: successHandler,
+  });
+
+  const updatePageNo = (page: number) => {
+    setPageNo(page);
+  };
+
+  return { data, isLoading, updatePageNo, pageNo, callApi };
+};
+
+export default useGetSuggestionRoutinData;

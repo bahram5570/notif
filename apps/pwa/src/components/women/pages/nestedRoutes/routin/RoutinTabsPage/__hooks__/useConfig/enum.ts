@@ -1,6 +1,6 @@
 export enum ProgramWidgetPageEnum {
-  Recommended,
-  Active,
-  Categorized,
-  Bookmarked,
+  Recommended = 'recommended',
+  Active = 'active',
+  Categorized = 'categorized',
+  Bookmarked = 'bookmarked',
 }

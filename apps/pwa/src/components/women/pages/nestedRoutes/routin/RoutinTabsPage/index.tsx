@@ -17,7 +17,7 @@ const RoutinTabsPage = () => {
     <WomenPageLayout rightElement="BackButton" rightElementScript={data?.title || 'برنامه های امروز'}>
       <RoutinTabsBtn activeTab={activeTab} handleTabChange={handleTabChange} tabsOrder={data?.tabsOrder || []} />
       <div className=" h-[1px] mx-2 my-4" style={{ backgroundColor: colors.Neutral_Surface }} />
-      <RoutinTabsContextContainer activeTab={activeTab} />
+      <RoutinTabsContextContainer activeTab={activeTab} tabsOrder={data?.tabsOrder || []} />
     </WomenPageLayout>
   );
 };

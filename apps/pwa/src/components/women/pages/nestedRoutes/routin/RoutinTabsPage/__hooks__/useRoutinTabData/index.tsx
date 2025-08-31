@@ -1,11 +1,9 @@
 import { useState } from 'react';
 
-import { ProgramWidgetPageEnum } from '../useConfig/enum';
-
 const useRoutinTabData = () => {
-  const [activeTab, setActiveTab] = useState(ProgramWidgetPageEnum.Recommended);
+  const [activeTab, setActiveTab] = useState(0);
 
-  const handleTabChange = (tabId: ProgramWidgetPageEnum) => {
+  const handleTabChange = (tabId: number) => {
     setActiveTab(tabId);
   };
 

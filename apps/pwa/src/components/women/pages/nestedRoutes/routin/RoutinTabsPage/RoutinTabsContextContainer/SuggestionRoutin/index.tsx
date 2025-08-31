@@ -1,18 +1,33 @@
 import RoutinCard from '@components/__routin__/RoutinCard';
+import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 
-import { data } from '../../constants';
+import useGetSuggestionRoutinData from './__hooks__/useGetSuggestionRoutinData';
 
 const SuggestionRoutin = () => {
+  const { data, isLoading, callApi, pageNo, updatePageNo } = useGetSuggestionRoutinData();
+  const hasData = data && data.programs.length > 0;
+
   return (
-    <div className=" flex flex-col gap-3 px-4 py-5">
-      {data.map((item, index) => {
-        return (
-          <div className="flex flex-row w-full" key={index}>
-            <RoutinCard data={item} showDescription={true} />
-          </div>
-        );
-      })}
-    </div>
+    <InfiniteScrollContainer
+      callApi={callApi}
+      isLoading={isLoading}
+      pageNo={pageNo}
+      updatePageNo={updatePageNo}
+      totalCount={data?.totalCount || 10}
+      height={'80dvh'}
+    >
+      <div className=" flex flex-col gap-3 px-4 py-5">
+        {!hasData && <></>}
+        {hasData &&
+          data.programs.map((program, index) => {
+            return (
+              <div className="flex flex-row w-full" key={index}>
+                <RoutinCard data={program} showDescription={true} />
+              </div>
+            );
+          })}
+      </div>
+    </InfiniteScrollContainer>
   );
 };
 

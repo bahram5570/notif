@@ -54,7 +54,7 @@ const InfiniteScrollContainer = ({
     <div ref={containerRef} className=" overflow-y-auto" style={{ height }}>
       {children}
       {isLoading && (
-        <div className="absolute left-0 right-0 bottom-20 w-full flex justify-center">
+        <div className=" w-full flex justify-center pt-28">
           <Spinner color="outline" width={40} />
         </div>
       )}
