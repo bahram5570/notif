@@ -21,6 +21,11 @@ const AnalyticsProvider = ({ children }: { children: React.ReactNode }) => {
       capture_performance: false,
       persistence: 'localStorage',
       disable_session_recording: true,
+      capture_exceptions: {
+        capture_console_errors: false,
+        capture_unhandled_errors: false,
+        capture_unhandled_rejections: false,
+      },
     });
   }, []);
 

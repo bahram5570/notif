@@ -2,13 +2,15 @@ import { getFirebaseCookieToken, getUserCookie, getUserExpiresDate, setUserCooki
 
 import { FIREBASE_COOKIE_NAME } from '@constants/cookie.constants';
 import { initializeApp } from 'firebase/app';
-import { Messaging, getMessaging, getToken } from 'firebase/messaging';
+import { Messaging, getMessaging, getToken, isSupported } from 'firebase/messaging';
 import cookies from 'js-cookie';
 
 import { FIREBASE_CONFIG, FIREBASE_VAPID_KEY } from './constants';
 
 export const getFirebaseMessaging = async (): Promise<Messaging | null> => {
-  if (typeof window === 'undefined') {
+  const isFirebaseSupported = await isSupported();
+
+  if (typeof window === 'undefined' || !isFirebaseSupported) {
     return null;
   }
 
