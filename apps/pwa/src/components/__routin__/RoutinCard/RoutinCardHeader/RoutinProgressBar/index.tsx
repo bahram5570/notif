@@ -6,7 +6,8 @@ import { RoutinProgressBarPropsType } from './type';
 const RoutinProgressBar = ({ completeRatio, completeTitle }: RoutinProgressBarPropsType) => {
   const { colors } = useTheme();
 
-  const isComplete = completeRatio === 100;
+  const percentage = completeRatio * 100;
+  const isComplete = percentage === 100;
 
   return (
     <div className="w-full flex flex-col items-end gap-2">
@@ -23,7 +24,7 @@ const RoutinProgressBar = ({ completeRatio, completeTitle }: RoutinProgressBarPr
         <div
           className=" h-1 rounded-full transition-all duration-300"
           style={{
-            width: `${completeRatio}%`,
+            width: `${percentage}%`,
             backgroundColor: isComplete ? colors.Success_Success : colors.Warning_Warning,
           }}
         ></div>

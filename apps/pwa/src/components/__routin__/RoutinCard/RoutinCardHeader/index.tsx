@@ -17,15 +17,44 @@ const RoutinCardHeader = ({
 }: RoutinCardHeaderPropsType) => {
   const { colors } = useTheme();
 
+  const percentage = completeRatio * 100;
+
   const backgroundHandler = () => {
-    if (completeRatio === 100) {
+    if (percentage === 100) {
       return colors.Success_SuccessContainer;
-    } else if (completeRatio > 0 && completeRatio < 100) {
+    } else if (percentage > 0 && percentage < 100) {
       return colors.Yellow_100;
     } else {
       return colors.PrimaryWoman_PrimaryContainer;
     }
   };
+
+  const circleContent = () => {
+    if (percentage === 100) {
+      return {
+        icon: <PartyingFaceIcon className="w-4 h-4" />,
+        style: {
+          backgroundColor: colors.Success_Success,
+        },
+      };
+    } else if (percentage > 0 && percentage < 100) {
+      return {
+        icon: <SmilingFaceIcon className="w-4 h-4" />,
+        style: {
+          backgroundColor: colors.Yellow_500,
+        },
+      };
+    } else {
+      return {
+        icon: <ThinkingFaceIcon className="w-4 h-4" />,
+        style: {
+          backgroundColor: colors.Pink_400,
+        },
+      };
+    }
+  };
+
+  const { icon, style } = circleContent();
 
   return (
     <div
@@ -33,19 +62,18 @@ const RoutinCardHeader = ({
       className="w-full h-14 rounded-t-2xl flex flex-row-reverse items-center px-4 py-3 gap-2  mb-2"
     >
       <div
-        className="flex justify-center items-center w-8 h-8 rounded-full"
-        style={{ backgroundColor: colors.Pink_400 }}
+        className="flex justify-center items-center w-8 h-8 rounded-full aspect-square"
+        style={{ backgroundColor: style.backgroundColor, border: `1px solid ${colors.Neutral_Background}` }}
       >
-        <PartyingFaceIcon />
+        {icon}
       </div>
 
-      {/* <div className="relative w-6 h-6 bg-gray-200">
-        <CustomImage src="/assets/images/1.webp" className="w-full h-full object-cover" />
-      </div> */}
-      {/* <CustomImage src="/assets/images/test.webp" /> */}
-
       <RoutinProgressBar completeRatio={completeRatio} completeTitle={completeTitle} />
-      {showBookmark && <RoutinBookmarked isBookmarked={isBookmarked} programId={programId} />}
+      {showBookmark && (
+        <div className="pointer-events-none w-12 h-12 flex justify-center items-center">
+          <RoutinBookmarked isBookmarked={isBookmarked} programId={programId} />
+        </div>
+      )}
     </div>
   );
 };

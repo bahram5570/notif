@@ -32,7 +32,7 @@ const RoutinTabsBtn = ({ activeTab, handleTabChange, tabsOrder }: RoutinTabsBtnP
         return (
           <div
             ref={(el) => {
-              tabRefs.current[tab.tabType] = el;
+              tabRefs.current[activeTab] = el;
             }}
             style={{
               border: `1px solid ${colors.Neutral_Surface}`,
