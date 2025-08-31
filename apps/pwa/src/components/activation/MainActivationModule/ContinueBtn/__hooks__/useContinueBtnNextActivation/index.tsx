@@ -15,19 +15,22 @@ const useContinueBtnNextActivation = () => {
   const [resetKey, setResetKey] = useState(Math.random().toString());
 
   const nextActivationHandler: NextActivationHandlerTypes = (v) => {
+    const pathList = location.pathname.split('/');
+
     if (v.invalidMessage) {
       onToast({ message: v.invalidMessage, type: 'error' });
       setResetKey(Math.random().toString());
       return;
     }
 
-    if (typeof v.nextActivation === 'string' && v.nextActivation.length > 0) {
+    if (typeof v.nextActivation === 'string' && v.nextActivation !== '') {
       sectionSaverHandler(v.nextActivation);
       router.push(v.nextActivation);
-      callEvent(location.pathname.slice(1));
+      callEvent(`${pathList[1]} ${pathList[2]}`);
     } else {
       if (v.onRegister) {
         v.onRegister();
+        callEvent(`${pathList[1]} ${pathList[2]} COMPLETE_REGISTER`);
       }
     }
   };

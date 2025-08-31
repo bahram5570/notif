@@ -56,13 +56,14 @@ const Otp2Container = ({
   });
 
   useEffect(() => {
+    const pathList = location.pathname.split('/');
+
     if (isLoginSuccess) {
-      const pathList = location.pathname.split('/');
-      callEvent(`${pathList[1]}/COMPLETE_LOGIN`);
+      callEvent(`${pathList[1]} ${pathList[2]} COMPLETE_LOGIN`);
     }
 
     if (isRegisterSuccess) {
-      callEvent(location.pathname.slice(1));
+      callEvent(`${pathList[1]} ${pathList[2]}`);
     }
   }, [isLoginSuccess, isRegisterSuccess]);
 

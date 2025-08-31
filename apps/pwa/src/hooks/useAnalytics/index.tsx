@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { isDevelopeMode } from '@utils/system';
 
-import posthog, { Properties } from 'posthog-js';
+import posthog, { EventName, Properties } from 'posthog-js';
 
 import { UseAnalyticsTypes } from './types';
 
@@ -20,7 +20,7 @@ const useAnalytics = (props?: UseAnalyticsTypes) => {
     }
   }, []);
 
-  const callEvent = (event_name: string, properties?: Properties) => {
+  const callEvent = (event_name: EventName, properties?: Properties) => {
     posthog.capture(event_name, properties);
   };
 

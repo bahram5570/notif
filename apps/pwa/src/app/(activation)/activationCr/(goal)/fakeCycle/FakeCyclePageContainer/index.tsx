@@ -22,7 +22,8 @@ const FakeCyclePageContainer = ({ payload, payloadHandler }: FakeCyclePageContai
   });
 
   const successHandler = () => {
-    callEvent(location.pathname.slice(1));
+    const pathList = location.pathname.split('/');
+    callEvent(`${pathList[1]} ${pathList[2]}`);
     router.push('sampleCycle');
   };
 

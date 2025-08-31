@@ -13,8 +13,9 @@ const ContinueBtn = () => {
   const { callEvent } = useAnalytics();
 
   const nextHandler = () => {
+    const pathList = location.pathname.split('/');
+    callEvent(`${pathList[1]} ${pathList[2]}`);
     router.push('otp_1');
-    callEvent(location.pathname.slice(1));
   };
 
   return (

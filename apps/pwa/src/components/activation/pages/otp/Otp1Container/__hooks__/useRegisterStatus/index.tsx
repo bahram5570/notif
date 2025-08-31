@@ -15,8 +15,10 @@ const useRegisterStatus = ({ identity, isPhone, otp1CompleteHandler }: useRegist
       isPhone,
     };
 
-    callEvent(location.pathname.slice(1));
     otp1CompleteHandler(info);
+
+    const pathList = location.pathname.split('/');
+    callEvent(`${pathList[1]} ${pathList[2]}`);
   };
 
   const {
