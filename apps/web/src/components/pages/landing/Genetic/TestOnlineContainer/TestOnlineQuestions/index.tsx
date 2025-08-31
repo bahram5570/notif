@@ -1,8 +1,9 @@
-import LogoIcon from '@assets/icons/impo2.svg';
+import LogoIcon from '@assets/images/genetic/logo.svg';
+
+import QuestionProgressBar from '@components/modules/QuestionProgressBar';
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
 
-import TestOnlineProgressBar from '../TestOnlineProgressBar';
 import useTestOnlineScore from '../__hooks__/useTestOnlineScore';
 import useTestOnlineSteps from '../__hooks__/useTestOnlineSteps';
 import TestOnlineQuestionsOption from './TestOnlineQuestionsOption';
@@ -17,9 +18,9 @@ const TestOnlineQuestions = () => {
 
   return (
     <>
-      <TestOnlineProgressBar currentStep={currentStep} />
+      <QuestionProgressBar currentStep={currentStep} questionListLength={data.items.length} />
 
-      <LogoIcon className="w-20 h-20" />
+      <LogoIcon className="w-20 h-20 mt-11" />
 
       <CustomTypography fontSize="Lable_Large" tagType="h2" className="py-10 text-center">
         {data.title}
@@ -43,7 +44,7 @@ const TestOnlineQuestions = () => {
         isDisable={selectedIndex === -1}
         className="w-full !mt-auto h-12 sm:h-14"
       >
-        بریم بعدی
+        مرحله بعدی
       </CustomButton>
     </>
   );

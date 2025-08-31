@@ -22,20 +22,24 @@ const TestOnlineWrapper = ({ children }: { children: React.ReactNode }) => {
       <div
         className="
                     absolute 
-                    -top-[200px] 
-                    sm:-top-[250px] 
+                    -top-[60px] 
+                    sm:top-[0px] 
                     left-0 
                     right-0 
                     w-full 
-                    h-[500px] 
+                    h-[400px] 
                     pointer-events-auto 
-                    opacity-70 
                     -z-10 
                     overflow-hidden 
                     sm:overflow-visible
                   "
       >
-        <CustomImage src="/assets/images/coverHollow.png" alt="" fill={true} className="object-fill scale-150" />
+        <CustomImage
+          src="/assets/images/genetic/coverHollow.webp"
+          alt="coverHollow"
+          fill={true}
+          className="object-cover"
+        />
       </div>
 
       <>{children}</>
