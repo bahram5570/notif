@@ -38,7 +38,13 @@ const RoutinBookmarked = (props: RoutinBookmarkedPropsType) => {
   }, [props.isBookmarked]);
 
   return (
-    <div className="w-8 h-8  flex items-center justify-center  pointer-events-auto" onClick={clickHandler}>
+    <div
+      className="w-8 h-8  flex items-center justify-center  pointer-events-auto"
+      onClick={(e) => {
+        e.stopPropagation();
+        clickHandler();
+      }}
+    >
       {!isBookmarked && <BookmarkEmptyIcon className="w-5 h-auto" style={{ stroke: colors.Surface_InverseSurface }} />}
       {isBookmarked && <BookmarkFillIcon className="w-5 h-auto" style={{ fill: colors.Surface_InverseSurface }} />}
     </div>
