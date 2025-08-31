@@ -81,7 +81,7 @@ export const actionRouteConverter = (serverLink: string) => {
       result = enterphaseHandler(queries);
       break;
     case '/routines':
-      result = `/protected/routinTabs?initialIndex=${encodeURIComponent(queries)}`;
+      result = `/protected/routinTabs${queries ? `?${queries}` : ''}`;
       break;
 
     case '/diet':
