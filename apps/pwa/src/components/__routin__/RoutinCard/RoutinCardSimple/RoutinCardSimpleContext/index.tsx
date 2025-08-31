@@ -12,7 +12,7 @@ const RoutinCardSimpleContext = ({ data }: RoutinCardSimpleContextPropsType) => 
     <div className="px-3 py-2">
       <div className="flex flex-row-reverse gap-3">
         <div className="w-14 h-14 ">
-          <CustomImage src="/assets/images/routinItem.webp" />
+          <CustomImage src={data.image} />
         </div>
         <div className="flex justify-end flex-col items-end gap-2" style={{ borderColor: colors.Red_400 }}>
           <Typography scale="Title" size="Small" color="Neutral_OnBackground">

@@ -17,6 +17,7 @@ const RoutinCardDetailed = ({ data }: RoutinCardDetailedPropsType) => {
         completeRatio={data.completeRatio}
         completeTitle={data.completeTitle}
         isBookmarked={data.isBookmarked}
+        programId={data.programId}
         showBookmark={true}
       />
       <RoutinCardDetailedContext data={data} />

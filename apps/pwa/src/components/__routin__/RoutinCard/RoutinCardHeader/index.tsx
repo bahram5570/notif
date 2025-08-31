@@ -12,6 +12,7 @@ const RoutinCardHeader = ({
   completeRatio,
   completeTitle,
   isBookmarked,
+  programId,
   showBookmark = false,
 }: RoutinCardHeaderPropsType) => {
   const { colors } = useTheme();
@@ -44,7 +45,7 @@ const RoutinCardHeader = ({
       {/* <CustomImage src="/assets/images/test.webp" /> */}
 
       <RoutinProgressBar completeRatio={completeRatio} completeTitle={completeTitle} />
-      {showBookmark && <RoutinBookmarked isBookmarked={isBookmarked} />}
+      {showBookmark && <RoutinBookmarked isBookmarked={isBookmarked} programId={programId} />}
     </div>
   );
 };

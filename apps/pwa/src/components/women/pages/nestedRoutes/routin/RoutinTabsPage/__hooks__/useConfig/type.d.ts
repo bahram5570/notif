@@ -1,5 +1,7 @@
+import { ProgramWidgetPageEnum } from './enum';
+
 export type TabsOrderType = {
-  tabType: 'recommended';
+  tabType: ProgramWidgetPageEnum;
   tabName: string;
 };
 

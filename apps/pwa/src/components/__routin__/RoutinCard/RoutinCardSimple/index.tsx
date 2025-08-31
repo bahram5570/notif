@@ -17,6 +17,7 @@ const RoutinCardSimple = ({ data }: RoutinCardSimplePropsType) => {
         completeRatio={data.completeRatio}
         completeTitle={data.completeTitle}
         isBookmarked={data.isBookmarked}
+        programId={data.programId}
       />
       <RoutinCardSimpleContext data={data} />
     </div>
