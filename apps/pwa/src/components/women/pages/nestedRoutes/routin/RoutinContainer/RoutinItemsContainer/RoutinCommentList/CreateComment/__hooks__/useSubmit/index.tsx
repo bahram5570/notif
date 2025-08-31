@@ -12,7 +12,7 @@ const useSubmit = ({ programId }: { programId: string }) => {
   const successHandler = (v: CommentItemType) => {
     localStorage.setItem(SHOW_SUCCESS_CREATE_COMMENT, 'true');
     if (commentsData) {
-      const list = { ...v, items: [...commentsData.items, { ...v }] };
+      const list = { ...v, items: [{ ...v }, ...commentsData.items] };
 
       updateQuery({ queryKey: ['routinComments' + programId], payload: list });
     } else {
@@ -27,14 +27,12 @@ const useSubmit = ({ programId }: { programId: string }) => {
   });
 
   const submitHandler = ({ commentText }: { commentText: string }) => {
-    // const payload = {
-    //   programId,
-    //   commentText,
-    // };
+    const payload = {
+      programId,
+      commentText,
+    };
 
-    // callApi(payload);
-
-    localStorage.setItem(SHOW_SUCCESS_CREATE_COMMENT, 'true');
+    callApi(payload);
   };
 
   return { submitHandler, isLoading };

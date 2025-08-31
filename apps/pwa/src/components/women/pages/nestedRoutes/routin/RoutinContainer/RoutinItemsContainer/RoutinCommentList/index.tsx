@@ -37,8 +37,10 @@ const RoutinCommentList = ({ programId, commentPlaceholder }: RoutinCommentListP
         <div className=" flex flex-col px-4 gap-3 " style={{ paddingTop: 50, paddingBottom: HEADER_HEIGHT * 2 }}>
           {!hasData && !isLoading && <CommentsListEmpty />}
           {hasData &&
-            commentsData.items.map((comment) => {
-              return <CommentItem {...comment} key={comment.id} />;
+            commentsData.items.map((comment, index) => {
+              const imageUrl = index % 2 !== 0 ? '/assets/images/Profile2.webp' : '/assets/images/Profile1.webp';
+
+              return <CommentItem {...comment} key={comment.id} imageUrl={imageUrl} />;
             })}
         </div>
       </InfiniteScrollContainer>

@@ -1,4 +1,4 @@
-import { RoutinItemsTypes } from '../../__hooks__/useGetData/types';
+import { RoutinItemsTypes } from '../../../__hooks__/useGetData/types';
 import { RoutinDietsProps } from '../types';
 
 type ItemType = Pick<RoutinDietsProps, 'compeletItemType' | 'programId'>;

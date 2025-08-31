@@ -1,3 +1,4 @@
+import { RoutinResponseTypes } from '@components/women/pages/nestedRoutes/routin/RoutinContainer/__hooks__/useGetData/types';
 import { ProgramWidgetItemStatusEnum } from '@components/women/pages/nestedRoutes/routin/enum';
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
@@ -5,12 +6,27 @@ import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import { UseSeenItemPropsType } from './type';
 
 const useSeenItem = ({ programId, item }: UseSeenItemPropsType) => {
-  const { refetchQuery } = useCustomReactQuery();
+  const { getQuery, updateQuery } = useCustomReactQuery();
+
+  const data = getQuery<RoutinResponseTypes>({ queryKey: ['routinItems'] });
+
   const api =
     item.status === ProgramWidgetItemStatusEnum.Compelet ? 'widgets/program/item/unseen' : 'widgets/program/item/seen';
 
   const successHandler = () => {
-    refetchQuery({ queryKey: ['routinItems'] });
+    if (!data) return;
+    const updatedItems = data.items.map((i) =>
+      i.id === item.id
+        ? {
+            ...i,
+            status:
+              i.status === ProgramWidgetItemStatusEnum.Compelet
+                ? ProgramWidgetItemStatusEnum.InCompelet
+                : ProgramWidgetItemStatusEnum.Compelet,
+          }
+        : i,
+    );
+    updateQuery({ queryKey: ['routinItems'], payload: { ...data, items: updatedItems } });
   };
 
   const { callApi } = useApi({ api, method: 'POST', onSuccess: successHandler });

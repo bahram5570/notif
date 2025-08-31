@@ -13,12 +13,12 @@ const CommentItem = (props: CommentItemPropsType) => {
     <div className=" rounded-xl" style={{ backgroundColor: colors.Surface_SurfaceVariant }}>
       <div className="px-3 py-4 flex flex-col justify-end items-end gap-4">
         <div className="flex flex-row-reverse justify-end items-center gap-2">
-          <CustomImage src="/assets/images/Profile2.webp" width={40} height={40} />
+          <CustomImage src={props.imageUrl} width={40} height={40} />
           <div className="flex flex-col items-end gap-1">
             <Typography scale="Body" size="Small">
               {props.username}
             </Typography>
-            {props.rate > 0 && <CommentRate rate={3} />}
+            {props.rate > 0 && <CommentRate rate={props.rate} />}
           </div>
         </div>
         <Typography scale="Body" size="Small">

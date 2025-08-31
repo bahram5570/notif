@@ -1,7 +1,7 @@
 import useWidgetActions from '@hooks/useWidgetActions';
 
-import { ProgramWidgetCompleteEnum } from '../../../enum';
-import { IS_LAST_ROUTIN_ITEM, ROUTIN_STEP } from '../../constant';
+import { ProgramWidgetCompleteEnum } from '../../../../enum';
+import { IS_LAST_ROUTIN_ITEM, ROUTIN_STEP } from '../../../constant';
 import RoutinDietsSimple from './RoutinDietSimple';
 import RoutinDietsCheckbox from './RoutinDietsCheckbox';
 import RoutinDietsLockOnlock from './RoutinDietsLockOnlock';

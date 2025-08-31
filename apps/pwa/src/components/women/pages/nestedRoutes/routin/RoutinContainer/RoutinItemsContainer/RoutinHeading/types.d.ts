@@ -1,7 +1,7 @@
-import { RoutinResponseTypes } from './../__hooks__/useGetData/types.d';
+import { RoutinItemsContainerPropsType } from '../type';
 
 export interface RoutinHeadingProps
   extends Pick<
-    RoutinResponseTypes,
+    RoutinItemsContainerPropsType,
     'description' | 'image' | 'title' | 'writerIcon' | 'writerName' | 'writerSpeciality' | 'commentCount' | 'rateAvg'
   > {}

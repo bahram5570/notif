@@ -4,11 +4,9 @@ import { textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
+import { ProgramWidgetItemStatusEnum } from '@components/women/pages/nestedRoutes/routin/enum';
 import useTheme from '@hooks/useTheme';
-import useWidgetActions from '@hooks/useWidgetActions';
 
-import { ProgramWidgetItemStatusEnum } from '../../../../enum';
-import { ROUTIN_STEP } from '../../../constant';
 import { RoutinDietsLockOnlockPropsType } from './type';
 
 const RoutinDietsLockOnlock = ({ item, onClick }: RoutinDietsLockOnlockPropsType) => {

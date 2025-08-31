@@ -4,9 +4,9 @@ import { textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
+import { ProgramWidgetItemStatusEnum } from '@components/women/pages/nestedRoutes/routin/enum';
 import useTheme from '@hooks/useTheme';
 
-import { ProgramWidgetItemStatusEnum } from '../../../../enum';
 import useSeenItem from './__hooks__/useSeenItem';
 import { RoutinDietsCheckboxPropsType } from './type';
 
