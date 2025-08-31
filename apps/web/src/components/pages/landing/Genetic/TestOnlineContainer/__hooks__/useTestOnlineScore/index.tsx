@@ -1,24 +1,26 @@
+import { useEffect, useState } from 'react';
+
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
-import { useEffect, useState } from 'react';
-
 import {
-  PREGNANCY_TEST_ONLINE_QUESTION_LIST,
-  PREGNANCY_TEST_ONLINE_STEP_QUERY_NAME,
-  PREGNANCY_TEST_ONLINE_STEP_SESSION_GOAL_NAME,
-  PREGNANCY_TEST_ONLINE_STEP_SESSION_SCORE_NAME,
+  GENETIC_TEST_ONLINE_QUESTION_LIST,
+  GENETIC_TEST_ONLINE_STEP_QUERY_NAME,
+  GENETIC_TEST_ONLINE_STEP_SESSION_SCORE_NAME,
 } from '../../constants';
-import { PregnancyTestOnlineSessionTypes } from '../../types';
+import { GeneticTestOnlineSessionTypes } from '../../types';
 import { UseTestOnlineScoreTypes } from './types';
 
 const useTestOnlineScore = ({ currentStep, data }: UseTestOnlineScoreTypes) => {
   const router = useRouter();
-  const [selectedIndex, setSelectedIndex] = useState(-1);
   const { newQueryParamsHandler } = useQueryParamsHandler();
 
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [extraNote, setExtraNote] = useState('');
+
   useEffect(() => {
-    selectedIndexHandler(-1);
+    setSelectedIndex(-1);
+    setExtraNote('');
   }, [currentStep]);
 
   const selectedIndexHandler = (i: number) => {
@@ -26,41 +28,48 @@ const useTestOnlineScore = ({ currentStep, data }: UseTestOnlineScoreTypes) => {
   };
 
   const nextStepHandler = () => {
-    const storage = sessionStorage.getItem(PREGNANCY_TEST_ONLINE_STEP_SESSION_SCORE_NAME);
-    const storedData = storage ? (JSON.parse(storage) as PregnancyTestOnlineSessionTypes) : null;
+    if (selectedIndex === -1) return;
 
-    let result: object = {};
+    const storage = sessionStorage.getItem(GENETIC_TEST_ONLINE_STEP_SESSION_SCORE_NAME);
+    const storedData: Record<string, any> = storage ? JSON.parse(storage) : {};
+
     const score = data.items[selectedIndex].score;
 
-    if (storedData) {
-      result = { ...storedData, [currentStep]: score };
-    } else {
-      result = { [currentStep]: score };
+    const stepKey = String(currentStep);
+
+    storedData[stepKey] = { score };
+
+    const stepsList = Object.keys(GENETIC_TEST_ONLINE_QUESTION_LIST);
+    const lastStep = stepsList[stepsList.length - 1];
+
+    if (lastStep === stepKey && selectedIndex === 1 && extraNote.trim() !== '') {
+      storedData[stepKey].note = extraNote;
     }
 
-    sessionStorage.setItem(PREGNANCY_TEST_ONLINE_STEP_SESSION_SCORE_NAME, JSON.stringify(result));
-
-    const goal = data.items[selectedIndex].goal;
-    if (goal) {
-      sessionStorage.setItem(PREGNANCY_TEST_ONLINE_STEP_SESSION_GOAL_NAME, JSON.stringify(goal));
-    }
+    sessionStorage.setItem(GENETIC_TEST_ONLINE_STEP_SESSION_SCORE_NAME, JSON.stringify(storedData));
 
     navigateHandler();
   };
 
   const navigateHandler = () => {
-    const stepsList = Object.entries(PREGNANCY_TEST_ONLINE_QUESTION_LIST);
+    const stepsList = Object.entries(GENETIC_TEST_ONLINE_QUESTION_LIST);
     const lastStep = stepsList[stepsList.length - 1][0];
     const isLastStep = lastStep === currentStep;
 
     if (isLastStep) {
-      router.push('/landing/pregnancy/result');
+      router.push('/landing/genetic/result');
     } else {
-      newQueryParamsHandler({ [PREGNANCY_TEST_ONLINE_STEP_QUERY_NAME]: Number(currentStep) + 1 });
+      newQueryParamsHandler({ [GENETIC_TEST_ONLINE_STEP_QUERY_NAME]: Number(currentStep) + 1 });
     }
   };
 
-  return { nextStepHandler, selectedIndex, selectedIndexHandler };
+  return {
+    selectedIndex,
+    selectedIndexHandler,
+    extraNote,
+    setExtraNote,
+    nextStepHandler,
+  };
 };
 
 export default useTestOnlineScore;

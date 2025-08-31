@@ -1,32 +1,30 @@
-import { PregnancyTestOnlineGoalEnum } from './enums';
+type StepsNames = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '13';
 
-type StepsNames = '0' | '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11';
-
-export type PregnancyTestOnlineQuestionTypes = {
+export type GeneticTestOnlineQuestionTypes = {
   step: number;
   title: string;
-  items: { title: string; message: string; score: number; goal?: PregnancyTestOnlineGoalEnum }[];
-};
-
-export type PregnancyTestOnlineQuestionListTypes = {
-  [key in StepsNames]: PregnancyTestOnlineQuestionTypes;
-};
-
-export type PregnancyTestOnlineSessionTypes = { [key in keyof PregnancyTestOnlineQuestionListTypes]: number };
-
-export type PregnancyTestOnlineResultsTypes = {
-  [PregnancyTestOnlineGoalEnum.Intention]: {
+  items: {
+    [x: string]: any;
     title: string;
-    message: string;
-  };
-  [PregnancyTestOnlineGoalEnum.Prevention]: {
-    title: string;
-    message: string;
-  };
+    score: number;
+  }[];
 };
 
-export type PregnancyTestOnlineResultListTypes = {
-  result1: PregnancyTestOnlineResultsTypes;
-  result2: PregnancyTestOnlineResultsTypes;
-  result3: PregnancyTestOnlineResultsTypes;
+export type GeneticTestOnlineQuestionListTypes = {
+  [key in StepsNames]: GeneticTestOnlineQuestionTypes;
+};
+
+export type GeneticTestOnlineSessionTypes = {
+  [key in keyof GeneticTestOnlineQuestionListTypes]: number;
+};
+
+export type GeneticTestOnlineResultTypes = {
+  title: string;
+  message: string;
+};
+
+export type GeneticTestOnlineResultListTypes = {
+  result1: GeneticTestOnlineResultTypes;
+  result2: GeneticTestOnlineResultTypes;
+  result3: GeneticTestOnlineResultTypes;
 };
