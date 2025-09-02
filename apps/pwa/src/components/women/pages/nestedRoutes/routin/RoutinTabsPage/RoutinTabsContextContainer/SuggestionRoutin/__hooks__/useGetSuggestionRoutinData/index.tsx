@@ -32,7 +32,9 @@ const useGetSuggestionRoutinData = () => {
     setPageNo(page);
   };
 
-  return { data, isLoading, updatePageNo, pageNo, callApi };
+  const isFirstLoad = isLoading && !data;
+
+  return { data, isLoading, updatePageNo, pageNo, callApi, isFirstLoad };
 };
 
 export default useGetSuggestionRoutinData;

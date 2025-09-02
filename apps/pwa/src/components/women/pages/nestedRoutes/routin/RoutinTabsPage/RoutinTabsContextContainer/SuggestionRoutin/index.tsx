@@ -1,13 +1,24 @@
+import { useEffect } from 'react';
+
 import RoutinCard from '@components/__routin__/RoutinCard';
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
+import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 
 import RoutinListEmpty from '../RoutinListEmpty';
 import RoutinTabSkeleton from '../RoutinTabSkeleton';
 import useGetSuggestionRoutinData from './__hooks__/useGetSuggestionRoutinData';
 
 const SuggestionRoutin = () => {
-  const { data, isLoading, callApi, pageNo, updatePageNo } = useGetSuggestionRoutinData();
+  const { data, isLoading, callApi, pageNo, updatePageNo, isFirstLoad } = useGetSuggestionRoutinData();
   const hasData = data && data.programs.length > 0;
+
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   return (
     <InfiniteScrollContainer
@@ -16,12 +27,12 @@ const SuggestionRoutin = () => {
       pageNo={pageNo}
       updatePageNo={updatePageNo}
       totalCount={data?.totalCount || 10}
-      height={'80dvh'}
+      height={`calc(100dvh - ${HEADER_HEIGHT + 90}px)`}
     >
-      {isLoading && <RoutinTabSkeleton />}
-      {!isLoading && (
+      {isFirstLoad && <RoutinTabSkeleton />}
+      {!isFirstLoad && (
         <div className=" flex flex-col gap-3 px-4 py-5">
-          {!hasData && <RoutinListEmpty />}
+          {!hasData && <RoutinListEmpty title="هیچ برنامه‌ای برای امروزت وجود نداره" />}
           {hasData &&
             data.programs.map((program, index) => {
               return (

@@ -14,7 +14,7 @@ const ActiveRoutins = () => {
 
       {!isLoading && (
         <>
-          {!hasData && <RoutinListEmpty />}
+          {!hasData && <RoutinListEmpty title="هنوز هیچ برنامه‌ای رو شروع نکردی" />}
           {hasData &&
             data.programs.map((program, index) => {
               return (

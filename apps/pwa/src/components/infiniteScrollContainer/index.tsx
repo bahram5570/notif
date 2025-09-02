@@ -51,10 +51,18 @@ const InfiniteScrollContainer = ({
   }, [pageNo, isLoading]);
 
   return (
-    <div ref={containerRef} className=" overflow-y-auto" style={{ height }}>
+    <div
+      ref={containerRef}
+      className=" overflow-y-auto"
+      style={{
+        height,
+        pointerEvents: isLoading ? 'none' : 'auto',
+        touchAction: isLoading ? 'none' : 'auto',
+      }}
+    >
       {children}
       {isLoading && (
-        <div className=" w-full flex justify-center pt-28">
+        <div className="w-full flex justify-center py-6">
           <Spinner color="outline" width={40} />
         </div>
       )}
