@@ -6,13 +6,11 @@ const TestOnlineWrapper = ({ children }: { children: React.ReactNode }) => {
       className="
                     sm:relative
                     w-full 
-                    sm:min-h-[500px]
+                    h-[100dvh]
                     rounded-2xl 
                     px-4 
                     sm:px-6 
                     py-5 
-                    sm:rounded-2xl 
-                    sm:shadow-[0_0_8px_#00000022]
                     flex
                     flex-col
                     items-center

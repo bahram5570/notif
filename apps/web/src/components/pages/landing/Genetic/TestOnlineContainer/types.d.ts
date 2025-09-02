@@ -18,9 +18,31 @@ export type GeneticTestOnlineSessionTypes = {
   [key in keyof GeneticTestOnlineQuestionListTypes]: number;
 };
 
-export type GeneticTestOnlineResultTypes = {
+export type GeneticTestOnlineResultSectionItem = {
+  icon: string;
   title: string;
-  message: string;
+};
+
+export type GeneticTestOnlineResultSection = {
+  title: string;
+  text: string;
+  intro: string;
+  items: GeneticTestOnlineResultSectionItem[];
+  textBottom: string;
+};
+
+export type GeneticTestOnlineResultTypes = {
+  header: {
+    title: string;
+    description: string;
+    color: string;
+  };
+
+  sections: GeneticTestOnlineResultSection;
+  footer?: {
+    note: string;
+    buttonText?: string;
+  };
 };
 
 export type GeneticTestOnlineResultListTypes = {

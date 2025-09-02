@@ -72,7 +72,7 @@ const TestOnlineQuestions = () => {
         varient="fill"
         onClick={nextStepHandler}
         isDisable={selectedIndex === -1}
-        className="w-fit !mt-auto h-12 sm:h-14 !px-6"
+        className="w-fit !mt-auto h-12 !px-10"
       >
         {isLastStep ? 'مشاهده نتیجه' : 'مرحله بعدی'}
       </CustomButton>

@@ -1,12 +1,14 @@
 import { useEffect, useState } from 'react';
 
-import { handleResutl } from './__utils__';
+import { handleResult } from './__utils__';
+
+import { GeneticTestOnlineResultTypes } from '../../../TestOnlineContainer/types';
 
 const useTestOnlineResult = () => {
-  const [data, setData] = useState<null | { title: string; message: string }>(null);
+  const [data, setData] = useState<null | GeneticTestOnlineResultTypes>(null);
 
   useEffect(() => {
-    const result = handleResutl();
+    const result = handleResult();
 
     if (result) {
       setData(result);

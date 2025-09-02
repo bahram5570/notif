@@ -1,14 +1,13 @@
+import TestOnlineResultContainer from '@components/pages/landing/Genetic/TestOnlineResultContainer';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
 
-import TestOnlineResultContainer from '@components/pages/landing/pregnancy/TestOnlineResultContainer';
-
 export const metadata: Metadata = {
   title: 'ایمپو؛ تخصصی‌ترین اپلیکیشن بارداری هفته به هفته',
-  description: 'تست بارداری',
+  description: 'تست غربالگری',
   robots: 'index, follow',
   alternates: {
-    canonical: `${HOST_URL}/pregnancy/result`,
+    canonical: `${HOST_URL}/genetic/result`,
   },
 };
 

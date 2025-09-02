@@ -8,7 +8,6 @@ import {
   GENETIC_TEST_ONLINE_STEP_QUERY_NAME,
   GENETIC_TEST_ONLINE_STEP_SESSION_SCORE_NAME,
 } from '../../constants';
-import { GeneticTestOnlineSessionTypes } from '../../types';
 import { UseTestOnlineScoreTypes } from './types';
 
 const useTestOnlineScore = ({ currentStep, data }: UseTestOnlineScoreTypes) => {
