@@ -131,7 +131,7 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
       description: 'مشاوره با متخصص ژنتیک و انجام آزمایشات پیشرفته',
       color: 'Error_Error',
     },
-    sections: {
+    section1: {
       intro:
         ' نتیجه‌ای که بر اساس پاسخ‌های شما به‌دست اومده، نشون می‌ده که ریسک ژنتیکی‌ات در سطح نسبتاً بالا قرار داره.',
       title: '',
@@ -139,6 +139,20 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
       items: [],
       textBottom: '',
     },
+    section2: [
+      {
+        title: '',
+        icon: '',
+        text: '',
+      },
+    ],
+    section3: [
+      {
+        title: '',
+        icon: '',
+        text: '',
+      },
+    ],
     footer: {
       note: 'نگران نباشید! توصیه‌های فوق به شما کمک می‌کند ...',
       buttonText: 'مشاوره شوم',
@@ -150,7 +164,7 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
       description: 'مشاوره با متخصص ژنتیک و انجام آزمایشات پیشرفته',
       color: 'Warning_Warning',
     },
-    sections: {
+    section1: {
       intro:
         ' نتیجه‌ای که بر اساس پاسخ‌های شما به‌دست اومده، نشون می‌ده که ریسک ژنتیکی‌ات در سطح نسبتاً بالا قرار داره.',
       title: '',
@@ -158,6 +172,20 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
       items: [],
       textBottom: '',
     },
+    section2: [
+      {
+        title: '',
+        icon: '',
+        text: '',
+      },
+    ],
+    section3: [
+      {
+        title: '',
+        icon: '',
+        text: '',
+      },
+    ],
     footer: undefined,
   },
   result3: {
@@ -166,7 +194,7 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
       description: 'مشاوره با متخصص ژنتیک و انجام آزمایشات پیشرفته',
       color: 'Success_Success',
     },
-    sections: {
+    section1: {
       intro:
         'خیالت راحت باشه، ریسک ژنتیکی‌ات فعلاً پایینه و این یعنی احتمال مشکل ژنتیکی جدی برای بارداریت خیلی کمه. حاﻻ برات خیلی خلاصه و ساده توضیح می‌دم که چرا اینطوره و چیکار کنی!',
       title: 'چرا ریسکت پایینه؟',
@@ -188,6 +216,40 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
       textBottom:
         'یه سری فاکتورها هستن که ریسک رو یه کم باﻻ می‌برن. ولی این اصلاً به معنی ایجاد یک مشکل حتمی در فرزند تو یا اختلال در بارداری نیست! درواقع فقط با مراقبت‌هایی که مشاور ژنتیک بهت گوشزد می‌کنه می‌تونی خیالت رو بابت داشتن یک بارداری عالی و سالم راحت کنی.',
     },
+    section2: [
+      {
+        title: 'مشاوره',
+        icon: '/assets/images/genetic/lowRisk/1.webp',
+        text: 'اگه سوالی داری، با دکتر زنان یا مشاور ژنتیک حرف بزن.',
+      },
+      {
+        title: 'اسید فولیک',
+        icon: '/assets/images/genetic/lowRisk/2.webp',
+        text: 'روزی 400 میکروگرم از ۱ ماه قبل از اقدام شروع کن (اگر تاﻻسمی مینور هستی دوز ۵ برای ۳ ماه توصیه میشه)، برای سلامت جنین و کاهش احتمال نقص در لوله عصبی عالیه..',
+      },
+      {
+        title: 'زندگی سالم',
+        icon: '/assets/images/genetic/lowRisk/3.webp',
+        text: 'سیگار، قلیان و الکل رو کنار بذار (از دود آن‌ها هم دوری کن)، تغذیه خوب و ورزش رو ادامه بده.',
+      },
+    ],
+    section3: [
+      {
+        title: 'آزمایش خاصی هست که انجام بدم؟',
+        icon: '/assets/images/genetic/lowRisk/4.webp',
+        text: 'این فقط یه ارزیابی اولیه‌ست، پس آزمایش‌ها و مشورت با مشاور ژنتیک رو جدی بگیر حتی اگر فرزند سالم داری و هیچوقت مشکل ژنتیکی‌ای متوجه‌تون نبوده. با خیال راحت برو جلو و اگه چیزی ذهنت رو مشغول کرد از ما بپرس تا کمکت کنیم!',
+      },
+      {
+        title: 'آزمایش ساده',
+        icon: '/assets/images/genetic/lowRisk/5.webp',
+        text: 'قبل بارداری، یه چکاپ خون روتین و سونوگرافی انجام بده.',
+      },
+      {
+        title: ' بررسی اسپرم',
+        icon: '/assets/images/genetic/lowRisk/5.webp',
+        text: 'همسرت حتماً  یک یا نهایتاً دو هفته قبل از اقدام یک آزمایش آنالیز اسپرم انجام بده.',
+      },
+    ],
     footer: undefined,
   },
 };
