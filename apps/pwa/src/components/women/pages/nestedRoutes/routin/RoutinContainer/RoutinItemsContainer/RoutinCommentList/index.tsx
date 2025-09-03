@@ -10,7 +10,7 @@ import useGetCommentData from './__hooks__/useGetCommentData';
 import { RoutinCommentListPropsType } from './type';
 
 const RoutinCommentList = ({ programId, commentPlaceholder }: RoutinCommentListPropsType) => {
-  const { callApi, commentsData, isLoading, pageNo, updatePageNo } = useGetCommentData({ programId });
+  const { commentsData, isLoading, pageNo, updatePageNo } = useGetCommentData({ programId });
 
   const hasData = commentsData && commentsData.items.length > 0;
 
@@ -25,12 +25,11 @@ const RoutinCommentList = ({ programId, commentPlaceholder }: RoutinCommentListP
   return (
     <>
       <InfiniteScrollContainer
-        callApi={callApi}
+        callBack={updatePageNo}
         isLoading={isLoading}
         pageNo={pageNo}
-        updatePageNo={updatePageNo}
         totalCount={commentsData?.totalCount || 10}
-        height={500}
+        height={`calc(100dvh - ${HEADER_HEIGHT + 280}px)`}
       >
         <div className=" flex flex-col px-4 gap-3 " style={{ paddingTop: 50, paddingBottom: HEADER_HEIGHT * 2 }}>
           {!hasData && !isLoading && <CommentsListEmpty />}

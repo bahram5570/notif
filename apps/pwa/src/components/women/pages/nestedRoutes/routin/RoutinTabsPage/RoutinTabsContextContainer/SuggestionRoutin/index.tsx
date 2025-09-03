@@ -9,7 +9,7 @@ import RoutinTabSkeleton from '../RoutinTabSkeleton';
 import useGetSuggestionRoutinData from './__hooks__/useGetSuggestionRoutinData';
 
 const SuggestionRoutin = () => {
-  const { data, isLoading, callApi, pageNo, updatePageNo, isFirstLoad } = useGetSuggestionRoutinData();
+  const { data, isLoading, pageNo, updatePageNo, isFirstLoad } = useGetSuggestionRoutinData();
   const hasData = data && data.programs.length > 0;
 
   useEffect(() => {
@@ -22,10 +22,9 @@ const SuggestionRoutin = () => {
 
   return (
     <InfiniteScrollContainer
-      callApi={callApi}
+      callBack={updatePageNo}
       isLoading={isLoading}
       pageNo={pageNo}
-      updatePageNo={updatePageNo}
       totalCount={data?.totalCount || 10}
       height={`calc(100dvh - ${HEADER_HEIGHT + 90}px)`}
     >

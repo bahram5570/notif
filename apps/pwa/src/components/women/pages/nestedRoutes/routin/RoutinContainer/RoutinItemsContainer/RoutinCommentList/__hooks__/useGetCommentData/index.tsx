@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
@@ -26,15 +26,19 @@ const useGetCommentData = ({ programId }: UseGetCommentDataPropsType) => {
     api: `widgets/program/comment?programId=${programId}&pageNo=${pageNo}&pageSize=${PAGE_SIZE}`,
     method: 'GET',
     queryKey: ['routinComments'],
-    // fetchOnMount: false,
     onSuccess: successHandler,
+    fetchOnMount: true,
   });
 
-  const updatePageNo = (page: number) => {
-    setPageNo(page);
+  const updatePageNo = () => {
+    setPageNo((prev) => prev + 1);
   };
 
-  return { commentsData, isLoading, callApi, updatePageNo, pageNo };
+  useEffect(() => {
+    callApi();
+  }, [pageNo]);
+
+  return { commentsData, isLoading, updatePageNo, pageNo };
 };
 
 export default useGetCommentData;

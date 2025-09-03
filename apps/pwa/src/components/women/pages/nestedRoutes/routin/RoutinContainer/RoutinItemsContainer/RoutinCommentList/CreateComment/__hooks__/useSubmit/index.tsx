@@ -31,6 +31,11 @@ const useSubmit = ({ programId }: { programId: string }) => {
       position: 'bottom-center',
       style: { margin: '15px' },
     });
+
+    const container = document.getElementById('infiniteScrollContainer') as HTMLDivElement;
+    if (container) {
+      container.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   const { callApi, isLoading } = useApi({

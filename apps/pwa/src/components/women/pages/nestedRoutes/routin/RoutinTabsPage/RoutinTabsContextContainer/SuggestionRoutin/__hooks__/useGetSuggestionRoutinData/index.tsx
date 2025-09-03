@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { PAGE_SIZE } from '@components/infiniteScrollContainer/constatns';
 import useApi from '@hooks/useApi';
@@ -28,9 +28,13 @@ const useGetSuggestionRoutinData = () => {
     onSuccess: successHandler,
   });
 
-  const updatePageNo = (page: number) => {
-    setPageNo(page);
+  const updatePageNo = () => {
+    setPageNo((prev) => prev + 1);
   };
+
+  useEffect(() => {
+    callApi();
+  }, [pageNo]);
 
   const isFirstLoad = isLoading && !data;
 

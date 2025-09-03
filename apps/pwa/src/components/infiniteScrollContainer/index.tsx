@@ -7,48 +7,38 @@ import { InfiniteScrollContainerPropsType } from './type';
 
 const InfiniteScrollContainer = ({
   children,
-  callApi,
+  callBack,
   totalCount,
   isLoading,
   pageNo,
   pageSize = PAGE_SIZE,
   height,
-  updatePageNo,
 }: InfiniteScrollContainerPropsType) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = containerRef.current;
-
     if (!el) return;
 
     const handleScroll = (e: Event) => {
       const target = e.target as HTMLDivElement;
+      if (!target) return;
 
-      if (target) {
-        const isEndBottom = target.scrollTop + target.clientHeight >= target.scrollHeight;
+      const isEndBottom = target.scrollTop + target.clientHeight >= target.scrollHeight;
 
-        if (isEndBottom && !isLoading) {
-          const currentItemsCount = (pageNo + 1) * pageSize;
-          const isAllItemsLoaded = currentItemsCount >= totalCount;
+      if (isEndBottom && !isLoading) {
+        const currentItemsCount = (pageNo + 1) * pageSize;
+        const isAllItemsLoaded = currentItemsCount >= totalCount;
 
-          if (!isAllItemsLoaded) {
-            updatePageNo(pageNo + 1);
-          }
+        if (!isAllItemsLoaded) {
+          callBack();
         }
       }
     };
 
-    el?.addEventListener('scroll', handleScroll);
-
-    return () => el?.removeEventListener('scroll', handleScroll);
+    el.addEventListener('scroll', handleScroll);
+    return () => el.removeEventListener('scroll', handleScroll);
   }, [isLoading, pageNo, totalCount]);
-
-  useEffect(() => {
-    if (!isLoading) {
-      callApi();
-    }
-  }, [pageNo, isLoading]);
 
   return (
     <div
@@ -59,6 +49,7 @@ const InfiniteScrollContainer = ({
         pointerEvents: isLoading ? 'none' : 'auto',
         touchAction: isLoading ? 'none' : 'auto',
       }}
+      id="infiniteScrollContainer"
     >
       {children}
       {isLoading && (

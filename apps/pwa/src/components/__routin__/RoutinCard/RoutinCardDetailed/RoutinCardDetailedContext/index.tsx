@@ -16,7 +16,7 @@ const RoutinCardDetailedContext = ({ data }: RoutinCardDetailedContextPropsType)
       <div className="flex flex-row-reverse gap-3 px-3">
         <CustomImage src={data.image} width={56} />
 
-        <div className="flex justify-end flex-col items-end gap-2" style={{ borderColor: colors.Red_400 }}>
+        <div className="flex justify-center flex-col items-end gap-2" style={{ borderColor: colors.Red_400 }}>
           <Typography scale="Lable" size="Large" color="Neutral_OnBackground">
             {data.title}
           </Typography>
