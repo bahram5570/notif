@@ -13,7 +13,7 @@ const getTotalScore = () => {
     const scoresList = Object.entries(scoreSessionData);
 
     scoresList.forEach((item) => {
-      totalScore = totalScore + Number(item[1] || 0);
+      totalScore = totalScore + Number((item[1] as any)?.score ?? item[1] ?? 0);
     });
   }
 
@@ -23,11 +23,11 @@ const getTotalScore = () => {
 export const handleResult = () => {
   const totalScore = getTotalScore();
 
-  if (totalScore > 185) {
+  if (totalScore >= 13) {
     return GENETIC_TEST_ONLINE_RESULTS_LIST.result1;
   }
 
-  if (totalScore <= 185 && totalScore >= 100) {
+  if (totalScore >= 7 && totalScore <= 12) {
     return GENETIC_TEST_ONLINE_RESULTS_LIST.result2;
   }
 

@@ -74,6 +74,21 @@ const TestOnlineResultContainer = () => {
               {data.section1.textBottom}
             </CustomTypography>
           </div>
+          {data.id === 1 && (
+            <div
+              className="p-3 rounded-xl mt-6 text-center"
+              style={{
+                border: `1px solid ${COLORS_LIST.Warning_Warning}`,
+                background: `${COLORS_LIST.Warning_Warning}20`,
+              }}
+            >
+              <CustomTypography fontSize="Lable_Large">باید نگران باشم؟</CustomTypography>
+              <CustomTypography fontSize="Body_Medium" className="mt-2">
+                این به معنی قطعیت مشکل نیست، ولی نشونه‌ی مهمیه که لازمه دقیق‌تر بررسی بشه تا بتونی با خیال راحت و
+                آگاهانه تصمیم بگیری.
+              </CustomTypography>
+            </div>
+          )}
           <div
             className="rounded-[12px] pt-4 pb-6 px-3 text-center mt-4"
             style={{ border: `1px solid ${COLORS_LIST.Neutral_Surface}` }}
@@ -141,6 +156,25 @@ const TestOnlineResultContainer = () => {
                 {data.section2[2].text}
               </CustomTypography>
             </div>
+            {data.section2[3] && (
+              <div className="mt-6">
+                <div className="flex gap-x-3 items-center mb-[10px]">
+                  <div className="w-[64px] h-[64px]">
+                    <CustomImage
+                      src={data.section2[3].icon}
+                      width={9999}
+                      height={9999}
+                      alt={data.section2[3].title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <CustomTypography fontSize="Lable_Medium">{data.section2[3].title}</CustomTypography>
+                </div>
+                <CustomTypography fontSize="Body_Medium" className="text-right">
+                  {data.section2[3].text}
+                </CustomTypography>
+              </div>
+            )}
           </div>
           <div
             className="rounded-[12px] pt-4 pb-6 px-3 text-center mt-4"
@@ -163,48 +197,64 @@ const TestOnlineResultContainer = () => {
                 {data.section3[0].text}
               </CustomTypography>
             </div>
-            <div className="mt-6">
-              <div className="flex gap-x-3 items-center mb-[10px]">
-                <div className="w-[56px] h-[56px]">
-                  <CustomImage
-                    src={data.section3[1].icon}
-                    width={9999}
-                    height={9999}
-                    alt={data.section3[1].title}
-                    className="w-full h-full object-cover"
-                  />
+            {data.id !== 1 && (
+              <>
+                <div className="mt-6">
+                  <div className="grid grid-cols-[auto_1fr] gap-x-3 items-center mb-[10px]">
+                    <div className="w-[56px] h-[56px]">
+                      <CustomImage
+                        src={data.section3[1].icon}
+                        width={9999}
+                        height={9999}
+                        alt={data.section3[1].title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="grid justify-items-start">
+                      <CustomTypography fontSize="Lable_Medium">{data.section3[1].title}</CustomTypography>
+                      <CustomTypography fontSize="Body_Medium" className="text-right">
+                        {data.section3[1].text}
+                      </CustomTypography>
+                    </div>
+                  </div>
                 </div>
-                <div className="grid justify-items-start">
-                  <CustomTypography fontSize="Lable_Medium">{data.section3[1].title}</CustomTypography>
-                  <CustomTypography fontSize="Body_Medium" className="text-right">
-                    {data.section3[1].text}
-                  </CustomTypography>
+                <div className="mt-6">
+                  <div className="grid grid-cols-[auto_1fr] gap-x-3 items-center">
+                    <div className="w-[56px] h-[56px]">
+                      <CustomImage
+                        src={data.section3[2].icon}
+                        width={9999}
+                        height={9999}
+                        alt={data.section3[2].title}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="grid justify-items-start">
+                      <CustomTypography fontSize="Lable_Medium">{data.section3[2].title}</CustomTypography>
+                      <CustomTypography fontSize="Body_Medium" className="text-right">
+                        {data.section3[2].text}
+                      </CustomTypography>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className="mt-6">
-              <div className="flex gap-x-3 items-center mb-[10px]">
-                <div className="w-[56px] h-[56px]">
-                  <CustomImage
-                    src={data.section3[2].icon}
-                    width={9999}
-                    height={9999}
-                    alt={data.section3[2].title}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="grid justify-items-start">
-                  <CustomTypography fontSize="Lable_Medium">{data.section3[2].title}</CustomTypography>
-                  <CustomTypography fontSize="Body_Medium" className="text-right">
-                    {data.section3[2].text}
-                  </CustomTypography>
-                </div>
-              </div>
-            </div>
+              </>
+            )}
+          </div>
+          <div
+            className="p-3 rounded-xl mt-6 text-center"
+            style={{
+              border: `1px solid ${COLORS_LIST.Warning_Warning}`,
+              background: `${COLORS_LIST.Warning_Warning}20`,
+            }}
+          >
+            <CustomTypography fontSize="Lable_Large">{data.footer.title}</CustomTypography>
+            <CustomTypography fontSize="Body_Medium" className="mt-2">
+              {data.footer.text}
+            </CustomTypography>
           </div>
           <div className="mt-6">
             <CustomLink
-              href="/landing/genetic/testOnline"
+              href="/landing/genetic/lastPage"
               className="w-fit px-[62px] py-[12px] rounded-full flex justify-self-center"
               style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
             >

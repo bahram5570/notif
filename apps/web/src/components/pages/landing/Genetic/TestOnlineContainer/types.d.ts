@@ -38,6 +38,7 @@ export type GeneticTestOnlineResultSection2 = {
 };
 
 export type GeneticTestOnlineResultTypes = {
+  id: number;
   header: {
     title: string;
     description: string;
@@ -47,9 +48,9 @@ export type GeneticTestOnlineResultTypes = {
   section1: GeneticTestOnlineResultSection1;
   section2: GeneticTestOnlineResultSection2[];
   section3: GeneticTestOnlineResultSection2[];
-  footer?: {
-    note: string;
-    buttonText?: string;
+  footer: {
+    title: string;
+    text: string;
   };
 };
 
