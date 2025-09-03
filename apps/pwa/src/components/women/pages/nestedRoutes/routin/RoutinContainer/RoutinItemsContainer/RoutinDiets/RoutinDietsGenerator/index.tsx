@@ -2,7 +2,7 @@ import useCurrentRoutinIndex from '@hooks/__routin__/useCurrentRoutinIndex';
 import useWidgetActions from '@hooks/useWidgetActions';
 
 import { ProgramWidgetCompleteEnum } from '../../../../enum';
-import { IS_LAST_ROUTIN_ITEM, ROUTIN_STEP } from '../../../constant';
+import { IS_LAST_ROUTIN_ITEM } from '../../../constant';
 import RoutinDietsSimple from './RoutinDietSimple';
 import RoutinDietsCheckbox from './RoutinDietsCheckbox';
 import RoutinDietsLockOnlock from './RoutinDietsLockOnlock';
@@ -12,16 +12,17 @@ const RoutinDietsGenerator = (props: RoutinDietsGeneratorProps) => {
   let currentRoutin: JSX.Element | null = null;
 
   const { actionHandler } = useWidgetActions();
-  const { index, updateInexHandler } = useCurrentRoutinIndex();
+  const { updateRoutinState } = useCurrentRoutinIndex();
 
   const clickHandler = () => {
     localStorage.setItem(IS_LAST_ROUTIN_ITEM, props.isLastItem ? 'true' : 'false');
 
-    // if (!props.isLastItem) {
-    //   localStorage.setItem(ROUTIN_STEP, JSON.stringify(props.index));
-    // }
-
-    updateInexHandler(props.index);
+    if (!props.isLastItem) {
+      updateRoutinState({
+        currentIndex: props.index + 1,
+        typeMessage: props.compeletItemType === ProgramWidgetCompleteEnum.LockOnlock ? 'lockOnlock' : 'checkbox',
+      });
+    }
 
     actionHandler(props.item.action);
   };

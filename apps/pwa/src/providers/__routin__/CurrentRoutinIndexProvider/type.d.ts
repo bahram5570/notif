@@ -1,4 +1,10 @@
+export type RoutinState = {
+  currentIndex?: number;
+  typeMessage?: 'checkbox' | 'lockOnlock';
+  showToast: boolean;
+};
+
 export type CurrentRoutinIndexContextPropsType = {
-  index: number | undefined;
-  updateInexHandler: (index: number) => void;
+  routinState: RoutinState;
+  updateRoutinState: (nameOrState: keyof RoutinState | Partial<RoutinState>, value?: number | boolean) => void;
 };

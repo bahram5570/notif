@@ -11,7 +11,7 @@ import { UseSeenItemPropsType } from './type';
 const useSeenItem = ({ programId, item, index }: UseSeenItemPropsType) => {
   const { getQuery, updateQuery } = useCustomReactQuery();
   const { newQueryParamsHandler } = useQueryParamsHandler();
-  const { showRoutinToastHandler, updateInexHandler } = useCurrentRoutinIndex();
+  const { updateRoutinState } = useCurrentRoutinIndex();
 
   const data = getQuery<RoutinResponseTypes>({ queryKey: ['routinItems'] });
 
@@ -41,8 +41,11 @@ const useSeenItem = ({ programId, item, index }: UseSeenItemPropsType) => {
     }
 
     if (item.status === ProgramWidgetItemStatusEnum.InCompelet) {
-      showRoutinToastHandler();
-      updateInexHandler(index);
+      updateRoutinState({
+        showToast: true,
+        currentIndex: index + 1,
+        typeMessage: 'checkbox',
+      });
     }
   };
 

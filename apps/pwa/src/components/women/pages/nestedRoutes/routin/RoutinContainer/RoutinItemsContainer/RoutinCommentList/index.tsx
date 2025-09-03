@@ -6,7 +6,6 @@ import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import CommentItem from './CommentItem';
 import CommentsListEmpty from './CommentsListEmpty';
 import CreateComment from './CreateComment';
-import CreatedCommentSuccessTost from './CreatedCommentSuccessTost';
 import useGetCommentData from './__hooks__/useGetCommentData';
 import { RoutinCommentListPropsType } from './type';
 
@@ -33,7 +32,6 @@ const RoutinCommentList = ({ programId, commentPlaceholder }: RoutinCommentListP
         totalCount={commentsData?.totalCount || 10}
         height={500}
       >
-        <CreatedCommentSuccessTost />
         <div className=" flex flex-col px-4 gap-3 " style={{ paddingTop: 50, paddingBottom: HEADER_HEIGHT * 2 }}>
           {!hasData && !isLoading && <CommentsListEmpty />}
           {hasData &&

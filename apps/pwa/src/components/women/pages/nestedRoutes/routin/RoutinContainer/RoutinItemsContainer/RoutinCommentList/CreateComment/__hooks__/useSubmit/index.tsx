@@ -1,18 +1,18 @@
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import useCustomToast from '@hooks/useCustomToast';
 
 import { RoutinResponseTypes } from '../../../../../__hooks__/useGetData/types';
 import { CommentItemType, CommentsResponseTypes } from '../../../__hooks__/useGetCommentData/type';
-import { SHOW_SUCCESS_CREATE_COMMENT } from '../../../constants';
 
 const useSubmit = ({ programId }: { programId: string }) => {
   const { newQuery, updateQuery, getQuery } = useCustomReactQuery();
+  const { onToast } = useCustomToast();
 
   const commentsData = getQuery<CommentsResponseTypes>({ queryKey: ['routinComments' + programId] });
   const routinData = getQuery<RoutinResponseTypes>({ queryKey: ['routinItems'] });
 
   const successHandler = (v: CommentItemType) => {
-    localStorage.setItem(SHOW_SUCCESS_CREATE_COMMENT, 'true');
     if (commentsData) {
       const list = { ...v, items: [{ ...v }, ...commentsData.items] };
 
@@ -23,6 +23,14 @@ const useSubmit = ({ programId }: { programId: string }) => {
 
     const routinPayload = { ...routinData, commentCount: routinData?.commentCount ? routinData.commentCount + 1 : 1 };
     updateQuery({ queryKey: ['routinItems'], payload: routinPayload });
+
+    onToast({
+      icon: 'success',
+      type: 'success',
+      message: ' نظر شما با موفقیت ثبت شد',
+      position: 'bottom-center',
+      style: { margin: '15px' },
+    });
   };
 
   const { callApi, isLoading } = useApi({
