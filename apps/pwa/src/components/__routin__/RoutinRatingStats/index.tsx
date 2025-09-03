@@ -6,6 +6,8 @@ import Typography from '@components/ui/Typography';
 import { RoutinRatingStatsPropsType } from './type';
 
 const RoutinRatingStats = ({ commentCount, rateAvg }: RoutinRatingStatsPropsType) => {
+  const avrage = rateAvg.toFixed(1).toString();
+
   return (
     <div className="flex  items-end justify-end gap-6">
       <div className="flex flex-row items-center justify-center gap-2">
@@ -16,7 +18,7 @@ const RoutinRatingStats = ({ commentCount, rateAvg }: RoutinRatingStatsPropsType
       </div>
       <div className="flex flex-row items-center justify-center gap-2">
         <Typography scale="Body" size="Medium" color="Surface_OnSurfaceVariant">
-          {rateAvg.toFixed().toString()}
+          {avrage}
         </Typography>
         <StarIcon
           className="w-5 h-auto"

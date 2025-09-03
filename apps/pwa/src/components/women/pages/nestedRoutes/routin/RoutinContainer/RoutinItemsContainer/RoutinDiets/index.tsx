@@ -2,13 +2,13 @@ import Typography from '@components/ui/Typography';
 import FeedbackModal from '@components/women/FeedbackModal';
 import useTheme from '@hooks/useTheme';
 
-import useFeedback from '../../../RoutinItemContainer/__hooks__/useFeedback';
 import RoutinDietsGenerator from './RoutinDietsGenerator';
+import useFeedback from './RoutinDietsGenerator/RoutinDietsCheckbox/__hooks__/useFeedback';
 import { RoutinDietsProps } from './types';
 
 const RoutinDiets = ({ name, items, compeletItemType, programId }: RoutinDietsProps) => {
   const { colors } = useTheme();
-  const { feedbackData, isLoading: feedbackLoading, rateHandler } = useFeedback({ programId });
+  const { isLoading: feedbackLoading, rateHandler } = useFeedback({ programId });
 
   return (
     <>
