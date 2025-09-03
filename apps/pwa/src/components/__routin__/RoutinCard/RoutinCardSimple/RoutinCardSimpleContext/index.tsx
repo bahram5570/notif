@@ -15,7 +15,7 @@ const RoutinCardSimpleContext = ({ data }: RoutinCardSimpleContextPropsType) => 
           <CustomImage src={data.image} />
         </div>
         <div className="flex justify-end flex-col items-end gap-2" style={{ borderColor: colors.Red_400 }}>
-          <Typography scale="Title" size="Small" color="Neutral_OnBackground">
+          <Typography scale="Lable" size="Large" color="Neutral_OnBackground">
             {data.title}
           </Typography>
 
@@ -23,7 +23,7 @@ const RoutinCardSimpleContext = ({ data }: RoutinCardSimpleContextPropsType) => 
         </div>
       </div>
       <div className="w-full h-[1px] my-2" style={{ backgroundColor: colors.Neutral_Surface }} />
-      <div className="flex flex-col items-end rounded-xl p-3 ">
+      <div className="flex flex-col items-end rounded-xl pt-2 ">
         <RoutinWriter
           writerName={data.writerName}
           writerIcon={data.writerIcon}

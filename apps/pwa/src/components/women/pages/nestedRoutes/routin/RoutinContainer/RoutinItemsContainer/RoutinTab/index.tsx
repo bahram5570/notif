@@ -13,7 +13,7 @@ const RoutinTab = ({ commentTabName, itemsTabName, tab, tabHandler }: RoutinTabP
   ];
 
   return (
-    <div className="flex flex-row-reverse mx-4 mt-8">
+    <div className="flex flex-row-reverse  mt-8">
       {options.map((option) => (
         <div
           onClick={() => tabHandler(option.id)}

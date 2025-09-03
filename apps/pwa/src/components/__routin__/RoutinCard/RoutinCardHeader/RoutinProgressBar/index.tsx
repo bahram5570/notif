@@ -11,7 +11,7 @@ const RoutinProgressBar = ({ completeRatio, completeTitle }: RoutinProgressBarPr
 
   return (
     <div className="w-full flex flex-col items-end gap-2">
-      <Typography scale="Body" size="Large" color="Surface_InverseSurface">
+      <Typography scale="Lable" size="Small" color="Surface_InverseSurface">
         {completeTitle}
       </Typography>
       <div

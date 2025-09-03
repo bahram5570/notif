@@ -23,7 +23,7 @@ const RoutinTabsContextContainer = ({ activeTab, tabsOrder }: RoutinTabsContextC
       break;
   }
 
-  return currentRoutin === null ? <></> : <div className="pt-14">{currentRoutin}</div>;
+  return currentRoutin === null ? <></> : <div className="pt-6">{currentRoutin}</div>;
 };
 
 export default RoutinTabsContextContainer;

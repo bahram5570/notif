@@ -13,7 +13,7 @@ const CategoriesRoutin = () => {
         <>
           {!hasData && <RoutinListEmpty />}
           {hasData && (
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-4">
               {data.items.map((item, index) => {
                 return <CategoryItem {...item} key={index} />;
               })}

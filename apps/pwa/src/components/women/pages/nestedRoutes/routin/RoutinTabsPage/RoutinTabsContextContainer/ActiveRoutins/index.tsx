@@ -9,7 +9,7 @@ const ActiveRoutins = () => {
   const hasData = data && data.programs.length > 0;
 
   return (
-    <div className=" flex flex-col gap-3 px-4 py-5">
+    <div className=" flex flex-col gap-4 px-4 py-5">
       {isLoading && <RoutinTabSkeleton />}
 
       {!isLoading && (

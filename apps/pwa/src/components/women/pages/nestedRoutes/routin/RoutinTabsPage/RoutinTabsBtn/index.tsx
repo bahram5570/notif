@@ -24,7 +24,7 @@ const RoutinTabsBtn = ({ activeTab, handleTabChange, tabsOrder }: RoutinTabsBtnP
 
   return (
     <div
-      className=" overflow-x-auto overflow-y-hidden flex flex-row-reverse fixed gap-3 p-4 z-40 mx-auto left-0 right-0"
+      className=" overflow-x-auto overflow-y-hidden flex flex-row-reverse fixed gap-3 px-4 py-2 z-40 mx-auto left-0 right-0"
       style={{ backgroundColor: colors.White, top: HEADER_HEIGHT, maxWidth: MAX_SCREEN_WIDTH }}
       ref={containerRef}
     >

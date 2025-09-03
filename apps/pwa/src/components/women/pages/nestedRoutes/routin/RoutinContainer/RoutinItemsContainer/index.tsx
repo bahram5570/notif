@@ -29,7 +29,7 @@ const RoutinItemsContainer = (props: RoutinItemsContainerPropsType) => {
         <div className="relative z-10">
           <RoutinHeading {...props} />
 
-          <div className="w-full rounded-xl p-3 overflow-y-hidden" style={{ backgroundColor: colors.White }}>
+          <div className="w-full rounded-xl py-3 overflow-y-hidden" style={{ backgroundColor: colors.White }}>
             <RoutinTab
               commentTabName={props.commentTabName}
               itemsTabName={props.itemsTabName}

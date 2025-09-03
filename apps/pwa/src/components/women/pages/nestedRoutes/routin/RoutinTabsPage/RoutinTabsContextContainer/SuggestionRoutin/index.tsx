@@ -31,7 +31,7 @@ const SuggestionRoutin = () => {
     >
       {isFirstLoad && <RoutinTabSkeleton />}
       {!isFirstLoad && (
-        <div className=" flex flex-col gap-3 px-4 py-5">
+        <div className=" flex flex-col gap-4 px-4 py-5">
           {!hasData && <RoutinListEmpty title="هیچ برنامه‌ای برای امروزت وجود نداره" />}
           {hasData &&
             data.programs.map((program, index) => {
