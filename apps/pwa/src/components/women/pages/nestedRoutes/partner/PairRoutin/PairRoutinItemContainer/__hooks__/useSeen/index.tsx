@@ -1,12 +1,10 @@
-import {
-  IS_LAST_ROUTIN_ITEM,
-  SHOW_ROUTIN_UNLOCK_TOST,
-} from '@components/women/pages/nestedRoutes/routin/RoutinContainer/constant';
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 import { useRouter } from 'next/navigation';
+
+import { IS_LAST_ROUTIN_ITEM, SHOW_ROUTIN_UNLOCK_TOST } from '../../../PairRoutinContainer/constant';
 
 const useSeen = () => {
   const route = useRouter();
