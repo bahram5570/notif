@@ -20,7 +20,11 @@ const ArticleIdBreadcrumb = ({ articleTitle, categorySlug, categoryTitle }: Arti
     newQueryParamsHandler({ [CURRENT_CATEGORY]: categorySlug });
   }, []);
 
-  return <BlogsBreadcrumb breadcrumbList={breadcrumbList} />;
+  return (
+    <div className="min-h-[32px]">
+      <BlogsBreadcrumb breadcrumbList={breadcrumbList} />
+    </div>
+  );
 };
 
 export default ArticleIdBreadcrumb;

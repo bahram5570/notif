@@ -1,4 +1,4 @@
-import DownloadPage from '@components/pages/download/DownloadPage';
+import DownloadpromotePage from '@components/pages/download/DownloadpromotePage';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   },
 };
 
-const Download = () => {
-  return <DownloadPage />;
+const Downloadpromote = () => {
+  return <DownloadpromotePage />;
 };
 
-export default Download;
+export default Downloadpromote;

@@ -1,12 +1,11 @@
 'use client';
 
-import { COLORS_LIST } from '@theme/colors';
-import { FreeMode } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-
 import ArticleCardGenerator from '@components/Articles/ArticleCardGenerator';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
+import { FreeMode } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import { LandingArticlesContainerTypes } from './types';
 
@@ -38,7 +37,7 @@ const LandingArticlesContainer = ({ data, title, subTitle, showAllArticlesLinkTo
       )}
 
       {data && (
-        <section className="w-full pb-6 lg:pb-10">
+        <section className="w-full pb-6 lg:pb-20">
           <Swiper slidesPerView={'auto'} freeMode={true} modules={[FreeMode]}>
             {data.map((item, index) => (
               <SwiperSlide key={index} className="w-fit px-3">

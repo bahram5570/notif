@@ -8,13 +8,13 @@ import ResultModule from './ResultModule';
 
 const PregnancyAgeCalculator = () => {
   const { submitHandler, isLoading, weeksResult, pregnancyDateResult, resetHandler } = useCalculatePregnancyDate();
+  
   return (
     <>
       <WavesContainer height={380} waveColor="#FD7670" backgroundColor="transparent" title="">
-        <>
-          <DateModule submitHandler={submitHandler} isLoading={isLoading} />
-        </>
+        <DateModule submitHandler={submitHandler} isLoading={isLoading} />
       </WavesContainer>
+
       {weeksResult && pregnancyDateResult && (
         <ResultModule pregnancyDateResult={pregnancyDateResult} weeksResult={weeksResult} onReset={resetHandler} />
       )}

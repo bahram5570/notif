@@ -1,6 +1,7 @@
+import { ctaBannerService } from '@services/ctaBannerServices';
+
 import CtaBanner from '@components/CtaBanner';
 import CustomTypography from '@components/ui/CustomTypography';
-import { ctaBannerService } from '@services/ctaBannerServices';
 
 import CalendarOfPregnancyDrProfile from '../CalendarOfPregnancyDrProfile';
 import CalendarOfPregnancySeperator from '../CalendarOfPregnancySeperator';
@@ -9,19 +10,23 @@ import { CALENDAR_OF_PREGNANCY_BANNER_NAME_3 } from '../constants';
 
 const CalendarOfPregnancyHeading = async () => {
   const { ctaData } = await ctaBannerService(CALENDAR_OF_PREGNANCY_BANNER_NAME_3);
+  
   return (
     <>
       <CustomTypography fontSize="Headline_Medium" tagType="h1" className="pb-2 text-center">
         محاسبه سن بارداری و تقویم بارداری آنلاین
       </CustomTypography>
+
       <PregnancyAgeCalculator />
 
       <CalendarOfPregnancySeperator />
 
       <CalendarOfPregnancyDrProfile />
+
       <CustomTypography fontSize="Headline_Medium" tagType="h2" className="pb-2 text-center">
         محاسبه هفته بارداری آنلاین با اپلیکیشن ایمپو
       </CustomTypography>
+
       <CustomTypography className="!text-center pt-2 pb-6">
         اپلیکیشن ایمپو همواره به دنبال راه‌هایی است که مسیر بارداری را برای مادران آسان‌تر و زیباتر کند. ایمپو در طول
         این سفر همراه مادر و پدر است و مانند یک مسیریاب حرفه‌ای تاریخ و زمان زایمان را محاسبه کرده و اطلاعات لازم برای
