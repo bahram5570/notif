@@ -54,7 +54,7 @@ const TestOnlineQuestions = () => {
             نگرانی خود را توضیح دهید
           </CustomTypography>
           <textarea
-            className="w-full sm:p-4 p-2 rounded-xl"
+            className="w-full sm:p-4 p-2 rounded-xl text-base"
             placeholder=" اینجا برامون بنویس"
             value={extraNote}
             rows={4}
@@ -67,15 +67,16 @@ const TestOnlineQuestions = () => {
           />
         </div>
       )}
-
-      <CustomButton
-        varient="fill"
-        onClick={nextStepHandler}
-        isDisable={selectedIndex === -1}
-        className="w-fit !mt-auto h-12 !px-10"
-      >
-        {isLastStep ? 'مشاهده نتیجه' : 'مرحله بعدی'}
-      </CustomButton>
+      <div className="mt-6 w-fit mx-auto my-5 flex">
+        <CustomButton
+          varient="fill"
+          onClick={nextStepHandler}
+          isDisable={selectedIndex === -1}
+          className="w-fit !mt-auto !h-12 !px-12"
+        >
+          {isLastStep ? 'مشاهده نتیجه' : 'مرحله بعدی'}
+        </CustomButton>
+      </div>
     </>
   );
 };

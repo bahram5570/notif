@@ -20,7 +20,7 @@ const LastPageGeneticLayout = async () => {
                   bg-[url(/assets/images/genetic/coverHollow.webp)] 
                   bg-contain
                   bg-no-repeat 
-                  bg-top h-[100dvh]"
+                  bg-top"
       >
         <div className="pt-7">
           <div className="mt-14 grid place-items-center">
@@ -61,10 +61,10 @@ const LastPageGeneticLayout = async () => {
           </div>
         </div>
       </div>
-      <div className="absolute left-0 right-0 bottom-8">
+      <div className="mt-6 w-fit mx-auto my-5 flex">
         <CustomLink
           href="#"
-          className="w-fit px-[24px] py-[12px] rounded-full flex justify-self-center"
+          className="w-fit px-10 py-[12px] rounded-full flex justify-center"
           style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
         >
           <CustomTypography fontSize="Lable_Medium" color={'White'}>

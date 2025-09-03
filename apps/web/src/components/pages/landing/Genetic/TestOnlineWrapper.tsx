@@ -6,8 +6,6 @@ const TestOnlineWrapper = ({ children }: { children: React.ReactNode }) => {
       className="
                     sm:relative
                     w-full 
-                    h-[100dvh]
-                    rounded-2xl 
                     px-4 
                     sm:px-6 
                     py-5 
