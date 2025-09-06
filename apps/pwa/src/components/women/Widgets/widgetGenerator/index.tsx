@@ -28,6 +28,7 @@ import WidgetReportCard from './WidgetReportCard';
 import WidgetRoutin from './WidgetRoutin';
 import WidgetSexTrackerCard from './WidgetSexTrackerCard';
 import WidgetShareExperienceCard from './WidgetShareExperienceCard';
+import WidgetShortcut from './WidgetShortcut';
 import WidgetSignCard from './WidgetSignCard';
 import WidgetStoryCard from './WidgetStoryCard';
 import WidgetSubscriptionCard from './WidgetSubscriptionCard';
@@ -135,6 +136,8 @@ const WidgetGenerator = ({ data, type, isPdfDownloading = false }: WidgetsTypes)
     case WidgetsEnum.WomanPairProgram:
       result = <WidgetWomanPairProgram data={data} />;
       break;
+    case WidgetsEnum.ShortcutWidget:
+      result = <WidgetShortcut data={data} />;
   }
 
   return result === null ? <></> : <WidgetScaleModule>{result}</WidgetScaleModule>;

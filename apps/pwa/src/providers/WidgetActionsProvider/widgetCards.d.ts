@@ -700,3 +700,22 @@ export type WidgetWomanPairProgramTypes = IsPdfDownloadingTypes & {
     title: string;
   };
 };
+
+// # ----------------------------------------------------------
+
+type ShortcutItemType = {
+  action: ActionTypes;
+  icon: string;
+  semanticTitle: string;
+  title: string;
+};
+
+export type ShortcutWidgetTypes = IsPdfDownloadingTypes & {
+  type: WidgetsEnum.ShortcutWidget;
+  data: {
+    backgroundColour: string;
+    description: string;
+    items: ShortcutItemType[];
+    title: string;
+  };
+};

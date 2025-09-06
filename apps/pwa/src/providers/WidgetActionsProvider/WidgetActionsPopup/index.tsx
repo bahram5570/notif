@@ -2,6 +2,7 @@ import CustomModal from '@components/ui/CustomModal';
 
 import { PopupTypeEnum } from '../widgetEnums';
 import PopUpEditCycle from './PopUpEditCycle';
+import PopupBiorythem from './PopupModals/PopupBiorythem';
 import PopupDialog from './PopupModals/PopupDialog';
 import PopupImageTextButton from './PopupModals/PopupImageTextButton';
 import PopupInteraction from './PopupModals/PopupInteraction';
@@ -45,6 +46,7 @@ const WidgetActionsPopup = ({ popUp }: WidgetActionsPopupProps) => {
               )}
               {popUp.type === PopupTypeEnum.SexTracker && <PopupSexTracker data={popUp.data} />}
               {popUp.type === PopupTypeEnum.ImageTextButton && <PopupImageTextButton data={popUp.data} />}
+              {popUp.type === PopupTypeEnum.bioRythem && <PopupBiorythem data={popUp.data} />}
             </>
           )}
         </>

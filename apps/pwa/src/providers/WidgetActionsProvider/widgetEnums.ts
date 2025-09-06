@@ -34,6 +34,7 @@ export enum WidgetsEnum {
   Biorhythm = 32,
   ProgramScrollWidget = 37,
   WomanPairProgram = 41,
+  ShortcutWidget = 43,
 }
 
 export enum WidgetStoryTypeEnum {
@@ -62,6 +63,9 @@ export enum PopupTypeEnum {
   InteractionReward = 4,
   SexTracker = 5,
   ImageTextButton = 6,
+  interactionWithTwoButton = 7,
+  radioImageOption = 8,
+  bioRythem = 9,
 }
 
 export enum CyclePhaseEnum {
