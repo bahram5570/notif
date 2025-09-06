@@ -4,8 +4,8 @@ import { applyOptions, clearCacheHandler } from './__utils__';
 import { HttpResultTypes, HttpTypes } from './types';
 
 // export const baseUrl = STAGE_URL;
-// export const baseUrl = SSL_STAGE_URL;
-export const baseUrl = SERVER_URL;
+export const baseUrl = SSL_STAGE_URL;
+// export const baseUrl = SERVER_URL;
 
 export const articleImageUrl = baseUrl + '/support/article/panel/image/';
 export const fileImageUrl = baseUrl + '/file/';

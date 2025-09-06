@@ -8,16 +8,14 @@ import { notFound } from 'next/navigation';
 import ArticleSchema from '../../schema/ArticleSchema';
 import { ArticleIdResponseTypes } from './types';
 
-const getArticleData = async (id: string) => {
-  return await http<ArticleIdResponseTypes>({
+export const generateMetadata = async (props: { params: { articleId: string } }): Promise<Metadata> => {
+  const articleId = props.params.articleId;
+
+  const { data, error } = await http<Pick<ArticleIdResponseTypes, 'snippetTitle' | 'meta'>>({
     method: 'GET',
     cache: 'no-store',
-    url: `support/article/sp/published/${id}`,
+    url: `support/article/sp/published/meta/${articleId}`,
   });
-};
-
-export const generateMetadata = async ({ params }: { params: { articleId: string } }): Promise<Metadata> => {
-  const { data, error } = await getArticleData(params.articleId);
 
   if (data) {
     return {
@@ -25,7 +23,7 @@ export const generateMetadata = async ({ params }: { params: { articleId: string
       description: data.meta || '',
       title: data.snippetTitle || '',
       alternates: {
-        canonical: `${HOST_URL}/${params.articleId}`,
+        canonical: `${HOST_URL}/${articleId}`,
       },
     };
   } else {
@@ -38,7 +36,11 @@ export const generateMetadata = async ({ params }: { params: { articleId: string
 const Article = async (props: { params: { articleId: string } }) => {
   const articleId = props.params.articleId;
 
-  const { data } = await getArticleData(articleId);
+  const { data } = await http<ArticleIdResponseTypes>({
+    method: 'GET',
+    cache: 'no-store',
+    url: `support/article/sp/published/${articleId}`,
+  });
 
   if (!data) {
     notFound();

@@ -67,6 +67,8 @@ export const handleBodyUpdate = async (body: string) => {
   const { renderToString } = await import('react-dom/server');
   let result = body;
 
+  result = result.replaceAll(/<img[^>]*>/g, '');
+
   // # Setting up old Cta
   mapperList.forEach((item) => {
     const regex = new RegExp(`src="(?!data:)[^"]*${item.name}[^"]*"`, 'g');
