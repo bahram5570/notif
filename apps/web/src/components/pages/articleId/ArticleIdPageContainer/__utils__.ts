@@ -134,5 +134,5 @@ export const handleBodyUpdate = async (body: string) => {
     count++;
   });
 
-  return { updatedBody: result, articleSubjectList };
+  return { updatedBody: $.html(), articleSubjectList };
 };
