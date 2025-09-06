@@ -21,7 +21,7 @@ const getTotalScore = () => {
 };
 
 export const handleResult = () => {
-  const totalScore = 5;
+  const totalScore = getTotalScore();
 
   if (totalScore >= 13) {
     return GENETIC_TEST_ONLINE_RESULTS_LIST.result1;
