@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import useIsLargeScreenHeight from '@hooks/__activation__/useIsLargeScreenHeight';
+import useIsLargeScreenHeight from '@hooks/useIsLargeScreenHeight';
 import { LottieCanvas } from '@lib/LottieCanvas';
 
 import { PartnerCodeRewardHeadingImageProps } from './types';

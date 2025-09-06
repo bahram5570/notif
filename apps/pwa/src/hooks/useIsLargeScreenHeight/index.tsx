@@ -7,8 +7,8 @@ const useIsLargeScreenHeight = () => {
     const el = document.documentElement;
 
     if (el) {
-      const HEADING_ICON_SCREEN_MIN_HEIGHT = 650;
-      const isLarge = el.clientHeight > HEADING_ICON_SCREEN_MIN_HEIGHT;
+      const MAX_SCREEN_HEIGHT = 700;
+      const isLarge = el.clientHeight > MAX_SCREEN_HEIGHT;
       setIsLargeScreen(isLarge);
     }
   }, []);

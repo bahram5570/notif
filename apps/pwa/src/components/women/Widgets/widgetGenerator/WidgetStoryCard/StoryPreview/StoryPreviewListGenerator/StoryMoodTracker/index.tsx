@@ -2,15 +2,18 @@ import ImpoIcon from '@assets/icons/impoName.svg';
 import TickIcon from '@assets/icons/selectedTick.svg';
 
 import Typography from '@components/ui/Typography';
+import useIsLargeScreenHeight from '@hooks/useIsLargeScreenHeight';
 import useTheme from '@hooks/useTheme';
 import { LottieJson } from '@lib/LottieJson';
 
-import useMoodTrackerList from './__hooks__/useMoodTrackerList';
+import useToggleMoodTracker from './__hooks__/useToggleMoodTracker';
+import { MOOD_TRACKER_ICONS_LIST } from './constants';
 import { StoryMoodTrackerProps } from './types';
 
 const StoryMoodTracker = ({ moodTrackerData }: StoryMoodTrackerProps) => {
   const { colors } = useTheme();
-  const { moodTrackerList } = useMoodTrackerList(moodTrackerData);
+  const { selectHandler } = useToggleMoodTracker();
+  const { isLargeScreen } = useIsLargeScreenHeight();
 
   return (
     <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col pt-[100px] pb-7 px-4 bg-[url('/assets/images/storyMoodTrackerBg.webp')] bg-cover bg-no-repeat">
@@ -28,18 +31,25 @@ const StoryMoodTracker = ({ moodTrackerData }: StoryMoodTrackerProps) => {
         </Typography>
       </div>
 
-      <div className="w-full grid grid-cols-3 gap-12">
-        {moodTrackerList.map((item, index) => {
+      <div
+        className="w-full grid grid-cols-3"
+        style={{ columnGap: isLargeScreen ? 48 : 24, rowGap: isLargeScreen ? 48 : 24 }}
+      >
+        {moodTrackerData.items.map((item, index) => {
           return (
-            <div className="flex flex-col items-center gap-2" key={index}>
+            <div
+              key={index}
+              className="flex flex-col items-center gap-2"
+              onClick={() => selectHandler(item.isSelected, item.type)}
+            >
               <div
                 style={{
                   backgroundColor: colors.White,
                   borderColor: item.isSelected ? colors.PrimaryWoman_Primary : colors.Transparent,
                 }}
-                className="relative w-[72px] h-[72px] p-3 flex items-center justify-center rounded-full border-[1px]"
+                className="relative w-[72px] h-[72px] p-3 flex items-center justify-center rounded-full border-[2px]"
               >
-                <LottieJson animationData={item.icon} loop={true} />
+                <LottieJson animationData={MOOD_TRACKER_ICONS_LIST[item.type]} loop={true} />
                 {item.isSelected && <TickIcon className="absolute -bottom-1 -right-1 w-8 h-8 z-10" />}
               </div>
 
@@ -51,13 +61,15 @@ const StoryMoodTracker = ({ moodTrackerData }: StoryMoodTrackerProps) => {
         })}
       </div>
 
-      <div className="w-full mt-auto flex flex-col items-center gap-2">
-        <ImpoIcon className="w-12 h-auto" />
+      {isLargeScreen && (
+        <div className="w-full mt-auto flex flex-col items-center gap-2">
+          <ImpoIcon className="w-12 h-auto" />
 
-        <Typography scale="Body" size="Medium" color="Surface_Outline" textAlign="center">
-          اگه هر روز حال و هوات رو اینجا ثبت کنی، بعد از 30 روز یک گزارش یک ماهه از مودت رو برات آماده می‌کنیم
-        </Typography>
-      </div>
+          <Typography scale="Body" size="Medium" color="Surface_Outline" textAlign="center">
+            اگه هر روز حال و هوات رو اینجا ثبت کنی، بعد از 30 روز یک گزارش یک ماهه از مودت رو برات آماده می‌کنیم
+          </Typography>
+        </div>
+      )}
     </div>
   );
 };

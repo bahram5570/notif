@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { toEnglishNumbers } from '@utils/numbers';
 
 import InputModule from '@components/activation/InputModule';
-import useIsLargeScreenHeight from '@hooks/__activation__/useIsLargeScreenHeight';
+import useIsLargeScreenHeight from '@hooks/useIsLargeScreenHeight';
 
 import useValidation from '../../otp/Otp1Container/__hooks__/useValidation';
 import PartnerCodeInputContinueBtn from './PartnerCodeInputContinueBtn';

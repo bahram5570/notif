@@ -25,22 +25,14 @@ const StoryPreviewListGenerator = ({
 
   const handleViewStory: ViewStoryHandlerTypes = (slideId) => {
     if (isMoodTracker) {
-      //
-    } else {
-      viewStoryHandler(slideId);
+      return;
     }
+
+    viewStoryHandler(slideId);
   };
 
   const { actionHandler } = useWidgetActions();
   const storySlideProps = useStorySlides({ stories: storyItems.stories, handleViewStory, navigateStoryHandler });
-
-  // if (isMoodTracker) {
-  //   const vvvv = storyItems.stories[0].events[0]
-  //   if (vvvv.type === WidgetStoryTypeEnum.MoodTracker) {
-  //     vvvv.items
-  //   }
-  //   console.log(vvvv.type);
-  // }
 
   return (
     <div className="relative w-full h-full flex flex-col">
@@ -53,7 +45,9 @@ const StoryPreviewListGenerator = ({
         slideIndexHandler={storySlideProps.slideIndexHandler}
       />
 
-      {isMoodTracker && <StoryMoodTracker moodTrackerData={storyItems.stories[0].events[0]} />}
+      {isMoodTracker && storyItems.events[0].type === WidgetStoryTypeEnum.MoodTracker && (
+        <StoryMoodTracker moodTrackerData={storyItems.events[0]} />
+      )}
 
       {!isMoodTracker && (
         <>

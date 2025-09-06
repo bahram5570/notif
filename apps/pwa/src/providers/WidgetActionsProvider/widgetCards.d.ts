@@ -75,7 +75,7 @@ export type MotivationCardTypes = IsPdfDownloadingTypes & {
 };
 
 // # ----------------------------------------------------------
-export type MoodTrackerItemTypes = { type: number; label: string; isSelected: boolean; icon: any };
+export type MoodTrackerItemTypes = { type: number; label: string; isSelected: boolean };
 
 export type StoryImageTypes = {
   type: WidgetStoryTypeEnum.Image;
@@ -110,6 +110,7 @@ export type StoryCardTypes = IsPdfDownloadingTypes & {
     description: string;
     title: string;
     list: {
+      events: StoryEventsTypes[];
       stories: StoriesTypes[];
       isBookmarked: boolean;
       coverImage: string;

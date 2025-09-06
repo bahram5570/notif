@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 
-import useIsLargeScreenHeight from '@hooks/__activation__/useIsLargeScreenHeight';
+import useIsLargeScreenHeight from '@hooks/useIsLargeScreenHeight';
 
 import ActivationBackBtn from '../ActivationBackBtn';
 import ActivationHeading from '../ActivationHeading';

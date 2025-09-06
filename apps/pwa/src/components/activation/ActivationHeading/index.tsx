@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import ImpoIcon from '@assets/images/questionsImpo.svg';
 
 import Typography from '@components/ui/Typography';
-import useIsLargeScreenHeight from '@hooks/__activation__/useIsLargeScreenHeight';
+import useIsLargeScreenHeight from '@hooks/useIsLargeScreenHeight';
 import useTheme from '@hooks/useTheme';
 import { OrderOfQuestionScriptsTypes } from '@providers/__activation__/types';
 

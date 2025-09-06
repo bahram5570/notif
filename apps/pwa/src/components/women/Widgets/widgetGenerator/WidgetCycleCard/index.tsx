@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { LoadingStatusEnum } from '@components/women/pages/mainRoutes/cycle/CycleContainer/__hooks__/useCycleLoadingStatus/loadingStatus.enum';
-import useIsLargeScreenHeight from '@hooks/__activation__/useIsLargeScreenHeight';
+import useIsLargeScreenHeight from '@hooks/useIsLargeScreenHeight';
 
 import WidgetGenerator from '..';
 import Btn from './Btn';

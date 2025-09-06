@@ -1,6 +1,6 @@
 import WheelPicker from '@components/ui/WheelPicker';
 import WheelPickerDivider from '@components/ui/WheelPicker/WheelPickerDivider';
-import useIsLargeScreenHeight from '@hooks/__activation__/useIsLargeScreenHeight';
+import useIsLargeScreenHeight from '@hooks/useIsLargeScreenHeight';
 
 import useInitialValueHandler from './__hooks__/useInitialValueHandler';
 import useListMaker from './__hooks__/useListMaker';

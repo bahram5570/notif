@@ -1,5 +1,5 @@
-import { StoryEventsTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { StoryMoodTrackerTypes } from '@providers/WidgetActionsProvider/widgetCards';
 
 export interface StoryMoodTrackerProps {
-  moodTrackerData: StoryEventsTypes;
+  moodTrackerData: StoryMoodTrackerTypes;
 }

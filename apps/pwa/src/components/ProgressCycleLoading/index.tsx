@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
-import useIsLargeScreenHeight from '@hooks/__activation__/useIsLargeScreenHeight';
+import useIsLargeScreenHeight from '@hooks/useIsLargeScreenHeight';
 import useTheme from '@hooks/useTheme';
 
 import CircleProgressBar from './CircleProgressBar';
