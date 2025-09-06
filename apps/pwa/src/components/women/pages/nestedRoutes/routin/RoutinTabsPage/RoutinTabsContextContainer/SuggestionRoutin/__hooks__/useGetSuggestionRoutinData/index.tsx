@@ -13,7 +13,7 @@ const useGetSuggestionRoutinData = () => {
   const data = getQuery<RecommendedRoutinResponseType>({ queryKey: ['recommendedRoutin'] });
 
   const successHandler = (v: RecommendedRoutinResponseType) => {
-    if (data) {
+    if (pageNo > 0 && data) {
       const list = { ...v, programs: [...data.programs, ...v.programs] };
       updateQuery({ queryKey: ['recommendedRoutin'], payload: list });
     } else {
