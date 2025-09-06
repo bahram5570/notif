@@ -11,8 +11,8 @@ export const metadata: Metadata = {
   },
 };
 
-const Pregnancy = () => {
+const Genetic = () => {
   return <LandingGeneticLayout />;
 };
 
-export default Pregnancy;
+export default Genetic;

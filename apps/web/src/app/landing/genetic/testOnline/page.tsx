@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'تست بارداری',
   robots: 'index, follow',
   alternates: {
-    canonical: `${HOST_URL}/pregnancy/testonline`,
+    canonical: `${HOST_URL}/genetic/testonline`,
   },
 };
 
