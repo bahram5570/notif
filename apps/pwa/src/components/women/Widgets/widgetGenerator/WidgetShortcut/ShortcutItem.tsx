@@ -18,18 +18,18 @@ const ShortcutItem = (props: ShortcutItemPropsType) => {
   const isJson = props.icon?.toLowerCase().endsWith('.json');
 
   useEffect(() => {
-    if (!isJson) return;
-
-    fetch(props.icon)
-      .then((res) => res.json())
-      .then((data) => setJsonData(data))
-      .catch(() => setJsonData(null));
+    if (isJson) {
+      fetch(props.icon)
+        .then((res) => res.json())
+        .then((data) => setJsonData(data))
+        .catch(() => setJsonData(null));
+    }
   }, [props.icon, isJson]);
 
   return (
     <div className="flex flex-col justify-center items-center gap-2 pointer-events-auto" onClick={onClick}>
-      {isJson && jsonData ? (
-        <LottieJson animationData={jsonData} loop={true} />
+      {isJson ? (
+        jsonData && <LottieJson animationData={jsonData} loop={true} />
       ) : (
         <CustomImage src={props.icon} width={72} height={72} />
       )}
