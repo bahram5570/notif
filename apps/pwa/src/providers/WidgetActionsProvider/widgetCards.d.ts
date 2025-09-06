@@ -75,6 +75,7 @@ export type MotivationCardTypes = IsPdfDownloadingTypes & {
 };
 
 // # ----------------------------------------------------------
+export type MoodTrackerItemTypes = { type: number; label: string; isSelected: boolean; icon: any };
 
 export type StoryImageTypes = {
   type: WidgetStoryTypeEnum.Image;
@@ -88,7 +89,11 @@ export type StoryCtaButtonTypes = {
   type: WidgetStoryTypeEnum.CtaButton;
   button: WidgetsButtonTypes;
 };
-type StoryEventsTypes = StoryImageTypes | StoryVideoTypes | StoryCtaButtonTypes;
+export type StoryMoodTrackerTypes = {
+  type: WidgetStoryTypeEnum.MoodTracker;
+  items: MoodTrackerItemTypes[];
+};
+type StoryEventsTypes = StoryImageTypes | StoryVideoTypes | StoryCtaButtonTypes | StoryMoodTrackerTypes;
 
 type StoriesTypes = {
   events: StoryEventsTypes[];

@@ -7,7 +7,7 @@ type StoriesTypes = Pick<Pick<StoryPreviewListGeneratorProps, 'storyItems'>['sto
 type NavigationTypes = Pick<StoryPreviewListGeneratorProps, 'navigateStoryHandler'>;
 type ItemsTypes = NavigationTypes & StoriesTypes;
 export interface UseStorySlidesProps extends ItemsTypes {
-  viewStoryHandler: ViewStoryHandlerTypes;
+  handleViewStory: ViewStoryHandlerTypes;
 }
 
 export type SlideIndexHandlerTypes = (goToNextSlide: boolean) => void;
