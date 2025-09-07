@@ -3,7 +3,7 @@ import cookies from 'js-cookie';
 
 export const cookieCreatedTime = (minutes?: number) => {
   const min = minutes || 60;
-  const timeInterval = 1000 * 60 * min; // # 1 hour
+  const timeInterval = 1000 * 60 * min; // # 1 hour by default
   const createdTime = Date.now() + timeInterval;
 
   return createdTime;

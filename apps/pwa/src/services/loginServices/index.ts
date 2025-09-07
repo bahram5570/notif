@@ -59,7 +59,12 @@ export const handleUserStatus = async (props: HandleUserStatusTypes) => {
         userData.createdTime = cookieCreatedTime();
         userData.installationPurpose = { status: loginData.status, periodStatus: loginData.periodStatus };
 
-        response.cookies.set(USER_COOKIE_NAME, JSON.stringify(userData), { expires: getUserExpiresDate(30) });
+        response.cookies.set(USER_COOKIE_NAME, JSON.stringify(userData), {
+          expires: getUserExpiresDate(30),
+          httpOnly: true,
+          secure: false,
+          path: '/',
+        });
       }
     } else {
       response.cookies.delete(USER_COOKIE_NAME);
@@ -76,7 +81,13 @@ export const handleActivationCrLoggin = async (props: HandleActivationCrLogginTy
   const userData = searchParams.get(ACTIVATION_CR_REGISTER_QUERY_NAME);
 
   if (userData) {
-    response.cookies.set(USER_COOKIE_NAME, userData, { expires: getUserExpiresDate(365) });
+    response.cookies.set(USER_COOKIE_NAME, userData, {
+      expires: getUserExpiresDate(365),
+      httpOnly: true,
+      secure: false,
+      path: '/',
+    });
+
     response.cookies.delete(FIREBASE_COOKIE_NAME);
   }
 

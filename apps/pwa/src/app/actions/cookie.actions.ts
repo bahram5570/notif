@@ -14,6 +14,7 @@ export const setCultureCookie = async (culture: CultureTypes) => {
     value: JSON.stringify(culture),
     name: CULTURE_COOKIE_NAME,
     httpOnly: false,
+    secure: false,
     path: '/',
   });
 };
@@ -53,7 +54,7 @@ export const setUserCookie = async (props: UserCookieTypes) => {
     identity,
   });
 
-  cookies().set({ name: USER_COOKIE_NAME, value, httpOnly: true, path: '/', secure: true, expires });
+  cookies().set({ name: USER_COOKIE_NAME, value, httpOnly: true, path: '/', secure: false, expires });
 };
 
 export const getUserCookie = async () => {
