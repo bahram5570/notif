@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
 
@@ -9,9 +10,11 @@ import { ShortcutItemPropsType } from './type';
 
 const ShortcutItem = (props: ShortcutItemPropsType) => {
   const { actionHandler } = useWidgetActions();
+  const { callEvent } = useAnalytics();
   const [jsonData, setJsonData] = useState<any>(null);
 
   const onClick = () => {
+    callEvent(`${props.semanticTitle}`);
     actionHandler(props.action);
   };
 
