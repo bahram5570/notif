@@ -1,7 +1,7 @@
-import PartnerContainer from '@components/women/pages/nestedRoutes/profile/PartnerSettingPage';
+import PartnerSettingContainer from '@components/women/pages/nestedRoutes/profile/PartnerSettingPage';
 
 const Partner = () => {
-  return <PartnerContainer />;
+  return <PartnerSettingContainer />;
 };
 
 export default Partner;

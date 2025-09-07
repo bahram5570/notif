@@ -32,24 +32,24 @@ export const actionRouteConverter = (serverLink: string) => {
       break;
 
     case '/partner/messenger':
-      result = '/protected/partner/message';
+      result = '/protected/partnerMessage';
       break;
 
     case '/partner/memory':
-      result = '/protected/partner/memory';
+      result = '/protected/memory';
       break;
 
     case '/partner/challenge/daly':
-      result = '/protected/partner/challenge';
+      result = '/protected/challenge';
       break;
 
     // todo fix
     case '/chat':
-      result = '/protected/partner/challenge';
+      result = '/protected/challenge';
       break;
 
     case '/partner/challenge/archive':
-      result = '/protected/partner/history';
+      result = '/protected/ChallengeHistory';
       break;
 
     // todo fix reminder
@@ -79,6 +79,9 @@ export const actionRouteConverter = (serverLink: string) => {
 
     case '/enterphase':
       result = enterphaseHandler(queries);
+      break;
+    case '/routines':
+      result = `/protected/routinTabs${queries ? `?${queries}` : ''}`;
       break;
 
     case '/diet':

@@ -19,7 +19,7 @@ export const NO_NEED_SUBSCRIPTION_PAGES_LIST = [
   '/protected/support',
   '/protected/userInfo',
   '/protected/subscription',
-  '/protected/partner/start',
+  '/protected/partnerStart',
   '/protected/supportTicket',
   '/protected/partnerSetting',
   '/protected/identifictionCode',

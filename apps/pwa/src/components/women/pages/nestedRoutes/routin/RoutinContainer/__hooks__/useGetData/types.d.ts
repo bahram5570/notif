@@ -1,6 +1,6 @@
 import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
 
-import { ProgramRateStatusEnum, ProgramWidgetItemStatusEnum } from '../../../enum';
+import { ProgramRateStatusEnum, ProgramWidgetCompleteEnum, ProgramWidgetItemStatusEnum } from '../../../enum';
 
 export type RoutinItemsTypes = {
   id: string;
@@ -37,6 +37,12 @@ export type WelcomType = {
   finalButton: FinalButtonType;
 };
 
+export type CtaType = {
+  action: ActionTypes;
+  ctaBtnLabel: string;
+  ctaDescription: string;
+};
+
 export type RoutinResponseTypes = {
   name: string;
   title: string;
@@ -49,4 +55,12 @@ export type RoutinResponseTypes = {
   items: RoutinItemsTypes[];
   rate: RateType;
   wc: WelcomType;
+  commentCount: number;
+  commentPlaceholder: string;
+  commentTabName: string;
+  compeletItemType: ProgramWidgetCompleteEnum;
+  cta: CtaType;
+  isbookmarked: boolean;
+  itemsTabName: string;
+  rateAvg: number;
 };

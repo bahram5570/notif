@@ -1,16 +1,18 @@
+import useCurrentRoutinIndex from '@hooks/__routin__/useCurrentRoutinIndex';
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 import { useRouter } from 'next/navigation';
 
-import { IS_LAST_ROUTIN_ITEM, SHOW_ROUTIN_UNLOCK_TOST } from '../../../RoutinContainer/constant';
+import { IS_LAST_ROUTIN_ITEM } from '../../../RoutinContainer/constant';
 
 const useSeen = () => {
   const route = useRouter();
   const { getQueryParams } = useQueryParamsHandler();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { refetchQuery } = useCustomReactQuery();
+  const { updateRoutinState } = useCurrentRoutinIndex();
   const searchData = getQueryParams('searchData');
   const isLastItem = localStorage.getItem(IS_LAST_ROUTIN_ITEM);
   const checkIsLastItem = isLastItem && JSON.parse(isLastItem);
@@ -24,8 +26,8 @@ const useSeen = () => {
       refetchQuery({ queryKey: ['routinItem'] });
       newQueryParamsHandler({ [MODALS.MODAL_FEEDBACK]: 'true' });
     } else {
-      localStorage.setItem(SHOW_ROUTIN_UNLOCK_TOST, 'true');
       route.back();
+      updateRoutinState('showToast', true);
     }
 
     localStorage.removeItem(IS_LAST_ROUTIN_ITEM);
