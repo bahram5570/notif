@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { textShorter } from '@utils/scripts';
+
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
 import useAnalytics from '@hooks/useAnalytics';
@@ -37,7 +39,7 @@ const ShortcutItem = (props: ShortcutItemPropsType) => {
         <CustomImage src={props.icon} width={72} height={72} />
       )}
       <Typography scale="Lable" size="Medium" className="!w-[150px]" textAlign="center">
-        {props.title}
+        {textShorter(props.title, 10)}
       </Typography>
     </div>
   );
