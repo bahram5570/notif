@@ -31,7 +31,6 @@ const UserTracking = ({ children }: { children: React.ReactNode }) => {
         return;
       }
 
-      // # Set new data on initial render or not having data
       const req = await fetch('/api/userInfo');
       const res: UserTrackingInfoTypes = await req.json();
 
@@ -40,14 +39,14 @@ const UserTracking = ({ children }: { children: React.ReactNode }) => {
       const username = `${currentTime.toString()}-${Math.random().toString().slice(2)}`;
       const firstUrl = { url: pathname + queries, visitTime: new Date().toISOString() };
 
-      const payload = {
+      newUserTracking({
         expTime,
         username,
         ip: res.ip,
         macAddress: '',
         urls: [firstUrl],
         userAgent: res.userAgent,
-      };
+      });
 
       callUserTracking('-----');
     };

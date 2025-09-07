@@ -6,16 +6,16 @@ const useUserTracking = () => {
   const { callApi } = useApi({ url: 'support/attribution', method: 'POST' });
 
   const callUserTracking = (downloadLink: string) => {
-    const data = getUserTracking();
+    const userTrackingData = getUserTracking();
 
-    if (data) {
+    if (userTrackingData) {
       const payload = {
         downloadLink,
-        ip: data.ip,
-        urls: data.urls,
-        username: data.username,
-        userAgent: data.userAgent,
-        macAddress: data.macAddress,
+        ip: userTrackingData.ip,
+        urls: userTrackingData.urls,
+        username: userTrackingData.username,
+        userAgent: userTrackingData.userAgent,
+        macAddress: userTrackingData.macAddress,
       };
 
       callApi(payload);
