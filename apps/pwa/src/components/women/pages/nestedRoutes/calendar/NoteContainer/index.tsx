@@ -20,6 +20,10 @@ const NoteContainer = () => {
   const isEditMode = noteValue.noteId ? true : false;
   const { isLoading, submitHandler } = useSubmit({ isEditMode });
 
+  const onClick = () => {
+    submitHandler(noteValue);
+  };
+
   return (
     <>
       {getDataLoading && <NoteContainerSkeleton />}
@@ -54,7 +58,7 @@ const NoteContainer = () => {
               isLoading={isLoading}
               isDisable={!noteValue.title}
               className="mt-auto py-3 px-2"
-              onClick={() => submitHandler(noteValue)}
+              onClick={onClick}
               id={isEditMode ? 'NoteEdit' : 'NoteAdd'}
             >
               {isEditMode ? 'ویرایش یادداشت' : 'ثبت یادداشت'}
