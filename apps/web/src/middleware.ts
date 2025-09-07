@@ -1,7 +1,7 @@
+import http from '@services/http';
+
 import { EXCLUDE_EXTENSIONS, OLD_OPEN_APP_LINKS } from '@constants/links.constants';
 import { type NextRequest, NextResponse } from 'next/server';
-
-import http from '@services/http';
 
 export const middleware = async (request: NextRequest) => {
   const response = NextResponse.next();

@@ -1,9 +1,10 @@
+import { ctaBannerService } from '@services/ctaBannerServices';
+
 import CtaBanner from '@components/CtaBanner';
 import DownloadApp from '@components/DownloadApp/DownloadAppWomen';
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
 import QrCode from '@components/QrCode';
 import CustomTypography from '@components/ui/CustomTypography';
-import { ctaBannerService } from '@services/ctaBannerServices';
 
 import AlphabetBtns from './AlphabetBtns';
 import AuthorProfile from './AuthorProfile';

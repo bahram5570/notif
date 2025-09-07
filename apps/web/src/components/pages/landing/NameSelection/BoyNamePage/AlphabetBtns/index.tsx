@@ -1,9 +1,8 @@
 'use client';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import { PERSIAN_BOY_NAME_DICTIONARY } from '../constants';
 

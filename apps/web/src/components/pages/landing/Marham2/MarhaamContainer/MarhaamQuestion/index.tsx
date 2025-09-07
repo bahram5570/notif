@@ -1,12 +1,12 @@
-import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
-
 import { useState } from 'react';
 
 import WarningIcon from '@assets/icons/warningCircle.svg';
+
 import ProgressCycleLoading from '@components/ProgressCycleLoading';
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
+import useBreakPoint from '@hooks/useBreakPoint';
+import { COLORS_LIST } from '@theme/colors';
 
 import { MARHAAM_QUESTIONS_LIST } from '../../constants';
 import { MarhaamFeelingEnum } from '../../enum';

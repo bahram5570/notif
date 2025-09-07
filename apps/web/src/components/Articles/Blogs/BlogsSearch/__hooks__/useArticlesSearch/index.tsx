@@ -1,7 +1,7 @@
+import { useEffect, useState } from 'react';
+
 import useApi from '@hooks/useApi';
 import useTimer from '@hooks/useTimer';
-
-import { useEffect, useState } from 'react';
 
 import { ArticlesSearchListTypes, ArticlesSearchResponseTypes } from './types';
 

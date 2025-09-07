@@ -1,5 +1,6 @@
-import { getFirebaseCookieToken, getUserCookie, getUserExpiresDate, setUserCookie } from '@utils/cookies';
+import { getFirebaseCookieToken, getUserExpiresDate } from '@utils/cookies';
 
+import { getUserCookie, setUserCookie } from '@actions/cookie.actions';
 import { FIREBASE_COOKIE_NAME } from '@constants/cookie.constants';
 import { initializeApp } from 'firebase/app';
 import { Messaging, getMessaging, getToken, isSupported } from 'firebase/messaging';
@@ -39,12 +40,12 @@ export const firebaseToken = async (onReload: () => void) => {
             cookies.set(FIREBASE_COOKIE_NAME, ft, { expires: getUserExpiresDate(365) });
 
             // # Reset the user token
-            const { user } = getUserCookie();
+            const user = await getUserCookie();
 
             if (user) {
               const updatedUser = { ...user };
               updatedUser.createdTime = Date.now();
-              setUserCookie(updatedUser);
+              await setUserCookie(updatedUser);
               onReload();
             }
           }

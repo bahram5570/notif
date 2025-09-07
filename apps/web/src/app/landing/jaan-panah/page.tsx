@@ -1,7 +1,6 @@
+import JaanPanahPage from '@components/pages/landing/JaanPanahPage';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
-
-import JaanPanahPage from '@components/pages/landing/JaanPanahPage';
 
 export const metadata: Metadata = {
   title: 'جان پناه',

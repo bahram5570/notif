@@ -1,16 +1,16 @@
-import useBreakPoint from '@hooks/useBreakPoint';
-import useCustomToast from '@hooks/useCustomToast';
-import { COLORS_LIST } from '@theme/colors';
+import { handleNewCommentDisable, handleNewCommentValidation } from './__utils__';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomInput from '@components/ui/CustomInput';
 import CustomTypography from '@components/ui/CustomTypography';
+import useBreakPoint from '@hooks/useBreakPoint';
+import useCustomToast from '@hooks/useCustomToast';
+import { COLORS_LIST } from '@theme/colors';
 
 import ArticleIdNewRate from './ArticleIdNewRate';
 import ArticleIdNewTextarea from './ArticleIdNewTextarea';
 import ArticleIdNewTitleGenerator from './ArticleIdNewTitleGenerator';
 import useNewComment from './__hooks__/useNewComment';
-import { handleNewCommentDisable, handleNewCommentValidation } from './__utils__';
 import { ArticleIdCommentsNewCommentTypes } from './types';
 
 const ArticleIdCommentsNewComment = ({ articleId }: ArticleIdCommentsNewCommentTypes) => {

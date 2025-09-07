@@ -7,9 +7,6 @@ export const phaseChangePayloadUpdater = (payload: ActivationPayloadTypes, calen
   const copyPayload = { ...payload };
 
   if (calendarType === CalendarTypeEnum.Jalali) {
-    copyPayload.startPeriodDate =
-      copyPayload.startPeriodDate.trim() === '' ? '' : toGregorianData(copyPayload.startPeriodDate);
-
     copyPayload.childBirthDate =
       copyPayload.childBirthDate.trim() === '' ? '' : toGregorianData(copyPayload.childBirthDate);
 

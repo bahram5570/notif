@@ -1,10 +1,10 @@
+import ArrowIcon from '@assets/icons/arrow3.svg';
+import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
+
+import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 import useOperatingSystem from '@hooks/useOperatingSystem';
 import { COLORS_LIST } from '@theme/colors';
-
-import ArrowIcon from '@assets/icons/arrow3.svg';
-import CustomTypography from '@components/ui/CustomTypography';
-import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
 
 import { ArticleIdCommentsListGeneratorTypes } from './types';
 

@@ -1,6 +1,6 @@
-import useTimer from '@hooks/useTimer';
-
 import { useEffect, useState } from 'react';
+
+import useTimer from '@hooks/useTimer';
 
 const useSteps = (totalSteps: number) => {
   const [step, setStep] = useState(0);

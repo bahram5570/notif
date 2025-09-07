@@ -1,8 +1,8 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import ImpoIcon from '@assets/icons/impo.svg';
 import ImpoNameIcon from '@assets/icons/impoName.svg';
+
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 const FooterInfo = () => {
   return (

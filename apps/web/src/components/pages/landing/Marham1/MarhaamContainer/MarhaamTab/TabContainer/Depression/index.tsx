@@ -1,7 +1,7 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import StarIcon from '@assets/icons/Stars.svg';
+
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import Book from './Book';
 

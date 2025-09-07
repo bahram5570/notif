@@ -1,13 +1,12 @@
 'use client';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import { useState } from 'react';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
 import CustomModal from '@components/ui/CustomModal';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import MarhaamQuestion from './MarhaamQuestion';
 import QuestionContents from './MarhaamQuestion/QuestionContents';

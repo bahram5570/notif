@@ -1,9 +1,9 @@
+import http from '@services/http';
+
+import AuthorPageContainer from '@components/pages/author/slug/AuthorPageContainer';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-
-import AuthorPageContainer from '@components/pages/author/slug/AuthorPageContainer';
-import http from '@services/http';
 
 import { AuthorMainResponseTypes } from './types';
 

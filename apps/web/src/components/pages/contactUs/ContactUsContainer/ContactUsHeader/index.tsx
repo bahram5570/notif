@@ -1,12 +1,12 @@
 'use client';
 
-import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
-
 import LogoTypeIconMobileSize from '@assets/icons/logoType-mobile-size.svg';
 import LogoTypeIcon from '@assets/icons/logoType.svg';
+
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
+import useBreakPoint from '@hooks/useBreakPoint';
+import { COLORS_LIST } from '@theme/colors';
 
 const ContactUsHeader = () => {
   const { breakPoint } = useBreakPoint();

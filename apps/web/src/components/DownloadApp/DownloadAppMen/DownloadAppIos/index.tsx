@@ -36,7 +36,7 @@ const DownloadAppIos = () => {
           target="_blank"
           href={PWA_LINK_MEN_URL}
           aria-label="DownloadAppAndroidMen"
-          onClick={() => callUserTracking(pwaId)}
+          // onClick={() => callUserTracking(pwaId)}
           style={{ backgroundColor: COLORS_LIST.White, borderColor: COLORS_LIST.Neutral_Surface }}
           className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 relative z-10"
         >

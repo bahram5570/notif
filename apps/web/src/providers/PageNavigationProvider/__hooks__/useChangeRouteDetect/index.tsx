@@ -1,8 +1,8 @@
 'use client';
 
-import { usePathname, useSearchParams } from 'next/navigation';
-
 import { useEffect } from 'react';
+
+import { usePathname, useSearchParams } from 'next/navigation';
 
 const useChangeRouteDetect = (onChange: (b: boolean) => void) => {
   if (typeof window === 'undefined') {

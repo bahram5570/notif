@@ -1,15 +1,15 @@
-import { COLORS_LIST } from '@theme/colors';
+import AppDownloadIcon from '@assets/icons/download-Minimalistic.svg';
+import AppStoreDownloadIcon from '@assets/icons/downloads/appStoreDownload.svg';
+import GooglePlayIcon from '@assets/icons/downloads/googlePlay.svg';
 
 import { Dialog } from '@mui/material';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 
-import AppDownloadIcon from '@assets/icons/download-Minimalistic.svg';
-import AppStoreDownloadIcon from '@assets/icons/downloads/appStoreDownload.svg';
-import GooglePlayIcon from '@assets/icons/downloads/googlePlay.svg';
 import CustomLink from '@components/ui/CustomLink';
 import CustomModal from '@components/ui/CustomModal';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import { DownloadModalPropsType } from './type';
 

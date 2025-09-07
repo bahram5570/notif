@@ -8,7 +8,7 @@ import PageIcons from './PageIcons';
 import { FOOTER_HEIGTH, FOOTER_PAGES_LIST } from './constants';
 import { ContainerProps } from './types';
 
-const Container = ({ pathName }: ContainerProps) => {
+const WomenFooterContainer = ({ pathName }: ContainerProps) => {
   const { colors } = useTheme();
   const { operatingSystem } = useOperatingSystem();
 
@@ -26,6 +26,6 @@ const Container = ({ pathName }: ContainerProps) => {
   );
 };
 
-export default memo(Container, (prev, next) => {
+export default memo(WomenFooterContainer, (prev, next) => {
   return prev.pathName === next.pathName;
 });

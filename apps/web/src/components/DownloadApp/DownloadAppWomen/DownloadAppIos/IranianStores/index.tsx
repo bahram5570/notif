@@ -1,13 +1,13 @@
 'use client';
 
-import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
-import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
-
 import { Suspense } from 'react';
 
 import PwaIcon from '@assets/icons/downloads/pwa.svg';
+
 import CustomTypography from '@components/ui/CustomTypography';
+import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
+import useBreakPoint from '@hooks/useBreakPoint';
+import { COLORS_LIST } from '@theme/colors';
 
 import DownloadAppLinkGenerator from '../../DownloadAppLinkGenerator';
 import IranianStoresDesktop from './IranianStoresDesktop';

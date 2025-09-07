@@ -1,15 +1,15 @@
 'use client';
 
-import useBreakPoint from '@hooks/useBreakPoint';
-import useOperatingSystem from '@hooks/useOperatingSystem';
-import { COLORS_LIST } from '@theme/colors';
-
 import { useState } from 'react';
+
+import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomInput from '@components/ui/CustomInput';
 import CustomTypography from '@components/ui/CustomTypography';
-import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
+import useBreakPoint from '@hooks/useBreakPoint';
+import useOperatingSystem from '@hooks/useOperatingSystem';
+import { COLORS_LIST } from '@theme/colors';
 
 import useSubmit from './__hooks__/useSubmit';
 import { UserInfoType } from './type';

@@ -20,10 +20,6 @@ const useFreeSubscription = () => {
 
   const successHandler = ({ valid }: FreeSubscriptionResponseTypes) => {
     updateProfileDateByDellay();
-
-    // if (valid) {
-      // updateProfileDateByDellay();
-    // }
   };
 
   const { isLoading, callApi, data } = useApi<FreeSubscriptionResponseTypes>({

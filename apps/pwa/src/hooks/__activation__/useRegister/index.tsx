@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
 import { CycleThemeEnum } from '@services/loginServices/enum';
-import { UserCookieTypes, cookieCreatedTime } from '@utils/cookies';
+import { cookieCreatedTime } from '@utils/cookies';
 import { registerPayloadUpdater } from '@utils/register';
 
+import { UserCookieTypes } from '@actions/cookie.actions';
 import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
 import { ActivationPayloadTypes } from '@providers/__activation__/types';

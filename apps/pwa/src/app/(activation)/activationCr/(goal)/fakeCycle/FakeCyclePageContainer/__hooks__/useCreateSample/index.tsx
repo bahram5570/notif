@@ -29,24 +29,21 @@ const useCreateSample = ({ payload }: UseCreateSampleProps) => {
 
   const callCreateSampleApi = () => {
     let pregnancyDate = payload.pregnancyDate.trim();
-    let startPeriodDate = payload.startPeriodDate.trim();
 
     if (culture.calendarType === CalendarTypeEnum.Gregorian) {
       pregnancyDate = pregnancyDate || gDate;
-      startPeriodDate = startPeriodDate || gDate;
     }
 
     if (culture.calendarType === CalendarTypeEnum.Jalali) {
       pregnancyDate = pregnancyDate === '' ? gDate : toGregorianData(pregnancyDate);
-      startPeriodDate = startPeriodDate === '' ? gDate : toGregorianData(startPeriodDate);
     }
 
     const samplePaylod = {
       pregnancyDate,
-      startPeriodDate,
       status: payload.status,
       periodStatus: payload.periodStatus,
       isDelivery: payload.isDeliveryDate,
+      startPeriodDate: payload.startPeriodDate,
       totalCycleLength: payload.totalCycleLength,
     };
 

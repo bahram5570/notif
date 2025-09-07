@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-import { UserCookieTypes } from '@utils/cookies';
-
+import { UserCookieTypes } from '@actions/cookie.actions';
 import Otp2Container from '@components/activation/pages/otp/Otp2Container';
 import { OtpStatusTypes } from '@components/activation/pages/otp/Otp2Container/__hooks__/useOtpStatus/types';
 import { OTP_COUNT_DOWN_TIME } from '@components/activation/pages/otp/Otp2Container/constants';

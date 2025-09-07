@@ -1,6 +1,5 @@
-import { Metadata } from 'next';
-
 import GooglePlayContainer from '@components/pages/webView/GooglePlayContainer';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   robots: 'noindex, nofollow',

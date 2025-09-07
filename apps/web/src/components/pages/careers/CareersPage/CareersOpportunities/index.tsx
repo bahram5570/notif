@@ -1,7 +1,6 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import { CAREER_CONTAINER_MAX_WIDTH } from '@components/pages/careers/constants';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import CardGenerator from './CardGenerator';
 import { CareersOpportunitiesTypes } from './types';

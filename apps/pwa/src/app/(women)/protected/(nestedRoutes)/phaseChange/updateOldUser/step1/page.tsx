@@ -1,22 +1,22 @@
 'use client';
 
 import ImpoIcon from '@assets/images/questionsImpo.svg';
-import { getUserCookie } from '@utils/cookies';
 
+import { getUserCookie } from '@actions/cookie.actions';
 import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
 import { InstallationPurposeEnum } from '@constants/activation.constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import usePhaseChangePayload from '@providers/PhaseChangeProvider/__hooks__/usePhaseChangePayload';
 
+const loadingId = 'completeActionId';
+
 const Step1 = () => {
   const { payloadHandler } = usePhaseChangePayload();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
-  const loadingId = 'completeActionId';
-
-  const selectHandler = () => {
-    const { user } = getUserCookie();
+  const selectHandler = async () => {
+    const user = await getUserCookie();
 
     if (user) {
       const installationPurpose = user.installationPurpose;

@@ -1,7 +1,6 @@
+import MenPage from '@components/pages/men/MenPage';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
-
-import MenPage from '@components/pages/men/MenPage';
 
 export const metadata: Metadata = {
   title: 'ایمپو آقایان - ایمپو | بزرگترین پلتفرم حوزه سلامت زنان',

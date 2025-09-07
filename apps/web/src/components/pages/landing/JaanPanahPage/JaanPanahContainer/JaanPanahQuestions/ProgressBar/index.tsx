@@ -1,6 +1,6 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import ArrowIcon from '@assets/icons/arrow2.svg';
+
+import { COLORS_LIST } from '@theme/colors';
 
 import { ProgressBarTypes } from './types';
 

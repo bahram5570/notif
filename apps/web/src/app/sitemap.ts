@@ -1,7 +1,7 @@
+import http from '@services/http';
+
 import { HOST_URL } from '@constants/links.constants';
 import type { MetadataRoute } from 'next';
-
-import http from '@services/http';
 
 const STATIC_URLS: string[] = [
   `${HOST_URL}`,

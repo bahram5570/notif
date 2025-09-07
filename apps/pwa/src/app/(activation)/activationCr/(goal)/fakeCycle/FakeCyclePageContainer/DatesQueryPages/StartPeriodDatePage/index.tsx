@@ -1,3 +1,4 @@
+import ActivationCalendar from '@components/activation/ActivationCalendar';
 import DateModule from '@components/activation/DateModule';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import useDateIntervals from '@providers/__activation__/ActivationProvider/__hooks__/useDateIntervals';
@@ -26,7 +27,7 @@ const StartPeriodDatePage = ({ payloadHandler }: StartPeriodDatePageProps) => {
       title="تاریخ آخرین باری که پریود شدی رو بهمون بگو"
       subtitle="برای پیش‌بینی روزهایی که بیشترین احتمال بارداری وجود داره"
     >
-      <DateModule valueHandler={valueHandler} startDate={periodStart} endDate={periodEnd} />
+      <ActivationCalendar valueHandler={valueHandler} startDate={periodStart} endDate={periodEnd} />
     </DatesContainer>
   );
 };

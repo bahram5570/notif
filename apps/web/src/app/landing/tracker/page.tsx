@@ -1,6 +1,3 @@
-import { HOST_URL } from '@constants/links.constants';
-import { Metadata } from 'next';
-
 import Achievements from '@components/Achievements';
 import LandingArticles from '@components/Articles/LandingArticles';
 import Comments from '@components/Comments';
@@ -9,6 +6,8 @@ import FeaturesIntruduction from '@components/FeaturesIntruduction';
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
 import QrCode from '@components/QrCode';
 import Scores from '@components/Scores';
+import { HOST_URL } from '@constants/links.constants';
+import { Metadata } from 'next';
 
 import TrackerHeading from './TrackerHeading';
 import { TRACKER_ACHIEVEMENTS_LIST, TRACKER_COMMENTS_LIST, TRACKER_FEATURES_INTRODUCTION_LIST } from './constants';

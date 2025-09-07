@@ -1,7 +1,8 @@
+import { ctaBannerService } from '@services/ctaBannerServices';
+
 import CtaBanner from '@components/CtaBanner';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { ctaBannerService } from '@services/ctaBannerServices';
 
 import { LANDING_PREGNANCY_BANNER_NAME } from '../constants';
 

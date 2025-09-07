@@ -1,6 +1,5 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import CustomButton from '@components/ui/CustomButton';
+import { COLORS_LIST } from '@theme/colors';
 
 import useProgress from './__hooks__/useProgress';
 import useTabSizes from './__hooks__/useTabSizes';

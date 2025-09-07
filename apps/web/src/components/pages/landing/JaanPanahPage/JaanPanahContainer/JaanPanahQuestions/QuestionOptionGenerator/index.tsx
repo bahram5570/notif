@@ -1,7 +1,7 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import TickIcon from '@assets/icons/tick.svg';
+
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import { QuestionOptionGeneratorTypes } from './types';
 

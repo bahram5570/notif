@@ -1,6 +1,5 @@
-import { Metadata } from 'next';
-
 import SubscribeEndContainer from '@components/pages/webView/SubscribeEndContainer';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   robots: 'noindex, nofollow',

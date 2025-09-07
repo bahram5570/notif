@@ -4,13 +4,13 @@ import LandingArticles from '@components/Articles/LandingArticles';
 import Comments from '@components/Comments';
 import DownloadApp from '@components/DownloadApp/DownloadAppWomen';
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
+import ImpoServices from '@components/ImpoServices';
 import QrCode from '@components/QrCode';
 import Scores from '@components/Scores';
 
 import HomeFooter from './HomeFooter';
 import HomeHeading from './HomeHeading';
 import { HOME_ACHIEVEMENTS_LIST, HOME_COMMENTS_LIST } from './constants';
-import ImpoServices from '@components/ImpoServices';
 
 const HomePageContainer = () => {
   return (

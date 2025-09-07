@@ -1,4 +1,4 @@
-import DateModule from '@components/activation/DateModule';
+import ActivationCalendar from '@components/activation/ActivationCalendar';
 import MainActivationModule from '@components/activation/MainActivationModule';
 import useDateIntervals from '@providers/__activation__/ActivationProvider/__hooks__/useDateIntervals';
 import usePageInfo from '@providers/__activation__/ActivationProvider/__hooks__/usePageInfo';
@@ -31,7 +31,7 @@ const Prevention3Container = ({
   return (
     <>
       <MainActivationModule isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
-        <DateModule valueHandler={valueHandler} startDate={periodStart} endDate={periodEnd} />
+        <ActivationCalendar valueHandler={valueHandler} startDate={periodStart} endDate={periodEnd} />
       </MainActivationModule>
     </>
   );

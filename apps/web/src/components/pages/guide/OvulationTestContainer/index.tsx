@@ -1,9 +1,8 @@
 'use client';
 
+import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 import { FONTS_ANDROID } from '@theme/fonts';
-
-import CustomTypography from '@components/ui/CustomTypography';
 
 import GuideContainer from '../GuideContainer';
 import { StepsContentType } from '../GuideContainer/type';

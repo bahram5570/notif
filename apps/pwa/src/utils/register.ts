@@ -19,7 +19,6 @@ export const registerPayloadUpdater = (payload: ActivationPayloadTypes, calendar
   result.identity = toEnglishNumbers(result.identity);
 
   if (calendarType === CalendarTypeEnum.Jalali) {
-    result.startPeriodDate = result.startPeriodDate === '' ? '' : toGregorianData(result.startPeriodDate);
     result.childBirthDate = result.childBirthDate === '' ? '' : toGregorianData(result.childBirthDate);
     result.pregnancyDate = result.pregnancyDate === '' ? '' : toGregorianData(result.pregnancyDate);
     result.birthDate = result.birthDate === '' ? '' : toGregorianData(result.birthDate);

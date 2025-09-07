@@ -2,9 +2,9 @@
 
 import React, { useMemo } from 'react';
 
+import styles from './styles.module.css';
 import { Dialog, Slide } from '@mui/material';
 
-import styles from './styles.module.css';
 import { CustomModalTypes } from './types';
 
 const CustomModal = ({ children, isOpen, onClose, slideDirection, position = 'center' }: CustomModalTypes) => {

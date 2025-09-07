@@ -1,5 +1,6 @@
-import { getUserCookie } from '@utils/cookies';
+import { useEffect, useState } from 'react';
 
+import { getUserCookie } from '@actions/cookie.actions';
 import { LoadingStatusEnum } from '@components/women/pages/mainRoutes/cycle/CycleContainer/__hooks__/useCycleLoadingStatus/loadingStatus.enum';
 import { InstallationPurposeEnum } from '@constants/activation.constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
@@ -13,17 +14,27 @@ import useCircleContainerSize from './__hooks__/useCircleContainerSize';
 import { CircleContainerProps } from './types';
 
 const CircleContainer = ({ data, loadingStatus }: CircleContainerProps) => {
+  const [showNumbers, setShowNumbers] = useState(false);
   const { containerRef, containerSize } = useCircleContainerSize();
+
+  useEffect(() => {
+    const handleResult = async () => {
+      const user = await getUserCookie();
+
+      const result =
+        user !== null &&
+        user.installationPurpose.status !== InstallationPurposeEnum.pregnancy.status &&
+        user.installationPurpose.status !== InstallationPurposeEnum.breastfeeding.status;
+
+      setShowNumbers(result);
+    };
+
+    handleResult();
+  }, []);
 
   if (loadingStatus === LoadingStatusEnum.successed && data === null) {
     return <></>;
   }
-
-  const { user } = getUserCookie();
-  const showNumbers =
-    user !== null &&
-    user.installationPurpose.status !== InstallationPurposeEnum.pregnancy.status &&
-    user.installationPurpose.status !== InstallationPurposeEnum.breastfeeding.status;
 
   return (
     <div

@@ -1,10 +1,9 @@
 'use client';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import useCopy from '../__hooks__/useCopy';
 import { PAYPAL_LINK } from '../constants';

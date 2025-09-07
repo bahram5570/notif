@@ -1,10 +1,13 @@
 import { useMemo } from 'react';
 
 import Typography from '@components/ui/Typography';
-import { CalendarTypeEnum } from '@constants/date.constants';
+import {
+  CALENDAR_CELL_SIZE,
+  CALENDAR_GREGORIAN_FARSI_WEEK_NAMES,
+  CALENDAR_JALALI_WEEK_NAMES,
+  CalendarTypeEnum,
+} from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
-
-import { CALENDAR_CELL_SIZE, CALENDAR_GREGORIAN_FARSI_WEEK_NAMES, CALENDAR_JALALI_WEEK_NAMES } from '../../constants';
 
 const WeekTitles = () => {
   const { culture } = useCulture();
@@ -13,9 +16,8 @@ const WeekTitles = () => {
     switch (culture.calendarType) {
       case CalendarTypeEnum.Gregorian:
         return CALENDAR_GREGORIAN_FARSI_WEEK_NAMES;
+
       case CalendarTypeEnum.Jalali:
-        return CALENDAR_JALALI_WEEK_NAMES;
-      default:
         return CALENDAR_JALALI_WEEK_NAMES;
     }
   }, [culture.calendarType]);

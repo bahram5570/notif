@@ -1,7 +1,7 @@
 import { enterphaseHandler } from './enterphaseHandler';
 import { shareExperienceHandler } from './shareExperienceHandler';
 
-export const actionRouteConverter = (serverLink: string) => {
+export const actionRouteConverter = async (serverLink: string) => {
   const baseRoute = serverLink.split('?')[0];
   const queries = serverLink.split('?')[1];
   let result = '';
@@ -78,7 +78,7 @@ export const actionRouteConverter = (serverLink: string) => {
       break;
 
     case '/enterphase':
-      result = enterphaseHandler(queries);
+      result = await enterphaseHandler(queries);
       break;
     case '/routines':
       result = `/protected/routinTabs${queries ? `?${queries}` : ''}`;

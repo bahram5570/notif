@@ -1,6 +1,6 @@
 import { ActivationDataTypes } from '@services/activationServices/types';
-import { UserCookieTypes } from '@utils/cookies';
 
+import { UserCookieTypes } from '@actions/cookie.actions';
 import { ActivationPayloadTypes } from '@providers/__activation__/types';
 
 type PageTypes = Pick<ActivationDataTypes, 'reward'>['reward'][0]['page'];
