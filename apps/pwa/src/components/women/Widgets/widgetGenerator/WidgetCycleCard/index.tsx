@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { LoadingStatusEnum } from '@components/women/pages/mainRoutes/cycle/CycleContainer/__hooks__/useCycleLoadingStatus/loadingStatus.enum';
-import useIsLargeScreenHeight from '@hooks/useIsLargeScreenHeight';
+import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
 
 import WidgetGenerator from '..';
 import Btn from './Btn';
@@ -12,7 +12,7 @@ import { WidgetCycleCardProps } from './types';
 
 const WidgetCycleCard = ({ data, insideCycleWidgetList, loadingStatus }: WidgetCycleCardProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const { isLargeScreen } = useIsLargeScreenHeight();
+  const { isLargeScreen } = useActivationIsLargeScreen();
 
   const containerTotalHeight = isLargeScreen ? 550 : 400;
   const scriptsTotalHeight = isLargeScreen ? 180 : 130;

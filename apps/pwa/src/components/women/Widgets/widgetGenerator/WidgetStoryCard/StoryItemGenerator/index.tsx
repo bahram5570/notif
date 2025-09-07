@@ -21,8 +21,6 @@ const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGenerat
       newQueryParamsHandler({ [MODALS.STORY_MODAL_ID]: id });
       pageNavigationHandler({ id: loadingId, showProgressBar: false });
     }
-
-    // For debugging purposes, can be removed later
   };
 
   return (
@@ -41,7 +39,7 @@ const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGenerat
         }}
         className="relative p-[2px] rounded-full overflow-hidden flex items-center justify-center"
       >
-        <CustomImage src={coverImage} />
+        <CustomImage src={coverImage} width={'100%'} height={'100%'} />
 
         <div
           style={{ borderColor: isViewed ? colors.Surface_Outline : colors.PrimaryWoman_Primary }}

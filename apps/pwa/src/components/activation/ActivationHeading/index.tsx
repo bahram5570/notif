@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import ImpoIcon from '@assets/images/questionsImpo.svg';
 
 import Typography from '@components/ui/Typography';
-import useIsLargeScreenHeight from '@hooks/useIsLargeScreenHeight';
+import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
 import useTheme from '@hooks/useTheme';
 import { OrderOfQuestionScriptsTypes } from '@providers/__activation__/types';
 
@@ -18,7 +18,7 @@ import usePercentage from './usePercentage';
 
 const ActivationHeading = ({ scripts, progressPercentage, orderOfQuestionScripts }: ActivationHeadingProps) => {
   const { colors } = useTheme();
-  const { isLargeScreen } = useIsLargeScreenHeight();
+  const { isLargeScreen } = useActivationIsLargeScreen();
   const { maxWidth, progressBarSizes, rotate } = usePercentage({ progressPercentage });
 
   const hasProgressBar = progressPercentage !== undefined;

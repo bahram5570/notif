@@ -5,6 +5,7 @@ import Button from '@components/ui/Button';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { WidgetStoryTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
+import { STORY_MOOD_TRACKER_NAME } from '../../constants';
 import { ViewStoryHandlerTypes } from '../__hooks__/useStoryUpdate/useIsView/types';
 import ProgressBars from './ProgressBars';
 import SaveStory from './SaveStory';
@@ -21,7 +22,7 @@ const StoryPreviewListGenerator = ({
   viewStoryHandler,
   storyItems,
 }: StoryPreviewListGeneratorProps) => {
-  const isMoodTracker = storyItems.id === 'MoodTracker';
+  const isMoodTracker = storyItems.id === STORY_MOOD_TRACKER_NAME;
 
   const handleViewStory: ViewStoryHandlerTypes = (slideId) => {
     if (isMoodTracker) {

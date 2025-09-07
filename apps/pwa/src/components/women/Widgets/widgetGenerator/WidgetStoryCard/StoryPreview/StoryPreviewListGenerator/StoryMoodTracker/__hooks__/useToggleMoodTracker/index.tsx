@@ -1,7 +1,10 @@
 import { currentDate } from '@utils/dates';
 
 import { OriginalStoryDataTypes } from '@components/women/Widgets/widgetGenerator/WidgetStoryCard/__hooks__/useStoryCardData/types';
-import { STORY_CARD_DATA_NAME } from '@components/women/Widgets/widgetGenerator/WidgetStoryCard/constants';
+import {
+  STORY_CARD_DATA_NAME,
+  STORY_MOOD_TRACKER_NAME,
+} from '@components/women/Widgets/widgetGenerator/WidgetStoryCard/constants';
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import { WidgetStoryTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
@@ -23,14 +26,15 @@ const useToggleMoodTracker = () => {
     const data = getQuery<OriginalStoryDataTypes>({ queryKey: [STORY_CARD_DATA_NAME] });
 
     if (data) {
-      const events = data.list[0].events[0];
+      const storyIndex = data.list.findIndex((i) => i.id === STORY_MOOD_TRACKER_NAME);
+      const events = data.list[storyIndex].events[0];
 
       if (events.type === WidgetStoryTypeEnum.MoodTracker) {
-        const index = events.items.findIndex((i) => i.type === type);
-        events.items[index].isSelected = !isSelected;
+        const itemIndex = events.items.findIndex((i) => i.type === type);
+        events.items[itemIndex].isSelected = !isSelected;
 
         const isViewed = events.items.some((i) => i.isSelected);
-        data.list[0].isViewed = isViewed;
+        data.list[storyIndex].isViewed = isViewed;
 
         updateQuery({ queryKey: [STORY_CARD_DATA_NAME], payload: data });
       }

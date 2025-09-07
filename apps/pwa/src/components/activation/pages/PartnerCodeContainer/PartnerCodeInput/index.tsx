@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { toEnglishNumbers } from '@utils/numbers';
 
 import InputModule from '@components/activation/InputModule';
-import useIsLargeScreenHeight from '@hooks/useIsLargeScreenHeight';
+import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
 
 import useValidation from '../../otp/Otp1Container/__hooks__/useValidation';
 import PartnerCodeInputContinueBtn from './PartnerCodeInputContinueBtn';
@@ -12,7 +12,7 @@ import { PartnerCodeInputProps } from './types';
 
 const PartnerCodeInput = ({ question, onSubmit, isLoading }: PartnerCodeInputProps) => {
   const [code, setCode] = useState('');
-  const { isLargeScreen } = useIsLargeScreenHeight();
+  const { isLargeScreen } = useActivationIsLargeScreen();
 
   const { invalidMessage } = useValidation({ isPhone: true, value: code });
 

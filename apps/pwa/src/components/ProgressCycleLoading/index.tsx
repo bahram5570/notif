@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
-import useIsLargeScreenHeight from '@hooks/useIsLargeScreenHeight';
+import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
 import useTheme from '@hooks/useTheme';
 
 import CircleProgressBar from './CircleProgressBar';
@@ -18,7 +18,7 @@ const ProgressCycleLoading = ({
   image,
 }: ProgressCycleLoadingProps) => {
   const { colors } = useTheme();
-  const { isLargeScreen } = useIsLargeScreenHeight();
+  const { isLargeScreen } = useActivationIsLargeScreen();
   const [loadingStatus, setLoadingStatus] = useState<ProgressCycleEnums>(ProgressCycleEnums.Start);
 
   useEffect(() => {

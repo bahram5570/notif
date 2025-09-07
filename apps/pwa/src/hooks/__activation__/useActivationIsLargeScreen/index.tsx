@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 
-const useIsLargeScreenHeight = () => {
+const useActivationIsLargeScreen = () => {
   const [isLargeScreen, setIsLargeScreen] = useState(true);
 
   useEffect(() => {
     const el = document.documentElement;
 
     if (el) {
-      const MAX_SCREEN_HEIGHT = 700;
+      const MAX_SCREEN_HEIGHT = 650;
       const isLarge = el.clientHeight > MAX_SCREEN_HEIGHT;
       setIsLargeScreen(isLarge);
     }
@@ -16,4 +16,4 @@ const useIsLargeScreenHeight = () => {
   return { isLargeScreen };
 };
 
-export default useIsLargeScreenHeight;
+export default useActivationIsLargeScreen;
