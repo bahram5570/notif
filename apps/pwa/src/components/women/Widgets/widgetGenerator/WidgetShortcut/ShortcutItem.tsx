@@ -39,7 +39,7 @@ const ShortcutItem = (props: ShortcutItemPropsType) => {
         <CustomImage src={props.icon} width={72} height={72} />
       )}
       <Typography scale="Lable" size="Medium" className="!w-[150px]" textAlign="center">
-        {textShorter(props.title, 10)}
+        {isJson ? textShorter(props.title, 11) : props.title}
       </Typography>
     </div>
   );
