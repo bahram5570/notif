@@ -33,7 +33,7 @@ const LastPageGeneticLayout = async () => {
               هیچوقت مشکل ژنتیکی‌ای متوجه‌تون نبوده. با خیال راحت برو جلو و اگه چیزی ذهنت رو مشغول کرد از ما بپرس تا
               کمکت کنیم!
             </CustomTypography>
-            <div className="mt-6 bg-[#EEEBFF] w-full border border-solid border-[#757AC2] rounded-xl grid grid-cols-[60%_40%]">
+            <div className="mt-6 bg-[#EEEBFF] w-full border border-solid border-[#757AC2] rounded-xl grid grid-cols-[60%_40%] overflow-hidden">
               <div className="p-4 !pl-0">
                 <CustomTypography tagType="h4" fontSize="Body_Small">
                   تهیه و تایید علمی توسط:

@@ -36,7 +36,7 @@ const LandingGeneticLayout = async () => {
               برای این منظور لازمه که پرسشنامه‌ای که در ادامه بهت نمایش میدیم رو با دقت تکمیل کنی. نکته مهم اینه که این
               فرم غربالگری و الگورتم شناسایی موجود در اون کاملا علمی بوده و توسط متخصص ژنتیک تهیه و تایید شده.
             </CustomTypography>
-            <div className="mt-6 bg-[#EEEBFF] w-full border border-solid border-[#757AC2] rounded-xl grid grid-cols-[60%_40%]">
+            <div className="mt-6 bg-[#EEEBFF] w-full border border-solid border-[#757AC2] rounded-xl grid grid-cols-[60%_40%] overflow-hidden">
               <div className="p-4 !pl-0">
                 <CustomTypography tagType="h4" fontSize="Body_Small">
                   تهیه و تایید علمی توسط:
