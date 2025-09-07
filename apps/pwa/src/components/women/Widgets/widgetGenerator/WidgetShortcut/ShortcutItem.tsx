@@ -27,13 +27,13 @@ const ShortcutItem = (props: ShortcutItemPropsType) => {
   }, [props.icon, isJson]);
 
   return (
-    <div className="flex flex-col justify-center items-center gap-2 pointer-events-auto" onClick={onClick}>
+    <div className="flex flex-col justify-center  items-center gap-2 pointer-events-auto" onClick={onClick}>
       {isJson ? (
         jsonData && <LottieJson animationData={jsonData} loop={true} />
       ) : (
         <CustomImage src={props.icon} width={72} height={72} />
       )}
-      <Typography scale="Lable" size="Medium">
+      <Typography scale="Lable" size="Medium" className="!w-[150px]" textAlign="center">
         {props.title}
       </Typography>
     </div>

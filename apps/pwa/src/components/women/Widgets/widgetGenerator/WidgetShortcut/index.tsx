@@ -20,7 +20,7 @@ const WidgetShortcut = ({ data }: ShortcutWidgetCardProps) => {
         </Typography>
       </div>
 
-      <div className="grid grid-cols-3 gap-3" style={{ direction: 'rtl' }}>
+      <div className="grid grid-cols-3 gap-4" style={{ direction: 'rtl' }}>
         {data.items.map((item, index) => (
           <ShortcutItem key={index} {...item} />
         ))}
