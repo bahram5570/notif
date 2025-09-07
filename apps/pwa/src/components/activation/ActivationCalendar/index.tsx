@@ -15,8 +15,12 @@ const ActivationCalendar = ({ endDate, startDate, valueHandler }: ActivationCale
   const { culture } = useCulture();
 
   const { swiperRef, currentSlide, currentSlideHandler } = useActivationCalendarSlide();
-  const { selectedDay, selectedDayHandler } = useActivationCalendarSelectedDay(valueHandler);
   const { calendarData } = useActivationCalendarData({ startDate, endDate, calendarType: culture.calendarType });
+  const { selectedDay, selectedDayHandler } = useActivationCalendarSelectedDay({
+    endDate,
+    valueHandler,
+    calendarType: culture.calendarType,
+  });
 
   return (
     <div className="relative w-full py-10">

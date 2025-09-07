@@ -10,7 +10,6 @@ import {
   GREGORIAN_FARSI_MONTH_LIST,
   JALALI_MONTH_LIST,
 } from '@constants/date.constants';
-import useTheme from '@hooks/useTheme';
 import moment from 'moment-jalaali';
 
 import { ActivationCalendarHeadingProps } from './types';
@@ -18,8 +17,6 @@ import { ActivationCalendarHeadingProps } from './types';
 const width = (CALENDAR_CELL_SIZE + 16) * 7;
 
 const ActivationCalendarHeading = (props: ActivationCalendarHeadingProps) => {
-  const { colors } = useTheme();
-
   const monthScript = useMemo(() => {
     let year = '';
     let month = '';
@@ -40,32 +37,23 @@ const ActivationCalendarHeading = (props: ActivationCalendarHeadingProps) => {
   }, [props.calendarType, props.currentMonthInfo]);
 
   const selectedDayScript = useMemo(() => {
-    if (props.selectedDay === '') {
-      return null;
-    }
-
     let day = 0;
-    let year = '';
     let month = '';
 
     if (props.calendarType === CalendarTypeEnum.Gregorian) {
       const dateList = props.selectedDay.split(DATE_SEPERATOR_REGEX);
-      year = dateList[0];
       day = Number(dateList[2]);
       month = GREGORIAN_FARSI_MONTH_LIST[Number(dateList[1]) - 1];
     }
 
     if (props.calendarType === CalendarTypeEnum.Jalali) {
       const dateList = moment(props.selectedDay, 'YYYY-MM-DD').format('jYYYY/jMM/jDD').split(DATE_SEPERATOR_REGEX);
-      year = dateList[0];
       day = Number(dateList[2]);
       month = JALALI_MONTH_LIST[Number(dateList[1]) - 1];
     }
 
-    return `${day} ${month} ${year}`;
+    return `(تاریخ انتخاب شده: ${day} ${month})`;
   }, [props.calendarType, props.selectedDay]);
-
-  const headingScript = selectedDayScript || monthScript;
 
   return (
     <div className="flex justify-between pb-5 mx-auto" style={{ width }}>
@@ -75,14 +63,15 @@ const ActivationCalendarHeading = (props: ActivationCalendarHeadingProps) => {
         onClick={() => props.currentSlideHandler('previousSlide')}
       />
 
-      <Typography
-        size="Small"
-        scale="Title"
-        color="FREE-STYLE"
-        freeColor={selectedDayScript ? colors.PrimaryWoman_Primary : colors.Neutral_OnBackground}
-      >
-        {headingScript}
-      </Typography>
+      <div className="flex flex-col items-center gap-1">
+        <Typography size="Small" scale="Title" color="Neutral_OnBackground">
+          {monthScript}
+        </Typography>
+
+        <Typography size="Medium" scale="Lable" color="PrimaryWoman_Primary">
+          {selectedDayScript}
+        </Typography>
+      </div>
 
       <ArrowIcon
         style={{ stroke: '#1C1B1E' }}

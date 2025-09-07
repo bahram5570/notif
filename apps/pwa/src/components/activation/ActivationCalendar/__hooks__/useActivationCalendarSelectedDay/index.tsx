@@ -1,12 +1,28 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const useActivationCalendarSelectedDay = (valueHandler: (v: string) => void) => {
+import { toGregorianData } from '@utils/dates';
+
+import { CalendarTypeEnum } from '@constants/date.constants';
+
+import { UseActivationCalendarSelectedDayTypes } from './types';
+
+const useActivationCalendarSelectedDay = (props: UseActivationCalendarSelectedDayTypes) => {
   const [selectedDay, setSelectedDay] = useState('');
 
   const selectedDayHandler = (v: string) => {
     setSelectedDay(v);
-    valueHandler(v);
+    props.valueHandler(v);
   };
+
+  useEffect(() => {
+    let result = props.endDate;
+
+    if (props.calendarType === CalendarTypeEnum.Jalali) {
+      result = toGregorianData(props.endDate);
+    }
+
+    selectedDayHandler(result);
+  }, [props.endDate, props.calendarType]);
 
   return { selectedDay, selectedDayHandler };
 };
