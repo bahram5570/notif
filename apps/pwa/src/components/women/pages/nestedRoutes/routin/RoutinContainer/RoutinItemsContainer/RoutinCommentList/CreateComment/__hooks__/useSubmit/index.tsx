@@ -25,7 +25,6 @@ const useSubmit = ({ programId }: { programId: string }) => {
     updateQuery({ queryKey: ['routinItems'], payload: routinPayload });
 
     onToast({
-      icon: 'success',
       type: 'success',
       message: ' نظر شما با موفقیت ثبت شد',
       position: 'bottom-center',

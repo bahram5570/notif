@@ -36,7 +36,6 @@ const CurrentRoutinIndexProvider = ({ children }: { children: React.ReactNode })
           : `  مرحله ${convertToPersianOrdinal(routinState.currentIndex)} چک لیست با موفقیت انجام شد`;
 
       onToast({
-        icon: 'success',
         type: 'success',
         message,
         position: 'bottom-center',

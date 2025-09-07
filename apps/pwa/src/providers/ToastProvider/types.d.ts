@@ -1,9 +1,9 @@
 export type OptionTypes = {
-  type?: 'normal' | 'success' | 'error';
+  type?: 'warning' | 'success' | 'error';
   englishNumbers?: boolean;
   duration?: number;
   message: string;
-  icon?: 'info' | 'success';
+  // icon?: 'info' | 'success' | 'error';
   position?: 'bottom-center' | 'bottom-left' | 'bottom-right' | 'top-center' | 'top-left' | 'top-right';
   style?: React.CSSProperties | undefined;
 };
