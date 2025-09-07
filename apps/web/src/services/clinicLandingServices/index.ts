@@ -33,3 +33,13 @@ export const clinicDoctorInfoService = async (doctorId: string, clinicType: numb
 
   return { error, doctorData: data };
 };
+
+export const clinicDoctorInfoMetaService = async (doctorId: string, clinicType: number) => {
+  const { data, error } = await http<Pick<DoctorInfoTypes, 'speciality' | 'name'>>({
+    url: `clinic/doctor/info/meta/${doctorId}/${clinicType}`,
+    method: 'GET',
+    cache: 'no-store',
+  });
+
+  return { error, doctorData: data };
+};

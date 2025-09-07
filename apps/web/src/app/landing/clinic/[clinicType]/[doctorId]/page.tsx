@@ -1,15 +1,13 @@
-import { clinicDoctorInfoService } from '@services/clinicLandingServices';
+import { clinicDoctorInfoMetaService, clinicDoctorInfoService } from '@services/clinicLandingServices';
 
 import ClinicDoctorPage from '@components/pages/landing/ClinicDoctorPage';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
 
-export async function generateMetadata({
-  params,
-}: {
+export const generateMetadata = async (props: {
   params: { doctorId: string; clinicType: number };
-}): Promise<Metadata> {
-  const { doctorData } = await clinicDoctorInfoService(params.doctorId, params.clinicType);
+}): Promise<Metadata> => {
+  const { doctorData } = await clinicDoctorInfoMetaService(props.params.doctorId, props.params.clinicType);
 
   if (doctorData) {
     return {
@@ -17,20 +15,20 @@ export async function generateMetadata({
       robots: 'noindex, nofollow',
       description: `مشاوره و ویزیت آنلاین دکتر ${doctorData.name} ${doctorData.speciality} در ایمپو` || '',
       alternates: {
-        canonical: `${HOST_URL}/landing/clinic/${params.clinicType}/${params.doctorId}`,
-      },
-    };
-  } else {
-    return {
-      title: '',
-      robots: 'index, follow',
-      description: '',
-      alternates: {
-        canonical: `${HOST_URL}/landing/clinic/${params.clinicType}/${params.doctorId}`,
+        canonical: `${HOST_URL}/landing/clinic/${props.params.clinicType}/${props.params.doctorId}`,
       },
     };
   }
-}
+
+  return {
+    title: '',
+    robots: 'index, follow',
+    description: '',
+    alternates: {
+      canonical: `${HOST_URL}/landing/clinic/${props.params.clinicType}/${props.params.doctorId}`,
+    },
+  };
+};
 
 const ClinicDoctor = async ({ params }: { params: { doctorId: string; clinicType: number } }) => {
   const { doctorData } = await clinicDoctorInfoService(params.doctorId, params.clinicType);
