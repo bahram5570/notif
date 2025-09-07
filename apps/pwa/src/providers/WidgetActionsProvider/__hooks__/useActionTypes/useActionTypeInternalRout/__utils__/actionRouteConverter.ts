@@ -139,6 +139,7 @@ export const actionRouteConverter = async (serverLink: string) => {
 
     case '/onboarding':
       result = `/protected/featureIntro?searchData=${encodeURIComponent(queries)}`;
+      break;
 
     case '/note':
       result = '/protected/note/addNote';
