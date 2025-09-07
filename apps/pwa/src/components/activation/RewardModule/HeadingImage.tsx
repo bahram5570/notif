@@ -1,12 +1,12 @@
 import Image from 'next/image';
 
-import useIsLargeScreenHeight from '@hooks/__activation__/useIsLargeScreenHeight';
+import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
 import { LottieCanvas } from '@lib/LottieCanvas';
 
 import { HeadingImageProps } from './types';
 
 const HeadingImage = ({ backgroundColor, image, doRepeat, order }: HeadingImageProps) => {
-  const { isLargeScreen } = useIsLargeScreenHeight();
+  const { isLargeScreen } = useActivationIsLargeScreen();
 
   const isLottie = image.includes('.lottie');
 

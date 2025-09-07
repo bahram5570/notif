@@ -41,6 +41,7 @@ export enum WidgetStoryTypeEnum {
   Image = 2,
   // Cta = 3,
   CtaButton = 4,
+  MoodTracker = 5,
 }
 
 export enum ActionTypeEnum {

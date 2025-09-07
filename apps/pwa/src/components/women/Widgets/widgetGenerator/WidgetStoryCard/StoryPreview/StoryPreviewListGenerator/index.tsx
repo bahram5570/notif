@@ -3,12 +3,15 @@ import Image from 'next/image';
 
 import Button from '@components/ui/Button';
 import useWidgetActions from '@hooks/useWidgetActions';
+import { WidgetStoryTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
+import { STORY_MOOD_TRACKER_NAME } from '../../constants';
+import { ViewStoryHandlerTypes } from '../__hooks__/useStoryUpdate/useIsView/types';
 import ProgressBars from './ProgressBars';
 import SaveStory from './SaveStory';
 import SlidesNavigation from './SlidesNavigation';
 import StoriesLoading from './StoriesLoading';
-import useCheckVideoSrc from './__hooks__/useCheckVideoSrc';
+import StoryMoodTracker from './StoryMoodTracker';
 import useStorySlides from './__hooks__/useStorySlides';
 import { StoryPreviewListGeneratorProps } from './types';
 
@@ -19,73 +22,87 @@ const StoryPreviewListGenerator = ({
   viewStoryHandler,
   storyItems,
 }: StoryPreviewListGeneratorProps) => {
+  const isMoodTracker = storyItems.id === STORY_MOOD_TRACKER_NAME;
+
+  const handleViewStory: ViewStoryHandlerTypes = (slideId) => {
+    if (isMoodTracker) {
+      return;
+    }
+
+    viewStoryHandler(slideId);
+  };
+
   const { actionHandler } = useWidgetActions();
-  // const {checkFormatVideo}=useCheckVideoSrc()
-  const storySlideProps = useStorySlides({ stories: storyItems.stories, viewStoryHandler, navigateStoryHandler });
+  const storySlideProps = useStorySlides({ stories: storyItems.stories, handleViewStory, navigateStoryHandler });
 
   return (
-    <div className="relative w-full h-full">
-      <div className="relative w-full aspect-[9_/_16] flex flex-col">
-        <ProgressBars
-          stories={storyItems.stories}
-          viewStoryHandler={viewStoryHandler}
-          isLoading={storySlideProps.isLoading}
-          isCurrentStorySlide={isCurrentStorySlide}
-          currentSlideIndex={storySlideProps.currentSlideIndex}
-          slideIndexHandler={storySlideProps.slideIndexHandler}
-        />
+    <div className="relative w-full h-full flex flex-col">
+      <ProgressBars
+        stories={storyItems.stories}
+        viewStoryHandler={handleViewStory}
+        isLoading={storySlideProps.isLoading}
+        isCurrentStorySlide={isCurrentStorySlide}
+        currentSlideIndex={storySlideProps.currentSlideIndex}
+        slideIndexHandler={storySlideProps.slideIndexHandler}
+      />
 
-        <SlidesNavigation slideIndexHandler={storySlideProps.slideIndexHandler} />
+      {isMoodTracker && storyItems.events[0].type === WidgetStoryTypeEnum.MoodTracker && (
+        <StoryMoodTracker moodTrackerData={storyItems.events[0]} />
+      )}
 
-        {storySlideProps.isLoading && <StoriesLoading />}
+      {!isMoodTracker && (
+        <>
+          {storySlideProps.isLoading && <StoriesLoading />}
 
-        {storySlideProps.image !== null && (
-          <div className="absolute top-0 left-0 right-0 bottom-0 pointer-events-none select-none">
-            <Image
-              fill={true}
-              className="w-full h-auto"
-              src={storySlideProps.image}
-              alt={storySlideProps.image}
-              onLoad={storySlideProps.isLoadingHandler}
-              key={storySlideProps.image + storySlideProps.currentSlideIndex}
-            />
-          </div>
-        )}
+          <SlidesNavigation slideIndexHandler={storySlideProps.slideIndexHandler} />
 
-        {storySlideProps.video !== null && (
-          <div className="absolute top-0 left-0 right-0 bottom-0 pointer-events-none select-none">
-            <video
-              autoPlay={true}
-              controls={false}
-              className="w-full h-auto"
-              onCanPlayThrough={storySlideProps.isLoadingHandler}
-              playsInline
-              webkit-playsinline="true"
-              key={storySlideProps.video + storySlideProps.currentSlideIndex}
-            >
-              {/* <source src={checkFormatVideo(storySlideProps.video) } /> */}
-              <source src={storySlideProps.video} />
-            </video>
-          </div>
-        )}
+          {storySlideProps.image !== null && (
+            <div className="absolute top-0 left-0 right-0 aspect-[9_/_16] pointer-events-none select-none">
+              <Image
+                fill={true}
+                className="w-full h-auto"
+                src={storySlideProps.image}
+                alt={storySlideProps.image}
+                onLoad={storySlideProps.isLoadingHandler}
+                key={storySlideProps.image + storySlideProps.currentSlideIndex}
+              />
+            </div>
+          )}
 
-        {storySlideProps.ctaButton !== null && (
-          <div className="mt-auto p-4 z-20">
-            <Button
-              size="medium"
-              variant="fill"
-              color="FREE-STYLES"
-              onClick={() => actionHandler(storySlideProps.ctaButton!.action)}
-              buttonColor={colorFormatConverter(storySlideProps.ctaButton.backgroundColor)}
-              contentsColor={colorFormatConverter(storySlideProps.ctaButton.foregroundColor)}
-            >
-              {storySlideProps.ctaButton.text}
-            </Button>
-          </div>
-        )}
-      </div>
+          {storySlideProps.video !== null && (
+            <div className="absolute top-0 left-0 right-0 aspect-[9_/_16] pointer-events-none select-none">
+              <video
+                autoPlay={true}
+                controls={false}
+                playsInline={true}
+                className="w-full h-auto"
+                webkit-playsinline="true"
+                onCanPlayThrough={storySlideProps.isLoadingHandler}
+                key={storySlideProps.video + storySlideProps.currentSlideIndex}
+              >
+                <source src={storySlideProps.video} />
+              </video>
+            </div>
+          )}
 
-      <SaveStory selectHandler={() => isBookmarkedHandler(storyItems.id)} isBookmarked={storyItems.isBookmarked} />
+          {storySlideProps.ctaButton !== null && (
+            <div className="mt-auto p-4 pb-8 z-20">
+              <Button
+                size="medium"
+                variant="fill"
+                color="FREE-STYLES"
+                onClick={() => actionHandler(storySlideProps.ctaButton!.action)}
+                buttonColor={colorFormatConverter(storySlideProps.ctaButton.backgroundColor)}
+                contentsColor={colorFormatConverter(storySlideProps.ctaButton.foregroundColor)}
+              >
+                {storySlideProps.ctaButton.text}
+              </Button>
+            </div>
+          )}
+
+          <SaveStory isBookmarked={storyItems.isBookmarked} selectHandler={() => isBookmarkedHandler(storyItems.id)} />
+        </>
+      )}
     </div>
   );
 };

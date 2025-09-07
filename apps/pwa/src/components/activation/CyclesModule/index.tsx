@@ -1,6 +1,6 @@
 import WheelPicker from '@components/ui/WheelPicker';
 import WheelPickerDivider from '@components/ui/WheelPicker/WheelPickerDivider';
-import useIsLargeScreenHeight from '@hooks/__activation__/useIsLargeScreenHeight';
+import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
 
 import useInitialValueHandler from './__hooks__/useInitialValueHandler';
 import useListMaker from './__hooks__/useListMaker';
@@ -8,7 +8,7 @@ import { CyclesModuleProps } from './types';
 
 const CyclesModule = (props: CyclesModuleProps) => {
   const { dataList } = useListMaker(props);
-  const { isLargeScreen } = useIsLargeScreenHeight();
+  const { isLargeScreen } = useActivationIsLargeScreen();
 
   const valueHandler = (v: string | number) => {
     props.valueHandler(Number(v));

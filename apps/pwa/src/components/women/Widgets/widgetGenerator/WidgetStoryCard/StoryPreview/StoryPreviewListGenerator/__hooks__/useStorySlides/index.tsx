@@ -10,7 +10,8 @@ import {
   UseStorySlidesProps,
 } from './types';
 
-const useStorySlides = ({ stories, navigateStoryHandler, viewStoryHandler }: UseStorySlidesProps) => {
+const useStorySlides = ({ stories, navigateStoryHandler, handleViewStory }: UseStorySlidesProps) => {
+  const [isLoading, setIsLoading] = useState(false);
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
 
   useEffect(() => {
@@ -29,7 +30,7 @@ const useStorySlides = ({ stories, navigateStoryHandler, viewStoryHandler }: Use
       }
 
       const slideId = stories[currentSlideIndex].id;
-      viewStoryHandler(slideId);
+      handleViewStory(slideId);
     } else {
       if (currentSlideIndex <= 0) {
         navigateStoryHandler(false);
@@ -57,8 +58,6 @@ const useStorySlides = ({ stories, navigateStoryHandler, viewStoryHandler }: Use
         break;
     }
   });
-
-  const [isLoading, setIsLoading] = useState(false);
 
   const isLoadingHandler = () => {
     setIsLoading(false);
