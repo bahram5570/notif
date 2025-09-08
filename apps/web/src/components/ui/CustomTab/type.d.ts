@@ -1,8 +1,9 @@
+import { BabyCheckCassetteGuideTabEnum } from '@components/pages/babyCheckCassetteGuide/BabyCheckCassetteGuideContainer/enum';
 import { BabyCheckGuideTabEnum } from '@components/pages/babyCheckGuide/BabyCheckGuideContainer/enum';
 import { KitGuideTabEnum } from '@components/pages/kitGuide/KitGuideContainer/enum';
 
 export type TabListType = {
-  id: BabyCheckGuideTabEnum | KitGuideTabEnum;
+  id: BabyCheckGuideTabEnum | KitGuideTabEnum | BabyCheckCassetteGuideTabEnum;
   label: string;
 }[];
 
