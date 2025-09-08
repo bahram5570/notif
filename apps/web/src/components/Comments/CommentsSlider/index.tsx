@@ -1,13 +1,12 @@
 'use client';
 
+import CustomImage from '@components/ui/CustomImage';
+// import { useState } from 'react';
+import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 import { COLORS_LIST } from '@theme/colors';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-import CustomImage from '@components/ui/CustomImage';
-// import { useState } from 'react';
-import CustomTypography from '@components/ui/CustomTypography';
 
 // import CommentsSliderDots from './CommentsSliderDots';
 import { CommentsSliderTypes } from './types';

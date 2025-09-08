@@ -1,8 +1,7 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import { JaanPanahHaveChildrenEnum } from '@components/pages/landing/JaanPanahPage/enum';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import { MOVIE_PART1, MOVIE_PART2, MOVIE_PART3 } from './constants';
 import { MoviePropsType } from './type';

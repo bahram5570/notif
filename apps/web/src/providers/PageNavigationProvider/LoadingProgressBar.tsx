@@ -1,7 +1,7 @@
+import styles from './styles.module.css';
+
 import { MAX_WIDTH } from '@constants/app.constants';
 import { COLORS_LIST } from '@theme/colors';
-
-import styles from './styles.module.css';
 
 const LoadingProgressBar = () => {
   return (

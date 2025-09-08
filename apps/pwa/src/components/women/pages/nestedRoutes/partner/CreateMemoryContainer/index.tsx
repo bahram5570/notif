@@ -6,11 +6,11 @@ import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import useCalendarDateFormat from '@components/women/pages/mainRoutes/partner/__hooks__/useCalendarDateFormat';
 import useFileUpload from '@hooks/useFileUpload';
 import moment from 'moment-jalaali';
 import { useRouter } from 'next/navigation';
 
+import useCalendarDateFormat from '../__hooks__/useCalendarDateFormat';
 import MemoryHeader from './MemoryHeader';
 import TextareaInput from './TextareaInput';
 import UploadInput from './UploadInput';

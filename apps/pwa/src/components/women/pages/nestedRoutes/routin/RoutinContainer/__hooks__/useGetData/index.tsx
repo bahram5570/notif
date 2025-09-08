@@ -8,7 +8,7 @@ import { RoutinResponseTypes } from './types';
 
 const useGetData = () => {
   const { getQueryParams } = useQueryParamsHandler();
-  const { getQuery, newQuery } = useCustomReactQuery();
+  const { getQuery, newQuery } = useCustomReactQuery(['routinItems']);
 
   const searchData = getQueryParams('searchData');
 

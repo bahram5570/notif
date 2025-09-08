@@ -1,6 +1,5 @@
 import CustomModal from '@components/ui/CustomModal';
 import 'swiper/css/effect-flip';
-// import { EffectFlip, Navigation, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import StoryPreviewListGenerator from './StoryPreviewListGenerator';
@@ -28,11 +27,9 @@ const StoryPreview = ({ list, saveHandler }: StoryPreviewPorps) => {
           {isOpen && (
             <Swiper
               dir="rtl"
-              // effect="flip"
               className="w-full h-full"
               initialSlide={storyIndex}
               onSwiper={(s) => (swiperRef.current = s)}
-              // modules={[EffectFlip, Pagination, Navigation]}
               onSlideChange={(s) => storyIndexHandler(s.activeIndex)}
             >
               {list.map((item, index) => (

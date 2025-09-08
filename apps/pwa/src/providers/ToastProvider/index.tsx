@@ -4,6 +4,7 @@ import { createContext } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 
 import InfoIcon from '@assets/icons/infoIcon.svg';
+import TickIcon from '@assets/icons/tickIcon.svg';
 
 import Typography from '@components/ui/Typography';
 import useTheme from '@hooks/useTheme';
@@ -15,21 +16,40 @@ export const ToastContext = createContext<ToastTypes>({ onToast: () => {} });
 const ToastProvider = ({ children }: { children: React.ReactNode }) => {
   const { colors } = useTheme();
 
-  const toastHandler = ({ message, duration, type = 'normal', icon = 'info', englishNumbers = false }: OptionTypes) => {
-    const iconsList = { info: <InfoIcon className="w-5 h-auto" style={{ fill: colors.Yellow }} /> };
-    const colorsList = {
+  const toastHandler = ({
+    message,
+    duration,
+    type = 'success',
+    // icon = 'success',
+    englishNumbers = false,
+    position = 'top-right',
+    style,
+  }: OptionTypes) => {
+    const iconsList = {
+      warning: <InfoIcon className="w-5 h-auto" style={{ fill: colors.Yellow }} />,
+      success: <TickIcon className="w-4 h-auto" style={{ fill: colors.Success_Success }} />,
+      error: <InfoIcon className="w-5 h-auto" style={{ fill: colors.Error_Error }} />,
+    };
+
+    const backgroundColorsList = {
+      error: colors.Error_ErrorContainer,
+      success: colors.Success_SuccessContainer,
+      warning: colors.Warning_WarininContainer,
+    };
+
+    const borderColorList = {
       error: colors.Error_Error,
       success: colors.Success_Success,
-      normal: colors.Surface_InverseSurface,
+      warning: colors.Warning_Warning,
     };
 
     const content = (
       <div className="flex items-center gap-2">
-        {iconsList[icon]}
+        {iconsList[type]}
 
         <div className="w-[1px] h-7 block" style={{ backgroundColor: colors.Surface_OnSurfaceVariant }} />
 
-        <Typography toEnglishNumber={englishNumbers} color="White" scale="Body" size="Small">
+        <Typography toEnglishNumber={englishNumbers} scale="Body" size="Small" color="Surface_InverseSurface">
           {message}
         </Typography>
       </div>
@@ -37,15 +57,16 @@ const ToastProvider = ({ children }: { children: React.ReactNode }) => {
 
     toast(content, {
       rtl: true,
-      theme: 'dark',
-      position: 'top-right',
+      theme: 'colored',
+      position: position,
       autoClose: duration || 3000,
       progressStyle: { backgroundColor: colors.Grey_600 },
       closeButton: false,
       closeOnClick: true,
       style: {
-        backgroundColor: colorsList.normal,
-        borderColor: colorsList[type],
+        ...style,
+        backgroundColor: backgroundColorsList[type],
+        borderColor: borderColorList[type],
         borderStyle: 'solid',
         borderRadius: '12px',
         borderWidth: '2px',

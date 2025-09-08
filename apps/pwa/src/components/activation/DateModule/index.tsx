@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import WheelPicker from '@components/ui/WheelPicker';
 import WheelPickerDivider from '@components/ui/WheelPicker/WheelPickerDivider';
-import useIsLargeScreenHeight from '@hooks/__activation__/useIsLargeScreenHeight';
+import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
 
 import useDefaultDate from './__hooks__/useDefaultDate';
 import useListsMaker from './__hooks__/useListsMaker';
@@ -10,7 +10,7 @@ import useValueHandler from './__hooks__/useValueHandler';
 import { DateModuleProps, StateValuesHandlerTypes, ValuesTypes } from './types';
 
 const DateModule = ({ defaultDate, startDate, endDate, valueHandler }: DateModuleProps) => {
-  const { isLargeScreen } = useIsLargeScreenHeight();
+  const { isLargeScreen } = useActivationIsLargeScreen();
   const [values, setValues] = useState<ValuesTypes>({ month: '', year: '', day: '' });
 
   useValueHandler({ values, valueHandler });

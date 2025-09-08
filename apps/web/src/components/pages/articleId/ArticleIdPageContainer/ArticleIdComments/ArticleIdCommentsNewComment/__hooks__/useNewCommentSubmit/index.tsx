@@ -1,6 +1,6 @@
-import useApi from '@hooks/useApi';
-
 import { toEnglishNumbers } from '@utils/numbers';
+
+import useApi from '@hooks/useApi';
 
 import { SubmitNewCommentHandlerTypes, UseNewCommentSubmitTypes } from './types';
 

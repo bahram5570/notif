@@ -1,4 +1,5 @@
 import styles from './styles.module.css';
+
 import { ArticleIdContentsTypes } from './types';
 
 const ArticleIdContents = ({ body }: ArticleIdContentsTypes) => {

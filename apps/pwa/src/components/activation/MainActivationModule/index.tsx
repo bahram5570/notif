@@ -1,6 +1,6 @@
 import { Suspense } from 'react';
 
-import useIsLargeScreenHeight from '@hooks/__activation__/useIsLargeScreenHeight';
+import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
 
 import ActivationBackBtn from '../ActivationBackBtn';
 import ActivationHeading from '../ActivationHeading';
@@ -10,7 +10,7 @@ import ContinueBtn from './ContinueBtn';
 import { MainActivationModuleProps } from './types';
 
 const MainActivationModule = (props: MainActivationModuleProps) => {
-  const { isLargeScreen } = useIsLargeScreenHeight();
+  const { isLargeScreen } = useActivationIsLargeScreen();
 
   const showContinueBtn = typeof props.showContinueBtn === 'undefined' ? true : props.showContinueBtn;
   const paddingTopHeight = isLargeScreen ? HEADING_HEIGHT : HEADING_HEIGHT - ACTIVATION_HEADING_ICON_WIDTH;

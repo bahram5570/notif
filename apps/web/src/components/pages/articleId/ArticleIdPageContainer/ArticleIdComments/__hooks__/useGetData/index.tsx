@@ -1,6 +1,6 @@
-import useApi from '@hooks/useApi';
-
 import { useEffect, useState } from 'react';
+
+import useApi from '@hooks/useApi';
 
 import { ARTICLE_ID_COMMENTS_PAGE_SIZE } from './constants';
 import { ArticleIdCommentResponseTypes, ArticleIdCommentsDataTypes } from './types';

@@ -1,10 +1,10 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import { useEffect, useRef, useState } from 'react';
 
 import CrossIcon from '@assets/icons/cross.svg';
 import MinusIcon from '@assets/icons/minus.svg';
+
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import { ArticleIdFaqGeneratorTypes } from './types';
 

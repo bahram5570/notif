@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 
 import ProgressCycleLoading from '@components/ProgressCycleLoading';
 import useGoalFinder from '@hooks/__activation__/useGoalFinder';
+import useAnalytics from '@hooks/useAnalytics';
 import useActivationGoBackHandler from '@providers/__activation__/ActivationProvider/__hooks__/useActivationGoBackHandler';
 import { useRouter } from 'next/navigation';
 
@@ -14,12 +15,15 @@ const FakeCyclePageContainer = ({ payload, payloadHandler }: FakeCyclePageContai
   useFakeCycleBackHandler();
   const router = useRouter();
   useActivationGoBackHandler();
+  const { callEvent } = useAnalytics();
   const { goalInfo } = useGoalFinder({ status: payload.status, periodStatus: payload.periodStatus });
   const { createCycleLoading, callCreateSampleApi, createCycleSuccess } = useCreateSample({
     payload,
   });
 
   const successHandler = () => {
+    const pathList = location.pathname.split('/');
+    callEvent(`${pathList[1]} ${pathList[2]}`);
     router.push('sampleCycle');
   };
 

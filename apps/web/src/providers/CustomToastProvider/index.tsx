@@ -1,11 +1,10 @@
 'use client';
 
-import { COLORS_LIST } from '@theme/colors';
+import { createContext } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 
-import { createContext } from 'react';
-
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import { CustomToastOptionTypes, CustomToastTypes } from './types';
 

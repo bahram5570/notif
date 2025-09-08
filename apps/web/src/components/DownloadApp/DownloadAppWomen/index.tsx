@@ -1,11 +1,11 @@
 'use client';
 
-import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
-
 import ImpoIcon from '@assets/icons/impo.svg';
+
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
+import useBreakPoint from '@hooks/useBreakPoint';
+import { COLORS_LIST } from '@theme/colors';
 
 import DownloadAppAndroid from './DownloadAppAndroid';
 import DownloadAppIos from './DownloadAppIos';
@@ -44,23 +44,29 @@ const DownloadApp = () => {
         <ImpoIcon className="w-[72px] mb-2 md:hidden" />
 
         <div className="flex gap-1">
-          <CustomTypography tagType="span" fontSize="Headline_Medium" color={'Primary_Primary'}>
-            ۷ روز
-          </CustomTypography>
-
           <CustomTypography tagType="span" fontSize="Headline_Medium">
-            اشتراک رایگان ایمپو
+            ایمپو برات لازمه:
           </CustomTypography>
         </div>
 
         <section className="flex flex-col items-center">
-          <CustomTypography
-            fontSize={breakPoint.laptop ? 'Body_Medium' : 'Body_Large'}
-            className="pt-2 pb-10 px-2 text-center"
-          >
-            اگه می‌خوای بچه‌دار بشی و باید تاریخ دقیق تخمک‌گذاریت رو بدونی، اگه می‌خوای هیچ‌وقت پریودت سوپرایزت نکنه،
-            اگه بارداری و می‌خوای از وضعیت هفته به هفته جنینت باخبر بشی همین الان ایمپو رو نصب کن
-          </CustomTypography>
+          <div className="pt-2 pb-10 -mx-2">
+            <CustomTypography fontSize={breakPoint.laptop ? 'Body_Medium' : 'Body_Large'} className="text-center">
+              اگه می‌خوای بچه‌دار شی و روز دقیق رابطه رو بدونی
+            </CustomTypography>
+
+            <CustomTypography fontSize={breakPoint.laptop ? 'Body_Medium' : 'Body_Large'} className="text-center">
+              اگه می‌خوای هیچ‌وقت پریودت سوپرایزت نکنه
+            </CustomTypography>
+
+            <CustomTypography fontSize={breakPoint.laptop ? 'Body_Medium' : 'Body_Large'} className="text-center">
+              اگه بارداری و می‌خوای از وضعیت هفتگی جنینت باخبر بشی
+            </CustomTypography>
+
+            <CustomTypography fontSize={breakPoint.laptop ? 'Body_Medium' : 'Body_Large'} className="text-center">
+              اگه سلامتیت برات مهمه، همین الان ایمپو رو نصب کن
+            </CustomTypography>
+          </div>
 
           <DownloadAppAndroid />
 

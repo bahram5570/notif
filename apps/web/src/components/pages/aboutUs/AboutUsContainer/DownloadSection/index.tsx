@@ -1,14 +1,14 @@
 'use client';
 
-import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
-
 import DownloadIcon from '@assets/icons/document-upload.svg';
 import LogoTypeIconMobileSize from '@assets/icons/logoType-mobile-size.svg';
 import LogoTypeIcon from '@assets/icons/logoType.svg';
+
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import useBreakPoint from '@hooks/useBreakPoint';
+import { COLORS_LIST } from '@theme/colors';
 
 const DownloadSection = () => {
   const { breakPoint } = useBreakPoint();

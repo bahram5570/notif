@@ -1,6 +1,6 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-
 import { useState } from 'react';
+
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 import WheelPickerCellGenerator from './WheelPickerCellGenerator';
 import useWheelPickerListData from './__hooks__/useWheelPickerListData';

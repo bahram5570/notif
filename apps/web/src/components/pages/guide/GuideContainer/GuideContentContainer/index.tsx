@@ -1,9 +1,8 @@
 'use client';
 
-import useBreakPoint from '@hooks/useBreakPoint';
-
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
+import useBreakPoint from '@hooks/useBreakPoint';
 
 import CircleTimer from '../CircleTimer';
 import { STEP_LIST } from '../constants';

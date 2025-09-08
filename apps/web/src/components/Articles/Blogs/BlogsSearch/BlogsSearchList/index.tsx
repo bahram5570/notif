@@ -1,10 +1,10 @@
-import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
+import styles from './styles.module.css';
 
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import useBreakPoint from '@hooks/useBreakPoint';
+import { COLORS_LIST } from '@theme/colors';
 
-import styles from './styles.module.css';
 import { BlogsSearchListTypes } from './types';
 
 const BlogsSearchList = ({ articlesSearchList }: BlogsSearchListTypes) => {

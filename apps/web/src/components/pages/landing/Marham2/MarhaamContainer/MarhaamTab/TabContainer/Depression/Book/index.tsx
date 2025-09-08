@@ -1,13 +1,13 @@
 'use client';
 
-import useBreakPoint from '@hooks/useBreakPoint';
-import useOperatingSystem from '@hooks/useOperatingSystem';
-import { COLORS_LIST } from '@theme/colors';
+import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
+import useBreakPoint from '@hooks/useBreakPoint';
+import useOperatingSystem from '@hooks/useOperatingSystem';
+import { COLORS_LIST } from '@theme/colors';
 
 import { BOOK_PART1 } from '../../PsychologicalAnesthesia/Movie/constants';
 import useCopy from './__hooks__/useCopy';

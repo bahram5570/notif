@@ -1,7 +1,6 @@
+import GenderDeterminationPage from '@components/pages/genderDetermination/GenderDeterminationPage';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
-
-import GenderDeterminationPage from '@components/pages/genderDetermination/GenderDeterminationPage';
 
 export const metadata: Metadata = {
   title: 'تعیین جنسیت',

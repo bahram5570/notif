@@ -1,7 +1,7 @@
 import { enterphaseHandler } from './enterphaseHandler';
 import { shareExperienceHandler } from './shareExperienceHandler';
 
-export const actionRouteConverter = (serverLink: string) => {
+export const actionRouteConverter = async (serverLink: string) => {
   const baseRoute = serverLink.split('?')[0];
   const queries = serverLink.split('?')[1];
   let result = '';
@@ -32,24 +32,24 @@ export const actionRouteConverter = (serverLink: string) => {
       break;
 
     case '/partner/messenger':
-      result = '/protected/partner/message';
+      result = '/protected/partnerMessage';
       break;
 
     case '/partner/memory':
-      result = '/protected/partner/memory';
+      result = '/protected/memory';
       break;
 
     case '/partner/challenge/daly':
-      result = '/protected/partner/challenge';
+      result = '/protected/challenge';
       break;
 
     // todo fix
     case '/chat':
-      result = '/protected/partner/challenge';
+      result = '/protected/challenge';
       break;
 
     case '/partner/challenge/archive':
-      result = '/protected/partner/history';
+      result = '/protected/ChallengeHistory';
       break;
 
     // todo fix reminder
@@ -78,7 +78,10 @@ export const actionRouteConverter = (serverLink: string) => {
       break;
 
     case '/enterphase':
-      result = enterphaseHandler(queries);
+      result = await enterphaseHandler(queries);
+      break;
+    case '/routines':
+      result = `/protected/routinTabs${queries ? `?${queries}` : ''}`;
       break;
 
     case '/diet':
@@ -136,6 +139,11 @@ export const actionRouteConverter = (serverLink: string) => {
 
     case '/onboarding':
       result = `/protected/featureIntro?searchData=${encodeURIComponent(queries)}`;
+      break;
+
+    case '/note':
+      result = '/protected/note/addNote';
+      break;
   }
 
   return result;

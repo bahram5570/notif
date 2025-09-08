@@ -1,7 +1,6 @@
+import ResumePage from '@components/pages/careers/ResumePage';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
-
-import ResumePage from '@components/pages/careers/ResumePage';
 
 export const metadata: Metadata = {
   title: 'فرصت های شغلی ایمپو',

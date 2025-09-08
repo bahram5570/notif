@@ -1,10 +1,9 @@
 'use client';
 
-import useBreakPoint from '@hooks/useBreakPoint';
-
 import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
+import useBreakPoint from '@hooks/useBreakPoint';
 
 import useTimer from './__hooks__/useTimer';
 import { CircleTimerPropsType } from './type';

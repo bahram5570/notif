@@ -1,9 +1,8 @@
 'use client';
 
-import useBreakPoint from '@hooks/useBreakPoint';
-
 import BlogsCategories from '@components/pages/blogs/BlogsCategory/BlogsCategories';
 import CustomTypography from '@components/ui/CustomTypography';
+import useBreakPoint from '@hooks/useBreakPoint';
 
 import useFilteredCategoriesList from './__hooks__/useFilteredCategoriesList';
 import { CategoryBlogsCategoriesTypes } from './types';

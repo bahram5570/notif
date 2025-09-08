@@ -1,6 +1,6 @@
-import useCustomToast from '@hooks/useCustomToast';
-
 import { useState } from 'react';
+
+import useCustomToast from '@hooks/useCustomToast';
 
 import { COMMENTS_MAX_CHARACTERS } from '../../constants';
 import useNewCommentSubmit from '../useNewCommentSubmit';

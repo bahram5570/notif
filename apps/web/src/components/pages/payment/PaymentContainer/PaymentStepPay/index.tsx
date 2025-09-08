@@ -1,11 +1,11 @@
 'use client';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import WhatsAppIcon from '@assets/icons/WhatsApp.svg';
 import TelegramIcon from '@assets/icons/telegram2.svg';
+
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import useCopy from '../__hooks__/useCopy';
 import { TELEGRAM_LINK, WHATSAPP_NUMBER } from '../constants';

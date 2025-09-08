@@ -1,11 +1,11 @@
 'use client';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import StarIcon from '@assets/icons/Stars.svg';
+
 import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import useDownloadPdf from './__hooks__/useDownloadPdf';
 

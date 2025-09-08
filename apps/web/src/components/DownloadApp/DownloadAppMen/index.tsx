@@ -1,11 +1,11 @@
 'use client';
 
-import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
-
 import ImpoIcon from '@assets/icons/impoMen.svg';
+
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
+import useBreakPoint from '@hooks/useBreakPoint';
+import { COLORS_LIST } from '@theme/colors';
 
 import { DOWNLOAD_APP_SECTION_ID } from '../DownloadAppWomen/constants';
 import DownloadAppAndroid from './DownloadAppAndroid';
@@ -22,16 +22,6 @@ const DownloadAppMen = () => {
     >
       <div className="flex flex-col items-center w-full md:w-[400px]">
         <ImpoIcon className="w-[72px] mb-2 md:hidden" />
-
-        <div className="flex gap-1">
-          <CustomTypography tagType="span" fontSize="Headline_Medium" color={'Blue_500'}>
-            ۷ روز
-          </CustomTypography>
-
-          <CustomTypography tagType="span" fontSize="Headline_Medium">
-            اشتراک رایگان ایمپو آقایان
-          </CustomTypography>
-        </div>
 
         <section className="flex flex-col items-center">
           <CustomTypography

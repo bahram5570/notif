@@ -1,24 +1,20 @@
+import http from '@services/http';
+
 import { BlogsResponseTypes } from '@app/blogs/types';
+import CategoryPageContainer from '@components/pages/category/slug/CategoryPageContainer';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import CategoryPageContainer from '@components/pages/category/slug/CategoryPageContainer';
-import http from '@services/http';
-
 import CategorySchema from '../../../schema/CategorySchema';
 import { CategoryResponseTypes, CategoryValidationTypes } from './types';
 
-const getCategorydata = async (slug: string) => {
-  return await http<CategoryResponseTypes>({
+export const generateMetadata = async ({ params }: { params: { slug: string } }): Promise<Metadata> => {
+  const { data, error } = await http<Pick<CategoryResponseTypes, 'title'>>({
     method: 'GET',
     cache: 'no-store',
-    url: `support/article/category/${slug}`,
+    url: `support/article/category/meta/${params.slug}`,
   });
-};
-
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { data, error } = await getCategorydata(params.slug);
 
   if (data) {
     return {
@@ -34,10 +30,14 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: error?.message,
     };
   }
-}
+};
 
 const Category = async ({ params }: { params: { slug: string } }) => {
-  const { data: categoryData } = await getCategorydata(params.slug);
+  const { data: categoryData } = await http<CategoryResponseTypes>({
+    method: 'GET',
+    cache: 'no-store',
+    url: `support/article/category/${params.slug}`,
+  });
 
   const { data: categoriesListData } = await http<BlogsResponseTypes>({
     method: 'GET',

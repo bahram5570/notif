@@ -1,9 +1,8 @@
-import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
-import { COLORS_LIST } from '@theme/colors';
-
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
+import { COLORS_LIST } from '@theme/colors';
 
 import { ResultModuleTypes } from './types';
 

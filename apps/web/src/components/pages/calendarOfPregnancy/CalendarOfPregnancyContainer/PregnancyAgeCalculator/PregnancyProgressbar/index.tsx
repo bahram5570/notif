@@ -1,6 +1,6 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import BabyIcon from '@assets/icons/baby.svg';
+
+import { COLORS_LIST } from '@theme/colors';
 
 interface PregnancyProgressProps {
   week: number;

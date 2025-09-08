@@ -1,6 +1,5 @@
-import { Metadata } from 'next';
-
 import DiscountCodeContainer from '@components/pages/webView/DiscountCodeContainer';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   robots: 'noindex, nofollow',

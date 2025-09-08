@@ -1,6 +1,5 @@
+import DownloadPage from '@components/pages/download/DownloadPage';
 import { Metadata } from 'next';
-
-import DownloadPageContainer from '@components/pages/download/DownloadPageContainer';
 
 export const metadata: Metadata = {
   title: 'راهنمای نصب اپلیکیشن ایمپو',
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const Download = () => {
-  return <DownloadPageContainer />;
+  return <DownloadPage />;
 };
 
 export default Download;

@@ -3,6 +3,7 @@ import GreenSquareIcon from '@assets/icons/square-green.svg';
 import SquareTickIcon from '@assets/icons/square-tick.svg';
 import SquareIcon from '@assets/icons/square.svg';
 import StartIcon from '@assets/icons/start.svg';
+
 import CustomTypography from '@components/ui/CustomTypography';
 
 import { GuideHeaderContainerPropsType } from './type';

@@ -1,8 +1,8 @@
+import { useEffect, useState } from 'react';
+
 import { ArticlesTypes } from '@app/types';
 import useApi from '@hooks/useApi';
 import useCustomPagination from '@hooks/useCustomPagination';
-
-import { useEffect, useState } from 'react';
 
 import { CATEGORY_PAGE_SIZE } from './constants';
 import { CategoryArticlesResponseTypes } from './types';

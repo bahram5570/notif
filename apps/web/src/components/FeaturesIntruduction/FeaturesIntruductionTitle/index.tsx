@@ -1,8 +1,7 @@
 'use client';
 
-import useBreakPoint from '@hooks/useBreakPoint';
-
 import CustomTypography from '@components/ui/CustomTypography';
+import useBreakPoint from '@hooks/useBreakPoint';
 
 import { FeaturesIntruductionTitleTypes } from './types';
 

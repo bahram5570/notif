@@ -1,15 +1,21 @@
-import { COLORS_LIST } from '@theme/colors';
+import { useEffect } from 'react';
 
 import EyeIcon from '@assets/icons/eye.svg';
 import RulerIcon from '@assets/icons/ruler.svg';
 import WeightIcon from '@assets/icons/weight.svg';
+
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import PregnancyProgressbar from '../PregnancyProgressbar';
 import { ResultModuleTypes } from './types';
 
 const ResultModule = ({ pregnancyDateResult, weeksResult, onReset }: ResultModuleTypes) => {
+  useEffect(() => {
+    window.scrollTo({ top: 500, behavior: 'smooth' });
+  }, [pregnancyDateResult, weeksResult.dayOfWeek, weeksResult.week]);
+
   const weekImage = `/assets/images/pregnacy-weeks/week${weeksResult.week}.webp`;
 
   return (
@@ -61,7 +67,7 @@ const ResultModule = ({ pregnancyDateResult, weeksResult, onReset }: ResultModul
           تاریخ به دنیا اومدن کوچولوت:
         </CustomTypography>
 
-        <CustomTypography fontSize="Body_Large" className="text-center py-3 sm:py-5">
+        <CustomTypography fontSize="Headline_Small" className="text-center py-3 sm:py-5">
           {pregnancyDateResult}
         </CustomTypography>
       </div>

@@ -1,10 +1,9 @@
 'use client';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import { useEffect, useRef, useState } from 'react';
 
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import { QuestionOptionGeneratorTypes } from './types';
 

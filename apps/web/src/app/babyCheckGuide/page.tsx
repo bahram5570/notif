@@ -1,7 +1,6 @@
+import BabyCheckGuideContainer from '@components/pages/babyCheckGuide/BabyCheckGuideContainer';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
-
-import BabyCheckGuideContainer from '@components/pages/babyCheckGuide/BabyCheckGuideContainer';
 
 export const metadata: Metadata = {
   title: 'راهنمای کیت بی بی چک',

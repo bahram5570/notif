@@ -1,10 +1,10 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import { useEffect, useState } from 'react';
 
 import ArrowIcon from '@assets/icons/arrow1.svg';
+
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import { BlogsCategoriesBigScreenTypes, UpdatedCategoriesTypes } from './types';
 

@@ -1,14 +1,17 @@
-import { getFirebaseCookieToken, getUserCookie, getUserExpiresDate, setUserCookie } from '@utils/cookies';
+import { getFirebaseCookieToken, getUserExpiresDate } from '@utils/cookies';
 
+import { getUserCookie, setUserCookie } from '@actions/cookie.actions';
 import { FIREBASE_COOKIE_NAME } from '@constants/cookie.constants';
 import { initializeApp } from 'firebase/app';
-import { Messaging, getMessaging, getToken } from 'firebase/messaging';
+import { Messaging, getMessaging, getToken, isSupported } from 'firebase/messaging';
 import cookies from 'js-cookie';
 
 import { FIREBASE_CONFIG, FIREBASE_VAPID_KEY } from './constants';
 
 export const getFirebaseMessaging = async (): Promise<Messaging | null> => {
-  if (typeof window === 'undefined') {
+  const isFirebaseSupported = await isSupported();
+
+  if (typeof window === 'undefined' || !isFirebaseSupported) {
     return null;
   }
 
@@ -37,12 +40,12 @@ export const firebaseToken = async (onReload: () => void) => {
             cookies.set(FIREBASE_COOKIE_NAME, ft, { expires: getUserExpiresDate(365) });
 
             // # Reset the user token
-            const { user } = getUserCookie();
+            const user = await getUserCookie();
 
             if (user) {
               const updatedUser = { ...user };
               updatedUser.createdTime = Date.now();
-              setUserCookie(updatedUser);
+              await setUserCookie(updatedUser);
               onReload();
             }
           }

@@ -1,6 +1,7 @@
+import { articleImageUrl } from '@services/http';
+
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { articleImageUrl } from '@services/http';
 
 import { AuthorProfileTypes } from './types';
 

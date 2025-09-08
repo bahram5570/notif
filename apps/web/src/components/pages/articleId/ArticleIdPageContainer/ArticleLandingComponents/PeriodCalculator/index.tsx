@@ -1,8 +1,7 @@
 'use client';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import WavesContainer from '../WavesContainer';
 import DateModule from './DateModule';

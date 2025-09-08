@@ -1,9 +1,11 @@
-import useOperatingSystem from '@hooks/useOperatingSystem';
-import { COLORS_LIST } from '@theme/colors';
-import Image from 'next/image';
 import { TransformComponent, TransformWrapper } from 'react-zoom-pan-pinch';
 
+import Image from 'next/image';
+
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
+
+import useOperatingSystem from '@hooks/useOperatingSystem';
+import { COLORS_LIST } from '@theme/colors';
 
 import CustomModal from '../CustomModal';
 import { CustomImagePreviewTypes } from './types';

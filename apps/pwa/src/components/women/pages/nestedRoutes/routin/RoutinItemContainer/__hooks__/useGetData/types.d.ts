@@ -1,4 +1,10 @@
-import { ProgramWidgetItemStatusEnum } from '../../../enum';
+import { ProgramRateStatusEnum, ProgramWidgetItemStatusEnum } from '../../../enum';
+
+export type CtaType = {
+  action: ActionTypes;
+  ctaBtnLabel: string;
+  ctaDescription: string;
+};
 
 export type RoutinItemResponseTypes = {
   id: string;
@@ -7,5 +13,7 @@ export type RoutinItemResponseTypes = {
   title: string;
   description: string;
   status: ProgramWidgetItemStatusEnum;
+  rateStatus: ProgramRateStatusEnum;
   compeletButtonLabel: string;
+  cta: CtaType;
 };

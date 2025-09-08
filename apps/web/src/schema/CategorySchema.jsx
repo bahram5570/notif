@@ -35,6 +35,7 @@ const CategorySchema = ({ id }) => {
       },
     ],
   };
+
   return (
     <>
       <Script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(Article) }} />

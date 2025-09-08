@@ -46,7 +46,6 @@ const mapperList = [
   { name: 'between17.', path: '/assets/images/betweenBanner' },
   { name: 'between18.', path: '/assets/images/betweenBanner' },
   { name: 'between19.', path: '/assets/images/betweenBanner' },
-
   { name: 'babyCheck.', path: '/assets/images/betweenBanner/new' },
   { name: 'babyCheck2.', path: '/assets/images/betweenBanner/new' },
   { name: 'bardari.', path: '/assets/images/betweenBanner/new' },

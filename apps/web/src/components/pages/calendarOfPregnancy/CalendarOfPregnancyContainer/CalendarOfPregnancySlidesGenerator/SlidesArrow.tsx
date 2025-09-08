@@ -1,6 +1,6 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
+
+import { COLORS_LIST } from '@theme/colors';
 
 import { SlidesArrowTypes } from './types';
 

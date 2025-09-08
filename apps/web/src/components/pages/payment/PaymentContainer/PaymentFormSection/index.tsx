@@ -1,12 +1,11 @@
 'use client';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import { useState } from 'react';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomInput from '@components/ui/CustomInput';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import { initailData } from '../constants';
 import SuccessModal from './SuccessModal';

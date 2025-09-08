@@ -1,9 +1,9 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import LampIcon from '@assets/icons/careers/on-lamp.svg';
+
 import { CAREER_CONTAINER_MAX_WIDTH } from '@components/pages/careers/constants';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 const CareersBanner = () => {
   return (

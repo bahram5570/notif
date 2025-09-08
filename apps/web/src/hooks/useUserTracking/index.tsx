@@ -1,24 +1,13 @@
-import { useEffect, useState } from 'react';
-
 import { getUserTracking } from '@providers/UserTrackingProvider/__utils__';
 
 import useApi from '@hooks/useApi';
-import { UserTrackingTypes } from '@providers/UserTrackingProvider/types';
 
 const useUserTracking = () => {
-  const [userTrackingData, setUserTrackingData] = useState<UserTrackingTypes | null>(null);
-
-  useEffect(() => {
-    const data = getUserTracking();
-
-    if (data) {
-      setUserTrackingData(data);
-    }
-  }, []);
-
   const { callApi } = useApi({ url: 'support/attribution', method: 'POST' });
 
   const callUserTracking = (downloadLink: string) => {
+    const userTrackingData = getUserTracking();
+
     if (userTrackingData) {
       const payload = {
         downloadLink,

@@ -1,12 +1,12 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import CommentIcon from '@assets/icons/comment.svg';
 import LikeIcon from '@assets/icons/like.svg';
+import { articleImageUrl } from '@services/http';
+import { jalaaliScriptDate, toJalaliData } from '@utils/dates';
+
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { articleImageUrl } from '@services/http';
-import { jalaaliScriptDate, toJalaliData } from '@utils/dates';
+import { COLORS_LIST } from '@theme/colors';
 
 import { GeneratorProfileTypes } from './types';
 

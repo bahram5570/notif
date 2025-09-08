@@ -1,9 +1,12 @@
+import useAnalytics from '@hooks/useAnalytics';
 import useApi from '@hooks/useApi';
 
 import { OtpInfoTypes } from '../../types';
 import { useRegisterStatusProps } from './types';
 
 const useRegisterStatus = ({ identity, isPhone, otp1CompleteHandler }: useRegisterStatusProps) => {
+  const { callEvent } = useAnalytics();
+
   const successHandler = ({ isRegister }: { isRegister: boolean }) => {
     const info: OtpInfoTypes = {
       password: Math.random().toString().slice(2),
@@ -13,18 +16,21 @@ const useRegisterStatus = ({ identity, isPhone, otp1CompleteHandler }: useRegist
     };
 
     otp1CompleteHandler(info);
+
+    const pathList = location.pathname.split('/');
+    callEvent(`${pathList[1]} ${pathList[2]}`);
   };
 
   const {
-    data,
-    callApi,
     isLoading: loading,
+    callApi,
+    data,
   } = useApi({
-    api: `customerAccount/status/${identity}`,
-    onSuccess: successHandler,
-    queryKey: ['identity'],
-    fetchOnMount: false,
     method: 'GET',
+    fetchOnMount: false,
+    queryKey: ['identity'],
+    onSuccess: successHandler,
+    api: `customerAccount/status/${identity}`,
   });
 
   const fetchHandler = () => {

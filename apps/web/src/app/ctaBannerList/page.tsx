@@ -1,7 +1,7 @@
-import { Metadata } from 'next';
+import { ctaBannerListService } from '@services/ctaBannerServices';
 
 import CtaBanner from '@components/CtaBanner';
-import { ctaBannerListService } from '@services/ctaBannerServices';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'بنرهای CTA',

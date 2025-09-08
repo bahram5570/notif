@@ -1,6 +1,5 @@
-import { Metadata } from 'next';
-
 import ChangeLastPeriodContainer from '@components/pages/webView/ChangeLastPeriodContainer';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   robots: 'noindex, nofollow',

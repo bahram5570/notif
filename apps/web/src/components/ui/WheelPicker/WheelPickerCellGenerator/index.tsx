@@ -1,9 +1,9 @@
-import { COLORS_LIST } from '@theme/colors';
-import { FONTS_ANDROID } from '@theme/fonts';
-
 import { memo } from 'react';
 
 import { toPersianNumbers } from '@utils/numbers';
+
+import { COLORS_LIST } from '@theme/colors';
+import { FONTS_ANDROID } from '@theme/fonts';
 
 import { WheelPickerCellGeneratorProps } from './types';
 

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import Typography from '@components/ui/Typography';
-import PartnerRadioButton from '@components/women/pages/mainRoutes/partner/PartnerContainer/PartnerModals/PartnerRadioButton';
+import PartnerRadioButton from '@components/women/pages/mainRoutes/partner/PartnerPage/PartnerModals/PartnerRadioButton';
 import useTheme from '@hooks/useTheme';
 
 import useChangeType from './__hooks__/useChangeType';

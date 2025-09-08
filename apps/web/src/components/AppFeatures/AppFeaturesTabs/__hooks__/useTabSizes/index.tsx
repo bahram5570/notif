@@ -1,6 +1,6 @@
-import useBreakPoint from '@hooks/useBreakPoint';
-
 import { useEffect, useState } from 'react';
+
+import useBreakPoint from '@hooks/useBreakPoint';
 
 const useTabSizes = () => {
   const { breakPoint } = useBreakPoint();

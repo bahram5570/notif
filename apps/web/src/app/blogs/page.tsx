@@ -1,8 +1,8 @@
-import { HOST_URL } from '@constants/links.constants';
-import { Metadata } from 'next';
+import http from '@services/http';
 
 import BlogsPageContainer from '@components/pages/blogs/BlogsPageContainer';
-import http from '@services/http';
+import { HOST_URL } from '@constants/links.constants';
+import { Metadata } from 'next';
 
 import { BlogsResponseTypes } from './types';
 

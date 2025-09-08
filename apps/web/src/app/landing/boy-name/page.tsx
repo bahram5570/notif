@@ -1,7 +1,6 @@
+import BoyNamePage from '@components/pages/landing/NameSelection/BoyNamePage';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
-
-import BoyNamePage from '@components/pages/landing/NameSelection/BoyNamePage';
 
 export const metadata: Metadata = {
   title: 'اسم پسر خاص و تک؛ انتخاب اسم‌های پسرانه شیک و جدید',

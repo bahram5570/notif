@@ -1,9 +1,12 @@
 'use client';
 
+import { useEffect } from 'react';
+
 import { toEnglishNumbers } from '@utils/numbers';
 
 import MainActivationModule from '@components/activation/MainActivationModule';
 import Spinner from '@components/ui/Spinner';
+import useAnalytics from '@hooks/useAnalytics';
 import useIsRendered from '@hooks/useIsRendered';
 
 import Codes from './Codes';
@@ -24,6 +27,7 @@ const Otp2Container = ({
   onSubmitRegister,
   onSubmitLogin,
 }: Otp2ContainerProps) => {
+  const { callEvent } = useAnalytics();
   const { identity, isPhone, isRegister, password } = useOtpInfo();
   const { otpStatus, otpStatusHandler } = useOtpStatus(applyOtpStatus);
 
@@ -50,6 +54,18 @@ const Otp2Container = ({
     validationCompleteHandler,
     identity: toEnglishNumbers(identity || ''),
   });
+
+  useEffect(() => {
+    const pathList = location.pathname.split('/');
+
+    if (isLoginSuccess) {
+      callEvent(`${pathList[1]} ${pathList[2]} COMPLETE_LOGIN`);
+    }
+
+    if (isRegisterSuccess) {
+      callEvent(`${pathList[1]} ${pathList[2]}`);
+    }
+  }, [isLoginSuccess, isRegisterSuccess]);
 
   const subtitle = `کد 6 رقمی ارسال شده به ${isPhone ? 'شماره' : 'ایمیل'} ${identity} رو وارد کن`;
   const customPageInfo = {

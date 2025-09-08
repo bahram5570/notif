@@ -1,4 +1,4 @@
 export interface CategoryHeadingProps {
-    categoryTitle: string;
-    categoryText: string;
+  categoryTitle: string;
+  categoryText: string;
 }

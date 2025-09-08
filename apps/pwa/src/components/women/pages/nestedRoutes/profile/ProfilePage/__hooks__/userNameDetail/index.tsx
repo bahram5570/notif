@@ -4,7 +4,7 @@ import { toPersianNumbers } from '@utils/numbers';
 
 import CustomImage from '@components/ui/CustomImage';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import useGetData from '@components/women/pages/mainRoutes/partner/PartnerContainer/__hooks__/useGetData';
+import useGetData from '@components/women/pages/mainRoutes/partner/PartnerPage/__hooks__/useGetData';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import useTheme from '@hooks/useTheme';
