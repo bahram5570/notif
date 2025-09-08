@@ -79,5 +79,6 @@ export const HEADER_LINKS_LIST: HEADER_LINKS_TYPES = [
       { title: 'بیماری‌ها', linkTo: '/category/diseases' },
     ],
   },
+  { title: 'کلینیک سلامت', linkTo: '/landing/clinic' },
   { title: 'ایمپو آقایان', linkTo: '/men' },
 ];
