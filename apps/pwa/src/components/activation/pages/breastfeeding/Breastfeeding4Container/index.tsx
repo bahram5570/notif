@@ -11,6 +11,7 @@ const Breastfeeding4Container = ({
   activationData,
   isLoading,
   onRegister,
+  onContinue,
 }: Breastfeeding4ContainerProps) => {
   const { nextPageHandler, pageInfo, options } = usePageInfo({ payloadHandler, info, payload, activationData });
 
@@ -31,6 +32,7 @@ const Breastfeeding4Container = ({
 
   return (
     <MainActivationModule
+      onContinue={onContinue}
       isLoading={isLoading}
       onRegister={onRegister}
       showContinueBtn={showContinueBtn}

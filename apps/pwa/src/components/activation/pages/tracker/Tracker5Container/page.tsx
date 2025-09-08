@@ -12,6 +12,7 @@ const Tracker5Container = ({
   activationData,
   isLoading,
   onRegister,
+  onContinue,
 }: Tracker5ContainerProps) => {
   const { nextPageHandler, pageInfo, options } = usePageInfo({ payloadHandler, info, payload, activationData });
   const { periodStart, periodEnd } = useDateIntervals();
@@ -31,7 +32,7 @@ const Tracker5Container = ({
 
   return (
     <>
-      <MainActivationModule isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
+      <MainActivationModule onContinue={onContinue} isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
         <ActivationCalendar valueHandler={valueHandler} startDate={periodStart} endDate={periodEnd} />
       </MainActivationModule>
     </>

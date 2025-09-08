@@ -11,6 +11,7 @@ const Prevention4Container = ({
   activationData,
   isLoading,
   onRegister,
+  onContinue,
 }: Prevention4ContainerProps) => {
   const { nextPageHandler, pageInfo, options } = usePageInfo({ payloadHandler, info, payload, activationData });
 
@@ -28,7 +29,7 @@ const Prevention4Container = ({
 
   return (
     <>
-      <MainActivationModule isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
+      <MainActivationModule onContinue={onContinue} isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
         <CyclesModule name="totalCycleLength" valueHandler={selectHandler} />
       </MainActivationModule>
     </>

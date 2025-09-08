@@ -13,6 +13,7 @@ const Goal3Container = ({
   activationData,
   isLoading,
   onRegister,
+  onContinue,
 }: Goal3ContainerProps) => {
   const { nextPageHandler, pageInfo, options } = usePageInfo({ payloadHandler, payload, info, activationData });
   const { isInitialRendered } = useInitialDelay();
@@ -57,6 +58,7 @@ const Goal3Container = ({
     <>
       {isInitialRendered && (
         <MainActivationModule
+          onContinue={onContinue}
           isLoading={isLoading}
           onRegister={onRegister}
           showContinueBtn={showContinueBtn}

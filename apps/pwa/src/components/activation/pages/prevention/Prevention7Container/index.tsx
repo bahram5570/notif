@@ -11,6 +11,7 @@ const Prevention7Container = ({
   activationData,
   isLoading,
   onRegister,
+  onContinue,
 }: Prevention7ContainerProps) => {
   const { nextPageHandler, pageInfo, options } = usePageInfo({ payloadHandler, payload, info, activationData });
 
@@ -28,7 +29,7 @@ const Prevention7Container = ({
 
   return (
     <>
-      <MainActivationModule isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
+      <MainActivationModule onContinue={onContinue} isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
         <WeightHeightModule type="height" valueHandler={valueHandler} />
       </MainActivationModule>
     </>

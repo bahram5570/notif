@@ -9,6 +9,7 @@ const Goal1Container = ({
   payloadHandler,
   activationData,
   onRegister,
+  onContinue,
   isLoading,
   payload,
   info,
@@ -38,6 +39,7 @@ const Goal1Container = ({
 
   return (
     <MainActivationModule
+      onContinue={onContinue}
       {...pageInfo}
       isLoading={isLoading}
       onRegister={onRegister}

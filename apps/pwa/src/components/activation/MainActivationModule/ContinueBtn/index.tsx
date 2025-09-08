@@ -9,7 +9,7 @@ import useContinueBtnNextActivation from './__hooks__/useContinueBtnNextActivati
 import { ContinueBtnProps } from './types';
 
 const ContinueBtn = (props: ContinueBtnProps) => {
-  const { resetKey, nextActivationHandler } = useContinueBtnNextActivation();
+  const { resetKey, nextActivationHandler } = useContinueBtnNextActivation(props.onContinue);
   const { colors } = useTheme();
 
   const nextHandler: RewardBtnTypes = (v) => {

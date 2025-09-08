@@ -12,6 +12,7 @@ const Intention6Container = ({
   activationData,
   isLoading,
   onRegister,
+  onContinue,
 }: Intention6ContainerProps) => {
   const { nextPageHandler, pageInfo, options } = usePageInfo({ payloadHandler, info, payload, activationData });
   const { periodStart, periodEnd } = useDateIntervals();
@@ -31,7 +32,7 @@ const Intention6Container = ({
 
   return (
     <>
-      <MainActivationModule isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
+      <MainActivationModule onContinue={onContinue} isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
         <ActivationCalendar endDate={periodEnd} startDate={periodStart} valueHandler={valueHandler} />
       </MainActivationModule>
     </>

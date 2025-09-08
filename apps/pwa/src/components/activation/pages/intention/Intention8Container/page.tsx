@@ -11,6 +11,7 @@ const Intention8Container = ({
   activationData,
   isLoading,
   onRegister,
+  onContinue,
 }: Intention1ContainerProps) => {
   const { nextPageHandler, pageInfo, options } = usePageInfo({ payloadHandler, info, payload, activationData });
 
@@ -28,7 +29,7 @@ const Intention8Container = ({
 
   return (
     <>
-      <MainActivationModule isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
+      <MainActivationModule onContinue={onContinue} isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
         <CyclesModule name="periodLength" totalCycleLength={payload.totalCycleLength} valueHandler={selectHandler} />
       </MainActivationModule>
     </>

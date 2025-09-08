@@ -2,6 +2,7 @@
 
 import CompleteCrRegisterContainer from '@components/activation/CompleteCrRegisterContainer';
 import Pregnancy6Container from '@components/activation/pages/pregnancy/Pregnancy6Container';
+import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import useRegister from '@hooks/__activation__/useRegister';
 import { ACTIVATION_CR_ROUTES_INFO } from '@providers/__activation__/ActivationCrProvider/__constants__/activationCrRoutesInfo';
 import useActivationCrData from '@providers/__activation__/ActivationCrProvider/__hooks__/useActivationCrData';
@@ -11,6 +12,7 @@ const Pregnancy6 = () => {
   // # قد
   const { payload, payloadHandler } = useActivationCrPayload();
   const activationData = useActivationCrData();
+  const { callEventActivation } = useActivationAnalytics();
 
   const { isLoading, registerHandler, fetchedUser, pair } = useRegister(payload);
 
@@ -29,6 +31,7 @@ const Pregnancy6 = () => {
         isLoading={isLoading}
         onRegister={registerHandler}
         activationData={activationData}
+        onContinue={callEventActivation}
         payloadHandler={payloadHandler}
         info={ACTIVATION_CR_ROUTES_INFO.pregnancy_6}
       />

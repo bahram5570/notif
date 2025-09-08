@@ -14,6 +14,7 @@ const Tracker4Container = ({
   activationData,
   isLoading,
   onRegister,
+  onContinue,
 }: Tracker4ContainerProps) => {
   const { nextPageHandler, pageInfo, options } = usePageInfo({ payloadHandler, info, payload, activationData });
   const isValuesChanged = useRef(false);
@@ -51,6 +52,7 @@ const Tracker4Container = ({
   return (
     <>
       <MainActivationModule
+        onContinue={onContinue}
         isLoading={isLoading}
         onRegister={onRegister}
         showContinueBtn={showContinueBtn}

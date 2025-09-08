@@ -1,6 +1,7 @@
 'use client';
 
 import Goal3Container from '@components/activation/pages/goal/Goal3Container';
+import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import { ACTIVATION_ROUTES_INFO } from '@providers/__activation__/ActivationProvider/__constants__/activationRoutesInfo';
 import useActivationData from '@providers/__activation__/ActivationProvider/__hooks__/useActivationData';
 import useActivationPayload from '@providers/__activation__/ActivationProvider/__hooks__/useActivationPayload';
@@ -8,6 +9,7 @@ import useActivationPayload from '@providers/__activation__/ActivationProvider/_
 const Goal3 = () => {
   // # هدف نصب
   const { payload, payloadHandler } = useActivationPayload();
+  const { callEventActivation } = useActivationAnalytics();
   const activationData = useActivationData();
 
   return (
@@ -16,6 +18,7 @@ const Goal3 = () => {
         payload={payload}
         info={ACTIVATION_ROUTES_INFO.goal_3}
         activationData={activationData}
+        onContinue={callEventActivation}
         payloadHandler={payloadHandler}
       />
     </>

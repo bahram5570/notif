@@ -11,6 +11,7 @@ const Tracker6Container = ({
   activationData,
   isLoading,
   onRegister,
+  onContinue,
 }: Tracker6ContainerProps) => {
   const { nextPageHandler, pageInfo, options } = usePageInfo({ payloadHandler, info, payload, activationData });
 
@@ -28,7 +29,7 @@ const Tracker6Container = ({
 
   return (
     <>
-      <MainActivationModule isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
+      <MainActivationModule onContinue={onContinue} isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
         <CyclesModule name="totalCycleLength" valueHandler={selectHandler} />
       </MainActivationModule>
     </>

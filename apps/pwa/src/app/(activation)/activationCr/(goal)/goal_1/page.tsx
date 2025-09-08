@@ -1,6 +1,7 @@
 'use client';
 
 import Goal1Container from '@components/activation/pages/goal/Goal1Container';
+import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import { ACTIVATION_CR_ROUTES_INFO } from '@providers/__activation__/ActivationCrProvider/__constants__/activationCrRoutesInfo';
 import useActivationCrData from '@providers/__activation__/ActivationCrProvider/__hooks__/useActivationCrData';
 import useActivationCrPayload from '@providers/__activation__/ActivationCrProvider/__hooks__/useActivationCrPayload';
@@ -11,6 +12,7 @@ const Goal1 = () => {
   // # نام
   const { payload, payloadHandler } = useActivationCrPayload();
   const activationData = useActivationCrData();
+  const { callEventActivation } = useActivationAnalytics();
 
   const { updatedInfo } = useUpdatedRewards({
     status: payload.status,
@@ -26,6 +28,7 @@ const Goal1 = () => {
           payload={payload}
           info={updatedInfo}
           activationData={activationData}
+          onContinue={callEventActivation}
           payloadHandler={payloadHandler}
         />
       )}

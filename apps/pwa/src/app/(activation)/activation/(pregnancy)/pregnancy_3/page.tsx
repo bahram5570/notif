@@ -2,6 +2,7 @@
 
 import CompleteRegisterContainer from '@components/activation/CompleteRegisterContainer';
 import Pregnancy3Container from '@components/activation/pages/pregnancy/Pregnancy3Container';
+import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import useRegister from '@hooks/__activation__/useRegister';
 import { ACTIVATION_ROUTES_INFO } from '@providers/__activation__/ActivationProvider/__constants__/activationRoutesInfo';
 import useActivationData from '@providers/__activation__/ActivationProvider/__hooks__/useActivationData';
@@ -10,6 +11,7 @@ import useActivationPayload from '@providers/__activation__/ActivationProvider/_
 const Pregnancy3 = () => {
   // # هفته بارداری
   const { payload, payloadHandler } = useActivationPayload();
+  const { callEventActivation } = useActivationAnalytics();
   const activationData = useActivationData();
 
   const { isLoading, registerHandler, fetchedUser, notificationReward, pair } = useRegister(payload);
@@ -33,6 +35,7 @@ const Pregnancy3 = () => {
       <Pregnancy3Container
         payload={payload}
         activationData={activationData}
+        onContinue={callEventActivation}
         payloadHandler={payloadHandler}
         info={ACTIVATION_ROUTES_INFO.pregnancy_3}
         isLoading={isLoading}

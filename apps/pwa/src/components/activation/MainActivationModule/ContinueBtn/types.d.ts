@@ -8,6 +8,7 @@ export interface ContinueBtnProps
     | 'firstName'
     | 'isLoading'
     | 'onRegister'
+    | 'onContinue'
     | 'noBackButton'
     | 'nextActivation'
     | 'invalidMessage'

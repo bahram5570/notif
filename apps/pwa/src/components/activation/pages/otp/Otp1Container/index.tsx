@@ -11,7 +11,7 @@ import useRegisterStatus from './__hooks__/useRegisterStatus';
 import useValidation from './__hooks__/useValidation';
 import { Otp1ContainerProps } from './types';
 
-const Otp1Container = ({ payload, payloadHandler, otp1CompleteHandler }: Otp1ContainerProps) => {
+const Otp1Container = ({ payload, payloadHandler, otp1CompleteHandler, onContinue }: Otp1ContainerProps) => {
   const { isPhone, isPhoneToggleHandler, scripts } = useIsPhone();
 
   const valueHandler = (v: string) => {
@@ -60,7 +60,7 @@ const Otp1Container = ({ payload, payloadHandler, otp1CompleteHandler }: Otp1Con
     <>
       <RegisterTypeBtn isPhone={isPhone} isPhoneToggleHandler={isPhoneToggleHandler} />
 
-      <MainActivationModule {...customPageInfo} className="pt-5">
+      <MainActivationModule onContinue={onContinue} {...customPageInfo} className="pt-5">
         <>
           <InputModule
             valueHandler={valueHandler}

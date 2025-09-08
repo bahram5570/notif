@@ -54,6 +54,7 @@ const MainActivationModule = (props: MainActivationModuleProps) => {
           showContinueBtn={showContinueBtn}
           noBackButton={props.noBackButton}
           onRegister={props.onRegister}
+          onContinue={props.onContinue}
           firstName={props.firstName}
           isLoading={props.isLoading}
         />

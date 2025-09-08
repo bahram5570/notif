@@ -7,6 +7,7 @@ import { PayloadHandlerTypes } from '../MainActivationModule/types';
 export interface ActivationContainerProps {
   isLoading?: boolean;
   onRegister?: () => void;
+  onContinue?: () => void;
   payload: ActivationPayloadTypes;
   info: ActivationRoutesInfoTypes[0];
   payloadHandler: PayloadHandlerTypes;

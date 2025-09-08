@@ -6,6 +6,7 @@ import { UserCookieTypes, setUserCookie } from '@actions/cookie.actions';
 import Otp2Container from '@components/activation/pages/otp/Otp2Container';
 import { OtpStatusTypes } from '@components/activation/pages/otp/Otp2Container/__hooks__/useOtpStatus/types';
 import { OTP_COUNT_DOWN_TIME } from '@components/activation/pages/otp/Otp2Container/constants';
+import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import useCountDown from '@hooks/useCountDown';
 import useSectionSaver from '@providers/__activation__/ActivationProvider/__hooks__/useSectionSaver';
 import { useRouter } from 'next/navigation';
@@ -14,6 +15,7 @@ const Otp2 = () => {
   // # کد
   const router = useRouter();
   const { sectionSaverHandler } = useSectionSaver();
+  const { callEventActivation } = useActivationAnalytics();
   const [isRegisterSuccess, setIsRegisterSuccess] = useState(false);
   const [applyOtpStatus, setApplyOtpStatus] = useState<OtpStatusTypes>(null);
 
@@ -35,6 +37,7 @@ const Otp2 = () => {
 
   const registerHandler = () => {
     startCounter();
+    callEventActivation();
     setIsRegisterSuccess(true);
     setApplyOtpStatus('correct');
   };
@@ -42,6 +45,7 @@ const Otp2 = () => {
   const loginHandler = async (v: UserCookieTypes) => {
     await setUserCookie(v);
     sessionStorage.clear();
+    callEventActivation('LOGIN');
     router.replace('/protected/cycle');
   };
 

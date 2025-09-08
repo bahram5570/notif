@@ -11,6 +11,7 @@ const Pregnancy3Container = ({
   payloadHandler,
   activationData,
   onRegister,
+  onContinue,
   isLoading,
   payload,
   info,
@@ -38,7 +39,7 @@ const Pregnancy3Container = ({
 
   return (
     <>
-      <MainActivationModule isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
+      <MainActivationModule onContinue={onContinue} isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
         <ActivationTabs tab={tab} tabHandler={tabHandler} tabsList={tabsList} />
 
         <DateModule

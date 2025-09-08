@@ -12,6 +12,7 @@ const Tracker1Container = ({
   info,
   isLoading,
   onRegister,
+  onContinue,
 }: Tracker1ContainerProps) => {
   const { nextPageHandler, pageInfo, options } = usePageInfo({ payloadHandler, payload, activationData, info });
 
@@ -54,6 +55,7 @@ const Tracker1Container = ({
   return (
     <>
       <MainActivationModule
+        onContinue={onContinue}
         isLoading={isLoading}
         onRegister={onRegister}
         showContinueBtn={showContinueBtn}

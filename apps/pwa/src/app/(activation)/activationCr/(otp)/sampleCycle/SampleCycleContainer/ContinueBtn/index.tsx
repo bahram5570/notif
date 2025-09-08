@@ -1,7 +1,7 @@
 // import { FAKE_CYCLE_FOOTER_HEIGTH } from '@app/(activation)/activationCr/(goal)/fakeCycle/FakeCyclePageContainer/PageContainer/FakeCycleContainer/constants';
 import Button from '@components/ui/Button';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-import useAnalytics from '@hooks/useAnalytics';
+import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import useTheme from '@hooks/useTheme';
 import { useRouter } from 'next/navigation';
 
@@ -10,11 +10,10 @@ import { SAMPLE_CYCLE_CONTINUE_BTN_HEIGHT } from './constants';
 const ContinueBtn = () => {
   const router = useRouter();
   const { colors } = useTheme();
-  const { callEvent } = useAnalytics();
+  const { callEventActivation } = useActivationAnalytics();
 
   const nextHandler = () => {
-    const pathList = location.pathname.split('/');
-    callEvent(`${pathList[1]} ${pathList[2]}`);
+    callEventActivation();
     router.push('otp_1');
   };
 

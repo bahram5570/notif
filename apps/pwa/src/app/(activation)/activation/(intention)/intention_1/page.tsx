@@ -1,6 +1,7 @@
 'use client';
 
 import Intention1Container from '@components/activation/pages/intention/Intention1Container/page';
+import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import { ACTIVATION_ROUTES_INFO } from '@providers/__activation__/ActivationProvider/__constants__/activationRoutesInfo';
 import useActivationData from '@providers/__activation__/ActivationProvider/__hooks__/useActivationData';
 import useActivationPayload from '@providers/__activation__/ActivationProvider/__hooks__/useActivationPayload';
@@ -8,6 +9,7 @@ import useActivationPayload from '@providers/__activation__/ActivationProvider/_
 const Intention1 = () => {
   // # اقدام
   const { payload, payloadHandler } = useActivationPayload();
+  const { callEventActivation } = useActivationAnalytics();
   const activationData = useActivationData();
 
   return (
@@ -15,6 +17,7 @@ const Intention1 = () => {
       <Intention1Container
         payload={payload}
         activationData={activationData}
+        onContinue={callEventActivation}
         info={ACTIVATION_ROUTES_INFO.intention_1}
         payloadHandler={payloadHandler}
       />

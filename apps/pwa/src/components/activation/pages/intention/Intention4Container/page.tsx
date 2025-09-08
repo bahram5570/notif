@@ -12,6 +12,7 @@ const Intention4Container = ({
   activationData,
   isLoading,
   onRegister,
+  onContinue,
 }: Intention4ContainerProps) => {
   const { nextPageHandler, pageInfo, options } = usePageInfo({ payloadHandler, info, payload, activationData });
 
@@ -61,6 +62,7 @@ const Intention4Container = ({
   return (
     <>
       <MainActivationModule
+        onContinue={onContinue}
         isLoading={isLoading}
         onRegister={onRegister}
         showContinueBtn={showContinueBtn}

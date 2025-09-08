@@ -7,6 +7,7 @@ export type MainActivationModuleProps = PageInfoStateTypes & {
   children: React.ReactNode;
   showContinueBtn?: boolean;
   onRegister?: () => void;
+  onContinue?: () => void;
   isLoading?: boolean;
   className?: string;
 };

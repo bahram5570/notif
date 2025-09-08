@@ -1,6 +1,7 @@
 'use client';
 
 import Prevention7Container from '@components/activation/pages/prevention/Prevention7Container';
+import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import { ACTIVATION_ROUTES_INFO } from '@providers/__activation__/ActivationProvider/__constants__/activationRoutesInfo';
 import useActivationData from '@providers/__activation__/ActivationProvider/__hooks__/useActivationData';
 import useActivationPayload from '@providers/__activation__/ActivationProvider/__hooks__/useActivationPayload';
@@ -8,6 +9,7 @@ import useActivationPayload from '@providers/__activation__/ActivationProvider/_
 const Prevention_7 = () => {
   // # قد
   const { payload, payloadHandler } = useActivationPayload();
+  const { callEventActivation } = useActivationAnalytics();
   const activationData = useActivationData();
 
   return (
@@ -15,6 +17,7 @@ const Prevention_7 = () => {
       <Prevention7Container
         payload={payload}
         activationData={activationData}
+        onContinue={callEventActivation}
         payloadHandler={payloadHandler}
         info={ACTIVATION_ROUTES_INFO.prevention_7}
       />

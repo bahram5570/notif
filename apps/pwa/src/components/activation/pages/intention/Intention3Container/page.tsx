@@ -12,6 +12,7 @@ const Intention3Container = ({
   activationData,
   isLoading,
   onRegister,
+  onContinue,
 }: Intention3ContainerProps) => {
   const { nextPageHandler, pageInfo, options } = usePageInfo({ payloadHandler, info, payload, activationData });
 
@@ -47,6 +48,7 @@ const Intention3Container = ({
   return (
     <>
       <MainActivationModule
+        onContinue={onContinue}
         isLoading={isLoading}
         onRegister={onRegister}
         showContinueBtn={showContinueBtn}

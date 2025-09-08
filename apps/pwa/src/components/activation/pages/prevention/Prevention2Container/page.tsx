@@ -11,6 +11,7 @@ const Prevention2Container = ({
   activationData,
   isLoading,
   onRegister,
+  onContinue,
 }: Prevention2ContainerProps) => {
   const { nextPageHandler, pageInfo, options } = usePageInfo({ payloadHandler, info, payload, activationData });
 
@@ -42,6 +43,7 @@ const Prevention2Container = ({
   return (
     <>
       <MainActivationModule
+        onContinue={onContinue}
         isLoading={isLoading}
         onRegister={onRegister}
         showContinueBtn={showContinueBtn}

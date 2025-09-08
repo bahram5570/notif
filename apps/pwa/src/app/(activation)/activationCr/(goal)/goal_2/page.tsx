@@ -6,6 +6,7 @@ import ActivationTabs from '@components/activation/ActivationTabs';
 import DateModule from '@components/activation/DateModule';
 import MainActivationModule from '@components/activation/MainActivationModule';
 import { ACTIVATION_BIRTHDATE_TABS_LIST, GoalNamesEnum } from '@constants/activation.constants';
+import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import useActivationBirthdateTabs from '@hooks/__activation__/useActivationBirthdateTabs';
 import useActivationBirthdayDefaultDate from '@hooks/__activation__/useActivationBirthdayDefaultDate';
 import useGoalFinder from '@hooks/__activation__/useGoalFinder';
@@ -17,6 +18,7 @@ import usePageInfo from '@providers/__activation__/ActivationProvider/__hooks__/
 const Goal2 = () => {
   // # تاریخ تولد
   const activationData = useActivationCrData();
+  const { callEventActivation } = useActivationAnalytics();
   const defaultDate = useActivationBirthdayDefaultDate();
   const { payload, payloadHandler } = useActivationCrPayload();
 

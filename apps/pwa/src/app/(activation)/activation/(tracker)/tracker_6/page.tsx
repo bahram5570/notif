@@ -1,6 +1,7 @@
 'use client';
 
 import Tracker6Container from '@components/activation/pages/tracker/Tracker6Container/page';
+import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import { ACTIVATION_ROUTES_INFO } from '@providers/__activation__/ActivationProvider/__constants__/activationRoutesInfo';
 import useActivationData from '@providers/__activation__/ActivationProvider/__hooks__/useActivationData';
 import useActivationPayload from '@providers/__activation__/ActivationProvider/__hooks__/useActivationPayload';
@@ -8,6 +9,7 @@ import useActivationPayload from '@providers/__activation__/ActivationProvider/_
 const Tracker6 = () => {
   // # دوره
   const { payload, payloadHandler } = useActivationPayload();
+  const { callEventActivation } = useActivationAnalytics();
   const activationData = useActivationData();
 
   return (
@@ -15,6 +17,7 @@ const Tracker6 = () => {
       <Tracker6Container
         payload={payload}
         activationData={activationData}
+        onContinue={callEventActivation}
         info={ACTIVATION_ROUTES_INFO.tracker_6}
         payloadHandler={payloadHandler}
       />

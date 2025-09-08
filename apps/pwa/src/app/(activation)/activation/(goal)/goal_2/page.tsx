@@ -4,6 +4,7 @@ import ActivationTabs from '@components/activation/ActivationTabs';
 import DateModule from '@components/activation/DateModule';
 import MainActivationModule from '@components/activation/MainActivationModule';
 import { ACTIVATION_BIRTHDATE_TABS_LIST } from '@constants/activation.constants';
+import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import useActivationBirthdateTabs from '@hooks/__activation__/useActivationBirthdateTabs';
 import useActivationBirthdayDefaultDate from '@hooks/__activation__/useActivationBirthdayDefaultDate';
 import { ACTIVATION_ROUTES_INFO } from '@providers/__activation__/ActivationProvider/__constants__/activationRoutesInfo';
@@ -16,6 +17,7 @@ const Goal2 = () => {
   const activationData = useActivationData();
   const defaultDate = useActivationBirthdayDefaultDate();
   const { payload, payloadHandler } = useActivationPayload();
+  const { callEventActivation } = useActivationAnalytics();
 
   const { tab, tabHandler } = useActivationBirthdateTabs((v) => payloadHandler({ calendarType: v }));
 
@@ -36,7 +38,7 @@ const Goal2 = () => {
   }
 
   return (
-    <MainActivationModule {...pageInfo}>
+    <MainActivationModule onContinue={callEventActivation} {...pageInfo}>
       <ActivationTabs tab={tab} tabHandler={tabHandler} tabsList={ACTIVATION_BIRTHDATE_TABS_LIST} />
       <DateModule valueHandler={valueHandler} defaultDate={defaultDate} key={tab} />
     </MainActivationModule>

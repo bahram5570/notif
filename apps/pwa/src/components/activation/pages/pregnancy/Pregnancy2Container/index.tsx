@@ -11,6 +11,7 @@ const Pregnancy2Container = ({
   activationData,
   isLoading,
   onRegister,
+  onContinue,
 }: Pregnancy2ContainerProps) => {
   const { nextPageHandler, pageInfo, options } = usePageInfo({ payloadHandler, payload, info, activationData });
 
@@ -55,6 +56,7 @@ const Pregnancy2Container = ({
   return (
     <>
       <MainActivationModule
+        onContinue={onContinue}
         isLoading={isLoading}
         onRegister={onRegister}
         showContinueBtn={showContinueBtn}

@@ -2,6 +2,7 @@
 
 import CompleteCrRegisterContainer from '@components/activation/CompleteCrRegisterContainer';
 import Intention8Container from '@components/activation/pages/intention/Intention8Container/page';
+import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import useRegister from '@hooks/__activation__/useRegister';
 import { ACTIVATION_CR_ROUTES_INFO } from '@providers/__activation__/ActivationCrProvider/__constants__/activationCrRoutesInfo';
 import useActivationCrData from '@providers/__activation__/ActivationCrProvider/__hooks__/useActivationCrData';
@@ -11,6 +12,7 @@ const Intention8 = () => {
   // # چرخه
   const { payload, payloadHandler } = useActivationCrPayload();
   const activationData = useActivationCrData();
+  const { callEventActivation } = useActivationAnalytics();
 
   const { isLoading, registerHandler, fetchedUser, pair } = useRegister(payload);
 
@@ -27,6 +29,7 @@ const Intention8 = () => {
       <Intention8Container
         payload={payload}
         activationData={activationData}
+        onContinue={callEventActivation}
         info={ACTIVATION_CR_ROUTES_INFO.intention_8}
         payloadHandler={payloadHandler}
         isLoading={isLoading}

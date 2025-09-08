@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 
 import { isDevelopeMode } from '@utils/system';
 
@@ -20,9 +20,9 @@ const useAnalytics = (props?: UseAnalyticsTypes) => {
     }
   }, []);
 
-  const callEvent = (event_name: EventName, properties?: Properties) => {
+  const callEvent = useCallback((event_name: EventName, properties?: Properties) => {
     posthog.capture(event_name, properties);
-  };
+  }, []);
 
   return { callEvent };
 };

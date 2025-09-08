@@ -19,6 +19,7 @@ const Breastfeeding1Container = ({
   activationData,
   isLoading,
   onRegister,
+  onContinue,
 }: Breastfeeding1ContainerProps) => {
   const { culture } = useCulture();
   const { nextPageHandler, pageInfo, options } = usePageInfo({ payloadHandler, info, payload, activationData });
@@ -48,7 +49,7 @@ const Breastfeeding1Container = ({
   };
 
   return (
-    <MainActivationModule isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
+    <MainActivationModule onContinue={onContinue} isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
       <DateModule valueHandler={valueHandler} defaultDate={defaultDate} />
     </MainActivationModule>
   );

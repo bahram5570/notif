@@ -6,6 +6,7 @@ import AddToHomeModule from '@components/activation/AddToHomeModule';
 import Otp1Container from '@components/activation/pages/otp/Otp1Container';
 import { Otp1CompleteHandlerTypes } from '@components/activation/pages/otp/Otp1Container/types';
 import { OTP_INFO_NAME } from '@components/activation/pages/otp/constants';
+import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import { ACTIVATION_ROUTES_INFO } from '@providers/__activation__/ActivationProvider/__constants__/activationRoutesInfo';
 import useActivationData from '@providers/__activation__/ActivationProvider/__hooks__/useActivationData';
 import useActivationPayload from '@providers/__activation__/ActivationProvider/__hooks__/useActivationPayload';
@@ -19,6 +20,7 @@ const Otp1 = () => {
   const activationData = useActivationData();
   const [showAddToHome, setShowAddToHome] = useState(false);
   const { payload, payloadHandler } = useActivationPayload();
+  const { callEventActivation } = useActivationAnalytics();
 
   const otp1CompleteHandler: Otp1CompleteHandlerTypes = (info) => {
     payloadHandler({ password: info.password, identity: info.identity });
@@ -35,7 +37,12 @@ const Otp1 = () => {
       {isModuleRendered && <Welcoming onComplete={() => setShowAddToHome(true)} />}
       {showAddToHome && <AddToHomeModule closeModuleHandler={() => setShowAddToHome(false)} />}
       {!showAddToHome && (
-        <Otp1Container payload={payload} payloadHandler={payloadHandler} otp1CompleteHandler={otp1CompleteHandler} />
+        <Otp1Container
+          payload={payload}
+          onContinue={callEventActivation}
+          payloadHandler={payloadHandler}
+          otp1CompleteHandler={otp1CompleteHandler}
+        />
       )}
     </>
   );
