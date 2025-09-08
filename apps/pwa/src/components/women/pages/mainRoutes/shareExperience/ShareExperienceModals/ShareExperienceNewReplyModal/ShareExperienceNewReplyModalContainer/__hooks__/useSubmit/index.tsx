@@ -38,6 +38,7 @@ const useSubmit = ({ text, data }: UseSubmitProps) => {
         });
 
         commentsData.comments.unshift(newComment);
+        commentsData.commentCount = commentsData.commentCount ? commentsData.commentCount + 1 : 1;
         updateQuery({ queryKey: ['comments ' + data.shareId], payload: commentsData });
       }
     } else if (data.type === 'reply') {
