@@ -1,5 +1,4 @@
 {
-  "version": 2,
-  "buildCommand": "npm run pwa:build",
+  "buildCommand": "npm run pwa:vercel:build",
   "outputDirectory": "apps/pwa/.next"
 }
