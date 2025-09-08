@@ -9,7 +9,9 @@ import { SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE } from '../../../constants';
 
 const useShareExperienceInitialRedirect = () => {
   const searchParams = useSearchParams();
-  const isFirstTime = useRef(isDevelopeMode());
+  const isFirstTime1 = useRef(isDevelopeMode());
+  const isFirstTime2 = useRef(isDevelopeMode());
+
   const { newQueryParamsHandler } = useQueryParamsHandler();
 
   const redirectStorage = sessionStorage.getItem(SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE);
@@ -18,8 +20,8 @@ const useShareExperienceInitialRedirect = () => {
     .join('&');
 
   useEffect(() => {
-    if (isFirstTime.current) {
-      isFirstTime.current = false;
+    if (isFirstTime1.current) {
+      isFirstTime1.current = false;
       return;
     }
 
@@ -31,7 +33,8 @@ const useShareExperienceInitialRedirect = () => {
   }, [queryString]);
 
   useEffect(() => {
-    if (isFirstTime.current) {
+    if (isFirstTime2.current) {
+      isFirstTime2.current = false;
       return;
     }
 
