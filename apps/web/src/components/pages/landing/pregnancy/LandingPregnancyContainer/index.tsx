@@ -1,9 +1,9 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import BlueTickIcon from '@assets/icons/blueTick2.svg';
+
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import { TEST_ONLINE_DOCTOR_INFO } from './constants';
 

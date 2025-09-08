@@ -1,55 +1,54 @@
-'use client'
+'use client';
 
 import { useState } from 'react';
-import CustomTypography from '@components/ui/CustomTypography';
-import CommentItem from './CommentItem';
+
+import ArrowIcon from '@assets/icons/clinicLanding/arrowRight.svg';
+
 import CustomButton from '@components/ui/CustomButton';
+import CustomTypography from '@components/ui/CustomTypography';
 import { COLORS_LIST } from '@theme/colors';
-import ArrowIcon from '@assets/icons/clinicLanding/arrowRight.svg'
+
 import { CommentsTypes } from '../types';
+import CommentItem from './CommentItem';
 
 const CommentList = ({ comments }: { comments: CommentsTypes[] }) => {
-    const [visibleCount, setVisibleCount] = useState(10);
-    const hasMore = comments.length > visibleCount;
+  const [visibleCount, setVisibleCount] = useState(10);
+  const hasMore = comments.length > visibleCount;
 
-    const handleShowMore = () => {
-        setVisibleCount((prev) => prev + 10);
-    }
+  const handleShowMore = () => {
+    setVisibleCount((prev) => prev + 10);
+  };
 
-    return (
-        <>
-            <div className='mt-4 grid gap-y-3'>
-                {comments.slice(0, visibleCount).map((item, i) => (
-                    <CommentItem
-                        key={i}
-                        userText={item.text}
-                        userRate={item.rate}
-                        userCommentNegitive={item.negitive}
-                        userCommentPositive={item.positive}
-                    />
-                ))}
-            </div>
+  return (
+    <>
+      <div className="mt-4 grid gap-y-3">
+        {comments.slice(0, visibleCount).map((item, i) => (
+          <CommentItem
+            key={i}
+            userText={item.text}
+            userRate={item.rate}
+            userCommentNegitive={item.negitive}
+            userCommentPositive={item.positive}
+          />
+        ))}
+      </div>
 
-            {hasMore && (
-                <div className='text-center mt-4 flex justify-center'>
-                    <CustomButton
-                        varient="text"
-                        fontSize='Lable_Medium'
-                        onClick={handleShowMore}
-                    >
-                        <CustomTypography
-                            fontSize={'Lable_Medium'}
-                            className="flex justify-center gap-x-1 items-center"
-                            color={{ freeColor: COLORS_LIST.Primary_Primary }}
-                        >
-                            <ArrowIcon />
-                            مشاهده نظرات بیشتر
-                        </CustomTypography>
-                    </CustomButton>
-                </div>
-            )}
-        </>
-    )
-}
+      {hasMore && (
+        <div className="text-center mt-4 flex justify-center">
+          <CustomButton varient="text" fontSize="Lable_Medium" onClick={handleShowMore}>
+            <CustomTypography
+              fontSize={'Lable_Medium'}
+              className="flex justify-center gap-x-1 items-center"
+              color={{ freeColor: COLORS_LIST.Primary_Primary }}
+            >
+              <ArrowIcon />
+              مشاهده نظرات بیشتر
+            </CustomTypography>
+          </CustomButton>
+        </div>
+      )}
+    </>
+  );
+};
 
 export default CommentList;

@@ -1,6 +1,5 @@
-import { Metadata } from 'next';
-
 import AddSympathyContainer from '@components/pages/webView/AddSympathyContainer';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   robots: 'noindex, nofollow',

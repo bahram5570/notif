@@ -1,10 +1,9 @@
 'use client';
 
-import useBreakPoint from '@hooks/useBreakPoint';
-
 import CategoryArticlesGenerator from '@components/pages/category/slug/CategoryPageContainer/CategoryArticles/CategoryArticlesGenerator';
 import CategorySkeleton from '@components/pages/category/slug/CategoryPageContainer/CategoryArticles/CategorySkeleton';
 import CustomPagination from '@components/ui/CustomPagination';
+import useBreakPoint from '@hooks/useBreakPoint';
 
 import useAuthorGetData from './__hooks__/useAuthorGetData';
 import { AuthorArticlesTypes } from './types';

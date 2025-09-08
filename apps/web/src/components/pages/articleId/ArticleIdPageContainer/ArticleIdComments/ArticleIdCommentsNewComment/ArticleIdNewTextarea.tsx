@@ -1,8 +1,8 @@
+import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
+
 import useBreakPoint from '@hooks/useBreakPoint';
 import useOperatingSystem from '@hooks/useOperatingSystem';
 import { COLORS_LIST } from '@theme/colors';
-
-import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
 
 import { ArticleIdNewTextareaTypes } from './types';
 

@@ -1,9 +1,8 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import { useEffect, useRef, useState } from 'react';
 
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import { HEADER_MULTI_LINK } from '../../types';
 

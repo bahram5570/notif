@@ -1,7 +1,6 @@
+import GirlNamePage from '@components/pages/landing/NameSelection/GirlNamePage';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
-
-import GirlNamePage from '@components/pages/landing/NameSelection/GirlNamePage';
 
 export const metadata: Metadata = {
   title: 'زیباترین اسم دخترانه؛ انتخاب اسم دختر جدید، شیک و بامعنی',

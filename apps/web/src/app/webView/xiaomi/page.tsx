@@ -1,6 +1,5 @@
-import { Metadata } from 'next';
-
 import XiaomiContainer from '@components/pages/webView/XiaomiContainer';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   robots: 'noindex, nofollow',

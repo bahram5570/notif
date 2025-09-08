@@ -1,13 +1,14 @@
+import { useRef } from 'react';
+
+import ArrowIcon from '@assets/icons/arrow2.svg';
+
+import styles from './styles.module.css';
+
+import CustomTypography from '@components/ui/CustomTypography';
 import { COLORS_LIST } from '@theme/colors';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 
-import { useRef } from 'react';
-
-import ArrowIcon from '@assets/icons/arrow2.svg';
-import CustomTypography from '@components/ui/CustomTypography';
-
-import styles from './styles.module.css';
 import { ArrowGeneratorTypes, ValuesSmallScreenTypes } from './types';
 
 const ValuesSmallScreen = ({ list }: ValuesSmallScreenTypes) => {

@@ -1,7 +1,7 @@
+import { useRef, useState } from 'react';
+
 import useBreakPoint from '@hooks/useBreakPoint';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
-
-import { useRef, useState } from 'react';
 
 import ItemGenerator from './ItemGenerator';
 import SlidesArrow from './SlidesArrow';

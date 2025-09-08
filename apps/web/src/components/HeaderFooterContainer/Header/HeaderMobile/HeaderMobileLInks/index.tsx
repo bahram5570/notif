@@ -1,7 +1,7 @@
+import { useState } from 'react';
+
 import { HEADER_LINKS_LIST } from '@constants/links.constants';
 import { COLORS_LIST } from '@theme/colors';
-
-import { useState } from 'react';
 
 import usePageHeight from '../__hooks__/usePageHeight';
 import MultiLinkGenerator from './MultiLinkGenerator';

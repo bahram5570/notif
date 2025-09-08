@@ -1,6 +1,7 @@
+import { applyOptions, clearCacheHandler } from './__utils__';
+
 import { SERVER_URL, SSL_STAGE_URL, STAGE_URL } from '@constants/links.constants';
 
-import { applyOptions, clearCacheHandler } from './__utils__';
 import { HttpResultTypes, HttpTypes } from './types';
 
 // export const baseUrl = STAGE_URL;

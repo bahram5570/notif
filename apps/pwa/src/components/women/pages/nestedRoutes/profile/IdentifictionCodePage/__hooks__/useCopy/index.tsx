@@ -11,7 +11,7 @@ const useCopy = () => {
       try {
         await navigator.clipboard.writeText(text);
         setIsCopied(true);
-        onToast({ message: 'کپی شد', type: 'normal' });
+        onToast({ message: 'کپی شد', type: 'success' });
         setTimeout(() => setIsCopied(false), 1000);
       } catch (err) {
         console.error(err);
@@ -30,7 +30,7 @@ const useCopy = () => {
         const successful = document.execCommand('copy');
         if (successful) {
           setIsCopied(true);
-          onToast({ message: 'کپی شد', type: 'normal' });
+          onToast({ message: 'کپی شد', type: 'success' });
           setTimeout(() => setIsCopied(false), 1000);
         } else {
           throw new Error('Fallback copy failed');

@@ -1,8 +1,9 @@
+import { buttonColorsMaker, fontSizeMaker } from './__utils__';
+
 import { Button } from '@mui/material';
 
 import CustomTypography from '../CustomTypography';
 import Spinner from '../Spinner';
-import { buttonColorsMaker, fontSizeMaker } from './__utils__';
 import { CustomButtonTypes } from './types';
 
 const CustomButton = (props: CustomButtonTypes) => {

@@ -25,6 +25,10 @@ const OrganizationSchema = {
 };
 
 const HomeSchema = () => {
+  if (typeof window !== 'undefined') {
+    return <></>;
+  }
+
   return (
     <>
       <Script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(OrganizationSchema) }} />

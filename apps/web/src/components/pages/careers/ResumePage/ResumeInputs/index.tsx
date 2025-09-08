@@ -1,19 +1,19 @@
 'use client';
 
-import useCustomToast from '@hooks/useCustomToast';
-import useFileUpload from '@hooks/useFileUpload';
-import { COLORS_LIST } from '@theme/colors';
-
+import { resumePayloadValidator } from './__utils__';
 import UploadIcon from '@assets/icons/upload.svg';
+import { textShorter } from '@utils/scripts';
+
 import CustomButton from '@components/ui/CustomButton';
 import CustomInput from '@components/ui/CustomInput';
 import CustomTypography from '@components/ui/CustomTypography';
 import Spinner from '@components/ui/Spinner';
-import { textShorter } from '@utils/scripts';
+import useCustomToast from '@hooks/useCustomToast';
+import useFileUpload from '@hooks/useFileUpload';
+import { COLORS_LIST } from '@theme/colors';
 
 import useSubmitHandler from './__hooks__/useSubmitHandler';
 import useValues from './__hooks__/useValues';
-import { resumePayloadValidator } from './__utils__';
 import { ResumeInputsTypes } from './types';
 
 const ResumeInputs = ({ jobId }: ResumeInputsTypes) => {

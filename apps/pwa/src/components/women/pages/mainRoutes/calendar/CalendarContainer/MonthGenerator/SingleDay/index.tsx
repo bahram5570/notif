@@ -3,10 +3,9 @@ import { memo } from 'react';
 import GiveBirthIcon from '@assets/icons/calendarGiveBirth.svg';
 
 import Typography from '@components/ui/Typography';
-import { DATE_SEPERATOR_REGEX } from '@constants/date.constants';
+import { CALENDAR_CELL_SIZE, DATE_SEPERATOR_REGEX } from '@constants/date.constants';
 import useTheme from '@hooks/useTheme';
 
-import { CALENDAR_CELL_SIZE } from '../../../constants';
 import useCalendarDayInfo from '../../__hooks__/useCalendarDayInfo';
 import HasSignDot from './HasSignDot';
 import { SingleDayProps } from './types';

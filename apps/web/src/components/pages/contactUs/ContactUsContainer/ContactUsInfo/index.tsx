@@ -1,9 +1,9 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import CallIcon from '@assets/icons/call-calling.svg';
 // import LocationIcon from '@assets/icons/location.svg';
 import EmailIcon from '@assets/icons/sms.svg';
+
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 const ContactUsInfo = () => {
   return (

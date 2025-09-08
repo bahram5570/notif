@@ -14,7 +14,11 @@ const useSubmit = ({ isEditMode }: UseSubmitPropsType) => {
   const { culture } = useCulture();
 
   const successHandler = () => {
-    router.push('/protected/calendar');
+    if (isEditMode) {
+      router.push('/protected/calendar');
+    } else {
+      router.back();
+    }
   };
 
   const method = isEditMode ? 'POST' : 'PUT';

@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 
-import Container from './Container';
+import WomenFooterContainer from './WomenFooterContainer';
 import { FOOTER_PAGES_LIST } from './constants';
 
 const WomenFooter = () => {
@@ -12,7 +12,7 @@ const WomenFooter = () => {
     (item) => item.url.toLocaleLowerCase() === pathName.toLocaleLowerCase().split('?')[0],
   );
 
-  return <>{hasFooter && <Container pathName={pathName} />}</>;
+  return <>{hasFooter && <WomenFooterContainer pathName={pathName} />}</>;
 };
 
 export default WomenFooter;

@@ -1,9 +1,8 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
 
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import { DaysModuleTypes } from './types';
 

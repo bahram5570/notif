@@ -1,11 +1,10 @@
-import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
-
 import { useState } from 'react';
 
 import ProgressCycleLoading from '@components/ProgressCycleLoading';
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
+import useBreakPoint from '@hooks/useBreakPoint';
+import { COLORS_LIST } from '@theme/colors';
 
 import { JAAN_PANAH_QUESTIONS_LIST } from '../../constants';
 import ProgressBar from './ProgressBar';

@@ -1,3 +1,4 @@
+import SchemaLoader from '@components/SchemaLoader';
 import Script from 'next/script';
 
 const ArticleSchema = ({ data }) => {
@@ -52,12 +53,6 @@ const ArticleSchema = ({ data }) => {
         url: `https://impo.app/author/${data?.author?.authorName}`,
       },
     ],
-    // aggregateRating: {
-    //   "@type": "AggregateRating",
-    //   ratingValue: data?.rate,
-    //   bestRating: "5",
-    //   ratingCount: data?.rateCount
-    // }
   };
 
   const schemaBreadCrumb = {
@@ -93,8 +88,8 @@ const ArticleSchema = ({ data }) => {
 
   return (
     <>
+      <SchemaLoader schema={schemaFaq} id="schemaFaq" />
       <Script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
-      <Script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaFaq) }} />
       <Script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadCrumb) }} />
     </>
   );

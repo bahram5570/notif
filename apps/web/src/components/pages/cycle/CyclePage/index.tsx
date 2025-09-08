@@ -1,11 +1,10 @@
 'use client';
 
-import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
-import { COLORS_LIST } from '@theme/colors';
-
 import { useState } from 'react';
 
 import Spinner from '@components/ui/Spinner';
+import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
+import { COLORS_LIST } from '@theme/colors';
 
 import CompleteCycleRegisterLoading from './CompleteCycleRegisterLoading';
 import useRedirectToPwa from './__hooks__/useRedirectToPwa';

@@ -1,10 +1,10 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import BlueTickIcon from '@assets/icons/blueTick.svg';
+import { fileImageUrl } from '@services/http';
+
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { fileImageUrl } from '@services/http';
+import { COLORS_LIST } from '@theme/colors';
 
 import ArticleIdProfileInfo from './ArticleIdProfileInfo';
 import { ArticleIdProfileTypes } from './types';
@@ -14,7 +14,7 @@ const ArticleIdProfile = (props: ArticleIdProfileTypes) => {
 
   return (
     <>
-      <div className="w-full flex flex-col md:flex-row md:items-center justify-between">
+      <div className="w-full min-h-[64px] flex flex-col md:flex-row md:items-center justify-between">
         <CustomLink href={`/author/${props.id}`}>
           <div className="flex gap-3">
             <div className="relative w-16 h-16">

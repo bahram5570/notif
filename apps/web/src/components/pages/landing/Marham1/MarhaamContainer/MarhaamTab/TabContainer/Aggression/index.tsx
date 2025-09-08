@@ -1,8 +1,8 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import StarIcon from '@assets/icons/Stars.svg';
+
 import CtaBanner from '@components/CtaBanner';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import Movie from './Movie';
 

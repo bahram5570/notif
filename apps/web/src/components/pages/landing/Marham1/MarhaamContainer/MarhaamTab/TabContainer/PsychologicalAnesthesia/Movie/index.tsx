@@ -1,7 +1,6 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import { MOVIE_PART1 } from './constants';
 
@@ -11,7 +10,8 @@ const Movie = () => {
       <div className=" rounded-2xl py-6 px-4 bg-gradient-to-b from-[#ECFBE3] to-[#F7F7F7]">
         <div className="flex flex-col gap-1">
           <CustomTypography fontSize="Body_Medium" color={'Surface_InverseSurface'}>
-            گاهی یه دیالوگ، یه نگاه، یا یه آغوش توی فیلم… می‌تونه همون جرقه‌ای باشه که یخِ احساساتت رو آروم‌آروم آب کنه.{' '}
+            گاهی یه دیالوگ، یه نگاه، یا یه آغوش توی فیلم… می‌تونه همون جرقه‌ای باشه که یخِ احساساتت رو آروم‌آروم آب
+            کنه.{' '}
           </CustomTypography>
         </div>
 

@@ -1,7 +1,6 @@
+import CustomImage from '@components/ui/CustomImage';
 import { Autoplay, EffectFade } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-import CustomImage from '@components/ui/CustomImage';
 
 import { StatisticsMobileGeneratorTypes } from './types';
 

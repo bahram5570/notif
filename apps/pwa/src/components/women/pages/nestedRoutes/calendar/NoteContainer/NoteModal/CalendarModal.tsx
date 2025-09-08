@@ -11,6 +11,7 @@ const CalendarModal = ({ dateTime, onChangeHandler, onCloseModalHandler }: Calen
   return (
     <div>
       {isLoading && <CalendarSkeleton />}
+
       {!isLoading && calendarData && (
         <>
           <CalendarContainer
@@ -19,6 +20,7 @@ const CalendarModal = ({ dateTime, onChangeHandler, onCloseModalHandler }: Calen
             selectedDate={selectedDate}
             hasResetBtn={false}
           />
+
           <div className="flex px-3 gap-2">
             <Button
               size="medium"

@@ -1,10 +1,10 @@
 'use client';
 
-import useBreakPoint from '@hooks/useBreakPoint';
+import { scrollToIdHandler } from '@utils/navigation';
 
 import { DOWNLOAD_APP_SECTION_ID } from '@components/DownloadApp/DownloadAppWomen/constants';
 import CustomButton from '@components/ui/CustomButton';
-import { scrollToIdHandler } from '@utils/navigation';
+import useBreakPoint from '@hooks/useBreakPoint';
 
 const HomeHeadingContentBtn = () => {
   const { breakPoint } = useBreakPoint();

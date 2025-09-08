@@ -15,7 +15,7 @@ const BreastfeedingSetting = ({ status, isDelivery, pregnancyDate }: Breastfeedi
       setLinkTo(`/protected/breastfeedingSettings`);
     }
   }, [status, isDelivery, pregnancyDate]);
-  
+
   return (
     <>
       {linkTo && (

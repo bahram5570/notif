@@ -1,6 +1,7 @@
+import styles from './styles.module.css';
+
 import { COLORS_LIST } from '@theme/colors';
 
-import styles from './styles.module.css';
 import { JobContentsTypes } from './types';
 
 const JobContents = ({ jobDescription }: JobContentsTypes) => {

@@ -1,7 +1,6 @@
+import AboutUsContainer from '@components/pages/aboutUs/AboutUsContainer';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
-
-import AboutUsContainer from '@components/pages/aboutUs/AboutUsContainer';
 
 export const metadata: Metadata = {
   title: 'درباره ما',

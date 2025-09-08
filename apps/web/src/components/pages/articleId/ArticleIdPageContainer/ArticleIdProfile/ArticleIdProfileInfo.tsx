@@ -1,9 +1,9 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import CommentIcon from '@assets/icons/comment.svg';
 import LikeIcon from '@assets/icons/like.svg';
-import CustomTypography from '@components/ui/CustomTypography';
 import { jalaaliScriptDate, toJalaliData } from '@utils/dates';
+
+import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import { ArticleIdProfileInfoTypes } from './types';
 

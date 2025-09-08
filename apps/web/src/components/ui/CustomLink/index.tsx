@@ -1,9 +1,10 @@
-import { PageNavigationLoadingContext } from '@providers/PageNavigationProvider';
-import Link from 'next/link';
-
 import { useContext } from 'react';
 
 import { colorMaker } from '../CustomTypography/__utils__';
+
+import { PageNavigationLoadingContext } from '@providers/PageNavigationProvider';
+import Link from 'next/link';
+
 import { CustomLinkTypes } from './types';
 
 const CustomLink = (props: CustomLinkTypes) => {

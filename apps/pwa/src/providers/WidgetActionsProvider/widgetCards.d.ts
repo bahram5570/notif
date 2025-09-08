@@ -75,6 +75,7 @@ export type MotivationCardTypes = IsPdfDownloadingTypes & {
 };
 
 // # ----------------------------------------------------------
+export type MoodTrackerItemTypes = { type: number; label: string; isSelected: boolean };
 
 export type StoryImageTypes = {
   type: WidgetStoryTypeEnum.Image;
@@ -88,7 +89,11 @@ export type StoryCtaButtonTypes = {
   type: WidgetStoryTypeEnum.CtaButton;
   button: WidgetsButtonTypes;
 };
-type StoryEventsTypes = StoryImageTypes | StoryVideoTypes | StoryCtaButtonTypes;
+export type StoryMoodTrackerTypes = {
+  type: WidgetStoryTypeEnum.MoodTracker;
+  items: MoodTrackerItemTypes[];
+};
+type StoryEventsTypes = StoryImageTypes | StoryVideoTypes | StoryCtaButtonTypes | StoryMoodTrackerTypes;
 
 type StoriesTypes = {
   events: StoryEventsTypes[];
@@ -105,6 +110,7 @@ export type StoryCardTypes = IsPdfDownloadingTypes & {
     description: string;
     title: string;
     list: {
+      events: StoryEventsTypes[];
       stories: StoriesTypes[];
       isBookmarked: boolean;
       coverImage: string;
@@ -668,6 +674,15 @@ type ProgramScrolltemType = {
   description: string;
   writerSpeciality: string;
   button: WidgetsButtonTypes;
+  commentCount: number;
+  isBookmarked: boolean;
+  rateAvg: number;
+  bmiDescription: string;
+  bmiTitle: string;
+  completeRatio: number;
+  completeTitle: string;
+  programId: string;
+  image: string;
 };
 
 export type WidgetProgramScrollType = IsPdfDownloadingTypes & {
@@ -677,6 +692,7 @@ export type WidgetProgramScrollType = IsPdfDownloadingTypes & {
     description: string;
     items: ProgramScrolltemType[];
     title: string;
+    button: WidgetsButtonTypes;
   };
 };
 
@@ -697,6 +713,25 @@ export type WidgetWomanPairProgramTypes = IsPdfDownloadingTypes & {
     backgroundColour: string;
     description: string;
     items: WomanPairProgramItemType[];
+    title: string;
+  };
+};
+
+// # ----------------------------------------------------------
+
+type ShortcutItemType = {
+  action: ActionTypes;
+  icon: string;
+  semanticTitle: string;
+  title: string;
+};
+
+export type ShortcutWidgetTypes = IsPdfDownloadingTypes & {
+  type: WidgetsEnum.ShortcutWidget;
+  data: {
+    backgroundColour: string;
+    description: string;
+    items: ShortcutItemType[];
     title: string;
   };
 };

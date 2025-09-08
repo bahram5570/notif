@@ -42,10 +42,14 @@ textarea {
 
 td {
   border: 1px solid;
-  font-size: 14px ;
+  font-size: 14px;
 }
 
-/* # Old banner styles **************************************************************** */
+.swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #7e7e7e;
+}
+
+/* # Old banner styles */
 
 .bannerBetweenNew {
   border-radius: 16px;
@@ -385,15 +389,4 @@ td {
     width: 100%;
     height: 100%;
   }
-}
-
-
-/* swiper style */
-
-.swiper {
-  padding-bottom: 2.5rem !important;
-}
-
-.swiper-pagination-bullet.swiper-pagination-bullet-active {
-  background-color: #7E7E7E;
 }

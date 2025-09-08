@@ -1,8 +1,8 @@
-import { COLORS_LIST } from '@theme/colors';
+import { articleImageUrl } from '@services/http';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
-import { articleImageUrl } from '@services/http';
+import { COLORS_LIST } from '@theme/colors';
 
 import GeneratorProfile from './GeneratorProfile';
 import GeneratorScripts from './GeneratorScripts';

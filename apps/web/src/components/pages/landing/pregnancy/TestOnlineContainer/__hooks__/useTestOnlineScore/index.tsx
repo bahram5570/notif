@@ -1,7 +1,7 @@
+import { useEffect, useState } from 'react';
+
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
-
-import { useEffect, useState } from 'react';
 
 import {
   PREGNANCY_TEST_ONLINE_QUESTION_LIST,

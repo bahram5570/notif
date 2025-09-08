@@ -1,7 +1,7 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import ImpoNameIcon from '@assets/icons/impoName.svg';
+
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import HomeHeadingContentBtn from './HomeHeadingContentBtn';
 

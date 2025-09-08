@@ -1,8 +1,8 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import WhatsAppIcon from '@assets/icons/WhatsApp.svg';
+
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import { WHATSAPP_NUMBER } from '../constants';
 

@@ -1,7 +1,6 @@
+import TestOnlineResultContainer from '@components/pages/landing/pregnancy/TestOnlineResultContainer';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
-
-import TestOnlineResultContainer from '@components/pages/landing/pregnancy/TestOnlineResultContainer';
 
 export const metadata: Metadata = {
   title: 'ایمپو؛ تخصصی‌ترین اپلیکیشن بارداری هفته به هفته',

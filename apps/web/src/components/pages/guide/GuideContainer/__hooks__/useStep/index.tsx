@@ -1,6 +1,6 @@
-import { useRouter, useSearchParams } from 'next/navigation';
-
 import { useEffect, useState } from 'react';
+
+import { useRouter, useSearchParams } from 'next/navigation';
 
 import { STEP_LIST, STEP_PARAM } from '../../constants';
 

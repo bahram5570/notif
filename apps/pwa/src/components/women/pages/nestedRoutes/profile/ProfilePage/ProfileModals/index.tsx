@@ -1,6 +1,6 @@
 import CustomModal from '@components/ui/CustomModal';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import UploadImageModal from '@components/women/pages/mainRoutes/partner/PartnerContainer/PartnerModals/UploadImageModal';
+import UploadImageModal from '@components/women/pages/mainRoutes/partner/PartnerPage/PartnerModals/UploadImageModal';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import { PROFILE_MODAL_QUERY_NAME } from '../ProfileLinkList/constants';

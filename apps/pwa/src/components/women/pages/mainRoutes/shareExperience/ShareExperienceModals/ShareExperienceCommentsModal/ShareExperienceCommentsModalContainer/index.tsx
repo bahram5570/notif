@@ -33,7 +33,7 @@ const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsMod
 
       {typeof commentsData !== 'undefined' && (
         <>
-          <div id={SHARE_EXPERIENCE_COMMENTS_CONTAINER_ID} className=" h-[100dvh] overflow-y-auto">
+          <div id={SHARE_EXPERIENCE_COMMENTS_CONTAINER_ID} className="overflow-y-auto">
             <div
               className="relative flex flex-col px-4"
               style={{ paddingTop: HEADER_HEIGHT + 16, paddingBottom: HEADER_HEIGHT * 2 }}

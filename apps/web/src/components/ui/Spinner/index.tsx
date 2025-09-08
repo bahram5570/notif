@@ -1,4 +1,5 @@
 import { colorMaker, sizesMaker } from './__utils__';
+
 import { SpinnerTypes } from './types';
 
 const Spinner = ({ size, color }: SpinnerTypes) => {

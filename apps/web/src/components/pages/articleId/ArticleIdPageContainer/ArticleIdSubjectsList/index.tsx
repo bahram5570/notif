@@ -1,18 +1,18 @@
 'use client';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import { useEffect, useRef, useState } from 'react';
 
 import ArrowIcon from '@assets/icons/arrow2.svg';
+
 import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
 
 import ArticleIdSubjectsListGenerator from './ArticleIdSubjectsListGenerator';
 import { ArticleIdSubjectsListTypes } from './types';
 
 const ArticleIdSubjectsList = ({ articleSubjectList }: ArticleIdSubjectsListTypes) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [maxHeight, setMaxHeight] = useState(0);
 
   useEffect(() => {
@@ -27,7 +27,7 @@ const ArticleIdSubjectsList = ({ articleSubjectList }: ArticleIdSubjectsListType
 
   return (
     <div
-      className="w-full h-fit px-5 py-6 md:px-14 md:py-8 rounded-2xl"
+      className="w-full min-h-[71px] h-fit px-5 py-6 md:px-14 md:py-8 rounded-2xl"
       style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
     >
       <div className="w-full flex items-center justify-between">

@@ -1,6 +1,6 @@
-import { HEADER_LINKS_LIST } from '@constants/links.constants';
-
 import { Fragment } from 'react';
+
+import { HEADER_LINKS_LIST } from '@constants/links.constants';
 
 import MultiLinkGenerator from './MultiLinkGenerator';
 import SingleLinkGenerator from './SingleLinkGenerator';

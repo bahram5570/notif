@@ -1,7 +1,4 @@
-import { getUserCookie } from '@utils/cookies';
-
-import { deleteUserCookie, setCultureCookie } from '@actions/cookie.actions';
-import { USER_COOKIE_NAME } from '@constants/cookie.constants';
+import { deleteUserCookie, getUserCookie, setCultureCookie } from '@actions/cookie.actions';
 import { CULTURE_INITIAL_VALUES } from '@providers/CultureProvider/constants';
 
 import { CacheTypes, HttpTypes, OptionsTypes } from './types';
@@ -19,26 +16,9 @@ const cacheOptionsFinder = (props: HttpTypes) => {
   return { cacheOptions };
 };
 
-const clientAuthorizationHandler = () => {
-  const { user } = getUserCookie();
-  return user ? `Bearer ${user.token}` : undefined;
-};
-
-const serverAuthorizationHandler = async () => {
-  const { cookies } = await import('next/headers');
-  const userData = cookies().get(USER_COOKIE_NAME)?.value as undefined | string;
-  return userData ? `Bearer ${JSON.parse(userData).token}` : undefined;
-};
-
 const authTokenFinder = async () => {
-  let Authorization: undefined | string = undefined;
-
-  // # Base on rendering type (client or server side), proper cookie function will be used
-  if (typeof window !== 'undefined') {
-    Authorization = clientAuthorizationHandler();
-  } else {
-    Authorization = await serverAuthorizationHandler();
-  }
+  const user = await getUserCookie();
+  const Authorization = user ? `Bearer ${user.token}` : undefined;
 
   return { Authorization };
 };

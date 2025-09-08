@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { currentDate } from '@utils/dates';
+
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
@@ -10,6 +12,8 @@ import moment from 'moment-jalaali';
 import { INITAIL_NOTE_VALUE } from '../../constants';
 import { OnchangeHandlerType } from '../../type';
 import { ItemType, ResponsePropsType } from './type';
+
+const { gDate } = currentDate();
 
 const useGetData = () => {
   const { culture } = useCulture();
@@ -65,9 +69,7 @@ const useGetData = () => {
   useEffect(() => {
     const selectedDate = calendarInitailSelectedDate;
 
-    if (selectedDate) {
-      setNoteValue({ ...noteValue, time: selectedDate ? getDisplayDate(selectedDate) : '' });
-    }
+    setNoteValue({ ...noteValue, time: selectedDate ? getDisplayDate(selectedDate) : getDisplayDate(gDate) });
   }, []);
 
   return { noteValue, isLoading, onChangeHandler };
