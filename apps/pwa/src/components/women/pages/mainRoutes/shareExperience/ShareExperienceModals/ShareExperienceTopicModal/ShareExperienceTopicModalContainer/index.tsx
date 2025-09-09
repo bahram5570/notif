@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+
 import styles from '../../../styles.module.css';
 
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
@@ -20,8 +22,10 @@ const ShareExperienceTopicModalContainer = ({ topicId, avatarImage }: ShareExper
   const { topicExperiencesData, isLoading, pageNo, updatePageNo, apiLoading } = useGetData({
     topicId,
   });
+
+  const markerRef = useRef<HTMLDivElement>(null);
   const { colors } = useTheme();
-  const { scrolled } = useScroll({ id: 'infiniteScrollContainer' });
+  const { scrolled } = useScroll({ ref: markerRef });
 
   return (
     <>
@@ -37,30 +41,33 @@ const ShareExperienceTopicModalContainer = ({ topicId, avatarImage }: ShareExper
           pageNo={pageNo}
           callBack={updatePageNo}
           totalCount={topicExperiencesData?.totalCount || 10}
-          className={`max-h-screen pt-72 ${styles.scroller}`}
+          className={`max-h-screen pt-72 ${styles.scroller} overflow-y-auto`}
           style={{ paddingBottom: FOOTER_HEIGTH * 2 }}
         >
-          {topicExperiencesData?.expirences.map((item, index) => (
-            <div
-              key={index}
-              className="w-full border-t-[1px] pt-5 pb-4 px-4 z-20"
-              style={{ borderTopColor: colors.Surface_SurfaceVariant, backgroundColor: colors.White }}
-            >
-              <ShareExperienceTopPart {...item} />
+          <>
+            <div ref={markerRef} style={{ height: 1, width: '100%' }} />
+            {topicExperiencesData?.expirences.map((item, index) => (
+              <div
+                key={index}
+                className="w-full border-t-[1px] pt-5 pb-4 px-4 z-20"
+                style={{ borderTopColor: colors.Surface_SurfaceVariant, backgroundColor: colors.White }}
+              >
+                <ShareExperienceTopPart {...item} />
 
-              <div className="w-full pr-10">
-                <ShareExperienceContentsModule
-                  isSelf={item.selfExperience}
-                  image={item.image}
-                  text={item.text}
-                  hasLinkTo={true}
-                  id={item.id}
-                />
+                <div className="w-full pr-10">
+                  <ShareExperienceContentsModule
+                    isSelf={item.selfExperience}
+                    image={item.image}
+                    text={item.text}
+                    hasLinkTo={true}
+                    id={item.id}
+                  />
 
-                <ShareExperienceBottomPart {...item} />
+                  <ShareExperienceBottomPart {...item} />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </>
         </InfiniteScrollContainer>
 
         {!isLoading && (

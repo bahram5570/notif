@@ -1,31 +1,28 @@
 import { useEffect, useState } from 'react';
 
-type UseScrollProps = {
-  id: string;
-};
+import { useScrollPropsType } from './type';
 
-const useScroll = ({ id }: UseScrollProps) => {
+const useScroll = ({ ref }: useScrollPropsType) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const element = document.getElementById(id);
+    if (!ref.current) return;
 
-    if (!element) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setScrolled(!entry.isIntersecting);
+      },
+      {
+        root: null,
+        threshold: 0,
+        rootMargin: '-80px 0px 0px 0px',
+      },
+    );
 
-    const handleScroll = () => {
-      if (element.scrollTop > 100) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
+    observer.observe(ref.current);
 
-    element.addEventListener('scroll', handleScroll);
-
-    return () => {
-      element.removeEventListener('scroll', handleScroll);
-    };
-  }, [id]);
+    return () => observer.disconnect();
+  }, []);
 
   return { scrolled };
 };
