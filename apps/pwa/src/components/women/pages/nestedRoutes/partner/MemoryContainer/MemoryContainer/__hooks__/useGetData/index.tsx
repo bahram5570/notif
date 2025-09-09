@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
@@ -9,7 +9,6 @@ import { MemoriesDataType, ResponsePropsType } from './type';
 const useGetData = () => {
   const [pageNo, setPageNo] = useState(0);
   const [totalCount, setTotalCount] = useState(0);
-  const observerRef = useRef<IntersectionObserver | null>(null);
 
   const { newQuery, updateQuery, getQuery } = useCustomReactQuery(['meories']);
 
@@ -48,33 +47,13 @@ const useGetData = () => {
     };
   }, []);
 
-  const lastExperienceRef = useCallback(
-    (node: HTMLDivElement | null) => {
-      if (apiLoading) return;
-      if (observerRef.current) observerRef.current.disconnect();
-
-      observerRef.current = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            const currentItemsCount = (pageNo + 1) * MEMORY_PAGE_SIZE;
-            const isAllItemsLoaded = currentItemsCount >= totalCount;
-
-            if (!isAllItemsLoaded) {
-              setPageNo(pageNo + 1);
-            }
-          }
-        },
-        { threshold: 1.0 },
-      );
-
-      if (node) observerRef.current.observe(node);
-    },
-    [apiLoading, totalCount, pageNo],
-  );
+  const updatePageNo = () => {
+    setPageNo((prev) => prev + 1);
+  };
 
   const isLoading = apiLoading && pageNo === 0;
 
-  return { lastExperienceRef, memoriesData, isLoading };
+  return { memoriesData, isLoading, totalCount, pageNo, updatePageNo };
 };
 
 export default useGetData;

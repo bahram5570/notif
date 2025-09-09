@@ -10,7 +10,7 @@ import {
 
 import { HttpResultTypes, HttpTypes } from './types';
 
-// export const baseUrl = BASE_URL_SERVER
+// export const baseUrl = BASE_URL_SERVER;
 // export const baseUrl = BASE_URL_STAGE_SSL;
 export const baseUrl = BASE_URL_STAGE_1;
 // export const baseUrl = BASE_URL_STAGE_2;

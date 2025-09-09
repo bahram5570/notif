@@ -1,7 +1,7 @@
 import MemoryItem from './MemoryItem';
 import { MemoryListPropsType } from './type';
 
-const MemoryList = ({ memories, isFetchingNextPage }: MemoryListPropsType) => {
+const MemoryList = ({ memories }: MemoryListPropsType) => {
   return (
     <div>
       {memories.map((memory) => {
@@ -11,7 +11,6 @@ const MemoryList = ({ memories, isFetchingNextPage }: MemoryListPropsType) => {
           </div>
         );
       })}
-      <div ref={isFetchingNextPage} className="h-10 w-full " />
     </div>
   );
 };
