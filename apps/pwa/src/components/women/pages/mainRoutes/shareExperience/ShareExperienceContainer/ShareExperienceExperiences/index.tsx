@@ -1,3 +1,4 @@
+import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import Spinner from '@components/ui/Spinner';
 import { FOOTER_HEIGTH } from '@components/women/WomenFooter/constants';
 import useTheme from '@hooks/useTheme';
@@ -27,7 +28,7 @@ const ShareExperienceExperiences = ({
 }: ShareExperienceExperiencesProps) => {
   const { colors } = useTheme();
   const { shareExperienceOrdersList } = useShareExperienceOrders();
-  const { isLoading, experiencesData } = useExperiences(selectedCategoryId);
+  const { isLoading, experiencesData, pageNo, totalCount, updatePageNo } = useExperiences(selectedCategoryId);
 
   return (
     <>
@@ -53,8 +54,15 @@ const ShareExperienceExperiences = ({
           <ShareExperienceEditProfileModal />
         </>
       )}
-
-      <div className="flex flex-col px-4 relative" style={{ paddingBottom: FOOTER_HEIGTH * 2 }}>
+      <InfiniteScrollContainer
+        isLoading={isLoading}
+        pageNo={pageNo}
+        totalCount={totalCount}
+        callBack={updatePageNo}
+        className="flex flex-col px-4 relative"
+        style={{ paddingBottom: FOOTER_HEIGTH * 2 }}
+        height={'100dvh'}
+      >
         {experiencesData?.expirences.map((item, index) => (
           <div
             key={index}
@@ -76,13 +84,7 @@ const ShareExperienceExperiences = ({
             </div>
           </div>
         ))}
-
-        {isLoading && (
-          <div className="absolute left-0 right-0 bottom-20 w-full flex justify-center">
-            <Spinner color="outline" width={40} />
-          </div>
-        )}
-      </div>
+      </InfiniteScrollContainer>
     </>
   );
 };

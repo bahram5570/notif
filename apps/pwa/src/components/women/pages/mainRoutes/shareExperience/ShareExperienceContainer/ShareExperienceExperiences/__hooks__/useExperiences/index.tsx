@@ -49,26 +49,11 @@ const useExperiences = (selectedCategoryId: SelectedCategoryIdTypes) => {
     }
   }, [pageNo, isLoading]);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const isEndBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 100;
+  const updatePageNo = () => {
+    setPageNo((prev) => prev + 1);
+  };
 
-      if (isEndBottom && !isLoading) {
-        const currentItemsCount = (pageNo + 1) * EXPERIENCES_PAGE_SIZE;
-        const isAllItemsLoaded = currentItemsCount >= totalCount;
-
-        if (!isAllItemsLoaded) {
-          setPageNo(pageNo + 1);
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, [isLoading, pageNo, totalCount]);
-
-  return { isLoading, experiencesData };
+  return { isLoading, experiencesData, pageNo, totalCount, updatePageNo };
 };
 
 export default useExperiences;

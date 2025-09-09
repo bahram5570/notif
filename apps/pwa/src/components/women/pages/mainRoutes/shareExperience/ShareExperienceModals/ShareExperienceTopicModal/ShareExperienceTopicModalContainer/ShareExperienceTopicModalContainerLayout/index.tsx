@@ -8,11 +8,11 @@ import { ShareExperienceTopicModalContainerLayoutPropsTypes } from './type';
 
 const ShareExperienceTopicModalContainerLayout = ({
   children,
-  coverImage,
+  coverImage = '',
   scrolled,
-  topicName,
+  topicName = '',
   isLoading,
-  bio,
+  bio = '',
 }: ShareExperienceTopicModalContainerLayoutPropsTypes) => {
   const { colors } = useTheme();
   return (
@@ -39,12 +39,6 @@ const ShareExperienceTopicModalContainerLayout = ({
                 )}
               </div>
             </>
-          )}
-
-          {isLoading && (
-            <div className="absolute left-0 right-0 -bottom-60 w-full flex justify-center">
-              <Spinner color="outline" width={40} />
-            </div>
           )}
         </div>
       </div>

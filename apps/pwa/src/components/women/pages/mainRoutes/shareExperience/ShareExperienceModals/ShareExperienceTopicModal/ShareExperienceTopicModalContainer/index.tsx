@@ -1,7 +1,6 @@
-import { Fragment, useRef } from 'react';
-
 import styles from '../../../styles.module.css';
 
+import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { FOOTER_HEIGTH } from '@components/women/WomenFooter/constants';
 import { SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME } from '@components/women/pages/mainRoutes/shareExperience/constants';
 import useOverflowHandler from '@hooks/useOverflowHandler';
@@ -18,54 +17,56 @@ import { ShareExperienceTopicModalContainerPropsType } from './type';
 
 const ShareExperienceTopicModalContainer = ({ topicId, avatarImage }: ShareExperienceTopicModalContainerPropsType) => {
   useOverflowHandler();
-  const modalRef = useRef<HTMLDivElement | null>(null);
-  const { experiencesData, isLoading, topicInformation, lastExperienceRef } = useGetData({ topicId });
+  const { topicExperiencesData, isLoading, pageNo, updatePageNo, apiLoading } = useGetData({
+    topicId,
+  });
   const { colors } = useTheme();
-  const { scrolled } = useScroll({ ref: modalRef });
+  const { scrolled } = useScroll({ id: 'infiniteScrollContainer' });
 
   return (
     <>
       <ShareExperienceTopicModalContainerLayout
-        coverImage={topicInformation.coverImage}
-        bio={topicInformation.bio}
-        topicName={topicInformation.name}
+        coverImage={topicExperiencesData?.coverImage}
+        bio={topicExperiencesData?.bio}
+        topicName={topicExperiencesData?.name}
         scrolled={scrolled}
         isLoading={isLoading}
       >
-        <div
-          ref={modalRef}
-          className={`overflow-y-auto ${styles.scroller} pt-72 max-h-screen`}
+        <InfiniteScrollContainer
+          isLoading={apiLoading}
+          pageNo={pageNo}
+          callBack={updatePageNo}
+          totalCount={topicExperiencesData?.totalCount || 10}
+          className={`max-h-screen pt-72 ${styles.scroller}`}
           style={{ paddingBottom: FOOTER_HEIGTH * 2 }}
         >
-          {experiencesData?.expirences.map((item, index) => (
-            <Fragment key={index}>
-              <div
-                className="w-full border-t-[1px] pt-5 pb-4 px-4 z-20"
-                style={{ borderTopColor: colors.Surface_SurfaceVariant, backgroundColor: colors.White }}
-              >
-                <ShareExperienceTopPart {...item} />
+          {topicExperiencesData?.expirences.map((item, index) => (
+            <div
+              key={index}
+              className="w-full border-t-[1px] pt-5 pb-4 px-4 z-20"
+              style={{ borderTopColor: colors.Surface_SurfaceVariant, backgroundColor: colors.White }}
+            >
+              <ShareExperienceTopPart {...item} />
 
-                <div className="w-full pr-10">
-                  <ShareExperienceContentsModule
-                    isSelf={item.selfExperience}
-                    image={item.image}
-                    text={item.text}
-                    hasLinkTo={true}
-                    id={item.id}
-                  />
+              <div className="w-full pr-10">
+                <ShareExperienceContentsModule
+                  isSelf={item.selfExperience}
+                  image={item.image}
+                  text={item.text}
+                  hasLinkTo={true}
+                  id={item.id}
+                />
 
-                  <ShareExperienceBottomPart {...item} />
-                </div>
+                <ShareExperienceBottomPart {...item} />
               </div>
-              <div ref={lastExperienceRef} className="h-10 w-full " style={{ backgroundColor: colors.White }} />
-            </Fragment>
+            </div>
           ))}
-        </div>
+        </InfiniteScrollContainer>
 
         {!isLoading && (
           <ShareExperienceNewCommentFooterModule
             queries={{ [SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME]: 'true' }}
-            placeholder={topicInformation.inputText}
+            placeholder={topicExperiencesData?.inputText || ''}
             avatar={avatarImage || ''}
           />
         )}

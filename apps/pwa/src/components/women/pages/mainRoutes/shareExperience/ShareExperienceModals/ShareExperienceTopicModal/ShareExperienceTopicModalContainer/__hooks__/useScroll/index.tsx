@@ -1,32 +1,31 @@
 import { useEffect, useState } from 'react';
 
-import { useScrollPropsType } from './type';
+type UseScrollProps = {
+  id: string;
+};
 
-const useScroll = ({ ref }: useScrollPropsType) => {
+const useScroll = ({ id }: UseScrollProps) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
+    const element = document.getElementById(id);
+
+    if (!element) return;
+
     const handleScroll = () => {
-      if (ref.current) {
-        if (ref.current.scrollTop > 100) {
-          setScrolled(true);
-        } else {
-          setScrolled(false);
-        }
+      if (element.scrollTop > 100) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
       }
     };
 
-    const modalContent = ref.current;
-    if (modalContent) {
-      modalContent.addEventListener('scroll', handleScroll);
-    }
+    element.addEventListener('scroll', handleScroll);
 
     return () => {
-      if (modalContent) {
-        modalContent.removeEventListener('scroll', handleScroll);
-      }
+      element.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [id]);
 
   return { scrolled };
 };
