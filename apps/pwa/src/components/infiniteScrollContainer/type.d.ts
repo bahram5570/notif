@@ -6,4 +6,6 @@ export type InfiniteScrollContainerPropsType = {
   pageNo: number;
   pageSize?: number;
   height?: string | number;
+  className?: string;
+  style?: React.CSSProperties;
 };
