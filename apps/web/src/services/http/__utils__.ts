@@ -50,10 +50,10 @@ export const applyOptions = async (props: HttpTypes) => {
   }
 
   if (result.method === 'GET') {
-    options = { ...options, cache: result.cache };
-
-    if (result.cache === 'force-cache' && typeof result.revalidate !== 'undefined') {
+    if (result.cache === 'force-cache') {
       options = { ...options, next: { revalidate: result.revalidate } };
+    } else if (result.cache === 'no-store') {
+      options = { ...options, cache: 'no-store' };
     }
   }
 

@@ -11,48 +11,48 @@ import { usePathname } from 'next/navigation';
 import { UserTrackingInfoTypes } from './types';
 
 const UserTracking = ({ children }: { children: React.ReactNode }) => {
-  const pathname = usePathname();
-  const isFirstTime = useRef(isDevelopeMode());
-  const { callUserTracking } = useUserTracking();
+  // const pathname = usePathname();
+  // const isFirstTime = useRef(isDevelopeMode());
+  // const { callUserTracking } = useUserTracking();
 
-  useEffect(() => {
-    if (isFirstTime.current) {
-      isFirstTime.current = false;
-      return;
-    }
+  // useEffect(() => {
+  //   if (isFirstTime.current) {
+  //     isFirstTime.current = false;
+  //     return;
+  //   }
 
-    const handleUserTrackingData = async () => {
-      const data = getUserTracking();
-      const queries = document.location.search;
+  //   const handleUserTrackingData = async () => {
+  //     const data = getUserTracking();
+  //     const queries = document.location.search;
 
-      if (data) {
-        updateUserTracking(pathname + queries);
-        callUserTracking('-----');
-        return;
-      }
+  //     if (data) {
+  //       updateUserTracking(pathname + queries);
+  //       callUserTracking('-----');
+  //       return;
+  //     }
 
-      const req = await fetch('/api/userInfo');
-      const res: UserTrackingInfoTypes = await req.json();
+  //     const req = await fetch('/api/userInfo');
+  //     const res: UserTrackingInfoTypes = await req.json();
 
-      const currentTime = new Date().getTime();
-      const expTime = currentTime + 1000 * 60 * 60 * 24 * 30; // # 30 days
-      const username = `${currentTime.toString()}-${Math.random().toString().slice(2)}`;
-      const firstUrl = { url: pathname + queries, visitTime: new Date().toISOString() };
+  //     const currentTime = new Date().getTime();
+  //     const expTime = currentTime + 1000 * 60 * 60 * 24 * 30; // # 30 days
+  //     const username = `${currentTime.toString()}-${Math.random().toString().slice(2)}`;
+  //     const firstUrl = { url: pathname + queries, visitTime: new Date().toISOString() };
 
-      newUserTracking({
-        expTime,
-        username,
-        ip: res.ip,
-        macAddress: '',
-        urls: [firstUrl],
-        userAgent: res.userAgent,
-      });
+  //     newUserTracking({
+  //       expTime,
+  //       username,
+  //       ip: res.ip,
+  //       macAddress: '',
+  //       urls: [firstUrl],
+  //       userAgent: res.userAgent,
+  //     });
 
-      callUserTracking('-----');
-    };
+  //     callUserTracking('-----');
+  //   };
 
-    handleUserTrackingData();
-  }, [pathname]);
+  //   handleUserTrackingData();
+  // }, [pathname]);
 
   return (
     <React.Fragment>

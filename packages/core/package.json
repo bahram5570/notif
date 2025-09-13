@@ -13,8 +13,8 @@
       "types": "./dist/constants/*.d.ts"
     },
     "./hooks/*": {
-      "import": "./dist/hooks/*/*.js",
-      "types": "./dist/hooks/*/*.d.ts"
+      "import": "./dist/hooks/*.js",
+      "types": "./dist/hooks/*.d.ts"
     }
   },
   "scripts": {

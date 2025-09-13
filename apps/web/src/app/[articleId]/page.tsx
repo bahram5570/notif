@@ -8,12 +8,15 @@ import { notFound } from 'next/navigation';
 import ArticleSchema from '../../schema/ArticleSchema';
 import { ArticleIdResponseTypes } from './types';
 
+const revalidateTime = 60 * 60 * 24; // # 1 day
+
 export const generateMetadata = async (props: { params: { articleId: string } }): Promise<Metadata> => {
   const articleId = props.params.articleId;
 
   const { data, error } = await http<Pick<ArticleIdResponseTypes, 'snippetTitle' | 'meta'>>({
     method: 'GET',
-    cache: 'no-store',
+    cache: 'force-cache',
+    revalidate: revalidateTime,
     url: `support/article/sp/published/meta/${articleId}`,
   });
 
@@ -38,7 +41,8 @@ const Article = async (props: { params: { articleId: string } }) => {
 
   const { data } = await http<ArticleIdResponseTypes>({
     method: 'GET',
-    cache: 'no-store',
+    cache: 'force-cache',
+    revalidate: revalidateTime,
     url: `support/article/sp/published/${articleId}`,
   });
 

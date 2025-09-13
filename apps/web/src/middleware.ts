@@ -35,12 +35,13 @@ export const middleware = async (request: NextRequest) => {
 
   try {
     const uri = pathname.startsWith('/') && pathname.replace('/', '');
+    
     const { data } = await http<{
       url: string;
       status: number;
       valid: boolean;
       redirect: string;
-    }>({ url: `support/redirection?Uri=${uri}`, cache: 'force-cache', revalidate: 3600 });
+    }>({ url: `support/redirection?Uri=${uri}` });
 
     if (data && data.valid) {
       const newUrl = `${request.nextUrl.origin}/${data.redirect}`;
