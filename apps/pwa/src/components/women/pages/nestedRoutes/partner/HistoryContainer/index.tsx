@@ -8,7 +8,7 @@ import HistoryItemList from './HistoryItemList';
 import NotData from './NotData';
 import useGetData from './__hooks__/useGetData';
 
-const HisttoryContainer = () => {
+const HistoryContainer = () => {
   const { isLoading, challengeData, lastExperienceRef } = useGetData();
 
   const hasData = challengeData && challengeData.items.length > 0;
@@ -33,4 +33,4 @@ const HisttoryContainer = () => {
   );
 };
 
-export default HisttoryContainer;
+export default HistoryContainer;

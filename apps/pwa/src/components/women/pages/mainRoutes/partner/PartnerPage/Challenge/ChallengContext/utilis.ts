@@ -15,7 +15,7 @@ export const buttonLinkHandler = (link: LinkType) => {
     case PartnerTypeLink.form:
       return '/protected/challenge';
     case PartnerTypeLink.history:
-      return '/protected/ChallengeHistory';
+      return '/protected/challengeHistory';
     case PartnerTypeLink.memory:
       return '/common/goToApp/memory';
     case PartnerTypeLink.messenger:

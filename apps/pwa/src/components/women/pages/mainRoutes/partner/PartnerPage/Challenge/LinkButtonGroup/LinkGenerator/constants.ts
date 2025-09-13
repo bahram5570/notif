@@ -8,5 +8,5 @@ import { PartnerLinklistType } from './type';
 export const PARTNER_LINK_LIST: PartnerLinklistType[] = [
   { Icon: Message, link: '/protected/partnerMessage', name: PartnerLinkNameEnum.Message },
   { Icon: BookOpenTextIcon, link: '/protected/memory', name: PartnerLinkNameEnum.Memory },
-  { Icon: ClockCounterClockwiseIcon, link: '/protected/ChallengeHistory', name: PartnerLinkNameEnum.History },
+  { Icon: ClockCounterClockwiseIcon, link: '/protected/challengeHistory', name: PartnerLinkNameEnum.History },
 ];
