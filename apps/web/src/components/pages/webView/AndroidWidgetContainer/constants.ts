@@ -1,17 +1,17 @@
 export const ANDROIDWIDGETDATA = [
   {
     id: 1,
-    title: 'روی آیکون برنامه فشار دهید و مکث کنید تا این پنجره باز شود و گزینه “Widgets” را انتخاب کنید.',
+    title: 'بعد از لمس و مکث روی آیکون ایمپو، با باز شدن این صفحه گزینه "widgets" رو انتخاب کن',
     image: '/assets/images/webView/widgetAndroid/1.webp',
   },
   {
     id: 2,
-    title: 'حالا میتونین براساس هدف نصبتون روی یکی از ویجت ها کلیک و دکمه “Add” رو بزنین.',
+    title: 'حالا بر اساس نیاز و هدف نصبت، روی یکی از ویجت‌ها کلیک کن و دکمه "add" رو بزن',
     image: '/assets/images/webView/widgetAndroid/2.webp',
   },
   {
     id: 3,
-    title: 'کارت ویجت روی صفحه اصلی گوشی شما به حالت زیر نمایش داده میشود.',
+    title: 'حالا می‌تونی کارت ویجت رو بصورت زیر روی صفحه اصلی گوشیت ببینی',
     image: '/assets/images/webView/widgetAndroid/3.webp',
   },
 ];
