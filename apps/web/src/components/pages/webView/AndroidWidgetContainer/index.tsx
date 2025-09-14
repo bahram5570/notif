@@ -22,7 +22,7 @@ const AndroidWidgetContainer = () => {
                 className="border-b-2 last:border-b-0 pb-4 mb-4"
                 style={{ borderColor: COLORS_LIST.Surface_SurfaceVariant }}
               >
-                <div className="flex items-center gap-x-2">
+                <div className="flex items-top gap-x-2">
                   <div
                     className="rounded-full w-[24px] h-[24px] flex justify-center items-center p-4"
                     style={{ backgroundColor: COLORS_LIST.Pink_50 }}
