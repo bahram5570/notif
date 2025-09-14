@@ -18,8 +18,8 @@ import usePageInfo from '@providers/__activation__/ActivationProvider/__hooks__/
 const Goal2 = () => {
   // # تاریخ تولد
   const activationData = useActivationCrData();
-  const { callEventActivation } = useActivationAnalytics();
   const defaultDate = useActivationBirthdayDefaultDate();
+  const { callEventActivation } = useActivationAnalytics();
   const { payload, payloadHandler } = useActivationCrPayload();
 
   const { tab, tabHandler } = useActivationBirthdateTabs((v) => payloadHandler({ calendarType: v }));
@@ -59,7 +59,7 @@ const Goal2 = () => {
   }
 
   return (
-    <MainActivationModule {...pageInfo}>
+    <MainActivationModule onContinue={callEventActivation} {...pageInfo}>
       <ActivationTabs tab={tab} tabHandler={tabHandler} tabsList={ACTIVATION_BIRTHDATE_TABS_LIST} />
       <DateModule valueHandler={valueHandler} defaultDate={defaultDate} key={tab} />
     </MainActivationModule>

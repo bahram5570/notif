@@ -16,7 +16,7 @@ const useGetData = ({ id }: UseGetDataPropsType) => {
 
   useEffect(() => {
     if (!isLoading && !data) {
-      router.replace('/not-found');
+      // todo router.replace('/not-found');
     }
   }, [isLoading, data]);
 
