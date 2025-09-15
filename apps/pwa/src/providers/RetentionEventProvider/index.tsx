@@ -17,7 +17,7 @@ const RetentionEventProvider = () => {
 
       if (retentionEvent !== gDate) {
         localStorage.setItem(RETENTION_EVENT, gDate);
-        callEvent(RETENTION_EVENT);
+        callEvent(`session_${RETENTION_EVENT}`);
       }
     }, 5000);
 
