@@ -1,9 +1,12 @@
 'use client';
 
-import WavesContainer from '../WavesContainer';
+import dynamic from 'next/dynamic';
+
 import DateModule from './DateModule';
 import ResultModule from './ResultModule';
 import useCalculatePregnancyDate from './__hooks__/useCalculatePregnancyDate';
+
+const WavesContainer = dynamic(() => import('../WavesContainer'), { ssr: false });
 
 const PregnancyAgeCalculator = () => {
   const { submitHandler, isLoading, weeksResult, pregnancyDateResult, resetHandler } = useCalculatePregnancyDate();

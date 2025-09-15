@@ -79,7 +79,8 @@ const DownloadApp = () => {
       <CustomImage
         height={0}
         width={520}
-        sizes="520px"
+        quality={100}
+        sizes="600px"
         alt="downloadAppMain"
         src="/assets/images/downloadAppMain.webp"
         className="pt-6 md:p-0 w-full md:max-w-[280px] lg:min-w-[230px] lg:max-w-[430px] xl:max-w-[520px]"

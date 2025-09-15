@@ -134,5 +134,13 @@ export const handleBodyUpdate = async (body: string) => {
     count++;
   });
 
+  $('img').each((_, element) => {
+    const img = $(element);
+
+    img.attr('width', null);
+    img.attr('height', null);
+    img.attr('loading', 'lazy');
+  });
+
   return { updatedBody: $.html(), articleSubjectList };
 };

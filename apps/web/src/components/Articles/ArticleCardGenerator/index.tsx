@@ -26,7 +26,7 @@ const ArticleCardGenerator = ({ data }: ArticleCardGeneratorTypes) => {
           src={imageUrl}
           alt={data.imageCoverAlt}
           className="object-cover w-full h-auto"
-          sizes="(max-width: 1024px) 280px, 380px"
+          sizes="(max-width: 1024px) 400px, 500px"
         />
       </div>
 

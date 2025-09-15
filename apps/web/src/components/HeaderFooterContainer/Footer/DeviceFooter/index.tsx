@@ -31,10 +31,37 @@ const DeviceFooter = ({ isArticlePage, hasFooterLink }: DeviceFooterTypes) => {
           borderTopColor: COLORS_LIST.Neutral_Surface,
         }}
       >
-        <DeviceFooterLinkGenerator title="خانه" Icon={HomeIcon} href="/" isSelected={pathname === '/'} />
-        <DeviceFooterLinkGenerator title="چرخه" Icon={CycleIcon} href="/cycle" isSelected={pathname === '/cycle'} />
-        <DeviceFooterLinkGenerator title="مقالات" Icon={ArticlesIcon} href="/blogs" isSelected={!!isArticlePage} />
-        <DeviceFooterLinkGenerator title="ورود" Icon={LoginIcon} href={PWA_LINK_WOMEN_URL} isSelected={false} />
+        <DeviceFooterLinkGenerator
+          title="خانه"
+          Icon={HomeIcon}
+          href="/"
+          isSelected={pathname === '/'}
+          id="navbar-home"
+        />
+
+        <DeviceFooterLinkGenerator
+          title="چرخه"
+          Icon={CycleIcon}
+          href="/cycle"
+          isSelected={pathname === '/cycle'}
+          id="navbar-cycle"
+        />
+
+        <DeviceFooterLinkGenerator
+          title="مقالات"
+          Icon={ArticlesIcon}
+          href="/blogs"
+          isSelected={!!isArticlePage}
+          id="navbar-blogs"
+        />
+
+        <DeviceFooterLinkGenerator
+          title="ورود"
+          Icon={LoginIcon}
+          href={PWA_LINK_WOMEN_URL}
+          isSelected={false}
+          id="navbar-login"
+        />
       </footer>
     </>
   );

@@ -3,11 +3,12 @@ import CustomTypography from '@components/ui/CustomTypography';
 
 import { DeviceFooterLinkTypes } from './types';
 
-const DeviceFooterLinkGenerator = ({ Icon, href, title, isSelected }: DeviceFooterLinkTypes) => {
+const DeviceFooterLinkGenerator = ({ Icon, href, title, isSelected, id }: DeviceFooterLinkTypes) => {
   const isExternalLink = href.includes('http');
 
   return (
     <CustomLink
+      id={id}
       href={href}
       target={isExternalLink ? '_blank' : '_self'}
       style={{ opacity: isSelected ? '1' : '0.4' }}

@@ -27,7 +27,7 @@ const ArticleIdSubjectsList = ({ articleSubjectList }: ArticleIdSubjectsListType
 
   return (
     <div
-      className="w-full min-h-[71px] h-fit px-5 py-6 md:px-14 md:py-8 rounded-2xl"
+      className="w-full h-fit px-5 py-6 md:px-14 md:py-8 rounded-2xl"
       style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
     >
       <div className="w-full flex items-center justify-between">

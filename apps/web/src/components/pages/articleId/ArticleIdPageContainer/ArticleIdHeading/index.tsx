@@ -23,9 +23,11 @@ const ArticleIdHeading = ({ imageCover, title }: ArticleIdHeadingTypes) => {
         width={960}
         alt={title}
         height={960}
+        quality={100}
         src={imageUrl}
         priority={true}
         className="w-full h-auto rounded-2xl"
+        sizes="(max-width: 768px) 100vw, 60vw"
       />
     </div>
   );

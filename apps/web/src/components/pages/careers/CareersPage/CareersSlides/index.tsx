@@ -6,6 +6,7 @@ import ArrowIcon from '@assets/icons/arrow2.svg';
 
 import CustomImage from '@components/ui/CustomImage';
 import { COLORS_LIST } from '@theme/colors';
+import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 

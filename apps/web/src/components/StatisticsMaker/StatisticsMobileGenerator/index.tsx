@@ -1,4 +1,6 @@
 import CustomImage from '@components/ui/CustomImage';
+import 'swiper/css/autoplay';
+import 'swiper/css/effect-fade';
 import { Autoplay, EffectFade } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
