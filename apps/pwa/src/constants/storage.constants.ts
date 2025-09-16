@@ -1,1 +1,1 @@
-export const RETENTION_EVENT = 'retentionEvent';
+export const RETENTION_EVENT = 'session_retention_event';

@@ -1,0 +1,1 @@
+export const RETENTION_EVENT_DELAY_SECONDS = 5;

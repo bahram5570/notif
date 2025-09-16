@@ -7,19 +7,21 @@ import { currentDate } from '@utils/dates';
 import { RETENTION_EVENT } from '@constants/storage.constants';
 import useAnalytics from '@hooks/useAnalytics';
 
+import { RETENTION_EVENT_DELAY_SECONDS } from './constants';
+
 const RetentionEventProvider = () => {
   const { callEvent } = useAnalytics();
 
   useEffect(() => {
-    const { gDate } = currentDate();
     const timer = setTimeout(() => {
+      const { gDate } = currentDate();
       const retentionEvent: null | string = localStorage.getItem(RETENTION_EVENT) || null;
 
       if (retentionEvent !== gDate) {
         localStorage.setItem(RETENTION_EVENT, gDate);
-        callEvent(`session_${RETENTION_EVENT}`);
+        callEvent(RETENTION_EVENT);
       }
-    }, 5000);
+    }, RETENTION_EVENT_DELAY_SECONDS * 1000);
 
     return () => clearTimeout(timer);
   }, []);

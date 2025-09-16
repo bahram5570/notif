@@ -7,9 +7,9 @@ import { PostHogProvider } from 'posthog-js/react';
 
 const AnalyticsProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
-    // if (process.env.NODE_ENV !== 'production') {
-    //   return;
-    // }
+    if (process.env.NODE_ENV !== 'production') {
+      return;
+    }
 
     posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
       autocapture: false,
