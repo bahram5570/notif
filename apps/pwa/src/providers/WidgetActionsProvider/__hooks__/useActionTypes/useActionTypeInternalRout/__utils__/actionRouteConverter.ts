@@ -49,7 +49,7 @@ export const actionRouteConverter = async (serverLink: string) => {
       break;
 
     case '/partner/challenge/archive':
-      result = '/protected/ChallengeHistory';
+      result = '/protected/challengeHistory';
       break;
 
     // todo fix reminder
