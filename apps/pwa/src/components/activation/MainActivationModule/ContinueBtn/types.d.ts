@@ -18,11 +18,6 @@ export interface ContinueBtnProps
   currentRewardData: CurrentRewardDataTypes;
 }
 
-export interface BtnProps extends Pick<ContinueBtnProps, 'nextActivation' | 'isLoading'> {
-  nextHandler: () => void;
-  hasReward: boolean;
-}
-
 export interface RewardProps
   extends Pick<
     ContinueBtnProps,

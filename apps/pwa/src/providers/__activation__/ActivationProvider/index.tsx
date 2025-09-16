@@ -28,8 +28,8 @@ const ActivationProvider = ({ children, questionsData, errorCode }: ActivationPr
     setPayload({ ...payload, ...v });
   };
 
-  useActivationSectionRouteProtection({ payloadHandler });
-  useActivationGoBackHandler();
+  // useActivationSectionRouteProtection({ payloadHandler });
+  // useActivationGoBackHandler();
 
   return (
     <ActivationContext.Provider value={{ payload, payloadHandler, data }}>

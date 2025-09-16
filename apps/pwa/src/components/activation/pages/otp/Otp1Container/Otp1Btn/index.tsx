@@ -1,20 +1,18 @@
+import ActivationBtn from '@components/activation/ActivationBtn';
 import { ACTIVATION_HEADING_SCRIPTS_ID } from '@components/activation/ActivationHeading/constants';
-import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
 import useCustomToast from '@hooks/useCustomToast';
 import useTheme from '@hooks/useTheme';
 import Link from 'next/link';
 
-import { ContinueBtnProps } from './types';
+import { Otp1BtnProps } from './types';
 
-const ContinueBtn = ({ nextHandler, showContinueBtn, invalidMessage, isLoading }: ContinueBtnProps) => {
+const Otp1Btn = ({ nextHandler, showContinueBtn, invalidMessage, isLoading }: Otp1BtnProps) => {
   const { colors, typography } = useTheme();
   const { onToast } = useCustomToast();
 
   const linkFont = typography.Body.Medium;
   const linkColor = colors.PrimaryWoman_Primary;
-
-  const translate = `0 ${showContinueBtn ? '0' : '140px'}`;
 
   const submitHandler = () => {
     if (invalidMessage) {
@@ -30,18 +28,9 @@ const ContinueBtn = ({ nextHandler, showContinueBtn, invalidMessage, isLoading }
       style={{ backgroundColor: colors.Neutral_Background }}
       id={ACTIVATION_HEADING_SCRIPTS_ID}
     >
-      <div className="flex mx-auto w-[204px] min-w-fit">
-        <Button
-          size="medium"
-          variant="fill"
-          color="primary"
-          isLoading={isLoading}
-          onClick={submitHandler}
-          style={{ translate, transition: '0.2s' }}
-        >
-          دریافت کد ورود
-        </Button>
-      </div>
+      <ActivationBtn onClick={submitHandler} showBtn={showContinueBtn} isLoading={isLoading}>
+        دریافت کد ورود
+      </ActivationBtn>
 
       <div className="flex flex-row-reverse flex-wrap justify-center gap-1 pt-6 pb-5">
         <Typography scale="Body" size="Medium" className="whitespace-nowrap">
@@ -65,4 +54,4 @@ const ContinueBtn = ({ nextHandler, showContinueBtn, invalidMessage, isLoading }
   );
 };
 
-export default ContinueBtn;
+export default Otp1Btn;

@@ -4,7 +4,7 @@ import InputModule from '@components/activation/InputModule';
 import MainActivationModule from '@components/activation/MainActivationModule';
 import useIsRendered from '@hooks/useIsRendered';
 
-import ContinueBtn from './ContinueBtn';
+import Otp1Btn from './Otp1Btn';
 import RegisterTypeBtn from './RegisterTypeBtn';
 import useIsPhone from './__hooks__/useIsPhone';
 import useRegisterStatus from './__hooks__/useRegisterStatus';
@@ -70,7 +70,7 @@ const Otp1Container = ({ payload, payloadHandler, otp1CompleteHandler, onContinu
             key={inputResetKey}
           />
 
-          <ContinueBtn
+          <Otp1Btn
             showContinueBtn={showContinueBtn}
             invalidMessage={invalidMessage}
             nextHandler={fetchHandler}
