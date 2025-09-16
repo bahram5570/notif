@@ -13,6 +13,7 @@ const LinkGenerator = ({ href, directId, title, Icon }: LinkGeneratorTypes) => {
   return (
     <CustomLink
       href={href}
+      id={directId}
       target="_blank"
       onClick={() => callUserTracking(directId)}
       style={{ backgroundColor: COLORS_LIST.Neutral_OnBackground }}
