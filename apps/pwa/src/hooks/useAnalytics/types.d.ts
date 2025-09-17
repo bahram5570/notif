@@ -1,3 +1,4 @@
 export interface UseAnalyticsTypes {
-  pageView?: boolean;
+  pageView_eventName?: string;
+  inView_eventName?: string;
 }
