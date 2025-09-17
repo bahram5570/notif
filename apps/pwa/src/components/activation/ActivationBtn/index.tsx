@@ -7,7 +7,7 @@ import { ActivationBtnProps } from './types';
 const ActivationBtn = ({ children, isLoading, showBtn = true, navigationLoadingId, onClick }: ActivationBtnProps) => {
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Enter') {
+      if (e.key === 'Enter' && showBtn) {
         e.preventDefault();
 
         onClick();
@@ -16,11 +16,8 @@ const ActivationBtn = ({ children, isLoading, showBtn = true, navigationLoadingI
     };
 
     window.addEventListener('keydown', handler);
-
-    return () => {
-      window.removeEventListener('keydown', handler);
-    };
-  }, [onClick]);
+    return () => window.removeEventListener('keydown', handler);
+  }, [onClick, showBtn]);
 
   return (
     <div className={`w-full flex justify-center duration-200 ${showBtn ? 'translate-y-0' : 'translate-y-[50vh]'}`}>

@@ -22,6 +22,8 @@ const useAnalytics = (props?: UseAnalyticsTypes) => {
 
   const callEvent = useCallback((event_name: EventName, properties?: Properties) => {
     posthog.capture(event_name, properties);
+    console.log(event_name);
+    
   }, []);
 
   return { callEvent };

@@ -1,4 +1,4 @@
-import InputModule from '@components/activation/InputModule';
+import ActivationInputModule from '@components/activation/ActivationInputModule';
 import MainActivationModule from '@components/activation/MainActivationModule';
 import usePageInfo from '@providers/__activation__/ActivationProvider/__hooks__/usePageInfo';
 
@@ -39,19 +39,19 @@ const Goal1Container = ({
 
   return (
     <MainActivationModule
-      onContinue={onContinue}
       {...pageInfo}
       isLoading={isLoading}
+      onContinue={onContinue}
       onRegister={onRegister}
       invalidMessage={invalidMessage}
       showContinueBtn={showContinueBtn}
     >
       <>
-        <InputModule
-          valueHandler={valueHandler}
-          placeHolder="اینجا بنویس"
-          value={payload.firstName}
+        <ActivationInputModule
           isTextTyps={true}
+          value={payload.firstName}
+          placeHolder="اینجا بنویس"
+          valueHandler={valueHandler}
         />
 
         <InterfaceCodeContainer onComplete={interfaceCodeHandler} />

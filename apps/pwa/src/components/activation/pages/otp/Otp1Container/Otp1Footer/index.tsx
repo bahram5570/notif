@@ -1,26 +1,13 @@
-import ActivationBtn from '@components/activation/ActivationBtn';
 import { ACTIVATION_HEADING_SCRIPTS_ID } from '@components/activation/ActivationHeading/constants';
 import Typography from '@components/ui/Typography';
-import useCustomToast from '@hooks/useCustomToast';
 import useTheme from '@hooks/useTheme';
 import Link from 'next/link';
 
-import { Otp1BtnProps } from './types';
-
-const Otp1Btn = ({ nextHandler, showContinueBtn, invalidMessage, isLoading }: Otp1BtnProps) => {
+const Otp1Footer = () => {
   const { colors, typography } = useTheme();
-  const { onToast } = useCustomToast();
 
   const linkFont = typography.Body.Medium;
   const linkColor = colors.PrimaryWoman_Primary;
-
-  const submitHandler = () => {
-    if (invalidMessage) {
-      onToast({ message: invalidMessage, type: 'error' });
-    } else {
-      nextHandler();
-    }
-  };
 
   return (
     <div
@@ -28,10 +15,6 @@ const Otp1Btn = ({ nextHandler, showContinueBtn, invalidMessage, isLoading }: Ot
       style={{ backgroundColor: colors.Neutral_Background }}
       id={ACTIVATION_HEADING_SCRIPTS_ID}
     >
-      <ActivationBtn onClick={submitHandler} showBtn={showContinueBtn} isLoading={isLoading}>
-        دریافت کد ورود
-      </ActivationBtn>
-
       <div className="flex flex-row-reverse flex-wrap justify-center gap-1 pt-6 pb-5">
         <Typography scale="Body" size="Medium" className="whitespace-nowrap">
           با ورود به ایمپو،
@@ -54,4 +37,4 @@ const Otp1Btn = ({ nextHandler, showContinueBtn, invalidMessage, isLoading }: Ot
   );
 };
 
-export default Otp1Btn;
+export default Otp1Footer;

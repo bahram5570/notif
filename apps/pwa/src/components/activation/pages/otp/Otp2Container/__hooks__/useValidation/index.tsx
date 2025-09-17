@@ -22,6 +22,8 @@ const useValidation = ({ validationCompleteHandler, otpStatusHandler, isRegister
   const submitHandler: SubmitHandlerTypes = (code) => {
     const payload = { identity, code, phoneModel: '', deviceToken: getFirebaseCookieToken() };
     callApi(payload);
+
+    (document.activeElement as HTMLElement)?.blur();
   };
 
   return { submitHandler, isValidateLoading };

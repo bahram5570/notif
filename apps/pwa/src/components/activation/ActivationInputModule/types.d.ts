@@ -1,7 +1,6 @@
-export interface InputModuleProps {
+export interface ActivationInputModuleProps {
   valueHandler: (v: string) => void;
   placeHolder?: string;
   isTextTyps: boolean;
-  testId?: string;
   value: string;
 }
