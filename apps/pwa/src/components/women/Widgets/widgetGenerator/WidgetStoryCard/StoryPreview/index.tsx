@@ -1,4 +1,5 @@
 import CustomModal from '@components/ui/CustomModal';
+import useAnalytics from '@hooks/useAnalytics';
 import 'swiper/css/effect-flip';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -8,11 +9,13 @@ import useStoryUpdate from './__hooks__/useStoryUpdate';
 import { StoryPreviewPorps } from './types';
 
 const StoryPreview = ({ list, saveHandler }: StoryPreviewPorps) => {
+  const { callEvent } = useAnalytics();
   const { swiperRef, isOpen, storyIndex, storyIndexHandler, navigateStoryHandler } = useCurrentStory(list);
 
   const { viewStoryHandler, isBookmarkedHandler } = useStoryUpdate({ isOpen, list });
 
   const saveStoryHandler = (storyId: string) => {
+    callEvent('StoryBookMarked');
     isBookmarkedHandler(storyId);
 
     if (saveHandler) {

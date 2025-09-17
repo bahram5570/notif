@@ -1,12 +1,15 @@
 import WidgetCardContainer from '@components/women/Widgets/WidgetCardContainer';
+import useAnalytics from '@hooks/useAnalytics';
 
 import WidgetHintCardGenerator from './WidgetHintCardGenerator';
 import { WidgetHintCardProps } from './types';
 
 const WidgetHintCard = ({ data }: WidgetHintCardProps) => {
+  const { callEventRef } = useAnalytics({ inView_eventName: 'HintWidgetSeenMoreThan5Secs' });
+
   return (
     <WidgetCardContainer title={data.title}>
-      <div className="w-full flex flex-col items-end gap-3">
+      <div className="w-full flex flex-col items-end gap-3" ref={callEventRef}>
         {data.list.map((item, index) => (
           <WidgetHintCardGenerator
             {...item}

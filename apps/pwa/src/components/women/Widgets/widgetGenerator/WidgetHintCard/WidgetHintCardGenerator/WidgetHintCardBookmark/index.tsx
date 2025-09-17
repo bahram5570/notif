@@ -3,17 +3,21 @@ import { useEffect, useState } from 'react';
 import BookmarkEmptyIcon from '@assets/icons/saveEmpty.svg';
 import BookmarkFillIcon from '@assets/icons/saveFill.svg';
 
+import useAnalytics from '@hooks/useAnalytics';
 import useApi from '@hooks/useApi';
 import useTheme from '@hooks/useTheme';
 
 import { ApiInfoTypes, WidgetHintCardBookmarkProps } from './types';
 
 const WidgetHintCardBookmark = (props: WidgetHintCardBookmarkProps) => {
+  const { callEvent } = useAnalytics();
+
   const { colors } = useTheme();
   const [apiInfo, setApiInfo] = useState<ApiInfoTypes>(null);
   const [isBookmarked, setIsBookmarked] = useState(props.isBookmarked);
 
   const clickHandler = () => {
+    callEvent('hintBookMarked');
     if (isBookmarked) {
       setIsBookmarked(false);
       setApiInfo({ api: 'archive/hint/bookmark', payload: { id: props.id }, method: 'DELETE' });

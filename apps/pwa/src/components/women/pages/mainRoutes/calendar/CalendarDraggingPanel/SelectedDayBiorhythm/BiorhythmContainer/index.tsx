@@ -1,5 +1,6 @@
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import useTheme from '@hooks/useTheme';
@@ -7,6 +8,8 @@ import useTheme from '@hooks/useTheme';
 import { BiorhythmContainerProps } from './type';
 
 const BiorhythmContainer = ({ Icon, percent, text, typeText, type }: BiorhythmContainerProps) => {
+  const { callEvent } = useAnalytics();
+
   const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
@@ -16,7 +19,8 @@ const BiorhythmContainer = ({ Icon, percent, text, typeText, type }: BiorhythmCo
       className="flex rounded-2xl p-3 w-1/3 justify-center"
       style={{ background: colors.Surface_SurfaceVariant }}
       onClick={() => {
-        (newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true', typeText, type }),
+        (callEvent('BiorhythmClicked'),
+          newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true', typeText, type }),
           pageNavigationHandler({ showProgressBar: true, id: 'BiorhythmModal' }));
       }}
       id="BiorhythmClicked"
