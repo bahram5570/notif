@@ -4,6 +4,7 @@ import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
+import useAnalytics from '@hooks/useAnalytics';
 import useTheme from '@hooks/useTheme';
 
 import DeleteNoteBtn from './DeleteNoteBtn';
@@ -14,6 +15,7 @@ import useGetData from './__hooks__/useGetData';
 import useSubmit from './__hooks__/useSubmit';
 
 const NoteContainer = () => {
+  const { callEvent } = useAnalytics();
   const { colors } = useTheme();
   const { noteValue, onChangeHandler, isLoading: getDataLoading } = useGetData();
 
@@ -21,6 +23,7 @@ const NoteContainer = () => {
   const { isLoading, submitHandler } = useSubmit({ isEditMode });
 
   const onClick = () => {
+    isEditMode ? callEvent('NoteEdit') : callEvent('NoteAdd');
     submitHandler(noteValue);
   };
 

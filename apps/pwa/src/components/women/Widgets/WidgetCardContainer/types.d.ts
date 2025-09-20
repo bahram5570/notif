@@ -6,4 +6,5 @@ export interface WidgetCardContainerProps {
   children: React.ReactNode;
   title: string;
   buttonId?: string;
+  onClick?: () => void;
 }

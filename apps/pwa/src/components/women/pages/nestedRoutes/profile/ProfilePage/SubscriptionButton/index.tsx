@@ -1,6 +1,7 @@
 import CrownIcon from '@assets/icons/crown.svg';
 
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useTheme from '@hooks/useTheme';
 import Link from 'next/link';
@@ -8,8 +9,14 @@ import Link from 'next/link';
 import { SubscriptionProps } from '../__hooks__/userNameDetail/type';
 
 const SubscriptionButton = ({ remaindDays }: SubscriptionProps) => {
+  const { callEvent } = useAnalytics();
   const { colors, typography } = useTheme();
   const { pageNavigationHandler } = usePageNavigationLoading();
+
+  const clickHandler = () => {
+    callEvent('Subscription_From_HasSubscription');
+    pageNavigationHandler({ id: 'SubscriptionButton', showProgressBar: true });
+  };
 
   return (
     <div className=" px-4 py-2">
@@ -21,7 +28,7 @@ const SubscriptionButton = ({ remaindDays }: SubscriptionProps) => {
           href="/protected/subscription"
           className=" rounded-full  relative min-w-fit w-fit py-2 px-3"
           style={{ ...typography.Lable.Large, color: colors.PrimaryWoman_Primary, backgroundColor: colors.White }}
-          onClick={() => pageNavigationHandler({ id: 'SubscriptionButton', showProgressBar: true })}
+          onClick={clickHandler}
         >
           <Typography scale="Lable" size="Medium" color="PrimaryWoman_Primary">
             تمدید اشتراک

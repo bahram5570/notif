@@ -1,5 +1,6 @@
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 import useTheme from '@hooks/useTheme';
 
 import CustomLink from '../../CustomLink';
@@ -7,6 +8,7 @@ import { ChallengContextPropsType } from './type';
 import { buttonLinkHandler } from './utilis';
 
 const ChallengContext = ({ card, valid }: ChallengContextPropsType) => {
+  const { callEvent } = useAnalytics();
   const { colors } = useTheme();
 
   return (
@@ -22,7 +24,12 @@ const ChallengContext = ({ card, valid }: ChallengContextPropsType) => {
         {card.rightIcon !== '' && <CustomImage src={card.rightIcon} />}
       </div>
       {card.btnText && (
-        <CustomLink lable={card.btnText} link={buttonLinkHandler(card.link)} id={`Challenge-${card.btnText}`} />
+        <CustomLink
+          lable={card.btnText}
+          link={buttonLinkHandler(card.link)}
+          onClick={() => callEvent('Pair_TAB')}
+          id={`Challenge-${card.btnText}`}
+        />
       )}
     </div>
   );

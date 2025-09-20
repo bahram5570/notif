@@ -2,16 +2,19 @@ import { addCommas } from '@utils/numbers';
 
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useTheme from '@hooks/useTheme';
 
 import { ClinicCardGeneratorProps } from './types';
 
 const ClinicCardGenerator = ({ description, id, image, name, price, priceUnit }: ClinicCardGeneratorProps) => {
+  const { callEvent } = useAnalytics();
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { colors } = useTheme();
 
   const clickHandler = () => {
+    callEvent('Clinic_Ticket');
     pageNavigationHandler({ showProgressBar: true, linkTo: `clinic/doctor/${id}`, id: 'ClinicCardGenerator' });
   };
 

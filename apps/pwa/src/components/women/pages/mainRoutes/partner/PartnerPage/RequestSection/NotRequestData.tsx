@@ -1,17 +1,25 @@
 import AddLoveIcon from '@assets/icons/add-love.svg';
 
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 
 import CustomLink from '../CustomLink';
 
 const NotRequestData = () => {
+  const { callEvent } = useAnalytics();
+
   return (
     <div className="flex flex-col justify-center items-center gap-3">
       <AddLoveIcon />
       <Typography scale="Body" size="Small" color="Neutral_OnBackground" textAlign="center" className="p-3">
         هنوز هیچکس برات درخواست همدلی نفرستاده! اما خودت می‌تونی همدلی رو شروع کنی
       </Typography>
-      <CustomLink lable="شروع همدلی" link="/protected/partnerStart" id="not-request-data-link" />
+      <CustomLink
+        lable="شروع همدلی"
+        link="/protected/partnerStart"
+        onClick={() => callEvent('Pair_From_List')}
+        id="not-request-data-link"
+      />
     </div>
   );
 };

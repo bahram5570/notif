@@ -23,6 +23,13 @@ const CustomLink = (props: CustomLinkPropType) => {
 
   const isLoading = pageNavigationLoading === id;
 
+  const clickHandler = () => {
+    if (props.onClick) {
+      props.onClick();
+    }
+    pageNavigationHandler({ id: id, showProgressBar: false });
+  };
+
   return (
     <Link
       href={link}
@@ -32,7 +39,7 @@ const CustomLink = (props: CustomLinkPropType) => {
         color,
       }}
       className="font-semibold w-full h-10 text-base rounded-full flex justify-center items-center"
-      onClick={() => pageNavigationHandler({ id: id, showProgressBar: false })}
+      onClick={clickHandler}
     >
       {isLoading && <Spinner width={20} color="primary" />}
       {!isLoading && (

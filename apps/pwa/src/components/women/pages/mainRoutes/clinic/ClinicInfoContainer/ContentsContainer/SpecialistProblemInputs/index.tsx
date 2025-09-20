@@ -2,6 +2,7 @@ import { toPersianNumbers } from '@utils/numbers';
 
 import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 import useCustomToast from '@hooks/useCustomToast';
 import useFileUpload from '@hooks/useFileUpload';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
@@ -14,6 +15,7 @@ import useValues from './__hooks__/useValues';
 import { SpecialistProblemInputsProps } from './types';
 
 const SpecialistProblemInputs = ({ info, infoHelper, questionValuesHandler }: SpecialistProblemInputsProps) => {
+  const { callEvent } = useAnalytics();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
   const { values, valuesHandler } = useValues();
   const { colors, typography } = useTheme();
@@ -32,6 +34,7 @@ const SpecialistProblemInputs = ({ info, infoHelper, questionValuesHandler }: Sp
   });
 
   const paymentHandler = () => {
+    callEvent('Clinic_Payment');
     if (values.text.trim() === '') {
       onToast({ message: 'اول مشکلت بنویس و بعد ارسال کن' });
     } else {
