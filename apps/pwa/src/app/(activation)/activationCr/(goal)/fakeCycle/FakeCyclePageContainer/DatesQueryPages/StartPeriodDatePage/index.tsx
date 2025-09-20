@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import ActivationCalendar from '@components/activation/ActivationCalendar';
-import DateModule from '@components/activation/DateModule';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import useDateIntervals from '@providers/__activation__/ActivationProvider/__hooks__/useDateIntervals';
 
@@ -32,7 +31,9 @@ const StartPeriodDatePage = ({ payloadHandler }: StartPeriodDatePageProps) => {
       title="تاریخ آخرین باری که پریود شدی رو بهمون بگو"
       subtitle="برای پیش‌بینی روزهایی که بیشترین احتمال بارداری وجود داره"
     >
-      <ActivationCalendar valueHandler={valueHandler} startDate={periodStart} endDate={periodEnd} />
+      <div className="w-full py-10">
+        <ActivationCalendar valueHandler={valueHandler} startDate={periodStart} endDate={periodEnd} />
+      </div>
     </DatesContainer>
   );
 };

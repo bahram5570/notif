@@ -3,7 +3,7 @@ import CycleContainer from '@components/women/pages/mainRoutes/cycle/CycleContai
 import useIsRendered from '@hooks/useIsRendered';
 
 import BottomPart from './BottomPart';
-import ContinueBtn from './ContinueBtn';
+import SampleCycleContinueBtn from './SampleCycleContinueBtn';
 import SampleCycleHeading from './SampleCycleHeading';
 import useGetData from './__hooks__/useGetData';
 import { SampleCycleContainerProps } from './types';
@@ -20,7 +20,7 @@ const SampleCycleContainer = ({ payload }: SampleCycleContainerProps) => {
     <FakeCycleContainer>
       <CycleContainer data={data} customAppBar={<SampleCycleHeading textColor={textColor} payload={payload} />}>
         <BottomPart payload={payload} />
-        <ContinueBtn />
+        <SampleCycleContinueBtn />
       </CycleContainer>
     </FakeCycleContainer>
   );

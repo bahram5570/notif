@@ -3,7 +3,7 @@ import useBottomPartData from '@app/(activation)/activationCr/(goal)/fakeCycle/F
 import { FAKE_CYCLE_FOOTER_HEIGTH } from '@app/(activation)/activationCr/(goal)/fakeCycle/FakeCyclePageContainer/PageContainer/FakeCycleContainer/constants';
 import useGoalFinder from '@hooks/__activation__/useGoalFinder';
 
-import { SAMPLE_CYCLE_CONTINUE_BTN_HEIGHT } from '../ContinueBtn/constants';
+import { SAMPLE_CYCLE_CONTINUE_BTN_HEIGHT } from '../SampleCycleContinueBtn/constants';
 import { BottomPartProps } from './types';
 
 const BottomPart = ({ payload }: BottomPartProps) => {

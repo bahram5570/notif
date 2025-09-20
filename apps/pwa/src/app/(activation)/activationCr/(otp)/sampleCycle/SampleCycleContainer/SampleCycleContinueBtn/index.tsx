@@ -7,10 +7,12 @@ import { useRouter } from 'next/navigation';
 
 import { SAMPLE_CYCLE_CONTINUE_BTN_HEIGHT } from './constants';
 
-const ContinueBtn = () => {
+const SampleCycleContinueBtn = () => {
   const router = useRouter();
   const { colors } = useTheme();
   const { callEventActivation } = useActivationAnalytics();
+
+  // const { goalInfo } = useGoalFinder({ status: payload.status, periodStatus: payload.periodStatus });
 
   const nextHandler = () => {
     callEventActivation();
@@ -36,4 +38,4 @@ const ContinueBtn = () => {
   );
 };
 
-export default ContinueBtn;
+export default SampleCycleContinueBtn;
