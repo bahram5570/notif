@@ -49,7 +49,9 @@ const useInterfaceCode = ({ onComplete }: UseInterfaceCodeProps) => {
   }, [apiInfo]);
 
   const submitHandler = () => {
-    setApiInfo({ api: `woman/checkinterface/${code}`, queryKey: `${Date.now()}` });
+    if (code) {
+      setApiInfo({ api: `woman/checkinterface/${code}`, queryKey: `${Date.now()}` });
+    }
   };
 
   return { code, codeHandler, isLoading, submitHandler };

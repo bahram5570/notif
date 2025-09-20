@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import ActivationCalendar from '@components/activation/ActivationCalendar';
 import DateModule from '@components/activation/DateModule';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
@@ -9,11 +11,13 @@ import DatesContainer from '../DatesContainer';
 import { StartPeriodDatePageProps } from './types';
 
 const StartPeriodDatePage = ({ payloadHandler }: StartPeriodDatePageProps) => {
+  const [showBtn, setShowBtn] = useState(false);
   const { periodStart, periodEnd } = useDateIntervals();
   const { newQueryParamsHandler } = useQueryParamsHandler();
 
   const valueHandler = (v: string) => {
     payloadHandler({ startPeriodDate: v });
+    setShowBtn(true);
   };
 
   const continueHandler = () => {
@@ -22,6 +26,7 @@ const StartPeriodDatePage = ({ payloadHandler }: StartPeriodDatePageProps) => {
 
   return (
     <DatesContainer
+      showBtn={showBtn}
       description="کاربر عزیز"
       continueHandler={continueHandler}
       title="تاریخ آخرین باری که پریود شدی رو بهمون بگو"

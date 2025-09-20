@@ -1,4 +1,4 @@
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 
 import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
 
@@ -14,6 +14,7 @@ const MainActivationModule = (props: MainActivationModuleProps) => {
 
   const showContinueBtn = typeof props.showContinueBtn === 'undefined' ? true : props.showContinueBtn;
   const paddingTopHeight = isLargeScreen ? HEADING_HEIGHT : HEADING_HEIGHT - ACTIVATION_HEADING_ICON_WIDTH;
+  const hasOnMountReward = typeof props.onMountRewardId !== 'undefined';
 
   return (
     <div
@@ -60,7 +61,7 @@ const MainActivationModule = (props: MainActivationModuleProps) => {
         />
       </Suspense>
 
-      {typeof props.onMountRewardId !== 'undefined' && (
+      {hasOnMountReward && (
         <OnMountRewardModule
           currentRewardData={props.onMountRewardId ? props.rewardData?.[props.onMountRewardId]?.page : undefined}
           orderOfRewardElements={props.orderOfRewardElements}

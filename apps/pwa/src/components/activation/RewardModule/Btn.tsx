@@ -1,5 +1,6 @@
 import Button from '@components/ui/Button';
 
+import ActivationBtn from '../ActivationBtn';
 import { BtnProps, RewardBtnTypes } from './types';
 
 const Btn = ({ btnLabel, btnLabel2, btnHandler, isOnMountModule, isLoading }: BtnProps) => {
@@ -22,16 +23,14 @@ const Btn = ({ btnLabel, btnLabel2, btnHandler, isOnMountModule, isLoading }: Bt
           </Button>
         )}
 
-        <Button
-          size="large"
-          variant="fill"
-          color="primary"
+        <ActivationBtn
+          showBtn={true}
           isLoading={isLoading}
           onClick={clickHandler}
           navigationLoadingId={isOnMountModule ? undefined : 'rewardModuleBtn'}
         >
           {btnLabel}
-        </Button>
+        </ActivationBtn>
       </div>
     </div>
   );

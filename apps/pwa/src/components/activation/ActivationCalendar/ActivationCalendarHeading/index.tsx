@@ -37,6 +37,10 @@ const ActivationCalendarHeading = (props: ActivationCalendarHeadingProps) => {
   }, [props.calendarType, props.currentMonthInfo]);
 
   const selectedDayScript = useMemo(() => {
+    if (props.selectedDay === '') {
+      return 'آخرین پریودتو انتخاب کن';
+    }
+
     let day = 0;
     let month = '';
 
@@ -68,7 +72,11 @@ const ActivationCalendarHeading = (props: ActivationCalendarHeadingProps) => {
           {monthScript}
         </Typography>
 
-        <Typography size="Medium" scale="Lable" color="PrimaryWoman_Primary">
+        <Typography
+          size="Medium"
+          scale="Lable"
+          color={props.selectedDay === '' ? 'Surface_Outline' : 'PrimaryWoman_Primary'}
+        >
           {selectedDayScript}
         </Typography>
       </div>

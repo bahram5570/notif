@@ -211,7 +211,7 @@ const TRACKER_ROUTES: ActivationRoutesInfoTypes = {
     },
   },
   tracker_5: {
-    questionId: 9,
+    questionId: 33,
     progressPercentage: 86,
     payloadKeys: ['startPeriodDate'],
     nextActivationList: {

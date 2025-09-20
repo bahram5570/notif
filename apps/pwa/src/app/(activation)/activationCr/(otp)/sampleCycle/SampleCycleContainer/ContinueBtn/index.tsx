@@ -1,5 +1,5 @@
 // import { FAKE_CYCLE_FOOTER_HEIGTH } from '@app/(activation)/activationCr/(goal)/fakeCycle/FakeCyclePageContainer/PageContainer/FakeCycleContainer/constants';
-import Button from '@components/ui/Button';
+import ActivationBtn from '@components/activation/ActivationBtn';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import useTheme from '@hooks/useTheme';
@@ -27,11 +27,9 @@ const ContinueBtn = () => {
         backgroundColor: colors.Neutral_Background,
       }}
     >
-      <div className="flex mx-auto w-[204px] min-w-fit">
-        <Button variant="fill" size="large" color="primary" navigationLoadingId="ContinueBtn" onClick={nextHandler}>
-          مرحله بعد
-        </Button>
-      </div>
+      <ActivationBtn navigationLoadingId={'ContinueBtn'} onClick={nextHandler} showBtn={true}>
+        مرحله بعد
+      </ActivationBtn>
 
       {/* <div className="h-[1px] mt-2" style={{ backgroundColor: colors.Neutral_Surface }} /> */}
     </div>

@@ -11,18 +11,14 @@ import {
 } from './types';
 
 export const calendarIntervalMaker: CalendarIntervalMakerTypes = (start, end, calendarType) => {
-  let dateSystem = 'jYYYY/jMM/jDD';
-  switch (calendarType) {
-    case CalendarTypeEnum.Jalali:
-      dateSystem = 'jYYYY/jMM/jDD';
-      break;
-    case CalendarTypeEnum.Gregorian:
-      dateSystem = 'YYYY-MM-DD';
-      break;
+  if (calendarType === CalendarTypeEnum.Jalali) {
+    const mStart = moment(start, 'jYYYY/jMM/jDD');
+    const mEnd = moment(end, 'jYYYY/jMM/jDD');
+    return mEnd.diff(mStart, 'months');
   }
 
-  const mStart = moment(start, dateSystem);
-  const mEnd = moment(end, dateSystem);
+  const mStart = moment(start, 'jYYYY/jMM/jDD');
+  const mEnd = moment(end, 'jYYYY/jMM/jDD');
   return mEnd.diff(mStart, 'months') + 1;
 };
 

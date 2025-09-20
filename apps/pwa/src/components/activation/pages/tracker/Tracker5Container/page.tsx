@@ -30,9 +30,17 @@ const Tracker5Container = ({
     });
   };
 
+  const showContinueBtn = payload.startPeriodDate !== '';
+
   return (
     <>
-      <MainActivationModule onContinue={onContinue} isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
+      <MainActivationModule
+        onContinue={onContinue}
+        isLoading={isLoading}
+        onRegister={onRegister}
+        showContinueBtn={showContinueBtn}
+        {...pageInfo}
+      >
         <ActivationCalendar valueHandler={valueHandler} startDate={periodStart} endDate={periodEnd} />
       </MainActivationModule>
     </>

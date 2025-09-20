@@ -1,4 +1,4 @@
-// import InputModule from '@components/activation/InputModule';
+import ActivationInputModule from '@components/activation/ActivationInputModule';
 import MainActivationModule from '@components/activation/MainActivationModule';
 import usePageInfo from '@providers/__activation__/ActivationProvider/__hooks__/usePageInfo';
 
@@ -40,12 +40,12 @@ const Breastfeeding4Container = ({
       {...pageInfo}
     >
       <>
-        {/* <InputModule
+        <ActivationInputModule
           valueHandler={valueHandler}
           placeHolder="اینجا بنویس"
           value={payload.childName}
           isTextTyps={true}
-        /> */}
+        />
       </>
     </MainActivationModule>
   );

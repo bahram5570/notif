@@ -17,11 +17,3 @@ export interface ContinueBtnProps
   > {
   currentRewardData: CurrentRewardDataTypes;
 }
-
-export interface RewardProps
-  extends Pick<
-    ContinueBtnProps,
-    'currentRewardData' | 'firstName' | 'orderOfRewardElements' | 'isLoading' | 'noBackButton'
-  > {
-  nextHandler: RewardBtnTypes;
-}

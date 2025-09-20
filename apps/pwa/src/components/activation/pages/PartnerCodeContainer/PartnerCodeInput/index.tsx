@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { toEnglishNumbers } from '@utils/numbers';
 
-import InputModule from '@components/activation/InputModule';
+import ActivationInputModule from '@components/activation/ActivationInputModule';
 import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
 
 import useValidation from '../../otp/Otp1Container/__hooks__/useValidation';
@@ -39,7 +39,7 @@ const PartnerCodeInput = ({ question, onSubmit, isLoading }: PartnerCodeInputPro
       />
 
       <div style={{ width: '100%', paddingTop: isLargeScreen ? '96px' : '140px' }}>
-        <InputModule valueHandler={valueHandler} placeHolder="اینجا بنویس" value={code} isTextTyps={false} />
+        <ActivationInputModule valueHandler={valueHandler} placeHolder="اینجا بنویس" value={code} isTextTyps={false} />
       </div>
 
       <PartnerCodeInputContinueBtn

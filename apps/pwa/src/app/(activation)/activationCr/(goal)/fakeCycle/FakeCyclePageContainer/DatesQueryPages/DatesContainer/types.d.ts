@@ -5,4 +5,5 @@ import { ScriptsTypes } from '@providers/__activation__/ActivationProvider/__hoo
 export interface DatesContainerProps extends ScriptsTypes {
   continueHandler: () => void;
   children: React.ReactNode;
+  showBtn: boolean;
 }

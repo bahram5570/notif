@@ -29,6 +29,7 @@ const PregnancyDatePage = ({ callCreateSampleApi, payloadHandler }: PregnancyDat
       title="برای محاسبه هفته بارداری یکی از روش‌های زیر رو انتخاب کن:"
       continueHandler={continueHandler}
       description=""
+      showBtn={true}
       subtitle=""
     >
       <ActivationTabs tab={tab} tabHandler={tabHandler} tabsList={tabsList} />

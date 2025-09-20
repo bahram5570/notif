@@ -20,6 +20,7 @@ const TotalCycleLengthDatePage = ({ callCreateSampleApi, payloadHandler }: Total
       subtitle="(فاصله بین شروع دو تا پریودت چقدره)"
       title="معمولا هر چند روز یک بار پریود می‌شی؟ "
       continueHandler={continueHandler}
+      showBtn={true}
     >
       <CyclesModule name="totalCycleLength" valueHandler={selectHandler} />
     </DatesContainer>

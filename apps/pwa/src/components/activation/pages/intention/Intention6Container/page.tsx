@@ -30,9 +30,17 @@ const Intention6Container = ({
     });
   };
 
+  const showContinueBtn = payload.startPeriodDate !== '';
+
   return (
     <>
-      <MainActivationModule onContinue={onContinue} isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
+      <MainActivationModule
+        onContinue={onContinue}
+        isLoading={isLoading}
+        onRegister={onRegister}
+        showContinueBtn={showContinueBtn}
+        {...pageInfo}
+      >
         <ActivationCalendar endDate={periodEnd} startDate={periodStart} valueHandler={valueHandler} />
       </MainActivationModule>
     </>

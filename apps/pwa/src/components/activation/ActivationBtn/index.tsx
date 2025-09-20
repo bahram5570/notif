@@ -4,33 +4,37 @@ import Button from '@components/ui/Button';
 
 import { ActivationBtnProps } from './types';
 
-const ActivationBtn = ({ children, isLoading, showBtn = true, navigationLoadingId, onClick }: ActivationBtnProps) => {
+const ActivationBtn = (props: ActivationBtnProps) => {
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
-      if (e.key === 'Enter' && showBtn) {
+      // # Call onClick function when Enter/Go is pressed, then remove input focus
+
+      if (e.key === 'Enter' && props.showBtn) {
         e.preventDefault();
 
-        onClick();
+        props.onClick();
         (document.activeElement as HTMLElement)?.blur();
       }
     };
 
     window.addEventListener('keydown', handler);
     return () => window.removeEventListener('keydown', handler);
-  }, [onClick, showBtn]);
+  }, [props.onClick]);
 
   return (
-    <div className={`w-full flex justify-center duration-200 ${showBtn ? 'translate-y-0' : 'translate-y-[50vh]'}`}>
+    <div
+      className={`w-full flex justify-center duration-200 ${props.showBtn ? 'translate-y-0' : 'translate-y-[50vh]'}`}
+    >
       <Button
         size="medium"
         variant="fill"
         color="primary"
-        onClick={onClick}
-        isLoading={isLoading}
-        className="!w-fit !min-w-[204px]"
-        navigationLoadingId={navigationLoadingId}
+        onClick={props.onClick}
+        isLoading={props.isLoading}
+        navigationLoadingId={props.navigationLoadingId}
+        style={{ minWidth: 'fit-content', width: props.width || '204px' }}
       >
-        {children}
+        {props.children}
       </Button>
     </div>
   );

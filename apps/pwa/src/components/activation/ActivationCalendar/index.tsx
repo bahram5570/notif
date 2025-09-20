@@ -23,7 +23,7 @@ const ActivationCalendar = ({ endDate, startDate, valueHandler }: ActivationCale
   });
 
   return (
-    <div className="relative w-full py-10">
+    <div className="relative w-full">
       {calendarData.length > 0 && (
         <>
           <ActivationCalendarHeading
