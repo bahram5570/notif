@@ -1,0 +1,79 @@
+import drProfile from '@assets/images/geneticMarketing/drProfile.webp';
+import logo from '@assets/images/geneticMarketing/logo.webp';
+import Verified from '@assets/images/geneticMarketing/verified.svg';
+
+import CustomImage from '@components/ui/CustomImage';
+import CustomLink from '@components/ui/CustomLink';
+import CustomTypography from '@components/ui/CustomTypography';
+import { COLORS_LIST } from '@theme/colors';
+
+import { ExpertList } from './constants';
+
+const LastPageGeneticMarketingLayout = async () => {
+  return (
+    <>
+      <div
+        className="w-full  
+                  px-4 
+                  sm:px-6 
+                  py-5 
+                  bg-[url(/assets/images/geneticMarketing/coverHollow.webp)] 
+                  bg-contain
+                  bg-no-repeat 
+                  bg-top"
+      >
+        <div className="pt-7">
+          <div className="mt-14 grid place-items-center">
+            <CustomImage src={logo} alt="logo" width={80} height={80} />
+            <CustomTypography tagType="h2" fontSize="Title_Small" className="mt-6">
+              نکته آخر
+            </CustomTypography>
+            <CustomTypography tagType="p" fontSize="Body_Medium" className="mt-2 text-center">
+              این فقط یه ارزیابی اولیه‌ست، پس آزمایش‌ها و مشورت با مشاور ژنتیک رو جدی بگیر حتی اگر فرزند سالم داری و
+              هیچوقت مشکل ژنتیکی‌ای متوجه‌تون نبوده. با خیال راحت برو جلو و اگه چیزی ذهنت رو مشغول کرد از ما بپرس تا
+              کمکت کنیم!
+            </CustomTypography>
+            <div className="mt-6 bg-[#EEEBFF] w-full border border-solid border-[#757AC2] rounded-xl grid grid-cols-[60%_40%] overflow-hidden">
+              <div className="p-4 !pl-0">
+                <CustomTypography tagType="h4" fontSize="Body_Small">
+                  تهیه و تایید علمی توسط:
+                </CustomTypography>
+                <div className="flex items-center mt-2 gap-x-1">
+                  <CustomTypography tagType="p" fontSize="Lable_Large">
+                    دکتر سارا فرخی
+                  </CustomTypography>
+                  <Verified />
+                </div>
+                <ul className="mt-2 list-disc pr-3">
+                  {ExpertList.map((item) => (
+                    <li key={item}>
+                      <CustomTypography tagType="p" fontSize="Body_Small">
+                        {item}
+                      </CustomTypography>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="pt-3 flex self-end">
+                <CustomImage src={drProfile} alt="drProfile" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="mt-6 w-fit mx-auto my-5 flex">
+        <CustomLink
+          href="#"
+          className="w-fit px-10 py-[12px] rounded-full flex justify-center"
+          style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
+        >
+          <CustomTypography fontSize="Lable_Medium" color={'White'}>
+            پایان ارزیابی
+          </CustomTypography>
+        </CustomLink>
+      </div>
+    </>
+  );
+};
+
+export default LastPageGeneticMarketingLayout;
