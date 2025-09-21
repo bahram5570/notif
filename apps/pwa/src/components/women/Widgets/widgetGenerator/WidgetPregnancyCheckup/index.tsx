@@ -12,7 +12,7 @@ const WidgetPregnancyCheckup = ({ data }: WidgetPregnancyCheckupPropsTypes) => {
       title={data.title}
       button={data.button}
       buttonId="CheckupWidgetButton"
-      onClick={() => callEvent('Action_From_PregnancyCheckup')}
+      onClick={() => callEvent('CheckupWidgetButton')}
     >
       <div className="flex flex-col gap-2">
         {data.items.map((item, index) => {

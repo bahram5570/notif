@@ -3,6 +3,7 @@ import PolygonIcon from '@assets/icons/Polygon.svg';
 import ArrowIcon from '@assets/icons/calendarArrow.svg';
 
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useTheme from '@hooks/useTheme';
 import useWidgetActions from '@hooks/useWidgetActions';
@@ -10,11 +11,13 @@ import useWidgetActions from '@hooks/useWidgetActions';
 import { WeekItemGeneratorPropsType } from './type';
 
 const SegmentWeekItemGenerator = ({ isCurrentWeek, items, label, needTest, week }: WeekItemGeneratorPropsType) => {
+  const { callEvent } = useAnalytics();
   const { colors } = useTheme();
   const { actionHandler } = useWidgetActions();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const linkTo = () => {
+    callEvent('PregnancyCheckupCardClick');
     if (items.length === 1) {
       const action = segmentActionHandler(week, items[0].type, items[0].name);
       actionHandler(action);
