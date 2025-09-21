@@ -6,4 +6,6 @@ export type ShareExperienceNewExerciseModalTypes = Pick<ProfileTypes, 'avatarIma
 
 type OnSuccessTypes = Pick<ShareExperienceNewExerciseModalProps, 'onSuccessNewHandler'>;
 type ItemsTypes = OnSuccessTypes & ShareExperienceNewExerciseModalTypes;
-export interface ShareExperienceNewExerciseModalContainerProps extends ItemsTypes {}
+export interface ShareExperienceNewExerciseModalContainerProps extends ItemsTypes {
+  queryParam: string | null;
+}

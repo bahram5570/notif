@@ -8,8 +8,9 @@ import { ShareExperienceCommentsModalProps } from './types';
 const ShareExperienceCommentsModal = (props: ShareExperienceCommentsModalProps) => {
   const { getQueryParams } = useQueryParamsHandler();
 
-  const queryParams = getQueryParams(SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME);
-  const queryData = queryParams === null ? null : (JSON.parse(queryParams) as { id: string });
+  const ShareExperienceCommnetModalParms = getQueryParams(SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME);
+  const queryData =
+    ShareExperienceCommnetModalParms === null ? null : (JSON.parse(ShareExperienceCommnetModalParms) as { id: string });
   const isOpen = queryData !== null;
 
   const zIndex = props.shareExperienceOrdersList?.[SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME];
@@ -17,7 +18,11 @@ const ShareExperienceCommentsModal = (props: ShareExperienceCommentsModalProps) 
   return (
     <>
       <CustomModal isOpen={isOpen} isSlidingMode={true} isFullScreen={true} className="!py-0 !px-0" zIndex={zIndex}>
-        <>{isOpen && <ShareExperienceCommentsModalContainer id={queryData.id} />}</>
+        <>
+          {isOpen && (
+            <ShareExperienceCommentsModalContainer id={queryData.id} queryParam={ShareExperienceCommnetModalParms} />
+          )}
+        </>
       </CustomModal>
     </>
   );

@@ -17,8 +17,12 @@ import useGetData from './__hooks__/useGetData';
 import useScroll from './__hooks__/useScroll';
 import { ShareExperienceTopicModalContainerPropsType } from './type';
 
-const ShareExperienceTopicModalContainer = ({ topicId, avatarImage }: ShareExperienceTopicModalContainerPropsType) => {
-  useOverflowHandler();
+const ShareExperienceTopicModalContainer = ({
+  topicId,
+  avatarImage,
+  queryParam,
+}: ShareExperienceTopicModalContainerPropsType) => {
+  useOverflowHandler(queryParam !== null);
   const { topicExperiencesData, isLoading, pageNo, updatePageNo, apiLoading } = useGetData({
     topicId,
   });

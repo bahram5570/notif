@@ -5,7 +5,6 @@ export const EXPERIENCES_PROFILE_PAGE_SIZE = 5;
 export const SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE = 'shareExperienceRedirectSessionStorage';
 
 export const SHARE_EXPERIENCE_PROFILE_CONTAINER_ID = 'shareExperienceProfileConainerId';
-export const SHARE_EXPERIENCE_COMMENTS_CONTAINER_ID = 'shareExperienceCommentsContainerId';
 
 export const SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME = 'shareExperienceUnfollowModal';
 export const SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME = 'shareExperienceReportModal';

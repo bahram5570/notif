@@ -20,11 +20,10 @@ const ShareExperienceNewTopics = ({
   isLoading,
   topicId,
 }: ShareExperienceNewTopicsProps) => {
-  useOverflowHandler();
   const { getQueryParams } = useQueryParamsHandler();
   const { colors } = useTheme();
-
   const isOpen = getQueryParams(SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME) !== null;
+  useOverflowHandler(isOpen);
 
   return (
     <>

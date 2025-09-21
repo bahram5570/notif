@@ -11,10 +11,13 @@ import useShareExperienceProfileTabs from './__hooks__/useShareExperienceProfile
 import { ShareExperienceProfileTabEnum } from './enum';
 import { ShareExperienceProfileModalContainerPropsTypes } from './type';
 
-const ShareExperienceProfileModalContainer = ({ userId }: ShareExperienceProfileModalContainerPropsTypes) => {
-  useOverflowHandler();
+const ShareExperienceProfileModalContainer = ({
+  userId,
+  queryParam,
+}: ShareExperienceProfileModalContainerPropsTypes) => {
   const { data, isLoading } = useShareExperenceProfileGetData(userId);
   const { tab, tabHandler } = useShareExperienceProfileTabs();
+  useOverflowHandler(queryParam !== null);
 
   const rightElementScript = !isLoading && data ? `پروفایل ${data?.isSelf ? 'شما' : data?.profile.username}` : '';
 

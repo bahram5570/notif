@@ -2,4 +2,5 @@ import { ExcercisesListTypes } from '../__hooks__/useShareExperienceComments/typ
 
 export interface ShareExperienceCommentsModalContainerProps {
   id: string;
+  queryParam: string | null;
 }

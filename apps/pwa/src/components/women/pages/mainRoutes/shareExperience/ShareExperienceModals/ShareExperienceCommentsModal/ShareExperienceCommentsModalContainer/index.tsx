@@ -2,10 +2,7 @@ import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import Spinner from '@components/ui/Spinner';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import {
-  SHARE_EXPERIENCE_COMMENTS_CONTAINER_ID,
-  SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME,
-} from '@components/women/pages/mainRoutes/shareExperience/constants';
+import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@components/women/pages/mainRoutes/shareExperience/constants';
 import useOverflowHandler from '@hooks/useOverflowHandler';
 import useTheme from '@hooks/useTheme';
 
@@ -19,10 +16,11 @@ import useNewCommentQueries from './__hooks__/useNewCommentQueries';
 import { ShareExperienceCommentsModalContainerProps } from './types';
 
 const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsModalContainerProps) => {
-  useOverflowHandler();
   const { colors } = useTheme();
   const { newCommentQueries } = useNewCommentQueries(props.id);
   const { isLoading, commentsData, updatePageNo, pageNo } = useCommentsList(props.id);
+
+  useOverflowHandler(props.queryParam !== null);
 
   return (
     <WomenPageLayout rightElement="BackButton" paddingTop={0}>
