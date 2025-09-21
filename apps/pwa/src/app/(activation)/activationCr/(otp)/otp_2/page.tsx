@@ -8,16 +8,25 @@ import { OtpStatusTypes } from '@components/activation/pages/otp/Otp2Container/_
 import { OTP_COUNT_DOWN_TIME } from '@components/activation/pages/otp/Otp2Container/constants';
 import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import useActivationCrRegister from '@hooks/__activation__/useActivationCrRegister';
+import useRegister from '@hooks/__activation__/useRegister';
 import useCountDown from '@hooks/useCountDown';
-import { useRouter } from 'next/navigation';
+import useActivationCrPayload from '@providers/__activation__/ActivationCrProvider/__hooks__/useActivationCrPayload';
 
 const Otp2 = () => {
   // # کد
-  const router = useRouter();
+  const { payload } = useActivationCrPayload();
   const { callEventActivation } = useActivationAnalytics();
   const { completeRegisterHandler } = useActivationCrRegister();
   const [isRegisterSuccess, setIsRegisterSuccess] = useState(false);
   const [applyOtpStatus, setApplyOtpStatus] = useState<OtpStatusTypes>(null);
+
+  const errorRegisterApiHandler = (v: OtpStatusTypes) => {
+    if (v === 'wrong') {
+      setApplyOtpStatus('wrong');
+    }
+  };
+
+  const { isLoading: isRegisterLoading, registerHandler, fetchedUser } = useRegister(payload, errorRegisterApiHandler);
 
   useEffect(() => {
     if (applyOtpStatus) {
@@ -26,7 +35,9 @@ const Otp2 = () => {
   }, [applyOtpStatus]);
 
   const nextRouteHandler = () => {
-    router.push('goal_1');
+    if (fetchedUser) {
+      completeRegisterHandler(fetchedUser);
+    }
   };
 
   const { startCounter } = useCountDown({
@@ -34,12 +45,14 @@ const Otp2 = () => {
     onCallBack: nextRouteHandler,
   });
 
-  const registerHandler = () => {
-    startCounter();
-    callEventActivation();
-    setIsRegisterSuccess(true);
-    setApplyOtpStatus('correct');
-  };
+  useEffect(() => {
+    if (fetchedUser) {
+      startCounter();
+      setIsRegisterSuccess(true);
+      setApplyOtpStatus('correct');
+      callEventActivation('REGISTER');
+    }
+  }, [fetchedUser]);
 
   const loginHandler = (v: UserCookieTypes) => {
     sessionStorage.clear();
@@ -54,6 +67,7 @@ const Otp2 = () => {
         applyOtpStatus={applyOtpStatus}
         onSubmitRegister={registerHandler}
         isRegisterSuccess={isRegisterSuccess}
+        isRegisterLoading={isRegisterLoading}
       />
     </>
   );

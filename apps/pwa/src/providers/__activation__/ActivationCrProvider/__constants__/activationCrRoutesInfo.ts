@@ -84,7 +84,7 @@ const INTENTION_ROUTES: ActivationRoutesInfoTypes = {
     progressPercentage: 100,
     payloadKeys: ['periodLength'],
     nextActivationList: {
-      condition1: { url: { isRegister: true } },
+      condition1: { url: 'otp_1' },
     },
   },
   intention_9: {
@@ -146,7 +146,7 @@ const PREGNANCY_ROUTES: ActivationRoutesInfoTypes = {
     progressPercentage: 100,
     payloadKeys: ['height'],
     nextActivationList: {
-      condition1: { url: { isRegister: true } },
+      condition1: { url: 'otp_1' },
     },
   },
 };
@@ -195,7 +195,7 @@ const TRACKER_ROUTES: ActivationRoutesInfoTypes = {
     progressPercentage: 100,
     payloadKeys: ['periodLength'],
     nextActivationList: {
-      condition1: { url: { isRegister: true } },
+      condition1: { url: 'otp_1' },
     },
   },
   tracker_8: {
@@ -241,7 +241,7 @@ const PREVENTION_ROUTES: ActivationRoutesInfoTypes = {
     progressPercentage: 100,
     payloadKeys: ['periodLength'],
     nextActivationList: {
-      condition1: { url: { isRegister: true } },
+      condition1: { url: 'otp_1' },
     },
   },
   prevention_6: {

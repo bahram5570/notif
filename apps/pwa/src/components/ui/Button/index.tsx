@@ -1,5 +1,7 @@
 'use client';
 
+import { forwardRef } from 'react';
+
 import useComponentColors from '../__utils__/useComponentColors';
 import ArrowIcon from '@assets/icons/arrow.svg';
 
@@ -9,7 +11,7 @@ import Spinner from '../Spinner';
 import { ButtonProps } from './types';
 import useButtonSize from './useButtonSize';
 
-function Button(props: ButtonProps) {
+const Button = forwardRef((props: ButtonProps, ref: React.LegacyRef<HTMLButtonElement>) => {
   const { sizeStyles } = useButtonSize({ size: props.size });
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
@@ -47,14 +49,15 @@ function Button(props: ButtonProps) {
 
   return (
     <button
+      ref={ref}
+      id={props.id}
       onClick={clickHandler}
       data-testid={props.testId}
+      disabled={props.isDisable}
       style={{ ...colorStyles, ...sizeStyles, ...props.style, width }}
       className={`relative min-h-fit rounded-full border-2 px-4 overflow-hidden select-none ${props.isDisable && 'opacity-25'} 
         ${(isLoading || props.isDisable) && 'cursor-not-allowed'} ${props.className}
       `}
-      id={props.id}
-      disabled={props.isDisable}
     >
       <div className={`w-full h-full flex justify-center gap-2 ${isLoading && 'opacity-0'}`}>
         <div className="flex justify-center items-center">{props.children}</div>
@@ -68,6 +71,6 @@ function Button(props: ButtonProps) {
       )}
     </button>
   );
-}
+});
 
 export default Button;

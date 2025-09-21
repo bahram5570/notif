@@ -12,11 +12,9 @@ const SampleCycleContinueBtn = () => {
   const { colors } = useTheme();
   const { callEventActivation } = useActivationAnalytics();
 
-  // const { goalInfo } = useGoalFinder({ status: payload.status, periodStatus: payload.periodStatus });
-
   const nextHandler = () => {
+    router.push('goal_1');
     callEventActivation();
-    router.push('otp_1');
   };
 
   return (

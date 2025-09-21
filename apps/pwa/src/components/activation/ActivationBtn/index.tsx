@@ -1,18 +1,24 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import Button from '@components/ui/Button';
 
 import { ActivationBtnProps } from './types';
 
 const ActivationBtn = (props: ActivationBtnProps) => {
+  const btnRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       // # Call onClick function when Enter/Go is pressed, then remove input focus
 
       if (e.key === 'Enter' && props.showBtn) {
         e.preventDefault();
+        const btnElement = btnRef.current;
 
-        props.onClick();
+        if (btnElement) {
+          btnElement.click();
+        }
+
         (document.activeElement as HTMLElement)?.blur();
       }
     };
@@ -26,6 +32,7 @@ const ActivationBtn = (props: ActivationBtnProps) => {
       className={`w-full flex justify-center duration-200 ${props.showBtn ? 'translate-y-0' : 'translate-y-[50vh]'}`}
     >
       <Button
+        ref={btnRef}
         size="medium"
         variant="fill"
         color="primary"

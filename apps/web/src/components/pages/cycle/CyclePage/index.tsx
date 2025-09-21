@@ -9,7 +9,8 @@ import { COLORS_LIST } from '@theme/colors';
 import CompleteCycleRegisterLoading from './CompleteCycleRegisterLoading';
 import useRedirectToPwa from './__hooks__/useRedirectToPwa';
 
-const targetUrl = PWA_LINK_WOMEN_URL;
+// const targetUrl = PWA_LINK_WOMEN_URL;
+const targetUrl = 'http://localhost:3000';
 const iframeUrl = `${targetUrl}/activationCr/goal_3`;
 
 const CyclePage = () => {
