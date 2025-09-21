@@ -15,7 +15,7 @@ const useOtpInfo = () => {
       : null;
 
     if (initialData === null) {
-      router.back();
+      // router.back();
     } else {
       setOtpInfo(initialData);
     }

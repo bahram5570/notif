@@ -15,11 +15,12 @@ const SingleCode = ({ focusInfo, stepIndex, stepValue, stepHandler, deleteHandle
   const isLastInput = stepIndex === 5;
 
   useEffect(() => {
-    const { current } = ref;
+    const el= ref.current;
 
-    if (current) {
+    if (el) {
       if (isSelected) {
-        current.focus();
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.focus();
       }
     }
   }, [focusInfo, stepIndex, ref]);

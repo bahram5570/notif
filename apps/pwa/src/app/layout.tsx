@@ -38,36 +38,36 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="fa" className={YekanBakhVF.className}>
       <body style={{ maxWidth: MAX_SCREEN_WIDTH, width: '100%', height: '100dvh', margin: 'auto' }}>
-        <ScrollToTopProvider />
+        <main>
+          <ScrollToTopProvider />
 
-        <AnalyticsProvider>
-          <OperatingSystemProvider>
-            <CultureProvider>
-              <ThemeModeProvider>
-                <ReactQueryProvider>
-                  <ErrorProvider>
-                    <ToastProvider>
-                      <PageNavigationProvider>
-                        <RouteSequenceProvider>
-                          <WidgetActionsProvider>
-                            <ServiceWorkerProvider>
-                              <>
+          <AnalyticsProvider>
+            <OperatingSystemProvider>
+              <CultureProvider>
+                <ThemeModeProvider>
+                  <ReactQueryProvider>
+                    <ErrorProvider>
+                      <ToastProvider>
+                        <PageNavigationProvider>
+                          <RouteSequenceProvider>
+                            <WidgetActionsProvider>
+                              <ServiceWorkerProvider>
                                 <>{children}</>
                                 <ModalsQueryParamsProvider />
                                 <PreviewImageProvider />
                                 <div id={PORTAL_ID} />
-                              </>
-                            </ServiceWorkerProvider>
-                          </WidgetActionsProvider>
-                        </RouteSequenceProvider>
-                      </PageNavigationProvider>
-                    </ToastProvider>
-                  </ErrorProvider>
-                </ReactQueryProvider>
-              </ThemeModeProvider>
-            </CultureProvider>
-          </OperatingSystemProvider>
-        </AnalyticsProvider>
+                              </ServiceWorkerProvider>
+                            </WidgetActionsProvider>
+                          </RouteSequenceProvider>
+                        </PageNavigationProvider>
+                      </ToastProvider>
+                    </ErrorProvider>
+                  </ReactQueryProvider>
+                </ThemeModeProvider>
+              </CultureProvider>
+            </OperatingSystemProvider>
+          </AnalyticsProvider>
+        </main>
       </body>
     </html>
   );

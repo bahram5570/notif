@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from 'react';
+import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 import { MAX_SCREEN_WIDTH, PORTAL_ID } from '@constants/app.constants';
@@ -63,19 +63,20 @@ const CustomModal = ({
         <div
           onClick={clickHandler}
           id={MODAL_BACKGROUND_ID}
-          style={{
-            zIndex,
-            maxWidth: MAX_SCREEN_WIDTH,
-            opacity: isDelayPassed ? '1' : '0',
-            pointerEvents: isModalOpen ? 'all' : 'none',
-            alignItems: isSlidingModeTrue ? 'flex-end' : 'center',
-          }}
           className={`
                       fixed top-0 left-0 right-0 bottom-0 flex justify-center mx-auto  
                       ${isModalOpen ? 'animate-modalBackgroundOpen' : 'animate-modalBackgroundClose'}
                     `}
+          style={{
+            zIndex,
+            maxWidth: MAX_SCREEN_WIDTH,
+            pointerEvents: isModalOpen ? 'all' : 'none',
+            opacity: isDelayPassed && isModalOpen ? '1' : '0',
+            alignItems: isSlidingModeTrue ? 'flex-end' : 'center',
+          }}
         >
           <div
+            key={isModalOpen ? 'k1' : 'k2'}
             className={`
                 px-4 pt-6 pb-10 rounded-xl
                 ${!isSlidingModeTrue && !isModalOpen && 'animate-modalCenterModeClose'}
@@ -93,8 +94,7 @@ const CustomModal = ({
               backgroundColor: typeof backgroundColor === 'undefined' ? colors.White : backgroundColor,
             }}
           >
-            <Fragment key={isModalOpen ? 'k1' : 'k2'}>{children}</Fragment>
-            {/* {isModalOpen && <>{children}</>} */}
+            <>{children}</>
           </div>
         </div>,
         document.getElementById(PORTAL_ID) as Element,

@@ -61,7 +61,12 @@ const ContinueBtn = (props: ContinueBtnProps) => {
       {!isOpenReward && !isInterfaceCode && (
         <div
           className="fixed left-0 right-0 mx-auto px-4 pt-4 z-30"
-          style={{ height: CONTINUE_BTN_HEIGHT, maxWidth: MAX_SCREEN_WIDTH, ...positionStyle }}
+          style={{
+            pointerEvents: props.showContinueBtn ? 'auto' : 'none',
+            height: CONTINUE_BTN_HEIGHT,
+            maxWidth: MAX_SCREEN_WIDTH,
+            ...positionStyle,
+          }}
         >
           <ActivationBtn
             onClick={continueHandler}
