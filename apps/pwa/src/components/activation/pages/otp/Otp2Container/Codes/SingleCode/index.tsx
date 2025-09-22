@@ -12,23 +12,22 @@ const SingleCode = ({ focusInfo, stepIndex, stepValue, stepHandler, deleteHandle
 
   const isSelected = focusInfo.index === stepIndex;
 
-  const isLastInput = stepIndex === 5;
-
   useEffect(() => {
-    const el= ref.current;
+    const el = ref.current;
 
     if (el) {
       if (isSelected) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
         el.focus();
+
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
       }
     }
   }, [focusInfo, stepIndex, ref]);
 
-  const font = typography.Headline.Small;
-  const borderColor = isSelected ? colors.Surface_Outline : colors.Surface_OutlineVariant;
-
   const valueHandler: ValueHandlerTypes = (e) => {
+    const isLastInput = stepIndex === 5;
     const value = e.target.value;
     stepHandler(value);
 
@@ -46,6 +45,9 @@ const SingleCode = ({ focusInfo, stepIndex, stepValue, stepHandler, deleteHandle
       deleteHandler();
     }
   };
+
+  const font = typography.Headline.Small;
+  const borderColor = isSelected ? colors.Surface_Outline : colors.Surface_OutlineVariant;
 
   return (
     <input

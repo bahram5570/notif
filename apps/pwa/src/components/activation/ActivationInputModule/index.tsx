@@ -19,6 +19,11 @@ const ActivationInputModule = (props: ActivationInputModuleProps) => {
     }, 300);
   };
 
+  const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    props.valueHandler(e.target.value);
+    handleFocus();
+  };
+
   const style = useMemo(() => {
     const result: CSSProperties = {
       direction: props.isTextTyps ? 'rtl' : 'ltr',
@@ -36,11 +41,11 @@ const ActivationInputModule = (props: ActivationInputModuleProps) => {
         style={style}
         ref={inputRef}
         onFocus={handleFocus}
+        onChange={changeHandler}
         placeholder={props.placeHolder}
         id={ACTIVATION_INPUT_MODULE_ID}
         value={toPersianNumbers(props.value)}
         type={props.isTextTyps ? 'text' : 'tel'}
-        onChange={(e) => props.valueHandler(e.target.value)}
         className={`border-none bg-transparent w-full relative pt-1 text-center placeholder-[#EFEFEF] ${styles.input}`}
       />
     </>

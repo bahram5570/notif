@@ -74,7 +74,6 @@ const Otp2Container = ({
   return (
     <MainActivationModule {...customPageInfo} className="pt-5">
       <div className="flex flex-col items-center">
-        <div className="h-[500px]"></div>
         <Codes submitHandler={submitHandler} isLoading={isLoading} otpStatus={otpStatus} />
 
         <CountDown resetCodeHandler={resetCodeHandler} />
@@ -84,7 +83,6 @@ const Otp2Container = ({
         {isLoading && <Spinner color="primary" />}
 
         {isLoginRegisterSuccess && <LoginSuccess />}
-        <div className="h-[500px]"></div>
       </div>
     </MainActivationModule>
   );
