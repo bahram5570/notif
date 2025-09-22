@@ -4,18 +4,22 @@ import { COLORS_LIST } from '@theme/colors';
 
 import { Section1Props } from './types';
 
-const Section1 = ({ section, id }: Section1Props) => {
+const Section1 = ({ section, id, color }: Section1Props) => {
   return (
     <div
       className="rounded-[12px] py-4 px-3 text-center mt-4"
       style={{ border: `1px solid ${COLORS_LIST.Neutral_Surface}` }}
     >
-      <CustomTypography fontSize="Lable_Large">ستاره عزیز سلام!</CustomTypography>
+      <CustomTypography fontSize="Lable_Large">دوست عزیز سلام!</CustomTypography>
       <CustomTypography fontSize="Body_Medium" className="mt-2">
         {section.intro}
       </CustomTypography>
 
-      <CustomTypography fontSize="Lable_Large" className="mt-3">
+      <CustomTypography
+        fontSize="Lable_Large"
+        className="mt-3"
+        style={{ color: COLORS_LIST[color as keyof typeof COLORS_LIST] }}
+      >
         {section.title}
       </CustomTypography>
 

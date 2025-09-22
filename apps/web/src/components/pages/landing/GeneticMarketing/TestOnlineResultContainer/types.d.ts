@@ -1,5 +1,4 @@
 export type HeaderType = {
-  color: string;
   title: string;
   description: string;
 };
@@ -46,20 +45,24 @@ export type TestOnlineResultData = {
 export type HeaderBoxProps = {
   header: HeaderType;
   id: number;
+  color: string;
 };
 
 export type Section1Props = {
   section: Section1Type;
   id: number;
+  color: string;
 };
 
 export type Section2Props = {
   section: Section2ItemType[];
+  color: string;
 };
 
 export type Section3Props = {
   section: Section3ItemType[];
   id: number;
+  color: string;
 };
 
 export type FooterBoxProps = {

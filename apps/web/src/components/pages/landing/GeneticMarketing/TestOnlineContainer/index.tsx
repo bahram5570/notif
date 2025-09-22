@@ -1,13 +1,13 @@
 'use client';
 
-import TestOnlineWrapper from '../TestOnlineWrapper';
+import GeneticMarketingLayout from '../GeneticMarketingLayout';
 import TestOnlineQuestions from './TestOnlineQuestions';
 
 const TestOnlineContainer = () => {
   return (
-    <TestOnlineWrapper>
+    <GeneticMarketingLayout>
       <TestOnlineQuestions />
-    </TestOnlineWrapper>
+    </GeneticMarketingLayout>
   );
 };
 

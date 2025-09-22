@@ -56,7 +56,7 @@ const useTestOnlineScore = ({ currentStep, data }: UseTestOnlineScoreTypes) => {
     const isLastStep = lastStep === currentStep;
 
     if (isLastStep) {
-      router.push('/landing/genetic/result');
+      router.push('/landing/geneticMarketing/result');
     } else {
       newQueryParamsHandler({ [GENETIC_TEST_ONLINE_STEP_QUERY_NAME]: Number(currentStep) + 1 });
     }

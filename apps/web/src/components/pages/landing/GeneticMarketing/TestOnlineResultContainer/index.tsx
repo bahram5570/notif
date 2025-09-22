@@ -1,11 +1,11 @@
 'use client';
 
+import GeneticMarketingLayout from '../GeneticMarketingLayout';
 import FooterBox from './FooterBox';
 import HeaderBox from './HeaderBox';
 import Section1 from './Section1';
 import Section2 from './Section2';
 import Section3 from './Section3';
-import TestOnlineResultWrapper from './TestOnlineResultWrapper';
 import useTestOnlineResult from './__hooks__/useTestOnlineResult';
 
 const TestOnlineResultContainer = () => {
@@ -14,15 +14,15 @@ const TestOnlineResultContainer = () => {
   if (!data) return null;
 
   return (
-    <TestOnlineResultWrapper>
-      <div className="relative w-full h-full pt-28">
-        <HeaderBox header={data.header} id={data.id} />
-        <Section1 section={data.section1} id={data.id} />
-        <Section2 section={data.section2} />
-        <Section3 section={data.section3} id={data.id} />
+    <GeneticMarketingLayout goBack={false}>
+      <div className="relative w-full h-full">
+        <HeaderBox header={data.header} id={data.id} color={data.color} />
+        <Section1 section={data.section1} id={data.id} color={data.color} />
+        <Section2 section={data.section2} color={data.color} />
+        <Section3 section={data.section3} id={data.id} color={data.color} />
         <FooterBox footer={data.footer} />
       </div>
-    </TestOnlineResultWrapper>
+    </GeneticMarketingLayout>
   );
 };
 

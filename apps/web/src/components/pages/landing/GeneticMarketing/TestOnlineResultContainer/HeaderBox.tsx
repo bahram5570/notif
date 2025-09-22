@@ -3,14 +3,11 @@ import { COLORS_LIST } from '@theme/colors';
 
 import { HeaderBoxProps } from './types';
 
-const HeaderBox = ({ header }: HeaderBoxProps) => {
+const HeaderBox = ({ header, color }: HeaderBoxProps) => {
   return (
-    <div
-      className="rounded-[12px]"
-      style={{ border: `1px solid ${COLORS_LIST[header.color as keyof typeof COLORS_LIST]}` }}
-    >
+    <div className="rounded-[12px]" style={{ border: `1px solid ${COLORS_LIST[color as keyof typeof COLORS_LIST]}` }}>
       <div
-        style={{ backgroundColor: COLORS_LIST[header.color as keyof typeof COLORS_LIST] }}
+        style={{ backgroundColor: COLORS_LIST[color as keyof typeof COLORS_LIST] }}
         className="rounded-t-[10px] !text-white"
       >
         <CustomTypography fontSize="Body_Medium" className="!text-center !text-white py-2">

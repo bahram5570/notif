@@ -1,7 +1,5 @@
-import LogoIcon from '@assets/images/geneticMarketing/logo.svg';
 import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
 
-import QuestionProgressBar from '@components/modules/QuestionProgressBar';
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
@@ -29,11 +27,7 @@ const TestOnlineQuestions = () => {
 
   return (
     <>
-      <QuestionProgressBar currentStep={currentStep} questionListLength={Object.keys(questionList).length} />
-
-      <LogoIcon className="w-20 h-20 mt-11" />
-
-      <CustomTypography fontSize="Title_Small" tagType="h2" className="py-10 text-center">
+      <CustomTypography fontSize="Title_Small" tagType="h2" className="pb-10 text-center">
         {data.title}
       </CustomTypography>
 
@@ -67,13 +61,9 @@ const TestOnlineQuestions = () => {
           />
         </div>
       )}
-      <div className="mt-6 w-fit mx-auto my-5 flex">
-        <CustomButton
-          varient="fill"
-          onClick={nextStepHandler}
-          isDisable={selectedIndex === -1}
-          className="w-fit !mt-auto !h-12 !px-12"
-        >
+
+      <div className="w-full mx-auto flex justify-center fixed right-0 bottom-6">
+        <CustomButton varient="fill" fontSize="Title_Small" onClick={nextStepHandler} isDisable={selectedIndex === -1}>
           {isLastStep ? 'مشاهده نتیجه' : 'مرحله بعدی'}
         </CustomButton>
       </div>

@@ -39,10 +39,10 @@ export type GeneticTestOnlineResultSection2 = {
 
 export type GeneticTestOnlineResultTypes = {
   id: number;
+  color: string;
   header: {
     title: string;
     description: string;
-    color: string;
   };
 
   section1: GeneticTestOnlineResultSection1;
