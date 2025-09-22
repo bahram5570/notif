@@ -1,6 +1,6 @@
 'use client';
 
-import ArrowBack from '@assets/images/genetic/arrowBack.svg';
+import ArrowBack from '@assets/images/geneticMarketing/arrowBack.svg';
 
 import { COLORS_LIST } from '@theme/colors';
 import { useRouter } from 'next/navigation';

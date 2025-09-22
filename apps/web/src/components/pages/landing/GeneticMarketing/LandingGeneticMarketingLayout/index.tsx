@@ -1,6 +1,6 @@
-import Verified from '@assets/images/genetic/verified.svg';
 import drProfile from '@assets/images/geneticMarketing/drProfile.webp';
 import logo from '@assets/images/geneticMarketing/logo.webp';
+import Verified from '@assets/images/geneticMarketing/verified.svg';
 
 import QuestionProgressBar from '@components/modules/QuestionProgressBar';
 import CustomImage from '@components/ui/CustomImage';
