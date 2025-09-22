@@ -1,4 +1,4 @@
-import LogoIcon from '@assets/images/genetic/logo.svg';
+import LogoIcon from '@assets/images/geneticMarketing/logo.svg';
 import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
 
 import QuestionProgressBar from '@components/modules/QuestionProgressBar';

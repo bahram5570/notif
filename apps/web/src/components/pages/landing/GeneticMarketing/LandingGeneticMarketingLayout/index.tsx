@@ -1,14 +1,11 @@
-import drProfile from '@assets/images/geneticMarketing/drProfile.webp';
+import drProfileMini from '@assets/images/geneticMarketing/drProfileMini.webp';
 import logo from '@assets/images/geneticMarketing/logo.webp';
 import Verified from '@assets/images/geneticMarketing/verified.svg';
 
-import QuestionProgressBar from '@components/modules/QuestionProgressBar';
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import { COLORS_LIST } from '@theme/colors';
-
-import { ExpertList } from './constants';
 
 const LandingGeneticMarketingLayout = async () => {
   return (
@@ -21,52 +18,62 @@ const LandingGeneticMarketingLayout = async () => {
                   bg-[url(/assets/images/geneticMarketing/coverHollow.webp)] 
                   bg-contain
                   bg-no-repeat 
-                  bg-top"
+                  bg-[center_-40px]"
       >
         <div className="pt-7">
-          <QuestionProgressBar currentStep="0" questionListLength={20} />
           <div className="mt-7 grid place-items-center">
-            <CustomImage src={logo} alt="logo" width={80} height={80} />
+            <CustomImage src={logo} alt="logo" width={999} height={999} className="w-[104px]" />
             <CustomTypography tagType="h2" fontSize="Title_Small" className="mt-6">
-              غربالگری ژنتیک ایمپو
+              یکِ سرنوشت‌ساز
             </CustomTypography>
-            <CustomTypography tagType="p" fontSize="Body_Medium" className="mt-2 text-center">
-              یک ابزار برای غربالگری کاربران بر اساس پارامترهای ژنتیکی و تاثیرش روی ناباروری، دسته بندی کاربران بر اساس
-              سطح ریسک ناباروری و ارائه راهکارهای لازم بر اساس امتیازی که بدست آورده و سطح ریسکی هست که براش مشخص شده.{' '}
-              برای این منظور لازمه که پرسشنامه‌ای که در ادامه بهت نمایش میدیم رو با دقت تکمیل کنی. نکته مهم اینه که این
-              فرم غربالگری و الگورتم شناسایی موجود در اون کاملا علمی بوده و توسط متخصص ژنتیک تهیه و تایید شده.
-            </CustomTypography>
-            <div className="mt-6 bg-[#EEEBFF] w-full border border-solid border-[#757AC2] rounded-xl grid grid-cols-[60%_40%] overflow-hidden">
-              <div className="p-4 !pl-0">
-                <CustomTypography tagType="h4" fontSize="Body_Small">
+            <div className="mt-2 text-center">
+              <CustomTypography tagType="p" fontSize="Body_Medium">
+                یکی بیشتر، گاهی می‌تونه سرنوشت و زندگی یک فرد رو تغییر بده؛ مثل یک کروموزوم اضافه در جفت 21 جنین که منجر
+                به بروز سندرم داون میشه.
+              </CustomTypography>
+              <CustomTypography tagType="p" fontSize="Body_Medium">
+                با جواب دادن به پرسش‌نامه صفحه بعد که توسط پزشک متخصص طراحی شده، می‌تونی از میزان ریسک ابتلای فرزند
+                آینده‌ات به بیماری‌های ژنتیک مطلع بشی.
+              </CustomTypography>
+              <CustomTypography tagType="p" fontSize="Body_Medium">
+                یادت نره انجام آزمایش ژنتیک فقط یک انتخاب نیست،
+              </CustomTypography>
+              <CustomTypography tagType="p" fontSize="Body_Medium">
+                یک ضرورت برای حفظ سلامت نسل آینده‌ست.
+              </CustomTypography>
+              <CustomTypography tagType="p" fontSize="Body_Medium">
+                اگر تصمیم به بارداری گرفتی تو هم این پرسش‌نامه کوتاه رو پر کن تا در کنار هم به تولد نوزادانی سالم کمک
+                کنیم.
+              </CustomTypography>
+            </div>
+
+            <div
+              className="mt-6 rounded-2xl flex w-full gap-x-2 items-center py-2 px-4"
+              style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
+            >
+              <CustomImage
+                src={drProfileMini}
+                alt="drProfileMini"
+                width={999}
+                height={999}
+                className="w-[48px] h-[48px]"
+              />
+              <div className="flex gap-x-1">
+                <CustomTypography tagType="p" fontSize="Body_Small">
                   تهیه و تایید علمی توسط:
                 </CustomTypography>
-                <div className="flex items-center mt-2 gap-x-1">
-                  <CustomTypography tagType="p" fontSize="Lable_Large">
-                    دکتر سارا فرخی
-                  </CustomTypography>
-                  <Verified />
-                </div>
-                <ul className="mt-2 list-disc pr-3">
-                  {ExpertList.map((item) => (
-                    <li key={item}>
-                      <CustomTypography tagType="p" fontSize="Body_Small">
-                        {item}
-                      </CustomTypography>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="pt-3 flex self-end">
-                <CustomImage src={drProfile} alt="drProfile" />
+                <CustomTypography tagType="p" fontSize="Lable_Medium">
+                  دکتر سارا فرخی
+                </CustomTypography>
+                <Verified />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="mt-6 w-fit mx-auto my-5 flex">
+      <div className="mt-6 w-full mx-auto my-5 flex justify-center fixed bottom-6">
         <CustomLink
-          href="/landing/geneticMarketing/testOnline"
+          href="/landing/geneticMarketing/phoneNumber"
           className="w-fit px-10 py-[12px] rounded-full flex justify-center"
           style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
         >

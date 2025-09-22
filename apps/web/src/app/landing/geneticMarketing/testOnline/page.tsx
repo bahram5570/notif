@@ -1,4 +1,4 @@
-import TestOnlineContainer from '@components/pages/landing/Genetic/TestOnlineContainer';
+import TestOnlineContainer from '@components/pages/landing/GeneticMarketing/TestOnlineContainer';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
 
@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'تست بارداری',
   robots: 'index, follow',
   alternates: {
-    canonical: `${HOST_URL}/genetic/testonline`,
+    canonical: `${HOST_URL}/geneticMarketing/testonline`,
   },
 };
 
