@@ -1,0 +1,1 @@
+export const ANALYTICS_IN_VIEW_TIMER_SECONDS = 5;

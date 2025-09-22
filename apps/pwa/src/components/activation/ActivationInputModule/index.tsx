@@ -1,6 +1,6 @@
 import { CSSProperties, useMemo, useRef } from 'react';
 
-import { toPersianNumbers } from '@utils/numbers';
+import { toEnglishNumbers, toPersianNumbers } from '@utils/numbers';
 
 import styles from './styles.module.css';
 
@@ -35,16 +35,18 @@ const ActivationInputModule = (props: ActivationInputModuleProps) => {
     return result;
   }, []);
 
+  const updatedValue = props.englishNumbers ? toEnglishNumbers(props.value) : toPersianNumbers(props.value);
+
   return (
     <>
       <input
         style={style}
         ref={inputRef}
+        value={updatedValue}
         onFocus={handleFocus}
         onChange={changeHandler}
         placeholder={props.placeHolder}
         id={ACTIVATION_INPUT_MODULE_ID}
-        value={toPersianNumbers(props.value)}
         type={props.isTextTyps ? 'text' : 'tel'}
         className={`border-none bg-transparent w-full relative pt-1 text-center placeholder-[#EFEFEF] ${styles.input}`}
       />
