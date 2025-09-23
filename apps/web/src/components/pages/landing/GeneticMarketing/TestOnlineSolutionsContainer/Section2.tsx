@@ -8,11 +8,11 @@ import { Section2Props } from './types';
 const Section2 = ({ section }: Section2Props) => {
   return (
     <div
-      className="rounded-[12px] pt-4 pb-6 px-3 text-center mt-4"
-      style={{ border: `1px solid ${COLORS_LIST.Neutral_Surface}` }}
+      className="rounded-[12px] pt-4 pb-6 px-3 text-center"
+      style={{ border: `1px solid ${COLORS_LIST.Surface_OutlineVariant}` }}
     >
-      <CustomTypography fontSize="Lable_Large">باید چکار کنم؟</CustomTypography>
-      <div className="h-[1px] w-full bg-[#F2F4FB] my-[12px]"></div>
+      <CustomTypography fontSize="Lable_Large">وقتشه خیالت راحت بشه</CustomTypography>
+      <div className="h-[1px] w-full bg-[#EFEFEF] my-[12px]"></div>
 
       {section.map((item, i) => (
         <div key={i} className="mt-6 first:mt-1">
@@ -31,15 +31,14 @@ const Section2 = ({ section }: Section2Props) => {
           <CustomTypography fontSize="Body_Medium" className="text-right">
             {item.text}
           </CustomTypography>
-
-          {i === 0 && (
+          {item.btnName && (
             <CustomLink
-              href={'#'}
+              href={item.btnUrl}
               className="mt-4 rounded-full w-full block py-[8px]"
               style={{ backgroundColor: COLORS_LIST.Primary_PrimaryContainer }}
             >
               <CustomTypography fontSize="Lable_Medium" style={{ color: `${COLORS_LIST.Primary_Primary}` }}>
-                مشاوره با متخصص ژنتیک ایمپو
+                {item.btnName}
               </CustomTypography>
             </CustomLink>
           )}

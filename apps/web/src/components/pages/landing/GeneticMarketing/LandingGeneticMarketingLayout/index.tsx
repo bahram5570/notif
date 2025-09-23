@@ -1,3 +1,4 @@
+import collaborationlogo from '@assets/images/geneticMarketing/collaborationlogo.webp';
 import drProfileMini from '@assets/images/geneticMarketing/drProfileMini.webp';
 import Verified from '@assets/images/geneticMarketing/verified.svg';
 
@@ -49,7 +50,7 @@ const LandingGeneticMarketingLayout = async () => {
           <Verified />
         </div>
       </div>
-      <div className="w-full mx-auto flex justify-center fixed right-0 bottom-6">
+      <div className="w-full mx-auto grid gap-y-6 justify-items-center justify-center fixed right-0 bottom-6">
         <CustomLink
           href="/landing/geneticMarketing/phoneNumber"
           className="w-fit px-10 py-[12px] rounded-full flex justify-center"
@@ -59,6 +60,7 @@ const LandingGeneticMarketingLayout = async () => {
             شروع و تکمیل پرسشنامه
           </CustomTypography>
         </CustomLink>
+        <CustomImage src={collaborationlogo} alt="collaborationlogo" width={999} height={999} className="w-[112px]" />
       </div>
     </GeneticMarketingLayout>
   );

@@ -27,14 +27,14 @@ export type GeneticTestOnlineResultSection1 = {
   title: string;
   text: string;
   intro: string;
-  items: GeneticTestOnlineResultSectionItem[];
-  textBottom: string;
 };
 
 export type GeneticTestOnlineResultSection2 = {
   title: string;
   icon: string;
   text: string;
+  btnName: string;
+  btnUrl: string;
 };
 
 export type GeneticTestOnlineResultTypes = {
@@ -47,7 +47,6 @@ export type GeneticTestOnlineResultTypes = {
 
   section1: GeneticTestOnlineResultSection1;
   section2: GeneticTestOnlineResultSection2[];
-  section3: GeneticTestOnlineResultSection2[];
   footer: {
     title: string;
     text: string;

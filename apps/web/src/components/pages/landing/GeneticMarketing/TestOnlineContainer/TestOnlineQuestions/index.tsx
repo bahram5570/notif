@@ -1,6 +1,8 @@
+import collaborationlogo from '@assets/images/geneticMarketing/collaborationlogo.webp';
 import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
 
 import CustomButton from '@components/ui/CustomButton';
+import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 import useOperatingSystem from '@hooks/useOperatingSystem';
@@ -18,12 +20,11 @@ const TestOnlineQuestions = () => {
   const { operatingSystem } = useOperatingSystem();
   const typographyDetails = typographyMaker({ fontSize: 'Body_Medium', operatingSystem, isWeb: !breakPoint.laptop });
 
+  const isLastStep = Number(currentStep) === Object.keys(questionList).length - 1;
   const { nextStepHandler, selectedIndex, selectedIndexHandler, extraNote, setExtraNote } = useTestOnlineScore({
     currentStep,
     data,
   });
-
-  const isLastStep = Number(currentStep) === Object.keys(questionList).length - 1;
 
   return (
     <>
@@ -62,10 +63,11 @@ const TestOnlineQuestions = () => {
         </div>
       )}
 
-      <div className="w-full mx-auto flex justify-center fixed right-0 bottom-6">
+      <div className="w-full mx-auto grid gap-y-6 justify-items-center justify-center fixed right-0 bottom-6">
         <CustomButton varient="fill" fontSize="Title_Small" onClick={nextStepHandler} isDisable={selectedIndex === -1}>
           {isLastStep ? 'مشاهده نتیجه' : 'مرحله بعدی'}
         </CustomButton>
+        <CustomImage src={collaborationlogo} alt="collaborationlogo" width={999} height={999} className="w-[112px]" />
       </div>
     </>
   );

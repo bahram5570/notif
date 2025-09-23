@@ -1,6 +1,9 @@
 'use client';
 
+import collaborationlogo from '@assets/images/geneticMarketing/collaborationlogo.webp';
+
 import CustomButton from '@components/ui/CustomButton';
+import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 
 import GeneticMarketingLayout from '../GeneticMarketingLayout';
@@ -18,14 +21,15 @@ const PhoneNumberContainer = () => {
 
       <InputModule autoFocus value={phoneNumber} valueHandler={valueHandler} isTextTyps={false} />
 
-      {phoneNumber.length === 11 && (
-        <div className="w-full mx-auto flex justify-center fixed right-0 bottom-6">
+      <div className="w-full mx-auto grid gap-y-6 justify-items-center justify-center fixed right-0 bottom-6">
+        {phoneNumber.length === 11 && (
           <CustomButton varient="fill" fontSize="Title_Small" onClick={submitHandler}>
             مرحله بعد
           </CustomButton>
-        </div>
-      )}
-    </GeneticMarketingLayout> 
+        )}
+        <CustomImage src={collaborationlogo} alt="collaborationlogo" width={999} height={999} className="w-[112px]" />
+      </div>
+    </GeneticMarketingLayout>
   );
 };
 

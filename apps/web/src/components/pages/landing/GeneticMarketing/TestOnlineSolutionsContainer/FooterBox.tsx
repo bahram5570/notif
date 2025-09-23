@@ -8,7 +8,7 @@ const FooterBox = ({ footer }: FooterBoxProps) => {
   return (
     <>
       <div
-        className="p-3 rounded-xl mt-6 text-center"
+        className="p-3 rounded-xl mt-6 text-center mb-14"
         style={{
           border: `1px solid ${COLORS_LIST.Warning_Warning}`,
           background: `${COLORS_LIST.Warning_Warning}20`,
@@ -18,18 +18,6 @@ const FooterBox = ({ footer }: FooterBoxProps) => {
         <CustomTypography fontSize="Body_Medium" className="mt-2">
           {footer.text}
         </CustomTypography>
-      </div>
-
-      <div className="mt-6 w-fit mx-auto my-5 flex">
-        <CustomLink
-          href="/landing/genetic/lastPage"
-          className="w-fit px-[62px] py-[12px] rounded-full flex justify-center"
-          style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
-        >
-          <CustomTypography fontSize="Lable_Medium" color={'White'}>
-            متوجه شدم
-          </CustomTypography>
-        </CustomLink>
       </div>
     </>
   );
