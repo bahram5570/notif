@@ -7,11 +7,7 @@ const CompleteRegisterCycleLoading = ({ createCycleImage }: CompleteRegisterCycl
   const { sequenceHandler } = useRouteSequence();
 
   const completeHandler = () => {
-    sequenceHandler([
-      `/protected/cycle?dummyData=${Math.random()}`,
-      `/protected/cycle?dummyData=${Math.random()}`,
-      `/protected/cycle?dummyData=${Math.random()}`,
-    ]);
+    sequenceHandler([`/protected/cycle`, `/protected/cycle`, `/protected/cycle`]);
   };
 
   return (

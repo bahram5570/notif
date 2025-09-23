@@ -7,29 +7,31 @@ import { PairRoutinResponsive } from '../useGetData/type';
 import { UseFinalStepWelcomingPropsType } from './type';
 
 const useFinalStepWelcoming = ({ programId }: UseFinalStepWelcomingPropsType) => {
-  const { getQuery, updateQuery } = useCustomReactQuery();
   const { profileData } = useProfileData();
   const { sequenceHandler } = useRouteSequence();
+  const { getQuery, updateQuery } = useCustomReactQuery();
 
   const dataRoutinItems = getQuery<PairRoutinResponsive>({ queryKey: ['pairRoutinItems'] });
   const searchData = `id=${programId}&WomanStatus=${profileData?.status}&wc=${false}`;
 
+  const successHandler = () => {
+    const payload = { ...dataRoutinItems, wc: { ...dataRoutinItems?.wc, isActive: false } };
+    updateQuery({ queryKey: ['pairRoutinItems'], payload });
+
+    sequenceHandler([
+      `/protected/partner`,
+      `/protected/partner`,
+      `/protected/partner`,
+      `/protected/pairRoutin?searchData=${encodeURIComponent(searchData)}`,
+    ]);
+  };
+
   const { callApi, isLoading: finalStepLoading } = useApi({
-    api: `widgets/program/welcom/${programId}`,
     method: 'GET',
     fetchOnMount: false,
+    onSuccess: successHandler,
     queryKey: ['pairRoutinWelcom'],
-    onSuccess: () => {
-      const payload = { ...dataRoutinItems, wc: { ...dataRoutinItems?.wc, isActive: false } };
-      updateQuery({ queryKey: ['pairRoutinItems'], payload });
-
-      sequenceHandler([
-        `/protected/partner?dummyData=${Math.random()}`,
-        `/protected/partner?dummyData=${Math.random()}`,
-        `/protected/partner?dummyData=${Math.random()}`,
-        `/protected/pairRoutin?searchData=${encodeURIComponent(searchData)}&dummyData=${Math.random()}`,
-      ]);
-    },
+    api: `widgets/program/welcom/${programId}`,
   });
 
   const finalStepHandler = () => {

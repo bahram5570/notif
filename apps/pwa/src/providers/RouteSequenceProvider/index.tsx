@@ -21,6 +21,7 @@ const RouteSequenceProvider = ({ children }: RouteSequenceProviderProps) => {
   const [routesList, setRoutesList] = useState<RouteSequenceListTypes>(null);
 
   let currentSearchParams = '';
+
   if (searchParams && searchParams instanceof URLSearchParams) {
     // # Error handling for iOS compatibility issues with searchParams.
     try {
@@ -37,6 +38,7 @@ const RouteSequenceProvider = ({ children }: RouteSequenceProviderProps) => {
   }
 
   useEffect(() => {
+    // # Add fake history entries and reload the page
     if (routesList !== null) {
       const currentPathname = pathname + window.location.search;
       const currentRouteIndex = routesList.findIndex((route) => route === currentPathname);
@@ -45,14 +47,9 @@ const RouteSequenceProvider = ({ children }: RouteSequenceProviderProps) => {
         const nextRoute = routesList?.[currentRouteIndex + 1];
 
         if (nextRoute) {
-          const delayTimer = setTimeout(() => {
-            router.push(nextRoute);
-          }, 100);
-
-          return () => {
-            clearTimeout(delayTimer);
-          };
+          history.pushState(null, '', nextRoute);
         } else {
+          location.reload();
           setRoutesList(null);
         }
       }
@@ -64,8 +61,14 @@ const RouteSequenceProvider = ({ children }: RouteSequenceProviderProps) => {
       return;
     }
 
-    setRoutesList(list);
-    router.push(list[0]);
+    const updatedList = list.map((route) => {
+      const newParams = route.includes('?') ? `&fakeHistory=${Math.random()}` : `?fakeHistory=${Math.random()}`;
+
+      return route + newParams;
+    });
+
+    setRoutesList(updatedList);
+    router.push(updatedList[0]);
   };
 
   return (

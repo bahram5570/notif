@@ -1,5 +1,7 @@
 import { useEffect } from 'react';
 
+import { toEnglishNumbers } from '@utils/numbers';
+
 import ActivationInputModule from '@components/activation/ActivationInputModule';
 import MainActivationModule from '@components/activation/MainActivationModule';
 import useIsRendered from '@hooks/useIsRendered';
@@ -22,7 +24,7 @@ const Otp1Container = ({ payload, payloadHandler, otp1CompleteHandler, onContinu
       return;
     }
 
-    payloadHandler({ identity: v });
+    payloadHandler({ identity: toEnglishNumbers(v) });
   };
 
   useEffect(() => {
@@ -68,6 +70,7 @@ const Otp1Container = ({ payload, payloadHandler, otp1CompleteHandler, onContinu
           <ActivationInputModule
             isTextTyps={!isPhone}
             value={payload.identity}
+            englishNumbers={!isPhone}
             placeHolder="اینجا بنویس"
             key={isPhone ? 'k1' : 'k2'}
             valueHandler={valueHandler}

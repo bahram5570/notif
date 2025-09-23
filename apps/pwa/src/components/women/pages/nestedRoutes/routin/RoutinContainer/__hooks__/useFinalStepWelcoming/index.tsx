@@ -10,19 +10,21 @@ const useFinalStepWelcoming = ({ programId }: UseFinalStepWelcomingPropsType) =>
 
   const searchData = `id=${programId}&WomanStatus=${profileData?.status}&wc=${false}`;
 
+  const successHandler = () => {
+    sequenceHandler([
+      `/protected/cycle`,
+      `/protected/cycle`,
+      `/protected/cycle`,
+      `/protected/routin?searchData=${encodeURIComponent(searchData)}`,
+    ]);
+  };
+
   const { callApi, isLoading: finalStepLoading } = useApi({
-    api: `widgets/program/welcom/${programId}`,
     method: 'GET',
     fetchOnMount: false,
+    onSuccess: successHandler,
     queryKey: ['routinWelcom'],
-    onSuccess: () => {
-      sequenceHandler([
-        `/protected/cycle?dummyData=${Math.random()}`,
-        `/protected/cycle?dummyData=${Math.random()}`,
-        `/protected/cycle?dummyData=${Math.random()}`,
-        `/protected/routin?searchData=${encodeURIComponent(searchData)}&dummyData=${Math.random()}`,
-      ]);
-    },
+    api: `widgets/program/welcom/${programId}`,
   });
 
   const finalStepHandler = () => {

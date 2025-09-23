@@ -15,9 +15,9 @@ const NameSelectorActivationCompletionPage = () => {
 
   const completeHandler = () => {
     sequenceHandler([
-      `/protected/cycle?dummyData=${Math.random()}`,
-      `/protected/cycle?dummyData=${Math.random()}`,
-      `/protected/cycle?dummyData=${Math.random()}`,
+      `/protected/cycle`,
+      `/protected/cycle`,
+      `/protected/cycle`,
       `/protected/nameSelector?${NAME_SELECTOR_TABINDEX_QUERY_NAME}=${NameSelectorTabsEnum.Suggestion}`,
     ]);
   };
