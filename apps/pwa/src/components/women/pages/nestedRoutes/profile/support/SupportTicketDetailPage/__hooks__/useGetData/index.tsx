@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 import useApi from '@hooks/useApi';
 import { useParams, useRouter } from 'next/navigation';
 
@@ -9,17 +7,16 @@ const useGetData = () => {
   const { ticketId } = useParams();
   const router = useRouter();
 
+  const errorHandler = () => {
+    router.replace('/not-found');
+  };
+
   const { data, isLoading } = useApi<ChatResponseTypes>({
     api: `support/ticket/${ticketId}`,
     method: 'GET',
     queryKey: [`ticketDetail`],
+    onError: errorHandler,
   });
-
-  useEffect(() => {
-    if (!isLoading && !data) {
-      // todo router.replace('/not-found');
-    }
-  }, [isLoading, data]);
 
   return { data, isLoading };
 };

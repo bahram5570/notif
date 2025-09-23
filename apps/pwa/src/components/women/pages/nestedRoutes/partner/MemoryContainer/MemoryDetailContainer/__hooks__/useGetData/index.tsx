@@ -22,7 +22,7 @@ const useGetData = ({ memoryId }: UseGetDataPropsType) => {
 
   useEffect(() => {
     if (!isLoading && data && !findCurrentMemory) {
-      // todo router.replace('/not-found');
+      router.replace('/not-found');
     }
   }, [isLoading, data, findCurrentMemory]);
 

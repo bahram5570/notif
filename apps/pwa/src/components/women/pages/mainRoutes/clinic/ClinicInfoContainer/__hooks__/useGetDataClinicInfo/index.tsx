@@ -14,8 +14,13 @@ const useGetDataClinicInfo = (clinicInfo: string) => {
     newQuery({ queryKey: ['clinicInfo'], payload: v });
   };
 
+  const errorHandler = () => {
+    router.replace('/not-found');
+  };
+
   const { callApi, isLoading } = useApi<ClinicInfoResponseTypes>({
     onSuccess: successHandler,
+    onError: errorHandler,
     api: 'advice/ticketInfo',
     method: 'POST',
   });
@@ -36,12 +41,6 @@ const useGetDataClinicInfo = (clinicInfo: string) => {
   }, []);
 
   const data = getQuery<ClinicInfoResponseTypes>({ queryKey: ['clinicInfo'] });
-
-  useEffect(() => {
-    if (!isLoading && !data) {
-      // todo router.replace('/not-found');
-    }
-  }, [isLoading, data]);
 
   return { isLoading, data };
 };
