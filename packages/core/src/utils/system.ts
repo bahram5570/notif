@@ -2,7 +2,7 @@ import fs from 'fs-extra';
 import path from 'path';
 
 export const exportMaker = async (props: { appName: string; port: number }) => {
-  const distName = `${props.appName}-dist`;
+  const distName = `${props.appName}-dist-1`;
 
   const rootDir = process.cwd();
   const distDir = path.join(rootDir, distName);
