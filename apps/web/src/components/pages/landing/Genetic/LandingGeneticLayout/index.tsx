@@ -1,3 +1,5 @@
+'use client';
+
 import drProfile from '@assets/images/genetic/drProfile.webp';
 import logo from '@assets/images/genetic/logo.webp';
 import Verified from '@assets/images/genetic/verified.svg';
@@ -9,8 +11,11 @@ import CustomTypography from '@components/ui/CustomTypography';
 import { COLORS_LIST } from '@theme/colors';
 
 import { ExpertList } from './constants';
+// import useAuth from './useAuth';
 
-const LandingGeneticLayout = async () => {
+const LandingGeneticLayout = () => {
+  // useAuth();
+
   return (
     <>
       <div

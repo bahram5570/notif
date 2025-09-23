@@ -4,7 +4,7 @@ import {
 } from '../../../TestOnlineContainer/constants';
 import { GeneticTestOnlineSessionTypes } from '../../../TestOnlineContainer/types';
 
-const getTotalScore = () => {
+export const getTotalScore = () => {
   let totalScore = 0;
   const scoreSession = sessionStorage.getItem(GENETIC_TEST_ONLINE_STEP_SESSION_SCORE_NAME);
 

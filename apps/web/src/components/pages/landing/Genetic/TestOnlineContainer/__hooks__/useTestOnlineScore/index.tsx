@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+// import { getTotalScore } from '../../../TestOnlineResultContainer/__hooks__/useTestOnlineResult/__utils__';
+
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
@@ -9,8 +11,10 @@ import {
   GENETIC_TEST_ONLINE_STEP_SESSION_SCORE_NAME,
 } from '../../constants';
 import { UseTestOnlineScoreTypes } from './types';
+// import useSubmit from './useSubmit';
 
 const useTestOnlineScore = ({ currentStep, data }: UseTestOnlineScoreTypes) => {
+  // const { handleSubmit } = useSubmit();
   const router = useRouter();
   const { newQueryParamsHandler } = useQueryParamsHandler();
 
@@ -56,6 +60,9 @@ const useTestOnlineScore = ({ currentStep, data }: UseTestOnlineScoreTypes) => {
     const isLastStep = lastStep === currentStep;
 
     if (isLastStep) {
+      // const totalScore = getTotalScore();
+      // const payload = { score: totalScore };
+      // handleSubmit(payload);
       router.push('/landing/genetic/result');
     } else {
       newQueryParamsHandler({ [GENETIC_TEST_ONLINE_STEP_QUERY_NAME]: Number(currentStep) + 1 });
