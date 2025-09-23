@@ -6,26 +6,22 @@ const useScroll = ({ ref }: useScrollPropsType) => {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      if (ref.current) {
-        if (ref.current.scrollTop > 100) {
-          setScrolled(true);
-        } else {
-          setScrolled(false);
-        }
-      }
-    };
+    if (!ref.current) return;
 
-    const modalContent = ref.current;
-    if (modalContent) {
-      modalContent.addEventListener('scroll', handleScroll);
-    }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setScrolled(!entry.isIntersecting);
+      },
+      {
+        root: null,
+        threshold: 0,
+        rootMargin: '-80px 0px 0px 0px',
+      },
+    );
 
-    return () => {
-      if (modalContent) {
-        modalContent.removeEventListener('scroll', handleScroll);
-      }
-    };
+    observer.observe(ref.current);
+
+    return () => observer.disconnect();
   }, []);
 
   return { scrolled };

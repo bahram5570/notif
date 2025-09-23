@@ -1,40 +1,24 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { EXPERIENCES_PAGE_SIZE } from '@components/women/pages/mainRoutes/shareExperience/constants';
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 
-import {
-  ExperiencesResponseTypes,
-  QueryExperiencesDataTypes,
-  TopicInformationTypes,
-  useGetDataPropsType,
-} from './type';
+import { ExperiencesResponseTypes, useGetDataPropsType } from './type';
 
 const useGetData = ({ topicId }: useGetDataPropsType) => {
   const [pageNo, setPageNo] = useState(0);
-  const [totalCount, setTotalCount] = useState(0);
-  const [topicInformation, setTopicInformation] = useState<TopicInformationTypes>({
-    coverImage: '',
-    name: '',
-    inputText: '',
-    bio: '',
-  });
-  const observerRef = useRef<IntersectionObserver | null>(null);
 
   const { newQuery, updateQuery, getQuery, removeQuery } = useCustomReactQuery(['topicExperiences']);
 
-  const experiencesData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['topicExperiences'] });
+  const topicExperiencesData = getQuery<ExperiencesResponseTypes>({ queryKey: ['topicExperiences'] });
 
   const successHandler = (v: ExperiencesResponseTypes) => {
-    setTotalCount(v.totalCount);
-    setTopicInformation({ coverImage: v.coverImage, name: v.name, inputText: v.inputText, bio: v.bio });
-
-    if (experiencesData) {
-      const list = { expirences: [...experiencesData.expirences, ...v.expirences] };
+    if (topicExperiencesData) {
+      const list = { ...topicExperiencesData, expirences: [...topicExperiencesData.expirences, ...v.expirences] };
       updateQuery({ queryKey: ['topicExperiences'], payload: list });
     } else {
-      newQuery({ payload: { expirences: v.expirences }, queryKey: ['topicExperiences'] });
+      newQuery({ payload: v, queryKey: ['topicExperiences'] });
     }
   };
 
@@ -62,34 +46,13 @@ const useGetData = ({ topicId }: useGetDataPropsType) => {
     }
   }, [pageNo, apiLoading]);
 
-  // Intersection Observer for infinite scrolling
-  const lastExperienceRef = useCallback(
-    (node: HTMLDivElement | null) => {
-      if (apiLoading) return;
-      if (observerRef.current) observerRef.current.disconnect();
-
-      observerRef.current = new IntersectionObserver(
-        (entries) => {
-          if (entries[0].isIntersecting) {
-            const currentItemsCount = (pageNo + 1) * EXPERIENCES_PAGE_SIZE;
-            const isAllItemsLoaded = currentItemsCount >= totalCount;
-
-            if (!isAllItemsLoaded) {
-              setPageNo((prev) => prev + 1);
-            }
-          }
-        },
-        { threshold: 1.0 },
-      );
-
-      if (node) observerRef.current.observe(node);
-    },
-    [apiLoading, totalCount, pageNo],
-  );
+  const updatePageNo = () => {
+    setPageNo((prev) => prev + 1);
+  };
 
   const isLoading = apiLoading && pageNo === 0;
 
-  return { isLoading, experiencesData, topicInformation, lastExperienceRef };
+  return { isLoading, topicExperiencesData, pageNo, updatePageNo, apiLoading };
 };
 
 export default useGetData;

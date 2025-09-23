@@ -1,10 +1,8 @@
+import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import Spinner from '@components/ui/Spinner';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import {
-  SHARE_EXPERIENCE_COMMENTS_CONTAINER_ID,
-  SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME,
-} from '@components/women/pages/mainRoutes/shareExperience/constants';
+import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@components/women/pages/mainRoutes/shareExperience/constants';
 import useOverflowHandler from '@hooks/useOverflowHandler';
 import useTheme from '@hooks/useTheme';
 
@@ -18,51 +16,50 @@ import useNewCommentQueries from './__hooks__/useNewCommentQueries';
 import { ShareExperienceCommentsModalContainerProps } from './types';
 
 const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsModalContainerProps) => {
-  useOverflowHandler();
   const { colors } = useTheme();
   const { newCommentQueries } = useNewCommentQueries(props.id);
-  const { isLoading, commentsData } = useCommentsList(props.id);
+  const { isLoading, commentsData, updatePageNo, pageNo } = useCommentsList(props.id);
+
+  useOverflowHandler(props.queryParam !== null);
 
   return (
     <WomenPageLayout rightElement="BackButton" paddingTop={0}>
-      {isLoading && typeof commentsData === 'undefined' && (
-        <div className="py-10 flex justify-center items-center" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
-          <Spinner color="primary" />
-        </div>
-      )}
+      <InfiniteScrollContainer
+        height="100dvh"
+        isLoading={isLoading}
+        totalCount={commentsData?.commentCount || 10}
+        pageNo={pageNo}
+        callBack={updatePageNo}
+      >
+        {typeof commentsData !== 'undefined' && (
+          <div
+            className="relative flex flex-col px-4"
+            style={{ paddingTop: HEADER_HEIGHT + 16, paddingBottom: HEADER_HEIGHT * 2 }}
+          >
+            <CommentsTopPart {...commentsData} id={props.id} />
 
-      {typeof commentsData !== 'undefined' && (
-        <>
-          <div id={SHARE_EXPERIENCE_COMMENTS_CONTAINER_ID} className="overflow-y-auto h-[100dvh]">
-            <div
-              className="relative flex flex-col px-4"
-              style={{ paddingTop: HEADER_HEIGHT + 16, paddingBottom: HEADER_HEIGHT * 2 }}
-            >
-              <CommentsTopPart {...commentsData} id={props.id} />
+            <ShareExperienceContentsModule
+              isSelf={commentsData.self}
+              image={commentsData.image}
+              text={commentsData.text}
+              hasLinkTo={false}
+              id={props.id}
+            />
 
-              <ShareExperienceContentsModule
-                isSelf={commentsData.self}
-                image={commentsData.image}
-                text={commentsData.text}
-                hasLinkTo={false}
-                id={props.id}
-              />
+            <CommentsBottomPart {...commentsData} id={props.id} />
 
-              <CommentsBottomPart {...commentsData} id={props.id} />
+            <div className="w-full h-1 my-4" style={{ backgroundColor: colors.Neutral_Surface }} />
 
-              <div className="w-full h-1 my-4" style={{ backgroundColor: colors.Neutral_Surface }} />
+            <CommentsList id={props.id} comments={commentsData.comments} />
 
-              <CommentsList id={props.id} comments={commentsData.comments} />
-
-              {isLoading && (
-                <div className="absolute left-0 right-0 bottom-20 w-full flex justify-center">
-                  <Spinner color="outline" width={40} />
-                </div>
-              )}
-            </div>
+            {isLoading && (
+              <div className="absolute left-0 right-0 bottom-20 w-full flex justify-center">
+                <Spinner color="outline" width={40} />
+              </div>
+            )}
           </div>
-        </>
-      )}
+        )}
+      </InfiniteScrollContainer>
 
       {typeof commentsData !== 'undefined' && (
         <ShareExperienceNewCommentFooterModule

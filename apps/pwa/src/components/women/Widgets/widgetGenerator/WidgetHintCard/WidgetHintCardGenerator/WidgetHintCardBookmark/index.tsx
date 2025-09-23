@@ -1,15 +1,11 @@
 import { useEffect, useState } from 'react';
 
-import BookmarkEmptyIcon from '@assets/icons/saveEmpty.svg';
-import BookmarkFillIcon from '@assets/icons/saveFill.svg';
-
+import Bookmark from '@components/ui/Bookmark';
 import useApi from '@hooks/useApi';
-import useTheme from '@hooks/useTheme';
 
 import { ApiInfoTypes, WidgetHintCardBookmarkProps } from './types';
 
 const WidgetHintCardBookmark = (props: WidgetHintCardBookmarkProps) => {
-  const { colors } = useTheme();
   const [apiInfo, setApiInfo] = useState<ApiInfoTypes>(null);
   const [isBookmarked, setIsBookmarked] = useState(props.isBookmarked);
 
@@ -32,16 +28,7 @@ const WidgetHintCardBookmark = (props: WidgetHintCardBookmarkProps) => {
     }
   }, [apiInfo]);
 
-  return (
-    <div
-      onClick={clickHandler}
-      className="w-8 h-8 rounded-full flex items-center justify-center border-[1px] cursor-pointer"
-      id="hintBookMarked"
-    >
-      {!isBookmarked && <BookmarkEmptyIcon className="w-5 h-auto" style={{ stroke: colors.Surface_InverseSurface }} />}
-      {isBookmarked && <BookmarkFillIcon className="w-5 h-auto" style={{ fill: colors.Surface_InverseSurface }} />}
-    </div>
-  );
+  return <Bookmark id="hintBookMarked" clickHandler={clickHandler} isBookmarked={isBookmarked} />;
 };
 
 export default WidgetHintCardBookmark;

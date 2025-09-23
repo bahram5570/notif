@@ -32,6 +32,8 @@ const useCommentDelete = () => {
     if (commentsData) {
       const filteredCommentsList = commentsData.comments.filter((item) => item.id !== idInfo?.commentId);
       commentsData.comments = filteredCommentsList;
+      commentsData.commentCount = commentsData.commentCount - 1;
+
       updateQuery({ queryKey: ['comments ' + idInfo?.shareId], payload: commentsData });
     }
 

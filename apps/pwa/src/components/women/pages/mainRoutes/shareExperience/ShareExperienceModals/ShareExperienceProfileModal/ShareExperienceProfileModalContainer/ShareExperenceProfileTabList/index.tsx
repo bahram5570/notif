@@ -6,9 +6,7 @@ import { ShareExperenceProfileTabListPropsType } from './type';
 const ShareExperenceProfileTabList = ({ id, isSelf, tab }: ShareExperenceProfileTabListPropsType) => {
   return (
     <>
-      {tab === ShareExperienceProfileTabEnum.Activities && (
-        <ShareExperienceProfileActivities id={id} isSelf={isSelf} tab={tab} />
-      )}
+      {tab === ShareExperienceProfileTabEnum.Activities && <ShareExperienceProfileActivities id={id} isSelf={isSelf} />}
 
       {tab === ShareExperienceProfileTabEnum.Self && <ShareExperienceProfileSelfList id={id} isSelf={isSelf} />}
     </>

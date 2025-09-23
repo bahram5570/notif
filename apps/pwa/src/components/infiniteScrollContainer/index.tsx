@@ -13,6 +13,8 @@ const InfiniteScrollContainer = ({
   pageNo,
   pageSize = PAGE_SIZE,
   height,
+  className,
+  style,
 }: InfiniteScrollContainerPropsType) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -24,7 +26,7 @@ const InfiniteScrollContainer = ({
       const target = e.target as HTMLDivElement;
       if (!target) return;
 
-      const isEndBottom = target.scrollTop + target.clientHeight >= target.scrollHeight;
+      const isEndBottom = target.scrollTop + target.clientHeight >= target.scrollHeight - 100;
 
       if (isEndBottom && !isLoading) {
         const currentItemsCount = (pageNo + 1) * pageSize;
@@ -43,8 +45,9 @@ const InfiniteScrollContainer = ({
   return (
     <div
       ref={containerRef}
-      className=" overflow-y-auto"
+      className={`${isLoading ? 'overflow-y-hidden' : ' overflow-y-auto'} ${className}`}
       style={{
+        ...style,
         height,
         pointerEvents: isLoading ? 'none' : 'auto',
         touchAction: isLoading ? 'none' : 'auto',

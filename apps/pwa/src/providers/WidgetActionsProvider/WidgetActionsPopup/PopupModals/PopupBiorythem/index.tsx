@@ -1,10 +1,10 @@
 import CrossIcon from '@assets/icons/plus.svg';
 
+import BiorhythemItems from '@components/__Biorhythem__/BiorhythemItems';
 import Typography from '@components/ui/Typography';
 import useTheme from '@hooks/useTheme';
 import { useRouter } from 'next/navigation';
 
-import BiorhythemItems from './BiorhythemItems';
 import { PopupBiorythemProps } from './type';
 
 const PopupBiorythem = ({ data }: PopupBiorythemProps) => {

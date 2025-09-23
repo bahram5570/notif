@@ -8,7 +8,7 @@ import Link from 'next/link';
 import MemoryList from './MemoryList';
 import { HasDataMemoryPropsType } from './type';
 
-const HasDataMemory = ({ memories, isFetchingNextPage }: HasDataMemoryPropsType) => {
+const HasDataMemory = ({ memories }: HasDataMemoryPropsType) => {
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { colors } = useTheme();
 
@@ -18,7 +18,7 @@ const HasDataMemory = ({ memories, isFetchingNextPage }: HasDataMemoryPropsType)
         خاطره‌ بازی
       </Typography>
 
-      <MemoryList memories={memories} isFetchingNextPage={isFetchingNextPage} />
+      <MemoryList memories={memories} />
       <Link
         href={'/protected/memory/createMemory'}
         onClick={() => pageNavigationHandler({ id: 'memory', showProgressBar: true })}

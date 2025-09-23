@@ -10,8 +10,11 @@ const ShareExperienceProfileModal = ({ shareExperienceOrdersList }: ShareExperie
 
   const isOpen = getQueryParams(SHARE_EXPERIENCE_PROFILE_QUERY_NAME) !== null;
 
-  const queryParams = getQueryParams(SHARE_EXPERIENCE_PROFILE_QUERY_NAME);
-  const queryData = queryParams === null ? null : (JSON.parse(queryParams) as QueryDataShareExperienceProfileModal);
+  const shareExperienceProfileParam = getQueryParams(SHARE_EXPERIENCE_PROFILE_QUERY_NAME);
+  const queryData =
+    shareExperienceProfileParam === null
+      ? null
+      : (JSON.parse(shareExperienceProfileParam) as QueryDataShareExperienceProfileModal);
 
   const zIndex = shareExperienceOrdersList?.[SHARE_EXPERIENCE_PROFILE_QUERY_NAME];
 
@@ -24,7 +27,11 @@ const ShareExperienceProfileModal = ({ shareExperienceOrdersList }: ShareExperie
         className="!py-0 overflow-y-auto !px-0"
         zIndex={zIndex}
       >
-        <>{isOpen && <ShareExperienceProfileModalContainer userId={queryData?.id} />}</>
+        <>
+          {isOpen && (
+            <ShareExperienceProfileModalContainer userId={queryData?.id} queryParam={shareExperienceProfileParam} />
+          )}
+        </>
       </CustomModal>
     </>
   );

@@ -10,13 +10,24 @@ const ShareExperienceTopicModal = ({ avatarImage }: ShareExperienceTopicModalPro
 
   const isOpen = getQueryParams(SHARE_EXPERIENCE_TOPIC_MODAL_QUERY_NAME) !== null;
 
-  const queryParams = getQueryParams(SHARE_EXPERIENCE_TOPIC_MODAL_QUERY_NAME);
-  const queryData = queryParams === null ? null : (JSON.parse(queryParams) as QueryDataShareExperienceTopicModal);
+  const shareExperienceTopicParam = getQueryParams(SHARE_EXPERIENCE_TOPIC_MODAL_QUERY_NAME);
+  const queryData =
+    shareExperienceTopicParam === null
+      ? null
+      : (JSON.parse(shareExperienceTopicParam) as QueryDataShareExperienceTopicModal);
 
   return (
     <>
       <CustomModal isOpen={isOpen} isSlidingMode={true} isFullScreen={true} className="!py-0 overflow-y-auto !px-0">
-        <>{isOpen && <ShareExperienceTopicModalContainer topicId={queryData?.id} avatarImage={avatarImage} />}</>
+        <>
+          {isOpen && (
+            <ShareExperienceTopicModalContainer
+              topicId={queryData?.id}
+              avatarImage={avatarImage}
+              queryParam={shareExperienceTopicParam}
+            />
+          )}
+        </>
       </CustomModal>
     </>
   );

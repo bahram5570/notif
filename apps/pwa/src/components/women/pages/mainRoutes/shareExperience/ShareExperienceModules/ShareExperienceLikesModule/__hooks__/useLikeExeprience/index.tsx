@@ -2,6 +2,8 @@ import useCustomReactQuery from '@hooks/useCustomReactQuery';
 
 import { QueryExperiencesDataTypes } from '../../../../ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
 import { CommentsResponseTypes } from '../../../../ShareExperienceModals/ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/__hooks__/useCommentsList/types';
+import { ShareExperenceProfileResponsePropsType } from '../../../../ShareExperienceModals/ShareExperienceProfileModal/ShareExperienceProfileModalContainer/__hooks__/useGetData/type';
+import { ExperiencesResponseTypes } from '../../../../ShareExperienceModals/ShareExperienceTopicModal/ShareExperienceTopicModalContainer/__hooks__/useGetData/type';
 import { UpdateExercieseHandlerTypes } from './types';
 
 const useLikeExeprience = () => {
@@ -11,8 +13,11 @@ const useLikeExeprience = () => {
     const experiencesData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['experiences'] });
 
     if (experiencesData) {
-      const exitProfileQueryKey = getQuery({ queryKey: ['shareExperienceProfile'] });
+      const exitProfileQueryKey = getQuery<ShareExperenceProfileResponsePropsType>({
+        queryKey: ['shareExperienceProfile'],
+      });
       const exitCommentQueryKey = getQuery<CommentsResponseTypes>({ queryKey: ['comments ' + v.shareId] });
+      const topicExperiencesData = getQuery<ExperiencesResponseTypes>({ queryKey: ['topicExperiences'] });
       const index = experiencesData.expirences.findIndex((item) => item.id === v.shareId);
 
       if (index > -1) {
@@ -33,6 +38,22 @@ const useLikeExeprience = () => {
           queryKey: ['comments ' + v.shareId],
           payload: { ...exitCommentQueryKey, likeCount: v.likeCount, disliked: v.disliked, state: v.state },
         });
+      }
+
+      if (topicExperiencesData) {
+        const updatedExperience = topicExperiencesData.expirences.map((act) =>
+          act.id === v.shareId
+            ? {
+                ...act,
+                likeCount: v.likeCount,
+                disliked: v.disliked,
+                state: v.state,
+              }
+            : act,
+        );
+
+        const payload = { ...topicExperiencesData, expirences: updatedExperience };
+        updateQuery({ queryKey: ['topicExperiences'], payload });
       }
     }
   };

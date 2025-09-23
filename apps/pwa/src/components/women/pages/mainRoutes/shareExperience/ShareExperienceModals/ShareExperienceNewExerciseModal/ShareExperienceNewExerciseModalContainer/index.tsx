@@ -19,11 +19,12 @@ const ShareExperienceNewExerciseModalContainer = ({
   onSuccessNewHandler,
   avatarImage,
   username,
+  queryParam,
 }: ShareExperienceNewExerciseModalContainerProps) => {
   const { isLoading, topicsData, topicId, topicIdHandler } = useTopics();
   const { text, textHandler } = useText();
   const fileProps = useImage();
-  useOverflowHandler();
+  useOverflowHandler(queryParam !== null);
 
   const { submitHandler, isSubmitLoading } = useSubmit({
     image: fileProps.image,

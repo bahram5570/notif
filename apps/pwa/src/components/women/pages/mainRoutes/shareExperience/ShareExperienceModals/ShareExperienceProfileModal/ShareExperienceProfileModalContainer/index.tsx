@@ -1,7 +1,6 @@
 import Spinner from '@components/ui/Spinner';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import { SHARE_EXPERIENCE_PROFILE_CONTAINER_ID } from '@components/women/pages/mainRoutes/shareExperience/constants';
 import useOverflowHandler from '@hooks/useOverflowHandler';
 
 import ShareExperenceProfileTabList from './ShareExperenceProfileTabList';
@@ -12,10 +11,15 @@ import useShareExperienceProfileTabs from './__hooks__/useShareExperienceProfile
 import { ShareExperienceProfileTabEnum } from './enum';
 import { ShareExperienceProfileModalContainerPropsTypes } from './type';
 
-const ShareExperienceProfileModalContainer = ({ userId }: ShareExperienceProfileModalContainerPropsTypes) => {
-  useOverflowHandler();
+const ShareExperienceProfileModalContainer = ({
+  userId,
+  queryParam,
+}: ShareExperienceProfileModalContainerPropsTypes) => {
   const { data, isLoading } = useShareExperenceProfileGetData(userId);
   const { tab, tabHandler } = useShareExperienceProfileTabs();
+  useOverflowHandler(queryParam !== null);
+
+  const rightElementScript = !isLoading && data ? `پروفایل ${data?.isSelf ? 'شما' : data?.profile.username}` : '';
 
   const optionList = data
     ? [
@@ -31,28 +35,16 @@ const ShareExperienceProfileModalContainer = ({ userId }: ShareExperienceProfile
     : [];
 
   return (
-    <WomenPageLayout
-      paddingTop={0}
-      rightElement="BackButton"
-      rightElementScript={!isLoading && data ? `پروفایل ${data?.isSelf ? 'شما' : data?.profile.username}` : undefined}
-    >
-      {isLoading && (
-        <div className="w-full flex justify-center pb-10">
-          <Spinner color="primary" />
-        </div>
-      )}
-
+    <WomenPageLayout paddingTop={0} rightElement="BackButton" rightElementScript={rightElementScript}>
       <div
-        id={SHARE_EXPERIENCE_PROFILE_CONTAINER_ID}
-        className="relative h-[100dvh] overflow-y-auto flex flex-col px-3"
-        style={{ paddingTop: HEADER_HEIGHT + 16, paddingBottom: HEADER_HEIGHT * 2 }}
+        className=" h-[100dvh]  flex flex-col px-3"
+        style={{ paddingTop: HEADER_HEIGHT + 16, paddingBottom: HEADER_HEIGHT }}
       >
         {isLoading && (
           <div className="w-full flex justify-center pb-10">
             <Spinner color="primary" />
           </div>
         )}
-
         {!isLoading && data && (
           <>
             <ShareExperienceProfileTopPart

@@ -1,8 +1,8 @@
 import { colorFormatConverter } from '@utils/scripts';
 
+import BiorhythemItems from '@components/__Biorhythem__/BiorhythemItems';
 import Typography from '@components/ui/Typography';
 
-import BiorhythemItems from './BiorhythemItems';
 import { BiorhythmPropsType } from './type';
 
 const WidgetsBiorhythm = ({ data }: BiorhythmPropsType) => {

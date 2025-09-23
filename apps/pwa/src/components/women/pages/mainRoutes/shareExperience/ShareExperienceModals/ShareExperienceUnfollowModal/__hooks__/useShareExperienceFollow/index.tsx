@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 
 import { QueryExperiencesDataTypes } from '../../../../ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
 import { CommentsResponseTypes } from '../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/__hooks__/useCommentsList/types';
+import { SelfExperienceDataType } from '../../../ShareExperienceProfileModal/ShareExperienceProfileModalContainer/ShareExperenceProfileTabList/ShareExperienceProfileActivities/__hooks__/useActivitiesData/type';
 import { ApiInfoTypes, FollowHandlerTypes } from './types';
 
 const useShareExperienceFollow = (experienceId?: string) => {
@@ -30,8 +31,8 @@ const useShareExperienceFollow = (experienceId?: string) => {
 
       const exitCommentQueryData = getQuery({ queryKey: ['comments ' + experienceId] });
       const exitTopicExperienceData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['topicExperiences'] });
-      const exitActivitiesData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['activities'] });
-      const exitSelfExperienceData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['selfExperience'] });
+      const exitActivitiesData = getQuery<SelfExperienceDataType>({ queryKey: ['activities'] });
+      const exitSelfExperienceData = getQuery<SelfExperienceDataType>({ queryKey: ['selfExperience'] });
 
       if (exitCommentQueryData) {
         const findCurrentExperience = experiencesData.expirences.find((experience) => experience.id === experienceId);
@@ -50,7 +51,7 @@ const useShareExperienceFollow = (experienceId?: string) => {
       }
 
       if (exitActivitiesData) {
-        exitActivitiesData.expirences.forEach((item) => {
+        exitActivitiesData.list.forEach((item) => {
           if (item.userId === apiInfo?.userId) {
             item.isFollow = !apiInfo.isFollow;
           }
@@ -60,7 +61,7 @@ const useShareExperienceFollow = (experienceId?: string) => {
       }
 
       if (exitSelfExperienceData) {
-        exitSelfExperienceData.expirences.forEach((item) => {
+        exitSelfExperienceData.list.forEach((item) => {
           if (item.userId === apiInfo?.userId) {
             item.isFollow = !apiInfo.isFollow;
           }

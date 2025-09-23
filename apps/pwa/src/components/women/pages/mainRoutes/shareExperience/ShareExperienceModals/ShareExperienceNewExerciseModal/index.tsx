@@ -12,7 +12,8 @@ const ShareExperienceNewExerciseModal = ({
 }: ShareExperienceNewExerciseModalProps) => {
   const { getQueryParams } = useQueryParamsHandler();
 
-  const isOpen = getQueryParams(SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME) !== null;
+  const newExperienceParms = getQueryParams(SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME);
+  const isOpen = newExperienceParms !== null;
 
   return (
     <>
@@ -24,6 +25,7 @@ const ShareExperienceNewExerciseModal = ({
               key={isOpen ? 'k1' : 'k2'}
               avatarImage={avatarImage}
               username={username}
+              queryParam={newExperienceParms}
             />
           )}
         </>

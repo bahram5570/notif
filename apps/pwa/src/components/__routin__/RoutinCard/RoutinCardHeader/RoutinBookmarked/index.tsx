@@ -1,19 +1,19 @@
 import { useEffect, useState } from 'react';
 
-import BookmarkEmptyIcon from '@assets/icons/saveEmpty.svg';
-import BookmarkFillIcon from '@assets/icons/saveFill.svg';
-
+import Bookmark from '@components/ui/Bookmark';
 import useApi from '@hooks/useApi';
-import useTheme from '@hooks/useTheme';
 
 import { RoutinBookmarkedPropsType } from './type';
 
 const RoutinBookmarked = (props: RoutinBookmarkedPropsType) => {
-  const { colors } = useTheme();
-  const [isBookmarked, setIsBookmarked] = useState(props.isBookmarked);
   const [apiInfo, setApiInfo] = useState<string | null>(null);
+  const [isBookmarked, setIsBookmarked] = useState(props.isBookmarked);
+  const { callApi } = useApi({ api: apiInfo || '', method: 'PUT' });
 
-  const clickHandler = () => {
+  const clickHandler = (e?: React.MouseEvent<HTMLElement>) => {
+    if (e) {
+      e.stopPropagation();
+    }
     if (isBookmarked) {
       setIsBookmarked(false);
       setApiInfo('widgets/program/unbookmark');
@@ -22,8 +22,6 @@ const RoutinBookmarked = (props: RoutinBookmarkedPropsType) => {
       setApiInfo('widgets/program/bookmark');
     }
   };
-
-  const { callApi } = useApi({ api: apiInfo || '', method: 'PUT' });
 
   useEffect(() => {
     if (apiInfo) {
@@ -37,18 +35,7 @@ const RoutinBookmarked = (props: RoutinBookmarkedPropsType) => {
     setIsBookmarked(props.isBookmarked);
   }, [props.isBookmarked]);
 
-  return (
-    <div
-      className="w-8 h-8  flex items-center justify-center  pointer-events-auto"
-      onClick={(e) => {
-        e.stopPropagation();
-        clickHandler();
-      }}
-    >
-      {!isBookmarked && <BookmarkEmptyIcon className="w-5 h-auto" style={{ stroke: colors.Surface_InverseSurface }} />}
-      {isBookmarked && <BookmarkFillIcon className="w-5 h-auto" style={{ fill: colors.Surface_InverseSurface }} />}
-    </div>
-  );
+  return <Bookmark clickHandler={clickHandler} isBookmarked={isBookmarked} />;
 };
 
 export default RoutinBookmarked;
