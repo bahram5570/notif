@@ -16,8 +16,7 @@ const GeneticMarketingLayout = ({ children, goBack = true }: GeneticMarketingLay
                   bg-contain
                   bg-no-repeat 
                   bg-[center_-40px]
-                  h-[100dvh]
-                  "
+                  h-[100dvh]"
     >
       <div className="mt-7 grid place-items-center">
         {goBack && <GoBack />}

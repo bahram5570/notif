@@ -29,7 +29,7 @@ const WomanStatusContainer = () => {
           />
         ))}
       </div>
-      <div className="w-full mx-auto grid gap-y-6 justify-items-center justify-center fixed right-0 bottom-6">
+      <div className="w-full mx-auto grid gap-y-6 justify-items-center justify-center fixed right-0 bottom-4">
         <CustomButton varient="fill" fontSize="Title_Small" onClick={handleNextStep} isDisable={isNextDisabled}>
           مرحله بعد
         </CustomButton>

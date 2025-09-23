@@ -63,8 +63,8 @@ const TestOnlineQuestions = () => {
         </div>
       )}
 
-      <div className="w-full mx-auto grid gap-y-6 justify-items-center justify-center fixed right-0 bottom-6">
-        <CustomButton varient="fill" fontSize="Title_Small" onClick={nextStepHandler} isDisable={selectedIndex === -1}>
+      <div className="w-full mx-auto grid gap-y-6 justify-items-center justify-center fixed right-0 bottom-4">
+        <CustomButton varient="fill" fontSize="Lable_Large" onClick={nextStepHandler} isDisable={selectedIndex === -1}>
           {isLastStep ? 'مشاهده نتیجه' : 'مرحله بعدی'}
         </CustomButton>
         <CustomImage src={collaborationlogo} alt="collaborationlogo" width={999} height={999} className="w-[112px]" />

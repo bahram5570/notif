@@ -12,8 +12,6 @@ export type Section1Type = {
   intro: string;
   title: string;
   text: string;
-  items: Section1ItemType[];
-  textBottom: string;
 };
 
 export type TestOnlineResultData = {

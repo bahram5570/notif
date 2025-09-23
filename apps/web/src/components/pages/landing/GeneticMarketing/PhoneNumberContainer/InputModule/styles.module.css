@@ -8,3 +8,8 @@
   -webkit-text-fill-color: inherit !important;
   color: inherit !important;
 }
+
+.input {
+  border: none !important;
+  outline: 0 !important;
+}

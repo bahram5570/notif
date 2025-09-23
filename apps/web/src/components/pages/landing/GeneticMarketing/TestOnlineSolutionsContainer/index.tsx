@@ -19,7 +19,7 @@ const TestOnlineSolutionsContainer = () => {
       <div className="relative w-full h-full">
         <Section2 section={data.section2} color={data.color} />
         <FooterBox footer={data.footer} />
-        <div className="w-full mx-auto grid gap-y-6 justify-items-center justify-center fixed right-0 bottom-6">
+        <div className="w-full mx-auto grid gap-y-6 justify-items-center justify-center mt-4">
           <CustomImage src={collaborationlogo} alt="collaborationlogo" width={999} height={999} className="w-[112px]" />
         </div>
       </div>

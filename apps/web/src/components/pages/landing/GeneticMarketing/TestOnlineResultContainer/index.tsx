@@ -19,9 +19,9 @@ const TestOnlineResultContainer = () => {
       <div className="relative w-full h-full">
         <HeaderBox header={data.header} id={data.id} color={data.color} />
         <Section1 section={data.section1} color={data.color} />
-        <div className="w-full mx-auto grid gap-y-6 justify-items-center justify-center fixed right-0 bottom-6">
-          <CustomImage src={collaborationlogo} alt="collaborationlogo" width={999} height={999} className="w-[112px]" />
-        </div>
+      </div>
+      <div className="w-full mx-auto grid gap-y-6 justify-items-center justify-center mt-4">
+        <CustomImage src={collaborationlogo} alt="collaborationlogo" width={999} height={999} className="w-[112px]" />
       </div>
     </GeneticMarketingLayout>
   );

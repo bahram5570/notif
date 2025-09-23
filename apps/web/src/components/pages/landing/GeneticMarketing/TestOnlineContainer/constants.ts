@@ -144,7 +144,7 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
         icon: '/assets/images/geneticMarketing/mediumRisk/1.webp',
         text: 'قدم اول ویزیت توسط مشاور  ژنتیکه. تو این زمینه می‌تونی از ایمپو کمک بگیری. اپلیکیشنی که در حوزه سلامت بانوان فعالیت می‌کنه و یه کلینیک آنلاین داره که پزشکان متخصص از جمله زنان، زایمان و ژنتیک اونجا فعالیت دارن و در صورت نیاز آزمایش‌های لازم رو برات تجویز می‌کنن.',
         btnName: 'نصب ایمپو و دریافت مشاوره ژنتیک',
-        btnUrl: '',
+        btnUrl: 'https://impo.app/download',
       },
       {
         title: 'آزمایش‌های اختصاصی',
@@ -158,7 +158,7 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
         icon: '/assets/images/geneticMarketing/lowRisk/1.webp',
         text: 'بعد از مشورت با مشاور ژنتیک لازمه یک برنامه مشخص برای بارداری داشته باشی. اینجا ایمپو کنارته تا با یادآوری اقدام‌ها و آزمایش‌های قبل از بارداری، مراقبت‌های هفته‌به ‌هفته بارداری و همچنین بیان  آزمایش‌ها و چکاپ‌های هفتگی و ارایه توصیه‌های شخصی‌سازی شده؛ یک بارداری امن و سالم داشته باشی.',
         btnName: 'نصب ایمپو و تجربه اقدام و بارداری امن ',
-        btnUrl: '',
+        btnUrl: 'https://impo.app/download',
       },
       {
         title: 'آگاهی خانواده',
@@ -168,7 +168,7 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
         btnUrl: '',
       },
     ],
-    
+
     footer: {
       title: 'خیالم راحت باشه؟',
       text: 'نگران نباش. ما اینجاییم تا با افزایش آگاهی، ترس‌ات رو کمتر کنیم. ریسک بالا فقط یعنی باید با دقت بیشتری ادامه بدی. اگه سوالی داشتی یا خواستی اقدام کنی، ایمپو کنارته تا بهترین تصمیم رو بگیری.',
@@ -193,7 +193,7 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
         icon: '/assets/images/geneticMarketing/mediumRisk/1.webp',
         text: 'باقدم اول ویزیت توسط مشاور ژنتیکه. از بخش کلینیک در اپلیکیشن ایمپو می‌تونی با مشاور ژنتیک ویزیت بشی و خیالت رو راحت کنی. ',
         btnName: 'نصب ایمپو و دریافت مشاوره ژنتیک',
-        btnUrl: '',
+        btnUrl: 'https://impo.app/download',
       },
       {
         title: 'آزمایش‌های اختصاصی',
@@ -221,10 +221,10 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
         icon: '/assets/images/geneticMarketing/mediumRisk/3.webp',
         text: 'بعد از مشورت با مشاور ژنتیک لازمه یک برنامه مشخص برای بارداری داشته باشی. اینجا ایمپو کنارته تا با یادآوری اقدام‌ها و آزمایش‌های قبل از بارداری، مراقبت‌های هفته‌به ‌هفته بارداری و همچنین بیان  آزمایش‌ها و چکاپ‌های هفتگی و ارایه توصیه‌های شخصی‌سازی شده؛ یک بارداری امن و سالم داشته باشی.',
         btnName: 'نصب ایمپو و تجربه اقدام و بارداری امن ',
-        btnUrl: '',
+        btnUrl: 'https://impo.app/download',
       },
     ],
-    
+
     footer: {
       title: ' خیالم راحت باشه؟',
       text: 'نگران نباش. ما اینجاییم تا با افزایش آگاهی، ترس‌ات رو کمتر کنیم. ریسک متوسط فقط یعنی باید با دقت بیشتری ادامه بدی. اگه سوالی داشتی یا خواستی اقدام کنی، ایمپو کنارته تا بهترین تصمیم رو بگیری.',
@@ -249,7 +249,7 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
         icon: '/assets/images/geneticMarketing/lowRisk/1.webp',
         text: 'بعد از مشورت با مشاور ژنتیک لازمه یک برنامه مشخص برای بارداری داشته باشی. اینجا ایمپو کنارته تا با یادآوری اقدام‌ها و آزمایش‌های قبل از بارداری، مراقبت‌های هفته‌به ‌هفته بارداری و همچنین بیان  آزمایش‌ها و چکاپ‌های هفتگی و ارایه توصیه‌های شخصی‌سازی شده؛ یک بارداری امن و سالم داشته باشی.',
         btnName: 'نصب ایمپو و تجربه اقدام و بارداری امن',
-        btnUrl: '',
+        btnUrl: 'https://impo.app/download',
       },
       {
         title: 'آزمایش‌های اختصاصی',
@@ -263,6 +263,5 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
       title: 'خیالم کامل راحت باشه؟',
       text: 'تقریباً! ژنتیک یه کم پیچیده ‌ست و همیشه یه احتمال خیلی کوچیک برای چیزای غیرمنتظره وجود داره که با شروع بارداری و تحت نظر متخصصین ژنتیک و متخصصین زنان بودن همگی قابل مدیریت و حتی پیشگیری هستند. با این حال اﻻن با این اطﻼعات جایی برای نگرانی خاصی وجود نداره.',
     },
-    
   },
 };
