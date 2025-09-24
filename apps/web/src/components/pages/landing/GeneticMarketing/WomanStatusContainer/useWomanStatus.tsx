@@ -24,7 +24,7 @@ export const useWomanStatus = () => {
       ...geneticUserData,
       womanStatus: selectedItem.enTitle,
     };
-
+    localStorage.setItem('geneticUserData', JSON.stringify(geneticUserData));
     handleSubmit(geneticUserData);
   };
 

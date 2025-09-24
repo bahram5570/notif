@@ -5,6 +5,8 @@ import { COLORS_LIST } from '@theme/colors';
 import { Section1Props } from './types';
 
 const Section1 = ({ section, color }: Section1Props) => {
+  const geneticUserData = JSON.parse(localStorage.getItem('geneticUserData') || '');
+
   return (
     <div
       className="rounded-[12px] py-4 px-3 text-center mt-4"
@@ -33,7 +35,9 @@ const Section1 = ({ section, color }: Section1Props) => {
           style={{ backgroundColor: COLORS_LIST.Primary_PrimaryContainer }}
         >
           <CustomTypography fontSize="Lable_Large" color={'Primary_Primary'}>
-            راهکارها رو از اینجا ببین
+            {geneticUserData.womanStatus === 'pregnancy'
+              ? 'برای تجربه یک بارداری و اقدام امن کلیک کن '
+              : 'راهکارها رو از اینجا ببین'}
           </CustomTypography>
         </CustomLink>
       </div>

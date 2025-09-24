@@ -19,21 +19,12 @@ const LandingGeneticMarketingLayout = () => {
       </CustomTypography>
       <div className="mt-2 text-center">
         <CustomTypography tagType="p" fontSize="Body_Medium">
-          یکی بیشتر، گاهی می‌تونه سرنوشت و زندگی یک فرد رو تغییر بده؛ مثل یک کروموزوم اضافه در جفت 21 جنین که منجر به
-          بروز سندرم داون میشه.
+          گاهی فقط یک انتخاب درست ما، آینده‌ی زندگی فرزندمون رو می‌سازه.یک تست ساده می‌تونه خیال تو رو از سلامتی فرزند
+          آینده‌ات راحت کنه. متخصص‌های ما براتون تست آنلاینی طراحی کردن که میزان ریسک داشتن فرزند با مشکل ژنتیکی رو
+          تخمین میزنه.
         </CustomTypography>
         <CustomTypography tagType="p" fontSize="Body_Medium">
-          با جواب دادن به پرسش‌نامه صفحه بعد که توسط پزشک متخصص طراحی شده، می‌تونی از میزان ریسک ابتلای فرزند آینده‌ات
-          به بیماری‌های ژنتیک مطلع بشی.
-        </CustomTypography>
-        <CustomTypography tagType="p" fontSize="Body_Medium">
-          یادت نره انجام آزمایش ژنتیک فقط یک انتخاب نیست،
-        </CustomTypography>
-        <CustomTypography tagType="p" fontSize="Body_Medium">
-          یک ضرورت برای حفظ سلامت نسل آینده‌ست.
-        </CustomTypography>
-        <CustomTypography tagType="p" fontSize="Body_Medium">
-          اگر تصمیم به بارداری گرفتی تو هم این پرسش‌نامه کوتاه رو پر کن تا در کنار هم به تولد نوزادانی سالم کمک کنیم.
+          یادت نره انجام آزمایش ژنتیک یک ضرورت برای حفظ سلامت نسل آینده‌ست
         </CustomTypography>
       </div>
 
