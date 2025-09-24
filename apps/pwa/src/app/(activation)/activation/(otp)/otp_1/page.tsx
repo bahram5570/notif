@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 
-import AddToHomeModule from '@components/activation/AddToHomeModule';
 import Otp1Container from '@components/activation/pages/otp/Otp1Container';
 import { Otp1CompleteHandlerTypes } from '@components/activation/pages/otp/Otp1Container/types';
 import { OTP_INFO_NAME } from '@components/activation/pages/otp/constants';
@@ -35,7 +34,6 @@ const Otp1 = () => {
   return (
     <>
       {isModuleRendered && <Welcoming onComplete={() => setShowAddToHome(true)} />}
-      {showAddToHome && <AddToHomeModule closeModuleHandler={() => setShowAddToHome(false)} />}
       {!showAddToHome && (
         <Otp1Container
           payload={payload}

@@ -1,5 +1,3 @@
-import { useEffect, useState } from 'react';
-
 import ImpoIcon from '@assets/images/questionsImpo.svg';
 
 import Typography from '@components/ui/Typography';

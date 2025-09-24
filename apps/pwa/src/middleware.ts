@@ -6,12 +6,16 @@ import { USER_COOKIE_NAME } from '@constants/cookie.constants';
 import { ACTIVATION_CR_REGISTER_QUERY_NAME } from '@constants/routes.constants';
 import { ACTIVATION_FIRST_PATH_OF_SECTION_1 } from '@providers/__activation__/ActivationProvider/__constants__/activationContants';
 import { cookies } from 'next/headers';
-import { type NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse, userAgent } from 'next/server';
 
 export const middleware = async (request: NextRequest) => {
   const response = NextResponse.next();
   const pathname = request.nextUrl.pathname;
   const queryParams = request.nextUrl.search?.slice(1) || '';
+
+  // const ua = userAgent(request);
+  // const rawUA = request.headers.get('user-agent')?.toLowerCase() || '';
+  // console.log(ua);
 
   // # Enables embedding of all app pages in iframes by setting X-Frame-Options to ALLOWALL
   response.headers.set('X-Frame-Options', 'ALLOWALL');
