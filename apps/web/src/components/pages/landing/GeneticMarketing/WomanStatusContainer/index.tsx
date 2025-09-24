@@ -12,7 +12,7 @@ import { WomanStatusItems } from './constants';
 import { useWomanStatus } from './useWomanStatus';
 
 const WomanStatusContainer = () => {
-  const { selectedIndex, handleSelect, handleNextStep, isNextDisabled } = useWomanStatus();
+  const { selectedIndex, handleSelect, handleNextStep, isNextDisabled, isLoading } = useWomanStatus();
 
   return (
     <GeneticMarketingLayout>
@@ -30,7 +30,13 @@ const WomanStatusContainer = () => {
         ))}
       </div>
       <div className="w-full mx-auto grid gap-y-6 justify-items-center justify-center fixed right-0 bottom-4">
-        <CustomButton varient="fill" fontSize="Title_Small" onClick={handleNextStep} isDisable={isNextDisabled}>
+        <CustomButton
+          varient="fill"
+          fontSize="Title_Small"
+          onClick={handleNextStep}
+          isDisable={isNextDisabled}
+          isLoading={isLoading}
+        >
           مرحله بعد
         </CustomButton>
         <CustomImage src={collaborationlogo} alt="collaborationlogo" width={999} height={999} className="w-[112px]" />

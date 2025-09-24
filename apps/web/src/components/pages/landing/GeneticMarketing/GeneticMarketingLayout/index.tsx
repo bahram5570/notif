@@ -18,9 +18,9 @@ const GeneticMarketingLayout = ({ children, goBack = true }: GeneticMarketingLay
                   bg-[center_-40px]
                   h-[100dvh]"
     >
-      <div className="mt-7 grid place-items-center">
+      <div className="mt-2 grid place-items-center">
         {goBack && <GoBack />}
-        <CustomImage src={logo} alt="logo" width={999} height={999} className="w-[104px] mt-7 mb-4" />
+        <CustomImage src={logo} alt="logo" width={999} height={999} className="w-[104px] mt-4 mb-4" />
         <>{children}</>
       </div>
     </div>

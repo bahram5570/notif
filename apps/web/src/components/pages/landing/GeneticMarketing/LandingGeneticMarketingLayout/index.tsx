@@ -1,3 +1,5 @@
+'use client';
+
 import collaborationlogo from '@assets/images/geneticMarketing/collaborationlogo.webp';
 import drProfileMini from '@assets/images/geneticMarketing/drProfileMini.webp';
 import Verified from '@assets/images/geneticMarketing/verified.svg';
@@ -9,7 +11,7 @@ import { COLORS_LIST } from '@theme/colors';
 
 import GeneticMarketingLayout from '../GeneticMarketingLayout';
 
-const LandingGeneticMarketingLayout = async () => {
+const LandingGeneticMarketingLayout = () => {
   return (
     <GeneticMarketingLayout goBack={false}>
       <CustomTypography tagType="h2" fontSize="Title_Small" className="text-center">

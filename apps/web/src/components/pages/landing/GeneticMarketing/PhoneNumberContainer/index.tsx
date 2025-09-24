@@ -11,7 +11,7 @@ import InputModule from './InputModule';
 import { usePhoneNumber } from './usePhoneNumber';
 
 const PhoneNumberContainer = () => {
-  const { phoneNumber, valueHandler, submitHandler } = usePhoneNumber();
+  const { phoneNumber, valueHandler, submitHandler, isLoading } = usePhoneNumber();
 
   return (
     <GeneticMarketingLayout>
@@ -31,11 +31,11 @@ const PhoneNumberContainer = () => {
         <div
           className={`w-full mx-auto grid gap-y-6 justify-items-center justify-center mt-5 duration-200 ${phoneNumber.length > 0 ? `translate-y-0 ` : `translate-y-[100dvh]`}`}
         >
-          <CustomButton varient="fill" fontSize="Lable_Large" onClick={submitHandler}>
+          <CustomButton varient="fill" fontSize="Lable_Large" onClick={submitHandler} isLoading={isLoading}>
             مرحله بعد
           </CustomButton>
         </div>
-        <div className="w-full absolute bottom-8 left-0 flex justify-items-center justify-center">
+        <div className="w-full absolute bottom-4 left-0 flex justify-items-center justify-center">
           <CustomImage
             src={collaborationlogo}
             alt="collaborationlogo"

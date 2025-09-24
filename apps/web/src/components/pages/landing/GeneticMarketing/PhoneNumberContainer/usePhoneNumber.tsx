@@ -10,6 +10,7 @@ import { useRouter } from 'next/navigation';
 export const usePhoneNumber = () => {
   const { onToast } = useCustomToast();
   const [phoneNumber, setPhoneNumber] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>();
   const router = useRouter();
 
   const valueHandler = (v: string) => {
@@ -34,6 +35,7 @@ export const usePhoneNumber = () => {
   };
 
   const submitHandler = () => {
+    setIsLoading(true);
     if (!validatePhoneNumber()) return;
     const userData = {
       phoneNumber: toEnglishNumbers(phoneNumber),
@@ -49,5 +51,6 @@ export const usePhoneNumber = () => {
     phoneNumber,
     valueHandler,
     submitHandler,
+    isLoading
   };
 };

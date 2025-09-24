@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-import { useRouter } from 'next/navigation';
-
 import { WomanStatusItems } from './constants';
+import useSubmit from './useSubmit';
 
 export const useWomanStatus = () => {
+  const { handleSubmit, isLoading } = useSubmit();
+
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const router = useRouter();
 
   const handleSelect = (index: number) => {
     setSelectedIndex(index);
@@ -18,15 +18,14 @@ export const useWomanStatus = () => {
     const selectedItem = WomanStatusItems[selectedIndex];
 
     const storedData = localStorage.getItem('geneticUserData');
-    let userData = storedData ? JSON.parse(storedData) : {};
+    let geneticUserData = storedData ? JSON.parse(storedData) : {};
 
-    userData = {
-      ...userData,
-      womanStatus: selectedItem.title,
+    geneticUserData = {
+      ...geneticUserData,
+      womanStatus: selectedItem.enTitle,
     };
 
-    localStorage.setItem('geneticUserData', JSON.stringify(userData));
-    router.push('/landing/geneticMarketing/testOnline');
+    handleSubmit(geneticUserData);
   };
 
   return {
@@ -34,5 +33,6 @@ export const useWomanStatus = () => {
     handleSelect,
     handleNextStep,
     isNextDisabled: selectedIndex === null,
+    isLoading,
   };
 };

@@ -8,13 +8,11 @@ import {
   GENETIC_TEST_ONLINE_STEP_QUERY_NAME,
   GENETIC_TEST_ONLINE_STEP_SESSION_SCORE_NAME,
 } from '../../constants';
-// import useSubmit from '../useSubmit';
 import { UseTestOnlineScoreTypes } from './types';
 
 const useTestOnlineScore = ({ currentStep, data }: UseTestOnlineScoreTypes) => {
   const router = useRouter();
 
-  // const { handleSubmit } = useSubmit();
   const { newQueryParamsHandler } = useQueryParamsHandler();
 
   const [selectedIndex, setSelectedIndex] = useState(-1);
@@ -59,9 +57,6 @@ const useTestOnlineScore = ({ currentStep, data }: UseTestOnlineScoreTypes) => {
     const isLastStep = lastStep === currentStep;
 
     if (isLastStep) {
-      // const geneticUserData = localStorage.getItem('geneticUserData');
-      // const payload = JSON.parse(geneticUserData || '');
-      // handleSubmit(payload);
       router.push('/landing/geneticMarketing/result');
     } else {
       newQueryParamsHandler({ [GENETIC_TEST_ONLINE_STEP_QUERY_NAME]: Number(currentStep) + 1 });

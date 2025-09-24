@@ -151,6 +151,7 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
         icon: '/assets/images/geneticMarketing/highRisk/2.webp',
         text: 'در موارد با ریسک بالا، ممکنه لازم باشه تست‌های تکمیلی انجام بشه، مثل بررسی ناقل بودن بیماری‌ها، کاریوتایپ، یا حتی غربالگری پیش از لانه‌گزینی این آزمایش‌ها توسط مشاور ژنتیک، برات تجویز می‌شه آزمایشگاه آنلاین هومکا، انواع آزمایش‌های تشخیصی رو در منزل و محل کار (در مناطق تحت پوشش)، تحت پوشش بیمه پایه و تکمیلی، برات انجام میده. .',
         btnName: 'انجام آزمایش در منزل با هومکا',
+        // homkaLink
         btnUrl: '',
       },
       {
@@ -200,6 +201,7 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
         icon: '/assets/images/geneticMarketing/lowRisk/2.webp',
         text: 'بعد از اینکه توسط پزشک متخصص ویزیت شدی برای اطمینان خاطر لازمه یک سری آزمایش انجام بدی که توسط مشاور ژنتیک، برات تجویز می‌شه. آزمایشگاه آنلاین هومکا، انواع آزمایش‌های تشخیصی رو در منزل و محل کار (در مناطق تحت پوشش)، تحت پوشش بیمه پایه و تکمیلی، برات انجام میده. ',
         btnName: 'انجام آزمایش در منزل با هومکا',
+        // homkaLink
         btnUrl: '',
       },
       {
@@ -256,6 +258,7 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
         icon: '/assets/images/geneticMarketing/lowRisk/2.webp',
         text: 'قبل از اقدام به بارداری بهتره یک چکاپ کامل بکنی تا خیالت بابت همه‌چیز راحت باشه. آزمایشگاه آنلاین هومکا، انواع آزمایش‌های تشخیصی رو در منزل و محل کار (در مناطق تحت پوشش)، تحت پوشش بیمه پایه و تکمیلی، برات انجام میده. ',
         btnName: 'انجام آزمایش در منزل با هومکا',
+        // homkaLink
         btnUrl: '',
       },
     ],

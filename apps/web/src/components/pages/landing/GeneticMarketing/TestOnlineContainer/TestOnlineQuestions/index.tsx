@@ -58,12 +58,14 @@ const TestOnlineQuestions = () => {
               ...typographyDetails,
               outlineColor: COLORS_LIST.Primary_Primary,
               backgroundColor: COLORS_LIST.Surface_SurfaceVariant,
+              outline: 0,
+              fontSize: '16px', 
             }}
           />
         </div>
       )}
 
-      <div className="w-full mx-auto grid gap-y-6 justify-items-center justify-center fixed right-0 bottom-4">
+      <div className="w-full mx-auto grid gap-y-6 justify-items-center justify-center fixed right-0 bottom-1">
         <CustomButton varient="fill" fontSize="Lable_Large" onClick={nextStepHandler} isDisable={selectedIndex === -1}>
           {isLastStep ? 'مشاهده نتیجه' : 'مرحله بعدی'}
         </CustomButton>
