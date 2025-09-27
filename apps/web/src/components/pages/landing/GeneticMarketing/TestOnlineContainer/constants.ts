@@ -143,7 +143,7 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
         icon: '/assets/images/geneticMarketing/mediumRisk/1.webp',
         text: 'قدم اول ویزیت توسط مشاور  ژنتیکه. می‌تونی از بخش کلینیک ایمپو با مشاور ژنتیک مشورت کنی و توصیه‌ها و آزمایش‌های مورد نیازت رو دریافت کنی. ',
         btnName: 'نصب ایمپو و دریافت مشاوره ژنتیک',
-        btnUrl: 'https://impo.app/download',
+        btnUrl: '/download',
       },
       {
         title: 'آزمایش‌های اختصاصی',
@@ -158,7 +158,7 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
         icon: '/assets/images/geneticMarketing/lowRisk/1.webp',
         text: 'ایمپو کنارته تا با یادآوری اقدام‌ها و آزمایش‌های قبل از بارداری، مراقبت‌های هفته‌به ‌هفته بارداری و همچنین بیان  آزمایش‌ها و چکاپ‌های هفتگی و ارایه توصیه‌های شخصی‌سازی شده؛ یک بارداری امن و سالم داشته باشی.',
         btnName: 'نصب ایمپو و تجربه اقدام و بارداری امن  ',
-        btnUrl: 'https://impo.app/download',
+        btnUrl: '/download',
       },
       {
         title: 'آگاهی خانواده',
@@ -193,7 +193,7 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
         icon: '/assets/images/geneticMarketing/mediumRisk/1.webp',
         text: 'قدم اول ویزیت توسط مشاور  ژنتیکه. می‌تونی از بخش کلینیک ایمپو با مشاور ژنتیک مشورت کنی و توصیه‌ها و آزمایش‌های مورد نیازت رو دریافت کنی.',
         btnName: 'نصب ایمپو و دریافت مشاوره ژنتیک',
-        btnUrl: 'https://impo.app/download',
+        btnUrl: '/download',
       },
       {
         title: 'آزمایش‌های اختصاصی',
@@ -222,7 +222,7 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
         icon: '/assets/images/geneticMarketing/mediumRisk/3.webp',
         text: 'ایمپو کنارته تا با یادآوری اقدام‌ها و آزمایش‌های قبل از بارداری، مراقبت‌های هفته‌به ‌هفته بارداری و همچنین بیان  آزمایش‌ها و چکاپ‌های هفتگی و ارایه توصیه‌های شخصی‌سازی شده؛ یک بارداری امن و سالم داشته باشی..',
         btnName: 'نصب ایمپو و تجربه اقدام و بارداری امن',
-        btnUrl: 'https://impo.app/download',
+        btnUrl: '/download',
       },
     ],
 
@@ -250,7 +250,7 @@ export const GENETIC_TEST_ONLINE_RESULTS_LIST: GeneticTestOnlineResultListTypes 
         icon: '/assets/images/geneticMarketing/lowRisk/1.webp',
         text: 'در طول دوره بارداری و اقدام به بارداری  باید حسابی حواست به خودت باشه.  کلی نکات مراقبتی هست که باید توی این مسیر رعایت کنی. ایمپو این نکات رو بهت یاد میده توی این مسیر اجازه نمیده  آب تو دلت تکون نخوره.',
         btnName: 'نصب ایمپو',
-        btnUrl: 'https://impo.app/download',
+        btnUrl: '/download',
       },
       {
         title: 'آزمایش خاصی هست که انجام بدم؟',
