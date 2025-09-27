@@ -60,7 +60,7 @@ const HealthReportContainerPdf = ({ data, backgroundColor }: HealthReportContain
                     بزرگترین پلتفرم حوزه سلامت قاعدگی زنان
                   </Typography>
 
-                  <ImpoIcon className="w-[72px] h-auto" />
+                  <ImpoIcon className="w-[72px] h-auto" style={{ fill: colors.PrimaryWoman_Primary }} />
                 </div>
               </div>
 
