@@ -10,6 +10,8 @@ import { ArticleIdResponseTypes } from './types';
 
 const revalidateTime = 60 * 60 * 24; // # 1 day
 
+export const revalidate = revalidateTime;
+
 export const generateMetadata = async (props: { params: { articleId: string } }): Promise<Metadata> => {
   const articleId = props.params.articleId;
 
@@ -39,15 +41,19 @@ export const generateMetadata = async (props: { params: { articleId: string } })
 const Article = async (props: { params: { articleId: string } }) => {
   const articleId = props.params.articleId;
 
-  const { data } = await http<ArticleIdResponseTypes>({
+  const { data, error } = await http<ArticleIdResponseTypes>({
     method: 'GET',
     cache: 'force-cache',
     revalidate: revalidateTime,
     url: `support/article/sp/published/${articleId}`,
   });
 
-  if (!data) {
+  if (error?.status === 404) {
     notFound();
+  }
+
+  if (!data) {
+    return <></>;
   }
 
   return (

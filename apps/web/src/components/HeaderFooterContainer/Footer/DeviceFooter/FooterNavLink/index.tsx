@@ -10,8 +10,9 @@ import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { COLORS_LIST } from '@theme/colors';
 
 import useGetBannerList from '../__hooks__/useGetBannerList';
+import { FooterNavLinkTypes } from './types';
 
-const FooterNavLink = () => {
+const FooterNavLink = ({ className }: FooterNavLinkTypes) => {
   const { items } = useGetBannerList();
   const { getQueryParams } = useQueryParamsHandler();
   const currentCategory = getQueryParams('currentCategory') ?? 'public';
@@ -34,11 +35,11 @@ const FooterNavLink = () => {
 
   return (
     <div
-      className="w-full h-[64px] flex items-center justify-between px-4 shadow-2xl z-10  bg-cover bg-no-repeat bg-center fixed lg:hidden"
       style={{
         bottom: FOOTER_HEIGHT,
         background: backgroundHandler(findCurrentBanner.backgroundColor),
       }}
+      className={`fixed w-full h-[64px] flex items-center justify-between px-4 shadow-2xl z-10 bg-cover bg-no-repeat bg-center lg:hidden ${className}`}
     >
       <div className="flex items-center gap-2">
         <CustomImage

@@ -50,6 +50,17 @@ const BazarContainer = () => {
         />
       </div>
       <div className="flex flex-col gap-3 p-3 my-2">
+        <CustomTypography>بعد برگرد تو اپلیکیشن ایمپو</CustomTypography>
+
+        <CustomImage
+          src="/assets/images/webView/myket/4.webp"
+          alt="myket4"
+          width={984}
+          height={1143}
+          className="w-full h-auto"
+        />
+      </div>
+      <div className="flex flex-col gap-3 p-3 my-2">
         <CustomTypography>
           بعد برگرد تو اپلیکیشن ایمپو و از این قسمت توکنی که کپی کردی رو وارد کن و دکمه ارسال توکن رو بزن، با این کار
           اشتراکت فعال می‌شه

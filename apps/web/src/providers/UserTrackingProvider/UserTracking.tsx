@@ -2,13 +2,13 @@
 
 import React, { useEffect, useRef } from 'react';
 
-import { getUserTracking, newUserTracking, updateUserTracking } from './__utils__';
-import { isDevelopeMode } from '@utils/system';
+// import { getUserTracking, newUserTracking, updateUserTracking } from './__utils__';
+// import { isDevelopeMode } from '@utils/system';
 
-import useUserTracking from '@hooks/useUserTracking';
-import { usePathname } from 'next/navigation';
+// import useUserTracking from '@hooks/useUserTracking';
+// import { usePathname } from 'next/navigation';
 
-import { UserTrackingInfoTypes } from './types';
+// import { UserTrackingInfoTypes } from './types';
 
 const UserTracking = ({ children }: { children: React.ReactNode }) => {
   // const pathname = usePathname();
