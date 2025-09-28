@@ -1,7 +1,5 @@
 'use client';
 
-import { useState } from 'react';
-
 import Otp1Container from '@components/activation/pages/otp/Otp1Container';
 import { Otp1CompleteHandlerTypes } from '@components/activation/pages/otp/Otp1Container/types';
 import { OTP_INFO_NAME } from '@components/activation/pages/otp/constants';
@@ -17,7 +15,6 @@ const Otp1 = () => {
   // # شماره همراه/ ایمیل
   const router = useRouter();
   const activationData = useActivationData();
-  const [showAddToHome, setShowAddToHome] = useState(false);
   const { payload, payloadHandler } = useActivationPayload();
   const { callEventActivation } = useActivationAnalytics();
 
@@ -33,15 +30,14 @@ const Otp1 = () => {
 
   return (
     <>
-      {isModuleRendered && <Welcoming onComplete={() => setShowAddToHome(true)} />}
-      {!showAddToHome && (
-        <Otp1Container
-          payload={payload}
-          onContinue={callEventActivation}
-          payloadHandler={payloadHandler}
-          otp1CompleteHandler={otp1CompleteHandler}
-        />
-      )}
+      {isModuleRendered && <Welcoming />}
+
+      <Otp1Container
+        payload={payload}
+        payloadHandler={payloadHandler}
+        onContinue={callEventActivation}
+        otp1CompleteHandler={otp1CompleteHandler}
+      />
     </>
   );
 };

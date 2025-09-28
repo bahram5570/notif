@@ -18,9 +18,9 @@ const AddToHomeScreenProvider = ({ children }: { children: React.ReactNode }) =>
     }
   }, [isAddToHome, operatingSystem, browserInfo]);
 
-  // if (showContent) {
-  //   return <AddToHomeScreenContents browserInfo={browserInfo} operatingSystem={operatingSystem} />;
-  // }
+  if (showContent) {
+    return <AddToHomeScreenContents browserInfo={browserInfo} operatingSystem={operatingSystem} />;
+  }
 
   return <>{children}</>;
 };

@@ -1,8 +1,9 @@
 import { SplashStatusTypes } from '../types';
 
 export interface SplashContentsProps {
-  onComplete: () => void;
   splashStatus: Exclude<SplashStatusTypes, 'finish'>;
+  splashStatushHandler: (v: SplashStatusTypes) => void;
 }
 
-export interface SplashContentsProgressProps extends Pick<SplashContentsProps, 'onComplete' | 'splashStatus'> {}
+export interface SplashContentsProgressProps
+  extends Pick<SplashContentsProps, 'splashStatushHandler' | 'splashStatus'> {}

@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { memo } from 'react';
 
 import StarIcon from '@assets/icons/star2.svg';
 
@@ -7,11 +7,8 @@ import Typography from '@components/ui/Typography';
 import { SPLASH_MESSAGES_LIST } from './constants';
 
 const SplashContentsMessages = () => {
-  const message = useMemo(() => {
-    const randomIndex = Math.floor(Math.random() * SPLASH_MESSAGES_LIST.length);
-    const result = SPLASH_MESSAGES_LIST?.[randomIndex] || '';
-    return result;
-  }, []);
+  const randomIndex = Math.floor(Math.random() * SPLASH_MESSAGES_LIST.length);
+  const message = SPLASH_MESSAGES_LIST?.[randomIndex] || '';
 
   return (
     <div className="w-full flex items-center gap-3">
@@ -27,4 +24,4 @@ const SplashContentsMessages = () => {
   );
 };
 
-export default SplashContentsMessages;
+export default memo(SplashContentsMessages);

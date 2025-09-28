@@ -11,8 +11,8 @@ import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 import { CycleResponseTypes } from '../../types';
 
 const useGetData = () => {
-  const { splashCompleteHandler } = useSplash();
   const { onError } = useContext(ErrorContext);
+  const { splashCompleteHandler } = useSplash();
   const { refetchQuery } = useCustomReactQuery();
   const { getQueryParams } = useQueryParamsHandler();
   const [cycleResetKey, setCycleResetKey] = useState(0);

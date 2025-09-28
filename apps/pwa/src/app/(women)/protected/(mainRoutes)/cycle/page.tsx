@@ -1,12 +1,7 @@
 import CyclePage from '@components/women/pages/mainRoutes/cycle/CyclePage';
-import SplashProvider from '@providers/SplashProvider';
 
 const Cycle = () => {
-  return (
-    <SplashProvider>
-      <CyclePage />
-    </SplashProvider>
-  );
+  return <CyclePage />;
 };
 
 export default Cycle;

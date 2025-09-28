@@ -125,9 +125,14 @@ const useAddToHomeConstants = () => {
     },
 
     other: {
-      title: '',
-      type: 'windows',
-      items: [],
+      title: 'نصب وب اپلیکیشن ایمپو',
+      type: 'android',
+      items: [
+        { no: 1, script: ['در نوار بالا یا پایین مرورگر روی منو کلیک کنید'] },
+        { no: 2, script: ['دکمه “Add To” رو انتخاب کنید'] },
+        { no: 3, script: ['از بین گزینه ها، “Add to home screen” رو انتخاب کنید'] },
+        { no: 4, script: ['حالا دیگه ایمپو کنار بقیه اپلیکیشن های شماست!'] },
+      ],
     },
   };
 

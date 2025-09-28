@@ -4,9 +4,9 @@ import useTheme from '@hooks/useTheme';
 import useSplashProgress from './__hooks__/useSplashProgress';
 import { SplashContentsProgressProps } from './types';
 
-const SplashContentsProgress = ({ onComplete, splashStatus }: SplashContentsProgressProps) => {
+const SplashContentsProgress = ({ splashStatushHandler, splashStatus }: SplashContentsProgressProps) => {
   const { colors } = useTheme();
-  const { progressPercent } = useSplashProgress({ onComplete, splashStatus });
+  const { progressPercent } = useSplashProgress({ splashStatushHandler, splashStatus });
 
   return (
     <div className="flex flex-col gap-1">

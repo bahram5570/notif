@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { UseSplashProgressTypes } from './types';
 
-const useSplashProgress = ({ onComplete, splashStatus }: UseSplashProgressTypes) => {
+const useSplashProgress = ({ splashStatushHandler, splashStatus }: UseSplashProgressTypes) => {
   const [progress, setProgress] = useState(0);
   const timerRef = useRef<NodeJS.Timeout>();
 
@@ -10,7 +10,7 @@ const useSplashProgress = ({ onComplete, splashStatus }: UseSplashProgressTypes)
     const EXTRA_LOADING_PERCENT = 20;
 
     if (progress >= 100 + EXTRA_LOADING_PERCENT) {
-      onComplete();
+      splashStatushHandler('finish');
       clearInterval(timerRef.current);
       return;
     }
