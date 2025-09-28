@@ -1,16 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import useUpdateCycleCard from '@hooks/__cycle__/useUpdateCycleCard';
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import useSplash from '@hooks/useSplash';
+import { ErrorContext } from '@providers/ErrorProvider';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 
 import { CycleResponseTypes } from '../../types';
 
 const useGetData = () => {
   const { splashCompleteHandler } = useSplash();
+  const { onError } = useContext(ErrorContext);
   const { refetchQuery } = useCustomReactQuery();
   const { getQueryParams } = useQueryParamsHandler();
   const [cycleResetKey, setCycleResetKey] = useState(0);
@@ -27,6 +29,7 @@ const useGetData = () => {
   };
 
   const errorHandler = () => {
+    onError('server');
     splashCompleteHandler();
   };
 

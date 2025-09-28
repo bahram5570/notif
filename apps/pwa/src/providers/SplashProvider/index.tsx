@@ -15,6 +15,10 @@ const SplashProvider = ({ children }: { children: React.ReactNode }) => {
   const [splashStatus, setSplashStatus] = useState<SplashStatusTypes>(initialSplashStatusHandler());
 
   const splashCompleteHandler = () => {
+    if (splashStatus === 'finish') {
+      return;
+    }
+
     setSplashStatus('completing');
     storeSplashHandler();
   };
