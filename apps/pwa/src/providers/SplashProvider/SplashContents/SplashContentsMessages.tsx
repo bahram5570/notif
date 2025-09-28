@@ -17,7 +17,7 @@ const SplashContentsMessages = () => {
         <StarIcon className="w-[14px] h-auto absolute bottom-0 right-0 opacity-50" style={{ fill: '#FFEF99' }} />
       </div>
 
-      <Typography scale="Title" size="Small" color="Neutral_Background">
+      <Typography scale="Body" size="Large" color="Neutral_Background">
         {message}
       </Typography>
     </div>
