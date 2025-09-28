@@ -6,7 +6,7 @@ import { USER_COOKIE_NAME } from '@constants/cookie.constants';
 import { ACTIVATION_CR_REGISTER_QUERY_NAME } from '@constants/routes.constants';
 import { ACTIVATION_FIRST_PATH_OF_SECTION_1 } from '@providers/__activation__/ActivationProvider/__constants__/activationContants';
 import { cookies } from 'next/headers';
-import { type NextRequest, NextResponse } from 'next/server';
+import { type NextRequest, NextResponse, userAgent } from 'next/server';
 
 export const middleware = async (request: NextRequest) => {
   const response = NextResponse.next();

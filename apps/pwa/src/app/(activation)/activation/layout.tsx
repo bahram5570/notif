@@ -8,7 +8,7 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
   return (
     <>
       <ActivationProvider questionsData={questionsData} errorCode={errorCode}>
-        {children}
+        <>{children}</>
       </ActivationProvider>
     </>
   );

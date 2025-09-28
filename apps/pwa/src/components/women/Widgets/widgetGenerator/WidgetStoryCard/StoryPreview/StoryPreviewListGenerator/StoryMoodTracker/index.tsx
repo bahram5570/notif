@@ -78,7 +78,7 @@ const StoryMoodTracker = ({ moodTrackerData }: StoryMoodTrackerProps) => {
       </div>
 
       <div className="w-full mt-auto flex flex-col items-center gap-2">
-        <ImpoIcon className="w-12 h-auto" />
+        <ImpoIcon className="w-12 h-auto" style={{ fill: colors.PrimaryWoman_Primary }} />
 
         {isLargeScreen && (
           <Typography scale="Body" size="Medium" color="Surface_Outline" textAlign="center">
