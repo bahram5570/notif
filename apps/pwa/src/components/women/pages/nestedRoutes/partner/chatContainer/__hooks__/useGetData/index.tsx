@@ -1,17 +1,18 @@
 import { useEffect } from 'react';
 
 import useApi from '@hooks/useApi';
-import { useRouter } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 
-import { ResponsePropsType, UseGetDataPropsType } from './type';
+import { ResponsePropsType } from './type';
 
-const useGetData = ({ id }: UseGetDataPropsType) => {
+const useGetData = () => {
   const router = useRouter();
+  const { chatId } = useParams();
 
   const { data, isLoading } = useApi<ResponsePropsType>({
-    api: `challenge/${id}/chat`,
+    api: `challenge/${chatId}/chat`,
     method: 'GET',
-    queryKey: [`chat-${id}`],
+    queryKey: [`chat-${chatId}`],
   });
 
   useEffect(() => {

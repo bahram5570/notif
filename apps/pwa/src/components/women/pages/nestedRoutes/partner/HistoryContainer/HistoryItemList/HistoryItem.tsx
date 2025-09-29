@@ -4,7 +4,6 @@ import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useTheme from '@hooks/useTheme';
-import Link from 'next/link';
 
 import ProgressBar from '../../chatContainer/ProgressBar';
 import { HistoryItemPropsType } from './type';
@@ -13,11 +12,12 @@ const HistoryItem = (props: HistoryItemPropsType) => {
   const { colors } = useTheme();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
+  const onClick = () => {
+    pageNavigationHandler({ id: 'history', showProgressBar: true, linkTo: `/protected/challenge/${props.id}` });
+  };
+
   return (
-    <Link
-      href={`/protected/challenge/${props.id}`}
-      onClick={() => pageNavigationHandler({ id: 'history', showProgressBar: true })}
-    >
+    <div onClick={onClick}>
       <div
         className="divide-y-[1px] flex flex-col gap-3 p-5 rounded-2xl"
         style={{ border: `1px solid ${colors.Neutral_Surface}` }}
@@ -79,7 +79,7 @@ const HistoryItem = (props: HistoryItemPropsType) => {
           />
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
 

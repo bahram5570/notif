@@ -27,7 +27,7 @@ const ChallengeQuestion = ({
             style={{ background: colors.Surface_SurfaceVariant, outlineColor: colors.PrimaryWoman_Primary }}
             value={answerValue}
             maxLength={500}
-            onChange={(e) => onChangeHandler(e.target.value)}
+            onChange={onChangeHandler}
           />
         </div>
       </div>

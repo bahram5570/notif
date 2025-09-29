@@ -1,10 +1,14 @@
 import useApi from '@hooks/useApi';
+import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
 import { SubmitHandler } from './type';
 
 const useSubmit = () => {
   const route = useRouter();
+  const { getQueryParams } = useQueryParamsHandler();
+
+  const memoryId = getQueryParams('memoryId');
 
   const successHandler = () => {
     route.back();
@@ -15,9 +19,9 @@ const useSubmit = () => {
     onSuccess: successHandler,
   });
 
-  const submitHandler = ({ id, text }: SubmitHandler) => {
+  const submitHandler = ({ text }: SubmitHandler) => {
     const payload = {
-      id,
+      id: memoryId,
       text,
     };
 
