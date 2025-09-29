@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import CopyIcon from '@assets/icons/Copy.svg';
 import Refresh from '@assets/icons/refresh.svg';
 
@@ -14,6 +12,11 @@ const PartnerCode = ({ isLoading, refreshLoading, onRefreshCodeHandler, partnerC
   const { copyToClipboard } = useCopy();
   const loading = isLoading || refreshLoading;
   const { colors } = useTheme();
+
+  const copyHandler = () => {
+    if (!partnerCode) return;
+    copyToClipboard(partnerCode);
+  };
 
   return (
     <div className="w-full">
@@ -34,7 +37,7 @@ const PartnerCode = ({ isLoading, refreshLoading, onRefreshCodeHandler, partnerC
           )}
         </div>
         {partnerCode && (
-          <div onClick={() => partnerCode && copyToClipboard(partnerCode)}>
+          <div onClick={copyHandler}>
             <CopyIcon className="w-8 scale-100 h-8" style={{ stroke: colors.Surface_Outline }} />
           </div>
         )}

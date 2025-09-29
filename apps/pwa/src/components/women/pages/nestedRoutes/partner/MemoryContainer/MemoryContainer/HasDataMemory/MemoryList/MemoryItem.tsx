@@ -4,7 +4,6 @@ import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useTheme from '@hooks/useTheme';
-import Link from 'next/link';
 
 import useCalendarDateFormat from '../../../../__hooks__/useCalendarDateFormat';
 import { MemoryItemPropsType } from '../../type';
@@ -17,12 +16,16 @@ const MemoryItem = (props: MemoryItemPropsType) => {
   const memoryImage = props.fileName || '/assets/images/partner.webp';
   const memoryText = textShorter(props.text, 150);
 
+  const onClick = () => {
+    pageNavigationHandler({
+      id: 'memoryItem',
+      showProgressBar: true,
+      linkTo: `/protected/memory/memoryDetail?memoryData=${encodeURIComponent(JSON.stringify(props))}`,
+    });
+  };
+
   return (
-    <Link
-      href={`/protected/memory/${props.id}?page=${props.currentPage}`}
-      onClick={() => pageNavigationHandler({ id: 'memory', showProgressBar: true })}
-      className="flex flex-col justify-end items-end p-2 gap-2"
-    >
+    <div onClick={onClick} className="flex flex-col justify-end items-end p-2 gap-2">
       <Typography scale="Body" size="Medium" color="Neutral_OnBackground" textAlign="right" className="w-full">
         {currentDate}
       </Typography>
@@ -39,7 +42,7 @@ const MemoryItem = (props: MemoryItemPropsType) => {
           {memoryText}
         </Typography>
       </div>
-    </Link>
+    </div>
   );
 };
 

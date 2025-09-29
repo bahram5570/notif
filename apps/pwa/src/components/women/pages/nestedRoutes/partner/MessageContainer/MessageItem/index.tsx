@@ -10,6 +10,7 @@ import { MessageItemPropsType } from './type';
 const MessageItem = ({ fromMan, text, createTime }: MessageItemPropsType) => {
   const { colors } = useTheme();
   const date = new Date(createTime);
+  const currentDate = toPersianNumbers(formatPersionDate(date));
 
   return (
     <>
@@ -34,7 +35,7 @@ const MessageItem = ({ fromMan, text, createTime }: MessageItemPropsType) => {
           {text}
         </Typography>
         <Typography scale="Body" size="Small" color="Surface_Outline">
-          {toPersianNumbers(formatPersionDate(date))}
+          {currentDate}
         </Typography>
       </div>
     </>

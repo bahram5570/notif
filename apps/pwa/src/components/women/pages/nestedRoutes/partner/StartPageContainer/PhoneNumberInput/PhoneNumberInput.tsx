@@ -17,6 +17,16 @@ const PhoneNumberInput = () => {
     setPhoneNumber(e.target.value);
   };
 
+  const onClickHandler = () => {
+    createHandler(toEnglishNumbers(phoneNumber));
+  };
+
+  const onKeyUpHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      onClickHandler();
+    }
+  };
+
   return (
     <>
       <Typography scale="Body" size="Large" textAlign="center">
@@ -28,8 +38,9 @@ const PhoneNumberInput = () => {
           placeholder="اینجا تایپ کنید"
           className="w-full rounded-full px-4 py-3 text-right placeholder:text-right  placeholder:p-2"
           value={toPersianNumbers(phoneNumber)}
-          onChange={(e) => changePhoneNumberHandler(e)}
+          onChange={changePhoneNumberHandler}
           style={{ border: `1px solid ${colors.Neutral_Surface}` }}
+          onKeyUp={onKeyUpHandler}
         />
       </div>
       <div className="flex justify-center w-1/2 items-center">
@@ -37,7 +48,7 @@ const PhoneNumberInput = () => {
           size="medium"
           variant="fill"
           color="primary"
-          onClick={() => createHandler(toEnglishNumbers(phoneNumber))}
+          onClick={onClickHandler}
           isLoading={isLoading}
           isDisable={!phoneNumber}
         >
