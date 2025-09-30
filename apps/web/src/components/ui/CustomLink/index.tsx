@@ -1,4 +1,6 @@
-import { useContext } from 'react';
+'use client';
+
+import { useContext, useMemo } from 'react';
 
 import { colorMaker } from '../CustomTypography/__utils__';
 
@@ -10,21 +12,6 @@ import { CustomLinkTypes } from './types';
 const CustomLink = (props: CustomLinkTypes) => {
   const { children, className, style, color, ...linkProps } = props;
 
-  const selectedColor = colorMaker(color);
-
-  if (typeof window === 'undefined') {
-    return (
-      <Link
-        {...linkProps}
-        aria-label={linkProps.href}
-        style={{ ...style, color: selectedColor }}
-        className={`hover:opacity-80 duration-200 ${className}`}
-      >
-        {children}
-      </Link>
-    );
-  }
-
   const { pageNavigationHandler } = useContext(PageNavigationLoadingContext);
 
   const selectHandler = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -35,9 +22,13 @@ const CustomLink = (props: CustomLinkTypes) => {
     const isDisable = location.pathname === props.href;
 
     if (!isDisable && linkProps.target !== '_blank') {
-      pageNavigationHandler();
+      pageNavigationHandler(true);
     }
   };
+
+  const selectedColor = useMemo(() => {
+    return colorMaker(color);
+  }, [color]);
 
   return (
     <Link

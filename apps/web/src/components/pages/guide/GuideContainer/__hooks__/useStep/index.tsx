@@ -1,13 +1,15 @@
 import { useEffect, useState } from 'react';
 
-import { useRouter, useSearchParams } from 'next/navigation';
+import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useRouter } from 'next/navigation';
 
 import { STEP_LIST, STEP_PARAM } from '../../constants';
 
 const useStep = () => {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const stepFromQuery = Number(searchParams.get(STEP_PARAM)) || 0;
+  const { searchParams } = useQueryParamsHandler();
+
+  const stepFromQuery = Number(searchParams?.get(STEP_PARAM)) || 0;
   const [currentStep, setCurrentStep] = useState(stepFromQuery);
 
   const nextStep = () => {
@@ -23,7 +25,7 @@ const useStep = () => {
   };
 
   useEffect(() => {
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams(searchParams?.toString());
     params.set(STEP_PARAM, String(currentStep));
     router.push(`?${params.toString()}`, { scroll: false });
   }, [currentStep]);

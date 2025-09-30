@@ -1,5 +1,6 @@
 import http from '@services/http';
 
+import { CACHE_REVALIDATE_TIME } from '@constants/app.constants';
 import { HOST_URL } from '@constants/links.constants';
 import type { MetadataRoute } from 'next';
 
@@ -44,7 +45,8 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 const getArticlesData = async () => {
   return await http<{ urls: string[] }>({
     method: 'GET',
-    cache: 'no-store',
+    cache: 'force-cache',
+    revalidate: CACHE_REVALIDATE_TIME,
     url: 'support/article/articles/sitemap',
   });
 };
@@ -52,7 +54,8 @@ const getArticlesData = async () => {
 const getCategoriesData = async () => {
   return await http<{ slugs: string[] }>({
     method: 'GET',
-    cache: 'no-store',
+    cache: 'force-cache',
+    revalidate: CACHE_REVALIDATE_TIME,
     url: 'support/article/category/sitemap',
   });
 };

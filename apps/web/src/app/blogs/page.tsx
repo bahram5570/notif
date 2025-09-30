@@ -1,6 +1,7 @@
 import http from '@services/http';
 
 import BlogsPageContainer from '@components/pages/blogs/BlogsPageContainer';
+import { CACHE_REVALIDATE_TIME } from '@constants/app.constants';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
 
@@ -18,7 +19,8 @@ export const metadata: Metadata = {
 const Blogs = async () => {
   const { data } = await http<BlogsResponseTypes>({
     method: 'GET',
-    cache: 'no-store',
+    cache: 'force-cache',
+    revalidate: CACHE_REVALIDATE_TIME,
     url: 'support/article/category/1/10',
   });
 

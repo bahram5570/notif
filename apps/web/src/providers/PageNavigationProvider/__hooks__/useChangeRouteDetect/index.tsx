@@ -2,22 +2,23 @@
 
 import { useEffect } from 'react';
 
-import { usePathname, useSearchParams } from 'next/navigation';
+import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePathname } from 'next/navigation';
 
-const useChangeRouteDetect = (onChange: (b: boolean) => void) => {
+const useChangeRouteDetect = (onComplete: (b: boolean) => void) => {
   if (typeof window === 'undefined') {
     return;
   }
 
   const path = usePathname();
-  const searchParams = useSearchParams();
+  const { searchParams } = useQueryParamsHandler();
 
   useEffect(() => {
     // # Disables loadings on changing of page or query param
-    onChange(false);
+    onComplete(false);
 
     return () => {
-      onChange(false);
+      onComplete(false);
     };
   }, [path, searchParams]);
 };

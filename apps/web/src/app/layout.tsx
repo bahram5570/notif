@@ -5,7 +5,6 @@ import { HOST_URL, SERVER_URL } from '@constants/links.constants';
 import CustomToastProvider from '@providers/CustomToastProvider';
 import MuiProvider from '@providers/MuiProvider';
 import PageNavigationProvider from '@providers/PageNavigationProvider';
-import UserTrackingProvider from '@providers/UserTrackingProvider';
 import { Metadata } from 'next';
 import Script from 'next/script';
 
@@ -94,22 +93,22 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           `}
         </Script>
 
-        <UserTrackingProvider>
+        <OperatingSystemProvider>
+          {/* <UserTrackingProvider> */}
           <MuiProvider>
-            <OperatingSystemProvider>
-              <CustomToastProvider>
-                <PageNavigationProvider>
-                  <div
-                    className="relative flex flex-col items-center mx-auto min-h-[100dvh]"
-                    style={{ maxWidth: MAX_WIDTH }}
-                  >
-                    <>{children}</>
-                  </div>
-                </PageNavigationProvider>
-              </CustomToastProvider>
-            </OperatingSystemProvider>
+            <CustomToastProvider>
+              <PageNavigationProvider>
+                <div
+                  className="relative flex flex-col items-center mx-auto min-h-[100dvh]"
+                  style={{ maxWidth: MAX_WIDTH }}
+                >
+                  <>{children}</>
+                </div>
+              </PageNavigationProvider>
+            </CustomToastProvider>
           </MuiProvider>
-        </UserTrackingProvider>
+          {/* </UserTrackingProvider> */}
+        </OperatingSystemProvider>
       </body>
     </html>
   );

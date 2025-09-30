@@ -1,17 +1,33 @@
-import { operatingSystemDetector } from '@utils/system';
+'use client';
 
-import { headers } from 'next/headers';
+import { createContext, useEffect, useState } from 'react';
 
-import OperatingSystemProviderContainer from './OperatingSystemProviderContainer';
+import { OperatingSystemContextTypes, OperatingSystemProviderTypes, OperatingSystemTypes } from './types';
 
-const OperatingSystemProvider = ({ children }: { children: React.ReactNode }) => {
-  const userAgent = headers().get('user-agent');
-  const os = operatingSystemDetector(userAgent);
+export const OperatingSystemContext = createContext<OperatingSystemContextTypes>({
+  operatingSystem: 'windows',
+});
+
+const OperatingSystemProvider = ({ children }: OperatingSystemProviderTypes) => {
+  const [operatingSystem, setOperatingSystem] = useState<OperatingSystemTypes>('android');
+
+  useEffect(() => {
+    const agent = navigator.userAgent.toLowerCase();
+    let os: OperatingSystemTypes = 'windows';
+
+    if (/iphone|ipad|ipod|macintosh|mac os|mac os x/.test(agent)) {
+      os = 'ios';
+    } else if (/android/.test(agent)) {
+      os = 'android';
+    }
+
+    setOperatingSystem(os);
+  }, []);
 
   return (
-    <OperatingSystemProviderContainer os={os}>
+    <OperatingSystemContext.Provider value={{ operatingSystem }}>
       <>{children}</>
-    </OperatingSystemProviderContainer>
+    </OperatingSystemContext.Provider>
   );
 };
 

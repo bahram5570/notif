@@ -1,6 +1,7 @@
 import http from '@services/http';
 
 import ArticleIdPageContainer from '@components/pages/articleId/ArticleIdPageContainer';
+import { CACHE_REVALIDATE_TIME } from '@constants/app.constants';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -8,9 +9,12 @@ import { notFound } from 'next/navigation';
 import ArticleSchema from '../../schema/ArticleSchema';
 import { ArticleIdResponseTypes } from './types';
 
-const revalidateTime = 60 * 60 * 24; // # 1 day
+export const revalidate = CACHE_REVALIDATE_TIME;
 
-export const revalidate = revalidateTime;
+export const generateStaticParams = async () => {
+  const list: string[] = [];
+  return list.map((articleId) => ({ articleId }));
+};
 
 export const generateMetadata = async (props: { params: { articleId: string } }): Promise<Metadata> => {
   const articleId = props.params.articleId;
@@ -18,7 +22,7 @@ export const generateMetadata = async (props: { params: { articleId: string } })
   const { data, error } = await http<Pick<ArticleIdResponseTypes, 'snippetTitle' | 'meta'>>({
     method: 'GET',
     cache: 'force-cache',
-    revalidate: revalidateTime,
+    revalidate: CACHE_REVALIDATE_TIME,
     url: `support/article/sp/published/meta/${articleId}`,
   });
 
@@ -44,7 +48,7 @@ const Article = async (props: { params: { articleId: string } }) => {
   const { data, error } = await http<ArticleIdResponseTypes>({
     method: 'GET',
     cache: 'force-cache',
-    revalidate: revalidateTime,
+    revalidate: CACHE_REVALIDATE_TIME,
     url: `support/article/sp/published/${articleId}`,
   });
 

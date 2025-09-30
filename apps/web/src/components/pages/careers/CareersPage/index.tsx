@@ -1,15 +1,17 @@
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
 import QrCode from '@components/QrCode';
+import dynamic from 'next/dynamic';
 
 import CareersAboutUs from './CareersAboutUs';
 import CareersBanner from './CareersBanner';
 import CareersHeading from './CareersHeading';
 import CareersHiringProcess from './CareersHiringProcess';
-import CareersMap from './CareersMap';
 import CareersOpportunities from './CareersOpportunities';
 import CareersSlides from './CareersSlides';
 import CareersValues from './CareersValues';
 import { CareersPageTypes } from './types';
+
+const CareersMap = dynamic(() => import('./CareersMap'), { ssr: false });
 
 const CareersPage = ({ opportunities }: CareersPageTypes) => {
   return (

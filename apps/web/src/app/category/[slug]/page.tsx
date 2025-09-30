@@ -2,6 +2,7 @@ import http from '@services/http';
 
 import { BlogsResponseTypes } from '@app/blogs/types';
 import CategoryPageContainer from '@components/pages/category/slug/CategoryPageContainer';
+import { CACHE_REVALIDATE_TIME } from '@constants/app.constants';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
@@ -9,10 +10,16 @@ import { notFound } from 'next/navigation';
 import CategorySchema from '../../../schema/CategorySchema';
 import { CategoryResponseTypes, CategoryValidationTypes } from './types';
 
+export const generateStaticParams = async () => {
+  const list: string[] = [];
+  return list.map((slug) => ({ slug }));
+};
+
 export const generateMetadata = async ({ params }: { params: { slug: string } }): Promise<Metadata> => {
   const { data, error } = await http<Pick<CategoryResponseTypes, 'title'>>({
     method: 'GET',
-    cache: 'no-store',
+    cache: 'force-cache',
+    revalidate: CACHE_REVALIDATE_TIME,
     url: `support/article/category/meta/${params.slug}`,
   });
 
@@ -20,7 +27,7 @@ export const generateMetadata = async ({ params }: { params: { slug: string } })
     return {
       title: data.title,
       description: 'category',
-      robots: 'index, follow',
+      robots: { follow: true, index: true },
       alternates: {
         canonical: `${HOST_URL}/category/${params.slug}`,
       },
@@ -35,13 +42,15 @@ export const generateMetadata = async ({ params }: { params: { slug: string } })
 const Category = async ({ params }: { params: { slug: string } }) => {
   const { data: categoryData } = await http<CategoryResponseTypes>({
     method: 'GET',
-    cache: 'no-store',
+    cache: 'force-cache',
+    revalidate: CACHE_REVALIDATE_TIME,
     url: `support/article/category/${params.slug}`,
   });
 
   const { data: categoriesListData } = await http<BlogsResponseTypes>({
     method: 'GET',
-    cache: 'no-store',
+    cache: 'force-cache',
+    revalidate: CACHE_REVALIDATE_TIME,
     url: 'support/article/category/1/100',
   });
 
