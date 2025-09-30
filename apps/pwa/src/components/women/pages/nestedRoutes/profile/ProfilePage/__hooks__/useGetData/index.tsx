@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { LoginResponseTypes } from '@services/loginServices/types';
 import { getFirebaseCookieToken } from '@utils/cookies';
@@ -8,13 +8,17 @@ import { APP_VERSION } from '@constants/app.constants';
 import useApi from '@hooks/useApi';
 
 const useGetData = () => {
-  const {
-    isLoading: subscriptionLoading,
-    callApi: getSubscription,
-    data: subscriptionData,
-  } = useApi<LoginResponseTypes>({
+  const [subscriptionLoading, setSubscriptionLoading] = useState(true);
+
+  const subscriptionLoadingHandler = (b: boolean) => {
+    setSubscriptionLoading(b);
+  };
+
+  const { callApi: getSubscription, data: subscriptionData } = useApi<LoginResponseTypes>({
     method: 'POST',
     api: 'CustomerAccount/Loginv6',
+    onError: () => subscriptionLoadingHandler(false),
+    onSuccess: () => subscriptionLoadingHandler(false),
   });
 
   useEffect(() => {
