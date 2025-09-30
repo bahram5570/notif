@@ -1,3 +1,3 @@
 export type UseSubmitPropsType = {
-  isEditMode: boolean;
+  noteId: string | undefined;
 };

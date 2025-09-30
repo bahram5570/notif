@@ -9,9 +9,11 @@ import { useRouter } from 'next/navigation';
 import { ItemType } from '../useGetData/type';
 import { UseSubmitPropsType } from './type';
 
-const useSubmit = ({ isEditMode }: UseSubmitPropsType) => {
+const useSubmit = ({ noteId }: UseSubmitPropsType) => {
   const router = useRouter();
   const { culture } = useCulture();
+
+  const isEditMode = noteId ? true : false;
 
   const successHandler = () => {
     if (isEditMode) {
