@@ -25,6 +25,7 @@ const WebView = ({ url }: WebViewPropsType) => {
           width: '100%',
           height: '100%',
           border: 'none',
+          display: isLoading ? 'none' : 'block',
         }}
         onLoad={handleLoad}
       />

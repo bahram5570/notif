@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 
@@ -10,14 +12,19 @@ import { ShareExperienceNewReplyModalContainerProps } from './types';
 
 const ShareExperienceNewReplyModalContainer = ({ data }: ShareExperienceNewReplyModalContainerProps) => {
   const { text, textHandler } = useText();
+  const [btnTop, setBtnTop] = useState<number>();
   const { submitHandler, isLoading } = useSubmit({ data, text });
+
+  const onChangeBtnTop = (top: number | undefined) => {
+    setBtnTop(top);
+  };
 
   return (
     <WomenPageLayout rightElement="BackButton" rightElementScript="نظر جدید" paddingTop={0}>
       <div className="flex flex-col min-h-[100dvh]" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
         <NewReplyTopPart text={text} name={data.name} avatar={data.avatar} />
-        <NewReplyText text={text} textHandler={textHandler} />
-        <NewReplyBtn text={text} submitHandler={submitHandler} isLoading={isLoading} />
+        <NewReplyText text={text} textHandler={textHandler} onChangeBtnTop={onChangeBtnTop} />
+        <NewReplyBtn text={text} submitHandler={submitHandler} isLoading={isLoading} btnTop={btnTop} />
       </div>
     </WomenPageLayout>
   );
