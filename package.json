@@ -5,20 +5,18 @@
   "scripts": {
     "lint": "turbo run lint",
     "format": "prettier --write .",
-
     "packages:build": "npm run components:build && npm run assets:build && npm run core:build",
     "components:build": "cd packages/components && npm run build",
     "assets:build": "cd packages/assets && npm run build",
     "core:build": "cd packages/core && npm run build",
-
     "pwa:build": "npm run packages:build && cd apps/pwa && npm install && npm run build",
     "pwa:vercel:build": "npm run packages:build && cd apps/pwa && npm run build",
     "pwa:test:unit": "cd apps/pwa && npm run test:unit",
+    "pwa:test:e2e": "cd apps/pwa &&  cypress open",
     "pwa:export": "cd apps/pwa && npm run export",
     "pwa:start": "cd apps/pwa && npm run start",
     "pwa:install": "cd apps/pwa && npm install",
     "pwa:dev": "cd apps/pwa && npm run dev",
-
     "web:build": "npm run packages:build && cd apps/web && npm install && npm run build",
     "web:vercel:build": "npm run packages:build && cd apps/web && npm run build",
     "web:export": "cd apps/web && npm run export",
@@ -42,6 +40,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.4.21",
+    "cypress": "^15.3.0",
     "eslint": "^8.57.0",
     "eslint-config-next": "14.2.5",
     "eslint-config-prettier": "^9.1.0",
