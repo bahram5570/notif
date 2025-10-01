@@ -8,7 +8,7 @@ const useGetData = () => {
   const [data, setData] = useState<ResponseTypes | null>(null);
 
   const { callApi, isLoading } = useApi<ResponseTypes>({
-    api: 'info/subscribtions_v5',
+    api: 'info/subscribtions_v6',
     method: 'POST',
     onSuccess: (v) => {
       setData(v);

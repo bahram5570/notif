@@ -16,6 +16,7 @@ export type ResponseTypes = {
   organizationText: string;
   showCloseButton: boolean;
   packages: PackagesTypes[];
+  morePackages: PackagesTypes[];
   discountCodeHelper: string;
   upTextOrganization: string;
   isShowOrganization: boolean;

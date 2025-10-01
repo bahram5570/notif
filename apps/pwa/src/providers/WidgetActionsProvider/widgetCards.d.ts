@@ -296,6 +296,16 @@ export type WidgetSubscriptionCardTypes = IsPdfDownloadingTypes & {
       unit: string;
       vat: number;
       id: string;
+      amount: string;
+      isSpecial: boolean;
+      markdown: string;
+      payBtnText: string;
+      specialText: string;
+      subTitle: string;
+      title: string;
+      totalAmount: string;
+      totalText: string;
+      totalUnit: string;
     };
   };
 };
