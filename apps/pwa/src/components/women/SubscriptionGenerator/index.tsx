@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import ReactMarkdown from 'react-markdown';
 
 import TickIcon from '@assets/icons/subscriptionTick.svg';
 import subscriptionbg from '@assets/lottie/subscription_background.json';
@@ -9,10 +8,11 @@ import useTheme from '@hooks/useTheme';
 import { LottieJson } from '@lib/LottieJson';
 import { LottieRefCurrentProps } from 'lottie-react';
 
+import MarkDownText from './MarkDownText';
 import { SubscriptionGeneratorTypes } from './types';
 
 const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
-  const { colors, typography } = useTheme();
+  const { colors } = useTheme();
 
   const isSelected = typeof props.isSelected === 'undefined' ? true : props.isSelected;
   const totalPayText = props.isFree ? 'رایگان' : `${props.amount}`;
@@ -134,55 +134,7 @@ const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
               className="w-full h-[1px] block opacity-50"
               style={{ backgroundColor: isSelected ? colors.Neutral_Background : colors.Surface_OutlineVariant }}
             />
-            <ReactMarkdown
-              components={{
-                h1: ({ node, ...props }) => (
-                  <h1
-                    style={{
-                      ...typography.Body.Small,
-                      color: colors.Neutral_Background,
-
-                      direction: 'rtl',
-                    }}
-                    {...props}
-                  />
-                ),
-                p: ({ node, ...props }) => (
-                  <p
-                    style={{
-                      ...typography.Body.Small,
-                      color: colors.Neutral_Background,
-                      direction: 'rtl',
-                    }}
-                    {...props}
-                  />
-                ),
-                li: ({ node, ...props }) => (
-                  <li
-                    style={{
-                      ...typography.Body.Small,
-                      color: colors.Neutral_Background,
-                      direction: 'rtl',
-                      marginBottom: '6px',
-                    }}
-                    {...props}
-                  />
-                ),
-                ul: ({ node, ...props }) => (
-                  <ul
-                    style={{
-                      direction: 'rtl', // make list RTL
-                      paddingRight: '20px', // add spacing for bullet
-                      listStyleType: 'disc', // normal bullets
-                    }}
-                    {...props}
-                  />
-                ),
-                strong: ({ node, ...props }) => <strong style={{ color: colors.Neutral_Background }} {...props} />,
-              }}
-            >
-              {props.markdown}
-            </ReactMarkdown>
+            <MarkDownText markdown={props.markdown} />
           </>
         )}
       </div>
