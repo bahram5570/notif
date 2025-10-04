@@ -12,7 +12,6 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
       <PaymentProvider />
       <PermissionsProvider />
       <RetentionEventProvider />
-
       <SplashProvider>
         <ProfileProvider>
           <SignDateStateProvider>

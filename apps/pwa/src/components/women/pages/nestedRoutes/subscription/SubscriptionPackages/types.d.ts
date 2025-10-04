@@ -4,7 +4,5 @@ import { ShowAllHandlerTypes } from '../__hooks__/useShowAll/types';
 
 export interface SubscriptionPackagesProps extends Pick<ResponseTypes, 'packages' | 'visibleCount'> {
   selectedPackageIndexHandler: SelectedPackageIndexHandlerTypes;
-  showAllHandler: ShowAllHandlerTypes;
   selectedPackageIndex: number;
-  showAll: boolean;
 }
