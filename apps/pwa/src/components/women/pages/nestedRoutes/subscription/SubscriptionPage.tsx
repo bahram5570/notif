@@ -76,7 +76,7 @@ const SubscriptionPage = () => {
                 />
               </div>
 
-              {data.morePackages.length > 0 && (
+              {data.morePackages.length > 0 && !showAll && (
                 <div className="w-full flex items-center gap-2 p-4 " onClick={showAllHandler} id="SubscriptionLoadMore">
                   <div className="w-full h-[1px] block" style={{ backgroundColor: colors.Neutral_Surface }} />
 

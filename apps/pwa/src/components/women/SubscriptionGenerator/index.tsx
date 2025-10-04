@@ -34,7 +34,7 @@ const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
   return (
     <div
       onClick={selectHandler}
-      className="w-full   rounded-3xl border-[1px]  relative "
+      className={`w-full   rounded-2xl border-[1px]  relative ${props.specialText && 'mt-5'}`}
       style={{
         borderColor: !isSelected ? colors.Surface_OutlineVariant : '',
         background: isSelected
@@ -58,7 +58,7 @@ const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
       )}
       {props.discountText && (
         <div
-          className="flex justify-start w-fit px-2 py-2 rounded-ss-[22px]  rounded-ee-2xl"
+          className="flex justify-start w-fit px-2 py-2 rounded-ss-[14px]  rounded-ee-2xl"
           style={{ background: colors.CalendarWoman_Period_Background }}
         >
           <Typography scale="Lable" size="Medium" className="px-2">
@@ -67,7 +67,7 @@ const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
         </div>
       )}
 
-      <div className="w-full p-4 pt-2  flex flex-col items-end gap-2">
+      <div className={`w-full p-4 ${props.specialText && 'pt-2'}   flex flex-col items-end gap-2`}>
         <div className="flex justify-between w-full">
           <div className="flex items-center gap-1">
             {!props.isFree && (
