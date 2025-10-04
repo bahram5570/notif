@@ -19,8 +19,9 @@ import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 
 export const metadata: Metadata = {
-  title: 'ایمپو',
-  description: 'ایمپو',
+  title: 'وب اپلیکیشن ایمپو',
+  description: 'وب اپلیکیشن ایمپو',
+  robots: { follow: false, index: false },
 };
 
 export const viewport: Viewport = {

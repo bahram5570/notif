@@ -1,12 +1,29 @@
+import { storeSplashHandler } from '@providers/SplashProvider/utils';
+
+import { setUserCookie } from '@actions/cookie.actions';
 import ProgressCycleLoading from '@components/ProgressCycleLoading';
 import useRouteSequence from '@hooks/useRouteSequence';
 
 import { CompleteRegisterCycleLoadingProps } from './types';
 
-const CompleteRegisterCycleLoading = ({ createCycleImage }: CompleteRegisterCycleLoadingProps) => {
+const CompleteRegisterCycleLoading = ({
+  createCycleImage,
+  fetchedUser,
+  clearStorage,
+}: CompleteRegisterCycleLoadingProps) => {
   const { sequenceHandler } = useRouteSequence();
 
-  const completeHandler = () => {
+  const completeHandler = async () => {
+    // # Don't change the order
+    const updateduser = { ...fetchedUser };
+    updateduser.createdTime = Date.now();
+    await setUserCookie(updateduser);
+
+    if (clearStorage) {
+      sessionStorage.clear();
+    }
+
+    storeSplashHandler();
     sequenceHandler([`/protected/cycle`, `/protected/cycle`, `/protected/cycle`]);
   };
 
