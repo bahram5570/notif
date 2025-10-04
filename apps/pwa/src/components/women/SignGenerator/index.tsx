@@ -3,6 +3,7 @@ import { memo } from 'react';
 import SelectedIcon from '@assets/icons/selectedTick.svg';
 
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 import useTheme from '@hooks/useTheme';
 
 import useSignIcon from './__hooks__/useSignIcon';
@@ -11,6 +12,7 @@ import { ICONS_WIDTH, SIGNS_LIST } from './constants';
 import { SignGeneratorProps } from './types';
 
 const SignGenerator = ({ category, sign, initialIsSelected, onSelect, selectedDate }: SignGeneratorProps) => {
+  const { callEvent } = useAnalytics();
   const { colors } = useTheme();
   const { icon } = useSignIcon({ category, sign });
   const { isSelected, isSelectedHandler } = useSignSelected({
@@ -24,8 +26,13 @@ const SignGenerator = ({ category, sign, initialIsSelected, onSelect, selectedDa
   const borderColor = isSelected ? colors.PrimaryWoman_Primary : colors.Neutral_Surface;
   const title = SIGNS_LIST?.[category]?.signs?.[sign]?.title || '';
 
+  const clickHandler = () => {
+    isSelectedHandler();
+    callEvent('SexTrackerSubmitFrom_signs');
+  };
+
   return (
-    <div className="cursor-pointer" onClick={isSelectedHandler}>
+    <div className="cursor-pointer" onClick={clickHandler}>
       <div className="flex flex-col items-center gap-2 pointer-events-none ">
         <div
           className="relative flex justify-center items-center border-[1px] rounded-full"

@@ -2,6 +2,7 @@ import UploadIcon from '@assets/icons/upload.svg';
 
 import CustomImage from '@components/ui/CustomImage';
 import { SHARE_EXPERIENCE_CHANGE_AVATAR_QUERY_NAME } from '@components/women/pages/mainRoutes/shareExperience/constants';
+import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import useTheme from '@hooks/useTheme';
@@ -14,11 +15,13 @@ const ShareExperienceAvatarModule = ({
   username,
   id,
 }: ShareExperienceAvatarModulePropsType) => {
+  const { callEvent } = useAnalytics();
   const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const selectProfileHandler = () => {
+    callEvent('ShareExperienceSelfProfile');
     pageNavigationHandler({ id: id, showProgressBar: true });
 
     const paramsData = JSON.stringify({
@@ -34,7 +37,10 @@ const ShareExperienceAvatarModule = ({
   return (
     <div className="flex flex-col items-center justify-center gap-5">
       <div className="relative">
-        <div className="overflow-hidden rounded-full flex justify-center items-center">
+        <div
+          className="overflow-hidden rounded-full flex justify-center items-center"
+          onClick={() => callEvent(showChangeAvatarIcon ? 'ShareExperienceSelfProfile' : 'ShareExperienceOtherProfile')}
+        >
           <CustomImage
             src={avatarImage}
             hasPreviewImage={true}
@@ -42,7 +48,6 @@ const ShareExperienceAvatarModule = ({
             height={88}
             previewImageShape="circle"
             className="!object-cover"
-            id={showChangeAvatarIcon ? 'ShareExperienceSelfProfile' : 'ShareExperienceOtherProfile'}
           />
         </div>
 

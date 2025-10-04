@@ -1,9 +1,16 @@
 import Button from '@components/ui/Button';
+import useAnalytics from '@hooks/useAnalytics';
 
 import { NewReplyBtnProps } from './types';
 
 const NewReplyBtn = ({ text, isLoading, submitHandler }: NewReplyBtnProps) => {
+  const { callEvent } = useAnalytics();
   const isDisable = text.trim().length < 1;
+
+  const clickHandler = () => {
+    submitHandler();
+    callEvent('ShareExperienceComment');
+  };
 
   return (
     <div className="mt-auto px-4 py-6">
@@ -14,8 +21,7 @@ const NewReplyBtn = ({ text, isLoading, submitHandler }: NewReplyBtnProps) => {
         className="!w-fit"
         isDisable={isDisable}
         isLoading={isLoading}
-        onClick={submitHandler}
-        id="ShareExperienceComment"
+        onClick={clickHandler}
       >
         پست کردن
       </Button>

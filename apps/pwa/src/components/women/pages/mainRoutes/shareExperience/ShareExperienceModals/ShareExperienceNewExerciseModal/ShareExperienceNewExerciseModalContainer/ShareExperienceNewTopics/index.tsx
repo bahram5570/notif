@@ -5,6 +5,7 @@ import Typography from '@components/ui/Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME } from '@components/women/pages/mainRoutes/shareExperience/constants';
+import useAnalytics from '@hooks/useAnalytics';
 import useOverflowHandler from '@hooks/useOverflowHandler';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import useTheme from '@hooks/useTheme';
@@ -21,10 +22,16 @@ const ShareExperienceNewTopics = ({
   topicId,
 }: ShareExperienceNewTopicsProps) => {
   useOverflowHandler();
+  const { callEvent } = useAnalytics();
   const { getQueryParams } = useQueryParamsHandler();
   const { colors } = useTheme();
 
   const isOpen = getQueryParams(SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME) !== null;
+
+  const clickHandler = () => {
+    submitHandler();
+    callEvent('Share_Experience');
+  };
 
   return (
     <>
@@ -78,10 +85,9 @@ const ShareExperienceNewTopics = ({
                     size="medium"
                     variant="fill"
                     color="primary"
-                    onClick={submitHandler}
+                    onClick={clickHandler}
                     isLoading={isSubmitLoading}
                     isDisable={topicId === null}
-                    id="Share_Experience"
                   >
                     ثبت تجربه
                   </Button>

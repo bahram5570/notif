@@ -62,7 +62,6 @@ const NoteContainer = () => {
               isDisable={!noteValue.title}
               className="mt-auto py-3 px-2"
               onClick={onClick}
-              id={isEditMode ? 'NoteEdit' : 'NoteAdd'}
             >
               {isEditMode ? 'ویرایش یادداشت' : 'ثبت یادداشت'}
             </Button>

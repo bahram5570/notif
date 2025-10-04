@@ -32,7 +32,6 @@ const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGenerat
       onClick={selectHandler}
       style={{ width: STORY_CIRCLE_WIDTH }}
       className="flex flex-col items-center justify-center gap-2 cursor-pointer"
-      id="StoryClick"
     >
       <div
         style={{

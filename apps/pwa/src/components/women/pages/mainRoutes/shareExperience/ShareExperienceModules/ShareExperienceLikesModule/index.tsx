@@ -2,6 +2,7 @@ import LikeEmptyIcon from '@assets/icons/like.svg';
 import LikeFillIcon from '@assets/icons/likeFill.svg';
 
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 import useTheme from '@hooks/useTheme';
 
 import { ShareExperienceStateEnum } from '../../ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/enum';
@@ -9,6 +10,7 @@ import useLikes from './__hooks__/useLikes';
 import { ShareExperienceLikesModuleProps } from './types';
 
 const ShareExperienceLikesModule = (props: ShareExperienceLikesModuleProps) => {
+  const { callEvent } = useAnalytics();
   const { colors } = useTheme();
   const { likeHandler } = useLikes(props);
 
@@ -26,8 +28,10 @@ const ShareExperienceLikesModule = (props: ShareExperienceLikesModuleProps) => {
     <>
       <div
         className="flex w-10 gap-1"
-        onClick={() => selectHandler(ShareExperienceStateEnum.Dislike)}
-        id="shareExperienceDislikePost"
+        onClick={() => {
+          selectHandler(ShareExperienceStateEnum.Dislike);
+          callEvent('shareExperienceDislikePost');
+        }}
       >
         <Typography scale="Body" size="Large" color="Surface_InverseSurface" className="!h-5 !w-2/5">
           {props.disliked.toString()}
@@ -40,8 +44,10 @@ const ShareExperienceLikesModule = (props: ShareExperienceLikesModuleProps) => {
 
       <div
         className="flex w-10 gap-1"
-        onClick={() => selectHandler(ShareExperienceStateEnum.Like)}
-        id="shareExperienceLikePost"
+        onClick={() => {
+          selectHandler(ShareExperienceStateEnum.Like);
+          callEvent('shareExperienceLikePost');
+        }}
       >
         <Typography scale="Body" size="Large" color="Surface_InverseSurface" className="!h-5 !w-2/5">
           {props.likeCount.toString()}

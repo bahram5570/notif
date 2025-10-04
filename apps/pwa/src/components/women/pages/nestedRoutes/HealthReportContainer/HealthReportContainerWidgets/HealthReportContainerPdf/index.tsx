@@ -36,7 +36,6 @@ const HealthReportContainerPdf = ({ data, backgroundColor }: HealthReportContain
           variant="fill"
           color="primary"
           isDisable={NotData}
-          id="GetHealthReportAsPdf"
           isLoading={downloadStatus !== null}
           onClick={clickHandler}
         >

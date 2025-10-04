@@ -2,6 +2,7 @@ import Button from '@components/ui/Button';
 import CustomModal from '@components/ui/CustomModal';
 import Loading from '@components/ui/Loading';
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 import useTheme from '@hooks/useTheme';
 import { useRouter } from 'next/navigation';
 
@@ -18,8 +19,14 @@ const ShareExperienceApproveModalsModule = ({
   icon,
   id,
 }: ShareExperienceApproveModalsModuleProps) => {
+  const { callEvent } = useAnalytics();
   const router = useRouter();
   const { colors } = useTheme();
+
+  const clickHandler = () => {
+    applyHandler();
+    callEvent(id || '');
+  };
 
   return (
     <>
@@ -42,7 +49,7 @@ const ShareExperienceApproveModalsModule = ({
               size="medium"
               variant="fill"
               color="FREE-STYLES"
-              onClick={applyHandler}
+              onClick={clickHandler}
               contentsColor={colors.Error_Error}
               buttonColor={colors.Error_ErrorContainer}
               id={id}

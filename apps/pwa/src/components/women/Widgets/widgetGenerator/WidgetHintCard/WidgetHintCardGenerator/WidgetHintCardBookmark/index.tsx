@@ -40,7 +40,6 @@ const WidgetHintCardBookmark = (props: WidgetHintCardBookmarkProps) => {
     <div
       onClick={clickHandler}
       className="w-8 h-8 rounded-full flex items-center justify-center border-[1px] cursor-pointer"
-      id="hintBookMarked"
     >
       {!isBookmarked && <BookmarkEmptyIcon className="w-5 h-auto" style={{ stroke: colors.Surface_InverseSurface }} />}
       {isBookmarked && <BookmarkFillIcon className="w-5 h-auto" style={{ fill: colors.Surface_InverseSurface }} />}

@@ -37,7 +37,7 @@ const SelectedDaySignsContainer = ({ selectedDateInfo }: SelectedDaySignsContain
     <div className="relative w-full flex items-center justify-end">
       {signs && signs.length > 0 ? <SignsList signs={signs} /> : <NoSigns />}
 
-      <div className="relative cursor-pointer" onClick={clickHandler} id="Sign_From_Calendar">
+      <div className="relative cursor-pointer" onClick={clickHandler}>
         <LinkIcon className="w-14 h-auto" />
       </div>
     </div>

@@ -3,6 +3,7 @@ import ArrowIcon from '@assets/icons/calendarArrow.svg';
 
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import useTheme from '@hooks/useTheme';
 import useWidgetActions from '@hooks/useWidgetActions';
@@ -10,19 +11,21 @@ import useWidgetActions from '@hooks/useWidgetActions';
 import { QuestionCheckupItemPropsType } from './type';
 
 const QuestionCheckupItem = ({ icon, name, type }: QuestionCheckupItemPropsType) => {
+  const { callEvent } = useAnalytics();
   const { colors } = useTheme();
   const { getQueryParams } = useQueryParamsHandler();
   const pregnancyWeek = getQueryParams('week');
   const { actionHandler } = useWidgetActions();
 
   const linkTo = () => {
+    callEvent('PregnancyCareWeekClick');
     const action = segmentActionHandler(Number(pregnancyWeek), type, name);
     actionHandler(action);
   };
 
   return (
     <div
-      className="flex flex-row-reverse justify-between items-center p-4 "
+      className="flex flex-row-reverse justify-between items-center p-4"
       onClick={linkTo}
       id="PregnancyCareWeekClick"
     >

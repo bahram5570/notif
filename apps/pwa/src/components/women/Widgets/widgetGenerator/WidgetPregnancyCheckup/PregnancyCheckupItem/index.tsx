@@ -26,7 +26,6 @@ const PregnancyCheckupItem = ({
       style={{ background: `${colorFormatConverter(backgroundColor)}33` }}
       className=" rounded-lg flex flex-row-reverse gap-2 p-3"
       onClick={linkTo}
-      id="PregnancyCareWeekClick"
     >
       <div>
         <CustomImage src={icon} className="w-8 h-8" />

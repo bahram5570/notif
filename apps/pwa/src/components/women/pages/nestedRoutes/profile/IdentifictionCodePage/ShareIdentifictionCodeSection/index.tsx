@@ -18,7 +18,7 @@ const ShareIdentifictionCodeSection = ({ interfaceShareText }: ShareIdentifictio
   };
 
   return (
-    <div className="flex justify-center" onClick={clickHandler} id="InviteFromShare">
+    <div className="flex justify-center" onClick={clickHandler}>
       <div
         style={{ backgroundColor: colors.PrimaryWoman_Primary, color: colors.White }}
         className="flex items-center gap-2 px-8 py-2 rounded-full border-[1px] select-none cursor-pointer w-full h-[48px]"
