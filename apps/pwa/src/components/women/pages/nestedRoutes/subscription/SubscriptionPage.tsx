@@ -118,7 +118,7 @@ const SubscriptionPage = () => {
                 approvedCode={approvedCode}
                 packageId={data.packages[selectedPackageIndex].id}
                 isFree={data.packages[selectedPackageIndex].isFree}
-                value={data.packages[selectedPackageIndex].totalPay}
+                value={data.packages[selectedPackageIndex].value}
                 payButtonText={data.packages[selectedPackageIndex].payBtnText}
                 totalText={data.packages[selectedPackageIndex].totalText}
                 totalAmount={data.packages[selectedPackageIndex].totalAmount}
