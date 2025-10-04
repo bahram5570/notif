@@ -95,7 +95,7 @@ const SubscriptionPage = () => {
 
               {showAll && (
                 <SubscriptionPackages
-                  packages={data.packages}
+                  packages={data.morePackages}
                   visibleCount={data.visibleCount}
                   selectedPackageIndex={selectedPackageIndex}
                   selectedPackageIndexHandler={selectedPackageIndexHandler}
