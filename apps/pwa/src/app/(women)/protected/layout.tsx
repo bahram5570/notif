@@ -8,8 +8,7 @@ import SplashProvider from '@providers/SplashProvider';
 
 const Layout = async ({ children }: { children: React.ReactNode }) => {
   return (
-    // <AddToHomeScreenProvider>
-    <>
+    <AddToHomeScreenProvider>
       <PaymentProvider />
       <PermissionsProvider />
       <RetentionEventProvider />
@@ -20,9 +19,7 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
           </SignDateStateProvider>
         </ProfileProvider>
       </SplashProvider>
-    </>
-
-    // </AddToHomeScreenProvider>
+    </AddToHomeScreenProvider>
   );
 };
 
