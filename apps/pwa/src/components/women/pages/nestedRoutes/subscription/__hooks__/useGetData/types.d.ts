@@ -25,4 +25,5 @@ export type ResponseTypes = {
   isValidDiscountCode: boolean;
   visibleCount: number;
   medias: string[];
+  discount: { text: string; valid: boolean };
 };

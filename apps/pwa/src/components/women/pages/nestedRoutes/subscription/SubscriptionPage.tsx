@@ -30,6 +30,9 @@ const SubscriptionPage = () => {
   const { colors } = useTheme();
   const handleReset = () => setResetKey((prev) => prev + 1);
 
+  const mediasData = data && data.medias.length > 0;
+  const morePackagesData = data && data.morePackages.length > 0;
+
   return (
     <WomenPageLayout
       className="relative"
@@ -45,17 +48,19 @@ const SubscriptionPage = () => {
 
           <div className="relative" style={{ paddingBottom: SUBSCRIPTION_SUBMIT_BUTTON_HEIGHT + 100, paddingTop: 25 }}>
             <div className="flex flex-col items-center px-4 gap-5">
-              {/* <div className="min-h-56 w-full h-full">
-                <LottieCanvas src={data?.medias[0]} autoplay={true} style={{ width: '100%', height: '100%' }} />
-              </div> */}
+              {mediasData && (
+                <div className="min-h-56 w-full h-full">
+                  <LottieCanvas src={data?.medias[0]} autoplay={true} style={{ width: '100%', height: '100%' }} />
+                </div>
+              )}
 
               <Heading title={data.title} description={data.description} />
 
-              {data.isValidDiscountCode && !loadingResponse && (
+              {data.discount.valid && !loadingResponse && (
                 <ApprovedCodeToast
                   callApi={callApi}
                   onRestHandler={handleReset}
-                  discountCodeHelper={data.discountCodeHelper}
+                  discountCodeHelper={data.discount.text}
                 />
               )}
 
@@ -70,13 +75,13 @@ const SubscriptionPage = () => {
                 <DiscountCode
                   onApply={callApi}
                   loadingResponse={loadingResponse}
-                  discountCodeHelper={data.discountCodeHelper}
-                  isValidDiscountCode={data.isValidDiscountCode}
+                  discountCodeHelper={data.discount.text}
+                  isValidDiscountCode={data.discount.valid}
                   approvedCodeHandler={(v) => setApprovedCode(v)}
                 />
               </div>
 
-              {data.morePackages.length > 0 && !showAll && (
+              {morePackagesData && !showAll && (
                 <div className="w-full flex items-center gap-2 p-4 " onClick={showAllHandler} id="SubscriptionLoadMore">
                   <div className="w-full h-[1px] block" style={{ backgroundColor: colors.Neutral_Surface }} />
 
@@ -102,7 +107,7 @@ const SubscriptionPage = () => {
                   {data.supportText}
                 </Typography>
               </a>
-              {data.medias.length > 0 && (
+              {mediasData && (
                 <>
                   <CustomImage src={data.medias[1]} className="pb-10" />
                   <CustomImage src={data.medias[2]} />
