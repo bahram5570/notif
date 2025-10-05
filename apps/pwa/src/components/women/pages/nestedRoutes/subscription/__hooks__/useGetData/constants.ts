@@ -1,7 +1,5 @@
 import { PackagesTypes } from './types';
 
-export const CURRENT_PACKAGE_ID = 'currentPackageSessionId';
-
 export const INITAIL_PACKAGE: PackagesTypes = {
   amount: '',
   code: '',
