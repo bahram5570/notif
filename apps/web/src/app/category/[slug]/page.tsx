@@ -1,3 +1,4 @@
+import { completeCacheService } from '@services/cachingServices';
 import http from '@services/http';
 
 import { BlogsResponseTypes } from '@app/blogs/types';
@@ -5,10 +6,9 @@ import CategoryPageContainer from '@components/pages/category/slug/CategoryPageC
 import { CACHE_REVALIDATE_TIME } from '@constants/app.constants';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
 
 import CategorySchema from '../../../schema/CategorySchema';
-import { CategoryResponseTypes, CategoryValidationTypes } from './types';
+import { CategoryResponseTypes } from './types';
 
 export const generateStaticParams = async () => {
   const list: string[] = [];
@@ -40,34 +40,19 @@ export const generateMetadata = async ({ params }: { params: { slug: string } })
 };
 
 const Category = async ({ params }: { params: { slug: string } }) => {
-  const { data: categoryData } = await http<CategoryResponseTypes>({
-    method: 'GET',
-    cache: 'force-cache',
-    revalidate: CACHE_REVALIDATE_TIME,
-    url: `support/article/category/${params.slug}`,
-  });
+  const categoriesListData = await completeCacheService<BlogsResponseTypes>('support/article/category/1/100');
+  const categoryData = await completeCacheService<CategoryResponseTypes>(`support/article/category/${params.slug}`);
 
-  const { data: categoriesListData } = await http<BlogsResponseTypes>({
-    method: 'GET',
-    cache: 'force-cache',
-    revalidate: CACHE_REVALIDATE_TIME,
-    url: 'support/article/category/1/100',
-  });
+  if (!categoriesListData || !categoryData) {
+    return <></>;
+  }
 
   return (
     <>
       <CategorySchema id={params.slug} />
-      <CategoryValidation categoriesListData={categoriesListData} categoryData={categoryData} />
+      <CategoryPageContainer categoryData={categoryData} categoriesList={categoriesListData.categories} />;
     </>
   );
 };
 
 export default Category;
-
-const CategoryValidation = async ({ categoriesListData, categoryData }: CategoryValidationTypes) => {
-  if (categoryData && categoriesListData) {
-    return <CategoryPageContainer categoryData={categoryData} categoriesList={categoriesListData.categories} />;
-  }
-
-  notFound();
-};
