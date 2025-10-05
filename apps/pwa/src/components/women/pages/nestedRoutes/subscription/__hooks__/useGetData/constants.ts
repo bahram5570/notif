@@ -1,5 +1,7 @@
 import { PackagesTypes } from './types';
 
+export const CURRENT_PACKAGE_ID = 'currentPackageSessionId';
+
 export const INITAIL_PACKAGE: PackagesTypes = {
   amount: '',
   code: '',
@@ -10,14 +12,10 @@ export const INITAIL_PACKAGE: PackagesTypes = {
   inAppPurchase: false,
   isFree: false,
   isSpecial: false,
-  //   isSpecific: false,
   markdown: '',
   payBtnText: '',
-  //   payButtonText: '',
-  //   realValue: 0,
   realValueText: '',
   specialText: '',
-  //   specificText: '',
   subTitle: '',
   text: '',
   title: '',
@@ -30,6 +28,5 @@ export const INITAIL_PACKAGE: PackagesTypes = {
   value: 0,
   valueText: '',
   vat: 0,
-  //   vatText: '',
   viewId: '',
 };
