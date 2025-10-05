@@ -2,7 +2,7 @@ import ChangeCyclePeriodLengthContainer from '@components/pages/webView/ChangeCy
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  robots: 'noindex, nofollow',
+  robots: { follow: false, index: false },
 };
 
 const ChangeCyclePeriodLength = () => {

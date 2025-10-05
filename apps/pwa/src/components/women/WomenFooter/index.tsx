@@ -1,5 +1,7 @@
 'use client';
 
+import { memo } from 'react';
+
 import { usePathname } from 'next/navigation';
 
 import WomenFooterContainer from './WomenFooterContainer';
@@ -15,4 +17,4 @@ const WomenFooter = () => {
   return <>{hasFooter && <WomenFooterContainer pathName={pathName} />}</>;
 };
 
-export default WomenFooter;
+export default memo(WomenFooter);

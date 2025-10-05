@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'مرهم',
   description: 'مرهم',
-  robots: 'index, follow',
+  robots: { follow: true, index: true },
   alternates: {
     canonical: `${HOST_URL}/landing/marham1`,
   },

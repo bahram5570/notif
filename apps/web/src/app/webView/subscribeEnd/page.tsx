@@ -2,7 +2,7 @@ import SubscribeEndContainer from '@components/pages/webView/SubscribeEndContain
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  robots: 'noindex, nofollow',
+  robots: { follow: false, index: false },
 };
 
 const SubscribeEnd = () => {

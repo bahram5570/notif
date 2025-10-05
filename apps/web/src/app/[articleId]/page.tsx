@@ -26,7 +26,7 @@ export const generateMetadata = async (props: { params: { articleId: string } })
 
   if (data) {
     return {
-      robots: 'index, follow',
+      robots: { follow: true, index: true },
       description: data.meta || '',
       title: data.snippetTitle || '',
       alternates: {

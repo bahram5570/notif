@@ -17,7 +17,6 @@ import SubmitBtn from './SubmitBtn';
 import SubscriptionPackages from './SubscriptionPackages';
 import SubscriptionSkeleton from './SubscriptionSkeleton';
 import useGetData from './__hooks__/useGetData';
-import useSelectedPackageIndex from './__hooks__/useSelectedPackage';
 import useShowAll from './__hooks__/useShowAll';
 import { SUBSCRIPTION_SUBMIT_BUTTON_HEIGHT } from './constants';
 
@@ -25,8 +24,8 @@ const SubscriptionPage = () => {
   const { showAll, showAllHandler } = useShowAll();
   const [approvedCode, setApprovedCode] = useState('');
   const [resetKey, setResetKey] = useState(0);
-  const { loadingPage, loadingResponse, callApi, data } = useGetData();
-  const { selectedPackageIndex, selectedPackageIndexHandler } = useSelectedPackageIndex();
+  const { loadingPage, loadingResponse, callApi, data, currentPackage, currentPackageHandler } = useGetData();
+
   const { colors } = useTheme();
   const handleReset = () => setResetKey((prev) => prev + 1);
 
@@ -50,7 +49,7 @@ const SubscriptionPage = () => {
             <div className="flex flex-col items-center px-4 gap-5">
               {mediasData && (
                 <div className="min-h-56 w-full h-full">
-                  <LottieCanvas src={data?.medias[0]} autoplay={true} style={{ width: '100%', height: '100%' }} />
+                  <LottieCanvas src={data.medias[0]} autoplay={true} style={{ width: '100%', height: '100%' }} />
                 </div>
               )}
 
@@ -67,8 +66,8 @@ const SubscriptionPage = () => {
               <SubscriptionPackages
                 packages={data.packages}
                 visibleCount={data.visibleCount}
-                selectedPackageIndex={selectedPackageIndex}
-                selectedPackageIndexHandler={selectedPackageIndexHandler}
+                currentPackage={currentPackage}
+                currentPackageHandler={currentPackageHandler}
               />
 
               <div key={resetKey} className="w-full">
@@ -82,12 +81,17 @@ const SubscriptionPage = () => {
               </div>
 
               {morePackagesData && !showAll && (
-                <div className="w-full flex items-center gap-2 p-4 " onClick={showAllHandler} id="SubscriptionLoadMore">
+                <div className="w-full flex items-center gap-2 py-4 " id="SubscriptionLoadMore">
                   <div className="w-full h-[1px] block" style={{ backgroundColor: colors.Neutral_Surface }} />
-
-                  <Typography scale="Lable" size="Medium" className="min-w-fit">
-                    مشاهده بیشتر پلن ها
-                  </Typography>
+                  <div
+                    className="px-4 py-2 min-w-fit rounded-full"
+                    style={{ backgroundColor: colors.PrimaryWoman_PrimaryContainer }}
+                    onClick={showAllHandler}
+                  >
+                    <Typography scale="Lable" size="Medium" color="PrimaryWoman_Primary">
+                      از اینجا پیشنهادهای بیشتر رو ببین
+                    </Typography>
+                  </div>
 
                   <div className="w-full h-[1px] block" style={{ backgroundColor: colors.Neutral_Surface }} />
                 </div>
@@ -97,8 +101,8 @@ const SubscriptionPage = () => {
                 <SubscriptionPackages
                   packages={data.morePackages}
                   visibleCount={data.visibleCount}
-                  selectedPackageIndex={selectedPackageIndex}
-                  selectedPackageIndexHandler={selectedPackageIndexHandler}
+                  currentPackage={currentPackage}
+                  currentPackageHandler={currentPackageHandler}
                 />
               )}
 
@@ -116,13 +120,13 @@ const SubscriptionPage = () => {
 
               <SubmitBtn
                 approvedCode={approvedCode}
-                packageId={data.packages[selectedPackageIndex].id}
-                isFree={data.packages[selectedPackageIndex].isFree}
-                value={data.packages[selectedPackageIndex].value}
-                payButtonText={data.packages[selectedPackageIndex].payBtnText}
-                totalText={data.packages[selectedPackageIndex].totalText}
-                totalAmount={data.packages[selectedPackageIndex].totalAmount}
-                totalUnit={data.packages[selectedPackageIndex].totalUnit}
+                packageId={currentPackage.id}
+                isFree={currentPackage.isFree}
+                value={currentPackage.value}
+                payButtonText={currentPackage.payBtnText}
+                totalText={currentPackage.totalText}
+                totalAmount={currentPackage.totalAmount}
+                totalUnit={currentPackage.totalUnit}
               />
             </div>
           </div>

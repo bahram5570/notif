@@ -2,7 +2,7 @@ import DiscountCodeContainer from '@components/pages/webView/DiscountCodeContain
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  robots: 'noindex, nofollow',
+  robots: { follow: false, index: false },
 };
 
 const DiscountCode = () => {

@@ -5,7 +5,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'درباره ما',
   description: 'ایمپو | درباره‌ما',
-  robots: 'index, follow',
+  robots: { follow: true, index: true },
   alternates: {
     canonical: `${HOST_URL}/aboutUs`,
   },

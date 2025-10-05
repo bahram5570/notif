@@ -2,7 +2,7 @@ import ChangeLastPeriodContainer from '@components/pages/webView/ChangeLastPerio
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  robots: 'noindex, nofollow',
+  robots: { follow: false, index: false },
 };
 
 const ChangeLastPeriod = () => {

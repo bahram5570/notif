@@ -1,6 +1,8 @@
-import { WidgetSubscriptionCardTypes } from '@app/(women)/protected/(mainRoutes)/widgetCards';
+import { WidgetSubscriptionCardTypes } from '@providers/WidgetActionsProvider/widgetCards';
 
 type PackagesTypes = Pick<WidgetSubscriptionCardTypes, 'data'>['data']['package'];
+
+export type currentPackageHandlerTypes = (i: PackagesTypes) => void;
 
 export type ResponseTypes = {
   text: string;

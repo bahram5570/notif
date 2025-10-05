@@ -25,7 +25,4 @@ const WomenFooterContainer = ({ pathName }: ContainerProps) => {
     </div>
   );
 };
-
-export default memo(WomenFooterContainer, (prev, next) => {
-  return prev.pathName === next.pathName;
-});
+export default WomenFooterContainer;

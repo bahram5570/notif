@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'اسم پسر خاص و تک؛ انتخاب اسم‌های پسرانه شیک و جدید',
   description:
     'با این راهنما، بین قشنگترین اسم‌های پسرانه‌ خاص، جدید، مذهبی یا ریشه‌دار، بهترین نام را برای فرزندتان متناسب با سلیقه، فرهنگ خود انتخاب کنید',
-  robots: 'index, follow',
+  robots: { follow: true, index: true },
   alternates: {
     canonical: `${HOST_URL}/landing/boy-name`,
   },

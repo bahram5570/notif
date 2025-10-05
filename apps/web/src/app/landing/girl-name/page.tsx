@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'زیباترین اسم دخترانه؛ انتخاب اسم دختر جدید، شیک و بامعنی',
   description:
     'با راهنمای انتخاب اسم دختر در کنار شما هستیم تا میان اسامی خاص، جدید، باکلاس و ریشه‌دار، زیباترین اسم دخترانه مناسب فرهنگ و سلیقه خود را پیدا کنید.',
-  robots: 'index, follow',
+  robots: { follow: true, index: true },
   alternates: {
     canonical: `${HOST_URL}/landing/girl-name`,
   },

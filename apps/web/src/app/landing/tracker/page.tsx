@@ -15,7 +15,7 @@ import { TRACKER_ACHIEVEMENTS_LIST, TRACKER_COMMENTS_LIST, TRACKER_FEATURES_INTR
 export const metadata: Metadata = {
   title: 'پریود ترکر و تقویم قاعدگی ایمپو',
   description: 'impo calendar',
-  robots: 'index, follow',
+  robots: { follow: true, index: true },
   alternates: {
     canonical: `${HOST_URL}/landing/tracker`,
   },
