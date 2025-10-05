@@ -17,7 +17,6 @@ import SubmitBtn from './SubmitBtn';
 import SubscriptionPackages from './SubscriptionPackages';
 import SubscriptionSkeleton from './SubscriptionSkeleton';
 import useGetData from './__hooks__/useGetData';
-import useSelectedPackageIndex from './__hooks__/useSelectedPackage';
 import useShowAll from './__hooks__/useShowAll';
 import { SUBSCRIPTION_SUBMIT_BUTTON_HEIGHT } from './constants';
 
@@ -25,8 +24,8 @@ const SubscriptionPage = () => {
   const { showAll, showAllHandler } = useShowAll();
   const [approvedCode, setApprovedCode] = useState('');
   const [resetKey, setResetKey] = useState(0);
-  const { loadingPage, loadingResponse, callApi, data } = useGetData();
-  const { selectedPackageIndex, selectedPackageIndexHandler } = useSelectedPackageIndex();
+  const { loadingPage, loadingResponse, callApi, data, currentPackage, currentPackageHandler } = useGetData();
+
   const { colors } = useTheme();
   const handleReset = () => setResetKey((prev) => prev + 1);
 
@@ -67,8 +66,8 @@ const SubscriptionPage = () => {
               <SubscriptionPackages
                 packages={data.packages}
                 visibleCount={data.visibleCount}
-                selectedPackageIndex={selectedPackageIndex}
-                selectedPackageIndexHandler={selectedPackageIndexHandler}
+                currentPackage={currentPackage}
+                currentPackageHandler={currentPackageHandler}
               />
 
               <div key={resetKey} className="w-full">
@@ -97,8 +96,8 @@ const SubscriptionPage = () => {
                 <SubscriptionPackages
                   packages={data.morePackages}
                   visibleCount={data.visibleCount}
-                  selectedPackageIndex={selectedPackageIndex}
-                  selectedPackageIndexHandler={selectedPackageIndexHandler}
+                  currentPackage={currentPackage}
+                  currentPackageHandler={currentPackageHandler}
                 />
               )}
 
@@ -116,13 +115,13 @@ const SubscriptionPage = () => {
 
               <SubmitBtn
                 approvedCode={approvedCode}
-                packageId={data.packages[selectedPackageIndex].id}
-                isFree={data.packages[selectedPackageIndex].isFree}
-                value={data.packages[selectedPackageIndex].value}
-                payButtonText={data.packages[selectedPackageIndex].payBtnText}
-                totalText={data.packages[selectedPackageIndex].totalText}
-                totalAmount={data.packages[selectedPackageIndex].totalAmount}
-                totalUnit={data.packages[selectedPackageIndex].totalUnit}
+                packageId={currentPackage.id}
+                isFree={currentPackage.isFree}
+                value={currentPackage.value}
+                payButtonText={currentPackage.payBtnText}
+                totalText={currentPackage.totalText}
+                totalAmount={currentPackage.totalAmount}
+                totalUnit={currentPackage.totalUnit}
               />
             </div>
           </div>

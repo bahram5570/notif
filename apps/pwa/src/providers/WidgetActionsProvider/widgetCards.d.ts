@@ -276,19 +276,19 @@ export type WidgetSubscriptionCardTypes = IsPdfDownloadingTypes & {
     title: string;
     package: {
       inAppPurchase: boolean;
-      payButtonText: string;
+      // payButtonText: string;
       realValueText: string;
       discountText: string;
-      specificText: string;
+      // specificText: string;
       totalPayText: string;
-      isSpecific: boolean;
+      // isSpecific: boolean;
       desciption: string;
-      realValue: number;
+      // realValue: number;
       valueText: string;
       discount: number;
       totalPay: number;
       isFree: boolean;
-      vatText: string;
+      // vatText: string;
       viewId: string;
       value: number;
       code: string;
