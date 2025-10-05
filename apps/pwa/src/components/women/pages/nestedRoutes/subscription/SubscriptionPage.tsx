@@ -49,7 +49,7 @@ const SubscriptionPage = () => {
             <div className="flex flex-col items-center px-4 gap-5">
               {mediasData && (
                 <div className="min-h-56 w-full h-full">
-                  <LottieCanvas src={data?.medias[0]} autoplay={true} style={{ width: '100%', height: '100%' }} />
+                  <LottieCanvas src={data.medias[0]} autoplay={true} style={{ width: '100%', height: '100%' }} />
                 </div>
               )}
 
@@ -81,12 +81,17 @@ const SubscriptionPage = () => {
               </div>
 
               {morePackagesData && !showAll && (
-                <div className="w-full flex items-center gap-2 p-4 " onClick={showAllHandler} id="SubscriptionLoadMore">
+                <div className="w-full flex items-center gap-2 py-4 " id="SubscriptionLoadMore">
                   <div className="w-full h-[1px] block" style={{ backgroundColor: colors.Neutral_Surface }} />
-
-                  <Typography scale="Lable" size="Medium" className="min-w-fit">
-                    مشاهده بیشتر پلن ها
-                  </Typography>
+                  <div
+                    className="px-4 py-2 min-w-fit rounded-full"
+                    style={{ backgroundColor: colors.PrimaryWoman_PrimaryContainer }}
+                    onClick={showAllHandler}
+                  >
+                    <Typography scale="Lable" size="Medium" color="PrimaryWoman_Primary">
+                      از اینجا پیشنهادهای بیشتر رو ببین
+                    </Typography>
+                  </div>
 
                   <div className="w-full h-[1px] block" style={{ backgroundColor: colors.Neutral_Surface }} />
                 </div>
