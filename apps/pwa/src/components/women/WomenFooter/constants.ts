@@ -1,15 +1,15 @@
-import FooterCalendarIcon from '@assets/icons/footerCalendar.svg';
-import FooterClinicIcon from '@assets/icons/footerClinic.svg';
-import FooterCycleIcon from '@assets/icons/footerCycle.svg';
-import FooterShareExperienceIcon from '@assets/icons/footerExperiences.svg';
-import FooterMateIcon from '@assets/icons/footerMate.svg';
+import FooterCalendarLottie from '@assets/lottie/tabsLottie/calendar_lottie.json';
+import FooterClinicLottie from '@assets/lottie/tabsLottie/clinic_lottie.json';
+import FooterCycleLottie from '@assets/lottie/tabsLottie/cycle_lottie.json';
+import FooterMateLottie from '@assets/lottie/tabsLottie/partner_lottie.json';
+import FooterShareExperienceLottie from '@assets/lottie/tabsLottie/social_lottie.json';
 
 export const FOOTER_PAGES_LIST = [
-  { url: '/protected/shareExperience', Icon: FooterShareExperienceIcon, title: 'تجربه‌ها' },
-  { url: '/protected/partner', Icon: FooterMateIcon, title: 'هم‌دل' },
-  { url: '/protected/cycle', Icon: FooterCycleIcon, title: 'چرخه' },
-  { url: '/protected/clinic', Icon: FooterClinicIcon, title: 'کلینیک' },
-  { url: '/protected/calendar', Icon: FooterCalendarIcon, title: 'تقویم' },
+  { url: '/protected/shareExperience', Icon: FooterShareExperienceLottie, title: 'تجربه‌ها' },
+  { url: '/protected/partner', Icon: FooterMateLottie, title: 'هم‌دل' },
+  { url: '/protected/cycle', Icon: FooterCycleLottie, title: 'چرخه' },
+  { url: '/protected/clinic', Icon: FooterClinicLottie, title: 'کلینیک' },
+  { url: '/protected/calendar', Icon: FooterCalendarLottie, title: 'تقویم' },
 ];
 
 export const FOOTER_HEIGTH = 80;
