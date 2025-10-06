@@ -1,4 +1,6 @@
-export const PERSIAN_BOY_NAME_DICTIONARY = {
+import { AlphabetBtnsListTypes } from '@components/SelectName/AlphabetBtns/types';
+
+export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   ا: {
     category: 'ا',
     list: [
