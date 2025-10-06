@@ -26,10 +26,10 @@ export const ItemGenerator = (props: { children: string }) => {
   );
 };
 
-export const LinkGenerator = (props: { children: string; href: string }) => {
+export const LinkGenerator = (props: { children: string; href: string; color?: keyof typeof COLORS_LIST }) => {
   return (
     <CustomLink href={props.href} className="inline">
-      <CustomTypography className="px-1 inline" color={'Primary_Primary'}>
+      <CustomTypography className="px-1 inline" color={props.color || 'Primary_Primary'}>
         {props.children}
       </CustomTypography>
     </CustomLink>
