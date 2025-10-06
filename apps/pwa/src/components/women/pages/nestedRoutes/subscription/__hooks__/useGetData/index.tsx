@@ -5,6 +5,8 @@ import useApi from '@hooks/useApi';
 import { INITAIL_PACKAGE } from './constants';
 import { PackagesTypes, ResponseTypes, currentPackageHandlerTypes } from './types';
 
+let viewId: null | string;
+
 const useGetData = () => {
   const [data, setData] = useState<ResponseTypes | null>(null);
   const [currentPackage, setCurrentPackage] = useState<PackagesTypes>(INITAIL_PACKAGE);
@@ -18,6 +20,8 @@ const useGetData = () => {
   });
 
   const currentPackageHandler: currentPackageHandlerTypes = (i) => {
+    viewId = i.viewId;
+
     setCurrentPackage(i);
   };
 
@@ -28,6 +32,15 @@ const useGetData = () => {
   useEffect(() => {
     if (data) {
       setCurrentPackage(data.packages[0]);
+      if (viewId) {
+        const packages = [...data.packages, ...data.morePackages];
+        const findCurrentPackage = packages.find((i) => i.viewId === viewId);
+        if (findCurrentPackage) {
+          setCurrentPackage(findCurrentPackage);
+        }
+      } else {
+        setCurrentPackage(data.packages[0]);
+      }
     }
   }, [data]);
 
