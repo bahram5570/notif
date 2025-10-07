@@ -24,8 +24,8 @@ const IranGirlNamePage = async () => {
       <div className="w-full flex flex-col items-center pb-12 mx-auto">
         <NameSelectionHeading />
         <QrCode />
-        <SelectNameAuthorProfile                      
-          name="مهلا شریعتی"
+        <SelectNameAuthorProfile
+          name=" کیمیا رفیعی"
           publishDate="31 مرداد"
           readingTime=" 12 دقیقه برای خواندن"
           imageUrl="/assets/images/doctor.webp"

@@ -27,7 +27,7 @@ const IranBoyNamePage = async () => {
         <QrCode />
 
         <SelectNameAuthorProfile
-          name="مهلا شریعتی"
+          name=" کیمیا رفیعی"
           publishDate="31 مرداد"
           readingTime=" 12 دقیقه برای خواندن"
           imageUrl="/assets/images/doctor.webp"
