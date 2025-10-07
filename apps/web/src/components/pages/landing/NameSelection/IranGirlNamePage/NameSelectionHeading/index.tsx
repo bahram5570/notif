@@ -24,11 +24,11 @@ const NameSelectionHeading = () => {
                         bg-center
                       "
           >
-            <div className="h-full w-full flex flex-col md:flex-row gap-2 md:gap-10 xl:gap-14 pt-[100px] md:pt-[160px] lg:pt-[100px]">
+            <div className="h-full w-full max-w-[350px] lg:max-w-full flex flex-col md:flex-row gap-2 md:gap-10 xl:gap-14 pt-[100px] md:pt-[160px] lg:pt-[100px]">
               <LandingHeadingContents contentElement={contentElement} />
               <LandingHeadingImage
                 imagePosition={'bottom'}
-                image="/assets/images/heading-girlNameSelection.webp"
+                image="/assets/images/heading-iranGirlNameSelection.webp"
                 imageClassName="lg:max-w-[580px] lg:max-h-[513px]  max-w-[200px] w-full h-full"
               />
             </div>

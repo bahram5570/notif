@@ -9,12 +9,13 @@ import NamesTable from '@components/SelectName/NamesTable';
 import SelectNameAuthorProfile from '@components/SelectName/SelectNameAuthorProfile';
 import CustomTypography from '@components/ui/CustomTypography';
 
+import AlphabetContent from './AlphabetContent';
 import Description from './Description';
 import IntroductionSection from './IntroductionSection';
 import NameSelectionHeading from './NameSelectionHeading';
 import { NAME_SELECTION_BANNER_NAME_1, PERSIAN_NAME_DICTIONARY } from './constants';
 
-const GirlNamePage = async () => {
+const IranGirlNamePage = async () => {
   const { ctaData } = await ctaBannerService(NAME_SELECTION_BANNER_NAME_1);
   const dataEntries = Object.entries(PERSIAN_NAME_DICTIONARY);
 
@@ -24,7 +25,7 @@ const GirlNamePage = async () => {
         <NameSelectionHeading />
         <QrCode />
         <SelectNameAuthorProfile
-          name="مهلا شریعتی"
+          name=" کیمیا رفیعی"
           publishDate="31 مرداد"
           readingTime=" 12 دقیقه برای خواندن"
           imageUrl="/assets/images/doctor.webp"
@@ -36,10 +37,8 @@ const GirlNamePage = async () => {
             bgColor2="Pink_100"
             textColor="Pink_900"
             list={PERSIAN_NAME_DICTIONARY}
-            title="اسم دختر جدید و شیک بر اساس حروف الفبا(همراه با ریشه و معنی)"
-            description="وقتی دنبال اسم دخترانه می‌گردی، یکی از بهترین راه‌ها اینه که از حروف الفبا شروع کنی. اینطوری انتخاب‌ها منظم‌تر و
-        پیدا کردن زیباترین و با کلاس‌ترین اسم دختر راحت‌تر می‌شه. تو هر بخش، ۲۰ تا اسم دخترانه گذاشتیم که با اون حرف
-        شروع می‌شن و می‌تونی کلی گزینه جذاب و جدید پیدا کنی، فقط کافیه روی حرف مورد نظرت کلیک کنی:"
+            title="اسم دختر ایرانی اصیل لاکچری بر اساس حروف الفبا"
+            description={<AlphabetContent />}
           />
           <IntroductionSection />
 
@@ -75,4 +74,4 @@ const GirlNamePage = async () => {
   );
 };
 
-export default GirlNamePage;
+export default IranGirlNamePage;
