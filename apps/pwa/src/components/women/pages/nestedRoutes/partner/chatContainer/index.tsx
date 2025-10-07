@@ -17,14 +17,14 @@ import useSubmit from './__hooks__/useSubmit';
 
 const ChatContainer = () => {
   const { colors } = useTheme();
-  const { chatId } = useParams();
+
   const [key, setKey] = useState(0);
-  const { data, isLoading } = useGetData({ id: typeof chatId === 'string' ? chatId : '' });
+  const { data, isLoading } = useGetData();
   const {
     submitHandler,
     data: newMessageData,
     isLoading: submitLoading,
-  } = useSubmit({ id: typeof chatId === 'string' ? chatId : '', resetChild: () => setKey((prev) => prev + 1) });
+  } = useSubmit({ resetChild: () => setKey((prev) => prev + 1) });
 
   const { messageList, onChangeMessageListHandler, progressData } = useMessageList({
     data,

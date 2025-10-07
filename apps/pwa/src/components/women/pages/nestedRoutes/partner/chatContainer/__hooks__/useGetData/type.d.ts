@@ -1,7 +1,3 @@
-export type UseGetDataPropsType = {
-  id: string;
-};
-
 export type ProgressPropsType = {
   visible: true;
   goldPercent: number;

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import PaperPlaneRightIcon from '@assets/icons/PaperPlaneRight.svg';
 
@@ -12,6 +12,15 @@ import { InputPropsType } from './type';
 const Input = ({ submitHandler, onChange }: InputPropsType) => {
   const { colors } = useTheme();
   const [messageValue, setMessageValue] = useState<ItemPropsType>(initailMessageValue);
+
+  const onClick = () => {
+    onChange(messageValue);
+    submitHandler({ text: messageValue.text });
+  };
+
+  const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setMessageValue({ ...messageValue, text: e.target.value });
+  };
 
   return (
     <div
@@ -27,7 +36,7 @@ const Input = ({ submitHandler, onChange }: InputPropsType) => {
         }}
         rows={1}
         value={messageValue.text}
-        onChange={(e) => setMessageValue({ ...messageValue, text: e.target.value })}
+        onChange={onChangeHandler}
       />
 
       <button
@@ -36,10 +45,7 @@ const Input = ({ submitHandler, onChange }: InputPropsType) => {
           background: !messageValue.text ? colors.Surface_SurfaceVariant : colors.PrimaryWoman_Primary,
           cursor: !messageValue ? 'not-allowed' : 'pointer',
         }}
-        onClick={() => {
-          onChange(messageValue);
-          submitHandler({ text: messageValue.text });
-        }}
+        onClick={onClick}
       >
         <PaperPlaneRightIcon
           className="w-6 h-6"

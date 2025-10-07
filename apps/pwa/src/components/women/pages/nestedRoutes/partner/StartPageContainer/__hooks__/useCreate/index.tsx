@@ -22,11 +22,7 @@ const useCreate = () => {
 
     router.back();
   };
-  const {
-    data,
-    callApi: create,
-    isLoading,
-  } = useApi({
+  const { callApi: create, isLoading } = useApi({
     api: 'partner/create',
     method: 'POST',
     onSuccess: (data: DataResponseType) => successHandler(data),

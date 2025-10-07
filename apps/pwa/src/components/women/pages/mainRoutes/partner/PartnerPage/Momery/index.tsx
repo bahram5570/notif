@@ -12,7 +12,7 @@ const Memory = ({ memory, valid }: MemeryPropsType) => {
   const { colors } = useTheme();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
-  const link = valid ? '/protected/memory/createMemory' : '/protected/partnerStart';
+  const link = valid ? '/protected/createMemory' : '/protected/partnerStart';
 
   const onClick = () => {
     pageNavigationHandler({ id: 'memoryList', showProgressBar: true, linkTo: '/protected/memory' });
