@@ -2,6 +2,7 @@
 
 import { useMemo, useRef, useState } from 'react';
 
+import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 import { COLORS_LIST } from '@theme/colors';
 
@@ -48,7 +49,9 @@ const AlphabetBtns = ({ title, description, list, textColor, bgColor1, bgColor2 
   return (
     <>
       {isScrolled && (
-        <div className="fixed left-0 bottom-[200px] w-10 h-10 bg-green-500" onClick={scrollToBtnsHandler}></div>
+        <div className="fixed right-2 bottom-4 cursor-pointer" onClick={scrollToBtnsHandler}>
+          <CustomImage width={100} height={100} alt="impo" src="/assets/images/toUp.webp" />
+        </div>
       )}
 
       <div className="w-full flex flex-col gap-2 md:gap-3  mx-auto px-3 pb-12" ref={ref}>

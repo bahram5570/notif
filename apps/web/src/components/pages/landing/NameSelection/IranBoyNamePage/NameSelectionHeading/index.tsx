@@ -28,7 +28,7 @@ const NameSelectionHeading = () => {
               <LandingHeadingContents contentElement={contentElement} />
               <LandingHeadingImage
                 imagePosition={'bottom'}
-                image="/assets/images/heading-boyNameSelection.webp"
+                image="/assets/images/heading-iranBoyNameSelection.webp"
                 imageClassName="lg:max-w-[580px] lg:max-h-[513px]  max-w-[200px] w-full h-full"
               />
             </div>
