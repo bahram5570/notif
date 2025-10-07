@@ -60,7 +60,7 @@ const Description = () => {
         </CustomTypography>
         <CustomTypography fontSize="Body_Large" color={'Neutral_OnBackground'} className="pb-3">
           اسم بخشی از هویت و روح آدمه. وقتی ریشه و معنی اسم ما زیبا و پرمفهومه، دختر خوشگل شما احساس ارزشمندی و افتخار
-          می‌کنه. اسم در ذهن دیگران اولین برداشت رو شکل می‌ده. به طوری که اسم دختر ایرانی خاص با ریشه و معنی نیکو
+          می‌کنه. اسم در ذهن دیگران اولین برداشت رو شکل می‌ده. به طوری که اسم دختر ایرا نی خاص با ریشه و معنی نیکو
           می‌تونه احترام، اعتماد و علاقه ایجاد کنه.
         </CustomTypography>
         <CustomTypography fontSize="Body_Large" color={'Neutral_OnBackground'} className="pb-3">
@@ -125,7 +125,7 @@ const Description = () => {
 
       <div className="w-full flex items-center justify-center gap-2 pt-6" onClick={() => setIsOpen(!isOpen)}>
         <CustomTypography fontSize="Title_Small" color={'Primary_Primary'}>
-          خواندن اطلاعات بیشتر
+          {isOpen ? 'بستن' : 'خواندن اطلاعات بیشتر '}
         </CustomTypography>
 
         <ArrowIcon
@@ -138,37 +138,3 @@ const Description = () => {
 };
 
 export default Description;
-
-const TitleGenerator = (props: { children: string; tagType: 'h2' | 'h3' }) => {
-  return (
-    <CustomTypography tagType={props.tagType} fontSize="Title_Small" className="mt-3 mb-2">
-      {props.children}
-    </CustomTypography>
-  );
-};
-
-const TextGenerator = (props: { children: string }) => {
-  return <CustomTypography className="inline">{props.children}</CustomTypography>;
-};
-
-const ItemGenerator = (props: { children: string }) => {
-  return (
-    <div className="flex items-start gap-4 mr-6 pb-1">
-      <span
-        style={{ backgroundColor: COLORS_LIST.Neutral_OnBackground }}
-        className="w-[6px] h-[6px] min-w-[6px] min-h-[6px] mt-2 rounded-full"
-      />
-      <CustomTypography className="inline">{props.children}</CustomTypography>
-    </div>
-  );
-};
-
-const LinkGenerator = (props: { children: string; href: string }) => {
-  return (
-    <CustomLink href={props.href} className="inline">
-      <CustomTypography className="px-1 inline" color={'Primary_Primary'}>
-        {props.children}
-      </CustomTypography>
-    </CustomLink>
-  );
-};

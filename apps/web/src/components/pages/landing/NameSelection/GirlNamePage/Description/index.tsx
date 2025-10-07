@@ -179,6 +179,11 @@ const Description = () => {
         <TextGenerator>
           با این اسم‌ها هم اصالت داری، هم یه انتخاب متفاوت و شیرین برای کوچولوت انجام می‌دی.
         </TextGenerator>
+        <div className="mt-2">
+          <TextGenerator>اگه میخوای لیست کامل اسم‌های اصیل فارسی رو ببینی، روی</TextGenerator>
+          <LinkGenerator href="/landing/iran-girl-name">اسم دختر ایرانی</LinkGenerator>
+          <TextGenerator>و اسم پسر ایرانی کلیک کن.</TextGenerator>
+        </div>
 
         <TitleGenerator tagType="h2">اسم دختر کردی</TitleGenerator>
         <TextGenerator>

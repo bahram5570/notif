@@ -16,7 +16,7 @@ const LandingHeading = ({
 
   return (
     <div className="relative w-full h-[680px] md:h-[520px] lg:h-[680px] xl:h-[750px] flex flex-col items-end justify-center overflow-hidden">
-      <div className="absolute left-0 right-0 bottom-0 flex justify-center z-10">
+      <div className="absolute left-0 right-0 bottom-0 flex justify-center">
         <div className="w-[700dvw] h-[700dvw] min-w-[700dvw] min-h-[700dvw] rounded-full flex items-end overflow-hidden">
           <div
             style={{ backgroundImage: bg }}

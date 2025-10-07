@@ -8,7 +8,7 @@ const NameSelectionHeading = () => {
 
   return (
     <div className="relative w-full h-[900px] md:h-[520px] lg:h-[900px] xl:h-[750px] flex flex-col items-end justify-center overflow-hidden">
-      <div className="absolute left-0 right-0 bottom-0 flex justify-center z-10">
+      <div className="absolute left-0 right-0 bottom-0 flex justify-center">
         <div className="w-[700dvw] h-[700dvw] min-w-[700dvw] min-h-[700dvw] rounded-full flex items-end overflow-hidden">
           <div
             style={{ backgroundImage: 'linear-gradient(to bottom, #FEF2F5 , #FFDDE6)' }}
@@ -24,7 +24,7 @@ const NameSelectionHeading = () => {
                         bg-center
                       "
           >
-            <div className="h-full w-full flex flex-col md:flex-row gap-2 md:gap-10 xl:gap-14 pt-[100px] md:pt-[160px] lg:pt-[100px]">
+            <div className="h-full w-full max-w-[350px] lg:max-w-full flex flex-col md:flex-row gap-2 md:gap-10 xl:gap-14 pt-[100px] md:pt-[160px] lg:pt-[100px]">
               <LandingHeadingContents contentElement={contentElement} />
               <LandingHeadingImage
                 imagePosition={'bottom'}

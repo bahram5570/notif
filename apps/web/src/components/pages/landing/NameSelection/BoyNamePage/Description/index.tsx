@@ -6,6 +6,7 @@ import ArrowIcon from '@assets/icons/arrow2.svg';
 import { textShorter } from '@utils/scripts';
 
 import { ItemGenerator, LinkGenerator, TextGenerator, TitleGenerator } from '@components/SelectName/Description';
+import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import { COLORS_LIST } from '@theme/colors';
 
@@ -36,8 +37,11 @@ const Description = () => {
       <CustomTypography fontSize="Body_Large" color={'Neutral_OnBackground'} className="pb-3">
         وقتی به لیست بلند بالای اسم‌های پسرانه جدید و شیک نگاه می‌کنی، ممکنه کمی گیج بشی. برای انتخاب اسم پسر خاص و تک
         باید حسابی بهش فکر کنین چون این اسم قراره تا همیشه همراه بچه شما باشه و هویتش رو بسازه. اگه تازه وارد مسیر شیرین
-        بارداری شدی و هنوز سوالای زیادی تو ذهنت هست، یه سر به مقاله{' '}
-        <LinkGenerator href="/pregnancy"> بارداری</LinkGenerator> بزن تا با نکات کاربردی این دوران بیشتر آشنا شی.
+        بارداری شدی و هنوز سوالای زیادی تو ذهنت هست، یه سر به مقاله
+        <CustomLink href="/pregnancy" color="Primary_Primary" className="px-1">
+          بارداری
+        </CustomLink>
+        بزن تا با نکات کاربردی این دوران بیشتر آشنا شی.
       </CustomTypography>
       <CustomTypography fontSize="Body_Large" color={'Neutral_OnBackground'} className="pb-3">
         در ادامه، چند تا نکته هست که بهتره تو انتخاب قشنگ‌ترین اسم‌های پسرانه در نظر بگیری
@@ -157,6 +161,12 @@ const Description = () => {
         <ItemGenerator>آرتین: پاک و مقدس</ItemGenerator>
         <ItemGenerator>اهورا: هستی بخش</ItemGenerator>
         <ItemGenerator>ویهان: نیکان</ItemGenerator>
+
+        <div className="mt-2">
+          <TextGenerator>اگه دنبال اسم‌های اصیل ایرانی هستی، روی اسم دختر ایرانی و</TextGenerator>
+          <LinkGenerator href="/landing/iran-boy-name">اسم پسر ایرانی</LinkGenerator>
+          <TextGenerator>کلیک کن.</TextGenerator>
+        </div>
 
         <TitleGenerator tagType="h2">اسم پسر کردی</TitleGenerator>
         <TextGenerator className="mb-2">
