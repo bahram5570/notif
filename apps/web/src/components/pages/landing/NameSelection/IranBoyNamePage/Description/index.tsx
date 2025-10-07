@@ -5,7 +5,8 @@ import { useEffect, useRef, useState } from 'react';
 import ArrowIcon from '@assets/icons/arrow2.svg';
 import { textShorter } from '@utils/scripts';
 
-import { ItemGenerator, LinkGenerator, TitleGenerator } from '@components/SelectName/Description';
+import { ItemGenerator, TitleGenerator } from '@components/SelectName/Description';
+import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import { COLORS_LIST } from '@theme/colors';
 
@@ -35,9 +36,9 @@ const Description = () => {
 
       <CustomTypography fontSize="Body_Large" color={'Neutral_OnBackground'} className="pb-3">
         یکی از اولین چیزایی که مادر و پدر‌ها با اولین
-        <LinkGenerator href="/pregnancy-symptoms" color="PrimaryMan_PrimaryMan">
+        <CustomLink href="/pregnancy-symptoms" color="PrimaryMan_PrimaryMan">
           علائم بارداری
-        </LinkGenerator>
+        </CustomLink>
         به ذهنشون میاد، این که اسم بچم رو چی بذارم! اگه شما هم این دغدغه رو دارین، باید بگیم که اگرچه انتخاب اسم برای
         فرزند یه موضوع سلیقه‌ایه، اما بهتره در انتخاب اسم پسر ایرانی، به چند نکته و اصول مهم توجه کنین!
       </CustomTypography>
@@ -50,9 +51,9 @@ const Description = () => {
       <TitleGenerator tagType="h3">اهمیت توجه به ریشه و معنی در انتخاب اسم پسر ایرانی</TitleGenerator>
       <CustomTypography fontSize="Body_Large" color={'Neutral_OnBackground'}>
         اگه
-        <LinkGenerator href="/pregnancy-symptoms-of-having-a-girl" color="PrimaryMan_PrimaryMan">
+        <CustomLink href="/pregnancy-symptoms-of-having-a-girl" color="PrimaryMan_PrimaryMan">
           علائم صد در صد جنین دختر
-        </LinkGenerator>
+        </CustomLink>
         یا پسر دارین، حتماً به دنبال اسامی دختر و پسر زیبا و پر‌معنی هستین!
       </CustomTypography>
       <CustomTypography fontSize="Body_Large" color={'Neutral_OnBackground'}>
