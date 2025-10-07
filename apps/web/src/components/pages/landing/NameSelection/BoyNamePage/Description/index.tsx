@@ -274,7 +274,7 @@ const Description = () => {
 
       <div className="w-full flex items-center justify-center gap-2 pt-6" onClick={() => setIsOpen(!isOpen)}>
         <CustomTypography fontSize="Title_Small" color={'PrimaryMan_PrimaryMan'}>
-          خواندن اطلاعات بیشتر
+          {isOpen ? 'بستن' : 'خواندن اطلاعات بیشتر'}
         </CustomTypography>
 
         <ArrowIcon
