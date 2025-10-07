@@ -6,7 +6,6 @@ import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import useTheme from '@hooks/useTheme';
 
 import useSubmit from './__hooks__/useSubmit';
@@ -15,9 +14,14 @@ const CommentContainer = () => {
   const [comment, setComment] = useState('');
   const { colors } = useTheme();
   const { isLoading, submitHandler } = useSubmit();
-  const { getQueryParams } = useQueryParamsHandler();
 
-  const memoryId = getQueryParams('memoryId');
+  const onClick = () => {
+    submitHandler({ text: comment });
+  };
+
+  const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setComment(e.target.value);
+  };
 
   return (
     <WomenPageLayout rightElement="BackButton" rightElementScript="خاطره بازی" paddingTop={0}>
@@ -43,7 +47,7 @@ const CommentContainer = () => {
           style={{ border: `1px solid ${colors.Neutral_Surface}`, outlineColor: colors.PrimaryWoman_Primary }}
           rows={4}
           value={comment}
-          onChange={(e) => setComment(e.target.value)}
+          onChange={onChangeHandler}
         />
 
         <footer className="mt-auto">
@@ -53,7 +57,7 @@ const CommentContainer = () => {
             color="primary"
             fullWidth={true}
             className="px-6 py-2 "
-            onClick={() => submitHandler({ id: memoryId, text: comment })}
+            onClick={onClick}
             isDisable={!comment}
             isLoading={isLoading}
           >

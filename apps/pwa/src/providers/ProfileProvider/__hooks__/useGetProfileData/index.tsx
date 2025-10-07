@@ -1,22 +1,19 @@
-import { useEffect, useRef } from 'react';
-
-import { isDevelopeMode } from '@utils/system';
+import { useRef } from 'react';
 
 import { APP_VERSION } from '@constants/app.constants';
 import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 
-import { ProfileResponseTypes, UseGetProfileDataPropsType } from './type';
+import { ProfileResponseTypes } from './type';
 
-const useGetProfileData = (onComplete?: UseGetProfileDataPropsType) => {
+const useGetProfileData = (onComplete?: () => void) => {
   const { cultureHandler } = useCulture();
-  const isFirstTime = useRef(isDevelopeMode());
   const timerRef = useRef<NodeJS.Timeout | null>(null);
-  const { newQuery, getQuery } = useCustomReactQuery(['profile']);
+  const { getQuery, updateQuery } = useCustomReactQuery(['profile']);
 
   const successHandler = (v: ProfileResponseTypes) => {
-    newQuery({ payload: v, queryKey: ['profile'] });
+    updateQuery({ payload: v, queryKey: ['profile'] });
     cultureHandler('calendarType', v.calendarType);
 
     if (onComplete) {
@@ -29,8 +26,6 @@ const useGetProfileData = (onComplete?: UseGetProfileDataPropsType) => {
     api: 'profile/woman/info',
     onSuccess: successHandler,
   });
-
-  const data = getQuery<ProfileResponseTypes>({ queryKey: ['profile'] });
 
   const getDataHandler = () => {
     const payload = {
@@ -55,22 +50,7 @@ const useGetProfileData = (onComplete?: UseGetProfileDataPropsType) => {
     }, ms * 1000);
   };
 
-  useEffect(() => {
-    if (isFirstTime.current) {
-      isFirstTime.current = false;
-      return;
-    }
-
-    if (!data) {
-      getDataHandler();
-    } else {
-      newQuery({ payload: data, queryKey: ['profile'] });
-    }
-
-    if (timerRef.current) {
-      clearTimeout(timerRef.current);
-    }
-  }, []);
+  const data = getQuery<{ data: ProfileResponseTypes }>({ queryKey: ['profile'] })?.data;
 
   return { isLoading: dataLoading, data, updateProfileData, updateProfileDateByDellay };
 };

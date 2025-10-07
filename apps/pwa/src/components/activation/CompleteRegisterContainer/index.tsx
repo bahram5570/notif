@@ -6,7 +6,6 @@ import useTheme from '@hooks/useTheme';
 import AccessNotificationContainer from '../pages/AccessNotificationContainer';
 import PartnerCodeContainer from '../pages/PartnerCodeContainer';
 import CompleteRegisterCycleLoading from './CompleteRegisterCycleLoading';
-import useCompleteRegisterCookie from './__hooks__/useCompleteRegisterCookie';
 import useCompleteRegisterSteps from './__hooks__/useCompleteRegisterSteps';
 import { CompleteRegisterStepsEnum } from './enums';
 import { CompleteRegisterContainerProps } from './types';
@@ -19,7 +18,6 @@ const CompleteRegisterContainer = ({
   payload,
 }: CompleteRegisterContainerProps) => {
   const { colors } = useTheme();
-  useCompleteRegisterCookie({ fetchedUser, clearStorage });
   const { step, stepHandler } = useCompleteRegisterSteps({ accessNotificationData, partnerData });
   const { goalInfo } = useGoalFinder({ status: payload.status, periodStatus: payload.periodStatus });
 
@@ -68,7 +66,11 @@ const CompleteRegisterContainer = ({
       )}
 
       {step === CompleteRegisterStepsEnum.Loading && (
-        <CompleteRegisterCycleLoading createCycleImage={goalInfo.createCycleImage} />
+        <CompleteRegisterCycleLoading
+          fetchedUser={fetchedUser}
+          clearStorage={clearStorage}
+          createCycleImage={goalInfo.createCycleImage}
+        />
       )}
     </div>
   );

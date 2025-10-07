@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: { clinicType: numbe
   if (data) {
     return {
       title: data.metaTitle || '',
-      robots: 'index, follow',
+      robots: { follow: true, index: true },
       description: data.metaDescription || '',
       alternates: {
         canonical: `${HOST_URL}/landing/clinic/${params.clinicType}`,

@@ -2,7 +2,7 @@ import XiaomiContainer from '@components/pages/webView/XiaomiContainer';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  robots: 'noindex, nofollow',
+  robots: { follow: false, index: false },
 };
 
 const Xiaomi = () => {

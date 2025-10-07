@@ -6,7 +6,7 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'بنرهای CTA',
   description: 'بنرهای CTA',
-  robots: 'noindex, nofollow',
+  robots: { follow: false, index: false },
 };
 
 const CtaBannerList = async () => {

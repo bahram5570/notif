@@ -1,7 +1,6 @@
-import http from '@services/http';
+import { completeCacheService } from '@services/cachingServices';
 
 import BlogsPageContainer from '@components/pages/blogs/BlogsPageContainer';
-import { CACHE_REVALIDATE_TIME } from '@constants/app.constants';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
 
@@ -10,19 +9,14 @@ import { BlogsResponseTypes } from './types';
 export const metadata: Metadata = {
   title: 'مقالات',
   description: 'blogs',
-  robots: 'index, follow',
+  robots: { follow: true, index: true },
   alternates: {
     canonical: `${HOST_URL}/blogs`,
   },
 };
 
 const Blogs = async () => {
-  const { data } = await http<BlogsResponseTypes>({
-    method: 'GET',
-    cache: 'force-cache',
-    revalidate: CACHE_REVALIDATE_TIME,
-    url: 'support/article/category/1/10',
-  });
+  const data = await completeCacheService<BlogsResponseTypes>('support/article/category/1/10');
 
   if (!data) {
     return <></>;

@@ -6,4 +6,7 @@ export interface SubmitBtnProps {
   packageId: string;
   isFree: boolean;
   value: number;
+  totalText: string;
+  totalAmount: string;
+  totalUnit: string;
 }

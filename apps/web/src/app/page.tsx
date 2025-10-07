@@ -7,7 +7,7 @@ import HomeSchema from '../schema/HomeSchema';
 export const metadata: Metadata = {
   title: 'ایمپو | بزرگترین پلتفرم حوزه سلامت زنان',
   description: 'ایمپو | بزرگترین پلتفرم حوزه سلامت زنان',
-  robots: 'index, follow',
+  robots: { follow: true, index: true },
   alternates: {
     canonical: HOST_URL,
   },

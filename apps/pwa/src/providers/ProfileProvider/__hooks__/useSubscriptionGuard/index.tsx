@@ -8,7 +8,11 @@ const useSubscriptionGuard = (remainDays?: number) => {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (typeof remainDays !== 'undefined' && remainDays <= 0) {
+    if (remainDays === undefined) {
+      return;
+    }
+
+    if (remainDays <= 0) {
       const isNoNeedSubscription = NO_NEED_SUBSCRIPTION_PAGES_LIST.includes(pathname);
 
       if (!isNoNeedSubscription) {

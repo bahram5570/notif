@@ -19,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: 'پیشگیری از بارداری یا اقدام به بارداری',
   description: 'Preventing pregnancy or trying to get pregnant',
-  robots: 'index, follow',
+  robots: { follow: true, index: true },
   alternates: {
     canonical: `${HOST_URL}/landing/intention`,
   },

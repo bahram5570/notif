@@ -4,8 +4,3 @@ export type ProfileContextTypes = {
   profileData: ProfileResponseTypes | undefined;
   isLoading: boolean;
 };
-
-export type ProfileProviderPropsTypes = {
-  children: React.ReactNode;
-  onComplete?: () => void;
-};

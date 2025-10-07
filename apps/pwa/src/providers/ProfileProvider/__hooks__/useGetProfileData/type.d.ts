@@ -2,7 +2,6 @@ import { CycleThemeEnum } from '@services/loginServices/enum';
 
 import { ChildTypeEnum, PeriodStatusEnum, WomanStatusEnum } from '@constants/activation.constants';
 import { CalendarTypeEnum } from '@constants/date.constants';
-import { ProfileProviderPropsTypes } from '@providers/ProfileProvider/type';
 import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
 
 import { SexualStatusEnum } from './enum';
@@ -48,5 +47,3 @@ export type ProfileResponseTypes = {
   supportPhone: string;
   cycleTheme: CycleThemeEnum;
 };
-
-export type UseGetProfileDataPropsType = Pick<ProfileProviderPropsTypes, 'onComplete'>['onComplete'];

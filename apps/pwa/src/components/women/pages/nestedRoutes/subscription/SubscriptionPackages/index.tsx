@@ -1,43 +1,18 @@
-import Typography from '@components/ui/Typography';
 import SubscriptionGenerator from '@components/women/SubscriptionGenerator';
-import useTheme from '@hooks/useTheme';
 
-import useUpdatedList from './__hooks__/useUpdatedList';
 import { SubscriptionPackagesProps } from './types';
 
-const SubscriptionPackages = ({
-  selectedPackageIndexHandler,
-  selectedPackageIndex,
-  showAllHandler,
-  visibleCount,
-  packages,
-  showAll,
-}: SubscriptionPackagesProps) => {
-  const { colors } = useTheme();
-  const { updatedList } = useUpdatedList({ packages, showAll, visibleCount });
-
+const SubscriptionPackages = ({ currentPackageHandler, currentPackage, packages }: SubscriptionPackagesProps) => {
   return (
-    <div className="w-full z-0 flex flex-col gap-6 my-4">
-      {updatedList.map((items, index) => (
+    <div className="w-full z-0 flex flex-col gap-3 my-4">
+      {packages.map((items, index) => (
         <SubscriptionGenerator
-          onSelect={() => selectedPackageIndexHandler(index)}
-          isSelected={selectedPackageIndex === index}
+          onSelect={() => currentPackageHandler(items)}
+          isSelected={currentPackage.id === items.id}
           key={index}
           {...items}
         />
       ))}
-
-      {!showAll && (
-        <div className="w-full flex items-center gap-2 p-4 " onClick={showAllHandler} id="SubscriptionLoadMore">
-          <div className="w-full h-[1px] block" style={{ backgroundColor: colors.Neutral_Surface }} />
-
-          <Typography scale="Lable" size="Medium" className="min-w-fit">
-            مشاهده بیشتر پلن ها
-          </Typography>
-
-          <div className="w-full h-[1px] block" style={{ backgroundColor: colors.Neutral_Surface }} />
-        </div>
-      )}
     </div>
   );
 };

@@ -1,22 +1,35 @@
-'use client';
+import http from '@services/http';
 
-import { createContext } from 'react';
+import { APP_VERSION } from '@constants/app.constants';
+import { HydrationBoundary, QueryClient, dehydrate } from '@tanstack/react-query';
 
-import useGetProfileData from './__hooks__/useGetProfileData';
-import useSubscriptionGuard from './__hooks__/useSubscriptionGuard';
-import { ProfileContextTypes, ProfileProviderPropsTypes } from './type';
+import ProfileProviderContainer from './ProfileProviderContainer';
+import { ProfileResponseTypes } from './__hooks__/useGetProfileData/type';
 
-export const ProfileContext = createContext<ProfileContextTypes>({ profileData: undefined, isLoading: false });
+const getData = async () => {
+  const payload = {
+    type: 0,
+    packageName: '',
+    version: APP_VERSION,
+  };
 
-const ProfileProvider = ({ children, onComplete }: ProfileProviderPropsTypes) => {
-  const { data, isLoading } = useGetProfileData(onComplete);
+  return await http<ProfileResponseTypes>({ url: 'profile/woman/info', method: 'POST', payload });
+};
 
-  useSubscriptionGuard(data?.remaindDays);
+const ProfileProvider = async ({ children }: { children: React.ReactNode }) => {
+  const queryClient = new QueryClient();
+
+  await queryClient.prefetchQuery({
+    queryKey: ['profile'],
+    queryFn: getData,
+  });
 
   return (
-    <ProfileContext.Provider value={{ profileData: data, isLoading }}>
-      <>{children}</>
-    </ProfileContext.Provider>
+    <HydrationBoundary state={dehydrate(queryClient)}>
+      <ProfileProviderContainer>
+        <>{children}</>
+      </ProfileProviderContainer>
+    </HydrationBoundary>
   );
 };
 

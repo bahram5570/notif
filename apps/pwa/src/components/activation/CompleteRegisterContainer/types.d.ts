@@ -12,6 +12,7 @@ export interface CompleteRegisterContainerProps {
   partnerData?: { reward?: PageTypes; question?: PageTypes };
 }
 
-export interface CompleteRegisterCycleLoadingProps {
+export interface CompleteRegisterCycleLoadingProps
+  extends Pick<CompleteRegisterContainerProps, 'fetchedUser' | 'clearStorage'> {
   createCycleImage: string;
 }

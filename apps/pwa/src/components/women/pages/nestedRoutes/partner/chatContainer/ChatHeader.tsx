@@ -1,7 +1,4 @@
-import { useEffect, useState } from 'react';
-
 import ArrowIcon from '@assets/icons/arrow.svg';
-import { gregorianFarsiScriptDate, jalaaliScriptDate } from '@utils/dates';
 
 import CustomImage from '@components/ui/CustomImage';
 import Spinner from '@components/ui/Spinner';
@@ -18,6 +15,10 @@ const ChatHeader = ({ createTime, partnerAvatar, partnerName, progress, avatar }
   const { colors } = useTheme();
   const { currentDate } = useCalendarDateFormat({ date: createTime });
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+
+  const onClick = () => {
+    pageNavigationHandler({ showProgressBar: false, linkTo: -1, id: 'back' });
+  };
 
   return (
     <div
@@ -46,13 +47,7 @@ const ChatHeader = ({ createTime, partnerAvatar, partnerName, progress, avatar }
             </div>
           </div>
 
-          <div
-            className="cursor-pointer flex justify-center items-center"
-            style={{ width: 32, height: 32 }}
-            onClick={() => {
-              pageNavigationHandler({ showProgressBar: false, linkTo: -1, id: 'back' });
-            }}
-          >
+          <div className="cursor-pointer flex justify-center items-center w-8 h-8" onClick={onClick}>
             {pageNavigationLoading === 'back' && <Spinner color="outline" width={28} />}
             {pageNavigationLoading !== 'back' && (
               <ArrowIcon className="w-6 h-full stroke-2" style={{ stroke: colors.Surface_Outline }} />

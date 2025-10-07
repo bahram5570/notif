@@ -1,6 +1,8 @@
-import { WidgetSubscriptionCardTypes } from '@app/(women)/protected/(mainRoutes)/widgetCards';
+import { WidgetSubscriptionCardTypes } from '@providers/WidgetActionsProvider/widgetCards';
 
 type PackagesTypes = Pick<WidgetSubscriptionCardTypes, 'data'>['data']['package'];
+
+export type currentPackageHandlerTypes = (i: PackagesTypes) => void;
 
 export type ResponseTypes = {
   text: string;
@@ -16,6 +18,7 @@ export type ResponseTypes = {
   organizationText: string;
   showCloseButton: boolean;
   packages: PackagesTypes[];
+  morePackages: PackagesTypes[];
   discountCodeHelper: string;
   upTextOrganization: string;
   isShowOrganization: boolean;
@@ -24,4 +27,5 @@ export type ResponseTypes = {
   isValidDiscountCode: boolean;
   visibleCount: number;
   medias: string[];
+  discount: { text: string; valid: boolean };
 };

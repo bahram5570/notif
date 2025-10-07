@@ -1,30 +1,37 @@
+import { useState } from 'react';
+
 import Typography from '@components/ui/Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
+import { LottieJson } from '@lib/LottieJson';
 
 import { PageIconsProps } from './types';
 
 const PageIcons = ({ Icon, title, isSelected, url }: PageIconsProps) => {
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { colors } = useTheme();
+  const [resetkey, setResetKey] = useState(Math.random());
 
   const navigateHandler = () => {
-    pageNavigationHandler({ showProgressBar: true, id: 'PageIcons', linkTo: url });
+    setResetKey(Math.random());
+
+    pageNavigationHandler({
+      showProgressBar: true,
+      id: 'PageIcons',
+      linkTo: url,
+    });
   };
 
   return (
     <div className="flex flex-col items-center cursor-pointer" onClick={navigateHandler}>
-      <Icon
+      <LottieJson
+        loop={false}
+        key={resetkey}
+        autoplay={true}
+        animationData={Icon}
         className="w-7 h-auto"
-        style={{ stroke: isSelected ? colors.Neutral_OnBackground : colors.Surface_Outline }}
+        style={{ opacity: isSelected ? 1 : 0.4 }}
       />
 
-      <Typography
-        scale="Body"
-        size="Small"
-        className=""
-        color={isSelected ? 'Neutral_OnBackground' : 'Surface_Outline'}
-      >
+      <Typography scale="Body" size="Small" color={isSelected ? 'Neutral_OnBackground' : 'Surface_Outline'}>
         {title}
       </Typography>
     </div>

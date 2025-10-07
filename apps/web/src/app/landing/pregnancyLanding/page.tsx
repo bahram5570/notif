@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   title: 'ایمپو؛ تخصصی‌ترین اپلیکیشن بارداری هفته به هفته',
   description:
     'با اپلیکیشن بارداری ایمپو، وضعیت جنین و آزمایش‌ها رو به صورت هفتگی دنبال کن و با توصیه‌های تخصصی،رژیم غذایی و پزشک آنلاین بارداری رو با آرامش سپری کن.',
-  robots: 'index, follow',
+  robots: { follow: true, index: true },
   alternates: {
     canonical: `${HOST_URL}/landing/pregnancyLanding`,
   },

@@ -10,13 +10,12 @@ const ShareTextBtn = ({ shareText }: ShareTextBtnPropsType) => {
   const { colors } = useTheme();
   const { handleShare } = useShareNavigator();
 
+  const onClick = () => {
+    handleShare(shareText || '');
+  };
+
   return (
-    <div
-      className="flex justify-center"
-      onClick={() => {
-        handleShare(shareText || '');
-      }}
-    >
+    <div className="flex justify-center" onClick={onClick}>
       <div
         style={{ backgroundColor: colors.PrimaryWoman_PrimaryContainer }}
         className="flex items-center gap-2 px-8 py-1 rounded-full border-[1px] select-none cursor-pointer w-full h-[48px]"
