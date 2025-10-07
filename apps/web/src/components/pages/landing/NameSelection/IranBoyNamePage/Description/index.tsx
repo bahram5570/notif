@@ -130,8 +130,11 @@ const Description = () => {
 
         <CustomTypography fontSize="Body_Large" color={'Neutral_OnBackground'}>
           اوستایی، به زبان باستانی ایران اشاره داره که در متون مقدس زرتشتیان، به‌ویژه اوستا (کتاب مقدس آیین زرتشت)، به
-          کار می‌رفته. بسیاری از اسم‌های اوستایی به مفاهیم معنوی و زرتشتی اشاره دارن و امروزه هم به‌عنوان اسم پسر و اسم
-          دختر ایرانی اصیل شناخته میشن.
+          کار می‌رفته. بسیاری از اسم‌های اوستایی به مفاهیم معنوی و زرتشتی اشاره دارن و امروزه هم به‌عنوان اسم پسر و{' '}
+          <CustomLink href="/landing/iran-girl-name" color="PrimaryMan_PrimaryMan">
+            اسم دختر
+          </CustomLink>
+          ایرانی اصیل شناخته میشن.
         </CustomTypography>
         <CustomTypography fontSize="Body_Large" color={'Neutral_OnBackground'}>
           چندتا اسم پسر فارسی خاص و تک که ریشه اوستایی دارن، در ادامه آورده شده:

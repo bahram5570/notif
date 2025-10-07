@@ -3,6 +3,7 @@ import { AlphabetBtnsListTypes } from '@components/SelectName/AlphabetBtns/types
 export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   ا: {
     category: 'ا',
+    labelTitle: 'انتخاب اسم پسر بر اساس حرف',
     list: [
       { title: 'ارشان', description: 'والا مقام', rootName: 'فارسی' },
       { title: 'ایلیار', description: 'حامی مردم', rootName: 'ترکی' },
@@ -28,6 +29,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   آ: {
     category: 'آ',
+    labelTitle: 'اسم پسر خاص و تک بر اساس حرف',
     list: [
       { title: 'آراد', description: 'جوانمرد', rootName: 'فارسی' },
       { title: 'آیراد', description: 'ماه جوانمرد', rootName: 'ترکی' },
@@ -53,6 +55,8 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   B: {
     category: 'ب',
+    labelTitle: 'انتخاب اسم پسر کمیاب بر اساس حرف',
+
     list: [
       { title: 'بهنود', description: 'پسر عزیز', rootName: 'فارسی' },
       { title: 'باراک', description: 'رعد', rootName: 'عبری' },
@@ -63,7 +67,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
       { title: 'بهراد', description: 'جوانمرد نیکو', rootName: 'فارسی' },
       { title: 'بهنیا', description: 'اصیل', rootName: 'فارسی' },
       { title: 'بردیا', description: 'نام دومین پسر کوروش', rootName: 'فارسی' },
-      { title: 'برسام', description: ' آتش بزرگ', rootName: 'فارسی' },
+      { title: 'برسام', description: 'آتش بزرگ', rootName: 'فارسی' },
       { title: 'برنا', description: 'دلاور', rootName: 'فارسی' },
       { title: 'باراد', description: ' غیور و جوانمرد ', rootName: 'فارسی' },
       { title: 'باربد', description: 'بزرگی و منزلت', rootName: 'فارسی' },
@@ -78,6 +82,8 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   P: {
     category: 'پ',
+    labelTitle: 'انتخاب اسم پسر جدید بر اساس حرف',
+
     list: [
       { title: 'پاشا', description: ' بزرگ', rootName: 'فارسی' },
       { title: 'پندار', description: 'فکر و اندیشه', rootName: 'فارسی' },
@@ -96,6 +102,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   T1: {
     category: 'ت',
+    labelTitle: 'انتخاب اسم پسر جدید و شیک بر اساس حرف',
     list: [
       { title: 'تکین', description: 'پهلوان', rootName: 'ترکی' },
       { title: 'تاینور', description: 'مانند نور', rootName: 'ترکی' },
@@ -114,6 +121,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   S1: {
     category: 'ث',
+    labelTitle: 'انتخاب اسم پسرانه شیک بر اساس حرف',
     list: [
       { title: 'ثَوبان', description: 'نام یکی از صحابه پیامبر اسلام', rootName: 'عربی' },
       { title: 'ثامر', description: 'مثمر', rootName: 'عربی' },
@@ -122,6 +130,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   J: {
     category: 'ج',
+    labelTitle: 'بهترین نام های پسرانه بر اساس حرف',
     list: [
       { title: 'جنید', description: 'سرباز', rootName: 'عربی' },
       { title: 'جاوید', description: 'جاویدان', rootName: 'فارسی' },
@@ -138,6 +147,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   CH: {
     category: 'چ',
+    labelTitle: 'انتخاب اسم پسر جدید و امروزی 1404 بر اساس حرف',
     list: [
       { title: 'چاووش', description: 'مامور تشریفات دربار', rootName: 'ترکی' },
       { title: 'چِکاد', description: 'قله کوه', rootName: 'فارسی' },
@@ -148,6 +158,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   H1: {
     category: 'ح',
+    labelTitle: 'انتخاب اسم پسر تک و شیک بر اساس حرف',
     list: [
       { title: 'حامین', description: 'حمایت کننده', rootName: 'عربی' },
       { title: 'حسان', description: 'بسیار نیکو', rootName: 'عربی' },
@@ -161,6 +172,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   KH: {
     category: 'خ',
+    labelTitle: 'انتخاب قشنگ ترین اسم های پسرانه بر اساس حرف',
     list: [
       { title: 'خوزان', description: 'نام پهلوانی ایرانی', rootName: 'فارسی' },
       { title: 'خورزاد', description: 'نام یکی از پسران خسروپرویز', rootName: 'فارسی' },
@@ -173,6 +185,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   D: {
     category: 'د',
+    labelTitle: 'انتخاب اسم پسرانه بر اساس حرف',
     list: [
       { title: 'دامیار', description: 'شکارچی', rootName: 'فارسی' },
       { title: 'دِمیر', description: 'قدرتمند', rootName: 'ترکی' },
@@ -198,6 +211,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   Z1: {
     category: 'ذ',
+    labelTitle: 'انتخاب اسم پسر بر اساس حرف',
     list: [
       { title: 'ذهین', description: 'زیرک', rootName: 'عربی' },
       { title: 'ذَکا ', description: 'هوشمندي', rootName: 'عربی' },
@@ -205,6 +219,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   R: {
     category: 'ر',
+    labelTitle: 'انتخاب اسم های پسرانه بر اساس حرف',
     list: [
       { title: 'روماک', description: 'درست کردار', rootName: 'مازندرانی' },
       { title: 'رامون', description: 'راهنما', rootName: 'فارسی' },
@@ -230,6 +245,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   Z2: {
     category: 'ز',
+    labelTitle: 'انتخاب نام پسرانه بر اساس حرف',
     list: [
       { title: 'زانکو', description: 'دانش طلب', rootName: 'کردی' },
       { title: 'زانیار', description: 'دانشمند و دانا', rootName: 'کردی' },
@@ -244,6 +260,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   ZH: {
     category: 'ژ',
+    labelTitle: 'انتخاب نام های پسرانه بر اساس حرف',
     list: [
       { title: 'ژوبین', description: 'نوعی نیزه', rootName: 'فارسی' },
       { title: 'ژینار', description: 'زندگی ', rootName: 'کردی' },
@@ -255,6 +272,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   S2: {
     category: 'س',
+    labelTitle: 'انتخاب اسم پسر خاص و تک بر اساس حرف',
     list: [
       { title: 'سیحان', description: 'روان شدن آب بر روی زمین', rootName: 'فارسی' },
       { title: 'سِپَنتام', description: 'سپيد و پاك', rootName: ' فارسی باستان' },
@@ -280,6 +298,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   SH: {
     category: 'ش',
+    labelTitle: 'انتخاب اسم پسر کمیاب بر اساس حرف',
     list: [
       { title: 'شانیا', description: 'مصمم', rootName: 'هندی' },
       { title: 'شَهنام', description: 'نيكنام', rootName: 'فارسی' },
@@ -305,6 +324,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   S3: {
     category: 'ص',
+    labelTitle: 'انتخاب اسم پسر جدید و شیک بر اساس حرف',
     list: [
       { title: 'صدرا', description: 'بلندمرتبه', rootName: 'عربی' },
       { title: 'صنعان', description: 'شيخي عارف در ادبيات ايران', rootName: 'عربی' },
@@ -316,6 +336,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   Z3: {
     category: 'ض',
+    labelTitle: 'انتخاب بهترین نامهای پسرانه بر اساس حرف',
     list: [
       { title: 'ضَرغام', description: 'شیر درنده', rootName: 'عربی' },
       { title: 'ضِيغم', description: 'شیر قوی', rootName: 'عربی' },
@@ -324,6 +345,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   T2: {
     category: 'ط',
+    labelTitle: 'انتخاب اسم پسر جدید و امروزی 1404 بر اساس حرف',
     list: [
       { title: 'طوفان', description: 'هیاهو', rootName: 'عربی' },
       { title: 'طرفان', description: 'دو طرف چيزي ', rootName: 'عربی' },
@@ -335,6 +357,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   Z4: {
     category: 'ظ',
+    labelTitle: 'انتخاب اسم پسر بر اساس حرف',
     list: [
       { title: 'ظهير', description: 'پشتیبان', rootName: 'عربی' },
       { title: 'ظافِر', description: 'پیروز', rootName: 'عربی' },
@@ -342,6 +365,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   A2: {
     category: 'ع',
+    labelTitle: 'انتخاب اسم پسر تک و شیک بر اساس حرف',
     list: [
       { title: 'عَلیتا', description: 'همتای علی', rootName: 'فارسی' },
       { title: 'عاکِف', description: 'گوشه گیرنده برای عبادت', rootName: 'عربی' },
@@ -365,6 +389,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   GH1: {
     category: 'غ',
+    labelTitle: 'انتخاب اسم پسرانه بر اساس حرف',
     list: [
       { title: 'غیاث', description: 'فریادرس ', rootName: 'عربی' },
       { title: 'غانِم', description: 'بهره‌مند', rootName: 'عربی' },
@@ -374,6 +399,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   F: {
     category: 'ف',
+    labelTitle: 'انتخاب اسمهای پسرانه بر اساس حرف',
     list: [
       { title: 'فَرنود', description: 'برهان و دلیل', rootName: 'فارسی' },
       { title: 'فَرهود', description: 'مرد درشت اندام', rootName: 'عربی' },
@@ -394,6 +420,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   GH2: {
     category: 'ق',
+    labelTitle: 'انتخاب اسم پسرانه بر اساس حرف',
     list: [
       { title: 'قُباد', description: 'محبوب', rootName: 'فارسی' },
       { title: 'قائد', description: 'رهبر', rootName: 'عربی' },
@@ -403,6 +430,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   K: {
     category: 'ک',
+    labelTitle: 'انتخاب اسم پسر جدید و امروزی 1404 بر اساس حرف',
     list: [
       { title: 'کامبد', description: 'نگهبان آرزوها', rootName: 'فارسی' },
       { title: 'کوشان', description: 'تلاش‌گر', rootName: 'فارسی' },
@@ -422,6 +450,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   G: {
     category: 'گ',
+    labelTitle: 'انتخاب اسم پسر تک و شیک بر اساس حرف',
     list: [
       { title: 'گوشیار', description: 'نام حکیمی از فارس ', rootName: 'فارسی' },
       { title: 'گئومات', description: 'پسر کوروش', rootName: 'فارسی' },
@@ -433,6 +462,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   L: {
     category: 'ل',
+    labelTitle: 'انتخاب قشنگترین اسم های پسرانه بر اساس حرف',
     list: [
       { title: 'لیام', description: 'محافظ', rootName: 'فارسی' },
       { title: 'لیوراد', description: 'خورشید جوانمرد ', rootName: 'فارسی' },
@@ -443,6 +473,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   M: {
     category: 'م',
+    labelTitle: 'انتخاب نامهای پسرانه بر اساس حرف',
     list: [
       { title: 'مانیاد', description: ' عزیز و گرامی ', rootName: 'فارسی' },
       { title: 'مِرآت', description: 'آینه', rootName: 'عربی' },
@@ -468,6 +499,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   N: {
     category: 'ن',
+    labelTitle: 'انتخاب اسمهای پسرانه بر اساس حرف',
     list: [
       { title: 'نویان', description: 'شاهزاده', rootName: 'ترکی' },
       { title: 'نیهاد', description: ' سرشت', rootName: 'کردی' },
@@ -493,6 +525,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   V: {
     category: 'و',
+    labelTitle: 'انتخاب اسم پسرانه بر اساس حرف',
     list: [
       { title: 'ویهان', description: 'نیکان', rootName: 'فارسی  ' },
       { title: 'وِسام', description: 'خوبرویان', rootName: ' عربی ' },
@@ -516,6 +549,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   H2: {
     category: 'ه',
+    labelTitle: 'انتخاب اسم پسر خاص و تک بر اساس حرف',
     list: [
       { title: 'هیرمان', description: 'به یاد ماندنی ', rootName: 'لری' },
       { title: 'هایان', description: 'پشتیبان', rootName: 'ترکی' },
@@ -537,9 +571,9 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
       { title: 'هارون', description: '  نگهبان', rootName: 'عبری' },
     ],
   },
-
   Y: {
     category: 'ی',
+    labelTitle: 'انتخاب اسم پسر کمیاب بر اساس حرف',
     list: [
       { title: 'یَلسان', description: 'مانند پهلوان', rootName: 'فارسی' },
       { title: 'یاشار', description: 'جاویدان', rootName: 'ترکی' },

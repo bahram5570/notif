@@ -30,7 +30,7 @@ const IranBoyNamePage = async () => {
           name=" کیمیا رفیعی"
           publishDate="31 مرداد"
           readingTime=" 12 دقیقه برای خواندن"
-          imageUrl="/assets/images/doctor.webp"
+          imageUrl="/assets/images/doctorKimia.jpg"
         />
 
         <div className="w-full sm:w-9/12 md:w-8/12 lg:w-6/12 px-3 pb-16">
@@ -56,7 +56,7 @@ const IranBoyNamePage = async () => {
               <CustomTypography
                 tagType="h2"
                 fontSize="Headline_Small"
-              >{`انتخاب اسم پسر امروزی بر اساس حرف «${item[1].category}»`}</CustomTypography>
+              >{`${item[1].labelTitle} «${item[1].category}»`}</CustomTypography>
 
               <NamesTable
                 list={item[1].list}

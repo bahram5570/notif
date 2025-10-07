@@ -3,6 +3,7 @@ import { AlphabetBtnsListTypes } from '@components/SelectName/AlphabetBtns/types
 export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   ا: {
     category: 'ا',
+    labelTitle: 'اسم دختر ایرانی اصیل لاکچری با',
     list: [
       { title: 'الناز', description: 'ناز بیش از حد', rootName: 'فارسی' },
       { title: 'الیکا', description: 'گل همیشه بهار', rootName: 'فارسی' },
@@ -15,6 +16,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   آ: {
     category: 'آ',
+    labelTitle: 'اسم دختر ایرانی با',
     list: [
       { title: 'آوا', description: 'نغمه، آواز خوش', rootName: 'فارسی' },
       { title: 'آریانا', description: 'سرزمین آریایی‌ها، ایران', rootName: 'اوستایی' },
@@ -29,6 +31,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   B: {
     category: 'ب',
+    labelTitle: 'اسم دخترانه فارسی با',
     list: [
       { title: 'بارانا', description: 'بارانی که زمین را زنده می‌کند', rootName: 'فارسی' },
       { title: 'بیداریس', description: 'روشنایی و فروغ', rootName: 'فارسی' },
@@ -41,6 +44,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   P: {
     category: 'پ',
+    labelTitle: 'اسم دختر ایرانی جدید و زیبا با',
     list: [
       { title: 'پرنیا', description: 'دختری لطیف و زیبا، همچون گل', rootName: 'فارسی' },
       { title: 'پرتو', description: 'نوری که روشنی می‌بخشد', rootName: 'فارسی' },
@@ -55,6 +59,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   T1: {
     category: 'ت',
+    labelTitle: 'اسم دختر ایرانی خاص با',
     list: [
       { title: 'تابان', description: 'درخشان و نورانی', rootName: 'فارسی' },
       { title: 'تارا', description: 'ستاره', rootName: 'فارسی' },
@@ -70,6 +75,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   S1: {
     category: 'ث',
+    labelTitle: 'اسم دختر ایرانی باکلاس با',
     list: [
       { title: 'ثنا', description: 'ستایش و تحسین', rootName: 'فارسی' },
       { title: 'ثمین', description: 'گوهری نایاب و ارزشمند', rootName: 'فارسی' },
@@ -81,6 +87,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   J: {
     category: 'ج',
+    labelTitle: 'اسم دخترانه فارسی جدید و اصیل با',
     list: [
       { title: 'جانان', description: 'دختری با روح ماندگار، جاودانه', rootName: 'فارسی' },
       { title: 'جان‌آرا', description: 'دلربا و زیبا', rootName: 'فارسی' },
@@ -92,6 +99,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   CH: {
     category: 'چ',
+    labelTitle: 'نام دخترانه فارسی با',
     list: [
       { title: 'چکامه', description: 'شعر و سرود', rootName: 'فارسی' },
       { title: 'چمن', description: 'سرسبز و خوشبو', rootName: 'فارسی' },
@@ -104,6 +112,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   H1: {
     category: 'ح',
+    labelTitle: 'اسم دخترانه فارسی و خاص با',
     list: [
       { title: 'حدیث', description: 'سخنی زیبا و دلنشین', rootName: 'فارسی' },
       { title: 'حسنا', description: 'زیبا و نیکو', rootName: 'فارسی' },
@@ -116,6 +125,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   KH: {
     category: 'خ',
+    labelTitle: 'اسم دختر ایرانی اصیل و لاکچری با',
     list: [
       { title: 'خاتون', description: 'زنی بزرگ', rootName: 'فارسی' },
       { title: 'خوشه', description: 'خوشه گل و گندم، نماد برکت', rootName: 'فارسی' },
@@ -128,6 +138,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   D: {
     category: 'د',
+    labelTitle: 'اسم دختر ایرانی با',
     list: [
       { title: 'دل‌آرا', description: 'کسی که دل‌ها را خوشحال می‌کند', rootName: 'فارسی' },
       { title: 'دل‌آسا', description: 'آرامش‌بخش', rootName: 'فارسی' },
@@ -141,6 +152,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   Z1: {
     category: 'ذ',
+    labelTitle: 'اسم دختر فارسی با',
     list: [
       { title: 'ذلفا', description: 'دختری با چهره سفید و نورانی', rootName: 'عربی/ایرانی' },
       { title: 'ذریه', description: 'فرزند', rootName: 'قرآن' },
@@ -148,6 +160,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   R: {
     category: 'ر',
+    labelTitle: 'اسم دخترانه فارسی با',
     list: [
       { title: 'راتا', description: 'فرشته بخشش و مهربانی', rootName: 'شاهنامه' },
       { title: 'رکسانا', description: 'نام دختر دارا كه اسكندر با او ازدواج كرد.', rootName: 'شاهنامه' },
@@ -164,6 +177,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   Z2: {
     category: 'ز',
+    labelTitle: 'اسم‌های دخترانه ایرانی شیک با',
     list: [
       { title: 'زربانو', description: 'دختر رستم', rootName: 'شاهنامه' },
       { title: 'زرتا', description: 'همچون زر', rootName: 'فارسی' },
@@ -176,6 +190,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   ZH: {
     category: 'ژ',
+    labelTitle: 'اسم دختر ایرانی خاص با',
     list: [
       { title: 'ژوبین', description: 'نیزه کوچک، نماد ظرافت و قدرت', rootName: 'فارسی' },
       { title: 'ژاله', description: 'قطره شبنم', rootName: 'فارسی' },
@@ -187,6 +202,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   S2: {
     category: 'س',
+    labelTitle: 'اسم دختر ایرانی با',
     list: [
       { title: 'ستیا', description: 'جهان هستی، روزگار', rootName: 'فارسی کهن' },
       { title: 'سیندخت', description: 'مادر رودابه، بانوی خردمند', rootName: 'شاهنامه' },
@@ -200,6 +216,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   SH: {
     category: 'ش',
+    labelTitle: 'اسم دخترانه فارسی با',
     list: [
       { title: 'شهرزاد', description: 'شهرزاد قصه‌گو، زاده شهر', rootName: 'فارسی' },
       { title: 'شاینا', description: 'شاهدانه، زیبا و درخشان', rootName: 'فارسی' },
@@ -213,6 +230,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   S3: {
     category: 'ص',
+    labelTitle: 'اسم دختر فارسی با',
     list: [
       { title: 'صبا', description: 'نسیم ملایم صبحگاهی', rootName: 'فارسی/عربی' },
       { title: 'صحرا', description: 'دشتی وسیع', rootName: 'فارسی/عربی' },
@@ -222,6 +240,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   Z3: {
     category: 'ض',
+    labelTitle: 'اسم دختر ایرانی جدید و زیبا با',
     list: [
       { title: 'ضحی', description: 'روشنایی صبح', rootName: 'عربی/فارسی' },
       { title: 'ضربان', description: 'تپش', rootName: 'فارسی' },
@@ -229,6 +248,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   T2: {
     category: 'ط',
+    labelTitle: 'اسم دختر ایرانی جدید با',
     list: [
       { title: 'طلا', description: 'زر', rootName: 'فارسی' },
       { title: 'طناز', description: 'دلفریب', rootName: 'فارسی' },
@@ -238,10 +258,12 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   Z4: {
     category: 'ظ',
+    labelTitle: 'اسم دختر ایرانی باکلاس با',
     list: [{ title: 'ظفردخت', description: 'دختر پیروز', rootName: 'عربی/فارسی' }],
   },
   A2: {
     category: 'ع',
+    labelTitle: 'اسم دخترانه فارسی با',
     list: [
       { title: 'عطرین', description: 'خوشبو', rootName: 'فارسی' },
       { title: 'عاطفه', description: 'مهربانی و دلسوزی', rootName: 'عربی/فارسی' },
@@ -250,6 +272,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   GH1: {
     category: 'غ',
+    labelTitle: 'اسم دختر ایرانی خاص با',
     list: [
       { title: 'غنچه', description: 'شکوفه', rootName: 'فارسی' },
       { title: 'غزل', description: 'شعر عاشقانه', rootName: 'فارسی' },
@@ -258,6 +281,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   F: {
     category: 'ف',
+    labelTitle: 'اسم دختر ایرانی اصیل لاکچری با',
     list: [
       { title: 'فریماه', description: 'دارای شکوهی چون ماه', rootName: 'فارسی' },
       { title: 'فرانک', description: 'زن بهرام گر، پروانه', rootName: 'شاهنامه' },
@@ -269,6 +293,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   GH2: {
     category: 'ق',
+    labelTitle: 'اسم دختر ایرانی خاص با',
     list: [
       { title: 'قاصدک', description: 'گیاهی که با باد پرواز می‌کند', rootName: 'فارسی' },
       { title: 'قیدافه', description: 'از شخصیت‌های شاهنامه', rootName: 'شاهنامه' },
@@ -279,6 +304,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   K: {
     category: 'ک',
+    labelTitle: 'اسم دختر ایرانی با',
     list: [
       { title: 'کیمیا', description: 'نادر و کمیاب', rootName: 'فارسی' },
       { title: 'کیانا', description: 'جوهر و اصل هر چیزی', rootName: 'فارسی' },
@@ -291,6 +317,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   G: {
     category: 'گ',
+    labelTitle: 'اسم دختر ایرانی با',
     list: [
       { title: 'گلسا', description: 'مانند گل', rootName: 'فارسی' },
       { title: 'گیسا', description: 'عالم هستی', rootName: 'فارسی' },
@@ -303,6 +330,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   L: {
     category: 'ل',
+    labelTitle: 'اسم دخترانه ایرانی خاص با',
     list: [
       { title: 'لیانا', description: 'بانوی درخشان', rootName: 'فارسی' },
       { title: 'لیان', description: 'تابان و نورانی', rootName: 'فارسی' },
@@ -315,6 +343,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   M: {
     category: 'م',
+    labelTitle: 'اسم دختر ایرانی با',
     list: [
       { title: 'مهدیس', description: 'ماهرو', rootName: 'فارسی' },
       { title: 'مهرسا', description: 'شبیه خورشید، زیبارو', rootName: 'فارسی' },
@@ -330,6 +359,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   N: {
     category: 'ن',
+    labelTitle: 'اسم دختر ایرانی با',
     list: [
       { title: 'نیکا', description: 'نیک و خوش', rootName: 'فارسی' },
       { title: 'نیاز', description: 'حاجت، دعا', rootName: 'فارسی' },
@@ -346,6 +376,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   V: {
     category: 'و',
+    labelTitle: 'اسم دختر ایرانی اصیل لاکچری با',
     list: [
       { title: 'ورنا', description: 'جوانی', rootName: 'فارسی' },
       { title: 'ویدا', description: 'مظهر خرد و دانش', rootName: 'فارسی' },
@@ -357,6 +388,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   H2: {
     category: 'ه',
+    labelTitle: 'اسم دختر ایرانی با',
     list: [
       { title: 'همیلا', description: 'بانوی زیبا', rootName: 'فارسی' },
       { title: 'هانا', description: 'شبیه به شکوفه‌ی درخت هِل، زیبا و خوشبو', rootName: 'فارسی' },
@@ -371,6 +403,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   Y: {
     category: 'ی',
+    labelTitle: 'اسم دخترانه فارسی با',
     list: [
       { title: 'یارین', description: 'خوشحالی', rootName: 'فارسی' },
       { title: 'یاسمینا', description: 'منسوب به یاسمن، گلی خوشبو', rootName: 'فارسی' },

@@ -3,6 +3,7 @@ import { AlphabetBtnsListTypes } from '@components/SelectName/AlphabetBtns/types
 export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   ا: {
     category: 'ا',
+    labelTitle: 'انتخاب اسم دختر امروزی بر اساس حرف',
     list: [
       { title: 'الوان', description: 'زیبا و دل\u200cنشین', rootName: 'کردی' },
       { title: 'الیزه', description: 'بهشتی', rootName: 'فرانسوی' },
@@ -28,6 +29,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   آ: {
     category: 'آ',
+    labelTitle: 'نیکوترین اسم دختر بر اساس حرف',
     list: [
       { title: 'آنیسا', description: 'مونس و همدم', rootName: 'عبری/عربی' },
       { title: 'آرتمیس', description: 'الهه شکار و ماه در اساطیر یونان باستان', rootName: 'یونانی' },
@@ -53,6 +55,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   B: {
     category: 'ب',
+    labelTitle: 'انتخاب اسم دخترانه شیک بر اساس حرف',
     list: [
       { title: 'بَسرا', description: 'دختر زیبا و جوان', rootName: 'عربی' },
       { title: 'بهدیس', description: 'چهره نیکو', rootName: 'فارسی' },
@@ -78,6 +81,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   P: {
     category: 'پ',
+    labelTitle: 'انتخاب اسم دخترانه کمترشنیده شده بر اساس حرف',
     list: [
       { title: 'پناه', description: 'محل امن', rootName: 'فارسی' },
       { title: 'پرنسا', description: 'ملکه', rootName: 'فارسی' },
@@ -103,6 +107,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   T1: {
     category: 'ت',
+    labelTitle: 'انتخاب اسم دختر جدید و باکلاس بر اساس حرف',
     list: [
       { title: 'تیارا', description: 'آراینده چشم/ زیبا', rootName: 'لری' },
       { title: 'تیدا', description: 'دختر خورشید', rootName: 'فارسی' },
@@ -128,6 +133,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   S1: {
     category: 'ث',
+    labelTitle: 'انتخاب اسم دختر خاص و تک بر اساس حرف',
     list: [
       { title: 'ثنا', description: 'ستایش', rootName: 'عربی' },
       { title: 'ثمین', description: 'گرانبها', rootName: 'عربی' },
@@ -141,6 +147,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   J: {
     category: 'ج',
+    labelTitle: 'انتخاب اسم دختر جدید و شیک بر اساس حرف',
     list: [
       { title: 'جانان', description: 'معشوق', rootName: 'فارسی' },
       { title: 'جواهر', description: 'گوهر', rootName: 'عربی' },
@@ -166,6 +173,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   CH: {
     category: 'چ',
+    labelTitle: 'انتخاب اسم دختر جدید بر اساس حرف',
     list: [
       { title: 'چهرآذر', description: 'دارای چهره ای چون اتش', rootName: 'فارسی' },
       { title: 'چمن رخ', description: 'زیبارو', rootName: 'فارسی' },
@@ -191,6 +199,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   H1: {
     category: 'ح',
+    labelTitle: 'انتخاب نام دخترانه جدید بر اساس حرف',
     list: [
       { title: 'حریرگل', description: 'گل ابریشم', rootName: 'فارسی' },
       { title: 'حورسا', description: 'مانند فرشته', rootName: 'فارسی' },
@@ -216,6 +225,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   KH: {
     category: 'خ',
+    labelTitle: 'انتخاب اسم دختر بر اساس حرف',
     list: [
       { title: 'خاطره', description: 'یادبود', rootName: 'فارسی' },
       { title: 'خورشید', description: 'خورشید اسمان ها', rootName: 'فارسی باستان' },
@@ -241,6 +251,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   D: {
     category: 'د',
+    labelTitle: 'انتخاب نام از بین 50 اسم برتر دختر بر اساس حرف',
     list: [
       { title: 'دلارام', description: 'آرامش\u200cدهنده دل', rootName: 'فارسی' },
       { title: 'دنیا', description: 'جهان', rootName: 'عربی' },
@@ -266,6 +277,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   Z1: {
     category: 'ذ',
+    labelTitle: 'انتخاب اسم دخترانه بر اساس حرف',
     list: [
       { title: 'ذلفا', description: 'دختری با گیسوان زیبا', rootName: 'عربی' },
       { title: 'ذریه ', description: 'فرزندان', rootName: 'عربی' },
@@ -278,6 +290,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   R: {
     category: 'ر',
+    labelTitle: 'انتخاب نام از بین 50 اسم برتر دختر بر اساس حرف',
     list: [
       { title: 'رستا', description: 'کامیاب', rootName: 'فارسی' },
       { title: 'رونیا', description: 'اصیل', rootName: 'فارسی' },
@@ -303,6 +316,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   Z2: {
     category: 'ز',
+    labelTitle: 'انتخاب نام دخترانه بر اساس حرف',
     list: [
       { title: 'زلفا', description: 'زیبایی زلف معشوق', rootName: 'فارسی' },
       { title: 'زینا', description: 'نام دختر نوح نبی', rootName: 'عبری' },
@@ -328,6 +342,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   ZH: {
     category: 'ژ',
+    labelTitle: 'انتخاب نام دخترانه جدید بر اساس حرف',
     list: [
       { title: 'ژیرا', description: 'زیرک', rootName: 'کردی' },
       { title: 'ژیراکو', description: 'دختر مهربان', rootName: 'کردی' },
@@ -353,6 +368,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   S2: {
     category: 'س',
+    labelTitle: 'انتخاب اسم دخترانه کمترشنیده شده بر اساس حرف',
     list: [
       { title: 'سلین', description: 'مانند سیل خروشان', rootName: 'ترکی' },
       { title: 'سلنا', description: 'الهه ماه', rootName: 'یونانی' },
@@ -378,6 +394,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   SH: {
     category: 'ش',
+    labelTitle: 'انتخاب نام دخترانه بر اساس حرف',
     list: [
       { title: 'شان آی', description: 'شکوه و عظمت ماه', rootName: 'ترکی' },
       { title: 'شمین', description: 'خوشبو', rootName: 'فارسی' },
@@ -403,6 +420,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   S3: {
     category: 'ص',
+    labelTitle: 'انتخاب نیکوترین نام دختر بر اساس حرف',
     list: [
       { title: 'صبا', description: 'باد ملایم', rootName: 'عربی' },
       { title: 'صحرا', description: 'بیابان', rootName: 'عربی' },
@@ -428,6 +446,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   Z3: {
     category: 'ض',
+    labelTitle: 'انتخاب زیباترین و باکلاس ترین اسم دختر بر اساس حرف',
     list: [
       { title: 'ضحا', description: 'خورشید', rootName: 'عربی' },
       { title: 'ضیا', description: 'روشنی', rootName: 'عربی' },
@@ -441,6 +460,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   T2: {
     category: 'ط',
+    labelTitle: 'انتخاب اسم دختر امروزی بر اساس حرف',
     list: [
       { title: 'طنین', description: 'انعکاس صوت', rootName: 'عربی' },
       { title: 'طناز', description: 'بسیار زیبا', rootName: 'عربی' },
@@ -458,6 +478,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   Z4: {
     category: 'ظ',
+    labelTitle: 'انتخاب اسم دختر امروزی بر اساس حرف',
     list: [
       { title: 'ظریفه', description: 'باظرافت', rootName: 'عربی' },
       { title: 'ظهیره', description: 'پشتیبان', rootName: 'عربی' },
@@ -478,6 +499,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   A2: {
     category: 'ع',
+    labelTitle: 'انتخاب اسم دختر امروزی بر اساس حرف',
     list: [
       { title: 'عسل', description: 'بسیار دوست داشتنی', rootName: 'عربی' },
       { title: 'عما', description: 'ابر باران ریز', rootName: 'عربی' },
@@ -494,6 +516,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   GH1: {
     category: 'غ',
+    labelTitle: 'انتخاب اسم دخترانه شیک بر اساس حرف',
     list: [
       { title: 'غزل', description: 'شعر عاشقانه', rootName: 'عربی' },
       { title: 'غنچه', description: 'جوانه گل', rootName: 'فارسی' },
@@ -504,6 +527,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   F: {
     category: 'ف',
+    labelTitle: 'انتخاب اسم دخترانه کمتر شنیده شده بر اساس حرف',
     list: [
       { title: 'فاطیما', description: 'رانده شده از آتش', rootName: 'لاتین' },
       { title: 'فادیا', description: 'منجی', rootName: 'عربی' },
@@ -515,6 +539,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   GH2: {
     category: 'ق',
+    labelTitle: 'انتخاب اسم دخترانه شیک بر اساس حرف',
     list: [
       { title: 'قمر', description: 'زن زیبا', rootName: 'عربی' },
       { title: 'قاصدک', description: 'نوعی گیاه', rootName: 'فارسی' },
@@ -527,6 +552,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   K: {
     category: 'ک',
+    labelTitle: 'انتخاب اسم دختر جدید و باکلاس بر اساس حرف',
     list: [
       { title: 'کلارا', description: 'نور چشم', rootName: 'کردی' },
       { title: 'کالین', description: 'دخترجوان با مو روشن', rootName: 'کردی' },
@@ -546,6 +572,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   G: {
     category: 'گ',
+    labelTitle: 'انتخاب اسم دخترانه جدید بر اساس حرف',
     list: [
       { title: 'گونش', description: 'آفتابی', rootName: 'ترکی' },
       { title: 'گلناز', description: 'لطیف مثل گل', rootName: 'فارسی' },
@@ -571,6 +598,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   L: {
     category: 'ل',
+    labelTitle: 'انتخاب اسم دختر خاص و تک بر اساس حرف',
     list: [
       { title: 'لیزدا', description: 'آرامش مادر', rootName: 'لری' },
       { title: 'لیلماه', description: 'ماه شب', rootName: 'فارسی' },
@@ -596,6 +624,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   M: {
     category: 'م',
+    labelTitle: 'انتخاب اسم دختر جدید و شیک بر اساس حرف',
     list: [
       { title: 'ماهلین', description: 'هاله ماه', rootName: 'فارسی' },
       { title: 'مرسانا', description: 'هدیه خداوند', rootName: 'کردی' },
@@ -621,6 +650,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   N: {
     category: 'ن',
+    labelTitle: 'انتخاب از بین 50 اسم برتر دختر بر اساس حرف',
     list: [
       { title: 'نیروانا', description: 'انسان کامل', rootName: 'فارسی باستان' },
       { title: 'نوژان', description: 'صدای بلند', rootName: 'فارسی' },
@@ -646,6 +676,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   V: {
     category: 'و',
+    labelTitle: 'انتخاب از بین 50 اسم برتر دختر بر اساس حرف',
     list: [
       { title: 'وندا', description: 'آرزو', rootName: 'فارسی باستان ' },
       { title: 'ویانا', description: 'دانایی', rootName: 'فارسی باستان ' },
@@ -667,6 +698,7 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   H2: {
     category: 'ه',
+    labelTitle: 'انتخاب اسم دختر خاص و تک بر اساس حرف',
     list: [
       { title: 'هلسا', description: 'خوشبو', rootName: 'فارسی' },
       { title: 'هلیا', description: 'دختر خورشید', rootName: 'یونانی' },
@@ -690,9 +722,9 @@ export const PERSIAN_NAME_DICTIONARY: AlphabetBtnsListTypes = {
       { title: 'هینا', description: 'ماهر', rootName: 'کردی' },
     ],
   },
-
   Y: {
     category: 'ی',
+    labelTitle: 'انتخاب اسم دخترانه بر اساس حرف',
     list: [
       { title: 'یشیم', description: 'سنگ  گرانبها', rootName: 'ترکی' },
       { title: 'یارن', description: 'دوست و یار نزدیک', rootName: 'ترکی' },

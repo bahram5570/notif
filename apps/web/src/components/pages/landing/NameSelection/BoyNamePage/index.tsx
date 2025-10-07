@@ -57,7 +57,7 @@ const BoyNamePage = async () => {
               <CustomTypography
                 tagType="h2"
                 fontSize="Headline_Small"
-              >{`انتخاب اسم پسر امروزی بر اساس حرف «${item[1].category}»`}</CustomTypography>
+              >{`${item[1].labelTitle} «${item[1].category}»`}</CustomTypography>
 
               <NamesTable
                 list={item[1].list}

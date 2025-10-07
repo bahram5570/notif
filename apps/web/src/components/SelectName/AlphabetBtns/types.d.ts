@@ -5,6 +5,7 @@ import { COLORS_LIST } from '@theme/colors';
 export type AlphabetBtnsListTypes = {
   [x in string]: {
     category: string;
+    labelTitle: string;
     list: {
       title: string;
       rootName: string;

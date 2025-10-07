@@ -69,8 +69,11 @@ const Description = () => {
           نیکو می‌ده که همیشه همراهش هست.
         </CustomTypography>
         <CustomTypography fontSize="Body_Large" color={'Neutral_OnBackground'} className="pb-3">
-          اگه هنوز درمورد جنسیت فرزند عزیزت مطمئن نیستی، حتما راهنما انتخاب اسم پسر ایرانی رو امتحان کن تا نام‌های اصیل
-          و با معنی زیبا رو از دست ندی.
+          اگه هنوز درمورد جنسیت فرزند عزیزت مطمئن نیستی، حتما راهنما انتخاب
+          <CustomLink href="/landing/iran-boy-name" color="Primary_Primary">
+            اسم پسر
+          </CustomLink>
+          ایرانی رو امتحان کن تا نام‌های اصیل و با معنی زیبا رو از دست ندی.
         </CustomTypography>
         <CustomTypography fontSize="Headline_Medium" color={'Neutral_OnBackground'} tagType="h2">
           اسم دختر ایرانی اصیل باستانی

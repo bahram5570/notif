@@ -54,7 +54,7 @@ const GirlNamePage = async () => {
               <CustomTypography
                 fontSize="Headline_Small"
                 tagType="h2"
-              >{`انتخاب اسم دختر امروزی بر اساس حرف «${item[1].category}»`}</CustomTypography>
+              >{`${item[1].labelTitle} «${item[1].category}»`}</CustomTypography>
 
               <NamesTable
                 list={item[1].list}

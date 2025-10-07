@@ -18,7 +18,11 @@ const IntroductionSection = () => {
         </CustomLink>
         ، توصیه‌های پزشکی مفید، یادآوری آزمایشات و مراقبت‌های بارداری، یه ابزار کاربردی دیگه هم برای انتخاب
         <CustomLink href="/landing/girl-name" color="PrimaryMan_PrimaryMan">
-          اسم دختر و اسم پسر
+          اسم دختر
+        </CustomLink>
+        و
+        <CustomLink href="/landing/boy-name" color="PrimaryMan_PrimaryMan">
+          اسم پسر
         </CustomLink>
         داره.
       </CustomTypography>

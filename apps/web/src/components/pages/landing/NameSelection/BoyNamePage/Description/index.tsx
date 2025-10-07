@@ -163,7 +163,9 @@ const Description = () => {
         <ItemGenerator>ویهان: نیکان</ItemGenerator>
 
         <div className="mt-2">
-          <TextGenerator>اگه دنبال اسم‌های اصیل ایرانی هستی، روی اسم دختر ایرانی و</TextGenerator>
+          <TextGenerator>اگه دنبال اسم‌های اصیل ایرانی هستی، روی </TextGenerator>
+          <LinkGenerator href="/landing/iran-girl-name">اسم دختر ایرانی</LinkGenerator>
+          <TextGenerator>و</TextGenerator>
           <LinkGenerator href="/landing/iran-boy-name">اسم پسر ایرانی</LinkGenerator>
           <TextGenerator>کلیک کن.</TextGenerator>
         </div>

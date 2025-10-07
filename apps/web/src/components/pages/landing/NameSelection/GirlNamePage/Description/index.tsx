@@ -182,7 +182,9 @@ const Description = () => {
         <div className="mt-2">
           <TextGenerator>اگه میخوای لیست کامل اسم‌های اصیل فارسی رو ببینی، روی</TextGenerator>
           <LinkGenerator href="/landing/iran-girl-name">اسم دختر ایرانی</LinkGenerator>
-          <TextGenerator>و اسم پسر ایرانی کلیک کن.</TextGenerator>
+          <TextGenerator>و</TextGenerator>
+          <LinkGenerator href="/landing/iran-boy-name">اسم پسر ایرانی</LinkGenerator>
+          <TextGenerator>کلیک کن</TextGenerator>
         </div>
 
         <TitleGenerator tagType="h2">اسم دختر کردی</TitleGenerator>

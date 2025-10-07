@@ -3,6 +3,7 @@ import { AlphabetBtnsListTypes } from '@components/SelectName/AlphabetBtns/types
 export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   ا: {
     category: 'ا',
+    labelTitle: 'اسم پسر ایرانی با حرف',
     list: [
       { title: 'ابراهیم', description: 'دوست خدا، پدر قوم‌ها', rootName: 'پارسی، عبری' },
       { title: 'اردوان', description: 'مرد عادل، نگهبان حقیقت', rootName: 'پارسی' },
@@ -22,6 +23,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   آ: {
     category: 'آ',
+    labelTitle: 'اسم پسر ایرانی اصیل لاکچری با',
     list: [
       {
         title: 'آبان',
@@ -91,6 +93,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   B: {
     category: 'ب',
+    labelTitle: 'اسم پسر ایرانی اصیل با',
     list: [
       { title: 'بابک', description: 'پدر کوچک، نام قهرمان تاریخی ایرانی (بابک خرمدین).', rootName: 'پارسی' },
       { title: 'بارْبَد', description: 'نگهبان روشنی، نام نوازنده معروف دوره ساسانی.', rootName: 'پارسی' },
@@ -134,6 +137,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   P: {
     category: 'پ',
+    labelTitle: 'نام پسر ایرانی باکلاس با حرف',
     list: [
       { title: 'پادرا', description: 'سرزمین باشکوه، نگهبان آتش', rootName: 'پارسی' },
       { title: 'پارسا', description: 'پرهیزکار، پاکدامن، پارسا و متدین', rootName: 'پارسی' },
@@ -163,6 +167,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   T1: {
     category: 'ت',
+    labelTitle: 'اسم پسر ایرانی با حرف',
     list: [
       { title: 'تخشا', description: 'کوشنده، تلاشگر', rootName: 'پارسی' },
       {
@@ -187,6 +192,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   J: {
     category: 'ج',
+    labelTitle: 'اسم پسر ایرانی جدید با حرف',
     list: [
       {
         title: 'جاماسب',
@@ -209,6 +215,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   CH: {
     category: 'چ',
+    labelTitle: 'اسم پسر ایرانی با',
     list: [
       { title: 'چابک', description: 'سریع، فرز، چالاک', rootName: 'پارسی' },
       { title: 'چاوش', description: 'پیشرو، راهنما، کاروان‌سالار', rootName: 'پارسی' },
@@ -218,6 +225,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   H1: {
     category: 'ح',
+    labelTitle: 'اسم پسر ایرانی با حرف',
     list: [
       { title: 'حانان', description: 'مهربان، عاشق، معشوق', rootName: 'پارسی' },
       { title: 'حامد', description: 'ستایشگر، شکرگزار', rootName: 'ریشه عربی و فارسی' },
@@ -227,6 +235,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   KH: {
     category: 'خ',
+    labelTitle: 'اسم پسر ایرانی شیک با',
     list: [
       { title: 'خداداد', description: 'داده‌شده توسط خدا، نعمت الهی', rootName: 'پارسی' },
       { title: 'خدابخش', description: 'بخشیده‌شده توسط خدا، هدیه الهی', rootName: 'پارسی' },
@@ -240,6 +249,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   D: {
     category: 'د',
+    labelTitle: 'اسم پسر ایرانی لاکچری با حرف',
     list: [
       { title: 'داتام', description: 'آفریننده و مخلوق، نام یکی از فرماندهان پارسی کاپادوکیه', rootName: 'پارسی' },
       { title: 'داتیس', description: 'سرداری از مردم ماد و از سرداران داریوش هخامنشی', rootName: 'پارسی' },
@@ -253,6 +263,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   R: {
     category: 'ر',
+    labelTitle: 'اسم پسر ایرانی شیک با حرف',
     list: [
       { title: 'رَسام', description: 'رسم کننده، طراح، نقاش', rootName: 'پارسی' },
       { title: 'رَها', description: 'نجات یافته و آزاد، آزادانه، رهایی', rootName: 'پارسی' },
@@ -286,6 +297,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   Z2: {
     category: 'ز',
+    labelTitle: 'اسم پسر ایرانی با حرف',
     list: [
       {
         title: 'زامیاد',
@@ -302,6 +314,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   ZH: {
     category: 'ژ',
+    labelTitle: 'اسم پسر ایرانی جدید با حرف',
     list: [
       { title: 'ژاوه', description: 'نوعی گیاهی وحشی از تیره کاکوتی', rootName: 'پارسی و کردی' },
       {
@@ -323,6 +336,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   S2: {
     category: 'س',
+    labelTitle: 'اسم پسر ایرانی با حرف',
     list: [
       {
         title: 'ساتیار',
@@ -357,6 +371,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   SH: {
     category: 'ش',
+    labelTitle: 'اسم پسر ایرانی زیبا با حرف',
     list: [
       { title: 'شادمهر', description: 'دارای شادی و مهربانی', rootName: 'پارسی' },
       { title: 'شارونا', description: 'سرزمین پربار و حاصلخیز', rootName: 'آشوری' },
@@ -387,6 +402,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   S3: {
     category: 'ص',
+    labelTitle: 'نام پسر ایرانی جذاب با حرف',
     list: [
       { title: 'صابر', description: 'صبور، صبر کننده، شکیبا؛ از نامهای خداوند', rootName: 'پارسی و عربی' },
       {
@@ -400,6 +416,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   T2: {
     category: 'ط',
+    labelTitle: 'اسم پسر ایرانی با حرف',
     list: [
       { title: 'طهماسب', description: 'دارنده‌ی اسب قوی - نام دو تن از پادشاهان صفوی', rootName: 'پارسی' },
       {
@@ -418,6 +435,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   A2: {
     category: 'ع',
+    labelTitle: 'اسم پسر ایرانی شیک با حرف',
     list: [
       { title: 'عرشام', description: 'قوی، نیرومند', rootName: 'پارسی' },
       { title: 'عرشیا', description: 'پادشاه راستین، دارای تخت و تاج', rootName: 'پارسی' },
@@ -425,6 +443,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   GH1: {
     category: 'غ',
+    labelTitle: 'اسم پسر ایرانی با حرف',
     list: [
       {
         title: 'غاتفَر',
@@ -436,6 +455,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   F: {
     category: 'ف',
+    labelTitle: 'اسم پسر ایرانی خاص با حرف',
     list: [
       { title: 'فارناک', description: 'فارناس، نام برادر همسر داریوش سوم پادشاه هخامنشی', rootName: 'پارسی' },
       { title: 'فرابرز', description: 'نام پهلوانی ایرانی از سپه داران و رایزنان دارا', rootName: 'پارسی' },
@@ -464,6 +484,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   GH2: {
     category: 'ق',
+    labelTitle: 'اسم پسر ایرانی لاکچری با حرف',
     list: [
       { title: 'قهرمان', description: 'دلاور', rootName: 'پارسی، عربی' },
       {
@@ -476,6 +497,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   K: {
     category: 'ک',
+    labelTitle: 'اسم پسر ایرانی با حرف',
     list: [
       { title: 'کابوک', description: 'آشیانه پرندگان', rootName: 'پارسی' },
       { title: 'کابی', description: 'معرب منسوب به کاوه آهنگر', rootName: 'پارسی' },
@@ -501,6 +523,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   G: {
     category: 'گ',
+    labelTitle: 'نام پسر ایرانی اصیل لاکچری با حرف',
     list: [
       {
         title: 'گرازه',
@@ -533,6 +556,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   L: {
     category: 'ل',
+    labelTitle: 'اسم پسر ایرانی با حرف',
     list: [
       { title: 'لاهور', description: 'یکتا', rootName: 'پارسی' },
       { title: 'لاشار', description: 'نام طایفه ای از طوایف بلوچ', rootName: 'پارسی' },
@@ -546,6 +570,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   M: {
     category: 'م',
+    labelTitle: 'بهترین اسم پسر ایرانی با حرف',
     list: [
       { title: 'ماتیار', description: 'کمک‌کننده', rootName: 'پارسی' },
       { title: 'ماراب', description: 'بخت و دولت تازه', rootName: 'پارسی' },
@@ -577,6 +602,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   N: {
     category: 'ن',
+    labelTitle: 'اسم پسر ایرانی با حرف',
     list: [
       { title: 'ناردان', description: 'دانه ترش انار', rootName: 'پارسی' },
       { title: 'ناروان', description: 'درخت انار', rootName: 'پارسی' },
@@ -624,6 +650,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   V: {
     category: 'و',
+    labelTitle: 'اسم پسر ایرانی با حرف',
     list: [
       { title: 'وادان', description: 'نام روستایی در نزدیکی دماوند', rootName: 'پارسی' },
       { title: 'وادگان', description: 'نام شخصی در وندیداد', rootName: 'پارسی' },
@@ -648,6 +675,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   H2: {
     category: 'ه',
+    labelTitle: 'اسم پسر فارسی خاص با حرف',
     list: [
       { title: 'هارپاک', description: 'مرواریدی که در یک رشته کشیده شده باشد', rootName: 'پارسی' },
       { title: 'هامان', description: 'نام وزیر خشایارشاه', rootName: 'پارسی' },
@@ -696,6 +724,7 @@ export const PERSIAN_BOY_NAME_DICTIONARY: AlphabetBtnsListTypes = {
   },
   Y: {
     category: 'ی',
+    labelTitle: 'اسم پسر ایرانی با حرف',
     list: [
       { title: 'یارا', description: 'توانایی، قدرت', rootName: 'پارسی' },
       { title: 'یاران', description: 'دوستان، رفیقان', rootName: 'پارسی' },
