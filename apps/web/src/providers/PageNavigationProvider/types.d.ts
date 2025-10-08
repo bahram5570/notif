@@ -1,3 +1,3 @@
 export type PageNavigationLoadingContextTypes = {
-  pageNavigationHandler: () => void;
+  pageNavigationHandler: (isLoading: boolean) => void;
 };

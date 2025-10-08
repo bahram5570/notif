@@ -19,7 +19,7 @@ import {
 export const metadata: Metadata = {
   title: 'شیردهی',
   description: 'breastfeeding',
-  robots: 'index, follow',
+  robots: { follow: true, index: true },
   alternates: {
     canonical: `${HOST_URL}/landing/breastfeeding`,
   },

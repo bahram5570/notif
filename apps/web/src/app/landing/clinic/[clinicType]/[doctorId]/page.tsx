@@ -12,7 +12,7 @@ export const generateMetadata = async (props: {
   if (doctorData) {
     return {
       title: `مشاوره و ویزیت آنلاین دکتر ${doctorData.name} ${doctorData.speciality}` || '',
-      robots: 'noindex, nofollow',
+      robots: { follow: false, index: false },
       description: `مشاوره و ویزیت آنلاین دکتر ${doctorData.name} ${doctorData.speciality} در ایمپو` || '',
       alternates: {
         canonical: `${HOST_URL}/landing/clinic/${props.params.clinicType}/${props.params.doctorId}`,
@@ -22,7 +22,7 @@ export const generateMetadata = async (props: {
 
   return {
     title: '',
-    robots: 'index, follow',
+    robots: { follow: true, index: true },
     description: '',
     alternates: {
       canonical: `${HOST_URL}/landing/clinic/${props.params.clinicType}/${props.params.doctorId}`,

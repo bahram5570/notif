@@ -10,6 +10,15 @@ const NewMessage = () => {
   const [newMessage, setNewMessage] = useState('');
   const { submitHandler, isLoading } = useSubmit();
   const { colors } = useTheme();
+
+  const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setNewMessage(e.target.value);
+  };
+
+  const onClick = () => {
+    submitHandler({ text: newMessage, title: '' });
+  };
+
   return (
     <>
       <textarea
@@ -18,7 +27,7 @@ const NewMessage = () => {
         style={{ border: `1px solid ${colors.Neutral_Surface}`, outlineColor: colors.PrimaryWoman_Primary }}
         rows={4}
         value={newMessage}
-        onChange={(e) => setNewMessage(e.target.value)}
+        onChange={onChangeHandler}
       />
       <div className="flex justify-center items-center">
         <Button
@@ -27,7 +36,7 @@ const NewMessage = () => {
           color="primary"
           fullWidth={false}
           className="px-6 py-2"
-          onClick={() => submitHandler({ text: newMessage, title: '' })}
+          onClick={onClick}
           isDisable={!newMessage}
           isLoading={isLoading}
         >

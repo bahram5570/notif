@@ -3,6 +3,7 @@ import { externalLink } from '@utils/navigation';
 
 import { getUserCookie } from '@actions/cookie.actions';
 import useApi from '@hooks/useApi';
+import useCustomToast from '@hooks/useCustomToast';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
 import { BuySubscriptionResponseTypes } from './types';
@@ -11,9 +12,14 @@ const loadingId = 'buySubscription';
 
 const useBuySubscription = () => {
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { onToast } = useCustomToast();
 
   const buySubscriptionSuccessHandler = async (v: BuySubscriptionResponseTypes) => {
     const user = await getUserCookie();
+
+    if (!v.isSuccess) {
+      return onToast({ type: 'error', message: 'مشکلی پیش آمده' });
+    }
 
     if (v.isSuccess) {
       setPaymentCookie({ route: '/protected/cycle' });

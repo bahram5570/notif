@@ -1,10 +1,13 @@
 import useApi from '@hooks/useApi';
+import { useParams } from 'next/navigation';
 
 import { SubmitResponsePropsType, UseSubmitPropsType } from './type';
 
-const useSubmit = ({ id, resetChild }: UseSubmitPropsType) => {
+const useSubmit = ({ resetChild }: UseSubmitPropsType) => {
+  const { chatId } = useParams();
+
   const { callApi, isLoading, data } = useApi<SubmitResponsePropsType>({
-    api: `challenge/${id}/chat`,
+    api: `challenge/${chatId}/chat`,
     method: 'POST',
     onSuccess: resetChild,
   });

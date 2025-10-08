@@ -1,8 +1,7 @@
 export type OperatingSystemTypes = 'windows' | 'ios' | 'android';
 
-export interface OperatingSystemProviderContainerTypes {
+export interface OperatingSystemProviderTypes {
   children: React.ReactNode;
-  os: OperatingSystemTypes;
 }
 
 export type OperatingSystemContextTypes = {

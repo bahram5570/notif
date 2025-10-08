@@ -2,6 +2,7 @@ import { clinicDoctorService } from '@services/clinicLandingServices';
 import http from '@services/http';
 
 import ClinicCategoryPage from '@components/pages/landing/ClinicCategoryPage';
+import { CACHE_REVALIDATE_TIME } from '@constants/app.constants';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
 
@@ -13,7 +14,8 @@ type ClinicMetaData = {
 const getClinicMetaData = async (type: number) => {
   return await http<ClinicMetaData>({
     method: 'GET',
-    cache: 'no-store',
+    cache: 'force-cache',
+    revalidate: CACHE_REVALIDATE_TIME,
     url: `clinic/metadata/${type}`,
   });
 };
@@ -24,7 +26,7 @@ export async function generateMetadata({ params }: { params: { clinicType: numbe
   if (data) {
     return {
       title: data.metaTitle || '',
-      robots: 'index, follow',
+      robots: { follow: true, index: true },
       description: data.metaDescription || '',
       alternates: {
         canonical: `${HOST_URL}/landing/clinic/${params.clinicType}`,

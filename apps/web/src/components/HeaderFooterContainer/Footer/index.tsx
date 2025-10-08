@@ -1,18 +1,15 @@
-'use server';
+'use client';
 
-import { operatingSystemDetector } from '@utils/system';
-
-import { headers } from 'next/headers';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import DeviceFooter from './DeviceFooter';
 import NormalFooter from './NormalFooter';
 import { FooterTypes } from './types';
 
 const Footer = ({ hasFooterLink, isArticlePage }: FooterTypes) => {
-  const userAgent = headers().get('user-agent');
-  const os = operatingSystemDetector(userAgent);
+  const { operatingSystem } = useOperatingSystem();
 
-  const isDeviceMode = os === 'ios' || os === 'android';
+  const isDeviceMode = operatingSystem === 'ios' || operatingSystem === 'android';
 
   return (
     <>

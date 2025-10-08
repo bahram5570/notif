@@ -1,5 +1,7 @@
 import http from '@services/http';
 
+import { CACHE_REVALIDATE_TIME } from '@constants/app.constants';
+
 import LandingArticlesContainer from './LandingArticlesContainer';
 import { LandingArticlesResponseTypes, LandingArticlesTypes } from './types';
 
@@ -7,7 +9,8 @@ const LandingArticles = async ({ url, title, subTitle, showAllArticlesLinkTo }: 
   const data = await http<LandingArticlesResponseTypes>({
     url,
     method: 'GET',
-    cache: 'no-store',
+    cache: 'force-cache',
+    revalidate: CACHE_REVALIDATE_TIME,
   });
 
   return (

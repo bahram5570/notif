@@ -53,8 +53,11 @@ const OperatingSystemProvider = ({ children }: { children: React.ReactNode }) =>
       } else if (
         (userAgent.includes('chrome') || userAgent.includes('crios')) &&
         !userAgent.includes('samsungbrowser') &&
+        !userAgent.includes('hwbrowser') &&
         !userAgent.includes('vivaldi') &&
+        !userAgent.includes('huawei') &&
         !userAgent.includes('brave') &&
+        !userAgent.includes('miui') &&
         !userAgent.includes('edg') &&
         !userAgent.includes('opr')
       ) {

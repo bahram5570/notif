@@ -1,9 +1,10 @@
 'use client';
 
-import { createContext, useEffect, useRef, useState } from 'react';
+import { createContext } from 'react';
 
 import LoadingProgressBar from './LoadingProgressBar';
 import useChangeRouteDetect from './__hooks__/useChangeRouteDetect';
+import useChangeRouteLoading from './__hooks__/useChangeRouteLoading';
 import { PageNavigationLoadingContextTypes } from './types';
 
 export const PageNavigationLoadingContext = createContext<PageNavigationLoadingContextTypes>({
@@ -11,29 +12,20 @@ export const PageNavigationLoadingContext = createContext<PageNavigationLoadingC
 });
 
 const PageNavigationLoadingProvider = ({ children }: { children: React.ReactNode }) => {
-  const timer = useRef<NodeJS.Timeout>();
-  const [isLoading, setIsLoading] = useState(false);
+  const changeRouteLoading = useChangeRouteLoading();
 
-  useChangeRouteDetect(setIsLoading);
-
-  useEffect(() => {
-    if (isLoading) {
-      timer.current = setTimeout(() => {
-        setIsLoading(false);
-      }, 10000);
+  const pageNavigationHandler = (b: boolean) => {
+    if (changeRouteLoading) {
+      changeRouteLoading.navigationHandler(b);
     }
-
-    return () => clearTimeout(timer.current);
-  }, [isLoading]);
-
-  const pageNavigationHandler = () => {
-    setIsLoading(true);
   };
+
+  useChangeRouteDetect(pageNavigationHandler);
 
   return (
     <PageNavigationLoadingContext.Provider value={{ pageNavigationHandler }}>
       <>
-        {isLoading && <LoadingProgressBar />}
+        {changeRouteLoading?.isLoading && <LoadingProgressBar />}
         <>{children}</>
       </>
     </PageNavigationLoadingContext.Provider>

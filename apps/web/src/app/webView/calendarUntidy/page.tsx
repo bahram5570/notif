@@ -2,7 +2,7 @@ import CalendarUntidyContainer from '@components/pages/webView/CalendarUntidyCon
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  robots: 'noindex, nofollow',
+  robots: { follow: false, index: false },
 };
 
 const CalendarUntidy = () => {

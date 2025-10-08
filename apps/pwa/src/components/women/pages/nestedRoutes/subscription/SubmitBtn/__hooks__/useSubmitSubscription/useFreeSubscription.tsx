@@ -1,17 +1,17 @@
 import { useEffect, useState } from 'react';
 
 import useApi from '@hooks/useApi';
+import useRouteSequence from '@hooks/useRouteSequence';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
-import { useRouter } from 'next/navigation';
 
 import { FreeSubscriptionResponseTypes } from './types';
 
 const useFreeSubscription = () => {
-  const router = useRouter();
+  const { sequenceHandler } = useRouteSequence();
   const [id, setId] = useState<string | null>(null);
 
   const { updateProfileDateByDellay } = useGetProfileData(() => {
-    router.push('/');
+    sequenceHandler([`/protected/cycle`, `/protected/cycle`, `/protected/cycle`]);
   });
 
   const getFreeSubscription = (v: string) => {

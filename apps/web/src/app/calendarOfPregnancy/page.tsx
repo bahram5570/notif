@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: 'محاسبه سن بارداری آنلاین و تقویم بارداری هفتگی و ماهانه',
   description:
     'محاسبه سن بارداری با سونوگرافی، آزمایش خون و تاریخ آخرین پریود انجام می‌‌شود. در ایمپو به راحتی سن بارداری و تقویم بارداری خود را مشاهده کنید',
-  robots: 'index, follow',
+  robots: { follow: true, index: true },
   alternates: {
     canonical: `${HOST_URL}/calendarOfPregnancy`,
   },

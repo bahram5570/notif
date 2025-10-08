@@ -3,12 +3,12 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import { GetQueryTypes, newQueryParamsHandlerTypes, removeQueryParamsHandlerTypes } from './types';
 
 const useQueryParamsHandler = () => {
-  const searchParams = useSearchParams();
+  const searchParams = typeof window === 'undefined' ? undefined : useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
 
   const newQueryParamsHandler: newQueryParamsHandlerTypes = (q) => {
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams(searchParams?.toString());
     const queryList = Object.entries(q);
 
     queryList.forEach((query) => {
@@ -19,16 +19,16 @@ const useQueryParamsHandler = () => {
   };
 
   const getQueryParams: GetQueryTypes = (queryName) => {
-    return searchParams.get(queryName);
+    return searchParams?.get(queryName) || null;
   };
 
   const removeQueryParamsHandler: removeQueryParamsHandlerTypes = (q) => {
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams(searchParams?.toString());
     params.delete(q);
     router.push(pathname + '?' + params);
   };
 
-  return { newQueryParamsHandler, removeQueryParamsHandler, getQueryParams };
+  return { newQueryParamsHandler, removeQueryParamsHandler, getQueryParams, searchParams };
 };
 
 export default useQueryParamsHandler;

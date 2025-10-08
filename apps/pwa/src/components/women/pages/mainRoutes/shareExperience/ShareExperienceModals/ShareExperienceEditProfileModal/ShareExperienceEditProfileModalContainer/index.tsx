@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import EditIcon from '@assets/icons/Pen 2.svg';
 import InfoIcon from '@assets/icons/info.svg';
@@ -17,11 +17,19 @@ import { ShareExperienceEditProfileModalContainerPropsType } from './type';
 const ShareExperienceEditProfileModalContainer = ({ id }: ShareExperienceEditProfileModalContainerPropsType) => {
   const { profileData } = useGetData(id);
   const { colors } = useTheme();
+  const inputRef = useRef<HTMLInputElement>(null);
   const [userName, setUserName] = useState<string>('');
   const { onProfileChangeHandler, isLoading } = useUpdateProfile();
 
   const onUserChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setUserName(e.target.value);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      inputRef.current?.blur();
+    }
   };
 
   const clickHandler = () => {
@@ -54,7 +62,14 @@ const ShareExperienceEditProfileModalContainer = ({ id }: ShareExperienceEditPro
               </Typography>
               <div className="flex flex-wrap-reverse justify-between border rounded-xl px-4 py-3 w-full">
                 <EditIcon className="w-5 h-5" style={{ fill: colors.Neutral_OnBackground }} />
-                <input type="text" className="" value={userName} onChange={onUserChangeHandler} />
+                <input
+                  type="text"
+                  className=""
+                  value={userName}
+                  onChange={onUserChangeHandler}
+                  ref={inputRef}
+                  onKeyUp={handleKeyDown}
+                />
               </div>
             </div>
             <div className="rounded-lg flex flex-row gap-2 p-1" style={{ background: colors.Warning_WarininContainer }}>

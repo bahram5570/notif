@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
+
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import useOverflowHandler from '@hooks/useOverflowHandler';
@@ -24,6 +26,8 @@ const ShareExperienceNewExerciseModalContainer = ({
   const { isLoading, topicsData, topicId, topicIdHandler } = useTopics();
   const { text, textHandler } = useText();
   const fileProps = useImage();
+  const [btnTop, setBtnTop] = useState<number>();
+  const conainerRef = useRef<HTMLDivElement | null>(null);
   useOverflowHandler(queryParam !== null);
 
   const { submitHandler, isSubmitLoading } = useSubmit({
@@ -33,14 +37,29 @@ const ShareExperienceNewExerciseModalContainer = ({
     text,
   });
 
+  useEffect(() => {
+    const el = conainerRef.current;
+    if (el) {
+      const elTop = el.getBoundingClientRect().height;
+      const elHeight = el.offsetHeight;
+      const elPaddingTop = 60;
+
+      setBtnTop(elTop + elHeight + elPaddingTop);
+    }
+  }, [text]);
+
+  const onChangeBtnTop = () => {
+    setBtnTop(undefined);
+  };
+
   return (
     <>
       <WomenPageLayout rightElement="BackButton" rightElementScript="تجربه جدید" paddingTop={0}>
         <div className="flex flex-col h-[100dvh] overflow-y-auto" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
           <ShareExperienceNewTopPart avatarImage={avatarImage} text={text} username={username} />
 
-          <div className="w-full pr-[48px] flex flex-col gap-2 -translate-y-2">
-            <ShareExperienceNewText textHandler={textHandler} text={text} />
+          <div className="w-full pr-[48px]  flex flex-col gap-2 -translate-y-2" ref={conainerRef}>
+            <ShareExperienceNewText textHandler={textHandler} text={text} onChangeBtnTop={onChangeBtnTop} />
 
             <ShareExperienceNewFile
               imageFile={fileProps.imageFile}
@@ -50,7 +69,7 @@ const ShareExperienceNewExerciseModalContainer = ({
             />
           </div>
 
-          <ShareExperienceNewContinueBtn text={text} />
+          <ShareExperienceNewContinueBtn text={text} btnTop={btnTop} />
         </div>
       </WomenPageLayout>
 

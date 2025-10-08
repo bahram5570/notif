@@ -1,19 +1,15 @@
 'use client';
 
-import { useState } from 'react';
-
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 
 import ChallengeBanner from './ChallengeBanner';
-import ChallengeBtn from './ChallengeBtn';
 import ChallengeHeader from './ChallengeHeader';
 import ChallengeQuestion from './ChallengeQuestion';
 import useGetFormData from './__hooks__/useGetFormData';
 import ChallengeSkeleton from './challengeSkeleton';
 
 const ChallengePage = () => {
-  const [answerValue, setAnswerValue] = useState('');
   const { data, isLoading } = useGetFormData();
 
   return (
@@ -28,8 +24,7 @@ const ChallengePage = () => {
             <ChallengeHeader date={data.date} status={data.status} />
             <ChallengeBanner bannerText={data.bannerText} bannerTitle={data.bannerTitle} />
 
-            <ChallengeQuestion {...data} answerValue={answerValue} onChangeHandler={setAnswerValue} />
-            <ChallengeBtn {...data} answerValue={answerValue} />
+            <ChallengeQuestion {...data} />
           </div>
         </WomenPageLayout>
       )}

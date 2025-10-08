@@ -1,22 +1,25 @@
+import { completeCacheService } from '@services/cachingServices';
 import http from '@services/http';
 
 import AuthorPageContainer from '@components/pages/author/slug/AuthorPageContainer';
+import { CACHE_REVALIDATE_TIME } from '@constants/app.constants';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
-import { notFound } from 'next/navigation';
 
 import { AuthorMainResponseTypes } from './types';
 
-const getAuthorData = async (id: string) => {
-  return await http<AuthorMainResponseTypes>({
-    method: 'GET',
-    cache: 'no-store',
-    url: `support/article/author/${id}`,
-  });
+export const generateStaticParams = async () => {
+  const list: string[] = [];
+  return list.map((slug) => ({ slug }));
 };
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const { data, error } = await getAuthorData(params.slug);
+export const generateMetadata = async ({ params }: { params: { slug: string } }): Promise<Metadata> => {
+  const { data, error } = await http<AuthorMainResponseTypes>({
+    method: 'GET',
+    cache: 'force-cache',
+    revalidate: CACHE_REVALIDATE_TIME,
+    url: `support/article/author/${params.slug}`,
+  });
 
   if (data) {
     return {
@@ -31,13 +34,13 @@ export async function generateMetadata({ params }: { params: { slug: string } })
       title: error?.message,
     };
   }
-}
+};
 
 const Author = async ({ params }: { params: { slug: string } }) => {
-  const { data } = await getAuthorData(params.slug);
+  const data = await completeCacheService<AuthorMainResponseTypes>(`support/article/author/${params.slug}`);
 
   if (!data) {
-    notFound();
+    return <></>;
   }
 
   return <AuthorPageContainer {...data} />;

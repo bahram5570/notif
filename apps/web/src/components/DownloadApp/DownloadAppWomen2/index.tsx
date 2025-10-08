@@ -1,47 +1,55 @@
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { SMALL_SCREEN_MAX_WIDTH } from '@constants/app.constants';
 
 import { DownloadAppWomen2Types } from './types';
 
-const CONTAINER_HEIGHT = 680;
-
 const DownloadAppWomen2 = ({ Link1, Link2 }: DownloadAppWomen2Types) => {
   return (
-    <div
-      style={{ height: CONTAINER_HEIGHT }}
-      className="relative w-full overflow-hidden flex justify-center items-end lg:!h-[150px]"
-    >
-      <div className="min-w-[3500px] min-h-[3500px] flex justify-center items-end rounded-full overflow-hidden lg:hidden">
-        <div
-          style={{ maxWidth: SMALL_SCREEN_MAX_WIDTH, height: CONTAINER_HEIGHT }}
-          className="relative w-[100vw] flex flex-col items-center justify-end mx-auto px-4 bg-gradient-to-b from-[#FEF2F5] to-[#FFDDE6]"
-        >
-          <div className="w-full flex justify-end translate-y-2">
-            <CustomImage alt="" width={126} height={90} src={'/assets/images/downloadAppBanner.webp'} />
+    <div className="relative w-full h-[680px] lg:h-[740px] overflow-hidden flex justify-center items-end">
+      <div className="min-w-[3500px] min-h-[3500px] lg:min-w-[10000px] lg:min-h-[10000px] flex justify-center items-end rounded-full overflow-hidden">
+        <div className="relative w-[100vw] h-[680px] lg:h-[740px] flex flex-col lg:flex-row items-center justify-end lg:justify-between mx-auto px-4 md:pl-5 xl:pl-[140px] md:pr-[100px] xl:pr-[100px] 2xl:pr-[300px] bg-gradient-to-b from-[#FEF2F5] to-[#FFDDE6]">
+          <div className="relative flex flex-col lg:items-start max-w-[500px] mt-[130px]">
+            <div className="absolute -top-[72px] lg:-top-[100px] left-0 w-[126px] lg:w-[160px]">
+              <CustomImage
+                alt=""
+                fill={true}
+                quality={99}
+                className="!w-full !h-auto"
+                src={'/assets/images/downloadAppBanner.webp'}
+              />
+            </div>
+
+            <CustomTypography
+              fontSize="Headline_Small"
+              color={'Neutral_OnBackground'}
+              className="text-center lg:text-start pb-2 px-6"
+            >
+              کامل‌ترین اپلیکیشن سلامت بانوان در خاورمیانه
+            </CustomTypography>
+
+            <CustomTypography
+              fontSize="Body_Large"
+              color={'Surface_InverseSurface'}
+              className="text-center lg:text-start lg:px-6"
+            >
+              بیش از ۳ میلیون بانو در مسیر سلامتی از پریود تا باروری ایمپو رو برای همراهی انتخاب کردن.
+            </CustomTypography>
+
+            <div className="w-full flex items-center justify-between gap-4 pt-6">
+              {Link1}
+              {Link2}
+            </div>
           </div>
 
-          <CustomTypography fontSize="Headline_Small" color={'Neutral_OnBackground'} className="text-center pb-2 px-6">
-            کامل‌ترین اپلیکیشن سلامت بانوان در خاورمیانه
-          </CustomTypography>
-
-          <CustomTypography fontSize="Body_Large" color={'Surface_InverseSurface'} className="text-center">
-            بیش از ۳ میلیون بانو در مسیر سلامتی از پریود تا باروری ایمپو رو برای همراهی انتخاب کردن.
-          </CustomTypography>
-
-          <div className="w-full flex items-center justify-between gap-4 pt-6">
-            {Link1}
-            {Link2}
+          <div className="relative h-full w-full max-w-[400px] sm:max-w-full sm:w-[400px] lg:w-[600px] flex">
+            <CustomImage
+              alt=""
+              fill={true}
+              quality={99}
+              src={'/assets/images/downloadAppFooter.webp'}
+              className="!w-full !h-auto mt-auto translate-y-4"
+            />
           </div>
-
-          <CustomImage
-            alt=""
-            width={480}
-            height={360}
-            quality={99}
-            className="translate-y-4"
-            src={'/assets/images/downloadAppFooter.webp'}
-          />
         </div>
       </div>
     </div>
