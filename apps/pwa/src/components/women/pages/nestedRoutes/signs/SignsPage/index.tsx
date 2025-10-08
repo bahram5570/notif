@@ -1,4 +1,5 @@
 import WomenPageLayout from '@components/women/WomenPageLayout';
+import useAnalytics from '@hooks/useAnalytics';
 import useTheme from '@hooks/useTheme';
 
 import SignsContainer from '../SignsContainer';
@@ -7,6 +8,7 @@ import TestKitModals from '../TestKitModals';
 import useGetData from '../__hooks__/useGetData';
 
 const SignsPage = () => {
+  useAnalytics({ mountTimer_eventName: 'SignsPageTimeSpent' });
   const { colors } = useTheme();
   const { isLoading, infoList } = useGetData();
 

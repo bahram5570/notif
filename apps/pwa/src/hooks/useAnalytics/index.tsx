@@ -19,9 +19,9 @@ const useAnalytics = (props?: UseAnalyticsTypes) => {
   useAnalyticsMountTimer({ mountTimer_eventName: props?.mountTimer_eventName, callEvent });
 
   // # inView
-  const { callEventRef } = useAnalyticsInView({ inView_eventName: props?.inView_eventName, callEvent });
+  const { inViewRef } = useAnalyticsInView({ inView_eventName: props?.inView_eventName, callEvent });
 
-  return { callEvent, callEventRef };
+  return { callEvent, inViewRef };
 };
 
 export default useAnalytics;

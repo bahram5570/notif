@@ -5,11 +5,11 @@ import WidgetHintCardGenerator from './WidgetHintCardGenerator';
 import { WidgetHintCardProps } from './types';
 
 const WidgetHintCard = ({ data }: WidgetHintCardProps) => {
-  const { callEventRef } = useAnalytics({ inView_eventName: 'HintWidgetSeenMoreThan5Secs' });
+  const { inViewRef } = useAnalytics({ inView_eventName: 'HintWidgetSeenMoreThan5Secs' });
 
   return (
     <WidgetCardContainer title={data.title}>
-      <div className="w-full flex flex-col items-end gap-3" ref={callEventRef}>
+      <div className="w-full flex flex-col items-end gap-3" ref={inViewRef}>
         {data.list.map((item, index) => (
           <WidgetHintCardGenerator
             {...item}

@@ -4,6 +4,7 @@ import Typography from '@components/ui/Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import useAnalytics from '@hooks/useAnalytics';
 import useTheme from '@hooks/useTheme';
 
 import BannerSection from './BannerSection';
@@ -13,6 +14,7 @@ import SegmentGenerator from './SegmentGenerator';
 import useGetData from './__hooks__/useGetData';
 
 const PregnancyCheckupContainer = () => {
+  useAnalytics({ mountTimer_eventName: 'PregnancyCheckupSpentTime' });
   const { colors } = useTheme();
   const { data, isLoading } = useGetData();
   const hasData = data && data.segments.length > 0;

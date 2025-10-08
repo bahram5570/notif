@@ -10,7 +10,7 @@ import useCircleLinesSizes from './__hooks__/useCircleLinesSizes';
 import { CircleContainerLinesProps } from './types';
 
 const CircleContainerLines = (props: CircleContainerLinesProps) => {
-  const { callEventRef } = useAnalytics({ inView_eventName: 'cycleWidgetSeenMoreThen5Secs' });
+  const { inViewRef } = useAnalytics({ inView_eventName: 'cycleWidgetSeenMoreThen5Secs' });
 
   const containerSize = props.containerSize + CIRCLE_EXTRA_SIZE * 2;
 
@@ -31,7 +31,7 @@ const CircleContainerLines = (props: CircleContainerLinesProps) => {
         right: -CIRCLE_EXTRA_SIZE,
         bottom: -CIRCLE_EXTRA_SIZE,
       }}
-      ref={callEventRef}
+      ref={inViewRef}
     >
       <div className="relative w-full h-full rounded-full" style={{ rotate: `${circleContainerRotateFinder(90)}deg` }}>
         <div

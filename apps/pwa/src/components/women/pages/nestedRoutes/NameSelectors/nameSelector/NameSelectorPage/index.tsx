@@ -1,7 +1,5 @@
 'use client';
 
-import { useEffect } from 'react';
-
 import useAnalytics from '@hooks/useAnalytics';
 
 import { NameSelectorTabsEnum } from '../NameSelectorLayout/enum';
@@ -11,12 +9,8 @@ import NameSelectorFavorites from './NameSelectorFavorites';
 import NameSelectorSuggestion from './NameSelectorSuggestion';
 
 const NameSelectorPage = () => {
-  const { callEvent } = useAnalytics();
   const { tab } = useNameSelectorTabs();
-
-  useEffect(() => {
-    callEvent('BabyNameSelectionStart');
-  }, []);
+  useAnalytics({ mountTimer_eventName: 'BabyNameSelectionEnd', pageView_eventName: 'BabyNameSelectionStart' });
 
   return (
     <>

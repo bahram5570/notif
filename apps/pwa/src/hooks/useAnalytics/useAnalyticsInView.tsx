@@ -7,7 +7,7 @@ import { UseAnalyticsInViewTypes } from './types';
 const useAnalyticsInView = (props: UseAnalyticsInViewTypes) => {
   const timerRef = useRef<NodeJS.Timeout | null>(null);
   const [timer, setTimer] = useState<number | null | 'DONE'>(null);
-  const { ref: callEventRef, inView } = useInView({ threshold: 1 });
+  const { ref: inViewRef, inView } = useInView({ threshold: 1 });
 
   useEffect(() => {
     if (inView) {
@@ -59,7 +59,7 @@ const useAnalyticsInView = (props: UseAnalyticsInViewTypes) => {
     }
   }, [timer, props?.inView_eventName]);
 
-  return { callEventRef };
+  return { inViewRef };
 };
 
 export default useAnalyticsInView;

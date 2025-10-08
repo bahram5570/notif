@@ -24,7 +24,7 @@ const useAnalyticsMountTimer = (props: UseAnalyticsMountTimerTypes) => {
       if (startTimeRef.current) {
         const timeInterval = Date.now() - startTimeRef.current;
         const time = Math.round(timeInterval / 1000);
-        props.callEvent(`${props.mountTimer_eventName} time=${time}`);
+        props.callEvent(`${props.mountTimer_eventName} timeSpent=${time}`);
       }
     };
   }, []);

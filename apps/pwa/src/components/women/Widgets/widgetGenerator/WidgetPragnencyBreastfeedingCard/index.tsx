@@ -7,14 +7,14 @@ import PragnencyBreastfeedingGenerator from './PragnencyBreastfeedingGenerator';
 import { WidgetPragnencyBreastfeedingCardProps } from './types';
 
 const WidgetPragnencyBreastfeedingCard = ({ data }: WidgetPragnencyBreastfeedingCardProps) => {
-  const { callEventRef } = useAnalytics({ inView_eventName: 'PregnancyWidgetSeenMoreThan5Sec' });
+  const { inViewRef } = useAnalytics({ inView_eventName: 'PregnancyWidgetSeenMoreThan5Sec' });
 
   const { colors } = useTheme();
 
   const backgroundColor = colors.Neutral_Background.toLowerCase() + 'b3';
 
   return (
-    <div className="flex flex-col gap-2 w-full py-2 px-3 rounded-xl" style={{ backgroundColor }} ref={callEventRef}>
+    <div className="flex flex-col gap-2 w-full py-2 px-3 rounded-xl" style={{ backgroundColor }} ref={inViewRef}>
       <div className="flex gap-3 justify-center items-center">
         <div className="flex flex-col items-end gap-2 w-full pt-5">
           <Typography scale="Title" size="Small">

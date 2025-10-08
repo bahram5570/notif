@@ -12,7 +12,7 @@ import { BIORHYTHM_STATUS, EXTRA_LINK } from './constant';
 import { SelectedDayBiorhythmProps } from './type';
 
 const SelectedDayBiorhythm = ({ selectedDateInfo }: SelectedDayBiorhythmProps) => {
-  const { callEventRef } = useAnalytics({ inView_eventName: 'BiorhythmSeenMoreThen5Secs' });
+  const { inViewRef } = useAnalytics({ inView_eventName: 'BiorhythmSeenMoreThen5Secs' });
 
   const { colors } = useTheme();
 
@@ -26,7 +26,7 @@ const SelectedDayBiorhythm = ({ selectedDateInfo }: SelectedDayBiorhythmProps) =
   return (
     <>
       {biorhythmInfo && (
-        <div className="w-full h-fit rounded-2xl p-4" style={{ backgroundColor }} ref={callEventRef}>
+        <div className="w-full h-fit rounded-2xl p-4" style={{ backgroundColor }} ref={inViewRef}>
           <div
             className="flex justify-between items-center border-b-[1px] pb-2 mb-2"
             style={{ borderColor: colors.Neutral_Surface }}

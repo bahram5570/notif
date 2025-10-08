@@ -9,7 +9,7 @@ import useTheme from '@hooks/useTheme';
 import { PredictGeneratorProps } from './types';
 
 const PredictGenerator = (props: PredictGeneratorProps) => {
-  const { callEventRef } = useAnalytics({ inView_eventName: 'PredictionWidgetSeenMoreThan5Sec' });
+  const { inViewRef } = useAnalytics({ inView_eventName: 'PredictionWidgetSeenMoreThan5Sec' });
 
   const { colors } = useTheme();
 
@@ -17,7 +17,7 @@ const PredictGenerator = (props: PredictGeneratorProps) => {
     <div
       className=" rounded-lg divide-y-[1px] flex  flex-col justify-between items-center px-3 py-3 gap-2 "
       style={{ backgroundColor: colorFormatConverter(props.backgroundColor) }}
-      ref={callEventRef}
+      ref={inViewRef}
     >
       <div className="flex flex-row-reverse items-center gap-2 w-44">
         <CustomImage
