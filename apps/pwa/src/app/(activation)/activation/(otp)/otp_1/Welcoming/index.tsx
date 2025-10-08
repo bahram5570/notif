@@ -1,5 +1,7 @@
 'use client';
 
+import { addIdAttrs } from '@utils/scripts';
+
 import Typography from '@components/ui/Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
@@ -21,6 +23,7 @@ const Welcoming = ({ onComplete }: { onComplete?: onCompleteType }) => {
       <div
         style={{ maxWidth: MAX_SCREEN_WIDTH }}
         className="fixed top-0 left-0 right-0 bottom-0 h-[100dvh] flex flex-col items-center gap-2 px-5 pt-[370px] mx-auto"
+        {...addIdAttrs('welcoming')}
       >
         <Typography
           scale="Title"
