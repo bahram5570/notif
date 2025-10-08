@@ -12,7 +12,7 @@
     "pwa:build": "npm run packages:build && cd apps/pwa && npm install && npm run build",
     "pwa:vercel:build": "npm run packages:build && cd apps/pwa && npm run build",
     "pwa:test:unit": "cd apps/pwa && npm run test:unit",
-    "pwa:test:e2e": "cd apps/pwa &&  cypress open",
+    "pwa:test:e2e": "cd apps/pwa &&  npx cypress open",
     "pwa:export": "cd apps/pwa && npm run export",
     "pwa:start": "cd apps/pwa && npm run start",
     "pwa:install": "cd apps/pwa && npm install",
@@ -33,6 +33,7 @@
     "typescript": "^5.8.3"
   },
   "devDependencies": {
+    "@cypress/react": "^9.0.1",
     "@next/eslint-plugin-next": "^14.2.5",
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
     "@types/fs-extra": "^11.0.4",

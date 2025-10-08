@@ -1,9 +1,12 @@
 {
+  "extends": "../tsconfig.json",
   "compilerOptions": {
-    "target": "es6",
-    "lib": ["es6", "dom"],
+    "paths": {
+      "@utils/*": ["../../src/utils/*"],
+      "@constants/*": ["../../src/constants/*"]
+    },
     "sourceMap": true,
     "types": ["cypress", "node"]
   },
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts", "**/*.tsx"]
 }
