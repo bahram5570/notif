@@ -1,6 +1,7 @@
 import Spinner from '@components/ui/Spinner';
 import Typography from '@components/ui/Typography';
 import { SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME } from '@components/women/pages/mainRoutes/shareExperience/constants';
+import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import useTheme from '@hooks/useTheme';
@@ -9,6 +10,7 @@ import useShareExperienceFollow from '../../ShareExperienceModals/ShareExperienc
 import { ShareExperienceFollowModuleProps } from './types';
 
 const ShareExperienceFollowModule = (props: ShareExperienceFollowModuleProps) => {
+  const { callEvent } = useAnalytics();
   const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { followHandler, isFollowLoading } = useShareExperienceFollow(props.experienceId);
@@ -18,6 +20,8 @@ const ShareExperienceFollowModule = (props: ShareExperienceFollowModuleProps) =>
   const isLoading = isFollowLoading || pageNavigationLoading === loadingId;
 
   const clickHandler = () => {
+    callEvent(props.isFollow ? 'shareExperienceUserUnfollowed' : 'ShareExperienceUserFollowed');
+
     if (!isLoading) {
       if (props.isFollow) {
         const description = `مطمئنی دیگه نمی‌خوای تجربه‌های ${props.name} رو ببینی؟`;
@@ -48,7 +52,6 @@ const ShareExperienceFollowModule = (props: ShareExperienceFollowModuleProps) =>
           borderColor: colors.Neutral_Surface,
           backgroundColor: props.isFollow ? colors.Neutral_Surface : colors.White,
         }}
-        id={props.isFollow ? 'shareExperienceUserUnfollowed' : 'ShareExperienceUserFollowed'}
       >
         <Typography
           scale="Body"

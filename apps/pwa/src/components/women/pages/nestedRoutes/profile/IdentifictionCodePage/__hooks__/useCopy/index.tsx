@@ -1,12 +1,16 @@
 import { useState } from 'react';
 
+import useAnalytics from '@hooks/useAnalytics';
 import useCustomToast from '@hooks/useCustomToast';
 
 const useCopy = () => {
+  const { callEvent } = useAnalytics();
+
   const [isCopied, setIsCopied] = useState(false);
   const { onToast } = useCustomToast();
 
   const copyToClipboard = async (text: string) => {
+    callEvent('InviteFromCopyCode');
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {
         await navigator.clipboard.writeText(text);

@@ -2,6 +2,7 @@ import InfoIcon from '@assets/icons/info.svg';
 import { externalLink } from '@utils/navigation';
 
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 import useTheme from '@hooks/useTheme';
 
 import { CalendarWidgetEnums } from '../../__hooks__/useCalendarGetData/CalendarEnums';
@@ -11,6 +12,8 @@ import { BIORHYTHM_STATUS, EXTRA_LINK } from './constant';
 import { SelectedDayBiorhythmProps } from './type';
 
 const SelectedDayBiorhythm = ({ selectedDateInfo }: SelectedDayBiorhythmProps) => {
+  const { callEventRef } = useAnalytics({ inView_eventName: 'BiorhythmSeenMoreThen5Secs' });
+
   const { colors } = useTheme();
 
   const backgroundColor = colors.Neutral_Background.toLowerCase() + 'b3';
@@ -23,7 +26,7 @@ const SelectedDayBiorhythm = ({ selectedDateInfo }: SelectedDayBiorhythmProps) =
   return (
     <>
       {biorhythmInfo && (
-        <div className="w-full h-fit rounded-2xl p-4" style={{ backgroundColor }}>
+        <div className="w-full h-fit rounded-2xl p-4" style={{ backgroundColor }} ref={callEventRef}>
           <div
             className="flex justify-between items-center border-b-[1px] pb-2 mb-2"
             style={{ borderColor: colors.Neutral_Surface }}

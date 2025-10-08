@@ -3,6 +3,7 @@ import { colorFormatConverter, textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 import useWidgetActions from '@hooks/useWidgetActions';
 
 import { PregnancyCheckupItemPropsTypes } from './type';
@@ -14,8 +15,10 @@ const PregnancyCheckupItem = ({
   icon,
   title,
 }: PregnancyCheckupItemPropsTypes) => {
+  const { callEvent } = useAnalytics();
   const { actionHandler } = useWidgetActions();
   const linkTo = () => {
+    callEvent('CheckupWidgetCard');
     actionHandler(action);
   };
   return (
@@ -23,7 +26,6 @@ const PregnancyCheckupItem = ({
       style={{ background: `${colorFormatConverter(backgroundColor)}33` }}
       className=" rounded-lg flex flex-row-reverse gap-2 p-3"
       onClick={linkTo}
-      id="PregnancyCareWeekClick"
     >
       <div>
         <CustomImage src={icon} className="w-8 h-8" />

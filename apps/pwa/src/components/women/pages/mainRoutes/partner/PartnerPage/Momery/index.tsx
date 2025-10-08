@@ -2,6 +2,7 @@ import { textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useTheme from '@hooks/useTheme';
 
@@ -9,6 +10,7 @@ import CustomLink from '../CustomLink';
 import { MemeryPropsType } from './type';
 
 const Memory = ({ memory, valid }: MemeryPropsType) => {
+  const { callEvent } = useAnalytics();
   const { colors } = useTheme();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
@@ -49,7 +51,12 @@ const Memory = ({ memory, valid }: MemeryPropsType) => {
         </Typography>
       </div>
 
-      <CustomLink lable={memory.buttonText} link={link} id="memory-link" />
+      <CustomLink
+        lable={memory.buttonText}
+        link={link}
+        id="memory-link"
+        onClick={() => callEvent('Pair_Memory_Card')}
+      />
     </div>
   );
 };

@@ -1,13 +1,17 @@
 import SignGenerator from '@components/women/SignGenerator';
 import WidgetCardContainer from '@components/women/Widgets/WidgetCardContainer';
+import useAnalytics from '@hooks/useAnalytics';
 
 import useSelectedSigns from './__hooks__/useSelectedSigns';
 import { CategoryGeneratorProps, SelectedSignsHandlerTypes } from './types';
 
 const CategoryGenerator = ({ category, title, signs, info, selectHandler }: CategoryGeneratorProps) => {
+  const { callEvent } = useAnalytics();
+
   const { selectedSigns, selectedSignsHandler } = useSelectedSigns(info.initialSelectedSigns);
 
   const selectSignHandler: SelectedSignsHandlerTypes = (ca, si) => {
+    callEvent('SignsChanged');
     selectedSignsHandler(ca, si);
 
     if (selectHandler) {

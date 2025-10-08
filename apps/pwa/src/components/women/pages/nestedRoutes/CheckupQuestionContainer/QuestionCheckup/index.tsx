@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 import useTheme from '@hooks/useTheme';
 
 import QuestionGenerator from './QuestionGenerator';
@@ -9,6 +10,7 @@ import useSubmit from './__hooks__/useSubmit';
 import { QuestionCheckupPropsType } from './type';
 
 const QuestionCheckup = ({ question }: QuestionCheckupPropsType) => {
+  const { callEvent } = useAnalytics();
   const { colors } = useTheme();
   const { isLoading, submitHandler } = useSubmit();
   const [selectedValueList, setSelectedValueList] = useState<{ [key: string]: number }>({});
@@ -23,6 +25,11 @@ const QuestionCheckup = ({ question }: QuestionCheckupPropsType) => {
   if (!question) {
     return <></>;
   }
+
+  const clickHandler = () => {
+    submitHandler({ selectedValues: selectedValueList, type: question?.type });
+    callEvent('PregnancyCheckAnswer');
+  };
 
   const checkEmptySelectedValueList = Object.keys(selectedValueList).length === 0;
   return (
@@ -53,13 +60,10 @@ const QuestionCheckup = ({ question }: QuestionCheckupPropsType) => {
         size="medium"
         variant="fill"
         color="primary"
-        onClick={() => {
-          submitHandler({ selectedValues: selectedValueList, type: question?.type });
-        }}
+        onClick={clickHandler}
         className="mt-auto"
         isLoading={isLoading}
         isDisable={checkEmptySelectedValueList}
-        id="PregnancyCheckAnswer"
       >
         ثبت اطلاعات
       </Button>

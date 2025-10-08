@@ -4,6 +4,7 @@ import { setPaymentCookie } from '@utils/cookies';
 import { externalLink } from '@utils/navigation';
 
 import { getUserCookie } from '@actions/cookie.actions';
+import useAnalytics from '@hooks/useAnalytics';
 import useApi from '@hooks/useApi';
 import useCustomToast from '@hooks/useCustomToast';
 import { useParams, useRouter } from 'next/navigation';
@@ -11,6 +12,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { ApprovedCodeHandlerTypes, BuyResponseTypes, UseBuyProps } from './types';
 
 const useBuy = ({ id, questionValues, type }: UseBuyProps) => {
+  const { callEvent } = useAnalytics();
   const clinicInfo = (useParams().clinicInfo as string).split('-');
   const [approvedCode, setApprovedCode] = useState('');
   const { onToast } = useCustomToast();
@@ -21,6 +23,8 @@ const useBuy = ({ id, questionValues, type }: UseBuyProps) => {
   const ticket = isCompletePayment ? type : Number(payValue);
 
   const successHandler = async (v: BuyResponseTypes) => {
+    callEvent('Clinic_Payment_Press');
+
     if (v.isValid) {
       if (v.redirectBank) {
         const user = await getUserCookie();

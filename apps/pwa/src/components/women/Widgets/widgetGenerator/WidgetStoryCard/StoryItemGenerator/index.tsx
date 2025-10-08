@@ -1,5 +1,6 @@
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import useTheme from '@hooks/useTheme';
@@ -9,6 +10,8 @@ import { STORY_CIRCLE_WIDTH } from '../constants';
 import { StoryItemGeneratorProps } from './types';
 
 const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGeneratorProps) => {
+  const { callEvent } = useAnalytics();
+
   const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
@@ -17,6 +20,7 @@ const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGenerat
   const isLoading = pageNavigationLoading === loadingId;
 
   const selectHandler = () => {
+    callEvent('StoryClick');
     if (!isLoading) {
       newQueryParamsHandler({ [MODALS.STORY_MODAL_ID]: id });
       pageNavigationHandler({ id: loadingId, showProgressBar: false });
@@ -28,7 +32,6 @@ const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGenerat
       onClick={selectHandler}
       style={{ width: STORY_CIRCLE_WIDTH }}
       className="flex flex-col items-center justify-center gap-2 cursor-pointer"
-      id="StoryClick"
     >
       <div
         style={{

@@ -14,4 +14,5 @@ export type CustomLinkPropType = {
   labelSize?: keyof SizeTypes<TyographyTypes, ScaleNames<'Lable'>>;
   link: string;
   id: string;
+  onClick?: () => void;
 };

@@ -4,6 +4,7 @@ import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
 import WidgetGenerator from '@components/women/Widgets/widgetGenerator';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import useAnalytics from '@hooks/useAnalytics';
 import useTheme from '@hooks/useTheme';
 import { WidgetsEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
@@ -12,11 +13,17 @@ import usePdfDownload from './__hooks__/usePdfDownload';
 import { HealthReportContainerPdfProps } from './types';
 
 const HealthReportContainerPdf = ({ data, backgroundColor }: HealthReportContainerPdfProps) => {
+  const { callEvent } = useAnalytics();
   const { colors } = useTheme();
   const { ref, downloadStatus, downloadStatusHandler } = usePdfDownload();
 
   const PeriodReportType = data.widgets.find((widget) => widget.type === WidgetsEnum.PeriodReportCard);
   const NotData = PeriodReportType?.data.items.length === undefined || PeriodReportType?.data.items.length < 3;
+
+  const clickHandler = () => {
+    downloadStatusHandler('preparing');
+    callEvent('GetHealthReportAsPdf');
+  };
 
   return (
     <>
@@ -29,9 +36,8 @@ const HealthReportContainerPdf = ({ data, backgroundColor }: HealthReportContain
           variant="fill"
           color="primary"
           isDisable={NotData}
-          id="GetHealthReportAsPdf"
           isLoading={downloadStatus !== null}
-          onClick={() => downloadStatusHandler('preparing')}
+          onClick={clickHandler}
         >
           دریافت pdf گزارش سلامت
         </Button>

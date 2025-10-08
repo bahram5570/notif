@@ -1,3 +1,4 @@
+import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import { usePathname } from 'next/navigation';
 
@@ -5,6 +6,7 @@ import { NAME_SELECTOR_ACTIVATION_PAGES_INFO } from '../../constants';
 import { NameSelectorActivationPageNamesTypes } from '../../types';
 
 const useNameSelectorActivationSteps = () => {
+  const { callEvent } = useAnalytics();
   const pageName = usePathname();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
@@ -15,6 +17,7 @@ const useNameSelectorActivationSteps = () => {
   const isNextStepLoading = pageNavigationLoading === loadingId;
 
   const nextStepNavigation = () => {
+    callEvent(`BabyNameActivationStep${stepInfo.nextStep}`);
     pageNavigationHandler({ showProgressBar: false, linkTo: stepInfo.nextStep || '', id: loadingId });
   };
 

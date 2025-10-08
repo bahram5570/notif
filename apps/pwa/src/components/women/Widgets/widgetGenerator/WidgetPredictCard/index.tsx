@@ -5,6 +5,7 @@ import PredictGenerator from './PredictGenerator';
 import { WidgetPredictCardProps } from './types';
 
 const WidgetPredictCard = ({ data }: WidgetPredictCardProps) => {
+
   return (
     <WidgetCardContainer title={data.title}>
       <CustomSlider gap={10}>

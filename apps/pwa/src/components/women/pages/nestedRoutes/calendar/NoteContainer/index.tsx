@@ -8,6 +8,7 @@ import Typography from '@components/ui/Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import useAnalytics from '@hooks/useAnalytics';
 import useTheme from '@hooks/useTheme';
 
 import DeleteNoteBtn from './DeleteNoteBtn';
@@ -18,6 +19,7 @@ import useGetData from './__hooks__/useGetData';
 import useSubmit from './__hooks__/useSubmit';
 
 const NoteContainer = () => {
+  const { callEvent } = useAnalytics();
   const { colors } = useTheme();
   const { noteValue, onChangeHandler, isLoading: getDataLoading } = useGetData();
   const { isLoading, submitHandler } = useSubmit({ noteId: noteValue.noteId });
@@ -27,6 +29,7 @@ const NoteContainer = () => {
   const isEditMode = noteValue.noteId ? true : false;
 
   const onClick = () => {
+    isEditMode ? callEvent('NoteEdit') : callEvent('NoteAdd');
     submitHandler(noteValue);
   };
 
@@ -77,7 +80,6 @@ const NoteContainer = () => {
                 isDisable={!noteValue.title}
                 className="w-full"
                 onClick={onClick}
-                id={isEditMode ? 'NoteEdit' : 'NoteAdd'}
               >
                 {isEditMode ? 'ویرایش یادداشت' : 'ثبت یادداشت'}
               </Button>

@@ -1,5 +1,6 @@
 import LinkIcon from '@assets/icons/calendarSignLink.svg';
 
+import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useSignDateState from '@hooks/useSignDateState';
 
@@ -10,6 +11,7 @@ import SignsList from './SignsList';
 import { SelectedDaySignsContainerProps } from './types';
 
 const SelectedDaySignsContainer = ({ selectedDateInfo }: SelectedDaySignsContainerProps) => {
+  const { callEvent } = useAnalytics();
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { changeCurrentDate } = useSignDateState();
 
@@ -26,11 +28,16 @@ const SelectedDaySignsContainer = ({ selectedDateInfo }: SelectedDaySignsContain
     });
   };
 
+  const clickHandler = () => {
+    callEvent('Sign_From_Calendar');
+    linkTo();
+  };
+
   return (
     <div className="relative w-full flex items-center justify-end">
       {signs && signs.length > 0 ? <SignsList signs={signs} /> : <NoSigns />}
 
-      <div className="relative cursor-pointer" onClick={linkTo} id="Sign_From_Calendar">
+      <div className="relative cursor-pointer" onClick={clickHandler}>
         <LinkIcon className="w-14 h-auto" />
       </div>
     </div>

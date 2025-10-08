@@ -8,9 +8,26 @@ import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
 import { WidgetCardContainerProps } from './types';
 
-const WidgetCardContainer = ({ title, titleElement, button, children, buttonId }: WidgetCardContainerProps) => {
+const WidgetCardContainer = ({
+  title,
+  titleElement,
+  button,
+  children,
+  buttonId,
+  onClick,
+}: WidgetCardContainerProps) => {
   const { colors } = useTheme();
   const { actionHandler } = useWidgetActions();
+
+  const clickHandler = () => {
+    if (button) {
+      if (onClick) {
+        onClick();
+      }
+
+      actionHandler(button.action);
+    }
+  };
 
   const backgroundColor = colors.Neutral_Background.toLowerCase() + 'b3';
 
@@ -35,7 +52,7 @@ const WidgetCardContainer = ({ title, titleElement, button, children, buttonId }
           variant="fill"
           className="mt-4"
           color="FREE-STYLES"
-          onClick={() => actionHandler(button.action)}
+          onClick={clickHandler}
           buttonColor={colorFormatConverter(button.backgroundColor)}
           contentsColor={colorFormatConverter(button.foregroundColor)}
           isDisable={button?.action.actionType === ActionTypeEnum.None}

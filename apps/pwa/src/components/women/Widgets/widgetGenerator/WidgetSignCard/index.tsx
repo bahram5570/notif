@@ -4,12 +4,15 @@ import CustomSlider from '@components/ui/CustomSlider';
 import Typography from '@components/ui/Typography';
 import SignGenerator from '@components/women/SignGenerator';
 import WidgetCardContainer from '@components/women/Widgets/WidgetCardContainer';
+import useAnalytics from '@hooks/useAnalytics';
 
 import { WidgetSignCardProps } from './types';
 
 const WidgetSignCard = ({ data }: WidgetSignCardProps) => {
+  const { callEvent } = useAnalytics();
+  
   return (
-    <WidgetCardContainer title={data.title} button={data.button}>
+    <WidgetCardContainer title={data.title} button={data.button} onClick={() => callEvent('Action_From_SignCard')}>
       <Typography scale="Body" size="Small">
         {data.description}
       </Typography>
