@@ -72,7 +72,7 @@ const Otp2Container = ({
   }
 
   return (
-    <MainActivationModule {...customPageInfo} className="pt-5">
+    <MainActivationModule {...customPageInfo} className="pt-5" btnTestId="otp2">
       <div className="flex flex-col items-center">
         <Codes submitHandler={submitHandler} isLoading={isLoading} otpStatus={otpStatus} />
 

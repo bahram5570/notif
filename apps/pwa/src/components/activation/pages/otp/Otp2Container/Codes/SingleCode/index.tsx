@@ -61,6 +61,7 @@ const SingleCode = ({ focusInfo, stepIndex, stepValue, stepHandler, deleteHandle
         ${otpStatus === 'wrong' && 'animate-otpError'}
         ${otpStatus === 'correct' && 'animate-otpSuccess'}
       `}
+      data-testid={`otp-input-${stepIndex}`}
     />
   );
 };

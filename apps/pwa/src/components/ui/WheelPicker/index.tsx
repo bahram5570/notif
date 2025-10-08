@@ -8,7 +8,7 @@ import useWheelPickerReady from './__hooks__/useWheelPickerReady';
 import { WHEEL_PICKER_CELL_HEIGHT, WHEEL_PICKER_EXTRA_CELLS, WHEEL_PICKER_TOTAL_CELLS } from './constants';
 import { WheelPickerProps } from './types';
 
-const WheelPicker = ({ list, defaultValue, valueHandler }: WheelPickerProps) => {
+const WheelPicker = ({ list, defaultValue, valueHandler, testId }: WheelPickerProps) => {
   const { wheelPickerListData } = useWheelPickerListData({ list, defaultValue });
   const { ready } = useWheelPickerReady();
   const [slide, setSlide] = useState(0);
@@ -32,6 +32,7 @@ const WheelPicker = ({ list, defaultValue, valueHandler }: WheelPickerProps) => 
           initialSlide={wheelPickerListData.initialSlide}
           onSlideChange={(s) => slideHandler(s.activeIndex)}
           style={{ height: WHEEL_PICKER_CELL_HEIGHT * WHEEL_PICKER_TOTAL_CELLS }}
+          data-testid={testId}
         >
           {wheelPickerListData.updatedList.map((item, index) => {
             const currentIndex = index - WHEEL_PICKER_EXTRA_CELLS;

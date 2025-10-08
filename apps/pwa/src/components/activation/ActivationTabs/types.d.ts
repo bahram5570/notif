@@ -4,4 +4,5 @@ export interface ActivationTabsTypes {
   tab: number;
   tabHandler: (t: number) => void;
   tabsList: ActivationTabsListTypes;
+  testid?: string;
 }
