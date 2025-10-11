@@ -65,6 +65,7 @@ const Intention5Container = ({
         isLoading={isLoading}
         onRegister={onRegister}
         showContinueBtn={showContinueBtn}
+        btnTestId="btn_intention5"
         {...pageInfo}
       >
         <BinaryModule binaryOptions={binaryOptions} valueHandler={valueHandler} />

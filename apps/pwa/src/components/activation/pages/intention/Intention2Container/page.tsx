@@ -58,6 +58,7 @@ const Intention2Container = ({
         isLoading={isLoading}
         onRegister={onRegister}
         showContinueBtn={showContinueBtn}
+        btnTestId="btn_intention2"
         {...pageInfo}
       >
         <RadioModule options={options} onSelect={selectHandler} />

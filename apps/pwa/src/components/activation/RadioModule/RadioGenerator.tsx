@@ -25,7 +25,7 @@ const RadioGenerator = ({ option, selectedItem, selectedItemHandler }: RadioGene
   const height = option.icon ? 'initial' : `${option.description && isChecked ? descriptionHeight : 0}`;
 
   return (
-    <div onClick={() => selectedItemHandler(option.id)}>
+    <div onClick={() => selectedItemHandler(option.id)} data-testid={`radioItem_${option.id}`} aria-checked={isChecked}>
       <div
         style={{ borderColor, backgroundColor }}
         className="w-full h-fit p-4 rounded-xl border-[1px] flex justify-between items-center gap-1 pointer-events-none "

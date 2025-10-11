@@ -28,6 +28,7 @@ const Btn = ({ btnLabel, btnLabel2, btnHandler, isOnMountModule, isLoading }: Bt
           isLoading={isLoading}
           onClick={clickHandler}
           navigationLoadingId={isOnMountModule ? undefined : 'rewardModuleBtn'}
+          btnTestId="rewardModuleBtn"
         >
           {btnLabel}
         </ActivationBtn>

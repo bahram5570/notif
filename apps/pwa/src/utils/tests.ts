@@ -18,13 +18,11 @@ export const dateModuleFindSlide = (date: string, calendarType: CalendarTypeEnum
       break;
     case CalendarTypeEnum.Gregorian:
       startDate = GREGORIAN_START_DATE;
-    default:
-      startDate = JALALI_START_DATE;
       break;
   }
 
-  const dateParts = date.split(DATE_SEPERATOR_REGEX).map(Number);
-  const startParts = startDate.split(DATE_SEPERATOR_REGEX).map(Number);
+  const dateParts = date.split(DATE_SEPERATOR_REGEX).map((v) => Number(v));
+  const startParts = startDate.split(DATE_SEPERATOR_REGEX).map((v) => Number(v));
 
   const [yearSlide, monthSlide, daySlide] = dateParts.map((part, i) => part - startParts[i]);
 
