@@ -6,6 +6,7 @@ import DateModule from '@components/activation/DateModule';
 import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
+import useAnalytics from '@hooks/useAnalytics';
 
 import useEditCycleDateIntervals from './__hooks__/useEditCycleDateIntervals';
 import useSubmitFinishPeriod from './__hooks__/useSubmitFinishPeriod';
@@ -16,6 +17,12 @@ const PopUpEditCycleFinishPeriod = ({ data, startTime, periodLength }: PopUpEdit
   const datesInterval = useEditCycleDateIntervals({ startTime, periodLength });
 
   const { callApi, isLoading } = useSubmitFinishPeriod(endTime);
+  const { callEvent } = useAnalytics();
+
+  const clickHandler = () => {
+    callApi();
+    callEvent('End_Cycle_Edited');
+  };
 
   return (
     <>
@@ -39,7 +46,7 @@ const PopUpEditCycleFinishPeriod = ({ data, startTime, periodLength }: PopUpEdit
       <Button
         size="medium"
         variant="fill"
-        onClick={callApi}
+        onClick={clickHandler}
         color="FREE-STYLES"
         className="mt-auto"
         isLoading={isLoading}

@@ -1,11 +1,13 @@
 import { useEffect } from 'react';
 
 import { NO_NEED_SUBSCRIPTION_PAGES_LIST } from '@constants/routes.constants';
+import useAnalytics from '@hooks/useAnalytics';
 import { usePathname, useRouter } from 'next/navigation';
 
 const useSubscriptionGuard = (remainDays?: number) => {
   const router = useRouter();
   const pathname = usePathname();
+  const { callEvent } = useAnalytics();
 
   useEffect(() => {
     if (remainDays === undefined) {
@@ -16,6 +18,7 @@ const useSubscriptionGuard = (remainDays?: number) => {
       const isNoNeedSubscription = NO_NEED_SUBSCRIPTION_PAGES_LIST.includes(pathname);
 
       if (!isNoNeedSubscription) {
+        callEvent('Subscription_From_Forced');
         router.push('/protected/subscription');
       }
     }

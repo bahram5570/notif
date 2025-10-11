@@ -5,6 +5,7 @@ import { colorFormatConverter } from '@utils/scripts';
 import Button from '@components/ui/Button';
 import OptionButton from '@components/ui/OptionButton';
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 import useTheme from '@hooks/useTheme';
 import useWidgetActions from '@hooks/useWidgetActions';
 
@@ -15,12 +16,14 @@ const PopupSexTracker = ({ data }: PopupSexTrackerProps) => {
   const { colors } = useTheme();
   const { actionHandler } = useWidgetActions();
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const { callEvent } = useAnalytics({ pageView_eventName: 'SexTracker_Interaction_Showed' });
 
   const selectHandler = (i: number) => {
     setSelectedIndex(i);
   };
 
   const submitHandler = () => {
+    callEvent('SexTracker_Interaction_Submit');
     actionHandler(data.items[selectedIndex].action);
   };
 

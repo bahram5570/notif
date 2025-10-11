@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import Spinner from '@components/ui/Spinner';
 import WomenPageLayout from '@components/women/WomenPageLayout';
+import useAnalytics from '@hooks/useAnalytics';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
 
 import PopUpEditCycleFinishPeriod from './PopUpEditCycleFinishPeriod';
@@ -12,6 +13,7 @@ const PopUpEditCycle = ({ popUp }: PopUpEditCycleProps) => {
   const [startTime, setStartTime] = useState('');
   const { isLoading, data: profileData } = useGetProfileData();
   const [editPage, setEditPage] = useState<EditPageTypes>('lastPeriod');
+  useAnalytics({ pageView_eventName: 'Start_Cycle_Edited' });
 
   return (
     <WomenPageLayout rightElement="BackButton" paddingTop={0} paddingBottom={0}>

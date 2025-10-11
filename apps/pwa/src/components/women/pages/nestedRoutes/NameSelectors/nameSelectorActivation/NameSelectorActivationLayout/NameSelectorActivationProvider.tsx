@@ -23,6 +23,7 @@ export const NameSelectorActivatioContext = createContext<NameSelectorActivatioC
 const NameSelectorActivationProvider = ({ children, initialData }: NameSelectorActivationProviderTypes) => {
   const router = useRouter();
   const [data] = useState(initialData);
+  useAnalytics({ pageView_eventName: 'BabyNameSelectionStartForNewUser' });
   useAnalytics({ mountTimer_eventName: 'BabyNameSelectionEndForNewUser' });
   const [payload, setPayload] = useState<NameSelectorActivatioPayloadTypes>(PAYLOAD_INITIAL_DATA);
 

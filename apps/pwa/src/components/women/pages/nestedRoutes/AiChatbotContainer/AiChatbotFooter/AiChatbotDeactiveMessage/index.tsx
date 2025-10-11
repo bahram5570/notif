@@ -3,6 +3,7 @@ import { colorFormatConverter } from '@utils/scripts';
 
 import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
 import useTheme from '@hooks/useTheme';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
@@ -12,6 +13,7 @@ import { AiChatbotDeactiveMessagePropsType } from './type';
 const AiChatbotDeactiveMessage = ({ deactiveMessage, title, deactiveButton }: AiChatbotDeactiveMessagePropsType) => {
   const { colors } = useTheme();
   const { actionHandler } = useWidgetActions();
+  const { callEvent } = useAnalytics({ pageView_eventName: 'ChatbotInteractionButtonSeen' });
 
   return (
     <div
@@ -41,6 +43,7 @@ const AiChatbotDeactiveMessage = ({ deactiveMessage, title, deactiveButton }: Ai
           contentsColor={colorFormatConverter(deactiveButton.foregroundColor)}
           buttonColor={colorFormatConverter(deactiveButton.backgroundColor)}
           onClick={() => {
+            callEvent('ChatbotInteractionClick');
             actionHandler(deactiveButton.action);
           }}
         >

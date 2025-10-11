@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react';
 import { getPaymentCookie, removePaymentCookie } from '@utils/cookies';
 import { isDevelopeMode } from '@utils/system';
 
+import useAnalytics from '@hooks/useAnalytics';
 // import { getPaymentAction, removePaymentAction } from '@actions/payment';
 import { useRouter } from 'next/navigation';
 
@@ -14,6 +15,7 @@ import { PaymentQueryTypes } from './types';
 const PaymentProvider = () => {
   const router = useRouter();
   const isFirstTime = useRef(isDevelopeMode());
+  const { callEvent } = useAnalytics();
 
   useEffect(() => {
     if (isFirstTime.current) {
@@ -37,7 +39,7 @@ const PaymentProvider = () => {
         if (!queryData.isSuccessful) {
           return;
         }
-
+        callEvent('SubscriptionPaymentComplete');
         router.push(data.route);
       } else {
         if (queryData) {

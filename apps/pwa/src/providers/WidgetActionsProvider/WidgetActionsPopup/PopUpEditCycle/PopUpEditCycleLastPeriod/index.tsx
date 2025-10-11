@@ -4,6 +4,7 @@ import DateModule from '@components/activation/DateModule';
 import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
+import useAnalytics from '@hooks/useAnalytics';
 import useDateIntervals from '@providers/__activation__/ActivationProvider/__hooks__/useDateIntervals';
 
 import useSubmitLastPeriod from './__hooks__/useSubmitLastPeriod';
@@ -17,6 +18,12 @@ const PopUpEditCycleLastPeriod = ({
 }: PopUpEditCycleLastPeriodProps) => {
   const { periodStart, periodEnd } = useDateIntervals();
   const { submitHandler, isLoading } = useSubmitLastPeriod(editPageHandler);
+  const { callEvent } = useAnalytics();
+
+  const clickHandler = () => {
+    submitHandler(startTime);
+    callEvent('Edit_Start_Cycle_Press');
+  };
 
   return (
     <>
@@ -36,7 +43,7 @@ const PopUpEditCycleLastPeriod = ({
         color="FREE-STYLES"
         className="mt-auto"
         isLoading={isLoading}
-        onClick={() => submitHandler(startTime)}
+        onClick={clickHandler}
         buttonColor={colorFormatConverter(data.button.backgroundColor)}
         contentsColor={colorFormatConverter(data.button.foregroundColor)}
       >
