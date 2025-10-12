@@ -1,25 +1,18 @@
-import { completeCacheService } from '@services/cachingServices';
 import http from '@services/http';
 
 import { BlogsResponseTypes } from '@app/blogs/types';
 import CategoryPageContainer from '@components/pages/category/slug/CategoryPageContainer';
-import { CACHE_REVALIDATE_TIME } from '@constants/app.constants';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 import CategorySchema from '../../../schema/CategorySchema';
-import { CategoryResponseTypes } from './types';
-
-export const generateStaticParams = async () => {
-  const list: string[] = [];
-  return list.map((slug) => ({ slug }));
-};
+import { CategoryResponseTypes, CategoryValidationTypes } from './types';
 
 export const generateMetadata = async ({ params }: { params: { slug: string } }): Promise<Metadata> => {
   const { data, error } = await http<Pick<CategoryResponseTypes, 'title'>>({
     method: 'GET',
-    cache: 'force-cache',
-    revalidate: CACHE_REVALIDATE_TIME,
+    cache: 'no-store',
     url: `support/article/category/meta/${params.slug}`,
   });
 
@@ -27,7 +20,7 @@ export const generateMetadata = async ({ params }: { params: { slug: string } })
     return {
       title: data.title,
       description: 'category',
-      robots: { follow: true, index: true },
+      robots: { index: true, follow: true },
       alternates: {
         canonical: `${HOST_URL}/category/${params.slug}`,
       },
@@ -40,19 +33,95 @@ export const generateMetadata = async ({ params }: { params: { slug: string } })
 };
 
 const Category = async ({ params }: { params: { slug: string } }) => {
-  const categoriesListData = await completeCacheService<BlogsResponseTypes>('support/article/category/1/100');
-  const categoryData = await completeCacheService<CategoryResponseTypes>(`support/article/category/${params.slug}`);
+  const { data: categoryData, error: categoryError } = await http<CategoryResponseTypes>({
+    method: 'GET',
+    cache: 'no-store',
+    url: `support/article/category/${params.slug}`,
+  });
 
-  if (!categoriesListData || !categoryData) {
-    return <></>;
+  const { data: categoriesListData, error: categoriesListError } = await http<BlogsResponseTypes>({
+    method: 'GET',
+    cache: 'no-store',
+    url: 'support/article/category/1/100',
+  });
+
+  if (categoryError || categoriesListError) {
+    notFound();
   }
 
   return (
     <>
       <CategorySchema id={params.slug} />
-      <CategoryPageContainer categoryData={categoryData} categoriesList={categoriesListData.categories} />;
+      <CategoryValidation categoriesListData={categoriesListData} categoryData={categoryData} />
     </>
   );
 };
 
 export default Category;
+
+const CategoryValidation = async ({ categoriesListData, categoryData }: CategoryValidationTypes) => {
+  if (categoryData && categoriesListData) {
+    return <CategoryPageContainer categoryData={categoryData} categoriesList={categoriesListData.categories} />;
+  }
+
+  return <></>;
+};
+
+// import { completeCacheService } from '@services/cachingServices';
+// import http from '@services/http';
+
+// import { BlogsResponseTypes } from '@app/blogs/types';
+// import CategoryPageContainer from '@components/pages/category/slug/CategoryPageContainer';
+// import { CACHE_REVALIDATE_TIME } from '@constants/app.constants';
+// import { HOST_URL } from '@constants/links.constants';
+// import { Metadata } from 'next';
+
+// import CategorySchema from '../../../schema/CategorySchema';
+// import { CategoryResponseTypes } from './types';
+
+// export const generateStaticParams = async () => {
+//   const list: string[] = [];
+//   return list.map((slug) => ({ slug }));
+// };
+
+// export const generateMetadata = async ({ params }: { params: { slug: string } }): Promise<Metadata> => {
+//   const { data, error } = await http<Pick<CategoryResponseTypes, 'title'>>({
+//     method: 'GET',
+//     cache: 'force-cache',
+//     revalidate: CACHE_REVALIDATE_TIME,
+//     url: `support/article/category/meta/${params.slug}`,
+//   });
+
+//   if (data) {
+//     return {
+//       title: data.title,
+//       description: 'category',
+//       robots: { follow: true, index: true },
+//       alternates: {
+//         canonical: `${HOST_URL}/category/${params.slug}`,
+//       },
+//     };
+//   } else {
+//     return {
+//       title: error?.message,
+//     };
+//   }
+// };
+
+// const Category = async ({ params }: { params: { slug: string } }) => {
+//   const categoriesListData = await completeCacheService<BlogsResponseTypes>('support/article/category/1/100');
+//   const categoryData = await completeCacheService<CategoryResponseTypes>(`support/article/category/${params.slug}`);
+
+//   if (!categoriesListData || !categoryData) {
+//     return <></>;
+//   }
+
+//   return (
+//     <>
+//       <CategorySchema id={params.slug} />
+//       <CategoryPageContainer categoryData={categoryData} categoriesList={categoriesListData.categories} />;
+//     </>
+//   );
+// };
+
+// export default Category;

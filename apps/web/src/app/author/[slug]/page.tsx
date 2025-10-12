@@ -1,23 +1,16 @@
-import { completeCacheService } from '@services/cachingServices';
 import http from '@services/http';
 
 import AuthorPageContainer from '@components/pages/author/slug/AuthorPageContainer';
-import { CACHE_REVALIDATE_TIME } from '@constants/app.constants';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 import { AuthorMainResponseTypes } from './types';
-
-export const generateStaticParams = async () => {
-  const list: string[] = [];
-  return list.map((slug) => ({ slug }));
-};
 
 export const generateMetadata = async ({ params }: { params: { slug: string } }): Promise<Metadata> => {
   const { data, error } = await http<AuthorMainResponseTypes>({
     method: 'GET',
-    cache: 'force-cache',
-    revalidate: CACHE_REVALIDATE_TIME,
+    cache: 'no-store',
     url: `support/article/author/${params.slug}`,
   });
 
@@ -37,7 +30,15 @@ export const generateMetadata = async ({ params }: { params: { slug: string } })
 };
 
 const Author = async ({ params }: { params: { slug: string } }) => {
-  const data = await completeCacheService<AuthorMainResponseTypes>(`support/article/author/${params.slug}`);
+  const { data, error } = await http<AuthorMainResponseTypes>({
+    method: 'GET',
+    cache: 'no-store',
+    url: `support/article/author/${params.slug}`,
+  });
+
+  if (error) {
+    notFound();
+  }
 
   if (!data) {
     return <></>;

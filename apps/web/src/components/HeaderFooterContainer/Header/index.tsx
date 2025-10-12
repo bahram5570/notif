@@ -10,7 +10,7 @@ const Header = () => {
   const { breakPoint } = useBreakPoint();
 
   return (
-    <header style={{ maxWidth: MAX_WIDTH }} className="fixed top-0 left-0 right-0 w-full z-20">
+    <header style={{ maxWidth: MAX_WIDTH }} className="fixed top-0 left-0 right-0 w-full z-30">
       <>{breakPoint.laptop ? <HeaderMobile /> : <HeaderDesktop />}</>
     </header>
   );

@@ -1,8 +1,9 @@
-import { completeCacheService } from '@services/cachingServices';
+import http from '@services/http';
 
 import BlogsPageContainer from '@components/pages/blogs/BlogsPageContainer';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 
 import { BlogsResponseTypes } from './types';
 
@@ -16,7 +17,15 @@ export const metadata: Metadata = {
 };
 
 const Blogs = async () => {
-  const data = await completeCacheService<BlogsResponseTypes>('support/article/category/1/10');
+  const { data, error } = await http<BlogsResponseTypes>({
+    method: 'GET',
+    cache: 'no-store',
+    url: 'support/article/category/1/10',
+  });
+
+  if (error) {
+    notFound();
+  }
 
   if (!data) {
     return <></>;
