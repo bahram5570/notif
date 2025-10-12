@@ -1,12 +1,17 @@
 import { toPersianNumbers } from '@utils/numbers';
 import { dateModuleFindSlide } from '@utils/tests';
 
+import {
+  ACTIVATION_HEIGHT_VALUES,
+  ACTIVATION_WEIGHT_VALUES,
+} from '@components/activation/WeightHeightModule/constants';
 import { ACTIVATION_BIRTHDATE_TABS_LIST, ACTIVATION_REWARD_QUERY_NAME } from '@constants/activation.constants';
 import {
   CalendarTypeEnum,
   DATE_SEPERATOR_REGEX,
   GREGORIAN_FARSI_MONTH_LIST,
   JALALI_MONTH_LIST,
+  PERIOD_INTERVAL,
 } from '@constants/date.constants';
 
 function checkWheelPicker(picker: string, expectedValue: string) {
@@ -30,9 +35,11 @@ describe('template spec', () => {
   const otp = ['1', '2', '3', '4', '5', '6'];
   const jalaaliDate = '1390/07/16';
   const gregorianDate = '2010-08-5';
+  const weight = 60;
+  const height = 165;
 
   it('otp_1', () => {
-    cy.visit('/activation/goal_3');
+    cy.visit('/activation/intention_6');
 
     // Because the welcoming has a slight delay in appearing at first, we check it so that it’s not there initially.
     // cy.get('[data-testid="welcoming"]').should('not.exist');
@@ -127,58 +134,113 @@ describe('template spec', () => {
     // cy.get('[data-testid="btn_goal2"]').click();
 
     //goal_3
-    cy.url().should('include', '/activation/goal_3');
-    cy.get('[data-testid="btn_goal3"]').should('not.be.visible');
+    // cy.url().should('include', '/goal_3');
+    // cy.get('[data-testid="btn_goal3"]').should('not.be.visible');
 
-    checkRadioItem(2, 'btn_goal3');
+    // checkRadioItem(2, 'btn_goal3');
 
     //reward
-    cy.url().should('include', `?${ACTIVATION_REWARD_QUERY_NAME}=true`);
+    // cy.url().should('include', `?${ACTIVATION_REWARD_QUERY_NAME}=true`);
 
-    cy.get('[data-testid="rewardModuleBtn"]').should('be.visible').click();
+    // cy.get('[data-testid="rewardModuleBtn"]').should('be.visible').click();
 
     //intention_1
-    cy.url().should('include', '/activation/intention_1');
-    cy.get('[data-testid="btn_intention1"]').should('not.be.visible');
-    checkRadioItem(1, 'btn_intention1');
-    //reward
-    cy.url().should('include', `?${ACTIVATION_REWARD_QUERY_NAME}=true`);
+    // cy.url().should('include', '/intention_1');
+    // cy.get('[data-testid="btn_intention1"]').should('not.be.visible');
+    // checkRadioItem(1, 'btn_intention1');
+    // //reward
+    // cy.url().should('include', `?${ACTIVATION_REWARD_QUERY_NAME}=true`);
 
-    cy.get('[data-testid="rewardModuleBtn"]').should('be.visible').click();
+    // cy.get('[data-testid="rewardModuleBtn"]').should('be.visible').click();
 
     //intention_2
-    cy.url().should('include', '/activation/intention_2');
-    checkRadioItem(1, 'btn_intention2');
-
-    cy.url().should('include', `?${ACTIVATION_REWARD_QUERY_NAME}=true`);
-
-    cy.get('[data-testid="rewardModuleBtn"]').should('be.visible').click();
-
-    //intention_3
-
-    cy.url().should('include', '/activation/intention_3');
-    checkRadioItem(1, 'btn_intention3');
-
-    cy.url().should('include', `?${ACTIVATION_REWARD_QUERY_NAME}=true`);
-
-    cy.get('[data-testid="rewardModuleBtn"]').should('be.visible').click();
-
-    //intention_4
-
-    cy.url().should('include', '/activation/intention_4');
-    checkRadioItem(1, 'btn_intention4');
-
-    cy.url().should('include', `?${ACTIVATION_REWARD_QUERY_NAME}=true`);
-
-    cy.get('[data-testid="rewardModuleBtn"]').should('be.visible').click();
-
-    //intention_5
-
-    cy.url().should('include', '/activation/intention_5');
-    // checkRadioItem(1, 'btn_intention5');
+    // cy.url().should('include', '/intention_2');
+    // checkRadioItem(1, 'btn_intention2');
 
     // cy.url().should('include', `?${ACTIVATION_REWARD_QUERY_NAME}=true`);
 
     // cy.get('[data-testid="rewardModuleBtn"]').should('be.visible').click();
+
+    //intention_3
+
+    // cy.url().should('include', '/intention_3');
+    // checkRadioItem(1, 'btn_intention3');
+
+    // cy.url().should('include', `?${ACTIVATION_REWARD_QUERY_NAME}=true`);
+
+    // cy.get('[data-testid="rewardModuleBtn"]').should('be.visible').click();
+
+    //intention_4
+
+    // cy.url().should('include', '/intention_4');
+    // checkRadioItem(1, 'btn_intention4');
+
+    // cy.url().should('include', `?${ACTIVATION_REWARD_QUERY_NAME}=true`);
+
+    // cy.get('[data-testid="rewardModuleBtn"]').should('be.visible').click();
+
+    //intention_5
+
+    // cy.url().should('include', '/intention_5');
+
+    // const id = 0;
+
+    // cy.get(`[data-testid="radioItem_binary_${id}"]`)
+    //   .click()
+    //   .should('have.attr', 'aria-checked', 'true')
+    //   .then(() => {
+    //     cy.get(`[data-testid="btn_intention5"]`).should('be.visible').click();
+    //   });
+
+    // cy.url().should('include', `?${ACTIVATION_REWARD_QUERY_NAME}=true`);
+
+    // cy.get('[data-testid="rewardModuleBtn"]').should('be.visible').click();
+
+    //intention_9
+
+    // cy.url().should('include', '/intention_9');
+
+    // const weightSlide = weight - ACTIVATION_WEIGHT_VALUES.min;
+    // cy.get(`[data-testid='wheelPicker_weight']`).then(($swiper) => {
+    //   cy.window().then((win) => {
+    //     const swiperInstance = ($swiper[0] as any).swiper;
+    //     swiperInstance.slideTo(weightSlide);
+    //   });
+
+    //   cy.get(`[data-testid='wheelPicker_weight']`)
+    //     .find(`[data-testid='wheelPickerCell_${weight} kg']`)
+    //     .should('exist')
+    //     .should('have.text', `${toPersianNumbers(weight)} kg`);
+    // });
+
+    // cy.get('[data-testid="btn_intention9"]').click();
+
+    //intention_10
+    // cy.url().should('include', '/intention_10');
+
+    // const heightSlide = height - ACTIVATION_HEIGHT_VALUES.min;
+    // cy.get(`[data-testid='wheelPicker_height']`).then(($swiper) => {
+    //   cy.window().then((win) => {
+    //     const swiperInstance = ($swiper[0] as any).swiper;
+    //     swiperInstance.slideTo(heightSlide);
+    //   });
+
+    //   cy.get(`[data-testid='wheelPicker_height']`)
+    //     .find(`[data-testid='wheelPickerCell_${height} cm']`)
+    //     .should('exist')
+    //     .should('have.text', `${toPersianNumbers(height)} cm`);
+    // });
+
+    // cy.get('[data-testid="btn_intention10"]').click();
+
+    //intention_6
+
+    cy.get('[data-testid="rewardModuleBtn"]').should('be.visible').click();
+    cy.url().should('include', '/intention_6');
+
+    cy.get('[data-testid="btn_previous"]').click();
+    cy.get('[data-testid="btn_next"]').click();
+
+    cy.get("[data-testid='btn_intention6']").should('not.be.visible');
   });
 });

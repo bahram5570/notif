@@ -39,6 +39,7 @@ const Intention6Container = ({
         isLoading={isLoading}
         onRegister={onRegister}
         showContinueBtn={showContinueBtn}
+        btnTestId="btn_intention6"
         {...pageInfo}
       >
         <ActivationCalendar endDate={periodEnd} startDate={periodStart} valueHandler={valueHandler} />
