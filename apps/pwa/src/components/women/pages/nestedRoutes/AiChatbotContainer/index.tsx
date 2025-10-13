@@ -6,13 +6,12 @@ import AiChatbotMessageList from './AiChatbotMessageList';
 import AiChatbotSkeleton from './AiChatbotSkeleton';
 import EmptyState from './EmptyState';
 import useGetHistoryChatData from './__hooks__/useGetHistoryChatData';
-import useSubmit from './__hooks__/useSubmit';
+import useSubmit from './__hooks__/useSubmit-1';
 
 const AiChatbotContainer = () => {
   const { aiChatData, aiChatbotList, addChatHandler, historyLoading } = useGetHistoryChatData();
-  const { submitHandler, isLoading } = useSubmit({ chatId: aiChatData?.chatId, addChatHandler });
+  const { submitHandler, isLoading } = useSubmit({ addChatHandler });
   const NotChatData = aiChatData && aiChatbotList.length <= 0;
-  const hasChatData = aiChatbotList.length > 0;
 
   return (
     <>
@@ -26,7 +25,7 @@ const AiChatbotContainer = () => {
                 emptyStateTitle={aiChatData?.emptyStateTitle}
               />
             )}
-            {hasChatData && <AiChatbotMessageList chats={aiChatbotList} isLoading={isLoading} />}
+            {!NotChatData && <AiChatbotMessageList chats={aiChatbotList} isLoading={isLoading} />}
 
             {aiChatData && <AiChatbotFooter {...aiChatData} submitHandler={submitHandler} isLoading={isLoading} />}
           </>
