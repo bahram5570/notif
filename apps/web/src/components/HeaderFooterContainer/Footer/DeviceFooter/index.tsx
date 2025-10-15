@@ -12,7 +12,6 @@ import { usePathname } from 'next/navigation';
 
 import DeviceFooterLinkGenerator from './DeviceFooterLinkGenerator';
 import FooterNavLink from './FooterNavLink';
-import GeneticFooter from './FooterNavLink/GeneticFooter';
 import { DeviceFooterTypes } from './types';
 
 const DeviceFooter = ({ isArticlePage, hasFooterLink }: DeviceFooterTypes) => {
@@ -20,14 +19,9 @@ const DeviceFooter = ({ isArticlePage, hasFooterLink }: DeviceFooterTypes) => {
 
   return (
     <>
-      {/* // todo: پس از تمام شدن لندینگ ژنتیک، این قسمت حذف بشه و بقیه به حالت عادی برگردد */}
-      {hasFooterLink && <FooterNavLink className="!bottom-0" />}
-      <GeneticFooter />
-      {/* // todo ----------------------------------------------------- */}
+      {hasFooterLink && <FooterNavLink />}
 
-      {/* {hasFooterLink && <FooterNavLink />} */}
-
-      {/* <footer
+      <footer
         className="fixed left-0 right-0 bottom-0 w-full flex justify-around gap-2 px-4 pt-2 border-t-[1px] z-10"
         style={{
           height: FOOTER_HEIGHT,
@@ -66,7 +60,7 @@ const DeviceFooter = ({ isArticlePage, hasFooterLink }: DeviceFooterTypes) => {
           isSelected={false}
           id="navbar-login"
         />
-      </footer> */}
+      </footer>
     </>
   );
 };
