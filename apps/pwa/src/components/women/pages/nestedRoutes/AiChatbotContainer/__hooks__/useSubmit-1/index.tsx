@@ -1,14 +1,16 @@
+import { useEffect } from 'react';
+
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 
 import useEventSource from '../useEventSource';
 import { RoleEnum } from '../useGetHistoryChatData/enum';
-import { HistoryChatResponsiveType } from '../useGetHistoryChatData/type';
+import { ChatType, HistoryChatResponsiveType } from '../useGetHistoryChatData/type';
 import { SuccessResponseType, UseSubmitPropsType } from './type';
 
-const useSubmit = ({ addChatHandler }: UseSubmitPropsType) => {
+const useSubmit = ({ addChatHandler, setAiChatbotList }: UseSubmitPropsType) => {
   const { getQuery, updateQuery } = useCustomReactQuery(['historyAiChat']);
-  const { streamHandler, streamLoading } = useEventSource({ addChatHandler });
+  const { streamHandler, streamLoading, messages } = useEventSource();
 
   const aiChatData = getQuery<HistoryChatResponsiveType>({ queryKey: ['historyAiChat'] });
 
@@ -25,9 +27,7 @@ const useSubmit = ({ addChatHandler }: UseSubmitPropsType) => {
       },
     });
 
-    setTimeout(() => {
-      streamHandler({ id: v.messageId });
-    }, 10000);
+    streamHandler({ id: v.messageId });
   };
 
   const {
@@ -48,6 +48,28 @@ const useSubmit = ({ addChatHandler }: UseSubmitPropsType) => {
 
     callApi(payload);
   };
+
+  useEffect(() => {
+    setAiChatbotList((prevChats: ChatType[]) => {
+      const updatedChats = [...prevChats];
+      const lastChat = updatedChats[updatedChats.length - 1];
+
+      if (lastChat && lastChat.role === RoleEnum.Assistant) {
+        updatedChats[updatedChats.length - 1] = {
+          ...lastChat,
+          text: messages,
+        };
+      } else {
+        updatedChats.push({
+          role: RoleEnum.Assistant,
+          text: messages,
+          isAnswered: true,
+        });
+      }
+
+      return updatedChats;
+    });
+  }, [messages]);
 
   const isLoading = loading || streamLoading;
 

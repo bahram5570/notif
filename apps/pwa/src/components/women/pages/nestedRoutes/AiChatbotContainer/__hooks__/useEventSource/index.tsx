@@ -5,19 +5,19 @@ import { baseUrl } from '@services/http';
 import { getUserCookie } from '@actions/cookie.actions';
 import { EventSource } from 'eventsource';
 
-import { RoleEnum } from '../useGetHistoryChatData/enum';
 import { CLOSE_STREAM_TEXT } from './constants';
-import { StreamHandlerPropsType, UseEventSourcePropsType } from './type';
+import { StreamHandlerPropsType } from './type';
 
-const useEventSource = ({ addChatHandler }: UseEventSourcePropsType) => {
+const useEventSource = () => {
   const [streamLoading, setStreamLoading] = useState(false);
-  const [data, setData] = useState<string>('');
+  const [messages, setMessages] = useState<string>('');
 
   const streamHandler = async ({ id }: StreamHandlerPropsType) => {
     const user = await getUserCookie();
     const Authorization = user ? `Bearer ${user.token}` : '';
     const url = `${baseUrl}/feature/ai/message/${id}`;
     setStreamLoading(true);
+    setMessages('');
 
     const ev = new EventSource(url, {
       fetch: (input, init) =>
@@ -31,29 +31,36 @@ const useEventSource = ({ addChatHandler }: UseEventSourcePropsType) => {
     });
 
     ev.addEventListener('message', (event) => {
-      const data: string = event.data.replace(/"/g, '').trim();
+      let cleanedData = event.data.replace(/^data:\s*/i, '').replace(/^"|"$/g, '');
 
-      if (data === CLOSE_STREAM_TEXT) {
+      if (cleanedData === CLOSE_STREAM_TEXT) {
         ev.close();
         setStreamLoading(false);
+
         return;
       }
 
-      setData(data);
+      if (cleanedData === '') {
+        setMessages((prev) => prev + '\n');
+      } else {
+        setMessages((prev) => prev + cleanedData);
+      }
+    });
 
-      addChatHandler({ role: RoleEnum.Assistant, text: data, isAnswered: true });
+    ev.addEventListener('error', () => {
+      ev.close();
+      setMessages('');
+      setStreamLoading(false);
     });
 
     // setTimeout(() => {
     //   ev.close();
     //   setStreamLoading(false);
-    //   addChatHandler({ role: RoleEnum.Assistant, text: messages });
-    // }, 30000);
 
-    console.log(data, 'mess');
+    // }, 30000);
   };
 
-  return { streamHandler, streamLoading };
+  return { streamHandler, streamLoading, messages };
 };
 
 export default useEventSource;

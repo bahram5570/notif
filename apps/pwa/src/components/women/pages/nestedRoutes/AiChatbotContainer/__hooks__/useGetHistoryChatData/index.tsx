@@ -27,7 +27,7 @@ const useGetHistoryChatData = () => {
     setAiChatbotList([...aiChatbotList, chat]);
   };
 
-  return { historyLoading, aiChatData, addChatHandler, aiChatbotList };
+  return { historyLoading, aiChatData, addChatHandler, aiChatbotList, setAiChatbotList };
 };
 
 export default useGetHistoryChatData;

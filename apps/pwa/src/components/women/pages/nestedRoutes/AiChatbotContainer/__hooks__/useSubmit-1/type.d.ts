@@ -13,4 +13,5 @@ export type SuccessResponseType = {
 
 export interface UseSubmitPropsType extends ItemType {
   addChatHandler: (chat: ChatType) => void;
+  setAiChatbotList: any;
 }
