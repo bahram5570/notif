@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { parseFormattedText } from '../utils';
-import LoadingIcon from '@assets/icons/loading.svg';
 import chatbotJson from '@assets/lottie/chatbot.json';
 
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
@@ -49,11 +48,12 @@ const AiChatbotMessageList = ({ chats, isLoading }: AiChatbotMessageListPropsTyp
                 <WordFadeInText text={chat.text} />
               ) : (
                 <p
-                  className="rounded-full px-4 py-2 z-30"
+                  className="rounded-full px-2 py-2 z-30"
                   style={{
                     background: chat.role === RoleEnum.User ? colors.Surface_SurfaceVariant : 'transparent',
                     direction: 'rtl',
                     ...typography.Body.Large,
+                    whiteSpace: 'pre-wrap',
                   }}
                   dangerouslySetInnerHTML={{ __html: formattedLine.replace(/\n/g, '<br/>') + '&nbsp;' }}
                 />
@@ -65,8 +65,6 @@ const AiChatbotMessageList = ({ chats, isLoading }: AiChatbotMessageListPropsTyp
       {isLoading && (
         <div ref={lastItemRef} style={{ minHeight: `calc(100dvh - 360px )` }}>
           <div className="flex justify-end items-center ml-3">
-            {/* <LoadingIcon /> */}
-
             <LottieJson animationData={chatbotJson} loop={false} autoPlay={false} className="w-14 h-14" />
           </div>
         </div>
