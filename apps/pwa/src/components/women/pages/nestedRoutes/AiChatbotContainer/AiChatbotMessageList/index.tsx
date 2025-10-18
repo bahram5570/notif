@@ -14,20 +14,20 @@ import { AiChatbotMessageListPropsType } from './type';
 const AiChatbotMessageList = ({ chats, isLoading }: AiChatbotMessageListPropsType) => {
   const { colors, typography } = useTheme();
   const lastItemRef = useRef<HTMLDivElement>(null);
-
+  const hasSetInitialHeight = useRef(false);
   const [lastItemHeight, setLastItemHeight] = useState<string | undefined>(undefined);
 
   useEffect(() => {
-    const calculatedHeight = `calc(100dvh - 290px)`;
-    setLastItemHeight(calculatedHeight);
+    if (!hasSetInitialHeight.current && chats.length > 0) {
+      setLastItemHeight(`calc(100dvh - 300px)`);
+      hasSetInitialHeight.current = true;
+    }
+  }, [chats.length]);
 
+  useEffect(() => {
     if (lastItemRef.current) {
       lastItemRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-
-    return () => {
-      setLastItemHeight(undefined);
-    };
   }, [chats, isLoading]);
 
   return (
