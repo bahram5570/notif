@@ -9,10 +9,13 @@ import { Metadata } from 'next';
 import ArticleSchema from '../../schema/ArticleSchema';
 import { ArticleIdResponseTypes } from './types';
 
-export const generateStaticParams = async () => {
-  const list: string[] = [];
-  return list.map((articleId) => ({ articleId }));
-};
+// export const generateStaticParams = async () => {
+//   const list: string[] = [];
+//   return list.map((articleId) => ({ articleId }));
+// };
+
+export const revalidate = CACHE_REVALIDATE_TIME;
+export const dynamicParams = true;
 
 export const generateMetadata = async (props: { params: { articleId: string } }): Promise<Metadata> => {
   const articleId = props.params.articleId;
