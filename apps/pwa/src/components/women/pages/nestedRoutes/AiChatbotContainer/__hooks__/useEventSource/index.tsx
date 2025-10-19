@@ -48,8 +48,7 @@ const useEventSource = () => {
     });
 
     ev.addEventListener('error', () => {
-      // ev.close();
-      setMessages('');
+      ev.close();
       setStreamLoading(false);
     });
 

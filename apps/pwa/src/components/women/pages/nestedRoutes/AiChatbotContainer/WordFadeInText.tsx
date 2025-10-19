@@ -11,8 +11,15 @@ const WordFadeInText = ({ text }: { text: string }) => {
     return str.replace(/\\u([\dA-F]{4})/gi, (_, g1) => String.fromCharCode(parseInt(g1, 16)));
   }
 
+  const fullPlainText = decodeUnicode(text).replace(/\r\n/g, '\n');
+
+  function handleCopy(e: React.ClipboardEvent) {
+    e.preventDefault();
+    e.clipboardData.setData('text/plain', fullPlainText);
+  }
+
   return (
-    <div dir="rtl" className="text-right mr-3">
+    <div dir="rtl" className="text-right mr-3" onCopy={handleCopy}>
       {lines.map((line, lineIndex) => {
         const formattedLine = parseFormattedText(line);
 
