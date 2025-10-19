@@ -26,7 +26,12 @@ const CyclesModule = (props: CyclesModuleProps) => {
       {dataList && (
         <>
           <WheelPickerDivider isTop={true} />
-          <WheelPicker list={dataList.list} defaultValue={dataList.defaultValue} valueHandler={valueHandler} />
+          <WheelPicker
+            list={dataList.list}
+            defaultValue={dataList.defaultValue}
+            valueHandler={valueHandler}
+            testId={props.testId}
+          />
           <WheelPickerDivider isTop={false} />
         </>
       )}

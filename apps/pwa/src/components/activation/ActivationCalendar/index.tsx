@@ -11,7 +11,7 @@ import useActivationCalendarSelectedDay from './__hooks__/useActivationCalendarS
 import useActivationCalendarSlide from './__hooks__/useActivationCalendarSlide';
 import { ActivationCalendarTypes } from './types';
 
-const ActivationCalendar = ({ endDate, startDate, valueHandler }: ActivationCalendarTypes) => {
+const ActivationCalendar = ({ endDate, startDate, valueHandler, testId }: ActivationCalendarTypes) => {
   const { culture } = useCulture();
 
   const { swiperRef, currentSlide, currentSlideHandler } = useActivationCalendarSlide();
@@ -39,6 +39,7 @@ const ActivationCalendar = ({ endDate, startDate, valueHandler }: ActivationCale
             initialSlide={0}
             onSwiper={(s) => (swiperRef.current = s)}
             onSlideChange={(s) => currentSlideHandler(s.activeIndex)}
+            data-testid={testId}
           >
             {calendarData.map((monthList, index) => (
               <SwiperSlide key={index}>

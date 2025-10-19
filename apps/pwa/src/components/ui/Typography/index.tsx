@@ -49,6 +49,7 @@ const Typography = (props: TypographyProps) => {
             whiteSpace: 'pre-line',
             textAlign: props.textAlign,
           }}
+          data-testid={props.testId}
         >
           {props.toEnglishNumber ? toEnglishNumbers(props.children) : toPersianNumbers(props.children)}
         </p>

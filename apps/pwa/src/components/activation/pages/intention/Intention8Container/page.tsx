@@ -29,7 +29,13 @@ const Intention8Container = ({
 
   return (
     <>
-      <MainActivationModule onContinue={onContinue} isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
+      <MainActivationModule
+        onContinue={onContinue}
+        isLoading={isLoading}
+        onRegister={onRegister}
+        {...pageInfo}
+        btnTestId="btn_intention8"
+      >
         <CyclesModule name="periodLength" totalCycleLength={payload.totalCycleLength} valueHandler={selectHandler} />
       </MainActivationModule>
     </>

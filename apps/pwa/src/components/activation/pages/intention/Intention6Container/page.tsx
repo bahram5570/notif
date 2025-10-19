@@ -42,7 +42,12 @@ const Intention6Container = ({
         btnTestId="btn_intention6"
         {...pageInfo}
       >
-        <ActivationCalendar endDate={periodEnd} startDate={periodStart} valueHandler={valueHandler} />
+        <ActivationCalendar
+          endDate={periodEnd}
+          startDate={periodStart}
+          valueHandler={valueHandler}
+          testId="activation_month"
+        />
       </MainActivationModule>
     </>
   );

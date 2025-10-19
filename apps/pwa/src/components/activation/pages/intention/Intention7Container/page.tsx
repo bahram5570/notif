@@ -29,8 +29,14 @@ const Intention7Container = ({
 
   return (
     <>
-      <MainActivationModule onContinue={onContinue} isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
-        <CyclesModule name="totalCycleLength" valueHandler={selectHandler} />
+      <MainActivationModule
+        onContinue={onContinue}
+        isLoading={isLoading}
+        onRegister={onRegister}
+        {...pageInfo}
+        btnTestId="btn_intention7"
+      >
+        <CyclesModule name="totalCycleLength" valueHandler={selectHandler} testId="wheelPicker_totalCycleLength" />
       </MainActivationModule>
     </>
   );

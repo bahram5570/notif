@@ -36,6 +36,7 @@ const ActivationSingleDay = ({ isSelected, day, calendarType, selectedDayHandler
         pointerEvents: day.isValidDate ? 'auto' : 'none',
         backgroundColor: isSelected ? colors.PrimaryWoman_Primary : colors.Transparent,
       }}
+      data-testid={`activation_single_day_${dayScript}`}
     >
       <Typography
         scale="Body"

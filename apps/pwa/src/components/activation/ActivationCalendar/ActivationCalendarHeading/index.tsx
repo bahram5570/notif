@@ -69,7 +69,7 @@ const ActivationCalendarHeading = (props: ActivationCalendarHeadingProps) => {
       />
 
       <div className="flex flex-col items-center gap-1">
-        <Typography size="Small" scale="Title" color="Neutral_OnBackground">
+        <Typography size="Small" scale="Title" color="Neutral_OnBackground" testId={'calendar_month_title'}>
           {monthScript}
         </Typography>
 

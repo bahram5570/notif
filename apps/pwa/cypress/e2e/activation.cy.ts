@@ -1,3 +1,4 @@
+import { currentDate } from '@utils/dates';
 import { toPersianNumbers } from '@utils/numbers';
 import { dateModuleFindSlide } from '@utils/tests';
 
@@ -13,6 +14,7 @@ import {
   JALALI_MONTH_LIST,
   PERIOD_INTERVAL,
 } from '@constants/date.constants';
+import moment from 'moment-jalaali';
 
 function checkWheelPicker(picker: string, expectedValue: string) {
   cy.get(`[data-testid='wheelPicker_${picker}']`)
@@ -33,7 +35,7 @@ function checkRadioItem(id: number, btnName: string) {
 describe('template spec', () => {
   const phoneNumber = '09001000000';
   const otp = ['1', '2', '3', '4', '5', '6'];
-  const jalaaliDate = '1390/07/16';
+  const jalaaliDate = '1384/07/16';
   const gregorianDate = '2010-08-5';
   const weight = 60;
   const height = 165;
@@ -148,7 +150,7 @@ describe('template spec', () => {
     // cy.url().should('include', '/intention_1');
     // cy.get('[data-testid="btn_intention1"]').should('not.be.visible');
     // checkRadioItem(1, 'btn_intention1');
-    // //reward
+    //reward
     // cy.url().should('include', `?${ACTIVATION_REWARD_QUERY_NAME}=true`);
 
     // cy.get('[data-testid="rewardModuleBtn"]').should('be.visible').click();
@@ -238,9 +240,47 @@ describe('template spec', () => {
     cy.get('[data-testid="rewardModuleBtn"]').should('be.visible').click();
     cy.url().should('include', '/intention_6');
 
-    cy.get('[data-testid="btn_previous"]').click();
-    cy.get('[data-testid="btn_next"]').click();
+    cy.get('[data-testid="btn_intention6"]').should('not.be.visible');
+    const startDate = moment().subtract(PERIOD_INTERVAL, 'day').format('jYYYY/jMM/jDD');
+    const endDate = moment();
+    const targetDate = '1404/06/25';
 
-    cy.get("[data-testid='btn_intention6']").should('not.be.visible');
+    const targetMoment = moment(targetDate, 'jYYYY/jMM/jDD');
+    const monthsDiff = endDate.diff(targetMoment, 'month');
+    if (monthsDiff > 0) {
+      for (let i = 0; i < monthsDiff; i++) {
+        cy.get('[data-testid="btn_next"]').click();
+        cy.wait(300);
+      }
+    } else if (monthsDiff < 0) {
+      for (let i = 0; i < Math.abs(monthsDiff); i++) {
+        cy.get('[data-testid="btn_previous"]').click();
+        cy.wait(300);
+      }
+    }
+    const targetDay = Number(targetMoment.format('jD'));
+    cy.get('.swiper-slide-active').find(`[data-testid="activation_single_day_${targetDay}"]`).click();
+
+    // cy.get("[data-testid='btn_intention6']").should('be.visible').click();
+    // //intention_7
+    // cy.url().should('include', '/intention_7');
+    // const totalCycleLength = 80 - 50;
+
+    // cy.get(`[data-testid='wheelPicker_totalCycleLength']`).then(($swiper) => {
+    //   cy.window().then((win) => {
+    //     const swiperInstance = ($swiper[0] as any).swiper;
+    //     swiperInstance.slideTo(totalCycleLength);
+    //   });
+    // });
+
+    // cy.get(`[data-testid='wheelPicker_totalCycleLength']`)
+    //   .find(`[data-testid='wheelPickerCell_${33}']`)
+    //   .should('exist')
+    //   .should('have.text', `${toPersianNumbers(33)}`);
+
+    // cy.get('[data-testid="btn_intention7"]').click();
+    // // intention_8
+    // cy.url().should('include', '/intention_8');
+    // cy.get('[data-testid="btn_intention8"]').click();
   });
 });
