@@ -1,16 +1,17 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 
 import useEventSource from '../useEventSource';
 import { RoleEnum } from '../useGetHistoryChatData/enum';
-import { ChatType, HistoryChatResponsiveType } from '../useGetHistoryChatData/type';
+import { HistoryChatResponsiveType } from '../useGetHistoryChatData/type';
 import { SuccessResponseType, UseSubmitPropsType } from './type';
 
-const useSubmit = ({ addChatHandler, setAiChatbotList }: UseSubmitPropsType) => {
+const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) => {
   const { getQuery, updateQuery } = useCustomReactQuery(['historyAiChat']);
   const { streamHandler, streamLoading, messages } = useEventSource();
+  const [isUiLoading, setIsUiLoading] = useState(false);
 
   const aiChatData = getQuery<HistoryChatResponsiveType>({ queryKey: ['historyAiChat'] });
 
@@ -50,28 +51,22 @@ const useSubmit = ({ addChatHandler, setAiChatbotList }: UseSubmitPropsType) => 
   };
 
   useEffect(() => {
-    setAiChatbotList((prevChats: ChatType[]) => {
-      const updatedChats = [...prevChats];
-      const lastChat = updatedChats[updatedChats.length - 1];
+    if (loading) setIsUiLoading(true);
+  }, [loading]);
 
-      if (lastChat && lastChat.role === RoleEnum.Assistant) {
-        updatedChats[updatedChats.length - 1] = {
-          ...lastChat,
-          text: messages,
-        };
-      } else {
-        updatedChats.push({
-          role: RoleEnum.Assistant,
-          text: messages,
-          isAnswered: true,
-        });
-      }
+  useEffect(() => {
+    if (!loading && streamLoading) setIsUiLoading(true);
+    else if (!loading && !streamLoading) {
+      const t = setTimeout(() => setIsUiLoading(false), 300);
+      return () => clearTimeout(t);
+    }
+  }, [loading, streamLoading]);
 
-      return updatedChats;
-    });
+  useEffect(() => {
+    updateChatHandler(messages);
   }, [messages]);
 
-  const isLoading = loading || streamLoading;
+  const isLoading = isUiLoading;
 
   return { submitHandler, isLoading, data };
 };

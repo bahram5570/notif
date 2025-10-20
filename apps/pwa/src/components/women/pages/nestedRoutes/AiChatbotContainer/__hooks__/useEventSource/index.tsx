@@ -31,12 +31,11 @@ const useEventSource = () => {
     });
 
     ev.addEventListener('message', (event) => {
+      setStreamLoading(false);
       let cleanedData = event.data.replace(/^data:\s*/i, '').replace(/^"|"$/g, '');
 
       if (cleanedData === CLOSE_STREAM_TEXT) {
         ev.close();
-        setStreamLoading(false);
-
         return;
       }
 

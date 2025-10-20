@@ -19,7 +19,7 @@ const AiChatbotMessageList = ({ chats, isLoading }: AiChatbotMessageListPropsTyp
 
   useEffect(() => {
     if (!hasSetInitialHeight.current && chats.length > 0) {
-      setLastItemHeight(`calc(100dvh - 300px)`);
+      setLastItemHeight(`calc(100vh - ${HEADER_HEIGHT + 300}px )`);
       hasSetInitialHeight.current = true;
     }
   }, [chats.length]);
@@ -42,18 +42,20 @@ const AiChatbotMessageList = ({ chats, isLoading }: AiChatbotMessageListPropsTyp
             ref={index === chats.length - 1 ? lastItemRef : null}
           >
             <div
-              className={`flex ${chat.role === RoleEnum.User ? 'justify-start' : 'justify-end'} items-center ml-3 mx-auto`}
+              className={`flex items-center ml-3 mx-auto ${
+                chat.role === RoleEnum.User ? 'justify-start   max-w-[360px]' : 'justify-end max-w-none'
+              }`}
             >
               {chat.isAnswered ? (
                 <WordFadeInText text={chat.text} />
               ) : (
                 <p
-                  className="rounded-full px-2 py-2 z-30"
+                  className={` z-30 rounded-full px-5 py-3 ${chat.role === RoleEnum.User && 'text-center'}`}
                   style={{
-                    background: chat.role === RoleEnum.User ? colors.Surface_SurfaceVariant : 'transparent',
                     direction: 'rtl',
                     ...typography.Body.Large,
                     whiteSpace: 'pre-wrap',
+                    background: chat.role === RoleEnum.User ? colors.Surface_SurfaceVariant : 'transparent',
                   }}
                   dangerouslySetInnerHTML={{ __html: formattedLine.replace(/\n/g, '<br/>') + '&nbsp;' }}
                 />

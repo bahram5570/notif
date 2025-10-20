@@ -23,7 +23,12 @@ const WordFadeInText = ({ text }: { text: string }) => {
       {lines.map((line, lineIndex) => {
         const formattedLine = parseFormattedText(line);
 
-        const parts = formattedLine.split(/(\s+)/).filter((word) => word.trim().length > 0 || word === ' ');
+        let parts;
+        if (/<\/?[a-z][\s\S]*>/i.test(formattedLine)) {
+          parts = [formattedLine];
+        } else {
+          parts = formattedLine.split(/(\s+)/).filter((word) => word.trim().length > 0 || word === ' ');
+        }
 
         return (
           <div key={lineIndex} className="flex flex-wrap items-center mb-2">

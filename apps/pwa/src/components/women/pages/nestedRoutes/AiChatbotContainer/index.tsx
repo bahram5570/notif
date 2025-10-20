@@ -9,8 +9,8 @@ import useGetHistoryChatData from './__hooks__/useGetHistoryChatData';
 import useSubmit from './__hooks__/useSubmit-1';
 
 const AiChatbotContainer = () => {
-  const { aiChatData, aiChatbotList, addChatHandler, historyLoading, setAiChatbotList } = useGetHistoryChatData();
-  const { submitHandler, isLoading } = useSubmit({ addChatHandler, setAiChatbotList });
+  const { aiChatData, aiChatbotList, addChatHandler, historyLoading, updateChatHandler } = useGetHistoryChatData();
+  const { submitHandler, isLoading } = useSubmit({ addChatHandler, updateChatHandler });
   const NotChatData = aiChatData && aiChatbotList.length <= 0;
 
   return (
