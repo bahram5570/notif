@@ -26,7 +26,7 @@ const useSubmit = () => {
     if (data.valid) {
       router.push('/landing/genetic/result');
     } else {
-      onToast({ type: 'error', message: data.message || 'خطا در ارسال اطلاعات' });
+      onToast({ type: 'error', message: 'خطا در ارسال اطلاعات' });
     }
   };
 
