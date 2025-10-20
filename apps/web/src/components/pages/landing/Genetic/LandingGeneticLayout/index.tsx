@@ -11,10 +11,10 @@ import CustomTypography from '@components/ui/CustomTypography';
 import { COLORS_LIST } from '@theme/colors';
 
 import { ExpertList } from './constants';
-// import useAuth from './useAuth';
+import useAuth from './useAuth';
 
 const LandingGeneticLayout = () => {
-  // useAuth();
+  useAuth();
 
   return (
     <>

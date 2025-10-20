@@ -3,9 +3,7 @@ import logo from '@assets/images/genetic/logo.webp';
 import Verified from '@assets/images/genetic/verified.svg';
 
 import CustomImage from '@components/ui/CustomImage';
-import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { ExpertList } from './constants';
 
@@ -60,17 +58,6 @@ const LastPageGeneticLayout = async () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="mt-6 w-fit mx-auto my-5 flex">
-        <CustomLink
-          href="#"
-          className="w-fit px-10 py-[12px] rounded-full flex justify-center"
-          style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
-        >
-          <CustomTypography fontSize="Lable_Medium" color={'White'}>
-            پایان ارزیابی
-          </CustomTypography>
-        </CustomLink>
       </div>
     </>
   );
