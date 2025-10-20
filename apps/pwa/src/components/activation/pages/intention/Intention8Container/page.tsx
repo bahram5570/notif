@@ -36,7 +36,12 @@ const Intention8Container = ({
         {...pageInfo}
         btnTestId="btn_intention8"
       >
-        <CyclesModule name="periodLength" totalCycleLength={payload.totalCycleLength} valueHandler={selectHandler} />
+        <CyclesModule
+          name="periodLength"
+          totalCycleLength={payload.totalCycleLength}
+          valueHandler={selectHandler}
+          testId="wheelPicker_periodLength"
+        />
       </MainActivationModule>
     </>
   );

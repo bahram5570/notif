@@ -39,10 +39,9 @@ const ActivationCalendar = ({ endDate, startDate, valueHandler, testId }: Activa
             initialSlide={0}
             onSwiper={(s) => (swiperRef.current = s)}
             onSlideChange={(s) => currentSlideHandler(s.activeIndex)}
-            data-testid={testId}
           >
             {calendarData.map((monthList, index) => (
-              <SwiperSlide key={index}>
+              <SwiperSlide key={index} data-testid={`activation_month_${index}`}>
                 <ActivationMonthGenerator
                   monthList={monthList}
                   selectedDay={selectedDay}
