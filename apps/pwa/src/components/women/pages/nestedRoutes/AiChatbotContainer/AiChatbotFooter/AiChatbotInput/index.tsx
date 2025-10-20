@@ -23,6 +23,13 @@ const AiChatbotInput = ({ submitHandler, hintPromptText, isLoading }: AiChatbotI
     }
   };
 
+  const handleKeyUp = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      clickHandler();
+    }
+  };
+
   return (
     <div
       className="w-full  flex justify-end items-center relative  rounded-t-3xl p-4 z-50 "
@@ -36,6 +43,7 @@ const AiChatbotInput = ({ submitHandler, hintPromptText, isLoading }: AiChatbotI
         onChange={changeTextHandler}
         disabled={isLoading}
         rows={1}
+        onKeyUp={handleKeyUp}
       />
       <div
         className="w-8 h-8  rounded-full flex flex-col justify-center items-center p-2 absolute left-0 mx-5"
