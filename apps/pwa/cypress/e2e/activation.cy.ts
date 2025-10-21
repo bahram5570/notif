@@ -1,5 +1,4 @@
 import { testBaseUrl } from '@services/http';
-import { currentDate } from '@utils/dates';
 import { toPersianNumbers } from '@utils/numbers';
 import { dateModuleFindSlide } from '@utils/tests';
 
@@ -7,15 +6,13 @@ import {
   ACTIVATION_HEIGHT_VALUES,
   ACTIVATION_WEIGHT_VALUES,
 } from '@components/activation/WeightHeightModule/constants';
-import { ACTIVATION_BIRTHDATE_TABS_LIST, ACTIVATION_REWARD_QUERY_NAME } from '@constants/activation.constants';
+import { ACTIVATION_REWARD_QUERY_NAME } from '@constants/activation.constants';
 import {
   CalendarTypeEnum,
   DATE_SEPERATOR_REGEX,
   GREGORIAN_FARSI_MONTH_LIST,
   JALALI_MONTH_LIST,
-  PERIOD_INTERVAL,
 } from '@constants/date.constants';
-import cypress from 'cypress';
 import moment from 'moment-jalaali';
 
 function checkWheelPicker(picker: string, expectedValue: string) {
@@ -34,15 +31,36 @@ function checkRadioItem(id: number, btnName: string) {
     });
 }
 
+function checkOtp1(phoneNumber: string) {
+  cy.get('input').type(phoneNumber).should('have.value', toPersianNumbers(phoneNumber));
+
+  cy.get('[data-testid="otp1"]').click();
+}
+
+function checkOtp2() {
+  const otp = ['1', '2', '3', '4', '5', '6'];
+  cy.get(`[data-testid="otp2CodeContainer"]`).click();
+
+  otp.forEach((digit, index) => {
+    cy.get(`[data-testid="otp-input-${index}"]`).type(digit);
+  });
+}
+
+function checkGoal1_firstName(firstName: string) {
+  cy.get('[data-testid=firstNameInput]').type(firstName).should('have.value', 'test');
+
+  cy.get('[data-testid="btn_goal1"]').click();
+}
+
 describe('template spec', () => {
   const phoneNumber = '09001000000';
-  const otp = ['1', '2', '3', '4', '5', '6'];
+
   const jalaaliDate = '1384/07/16';
   const gregorianDate = '2010-08-5';
   const weight = 60;
   const height = 165;
 
-  it('otp_1', () => {
+  it('t1', () => {
     cy.visit('/activation/otp_1');
 
     // Because the welcoming has a slight delay in appearing at first, we check it so that it’s not there initially.
@@ -54,30 +72,19 @@ describe('template spec', () => {
     cy.get('[data-testid="welcoming"]', { timeout: 60000 }).should('not.exist');
 
     // otp1
-
-    cy.get('input').type(phoneNumber).should('have.value', toPersianNumbers(phoneNumber));
-
-    cy.get('[data-testid="otp1"]').click();
-
+    checkOtp1(phoneNumber);
     // otp2
 
     cy.url({ timeout: 10000 }).should('include', '/activation/otp_2');
-    cy.get(`[data-testid="otp2CodeContainer"]`).click();
-
-    otp.forEach((digit, index) => {
-      cy.get(`[data-testid="otp-input-${index}"]`).type(digit);
-    });
+    checkOtp2();
 
     // goal_1
     cy.url({ timeout: 10000 }).should('include', '/goal_1');
 
-    cy.get('[data-testid=firstNameInput]').type('test').should('have.value', 'test');
-
-    cy.get('[data-testid="btn_goal1"]').click();
-
     // goal_2
 
     cy.url({ timeout: 5000 }).should('include', '/goal_2');
+    checkGoal1_firstName('test');
 
     cy.get(`[data-testid='tab_${CalendarTypeEnum.Jalali}']`).click();
     const jalaaliDateParts = jalaaliDate.split(DATE_SEPERATOR_REGEX);
