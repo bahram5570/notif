@@ -8,7 +8,7 @@ const WordFadeInText = ({ text }: { text: string }) => {
   let globalWordIndex = 0;
 
   function decodeUnicode(str: string) {
-    return str.replace(/\\u([\dA-F]{4})/gi, (_, g1) => String.fromCharCode(parseInt(g1, 16))).replace(/\\"/g, '"'); // فقط "escape" quote را حذف کن
+    return str.replace(/\\u([\dA-F]{4})/gi, (_, g1) => String.fromCharCode(parseInt(g1, 16))).replace(/\\"/g, '"');
   }
 
   const fullPlainText = decodeUnicode(text).replace(/\r\n/g, '\n');

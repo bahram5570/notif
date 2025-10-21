@@ -3,6 +3,8 @@ import { useState } from 'react';
 import ArrowIcon from '@assets/icons/arrow.svg';
 import StopIcon from '@assets/icons/stop.svg';
 
+import style from './styles.module.css';
+
 import useTheme from '@hooks/useTheme';
 
 import { AiChatbotInputPropsType } from './type';
@@ -37,7 +39,7 @@ const AiChatbotInput = ({ submitHandler, hintPromptText, isLoading }: AiChatbotI
     >
       <textarea
         placeholder={hintPromptText}
-        className=" rounded-full w-full px-4 py-3 outline-none resize-none"
+        className={` rounded-full w-full h-auto px-4 py-3 outline-none resize-none ${style.scroller} `}
         style={{ color: colors.Surface_Outline, ...typography.Body.Medium, direction: 'rtl' }}
         value={chatText}
         onChange={changeTextHandler}
