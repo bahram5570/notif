@@ -50,7 +50,7 @@ const AiChatbotMessageList = ({ chats, isLoading }: AiChatbotMessageListPropsTyp
                 <WordFadeInText text={chat.text} />
               ) : (
                 <p
-                  className={` z-30 rounded-full px-5 py-3 ${chat.role === RoleEnum.User && 'text-center'}`}
+                  className="z-30 rounded-3xl px-5 py-3"
                   style={{
                     direction: 'rtl',
                     ...typography.Body.Large,

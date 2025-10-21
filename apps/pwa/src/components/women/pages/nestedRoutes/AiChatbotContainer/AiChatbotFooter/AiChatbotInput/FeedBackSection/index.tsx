@@ -18,7 +18,7 @@ const FeedBackSection = ({ activeRating, feedbackMessage, chatId }: FeedBackSect
   const { feedbackHandler } = useFeedBack({ chatId });
 
   useEffect(() => {
-    if (!feedback) return;
+    if (feedback === null) return;
     feedbackHandler(feedback);
   }, [feedback]);
 
