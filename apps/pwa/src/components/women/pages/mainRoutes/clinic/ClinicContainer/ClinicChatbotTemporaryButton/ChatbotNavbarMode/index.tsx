@@ -36,7 +36,7 @@ const ChatbotNavbarMode = ({ collapseText1, collapseText2, continueChatText }: C
           href="/protected/aiChatbot"
           onClick={() => pageNavigationHandler({ id: `aiChatbot`, showProgressBar: false })}
         >
-          <div className="flex flex-row items-center gap-1 justify-center w-[112px] h-[30px] mt-auto">
+          <div className="flex flex-row items-center gap-1 justify-center w-full h-[30px] mt-auto">
             <div
               className="px-4 py-2 flex justify-center items-center rounded-full w-full"
               style={{ background: colors.PrimaryWoman_Primary }}

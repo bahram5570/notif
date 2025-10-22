@@ -10,8 +10,8 @@ import { SuccessResponseType, UseSubmitPropsType } from './type';
 
 const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) => {
   const { getQuery, updateQuery } = useCustomReactQuery(['historyAiChat']);
-  const { streamHandler, streamLoading, messages } = useEventSource();
-  const [isUiLoading, setIsUiLoading] = useState(false);
+  const [streamLoading, setStreamLoading] = useState(false);
+  const { streamHandler, messages } = useEventSource({ handelLoading: setStreamLoading });
 
   const aiChatData = getQuery<HistoryChatResponsiveType>({ queryKey: ['historyAiChat'] });
 
@@ -39,6 +39,7 @@ const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) =>
     api: 'feature/ai/sendstreammessage',
     method: 'POST',
     onSuccess: (v: SuccessResponseType) => successHandler(v),
+    onError: () => setStreamLoading(false),
   });
 
   const submitHandler = (text: string) => {
@@ -51,22 +52,14 @@ const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) =>
   };
 
   useEffect(() => {
-    if (loading) setIsUiLoading(true);
+    if (loading) setStreamLoading(true);
   }, [loading]);
-
-  useEffect(() => {
-    if (!loading && streamLoading) setIsUiLoading(true);
-    else if (!loading && !streamLoading) {
-      const t = setTimeout(() => setIsUiLoading(false), 300);
-      return () => clearTimeout(t);
-    }
-  }, [loading, streamLoading]);
 
   useEffect(() => {
     updateChatHandler(messages);
   }, [messages]);
 
-  const isLoading = isUiLoading;
+  const isLoading = streamLoading;
 
   return { submitHandler, isLoading, data };
 };

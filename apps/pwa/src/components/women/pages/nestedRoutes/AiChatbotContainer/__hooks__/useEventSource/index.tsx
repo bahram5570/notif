@@ -8,15 +8,14 @@ import { EventSource } from 'eventsource';
 import { CLOSE_STREAM_TEXT } from './constants';
 import { StreamHandlerPropsType } from './type';
 
-const useEventSource = () => {
-  const [streamLoading, setStreamLoading] = useState(false);
+const useEventSource = ({ handelLoading }: { handelLoading: (v: boolean) => void }) => {
   const [messages, setMessages] = useState<string>('');
 
   const streamHandler = async ({ id }: StreamHandlerPropsType) => {
     const user = await getUserCookie();
     const Authorization = user ? `Bearer ${user.token}` : '';
     const url = `${baseUrl}/feature/ai/message/${id}`;
-    setStreamLoading(true);
+
     setMessages('');
 
     const ev = new EventSource(url, {
@@ -31,7 +30,7 @@ const useEventSource = () => {
     });
 
     ev.addEventListener('message', (event) => {
-      setStreamLoading(false);
+      handelLoading(false);
       let cleanedData = event.data.replace(/^data:\s*/i, '').replace(/^"|"$/g, '');
 
       if (cleanedData === CLOSE_STREAM_TEXT) {
@@ -48,7 +47,7 @@ const useEventSource = () => {
 
     ev.addEventListener('error', () => {
       ev.close();
-      setStreamLoading(false);
+      handelLoading(false);
     });
 
     // setTimeout(() => {
@@ -58,7 +57,7 @@ const useEventSource = () => {
     // }, 30000);
   };
 
-  return { streamHandler, streamLoading, messages };
+  return { streamHandler, messages };
 };
 
 export default useEventSource;
