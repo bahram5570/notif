@@ -8,7 +8,13 @@ import { EventSource } from 'eventsource';
 import { CLOSE_STREAM_TEXT } from './constants';
 import { StreamHandlerPropsType } from './type';
 
-const useEventSource = ({ handelLoading }: { handelLoading: (v: boolean) => void }) => {
+const useEventSource = ({
+  handelLoading,
+  errorHandler,
+}: {
+  handelLoading: (v: boolean) => void;
+  errorHandler: (v: boolean) => void;
+}) => {
   const [messages, setMessages] = useState<string>('');
 
   const streamHandler = async ({ id }: StreamHandlerPropsType) => {
@@ -17,6 +23,7 @@ const useEventSource = ({ handelLoading }: { handelLoading: (v: boolean) => void
     const url = `${baseUrl}/feature/ai/message/${id}`;
 
     setMessages('');
+    handelLoading(true);
 
     const ev = new EventSource(url, {
       fetch: (input, init) =>
@@ -24,37 +31,49 @@ const useEventSource = ({ handelLoading }: { handelLoading: (v: boolean) => void
           ...init,
           headers: {
             ...init.headers,
-            Authorization: Authorization,
+            Authorization,
           },
         }),
     });
 
-    ev.addEventListener('message', (event) => {
-      handelLoading(false);
-      let cleanedData = event.data.replace(/^data:\s*/i, '').replace(/^"|"$/g, '');
+    let timeoutId: NodeJS.Timeout;
 
-      if (cleanedData === CLOSE_STREAM_TEXT) {
+    const timeoutPromise = new Promise<void>((_) => {
+      timeoutId = setTimeout(() => {
         ev.close();
-        return;
-      }
+        handelLoading(false);
+        errorHandler(true);
+      }, 30000);
+    });
 
-      if (cleanedData === '') {
-        setMessages((prev) => prev + '\n');
-      } else {
+    const messagePromise = new Promise<void>((resolve) => {
+      ev.addEventListener('message', (event) => {
+        handelLoading(false);
+        let cleanedData = event.data.replace(/^data:\s*/i, '').replace(/^"|"$/g, '');
+
+        if (cleanedData === CLOSE_STREAM_TEXT) {
+          ev.close();
+          clearTimeout(timeoutId);
+          resolve();
+          return;
+        }
+
         setMessages((prev) => prev + cleanedData);
-      }
+
+        clearTimeout(timeoutId);
+        resolve();
+      });
+
+      ev.addEventListener('error', () => {
+        ev.close();
+        clearTimeout(timeoutId);
+        handelLoading(false);
+        errorHandler(true);
+        resolve();
+      });
     });
 
-    ev.addEventListener('error', () => {
-      ev.close();
-      handelLoading(false);
-    });
-
-    // setTimeout(() => {
-    //   ev.close();
-    //   setStreamLoading(false);
-
-    // }, 30000);
+    await Promise.race([timeoutPromise, messagePromise]);
   };
 
   return { streamHandler, messages };

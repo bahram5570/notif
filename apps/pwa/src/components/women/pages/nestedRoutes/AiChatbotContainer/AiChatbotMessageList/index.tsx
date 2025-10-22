@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { parseFormattedText } from '../utils';
 import chatbotJson from '@assets/lottie/chatbot.json';
 
+import Button from '@components/ui/Button';
+import Typography from '@components/ui/Typography';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import useTheme from '@hooks/useTheme';
 import { LottieJson } from '@lib/LottieJson';
@@ -11,7 +13,7 @@ import WordFadeInText from '../WordFadeInText';
 import { RoleEnum } from '../__hooks__/useGetHistoryChatData/enum';
 import { AiChatbotMessageListPropsType } from './type';
 
-const AiChatbotMessageList = ({ chats, isLoading }: AiChatbotMessageListPropsType) => {
+const AiChatbotMessageList = ({ chats, isLoading, showErrorMessage, onError }: AiChatbotMessageListPropsType) => {
   const { colors, typography } = useTheme();
   const lastItemRef = useRef<HTMLDivElement>(null);
   const hasSetInitialHeight = useRef(false);
@@ -38,7 +40,9 @@ const AiChatbotMessageList = ({ chats, isLoading }: AiChatbotMessageListPropsTyp
         return (
           <div
             key={index}
-            style={{ minHeight: index === chats.length - 1 && !isLoading ? lastItemHeight : 'auto' }}
+            style={{
+              minHeight: index === chats.length - 1 && !isLoading && !showErrorMessage ? lastItemHeight : 'auto',
+            }}
             ref={index === chats.length - 1 ? lastItemRef : null}
           >
             <div
@@ -68,6 +72,40 @@ const AiChatbotMessageList = ({ chats, isLoading }: AiChatbotMessageListPropsTyp
         <div ref={lastItemRef} style={{ minHeight: `calc(100dvh - 360px )` }}>
           <div className="flex justify-end items-center ml-3">
             <LottieJson animationData={chatbotJson} loop={false} autoPlay={false} className="w-14 h-14" />
+          </div>
+        </div>
+      )}
+      {showErrorMessage && (
+        <div ref={lastItemRef} style={{ minHeight: `calc(100dvh - 360px )` }} className="px-4">
+          <div
+            className=" rounded-3xl p-4 flex flex-col gap-4"
+            style={{
+              background: colors.Neutral_Surface,
+              border: `1px solid ${colors.Surface_OutlineVariant}`,
+            }}
+          >
+            <div className="flex flex-col items-end px-3">
+              <Typography scale="Lable" size="Large">
+                ارتباط با ایمپو برقرار نیست
+              </Typography>
+              <Typography scale="Body" size="Small">
+                ظاهرا ارتباط با ایمپو قطع شده.میتونی دوباره تلاش کنی.
+              </Typography>
+            </div>
+
+            <Button
+              size="medium"
+              variant="fill"
+              fullWidth
+              color="primary"
+              onClick={onError}
+              className="!min-w-fit px-2 py-3"
+              navigationLoadingId="PredictFooter"
+            >
+              <Typography scale="Lable" size="Large" color="White">
+                تلاش مجدد
+              </Typography>
+            </Button>
           </div>
         </div>
       )}
