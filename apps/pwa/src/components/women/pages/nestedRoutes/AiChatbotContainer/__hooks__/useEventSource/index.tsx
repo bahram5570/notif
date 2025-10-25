@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { baseUrl } from '@services/http';
 
@@ -18,31 +18,34 @@ const useEventSource = ({
   const [messages, setMessages] = useState<string>('');
   const evRef = useRef<EventSource | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const activeRequestId = useRef<string | null>(null);
+  const firstMessageReceived = useRef(false);
 
-  /** پاکسازی کامل استریم قبلی */
   const cleanup = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
       timeoutRef.current = null;
     }
-
     if (evRef.current) {
       try {
         evRef.current.close();
-      } catch (_) {}
+      } catch (e) {
+        // ignore close error
+      }
       evRef.current = null;
     }
-
     handelLoading(false);
   };
 
+  useEffect(() => {
+    return () => cleanup();
+  }, []);
+
   const streamHandler = async ({ id }: StreamHandlerPropsType) => {
-    // در هر درخواست جدید، استریم قبلی رو می‌بندیم
     cleanup();
-    errorHandler(false);
     setMessages('');
+    firstMessageReceived.current = false;
     handelLoading(true);
+    errorHandler(false);
 
     const user = await getUserCookie();
     const Authorization = user ? `Bearer ${user.token}` : '';
@@ -60,32 +63,33 @@ const useEventSource = ({
     });
 
     evRef.current = ev;
-    activeRequestId.current = id;
 
-    /** تایم‌اوت فقط اگر هیچ پیام یا پاسخ نرسید */
+    // تایم‌اوت فقط برای دریافت پیام اول
     timeoutRef.current = setTimeout(() => {
-      // اگر هنوز درخواست فعلی فعال بود
-      if (activeRequestId.current === id) {
+      if (!firstMessageReceived.current) {
+        errorHandler(true); // فقط وقتی پیام اول نیومده
         cleanup();
-        errorHandler(true);
       }
     }, 30000);
 
     ev.addEventListener('message', (event) => {
-      // اگر این پیام مربوط به استریم فعلی نیست، نادیده بگیر
-      if (activeRequestId.current !== id) return;
-
       handelLoading(false);
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-        timeoutRef.current = null;
+
+      // اولین پیام رسید → تایم‌اوت پاک می‌شود
+      if (!firstMessageReceived.current) {
+        firstMessageReceived.current = true;
+        if (timeoutRef.current) {
+          clearTimeout(timeoutRef.current);
+          timeoutRef.current = null;
+        }
       }
 
-      let cleanedData = event.data.replace(/^data:\s*/i, '').replace(/^"|"$/g, '');
+      const cleanedData = String(event.data)
+        .replace(/^data:\s*/i, '')
+        .replace(/^"|"$/g, '');
 
       if (cleanedData === CLOSE_STREAM_TEXT) {
         cleanup();
-        activeRequestId.current = null;
         return;
       }
 
@@ -93,11 +97,8 @@ const useEventSource = ({
     });
 
     ev.addEventListener('error', () => {
-      if (activeRequestId.current === id) {
-        cleanup();
-        errorHandler(true);
-        activeRequestId.current = null;
-      }
+      cleanup();
+      // خطای EventSource واقعی را نمایش ندهیم، فقط تایم‌اوت مهم است
     });
   };
 

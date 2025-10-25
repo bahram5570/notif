@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 import useTheme from '@hooks/useTheme';
 
 import ChallengeBtn from '../ChallengeBtn';
@@ -12,6 +13,7 @@ const ChallengeQuestion = ({ avatarUrl, helper, question, id, btn }: ChallengeQu
   const { colors } = useTheme();
   const [btnTop, setBtnTop] = useState<number>();
   const textareaConainerRef = useRef<HTMLDivElement | null>(null);
+  const { operatingSystem } = useOperatingSystem();
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setAnswerValue(e.target.value);
@@ -23,7 +25,7 @@ const ChallengeQuestion = ({ avatarUrl, helper, question, id, btn }: ChallengeQu
     if (el) {
       const elTop = el.getBoundingClientRect().top;
       const elHeight = el.offsetHeight;
-      const elPaddingTop = 3;
+      const elPaddingTop = operatingSystem === 'ios' ? 120 : 20;
 
       setBtnTop(elTop + elHeight + elPaddingTop);
     }
