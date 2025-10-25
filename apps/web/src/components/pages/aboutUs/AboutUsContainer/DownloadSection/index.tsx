@@ -3,15 +3,20 @@
 import DownloadIcon from '@assets/icons/document-upload.svg';
 import LogoTypeIconMobileSize from '@assets/icons/logoType-mobile-size.svg';
 import LogoTypeIcon from '@assets/icons/logoType.svg';
+import { scrollToIdHandler } from '@utils/navigation';
 
+import { DOWNLOAD_APP_SECTION_ID } from '@components/DownloadApp/DownloadAppWomen/constants';
 import CustomImage from '@components/ui/CustomImage';
-import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 import { COLORS_LIST } from '@theme/colors';
 
 const DownloadSection = () => {
   const { breakPoint } = useBreakPoint();
+
+  const downloadLinkHandler = () => {
+    scrollToIdHandler(DOWNLOAD_APP_SECTION_ID);
+  };
 
   return (
     <div className="grid lg:grid-cols-2 grid-cols-1  w-full h-full">
@@ -41,21 +46,21 @@ const DownloadSection = () => {
               <CustomTypography fontSize="Title_Small">ایمپو دوستته، مشاورته، مراقبته</CustomTypography>
             )}
 
-            <CustomLink
-              href="#downloadAppId"
+            <div
+              onClick={downloadLinkHandler}
               aria-label="DownloadAppAndroid"
               style={{ backgroundColor: COLORS_LIST.White }}
-              className="rounded-xl lg:h-[45px]  flex items-center justify-center py-2 px-6 gap-2 scroll-smooth"
-              onClick={(e) => e.preventDefault()}
+              className="rounded-xl lg:h-[45px] flex items-center justify-center py-2 px-6 gap-2 cursor-pointer"
             >
               <DownloadIcon className="w-5 h-auto" style={{ stroke: COLORS_LIST.Neutral_OnBackground }} />
               <CustomTypography fontSize="Title_Small" color="Black">
                 دانلود ایمپو
               </CustomTypography>
-            </CustomLink>
+            </div>
           </div>
         </div>
       </div>
+
       <CustomImage
         src="/assets/images/aboutUs/1.webp"
         alt="aboutUs"

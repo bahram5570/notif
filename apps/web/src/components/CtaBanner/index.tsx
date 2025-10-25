@@ -75,6 +75,7 @@ const CtaBanner = ({ id, backgroundColor, title, description, image, link, butto
           <img
             alt={name}
             src={image}
+            loading="lazy"
             className="!w-full md:!w-5/12 !h-auto object-contain !mb-0 !mt-auto pt-4 md:pt-0"
           />
         </div>
