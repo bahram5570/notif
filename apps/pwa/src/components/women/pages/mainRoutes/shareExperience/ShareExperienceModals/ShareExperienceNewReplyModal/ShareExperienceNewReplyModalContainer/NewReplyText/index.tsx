@@ -41,7 +41,7 @@ const NewReplyText = ({ text, textHandler, onChangeBtnTop }: NewReplyTextProps) 
       style={{ ...typography.Body.Medium }}
       placeholder="نظرت رو اینجا بنویس..."
       ref={textAreaRef}
-      onBlur={() => onChangeBtnTop(undefined)}
+      // onBlur={() => onChangeBtnTop(undefined)}
     />
   );
 };

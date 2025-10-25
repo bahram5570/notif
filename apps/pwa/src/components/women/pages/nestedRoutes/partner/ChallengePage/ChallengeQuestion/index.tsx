@@ -23,7 +23,7 @@ const ChallengeQuestion = ({ avatarUrl, helper, question, id, btn }: ChallengeQu
     if (el) {
       const elTop = el.getBoundingClientRect().top;
       const elHeight = el.offsetHeight;
-      const elPaddingTop = 20;
+      const elPaddingTop = 3;
 
       setBtnTop(elTop + elHeight + elPaddingTop);
     }

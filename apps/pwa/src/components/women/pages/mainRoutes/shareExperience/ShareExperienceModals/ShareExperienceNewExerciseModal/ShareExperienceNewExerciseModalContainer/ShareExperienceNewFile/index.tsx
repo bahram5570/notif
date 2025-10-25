@@ -12,8 +12,16 @@ const ShareExperienceNewFile = ({
   removeFileHandler,
   fileDataHandler,
   imageFile,
+  onChangeBtnTop,
 }: ShareExperienceNewFileProps) => {
   const { colors } = useTheme();
+
+  const clickHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (onChangeBtnTop) {
+      onChangeBtnTop();
+      fileDataHandler({ e });
+    }
+  };
 
   return (
     <>
@@ -45,7 +53,7 @@ const ShareExperienceNewFile = ({
 
           <input
             type="file"
-            onChange={(e) => fileDataHandler({ e })}
+            onChange={clickHandler}
             className="absolute top-0 left-0 right-0 bottom-0 opacity-0 select-none"
           />
         </div>

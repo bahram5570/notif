@@ -9,7 +9,7 @@ import useTheme from '@hooks/useTheme';
 import { SHARE_EXPERIENCE_NEW_MAX_CHARACTERS } from '../constants';
 import { ShareExperienceNewTextProps } from './types';
 
-const ShareExperienceNewText = ({ text, textHandler, onChangeBtnTop }: ShareExperienceNewTextProps) => {
+const ShareExperienceNewText = ({ text, textHandler }: ShareExperienceNewTextProps) => {
   const { typography } = useTheme();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
@@ -39,7 +39,6 @@ const ShareExperienceNewText = ({ text, textHandler, onChangeBtnTop }: ShareExpe
       className={styles.textarea}
       style={{ ...typography.Body.Medium }}
       placeholder="تجربت رو اینجا بنویس..."
-      onBlur={onChangeBtnTop}
     />
   );
 };
