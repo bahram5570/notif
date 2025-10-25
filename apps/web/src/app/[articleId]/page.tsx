@@ -15,7 +15,7 @@ import { ArticleIdResponseTypes } from './types';
 // };
 
 export const revalidate = CACHE_REVALIDATE_TIME;
-export const dynamicParams = true;
+export const dynamic = 'force-static';
 
 export const generateMetadata = async (props: { params: { articleId: string } }): Promise<Metadata> => {
   const articleId = props.params.articleId;
