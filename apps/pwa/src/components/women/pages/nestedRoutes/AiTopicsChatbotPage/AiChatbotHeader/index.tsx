@@ -32,11 +32,12 @@ const AiChatbotHeader = () => {
       style={{ maxWidth: MAX_SCREEN_WIDTH, height: HEADER_HEIGHT }}
     >
       <div className="flex w-full justify-between items-center px-4 py-3">
-        <div className="flex justify-center items-center w-12 h-12 rounded-full bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg">
+        <div className="flex justify-center items-center w-12 h-12 rounded-full glass-card cursor-pointer shadow-lg">
           <DotIcon className="w-6 h-6" style={{ fill: colors.Surface_InverseSurface }} />
         </div>
+
         <div className="flex justify-center items-center gap-2">
-          <div className="flex flex-row-reverse rounded-full pl-6 py-1 pr-4 bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg">
+          <div className="flex flex-row-reverse rounded-full pl-6 py-1 pr-4 glass-card shadow-lg">
             <LottieJson animationData={chatbotJson} loop={false} autoPlay={false} className="!w-9" />
             <div className="flex flex-col justify-center items-end">
               <Typography scale="Lable" size="Large">
@@ -49,7 +50,7 @@ const AiChatbotHeader = () => {
           </div>
 
           <div
-            className="cursor-pointer flex justify-center items-center  w-12 h-12 rounded-full  bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg"
+            className="cursor-pointer flex justify-center items-center  w-12 h-12 rounded-full glass-card shadow-lg"
             onClick={clickHandler}
           >
             {pageNavigationLoading === id && <Spinner color="outline" width={28} />}

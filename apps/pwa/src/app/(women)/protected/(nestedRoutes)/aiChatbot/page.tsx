@@ -1,9 +1,7 @@
 import AiChatbotContainer from '@components/women/pages/nestedRoutes/AiChatbotContainer';
-import AiTopicsChatbotPage from '@components/women/pages/nestedRoutes/AiTopicsChatbotPage';
 
 const AiChatbot = () => {
-  // return <AiChatbotContainer />;
-  return <AiTopicsChatbotPage />;
+  return <AiChatbotContainer />;
 };
 
 export default AiChatbot;

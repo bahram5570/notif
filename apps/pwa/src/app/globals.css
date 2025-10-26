@@ -17,6 +17,14 @@ body {
   font-family: YekanBakhVF;
 }
 
+.glass-card {
+  @apply bg-white/10 backdrop-blur-[8px]  border border-white/30;
+}
+
+.glass-card-hover:hover {
+  @apply bg-white/20 shadow-lg;
+}
+
 button,
 input {
   outline: none;
@@ -42,14 +50,4 @@ input[type='number'] {
 }
 .hideScrollbar::-webkit-scrollbar {
   display: none;
-}
-
-.glass {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 12px 40px !important;
-}
-
-.custom-glass {
-  --glass-opacity: 0.15;
-  --glass-blur: 4px;
-  --animation-duration: 3s;
 }
