@@ -4,7 +4,6 @@ import chatbotJson from '@assets/lottie/chatbot.json';
 import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import { LottieJson } from '@lib/LottieJson';
 
 import LiquidGlassCard from '../../AiChatbotContainer/AiChatbotMessageList/LiquidGlassCard';
@@ -24,10 +23,7 @@ const WelcomingContainer = () => {
         <div style={{ paddingTop: HEADER_HEIGHT }}>
           <LottieJson animationData={chatbotJson} loop={true} autoPlay={true} />
 
-          <LiquidGlassCard
-          // className=" fixed mx-auto top-[px] h-[416px] left-0 right-0 bottom-0 px-4 liquid-glass-custom"
-          // style={{ maxWidth: MAX_SCREEN_WIDTH }}
-          >
+          <LiquidGlassCard>
             <div className="px-4 flex flex-col gap-14">
               <div className=" flex flex-col gap-3">
                 <div className="flex flex-col justify-end items-end gap-1">
@@ -51,15 +47,7 @@ const WelcomingContainer = () => {
                 </Typography>
               </div>
 
-              <Button
-                variant="fill"
-                size="medium"
-                color="primary"
-                onClick={() => {}}
-                fullWidth
-                // isLoading={isLoading}
-                // isDisable={!valuesProps.rate}
-              >
+              <Button variant="fill" size="medium" color="primary" onClick={() => {}} fullWidth>
                 <Typography scale="Lable" size="Large" color="White">
                   با مونس صحبت کن! ✨
                 </Typography>
