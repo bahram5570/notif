@@ -19,6 +19,18 @@ const ArticleIdHeading = ({ imageCover, title }: ArticleIdHeadingTypes) => {
         {title}
       </CustomTypography>
 
+      <div className="relative w-full aspect-video">
+        <CustomImage
+          fill={true}
+          alt={title}
+          quality={100}
+          src={imageUrl}
+          priority={true}
+          className="w-full h-auto rounded-2xl object-cover"
+        />
+      </div>
+
+      {/* 
       <CustomImage
         width={960}
         alt={title}
@@ -28,7 +40,7 @@ const ArticleIdHeading = ({ imageCover, title }: ArticleIdHeadingTypes) => {
         priority={true}
         className="w-full h-auto rounded-2xl"
         sizes="(max-width: 768px) 100vw, 60vw"
-      />
+      /> */}
     </div>
   );
 };
