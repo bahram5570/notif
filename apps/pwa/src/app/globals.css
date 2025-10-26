@@ -17,6 +17,14 @@ body {
   font-family: YekanBakhVF;
 }
 
+.glass-card {
+  @apply bg-white/10 backdrop-blur-[8px]  border border-white/30;
+}
+
+.glass-card-hover:hover {
+  @apply bg-white/20 shadow-lg;
+}
+
 button,
 input {
   outline: none;

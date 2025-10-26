@@ -3,7 +3,13 @@ import { AiChatbotLayoutPropsType } from './type';
 
 const AiChatbotLayout = ({ children, chatTitle }: AiChatbotLayoutPropsType) => {
   return (
-    <div className="relative w-full  overflow-hidden">
+    <div
+      className="relative w-full  overflow-hidden"
+      // style={{
+      //   background:
+      //     'linear-gradient(360deg, #D7BAFD -15.17%, rgba(194, 211, 251, 0.8) 30.1%, rgba(199, 234, 241, 0.5) 75.9%, rgba(230, 240, 232, 0.5) 104.51%)',
+      // }}
+    >
       <div
         className="absolute rounded-full z-0"
         style={{

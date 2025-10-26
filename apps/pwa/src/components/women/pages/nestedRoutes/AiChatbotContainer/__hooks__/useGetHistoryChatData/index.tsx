@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 
+import { RoleEnum } from './enum';
 import { ChatType, HistoryChatResponsiveType } from './type';
 
 const useGetHistoryChatData = () => {
@@ -27,7 +28,27 @@ const useGetHistoryChatData = () => {
     setAiChatbotList([...aiChatbotList, chat]);
   };
 
-  return { historyLoading, aiChatData, addChatHandler, aiChatbotList };
+  const updateChatHandler = (messages: string) => {
+    const updatedChats = [...aiChatbotList];
+    const lastChat = updatedChats[updatedChats.length - 1];
+
+    if (lastChat && lastChat.role === RoleEnum.Assistant) {
+      updatedChats[updatedChats.length - 1] = {
+        ...lastChat,
+        text: messages,
+      };
+    } else {
+      updatedChats.push({
+        role: RoleEnum.Assistant,
+        text: messages,
+        isAnswered: true,
+      });
+    }
+
+    setAiChatbotList(updatedChats);
+  };
+
+  return { historyLoading, aiChatData, addChatHandler, aiChatbotList, updateChatHandler };
 };
 
 export default useGetHistoryChatData;

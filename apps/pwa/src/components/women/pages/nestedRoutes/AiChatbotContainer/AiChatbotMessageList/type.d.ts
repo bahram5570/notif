@@ -4,4 +4,6 @@ type ChatItem = Pick<HistoryChatResponsiveType, 'chats'>;
 
 export interface AiChatbotMessageListPropsType extends ChatItem {
   isLoading: boolean;
+  showErrorMessage: boolean;
+  onError: () => void;
 }

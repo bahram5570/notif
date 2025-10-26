@@ -59,13 +59,14 @@ const ShareExperienceNewExerciseModalContainer = ({
           <ShareExperienceNewTopPart avatarImage={avatarImage} text={text} username={username} />
 
           <div className="w-full pr-[48px]  flex flex-col gap-2 -translate-y-2" ref={conainerRef}>
-            <ShareExperienceNewText textHandler={textHandler} text={text} onChangeBtnTop={onChangeBtnTop} />
+            <ShareExperienceNewText textHandler={textHandler} text={text} />
 
             <ShareExperienceNewFile
               imageFile={fileProps.imageFile}
               fileDataHandler={fileProps.fileDataHandler}
               removeFileHandler={fileProps.removeFileHandler}
               uploadImageLoading={fileProps.uploadImageLoading}
+              onChangeBtnTop={onChangeBtnTop}
             />
           </div>
 
