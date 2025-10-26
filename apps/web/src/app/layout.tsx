@@ -32,6 +32,14 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="fa" dir="rtl">
       <head>
+        <link
+          as="font"
+          rel="preload"
+          type="font/ttf"
+          crossOrigin="anonymous"
+          href="/assets/shared/fonts/YekanBakh-VF.ttf"
+        />
+
         <meta name="msvalidate.01" content="0BDDCC0D2CF0B15B4DC64ABB84BB8526" />
 
         <Script id="gtm-init" strategy="afterInteractive">
