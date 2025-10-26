@@ -11,6 +11,7 @@
     "export": "node export-maker-file.js"
   },
   "dependencies": {
+    "@developer-hub/liquid-glass": "^1.2.3",
     "@lottiefiles/dotlottie-react": "^0.8.6",
     "@repo/assets": "*",
     "@repo/components": "*",

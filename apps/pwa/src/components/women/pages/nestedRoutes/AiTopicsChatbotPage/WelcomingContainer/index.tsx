@@ -3,6 +3,8 @@ import chatbotJson from '@assets/lottie/chatbot.json';
 
 import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
+import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import { GlassCard } from '@developer-hub/liquid-glass';
 import { LottieJson } from '@lib/LottieJson';
 import LiquidGlass from 'liquid-glass-react';
 
@@ -12,29 +14,25 @@ import AiChatbotHeader from '../AiChatbotHeader';
 const WelcomingContainer = () => {
   return (
     <div
-      style={{
-        background:
-          'linear-gradient(360deg, #D7BAFD -15.17%, rgba(194, 211, 251, 0.8) 30.1%, rgba(199, 234, 241, 0.5) 75.9%, rgba(230, 240, 232, 0.5) 104.51%)',
-      }}
-      className="h-dvh"
+      // style={{
+      //   background:
+      //     'linear-gradient(360deg, #D7BAFD -15.17%, rgba(194, 211, 251, 0.8) 30.1%, rgba(199, 234, 241, 0.5) 75.9%, rgba(230, 240, 232, 0.5) 104.51%)',
+      // }}
+      className="h-dvh   bg-[url(/assets/22.050a5760.png)] "
     >
       <>
-        <AiChatbotHeader />
+        {/* <AiChatbotHeader /> */}
 
-        <LottieJson animationData={chatbotJson} loop={false} autoPlay={false} />
+        <LottieJson animationData={chatbotJson} loop={true} autoPlay={true} />
 
-        <LiquidGlass
-          blurAmount={0.5}
-          displacementScale={100}
-          cornerRadius={10}
-          padding="0"
-          style={{
-            position: 'fixed',
-            top: '47%',
-            left: '50%',
-            width: '100%',
-          }}
-          saturation={0}
+        <GlassCard
+          displacementScale={155}
+          blurAmount={0.01}
+          cornerRadius={32}
+          padding="8px 16px "
+          shadowMode={true}
+          className="custom-glass"
+          style={{ maxWidth: MAX_SCREEN_WIDTH }}
         >
           <div className="px-4 flex flex-col gap-14">
             <div className=" flex flex-col gap-3">
@@ -73,7 +71,7 @@ const WelcomingContainer = () => {
               </Typography>
             </Button>
           </div>
-        </LiquidGlass>
+        </GlassCard>
       </>
     </div>
   );
