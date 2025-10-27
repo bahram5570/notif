@@ -7,9 +7,9 @@ import AiChatbotInput from './AiChatbotInput';
 
 const questions = ['تاریخ تخمک گذاری بعدی', 'معرفی کن', 'من کی پریود میشم؟', 'کی رابطه جنسی داشته باشم؟'];
 
-const ChatbotMessageWelcoming = () => {
+const ChatbotMessageWelcoming = ({ top }: { top: number }) => {
   return (
-    <div className=" absolute w-full top-[35%]">
+    <div className=" absolute w-full " style={{ top }}>
       <div className=" relative  w-full h-full">
         <AiIcon className="w-full " />
         <div className="px-6 flex flex-col gap-14  absolute top-10  pt-9 ">

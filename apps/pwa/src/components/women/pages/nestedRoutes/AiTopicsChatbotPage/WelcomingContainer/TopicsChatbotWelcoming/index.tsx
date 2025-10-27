@@ -4,9 +4,15 @@ import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
-const TopicsChatbotWelcoming = () => {
+import { SHOW_TOPICS_WELCOMING } from './constants';
+
+const TopicsChatbotWelcoming = ({ top }: { top: number }) => {
+  const onClick = () => {
+    localStorage.setItem(SHOW_TOPICS_WELCOMING, 'false');
+  };
+
   return (
-    <div className="absolute mx-auto top-[38%]   left-0 right-0 bottom-0 px-5 " style={{ maxWidth: MAX_SCREEN_WIDTH }}>
+    <div className="absolute mx-auto   left-0 right-0 bottom-0 px-5 " style={{ maxWidth: MAX_SCREEN_WIDTH, top }}>
       <div className="px-6 flex flex-col gap-14  glass-card shadow-lg rounded-[32px] pt-6 pb-8 ">
         <div className=" flex flex-col gap-3">
           <div className="flex flex-col justify-end items-end gap-1">
@@ -30,15 +36,7 @@ const TopicsChatbotWelcoming = () => {
           </Typography>
         </div>
 
-        <Button
-          variant="fill"
-          size="medium"
-          color="primary"
-          onClick={() => {}}
-          fullWidth
-          // isLoading={isLoading}
-          // isDisable={!valuesProps.rate}
-        >
+        <Button variant="fill" size="medium" color="primary" onClick={onClick} fullWidth>
           <Typography scale="Lable" size="Large" color="White">
             با مونس صحبت کن! ✨
           </Typography>

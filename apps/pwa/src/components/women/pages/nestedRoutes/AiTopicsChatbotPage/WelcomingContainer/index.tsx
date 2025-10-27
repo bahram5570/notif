@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react';
+
 import chatbotJson from '@assets/lottie/chatbot.json';
 
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
@@ -11,13 +13,27 @@ import { WelcomingContainerPropsType } from './type';
 
 const WelcomingContainer = ({ welcomingType }: WelcomingContainerPropsType) => {
   let CurrentWelcoming: JSX.Element | null = null;
+  const lottieRef = useRef<HTMLDivElement | null>(null);
+  const [top, setTop] = useState<number>(0);
+
+  useEffect(() => {
+    const updateTop = () => {
+      if (!lottieRef.current) return;
+      const rect = lottieRef.current.getBoundingClientRect();
+      setTop(rect.height * 0.4);
+    };
+
+    updateTop();
+    window.addEventListener('resize', updateTop);
+    return () => window.removeEventListener('resize', updateTop);
+  }, []);
 
   switch (welcomingType) {
     case WelcomingTypeEnum.TopicsPage:
-      CurrentWelcoming = <TopicsChatbotWelcoming />;
+      CurrentWelcoming = <TopicsChatbotWelcoming top={top} />;
       break;
     case WelcomingTypeEnum.ChatbotMessage:
-      CurrentWelcoming = <ChatbotMessageWelcoming />;
+      CurrentWelcoming = <ChatbotMessageWelcoming top={top} />;
       break;
   }
 
@@ -34,7 +50,10 @@ const WelcomingContainer = ({ welcomingType }: WelcomingContainerPropsType) => {
       <>
         <AiChatbotHeader welcomingType={welcomingType} />
         <div style={{ paddingTop: HEADER_HEIGHT + 20 }} className="min-h-[100dvh]">
-          <LottieJson animationData={chatbotJson} loop={true} autoPlay={true} />
+          <div ref={lottieRef} className="h-dvh">
+            <LottieJson animationData={chatbotJson} loop={true} autoPlay={true} />
+          </div>
+
           {WrappedWelcoming}
         </div>
       </>

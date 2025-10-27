@@ -1,9 +1,11 @@
 import ChatbotBg from '@assets/icons/bgChatbot.svg';
+import chatbotJson from '@assets/lottie/chatbot.json';
 
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useTheme from '@hooks/useTheme';
+import { LottieJson } from '@lib/LottieJson';
 
 import { SuggestedTopicCardPropsType } from './type';
 
@@ -22,12 +24,12 @@ const SuggestedTopicCard = (props: SuggestedTopicCardPropsType) => {
   return (
     <div
       className=" rounded-3xl  flex flex-col gap-3 relative"
-      style={{ background: colors.Surface_Scrim }}
+      style={{ background: colors.Neutral_OnBackground }}
       // onClick={onClick}
     >
       <ChatbotBg className="rounded-3xl absolute top-0 left-0" />
       <div className="flex flex-col items-end gap-1 py-10 px-4">
-        <div className="flex flex-row-reverse justify-start items-start w-full gap-2">
+        <div className="flex flex-row-reverse justify-start items-center w-full gap-2">
           <CustomImage src={props.icon} />
           <Typography scale="Title" size="Small" color="White">
             {props.title}
