@@ -114,13 +114,13 @@ const ContentGenetic = async () => {
         <ul className="mr-4 mt-4">
           <CustomTypography className="list-disc" tagType="li">
             <CustomTypography tagType="h3">بیماری‌های تک ژنی</CustomTypography>
-            <CustomTypography className="pt-4 pb-2" tagType="p">
-              این دسته شامل بیماری‌هایی مانند فیبروز سیستیک، کم‌خونی داسی‌شکل،
-              <CustomLink href="/thalassemia" color="Primary_Primary">
-                تالاسمی
-              </CustomLink>
-              ، بیماری تای-ساکس و دیستروفی عضلانی دوشن است. این بیماری‌ها ناشی از جهش در یک ژن خاص هستند.
-            </CustomTypography>
+          </CustomTypography>
+          <CustomTypography className="pt-4 pb-2" tagType="p">
+            این دسته شامل بیماری‌هایی مانند فیبروز سیستیک، کم‌خونی داسی‌شکل،
+            <CustomLink href="/thalassemia" color="Primary_Primary">
+              تالاسمی
+            </CustomLink>
+            بیماری تای-ساکس و دیستروفی عضلانی دوشن است. این بیماری‌ها ناشی از جهش در یک ژن خاص هستند.
           </CustomTypography>
           <CustomTypography className="list-disc" tagType="li">
             <CustomTypography tagType="h3">ناهنجاری‌های کروموزومی</CustomTypography>
@@ -139,6 +139,7 @@ const ContentGenetic = async () => {
           </CustomTypography>
         </ul>
       </div>
+      <CustomImage alt="چه نوع اختلالاتی با آزمایش ژنتیک قبل بارداری تشخیص داده می‌شود؟" src={geneticTest} />
       <div>
         <CustomTypography tagType="h2" fontSize="Title_Small">
           آزمایش ژنتیک قبل از بارداری چگونه انجام می‌شود؟
@@ -324,7 +325,6 @@ const ContentGenetic = async () => {
         </CustomTypography>
         <ArticleIdFaq faqs={FAQS} />
       </div>
-      <CustomImage alt="چه نوع اختلالاتی با آزمایش ژنتیک قبل بارداری تشخیص داده می‌شود؟" src={geneticTest} />
     </div>
   );
 };
