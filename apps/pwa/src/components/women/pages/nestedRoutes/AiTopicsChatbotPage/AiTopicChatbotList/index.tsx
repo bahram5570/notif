@@ -1,0 +1,81 @@
+import Icon from '@assets/icons/Generate B.svg';
+
+import Typography from '@components/ui/Typography';
+import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
+import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import useTheme from '@hooks/useTheme';
+
+import AiChatbotHeader from '../AiChatbotHeader';
+import AiChatbotInput from '../WelcomingContainer/ChatbotMessageWelcoming/AiChatbotInput';
+import { WelcomingTypeEnum } from '../WelcomingContainer/enum';
+import GeneratorTopicCardList from './GeneratorTopicCardList';
+import useGetTopicList from './__hooks__/useGetTopicList';
+
+const AiTopicChatbotList = () => {
+  const { colors } = useTheme();
+  const { result, isLoading } = useGetTopicList();
+  const hasUsedTopicsListData = result && result.usedTopics.length > 0;
+  const hasTopicsListData = result && result.topics.length > 0;
+
+  return (
+    <div
+      style={{
+        background:
+          'linear-gradient(360deg, #D7BAFD -15.17%, rgba(194, 211, 251, 0.8) 30.1%, rgba(199, 234, 241, 0.5) 75.9%, rgba(230, 240, 232, 0.5) 104.51%)',
+      }}
+      className="min-h-screen relative px-4"
+    >
+      <AiChatbotHeader welcomingType={WelcomingTypeEnum.ChatbotMessage} />
+
+      <div style={{ paddingTop: HEADER_HEIGHT + 20 }}>
+        <div className="flex flex-col gap-4" style={{ paddingBottom: HEADER_HEIGHT * 2 }}>
+          <div className="flex flex-col items-end justify-end">
+            <div className="flex flex-row-reverse items-center gap-1">
+              <Typography scale="Title" size="Medium">
+                عصر بخیر گندم
+              </Typography>
+            </div>
+
+            <Typography scale="Title" size="Medium">
+              چه کمکی ازم برمیاد؟
+            </Typography>
+          </div>
+
+          <Typography size="Small" scale="Body">
+            مونس این دسته‌ها رو برات ساخته تا شانس بارداری‌ت بیشتر بشه. یکی رو انتخاب کن، با هم راحت‌تر به هدفت برسیم!
+            🌸
+          </Typography>
+
+          {hasUsedTopicsListData && (
+            <>
+              <Typography scale="Title" size="Small">
+                گفتگوهای فعال
+              </Typography>
+              <GeneratorTopicCardList topics={result.usedTopics} />
+              <div className="h-0 w-full rotate-180" style={{ border: `1px solid ${colors.Neutral_Background}` }} />
+            </>
+          )}
+
+          {hasTopicsListData && (
+            <div className="flex justify-end items-end flex-col gap-4">
+              {hasUsedTopicsListData && (
+                <Typography scale="Title" size="Small">
+                  تالارهای پیشنهادی
+                </Typography>
+              )}
+
+              <GeneratorTopicCardList topics={result.topics} />
+            </div>
+          )}
+        </div>
+        <div className=" fixed bottom-0 left-0 right-0 mx-auto" style={{ maxWidth: MAX_SCREEN_WIDTH }}>
+          <div className="py-4 backdrop-blur-[8px]">
+            <AiChatbotInput hintPromptText="موضوعت رو پیدا نکردی؟ هیمنجا بپرس..." />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AiTopicChatbotList;

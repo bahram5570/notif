@@ -29,6 +29,10 @@ export const MODALS = {
 
   // # Question-onboarding
   ONBOARDING_QUESTION_REWARD: ' ONBOARDING_QUESTION_REWARD',
+
+  // # Question-onboarding
+
+  MODALS_AI_CHAT: 'MODALS_AI_CHAT',
 };
 
 export const EXCLUDE_PAGES_MODALS = [
