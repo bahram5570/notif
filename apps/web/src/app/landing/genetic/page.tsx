@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 const Genetic = () => {
-  return <LandingGeneticLayout />;
+  return <LandingGeneticLayout questionLink="/landing/genetic/testOnline" />;
 };
 
 export default Genetic;

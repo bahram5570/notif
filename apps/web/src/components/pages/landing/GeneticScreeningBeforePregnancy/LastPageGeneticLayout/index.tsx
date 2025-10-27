@@ -1,21 +1,13 @@
-'use client';
-
 import drProfile from '@assets/images/genetic/drProfile.webp';
 import logo from '@assets/images/genetic/logo.webp';
 import Verified from '@assets/images/genetic/verified.svg';
 
-import QuestionProgressBar from '@components/modules/QuestionProgressBar';
 import CustomImage from '@components/ui/CustomImage';
-import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { ExpertList } from './constants';
-import useAuth from './useAuth';
 
-const LandingGeneticLayout = () => {
-  useAuth();
-
+const LastPageGeneticLayout = async () => {
   return (
     <>
       <div
@@ -29,17 +21,15 @@ const LandingGeneticLayout = () => {
                   bg-top"
       >
         <div className="pt-7">
-          <QuestionProgressBar currentStep="0" questionListLength={20} />
-          <div className="mt-7 grid place-items-center">
+          <div className="mt-14 grid place-items-center">
             <CustomImage src={logo} alt="logo" width={80} height={80} />
             <CustomTypography tagType="h2" fontSize="Title_Small" className="mt-6">
-              غربالگری ژنتیک ایمپو
+              نکته آخر
             </CustomTypography>
             <CustomTypography tagType="p" fontSize="Body_Medium" className="mt-2 text-center">
-              غربالگری ژنتیک ایمپو یک ابزار برای غربالگری بر اساس پارامترهای ژنتیکی و تاثیرش روی سلامت ژنتیکی فرزندان،
-              ناباروری، دسته بندی بر اساس سطح ریسک ژنتیکی و ارائه راهکارهای لازم بر اساس سطح ریسک مشخص شده برای هر فرد
-              هست. برای این منظور لازمه که پرسشنامه‌ای که در ادامه بهت نمایش می‌دیم رو با دقت تکمیل کنی. نکته مهم اینه
-              که این فرم غربالگری و الگوریتم شناسایی موجود در اون کاملا علمی بوده و توسط متخصص ژنتیک تهیه و تایید شده.
+              این فقط یه ارزیابی اولیه‌ست، پس آزمایش‌ها و مشورت با مشاور ژنتیک رو جدی بگیر حتی اگر فرزند سالم داری و
+              هیچوقت مشکل ژنتیکی‌ای متوجه‌تون نبوده. با خیال راحت برو جلو و اگه چیزی ذهنت رو مشغول کرد از ما بپرس تا
+              کمکت کنیم!
             </CustomTypography>
             <div className="mt-6 bg-[#EEEBFF] w-full border border-solid border-[#757AC2] rounded-xl grid grid-cols-[60%_40%] overflow-hidden">
               <div className="p-4 !pl-0">
@@ -69,19 +59,8 @@ const LandingGeneticLayout = () => {
           </div>
         </div>
       </div>
-      <div className="mt-6 w-fit mx-auto my-5 flex">
-        <CustomLink
-          href="/landing/genetic/testOnline"
-          className="w-fit px-10 py-[12px] rounded-full flex justify-center"
-          style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
-        >
-          <CustomTypography fontSize="Lable_Medium" color={'White'}>
-            شروع و تکمیل پرسشنامه
-          </CustomTypography>
-        </CustomLink>
-      </div>
     </>
   );
 };
 
-export default LandingGeneticLayout;
+export default LastPageGeneticLayout;

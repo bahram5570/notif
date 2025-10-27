@@ -12,7 +12,7 @@ const useSubmit = () => {
   const handleSubmit = async (payload: PayloadDataTypes) => {
     const token = Cookies.get('geneticToken');
 
-    const response = await fetch(`${SERVER_URL}/Landing/genetictest`, {
+    const response = await fetch(`${STAGE_URL}/Landing/genetictest`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

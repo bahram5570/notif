@@ -46,7 +46,7 @@ export const GENETIC_TEST_ONLINE_QUESTION_LIST: GeneticTestOnlineQuestionListTyp
     title: 'آیا در خانواده شما یا همسرتان سابقه سقط مکرر وجود دارد؟',
     items: [
       { title: 'خیر', score: 0 },
-      { title: 'بله', score: 3 },
+      { title: 'بله', score: 4 },
     ],
   },
   5: {
@@ -54,7 +54,7 @@ export const GENETIC_TEST_ONLINE_QUESTION_LIST: GeneticTestOnlineQuestionListTyp
     title: 'آیا در خانواده شما یا همسرتان سابقه بیماری‌های کروموزومی وجود دارد؟',
     items: [
       { title: 'خیر', score: 0 },
-      { title: 'بله', score: 9 },
+      { title: 'بله', score: 5 },
     ],
   },
   6: {
