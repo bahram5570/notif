@@ -5,14 +5,14 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'ایمپو؛ تخصصی‌ترین اپلیکیشن بارداری هفته به هفته',
   description: 'تست غربالگری',
-  robots: 'noindex, nofollow',
+  robots: { index: false, follow: false },
   alternates: {
     canonical: `${HOST_URL}/landing/genetic`,
   },
 };
 
 const Genetic = () => {
-  return <LandingGeneticLayout questionLink="/landing/genetic/testOnline" />;
+  return <LandingGeneticLayout />;
 };
 
 export default Genetic;
