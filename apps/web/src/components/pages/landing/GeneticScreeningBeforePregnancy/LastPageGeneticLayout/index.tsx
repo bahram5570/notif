@@ -11,7 +11,9 @@ const LastPageGeneticLayout = async () => {
   return (
     <>
       <div
-        className="w-full  
+        className="
+                  rounded-3xl
+                  w-full  
                   px-4 
                   sm:px-6 
                   py-5 

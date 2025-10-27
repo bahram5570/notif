@@ -1,12 +1,16 @@
+import HeaderFooterContainer from '@components/HeaderFooterContainer';
+
 import ContentLayout from './ContentLayout';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <ContentLayout>
-      <div className="w-full max-w-[500px] relative">
-        <>{children}</>
-      </div>
-    </ContentLayout>
+    <HeaderFooterContainer>
+      <ContentLayout>
+        <div className="w-full max-w-[500px] relative pt-[55px] md:pt-[150px] pb-12">
+          <>{children}</>
+        </div>
+      </ContentLayout>
+    </HeaderFooterContainer>
   );
 };
 

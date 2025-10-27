@@ -13,11 +13,12 @@ import { COLORS_LIST } from '@theme/colors';
 import { ExpertList } from './constants';
 
 const LandingGeneticLayout = () => {
-
   return (
     <>
       <div
-        className="w-full  
+        className="
+                  w-full  
+                  rounded-3xl
                   px-4 
                   sm:px-6 
                   py-5 

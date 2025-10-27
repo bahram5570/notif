@@ -4,6 +4,7 @@ const TestOnlineResultWrapper = ({ children }: { children: React.ReactNode }) =>
   return (
     <div
       className="
+                    rounded-3xl
                     sm:relative
                     w-full 
                     px-4 

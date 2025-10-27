@@ -15,8 +15,7 @@ const STATIC_URLS: string[] = [
   `${HOST_URL}/calendarOfPregnancy`,
   `${HOST_URL}/landing/breastfeeding`,
   `${HOST_URL}/landing/pregnancyLanding`,
-  `${HOST_URL}/landing/genetic-screening-before-pregnancy
-`,
+  `${HOST_URL}/landing/genetic-screening-before-pregnancy`,
 ];
 
 const routeGenerator = (url: string) => {
