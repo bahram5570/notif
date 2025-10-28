@@ -34,7 +34,7 @@ const Section2 = ({ section }: Section2Props) => {
 
           {i === 0 && (
             <CustomLink
-              href={'https://weareimpo.ir/referal?type=2'}
+              href={'https://weareimpo.ir/referal?type=220&id=18'}
               className="mt-4 rounded-full w-full block py-[8px]"
               style={{ backgroundColor: COLORS_LIST.Primary_PrimaryContainer }}
             >
