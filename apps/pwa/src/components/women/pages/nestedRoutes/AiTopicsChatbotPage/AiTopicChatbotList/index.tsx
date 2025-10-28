@@ -8,6 +8,7 @@ import useTheme from '@hooks/useTheme';
 import AiChatbotHeader from '../AiChatbotHeader';
 import AiChatbotInput from '../WelcomingContainer/ChatbotMessageWelcoming/AiChatbotInput';
 import { WelcomingTypeEnum } from '../WelcomingContainer/enum';
+import AiTopicChatbotListSkeleton from './AiTopicChatbotListSkeleton';
 import GeneratorTopicCardList from './GeneratorTopicCardList';
 import useGetTopicList from './__hooks__/useGetTopicList';
 
@@ -26,54 +27,48 @@ const AiTopicChatbotList = () => {
       className="min-h-screen relative px-4"
     >
       <AiChatbotHeader welcomingType={WelcomingTypeEnum.ChatbotMessage} />
-
-      <div style={{ paddingTop: HEADER_HEIGHT + 20 }}>
-        <div className="flex flex-col gap-4" style={{ paddingBottom: HEADER_HEIGHT * 2 }}>
-          <div className="flex flex-col items-end justify-end">
-            <div className="flex flex-row-reverse items-center gap-1">
-              <Typography scale="Title" size="Medium">
-                عصر بخیر گندم
+      {isLoading && <AiTopicChatbotListSkeleton />}
+      {!isLoading && (
+        <div style={{ paddingTop: HEADER_HEIGHT + 50 }}>
+          <div className="flex flex-col gap-5" style={{ paddingBottom: HEADER_HEIGHT * 2 }}>
+            <div className="flex flex-col items-end justify-end gap-2">
+              <Typography scale="Title" size="Large">
+                {result?.title}
+              </Typography>
+              <Typography size="Small" scale="Body">
+                {result?.subtitle}
               </Typography>
             </div>
 
-            <Typography scale="Title" size="Medium">
-              چه کمکی ازم برمیاد؟
-            </Typography>
-          </div>
-
-          <Typography size="Small" scale="Body">
-            مونس این دسته‌ها رو برات ساخته تا شانس بارداری‌ت بیشتر بشه. یکی رو انتخاب کن، با هم راحت‌تر به هدفت برسیم!
-            🌸
-          </Typography>
-
-          {hasUsedTopicsListData && (
-            <>
-              <Typography scale="Title" size="Small">
-                گفتگوهای فعال
-              </Typography>
-              <GeneratorTopicCardList topics={result.usedTopics} />
-              <div className="h-0 w-full rotate-180" style={{ border: `1px solid ${colors.Neutral_Background}` }} />
-            </>
-          )}
-
-          {hasTopicsListData && (
-            <div className="flex justify-end items-end flex-col gap-4">
-              {hasUsedTopicsListData && (
+            {hasUsedTopicsListData && (
+              <>
                 <Typography scale="Title" size="Small">
-                  تالارهای پیشنهادی
+                  گفتگوهای فعال
                 </Typography>
-              )}
+                <GeneratorTopicCardList topics={result.usedTopics} />
+                <div className="h-0 w-full rotate-180" style={{ border: `1px solid ${colors.Neutral_Background}` }} />
+              </>
+            )}
 
-              <GeneratorTopicCardList topics={result.topics} />
+            {hasTopicsListData && (
+              <div className="flex justify-end items-end flex-col gap-4">
+                {hasUsedTopicsListData && (
+                  <Typography scale="Title" size="Small">
+                    تالارهای پیشنهادی
+                  </Typography>
+                )}
+
+                <GeneratorTopicCardList topics={result.topics} />
+              </div>
+            )}
+          </div>
+          <div className=" fixed bottom-0 left-0 right-0 mx-auto" style={{ maxWidth: MAX_SCREEN_WIDTH }}>
+            <div className="py-4 backdrop-blur-[8px]">
+              <AiChatbotInput hintPromptText="موضوعت رو پیدا نکردی؟ هیمنجا بپرس..." />
             </div>
-          )}
-        </div>
-        <div className=" fixed bottom-0 left-0 right-0 mx-auto" style={{ maxWidth: MAX_SCREEN_WIDTH }}>
-          <div className="py-4 backdrop-blur-[8px]">
-            <AiChatbotInput hintPromptText="موضوعت رو پیدا نکردی؟ هیمنجا بپرس..." />
           </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };
