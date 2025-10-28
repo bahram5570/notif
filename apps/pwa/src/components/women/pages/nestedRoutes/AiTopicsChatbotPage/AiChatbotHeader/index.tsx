@@ -14,6 +14,7 @@ import { LottieJson } from '@lib/LottieJson';
 
 import { WelcomingTypeEnum } from '../WelcomingContainer/enum';
 import MoreActionsMenu from './MoreActionsMenu';
+import MoreActionMenuModals from './MoreActionsMenu/MoreActionMenuModals';
 import { AiChatbotHeaderPropsType } from './type';
 
 const AiChatbotHeader = ({ welcomingType }: AiChatbotHeaderPropsType) => {
@@ -30,7 +31,7 @@ const AiChatbotHeader = ({ welcomingType }: AiChatbotHeaderPropsType) => {
     }
   };
 
-  const openHandler = () => {
+  const closeHandler = () => {
     setIsOpen((prev) => !prev);
   };
 
@@ -45,7 +46,7 @@ const AiChatbotHeader = ({ welcomingType }: AiChatbotHeaderPropsType) => {
         {welcomingType !== WelcomingTypeEnum.TopicsPage && (
           <div
             className="flex justify-center items-center w-12 h-12 rounded-full glass-card cursor-pointer shadow-lg"
-            onClick={openHandler}
+            onClick={closeHandler}
           >
             <DotIcon className="w-6 h-6" style={{ fill: colors.Surface_InverseSurface }} />
           </div>
@@ -78,7 +79,8 @@ const AiChatbotHeader = ({ welcomingType }: AiChatbotHeaderPropsType) => {
         </div>
       </div>
 
-      <MoreActionsMenu isOpen={isOpen} openHandler={openHandler} />
+      <MoreActionsMenu isOpen={isOpen} closeHandler={closeHandler} />
+      <MoreActionMenuModals />
     </div>
   );
 };

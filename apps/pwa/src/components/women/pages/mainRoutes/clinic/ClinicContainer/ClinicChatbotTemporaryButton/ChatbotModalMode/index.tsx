@@ -4,6 +4,7 @@ import Spinner from '@components/ui/Spinner';
 import Typography from '@components/ui/Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useTheme from '@hooks/useTheme';
+import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
 import Link from 'next/link';
 
@@ -11,10 +12,17 @@ import { CONTEXT_SLIDE_ONE, CONTEXT_SLIDE_TWO } from '../constants';
 import LoopSlider from './LoopSlider';
 import { ChatbotModalModePropsType } from './type';
 
-const ChatbotModalMode = ({ description, title, startChatText }: ChatbotModalModePropsType) => {
+const ChatbotModalMode = ({ description, title, startChatText, goToChatAction }: ChatbotModalModePropsType) => {
   const { colors } = useTheme();
+  const { actionHandler } = useWidgetActions();
+
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
   const isLoading = pageNavigationLoading === 'aiChatbot';
+
+  const onClick = () => {
+    actionHandler(goToChatAction);
+    pageNavigationHandler({ id: 'aiChatbot', showProgressBar: false });
+  };
 
   return (
     <div className="relative w-full h-full overflow-hidden mb-4">
@@ -72,10 +80,7 @@ const ChatbotModalMode = ({ description, title, startChatText }: ChatbotModalMod
           <LoopSlider items={CONTEXT_SLIDE_TWO} direction="right" />
         </div>
 
-        <Link
-          href="/protected/aiChatbot"
-          onClick={() => pageNavigationHandler({ id: 'aiChatbot', showProgressBar: false })}
-        >
+        <div onClick={onClick}>
           <div className="flex flex-row items-center gap-1 justify-center w-[266px] mt-auto">
             <div
               className="px-4 py-3 flex justify-center items-center rounded-full w-full"
@@ -90,7 +95,7 @@ const ChatbotModalMode = ({ description, title, startChatText }: ChatbotModalMod
               )}
             </div>
           </div>
-        </Link>
+        </div>
       </div>
     </div>
   );

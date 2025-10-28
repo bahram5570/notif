@@ -1,3 +1,7 @@
+import { removeWelcomingHandler, setWelcomingHandler } from '@utils/aiChatBotWelcoming';
+
+import { IS_WELCOMING_IN_CHAT_BOT_TOPICS } from '@constants/app.constants';
+
 import { enterphaseHandler } from './enterphaseHandler';
 import { shareExperienceHandler } from './shareExperienceHandler';
 
@@ -135,6 +139,15 @@ export const actionRouteConverter = async (serverLink: string) => {
 
     case '/chatbot':
       result = '/protected/aiChatbot';
+      break;
+
+    case '/chatbot/welcoming':
+      setWelcomingHandler();
+      result = `/protected/aiChatbotTopics`;
+      break;
+    case '/chatbot/topics':
+      removeWelcomingHandler();
+      result = '/protected/aiChatbotTopics';
       break;
 
     case '/onboarding':

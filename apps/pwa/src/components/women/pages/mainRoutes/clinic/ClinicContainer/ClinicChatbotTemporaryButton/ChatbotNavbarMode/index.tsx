@@ -4,16 +4,28 @@ import Spinner from '@components/ui/Spinner';
 import Typography from '@components/ui/Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useTheme from '@hooks/useTheme';
+import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
 import Link from 'next/link';
 
 import TypingLoop from './TypingLoop';
 import { ChatbotNavbarModePropsType } from './type';
 
-const ChatbotNavbarMode = ({ collapseText1, collapseText2, continueChatText }: ChatbotNavbarModePropsType) => {
+const ChatbotNavbarMode = ({
+  collapseText1,
+  collapseText2,
+  continueChatText,
+  goToChatAction,
+}: ChatbotNavbarModePropsType) => {
   const { colors } = useTheme();
+  const { actionHandler } = useWidgetActions();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
   const isLoading = pageNavigationLoading === 'aiChatbot';
+
+  const onClick = () => {
+    actionHandler(goToChatAction);
+    pageNavigationHandler({ id: 'aiChatbot', showProgressBar: false });
+  };
   return (
     <div
       className="relative w-full h-full  rounded-[100px] flex flex-row-reverse gap-2  items-center p-2 mt-4"
@@ -32,10 +44,7 @@ const ChatbotNavbarMode = ({ collapseText1, collapseText2, continueChatText }: C
       </div>
 
       <div className="w-full flex ">
-        <Link
-          href="/protected/aiChatbot"
-          onClick={() => pageNavigationHandler({ id: `aiChatbot`, showProgressBar: false })}
-        >
+        <div onClick={onClick}>
           <div className="flex flex-row items-center gap-1 justify-center w-full h-[30px] mt-auto">
             <div
               className="px-4 py-2 flex justify-center items-center rounded-full w-full"
@@ -50,7 +59,7 @@ const ChatbotNavbarMode = ({ collapseText1, collapseText2, continueChatText }: C
               )}
             </div>
           </div>
-        </Link>
+        </div>
       </div>
     </div>
   );

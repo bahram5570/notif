@@ -1,14 +1,22 @@
 import Icon from '@assets/icons/Generate B.svg';
+import { colorFormatConverter } from '@utils/scripts';
 
 import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import useWidgetActions from '@hooks/useWidgetActions';
 
-import { SHOW_TOPICS_WELCOMING } from './constants';
+import useGetData from './__hooks__/useGetData';
 
 const TopicsChatbotWelcoming = ({ top }: { top: number }) => {
+  const { data, isLoading } = useGetData();
+  const { actionHandler } = useWidgetActions();
+
   const onClick = () => {
-    localStorage.setItem(SHOW_TOPICS_WELCOMING, 'false');
+    // callEvent('ChatbotInteractionClick');
+    if (data) {
+      actionHandler(data.button.action);
+    }
   };
 
   return (
@@ -36,9 +44,17 @@ const TopicsChatbotWelcoming = ({ top }: { top: number }) => {
           </Typography>
         </div>
 
-        <Button variant="fill" size="medium" color="primary" onClick={onClick} fullWidth>
+        <Button
+          variant="fill"
+          size="medium"
+          color="FREE-STYLES"
+          contentsColor={colorFormatConverter(data?.button.foregroundColor || '')}
+          buttonColor={colorFormatConverter(data?.button.backgroundColor || '')}
+          onClick={onClick}
+          fullWidth
+        >
           <Typography scale="Lable" size="Large" color="White">
-            با مونس صحبت کن! ✨
+            {data?.button.text}
           </Typography>
         </Button>
       </div>

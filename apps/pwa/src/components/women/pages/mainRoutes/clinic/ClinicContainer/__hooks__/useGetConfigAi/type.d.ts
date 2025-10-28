@@ -1,3 +1,5 @@
+import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
+
 export type UseGetConfigAiTypes = {
   isAvailable: boolean;
   username: string;
@@ -7,4 +9,5 @@ export type UseGetConfigAiTypes = {
   collapseText2: string;
   startChatText: string;
   continueChatText: string;
+  goToChatAction: ActionTypes;
 };
