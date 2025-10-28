@@ -21,7 +21,6 @@ const DeleteChatModal = ({ onCloseModal }: { onCloseModal: () => void }) => {
           variant="fill"
           color="primary"
           onClick={() => {
-            console.log('');
             // rejectHandler(id);
           }}
         >

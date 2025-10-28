@@ -146,7 +146,6 @@ export const actionRouteConverter = async (serverLink: string) => {
       result = `/protected/aiChatbotTopics`;
       break;
     case '/chatbot/topics':
-      removeWelcomingHandler();
       result = '/protected/aiChatbotTopics';
       break;
 

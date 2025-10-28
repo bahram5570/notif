@@ -59,7 +59,7 @@ const MoreActionsMenu = ({ isOpen, closeHandler }: MoreActionsMenuPropsType) => 
           onClick={(e) => e.stopPropagation()}
         >
           <div className="flex flex-col gap-2">
-            {/* <div className="flex flex-row-reverse items-center gap-2" onClick={deleteClickHandler}>
+            <div className="flex flex-row-reverse items-center gap-2" onClick={deleteClickHandler}>
               <div
                 className="flex justify-center items-center rounded-full w-8 h-8"
                 style={{ backgroundColor: colors.Error_ErrorContainer }}
@@ -85,11 +85,8 @@ const MoreActionsMenu = ({ isOpen, closeHandler }: MoreActionsMenuPropsType) => 
                 نظرت رو اینجا بگو
               </Typography>
             </div>
-            <div
-              className="w-[133px] h-0 rotate-180 "
-              style={{ border: `1px solid ${colors.Surface_OutlineVariant}` }}
-            /> */}
-            <div className="flex flex-row-reverse items-center gap-2" onClick={suggestionClickHandler}>
+
+            {/* <div className="flex flex-row-reverse items-center gap-2" onClick={suggestionClickHandler}>
               <div
                 className="flex justify-center items-center rounded-full w-8 h-8"
                 style={{ backgroundColor: colors.Surface_OutlineVariant }}
@@ -99,7 +96,7 @@ const MoreActionsMenu = ({ isOpen, closeHandler }: MoreActionsMenuPropsType) => 
               <Typography scale="Lable" size="Medium">
                 ثبت موضوع پیشنهادی
               </Typography>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -1,9 +1,21 @@
+import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+
 import { TopicType } from '../__hooks__/useGetTopicList/type';
 import SuggestedTopicCard from './SuggestedTopicCard';
 import TopicCardItem from './TopicCardItem';
 import { GeneratorTopicCardListPropsType } from './type';
 
-const GeneratorTopicCardList = ({ topics }: GeneratorTopicCardListPropsType) => {
+const GeneratorTopicCardList = ({ topics, categoryId }: GeneratorTopicCardListPropsType) => {
+  const { pageNavigationHandler } = usePageNavigationLoading();
+
+  const onLinkHandler = (id: string) => {
+    pageNavigationHandler({
+      showProgressBar: true,
+      id: `chatbot-${id}`,
+      linkTo: `/protected/aiChatbot?itemId=${id}&categoryId=${categoryId}`,
+    });
+  };
+
   const rows: TopicType[][] = [];
   let i = 0;
 
@@ -23,7 +35,11 @@ const GeneratorTopicCardList = ({ topics }: GeneratorTopicCardListPropsType) => 
       {rows.map((row, rowIndex) => (
         <div key={rowIndex} className={`grid gap-2 w-full ${row.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
           {row.map((item, index) =>
-            rowIndex === 0 ? <SuggestedTopicCard {...item} key={index} /> : <TopicCardItem {...item} key={index} />,
+            rowIndex === 0 ? (
+              <SuggestedTopicCard {...item} key={index} onLinkHandler={onLinkHandler} />
+            ) : (
+              <TopicCardItem {...item} key={index} onLinkHandler={onLinkHandler} />
+            ),
           )}
         </div>
       ))}

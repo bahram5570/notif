@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import ArrowIcon from '@assets/icons/arrow.svg';
 import StopIcon from '@assets/icons/stop.svg';
@@ -9,7 +9,7 @@ import useTheme from '@hooks/useTheme';
 
 import { AiChatbotInputPropsType } from './type';
 
-const AiChatbotInput = ({ hintPromptText }: AiChatbotInputPropsType) => {
+const AiChatbotInput = ({ hintPromptText, question }: AiChatbotInputPropsType) => {
   const { colors, typography } = useTheme();
   const [chatText, setChatText] = useState('');
 
@@ -30,6 +30,12 @@ const AiChatbotInput = ({ hintPromptText }: AiChatbotInputPropsType) => {
       clickHandler();
     }
   };
+
+  useEffect(() => {
+    if (question) {
+      setChatText(question);
+    }
+  }, [question]);
 
   return (
     <div className="w-full  flex justify-end items-center relative  rounded-t-3xl p-4 z-50 ">

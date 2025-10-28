@@ -45,7 +45,7 @@ const AiTopicChatbotList = () => {
                 <Typography scale="Title" size="Small">
                   گفتگوهای فعال
                 </Typography>
-                <GeneratorTopicCardList topics={result.usedTopics} />
+                <GeneratorTopicCardList topics={result.usedTopics} categoryId={result.id} />
                 <div className="h-0 w-full rotate-180" style={{ border: `1px solid ${colors.Neutral_Background}` }} />
               </>
             )}
@@ -58,7 +58,7 @@ const AiTopicChatbotList = () => {
                   </Typography>
                 )}
 
-                <GeneratorTopicCardList topics={result.topics} />
+                <GeneratorTopicCardList topics={result.topics} categoryId={result.id} />
               </div>
             )}
           </div>

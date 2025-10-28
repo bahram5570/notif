@@ -9,18 +9,22 @@ import WelcomingContainer from './WelcomingContainer';
 import { WelcomingTypeEnum } from './WelcomingContainer/enum';
 
 const AiTopicsChatbotPage = () => {
-  // const [isWelcoming, setIsWelcoming] = useState<boolean>(false);
+  const [isWelcoming, setIsWelcoming] = useState<string | null>(null);
+  const [updateKey, setUpdateKey] = useState(Math.random());
 
-  // useEffect(() => {
-  //   const welcoming = getWelcomingHandler();
-  //   if (welcoming) {
-  //     setIsWelcoming(JSON.parse(welcoming));
-  //   }
-  // }, []);
+  const onUpdateKeyHandler = () => {
+    setUpdateKey(Math.random());
+  };
 
-  // if (isWelcoming) {
-  //   return <WelcomingContainer welcomingType={WelcomingTypeEnum.TopicsPage} />;
-  // }
+  useEffect(() => {
+    const welcoming = getWelcomingHandler();
+
+    setIsWelcoming(welcoming);
+  }, [updateKey]);
+
+  if (isWelcoming) {
+    return <WelcomingContainer welcomingType={WelcomingTypeEnum.TopicsPage} onUpdateKeyHandler={onUpdateKeyHandler} />;
+  }
 
   return <AiTopicChatbotList />;
 };

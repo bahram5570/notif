@@ -3,19 +3,12 @@ import { textShorter } from '@utils/scripts';
 import Button from '@components/ui/Button';
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
 import { TopicCardItemPropsType } from './type';
 
 const TopicCardItem = (props: TopicCardItemPropsType) => {
-  const { pageNavigationHandler } = usePageNavigationLoading();
-
   const onClick = () => {
-    // pageNavigationHandler({
-    //   showProgressBar: true,
-    //   id: `chatbot-${props.id}`,
-    //   linkTo: `/protected/note/addNote`,
-    // });
+    props.onLinkHandler(props.id);
   };
 
   return (

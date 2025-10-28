@@ -11,7 +11,7 @@ import TopicsChatbotWelcoming from './TopicsChatbotWelcoming';
 import { WelcomingTypeEnum } from './enum';
 import { WelcomingContainerPropsType } from './type';
 
-const WelcomingContainer = ({ welcomingType }: WelcomingContainerPropsType) => {
+const WelcomingContainer = (props: WelcomingContainerPropsType) => {
   let CurrentWelcoming: JSX.Element | null = null;
   const lottieRef = useRef<HTMLDivElement | null>(null);
   const [top, setTop] = useState<number>(0);
@@ -28,12 +28,20 @@ const WelcomingContainer = ({ welcomingType }: WelcomingContainerPropsType) => {
     return () => window.removeEventListener('resize', updateTop);
   }, []);
 
-  switch (welcomingType) {
+  switch (props.welcomingType) {
     case WelcomingTypeEnum.TopicsPage:
-      CurrentWelcoming = <TopicsChatbotWelcoming top={top} />;
+      CurrentWelcoming = <TopicsChatbotWelcoming top={top} onUpdateKeyHandler={props.onUpdateKeyHandler} />;
       break;
     case WelcomingTypeEnum.ChatbotMessage:
-      CurrentWelcoming = <ChatbotMessageWelcoming top={top} />;
+      CurrentWelcoming = (
+        <ChatbotMessageWelcoming
+          top={top}
+          description={props.description}
+          questions={props.questions}
+          title={props.title}
+          hintPromptText={props.hintPromptText}
+        />
+      );
       break;
   }
 
@@ -48,7 +56,7 @@ const WelcomingContainer = ({ welcomingType }: WelcomingContainerPropsType) => {
       className="min-h-screen relative"
     >
       <>
-        <AiChatbotHeader welcomingType={welcomingType} />
+        <AiChatbotHeader welcomingType={props.welcomingType} />
         <div style={{ paddingTop: HEADER_HEIGHT + 20 }} className="min-h-[100dvh]">
           <div ref={lottieRef} className="h-dvh">
             <LottieJson animationData={chatbotJson} loop={true} autoPlay={true} />

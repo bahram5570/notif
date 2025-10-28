@@ -1,4 +1,5 @@
 import Icon from '@assets/icons/Generate B.svg';
+import { removeWelcomingHandler } from '@utils/aiChatBotWelcoming';
 import { colorFormatConverter } from '@utils/scripts';
 
 import Button from '@components/ui/Button';
@@ -8,7 +9,7 @@ import useWidgetActions from '@hooks/useWidgetActions';
 
 import useGetData from './__hooks__/useGetData';
 
-const TopicsChatbotWelcoming = ({ top }: { top: number }) => {
+const TopicsChatbotWelcoming = ({ top, onUpdateKeyHandler }: { top: number; onUpdateKeyHandler: any }) => {
   const { data, isLoading } = useGetData();
   const { actionHandler } = useWidgetActions();
 
@@ -16,6 +17,8 @@ const TopicsChatbotWelcoming = ({ top }: { top: number }) => {
     // callEvent('ChatbotInteractionClick');
     if (data) {
       actionHandler(data.button.action);
+      removeWelcomingHandler();
+      onUpdateKeyHandler();
     }
   };
 
