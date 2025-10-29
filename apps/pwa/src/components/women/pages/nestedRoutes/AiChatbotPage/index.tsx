@@ -42,7 +42,7 @@ const AiChatbotPage = () => {
             >
               <AiChatbotHeader welcomingType={WelcomingTypeEnum.ChatbotMessage} />
               <div style={{ paddingTop: HEADER_HEIGHT * 2 }} className="px-4 flex flex-col gap-3">
-                <AiChatbotMessageList chats={aiChatbotMessageList} isLoading={isLoading} />
+                <AiChatbotMessageList chats={aiChatbotMessageList} isLoading={newLoading} />
                 {showErrorMessage && <ErrorMessage />}
                 <SuggestedQuestions messageId="" />
               </div>

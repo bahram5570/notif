@@ -2,7 +2,7 @@ import { parseFormattedText } from './utils';
 
 import useTheme from '@hooks/useTheme';
 
-const WordFadeInText = ({ text }: { text: string }) => {
+const WordFadeInText = ({ text, setIsAnimating }: { text: string; setIsAnimating: (v: boolean) => void }) => {
   const { typography } = useTheme();
   const lines = text.split(/\\n|\n/);
   let globalWordIndex = 0;
@@ -12,6 +12,7 @@ const WordFadeInText = ({ text }: { text: string }) => {
   }
 
   const fullPlainText = decodeUnicode(text).replace(/\r\n/g, '\n');
+  const totalParts = text.split(/\s+/).filter(Boolean).length;
 
   function handleCopy(e: React.ClipboardEvent) {
     e.preventDefault();
@@ -22,7 +23,7 @@ const WordFadeInText = ({ text }: { text: string }) => {
     <div dir="rtl" className="text-right mr-3" onCopy={handleCopy}>
       {lines.map((line, lineIndex) => {
         const formattedLine = parseFormattedText(line);
-
+        const isLast = globalWordIndex === totalParts - 1;
         let parts;
         if (/<\/?[a-z][\s\S]*>/i.test(formattedLine)) {
           parts = [formattedLine];
@@ -45,8 +46,11 @@ const WordFadeInText = ({ text }: { text: string }) => {
                     display: 'inline',
                     ...typography.Body.Large,
                   }}
-                  dangerouslySetInnerHTML={{ __html: decodeUnicode(part).replace(/\n/g, '<br/>') }}
-                />
+                  onAnimationEnd={isLast ? () => console.log(isLast) : undefined}
+                  // dangerouslySetInnerHTML={{ __html: decodeUnicode(part).replace(/\n/g, '<br/>') }}
+                >
+                  {decodeUnicode(part).replace(/\n/g, '<br/>')}
+                </p>
               );
             })}
           </div>

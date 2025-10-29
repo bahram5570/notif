@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import chatbotJson from '@assets/lottie/chatbot.json';
 
+import Typography from '@components/ui/Typography';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { LottieJson } from '@lib/LottieJson';
 
@@ -47,8 +48,15 @@ const AiChatbotMessageList = ({ chats, isLoading }: AiChatbotMessageListPropsTyp
         })}
 
         {isLoading && (
-          <div ref={lastItemRef} style={{ minHeight: `calc(100dvh - 360px )` }}>
-            <div className="flex justify-end items-center ml-3">
+          <div
+            ref={lastItemRef}
+            className="flex justify-start items-baseline"
+            style={{ minHeight: `calc(100dvh - 360px )` }}
+          >
+            <div className="flex items-center rounded-full !bg-white/40 shadow-lg glass-card   px-4">
+              <Typography scale="Body" size="Medium">
+                دارم فکر میکنم...
+              </Typography>
               <LottieJson animationData={chatbotJson} loop={false} autoPlay={false} className="w-14 h-14" />
             </div>
           </div>

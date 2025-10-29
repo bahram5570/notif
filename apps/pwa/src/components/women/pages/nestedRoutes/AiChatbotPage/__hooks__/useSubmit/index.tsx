@@ -41,13 +41,15 @@ const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) =>
     streamHandler({ id: v.messageId });
   };
 
-  const { callApi, isLoading } = useApi<NewMessageResponse>({
+  const { callApi, isLoading: loading } = useApi<NewMessageResponse>({
     method: 'POST',
     api: 'feature/ai/v2/sendstreammessage',
     onSuccess: (v: NewMessageResponse) => successHandler(v),
+    onError: () => setStreamLoading(false),
   });
 
   const submitHandler = (prompt: string) => {
+    if (showErrorMessage) setShowErrorMessage(false);
     addChatHandler({ role: RoleEnum.User, text: prompt });
     const payload = {
       promptCategoryId: categoryIdData,
@@ -61,6 +63,12 @@ const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) =>
   useEffect(() => {
     updateChatHandler(messages, messageId);
   }, [messages]);
+
+  useEffect(() => {
+    if (loading) setStreamLoading(true);
+  }, [loading]);
+
+  const isLoading = streamLoading;
 
   return { submitHandler, isLoading, showErrorMessage };
 };
