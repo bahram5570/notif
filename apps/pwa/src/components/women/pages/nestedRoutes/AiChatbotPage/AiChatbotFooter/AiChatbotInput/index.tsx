@@ -9,7 +9,7 @@ import useTheme from '@hooks/useTheme';
 
 import { AiChatbotInputPropsType } from './type';
 
-const AiChatbotInput = ({ hintPromptText, question }: AiChatbotInputPropsType) => {
+const AiChatbotInput = ({ hintPromptText, question, isLoading, submitHandler }: AiChatbotInputPropsType) => {
   const { colors, typography } = useTheme();
   const [chatText, setChatText] = useState('');
 
@@ -19,9 +19,10 @@ const AiChatbotInput = ({ hintPromptText, question }: AiChatbotInputPropsType) =
 
   const clickHandler = () => {
     if (!chatText.trim()) return;
-    // if (!isLoading) {
-    //   setChatText('');
-    // }
+    if (!isLoading) {
+      submitHandler(chatText);
+      setChatText('');
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -41,16 +42,16 @@ const AiChatbotInput = ({ hintPromptText, question }: AiChatbotInputPropsType) =
     <div className="w-full  flex justify-end items-center relative  rounded-t-3xl p-4 z-50 ">
       <textarea
         placeholder={hintPromptText}
-        className={` rounded-full w-full h-auto px-4 py-3 outline-none resize-none  glass-card !bg-white/60 shadow-md ${style.scroller} `}
+        className={` rounded-full w-full h-auto p-4  outline-none resize-none  glass-card !bg-white/60 shadow-md ${style.scroller} `}
         style={{ color: colors.Surface_InverseSurface, ...typography.Body.Medium, direction: 'rtl' }}
         value={chatText}
         onChange={changeTextHandler}
-        // disabled={isLoading}
+        disabled={isLoading}
         rows={1}
         onKeyDown={handleKeyDown}
       />
       <div
-        className="w-8 h-8  rounded-full flex flex-col justify-center items-center p-2 absolute left-0 mx-5"
+        className="w-10 h-10  rounded-full flex flex-col justify-center items-center p-2 absolute left-0 mx-5"
         style={{ background: colors.PrimaryWoman_Primary }}
         onClick={clickHandler}
       >

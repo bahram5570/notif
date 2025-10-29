@@ -1,11 +1,14 @@
 import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
 
+import { RoleEnum } from './enum';
+
 export type ChatItemType = {
-  role: string;
+  role: RoleEnum;
   text: string;
   messageId: string;
   like: boolean;
   dislike: boolean;
+  isAnswered?: boolean;
 };
 
 export type AiChatbotDataResponseType = {

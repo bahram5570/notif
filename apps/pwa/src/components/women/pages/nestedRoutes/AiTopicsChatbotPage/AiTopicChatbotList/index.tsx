@@ -5,8 +5,8 @@ import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useTheme from '@hooks/useTheme';
 
+import AiChatbotInput from '../../AiChatbotPage/AiChatbotFooter/AiChatbotInput';
 import AiChatbotHeader from '../AiChatbotHeader';
-import AiChatbotInput from '../WelcomingContainer/ChatbotMessageWelcoming/AiChatbotInput';
 import { WelcomingTypeEnum } from '../WelcomingContainer/enum';
 import AiTopicChatbotListSkeleton from './AiTopicChatbotListSkeleton';
 import GeneratorTopicCardList from './GeneratorTopicCardList';
