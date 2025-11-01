@@ -7,9 +7,9 @@ type TopicWelcomingDataTypes = {
 type ChatbotWelcomingDataTypes = {
   welcomingType: WelcomingTypeEnum.ChatbotMessage;
   questions: string[];
-  hintPromptText: string;
   description: string;
   title: string;
+  defaultQustionHandler: (text: string) => void;
 };
 
 export type WelcomingDataType = TopicWelcomingDataTypes | ChatbotWelcomingDataTypes;

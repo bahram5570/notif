@@ -16,4 +16,6 @@ export type TopicListResponseType = {
     usedTopics: TopicType[];
     topics: TopicType[];
   };
+  topicTitle: string;
+  usedTopicTitle: string;
 };

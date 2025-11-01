@@ -14,19 +14,19 @@ import { AiMessageActionsPropsType } from './type';
 const AiMessageActions = (props: AiMessageActionsPropsType) => {
   const { colors } = useTheme();
   const { copyToClipboard } = useCopy();
-  const { likeMessageHandler } = useLikeMessage();
-  const { disLikeMessageHandler } = useDisLikeMessage();
+  const { likeMessageHandler } = useLikeMessage({ messageId: props.messageId });
+  const { disLikeMessageHandler } = useDisLikeMessage(props.messageId);
 
   const onCopyClick = () => {
     copyToClipboard(props.text);
   };
 
   const onLikeClick = () => {
-    likeMessageHandler(props.messageId);
+    likeMessageHandler();
   };
 
   const onDisLikeClick = () => {
-    disLikeMessageHandler(props.messageId);
+    disLikeMessageHandler();
   };
 
   return (

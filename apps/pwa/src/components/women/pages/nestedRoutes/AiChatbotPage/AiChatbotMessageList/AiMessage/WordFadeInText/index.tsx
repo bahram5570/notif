@@ -1,8 +1,10 @@
-import { parseFormattedText } from './utils';
+import { parseFormattedText } from '../utils';
 
 import useTheme from '@hooks/useTheme';
 
-const WordFadeInText = ({ text, setIsAnimating }: { text: string; setIsAnimating: (v: boolean) => void }) => {
+import { WordFadeInTextPropsType } from './type';
+
+const WordFadeInText = ({ animationEndHandler, text }: WordFadeInTextPropsType) => {
   const { typography } = useTheme();
   const lines = text.split(/\\n|\n/);
   let globalWordIndex = 0;
@@ -12,7 +14,6 @@ const WordFadeInText = ({ text, setIsAnimating }: { text: string; setIsAnimating
   }
 
   const fullPlainText = decodeUnicode(text).replace(/\r\n/g, '\n');
-  const totalParts = text.split(/\s+/).filter(Boolean).length;
 
   function handleCopy(e: React.ClipboardEvent) {
     e.preventDefault();
@@ -23,7 +24,7 @@ const WordFadeInText = ({ text, setIsAnimating }: { text: string; setIsAnimating
     <div dir="rtl" className="text-right mr-3" onCopy={handleCopy}>
       {lines.map((line, lineIndex) => {
         const formattedLine = parseFormattedText(line);
-        const isLast = globalWordIndex === totalParts - 1;
+
         let parts;
         if (/<\/?[a-z][\s\S]*>/i.test(formattedLine)) {
           parts = [formattedLine];
@@ -34,6 +35,7 @@ const WordFadeInText = ({ text, setIsAnimating }: { text: string; setIsAnimating
         return (
           <div key={lineIndex} className="flex flex-wrap items-center mb-2">
             {parts.map((part, i) => {
+              const isLast = i === parts.length - 1;
               const delay = globalWordIndex * 0.1;
               globalWordIndex += 1;
 
@@ -46,8 +48,7 @@ const WordFadeInText = ({ text, setIsAnimating }: { text: string; setIsAnimating
                     display: 'inline',
                     ...typography.Body.Large,
                   }}
-                  onAnimationEnd={isLast ? () => console.log(isLast) : undefined}
-                  // dangerouslySetInnerHTML={{ __html: decodeUnicode(part).replace(/\n/g, '<br/>') }}
+                  onAnimationEnd={isLast ? () => animationEndHandler(false) : undefined}
                 >
                   {decodeUnicode(part).replace(/\n/g, '<br/>')}
                 </p>

@@ -17,7 +17,7 @@ import MoreActionsMenu from './MoreActionsMenu';
 import MoreActionMenuModals from './MoreActionsMenu/MoreActionMenuModals';
 import { AiChatbotHeaderPropsType } from './type';
 
-const AiChatbotHeader = ({ welcomingType }: AiChatbotHeaderPropsType) => {
+const AiChatbotHeader = ({ welcomingType, chatId, showActionMenu }: AiChatbotHeaderPropsType) => {
   const { colors } = useTheme();
 
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
@@ -40,10 +40,8 @@ const AiChatbotHeader = ({ welcomingType }: AiChatbotHeaderPropsType) => {
       className={`fixed left-0 right-0 top-0 mx-auto flex z-40`}
       style={{ maxWidth: MAX_SCREEN_WIDTH, height: HEADER_HEIGHT }}
     >
-      <div
-        className={`flex w-full ${welcomingType !== WelcomingTypeEnum.TopicsPage ? 'justify-between' : 'justify-end'}  items-center px-4 py-3`}
-      >
-        {welcomingType !== WelcomingTypeEnum.TopicsPage && (
+      <div className={`flex w-full ${showActionMenu ? 'justify-between' : 'justify-end'}  items-center px-4 py-3`}>
+        {showActionMenu && (
           <div
             className="flex justify-center items-center w-12 h-12 rounded-full glass-card cursor-pointer shadow-lg"
             onClick={closeHandler}
@@ -53,7 +51,7 @@ const AiChatbotHeader = ({ welcomingType }: AiChatbotHeaderPropsType) => {
         )}
 
         <div className="flex justify-center items-center gap-2">
-          {welcomingType !== WelcomingTypeEnum.TopicsPage && (
+          {showActionMenu && (
             <div className="flex flex-row-reverse rounded-full pl-6 py-1 pr-4 glass-card shadow-lg">
               <LottieJson animationData={chatbotJson} loop={false} autoPlay={false} className="!w-9" />
               <div className="flex flex-col justify-center items-end">
@@ -79,8 +77,8 @@ const AiChatbotHeader = ({ welcomingType }: AiChatbotHeaderPropsType) => {
         </div>
       </div>
 
-      <MoreActionsMenu isOpen={isOpen} closeHandler={closeHandler} />
-      <MoreActionMenuModals />
+      <MoreActionsMenu isOpen={isOpen} closeHandler={closeHandler} welcomingType={welcomingType} />
+      <MoreActionMenuModals chatId={chatId} />
     </div>
   );
 };

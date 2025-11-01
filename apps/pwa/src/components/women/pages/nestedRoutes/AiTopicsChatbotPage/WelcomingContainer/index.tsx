@@ -39,7 +39,7 @@ const WelcomingContainer = (props: WelcomingContainerPropsType) => {
           description={props.description}
           questions={props.questions}
           title={props.title}
-          hintPromptText={props.hintPromptText}
+          defaultQustionHandler={props.defaultQustionHandler}
         />
       );
       break;
@@ -56,7 +56,6 @@ const WelcomingContainer = (props: WelcomingContainerPropsType) => {
       className="min-h-screen relative"
     >
       <>
-        <AiChatbotHeader welcomingType={props.welcomingType} />
         <div style={{ paddingTop: HEADER_HEIGHT + 20 }} className="min-h-[100dvh]">
           <div ref={lottieRef} className="h-dvh">
             <LottieJson animationData={chatbotJson} loop={true} autoPlay={true} />

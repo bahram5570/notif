@@ -7,12 +7,19 @@ import Typography from '@components/ui/Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useTheme from '@hooks/useTheme';
 
-const CommentChatModal = ({ onCloseModal }: { onCloseModal: () => void }) => {
+import useSubmit from './__hooks__/useSubmit';
+
+const CommentChatModal = ({ onCloseModal, chatId }: { onCloseModal: () => void; chatId: string | undefined }) => {
   const { colors, typography } = useTheme();
+  const { isLoading, submitHandler } = useSubmit();
   const [description, setDescription] = useState<string>('');
 
   const valueHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setDescription(e.target.value);
+  };
+
+  const onClick = () => {
+    submitHandler({ text: description, chatId });
   };
 
   return (
@@ -48,9 +55,9 @@ const CommentChatModal = ({ onCloseModal }: { onCloseModal: () => void }) => {
             variant="fill"
             size="medium"
             color="primary"
-            onClick={() => {}}
-            // isLoading={isLoading}
-            isDisable={!description}
+            onClick={onClick}
+            isLoading={isLoading}
+            isDisable={description.trim() === ''}
           >
             ثبت نظر
           </Button>

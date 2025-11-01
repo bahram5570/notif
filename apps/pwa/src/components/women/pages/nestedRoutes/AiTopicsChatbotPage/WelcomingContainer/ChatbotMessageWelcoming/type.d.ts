@@ -2,7 +2,7 @@ import { ChatbotWelcomingDataTypes } from '../type';
 
 export type ChatbotMessageWelcomingPropsType = Pick<
   ChatbotWelcomingDataTypes,
-  'description' | 'hintPromptText' | 'title' | 'questions'
+  'description' | 'defaultQustionHandler' | 'title' | 'questions'
 > & {
   top: number;
 };

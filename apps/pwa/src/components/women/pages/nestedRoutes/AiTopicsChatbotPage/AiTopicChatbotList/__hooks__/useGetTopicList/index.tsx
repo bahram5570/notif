@@ -9,8 +9,7 @@ const useGetTopicList = () => {
     queryKey: ['aiChatTopicList'],
   });
 
-  const result = data?.result;
-  return { result, isLoading };
+  return { data, isLoading };
 };
 
 export default useGetTopicList;

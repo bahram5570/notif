@@ -28,22 +28,11 @@ const TopicsChatbotWelcoming = ({ top, onUpdateKeyHandler }: { top: number; onUp
         <div className=" flex flex-col gap-3">
           <div className="flex flex-col justify-end items-end gap-1">
             <Typography scale="Title" size="Large">
-              مونس؛
-            </Typography>
-            <div className="flex flex-row-reverse gap-1">
-              <Typography scale="Title" size="Large">
-                همراه هوش مصنوعی
-              </Typography>
-              <Icon />
-            </div>
-            <Typography scale="Title" size="Large">
-              در مسیر اقدام به بارداری
+              {data?.title}
             </Typography>
           </div>
           <Typography scale="Body" size="Medium" textAlign="justify">
-            مونس، همراه هوشمند و دلسوز تو در مسیر اقدام به بارداری است. او با تحلیل دقیق داده‌های چرخه‌ت، بهترین
-            مشاوره‌های تغذیه، سبک زندگی و آمادگی‌های روحی را برای افزایش شانس باروری ارائه می‌دهد. برای سؤال‌های
-            روزمره‌ات همیشه در دسترس است تا این مسیر برات راحت‌تر بشه.
+            {data?.description}
           </Typography>
         </div>
 

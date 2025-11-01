@@ -11,12 +11,20 @@ import { WelcomingTypeEnum } from '../WelcomingContainer/enum';
 import AiTopicChatbotListSkeleton from './AiTopicChatbotListSkeleton';
 import GeneratorTopicCardList from './GeneratorTopicCardList';
 import useGetTopicList from './__hooks__/useGetTopicList';
+import useSubmit from './__hooks__/useSubmit';
 
 const AiTopicChatbotList = () => {
   const { colors } = useTheme();
-  const { result, isLoading } = useGetTopicList();
+  const { data, isLoading } = useGetTopicList();
+  const { isLoading: newChatLoading, submitHandler } = useSubmit();
+
+  const result = data?.result;
   const hasUsedTopicsListData = result && result.usedTopics.length > 0;
   const hasTopicsListData = result && result.topics.length > 0;
+
+  const onClick = (text: string) => {
+    submitHandler({ prompt: text, categoryId: result?.id });
+  };
 
   return (
     <div
@@ -26,7 +34,7 @@ const AiTopicChatbotList = () => {
       }}
       className="min-h-screen relative px-4"
     >
-      <AiChatbotHeader welcomingType={WelcomingTypeEnum.ChatbotMessage} />
+      <AiChatbotHeader welcomingType={WelcomingTypeEnum.TopicsPage} showActionMenu={true} />
       {isLoading && <AiTopicChatbotListSkeleton />}
       {!isLoading && (
         <div style={{ paddingTop: HEADER_HEIGHT + 50 }}>
@@ -41,21 +49,28 @@ const AiTopicChatbotList = () => {
             </div>
 
             {hasUsedTopicsListData && (
-              <>
+              <div className="flex flex-col w-full gap-3 items-end">
                 <Typography scale="Title" size="Small">
+                  {/* {data.usedTopicTitle} */}
                   گفتگوهای فعال
                 </Typography>
                 <GeneratorTopicCardList topics={result.usedTopics} categoryId={result.id} />
-                <div className="h-0 w-full rotate-180" style={{ border: `1px solid ${colors.Neutral_Background}` }} />
-              </>
+              </div>
             )}
 
             {hasTopicsListData && (
               <div className="flex justify-end items-end flex-col gap-4">
                 {hasUsedTopicsListData && (
-                  <Typography scale="Title" size="Small">
-                    تالارهای پیشنهادی
-                  </Typography>
+                  <>
+                    <div
+                      className="h-0 w-full rotate-180"
+                      style={{ border: `1px solid ${colors.Neutral_Background}` }}
+                    />
+                    <Typography scale="Title" size="Small">
+                      {/* {data.topicTitle} */}
+                      تالارهای پیشنهادی
+                    </Typography>
+                  </>
                 )}
 
                 <GeneratorTopicCardList topics={result.topics} categoryId={result.id} />
@@ -64,7 +79,11 @@ const AiTopicChatbotList = () => {
           </div>
           <div className=" fixed bottom-0 left-0 right-0 mx-auto" style={{ maxWidth: MAX_SCREEN_WIDTH }}>
             <div className="py-4 backdrop-blur-[8px]">
-              <AiChatbotInput hintPromptText="موضوعت رو پیدا نکردی؟ هیمنجا بپرس..." />
+              <AiChatbotInput
+                hintPromptText={result?.inputPlaceholder || ''}
+                isLoading={newChatLoading}
+                submitHandler={onClick}
+              />
             </div>
           </div>
         </div>

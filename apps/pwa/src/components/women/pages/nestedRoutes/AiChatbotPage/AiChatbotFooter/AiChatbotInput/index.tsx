@@ -9,7 +9,7 @@ import useTheme from '@hooks/useTheme';
 
 import { AiChatbotInputPropsType } from './type';
 
-const AiChatbotInput = ({ hintPromptText, question, isLoading, submitHandler }: AiChatbotInputPropsType) => {
+const AiChatbotInput = ({ hintPromptText, isLoading, submitHandler, defaultQustion }: AiChatbotInputPropsType) => {
   const { colors, typography } = useTheme();
   const [chatText, setChatText] = useState('');
 
@@ -33,10 +33,10 @@ const AiChatbotInput = ({ hintPromptText, question, isLoading, submitHandler }: 
   };
 
   useEffect(() => {
-    if (question) {
-      setChatText(question);
+    if (defaultQustion) {
+      setChatText(defaultQustion);
     }
-  }, [question]);
+  }, [defaultQustion]);
 
   return (
     <div className="w-full  flex justify-end items-center relative  rounded-t-3xl p-4 z-50 ">

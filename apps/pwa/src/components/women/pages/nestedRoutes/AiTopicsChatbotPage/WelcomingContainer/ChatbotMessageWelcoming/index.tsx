@@ -13,12 +13,10 @@ const ChatbotMessageWelcoming = ({
   title,
   description,
   questions,
-  hintPromptText,
+  defaultQustionHandler,
 }: ChatbotMessageWelcomingPropsType) => {
-  const [question, setQuestion] = useState('');
-
   const onClick = (question: string) => {
-    setQuestion(question);
+    defaultQustionHandler(question);
   };
 
   return (
@@ -50,17 +48,6 @@ const ChatbotMessageWelcoming = ({
                 </div>
               );
             })}
-          </div>
-          <div className=" fixed bottom-0 left-0 right-0 mx-auto" style={{ maxWidth: MAX_SCREEN_WIDTH }}>
-            <div className="py-4 backdrop-blur-[8px]">
-              {/* <AiChatbotInput hintPromptText={hintPromptText} question={question} /> */}
-
-              {/* <div className="flex justify-center items-center">
-                <Typography scale="Lable" size="Small" color="Surface_OnSurfaceVariant">
-                  مونس هم گاهی اشتباه می‌کنه! حتماً جواب‌ها رو چک کن.
-                </Typography>
-              </div> */}
-            </div>
           </div>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 
 import { getWelcomingHandler } from '@utils/aiChatBotWelcoming';
 
+import AiChatbotHeader from './AiChatbotHeader';
 import AiTopicChatbotList from './AiTopicChatbotList';
 import WelcomingContainer from './WelcomingContainer';
 import { WelcomingTypeEnum } from './WelcomingContainer/enum';
@@ -23,7 +24,12 @@ const AiTopicsChatbotPage = () => {
   }, [updateKey]);
 
   if (isWelcoming) {
-    return <WelcomingContainer welcomingType={WelcomingTypeEnum.TopicsPage} onUpdateKeyHandler={onUpdateKeyHandler} />;
+    return (
+      <>
+        <AiChatbotHeader welcomingType={WelcomingTypeEnum.TopicsPage} showActionMenu={false} />
+        <WelcomingContainer welcomingType={WelcomingTypeEnum.TopicsPage} onUpdateKeyHandler={onUpdateKeyHandler} />
+      </>
+    );
   }
 
   return <AiTopicChatbotList />;

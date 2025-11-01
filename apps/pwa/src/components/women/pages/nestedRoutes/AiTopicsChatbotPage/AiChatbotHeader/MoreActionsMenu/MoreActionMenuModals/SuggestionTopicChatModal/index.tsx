@@ -57,7 +57,7 @@ const SuggestionTopicChatModal = ({ onCloseModal }: { onCloseModal: () => void }
             color="primary"
             onClick={onClick}
             isLoading={isLoading}
-            isDisable={!description}
+            isDisable={description.trim() === ''}
           >
             ثبت نظر
           </Button>

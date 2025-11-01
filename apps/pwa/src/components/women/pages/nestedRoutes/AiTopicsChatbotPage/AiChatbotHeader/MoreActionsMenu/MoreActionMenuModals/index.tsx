@@ -8,7 +8,7 @@ import CommentChatModal from './CommentChatModal';
 import DeleteChatModal from './DeleteChatModal';
 import SuggestionTopicChatModal from './SuggestionTopicChatModal';
 
-const MoreActionMenuModals = () => {
+const MoreActionMenuModals = ({ chatId }: { chatId: string | undefined }) => {
   const { getQueryParams } = useQueryParamsHandler();
   const route = useRouter();
 
@@ -32,7 +32,7 @@ const MoreActionMenuModals = () => {
       </>
       <>
         {aiChatModalQueryName === AiChatModalNameEnums.CommentAiChat && (
-          <CommentChatModal onCloseModal={onCloseModal} />
+          <CommentChatModal onCloseModal={onCloseModal} chatId={chatId} />
         )}
       </>
       <>

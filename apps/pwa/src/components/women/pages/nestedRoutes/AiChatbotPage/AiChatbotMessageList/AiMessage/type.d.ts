@@ -1,3 +1,6 @@
-import { ChatType } from '../type';
+import { AiChatbotMessageListPropsType, ChatType } from '../type';
 
-export interface AiMessagePropsType extends ChatType {}
+export type ItemType = Pick<AiChatbotMessageListPropsType, 'defaultQustionHandler'>;
+export interface AiMessagePropsType extends ChatType, ItemType {
+  isLastItem: boolean;
+}

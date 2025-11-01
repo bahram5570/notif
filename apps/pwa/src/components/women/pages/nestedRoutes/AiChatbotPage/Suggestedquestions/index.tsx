@@ -7,29 +7,26 @@ import SuggestedQuestionsAiChatbotSkeleton from './SuggestedQuestionsAiChatbotSk
 import useGetQuestionData from './__hooks__/useGetQuestionData';
 import { SuggestedQuestionsPropsType } from './type';
 
-const questions = [
-  'علائم تخمک‌گذاری چیست؟ (برای چک کردن)',
-  'شانس بارداری در این دوره چقدر است؟',
-  'شانس بارداری در این دوره چقدر است؟',
-];
-
-const SuggestedQuestions = ({ messageId }: SuggestedQuestionsPropsType) => {
+const SuggestedQuestions = ({ messageId, defaultQustionHandler }: SuggestedQuestionsPropsType) => {
   const { colors } = useTheme();
-  const { data, isLoading } = useGetQuestionData({ messageId });
+  const { questions, isLoading } = useGetQuestionData({ messageId });
 
   const onClick = (question: string) => {
-    console.log(question);
+    defaultQustionHandler(question);
   };
 
   return (
     <>
-      {isLoading && !data && <SuggestedQuestionsAiChatbotSkeleton />}
-      {!isLoading && data && (
+      {isLoading && !questions && <SuggestedQuestionsAiChatbotSkeleton />}
+      {!isLoading && questions && (
         <div className="flex flex-col gap-2">
           {questions.map((question, index) => {
             return (
               <div key={index} className="flex items-center justify-start flex-row-reverse gap-2">
-                <ReplyIcon className="w-6 h-6" style={{ fill: colors.Grey_700 }} />
+                <div className="w-6 h-6">
+                  <ReplyIcon className="w-6 h-auto" style={{ fill: colors.Grey_700 }} />
+                </div>
+
                 <div
                   className="bg-white/50 py-3 px-4"
                   style={{

@@ -2,9 +2,11 @@ import { useEffect } from 'react';
 
 import useApi from '@hooks/useApi';
 
-const useGetQuestionData = ({ messageId }: { messageId: string }) => {
+import { QuestionDataResponse, UseGetQuestionDataPropsType } from './type';
+
+const useGetQuestionData = ({ messageId }: UseGetQuestionDataPropsType) => {
   const api = messageId ? `feature/ai/chat/question/${messageId}` : '';
-  const { isLoading, data, callApi } = useApi({
+  const { isLoading, data, callApi } = useApi<QuestionDataResponse>({
     method: 'GET',
     api,
     queryKey: ['questionListData'],
@@ -17,7 +19,9 @@ const useGetQuestionData = ({ messageId }: { messageId: string }) => {
     }
   }, [api]);
 
-  return { data, isLoading };
+  const questions = data?.questions;
+
+  return { questions, isLoading };
 };
 
 export default useGetQuestionData;

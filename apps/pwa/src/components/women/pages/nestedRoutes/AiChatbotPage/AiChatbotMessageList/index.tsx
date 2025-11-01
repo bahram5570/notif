@@ -11,7 +11,7 @@ import AiMessage from './AiMessage';
 import UserMessage from './UserMessage';
 import { AiChatbotMessageListPropsType } from './type';
 
-const AiChatbotMessageList = ({ chats, isLoading }: AiChatbotMessageListPropsType) => {
+const AiChatbotMessageList = ({ chats, isLoading, defaultQustionHandler }: AiChatbotMessageListPropsType) => {
   const lastItemRef = useRef<HTMLDivElement>(null);
   const hasSetInitialHeight = useRef(false);
   const [lastItemHeight, setLastItemHeight] = useState<string | undefined>(undefined);
@@ -31,8 +31,10 @@ const AiChatbotMessageList = ({ chats, isLoading }: AiChatbotMessageListPropsTyp
 
   return (
     <div>
-      <div className={`flex justify-end flex-col gap-3`} style={{ paddingBottom: HEADER_HEIGHT + 20 }}>
+      <div className={`flex justify-end flex-col gap-3`} style={{ paddingBottom: HEADER_HEIGHT * 2 }}>
         {chats.map((chat, index) => {
+          const isLastItem = index === chats.length - 1;
+
           return (
             <div
               key={index}
@@ -42,7 +44,9 @@ const AiChatbotMessageList = ({ chats, isLoading }: AiChatbotMessageListPropsTyp
               ref={index === chats.length - 1 ? lastItemRef : null}
             >
               {chat.role === RoleEnum.User && <UserMessage {...chat} />}
-              {chat.role === RoleEnum.Assistant && <AiMessage {...chat} />}
+              {chat.role === RoleEnum.Assistant && (
+                <AiMessage {...chat} isLastItem={isLastItem} defaultQustionHandler={defaultQustionHandler} />
+              )}
             </div>
           );
         })}

@@ -1,5 +1,7 @@
 'use client';
 
+import { useState } from 'react';
+
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 
 import AiChatbotHeader from '../AiTopicsChatbotPage/AiChatbotHeader';
@@ -9,28 +11,38 @@ import AiChatbotFooter from './AiChatbotFooter';
 import AiChatbotMessageList from './AiChatbotMessageList';
 import AiChatbotSkeleton from './AiChatbotSkeleton';
 import ErrorMessage from './ErrorMessage';
-import SuggestedQuestions from './Suggestedquestions';
 import useGetAiChatbotData from './__hooks__/useGetAiChatbotData';
+import useGetAiChatbotMessageList from './__hooks__/useGetAiChatbotMessageList';
 import useSubmit from './__hooks__/useSubmit';
 
 const AiChatbotPage = () => {
-  const { isLoading, addChatHandler, aiChatData, updateChatHandler, aiChatbotMessageList } = useGetAiChatbotData();
+  const { isLoading, aiChatData } = useGetAiChatbotData();
+  const { addChatHandler, aiChatbotMessageList, updateChatHandler } = useGetAiChatbotMessageList();
   const { isLoading: newLoading, submitHandler, showErrorMessage } = useSubmit({ updateChatHandler, addChatHandler });
+  const [defaultQustion, setDefaultQuestion] = useState('');
+
+  const defaultQustionHandler = (text: string) => {
+    setDefaultQuestion(text);
+  };
 
   const hasChatData = aiChatData && aiChatbotMessageList.length > 0;
+
   return (
     <>
       {isLoading && !aiChatData && <AiChatbotSkeleton />}
       {!isLoading && aiChatData && (
         <>
           {!hasChatData && (
-            <WelcomingContainer
-              welcomingType={WelcomingTypeEnum.ChatbotMessage}
-              title={aiChatData.chatTitle}
-              questions={aiChatData.questions}
-              description={aiChatData.description}
-              hintPromptText={aiChatData.hintPromptText}
-            />
+            <>
+              <AiChatbotHeader welcomingType={WelcomingTypeEnum.ChatbotMessage} showActionMenu />
+              <WelcomingContainer
+                welcomingType={WelcomingTypeEnum.ChatbotMessage}
+                title={aiChatData.chatTitle}
+                questions={aiChatData.questions}
+                description={aiChatData.description}
+                defaultQustionHandler={defaultQustionHandler}
+              />
+            </>
           )}
           {hasChatData && (
             <div
@@ -40,15 +52,23 @@ const AiChatbotPage = () => {
               }}
               className="min-h-screen relative"
             >
-              <AiChatbotHeader welcomingType={WelcomingTypeEnum.ChatbotMessage} />
+              <AiChatbotHeader welcomingType={WelcomingTypeEnum.ChatbotMessage} showActionMenu />
               <div style={{ paddingTop: HEADER_HEIGHT * 2 }} className="px-4 flex flex-col gap-3">
-                <AiChatbotMessageList chats={aiChatbotMessageList} isLoading={newLoading} />
+                <AiChatbotMessageList
+                  chats={aiChatbotMessageList}
+                  isLoading={newLoading}
+                  defaultQustionHandler={defaultQustionHandler}
+                />
                 {showErrorMessage && <ErrorMessage />}
-                <SuggestedQuestions messageId="" />
               </div>
             </div>
           )}
-          <AiChatbotFooter {...aiChatData} submitHandler={submitHandler} isLoading={newLoading} />
+          <AiChatbotFooter
+            {...aiChatData}
+            submitHandler={submitHandler}
+            isLoading={newLoading}
+            defaultQustion={defaultQustion}
+          />
         </>
       )}
     </>

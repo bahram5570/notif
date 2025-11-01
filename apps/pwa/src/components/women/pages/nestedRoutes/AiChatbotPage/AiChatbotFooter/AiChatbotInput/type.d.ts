@@ -1,7 +1,8 @@
 import { AiChatbotFooterPropsType } from '../type';
 
-type InputItemType = Pick<AiChatbotFooterPropsType, 'hintPromptText' | 'submitHandler' | 'isLoading'>;
+type InputItemType = Pick<
+  AiChatbotFooterPropsType,
+  'hintPromptText' | 'submitHandler' | 'isLoading' | 'defaultQustion'
+>;
 
-export interface AiChatbotInputPropsType extends InputItemType {
-  question?: string;
-}
+export interface AiChatbotInputPropsType extends InputItemType {}

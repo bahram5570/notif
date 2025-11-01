@@ -2,8 +2,15 @@ import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
 import useTheme from '@hooks/useTheme';
 
+import useDelete from './__hooks__/useDelete';
+
 const DeleteChatModal = ({ onCloseModal }: { onCloseModal: () => void }) => {
   const { colors } = useTheme();
+  const { isLoading, onDeleteHandler } = useDelete();
+
+  const onClick = () => {
+    onDeleteHandler();
+  };
   return (
     <div className="px-4 flex flex-col gap-2 max-w-xs mt-4">
       <div className="flex flex-col justify-center items-center">
@@ -16,14 +23,7 @@ const DeleteChatModal = ({ onCloseModal }: { onCloseModal: () => void }) => {
       </div>
 
       <div className="flex w-full justify-between gap-2">
-        <Button
-          size="medium"
-          variant="fill"
-          color="primary"
-          onClick={() => {
-            // rejectHandler(id);
-          }}
-        >
+        <Button size="medium" variant="fill" color="primary" onClick={onClick} isLoading={isLoading}>
           بله، مطمئنم
         </Button>
         <Button
