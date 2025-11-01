@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { ACTIVATION_HEIGHT_VALUES, ACTIVATION_WEIGHT_VALUES } from '../../constants';
+import { ACTIVATION_HEIGHT_VALUES, ACTIVATION_WEIGHT_VALUES } from '@constants/activation.constants';
+
 import { DataListTypes, UseListMakerProps } from './types';
 
 const useListMaker = ({ type }: UseListMakerProps) => {

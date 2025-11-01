@@ -1,6 +1,6 @@
 import { ProfileResponseTypes } from '@providers/ProfileProvider/__hooks__/useGetProfileData/type';
 
-export type UserInfoValuesTypes = Pick<ProfileResponseTypes, 'name' | 'birthDate' | 'calendarType'> & {};
+export type UserInfoValuesTypes = Pick<ProfileResponseTypes, 'name' | 'birthDate' | 'calendarType' | 'height'> & {};
 
 export type ValuesHandlerTypes = (
   name: keyof UserInfoValuesTypes,

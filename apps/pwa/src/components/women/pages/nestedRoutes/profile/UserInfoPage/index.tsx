@@ -9,6 +9,7 @@ import useTheme from '@hooks/useTheme';
 
 import UserInfoBirthdate from './UserInfoBirthdate';
 import UserInfoCalendarType from './UserInfoCalendarType';
+import UserInfoHeight from './UserInfoHeight';
 import UserInfoModals from './UserInfoModals';
 import UserInfoName from './UserInfoName';
 import UserInfoSkeleton from './UserInfoSkeleton';
@@ -52,6 +53,12 @@ const UserInfoPage = () => {
                     value={values.birthDate}
                     valueHandler={(v) => valuesHandler('birthDate', v)}
                   />
+                </ProfileItemGenerator>
+              </ProfileContainerGenerator>
+
+              <ProfileContainerGenerator>
+                <ProfileItemGenerator title="ویرایش قد" description="از اینجا میتونی قدت رو ویرایش کنی">
+                  <UserInfoHeight value={values.height} valueHandler={(v) => valuesHandler('height', v)} />
                 </ProfileItemGenerator>
               </ProfileContainerGenerator>
 

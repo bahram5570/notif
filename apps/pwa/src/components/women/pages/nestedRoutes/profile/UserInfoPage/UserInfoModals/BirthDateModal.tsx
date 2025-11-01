@@ -48,7 +48,15 @@ const BirthDateModal = ({ value, valueHandler, onClose }: BirthDateModalTypes) =
 
   useEffect(() => {
     if (value) {
-      const birthDate = value.split(DATE_SEPERATOR_REGEX);
+      let updatedValue = value;
+
+      switch (culture.calendarType) {
+        case CalendarTypeEnum.Jalali:
+          updatedValue = toGregorianData(`${values.year}/${values.month}/${values.day}`);
+          break;
+      }
+
+      const birthDate = updatedValue.split(DATE_SEPERATOR_REGEX);
 
       setValues({
         month: birthDate[1],
@@ -57,6 +65,8 @@ const BirthDateModal = ({ value, valueHandler, onClose }: BirthDateModalTypes) =
       });
     }
   }, [value]);
+
+  console.log(values);
 
   return (
     <>

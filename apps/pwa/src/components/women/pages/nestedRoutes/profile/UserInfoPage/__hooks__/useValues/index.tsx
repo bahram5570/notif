@@ -5,7 +5,7 @@ import useProfileData from '@hooks/__profile__/useProfileData';
 
 import { UserInfoValuesTypes, ValuesHandlerTypes } from './types';
 
-let initialValues: UserInfoValuesTypes = { birthDate: '', calendarType: CalendarTypeEnum.Jalali, name: '' };
+let initialValues: UserInfoValuesTypes = { birthDate: '', calendarType: CalendarTypeEnum.Jalali, name: '', height: -1 };
 
 const useValues = () => {
   const [values, setValues] = useState<UserInfoValuesTypes>(initialValues);
@@ -15,6 +15,7 @@ const useValues = () => {
     if (profileData) {
       const result: UserInfoValuesTypes = {
         name: profileData.name,
+        height: profileData.height,
         birthDate: profileData.birthDate,
         calendarType: profileData.calendarType,
       };
