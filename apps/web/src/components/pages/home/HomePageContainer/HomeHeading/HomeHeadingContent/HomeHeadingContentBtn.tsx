@@ -15,6 +15,7 @@ const HomeHeadingContentBtn = () => {
       onClick={() => scrollToIdHandler(DOWNLOAD_APP_SECTION_ID)}
       fontSize={breakPoint.laptop ? 'Lable_Large' : 'Title_Small'}
       className="!w-[120px] lg:!w-[182px] h-[40px] !mt-2 !mb-8"
+      id="install_home"
     >
       دانلود ایمپو
     </CustomButton>

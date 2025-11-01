@@ -7,15 +7,17 @@ const IranianStoresDesktop = () => {
   return (
     <>
       {IRANIAN_STORES_LIST.map((item, index) => (
-        <DownloadAppLinkGenerator id={item.id} href={item.linkTo} key={index}>
-          <div className="flex items-center w-full gap-[10px] pr-9">
-            {item.icon}
+        <div key={index} id={item.analyticsId}>
+          <DownloadAppLinkGenerator id={item.id} href={item.linkTo}>
+            <div className="flex items-center w-full gap-[10px] pr-9">
+              {item.icon}
 
-            <CustomTypography fontSize="Lable_Medium" color={'Neutral_OnSurface'}>
-              {item.title}
-            </CustomTypography>
-          </div>
-        </DownloadAppLinkGenerator>
+              <CustomTypography fontSize="Lable_Medium" color={'Neutral_OnSurface'}>
+                {item.title}
+              </CustomTypography>
+            </div>
+          </DownloadAppLinkGenerator>
+        </div>
       ))}
     </>
   );

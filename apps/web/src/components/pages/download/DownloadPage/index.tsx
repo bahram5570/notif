@@ -11,20 +11,24 @@ import { COLORS_LIST } from '@theme/colors';
 
 const DownloadPage = () => {
   const Link1 = (
-    <LinkGenerator
-      title="دانلود مستقیم"
-      directId="women-android-direct"
-      href={DIRECT_LINK_WOMEN_URL}
-      Icon={<AndroidIcon className="w-6 min-w-6 h-auto" style={{ fill: COLORS_LIST.White }} />}
-    />
+    <div className="w-full" id="download_apk_top">
+      <LinkGenerator
+        title="دانلود مستقیم"
+        directId="women-android-direct"
+        href={DIRECT_LINK_WOMEN_URL}
+        Icon={<AndroidIcon className="w-6 min-w-6 h-auto" style={{ fill: COLORS_LIST.White }} />}
+      />
+    </div>
   );
 
   const Link2 = (
-    <LinkGenerator
-      directId="women-ios-direct"
-      href={APP_STORE_LINK_WOMEN_URL}
-      Icon={<AppStoreDownloadIcon className="w-[100px] h-auto" style={{ fill: COLORS_LIST.White }} />}
-    />
+    <div className="w-full" id="download_appstore_top">
+      <LinkGenerator
+        directId="women-ios-direct"
+        href={APP_STORE_LINK_WOMEN_URL}
+        Icon={<AppStoreDownloadIcon className="w-[100px] h-auto" style={{ fill: COLORS_LIST.White }} />}
+      />
+    </div>
   );
 
   return (

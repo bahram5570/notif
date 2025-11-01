@@ -46,6 +46,7 @@ const HeaderDesktop = () => {
           fontSize="Title_Small"
           className="w-[127px] h-[48px]"
           onClick={downloadLinkHandler}
+          id='install_header'
         >
           نصب ایمپو
         </CustomButton>

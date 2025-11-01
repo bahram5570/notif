@@ -30,6 +30,7 @@ const ResultModule = ({ result, onReset }: ResultModuleTypes) => {
       <CustomLink
         target="_blank"
         href={PWA_LINK_WOMEN_URL}
+        id="install_tool"
         style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
         className="absolute bottom-6 left-4 right-4 h-[48px] sm:max-w-[460px] mx-auto mt-auto flex items-center justify-center rounded-full"
       >

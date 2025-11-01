@@ -71,6 +71,7 @@ const LandingPregnancyContainer = () => {
         href="/landing/pregnancy/testOnline"
         className="w-full p-[10px] rounded-full flex justify-center"
         style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
+        id="test_pregnancy_tool"
       >
         <CustomTypography fontSize="Lable_Medium" color={'White'}>
           شروع تست آنلاین

@@ -21,7 +21,7 @@ const DownloadAppAndroid = () => {
     <div className="flex flex-col items-center w-full">
       <CustomTypography fontSize="Title_Small">نسخه اندروید</CustomTypography>
 
-      <div className="relative w-full mt-4 mb-2">
+      <div className="relative w-full mt-4 mb-2" id="download_apk">
         <CustomLink
           id={directId}
           target="_blank"
@@ -45,29 +45,33 @@ const DownloadAppAndroid = () => {
       </div>
 
       <div className="w-full grid grid-cols-2 gap-2">
-        <DownloadAppLinkGenerator href={MYKET_LINK_WOMEN_URL} id="women-myket">
-          <div className="w-full flex items-center justify-center gap-1">
-            <MyKet1Icon className="w-6 min-w-6 h-auto" />
+        <div id="download_myket">
+          <DownloadAppLinkGenerator href={MYKET_LINK_WOMEN_URL} id="women-myket">
+            <div className="w-full flex items-center justify-center gap-1">
+              <MyKet1Icon className="w-6 min-w-6 h-auto" />
 
-            <CustomTypography fontSize="Body_Medium" color={'Neutral_OnSurface'}>
-              دریافت از
-            </CustomTypography>
+              <CustomTypography fontSize="Body_Medium" color={'Neutral_OnSurface'}>
+                دریافت از
+              </CustomTypography>
 
-            <MyKet2Icon className="w-[50px] min-w-[50px] h-auto" />
-          </div>
-        </DownloadAppLinkGenerator>
+              <MyKet2Icon className="w-[50px] min-w-[50px] h-auto" />
+            </div>
+          </DownloadAppLinkGenerator>
+        </div>
 
-        <DownloadAppLinkGenerator href={CAFEBAZAAR_LINK_WOMEN_URL} id="women-bazar">
-          <div className="w-full flex items-center justify-center gap-1">
-            <Bazar1Icon className="w-6 min-w-6 h-auto" />
+        <div id="download_cafebazaar">
+          <DownloadAppLinkGenerator href={CAFEBAZAAR_LINK_WOMEN_URL} id="women-bazar">
+            <div className="w-full flex items-center justify-center gap-1">
+              <Bazar1Icon className="w-6 min-w-6 h-auto" />
 
-            <CustomTypography fontSize="Body_Medium" color="Neutral_OnSurface">
-              دریافت از
-            </CustomTypography>
+              <CustomTypography fontSize="Body_Medium" color="Neutral_OnSurface">
+                دریافت از
+              </CustomTypography>
 
-            <Bazar2Icon className="w-[38px] h-auto" />
-          </div>
-        </DownloadAppLinkGenerator>
+              <Bazar2Icon className="w-[38px] h-auto" />
+            </div>
+          </DownloadAppLinkGenerator>
+        </div>
       </div>
     </div>
   );
