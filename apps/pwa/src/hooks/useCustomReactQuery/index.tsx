@@ -39,6 +39,8 @@ const useCustomReactQuery = (fakeQueryKey?: [string], times?: { staleTime?: numb
     const { isValid } = queryKeyValidation({ queryKey });
 
     if (isValid) {
+      console.log(payload);
+
       queryClient.setQueryData(queryKey, { ...payload, dummyData: Math.random() });
     }
   };

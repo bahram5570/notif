@@ -31,6 +31,7 @@ const useValues = () => {
 
   const isModified = !(
     values.name === initialValues.name &&
+    values.height === initialValues.height &&
     values.birthDate === initialValues.birthDate &&
     values.calendarType === initialValues.calendarType
   );

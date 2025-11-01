@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import CakeIcon from '@assets/icons/Cake.svg';
-import { toGregorianData } from '@utils/dates';
+import { toGregorianData, toJalaliData } from '@utils/dates';
 
 import useListsMaker from '@components/activation/DateModule/__hooks__/useListsMaker';
 import { StateValuesHandlerTypes, ValuesTypes } from '@components/activation/DateModule/types';
@@ -52,7 +52,7 @@ const BirthDateModal = ({ value, valueHandler, onClose }: BirthDateModalTypes) =
 
       switch (culture.calendarType) {
         case CalendarTypeEnum.Jalali:
-          updatedValue = toGregorianData(`${values.year}/${values.month}/${values.day}`);
+          updatedValue = toJalaliData(value);
           break;
       }
 
@@ -65,8 +65,6 @@ const BirthDateModal = ({ value, valueHandler, onClose }: BirthDateModalTypes) =
       });
     }
   }, [value]);
-
-  console.log(values);
 
   return (
     <>
