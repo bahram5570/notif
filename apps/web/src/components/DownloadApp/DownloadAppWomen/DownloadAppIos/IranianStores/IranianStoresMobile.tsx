@@ -59,15 +59,17 @@ const IranianStoresMobile = () => {
       <StyledDialog open={isOpen} onClose={() => router.back()} TransitionComponent={Transition}>
         <div className="w-full grid grid-cols-2 gap-1">
           {IRANIAN_STORES_LIST.map((item, index) => (
-            <DownloadAppLinkGenerator href={item.linkTo} id={item.id} key={index}>
-              <div className="flex items-center w-full gap-[10px] pr-9">
-                {item.icon}
+            <div key={index} id={item.analyticsId}>
+              <DownloadAppLinkGenerator href={item.linkTo} id={item.id}>
+                <div className="flex items-center w-full gap-[10px] pr-9">
+                  {item.icon}
 
-                <CustomTypography fontSize="Lable_Medium" color={'Neutral_OnSurface'}>
-                  {item.title}
-                </CustomTypography>
-              </div>
-            </DownloadAppLinkGenerator>
+                  <CustomTypography fontSize="Lable_Medium" color={'Neutral_OnSurface'}>
+                    {item.title}
+                  </CustomTypography>
+                </div>
+              </DownloadAppLinkGenerator>
+            </div>
           ))}
         </div>
       </StyledDialog>

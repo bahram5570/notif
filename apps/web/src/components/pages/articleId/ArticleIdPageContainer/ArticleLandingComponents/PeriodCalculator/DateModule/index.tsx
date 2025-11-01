@@ -68,6 +68,7 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
           onClick={() => submitHandler(values)}
           style={{ pointerEvents: isDisable ? 'none' : 'auto' }}
           className="absolute h-[48px] w-full !mt-auto sm:max-w-[460px]"
+          id='cal_period_tool'
         >
           محاسبه دوره پریود
         </CustomButton>

@@ -54,20 +54,22 @@ const FooterNavLink = ({ className }: FooterNavLinkTypes) => {
         </CustomTypography>
       </div>
 
-      <CustomLink
-        target="_blank"
-        id={findCurrentBanner.btnData.btnUrl}
-        href={findCurrentBanner.btnData.btnUrl}
-        style={{
-          background: backgroundHandler(findCurrentBanner.btnData.color),
-          borderColor: COLORS_LIST.Neutral_Surface,
-        }}
-        className="rounded-full w-fit px-4 py-3 h-[38px] flex items-center justify-center gap-2 relative z-10"
-      >
-        <CustomTypography fontSize="Lable_Medium" color="White">
-          {findCurrentBanner.btnData.btnLabel}
-        </CustomTypography>
-      </CustomLink>
+      <div id="install_sticky">
+        <CustomLink
+          target="_blank"
+          id={findCurrentBanner.btnData.btnUrl}
+          href={findCurrentBanner.btnData.btnUrl}
+          style={{
+            background: backgroundHandler(findCurrentBanner.btnData.color),
+            borderColor: COLORS_LIST.Neutral_Surface,
+          }}
+          className="rounded-full w-fit px-4 py-3 h-[38px] flex items-center justify-center gap-2 relative z-10"
+        >
+          <CustomTypography fontSize="Lable_Medium" color="White">
+            {findCurrentBanner.btnData.btnLabel}
+          </CustomTypography>
+        </CustomLink>
+      </div>
     </div>
   );
 };

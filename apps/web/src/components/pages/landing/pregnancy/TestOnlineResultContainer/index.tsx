@@ -39,6 +39,7 @@ const TestOnlineResultContainer = () => {
             style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
             className="w-full h-12 sm:h-14 flex justify-center items-center rounded-full"
             href={`${PWA_LINK_WOMEN_URL}/?utm_source=website&utm_medium=cta&utm_campaign=cta-click`}
+            id="install_tool"
           >
             <CustomTypography color={'White'} fontSize="Lable_Large">
               دانلود اپلیکیشن ایمپو

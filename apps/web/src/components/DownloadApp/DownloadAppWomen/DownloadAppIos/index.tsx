@@ -18,7 +18,7 @@ const DownloadAppIos = () => {
     <div className="flex flex-col items-center w-full">
       <CustomTypography fontSize="Title_Small">نسخه iOS</CustomTypography>
 
-      <div className="relative w-full mt-4 mb-2">
+      <div className="relative w-full mt-4 mb-2" id="download_appstore">
         <CustomLink
           id={directId}
           target="_blank"

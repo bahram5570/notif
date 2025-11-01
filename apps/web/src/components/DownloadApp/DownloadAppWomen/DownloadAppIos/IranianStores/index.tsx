@@ -18,15 +18,17 @@ const IranianStores = () => {
 
   return (
     <>
-      <DownloadAppLinkGenerator href={PWA_LINK_WOMEN_URL} id="women-pwa">
-        <div className="flex items-center justify-center gap-1">
-          <PwaIcon className="w-6 min-w-6 h-auto" style={{ fill: COLORS_LIST.Black }} />
+      <div id="download_pwa">
+        <DownloadAppLinkGenerator href={PWA_LINK_WOMEN_URL} id="women-pwa">
+          <div className="flex items-center justify-center gap-1">
+            <PwaIcon className="w-6 min-w-6 h-auto" style={{ fill: COLORS_LIST.Black }} />
 
-          <CustomTypography fontSize="Lable_Medium" color={'Neutral_OnSurface'}>
-            نسخه وب اپ
-          </CustomTypography>
-        </div>
-      </DownloadAppLinkGenerator>
+            <CustomTypography fontSize="Lable_Medium" color={'Neutral_OnSurface'}>
+              نسخه وب اپ
+            </CustomTypography>
+          </div>
+        </DownloadAppLinkGenerator>
+      </div>
 
       {breakPoint.tablet && (
         <Suspense>

@@ -13,7 +13,7 @@ const ServicesItem = () => {
       style={{ boxShadow: '0 4px 15px 0 rgba(58, 112, 191, 0.10)' }}
     >
       {ImpoServiceData.map((item, index) => (
-        <CustomLink href={item.url} key={index} className="!p-0">
+        <CustomLink href={item.url} key={index} className="!p-0" id={item.id}>
           <div className="grid gap-y-3 justify-self-center justify-items-center">
             <CustomImage
               width={1000}
