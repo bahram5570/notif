@@ -6,11 +6,11 @@ import { UserInfoValuesTypes } from '../useValues/types';
 
 const useSubmit = () => {
   const router = useRouter();
-  const { updateProfileData } = useGetProfileData();
+  const { updateProfileDateByDellay } = useGetProfileData();
 
   const successHandler = () => {
     router.back();
-    updateProfileData();
+    updateProfileDateByDellay();
   };
 
   const { callApi, isLoading: submitLoading } = useApi({

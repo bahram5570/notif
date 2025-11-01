@@ -1,5 +1,7 @@
 'use client';
 
+import RulerIcon from '@assets/icons/ruler.svg';
+
 import ProfileContainerGenerator from '@components/__profile__/ProfileContainerGenerator';
 import ProfileItemGenerator from '@components/__profile__/ProfileItemGenerator';
 import Button from '@components/ui/Button';
@@ -21,6 +23,15 @@ const UserInfoPage = () => {
   const { submitHandler, submitLoading } = useSubmit();
   const { fetchProfileLoading, isModified, values, valuesHandler } = useValues();
 
+  const RulerElement = (
+    <div
+      style={{ backgroundColor: colors.Blue_50 }}
+      className="w-12 h-12 min-w-12 min-h-12 flex items-start justify-center rounded-full px-[10px] py-2 overflow-hidden"
+    >
+      <RulerIcon style={{ width: '100%', height: 'auto', fill: colors.PrimaryWoman_Primary }} />
+    </div>
+  );
+
   const isDisable = !isModified || values.name.trim() === '';
 
   return (
@@ -40,13 +51,13 @@ const UserInfoPage = () => {
           {values && !fetchProfileLoading && (
             <>
               <ProfileContainerGenerator>
-                <ProfileItemGenerator title="نام" description="دوست داری با چه نام قشنگی تو ایمپو صدات کنیم؟ 😍 ">
+                <ProfileItemGenerator title="نام" description="دوست داری با چه نام قشنگی تو ایمپو صدات کنیم؟ 😍">
                   <UserInfoName value={values.name} valueHandler={(v) => valuesHandler('name', v)} />
                 </ProfileItemGenerator>
 
                 <ProfileItemGenerator
                   title="تاریخ تولد"
-                  description="تو کدوم سال و ماه و روز با اومدنت دنیا رو قشنگ تر کردی؟ 🥹 "
+                  description="تو کدوم سال و ماه و روز با اومدنت دنیا رو قشنگ تر کردی؟ 🥹"
                 >
                   <UserInfoBirthdate
                     name="birthDate"
@@ -57,7 +68,11 @@ const UserInfoPage = () => {
               </ProfileContainerGenerator>
 
               <ProfileContainerGenerator>
-                <ProfileItemGenerator title="ویرایش قد" description="از اینجا میتونی قدت رو ویرایش کنی">
+                <ProfileItemGenerator
+                  element={RulerElement}
+                  title="ویرایش قد"
+                  description="از اینجا میتونی قدت رو ویرایش کنی"
+                >
                   <UserInfoHeight value={values.height} valueHandler={(v) => valuesHandler('height', v)} />
                 </ProfileItemGenerator>
               </ProfileContainerGenerator>
