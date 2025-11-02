@@ -5,13 +5,14 @@ import { useRouter } from 'next/navigation';
 
 const useDelete = () => {
   const { getQueryParams } = useQueryParamsHandler();
-  const { refetchQuery } = useCustomReactQuery();
+  const { refetchQuery, removeQuery } = useCustomReactQuery();
   const route = useRouter();
   const itemIdData = getQueryParams('itemId');
   const categoryIdData = getQueryParams('categoryId');
 
   const successHandler = () => {
     route.back();
+    removeQuery({ queryKey: ['AiChatMessageList'] });
     refetchQuery({ queryKey: ['aiChatbot'] });
   };
   const { callApi, isLoading } = useApi({
@@ -22,8 +23,8 @@ const useDelete = () => {
 
   const onDeleteHandler = () => {
     const payload = {
-      promptCategoryId: categoryIdData,
-      propmptId: itemIdData,
+      promptCategoryId: categoryIdData || '',
+      propmptId: itemIdData || '',
     };
 
     callApi(payload);

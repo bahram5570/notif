@@ -7,7 +7,7 @@ const UserMessage = (props: UserMessagePropsType) => {
   const { colors } = useTheme();
   return (
     <div
-      className="!bg-white/50 ml-auto glass-card "
+      className="!bg-white/50 ml-auto glass-card w-fit"
       style={{
         border: `0.25px solid ${colors.Grey_300}`,
         borderRadius: '100px 100px 4px 100px',

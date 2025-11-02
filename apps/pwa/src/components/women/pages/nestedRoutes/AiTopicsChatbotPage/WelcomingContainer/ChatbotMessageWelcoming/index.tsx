@@ -32,11 +32,11 @@ const ChatbotMessageWelcoming = ({
               {description}
             </Typography>
           </div>
-          <div className="  gap-2 grid grid-cols-2 grid-rows-2 px-5" style={{ direction: 'rtl' }}>
+          <div className="  gap-2 grid grid-cols-2 grid-rows-2 " style={{ direction: 'rtl' }}>
             {questions.map((question, index) => {
               return (
                 <div
-                  className="glass-card w-fit px-4 py-[10px] flex justify-center items-center rounded-full"
+                  className="glass-card w-fit px-4 py-2 flex justify-center items-center rounded-full"
                   key={index}
                   onClick={() => {
                     onClick(question);

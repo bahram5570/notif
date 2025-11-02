@@ -31,7 +31,7 @@ const AiChatbotMessageList = ({ chats, isLoading, defaultQustionHandler }: AiCha
 
   return (
     <div>
-      <div className={`flex justify-end flex-col gap-3`} style={{ paddingBottom: HEADER_HEIGHT * 2 }}>
+      <div className={`flex justify-end flex-col gap-4`} style={{ paddingBottom: HEADER_HEIGHT * 2 }}>
         {chats.map((chat, index) => {
           const isLastItem = index === chats.length - 1;
 
@@ -41,6 +41,7 @@ const AiChatbotMessageList = ({ chats, isLoading, defaultQustionHandler }: AiCha
               style={{
                 minHeight: index === chats.length - 1 && !isLoading ? lastItemHeight : 'auto',
               }}
+              className="pr-4"
               ref={index === chats.length - 1 ? lastItemRef : null}
             >
               {chat.role === RoleEnum.User && <UserMessage {...chat} />}

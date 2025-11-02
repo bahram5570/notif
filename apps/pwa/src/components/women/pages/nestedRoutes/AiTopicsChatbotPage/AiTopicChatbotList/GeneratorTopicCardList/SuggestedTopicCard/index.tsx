@@ -20,11 +20,11 @@ const SuggestedTopicCard = (props: SuggestedTopicCardPropsType) => {
       onClick={onClick}
     >
       <ChatbotBg className="rounded-3xl absolute top-0 left-0" />
-      <div className="flex flex-col items-end gap-1 py-10 px-4">
+      <div className="flex flex-col items-end gap-4 py-10 px-4">
         <div className="flex flex-row-reverse justify-start items-center w-full gap-2">
           <CustomImage src={props.icon} height={40} width={40} />
           <Typography scale="Title" size="Small" color="White">
-            {textShorter(props.title, 35)}
+            {textShorter(props.title, 33)}
           </Typography>
         </div>
 

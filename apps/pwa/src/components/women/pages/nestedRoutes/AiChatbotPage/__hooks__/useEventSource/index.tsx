@@ -12,8 +12,8 @@ const useEventSource = ({
   handelLoading,
   errorHandler,
 }: {
-  handelLoading: (v: boolean) => void;
-  errorHandler: (v: boolean) => void;
+  handelLoading?: (v: boolean) => void;
+  errorHandler?: (v: boolean) => void;
 }) => {
   const [messages, setMessages] = useState<string>('');
   const evRef = useRef<EventSource | null>(null);
@@ -33,7 +33,8 @@ const useEventSource = ({
       }
       evRef.current = null;
     }
-    handelLoading(false);
+
+    if (handelLoading) handelLoading(false);
   };
 
   useEffect(() => {
@@ -44,8 +45,8 @@ const useEventSource = ({
     cleanup();
     setMessages('');
     firstMessageReceived.current = false;
-    handelLoading(true);
-    errorHandler(false);
+    if (handelLoading) handelLoading(true);
+    if (errorHandler) errorHandler(false);
 
     const user = await getUserCookie();
     const Authorization = user ? `Bearer ${user.token}` : '';
@@ -66,15 +67,13 @@ const useEventSource = ({
 
     timeoutRef.current = setTimeout(() => {
       if (!firstMessageReceived.current) {
-        errorHandler(true); // فقط وقتی پیام اول نیومده
+        if (errorHandler) errorHandler(true);
         cleanup();
       }
     }, 30000);
 
     ev.addEventListener('message', (event) => {
-      handelLoading(false);
-
-      // اولین پیام رسید → تایم‌اوت پاک می‌شود
+      if (handelLoading) handelLoading(false);
       if (!firstMessageReceived.current) {
         firstMessageReceived.current = true;
         if (timeoutRef.current) {
@@ -92,12 +91,16 @@ const useEventSource = ({
         return;
       }
 
+      // if (cleanedData === '') {
+      //   setMessages((prev) => prev + '\n');
+      // } else {
+      //   setMessages((prev) => prev + cleanedData);
+      // }
       setMessages((prev) => prev + cleanedData);
     });
 
     ev.addEventListener('error', () => {
       cleanup();
-      // خطای EventSource واقعی را نمایش ندهیم، فقط تایم‌اوت مهم است
     });
   };
 

@@ -28,7 +28,7 @@ const SuggestionTopicChatModal = ({ onCloseModal }: { onCloseModal: () => void }
         onClick={onCloseModal}
         className="w-10 h-10  flex justify-center items-center rounded-full"
         style={{
-          backgroundColor: colors.Blue_50,
+          backgroundColor: colors.Surface_SurfaceVariant,
         }}
       >
         <CancelIcon className="w-6 h-auto" />
@@ -48,7 +48,7 @@ const SuggestionTopicChatModal = ({ onCloseModal }: { onCloseModal: () => void }
         />
 
         <div
-          className="w-full flex flex-col items-center justify-end gap-2 px-4  mx-auto "
+          className="w-full flex flex-col items-center justify-end gap-2   mx-auto "
           style={{ maxWidth: MAX_SCREEN_WIDTH, backgroundColor: colors.White }}
         >
           <Button

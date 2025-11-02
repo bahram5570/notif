@@ -1,8 +1,9 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
+import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import AiChatbotHeader from '../AiTopicsChatbotPage/AiChatbotHeader';
 import WelcomingContainer from '../AiTopicsChatbotPage/WelcomingContainer';
@@ -19,10 +20,9 @@ const AiChatbotPage = () => {
   const { isLoading, aiChatData } = useGetAiChatbotData();
   const { addChatHandler, aiChatbotMessageList, updateChatHandler } = useGetAiChatbotMessageList();
   const { isLoading: newLoading, submitHandler, showErrorMessage } = useSubmit({ updateChatHandler, addChatHandler });
-  const [defaultQustion, setDefaultQuestion] = useState('');
 
   const defaultQustionHandler = (text: string) => {
-    setDefaultQuestion(text);
+    submitHandler(text);
   };
 
   const hasChatData = aiChatData && aiChatbotMessageList.length > 0;
@@ -63,12 +63,7 @@ const AiChatbotPage = () => {
               </div>
             </div>
           )}
-          <AiChatbotFooter
-            {...aiChatData}
-            submitHandler={submitHandler}
-            isLoading={newLoading}
-            defaultQustion={defaultQustion}
-          />
+          <AiChatbotFooter {...aiChatData} submitHandler={submitHandler} isLoading={newLoading} />
         </>
       )}
     </>

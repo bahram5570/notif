@@ -15,7 +15,7 @@ const useGetAiChatbotData = () => {
   const api =
     categoryIdData && itemIdData
       ? `feature/ai/v2/chat/list?promptCategoryId=${categoryIdData}&promptItemId=${itemIdData}`
-      : `feature/ai/v2/chat/list?promptCategoryId=""&promptItemId=""`;
+      : 'feature/ai/v2/chat/list';
 
   const { data, isLoading, callApi } = useApi<AiChatbotDataResponseType>({
     api,
@@ -29,6 +29,7 @@ const useGetAiChatbotData = () => {
   useEffect(() => {
     if (data) {
       newQuery({ queryKey: ['historyAiChat'], payload: data });
+
       newQuery({ queryKey: ['AiChatMessageList'], payload: { data: data.chats } });
     }
   }, [data]);

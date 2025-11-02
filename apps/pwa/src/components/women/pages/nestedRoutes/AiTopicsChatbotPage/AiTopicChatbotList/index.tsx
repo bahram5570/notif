@@ -1,5 +1,3 @@
-import Icon from '@assets/icons/Generate B.svg';
-
 import Typography from '@components/ui/Typography';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
@@ -16,15 +14,11 @@ import useSubmit from './__hooks__/useSubmit';
 const AiTopicChatbotList = () => {
   const { colors } = useTheme();
   const { data, isLoading } = useGetTopicList();
-  const { isLoading: newChatLoading, submitHandler } = useSubmit();
+  const { submitHandler, isLoading: newLoading } = useSubmit();
 
   const result = data?.result;
   const hasUsedTopicsListData = result && result.usedTopics.length > 0;
   const hasTopicsListData = result && result.topics.length > 0;
-
-  const onClick = (text: string) => {
-    submitHandler({ prompt: text, categoryId: result?.id });
-  };
 
   return (
     <div
@@ -63,7 +57,7 @@ const AiTopicChatbotList = () => {
                 {hasUsedTopicsListData && (
                   <>
                     <div
-                      className="h-0 w-full rotate-180"
+                      className="h-0 w-full rotate-180 opacity-40"
                       style={{ border: `1px solid ${colors.Neutral_Background}` }}
                     />
                     <Typography scale="Title" size="Small">
@@ -73,16 +67,16 @@ const AiTopicChatbotList = () => {
                   </>
                 )}
 
-                <GeneratorTopicCardList topics={result.topics} categoryId={result.id} />
+                <GeneratorTopicCardList topics={result.topics} categoryId={result.id} usedTopics={true} />
               </div>
             )}
           </div>
           <div className=" fixed bottom-0 left-0 right-0 mx-auto" style={{ maxWidth: MAX_SCREEN_WIDTH }}>
-            <div className="py-4 backdrop-blur-[8px]">
+            <div className="py-4 ">
               <AiChatbotInput
                 hintPromptText={result?.inputPlaceholder || ''}
-                isLoading={newChatLoading}
-                submitHandler={onClick}
+                isLoading={newLoading}
+                submitHandler={submitHandler}
               />
             </div>
           </div>

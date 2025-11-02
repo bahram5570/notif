@@ -20,7 +20,7 @@ const WelcomingContainer = (props: WelcomingContainerPropsType) => {
     const updateTop = () => {
       if (!lottieRef.current) return;
       const rect = lottieRef.current.getBoundingClientRect();
-      setTop(rect.height * 0.4);
+      setTop(rect.height * 0.37);
     };
 
     updateTop();
@@ -56,9 +56,9 @@ const WelcomingContainer = (props: WelcomingContainerPropsType) => {
       className="min-h-screen relative"
     >
       <>
-        <div style={{ paddingTop: HEADER_HEIGHT + 20 }} className="min-h-[100dvh]">
-          <div ref={lottieRef} className="h-dvh">
-            <LottieJson animationData={chatbotJson} loop={true} autoPlay={true} />
+        <div style={{ paddingTop: HEADER_HEIGHT - 20 }} className="min-h-[100dvh]">
+          <div ref={lottieRef} className="h-dvh ">
+            <LottieJson animationData={chatbotJson} loop={true} autoPlay={true} width={500} />
           </div>
 
           {WrappedWelcoming}

@@ -11,16 +11,17 @@ import { AiMessagePropsType } from './type';
 
 const AiMessage = (props: AiMessagePropsType) => {
   const [isAnimating, setIsAnimating] = useState(false);
-  const [showSuggestedQuestion, setShowSuggestedQuestion] = useState(false);
   const { typography } = useTheme();
   const formattedLine = parseFormattedText(props.text);
+  const showSuggestedQuestion = sessionStorage.getItem('showSuggestedQuestion');
 
   const animationEndHandler = (v: boolean) => {
     setIsAnimating(v);
+    sessionStorage.setItem('showSuggestedQuestion', 'true');
   };
 
   const onClick = (text: string) => {
-    setShowSuggestedQuestion(false);
+    sessionStorage.removeItem('showSuggestedQuestion');
     props.defaultQustionHandler(text);
   };
 
@@ -30,19 +31,13 @@ const AiMessage = (props: AiMessagePropsType) => {
     }
   }, [props.isAnswered]);
 
-  useEffect(() => {
-    if (props.isAnswered && props.isLastItem) {
-      setShowSuggestedQuestion(true);
-    }
-  }, [props.isAnswered]);
-
   return (
     <div className="flex flex-col w-full gap-4">
       {props.isAnswered ? (
         <WordFadeInText text={props.text} animationEndHandler={animationEndHandler} />
       ) : (
         <p
-          className="z-30 rounded-3xl px-5 py-3"
+          className="z-30 rounded-3xl pl-4 py-3"
           style={{
             direction: 'rtl',
             ...typography.Body.Large,
@@ -53,7 +48,7 @@ const AiMessage = (props: AiMessagePropsType) => {
       )}
       {!isAnimating && <AiMessageActions {...props} />}
 
-      {showSuggestedQuestion && !isAnimating && (
+      {showSuggestedQuestion && props.isLastItem && !isAnimating && (
         <SuggestedQuestions messageId={props.messageId} defaultQustionHandler={onClick} />
       )}
     </div>

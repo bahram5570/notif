@@ -4,6 +4,7 @@ import ArrowRightIcon from '@assets/icons/ArrowRight.svg';
 import DotIcon from '@assets/icons/MenuDots.svg';
 import chatbotJson from '@assets/lottie/chatbot.json';
 
+import CustomImage from '@components/ui/CustomImage';
 import Spinner from '@components/ui/Spinner';
 import Typography from '@components/ui/Typography';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
@@ -37,13 +38,13 @@ const AiChatbotHeader = ({ welcomingType, chatId, showActionMenu }: AiChatbotHea
 
   return (
     <div
-      className={`fixed left-0 right-0 top-0 mx-auto flex z-40`}
+      className={`fixed left-0 right-0 top-0 mx-auto flex z-40 backdrop-blur-[8px]`}
       style={{ maxWidth: MAX_SCREEN_WIDTH, height: HEADER_HEIGHT }}
     >
-      <div className={`flex w-full ${showActionMenu ? 'justify-between' : 'justify-end'}  items-center px-4 py-3`}>
+      <div className={`flex w-full ${showActionMenu ? 'justify-between' : 'justify-end'}  items-end px-4 pt-3`}>
         {showActionMenu && (
           <div
-            className="flex justify-center items-center w-12 h-12 rounded-full glass-card cursor-pointer shadow-lg"
+            className="flex justify-center items-center w-12 h-12 rounded-full glass-card !bg-white/70 cursor-pointer shadow-sm"
             onClick={closeHandler}
           >
             <DotIcon className="w-6 h-6" style={{ fill: colors.Surface_InverseSurface }} />
@@ -52,8 +53,9 @@ const AiChatbotHeader = ({ welcomingType, chatId, showActionMenu }: AiChatbotHea
 
         <div className="flex justify-center items-center gap-2">
           {showActionMenu && (
-            <div className="flex flex-row-reverse rounded-full pl-6 py-1 pr-4 glass-card shadow-lg">
-              <LottieJson animationData={chatbotJson} loop={false} autoPlay={false} className="!w-9" />
+            <div className="flex flex-row-reverse items-center gap-2 rounded-full pl-6 py-1 pr-4 glass-card !bg-white/70 shadow-sm">
+              <CustomImage src="/assets/images/mones.webp" width={32} height={32} />
+              {/* <LottieJson animationData={chatbotJson} loop={false} autoPlay={false} className="!w-9" /> */}
               <div className="flex flex-col justify-center items-end">
                 <Typography scale="Lable" size="Large">
                   مونس
@@ -66,12 +68,12 @@ const AiChatbotHeader = ({ welcomingType, chatId, showActionMenu }: AiChatbotHea
           )}
 
           <div
-            className="cursor-pointer flex justify-center items-center  w-12 h-12 rounded-full glass-card shadow-lg"
+            className="cursor-pointer flex justify-center items-center  w-12 h-12 rounded-full glass-card  !bg-white/70 shadow-sm"
             onClick={clickHandler}
           >
             {pageNavigationLoading === id && <Spinner color="outline" width={28} />}
             {pageNavigationLoading !== id && (
-              <ArrowRightIcon className="w-6 h-full stroke-2" style={{ fill: colors.Surface_Outline }} />
+              <ArrowRightIcon className="w-6 h-full stroke-2" style={{ fill: colors.Surface_InverseSurface }} />
             )}
           </div>
         </div>

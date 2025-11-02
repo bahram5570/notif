@@ -5,7 +5,7 @@ import SuggestedTopicCard from './SuggestedTopicCard';
 import TopicCardItem from './TopicCardItem';
 import { GeneratorTopicCardListPropsType } from './type';
 
-const GeneratorTopicCardList = ({ topics, categoryId }: GeneratorTopicCardListPropsType) => {
+const GeneratorTopicCardList = ({ topics, categoryId, usedTopics = false }: GeneratorTopicCardListPropsType) => {
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const onLinkHandler = (id: string) => {
@@ -32,17 +32,22 @@ const GeneratorTopicCardList = ({ topics, categoryId }: GeneratorTopicCardListPr
 
   return (
     <div className="flex flex-col gap-4 w-full">
-      {rows.map((row, rowIndex) => (
-        <div key={rowIndex} className={`grid gap-2 w-full ${row.length === 1 ? 'grid-cols-1' : 'grid-cols-2'}`}>
-          {row.map((item, index) =>
-            rowIndex === 0 ? (
-              <SuggestedTopicCard {...item} key={index} onLinkHandler={onLinkHandler} />
-            ) : (
-              <TopicCardItem {...item} key={index} onLinkHandler={onLinkHandler} />
-            ),
-          )}
-        </div>
-      ))}
+      {rows.map((row, rowIndex) => {
+        return (
+          <div
+            key={rowIndex}
+            className={`grid gap-2 w-full ${rowIndex === 1 ? 'grid-cols-2 justify-end' : 'grid-cols-1'}`}
+          >
+            {row.map((item, index) =>
+              rowIndex === 0 && usedTopics ? (
+                <SuggestedTopicCard {...item} key={index} onLinkHandler={onLinkHandler} />
+              ) : (
+                <TopicCardItem {...item} key={index} onLinkHandler={onLinkHandler} />
+              ),
+            )}
+          </div>
+        );
+      })}
     </div>
   );
 };

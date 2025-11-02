@@ -74,7 +74,7 @@ const MoreActionsMenu = ({ isOpen, closeHandler, welcomingType }: MoreActionsMen
                   </Typography>
                 </div>
                 <div
-                  className="w-[133px] h-0 rotate-180 "
+                  className="w-[133px] h-0 rotate-180  opacity-40"
                   style={{ border: `1px solid ${colors.Surface_OutlineVariant}` }}
                 />
                 <div className="flex flex-row-reverse items-center gap-2" onClick={commentClickHandler}>

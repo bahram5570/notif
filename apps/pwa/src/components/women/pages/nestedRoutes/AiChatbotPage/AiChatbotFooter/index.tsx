@@ -8,24 +8,30 @@ import { AiChatbotFooterPropsType } from './type';
 const AiChatbotFooter = (props: AiChatbotFooterPropsType) => {
   const showInput = props.isActive ? true : false;
   return (
-    <div className="fixed w-full mx-auto left-0 right-0 bottom-0 z-[100]  " style={{ maxWidth: MAX_SCREEN_WIDTH }}>
-      <div className="relative">
-        {!showInput && (
-          <AiChatbotDeactiveMessage
-            deactiveMessage={props.deactiveMessage}
-            title={props.title}
-            deactiveButton={props.deactiveButton}
-          />
-        )}
-        {showInput && (
-          <div className="flex flex-col py-4 justify-center items-center">
-            <AiChatbotInput {...props} />
+    <div
+      className="fixed w-full mx-auto left-0 right-0 bottom-0    z-50"
+      style={{
+        maxWidth: MAX_SCREEN_WIDTH,
+        // background: 'linear-gradient(180deg, rgba(192, 194, 255, 0) -10.78%, #D3C8FC 100%)',
+      }}
+    >
+      {!showInput && (
+        <AiChatbotDeactiveMessage
+          deactiveMessage={props.deactiveMessage}
+          title={props.title}
+          deactiveButton={props.deactiveButton}
+        />
+      )}
+      {showInput && (
+        <div className="flex flex-col py-4 justify-center items-center">
+          <AiChatbotInput {...props} />
+          <div>
             <Typography scale="Lable" size="Small" color="Surface_OnSurfaceVariant">
               مونس هم گاهی اشتباه می‌کنه! حتماً جواب‌ها رو چک کن.
             </Typography>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };
