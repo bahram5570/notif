@@ -6,7 +6,8 @@ import MyKet2Icon from '@assets/icons/myket2.svg';
 
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { CAFEBAZAAR_LINK_WOMEN_URL, DIRECT_LINK_WOMEN_URL, MYKET_LINK_WOMEN_URL } from '@constants/links.constants';
+import { CAFEBAZAAR_LINK_WOMEN_URL, MYKET_LINK_WOMEN_URL } from '@constants/links.constants';
+import useDownloadLinks from '@hooks/useDownloadLinks';
 import useUserTracking from '@hooks/useUserTracking';
 import { COLORS_LIST } from '@theme/colors';
 
@@ -14,6 +15,7 @@ import DownloadAppLinkGenerator from '../DownloadAppLinkGenerator';
 
 const DownloadAppAndroid = () => {
   const { callUserTracking } = useUserTracking();
+  const { womanDirectApplcationalink } = useDownloadLinks();
 
   const directId = 'women-android-direct';
 
@@ -25,7 +27,7 @@ const DownloadAppAndroid = () => {
         <CustomLink
           id={directId}
           target="_blank"
-          href={DIRECT_LINK_WOMEN_URL}
+          href={womanDirectApplcationalink}
           aria-label="DownloadAppAndroid"
           onClick={() => callUserTracking(directId)}
           style={{ backgroundColor: COLORS_LIST.Neutral_OnBackground }}

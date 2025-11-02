@@ -3,9 +3,11 @@ import './globals.css';
 import { MAX_WIDTH } from '@constants/app.constants';
 import { HOST_URL, SERVER_URL } from '@constants/links.constants';
 import CustomToastProvider from '@providers/CustomToastProvider';
+import DownloadLinksProvider from '@providers/DownloadLinksProvider';
 import MuiProvider from '@providers/MuiProvider';
 import PageNavigationProvider from '@providers/PageNavigationProvider';
 import { Metadata } from 'next';
+import localFont from 'next/font/local';
 import Script from 'next/script';
 
 import OperatingSystemProvider from '../providers/OperatingSystemProvider';
@@ -28,9 +30,14 @@ export const metadata: Metadata = {
   },
 };
 
+export const YekanBakhVF = localFont({
+  src: '../../public/assets/shared/fonts/YekanBakh-VF.ttf',
+  display: 'swap',
+});
+
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="fa" dir="rtl">
+    <html lang="fa" dir="rtl" className={YekanBakhVF.className}>
       <head>
         <link
           as="font"
@@ -101,22 +108,24 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           `}
         </Script>
 
-        <OperatingSystemProvider>
-          {/* <UserTrackingProvider> */}
-          <MuiProvider>
-            <CustomToastProvider>
-              <PageNavigationProvider>
-                <div
-                  className="relative flex flex-col items-center mx-auto min-h-[100dvh]"
-                  style={{ maxWidth: MAX_WIDTH }}
-                >
-                  <>{children}</>
-                </div>
-              </PageNavigationProvider>
-            </CustomToastProvider>
-          </MuiProvider>
-          {/* </UserTrackingProvider> */}
-        </OperatingSystemProvider>
+        <DownloadLinksProvider>
+          <OperatingSystemProvider>
+            {/* <UserTrackingProvider> */}
+            <MuiProvider>
+              <CustomToastProvider>
+                <PageNavigationProvider>
+                  <div
+                    className="relative flex flex-col items-center mx-auto min-h-[100dvh]"
+                    style={{ maxWidth: MAX_WIDTH }}
+                  >
+                    <>{children}</>
+                  </div>
+                </PageNavigationProvider>
+              </CustomToastProvider>
+            </MuiProvider>
+            {/* </UserTrackingProvider> */}
+          </OperatingSystemProvider>
+        </DownloadLinksProvider>
       </body>
     </html>
   );
