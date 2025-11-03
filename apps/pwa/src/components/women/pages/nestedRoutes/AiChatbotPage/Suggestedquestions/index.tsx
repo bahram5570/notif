@@ -21,7 +21,7 @@ const SuggestedQuestions = ({ messageId, defaultQustionHandler }: SuggestedQuest
       {!isLoading && questions && (
         <div className="flex flex-col gap-3">
           {questions.map((question, index) => {
-            const isMultiLine = question.length > 70;
+            const isMultiLine = question.length > 43;
 
             return (
               <div key={index} className="flex items-center justify-start flex-row-reverse gap-2">

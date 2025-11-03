@@ -63,11 +63,11 @@ const CustomToastProvider = ({ children }: CustomToastProviderPropsType) => {
       >
         {shouldRender && (
           <div
-            className={`  flex flex-col justify-center items-center gap-2 ${toastData?.isCopyToast ? 'rounded-lg py-3 px-4' : 'rounded-3xl py-6 px-3'}`}
+            className={`  flex flex-col justify-center items-center gap-2 ${toastData?.isCopyToast ? 'rounded-lg py-3 px-4' : 'rounded-3xl py-6 px-4'}`}
             style={{ background: `${toastData?.isCopyToast ? colors.Surface_InverseSurface : colors.Neutral_Surface}` }}
           >
             {toastData?.isCopyToast ? (
-              <Typography scale="Lable" size="Small" className="px-4" color="Surface_InverseOnSurface">
+              <Typography scale="Body" size="Small" className="px-8" color="Surface_InverseOnSurface">
                 {toastData?.message}
               </Typography>
             ) : (

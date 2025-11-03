@@ -55,7 +55,7 @@ const MoreActionsMenu = ({ isOpen, closeHandler, welcomingType, disableDeleteBtn
         onClick={closeHandler}
       >
         <div
-          className=" p-4 pb-6 rounded-3xl bg-white/0 backdrop-blur-[8px] border border-white shadow-lg absolute left-4 top-[70px]"
+          className=" p-4 py-6 rounded-3xl  backdrop-blur-[8px] border border-white shadow-lg absolute left-4 top-[70px]"
           style={{ backgroundColor: 'rgba(255, 255, 255, 0.64)' }}
           onClick={(e) => e.stopPropagation()}
         >
@@ -66,10 +66,10 @@ const MoreActionsMenu = ({ isOpen, closeHandler, welcomingType, disableDeleteBtn
                   <>
                     <div className="flex flex-row-reverse items-center gap-2" onClick={deleteClickHandler}>
                       <div
-                        className="flex justify-center items-center rounded-full w-8 h-8"
+                        className="flex justify-center items-center rounded-full w-[34px] h-[34px]"
                         style={{ backgroundColor: colors.Error_ErrorContainer }}
                       >
-                        <TrashIcon className="w-4 h-4" style={{ stroke: colors.Error_Error }} />
+                        <TrashIcon className="w-[18px] h-[18px]" style={{ stroke: colors.Error_Error }} />
                       </div>
                       <Typography scale="Lable" size="Medium">
                         حذف مکالمه
@@ -84,10 +84,10 @@ const MoreActionsMenu = ({ isOpen, closeHandler, welcomingType, disableDeleteBtn
 
                 <div className="flex flex-row-reverse items-center gap-2" onClick={commentClickHandler}>
                   <div
-                    className="flex justify-center items-center rounded-full w-8 h-8"
+                    className="flex justify-center items-center rounded-full w-[34px] h-[34px]"
                     style={{ backgroundColor: colors.Surface_OutlineVariant }}
                   >
-                    <DialogIcon className="w-4 h-4" style={{ fill: colors.Neutral_OnSurface }} />
+                    <DialogIcon className="w-[18px] h-[18px]" style={{ fill: colors.Neutral_OnSurface }} />
                   </div>
                   <Typography scale="Lable" size="Medium">
                     نظرت رو اینجا بگو
@@ -98,10 +98,10 @@ const MoreActionsMenu = ({ isOpen, closeHandler, welcomingType, disableDeleteBtn
             {welcomingType === WelcomingTypeEnum.TopicsPage && (
               <div className="flex flex-row-reverse items-center gap-2" onClick={suggestionClickHandler}>
                 <div
-                  className="flex justify-center items-center rounded-full w-8 h-8"
+                  className="flex justify-center items-center rounded-full w-[34px] h-[34px]"
                   style={{ backgroundColor: colors.Surface_OutlineVariant }}
                 >
-                  <EditIcon className="w-4 h-4 " style={{ fill: colors.Neutral_OnSurface }} />
+                  <EditIcon className="w-[18px] h-[18px] " style={{ fill: colors.Neutral_OnSurface }} />
                 </div>
                 <Typography scale="Lable" size="Medium">
                   ثبت موضوع پیشنهادی
