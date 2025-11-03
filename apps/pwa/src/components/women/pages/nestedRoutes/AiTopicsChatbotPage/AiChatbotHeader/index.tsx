@@ -38,7 +38,7 @@ const AiChatbotHeader = ({ welcomingType, chatId, showActionMenu }: AiChatbotHea
 
   return (
     <div
-      className={`fixed left-0 right-0 top-0 mx-auto flex z-40 backdrop-blur-[8px]`}
+      className={`fixed left-0 right-0 top-0 mx-auto flex z-40 `}
       style={{ maxWidth: MAX_SCREEN_WIDTH, height: HEADER_HEIGHT }}
     >
       <div className={`flex w-full ${showActionMenu ? 'justify-between' : 'justify-end'}  items-end px-4 pt-3`}>
