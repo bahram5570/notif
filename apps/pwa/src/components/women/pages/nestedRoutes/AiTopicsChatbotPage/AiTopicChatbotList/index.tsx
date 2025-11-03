@@ -71,7 +71,13 @@ const AiTopicChatbotList = () => {
               </div>
             )}
           </div>
-          <div className=" fixed bottom-0 left-0 right-0 mx-auto" style={{ maxWidth: MAX_SCREEN_WIDTH }}>
+          <div
+            className=" fixed bottom-0 left-0 right-0 mx-auto z-20"
+            style={{
+              maxWidth: MAX_SCREEN_WIDTH,
+              background: 'linear-gradient(180deg, rgba(192, 194, 255, 0) -10.78%, #D3C8FC 100%)',
+            }}
+          >
             <div className="py-4 ">
               <AiChatbotInput
                 hintPromptText={result?.inputPlaceholder || ''}

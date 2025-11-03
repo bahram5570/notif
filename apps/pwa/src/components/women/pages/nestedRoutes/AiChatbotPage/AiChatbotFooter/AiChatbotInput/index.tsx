@@ -40,10 +40,10 @@ const AiChatbotInput = ({ hintPromptText, isLoading, submitHandler, defaultQusti
   }, [defaultQustion]);
 
   return (
-    <div className="w-full  flex justify-end items-center relative  rounded-t-3xl p-4 z-50 ">
+    <div className="w-full  flex justify-end items-center relative  rounded-t-3xl p-4 pt-0 z-50 ">
       <textarea
         placeholder={hintPromptText}
-        className={` rounded-full w-full h-14 p-4 pl-10  outline-none resize-none  glass-card !bg-white/60 shadow-md ${style.scroller} `}
+        className={` rounded-full w-full h-14 p-4 pl-14 outline-none resize-none  glass-card !bg-white/60 shadow-md ${style.scroller} `}
         style={{ color: colors.Surface_InverseSurface, ...typography.Body.Medium, direction: 'rtl' }}
         value={chatText}
         onChange={changeTextHandler}

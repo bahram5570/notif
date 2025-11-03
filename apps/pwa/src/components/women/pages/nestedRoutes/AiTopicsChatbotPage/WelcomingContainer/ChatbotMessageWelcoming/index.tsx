@@ -1,11 +1,7 @@
-import { useState } from 'react';
-
 import AiIcon from '@assets/icons/aibg.svg';
 
 import Typography from '@components/ui/Typography';
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
-import AiChatbotInput from '../../../AiChatbotPage/AiChatbotFooter/AiChatbotInput';
 import { ChatbotMessageWelcomingPropsType } from './type';
 
 const ChatbotMessageWelcoming = ({
@@ -32,19 +28,25 @@ const ChatbotMessageWelcoming = ({
               {description}
             </Typography>
           </div>
-          <div className="  gap-2 grid grid-cols-2 grid-rows-2 " style={{ direction: 'rtl' }}>
-            {questions.map((question, index) => {
+          <div className="flex flex-col items-center p-0 gap-2 flex-none order-1 self-stretch flex-grow-0">
+            {Array.from({ length: Math.ceil(questions.length / 2) }, (_, rowIndex) => {
+              const rowQuestions = questions.slice(rowIndex * 2, rowIndex * 2 + 2);
               return (
                 <div
-                  className="glass-card w-fit px-4 py-2 flex justify-center items-center rounded-full"
-                  key={index}
-                  onClick={() => {
-                    onClick(question);
-                  }}
+                  key={rowIndex}
+                  className="flex flex-row gap-2 items-center flex-none justify-center order-0 self-stretch flex-grow-0"
                 >
-                  <Typography size="SmallProminet" scale="Lable" color="Surface_InverseSurface">
-                    {question}
-                  </Typography>
+                  {rowQuestions.map((question, index) => (
+                    <div
+                      className="glass-card w-fit justify-center items-center rounded-full flex flex-col"
+                      key={index}
+                      onClick={() => onClick(question)}
+                    >
+                      <Typography size="SmallProminet" scale="Lable" color="Surface_InverseSurface" className="p-3">
+                        {question}
+                      </Typography>
+                    </div>
+                  ))}
                 </div>
               );
             })}

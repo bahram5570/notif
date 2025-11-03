@@ -34,10 +34,7 @@ const GeneratorTopicCardList = ({ topics, categoryId, usedTopics = false }: Gene
     <div className="flex flex-col gap-4 w-full">
       {rows.map((row, rowIndex) => {
         return (
-          <div
-            key={rowIndex}
-            className={`grid gap-2 w-full ${rowIndex === 1 ? 'grid-cols-2 justify-end' : 'grid-cols-1'}`}
-          >
+          <div key={rowIndex} className={`grid gap-2 w-full ${rowIndex === 1 ? 'grid-cols-2 ' : 'grid-cols-1'}`}>
             {row.map((item, index) =>
               rowIndex === 0 && usedTopics ? (
                 <SuggestedTopicCard {...item} key={index} onLinkHandler={onLinkHandler} />

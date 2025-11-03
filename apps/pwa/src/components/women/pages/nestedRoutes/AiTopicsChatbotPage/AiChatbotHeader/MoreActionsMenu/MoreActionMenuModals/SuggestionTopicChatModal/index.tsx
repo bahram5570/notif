@@ -31,7 +31,7 @@ const SuggestionTopicChatModal = ({ onCloseModal }: { onCloseModal: () => void }
           backgroundColor: colors.Surface_SurfaceVariant,
         }}
       >
-        <CancelIcon className="w-6 h-auto" />
+        <CancelIcon className="w-6 h-auto" style={{ stroke: colors.Surface_Outline }} />
       </div>
       <div className="flex flex-col  rounded-2xl gap-3 items-end">
         <Typography size="Large" scale="Lable">

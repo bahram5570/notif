@@ -63,7 +63,12 @@ const AiChatbotPage = () => {
               </div>
             </div>
           )}
-          <AiChatbotFooter {...aiChatData} submitHandler={submitHandler} isLoading={newLoading} />
+          <AiChatbotFooter
+            {...aiChatData}
+            submitHandler={submitHandler}
+            isLoading={newLoading}
+            hasChatData={hasChatData}
+          />
         </>
       )}
     </>

@@ -91,12 +91,11 @@ const useEventSource = ({
         return;
       }
 
-      // if (cleanedData === '') {
-      //   setMessages((prev) => prev + '\n');
-      // } else {
-      //   setMessages((prev) => prev + cleanedData);
-      // }
-      setMessages((prev) => prev + cleanedData);
+      if (cleanedData === '') {
+        setMessages((prev) => prev + '\n');
+      } else {
+        setMessages((prev) => prev + cleanedData);
+      }
     });
 
     ev.addEventListener('error', () => {
