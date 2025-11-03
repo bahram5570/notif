@@ -112,6 +112,7 @@ const useGetAiChatbotMessageList = () => {
     if (!queryData) return;
 
     if (promptText) {
+      sessionStorage.removeItem('prompt');
       submitHandler(promptText);
     }
 
@@ -133,7 +134,9 @@ const useGetAiChatbotMessageList = () => {
     });
   }, [aiChatMessageList]);
 
-  return { aiChatbotMessageList, updateChatHandler, addChatHandler };
+  const isLoading = streamLoading;
+
+  return { aiChatbotMessageList, updateChatHandler, addChatHandler, isLoading };
 };
 
 export default useGetAiChatbotMessageList;

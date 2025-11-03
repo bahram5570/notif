@@ -40,10 +40,10 @@ const AiChatbotInput = ({ hintPromptText, isLoading, submitHandler, defaultQusti
   }, [defaultQustion]);
 
   return (
-    <div className="w-full  flex justify-end items-center relative  rounded-t-3xl p-4 pt-0 z-50 ">
+    <div className="w-full  flex justify-end items-center relative  rounded-t-3xl p-4 py-2 z-50 ">
       <textarea
         placeholder={hintPromptText}
-        className={` rounded-full w-full h-14 p-4 pl-14 outline-none resize-none  glass-card !bg-white/60 shadow-md ${style.scroller} `}
+        className={` rounded-full w-full h-14 p-4 pl-14 outline-none resize-none  glass-card !bg-white/60 shadow-sm ${style.scroller} `}
         style={{ color: colors.Surface_InverseSurface, ...typography.Body.Medium, direction: 'rtl' }}
         value={chatText}
         onChange={changeTextHandler}
@@ -56,12 +56,11 @@ const AiChatbotInput = ({ hintPromptText, isLoading, submitHandler, defaultQusti
         style={{ background: colors.PrimaryWoman_Primary }}
         onClick={clickHandler}
       >
-        {/* {isLoading ? (
+        {isLoading ? (
           <StopIcon className="w-6 h-auto " style={{ fill: colors.White }} />
         ) : (
-            <ArrowIcon className="w-6 h-auto rotate-[270deg]" style={{ stroke: colors.White }} />
-        )} */}
-        <ArrowIcon className="w-6 h-auto rotate-[270deg]" style={{ stroke: colors.White }} />
+          <ArrowIcon className="w-6 h-auto rotate-[270deg]" style={{ stroke: colors.White }} />
+        )}
       </div>
     </div>
   );

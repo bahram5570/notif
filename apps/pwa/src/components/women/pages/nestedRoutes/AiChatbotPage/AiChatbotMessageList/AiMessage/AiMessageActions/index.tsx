@@ -1,4 +1,4 @@
-import CopyIcon from '@assets/icons/Copy.svg';
+import CopyIcon from '@assets/icons/Copy-1.svg';
 import DislikeFillIcon from '@assets/icons/Dislike-fill.svg';
 import DislikeIcon from '@assets/icons/Dislike.svg';
 import LikeIcon from '@assets/icons/Like-1.svg';
@@ -30,25 +30,20 @@ const AiMessageActions = (props: AiMessageActionsPropsType) => {
   };
 
   return (
-    <div className="flex  flex-row-reverse justify-end gap-2">
-      <div className="w-8 h-8  flex justify-center items-center" onClick={onLikeClick}>
-        {props.like ? (
-          <LikeFillIcon className="w-5 h-5" style={{ fill: colors.Grey_900 }} />
-        ) : (
-          <LikeIcon className="w-5 h-5" style={{ fill: colors.Grey_900 }} />
-        )}
-      </div>
-      <div className="w-8 h-8  flex justify-center items-center" onClick={onDisLikeClick}>
-        {props.dislike ? (
-          <DislikeFillIcon className="w-5 h-5" style={{ fill: colors.Grey_900 }} />
-        ) : (
-          <DislikeIcon className="w-5 h-5" style={{ fill: colors.Grey_900 }} />
-        )}
-      </div>
+    <div className="flex  flex-row-reverse justify-end gap-4 ">
+      {props.like ? (
+        <LikeFillIcon className="w-[22px] h-[22px]" style={{ fill: colors.Grey_900 }} onClick={onLikeClick} />
+      ) : (
+        <LikeIcon className="w-[22px] h-[22px]" style={{ fill: colors.Grey_900 }} onClick={onLikeClick} />
+      )}
 
-      <div className="w-8 h-8  flex justify-center items-center" onClick={onCopyClick}>
-        <CopyIcon className="w-5 h-5" style={{ stroke: colors.Grey_900 }} />
-      </div>
+      {props.dislike ? (
+        <DislikeFillIcon className="w-[22px] h-[22px]" style={{ fill: colors.Grey_900 }} onClick={onDisLikeClick} />
+      ) : (
+        <DislikeIcon className="w-[22px] h-[22px]" style={{ fill: colors.Grey_900 }} onClick={onDisLikeClick} />
+      )}
+
+      <CopyIcon className="w-5 h-5" style={{ fill: colors.Grey_900 }} onClick={onCopyClick} />
     </div>
   );
 };

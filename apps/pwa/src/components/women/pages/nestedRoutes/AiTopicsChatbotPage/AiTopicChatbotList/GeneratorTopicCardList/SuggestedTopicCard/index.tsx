@@ -15,7 +15,7 @@ const SuggestedTopicCard = (props: SuggestedTopicCardPropsType) => {
   };
   return (
     <div
-      className=" rounded-3xl  flex flex-col gap-3 relative"
+      className=" rounded-3xl  flex flex-col gap-3 relative h-[170px]"
       style={{ background: colors.Neutral_OnBackground }}
       onClick={onClick}
     >

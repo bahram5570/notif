@@ -13,7 +13,7 @@ import { WelcomingTypeEnum } from '../../WelcomingContainer/enum';
 import { AiChatModalNameEnums } from './enum';
 import { MoreActionsMenuPropsType } from './type';
 
-const MoreActionsMenu = ({ isOpen, closeHandler, welcomingType }: MoreActionsMenuPropsType) => {
+const MoreActionsMenu = ({ isOpen, closeHandler, welcomingType, disableDeleteBtn }: MoreActionsMenuPropsType) => {
   const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
@@ -62,21 +62,26 @@ const MoreActionsMenu = ({ isOpen, closeHandler, welcomingType }: MoreActionsMen
           <div className="flex flex-col gap-2">
             {welcomingType === WelcomingTypeEnum.ChatbotMessage && (
               <>
-                <div className="flex flex-row-reverse items-center gap-2" onClick={deleteClickHandler}>
-                  <div
-                    className="flex justify-center items-center rounded-full w-8 h-8"
-                    style={{ backgroundColor: colors.Error_ErrorContainer }}
-                  >
-                    <TrashIcon className="w-4 h-4" style={{ stroke: colors.Error_Error }} />
-                  </div>
-                  <Typography scale="Lable" size="Medium">
-                    حذف مکالمه
-                  </Typography>
-                </div>
-                <div
-                  className="w-[133px] h-0 rotate-180  opacity-40"
-                  style={{ border: `1px solid ${colors.Surface_OutlineVariant}` }}
-                />
+                {disableDeleteBtn && (
+                  <>
+                    <div className="flex flex-row-reverse items-center gap-2" onClick={deleteClickHandler}>
+                      <div
+                        className="flex justify-center items-center rounded-full w-8 h-8"
+                        style={{ backgroundColor: colors.Error_ErrorContainer }}
+                      >
+                        <TrashIcon className="w-4 h-4" style={{ stroke: colors.Error_Error }} />
+                      </div>
+                      <Typography scale="Lable" size="Medium">
+                        حذف مکالمه
+                      </Typography>
+                    </div>
+                    <div
+                      className="w-[133px] h-0 rotate-180  opacity-40"
+                      style={{ border: `1px solid ${colors.Surface_OutlineVariant}` }}
+                    />
+                  </>
+                )}
+
                 <div className="flex flex-row-reverse items-center gap-2" onClick={commentClickHandler}>
                   <div
                     className="flex justify-center items-center rounded-full w-8 h-8"

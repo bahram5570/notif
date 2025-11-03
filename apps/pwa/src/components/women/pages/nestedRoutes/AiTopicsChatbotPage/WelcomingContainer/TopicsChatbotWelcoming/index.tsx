@@ -37,7 +37,7 @@ const TopicsChatbotWelcoming = ({ top, onUpdateKeyHandler }: { top: number; onUp
                   {data?.title}
                 </Typography>
               </div>
-              <Typography scale="Body" size="Medium" textAlign="justify">
+              <Typography scale="Body" size="Medium">
                 {data?.description}
               </Typography>
             </div>

@@ -52,8 +52,8 @@ const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) =>
     if (showErrorMessage) setShowErrorMessage(false);
     addChatHandler({ role: RoleEnum.User, text: prompt });
     const payload = {
-      promptCategoryId: categoryIdData,
-      promptItemId: itemIdData,
+      promptCategoryId: categoryIdData || '',
+      promptItemId: itemIdData || '',
       prompt,
     };
 

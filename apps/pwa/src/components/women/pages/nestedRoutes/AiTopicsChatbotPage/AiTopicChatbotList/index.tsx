@@ -26,18 +26,18 @@ const AiTopicChatbotList = () => {
         background:
           'linear-gradient(360deg, #D7BAFD -15.17%, rgba(194, 211, 251, 0.8) 30.1%, rgba(199, 234, 241, 0.5) 75.9%, rgba(230, 240, 232, 0.5) 104.51%)',
       }}
-      className="min-h-screen relative px-4"
+      className="min-h-[100dvh] relative "
     >
       <AiChatbotHeader welcomingType={WelcomingTypeEnum.TopicsPage} showActionMenu={true} />
       {isLoading && <AiTopicChatbotListSkeleton />}
       {!isLoading && (
         <div style={{ paddingTop: HEADER_HEIGHT + 50 }}>
-          <div className="flex flex-col gap-5" style={{ paddingBottom: HEADER_HEIGHT * 2 }}>
+          <div className="flex flex-col gap-8 px-4" style={{ paddingBottom: HEADER_HEIGHT * 2 }}>
             <div className="flex flex-col items-end justify-end gap-2">
               <Typography scale="Title" size="Large">
                 {result?.title}
               </Typography>
-              <Typography size="Small" scale="Body">
+              <Typography size="Medium" scale="Body">
                 {result?.subtitle}
               </Typography>
             </div>
@@ -72,13 +72,13 @@ const AiTopicChatbotList = () => {
             )}
           </div>
           <div
-            className=" fixed bottom-0 left-0 right-0 mx-auto z-20"
+            className="fixed bottom-0 left-0 right-0 mx-auto z-20"
             style={{
               maxWidth: MAX_SCREEN_WIDTH,
               background: 'linear-gradient(180deg, rgba(192, 194, 255, 0) -10.78%, #D3C8FC 100%)',
             }}
           >
-            <div className="py-4 ">
+            <div className="pt-4 pb-5 ">
               <AiChatbotInput
                 hintPromptText={result?.inputPlaceholder || ''}
                 isLoading={newLoading}

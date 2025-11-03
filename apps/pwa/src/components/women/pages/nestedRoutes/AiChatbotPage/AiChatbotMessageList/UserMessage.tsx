@@ -9,13 +9,13 @@ const UserMessage = (props: UserMessagePropsType) => {
 
   return (
     <div
-      className="!bg-white/50 ml-auto glass-card w-"
+      className="!bg-white/50 ml-auto glass-card max-w-fit mt-8"
       style={{
         border: `0.25px solid ${colors.Grey_300}`,
         borderRadius: isMultiLine ? '100px 32px 4px 100px' : '100px 100px 4px 100px',
       }}
     >
-      <Typography scale="Body" size="Medium" className="px-2 py-4">
+      <Typography scale="Body" size="Medium" className="p-4 px-6">
         {props.text}
       </Typography>
     </div>

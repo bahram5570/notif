@@ -10,10 +10,9 @@ const AiChatbotFooter = (props: AiChatbotFooterPropsType) => {
 
   return (
     <div
-      className="fixed w-full mx-auto left-0 right-0 bottom-0   z-50"
+      className="fixed w-full mx-auto left-0 right-0 bottom-0   z-30"
       style={{
         maxWidth: MAX_SCREEN_WIDTH,
-        background: `${props.hasChatData ? 'rgb(228 228 253)' : 'inherit'}`,
       }}
     >
       {!showInput && (
@@ -24,9 +23,12 @@ const AiChatbotFooter = (props: AiChatbotFooterPropsType) => {
         />
       )}
       {showInput && (
-        <div className="flex flex-col py-4 pt-0 justify-center items-center">
+        <div className="flex flex-col justify-center items-center">
           <AiChatbotInput {...props} />
-          <div>
+          <div
+            className="flex justify-center items-center py-2 w-full"
+            style={{ background: `${props.hasChatData ? 'rgb(239 241 254)' : 'inherit'}` }}
+          >
             <Typography scale="Lable" size="Small" color="Surface_OnSurfaceVariant">
               مونس هم گاهی اشتباه می‌کنه! حتماً جواب‌ها رو چک کن.
             </Typography>

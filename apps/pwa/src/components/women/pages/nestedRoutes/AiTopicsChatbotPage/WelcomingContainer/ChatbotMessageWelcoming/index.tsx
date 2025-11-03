@@ -19,12 +19,12 @@ const ChatbotMessageWelcoming = ({
     <div className=" absolute w-full " style={{ top }}>
       <div className=" relative  w-full h-full">
         <AiIcon className="w-full " />
-        <div className="px-6 flex flex-col gap-12  absolute top-10  pt-9 w-full">
+        <div className="px-6 flex flex-col gap-6  absolute top-10  pt-9 w-full">
           <div className=" flex flex-col gap-2 justify-center items-center px-2">
-            <Typography scale="Title" size="Large">
+            <Typography scale="Title" size="Large" textAlign="center">
               {title}
             </Typography>
-            <Typography scale="Body" size="Medium" textAlign="justify">
+            <Typography scale="Body" size="Medium" textAlign="center">
               {description}
             </Typography>
           </div>
@@ -42,7 +42,7 @@ const ChatbotMessageWelcoming = ({
                       key={index}
                       onClick={() => onClick(question)}
                     >
-                      <Typography size="SmallProminet" scale="Lable" color="Surface_InverseSurface" className="p-3">
+                      <Typography size="SmallProminet" scale="Lable" color="Surface_InverseSurface" className="p-2">
                         {question}
                       </Typography>
                     </div>

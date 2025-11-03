@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import ArrowRightIcon from '@assets/icons/ArrowRight.svg';
 import DotIcon from '@assets/icons/MenuDots.svg';
-import chatbotJson from '@assets/lottie/chatbot.json';
 
 import CustomImage from '@components/ui/CustomImage';
 import Spinner from '@components/ui/Spinner';
@@ -11,14 +10,12 @@ import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useTheme from '@hooks/useTheme';
-import { LottieJson } from '@lib/LottieJson';
 
-import { WelcomingTypeEnum } from '../WelcomingContainer/enum';
 import MoreActionsMenu from './MoreActionsMenu';
 import MoreActionMenuModals from './MoreActionsMenu/MoreActionMenuModals';
 import { AiChatbotHeaderPropsType } from './type';
 
-const AiChatbotHeader = ({ welcomingType, chatId, showActionMenu }: AiChatbotHeaderPropsType) => {
+const AiChatbotHeader = ({ welcomingType, chatId, showActionMenu, disableDeleteBtn }: AiChatbotHeaderPropsType) => {
   const { colors } = useTheme();
 
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
@@ -79,7 +76,12 @@ const AiChatbotHeader = ({ welcomingType, chatId, showActionMenu }: AiChatbotHea
         </div>
       </div>
 
-      <MoreActionsMenu isOpen={isOpen} closeHandler={closeHandler} welcomingType={welcomingType} />
+      <MoreActionsMenu
+        isOpen={isOpen}
+        closeHandler={closeHandler}
+        welcomingType={welcomingType}
+        disableDeleteBtn={disableDeleteBtn}
+      />
       <MoreActionMenuModals chatId={chatId} />
     </div>
   );

@@ -34,14 +34,19 @@ const GeneratorTopicCardList = ({ topics, categoryId, usedTopics = false }: Gene
     <div className="flex flex-col gap-4 w-full">
       {rows.map((row, rowIndex) => {
         return (
-          <div key={rowIndex} className={`grid gap-2 w-full ${rowIndex === 1 ? 'grid-cols-2 ' : 'grid-cols-1'}`}>
-            {row.map((item, index) =>
-              rowIndex === 0 && usedTopics ? (
-                <SuggestedTopicCard {...item} key={index} onLinkHandler={onLinkHandler} />
-              ) : (
-                <TopicCardItem {...item} key={index} onLinkHandler={onLinkHandler} />
-              ),
-            )}
+          <div key={rowIndex} className={`grid gap-2 w-full ${rowIndex === 1 ? 'grid-cols-2' : 'grid-cols-1'}`}>
+            {row.map((item, index) => {
+              const colClass = row.length === 1 && rowIndex === 1 ? 'col-start-2' : '';
+              return (
+                <div key={index} className={colClass}>
+                  {rowIndex === 0 && usedTopics ? (
+                    <SuggestedTopicCard {...item} onLinkHandler={onLinkHandler} />
+                  ) : (
+                    <TopicCardItem {...item} onLinkHandler={onLinkHandler} />
+                  )}
+                </div>
+              );
+            })}
           </div>
         );
       })}

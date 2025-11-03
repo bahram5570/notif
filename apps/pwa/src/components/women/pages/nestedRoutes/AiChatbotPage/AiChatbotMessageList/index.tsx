@@ -11,7 +11,12 @@ import AiMessage from './AiMessage';
 import UserMessage from './UserMessage';
 import { AiChatbotMessageListPropsType } from './type';
 
-const AiChatbotMessageList = ({ chats, isLoading, defaultQustionHandler }: AiChatbotMessageListPropsType) => {
+const AiChatbotMessageList = ({
+  chats,
+  isLoading,
+  defaultQustionHandler,
+  disableDeleteBtnHandler,
+}: AiChatbotMessageListPropsType) => {
   const lastItemRef = useRef<HTMLDivElement>(null);
   const hasSetInitialHeight = useRef(false);
   const [lastItemHeight, setLastItemHeight] = useState<string | undefined>(undefined);
@@ -41,12 +46,17 @@ const AiChatbotMessageList = ({ chats, isLoading, defaultQustionHandler }: AiCha
               style={{
                 minHeight: index === chats.length - 1 && !isLoading ? lastItemHeight : 'auto',
               }}
-              className="pr-4"
+              className="pr-2"
               ref={index === chats.length - 1 ? lastItemRef : null}
             >
               {chat.role === RoleEnum.User && <UserMessage {...chat} />}
               {chat.role === RoleEnum.Assistant && (
-                <AiMessage {...chat} isLastItem={isLastItem} defaultQustionHandler={defaultQustionHandler} />
+                <AiMessage
+                  {...chat}
+                  isLastItem={isLastItem}
+                  defaultQustionHandler={defaultQustionHandler}
+                  disableDeleteBtnHandler={disableDeleteBtnHandler}
+                />
               )}
             </div>
           );
@@ -58,11 +68,11 @@ const AiChatbotMessageList = ({ chats, isLoading, defaultQustionHandler }: AiCha
             className="flex justify-start items-baseline"
             style={{ minHeight: `calc(100dvh - 360px )` }}
           >
-            <div className="flex items-center rounded-full !bg-white/40 shadow-lg glass-card   px-4">
+            <div className="flex items-center rounded-full !bg-white/40  glass-card   pr-2 pl-4">
               <Typography scale="Body" size="Medium">
                 دارم فکر میکنم...
               </Typography>
-              <LottieJson animationData={chatbotJson} loop={false} autoPlay={false} className="w-14 h-14" />
+              <LottieJson animationData={chatbotJson} loop={false} autoPlay={false} className="w-12 h-12" />
             </div>
           </div>
         )}

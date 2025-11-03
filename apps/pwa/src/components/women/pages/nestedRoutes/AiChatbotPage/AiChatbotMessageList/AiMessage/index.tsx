@@ -18,6 +18,14 @@ const AiMessage = (props: AiMessagePropsType) => {
   const animationEndHandler = (v: boolean) => {
     setIsAnimating(v);
     sessionStorage.setItem('showSuggestedQuestion', 'true');
+
+    if (props.messageId) {
+      props.disableDeleteBtnHandler(true);
+    }
+  };
+
+  const animationStartHandler = () => {
+    props.disableDeleteBtnHandler(false);
   };
 
   const onClick = (text: string) => {
@@ -33,20 +41,26 @@ const AiMessage = (props: AiMessagePropsType) => {
 
   return (
     <div className="flex flex-col w-full gap-4">
-      {props.isAnswered ? (
-        <WordFadeInText text={props.text} animationEndHandler={animationEndHandler} />
-      ) : (
-        <p
-          className="z-30 rounded-3xl pl-4 py-3"
-          style={{
-            direction: 'rtl',
-            ...typography.Body.Large,
-            whiteSpace: 'pre-wrap',
-          }}
-          dangerouslySetInnerHTML={{ __html: formattedLine.replace(/\n/g, '<br/>') + '&nbsp;' }}
-        />
-      )}
-      {!isAnimating && <AiMessageActions {...props} />}
+      <div className="flex flex-col w-full gap-4">
+        {props.isAnswered ? (
+          <WordFadeInText
+            text={props.text}
+            animationEndHandler={animationEndHandler}
+            animationStartHandler={animationStartHandler}
+          />
+        ) : (
+          <p
+            className="z-30 rounded-3xl  pt-3"
+            style={{
+              direction: 'rtl',
+              ...typography.Body.Medium,
+              whiteSpace: 'pre-wrap',
+            }}
+            dangerouslySetInnerHTML={{ __html: formattedLine.replace(/\n/g, '<br/>') + '&nbsp;' }}
+          />
+        )}
+        {!isAnimating && <AiMessageActions {...props} />}
+      </div>
 
       {showSuggestedQuestion && props.isLastItem && !isAnimating && (
         <SuggestedQuestions messageId={props.messageId} defaultQustionHandler={onClick} />

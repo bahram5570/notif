@@ -1,14 +1,20 @@
 import useCustomToast from '@hooks/useCustomToast';
+import { useToast } from '@providers/ToastProvider/CustomToastProvider';
 
 const useCopy = () => {
   const { onToast } = useCustomToast();
+  const { showToast } = useToast();
 
   const copyToClipboard = async (text: string) => {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {
         await navigator.clipboard.writeText(text);
 
-        onToast({ message: 'کپی شد', type: 'success' });
+        showToast({
+          message: 'متن کپی شد ',
+          duration: 2000,
+          isCopyToast: true,
+        });
       } catch (err) {
         console.error(err);
         onToast({ message: 'خطا در کپی کردن متن', type: 'error' });
@@ -25,7 +31,11 @@ const useCopy = () => {
 
         const successful = document.execCommand('copy');
         if (successful) {
-          onToast({ message: 'کپی شد', type: 'success' });
+          showToast({
+            message: 'متن کپی شد ',
+            duration: 2000,
+            isCopyToast: true,
+          });
         } else {
           throw new Error('Fallback copy failed');
         }

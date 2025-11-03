@@ -19,9 +19,10 @@ const SuggestedQuestions = ({ messageId, defaultQustionHandler }: SuggestedQuest
     <>
       {isLoading && !questions && <SuggestedQuestionsAiChatbotSkeleton />}
       {!isLoading && questions && (
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-3">
           {questions.map((question, index) => {
             const isMultiLine = question.length > 70;
+
             return (
               <div key={index} className="flex items-center justify-start flex-row-reverse gap-2">
                 <div className="w-6 h-6">
@@ -29,14 +30,14 @@ const SuggestedQuestions = ({ messageId, defaultQustionHandler }: SuggestedQuest
                 </div>
 
                 <div
-                  className="bg-white/50 py-3 px-4"
+                  className="bg-white/50 py-4 "
                   style={{
                     border: `0.25px solid ${colors.Grey_300}`,
-                    borderRadius: isMultiLine ? '100px 32px 4px 100px' : '100px 100px 4px 100px',
+                    borderRadius: isMultiLine ? '32px 32px 4px 32px' : '100px 100px 4px 100px',
                   }}
                   onClick={() => onClick(question)}
                 >
-                  <Typography scale="Body" size="Medium" className="px-4">
+                  <Typography scale="Body" size="Medium" className="px-6">
                     {question}
                   </Typography>
                 </div>

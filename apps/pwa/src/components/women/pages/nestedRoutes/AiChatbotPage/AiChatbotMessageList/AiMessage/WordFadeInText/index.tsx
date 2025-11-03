@@ -1,10 +1,11 @@
 import { parseFormattedText } from '../utils';
+import { toPersianNumbers } from '@utils/numbers';
 
 import useTheme from '@hooks/useTheme';
 
 import { WordFadeInTextPropsType } from './type';
 
-const WordFadeInText = ({ animationEndHandler, text }: WordFadeInTextPropsType) => {
+const WordFadeInText = ({ animationEndHandler, text, animationStartHandler }: WordFadeInTextPropsType) => {
   const { typography } = useTheme();
   const lines = text.split(/\\n|\n/);
   let globalWordIndex = 0;
@@ -46,11 +47,12 @@ const WordFadeInText = ({ animationEndHandler, text }: WordFadeInTextPropsType) 
                   style={{
                     animationDelay: `${delay}s`,
                     display: 'inline',
-                    ...typography.Body.Large,
+                    ...typography.Body.Medium,
                   }}
                   onAnimationEnd={isLast ? () => animationEndHandler(false) : undefined}
+                  onAnimationStart={animationStartHandler}
                 >
-                  {decodeUnicode(part).replace(/\n/g, '<br/>')}
+                  {decodeUnicode(toPersianNumbers(part)).replace(/\n/g, '<br/>')}
                 </p>
               );
             })}

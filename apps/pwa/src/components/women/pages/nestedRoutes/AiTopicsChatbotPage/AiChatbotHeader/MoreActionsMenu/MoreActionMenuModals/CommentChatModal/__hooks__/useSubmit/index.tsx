@@ -1,11 +1,11 @@
 import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useToast } from '@providers/ToastProvider/CustomToastProvider';
 import { useRouter } from 'next/navigation';
 
 const useSubmit = () => {
   const { getQueryParams } = useQueryParamsHandler();
-  const { onToast } = useCustomToast();
+  const { showToast } = useToast();
   const route = useRouter();
 
   const itemIdData = getQueryParams('itemId');
@@ -13,7 +13,11 @@ const useSubmit = () => {
 
   const successHandler = () => {
     route.back();
-    onToast({ message: 'پیشنهادت برامون ارزشمنده و در آینده حتما به موضوعات پیشنهادی اضافه میشه', type: 'success' });
+    showToast({
+      message: 'نظرت با موفقیت ثبت شد ✅',
+      description: 'بازخوردت برامون خیلی مهمه و در آینده حتما بهبودش میدیم',
+      duration: 4000,
+    });
   };
 
   const { callApi, isLoading } = useApi({ api: 'feature/ai/opiniononchat', method: 'POST', onSuccess: successHandler });
