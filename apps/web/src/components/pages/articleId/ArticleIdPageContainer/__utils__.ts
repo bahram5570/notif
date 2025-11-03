@@ -7,7 +7,7 @@ import * as cheerio from 'cheerio';
 
 import { ArticleSubjectListTypes } from './types';
 
-const mapperList = [
+const oldCtaList = [
   { name: 'between1M.', path: '/assets/images/betweenBanner' },
   { name: 'between2M.', path: '/assets/images/betweenBanner' },
   { name: 'between3M.', path: '/assets/images/betweenBanner' },
@@ -68,7 +68,7 @@ export const handleBodyUpdate = async (body: string) => {
   let result = body;
 
   // # Setting up old Cta
-  mapperList.forEach((item) => {
+  oldCtaList.forEach((item) => {
     const regex = new RegExp(`src="(?!data:)[^"]*${item.name}[^"]*"`, 'g');
     result = result.replaceAll(regex, `src="${item.path}/${item.name}webp"`);
     result = result.replace(/\s*srcset\s*=\s*(['"])[^'"]*\1/g, '');
@@ -137,8 +137,8 @@ export const handleBodyUpdate = async (body: string) => {
   $('img').each((_, element) => {
     const img = $(element);
 
-    img.attr('width', null);
-    img.attr('height', null);
+    img.attr('width', '100%');
+    img.attr('height', 'auto');
     img.attr('loading', 'lazy');
   });
 
