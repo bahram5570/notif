@@ -87,6 +87,7 @@ const AiChatbotPage = () => {
               </div>
             </div>
           )}
+
           <AiChatbotFooter
             {...aiChatData}
             submitHandler={submitHandler}

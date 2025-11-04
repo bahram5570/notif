@@ -52,7 +52,7 @@ const WordFadeInText = ({ animationEndHandler, text, animationStartHandler }: Wo
                   onAnimationEnd={isLast ? () => animationEndHandler(false) : undefined}
                   onAnimationStart={animationStartHandler}
                 >
-                  {decodeUnicode(toPersianNumbers(part)).replace(/\n/g, '<br/>')}
+                  {decodeUnicode(part).replace(/\n/g, '<br/>')}
                 </p>
               );
             })}

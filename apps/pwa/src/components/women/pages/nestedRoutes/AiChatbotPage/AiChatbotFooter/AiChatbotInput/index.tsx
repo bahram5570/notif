@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import ArrowIcon from '@assets/icons/arrow.svg';
 import StopIcon from '@assets/icons/stop.svg';
+import { toPersianNumbers } from '@utils/numbers';
 
 import style from './styles.module.css';
 
@@ -14,7 +15,7 @@ const AiChatbotInput = ({ hintPromptText, isLoading, submitHandler, defaultQusti
   const [chatText, setChatText] = useState('');
 
   const changeTextHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setChatText(e.target.value);
+    setChatText(toPersianNumbers(e.target.value));
   };
 
   const clickHandler = () => {
