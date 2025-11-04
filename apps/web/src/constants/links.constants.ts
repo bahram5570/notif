@@ -25,12 +25,10 @@ export const EXCLUDE_EXTENSIONS = [
 ];
 
 // # Android download links
-export const DIRECT_LINK_WOMEN_URL = process.env.NEXT_PUBLIC_DIRECT_LINK_WOMEN_URL || '';
 export const MYKET_LINK_WOMEN_URL = 'https://myket.ir/app/ir.duck.impo';
 export const CAFEBAZAAR_LINK_WOMEN_URL = 'https://cafebazaar.ir/app/ir.duck.impo';
 export const MYKET_LINK_MEN_URL = 'https://myket.ir/app/ir.duck.impomen';
 export const CAFEBAZAAR_LINK_MEN_URL = 'https://cafebazaar.ir/app/ir.duck.impomen';
-export const DIRECT_LINK_MEN_URL = process.env.NEXT_PUBLIC_DIRECT_LINK_MEN_URL || '';
 
 // # IOS download links
 export const APP_STORE_LINK_MEN_URL = 'https://apps.apple.com/us/app/impo-men/id6740815518';

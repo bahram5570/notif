@@ -8,12 +8,12 @@
 @import 'swiper/css/pagination';
 
 @font-face {
-  font-family: YekanBakhVF;
+  font-family: 'YekanBakhVF';
   src: url('/assets/shared/fonts/YekanBakh-VF.ttf');
 }
 
 * {
-  font-family: YekanBakhVF;
+  font-family: 'YekanBakhVF', sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -30,7 +30,7 @@ textarea {
 }
 
 .MuiPagination-ul button {
-  font-family: YekanBakhVF;
+  font-family: 'YekanBakhVF';
 }
 
 .MuiPagination-ul li:nth-child(-n + 2),
