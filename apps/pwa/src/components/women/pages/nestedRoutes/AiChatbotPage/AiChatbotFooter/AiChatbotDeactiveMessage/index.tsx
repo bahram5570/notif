@@ -1,0 +1,52 @@
+import chatbotJson from '@assets/lottie/chatbot.json';
+import { colorFormatConverter } from '@utils/scripts';
+
+import Button from '@components/ui/Button';
+import Typography from '@components/ui/Typography';
+import useAnalytics from '@hooks/useAnalytics';
+import useWidgetActions from '@hooks/useWidgetActions';
+import { LottieJson } from '@lib/LottieJson';
+
+import { AiChatbotDeactiveMessagePropsType } from './type';
+
+const AiChatbotDeactiveMessage = ({ deactiveMessage, title, deactiveButton }: AiChatbotDeactiveMessagePropsType) => {
+  const { actionHandler } = useWidgetActions();
+  const { callEvent } = useAnalytics({ pageView_eventName: 'ChatbotInteractionButtonSeen' });
+
+  return (
+    <div className="flex flex-col  relative mx-4 my-3 rounded-3xl gap-3 p-4 glass-card !bg-white/60">
+      <div className="flex flex-row-reverse ">
+        <LottieJson animationData={chatbotJson} loop={false} autoPlay={false} className="w-14 h-14" />
+
+        <div className="flex flex-col justify-center items-end ">
+          <Typography scale="Lable" size="MediumProminet">
+            {title}
+          </Typography>
+          <Typography scale="Body" size="Small">
+            {deactiveMessage}
+          </Typography>
+        </div>
+      </div>
+      {deactiveButton && (
+        <Button
+          size="medium"
+          fullWidth
+          variant="fill"
+          color="FREE-STYLES"
+          contentsColor={colorFormatConverter(deactiveButton.foregroundColor)}
+          buttonColor={colorFormatConverter(deactiveButton.backgroundColor)}
+          onClick={() => {
+            callEvent('ChatbotInteractionClick');
+            actionHandler(deactiveButton.action);
+          }}
+        >
+          <Typography scale="Lable" size="Medium" color="White">
+            {deactiveButton.text}
+          </Typography>
+        </Button>
+      )}
+    </div>
+  );
+};
+
+export default AiChatbotDeactiveMessage;

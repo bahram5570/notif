@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import CakeIcon from '@assets/icons/Cake.svg';
-import { toGregorianData } from '@utils/dates';
+import { toGregorianData, toJalaliData } from '@utils/dates';
 
 import useListsMaker from '@components/activation/DateModule/__hooks__/useListsMaker';
 import { StateValuesHandlerTypes, ValuesTypes } from '@components/activation/DateModule/types';
@@ -48,7 +48,15 @@ const BirthDateModal = ({ value, valueHandler, onClose }: BirthDateModalTypes) =
 
   useEffect(() => {
     if (value) {
-      const birthDate = value.split(DATE_SEPERATOR_REGEX);
+      let updatedValue = value;
+
+      switch (culture.calendarType) {
+        case CalendarTypeEnum.Jalali:
+          updatedValue = toJalaliData(value);
+          break;
+      }
+
+      const birthDate = updatedValue.split(DATE_SEPERATOR_REGEX);
 
       setValues({
         month: birthDate[1],

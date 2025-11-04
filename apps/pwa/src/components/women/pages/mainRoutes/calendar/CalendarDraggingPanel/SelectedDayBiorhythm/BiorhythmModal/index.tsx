@@ -41,7 +41,7 @@ const BiorhythmModal = ({ biorhythmInfo }: BiorhythmModalPropsType) => {
             backgroundColor: colors.Blue_50,
           }}
         >
-          <CancelIcon className="w-6 h-auto" />
+          <CancelIcon className="w-6 h-auto" style={{ stroke: colors.Surface_OnSurfaceVariant }} />
         </div>
         <div className="flex flex-col p-4 rounded-2xl gap-3" style={{ background: colors.Surface_SurfaceVariant }}>
           <div className="flex flex-col justify-center items-center gap-2 p-1">

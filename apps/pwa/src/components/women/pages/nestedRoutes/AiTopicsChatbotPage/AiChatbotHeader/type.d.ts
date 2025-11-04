@@ -1,5 +1,9 @@
-import { HistoryChatResponsiveType } from '../__hooks__/useGetHistoryChatData/type';
+import { WelcomingContainerPropsType } from '../WelcomingContainer/type';
 
-type HeaderItemType = Pick<HistoryChatResponsiveType, 'chatTitle'>;
+type ItemType = Pick<WelcomingContainerPropsType, 'welcomingType'>;
 
-export interface AiChatbotHeaderPropsType extends HeaderItemType {}
+export interface AiChatbotHeaderPropsType extends ItemType {
+  chatId?: string;
+  showActionMenu: boolean;
+  disableDeleteBtn?: boolean;
+}

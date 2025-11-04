@@ -1,5 +1,7 @@
 import { useRef } from 'react';
 
+import { toPersianNumbers } from '@utils/numbers';
+
 import useTheme from '@hooks/useTheme';
 
 import { UserInfoNameTypes } from './types';
@@ -15,15 +17,19 @@ const UserInfoName = ({ value, valueHandler }: UserInfoNameTypes) => {
     }
   };
 
+  const changeHandler = (v: string) => {
+    valueHandler(toPersianNumbers(v));
+  };
+
   return (
     <input
-      ref={inputRef}
       type="text"
       value={value}
+      ref={inputRef}
       className="w-full"
-      onChange={(v) => valueHandler(v.target.value)}
-      style={{ color: colors.Surface_OnSurfaceVariant, ...typography.Body.Large }}
       onKeyUp={handleKeyDown}
+      onChange={(v) => changeHandler(v.target.value)}
+      style={{ color: colors.Surface_OnSurfaceVariant, ...typography.Body.Large }}
     />
   );
 };

@@ -26,12 +26,14 @@ const ClinicChatbotTemporaryButton = ({ chatbot, onChangeValueHandler }: ClinicC
           description={chatbot.description}
           title={chatbot.title}
           startChatText={chatbot.startChatText}
+          goToChatAction={chatbot.goToChatAction}
         />
       ) : (
         <ChatbotNavbarMode
           collapseText1={chatbot.collapseText1}
           collapseText2={chatbot.collapseText2}
           continueChatText={chatbot.continueChatText}
+          goToChatAction={chatbot.goToChatAction}
         />
       )}
     </ClinicChatbotLayout>

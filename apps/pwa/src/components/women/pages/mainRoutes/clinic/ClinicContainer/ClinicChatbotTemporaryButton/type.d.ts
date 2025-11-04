@@ -11,6 +11,7 @@ type ItemType = Pick<
   | 'title'
   | 'isAvailable'
   | 'username'
+  | 'goToChatAction'
 >;
 
 type ChatbotItem = {
