@@ -36,6 +36,12 @@ const Typography = (props: TypographyProps) => {
       break;
   }
 
+  let result = props.toEnglishNumber
+    ? toEnglishNumbers(props?.children || '')
+    : toPersianNumbers(props?.children || '');
+
+  result = result.replace(/\\n/g, '\n');
+  
   return (
     <>
       {props.children && (
@@ -50,7 +56,7 @@ const Typography = (props: TypographyProps) => {
             textAlign: props.textAlign,
           }}
         >
-          {props.toEnglishNumber ? toEnglishNumbers(props.children) : toPersianNumbers(props.children)}
+          {result}
         </p>
       )}
     </>

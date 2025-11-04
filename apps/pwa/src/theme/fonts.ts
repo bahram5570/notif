@@ -156,10 +156,10 @@ export const FONTS_IOS = {
       letterSpacing: '-0.225px',
     },
     Medium: {
-      fontWeight: 400,
+      fontWeight: 350,
       fontSize: iosSizeMatcher(13),
-      lineHeight: '160%',
-      letterSpacing: '-0.325px',
+      lineHeight: '180%',
+      letterSpacing: '-0.425px',
     },
     Small: {
       fontWeight: iosWeightMatcher(400),

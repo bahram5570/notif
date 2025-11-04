@@ -9,6 +9,7 @@ import TickIcon from '@assets/icons/tickIcon.svg';
 import Typography from '@components/ui/Typography';
 import useTheme from '@hooks/useTheme';
 
+import CustomToastProvider from './CustomToastProvider';
 import { OptionTypes, ToastTypes } from './types';
 
 export const ToastContext = createContext<ToastTypes>({ onToast: () => {} });
@@ -77,7 +78,8 @@ const ToastProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <ToastContext.Provider value={{ onToast: toastHandler }}>
-      {children}
+      <CustomToastProvider>{children}</CustomToastProvider>
+
       <ToastContainer />
     </ToastContext.Provider>
   );
