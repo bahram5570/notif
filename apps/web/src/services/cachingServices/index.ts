@@ -8,7 +8,8 @@ export const completeCacheService = async <T>(url: string) => {
     url,
     method: 'GET',
     cache: 'force-cache',
-    revalidate: CACHE_REVALIDATE_TIME,
+    // revalidate: CACHE_REVALIDATE_TIME,
+    revalidate: 30,
   });
 
   if (error) {
@@ -19,7 +20,7 @@ export const completeCacheService = async <T>(url: string) => {
       cache: 'force-cache',
     });
 
-    notFound();
+    // notFound();
   }
 
   return data;
