@@ -57,6 +57,7 @@ export const HEADER_LINKS_LIST: HEADER_LINKS_TYPES = [
       { title: 'محاسبه آنلاین سیکل قاعدگی', linkTo: '/menstrual-cycle' },
       { title: 'ابزار انتخاب اسم دختر', linkTo: '/landing/girl-name' },
       { title: 'ابزار انتخاب اسم پسر', linkTo: '/landing/boy-name' },
+      { title: 'تست ژنتیک قبل از بارداری', linkTo: '/landing/genetic-screening-before-pregnancy' },
     ],
   },
   {
