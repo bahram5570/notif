@@ -52,7 +52,6 @@ const AiChatbotHeader = ({ welcomingType, chatId, showActionMenu, disableDeleteB
           {showActionMenu && (
             <div className="flex flex-row-reverse items-center gap-2 rounded-full pl-6 py-1 pr-4 glass-card !bg-white/70 shadow-sm">
               <CustomImage src="/assets/images/mones.webp" width={32} height={32} />
-              {/* <LottieJson animationData={chatbotJson} loop={false} autoPlay={false} className="!w-9" /> */}
               <div className="flex flex-col justify-center items-end">
                 <Typography scale="Lable" size="Large">
                   مونس

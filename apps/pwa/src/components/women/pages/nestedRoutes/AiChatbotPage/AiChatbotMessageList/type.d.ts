@@ -6,6 +6,7 @@ export interface AiChatbotMessageListPropsType extends ItemType {
   isLoading: boolean;
   defaultQustionHandler: (text: string) => void;
   disableDeleteBtnHandler: (v: boolean) => void;
+  showErrorMessage: boolean;
 }
 
 export type ChatType = Pick<AiChatbotMessageListPropsType, 'chats'>['chats'][0];

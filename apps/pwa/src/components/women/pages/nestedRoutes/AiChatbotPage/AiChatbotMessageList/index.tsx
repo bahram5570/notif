@@ -1,13 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 
-import chatbotJson from '@assets/lottie/chatbot.json';
-
-import Typography from '@components/ui/Typography';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import { LottieJson } from '@lib/LottieJson';
 
 import { RoleEnum } from '../__hooks__/useGetAiChatbotData/enum';
+import AiChatbotMessageListLayout from './AiChatbotMessageListLayout';
+import AiChatbotMessageListLoading from './AiChatbotMessageListLoading';
 import AiMessage from './AiMessage';
+import ErrorMessage from './ErrorMessage';
 import UserMessage from './UserMessage';
 import { AiChatbotMessageListPropsType } from './type';
 
@@ -16,6 +15,7 @@ const AiChatbotMessageList = ({
   isLoading,
   defaultQustionHandler,
   disableDeleteBtnHandler,
+  showErrorMessage,
 }: AiChatbotMessageListPropsType) => {
   const lastItemRef = useRef<HTMLDivElement>(null);
   const hasSetInitialHeight = useRef(false);
@@ -23,7 +23,7 @@ const AiChatbotMessageList = ({
 
   useEffect(() => {
     if (!hasSetInitialHeight.current && chats.length > 0) {
-      setLastItemHeight(`calc(100vh - ${HEADER_HEIGHT + 300}px )`);
+      setLastItemHeight(`calc(100vh - ${HEADER_HEIGHT + 200}px )`);
       hasSetInitialHeight.current = true;
     }
   }, [chats.length]);
@@ -35,8 +35,8 @@ const AiChatbotMessageList = ({
   }, [chats, isLoading]);
 
   return (
-    <div>
-      <div className={`flex justify-end flex-col gap-4`} style={{ paddingBottom: HEADER_HEIGHT * 2 }}>
+    <AiChatbotMessageListLayout>
+      <>
         {chats.map((chat, index) => {
           const isLastItem = index === chats.length - 1;
 
@@ -44,7 +44,7 @@ const AiChatbotMessageList = ({
             <div
               key={index}
               style={{
-                minHeight: index === chats.length - 1 && !isLoading ? lastItemHeight : 'auto',
+                minHeight: index === chats.length - 1 && !isLoading && !showErrorMessage ? lastItemHeight : 'auto',
               }}
               className="pr-2"
               ref={index === chats.length - 1 ? lastItemRef : null}
@@ -61,23 +61,10 @@ const AiChatbotMessageList = ({
             </div>
           );
         })}
-
-        {isLoading && (
-          <div
-            ref={lastItemRef}
-            className="flex justify-start items-baseline"
-            style={{ minHeight: `calc(100dvh - 360px )` }}
-          >
-            <div className="flex items-center rounded-full !bg-white/40  glass-card   pr-2 pl-4">
-              <Typography scale="Body" size="Medium">
-                دارم فکر میکنم...
-              </Typography>
-              <LottieJson animationData={chatbotJson} loop={false} autoPlay={false} className="w-12 h-12" />
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
+        {isLoading && <AiChatbotMessageListLoading />}
+        {showErrorMessage && <ErrorMessage />}
+      </>
+    </AiChatbotMessageListLayout>
   );
 };
 

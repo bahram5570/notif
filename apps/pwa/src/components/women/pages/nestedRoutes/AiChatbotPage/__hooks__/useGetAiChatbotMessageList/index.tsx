@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { PROMPT_TEXT } from '@constants/ai.constants';
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
@@ -107,12 +108,12 @@ const useGetAiChatbotMessageList = () => {
 
   useEffect(() => {
     const queryData = aiChatMessageList?.data;
-    const promptText = sessionStorage.getItem('prompt');
+    const promptText = sessionStorage.getItem(PROMPT_TEXT);
 
     if (!queryData) return;
 
     if (promptText) {
-      sessionStorage.removeItem('prompt');
+      sessionStorage.removeItem(PROMPT_TEXT);
       submitHandler(promptText);
     }
 
@@ -127,7 +128,7 @@ const useGetAiChatbotMessageList = () => {
           like: false,
           messageId: '',
         });
-        sessionStorage.removeItem('prompt');
+        sessionStorage.removeItem(PROMPT_TEXT);
       }
 
       return combined;

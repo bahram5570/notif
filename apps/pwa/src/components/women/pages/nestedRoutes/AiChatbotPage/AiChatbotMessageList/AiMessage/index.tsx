@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { parseFormattedText } from './utils';
 
+import { SHOW_SUGGESTED_QUESTION } from '@constants/ai.constants';
 import useTheme from '@hooks/useTheme';
 
 import SuggestedQuestions from '../../Suggestedquestions';
@@ -13,11 +14,11 @@ const AiMessage = (props: AiMessagePropsType) => {
   const [isAnimating, setIsAnimating] = useState(false);
   const { typography } = useTheme();
   const formattedLine = parseFormattedText(props.text);
-  const showSuggestedQuestion = sessionStorage.getItem('showSuggestedQuestion');
+  const showSuggestedQuestion = sessionStorage.getItem(SHOW_SUGGESTED_QUESTION);
 
   const animationEndHandler = (v: boolean) => {
     setIsAnimating(v);
-    sessionStorage.setItem('showSuggestedQuestion', 'true');
+    sessionStorage.setItem(SHOW_SUGGESTED_QUESTION, 'true');
 
     if (props.messageId) {
       props.disableDeleteBtnHandler(true);
@@ -29,7 +30,7 @@ const AiMessage = (props: AiMessagePropsType) => {
   };
 
   const onClick = (text: string) => {
-    sessionStorage.removeItem('showSuggestedQuestion');
+    sessionStorage.removeItem(SHOW_SUGGESTED_QUESTION);
     props.defaultQustionHandler(text);
   };
 

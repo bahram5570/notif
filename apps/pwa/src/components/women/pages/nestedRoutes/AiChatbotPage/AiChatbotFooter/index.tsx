@@ -10,7 +10,7 @@ const AiChatbotFooter = (props: AiChatbotFooterPropsType) => {
 
   return (
     <div
-      className="fixed w-full mx-auto left-0 right-0 bottom-0   z-30"
+      className="fixed w-full mx-auto left-0 right-0 bottom-0   z-30 translate-y-0"
       style={{
         maxWidth: MAX_SCREEN_WIDTH,
       }}

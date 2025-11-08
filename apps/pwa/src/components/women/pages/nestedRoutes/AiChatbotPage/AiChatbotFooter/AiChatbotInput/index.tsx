@@ -6,6 +6,7 @@ import { toPersianNumbers } from '@utils/numbers';
 
 import style from './styles.module.css';
 
+import { SHOW_SUGGESTED_QUESTION } from '@constants/ai.constants';
 import useTheme from '@hooks/useTheme';
 
 import { AiChatbotInputPropsType } from './type';
@@ -21,7 +22,7 @@ const AiChatbotInput = ({ hintPromptText, isLoading, submitHandler, defaultQusti
   const clickHandler = () => {
     if (!chatText.trim()) return;
     if (!isLoading) {
-      sessionStorage.removeItem('showSuggestedQuestion');
+      sessionStorage.removeItem(SHOW_SUGGESTED_QUESTION);
       submitHandler(chatText);
       setChatText('');
     }
