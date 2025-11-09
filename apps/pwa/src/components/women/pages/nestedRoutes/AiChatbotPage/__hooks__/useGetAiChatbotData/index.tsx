@@ -29,7 +29,6 @@ const useGetAiChatbotData = () => {
   useEffect(() => {
     if (data) {
       newQuery({ queryKey: ['historyAiChat'], payload: data });
-
       newQuery({ queryKey: ['AiChatMessageList'], payload: { data: data.chats } });
     }
   }, [data]);

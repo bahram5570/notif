@@ -16,6 +16,7 @@ const AiChatbotMessageList = ({
   defaultQustionHandler,
   disableDeleteBtnHandler,
   showErrorMessage,
+  onErrorHandler,
 }: AiChatbotMessageListPropsType) => {
   const lastItemRef = useRef<HTMLDivElement>(null);
   const hasSetInitialHeight = useRef(false);
@@ -39,12 +40,13 @@ const AiChatbotMessageList = ({
       <>
         {chats.map((chat, index) => {
           const isLastItem = index === chats.length - 1;
+          const minHeight = isLastItem && !isLoading && !showErrorMessage ? lastItemHeight : 'auto';
 
           return (
             <div
               key={index}
               style={{
-                minHeight: index === chats.length - 1 && !isLoading && !showErrorMessage ? lastItemHeight : 'auto',
+                minHeight,
               }}
               className="pr-2"
               ref={index === chats.length - 1 ? lastItemRef : null}
@@ -62,7 +64,7 @@ const AiChatbotMessageList = ({
           );
         })}
         {isLoading && <AiChatbotMessageListLoading />}
-        {showErrorMessage && <ErrorMessage />}
+        {showErrorMessage && <ErrorMessage onErrorHandler={onErrorHandler} />}
       </>
     </AiChatbotMessageListLayout>
   );

@@ -14,8 +14,13 @@ import useSubmit from './__hooks__/useSubmit';
 
 const AiChatbotPage = () => {
   const { isLoading, aiChatData } = useGetAiChatbotData();
-  const { addChatHandler, aiChatbotMessageList, updateChatHandler, isLoading: loading } = useGetAiChatbotMessageList();
-  const { isLoading: newLoading, submitHandler, showErrorMessage } = useSubmit({ updateChatHandler, addChatHandler });
+  const { addChatHandler, aiChatbotMessageList, updateChatHandler } = useGetAiChatbotMessageList();
+  const {
+    isLoading: newLoading,
+    submitHandler,
+    showErrorMessage,
+    onErrorHandler,
+  } = useSubmit({ updateChatHandler, addChatHandler });
   const [disableDeleteBtn, setDisableDeleteBtn] = useState(false);
 
   const defaultQustionHandler = (text: string) => {
@@ -47,6 +52,7 @@ const AiChatbotPage = () => {
             welcomingType={WelcomingTypeEnum.ChatbotMessage}
             showActionMenu
             disableDeleteBtn={disableDeleteBtn}
+            chatTitle={aiChatData.chatTitle}
           />
           {!hasChatData && (
             <>
@@ -63,17 +69,18 @@ const AiChatbotPage = () => {
           {hasChatData && (
             <AiChatbotMessageList
               chats={aiChatbotMessageList}
-              isLoading={newLoading || loading}
+              isLoading={newLoading}
               defaultQustionHandler={defaultQustionHandler}
               disableDeleteBtnHandler={disableDeleteBtnHandler}
               showErrorMessage={showErrorMessage}
+              onErrorHandler={onErrorHandler}
             />
           )}
 
           <AiChatbotFooter
             {...aiChatData}
             submitHandler={submitHandler}
-            isLoading={newLoading || loading}
+            isLoading={newLoading}
             hasChatData={hasChatData}
           />
         </>

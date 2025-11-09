@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
+import { PROMPT_TEXT } from '@constants/ai.constants';
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import useEventSource from '../useEventSource';
-import { RoleEnum } from '../useGetAiChatbotData/enum';
-import { AiChatbotDataResponseType } from '../useGetAiChatbotData/type';
+import { ChatItemType } from '../useGetAiChatbotData/type';
 import { NewMessageResponse, UseSubmitPropsType } from './type';
 
 let messageId: string;
@@ -18,7 +18,7 @@ const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) =>
   const itemIdData = getQueryParams('itemId');
   const categoryIdData = getQueryParams('categoryId');
 
-  const aiChatData = getQuery<AiChatbotDataResponseType>({ queryKey: ['historyAiChat'] });
+  const aiChatMessageList = getQuery<{ data: ChatItemType[] }>({ queryKey: ['AiChatMessageList'] });
 
   const { streamHandler, messages } = useEventSource({
     handelLoading: setStreamLoading,
@@ -29,7 +29,7 @@ const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) =>
     updateQuery({
       queryKey: ['historyAiChat'],
       payload: {
-        ...aiChatData,
+        chats: aiChatMessageList?.data,
         isActive: v.isActive,
         activeRating: v.activeRating,
         deactiveMessage: v.deactiveMessage,
@@ -50,7 +50,8 @@ const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) =>
 
   const submitHandler = (prompt: string) => {
     if (showErrorMessage) setShowErrorMessage(false);
-    addChatHandler({ role: RoleEnum.User, text: prompt });
+    addChatHandler(prompt);
+
     const payload = {
       promptCategoryId: categoryIdData || '',
       promptItemId: itemIdData || '',
@@ -59,6 +60,22 @@ const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) =>
 
     callApi(payload);
   };
+
+  const onErrorHandler = () => {
+    setShowErrorMessage(false);
+    streamHandler({ id: messageId });
+    setStreamLoading(true);
+  };
+
+  useEffect(() => {
+    if (!aiChatMessageList) return;
+
+    const promptText = sessionStorage.getItem(PROMPT_TEXT);
+
+    if (promptText) {
+      submitHandler(promptText);
+    }
+  }, [aiChatMessageList]);
 
   useEffect(() => {
     updateChatHandler(messages, messageId);
@@ -70,7 +87,7 @@ const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) =>
 
   const isLoading = streamLoading;
 
-  return { submitHandler, isLoading, showErrorMessage };
+  return { submitHandler, isLoading, showErrorMessage, onErrorHandler };
 };
 
 export default useSubmit;

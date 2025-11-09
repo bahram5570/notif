@@ -4,10 +4,10 @@ import Button from '@components/ui/Button';
 import Typography from '@components/ui/Typography';
 import useTheme from '@hooks/useTheme';
 
-const ErrorMessage = () => {
-  const { colors } = useTheme();
+import { ErrorMessagePropsType } from './type';
 
-  const onError = () => {};
+const ErrorMessage = ({ onErrorHandler }: ErrorMessagePropsType) => {
+  const { colors } = useTheme();
 
   return (
     <div style={{ minHeight: `calc(100dvh - 360px )` }} className="mr-auto">
@@ -22,9 +22,16 @@ const ErrorMessage = () => {
           ظاهرا ارتباط با ایمپو قطع شده. میتونی دوباره تلاش کنی.
         </Typography>
 
-        <Button size="medium" variant="fill" fullWidth color="surface" onClick={onError} className="!w-fit  py-3">
+        <Button
+          size="medium"
+          variant="fill"
+          fullWidth
+          color="surface"
+          onClick={onErrorHandler}
+          className="!w-fit  py-3"
+        >
           <div className="flex flex-row-reverse w-full">
-            <RefreshIcon />
+            {/* <RefreshIcon /> */}
             <Typography scale="Lable" size="Medium" color="Surface_InverseSurface">
               تلاش مجدد
             </Typography>
