@@ -9,13 +9,18 @@ import { WidgetHintCardGeneratorProps } from './types';
 
 const WidgetHintCardGenerator = (props: WidgetHintCardGeneratorProps) => {
   const { colors } = useTheme();
-  const { ref } = useIsSeen({ isSeen: props.isSeen, minReadingDuration: props.minReadingDuration, id: props.id });
+  const { ref } = useIsSeen({
+    id: props.id,
+    isSeen: props.isSeen,
+    isSelected: props.isSelected,
+    minReadingDuration: props.minReadingDuration,
+  });
 
   return (
     <div
       ref={ref}
-      style={{ borderColor: colors.Neutral_Surface }}
-      className={`w-full flex flex-col items-end gap-1 ${props.isLastChild ? '' : 'border-b-[1px] pb-3'}`}
+      className="w-full h-full flex flex-col gap-1"
+      style={{ borderColor: colors.Neutral_Surface, direction: 'ltr' }}
     >
       <WidgetHintCardGeneratorWriterInfo
         writerName={props.writerName}
@@ -23,12 +28,18 @@ const WidgetHintCardGenerator = (props: WidgetHintCardGeneratorProps) => {
         writerSpeciality={props.writerSpeciality}
       />
 
-      <Typography scale="Body" size="Medium" color="Neutral_OnBackground">
+      <Typography scale="Body" size="Medium" color="Neutral_OnBackground" style={{ direction: 'rtl', width: '100%' }}>
         {props.text}
       </Typography>
 
-      <div className="w-full flex items-center gap-2">
-        <WidgetHintCardBookmark isBookmarked={props.isBookmarked} id={props.id} />
+      <div className="w-full flex items-center gap-2 mt-auto">
+        <div
+          className="w-fit aspect-square rounded-full border-[1px]"
+          style={{ borderColor: colors.Surface_OutlineVariant }}
+        >
+          <WidgetHintCardBookmark isBookmarked={props.isBookmarked} id={props.id} />
+        </div>
+
         <WidgetHintCardLinkTo externalLink={props.externalLink} internalLink={props.internalLink} />
       </div>
     </div>

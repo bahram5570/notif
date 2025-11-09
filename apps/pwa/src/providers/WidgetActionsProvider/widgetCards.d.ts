@@ -720,20 +720,20 @@ type WomanPairProgramItemType = {
 export type WidgetWomanPairProgramTypes = IsPdfDownloadingTypes & {
   type: WidgetsEnum.WomanPairProgram;
   data: {
+    items: WomanPairProgramItemType[];
     backgroundColour: string;
     description: string;
-    items: WomanPairProgramItemType[];
     title: string;
   };
 };
 
 // # ----------------------------------------------------------
 
-type ShortcutItemType = {
-  action: ActionTypes;
-  icon: string;
+export type ShortcutItemType = {
   semanticTitle: string;
+  action: ActionTypes;
   title: string;
+  icon: string;
 };
 
 export type ShortcutWidgetTypes = IsPdfDownloadingTypes & {

@@ -11,17 +11,15 @@ const WidgetHintCardWriterInfo = ({ writerSpeciality, writerName, writerIcon }: 
 
   return (
     <div className="w-full flex items-center gap-2" dir="rtl">
-      <div className="relative w-11 h-11">
+      <div className="relative w-11 h-11 min-w-11 min-h-11">
         <CustomImage
-          width={44}
-          height={44}
           src={writerIcon}
           objectFit="contain"
-          // className="rounded-full border-[1px]"
-          // style={{ borderColor: colors.PrimaryWoman_Primary }}
+          className="rounded-full border-[1px]"
+          style={{ borderColor: colors.PrimaryWoman_Primary }}
         />
 
-        {/* <BlueTickIcon className="absolute bottom-0 -left-1 w-5 h-auto z-10" /> */}
+        <BlueTickIcon className="absolute bottom-0 -left-1 w-5 h-auto z-10" />
       </div>
 
       <div className="flex flex-col">

@@ -16,7 +16,7 @@ const useIsSeen = (props: UseIsSeenProps) => {
 
   useEffect(() => {
     timer.current = setInterval(() => {
-      if (!isSeen && inView) {
+      if (!isSeen && inView && props.isSelected) {
         if (counter > 0) {
           setCounter((state) => state - 1);
         } else {
@@ -31,7 +31,7 @@ const useIsSeen = (props: UseIsSeenProps) => {
     return () => {
       clearInterval(timer.current);
     };
-  }, [counter, isSeen, inView, timer.current]);
+  }, [counter, isSeen, inView, props.isSelected, timer.current]);
 
   return { ref };
 };

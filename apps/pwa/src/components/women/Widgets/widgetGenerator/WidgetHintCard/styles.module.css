@@ -1,0 +1,7 @@
+.wrapper :global(.swiper-pagination) {
+  bottom: -6px;
+}
+
+.wrapper :global(.swiper-pagination-bullet-active) {
+  background-color: #353535;
+}
