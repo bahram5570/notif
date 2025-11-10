@@ -24,7 +24,7 @@ const AiChatbotMessageList = ({
 
   useEffect(() => {
     if (!hasSetInitialHeight.current && chats.length > 0) {
-      setLastItemHeight(`calc(100vh - ${HEADER_HEIGHT + 200}px )`);
+      setLastItemHeight(`calc(100vh - ${HEADER_HEIGHT + 250}px )`);
       hasSetInitialHeight.current = true;
     }
   }, [chats.length]);

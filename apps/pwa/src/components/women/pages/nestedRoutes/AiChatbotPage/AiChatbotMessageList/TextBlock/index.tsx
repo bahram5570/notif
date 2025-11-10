@@ -12,7 +12,6 @@ const TextBlock = ({
   onAnimationStart,
   className,
   style,
-  dir,
 }: TextBlockProps) => {
   const { typography } = useTheme();
 
@@ -22,7 +21,6 @@ const TextBlock = ({
 
   return (
     <p
-      dir={dir}
       className={`${isAnimated ? 'opacity-0 animate-fade-in' : ''} ${className}`}
       style={{
         animationDelay: `${animationDelay}s`,

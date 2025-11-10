@@ -9,13 +9,18 @@ const UserMessage = (props: UserMessagePropsType) => {
 
   return (
     <div
-      className="!bg-white/50 ml-auto glass-card max-w-fit mt-8 py-4"
+      className="!bg-white/50 ml-auto glass-card max-w-fit mt-8 py-4 flex justify-end items-end"
       style={{
         border: `0.25px solid ${colors.Grey_300}`,
         borderRadius: isMultiLine ? '100px 32px 4px 100px' : '100px 100px 4px 100px',
       }}
     >
-      <TextBlock text={props.text} isAnimated={props.isAnswered} className=" px-4" />
+      <TextBlock
+        text={props.text}
+        isAnimated={props.isAnswered}
+        className=" px-4 text-start"
+        style={{ direction: 'rtl' }}
+      />
     </div>
   );
 };

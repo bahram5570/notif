@@ -6,5 +6,4 @@ export type TextBlockProps = {
   onAnimationStart?: () => void;
   className?: string;
   style?: React.CSSProperties;
-  dir?: 'rtl' | 'ltr';
 };
