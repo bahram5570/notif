@@ -1,3 +1,5 @@
+'use client';
+
 import CustomTypography from '@components/ui/CustomTypography';
 import { COLORS_LIST } from '@theme/colors';
 

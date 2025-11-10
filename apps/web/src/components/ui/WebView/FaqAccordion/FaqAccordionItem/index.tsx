@@ -13,7 +13,7 @@ const FaqAccordionItem = ({ question, answer, index }: FaqAccordionItemPropsType
 
   return (
     <div className="w-full ">
-      <button onClick={() => setIsOpen(!isOpen)} className="flex justify-between text-justify w-full py-3 gap-1">
+      <button onClick={() => setIsOpen(!isOpen)} className="flex justify-between text-right w-full py-3 gap-1">
         <CustomTypography fontSize="Lable_Medium">{`${questionIndex}.${question}`}</CustomTypography>
 
         <div className="w-6 h-6 ">
@@ -25,7 +25,7 @@ const FaqAccordionItem = ({ question, answer, index }: FaqAccordionItemPropsType
       </button>
 
       <div
-        className={`overflow-hidden transition-all duration-300 ${
+        className={`overflow-hidden transition-all duration-300 px-1 ${
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >

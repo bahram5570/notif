@@ -1,10 +1,9 @@
-'use client';
-
 import TickIcon from '@assets/icons/tick.svg';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 import FaqAccordion from '@components/ui/WebView/FaqAccordion';
+import StorySection from '@components/ui/WebView/StorySection';
 import { COLORS_LIST } from '@theme/colors';
 
 import AddSympathySection from './AddSympathySection';
@@ -13,7 +12,7 @@ import { FAG_LIST } from './constants';
 const SympathyContainer = () => {
   return (
     <div className="max-w-[640px] mx-auto">
-      <div className="flex flex-col gap-7 pb-4">
+      <div className="flex flex-col ">
         <div className="bg-[url('/assets/images/webView/sympathy/hamdel-bg.webp')]  h-96 bg-cover bg-no-repeat flex justify-center items-center">
           <div className="flex flex-col gap-4 px-4">
             <div className="flex flex-col gap-2">
@@ -52,7 +51,7 @@ const SympathyContainer = () => {
           </div>
         </div>
 
-        <div className="px-4 flex flex-col gap-5">
+        <div className="px-4 flex flex-col gap-5 py-10" style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}>
           <div>
             <CustomTypography fontSize="Title_Small" color="Neutral_OnBackground">
               چیزایی که پارتنرت توی همدلی میبینه 👀
@@ -65,12 +64,7 @@ const SympathyContainer = () => {
               className="w-full h-auto"
             />
           </div>
-          <div className="flex flex-col  gap-3">
-            <CustomTypography fontSize="Title_Small" color="Neutral_OnBackground">
-              کشف همدلی ایمپو ✨
-            </CustomTypography>
-            <div className=" rounded-xl" style={{ backgroundColor: COLORS_LIST.Neutral_Background }}></div>
-          </div>
+          <StorySection title=" کشف همدلی ایمپو ✨" />
           <FaqAccordion faqList={FAG_LIST} title="  سوالات پرتکرار درباره «همدل ایمپو»" />
           <AddSympathySection />
         </div>
