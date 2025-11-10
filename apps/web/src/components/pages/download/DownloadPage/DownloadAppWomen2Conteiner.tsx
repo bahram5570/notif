@@ -13,21 +13,42 @@ const DownloadAppWomen2Conteiner = () => {
   const { womanDirectApplcationalink } = useDownloadLinks();
 
   const Link1 = (
-    <LinkGenerator
-      title="دانلود مستقیم"
-      directId="women-android-direct"
-      href={womanDirectApplcationalink}
-      Icon={<AndroidIcon className="w-6 min-w-6 h-auto" style={{ fill: COLORS_LIST.White }} />}
-    />
+    <div className="w-full" id="download_apk_top">
+      <LinkGenerator
+        title="دانلود مستقیم"
+        directId="women-android-direct"
+        href={womanDirectApplcationalink}
+        Icon={<AndroidIcon className="w-6 min-w-6 h-auto" style={{ fill: COLORS_LIST.White }} />}
+      />
+    </div>
   );
 
   const Link2 = (
-    <LinkGenerator
-      directId="women-ios-direct"
-      href={APP_STORE_LINK_WOMEN_URL}
-      Icon={<AppStoreDownloadIcon className="w-[100px] h-auto" style={{ fill: COLORS_LIST.White }} />}
-    />
+    <div className="w-full" id="download_appstore_top">
+      <LinkGenerator
+        directId="women-ios-direct"
+        href={APP_STORE_LINK_WOMEN_URL}
+        Icon={<AppStoreDownloadIcon className="w-[100px] h-auto" style={{ fill: COLORS_LIST.White }} />}
+      />
+    </div>
   );
+
+  // const Link1 = (
+  //   <LinkGenerator
+  //     title="دانلود مستقیم"
+  //     directId="women-android-direct"
+  //     href={womanDirectApplcationalink}
+  //     Icon={<AndroidIcon className="w-6 min-w-6 h-auto" style={{ fill: COLORS_LIST.White }} />}
+  //   />
+  // );
+
+  // const Link2 = (
+  //   <LinkGenerator
+  //     directId="women-ios-direct"
+  //     href={APP_STORE_LINK_WOMEN_URL}
+  //     Icon={<AppStoreDownloadIcon className="w-[100px] h-auto" style={{ fill: COLORS_LIST.White }} />}
+  //   />
+  // );
 
   return <DownloadAppWomen2 Link1={Link1} Link2={Link2} />;
 };
