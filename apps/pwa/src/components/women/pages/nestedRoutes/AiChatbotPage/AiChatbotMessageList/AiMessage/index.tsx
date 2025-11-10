@@ -49,7 +49,7 @@ const AiMessage = (props: AiMessagePropsType) => {
             animationStartHandler={animationStartHandler}
           />
         ) : (
-          <TextBlock text={formattedLine} isAnimated={props.isAnswered} />
+          <TextBlock text={formattedLine} isAnimated={props.isAnswered} style={{ direction: 'rtl' }} />
         )}
         {!isAnimating && <AiMessageActions {...props} />}
       </div>
