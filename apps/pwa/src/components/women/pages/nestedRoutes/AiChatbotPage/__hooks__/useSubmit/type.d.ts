@@ -1,4 +1,5 @@
 import { AiChatbotDataResponseType } from '../useGetAiChatbotData/type';
+import { AddChatHandlerType, UpdateChatHandlerType } from '../useGetAiChatbotMessageList/type';
 
 export type ItemType = Pick<
   AiChatbotDataResponseType,
@@ -10,6 +11,6 @@ export interface NewMessageResponse extends ItemType {
 }
 
 export type UseSubmitPropsType = {
-  updateChatHandler: (messages: string, messageId: string) => void;
-  addChatHandler: (chat: ChatItemType) => void;
+  updateChatHandler: UpdateChatHandlerType;
+  addChatHandler: AddChatHandlerType;
 };

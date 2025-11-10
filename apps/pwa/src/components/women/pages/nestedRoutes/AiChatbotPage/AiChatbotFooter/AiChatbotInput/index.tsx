@@ -6,11 +6,12 @@ import { toPersianNumbers } from '@utils/numbers';
 
 import style from './styles.module.css';
 
+import { SHOW_SUGGESTED_QUESTION } from '@constants/ai.constants';
 import useTheme from '@hooks/useTheme';
 
 import { AiChatbotInputPropsType } from './type';
 
-const AiChatbotInput = ({ hintPromptText, isLoading, submitHandler, defaultQustion }: AiChatbotInputPropsType) => {
+const AiChatbotInput = ({ hintPromptText, isLoading, submitHandler }: AiChatbotInputPropsType) => {
   const { colors, typography } = useTheme();
   const [chatText, setChatText] = useState('');
 
@@ -21,7 +22,7 @@ const AiChatbotInput = ({ hintPromptText, isLoading, submitHandler, defaultQusti
   const clickHandler = () => {
     if (!chatText.trim()) return;
     if (!isLoading) {
-      sessionStorage.removeItem('showSuggestedQuestion');
+      sessionStorage.removeItem(SHOW_SUGGESTED_QUESTION);
       submitHandler(chatText);
       setChatText('');
     }
@@ -34,14 +35,8 @@ const AiChatbotInput = ({ hintPromptText, isLoading, submitHandler, defaultQusti
     }
   };
 
-  useEffect(() => {
-    if (defaultQustion) {
-      setChatText(defaultQustion);
-    }
-  }, [defaultQustion]);
-
   return (
-    <div className="w-full  flex justify-end items-center relative  rounded-t-3xl p-4 py-2 z-50 ">
+    <div className="w-full  flex justify-end items-center relative  rounded-t-3xl px-4 pt-2 pb-0 z-50 ">
       <textarea
         placeholder={hintPromptText}
         className={` rounded-full w-full h-14 p-4 pl-14 outline-none resize-none  glass-card !bg-white/60 shadow-sm ${style.scroller} `}

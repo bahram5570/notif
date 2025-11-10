@@ -1,3 +1,4 @@
+import { PROMPT_TEXT } from '@constants/ai.constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import { useRouter } from 'next/navigation';
 
@@ -11,10 +12,10 @@ const useSubmit = () => {
 
     pageNavigationHandler({
       showProgressBar: false,
-      id: 'SelectedDayNote',
+      id: 'aiChatbotLink',
       linkTo: '/protected/aiChatbot',
     });
-    sessionStorage.setItem('prompt', prompt);
+    sessionStorage.setItem(PROMPT_TEXT, prompt);
   };
 
   return { submitHandler, isLoading };

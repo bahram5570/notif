@@ -1,28 +1,14 @@
 import { parseFormattedText } from '../utils';
-import { toPersianNumbers } from '@utils/numbers';
 
-import useTheme from '@hooks/useTheme';
-
+import TextBlock from '../../TextBlock';
 import { WordFadeInTextPropsType } from './type';
 
 const WordFadeInText = ({ animationEndHandler, text, animationStartHandler }: WordFadeInTextPropsType) => {
-  const { typography } = useTheme();
   const lines = text.split(/\\n|\n/);
   let globalWordIndex = 0;
 
-  function decodeUnicode(str: string) {
-    return str.replace(/\\u([\dA-F]{4})/gi, (_, g1) => String.fromCharCode(parseInt(g1, 16))).replace(/\\"/g, '"');
-  }
-
-  const fullPlainText = decodeUnicode(text).replace(/\r\n/g, '\n');
-
-  function handleCopy(e: React.ClipboardEvent) {
-    e.preventDefault();
-    e.clipboardData.setData('text/plain', fullPlainText);
-  }
-
   return (
-    <div dir="rtl" className="text-right mr-3" onCopy={handleCopy}>
+    <div dir="rtl" className="text-right ">
       {lines.map((line, lineIndex) => {
         const formattedLine = parseFormattedText(line);
 
@@ -41,19 +27,14 @@ const WordFadeInText = ({ animationEndHandler, text, animationStartHandler }: Wo
               globalWordIndex += 1;
 
               return (
-                <p
+                <TextBlock
+                  text={part}
+                  isAnimated={true}
                   key={`${lineIndex}-${i}`}
-                  className="opacity-0 animate-fade-in"
-                  style={{
-                    animationDelay: `${delay}s`,
-                    display: 'inline',
-                    ...typography.Body.Medium,
-                  }}
                   onAnimationEnd={isLast ? () => animationEndHandler(false) : undefined}
                   onAnimationStart={animationStartHandler}
-                >
-                  {decodeUnicode(part).replace(/\n/g, '<br/>')}
-                </p>
+                  animationDelay={delay}
+                />
               );
             })}
           </div>

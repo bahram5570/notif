@@ -1,6 +1,4 @@
-import { toPersianNumbers } from '@utils/numbers';
-
-import { ISITALIC, IS_BOLD, IS_BOLD_WITH_ITALIC } from '../../../AiChatbotContainer/constant';
+import { ISITALIC, IS_BOLD, IS_BOLD_WITH_ITALIC } from './constant';
 
 export const parseFormattedText = (text: string): string => {
   text = text.replace(IS_BOLD_WITH_ITALIC, (_, p1) => `<strong><em>${p1}</em></strong>`);

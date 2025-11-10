@@ -6,4 +6,5 @@ export interface AiChatbotHeaderPropsType extends ItemType {
   chatId?: string;
   showActionMenu: boolean;
   disableDeleteBtn?: boolean;
+  chatTitle?: string;
 }

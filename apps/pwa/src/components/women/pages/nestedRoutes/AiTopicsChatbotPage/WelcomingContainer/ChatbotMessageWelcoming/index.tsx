@@ -1,6 +1,7 @@
 import AiIcon from '@assets/icons/aibg.svg';
 
 import Typography from '@components/ui/Typography';
+import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import { ChatbotMessageWelcomingPropsType } from './type';
 
@@ -16,7 +17,7 @@ const ChatbotMessageWelcoming = ({
   };
 
   return (
-    <div className=" absolute w-full " style={{ top }}>
+    <div className=" absolute w-full mx-auto" style={{ top, maxWidth: MAX_SCREEN_WIDTH }}>
       <div className=" relative  w-full h-full">
         <AiIcon className="w-full " />
         <div className="px-6 flex flex-col gap-6  absolute top-10  pt-9 w-full">

@@ -1,83 +1,44 @@
 import { useEffect, useState } from 'react';
 
-import useApi from '@hooks/useApi';
+import { PROMPT_TEXT } from '@constants/ai.constants';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
-import useEventSource from '../useEventSource';
 import { RoleEnum } from '../useGetAiChatbotData/enum';
-import { AiChatbotDataResponseType, ChatItemType } from '../useGetAiChatbotData/type';
-import { NewMessageResponse } from '../useSubmit/type';
+import { ChatItemType } from '../useGetAiChatbotData/type';
+import { AddChatHandlerType, UpdateChatHandlerType } from './type';
 
-let messageId: string;
 const useGetAiChatbotMessageList = () => {
   const [aiChatbotMessageList, setAiChatbotMessageList] = useState<ChatItemType[]>([]);
   const { getQuery, updateQuery } = useCustomReactQuery(['AiChatMessageList']);
 
   const aiChatMessageList = getQuery<{ data: ChatItemType[] }>({ queryKey: ['AiChatMessageList'] });
-  const [streamLoading, setStreamLoading] = useState(false);
-  const [showErrorMessage, setShowErrorMessage] = useState(false);
 
-  const { getQueryParams } = useQueryParamsHandler();
-  const itemIdData = getQueryParams('itemId');
-  const categoryIdData = getQueryParams('categoryId');
-
-  const aiChatData = getQuery<AiChatbotDataResponseType>({ queryKey: ['historyAiChat'] });
-
-  const { streamHandler, messages } = useEventSource({
-    handelLoading: setStreamLoading,
-    errorHandler: setShowErrorMessage,
-  });
-
-  const successHandler = (v: NewMessageResponse) => {
-    updateQuery({
-      queryKey: ['historyAiChat'],
-      payload: {
-        ...aiChatData,
-        isActive: v.isActive,
-        activeRating: v.activeRating,
-        deactiveMessage: v.deactiveMessage,
-        title: v.title,
-        deactiveButton: v.deactiveButton,
-      },
-    });
-    messageId = v.messageId;
-    streamHandler({ id: v.messageId });
-  };
-
-  const { callApi, isLoading: loading } = useApi<NewMessageResponse>({
-    method: 'POST',
-    api: 'feature/ai/v2/sendstreammessage',
-    onSuccess: (v: NewMessageResponse) => successHandler(v),
-    onError: () => setStreamLoading(false),
-  });
-
-  const submitHandler = (prompt: string) => {
-    if (showErrorMessage) setShowErrorMessage(false);
-
-    const payload = {
-      promptCategoryId: '',
-      promptItemId: '',
-      prompt,
+  const addChatHandler: AddChatHandlerType = (chat) => {
+    const newUserChat: ChatItemType = {
+      dislike: false,
+      like: false,
+      messageId: '',
+      role: RoleEnum.User,
+      text: chat,
+      isAnswered: false,
     };
 
-    callApi(payload);
+    const queryData = aiChatMessageList?.data;
+
+    if (!queryData) return;
+    let combined = [...queryData];
+    const payload = combined.push(newUserChat);
+
+    updateQuery({ queryKey: ['AiChatMessageList'], payload: { data: combined } });
+    sessionStorage.removeItem(PROMPT_TEXT);
   };
 
-  useEffect(() => {
-    updateChatHandler(messages, messageId);
-  }, [messages]);
+  const updateChatHandler: UpdateChatHandlerType = (messages, messageId) => {
+    const queryData = aiChatMessageList?.data;
 
-  useEffect(() => {
-    if (loading) setStreamLoading(true);
-  }, [loading]);
+    if (!queryData) return;
+    const updatedChats = [...queryData];
 
-  const addChatHandler = (chat: ChatItemType) => {
-    setAiChatbotMessageList([...aiChatbotMessageList, chat]);
-  };
-
-  const updateChatHandler = (messages: string, messageId: string) => {
-    const updatedChats = [...aiChatbotMessageList];
     const lastChat = updatedChats[updatedChats.length - 1];
 
     if (lastChat && lastChat.role === RoleEnum.Assistant) {
@@ -95,8 +56,7 @@ const useGetAiChatbotMessageList = () => {
         messageId,
       });
     }
-
-    setAiChatbotMessageList(updatedChats);
+    updateQuery({ queryKey: ['AiChatMessageList'], payload: { data: updatedChats } });
   };
 
   useEffect(() => {
@@ -105,38 +65,7 @@ const useGetAiChatbotMessageList = () => {
     }
   }, [aiChatMessageList]);
 
-  useEffect(() => {
-    const queryData = aiChatMessageList?.data;
-    const promptText = sessionStorage.getItem('prompt');
-
-    if (!queryData) return;
-
-    if (promptText) {
-      sessionStorage.removeItem('prompt');
-      submitHandler(promptText);
-    }
-
-    setAiChatbotMessageList((prev) => {
-      let combined = [...queryData];
-
-      if (promptText && !combined.some((c) => c.text === promptText && c.role === RoleEnum.User)) {
-        combined.push({
-          text: promptText,
-          role: RoleEnum.User,
-          dislike: false,
-          like: false,
-          messageId: '',
-        });
-        sessionStorage.removeItem('prompt');
-      }
-
-      return combined;
-    });
-  }, [aiChatMessageList]);
-
-  const isLoading = streamLoading;
-
-  return { aiChatbotMessageList, updateChatHandler, addChatHandler, isLoading };
+  return { aiChatbotMessageList, updateChatHandler, addChatHandler };
 };
 
 export default useGetAiChatbotMessageList;

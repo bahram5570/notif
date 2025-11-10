@@ -5,7 +5,6 @@ import chatbotJson from '@assets/lottie/chatbot.json';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { LottieJson } from '@lib/LottieJson';
 
-import AiChatbotHeader from '../AiChatbotHeader';
 import ChatbotMessageWelcoming from './ChatbotMessageWelcoming';
 import TopicsChatbotWelcoming from './TopicsChatbotWelcoming';
 import { WelcomingTypeEnum } from './enum';
@@ -20,7 +19,7 @@ const WelcomingContainer = (props: WelcomingContainerPropsType) => {
     const updateTop = () => {
       if (!lottieRef.current) return;
       const rect = lottieRef.current.getBoundingClientRect();
-      setTop(rect.height * 0.37);
+      setTop(rect.height * 0.7);
     };
 
     updateTop();
@@ -45,19 +44,19 @@ const WelcomingContainer = (props: WelcomingContainerPropsType) => {
       break;
   }
 
-  const WrappedWelcoming = CurrentWelcoming ? <div className="pt-6">{CurrentWelcoming}</div> : null;
+  const WrappedWelcoming = CurrentWelcoming ? <>{CurrentWelcoming}</> : null;
 
   return (
     <div
       style={{
         background:
-          'linear-gradient(360deg, #D7BAFD -15.17%, rgba(194, 211, 251, 0.8) 30.1%, rgba(199, 234, 241, 0.5) 75.9%, rgba(230, 240, 232, 0.5) 104.51%)',
+          'linear-gradient(360deg, #D7BAFD -15.17%, rgba(194, 211, 251, 0.8) 30.1%, rgba(199, 234, 241, 0.5) 75.9%, rgba(230, 240, 232, 0.5) 104.51%) ',
       }}
-      className="min-h-screen relative"
+      className="flex flex-col min-h-[100dvh] overflow-y-auto"
     >
       <>
-        <div style={{ paddingTop: HEADER_HEIGHT - 20 }} className="min-h-[100dvh]">
-          <div ref={lottieRef} className="h-dvh ">
+        <div style={{ paddingTop: HEADER_HEIGHT - 20 }} className="h-full relative">
+          <div ref={lottieRef} className="flex-1 flex items-center justify-center overflow-hidden">
             <LottieJson animationData={chatbotJson} loop={true} autoPlay={true} width={500} />
           </div>
 

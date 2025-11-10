@@ -12,7 +12,7 @@ const TopicCardItem = (props: TopicCardItemPropsType) => {
   };
 
   return (
-    <div className="glass-card !bg-white/40 shadow-sm rounded-3xl p-4 flex flex-col gap-3 relative">
+    <div className="glass-card !bg-white/40 shadow-sm rounded-3xl p-4 flex flex-col h-full gap-3 relative">
       <div className="flex flex-col items-end gap-2">
         <div className="flex justify-start items-start w-full">
           <CustomImage src={props.icon} height={40} width={40} />

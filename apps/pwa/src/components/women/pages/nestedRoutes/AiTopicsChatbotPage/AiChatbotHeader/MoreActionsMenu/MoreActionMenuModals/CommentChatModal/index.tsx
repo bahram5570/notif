@@ -8,8 +8,9 @@ import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useTheme from '@hooks/useTheme';
 
 import useSubmit from './__hooks__/useSubmit';
+import { CommentChatModalPropsType } from './type';
 
-const CommentChatModal = ({ onCloseModal, chatId }: { onCloseModal: () => void; chatId: string | undefined }) => {
+const CommentChatModal = ({ onCloseModal, chatId }: CommentChatModalPropsType) => {
   const { colors, typography } = useTheme();
   const { isLoading, submitHandler } = useSubmit();
   const [description, setDescription] = useState<string>('');

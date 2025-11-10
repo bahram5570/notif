@@ -7,9 +7,10 @@ import Typography from '@components/ui/Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useTheme from '@hooks/useTheme';
 
+import { CommenPropsType } from '../type';
 import useSubmit from './__hooks__/useSubmit';
 
-const SuggestionTopicChatModal = ({ onCloseModal }: { onCloseModal: () => void }) => {
+const SuggestionTopicChatModal = ({ onCloseModal }: CommenPropsType) => {
   const { colors, typography } = useTheme();
   const { submitHandler, isLoading } = useSubmit();
   const [description, setDescription] = useState<string>('');
