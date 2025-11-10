@@ -5,7 +5,7 @@ import useTheme from '@hooks/useTheme';
 // import ShortcutItem from '../../WidgetShortcut/ShortcutItem';
 import { CYCLE_CARD_SHORT_LINKS_HEIGHT } from '../constants';
 
-const bottom = -(CYCLE_CARD_SHORT_LINKS_HEIGHT / 2);
+const bottom = -(CYCLE_CARD_SHORT_LINKS_HEIGHT / 2) + 16;
 
 const CycleCardShortLinks = () => {
   const { colors } = useTheme();
@@ -19,7 +19,7 @@ const CycleCardShortLinks = () => {
 
   return (
     <div
-      className="absolute left-4 right-4 grid grid-cols-4 px-5 py-4 rounded-3xl h-fit"
+      className="absolute left-4 right-4 grid grid-cols-4 px-5 py-4 rounded-3xl"
       style={{
         bottom,
         backgroundColor: colors.White,
