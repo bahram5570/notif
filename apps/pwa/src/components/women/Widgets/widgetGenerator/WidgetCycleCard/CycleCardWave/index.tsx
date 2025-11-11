@@ -6,20 +6,25 @@ import { colorFormatConverter } from '@utils/scripts';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useTheme from '@hooks/useTheme';
 import { LottieJson } from '@lib/LottieJson';
+import { LottieRefCurrentProps } from 'lottie-react';
 
 import { CycleCardWaveProps } from './types';
 
 const CycleCardWave = ({ color }: CycleCardWaveProps) => {
+  const lottieRef = useRef<LottieRefCurrentProps>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [transform, setTransform] = useState('');
   const { colors } = useTheme();
 
   useEffect(() => {
-    const el = containerRef.current;
+    const containerElement = containerRef.current;
+    const lottieElement = lottieRef.current;
 
-    if (el) {
-      const pathElements = el.getElementsByTagName('path');
+    if (containerElement && lottieElement) {
+      lottieElement.setSpeed(0.3);
+
       const updatedColor = colorFormatConverter(color || colors.Pink_500);
+      const pathElements = containerElement.getElementsByTagName('path');
 
       if (pathElements[0]) {
         pathElements[0].style.fill = updatedColor;
@@ -28,7 +33,7 @@ const CycleCardWave = ({ color }: CycleCardWaveProps) => {
         pathElements[1].style.fill = updatedColor;
       }
 
-      const containerRatio = el.clientWidth / el.clientHeight;
+      const containerRatio = containerElement.clientWidth / containerElement.clientHeight;
 
       if (containerRatio >= 2) {
         setTransform('translate(25%, 125%) scale(2) rotate(25deg)');
@@ -43,8 +48,13 @@ const CycleCardWave = ({ color }: CycleCardWaveProps) => {
       ref={containerRef}
       className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-end overflow-hidden pointer-events-none"
     >
-      <div className="min-w-[2500px] min-h-[2500px] w-[2500px] h-[2500px] rounded-full flex justify-center items-end overflow-hidden relative">
-        <LottieJson animationData={waveJson} className="w-[100dvw]" style={{ maxWidth: MAX_SCREEN_WIDTH, transform }} />
+      <div className="min-w-[2500px] min-h-[2500px] w-[2500px] h-[2500px] rounded-full flex justify-center items-end overflow-hidden">
+        <LottieJson
+          lottieRef={lottieRef}
+          className="w-[100dvw]"
+          animationData={waveJson}
+          style={{ maxWidth: MAX_SCREEN_WIDTH, transform }}
+        />
       </div>
     </div>
   );
