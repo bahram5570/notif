@@ -1,38 +1,25 @@
-import { useState } from 'react';
-
-import styles from './styles.module.css';
-
+import WidgetCardContainer from '@components/women/Widgets/WidgetCardContainer';
 import useAnalytics from '@hooks/useAnalytics';
-import { Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
 import WidgetHintCardGenerator from './WidgetHintCardGenerator';
 import { WidgetHintCardProps } from './types';
 
 const WidgetHintCard = ({ data }: WidgetHintCardProps) => {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const { inViewRef } = useAnalytics({ inView_eventName: 'HintWidgetSeenMoreThan5Secs' });
 
   return (
-    <div className={styles.wrapper} ref={inViewRef}>
-      <Swiper
-        initialSlide={0}
-        pagination={true}
-        modules={[Pagination]}
-        style={{ direction: 'rtl', paddingBottom: '24px' }}
-        onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
-      >
+    <WidgetCardContainer title={data.title}>
+      <div className="w-full flex flex-col items-end gap-3" ref={inViewRef}>
         {data.list.map((item, index) => (
-          <SwiperSlide className="h-auto" key={index}>
-            <WidgetHintCardGenerator
-              {...item}
-              isSelected={currentSlide === index}
-              minReadingDuration={data.minReadingDuration}
-            />
-          </SwiperSlide>
+          <WidgetHintCardGenerator
+            {...item}
+            key={index}
+            minReadingDuration={data.minReadingDuration}
+            isLastChild={index === data.list.length - 1}
+          />
         ))}
-      </Swiper>
-    </div>
+      </div>
+    </WidgetCardContainer>
   );
 };
 

@@ -35,6 +35,8 @@ export enum WidgetsEnum {
   ProgramScrollWidget = 37,
   WomanPairProgram = 41,
   ShortcutWidget = 43,
+  HintCardV2 = 44,
+  AdvertiseCardList = 45,
 }
 
 export enum WidgetStoryTypeEnum {

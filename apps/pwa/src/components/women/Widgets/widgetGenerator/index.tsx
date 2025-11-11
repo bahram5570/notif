@@ -10,6 +10,7 @@ import WidgetClinicCard from './WidgetClinicCard';
 import WidgetCycleDateCard from './WidgetCycleDateCard';
 import WidgetEmptyReportCard from './WidgetEmptyReportCard';
 import WidgetHintCard from './WidgetHintCard';
+import WidgetHintCardV2 from './WidgetHintCardV2';
 import WidgetList from './WidgetList';
 import WidgetMedia from './WidgetMedia';
 import WidgetMostRepeatedSigns from './WidgetMostRepeatedSigns';
@@ -138,6 +139,10 @@ const WidgetGenerator = ({ data, type, isPdfDownloading = false }: WidgetsTypes)
       break;
     case WidgetsEnum.ShortcutWidget:
       result = <WidgetShortcut data={data} />;
+      break;
+    case WidgetsEnum.HintCardV2:
+      result = <WidgetHintCardV2 data={data} />;
+      break;
   }
 
   return result === null ? <></> : <WidgetScaleModule>{result}</WidgetScaleModule>;

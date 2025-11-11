@@ -1,5 +1,9 @@
+.wrapper {
+  padding-bottom: 16px;
+}
+
 .wrapper :global(.swiper-pagination) {
-  bottom: -6px;
+  bottom: 0px;
 }
 
 .wrapper :global(.swiper-pagination-bullet-active) {

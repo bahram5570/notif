@@ -147,6 +147,28 @@ export type HintCardTypes = IsPdfDownloadingTypes & {
 
 // # ----------------------------------------------------------
 
+export type HintCard2Types = IsPdfDownloadingTypes & {
+  type: WidgetsEnum.HintCardV2;
+  data: {
+    backgroundColour: string;
+    description: string;
+    title: string;
+    list: {
+      internalLink: null | string;
+      externalLink: null | string;
+      writerSpeciality: string;
+      isBookmarked: boolean;
+      writerIcon: string;
+      writerName: string;
+      isSeen: boolean;
+      text: string;
+      id: string;
+    }[];
+  };
+};
+
+// # ----------------------------------------------------------
+
 export type ArticleCardTypes = IsPdfDownloadingTypes & {
   type: WidgetsEnum.ArticleCard;
   data: {
