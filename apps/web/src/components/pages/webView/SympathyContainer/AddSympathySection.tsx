@@ -35,7 +35,11 @@ const AddSympathySection = () => {
               وصل شدن به پارتنرت
             </CustomTypography>
             <CustomTypography fontSize="Body_Medium" color="Neutral_OnBackground">
-              پارتنرت “ایمپو اقایان” رو نصب میکنه و از تب همدلی، باید درخواستت رو قبول کنه تا به هم وصل بشین
+              پارتنرت
+              <CustomTypography fontSize="Lable_Medium" color="Neutral_OnBackground" className=" inline" tagType="span">
+                “ایمپو اقایان”
+              </CustomTypography>
+              رو نصب میکنه و از تب همدلی، باید درخواستت رو قبول کنه تا به هم وصل بشین
             </CustomTypography>
           </div>
           <CustomImage

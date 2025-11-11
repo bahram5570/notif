@@ -29,10 +29,12 @@ const FaqAccordionItem = ({ question, answer, index }: FaqAccordionItemPropsType
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <CustomTypography fontSize="Lable_Medium" color="Primary_Primary" className="float-right">
-          پاسخ:
+        <CustomTypography fontSize="Body_Small">
+          <CustomTypography fontSize="Lable_Large" color="Primary_Primary" className="inline" tagType="span">
+            پاسخ:
+          </CustomTypography>
+          {answer}
         </CustomTypography>
-        <CustomTypography fontSize="Lable_Medium">{answer}</CustomTypography>
       </div>
     </div>
   );

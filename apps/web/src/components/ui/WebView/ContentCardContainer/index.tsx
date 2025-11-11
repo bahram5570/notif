@@ -1,12 +1,21 @@
+import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 import { COLORS_LIST } from '@theme/colors';
 
-const ContentCardContainer = () => {
+import { ContentCardContainerPropsType } from './type';
+
+const ContentCardContainer = ({ bgUrl, imageUrl, title }: ContentCardContainerPropsType) => {
+  const background = `url(${bgUrl})`;
+
   return (
-    <div className="rounded-xl" style={{ backgroundColor: COLORS_LIST.Neutral_Background }}>
-      <CustomTypography fontSize="Body_Medium" color="Neutral_OnBackground">
-        پیش‌بینی روزهای پریود و تخمک‌گذاری‌تو به پارتنرت میگیم تا بتونین با هماهنگی برنامه‌ریزی کنید
+    <div
+      className="rounded-xl  bg-cover bg-center"
+      style={{ backgroundColor: COLORS_LIST.Neutral_Background, backgroundImage: background }}
+    >
+      <CustomTypography fontSize="Body_Medium" color="Neutral_OnBackground" className="px-3 pt-4">
+        {title}
       </CustomTypography>
+      <CustomImage src={imageUrl} alt={title} width={984} height={1143} className="w-full h-auto" />
     </div>
   );
 };
