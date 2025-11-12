@@ -57,6 +57,7 @@ export type WidgetsTypes = IsPdfDownloadingTypes &
 export type CycleCardTypes = IsPdfDownloadingTypes & {
   type: WidgetsEnum.CycleCard;
   data: {
+    shortcut: { items: ShortcutItemType[] };
     button: WidgetsButtonTypes[];
     backgroundColour: string;
     forgroundColor: string;
@@ -630,6 +631,15 @@ export type WidgetMediaTypes = IsPdfDownloadingTypes & {
 
 // # ----------------------------------------------------------
 
+export type WidgetAdvertiseCardListTypes = IsPdfDownloadingTypes & {
+  type: WidgetsEnum.AdvertiseCardList;
+  data: {
+    items: { url: string; width: number; height: number; action: ActionTypes }[];
+  };
+};
+
+// # ----------------------------------------------------------
+
 type WidgetPregnancyCheckupItemTypes = {
   backgroundColor: string;
   description: string;
@@ -676,6 +686,7 @@ export type WidgetCirculeCycleCardTypes = {
     fertilityStart: number;
     backgroundColour: string;
     button: WidgetsButtonTypes[];
+    shortcut: { items: ShortcutItemType[] };
   };
 };
 

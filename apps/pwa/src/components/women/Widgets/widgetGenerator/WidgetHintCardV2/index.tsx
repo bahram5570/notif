@@ -16,6 +16,7 @@ const WidgetHintCardV2 = ({ data }: WidgetHintCardV2Props) => {
   return (
     <div className={styles.wrapper} ref={inViewRef}>
       <Swiper
+        loop={true}
         initialSlide={0}
         autoplay={{ delay: 10000 }}
         modules={[Pagination, Autoplay]}

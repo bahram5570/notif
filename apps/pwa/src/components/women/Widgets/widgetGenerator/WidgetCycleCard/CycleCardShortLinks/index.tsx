@@ -1,21 +1,13 @@
 import useTheme from '@hooks/useTheme';
 
-// import { ShortcutItemType } from '@providers/WidgetActionsProvider/widgetCards';
-
-// import ShortcutItem from '../../WidgetShortcut/ShortcutItem';
+import ShortcutItem from '../../WidgetShortcut/ShortcutItem';
 import { CYCLE_CARD_SHORT_LINKS_HEIGHT } from '../constants';
+import { CycleCardShortLinksProps } from './types';
 
 const bottom = -(CYCLE_CARD_SHORT_LINKS_HEIGHT / 2) + 16;
 
-const CycleCardShortLinks = () => {
+const CycleCardShortLinks = ({ items }: CycleCardShortLinksProps) => {
   const { colors } = useTheme();
-
-  // const data: ShortcutItemType[] = [];
-  // <div className="grid grid-cols-3 gap-4" style={{ direction: 'rtl' }}>
-  //   {data.map((item, index) => (
-  //     <ShortcutItem key={index} {...item} />
-  //   ))}
-  // </div>;
 
   return (
     <div
@@ -26,10 +18,9 @@ const CycleCardShortLinks = () => {
         minHeight: CYCLE_CARD_SHORT_LINKS_HEIGHT,
       }}
     >
-      <div className="w-14 aspect-square bg-red-300"></div>
-      <div className="w-14 aspect-square bg-red-300"></div>
-      <div className="w-14 aspect-square bg-red-300"></div>
-      <div className="w-14 aspect-square bg-red-300"></div>
+      {items.map((item, index) => (
+        <ShortcutItem key={index} {...item} />
+      ))}
     </div>
   );
 };

@@ -60,7 +60,7 @@ const WidgetCycleCard = ({ data, insideCycleWidgetList, loadingStatus }: WidgetC
 
             {data?.button && <CycleCardBtn buttonsList={data.button} />}
 
-            <CycleCardShortLinks />
+            {data.shortcut.items.length > 0 && <CycleCardShortLinks items={data.shortcut.items} />}
           </>
         )}
       </div>

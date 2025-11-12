@@ -3,4 +3,6 @@ import { ShortcutWidgetTypes } from '@providers/WidgetActionsProvider/widgetCard
 export interface ShortcutWidgetCardProps extends Pick<ShortcutWidgetTypes, 'data'> {}
 
 type ItemType = Pick<ShortcutWidgetCardProps, 'data'>['data']['items'][0];
-export interface ShortcutItemPropsType extends ItemType {}
+export interface ShortcutItemPropsType extends ItemType {
+    
+}

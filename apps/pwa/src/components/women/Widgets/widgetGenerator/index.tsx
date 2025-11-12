@@ -2,6 +2,7 @@ import { WidgetsTypes } from '@providers/WidgetActionsProvider/widgetCards';
 import { WidgetsEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
 import WidgetScaleModule from '../WidgetScaleModule';
+import WidgetAdvertiseCardList from './WidgetAdvertiseCardList';
 import WidgetArticleCard from './WidgetArticleCard';
 import WidgetAverageOfcycleLengths from './WidgetAverageOfcycleLengths';
 import WidgetBabyCheckHistoryCard from './WidgetBabyCheckHistoryCard';
@@ -142,6 +143,9 @@ const WidgetGenerator = ({ data, type, isPdfDownloading = false }: WidgetsTypes)
       break;
     case WidgetsEnum.HintCardV2:
       result = <WidgetHintCardV2 data={data} />;
+      break;
+    case WidgetsEnum.AdvertiseCardList:
+      result = <WidgetAdvertiseCardList data={data} />;
       break;
   }
 
