@@ -3,7 +3,6 @@ import { useEffect, useRef, useState } from 'react';
 import CrossIcon from '@assets/icons/plus.svg';
 
 import { COLORS_LIST } from '@theme/colors';
-import { useRouter } from 'next/navigation';
 
 import { STORY_PROGRESS_HEIGHT } from '../../../constants';
 import { ProgressBarsProps } from './types';
@@ -14,13 +13,10 @@ const ProgressBars = ({
   slideIndexHandler,
   isLoading,
   stories,
+  isOpenHandler,
 }: ProgressBarsProps) => {
-  const router = useRouter();
-
   const timer = useRef<NodeJS.Timeout>();
   const [progressPercent, setProgressPercent] = useState(0);
-
-  const currentSlide = stories[currentSlideIndex];
 
   useEffect(() => {
     if (!isLoading && isCurrentStorySlide) {
@@ -31,7 +27,7 @@ const ProgressBars = ({
           slideIndexHandler(true);
           setProgressPercent(0);
         }
-      }, 100);
+      }, 500);
     } else {
       setProgressPercent(0);
     }
@@ -42,9 +38,12 @@ const ProgressBars = ({
   }, [progressPercent, isLoading, isCurrentStorySlide]);
 
   return (
-    <div className="flex flex-col justify-between px-4 pt-4 z-20 bg-red-400" style={{ height: STORY_PROGRESS_HEIGHT }}>
+    <div
+      className="flex flex-col justify-between px-4 pt-4 z-20 "
+      style={{ height: STORY_PROGRESS_HEIGHT, background: 'linear-gradient(to top, rgba(0,0,0,0) , rgba(0,0,0,0.5))' }}
+    >
       <div className="w-full flex items-center gap-2 pointer-events-none select-none">
-        {/* {stories.map((_, index) => {
+        {stories.map((_: unknown, index: number) => {
           let translateProgress = 0;
 
           if (currentSlideIndex < index) {
@@ -68,12 +67,12 @@ const ProgressBars = ({
               />
             </div>
           );
-        })} */}
+        })}
       </div>
 
-      <div className="w-full flex items-center justify-between">
-        <div className="w-12 h-12 flex items-center justify-center cursor-pointer" onClick={() => router.back()}>
-          <CrossIcon className="w-8 h-auto rotate-45" style={{ stroke: COLORS_LIST.Surface_Outline }} />
+      <div className="w-full flex items-center justify-end">
+        <div className="w-12 h-12 flex items-center justify-center cursor-pointer" onClick={() => isOpenHandler(false)}>
+          <CrossIcon className="w-6 h-auto rotate-45" style={{ stroke: COLORS_LIST.Surface_Outline }} />
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@ const FaqAccordionItem = ({ question, answer, index }: FaqAccordionItemPropsType
   return (
     <div className="w-full ">
       <button onClick={() => setIsOpen(!isOpen)} className="flex justify-between text-right w-full py-3 gap-1">
-        <CustomTypography fontSize="Lable_Medium">{`${questionIndex}.${question}`}</CustomTypography>
+        <CustomTypography fontSize="Lable_Medium">{`${questionIndex}. ${question}`}</CustomTypography>
 
         <div className="w-6 h-6 ">
           <ArrowLeftIcon
@@ -29,7 +29,7 @@ const FaqAccordionItem = ({ question, answer, index }: FaqAccordionItemPropsType
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <CustomTypography fontSize="Body_Small">
+        <CustomTypography fontSize="Body_Small" className="pb-4">
           <CustomTypography fontSize="Lable_Large" color="Primary_Primary" className="inline" tagType="span">
             پاسخ:
           </CustomTypography>

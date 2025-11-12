@@ -1,4 +1,4 @@
-import { StorySectionPropsType } from '../type';
+import { IsOpenHandlerPropsType, StorySectionPropsType } from '../type';
 import { WidgetStoryCardProps } from '../types';
 
 type ListTypes = Pick<StorySectionPropsType, 'storyList'>['storyList'];

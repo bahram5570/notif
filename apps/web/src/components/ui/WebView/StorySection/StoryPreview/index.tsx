@@ -7,11 +7,18 @@ import useCurrentStory from './__hooks__/useListStory';
 import { StoryPreviewPorps } from './types';
 
 const StoryPreview = ({ storyList, isOpen, isOpenHandler }: StoryPreviewPorps) => {
-  const { swiperRef, storyIndex, storyIndexHandler, navigateStoryHandler } = useCurrentStory(storyList);
+  const { swiperRef, storyIndex, storyIndexHandler, navigateStoryHandler } = useCurrentStory({
+    list: storyList,
+    isOpenHandler,
+  });
+
+  const onCloseHandler = () => {
+    isOpenHandler(false);
+  };
 
   return (
     <>
-      <CustomModal isOpen={isOpen} onClose={isOpenHandler}>
+      <CustomModal isOpen={isOpen} onClose={onCloseHandler}>
         <>
           {isOpen && (
             <div className="relative w-[100vw] h-[100dvh] " style={{ maxWidth: WEB_VIEW_MAX_WIDTH }}>
@@ -28,6 +35,7 @@ const StoryPreview = ({ storyList, isOpen, isOpenHandler }: StoryPreviewPorps) =
                       storyItems={item.stories}
                       isCurrentStorySlide={storyIndex === index}
                       navigateStoryHandler={navigateStoryHandler}
+                      isOpenHandler={isOpenHandler}
                     />
                   </SwiperSlide>
                 ))}

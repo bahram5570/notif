@@ -82,6 +82,7 @@ export type ChallengeResponseType = {
   partner: PartnerType;
   selfBio: BioType;
   partnerBio: BioType;
+  show_partner_empathy_landing: boolean;
   bioRhythemWidget: BioRhythemWidget;
   coverImage: string;
   womanWidgets: ({ order: number } & WidgetsTypes)[];

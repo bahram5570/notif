@@ -6,7 +6,7 @@ export type StorySectionPropsType = {
 };
 
 export type ItemTypePropsType = Pick<StorySectionPropsType, 'storyList'>['storyList'][0];
-export type IsOpenHandlerPropsType = (b: boolean, id: string | undefined) => void;
+export type IsOpenHandlerPropsType = (b: boolean) => void;
 
 export type StoryItemPropsType = ItemTypePropsType & {
   isOpenHandler: IsOpenHandlerPropsType;

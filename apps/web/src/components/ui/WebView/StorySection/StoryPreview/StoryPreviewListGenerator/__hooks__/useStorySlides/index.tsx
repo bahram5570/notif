@@ -41,8 +41,6 @@ const useStorySlides = ({ storyItems, navigateStoryHandler }: UseStorySlidesProp
       break;
   }
 
-  console.log(storyItems[currentSlideIndex]);
-
   const isLoadingHandler = () => {
     setIsLoading(false);
   };

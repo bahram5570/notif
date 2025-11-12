@@ -4,7 +4,7 @@ import { Swiper as SwiperTypes } from 'swiper/types';
 
 import { NavigateStoryHandlerTypes, UseListStoryTypes } from './types';
 
-const useListStory = (list: UseListStoryTypes) => {
+const useListStory = ({ isOpenHandler, list }: UseListStoryTypes) => {
   const swiperRef = useRef<SwiperTypes | null>(null);
   const [storyIndex, setCurrentStorySlide] = useState(-1);
 
@@ -15,7 +15,7 @@ const useListStory = (list: UseListStoryTypes) => {
   const navigateStoryHandler: NavigateStoryHandlerTypes = (goToNextStory) => {
     if (goToNextStory) {
       if (storyIndex >= list.length - 1) {
-        setCurrentStorySlide(-1);
+        isOpenHandler(false);
       } else {
         setCurrentStorySlide(storyIndex + 1);
         swiperRef.current?.slideNext();

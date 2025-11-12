@@ -10,6 +10,7 @@ const StoryPreviewListGenerator = ({
   navigateStoryHandler,
   isCurrentStorySlide,
   storyItems,
+  isOpenHandler,
 }: StoryPreviewListGeneratorProps) => {
   const storySlideProps = useStorySlides({ storyItems, navigateStoryHandler });
 
@@ -21,6 +22,7 @@ const StoryPreviewListGenerator = ({
         isCurrentStorySlide={isCurrentStorySlide}
         currentSlideIndex={storySlideProps.currentSlideIndex}
         slideIndexHandler={storySlideProps.slideIndexHandler}
+        isOpenHandler={isOpenHandler}
       />
 
       <>

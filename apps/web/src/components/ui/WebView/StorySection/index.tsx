@@ -14,12 +14,10 @@ import { IsOpenHandlerPropsType, StorySectionPropsType } from './type';
 
 const StorySection = ({ title, storyList }: StorySectionPropsType) => {
   const { operatingSystem } = useOperatingSystem();
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [isOpen, setIsOpen] = useState(false);
 
-  const isOpenHandler: IsOpenHandlerPropsType = (b, id) => {
+  const isOpenHandler: IsOpenHandlerPropsType = (b) => {
     setIsOpen(b);
-    setCurrentIndex(0);
   };
 
   const isWindows = operatingSystem === 'windows';

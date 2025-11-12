@@ -15,7 +15,7 @@ const ContentCardContainer = ({ bgUrl, imageUrl, title }: ContentCardContainerPr
       <CustomTypography fontSize="Body_Medium" color="Neutral_OnBackground" className="px-3 pt-4">
         {title}
       </CustomTypography>
-      <CustomImage src={imageUrl} alt={title} width={984} height={1143} className="w-full h-auto" />
+      <CustomImage src={imageUrl} alt={title} width={984} height={1143} className="w-full h-auto p-4" />
     </div>
   );
 };

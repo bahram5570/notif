@@ -1,3 +1,4 @@
+import { IsOpenHandlerPropsType } from '../../type';
 import { NavigateStoryHandlerTypes } from '../__hooks__/useListStory/types';
 import { ViewStoryHandlerTypes } from '../__hooks__/useStoryUpdate/useIsView/types';
 import { StoryPreviewPorps } from '../types';
@@ -8,4 +9,5 @@ export interface StoryPreviewListGeneratorProps extends SaveTypes {
   storyItems: StoriesTypes;
   isCurrentStorySlide: boolean;
   navigateStoryHandler: NavigateStoryHandlerTypes;
+  isOpenHandler: IsOpenHandlerPropsType;
 }
