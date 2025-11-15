@@ -49,7 +49,7 @@ const SympathySupport = () => {
           alt={'sympathy6'}
           width={984}
           height={1143}
-          className="w-full h-auto pr-3"
+          className="w-full h-auto pr-3 pb-3"
         />
       </div>
     </div>

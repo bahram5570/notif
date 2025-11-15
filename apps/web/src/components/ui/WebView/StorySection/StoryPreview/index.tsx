@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+
 import CustomModal from '@components/ui/CustomModal';
 import { WEB_VIEW_MAX_WIDTH } from '@constants/app.constants';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -15,6 +17,14 @@ const StoryPreview = ({ storyList, isOpen, isOpenHandler }: StoryPreviewPorps) =
   const onCloseHandler = () => {
     isOpenHandler(false);
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      window.parent.postMessage({ type: 'dialog-open' }, '*');
+    } else {
+      window.parent.postMessage({ type: 'dialog-close' }, '*');
+    }
+  }, [isOpen]);
 
   return (
     <>
