@@ -4,6 +4,7 @@ export interface DateModuleProps {
   defaultDate?: string;
   startDate?: string;
   endDate?: string;
+  testId?: string;
 }
 
 export type ValuesTypes = { year: string; month: string; day: string };

@@ -6,4 +6,5 @@ export interface WheelPickerProps {
   valueHandler: (v: WheelPickerValueTypes) => void;
   defaultValue?: WheelPickerValueTypes;
   list: WheelPickerItemTypes[];
+  testId?: string;
 }

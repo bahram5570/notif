@@ -58,6 +58,7 @@ const MainActivationModule = (props: MainActivationModuleProps) => {
           onContinue={props.onContinue}
           firstName={props.firstName}
           isLoading={props.isLoading}
+          btnTestId={props.btnTestId}
         />
       </Suspense>
 

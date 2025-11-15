@@ -29,8 +29,14 @@ const Intention10Container = ({
 
   return (
     <>
-      <MainActivationModule onContinue={onContinue} isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
-        <WeightHeightModule type="height" valueHandler={valueHandler} />
+      <MainActivationModule
+        onContinue={onContinue}
+        isLoading={isLoading}
+        onRegister={onRegister}
+        {...pageInfo}
+        btnTestId="btn_intention10"
+      >
+        <WeightHeightModule type="height" valueHandler={valueHandler} testId="wheelPicker_height" />
       </MainActivationModule>
     </>
   );

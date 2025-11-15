@@ -65,6 +65,7 @@ const Otp1Container = ({ payload, payloadHandler, otp1CompleteHandler, onContinu
         isLoading={isLoading}
         className="pt-5"
         {...customPageInfo}
+        btnTestId="otp1"
       >
         <>
           <ActivationInputModule

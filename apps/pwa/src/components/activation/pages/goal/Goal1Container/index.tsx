@@ -45,6 +45,7 @@ const Goal1Container = ({
       onRegister={onRegister}
       invalidMessage={invalidMessage}
       showContinueBtn={showContinueBtn}
+      btnTestId="btn_goal1"
     >
       <>
         <ActivationInputModule
@@ -52,6 +53,7 @@ const Goal1Container = ({
           value={payload.firstName}
           placeHolder="اینجا بنویس"
           valueHandler={valueHandler}
+          testid="firstNameInput"
         />
 
         <InterfaceCodeContainer onComplete={interfaceCodeHandler} />

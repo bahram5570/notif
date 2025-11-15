@@ -40,6 +40,7 @@ const ActivationBtn = (props: ActivationBtnProps) => {
         isLoading={props.isLoading}
         navigationLoadingId={props.navigationLoadingId}
         style={{ minWidth: 'fit-content', width: props.width || '204px' }}
+        testId={props.btnTestId}
       >
         {props.children}
       </Button>

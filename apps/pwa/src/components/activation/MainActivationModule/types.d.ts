@@ -10,6 +10,7 @@ export type MainActivationModuleProps = PageInfoStateTypes & {
   onContinue?: () => void;
   isLoading?: boolean;
   className?: string;
+  btnTestId?: string;
 };
 
 export type PayloadHandlerTypes = (v: { [key in string]: string | number | boolean }) => void;

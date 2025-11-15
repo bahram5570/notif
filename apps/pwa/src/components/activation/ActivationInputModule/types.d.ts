@@ -4,4 +4,5 @@ export interface ActivationInputModuleProps {
   placeHolder?: string;
   isTextTyps: boolean;
   value: string;
+  testid?: string;
 }

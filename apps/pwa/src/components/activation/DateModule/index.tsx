@@ -9,7 +9,7 @@ import useListsMaker from './__hooks__/useListsMaker';
 import useValueHandler from './__hooks__/useValueHandler';
 import { DateModuleProps, StateValuesHandlerTypes, ValuesTypes } from './types';
 
-const DateModule = ({ defaultDate, startDate, endDate, valueHandler }: DateModuleProps) => {
+const DateModule = ({ defaultDate, startDate, endDate, valueHandler, testId }: DateModuleProps) => {
   const { isLargeScreen } = useActivationIsLargeScreen();
   const [values, setValues] = useState<ValuesTypes>({ month: '', year: '', day: '' });
 
@@ -30,6 +30,7 @@ const DateModule = ({ defaultDate, startDate, endDate, valueHandler }: DateModul
     <div
       style={{ marginTop: isLargeScreen ? '40px' : '0' }}
       className="relative w-[calc(100%_-_48px)] grid grid-cols-3 place-items-center mx-auto"
+      data-testid={testId}
     >
       {daysList && monthsList && yearsList && (
         <>
@@ -37,6 +38,7 @@ const DateModule = ({ defaultDate, startDate, endDate, valueHandler }: DateModul
             list={yearsList}
             defaultValue={values.year}
             valueHandler={(v) => stateValuesHandler(v.toString(), 'year')}
+            testId={`wheelPicker_year`}
           />
 
           <WheelPickerDivider isTop={true} />
@@ -45,6 +47,7 @@ const DateModule = ({ defaultDate, startDate, endDate, valueHandler }: DateModul
             list={monthsList}
             defaultValue={values.month}
             valueHandler={(v) => stateValuesHandler(v.toString(), 'month')}
+            testId={`wheelPicker_month`}
           />
 
           <WheelPickerDivider isTop={false} />
@@ -53,6 +56,7 @@ const DateModule = ({ defaultDate, startDate, endDate, valueHandler }: DateModul
             list={daysList}
             defaultValue={values.day}
             valueHandler={(v) => stateValuesHandler(v.toString(), 'day')}
+            testId={`wheelPicker_day`}
           />
         </>
       )}

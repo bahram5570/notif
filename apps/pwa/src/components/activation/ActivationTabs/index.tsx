@@ -7,13 +7,14 @@ const ActivationTabs = ({ tab, tabHandler, tabsList }: ActivationTabsTypes) => {
   const { colors } = useTheme();
 
   return (
-    <div className="flex flex-row-reverse mx-4 mt-8">
+    <div className="flex flex-row-reverse mx-4 mt-8" data-testid="activation_tabs">
       {tabsList.map((item) => (
         <div
           key={item.value}
           onClick={() => tabHandler(item.value)}
           className="border-b-[1px] pb-2 flex justify-center w-1/2 select-none cursor-pointer"
           style={{ borderColor: item.value === tab ? colors.PrimaryWoman_Primary : colors.Neutral_Surface }}
+          data-testid={`tab_${item.value}`}
         >
           <Typography
             scale="Lable"

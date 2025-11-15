@@ -49,6 +49,7 @@ const ActivationInputModule = (props: ActivationInputModuleProps) => {
         id={ACTIVATION_INPUT_MODULE_ID}
         type={props.isTextTyps ? 'text' : 'tel'}
         className={`border-none bg-transparent w-full relative pt-1 text-center placeholder-[#EFEFEF] ${styles.input}`}
+        data-testid={props.testid}
       />
     </>
   );

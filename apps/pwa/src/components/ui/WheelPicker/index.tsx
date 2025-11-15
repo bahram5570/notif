@@ -9,7 +9,7 @@ import useWheelPickerReady from './__hooks__/useWheelPickerReady';
 import { WHEEL_PICKER_CELL_HEIGHT, WHEEL_PICKER_EXTRA_CELLS, WHEEL_PICKER_TOTAL_CELLS } from './constants';
 import { WheelPickerProps } from './types';
 
-const WheelPicker = ({ list, defaultValue, valueHandler }: WheelPickerProps) => {
+const WheelPicker = ({ list, defaultValue, valueHandler, testId }: WheelPickerProps) => {
   const { wheelPickerListData, listIsUpdated } = useWheelPickerListData({ list, defaultValue });
   const swiperRef = useRef<SwiperTypes | null>(null);
   const [mainResetKey, setMainResetKey] = useState('k1');
@@ -52,6 +52,7 @@ const WheelPicker = ({ list, defaultValue, valueHandler }: WheelPickerProps) => 
       {wheelPickerListData && ready && (
         <Swiper
           key={mainResetKey}
+          data-testid={testId}
           direction={'vertical'}
           watchSlidesProgress={true}
           slidesPerView={WHEEL_PICKER_TOTAL_CELLS}

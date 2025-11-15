@@ -65,10 +65,11 @@ const ActivationCalendarHeading = (props: ActivationCalendarHeadingProps) => {
         className="w-10 h-6"
         style={{ stroke: '#1C1B1E' }}
         onClick={() => props.currentSlideHandler('previousSlide')}
+        data-testid={'btn_previous'}
       />
 
       <div className="flex flex-col items-center gap-1">
-        <Typography size="Small" scale="Title" color="Neutral_OnBackground">
+        <Typography size="Small" scale="Title" color="Neutral_OnBackground" testId={'calendar_month_title'}>
           {monthScript}
         </Typography>
 
@@ -85,6 +86,7 @@ const ActivationCalendarHeading = (props: ActivationCalendarHeadingProps) => {
         style={{ stroke: '#1C1B1E' }}
         className="w-10 h-6 rotate-180"
         onClick={() => props.currentSlideHandler('nextSlide')}
+        data-testid={'btn_next'}
       />
     </div>
   );
