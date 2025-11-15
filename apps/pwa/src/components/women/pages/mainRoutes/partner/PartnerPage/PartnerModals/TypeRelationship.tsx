@@ -22,6 +22,10 @@ const TypeRelationship = () => {
     setDistanceTypeValue(value);
   };
 
+  const onClick = () => {
+    acceptHandler(id, distanceTypeValue);
+  };
+
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-2 justify-center items-center">
@@ -43,14 +47,7 @@ const TypeRelationship = () => {
 
       <PartnerRadioButton onChange={changeValueHandler} value={distanceTypeValue} />
 
-      <Button
-        size="medium"
-        variant="fill"
-        color="primary"
-        onClick={() => {
-          acceptHandler(id, distanceTypeValue);
-        }}
-      >
+      <Button size="medium" variant="fill" color="primary" onClick={onClick}>
         <Typography scale="Lable" size="Large" color="White">
           باشه
         </Typography>

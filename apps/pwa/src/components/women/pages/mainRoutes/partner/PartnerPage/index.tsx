@@ -13,17 +13,22 @@ import PartnerModals from './PartnerModals';
 import PartnerPageLayout from './PartnerPageLayout';
 import RequestSection from './RequestSection';
 import useGetData from './__hooks__/useGetData';
+import useGetRequestData from './__hooks__/useGetRequestData';
 
 const PartnerPage = () => {
   const { data, isLoading } = useGetData();
+  const { data: requestData, getData, isLoading: requestLoading } = useGetRequestData();
   const { colors } = useTheme();
+
+  const hasRequestList = requestData && requestData.list.length > 0;
+  const showEmptyLanding = data?.show_partner_empathy_landing && !hasRequestList ? true : false;
 
   return (
     <>
       {isLoading && <PartnerContainerSkeleton />}
       {!isLoading &&
         data &&
-        (data.show_partner_empathy_landing ? (
+        (showEmptyLanding ? (
           <PartnerLandingWebView />
         ) : (
           <PartnerPageLayout isValid={data.valid} coverImage={data.coverImage}>
@@ -36,7 +41,14 @@ const PartnerPage = () => {
               <div className="flex justify-center items-center flex-col gap-9 relative">
                 <div className="flex flex-col gap-4 xs:px-4">
                   <Challenge card={data.card} valid={data.valid} button={data.button} />
-                  {!data.valid && <RequestSection />}
+                  {!data.valid && (
+                    <RequestSection
+                      getData={getData}
+                      hasData={hasRequestList}
+                      isLoading={requestLoading}
+                      list={requestData?.list || []}
+                    />
+                  )}
 
                   {data.partner.cycleCard.title || data.partner.cycleCard.image ? (
                     <PartnerCard partner={data.partner} valid={data.valid} />

@@ -55,8 +55,9 @@ const InfiniteScrollContainer = ({
       id="infiniteScrollContainer"
     >
       {children}
+
       {isLoading && (
-        <div className="w-full flex justify-center py-6">
+        <div className="w-full  h-full flex justify-center py-6 ">
           <Spinner color="outline" width={40} />
         </div>
       )}

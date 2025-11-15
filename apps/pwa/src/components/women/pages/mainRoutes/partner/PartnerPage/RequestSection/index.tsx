@@ -6,14 +6,12 @@ import useTheme from '@hooks/useTheme';
 import NotRequestData from './NotRequestData';
 import RequestList from './RequestList';
 import RequestListSkeleton from './RequestList/RequestListSkeleton';
-import useGetData from './__hooks__/useGetData';
+import { RequestSectionPropsType } from './type';
 
-const RequestSection = () => {
+const RequestSection = ({ isLoading, list, getData, hasData }: RequestSectionPropsType) => {
   const { colors } = useTheme();
-  const { data, getData, isLoading } = useGetData();
-  const hadData = data && data?.list.length > 0;
 
-  const title = hadData ? 'درخواست های همدلی' : ' درخواست ها';
+  const title = hasData ? 'درخواست های همدلی' : ' درخواست ها';
 
   return (
     <div
@@ -31,7 +29,7 @@ const RequestSection = () => {
       </div>
       {isLoading && <RequestListSkeleton />}
 
-      {!isLoading && hadData ? <RequestList data={data} /> : <NotRequestData />}
+      {!isLoading && hasData ? <RequestList list={list} /> : <NotRequestData />}
     </div>
   );
 };

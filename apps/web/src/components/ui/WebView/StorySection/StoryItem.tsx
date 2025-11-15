@@ -6,7 +6,7 @@ import { StoryItemPropsType } from './type';
 
 const StoryItem = ({ title, coverImage, id, isOpenHandler }: StoryItemPropsType) => {
   const onClick = () => {
-    isOpenHandler(true, id);
+    isOpenHandler(true);
   };
   return (
     <div className="flex flex-col  items-center gap-2" onClick={onClick}>

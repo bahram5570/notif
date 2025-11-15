@@ -18,7 +18,7 @@ import { ShareExperienceCommentsModalContainerProps } from './types';
 const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsModalContainerProps) => {
   const { colors } = useTheme();
   const { newCommentQueries } = useNewCommentQueries(props.id);
-  const { isLoading, commentsData, updatePageNo, pageNo } = useCommentsList(props.id);
+  const { isLoading, commentsData, updatePageNo, pageNo, isFirstLoad } = useCommentsList(props.id);
 
   useOverflowHandler(props.queryParam !== null);
 
@@ -31,7 +31,12 @@ const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsMod
         pageNo={pageNo}
         callBack={updatePageNo}
       >
-        {typeof commentsData !== 'undefined' && (
+        {isFirstLoad && (
+          <div className="absolute left-0 right-0 bottom-20 w-full flex justify-center" style={{ top: 80 }}>
+            <Spinner color="outline" width={40} />
+          </div>
+        )}
+        {!isFirstLoad && typeof commentsData !== 'undefined' && (
           <div
             className="relative flex flex-col px-4"
             style={{ paddingTop: HEADER_HEIGHT + 16, paddingBottom: HEADER_HEIGHT * 2 }}
@@ -51,12 +56,6 @@ const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsMod
             <div className="w-full h-1 my-4" style={{ backgroundColor: colors.Neutral_Surface }} />
 
             <CommentsList id={props.id} comments={commentsData.comments} />
-
-            {isLoading && (
-              <div className="absolute left-0 right-0 bottom-20 w-full flex justify-center">
-                <Spinner color="outline" width={40} />
-              </div>
-            )}
           </div>
         )}
       </InfiniteScrollContainer>

@@ -30,7 +30,7 @@ const PhoneNumberInput = () => {
   return (
     <>
       <Typography scale="Body" size="Large" textAlign="center">
-        شماره موبایل یا ایمیل پارتنرت رو اینجا بنویس تا درخواست همدلیت براش ارسال بشه
+        شماره موبایل، ایمیل یا کد همدلی پارتنرت رو اینجا وارد کن تا درخواست همدلیت براش ارسال بشه.
       </Typography>
       <div className="w-full">
         <input
