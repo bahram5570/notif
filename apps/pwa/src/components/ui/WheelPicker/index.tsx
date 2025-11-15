@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as SwiperTypes } from 'swiper/types';
 
 import WheelPickerCellGenerator from './WheelPickerCellGenerator';
 import useWheelPickerListData from './__hooks__/useWheelPickerListData';
@@ -9,7 +10,10 @@ import { WHEEL_PICKER_CELL_HEIGHT, WHEEL_PICKER_EXTRA_CELLS, WHEEL_PICKER_TOTAL_
 import { WheelPickerProps } from './types';
 
 const WheelPicker = ({ list, defaultValue, valueHandler }: WheelPickerProps) => {
-  const { wheelPickerListData } = useWheelPickerListData({ list, defaultValue });
+  const { wheelPickerListData, listIsUpdated } = useWheelPickerListData({ list, defaultValue });
+  const swiperRef = useRef<SwiperTypes | null>(null);
+  const [mainResetKey, setMainResetKey] = useState('k1');
+  const isInitialSlideSet = useRef(false);
   const { ready } = useWheelPickerReady();
   const [slide, setSlide] = useState(0);
 
@@ -22,15 +26,37 @@ const WheelPicker = ({ list, defaultValue, valueHandler }: WheelPickerProps) => 
     }
   };
 
+  useEffect(() => {
+    // # Scroll to default value
+    const el = swiperRef.current;
+    const initialSlide = wheelPickerListData?.initialSlide;
+
+    if (el && initialSlide && !isInitialSlideSet.current) {
+      isInitialSlideSet.current = true;
+      el.slideTo(initialSlide);
+    }
+  }, [wheelPickerListData?.initialSlide, swiperRef.current]);
+
+  useEffect(() => {
+    // # Reset component on list change
+    const el = swiperRef.current;
+
+    if (el) {
+      slideHandler(0);
+      setMainResetKey(Math.random().toString());
+    }
+  }, [listIsUpdated]);
+
   return (
     <div className="w-full" style={{ height: WHEEL_PICKER_CELL_HEIGHT * WHEEL_PICKER_TOTAL_CELLS }}>
       {wheelPickerListData && ready && (
         <Swiper
+          key={mainResetKey}
           direction={'vertical'}
           watchSlidesProgress={true}
           slidesPerView={WHEEL_PICKER_TOTAL_CELLS}
-          initialSlide={wheelPickerListData.initialSlide}
           onSlideChange={(s) => slideHandler(s.activeIndex)}
+          onSwiper={(swiper) => (swiperRef.current = swiper)}
           style={{ height: WHEEL_PICKER_CELL_HEIGHT * WHEEL_PICKER_TOTAL_CELLS }}
         >
           {wheelPickerListData.updatedList.map((item, index) => {

@@ -21,7 +21,10 @@ const useWheelPickerListData = ({ list, defaultValue }: UseWheelPickerListDataPr
     setWheelPickerListData({ updatedList, initialSlide });
   }, [list, defaultValue]);
 
-  return { wheelPickerListData };
+  const listIsUpdated = `${wheelPickerListData?.updatedList[0 + WHEEL_PICKER_EXTRA_CELLS].value} - 
+  ${wheelPickerListData?.updatedList[wheelPickerListData?.updatedList.length - 1 - WHEEL_PICKER_EXTRA_CELLS].value}`;
+
+  return { wheelPickerListData, listIsUpdated };
 };
 
 export default useWheelPickerListData;
