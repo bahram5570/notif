@@ -33,8 +33,9 @@ const StoryPreviewListGenerator = ({
         {storySlideProps.image !== null && (
           <div className="absolute top-0 left-0 right-0 aspect-[9_/_16] pointer-events-none select-none">
             <Image
-              fill={true}
-              className="w-full h-auto"
+              // fill={true}
+              width={1080}
+              height={1920} // className="w-full h-auto"
               src={storySlideProps.image}
               alt={storySlideProps.image}
               onLoad={storySlideProps.isLoadingHandler}
