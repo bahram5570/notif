@@ -31,14 +31,21 @@ export const FAG_LIST: FaqItemType[] = [
 export const STORY_LIST: StoryItemType[] = [
   {
     coverImage: '/assets/images/webView/sympathy/4.webp',
-    id: '0',
+
     title: 'همدلی ایمپو چیه؟',
-    stories: [{ type: 'video', url: '/assets/images/webView/sympathy/videoTest.webm' }],
+    stories: [
+      { type: 'Image', url: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/1.1.webp' },
+      { type: 'Image', url: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/1.2.webp' },
+    ],
   },
   {
     coverImage: '/assets/images/webView/sympathy/5.webp',
-    id: '1',
+
     title: 'چطور وصل بشیم؟',
-    stories: [{ type: 'video', url: '/assets/images/webView/sympathy/videoTest.webm' }],
+    stories: [
+      { type: 'Image', url: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/2.1.webp' },
+      { type: 'Image', url: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/2.2.webp' },
+      { type: 'Image', url: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/2.3.webp' },
+    ],
   },
 ];
