@@ -10,4 +10,6 @@ export type IsOpenHandlerPropsType = (b: boolean) => void;
 
 export type StoryItemPropsType = ItemTypePropsType & {
   isOpenHandler: IsOpenHandlerPropsType;
+  currentIndexHandler: (index: number) => void;
+  index: number;
 };

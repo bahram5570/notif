@@ -7,4 +7,5 @@ export interface StoryPreviewPorps {
   isOpen: boolean;
   isOpenHandler: IsOpenHandlerPropsType;
   storyList: ListTypes;
+  currentIndex: number | undefined;
 }

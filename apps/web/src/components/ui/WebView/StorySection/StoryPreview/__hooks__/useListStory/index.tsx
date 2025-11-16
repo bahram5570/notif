@@ -4,7 +4,7 @@ import { Swiper as SwiperTypes } from 'swiper/types';
 
 import { NavigateStoryHandlerTypes, UseListStoryTypes } from './types';
 
-const useListStory = ({ isOpenHandler, list }: UseListStoryTypes) => {
+const useListStory = ({ isOpenHandler, list, currentIndex }: UseListStoryTypes) => {
   const swiperRef = useRef<SwiperTypes | null>(null);
   const [storyIndex, setCurrentStorySlide] = useState(-1);
 
@@ -29,8 +29,12 @@ const useListStory = ({ isOpenHandler, list }: UseListStoryTypes) => {
   };
 
   useEffect(() => {
-    setCurrentStorySlide(0);
-  }, []);
+    if (currentIndex) {
+      setCurrentStorySlide(currentIndex);
+    } else {
+      setCurrentStorySlide(0);
+    }
+  }, [currentIndex]);
 
   return { swiperRef, storyIndex, storyIndexHandler, navigateStoryHandler };
 };

@@ -11,4 +11,4 @@ export type StoryVideoTypes = {
 
 type StoryEventsTypes = StoryImageTypes | StoryVideoTypes;
 
-export type StoryItemType = { id: string; coverImage: string; title: string; stories: StoryEventsTypes[] };
+export type StoryItemType = { coverImage: string; title: string; stories: StoryEventsTypes[] };

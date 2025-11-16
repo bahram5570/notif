@@ -1,7 +1,7 @@
 import { StoryPreviewPorps } from '../../types';
 
 export type ListStoryType = Pick<StoryPreviewPorps, 'storyList'>['storyList'];
-export type OpenHandlerType = Pick<StoryPreviewPorps, 'isOpenHandler'>;
+export type OpenHandlerType = Pick<StoryPreviewPorps, 'isOpenHandler' | 'currentIndex'>;
 export type UseListStoryTypes = OpenHandlerType & {
   list: ListStoryType;
 };

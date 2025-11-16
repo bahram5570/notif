@@ -4,10 +4,12 @@ import { COLORS_LIST } from '@theme/colors';
 
 import { StoryItemPropsType } from './type';
 
-const StoryItem = ({ title, coverImage, id, isOpenHandler }: StoryItemPropsType) => {
+const StoryItem = ({ title, coverImage, isOpenHandler, currentIndexHandler, index }: StoryItemPropsType) => {
   const onClick = () => {
     isOpenHandler(true);
+    currentIndexHandler(index);
   };
+
   return (
     <div className="flex flex-col  items-center gap-2" onClick={onClick}>
       <div className="w-16 h-16 rounded-full" style={{ border: `1px solid ${COLORS_LIST.Primary_Primary}` }}>

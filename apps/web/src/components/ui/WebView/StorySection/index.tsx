@@ -15,9 +15,14 @@ import { IsOpenHandlerPropsType, StorySectionPropsType } from './type';
 const StorySection = ({ title, storyList }: StorySectionPropsType) => {
   const { operatingSystem } = useOperatingSystem();
   const [isOpen, setIsOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState<number | undefined>(undefined);
 
   const isOpenHandler: IsOpenHandlerPropsType = (b) => {
     setIsOpen(b);
+  };
+
+  const currentIndexHandler = (index: number) => {
+    setCurrentIndex(index);
   };
 
   const isWindows = operatingSystem === 'windows';
@@ -31,13 +36,21 @@ const StorySection = ({ title, storyList }: StorySectionPropsType) => {
         <div className=" rounded-xl py-3 px-4" style={{ backgroundColor: COLORS_LIST.Neutral_Background }}>
           <CustomSlider gap={10} isWindows={isWindows} className=" justify-end">
             {storyList.map((story, index) => {
-              return <StoryItem {...story} isOpenHandler={isOpenHandler} key={index} />;
+              return (
+                <StoryItem
+                  {...story}
+                  index={index}
+                  isOpenHandler={isOpenHandler}
+                  key={index}
+                  currentIndexHandler={currentIndexHandler}
+                />
+              );
             })}
           </CustomSlider>
         </div>
       </div>
 
-      <StoryPreview storyList={storyList} isOpen={isOpen} isOpenHandler={isOpenHandler} />
+      <StoryPreview storyList={storyList} isOpen={isOpen} isOpenHandler={isOpenHandler} currentIndex={currentIndex} />
     </>
   );
 };
