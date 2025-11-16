@@ -1,5 +1,3 @@
-import { useEffect } from 'react';
-
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 
@@ -14,14 +12,6 @@ const RoutinCommentList = ({ programId, commentPlaceholder }: RoutinCommentListP
 
   const hasData = commentsData && commentsData.items.length > 0;
 
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, []);
-
   return (
     <>
       <InfiniteScrollContainer
@@ -30,8 +20,9 @@ const RoutinCommentList = ({ programId, commentPlaceholder }: RoutinCommentListP
         pageNo={pageNo}
         totalCount={commentsData?.totalCount || 10}
         height={`calc(100dvh - ${HEADER_HEIGHT + 280}px)`}
+        style={{ paddingBottom: HEADER_HEIGHT }}
       >
-        <div className=" flex flex-col px-4 gap-3 " style={{ paddingTop: 50, paddingBottom: HEADER_HEIGHT * 2 }}>
+        <div className=" flex flex-col px-4 gap-3 " style={{ paddingTop: 50, paddingBottom: HEADER_HEIGHT * 3 }}>
           {!hasData && !isLoading && <CommentsListEmpty />}
           {hasData &&
             commentsData.items.map((comment, index) => {
