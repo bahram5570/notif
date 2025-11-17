@@ -40,7 +40,9 @@ const useCommentsList = (id: CommentsIdTypes) => {
     callApi();
   }, [pageNo, id]);
 
-  return { isLoading, commentsData, updatePageNo, pageNo };
+  const isFirstLoad = isLoading && !commentsData;
+
+  return { isLoading, commentsData, updatePageNo, pageNo, isFirstLoad };
 };
 
 export default useCommentsList;

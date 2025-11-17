@@ -22,8 +22,9 @@ const RewardModal = ({ data, goToNext, correctAnswer }: RewardModalPropsType) =>
     <CustomModal
       isOpen={isOpenRewardModal}
       isFullScreen={false}
-      isSlidingMode={false}
+      isSlidingMode={true}
       backgroundColor={backgroundColor}
+      className="pb-0"
     >
       <div className="flex flex-col items-center pb-4 gap-2" data-testid={'reward-modal-trailonboarding'}>
         <div className="flex flex-col items-end w-full px-4 gap-1">

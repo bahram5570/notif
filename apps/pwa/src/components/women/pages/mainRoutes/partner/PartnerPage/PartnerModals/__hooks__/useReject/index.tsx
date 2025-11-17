@@ -11,7 +11,7 @@ const useReject = () => {
     route.back();
   };
 
-  const { data, callApi: reject } = useApi({ api: 'partner/reject', method: 'PUT', onSuccess: successHandler });
+  const { callApi: reject, isLoading } = useApi({ api: 'partner/reject', method: 'PUT', onSuccess: successHandler });
 
   const rejectHandler = (id: string | null) => {
     const payload = {
@@ -19,7 +19,7 @@ const useReject = () => {
     };
     reject(payload);
   };
-  return { rejectHandler };
+  return { rejectHandler, isLoading };
 };
 
 export default useReject;

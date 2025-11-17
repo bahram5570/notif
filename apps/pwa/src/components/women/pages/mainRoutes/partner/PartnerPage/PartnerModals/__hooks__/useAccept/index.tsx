@@ -11,7 +11,11 @@ const useAccept = () => {
   const successHandler = (v: AcceptResponseType) => {
     if (v.canAccept) {
       refetchQuery({ queryKey: ['partnerKey'] });
-      route.push('/protected/partner');
+
+      route.back();
+      setTimeout(() => {
+        route.back();
+      }, 0);
     }
   };
 

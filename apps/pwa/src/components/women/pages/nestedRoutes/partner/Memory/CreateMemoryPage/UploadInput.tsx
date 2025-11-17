@@ -94,7 +94,7 @@ const UploadInput = ({ fileName, uploadImageLoading, valuesHandler }: UploadInpu
               }}
             >
               <Typography scale="Lable" size="Large" color="PrimaryWoman_Primary">
-                ثبت خاطره
+                آپلود عکس
               </Typography>
               <div className="w-5 h-5 flex justify-center items-center">
                 <PaperClipIcon className="w-5 h-5" style={{ stroke: colors.PrimaryWoman_Primary }} />

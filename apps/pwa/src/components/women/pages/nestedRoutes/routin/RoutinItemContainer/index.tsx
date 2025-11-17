@@ -49,6 +49,7 @@ const RoutinItemContainer = () => {
               <>
                 <div
                   style={{ paddingBottom: FOOTER_HEIGTH }}
+                  dir="rtl"
                   dangerouslySetInnerHTML={{ __html: JSON.parse(data.data) }}
                 />
 

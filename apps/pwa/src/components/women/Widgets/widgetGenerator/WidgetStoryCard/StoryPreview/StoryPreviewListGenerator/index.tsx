@@ -65,6 +65,7 @@ const StoryPreviewListGenerator = ({
                 alt={storySlideProps.image}
                 onLoad={storySlideProps.isLoadingHandler}
                 key={storySlideProps.image + storySlideProps.currentSlideIndex}
+                sizes="(max-width: 480px) 100vw, 480px"
               />
             </div>
           )}

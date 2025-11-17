@@ -1,5 +1,4 @@
 import Button from '@components/ui/Button';
-import OverlayBar from '@components/ui/OverlayBar';
 import { SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME } from '@components/women/pages/mainRoutes/shareExperience/constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
@@ -11,7 +10,7 @@ const ShareExperienceNewContinueBtn = ({ text, btnTop }: ShareExperienceNewConti
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
   const isDisable = text.trim().length < 1;
-  const id = 'forum';
+  const id = 'form';
   const isLoading = pageNavigationLoading === id;
 
   const clickHandler = () => {
@@ -20,7 +19,7 @@ const ShareExperienceNewContinueBtn = ({ text, btnTop }: ShareExperienceNewConti
   };
 
   return (
-    <OverlayBar className="mt-auto px-4 py-6" btnTop={btnTop}>
+    <div className="fixed    right-0 left-0  z-40 mt-auto px-4 py-6" style={{ bottom: btnTop }}>
       <Button
         size="medium"
         variant="fill"
@@ -31,7 +30,7 @@ const ShareExperienceNewContinueBtn = ({ text, btnTop }: ShareExperienceNewConti
       >
         بعدی
       </Button>
-    </OverlayBar>
+    </div>
   );
 };
 

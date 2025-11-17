@@ -9,4 +9,5 @@ type ItemsTypes = {
 export interface RoutinCardProps extends ItemsTypes {
   showDescription?: boolean;
   className?: string;
+  width?: number;
 }
