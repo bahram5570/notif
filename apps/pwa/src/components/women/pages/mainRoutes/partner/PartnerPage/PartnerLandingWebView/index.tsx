@@ -1,14 +1,22 @@
 import { useEffect, useState } from 'react';
 
+import Spinner from '@components/ui/Spinner';
 import Typography from '@components/ui/Typography';
 import { FOOTER_HEIGTH } from '@components/women/WomenFooter/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useTheme from '@hooks/useTheme';
 
+import { IFRAME_URL } from './constants';
+
 const PartnerLandingWebView = () => {
   const { colors } = useTheme();
   const [hideButton, setHideButton] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
+  const handleLoad = () => {
+    setIsLoading(false);
+  };
 
   const { pageNavigationHandler } = usePageNavigationLoading();
 
@@ -36,17 +44,24 @@ const PartnerLandingWebView = () => {
 
   return (
     <div className={`${!hideButton && 'pb-40'}`} style={{ width: '100%', height: '100dvh' }}>
+      {isLoading && (
+        <div className="flex justify-center items-center w-full h-full ">
+          <Spinner width={50} color="primary" borderWidth={4} />
+        </div>
+      )}
+
       <iframe
-        src="https://websit-nine.vercel.app/webView/sympathy"
+        src={IFRAME_URL}
         style={{
           width: '100%',
           height: '100%',
           border: 'none',
-          display: 'block',
+          display: isLoading ? 'none' : 'block',
           zIndex: 100,
         }}
-        // onLoad={handleLoad}
+        onLoad={handleLoad}
       />
+
       {!hideButton && (
         <div
           className=" fixed right-0 left-0 mx-auto h-20 flex justify-center items-center px-4"

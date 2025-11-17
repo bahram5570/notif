@@ -28,10 +28,10 @@ const SympathySupport = () => {
         </CustomTypography>
         <CustomImage
           src="/assets/images/webView/sympathy/7.webp"
-          alt={'sympathy6'}
+          alt={'sympathy7'}
           width={984}
           height={1143}
-          className="w-full h-auto px-4"
+          className="w-full h-auto px-4 pb-3"
         />
       </ContentCardContainer>
 
@@ -41,10 +41,10 @@ const SympathySupport = () => {
         </CustomTypography>
         <CustomImage
           src="/assets/images/webView/sympathy/8.webp"
-          alt={'sympathy6'}
+          alt={'sympathy8'}
           width={984}
           height={1143}
-          className="w-full h-auto pr-3 pb-3"
+          className="w-full h-auto p-4"
         />
       </ContentCardContainer>
     </div>
