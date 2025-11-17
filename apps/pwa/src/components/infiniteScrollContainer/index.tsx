@@ -45,7 +45,7 @@ const InfiniteScrollContainer = ({
   return (
     <div
       ref={containerRef}
-      className={`${isLoading ? 'overflow-y-hidden' : ' overflow-y-auto'} ${className}`}
+      className={`overflow-y-auto ${className}`}
       style={{
         ...style,
         height,

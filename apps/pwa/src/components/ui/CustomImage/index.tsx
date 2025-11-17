@@ -40,7 +40,7 @@ const CustomImage = (props: CustomImageProps) => {
   const imageStyles =
     props.width === undefined
       ? { width: 0, height: 0, sizes: '100vw', style: { width: '100%', height: 'auto' } }
-      : { fill: true };
+      : { fill: true, sizes: '(max-width: 480px) 100vw, 480px' };
 
   return (
     <div className={`overflow-hidden ${props.className}`} style={{ ...parentStyles, ...props.style }}>
