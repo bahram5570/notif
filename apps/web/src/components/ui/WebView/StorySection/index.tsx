@@ -33,7 +33,7 @@ const StorySection = ({ title, storyList }: StorySectionPropsType) => {
         <CustomTypography fontSize="Title_Small" color="Neutral_OnBackground">
           {title}
         </CustomTypography>
-        <div className=" rounded-xl py-3 px-4" style={{ backgroundColor: COLORS_LIST.Neutral_Background }}>
+        {/* <div className=" rounded-xl py-3 px-4" style={{ backgroundColor: COLORS_LIST.Neutral_Background }}>
           <CustomSlider gap={10} isWindows={isWindows} className=" justify-end">
             {storyList.map((story, index) => {
               return (
@@ -47,7 +47,7 @@ const StorySection = ({ title, storyList }: StorySectionPropsType) => {
               );
             })}
           </CustomSlider>
-        </div>
+        </div> */}
       </div>
 
       <StoryPreview storyList={storyList} isOpen={isOpen} isOpenHandler={isOpenHandler} currentIndex={currentIndex} />
