@@ -17,12 +17,11 @@ const WidgetHintCardV2 = ({ data }: WidgetHintCardV2Props) => {
     <div className={styles.wrapper} ref={inViewRef}>
       <Swiper
         loop={true}
-        initialSlide={0}
         autoplay={{ delay: 10000 }}
         modules={[Pagination, Autoplay]}
         pagination={{ dynamicBullets: true }}
         style={{ direction: 'rtl', paddingBottom: '24px' }}
-        onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
+        onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex)}
       >
         {data.list.map((item, index) => (
           <SwiperSlide className="h-auto" key={index}>

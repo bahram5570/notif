@@ -11,7 +11,7 @@ const WidgetHintCardWriterInfo = ({ writerSpeciality, writerName, writerIcon }: 
 
   return (
     <div className="w-full flex items-center gap-2" dir="rtl">
-      <div className="relative w-11 h-11 min-w-11 min-h-11">
+      <div className="relative min-w-10 min-h-10 max-w-10 max-h-10">
         <CustomImage
           src={writerIcon}
           objectFit="contain"
@@ -23,12 +23,12 @@ const WidgetHintCardWriterInfo = ({ writerSpeciality, writerName, writerIcon }: 
       </div>
 
       <div className="flex flex-col">
-        <Typography scale="Body" size="Small" color="Surface_Outline">
-          {writerSpeciality}
-        </Typography>
-
         <Typography scale="Lable" size="Medium" color="Neutral_OnBackground">
           {writerName}
+        </Typography>
+
+        <Typography scale="Body" size="Small" color="Surface_Outline">
+          {writerSpeciality}
         </Typography>
       </div>
     </div>

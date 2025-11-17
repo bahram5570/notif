@@ -12,13 +12,11 @@ import { DateModuleProps, StateValuesHandlerTypes, ValuesTypes } from './types';
 const DateModule = ({ defaultDate, startDate, endDate, valueHandler, testId }: DateModuleProps) => {
   const { isLargeScreen } = useActivationIsLargeScreen();
   const [values, setValues] = useState<ValuesTypes>({ month: '', year: '', day: '' });
+  const [initialValuesSteps, setInitialValuesSteps] = useState({ day: false, month: false });
 
   useValueHandler({ values, valueHandler });
 
-  useDefaultDate({
-    onDefaultData: (v) => setValues(v),
-    defaultDate: defaultDate || endDate,
-  });
+  useDefaultDate({ onDefaultData: setValues, defaultDate: defaultDate || endDate });
 
   const { daysList, monthsList, yearsList } = useListsMaker({ values, endDate, startDate });
 
@@ -28,36 +26,42 @@ const DateModule = ({ defaultDate, startDate, endDate, valueHandler, testId }: D
 
   return (
     <div
+      data-testid={testId}
       style={{ marginTop: isLargeScreen ? '40px' : '0' }}
       className="relative w-[calc(100%_-_48px)] grid grid-cols-3 place-items-center mx-auto"
-      data-testid={testId}
     >
       {daysList && monthsList && yearsList && (
         <>
           <WheelPicker
             list={yearsList}
             defaultValue={values.year}
-            valueHandler={(v) => stateValuesHandler(v.toString(), 'year')}
             testId={`wheelPicker_year`}
+            valueHandler={(v) => stateValuesHandler(v.toString(), 'year')}
+            onInitialValuesSteps={() => setInitialValuesSteps({ ...initialValuesSteps, month: true })}
           />
 
           <WheelPickerDivider isTop={true} />
 
-          <WheelPicker
-            list={monthsList}
-            defaultValue={values.month}
-            valueHandler={(v) => stateValuesHandler(v.toString(), 'month')}
-            testId={`wheelPicker_month`}
-          />
+          {initialValuesSteps.month && (
+            <WheelPicker
+              list={monthsList}
+              defaultValue={values.month}
+              testId={`wheelPicker_month`}
+              valueHandler={(v) => stateValuesHandler(v.toString(), 'month')}
+              onInitialValuesSteps={() => setInitialValuesSteps({ ...initialValuesSteps, day: true })}
+            />
+          )}
 
           <WheelPickerDivider isTop={false} />
 
-          <WheelPicker
-            list={daysList}
-            defaultValue={values.day}
-            valueHandler={(v) => stateValuesHandler(v.toString(), 'day')}
-            testId={`wheelPicker_day`}
-          />
+          {initialValuesSteps.day && (
+            <WheelPicker
+              list={daysList}
+              defaultValue={values.day}
+              testId={`wheelPicker_day`}
+              valueHandler={(v) => stateValuesHandler(v.toString(), 'day')}
+            />
+          )}
         </>
       )}
     </div>

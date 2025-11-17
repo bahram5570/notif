@@ -15,6 +15,7 @@ const CycleCardShortLinks = ({ items }: CycleCardShortLinksProps) => {
         className="grid grid-cols-4 px-5 py-4 rounded-3xl"
         style={{
           bottom,
+          direction: 'rtl',
           backgroundColor: colors.White,
           minHeight: CIRCLE_CARD_SHORT_LINKS_HEIGHT,
         }}

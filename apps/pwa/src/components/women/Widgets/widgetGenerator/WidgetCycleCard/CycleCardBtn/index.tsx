@@ -12,7 +12,7 @@ const CycleCardBtn = ({ buttonsList }: CycleCardBtnProps) => {
 
   return (
     <WidgetScaleModule>
-      <div className="w-full flex justify-center gap-4">
+      <div className="w-full flex justify-center gap-4 pt-4">
         {buttonsList.map((item, index) => (
           <Button
             key={index}

@@ -9,8 +9,8 @@ export enum CalendarTypeEnum {
 
 export const DATE_SEPERATOR_REGEX = /[-\/]/;
 
-export const JALALI_START_DATE = `${jYear - 54}/01/01`;
-export const GREGORIAN_START_DATE = `${gYear - 55}-01-01`;
+export const JALALI_START_DATE = `${jYear - 60}/01/01`;
+export const GREGORIAN_START_DATE = `${gYear - 60}-01-01`;
 
 // # PREGNANCY_INTERVAL قبلا 280 روز بوده اما در انتخاب 280 روزمین وارد روز سفید میشدیم برای همون یک واحد کم کردیم که محدوده انتخاب درست شود
 export const PREGNANCY_INTERVAL = 279;

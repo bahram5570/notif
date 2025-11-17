@@ -19,7 +19,7 @@ const WidgetCycleCard = ({ data, insideCycleWidgetList, loadingStatus }: WidgetC
     <div
       className="relative flex flex-col"
       style={{
-        paddingTop: HEADER_HEIGHT,
+        paddingTop: 56,
         minHeight: CYCLE_CARD_TOTAL_HEIGHT,
         paddingBottom: CYCLE_CARD_SHORT_LINKS_HEIGHT / 2,
       }}

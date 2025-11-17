@@ -18,7 +18,7 @@ const WidgetHintCardGenerator = (props: WidgetHintCardGeneratorProps) => {
   return (
     <div
       ref={ref}
-      className="w-full h-full flex flex-col gap-1"
+      className="w-full h-full flex flex-col gap-3"
       style={{ borderColor: colors.Neutral_Surface, direction: 'ltr' }}
     >
       <WidgetHintCardGeneratorWriterInfo
