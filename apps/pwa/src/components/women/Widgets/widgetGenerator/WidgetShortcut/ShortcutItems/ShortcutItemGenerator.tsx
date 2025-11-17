@@ -8,11 +8,11 @@ import useAnalytics from '@hooks/useAnalytics';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
 
-import { ShortcutItemPropsType } from './type';
+import { ShortcutItemGeneratorProps } from './types';
 
-const ShortcutItem = (props: ShortcutItemPropsType) => {
-  const { actionHandler } = useWidgetActions();
+const ShortcutItemGenerator = (props: ShortcutItemGeneratorProps) => {
   const { callEvent } = useAnalytics();
+  const { actionHandler } = useWidgetActions();
   const [jsonData, setJsonData] = useState<any>(null);
 
   const onClick = () => {
@@ -44,9 +44,9 @@ const ShortcutItem = (props: ShortcutItemPropsType) => {
 
   return (
     <div
-      className="flex flex-col justify-start items-center gap-2 pointer-events-auto"
-      style={{ margin }}
       onClick={onClick}
+      style={{ margin }}
+      className="flex flex-col justify-start items-center gap-2 pointer-events-auto"
     >
       <div className="w-12 h-12">
         {isJson ? jsonData && <LottieJson animationData={jsonData} /> : <CustomImage src={props.icon} />}
@@ -59,4 +59,4 @@ const ShortcutItem = (props: ShortcutItemPropsType) => {
   );
 };
 
-export default ShortcutItem;
+export default ShortcutItemGenerator;

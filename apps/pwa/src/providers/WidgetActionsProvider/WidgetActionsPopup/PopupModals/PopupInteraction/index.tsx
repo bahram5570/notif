@@ -47,7 +47,7 @@ const PopupInteraction = ({ data }: PopupInteractionProps) => {
     <div className="relative h-full -mx-4">
       <div
         onClick={() => router.back()}
-        className="w-12 h-12 flex items-center justify-center absolute -top-12 left-2 z-10"
+        className="w-12 h-12 flex items-center justify-center absolute -top-4 left-2 z-10"
       >
         <CloseIcon className="w-8 h-auto rotate-45 cursor-pointer" style={{ stroke: colors.Neutral_OnSurface }} />
       </div>

@@ -31,23 +31,23 @@ const useDateIntervals = () => {
     if (culture.calendarType === CalendarTypeEnum.Gregorian) {
       dateIntervals.periodEnd = gDate;
       dateIntervals.giveBirthStart = gDate;
-      dateIntervals.breastfeedingStart = gDate;
+      dateIntervals.breastfeedingEnd = gDate;
       dateIntervals.pregnancyPeriodEnd = gDate;
       dateIntervals.giveBirthEnd = m(gDate).add(PREGNANCY_INTERVAL, 'day').format('YYYY-MM-DD');
       dateIntervals.periodStart = m(gDate).subtract(PERIOD_INTERVAL, 'day').format('YYYY-MM-DD');
-      dateIntervals.breastfeedingEnd = m(gDate).add(BREAST_FEEDING_INTERVAL, 'day').format('YYYY-MM-DD');
       dateIntervals.pregnancyPeriodStart = m(gDate).subtract(PREGNANCY_INTERVAL, 'day').format('YYYY-MM-DD');
+      dateIntervals.breastfeedingStart = m(gDate).subtract(BREAST_FEEDING_INTERVAL, 'day').format('YYYY-MM-DD');
     }
 
     if (culture.calendarType === CalendarTypeEnum.Jalali) {
       dateIntervals.periodEnd = jDate;
       dateIntervals.giveBirthStart = jDate;
-      dateIntervals.breastfeedingStart = jDate;
+      dateIntervals.breastfeedingEnd = jDate;
       dateIntervals.pregnancyPeriodEnd = jDate;
       dateIntervals.giveBirthEnd = m(gDate).add(PREGNANCY_INTERVAL, 'day').format('jYYYY/jMM/jDD');
       dateIntervals.periodStart = m(gDate).subtract(PERIOD_INTERVAL, 'day').format('jYYYY/jMM/jDD');
-      dateIntervals.breastfeedingEnd = m(gDate).add(BREAST_FEEDING_INTERVAL, 'day').format('jYYYY/jMM/jDD');
       dateIntervals.pregnancyPeriodStart = m(gDate).subtract(PREGNANCY_INTERVAL, 'day').format('jYYYY/jMM/jDD');
+      dateIntervals.breastfeedingStart = m(gDate).subtract(BREAST_FEEDING_INTERVAL, 'day').format('jYYYY/jMM/jDD');
     }
 
     return dateIntervals;

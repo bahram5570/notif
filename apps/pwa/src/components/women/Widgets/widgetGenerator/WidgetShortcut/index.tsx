@@ -3,7 +3,7 @@
 import Typography from '@components/ui/Typography';
 import useTheme from '@hooks/useTheme';
 
-import ShortcutItem from './ShortcutItem';
+import ShortcutItems from './ShortcutItems';
 import { ShortcutWidgetCardProps } from './type';
 
 const WidgetShortcut = ({ data }: ShortcutWidgetCardProps) => {
@@ -20,11 +20,7 @@ const WidgetShortcut = ({ data }: ShortcutWidgetCardProps) => {
         </Typography>
       </div>
 
-      <div className="grid grid-cols-4 gap-4" style={{ direction: 'rtl' }}>
-        {data.items.map((item, index) => (
-          <ShortcutItem key={index} {...item} />
-        ))}
-      </div>
+      <ShortcutItems items={data.items} />
     </div>
   );
 };

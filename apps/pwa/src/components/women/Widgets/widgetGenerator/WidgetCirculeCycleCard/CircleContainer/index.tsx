@@ -40,7 +40,7 @@ const CircleContainer = ({ data, loadingStatus }: CircleContainerProps) => {
   return (
     <div className="relative">
       <div
-        className="w-[100vw] h-[100vw] p-8 overflow-hidden"
+        className="w-full h-[100vw] p-8 overflow-hidden"
         style={{ maxHeight: MAX_SCREEN_WIDTH, maxWidth: MAX_SCREEN_WIDTH }}
       >
         <div className="relative w-full h-full rounded-full" ref={containerRef}>
