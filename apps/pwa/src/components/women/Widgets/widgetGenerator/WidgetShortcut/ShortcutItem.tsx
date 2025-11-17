@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { textShorter } from '@utils/scripts';
 
@@ -31,8 +31,23 @@ const ShortcutItem = (props: ShortcutItemPropsType) => {
     }
   }, [props.icon, isJson]);
 
+  const margin = useMemo(() => {
+    switch (props.shorcutItemChild) {
+      case 'first':
+        return '0 0 0 auto';
+      case 'last':
+        return '0 auto 0 0';
+      default:
+        return '0 auto';
+    }
+  }, [props.shorcutItemChild]);
+
   return (
-    <div className="flex flex-col justify-start items-center gap-2 pointer-events-auto" onClick={onClick}>
+    <div
+      className="flex flex-col justify-start items-center gap-2 pointer-events-auto"
+      style={{ margin }}
+      onClick={onClick}
+    >
       <div className="w-12 h-12">
         {isJson ? jsonData && <LottieJson animationData={jsonData} /> : <CustomImage src={props.icon} />}
       </div>

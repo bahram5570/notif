@@ -10,7 +10,7 @@ const CycleScripts = ({ description, leading, textColor, title }: CycleScriptsPr
 
   return (
     <WidgetScaleModule>
-      <div className="flex flex-col justify-end items-center gap-2 px-4">
+      <div className="flex flex-col justify-end items-center gap-3 px-4">
         <Typography scale="Title" size="Small" textAlign="center" color="FREE-STYLE" freeColor={color}>
           {leading}
         </Typography>

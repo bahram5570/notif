@@ -1,7 +1,5 @@
 import { useState } from 'react';
 
-import styles from './styles.module.css';
-
 import useAnalytics from '@hooks/useAnalytics';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -14,7 +12,7 @@ const WidgetHintCardV2 = ({ data }: WidgetHintCardV2Props) => {
   const { inViewRef } = useAnalytics({ inView_eventName: 'HintWidgetSeenMoreThan5Secs' });
 
   return (
-    <div className={styles.wrapper} ref={inViewRef}>
+    <div className="pb-4" ref={inViewRef}>
       <Swiper
         loop={true}
         autoplay={{ delay: 10000 }}

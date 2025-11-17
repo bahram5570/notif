@@ -51,3 +51,7 @@ input[type='number'] {
 .hideScrollbar::-webkit-scrollbar {
   display: none;
 }
+
+.swiper-pagination-bullet-active {
+  background-color: #353535;
+}

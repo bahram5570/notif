@@ -6,6 +6,7 @@ import DateModule from '@components/activation/DateModule';
 import MainActivationModule from '@components/activation/MainActivationModule';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
+import useDateIntervals from '@providers/__activation__/ActivationProvider/__hooks__/useDateIntervals';
 import usePageInfo from '@providers/__activation__/ActivationProvider/__hooks__/usePageInfo';
 
 import { Breastfeeding1ContainerProps } from './types';
@@ -22,6 +23,7 @@ const Breastfeeding1Container = ({
   onContinue,
 }: Breastfeeding1ContainerProps) => {
   const { culture } = useCulture();
+  const { breastfeedingStart, breastfeedingEnd } = useDateIntervals();
   const { nextPageHandler, pageInfo, options } = usePageInfo({ payloadHandler, info, payload, activationData });
 
   const defaultDate = useMemo(() => {
@@ -50,7 +52,12 @@ const Breastfeeding1Container = ({
 
   return (
     <MainActivationModule onContinue={onContinue} isLoading={isLoading} onRegister={onRegister} {...pageInfo}>
-      <DateModule valueHandler={valueHandler} defaultDate={defaultDate} />
+      <DateModule
+        valueHandler={valueHandler}
+        defaultDate={defaultDate}
+        startDate={breastfeedingStart}
+        endDate={breastfeedingEnd}
+      />
     </MainActivationModule>
   );
 };
