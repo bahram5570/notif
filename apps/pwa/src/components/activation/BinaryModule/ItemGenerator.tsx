@@ -22,7 +22,11 @@ const ItemGenerator = ({ option, isSelected, selectedItemHandler }: ItemGenerato
   }, []);
 
   return (
-    <div onClick={() => selectedItemHandler({ selectedIndex: option.index, isSingleSelect: option.isSingleSelect })}>
+    <div
+      onClick={() => selectedItemHandler({ selectedIndex: option.index, isSingleSelect: option.isSingleSelect })}
+      data-testid={`radioItem_binary_${option.index}`}
+      aria-checked={isSelected}
+    >
       <div
         style={{ borderColor, backgroundColor }}
         className="w-full h-fit p-4 rounded-xl border-[1px] pointer-events-none "

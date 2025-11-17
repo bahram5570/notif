@@ -45,6 +45,7 @@ export type TypographyProps = ScaleTypes &
     toEnglishNumber?: boolean;
     className?: string;
     children?: string;
+    testId?: string;
   };
 
 export type SelectedTypographyTypes = TyographyTypes['Body']['Medium'] | {};

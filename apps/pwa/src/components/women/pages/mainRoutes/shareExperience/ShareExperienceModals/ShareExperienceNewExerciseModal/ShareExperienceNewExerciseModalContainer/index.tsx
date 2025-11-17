@@ -26,7 +26,7 @@ const ShareExperienceNewExerciseModalContainer = ({
   const { isLoading, topicsData, topicId, topicIdHandler } = useTopics();
   const { text, textHandler } = useText();
   const fileProps = useImage();
-  const [btnTop, setBtnTop] = useState<number>();
+  const [btnTop, setBtnTop] = useState<number>(0);
   const conainerRef = useRef<HTMLDivElement | null>(null);
   useOverflowHandler(queryParam !== null);
 
@@ -40,16 +40,20 @@ const ShareExperienceNewExerciseModalContainer = ({
   useEffect(() => {
     const el = conainerRef.current;
     if (el) {
-      const elTop = el.getBoundingClientRect().height;
-      const elHeight = el.offsetHeight;
-      const elPaddingTop = 60;
+      if (window.visualViewport) {
+        window.visualViewport?.addEventListener('resize', () => {
+          const viewportHeight = window.visualViewport!.height;
+          const windowHeight = window.innerHeight;
 
-      setBtnTop(elTop + elHeight + elPaddingTop);
+          const keyboardHeight = windowHeight - viewportHeight;
+          setBtnTop(keyboardHeight);
+        });
+      }
     }
   }, [text]);
 
   const onChangeBtnTop = () => {
-    setBtnTop(undefined);
+    setBtnTop(0);
   };
 
   return (

@@ -22,7 +22,9 @@ const OperatingSystemProvider = ({ children }: { children: React.ReactNode }) =>
       const userAgent = navigator.userAgent.toLowerCase();
 
       // # Operating system
-      if (/iphone|ipad|ipod|mac os/i.test(userAgent)) {
+      if (!/mobile/i.test(userAgent)) {
+        setOperatingSystem('windows');
+      } else if (/iphone|ipad|ipod|mac os/i.test(userAgent)) {
         setOperatingSystem('ios');
       } else if (/android/i.test(userAgent)) {
         setOperatingSystem('android');

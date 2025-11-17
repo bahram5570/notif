@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import { textShorter } from '@utils/scripts';
 
@@ -8,11 +8,11 @@ import useAnalytics from '@hooks/useAnalytics';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
 
-import { ShortcutItemPropsType } from './type';
+import { ShortcutItemGeneratorProps } from './types';
 
-const ShortcutItem = (props: ShortcutItemPropsType) => {
-  const { actionHandler } = useWidgetActions();
+const ShortcutItemGenerator = (props: ShortcutItemGeneratorProps) => {
   const { callEvent } = useAnalytics();
+  const { actionHandler } = useWidgetActions();
   const [jsonData, setJsonData] = useState<any>(null);
 
   const onClick = () => {
@@ -31,18 +31,32 @@ const ShortcutItem = (props: ShortcutItemPropsType) => {
     }
   }, [props.icon, isJson]);
 
+  const margin = useMemo(() => {
+    switch (props.shorcutItemChild) {
+      case 'first':
+        return '0 0 0 auto';
+      case 'last':
+        return '0 auto 0 0';
+      default:
+        return '0 auto';
+    }
+  }, [props.shorcutItemChild]);
+
   return (
-    <div className="flex flex-col justify-center  items-center gap-2 pointer-events-auto" onClick={onClick}>
-      {isJson ? (
-        jsonData && <LottieJson animationData={jsonData} loop={true} />
-      ) : (
-        <CustomImage src={props.icon} width={72} height={72} />
-      )}
-      <Typography scale="Lable" size="Medium" className="!w-[150px]" textAlign="center">
+    <div
+      onClick={onClick}
+      style={{ margin }}
+      className="flex flex-col justify-start items-center gap-2 pointer-events-auto"
+    >
+      <div className="w-12 h-12">
+        {isJson ? jsonData && <LottieJson animationData={jsonData} /> : <CustomImage src={props.icon} />}
+      </div>
+
+      <Typography scale="Lable" size="SmallProminet" textAlign="center">
         {isJson ? textShorter(props.title, 11) : props.title}
       </Typography>
     </div>
   );
 };
 
-export default ShortcutItem;
+export default ShortcutItemGenerator;

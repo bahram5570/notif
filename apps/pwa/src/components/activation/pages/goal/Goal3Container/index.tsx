@@ -63,6 +63,7 @@ const Goal3Container = ({
           onRegister={onRegister}
           showContinueBtn={showContinueBtn}
           {...pageInfo}
+          btnTestId="btn_goal3"
         >
           <RadioModule options={options} onSelect={selectHandler} />
         </MainActivationModule>

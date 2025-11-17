@@ -14,6 +14,7 @@ export interface ContinueBtnProps
     | 'invalidMessage'
     | 'showContinueBtn'
     | 'orderOfRewardElements'
+    | 'btnTestId'
   > {
   currentRewardData: CurrentRewardDataTypes;
 }

@@ -12,6 +12,7 @@ const Codes = ({ submitHandler, isLoading, otpStatus }: CodesProps) => {
       onClick={isFocusHandler}
       className="flex justify-center gap-2 w-full px-7"
       style={{ pointerEvents: isLoading ? 'none' : 'initial' }}
+      data-testid={'otp2CodeContainer'}
     >
       {steps.map((stepValue, stepIndex) => (
         <SingleCode

@@ -57,6 +57,7 @@ export type WidgetsTypes = IsPdfDownloadingTypes &
 export type CycleCardTypes = IsPdfDownloadingTypes & {
   type: WidgetsEnum.CycleCard;
   data: {
+    shortcut: { items: ShortcutItemType[] };
     button: WidgetsButtonTypes[];
     backgroundColour: string;
     forgroundColor: string;
@@ -128,6 +129,28 @@ export type HintCardTypes = IsPdfDownloadingTypes & {
   type: WidgetsEnum.HintCard;
   data: {
     minReadingDuration: number;
+    backgroundColour: string;
+    description: string;
+    title: string;
+    list: {
+      internalLink: null | string;
+      externalLink: null | string;
+      writerSpeciality: string;
+      isBookmarked: boolean;
+      writerIcon: string;
+      writerName: string;
+      isSeen: boolean;
+      text: string;
+      id: string;
+    }[];
+  };
+};
+
+// # ----------------------------------------------------------
+
+export type HintCard2Types = IsPdfDownloadingTypes & {
+  type: WidgetsEnum.HintCardV2;
+  data: {
     backgroundColour: string;
     description: string;
     title: string;
@@ -608,6 +631,15 @@ export type WidgetMediaTypes = IsPdfDownloadingTypes & {
 
 // # ----------------------------------------------------------
 
+export type WidgetAdvertiseCardListTypes = IsPdfDownloadingTypes & {
+  type: WidgetsEnum.AdvertiseCardList;
+  data: {
+    items: { url: string; width: number; height: number; action: ActionTypes }[];
+  };
+};
+
+// # ----------------------------------------------------------
+
 type WidgetPregnancyCheckupItemTypes = {
   backgroundColor: string;
   description: string;
@@ -654,6 +686,7 @@ export type WidgetCirculeCycleCardTypes = {
     fertilityStart: number;
     backgroundColour: string;
     button: WidgetsButtonTypes[];
+    shortcut: { items: ShortcutItemType[] };
   };
 };
 
@@ -720,20 +753,20 @@ type WomanPairProgramItemType = {
 export type WidgetWomanPairProgramTypes = IsPdfDownloadingTypes & {
   type: WidgetsEnum.WomanPairProgram;
   data: {
+    items: WomanPairProgramItemType[];
     backgroundColour: string;
     description: string;
-    items: WomanPairProgramItemType[];
     title: string;
   };
 };
 
 // # ----------------------------------------------------------
 
-type ShortcutItemType = {
-  action: ActionTypes;
-  icon: string;
+export type ShortcutItemType = {
   semanticTitle: string;
+  action: ActionTypes;
   title: string;
+  icon: string;
 };
 
 export type ShortcutWidgetTypes = IsPdfDownloadingTypes & {

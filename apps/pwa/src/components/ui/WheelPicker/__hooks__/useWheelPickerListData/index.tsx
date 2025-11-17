@@ -9,8 +9,8 @@ const useWheelPickerListData = ({ list, defaultValue }: UseWheelPickerListDataPr
   useEffect(() => {
     const updatedList = [...list];
 
-    // # Add extra spaces to the end and beginning of the list
     for (let i = 0; i < WHEEL_PICKER_EXTRA_CELLS; i++) {
+      // # Add extra spaces to the end and beginning of the list
       updatedList.push({ title: '', value: '' });
       updatedList.unshift({ title: '', value: '' });
     }
@@ -21,7 +21,13 @@ const useWheelPickerListData = ({ list, defaultValue }: UseWheelPickerListDataPr
     setWheelPickerListData({ updatedList, initialSlide });
   }, [list, defaultValue]);
 
-  return { wheelPickerListData };
+  const listIsUpdated = wheelPickerListData
+    ? `${wheelPickerListData.updatedList.length} -
+    ${wheelPickerListData.updatedList[0 + WHEEL_PICKER_EXTRA_CELLS].value} -
+    ${wheelPickerListData.updatedList[wheelPickerListData.updatedList.length - 1 - WHEEL_PICKER_EXTRA_CELLS].value}`
+    : '';
+
+  return { wheelPickerListData, listIsUpdated };
 };
 
 export default useWheelPickerListData;

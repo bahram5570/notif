@@ -47,7 +47,13 @@ const HistoryItem = (props: HistoryItemPropsType) => {
                   />
                 </div>
               </div>
-              <Typography scale="Lable" size="Medium" color="Blue_600" className="w-full" textAlign="center">
+              <Typography
+                scale="Lable"
+                size="Medium"
+                color="PrimaryWoman_Primary"
+                className="w-full"
+                textAlign="center"
+              >
                 {props.title}
               </Typography>
             </div>
@@ -64,10 +70,10 @@ const HistoryItem = (props: HistoryItemPropsType) => {
           <div
             className="w-10 h-10 flex justify-center items-center rounded-full"
             style={{
-              backgroundColor: colors.PrimaryMan_PrimaryContainerMan,
+              backgroundColor: colors.PrimaryWoman_PrimaryContainer,
             }}
           >
-            <CaretLeftIcon className="w-6 h-6" style={{ stroke: colors.PrimaryMan_PrimaryMan }} />
+            <CaretLeftIcon className="w-6 h-6" style={{ stroke: colors.PrimaryWoman_Primary }} />
           </div>
         </div>
         <div>

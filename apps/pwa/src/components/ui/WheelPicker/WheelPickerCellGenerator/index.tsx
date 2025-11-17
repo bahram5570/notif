@@ -1,6 +1,7 @@
 import { memo } from 'react';
 
 import { toPersianNumbers } from '@utils/numbers';
+import { addIdAttrs } from '@utils/scripts';
 
 import useTheme from '@hooks/useTheme';
 
@@ -28,7 +29,11 @@ const WheelPickerCellGenerator = ({
   const scale = isSelectedItem ? '1' : '0.6';
 
   return (
-    <p className="duration-200 pointer-events-none" style={{ ...typography.Title.Medium, scale, color: colorFinder() }}>
+    <p
+      className="duration-200 pointer-events-none"
+      style={{ ...typography.Title.Medium, scale, color: colorFinder() }}
+      {...addIdAttrs(isSelectedItem ? `wheelPickerCell_${title}` : '')}
+    >
       {toPersianNumbers(title)}
     </p>
   );

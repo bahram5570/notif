@@ -1,5 +1,5 @@
-import Waves from '@components/women/Widgets/widgetGenerator/WidgetCycleCard/Waves';
-import { TOTAL_WAVE_CONTAINER_SIZE } from '@components/women/Widgets/widgetGenerator/WidgetCycleCard/constants';
+import Waves from '@components/women/Widgets/widgetGenerator/WidgetCycleCard_old/Waves';
+import { TOTAL_WAVE_CONTAINER_SIZE } from '@components/women/Widgets/widgetGenerator/WidgetCycleCard_old/constants';
 
 import { WavesContainerProps } from './types';
 

@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
+import Spinner from '@components/ui/Spinner';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 
 import CommentItem from './CommentItem';
@@ -28,10 +29,11 @@ const RoutinCommentList = ({ programId, commentPlaceholder }: RoutinCommentListP
         callBack={updatePageNo}
         isLoading={isLoading}
         pageNo={pageNo}
-        totalCount={commentsData?.totalCount || 10}
+        totalCount={commentsData?.totalCount || 0}
         height={`calc(100dvh - ${HEADER_HEIGHT + 280}px)`}
+        style={{ paddingBottom: HEADER_HEIGHT * 4, paddingTop: 50 }}
       >
-        <div className=" flex flex-col px-4 gap-3 " style={{ paddingTop: 50, paddingBottom: HEADER_HEIGHT * 2 }}>
+        <div className=" flex flex-col px-4 gap-3 ">
           {!hasData && !isLoading && <CommentsListEmpty />}
           {hasData &&
             commentsData.items.map((comment, index) => {

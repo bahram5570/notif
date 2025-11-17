@@ -9,7 +9,9 @@ import useAnalyticsPageView from './useAnalyticsPageView';
 
 const useAnalytics = (props?: UseAnalyticsTypes) => {
   const callEvent: UseAnalyticsCallEventTypes = useCallback((event_name, properties) => {
-    posthog.capture(event_name, properties);
+    if (event_name) {
+      posthog.capture(event_name, properties);
+    }
   }, []);
 
   // # pageView

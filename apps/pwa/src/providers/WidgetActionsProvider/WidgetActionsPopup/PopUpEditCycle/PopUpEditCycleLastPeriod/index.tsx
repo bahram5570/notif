@@ -35,7 +35,7 @@ const PopUpEditCycleLastPeriod = ({
         {data.description}
       </Typography>
 
-      <DateModule valueHandler={startTimeHandler} startDate={periodStart} endDate={periodEnd} />
+      <DateModule valueHandler={startTimeHandler} startDate={periodStart} endDate={periodEnd} defaultDate={periodEnd} />
 
       <Button
         size="medium"

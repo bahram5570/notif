@@ -55,6 +55,7 @@ const Typography = (props: TypographyProps) => {
             whiteSpace: 'pre-line',
             textAlign: props.textAlign,
           }}
+          data-testid={props.testId}
         >
           {result}
         </p>

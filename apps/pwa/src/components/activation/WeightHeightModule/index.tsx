@@ -6,7 +6,7 @@ import useInitialValueHandler from './__hooks__/useInitialValueHandler';
 import useListMaker from './__hooks__/useListMaker';
 import { WeightHeightModuleProps } from './types';
 
-const WeightHeightModule = ({ type, valueHandler }: WeightHeightModuleProps) => {
+const WeightHeightModule = ({ type, valueHandler, testId }: WeightHeightModuleProps) => {
   const { dataList } = useListMaker({ type });
   const { isLargeScreen } = useActivationIsLargeScreen();
 
@@ -23,7 +23,12 @@ const WeightHeightModule = ({ type, valueHandler }: WeightHeightModuleProps) => 
       {dataList && (
         <>
           <WheelPickerDivider isTop={true} />
-          <WheelPicker list={dataList.list} defaultValue={dataList.defaultValue} valueHandler={changeHandler} />
+          <WheelPicker
+            list={dataList.list}
+            defaultValue={dataList.defaultValue}
+            valueHandler={changeHandler}
+            testId={testId}
+          />
           <WheelPickerDivider isTop={false} />
         </>
       )}

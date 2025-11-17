@@ -1,3 +1,3 @@
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-
-export const TOTAL_WAVE_CONTAINER_SIZE = MAX_SCREEN_WIDTH * 5;
+export const CYCLE_CARD_PADDING_BOTTOM = 32;
+export const CYCLE_CARD_TOTAL_HEIGHT = 340;
+export const CYCLE_CARD_SHORT_LINKS_HEIGHT = 106;

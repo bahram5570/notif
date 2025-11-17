@@ -14,9 +14,9 @@ const WidgetStoryCard = ({ data: originalStoryData }: WidgetStoryCardProps) => {
   }
 
   return (
-    <div className="flex flex-col items-end -mx-4 px-3">
-      <Typography scale="Title" size="Small" className="px-4 mb-2">
-        {data.title}
+    <div className="flex flex-col items-end">
+      <Typography scale="Title" size="Small" className="mb-3">
+        {data.title || 'راهنمای امروز'}
       </Typography>
 
       <CustomSlider sidePadding={16} className="items-start">

@@ -1,66 +1,78 @@
-import { useRef } from 'react';
+import dotsLoading from '@assets/lottie/dotsLoading.json';
 
+import Typography from '@components/ui/Typography';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { LoadingStatusEnum } from '@components/women/pages/mainRoutes/cycle/CycleContainer/__hooks__/useCycleLoadingStatus/loadingStatus.enum';
-import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
+import { LottieJson } from '@lib/LottieJson';
 
 import WidgetGenerator from '..';
-import Btn from './Btn';
+import CycleCardBtn from './CycleCardBtn';
+import CycleCardShortLinks from './CycleCardShortLinks';
+import CycleCardWave from './CycleCardWave';
 import CycleScripts from './CycleScripts';
-import Waves from './Waves';
+import { CYCLE_CARD_PADDING_BOTTOM, CYCLE_CARD_SHORT_LINKS_HEIGHT, CYCLE_CARD_TOTAL_HEIGHT } from './constants';
 import { WidgetCycleCardProps } from './types';
 
 const WidgetCycleCard = ({ data, insideCycleWidgetList, loadingStatus }: WidgetCycleCardProps) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const { isLargeScreen } = useActivationIsLargeScreen();
-
-  const containerTotalHeight = isLargeScreen ? 550 : 400;
-  const scriptsTotalHeight = isLargeScreen ? 180 : 130;
-
   if (loadingStatus === LoadingStatusEnum.successed && data === null) {
     return <></>;
   }
 
+  const hasInsideWigets =
+    insideCycleWidgetList && insideCycleWidgetList.length > 0 && loadingStatus === LoadingStatusEnum.successed;
+
   return (
-    <>
+    <div
+      className="relative flex flex-col"
+      style={{
+        paddingTop: HEADER_HEIGHT,
+        minHeight: CYCLE_CARD_TOTAL_HEIGHT,
+        paddingBottom: CYCLE_CARD_SHORT_LINKS_HEIGHT / 2,
+      }}
+    >
+      {hasInsideWigets && (
+        <div className="flex flex-col gap-4 ">
+          {insideCycleWidgetList.map((item, index) => (
+            <WidgetGenerator {...item} key={index} />
+          ))}
+        </div>
+      )}
+
       <div
-        ref={ref}
-        className="relative flex flex-col justify-between h-full pb-8"
-        style={{ minHeight: containerTotalHeight, paddingTop: HEADER_HEIGHT }}
+        className="relative w-full flex flex-col items-center gap-4 pt-4"
+        style={{
+          minHeight: CYCLE_CARD_TOTAL_HEIGHT - CYCLE_CARD_SHORT_LINKS_HEIGHT,
+          paddingBottom: CYCLE_CARD_PADDING_BOTTOM + CYCLE_CARD_SHORT_LINKS_HEIGHT / 2,
+        }}
       >
-        {loadingStatus === LoadingStatusEnum.successed && (
-          <>
-            <div>
-              {insideCycleWidgetList && (
-                <div className="flex flex-col gap-4 p-4">
-                  {insideCycleWidgetList.map((item, index) => (
-                    <WidgetGenerator {...item} key={index} />
-                  ))}
-                </div>
-              )}
+        <CycleCardWave color={data?.forgroundColor} />
 
-              {data && (
-                <CycleScripts
-                  description={data.description}
-                  height={scriptsTotalHeight}
-                  textColor={data.textColor}
-                  leading={data.leading}
-                  title={data.title}
-                />
-              )}
-            </div>
+        {loadingStatus !== LoadingStatusEnum.successed && (
+          <div className="w-full flex justify-center items-center my-auto">
+            <LottieJson animationData={dotsLoading} className="w-14" />
 
-            {data?.button && <Btn buttonsList={data.button} />}
-          </>
+            <Typography scale="Title" size="Medium">
+              چرخه در حال بروزرسانی
+            </Typography>
+          </div>
         )}
 
-        <Waves
-          backgroundColour={data?.backgroundColour}
-          forgroundColor={data?.forgroundColor}
-          loadingStatus={loadingStatus}
-        />
+        {data && loadingStatus === LoadingStatusEnum.successed && (
+          <>
+            <CycleScripts
+              description={data.description}
+              textColor={data.textColor}
+              leading={data.leading}
+              title={data.title}
+            />
+
+            {data?.button && <CycleCardBtn buttonsList={data.button} />}
+
+            {data.shortcut.items.length > 0 && <CycleCardShortLinks items={data.shortcut.items} />}
+          </>
+        )}
       </div>
-    </>
+    </div>
   );
 };
 

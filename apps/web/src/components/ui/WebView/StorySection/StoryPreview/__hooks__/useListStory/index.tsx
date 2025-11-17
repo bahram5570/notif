@@ -1,0 +1,42 @@
+import { useEffect, useRef, useState } from 'react';
+
+import { Swiper as SwiperTypes } from 'swiper/types';
+
+import { NavigateStoryHandlerTypes, UseListStoryTypes } from './types';
+
+const useListStory = ({ isOpenHandler, list, currentIndex }: UseListStoryTypes) => {
+  const swiperRef = useRef<SwiperTypes | null>(null);
+  const [storyIndex, setCurrentStorySlide] = useState(-1);
+
+  const storyIndexHandler = (s: number) => {
+    setCurrentStorySlide(s);
+  };
+
+  const navigateStoryHandler: NavigateStoryHandlerTypes = (goToNextStory) => {
+    if (goToNextStory) {
+      if (storyIndex >= list.length - 1) {
+        isOpenHandler(false);
+      } else {
+        setCurrentStorySlide(storyIndex + 1);
+        swiperRef.current?.slideNext();
+      }
+    } else {
+      if (storyIndex > 0) {
+        setCurrentStorySlide(storyIndex - 1);
+        swiperRef.current?.slidePrev();
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (currentIndex) {
+      setCurrentStorySlide(currentIndex);
+    } else {
+      setCurrentStorySlide(0);
+    }
+  }, [currentIndex]);
+
+  return { swiperRef, storyIndex, storyIndexHandler, navigateStoryHandler };
+};
+
+export default useListStory;

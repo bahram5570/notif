@@ -38,9 +38,9 @@ const Goal2 = () => {
   }
 
   return (
-    <MainActivationModule onContinue={callEventActivation} {...pageInfo}>
+    <MainActivationModule onContinue={callEventActivation} {...pageInfo} btnTestId="btn_goal2">
       <ActivationTabs tab={tab} tabHandler={tabHandler} tabsList={ACTIVATION_BIRTHDATE_TABS_LIST} />
-      <DateModule valueHandler={valueHandler} defaultDate={defaultDate} key={tab} />
+      <DateModule valueHandler={valueHandler} defaultDate={defaultDate} key={tab} testId={'tab-panel'} />
     </MainActivationModule>
   );
 };
