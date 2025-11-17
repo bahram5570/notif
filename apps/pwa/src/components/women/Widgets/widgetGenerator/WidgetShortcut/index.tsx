@@ -10,7 +10,7 @@ const WidgetShortcut = ({ data }: ShortcutWidgetCardProps) => {
   const { colors } = useTheme();
 
   return (
-    <div className="w-full h-fit rounded-2xl p-4 " style={{ backgroundColor: colors.Neutral_Background }}>
+    <div className="w-full h-fit rounded-2xl px-4 pt-4 pb-6" style={{ backgroundColor: colors.Neutral_Background }}>
       <div
         className="flex justify-end items-center border-b-[1px] pb-3 mb-3"
         style={{ borderColor: colors.Neutral_Surface }}

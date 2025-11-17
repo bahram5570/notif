@@ -15,7 +15,7 @@ const WidgetStoryCard = ({ data: originalStoryData }: WidgetStoryCardProps) => {
 
   return (
     <div className="flex flex-col items-end">
-      <Typography scale="Title" size="Small" className="px-4 mb-3">
+      <Typography scale="Title" size="Small" className="mb-3">
         {data.title || 'راهنمای امروز'}
       </Typography>
 

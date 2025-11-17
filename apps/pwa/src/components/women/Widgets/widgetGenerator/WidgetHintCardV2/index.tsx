@@ -12,7 +12,7 @@ const WidgetHintCardV2 = ({ data }: WidgetHintCardV2Props) => {
   const { inViewRef } = useAnalytics({ inView_eventName: 'HintWidgetSeenMoreThan5Secs' });
 
   return (
-    <div className="pb-4" ref={inViewRef}>
+    <div ref={inViewRef}>
       <Swiper
         loop={true}
         autoplay={{ delay: 10000 }}
