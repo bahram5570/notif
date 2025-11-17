@@ -1,10 +1,10 @@
 import { FaqItemType, StoryItemType } from './type';
 
 export const HEADER_TIP_LIST: { text1: string; text2: string }[] = [
-  { text1: ' موضوع گفتگو:', text2: ' هر روز یه چالش جذاب' },
+  { text1: 'موضوع گفتگو:', text2: ' هر روز یه چالش جذاب' },
   { text1: 'فضای خصوصی دونفره:', text2: ' آلبوم مشترک عکس‌ها و خاطره‌ها' },
 
-  { text1: ' آگاهی از حال روزانه همدیگه:', text2: ' آگاهی از وضعیت روزانه سیکل و حال روحی جسمی همدیگه' },
+  { text1: 'آگاهی از حال روزانه همدیگه:', text2: ' آگاهی از وضعیت روزانه سیکل و حال روحی جسمی همدیگه' },
 ];
 
 export const FAG_LIST: FaqItemType[] = [

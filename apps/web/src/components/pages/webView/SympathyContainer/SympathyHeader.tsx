@@ -21,11 +21,11 @@ const SympathyHeader = () => {
           {HEADER_TIP_LIST.map((tip, index) => {
             return (
               <div className="flex items-start gap-1" key={index}>
-                <div className="w-6 h-6 flex justify-center items-center">
+                <div className="w-6 h-6 flex justify-center ">
                   <TickIcon className="w-4 h-4" style={{ fill: COLORS_LIST.Neutral_OnBackground }} />
                 </div>
 
-                <CustomTypography fontSize="Body_Small">
+                <CustomTypography fontSize="Body_Small" className="pl-8">
                   <CustomTypography fontSize="Lable_SmallProminet" className=" inline" tagType="span">
                     {tip.text1}
                   </CustomTypography>
