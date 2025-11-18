@@ -1,3 +1,4 @@
+'use client';
 
 import CheckCircle from '@assets/images/blackFriday/checkCircle.svg';
 import welcomVector from '@assets/images/blackFriday/welcomVector.webp';

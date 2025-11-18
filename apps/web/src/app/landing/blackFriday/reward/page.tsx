@@ -1,5 +1,4 @@
-
-import BlackFridayPage from '@components/pages/landing/BlackFridayPage';
+import RewardPage from '@components/pages/landing/BlackFridayPage/RewardPage';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -9,8 +8,8 @@ export const metadata: Metadata = {
   robots: { follow: false, index: false },
 };
 
-const BlackFriday = () => {
-  return <BlackFridayPage />;
+const Reward = () => {
+  return <RewardPage />;
 };
 
-export default BlackFriday;
+export default Reward;
