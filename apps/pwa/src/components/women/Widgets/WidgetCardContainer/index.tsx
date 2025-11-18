@@ -15,6 +15,7 @@ const WidgetCardContainer = ({
   children,
   buttonId,
   onClick,
+  className,
 }: WidgetCardContainerProps) => {
   const { colors } = useTheme();
   const { actionHandler } = useWidgetActions();
@@ -32,35 +33,37 @@ const WidgetCardContainer = ({
   const backgroundColor = colors.Neutral_Background.toLowerCase() + 'b3';
 
   return (
-    <div className="w-full h-fit rounded-2xl p-4" style={{ backgroundColor }}>
-      <div
-        className="flex justify-between items-center border-b-[1px] pb-3 mb-3"
-        style={{ borderColor: colors.Neutral_Surface }}
-      >
-        <div className="min-w-fit">{titleElement}</div>
-
-        <Typography scale="Title" size="Small" color="Neutral_OnBackground">
-          {title}
-        </Typography>
-      </div>
-
-      <>{children}</>
-
-      {button && (
-        <Button
-          size="medium"
-          variant="fill"
-          className="mt-4"
-          color="FREE-STYLES"
-          onClick={clickHandler}
-          buttonColor={colorFormatConverter(button.backgroundColor)}
-          contentsColor={colorFormatConverter(button.foregroundColor)}
-          isDisable={button?.action.actionType === ActionTypeEnum.None}
-          id={buttonId}
+    <div className={` ${className} px-4 pt-6`}>
+      <div className="w-full h-fit rounded-2xl p-4 " style={{ backgroundColor }}>
+        <div
+          className="flex justify-between items-center border-b-[1px] pb-3 mb-3"
+          style={{ borderColor: colors.Neutral_Surface }}
         >
-          {button.text}
-        </Button>
-      )}
+          <div className="min-w-fit">{titleElement}</div>
+
+          <Typography scale="Title" size="Small" color="Neutral_OnBackground">
+            {title}
+          </Typography>
+        </div>
+
+        <>{children}</>
+
+        {button && (
+          <Button
+            size="medium"
+            variant="fill"
+            className="mt-4"
+            color="FREE-STYLES"
+            onClick={clickHandler}
+            buttonColor={colorFormatConverter(button.backgroundColor)}
+            contentsColor={colorFormatConverter(button.foregroundColor)}
+            isDisable={button?.action.actionType === ActionTypeEnum.None}
+            id={buttonId}
+          >
+            {button.text}
+          </Button>
+        )}
+      </div>
     </div>
   );
 };

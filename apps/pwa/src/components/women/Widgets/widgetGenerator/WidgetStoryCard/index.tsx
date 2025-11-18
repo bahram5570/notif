@@ -14,12 +14,12 @@ const WidgetStoryCard = ({ data: originalStoryData }: WidgetStoryCardProps) => {
   }
 
   return (
-    <div className="flex flex-col items-end">
-      <Typography scale="Title" size="Small" className="mb-3">
+    <div className="flex flex-col items-end pt-6">
+      <Typography scale="Title" size="Small" className="mb-3 px-4">
         {data.title || 'راهنمای امروز'}
       </Typography>
 
-      <CustomSlider sidePadding={16} className="items-start">
+      <CustomSlider sidePadding={16} className="items-start !px-2">
         {data.list.map((item, index) => (
           <StoryItemGenerator
             coverImage={item.coverImage}

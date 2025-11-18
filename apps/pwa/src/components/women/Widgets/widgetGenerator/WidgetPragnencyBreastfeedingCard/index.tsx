@@ -14,35 +14,37 @@ const WidgetPragnencyBreastfeedingCard = ({ data }: WidgetPragnencyBreastfeeding
   const backgroundColor = colors.Neutral_Background.toLowerCase() + 'b3';
 
   return (
-    <div className="flex flex-col gap-2 w-full py-2 px-3 rounded-xl" style={{ backgroundColor }} ref={inViewRef}>
-      <div className="flex gap-3 justify-center items-center">
-        <div className="flex flex-col items-end gap-2 w-full pt-5">
-          <Typography scale="Title" size="Small">
-            {data.title}
-          </Typography>
+    <div className="px-4 pt-6">
+      <div className="flex flex-col gap-2 w-full py-2 px-3 rounded-xl" style={{ backgroundColor }} ref={inViewRef}>
+        <div className="flex gap-3 justify-center items-center">
+          <div className="flex flex-col items-end gap-2 w-full pt-5">
+            <Typography scale="Title" size="Small">
+              {data.title}
+            </Typography>
 
-          <Typography scale="Body" size="Medium" color="Surface_Outline">
-            {data.description}
-          </Typography>
+            <Typography scale="Body" size="Medium" color="Surface_Outline">
+              {data.description}
+            </Typography>
 
-          <div className="w-full h-[1px] block" style={{ backgroundColor: colors.Neutral_Surface }} />
+            <div className="w-full h-[1px] block" style={{ backgroundColor: colors.Neutral_Surface }} />
 
-          {data.tiles.map((item, index) => (
-            <PragnencyBreastfeedingGenerator {...item} key={index} />
-          ))}
+            {data.tiles.map((item, index) => (
+              <PragnencyBreastfeedingGenerator {...item} key={index} />
+            ))}
+          </div>
+
+          <CustomImage src={data.image} width={150} objectFit="cover" />
         </div>
 
-        <CustomImage src={data.image} width={150} objectFit="cover" />
-      </div>
+        <div className="w-full h-[1px] block" style={{ backgroundColor: colors.Neutral_Surface }} />
 
-      <div className="w-full h-[1px] block" style={{ backgroundColor: colors.Neutral_Surface }} />
+        <div className="flex items-center justify-end gap-2">
+          <Typography scale="Lable" size="Large">
+            {data.trailing}
+          </Typography>
 
-      <div className="flex items-center justify-end gap-2">
-        <Typography scale="Lable" size="Large">
-          {data.trailing}
-        </Typography>
-
-        {data.trailingIcon && <CustomImage src={data.trailingIcon} width={56} className="rounded-full" />}
+          {data.trailingIcon && <CustomImage src={data.trailingIcon} width={56} className="rounded-full" />}
+        </div>
       </div>
     </div>
   );

@@ -29,7 +29,7 @@ const AvatarContainer = (props: AvatarContainerPropsType) => {
   };
 
   return (
-    <div className="flex gap-9 absolute top-[-38px] justify-between">
+    <div className="flex gap-9 absolute top-[-38px] right-0 left-0 justify-center">
       <Avatar src={manAvatar} name={manName} hasPreview={valid} />
       <Avatar
         src={womanAvatar || '/assets/images/defaultProfile.webp'}

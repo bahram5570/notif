@@ -1,26 +1,25 @@
 .scrollbar {
   padding-bottom: 10px;
+
+  /* iOS complete scrollbar remove */
+  -webkit-overflow-scrolling: auto !important;
+  scrollbar-width: none !important;
 }
 
+.scrollbar::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* Desktop styles */
 .scrollbar::-webkit-scrollbar-thumb {
   background: #c7c7c7;
   border-radius: 8px;
 }
 
-.scrollbar::-webkit-scrollbar {
-  height: 8px;
-  width: 8px;
-}
-
 .scrollbar.hide {
-  padding-bottom: 0px;
+  padding-bottom: 0;
 }
 
 .scrollbar.hide::-webkit-scrollbar-thumb {
   background: transparent;
-}
-
-.scrollbar.hide::-webkit-scrollbar {
-  height: 0px;
-  width: 0px;
 }

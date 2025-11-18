@@ -71,7 +71,7 @@ const CycleContainer = ({ data, customAppBar, children }: ContainerProps) => {
 
           {widgetsListProps.outsideCycleWidgetList && loadingStatus === LoadingStatusEnum.successed && (
             <>
-              <div className="flex flex-col gap-4 p-4">
+              <div className="flex flex-col ">
                 {widgetsListProps.outsideCycleWidgetList.map((widget, index) => (
                   <WidgetGenerator {...widget} key={index} />
                 ))}

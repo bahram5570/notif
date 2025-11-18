@@ -9,7 +9,12 @@ const WidgetClinicCard = ({ data }: WidgetClinicCardProps) => {
   const { callEvent } = useAnalytics();
 
   return (
-    <WidgetCardContainer title={data.title} button={data.button} onClick={() => callEvent('Action_From_ClinicCard')}>
+    <WidgetCardContainer
+      title={data.title}
+      button={data.button}
+      onClick={() => callEvent('Action_From_ClinicCard')}
+      className="pb-6"
+    >
       <div className="flex flex-col items-end">
         <Typography scale="Body" size="Small">
           {data.description}

@@ -14,7 +14,7 @@ const WidgetMedia = ({ data }: WidgetMediaProps) => {
   };
 
   return (
-    <div onClick={clickHandler}>
+    <div onClick={clickHandler} className="px-4 pt-4">
       <CustomImage src={data.url} className="rounded-2xl pb-[2px]" />
     </div>
   );

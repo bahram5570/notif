@@ -40,7 +40,7 @@ const WomanPairRoutin = (props: WomanPairRoutinPropsType) => {
       <Button
         size="medium"
         variant="fill"
-        className="mt-4"
+        className="mt-auto"
         color="FREE-STYLES"
         onClick={() => actionHandler(props.button.action)}
         buttonColor={colorFormatConverter(props.button.backgroundColor)}

@@ -21,7 +21,13 @@ const PartnerPage = () => {
   const { colors } = useTheme();
 
   const hasRequestList = requestData && requestData.list.length > 0;
-  const showEmptyLanding = data?.show_partner_empathy_landing && !hasRequestList ? true : false;
+  const showEmptyLanding = data?.show_partner_empathy_landing
+    ? data.valid
+      ? false
+      : !hasRequestList
+        ? true
+        : false
+    : true;
 
   return (
     <>
@@ -32,13 +38,10 @@ const PartnerPage = () => {
           <PartnerLandingWebView />
         ) : (
           <PartnerPageLayout isValid={data.valid} coverImage={data.coverImage}>
-            <div
-              className="flex flex-col items-center px-3 py-6  mx-4 rounded-[32px] relative"
-              style={{ backgroundColor: colors.White }}
-            >
+            <div className=" rounded-[32px] px-3 py-6  mx-4 relative" style={{ backgroundColor: colors.White }}>
               <AvatarContainer {...data} />
 
-              <div className="flex justify-center items-center flex-col gap-9 relative">
+              <div>
                 <div className="flex flex-col gap-4 xs:px-4">
                   <Challenge card={data.card} valid={data.valid} button={data.button} />
                   {!data.valid && (
@@ -55,7 +58,7 @@ const PartnerPage = () => {
                   ) : null}
 
                   {data.valid && (
-                    <div className="flex flex-col gap-6 p-4">
+                    <div className="flex flex-col">
                       {data.womanWidgets.map((widget, index) => (
                         <WidgetGenerator {...widget} key={index} />
                       ))}

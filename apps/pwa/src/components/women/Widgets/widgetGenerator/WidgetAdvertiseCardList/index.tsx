@@ -25,6 +25,7 @@ const WidgetAdvertiseCardList = ({ data }: WidgetAdvertiseCardListProps) => {
       modules={[Pagination, Autoplay]}
       pagination={{ dynamicBullets: true }}
       style={{ direction: 'rtl', paddingBottom: '24px' }}
+      className="px-4 pt-4"
     >
       {data.items.map((item, index) => (
         <SwiperSlide className="h-auto" key={index}>
