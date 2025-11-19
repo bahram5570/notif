@@ -30,7 +30,7 @@ const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGenerat
   return (
     <div
       onClick={selectHandler}
-      style={{ width: STORY_CIRCLE_WIDTH }}
+      style={{ width: STORY_CIRCLE_WIDTH * 3 }}
       className="flex flex-col items-center justify-center gap-2 cursor-pointer"
     >
       <div
@@ -52,7 +52,13 @@ const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGenerat
         />
       </div>
 
-      <Typography scale="Body" size="Small" color="Neutral_OnBackground" textAlign="center">
+      <Typography
+        scale="Body"
+        size="Small"
+        color="Neutral_OnBackground"
+        className=" !whitespace-nowrap overflow-hidden"
+        textAlign="center"
+      >
         {text}
       </Typography>
     </div>
