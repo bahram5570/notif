@@ -15,7 +15,7 @@ const SympathyIntroduction = () => {
         className="w-full h-auto object-cover rounded-[30px]"
         webkit-playsinline="true"
       >
-        <source src="/assets/images/webView/sympathy/Comp 1_2.webm" />
+        <source src="/assets/images/webView/sympathy/Comp 1_2.mov" />
       </video>
     </div>
   );
