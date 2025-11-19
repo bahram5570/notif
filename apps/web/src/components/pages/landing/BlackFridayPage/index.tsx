@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect } from 'react';
+
 import CheckCircle from '@assets/images/blackFriday/checkCircle.svg';
 import welcomVector from '@assets/images/blackFriday/welcomVector.webp';
 
@@ -11,19 +13,31 @@ import { COLORS_LIST } from '@theme/colors';
 import { SubscribtionList } from './constants';
 
 const BlackFridayPage = () => {
+  useEffect(() => {
+    sessionStorage.clear();
+  }, []);
+
   return (
     <div className="w-full max-w-[500px] h-full relative bg-gradient-to-b from-white to-[#FFE2EA]">
       <div>
         <CustomImage src={welcomVector} alt="welcomVector" />
         <div className="px-4 -mt-32">
           <CustomTypography fontSize="Headline_Small" tagType="h2" className="text-center">
-            کمپین جذاب بلک فرایدی
+            جمعه دل‌نواز
           </CustomTypography>
           <CustomTypography fontSize="Body_Medium" tagType="p" className="pt-2 text-center">
-            برات کلی سوپرایز داریم و بهت میگیم که تو کجای مسیر ایمپو قرار داری و بعدش بهت یه کاراکتر میدیم و تو رو
-            براساس اون کاراکتر از بقیه متمایز میکنیم
+            ایمپو همه جوره در مسیر خودمراقبتی همراهته.
           </CustomTypography>
-          <div className="flex justify-center mt-8">
+          <div className="mt-3">
+            <CustomTypography fontSize="Lable_Medium" tagType="h3" className="text-center mb-1">
+              دوست داری تخفیف بیشتری هدیه بگیری؟
+            </CustomTypography>
+            <CustomTypography fontSize="Body_Medium" tagType="p" className="text-center">
+              امسال بیشتر از همیشه در مسیر خودمراقبتی همراهت هستیم. به سوالات جواب بده تا کد تخفیف ویژه با درصد بیشتر
+              برات ارسال بشه.
+            </CustomTypography>
+          </div>
+          <div className="flex justify-center mt-5">
             <CustomLink
               href={'blackFriday/enterPhone'}
               className="w-60 px-12 py-3 rounded-full block"

@@ -1,14 +1,14 @@
-// components/campaign/SurveyEngine/useSurvey.ts
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Answers, QuestionConfig, SubAnswers } from '../types';
 
+import { Answers, QuestionConfig, SubAnswers } from '../types';
 
 export function useSurvey(questions: QuestionConfig[]) {
   const [step, setStep] = useState<number>(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [subAnswers, setSubAnswers] = useState<SubAnswers>({});
+  const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     const a = sessionStorage.getItem('survey_answers');
@@ -18,13 +18,17 @@ export function useSurvey(questions: QuestionConfig[]) {
     if (a) setAnswers(JSON.parse(a));
     if (sa) setSubAnswers(JSON.parse(sa));
     if (s) setStep(Number(s));
+
+    setIsLoaded(true);
   }, []);
 
   useEffect(() => {
+    if (!isLoaded) return;
+
     sessionStorage.setItem('survey_answers', JSON.stringify(answers));
     sessionStorage.setItem('survey_subanswers', JSON.stringify(subAnswers));
     sessionStorage.setItem('survey_step', String(step));
-  }, [answers, subAnswers, step]);
+  }, [answers, subAnswers, step, isLoaded]);
 
   const setAnswer = (qId: string, v: string) => {
     setAnswers((p) => ({ ...p, [qId]: v }));
@@ -52,5 +56,6 @@ export function useSurvey(questions: QuestionConfig[]) {
     setSubAnswer,
     next,
     back,
+    isLoaded,
   };
 }

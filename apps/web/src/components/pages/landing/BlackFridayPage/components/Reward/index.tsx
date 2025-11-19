@@ -1,6 +1,6 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 
 import { Answers, SubAnswers } from '../types';
 import DiscountCodeBlock from './DiscountCodeBlock';
@@ -14,15 +14,18 @@ type Props = {
 };
 
 const Reward: FC<Props> = ({ answers, subAnswers }) => {
+  const cardRef = useRef<HTMLDivElement>(null);
   const data = computeReward(answers, subAnswers);
 
   return (
     <div className="min-h-screen max-w-md mx-auto px-6 py-8 space-y-6">
-      <RewardCard image={data.image} title={data.title} description={data.description} />
+      <div ref={cardRef}>
+        <RewardCard image={data.image} title={data.title} description={data.description} />
+      </div>
 
       <DiscountCodeBlock code={data.discountCode} />
 
-      <FixedFooter />
+      <FixedFooter cardRef={cardRef} />
     </div>
   );
 };

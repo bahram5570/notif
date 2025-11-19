@@ -26,37 +26,38 @@ export const SubscribtionList: SubscribtionListType[] = [
 export const QUESTIONS: QuestionConfig[] = [
   {
     id: 'q1',
-    title: 'آیا با ایمپو آشنا هستی؟',
+    title: 'چند وقته از ایمپو استفاده می‌کنی؟',
     options: [
       {
-        label: 'بله یه مدته که آشنا هستم',
+        label: 'در حال استفاده از ایمپو هستم',
         value: 'a',
         subOptions: [
-          { label: 'سه ماه', value: 'a1' },
-          { label: 'شش ماه', value: 'a2' },
-          { label: 'یک سال', value: 'a3' },
+          { label: ' کمتر از یک ماهه که از ایمپو استفاده می‌کنم', value: 'a1' },
+          { label: 'بیشتر از ۶ ماهه که از ایمپو استفاده می‌کنم', value: 'a2' },
+          { label: 'بیشتر از یکساله که از ایمپو استفاده می‌کنم', value: 'a3' },
         ],
       },
-      { label: 'نه استفاده نکردم', value: 'b' },
-      { label: 'قبلا استفاده میکردم ولی الان نه', value: 'c' },
+      { label: 'در گذشته از ایمپو استفاده می‌کردم', value: 'b' },
+      { label: 'از ایمپو استفاده نمی‌کنم', value: 'c' },
     ],
   },
   {
     id: 'q2',
-    title: 'سؤال دوم',
+    title: 'بهمون بگو…',
     options: [
-      { label: 'گزینه ۱', value: '1' },
-      { label: 'گزینه ۲', value: '2' },
-      { label: 'گزینه ۳', value: '3' },
+      { label: 'مجردم', value: '1' },
+      { label: 'در رابطه‌ام', value: '2' },
+      { label: 'باردار یا صاحب فرزندم', value: '3' },
     ],
   },
   {
     id: 'q3',
-    title: 'سؤال سوم',
+    title: 'بهترین کاری که این روزها دلت می‌خواد برای خودت انجام بدی چیه؟',
     options: [
-      { label: 'X1', value: 'x1' },
-      { label: 'X2', value: 'x2' },
-      { label: 'X3', value: 'x3' },
+      { label: 'یکم آرامش پیدا کنم و ذهنم آروم بشه.', value: 'x1' },
+      { label: 'برای خودم وقت بذارم و یکم به خودم برسم.', value: 'x2' },
+      { label: 'بدنم و احساساتم رو بهتر بشناسم.', value: 'x3' },
+      { label: 'به جسمم بیشتر برسم؛ خواب بهتر، تغذیه، ورزش و چکاپ.', value: 'x4' },
     ],
   },
 ];

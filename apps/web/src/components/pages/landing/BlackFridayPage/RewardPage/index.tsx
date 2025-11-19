@@ -1,6 +1,6 @@
 'use client';
 
-import Reward from '../components/Reward/Reward';
+import Reward from '../components/Reward';
 import { useSurvey } from '../components/SurveyEngine/useSurvey';
 
 import { QUESTIONS } from '../constants';

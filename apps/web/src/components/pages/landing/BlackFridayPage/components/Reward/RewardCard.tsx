@@ -1,5 +1,10 @@
 import { FC } from 'react';
 
+import welcomVector from '@assets/images/blackFriday/welcomVector.webp';
+
+import CustomImage from '@components/ui/CustomImage';
+import CustomTypography from '@components/ui/CustomTypography';
+
 type Props = {
   image: string;
   title: string;
@@ -8,12 +13,19 @@ type Props = {
 
 const RewardCard: FC<Props> = ({ image, title, description }) => {
   return (
-    <div className="border border-[#3BA6FF] rounded-xl p-4 bg-white">
-      <div className="flex flex-col items-center text-center">
-        <img src={image} className="w-40 h-40 rounded-full mb-4" />
-        <h2 className="text-lg font-semibold mb-2">{title}</h2>
-        <p className="text-sm leading-relaxed text-gray-700">{description}</p>
+    <div className="mt-8 px-4">
+      <div className="flex justify-center ">
+        <CustomImage alt="image" src={welcomVector || image} className="w-[294px] h-[294px] object-cover " />
       </div>
+      <CustomTypography className="text-center" tagType="h3" fontSize="Headline_Medium">
+        {/* {title} */}
+        دل‌آرام جان
+      </CustomTypography>
+      <CustomTypography className="mt-2 text-center pb-5" tagType="p" fontSize="Body_Medium">
+        {/* {description} */}
+        دل‌آرام؛ آرامشِ دل، نماد فردی که آرامش رو به دلش هدیه کرده. مثل تو که وسط شلوغی و کار و بار تونستی برای خودت و
+        مراقبت از خودت زمان بذاری، یعنی ارزش و قدر خودتو می‌دونی. ما در ایمپو بهت افتخار می‌کنیم، دلت همیشه آروم.
+      </CustomTypography>
     </div>
   );
 };
