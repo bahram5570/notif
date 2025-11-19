@@ -2,14 +2,18 @@ import { useEffect, useRef, useState } from 'react';
 
 import RoutinCard from '@components/__routin__/RoutinCard';
 import useAnalytics from '@hooks/useAnalytics';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import WidgetCardContainer from '../../WidgetCardContainer';
 import { ProgramScrollPropType } from './type';
 
 const WidgetProgramScroll = ({ data }: ProgramScrollPropType) => {
   const { callEvent } = useAnalytics();
+  const { operatingSystem } = useOperatingSystem();
   const [containerWidth, setContainerWidth] = useState(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
+
+  const isWindows = operatingSystem === 'windows';
   const hasOOneItem = data.items.length === 1;
 
   useEffect(() => {
@@ -31,7 +35,10 @@ const WidgetProgramScroll = ({ data }: ProgramScrollPropType) => {
       button={data.button}
       onClick={() => callEvent('Action_From_ProgramScrollWidget')}
     >
-      <div className="overflow-x-auto overflow-y-hidden  max-w-full flex flex-row-reverse gap-3" ref={containerRef}>
+      <div
+        className={`overflow-x-auto overflow-y-hidden  max-w-full flex flex-row-reverse gap-3 scrollbar ${!isWindows && 'hide'}`}
+        ref={containerRef}
+      >
         {data.items.map((item, index) => (
           <div className="flex flex-row w-full" key={index}>
             <RoutinCard

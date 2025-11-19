@@ -46,7 +46,7 @@ const ClinicWidgetGenerator = ({
           {textShorter(tailing, 20)}
         </Typography>
 
-        <Typography scale="Lable" size="Medium">
+        <Typography scale="Body" size="Small">
           {subtitle}
         </Typography>
       </div>

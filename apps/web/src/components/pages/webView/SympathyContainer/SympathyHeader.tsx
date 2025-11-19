@@ -25,7 +25,7 @@ const SympathyHeader = () => {
                   <TickIcon className="w-4 h-4" style={{ fill: COLORS_LIST.Neutral_OnBackground }} />
                 </div>
 
-                <CustomTypography fontSize="Body_Small" className="pl-8">
+                <CustomTypography fontSize="Body_Small" className="pl-8 w-fit">
                   <CustomTypography fontSize="Lable_SmallProminet" className=" inline" tagType="span">
                     {tip.text1}
                   </CustomTypography>

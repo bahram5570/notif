@@ -1,5 +1,3 @@
-import styles from './scroll.module.css';
-
 import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import { SliderProps } from './types';
@@ -11,7 +9,7 @@ const CustomSlider = ({ children, gap = 16, sidePadding = 0, className, id }: Sl
 
   return (
     <div
-      className={`max-w-full overflow-x-auto overflow-y-hidden flex flex-row-reverse  ${styles.scrollbar} ${!isWindows && styles.hide} ${className}`}
+      className={`max-w-full overflow-x-auto overflow-y-hidden flex flex-row-reverse  scrollbar  ${!isWindows && 'hide'} ${className}`}
       style={{ gap, paddingLeft: sidePadding, paddingRight: sidePadding }}
       id={id}
     >

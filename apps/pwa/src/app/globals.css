@@ -55,3 +55,38 @@ input[type='number'] {
 .swiper-pagination-bullet-active {
   background-color: #353535;
 }
+
+.scrollbar {
+  padding-bottom: 10px;
+}
+
+/* Desktop Scrollbar (Windows / macOS / Android Chrome) */
+.scrollbar::-webkit-scrollbar {
+  height: 8px;
+  width: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #c7c7c7;
+  border-radius: 8px;
+}
+
+/* HIDE SCROLLBAR ON IOS ONLY */
+@supports (-webkit-touch-callout: none) {
+  .scrollbar {
+    -webkit-overflow-scrolling: auto !important;
+    scrollbar-width: none !important;
+  }
+
+  .scrollbar::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: transparent !important;
+  }
+
+  .scrollbar.hide {
+    padding-bottom: 0;
+  }
+}

@@ -1,4 +1,5 @@
 import RoutinCard from '@components/__routin__/RoutinCard';
+import CustomSlider from '@components/ui/CustomSlider';
 import Typography from '@components/ui/Typography';
 import useTheme from '@hooks/useTheme';
 
@@ -14,7 +15,7 @@ const CategoryItem = ({ categoryTitle, programs }: CategoryItemPropsType) => {
         <Typography scale="Title" size="Small" color="Neutral_OnBackground">
           {categoryTitle}
         </Typography>
-        <div className=" overflow-x-auto overflow-y-hidden flex flex-row-reverse  gap-3 py-4 max-w-full">
+        <CustomSlider gap={12}>
           {programs.map((program, index) => {
             const hasOneItem = data.length === 1;
             return (
@@ -23,7 +24,7 @@ const CategoryItem = ({ categoryTitle, programs }: CategoryItemPropsType) => {
               </div>
             );
           })}
-        </div>
+        </CustomSlider>
       </div>
       <div className=" h-[1px] mx-2 my-4" style={{ backgroundColor: colors.Neutral_Surface }} />
     </>
