@@ -1,4 +1,3 @@
-
 export type SubOption = {
   label: string;
   value: string;
@@ -8,6 +7,7 @@ export type QuestionOption = {
   label: string;
   value: string;
   subOptions?: SubOption[];
+  number?: number;
 };
 
 export type QuestionConfig = {

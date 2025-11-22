@@ -10,7 +10,7 @@ import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import { COLORS_LIST } from '@theme/colors';
 
-import { SubscribtionList } from './constants';
+import { SubscribtionList, SubscribtionReferal } from './constants';
 
 const BlackFridayPage = () => {
   useEffect(() => {
@@ -21,7 +21,7 @@ const BlackFridayPage = () => {
     <div className="w-full max-w-[500px] h-full relative bg-gradient-to-b from-white to-[#FFE2EA]">
       <div>
         <CustomImage src={welcomVector} alt="welcomVector" />
-        <div className="px-4 -mt-32">
+        <div className="px-4 -mt-[155px]">
           <CustomTypography fontSize="Headline_Small" tagType="h2" className="text-center">
             جمعه دل‌نواز
           </CustomTypography>
@@ -68,7 +68,7 @@ const BlackFridayPage = () => {
               return (
                 <CustomLink
                   key={index}
-                  href={''}
+                  href={SubscribtionReferal}
                   className="w-full rounded-2xl p-[2px] grid bg-[linear-gradient(#FB1B6D,#3D1BFF)] "
                 >
                   <CustomTypography

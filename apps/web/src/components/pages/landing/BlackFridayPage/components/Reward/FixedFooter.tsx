@@ -1,47 +1,25 @@
 import { FC } from 'react';
 
-import * as htmlToImage from 'html-to-image';
-
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
+
+import useDownloadImage from '../../Hooks/useDownloadImage';
 
 type Props = {
   cardRef: React.RefObject<HTMLDivElement>;
 };
 
 const FixedFooter: FC<Props> = ({ cardRef }) => {
-  const handleDownload = async () => {
+  const { downloadImage } = useDownloadImage();
+
+  const exportImgHandler = () => {
     if (!cardRef.current) return;
 
-    try {
-      const wrapper = document.createElement('div');
-      wrapper.style.width = '1920px';
-      wrapper.style.height = '1080px';
-      wrapper.style.backgroundColor = '#fff';
-      wrapper.style.display = 'flex';
-      wrapper.style.justifyContent = 'center';
-      wrapper.style.alignItems = 'center';
-
-      const clonedCard = cardRef.current.cloneNode(true) as HTMLElement;
-      wrapper.appendChild(clonedCard);
-
-      document.body.appendChild(wrapper);
-
-      const dataUrl = await htmlToImage.toPng(wrapper, {
-        cacheBust: true,
-        quality: 1,
-        backgroundColor: '#fff',
-      });
-
-      document.body.removeChild(wrapper);
-
-      const link = document.createElement('a');
-      link.download = 'impo.png';
-      link.href = dataUrl;
-      link.click();
-    } catch (err) {
-      console.error('Error generating image', err);
-    }
+    downloadImage({
+      element: cardRef.current,
+      filename: 'output.jpeg',
+      height: 1920,
+    });
   };
 
   return (
@@ -51,7 +29,7 @@ const FixedFooter: FC<Props> = ({ cardRef }) => {
       </CustomTypography>
 
       <div className="flex justify-center mt-4">
-        <CustomButton varient="fill" className="w-[216px] !h-12" fontSize="Title_Small" onClick={handleDownload}>
+        <CustomButton varient="fill" className="w-[216px] !h-12" fontSize="Title_Small" onClick={exportImgHandler}>
           دانلود عکس
         </CustomButton>
       </div>

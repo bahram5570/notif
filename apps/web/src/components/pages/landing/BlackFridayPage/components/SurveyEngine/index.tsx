@@ -2,11 +2,16 @@
 
 import { FC } from 'react';
 
-import { useRouter } from 'next/navigation';
+import step1 from '@assets/images/blackFriday/step1.webp';
+import step2 from '@assets/images/blackFriday/step2.webp';
+import step3 from '@assets/images/blackFriday/step3.webp';
+
+import CustomImage from '@components/ui/CustomImage';
 
 import SurveyFooter from './SurveyFooter';
 import SurveyHeader from './SurveyHeader';
 import SurveyOptions from './SurveyOptions';
+import useSubmit from './useSubmit';
 import { useSurvey } from './useSurvey';
 
 type Props = {
@@ -15,7 +20,8 @@ type Props = {
 };
 
 const Survey: FC<Props> = ({ survey, nextRoute }) => {
-  const router = useRouter();
+  const { handleSubmit, isLoading } = useSubmit(nextRoute);
+
   const { isLoaded, step, questions, current, answers, subAnswers, next, back } = survey;
 
   if (!isLoaded) return null;
@@ -28,17 +34,28 @@ const Survey: FC<Props> = ({ survey, nextRoute }) => {
 
   const handleNext = () => {
     if (!ready) return;
-    if (isLast) router.push(nextRoute);
-    else next();
+    if (isLast) {
+      const payload = {
+        phone: String(sessionStorage.getItem('phone')),
+        lastQuestion: selectedOption?.number || 0,
+      };
+      handleSubmit(payload);
+    } else next();
   };
 
   return (
-    <div className="w-full max-w-[500px] h-[100dvh] relative px-7 py-6">
-      <SurveyHeader step={step} back={back} title={current.title} />
+    <div className="w-full max-w-[500px] h-[100dvh] relative py-6">
+      <div className="px-4">
+        <SurveyHeader step={step} back={back} title={current.title} />
 
-      <SurveyOptions current={current} answers={answers} subAnswers={subAnswers} survey={survey} />
+        <SurveyOptions current={current} answers={answers} subAnswers={subAnswers} survey={survey} />
 
-      <SurveyFooter ready={ready} onNext={handleNext} />
+        <SurveyFooter ready={ready} onNext={handleNext} isLoading={isLoading} />
+      </div>
+
+      {step === 0 && <CustomImage alt="step0" src={step1} />}
+      {step === 1 && <CustomImage alt="step1" src={step2} />}
+      {step === 2 && <CustomImage alt="step2" src={step3} />}
     </div>
   );
 };

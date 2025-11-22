@@ -15,9 +15,9 @@ export function useSurvey(questions: QuestionConfig[]) {
     const sa = sessionStorage.getItem('survey_subanswers');
     const s = sessionStorage.getItem('survey_step');
 
-    if (a) setAnswers(JSON.parse(a));
-    if (sa) setSubAnswers(JSON.parse(sa));
-    if (s) setStep(Number(s));
+    setAnswers(a ? JSON.parse(a) : {});
+    setSubAnswers(sa ? JSON.parse(sa) : {});
+    setStep(s ? Number(s) : 0);
 
     setIsLoaded(true);
   }, []);
@@ -31,19 +31,34 @@ export function useSurvey(questions: QuestionConfig[]) {
   }, [answers, subAnswers, step, isLoaded]);
 
   const setAnswer = (qId: string, v: string) => {
-    setAnswers((p) => ({ ...p, [qId]: v }));
+    const q = questions.find((q) => q.id === qId);
+    const opt = q?.options.find((o) => o.value === v);
+
+    setAnswers((prev) => ({ ...prev, [qId]: v }));
+
+    if (!opt?.subOptions) {
+      setSubAnswers((prev) => {
+        const updated = { ...prev };
+        delete updated[qId];
+        return updated;
+      });
+    }
   };
 
   const setSubAnswer = (qId: string, v: string) => {
-    setSubAnswers((p) => ({ ...p, [qId]: v }));
+    setSubAnswers((prev) => ({ ...prev, [qId]: v }));
   };
 
   const next = () => {
-    if (step < questions.length - 1) setStep(step + 1);
+    if (step < questions.length - 1) {
+      setStep(step + 1);
+    }
   };
 
   const back = () => {
-    if (step > 0) setStep(step - 1);
+    if (step > 0) {
+      setStep(step - 1);
+    }
   };
 
   return {

@@ -8,6 +8,8 @@ import CustomTypography from '@components/ui/CustomTypography';
 import useCustomToast from '@hooks/useCustomToast';
 import { COLORS_LIST } from '@theme/colors';
 
+import { SubscribtionReferal } from '../../constants';
+
 type Props = {
   code: string;
 };
@@ -45,7 +47,7 @@ const DiscountCodeBlock: FC<Props> = ({ code = 'DELARAMJAN13' }) => {
           </CustomTypography>
         </div>
 
-        <CustomLink href="/" target="_blank" className="w-full text-center">
+        <CustomLink href={SubscribtionReferal} target="_blank" className="w-full text-center">
           <CustomTypography fontSize="Lable_Medium" color="Primary_Primary">
             استفاده از کد تخفیف
           </CustomTypography>

@@ -3,13 +3,15 @@
 import { FC } from 'react';
 
 import CustomButton from '@components/ui/CustomButton';
+import Spinner from '@components/ui/Spinner';
 
 type Props = {
   ready: boolean;
   onNext: () => void;
+  isLoading?: boolean | undefined;
 };
 
-const SurveyFooter: FC<Props> = ({ ready, onNext }) => {
+const SurveyFooter: FC<Props> = ({ ready, onNext, isLoading }) => {
   return (
     <div className="flex justify-center items-center mt-8">
       <CustomButton
@@ -19,7 +21,7 @@ const SurveyFooter: FC<Props> = ({ ready, onNext }) => {
         isDisable={!ready}
         fontSize="Title_Small"
       >
-        ادامه
+        {isLoading ? <Spinner color={'White'} size={18} /> : 'ادامه'}
       </CustomButton>
     </div>
   );
