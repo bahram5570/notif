@@ -10,7 +10,8 @@ const SampleCycleHeading = ({ textColor, payload }: SampleCycleHeadingProps) => 
   return (
     <>
       <div
-        className="absolute top-0 left-0 right-0 h-fit flex flex-col items-center justify-end gap-1 p-3 z-10"
+        // className="absolute top-0 left-0 right-0 h-fit flex flex-col items-center justify-end gap-1 p-3 z-10"
+        className="h-fit flex flex-col items-center justify-end gap-1 p-3 z-10"
         style={{ minHeight: SAMPLE_CYCLE_HEADING_HEIGHT, backgroundColor: headingInfo.backgroundColor }}
       >
         <Typography scale="Body" size="Large" textAlign="center" color="White">
@@ -22,7 +23,7 @@ const SampleCycleHeading = ({ textColor, payload }: SampleCycleHeadingProps) => 
         </Typography>
       </div>
 
-      <div className="h-3" />
+      {/* <div className="h-3" /> */}
 
       <div className="absolute left-0 right-0 flex justify-center" style={{ top: SAMPLE_CYCLE_HEADING_HEIGHT + 30 }}>
         <Typography scale="Lable" size="Medium" color="FREE-STYLE" freeColor={textColor}>

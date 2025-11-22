@@ -128,9 +128,9 @@ const WidgetActionsProvider = ({ children }: { children: React.ReactNode }) => {
   const nextStepCompleteHandler = () => {
     // # If the 'isCurrentNextStepFinished' be false, it means the actionList (nextStep) did not completed. Because the modal was closed by user.
     if (!isCurrentNextStepFinished) {
-      popUpHandler(null);
-      setActionList(null);
-      setActionListIndex(null);
+      // popUpHandler(null);
+      // setActionList(null);
+      // setActionListIndex(null);
       onMountActionsCompleteHandler();
     }
   };
@@ -159,7 +159,7 @@ const WidgetActionsProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <WidgetActionsContext.Provider value={{ actionHandler, onMountActionsHandler }}>
       <OnMountActionsProvider>{children}</OnMountActionsProvider>
-      <WidgetActionsPopup popUp={popUp} />
+      <WidgetActionsPopup popUp={popUp} actionCompleteHandler={actionCompleteHandler} />
     </WidgetActionsContext.Provider>
   );
 };

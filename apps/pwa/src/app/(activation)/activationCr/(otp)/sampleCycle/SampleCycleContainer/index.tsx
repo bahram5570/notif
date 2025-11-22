@@ -18,8 +18,7 @@ const SampleCycleContainer = ({ payload }: SampleCycleContainerProps) => {
 
   return (
     <FakeCycleContainer>
-      {/* <CycleContainer data={data} customAppBar={<SampleCycleHeading textColor={textColor} payload={payload} />}> */}
-      <CycleContainer data={data}>
+      <CycleContainer data={data} customAppBar={<SampleCycleHeading textColor={textColor} payload={payload} />}>
         <BottomPart payload={payload} />
         <SampleCycleContinueBtn />
       </CycleContainer>
