@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { toPersianNumbers } from '@utils/numbers';
+
 import useTheme from '@hooks/useTheme';
 
 import { TextBlockProps } from './type';
@@ -19,6 +21,9 @@ const TextBlock = ({
     return str.replace(/\\u([\dA-F]{4})/gi, (_, g1) => String.fromCharCode(parseInt(g1, 16))).replace(/\\"/g, '"');
   }
 
+  const decoded = decodeUnicode(text);
+  const finalText = toPersianNumbers(decoded);
+
   return (
     <p
       className={`${isAnimated ? 'opacity-0 animate-fade-in' : ''} ${className}`}
@@ -31,7 +36,9 @@ const TextBlock = ({
       }}
       onAnimationStart={onAnimationStart}
       onAnimationEnd={onAnimationEnd ? () => onAnimationEnd(false) : undefined}
-      dangerouslySetInnerHTML={{ __html: decodeUnicode(text).replace(/\n/g, '<br/>') + '&nbsp;' }}
+      dangerouslySetInnerHTML={{
+        __html: finalText.replace(/\n/g, '<br/>') + '&nbsp;',
+      }}
     />
   );
 };

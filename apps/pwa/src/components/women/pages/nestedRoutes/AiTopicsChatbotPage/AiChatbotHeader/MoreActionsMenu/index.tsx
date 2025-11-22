@@ -44,56 +44,54 @@ const MoreActionsMenu = ({ isOpen, closeHandler, welcomingType, disableDeleteBtn
   }
 
   return (
-    <>
+    <div
+      className=" fixed top-0 left-0 right-0 bottom-0 flex justify-center mx-auto z-20"
+      style={{ background: ' rgba(0, 0, 0, 0.16)', backdropFilter: 'blur(2.5px)', maxWidth: MAX_SCREEN_WIDTH }}
+      onClick={closeHandler}
+    >
       <div
-        className=" fixed top-0 left-0 right-0 bottom-0 flex justify-center mx-auto z-20"
-        style={{ background: ' rgba(0, 0, 0, 0.16)', backdropFilter: 'blur(2.5px)', maxWidth: MAX_SCREEN_WIDTH }}
-        onClick={closeHandler}
+        className=" p-4 py-6 rounded-3xl  backdrop-blur-[8px] border border-white shadow-lg absolute left-4 top-[70px]"
+        style={{ backgroundColor: 'rgba(255, 255, 255, 0.64)' }}
+        onClick={(e) => e.stopPropagation()}
       >
-        <div
-          className=" p-4 py-6 rounded-3xl  backdrop-blur-[8px] border border-white shadow-lg absolute left-4 top-[70px]"
-          style={{ backgroundColor: 'rgba(255, 255, 255, 0.64)' }}
-          onClick={(e) => e.stopPropagation()}
-        >
-          <div className="flex flex-col gap-2 ">
-            {welcomingType === WelcomingTypeEnum.ChatbotMessage && (
-              <>
-                {disableDeleteBtn && (
-                  <>
-                    <MoreActionBtn
-                      onClickHandler={deleteClickHandler}
-                      title=" حذف مکالمه"
-                      isDeleteBtn={true}
-                      Icon={TrashIcon}
-                    />
+        <div className="flex flex-col gap-2 ">
+          {welcomingType === WelcomingTypeEnum.ChatbotMessage && (
+            <>
+              {disableDeleteBtn && (
+                <>
+                  <MoreActionBtn
+                    onClickHandler={deleteClickHandler}
+                    title=" حذف مکالمه"
+                    isDeleteBtn={true}
+                    Icon={TrashIcon}
+                  />
 
-                    <div
-                      className="w-[133px] h-0 rotate-180  opacity-40"
-                      style={{ border: `1px solid ${colors.Surface_OutlineVariant}` }}
-                    />
-                  </>
-                )}
+                  <div
+                    className="w-[133px] h-0 rotate-180  opacity-40"
+                    style={{ border: `1px solid ${colors.Surface_OutlineVariant}` }}
+                  />
+                </>
+              )}
 
-                <MoreActionBtn
-                  onClickHandler={commentClickHandler}
-                  title="نظرت رو اینجا بگو"
-                  isDeleteBtn={false}
-                  Icon={DialogIcon}
-                />
-              </>
-            )}
-            {welcomingType === WelcomingTypeEnum.TopicsPage && (
               <MoreActionBtn
-                onClickHandler={suggestionClickHandler}
-                title="ثبت موضوع پیشنهادی"
+                onClickHandler={commentClickHandler}
+                title="نظرت رو اینجا بگو"
                 isDeleteBtn={false}
-                Icon={EditIcon}
+                Icon={DialogIcon}
               />
-            )}
-          </div>
+            </>
+          )}
+          {welcomingType === WelcomingTypeEnum.TopicsPage && (
+            <MoreActionBtn
+              onClickHandler={suggestionClickHandler}
+              title="ثبت موضوع پیشنهادی"
+              isDeleteBtn={false}
+              Icon={EditIcon}
+            />
+          )}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
