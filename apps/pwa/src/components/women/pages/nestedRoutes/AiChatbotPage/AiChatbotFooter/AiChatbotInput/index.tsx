@@ -16,9 +16,11 @@ import { AiChatbotInputPropsType } from './type';
 
 const AiChatbotInput = ({ hintPromptText, isLoading, submitHandler }: AiChatbotInputPropsType) => {
   const { colors, typography } = useTheme();
-  const { files, fileUploadHandler } = useFileUpload();
+  const { files, fileUploadHandler, removeFileHandler } = useFileUpload();
   const [chatText, setChatText] = useState('');
+
   const hasFile = files && files.length > 0;
+  const disableBtn = files.length === 3;
 
   const changeTextHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setChatText(toPersianNumbers(e.target.value));
@@ -43,14 +45,14 @@ const AiChatbotInput = ({ hintPromptText, isLoading, submitHandler }: AiChatbotI
   return (
     <div className="flex w-full items-end justify-center px-4 gap-1">
       <div
-        className={`flex flex-col w-full  glass-card !bg-white/60 shadow-sm ${hasFile ? 'rounded-3xl py-3' : 'rounded-full'}  `}
+        className={`flex flex-col  w-full  glass-card !bg-white/60 shadow-sm ${hasFile ? 'rounded-3xl py-3 ' : 'rounded-full'}  `}
       >
-        {hasFile && <AiChatbotFilePreview files={files} />}
+        {hasFile && <AiChatbotFilePreview files={files} removeFileHandler={removeFileHandler} />}
 
-        <div className="flex-1  flex flex-row-reverse justify-end items-center    ">
+        <div className="flex-1  flex flex-row-reverse justify-end items-center ">
           <textarea
             placeholder={hintPromptText}
-            className={` w-full py-4 px-2 bg-transparent  outline-none resize-none   ${style.scroller} `}
+            className={` w-full p-3 h-14 bg-transparent  outline-none resize-none   ${style.scroller} `}
             style={{ color: colors.Surface_InverseSurface, ...typography.Body.Medium, direction: 'rtl' }}
             value={chatText}
             onChange={changeTextHandler}
@@ -72,7 +74,7 @@ const AiChatbotInput = ({ hintPromptText, isLoading, submitHandler }: AiChatbotI
         </div>
       </div>
 
-      <AiChatbotUploadImage fileUploadHandler={fileUploadHandler} />
+      <AiChatbotUploadImage fileUploadHandler={fileUploadHandler} disableBtn={disableBtn} />
     </div>
   );
 };

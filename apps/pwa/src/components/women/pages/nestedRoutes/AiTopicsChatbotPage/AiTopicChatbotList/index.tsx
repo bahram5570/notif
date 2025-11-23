@@ -1,3 +1,5 @@
+import PartnerIcon from '@assets/icons/widgetPartner.svg';
+
 import Typography from '@components/ui/Typography';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import useTheme from '@hooks/useTheme';
@@ -38,6 +40,49 @@ const AiTopicChatbotList = () => {
                 <Typography size="Medium" scale="Body">
                   {result?.subtitle}
                 </Typography>
+              </div>
+
+              <div className="flex flex-col rounded-3xl gap-3 px-4 py-6" style={{ backgroundColor: colors.White }}>
+                <div className="flex flex-col items-end">
+                  <Typography scale="Lable" size="Small" color="Surface_Outline">
+                    به کمک مونس
+                  </Typography>
+                  <Typography scale="Lable" size="Medium" color="Neutral_OnBackground">
+                    تفسیر عکس آزمایش و تصاویر
+                  </Typography>
+                </div>
+                <div className="flex flex-row-reverse justify-between gap-[30px] items-baseline ">
+                  <div className="flex flex-col justify-center items-center gap-2">
+                    <PartnerIcon className="w-14 h-14" />
+                    <Typography scale="Lable" size="Small" color="Neutral_OnBackground" textAlign="center">
+                      بی‌بی چک
+                    </Typography>
+                  </div>
+                  <div className="flex flex-col justify-center items-center gap-2">
+                    <PartnerIcon className="w-14 h-14" />
+                    <Typography
+                      scale="Lable"
+                      size="Small"
+                      color="Neutral_OnBackground"
+                      textAlign="center"
+                      className=" !whitespace-nowrap"
+                    >
+                      تخمک گذاری
+                    </Typography>
+                  </div>
+                  <div className="flex flex-col justify-center items-center gap-2">
+                    <PartnerIcon className="w-14 h-14" />
+                    <Typography scale="Lable" size="Small" color="Neutral_OnBackground" textAlign="center">
+                      آزمایش بتا
+                    </Typography>
+                  </div>
+                  <div className="flex flex-col justify-center items-center gap-2 min-w-[65px]">
+                    <PartnerIcon className="w-14 h-14" />
+                    <Typography scale="Lable" size="Small" color="Neutral_OnBackground" textAlign="center">
+                      آزمایش اسپرم همسر
+                    </Typography>
+                  </div>
+                </div>
               </div>
 
               {hasUsedTopicsListData && (

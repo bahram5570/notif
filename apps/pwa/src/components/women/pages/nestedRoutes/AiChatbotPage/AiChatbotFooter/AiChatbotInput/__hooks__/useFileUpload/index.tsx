@@ -5,6 +5,11 @@ import { UploadItem } from './type';
 const useFileUpload = () => {
   const [files, setFiles] = useState<UploadItem[]>([]);
 
+  const removeFileHandler = (url: string) => {
+    const newFiles = files.filter((file) => file.url !== url);
+    setFiles(newFiles);
+  };
+
   const fileUploadHandler = (file: File) => {
     if (!file) return;
 
@@ -28,7 +33,7 @@ const useFileUpload = () => {
       );
     }, 2000);
   };
-  return { files, fileUploadHandler };
+  return { files, fileUploadHandler, removeFileHandler };
 };
 
 export default useFileUpload;

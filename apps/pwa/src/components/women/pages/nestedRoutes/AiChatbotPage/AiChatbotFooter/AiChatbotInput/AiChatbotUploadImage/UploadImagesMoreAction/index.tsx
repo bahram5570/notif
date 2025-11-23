@@ -14,6 +14,7 @@ import { FileInputHandlerTypes, UploadImagesMoreActionPropsType } from './type';
 
 const UploadImagesMoreAction = ({ closeHandler, isOpen, fileUploadHandler }: UploadImagesMoreActionPropsType) => {
   const { colors } = useTheme();
+
   useEffect(() => {
     const body = document.body;
     if (isOpen) {

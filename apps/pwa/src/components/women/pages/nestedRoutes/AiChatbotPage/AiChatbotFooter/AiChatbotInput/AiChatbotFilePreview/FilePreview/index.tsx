@@ -10,8 +10,15 @@ import { FilePreviewPropsType } from './type';
 
 const FilePreview = (props: FilePreviewPropsType) => {
   const { colors } = useTheme();
+
+  const onRemoveHandler = () => {
+    if (props.url) {
+      props.removeFileHandler(props.url);
+    }
+  };
+
   return (
-    <div style={{ width: 116, height: 116 }} className="mx-4 relative rounded-2xl">
+    <div style={{ width: 116, height: 116 }} className=" relative rounded-2xl">
       {props.loading && (
         <div
           className=" absolute top-0  left-0 right-0 bottom-0 w-full h-full rounded-2xl flex justify-center items-center z-30"
@@ -37,7 +44,7 @@ const FilePreview = (props: FilePreviewPropsType) => {
       )}
 
       <div
-        // onClick={onCloseModal}
+        onClick={onRemoveHandler}
         className="w-6 h-6 absolute right-0 m-2 flex justify-center items-center rounded-full z-30"
         style={{
           backgroundColor: colors.Neutral_Surface,
