@@ -1,6 +1,7 @@
 export interface SubscribtionListType {
   discountNumber: string;
-  mounth: number;
+  mounth: string;
   pricePerMounth: number;
   price: string;
+  eventName: string;
 }

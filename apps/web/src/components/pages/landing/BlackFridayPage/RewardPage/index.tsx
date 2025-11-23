@@ -6,8 +6,8 @@ import { useSurvey } from '../components/SurveyEngine/useSurvey';
 import { QUESTIONS } from '../constants';
 
 const RewardPage = () => {
-  const { answers, subAnswers } = useSurvey(QUESTIONS);
-  return <Reward answers={answers} subAnswers={subAnswers} />;
+  const { answers, subAnswers, isLoaded } = useSurvey(QUESTIONS);
+  return <Reward answers={answers} subAnswers={subAnswers} isLoaded={isLoaded} />;
 };
 
 export default RewardPage;

@@ -5,4 +5,6 @@ type ExportType = 'blob' | 'png' | 'getFontEmbedCSS' | 'canvas' | 'jpeg' | 'toPi
 export type convertHtmlToImagePropsType = {
   HTMLElement: HTMLDivElement | null;
   type?: ExportType;
+  width?: number;
+  height?: number;
 };

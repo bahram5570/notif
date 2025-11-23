@@ -4,22 +4,18 @@ import { SubscribtionListType } from './types';
 
 export const SubscribtionList: SubscribtionListType[] = [
   {
-    discountNumber: '30%',
-    mounth: 4,
-    pricePerMounth: 80,
-    price: '320.000',
+    discountNumber: '55%',
+    mounth: 'یک‌ساله',
+    pricePerMounth: 44,
+    price: '535.000',
+    eventName: 'box_offer_year',
   },
   {
-    discountNumber: '30%',
-    mounth: 1,
-    pricePerMounth: 80,
-    price: '320.000',
-  },
-  {
-    discountNumber: '30%',
-    mounth: 6,
-    pricePerMounth: 80,
-    price: '320.000',
+    discountNumber: '45%',
+    mounth: '6 ماهه',
+    pricePerMounth: 54,
+    price: '328.000',
+    eventName: 'box_offer_month',
   },
 ];
 
@@ -29,7 +25,7 @@ export const QUESTIONS: QuestionConfig[] = [
     title: 'چند وقته از ایمپو استفاده می‌کنی؟',
     options: [
       {
-        label: 'در حال استفاده از ایمپو هستم',
+        label: 'از ایمپو استفاده می‌کنم',
         value: 'a',
         subOptions: [
           { label: ' کمتر از یک ماهه که از ایمپو استفاده می‌کنم', value: 'a1' },
@@ -37,7 +33,7 @@ export const QUESTIONS: QuestionConfig[] = [
           { label: 'بیشتر از یکساله که از ایمپو استفاده می‌کنم', value: 'a3' },
         ],
       },
-      { label: 'در گذشته از ایمپو استفاده می‌کردم', value: 'b' },
+      { label: 'قبلا از ایمپو استفاده می‌کردم', value: 'b' },
       { label: 'از ایمپو استفاده نمی‌کنم', value: 'c' },
     ],
   },

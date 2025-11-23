@@ -1,12 +1,13 @@
 'use client';
 
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 
 import step1 from '@assets/images/blackFriday/step1.webp';
 import step2 from '@assets/images/blackFriday/step2.webp';
 import step3 from '@assets/images/blackFriday/step3.webp';
 
 import CustomImage from '@components/ui/CustomImage';
+import { useRouter } from 'next/navigation';
 
 import SurveyFooter from './SurveyFooter';
 import SurveyHeader from './SurveyHeader';
@@ -20,9 +21,15 @@ type Props = {
 };
 
 const Survey: FC<Props> = ({ survey, nextRoute }) => {
+  const router = useRouter();
+
   const { handleSubmit, isLoading } = useSubmit(nextRoute);
 
   const { isLoaded, step, questions, current, answers, subAnswers, next, back } = survey;
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, []);
 
   if (!isLoaded) return null;
 
@@ -35,11 +42,12 @@ const Survey: FC<Props> = ({ survey, nextRoute }) => {
   const handleNext = () => {
     if (!ready) return;
     if (isLast) {
-      const payload = {
-        phone: String(sessionStorage.getItem('phone')),
-        lastQuestion: selectedOption?.number || 0,
-      };
-      handleSubmit(payload);
+      // const payload = {
+      //   phone: String(sessionStorage.getItem('phone')),
+      //   lastQuestion: selectedOption?.number || 0,
+      // };
+      // handleSubmit(payload);
+      router.push(nextRoute);
     } else next();
   };
 

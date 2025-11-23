@@ -2,10 +2,9 @@
 
 import { FC, useRef } from 'react';
 
-import logo from '@assets/images/blackFriday/logo.webp';
+import CustomTypography from '@components/ui/CustomTypography';
 
-import CustomImage from '@components/ui/CustomImage';
-
+import FullLoading from '../FullLoading';
 import { Answers, SubAnswers } from '../types';
 import DiscountCodeBlock from './DiscountCodeBlock';
 import FixedFooter from './FixedFooter';
@@ -15,24 +14,36 @@ import { computeReward } from './rewardMath';
 type Props = {
   answers: Answers;
   subAnswers: SubAnswers;
+  isLoaded: boolean;
 };
 
-const Reward: FC<Props> = ({ answers, subAnswers }) => {
+const Reward: FC<Props> = ({ answers, subAnswers, isLoaded }) => {
   const cardRef = useRef<HTMLDivElement>(null);
+
+  if (!isLoaded) {
+    return <FullLoading />;
+  }
+
   const data = computeReward(answers, subAnswers);
 
   return (
-    <div className="min-h-screen max-w-md mx-auto px-6 py-8 space-y-6">
-      <div ref={cardRef}>
-        <RewardCard image={data.image} title={data.title} description={data.description} />
-        <div className="absolute bottom-14 justify-center left-0 w-full hidden" id="impoLogo">
-          <CustomImage alt="impo" src={logo} width={70} height={70} />
+    <div className="bg-white w-full">
+      <div className="w-full max-w-[400px] h-full mx-auto px-4">
+        <div ref={cardRef}>
+          <RewardCard image={data.image} title={data.title} description={data.description} />
         </div>
+        <CustomTypography className="text-center mt-4 mb-2" tagType="h3" fontSize="Lable_Medium">
+          {data.textDiscount}
+        </CustomTypography>
+
+        <DiscountCodeBlock
+          code={data.discountCode}
+          eventCopy={data.eventOption.copyCode}
+          eventUse={data.eventOption.useCode}
+        />
+
+        <FixedFooter cardRef={cardRef} event={data.eventOption.download} />
       </div>
-
-      <DiscountCodeBlock code={data.discountCode} />
-
-      <FixedFooter cardRef={cardRef} />
     </div>
   );
 };

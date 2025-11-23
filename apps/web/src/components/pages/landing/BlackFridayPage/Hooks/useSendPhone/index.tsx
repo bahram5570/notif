@@ -10,6 +10,7 @@ import { useRouter } from 'next/navigation';
 export const useSendPhone = () => {
   const { onToast } = useCustomToast();
   const [phoneNumber, setPhoneNumber] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>();
   const router = useRouter();
 
   const valueHandler = (v: string) => {
@@ -22,7 +23,6 @@ export const useSendPhone = () => {
 
     if (!normalizedPhone.startsWith('09')) {
       onToast({ message: 'شماره باید با 09 شروع شود', type: 'error' });
-
       return false;
     }
 
@@ -36,6 +36,7 @@ export const useSendPhone = () => {
 
   const submitHandler = () => {
     if (!validatePhoneNumber()) return;
+    setIsLoading(true);
     sessionStorage.setItem('phone', toEnglishNumbers(phoneNumber));
     router.push('/landing/blackFriday/survey');
   };
@@ -44,5 +45,6 @@ export const useSendPhone = () => {
     phoneNumber,
     valueHandler,
     submitHandler,
+    isLoading,
   };
 };

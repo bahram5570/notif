@@ -19,8 +19,5 @@
   },
   "scripts": {
     "build": "tsc --project tsconfig.json"
-  },
-  "dependencies": {
-    "html-to-image": "^1.11.13"
   }
 }

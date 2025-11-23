@@ -24,4 +24,10 @@ export type RewardData = {
   description: string;
   title: string;
   discountCode: string;
+  textDiscount: string;
+  eventOption: {
+    copyCode: string;
+    useCode: string;
+    download: string;
+  };
 };

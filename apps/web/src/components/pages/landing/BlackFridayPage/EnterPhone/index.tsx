@@ -5,13 +5,14 @@ import welcomVectorMini from '@assets/images/blackFriday/welcomVectorMini.webp';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
-import CustomInput from '@components/ui/CustomInput';
 import CustomTypography from '@components/ui/CustomTypography';
+import Spinner from '@components/ui/Spinner';
 
 import { useSendPhone } from '../Hooks/useSendPhone';
+import InputModule from './InputModule';
 
 const EnterPhonePage = () => {
-  const { phoneNumber, valueHandler, submitHandler } = useSendPhone();
+  const { phoneNumber, valueHandler, submitHandler, isLoading } = useSendPhone();
 
   return (
     <div className="w-full max-w-[500px] h-[100dvh] relative bg-gradient-to-b from-[#FFFFFF] to-[#FFE2EA]">
@@ -26,20 +27,20 @@ const EnterPhonePage = () => {
           برای شروع، شماره‌ات رو اینجا وارد کن
         </CustomTypography>
 
-        <div className="flex justify-center mt-4">
-          <CustomInput
-            maxLength={11}
-            style={{ direction: 'ltr' }}
-            className="!w-[385px] p-4 border border-[#D0D0D0] rounded-full text-center"
+        <div className="flex justify-center mt-4 mx-4">
+          <InputModule
+            autoFocus
             value={phoneNumber}
-            onValue={valueHandler}
+            placeHolder="اینجا بنویس"
+            valueHandler={valueHandler}
+            isTextTyps={false}
           />
         </div>
 
         <div className="flex justify-center mt-4">
           {phoneNumber && (
             <CustomButton varient="fill" onClick={submitHandler}>
-              ادامه
+              {isLoading ? <Spinner color={'White'} size={18} /> : 'ادامه'}
             </CustomButton>
           )}
         </div>
