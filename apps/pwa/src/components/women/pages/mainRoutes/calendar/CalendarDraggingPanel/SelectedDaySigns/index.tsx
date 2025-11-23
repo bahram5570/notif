@@ -16,7 +16,7 @@ const SelectedDaySigns = ({ selectedDateInfo }: SelectedDaySignsProps) => {
 
   return (
     <>
-      <WidgetCardContainer title="نشانه های امروز">
+      <WidgetCardContainer title="نشانه های امروز" className="!px-0 !pt-0">
         {isAfterToday && <SelectedDaySignsNotAllowed />}
         {!isAfterToday && <SelectedDaySignsContainer selectedDateInfo={selectedDateInfo} />}
       </WidgetCardContainer>

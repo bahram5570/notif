@@ -12,7 +12,7 @@ const SelectedDayNote = ({ selectedDateInfo }: SelectedDayNotePropsType) => {
   const date: CalendarInitialSelectedDateType = selectedDateInfo.gregorianDate;
 
   return (
-    <WidgetCardContainer title="یادداشت امروزت">
+    <WidgetCardContainer title="یادداشت امروزت" className="!px-0 !pt-0">
       {hasNoteData && <SelectedDayNoteList noteList={selectedDayNoteInfo.data.notes} date={date} />}
       {!hasNoteData && <SelectedDayNoNote date={date} />}
     </WidgetCardContainer>

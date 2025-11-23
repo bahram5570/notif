@@ -33,7 +33,7 @@ const WidgetCardContainer = ({
   const backgroundColor = colors.Neutral_Background.toLowerCase() + 'b3';
 
   return (
-    <div className={` ${className} px-4 pt-6`}>
+    <div className={`w-full ${className} px-4 pt-6`}>
       <div className="w-full h-fit rounded-2xl p-4 " style={{ backgroundColor }}>
         <div
           className="flex justify-between items-center border-b-[1px] pb-3 mb-3"
