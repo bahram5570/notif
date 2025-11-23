@@ -9,7 +9,7 @@ import SignsListsContainer from './SignsListsContainer';
 import useSignsListInfo from './__hooks__/useSignsListInfo';
 import { SignsListsPros } from './types';
 
-const SignsLists = ({ infoList, slide, slideHandler }: SignsListsPros) => {
+const SignsLists = ({ infoList, slide, slideHandler, updateSingSelectedList }: SignsListsPros) => {
   const { colors } = useTheme();
   const swiperRef = useRef<SwiperTypes | null>(null);
 
@@ -29,7 +29,15 @@ const SignsLists = ({ infoList, slide, slideHandler }: SignsListsPros) => {
 
           return (
             <SwiperSlide key={`infoList-${slideIndex}`}>
-              {isVisibleSlideIndex ? <SignsListsContainer info={info} selectHandler={selectHandler} /> : <Fragment />}
+              {isVisibleSlideIndex ? (
+                <SignsListsContainer
+                  info={info}
+                  selectHandler={selectHandler}
+                  updateSingSelectedList={updateSingSelectedList}
+                />
+              ) : (
+                <Fragment />
+              )}
             </SwiperSlide>
           );
         })}

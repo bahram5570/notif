@@ -15,6 +15,7 @@ const useSignsListInfo = ({ infoData, slideIndex, slide }: UseSignsListInfoProps
 
   const selectHandler: SelectedSignsHandlerTypes = (ca, si) => {
     const initialSelectedSigns = [...info.initialSelectedSigns];
+
     const selectedIndex = initialSelectedSigns.findIndex((item) => item.category === ca && item.sign === si);
 
     if (selectedIndex === -1) {

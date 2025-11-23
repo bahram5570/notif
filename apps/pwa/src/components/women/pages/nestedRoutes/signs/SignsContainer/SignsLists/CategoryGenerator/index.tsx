@@ -5,7 +5,14 @@ import useAnalytics from '@hooks/useAnalytics';
 import useSelectedSigns from './__hooks__/useSelectedSigns';
 import { CategoryGeneratorProps, SelectedSignsHandlerTypes } from './types';
 
-const CategoryGenerator = ({ category, title, signs, info, selectHandler }: CategoryGeneratorProps) => {
+const CategoryGenerator = ({
+  category,
+  title,
+  signs,
+  info,
+  selectHandler,
+  updateSingSelectedList,
+}: CategoryGeneratorProps) => {
   const { callEvent } = useAnalytics();
 
   const { selectedSigns, selectedSignsHandler } = useSelectedSigns(info.initialSelectedSigns);
@@ -13,6 +20,8 @@ const CategoryGenerator = ({ category, title, signs, info, selectHandler }: Cate
   const selectSignHandler: SelectedSignsHandlerTypes = (ca, si) => {
     callEvent('SignsChanged');
     selectedSignsHandler(ca, si);
+
+    updateSingSelectedList({ category: ca, sign: si });
 
     if (selectHandler) {
       selectHandler(ca, si);

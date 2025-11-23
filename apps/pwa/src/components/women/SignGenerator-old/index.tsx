@@ -11,7 +11,7 @@ import useSignSelected from './__hooks__/useSignSelected';
 import { ICONS_WIDTH, SIGNS_LIST } from './constants';
 import { SignGeneratorProps } from './types';
 
-const SignGenerator = ({ category, sign, initialIsSelected, onSelect, selectedDate }: SignGeneratorProps) => {
+const SignGenerator = ({ category, sign, initialIsSelected, onSelect }: SignGeneratorProps) => {
   const { callEvent } = useAnalytics();
   const { colors } = useTheme();
   const { icon } = useSignIcon({ category, sign });
