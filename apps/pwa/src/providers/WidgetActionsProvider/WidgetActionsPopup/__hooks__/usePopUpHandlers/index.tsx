@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { PopupTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
 import { PopUpHandlerTypes, PopUpTypes } from './types';
 
@@ -12,7 +13,7 @@ const usePopUpHandlers = () => {
   const popUpHandler: PopUpHandlerTypes = (v) => {
     const isPopupOpen = getQueryParams(MODALS.WIDGET_POPUP) !== null;
 
-    if (v !== null && !isPopupOpen) {
+    if (v !== null && !isPopupOpen && v.type !== PopupTypeEnum.TimerInteraction) {
       newQueryParamsHandler({ [MODALS.WIDGET_POPUP]: 'true' });
     }
 

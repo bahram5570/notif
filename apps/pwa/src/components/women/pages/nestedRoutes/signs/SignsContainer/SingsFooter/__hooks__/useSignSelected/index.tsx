@@ -13,8 +13,9 @@ const useSignSelected = ({ selectedDate, singSelectedList }: useSignSelectedProp
   const route = useRouter();
 
   const successHandler = (v: ResponseType) => {
-    route.back();
-    // actionHandler(v.action);
+    // todo
+    // route.back();
+    actionHandler(v.action);
   };
 
   const { callApi, isLoading } = useApi<ResponseType>({

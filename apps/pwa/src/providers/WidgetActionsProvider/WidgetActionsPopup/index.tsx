@@ -2,6 +2,7 @@ import CustomModal from '@components/ui/CustomModal';
 
 import { PopupTypeEnum } from '../widgetEnums';
 import PopUpEditCycle from './PopUpEditCycle';
+import PopUpTimerInteraction from './PopUpTimerInteraction';
 import PopupBiorythem from './PopupModals/PopupBiorythem';
 import PopupDialog from './PopupModals/PopupDialog';
 import PopupImageTextButton from './PopupModals/PopupImageTextButton';
@@ -13,7 +14,13 @@ import usePopupModal from './__hooks__/usePopupModal';
 import useTwoStepsStatus from './__hooks__/useTwoStepsStatus';
 import { WidgetActionsPopupProps } from './types';
 
-const WidgetActionsPopup = ({ popUp }: WidgetActionsPopupProps) => {
+const WidgetActionsPopup = ({ popUp, timerInteractionCompleteHandler }: WidgetActionsPopupProps) => {
+  if (popUp && popUp.type === PopupTypeEnum.TimerInteraction) {
+    return (
+      <PopUpTimerInteraction data={popUp.data} timerInteractionCompleteHandler={timerInteractionCompleteHandler} />
+    );
+  }
+
   const { isPopupModalOpen } = usePopupModal(popUp !== null);
   const { hasTwoStepsInteractionReward } = useTwoStepsStatus(popUp);
 

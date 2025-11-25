@@ -159,7 +159,7 @@ const WidgetActionsProvider = ({ children }: { children: React.ReactNode }) => {
   return (
     <WidgetActionsContext.Provider value={{ actionHandler, onMountActionsHandler }}>
       <OnMountActionsProvider>{children}</OnMountActionsProvider>
-      <WidgetActionsPopup popUp={popUp} />
+      <WidgetActionsPopup popUp={popUp} timerInteractionCompleteHandler={nextStepCompleteHandler} />
     </WidgetActionsContext.Provider>
   );
 };
