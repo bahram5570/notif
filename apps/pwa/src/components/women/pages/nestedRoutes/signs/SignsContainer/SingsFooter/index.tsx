@@ -13,7 +13,7 @@ const SingsFooter = ({ singSelectedList, selectedDate, isDisableBtn }: SingsFoot
 
   return (
     <div
-      className="fixed  left-0 right-0 bottom-0 px-4 pb-4 mx-auto flex flex-col items-end z-40"
+      className="fixed  left-0 right-0 bottom-0 px-4 pb-4 mx-auto flex  items-end z-40"
       style={{
         backgroundColor: colors.Surface_SurfaceVariant,
         height: FOOTER_HEIGTH,
