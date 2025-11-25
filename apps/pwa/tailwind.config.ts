@@ -92,6 +92,10 @@ const config: Config = {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
+        popUpTimer: {
+          '0%': { bottom: '-2px' },
+          '100%': { bottom: '85px' },
+        },
       },
       animation: {
         otpError: 'otpError 0.5s linear infinite alternate',
@@ -111,6 +115,7 @@ const config: Config = {
         skeleton: 'skeleton 1.5s linear infinite',
         scrollLeft: 'scrollLeft 20s linear infinite',
         scrollRight: 'scrollRight 20s linear infinite',
+        popUpTimer: 'popUpTimer 0.5s linear forwards',
         'fade-in': 'fade-in 0.9s ease forwards',
       },
     },

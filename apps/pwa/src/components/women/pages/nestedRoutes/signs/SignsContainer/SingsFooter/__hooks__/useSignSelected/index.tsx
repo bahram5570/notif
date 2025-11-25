@@ -13,7 +13,6 @@ const useSignSelected = ({ selectedDate, singSelectedList }: useSignSelectedProp
   const route = useRouter();
 
   const successHandler = (v: ResponseType) => {
-    // todo
     // route.back();
     actionHandler(v.action);
   };
