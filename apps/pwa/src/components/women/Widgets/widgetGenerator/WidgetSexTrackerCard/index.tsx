@@ -12,11 +12,9 @@ const WidgetSexTrackerCard = ({ data }: WidgetSexTrackerCardProps) => {
   const signs = SIGNS_LIST[category].signs;
   const info = { gregorianDate: gDate, initialSelectedSigns: data.signs };
 
-  return (
-    <>
-      <CategoryGenerator category={category} title={data.title} signs={signs} info={info} />
-    </>
-  );
+  // todo
+
+  return <>{/* <CategoryGenerator category={category} title={data.title} signs={signs} info={info} /> */}</>;
 };
 
 export default WidgetSexTrackerCard;

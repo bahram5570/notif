@@ -16,7 +16,8 @@ const useSignSelected = ({ initialIsSelected, category, sign, onSelect, selected
 
   const isSelectedHandler = () => {
     if (onSelect) {
-      onSelect();
+      // todo
+      // onSelect();
     }
 
     setIsSelected(!isSelected);
