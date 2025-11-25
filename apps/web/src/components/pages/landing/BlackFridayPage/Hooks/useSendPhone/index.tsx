@@ -38,7 +38,7 @@ export const useSendPhone = () => {
     if (!validatePhoneNumber()) return;
     setIsLoading(true);
     sessionStorage.setItem('phone', toEnglishNumbers(phoneNumber));
-    router.push('/landing/blackFriday/survey');
+    router.push('/landing/blackfriday/survey');
   };
 
   return {

@@ -7,13 +7,20 @@ export function computeReward(answers: Answers, subAnswers: SubAnswers): RewardD
   const q2 = answers['q2'];
 
   const key = `${q1}-${q1_sub}-${q2}`;
-
+  
   return (
     REWARD_MAP[key] || {
       title: '',
       description: '',
       image: '',
       discountCode: '',
+      textDiscount: '',
+      eventOption: {
+        copyCode: '',
+        useCode: '',
+        download: '',
+      },
+      stroyImage: '',
     }
   );
 }

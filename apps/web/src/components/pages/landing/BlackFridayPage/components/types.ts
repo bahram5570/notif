@@ -30,4 +30,6 @@ export type RewardData = {
     useCode: string;
     download: string;
   };
+  stroyImage: string;
 };
+

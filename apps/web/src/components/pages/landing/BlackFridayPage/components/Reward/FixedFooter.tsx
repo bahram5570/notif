@@ -7,20 +7,14 @@ import Spinner from '@components/ui/Spinner';
 import useDownloadImage from '../../Hooks/useDownloadImage';
 
 type Props = {
-  cardRef: React.RefObject<HTMLDivElement>;
   event: string;
+  storyImage: string;
 };
 
-const FixedFooter: FC<Props> = ({ cardRef, event }) => {
-  const { downloadImage, isLoading } = useDownloadImage();
-
-  const exportImgHandler = () => {
-    if (!cardRef.current) return;
-
-    downloadImage({
-      element: cardRef.current,
-    });
-  };
+const FixedFooter: FC<Props> = ({ storyImage, event }) => {
+  const { downloadImage, isLoading } = useDownloadImage({
+    filename: 'story-impo.png',
+  });
 
   return (
     <div className="mt-10 text-center pb-10">
@@ -36,7 +30,7 @@ const FixedFooter: FC<Props> = ({ cardRef, event }) => {
           className="w-[216px] !h-12"
           fontSize="Title_Small"
           id={event}
-          onClick={exportImgHandler}
+          onClick={() => downloadImage(storyImage)}
         >
           {isLoading ? <Spinner color={'White'} size={18} /> : 'دانلود عکس'}
         </CustomButton>

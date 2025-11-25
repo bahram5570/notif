@@ -15,7 +15,7 @@ const RewardCard: FC<Props> = ({ image, title, description }) => {
     <div className="mt-8">
       <div className="flex justify-center relative">
         <Image src={image} alt="image" className="!w-full !h-full object-cover" width={358} height={514} />
-        <div className="absolute lg:bottom-0 max-md:bottom-6 px-3 max-w-[370px]">
+        <div className="absolute top-[22rem] px-3 max-w-[370px] !max-h-[160px]">
           <CustomTypography className="text-center" tagType="h3" fontSize="Title_Medium">
             {title}
           </CustomTypography>

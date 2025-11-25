@@ -5,13 +5,19 @@ import { FC } from 'react';
 import CustomTypography from '@components/ui/CustomTypography';
 import { COLORS_LIST } from '@theme/colors';
 
-type Props = {
-  current: any;
-  answers: any;
-  subAnswers: any;
-  survey: any;
+import { Answers, QuestionConfig, SubAnswers } from './types';
+
+type SurveyController = {
+  setAnswer: (qId: string, value: string) => void;
+  setSubAnswer: (qId: string, value: string) => void;
 };
 
+type Props = {
+  current: QuestionConfig;
+  answers: any;
+  subAnswers: any;
+  survey: SurveyController;
+};
 const SurveyOptions: FC<Props> = ({ current, answers, subAnswers, survey }) => {
   const { setAnswer, setSubAnswer } = survey;
 

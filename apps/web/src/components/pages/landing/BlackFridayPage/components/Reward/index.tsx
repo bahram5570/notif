@@ -1,6 +1,6 @@
 'use client';
 
-import { FC, useRef } from 'react';
+import { FC } from 'react';
 
 import CustomTypography from '@components/ui/CustomTypography';
 
@@ -18,8 +18,6 @@ type Props = {
 };
 
 const Reward: FC<Props> = ({ answers, subAnswers, isLoaded }) => {
-  const cardRef = useRef<HTMLDivElement>(null);
-
   if (!isLoaded) {
     return <FullLoading />;
   }
@@ -29,9 +27,7 @@ const Reward: FC<Props> = ({ answers, subAnswers, isLoaded }) => {
   return (
     <div className="bg-white w-full">
       <div className="w-full max-w-[400px] h-full mx-auto px-4">
-        <div ref={cardRef}>
-          <RewardCard image={data.image} title={data.title} description={data.description} />
-        </div>
+        <RewardCard image={data.image} title={data.title} description={data.description} />
         <CustomTypography className="text-center mt-4 mb-2" tagType="h3" fontSize="Lable_Medium">
           {data.textDiscount}
         </CustomTypography>
@@ -42,7 +38,7 @@ const Reward: FC<Props> = ({ answers, subAnswers, isLoaded }) => {
           eventUse={data.eventOption.useCode}
         />
 
-        <FixedFooter cardRef={cardRef} event={data.eventOption.download} />
+        <FixedFooter storyImage={data.stroyImage} event={data.eventOption.download} />
       </div>
     </div>
   );

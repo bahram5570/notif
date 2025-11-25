@@ -7,7 +7,7 @@ import { QUESTIONS } from '../constants';
 
 const SurveyPage = () => {
   const survey = useSurvey(QUESTIONS);
-  return <Survey survey={survey} nextRoute="/landing/blackFriday/reward" />;
+  return <Survey survey={survey} nextRoute="/landing/blackfriday/reward" />;
 };
 
 export default SurveyPage;

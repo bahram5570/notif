@@ -39,7 +39,7 @@ const BlackFridayPage = () => {
           </div>
           <div className="flex justify-center mt-5">
             <CustomLink
-              href={'blackFriday/enterPhone'}
+              href={'blackfriday/enterPhone'}
               className="w-60 px-12 py-3 rounded-full block"
               style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
               id="button_offer"
@@ -64,14 +64,14 @@ const BlackFridayPage = () => {
           <CustomTypography fontSize="Body_Medium" tagType="p" className="pt-2 text-center">
             به‌مناسبت این جمعه دل‌نواز اشتراک ویژه براتون باز کردیم. کافیه روی پلن مورد نظرت کلیک کنی
           </CustomTypography>
-          <div className="grid grid-cols-2 justify-center justify-self-center gap-4 mt-4">
+          <div className="flex justify-center justify-self-center gap-4 mt-4">
             {SubscribtionList.map((item, index) => {
               return (
                 <CustomLink
                   key={index}
                   href={SubscribtionReferal}
                   id={item.eventName}
-                  className="w-full rounded-2xl p-[2px] grid bg-[linear-gradient(#FB1B6D,#3D1BFF)] "
+                  className=" rounded-2xl p-[2px] grid bg-[linear-gradient(#FB1B6D,#3D1BFF)] w-[146px]"
                 >
                   <CustomTypography
                     fontSize="Lable_Large"
