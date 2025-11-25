@@ -45,7 +45,7 @@ export const REWARD_MAP: Record<string, RewardData> = {
     description:
       'دل‌آرام؛ آرامشِ دل، نماد فردی که آرامش رو به دلش هدیه کرده. مثل تو که وسط شلوغی و کار و بار تونستی برای خودت و مراقبت از خودت زمان بذاری، یعنی ارزش و قدر خودتو می‌دونی. ما در ایمپو بهت افتخار می‌کنیم، دلت همیشه آروم.',
     image: mode1.src,
-    discountCode: 'Delaram70',
+    discountCode: 'delaram70',
     textDiscount: 'کد تخفیف ۷۰ درصدی روی پلن یکساله رو با عشق تقدیمت می‌کنیم تا همراهت در این سفر باشیم.',
     eventOption: EVENT_OPTIONS.aram,
     stroyImage: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/Landing/Instagram%20story%20-%2013.png',
@@ -56,7 +56,7 @@ export const REWARD_MAP: Record<string, RewardData> = {
     description:
       'دل‌آرام؛ آرامشِ دل، نماد فردی که آرامش رو به دلش هدیه کرده مثل تو که وسط شلوغی و کار و بار تونستی برای خودت و مراقبت از خودت زمان بذاری. اینو بدون تو اول باید از خودت مراقبت کنی تا بتونی از رابطه‌ات هم به‌خوبی مراقبت کنی.ما در ایمپو بهت افتخار می‌کنیم. دلت همیشه آروم.',
     image: mode2.src,
-    discountCode: 'Delaram70',
+    discountCode: 'delaram70',
     textDiscount: 'کد تخفیف ۷۰ درصدی روی پلن یکساله رو با عشق تقدیمت می‌کنیم تا همراهت در این سفر باشیم.',
     eventOption: EVENT_OPTIONS.aram,
     stroyImage: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/Landing/Instagram%20story%20-%202.png',
@@ -67,7 +67,7 @@ export const REWARD_MAP: Record<string, RewardData> = {
     description:
       'دل‌آرام؛ آرامشِ دل. نماد فردی که آرامش رو به دلش هدیه کرده، درست مثل تو که وسط شلوغی و مادرانگی‌هات، برای خودت و مراقبت از خودت زمان می‌ذاری، یعنی ارزش و قدر خودتو می‌دونی، تو یه مامان آگاهی که اولین معلم آموزش خودمراقبتی به فرزند هستی. ما در ایمپو بهت افتخار می‌کنیم. دلت همیشه آروم.',
     image: mode3.src,
-    discountCode: 'Delaram70',
+    discountCode: 'delaram70',
     textDiscount: 'کد تخفیف ۷۰ درصدی روی پلن یکساله رو با عشق تقدیمت می‌کنیم تا همراهت در این سفر باشیم.',
     eventOption: EVENT_OPTIONS.aram,
     stroyImage: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/Landing/Instagram%20story%20-%203.png',
@@ -78,7 +78,7 @@ export const REWARD_MAP: Record<string, RewardData> = {
     description:
       'دل‌آسا؛ آسوده نگه داشتن دل. فردی که در حفظ کردن و آسوده نگه داشتن دل و روحش تلاش می‌کنه. درست مثل تو که بین مشغله‌هات، مراقب خودت هستی. ما در ایمپو بهت افتخار می‌کنیم چون برای مراقبت از خودت تلاش می‌کنی. دلت همیشه آسوده.',
     image: mode4.src,
-    discountCode: 'Delasa55',
+    discountCode: 'delasa55',
     textDiscount: 'کد تخفیف 55 درصدی روی پلن شش ماهه رو با عشق تقدیمت می‌کنیم تا همراهت در این سفر باشیم.',
     eventOption: EVENT_OPTIONS.asa,
     stroyImage: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/Landing/Instagram%20story%20-%204.png',
@@ -89,7 +89,7 @@ export const REWARD_MAP: Record<string, RewardData> = {
     description:
       'دل‌آسا؛ آسوده نگه داشتن دل. فردی که برای حفظ کردن آسودگی دل و روحش تلاش می‌کنه. درست مثل تو که بین مشغله‌هات، مراقب خودت هستی. ما در ایمپو  بهت افتخار می‌کنیم که برای مراقبت از خودت تلاش می‌کنی، چون کسی که بلده از خودش مراقبت کنه به‌خوبی می‌تونه از رابطه‌اش هم مراقبت کنه. دلت همیشه آسوده.',
     image: mode5.src,
-    discountCode: 'Delasa55',
+    discountCode: 'delasa55',
     textDiscount: 'کد تخفیف 55 درصدی روی پلن شش ماهه رو با عشق تقدیمت می‌کنیم تا همراهت در این سفر باشیم.',
     eventOption: EVENT_OPTIONS.asa,
     stroyImage: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/Landing/Instagram%20story%20-%205.png',
@@ -100,7 +100,7 @@ export const REWARD_MAP: Record<string, RewardData> = {
     description:
       'دل‌آسا؛ آسوده نگه داشتن دل. فردی که در حفظ کردن و آسوده نگه داشتن دل و روحش تلاش می‌کنه. درست مثل تو که بین مشغله‌هات و مسئولیت مهم مادرانگی، مراقب خودت هستی. ما در ایمپو بهت افتخار می‌کنیم چون برای مراقبت از خودت تلاش می‌کنی و به خودت اهمیت میدی. تو یک مادر آگاه و نمونه هستی.  دلت همیشه آسوده.',
     image: mode6.src,
-    discountCode: 'Delasa55',
+    discountCode: 'delasa55',
     textDiscount: 'کد تخفیف 55 درصدی روی پلن شش ماهه رو با عشق تقدیمت می‌کنیم تا همراهت در این سفر باشیم.',
     eventOption: EVENT_OPTIONS.asa,
     stroyImage: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/Landing/Instagram%20story%20-%206.png',
@@ -111,7 +111,7 @@ export const REWARD_MAP: Record<string, RewardData> = {
     description:
       'دل‌یار، یارِ دل. کسی که به‌تازگی قدم در مسیر خودمراقبتی گذاشته. درست مثل که تو بیشتر از قبل مراقب خودتی و با مراقبت از خودت می‌تونی رابطه قشنگ‌تری بسازی. ما در ایمپو بهت افتخار می‌کنیم که تصمیم گرفتی به جسم و روحت یاری برسونی و در مسیر بهتر کردن حالت، قدم برداری. دلت همیشه یارِت.',
     image: mode7.src,
-    discountCode: 'Delyar40',
+    discountCode: 'delyar40',
     textDiscount: 'کد تخفیف 40 درصدی روی پلن سه ماهه رو با عشق تقدیمت می‌کنیم تا همراهت در این سفر باشیم.',
     eventOption: EVENT_OPTIONS.yar,
     stroyImage: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/Landing/Instagram%20story%20-%207.png',
@@ -122,7 +122,7 @@ export const REWARD_MAP: Record<string, RewardData> = {
     description:
       'دل‌یار، یارِ دل. کسی که به‌تازگی قدم در مسیر خودمراقبتی گذاشته. مثل تو که انتخاب کردی  به جسم و روحت یاری برسونی. ما در ایمپو بهت افتخار می‌کنیم که تصمیم گرفتی از مهم‌ترین سرمایه‌ات یعنی جسم و روحت مراقبت کنی و در مسیر بهتر کردن حالت، قدم برداری. دلت همیشه یارِت.',
     image: mode8.src,
-    discountCode: 'Delyar40',
+    discountCode: 'delyar40',
     textDiscount: 'کد تخفیف 40 درصدی روی پلن سه ماهه رو با عشق تقدیمت می‌کنیم تا همراهت در این سفر باشیم.',
     eventOption: EVENT_OPTIONS.yar,
     stroyImage: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/Landing/Instagram%20story%20-%208.png',
@@ -133,7 +133,7 @@ export const REWARD_MAP: Record<string, RewardData> = {
     description:
       'دل‌یار، یارِ دل. کسی که به‌تازگی قدم در مسیر خودمراقبتی گذاشته. درست مثل تو که انتخاب کردی  به جسم و روحت یاری برسونی. ما در ایمپو بهت افتخار می‌کنیم که تصمیم گرفتی از مهم‌ترین سرمایه‌ات یعنی جسم و روحت مراقبت کنی و در مسیر بهتر کردن حالت، قدم برداری تا بتونی در مراقبت کردن از فرزندت هم موفق باشی. دلت همیشه یارِت.',
     image: mode9.src,
-    discountCode: 'Delyar40',
+    discountCode: 'delyar40',
     textDiscount: 'کد تخفیف 40 درصدی روی پلن سه ماهه رو با عشق تقدیمت می‌کنیم تا همراهت در این سفر باشیم.',
     eventOption: EVENT_OPTIONS.yar,
     stroyImage: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/Landing/Instagram%20story%20-%209.png',
@@ -144,7 +144,7 @@ export const REWARD_MAP: Record<string, RewardData> = {
     description:
       'دل‌یار، یارِ دل. کسی که به‌تازگی قدم در مسیر خودمراقبتی گذاشته. مثل تو که انتخاب کردی  به جسم و روحت یاری برسونی. ما در ایمپو بهت افتخار می‌کنیم که تصمیم گرفتی از مهم‌ترین سرمایه‌ات یعنی جسم و روحت مراقبت کنی و در مسیر بهتر کردن حالت، قدم برداری. دلت همیشه یارِت.',
     image: mode8.src,
-    discountCode: 'Delyar40',
+    discountCode: 'delyar40',
     textDiscount: 'کد تخفیف 40 درصدی روی پلن سه ماهه رو با عشق تقدیمت می‌کنیم تا همراهت در این سفر باشیم.',
     eventOption: EVENT_OPTIONS.yar,
     stroyImage: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/Landing/Instagram%20story%20-%208.png',
@@ -155,7 +155,7 @@ export const REWARD_MAP: Record<string, RewardData> = {
     description:
       'دل‌یار، یارِ دل. کسی که به‌تازگی قدم در مسیر خودمراقبتی گذاشته. درست مثل که تو بیشتر از قبل مراقب خودتی و با مراقبت از خودت می‌تونی رابطه قشنگ‌تری بسازی. ما در ایمپو بهت افتخار می‌کنیم که تصمیم گرفتی به جسم و روحت یاری برسونی و در مسیر بهتر کردن حالت، قدم برداری. دلت همیشه یارِت.',
     image: mode7.src,
-    discountCode: 'Delyar40',
+    discountCode: 'delyar40',
     textDiscount: 'کد تخفیف 40 درصدی روی پلن سه ماهه رو با عشق تقدیمت می‌کنیم تا همراهت در این سفر باشیم.',
     eventOption: EVENT_OPTIONS.yar,
     stroyImage: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/Landing/Instagram%20story%20-%207.png',
@@ -166,7 +166,7 @@ export const REWARD_MAP: Record<string, RewardData> = {
     description:
       'دل‌یار، یارِ دل. کسی که به‌تازگی قدم در مسیر خودمراقبتی گذاشته. درست مثل تو که انتخاب کردی  به جسم و روحت یاری برسونی. ما در ایمپو بهت افتخار می‌کنیم که تصمیم گرفتی از مهم‌ترین سرمایه‌ات یعنی جسم و روحت مراقبت کنی و در مسیر بهتر کردن حالت، قدم برداری تا بتونی در مراقبت کردن از فرزندت هم موفق باشی. دلت همیشه یارِت.',
     image: mode9.src,
-    discountCode: 'Delyar40',
+    discountCode: 'delyar40',
     textDiscount: 'کد تخفیف 40 درصدی روی پلن سه ماهه رو با عشق تقدیمت می‌کنیم تا همراهت در این سفر باشیم.',
     eventOption: EVENT_OPTIONS.yar,
     stroyImage: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/Landing/Instagram%20story%20-%209.png',
@@ -177,7 +177,7 @@ export const REWARD_MAP: Record<string, RewardData> = {
   //   description:
   //     'دل‌باز؛ بازگشته به دل. فردی که دوباره در مسیر خودمراقبتی قرار گرفته. درست مثل تو که تصمیم گرفتی از بزرگ‌ترین و ارزشمندترین سرمایه‌ات، یعنی خودت مراقبت کنی. ما در ایمپو بهت افتخار می‌کنیم که تو مسیر خودمراقبتی قدم گذاشتی و در این مسیر حرکت می‌کنی.',
   //   image: mode10.src,
-  //   discountCode: 'Delbaz60',
+  //   discountCode: 'delbaz60',
   //   textDiscount: 'کد تخفیف 60 درصدی روی پلن شش ماهه رو با عشق تقدیمت می‌کنیم تا همراهت در این سفر باشیم.',
   //   eventOption: EVENT_OPTIONS.baz,
   //   stroyImage: '',
@@ -188,7 +188,7 @@ export const REWARD_MAP: Record<string, RewardData> = {
   //   description:
   //     'دل‌باز؛ بازگشته به دل. فردی که دوباره در مسیر خودمراقبتی قرار گرفته. درست مثل تو که تصمیم گرفتی از بزرگ‌ترین و ارزشمندترین سرمایه‌ات، یعنی خودت مراقبت کنی و با مراقبت از خودت می‌تونی رابطه قشنگ‌تری بسازی. ما در ایمپو بهت افتخار می‌کنیم که تو مسیر خودمراقبتی قدم گذاشتی و در این مسیر حرکت می‌کنی.',
   //   image: mode11.src,
-  //   discountCode: 'Delbaz60',
+  //   discountCode: 'delbaz60',
   //   textDiscount: 'کد تخفیف 60 درصدی روی پلن شش ماهه رو با عشق تقدیمت می‌کنیم تا همراهت در این سفر باشیم.',
   //   eventOption: EVENT_OPTIONS.baz,
   //   stroyImage: '',
@@ -199,7 +199,7 @@ export const REWARD_MAP: Record<string, RewardData> = {
   //   description:
   //     'دل‌باز؛ بازگشته به دل. فردی که دوباره در مسیر خودمراقبتی قرار گرفته. ما در ایمپو بهت افتخار می‌کنیم که تو مسیر خودمراقبتی قدم گذاشتی و در این مسیر حرکت می‌کنی و تصمیم گرفتی از مهم‌ترین سرمایه‌ات یعنی جسم و روحت مراقبت کنی تا بتونی در مراقبت کردن از فرزندت هم موفق باشی.',
   //   image: mode12.src,
-  //   discountCode: 'Delbaz60',
+  //   discountCode: 'delbaz60',
   //   textDiscount: 'کد تخفیف 60 درصدی روی پلن شش ماهه رو با عشق تقدیمت می‌کنیم تا همراهت در این سفر باشیم.',
   //   eventOption: EVENT_OPTIONS.baz,
   //   stroyImage: '',
@@ -209,7 +209,7 @@ export const REWARD_MAP: Record<string, RewardData> = {
     description:
       'دل‌باز؛ بازگشته به دل. فردی که دوباره در مسیر خودمراقبتی قرار گرفته. درست مثل تو که تصمیم گرفتی از بزرگ‌ترین و ارزشمندترین سرمایه‌ات، یعنی خودت مراقبت کنی. ما در ایمپو بهت افتخار می‌کنیم که تو مسیر خودمراقبتی قدم گذاشتی و در این مسیر حرکت می‌کنی.',
     image: mode10.src,
-    discountCode: 'Delbaz60',
+    discountCode: 'delbaz60',
     textDiscount: 'کد تخفیف 60 درصدی روی پلن شش ماهه رو با عشق تقدیمت می‌کنیم تا همراهت در این سفر باشیم.',
     eventOption: EVENT_OPTIONS.baz,
     stroyImage: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/Landing/Instagram%20story%20-%2010.png',
@@ -220,7 +220,7 @@ export const REWARD_MAP: Record<string, RewardData> = {
     description:
       'دل‌باز؛ بازگشته به دل. فردی که دوباره در مسیر خودمراقبتی قرار گرفته. درست مثل تو که تصمیم گرفتی از بزرگ‌ترین و ارزشمندترین سرمایه‌ات، یعنی خودت مراقبت کنی و با مراقبت از خودت می‌تونی رابطه قشنگ‌تری بسازی. ما در ایمپو بهت افتخار می‌کنیم که تو مسیر خودمراقبتی قدم گذاشتی و در این مسیر حرکت می‌کنی.',
     image: mode11.src,
-    discountCode: 'Delbaz60',
+    discountCode: 'delbaz60',
     textDiscount: 'کد تخفیف 60 درصدی روی پلن شش ماهه رو با عشق تقدیمت می‌کنیم تا همراهت در این سفر باشیم.',
     eventOption: EVENT_OPTIONS.baz,
     stroyImage: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/Landing/Instagram%20story%20-%2011.png',
@@ -231,7 +231,7 @@ export const REWARD_MAP: Record<string, RewardData> = {
     description:
       'دل‌باز؛ بازگشته به دل. فردی که دوباره در مسیر خودمراقبتی قرار گرفته. ما در ایمپو بهت افتخار می‌کنیم که تو مسیر خودمراقبتی قدم گذاشتی و در این مسیر حرکت می‌کنی و تصمیم گرفتی از مهم‌ترین سرمایه‌ات یعنی جسم و روحت مراقبت کنی تا بتونی در مراقبت کردن از فرزندت هم موفق باشی.',
     image: mode12.src,
-    discountCode: 'Delbaz60',
+    discountCode: 'delbaz60',
     textDiscount: 'کد تخفیف 60 درصدی روی پلن شش ماهه رو با عشق تقدیمت می‌کنیم تا همراهت در این سفر باشیم.',
     eventOption: EVENT_OPTIONS.baz,
     stroyImage: 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/Landing/Instagram%20story%20-%2012.png',
