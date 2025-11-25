@@ -7,14 +7,13 @@ import useTheme from '@hooks/useTheme';
 import useSignSelected from './__hooks__/useSignSelected';
 import { SingsFooterPropsType } from './type';
 
-const SingsFooter = ({ singSelectedList }: SingsFooterPropsType) => {
+const SingsFooter = ({ singSelectedList, selectedDate, isDisableBtn }: SingsFooterPropsType) => {
   const { colors } = useTheme();
-  const { addSingHandler, isLoading } = useSignSelected({ singSelectedList });
+  const { addSingHandler, isLoading } = useSignSelected({ singSelectedList, selectedDate });
 
-  const isDisable = singSelectedList.length === 0;
   return (
     <div
-      className="fixed left-0 right-0 bottom-0 px-4 pb-4 mx-auto flex items-end z-40"
+      className="fixed  left-0 right-0 bottom-0 px-4 pb-4 mx-auto flex flex-col items-end z-40"
       style={{
         backgroundColor: colors.Surface_SurfaceVariant,
         height: FOOTER_HEIGTH,
@@ -27,7 +26,7 @@ const SingsFooter = ({ singSelectedList }: SingsFooterPropsType) => {
         color="primary"
         fullWidth={true}
         onClick={addSingHandler}
-        isDisable={isDisable}
+        isDisable={isDisableBtn}
         isLoading={isLoading}
         className=" rounded-full px-6 py-2"
       >

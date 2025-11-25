@@ -2,7 +2,7 @@ import { isSelectedFinder } from './__utils__';
 
 import CustomSlider from '@components/ui/CustomSlider';
 import Typography from '@components/ui/Typography';
-import SignGenerator from '@components/women/SignGenerator';
+import SignGeneratorOld from '@components/women/SignGenerator-old';
 import WidgetCardContainer from '@components/women/Widgets/WidgetCardContainer';
 import useAnalytics from '@hooks/useAnalytics';
 
@@ -10,7 +10,7 @@ import { WidgetSignCardProps } from './types';
 
 const WidgetSignCard = ({ data }: WidgetSignCardProps) => {
   const { callEvent } = useAnalytics();
-  
+
   return (
     <WidgetCardContainer title={data.title} button={data.button} onClick={() => callEvent('Action_From_SignCard')}>
       <Typography scale="Body" size="Small">
@@ -25,7 +25,7 @@ const WidgetSignCard = ({ data }: WidgetSignCardProps) => {
             sign: item.sign,
           });
 
-          return <SignGenerator {...item} initialIsSelected={isSelected} key={index} />;
+          return <SignGeneratorOld {...item} initialIsSelected={isSelected} key={index} />;
         })}
       </CustomSlider>
     </WidgetCardContainer>

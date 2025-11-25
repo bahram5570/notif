@@ -46,7 +46,7 @@ const CategoryGenerator = ({
               category={category}
               selectedDate={info.gregorianDate}
               initialIsSelected={initialIsSelected}
-              onSelect={() => selectSignHandler(category, sign)}
+              onSelect={selectSignHandler}
             />
           );
         })}

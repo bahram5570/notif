@@ -1,3 +1,5 @@
 import { SignGeneratorProps } from '@components/women/SignGenerator/types';
 
-export interface useSignSelectedProps extends SignGeneratorProps {}
+type ItemType = Pick<SignGeneratorProps, 'category' | 'initialIsSelected' | 'onSelect' | 'selectedDate' | 'sign'>;
+
+export interface useSignSelectedProps extends ItemType {}

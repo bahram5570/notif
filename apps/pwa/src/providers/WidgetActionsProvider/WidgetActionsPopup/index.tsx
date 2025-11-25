@@ -46,7 +46,7 @@ const WidgetActionsPopup = ({ popUp }: WidgetActionsPopupProps) => {
               )}
               {popUp.type === PopupTypeEnum.SexTracker && <PopupSexTracker data={popUp.data} />}
               {popUp.type === PopupTypeEnum.ImageTextButton && <PopupImageTextButton data={popUp.data} />}
-              {popUp.type === PopupTypeEnum.bioRythem && <PopupBiorythem data={popUp.data} />}
+              {popUp.type === PopupTypeEnum.BioRythem && <PopupBiorythem data={popUp.data} />}
             </>
           )}
         </>

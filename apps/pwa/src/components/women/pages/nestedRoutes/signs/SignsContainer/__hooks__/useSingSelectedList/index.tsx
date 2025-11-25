@@ -1,11 +1,13 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-import { SingSelectedListType, UpdateSingSelectedListType } from './type';
+import { SingSelectedListType, UpdateSingSelectedListType, UseSingSelectedListPropsType } from './type';
 
-const useSingSelectedList = () => {
+const useSingSelectedList = ({ info }: UseSingSelectedListPropsType) => {
   const [singSelectedList, setSingSelectedList] = useState<SingSelectedListType>([]);
+  const [isDisableBtn, setIsDisableBtn] = useState(true);
 
   const updateSingSelectedList: UpdateSingSelectedListType = (newItem) => {
+    setIsDisableBtn(false);
     setSingSelectedList((prev) => {
       const exists = prev.some((item) => item.category === newItem.category && item.sign === newItem.sign);
 
@@ -15,7 +17,13 @@ const useSingSelectedList = () => {
     });
   };
 
-  return { updateSingSelectedList, singSelectedList };
+  useEffect(() => {
+    if (info) {
+      setSingSelectedList(info.initialSelectedSigns);
+    }
+  }, [info]);
+
+  return { updateSingSelectedList, singSelectedList, isDisableBtn };
 };
 
 export default useSingSelectedList;

@@ -8,7 +8,9 @@ import { SignsContainerProps } from './types';
 
 const SignsContainer = ({ infoList }: SignsContainerProps) => {
   const { slide, slideHandler } = useSignsSlide({ infoList });
-  const { updateSingSelectedList, singSelectedList } = useSingSelectedList();
+  const { updateSingSelectedList, singSelectedList, isDisableBtn } = useSingSelectedList({ info: infoList[slide] });
+
+  const selectedDate = infoList[slide].gregorianDate;
 
   return (
     <>
@@ -20,7 +22,8 @@ const SignsContainer = ({ infoList }: SignsContainerProps) => {
           infoList={infoList}
           updateSingSelectedList={updateSingSelectedList}
         />
-        <SingsFooter singSelectedList={singSelectedList} />
+
+        <SingsFooter singSelectedList={singSelectedList} selectedDate={selectedDate} isDisableBtn={isDisableBtn} />
       </div>
     </>
   );
