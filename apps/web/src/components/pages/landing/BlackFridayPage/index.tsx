@@ -19,7 +19,7 @@ const BlackFridayPage = () => {
 
   return (
     <div className="w-full max-w-[500px] h-full relative bg-gradient-to-b from-white to-[#FFE2EA]">
-      <div>
+      <div className="-mt-[60px]">
         <CustomImage src={welcomVector} alt="welcomVector" />
         <div className="px-4 -mt-[140px]">
           <CustomTypography fontSize="Headline_Medium" tagType="h2" className="text-center">
