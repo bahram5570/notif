@@ -1,4 +1,5 @@
 import { InfoListTypes, InitialSelectedSignsTypes } from '../../../__hooks__/useGetData/types';
+import { UpdateSingSelectedListType } from '../../__hooks__/useSingSelectedList/type';
 import { SignsListsContainerProps } from '../SignsListsContainer/types';
 
 export type SelectedSignsHandlerTypes = (category: number, sign: number) => void;
@@ -8,8 +9,8 @@ type InfoTypes = {
   gregorianDate: string;
 };
 
-type ItemType = Pick<SignsListsContainerProps, 'updateSingSelectedList'>;
-export interface CategoryGeneratorProps extends ItemType {
+export interface CategoryGeneratorProps {
+  updateSingSelectedList?: UpdateSingSelectedListType;
   selectHandler?: SelectedSignsHandlerTypes;
   category: number;
   info: InfoTypes;

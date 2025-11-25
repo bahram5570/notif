@@ -21,7 +21,9 @@ const CategoryGenerator = ({
     callEvent('SignsChanged');
     selectedSignsHandler(ca, si);
 
-    updateSingSelectedList({ category: ca, sign: si });
+    if (updateSingSelectedList) {
+      updateSingSelectedList({ category: ca, sign: si });
+    }
 
     if (selectHandler) {
       selectHandler(ca, si);

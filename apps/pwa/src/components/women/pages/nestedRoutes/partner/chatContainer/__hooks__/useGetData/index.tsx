@@ -9,17 +9,16 @@ const useGetData = () => {
   const router = useRouter();
   const { chatId } = useParams();
 
+  const errorHandler = () => {
+    router.replace('/not-found');
+  };
+
   const { data, isLoading } = useApi<ResponsePropsType>({
     api: `challenge/${chatId}/chat`,
     method: 'GET',
     queryKey: [`chat-${chatId}`],
+    onError: errorHandler,
   });
-
-  useEffect(() => {
-    if (!isLoading && !data) {
-      // todo router.replace('/not-found');
-    }
-  }, [isLoading, data]);
 
   return { data, isLoading };
 };

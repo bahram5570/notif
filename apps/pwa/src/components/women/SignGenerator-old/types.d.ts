@@ -4,7 +4,7 @@ import { SelectedSignsHandlerTypes } from '../pages/nestedRoutes/signs/SignsCont
 
 export interface SignGeneratorProps extends SignsItemTypes {
   initialIsSelected: boolean;
-  onSelect?: SelectedSignsHandlerTypes;
+  onSelect?: () => void;
   selectedDate?: string;
 }
 
