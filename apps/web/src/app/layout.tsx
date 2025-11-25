@@ -84,6 +84,17 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             }(window, document, "yektanet");
           `}
         </Script>
+
+        <Script>
+          {`
+            var s=document.createElement("script");
+            s.src="https://van.najva.com/static/js/main-script.js";
+            s.defer=!0;
+            s.id\="najva-mini-script";
+            s.setAttribute("data-najva-id","4c439ddc-6cdf-4f4d-b55a-d7962562af40");
+            document.head.appendChild(s);
+          `}
+        </Script>
       </head>
 
       <body>
