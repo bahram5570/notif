@@ -1,5 +1,6 @@
 import EmailIcon from '@assets/icons/email.svg';
 import InstagramIcon from '@assets/icons/instagram2.svg';
+import LinkdinIcon from '@assets/icons/linkdin.svg';
 import TelegramIcon from '@assets/icons/telegram.svg';
 import XIcon from '@assets/icons/x.svg';
 import { currentDate } from '@utils/dates';
@@ -38,6 +39,9 @@ const FooterSocials = () => {
 
           <CustomLink href="https://www.instagram.com/impo.app" target="_blank" aria-label="FooterSocials">
             <InstagramIcon className="w-6" style={{ stroke: COLORS_LIST.Surface_Outline }} />
+          </CustomLink>
+          <CustomLink href="https://www.linkedin.com/company/impoapp" target="_blank" aria-label="FooterSocials">
+            <LinkdinIcon className="w-6" style={{ stroke: COLORS_LIST.Surface_Outline }} />
           </CustomLink>
         </div>
 
