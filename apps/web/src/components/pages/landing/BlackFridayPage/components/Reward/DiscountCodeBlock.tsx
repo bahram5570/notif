@@ -63,7 +63,7 @@ const DiscountCodeBlock: FC<Props> = ({ code, eventUse, eventCopy }) => {
         </CustomTypography>
       </div>
 
-      <CustomLink href={SubscribtionReferal} target="_blank" className="w-full text-center" id={eventUse}>
+      <CustomLink href={SubscribtionReferal} className="w-full text-center" id={eventUse}>
         <CustomTypography fontSize="Lable_Medium" color="Primary_Primary">
           از تخفیفت استفاده کن
         </CustomTypography>

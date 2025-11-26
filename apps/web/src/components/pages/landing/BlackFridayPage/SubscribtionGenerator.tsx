@@ -12,7 +12,6 @@ const SubscribtionGenerator = ({ discountNumber, eventName, mounth, price, price
       <CustomLink
         href={SubscribtionReferal}
         id={eventName}
-        target="_blank"
         className=" rounded-2xl p-[2px] grid bg-[linear-gradient(#FB1B6D,#3D1BFF)] w-[146px]"
       >
         <CustomTypography
