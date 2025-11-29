@@ -1,7 +1,7 @@
 import { currentDate } from '@utils/dates';
 
+import useSignInteractiveBanner from '@hooks/__sign__/useSignInteractiveBanner';
 import useApi from '@hooks/useApi';
-import useWidgetActions from '@hooks/useWidgetActions';
 import { useRouter } from 'next/navigation';
 
 import { ResponseType, useSignSelectedProps } from './types';
@@ -9,12 +9,12 @@ import { ResponseType, useSignSelectedProps } from './types';
 const { gDate } = currentDate();
 
 const useSignSelected = ({ selectedDate, singSelectedList }: useSignSelectedProps) => {
-  const { actionHandler } = useWidgetActions();
+  const { interactiveBannerActionHandler } = useSignInteractiveBanner();
   const route = useRouter();
 
   const successHandler = (v: ResponseType) => {
-    // route.back();
-    actionHandler(v.action);
+    route.back();
+    interactiveBannerActionHandler(v.action);
   };
 
   const { callApi, isLoading } = useApi<ResponseType>({

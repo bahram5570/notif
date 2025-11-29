@@ -13,8 +13,10 @@ import { PopUpTimerInteractionTypes } from './types';
 
 const PopUpTimerInteraction = ({ data, timerInteractionCompleteHandler }: PopUpTimerInteractionTypes) => {
   const { colors } = useTheme();
+
   const { actionHandler } = useWidgetActions();
   const [progress, setProgress] = useState(100);
+
   const [canStartTimer, setCanStartTimer] = useState(false);
 
   const width = 326;
@@ -56,9 +58,6 @@ const PopUpTimerInteraction = ({ data, timerInteractionCompleteHandler }: PopUpT
     <div
       className="fixed  w-full p-2 z-50 mx-auto left-0 right-0 flex justify-center items-center animate-popUpTimer"
       style={{ maxWidth: MAX_SCREEN_WIDTH, bottom: FOOTER_HEIGTH + 5 }}
-      onClick={() => {
-        actionHandler(data.action);
-      }}
       onAnimationEnd={() => setCanStartTimer(true)}
     >
       <div className="relative " style={{ width, height }}>
@@ -67,9 +66,8 @@ const PopUpTimerInteraction = ({ data, timerInteractionCompleteHandler }: PopUpT
           style={{
             backgroundColor: colors.Neutral_Background,
           }}
-          onClick={onClick}
         >
-          <div className="flex flex-row-reverse gap-2">
+          <div className="flex flex-row-reverse gap-2" onClick={onClick}>
             <CustomImage src="/assets/images/mones.webp" width={40} height={40} />
             <div className="flex flex-col items-end gap-1">
               <Typography scale="Lable" size="Medium">

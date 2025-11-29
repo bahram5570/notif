@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { InitialSelectedSignsTypes } from '@components/women/pages/nestedRoutes/signs/__hooks__/useGetData/types';
-import useSignDateState from '@hooks/useSignDateState';
+import useSignDateState from '@hooks/__sign__/useSignDateState';
 
 import { SelectedSignsHandlerTypes } from '../../types';
 
