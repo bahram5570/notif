@@ -1,6 +1,7 @@
 export type SubOption = {
   label: string;
   value: string;
+  number?: number;
 };
 
 export type QuestionOption = {

@@ -1,6 +1,6 @@
 import { HEADER_LINKS_TYPES } from '@components/HeaderFooterContainer/Header/types';
 
-export const STAGE_URL = 'http://195.88.208.143:8080';
+export const STAGE_URL = 'http://195.88.208.143:8082';
 export const SSL_STAGE_URL = 'https://stage.weareimpo.ir';
 export const HOST_URL = process.env.NEXT_PUBLIC_HOST_URL || '';
 export const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL || '';

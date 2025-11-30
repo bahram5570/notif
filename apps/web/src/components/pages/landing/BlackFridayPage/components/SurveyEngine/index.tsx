@@ -20,10 +20,20 @@ type Props = {
 };
 
 const Survey: FC<Props> = ({ survey, nextRoute }) => {
-
   const { handleSubmit, isLoading } = useSubmit(nextRoute);
 
-  const { isLoaded, step, questions, current, answers, subAnswers, next, back } = survey;
+  const { 
+    isLoaded, 
+    step, 
+    questions, 
+    current, 
+    answers, 
+    subAnswers, 
+    next, 
+    back,
+    firstNumber,        
+    secondNumber     
+  } = survey;
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -39,13 +49,19 @@ const Survey: FC<Props> = ({ survey, nextRoute }) => {
 
   const handleNext = () => {
     if (!ready) return;
+
     if (isLast) {
       const payload = {
         phone: String(sessionStorage.getItem('phone')),
+        firstQuestion: firstNumber || 0,    
+        secondQuestion: secondNumber || 0,   
         lastQuestion: selectedOption?.number || 0,
       };
+
       handleSubmit(payload);
-    } else next();
+    } else {
+      next();
+    }
   };
 
   return (
@@ -53,7 +69,12 @@ const Survey: FC<Props> = ({ survey, nextRoute }) => {
       <div className="px-4">
         <SurveyHeader step={step} back={back} title={current.title} />
 
-        <SurveyOptions current={current} answers={answers} subAnswers={subAnswers} survey={survey} />
+        <SurveyOptions 
+          current={current} 
+          answers={answers} 
+          subAnswers={subAnswers} 
+          survey={survey} 
+        />
 
         <SurveyFooter ready={ready} onNext={handleNext} isLoading={isLoading} />
       </div>
