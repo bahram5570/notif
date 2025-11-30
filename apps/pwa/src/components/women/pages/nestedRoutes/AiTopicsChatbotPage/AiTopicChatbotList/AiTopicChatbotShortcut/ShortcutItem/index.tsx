@@ -7,7 +7,7 @@ import { ShortcutItemPropsType } from './type';
 
 const ShortcutItem = (props: ShortcutItemPropsType) => {
   const onClick = () => {
-    props.onLinkHandler(props.id);
+    props.onLinkHandler(props.id, props.imageType);
   };
 
   return (

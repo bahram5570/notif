@@ -15,6 +15,6 @@ export type FooterItemType = Pick<
 export interface AiChatbotFooterPropsType extends FooterItemType {
   submitHandler: (text: string) => void;
   isLoading: boolean;
-
+  isShowFileInput: boolean;
   hasChatData?: boolean;
 }

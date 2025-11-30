@@ -9,16 +9,14 @@ const AiTopicChatbotShortcut = ({ shortcut, categoryId }: AiTopicChatbotShortcut
   const { colors } = useTheme();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
-  const onLinkHandler = (id: string) => {
+  const onLinkHandler = (id: string, imageType: boolean) => {
     pageNavigationHandler({
       showProgressBar: true,
       id: `chatbot-${id}`,
-      linkTo: `/protected/aiChatbot?itemId=${id}&categoryId=${categoryId}`,
-      // linkTo: `/protected/aiChatbot?promptItemId=${id}&promptCategoryId=${categoryId}&`,
+
+      linkTo: `/protected/aiChatbot?promptItemId=${id}&promptCategoryId=${categoryId}&imageType=${imageType}`,
     });
   };
-
-  shortcut;
 
   return (
     <div className="flex flex-col rounded-3xl gap-3 px-4 py-6" style={{ backgroundColor: colors.White }}>

@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
+import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+
 import AiChatbotHeader from '../AiTopicsChatbotPage/AiChatbotHeader';
 import { WelcomingTypeEnum } from '../AiTopicsChatbotPage/WelcomingContainer/enum';
 import AiChatbotEmptyState from './AiChatbotEmptyState';
@@ -22,6 +24,9 @@ const AiChatbotPage = () => {
     onErrorHandler,
   } = useSubmit({ updateChatHandler, addChatHandler });
   const [disableDeleteBtn, setDisableDeleteBtn] = useState(false);
+  const { getQueryParams } = useQueryParamsHandler();
+  const imageType = getQueryParams('imageType');
+  const isShowFileInput = imageType && JSON.parse(imageType);
 
   const defaultQustionHandler = (text: string) => {
     submitHandler(text);
@@ -82,6 +87,7 @@ const AiChatbotPage = () => {
             submitHandler={submitHandler}
             isLoading={newLoading}
             hasChatData={hasChatData}
+            isShowFileInput={isShowFileInput}
           />
         </>
       )}

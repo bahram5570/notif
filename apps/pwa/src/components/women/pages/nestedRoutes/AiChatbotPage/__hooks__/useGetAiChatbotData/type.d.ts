@@ -22,6 +22,10 @@ export type AiChatbotDataResponseType = {
   hintPromptText: string;
   isActive: boolean;
   deactiveMessage: string;
+  currentImageUsage: number;
+  imageUsageLimit: number;
+  deactiveTitle: string;
+  activaMedia: boolean;
   deactiveButton: {
     backgroundColor: string;
     foregroundColor: string;

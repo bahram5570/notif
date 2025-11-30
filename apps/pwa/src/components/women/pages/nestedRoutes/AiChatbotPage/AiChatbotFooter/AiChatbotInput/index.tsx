@@ -14,7 +14,7 @@ import AiChatbotUploadImage from './AiChatbotUploadImage';
 import useFileUpload from './__hooks__/useFileUpload';
 import { AiChatbotInputPropsType } from './type';
 
-const AiChatbotInput = ({ hintPromptText, isLoading, submitHandler }: AiChatbotInputPropsType) => {
+const AiChatbotInput = ({ hintPromptText, isLoading, submitHandler, isShowFileInput }: AiChatbotInputPropsType) => {
   const { colors, typography } = useTheme();
   const { files, fileUploadHandler, removeFileHandler } = useFileUpload();
   const [chatText, setChatText] = useState('');
@@ -73,8 +73,7 @@ const AiChatbotInput = ({ hintPromptText, isLoading, submitHandler }: AiChatbotI
           </div>
         </div>
       </div>
-
-      <AiChatbotUploadImage fileUploadHandler={fileUploadHandler} disableBtn={disableBtn} />
+      {isShowFileInput && <AiChatbotUploadImage fileUploadHandler={fileUploadHandler} disableBtn={disableBtn} />}
     </div>
   );
 };
