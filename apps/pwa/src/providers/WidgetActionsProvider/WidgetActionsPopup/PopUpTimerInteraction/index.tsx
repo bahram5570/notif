@@ -43,7 +43,6 @@ const PopUpTimerInteraction = ({ data, timerInteractionCompleteHandler }: PopUpT
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev <= 0) {
-          timerInteractionCompleteHandler();
           clearInterval(interval);
           return 0;
         }
@@ -53,6 +52,12 @@ const PopUpTimerInteraction = ({ data, timerInteractionCompleteHandler }: PopUpT
 
     return () => clearInterval(interval);
   }, [data.second, canStartTimer]);
+
+  useEffect(() => {
+    if (progress === 0) {
+      timerInteractionCompleteHandler();
+    }
+  }, [progress]);
 
   return (
     <div

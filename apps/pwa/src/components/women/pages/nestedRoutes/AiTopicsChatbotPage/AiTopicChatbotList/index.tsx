@@ -1,5 +1,3 @@
-import PartnerIcon from '@assets/icons/widgetPartner.svg';
-
 import Typography from '@components/ui/Typography';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import useTheme from '@hooks/useTheme';
@@ -8,6 +6,7 @@ import AiChatbotHeader from '../AiChatbotHeader';
 import { WelcomingTypeEnum } from '../WelcomingContainer/enum';
 import AiTopicChatbotListFooter from './AiTopicChatbotListFooter';
 import AiTopicChatbotListSkeleton from './AiTopicChatbotListSkeleton';
+import AiTopicChatbotShortcut from './AiTopicChatbotShortcut';
 import GeneratorTopicCardList from './GeneratorTopicCardList';
 import useGetTopicList from './__hooks__/useGetTopicList';
 
@@ -18,6 +17,7 @@ const AiTopicChatbotList = () => {
   const result = data?.result;
   const hasUsedTopicsListData = result && result.usedTopics.length > 0;
   const hasTopicsListData = result && result.topics.length > 0;
+  const hasShortcutsListData = result && result.shortcut && result.shortcut.shortcuts.length > 0;
 
   return (
     <>
@@ -41,49 +41,7 @@ const AiTopicChatbotList = () => {
                   {result?.subtitle}
                 </Typography>
               </div>
-
-              <div className="flex flex-col rounded-3xl gap-3 px-4 py-6" style={{ backgroundColor: colors.White }}>
-                <div className="flex flex-col items-end">
-                  <Typography scale="Lable" size="Small" color="Surface_Outline">
-                    به کمک مونس
-                  </Typography>
-                  <Typography scale="Lable" size="Medium" color="Neutral_OnBackground">
-                    تفسیر عکس آزمایش و تصاویر
-                  </Typography>
-                </div>
-                <div className="flex flex-row-reverse justify-between gap-[30px] items-baseline ">
-                  <div className="flex flex-col justify-center items-center gap-2">
-                    <PartnerIcon className="w-14 h-14" />
-                    <Typography scale="Lable" size="Small" color="Neutral_OnBackground" textAlign="center">
-                      بی‌بی چک
-                    </Typography>
-                  </div>
-                  <div className="flex flex-col justify-center items-center gap-2">
-                    <PartnerIcon className="w-14 h-14" />
-                    <Typography
-                      scale="Lable"
-                      size="Small"
-                      color="Neutral_OnBackground"
-                      textAlign="center"
-                      className=" !whitespace-nowrap"
-                    >
-                      تخمک گذاری
-                    </Typography>
-                  </div>
-                  <div className="flex flex-col justify-center items-center gap-2">
-                    <PartnerIcon className="w-14 h-14" />
-                    <Typography scale="Lable" size="Small" color="Neutral_OnBackground" textAlign="center">
-                      آزمایش بتا
-                    </Typography>
-                  </div>
-                  <div className="flex flex-col justify-center items-center gap-2 min-w-[65px]">
-                    <PartnerIcon className="w-14 h-14" />
-                    <Typography scale="Lable" size="Small" color="Neutral_OnBackground" textAlign="center">
-                      آزمایش اسپرم همسر
-                    </Typography>
-                  </div>
-                </div>
-              </div>
+              {hasShortcutsListData && <AiTopicChatbotShortcut shortcut={result.shortcut} categoryId={result.id} />}
 
               {hasUsedTopicsListData && (
                 <div className="flex flex-col w-full gap-3 items-end">
@@ -94,7 +52,6 @@ const AiTopicChatbotList = () => {
                   <GeneratorTopicCardList topics={result.usedTopics} categoryId={result.id} />
                 </div>
               )}
-
               {hasTopicsListData && (
                 <div className="flex justify-end items-end flex-col gap-4">
                   {hasUsedTopicsListData && (
