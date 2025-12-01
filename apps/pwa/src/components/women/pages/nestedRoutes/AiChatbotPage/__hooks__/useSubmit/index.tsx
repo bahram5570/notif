@@ -7,16 +7,18 @@ import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import useEventSource from '../useEventSource';
 import { ChatItemType } from '../useGetAiChatbotData/type';
-import { NewMessageResponse, UseSubmitPropsType } from './type';
+import { NewMessageResponse, SubmitHandlerType, UseSubmitPropsType } from './type';
 
 let messageId: string;
 const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) => {
   const [streamLoading, setStreamLoading] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
+  const [resetkey, setResetKey] = useState(Math.random());
   const { getQuery, updateQuery } = useCustomReactQuery(['historyAiChat']);
   const { getQueryParams } = useQueryParamsHandler();
-  const itemIdData = getQueryParams('itemId');
-  const categoryIdData = getQueryParams('categoryId');
+
+  const itemIdData = getQueryParams('promptItemId');
+  const categoryIdData = getQueryParams('promptCategoryId');
 
   const aiChatMessageList = getQuery<{ data: ChatItemType[] }>({ queryKey: ['AiChatMessageList'] });
 
@@ -48,14 +50,16 @@ const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) =>
     onError: () => setStreamLoading(false),
   });
 
-  const submitHandler = (prompt: string) => {
+  const submitHandler: SubmitHandlerType = ({ prompt, imageId }) => {
+    setResetKey(Math.random());
     if (showErrorMessage) setShowErrorMessage(false);
-    addChatHandler(prompt);
+    addChatHandler({ chat: prompt, imageId: imageId });
 
     const payload = {
       promptCategoryId: categoryIdData || '',
       promptItemId: itemIdData || '',
       prompt,
+      imageId,
     };
 
     callApi(payload);
@@ -73,7 +77,7 @@ const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) =>
     const promptText = sessionStorage.getItem(PROMPT_TEXT);
 
     if (promptText) {
-      submitHandler(promptText);
+      submitHandler({ prompt: promptText, imageId: [''] });
     }
   }, [aiChatMessageList]);
 
@@ -87,7 +91,7 @@ const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) =>
 
   const isLoading = streamLoading;
 
-  return { submitHandler, isLoading, showErrorMessage, onErrorHandler };
+  return { submitHandler, isLoading, showErrorMessage, onErrorHandler, resetkey };
 };
 
 export default useSubmit;

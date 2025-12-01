@@ -13,7 +13,7 @@ const useGetAiChatbotMessageList = () => {
 
   const aiChatMessageList = getQuery<{ data: ChatItemType[] }>({ queryKey: ['AiChatMessageList'] });
 
-  const addChatHandler: AddChatHandlerType = (chat) => {
+  const addChatHandler: AddChatHandlerType = ({ chat, imageId }) => {
     const newUserChat: ChatItemType = {
       dislike: false,
       like: false,
@@ -21,6 +21,7 @@ const useGetAiChatbotMessageList = () => {
       role: RoleEnum.User,
       text: chat,
       isAnswered: false,
+      media: imageId ?? [],
     };
 
     const queryData = aiChatMessageList?.data;
@@ -54,6 +55,7 @@ const useGetAiChatbotMessageList = () => {
         dislike: false,
         like: false,
         messageId,
+        media: [''],
       });
     }
     updateQuery({ queryKey: ['AiChatMessageList'], payload: { data: updatedChats } });

@@ -37,6 +37,7 @@ const FilePreview = (props: FilePreviewPropsType) => {
           <div
             className="w-8 absolute  h-8 flex flex-col justify-center items-center rounded-full"
             style={{ backgroundColor: colors.Surface_OutlineVariant }}
+            onClick={props.retryUploadHandler}
           >
             <RefreshIcon />
           </div>

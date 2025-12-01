@@ -52,7 +52,7 @@ const CustomToastProvider = ({ children }: CustomToastProviderPropsType) => {
       {children}
 
       <div
-        className={`fixed inset-0 flex justify-center items-center pointer-events-none transition-all duration-500 ease-in-out z-50 max-w-40 px-6 ${
+        className={`fixed inset-0 flex justify-center items-center mx-auto pointer-events-none transition-all duration-500 ease-in-out z-50 max-w-40 px-6 ${
           visible ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
         style={{

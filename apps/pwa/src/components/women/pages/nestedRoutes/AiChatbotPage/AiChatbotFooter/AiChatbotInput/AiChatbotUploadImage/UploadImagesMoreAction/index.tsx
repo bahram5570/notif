@@ -12,7 +12,7 @@ import useTheme from '@hooks/useTheme';
 import { FileInputTypes } from '../../__hooks__/useFileUpload/enum';
 import { FileInputHandlerTypes, UploadImagesMoreActionPropsType } from './type';
 
-const UploadImagesMoreAction = ({ closeHandler, isOpen, fileUploadHandler }: UploadImagesMoreActionPropsType) => {
+const UploadImagesMoreAction = ({ closeHandler, isOpen, fileDataHandler }: UploadImagesMoreActionPropsType) => {
   const { colors } = useTheme();
 
   useEffect(() => {
@@ -36,26 +36,25 @@ const UploadImagesMoreAction = ({ closeHandler, isOpen, fileUploadHandler }: Upl
     const file = e.target.files?.[0];
     if (!file) return;
 
-    fileUploadHandler(file);
+    if (type === FileInputTypes.CAMERA) {
+      const options = {
+        maxSizeMB: 1,
+        maxWidthOrHeight: 640,
+        useWebWorker: true,
+      };
+
+      try {
+        const compressedFile = await imageCompression(file, options);
+
+        fileDataHandler({ e, file: compressedFile });
+      } catch (error) {
+        console.error('Image compression failed:', error);
+      }
+    } else {
+      fileDataHandler({ e });
+    }
+
     closeHandler();
-
-    // if (type === FileInputTypes.CAMERA) {
-    //   const options = {
-    //     maxSizeMB: 1,
-    //     maxWidthOrHeight: 640,
-    //     useWebWorker: true,
-    //   };
-
-    //   try {
-    //     const compressedFile = await imageCompression(file, options);
-
-    //     // fileDataHandler({ e, file: compressedFile });
-    //   } catch (error) {
-    //     console.error('Image compression failed:', error);
-    //   }
-    // } else {
-    //   fileUploadHandler(e.target.value);
-    // }
   };
 
   if (!isOpen) {

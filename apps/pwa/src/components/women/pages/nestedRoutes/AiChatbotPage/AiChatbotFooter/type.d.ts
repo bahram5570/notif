@@ -1,4 +1,5 @@
 import { AiChatbotDataResponseType } from '../__hooks__/useGetAiChatbotData/type';
+import { SubmitHandlerType } from '../__hooks__/useSubmit/type';
 
 export type FooterItemType = Pick<
   AiChatbotDataResponseType,
@@ -10,11 +11,12 @@ export type FooterItemType = Pick<
   | 'chatId'
   | 'title'
   | 'deactiveButton'
+  | 'activaMedia'
 >;
 
 export interface AiChatbotFooterPropsType extends FooterItemType {
-  submitHandler: (text: string) => void;
+  submitHandler: SubmitHandlerType;
   isLoading: boolean;
-  isShowFileInput: boolean;
+  isShowFileInput?: boolean;
   hasChatData?: boolean;
 }

@@ -8,7 +8,7 @@ import useTheme from '@hooks/useTheme';
 import UploadImagesMoreAction from './UploadImagesMoreAction';
 import { AiChatbotUploadImagePropsType } from './type';
 
-const AiChatbotUploadImage = ({ fileUploadHandler, disableBtn }: AiChatbotUploadImagePropsType) => {
+const AiChatbotUploadImage = ({ fileDataHandler, disableBtn }: AiChatbotUploadImagePropsType) => {
   const [isOpenMoreAction, setIsOpenMoreAction] = useState(false);
   const { colors } = useTheme();
 
@@ -33,11 +33,7 @@ const AiChatbotUploadImage = ({ fileUploadHandler, disableBtn }: AiChatbotUpload
       >
         <UploadIcon className="w-7 h-auto" style={{ stroke: colors.Surface_InverseSurface }} />
       </Button>
-      <UploadImagesMoreAction
-        isOpen={isOpenMoreAction}
-        closeHandler={closeHandler}
-        fileUploadHandler={fileUploadHandler}
-      />
+      <UploadImagesMoreAction isOpen={isOpenMoreAction} closeHandler={closeHandler} fileDataHandler={fileDataHandler} />
     </>
   );
 };

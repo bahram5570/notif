@@ -9,12 +9,12 @@ const AiTopicChatbotShortcut = ({ shortcut, categoryId }: AiTopicChatbotShortcut
   const { colors } = useTheme();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
-  const onLinkHandler = (id: string, imageType: boolean) => {
+  const onLinkHandler = (id: string) => {
     pageNavigationHandler({
       showProgressBar: true,
       id: `chatbot-${id}`,
 
-      linkTo: `/protected/aiChatbot?promptItemId=${id}&promptCategoryId=${categoryId}&imageType=${imageType}`,
+      linkTo: `/protected/aiChatbot?promptItemId=${id}&promptCategoryId=${categoryId}`,
     });
   };
 

@@ -3,6 +3,7 @@ import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import AiChatbotBackBtn from './AiChatbotBackBtn';
+import AiChatbotLimitUploadMessage from './AiChatbotLimitUploadMessage';
 import AiChatbotMoreActionsMenuBtn from './AiChatbotMoreActionsMenuBtn';
 import AiChatbotTitleHeader from './AiChatbotTitleHeader';
 import { AiChatbotHeaderPropsType } from './type';
@@ -29,14 +30,13 @@ const AiChatbotHeader = (props: AiChatbotHeaderPropsType) => {
           <AiChatbotBackBtn />
         </div>
       </div>
-
-      <div className=" flex justify-center items-end w-full">
-        <div className="glass-card shadow-sm !bg-white/30 rounded-[100px] px-4 py-1">
-          <Typography scale="Body" size="Small" color="Surface_InverseSurface">
-            آپلود عکس : ( 3/۳ ) تا 5 آبان ظرفیت تمام شد
-          </Typography>
-        </div>
-      </div>
+      {props.imageUsageLimit && props.imageUsageLimit > 0 && (
+        <AiChatbotLimitUploadMessage
+          currentImageUsage={props.currentImageUsage}
+          imageUsageLimit={props.imageUsageLimit}
+          mediaLimitDate={props.mediaLimitDate}
+        />
+      )}
     </div>
   );
 };

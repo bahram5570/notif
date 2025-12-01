@@ -2,8 +2,6 @@
 
 import { useEffect, useState } from 'react';
 
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-
 import AiChatbotHeader from '../AiTopicsChatbotPage/AiChatbotHeader';
 import { WelcomingTypeEnum } from '../AiTopicsChatbotPage/WelcomingContainer/enum';
 import AiChatbotEmptyState from './AiChatbotEmptyState';
@@ -22,14 +20,12 @@ const AiChatbotPage = () => {
     submitHandler,
     showErrorMessage,
     onErrorHandler,
+    resetkey,
   } = useSubmit({ updateChatHandler, addChatHandler });
   const [disableDeleteBtn, setDisableDeleteBtn] = useState(false);
-  const { getQueryParams } = useQueryParamsHandler();
-  const imageType = getQueryParams('imageType');
-  const isShowFileInput = imageType && JSON.parse(imageType);
 
   const defaultQustionHandler = (text: string) => {
-    submitHandler(text);
+    submitHandler({ prompt: text });
   };
 
   const hasChatData = aiChatData && aiChatbotMessageList.length > 0;
@@ -58,6 +54,10 @@ const AiChatbotPage = () => {
             showActionMenu
             disableDeleteBtn={disableDeleteBtn}
             chatTitle={aiChatData.chatTitle}
+            chatId={aiChatData.chatId}
+            currentImageUsage={aiChatData.currentImageUsage}
+            imageUsageLimit={aiChatData.imageUsageLimit}
+            mediaLimitDate={aiChatData.mediaLimitDate}
           />
           {!hasChatData && (
             <>
@@ -87,7 +87,8 @@ const AiChatbotPage = () => {
             submitHandler={submitHandler}
             isLoading={newLoading}
             hasChatData={hasChatData}
-            isShowFileInput={isShowFileInput}
+            isShowFileInput={aiChatData.imageType}
+            key={resetkey}
           />
         </>
       )}

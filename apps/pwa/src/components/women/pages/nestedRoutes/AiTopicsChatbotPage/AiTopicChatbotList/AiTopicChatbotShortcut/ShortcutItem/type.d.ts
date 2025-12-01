@@ -4,5 +4,5 @@ type ItemType = Pick<AiTopicChatbotShortcutPropsType, 'shortcut'>['shortcut']['s
 type OtherType = Pick<AiTopicChatbotShortcutPropsType, 'categoryId'>;
 
 export interface ShortcutItemPropsType extends ItemType {
-  onLinkHandler: (id: string, imageType: boolean) => void;
+  onLinkHandler: (id: string) => void;
 }

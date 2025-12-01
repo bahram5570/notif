@@ -1,4 +1,6 @@
+import { FileDataHandlerTypes } from '../__hooks__/useFileUpload/type';
+
 export type AiChatbotUploadImagePropsType = {
-  fileUploadHandler: (file: File) => void;
+  fileDataHandler: FileDataHandlerTypes;
   disableBtn: boolean;
 };

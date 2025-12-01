@@ -1,44 +1,27 @@
-import { useState } from 'react';
-
-import ArrowIcon from '@assets/icons/arrow.svg';
-import StopIcon from '@assets/icons/stop.svg';
-import { toPersianNumbers } from '@utils/numbers';
-
-import style from './styles.module.css';
-
 import { SHOW_SUGGESTED_QUESTION } from '@constants/ai.constants';
-import useTheme from '@hooks/useTheme';
 
 import AiChatbotFilePreview from './AiChatbotFilePreview';
+import AiChatbotText from './AiChatbotText';
 import AiChatbotUploadImage from './AiChatbotUploadImage';
 import useFileUpload from './__hooks__/useFileUpload';
 import { AiChatbotInputPropsType } from './type';
 
-const AiChatbotInput = ({ hintPromptText, isLoading, submitHandler, isShowFileInput }: AiChatbotInputPropsType) => {
-  const { colors, typography } = useTheme();
-  const { files, fileUploadHandler, removeFileHandler } = useFileUpload();
-  const [chatText, setChatText] = useState('');
+const AiChatbotInput = ({
+  hintPromptText,
+  isLoading,
+  submitHandler,
+  isShowFileInput,
+  activaMedia,
+}: AiChatbotInputPropsType) => {
+  const { files, hasFile, fileDataHandler, removeFileHandler, retryUploadHandler, imageFile } = useFileUpload();
+  const disableBtn = files.length === 3 || activaMedia;
 
-  const hasFile = files && files.length > 0;
-  const disableBtn = files.length === 3;
+  const clickHandler = (chatText: string) => {
+    if (!chatText.trim() && imageFile.length === 0) return;
 
-  const changeTextHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setChatText(toPersianNumbers(e.target.value));
-  };
-
-  const clickHandler = () => {
-    if (!chatText.trim()) return;
     if (!isLoading) {
       sessionStorage.removeItem(SHOW_SUGGESTED_QUESTION);
-      submitHandler(chatText);
-      setChatText('');
-    }
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === 'Enter') {
-      e.preventDefault();
-      clickHandler();
+      submitHandler({ prompt: chatText, imageId: imageFile });
     }
   };
 
@@ -47,33 +30,17 @@ const AiChatbotInput = ({ hintPromptText, isLoading, submitHandler, isShowFileIn
       <div
         className={`flex flex-col  w-full  glass-card !bg-white/60 shadow-sm ${hasFile ? 'rounded-3xl py-3 ' : 'rounded-full'}  `}
       >
-        {hasFile && <AiChatbotFilePreview files={files} removeFileHandler={removeFileHandler} />}
-
-        <div className="flex-1  flex flex-row-reverse justify-end items-center ">
-          <textarea
-            placeholder={hintPromptText}
-            className={` w-full p-3 h-14 bg-transparent  outline-none resize-none   ${style.scroller} `}
-            style={{ color: colors.Surface_InverseSurface, ...typography.Body.Medium, direction: 'rtl' }}
-            value={chatText}
-            onChange={changeTextHandler}
-            disabled={isLoading}
-            rows={1}
-            onKeyDown={handleKeyDown}
+        {hasFile && (
+          <AiChatbotFilePreview
+            files={files}
+            removeFileHandler={removeFileHandler}
+            retryUploadHandler={retryUploadHandler}
           />
-          <div
-            className="w-10 h-10  rounded-full flex flex-col justify-center items-center p-2 mx-3"
-            style={{ background: colors.PrimaryWoman_Primary }}
-            onClick={clickHandler}
-          >
-            {isLoading ? (
-              <StopIcon className="w-6 h-auto " style={{ fill: colors.White }} />
-            ) : (
-              <ArrowIcon className="w-6 h-auto rotate-[270deg]" style={{ stroke: colors.White }} />
-            )}
-          </div>
-        </div>
+        )}
+
+        <AiChatbotText hintPromptText={hintPromptText} isLoading={isLoading} clickHandler={clickHandler} />
       </div>
-      {isShowFileInput && <AiChatbotUploadImage fileUploadHandler={fileUploadHandler} disableBtn={disableBtn} />}
+      {isShowFileInput && <AiChatbotUploadImage fileDataHandler={fileDataHandler} disableBtn={disableBtn} />}
     </div>
   );
 };

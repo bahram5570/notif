@@ -7,8 +7,8 @@ const useDelete = () => {
   const { getQueryParams } = useQueryParamsHandler();
   const { refetchQuery, removeQuery } = useCustomReactQuery();
   const route = useRouter();
-  const itemIdData = getQueryParams('itemId');
-  const categoryIdData = getQueryParams('categoryId');
+  const itemIdData = getQueryParams('promptItemId');
+  const categoryIdData = getQueryParams('promptCategoryId');
 
   const successHandler = () => {
     route.back();

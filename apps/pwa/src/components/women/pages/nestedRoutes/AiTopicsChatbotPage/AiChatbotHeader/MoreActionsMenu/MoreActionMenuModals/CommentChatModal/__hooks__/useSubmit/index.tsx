@@ -8,8 +8,8 @@ const useSubmit = () => {
   const { showToast } = useToast();
   const route = useRouter();
 
-  const itemIdData = getQueryParams('itemId');
-  const categoryIdData = getQueryParams('categoryId');
+  const itemIdData = getQueryParams('promptItemId');
+  const categoryIdData = getQueryParams('promptCategoryId');
 
   const successHandler = () => {
     route.back();

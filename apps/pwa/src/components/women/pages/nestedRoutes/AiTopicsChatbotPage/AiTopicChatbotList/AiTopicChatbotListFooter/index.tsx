@@ -15,12 +15,12 @@ const AiTopicChatbotListFooter = ({ inputPlaceholder }: { inputPlaceholder: stri
       }}
     >
       <div className="pt-4 pb-5  w-full">
-        {/* // todo */}
         <AiChatbotInput
           isShowFileInput={false}
           hintPromptText={inputPlaceholder || ''}
           isLoading={newLoading}
           submitHandler={submitHandler}
+          activaMedia={false}
         />
       </div>
     </div>
