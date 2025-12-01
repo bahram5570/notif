@@ -10,10 +10,8 @@ const { gDate } = currentDate();
 
 const useSignSelected = ({ selectedDate, singSelectedList }: useSignSelectedProps) => {
   const { interactiveBannerActionHandler } = useSignInteractiveBanner();
-  const route = useRouter();
 
   const successHandler = (v: ResponseType) => {
-    route.back();
     interactiveBannerActionHandler(v.action);
   };
 

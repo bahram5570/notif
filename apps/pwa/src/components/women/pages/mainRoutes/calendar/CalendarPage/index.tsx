@@ -7,7 +7,7 @@ import CalendarContainer from '../CalendarContainer';
 import CalendarDraggingPanel from '../CalendarDraggingPanel';
 import CalendarGuides from '../CalendarGuides';
 import CalendarSkeleton from '../CalendarSkeleton';
-import SignsChangedToast from '../SignsChangedToast';
+// import SignsChangedToast from '../SignsChangedToast';
 import useCalendar from '../__hooks__/useCalendar';
 
 const CalendarPage = () => {

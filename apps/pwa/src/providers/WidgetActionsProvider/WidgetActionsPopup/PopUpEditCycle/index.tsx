@@ -9,11 +9,20 @@ import PopUpEditCycleFinishPeriod from './PopUpEditCycleFinishPeriod';
 import PopUpEditCycleLastPeriod from './PopUpEditCycleLastPeriod';
 import { EditPageTypes, PopUpEditCycleProps } from './types';
 
-const PopUpEditCycle = ({ popUp }: PopUpEditCycleProps) => {
+const PopUpEditCycle = ({ popUp, isPopUpActionCommpleteHandler }: PopUpEditCycleProps) => {
   const [startTime, setStartTime] = useState('');
+  useAnalytics({ pageView_eventName: 'Start_Cycle_Edited' });
   const { isLoading, data: profileData } = useGetProfileData();
   const [editPage, setEditPage] = useState<EditPageTypes>('lastPeriod');
-  useAnalytics({ pageView_eventName: 'Start_Cycle_Edited' });
+
+  const editPageHandler = (v: EditPageTypes) => {
+    setEditPage(v);
+    isPopUpActionCommpleteHandler();
+  };
+
+  const startTimeHandler = (v: string) => {
+    setStartTime(v);
+  };
 
   return (
     <WomenPageLayout rightElement="BackButton" paddingTop={0} paddingBottom={0}>
@@ -25,8 +34,8 @@ const PopUpEditCycle = ({ popUp }: PopUpEditCycleProps) => {
             <PopUpEditCycleLastPeriod
               data={popUp.data}
               startTime={startTime}
-              editPageHandler={setEditPage}
-              startTimeHandler={setStartTime}
+              editPageHandler={editPageHandler}
+              startTimeHandler={startTimeHandler}
             />
           )}
 

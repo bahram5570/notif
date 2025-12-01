@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { PopupTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
 import { CallNextStepTypes, UseActionTypeNextStepProps } from './types';
 
@@ -16,11 +17,13 @@ const useActionTypeNextStep = ({
   const pendingStatus = useRef({ isCalled: false, isModalOpen: false });
 
   const callNextStep: CallNextStepTypes = ({ nextStep }) => {
-    pageNavigationHandler({ showProgressBar: true, id: Math.random() });
+    if (nextStep.type !== PopupTypeEnum.TimerInteraction) {
+      pageNavigationHandler({ showProgressBar: true, id: Math.random() });
+      pendingStatus.current.isCalled = true;
+      isCurrentNextStepFinishedHandler(false);
+    }
 
     popUpHandler(nextStep);
-    pendingStatus.current.isCalled = true;
-    isCurrentNextStepFinishedHandler(false);
   };
 
   const isPopupOpen = getQueryParams(MODALS.WIDGET_POPUP) !== null;

@@ -10,19 +10,19 @@ import PopupInteraction from './PopupModals/PopupInteraction';
 import PopupInteractionReward from './PopupModals/PopupInteractionReward';
 import PopupMultiOption from './PopupModals/PopupMultiOption';
 import PopupSexTracker from './PopupModals/PopupSexTracker';
+import usePopUpCompleteAction from './__hooks__/usePopUpCompleteAction';
 import usePopupModal from './__hooks__/usePopupModal';
 import useTwoStepsStatus from './__hooks__/useTwoStepsStatus';
 import { WidgetActionsPopupProps } from './types';
 
-const WidgetActionsPopup = ({ popUp, timerInteractionCompleteHandler }: WidgetActionsPopupProps) => {
+const WidgetActionsPopup = ({ actionCompleteHandler, popUp }: WidgetActionsPopupProps) => {
   if (popUp && popUp.type === PopupTypeEnum.TimerInteraction) {
-    return (
-      <PopUpTimerInteraction data={popUp.data} timerInteractionCompleteHandler={timerInteractionCompleteHandler} />
-    );
+    return <PopUpTimerInteraction data={popUp.data} actionCompleteHandler={actionCompleteHandler} />;
   }
 
   const { isPopupModalOpen } = usePopupModal(popUp !== null);
   const { hasTwoStepsInteractionReward } = useTwoStepsStatus(popUp);
+  const { isPopUpActionCommpleteHandler } = usePopUpCompleteAction(isPopupModalOpen, actionCompleteHandler);
 
   const isFullScreenList = [
     PopupTypeEnum.EditCycle,
@@ -47,7 +47,9 @@ const WidgetActionsPopup = ({ popUp, timerInteractionCompleteHandler }: WidgetAc
               {popUp.type === PopupTypeEnum.MultiOption && <PopupMultiOption data={popUp.data} />}
               {popUp.type === PopupTypeEnum.Interaction && <PopupInteraction data={popUp.data} />}
               {popUp.type === PopupTypeEnum.Dialog && <PopupDialog data={popUp.data} />}
-              {popUp.type === PopupTypeEnum.EditCycle && <PopUpEditCycle popUp={popUp} />}
+              {popUp.type === PopupTypeEnum.EditCycle && (
+                <PopUpEditCycle popUp={popUp} isPopUpActionCommpleteHandler={isPopUpActionCommpleteHandler} />
+              )}
               {popUp.type === PopupTypeEnum.InteractionReward && (
                 <PopupInteractionReward data={popUp.data} hasTwoStepsInteractionReward={hasTwoStepsInteractionReward} />
               )}

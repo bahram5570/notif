@@ -11,12 +11,9 @@ import WidgetActionsPopup from './WidgetActionsPopup';
 import usePopUpHandlers from './WidgetActionsPopup/__hooks__/usePopUpHandlers';
 import useActionTypes from './__hooks__/useActionTypes';
 import useIsCurrentNextStepFinished from './__hooks__/useIsCurrentNextStepFinished';
-// import useIsDismissibleAction from './__hooks__/useIsDismissibleAction';
 import useResetOnPageChange from './__hooks__/useResetOnPageChange';
 import { ActionListHandlerTypes, WidgetActionsContextTypes } from './types';
 import { ActionTypes } from './widgetCommon';
-
-// import { ActionTypeEnum } from './widgetEnums';
 
 export const WidgetActionsContext = createContext<WidgetActionsContextTypes>({
   actionHandler: () => {},
@@ -46,7 +43,6 @@ const WidgetActionsProvider = ({ children }: { children: React.ReactNode }) => {
   // # actionList (simple actions in format of array)
   const [actionList, setActionList] = useState<null | ActionTypes[]>(null);
   const [actionListIndex, setActionListIndex] = useState<null | number>(null);
-  // const { isDismissibleAction, isDismissibleActionHandler, isDismissibleActionResetKey } = useIsDismissibleAction();
 
   const actionListHandler: ActionListHandlerTypes = (v) => {
     if (actionList === null) {
@@ -65,26 +61,9 @@ const WidgetActionsProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     if (actionList !== null && actionListIndex !== null) {
       const action = actionList[actionListIndex];
-      // const hasIsDismissible = action.actionType === ActionTypeEnum.NextStep && !action.nextStep.isDismissible;
-
-      // if (hasIsDismissible) {
-      //   isDismissibleActionHandler(action);
-      // }
-
       actionsFinder(action);
     }
   }, [actionList, actionListIndex]);
-
-  // useEffect(() => {
-  //   // # If there's a 'isDismissible' action, then always 'actionList' be cleared and set by 'isDismissible' action.
-  //   if (isDismissibleAction !== null) {
-  //     setOnMountActionsList(null);
-  //     setOnMountActionsListIndex(null);
-
-  //     setActionListIndex(0);
-  //     setActionList([isDismissibleAction]);
-  //   }
-  // }, [isDismissibleAction, isDismissibleActionResetKey]);
 
   // # Action complete handlers
   const { isCurrentNextStepFinished, isCurrentNextStepFinishedHandler } = useIsCurrentNextStepFinished();
@@ -109,6 +88,7 @@ const WidgetActionsProvider = ({ children }: { children: React.ReactNode }) => {
       }
 
       if (actionListIndex >= actionList.length - 1) {
+        popUpHandler(null);
         setActionList(null);
         setActionListIndex(null);
         onMountActionsCompleteHandler();
@@ -122,15 +102,17 @@ const WidgetActionsProvider = ({ children }: { children: React.ReactNode }) => {
       } else {
         setActionListIndex(actionListIndex + 1);
       }
+    } else {
+      popUpHandler(null);
     }
   };
 
   const nextStepCompleteHandler = () => {
     // # If the 'isCurrentNextStepFinished' be false, it means the actionList (nextStep) did not completed. Because the modal was closed by user.
     if (!isCurrentNextStepFinished) {
-      popUpHandler(null);
-      setActionList(null);
-      setActionListIndex(null);
+      // popUpHandler(null);
+      // setActionList(null);
+      // setActionListIndex(null);
       onMountActionsCompleteHandler();
     }
   };
@@ -158,8 +140,11 @@ const WidgetActionsProvider = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <WidgetActionsContext.Provider value={{ actionHandler, onMountActionsHandler }}>
-      <OnMountActionsProvider>{children}</OnMountActionsProvider>
-      <WidgetActionsPopup popUp={popUp} timerInteractionCompleteHandler={nextStepCompleteHandler} />
+      <OnMountActionsProvider>
+        <>{children}</>
+      </OnMountActionsProvider>
+
+      <WidgetActionsPopup popUp={popUp} actionCompleteHandler={actionCompleteHandler} />
     </WidgetActionsContext.Provider>
   );
 };

@@ -11,7 +11,7 @@ import useWidgetActions from '@hooks/useWidgetActions';
 
 import { PopUpTimerInteractionTypes } from './types';
 
-const PopUpTimerInteraction = ({ data, timerInteractionCompleteHandler }: PopUpTimerInteractionTypes) => {
+const PopUpTimerInteraction = ({ data, actionCompleteHandler }: PopUpTimerInteractionTypes) => {
   const { colors } = useTheme();
 
   const { actionHandler } = useWidgetActions();
@@ -26,11 +26,11 @@ const PopUpTimerInteraction = ({ data, timerInteractionCompleteHandler }: PopUpT
   const perimeter = 2 * (width + height);
 
   const closeHandler = () => {
-    timerInteractionCompleteHandler();
+    actionCompleteHandler();
   };
 
   const onClick = () => {
-    timerInteractionCompleteHandler();
+    actionCompleteHandler();
     actionHandler(data.action);
   };
 
@@ -55,13 +55,13 @@ const PopUpTimerInteraction = ({ data, timerInteractionCompleteHandler }: PopUpT
 
   useEffect(() => {
     if (progress === 0) {
-      timerInteractionCompleteHandler();
+      actionCompleteHandler();
     }
   }, [progress]);
 
   return (
     <div
-      className="fixed  w-full p-2 z-50 mx-auto left-0 right-0 flex justify-center items-center animate-popUpTimer"
+      className="fixed w-full p-2 z-50 mx-auto left-0 right-0 flex justify-center items-center animate-popUpTimer"
       style={{ maxWidth: MAX_SCREEN_WIDTH, bottom: FOOTER_HEIGTH + 5 }}
       onAnimationEnd={() => setCanStartTimer(true)}
     >
@@ -104,7 +104,7 @@ const PopUpTimerInteraction = ({ data, timerInteractionCompleteHandler }: PopUpT
             strokeWidth={2}
             strokeDasharray={perimeter}
             strokeDashoffset={perimeter * (1 - progress / 100)}
-            style={{ transition: 'stroke-dashoffset 0.05s linear' }} // smooth
+            style={{ transition: 'stroke-dashoffset 0.05s linear' }}
           />
         </svg>
       </div>
