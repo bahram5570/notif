@@ -3,7 +3,7 @@ import useTheme from '@hooks/useTheme';
 
 import { MoreActionBtnPropsType } from './type';
 
-const MoreActionBtn = ({ onClickHandler, title, isDeleteBtn, Icon }: MoreActionBtnPropsType) => {
+const MoreActionBtn = ({ onClickHandler, title, isDeleteBtn = false, Icon }: MoreActionBtnPropsType) => {
   const { colors } = useTheme();
 
   const backgroundColor = isDeleteBtn ? colors.Error_ErrorContainer : colors.Surface_OutlineVariant;

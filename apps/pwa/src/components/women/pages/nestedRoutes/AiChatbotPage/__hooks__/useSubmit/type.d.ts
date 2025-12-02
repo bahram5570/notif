@@ -15,4 +15,6 @@ export interface NewMessageResponse extends ItemType {
 export type UseSubmitPropsType = {
   updateChatHandler: UpdateChatHandlerType;
   addChatHandler: AddChatHandlerType;
+  itemIdData: string | null;
+  categoryIdData: string | null;
 };

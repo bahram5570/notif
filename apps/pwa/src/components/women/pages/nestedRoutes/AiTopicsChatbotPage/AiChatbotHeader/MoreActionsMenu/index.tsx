@@ -73,21 +73,11 @@ const MoreActionsMenu = ({ isOpen, closeHandler, welcomingType, disableDeleteBtn
                 </>
               )}
 
-              <MoreActionBtn
-                onClickHandler={commentClickHandler}
-                title="نظرت رو اینجا بگو"
-                isDeleteBtn={false}
-                Icon={DialogIcon}
-              />
+              <MoreActionBtn onClickHandler={commentClickHandler} title="نظرت رو اینجا بگو" Icon={DialogIcon} />
             </>
           )}
           {welcomingType === WelcomingTypeEnum.TopicsPage && (
-            <MoreActionBtn
-              onClickHandler={suggestionClickHandler}
-              title="ثبت موضوع پیشنهادی"
-              isDeleteBtn={false}
-              Icon={EditIcon}
-            />
+            <MoreActionBtn onClickHandler={suggestionClickHandler} title="ثبت موضوع پیشنهادی" Icon={EditIcon} />
           )}
         </div>
       </div>

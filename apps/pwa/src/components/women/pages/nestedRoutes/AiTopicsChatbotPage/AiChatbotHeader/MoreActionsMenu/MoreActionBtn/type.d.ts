@@ -1,6 +1,6 @@
 export type MoreActionBtnPropsType = {
   onClickHandler: () => void;
   title: string;
-  isDeleteBtn: boolean;
+  isDeleteBtn?: boolean;
   Icon: React.ElementType;
 };

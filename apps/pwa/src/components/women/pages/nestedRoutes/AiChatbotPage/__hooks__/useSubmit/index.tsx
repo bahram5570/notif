@@ -3,24 +3,20 @@ import { useEffect, useState } from 'react';
 import { PROMPT_TEXT } from '@constants/ai.constants';
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import useEventSource from '../useEventSource';
-import { ChatItemType } from '../useGetAiChatbotData/type';
+import { AiChatbotDataResponseType, ChatItemType } from '../useGetAiChatbotData/type';
 import { NewMessageResponse, SubmitHandlerType, UseSubmitPropsType } from './type';
 
 let messageId: string;
-const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) => {
+const useSubmit = ({ addChatHandler, updateChatHandler, categoryIdData, itemIdData }: UseSubmitPropsType) => {
   const [streamLoading, setStreamLoading] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [resetkey, setResetKey] = useState(Math.random());
   const { getQuery, updateQuery } = useCustomReactQuery(['historyAiChat']);
-  const { getQueryParams } = useQueryParamsHandler();
-
-  const itemIdData = getQueryParams('promptItemId');
-  const categoryIdData = getQueryParams('promptCategoryId');
 
   const aiChatMessageList = getQuery<{ data: ChatItemType[] }>({ queryKey: ['AiChatMessageList'] });
+  const historyAiChat = getQuery<AiChatbotDataResponseType>({ queryKey: ['historyAiChat'] });
 
   const { streamHandler, messages } = useEventSource({
     handelLoading: setStreamLoading,
@@ -31,14 +27,17 @@ const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) =>
     updateQuery({
       queryKey: ['historyAiChat'],
       payload: {
-        chats: aiChatMessageList?.data,
+        ...historyAiChat,
         isActive: v.isActive,
         activeRating: v.activeRating,
         deactiveMessage: v.deactiveMessage,
         title: v.title,
         deactiveButton: v.deactiveButton,
+        activaMedia:
+          historyAiChat?.imageUsageLimit === historyAiChat?.currentImageUsage ? false : historyAiChat?.activaMedia,
       },
     });
+
     messageId = v.messageId;
     streamHandler({ id: v.messageId });
   };
@@ -54,6 +53,16 @@ const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) =>
     setResetKey(Math.random());
     if (showErrorMessage) setShowErrorMessage(false);
     addChatHandler({ chat: prompt, imageId: imageId });
+    const imagesCount = imageId?.length || 0;
+    updateQuery({
+      queryKey: ['historyAiChat'],
+      payload: {
+        ...historyAiChat,
+        currentImageUsage: historyAiChat?.currentImageUsage
+          ? historyAiChat.currentImageUsage + imagesCount
+          : imagesCount,
+      },
+    });
 
     const payload = {
       promptCategoryId: categoryIdData || '',
@@ -77,7 +86,7 @@ const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) =>
     const promptText = sessionStorage.getItem(PROMPT_TEXT);
 
     if (promptText) {
-      submitHandler({ prompt: promptText, imageId: [''] });
+      submitHandler({ prompt: promptText, imageId: [] });
     }
   }, [aiChatMessageList]);
 

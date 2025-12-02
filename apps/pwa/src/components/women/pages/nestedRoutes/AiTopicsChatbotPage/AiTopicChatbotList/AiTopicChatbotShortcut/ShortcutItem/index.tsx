@@ -9,14 +9,12 @@ const ShortcutItem = (props: ShortcutItemPropsType) => {
   };
 
   return (
-    <div className="flex flex-row-reverse justify-between gap-[30px] items-baseline " onClick={onClick}>
-      <div className="flex flex-col justify-center items-center gap-2">
-        <CustomImage src={props.icon} height={56} width={56} />
+    <div className="flex flex-col justify-center items-center gap-2" onClick={onClick}>
+      <CustomImage src={props.icon} height={56} width={56} />
 
-        <Typography scale="Lable" size="Small" color="Neutral_OnBackground" textAlign="center">
-          {props.description}
-        </Typography>
-      </div>
+      <Typography scale="Lable" size="Small" color="Neutral_OnBackground" textAlign="center">
+        {props.description}
+      </Typography>
     </div>
   );
 };

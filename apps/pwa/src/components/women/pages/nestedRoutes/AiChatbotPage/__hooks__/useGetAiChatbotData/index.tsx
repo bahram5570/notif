@@ -39,7 +39,7 @@ const useGetAiChatbotData = () => {
     }
   }, [api]);
 
-  return { isLoading, aiChatData };
+  return { isLoading, aiChatData, itemIdData, categoryIdData };
 };
 
 export default useGetAiChatbotData;

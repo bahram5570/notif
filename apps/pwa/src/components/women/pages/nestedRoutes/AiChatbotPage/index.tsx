@@ -6,6 +6,7 @@ import AiChatbotHeader from '../AiTopicsChatbotPage/AiChatbotHeader';
 import { WelcomingTypeEnum } from '../AiTopicsChatbotPage/WelcomingContainer/enum';
 import AiChatbotEmptyState from './AiChatbotEmptyState';
 import AiChatbotFooter from './AiChatbotFooter';
+import AiChatbotLimitUploadMessage from './AiChatbotLimitUploadMessage';
 import AiChatbotMessageList from './AiChatbotMessageList';
 import AiChatbotSkeleton from './AiChatbotSkeleton';
 import useGetAiChatbotData from './__hooks__/useGetAiChatbotData';
@@ -13,15 +14,16 @@ import useGetAiChatbotMessageList from './__hooks__/useGetAiChatbotMessageList';
 import useSubmit from './__hooks__/useSubmit';
 
 const AiChatbotPage = () => {
-  const { isLoading, aiChatData } = useGetAiChatbotData();
+  const { isLoading, aiChatData, categoryIdData, itemIdData } = useGetAiChatbotData();
   const { addChatHandler, aiChatbotMessageList, updateChatHandler } = useGetAiChatbotMessageList();
+
   const {
     isLoading: newLoading,
     submitHandler,
     showErrorMessage,
     onErrorHandler,
     resetkey,
-  } = useSubmit({ updateChatHandler, addChatHandler });
+  } = useSubmit({ updateChatHandler, addChatHandler, categoryIdData, itemIdData });
   const [disableDeleteBtn, setDisableDeleteBtn] = useState(false);
 
   const defaultQustionHandler = (text: string) => {
@@ -55,9 +57,8 @@ const AiChatbotPage = () => {
             disableDeleteBtn={disableDeleteBtn}
             chatTitle={aiChatData.chatTitle}
             chatId={aiChatData.chatId}
-            currentImageUsage={aiChatData.currentImageUsage}
-            imageUsageLimit={aiChatData.imageUsageLimit}
-            mediaLimitDate={aiChatData.mediaLimitDate}
+            categoryIdData={categoryIdData}
+            itemIdData={itemIdData}
           />
           {!hasChatData && (
             <>
@@ -72,14 +73,24 @@ const AiChatbotPage = () => {
           )}
 
           {hasChatData && (
-            <AiChatbotMessageList
-              chats={aiChatbotMessageList}
-              isLoading={newLoading}
-              defaultQustionHandler={defaultQustionHandler}
-              disableDeleteBtnHandler={disableDeleteBtnHandler}
-              showErrorMessage={showErrorMessage}
-              onErrorHandler={onErrorHandler}
-            />
+            <>
+              {aiChatData.imageType && aiChatData.imageUsageLimit > 0 && (
+                <AiChatbotLimitUploadMessage
+                  currentImageUsage={aiChatData.currentImageUsage}
+                  imageUsageLimit={aiChatData.imageUsageLimit}
+                  mediaLimitDate={aiChatData.mediaLimitDate}
+                />
+              )}
+
+              <AiChatbotMessageList
+                chats={aiChatbotMessageList}
+                isLoading={newLoading}
+                defaultQustionHandler={defaultQustionHandler}
+                disableDeleteBtnHandler={disableDeleteBtnHandler}
+                showErrorMessage={showErrorMessage}
+                onErrorHandler={onErrorHandler}
+              />
+            </>
           )}
 
           <AiChatbotFooter

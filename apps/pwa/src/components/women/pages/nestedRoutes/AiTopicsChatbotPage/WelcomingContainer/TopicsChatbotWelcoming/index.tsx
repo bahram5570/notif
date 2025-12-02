@@ -8,8 +8,9 @@ import useWidgetActions from '@hooks/useWidgetActions';
 
 import TopicsChatbotWelcomingSkeleton from './TopicsChatbotWelcomingSkeleton';
 import useGetData from './__hooks__/useGetData';
+import { TopicsChatbotWelcomingPropsType } from './type';
 
-const TopicsChatbotWelcoming = ({ top, onUpdateKeyHandler }: { top: number; onUpdateKeyHandler: any }) => {
+const TopicsChatbotWelcoming = ({ top, onUpdateKeyHandler }: TopicsChatbotWelcomingPropsType) => {
   const { data, isLoading } = useGetData();
   const { actionHandler } = useWidgetActions();
 

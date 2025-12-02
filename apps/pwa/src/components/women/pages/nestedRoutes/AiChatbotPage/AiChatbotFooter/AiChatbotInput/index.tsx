@@ -1,5 +1,7 @@
 import { SHOW_SUGGESTED_QUESTION } from '@constants/ai.constants';
+import useCustomReactQuery from '@hooks/useCustomReactQuery';
 
+import { AiChatbotDataResponseType } from '../../__hooks__/useGetAiChatbotData/type';
 import AiChatbotFilePreview from './AiChatbotFilePreview';
 import AiChatbotText from './AiChatbotText';
 import AiChatbotUploadImage from './AiChatbotUploadImage';
@@ -13,8 +15,14 @@ const AiChatbotInput = ({
   isShowFileInput,
   activaMedia,
 }: AiChatbotInputPropsType) => {
+  const { getQuery } = useCustomReactQuery(['historyAiChat']);
   const { files, hasFile, fileDataHandler, removeFileHandler, retryUploadHandler, imageFile } = useFileUpload();
-  const disableBtn = files.length === 3 || activaMedia;
+  const historyAiChat = getQuery<AiChatbotDataResponseType>({ queryKey: ['historyAiChat'] });
+  const hasMoreFile = historyAiChat
+    ? files.length + historyAiChat?.currentImageUsage === historyAiChat?.imageUsageLimit
+    : true;
+
+  const disableBtn = files.length === 3 || !activaMedia || hasMoreFile;
 
   const clickHandler = (chatText: string) => {
     if (!chatText.trim() && imageFile.length === 0) return;

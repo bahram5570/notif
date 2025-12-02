@@ -1,15 +1,12 @@
 import useApi from '@hooks/useApi';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { useToast } from '@providers/ToastProvider/CustomToastProvider';
 import { useRouter } from 'next/navigation';
 
-const useSubmit = () => {
-  const { getQueryParams } = useQueryParamsHandler();
+import { UseSubmitPropsType } from './type';
+
+const useSubmit = ({ categoryIdData, itemIdData }: UseSubmitPropsType) => {
   const { showToast } = useToast();
   const route = useRouter();
-
-  const itemIdData = getQueryParams('promptItemId');
-  const categoryIdData = getQueryParams('promptCategoryId');
 
   const successHandler = () => {
     route.back();

@@ -7,8 +7,9 @@ import { AiChatModalNameEnums } from '../enum';
 import CommentChatModal from './CommentChatModal';
 import DeleteChatModal from './DeleteChatModal';
 import SuggestionTopicChatModal from './SuggestionTopicChatModal';
+import { MoreActionMenuModalsPropsType } from './type';
 
-const MoreActionMenuModals = ({ chatId }: { chatId: string | undefined }) => {
+const MoreActionMenuModals = ({ chatId, categoryIdData, itemIdData }: MoreActionMenuModalsPropsType) => {
   const { getQueryParams } = useQueryParamsHandler();
   const route = useRouter();
 
@@ -28,11 +29,18 @@ const MoreActionMenuModals = ({ chatId }: { chatId: string | undefined }) => {
       className={`${aiChatModalQueryName === AiChatModalNameEnums.DeleteAiChat && 'glass-card !bg-white/80 !rounded-[32px]'}`}
     >
       <>
-        {aiChatModalQueryName === AiChatModalNameEnums.DeleteAiChat && <DeleteChatModal onCloseModal={onCloseModal} />}
+        {aiChatModalQueryName === AiChatModalNameEnums.DeleteAiChat && (
+          <DeleteChatModal onCloseModal={onCloseModal} categoryIdData={categoryIdData} itemIdData={itemIdData} />
+        )}
       </>
       <>
         {aiChatModalQueryName === AiChatModalNameEnums.CommentAiChat && (
-          <CommentChatModal onCloseModal={onCloseModal} chatId={chatId} />
+          <CommentChatModal
+            onCloseModal={onCloseModal}
+            chatId={chatId}
+            categoryIdData={categoryIdData}
+            itemIdData={itemIdData}
+          />
         )}
       </>
       <>
