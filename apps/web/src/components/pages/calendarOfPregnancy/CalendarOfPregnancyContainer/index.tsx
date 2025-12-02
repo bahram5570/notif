@@ -20,7 +20,8 @@ const CalendarOfPregnancyContainer = async () => {
 
   return (
     <HeaderFooterContainer>
-      <div className="absolute top-0 left-0 right-0 w-full h-[90vh] bg-gradient-to-b from-[#FFDCD9] pointer-events-none" />
+      {/* bg-gradient-to-b from-[#FFDCD9] */}
+      <div className="absolute top-0 left-0 right-0 w-full h-[90vh] pointer-events-none" />
 
       <div className="relative w-full max-w-[640px] pt-[100px] md:pt-[150px] pb-12 px-4">
         <CalendarOfPregnancyHeading />

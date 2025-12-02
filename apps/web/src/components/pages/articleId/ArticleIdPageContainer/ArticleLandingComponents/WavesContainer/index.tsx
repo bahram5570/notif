@@ -15,7 +15,9 @@ const WavesContainer = ({ backgroundColor, waveColor, children, height, title }:
       style={{ backgroundColor, height }}
     >
       <div className="relative w-full h-full flex flex-col items-center gap-3 px-4 pt-6 pb-5 z-10">
-        <CustomTypography fontSize="Headline_Medium">{title}</CustomTypography>
+        <CustomTypography fontSize="Headline_Medium" className="text-center">
+          {title}
+        </CustomTypography>
 
         <>{children}</>
       </div>

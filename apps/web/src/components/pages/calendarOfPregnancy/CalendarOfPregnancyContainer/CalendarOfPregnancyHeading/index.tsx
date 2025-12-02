@@ -13,9 +13,9 @@ const CalendarOfPregnancyHeading = async () => {
   
   return (
     <>
-      <CustomTypography fontSize="Headline_Medium" tagType="h1" className="pb-2 text-center">
+      {/* <CustomTypography fontSize="Headline_Medium" tagType="h1" className="pb-2 text-center">
         محاسبه سن بارداری و تقویم بارداری آنلاین
-      </CustomTypography>
+      </CustomTypography> */}
 
       <PregnancyAgeCalculator />
 

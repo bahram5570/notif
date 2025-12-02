@@ -1,78 +1,74 @@
-import { useEffect } from 'react';
-
-import EyeIcon from '@assets/icons/eye.svg';
-import RulerIcon from '@assets/icons/ruler.svg';
-import WeightIcon from '@assets/icons/weight.svg';
-
+// import { useEffect } from 'react';
+// import EyeIcon from '@assets/icons/eye.svg';
+// import RulerIcon from '@assets/icons/ruler.svg';
+// import WeightIcon from '@assets/icons/weight.svg';
+import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
+import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import { COLORS_LIST } from '@theme/colors';
 
-import PregnancyProgressbar from '../PregnancyProgressbar';
+// import PregnancyProgressbar from '../PregnancyProgressbar';
 import { ResultModuleTypes } from './types';
 
 const ResultModule = ({ pregnancyDateResult, weeksResult, onReset }: ResultModuleTypes) => {
-  useEffect(() => {
-    window.scrollTo({ top: 500, behavior: 'smooth' });
-  }, [pregnancyDateResult, weeksResult.dayOfWeek, weeksResult.week]);
+  // useEffect(() => {
+  //   window.scrollTo({ top: 500, behavior: 'smooth' });
+  // }, [pregnancyDateResult, weeksResult.dayOfWeek, weeksResult.week]);
 
   const weekImage = `/assets/images/pregnacy-weeks/week${weeksResult.week}.webp`;
 
   return (
-    <div className="w-full h-full flex flex-col items-center">
-      <div className="grid w-full grid-cols-1 mt-4 md:grid-cols-2 gap-4">
-        <div className="relative h-[250px] sm:w-[274px] sm:h-[330px] w-full flex justify-center items-center">
-          <CustomImage src={weekImage} alt="" fill={true} className="object-contain" />
-        </div>
-
-        <div className="flex flex-col justify-center sm:items-baseline items-center h-full gap-3">
-          <CustomTypography fontSize="Headline_Small" className="w-full text-center sm:text-start">
+    <>
+      <div className="w-full flex flex-col items-center">
+        <div className="flex flex-col justify-center sm:items-baseline items-center gap-[5px]">
+          <CustomTypography fontSize="Title_Medium" className="w-full text-center">
             سن بارداری شما:
           </CustomTypography>
-          <CustomTypography fontSize="Body_Large" className="w-full text-center sm:text-start">
+          <CustomTypography fontSize="Body_Large" className="w-full text-center">
             {weeksResult.week} هفته و {weeksResult.dayOfWeek} روز است
           </CustomTypography>
-          <div className="flex flex-col gap-4 sm:items-start items-center sm:justify-start justify-center w-full">
-            <div className="flex flex-row items-center gap-4">
-              <div
-                className="w-12 h-12 rounded-full flex justify-center items-center"
-                style={{ background: COLORS_LIST.Surface_SurfaceVariant }}
-              >
-                <RulerIcon className="w-8 h-auto" style={{ fill: COLORS_LIST.Primary_Primary }} />
-              </div>
+        </div>
+        <div className="grid grid-cols-2 w-full gap-1 items-center -mt-8">
+          <div className="relative h-[280px] sm:w-full sm:h-[330px] w-full flex justify-center items-center">
+            <CustomImage src={weekImage} alt="" fill={true} className="object-contain" />
+          </div>
+          <div className="sm:w-full sm:h-[215px] h-full sm:grid sm:content-center flex flex-col justify-center bg-contain px-4 py-5 rounded-2xl bg-[url(/assets/images/pregnancyDatebackground2.webp)] bg-no-repeat bg-center">
+            <CustomTypography fontSize="Lable_Medium" className="text-center">
+              تاریخ به دنیا اومدن کوچولوت:
+            </CustomTypography>
 
-              <CustomTypography fontSize="Title_Small" color="Neutral_OnBackground">
-                قد جنین:
-              </CustomTypography>
-              <EyeIcon className="w-10 h-auto" style={{ fill: COLORS_LIST.Primary_Primary }} />
-            </div>
-            <div className="flex flex-row  items-center gap-4">
-              <div
-                className="w-12 h-12 rounded-full flex justify-center items-center"
-                style={{ background: COLORS_LIST.Surface_SurfaceVariant }}
+            <CustomTypography fontSize="Body_Small" className="text-center mt-[6px]">
+              {pregnancyDateResult}
+            </CustomTypography>
+            <div className="flex justify-center mt-2">
+              <CustomButton
+                onClick={onReset}
+                varient="outline"
+                fontSize="Lable_SmallProminet"
+                className="!px-4 !py-[6px] !h-[28px] !w-fit"
+                style={{ border: 'none', backgroundColor: COLORS_LIST.Primary_PrimaryContainer }}
               >
-                <WeightIcon className="w-8 h-auto" style={{ fill: COLORS_LIST.Primary_Primary }} />
-              </div>
-
-              <CustomTypography fontSize="Title_Small" color="Neutral_OnBackground">
-                وزن جنین:
-              </CustomTypography>
-              <EyeIcon className="w-10 h-auto" style={{ fill: COLORS_LIST.Primary_Primary }} />
+                محاسبه دوباره
+              </CustomButton>
             </div>
           </div>
         </div>
+        {/* <PregnancyProgressbar week={weeksResult.week} /> */}
       </div>
-      <div className="w-full h-full flex flex-col sm:flex-row justify-center gap-2 items-center px-4 mt-4 bg-contain rounded-2xl bg-[url(/assets/images/pregnancyDatebackground.webp)] ">
-        <CustomTypography fontSize="Headline_Small" className="text-center py-3 sm:py-5">
-          تاریخ به دنیا اومدن کوچولوت:
+      <CustomLink
+        href={'/download'}
+        className="h-[48px] w-full !mt-auto sm:max-w-[460px] text-center rounded-full"
+        style={{ backgroundColor: COLORS_LIST.Primary_Primary, color: 'white' }}
+      >
+        <CustomTypography
+          fontSize="Title_Small"
+          className="h-full !text-white flex justify-center py-[13px] items-center"
+        >
+          از ایمپو استفاده کن
         </CustomTypography>
-
-        <CustomTypography fontSize="Headline_Small" className="text-center py-3 sm:py-5">
-          {pregnancyDateResult}
-        </CustomTypography>
-      </div>
-      <PregnancyProgressbar week={weeksResult.week} />
-    </div>
+      </CustomLink>
+    </>
   );
 };
 

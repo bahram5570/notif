@@ -28,7 +28,7 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
 
   return (
     <>
-      <div className="w-full h-full flex flex-col items-center">
+      <div className="w-full h-full flex flex-col items-center ">
         <CustomTypography fontSize="Body_Large" className="text-center">
           تاریخ آخرین پریودت رو بهمون بگو تا بهت سن بارداریت رو بگیم!
         </CustomTypography>
