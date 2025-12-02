@@ -8,6 +8,8 @@ import AiChatbotEmptyState from './AiChatbotEmptyState';
 import AiChatbotFooter from './AiChatbotFooter';
 import AiChatbotLimitUploadMessage from './AiChatbotLimitUploadMessage';
 import AiChatbotMessageList from './AiChatbotMessageList';
+import AiChatbotMessageListLayout from './AiChatbotMessageList/AiChatbotMessageListLayout';
+import ErrorMessage from './AiChatbotMessageList/ErrorMessage';
 import AiChatbotSkeleton from './AiChatbotSkeleton';
 import useGetAiChatbotData from './__hooks__/useGetAiChatbotData';
 import useGetAiChatbotMessageList from './__hooks__/useGetAiChatbotMessageList';
@@ -73,7 +75,7 @@ const AiChatbotPage = () => {
           )}
 
           {hasChatData && (
-            <>
+            <AiChatbotMessageListLayout>
               {aiChatData.imageType && aiChatData.imageUsageLimit > 0 && (
                 <AiChatbotLimitUploadMessage
                   currentImageUsage={aiChatData.currentImageUsage}
@@ -88,9 +90,9 @@ const AiChatbotPage = () => {
                 defaultQustionHandler={defaultQustionHandler}
                 disableDeleteBtnHandler={disableDeleteBtnHandler}
                 showErrorMessage={showErrorMessage}
-                onErrorHandler={onErrorHandler}
               />
-            </>
+              {showErrorMessage && <ErrorMessage onErrorHandler={onErrorHandler} />}
+            </AiChatbotMessageListLayout>
           )}
 
           <AiChatbotFooter

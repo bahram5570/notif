@@ -16,7 +16,6 @@ const AiChatbotMessageList = ({
   defaultQustionHandler,
   disableDeleteBtnHandler,
   showErrorMessage,
-  onErrorHandler,
 }: AiChatbotMessageListPropsType) => {
   const lastItemRef = useRef<HTMLDivElement>(null);
   const hasSetInitialHeight = useRef(false);
@@ -36,37 +35,34 @@ const AiChatbotMessageList = ({
   }, [chats, isLoading]);
 
   return (
-    <AiChatbotMessageListLayout>
-      <>
-        {chats.map((chat, index) => {
-          const isLastItem = index === chats.length - 1;
-          const minHeight = isLastItem && !isLoading && !showErrorMessage ? lastItemHeight : 'auto';
+    <>
+      {chats.map((chat, index) => {
+        const isLastItem = index === chats.length - 1;
+        const minHeight = isLastItem && !isLoading && !showErrorMessage ? lastItemHeight : 'auto';
 
-          return (
-            <div
-              key={index}
-              style={{
-                minHeight,
-              }}
-              className="pr-2"
-              ref={index === chats.length - 1 ? lastItemRef : null}
-            >
-              {chat.role === RoleEnum.User && <UserMessage {...chat} />}
-              {chat.role === RoleEnum.Assistant && (
-                <AiMessage
-                  {...chat}
-                  isLastItem={isLastItem}
-                  defaultQustionHandler={defaultQustionHandler}
-                  disableDeleteBtnHandler={disableDeleteBtnHandler}
-                />
-              )}
-            </div>
-          );
-        })}
-        {isLoading && <AiChatbotMessageListLoading />}
-        {showErrorMessage && <ErrorMessage onErrorHandler={onErrorHandler} />}
-      </>
-    </AiChatbotMessageListLayout>
+        return (
+          <div
+            key={index}
+            style={{
+              minHeight,
+            }}
+            className="pr-2"
+            ref={index === chats.length - 1 ? lastItemRef : null}
+          >
+            {chat.role === RoleEnum.User && <UserMessage {...chat} />}
+            {chat.role === RoleEnum.Assistant && (
+              <AiMessage
+                {...chat}
+                isLastItem={isLastItem}
+                defaultQustionHandler={defaultQustionHandler}
+                disableDeleteBtnHandler={disableDeleteBtnHandler}
+              />
+            )}
+          </div>
+        );
+      })}
+      {isLoading && <AiChatbotMessageListLoading />}
+    </>
   );
 };
 
