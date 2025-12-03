@@ -2,20 +2,22 @@ import { useState } from 'react';
 
 import useApi from '@hooks/useApi';
 
-import { FileDataHandlerTypes, UploadItem } from './type';
+import { FileDataHandlerTypes, FileResponseTypes, UploadItem } from './type';
 
 let finalFile: File | undefined;
 const useFileUpload = () => {
   const [files, setFiles] = useState<UploadItem[]>([]);
 
-  const successHandler = (v: string) => {
-    const newFiles = [...files];
-    const idx = newFiles.findIndex((f) => f.loading === true);
+  const successHandler = (v: FileResponseTypes) => {
+    if (v.valid) {
+      const newFiles = [...files];
+      const idx = newFiles.findIndex((f) => f.loading === true);
 
-    if (idx !== -1) {
-      newFiles[idx] = { ...newFiles[idx], loading: false, url: v };
+      if (idx !== -1) {
+        newFiles[idx] = { ...newFiles[idx], loading: false, url: v.name };
+      }
+      setFiles(newFiles);
     }
-    setFiles(newFiles);
   };
 
   const errorHandler = () => {
@@ -28,7 +30,7 @@ const useFileUpload = () => {
     setFiles(newFiles);
   };
 
-  const { callApi } = useApi<string>({
+  const { callApi } = useApi<FileResponseTypes>({
     api: 'feature/ai/media',
     contentType: 'multipart/form-data',
     method: 'POST',

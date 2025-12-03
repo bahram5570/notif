@@ -13,6 +13,6 @@ export type OptionsTypes = {
 
 export type FileDataHandlerTypes = (args: { e: React.ChangeEvent<HTMLInputElement>; file?: File }) => void;
 
-export type FileResponseTypes = { name: string };
+export type FileResponseTypes = { valid: boolean; name: string };
 
 export type FileUploadImageFileTypes = null | { image: string; imageType: string };
