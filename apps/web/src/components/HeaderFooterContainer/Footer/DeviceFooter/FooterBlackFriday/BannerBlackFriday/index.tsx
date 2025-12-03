@@ -15,14 +15,14 @@ const BannerBlackFriday = () => {
     >
       <div>
         <CustomTypography fontSize="Headline_Small" color={'White'}>
-          جمعه دل‌نواز
+          از خودت مراقبت کن
         </CustomTypography>
         <CustomTypography fontSize="Body_Small" color={'White'}>
           تا ۷۰ درصد تخفیف اشتراک ایمپو
         </CustomTypography>
       </div>
       <CustomLink href={BLACKFRIDAYLANDINGLINK} className="bg-white px-6 py-2 rounded-full">
-        <CustomTypography fontSize="Lable_Large">دریافت تخفیف</CustomTypography>
+        <CustomTypography fontSize="Lable_Large">شروع</CustomTypography>
       </CustomLink>
     </div>
   );
