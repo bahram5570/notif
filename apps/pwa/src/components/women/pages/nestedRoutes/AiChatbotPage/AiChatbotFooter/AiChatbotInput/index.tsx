@@ -34,9 +34,9 @@ const AiChatbotInput = ({
   };
 
   return (
-    <div className="flex w-full items-end justify-center px-4 gap-1">
+    <div className="flex w-full items-end justify-center px-4 gap-1 h-14">
       <div
-        className={`flex flex-col  w-full  glass-card !bg-white/60 shadow-sm ${hasFile ? 'rounded-3xl py-3 ' : 'rounded-full'}  `}
+        className={`flex flex-col   glass-card !bg-white/60 shadow-sm ${hasFile ? 'rounded-3xl py-3 ' : 'rounded-full'} ${isShowFileInput ? 'w-72' : 'w-full'} `}
       >
         {hasFile && (
           <AiChatbotFilePreview
