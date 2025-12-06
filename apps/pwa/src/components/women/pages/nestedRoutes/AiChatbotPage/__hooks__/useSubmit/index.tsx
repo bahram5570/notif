@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { PROMPT_TEXT } from '@constants/ai.constants';
+import { getSessionStoragePromptText } from '@utils/aiChatbot';
+
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 
@@ -83,7 +84,7 @@ const useSubmit = ({ addChatHandler, updateChatHandler, categoryIdData, itemIdDa
   useEffect(() => {
     if (!aiChatMessageList) return;
 
-    const promptText = sessionStorage.getItem(PROMPT_TEXT);
+    const promptText = getSessionStoragePromptText();
 
     if (promptText) {
       submitHandler({ prompt: promptText, imageId: [] });

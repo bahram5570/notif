@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { PROMPT_TEXT } from '@constants/ai.constants';
+import { removeSessionStoragePromptText } from '@utils/aiChatbot';
+
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 
 import { RoleEnum } from '../useGetAiChatbotData/enum';
@@ -31,7 +32,7 @@ const useGetAiChatbotMessageList = () => {
     const payload = combined.push(newUserChat);
 
     updateQuery({ queryKey: ['AiChatMessageList'], payload: { data: combined } });
-    sessionStorage.removeItem(PROMPT_TEXT);
+    removeSessionStoragePromptText();
   };
 
   const updateChatHandler: UpdateChatHandlerType = (messages, messageId) => {

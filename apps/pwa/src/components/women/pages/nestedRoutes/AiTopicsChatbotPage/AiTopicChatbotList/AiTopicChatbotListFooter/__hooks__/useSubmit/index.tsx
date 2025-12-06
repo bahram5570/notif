@@ -1,5 +1,6 @@
+import { setSessionStoragePromptText } from '@utils/aiChatbot';
+
 import { SubmitHandlerType } from '@components/women/pages/nestedRoutes/AiChatbotPage/__hooks__/useSubmit/type';
-import { PROMPT_TEXT } from '@constants/ai.constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
 const useSubmit = () => {
@@ -12,7 +13,7 @@ const useSubmit = () => {
       id: 'aiChatbotLink',
       linkTo: '/protected/aiChatbot',
     });
-    sessionStorage.setItem(PROMPT_TEXT, prompt);
+    setSessionStoragePromptText(prompt);
   };
 
   return { submitHandler, isLoading };

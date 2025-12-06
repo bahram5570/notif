@@ -16,7 +16,14 @@ const UserMessage = (props: UserMessagePropsType) => {
         <div className="flex flex-row gap-2">
           {props.media.map((image, index) => {
             return (
-              <CustomImage src={image} width={120} height={120} className=" rounded-2xl" hasPreviewImage key={index} />
+              <CustomImage
+                src={image}
+                width={120}
+                height={120}
+                className=" rounded-2xl !object-contain"
+                hasPreviewImage
+                key={index}
+              />
             );
           })}
         </div>

@@ -1,6 +1,5 @@
 import { setWelcomingHandler } from '@utils/aiChatBotWelcoming';
-
-import { PROMPT_TEXT } from '@constants/ai.constants';
+import { findDefaultQuestionQuery } from '@utils/aiChatbot';
 
 import { enterphaseHandler } from './enterphaseHandler';
 import { shareExperienceHandler } from './shareExperienceHandler';
@@ -138,14 +137,7 @@ export const actionRouteConverter = async (serverLink: string) => {
       break;
 
     case '/chatbot':
-      const params = new URLSearchParams(queries);
-
-      const defaultQuestion = params.get('defaultQuestion');
-
-      if (defaultQuestion) {
-        sessionStorage.setItem(PROMPT_TEXT, defaultQuestion);
-      }
-
+      findDefaultQuestionQuery(queries);
       result = `/protected/aiChatbot?${queries}`;
       break;
 

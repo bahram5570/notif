@@ -37,8 +37,8 @@ const SignGenerator = ({ category, sign, initialIsSelected, onSelect, selectedDa
           className="relative flex justify-center items-center border-[1px] rounded-full"
           style={{
             borderColor,
-            width: ICONS_WIDTH,
-            height: ICONS_WIDTH,
+            // width: ICONS_WIDTH,
+            // height: ICONS_WIDTH,
             minWidth: ICONS_WIDTH,
             minHeight: ICONS_WIDTH,
           }}
