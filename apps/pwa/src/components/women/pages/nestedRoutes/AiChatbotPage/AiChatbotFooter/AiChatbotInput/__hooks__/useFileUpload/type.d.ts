@@ -16,3 +16,7 @@ export type FileDataHandlerTypes = (args: { e: React.ChangeEvent<HTMLInputElemen
 export type FileResponseTypes = { valid: boolean; name: string };
 
 export type FileUploadImageFileTypes = null | { image: string; imageType: string };
+
+export type UseFileUploadPropsType = {
+  activaMedia: boolean;
+};

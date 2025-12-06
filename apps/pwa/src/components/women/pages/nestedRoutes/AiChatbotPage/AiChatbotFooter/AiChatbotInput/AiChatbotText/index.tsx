@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import ArrowIcon from '@assets/icons/arrow.svg';
 import StopIcon from '@assets/icons/stop.svg';
@@ -10,9 +10,9 @@ import useTheme from '@hooks/useTheme';
 
 import { AiChatbotTextPropsType } from './type';
 
-const AiChatbotText = ({ hintPromptText, isLoading, clickHandler }: AiChatbotTextPropsType) => {
+const AiChatbotText = ({ hintPromptText, isLoading, clickHandler, btnTopHandler }: AiChatbotTextPropsType) => {
   const { colors, typography } = useTheme();
-
+  const conainerRef = useRef<HTMLDivElement | null>(null);
   const [chatText, setChatText] = useState('');
 
   const onClick = () => {
@@ -30,8 +30,23 @@ const AiChatbotText = ({ hintPromptText, isLoading, clickHandler }: AiChatbotTex
     }
   };
 
+  useEffect(() => {
+    const el = conainerRef.current;
+    if (el) {
+      if (window.visualViewport) {
+        window.visualViewport?.addEventListener('resize', () => {
+          const viewportHeight = window.visualViewport!.height;
+          const windowHeight = window.innerHeight;
+
+          const keyboardHeight = windowHeight - viewportHeight;
+          btnTopHandler(keyboardHeight);
+        });
+      }
+    }
+  }, [chatText]);
+
   return (
-    <div className="flex-1  flex flex-row-reverse justify-end items-center ">
+    <div className="flex-1  flex flex-row-reverse justify-end items-center " ref={conainerRef}>
       <textarea
         placeholder={hintPromptText}
         className={` w-full p-3 h-14 bg-transparent  outline-none resize-none   ${style.scroller} `}

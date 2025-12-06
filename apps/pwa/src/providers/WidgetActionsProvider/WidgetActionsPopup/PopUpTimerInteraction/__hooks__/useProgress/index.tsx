@@ -11,7 +11,7 @@ const useProgress = ({ second }: UseProgressPropsType) => {
   };
 
   useEffect(() => {
-    if (!canStartTimer) return;
+    // if (!canStartTimer) return;
     const tickInterval = 30;
     const totalTicks = (second * 1000) / tickInterval;
     const decrement = 100 / totalTicks;
@@ -27,7 +27,7 @@ const useProgress = ({ second }: UseProgressPropsType) => {
     }, tickInterval);
 
     return () => clearInterval(interval);
-  }, [second, canStartTimer]);
+  }, [second]);
 
   return { progress, canStartTimer, startTimerHandler };
 };

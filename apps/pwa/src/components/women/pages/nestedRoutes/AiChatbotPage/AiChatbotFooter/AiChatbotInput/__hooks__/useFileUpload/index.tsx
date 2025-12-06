@@ -1,11 +1,14 @@
 import { useState } from 'react';
 
 import useApi from '@hooks/useApi';
+import useCustomReactQuery from '@hooks/useCustomReactQuery';
 
-import { FileDataHandlerTypes, FileResponseTypes, UploadItem } from './type';
+import { AiChatbotDataResponseType } from '../../../../__hooks__/useGetAiChatbotData/type';
+import { FileDataHandlerTypes, FileResponseTypes, UploadItem, UseFileUploadPropsType } from './type';
 
 let finalFile: File | undefined;
-const useFileUpload = () => {
+const useFileUpload = ({ activaMedia }: UseFileUploadPropsType) => {
+  const { getQuery } = useCustomReactQuery(['historyAiChat']);
   const [files, setFiles] = useState<UploadItem[]>([]);
 
   const successHandler = (v: FileResponseTypes) => {
@@ -88,6 +91,13 @@ const useFileUpload = () => {
   const imageFile = files.map((file) => file.url);
   const hasFile = files && files.length > 0;
 
+  const historyAiChat = getQuery<AiChatbotDataResponseType>({ queryKey: ['historyAiChat'] });
+  const hasMoreFile = historyAiChat
+    ? files.length + historyAiChat?.currentImageUsage === historyAiChat?.imageUsageLimit
+    : true;
+
+  const disableBtn = files.length === 3 || !activaMedia || hasMoreFile;
+
   return {
     files,
     imageFile,
@@ -95,6 +105,7 @@ const useFileUpload = () => {
     removeFileHandler,
     retryUploadHandler,
     hasFile,
+    disableBtn,
   };
 };
 

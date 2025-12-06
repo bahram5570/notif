@@ -10,6 +10,7 @@ import { AiChatbotDataResponseType, ChatItemType } from '../useGetAiChatbotData/
 import { NewMessageResponse, SubmitHandlerType, UseSubmitPropsType } from './type';
 
 let messageId: string;
+let imagesCount = 0;
 const useSubmit = ({ addChatHandler, updateChatHandler, categoryIdData, itemIdData }: UseSubmitPropsType) => {
   const [streamLoading, setStreamLoading] = useState(false);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
@@ -22,6 +23,7 @@ const useSubmit = ({ addChatHandler, updateChatHandler, categoryIdData, itemIdDa
   const { streamHandler, messages } = useEventSource({
     handelLoading: setStreamLoading,
     errorHandler: setShowErrorMessage,
+    imagesCount,
   });
 
   const successHandler = (v: NewMessageResponse) => {
@@ -54,7 +56,7 @@ const useSubmit = ({ addChatHandler, updateChatHandler, categoryIdData, itemIdDa
     setResetKey(Math.random());
     if (showErrorMessage) setShowErrorMessage(false);
     addChatHandler({ chat: prompt, imageId: imageId });
-    const imagesCount = imageId?.length || 0;
+    imagesCount = imageId?.length || 0;
     updateQuery({
       queryKey: ['historyAiChat'],
       payload: {

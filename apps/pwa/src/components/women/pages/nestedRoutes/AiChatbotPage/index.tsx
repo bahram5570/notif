@@ -6,7 +6,6 @@ import AiChatbotHeader from '../AiTopicsChatbotPage/AiChatbotHeader';
 import { WelcomingTypeEnum } from '../AiTopicsChatbotPage/WelcomingContainer/enum';
 import AiChatbotEmptyState from './AiChatbotEmptyState';
 import AiChatbotFooter from './AiChatbotFooter';
-import AiChatbotLimitUploadMessage from './AiChatbotLimitUploadMessage';
 import AiChatbotMessageList from './AiChatbotMessageList';
 import AiChatbotMessageListLayout from './AiChatbotMessageList/AiChatbotMessageListLayout';
 import ErrorMessage from './AiChatbotMessageList/ErrorMessage';
@@ -61,7 +60,12 @@ const AiChatbotPage = () => {
             chatId={aiChatData.chatId}
             categoryIdData={categoryIdData}
             itemIdData={itemIdData}
+            currentImageUsage={aiChatData.currentImageUsage}
+            imageType={aiChatData.imageType}
+            imageUsageLimit={aiChatData.imageUsageLimit}
+            mediaLimitDate={aiChatData.mediaLimitDate}
           />
+
           {!hasChatData && (
             <>
               <AiChatbotEmptyState
@@ -76,14 +80,6 @@ const AiChatbotPage = () => {
 
           {hasChatData && (
             <AiChatbotMessageListLayout>
-              {aiChatData.imageType && aiChatData.imageUsageLimit > 0 && (
-                <AiChatbotLimitUploadMessage
-                  currentImageUsage={aiChatData.currentImageUsage}
-                  imageUsageLimit={aiChatData.imageUsageLimit}
-                  mediaLimitDate={aiChatData.mediaLimitDate}
-                />
-              )}
-
               <AiChatbotMessageList
                 chats={aiChatbotMessageList}
                 isLoading={newLoading}

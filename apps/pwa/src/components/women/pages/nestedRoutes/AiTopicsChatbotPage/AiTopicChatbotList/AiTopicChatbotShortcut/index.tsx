@@ -28,10 +28,12 @@ const AiTopicChatbotShortcut = ({ shortcut, categoryId }: AiTopicChatbotShortcut
           {shortcut.description}
         </Typography>
       </div>
-      <div className=" grid grid-cols-4 gap-[30px] " style={{ direction: 'rtl' }}>
-        {shortcut.shortcuts.map((shortcut, index) => {
-          return <ShortcutItem {...shortcut} key={index} onLinkHandler={onLinkHandler} />;
-        })}
+      <div className="grid grid-cols-4 gap-[30px]" style={{ direction: 'rtl' }}>
+        {shortcut.shortcuts.map((shortcut, index) => (
+          <div className="flex flex-col items-center gap-2 h-full" key={index}>
+            <ShortcutItem {...shortcut} onLinkHandler={onLinkHandler} />
+          </div>
+        ))}
       </div>
     </div>
   );

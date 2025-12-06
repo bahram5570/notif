@@ -5,4 +5,6 @@ type InputItemType = Pick<
   'hintPromptText' | 'submitHandler' | 'isLoading' | 'isShowFileInput' | 'activaMedia'
 >;
 
-export interface AiChatbotInputPropsType extends InputItemType {}
+export interface AiChatbotInputPropsType extends InputItemType {
+  btnTopHandler: (top: number) => void;
+}

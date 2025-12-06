@@ -9,4 +9,8 @@ export interface AiChatbotHeaderPropsType extends ItemType {
   chatTitle?: string;
   itemIdData?: string | null;
   categoryIdData?: string | null;
+  imageType?: boolean;
+  imageUsageLimit?: number;
+  currentImageUsage?: number;
+  mediaLimitDate?: string;
 }

@@ -30,8 +30,8 @@ const PreviewImageContainer = ({ src, shape = 'full' }: PreviewImageContainerPro
 
   return (
     <div
-      style={{ maxWidth: MAX_SCREEN_WIDTH }}
-      className="fixed top-0 left-0 right-0 bottom-0 mx-auto bg-[#00000033] backdrop-blur-sm z-[500]"
+      style={{ maxWidth: MAX_SCREEN_WIDTH, backgroundColor: colors.Black }}
+      className="fixed top-0 left-0 right-0 bottom-0 mx-auto  backdrop-blur-sm z-[500]"
     >
       <CrossIcon
         onClick={() => router.back()}

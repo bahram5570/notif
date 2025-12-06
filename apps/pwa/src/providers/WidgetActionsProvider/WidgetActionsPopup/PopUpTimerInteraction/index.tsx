@@ -25,7 +25,7 @@ const PopUpTimerInteraction = ({ data, actionCompleteHandler }: PopUpTimerIntera
     <div
       className="fixed w-full p-2 z-50 mx-auto left-0 right-0 flex justify-center items-center animate-fade-in "
       style={{ maxWidth: MAX_SCREEN_WIDTH, bottom: FOOTER_HEIGTH + 30 }}
-      onAnimationEnd={startTimerHandler}
+      // onAnimationEnd={startTimerHandler}
     >
       <div className="relative " style={{ width, height }}>
         <PopUpTimerInteractionContent actionCompleteHandler={actionCompleteHandler} data={data} />

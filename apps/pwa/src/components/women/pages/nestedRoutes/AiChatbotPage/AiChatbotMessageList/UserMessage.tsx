@@ -11,7 +11,7 @@ const UserMessage = (props: UserMessagePropsType) => {
   const hasText = props.text.trim() !== '';
 
   return (
-    <div className="flex flex-col items-end mt-8 gap-2">
+    <div className="flex flex-col items-end mt-8 gap-6">
       {hasMedia && (
         <div className="flex flex-row gap-2">
           {props.media.map((image, index) => {
@@ -20,7 +20,8 @@ const UserMessage = (props: UserMessagePropsType) => {
                 src={image}
                 width={120}
                 height={120}
-                className=" rounded-2xl !object-contain"
+                className=" rounded-2xl"
+                objectFit="cover"
                 hasPreviewImage
                 key={index}
               />
