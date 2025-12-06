@@ -10,6 +10,7 @@ import AiChatbotMessageList from './AiChatbotMessageList';
 import AiChatbotMessageListLayout from './AiChatbotMessageList/AiChatbotMessageListLayout';
 import ErrorMessage from './AiChatbotMessageList/ErrorMessage';
 import AiChatbotSkeleton from './AiChatbotSkeleton';
+import useCurrentDate from './__hooks__/useCurrentDate';
 import useGetAiChatbotData from './__hooks__/useGetAiChatbotData';
 import useGetAiChatbotMessageList from './__hooks__/useGetAiChatbotMessageList';
 import useSubmit from './__hooks__/useSubmit';
@@ -26,6 +27,7 @@ const AiChatbotPage = () => {
     resetkey,
   } = useSubmit({ updateChatHandler, addChatHandler, categoryIdData, itemIdData });
   const [disableDeleteBtn, setDisableDeleteBtn] = useState(false);
+  const { currentDate } = useCurrentDate({ mediaLimitDate: aiChatData?.mediaLimitDate });
 
   const defaultQustionHandler = (text: string) => {
     submitHandler({ prompt: text });
@@ -63,7 +65,7 @@ const AiChatbotPage = () => {
             currentImageUsage={aiChatData.currentImageUsage}
             imageType={aiChatData.imageType}
             imageUsageLimit={aiChatData.imageUsageLimit}
-            mediaLimitDate={aiChatData.mediaLimitDate}
+            mediaLimitDate={currentDate}
           />
 
           {!hasChatData && (
@@ -71,7 +73,6 @@ const AiChatbotPage = () => {
               <AiChatbotEmptyState
                 defaultQustionHandler={defaultQustionHandler}
                 description={aiChatData.description}
-                disableDeleteBtn={disableDeleteBtn}
                 questions={aiChatData.questions}
                 title={aiChatData.title}
               />

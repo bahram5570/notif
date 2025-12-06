@@ -5,6 +5,7 @@ import { getSessionStoragePromptText } from '@utils/aiChatbot';
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 
+import useCurrentImageUsage from '../useCurrentImageUsage';
 import useEventSource from '../useEventSource';
 import { AiChatbotDataResponseType, ChatItemType } from '../useGetAiChatbotData/type';
 import { NewMessageResponse, SubmitHandlerType, UseSubmitPropsType } from './type';
@@ -16,6 +17,7 @@ const useSubmit = ({ addChatHandler, updateChatHandler, categoryIdData, itemIdDa
   const [showErrorMessage, setShowErrorMessage] = useState(false);
   const [resetkey, setResetKey] = useState(Math.random());
   const { getQuery, updateQuery } = useCustomReactQuery(['historyAiChat']);
+  const { updateImageCountHandler } = useCurrentImageUsage();
 
   const aiChatMessageList = getQuery<{ data: ChatItemType[] }>({ queryKey: ['AiChatMessageList'] });
   const historyAiChat = getQuery<AiChatbotDataResponseType>({ queryKey: ['historyAiChat'] });
@@ -57,16 +59,7 @@ const useSubmit = ({ addChatHandler, updateChatHandler, categoryIdData, itemIdDa
     if (showErrorMessage) setShowErrorMessage(false);
     addChatHandler({ chat: prompt, imageId: imageId });
     imagesCount = imageId?.length || 0;
-    updateQuery({
-      queryKey: ['historyAiChat'],
-      payload: {
-        ...historyAiChat,
-        currentImageUsage: historyAiChat?.currentImageUsage
-          ? historyAiChat.currentImageUsage + imagesCount
-          : imagesCount,
-      },
-    });
-
+    updateImageCountHandler(imagesCount);
     const payload = {
       promptCategoryId: categoryIdData || '',
       promptItemId: itemIdData || '',

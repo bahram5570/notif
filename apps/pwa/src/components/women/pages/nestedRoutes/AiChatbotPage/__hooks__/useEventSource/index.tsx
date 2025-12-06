@@ -3,10 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { baseUrl } from '@services/http';
 
 import { getUserCookie } from '@actions/cookie.actions';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import { EventSource } from 'eventsource';
 
-import { AiChatbotDataResponseType } from '../useGetAiChatbotData/type';
+import useCurrentImageUsage from '../useCurrentImageUsage';
 import { CLOSE_STREAM_TEXT } from './constants';
 import { StreamHandlerPropsType } from './type';
 
@@ -23,8 +22,7 @@ const useEventSource = ({
   const evRef = useRef<EventSource | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const firstMessageReceived = useRef(false);
-  const { getQuery, updateQuery } = useCustomReactQuery(['historyAiChat']);
-  const historyAiChat = getQuery<AiChatbotDataResponseType>({ queryKey: ['historyAiChat'] });
+  const { updateImageCountHandler } = useCurrentImageUsage();
 
   const cleanup = () => {
     if (timeoutRef.current) {
@@ -41,6 +39,23 @@ const useEventSource = ({
     }
 
     if (handelLoading) handelLoading(false);
+  };
+
+  const successHandler = (text: any) => {
+    const cleanedData = String(text)
+      .replace(/^data:\s*/i, '')
+      .replace(/^"|"$/g, '');
+
+    if (cleanedData === CLOSE_STREAM_TEXT) {
+      cleanup();
+      return;
+    }
+
+    if (cleanedData === '') {
+      setMessages((prev) => prev + '\n');
+    } else {
+      setMessages((prev) => prev + cleanedData);
+    }
   };
 
   useEffect(() => {
@@ -74,16 +89,10 @@ const useEventSource = ({
     timeoutRef.current = setTimeout(() => {
       if (!firstMessageReceived.current) {
         if (errorHandler) errorHandler(true);
-        updateQuery({
-          queryKey: ['historyAiChat'],
-          payload: {
-            ...historyAiChat,
-            currentImageUsage: historyAiChat?.currentImageUsage ? historyAiChat.currentImageUsage - imagesCount : 0,
-          },
-        });
+        updateImageCountHandler(-imagesCount);
         cleanup();
       }
-    }, 2000);
+    }, 30000);
 
     ev.addEventListener('message', (event) => {
       if (handelLoading) handelLoading(false);
@@ -94,21 +103,7 @@ const useEventSource = ({
           timeoutRef.current = null;
         }
       }
-
-      const cleanedData = String(event.data)
-        .replace(/^data:\s*/i, '')
-        .replace(/^"|"$/g, '');
-
-      if (cleanedData === CLOSE_STREAM_TEXT) {
-        cleanup();
-        return;
-      }
-
-      if (cleanedData === '') {
-        setMessages((prev) => prev + '\n');
-      } else {
-        setMessages((prev) => prev + cleanedData);
-      }
+      successHandler(event.data);
     });
 
     ev.addEventListener('error', () => {
