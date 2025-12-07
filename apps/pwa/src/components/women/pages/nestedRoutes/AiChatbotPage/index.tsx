@@ -11,6 +11,7 @@ import AiChatbotMessageListLayout from './AiChatbotMessageList/AiChatbotMessageL
 import ErrorMessage from './AiChatbotMessageList/ErrorMessage';
 import AiChatbotSkeleton from './AiChatbotSkeleton';
 import useCurrentDate from './__hooks__/useCurrentDate';
+import useDisableDeleteBtn from './__hooks__/useDisableDeleteBtn';
 import useGetAiChatbotData from './__hooks__/useGetAiChatbotData';
 import useGetAiChatbotMessageList from './__hooks__/useGetAiChatbotMessageList';
 import useSubmit from './__hooks__/useSubmit';
@@ -18,7 +19,6 @@ import useSubmit from './__hooks__/useSubmit';
 const AiChatbotPage = () => {
   const { isLoading, aiChatData, categoryIdData, itemIdData } = useGetAiChatbotData();
   const { addChatHandler, aiChatbotMessageList, updateChatHandler } = useGetAiChatbotMessageList();
-
   const {
     isLoading: newLoading,
     submitHandler,
@@ -26,7 +26,7 @@ const AiChatbotPage = () => {
     onErrorHandler,
     resetkey,
   } = useSubmit({ updateChatHandler, addChatHandler, categoryIdData, itemIdData });
-  const [disableDeleteBtn, setDisableDeleteBtn] = useState(false);
+  const { disableDeleteBtn, disableDeleteBtnHandler } = useDisableDeleteBtn({ aiChatData });
   const { currentDate } = useCurrentDate({ mediaLimitDate: aiChatData?.mediaLimitDate });
 
   const defaultQustionHandler = (text: string) => {
@@ -34,20 +34,6 @@ const AiChatbotPage = () => {
   };
 
   const hasChatData = aiChatData && aiChatbotMessageList.length > 0;
-
-  useEffect(() => {
-    if (aiChatData) {
-      if (aiChatData.chats.length > 0) {
-        setDisableDeleteBtn(true);
-      } else {
-        setDisableDeleteBtn(false);
-      }
-    }
-  }, [aiChatData]);
-
-  const disableDeleteBtnHandler = (v: boolean) => {
-    setDisableDeleteBtn(v);
-  };
 
   return (
     <>

@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import Typography from '@components/ui/Typography';
-import { FOOTER_HEIGTH } from '@components/women/WomenFooter/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import AiChatbotDeactiveMessage from './AiChatbotDeactiveMessage';
@@ -36,7 +35,7 @@ const AiChatbotFooter = (props: AiChatbotFooterPropsType) => {
           <AiChatbotInput {...props} btnTopHandler={btnTopHandler} />
           <div
             className="flex justify-center items-center  h-10  w-full  "
-            style={{ background: `${props.hasChatData ? 'rgb(239 241 254)' : btnTop ? '#d5e0fc' : 'inherit'}` }}
+            style={{ background: `${props.hasChatData ? 'rgb(239 241 254)' : btnTop > 0 ? '#d5e0fc' : 'inherit'}` }}
           >
             <Typography scale="Lable" size="Small" color="Surface_OnSurfaceVariant">
               مونس هم گاهی اشتباه می‌کنه! حتماً جواب‌ها رو چک کن.

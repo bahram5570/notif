@@ -25,7 +25,7 @@ const useCurrentImageUsage = () => {
     });
   }, [imagesCount]);
 
-  return { updateImageCountHandler };
+  return { updateImageCountHandler, imagesCount };
 };
 
 export default useCurrentImageUsage;

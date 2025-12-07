@@ -7,17 +7,9 @@ import { EventSource } from 'eventsource';
 
 import useCurrentImageUsage from '../useCurrentImageUsage';
 import { CLOSE_STREAM_TEXT } from './constants';
-import { StreamHandlerPropsType } from './type';
+import { StreamHandlerPropsType, UseEventSourcePropsType } from './type';
 
-const useEventSource = ({
-  handelLoading,
-  errorHandler,
-  imagesCount,
-}: {
-  handelLoading?: (v: boolean) => void;
-  errorHandler?: (v: boolean) => void;
-  imagesCount: number;
-}) => {
+const useEventSource = ({ handelLoading, errorHandler, imagesCount }: UseEventSourcePropsType) => {
   const [messages, setMessages] = useState<string>('');
   const evRef = useRef<EventSource | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
@@ -37,8 +29,7 @@ const useEventSource = ({
       }
       evRef.current = null;
     }
-
-    if (handelLoading) handelLoading(false);
+    handelLoading(false);
   };
 
   const successHandler = (text: any) => {
@@ -66,8 +57,8 @@ const useEventSource = ({
     cleanup();
     setMessages('');
     firstMessageReceived.current = false;
-    if (handelLoading) handelLoading(true);
-    if (errorHandler) errorHandler(false);
+    handelLoading(true);
+    errorHandler(false);
 
     const user = await getUserCookie();
     const Authorization = user ? `Bearer ${user.token}` : '';
@@ -88,14 +79,14 @@ const useEventSource = ({
 
     timeoutRef.current = setTimeout(() => {
       if (!firstMessageReceived.current) {
-        if (errorHandler) errorHandler(true);
+        errorHandler(true);
         updateImageCountHandler(-imagesCount);
         cleanup();
       }
     }, 30000);
 
     ev.addEventListener('message', (event) => {
-      if (handelLoading) handelLoading(false);
+      handelLoading(false);
       if (!firstMessageReceived.current) {
         firstMessageReceived.current = true;
         if (timeoutRef.current) {

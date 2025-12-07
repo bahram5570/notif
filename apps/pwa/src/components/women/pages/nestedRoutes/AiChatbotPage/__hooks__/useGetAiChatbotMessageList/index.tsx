@@ -56,7 +56,7 @@ const useGetAiChatbotMessageList = () => {
         dislike: false,
         like: false,
         messageId,
-        media: [''],
+        media: [],
       });
     }
     updateQuery({ queryKey: ['AiChatMessageList'], payload: { data: updatedChats } });

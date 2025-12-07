@@ -8,23 +8,26 @@ import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import useCurrentImageUsage from '../useCurrentImageUsage';
 import useEventSource from '../useEventSource';
 import { AiChatbotDataResponseType, ChatItemType } from '../useGetAiChatbotData/type';
+import useShowErrorMessage from '../useShowErrorMessage';
+import useStreamLoading from '../useStreamLoading';
 import { NewMessageResponse, SubmitHandlerType, UseSubmitPropsType } from './type';
 
 let messageId: string;
-let imagesCount = 0;
+
 const useSubmit = ({ addChatHandler, updateChatHandler, categoryIdData, itemIdData }: UseSubmitPropsType) => {
-  const [streamLoading, setStreamLoading] = useState(false);
-  const [showErrorMessage, setShowErrorMessage] = useState(false);
+  const { showErrorMessage, showErrorMessageHandler } = useShowErrorMessage();
+  const { streamLoading, streamLoadingHandler } = useStreamLoading();
+  const { updateImageCountHandler, imagesCount } = useCurrentImageUsage();
+
   const [resetkey, setResetKey] = useState(Math.random());
   const { getQuery, updateQuery } = useCustomReactQuery(['historyAiChat']);
-  const { updateImageCountHandler } = useCurrentImageUsage();
 
   const aiChatMessageList = getQuery<{ data: ChatItemType[] }>({ queryKey: ['AiChatMessageList'] });
   const historyAiChat = getQuery<AiChatbotDataResponseType>({ queryKey: ['historyAiChat'] });
 
   const { streamHandler, messages } = useEventSource({
-    handelLoading: setStreamLoading,
-    errorHandler: setShowErrorMessage,
+    handelLoading: streamLoadingHandler,
+    errorHandler: showErrorMessageHandler,
     imagesCount,
   });
 
@@ -51,15 +54,14 @@ const useSubmit = ({ addChatHandler, updateChatHandler, categoryIdData, itemIdDa
     method: 'POST',
     api: 'feature/ai/v2/sendstreammessage',
     onSuccess: (v: NewMessageResponse) => successHandler(v),
-    onError: () => setStreamLoading(false),
+    onError: () => streamLoadingHandler(false),
   });
 
   const submitHandler: SubmitHandlerType = ({ prompt, imageId }) => {
     setResetKey(Math.random());
-    if (showErrorMessage) setShowErrorMessage(false);
+    if (showErrorMessage) showErrorMessageHandler(false);
     addChatHandler({ chat: prompt, imageId: imageId });
-    imagesCount = imageId?.length || 0;
-    updateImageCountHandler(imagesCount);
+    updateImageCountHandler(imageId?.length || 0);
     const payload = {
       promptCategoryId: categoryIdData || '',
       promptItemId: itemIdData || '',
@@ -71,9 +73,9 @@ const useSubmit = ({ addChatHandler, updateChatHandler, categoryIdData, itemIdDa
   };
 
   const onErrorHandler = () => {
-    setShowErrorMessage(false);
+    showErrorMessageHandler(false);
     streamHandler({ id: messageId });
-    setStreamLoading(true);
+    streamLoadingHandler(true);
   };
 
   useEffect(() => {
@@ -91,7 +93,7 @@ const useSubmit = ({ addChatHandler, updateChatHandler, categoryIdData, itemIdDa
   }, [messages]);
 
   useEffect(() => {
-    if (loading) setStreamLoading(true);
+    if (loading) streamLoadingHandler(true);
   }, [loading]);
 
   const isLoading = streamLoading;
