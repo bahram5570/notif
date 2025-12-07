@@ -11,7 +11,7 @@ import { COLORS_LIST } from '@theme/colors';
 import { usePathname } from 'next/navigation';
 
 import DeviceFooterLinkGenerator from './DeviceFooterLinkGenerator';
-import FooterBlackFriday from './FooterBlackFriday';
+// import FooterBlackFriday from './FooterBlackFriday';
 import FooterNavLink from './FooterNavLink';
 import { DeviceFooterTypes } from './types';
 
@@ -20,8 +20,8 @@ const DeviceFooter = ({ isArticlePage, hasFooterLink }: DeviceFooterTypes) => {
 
   return (
     <>
-      <FooterBlackFriday />
-      {/* {hasFooterLink && <FooterNavLink />}
+      {/* <FooterBlackFriday /> */}
+      {hasFooterLink && <FooterNavLink />}
 
       <footer
         className="fixed left-0 right-0 bottom-0 w-full flex justify-around gap-2 px-4 pt-2 border-t-[1px] z-10"
@@ -62,7 +62,7 @@ const DeviceFooter = ({ isArticlePage, hasFooterLink }: DeviceFooterTypes) => {
           isSelected={false}
           id="navbar-login"
         />
-      </footer> */}
+      </footer>
     </>
   );
 };
