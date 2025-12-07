@@ -9,7 +9,7 @@ const AiChatbotMessageListLayout = ({ children }: { children: React.ReactNode })
       }}
       className="min-h-[100dvh] relative"
     >
-      <div style={{ paddingTop: HEADER_HEIGHT }} className="px-4 flex flex-col gap-3">
+      <div style={{ paddingTop: HEADER_HEIGHT + 30 }} className="px-4 flex flex-col gap-3">
         <div className={`flex justify-end flex-col gap-4`} style={{ paddingBottom: HEADER_HEIGHT * 2 }}>
           {children}
         </div>

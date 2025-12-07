@@ -39,7 +39,7 @@ const AiChatbotPage = () => {
     <>
       {isLoading && !aiChatData && <AiChatbotSkeleton />}
       {!isLoading && aiChatData && (
-        <div className="relative h-[100dvh] ">
+        <>
           <AiChatbotHeader
             welcomingType={WelcomingTypeEnum.ChatbotMessage}
             showActionMenu
@@ -86,7 +86,7 @@ const AiChatbotPage = () => {
             isShowFileInput={aiChatData.imageType}
             key={resetkey}
           />
-        </div>
+        </>
       )}
     </>
   );

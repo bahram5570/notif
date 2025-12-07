@@ -17,7 +17,9 @@ const UserMessage = (props: UserMessagePropsType) => {
   return (
     <div className="flex flex-col items-end mt-8 gap-3">
       {hasMedia && (
-        <div className={`flex w-full overflow-x-auto overflow-y-hidden gap-1 px-2  scrollbar  ${!isWindows && 'hide'}`}>
+        <div
+          className={`flex flex-row-reverse w-full overflow-x-auto overflow-y-hidden gap-1 px-2  scrollbar  ${!isWindows && 'hide'}`}
+        >
           {props.media.map((image, index) => {
             return (
               <CustomImage
