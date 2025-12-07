@@ -18,19 +18,19 @@ const FilePreview = (props: FilePreviewPropsType) => {
   };
 
   return (
-    <div style={{ width: 116, height: 116 }} className=" relative rounded-2xl">
-      {props.loading && (
-        <div
-          className=" absolute top-0  left-0 right-0 bottom-0 w-full h-full rounded-2xl flex justify-center items-center z-30"
-          style={{
-            background: ' linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4))',
-          }}
-        >
+    <div style={{ width: 116, height: 116 }} className=" relative rounded-[20px]">
+      <div
+        className=" absolute top-0  left-0 right-0 bottom-0 w-full h-full rounded-2xl flex justify-center items-center z-30"
+        style={{
+          background: ' linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4))',
+        }}
+      >
+        {props.loading && (
           <div className={style.loader} aria-label="Loading">
             <i></i>
           </div>
-        </div>
-      )}
+        )}
+      </div>
 
       {props.error && (
         <div className=" absolute top-0  left-0 right-0 bottom-0 w-full h-full  flex justify-center items-center z-30">

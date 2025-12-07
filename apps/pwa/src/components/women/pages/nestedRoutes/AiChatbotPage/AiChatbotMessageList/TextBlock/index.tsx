@@ -28,6 +28,7 @@ const TextBlock = (props: TextBlockProps) => {
       style={{
         animationDelay: `${props.animationDelay}s`,
         whiteSpace: 'pre-wrap',
+        wordWrap: 'break-word',
         display: 'inline',
         ...typography.Body.Medium,
         ...props.style,

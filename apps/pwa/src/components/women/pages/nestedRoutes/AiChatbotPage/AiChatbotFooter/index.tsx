@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import Typography from '@components/ui/Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
@@ -10,10 +10,26 @@ import { AiChatbotFooterPropsType } from './type';
 const AiChatbotFooter = (props: AiChatbotFooterPropsType) => {
   const showInput = props.isActive ? true : false;
   const [btnTop, setBtnTop] = useState<number>(0);
+  const conainerRef = useRef<HTMLDivElement | null>(null);
 
-  const btnTopHandler = (top: number) => {
-    setBtnTop(top);
+  const btnTopHandler = () => {
+    setBtnTop(0);
   };
+
+  useEffect(() => {
+    const el = conainerRef.current;
+    if (el) {
+      if (window.visualViewport) {
+        window.visualViewport?.addEventListener('resize', () => {
+          const viewportHeight = window.visualViewport!.height;
+          const windowHeight = window.innerHeight;
+
+          const keyboardHeight = windowHeight - viewportHeight;
+          setBtnTop(keyboardHeight);
+        });
+      }
+    }
+  }, []);
 
   return (
     <div
@@ -21,6 +37,7 @@ const AiChatbotFooter = (props: AiChatbotFooterPropsType) => {
       style={{
         maxWidth: MAX_SCREEN_WIDTH,
         bottom: btnTop,
+        transition: 'bottom 0.15s ease-out',
       }}
     >
       {!showInput && (

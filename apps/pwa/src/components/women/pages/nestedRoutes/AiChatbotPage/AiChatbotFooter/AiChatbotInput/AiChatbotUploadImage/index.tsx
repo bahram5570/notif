@@ -2,7 +2,6 @@ import { useState } from 'react';
 
 import UploadIcon from '@assets/icons/Paperclip-1.svg';
 
-import Button from '@components/ui/Button';
 import useTheme from '@hooks/useTheme';
 
 import UploadImagesMoreAction from './UploadImagesMoreAction';
@@ -21,18 +20,15 @@ const AiChatbotUploadImage = ({ fileDataHandler, disableBtn }: AiChatbotUploadIm
 
   return (
     <>
-      <Button
-        size="small"
-        variant="fill"
-        color="FREE-STYLES"
-        buttonColor=""
-        contentsColor=""
-        isDisable={disableBtn}
-        className="!w-14 !h-14 rounded-full glass-card !bg-white/60 shadow-sm flex justify-center items-center"
+      <div
+        className={`!w-14 !h-14 rounded-full glass-card !bg-white/60 shadow-sm flex justify-center items-center ${disableBtn && 'pointer-events-none'}`}
         onClick={closeHandler}
       >
-        <UploadIcon className="w-7 h-auto" style={{ stroke: colors.Surface_InverseSurface }} />
-      </Button>
+        <UploadIcon
+          className="w-7 h-auto"
+          style={{ stroke: disableBtn ? colors.Surface_OutlineVariant : colors.Surface_InverseSurface }}
+        />
+      </div>
       <UploadImagesMoreAction isOpen={isOpenMoreAction} closeHandler={closeHandler} fileDataHandler={fileDataHandler} />
     </>
   );

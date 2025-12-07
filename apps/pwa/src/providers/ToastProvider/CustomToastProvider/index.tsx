@@ -3,7 +3,6 @@
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 import Typography from '@components/ui/Typography';
-import { data } from '@components/women/pages/nestedRoutes/routin/RoutinTabsPage/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useTheme from '@hooks/useTheme';
 

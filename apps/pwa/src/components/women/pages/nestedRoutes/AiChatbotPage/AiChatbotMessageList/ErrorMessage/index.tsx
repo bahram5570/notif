@@ -22,14 +22,7 @@ const ErrorMessage = ({ onErrorHandler }: ErrorMessagePropsType) => {
           ظاهرا ارتباط با ایمپو قطع شده. میتونی دوباره تلاش کنی.
         </Typography>
 
-        <Button
-          size="medium"
-          variant="fill"
-          fullWidth
-          color="surface"
-          onClick={onErrorHandler}
-          className="!w-fit  py-3"
-        >
+        <Button size="medium" variant="fill" fullWidth color="surface" onClick={onErrorHandler} className="!w-52  py-3">
           <div className="flex flex-row-reverse w-full">
             {/* <RefreshIcon /> */}
             <Typography scale="Lable" size="Medium" color="Surface_InverseSurface">

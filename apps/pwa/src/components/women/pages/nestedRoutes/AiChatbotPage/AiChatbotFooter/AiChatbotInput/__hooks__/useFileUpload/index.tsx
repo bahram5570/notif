@@ -2,6 +2,8 @@ import { useState } from 'react';
 
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import useCustomToast from '@hooks/useCustomToast';
+import { useToast } from '@providers/ToastProvider/CustomToastProvider';
 
 import { AiChatbotDataResponseType } from '../../../../__hooks__/useGetAiChatbotData/type';
 import { FileDataHandlerTypes, FileResponseTypes, UploadItem, UseFileUploadPropsType } from './type';
@@ -9,6 +11,7 @@ import { FileDataHandlerTypes, FileResponseTypes, UploadItem, UseFileUploadProps
 let finalFile: File | undefined;
 const useFileUpload = ({ activaMedia }: UseFileUploadPropsType) => {
   const { getQuery } = useCustomReactQuery(['historyAiChat']);
+  const { onToast } = useCustomToast();
   const [files, setFiles] = useState<UploadItem[]>([]);
 
   const successHandler = (v: FileResponseTypes) => {
@@ -48,13 +51,19 @@ const useFileUpload = ({ activaMedia }: UseFileUploadPropsType) => {
   };
 
   const fileDataHandler: FileDataHandlerTypes = async ({ e, file }) => {
+    if (hasMoreFile) return;
+
     finalFile = file ?? e.target.files?.[0];
 
     if (!finalFile) {
       return;
     }
 
-    if (files.length >= 3) return;
+    const maxSize = 10 * 1024 * 1024;
+    if (finalFile.size > maxSize) {
+      onToast({ message: 'حجم عکس نباید بیشتر از 10 مگابایت باشد.', type: 'error' });
+      return;
+    }
 
     uploadFile(finalFile);
 
@@ -96,7 +105,8 @@ const useFileUpload = ({ activaMedia }: UseFileUploadPropsType) => {
     ? files.length + historyAiChat?.currentImageUsage === historyAiChat?.imageUsageLimit
     : true;
 
-  const disableBtn = files.length === 3 || !activaMedia || hasMoreFile;
+  // const disableBtn = files.length === 3 || !activaMedia || hasMoreFile;
+  const disableBtn = !activaMedia || hasMoreFile;
 
   return {
     files,

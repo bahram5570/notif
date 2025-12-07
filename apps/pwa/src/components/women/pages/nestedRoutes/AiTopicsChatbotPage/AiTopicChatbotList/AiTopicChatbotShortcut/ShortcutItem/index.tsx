@@ -11,15 +11,17 @@ const ShortcutItem = (props: ShortcutItemPropsType) => {
   return (
     <div className="flex flex-col justify-center items-center gap-2 h-full" onClick={onClick}>
       <CustomImage src={props.icon} height={56} width={56} />
-      <Typography
-        scale="Lable"
-        size="Small"
-        color="Neutral_OnBackground"
-        textAlign="center"
-        className="text-center min-h-[40px]"
-      >
-        {props.description}
-      </Typography>
+      <div className="mt-auto">
+        <Typography
+          scale="Lable"
+          size="Small"
+          color="Neutral_OnBackground"
+          textAlign="center"
+          className="text-center min-h-[40px]"
+        >
+          {props.description}
+        </Typography>
+      </div>
     </div>
   );
 };

@@ -11,7 +11,7 @@ const AiChatbotHeader = (props: AiChatbotHeaderPropsType) => {
   return (
     <div
       className={`fixed left-0 right-0 top-0 mx-auto flex flex-col  gap-2 z-40 `}
-      style={{ maxWidth: MAX_SCREEN_WIDTH, height: HEADER_HEIGHT }}
+      style={{ maxWidth: MAX_SCREEN_WIDTH, height: HEADER_HEIGHT + 50 }}
     >
       <div
         className={`flex w-full ${props.showActionMenu ? 'justify-between' : 'justify-end'}  items-end px-4 pt-3 pb-1`}
