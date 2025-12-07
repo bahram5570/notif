@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 
+import WarningCircle from '@assets/icons/warningCircle.svg';
 import welcomVector from '@assets/images/blackFriday/welcomVector.webp';
 
 import CustomImage from '@components/ui/CustomImage';
@@ -9,8 +10,8 @@ import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import { COLORS_LIST } from '@theme/colors';
 
-import SubscribtionGenerator from './SubscribtionGenerator';
-import { SubscribtionList } from './constants';
+// import SubscribtionGenerator from './SubscribtionGenerator';
+// import { SubscribtionList } from './constants';
 
 const BlackFridayPage = () => {
   useEffect(() => {
@@ -18,10 +19,38 @@ const BlackFridayPage = () => {
   }, []);
 
   return (
-    <div className="w-full max-w-[500px] h-full relative bg-gradient-to-b from-white to-[#FFE2EA]">
+    <div className="w-full max-w-[500px] h-dvh relative bg-gradient-to-b from-white to-[#FFE2EA]">
       <div className="-mt-[60px]">
         <CustomImage src={welcomVector} alt="welcomVector" />
         <div className="px-4 -mt-[140px]">
+          <div
+            className="flex gap-x-2 items-center rounded-xl border px-4 py-3 mb-6"
+            style={{
+              borderColor: COLORS_LIST.Warning_Warning,
+              backgroundColor: COLORS_LIST.Warning_WarininContainer,
+            }}
+          >
+            <WarningCircle />
+            <span className="h-10 w-[2px] bg-[#FFD49A]"></span>
+            <div>
+              <CustomTypography
+                fontSize="Lable_Large"
+                tagType="p"
+                className="text-right mb-1"
+                color={'Warning_OnWarininContainer'}
+              >
+                مهلت شرکت در این کمپین تموم شده.
+              </CustomTypography>
+              <CustomTypography
+                fontSize="Body_Medium"
+                tagType="p"
+                className="text-right"
+                color={'Warning_OnWarininContainer'}
+              >
+                منتظر کمپین‌های بعدیمون باش.
+              </CustomTypography>
+            </div>
+          </div>
           <CustomTypography fontSize="Headline_Medium" tagType="h2" className="text-center">
             جمعه دل‌نواز
           </CustomTypography>
@@ -38,9 +67,10 @@ const BlackFridayPage = () => {
             </CustomTypography>
           </div>
           <div className="flex justify-center mt-5">
+            {/* blackfriday/enterPhone */}
             <CustomLink
-              href={'blackfriday/enterPhone'}
-              className="w-60 px-12 py-3 rounded-full block"
+              href={'#'}
+              className="w-60 px-12 py-3 rounded-full block opacity-25 pointer-events-none"
               style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
               id="button_offer"
             >
@@ -50,7 +80,7 @@ const BlackFridayPage = () => {
             </CustomLink>
           </div>
         </div>
-        <div
+        {/* <div
           className="h-full w-full pt-16 px-4 pb-[55px]"
           style={{
             backgroundImage: 'url(/assets/images/blackFriday/rect.svg)',
@@ -78,7 +108,7 @@ const BlackFridayPage = () => {
               );
             })}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );
