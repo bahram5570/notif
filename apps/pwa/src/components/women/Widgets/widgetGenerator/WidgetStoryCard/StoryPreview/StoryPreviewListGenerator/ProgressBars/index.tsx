@@ -68,7 +68,7 @@ const ProgressBars = ({
 
           return (
             <div
-              className="relative w-full h-1 rounded-full overflow-hidden shadow-[0_4px_10px_#00000044] "
+              className="relative w-full h-[2px] rounded-full overflow-hidden shadow-[0_4px_10px_#00000044] "
               style={{ backgroundColor: colors.Surface_Outline }}
               key={index}
             >
