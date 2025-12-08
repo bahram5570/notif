@@ -6,6 +6,7 @@ export type CalendarDayInfoTypes = {
   backgroundColor: string;
   isGiveBirth: boolean;
   dayTypeColor: string;
+  isBirthday: boolean;
   cellColor: string;
   dayTitle: string;
 };

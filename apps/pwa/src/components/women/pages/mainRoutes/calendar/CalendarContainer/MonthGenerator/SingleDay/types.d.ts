@@ -7,4 +7,4 @@ export interface SingleDayProps extends Pick<MonthGeneratorProps, 'selectedDateH
   dateType: MonthGeneratorDateTypesTypes;
 }
 
-export interface HasSignDotProps extends Pick<SingleDayProps, 'day'> {}
+export interface HasSignDotProps extends Pick<SingleDayProps, 'day' | 'isSelected'> {}
