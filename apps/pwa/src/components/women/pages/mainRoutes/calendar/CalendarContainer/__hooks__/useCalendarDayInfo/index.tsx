@@ -5,14 +5,18 @@ import { CalendarDayInfoTypes, UseCalendarDayInfoProps } from './types';
 
 const useCalendarDayInfo = (day?: UseCalendarDayInfoProps) => {
   const { colors } = useTheme();
+
   const item = day?.items?.find((item) => item.type === CalendarWidgetEnums.Cycle)?.data;
+  const isBirthday = day ? day.items?.some((i) => i.type === CalendarWidgetEnums.Birthday) : false;
+  const isGiveBirth = false;
 
   const calendarDayInfo: CalendarDayInfoTypes = {
     backgroundColor: colors.Surface_SurfaceVariant,
-    cellColor: colors.Neutral_OnBackground,
     dayTypeColor: colors.Neutral_OnBackground,
-    isGiveBirth: false,
+    cellColor: colors.Neutral_OnBackground,
     dayTitle: item?.dayTitle || '',
+    isGiveBirth,
+    isBirthday,
   };
 
   switch (item?.dayType) {

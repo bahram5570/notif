@@ -4,6 +4,7 @@ export enum CalendarWidgetEnums {
   Sign = 3,
   Note = 4,
   OvulationKit = 5,
+  Birthday = 6,
 }
 
 export enum DayTypeEnums {
