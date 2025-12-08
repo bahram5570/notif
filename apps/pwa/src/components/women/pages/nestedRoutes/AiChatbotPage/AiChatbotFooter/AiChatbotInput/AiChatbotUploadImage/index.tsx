@@ -1,22 +1,11 @@
-import { useState } from 'react';
-
 import UploadIcon from '@assets/icons/Paperclip-1.svg';
 
 import useTheme from '@hooks/useTheme';
 
-import UploadImagesMoreAction from './UploadImagesMoreAction';
 import { AiChatbotUploadImagePropsType } from './type';
 
-const AiChatbotUploadImage = ({ fileDataHandler, disableBtn }: AiChatbotUploadImagePropsType) => {
-  const [isOpenMoreAction, setIsOpenMoreAction] = useState(false);
+const AiChatbotUploadImage = ({ closeHandler, disableBtn }: AiChatbotUploadImagePropsType) => {
   const { colors } = useTheme();
-
-  const closeHandler = () => {
-    if (disableBtn) {
-      return;
-    }
-    setIsOpenMoreAction((prev) => !prev);
-  };
 
   return (
     <>
@@ -29,7 +18,6 @@ const AiChatbotUploadImage = ({ fileDataHandler, disableBtn }: AiChatbotUploadIm
           style={{ stroke: disableBtn ? colors.Surface_OutlineVariant : colors.Surface_InverseSurface }}
         />
       </div>
-      <UploadImagesMoreAction isOpen={isOpenMoreAction} closeHandler={closeHandler} fileDataHandler={fileDataHandler} />
     </>
   );
 };

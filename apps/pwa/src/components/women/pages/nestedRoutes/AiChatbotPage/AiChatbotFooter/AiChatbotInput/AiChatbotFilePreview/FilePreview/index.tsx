@@ -54,7 +54,14 @@ const FilePreview = (props: FilePreviewPropsType) => {
         <CancelIcon className="w-4 h-auto" style={{ stroke: colors.Neutral_OnBackground }} />
       </div>
 
-      <CustomImage src={props.url} className="w-full h-full rounded-2xl" hasPreviewImage={true} />
+      <CustomImage
+        width={116}
+        height={116}
+        src={props.url}
+        className="w-full h-full rounded-2xl"
+        // objectFit="cover"
+        hasPreviewImage={true}
+      />
     </div>
   );
 };

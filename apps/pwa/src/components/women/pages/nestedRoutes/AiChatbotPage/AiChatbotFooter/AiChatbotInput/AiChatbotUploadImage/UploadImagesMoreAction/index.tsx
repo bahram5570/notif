@@ -31,8 +31,6 @@ const UploadImagesMoreAction = ({ closeHandler, isOpen, fileDataHandler }: Uploa
   }, [isOpen]);
 
   const handleFileInput: FileInputHandlerTypes = (type) => async (e) => {
-    // setActiveInput(type);
-
     const file = e.target.files?.[0];
     if (!file) return;
 
@@ -60,10 +58,11 @@ const UploadImagesMoreAction = ({ closeHandler, isOpen, fileDataHandler }: Uploa
   if (!isOpen) {
     return;
   }
+
   return (
     <div
-      className=" fixed top-0 left-0 right-0 bottom-0 flex justify-center mx-auto z-50"
-      style={{ background: ' rgba(0, 0, 0, 0.16)', backdropFilter: 'blur(4px)', maxWidth: MAX_SCREEN_WIDTH }}
+      className={` fixed top-0 left-0 right-0 bottom-0 flex justify-center mx-auto ${isOpen ? 'z-40' : 'z-0'}`}
+      style={{ background: ' rgba(0, 0, 0, 0.16)', backdropFilter: 'blur(2.5px)', maxWidth: MAX_SCREEN_WIDTH }}
       onClick={closeHandler}
     >
       <div

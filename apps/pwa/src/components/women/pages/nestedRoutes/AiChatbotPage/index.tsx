@@ -66,7 +66,7 @@ const AiChatbotPage = () => {
           )}
 
           {hasChatData && (
-            <AiChatbotMessageListLayout>
+            <AiChatbotMessageListLayout imageType={aiChatData.imageType}>
               <AiChatbotMessageList
                 chats={aiChatbotMessageList}
                 isLoading={newLoading}

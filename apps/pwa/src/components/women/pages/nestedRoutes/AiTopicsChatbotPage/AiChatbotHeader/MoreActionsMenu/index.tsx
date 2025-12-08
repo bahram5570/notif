@@ -45,7 +45,7 @@ const MoreActionsMenu = ({ isOpen, closeHandler, welcomingType, disableDeleteBtn
 
   return (
     <div
-      className=" fixed top-0 left-0 right-0 bottom-0 flex justify-center mx-auto z-20"
+      className={` fixed top-0 left-0 right-0 bottom-0 flex justify-center mx-auto ${isOpen ? 'z-50' : 'z-0'}`}
       style={{ background: ' rgba(0, 0, 0, 0.16)', backdropFilter: 'blur(2.5px)', maxWidth: MAX_SCREEN_WIDTH }}
       onClick={closeHandler}
     >

@@ -41,6 +41,7 @@ const useSubmit = ({ addChatHandler, updateChatHandler, categoryIdData, itemIdDa
         deactiveMessage: v.deactiveMessage,
         title: v.title,
         deactiveButton: v.deactiveButton,
+        mediaLimitDate: v.mediaLimitDate,
         activaMedia:
           historyAiChat?.imageUsageLimit === historyAiChat?.currentImageUsage ? false : historyAiChat?.activaMedia,
       },

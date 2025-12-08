@@ -20,7 +20,14 @@ const AiTopicChatbotListFooter = ({ inputPlaceholder }: { inputPlaceholder: stri
           hintPromptText={inputPlaceholder || ''}
           isLoading={newLoading}
           submitHandler={submitHandler}
-          activaMedia={false}
+          disableBtn={false}
+          closeHandler={() => {}}
+          files={[]}
+          hasFile={false}
+          imageFile={[]}
+          removeFileHandler={() => {}}
+          retryUploadHandler={() => {}}
+          btnTopHandler={() => {}}
         />
       </div>
     </div>

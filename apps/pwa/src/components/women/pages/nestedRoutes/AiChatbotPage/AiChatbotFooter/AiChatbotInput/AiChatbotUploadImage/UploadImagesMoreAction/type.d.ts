@@ -1,11 +1,11 @@
 import { FileInputTypes } from '../../__hooks__/useFileUpload/enum';
+import { FileDataHandlerTypes } from '../../__hooks__/useFileUpload/type';
 import { AiChatbotUploadImagePropsType } from '../type';
 
-type ItemType = Pick<AiChatbotUploadImagePropsType, 'fileDataHandler'>;
-
-export interface UploadImagesMoreActionPropsType extends ItemType {
+export interface UploadImagesMoreActionPropsType {
   isOpen: boolean;
   closeHandler: () => void;
+  fileDataHandler: FileDataHandlerTypes;
 }
 
 export type FileInputHandlerTypes = (type: FileInputTypes) => (e: React.ChangeEvent<HTMLInputElement>) => void;

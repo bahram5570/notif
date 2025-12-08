@@ -5,7 +5,6 @@ import { SHOW_SUGGESTED_QUESTION } from '@constants/ai.constants';
 import AiChatbotFilePreview from './AiChatbotFilePreview';
 import AiChatbotText from './AiChatbotText';
 import AiChatbotUploadImage from './AiChatbotUploadImage';
-import useFileUpload from './__hooks__/useFileUpload';
 import { AiChatbotInputPropsType } from './type';
 
 const AiChatbotInput = ({
@@ -13,12 +12,16 @@ const AiChatbotInput = ({
   isLoading,
   submitHandler,
   isShowFileInput,
-  activaMedia,
+  files,
+  hasFile,
+  imageFile,
+  removeFileHandler,
+  disableBtn,
+  retryUploadHandler,
   btnTopHandler,
+  closeHandler,
 }: AiChatbotInputPropsType) => {
   const [isMultiLine, setIsMultiLine] = useState(false);
-  const { files, hasFile, fileDataHandler, removeFileHandler, retryUploadHandler, imageFile, disableBtn } =
-    useFileUpload({ activaMedia });
 
   const checkMultiLine = (v: boolean) => {
     setIsMultiLine(v);
@@ -54,7 +57,7 @@ const AiChatbotInput = ({
           checkMultiLine={checkMultiLine}
         />
       </div>
-      {isShowFileInput && <AiChatbotUploadImage fileDataHandler={fileDataHandler} disableBtn={disableBtn} />}
+      {isShowFileInput && <AiChatbotUploadImage closeHandler={closeHandler} disableBtn={disableBtn} />}
     </div>
   );
 };

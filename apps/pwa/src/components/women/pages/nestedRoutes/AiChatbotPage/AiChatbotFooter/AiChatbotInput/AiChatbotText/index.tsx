@@ -42,6 +42,10 @@ const AiChatbotText = ({
     }
   };
 
+  const handleFocus = () => {
+    if (btnTopHandler) btnTopHandler();
+  };
+
   useEffect(() => {
     if (textRef.current) {
       textRef.current.style.height = 'auto';
@@ -57,6 +61,7 @@ const AiChatbotText = ({
     <div className="flex-1 flex flex-row-reverse justify-end items-end">
       <textarea
         ref={textRef}
+        onFocus={handleFocus}
         placeholder={hintPromptText}
         className={`w-full px-3 py-2 bg-transparent outline-none resize-none ${style.scroller}`}
         style={{
