@@ -46,17 +46,20 @@ const GiftWomanDayPage = () => {
           </CustomTypography>
         )}
 
-        {giftData?.type === 0 ? (
+        {giftData?.type === 0 && (
           <CustomTypography fontSize="Body_Large" tagType="p" className="text-center mt-2">
             روزت مبارک قشنگِ مهربونِ من همیشه تو مراقب من بودی این بار من می‌خوام مراقبت باشم این
             <strong>کد تخفیف 100%</strong> رو تو <strong>اپلیکیشن ایمپو</strong> بزن و بیشتر مراقب خودت باش
           </CustomTypography>
-        ) : (
+        )}
+
+        {giftData?.type === 1 && (
           <CustomTypography fontSize="Body_Large" tagType="p" className="text-center mt-2">
             روزت مبارک دلبرِ نازنینِ من هر چی فکر کردم هدیه‌ای بهتر از "مراقبت" برات پیدا نکردم چون دوست دارم که مراقب
             خودت باشی این<strong>کد تخفیف 100%</strong> رو تو <strong>اپلیکیشن ایمپو</strong> بزن و بیشتر مراقب خودت باش
           </CustomTypography>
         )}
+
         {isLoading && (
           <div
             className="w-[150px] h-[50px] rounded-md animate-pulse flex justify-self-center mb-4 !mt-4"
@@ -78,10 +81,17 @@ const GiftWomanDayPage = () => {
             </div>
           </div>
         )}
+        {giftData?.type === 0 && (
+          <CustomTypography fontSize="Body_Large" tagType="p" className="text-center mt-6">
+            یادت نره تو خیلی برام مهمی مامان نازنینم💕
+          </CustomTypography>
+        )}
+        {giftData?.type === 1 && (
+          <CustomTypography fontSize="Body_Large" tagType="p" className="text-center mt-6">
+            یادت نره تو خیلی برام مهمی قشنگِ من💕
+          </CustomTypography>
+        )}
 
-        <CustomTypography fontSize="Body_Large" tagType="p" className="text-center mt-6">
-          یادت نره تو خیلی برام مهمی مامان نازنینم💕
-        </CustomTypography>
         {isLoading && (
           <div
             className="w-[100px] h-[40px] rounded-md animate-pulse flex justify-self-center mb-4"

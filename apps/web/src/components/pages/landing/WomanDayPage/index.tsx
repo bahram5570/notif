@@ -72,7 +72,7 @@ export default function WomanDayPage() {
   };
 
   const isFormInvalid =
-    !form.selfName || !form.partnerName || !form.phone || form.type == -1 || !errors.phone ? true : false;
+    !form.selfName.trim() || !form.partnerName.trim() || !form.phone || form.type == -1 || !errors.phone ? true : false;
 
   return (
     <div className="w-full max-w-[500px]">

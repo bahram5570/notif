@@ -28,8 +28,10 @@ const useSubmit = () => {
 
       if (data.isValid) {
         router.push(data.backUrl);
+        setIsLoading(false);
       } else {
         onToast({ type: 'error', message: 'خطا در ارسال اطلاعات' });
+        setIsLoading(false);
       }
     } catch (err) {
       onToast({ type: 'error', message: 'مشکلی پیش آمد، دوباره تلاش کنید.' });
