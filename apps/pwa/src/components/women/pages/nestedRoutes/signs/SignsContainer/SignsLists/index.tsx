@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useRef } from 'react';
 
+import { FOOTER_HEIGTH } from '@components/women/WomenFooter/constants';
 import useTheme from '@hooks/useTheme';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperTypes } from 'swiper/types';
@@ -8,7 +9,7 @@ import SignsListsContainer from './SignsListsContainer';
 import useSignsListInfo from './__hooks__/useSignsListInfo';
 import { SignsListsPros } from './types';
 
-const SignsLists = ({ infoList, slide, slideHandler }: SignsListsPros) => {
+const SignsLists = ({ infoList, slide, slideHandler, updateSingSelectedList }: SignsListsPros) => {
   const { colors } = useTheme();
   const swiperRef = useRef<SwiperTypes | null>(null);
 
@@ -17,7 +18,7 @@ const SignsLists = ({ infoList, slide, slideHandler }: SignsListsPros) => {
   }, [slide, swiperRef.current]);
 
   return (
-    <div style={{ backgroundColor: colors.Surface_SurfaceVariant }}>
+    <div style={{ backgroundColor: colors.Surface_SurfaceVariant, paddingBottom: FOOTER_HEIGTH, paddingTop: '1em' }}>
       <Swiper
         onSlideChange={(s) => slideHandler(s.activeIndex)}
         onSwiper={(s) => (swiperRef.current = s)}
@@ -28,7 +29,15 @@ const SignsLists = ({ infoList, slide, slideHandler }: SignsListsPros) => {
 
           return (
             <SwiperSlide key={`infoList-${slideIndex}`}>
-              {isVisibleSlideIndex ? <SignsListsContainer info={info} selectHandler={selectHandler} /> : <Fragment />}
+              {isVisibleSlideIndex ? (
+                <SignsListsContainer
+                  info={info}
+                  selectHandler={selectHandler}
+                  updateSingSelectedList={updateSingSelectedList}
+                />
+              ) : (
+                <Fragment />
+              )}
             </SwiperSlide>
           );
         })}

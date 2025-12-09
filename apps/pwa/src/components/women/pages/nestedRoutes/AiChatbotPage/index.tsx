@@ -7,41 +7,33 @@ import { WelcomingTypeEnum } from '../AiTopicsChatbotPage/WelcomingContainer/enu
 import AiChatbotEmptyState from './AiChatbotEmptyState';
 import AiChatbotFooter from './AiChatbotFooter';
 import AiChatbotMessageList from './AiChatbotMessageList';
+import AiChatbotMessageListLayout from './AiChatbotMessageList/AiChatbotMessageListLayout';
+import ErrorMessage from './AiChatbotMessageList/ErrorMessage';
 import AiChatbotSkeleton from './AiChatbotSkeleton';
+import useCurrentDate from './__hooks__/useCurrentDate';
+import useDisableDeleteBtn from './__hooks__/useDisableDeleteBtn';
 import useGetAiChatbotData from './__hooks__/useGetAiChatbotData';
 import useGetAiChatbotMessageList from './__hooks__/useGetAiChatbotMessageList';
 import useSubmit from './__hooks__/useSubmit';
 
 const AiChatbotPage = () => {
-  const { isLoading, aiChatData } = useGetAiChatbotData();
+  const { isLoading, aiChatData, categoryIdData, itemIdData } = useGetAiChatbotData();
   const { addChatHandler, aiChatbotMessageList, updateChatHandler } = useGetAiChatbotMessageList();
   const {
     isLoading: newLoading,
     submitHandler,
     showErrorMessage,
     onErrorHandler,
-  } = useSubmit({ updateChatHandler, addChatHandler });
-  const [disableDeleteBtn, setDisableDeleteBtn] = useState(false);
+    resetkey,
+  } = useSubmit({ updateChatHandler, addChatHandler, categoryIdData, itemIdData });
+  const { disableDeleteBtn, disableDeleteBtnHandler } = useDisableDeleteBtn({ aiChatData });
+  const { currentDate } = useCurrentDate({ mediaLimitDate: aiChatData?.mediaLimitDate });
 
   const defaultQustionHandler = (text: string) => {
-    submitHandler(text);
+    submitHandler({ prompt: text });
   };
 
   const hasChatData = aiChatData && aiChatbotMessageList.length > 0;
-
-  useEffect(() => {
-    if (aiChatData) {
-      if (aiChatData.chats.length > 0) {
-        setDisableDeleteBtn(true);
-      } else {
-        setDisableDeleteBtn(false);
-      }
-    }
-  }, [aiChatData]);
-
-  const disableDeleteBtnHandler = (v: boolean) => {
-    setDisableDeleteBtn(v);
-  };
 
   return (
     <>
@@ -53,13 +45,20 @@ const AiChatbotPage = () => {
             showActionMenu
             disableDeleteBtn={disableDeleteBtn}
             chatTitle={aiChatData.chatTitle}
+            chatId={aiChatData.chatId}
+            categoryIdData={categoryIdData}
+            itemIdData={itemIdData}
+            currentImageUsage={aiChatData.currentImageUsage}
+            imageType={aiChatData.imageType}
+            imageUsageLimit={aiChatData.imageUsageLimit}
+            mediaLimitDate={currentDate}
           />
+
           {!hasChatData && (
             <>
               <AiChatbotEmptyState
                 defaultQustionHandler={defaultQustionHandler}
                 description={aiChatData.description}
-                disableDeleteBtn={disableDeleteBtn}
                 questions={aiChatData.questions}
                 title={aiChatData.title}
               />
@@ -67,14 +66,16 @@ const AiChatbotPage = () => {
           )}
 
           {hasChatData && (
-            <AiChatbotMessageList
-              chats={aiChatbotMessageList}
-              isLoading={newLoading}
-              defaultQustionHandler={defaultQustionHandler}
-              disableDeleteBtnHandler={disableDeleteBtnHandler}
-              showErrorMessage={showErrorMessage}
-              onErrorHandler={onErrorHandler}
-            />
+            <AiChatbotMessageListLayout imageType={aiChatData.imageType}>
+              <AiChatbotMessageList
+                chats={aiChatbotMessageList}
+                isLoading={newLoading}
+                defaultQustionHandler={defaultQustionHandler}
+                disableDeleteBtnHandler={disableDeleteBtnHandler}
+                showErrorMessage={showErrorMessage}
+              />
+              {showErrorMessage && <ErrorMessage onErrorHandler={onErrorHandler} />}
+            </AiChatbotMessageListLayout>
           )}
 
           <AiChatbotFooter
@@ -82,6 +83,8 @@ const AiChatbotPage = () => {
             submitHandler={submitHandler}
             isLoading={newLoading}
             hasChatData={hasChatData}
+            isShowFileInput={aiChatData.imageType}
+            key={resetkey}
           />
         </>
       )}

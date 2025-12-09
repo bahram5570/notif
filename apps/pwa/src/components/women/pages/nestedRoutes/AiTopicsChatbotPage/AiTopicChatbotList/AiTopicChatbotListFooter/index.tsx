@@ -5,6 +5,7 @@ import useSubmit from './__hooks__/useSubmit';
 
 const AiTopicChatbotListFooter = ({ inputPlaceholder }: { inputPlaceholder: string | undefined }) => {
   const { submitHandler, isLoading: newLoading } = useSubmit();
+
   return (
     <div
       className="fixed bottom-0 left-0 right-0 mx-auto   flex"
@@ -14,7 +15,20 @@ const AiTopicChatbotListFooter = ({ inputPlaceholder }: { inputPlaceholder: stri
       }}
     >
       <div className="pt-4 pb-5  w-full">
-        <AiChatbotInput hintPromptText={inputPlaceholder || ''} isLoading={newLoading} submitHandler={submitHandler} />
+        <AiChatbotInput
+          isShowFileInput={false}
+          hintPromptText={inputPlaceholder || ''}
+          isLoading={newLoading}
+          submitHandler={submitHandler}
+          disableBtn={false}
+          closeHandler={() => {}}
+          files={[]}
+          hasFile={false}
+          imageFile={[]}
+          removeFileHandler={() => {}}
+          retryUploadHandler={() => {}}
+          btnTopHandler={() => {}}
+        />
       </div>
     </div>
   );

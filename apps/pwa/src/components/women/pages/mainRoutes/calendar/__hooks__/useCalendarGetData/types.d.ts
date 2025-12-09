@@ -60,10 +60,16 @@ export type CalendarSignsType = {
   };
 };
 
+export type CalendarBirthdayType = {
+  type: CalendarWidgetEnums.Birthday;
+  data: null;
+};
+
 export type ItemsTypes = (
   | CalendarNoteType
   | CalendarCycleType
   | CalendarSignsType
+  | CalendarBirthdayType
   | CalendarBiorhythmType
   | CalendarOvulationKitType
 )[];

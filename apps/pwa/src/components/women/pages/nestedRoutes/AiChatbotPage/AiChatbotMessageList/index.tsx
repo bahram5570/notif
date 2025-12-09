@@ -1,72 +1,50 @@
-import { useEffect, useRef, useState } from 'react';
-
-import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
+import { useEffect } from 'react';
 
 import { RoleEnum } from '../__hooks__/useGetAiChatbotData/enum';
-import AiChatbotMessageListLayout from './AiChatbotMessageListLayout';
 import AiChatbotMessageListLoading from './AiChatbotMessageListLoading';
 import AiMessage from './AiMessage';
-import ErrorMessage from './ErrorMessage';
 import UserMessage from './UserMessage';
+import useLastItemHeight from './__hooks__/useLastItemHeight';
 import { AiChatbotMessageListPropsType } from './type';
 
-const AiChatbotMessageList = ({
-  chats,
-  isLoading,
-  defaultQustionHandler,
-  disableDeleteBtnHandler,
-  showErrorMessage,
-  onErrorHandler,
-}: AiChatbotMessageListPropsType) => {
-  const lastItemRef = useRef<HTMLDivElement>(null);
-  const hasSetInitialHeight = useRef(false);
-  const [lastItemHeight, setLastItemHeight] = useState<string | undefined>(undefined);
-
-  useEffect(() => {
-    if (!hasSetInitialHeight.current && chats.length > 0) {
-      setLastItemHeight(`calc(100vh - ${HEADER_HEIGHT + 250}px )`);
-      hasSetInitialHeight.current = true;
-    }
-  }, [chats.length]);
+const AiChatbotMessageList = (props: AiChatbotMessageListPropsType) => {
+  const { lastItemHeight, lastItemRef } = useLastItemHeight({ chatLength: props.chats.length });
 
   useEffect(() => {
     if (lastItemRef.current) {
       lastItemRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [chats, isLoading]);
+  }, [props.chats, props.isLoading]);
 
   return (
-    <AiChatbotMessageListLayout>
-      <>
-        {chats.map((chat, index) => {
-          const isLastItem = index === chats.length - 1;
-          const minHeight = isLastItem && !isLoading && !showErrorMessage ? lastItemHeight : 'auto';
+    <>
+      {props.chats.map((chat, index) => {
+        const isLastItem = index === props.chats.length - 1;
+        const minHeight = isLastItem && !props.isLoading && !props.showErrorMessage ? lastItemHeight : 'auto';
 
-          return (
-            <div
-              key={index}
-              style={{
-                minHeight,
-              }}
-              className="pr-2"
-              ref={index === chats.length - 1 ? lastItemRef : null}
-            >
-              {chat.role === RoleEnum.User && <UserMessage {...chat} />}
-              {chat.role === RoleEnum.Assistant && (
-                <AiMessage
-                  {...chat}
-                  isLastItem={isLastItem}
-                  defaultQustionHandler={defaultQustionHandler}
-                  disableDeleteBtnHandler={disableDeleteBtnHandler}
-                />
-              )}
-            </div>
-          );
-        })}
-        {isLoading && <AiChatbotMessageListLoading />}
-        {showErrorMessage && <ErrorMessage onErrorHandler={onErrorHandler} />}
-      </>
-    </AiChatbotMessageListLayout>
+        return (
+          <div
+            key={index}
+            style={{
+              minHeight,
+            }}
+            className="pr-2"
+            ref={isLastItem ? lastItemRef : null}
+          >
+            {chat.role === RoleEnum.User && <UserMessage {...chat} />}
+            {chat.role === RoleEnum.Assistant && (
+              <AiMessage
+                {...chat}
+                isLastItem={isLastItem}
+                defaultQustionHandler={props.defaultQustionHandler}
+                disableDeleteBtnHandler={props.disableDeleteBtnHandler}
+              />
+            )}
+          </div>
+        );
+      })}
+      {props.isLoading && <AiChatbotMessageListLoading />}
+    </>
   );
 };
 

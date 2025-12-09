@@ -1,4 +1,4 @@
-import { NextStepTypes } from '@app/(women)/protected/(mainRoutes)/widgetCommon';
+import { NextStepTypes } from '@providers/WidgetActionsProvider/widgetCommon';
 
 import { PopUpTypes } from '../../usePopUpHandlers/types';
 

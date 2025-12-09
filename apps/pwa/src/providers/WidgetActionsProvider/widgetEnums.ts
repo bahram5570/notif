@@ -66,9 +66,10 @@ export enum PopupTypeEnum {
   InteractionReward = 4,
   SexTracker = 5,
   ImageTextButton = 6,
-  interactionWithTwoButton = 7,
-  radioImageOption = 8,
-  bioRythem = 9,
+  InteractionWithTwoButton = 7,
+  RadioImageOption = 8,
+  BioRythem = 9,
+  TimerInteraction = 10,
 }
 
 export enum CyclePhaseEnum {

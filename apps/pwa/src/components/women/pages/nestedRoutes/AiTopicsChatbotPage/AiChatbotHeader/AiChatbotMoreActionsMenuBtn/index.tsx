@@ -12,6 +12,8 @@ const AiChatbotMoreActionsMenuBtn = ({
   welcomingType,
   chatId,
   disableDeleteBtn,
+  categoryIdData,
+  itemIdData,
 }: AiChatbotMoreActionsMenuBtnPropsType) => {
   const { colors } = useTheme();
 
@@ -35,7 +37,7 @@ const AiChatbotMoreActionsMenuBtn = ({
         welcomingType={welcomingType}
         disableDeleteBtn={disableDeleteBtn}
       />
-      <MoreActionMenuModals chatId={chatId} />
+      <MoreActionMenuModals chatId={chatId} categoryIdData={categoryIdData} itemIdData={itemIdData} />
     </>
   );
 };

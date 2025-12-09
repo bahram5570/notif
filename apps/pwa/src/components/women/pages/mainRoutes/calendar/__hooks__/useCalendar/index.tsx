@@ -3,8 +3,9 @@ import { useEffect, useState } from 'react';
 import { currentDate } from '@utils/dates';
 
 import { CalendarTypeEnum } from '@constants/date.constants';
+import useSignDateState from '@hooks/__sign__/useSignDateState';
+import useSignInteractiveBanner from '@hooks/__sign__/useSignInteractiveBanner';
 import useCulture from '@hooks/useCulture';
-import useSignDateState from '@hooks/useSignDateState';
 import moment from 'moment-jalaali';
 
 import useCalendarGetData from '../useCalendarGetData';
@@ -26,6 +27,7 @@ const useCalendar = () => {
 
   const { isLoading } = useCalendarGetData({ onValues: valuesHandler, hasSigns: true });
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
+  const { isLoadedHandler } = useSignInteractiveBanner();
 
   useEffect(() => {
     let initialDate = jDate;
@@ -52,6 +54,12 @@ const useCalendar = () => {
 
     setSelectedDate(initialDate);
   }, [culture.calendarType]);
+
+  useEffect(() => {
+    if (calendarData && !isLoading) {
+      isLoadedHandler();
+    }
+  }, [isLoading, calendarData]);
 
   const selectedDateHandler: SelectedDateHandlerTypes = (v) => {
     setSelectedDate(v);

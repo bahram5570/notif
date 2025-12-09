@@ -7,7 +7,7 @@ import CalendarContainer from '../CalendarContainer';
 import CalendarDraggingPanel from '../CalendarDraggingPanel';
 import CalendarGuides from '../CalendarGuides';
 import CalendarSkeleton from '../CalendarSkeleton';
-import SignsChangedToast from '../SignsChangedToast';
+// import SignsChangedToast from '../SignsChangedToast';
 import useCalendar from '../__hooks__/useCalendar';
 
 const CalendarPage = () => {
@@ -16,7 +16,7 @@ const CalendarPage = () => {
 
   return (
     <WomenPageLayout leftElement1="Profile" paddingTop={0}>
-      <SignsChangedToast />
+      {/* <SignsChangedToast /> */}
 
       <div
         className="relative h-full min-h-[100dvh] max-h-[100dvh] overflow-hidden z-0"

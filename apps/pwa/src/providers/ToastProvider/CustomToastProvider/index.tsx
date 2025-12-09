@@ -3,7 +3,6 @@
 import { createContext, useCallback, useContext, useEffect, useState } from 'react';
 
 import Typography from '@components/ui/Typography';
-import { data } from '@components/women/pages/nestedRoutes/routin/RoutinTabsPage/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useTheme from '@hooks/useTheme';
 
@@ -52,7 +51,7 @@ const CustomToastProvider = ({ children }: CustomToastProviderPropsType) => {
       {children}
 
       <div
-        className={`fixed inset-0 flex justify-center items-center pointer-events-none transition-all duration-500 ease-in-out z-50 max-w-40 px-6 ${
+        className={`fixed inset-0 flex justify-center items-center mx-auto pointer-events-none transition-all duration-500 ease-in-out z-50 max-w-40 px-6 ${
           visible ? 'opacity-100 visible' : 'opacity-0 invisible'
         }`}
         style={{

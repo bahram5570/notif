@@ -9,6 +9,7 @@ export type ChatItemType = {
   like: boolean;
   dislike: boolean;
   isAnswered?: boolean;
+  media: string[];
 };
 
 export type AiChatbotDataResponseType = {
@@ -22,6 +23,12 @@ export type AiChatbotDataResponseType = {
   hintPromptText: string;
   isActive: boolean;
   deactiveMessage: string;
+  currentImageUsage: number;
+  imageUsageLimit: number;
+  deactiveTitle: string;
+  activaMedia: boolean;
+  mediaLimitDate: string;
+  imageType: boolean;
   deactiveButton: {
     backgroundColor: string;
     foregroundColor: string;

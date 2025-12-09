@@ -3,8 +3,10 @@ import { AddChatHandlerType, UpdateChatHandlerType } from '../useGetAiChatbotMes
 
 export type ItemType = Pick<
   AiChatbotDataResponseType,
-  'activeRating' | 'isActive' | 'deactiveButton' | 'deactiveMessage' | 'title'
+  'activeRating' | 'isActive' | 'deactiveButton' | 'deactiveMessage' | 'title' | 'mediaLimitDate'
 >;
+
+export type SubmitHandlerType = ({ prompt, imageId }: { prompt: string; imageId?: string[] }) => void;
 export interface NewMessageResponse extends ItemType {
   isInProccess: boolean;
   messageId: string;
@@ -13,4 +15,6 @@ export interface NewMessageResponse extends ItemType {
 export type UseSubmitPropsType = {
   updateChatHandler: UpdateChatHandlerType;
   addChatHandler: AddChatHandlerType;
+  itemIdData: string | null;
+  categoryIdData: string | null;
 };

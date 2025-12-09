@@ -1,21 +1,19 @@
-import { PROMPT_TEXT } from '@constants/ai.constants';
+import { setSessionStoragePromptText } from '@utils/aiChatbot';
+
+import { SubmitHandlerType } from '@components/women/pages/nestedRoutes/AiChatbotPage/__hooks__/useSubmit/type';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import { useRouter } from 'next/navigation';
 
 const useSubmit = () => {
-  const route = useRouter();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
   const isLoading = pageNavigationLoading === 'aiChatbotLink';
 
-  const submitHandler = (prompt: string) => {
-    route.push(`/protected/aiChatbot`);
-
+  const submitHandler: SubmitHandlerType = ({ prompt }) => {
     pageNavigationHandler({
       showProgressBar: false,
       id: 'aiChatbotLink',
       linkTo: '/protected/aiChatbot',
     });
-    sessionStorage.setItem(PROMPT_TEXT, prompt);
+    setSessionStoragePromptText(prompt);
   };
 
   return { submitHandler, isLoading };

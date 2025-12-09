@@ -5,20 +5,16 @@ import { baseUrl } from '@services/http';
 import { getUserCookie } from '@actions/cookie.actions';
 import { EventSource } from 'eventsource';
 
+import useCurrentImageUsage from '../useCurrentImageUsage';
 import { CLOSE_STREAM_TEXT } from './constants';
-import { StreamHandlerPropsType } from './type';
+import { StreamHandlerPropsType, UseEventSourcePropsType } from './type';
 
-const useEventSource = ({
-  handelLoading,
-  errorHandler,
-}: {
-  handelLoading?: (v: boolean) => void;
-  errorHandler?: (v: boolean) => void;
-}) => {
+const useEventSource = ({ handelLoading, errorHandler, imagesCount }: UseEventSourcePropsType) => {
   const [messages, setMessages] = useState<string>('');
   const evRef = useRef<EventSource | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const firstMessageReceived = useRef(false);
+  const { updateImageCountHandler } = useCurrentImageUsage();
 
   const cleanup = () => {
     if (timeoutRef.current) {
@@ -33,8 +29,24 @@ const useEventSource = ({
       }
       evRef.current = null;
     }
+    handelLoading(false);
+  };
 
-    if (handelLoading) handelLoading(false);
+  const successHandler = (text: any) => {
+    const cleanedData = String(text)
+      .replace(/^data:\s*/i, '')
+      .replace(/^"|"$/g, '');
+
+    if (cleanedData === CLOSE_STREAM_TEXT) {
+      cleanup();
+      return;
+    }
+
+    if (cleanedData === '') {
+      setMessages((prev) => prev + '\n');
+    } else {
+      setMessages((prev) => prev + cleanedData);
+    }
   };
 
   useEffect(() => {
@@ -45,8 +57,8 @@ const useEventSource = ({
     cleanup();
     setMessages('');
     firstMessageReceived.current = false;
-    if (handelLoading) handelLoading(true);
-    if (errorHandler) errorHandler(false);
+    handelLoading(true);
+    errorHandler(false);
 
     const user = await getUserCookie();
     const Authorization = user ? `Bearer ${user.token}` : '';
@@ -67,13 +79,14 @@ const useEventSource = ({
 
     timeoutRef.current = setTimeout(() => {
       if (!firstMessageReceived.current) {
-        if (errorHandler) errorHandler(true);
+        errorHandler(true);
+        updateImageCountHandler(-imagesCount);
         cleanup();
       }
     }, 30000);
 
     ev.addEventListener('message', (event) => {
-      if (handelLoading) handelLoading(false);
+      handelLoading(false);
       if (!firstMessageReceived.current) {
         firstMessageReceived.current = true;
         if (timeoutRef.current) {
@@ -81,21 +94,7 @@ const useEventSource = ({
           timeoutRef.current = null;
         }
       }
-
-      const cleanedData = String(event.data)
-        .replace(/^data:\s*/i, '')
-        .replace(/^"|"$/g, '');
-
-      if (cleanedData === CLOSE_STREAM_TEXT) {
-        cleanup();
-        return;
-      }
-
-      if (cleanedData === '') {
-        setMessages((prev) => prev + '\n');
-      } else {
-        setMessages((prev) => prev + cleanedData);
-      }
+      successHandler(event.data);
     });
 
     ev.addEventListener('error', () => {

@@ -1,42 +1,52 @@
 import { useEffect, useState } from 'react';
 
-import { PROMPT_TEXT } from '@constants/ai.constants';
+import { getSessionStoragePromptText } from '@utils/aiChatbot';
+
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
+import useCurrentImageUsage from '../useCurrentImageUsage';
 import useEventSource from '../useEventSource';
-import { ChatItemType } from '../useGetAiChatbotData/type';
-import { NewMessageResponse, UseSubmitPropsType } from './type';
+import { AiChatbotDataResponseType, ChatItemType } from '../useGetAiChatbotData/type';
+import useShowErrorMessage from '../useShowErrorMessage';
+import useStreamLoading from '../useStreamLoading';
+import { NewMessageResponse, SubmitHandlerType, UseSubmitPropsType } from './type';
 
 let messageId: string;
-const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) => {
-  const [streamLoading, setStreamLoading] = useState(false);
-  const [showErrorMessage, setShowErrorMessage] = useState(false);
+
+const useSubmit = ({ addChatHandler, updateChatHandler, categoryIdData, itemIdData }: UseSubmitPropsType) => {
+  const { showErrorMessage, showErrorMessageHandler } = useShowErrorMessage();
+  const { streamLoading, streamLoadingHandler } = useStreamLoading();
+  const { updateImageCountHandler, imagesCount } = useCurrentImageUsage();
+
+  const [resetkey, setResetKey] = useState(Math.random());
   const { getQuery, updateQuery } = useCustomReactQuery(['historyAiChat']);
-  const { getQueryParams } = useQueryParamsHandler();
-  const itemIdData = getQueryParams('itemId');
-  const categoryIdData = getQueryParams('categoryId');
 
   const aiChatMessageList = getQuery<{ data: ChatItemType[] }>({ queryKey: ['AiChatMessageList'] });
+  const historyAiChat = getQuery<AiChatbotDataResponseType>({ queryKey: ['historyAiChat'] });
 
   const { streamHandler, messages } = useEventSource({
-    handelLoading: setStreamLoading,
-    errorHandler: setShowErrorMessage,
+    handelLoading: streamLoadingHandler,
+    errorHandler: showErrorMessageHandler,
+    imagesCount,
   });
 
   const successHandler = (v: NewMessageResponse) => {
     updateQuery({
       queryKey: ['historyAiChat'],
       payload: {
-        chats: aiChatMessageList?.data,
+        ...historyAiChat,
         isActive: v.isActive,
         activeRating: v.activeRating,
         deactiveMessage: v.deactiveMessage,
         title: v.title,
         deactiveButton: v.deactiveButton,
+        mediaLimitDate: v.mediaLimitDate,
+        activaMedia:
+          historyAiChat?.imageUsageLimit === historyAiChat?.currentImageUsage ? false : historyAiChat?.activaMedia,
       },
     });
+
     messageId = v.messageId;
     streamHandler({ id: v.messageId });
   };
@@ -45,35 +55,37 @@ const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) =>
     method: 'POST',
     api: 'feature/ai/v2/sendstreammessage',
     onSuccess: (v: NewMessageResponse) => successHandler(v),
-    onError: () => setStreamLoading(false),
+    onError: () => streamLoadingHandler(false),
   });
 
-  const submitHandler = (prompt: string) => {
-    if (showErrorMessage) setShowErrorMessage(false);
-    addChatHandler(prompt);
-
+  const submitHandler: SubmitHandlerType = ({ prompt, imageId }) => {
+    setResetKey(Math.random());
+    if (showErrorMessage) showErrorMessageHandler(false);
+    addChatHandler({ chat: prompt, imageId: imageId });
+    updateImageCountHandler(imageId?.length || 0);
     const payload = {
       promptCategoryId: categoryIdData || '',
       promptItemId: itemIdData || '',
       prompt,
+      imageId,
     };
 
     callApi(payload);
   };
 
   const onErrorHandler = () => {
-    setShowErrorMessage(false);
+    showErrorMessageHandler(false);
     streamHandler({ id: messageId });
-    setStreamLoading(true);
+    streamLoadingHandler(true);
   };
 
   useEffect(() => {
     if (!aiChatMessageList) return;
 
-    const promptText = sessionStorage.getItem(PROMPT_TEXT);
+    const promptText = getSessionStoragePromptText();
 
     if (promptText) {
-      submitHandler(promptText);
+      submitHandler({ prompt: promptText, imageId: [] });
     }
   }, [aiChatMessageList]);
 
@@ -82,12 +94,12 @@ const useSubmit = ({ addChatHandler, updateChatHandler }: UseSubmitPropsType) =>
   }, [messages]);
 
   useEffect(() => {
-    if (loading) setStreamLoading(true);
+    if (loading) streamLoadingHandler(true);
   }, [loading]);
 
   const isLoading = streamLoading;
 
-  return { submitHandler, isLoading, showErrorMessage, onErrorHandler };
+  return { submitHandler, isLoading, showErrorMessage, onErrorHandler, resetkey };
 };
 
 export default useSubmit;

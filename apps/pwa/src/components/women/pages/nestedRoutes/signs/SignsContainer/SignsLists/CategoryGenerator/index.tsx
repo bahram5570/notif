@@ -5,7 +5,14 @@ import useAnalytics from '@hooks/useAnalytics';
 import useSelectedSigns from './__hooks__/useSelectedSigns';
 import { CategoryGeneratorProps, SelectedSignsHandlerTypes } from './types';
 
-const CategoryGenerator = ({ category, title, signs, info, selectHandler }: CategoryGeneratorProps) => {
+const CategoryGenerator = ({
+  category,
+  title,
+  signs,
+  info,
+  selectHandler,
+  updateSingSelectedList,
+}: CategoryGeneratorProps) => {
   const { callEvent } = useAnalytics();
 
   const { selectedSigns, selectedSignsHandler } = useSelectedSigns(info.initialSelectedSigns);
@@ -13,6 +20,10 @@ const CategoryGenerator = ({ category, title, signs, info, selectHandler }: Cate
   const selectSignHandler: SelectedSignsHandlerTypes = (ca, si) => {
     callEvent('SignsChanged');
     selectedSignsHandler(ca, si);
+
+    if (updateSingSelectedList) {
+      updateSingSelectedList({ category: ca, sign: si });
+    }
 
     if (selectHandler) {
       selectHandler(ca, si);
@@ -22,7 +33,7 @@ const CategoryGenerator = ({ category, title, signs, info, selectHandler }: Cate
   const list = Object.entries(signs);
 
   return (
-    <WidgetCardContainer title={title}>
+    <WidgetCardContainer title={title} className="!px-0 !pt-0">
       <div className="grid grid-cols-4 gap-4" style={{ direction: 'rtl' }}>
         {list.map((item, index) => {
           const key = `WidgetCardContainer-${index}`;
@@ -37,7 +48,7 @@ const CategoryGenerator = ({ category, title, signs, info, selectHandler }: Cate
               category={category}
               selectedDate={info.gregorianDate}
               initialIsSelected={initialIsSelected}
-              onSelect={() => selectSignHandler(category, sign)}
+              onSelect={selectSignHandler}
             />
           );
         })}

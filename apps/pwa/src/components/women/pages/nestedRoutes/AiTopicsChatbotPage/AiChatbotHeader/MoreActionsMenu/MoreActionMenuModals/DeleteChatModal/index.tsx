@@ -5,9 +5,9 @@ import useTheme from '@hooks/useTheme';
 import { CommenPropsType } from '../type';
 import useDelete from './__hooks__/useDelete';
 
-const DeleteChatModal = ({ onCloseModal }: CommenPropsType) => {
+const DeleteChatModal = ({ onCloseModal, categoryIdData, itemIdData }: CommenPropsType) => {
   const { colors } = useTheme();
-  const { isLoading, onDeleteHandler } = useDelete();
+  const { isLoading, onDeleteHandler } = useDelete({ categoryIdData, itemIdData });
 
   const onClick = () => {
     onDeleteHandler();

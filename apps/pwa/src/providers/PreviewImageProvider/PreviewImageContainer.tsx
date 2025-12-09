@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import CrossIcon from '@assets/icons/plus.svg';
+import CrossIcon from '@assets/icons/cross.svg';
 import Image from 'next/image';
 
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
@@ -30,13 +30,13 @@ const PreviewImageContainer = ({ src, shape = 'full' }: PreviewImageContainerPro
 
   return (
     <div
-      style={{ maxWidth: MAX_SCREEN_WIDTH }}
-      className="fixed top-0 left-0 right-0 bottom-0 mx-auto bg-[#00000033] backdrop-blur-sm z-[500]"
+      style={{ maxWidth: MAX_SCREEN_WIDTH, backgroundColor: colors.Black }}
+      className="fixed top-0 left-0 right-0 bottom-0 mx-auto  backdrop-blur-sm z-[500]"
     >
       <CrossIcon
         onClick={() => router.back()}
         style={{ stroke: colors.White }}
-        className="absolute top-4 left-4 w-10 h-auto rotate-45 cursor-pointer stroke-[2px] z-10"
+        className="absolute top-9 left-4  cursor-pointer  z-10"
       />
 
       <div className="relative w-full h-full flex justify-center">

@@ -10,7 +10,7 @@ import { KitTestsContainerProps } from './types';
 
 const KitTestsContainer = (props: KitTestsContainerProps) => {
   return (
-    <WidgetCardContainer title={kitTestMainScripts[props.moduleType].title}>
+    <WidgetCardContainer title={kitTestMainScripts[props.moduleType].title} className="!px-0 !pt-0">
       <Typography scale="Body" size="Medium" className="w-full pb-2 mb-4">
         {kitTestMainScripts[props.moduleType].subTitle}
       </Typography>

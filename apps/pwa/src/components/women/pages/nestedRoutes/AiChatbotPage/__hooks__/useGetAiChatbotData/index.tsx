@@ -9,8 +9,8 @@ import { AiChatbotDataResponseType } from './type';
 const useGetAiChatbotData = () => {
   const { getQuery, newQuery } = useCustomReactQuery(['historyAiChat']);
   const { getQueryParams } = useQueryParamsHandler();
-  const itemIdData = getQueryParams('itemId');
-  const categoryIdData = getQueryParams('categoryId');
+  const itemIdData = getQueryParams('promptItemId');
+  const categoryIdData = getQueryParams('promptCategoryId');
 
   const api =
     categoryIdData && itemIdData
@@ -39,7 +39,7 @@ const useGetAiChatbotData = () => {
     }
   }, [api]);
 
-  return { isLoading, aiChatData };
+  return { isLoading, aiChatData, itemIdData, categoryIdData };
 };
 
 export default useGetAiChatbotData;

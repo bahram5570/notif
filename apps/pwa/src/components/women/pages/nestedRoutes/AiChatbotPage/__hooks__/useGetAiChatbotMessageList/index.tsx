@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { PROMPT_TEXT } from '@constants/ai.constants';
+import { removeSessionStoragePromptText } from '@utils/aiChatbot';
+
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 
 import { RoleEnum } from '../useGetAiChatbotData/enum';
@@ -13,7 +14,7 @@ const useGetAiChatbotMessageList = () => {
 
   const aiChatMessageList = getQuery<{ data: ChatItemType[] }>({ queryKey: ['AiChatMessageList'] });
 
-  const addChatHandler: AddChatHandlerType = (chat) => {
+  const addChatHandler: AddChatHandlerType = ({ chat, imageId }) => {
     const newUserChat: ChatItemType = {
       dislike: false,
       like: false,
@@ -21,6 +22,7 @@ const useGetAiChatbotMessageList = () => {
       role: RoleEnum.User,
       text: chat,
       isAnswered: false,
+      media: imageId ?? [],
     };
 
     const queryData = aiChatMessageList?.data;
@@ -30,7 +32,7 @@ const useGetAiChatbotMessageList = () => {
     const payload = combined.push(newUserChat);
 
     updateQuery({ queryKey: ['AiChatMessageList'], payload: { data: combined } });
-    sessionStorage.removeItem(PROMPT_TEXT);
+    removeSessionStoragePromptText();
   };
 
   const updateChatHandler: UpdateChatHandlerType = (messages, messageId) => {
@@ -54,6 +56,7 @@ const useGetAiChatbotMessageList = () => {
         dislike: false,
         like: false,
         messageId,
+        media: [],
       });
     }
     updateQuery({ queryKey: ['AiChatMessageList'], payload: { data: updatedChats } });

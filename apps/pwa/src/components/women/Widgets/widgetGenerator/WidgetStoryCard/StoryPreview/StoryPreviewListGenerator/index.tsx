@@ -87,7 +87,7 @@ const StoryPreviewListGenerator = ({
           )}
 
           {storySlideProps.ctaButton !== null && (
-            <div className="mt-auto p-4 pb-8 z-20">
+            <div className="mt-auto p-4 pb-16 z-20">
               <Button
                 size="medium"
                 variant="fill"

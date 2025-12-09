@@ -42,10 +42,10 @@ const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGenerat
         }}
         className="relative p-[2px] rounded-full overflow-hidden flex items-center justify-center"
       >
-        <CustomImage src={coverImage} width={'100%'} height={'100%'} />
+        <CustomImage src={coverImage} width={'100%'} height={'100%'} style={{opacity: isViewed ? 0.5 : 1}} />
 
         <div
-          style={{ borderColor: isViewed ? colors.Surface_Outline : colors.PrimaryWoman_Primary }}
+          style={{ borderColor: isViewed ? colors.Surface_Outline : colors.PrimaryWoman_Primary, opacity: isViewed ? 0.2 : 1 }}
           className={`absolute top-0 left-0 right-0 bottom-0 border-[1.5px] rounded-full 
             ${isLoading ? 'animate-spin !border-t-transparent' : ''}
           `}

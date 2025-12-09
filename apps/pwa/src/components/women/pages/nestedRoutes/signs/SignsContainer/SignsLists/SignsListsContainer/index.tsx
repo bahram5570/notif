@@ -17,11 +17,11 @@ import { SignsListsContainerProps } from './types';
 const slidesList = Object.entries(SIGNS_LIST);
 slidesList.sort((a, b) => a[1].order - b[1].order);
 
-const SignsListsContainer = ({ info, selectHandler }: SignsListsContainerProps) => {
+const SignsListsContainer = ({ info, selectHandler, updateSingSelectedList }: SignsListsContainerProps) => {
   const hasTestKits = [DayTypeEnums.Pregnancy, DayTypeEnums.SecondaryPregnancy].includes(info.dayType);
 
   return (
-    <div className="!flex flex-col gap-4 px-4">
+    <div className="flex flex-col gap-4 px-4">
       {hasTestKits && (
         <div className="flex flex-col gap-3">
           <CustomContainer
@@ -62,6 +62,7 @@ const SignsListsContainer = ({ info, selectHandler }: SignsListsContainerProps) 
             signs={signItems[1].signs}
             selectHandler={selectHandler}
             category={Number(signItems[0])}
+            updateSingSelectedList={updateSingSelectedList}
           />
         );
       })}

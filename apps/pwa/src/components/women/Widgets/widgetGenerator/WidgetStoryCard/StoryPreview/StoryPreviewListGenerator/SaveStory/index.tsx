@@ -22,7 +22,7 @@ const SaveStory = ({ selectHandler, isBookmarked }: SaveStoryProps) => {
 
   return (
     <div
-      className="absolute left-4 bottom-8 w-12 h-12 flex items-center justify-center cursor-pointer z-[30]"
+      className="absolute left-4 bottom-4 w-12 h-12 flex items-center justify-center cursor-pointer z-[30]"
       onClick={isSavedHandler}
       id="StoryBookMarked"
     >

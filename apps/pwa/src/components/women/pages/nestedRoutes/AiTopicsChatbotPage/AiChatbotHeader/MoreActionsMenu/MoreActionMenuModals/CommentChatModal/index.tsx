@@ -10,9 +10,9 @@ import useTheme from '@hooks/useTheme';
 import useSubmit from './__hooks__/useSubmit';
 import { CommentChatModalPropsType } from './type';
 
-const CommentChatModal = ({ onCloseModal, chatId }: CommentChatModalPropsType) => {
+const CommentChatModal = ({ onCloseModal, chatId, categoryIdData, itemIdData }: CommentChatModalPropsType) => {
   const { colors, typography } = useTheme();
-  const { isLoading, submitHandler } = useSubmit();
+  const { isLoading, submitHandler } = useSubmit({ categoryIdData, itemIdData });
   const [description, setDescription] = useState<string>('');
 
   const valueHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {

@@ -12,7 +12,7 @@ const GeneratorTopicCardList = ({ topics, categoryId, usedTopics = false }: Gene
     pageNavigationHandler({
       showProgressBar: true,
       id: `chatbot-${id}`,
-      linkTo: `/protected/aiChatbot?itemId=${id}&categoryId=${categoryId}`,
+      linkTo: `/protected/aiChatbot?promptItemId=${id}&promptCategoryId=${categoryId}`,
     });
   };
 
