@@ -19,7 +19,7 @@ const ShortcutItem = (props: ShortcutItemPropsType) => {
           textAlign="center"
           className="text-center min-h-[40px]"
         >
-          {props.description}
+          {props.title}
         </Typography>
       </div>
     </div>
