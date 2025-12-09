@@ -66,15 +66,17 @@ const ResultWomanDayPage = () => {
           />
         )}
         {!isLoading && link && (
-          <div
-            className="!mt-4 rounded-xl border w-fit justify-self-center flex gap-x-6 items-center py-3 px-[14px] cursor-pointer"
-            style={{ borderColor: COLORS_LIST.Neutral_Surface }}
-            onClick={() => copylink(link)}
-          >
-            <CustomTypography fontSize="Body_Large" tagType="p" color={'Surface_Outline'}>
-              کپی لینک
-            </CustomTypography>
-            <Copy />
+          <div className="flex justify-center w-full">
+            <div
+              className="!mt-4 rounded-xl border w-fit justify-self-center flex gap-x-6 items-center py-3 px-[14px] cursor-pointer mb-5"
+              style={{ borderColor: COLORS_LIST.Neutral_Surface }}
+              onClick={() => copylink(link)}
+            >
+              <CustomTypography fontSize="Body_Large" tagType="p" color={'Surface_Outline'}>
+                کپی لینک
+              </CustomTypography>
+              <Copy />
+            </div>
           </div>
         )}
       </div>

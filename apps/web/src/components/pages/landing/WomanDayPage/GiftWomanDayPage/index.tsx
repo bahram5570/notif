@@ -19,7 +19,7 @@ const GiftWomanDayPage = () => {
   const { copylink } = useCopy({ toastMessage: 'کد تخفیف کپی شد' });
   const { giftData, isLoading } = useGetData({ giftUrl: gift || '' });
 
-  const userName = ' مامان ' + giftData?.partnerName + ' عزیزم ' || '';
+  const userName = `${giftData?.type === 0 ? ' مامان ' : ''}` + giftData?.partnerName + ' عزیزم ' || '';
 
   return (
     <div className="w-full max-w-[500px]">
@@ -65,15 +65,17 @@ const GiftWomanDayPage = () => {
         )}
 
         {!isLoading && giftData?.code && (
-          <div
-            className="!mt-4 rounded-xl border w-fit justify-self-center flex gap-x-6 items-center py-3 px-[14px] cursor-pointer"
-            style={{ borderColor: COLORS_LIST.Neutral_Surface }}
-            onClick={() => copylink(giftData?.code || '')}
-          >
-            <CustomTypography fontSize="Body_Large" tagType="p" color={'Neutral_OnBackground'}>
-              {' کد تخفیف: ' + giftData?.code}
-            </CustomTypography>
-            <Copy />
+          <div className="flex justify-center w-full">
+            <div
+              className="!mt-4 rounded-xl border w-fit justify-self-center flex gap-x-6 items-center py-3 px-[14px] cursor-pointer"
+              style={{ borderColor: COLORS_LIST.Neutral_Surface }}
+              onClick={() => copylink(giftData?.code || '')}
+            >
+              <CustomTypography fontSize="Body_Large" tagType="p" color={'Neutral_OnBackground'}>
+                {' کد تخفیف: ' + giftData?.code}
+              </CustomTypography>
+              <Copy />
+            </div>
           </div>
         )}
 
