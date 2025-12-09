@@ -7,12 +7,12 @@ const imageList = [
   'https://weareimpo.ir',
   'https://media.weareimpo.ir',
   'https://stage.weareimpo.ir',
+  'http://195.88.208.143:8080',
   'https://c328642.parspack.net',
   'https://cdn.downloadefilm.ir',
   'https://encrypted-tbn0.gstatic.com',
   'https://s3.ir-tbz-sh1.arvanstorage.ir',
   'https://impo.s3.ir-tbz-sh1.arvanstorage.ir',
-  'http://195.88.208.143:8080',
 ];
 
 const remotePatternMaker = (list) => {
