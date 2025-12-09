@@ -15,9 +15,7 @@ const AiChatbotInput = ({
   files,
   hasFile,
   imageFile,
-  removeFileHandler,
   disableBtn,
-  retryUploadHandler,
   btnTopHandler,
   closeHandler,
 }: AiChatbotInputPropsType) => {
@@ -41,13 +39,7 @@ const AiChatbotInput = ({
       <div
         className={`flex flex-col   glass-card !bg-white/60 shadow-sm ${hasFile ? 'rounded-3xl py-3 px-[2.5px] gap-3' : isMultiLine ? 'rounded-3xl py-2' : 'rounded-full py-2'} ${isShowFileInput ? 'w-72' : 'w-full'} `}
       >
-        {hasFile && (
-          <AiChatbotFilePreview
-            files={files}
-            removeFileHandler={removeFileHandler}
-            retryUploadHandler={retryUploadHandler}
-          />
-        )}
+        {hasFile && <AiChatbotFilePreview />}
 
         <AiChatbotText
           hintPromptText={hintPromptText}

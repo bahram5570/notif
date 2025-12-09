@@ -76,8 +76,6 @@ const AiChatbotFooter = (props: AiChatbotFooterPropsType) => {
               {...props}
               btnTopHandler={btnTopHandler}
               imageFile={imageFile}
-              retryUploadHandler={retryUploadHandler}
-              removeFileHandler={removeFileHandler}
               hasFile={hasFile}
               files={files}
               disableBtn={disableBtn}
@@ -96,7 +94,7 @@ const AiChatbotFooter = (props: AiChatbotFooterPropsType) => {
           </div>
         )}
       </div>
-      <UploadImagesMoreAction isOpen={isOpenMoreAction} closeHandler={closeHandler} fileDataHandler={fileDataHandler} />
+      <UploadImagesMoreAction isOpen={isOpenMoreAction} closeHandler={closeHandler} />
     </>
   );
 };

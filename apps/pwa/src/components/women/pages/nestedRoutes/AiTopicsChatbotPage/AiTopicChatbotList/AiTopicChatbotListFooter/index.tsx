@@ -25,8 +25,6 @@ const AiTopicChatbotListFooter = ({ inputPlaceholder }: { inputPlaceholder: stri
           files={[]}
           hasFile={false}
           imageFile={[]}
-          removeFileHandler={() => {}}
-          retryUploadHandler={() => {}}
           btnTopHandler={() => {}}
         />
       </div>
