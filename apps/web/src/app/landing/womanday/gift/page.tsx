@@ -1,5 +1,4 @@
 import GiftWomanDayPage from '@components/pages/landing/WomanDayPage/GiftWomanDayPage';
-import ResultWomanDayPage from '@components/pages/landing/WomanDayPage/ResultWomanDayPage';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
