@@ -17,7 +17,7 @@ const ResultWomanDayPage = () => {
   const { getQueryParams } = useQueryParamsHandler();
   const gift = getQueryParams('gift');
   const { copylink } = useCopy({ toastMessage: 'لینک کپی شد' });
-  const { giftData } = useGetData({ giftUrl: gift || '' });
+  const { giftData, isLoading } = useGetData({ giftUrl: gift || '' });
 
   const userName = giftData?.selfName + ' عزیز ' || '';
 
@@ -25,11 +25,27 @@ const ResultWomanDayPage = () => {
 
   return (
     <div className="w-full max-w-[500px]">
-      <CustomImage src={giftData?.type === 0 ? mother : partner} alt="partner&mother" />
+      {isLoading && (
+        <div
+          className="w-full h-[600px] rounded-md animate-pulse flex justify-self-center mb-7"
+          style={{ backgroundColor: COLORS_LIST.Neutral_Surface }}
+        />
+      )}
+      {giftData?.type === 0 && <CustomImage src={mother} alt="partner&mother" />}
+      {giftData?.type === 1 && <CustomImage src={partner} alt="partner&mother" />}
       <div className="px-4">
-        <CustomTypography fontSize="Headline_Medium" tagType="p" className="text-center">
-          {userName}
-        </CustomTypography>
+        {isLoading && (
+          <div
+            className="w-[200px] h-[40px] rounded-md animate-pulse flex justify-self-center mb-4"
+            style={{ backgroundColor: COLORS_LIST.Neutral_Surface }}
+          />
+        )}
+        {!isLoading && giftData?.selfName && (
+          <CustomTypography fontSize="Headline_Medium" tagType="p" className="text-center">
+            {userName}
+          </CustomTypography>
+        )}
+
         <CustomTypography fontSize="Body_Large" tagType="p" className="text-center mt-2">
           کارت هدیه پارتنرت آماده شده. از طریق لینک زیر میتونی اونو کپی کنی و برای پارتنرت بفرستی.
         </CustomTypography>
@@ -42,16 +58,25 @@ const ResultWomanDayPage = () => {
             مشاهده کارت هدیه
           </CustomTypography>
         </CustomLink>
-        <div
-          className="!mt-4 rounded-xl border w-fit justify-self-center flex gap-x-6 items-center py-3 px-[14px] cursor-pointer"
-          style={{ borderColor: COLORS_LIST.Neutral_Surface }}
-          onClick={() => copylink(link)}
-        >
-          <CustomTypography fontSize="Body_Large" tagType="p" color={'Surface_Outline'}>
-            کپی لینک
-          </CustomTypography>
-          <Copy />
-        </div>
+
+        {isLoading && (
+          <div
+            className="w-[150px] h-[50px] rounded-md animate-pulse flex justify-self-center mb-4 !mt-4"
+            style={{ backgroundColor: COLORS_LIST.Neutral_Surface }}
+          />
+        )}
+        {!isLoading && link && (
+          <div
+            className="!mt-4 rounded-xl border w-fit justify-self-center flex gap-x-6 items-center py-3 px-[14px] cursor-pointer"
+            style={{ borderColor: COLORS_LIST.Neutral_Surface }}
+            onClick={() => copylink(link)}
+          >
+            <CustomTypography fontSize="Body_Large" tagType="p" color={'Surface_Outline'}>
+              کپی لینک
+            </CustomTypography>
+            <Copy />
+          </div>
+        )}
       </div>
     </div>
   );

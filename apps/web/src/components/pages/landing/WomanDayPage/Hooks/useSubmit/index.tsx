@@ -27,7 +27,7 @@ const useSubmit = () => {
       const data = await response.json();
 
       if (data.isValid) {
-        router.replace(data.backUrl);
+        router.push(data.backUrl);
       } else {
         onToast({ type: 'error', message: 'خطا در ارسال اطلاعات' });
       }
