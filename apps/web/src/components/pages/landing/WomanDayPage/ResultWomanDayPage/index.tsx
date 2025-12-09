@@ -46,9 +46,17 @@ const ResultWomanDayPage = () => {
           </CustomTypography>
         )}
 
-        <CustomTypography fontSize="Body_Large" tagType="p" className="text-center mt-2">
-          کارت هدیه پارتنرت آماده شده. از طریق لینک زیر میتونی اونو کپی کنی و برای پارتنرت بفرستی.
-        </CustomTypography>
+        {giftData?.type === 0 && (
+          <CustomTypography fontSize="Body_Large" tagType="p" className="text-center mt-2">
+            کارت هدیه مادرت آماده شده. از طریق لینک زیر میتونی اونو کپی کنی و برای مادرت بفرستی.
+          </CustomTypography>
+        )}
+        {giftData?.type === 1 && (
+          <CustomTypography fontSize="Body_Large" tagType="p" className="text-center mt-2">
+            کارت هدیه پارتنرت آماده شده. از طریق لینک زیر میتونی اونو کپی کنی و برای پارتنرت بفرستی.
+          </CustomTypography>
+        )}
+
         <CustomLink
           href={link}
           className="mt-9 block w-full rounded-xl py-[13.5px] !text-white text-center "
@@ -73,7 +81,7 @@ const ResultWomanDayPage = () => {
               onClick={() => copylink(link)}
             >
               <CustomTypography fontSize="Body_Large" tagType="p" color={'Surface_Outline'}>
-                کپی لینک
+                کپی لینک کارت هدیه
               </CustomTypography>
               <Copy />
             </div>
