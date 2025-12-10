@@ -56,8 +56,6 @@ const AiChatbotFooter = (props: AiChatbotFooterPropsType) => {
     };
   }, [btnTop]);
 
-  console.log(isOpenMoreAction);
-
   return (
     <>
       <div

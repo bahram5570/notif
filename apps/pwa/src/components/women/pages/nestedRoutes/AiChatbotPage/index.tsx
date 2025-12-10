@@ -41,7 +41,6 @@ const AiChatbotPage = () => {
     }
   }, [chatData]);
 
-  console.log(chatData);
   return (
     <>
       {isLoading && !chatData && <AiChatbotSkeleton />}
