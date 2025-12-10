@@ -3,20 +3,29 @@ import { useState } from 'react';
 import useApi from '@hooks/useApi';
 import useCustomToast from '@hooks/useCustomToast';
 
-import { FileDataHandlerTypes, FileResponseTypes, UseFileUploadPropsType } from './type';
+import { UploadItemType } from '../../type';
+import { FileDataHandlerTypes, FileResponseTypes } from './type';
 
 const MAX_SIZE = 10 * 1024 * 1024;
-const useUploadFile = ({ filesHandler }: UseFileUploadPropsType) => {
+const useUploadFile = () => {
+  const [files, setFiles] = useState<UploadItemType[]>([]);
   const { onToast } = useCustomToast();
-
   const [lastFile, setLastFile] = useState<File | null>(null);
+
+  const successHandler = (v: FileResponseTypes) => {
+    setFiles((prev) => prev.map((f) => (f.loading ? { ...f, loading: false, url: v.name } : f)));
+  };
+
+  const errorHandler = () => {
+    setFiles((prev) => prev.map((f) => (f.loading ? { ...f, loading: false, error: true } : f)));
+  };
 
   const { callApi } = useApi<FileResponseTypes>({
     api: 'feature/ai/media',
     contentType: 'multipart/form-data',
     method: 'POST',
-    // onSuccess: successHandler,
-    // onError: errorHandler,
+    onSuccess: successHandler,
+    onError: errorHandler,
   });
 
   const uploadFile = (file: File) => {
@@ -37,7 +46,7 @@ const useUploadFile = ({ filesHandler }: UseFileUploadPropsType) => {
     }
 
     setLastFile(selected);
-    // filesHandler((prev) => [...prev, { url: URL.createObjectURL(selected), loading: true, error: false }]);
+    setFiles((prev) => [...prev, { url: URL.createObjectURL(selected), loading: true, error: false }]);
 
     uploadFile(selected);
   };
@@ -45,12 +54,16 @@ const useUploadFile = ({ filesHandler }: UseFileUploadPropsType) => {
   const retryUploadHandler = () => {
     if (!lastFile) return;
 
-    // filesHandler((prev) => prev.map((f) => (f.error ? { ...f, error: false, loading: true } : f)));
+    setFiles((prev) => prev.map((f) => (f.error ? { ...f, error: false, loading: true } : f)));
 
     uploadFile(lastFile);
   };
 
-  return { fileDataHandler, retryUploadHandler };
+  const removeFileHandler = (url: string) => {
+    setFiles((prev) => prev.filter((f) => f.url !== url));
+  };
+
+  return { fileDataHandler, retryUploadHandler, removeFileHandler, files };
 };
 
 export default useUploadFile;

@@ -17,7 +17,7 @@ const WelcomingLayout = ({ children, lottieRef }: WelcomingLayoutPropsType) => {
       className="flex flex-col min-h-[100dvh] overflow-y-auto"
     >
       <>
-        <div style={{ paddingTop: HEADER_HEIGHT - 20 }} className="h-full relative">
+        <div style={{ paddingTop: HEADER_HEIGHT - 20 }} className="h-full ">
           <div ref={lottieRef} className="flex-1 flex items-center justify-center overflow-hidden">
             <LottieJson animationData={chatbotJson} loop={true} autoPlay={true} width={500} />
           </div>

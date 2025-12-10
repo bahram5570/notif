@@ -16,13 +16,9 @@ const AiTopicChatbotListFooter = ({ inputPlaceholder }: { inputPlaceholder: stri
     >
       <div className="pt-4 pb-5  w-full">
         <AiChatbotInput
-          isShowFileInput={false}
           hintPromptText={inputPlaceholder || ''}
           isLoading={newLoading}
           submitHandler={submitHandler}
-          disableBtn={false}
-          closeHandler={() => {}}
-          files={[]}
           hasFile={false}
           imageFile={[]}
           btnTopHandler={() => {}}

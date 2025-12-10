@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
-import { RoleEnum } from '../__hooks__/useGetAiChatbotData/enum';
+import { RoleEnum } from '@providers/__aiChatbot__/AiChatHistoryManagerProvider/__hook__/useGetData/enum';
+
 import AiChatbotMessageListLoading from './AiChatbotMessageListLoading';
 import AiMessage from './AiMessage';
 import UserMessage from './UserMessage';

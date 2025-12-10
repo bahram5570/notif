@@ -1,9 +1,9 @@
 'use client';
 
-import { createContext, useState } from 'react';
+import { createContext } from 'react';
 
 import useUploadFile from './__hooks__/useUploadFile';
-import { AiFileManagerProviderContextPropsType, UploadItemType } from './type';
+import { AiFileManagerProviderContextPropsType } from './type';
 
 export const AiFileManagerProviderContext = createContext<AiFileManagerProviderContextPropsType>({
   files: [],
@@ -13,12 +13,7 @@ export const AiFileManagerProviderContext = createContext<AiFileManagerProviderC
 });
 
 const AiFileManagerProvider = ({ children }: { children: React.ReactNode }) => {
-  const [files, setFiles] = useState<UploadItemType[]>([]);
-  const { fileDataHandler, retryUploadHandler } = useUploadFile({ filesHandler: setFiles });
-
-  const removeFileHandler = (url: string) => {
-    setFiles((prev) => prev.filter((f) => f.url !== url));
-  };
+  const { fileDataHandler, retryUploadHandler, files, removeFileHandler } = useUploadFile();
 
   return (
     <AiFileManagerProviderContext.Provider

@@ -8,10 +8,6 @@ type InputItemType = Pick<
 
 export interface AiChatbotInputPropsType extends InputItemType {
   btnTopHandler?: () => void;
-
   imageFile: string[];
-  files: UploadItem[];
   hasFile: boolean;
-  disableBtn: boolean;
-  closeHandler: () => void;
 }

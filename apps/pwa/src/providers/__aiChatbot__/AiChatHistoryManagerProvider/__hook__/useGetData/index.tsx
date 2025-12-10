@@ -1,13 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import { AiChatbotDataResponseType } from './type';
 
-const useGetAiChatbotData = () => {
-  const { getQuery, newQuery } = useCustomReactQuery(['historyAiChat']);
+const useGetData = () => {
   const { getQueryParams } = useQueryParamsHandler();
   const itemIdData = getQueryParams('promptItemId');
   const categoryIdData = getQueryParams('promptCategoryId');
@@ -24,22 +22,13 @@ const useGetAiChatbotData = () => {
     fetchOnMount: false,
   });
 
-  const aiChatData = getQuery<AiChatbotDataResponseType>({ queryKey: ['historyAiChat'] });
-
-  useEffect(() => {
-    if (data) {
-      newQuery({ queryKey: ['historyAiChat'], payload: data });
-      newQuery({ queryKey: ['AiChatMessageList'], payload: { data: data.chats } });
-    }
-  }, [data]);
-
   useEffect(() => {
     if (api.length > 0) {
       callApi();
     }
   }, [api]);
 
-  return { isLoading, aiChatData, itemIdData, categoryIdData };
+  return { isLoading, data, itemIdData, categoryIdData };
 };
 
-export default useGetAiChatbotData;
+export default useGetData;
