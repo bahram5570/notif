@@ -54,7 +54,7 @@ const useCalendarHeading = ({ monthsList, initialSlide, resetKey }: UseCalendarH
 
   const headingScript = `${currentMonthNames(+date[1] - 1)} ${date[0]}`;
 
-  return { swiperRef, navigateHandler, slideHandler, headingScript };
+  return { swiperRef, navigateHandler, slideHandler, slideIndex, headingScript };
 };
 
 export default useCalendarHeading;

@@ -23,7 +23,7 @@ const CalendarContainer = ({
     selectedDateHandler,
   });
 
-  const { swiperRef, navigateHandler, slideHandler, headingScript } = useCalendarHeading({
+  const { swiperRef, navigateHandler, slideHandler, slideIndex, headingScript } = useCalendarHeading({
     resetKey,
     initialSlide,
     monthsList: reverseMonthsList,
@@ -41,11 +41,23 @@ const CalendarContainer = ({
         onSwiper={(s) => (swiperRef.current = s)}
         onSlideChange={(s) => slideHandler(s.activeIndex)}
       >
-        {reverseMonthsList.map((item, index) => (
-          <SwiperSlide key={index}>
-            <MonthGenerator monthList={item[1]} selectedDate={selectedDate} selectedDateHandler={selectedDateHandler} />
-          </SwiperSlide>
-        ))}
+        {reverseMonthsList.map((item, index) => {
+          const isVisibleSlideIndex = [slideIndex - 1, slideIndex, slideIndex + 1].includes(index);
+
+          return (
+            <SwiperSlide key={index}>
+              {isVisibleSlideIndex ? (
+                <MonthGenerator
+                  monthList={item[1]}
+                  selectedDate={selectedDate}
+                  selectedDateHandler={selectedDateHandler}
+                />
+              ) : (
+                <></>
+              )}
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
 
       {hasResetBtn && <ResetBtn selectedDate={selectedDate} resetKeyHandler={resetKeyHandler} />}
