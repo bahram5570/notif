@@ -1,12 +1,14 @@
 import { handleActivationCrLoggin, handleUserStatus } from '@services/loginServices';
 import { paymentStatusService } from '@services/paymentServices';
 
+import { UserCookieTypes } from '@actions/cookie.actions';
 import { PARTNER_CODE_SHOW_INPUT_QUERY_NAME } from '@components/activation/pages/PartnerCodeContainer/constants';
 import { USER_COOKIE_NAME } from '@constants/cookie.constants';
 import { ACTIVATION_CR_REGISTER_QUERY_NAME } from '@constants/routes.constants';
 import { ACTIVATION_FIRST_PATH_OF_SECTION_1 } from '@providers/__activation__/ActivationProvider/__constants__/activationContants';
+import * as Sentry from '@sentry/nextjs';
 import { cookies } from 'next/headers';
-import { type NextRequest, NextResponse, userAgent } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';
 
 export const middleware = async (request: NextRequest) => {
   const response = NextResponse.next();
@@ -27,12 +29,18 @@ export const middleware = async (request: NextRequest) => {
     return response;
   }
 
+  const userCookie = cookies().get(USER_COOKIE_NAME);
+
+  // # Set 'loginId' for Sentry
+  if (userCookie) {
+    const userData = JSON.parse(userCookie.value) as UserCookieTypes;
+    Sentry.setUser({ loginId: userData.loginId });
+  }
+
   // # Detects 'activationCrRegister' query params to identify users redirected from website with completed registration
   if (queryParams.includes(ACTIVATION_CR_REGISTER_QUERY_NAME)) {
     return await handleActivationCrLoggin({ response, request });
   }
-
-  const userCookie = cookies().get(USER_COOKIE_NAME);
 
   const isActivationCrPage = pathname.startsWith('/activationCr');
   const isActivationPage = pathname.startsWith('/activation');
