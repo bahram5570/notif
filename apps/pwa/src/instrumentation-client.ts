@@ -1,10 +1,5 @@
-import * as Sentry from '@sentry/nextjs';
+import { sentryConfig } from '@lib/sentry';
 
-Sentry.init({
-  dsn: 'https://686f5c4241a605cb1b22a1217ccb0202@sentry.weareimpo.ir/6',
-  tracesSampleRate: 1,
-  enableLogs: true,
-  sendDefaultPii: true,
-});
+const sentry = sentryConfig();
 
-export const onRouterTransitionStart = Sentry.captureRouterTransitionStart;
+export const onRouterTransitionStart = sentry?.captureRouterTransitionStart;
