@@ -63,7 +63,11 @@ const useUploadFile = () => {
     setFiles((prev) => prev.filter((f) => f.url !== url));
   };
 
-  return { fileDataHandler, retryUploadHandler, removeFileHandler, files };
+  const resetFiles = () => {
+    setFiles([]);
+  };
+
+  return { fileDataHandler, retryUploadHandler, removeFileHandler, files, resetFiles };
 };
 
 export default useUploadFile;

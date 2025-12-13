@@ -1,7 +1,7 @@
+import { CommentPropsType } from '../AiTopicList/type';
 import { TopicType } from '../__hooks__/useGetTopicList/type';
 
-export interface GeneratorTopicCardListPropsType {
+export interface GeneratorTopicCardListPropsType extends Pick<CommentPropsType, 'onLinkHandler'> {
   topics: TopicType[];
-  categoryId: string;
   usedTopics?: boolean;
 }

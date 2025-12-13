@@ -4,26 +4,22 @@ import { useEffect } from 'react';
 
 import { getSessionStoragePromptText } from '@utils/aiChatbot';
 
+import AiChatbotHeader from '@components/ui/__AiChatbot__/AiChatbotHeader';
 import useAichatbotHistoryManager from '@hooks/__aichatbot__/useAichatbotHistoryManager';
 
-import AiChatbotHeader from '../AiTopicsChatbotPage/AiChatbotHeader';
-import { WelcomingTypeEnum } from '../AiTopicsChatbotPage/WelcomingContainer/enum';
 import AiChatbotEmptyState from './AiChatbotEmptyState';
 import AiChatbotFooter from './AiChatbotFooter';
 import AiChatbotMessageList from './AiChatbotMessageList';
 import AiChatbotMessageListLayout from './AiChatbotMessageList/AiChatbotMessageListLayout';
 import ErrorMessage from './AiChatbotMessageList/ErrorMessage';
 import AiChatbotSkeleton from './AiChatbotSkeleton';
-import useCurrentDate from './__hooks__/useCurrentDate';
 import useDisableDeleteBtn from './__hooks__/useDisableDeleteBtn';
 import useSubmit from './__hooks__/useSubmit';
 
 const AiChatbotPage = () => {
-  const { categoryIdData, chatData, isLoading, itemIdData } = useAichatbotHistoryManager();
-
-  const { isLoading: newLoading, submitHandler, showErrorMessage, onErrorHandler, resetkey } = useSubmit();
+  const { chatData, isLoading } = useAichatbotHistoryManager();
+  const { isLoading: newLoading, submitHandler, showErrorMessage, onErrorHandler } = useSubmit();
   const { disableDeleteBtn, disableDeleteBtnHandler } = useDisableDeleteBtn({ aiChatData: chatData });
-  const { currentDate } = useCurrentDate({ mediaLimitDate: chatData?.mediaLimitDate });
 
   const defaultQustionHandler = (text: string) => {
     submitHandler({ prompt: text });
@@ -47,17 +43,13 @@ const AiChatbotPage = () => {
       {!isLoading && chatData && (
         <>
           <AiChatbotHeader
-            welcomingType={WelcomingTypeEnum.ChatbotMessage}
             showActionMenu
             disableDeleteBtn={disableDeleteBtn}
             chatTitle={chatData.chatTitle}
-            chatId={chatData.chatId}
-            categoryIdData={categoryIdData}
-            itemIdData={itemIdData}
             currentImageUsage={chatData.currentImageUsage}
             imageType={chatData.imageType}
             imageUsageLimit={chatData.imageUsageLimit}
-            mediaLimitDate={currentDate}
+            mediaLimitDate={chatData.mediaLimitDate}
           />
 
           {!hasChatData && (
@@ -90,7 +82,6 @@ const AiChatbotPage = () => {
             isLoading={newLoading}
             hasChatData={hasChatData}
             isShowFileInput={chatData.imageType}
-            key={resetkey}
           />
         </>
       )}

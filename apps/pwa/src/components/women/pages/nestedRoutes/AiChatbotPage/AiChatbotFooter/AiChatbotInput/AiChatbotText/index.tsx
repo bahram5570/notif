@@ -14,21 +14,21 @@ const AiChatbotText = ({
   hintPromptText,
   isLoading,
   clickHandler,
-  btnTopHandler,
+  btnBottomHandler,
   checkMultiLine,
 }: AiChatbotTextPropsType) => {
   const { colors, typography } = useTheme();
-
+  const [btnTop, setBtnTop] = useState(false);
   const textRef = useRef<HTMLTextAreaElement | null>(null);
   const [chatText, setChatText] = useState('');
 
   const onClick = () => {
     clickHandler(chatText);
+    setChatText('');
   };
 
   const onBlur = () => {
-    if (!btnTopHandler) return;
-    btnTopHandler();
+    setBtnTop(false);
   };
 
   const changeTextHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -43,7 +43,7 @@ const AiChatbotText = ({
   };
 
   const handleFocus = () => {
-    if (btnTopHandler) btnTopHandler();
+    setBtnTop(true);
   };
 
   useEffect(() => {
@@ -56,6 +56,26 @@ const AiChatbotText = ({
       checkMultiLine(totalLines > 2);
     }
   }, [chatText]);
+
+  useEffect(() => {
+    if (!btnTop) return;
+
+    const vv = window.visualViewport;
+    if (!vv) return;
+
+    const updatePosition = () => {
+      const keyboardHeight = window.innerHeight - (vv.height + vv.offsetTop);
+      if (btnBottomHandler) btnBottomHandler(keyboardHeight > 0 ? keyboardHeight : 0);
+    };
+
+    vv.addEventListener('resize', updatePosition);
+    vv.addEventListener('scroll', updatePosition);
+
+    return () => {
+      vv.removeEventListener('resize', updatePosition);
+      vv.removeEventListener('scroll', updatePosition);
+    };
+  }, [btnTop]);
 
   return (
     <div className="flex-1 flex flex-row-reverse justify-end items-end">

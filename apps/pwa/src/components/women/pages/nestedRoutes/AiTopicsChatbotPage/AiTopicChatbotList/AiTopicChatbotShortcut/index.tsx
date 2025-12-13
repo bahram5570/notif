@@ -1,22 +1,11 @@
 import Typography from '@components/ui/Typography';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useTheme from '@hooks/useTheme';
 
 import ShortcutItem from './ShortcutItem';
 import { AiTopicChatbotShortcutPropsType } from './type';
 
-const AiTopicChatbotShortcut = ({ shortcut, categoryId }: AiTopicChatbotShortcutPropsType) => {
+const AiTopicChatbotShortcut = ({ shortcut, onLinkHandler }: AiTopicChatbotShortcutPropsType) => {
   const { colors } = useTheme();
-  const { pageNavigationHandler } = usePageNavigationLoading();
-
-  const onLinkHandler = (id: string) => {
-    pageNavigationHandler({
-      showProgressBar: true,
-      id: `chatbot-${id}`,
-
-      linkTo: `/protected/aiChatbot?promptItemId=${id}&promptCategoryId=${categoryId}`,
-    });
-  };
 
   return (
     <div className="flex flex-col rounded-3xl gap-3 px-4 py-6" style={{ backgroundColor: colors.White }}>

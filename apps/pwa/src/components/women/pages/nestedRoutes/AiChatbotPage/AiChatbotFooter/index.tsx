@@ -1,60 +1,27 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 import Typography from '@components/ui/Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-import useAiFileManager from '@hooks/__aichatbot__/useAiFileManager';
 
 import AiChatbotDeactiveMessage from './AiChatbotDeactiveMessage';
 import AiChatbotInput from './AiChatbotInput';
-import AiChatbotUploadImage from './AiChatbotInput/AiChatbotUploadImage';
 import UploadImagesMoreAction from './AiChatbotInput/AiChatbotUploadImage/UploadImagesMoreAction';
 import { AiChatbotFooterPropsType } from './type';
 
 const AiChatbotFooter = (props: AiChatbotFooterPropsType) => {
   const [bottom, setBottom] = useState(0);
-  const [btnTop, setBtnTop] = useState(false);
+
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [isOpenMoreAction, setIsOpenMoreAction] = useState(false);
-  const { files } = useAiFileManager();
-
-  const imageFile = files.map((file) => file.url);
-  const hasFile = files && files.length > 0;
-
-  // const disableBtn = files.length === 3 || !activaMedia || hasMoreFile;
-  // const disableBtn = !activaMedia || hasMoreFile;
 
   const closeHandler = () => {
-    // if (disableBtn) {
-    //   return;
-    // }
     setIsOpenMoreAction((prev) => !prev);
   };
   const showInput = props.isActive ? true : false;
 
-  const btnTopHandler = () => {
-    setBtnTop((prev) => !prev);
+  const btnBottomHandler = (v: number) => {
+    setBottom(v);
   };
-
-  useEffect(() => {
-    if (!btnTop) return;
-
-    const vv = window.visualViewport;
-    if (!vv) return;
-
-    const updatePosition = () => {
-      const keyboardHeight = window.innerHeight - (vv.height + vv.offsetTop);
-
-      setBottom(keyboardHeight > 0 ? keyboardHeight : 0);
-    };
-
-    vv.addEventListener('resize', updatePosition);
-    vv.addEventListener('scroll', updatePosition);
-
-    return () => {
-      vv.removeEventListener('resize', updatePosition);
-      vv.removeEventListener('scroll', updatePosition);
-    };
-  }, [btnTop]);
 
   return (
     <>
@@ -78,15 +45,12 @@ const AiChatbotFooter = (props: AiChatbotFooterPropsType) => {
         )}
         {showInput && (
           <div className="flex flex-col justify-center items-center">
-            <div className="flex w-full items-end justify-center px-4 gap-1 h-14">
-              <AiChatbotInput {...props} btnTopHandler={btnTopHandler} imageFile={imageFile} hasFile={hasFile} />
-              {props.isShowFileInput && <AiChatbotUploadImage closeHandler={closeHandler} disableBtn={false} />}
-            </div>
+            <AiChatbotInput {...props} btnBottomHandler={btnBottomHandler} />
 
             <div
               className="flex justify-center items-center  h-10  w-full  "
               style={{
-                background: `${props.hasChatData ? 'rgb(239 241 254)' : btnTop > true ? '#d5e0fc' : 'inherit'}`,
+                background: `${props.hasChatData ? 'rgb(239 241 254)' : bottom > 0 ? '#d5e0fc' : 'inherit'}`,
               }}
             >
               <Typography scale="Lable" size="Small" color="Surface_OnSurfaceVariant">

@@ -1,15 +1,11 @@
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 
-import AiChatbotHeader from '../AiChatbotHeader';
-import { WelcomingTypeEnum } from '../WelcomingContainer/enum';
-import AiTopicChatbotListFooter from './AiTopicChatbotListFooter';
 import AiTopicChatbotListSkeleton from './AiTopicChatbotListSkeleton';
 import { AiTopicChatbotListLayoutPropsType } from './type';
 
-const AiTopicChatbotListLayout = ({ children, isLoading, inputPlaceholder }: AiTopicChatbotListLayoutPropsType) => {
+const AiTopicChatbotListLayout = ({ children, isLoading }: AiTopicChatbotListLayoutPropsType) => {
   return (
     <>
-      <AiChatbotHeader welcomingType={WelcomingTypeEnum.TopicsPage} showActionMenu={true} />
       <div
         style={{
           background:
@@ -27,7 +23,6 @@ const AiTopicChatbotListLayout = ({ children, isLoading, inputPlaceholder }: AiT
           </div>
         )}
       </div>
-      <AiTopicChatbotListFooter inputPlaceholder={inputPlaceholder} />
     </>
   );
 };

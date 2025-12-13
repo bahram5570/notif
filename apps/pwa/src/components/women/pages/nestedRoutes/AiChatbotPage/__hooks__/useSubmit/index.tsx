@@ -1,50 +1,33 @@
 import { useEffect, useState } from 'react';
 
-import { getSessionStoragePromptText } from '@utils/aiChatbot';
-
 import useAichatbotHistoryManager from '@hooks/__aichatbot__/useAichatbotHistoryManager';
 import useApi from '@hooks/useApi';
 
-import useCurrentImageUsage from '../useCurrentImageUsage';
 import useEventSource from '../useEventSource';
 import useShowErrorMessage from '../useShowErrorMessage';
 import useStreamLoading from '../useStreamLoading';
 import { NewMessageResponse, SubmitHandlerType } from './type';
 
-let messageId: string;
-
 const useSubmit = () => {
-  const { categoryIdData, itemIdData, addChatHandler, updateChatHandler, updateObject } = useAichatbotHistoryManager();
+  const { categoryIdData, itemIdData, addChatHandler, updateChatHandler, updateObject, chatData } =
+    useAichatbotHistoryManager();
   const { showErrorMessage, showErrorMessageHandler } = useShowErrorMessage();
+  const [messageId, setMessageId] = useState('');
   const { streamLoading, streamLoadingHandler } = useStreamLoading();
-  const { updateImageCountHandler, imagesCount } = useCurrentImageUsage();
-
-  const [resetkey, setResetKey] = useState(Math.random());
 
   const { streamHandler, messages } = useEventSource({
     handelLoading: streamLoadingHandler,
     errorHandler: showErrorMessageHandler,
-    imagesCount,
   });
 
   const successHandler = (v: NewMessageResponse) => {
-    // updateQuery({
-    //   payload: {
-    //     ...historyAiChat,
-    //     isActive: v.isActive,
-    //     activeRating: v.activeRating,
-    //     deactiveMessage: v.deactiveMessage,
-    //     title: v.title,
-    //     deactiveButton: v.deactiveButton,
-    //     mediaLimitDate: v.mediaLimitDate,
-    //     activaMedia:
-    //       historyAiChat?.imageUsageLimit === historyAiChat?.currentImageUsage ? false : historyAiChat?.activaMedia,
-    //   },
+    const newObj = {
+      ...v,
+      activaMedia: chatData?.imageUsageLimit === chatData?.currentImageUsage ? false : chatData?.activaMedia,
+    };
 
-    // });
-
-    updateObject(v);
-    messageId = v.messageId;
+    updateObject(newObj);
+    setMessageId(v.messageId);
     streamHandler({ id: v.messageId });
   };
 
@@ -56,7 +39,6 @@ const useSubmit = () => {
   });
 
   const submitHandler: SubmitHandlerType = ({ prompt, imageId }) => {
-    setResetKey(Math.random());
     if (showErrorMessage) showErrorMessageHandler(false);
 
     addChatHandler({ chat: prompt, imageId: imageId });
@@ -78,6 +60,7 @@ const useSubmit = () => {
   };
 
   useEffect(() => {
+    if (!messages) return;
     updateChatHandler(messages, messageId);
   }, [messages]);
 
@@ -87,7 +70,7 @@ const useSubmit = () => {
 
   const isLoading = streamLoading;
 
-  return { submitHandler, isLoading, showErrorMessage, onErrorHandler, resetkey };
+  return { submitHandler, isLoading, showErrorMessage, onErrorHandler };
 };
 
 export default useSubmit;

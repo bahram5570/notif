@@ -1,6 +1,6 @@
 import { AiChatbotInputPropsType } from '../type';
 
-type ItemType = Pick<AiChatbotInputPropsType, 'hintPromptText' | 'isLoading' | 'btnTopHandler'>;
+type ItemType = Pick<AiChatbotInputPropsType, 'hintPromptText' | 'isLoading' | 'btnBottomHandler'>;
 
 export interface AiChatbotTextPropsType extends ItemType {
   clickHandler: (chatText: string) => void;

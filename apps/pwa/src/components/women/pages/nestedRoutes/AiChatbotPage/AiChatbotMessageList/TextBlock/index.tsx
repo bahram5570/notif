@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { decodeUnicode } from '../AiMessage/utils';
 import { toPersianNumbers } from '@utils/numbers';
 
 import useTheme from '@hooks/useTheme';
@@ -8,10 +9,6 @@ import { TextBlockProps } from './type';
 
 const TextBlock = (props: TextBlockProps) => {
   const { typography } = useTheme();
-
-  function decodeUnicode(str: string) {
-    return str.replace(/\\u([\dA-F]{4})/gi, (_, g1) => String.fromCharCode(parseInt(g1, 16))).replace(/\\"/g, '"');
-  }
 
   const decoded = decodeUnicode(props.text);
   const finalText = toPersianNumbers(decoded);

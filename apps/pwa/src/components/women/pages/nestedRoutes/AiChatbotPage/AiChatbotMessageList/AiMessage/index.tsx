@@ -42,7 +42,7 @@ const AiMessage = (props: AiMessagePropsType) => {
   return (
     <div className="flex flex-col w-full gap-4">
       <div className="flex flex-col w-full gap-4">
-        {props.isAnswered ? (
+        {props.isAnswered && props.isLastItem ? (
           <WordFadeInText
             text={formattedLine}
             animationEndHandler={animationEndHandler}

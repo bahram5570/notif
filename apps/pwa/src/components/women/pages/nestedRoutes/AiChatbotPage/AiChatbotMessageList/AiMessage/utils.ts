@@ -8,3 +8,6 @@ export const parseFormattedText = (text: string): string => {
 
   return text;
 };
+export function decodeUnicode(str: string) {
+  return str.replace(/\\u([\dA-F]{4})/gi, (_, g1) => String.fromCharCode(parseInt(g1, 16))).replace(/\\"/g, '"');
+}

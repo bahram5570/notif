@@ -8,7 +8,9 @@ export type UploadItemType = {
 
 export type AiFileManagerProviderContextPropsType = {
   files: UploadItemType[];
+  disableBtn: boolean;
   removeFileHandler: (url: string) => void;
   fileDataHandler: FileDataHandlerTypes;
   retryUploadHandler: () => void;
+  resetFiles: () => void;
 };

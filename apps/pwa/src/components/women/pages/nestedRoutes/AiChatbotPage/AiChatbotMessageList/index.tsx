@@ -15,7 +15,7 @@ const AiChatbotMessageList = (props: AiChatbotMessageListPropsType) => {
     if (lastItemRef.current) {
       lastItemRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [props.chats, props.isLoading]);
+  }, [props.chats.length]);
 
   return (
     <>

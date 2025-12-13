@@ -36,10 +36,14 @@ const AiChatHistoryManagerProvider = ({ children }: { children: React.ReactNode 
 
     if (!chatData) return;
 
-    setChatData({
-      ...chatData,
-      currentImageUsage: imageId?.length || 0,
-      chats: [...chatData.chats, newUserChat],
+    setChatData((prev) => {
+      if (!prev) return undefined;
+
+      return {
+        ...prev,
+        currentImageUsage: chatData.currentImageUsage + (imageId?.length || 0),
+        chats: [...prev.chats, newUserChat],
+      };
     });
     removeSessionStoragePromptText();
   };
@@ -50,7 +54,7 @@ const AiChatHistoryManagerProvider = ({ children }: { children: React.ReactNode 
     const newChatData = { ...chatData };
     const chats = [...newChatData.chats];
 
-    const lastChat = chats[chats.length - 1];
+    const lastChat = chats[chats?.length - 1];
 
     if (lastChat?.role === RoleEnum.Assistant) {
       chats[chats.length - 1] = {

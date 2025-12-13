@@ -22,7 +22,7 @@ const WordFadeInText = ({ animationEndHandler, text, animationStartHandler }: Wo
         return (
           <div key={lineIndex} className="flex flex-wrap items-center mb-2">
             {parts.map((part, i) => {
-              const isLast = i === parts.length - 1;
+              const isLastWord = lineIndex === lines.length - 1 && i === parts.length - 1;
               const delay = globalWordIndex * 0.1;
               globalWordIndex += 1;
 
@@ -31,7 +31,7 @@ const WordFadeInText = ({ animationEndHandler, text, animationStartHandler }: Wo
                   text={part}
                   isAnimated={true}
                   key={`${lineIndex}-${i}`}
-                  onAnimationEnd={isLast ? () => animationEndHandler(false) : undefined}
+                  onAnimationEnd={isLastWord ? () => animationEndHandler(false) : undefined}
                   onAnimationStart={animationStartHandler}
                   animationDelay={delay}
                 />
