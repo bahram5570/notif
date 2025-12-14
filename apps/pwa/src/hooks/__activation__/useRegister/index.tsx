@@ -42,7 +42,7 @@ const useRegister = (payload: ActivationPayloadTypes, onCallBack?: (v: OtpStatus
         identity: updatedPayload.identity || '',
         password: updatedPayload.password || '',
         createdTime: cookieCreatedTime(),
-        cycleTheme: CycleThemeEnum.Flat,
+        cycleTheme: v.cycleTheme,
         loginId: v.loginId,
         token: v.token,
       });
@@ -79,17 +79,6 @@ const useRegister = (payload: ActivationPayloadTypes, onCallBack?: (v: OtpStatus
     if (v.result) {
       startCounter();
       setRegisterData(v);
-
-      // setPair(v.pair);
-      // setNotificationReward(v.reward.page);
-      // setFetchedUser({
-      //   installationPurpose: { periodStatus: updatedPayload.periodStatus, status: updatedPayload.status },
-      //   identity: updatedPayload.identity || '',
-      //   password: updatedPayload.password || '',
-      //   createdTime: cookieCreatedTime(),
-      //   cycleTheme: CycleThemeEnum.Flat,
-      //   token: v.token,
-      // });
     } else {
       errorHandler();
     }
