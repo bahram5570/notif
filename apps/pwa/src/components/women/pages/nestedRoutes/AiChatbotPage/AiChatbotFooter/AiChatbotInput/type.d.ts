@@ -9,6 +9,5 @@ type InputItemType = Pick<
 >;
 
 export interface AiChatbotInputPropsType extends InputItemType {
-  btnBottomHandler?: (v: number) => void;
   closeHandler?: () => void;
 }

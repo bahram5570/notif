@@ -32,7 +32,6 @@ const AiTopicChatbotList = () => {
         <>
           <AiTopicChatbotTopicHeader subtitle={result?.subtitle || ''} title={result?.title || ''} />
           {hasShortcutsListData && <AiTopicChatbotShortcut shortcut={result.shortcut} onLinkHandler={onLinkHandler} />}
-
           {hasUsedTopicsListData && (
             <AiTopicChatbotUsedTopics onLinkHandler={onLinkHandler} topics={result.usedTopics} />
           )}

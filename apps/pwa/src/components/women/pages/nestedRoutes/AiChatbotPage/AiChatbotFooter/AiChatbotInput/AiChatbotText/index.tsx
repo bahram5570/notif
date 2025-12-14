@@ -10,25 +10,15 @@ import useTheme from '@hooks/useTheme';
 
 import { AiChatbotTextPropsType } from './type';
 
-const AiChatbotText = ({
-  hintPromptText,
-  isLoading,
-  clickHandler,
-  btnBottomHandler,
-  checkMultiLine,
-}: AiChatbotTextPropsType) => {
+const AiChatbotText = ({ hintPromptText, isLoading, clickHandler, checkMultiLine }: AiChatbotTextPropsType) => {
   const { colors, typography } = useTheme();
-  const [btnTop, setBtnTop] = useState(false);
+
   const textRef = useRef<HTMLTextAreaElement | null>(null);
   const [chatText, setChatText] = useState('');
 
   const onClick = () => {
     clickHandler(chatText);
     setChatText('');
-  };
-
-  const onBlur = () => {
-    setBtnTop(false);
   };
 
   const changeTextHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -43,7 +33,9 @@ const AiChatbotText = ({
   };
 
   const handleFocus = () => {
-    setBtnTop(true);
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
   };
 
   useEffect(() => {
@@ -56,26 +48,6 @@ const AiChatbotText = ({
       checkMultiLine(totalLines > 2);
     }
   }, [chatText]);
-
-  useEffect(() => {
-    if (!btnTop) return;
-
-    const vv = window.visualViewport;
-    if (!vv) return;
-
-    const updatePosition = () => {
-      const keyboardHeight = window.innerHeight - (vv.height + vv.offsetTop);
-      if (btnBottomHandler) btnBottomHandler(keyboardHeight > 0 ? keyboardHeight : 0);
-    };
-
-    vv.addEventListener('resize', updatePosition);
-    vv.addEventListener('scroll', updatePosition);
-
-    return () => {
-      vv.removeEventListener('resize', updatePosition);
-      vv.removeEventListener('scroll', updatePosition);
-    };
-  }, [btnTop]);
 
   return (
     <div className="flex-1 flex flex-row-reverse justify-end items-end">
@@ -96,7 +68,6 @@ const AiChatbotText = ({
         onChange={changeTextHandler}
         disabled={isLoading}
         onKeyDown={handleKeyDown}
-        onBlur={onBlur}
         rows={1}
       />
 

@@ -5,7 +5,6 @@ import { baseUrl } from '@services/http';
 import { getUserCookie } from '@actions/cookie.actions';
 import { EventSource } from 'eventsource';
 
-import useCurrentImageUsage from '../useCurrentImageUsage';
 import { CLOSE_STREAM_TEXT } from './constants';
 import { StreamHandlerPropsType, UseEventSourcePropsType } from './type';
 

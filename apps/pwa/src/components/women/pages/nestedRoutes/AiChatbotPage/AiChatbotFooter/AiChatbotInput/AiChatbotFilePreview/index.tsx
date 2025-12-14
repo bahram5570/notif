@@ -1,11 +1,10 @@
-import useAiFileManager from '@hooks/__aichatbot__/useAiFileManager';
 import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import FilePreview from './FilePreview';
+import { AiChatbotFilePreviewPropsType } from './type';
 
-const AiChatbotFilePreview = () => {
+const AiChatbotFilePreview = ({ files, removeFileHandler, retryUploadHandler }: AiChatbotFilePreviewPropsType) => {
   const { operatingSystem } = useOperatingSystem();
-  const { files, removeFileHandler, retryUploadHandler } = useAiFileManager();
 
   const isWindows = operatingSystem === 'windows';
   return (

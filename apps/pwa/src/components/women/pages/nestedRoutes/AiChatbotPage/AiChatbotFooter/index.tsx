@@ -9,8 +9,6 @@ import UploadImagesMoreAction from './AiChatbotInput/AiChatbotUploadImage/Upload
 import { AiChatbotFooterPropsType } from './type';
 
 const AiChatbotFooter = (props: AiChatbotFooterPropsType) => {
-  const [bottom, setBottom] = useState(0);
-
   const containerRef = useRef<HTMLDivElement | null>(null);
   const [isOpenMoreAction, setIsOpenMoreAction] = useState(false);
 
@@ -19,19 +17,12 @@ const AiChatbotFooter = (props: AiChatbotFooterPropsType) => {
   };
   const showInput = props.isActive ? true : false;
 
-  const btnBottomHandler = (v: number) => {
-    setBottom(v);
-  };
-
   return (
     <>
       <div
-        className="fixed w-full mx-auto left-0 right-0 bottom-0   transition-transform duration-150"
+        className="fixed w-full mx-auto left-0 right-0 bottom-0   "
         style={{
           maxWidth: MAX_SCREEN_WIDTH,
-          transform: `translateY(-${bottom}px)`,
-          transition: 'transform 0.1s linear',
-          willChange: 'transform',
         }}
         id="chat-container"
         ref={containerRef}
@@ -45,12 +36,12 @@ const AiChatbotFooter = (props: AiChatbotFooterPropsType) => {
         )}
         {showInput && (
           <div className="flex flex-col justify-center items-center">
-            <AiChatbotInput {...props} btnBottomHandler={btnBottomHandler} />
+            <AiChatbotInput {...props} />
 
             <div
               className="flex justify-center items-center  h-10  w-full  "
               style={{
-                background: `${props.hasChatData ? 'rgb(239 241 254)' : bottom > 0 ? '#d5e0fc' : 'inherit'}`,
+                background: `${props.hasChatData ? 'rgb(239 241 254)' : 'inherit'}`,
               }}
             >
               <Typography scale="Lable" size="Small" color="Surface_OnSurfaceVariant">

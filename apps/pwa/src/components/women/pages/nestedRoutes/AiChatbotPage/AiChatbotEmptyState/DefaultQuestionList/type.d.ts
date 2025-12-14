@@ -1,5 +1,5 @@
-import { ChatbotMessageWelcomingPropsType } from '../../../AiTopicsChatbotPage/WelcomingContainer/ChatbotMessageWelcoming/type';
+import { AiChatbotEmptyStatePropsType } from '../type';
 
-type ItemType = Pick<ChatbotMessageWelcomingPropsType, 'questions' | 'defaultQustionHandler'>;
+type ItemType = Pick<AiChatbotEmptyStatePropsType, 'questions' | 'defaultQustionHandler'>;
 
 export type DefaultQuestionListPropType = ItemType & {};

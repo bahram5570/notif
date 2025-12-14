@@ -13,10 +13,9 @@ const AiChatbotInput = ({
   isLoading,
   submitHandler,
   isShowFileInput = false,
-  btnBottomHandler,
   closeHandler,
 }: AiChatbotInputPropsType) => {
-  const { files, disableBtn, resetFiles } = useAiFileManager();
+  const { files, disableBtn, resetFiles, removeFileHandler, retryUploadHandler } = useAiFileManager();
   const [isMultiLine, setIsMultiLine] = useState(false);
 
   const hasFile = files && files.length > 0;
@@ -41,13 +40,18 @@ const AiChatbotInput = ({
       <div
         className={`flex flex-col   glass-card !bg-white/60 shadow-sm ${hasFile ? 'rounded-3xl py-3 px-[2.5px] gap-3' : isMultiLine ? 'rounded-3xl py-2' : 'rounded-full py-2'} ${isShowFileInput ? 'w-72' : 'w-full'} `}
       >
-        <AiChatbotFilePreview />
+        {hasFile && (
+          <AiChatbotFilePreview
+            files={files}
+            removeFileHandler={removeFileHandler}
+            retryUploadHandler={retryUploadHandler}
+          />
+        )}
 
         <AiChatbotText
           hintPromptText={hintPromptText}
           isLoading={isLoading}
           clickHandler={clickHandler}
-          btnBottomHandler={btnBottomHandler}
           checkMultiLine={checkMultiLine}
         />
       </div>
