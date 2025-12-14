@@ -26,6 +26,7 @@ const ArticleIdSubjectsListGenerator = ({
         className="hover:opacity-80 duration-200 cursor-pointer"
         fontSize={tagType === 'h2' ? 'Lable_Medium' : 'Body_Medium'}
         style={{ padding: tagType === 'h2' ? '8px 0' : '0 12px 4px 0' }}
+        color="Primary_Primary"
       >
         {title}
       </CustomTypography>

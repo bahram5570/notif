@@ -33,7 +33,7 @@ const IranBoyNamePage = async () => {
           imageUrl="/assets/images/doctorKimia.jpg"
         />
 
-        <div className="w-full sm:w-9/12 md:w-8/12 lg:w-6/12 px-3 pb-16">
+        <div className=" landing-container px-3 pb-16">
           <AlphabetBtns
             bgColor1="Blue_200"
             bgColor2="Blue_50"

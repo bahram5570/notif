@@ -4,7 +4,8 @@ import LandingPregnancyLayout from '@components/pages/landing/pregnancy/LandingP
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <HeaderFooterContainer>
-      <div className="w-full max-w-[640px] relative pt-[100px] md:pt-[150px] pb-12">
+      {/* <div className="w-full max-w-[640px] relative pt-[100px] md:pt-[150px] pb-12 landing-container"> */}
+      <div className=" relative pt-[100px] md:pt-[150px] pb-12 landing-container">
         <>{children}</>
         <LandingPregnancyLayout />
       </div>
