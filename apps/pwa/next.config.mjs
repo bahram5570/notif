@@ -1,3 +1,5 @@
+import { withSentryConfig } from '@sentry/nextjs';
+
 /** @type {import('next').NextConfig} */
 
 const imageList = [
@@ -52,4 +54,12 @@ const nextConfig = {
   skipTrailingSlashRedirect: true,
 };
 
-export default nextConfig;
+export default withSentryConfig(nextConfig, {
+  org: 'sentry',
+  project: 'pwa',
+  disableLogger: true,
+  silent: !process.env.CI,
+  tunnelRoute: '/monitoring',
+  widenClientFileUpload: true,
+  sentryUrl: 'https://sentry.weareimpo.ir/',
+});

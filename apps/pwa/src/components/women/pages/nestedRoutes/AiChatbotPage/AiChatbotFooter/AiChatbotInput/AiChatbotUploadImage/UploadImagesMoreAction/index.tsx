@@ -4,16 +4,18 @@ import CameraIcon from '@assets/icons/Camera-1.svg';
 import GalleryIcon from '@assets/icons/gallery-1.svg';
 import imageCompression from 'browser-image-compression';
 
+import { FileInputTypes } from '@components/ui/FileInputManager/enum';
 import Typography from '@components/ui/Typography';
 import { FOOTER_HEIGTH } from '@components/women/WomenFooter/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import useAiFileManager from '@hooks/__aichatbot__/useAiFileManager';
 import useTheme from '@hooks/useTheme';
 
-import { FileInputTypes } from '../../__hooks__/useFileUpload/enum';
 import { FileInputHandlerTypes, UploadImagesMoreActionPropsType } from './type';
 
-const UploadImagesMoreAction = ({ closeHandler, isOpen, fileDataHandler }: UploadImagesMoreActionPropsType) => {
+const UploadImagesMoreAction = ({ closeHandler, isOpen }: UploadImagesMoreActionPropsType) => {
   const { colors } = useTheme();
+  const { fileDataHandler } = useAiFileManager();
 
   useEffect(() => {
     const body = document.body;

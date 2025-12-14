@@ -1,3 +1,5 @@
+import { UploadItemType } from '@providers/__aiChatbot__/AiFileManagerProvider/type';
+
 import { AiChatbotFooterPropsType } from '../type';
 import { UploadItem } from './__hooks__/useFileUpload/type';
 
@@ -7,12 +9,5 @@ type InputItemType = Pick<
 >;
 
 export interface AiChatbotInputPropsType extends InputItemType {
-  btnTopHandler?: () => void;
-  retryUploadHandler: () => void;
-  removeFileHandler: (url: string) => void;
-  imageFile: string[];
-  files: UploadItem[];
-  hasFile: boolean;
-  disableBtn: boolean;
-  closeHandler: () => void;
+  closeHandler?: () => void;
 }

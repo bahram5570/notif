@@ -37,6 +37,7 @@ export type UserCookieTypes = {
   createdTime?: number;
   password: string;
   identity: string;
+  loginId: string;
   token: string;
 };
 
@@ -49,6 +50,7 @@ export const setUserCookie = async (props: UserCookieTypes) => {
     installationPurpose: props.installationPurpose,
     cycleTheme: props.cycleTheme,
     password: props.password,
+    loginId: props.loginId,
     token: props.token,
     createdTime,
     identity,

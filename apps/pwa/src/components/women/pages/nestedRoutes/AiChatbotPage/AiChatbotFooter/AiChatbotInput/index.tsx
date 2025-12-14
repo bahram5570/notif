@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { SHOW_SUGGESTED_QUESTION } from '@constants/ai.constants';
+import useAiFileManager from '@hooks/__aichatbot__/useAiFileManager';
 
 import AiChatbotFilePreview from './AiChatbotFilePreview';
 import AiChatbotText from './AiChatbotText';
@@ -11,24 +12,22 @@ const AiChatbotInput = ({
   hintPromptText,
   isLoading,
   submitHandler,
-  isShowFileInput,
-  files,
-  hasFile,
-  imageFile,
-  removeFileHandler,
-  disableBtn,
-  retryUploadHandler,
-  btnTopHandler,
+  isShowFileInput = false,
   closeHandler,
 }: AiChatbotInputPropsType) => {
+  const { files, disableBtn, resetFiles, removeFileHandler, retryUploadHandler } = useAiFileManager();
   const [isMultiLine, setIsMultiLine] = useState(false);
+
+  const hasFile = files && files.length > 0;
 
   const checkMultiLine = (v: boolean) => {
     setIsMultiLine(v);
   };
 
   const clickHandler = (chatText: string) => {
+    const imageFile = files.map((file) => file.url);
     if (!chatText.trim() && imageFile.length === 0) return;
+    resetFiles();
 
     if (!isLoading) {
       sessionStorage.removeItem(SHOW_SUGGESTED_QUESTION);
@@ -53,7 +52,6 @@ const AiChatbotInput = ({
           hintPromptText={hintPromptText}
           isLoading={isLoading}
           clickHandler={clickHandler}
-          btnTopHandler={btnTopHandler}
           checkMultiLine={checkMultiLine}
         />
       </div>

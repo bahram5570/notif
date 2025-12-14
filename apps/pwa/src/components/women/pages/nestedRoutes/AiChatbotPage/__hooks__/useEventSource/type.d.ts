@@ -7,5 +7,4 @@ export type StreamHandlerPropsType = {
 export type UseEventSourcePropsType = {
   handelLoading: (v: boolean) => void;
   errorHandler: (v: boolean) => void;
-  imagesCount: number;
 };

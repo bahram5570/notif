@@ -1,21 +1,9 @@
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-
 import { TopicType } from '../__hooks__/useGetTopicList/type';
 import SuggestedTopicCard from './SuggestedTopicCard';
 import TopicCardItem from './TopicCardItem';
 import { GeneratorTopicCardListPropsType } from './type';
 
-const GeneratorTopicCardList = ({ topics, categoryId, usedTopics = false }: GeneratorTopicCardListPropsType) => {
-  const { pageNavigationHandler } = usePageNavigationLoading();
-
-  const onLinkHandler = (id: string) => {
-    pageNavigationHandler({
-      showProgressBar: true,
-      id: `chatbot-${id}`,
-      linkTo: `/protected/aiChatbot?promptItemId=${id}&promptCategoryId=${categoryId}`,
-    });
-  };
-
+const GeneratorTopicCardList = ({ topics, onLinkHandler, usedTopics = false }: GeneratorTopicCardListPropsType) => {
   const rows: TopicType[][] = [];
   let i = 0;
 

@@ -30,6 +30,7 @@ const useLogin = ({ identity, password, otpStatusHandler, onSubmitLogin }: UseLo
       identity: identity || '',
       password: password || '',
       cycleTheme: v.cycleTheme,
+      loginId: v.loginId,
       token: v.token,
     };
 

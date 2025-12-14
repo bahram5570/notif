@@ -1,25 +1,18 @@
+import useAichatbotHistoryManager from '@hooks/__aichatbot__/useAichatbotHistoryManager';
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
-
-import { ChatType } from '../../../../type';
 
 const useLikeMessage = ({ messageId }: { messageId: string }) => {
-  const { getQuery, updateQuery } = useCustomReactQuery(['AiChatMessageList']);
-
-  const aiChatMessageList = getQuery<{ data: ChatType[] }>({ queryKey: ['AiChatMessageList'] });
+  const { chatData, updateObject } = useAichatbotHistoryManager();
 
   const { callApi } = useApi({ api: 'feature/ai/message/like', method: 'PUT' });
 
   const likeMessageHandler = () => {
-    if (aiChatMessageList) {
-      const updatedList = aiChatMessageList.data.map((item) =>
+    if (chatData) {
+      const updatedList = chatData.chats.map((item) =>
         item.messageId === messageId ? { ...item, like: true, dislike: false } : item,
       );
 
-      updateQuery({
-        queryKey: ['AiChatMessageList'],
-        payload: { data: updatedList },
-      });
+      updateObject({ chats: updatedList });
     }
     const payload = {
       messageId,

@@ -1,3 +1,5 @@
+import { decodeUnicode, parseFormattedText } from '../../../utils';
+
 import useCustomToast from '@hooks/useCustomToast';
 import { useToast } from '@providers/ToastProvider/CustomToastProvider';
 
@@ -6,9 +8,11 @@ const useCopy = () => {
   const { showToast } = useToast();
 
   const copyToClipboard = async (text: string) => {
+    const formattedLine = parseFormattedText(text);
+    const decoded = decodeUnicode(formattedLine);
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {
-        await navigator.clipboard.writeText(text);
+        await navigator.clipboard.writeText(decoded);
 
         showToast({
           message: 'متن کپی شد ',
@@ -22,7 +26,7 @@ const useCopy = () => {
     } else {
       try {
         const textArea = document.createElement('textarea');
-        textArea.value = text;
+        textArea.value = decoded;
         textArea.style.position = 'fixed';
         textArea.style.opacity = '0';
         document.body.appendChild(textArea);

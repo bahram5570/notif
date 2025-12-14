@@ -4,7 +4,7 @@ import useTheme from '@hooks/useTheme';
 import GeneratorTopicCardList from '../GeneratorTopicCardList';
 import { AiTopicListPropsType } from './type';
 
-const AiTopicList = ({ hasUsedTopicsListData, categoryId, topics }: AiTopicListPropsType) => {
+const AiTopicList = ({ hasUsedTopicsListData, onLinkHandler, topics }: AiTopicListPropsType) => {
   const { colors } = useTheme();
   return (
     <div className="flex justify-end items-end flex-col gap-4">
@@ -21,7 +21,7 @@ const AiTopicList = ({ hasUsedTopicsListData, categoryId, topics }: AiTopicListP
         </>
       )}
 
-      <GeneratorTopicCardList topics={topics} categoryId={categoryId} usedTopics={true} />
+      <GeneratorTopicCardList topics={topics} onLinkHandler={onLinkHandler} usedTopics={true} />
     </div>
   );
 };
