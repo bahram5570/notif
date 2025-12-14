@@ -17,6 +17,10 @@ const HeightContainer = () => {
     setCurrentHeight(Number(v));
   };
 
+  const onClick = () => {
+    submitHandler(currentHeight);
+  };
+
   return (
     <div className="relative flex flex-col overflow-x-hidden min-h-[100dvh]">
       <ActivationBackBtn />
@@ -35,7 +39,7 @@ const HeightContainer = () => {
           size="large"
           variant="fill"
           color="primary"
-          onClick={() => submitHandler(currentHeight)}
+          onClick={onClick}
           isLoading={isLoading}
           navigationLoadingId="DatesContainer"
         >

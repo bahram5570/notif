@@ -4,6 +4,7 @@ import { UseDisableDeleteBtnPropsType } from './type';
 
 const useDisableDeleteBtn = ({ aiChatData }: UseDisableDeleteBtnPropsType) => {
   const [disableDeleteBtn, setDisableDeleteBtn] = useState(false);
+
   const disableDeleteBtnHandler = (v: boolean) => {
     setDisableDeleteBtn(v);
   };

@@ -10,13 +10,7 @@ import useTheme from '@hooks/useTheme';
 
 import { AiChatbotTextPropsType } from './type';
 
-const AiChatbotText = ({
-  hintPromptText,
-  isLoading,
-  clickHandler,
-  btnTopHandler,
-  checkMultiLine,
-}: AiChatbotTextPropsType) => {
+const AiChatbotText = ({ hintPromptText, isLoading, clickHandler, checkMultiLine }: AiChatbotTextPropsType) => {
   const { colors, typography } = useTheme();
 
   const textRef = useRef<HTMLTextAreaElement | null>(null);
@@ -24,11 +18,7 @@ const AiChatbotText = ({
 
   const onClick = () => {
     clickHandler(chatText);
-  };
-
-  const onBlur = () => {
-    if (!btnTopHandler) return;
-    btnTopHandler();
+    setChatText('');
   };
 
   const changeTextHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -43,7 +33,9 @@ const AiChatbotText = ({
   };
 
   const handleFocus = () => {
-    if (btnTopHandler) btnTopHandler();
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+    });
   };
 
   useEffect(() => {
@@ -76,7 +68,6 @@ const AiChatbotText = ({
         onChange={changeTextHandler}
         disabled={isLoading}
         onKeyDown={handleKeyDown}
-        onBlur={onBlur}
         rows={1}
       />
 

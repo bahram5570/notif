@@ -24,6 +24,10 @@ const BloodSugerContainer = () => {
     setInputValue({ ...inputValue, [name]: v });
   };
 
+  const onClick = () => {
+    submitHandler({ condition: inputValue.condition, value: inputValue.value });
+  };
+
   return (
     <WomenPageLayout rightElement="BackButton" paddingTop={0}>
       <div
@@ -52,9 +56,7 @@ const BloodSugerContainer = () => {
               variant="fill"
               size="medium"
               color="primary"
-              onClick={() => {
-                submitHandler({ condition: inputValue.condition, value: inputValue.value });
-              }}
+              onClick={onClick}
               fullWidth={true}
               isDisable={!inputValue.value}
               isLoading={isLoading}
