@@ -22,7 +22,7 @@ import {
   NameSelectorTabsContextTypes,
 } from './types';
 
-const initialFavorite = { paneNo: 0 };
+const initialFavorite = { isFetched: false };
 const initialAll = { paneNo: 0, styles: [], gender: SelectNameGenderEnum.None };
 
 export const NameSelectorContext = createContext<NameSelectorContextTypes>({

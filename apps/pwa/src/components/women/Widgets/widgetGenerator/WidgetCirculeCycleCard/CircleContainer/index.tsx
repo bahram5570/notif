@@ -93,7 +93,7 @@ const CircleContainer = ({ data, loadingStatus }: CircleContainerProps) => {
         </div>
       </div>
 
-      {data && data.shortcut.items.length > 0 && loadingStatus === LoadingStatusEnum.successed && (
+      {data?.shortcut?.items && data.shortcut.items.length > 0 && loadingStatus === LoadingStatusEnum.successed && (
         <CycleCardShortLinks items={data?.shortcut.items} />
       )}
     </div>

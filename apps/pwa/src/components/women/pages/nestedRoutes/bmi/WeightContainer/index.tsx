@@ -17,6 +17,10 @@ const WeightContainer = () => {
     setCurrentWeight(Number(v));
   };
 
+  const onClick = () => {
+    submitHandler(currentWeight);
+  };
+
   return (
     <div className="relative flex flex-col overflow-x-hidden min-h-[100dvh]">
       <ActivationBackBtn />
@@ -38,7 +42,7 @@ const WeightContainer = () => {
           color="primary"
           isLoading={isLoading}
           navigationLoadingId="DatesContainer"
-          onClick={() => submitHandler(currentWeight)}
+          onClick={onClick}
         >
           ادامه
         </Button>

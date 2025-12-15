@@ -7,11 +7,10 @@ import { FavoriteResponseTypes } from './types';
 
 const useNameSelectorFetchFavorites = () => {
   const [api, setApi] = useState('');
-  const { setData, favoriteFilters, setFavoriteFilters } = useNameSelectorData();
+  const { data, setData, favoriteFilters, setFavoriteFilters } = useNameSelectorData();
 
   const successHandler = (v: FavoriteResponseTypes) => {
-    setData((state) => ({ ...state, favorites: v.items, favoritesTotalCount: v.totalCount }));
-    setFavoriteFilters((state) => ({ ...state, paneNo: state.paneNo + 1 }));
+    setData((state) => ({ ...state, favorites: v.items }));
   };
 
   const errorHandler = () => {
@@ -28,15 +27,23 @@ const useNameSelectorFetchFavorites = () => {
   });
 
   const paginationHandler = () => {
-    const pageSize = 1000;
-    let pageNo = 0;
-
-    if (favoriteFilters.paneNo > 0) {
+    if (favoriteFilters.isFetched) {
       return;
     }
 
-    const result = `feature/babyname/favorites?pageSize=${pageSize}&pageNo=${pageNo}`;
-    setApi(result);
+    if (data?.favorites) {
+      setFavoriteFilters((state) => ({ ...state, isFetched: true }));
+
+      const GET_ALL_ITEMS_PAGE_SIZE = 1000;
+      const FAVORITES_PAGE_NO = 0;
+
+      if (data.favorites.length >= data.favoritesTotalCount) {
+        return;
+      }
+
+      const result = `feature/babyname/favorites?pageSize=${GET_ALL_ITEMS_PAGE_SIZE}&pageNo=${FAVORITES_PAGE_NO}`;
+      setApi(result);
+    }
   };
 
   useEffect(() => {

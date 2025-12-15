@@ -22,7 +22,7 @@ const SampleCycleHeading = ({ textColor, payload }: SampleCycleHeadingProps) => 
         </Typography>
       </div>
 
-      <div className="h-3" />
+      <div style={{ height: SAMPLE_CYCLE_HEADING_HEIGHT }} />
 
       <div className="absolute left-0 right-0 flex justify-center" style={{ top: SAMPLE_CYCLE_HEADING_HEIGHT + 30 }}>
         <Typography scale="Lable" size="Medium" color="FREE-STYLE" freeColor={textColor}>

@@ -7,6 +7,7 @@ import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useActivationPregnancyTabs from '@hooks/__activation__/useActivationPregnancyTabs';
+import useProfileData from '@hooks/__profile__/useProfileData';
 import useTheme from '@hooks/useTheme';
 
 import Tabs from './Tabs';
@@ -14,9 +15,12 @@ import useUpdateCycle from './__hooks__/useUpdateCycle';
 
 const PopUpEditPregnancy = () => {
   const { colors } = useTheme();
+  const { profileData } = useProfileData();
   const { isLoading, submitHandler } = useUpdateCycle();
   const [pregnancyDate, setPregnancyDate] = useState('');
-  const { tab, tabHandler, endDate, startDate, defaultDate } = useActivationPregnancyTabs();
+
+  const defaultValues = profileData && { isDelivery: profileData.isDelivery, pregnancyDate: profileData.pregnancyDate };
+  const { tab, tabHandler, endDate, startDate, defaultDate, resetKey } = useActivationPregnancyTabs(defaultValues);
 
   return (
     <div
@@ -36,11 +40,11 @@ const PopUpEditPregnancy = () => {
           <Tabs tab={tab} tabHandler={tabHandler} />
 
           <DateModule
-            valueHandler={setPregnancyDate}
+            key={resetKey}
             endDate={endDate}
             startDate={startDate}
             defaultDate={defaultDate}
-            key={`${startDate}-${endDate}`}
+            valueHandler={setPregnancyDate}
           />
 
           <Button

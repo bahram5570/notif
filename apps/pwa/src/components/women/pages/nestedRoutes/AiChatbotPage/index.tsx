@@ -1,74 +1,72 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
-import AiChatbotHeader from '../AiTopicsChatbotPage/AiChatbotHeader';
-import { WelcomingTypeEnum } from '../AiTopicsChatbotPage/WelcomingContainer/enum';
+import { getSessionStoragePromptText } from '@utils/aiChatbot';
+
+import AiChatbotHeader from '@components/ui/__AiChatbot__/AiChatbotHeader';
+import useAichatbotHistoryManager from '@hooks/__aichatbot__/useAichatbotHistoryManager';
+
 import AiChatbotEmptyState from './AiChatbotEmptyState';
 import AiChatbotFooter from './AiChatbotFooter';
 import AiChatbotMessageList from './AiChatbotMessageList';
 import AiChatbotMessageListLayout from './AiChatbotMessageList/AiChatbotMessageListLayout';
 import ErrorMessage from './AiChatbotMessageList/ErrorMessage';
 import AiChatbotSkeleton from './AiChatbotSkeleton';
-import useCurrentDate from './__hooks__/useCurrentDate';
 import useDisableDeleteBtn from './__hooks__/useDisableDeleteBtn';
-import useGetAiChatbotData from './__hooks__/useGetAiChatbotData';
-import useGetAiChatbotMessageList from './__hooks__/useGetAiChatbotMessageList';
 import useSubmit from './__hooks__/useSubmit';
 
 const AiChatbotPage = () => {
-  const { isLoading, aiChatData, categoryIdData, itemIdData } = useGetAiChatbotData();
-  const { addChatHandler, aiChatbotMessageList, updateChatHandler } = useGetAiChatbotMessageList();
-  const {
-    isLoading: newLoading,
-    submitHandler,
-    showErrorMessage,
-    onErrorHandler,
-    resetkey,
-  } = useSubmit({ updateChatHandler, addChatHandler, categoryIdData, itemIdData });
-  const { disableDeleteBtn, disableDeleteBtnHandler } = useDisableDeleteBtn({ aiChatData });
-  const { currentDate } = useCurrentDate({ mediaLimitDate: aiChatData?.mediaLimitDate });
+  const { chatData, isLoading } = useAichatbotHistoryManager();
+  const { isLoading: newLoading, submitHandler, showErrorMessage, onErrorHandler } = useSubmit();
+  const { disableDeleteBtn, disableDeleteBtnHandler } = useDisableDeleteBtn({ aiChatData: chatData });
 
   const defaultQustionHandler = (text: string) => {
     submitHandler({ prompt: text });
   };
 
-  const hasChatData = aiChatData && aiChatbotMessageList.length > 0;
+  const hasChatData = chatData && chatData.chats.length > 0;
+
+  useEffect(() => {
+    if (!chatData) return;
+
+    const promptText = getSessionStoragePromptText();
+
+    if (promptText) {
+      submitHandler({ prompt: promptText, imageId: [] });
+    }
+  }, [chatData]);
 
   return (
     <>
-      {isLoading && !aiChatData && <AiChatbotSkeleton />}
-      {!isLoading && aiChatData && (
+      {isLoading && !chatData && <AiChatbotSkeleton />}
+      {!isLoading && chatData && (
         <>
           <AiChatbotHeader
-            welcomingType={WelcomingTypeEnum.ChatbotMessage}
             showActionMenu
             disableDeleteBtn={disableDeleteBtn}
-            chatTitle={aiChatData.chatTitle}
-            chatId={aiChatData.chatId}
-            categoryIdData={categoryIdData}
-            itemIdData={itemIdData}
-            currentImageUsage={aiChatData.currentImageUsage}
-            imageType={aiChatData.imageType}
-            imageUsageLimit={aiChatData.imageUsageLimit}
-            mediaLimitDate={currentDate}
+            chatTitle={chatData.chatTitle}
+            currentImageUsage={chatData.currentImageUsage}
+            imageType={chatData.imageType}
+            imageUsageLimit={chatData.imageUsageLimit}
+            mediaLimitDate={chatData.mediaLimitDate}
           />
 
           {!hasChatData && (
             <>
               <AiChatbotEmptyState
                 defaultQustionHandler={defaultQustionHandler}
-                description={aiChatData.description}
-                questions={aiChatData.questions}
-                title={aiChatData.title}
+                description={chatData.description}
+                questions={chatData.questions}
+                title={chatData.title}
               />
             </>
           )}
 
           {hasChatData && (
-            <AiChatbotMessageListLayout imageType={aiChatData.imageType}>
+            <AiChatbotMessageListLayout imageType={chatData.imageType}>
               <AiChatbotMessageList
-                chats={aiChatbotMessageList}
+                chats={chatData.chats}
                 isLoading={newLoading}
                 defaultQustionHandler={defaultQustionHandler}
                 disableDeleteBtnHandler={disableDeleteBtnHandler}
@@ -79,12 +77,11 @@ const AiChatbotPage = () => {
           )}
 
           <AiChatbotFooter
-            {...aiChatData}
+            {...chatData}
             submitHandler={submitHandler}
             isLoading={newLoading}
             hasChatData={hasChatData}
-            isShowFileInput={aiChatData.imageType}
-            key={resetkey}
+            isShowFileInput={chatData.imageType}
           />
         </>
       )}

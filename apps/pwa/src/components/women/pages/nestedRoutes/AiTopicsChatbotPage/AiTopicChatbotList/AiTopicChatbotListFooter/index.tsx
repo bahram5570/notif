@@ -14,21 +14,8 @@ const AiTopicChatbotListFooter = ({ inputPlaceholder }: { inputPlaceholder: stri
         background: 'linear-gradient(180deg, rgba(192, 194, 255, 0) -10.78%, #D3C8FC 100%)',
       }}
     >
-      <div className="pt-4 pb-5  w-full">
-        <AiChatbotInput
-          isShowFileInput={false}
-          hintPromptText={inputPlaceholder || ''}
-          isLoading={newLoading}
-          submitHandler={submitHandler}
-          disableBtn={false}
-          closeHandler={() => {}}
-          files={[]}
-          hasFile={false}
-          imageFile={[]}
-          removeFileHandler={() => {}}
-          retryUploadHandler={() => {}}
-          btnTopHandler={() => {}}
-        />
+      <div className="pt-4 pb-5 px-4 w-full">
+        <AiChatbotInput hintPromptText={inputPlaceholder || ''} isLoading={newLoading} submitHandler={submitHandler} />
       </div>
     </div>
   );

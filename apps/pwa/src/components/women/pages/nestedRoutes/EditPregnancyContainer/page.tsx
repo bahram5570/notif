@@ -8,14 +8,18 @@ import { HEADING_HEIGHT } from '@components/activation/ActivationHeading/constan
 import DateModule from '@components/activation/DateModule';
 import Button from '@components/ui/Button';
 import useActivationPregnancyTabs from '@hooks/__activation__/useActivationPregnancyTabs';
+import useProfileData from '@hooks/__profile__/useProfileData';
 
 import Tabs from './Tabs';
 import useUpdateCycle from './__hooks__/useUpdateCycle';
 
 const EditPregnancyContainer = () => {
+  const { profileData } = useProfileData();
   const { isLoading, submitHandler } = useUpdateCycle();
   const [pregnancyDate, setPregnancyDate] = useState('');
-  const { tab, tabHandler, endDate, startDate, defaultDate } = useActivationPregnancyTabs();
+
+  const defaultValues = profileData && { isDelivery: profileData.isDelivery, pregnancyDate: profileData.pregnancyDate };
+  const { tab, tabHandler, endDate, startDate, defaultDate, resetKey } = useActivationPregnancyTabs(defaultValues);
 
   return (
     <div className="relative flex flex-col overflow-x-hidden min-h-[100dvh]">
@@ -30,11 +34,11 @@ const EditPregnancyContainer = () => {
         <Tabs tab={tab} tabHandler={tabHandler} />
 
         <DateModule
-          valueHandler={setPregnancyDate}
+          key={resetKey}
           endDate={endDate}
           startDate={startDate}
           defaultDate={defaultDate}
-          key={`${startDate}-${endDate}`}
+          valueHandler={setPregnancyDate}
         />
 
         <div className="flex mx-auto mt-auto pb-6 w-[204px] min-w-fit">

@@ -8,8 +8,33 @@ import { IsLikedHandlerTypes } from './types';
 const useNameSelectorLike = () => {
   const { data, setData } = useNameSelectorData();
 
-  const { callApi: callAdd } = useApi({ api: 'feature/babyname/favorite/add', method: 'PUT' });
-  const { callApi: callRemove } = useApi({ api: 'feature/babyname/favorite/remove', method: 'PUT' });
+  const successHandler = (isAdd: boolean) => {
+    if (data) {
+      const payload = { ...data };
+
+      if (isAdd) {
+        payload.favoritesTotalCount = payload.favoritesTotalCount + 1;
+      } else {
+        if (payload.favoritesTotalCount > 0) {
+          payload.favoritesTotalCount = payload.favoritesTotalCount - 1;
+        }
+      }
+
+      setData(payload);
+    }
+  };
+
+  const { callApi: callAdd } = useApi({
+    method: 'PUT',
+    api: 'feature/babyname/favorite/add',
+    onSuccess: () => successHandler(true),
+  });
+
+  const { callApi: callRemove } = useApi({
+    method: 'PUT',
+    api: 'feature/babyname/favorite/remove',
+    onSuccess: () => successHandler(false),
+  });
 
   const isLikedHandler: IsLikedHandlerTypes = (card) => {
     if (data) {

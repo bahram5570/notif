@@ -5,7 +5,6 @@ import { AiChatbotUploadImagePropsType } from '../type';
 export interface UploadImagesMoreActionPropsType {
   isOpen: boolean;
   closeHandler: () => void;
-  fileDataHandler: FileDataHandlerTypes;
 }
 
 export type FileInputHandlerTypes = (type: FileInputTypes) => (e: React.ChangeEvent<HTMLInputElement>) => void;

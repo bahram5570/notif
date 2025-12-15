@@ -5,16 +5,14 @@ import { baseUrl } from '@services/http';
 import { getUserCookie } from '@actions/cookie.actions';
 import { EventSource } from 'eventsource';
 
-import useCurrentImageUsage from '../useCurrentImageUsage';
 import { CLOSE_STREAM_TEXT } from './constants';
 import { StreamHandlerPropsType, UseEventSourcePropsType } from './type';
 
-const useEventSource = ({ handelLoading, errorHandler, imagesCount }: UseEventSourcePropsType) => {
+const useEventSource = ({ handelLoading, errorHandler }: UseEventSourcePropsType) => {
   const [messages, setMessages] = useState<string>('');
   const evRef = useRef<EventSource | null>(null);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const firstMessageReceived = useRef(false);
-  const { updateImageCountHandler } = useCurrentImageUsage();
 
   const cleanup = () => {
     if (timeoutRef.current) {
@@ -80,7 +78,7 @@ const useEventSource = ({ handelLoading, errorHandler, imagesCount }: UseEventSo
     timeoutRef.current = setTimeout(() => {
       if (!firstMessageReceived.current) {
         errorHandler(true);
-        updateImageCountHandler(-imagesCount);
+
         cleanup();
       }
     }, 30000);

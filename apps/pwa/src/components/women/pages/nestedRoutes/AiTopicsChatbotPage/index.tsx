@@ -4,10 +4,10 @@ import { useEffect, useState } from 'react';
 
 import { getWelcomingHandler } from '@utils/aiChatBotWelcoming';
 
-import AiChatbotHeader from './AiChatbotHeader';
+import AiChatbotHeader from '@components/ui/__AiChatbot__/AiChatbotHeader';
+
 import AiTopicChatbotList from './AiTopicChatbotList';
-import WelcomingContainer from './WelcomingContainer';
-import { WelcomingTypeEnum } from './WelcomingContainer/enum';
+import AiTopicsChatbotWelcoming from './AiTopicsChatbotWelcoming';
 
 const AiTopicsChatbotPage = () => {
   const [isWelcoming, setIsWelcoming] = useState<string | null>(null);
@@ -23,16 +23,12 @@ const AiTopicsChatbotPage = () => {
     setIsWelcoming(welcoming);
   }, [updateKey]);
 
-  if (isWelcoming) {
-    return (
-      <>
-        <AiChatbotHeader welcomingType={WelcomingTypeEnum.TopicsPage} showActionMenu={false} />
-        <WelcomingContainer welcomingType={WelcomingTypeEnum.TopicsPage} onUpdateKeyHandler={onUpdateKeyHandler} />
-      </>
-    );
-  }
-
-  return <AiTopicChatbotList />;
+  return (
+    <>
+      <AiChatbotHeader showActionMenu={isWelcoming ? false : true} showSuggestionBtn={!isWelcoming} />
+      {isWelcoming ? <AiTopicsChatbotWelcoming onUpdateKeyHandler={onUpdateKeyHandler} /> : <AiTopicChatbotList />}
+    </>
+  );
 };
 
 export default AiTopicsChatbotPage;

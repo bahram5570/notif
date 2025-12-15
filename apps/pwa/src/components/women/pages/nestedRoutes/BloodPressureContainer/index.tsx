@@ -24,6 +24,10 @@ const BloodPressureContainer = () => {
     setInputValue(v);
   };
 
+  const onClick = () => {
+    submitHandler({ high: inputValue.high, low: inputValue.low });
+  };
+
   return (
     <WomenPageLayout rightElement="BackButton" paddingTop={0}>
       <div
@@ -50,9 +54,7 @@ const BloodPressureContainer = () => {
               variant="fill"
               size="medium"
               color="primary"
-              onClick={() => {
-                submitHandler({ high: inputValue.high, low: inputValue.low });
-              }}
+              onClick={onClick}
               fullWidth={true}
               isDisable={!inputValue.high && !inputValue.low}
               isLoading={isLoading}

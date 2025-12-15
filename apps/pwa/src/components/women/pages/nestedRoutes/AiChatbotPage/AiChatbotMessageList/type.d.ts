@@ -1,4 +1,4 @@
-import { AiChatbotDataResponseType } from '../__hooks__/useGetAiChatbotData/type';
+import { AiChatbotDataResponseType } from '@providers/__aiChatbot__/AiChatHistoryManagerProvider/__hook__/useGetData/type';
 
 type ItemType = Pick<AiChatbotDataResponseType, 'chats'>;
 

@@ -8,6 +8,7 @@ export type LoginResponseTypes = {
   token: string;
   status: number;
   result: boolean;
+  loginId: string;
   hasPair: boolean;
   advertise: string[];
   periodStatus: number;

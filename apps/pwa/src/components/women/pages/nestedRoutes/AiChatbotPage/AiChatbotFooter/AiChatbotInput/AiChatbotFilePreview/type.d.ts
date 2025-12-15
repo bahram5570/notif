@@ -1,7 +1,7 @@
-import { UploadItem } from '../__hooks__/useFileUpload/type';
+import { UploadItemType } from '@providers/__aiChatbot__/AiFileManagerProvider/type';
 
 export type AiChatbotFilePreviewPropsType = {
-  files: UploadItem[];
+  files: UploadItemType[];
   removeFileHandler: (url: string) => void;
   retryUploadHandler: () => void;
 };
