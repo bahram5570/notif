@@ -12,26 +12,29 @@ import { ArticleIdSubjectsListTypes } from './types';
 
 const ArticleIdSubjectsList = ({ articleSubjectList }: ArticleIdSubjectsListTypes) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = useState(true);
-  const [maxHeight, setMaxHeight] = useState(0);
+  // const [isOpen, setIsOpen] = useState(true);
+  // const [maxHeight, setMaxHeight] = useState(0);
 
-  useEffect(() => {
-    const el = ref.current;
+  // useEffect(() => {
+  //   const el = ref.current;
 
-    setTimeout(() => {
-      if (el) {
-        setMaxHeight(el.scrollHeight);
-      }
-    }, 1000);
-  }, []);
+  //   setTimeout(() => {
+  //     if (el) {
+  //       setMaxHeight(el.scrollHeight);
+  //     }
+  //   }, 1000);
+  // }, []);
 
   return (
     <div
-      className="w-full h-fit px-5 py-6 md:px-14 md:py-8 rounded-2xl"
-      style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
+      className="w-full h-fit   rounded-2xl "
+      // style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
     >
-      <div className="w-full flex items-center justify-between">
-        <CustomTypography fontSize="Lable_Medium" color={'Neutral_OnBackground'}>
+      <div
+        className="w-full flex items-center justify-between  pb-3"
+        style={{ borderBottom: `1px solid ${COLORS_LIST.Surface_OutlineVariant}` }}
+      >
+        <CustomTypography fontSize="Title_Small" color={'Neutral_OnBackground'} tagType="h2">
           فهرست محتوا
         </CustomTypography>
         {/* 
