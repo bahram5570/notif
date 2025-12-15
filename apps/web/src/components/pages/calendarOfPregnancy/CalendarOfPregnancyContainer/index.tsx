@@ -24,7 +24,7 @@ const CalendarOfPregnancyContainer = async () => {
       <div className="absolute top-0 left-0 right-0 w-full h-[90vh] pointer-events-none" />
 
       {/* <div className="relative w-full max-w-[640px] pt-[100px] md:pt-[150px] pb-12 px-4"> */}
-      <div className="relative landing-container pt-[100px] md:pt-[150px] pb-12 px-4">
+      <div className="relative landing_container pt-[100px] md:pt-[150px] pb-12 px-4">
         <CalendarOfPregnancyHeading />
         <QrCode />
         <CalendarOfPregnancyMethods />

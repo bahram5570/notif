@@ -22,7 +22,7 @@ const MarhaamContainer = () => {
   };
 
   return (
-    <article className=" flex flex-col landing-container mx-auto md:px-6 md:pt-6 md:pb-9">
+    <article className=" flex flex-col landing_container mx-auto md:px-6 md:pt-6 md:pb-9">
       {!result && <MarhaamQuestion onResult={resultHandler} />}
       {result && <MarhaamTab result={result} />}
 

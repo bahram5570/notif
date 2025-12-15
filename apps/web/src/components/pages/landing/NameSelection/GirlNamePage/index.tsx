@@ -30,7 +30,7 @@ const GirlNamePage = async () => {
           imageUrl="/assets/images/doctor.webp"
         />
 
-        <div className=" landing-container px-3 pb-16">
+        <div className=" landing_container px-3 pb-16">
           <AlphabetBtns
             bgColor1="Pink_300"
             bgColor2="Pink_100"

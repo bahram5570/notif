@@ -30,7 +30,7 @@ const ArticleIdPageContainer = async (props: ArticleIdPageContainerTypes) => {
   return (
     <HeaderFooterContainer isArticlePage={true} hasFooterLink={true}>
       <div className="relative w-full flex justify-center">
-        <article className=" flex flex-col gap-6 md:gap-12 pt-[100px] md:pt-[150px] landing-container px-4 md:px-0">
+        <article className=" flex flex-col gap-6 md:gap-12 pt-[100px] md:pt-[150px] landing_container px-4 md:px-0">
           <div className="w-full min-h-[42px]">
             <ArticleIdSearch />
           </div>
@@ -58,7 +58,7 @@ const ArticleIdPageContainer = async (props: ArticleIdPageContainerTypes) => {
 
           <ArticleIdHeading imageCover={props.imageCover} title={props.title} />
 
-          <div className="w-full min-h-[71px]">
+          <div className="w-full min-h-[71px]  as">
             <ArticleIdSubjectsList articleSubjectList={articleSubjectList} />
           </div>
 
