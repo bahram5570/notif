@@ -53,7 +53,7 @@ const ShortcutItemGenerator = (props: ShortcutItemGeneratorProps) => {
       </div>
 
       <Typography scale="Lable" size="SmallProminet" textAlign="center">
-        {isJson ? textShorter(props.title, 11) : props.title}
+        {props.title}
       </Typography>
     </div>
   );
