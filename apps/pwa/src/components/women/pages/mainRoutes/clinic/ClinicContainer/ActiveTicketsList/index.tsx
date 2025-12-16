@@ -51,38 +51,6 @@ const ActiveTicketsList = ({ tickets }: ActiveTicketsListProps) => {
               drSpeciality={ticket.drSpeciality}
             />
           ))}
-          {tickets.map((ticket, index) => (
-            <ClinicTicketGenerator
-              key={index}
-              rate={ticket.rate}
-              text={ticket.text}
-              stylingTypes="lists"
-              state={ticket.state}
-              drName={ticket.drName}
-              drImage={ticket.drImage}
-              ticketId={ticket.ticketId}
-              fileName={ticket.fileName}
-              ticketType={ticket.ticketType}
-              createTime={ticket.createTime}
-              drSpeciality={ticket.drSpeciality}
-            />
-          ))}
-          {tickets.map((ticket, index) => (
-            <ClinicTicketGenerator
-              key={index}
-              rate={ticket.rate}
-              text={ticket.text}
-              stylingTypes="lists"
-              state={ticket.state}
-              drName={ticket.drName}
-              drImage={ticket.drImage}
-              ticketId={ticket.ticketId}
-              fileName={ticket.fileName}
-              ticketType={ticket.ticketType}
-              createTime={ticket.createTime}
-              drSpeciality={ticket.drSpeciality}
-            />
-          ))}
         </div>
       )}
     </div>
