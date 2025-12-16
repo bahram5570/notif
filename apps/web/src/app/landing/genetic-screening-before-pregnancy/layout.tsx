@@ -6,7 +6,7 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <HeaderFooterContainer>
       <ContentLayout>
-        <div className="w-full max-w-[500px] relative pt-[55px] md:pt-[150px] pb-12">
+        <div className="w-full   relative pt-[55px] md:pt-[150px] pb-12">
           <>{children}</>
         </div>
       </ContentLayout>

@@ -7,7 +7,7 @@ import { Section3Props } from './types';
 const Section3 = ({ section, id }: Section3Props) => {
   return (
     <div
-      className="rounded-[12px] pt-4 pb-6 px-3 text-center mt-4"
+      className="rounded-[12px] pt-4 pb-6 px-3 lg:px-4 text-center mt-4"
       style={{ border: `1px solid ${COLORS_LIST.Neutral_Surface}` }}
     >
       <div className="mt-1">

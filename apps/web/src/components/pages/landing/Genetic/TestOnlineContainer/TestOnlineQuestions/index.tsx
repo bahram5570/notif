@@ -28,7 +28,7 @@ const TestOnlineQuestions = () => {
   const isLastStep = Number(currentStep) === Object.keys(questionList).length - 1;
 
   return (
-    <>
+    <div className="lg:w-10/12 lg:mx-auto">
       <QuestionProgressBar currentStep={currentStep} questionListLength={Object.keys(questionList).length} />
 
       <LogoIcon className="w-20 h-20 mt-11" />
@@ -77,7 +77,7 @@ const TestOnlineQuestions = () => {
           {isLastStep ? 'مشاهده نتیجه' : 'مرحله بعدی'}
         </CustomButton>
       </div>
-    </>
+    </div>
   );
 };
 

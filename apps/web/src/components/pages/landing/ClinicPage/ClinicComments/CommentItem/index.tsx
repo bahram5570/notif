@@ -8,7 +8,7 @@ import { CommentItemProps } from './types';
 const CommentItem = ({ drAvatar, drBio, userAvatar, userRate = 4, userText, userName }: CommentItemProps) => {
   return (
     <div
-      className="rounded-[16px] px-[8px] py-[16px] mx-4"
+      className="rounded-[16px] px-[8px] lg:pr-6 py-[16px] mx-4"
       style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
     >
       <div className="flex gap-x-2">

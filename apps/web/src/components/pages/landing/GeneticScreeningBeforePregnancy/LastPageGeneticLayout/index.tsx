@@ -22,7 +22,7 @@ const LastPageGeneticLayout = async () => {
                   bg-no-repeat 
                   bg-top"
       >
-        <div className="pt-7">
+        <div className="pt-7 lg:w-10/12 lg:mx-auto">
           <div className="mt-14 grid place-items-center">
             <CustomImage src={logo} alt="logo" width={80} height={80} />
             <CustomTypography tagType="h2" fontSize="Title_Small" className="mt-6">

@@ -1,5 +1,6 @@
 import MonyIcon from '@assets/icons/clinicLanding/mony.svg';
 import StarIcon from '@assets/icons/star.svg';
+import { toPersianNumbers } from '@utils/numbers';
 
 import style from '../../ClinicCategoryPage/CategoryDoctorContents/styles.module.css';
 
@@ -15,7 +16,7 @@ const DrBio = ({ clinicPrice, rate, ticketCount, htmlDescription, isActive }: Dr
         بیوگرافی پزشک
       </CustomTypography>
       <span className="w-full block h-[1px] my-3 mx-0" style={{ background: COLORS_LIST.Neutral_Surface }}></span>
-      <div dangerouslySetInnerHTML={{ __html: htmlDescription }} className={style.container}></div>
+      <div dangerouslySetInnerHTML={{ __html: toPersianNumbers(htmlDescription) }} className={style.container}></div>
       <ul className="mr-8">
         <CustomTypography
           fontSize="Body_Medium"
@@ -28,7 +29,7 @@ const DrBio = ({ clinicPrice, rate, ticketCount, htmlDescription, isActive }: Dr
       </ul>
       <div className="grid gap-x-3 mt-6 grid-cols-2">
         <div
-          className="px-8 py-[9px] rounded-lg grid justify-items-center text-center"
+          className="px-8 py-[9px] rounded-lg lg:rounded-3xl grid justify-items-center text-center"
           style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
         >
           <StarIcon className="fill-[#FFCC00] w-[20px] h-[20px] mb-2" />
@@ -49,7 +50,7 @@ const DrBio = ({ clinicPrice, rate, ticketCount, htmlDescription, isActive }: Dr
           </CustomTypography>
         </div>
         <div
-          className="px-8 py-[9px] rounded-lg grid justify-items-center text-center"
+          className="px-8 py-[9px] rounded-lg lg:rounded-3xl grid justify-items-center text-center"
           style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
         >
           <MonyIcon className="w-[20px] h-[20px] mb-2" />
