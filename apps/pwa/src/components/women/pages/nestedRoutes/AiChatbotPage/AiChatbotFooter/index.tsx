@@ -36,7 +36,7 @@ const AiChatbotFooter = (props: AiChatbotFooterPropsType) => {
         )}
         {showInput && (
           <div className="flex flex-col justify-center items-center">
-            <AiChatbotInput {...props} />
+            <AiChatbotInput {...props} closeHandler={closeHandler} />
 
             <div
               className="flex justify-center items-center  h-10  w-full  "
