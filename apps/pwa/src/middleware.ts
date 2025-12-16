@@ -1,5 +1,6 @@
 import { handleActivationCrLoggin, handleUserStatus } from '@services/loginServices';
 import { paymentStatusService } from '@services/paymentServices';
+import { handleReferralLinksService } from '@services/referralLinksServices';
 
 import { UserCookieTypes } from '@actions/cookie.actions';
 import { PARTNER_CODE_SHOW_INPUT_QUERY_NAME } from '@components/activation/pages/PartnerCodeContainer/constants';
@@ -42,10 +43,16 @@ export const middleware = async (request: NextRequest) => {
     return await handleActivationCrLoggin({ response, request });
   }
 
+  const isReferralLinksPage = pathname.startsWith('/referralLinks');
   const isActivationCrPage = pathname.startsWith('/activationCr');
   const isActivationPage = pathname.startsWith('/activation');
   const isProtectedPage = pathname.startsWith('/protected');
   const isEmptyPage = pathname === '/';
+
+  // # Convert referral links by route of 'referralLink' to inner routes
+  if (isReferralLinksPage) {
+    return await handleReferralLinksService(queryParams, request.url);
+  }
 
   // # Renders pages directly for '/activationCr' paths without additional conditions or redirects
   if (isActivationCrPage) {
@@ -92,5 +99,5 @@ export const middleware = async (request: NextRequest) => {
 };
 
 export const config = {
-  matcher: ['/', '/activation/:path*', '/activationCr/:path*', '/protected/:path*'],
+  matcher: ['/', '/activation/:path*', '/activationCr/:path*', '/protected/:path*', '/referralLinks/:path*'],
 };

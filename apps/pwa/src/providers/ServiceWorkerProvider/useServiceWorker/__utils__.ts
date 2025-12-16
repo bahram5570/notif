@@ -17,7 +17,7 @@ export const notifHandlerActionMaker = (data: NotificationsDataTypes) => {
     },
   };
 
-  if (data.Path) {
+  if (data?.Path) {
     action.actionType = ActionTypeEnum.InternalRout;
     action.internal = data.Path;
   } else if (data.link) {
