@@ -8,7 +8,7 @@ const AiTopicChatbotListFooter = ({ inputPlaceholder }: { inputPlaceholder: stri
 
   return (
     <div
-      className="fixed bottom-0 left-0 right-0 mx-auto   flex"
+      className="fixed bottom-0 left-0 right-0 mx-auto z-30  flex"
       style={{
         maxWidth: MAX_SCREEN_WIDTH,
         background: 'linear-gradient(180deg, rgba(192, 194, 255, 0) -10.78%, #D3C8FC 100%)',
