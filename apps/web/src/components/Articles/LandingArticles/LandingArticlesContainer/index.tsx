@@ -15,8 +15,8 @@ const LandingArticlesContainer = ({ data, title, subTitle, showAllArticlesLinkTo
 
   return (
     <div
-      className="w-full max-w-[100vw] overflow-hidden flex flex-col items-center py-8 lg:py-9"
-      style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
+      className="w-full max-w-[100vw] overflow-hidden flex flex-col items-center py-8 lg:py-9 bg-impo_Surface_SurfaceVariant"
+      // style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
     >
       <CustomTypography
         tagType="h2"
@@ -51,10 +51,10 @@ const LandingArticlesContainer = ({ data, title, subTitle, showAllArticlesLinkTo
 
       <CustomLink
         href={showAllArticlesLinkTo}
-        className="h-[40px] lg:h-[60px] p-6 flex items-center justify-center rounded-full"
-        style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
+        className="h-[40px] lg:h-[60px] p-6 flex items-center justify-center rounded-full bg-impo_Primary_Primary"
+        // style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
       >
-        <CustomTypography fontSize="Lable_Large" color="Primary_OnPrimary">
+        <CustomTypography fontSize="Lable_Large" className="!text-impo_Primary_OnPrimary">
           مشاهده همه مقالات
         </CustomTypography>
       </CustomLink>

@@ -2,7 +2,6 @@ import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
 
 import { APP_FEATURES_CONTENTS_LIST } from '../constants';
 import useContents from './__hooks__/useContents';
@@ -31,8 +30,8 @@ const AppFeaturesContents = ({ currentTab }: AppFeaturesContentsTypes) => {
                 <CustomLink
                   key={index + contentIndex}
                   href={item.lintTo}
-                  style={{ gridColumn, gridRow, backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
-                  className="relative w-full h-full rounded-2xl lg:rounded-3xl select-none pointer-events-none overflow-hidden"
+                  style={{ gridColumn, gridRow }}
+                  className="relative w-full h-full rounded-2xl lg:rounded-3xl select-none pointer-events-none overflow-hidden bg-impo_Surface_SurfaceVariant"
                 >
                   <CustomImage
                     key={image}

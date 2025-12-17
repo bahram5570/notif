@@ -17,7 +17,6 @@ const DownloadApp = () => {
   return (
     <div
       id={DOWNLOAD_APP_SECTION_ID}
-      style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
       className="
                   flex 
                   flex-col 
@@ -38,6 +37,7 @@ const DownloadApp = () => {
                   md:w-11/12 
                   lg:w-10/12 
                   md:max-w-full
+                  bg-impo_Surface_SurfaceVariant
                 "
     >
       <div className="flex flex-col items-center w-full md:w-[400px]">
@@ -70,7 +70,7 @@ const DownloadApp = () => {
 
           <DownloadAppAndroid />
 
-          <div className="w-full h-[1px] mt-4 md:mt-8 mb-8" style={{ backgroundColor: COLORS_LIST.Neutral_Surface }} />
+          <div className="w-full h-[1px] mt-4 md:mt-8 mb-8 bg-impo_Neutral_Surface" />
 
           <DownloadAppIos />
         </section>

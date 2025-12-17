@@ -14,7 +14,7 @@ const FooterPages = () => {
         <div className="flex flex-col items-center md:items-start gap-3" key={groupIndex}>
           <CustomTypography
             fontSize={breakPoint.tablet ? 'Title_Medium' : 'Title_Small'}
-            color={breakPoint.tablet ? 'Surface_OnSurfaceVariant' : 'Neutral_OnBackground'}
+            className={`${breakPoint.tablet ? 'text-impo_Surface_OnSurfaceVariant' : 'text-impo_Neutral_OnBackground'}`}
           >
             {item.groupName}
           </CustomTypography>
@@ -29,16 +29,15 @@ const FooterPages = () => {
                   href={page.linkTo}
                   aria-label={page.linkTo}
                   key={`page-${pageIndex}`}
-                  className="w-full h-[40px] md:h-fit rounded-full flex items-center justify-center md:justify-start"
+                  className={`w-full h-[40px] md:h-fit rounded-full flex items-center justify-center md:justify-start ${breakPoint.tablet ? 'bg-impo_Surface_SurfaceVariant' : 'transparent'}`}
                   style={{
                     order: page.smallScreenOrder,
-                    backgroundColor: breakPoint.tablet ? COLORS_LIST.Surface_SurfaceVariant : 'transparent',
                     gridColumn: isTwoColumns ? 'span 2' : 'span 1',
                   }}
                 >
                   <CustomTypography
                     fontSize={breakPoint.tablet ? 'Lable_Large' : 'Body_Small'}
-                    color={breakPoint.tablet ? 'Neutral_OnSurface' : 'Surface_OnSurfaceVariant'}
+                    className={`${breakPoint.tablet ? 'text-impo_Neutral_OnSurface' : 'text-impo_Surface_OnSurfaceVariant'}`}
                   >
                     {page.title}
                   </CustomTypography>
