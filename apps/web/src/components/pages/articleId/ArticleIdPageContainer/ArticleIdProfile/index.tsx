@@ -4,7 +4,6 @@ import { fileImageUrl } from '@services/http';
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import ArticleIdProfileInfo from './ArticleIdProfileInfo';
 import { ArticleIdProfileTypes } from './types';
@@ -30,12 +29,19 @@ const ArticleIdProfile = (props: ArticleIdProfileTypes) => {
             <div className="flex flex-col gap-2">
               {typeof props.name !== 'undefined' && (
                 <div className="flex items-center gap-1">
-                  <CustomTypography fontSize="Lable_Medium">{`بازبینی توسط ${props.name}`}</CustomTypography>
+                  <CustomTypography
+                    fontSize="Lable_Medium"
+                    className="!text-impo_Neutral_OnBackground"
+                  >{`بازبینی توسط ${props.name}`}</CustomTypography>
+
                   <BlueTickIcon className="w-5" />
                 </div>
               )}
 
-              <CustomTypography fontSize="Body_Small">{`نویسنده: ${props.authorName}`}</CustomTypography>
+              <CustomTypography
+                fontSize="Body_Small"
+                className="!text-impo_Neutral_OnBackground"
+              >{`نویسنده: ${props.authorName}`}</CustomTypography>
             </div>
           </div>
         </CustomLink>
@@ -48,7 +54,7 @@ const ArticleIdProfile = (props: ArticleIdProfileTypes) => {
         />
       </div>
 
-      <div className="w-full h-[1px]" style={{ backgroundColor: COLORS_LIST.Neutral_Surface }} />
+      <div className="w-full h-[1px] bg-impo_Neutral_Surface" />
     </>
   );
 };

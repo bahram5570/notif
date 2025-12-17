@@ -6,6 +6,7 @@ import CustomButton from '@components/ui/CustomButton';
 import CustomLink from '@components/ui/CustomLink';
 import { COLORS_LIST } from '@theme/colors';
 
+import D from '../D';
 import HeaderDesktopLinks from './HeaderDesktopLinks';
 
 const HeaderDesktop = () => {
@@ -39,6 +40,8 @@ const HeaderDesktop = () => {
           <ImpoNameIcon className="w-[68px] h-auto pointer-events-none" style={{ fill: COLORS_LIST.Primary_Primary }} />
         </CustomLink>
 
+        <D />
+
         <HeaderDesktopLinks />
 
         <CustomButton
@@ -46,7 +49,7 @@ const HeaderDesktop = () => {
           fontSize="Title_Small"
           className="w-[127px] h-[48px]"
           onClick={downloadLinkHandler}
-          id='install_header'
+          id="install_header"
         >
           نصب ایمپو
         </CustomButton>

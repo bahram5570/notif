@@ -37,7 +37,7 @@ export const YekanBakhVF = localFont({
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="fa" dir="rtl" className={YekanBakhVF.className}>
+    <html lang="fa" dir="rtl" className={`${YekanBakhVF.className}`} suppressHydrationWarning={true}>
       <head>
         <link
           as="font"
@@ -93,6 +93,20 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             s.id\="najva-mini-script";
             s.setAttribute("data-najva-id","4c439ddc-6cdf-4f4d-b55a-d7962562af40");
             document.head.appendChild(s);
+          `}
+        </Script>
+
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`
+            const t = localStorage.getItem('theme');
+            if (t === 'dark') {
+              document.documentElement.classList.add('dark');
+            } else if (t === 'light') {
+              document.documentElement.classList.remove('dark');
+            } else {
+              const p = window.matchMedia("(prefers-color-scheme: dark)").matches;
+              document.documentElement.classList.toggle('dark', p);
+            }
           `}
         </Script>
       </head>
