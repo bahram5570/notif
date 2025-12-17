@@ -4,6 +4,7 @@ import { CalendarTypeEnum } from '@constants/date.constants';
 import useUpdateCycleCard from '@hooks/__cycle__/useUpdateCycleCard';
 import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
+import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
 import { useRouter } from 'next/navigation';
 
 import { SubmitHandlerTypes } from './types';
@@ -12,8 +13,10 @@ const useUpdateCycle = () => {
   const router = useRouter();
   const { culture } = useCulture();
   const { cycleCardStatusHandler } = useUpdateCycleCard();
+  const { updateProfileDateByDellay } = useGetProfileData();
 
   const successHandler = () => {
+    updateProfileDateByDellay();
     router.push('/protected/cycle');
     cycleCardStatusHandler('refetch');
   };

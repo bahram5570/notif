@@ -9,7 +9,7 @@ export interface NameSelectorProviderTypes {
 }
 
 export type NameSelectorProviderDataTypes = FetchSelectNameTypes;
-export type NameSelectorProviderFavoriteFiltersTypes = { paneNo: number };
+export type NameSelectorProviderFavoriteFiltersTypes = { isFetched: boolean };
 export type NameSelectorProviderAllFiltersTypes = { paneNo: number; gender: SelectNameGenderEnum; styles: string[] };
 
 export type NameSelectorResetFiltersTypes = 'gender' | 'styles' | undefined;

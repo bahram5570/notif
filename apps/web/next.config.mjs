@@ -42,13 +42,15 @@ const nextConfig = {
   output: 'standalone',
 };
 
-export default withSentryConfig(nextConfig, {
-  org: 'sentry',
-  project: 'web',
-  disableLogger: true,
-  silent: !process.env.CI,
-  tunnelRoute: '/monitoring',
-  widenClientFileUpload: true,
-  automaticVercelMonitors: true,
-  sentryUrl: 'https://sentry.weareimpo.ir/',
-});
+export default nextConfig;
+
+// export default withSentryConfig(nextConfig, {
+//   org: 'sentry',
+//   project: 'web',
+//   disableLogger: true,
+//   silent: !process.env.CI,
+//   tunnelRoute: '/monitoring',
+//   widenClientFileUpload: true,
+//   automaticVercelMonitors: true,
+//   sentryUrl: 'https://sentry.weareimpo.ir/',
+// });

@@ -59,11 +59,11 @@ const useServiceWorker = () => {
 
           // # Handle notification action after the app is open by getting data from cache
 
-          caches.open(STORED_NOTIFICATIONS_CACHE_NAME).then((cache) => {
+          caches?.open(STORED_NOTIFICATIONS_CACHE_NAME).then((cache) => {
             cache.match(`/${STORED_NOTIFICATIONS_CACHE_NAME}`).then((res) => {
               res?.json().then((data) => {
                 notifHandler(data);
-                caches.delete(STORED_NOTIFICATIONS_CACHE_NAME);
+                caches?.delete(STORED_NOTIFICATIONS_CACHE_NAME);
               });
             });
           });

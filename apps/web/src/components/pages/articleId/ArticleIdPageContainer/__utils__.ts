@@ -134,6 +134,7 @@ export const handleBodyUpdate = async (body: string) => {
     count++;
   });
 
+  // # Styling images
   $('img').each((_, element) => {
     const img = $(element);
 
@@ -141,6 +142,16 @@ export const handleBodyUpdate = async (body: string) => {
     img.attr('height', 'auto');
     img.attr('loading', 'lazy');
     img.css({ 'aspect-ratio': '16 / 9' });
+  });
+
+  // # Styling scripts
+  $('p, span, li, h1, h2, h3, h4, h5, h6').each((_, element) => {
+    const el = $(element);
+    el.addClass('text-impo_Neutral_OnBackground');
+  });
+  $('a').each((_, element) => {
+    const el = $(element);
+    el.addClass('text-impo_Primary_Primary');
   });
 
   return { updatedBody: $.html(), articleSubjectList };

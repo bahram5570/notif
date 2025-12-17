@@ -1,0 +1,5 @@
+Spinner > remove color
+CustomInput > remove color
+CustomTypography > remove color
+COLORS_LIST > delete
+D > delete

@@ -17,9 +17,9 @@ export const buttonLinkHandler = (link: LinkType) => {
     case PartnerTypeLink.history:
       return '/protected/challengeHistory';
     case PartnerTypeLink.memory:
-      return '/common/goToApp/memory';
+      return '/protected/memory';
     case PartnerTypeLink.messenger:
-      return '/common/goToApp/message';
+      return '/protected/partnerMessage';
     case PartnerTypeLink.chat:
       return `/protected/challenge/${link.url}`;
     case PartnerTypeLink.web:
@@ -27,6 +27,6 @@ export const buttonLinkHandler = (link: LinkType) => {
     case PartnerTypeLink.pair:
       return '/protected/partnerStart';
     default:
-      return '/common/goToApp/mate';
+      return '/protected/cycle';
   }
 };

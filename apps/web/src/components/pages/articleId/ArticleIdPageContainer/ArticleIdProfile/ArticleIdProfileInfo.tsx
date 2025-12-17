@@ -3,7 +3,6 @@ import LikeIcon from '@assets/icons/like.svg';
 import { jalaaliScriptDate, toJalaliData } from '@utils/dates';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { ArticleIdProfileInfoTypes } from './types';
 
@@ -31,27 +30,31 @@ const ArticleIdProfileInfo = ({ commentCount, publishTime, rateCount, wordsCount
   return (
     <div className="w-fit flex items-center justify-between pr-[76px] md:pr-0">
       <div className="flex items-center gap-2 md:gap-4">
-        <CustomTypography fontSize="Body_Small" color={'Surface_Outline'}>
+        <CustomTypography fontSize="Body_Small" className="!text-impo_Surface_Outline">
           {readingTime(wordsCount)}
         </CustomTypography>
 
-        <CustomTypography fontSize="Body_Small" color={'Surface_Outline'}>
+        <CustomTypography fontSize="Body_Small" className="!text-impo_Surface_Outline">
           .
         </CustomTypography>
 
-        <CustomTypography fontSize="Body_Small" color={'Surface_Outline'}>
+        <CustomTypography fontSize="Body_Small" className="!text-impo_Surface_Outline">
           {publishTimeScript}
         </CustomTypography>
 
         <div className="gap-4 hidden md:flex">
           <div className="flex items-center gap-2">
-            <LikeIcon className="w-[14px]" style={{ fill: COLORS_LIST.Surface_Outline }} />
-            <CustomTypography fontSize="Body_Small">{rateCount}</CustomTypography>
+            <LikeIcon className="w-[14px] fill-impo_Surface_Outline" />
+            <CustomTypography fontSize="Body_Small" className="!text-impo_Surface_Outline">
+              {rateCount.toString()}
+            </CustomTypography>
           </div>
 
           <div className="flex items-center gap-2">
-            <CommentIcon className="w-[14px]" style={{ fill: COLORS_LIST.Surface_Outline }} />
-            <CustomTypography fontSize="Body_Small">{commentCount}</CustomTypography>
+            <CommentIcon className="w-[14px] fill-impo_Surface_Outline" />
+            <CustomTypography fontSize="Body_Small" className="!text-impo_Surface_Outline">
+              {commentCount.toString()}
+            </CustomTypography>
           </div>
         </div>
       </div>
