@@ -22,12 +22,15 @@ const AppFeaturesTabGenerator = ({
     <div className="relative p-[1px]" style={{ width: tabSizes.width, height: tabSizes.height }}>
       <CustomButton
         varient="FREE_COLORS"
-        className="!h-full !w-full"
+        className={`!h-full !w-full ${isSelected ? '!bg-impo_Primary_Primary !text-impo_Primary_OnPrimary !border-impo_Primary_Primary' : '!bg-impo_White !text-impo_Neutral_OnSurface !border-impo_Surface_OutlineVariant'} `}
         onClick={() => currentTabHandler(tabIndex)}
         fontSize={tabSizes.isMobile ? 'Lable_Large' : 'Title_Small'}
-        backgroundColor={isSelected ? COLORS_LIST.Primary_Primary : COLORS_LIST.White}
-        textColor={isSelected ? COLORS_LIST.Primary_OnPrimary : COLORS_LIST.Neutral_OnSurface}
-        borderColor={isSelected ? COLORS_LIST.Primary_Primary : COLORS_LIST.Surface_OutlineVariant}
+        borderColor=""
+        backgroundColor=""
+        textColor=""
+        // backgroundColor={isSelected ? COLORS_LIST.Primary_Primary : COLORS_LIST.White}
+        // textColor={isSelected ? COLORS_LIST.Primary_OnPrimary : COLORS_LIST.Neutral_OnSurface}
+        // borderColor={isSelected ? COLORS_LIST.Primary_Primary : COLORS_LIST.Surface_OutlineVariant}
       >
         {title}
       </CustomButton>

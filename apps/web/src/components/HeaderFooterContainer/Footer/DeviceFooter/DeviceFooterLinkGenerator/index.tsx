@@ -14,8 +14,11 @@ const DeviceFooterLinkGenerator = ({ Icon, href, title, isSelected, id }: Device
       style={{ opacity: isSelected ? '1' : '0.4' }}
       className="w-14 h-14 flex flex-col items-center justify-center"
     >
-      <Icon style={{ width: 28 }} />
-      <CustomTypography fontSize="Body_Small">{title}</CustomTypography>
+      {Icon}
+
+      <CustomTypography fontSize="Body_Small" className="!text-impo_Neutral_OnBackground">
+        {title}
+      </CustomTypography>
     </CustomLink>
   );
 };

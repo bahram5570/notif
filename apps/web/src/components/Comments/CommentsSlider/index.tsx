@@ -35,9 +35,8 @@ const CommentsSlider = ({ list }: CommentsSliderTypes) => {
               {({ isActive }) => (
                 <>
                   <div
-                    className="flex flex-col items-center justify-between gap-8 px-4 sm:px-6 py-4 sm:py-8 rounded-3xl mx-auto w-[340px] sm:w-[450px] !h-full"
+                    className="flex flex-col items-center justify-between gap-8 px-4 sm:px-6 py-4 sm:py-8 rounded-3xl mx-auto w-[340px] sm:w-[450px] !h-full bg-impo_Surface_SurfaceVariant"
                     style={{
-                      backgroundColor: COLORS_LIST.Surface_SurfaceVariant,
                       opacity: isActive ? '1' : '0.5',
                     }}
                   >
@@ -66,8 +65,8 @@ const CommentsSlider = ({ list }: CommentsSliderTypes) => {
                         />
 
                         <div
-                          className="absolute top-0 -right-3 w-6 h-6 min-w-6 min-h-6 rounded-full flex items-center justify-center"
-                          style={{ backgroundColor: COLORS_LIST.White }}
+                          className="absolute top-0 -right-3 w-6 h-6 min-w-6 min-h-6 rounded-full flex items-center justify-center bg-impo_White"
+                          // style={{ backgroundColor: COLORS_LIST.White }}
                         >
                           <CustomImage src={item.downloadPortIcon} width={14} height={14} sizes="20px" alt="port" />
                         </div>

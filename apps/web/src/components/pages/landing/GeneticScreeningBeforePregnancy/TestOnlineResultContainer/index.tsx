@@ -15,7 +15,7 @@ const TestOnlineResultContainer = () => {
 
   return (
     <TestOnlineResultWrapper>
-      <div className="relative w-full h-full pt-28">
+      <div className="relative w-full h-full pt-28 lg:w-10/12 lg:mx-auto lg:pt-80 ">
         <HeaderBox header={data.header} id={data.id} />
         <Section1 section={data.section1} id={data.id} />
         <Section2 section={data.section2} />

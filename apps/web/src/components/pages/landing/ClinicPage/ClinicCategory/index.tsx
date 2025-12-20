@@ -14,7 +14,7 @@ const ClinicCategory = async () => {
         دسته‌بندی کلینیک سلامت
       </CustomTypography>
       <section
-        className="grid grid-cols-3 gap-x-[25px] gap-y-[24px] mt-[16px] mx-[16px] px-[16px] py-[24px] rounded-[16px] [box-shadow:0px_4px_24px_0px_rgba(58,112,191,0.05)]"
+        className="grid grid-cols-3 lg:grid-cols-5 gap-x-[25px] gap-y-[24px] mt-[16px] mx-[16px] px-[16px] py-[24px] lg:rounded-3xl rounded-[16px] [box-shadow:0px_4px_24px_0px_rgba(58,112,191,0.05)]"
         style={{ backgroundColor: COLORS_LIST.Neutral_Background }}
       >
         {categoryData &&

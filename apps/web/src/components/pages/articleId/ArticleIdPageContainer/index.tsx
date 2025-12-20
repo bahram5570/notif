@@ -30,12 +30,12 @@ const ArticleIdPageContainer = async (props: ArticleIdPageContainerTypes) => {
   return (
     <HeaderFooterContainer isArticlePage={true} hasFooterLink={true}>
       <div className="relative w-full flex justify-center">
-        <article className="w-full flex flex-col gap-6 md:gap-12 pt-[100px] md:pt-[150px] sm:w-9/12 md:w-8/12 lg:w-6/12 px-4 md:px-0">
+        <article className=" flex flex-col gap-6 md:gap-12 pt-[100px] md:pt-[150px] landing_container px-4 md:px-0">
           <div className="w-full min-h-[42px]">
             <ArticleIdSearch />
           </div>
 
-          <QrCode className="xl:top-[400px] top-[620px] lg:top-[415px]" />
+          <QrCode className="!top-[620px] lg:!top-[415px] xl:!top-[400px]" />
 
           <ArticleIdBreadcrumb
             categoryTitle={props.categories[0].title}

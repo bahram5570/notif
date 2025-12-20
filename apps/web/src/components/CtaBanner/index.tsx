@@ -30,7 +30,7 @@ const CtaBanner = ({ id, backgroundColor, title, description, image, link, butto
           <div className="w-full md:w-7/12 flex flex-col items-center md:items-start pt-10 px-8">
             <p
               className="
-                          text-black
+                          text-impo_Black
                           !text-[19px] 
                           !font-[700] 
                           !leading-[150%] 
@@ -48,7 +48,7 @@ const CtaBanner = ({ id, backgroundColor, title, description, image, link, butto
               className="
                           pt-2 
                           pb-5
-                          text-black
+                          text-impo_Black
                           !text-[16px] 
                           !font-[500] 
                           !leading-[160%] 
@@ -61,12 +61,8 @@ const CtaBanner = ({ id, backgroundColor, title, description, image, link, butto
             </p>
 
             <div
-              className="py-2 px-6 md:mt-auto md:mb-6 rounded-full animate-bounce"
-              style={{
-                color: COLORS_LIST.White,
-                ...FONTS_ANDROID.Body_Large,
-                backgroundColor: COLORS_LIST.Primary_Primary,
-              }}
+              style={{ ...FONTS_ANDROID.Body_Large }}
+              className="py-2 px-6 md:mt-auto md:mb-6 rounded-full animate-bounce text-impo_White bg-impo_Pink_500"
             >
               {buttonLabel?.trim() || ''}
             </div>

@@ -25,6 +25,10 @@ body::-webkit-scrollbar-thumb {
   border-radius: 10px;
 }
 
+.landing_container {
+  @apply w-full sm:w-9/12 md:w-8/12 lg:w-6/12;
+}
+
 textarea {
   resize: none;
 }
@@ -48,7 +52,6 @@ td {
 }
 
 /* # Old banner styles */
-
 .bannerBetweenNew {
   border-radius: 16px;
   margin: 0;
@@ -57,7 +60,6 @@ td {
 
 .bannerBetweenNew .frameBanner {
   padding-right: 24px;
-  /* background-image: url(../assets/images/betweenBanner/new/coverBgBanner.webp); */
   background-repeat: no-repeat;
   background-size: contain;
   display: grid;
@@ -390,7 +392,6 @@ td {
 }
 
 /* # Theme Colors */
-
 :root {
   --color-Transparent: transparent;
   --color-Black: #000000;
@@ -582,10 +583,10 @@ td {
   --color-Black: #000000;
   --color-White: #ffffff;
 
-  --color-Primary_Primary: #f24f7a;
-  --color-Primary_OnPrimary: #ffffff;
-  --color-Primary_PrimaryContainer: #fce7eb;
-  --color-Primary_OnPrimaryContainer: #6c2337;
+  --color-Primary_Primary: #ffb2c1;
+  --color-Primary_OnPrimary: #5f112a;
+  --color-Primary_PrimaryContainer: #7d2d43;
+  --color-Primary_OnPrimaryContainer: #ffd9e2;
 
   --color-PrimaryMan_PrimaryMan: #3b82f6;
   --color-PrimaryMan_OnPrimaryMan: #ffffff;

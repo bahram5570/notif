@@ -28,15 +28,15 @@ const TestOnlineQuestions = () => {
   const isLastStep = Number(currentStep) === Object.keys(questionList).length - 1;
 
   return (
-    <>
+    <div className=" lg:w-10/12 lg:mx-auto ">
       <QuestionProgressBar currentStep={currentStep} questionListLength={Object.keys(questionList).length} />
-
-      <LogoIcon className="w-20 h-20 mt-11" />
+      <div className="lg:w-full lg:flex lg:justify-center">
+        <LogoIcon className="w-20 h-20 mt-11" />
+      </div>
 
       <CustomTypography fontSize="Title_Small" tagType="h2" className="py-10 text-center">
         {data.title}
       </CustomTypography>
-
       <div className="w-full flex flex-col gap-4 pb-6">
         {data.items.map((question, index) => (
           <TestOnlineQuestionsOption
@@ -47,7 +47,6 @@ const TestOnlineQuestions = () => {
           />
         ))}
       </div>
-
       {isLastStep && selectedIndex === 1 && (
         <div className="mb-3 w-full">
           <CustomTypography fontSize="Body_Medium" className="text-right w-full mb-1">
@@ -67,6 +66,7 @@ const TestOnlineQuestions = () => {
           />
         </div>
       )}
+
       <div className="mt-6 w-fit mx-auto my-5 flex">
         <CustomButton
           varient="fill"
@@ -77,7 +77,7 @@ const TestOnlineQuestions = () => {
           {isLastStep ? 'مشاهده نتیجه' : 'مرحله بعدی'}
         </CustomButton>
       </div>
-    </>
+    </div>
   );
 };
 

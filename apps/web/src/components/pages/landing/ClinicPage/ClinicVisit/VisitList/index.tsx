@@ -5,7 +5,7 @@ import { VisitLevels } from './constants';
 
 const VisitList = () => {
   return (
-    <div className="grid gap-y-[24px]">
+    <div className="grid gap-y-[24px]  lg:gap-y-9">
       {VisitLevels.map((item, i) => {
         return (
           <div key={i}>

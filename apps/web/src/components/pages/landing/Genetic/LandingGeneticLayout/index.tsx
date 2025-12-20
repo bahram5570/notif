@@ -30,7 +30,7 @@ const LandingGeneticLayout = () => {
       >
         <div className="pt-7">
           <QuestionProgressBar currentStep="0" questionListLength={20} />
-          <div className="mt-7 grid place-items-center">
+          <div className="mt-7 grid place-items-center lg:w-10/12 lg:mx-auto">
             <CustomImage src={logo} alt="logo" width={80} height={80} />
             <CustomTypography tagType="h2" fontSize="Title_Small" className="mt-6">
               غربالگری ژنتیک ایمپو

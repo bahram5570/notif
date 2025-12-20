@@ -11,18 +11,20 @@ const ClinicCategoryPage = ({ clinicDataProps, params }: { clinicDataProps: Clin
   return (
     <HeaderFooterContainer>
       <div
-        className="pt-[85px] w-full md:mt-12"
+        className="pt-[85px] w-full md:mt-12  landing_container"
         style={{
           backgroundImage: `url(/assets/images/clinicLanding/${HeadingPattern[clinicDataProps.categoryTitle as keyof typeof HeadingPattern] || 'headingPattern.webp'})`,
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
           backgroundPositionY: '20px',
-          maxWidth: SMALL_SCREEN_MAX_WIDTH,
+          // maxWidth: SMALL_SCREEN_MAX_WIDTH,
         }}
       >
-        <CategoryHeading categoryTitle={clinicDataProps.categoryTitle} categoryText={clinicDataProps.categoryText} />
-        <CategoryDrList doctorList={clinicDataProps.items} params={params} />
-        <CategoryDoctorContents contents={clinicDataProps.htmlDescription} />
+        <div className="lg:w-10/12 lg:mx-auto">
+          <CategoryHeading categoryTitle={clinicDataProps.categoryTitle} categoryText={clinicDataProps.categoryText} />
+          <CategoryDrList doctorList={clinicDataProps.items} params={params} />
+          <CategoryDoctorContents contents={clinicDataProps.htmlDescription} />
+        </div>
       </div>
     </HeaderFooterContainer>
   );

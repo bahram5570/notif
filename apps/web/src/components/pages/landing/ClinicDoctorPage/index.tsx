@@ -11,7 +11,7 @@ import { DoctorInfoTypes } from './types';
 const ClinicDoctorPage = (props: DoctorInfoTypes) => {
   return (
     <HeaderFooterContainer>
-      <div className="pt-[57px] md:mt-12" style={{ maxWidth: SMALL_SCREEN_MAX_WIDTH }}>
+      <div className="pt-[57px] md:mt-12 landing_container">
         <DoctorHeading bioImage={props.bioImage} name={props.name} nezam={props.nezam} speciality={props.speciality} />
         <DrBio
           clinicPrice={props.clinicPrice}

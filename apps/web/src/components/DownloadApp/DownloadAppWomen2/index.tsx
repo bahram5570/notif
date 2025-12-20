@@ -21,17 +21,12 @@ const DownloadAppWomen2 = ({ Link1, Link2 }: DownloadAppWomen2Types) => {
 
             <CustomTypography
               fontSize="Headline_Small"
-              color={'Neutral_OnBackground'}
-              className="text-center lg:text-start pb-2 px-6"
+              className="text-center lg:text-start pb-2 px-6 !text-impo_Black"
             >
               کامل‌ترین اپلیکیشن سلامت بانوان در خاورمیانه
             </CustomTypography>
 
-            <CustomTypography
-              fontSize="Body_Large"
-              color={'Surface_InverseSurface'}
-              className="text-center lg:text-start lg:px-6"
-            >
+            <CustomTypography fontSize="Body_Large" className="text-center lg:text-start lg:px-6 !text-impo_Black">
               بیش از ۳ میلیون بانو در مسیر سلامتی از پریود تا باروری ایمپو رو برای همراهی انتخاب کردن.
             </CustomTypography>
 
@@ -41,7 +36,7 @@ const DownloadAppWomen2 = ({ Link1, Link2 }: DownloadAppWomen2Types) => {
             </div>
           </div>
 
-          <div className="relative h-full w-full max-w-[400px] sm:max-w-full sm:w-[400px] lg:w-[600px] flex">
+          <div className="relative flex h-full w-full max-w-[400px] sm:max-w-full sm:w-[400px] lg:w-[600px]">
             <CustomImage
               alt=""
               fill={true}

@@ -141,6 +141,7 @@ export const handleBodyUpdate = async (body: string) => {
     img.attr('width', '100%');
     img.attr('height', 'auto');
     img.attr('loading', 'lazy');
+    img.css({ 'aspect-ratio': '16 / 9' });
   });
 
   // # Styling scripts

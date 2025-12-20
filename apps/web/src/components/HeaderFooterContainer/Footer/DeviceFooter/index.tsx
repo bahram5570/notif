@@ -7,7 +7,6 @@ import LoginIcon from '@assets/icons/deviceFooter/login.svg';
 
 import { FOOTER_HEIGHT } from '@constants/app.constants';
 import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
-import { COLORS_LIST } from '@theme/colors';
 import { usePathname } from 'next/navigation';
 
 import DeviceFooterLinkGenerator from './DeviceFooterLinkGenerator';
@@ -24,16 +23,27 @@ const DeviceFooter = ({ isArticlePage, hasFooterLink }: DeviceFooterTypes) => {
       {hasFooterLink && <FooterNavLink />}
 
       <footer
-        className="fixed left-0 right-0 bottom-0 w-full flex justify-around gap-2 px-4 pt-2 border-t-[1px] z-10"
-        style={{
-          height: FOOTER_HEIGHT,
-          backgroundColor: COLORS_LIST.White,
-          borderTopColor: COLORS_LIST.Neutral_Surface,
-        }}
+        style={{ height: FOOTER_HEIGHT }}
+        className="
+                    fixed 
+                    left-0 
+                    right-0 
+                    bottom-0 
+                    w-full 
+                    flex 
+                    justify-around 
+                    gap-2 
+                    px-4 
+                    pt-2 
+                    border-t-[1px] 
+                    border-t-impo_Neutral_Surface 
+                    bg-impo_Neutral_Background
+                    z-10
+                  "
       >
         <DeviceFooterLinkGenerator
           title="خانه"
-          Icon={HomeIcon}
+          Icon={<HomeIcon className="stroke-impo_Surface_Outline fill-impo_Surface_Outline w-7" />}
           href="/"
           isSelected={pathname === '/'}
           id="navbar-home"
@@ -41,7 +51,7 @@ const DeviceFooter = ({ isArticlePage, hasFooterLink }: DeviceFooterTypes) => {
 
         <DeviceFooterLinkGenerator
           title="چرخه"
-          Icon={CycleIcon}
+          Icon={<CycleIcon className="stroke-impo_Surface_Outline w-7" />}
           href="/cycle"
           isSelected={pathname === '/cycle'}
           id="navbar-cycle"
@@ -49,7 +59,7 @@ const DeviceFooter = ({ isArticlePage, hasFooterLink }: DeviceFooterTypes) => {
 
         <DeviceFooterLinkGenerator
           title="مقالات"
-          Icon={ArticlesIcon}
+          Icon={<ArticlesIcon className="stroke-impo_Surface_Outline fill-impo_Surface_Outline w-7" />}
           href="/blogs"
           isSelected={!!isArticlePage}
           id="navbar-blogs"
@@ -57,7 +67,7 @@ const DeviceFooter = ({ isArticlePage, hasFooterLink }: DeviceFooterTypes) => {
 
         <DeviceFooterLinkGenerator
           title="ورود"
-          Icon={LoginIcon}
+          Icon={<LoginIcon className="stroke-impo_Surface_Outline fill-impo_Surface_Outline w-7" />}
           href={PWA_LINK_WOMEN_URL}
           isSelected={false}
           id="navbar-login"

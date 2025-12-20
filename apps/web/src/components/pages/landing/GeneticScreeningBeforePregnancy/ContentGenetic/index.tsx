@@ -14,7 +14,7 @@ const ContentGenetic = async () => {
   const { ctaData: cta2 } = await ctaBannerService('ovulation5');
 
   return (
-    <div className="w-full flex flex-col gap-5 pt-10 pb-10 px-4 sm:px-0">
+    <div className="w-full flex flex-col gap-5 pt-10 pb-10 px-4 sm:px-0 lg:w-10/12 lg:mx-auto">
       <CustomTypography tagType="h1" fontSize="Title_Medium">
         راهنما کامل آزمایش ژنتیک قبل از بارداری و تست آنلاین رایگان
       </CustomTypography>

@@ -15,7 +15,7 @@ const Achievements = ({ list }: AchievementsTypes) => {
     >
       <CustomTypography fontSize="Headline_Medium">{addComma(item.title)}</CustomTypography>
 
-      <CustomTypography fontSize="Title_Medium" color="Surface_Outline">
+      <CustomTypography fontSize="Title_Medium" className="text-impo_Surface_Outline">
         {item.subTitle}
       </CustomTypography>
     </div>
