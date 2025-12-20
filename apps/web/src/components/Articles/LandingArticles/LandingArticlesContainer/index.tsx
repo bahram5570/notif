@@ -3,7 +3,6 @@
 import ArticleCardGenerator from '@components/Articles/ArticleCardGenerator';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 import 'swiper/css/free-mode';
 import { FreeMode } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -14,14 +13,11 @@ const LandingArticlesContainer = ({ data, title, subTitle, showAllArticlesLinkTo
   const hasSubtitle = typeof subTitle !== 'undefined';
 
   return (
-    <div
-      className="w-full max-w-[100vw] overflow-hidden flex flex-col items-center py-8 lg:py-9"
-      style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
-    >
+    <div className="w-full max-w-[100vw] overflow-hidden flex flex-col items-center py-8 lg:py-9 bg-impo_Surface_SurfaceVariant">
       <CustomTypography
         tagType="h2"
         fontSize="Title_Medium"
-        className={`text-center w-[350px] lg:w-[370px] ${!hasSubtitle && 'pb-6 lg:pb-10'}`}
+        className={`text-center w-[350px] lg:w-[370px] !text-impo_Neutral_OnBackground ${!hasSubtitle && 'pb-6 lg:pb-10'}`}
       >
         {title}
       </CustomTypography>
@@ -30,8 +26,7 @@ const LandingArticlesContainer = ({ data, title, subTitle, showAllArticlesLinkTo
         <CustomTypography
           tagType="span"
           fontSize="Body_Large"
-          color={'Surface_OnSurfaceVariant'}
-          className="pt-2 lg:pt-4 pb-6 lg:pb-10 text-center w-[360px] lg:w-[610px]"
+          className="pt-2 lg:pt-4 pb-6 lg:pb-10 text-center w-[360px] lg:w-[610px] !text-impo_Surface_OnSurfaceVariant"
         >
           {subTitle}
         </CustomTypography>
@@ -51,10 +46,9 @@ const LandingArticlesContainer = ({ data, title, subTitle, showAllArticlesLinkTo
 
       <CustomLink
         href={showAllArticlesLinkTo}
-        className="h-[40px] lg:h-[60px] p-6 flex items-center justify-center rounded-full"
-        style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
+        className="h-[40px] lg:h-[60px] p-6 flex items-center justify-center rounded-full bg-impo_Primary_Primary"
       >
-        <CustomTypography fontSize="Lable_Large" color="Primary_OnPrimary">
+        <CustomTypography fontSize="Lable_Large" className="!text-impo_Primary_OnPrimary">
           مشاهده همه مقالات
         </CustomTypography>
       </CustomLink>

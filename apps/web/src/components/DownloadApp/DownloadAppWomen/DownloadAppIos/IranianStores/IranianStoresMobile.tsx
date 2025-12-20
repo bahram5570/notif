@@ -8,7 +8,6 @@ import { TransitionProps } from '@mui/material/transitions';
 import CustomTypography from '@components/ui/CustomTypography';
 import styled from '@emotion/styled';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import { COLORS_LIST } from '@theme/colors';
 import { useRouter } from 'next/navigation';
 
 import DownloadAppLinkGenerator from '../../DownloadAppLinkGenerator';
@@ -46,12 +45,11 @@ const IranianStoresMobile = () => {
     <>
       <div
         onClick={() => newQueryParamsHandler({ [DOWNLOAD_MODAL_QUERY_NAME]: 'true' })}
-        style={{ backgroundColor: COLORS_LIST.White, borderColor: COLORS_LIST.Neutral_Surface }}
-        className="w-full h-12 px-2 border-[1px] rounded-full flex items-center justify-center gap-[10px] cursor-pointer"
+        className="w-full h-12 px-2 bg-impo_White border-[1px] border-impo_Neutral_Surface rounded-full flex items-center justify-center gap-[10px] cursor-pointer"
       >
         <WebIcon className="w-6 min-w-6 h-auto" />
 
-        <CustomTypography fontSize="Lable_Medium" color="Neutral_OnSurface">
+        <CustomTypography fontSize="Lable_Medium" className="!text-impo_Black">
           استور‌های ایرانی
         </CustomTypography>
       </div>
@@ -64,7 +62,7 @@ const IranianStoresMobile = () => {
                 <div className="flex items-center w-full gap-[10px] pr-9">
                   {item.icon}
 
-                  <CustomTypography fontSize="Lable_Medium" color={'Neutral_OnSurface'}>
+                  <CustomTypography fontSize="Lable_Medium" className="!text-impo_Black">
                     {item.title}
                   </CustomTypography>
                 </div>

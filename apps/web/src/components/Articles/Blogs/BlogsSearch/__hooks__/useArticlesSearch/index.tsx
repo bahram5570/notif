@@ -17,7 +17,7 @@ const useArticlesSearch = () => {
 
   const { isLoading, callApi } = useApi<ArticlesSearchResponseTypes>({
     onSuccess: successHandler,
-    url: `support/article/articles/search?search=${value}`,
+    url: `support/article/articles/search2?search=${value}`,
   });
 
   const { startTimer, stopTimer } = useTimer(1, callApi);

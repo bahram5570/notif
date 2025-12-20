@@ -4,7 +4,6 @@ import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 import useOperatingSystem from '@hooks/useOperatingSystem';
-import { COLORS_LIST } from '@theme/colors';
 
 import { ArticleIdCommentsListGeneratorTypes } from './types';
 
@@ -21,31 +20,39 @@ const ArticleIdCommentsListGenerator = (props: ArticleIdCommentsListGeneratorTyp
 
   return (
     <div
-      className="w-full flex flex-col gap-4 py-5 border-t-[1px]"
-      style={{ borderTopColor: props.isFirstIndex ? COLORS_LIST.Transparent : COLORS_LIST.Neutral_Surface }}
+      className={`
+                  w-full 
+                  flex 
+                  flex-col 
+                  gap-4 
+                  py-5 
+                  border-t-[1px]
+                  ${props.isFirstIndex ? 'border-t-impo_Transparent' : 'border-t-impo_Neutral_Surface'}
+                `}
     >
-      <CustomTypography fontSize="Lable_Large" color={'Surface_Outline'}>
+      <CustomTypography fontSize="Lable_Large" className="!text-impo_Surface_Outline">
         {props.name}
       </CustomTypography>
 
-      <div style={{ ...messageTypography }} dangerouslySetInnerHTML={{ __html: htmlConvertor(props.message) }} />
+      <div
+        style={{ ...messageTypography }}
+        className="text-impo_Neutral_OnBackground"
+        dangerouslySetInnerHTML={{ __html: htmlConvertor(props.message) }}
+      />
 
       {props.reply.valid && props.reply.message.trim().length > 0 && (
-        <div
-          className="w-full px-4 md:px-6 py-5 rounded-2xl"
-          style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
-        >
+        <div className="w-full px-4 md:px-6 py-5 rounded-2xl bg-impo_Surface_SurfaceVariant">
           <div className="w-fit flex items-center gap-4 pb-2">
-            <CustomTypography fontSize="Lable_Large" color={'Surface_OnSurfaceVariant'}>
+            <CustomTypography fontSize="Lable_Large" className="!text-impo_Surface_OnSurfaceVariant">
               پشتیبانی ایمپو
             </CustomTypography>
 
-            <ArrowIcon className="w-6" style={{ stroke: COLORS_LIST.Surface_Outline }} />
+            <ArrowIcon className="w-6 stroke-impo_Surface_Outline" />
           </div>
 
           <div
-            className="break-words"
             style={{ ...replyTypography }}
+            className="break-words text-impo_Neutral_OnBackground"
             dangerouslySetInnerHTML={{ __html: htmlConvertor(props.reply.message) }}
           />
         </div>

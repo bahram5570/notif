@@ -5,7 +5,6 @@ import ImpoIcon from '@assets/icons/impo.svg';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
 
 import DownloadAppAndroid from './DownloadAppAndroid';
 import DownloadAppIos from './DownloadAppIos';
@@ -17,7 +16,6 @@ const DownloadApp = () => {
   return (
     <div
       id={DOWNLOAD_APP_SECTION_ID}
-      style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
       className="
                   flex 
                   flex-col 
@@ -38,39 +36,52 @@ const DownloadApp = () => {
                   md:w-11/12 
                   lg:w-10/12 
                   md:max-w-full
+                  bg-impo_Surface_SurfaceVariant
                 "
     >
       <div className="flex flex-col items-center w-full md:w-[400px]">
         <ImpoIcon className="w-[72px] mb-2 md:hidden" />
 
         <div className="flex gap-1">
-          <CustomTypography tagType="span" fontSize="Headline_Medium">
+          <CustomTypography tagType="span" fontSize="Headline_Medium" className="!text-impo_Neutral_OnBackground">
             ایمپو برات لازمه:
           </CustomTypography>
         </div>
 
         <section className="flex flex-col items-center">
           <div className="pt-2 pb-10 -mx-2">
-            <CustomTypography fontSize={breakPoint.laptop ? 'Body_Medium' : 'Body_Large'} className="text-center">
+            <CustomTypography
+              fontSize={breakPoint.laptop ? 'Body_Medium' : 'Body_Large'}
+              className="text-center !text-impo_Neutral_OnBackground"
+            >
               اگه می‌خوای بچه‌دار شی و روز دقیق رابطه رو بدونی
             </CustomTypography>
 
-            <CustomTypography fontSize={breakPoint.laptop ? 'Body_Medium' : 'Body_Large'} className="text-center">
+            <CustomTypography
+              fontSize={breakPoint.laptop ? 'Body_Medium' : 'Body_Large'}
+              className="text-center !text-impo_Neutral_OnBackground"
+            >
               اگه می‌خوای هیچ‌وقت پریودت سوپرایزت نکنه
             </CustomTypography>
 
-            <CustomTypography fontSize={breakPoint.laptop ? 'Body_Medium' : 'Body_Large'} className="text-center">
+            <CustomTypography
+              fontSize={breakPoint.laptop ? 'Body_Medium' : 'Body_Large'}
+              className="text-center !text-impo_Neutral_OnBackground"
+            >
               اگه بارداری و می‌خوای از وضعیت هفتگی جنینت باخبر بشی
             </CustomTypography>
 
-            <CustomTypography fontSize={breakPoint.laptop ? 'Body_Medium' : 'Body_Large'} className="text-center">
+            <CustomTypography
+              fontSize={breakPoint.laptop ? 'Body_Medium' : 'Body_Large'}
+              className="text-center !text-impo_Neutral_OnBackground"
+            >
               اگه سلامتیت برات مهمه، همین الان ایمپو رو نصب کن
             </CustomTypography>
           </div>
 
           <DownloadAppAndroid />
 
-          <div className="w-full h-[1px] mt-4 md:mt-8 mb-8" style={{ backgroundColor: COLORS_LIST.Neutral_Surface }} />
+          <div className="w-full h-[1px] mt-4 md:mt-8 mb-8 bg-impo_Neutral_Surface" />
 
           <DownloadAppIos />
         </section>

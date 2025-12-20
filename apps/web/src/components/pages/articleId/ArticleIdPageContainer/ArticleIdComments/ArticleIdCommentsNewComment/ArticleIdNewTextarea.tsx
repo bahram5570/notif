@@ -2,7 +2,6 @@ import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
 
 import useBreakPoint from '@hooks/useBreakPoint';
 import useOperatingSystem from '@hooks/useOperatingSystem';
-import { COLORS_LIST } from '@theme/colors';
 
 import { ArticleIdNewTextareaTypes } from './types';
 
@@ -16,13 +15,9 @@ const ArticleIdNewTextarea = ({ message, messageHandler }: ArticleIdNewTextareaT
     <textarea
       rows={6}
       value={message}
-      className="w-full p-4 rounded-xl"
+      style={{ ...typographyDetails }}
       onChange={(e) => messageHandler(e.target.value)}
-      style={{
-        ...typographyDetails,
-        outlineColor: COLORS_LIST.Primary_Primary,
-        backgroundColor: COLORS_LIST.Surface_SurfaceVariant,
-      }}
+      className="w-full p-4 rounded-xl outline-impo_Primary_Primary bg-impo_Surface_SurfaceVariant text-impo_Neutral_OnBackground"
     />
   );
 };

@@ -16,7 +16,7 @@ const ArticleIdCommentsList = ({
     <>
       {commentsList.length > 0 && (
         <div className="w-full">
-          <CustomTypography fontSize="Headline_Medium" color={'Surface_InverseSurface'} className="pb-6">
+          <CustomTypography fontSize="Headline_Medium" className="pb-6 !text-impo_Surface_InverseSurface">
             نظرات شما
           </CustomTypography>
 

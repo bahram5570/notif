@@ -37,7 +37,7 @@ export const YekanBakhVF = localFont({
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="fa" dir="rtl" className={`${YekanBakhVF.className}`} suppressHydrationWarning={true}>
+    <html lang="fa" dir="rtl" suppressHydrationWarning={true} className={YekanBakhVF.className}>
       <head>
         <link
           as="font"
@@ -111,7 +111,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         </Script>
       </head>
 
-      <body>
+      <body className="bg-impo_Neutral_Background">
         <noscript>
           <iframe
             width="0"

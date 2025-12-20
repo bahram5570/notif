@@ -33,7 +33,12 @@ const CustomPagination = ({
         showFirstButton={true}
         onChange={selectHandler}
         renderItem={(item) => (
-          <PaginationItem {...item} style={{ ...typographyDetails }} page={toPersianNumbers(item.page || 1)} />
+          <PaginationItem
+            {...item}
+            style={{ ...typographyDetails }}
+            page={toPersianNumbers(item.page || 1)}
+            className="!text-impo_Neutral_OnBackground"
+          />
         )}
       />
     </div>
