@@ -4,7 +4,6 @@ import { useEffect, useRef } from 'react';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { QrCodePropsType } from './type';
 

@@ -9,7 +9,6 @@ import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import { APP_VERSION } from '@constants/app.constants';
 import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
 
 const { jYear } = currentDate();
 

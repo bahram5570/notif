@@ -1,4 +1,3 @@
-import { COLORS_LIST } from '@theme/colors';
 import { FONTS_ANDROID } from '@theme/fonts';
 
 import { CtaBannerTypes } from './types';

@@ -11,7 +11,8 @@ const HomeHeading = () => {
       contentElement={contentElement}
       imageClassName="lg:max-w-[700px]"
       image="/assets/images/headingMain.webp"
-      backgroundImage={['#FEF2F5', '#FFDDE6']}
+      className="!bg-gradient-to-b !from-[#FEF2F5] !to-[#FFDDE6]"
+      backgroundImage=""
     />
   );
 };

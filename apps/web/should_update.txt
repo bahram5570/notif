@@ -1,5 +1,6 @@
 Spinner > remove color
 CustomInput > remove color
 CustomTypography > remove color
+CustomButton > remove color and background-color 
 COLORS_LIST > delete
 D > delete
