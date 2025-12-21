@@ -20,16 +20,14 @@ const ClinicFeatures = () => {
         <CustomTypography
           fontSize="Headline_Small"
           tagType="h2"
-          className="text-center mb-2"
-          style={{ color: COLORS_LIST.Neutral_OnBackground }}
+          className="text-center mb-2 !text-impo_Neutral_OnBackground"
         >
           چرا کلینیک آنلاین ایمپو؟
         </CustomTypography>
         <CustomTypography
           fontSize="Body_Medium"
           tagType="p"
-          className="text-center mx-4"
-          style={{ color: COLORS_LIST.Neutral_OnBackground }}
+          className="text-center mx-4 !text-impo_Neutral_OnBackground"
         >
           مشاوره پزشکی اینترنتی یا همان ویزیت آنلاین با پزشک، راهی سریع، امن و مقرون‌به‌صرفه برای دریافت خدمات درمانی
           بدون نیاز به مراجعه حضوری است.

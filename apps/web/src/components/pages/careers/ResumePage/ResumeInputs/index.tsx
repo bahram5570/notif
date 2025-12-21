@@ -101,14 +101,14 @@ const ResumeInputs = ({ jobId }: ResumeInputsTypes) => {
         </div>
       </div>
 
-      <div className="w-full h-[1px] mt-4 mb-6 md:my-8" style={{ backgroundColor: COLORS_LIST.Neutral_Surface }} />
+      <div className="w-full h-[1px] mt-4 mb-6 md:my-8 !bg-impo_Neutral_Surface" />
 
       <CustomButton
         varient="fill"
         isLoading={isLoading}
         fontSize="Lable_Large"
         onClick={validateHandler}
-        className="w-full md:w-[230px] !py-[10px] md:!py-[12px]"
+        className="w-full md:w-[230px] !py-[10px] md:!py-[12px] dark:!bg-impo_Primary_OnPrimary !bg-impo_Primary_Primary !text-impo_Primary_OnPrimary dark:!text-impo_Primary_Primary"
       >
         درخواست همکاری
       </CustomButton>

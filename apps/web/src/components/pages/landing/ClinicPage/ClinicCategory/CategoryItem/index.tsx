@@ -21,7 +21,7 @@ const CategoryItem = ({ image, name, type }: ItemProps) => {
         style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
         className="rounded-[13px]"
       />
-      <CustomTypography fontSize="Body_Small" className="text-center">
+      <CustomTypography fontSize="Body_Small" className="!text-impo_Neutral_OnBackground text-center">
         {name}
       </CustomTypography>
     </CustomLink>

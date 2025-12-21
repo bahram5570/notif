@@ -15,13 +15,18 @@ const CareerBreadcrumb = ({ list }: CareerBreadcrumbTypes) => {
           <Fragment key={index}>
             <>
               {index > 0 && (
-                <CustomTypography fontSize="Title_Small" color={'Surface_Outline'}>
+                <CustomTypography fontSize="Title_Small" className="!text-impo_Surface_Outline">
                   /
                 </CustomTypography>
               )}
 
               <CustomLink href={item.href}>
-                <CustomTypography fontSize={isLastIndex ? 'Title_Small' : 'Body_Medium'}>{item.title}</CustomTypography>
+                <CustomTypography
+                  fontSize={isLastIndex ? 'Title_Small' : 'Body_Medium'}
+                  className="!text-impo_Neutral_OnBackground"
+                >
+                  {item.title}
+                </CustomTypography>
               </CustomLink>
             </>
           </Fragment>
