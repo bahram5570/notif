@@ -11,7 +11,11 @@ import VisitList from './VisitList';
 const ClinicVisit = () => {
   return (
     <section className="mt-12">
-      <CustomTypography fontSize="Title_Medium" tagType="h2" className="text-center mx-4 mb-[27px]">
+      <CustomTypography
+        fontSize="Title_Medium"
+        tagType="h2"
+        className="text-center mx-4 mb-[27px] !text-impo_Neutral_OnBackground"
+      >
         چطور از ایمپو ویزیت آنلاین بگیرم؟
       </CustomTypography>
       <div className="flex mx-8 gap-x-[15px] items-center">

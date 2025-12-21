@@ -64,7 +64,10 @@ const CardGenerator = (props: CardGeneratorTypes) => {
         }}
       >
         <div className="w-full flex justify-between items-center">
-          <CustomTypography fontSize="Title_Small" color={'Neutral_OnBackground'}>
+          <CustomTypography
+            fontSize="Title_Small"
+            className={`${isHover ? '!text-impo_Black' : '!text-impo_Neutral_OnBackground'}`}
+          >
             {props.title}
           </CustomTypography>
 
@@ -79,13 +82,19 @@ const CardGenerator = (props: CardGeneratorTypes) => {
         </div>
 
         <div className="w-full flex justify-between items-center">
-          <CustomTypography fontSize="Body_Small" color={'Neutral_OnBackground'}>
+          <CustomTypography
+            fontSize="Body_Small"
+            className={`${isHover ? '!text-impo_Black' : '!text-impo_Neutral_OnBackground'}`}
+          >
             {locationScript}
           </CustomTypography>
         </div>
 
         <div className="w-full flex justify-between items-center">
-          <CustomTypography fontSize="Body_Small" color={'Neutral_OnBackground'}>
+          <CustomTypography
+            fontSize="Body_Small"
+            className={`${isHover ? '!text-impo_Black' : '!text-impo_Neutral_OnBackground'}`}
+          >
             {`${employmentTimeScript} - ${employmentLocationScript}`}
           </CustomTypography>
 

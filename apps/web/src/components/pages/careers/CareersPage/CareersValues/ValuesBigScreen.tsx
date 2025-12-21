@@ -6,8 +6,8 @@ import { ValuesBigScreenTypes } from './types';
 const ValuesBigScreen = ({ list }: ValuesBigScreenTypes) => {
   return (
     <div
-      style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
-      className="w-full grid grid-cols-[repeat(2,minmax(0,260px))] lg:grid-cols-[repeat(3,minmax(0,260px))] gap-x-16 gap-y-9 py-6 justify-center"
+      // style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
+      className="w-full grid grid-cols-[repeat(2,minmax(0,260px))] lg:grid-cols-[repeat(3,minmax(0,260px))] gap-x-16 gap-y-9 py-6 justify-center !bg-impo_Surface_SurfaceVariant"
     >
       {list.map((item, index) => (
         <div className="w-full flex items-start gap-2" key={index}>
@@ -16,11 +16,15 @@ const ValuesBigScreen = ({ list }: ValuesBigScreenTypes) => {
           </div>
 
           <div>
-            <CustomTypography fontSize="Title_Small" color={'Neutral_OnBackground'} className="pb-1">
+            <CustomTypography fontSize="Title_Small" className="pb-1 !text-impo_Neutral_OnBackground">
               {item.title}
             </CustomTypography>
 
-            <CustomTypography fontSize="Body_Small" color={'Surface_InverseSurface'}>
+            <CustomTypography
+              fontSize="Body_Small"
+              color={'Surface_InverseSurface'}
+              className="!text-impo_Neutral_OnBackground"
+            >
               {item.description}
             </CustomTypography>
           </div>

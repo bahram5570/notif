@@ -10,13 +10,10 @@ const ClinicCategory = async () => {
 
   return (
     <div className="mt-8">
-      <CustomTypography fontSize="Title_Small" tagType="h4" className="text-center">
+      <CustomTypography fontSize="Title_Small" tagType="h4" className="text-center !text-impo_Neutral_OnBackground">
         دسته‌بندی کلینیک سلامت
       </CustomTypography>
-      <section
-        className="grid grid-cols-3 lg:grid-cols-5 gap-x-[25px] gap-y-[24px] mt-[16px] mx-[16px] px-[16px] py-[24px] lg:rounded-3xl rounded-[16px] [box-shadow:0px_4px_24px_0px_rgba(58,112,191,0.05)]"
-        style={{ backgroundColor: COLORS_LIST.Neutral_Background }}
-      >
+      <section className="grid grid-cols-3 lg:grid-cols-5 gap-x-[25px] gap-y-[24px] mt-[16px] mx-[16px] px-[16px] py-[24px] lg:rounded-3xl rounded-[16px] [box-shadow:0px_4px_24px_0px_rgba(58,112,191,0.05)] !bg-impo_Neutral_Background">
         {categoryData &&
           categoryData.map((item, index) => (
             <CategoryItem key={index} image={item.image} name={item.name} type={item.type} />

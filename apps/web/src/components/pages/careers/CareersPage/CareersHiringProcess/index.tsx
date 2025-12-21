@@ -29,7 +29,6 @@ const CareersHiringProcess = () => {
             <div className="relative w-fit md:w-full min-w-fit flex md:flex-col items-center gap-4" key={index}>
               {!isLastIndex && (
                 <div
-                  style={{ backgroundColor: COLORS_LIST.Neutral_Surface }}
                   className="
                               absolute 
                               top-0 
@@ -45,11 +44,11 @@ const CareersHiringProcess = () => {
                               md:translate-y-0 
                               md:-translate-x-[50%]
                               overflow-hidden
+                              !bg-impo_Neutral_Surface
                             "
                 >
                   <div
-                    style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
-                    className={`w-full h-full duration-700 ${isOnProgress ? 'translate-y-0 md:translate-x-0' : '-translate-y-full md:translate-x-full'}`}
+                    className={`w-full h-full duration-700 !bg-impo_Primary_Primary ${isOnProgress ? 'translate-y-0 md:translate-x-0' : '-translate-y-full md:translate-x-full'}`}
                   />
                 </div>
               )}
@@ -61,7 +60,7 @@ const CareersHiringProcess = () => {
                 />
               </div>
 
-              <CustomTypography fontSize="Body_Small" color={'Neutral_OnBackground'} className="text-center">
+              <CustomTypography fontSize="Body_Small" className="!text-impo_Neutral_OnBackground text-center">
                 {item.title}
               </CustomTypography>
             </div>
