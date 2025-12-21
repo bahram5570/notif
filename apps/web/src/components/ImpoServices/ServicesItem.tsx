@@ -22,7 +22,7 @@ const ServicesItem = () => {
               alt={item.title}
               src={item.image}
             />
-            <CustomTypography fontSize="Body_Medium" className="text-center">
+            <CustomTypography fontSize="Body_Medium" className="text-center !text-impo_Neutral_OnBackground">
               {item.title}
             </CustomTypography>
           </div>

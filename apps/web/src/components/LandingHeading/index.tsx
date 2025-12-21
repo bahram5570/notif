@@ -8,6 +8,7 @@ const LandingHeading = ({
   imageClassName,
   imagePosition,
   image,
+  className,
 }: LandingHeadingTypes) => {
   const bg =
     typeof backgroundImage === 'string'
@@ -20,7 +21,7 @@ const LandingHeading = ({
         <div className="w-[700dvw] h-[700dvw] min-w-[700dvw] min-h-[700dvw] rounded-full flex items-end overflow-hidden">
           <div
             style={{ backgroundImage: bg }}
-            className="
+            className={`
                         w-[100dvw] 
                         h-[680px] 
                         xl:h-[750px] 
@@ -30,7 +31,8 @@ const LandingHeading = ({
                         justify-center 
                         bg-cover 
                         bg-center
-                      "
+                        ${className}
+                      `}
           >
             <div className="h-full w-full flex flex-col md:flex-row gap-2 md:gap-10 xl:gap-14 pt-[100px] md:pt-[160px] lg:pt-[100px]">
               <LandingHeadingContents contentElement={contentElement} />

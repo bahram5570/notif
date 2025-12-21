@@ -11,7 +11,7 @@ const FeaturesIntruductionTitle = ({ mainTitle }: FeaturesIntruductionTitleTypes
   return (
     <CustomTypography
       tagType="h2"
-      className="text-center"
+      className="text-center !text-impo_Neutral_OnBackground"
       fontSize={breakPoint.tablet ? 'Title_Medium' : 'Headline_Medium'}
     >
       {mainTitle}

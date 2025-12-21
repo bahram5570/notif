@@ -44,16 +44,15 @@ const AppFeaturesContents = ({ currentTab }: AppFeaturesContentsTypes) => {
 
                   <div className="absolute left-0 right-0 bottom-0 flex flex-col gap-1 p-4 lg:p-6">
                     <CustomTypography
-                      color={'Neutral_OnBackground'}
                       fontSize={breakPoint.laptop ? 'Lable_Small' : 'Title_Small'}
+                      className="!text-impo_Neutral_OnBackground"
                     >
                       {item.title}
                     </CustomTypography>
 
                     <CustomTypography
                       fontSize="Body_Small"
-                      color={'Neutral_OnSurface'}
-                      className={`${breakPoint.laptop && '!text-[9px]'}`}
+                      className={`${breakPoint.laptop && '!text-[9px] !text-impo_Neutral_OnSurface'}`}
                     >
                       {item.description}
                     </CustomTypography>
