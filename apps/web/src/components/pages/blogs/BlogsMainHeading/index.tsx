@@ -13,7 +13,7 @@ const BlogsMainHeading = () => {
       />
 
       <div className="absolute bottom-[110px] md:bottom-[127px] left-0 right-0 flex flex-col items-center justify-center gap-4 md:gap-7">
-        <CustomTypography tagType="h1" fontSize="Headline_Large" color={'White'}>
+        <CustomTypography tagType="h1" fontSize="Headline_Large" className="!text-impo_White">
           مجله سلامت ایمپو
         </CustomTypography>
 

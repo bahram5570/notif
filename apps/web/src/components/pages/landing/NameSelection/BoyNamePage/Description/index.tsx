@@ -8,7 +8,6 @@ import { textShorter } from '@utils/scripts';
 import { ItemGenerator, LinkGenerator, TextGenerator, TitleGenerator } from '@components/SelectName/Description';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 const Description = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -29,21 +28,22 @@ const Description = () => {
     'اسم پسر تک و شیک باید خوش‌آهنگ و روان باشه تا راحت تلفظ بشه و در ذهن بمونه. یه اسم پسر کمیاب و خوش‌آوا باعث می‌شه فرزندتون حس خوبی نسبت به اسمش بگیره و همیشه با افتخار ازش استفاده کنه.';
 
   return (
-    <div className="w-full rounded-2xl p-6" style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}>
-      <CustomTypography fontSize="Headline_Medium" color={'Neutral_OnBackground'} tagType="h2" className="pb-7">
+    <div className="w-full rounded-2xl p-6 bg-impo_Surface_SurfaceVariant">
+      <CustomTypography fontSize="Headline_Medium" tagType="h2" className="pb-7 !text-impo_Neutral_OnBackground">
         در انتخاب اسم پسر به چه نکاتی باید توجه کنیم؟
       </CustomTypography>
 
-      <CustomTypography fontSize="Body_Large" color={'Neutral_OnBackground'} className="pb-3">
+      <CustomTypography fontSize="Body_Large" className="pb-3 !text-impo_Neutral_OnBackground">
         وقتی به لیست بلند بالای اسم‌های پسرانه جدید و شیک نگاه می‌کنی، ممکنه کمی گیج بشی. برای انتخاب اسم پسر خاص و تک
         باید حسابی بهش فکر کنین چون این اسم قراره تا همیشه همراه بچه شما باشه و هویتش رو بسازه. اگه تازه وارد مسیر شیرین
         بارداری شدی و هنوز سوالای زیادی تو ذهنت هست، یه سر به مقاله
-        <CustomLink href="/pregnancy" color="Primary_Primary" className="px-1">
+        <CustomLink href="/pregnancy" className="px-1 !text-impo_Primary_Primary">
           بارداری
         </CustomLink>
         بزن تا با نکات کاربردی این دوران بیشتر آشنا شی.
       </CustomTypography>
-      <CustomTypography fontSize="Body_Large" color={'Neutral_OnBackground'} className="pb-3">
+
+      <CustomTypography fontSize="Body_Large" className="pb-3 !text-impo_Neutral_OnBackground">
         در ادامه، چند تا نکته هست که بهتره تو انتخاب قشنگ‌ترین اسم‌های پسرانه در نظر بگیری
       </CustomTypography>
 
@@ -273,13 +273,13 @@ const Description = () => {
       </div>
 
       <div className="w-full flex items-center justify-center gap-2 pt-6" onClick={() => setIsOpen(!isOpen)}>
-        <CustomTypography fontSize="Title_Small" color={'PrimaryMan_PrimaryMan'}>
+        <CustomTypography fontSize="Title_Small" className="!text-impo_PrimaryMan_PrimaryMan">
           {isOpen ? 'بستن' : 'خواندن اطلاعات بیشتر'}
         </CustomTypography>
 
         <ArrowIcon
-          className="w-4 duration-100"
-          style={{ fill: COLORS_LIST.PrimaryMan_PrimaryMan, transform: isOpen ? 'rotate(0deg)' : 'rotate(180deg)' }}
+          className="w-4 duration-100 fill-impo_Primary_Primary"
+          style={{ transform: isOpen ? 'rotate(0deg)' : 'rotate(180deg)' }}
         />
       </div>
     </div>

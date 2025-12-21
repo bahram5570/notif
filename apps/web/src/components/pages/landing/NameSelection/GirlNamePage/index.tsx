@@ -32,9 +32,9 @@ const GirlNamePage = async () => {
 
         <div className=" landing_container px-3 pb-16">
           <AlphabetBtns
-            bgColor1="Pink_300"
-            bgColor2="Pink_100"
-            textColor="Pink_900"
+            bgColor1="bg-impo_Pink_300"
+            bgColor2="bg-impo_Pink_100"
+            textColor="!text-impo_Pink_900"
             list={PERSIAN_NAME_DICTIONARY}
             title="اسم دختر جدید و شیک بر اساس حروف الفبا(همراه با ریشه و معنی)"
             description="وقتی دنبال اسم دخترانه می‌گردی، یکی از بهترین راه‌ها اینه که از حروف الفبا شروع کنی. اینطوری انتخاب‌ها منظم‌تر و
@@ -54,14 +54,16 @@ const GirlNamePage = async () => {
               <CustomTypography
                 fontSize="Headline_Small"
                 tagType="h2"
+                className="!text-impo_Neutral_OnBackground"
               >{`${item[1].labelTitle} «${item[1].category}»`}</CustomTypography>
 
               <NamesTable
                 list={item[1].list}
-                titleBgColor="Primary_Primary"
-                borderColor="Pink_300"
-                bgColor1="Pink_100"
-                bgColor2="Pink_50"
+                titleColor="!text-impo_Primary_OnPrimary"
+                titleBgColor="bg-impo_Primary_Primary"
+                borderColor="border-impo_Pink_300"
+                bgColor1="bg-impo_Pink_100"
+                bgColor2="bg-impo_Pink_50"
               />
             </div>
           ))}

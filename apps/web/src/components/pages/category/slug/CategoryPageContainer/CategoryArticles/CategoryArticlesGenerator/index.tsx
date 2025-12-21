@@ -13,10 +13,17 @@ const CategoryArticlesGenerator = (props: CategoryArticlesGeneratorTypes) => {
 
   return (
     <div
-      className="w-full grid grid-cols-[1fr_auto] lg:grid-cols-[auto_1fr] gap-5 py-[8px] lg:py-[32px] border-t-[1px]"
-      style={{
-        borderTopColor: props.isFirstIndex ? COLORS_LIST.Transparent : COLORS_LIST.Neutral_Surface,
-      }}
+      className={`
+                  w-full 
+                  grid 
+                  grid-cols-[1fr_auto] 
+                  lg:grid-cols-[auto_1fr] 
+                  gap-5 
+                  py-[8px] 
+                  lg:py-[32px] 
+                  border-t-[1px]
+                  ${props.isFirstIndex ? 'border-t-impo_Transparent' : 'border-t-impo_Neutral_Surface'}
+                `}
     >
       <div
         className="
