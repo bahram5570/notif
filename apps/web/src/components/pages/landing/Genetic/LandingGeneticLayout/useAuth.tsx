@@ -10,7 +10,6 @@ const useAuth = () => {
   const authrizetoken = getQueryParams('authrizetoken');
 
   const successHandler = (data: { token: string }) => {
-
     if (data.token !== 'NOT FOUND') {
       Cookies.set('geneticToken', data.token);
     }

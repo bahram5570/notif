@@ -1,7 +1,9 @@
 import { ReplyGeneratorProps } from '../../types';
 
-export interface UseReplyListProps
-  extends Pick<ReplyGeneratorProps, 'replies' | 'repliesCount' | 'commentId' | 'shareId'> {}
+export interface UseReplyListProps extends Pick<
+  ReplyGeneratorProps,
+  'replies' | 'repliesCount' | 'commentId' | 'shareId'
+> {}
 
 type RepliesListTypes = Pick<UseReplyListProps, 'replies'>['replies'];
 

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+
 import { Answers, QuestionConfig, SubAnswers } from '../types';
 
 export function useSurvey(questions: QuestionConfig[]) {

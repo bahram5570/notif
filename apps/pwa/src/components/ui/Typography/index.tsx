@@ -41,7 +41,7 @@ const Typography = (props: TypographyProps) => {
     : toPersianNumbers(props?.children || '');
 
   result = result.replace(/\\n/g, '\n');
-  
+
   return (
     <>
       {props.children && (

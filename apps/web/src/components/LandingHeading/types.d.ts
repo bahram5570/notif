@@ -6,7 +6,9 @@ export interface LandingHeadingTypes {
   backgroundImage: string | [string, string];
 }
 
-export interface LandingHeadingImageTypes
-  extends Pick<LandingHeadingTypes, 'image' | 'imageClassName' | 'imagePosition'> {}
+export interface LandingHeadingImageTypes extends Pick<
+  LandingHeadingTypes,
+  'image' | 'imageClassName' | 'imagePosition'
+> {}
 
 export interface LandingHeadingContentsTypes extends Pick<LandingHeadingTypes, 'contentElement'> {}

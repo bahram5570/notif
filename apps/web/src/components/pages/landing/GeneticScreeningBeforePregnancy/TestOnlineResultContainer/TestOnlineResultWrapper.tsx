@@ -18,8 +18,6 @@ const TestOnlineResultWrapper = ({ children }: { children: React.ReactNode }) =>
                     overflow-hidden
                     lg:!bg-no-repeat 
                     lg:!bg-top
-                    
-                    
                 "
       style={{
         background: breakPoint.desktop

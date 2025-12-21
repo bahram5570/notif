@@ -28,22 +28,22 @@ export const QUESTIONS: QuestionConfig[] = [
         label: 'از ایمپو استفاده می‌کنم',
         value: 'a',
         subOptions: [
-          { label: ' کمتر از یک ماهه که از ایمپو استفاده می‌کنم', value: 'a1' ,number: 1},
+          { label: ' کمتر از یک ماهه که از ایمپو استفاده می‌کنم', value: 'a1', number: 1 },
           { label: 'بیشتر از ۶ ماهه که از ایمپو استفاده می‌کنم', value: 'a2', number: 2 },
           { label: 'بیشتر از یکساله که از ایمپو استفاده می‌کنم', value: 'a3', number: 3 },
         ],
       },
       { label: 'قبلا از ایمپو استفاده می‌کردم', value: 'b', number: 4 },
-      { label: 'از ایمپو استفاده نمی‌کنم', value: 'c' , number: 5},
+      { label: 'از ایمپو استفاده نمی‌کنم', value: 'c', number: 5 },
     ],
   },
   {
     id: 'q2',
     title: 'بهمون بگو…',
     options: [
-      { label: 'مجردم', value: '1',number:1 },
-      { label: 'در رابطه‌ام', value: '2',number:2 },
-      { label: 'باردار یا صاحب فرزندم', value: '3' ,number:3},
+      { label: 'مجردم', value: '1', number: 1 },
+      { label: 'در رابطه‌ام', value: '2', number: 2 },
+      { label: 'باردار یا صاحب فرزندم', value: '3', number: 3 },
     ],
   },
   {

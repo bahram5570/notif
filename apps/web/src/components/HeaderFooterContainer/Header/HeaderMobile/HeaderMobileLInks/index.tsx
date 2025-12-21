@@ -1,12 +1,14 @@
 import { useState } from 'react';
 
 import { HEADER_LINKS_LIST } from '@constants/links.constants';
-import { COLORS_LIST } from '@theme/colors';
 
 import usePageHeight from '../__hooks__/usePageHeight';
 import MultiLinkGenerator from './MultiLinkGenerator';
 import SingleLinkGenerator from './SingleLinkGenerator';
+import ThemeLinkGenerator from './ThemeLinkGenerator';
 import { HeaderMobileLInksTypes } from './types';
+
+const THEME_INDEX = HEADER_LINKS_LIST.length;
 
 const HeaderMobileLInks = ({ isOpen, isOpenHandler }: HeaderMobileLInksTypes) => {
   const { pageHeight } = usePageHeight();
@@ -27,14 +29,16 @@ const HeaderMobileLInks = ({ isOpen, isOpenHandler }: HeaderMobileLInksTypes) =>
 
   return (
     <div
-      className="w-full px-6 duration-300 overflow-hidden"
-      style={{ backgroundColor: COLORS_LIST.White, height: isOpen ? pageHeight : 0 }}
+      style={{ height: isOpen ? pageHeight : 0 }}
+      className="w-full px-6 duration-300 bg-impo_Header overflow-hidden"
     >
       {HEADER_LINKS_LIST.map((item, index) => (
         <div
           key={index}
-          className="border-t-[1px]"
-          style={{ borderTopColor: index > 0 ? COLORS_LIST.Surface_SurfaceVariant : COLORS_LIST.Transparent }}
+          className={`
+                      border-b-[1px]
+                      ${index < HEADER_LINKS_LIST.length ? 'border-b-impo_Surface_SurfaceVariant' : 'border-b-impo_Transparent'}
+                    `}
         >
           {typeof item.linkTo === 'string' && (
             <SingleLinkGenerator title={item.title} linkTo={item.linkTo} closeHandler={closeHandler} />
@@ -51,6 +55,12 @@ const HeaderMobileLInks = ({ isOpen, isOpenHandler }: HeaderMobileLInksTypes) =>
           )}
         </div>
       ))}
+
+      <ThemeLinkGenerator
+        closeHandler={closeHandler}
+        isSelected={selectedIndex === THEME_INDEX}
+        selectHandler={() => selectHandler(THEME_INDEX)}
+      />
     </div>
   );
 };

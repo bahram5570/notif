@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss';
+import colors from 'tailwindcss/colors';
 
 const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
@@ -23,9 +24,11 @@ const config: Config = {
     },
 
     colors: {
-      impo_Transparent: 'var(--color-Transparent)',
+      ...colors,
+      impo_Transparent: 'transparent',
       impo_Black: 'var(--color-Black)',
       impo_White: 'var(--color-White)',
+      impo_Header: 'var(--color-Header)',
       impo_Primary_Primary: 'var(--color-Primary_Primary)',
       impo_Primary_OnPrimary: 'var(--color-Primary_OnPrimary)',
       impo_Primary_PrimaryContainer: 'var(--color-Primary_PrimaryContainer)',

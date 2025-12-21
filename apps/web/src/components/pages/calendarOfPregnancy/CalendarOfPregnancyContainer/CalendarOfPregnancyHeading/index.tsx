@@ -10,7 +10,7 @@ import { CALENDAR_OF_PREGNANCY_BANNER_NAME_3 } from '../constants';
 
 const CalendarOfPregnancyHeading = async () => {
   const { ctaData } = await ctaBannerService(CALENDAR_OF_PREGNANCY_BANNER_NAME_3);
-  
+
   return (
     <>
       {/* <CustomTypography fontSize="Headline_Medium" tagType="h1" className="pb-2 text-center">

@@ -5,5 +5,7 @@ export interface SplashContentsProps {
   splashStatushHandler: (v: SplashStatusTypes) => void;
 }
 
-export interface SplashContentsProgressProps
-  extends Pick<SplashContentsProps, 'splashStatushHandler' | 'splashStatus'> {}
+export interface SplashContentsProgressProps extends Pick<
+  SplashContentsProps,
+  'splashStatushHandler' | 'splashStatus'
+> {}
