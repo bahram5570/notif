@@ -13,7 +13,7 @@ const TrackerHeading = () => {
       imagePosition="bottom"
       contentElement={contentElement}
       image={TRACKER_HEADING_DATA.image}
-      backgroundImage={[TRACKER_HEADING_DATA.gradientFrom, TRACKER_HEADING_DATA.gradientTo]}
+      className={`!bg-gradient-to-b !from-[${TRACKER_HEADING_DATA.gradientFrom}] !to-[${TRACKER_HEADING_DATA.gradientTo}]`}
     />
   );
 };

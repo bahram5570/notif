@@ -3,7 +3,7 @@ export interface LandingHeadingTypes {
   imageClassName?: string;
   contentElement: JSX.Elemen;
   imagePosition: 'center' | 'bottom';
-  backgroundImage: string | [string, string];
+  backgroundImage?: string;
   className?: string;
 }
 
