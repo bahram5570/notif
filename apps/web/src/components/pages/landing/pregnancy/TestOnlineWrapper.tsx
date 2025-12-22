@@ -12,7 +12,9 @@ const TestOnlineWrapper = ({ children }: { children: React.ReactNode }) => {
                     sm:px-6 
                     py-5 
                     sm:rounded-2xl 
-                    sm:shadow-[0_0_8px_#00000022]
+                    sm:border-[1px]
+                    sm:border-impo_Grey_200
+                    sm:dark:border-impo_Surface_SurfaceVariant               
                     flex
                     flex-col
                     items-center
@@ -23,7 +25,7 @@ const TestOnlineWrapper = ({ children }: { children: React.ReactNode }) => {
         className="
                     absolute 
                     -top-[200px] 
-                    sm:-top-[250px] 
+                    sm:-top-[200px] 
                     left-0 
                     right-0 
                     w-full 
@@ -35,7 +37,19 @@ const TestOnlineWrapper = ({ children }: { children: React.ReactNode }) => {
                     sm:overflow-visible
                   "
       >
-        <CustomImage src="/assets/images/coverHollow.png" alt="" fill={true} className="object-fill scale-150" />
+        <CustomImage
+          src="/assets/images/coverHollo.png"
+          alt=""
+          fill={true}
+          className="object-fill scale-150 dark:hidden"
+        />
+
+        <CustomImage
+          src="/assets/images/coverHollow_noBackground.png"
+          alt=""
+          fill={true}
+          className="object-fill scale-150 hidden dark:block"
+        />
       </div>
 
       <>{children}</>

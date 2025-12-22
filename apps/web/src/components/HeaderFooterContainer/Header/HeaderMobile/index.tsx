@@ -18,7 +18,7 @@ const HeaderMobile = () => {
     <>
       <div
         style={{ height: HEADER_MOBILE_HEIGHT }}
-        className="w-full pl-4 pr-6 flex items-center justify-between border-b-[1px] border-b-impo_Surface_SurfaceVariant bg-impo_Header"
+        className="w-full pl-4 pr-6 flex items-center justify-between border-b-[1px] border-b-impo_Surface_SurfaceVariant bg-impo_Black_And_White"
       >
         <CustomLink href="/">
           <ImpoIcon className="w-14 h-auto fill-impo_Primary_Primary" />

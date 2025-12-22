@@ -35,7 +35,7 @@ const ArticleIdSubjectsListGenerator = ({
                     hover:opacity-80 
                     duration-200 
                     cursor-pointer 
-                    ${tagType === 'h2' ? '!text-impo_Pink_700 !py-2' : '!text-impo_Pink_500 !pr-3 !pb-1'}
+                    ${tagType === 'h2' ? '!text-impo_Pink_700 dark:!text-impo_Pink_300 !py-2' : '!text-impo_Pink_500 dark:!text-impo_Pink_100 !pr-3 !pb-1'}
                   `}
       >
         {title}

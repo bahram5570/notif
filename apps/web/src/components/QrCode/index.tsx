@@ -35,18 +35,18 @@ const QrCode = ({ className }: QrCodePropsType) => {
                   hover:-right-3
                   lg:top-[595px] 
                   xl:top-[645px] 
-                  bg-impo_Grey_50
+                  bg-impo_Grey_50 dark:bg-impo_Black
                   duration-500
                   ${className}
                 `}
     >
       <div className="flex flex-row justify-center items-center gap-4 py-4 pr-8 pl-5">
         <div className="flex flex-col justify-center items-start h-full gap-3">
-          <CustomTypography fontSize="Title_Small" className="!text-impo_Pink_500">
+          <CustomTypography fontSize="Title_Small" className="!text-impo_Primary_Primary">
             برای دانلود ایمپو
           </CustomTypography>
 
-          <CustomTypography fontSize="Body_Medium" className="!text-impo_Black">
+          <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_OnSurfaceVariant">
             از اینجا اسکن کن
           </CustomTypography>
         </div>

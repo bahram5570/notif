@@ -26,9 +26,9 @@ const DownloadAppIos = () => {
           aria-label="DownloadAppAndroid"
           href={APP_STORE_LINK_WOMEN_URL}
           onClick={() => callUserTracking(directId)}
-          className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 bg-impo_Black relative z-10"
+          className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 bg-impo_Neutral_OnBackground relative z-10"
         >
-          <AppStoreDownloadIcon className="w-[100px] h-auto fill-impo_White" />
+          <AppStoreDownloadIcon className="w-[100px] h-auto fill-impo_Neutral_Background" />
         </CustomLink>
 
         <AppleIcon className="absolute -top-[40px] right-[40px] w-[50px] h-auto fill-impo_Surface_OutlineVariant z-0" />

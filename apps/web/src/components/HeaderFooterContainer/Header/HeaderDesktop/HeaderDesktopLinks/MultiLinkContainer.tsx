@@ -37,7 +37,7 @@ const MultiLinkContainer = ({ title, children }: HeaderDesktopMultiLinkContainer
       >
         <div
           onClick={() => setIsOpen(false)}
-          className="w-full flex flex-col gap-1 px-2 py-3 border-[1px] border-impo_Neutral_Surface bg-impo_Header rounded-xl"
+          className="w-full flex flex-col gap-1 px-2 py-3 border-[1px] border-impo_Neutral_Surface bg-impo_Black_And_White rounded-xl"
         >
           <>{children}</>
         </div>

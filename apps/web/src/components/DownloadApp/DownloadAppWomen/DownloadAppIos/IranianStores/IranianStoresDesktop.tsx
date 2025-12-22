@@ -12,7 +12,7 @@ const IranianStoresDesktop = () => {
             <div className="flex items-center w-full gap-[10px] pr-9">
               {item.icon}
 
-              <CustomTypography fontSize="Lable_Medium" className="!text-impo_Black">
+              <CustomTypography fontSize="Lable_Medium" className="!text-impo_Surface_OnSurfaceVariant">
                 {item.title}
               </CustomTypography>
             </div>

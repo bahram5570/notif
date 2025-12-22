@@ -45,11 +45,11 @@ const IranianStoresMobile = () => {
     <>
       <div
         onClick={() => newQueryParamsHandler({ [DOWNLOAD_MODAL_QUERY_NAME]: 'true' })}
-        className="w-full h-12 px-2 bg-impo_White border-[1px] border-impo_Neutral_Surface rounded-full flex items-center justify-center gap-[10px] cursor-pointer"
+        className="w-full h-12 px-2 bg-impo_Surface_SurfaceVariant border-[1px] border-impo_Neutral_Surface rounded-full flex items-center justify-center gap-[10px] cursor-pointer"
       >
         <WebIcon className="w-6 min-w-6 h-auto" />
 
-        <CustomTypography fontSize="Lable_Medium" className="!text-impo_Black">
+        <CustomTypography fontSize="Lable_Medium" className="!text-impo_Surface_OnSurfaceVariant">
           استور‌های ایرانی
         </CustomTypography>
       </div>

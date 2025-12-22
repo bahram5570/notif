@@ -22,7 +22,7 @@ const BlogsSearch = () => {
           {isLoading ? (
             <Spinner className="!border-impo_Surface_OutlineVariant" size={18} />
           ) : (
-            <MagnifierIcon className="w-5 fill-impo_Red_300" />
+            <MagnifierIcon className="w-5 fill-impo_Surface_OutlineVariant" />
           )}
         </div>
 

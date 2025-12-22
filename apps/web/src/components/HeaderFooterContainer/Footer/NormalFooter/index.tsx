@@ -23,7 +23,7 @@ const NormalFooter = () => {
                     md:gap-10 
                     md:rounded-3xl 
                     md:p-9
-                    ${breakPoint.tablet ? 'bg-impo_Transparent' : 'bg-impo_Surface_SurfaceVariant'}
+                    ${breakPoint.tablet ? 'bg-impo_Transparent' : 'bg-impo_Neutral_Surface'}
                   `}
       >
         <FooterInfo />

@@ -31,13 +31,13 @@ const DownloadAppAndroid = () => {
           href={womanDirectApplcationalink}
           aria-label="DownloadAppAndroid"
           onClick={() => callUserTracking(directId)}
-          className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 bg-impo_Black"
+          className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 bg-impo_Neutral_OnBackground"
         >
-          <CustomTypography fontSize="Title_Small" className="!text-impo_White">
+          <CustomTypography fontSize="Title_Small" className="!text-impo_Neutral_Background">
             دانلود مستقیم
           </CustomTypography>
 
-          <AndroidIcon className="w-6 min-w-6 h-auto fill-impo_White" />
+          <AndroidIcon className="w-6 min-w-6 h-auto fill-impo_Neutral_Background" />
         </CustomLink>
 
         <AndroidIcon className="w-[50px] h-auto absolute -top-[30px] right-[40px] fill-impo_Surface_OutlineVariant" />
@@ -49,7 +49,7 @@ const DownloadAppAndroid = () => {
             <div className="w-full flex items-center justify-center gap-1">
               <MyKet1Icon className="w-6 min-w-6 h-auto" />
 
-              <CustomTypography fontSize="Body_Medium" className="!text-impo_Black">
+              <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_OnSurfaceVariant">
                 دریافت از
               </CustomTypography>
 
@@ -63,7 +63,7 @@ const DownloadAppAndroid = () => {
             <div className="w-full flex items-center justify-center gap-1">
               <Bazar1Icon className="w-6 min-w-6 h-auto" />
 
-              <CustomTypography fontSize="Body_Medium" className="!text-impo_Black">
+              <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_OnSurfaceVariant">
                 دریافت از
               </CustomTypography>
 

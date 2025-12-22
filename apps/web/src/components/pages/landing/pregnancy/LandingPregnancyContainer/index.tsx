@@ -15,11 +15,15 @@ const LandingPregnancyContainer = () => {
                   px-4 
                   sm:px-6 
                   py-5 
-                  bg-[url(/assets/images/coverHollow.png)] 
                   bg-cover 
                   bg-center 
                   sm:rounded-2xl 
-                  sm:shadow-[0_0_8px_#00000022]
+                  sm:border-[1px]
+                  sm:border-impo_Grey_200
+                  sm:dark:border-impo_Surface_SurfaceVariant           
+                  bg-impo_Black_And_White       
+                  bg-[url(/assets/images/coverHollow.png)] 
+                  dark:bg-[url(/assets/images/coverHollow_noBackground.png)] 
                 "
     >
       <CustomTypography fontSize="Headline_Medium" tagType="h1" className="!text-impo_Neutral_OnBackground">
@@ -64,9 +68,9 @@ const LandingPregnancyContainer = () => {
       />
 
       <CustomLink
+        id="test_pregnancy_tool"
         href="/landing/pregnancy/testOnline"
         className="w-full p-[10px] rounded-full flex justify-center bg-impo_Primary_Primary"
-        id="test_pregnancy_tool"
       >
         <CustomTypography fontSize="Lable_Medium" className="!text-impo_White">
           شروع تست آنلاین
