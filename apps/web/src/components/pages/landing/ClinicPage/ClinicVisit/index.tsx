@@ -1,10 +1,10 @@
 import roadmapVisit from '@assets/images/clinicLanding/roadmapVisit.webp';
+import roadmapVisitDark from '@assets/images/clinicLanding/roadmapVisitDark.webp';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
-import { COLORS_LIST } from '@theme/colors';
 
 import VisitList from './VisitList';
 
@@ -19,16 +19,30 @@ const ClinicVisit = () => {
         چطور از ایمپو ویزیت آنلاین بگیرم؟
       </CustomTypography>
       <div className="flex mx-8 gap-x-[15px] items-center">
-        <CustomImage alt="roadmapVisit" height={0} width={10000} src={roadmapVisit} className="w-[70px] h-auto" />
+        {/* light */}
+        <CustomImage
+          alt="roadmapVisit"
+          height={0}
+          width={10000}
+          src={roadmapVisit}
+          className="w-[70px] h-auto dark:hidden block"
+        />
+        {/* dark */}
+        <CustomImage
+          alt="roadmapVisitDark"
+          height={0}
+          width={10000}
+          src={roadmapVisitDark}
+          className="w-[70px] h-auto dark:block hidden"
+        />
         <VisitList />
       </div>
       <div className="mx-4 mt-9">
         <CustomLink
           href={PWA_LINK_WOMEN_URL}
-          className="h-[40px] lg:h-[60px] p-6 flex items-center justify-center rounded-full"
-          style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
+          className="h-[40px] lg:h-[60px] p-6 flex items-center justify-center rounded-full !bg-impo_Primary_Primary"
         >
-          <CustomTypography fontSize="Lable_Large" color="Primary_OnPrimary">
+          <CustomTypography fontSize="Lable_Large" className="!text-impo_Primary_OnPrimary">
             دریافت ویزیت آنلاین
           </CustomTypography>
         </CustomLink>

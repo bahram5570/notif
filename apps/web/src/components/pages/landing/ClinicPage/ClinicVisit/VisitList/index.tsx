@@ -1,5 +1,4 @@
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { VisitLevels } from './constants';
 
@@ -13,8 +12,7 @@ const VisitList = () => {
               <CustomTypography
                 fontSize="Headline_Small"
                 tagType="span"
-                className="w-[24px] h-[24px] text-center rounded-full"
-                style={{ color: COLORS_LIST.Primary_Primary, backgroundColor: COLORS_LIST.Pink_50 }}
+                className="w-[24px] h-[24px] text-center rounded-full !text-impo_Primary_OnPrimary !bg-impo_Primary_OnPrimaryContainer"
               >
                 {i + 1}
               </CustomTypography>
