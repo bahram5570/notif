@@ -1,13 +1,12 @@
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import StarRating from '../../../../../StarRating';
 import { CommentItemProps } from './types';
 
 const CommentItem = ({ drAvatar, drBio, userAvatar, userRate = 4, userText, userName }: CommentItemProps) => {
   return (
-    <div className="rounded-[16px] px-[8px] lg:pr-6 py-[16px] mx-4 !bg-impo_Surface_SurfaceVariant">
+    <div className="rounded-[16px] px-[8px] lg:pr-6 py-[16px] mx-4 !bg-impo_Neutral_Surface">
       <div className="flex gap-x-2">
         <CustomImage alt="userAvatar" height={56} width={56} src={userAvatar} />
         <div className="grid gap-y-2">

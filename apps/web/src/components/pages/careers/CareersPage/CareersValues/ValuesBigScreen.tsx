@@ -4,7 +4,7 @@ import { ValuesBigScreenTypes } from './types';
 
 const ValuesBigScreen = ({ list }: ValuesBigScreenTypes) => {
   return (
-    <div className="w-full grid grid-cols-[repeat(2,minmax(0,260px))] lg:grid-cols-[repeat(3,minmax(0,260px))] gap-x-16 gap-y-9 py-6 justify-center bg-impo_Surface_SurfaceVariant">
+    <div className="w-full grid grid-cols-[repeat(2,minmax(0,260px))] lg:grid-cols-[repeat(3,minmax(0,260px))] gap-x-16 gap-y-9 py-6 justify-center bg-impo_Neutral_Surface">
       {list.map((item, index) => (
         <div className="w-full flex items-start gap-2" key={index}>
           <div className="w-14 h-14 min-w-14 min-h-14">

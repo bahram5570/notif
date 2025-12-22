@@ -1,7 +1,6 @@
 import { clinicCategoryService } from '@services/clinicLandingServices';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import CategoryItem from './CategoryItem';
 
@@ -13,7 +12,7 @@ const ClinicCategory = async () => {
       <CustomTypography fontSize="Title_Small" tagType="h4" className="text-center !text-impo_Neutral_OnBackground">
         دسته‌بندی کلینیک سلامت
       </CustomTypography>
-      <section className="grid grid-cols-3 lg:grid-cols-5 gap-x-[25px] gap-y-[24px] mt-[16px] mx-[16px] px-[16px] py-[24px] lg:rounded-3xl rounded-[16px] [box-shadow:0px_4px_24px_0px_rgba(58,112,191,0.05)] bg-impo_Neutral_OnSurface">
+      <section className="grid grid-cols-3 lg:grid-cols-5 gap-x-[25px] gap-y-[24px] mt-[16px] mx-[16px] px-[16px] py-[24px] lg:rounded-3xl rounded-[16px] [box-shadow:0px_4px_24px_0px_rgba(58,112,191,0.05)] !bg-impo_Neutral_Surface">
         {categoryData &&
           categoryData.map((item, index) => (
             <CategoryItem key={index} image={item.image} name={item.name} type={item.type} />

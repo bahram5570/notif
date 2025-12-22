@@ -22,6 +22,7 @@ const LandingGeneticLayout = () => {
                   sm:px-6 
                   py-5 
                   bg-[url(/assets/images/genetic/coverHollow.webp)] 
+                  dark:bg-[url(/assets/images/genetic/coverHollowDark.webp)] 
                   bg-contain
                   bg-no-repeat 
                   bg-top  "
@@ -75,7 +76,7 @@ const LandingGeneticLayout = () => {
             href={'/landing/genetic-screening-before-pregnancy/testOnline'}
             className="w-fit px-10 py-[12px] rounded-full flex justify-center !bg-impo_Primary_Primary"
           >
-            <CustomTypography fontSize="Lable_Medium" color={'White'}>
+            <CustomTypography fontSize="Lable_Medium" className="!text-impo_Primary_OnPrimary">
               شروع و تکمیل پرسشنامه
             </CustomTypography>
           </CustomLink>

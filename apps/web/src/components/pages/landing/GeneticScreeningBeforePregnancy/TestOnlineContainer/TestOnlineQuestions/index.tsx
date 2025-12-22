@@ -6,7 +6,6 @@ import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 import useOperatingSystem from '@hooks/useOperatingSystem';
-import { COLORS_LIST } from '@theme/colors';
 
 import useTestOnlineScore from '../__hooks__/useTestOnlineScore';
 import useTestOnlineSteps from '../__hooks__/useTestOnlineSteps';
@@ -34,7 +33,11 @@ const TestOnlineQuestions = () => {
         <LogoIcon className="w-20 h-20 mt-11" />
       </div>
 
-      <CustomTypography fontSize="Title_Small" tagType="h2" className="py-10 text-center">
+      <CustomTypography
+        fontSize="Title_Small"
+        tagType="h2"
+        className="py-10 text-center !text-impo_Neutral_OnBackground"
+      >
         {data.title}
       </CustomTypography>
       <div className="w-full flex flex-col gap-4 pb-6">
@@ -60,8 +63,6 @@ const TestOnlineQuestions = () => {
             onChange={(e) => setExtraNote(e.target.value)}
             style={{
               ...typographyDetails,
-              // outlineColor: COLORS_LIST.Primary_Primary,
-              // backgroundColor: COLORS_LIST.Surface_SurfaceVariant,
             }}
           />
         </div>
@@ -72,9 +73,11 @@ const TestOnlineQuestions = () => {
           varient="fill"
           onClick={nextStepHandler}
           isDisable={selectedIndex === -1}
-          className="w-fit !mt-auto !h-12 !px-12 !bg-impo_Primary_Primary"
+          className="w-fit !mt-auto !h-12 !px-12 !bg-impo_Primary_Primary "
         >
-          {isLastStep ? 'مشاهده نتیجه' : 'مرحله بعدی'}
+          <CustomTypography fontSize="Title_Small" className="!text-impo_Primary_OnPrimary">
+            {isLastStep ? 'مشاهده نتیجه' : 'مرحله بعدی'}
+          </CustomTypography>
         </CustomButton>
       </div>
     </div>

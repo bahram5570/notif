@@ -3,16 +3,20 @@ import CustomTypography from '@components/ui/CustomTypography';
 
 const ClinicHeading = () => {
   return (
-    <div className="mx-[16px] mt-4 grid [grid-template-columns:1fr_40%] items-center justify-between dark:bg-impo_Neutral_OnSurface bg-impo_Pink_50 px-[16px] lg:px-0 rounded-xl lg:rounded-3xl lg:h-72">
+    <div className="mx-[16px] mt-4 grid [grid-template-columns:1fr_40%] items-center justify-between dark:bg-impo_Neutral_Surface bg-impo_Pink_50 px-[16px] lg:px-0 rounded-xl lg:rounded-3xl lg:h-72">
       <div className="py-[16px] lg:pr-10 lg:mb-14">
         <h1>
-          <CustomTypography fontSize="Title_Small" className="mb-2 lg:block " tagType="span">
+          <CustomTypography
+            fontSize="Title_Small"
+            className="mb-2 lg:block !text-impo_Neutral_OnBackground"
+            tagType="span"
+          >
             ویزیت دکتر آنلاین؛
           </CustomTypography>
-          <CustomTypography fontSize="Title_Small" tagType="span">
+          <CustomTypography fontSize="Title_Small" tagType="span" className="!text-impo_Neutral_OnBackground">
             مشاوره پزشکی سریع،تخصصی و مطمئن در
           </CustomTypography>
-          <CustomTypography fontSize="Title_Medium" tagType="span">
+          <CustomTypography fontSize="Title_Medium" tagType="span" className="!text-impo_Neutral_OnBackground">
             ایمپو
           </CustomTypography>
         </h1>
