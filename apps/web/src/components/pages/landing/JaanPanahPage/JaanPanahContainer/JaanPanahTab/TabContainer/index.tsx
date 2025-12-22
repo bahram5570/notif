@@ -2,8 +2,6 @@
 
 import { useState } from 'react';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import { JaanPanahCityConditionEnum } from '../../../enum';
 import CriticalSituation from './CriticalSituation';
 import Diet from './Diet';
@@ -27,13 +25,13 @@ const TabContainer = ({ result }: TabContainerPropsType) => {
         <div className="w-full  flex flex-col items-center mx-auto pt-4">
           <TabBtnList activeTab={activeTab} handleActiveTab={handleActiveTab} cityCondition={result.cityCondition} />
           <div
-            className=" w-full my-4"
+            className=" w-full my-4 border-impo_Surface_SurfaceVariant"
             style={{
-              border: `1px solid ${COLORS_LIST.Surface_SurfaceVariant}`,
+              border: `1px solid `,
             }}
           ></div>
           <div className=" w-full">
-            <div className=" rounded-2xl " style={{ border: `1px solid ${COLORS_LIST.Surface_OutlineVariant}` }}>
+            <div className=" rounded-2xl border-impo_Surface_OutlineVariant" style={{ border: `1px solid ` }}>
               {activeTab === TabItemEnum.CriticalSituation && <CriticalSituation />}
               {activeTab === TabItemEnum.WayToCalmDown && <WaysToCalmDown />}
               {activeTab === TabItemEnum.Distract && <Distract children={result.children} />}

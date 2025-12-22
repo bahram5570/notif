@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 import { JaanPanahCityConditionEnum } from '@components/pages/landing/JaanPanahPage/enum';
 import CustomButton from '@components/ui/CustomButton';
-import { COLORS_LIST } from '@theme/colors';
 
 import { TAB_LIST_DANGER, TAB_LIST_NORMAL } from '../constants';
 import { TabBtnListPropsType } from './type';
@@ -19,19 +18,19 @@ const TabBtnList = ({ activeTab, handleActiveTab, cityCondition }: TabBtnListPro
   }, [cityCondition]);
 
   return (
-    <div className="flex  flex-wrap  gap-2 p-[10px] w-full" style={{ background: COLORS_LIST.White }}>
+    <div className="flex  flex-wrap  gap-2 p-[10px] w-full bg-impo_White">
       {tabList.map((tab, index) => (
         <CustomButton
           key={index}
           varient="FREE_COLORS"
           fontSize="Body_Medium"
           onClick={() => handleActiveTab(tab.id)}
-          textColor={activeTab === tab.id ? COLORS_LIST.Primary_Primary : COLORS_LIST.Neutral_OnSurface}
-          backgroundColor={activeTab === tab.id ? COLORS_LIST.Primary_PrimaryContainer : COLORS_LIST.White}
-          borderColor={COLORS_LIST.White}
-          className="!px-6 !py-3 !h-12 !w-fit !rounded-[100px] "
+          textColor=""
+          backgroundColor=""
+          borderColor=""
+          className={`!px-6 !py-3 !h-12 !w-fit !rounded-[100px] ${activeTab === tab.id ? 'bg-impo_Primary_PrimaryContainer text-impo_Primary_Primary border-impo_White' : 'bg-impo_White text-impo_Neutral_OnSurface border-impo_Surface_OutlineVariant'}`}
           style={{
-            border: `1px solid ${activeTab === tab.id ? COLORS_LIST.White : COLORS_LIST.Surface_OutlineVariant}`,
+            border: `1px solid `,
           }}
         >
           {tab.label}

@@ -1,7 +1,6 @@
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 const Game = () => {
   return (
@@ -32,7 +31,6 @@ const Game = () => {
           src="/assets/images/jaanPanah/JaanPanahTab/distract/3.webp"
           className="pt-4 md:p-0 w-full md:max-w-[280px] lg:min-w-[220px] lg:max-w-[320px] xl:max-w-[400px] my-3"
           hasPreviewImage
-          previewBackground={COLORS_LIST.White}
         />
       </div>
       <div className="w-full my-3" style={{ border: `1px solid #8BAD7820` }}></div>
@@ -51,8 +49,6 @@ const Game = () => {
                 id="women-ios-direct"
                 aria-label="DownloadAppAndroid"
                 href="https://cafebazaar.ir/app/com.plus9.fandogh"
-                // style={{ backgroundColor: COLORS_LIST.Neutral_OnBackground }}
-                // className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 relative z-10"
               >
                 <CustomTypography fontSize="Lable_Small" color="Surface_InverseSurface" numbersMode="english">
                   «فندق»
@@ -65,8 +61,6 @@ const Game = () => {
                 id="women-ios-direct"
                 aria-label="DownloadAppAndroid"
                 href="https://cafebazaar.ir/app/com.BrainLadder.Amirza"
-                // style={{ backgroundColor: COLORS_LIST.Neutral_OnBackground }}
-                // className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 relative z-10"
               >
                 <CustomTypography fontSize="Lable_Small" color="Surface_InverseSurface" numbersMode="english">
                   «آمیرزا»
@@ -81,12 +75,7 @@ const Game = () => {
           </CustomTypography>
           <ul className="px-5">
             <li className=" list-disc">
-              <CustomLink
-                target="_blank"
-                href="https://cafebazaar.ir/app/ir.developer.goalorpooch_compose"
-                // style={{ backgroundColor: COLORS_LIST.Neutral_OnBackground }}
-                // className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 relative z-10"
-              >
+              <CustomLink target="_blank" href="https://cafebazaar.ir/app/ir.developer.goalorpooch_compose">
                 <CustomTypography fontSize="Lable_Small" color="Surface_InverseSurface" numbersMode="english">
                   گل یا پوچ
                 </CustomTypography>
@@ -101,12 +90,7 @@ const Game = () => {
           </CustomTypography>
           <ul className="px-5">
             <li className=" list-disc">
-              <CustomLink
-                target="_blank"
-                href="https://cafebazaar.ir/app/co.palang.QuizOfKings"
-                // style={{ backgroundColor: COLORS_LIST.Neutral_OnBackground }}
-                // className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 relative z-10"
-              >
+              <CustomLink target="_blank" href="https://cafebazaar.ir/app/co.palang.QuizOfKings">
                 <CustomTypography fontSize="Lable_Small" color="Surface_InverseSurface" numbersMode="english">
                   Quiz of Kings
                 </CustomTypography>

@@ -8,7 +8,6 @@ import { ctaBannerService } from '@services/ctaBannerServices';
 import CtaBanner from '@components/CtaBanner';
 import { CraBannerItemTypes } from '@components/CtaBanner/types';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import Book from './Book';
 
@@ -28,8 +27,8 @@ const Depression = () => {
     <>
       {' '}
       <div
-        className="p-4 flex flex-col gap-2  rounded-2xl"
-        style={{ border: `1px solid ${COLORS_LIST.Surface_OutlineVariant}` }}
+        className="p-4 flex flex-col gap-2  rounded-2xl border-impo_Surface_OutlineVariant"
+        style={{ border: `1px solid ` }}
       >
         <CustomTypography fontSize="Lable_Large" color="Neutral_OnBackground" className="p-4  text-center">
           غم به دلت راه نده

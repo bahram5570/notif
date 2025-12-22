@@ -1,14 +1,13 @@
 'use client';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import FaqAccordionItem from './FaqAccordionItem';
 import { FaqAccordionPropsType } from './type';
 
 const FaqAccordion = ({ faqList, title }: FaqAccordionPropsType) => {
   return (
-    <div className="rounded-xl py-6 px-4 divide-y-[1px] " style={{ backgroundColor: COLORS_LIST.Neutral_Background }}>
+    <div className="rounded-xl py-6 px-4 divide-y-[1px] bg-impo_Neutral_Background ">
       <CustomTypography fontSize="Lable_Large" color="Neutral_OnBackground">
         {title}
       </CustomTypography>

@@ -7,7 +7,6 @@ import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 import useOperatingSystem from '@hooks/useOperatingSystem';
-import { COLORS_LIST } from '@theme/colors';
 
 import { BOOK_PART1 } from '../../PsychologicalAnesthesia/Movie/constants';
 import useCopy from './__hooks__/useCopy';
@@ -51,28 +50,23 @@ const Book = () => {
                     src={item.image}
                     className="pt-4 md:p-0 w-[96px] md:w-[150px] lg:max-w-[320px] xl:max-w-[300px] my-3 relative"
                     hasPreviewImage
-                    previewBackground={COLORS_LIST.White}
                   />
                   {item.percent && (
-                    <div
-                      className="absolute bottom-0 left-0 w-8 h-8 flex justify-center items-center rounded-full"
-                      style={{ background: COLORS_LIST.Primary_Primary, color: COLORS_LIST.White }}
-                    >
-                      <CustomTypography fontSize="Lable_Small" color="Primary_OnPrimary" className="text-center">
+                    <div className="absolute bottom-0 left-0 w-8 h-8 flex justify-center items-center rounded-full bg-impo_Primary_Primary text-impo_White">
+                      <CustomTypography fontSize="Lable_Small" className="text-center !text-impo_Primary_OnPrimary">
                         %{item.percent}
                       </CustomTypography>
                     </div>
                   )}
                 </div>
 
-                <CustomTypography fontSize="Lable_Small" color="Surface_InverseSurface" className="text-center">
+                <CustomTypography fontSize="Lable_Small" className="text-center !text-impo_Surface_InverseSurface">
                   {item.description}
                 </CustomTypography>
                 {item.englishName && (
                   <CustomTypography
                     fontSize="Lable_Small"
-                    color="Surface_InverseSurface"
-                    className="text-center"
+                    className="text-center !text-impo_Surface_InverseSurface"
                     numbersMode="english"
                   >
                     {item.englishName}
@@ -100,10 +94,10 @@ const Book = () => {
         >
           فیدیبو
         </CustomLink>
-        <CustomTypography fontSize="Body_Medium" color="Surface_InverseSurface">
+        <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
           می‌تونه مرهمی باشه برای این روزهات؛
         </CustomTypography>
-        <CustomTypography fontSize="Body_Medium" color="Surface_InverseSurface">
+        <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
           کتاب‌های صوتی بالا رو با کد تخفیف 70 تا 100% به مدت ۲ هفته می‌تونید استفاده کنین.
         </CustomTypography>
 
@@ -111,11 +105,7 @@ const Book = () => {
           <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
             کد تخفیف 70 درصدی:
           </CustomTypography>
-          <u
-            style={{ ...typographyDetails, color: COLORS_LIST.Primary_Primary }}
-            className=" cursor-pointer"
-            onClick={copylink}
-          >
+          <u style={{ ...typographyDetails }} className=" cursor-pointer text-impo_Primary_Primary" onClick={copylink}>
             Marham
           </u>
         </div> */}

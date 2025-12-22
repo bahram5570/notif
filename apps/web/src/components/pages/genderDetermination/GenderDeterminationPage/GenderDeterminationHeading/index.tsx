@@ -5,7 +5,6 @@ import genderDeterminationLottie from '@assets/lottie/genderDetermination.json';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 import { LottieJson } from '@lib/LottieJson';
-import { COLORS_LIST } from '@theme/colors';
 
 const GenderDeterminationHeading = () => {
   return (
@@ -66,7 +65,6 @@ const ItemsGenerator = ({ no, script }: { no: number; script: string }) => {
   return (
     <div className="flex items-center gap-3 md:gap-4">
       <div
-        style={{ backgroundColor: COLORS_LIST.Blue_100 }}
         className="
                     w-[40px] 
                     h-[40px] 
@@ -80,9 +78,10 @@ const ItemsGenerator = ({ no, script }: { no: number; script: string }) => {
                     flex 
                     items-center 
                     justify-center
+                    bg-impo_Blue_100
                   "
       >
-        <CustomTypography fontSize="Headline_Medium" color="Blue_600">
+        <CustomTypography fontSize="Headline_Medium" className="!text-impo_Blue_600">
           {no}
         </CustomTypography>
       </div>

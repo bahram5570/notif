@@ -5,7 +5,6 @@ import Image from 'next/image';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
 import useOperatingSystem from '@hooks/useOperatingSystem';
-import { COLORS_LIST } from '@theme/colors';
 
 import CustomModal from '../CustomModal';
 import { CustomImagePreviewTypes } from './types';
@@ -14,7 +13,10 @@ const CustomImagePreview = ({ src, previewImage, previewBackground, closeHandler
   const { operatingSystem } = useOperatingSystem();
 
   const ImageComponent = (
-    <div className="relative w-full h-full" style={{ backgroundColor: previewBackground || COLORS_LIST.Transparent }}>
+    <div
+      className={`relative w-full h-full ${!previewBackground && '!bg-impo_Transparent'}`}
+      style={{ backgroundColor: previewBackground }}
+    >
       <Image
         alt=""
         src={src}
@@ -34,8 +36,8 @@ const CustomImagePreview = ({ src, previewImage, previewBackground, closeHandler
         <div className="relative w-[100dvw] h-[100dvh]">
           <CloseRoundedIcon
             onClick={closeHandler}
-            className="absolute top-4 left-4 z-10"
-            sx={{ width: 50, height: 50, fill: COLORS_LIST.White, stroke: COLORS_LIST.Surface_Outline, strokeWidth: 1 }}
+            className="absolute top-4 left-4 z-10 !fill-impo_White !stroke-impo_Surface_Outline"
+            sx={{ width: 50, height: 50, strokeWidth: 1 }}
           />
 
           {isIos ? (

@@ -3,7 +3,6 @@
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
 
 import { FeaturesIntruductionCardGeneratorTypes } from './types';
 
@@ -19,7 +18,7 @@ const FeaturesIntruductionCardGenerator = ({
 
   return (
     <div
-      className="
+      className={`
                   w-full 
                   max-w-[360px] 
                   md:max-w-full 
@@ -32,8 +31,8 @@ const FeaturesIntruductionCardGenerator = ({
                   md:grid-cols-12 
                   rounded-3xl 
                   overflow-hidden
-                "
-      style={{ background: breakPoint.tablet ? COLORS_LIST.Surface_SurfaceVariant : COLORS_LIST.Transparent }}
+                  ${breakPoint.tablet ? 'bg-impo_Surface_SurfaceVariant' : 'bg-impo_Transparent'}
+                `}
     >
       <div className="relative w-full h-[230px] md:h-full max-w-[720px] md:col-span-7 mx-auto" style={{ order }}>
         <CustomImage src={image} alt={title} fill={true} className="w-full h-auto object-cover pointer-events-none" />

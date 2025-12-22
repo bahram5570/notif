@@ -8,7 +8,6 @@ import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import { COLORS_LIST } from '@theme/colors';
 
 import useCopy from '../Hooks/useCopy';
 import useGetData from '../Hooks/useGetData';
@@ -26,19 +25,13 @@ const ResultWomanDayPage = () => {
   return (
     <div className="w-full max-w-[500px]">
       {isLoading && (
-        <div
-          className="w-full h-[600px] rounded-md animate-pulse flex justify-self-center mb-7"
-          style={{ backgroundColor: COLORS_LIST.Neutral_Surface }}
-        />
+        <div className="w-full h-[600px] rounded-md animate-pulse flex justify-self-center mb-7  bg-impo_Neutral_Surface" />
       )}
       {giftData?.type === 0 && <CustomImage src={mother} alt="partner&mother" />}
       {giftData?.type === 1 && <CustomImage src={partner} alt="partner&mother" />}
       <div className="px-4">
         {isLoading && (
-          <div
-            className="w-[200px] h-[40px] rounded-md animate-pulse flex justify-self-center mb-4"
-            style={{ backgroundColor: COLORS_LIST.Neutral_Surface }}
-          />
+          <div className="w-[200px] h-[40px] rounded-md animate-pulse flex justify-self-center mb-4 bg-impo_Neutral_Surface" />
         )}
         {!isLoading && giftData?.selfName && (
           <CustomTypography fontSize="Headline_Medium" tagType="p" className="text-center">
@@ -59,28 +52,23 @@ const ResultWomanDayPage = () => {
 
         <CustomLink
           href={link}
-          className="mt-9 block w-full rounded-xl py-[13.5px] !text-white text-center "
-          style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
+          className="mt-9 block w-full rounded-xl py-[13.5px] !text-white text-center bg-impo_Primary_Primary"
         >
-          <CustomTypography fontSize="Lable_Large" tagType="p" color={'White'}>
+          <CustomTypography fontSize="Lable_Large" tagType="p" className="!text-impo_White">
             مشاهده کارت هدیه
           </CustomTypography>
         </CustomLink>
 
         {isLoading && (
-          <div
-            className="w-[150px] h-[50px] rounded-md animate-pulse flex justify-self-center mb-4 !mt-4"
-            style={{ backgroundColor: COLORS_LIST.Neutral_Surface }}
-          />
+          <div className="w-[150px] h-[50px] rounded-md animate-pulse flex justify-self-center mb-4 !mt-4 bg-impo_Neutral_Surface" />
         )}
         {!isLoading && link && (
           <div className="flex justify-center w-full">
             <div
-              className="!mt-4 rounded-xl border w-fit justify-self-center flex gap-x-6 items-center py-3 px-[14px] cursor-pointer mb-5"
-              style={{ borderColor: COLORS_LIST.Neutral_Surface }}
+              className="!mt-4 rounded-xl border w-fit justify-self-center flex gap-x-6 items-center py-3 px-[14px] cursor-pointer mb-5 border-impo_Neutral_Surface"
               onClick={() => copylink(link)}
             >
-              <CustomTypography fontSize="Body_Large" tagType="p" color={'Surface_Outline'}>
+              <CustomTypography fontSize="Body_Large" tagType="p" className="!text-impo_Surface_Outline">
                 کپی لینک کارت هدیه
               </CustomTypography>
               <Copy />

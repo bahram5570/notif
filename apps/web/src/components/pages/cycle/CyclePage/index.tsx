@@ -4,7 +4,6 @@ import { useState } from 'react';
 
 import Spinner from '@components/ui/Spinner';
 import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
-import { COLORS_LIST } from '@theme/colors';
 
 import CompleteCycleRegisterLoading from './CompleteCycleRegisterLoading';
 import useRedirectToPwa from './__hooks__/useRedirectToPwa';
@@ -19,10 +18,7 @@ const CyclePage = () => {
   return (
     <>
       {isLoading && (
-        <div
-          style={{ backgroundColor: COLORS_LIST.White }}
-          className="absolute top-0 left-0 right-0 bottom-0 w-full h-full flex items-center justify-center"
-        >
+        <div className="absolute top-0 left-0 right-0 bottom-0 w-full h-full flex items-center justify-center bg-impo_White">
           <Spinner size={40} />
         </div>
       )}

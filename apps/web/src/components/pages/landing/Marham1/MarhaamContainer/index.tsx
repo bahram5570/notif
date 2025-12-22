@@ -6,7 +6,6 @@ import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
 import CustomModal from '@components/ui/CustomModal';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import MarhaamQuestion from './MarhaamQuestion';
 import QuestionContents from './MarhaamQuestion/QuestionContents';
@@ -27,17 +26,17 @@ const MarhaamContainer = () => {
       {result && <MarhaamTab result={result} />}
 
       <div
-        className={`w-full   ${!result && ' mt-10 p-5 rounded-xl'}`}
-        style={{ backgroundColor: result ? COLORS_LIST.White : COLORS_LIST.Surface_SurfaceVariant }}
+        className={`w-full   ${!result && ' mt-10 p-5 rounded-xl'} ${result ? 'bg-impo_White' : 'bg-impo_Surface_SurfaceVariant'}`}
       >
         {!result && <QuestionContents />}
 
         <div className={`my-4 ${result && 'px-4'} flex flex-col gap-2`}>
-          <CustomTypography fontSize="Headline_Small"> همراهان مرهم</CustomTypography>
+          <CustomTypography fontSize="Headline_Small" className="!text-impo_Neutral_OnBackground">
+            همراهان مرهم
+          </CustomTypography>
           <div className="flex  gap-6 md:gap-3">
             <div
-              className=" h-14 w-14 md:h-auto md:w-24 p-2 md:p-4 rounded-2xl"
-              style={{ background: !result ? COLORS_LIST.White : COLORS_LIST.Surface_SurfaceVariant }}
+              className={` h-14 w-14 md:h-auto md:w-24 p-2 md:p-4  rounded-2xl ${!result ? 'bg-impo_White' : 'bg-impo_Surface_SurfaceVariant'}`}
             >
               <CustomImage
                 width={100}
@@ -50,8 +49,7 @@ const MarhaamContainer = () => {
             </div>
 
             <div
-              className=" h-14 w-14 md:h-auto md:w-24 p-2 md:p-4  rounded-2xl"
-              style={{ background: !result ? COLORS_LIST.White : COLORS_LIST.Surface_SurfaceVariant }}
+              className={` h-14 w-14 md:h-auto md:w-24 p-2 md:p-4  rounded-2xl ${!result ? 'bg-impo_White' : 'bg-impo_Surface_SurfaceVariant'}`}
             >
               <CustomImage
                 width={100}
@@ -64,8 +62,7 @@ const MarhaamContainer = () => {
             </div>
 
             <div
-              className=" h-14 w-14 md:h-auto md:w-24 p-2 md:p-4  rounded-2xl"
-              style={{ background: !result ? COLORS_LIST.White : COLORS_LIST.Surface_SurfaceVariant }}
+              className={` h-14 w-14 md:h-auto md:w-24 p-2 md:p-4  rounded-2xl ${!result ? 'bg-impo_White' : 'bg-impo_Surface_SurfaceVariant'}`}
             >
               <CustomImage
                 width={100}
@@ -81,11 +78,8 @@ const MarhaamContainer = () => {
       </div>
 
       <CustomModal position={'center'} isOpen={isOpen} onClose={() => isOpenHandler(false)}>
-        <div
-          className="w-[100vw] max-w-[320px] flex flex-col items-center p-6 md:p-10 rounded-2xl"
-          style={{ backgroundColor: COLORS_LIST.White }}
-        >
-          <CustomTypography className="text-center" fontSize="Title_Small">
+        <div className="w-[100vw] max-w-[320px] flex flex-col items-center p-6 md:p-10 rounded-2xl bg-impo_White">
+          <CustomTypography className="text-center !text-impo_Neutral_OnBackground" fontSize="Title_Small">
             مهلت استفاده از خدمات مرهم به پایان رسید
           </CustomTypography>
 

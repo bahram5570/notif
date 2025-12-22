@@ -5,7 +5,6 @@ import { useRef } from 'react';
 import ArrowIcon from '@assets/icons/arrow2.svg';
 
 import CustomImage from '@components/ui/CustomImage';
-import { COLORS_LIST } from '@theme/colors';
 import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
@@ -75,13 +74,12 @@ const ArrowGenerator = ({ isNextSlide, slidesHandler }: ArrowGeneratorTypes) => 
                     rounded-full 
                     cursor-pointer
                     z-10 
-                    !bg-impo_Surface_SurfaceVariant
+                    bg-impo_Surface_SurfaceVariant
                     ${isNextSlide ? 'left-6 md:left-[20%]' : 'right-6 md:right-[20%]'}
                 `}
     >
       <ArrowIcon
-        style={{ fill: COLORS_LIST.Surface_InverseSurface }}
-        className={`w-3 h-auto  ${isNextSlide ? '-rotate-90' : 'rotate-90'}`}
+        className={`w-3 h-auto !fill-impo_Surface_InverseSurface  ${isNextSlide ? '-rotate-90' : 'rotate-90'}`}
       />
     </div>
   );

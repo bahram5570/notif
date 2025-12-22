@@ -6,7 +6,6 @@ import ProgressCycleLoading from '@components/ProgressCycleLoading';
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
 
 import { MARHAAM_QUESTIONS_LIST } from '../../constants';
 import { MarhaamFeelingEnum } from '../../enum';
@@ -48,13 +47,7 @@ const MarhaamQuestion = ({ onResult }: JaanPanahQuestionsTypes) => {
         style={{ pointerEvents: isLoading ? 'none' : 'auto' }}
       >
         <div className="relative w-full  flex flex-col items-center">
-          <div
-            className="flex flex-row justify-center items-center gap-1 rounded-xl px-6 py-3 mb-4"
-            style={{
-              backgroundColor: COLORS_LIST.Warning_WarininContainer,
-              border: `1px solid${COLORS_LIST.Warning_Warning}`,
-            }}
-          >
+          <div className="flex flex-row justify-center items-center gap-1 rounded-xl px-6 py-3 mb-4 bg-impo_Warning_WarininContainer border-impo_Warning_Warning">
             <WarningIcon />
 
             <CustomTypography fontSize="Lable_Large" color={'Warning_OnWarininContainer'}>
@@ -62,10 +55,7 @@ const MarhaamQuestion = ({ onResult }: JaanPanahQuestionsTypes) => {
             </CustomTypography>
           </div>
           {isLoading && (
-            <div
-              style={{ backgroundColor: COLORS_LIST.White }}
-              className="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center z-10"
-            >
+            <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center z-10 bg-impo_White">
               <CustomTypography
                 className="text-center pb-16"
                 fontSize={breakPoint.tablet ? 'Title_Medium' : 'Title_Small'}

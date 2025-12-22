@@ -1,7 +1,6 @@
 import StarIcon from '@assets/icons/star2.svg';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 const GenderDeterminationContents = () => {
   return (
@@ -25,9 +24,7 @@ const GenderDeterminationContents = () => {
 
         <CustomTypography
           fontSize="Body_Large"
-          className="inline rounded-md px-[3px] ml-1 text-center md:text-start"
-          color={'White'}
-          style={{ backgroundColor: COLORS_LIST.Blue_500 }}
+          className="inline rounded-md px-[3px] ml-1 text-center md:text-start bg-impo_Blue_500 !text-impo_White"
         >
           پسردار شدن از 3 ماه قبل از اقدام
         </CustomTypography>
@@ -38,9 +35,7 @@ const GenderDeterminationContents = () => {
 
         <CustomTypography
           fontSize="Body_Large"
-          className="inline rounded-md px-[3px] ml-1 text-center md:text-start"
-          color={'White'}
-          style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
+          className="inline rounded-md px-[3px] ml-1 text-center md:text-start bg-impo_Primary_Primary !text-impo_White"
         >
           دختردار شدن از 2 ماه قبل از اقدام به بارداری
         </CustomTypography>
@@ -57,10 +52,7 @@ const GenderDeterminationContents = () => {
       </div>
 
       {/* // # Card 1 */}
-      <div
-        className="mb-8 w-full md:w-fit rounded-2xl py-4 px-2 md:px-20 mx-auto text-center"
-        style={{ backgroundColor: COLORS_LIST.Blue_100 }}
-      >
+      <div className="mb-8 w-full md:w-fit rounded-2xl py-4 px-2 md:px-20 mx-auto text-center bg-impo_Blue_100">
         <CustomTypography fontSize="Lable_Large" className="inline">
           احتمال موفقیت
         </CustomTypography>
@@ -69,7 +61,7 @@ const GenderDeterminationContents = () => {
           با این روش در بهترین حالت
         </CustomTypography>
 
-        <CustomTypography fontSize="Lable_Large" color={'Primary_Primary'} className="inline">
+        <CustomTypography fontSize="Lable_Large" className="inline !text-impo_Primary_Primary">
           90%
         </CustomTypography>
 
@@ -112,9 +104,7 @@ const GenderDeterminationContents = () => {
 
         <CustomTypography
           fontSize="Body_Large"
-          className="inline rounded-md px-[3px] ml-1"
-          color={'White'}
-          style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
+          className="inline rounded-md px-[3px] ml-1  !text-impo_White bg-impo_Primary_Primary"
         >
           یک جلسه مشاوره رایگان
         </CustomTypography>
@@ -125,11 +115,8 @@ const GenderDeterminationContents = () => {
       </div>
 
       {/* // # Card 2 */}
-      <div
-        className="mb-6 w-fit flex items-center gap-1 py-[2px] px-2 rounded-md"
-        style={{ backgroundColor: COLORS_LIST.Pink_100 }}
-      >
-        <StarIcon className="w-8 h-auto" style={{ fill: COLORS_LIST.Primary_Primary }} />
+      <div className="mb-6 w-fit flex items-center gap-1 py-[2px] px-2 rounded-md bg-impo_Pink_100">
+        <StarIcon className="w-8 h-auto !fill-impo_Primary_Primary" />
 
         <CustomTypography tagType="h3" fontSize="Lable_Large">
           خدماتی که با خرید این محصول دریافت می‌کنی:
@@ -144,10 +131,7 @@ const GenderDeterminationContents = () => {
       </ul>
 
       {/* // # Card 3 */}
-      <div
-        className="mb-8 w-full md:w-fit rounded-2xl border-[1px] py-4 px-2 md:px-20 mx-auto text-center"
-        style={{ backgroundColor: COLORS_LIST.Pink_100, borderColor: COLORS_LIST.Primary_Primary }}
-      >
+      <div className="mb-8 w-full md:w-fit rounded-2xl border-[1px] py-4 px-2 md:px-20 mx-auto text-center bg-impo_Pink_100 border-impo_Primary_Primary">
         <CustomTypography fontSize="Body_Large" className="inline">
           قیمت این محصول
         </CustomTypography>
@@ -162,13 +146,13 @@ const GenderDeterminationContents = () => {
 
         <br className="md:hidden" />
 
-        <CustomTypography fontSize="Lable_Large" color={'Primary_Primary'} className="inline">
+        <CustomTypography fontSize="Lable_Large" className="inline !text-impo_Primary_Primary">
           3 ماه همراهی
         </CustomTypography>
 
         <br className="hidden md:block" />
 
-        <CustomTypography fontSize="Lable_Large" color={'Primary_Primary'} className="inline">
+        <CustomTypography fontSize="Lable_Large" className="inline !text-impo_Primary_Primary">
           و پشتیبانی
         </CustomTypography>
 
@@ -191,7 +175,7 @@ export default GenderDeterminationContents;
 
 const UlGenerator = (props: { script: string }) => {
   return (
-    <CustomTypography tagType="li" className="list-disc" color={'Surface_InverseSurface'}>
+    <CustomTypography tagType="li" className="list-disc !text-impo_Surface_InverseSurface">
       {props.script}
     </CustomTypography>
   );

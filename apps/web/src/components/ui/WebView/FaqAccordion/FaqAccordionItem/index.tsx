@@ -3,7 +3,6 @@ import { useState } from 'react';
 import ArrowLeftIcon from '@assets/icons/arrowLeft.svg';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { FaqAccordionItemPropsType } from './type';
 
@@ -18,8 +17,7 @@ const FaqAccordionItem = ({ question, answer, index }: FaqAccordionItemPropsType
 
         <div className="w-6 h-6 ">
           <ArrowLeftIcon
-            className={`w-6 h-auto transform transition-transform duration-300 ${isOpen ? 'rotate-[-90deg]' : ''}`}
-            style={{ stroke: COLORS_LIST.Surface_OutlineVariant }}
+            className={`w-6 h-auto transform transition-transform duration-300 !stroke-impo_Surface_OutlineVariant ${isOpen ? 'rotate-[-90deg]' : ''}`}
           />
         </div>
       </button>

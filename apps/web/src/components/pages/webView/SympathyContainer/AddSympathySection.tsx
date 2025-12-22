@@ -2,7 +2,6 @@ import { toPersianNumbers } from '@utils/numbers';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 const AddSympathySection = () => {
   return (
@@ -10,10 +9,7 @@ const AddSympathySection = () => {
       <CustomTypography fontSize="Title_Small" color="Neutral_OnBackground">
         فقط با دو تا قدم کوچیک، همدلی رو شروع کن 🥰
       </CustomTypography>
-      <div
-        className="rounded-xl py-6 px-3 flex flex-col gap-4 justify-center items-center"
-        style={{ backgroundColor: COLORS_LIST.Purple_100 }}
-      >
+      <div className="rounded-xl py-6 px-3 flex flex-col gap-4 justify-center items-center bg-impo_Purple_100">
         <div className="flex justify-center items-center gap-[30px]">
           <div>
             <CustomTypography fontSize="Lable_Large" color="Neutral_OnBackground">
