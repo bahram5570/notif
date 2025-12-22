@@ -8,7 +8,6 @@ import QuestionProgressBar from '@components/modules/QuestionProgressBar';
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { ExpertList } from './constants';
 
@@ -31,10 +30,14 @@ const LandingGeneticLayout = () => {
           <QuestionProgressBar currentStep="0" questionListLength={20} />
           <div className="mt-7 grid place-items-center">
             <CustomImage src={logo} alt="logo" width={80} height={80} />
-            <CustomTypography tagType="h2" fontSize="Title_Small" className="mt-6">
+            <CustomTypography tagType="h2" fontSize="Title_Small" className="mt-6 !text-impo_Neutral_OnBackground">
               غربالگری ژنتیک ایمپو
             </CustomTypography>
-            <CustomTypography tagType="p" fontSize="Body_Medium" className="mt-2 text-center">
+            <CustomTypography
+              tagType="p"
+              fontSize="Body_Medium"
+              className="mt-2 text-center !text-impo_Neutral_OnBackground"
+            >
               غربالگری ژنتیک ایمپو یک ابزار برای غربالگری بر اساس پارامترهای ژنتیکی و تاثیرش روی سلامت ژنتیکی فرزندان،
               ناباروری، دسته بندی بر اساس سطح ریسک ژنتیکی و ارائه راهکارهای لازم بر اساس سطح ریسک مشخص شده برای هر فرد
               هست. برای این منظور لازمه که پرسشنامه‌ای که در ادامه بهت نمایش می‌دیم رو با دقت تکمیل کنی. نکته مهم اینه
@@ -70,8 +73,7 @@ const LandingGeneticLayout = () => {
         <div className="mt-6 w-fit mx-auto my-5 lg:mb-8 flex">
           <CustomLink
             href={'/landing/genetic-screening-before-pregnancy/testOnline'}
-            className="w-fit px-10 py-[12px] rounded-full flex justify-center "
-            style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
+            className="w-fit px-10 py-[12px] rounded-full flex justify-center !bg-impo_Primary_Primary"
           >
             <CustomTypography fontSize="Lable_Medium" color={'White'}>
               شروع و تکمیل پرسشنامه
