@@ -7,7 +7,6 @@ import { textShorter } from '@utils/scripts';
 
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 const Description = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -28,12 +27,12 @@ const Description = () => {
     'اسم دختری که انتخاب می‌کنین باید روان و خوش‌آهنگ باشه؛ چون تلفظ راحت باعث می‌شه اسم تحریف یا تغییر نکنه و همیشه درست خونده بشه.';
 
   return (
-    <div className="w-full rounded-2xl p-6" style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}>
-      <CustomTypography fontSize="Headline_Medium" color={'Neutral_OnBackground'} tagType="h2" className="pb-7">
+    <div className="w-full rounded-2xl p-6 bg-impo_Surface_SurfaceVariant">
+      <CustomTypography fontSize="Headline_Medium" tagType="h2" className="pb-7 !text-impo_Neutral_OnBackground">
         در انتخاب اسم دختر به چه نکاتی باید توجه کنیم؟
       </CustomTypography>
 
-      <CustomTypography fontSize="Body_Large" color={'Neutral_OnBackground'} className="pb-3">
+      <CustomTypography fontSize="Body_Large" className="pb-3 !text-impo_Neutral_OnBackground">
         وقتی به لیست بلند بالای اسم دخترانه جدید و شیک نگاه می‌کنین، طبیعی هست که کمی گیج بشید. در انتخاب اسم دخترانه
         باید این موارد رو در نظر بگیرید:
       </CustomTypography>
@@ -269,13 +268,13 @@ const Description = () => {
       </div>
 
       <div className="w-full flex items-center justify-center gap-2 pt-6" onClick={() => setIsOpen(!isOpen)}>
-        <CustomTypography fontSize="Title_Small" color={'Primary_Primary'}>
+        <CustomTypography fontSize="Title_Small" className="!text-impo_Primary_Primary">
           {isOpen ? 'بستن' : 'خواندن اطلاعات بیشتر'}
         </CustomTypography>
 
         <ArrowIcon
-          className="w-4 duration-100"
-          style={{ fill: COLORS_LIST.Primary_Primary, transform: isOpen ? 'rotate(0deg)' : 'rotate(180deg)' }}
+          className="w-4 duration-100 fill-impo_Primary_Primary"
+          style={{ transform: isOpen ? 'rotate(0deg)' : 'rotate(180deg)' }}
         />
       </div>
     </div>
@@ -286,24 +285,25 @@ export default Description;
 
 const TitleGenerator = (props: { children: string; tagType: 'h2' | 'h3' }) => {
   return (
-    <CustomTypography tagType={props.tagType} fontSize="Title_Small" className="mt-3 mb-2">
+    <CustomTypography
+      tagType={props.tagType}
+      fontSize="Title_Small"
+      className="mt-3 mb-2 !text-impo_Neutral_OnBackground"
+    >
       {props.children}
     </CustomTypography>
   );
 };
 
 const TextGenerator = (props: { children: string }) => {
-  return <CustomTypography className="inline">{props.children}</CustomTypography>;
+  return <CustomTypography className="inline !text-impo_Neutral_OnBackground">{props.children}</CustomTypography>;
 };
 
 const ItemGenerator = (props: { children: string }) => {
   return (
     <div className="flex items-start gap-4 mr-6 pb-1">
-      <span
-        style={{ backgroundColor: COLORS_LIST.Neutral_OnBackground }}
-        className="w-[6px] h-[6px] min-w-[6px] min-h-[6px] mt-2 rounded-full"
-      />
-      <CustomTypography className="inline">{props.children}</CustomTypography>
+      <span className="w-[6px] h-[6px] min-w-[6px] min-h-[6px] mt-2 rounded-full bg-impo_Neutral_OnBackground" />
+      <CustomTypography className="inline !text-impo_Neutral_OnBackground">{props.children}</CustomTypography>
     </div>
   );
 };
@@ -311,9 +311,7 @@ const ItemGenerator = (props: { children: string }) => {
 const LinkGenerator = (props: { children: string; href: string }) => {
   return (
     <CustomLink href={props.href} className="inline">
-      <CustomTypography className="px-1 inline" color={'Primary_Primary'}>
-        {props.children}
-      </CustomTypography>
+      <CustomTypography className="px-1 inline !text-impo_Primary_Primary">{props.children}</CustomTypography>
     </CustomLink>
   );
 };
