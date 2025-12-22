@@ -8,7 +8,6 @@ import welcomVector from '@assets/images/blackFriday/welcomVector.webp';
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 // import SubscribtionGenerator from './SubscribtionGenerator';
 // import { SubscribtionList } from './constants';
@@ -23,29 +22,21 @@ const BlackFridayPage = () => {
       <div className="-mt-[60px]">
         <CustomImage src={welcomVector} alt="welcomVector" />
         <div className="px-4 -mt-[140px]">
-          <div
-            className="flex gap-x-2 items-center rounded-xl border px-4 py-3 mb-6"
-            style={{
-              borderColor: COLORS_LIST.Warning_Warning,
-              backgroundColor: COLORS_LIST.Warning_WarininContainer,
-            }}
-          >
+          <div className="flex gap-x-2 items-center rounded-xl border px-4 py-3 mb-6 border-impo_Warning_Warning bg-impo_Warning_WarininContainer">
             <WarningCircle />
             <span className="h-10 w-[2px] bg-[#FFD49A]"></span>
             <div>
               <CustomTypography
                 fontSize="Lable_Large"
                 tagType="p"
-                className="text-right mb-1"
-                color={'Warning_OnWarininContainer'}
+                className="text-right mb-1 !text-impo_Warning_OnWarininContainer"
               >
                 مهلت شرکت در این کمپین تموم شده.
               </CustomTypography>
               <CustomTypography
                 fontSize="Body_Medium"
                 tagType="p"
-                className="text-right"
-                color={'Warning_OnWarininContainer'}
+                className="text-right !text-impo_Warning_OnWarininContainer"
               >
                 منتظر کمپین‌های بعدیمون باش.
               </CustomTypography>
@@ -70,11 +61,10 @@ const BlackFridayPage = () => {
             {/* blackfriday/enterPhone */}
             <CustomLink
               href={'#'}
-              className="w-60 px-12 py-3 rounded-full block opacity-25 pointer-events-none"
-              style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
+              className="w-60 px-12 py-3 rounded-full block opacity-25 pointer-events-none bg-impo_Primary_Primary"
               id="button_offer"
             >
-              <CustomTypography fontSize="Title_Small" className="text-center" color={'PrimaryMan_OnPrimaryMan'}>
+              <CustomTypography fontSize="Title_Small" className="text-center !text-impo_PrimaryMan_OnPrimaryMan">
                 دریافت تخفیف ویژه
               </CustomTypography>
             </CustomLink>

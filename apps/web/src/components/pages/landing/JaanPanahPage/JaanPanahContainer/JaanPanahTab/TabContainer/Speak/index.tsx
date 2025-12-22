@@ -9,7 +9,6 @@ import CtaBanner from '@components/CtaBanner';
 import { CraBannerItemTypes } from '@components/CtaBanner/types';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 const Speak = () => {
   const [banner, setBanner] = useState<CraBannerItemTypes | undefined>();
@@ -52,7 +51,6 @@ const Speak = () => {
             src="/assets/images/jaanPanah/JaanPanahTab/speak/1.webp"
             className="pt-4 md:p-0 w-full md:max-w-[280px] lg:min-w-[220px] lg:max-w-[320px] xl:max-w-[400px] my-3"
             hasPreviewImage
-            previewBackground={COLORS_LIST.White}
           />
         </div>
       </div>

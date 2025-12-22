@@ -14,7 +14,7 @@ const ArticleIdProfile = (props: ArticleIdProfileTypes) => {
   return (
     <>
       <div className="w-full min-h-[64px] flex flex-col md:flex-row md:items-center justify-between">
-        <CustomLink href={`/author/${props.id}`}>
+        <CustomLink href={`/author/${props.id}`} className="flex items-center">
           <div className="flex gap-3">
             <div className="relative w-16 h-16">
               <CustomImage
@@ -40,7 +40,7 @@ const ArticleIdProfile = (props: ArticleIdProfileTypes) => {
 
               <CustomTypography
                 fontSize="Body_Small"
-                className="!text-impo_Neutral_OnBackground"
+                className={`!text-impo_Neutral_OnBackground ${typeof props.name === 'undefined' && 'my-auto'}`}
               >{`نویسنده: ${props.authorName}`}</CustomTypography>
             </div>
           </div>

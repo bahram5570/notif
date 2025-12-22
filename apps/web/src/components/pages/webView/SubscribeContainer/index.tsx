@@ -1,6 +1,5 @@
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import WebViewContainer from '../WebViewContainer';
 
@@ -42,8 +41,8 @@ const SubscribeContainer = () => {
         />
       </div>
       <div
-        className="rounded-lg mt-7 px-[15px] py-[55px]"
-        style={{ border: `1px solid ${COLORS_LIST.Primary_Primary}`, background: COLORS_LIST.Primary_PrimaryContainer }}
+        className="rounded-lg mt-7 px-[15px] py-[55px] border-impo_Primary_Primary bg-impo_Primary_PrimaryContainer"
+        style={{ border: `1px solid` }}
       >
         <CustomTypography className="text-center">
           این رو هم مدنظر داشته باش اشتراک جدید که خریدی بعد از تموم شدن اشتراک فعلیت، فعال می‌شه

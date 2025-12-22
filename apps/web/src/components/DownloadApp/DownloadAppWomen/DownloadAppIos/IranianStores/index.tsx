@@ -20,9 +20,9 @@ const IranianStores = () => {
       <div id="download_pwa">
         <DownloadAppLinkGenerator href={PWA_LINK_WOMEN_URL} id="women-pwa">
           <div className="flex items-center justify-center gap-1">
-            <PwaIcon className="w-6 min-w-6 h-auto fill-impo_Black" />
+            <PwaIcon className="w-6 min-w-6 h-auto fill-impo_Surface_OnSurfaceVariant" />
 
-            <CustomTypography fontSize="Lable_Medium" className="!text-impo_Black">
+            <CustomTypography fontSize="Lable_Medium" className="!text-impo_Surface_OnSurfaceVariant">
               نسخه وب اپ
             </CustomTypography>
           </div>

@@ -5,7 +5,6 @@ import { useRef } from 'react';
 // import ArrowIcon from '@assets/icons/arrow2.svg';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import ArticleIdSubjectsListGenerator from './ArticleIdSubjectsListGenerator';
 import { ArticleIdSubjectsListTypes } from './types';
@@ -30,10 +29,7 @@ const ArticleIdSubjectsList = ({ articleSubjectList }: ArticleIdSubjectsListType
       className="w-full h-fit rounded-2xl"
       // style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
     >
-      <div
-        className="w-full flex items-center justify-between  pb-3"
-        style={{ borderBottom: `1px solid ${COLORS_LIST.Surface_OutlineVariant}` }}
-      >
+      <div className="w-full flex items-center justify-between border-[1px] border-x-transparent border-t-transparent border-b-impo_Surface_OutlineVariant pb-3">
         <CustomTypography fontSize="Title_Small" className="!text-impo_Neutral_OnBackground" tagType="h2">
           فهرست محتوا
         </CustomTypography>

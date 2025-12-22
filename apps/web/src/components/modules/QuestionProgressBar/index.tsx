@@ -2,7 +2,6 @@
 
 import ArrowBack from '@assets/images/genetic/arrowBack.svg';
 
-import { COLORS_LIST } from '@theme/colors';
 import { useRouter } from 'next/navigation';
 
 import { QuestionProgressBarTypes } from './types';
@@ -17,10 +16,10 @@ const QuestionProgressBar = ({ currentStep, questionListLength }: QuestionProgre
       <span onClick={() => router.back()}>
         <ArrowBack />
       </span>
-      <div className="relative w-full h-1 rounded-full overflow-hidden" style={{ backgroundColor: COLORS_LIST.White }}>
+      <div className="relative w-full h-1 rounded-full overflow-hidden bg-impo_White">
         <div
-          className="w-full h-full rounded-full block"
-          style={{ backgroundColor: COLORS_LIST.Primary_Primary, transform: `translateX(${percent}%)` }}
+          className="w-full h-full rounded-full block bg-impo_Primary_Primary"
+          style={{ transform: `translateX(${percent}%)` }}
         />
       </div>
     </div>

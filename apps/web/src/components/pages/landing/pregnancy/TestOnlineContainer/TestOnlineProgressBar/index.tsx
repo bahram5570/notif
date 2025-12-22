@@ -1,5 +1,3 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import { PREGNANCY_TEST_ONLINE_QUESTION_LIST } from '../constants';
 import { TestOnlineProgressBarTypes } from './types';
 
@@ -8,13 +6,10 @@ const TestOnlineProgressBar = ({ currentStep }: TestOnlineProgressBarTypes) => {
   const percent = 100 - ((Number(currentStep) + 1) * 100) / totalSteps;
 
   return (
-    <div
-      className="relative w-full h-1 rounded-full mb-10 sm:mt-6 overflow-hidden"
-      style={{ backgroundColor: COLORS_LIST.White }}
-    >
+    <div className="relative w-full h-1 rounded-full mb-10 sm:mt-6 bg-impo_White overflow-hidden">
       <div
-        className="w-full h-full rounded-full block"
-        style={{ backgroundColor: COLORS_LIST.Primary_Primary, transform: `translateX(${percent}%)` }}
+        style={{ transform: `translateX(${percent}%)` }}
+        className="w-full h-full rounded-full block bg-impo_Pink_500"
       />
     </div>
   );

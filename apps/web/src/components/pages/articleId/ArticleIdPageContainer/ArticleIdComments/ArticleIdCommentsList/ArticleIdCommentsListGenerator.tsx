@@ -15,7 +15,9 @@ const ArticleIdCommentsListGenerator = (props: ArticleIdCommentsListGeneratorTyp
   const replyTypography = typographyMaker({ fontSize: 'Body_Large', operatingSystem, isWeb: !breakPoint.laptop });
 
   const htmlConvertor = (txt: string) => {
-    return txt.trim().replaceAll(/(https?:\/\/[^\s"]+)/g, `<br /> <a style='color: #EC407A' href='$1'>$1</a>`);
+    return txt
+      .trim()
+      .replaceAll(/(https?:\/\/[^\s"]+)/g, `<br /> <a class='text-impo_Primary_Primary' href='$1'>$1</a>`);
   };
 
   return (

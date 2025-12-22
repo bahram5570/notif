@@ -396,7 +396,7 @@ td {
   --color-Transparent: transparent;
   --color-Black: #000000;
   --color-White: #ffffff;
-  --color-Header: #ffffff;
+  --color-OnBlack: #ffffff;
 
   --color-Primary_Primary: #f24f7a;
   --color-Primary_OnPrimary: #ffffff;
@@ -442,8 +442,8 @@ td {
 
   --color-Neutral_Background: #ffffff;
   --color-Neutral_OnBackground: #202020;
-  --color-Neutral_Surface: #efefef;
-  --color-Neutral_OnSurface: #202020;
+  --color-Neutral_Surface: #f9f9f9;
+  --color-Neutral_OnSurface: #2b2b2b;
 
   --color-Error_Error: #ef4444;
   --color-Error_OnError: #ffffff;
@@ -583,7 +583,7 @@ td {
   --color-Transparent: transparent;
   --color-Black: #000000;
   --color-White: #ffffff;
-  --color-Header: #000000;
+  --color-OnBlack: #000000;
 
   --color-Primary_Primary: #ffb2c1;
   --color-Primary_OnPrimary: #5f112a;
@@ -629,8 +629,8 @@ td {
 
   --color-Neutral_Background: #202020;
   --color-Neutral_OnBackground: #ffffff;
-  --color-Neutral_Surface: #b4b4b4;
-  --color-Neutral_OnSurface: #efefef;
+  --color-Neutral_Surface: #2b2b2b;
+  --color-Neutral_OnSurface: #f9f9f9;
 
   --color-Error_Error: #ef4444;
   --color-Error_OnError: #ffffff;

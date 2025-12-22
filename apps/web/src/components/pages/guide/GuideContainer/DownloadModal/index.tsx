@@ -9,7 +9,6 @@ import DialogContentText from '@mui/material/DialogContentText';
 import CustomLink from '@components/ui/CustomLink';
 import CustomModal from '@components/ui/CustomModal';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { DownloadModalPropsType } from './type';
 
@@ -42,12 +41,12 @@ const DownloadModal = ({ isOpen, onClose }: DownloadModalPropsType) => {
             <CustomLink
               target="_blank"
               aria-label="DownloadAppAndroid"
-              style={{ border: `1px solid ${COLORS_LIST.Surface_OutlineVariant}` }}
+              style={{ border: `1px solid ` }}
               href="https://s3.ir-tbz-sh1.arvanstorage.ir/impo/app%20impo/Impo5.4.1%20159_D.apk"
-              className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2"
+              className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 border-impo_Surface_OutlineVariant"
             >
-              <AppDownloadIcon className="w-6 min-w-6 h-auto" style={{ fill: COLORS_LIST.White }} />
-              <CustomTypography fontSize="Title_Small" color="Neutral_OnBackground">
+              <AppDownloadIcon className="w-6 min-w-6 h-auto !fill-impo_White" />
+              <CustomTypography fontSize="Title_Small" className="!text-impo_Neutral_OnBackground">
                 دانلود مستقیم اندروید
               </CustomTypography>
             </CustomLink>
@@ -56,22 +55,22 @@ const DownloadModal = ({ isOpen, onClose }: DownloadModalPropsType) => {
                 target="_blank"
                 aria-label="DownloadAppAndroid"
                 href="https://apps.apple.com/us/app/impo-health/id6736879093"
-                style={{ border: `1px solid ${COLORS_LIST.Surface_OutlineVariant}` }}
-                className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 relative z-10"
+                style={{ border: `1px solid ` }}
+                className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 relative z-10 border-impo_Surface_OutlineVariant"
               >
-                <AppStoreDownloadIcon className="w-[100px] h-auto" style={{ fill: COLORS_LIST.Neutral_OnBackground }} />
+                <AppStoreDownloadIcon className="w-[100px] h-auto !fill-impo_Neutral_OnBackground" />
               </CustomLink>
 
               <CustomLink
                 target="_blank"
                 aria-label="DownloadAppAndroid"
-                style={{ border: `1px solid ${COLORS_LIST.Surface_OutlineVariant}` }}
+                style={{ border: `1px solid` }}
                 href="https://s3.ir-tbz-sh1.arvanstorage.ir/impo/app%20impo/Impo5.4.1%20159_D.apk"
-                className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2"
+                className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 border-impo_Surface_OutlineVariant"
               >
-                <GooglePlayIcon className="w-[100px]" style={{ fill: COLORS_LIST.Neutral_OnBackground }} />
+                <GooglePlayIcon className="w-[100px] !fill-impo_Neutral_OnBackground" />
 
-                {/* <AndroidIcon className="w-6 min-w-6 h-auto" style={{ fill: COLORS_LIST.White }} /> */}
+                {/* <AndroidIcon className="w-6 min-w-6 h-auto !fill-impo_White" /> */}
               </CustomLink>
             </div>
           </div>

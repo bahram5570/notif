@@ -31,19 +31,31 @@ const ArticleIdFaqGenerator = ({
   return (
     <div
       onClick={() => selectedItemHandler(id)}
-      className="w-full px-6 py-5 rounded-xl border-[1px] border-impo_Primary_Primary bg-impo_Pink_50 cursor-pointer"
+      className={`
+                  w-full 
+                  px-6 
+                  py-5 
+                  rounded-xl 
+                  border-[1px] 
+                  cursor-pointer
+                  ${
+                    isOpen
+                      ? 'bg-impo_Pink_50 dark:bg-impo_Surface_SurfaceVariant border-impo_Primary_Primary'
+                      : 'bg-impo_Neutral_Surface border-impo_Transparent'
+                  }
+                `}
     >
       <div className="flex items-center gap-3">
-        {isOpen && <MinusIcon className="w-3 fill-impo_Grey_600" />}
-        {!isOpen && <CrossIcon className="w-3 rotate-45 fill-impo_Grey_600" />}
+        {isOpen && <MinusIcon className="w-3 fill-impo_Surface_Outline" />}
+        {!isOpen && <CrossIcon className="w-3 rotate-45 fill-impo_Surface_Outline" />}
 
-        <CustomTypography fontSize="Lable_Large" className="!text-impo_Black">
+        <CustomTypography fontSize="Lable_Large" className="!text-impo_Neutral_OnBackground">
           {question}
         </CustomTypography>
       </div>
 
       <div className="w-full duration-500 overflow-hidden" style={{ maxHeight: isOpen ? maxHeight : 0 }} ref={ref}>
-        <CustomTypography fontSize="Body_Medium" className="pt-4 pr-6 !text-impo_Black">
+        <CustomTypography fontSize="Body_Medium" className="pt-4 pr-6 !text-impo_Neutral_OnBackground">
           {answer}
         </CustomTypography>
       </div>

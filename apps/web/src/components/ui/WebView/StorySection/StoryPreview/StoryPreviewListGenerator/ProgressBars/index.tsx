@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 
 import CrossIcon from '@assets/icons/plus.svg';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import { STORY_PROGRESS_HEIGHT } from '../../../constants';
 import { ProgressBarsProps } from './types';
 
@@ -53,14 +51,13 @@ const ProgressBars = ({
 
           return (
             <div
-              className="relative w-full h-1 rounded-full overflow-hidden shadow-[0_4px_10px_#00000044] "
-              style={{ backgroundColor: COLORS_LIST.Surface_OutlineVariant }}
+              className="relative w-full h-1 rounded-full overflow-hidden shadow-[0_4px_10px_#00000044]  bg-impo_Surface_OutlineVariant"
               key={index}
             >
               <div
                 dir="rtl"
-                className="w-full h-full rounded-full duration-300"
-                style={{ backgroundColor: COLORS_LIST.White, transform: `translateX(${translateProgress}%)` }}
+                className="w-full h-full rounded-full duration-300 bg-impo_White"
+                style={{ transform: `translateX(${translateProgress}%)` }}
               />
             </div>
           );
@@ -69,7 +66,7 @@ const ProgressBars = ({
 
       <div className="w-full flex items-center justify-end">
         <div className="w-12 h-12 flex items-center justify-center cursor-pointer" onClick={() => isOpenHandler(false)}>
-          <CrossIcon className="w-6 h-auto rotate-45" style={{ stroke: COLORS_LIST.Surface_OutlineVariant }} />
+          <CrossIcon className="w-6 h-auto rotate-45 bg-impo_Surface_OutlineVariant" />
         </div>
       </div>
     </div>

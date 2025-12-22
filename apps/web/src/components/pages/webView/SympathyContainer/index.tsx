@@ -1,7 +1,6 @@
 import FaqAccordion from '@components/ui/WebView/FaqAccordion';
 import StorySection from '@components/ui/WebView/StorySection';
 import { WEB_VIEW_MAX_WIDTH } from '@constants/app.constants';
-import { COLORS_LIST } from '@theme/colors';
 
 import AddSympathySection from './AddSympathySection';
 import SympathyHeader from './SympathyHeader';
@@ -15,7 +14,7 @@ const SympathyContainer = () => {
       <div className="flex flex-col ">
         <SympathyHeader />
 
-        <div className="px-4 flex flex-col gap-6 py-10" style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}>
+        <div className="px-4 flex flex-col gap-6 py-10 bg-impo_Surface_SurfaceVariant">
           <SympathyIntroduction />
           <div className="flex flex-col gap-4">
             <StorySection title=" کشف همدلی ایمپو ✨" storyList={STORY_LIST} />

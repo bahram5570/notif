@@ -23,12 +23,17 @@ const config: Config = {
       },
     },
 
+    boxShadow: {
+      impo_Shadow_White: '0 0 16px 0 #6c23371f',
+      impo_Shadow_Black: '0 0 16px 0 #777777',
+    },
+
     colors: {
       ...colors,
       impo_Transparent: 'transparent',
       impo_Black: 'var(--color-Black)',
       impo_White: 'var(--color-White)',
-      impo_Header: 'var(--color-Header)',
+      impo_OnBlack: 'var(--color-OnBlack)',
       impo_Primary_Primary: 'var(--color-Primary_Primary)',
       impo_Primary_OnPrimary: 'var(--color-Primary_OnPrimary)',
       impo_Primary_PrimaryContainer: 'var(--color-Primary_PrimaryContainer)',

@@ -12,7 +12,6 @@ import CustomInput from '@components/ui/CustomInput';
 import CustomTypography from '@components/ui/CustomTypography';
 import Spinner from '@components/ui/Spinner';
 import useCustomToast from '@hooks/useCustomToast';
-import { COLORS_LIST } from '@theme/colors';
 
 import useSubmit from './Hooks/useSubmit';
 
@@ -125,8 +124,7 @@ export default function WomanDayPage() {
                 value={form.selfName}
                 placeholder="اسم خودت"
                 onValue={(val) => updateField('selfName', val)}
-                className="border px-4 py-3 rounded-xl focus:!border-pink-500"
-                style={{ borderColor: COLORS_LIST.Neutral_Surface }}
+                className="border px-4 py-3 rounded-xl focus:!border-impo_Pink_500 border-impo_Neutral_Surface"
               />
 
               <div>
@@ -140,9 +138,8 @@ export default function WomanDayPage() {
                       phone: validatePhone(val),
                     }));
                   }}
-                  className="border px-4 py-3 rounded-xl focus:!border-pink-500"
+                  className="border px-4 py-3 rounded-xl focus:!border-impo_Pink_500 border-impo_Neutral_Surface"
                   maxLength={11}
-                  style={{ borderColor: COLORS_LIST.Neutral_Surface }}
                 />
               </div>
 
@@ -150,8 +147,7 @@ export default function WomanDayPage() {
                 value={form.partnerName}
                 placeholder="اسم کسی که می‌خوای بهش هدیه بدی"
                 onValue={(val) => updateField('partnerName', val)}
-                className="border px-4 py-3 rounded-xl focus:!border-pink-500"
-                style={{ borderColor: COLORS_LIST.Neutral_Surface }}
+                className="border px-4 py-3 rounded-xl focus:!border-impo_Pink_500 border-impo_Neutral_Surface"
               />
             </div>
 

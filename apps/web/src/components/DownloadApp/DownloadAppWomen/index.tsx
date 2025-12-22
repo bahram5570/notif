@@ -36,7 +36,7 @@ const DownloadApp = () => {
                   md:w-11/12 
                   lg:w-10/12 
                   md:max-w-full
-                  bg-impo_Surface_SurfaceVariant
+                  bg-impo_Neutral_Surface
                 "
     >
       <div className="flex flex-col items-center w-full md:w-[400px]">

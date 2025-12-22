@@ -22,7 +22,11 @@ const TestOnlineQuestions = () => {
 
       <LogoIcon className="w-20 h-20" />
 
-      <CustomTypography fontSize="Lable_Large" tagType="h2" className="py-10 text-center">
+      <CustomTypography
+        tagType="h2"
+        fontSize="Lable_Large"
+        className="py-10 text-center !text-impo_Neutral_OnBackground"
+      >
         {data.title}
       </CustomTypography>
 

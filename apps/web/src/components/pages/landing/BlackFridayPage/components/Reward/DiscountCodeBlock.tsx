@@ -7,7 +7,6 @@ import { toEnglishNumbers } from '@utils/numbers';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import useCustomToast from '@hooks/useCustomToast';
-import { COLORS_LIST } from '@theme/colors';
 
 import { SubscribtionReferal } from '../../constants';
 
@@ -51,10 +50,7 @@ const DiscountCodeBlock: FC<Props> = ({ code, eventUse, eventCopy }) => {
   };
 
   return (
-    <div
-      className="rounded-full flex items-center gap-x-5 py-2 px-4"
-      style={{ background: COLORS_LIST.Neutral_Surface }}
-    >
+    <div className="rounded-full flex items-center gap-x-5 py-2 px-4 bg-impo_Neutral_Surface">
       <div className="rounded-full bg-white py-1 px-4 flex items-center gap-x-3" id={eventCopy}>
         {copied ? <Unread /> : <Copy onClick={handleCopy} className="cursor-pointer" />}
 

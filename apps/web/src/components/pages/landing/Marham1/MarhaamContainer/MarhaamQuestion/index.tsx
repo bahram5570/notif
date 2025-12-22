@@ -6,7 +6,6 @@ import ProgressCycleLoading from '@components/ProgressCycleLoading';
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
 
 import { MARHAAM_QUESTIONS_LIST } from '../../constants';
 import { MarhaamFeelingEnum } from '../../enum';
@@ -49,25 +48,21 @@ const MarhaamQuestion = ({ onResult }: JaanPanahQuestionsTypes) => {
       >
         <div className="relative w-full  flex flex-col items-center">
           <div
-            className="flex flex-row justify-center items-center gap-1 rounded-xl px-6 py-3 mb-4"
+            className="flex flex-row justify-center items-center gap-1 rounded-xl px-6 py-3 mb-4 bg-impo_Warning_WarininContainer border-impo_Warning_Warning"
             style={{
-              backgroundColor: COLORS_LIST.Warning_WarininContainer,
-              border: `1px solid${COLORS_LIST.Warning_Warning}`,
+              border: `1px solid`,
             }}
           >
             <WarningIcon />
 
-            <CustomTypography fontSize="Lable_Large" color={'Warning_OnWarininContainer'}>
+            <CustomTypography fontSize="Lable_Large" className="!text-impo_Warning_OnWarininContainer">
               مهلت استفاده از خدمات مرهم به پایان رسید
             </CustomTypography>
           </div>
           {isLoading && (
-            <div
-              style={{ backgroundColor: COLORS_LIST.White }}
-              className="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center z-10"
-            >
+            <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center z-10 bg-impo_White">
               <CustomTypography
-                className="text-center pb-16"
+                className="text-center pb-16 !text-impo_Neutral_OnBackground"
                 fontSize={breakPoint.tablet ? 'Title_Medium' : 'Title_Small'}
               >
                 تا ساخته شدن محتوای متناسب با اطلاعاتی که وارد کردی، چند لحظه صبر کن...
@@ -78,7 +73,7 @@ const MarhaamQuestion = ({ onResult }: JaanPanahQuestionsTypes) => {
           )}
 
           {isShowingBeginBtn && (
-            <CustomTypography fontSize="Title_Small" className="text-center px-4">
+            <CustomTypography fontSize="Title_Small" className="text-center px-4 !text-impo_Neutral_OnBackground">
               شاید جنگ تموم شده باشه،اما ذهن و جان، هنوز آروم نگرفتن. اینجا تو مرهم،با چند قدم ساده، کمک می‌کنیم تا ذهنت
               رو از اخبار و حال بد گردگیری کنی و «خودمراقبتی» و «شفقت با خود» رو دوباره به یاد بیاری.
             </CustomTypography>
@@ -88,7 +83,7 @@ const MarhaamQuestion = ({ onResult }: JaanPanahQuestionsTypes) => {
             <>
               <CustomTypography
                 fontSize={breakPoint.tablet ? 'Title_Medium' : 'Title_Small'}
-                className="text-center pb-14"
+                className="text-center pb-14 !text-impo_Neutral_OnBackground"
               >
                 {curentData.mainTitle}
               </CustomTypography>

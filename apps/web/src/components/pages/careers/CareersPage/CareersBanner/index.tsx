@@ -3,7 +3,6 @@ import LampIcon from '@assets/icons/careers/on-lamp.svg';
 import { CAREER_CONTAINER_MAX_WIDTH } from '@components/pages/careers/constants';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 const CareersBanner = () => {
   return (
@@ -20,10 +19,8 @@ const CareersBanner = () => {
           </div>
 
           <CustomTypography
-            color={'White'}
             fontSize="Lable_Large"
-            style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
-            className="rounded-full py-[10px] px-[36px] mr-auto text-center w-full md:w-fit"
+            className="rounded-full py-[10px] px-[36px] mr-auto text-center w-full md:w-fit bg-impo_Primary_Primary !text-impo_White"
           >
             ارسال رزومه
           </CustomTypography>

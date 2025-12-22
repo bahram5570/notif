@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import CustomModal from '@components/ui/CustomModal';
 import { WEB_VIEW_MAX_WIDTH } from '@constants/app.constants';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import { COLORS_LIST } from '@theme/colors';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import StoryPreviewListGenerator from './StoryPreviewListGenerator';
@@ -38,10 +37,7 @@ const StoryPreview = ({ storyList, isOpen, isOpenHandler, currentIndex }: StoryP
       <CustomModal isOpen={isOpen} onClose={onCloseHandler}>
         <>
           {isOpen && (
-            <div
-              className="relative w-[100vw] h-[100dvh]  "
-              style={{ maxWidth: WEB_VIEW_MAX_WIDTH, backgroundColor: COLORS_LIST.Neutral_OnBackground }}
-            >
+            <div className="relative w-[100vw] h-[100dvh] bg-impo_Black " style={{ maxWidth: WEB_VIEW_MAX_WIDTH }}>
               <Swiper
                 dir="rtl"
                 className="w-full h-full"

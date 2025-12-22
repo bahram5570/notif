@@ -5,7 +5,6 @@ import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 import useOperatingSystem from '@hooks/useOperatingSystem';
-import { COLORS_LIST } from '@theme/colors';
 
 import useCopy from '../../Depression/Book/__hooks__/useCopy';
 import { MOVIE_PART1 } from './constants';
@@ -49,7 +48,6 @@ const Movie = () => {
                 src={item.image}
                 className="pt-4 md:p-0 w-[96px] md:w-[150px] lg:max-w-[320px] xl:max-w-[300px] my-3"
                 hasPreviewImage
-                previewBackground={COLORS_LIST.White}
               />
               <CustomTypography fontSize="Lable_Small" color="Surface_InverseSurface" className="text-center">
                 {item.description}
@@ -82,11 +80,7 @@ const Movie = () => {
           <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
             کد تخفیف 100 درصدی:
           </CustomTypography>
-          <u
-            style={{ ...typographyDetails, color: COLORS_LIST.Primary_Primary }}
-            className=" cursor-pointer"
-            onClick={copylink}
-          >
+          <u style={{ ...typographyDetails }} className=" cursor-pointer text-impo_Primary_Primary" onClick={copylink}>
             Marham
           </u>
         </div>

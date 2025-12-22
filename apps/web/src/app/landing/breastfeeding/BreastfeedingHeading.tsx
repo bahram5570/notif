@@ -16,7 +16,7 @@ const BreastfeedingHeading = () => {
       imagePosition="bottom"
       contentElement={contentElement}
       image={BREASTFEEDING_HEADING_DATA.image}
-      backgroundImage={[BREASTFEEDING_HEADING_DATA.gradientFrom, BREASTFEEDING_HEADING_DATA.gradientTo]}
+      className={`!bg-gradient-to-b !from-[${BREASTFEEDING_HEADING_DATA.gradientFrom}] !to-[${BREASTFEEDING_HEADING_DATA.gradientTo}]`}
     />
   );
 };

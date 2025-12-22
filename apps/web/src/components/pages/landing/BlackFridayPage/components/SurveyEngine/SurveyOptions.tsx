@@ -3,7 +3,6 @@
 import { FC } from 'react';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { Answers, QuestionConfig, SubAnswers } from './types';
 
@@ -31,9 +30,8 @@ const SurveyOptions: FC<Props> = ({ current, answers, subAnswers, survey }) => {
             {!isSelected && (
               <button
                 onClick={() => setAnswer(current.id, opt.value)}
-                style={{ background: COLORS_LIST.Surface_SurfaceVariant }}
                 className="w-full text-right border border-transparent px-4 py-4 rounded-xl
-                flex justify-between items-center"
+                flex justify-between items-center bg-impo_Surface_SurfaceVariant"
               >
                 <CustomTypography tagType="span" fontSize="Body_Medium">
                   {opt.label}
@@ -42,10 +40,7 @@ const SurveyOptions: FC<Props> = ({ current, answers, subAnswers, survey }) => {
             )}
 
             {isSelected && (
-              <div
-                className="bg-[#FEF3F5] border rounded-2xl px-4 py-4"
-                style={{ borderColor: COLORS_LIST.Primary_Primary }}
-              >
+              <div className="bg-[#FEF3F5] border rounded-2xl px-4 py-4 border-impo_Primary_Primary">
                 <div className="flex justify-between items-center">
                   <CustomTypography tagType="span" fontSize="Lable_Medium">
                     {opt.label}

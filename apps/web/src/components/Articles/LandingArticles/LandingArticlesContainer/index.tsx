@@ -13,7 +13,7 @@ const LandingArticlesContainer = ({ data, title, subTitle, showAllArticlesLinkTo
   const hasSubtitle = typeof subTitle !== 'undefined';
 
   return (
-    <div className="w-full max-w-[100vw] overflow-hidden flex flex-col items-center py-8 lg:py-9 bg-impo_Surface_SurfaceVariant">
+    <div className="w-full max-w-[100vw] overflow-hidden flex flex-col items-center py-8 lg:py-9 bg-impo_Neutral_Surface">
       <CustomTypography
         tagType="h2"
         fontSize="Title_Medium"

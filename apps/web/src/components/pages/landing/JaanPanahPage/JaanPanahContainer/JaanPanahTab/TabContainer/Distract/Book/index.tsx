@@ -8,7 +8,6 @@ import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 import useOperatingSystem from '@hooks/useOperatingSystem';
-import { COLORS_LIST } from '@theme/colors';
 
 import { BOOK_PART1, BOOK_PART2 } from '../Movie/constants';
 import useCopy from '../__hooks__/useCopy';
@@ -52,7 +51,6 @@ const Book = ({ children }: BookPropsType) => {
           src="/assets/images/jaanPanah/JaanPanahTab/distract/2.webp"
           className="pt-4 md:p-0 w-full md:max-w-[280px] lg:min-w-[220px] lg:max-w-[320px] xl:max-w-[400px] my-3"
           hasPreviewImage
-          previewBackground={COLORS_LIST.White}
         />
       </div>
       <div className="w-full my-3" style={{ border: `1px solid #8BAD7820` }}></div>
@@ -76,7 +74,6 @@ const Book = ({ children }: BookPropsType) => {
                   src={item.image}
                   className="pt-4 md:p-0 w-[96px] md:w-[150px] lg:max-w-[320px] xl:max-w-[300px] my-3"
                   hasPreviewImage
-                  previewBackground={COLORS_LIST.White}
                 />
                 <CustomTypography fontSize="Lable_Small" color="Surface_InverseSurface" className="text-center">
                   {item.description}
@@ -116,7 +113,6 @@ const Book = ({ children }: BookPropsType) => {
                       src={item.image}
                       className="pt-4 md:p-0 w-[96px] md:w-[150px] lg:max-w-[320px] xl:max-w-[300px] my-3"
                       hasPreviewImage
-                      previewBackground={COLORS_LIST.White}
                     />
                     <CustomTypography fontSize="Lable_Small" color="Surface_InverseSurface" className="text-center">
                       {item.description}
@@ -172,11 +168,7 @@ const Book = ({ children }: BookPropsType) => {
           <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
             کد تخفیف 100 درصدی:
           </CustomTypography>
-          <u
-            style={{ ...typographyDetails, color: COLORS_LIST.Primary_Primary }}
-            className=" cursor-pointer"
-            onClick={copylink}
-          >
+          <u style={{ ...typographyDetails }} className=" cursor-pointer text-impo_Primary_Primary" onClick={copylink}>
             Janpanah
           </u>
         </div>
