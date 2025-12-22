@@ -30,7 +30,7 @@ const HeaderDesktop = () => {
                     lg:px-8 
                     mt-4 
                     mx-auto 
-                    bg-impo_Black_And_White
+                    bg-impo_OnBlack
                     border-[1px]
                     border-impo_Grey_200
                     dark:border-impo_Surface_SurfaceVariant

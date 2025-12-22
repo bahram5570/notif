@@ -5,7 +5,6 @@ import StarIcon from '@assets/icons/Stars.svg';
 import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import useDownloadPdf from './__hooks__/useDownloadPdf';
 
@@ -43,10 +42,8 @@ const CriticalSituation = () => {
             >
               <CustomTypography
                 fontSize="Body_Medium"
-                color="Surface_InverseSurface"
                 numbersMode="english"
-                style={{ background: COLORS_LIST.Primary_Primary, color: COLORS_LIST.White }}
-                className="px-6 h-10   rounded-full text-center flex justify-center items-center"
+                className="px-6 h-10   rounded-full text-center flex justify-center items-center bg-impo_Primary_Primary !text-impo_White"
               >
                 {/* دریافت فایل pdf */}
                 برای روز مبادا

@@ -1,5 +1,4 @@
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import useProgress from './__hooks__/useProgress';
 import { ProgressCycleLoadingProps } from './types';
@@ -26,7 +25,7 @@ const ProgressCycleLoading = ({ onComplete }: ProgressCycleLoadingProps) => {
             strokeWidth="16px"
             strokeDashoffset="0"
             strokeDasharray="565.48px"
-            stroke={COLORS_LIST.Surface_OutlineVariant}
+            className="!stroke-impo_Surface_OutlineVariant"
           />
           <circle
             r="90"
@@ -37,7 +36,7 @@ const ProgressCycleLoading = ({ onComplete }: ProgressCycleLoadingProps) => {
             strokeLinecap="round"
             strokeDasharray="565.48px"
             strokeDashoffset={strokeDashoffset}
-            stroke={COLORS_LIST.Primary_Primary}
+            className="!stroke-impo_Primary_Primary"
           />
         </svg>
 

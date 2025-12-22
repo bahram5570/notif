@@ -13,7 +13,7 @@ const IntentionHeading = () => {
       imagePosition="center"
       contentElement={contentElement}
       image={INTENTION_HEADING_DATA.image}
-      backgroundImage={[INTENTION_HEADING_DATA.gradientFrom, INTENTION_HEADING_DATA.gradientTo]}
+      className={`!bg-gradient-to-b !from-[${INTENTION_HEADING_DATA.gradientFrom}] !to-[${INTENTION_HEADING_DATA.gradientTo}]`}
     />
   );
 };

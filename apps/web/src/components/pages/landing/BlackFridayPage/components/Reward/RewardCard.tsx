@@ -5,7 +5,6 @@ import Image from 'next/image';
 import style from './style.module.css';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 type Props = {
   image: string;
@@ -15,7 +14,7 @@ type Props = {
 
 const RewardCard: FC<Props> = ({ image, title, description }) => {
   return (
-    <div className="mt-8 rounded-2xl" style={{ background: COLORS_LIST.Pink_100 }}>
+    <div className="mt-8 rounded-2xl bg-impo_Pink_100">
       <div className="rounded-t-xl p-6 !pb-0">
         <Image
           src={image}

@@ -6,7 +6,6 @@ import CustomSlider from '@repo/components/ui/CustomSlider';
 
 import CustomTypography from '@components/ui/CustomTypography';
 import useOperatingSystem from '@hooks/useOperatingSystem';
-import { COLORS_LIST } from '@theme/colors';
 
 import StoryItem from './StoryItem';
 import StoryPreview from './StoryPreview';
@@ -33,7 +32,7 @@ const StorySection = ({ title, storyList }: StorySectionPropsType) => {
         <CustomTypography fontSize="Title_Small" color="Neutral_OnBackground">
           {title}
         </CustomTypography>
-        {/* <div className=" rounded-xl py-3 px-4" style={{ backgroundColor: COLORS_LIST.Neutral_Background }}>
+        {/* <div className=" rounded-xl py-3 px-4 bg-impo_Neutral_Background">
           <CustomSlider gap={10} isWindows={isWindows} className=" justify-end">
             {storyList.map((story, index) => {
               return (

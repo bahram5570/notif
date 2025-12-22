@@ -21,7 +21,7 @@ const LandingPregnancyContainer = () => {
                   sm:border-[1px]
                   sm:border-impo_Grey_200
                   sm:dark:border-impo_Surface_SurfaceVariant           
-                  bg-impo_Black_And_White       
+                  bg-impo_OnBlack       
                   bg-[url(/assets/images/coverHollow.png)] 
                   dark:bg-[url(/assets/images/coverHollow_noBackground.png)] 
                 "

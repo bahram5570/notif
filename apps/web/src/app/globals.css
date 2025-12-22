@@ -396,7 +396,7 @@ td {
   --color-Transparent: transparent;
   --color-Black: #000000;
   --color-White: #ffffff;
-  --color-Black_And_White: #ffffff;
+  --color-OnBlack: #ffffff;
 
   --color-Primary_Primary: #f24f7a;
   --color-Primary_OnPrimary: #ffffff;
@@ -583,7 +583,7 @@ td {
   --color-Transparent: transparent;
   --color-Black: #000000;
   --color-White: #ffffff;
-  --color-Black_And_White: #000000;
+  --color-OnBlack: #000000;
 
   --color-Primary_Primary: #ffb2c1;
   --color-Primary_OnPrimary: #5f112a;

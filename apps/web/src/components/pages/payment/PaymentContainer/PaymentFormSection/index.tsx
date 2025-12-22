@@ -5,7 +5,6 @@ import { useState } from 'react';
 import CustomButton from '@components/ui/CustomButton';
 import CustomInput from '@components/ui/CustomInput';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { initailData } from '../constants';
 import SuccessModal from './SuccessModal';
@@ -38,9 +37,8 @@ const PaymentFormSection = () => {
           hasOutline={true}
           fontSize="Body_Medium"
           value={formData.username}
-          className="w-full sm:p-4 p-2 rounded-xl"
+          className="w-full sm:p-4 p-2 rounded-xl bg-impo_Surface_SurfaceVariant outline-impo_Primary_Primary"
           onValue={(v) => handleInputChange(v, 'username')}
-          style={{ outlineColor: COLORS_LIST.Primary_Primary, backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
           placeholder="شماره یا ایمیلی که در ایمپو ثبت نام کردی"
         />
       </div>
@@ -54,9 +52,8 @@ const PaymentFormSection = () => {
           hasOutline={true}
           fontSize="Body_Medium"
           value={formData.paypalUsername}
-          className="w-full sm:p-4 p-2 rounded-xl"
+          className="w-full sm:p-4 p-2 rounded-xl bg-impo_Surface_SurfaceVariant outline-impo_Primary_Primary"
           onValue={(v) => handleInputChange(v, 'paypalUsername')}
-          style={{ outlineColor: COLORS_LIST.Primary_Primary, backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
           placeholder="شماره یا ایمیلی که در pay pal ثبت نام کردی"
         />
       </div>
@@ -69,9 +66,8 @@ const PaymentFormSection = () => {
           hasOutline={true}
           fontSize="Body_Medium"
           value={formData.whatupUsername}
-          className="w-full sm:p-4 p-2 rounded-xl"
+          className="w-full sm:p-4 p-2 rounded-xl bg-impo_Surface_SurfaceVariant outline-impo_Primary_Primary"
           onValue={(v) => handleInputChange(v, 'whatupUsername')}
-          style={{ outlineColor: COLORS_LIST.Primary_Primary, backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
           placeholder="شماره واتساپی که بتونیم باهات در ارتباط باشیم"
         />
       </div>

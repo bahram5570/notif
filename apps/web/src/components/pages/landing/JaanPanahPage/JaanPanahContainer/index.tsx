@@ -2,7 +2,6 @@
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import JaanPanahQuestions from './JaanPanahQuestions';
 import QuestionContents from './JaanPanahQuestions/QuestionContents';
@@ -18,8 +17,7 @@ const JaanPanahContainer = () => {
       {result && <JaanPanahTab result={result} />}
 
       <div
-        className={`w-full   ${!result && ' mt-10 p-5 rounded-xl'}`}
-        style={{ backgroundColor: result ? COLORS_LIST.White : COLORS_LIST.Surface_SurfaceVariant }}
+        className={`w-full   ${!result && ' mt-10 p-5 rounded-xl'} ${result ? 'bg-impo_White' : 'bg-impo_Surface_SurfaceVariant'}`}
       >
         {!result && <QuestionContents />}
 
@@ -27,8 +25,7 @@ const JaanPanahContainer = () => {
           <CustomTypography fontSize="Headline_Small"> همراهان جان‌پناه</CustomTypography>
           <div className="flex  gap-6 md:gap-3">
             <div
-              className=" h-14 w-14 md:h-auto md:w-24 p-2 md:p-4 rounded-2xl"
-              style={{ background: !result ? COLORS_LIST.White : COLORS_LIST.Surface_SurfaceVariant }}
+              className={` h-14 w-14 md:h-auto md:w-24 p-2 md:p-4 rounded-2xl ${!result ? 'bg-impo_White' : 'bg-impo_Surface_SurfaceVariant'}`}
             >
               <CustomImage
                 width={100}
@@ -41,8 +38,7 @@ const JaanPanahContainer = () => {
             </div>
 
             <div
-              className=" h-14 w-14 md:h-auto md:w-24 p-2 md:p-4  rounded-2xl"
-              style={{ background: !result ? COLORS_LIST.White : COLORS_LIST.Surface_SurfaceVariant }}
+              className={` h-14 w-14 md:h-auto md:w-24 p-2 md:p-4  rounded-2xl ${!result ? 'bg-impo_White' : 'bg-impo_Surface_SurfaceVariant'}`}
             >
               <CustomImage
                 width={100}

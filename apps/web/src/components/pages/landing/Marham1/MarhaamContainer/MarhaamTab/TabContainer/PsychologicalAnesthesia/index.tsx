@@ -1,7 +1,6 @@
 import StarIcon from '@assets/icons/Stars.svg';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import Movie from './Movie';
 
@@ -9,8 +8,8 @@ const PsychologicalAnesthesia = () => {
   return (
     <>
       <div
-        className="p-4 flex flex-col gap-2  rounded-2xl"
-        style={{ border: `1px solid ${COLORS_LIST.Surface_OutlineVariant}` }}
+        className="p-4 flex flex-col gap-2  rounded-2xl border-impo_Surface_OutlineVariant"
+        style={{ border: `1px solid ` }}
       >
         <CustomTypography fontSize="Lable_Large" color="Neutral_OnBackground" className="p-4  text-center">
           اگه احساست خاموش شده، اینجا برای توئه

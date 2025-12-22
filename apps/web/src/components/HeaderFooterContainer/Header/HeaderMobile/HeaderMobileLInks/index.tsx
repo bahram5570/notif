@@ -30,7 +30,7 @@ const HeaderMobileLInks = ({ isOpen, isOpenHandler }: HeaderMobileLInksTypes) =>
   return (
     <div
       style={{ height: isOpen ? pageHeight : 0 }}
-      className="w-full px-6 duration-300 bg-impo_Black_And_White overflow-hidden"
+      className="w-full px-6 duration-300 bg-impo_OnBlack overflow-hidden"
     >
       {HEADER_LINKS_LIST.map((item, index) => (
         <div

@@ -33,7 +33,7 @@ const config: Config = {
       impo_Transparent: 'transparent',
       impo_Black: 'var(--color-Black)',
       impo_White: 'var(--color-White)',
-      impo_Black_And_White: 'var(--color-Black_And_White)',
+      impo_OnBlack: 'var(--color-OnBlack)',
       impo_Primary_Primary: 'var(--color-Primary_Primary)',
       impo_Primary_OnPrimary: 'var(--color-Primary_OnPrimary)',
       impo_Primary_PrimaryContainer: 'var(--color-Primary_PrimaryContainer)',

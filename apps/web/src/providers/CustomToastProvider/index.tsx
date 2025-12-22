@@ -4,7 +4,6 @@ import { createContext } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { CustomToastOptionTypes, CustomToastTypes } from './types';
 
@@ -14,7 +13,7 @@ const CustomToastProvider = ({ children }: { children: React.ReactNode }) => {
   const toastHandler = ({ numbersMode = 'persian', duration = 3000, message, type }: CustomToastOptionTypes) => {
     const content = (
       <div className="flex items-center gap-2">
-        <div className="w-[1px] h-7 block" style={{ backgroundColor: COLORS_LIST.Surface_OnSurfaceVariant }} />
+        <div className="w-[1px] h-7 block bg-impo_Surface_OnSurfaceVariant" />
 
         <CustomTypography color="White" fontSize="Lable_Small" numbersMode={numbersMode}>
           {message}

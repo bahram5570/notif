@@ -2,8 +2,6 @@
 
 import { useState } from 'react';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import { MarhaamFeelingEnum } from '../../../enum';
 import Aggression from './Aggression';
 import Anxiety from './Anxiety';
@@ -26,9 +24,9 @@ const TabContainer = ({ result }: TabContainerPropsType) => {
         <div className="w-full  flex flex-col items-center mx-auto pt-4">
           <TabBtnList activeTab={activeTab} handleActiveTab={handleActiveTab} />
           <div
-            className=" w-full my-4"
+            className=" w-full my-4 border-impo_Surface_SurfaceVariant"
             style={{
-              border: `1px solid ${COLORS_LIST.Surface_SurfaceVariant}`,
+              border: `1px solid `,
             }}
           ></div>
           <div className=" w-full">

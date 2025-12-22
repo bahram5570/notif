@@ -1,6 +1,5 @@
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { MOVIE_PART1 } from './constants';
 
@@ -30,7 +29,6 @@ const Movie = () => {
                   src={item.image}
                   className="pt-4 md:p-0 w-[96px] md:w-[150px] lg:max-w-[320px] xl:max-w-[300px] my-3"
                   hasPreviewImage
-                  previewBackground={COLORS_LIST.White}
                 />
                 <CustomTypography fontSize="Lable_Small" color="Surface_InverseSurface" className="text-center">
                   {item.description}
