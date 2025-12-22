@@ -18,11 +18,11 @@ const VisitList = () => {
               >
                 {i + 1}
               </CustomTypography>
-              <CustomTypography fontSize="Lable_Large" tagType="h5">
+              <CustomTypography fontSize="Lable_Large" tagType="h5" className="!text-impo_Neutral_OnBackground">
                 {item.title}
               </CustomTypography>
             </div>
-            <CustomTypography fontSize="Body_Small" tagType="p">
+            <CustomTypography fontSize="Body_Small" tagType="p" className="!text-impo_Neutral_OnBackground">
               {item.text}
             </CustomTypography>
           </div>

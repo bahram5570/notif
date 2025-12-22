@@ -36,18 +36,15 @@ const ValuesSmallScreen = ({ list }: ValuesSmallScreenTypes) => {
       >
         {list.map((item, index) => (
           <SwiperSlide className="!w-fit max-w-[300px]" key={index}>
-            <div
-              className="w-full flex items-start gap-2 p-4 rounded-lg"
-              style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
-            >
+            <div className="w-full flex items-start gap-2 p-4 rounded-lg !bg-impo_Surface_SurfaceVariant">
               <item.Icon className="w-12 h-auto" />
 
               <div>
-                <CustomTypography fontSize="Title_Small" color={'Neutral_OnBackground'} className="pb-1">
+                <CustomTypography fontSize="Title_Small" className="pb-1 !text-impo_Neutral_OnBackground">
                   {item.title}
                 </CustomTypography>
 
-                <CustomTypography fontSize="Body_Small" color={'Surface_InverseSurface'}>
+                <CustomTypography fontSize="Body_Small" className="!text-impo_Neutral_OnBackground">
                   {item.description}
                 </CustomTypography>
               </div>
@@ -70,8 +67,7 @@ const ArrowGenerator = ({ isNextSlide, slidesHandler }: ArrowGeneratorTypes) => 
   return (
     <div
       onClick={() => slidesHandler(isNextSlide)}
-      style={{ backgroundColor: COLORS_LIST.Neutral_Surface }}
-      className="w-8 h-8 flex items-center justify-center rounded-full"
+      className="w-8 h-8 flex items-center justify-center rounded-full !bg-impo_Neutral_Surface"
     >
       <ArrowIcon
         style={{ fill: COLORS_LIST.Surface_InverseSurface }}
