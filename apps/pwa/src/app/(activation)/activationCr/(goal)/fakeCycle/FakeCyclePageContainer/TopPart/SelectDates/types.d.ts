@@ -8,8 +8,7 @@ export type SelectDatesProps = Pick<
 > &
   Pick<TopPartProps, 'openDatesHandler'> & { isPregnancy: boolean };
 
-export interface SelectDatesTableProps
-  extends Omit<
-    SelectDatesProps,
-    'fakeCycleDatesHandler' | 'fakeCycleDatesHandler' | 'selectDatesBtnText' | 'openDatesHandler'
-  > {}
+export interface SelectDatesTableProps extends Omit<
+  SelectDatesProps,
+  'fakeCycleDatesHandler' | 'fakeCycleDatesHandler' | 'selectDatesBtnText' | 'openDatesHandler'
+> {}

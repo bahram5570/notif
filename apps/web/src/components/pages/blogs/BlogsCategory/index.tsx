@@ -12,8 +12,7 @@ const BlogsCategory = ({ categories }: BlogsCategoryTypes) => {
   return (
     <div className="w-full lg:w-10/12 md:max-w-full mx-auto">
       <CustomTypography
-        className="px-4 lg:px-0"
-        color={'Neutral_OnBackground'}
+        className="px-4 lg:px-0 !text-impo_Neutral_OnBackground"
         fontSize={breakPoint.laptop ? 'Title_Medium' : 'Headline_Medium'}
       >
         دسته بندی‌ها

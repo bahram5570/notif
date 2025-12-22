@@ -1,4 +1,9 @@
+import DarkIcon from '@assets/icons/themeDark.svg';
+import LightIcon from '@assets/icons/themeLight.svg';
+import SystemIcon from '@assets/icons/themeSystem.svg';
+
 import { HEADER_LINKS_TYPES } from '@components/HeaderFooterContainer/Header/types';
+import { ThemeTypes } from '@theme/types';
 
 export const STAGE_URL = 'http://195.88.208.143:8082';
 export const SSL_STAGE_URL = 'https://stage.weareimpo.ir';
@@ -77,4 +82,10 @@ export const HEADER_LINKS_LIST: HEADER_LINKS_TYPES = [
   },
   { title: 'کلینیک سلامت', linkTo: '/landing/clinic' },
   { title: 'ایمپو آقایان', linkTo: '/men' },
+];
+
+export const HEADER_THEME_LIST: { title: string; mode: ThemeTypes; Icon: any }[] = [
+  { title: 'تاریک', mode: 'dark', Icon: DarkIcon },
+  { title: 'روشن', mode: 'light', Icon: LightIcon },
+  { title: 'خودکار', mode: 'system', Icon: SystemIcon },
 ];

@@ -32,7 +32,7 @@ const CyclePage = () => {
           src={iframeUrl}
           onLoad={() => setIsLoading(false)}
           sandbox="allow-same-origin allow-scripts allow-popups"
-          className="w-full h-[calc(100dvh_-80px)] pt-[56px] overflow-hidden"
+          className="w-full h-[calc(100dvh_-80px)] pt-[56px] overflow-hidden bg-impo_White"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         />
       )}

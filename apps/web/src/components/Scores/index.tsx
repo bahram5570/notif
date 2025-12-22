@@ -8,7 +8,6 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded';
 import StatisticsMaker from '@components/StatisticsMaker';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
 
 import { ScoresTypes } from './types';
 
@@ -34,8 +33,7 @@ const Scores = ({ title }: ScoresTypes) => {
         </div>
 
         <CustomTypography
-          className="text-center"
-          color={'Surface_Outline'}
+          className="text-center !text-impo_Surface_Outline"
           fontSize={breakPoint.laptop ? 'Title_Small' : 'Title_Medium'}
         >
           {title}

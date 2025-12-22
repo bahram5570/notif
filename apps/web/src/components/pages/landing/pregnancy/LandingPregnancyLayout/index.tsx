@@ -11,18 +11,18 @@ const LandingPregnancyLayout = async () => {
 
   return (
     <div className="w-full flex flex-col gap-5 pt-10 px-4 sm:px-0">
-      <CustomTypography tagType="h2" fontSize="Title_Medium">
+      <CustomTypography tagType="h2" fontSize="Title_Medium" className="!text-impo_Neutral_OnBackground">
         تست حاملگی آنلاین چیه؟
       </CustomTypography>
 
-      <CustomTypography className="text-justify">
+      <CustomTypography className="text-justify !text-impo_Neutral_OnBackground">
         تست حاملگی آنلاین ایمپو، شامل 12 تا سواله که به کمک جواب‌های شما، احتمال بارداری رو در سه حالت زیاد، کم و متوسط
         براتون محاسبه می‌کنه. این سوال‌ها در مورد علائم اولیه بارداری مثل
-        <CustomLink href="/bleeding-nesting" color="Primary_Primary">
+        <CustomLink href="/bleeding-nesting" className="!text-impo_Primary_Primary">
           خونریزی لانه‌گزینی،
         </CustomLink>
         حالت تهوع، خستگی،
-        <CustomLink href="/late-period" color="Primary_Primary">
+        <CustomLink href="/late-period" className="!text-impo_Primary_Primary">
           عقب افتادن پریود
         </CustomLink>
         همچنین، داشتن رابطه جنسی محافظت نشده، احتمال بارداری رو خیلی زیاد می‌کنه. در این تست، تمامی عوامل مهمی که احتمال
@@ -32,54 +32,54 @@ const LandingPregnancyLayout = async () => {
       </CustomTypography>
 
       <div>
-        <CustomTypography tagType="h3" fontSize="Title_Small">
+        <CustomTypography tagType="h3" fontSize="Title_Small" className="!text-impo_Neutral_OnBackground">
           چه کسی باید تست آنلاین بارداری انجام بده؟
         </CustomTypography>
 
-        <CustomTypography className="pt-4 pb-2">
+        <CustomTypography className="pt-4 pb-2 !text-impo_Neutral_OnBackground">
           اگر یکی از شرایط زیر شامل حال شماست، بهتره تست حاملگی آنلاین رو انجام بدین:
         </CustomTypography>
 
         <ul>
-          <CustomTypography className="list-disc mr-4" tagType="li">
+          <CustomTypography className="list-disc mr-4 !text-impo_Neutral_OnBackground" tagType="li">
             رابطه جنسی محافظت نشده داشتین و فکر می‌کنین باردار هستین.
           </CustomTypography>
 
-          <CustomTypography className="list-disc mr-4" tagType="li">
+          <CustomTypography className="list-disc mr-4 !text-impo_Neutral_OnBackground" tagType="li">
             احساس می‌کنین علائم اولیه بارداری رو تجربه می‌کنین.
           </CustomTypography>
 
-          <CustomTypography className="list-disc mr-4" tagType="li">
+          <CustomTypography className="list-disc mr-4 !text-impo_Neutral_OnBackground" tagType="li">
             احساس می‌کنین در هفته‌های اولیه بارداری هستین.
           </CustomTypography>
 
-          <CustomTypography className="list-disc mr-4" tagType="li">
+          <CustomTypography className="list-disc mr-4 !text-impo_Neutral_OnBackground" tagType="li">
             پریودتون عقب افتاده.
           </CustomTypography>
         </ul>
       </div>
 
       <div>
-        <CustomTypography tagType="h3" fontSize="Title_Small">
+        <CustomTypography tagType="h3" fontSize="Title_Small" className="!text-impo_Neutral_OnBackground">
           تست حاملگی آنلاین چقدر دقیق و معتبره؟
         </CustomTypography>
 
-        <CustomTypography className="text-justify pt-2">
+        <CustomTypography className="text-justify pt-2 !text-impo_Neutral_OnBackground">
           هیچ تست بارداری آنلاین رایگانی، صد در صد دقیق نیست و احتمال خطای بالایی داره؛ برای تشخیص قطعی بارداری باید
           حتما از بی بی چک استفاده کنین یا
-          <CustomLink href="/hcg-blood-test" color="Primary_Primary">
+          <CustomLink href="/hcg-blood-test" className="!text-impo_Primary_Primary">
             آزمایش خون بارداری
           </CustomLink>
           بدین. بنابراین تست آنلاین بارداری جایگزین
-          <CustomLink href="/baby-check" color="Primary_Primary">
+          <CustomLink href="/baby-check" className="!text-impo_Primary_Primary">
             بی بی چک
           </CustomLink>
           یست؛ با این حال، تست حاملگی آنلاین ایمپو، فاکتورهای مهمی مثل
-          <CustomLink href="/pregnancy-symptoms" color="Primary_Primary">
+          <CustomLink href="/pregnancy-symptoms" className="!text-impo_Primary_Primary">
             ریزترین علائم بارداری در هفته اول،
           </CustomLink>
           قب افتادن پریود و روش
-          <CustomLink href="/contraception" color="Primary_Primary">
+          <CustomLink href="/contraception" className="!text-impo_Primary_Primary">
             پیشگیری از بارداری
           </CustomLink>
           رو بررسی می‌کنه تا بتونین برای زمان استفاده از بی بی چک تصمیم بگیرین. در مقاله بی بی چک روش استفاده و تفسیر
@@ -88,11 +88,11 @@ const LandingPregnancyLayout = async () => {
       </div>
 
       <div>
-        <CustomTypography tagType="h3" fontSize="Title_Small">
+        <CustomTypography tagType="h3" fontSize="Title_Small" className="!text-impo_Neutral_OnBackground">
           اپلیکیشن ایمپو چه کمکی بهت می‌کنه؟
         </CustomTypography>
 
-        <CustomTypography className="text-justify pt-2">
+        <CustomTypography className="text-justify pt-2 !text-impo_Neutral_OnBackground">
           اگر هدفتون اقدام به بارداری یا پیشگیری از بارداری باشه، ایمپو بهتون کمک می‌کنه. مهم‌ترین نکته در پیشگیری یا
           اقدام، آگاهی از روز دقیق تخمک گذاریه. ایمپو برای شما تاریخ پریود، PMS و دوره باروری یا همون روز تخمک گذاری رو
           پیش‌بینی می‌کنه. اگر قصد اقدام به بارداری داشته باشین، ایمپو با ابزارهای مثل محاسبه شانس بارداری، کیت تخمک

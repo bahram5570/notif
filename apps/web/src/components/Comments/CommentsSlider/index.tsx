@@ -4,7 +4,6 @@ import CustomImage from '@components/ui/CustomImage';
 // import { useState } from 'react';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
 import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -41,8 +40,7 @@ const CommentsSlider = ({ list }: CommentsSliderTypes) => {
                     }}
                   >
                     <CustomTypography
-                      className="text-center"
-                      color={'Neutral_OnSurface'}
+                      className="text-center !text-impo_Neutral_OnSurface"
                       fontSize={breakPoint.mobile ? 'Body_Large' : 'Body_Medium'}
                     >
                       {item.text}
@@ -50,7 +48,11 @@ const CommentsSlider = ({ list }: CommentsSliderTypes) => {
 
                     <div className="flex items-center gap-4">
                       <div dir="ltr">
-                        <CustomTypography fontSize="Body_Small" color={'Neutral_OnSurface'} numbersMode="english">
+                        <CustomTypography
+                          fontSize="Body_Small"
+                          className="!text-impo_Neutral_OnSurface"
+                          numbersMode="english"
+                        >
                           {item.userName}
                         </CustomTypography>
                       </div>

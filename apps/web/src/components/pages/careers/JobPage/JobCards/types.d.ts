@@ -1,7 +1,9 @@
 import { JobPageTypes } from '../types';
 
-export interface JobCardsTypes
-  extends Pick<JobPageTypes, 'location' | 'departman' | 'employmentTimeType' | 'employmentLocationType'> {}
+export interface JobCardsTypes extends Pick<
+  JobPageTypes,
+  'location' | 'departman' | 'employmentTimeType' | 'employmentLocationType'
+> {}
 
 export interface CardGeneratorTypes {
   Icon: any;

@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 
 interface UseScrollTriggerProps {
   elementId: string;
-  percent?: number; 
-  onTrigger: () => void; 
+  percent?: number;
+  onTrigger: () => void;
 }
 
 export const useScrollTrigger = ({ elementId, percent = 50, onTrigger }: UseScrollTriggerProps): void => {

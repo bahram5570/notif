@@ -42,14 +42,14 @@ const FeaturesIntruductionCardGenerator = ({
       <div className="w-full md:max-w-[500px] px-4 py-6 md:col-span-5 flex flex-col justify-center gap-1 mx-auto order-1">
         <CustomTypography
           tagType="h3"
-          color={'Neutral_OnSurface'}
+          className="!text-impo_Neutral_OnSurface"
           fontSize={breakPoint.tablet ? 'Title_Medium' : 'Title_Large'}
         >
           {title}
         </CustomTypography>
 
         <CustomTypography
-          color={'Surface_OnSurfaceVariant'}
+          className="!text-impo_Surface_OnSurfaceVariant"
           fontSize={breakPoint.tablet ? 'Body_Medium' : 'Body_Large'}
         >
           {description}

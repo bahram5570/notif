@@ -9,7 +9,6 @@ import CustomInput from '@components/ui/CustomInput';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 import useOperatingSystem from '@hooks/useOperatingSystem';
-import { COLORS_LIST } from '@theme/colors';
 
 import useSubmit from './__hooks__/useSubmit';
 import { UserInfoType } from './type';
@@ -31,30 +30,33 @@ const ContactUsForm = () => {
       <div className="flex sm:flex-row items-center flex-col sm:gap-3 gap-4">
         <div className="w-full">
           <div className="flex items-center gap-1 pb-2">
-            <CustomTypography fontSize="Body_Medium">نام و نام خانوادگی</CustomTypography>
+            <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground">
+              نام و نام خانوادگی
+            </CustomTypography>
           </div>
 
           <CustomInput
             hasOutline={true}
             fontSize="Body_Medium"
             value={userInfo?.fullName || ''}
-            className="w-full sm:p-4 p-2 rounded-xl"
+            className="w-full sm:p-4 p-2 rounded-xl bg-impo_Surface_SurfaceVariant !outline-impo_Primary_Primary"
             onValue={(v) => onChangeHandler(v, 'fullName')}
-            style={{ outlineColor: COLORS_LIST.Primary_Primary, backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
             placeholder="متن خود را وارد کنید"
           />
         </div>
         <div className="w-full">
           <div className="flex items-center gap-1 pb-2">
-            <CustomTypography fontSize="Body_Medium"> موضوع</CustomTypography>
+            <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground">
+              {' '}
+              موضوع
+            </CustomTypography>
           </div>
           <CustomInput
             hasOutline={true}
             fontSize="Body_Medium"
             value={userInfo?.subject || ''}
-            className="w-full sm:p-4 p-2 rounded-xl"
+            className="w-full sm:p-4 p-2 rounded-xl bg-impo_Surface_SurfaceVariant !outline-impo_Primary_Primary"
             onValue={(v) => onChangeHandler(v, 'subject')}
-            style={{ outlineColor: COLORS_LIST.Primary_Primary, backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
             placeholder="متن خود را وارد کنید"
           />
         </div>
@@ -62,31 +64,35 @@ const ContactUsForm = () => {
       <div className="flex sm:flex-row items-center flex-col sm:gap-3 gap-4">
         <div className="w-full">
           <div className="flex items-center gap-1 pb-2">
-            <CustomTypography fontSize="Body_Medium"> ایمیل</CustomTypography>
+            <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground">
+              {' '}
+              ایمیل
+            </CustomTypography>
           </div>
 
           <CustomInput
             hasOutline={true}
             fontSize="Body_Medium"
             value={userInfo?.email || ''}
-            className="w-full sm:p-4 p-2  rounded-xl"
+            className="w-full sm:p-4 p-2 rounded-xl bg-impo_Surface_SurfaceVariant !outline-impo_Primary_Primary"
             onValue={(v) => onChangeHandler(v, 'email')}
-            style={{ outlineColor: COLORS_LIST.Primary_Primary, backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
             placeholder="متن خود را وارد کنید"
           />
         </div>
         <div className="w-full">
           <div className="flex items-center gap-1 pb-2">
-            <CustomTypography fontSize="Body_Medium"> شماره تلفن</CustomTypography>
+            <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground">
+              {' '}
+              شماره تلفن
+            </CustomTypography>
           </div>
 
           <CustomInput
             hasOutline={true}
             fontSize="Body_Medium"
             value={userInfo?.phoneNumber || ''}
-            className="w-full sm:p-4 p-2 rounded-xl"
+            className="w-full sm:p-4 p-2 rounded-xl bg-impo_Surface_SurfaceVariant !outline-impo_Primary_Primary"
             onValue={(v) => onChangeHandler(v, 'phoneNumber')}
-            style={{ outlineColor: COLORS_LIST.Primary_Primary, backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
             placeholder="متن خود را وارد کنید"
             maxLength={11}
           />
@@ -95,18 +101,18 @@ const ContactUsForm = () => {
 
       <div>
         <div className="flex items-center gap-1 pb-2">
-          <CustomTypography fontSize="Body_Medium">توضیحات</CustomTypography>
+          <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground">
+            توضیحات
+          </CustomTypography>
         </div>
 
         <textarea
           rows={6}
           value={userInfo?.description || ''}
-          className="w-full sm:p-4 p-2 rounded-xl"
+          className="w-full sm:p-4 p-2 rounded-xl bg-impo_Surface_SurfaceVariant !outline-impo_Primary_Primary"
           onChange={(e) => onChangeHandler(e.target.value, 'description')}
           style={{
             ...typographyDetails,
-            outlineColor: COLORS_LIST.Primary_Primary,
-            backgroundColor: COLORS_LIST.Surface_SurfaceVariant,
           }}
         />
       </div>

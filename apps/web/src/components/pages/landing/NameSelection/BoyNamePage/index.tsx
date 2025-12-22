@@ -34,9 +34,9 @@ const BoyNamePage = async () => {
 
         <div className=" landing_container px-3 pb-16">
           <AlphabetBtns
-            bgColor1="Blue_200"
-            bgColor2="Blue_50"
-            textColor="Blue_800"
+            bgColor1="bg-impo_Blue_200"
+            bgColor2="bg-impo_Blue_50"
+            textColor="!text-impo_Blue_800"
             list={PERSIAN_BOY_NAME_DICTIONARY}
             title="انتخاب اسم پسر خاص و تک بر اساس حروف الفبا(همراه با ریشه و معنی)"
             description="اگه دنبال یه راه آسون ولی هیجان‌انگیز برای انتخاب اسم پسر کمیاب و متفاوت هستین، چرا از حروف الفبا شروع نکنین؟
@@ -57,14 +57,16 @@ const BoyNamePage = async () => {
               <CustomTypography
                 tagType="h2"
                 fontSize="Headline_Small"
+                className="!text-impo_Neutral_OnBackground"
               >{`${item[1].labelTitle} «${item[1].category}»`}</CustomTypography>
 
               <NamesTable
                 list={item[1].list}
-                titleBgColor="Blue_500"
-                borderColor="Blue_300"
-                bgColor1="Blue_100"
-                bgColor2="Blue_50"
+                titleColor="!text-impo_PrimaryMan_OnPrimaryMan"
+                titleBgColor="bg-impo_PrimaryMan_PrimaryMan"
+                borderColor="border-impo_Blue_300"
+                bgColor1="bg-impo_Blue_100"
+                bgColor2="bg-impo_Blue_50"
               />
             </div>
           ))}

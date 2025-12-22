@@ -1,4 +1,3 @@
-import { COLORS_LIST } from '@theme/colors';
 import { FONTS_ANDROID } from '@theme/fonts';
 
 import { CtaBannerTypes } from './types';
@@ -30,7 +29,7 @@ const CtaBanner = ({ id, backgroundColor, title, description, image, link, butto
           <div className="w-full md:w-7/12 flex flex-col items-center md:items-start pt-10 px-8">
             <p
               className="
-                          text-impo_Black
+                          !text-impo_Black
                           !text-[19px] 
                           !font-[700] 
                           !leading-[150%] 
@@ -48,7 +47,7 @@ const CtaBanner = ({ id, backgroundColor, title, description, image, link, butto
               className="
                           pt-2 
                           pb-5
-                          text-impo_Black
+                          !text-impo_Black
                           !text-[16px] 
                           !font-[500] 
                           !leading-[160%] 

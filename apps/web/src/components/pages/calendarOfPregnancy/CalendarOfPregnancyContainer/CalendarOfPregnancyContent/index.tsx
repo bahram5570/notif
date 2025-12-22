@@ -40,11 +40,15 @@ const CalendarOfPregnancyContent = () => {
 
   return (
     <>
-      <CustomTypography fontSize="Headline_Medium" tagType="h2" className="pb-2 text-center">
+      <CustomTypography
+        fontSize="Headline_Medium"
+        tagType="h2"
+        className="pb-2 text-center !text-impo_Neutral_OnBackground"
+      >
         تقویم بارداری هفته به هفته و ماهانه
       </CustomTypography>
 
-      <CustomTypography className="!text-center pt-2 pb-6">
+      <CustomTypography className="!text-center pt-2 pb-6 !text-impo_Neutral_OnBackground">
         تقویم بارداری، شامل ۴۰ هفته یا ۲۸۰ روز است. سن بارداری و تاریخ زایمان، با توجه به تاریخ آخرین پریود محاسبه
         می‌شود. تقویم حاملگی به سه دوره سه ماهه اول، دوم و سوم تقسیم می‌شود. سه ماهه اول شامل هفته‌های اول تا سیزدهم
         است. در سه ماهه دوم تشخیص جنسیت جنین انجام می‌شود و شامل هفته‌های ۱۴ تا ۲۷ است.سه ماهه سوم بارداری نیز به
@@ -68,7 +72,7 @@ const CalendarOfPregnancyContent = () => {
         )}
       </div>
 
-      <CustomTypography fontSize="Body_Small" color="Surface_Outline" className="text-center pt-8">
+      <CustomTypography fontSize="Body_Small" className="text-center pt-8 !text-impo_Surface_Outline">
         در ویدیوی بالا، مراحل رشد جنین در هفته‌های مختلف بارداری را مشاهده کنید.
       </CustomTypography>
 

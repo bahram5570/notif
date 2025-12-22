@@ -4,7 +4,6 @@ import { useMemo, useRef, useState } from 'react';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { AlphabetBtnsTypes } from './types';
 
@@ -55,23 +54,17 @@ const AlphabetBtns = ({ title, description, list, textColor, bgColor1, bgColor2 
       )}
 
       <div className="w-full flex flex-col gap-2 md:gap-3  mx-auto px-3 pb-12" ref={ref}>
-        <CustomTypography tagType="h2" fontSize="Headline_Medium" color={'Neutral_OnBackground'}>
+        <CustomTypography tagType="h2" fontSize="Headline_Medium" className="!text-impo_Neutral_OnBackground">
           {title}
         </CustomTypography>
 
-        <CustomTypography fontSize="Body_Large" color={'Surface_InverseSurface'}>
+        <CustomTypography fontSize="Body_Large" className="!text-impo_Surface_InverseSurface">
           {description}
         </CustomTypography>
 
-        <div
-          className="w-full sm:max-w-[390px] mx-auto rounded-2xl overflow-hidden "
-          style={{ backgroundColor: COLORS_LIST[bgColor1] }}
-        >
-          <div
-            className=" rounded-b-[100%] pt-4 pb-2 text-center h-[70px]"
-            style={{ background: COLORS_LIST[bgColor2] }}
-          >
-            <CustomTypography fontSize="Title_Small" color={textColor}>
+        <div className={`w-full sm:max-w-[390px] mx-auto rounded-2xl overflow-hidden ${bgColor1}`}>
+          <div className={`rounded-b-[100%] pt-4 pb-2 text-center h-[70px] ${bgColor2}`}>
+            <CustomTypography fontSize="Title_Small" className={textColor}>
               فیلتر براساس حروف
             </CustomTypography>
           </div>
@@ -82,13 +75,11 @@ const AlphabetBtns = ({ title, description, list, textColor, bgColor1, bgColor2 
                 <div
                   key={item.value}
                   onClick={() => selectHandler(item.value)}
-                  style={{ backgroundColor: COLORS_LIST[bgColor2] }}
-                  className="w-14 h-14 rounded-xl flex items-center justify-center cursor-pointer"
+                  className={`w-14 h-14 rounded-xl flex items-center justify-center cursor-pointer ${bgColor2}`}
                 >
                   <CustomTypography
-                    color={textColor}
                     fontSize="Title_Small"
-                    className="!underline !underline-offset-[6px]"
+                    className={`!underline !underline-offset-[6px] ${textColor}`}
                   >
                     {item.label}
                   </CustomTypography>

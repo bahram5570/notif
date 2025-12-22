@@ -21,8 +21,10 @@ export interface AddToHomeScreenMainContentTypes extends Pick<AddToHomeScreenCon
   onClick: () => void;
 }
 
-export interface AddToHomeScreenBrowserContentTypes
-  extends Pick<AddToHomeScreenContentsProps, 'operatingSystem' | 'browserInfo'> {}
+export interface AddToHomeScreenBrowserContentTypes extends Pick<
+  AddToHomeScreenContentsProps,
+  'operatingSystem' | 'browserInfo'
+> {}
 
 type BrowsersTypes = 'safariOld' | 'safariNew' | 'chromeAndroid' | 'chromeIos' | 'other';
 export type AddToHomeBrowserContentDataTypes = {

@@ -1,4 +1,6 @@
 import { WidgetMostRepeatedSignsEmptyTypes } from '@providers/WidgetActionsProvider/widgetCards';
 
-export interface WidgetMostRepeatedSignsEmptyProps
-  extends Pick<WidgetMostRepeatedSignsEmptyTypes, 'data' | 'isPdfDownloading'> {}
+export interface WidgetMostRepeatedSignsEmptyProps extends Pick<
+  WidgetMostRepeatedSignsEmptyTypes,
+  'data' | 'isPdfDownloading'
+> {}

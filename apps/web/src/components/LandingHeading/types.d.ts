@@ -4,9 +4,12 @@ export interface LandingHeadingTypes {
   contentElement: JSX.Elemen;
   imagePosition: 'center' | 'bottom';
   backgroundImage: string | [string, string];
+  className?: string;
 }
 
-export interface LandingHeadingImageTypes
-  extends Pick<LandingHeadingTypes, 'image' | 'imageClassName' | 'imagePosition'> {}
+export interface LandingHeadingImageTypes extends Pick<
+  LandingHeadingTypes,
+  'image' | 'imageClassName' | 'imagePosition'
+> {}
 
 export interface LandingHeadingContentsTypes extends Pick<LandingHeadingTypes, 'contentElement'> {}

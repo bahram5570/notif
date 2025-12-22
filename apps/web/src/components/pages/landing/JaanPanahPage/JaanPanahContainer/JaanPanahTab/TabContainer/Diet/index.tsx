@@ -10,7 +10,6 @@ import { CraBannerItemTypes } from '@components/CtaBanner/types';
 import { CALENDAR_OF_PREGNANCY_BANNER_NAME } from '@components/pages/calendarOfPregnancy/CalendarOfPregnancyContainer/constants';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { DIET_LIST } from './constant';
 

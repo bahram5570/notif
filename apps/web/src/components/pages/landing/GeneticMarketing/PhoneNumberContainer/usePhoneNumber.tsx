@@ -51,6 +51,6 @@ export const usePhoneNumber = () => {
     phoneNumber,
     valueHandler,
     submitHandler,
-    isLoading
+    isLoading,
   };
 };

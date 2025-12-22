@@ -6,7 +6,6 @@ import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 import useOperatingSystem from '@hooks/useOperatingSystem';
-import { COLORS_LIST } from '@theme/colors';
 
 import { GeneratorScriptsTypes } from './types';
 
@@ -31,15 +30,15 @@ const GeneratorScripts = ({ body, title, url }: GeneratorScriptsTypes) => {
   return (
     <div className="w-full h-full flex flex-col justify-center lg:justify-start">
       <CustomLink href={`/${url}`}>
-        <CustomTypography fontSize="Title_Small" tagType="h2">
+        <CustomTypography fontSize="Title_Small" tagType="h2" className="!text-impo_Neutral_OnBackground">
           {title}
         </CustomTypography>
       </CustomLink>
 
       <div
-        style={{ ...typographyDetails, color: COLORS_LIST.Surface_Outline }}
+        style={{ ...typographyDetails }}
         dangerouslySetInnerHTML={{ __html: bodyShorter(body) }}
-        className="pt-3 select-none hidden lg:block"
+        className="pt-3 select-none hidden lg:block !text-impo_Surface_Outline"
       />
     </div>
   );

@@ -9,5 +9,7 @@ export interface ArticleIdProfileTypes extends ItemsTypes {
   profileImage: string | undefined;
 }
 
-export interface ArticleIdProfileInfoTypes
-  extends Pick<ArticleIdProfileTypes, 'rateCount' | 'commentCount' | 'publishTime' | 'wordsCount'> {}
+export interface ArticleIdProfileInfoTypes extends Pick<
+  ArticleIdProfileTypes,
+  'rateCount' | 'commentCount' | 'publishTime' | 'wordsCount'
+> {}
