@@ -26,19 +26,17 @@ const PaymentHeaderSection = () => {
             </CustomTypography>
 
             <CustomTypography fontSize="Body_Large" className="!text-impo_Neutral_OnBackground">
-              یکی از تعرفه‌های زیر رو انتخاب کنی:{' '}
+              یکی از تعرفه‌های زیر رو انتخاب کنی:
             </CustomTypography>
+
             <CustomTypography
               fontSize="Body_Large"
               numbersMode="english"
               className="flex gap-1 !text-impo_Neutral_OnBackground"
             >
-              اشتراک{' '}
-              <CustomTypography fontSize="Body_Large" className="!text-impo_Neutral_OnBackground">
-                ۶
-              </CustomTypography>{' '}
-              ماهه: €16 | $12
+              اشتراک شش ماهه: €16 | $12
             </CustomTypography>
+
             <CustomTypography fontSize="Body_Large" numbersMode="english" className="!text-impo_Neutral_OnBackground">
               اشتراک یک ساله: €25 | $20
             </CustomTypography>
@@ -57,10 +55,10 @@ const PaymentHeaderSection = () => {
               >
                 لینک paypal
               </CustomLink>
-              به ایمیل{' '}
+              به ایمیل
               <u className="cursor-pointer" onClick={copylink}>
                 sajjadiamirhossein30@gmail.com
-              </u>{' '}
+              </u>
               پرداخت کن.
             </CustomTypography>
 

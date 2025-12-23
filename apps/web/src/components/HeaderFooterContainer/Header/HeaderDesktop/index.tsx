@@ -5,6 +5,7 @@ import { DOWNLOAD_APP_SECTION_ID } from '@components/DownloadApp/DownloadAppWome
 import CustomButton from '@components/ui/CustomButton';
 import CustomLink from '@components/ui/CustomLink';
 
+import HeaderTheme from '../HeaderTheme';
 import HeaderDesktopLinks from './HeaderDesktopLinks';
 
 const HeaderDesktop = () => {
@@ -42,15 +43,19 @@ const HeaderDesktop = () => {
 
         <HeaderDesktopLinks />
 
-        <CustomButton
-          varient="fill"
-          id="install_header"
-          fontSize="Title_Small"
-          className="w-[127px] h-[48px]"
-          onClick={downloadLinkHandler}
-        >
-          نصب ایمپو
-        </CustomButton>
+        <div className="flex items-center gap-4">
+          <HeaderTheme />
+
+          <CustomButton
+            varient="fill"
+            id="install_header"
+            fontSize="Title_Small"
+            className="w-[127px] h-[48px]"
+            onClick={downloadLinkHandler}
+          >
+            نصب ایمپو
+          </CustomButton>
+        </div>
       </div>
     </>
   );

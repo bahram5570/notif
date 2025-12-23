@@ -4,11 +4,11 @@ import { Suspense } from 'react';
 
 import PwaIcon from '@assets/icons/downloads/pwa.svg';
 
+import DownloadAppLinkGenerator from '@components/DownloadApp/DownloadAppLinkGenerator';
 import CustomTypography from '@components/ui/CustomTypography';
 import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
 import useBreakPoint from '@hooks/useBreakPoint';
 
-import DownloadAppLinkGenerator from '../../DownloadAppLinkGenerator';
 import IranianStoresDesktop from './IranianStoresDesktop';
 import IranianStoresMobile from './IranianStoresMobile';
 

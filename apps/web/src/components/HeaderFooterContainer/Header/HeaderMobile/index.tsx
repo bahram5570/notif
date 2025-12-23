@@ -7,6 +7,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import CustomLink from '@components/ui/CustomLink';
 
+import HeaderTheme from '../HeaderTheme';
 import HeaderMobileLInks from './HeaderMobileLInks';
 import useIsOpen from './__hooks__/useIsOpen';
 import { HEADER_MOBILE_HEIGHT } from './constants';
@@ -24,9 +25,13 @@ const HeaderMobile = () => {
           <ImpoIcon className="w-14 h-auto fill-impo_Pink_500" />
         </CustomLink>
 
-        <div className="w-12 h-12 flex items-center justify-center" onClick={() => isOpenHandler(!isOpen)}>
-          {!isOpen && <MenuIcon className="w-8 h-auto !fill-impo_Neutral_OnBackground" />}
-          {isOpen && <CloseRoundedIcon className="w-5 h-auto !fill-impo_Neutral_OnBackground" />}
+        <div className="flex items-center gap-2">
+          <HeaderTheme />
+
+          <div className="w-12 h-12 flex items-center justify-center" onClick={() => isOpenHandler(!isOpen)}>
+            {!isOpen && <MenuIcon className="w-8 h-auto !fill-impo_Neutral_OnBackground" />}
+            {isOpen && <CloseRoundedIcon className="w-5 h-auto !fill-impo_Neutral_OnBackground" />}
+          </div>
         </div>
       </div>
 

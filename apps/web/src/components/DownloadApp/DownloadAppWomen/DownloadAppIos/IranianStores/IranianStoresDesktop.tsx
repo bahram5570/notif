@@ -1,6 +1,6 @@
+import DownloadAppLinkGenerator from '@components/DownloadApp/DownloadAppLinkGenerator';
 import CustomTypography from '@components/ui/CustomTypography';
 
-import DownloadAppLinkGenerator from '../../DownloadAppLinkGenerator';
 import { IRANIAN_STORES_LIST } from '../constants';
 
 const IranianStoresDesktop = () => {

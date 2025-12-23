@@ -9,12 +9,6 @@ export type SingleLinkGeneratorTypes = HEADER_SINGLE_LINK & {
   closeHandler: () => void;
 };
 
-export type MultiLinkContainerTypes = Pick<HEADER_MULTI_LINK, 'title'> & {
-  isSelected: boolean;
-  selectHandler: () => void;
-  children: React.ReactNode;
-};
-
 export type MultiLinkGeneratorTypes = HEADER_MULTI_LINK & {
   isSelected: boolean;
   closeHandler: () => void;

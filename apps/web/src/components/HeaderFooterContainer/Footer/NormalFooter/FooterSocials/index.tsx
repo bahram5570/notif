@@ -1,6 +1,6 @@
 import EmailIcon from '@assets/icons/email.svg';
 import InstagramIcon from '@assets/icons/instagram2.svg';
-import LinkdinIcon from '@assets/icons/linkdin.svg';
+import LinkdinIcon from '@assets/icons/linkedin1.svg';
 import TelegramIcon from '@assets/icons/telegram.svg';
 import XIcon from '@assets/icons/x.svg';
 import { currentDate } from '@utils/dates';

@@ -5,10 +5,7 @@ import { HEADER_LINKS_LIST } from '@constants/links.constants';
 import usePageHeight from '../__hooks__/usePageHeight';
 import MultiLinkGenerator from './MultiLinkGenerator';
 import SingleLinkGenerator from './SingleLinkGenerator';
-import ThemeLinkGenerator from './ThemeLinkGenerator';
 import { HeaderMobileLInksTypes } from './types';
-
-const THEME_INDEX = HEADER_LINKS_LIST.length;
 
 const HeaderMobileLInks = ({ isOpen, isOpenHandler }: HeaderMobileLInksTypes) => {
   const { pageHeight } = usePageHeight();
@@ -55,12 +52,6 @@ const HeaderMobileLInks = ({ isOpen, isOpenHandler }: HeaderMobileLInksTypes) =>
           )}
         </div>
       ))}
-
-      <ThemeLinkGenerator
-        closeHandler={closeHandler}
-        isSelected={selectedIndex === THEME_INDEX}
-        selectHandler={() => selectHandler(THEME_INDEX)}
-      />
     </div>
   );
 };

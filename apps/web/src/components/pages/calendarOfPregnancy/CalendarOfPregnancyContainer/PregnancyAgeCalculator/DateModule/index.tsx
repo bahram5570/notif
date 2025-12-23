@@ -29,24 +29,23 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
   return (
     <>
       <div className="w-full h-full flex flex-col items-center ">
-        <CustomTypography fontSize="Body_Large" className="text-center">
+        <CustomTypography fontSize="Body_Large" className="text-center !text-impo_Black">
           تاریخ آخرین پریودت رو بهمون بگو تا بهت سن بارداریت رو بگیم!
         </CustomTypography>
 
         <div
           onClick={() => isOpenHandler(true)}
-          style={{ backgroundColor: COLORS_LIST.White }}
-          className="w-full sm:max-w-[460px] flex justify-between rounded-2xl p-4 mt-6 cursor-pointer"
+          className="w-full sm:max-w-[460px] flex justify-between rounded-2xl p-4 mt-6 bg-impo_White cursor-pointer"
         >
           {selectedDate ? (
             <CustomTypography fontSize="Body_Large">{selectedDate}</CustomTypography>
           ) : (
-            <CustomTypography fontSize="Body_Large" color={'Surface_Outline'}>
+            <CustomTypography fontSize="Body_Large" className="!text-impo_Surface_OutlineVariant">
               تاریخ آخرین پریود
             </CustomTypography>
           )}
 
-          <SelectDateIcon className="w-6 h-auto" style={{ stroke: COLORS_LIST.Surface_Outline }} />
+          <SelectDateIcon className="w-6 h-auto stroke-impo_Surface_OutlineVariant" />
         </div>
 
         <CustomButton
@@ -62,15 +61,12 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
       </div>
 
       <CustomModal position={position} isOpen={isOpen} onClose={() => isOpenHandler(false)}>
-        <div
-          className="w-[100vw] max-w-[460px] flex flex-col items-center p-6 md:p-10 md:rounded-2xl"
-          style={{ backgroundColor: COLORS_LIST.White }}
-        >
-          <CustomTypography className="text-center">
+        <div className="w-[100vw] max-w-[460px] flex flex-col items-center p-6 md:p-10 md:rounded-2xl bg-impo_Neutral_Surface">
+          <CustomTypography className="text-center !text-impo_Neutral_OnBackground">
             کاربر عزیز برای محاسبه اینکه توی هفته چندم بارداری هستی
           </CustomTypography>
 
-          <CustomTypography fontSize="Lable_Large" className="text-center mt-2">
+          <CustomTypography fontSize="Lable_Large" className="text-center mt-2 !text-impo_Neutral_OnBackground">
             تاریخ آخرین باری که پریود شدی رو بهمون بگو
           </CustomTypography>
 

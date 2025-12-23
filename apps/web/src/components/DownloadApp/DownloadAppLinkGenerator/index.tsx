@@ -15,7 +15,18 @@ const DownloadAppLinkGenerator = ({ href, children, id }: DownloadAppLinkGenerat
       target="_blank"
       aria-label={href}
       onClick={() => callUserTracking(id || '')}
-      className="w-full h-12 lg:h-[60px] px-2 border-[1px] border-impo_Neutral_Surface rounded-full flex items-center justify-center bg-impo_Surface_SurfaceVariant"
+      className="
+                  w-full 
+                  h-12 
+                  lg:h-[60px] 
+                  rounded-full 
+                  flex 
+                  items-center 
+                  justify-center 
+                  bg-impo_White dark:bg-impo_Surface_SurfaceVariant
+                  border-[1px]
+                  border-impo_Surface_OutlineVariant                
+                "
     >
       {children}
     </CustomLink>
