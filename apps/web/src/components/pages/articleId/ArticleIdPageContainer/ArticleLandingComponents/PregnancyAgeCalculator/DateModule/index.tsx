@@ -37,16 +37,16 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
           className="w-full sm:max-w-[460px] flex justify-between rounded-2xl p-4 mt-6 cursor-pointer bg-impo_White"
         >
           {selectedDate ? (
-            <CustomTypography fontSize="Body_Large" className="!text-impo_Surface_OutlineVariant">
+            <CustomTypography fontSize="Body_Large" className="!text-impo_Grey_800">
               {selectedDate}
             </CustomTypography>
           ) : (
-            <CustomTypography fontSize="Body_Large" className="!text-impo_Surface_OutlineVariant">
+            <CustomTypography fontSize="Body_Large" className="!text-impo_Grey_800">
               تاریخ آخرین پریود
             </CustomTypography>
           )}
 
-          <SelectDateIcon className="w-6 h-auto stroke-impo_Surface_OutlineVariant" />
+          <SelectDateIcon className="w-6 h-auto stroke-impo_Grey_800" />
         </div>
 
         <CustomButton

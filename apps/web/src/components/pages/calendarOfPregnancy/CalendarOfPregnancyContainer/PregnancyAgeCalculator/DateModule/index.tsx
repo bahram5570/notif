@@ -39,12 +39,12 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
           {selectedDate ? (
             <CustomTypography fontSize="Body_Large">{selectedDate}</CustomTypography>
           ) : (
-            <CustomTypography fontSize="Body_Large" className="!text-impo_Surface_OutlineVariant">
+            <CustomTypography fontSize="Body_Large" className="!text-impo_Grey_800">
               تاریخ آخرین پریود
             </CustomTypography>
           )}
 
-          <SelectDateIcon className="w-6 h-auto stroke-impo_Surface_OutlineVariant" />
+          <SelectDateIcon className="w-6 h-auto stroke-impo_Grey_800" />
         </div>
 
         <CustomButton
