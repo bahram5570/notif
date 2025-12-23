@@ -21,7 +21,8 @@ const NameSelectionHeading = () => {
                         justify-center 
                         bg-cover 
                         bg-center
-                         bg-gradient-to-b from-[#FEF2F5] to-[#FFDDE6]
+                             dark:!bg-impo_Surface_InverseOnSurface dark:!from-inherit dark:!to-inherit
+                         !bg-gradient-to-b !from-[#FEF2F5] !to-[#FFDDE6]
                       "
           >
             <div className="h-full w-full max-w-[350px] lg:max-w-full flex flex-col md:flex-row gap-2 md:gap-10 xl:gap-14 pt-[100px] md:pt-[160px] lg:pt-[100px]">

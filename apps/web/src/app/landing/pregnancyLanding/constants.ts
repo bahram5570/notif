@@ -67,30 +67,35 @@ export const PREGNACNY_COMMENTS_LIST = [
 export const PREGNACNY_FEATURES_INTRODUCTION_LIST = [
   {
     image: '/assets/images/featuresIntroduction/pregnancy/0.webp',
+    imageDark: '/assets/images/featuresIntroduction/pregnancy/dark-0.webp',
     title: 'اطلاعات هفته به هفته جنین',
     description:
       'ایمپو اطلاعات هفته به هفته رشد جنینت رو نشون می‌ده؛ از تغییرات قد و وزن گرفته تا مراحل مهم رشد، هر چیزی که به‌عنوان مادر برات جذاب و مهمه.',
   },
   {
     image: '/assets/images/featuresIntroduction/pregnancy/1.webp',
+    imageDark: '/assets/images/featuresIntroduction/pregnancy/dark-1.webp',
     title: 'یادآوری و اطلاع‌رسانی تاریخ‌های مهم',
     description:
       'با اپلیکیشن بارداری ایمپوهمیشه آماده‌ای، تمام چیزهایی که باید به‌عنوان مادر بدونی‌، مثل تاریخ‌های مهم سونوگرافی یا ویزیت‌های دوره‌ای پزشک رو هم بهت یادآوری می‌کنیم تا از برنامه عقب نمونی!',
   },
   {
     image: '/assets/images/featuresIntroduction/pregnancy/2.webp',
+    imageDark: '/assets/images/featuresIntroduction/pregnancy/dark-2.webp',
     title: 'پیگیری و یادآوری مراقبت‌های بارداری',
     description:
       'در برنامه بارداری هفته به هفته ایمپو، همه ویزیت‌های دوره‌ای، آزمایش‌های مهم و تاریخ‌های سونوگرافی دوران بارداریت رو بهت نمایش می‌دیم و یادت میاریم تا بتونی با خیال راحت از سلامت خودت و جنینت مراقبت کنی!',
   },
   {
     image: '/assets/images/featuresIntroduction/pregnancy/3.webp',
+    imageDark: '/assets/images/featuresIntroduction/pregnancy/dark-3.webp',
     title: 'ثبت فشار خون و قند خون',
     description:
       'در ایمپو، می‌تونی فشار خون و قند خونت رو ثبت کنی و روند تغییراتش رو پیگیری کنی تا همیشه از وضعیت سلامتت با خبر باشی و بارداری سالم‌تری داشته باشی!',
   },
   {
     image: '/assets/images/featuresIntroduction/pregnancy/4.webp',
+    imageDark: '/assets/images/featuresIntroduction/pregnancy/dark-4.webp',
     title: 'رژیم‌های غذایی',
     description:
       'در برنامه بارداری هفته به هفته ایمپو، به رژیم غذایی مخصوص خودت دسترسی داری تا با برنامۀ تغذیه مناسب، سلامت خودت و جنینت رو تضمین کنی!',

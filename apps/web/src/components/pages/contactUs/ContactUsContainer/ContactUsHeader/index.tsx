@@ -12,7 +12,7 @@ const ContactUsHeader = () => {
 
   return (
     <div className="grid lg:grid-cols-2 grid-cols-1  w-full h-full">
-      <div className="bg-impo_Yellow_100">
+      <div className="bg-impo_Surface_SurfaceVariant">
         <div className="flex justify-center items-center w-full h-full">
           <div className="flex flex-col gap-4 md:items-start items-center lg:mt-0 mt-28 lg:mb-0 mb-12  sm:p-16 p-3">
             <div className="flex justify-center items-center md:gap-2 gap-0">
@@ -45,7 +45,7 @@ const ContactUsHeader = () => {
         src="/assets/images/contactUs.webp"
         alt="aboutUs"
         width={1880}
-        height={1566}
+        height={1500}
         className="w-full h-auto"
         priority={true}
       />
