@@ -69,7 +69,7 @@ const PaymentHeaderSection = () => {
               target="_blank"
               className="flex items-center justify-center px-4 py-2 rounded-full my-4 bg-impo_Primary_Primary"
             >
-              <CustomTypography color="White" fontSize="Body_Large">
+              <CustomTypography fontSize="Body_Large" className="!text-impo_Primary_OnPrimary">
                 از اینجا پرداخت کن
               </CustomTypography>
             </CustomLink>

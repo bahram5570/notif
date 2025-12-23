@@ -8,7 +8,7 @@ import { WHATSAPP_NUMBER } from '../constants';
 const PaymentWhatsAppNumberContainer = () => {
   return (
     <div className="w-full md:w-11/12 lg:w-10/12 px-4 md:px-0 my-4 mx-auto">
-      <div className="mt-4 px-9 md:px-[50px] py-4 md:py-[22px] rounded-3xl  md:block flex flex-col items-center justify-center bg-impo_Surface_SurfaceVariant">
+      <div className="mt-4 px-9 md:px-[50px] py-4 md:py-[22px] rounded-3xl  md:block flex flex-col items-center justify-center bg-impo_Neutral_Surface">
         <div className="md:block flex flex-col items-center justify-center">
           <CustomTypography fontSize="Title_Large" className="!text-impo_Neutral_OnBackground">
             ارتباط با ما

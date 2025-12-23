@@ -58,35 +58,41 @@ export const SYMPATHY_COMMENTS_LIST = [
 export const SYMPATHY_FEATURES_INTRODUCTION_LIST = [
   {
     image: '/assets/images/featuresIntroduction/sympathy/0.webp',
+    imageDark: '/assets/images/featuresIntroduction/sympathy/dark-0.webp',
     title: 'آگاهی از چرخه شریک عاطفی',
     description:
       'با ایمپو، شریک عاطفیت می‌تونه از چرخه قاعدگیت و تغییرات جسمی و روحیت آگاه بشه، تا بهتر همراهت باشه و لحظات رو با درک و همدلی بیشتری سپری کنین.',
   },
   {
     image: '/assets/images/featuresIntroduction/sympathy/1.webp',
+    imageDark: '/assets/images/featuresIntroduction/sympathy/dark-1.webp',
     title: 'نمایش پیش‌بینی چرخه قاعدگی برای همدل',
     description:
       'در بخش همدلی، پیش‌بینی روزهای مهم چرخه همدلت  رو با جزئیات کامل ارائه کردیم، تا بتونین با خیال راحت برنامه‌ریزی کنین و سوپرایز نشین.  ',
   },
   {
     image: '/assets/images/featuresIntroduction/sympathy/2.webp',
+    imageDark: '/assets/images/featuresIntroduction/sympathy/dark-2.webp',
     title: 'یادآوری و اطلاع‌رسانی تاریخ‌های مهم به همدلت',
     description: 'وقتی همدلی ایمپو رو داشته باشین، پارتنرت میتونه از همه تاریخ های مهم مطلع بشه و کنارت باشه!',
   },
   {
     image: '/assets/images/featuresIntroduction/sympathy/3.webp',
+    imageDark: '/assets/images/featuresIntroduction/sympathy/dark-3.webp',
     title: 'نمایش بیوریتم همدلت برای آگاهی از حال روزانه‌ت',
     description:
       'بیوریتم همدلت رو توی صفحه همدلی برات قرار دادیم تا بتونی از حال روزانه‌ش باخبر باشی و توصیه های مرتبط با حالش رو بگیری',
   },
   {
     image: '/assets/images/featuresIntroduction/sympathy/4.webp',
+    imageDark: '/assets/images/featuresIntroduction/sympathy/dark-4.webp',
     title: 'با چالش همدلی به رابطتون هیجان بده',
     description:
       'توی چالش همدلی ایمپو، هر روز برای تو و پارتنرت یه سوال جذاب در نظر گرفتیم که میتونین در موردش با هم کلی گفتگو کنین .',
   },
   {
     image: '/assets/images/featuresIntroduction/sympathy/5.webp',
+    imageDark: '/assets/images/featuresIntroduction/sympathy/dark-5.webp',
     title: 'خاطره بازی',
     description:
       'با همدل ایمپو میتونین خاطرات قشنگتون رو توی قسمت خاطره بازی با عکس و متن و تاریخ ثبت کنین. اینجوری یه لیست قشنگ از خاطرات دارین که برای هر دو نفرتون نمایش داده میشه.',

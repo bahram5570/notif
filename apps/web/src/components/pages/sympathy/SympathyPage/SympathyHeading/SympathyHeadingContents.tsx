@@ -18,16 +18,17 @@ const SympathyHeadingContents = () => {
       <CustomTypography
         tagType="h1"
         fontSize="Headline_Medium"
-        color={'Neutral_OnBackground'}
-        className="py-2 lg:pt-2 lg:pb-1 text-center md:text-right"
+        className="py-2 lg:pt-2 lg:pb-1 text-center md:text-right !text-impo_Neutral_OnBackground"
       >
         لذت و آرامش در رابطه
       </CustomTypography>
 
       <CustomButton
-        varient="fill"
-        backgroundColor="Primary_Primary"
-        className="!w-[120px] lg:!w-[182px] h-[40px] !mt-2 !mb-8"
+        varient="FREE_COLORS"
+        backgroundColor=""
+        borderColor=""
+        textColor=""
+        className="!w-[120px] lg:!w-[182px] h-[40px] !mt-2 !mb-8 !bg-impo_Primary_Primary !border-impo_Primary_Primary !text-impo_Primary_OnPrimary"
         onClick={() => scrollToIdHandler(DOWNLOAD_APP_SECTION_ID)}
         fontSize={breakPoint.laptop ? 'Lable_Large' : 'Title_Small'}
       >

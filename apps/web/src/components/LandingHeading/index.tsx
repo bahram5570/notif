@@ -24,8 +24,8 @@ const LandingHeading = ({
                         flex
                         items-center
                         justify-center
-                        bg-cover
-                        bg-center
+                        !bg-cover
+                        !bg-center
                         ${className}
                       `}
           >

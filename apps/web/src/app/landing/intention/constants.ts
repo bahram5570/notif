@@ -66,24 +66,28 @@ export const INTENTION_COMMENTS_LIST = [
 export const INTENTION_FEATURES_INTRODUCTION_LIST = [
   {
     image: '/assets/images/featuresIntroduction/intention/0.webp',
+    imageDark: '/assets/images/featuresIntroduction/intention/dark-0.webp',
     title: 'پیش‌بینی زمان باروری و تخمک‌گذاری',
     description:
       'تو ایمپو، تاریخ‌های مهم چرخه قاعدگیت رو برات پیش‌بینی می‌کنیم؛ مثل دوره باروری، روز تخمک‌گذاری، شروع پریود و هر موردی که نیاز به برنامه ریزی داره.',
   },
   {
     image: '/assets/images/featuresIntroduction/intention/1.webp',
+    imageDark: '/assets/images/featuresIntroduction/intention/dark-1.webp',
     title: 'یادآوری و اطلاع‌رسانی تاریخ‌های مهم',
     description:
       'تو ایمپو، تاریخ‌های مهم چرخه قاعدگیت رو یادت میاریم و بهت نوتیف می‌دیم؛ مثل شروع پریود، روز تخمک‌گذاری و دوره باروری، تا همیشه به موقع در جریان باشی!',
   },
   {
     image: '/assets/images/featuresIntroduction/intention/2.webp',
+    imageDark: '/assets/images/featuresIntroduction/intention/dark-2.webp',
     title: 'محاسبه احتمال بارداری',
     description:
       'تو ایمپو، احتمال بارداری رو برات محاسبه می‌کنیم تا بدونی تو هر روز از چرخه قاعدگیت و زمان رابطه جنسی، چقدر احتمال بارداری داری و بتونی با خیال راحت‌تر برنامه‌ریزی کنی!',
   },
   {
     image: '/assets/images/featuresIntroduction/intention/3.webp',
+    imageDark: '/assets/images/featuresIntroduction/intention/dark-3.webp',
     title: 'ثبت و تفسیر بیبی چک',
     description:
       'تو ایمپو می‌تونی نتایج بیبی چک‌هات رو ثبت کنی و تفسیرش رو به ما بسپری. بهت کمک می‌کنیم تا نتیجه رو دقیق‌تر بفهمی و قدم بعدی رو با اطمینان برداری!',

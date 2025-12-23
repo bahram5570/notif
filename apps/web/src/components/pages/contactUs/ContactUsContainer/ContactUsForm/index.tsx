@@ -39,7 +39,7 @@ const ContactUsForm = () => {
             hasOutline={true}
             fontSize="Body_Medium"
             value={userInfo?.fullName || ''}
-            className="w-full sm:p-4 p-2 rounded-xl bg-impo_Surface_SurfaceVariant !outline-impo_Primary_Primary"
+            className="w-full sm:p-4 p-2 rounded-xl bg-impo_Neutral_Surface !outline-impo_Primary_Primary"
             onValue={(v) => onChangeHandler(v, 'fullName')}
             placeholder="متن خود را وارد کنید"
           />
@@ -55,7 +55,7 @@ const ContactUsForm = () => {
             hasOutline={true}
             fontSize="Body_Medium"
             value={userInfo?.subject || ''}
-            className="w-full sm:p-4 p-2 rounded-xl bg-impo_Surface_SurfaceVariant !outline-impo_Primary_Primary"
+            className="w-full sm:p-4 p-2 rounded-xl bg-impo_Neutral_Surface !outline-impo_Primary_Primary"
             onValue={(v) => onChangeHandler(v, 'subject')}
             placeholder="متن خود را وارد کنید"
           />
@@ -74,7 +74,7 @@ const ContactUsForm = () => {
             hasOutline={true}
             fontSize="Body_Medium"
             value={userInfo?.email || ''}
-            className="w-full sm:p-4 p-2 rounded-xl bg-impo_Surface_SurfaceVariant !outline-impo_Primary_Primary"
+            className="w-full sm:p-4 p-2 rounded-xl bg-impo_Neutral_Surface !outline-impo_Primary_Primary"
             onValue={(v) => onChangeHandler(v, 'email')}
             placeholder="متن خود را وارد کنید"
           />
@@ -91,7 +91,7 @@ const ContactUsForm = () => {
             hasOutline={true}
             fontSize="Body_Medium"
             value={userInfo?.phoneNumber || ''}
-            className="w-full sm:p-4 p-2 rounded-xl bg-impo_Surface_SurfaceVariant !outline-impo_Primary_Primary"
+            className="w-full sm:p-4 p-2 rounded-xl bg-impo_Neutral_Surface !outline-impo_Primary_Primary"
             onValue={(v) => onChangeHandler(v, 'phoneNumber')}
             placeholder="متن خود را وارد کنید"
             maxLength={11}
@@ -109,7 +109,7 @@ const ContactUsForm = () => {
         <textarea
           rows={6}
           value={userInfo?.description || ''}
-          className="w-full sm:p-4 p-2 rounded-xl bg-impo_Surface_SurfaceVariant !outline-impo_Primary_Primary"
+          className="w-full sm:p-4 p-2 rounded-xl bg-impo_Neutral_Surface !outline-impo_Primary_Primary"
           onChange={(e) => onChangeHandler(e.target.value, 'description')}
           style={{
             ...typographyDetails,

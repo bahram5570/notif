@@ -11,6 +11,7 @@ const FeaturesIntruductionCardGenerator = ({
   isInverse,
   image,
   title,
+  imageDark,
 }: FeaturesIntruductionCardGeneratorTypes) => {
   const { breakPoint } = useBreakPoint();
 
@@ -35,7 +36,18 @@ const FeaturesIntruductionCardGenerator = ({
                 `}
     >
       <div className="relative w-full h-[230px] md:h-full max-w-[720px] md:col-span-7 mx-auto" style={{ order }}>
-        <CustomImage src={image} alt={title} fill={true} className="w-full h-auto object-cover pointer-events-none" />
+        <CustomImage
+          src={imageDark}
+          alt={title}
+          fill={true}
+          className="w-full h-auto object-cover pointer-events-none !hidden dark:!block"
+        />
+        <CustomImage
+          src={image}
+          alt={title}
+          fill={true}
+          className="w-full h-auto object-cover pointer-events-none dark:!hidden !block"
+        />
       </div>
 
       <div className="w-full md:max-w-[500px] px-4 py-6 md:col-span-5 flex flex-col justify-center gap-1 mx-auto order-1">

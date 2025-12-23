@@ -23,7 +23,7 @@ const ContactUsInfo = () => {
                 02191011255
               </CustomTypography>
 
-              <div className="hidden lg:block"> - </div>
+              <div className="hidden lg:block text-impo_Neutral_OnBackground"> - </div>
 
               <CustomTypography fontSize="Body_Large" className="!select-auto text-end !text-impo_Neutral_OnBackground">
                 09157097500
