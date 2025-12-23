@@ -27,9 +27,9 @@ const TestOnlineQuestions = () => {
   const isLastStep = Number(currentStep) === Object.keys(questionList).length - 1;
 
   return (
-    <div className=" lg:w-10/12 lg:mx-auto ">
+    <div className=" w-full ">
       <QuestionProgressBar currentStep={currentStep} questionListLength={Object.keys(questionList).length} />
-      <div className="lg:w-full lg:flex lg:justify-center">
+      <div className="lg:w-full lg:flex lg:justify-center justify-self-center">
         <LogoIcon className="w-20 h-20 mt-11" />
       </div>
 

@@ -2,7 +2,6 @@
 
 import { CAREER_CONTAINER_MAX_WIDTH } from '@components/pages/careers/constants';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import useSteps from './__hooks__/useSteps';
 import { HIRING_ITEMS_LIST } from './constants';
@@ -53,10 +52,12 @@ const CareersHiringProcess = () => {
                 </div>
               )}
 
-              <div className="relative w-12 h-12 min-w-12 min-h-12 md:w-14 md:h-14 md:min-w-14 md:min-h-14 z-10">
-                <item.OffIcon className="w-full h-full" />
+              <div
+                className={`relative w-12 h-12 min-w-12 min-h-12 md:w-14 md:h-14 md:min-w-14 md:min-h-14 z-10 rounded-full flex justify-center items-center ${isOnIcon ? 'bg-impo_Primary_Primary' : 'bg-impo_Neutral_Surface'}`}
+              >
+                <item.OffIcon className="w-[38px] h-[38px] fill-impo_Primary_Primary stroke-impo_Primary_Primary" />
                 <item.OnIcon
-                  className={`absolute top-0 left-0 right-0 bottom-0 w-full h-full duration-500 ${isOnIcon ? 'opacity-100' : 'opacity-0'}`}
+                  className={`fill-pink-50 stroke-pink-50 absolute top-0 left-0 right-0 bottom-0 w-[38px] h-[38px] flex self-center justify-self-center duration-500 ${isOnIcon ? 'opacity-100' : 'opacity-0'}`}
                 />
               </div>
 

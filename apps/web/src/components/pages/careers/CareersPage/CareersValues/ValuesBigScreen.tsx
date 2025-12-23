@@ -8,7 +8,9 @@ const ValuesBigScreen = ({ list }: ValuesBigScreenTypes) => {
       {list.map((item, index) => (
         <div className="w-full flex items-start gap-2" key={index}>
           <div className="w-14 h-14 min-w-14 min-h-14">
-            <item.Icon className="w-full h-full" />
+            <div className="rounded-full bg-impo_Neutral_Background p-3">
+              <item.Icon className="w-full h-full fill-impo_Primary_Primary stroke-impo_Primary_Primary" />
+            </div>
           </div>
 
           <div>
