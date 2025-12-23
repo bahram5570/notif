@@ -21,6 +21,7 @@ const NameSelectionHeading = () => {
                         justify-center 
                         bg-cover 
                         bg-center
+                            dark:!bg-impo_Surface_InverseOnSurface dark:!from-inherit dark:!to-inherit
                         bg-gradient-to-b from-[#F3F5FE] to-[#C9D6FB]
                       "
           >

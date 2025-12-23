@@ -14,7 +14,7 @@ const NameSelectionHeadingContent = () => {
       <CustomTypography
         tagType="span"
         fontSize="Body_Large"
-        className="text-center lg:text-right !text-impo_Surface_InverseSurface"
+        className="text-center lg:text-right !text-impo_Neutral_OnBackground"
       >
         انتخاب اسم یکی از هیجان‌انگیز‌ترین و قشنگ‌ترین لحظه‌های دوران بارداری و صاحب فرزند شدنه. اگه متوجه شدید که جنسیت
         فرزندتون پسره و به دنبال یک «اسم پسر ایرانی» زیبا می‌گردین، باید بدونین که اسم‌های پسرونه اصیل زیادی وجود دارن
