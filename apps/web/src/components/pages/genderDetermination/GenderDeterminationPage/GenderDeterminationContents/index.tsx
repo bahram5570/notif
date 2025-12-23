@@ -7,18 +7,27 @@ const GenderDeterminationContents = () => {
     <div className="w-full">
       {/* // # Text 1 */}
       <div className="mb-4">
-        <CustomTypography fontSize="Lable_Large" className="md:inline text-center md:text-start">
+        <CustomTypography
+          fontSize="Lable_Large"
+          className="md:inline text-center md:text-start  !text-impo_Neutral_OnBackground"
+        >
           این محصول، یک پکیج آماده که همه بتونن ازش استفاده کنن نیست.
         </CustomTypography>
 
-        <CustomTypography fontSize="Body_Large" className="md:inline text-center md:text-start">
+        <CustomTypography
+          fontSize="Body_Large"
+          className="md:inline text-center md:text-start !text-impo_Neutral_OnBackground"
+        >
           بعد از گرفتن شرح حال و بسته به شرایط هر نفر، اقداماتی که هر نفر باید انجام بده هم متفاوته.
         </CustomTypography>
       </div>
 
       {/* // # Text 2 */}
       <div className="mb-8 text-center md:text-start">
-        <CustomTypography fontSize="Body_Large" className="inline text-center md:text-start">
+        <CustomTypography
+          fontSize="Body_Large"
+          className="inline text-center md:text-start !text-impo_Neutral_OnBackground"
+        >
           ماما مهدیه برای
         </CustomTypography>
 
@@ -31,7 +40,9 @@ const GenderDeterminationContents = () => {
 
         <br className="md:hidden" />
 
-        <CustomTypography className="inline text-center md:text-start">و برای</CustomTypography>
+        <CustomTypography className="inline text-center md:text-start !text-impo_Neutral_OnBackground">
+          و برای
+        </CustomTypography>
 
         <CustomTypography
           fontSize="Body_Large"
@@ -40,13 +51,19 @@ const GenderDeterminationContents = () => {
           دختردار شدن از 2 ماه قبل از اقدام به بارداری
         </CustomTypography>
 
-        <CustomTypography fontSize="Body_Large" className="inline text-center md:text-start">
+        <CustomTypography
+          fontSize="Body_Large"
+          className="inline text-center md:text-start !text-impo_Neutral_OnBackground"
+        >
           در کنارته،
         </CustomTypography>
 
         <br className="md:hidden" />
 
-        <CustomTypography fontSize="Body_Large" className="inline text-center md:text-start">
+        <CustomTypography
+          fontSize="Body_Large"
+          className="inline text-center md:text-start !text-impo_Neutral_OnBackground"
+        >
           بهت مشاوره می‌ده و قدم به قدم هر کاری که لازم باشه رو به خودت و همسرت یادآوری می‌کنه
         </CustomTypography>
       </div>
@@ -84,21 +101,21 @@ const GenderDeterminationContents = () => {
 
       {/* // # Text 3 */}
       <div className="mb-8">
-        <CustomTypography fontSize="Body_Large" className="inline">
+        <CustomTypography fontSize="Body_Large" className="inline !text-impo_Neutral_OnBackground">
           در طی مدت پشتیبانی پکیج می‌تونی
         </CustomTypography>
 
-        <CustomTypography fontSize="Lable_Large" className="inline">
+        <CustomTypography fontSize="Lable_Large" className="inline !text-impo_Neutral_OnBackground">
           هر هفته یک جلسه
         </CustomTypography>
 
-        <CustomTypography fontSize="Body_Large" className="inline">
+        <CustomTypography fontSize="Body_Large" className="inline !text-impo_Neutral_OnBackground">
           رو با ماما مهدیه به صورت متنی یا تلفنی صحبت کنی و ازش مشاوره بگیری.
         </CustomTypography>
 
         <br />
 
-        <CustomTypography fontSize="Body_Large" className="inline">
+        <CustomTypography fontSize="Body_Large" className="inline !text-impo_Neutral_OnBackground">
           قبل از خرید پکیج هم
         </CustomTypography>
 
@@ -109,7 +126,7 @@ const GenderDeterminationContents = () => {
           یک جلسه مشاوره رایگان
         </CustomTypography>
 
-        <CustomTypography fontSize="Body_Large" className="inline">
+        <CustomTypography fontSize="Body_Large" className="inline  !text-impo_Neutral_OnBackground">
           برای بررسی شرایطت توسط ماما و طرح سوالات احتمالیت داری.
         </CustomTypography>
       </div>
@@ -164,7 +181,7 @@ const GenderDeterminationContents = () => {
       </div>
 
       {/* // # Text 5 */}
-      <CustomTypography fontSize="Lable_Large" className="text-center">
+      <CustomTypography fontSize="Lable_Large" className="text-center !text-impo_Neutral_OnBackground py-4">
         هر سوال و مشکلی هم داری با پشتیبانی ایمپو (۰۹۱۵۷۰۹۷۵۰۰) تماس بگیر
       </CustomTypography>
     </div>
