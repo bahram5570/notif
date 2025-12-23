@@ -78,7 +78,7 @@ const ResumeInputs = ({ jobId }: ResumeInputsTypes) => {
 
             {!uploadImageLoading && (
               <>
-                <UploadIcon className="w-5 h-auto !stroke-impo_Black" />
+                <UploadIcon className="w-5 h-auto !stroke-impo_Neutral_OnBackground" />
                 <CustomTypography fontSize="Title_Small" className="!text-impo_Neutral_OnSurface">
                   آپلود فایل رزومه
                 </CustomTypography>
@@ -101,9 +101,11 @@ const ResumeInputs = ({ jobId }: ResumeInputsTypes) => {
         isLoading={isLoading}
         fontSize="Lable_Large"
         onClick={validateHandler}
-        className="w-full md:w-[230px] !py-[10px] md:!py-[12px] dark:!bg-impo_Primary_OnPrimary !bg-impo_Primary_Primary !text-impo_Primary_OnPrimary dark:!text-impo_Primary_Primary"
+        className="w-full md:w-[230px] !py-[10px] md:!py-[12px] !bg-impo_Primary_Primary"
       >
-        درخواست همکاری
+        <CustomTypography fontSize="Title_Small" className="!text-impo_Primary_OnPrimary">
+          درخواست همکاری
+        </CustomTypography>
       </CustomButton>
     </div>
   );

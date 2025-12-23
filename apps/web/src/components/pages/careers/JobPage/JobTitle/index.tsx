@@ -16,10 +16,10 @@ const JobTitle = ({ title, id }: JobTitleTypes) => {
         </CustomTypography>
       </div>
 
-      <CustomLink href={`${id}/resume`} className="hidden md:block">
+      <CustomLink href={`${id}/resume`} className="hidden md:block !bg-impo_Primary_Primary rounded-full">
         <CustomTypography
           fontSize="Lable_Large"
-          className="py-[10px] px-[22px] rounded-full dark:!bg-impo_Primary_OnPrimary !bg-impo_Primary_Primary !text-impo_Primary_OnPrimary dark:!text-impo_Primary_Primary"
+          className="py-[10px] px-[22px] rounded-full !text-impo_Primary_OnPrimary"
         >
           درخواست همکاری
         </CustomTypography>

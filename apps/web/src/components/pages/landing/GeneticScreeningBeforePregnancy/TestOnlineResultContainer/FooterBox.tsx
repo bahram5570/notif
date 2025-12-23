@@ -8,14 +8,16 @@ const FooterBox = ({ footer }: FooterBoxProps) => {
   return (
     <>
       <div
-        className="p-3 rounded-xl mt-6 text-center"
+        className="p-3 rounded-xl mt-6 text-center border-impo_Warning_Warning"
         style={{
-          border: `1px solid ${COLORS_LIST.Warning_Warning}`,
+          border: `1px solid`,
           background: `${COLORS_LIST.Warning_Warning}20`,
         }}
       >
-        <CustomTypography fontSize="Lable_Large">{footer.title}</CustomTypography>
-        <CustomTypography fontSize="Body_Medium" className="mt-2">
+        <CustomTypography fontSize="Lable_Large" className="!text-impo_Neutral_OnBackground">
+          {footer.title}
+        </CustomTypography>
+        <CustomTypography fontSize="Body_Medium" className="mt-2 !text-impo_Neutral_OnBackground">
           {footer.text}
         </CustomTypography>
       </div>
@@ -23,10 +25,9 @@ const FooterBox = ({ footer }: FooterBoxProps) => {
       <div className="mt-6 w-fit mx-auto my-5 flex">
         <CustomLink
           href="/landing/genetic-screening-before-pregnancy/lastPage"
-          className="w-fit px-[62px] py-[12px] rounded-full flex justify-center"
-          style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
+          className="w-fit px-[62px] py-[12px] rounded-full flex justify-center !bg-impo_Primary_Primary"
         >
-          <CustomTypography fontSize="Lable_Medium" color={'White'}>
+          <CustomTypography fontSize="Lable_Medium" className="!text-impo_Primary_OnPrimary">
             متوجه شدم
           </CustomTypography>
         </CustomLink>

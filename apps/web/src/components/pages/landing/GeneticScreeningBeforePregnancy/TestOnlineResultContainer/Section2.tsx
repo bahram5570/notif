@@ -8,10 +8,12 @@ import { Section2Props } from './types';
 const Section2 = ({ section }: Section2Props) => {
   return (
     <div
-      className="rounded-[12px] pt-4 pb-6 px-3 lg:px-4 text-center mt-4"
-      style={{ border: `1px solid ${COLORS_LIST.Neutral_Surface}` }}
+      className="rounded-[12px] pt-4 pb-6 px-3 lg:px-4 text-center mt-4 border-impo_Neutral_Surface"
+      style={{ border: `1px solid` }}
     >
-      <CustomTypography fontSize="Lable_Large">باید چکار کنم؟</CustomTypography>
+      <CustomTypography fontSize="Lable_Large" className="!text-impo_Neutral_OnBackground">
+        باید چکار کنم؟
+      </CustomTypography>
       <div className="h-[1px] w-full bg-[#F2F4FB] my-[12px]"></div>
 
       {section.map((item, i) => (
@@ -26,19 +28,20 @@ const Section2 = ({ section }: Section2Props) => {
                 className="w-full h-full object-cover"
               />
             </div>
-            <CustomTypography fontSize="Lable_Medium">{item.title}</CustomTypography>
+            <CustomTypography fontSize="Lable_Medium" className="!text-impo_Neutral_OnBackground">
+              {item.title}
+            </CustomTypography>
           </div>
-          <CustomTypography fontSize="Body_Medium" className="text-right">
+          <CustomTypography fontSize="Body_Medium" className="text-right !text-impo_Neutral_OnBackground">
             {item.text}
           </CustomTypography>
 
           {i === 0 && (
             <CustomLink
               href={'https://weareimpo.ir/referal?type=220&id=18'}
-              className="mt-4 rounded-full w-full block py-[8px]"
-              style={{ backgroundColor: COLORS_LIST.Primary_PrimaryContainer }}
+              className="mt-4 rounded-full w-full block py-[8px] bg-impo_Primary_Primary"
             >
-              <CustomTypography fontSize="Lable_Medium" style={{ color: `${COLORS_LIST.Primary_Primary}` }}>
+              <CustomTypography fontSize="Lable_Medium" className="!text-impo_Primary_OnPrimary">
                 مشاوره با متخصص ژنتیک ایمپو
               </CustomTypography>
             </CustomLink>
