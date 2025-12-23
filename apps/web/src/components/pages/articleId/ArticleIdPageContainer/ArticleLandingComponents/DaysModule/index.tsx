@@ -30,15 +30,15 @@ const DaysModule = ({ placeholder, minValue, defaultValue, value, valueHandler }
   return (
     <div className="w-full h-[56px] flex items-center justify-between px-4 rounded-xl bg-impo_White">
       <div className="w-8 h-8 flex items-center justify-center cursor-pointer" onClick={() => selectHandler(true)}>
-        <AddRoundedIcon className="w-6 h-6 fill-impo_grtext-impo_Grey_500" />
+        <AddRoundedIcon className="w-6 h-6 fill-impo_Grey_800" />
       </div>
 
-      <CustomTypography fontSize="Body_Large" className={`${value ? '!text-impo_Black' : '!text-impo_Grey_500'}`}>
+      <CustomTypography fontSize="Body_Large" className="!text-impo_Grey_800">
         {value || placeholder}
       </CustomTypography>
 
       <div className="w-8 h-8 flex items-center justify-center cursor-pointer" onClick={() => selectHandler(false)}>
-        <RemoveRoundedIcon className="w-6 h-6 fill-impo_grtext-impo_Grey_500" />
+        <RemoveRoundedIcon className="w-6 h-6 fill-impo_Grey_800" />
       </div>
     </div>
   );

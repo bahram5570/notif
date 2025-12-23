@@ -21,7 +21,7 @@ const SlidesArrow = ({ isNextSlide, onClick, isDisabled }: SlidesArrowTypes) => 
                     ${isDisabled && 'opacity-40 pointer-events-none'}
                 `}
     >
-      <ArrowBackIosRoundedIcon className="w-5 h-5 fill-impo_Surface_InverseSurface" />
+      <ArrowBackIosRoundedIcon className="w-5 h-5" />
     </div>
   );
 };
