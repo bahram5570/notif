@@ -24,7 +24,7 @@ const PregnancyAgeCalculator = () => {
           <DateModule submitHandler={submitHandler} isLoading={isLoading} />
         </WavesContainer>
       )}
-      
+
       {weeksResult && pregnancyDateResult && (
         <WavesContainer
           height={breakPoint.mobile ? 550 : 600}

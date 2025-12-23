@@ -8,7 +8,6 @@ import QuestionProgressBar from '@components/modules/QuestionProgressBar';
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { ExpertList } from './constants';
 import useAuth from './useAuth';
@@ -72,8 +71,7 @@ const LandingGeneticLayout = () => {
       <div className="mt-6 w-fit mx-auto my-5 flex">
         <CustomLink
           href="/landing/genetic/testOnline"
-          className="w-fit px-10 py-[12px] rounded-full flex justify-center"
-          style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
+          className="w-fit px-10 py-[12px] rounded-full flex justify-center bg-impo_Primary_Primary"
         >
           <CustomTypography fontSize="Lable_Medium" color={'White'}>
             شروع و تکمیل پرسشنامه

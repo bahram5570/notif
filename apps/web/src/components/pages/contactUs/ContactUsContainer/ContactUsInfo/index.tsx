@@ -47,13 +47,6 @@ const ContactUsInfo = () => {
             </CustomTypography>
           </div>
         </div>
-        {/* <div className="flex flex-row items-start gap-3">
-          <LocationIcon className="w-7 h-7" style={{ stroke: COLORS_LIST.Neutral_OnBackground }} />
-          <div className="flex sm:flex-col flex-row gap-2">
-            <CustomTypography fontSize="Body_Large">آدرس:</CustomTypography>
-            <CustomTypography fontSize="Body_Large">مشهد بلوار وکیل آباد. دانش آموز 9. پلاک 358</CustomTypography>
-          </div>
-        </div> */}
       </div>
     </div>
   );

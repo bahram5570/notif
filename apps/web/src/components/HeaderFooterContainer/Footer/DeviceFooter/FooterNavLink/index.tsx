@@ -7,7 +7,6 @@ import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import { FOOTER_HEIGHT } from '@constants/app.constants';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import { COLORS_LIST } from '@theme/colors';
 
 import useGetBannerList from '../__hooks__/useGetBannerList';
 import { FooterNavLinkTypes } from './types';
@@ -49,7 +48,7 @@ const FooterNavLink = ({ className }: FooterNavLinkTypes) => {
           height={40}
         />
 
-        <CustomTypography fontSize="Lable_Medium" color="Neutral_OnBackground">
+        <CustomTypography fontSize="Lable_Medium" className="!text-impo_Neutral_OnBackground">
           {findCurrentBanner.title}
         </CustomTypography>
       </div>
@@ -61,9 +60,8 @@ const FooterNavLink = ({ className }: FooterNavLinkTypes) => {
           href={findCurrentBanner.btnData.btnUrl}
           style={{
             background: backgroundHandler(findCurrentBanner.btnData.color),
-            borderColor: COLORS_LIST.Neutral_Surface,
           }}
-          className="rounded-full w-fit px-4 py-3 h-[38px] flex items-center justify-center gap-2 relative z-10"
+          className="rounded-full w-fit px-4 py-3 h-[38px] flex items-center justify-center gap-2 relative bg-impo_Neutral_Surface z-10"
         >
           <CustomTypography fontSize="Lable_Medium" color="White">
             {findCurrentBanner.btnData.btnLabel}

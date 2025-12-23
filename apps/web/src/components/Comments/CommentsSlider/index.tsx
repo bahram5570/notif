@@ -68,7 +68,6 @@ const CommentsSlider = ({ list }: CommentsSliderTypes) => {
 
                         <div
                           className="absolute top-0 -right-3 w-6 h-6 min-w-6 min-h-6 rounded-full flex items-center justify-center bg-impo_White"
-                          // style={{ backgroundColor: COLORS_LIST.White }}
                         >
                           <CustomImage src={item.downloadPortIcon} width={14} height={14} sizes="20px" alt="port" />
                         </div>

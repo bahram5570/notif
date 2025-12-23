@@ -25,32 +25,14 @@ const ArticleIdSubjectsList = ({ articleSubjectList }: ArticleIdSubjectsListType
   // }, []);
 
   return (
-    <div
-      className="w-full h-fit rounded-2xl"
-      // style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
-    >
+    <div className="w-full h-fit rounded-2xl">
       <div className="w-full flex items-center justify-between border-[1px] border-x-transparent border-t-transparent border-b-impo_Surface_OutlineVariant pb-3">
         <CustomTypography fontSize="Title_Small" className="!text-impo_Neutral_OnBackground" tagType="h2">
           فهرست محتوا
         </CustomTypography>
-        {/* 
-        <div className="w-fit flex items-center gap-2 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
-          <CustomTypography fontSize="Lable_Medium" color={'Primary_Primary'}>
-            {isOpen ? 'بستن' : 'باز کردن'}
-          </CustomTypography>
-
-          <ArrowIcon
-            className="w-3 duration-100"
-            style={{ fill: COLORS_LIST.Primary_Primary, transform: isOpen ? 'rotate(0deg)' : 'rotate(180deg)' }}
-          />
-        </div> */}
       </div>
 
-      <div
-        ref={ref}
-        className="w-full h-fit flex flex-col duration-500 overflow-hidden"
-        // style={{ maxHeight: isOpen ? maxHeight : 0 }}
-      >
+      <div ref={ref} className="w-full h-fit flex flex-col duration-500 overflow-hidden">
         {articleSubjectList.map((item, index) => (
           <ArticleIdSubjectsListGenerator {...item} isFirstElement={index === 0} key={index} />
         ))}

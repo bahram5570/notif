@@ -1,7 +1,6 @@
 import { clinicCategoryService } from '@services/clinicLandingServices';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import CategoryItem from './CategoryItem';
 

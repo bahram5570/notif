@@ -6,7 +6,6 @@ import CustomModal from '@components/ui/CustomModal';
 import CustomTypography from '@components/ui/CustomTypography';
 import DateSelector from '@components/ui/DateSelector';
 import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
 import m from 'moment-jalaali';
 
 import { PREGNANCY_WEEKS_TOTAL_DAYS } from '../constants';

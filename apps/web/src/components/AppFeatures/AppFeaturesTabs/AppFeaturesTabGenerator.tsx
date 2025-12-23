@@ -27,9 +27,6 @@ const AppFeaturesTabGenerator = ({
         borderColor=""
         backgroundColor=""
         textColor=""
-        // backgroundColor={isSelected ? COLORS_LIST.Primary_Primary : COLORS_LIST.White}
-        // textColor={isSelected ? COLORS_LIST.Primary_OnPrimary : COLORS_LIST.Neutral_OnSurface}
-        // borderColor={isSelected ? COLORS_LIST.Primary_Primary : COLORS_LIST.Surface_OutlineVariant}
       >
         {title}
       </CustomButton>
@@ -47,7 +44,6 @@ const AppFeaturesTabGenerator = ({
           strokeWidth={2}
           rx={tabSizes.rx}
           className="!stroke-impo_Primary_Primary"
-          // stroke={COLORS_LIST.Primary_Primary}
           strokeDasharray={strokeDasharray}
         />
       </svg>

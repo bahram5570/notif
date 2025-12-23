@@ -4,7 +4,6 @@ import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
-import { COLORS_LIST } from '@theme/colors';
 
 import VisitList from './VisitList';
 
@@ -25,8 +24,7 @@ const ClinicVisit = () => {
       <div className="mx-4 mt-9">
         <CustomLink
           href={PWA_LINK_WOMEN_URL}
-          className="h-[40px] lg:h-[60px] p-6 flex items-center justify-center rounded-full"
-          style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
+          className="h-[40px] lg:h-[60px] p-6 flex items-center justify-center rounded-full !text-impo_Primary_Primary"
         >
           <CustomTypography fontSize="Lable_Large" color="Primary_OnPrimary">
             دریافت ویزیت آنلاین

@@ -19,11 +19,7 @@ const Scores = ({ title }: ScoresTypes) => {
       <>
         <div className="flex lg:gap-1">
           {[1, 2, 3, 4, 5].map((item) => (
-            <StarRoundedIcon
-              className="!w-3 lg:!w-5 h-auto !fill-impo_Yellow"
-              // style={{ fill: COLORS_LIST.Yellow }}
-              key={item}
-            />
+            <StarRoundedIcon className="!w-3 lg:!w-5 h-auto !fill-impo_Yellow" key={item} />
           ))}
         </div>
 

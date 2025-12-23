@@ -6,7 +6,6 @@ import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 // import PregnancyProgressbar from '../PregnancyProgressbar';
 import { ResultModuleTypes } from './types';
@@ -22,10 +21,11 @@ const ResultModule = ({ pregnancyDateResult, weeksResult, onReset }: ResultModul
     <>
       <div className="w-full flex flex-col items-center">
         <div className="flex flex-col justify-center sm:items-baseline items-center gap-[5px]">
-          <CustomTypography fontSize="Title_Medium" className="w-full text-center">
+          <CustomTypography fontSize="Title_Medium" className="w-full text-center !text-impo_Black">
             سن بارداری شما:
           </CustomTypography>
-          <CustomTypography fontSize="Body_Large" className="w-full text-center">
+
+          <CustomTypography fontSize="Body_Large" className="w-full text-center !text-impo_Black">
             {weeksResult.week} هفته و {weeksResult.dayOfWeek} روز است
           </CustomTypography>
         </div>
@@ -34,20 +34,20 @@ const ResultModule = ({ pregnancyDateResult, weeksResult, onReset }: ResultModul
             <CustomImage src={weekImage} alt="" fill={true} className="object-contain" />
           </div>
           <div className="sm:w-full sm:h-[215px] h-full sm:grid sm:content-center flex flex-col justify-center bg-contain px-4 py-5 rounded-2xl bg-[url(/assets/images/pregnancyDatebackground2.webp)] bg-no-repeat bg-center">
-            <CustomTypography fontSize="Lable_Medium" className="text-center">
+            <CustomTypography fontSize="Lable_Medium" className="text-center !text-impo_Black">
               تاریخ به دنیا اومدن کوچولوت:
             </CustomTypography>
 
-            <CustomTypography fontSize="Body_Small" className="text-center mt-[6px]">
+            <CustomTypography fontSize="Body_Small" className="text-center mt-[6px] !text-impo_Black">
               {pregnancyDateResult}
             </CustomTypography>
+
             <div className="flex justify-center mt-2">
               <CustomButton
                 onClick={onReset}
                 varient="outline"
                 fontSize="Lable_SmallProminet"
-                className="!px-4 !py-[6px] !h-[28px] !w-fit"
-                style={{ border: 'none', backgroundColor: COLORS_LIST.Primary_PrimaryContainer }}
+                className="!px-4 !py-[6px] !h-[28px] border-none !w-fit bg-impo_Primary_Primary"
               >
                 محاسبه دوباره
               </CustomButton>
@@ -58,12 +58,11 @@ const ResultModule = ({ pregnancyDateResult, weeksResult, onReset }: ResultModul
       </div>
       <CustomLink
         href={'/download'}
-        className="h-[48px] w-full !mt-auto sm:max-w-[460px] text-center rounded-full"
-        style={{ backgroundColor: COLORS_LIST.Primary_Primary, color: 'white' }}
+        className="h-[48px] w-full !mt-auto sm:max-w-[460px] text-center rounded-full bg-impo_Pink_500"
       >
         <CustomTypography
           fontSize="Title_Small"
-          className="h-full !text-white flex justify-center py-[13px] items-center"
+          className="h-full !text-impo_White flex justify-center py-[13px] items-center"
         >
           از ایمپو استفاده کن
         </CustomTypography>

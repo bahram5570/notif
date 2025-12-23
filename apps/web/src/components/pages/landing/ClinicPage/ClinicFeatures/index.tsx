@@ -1,5 +1,4 @@
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import FeatureItem from './FeatureItem';
 import { FeatureList } from './constants';
@@ -16,7 +15,6 @@ const ClinicFeatures = () => {
       }}
     >
       <div className="lg:w-10/12 lg:mx-auto">
-        {' '}
         <CustomTypography
           fontSize="Headline_Small"
           tagType="h2"

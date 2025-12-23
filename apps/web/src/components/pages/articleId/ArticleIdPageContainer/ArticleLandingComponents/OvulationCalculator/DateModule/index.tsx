@@ -6,7 +6,6 @@ import CustomModal from '@components/ui/CustomModal';
 import CustomTypography from '@components/ui/CustomTypography';
 import DateSelector from '@components/ui/DateSelector';
 import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
 import m from 'moment-jalaali';
 
 import DaysModule from '../../DaysModule';
@@ -32,18 +31,19 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
       <div className="w-full h-full flex flex-col gap-2">
         <div
           onClick={() => isOpenHandler(true)}
-          style={{ backgroundColor: COLORS_LIST.White }}
-          className="w-full flex justify-between rounded-2xl p-4 mt-11 cursor-pointer"
+          className="w-full flex justify-between rounded-2xl p-4 mt-11 cursor-pointer bg-impo_White"
         >
           {values.lastPeriod ? (
-            <CustomTypography fontSize="Body_Large">{values.lastPeriod}</CustomTypography>
+            <CustomTypography fontSize="Body_Large" className="!text-impo_Black">
+              {values.lastPeriod}
+            </CustomTypography>
           ) : (
-            <CustomTypography fontSize="Body_Large" color={'Surface_Outline'}>
+            <CustomTypography fontSize="Body_Large" className="!text-impo_Surface_OutlineVariant">
               تاریخ آخرین پریود
             </CustomTypography>
           )}
 
-          <SelectDateIcon className="w-6 h-auto" style={{ stroke: COLORS_LIST.Surface_Outline }} />
+          <SelectDateIcon className="w-6 h-auto stroke-impo_Surface_OutlineVariant" />
         </div>
 
         <DaysModule
@@ -75,13 +75,12 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
       </div>
 
       <CustomModal position={position} isOpen={isOpen} onClose={() => isOpenHandler(false)}>
-        <div
-          className="w-[100vw] max-w-[460px] flex flex-col items-center p-6 md:p-10 md:rounded-2xl"
-          style={{ backgroundColor: COLORS_LIST.White }}
-        >
-          <CustomTypography className="text-center">کاربر عزیز برای محاسبه روز تخمک گذاری</CustomTypography>
+        <div className="w-[100vw] max-w-[460px] flex flex-col items-center p-6 md:p-10 md:rounded-2xl bg-impo_Neutral_Surface">
+          <CustomTypography className="text-center !text-impo_Neutral_OnBackground">
+            کاربر عزیز برای محاسبه روز تخمک گذاری
+          </CustomTypography>
 
-          <CustomTypography fontSize="Lable_Large" className="text-center mt-2">
+          <CustomTypography fontSize="Lable_Large" className="text-center mt-2 !text-impo_Neutral_OnBackground">
             تاریخ آخرین باری که پریود شدی رو بهمون بگو
           </CustomTypography>
 

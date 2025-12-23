@@ -1,7 +1,5 @@
 import BabyIcon from '@assets/icons/baby.svg';
 
-import { COLORS_LIST } from '@theme/colors';
-
 interface PregnancyProgressProps {
   week: number;
 }
@@ -42,8 +40,8 @@ const PregnancyProgressbar = ({ week }: PregnancyProgressProps) => {
       </div>
 
       <div
-        className="absolute top-10 text-2xl z-10 h-10 w-10 rounded-full flex justify-center items-center  transition-all duration-300"
-        style={{ left: `calc(${iconPosition}% - 12px)`, backgroundColor: COLORS_LIST.Primary_Primary }}
+        className="absolute top-10 text-2xl z-10 h-10 w-10 rounded-full flex justify-center items-center bg-impo_Primary_Primary transition-all duration-300"
+        style={{ left: `calc(${iconPosition}% - 12px)` }}
         title={`Week ${week}`}
       >
         <BabyIcon className="w-7 h-auto" />

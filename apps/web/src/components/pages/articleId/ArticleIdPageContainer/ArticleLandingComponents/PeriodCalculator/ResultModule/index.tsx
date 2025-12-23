@@ -1,28 +1,24 @@
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
-import { COLORS_LIST } from '@theme/colors';
 
 import { ResultModuleTypes } from './types';
 
 const ResultModule = ({ result, onReset }: ResultModuleTypes) => {
   return (
     <div className="w-full h-full flex flex-col items-center">
-      <div
-        style={{ borderColor: COLORS_LIST.Cyan_600, backgroundColor: COLORS_LIST.White }}
-        className="w-full sm:w-[400px] h-fit py-6 rounded-2xl border-[1px] mt-8 mb-10"
-      >
-        <CustomTypography fontSize="Lable_Medium" style={{ color: '#6C2337' }} className="text-center">
+      <div className="w-full sm:w-[400px] h-fit py-6 rounded-2xl border-[1px] mt-8 mb-10 border-impo_Cyan_600 bg-impo_White">
+        <CustomTypography fontSize="Lable_Medium" className="text-center !text-[#6C2337]">
           شروع دوره پریود شما از روز :
         </CustomTypography>
 
-        <CustomTypography fontSize="Title_Large" style={{ color: '#6C2337' }} className="text-center pt-2">
+        <CustomTypography fontSize="Title_Large" className="text-center pt-2 !text-[#6C2337]">
           {result}
         </CustomTypography>
       </div>
 
       <div className="flex justify-center cursor-pointer" onClick={onReset}>
-        <CustomTypography color={'Primary_Primary'} fontSize="Title_Small">
+        <CustomTypography fontSize="Title_Small" className="!text-impo_Pink_500">
           محاسبه دوباره دوره پریود
         </CustomTypography>
       </div>
@@ -30,11 +26,10 @@ const ResultModule = ({ result, onReset }: ResultModuleTypes) => {
       <CustomLink
         target="_blank"
         href={PWA_LINK_WOMEN_URL}
-        style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
         id="install_tool"
-        className="absolute bottom-6 left-4 right-4 h-[48px] sm:max-w-[460px] mx-auto mt-auto flex items-center justify-center rounded-full"
+        className="absolute bottom-6 left-4 right-4 h-[48px] sm:max-w-[460px] mx-auto mt-auto flex items-center justify-center rounded-full bg-impo_Pink_500"
       >
-        <CustomTypography fontSize="Title_Small" color={'Primary_OnPrimary'}>
+        <CustomTypography fontSize="Title_Small" className="!text-impo_White">
           از ایمپو استفاده کن
         </CustomTypography>
       </CustomLink>

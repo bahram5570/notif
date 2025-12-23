@@ -7,7 +7,6 @@ import { DOWNLOAD_APP_SECTION_ID } from '@components/DownloadApp/DownloadAppWome
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
 import { FOOTER_HEIGHT } from '@constants/app.constants';
-import { COLORS_LIST } from '@theme/colors';
 import { useRouter } from 'next/navigation';
 
 const FooterDownloadApp = () => {
@@ -26,10 +25,7 @@ const FooterDownloadApp = () => {
       style={{ bottom: FOOTER_HEIGHT, height: FOOTER_HEIGHT }}
       className="fixed left-0 right-0 flex flex-col items-center justify-between  shadow-2xl z-10 lg:hidden"
     >
-      <div
-        className="w-full h-[80px] flex items-center justify-between px-4 shadow-2xl z-10 lg:hidden"
-        style={{ backgroundColor: COLORS_LIST.White }}
-      >
+      <div className="w-full h-[80px] flex items-center justify-between px-4 shadow-2xl z-10 bg-impo_White lg:hidden">
         <div className="flex items-center gap-2">
           <ImpoIcon className="w-10" />
           <CustomTypography fontSize="Lable_Large">اپلیکیشن ایمپو</CustomTypography>

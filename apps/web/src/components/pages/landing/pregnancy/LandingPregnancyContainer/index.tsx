@@ -72,7 +72,7 @@ const LandingPregnancyContainer = () => {
         href="/landing/pregnancy/testOnline"
         className="w-full p-[10px] rounded-full flex justify-center bg-impo_Primary_Primary"
       >
-        <CustomTypography fontSize="Lable_Medium" className="!text-impo_White">
+        <CustomTypography fontSize="Lable_Medium" className="!text-impo_Primary_OnPrimary">
           شروع تست آنلاین
         </CustomTypography>
       </CustomLink>

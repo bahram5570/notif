@@ -8,7 +8,6 @@ import { textShorter } from '@utils/scripts';
 import { ItemGenerator, TitleGenerator } from '@components/SelectName/Description';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 const Description = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -188,8 +187,8 @@ const Description = () => {
         </CustomTypography>
 
         <ArrowIcon
-          className="w-4 duration-100"
-          style={{ fill: COLORS_LIST.PrimaryMan_PrimaryMan, transform: isOpen ? 'rotate(0deg)' : 'rotate(180deg)' }}
+          className="w-4 duration-100 fill-impo_PrimaryMan_PrimaryMan"
+          style={{ transform: isOpen ? 'rotate(0deg)' : 'rotate(180deg)' }}
         />
       </div>
     </div>

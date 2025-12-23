@@ -38,10 +38,7 @@ const WaysToCalmDown = () => {
         </CustomTypography>
       </div>
 
-      <div
-        // style={{ background: COLORS_LIST.Surface_SurfaceVariant }}
-        className=" rounded-2xl py-6 px-4 bg-gradient-to-b from-[#ECFBE3] to-[#F7F7F7]"
-      >
+      <div className=" rounded-2xl py-6 px-4 bg-gradient-to-b from-[#ECFBE3] to-[#F7F7F7]">
         <div className="flex flex-col gap-1">
           <CustomTypography fontSize="Title_Medium" style={{ color: '#076747' }}>
             چند لحظه آرامش؛ مدیتیشن
@@ -108,10 +105,7 @@ const WaysToCalmDown = () => {
         </div>
       </div>
 
-      <div
-        // style={{ background: COLORS_LIST.Surface_SurfaceVariant }}
-        className=" rounded-2xl py-6 px-4 bg-gradient-to-b from-[#E3FBF4] to-[#F7F7F7]"
-      >
+      <div className=" rounded-2xl py-6 px-4 bg-gradient-to-b from-[#E3FBF4] to-[#F7F7F7]">
         <div className="flex flex-col gap-1">
           <CustomTypography fontSize="Title_Medium" style={{ color: '#076747' }}>
             نُت‌هایی از جنس آرامش؛ موسیقی

@@ -2,7 +2,6 @@ import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { DaysModuleTypes } from './types';
 
@@ -29,20 +28,17 @@ const DaysModule = ({ placeholder, minValue, defaultValue, value, valueHandler }
   };
 
   return (
-    <div
-      style={{ backgroundColor: COLORS_LIST.White }}
-      className="w-full h-[56px] flex items-center justify-between px-4 rounded-xl"
-    >
+    <div className="w-full h-[56px] flex items-center justify-between px-4 rounded-xl bg-impo_White">
       <div className="w-8 h-8 flex items-center justify-center cursor-pointer" onClick={() => selectHandler(true)}>
-        <AddRoundedIcon style={{ width: '24px', height: '24px', fill: COLORS_LIST.Surface_Outline }} />
+        <AddRoundedIcon className="w-6 h-6 fill-impo_grtext-impo_Grey_500" />
       </div>
 
-      <CustomTypography fontSize="Body_Large" color={value ? 'Neutral_OnBackground' : 'Surface_Outline'}>
+      <CustomTypography fontSize="Body_Large" className={`${value ? '!text-impo_Black' : '!text-impo_Grey_500'}`}>
         {value || placeholder}
       </CustomTypography>
 
       <div className="w-8 h-8 flex items-center justify-center cursor-pointer" onClick={() => selectHandler(false)}>
-        <RemoveRoundedIcon style={{ width: '24px', height: '24px', fill: COLORS_LIST.Surface_Outline }} />
+        <RemoveRoundedIcon className="w-6 h-6 fill-impo_grtext-impo_Grey_500" />
       </div>
     </div>
   );
