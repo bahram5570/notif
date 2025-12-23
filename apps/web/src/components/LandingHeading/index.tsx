@@ -15,16 +15,16 @@ const LandingHeading = ({
       <div className="absolute left-0 right-0 bottom-0 flex justify-center">
         <div className="w-[700dvw] h-[700dvw] min-w-[700dvw] min-h-[700dvw] rounded-full flex items-end overflow-hidden">
           <div
-            style={{ backgroundImage }}
+            style={{ background: `url(${backgroundImage})` }}
             className={`
-                        w-[100dvw] 
-                        h-[680px] 
-                        xl:h-[750px] 
-                        mx-auto 
-                        flex 
-                        items-center 
-                        justify-center 
-                        bg-cover 
+                        w-[100dvw]
+                        h-[680px]
+                        xl:h-[750px]
+                        mx-auto
+                        flex
+                        items-center
+                        justify-center
+                        bg-cover
                         bg-center
                         ${className}
                       `}

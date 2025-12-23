@@ -31,7 +31,7 @@ const AppFeaturesContents = ({ currentTab }: AppFeaturesContentsTypes) => {
                   key={index + contentIndex}
                   href={item.lintTo}
                   style={{ gridColumn, gridRow }}
-                  className="relative w-full h-full rounded-2xl lg:rounded-3xl select-none pointer-events-none overflow-hidden bg-impo_Surface_SurfaceVariant"
+                  className="relative w-full h-full rounded-2xl lg:rounded-3xl select-none pointer-events-none overflow-hidden bg-impo_Neutral_Surface"
                 >
                   <CustomImage
                     key={image}
@@ -52,7 +52,7 @@ const AppFeaturesContents = ({ currentTab }: AppFeaturesContentsTypes) => {
 
                     <CustomTypography
                       fontSize="Body_Small"
-                      className={`${breakPoint.laptop && '!text-[9px] !text-impo_Neutral_OnSurface'}`}
+                      className={`${breakPoint.laptop && '!text-[9px] '} !text-impo_Neutral_OnSurface`}
                     >
                       {item.description}
                     </CustomTypography>
