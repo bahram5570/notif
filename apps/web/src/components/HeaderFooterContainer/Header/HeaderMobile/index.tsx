@@ -21,7 +21,7 @@ const HeaderMobile = () => {
         className="w-full pl-4 pr-6 flex items-center justify-between border-b-[1px] border-b-impo_Surface_SurfaceVariant bg-impo_OnBlack"
       >
         <CustomLink href="/">
-          <ImpoIcon className="w-14 h-auto fill-impo_Primary_Primary" />
+          <ImpoIcon className="w-14 h-auto fill-impo_Pink_500" />
         </CustomLink>
 
         <div className="w-12 h-12 flex items-center justify-center" onClick={() => isOpenHandler(!isOpen)}>

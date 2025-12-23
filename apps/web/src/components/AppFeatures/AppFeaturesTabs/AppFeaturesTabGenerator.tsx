@@ -46,7 +46,7 @@ const AppFeaturesTabGenerator = ({
           height="94%"
           strokeWidth={2}
           rx={tabSizes.rx}
-          className="dark:!stroke-impo_Primary_OnPrimary !stroke-impo_Primary_Primary"
+          className="!stroke-impo_Primary_Primary"
           // stroke={COLORS_LIST.Primary_Primary}
           strokeDasharray={strokeDasharray}
         />

@@ -34,7 +34,7 @@ const CommentsSlider = ({ list }: CommentsSliderTypes) => {
               {({ isActive }) => (
                 <>
                   <div
-                    className="flex flex-col items-center justify-between gap-8 px-4 sm:px-6 py-4 sm:py-8 rounded-3xl mx-auto w-[340px] sm:w-[450px] !h-full bg-impo_Surface_SurfaceVariant"
+                    className="flex flex-col items-center justify-between gap-8 px-4 sm:px-6 py-4 sm:py-8 rounded-3xl mx-auto w-[340px] sm:w-[450px] !h-full bg-impo_Neutral_Surface"
                     style={{
                       opacity: isActive ? '1' : '0.5',
                     }}
