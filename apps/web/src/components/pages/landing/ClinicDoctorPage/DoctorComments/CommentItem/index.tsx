@@ -1,17 +1,16 @@
 import StarRating from '@components/StarRating';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { CommentItemProps } from './types';
 
 const CommentItem = ({ userCommentPositive, userCommentNegitive, userRate = 4, userText }: CommentItemProps) => {
   return (
-    <div className="rounded-[16px] px-3 py-[16px]" style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}>
+    <div className="rounded-[16px] px-3 py-[16px] bg-impo_Neutral_Surface">
       <StarRating rating={userRate} />
-      <CustomTypography fontSize="Body_Large" tagType="h6" className="mt-4">
+      <CustomTypography fontSize="Body_Large" tagType="h6" className="mt-4 !text-impo_Neutral_OnBackground">
         {userText}
       </CustomTypography>
-      <span className="w-full block h-[1px] mt-4 mb-3 mx-0" style={{ background: COLORS_LIST.Neutral_Surface }}></span>
+      <span className="w-full block h-[1px] mt-4 mb-3 mx-0 bg-impo_Neutral_Background"></span>
       <div className="grid items-center gap-y-2 gap-x-2 m-[12px]">
         {userCommentPositive.map((item, index) => (
           <div className="flex gap-2 items-center" key={index}>
@@ -19,8 +18,7 @@ const CommentItem = ({ userCommentPositive, userCommentNegitive, userRate = 4, u
             <CustomTypography
               fontSize="Body_Small"
               tagType="span"
-              className="text-right"
-              style={{ color: COLORS_LIST.Neutral_OnBackground }}
+              className="text-right !text-impo_Neutral_OnBackground"
             >
               {item}
             </CustomTypography>
@@ -32,8 +30,7 @@ const CommentItem = ({ userCommentPositive, userCommentNegitive, userRate = 4, u
             <CustomTypography
               fontSize="Body_Small"
               tagType="span"
-              className="text-right"
-              style={{ color: COLORS_LIST.Neutral_OnBackground }}
+              className="text-right !text-impo_Neutral_OnBackground"
             >
               {item}
             </CustomTypography>

@@ -11,9 +11,8 @@ const ClinicCategoryPage = ({ clinicDataProps, params }: { clinicDataProps: Clin
   return (
     <HeaderFooterContainer>
       <div
-        className="pt-[85px] w-full md:mt-12  landing_container"
+        className={`pt-[85px] w-full md:mt-12 landing_container dark:bg-[url(/assets/images/clinicLanding/maskPatternDark.webp)] bg-[url(/assets/images/clinicLanding/${HeadingPattern[clinicDataProps.categoryTitle as keyof typeof HeadingPattern] || 'headingPattern.webp'})]`}
         style={{
-          backgroundImage: `url(/assets/images/clinicLanding/${HeadingPattern[clinicDataProps.categoryTitle as keyof typeof HeadingPattern] || 'headingPattern.webp'})`,
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
           backgroundPositionY: '20px',
@@ -27,7 +26,7 @@ const ClinicCategoryPage = ({ clinicDataProps, params }: { clinicDataProps: Clin
         </div>
       </div>
     </HeaderFooterContainer>
-  );
+  );  
 };
 
 export default ClinicCategoryPage;

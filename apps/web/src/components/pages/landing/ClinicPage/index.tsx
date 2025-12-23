@@ -12,9 +12,8 @@ const ClinicPage = () => {
   return (
     <HeaderFooterContainer>
       <div
-        className="pt-[100px] w-full md:mt-12 mb-10 landing_container"
+        className="pt-[100px] w-full md:mt-12 mb-10 landing_container dark:bg-none bg-[url(/assets/images/clinicLanding/featureBg.webp)]"
         style={{
-          backgroundImage: 'url(/assets/images/clinicLanding/featureBg.webp)',
           backgroundSize: 'cover',
           backgroundPosition: 'center -100rem',
           // maxWidth: SMALL_SCREEN_MAX_WIDTH,
