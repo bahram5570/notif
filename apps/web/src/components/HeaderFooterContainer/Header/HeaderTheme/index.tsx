@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import DarkIcon from '@assets/icons/themeDark.svg';
-import { getTheme, themeHandler } from '@utils/theme';
+import { getTheme, themeHandler } from '@theme/__utils__';
 
 import CustomTypography from '@components/ui/CustomTypography';
 import { HEADER_THEME_LIST } from '@constants/links.constants';
@@ -12,7 +12,7 @@ const HeaderTheme = () => {
   const { breakPoint } = useBreakPoint();
   const ref = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [themeMode, setThemeMode] = useState<ThemeTypes>('dark');
+  const [themeMode, setThemeMode] = useState<ThemeTypes>('system');
 
   useEffect(() => {
     setThemeMode(getTheme());

@@ -1,4 +1,4 @@
-import { ThemeTypes } from '@theme/types';
+import { ThemeTypes } from './types';
 
 export const themeHandler = (mode: ThemeTypes) => {
   localStorage.setItem('theme', mode);
@@ -15,6 +15,6 @@ export const themeHandler = (mode: ThemeTypes) => {
 
 export const getTheme = () => {
   const storedTheme = localStorage.getItem('theme');
-  const mode = (storedTheme ? storedTheme : 'light') as ThemeTypes;
+  const mode = (storedTheme ? storedTheme : 'system') as ThemeTypes;
   return mode;
 };

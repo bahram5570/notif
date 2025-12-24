@@ -1,11 +1,3 @@
-const iosWeightMatcher = (no: number) => {
-  return no * (1 - 0.04);
-};
-
-const iosSizeMatcher = (no: number) => {
-  return no * (1 + 0.09);
-};
-
 export const FONTS_ANDROID = {
   Headline_Large: {
     fontWeight: 700,
