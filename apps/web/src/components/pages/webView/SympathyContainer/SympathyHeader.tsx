@@ -12,7 +12,7 @@ const SympathyHeader = () => {
           <CustomTypography fontSize="Title_Large" className="!text-impo_Pink_900">
             همدلی با ایمپو
           </CustomTypography>
-          <CustomTypography fontSize="Body_Large" className="!text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Body_Large">
             حمایت بیشتر، گفتگوی بیشتر، ارتباط صمیمانه‌تر!
           </CustomTypography>
         </div>
@@ -21,7 +21,7 @@ const SympathyHeader = () => {
             return (
               <div className="flex items-start gap-1" key={index}>
                 <div className="w-6 h-6 flex justify-center ">
-                  <TickIcon className="w-4 h-4 !fill-impo_Neutral_OnBackground" />
+                  <TickIcon className="w-4 h-4 !fill-impo_Black" />
                 </div>
 
                 <CustomTypography fontSize="Body_Small" className="pl-8 w-fit">

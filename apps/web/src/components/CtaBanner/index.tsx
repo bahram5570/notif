@@ -5,8 +5,9 @@ import { CtaBannerTypes } from './types';
 const CtaBanner = ({ id, backgroundColor, title, description, image, link, buttonLabel, name }: CtaBannerTypes) => {
   return (
     <div className="relative w-fit py-5 mx-auto">
-      <a href={link} id={id}>
+      <a href={link} id={id} data-no-cheerio-styling>
         <div
+          data-no-cheerio-styling
           style={{ backgroundColor }}
           className="
                       w-full 
@@ -28,6 +29,7 @@ const CtaBanner = ({ id, backgroundColor, title, description, image, link, butto
         >
           <div className="w-full md:w-7/12 flex flex-col items-center md:items-start pt-10 px-8">
             <p
+              data-no-cheerio-styling
               className="
                           !text-impo_Black
                           !text-[19px] 
@@ -44,6 +46,7 @@ const CtaBanner = ({ id, backgroundColor, title, description, image, link, butto
             </p>
 
             <p
+              data-no-cheerio-styling
               className="
                           pt-2 
                           pb-5
@@ -60,6 +63,7 @@ const CtaBanner = ({ id, backgroundColor, title, description, image, link, butto
             </p>
 
             <div
+              data-no-cheerio-styling
               style={{ ...FONTS_ANDROID.Body_Large }}
               className="py-2 px-6 md:mt-auto md:mb-6 rounded-full animate-bounce text-impo_White bg-impo_Pink_500"
             >
