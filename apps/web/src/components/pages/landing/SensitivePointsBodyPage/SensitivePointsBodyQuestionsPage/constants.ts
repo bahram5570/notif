@@ -1,0 +1,1 @@
+export const SENSITIVE_POINTS_BODY_QUESTION_DATA = [{}];

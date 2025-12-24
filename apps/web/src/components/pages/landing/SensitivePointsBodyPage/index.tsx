@@ -1,0 +1,83 @@
+import ImpoIcon from '@assets/icons/impoName.svg';
+
+import CustomImage from '@components/ui/CustomImage';
+import CustomLink from '@components/ui/CustomLink';
+import CustomTypography from '@components/ui/CustomTypography';
+
+const SensitivePointsBodyPage = () => {
+  return (
+    <>
+      <div className="lg:w-10/12 lg:mx-auto h-full">
+        <div className="bg-impo_Red_200  scale-y-[-1] [clip-path:ellipse(100%_90%_at_50%_95%)]">
+          <CustomImage
+            src="/assets/images/sensitive/header.webp"
+            className="mx-auto pt-6 scale-y-[-1]"
+            height={0}
+            width={500}
+            alt="sensitive"
+          />
+        </div>
+
+        <div className="bg-impo_White px-4 flex flex-col gap-3">
+          <CustomTypography fontSize="Title_Small" className=" text-impo_black text-center">
+            سارا عزیز سلام
+          </CustomTypography>
+          <CustomTypography fontSize="Body_Medium" className=" text-impo_black text-center">
+            این تست، یک تست خود آگاهی برای کشف نقاط طلایی و حساس بدن در زنانه و بررسی می‌کنه کدام نواحی، نوع لمس و شرایط
+            ذهنی بیشترین واکنش لذت رو برات ایجاد می‌کنند.
+          </CustomTypography>
+          <div className="flex flex-col gap-1">
+            <CustomTypography className=" text-impo_black text-center"> هدف تست:</CustomTypography>
+            <CustomTypography className=" text-impo_black text-center">
+              ارزیابی علمی آگاهی بدنی و ترجیحات حسی شماست، نه سنجش عملکرد یا مقایسه خودت با دیگران!
+            </CustomTypography>
+          </div>
+
+          <div className="bg-impo_Pink_50 rounded-xl border-2 border-impo_Pink_400 p-4">
+            <CustomTypography fontSize="Lable_Medium">نکاتی برای قبل از شروع تست</CustomTypography>
+            <ul className="list-disc pr-4 mx-2 mt-3">
+              <li>
+                <CustomTypography fontSize="Body_Small">
+                  در محیطی آرام، بدون مزاحمت و با نور ملایم باشید.
+                </CustomTypography>
+              </li>
+              <li>
+                <CustomTypography fontSize="Body_Small">
+                  پاسخ‌ها باید بر اساس احساس واقعی و تجربه شخصی شما باشد، نه آنچه فکر می‌کنید «درست» است.
+                </CustomTypography>
+              </li>
+              <li>
+                <CustomTypography fontSize="Body_Small">
+                  حین پاسخ دادن، چند ثانیه توجه خود را به بدن معطوف کنید.
+                </CustomTypography>
+              </li>{' '}
+              <li>
+                <CustomTypography fontSize="Body_Small">
+                  برای هر سؤال، گزینه ای را انتخاب کنید که بیشترین شباهت را به تجربه یا ترجیح شما دارد.
+                </CustomTypography>
+              </li>
+            </ul>
+          </div>
+          <div className="mt-3 flex flex-col justify-center items-center gap-3">
+            <CustomLink href="/landing/sensitive/questions">
+              <CustomTypography
+                fontSize="Title_Small"
+                className="text-impo_White !bg-impo_Pink_500 rounded-full h-12 flex justify-center items-center px-4"
+              >
+                شروع و تکمیل پرسشنامه
+              </CustomTypography>
+            </CustomLink>
+            <div className="flex items-center justify-center">
+              <CustomTypography fontSize="Body_Small" className="text-impo_black">
+                تهیه و تایید علمی توسط متخصصین اپلیکیشن
+              </CustomTypography>
+              <ImpoIcon className="w-8 h-auto fill-impo_Pink_500" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default SensitivePointsBodyPage;
