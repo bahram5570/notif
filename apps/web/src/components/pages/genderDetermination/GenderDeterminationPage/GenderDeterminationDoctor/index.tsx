@@ -37,16 +37,18 @@ const GenderDeterminationDoctor = () => {
 
       <div className="flex flex-col items-center md:items-start pt-[80px] md:pt-[40px] md:pb-[60px] md:pr-[180px]">
         <div className="flex flex-col md:flex-row items-center gap-3 md:gap-5 pb-3">
-          <CustomTypography fontSize="Title_Medium" tagType="h3">
+          <CustomTypography fontSize="Title_Medium" tagType="h3" className="!text-impo_Neutral_OnBackground">
             مهدیه فتح‌الهی
           </CustomTypography>
 
-          <CustomTypography fontSize="Body_Large" tagType="h4">
+          <CustomTypography fontSize="Body_Large" tagType="h4" className="!text-impo_Neutral_OnBackground">
             کارشناس مامایی
           </CustomTypography>
         </div>
 
-        <CustomTypography>دارای مدرک دوره تعیین جنسیت موسس عصر جدید مامایی</CustomTypography>
+        <CustomTypography className="!text-impo_Neutral_OnBackground">
+          دارای مدرک دوره تعیین جنسیت موسس عصر جدید مامایی
+        </CustomTypography>
         <div className="w-full h-[1px] my-6 md:hidden bg-impo_Pink_200" />
       </div>
     </>
