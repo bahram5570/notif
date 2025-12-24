@@ -14,7 +14,7 @@ const SympathyContainer = () => {
       <div className="flex flex-col ">
         <SympathyHeader />
 
-        <div className="px-4 flex flex-col gap-6 py-10 bg-impo_Surface_SurfaceVariant">
+        <div className="px-4 flex flex-col gap-6 py-10 bg-impo_Grey_50">
           <SympathyIntroduction />
           <div className="flex flex-col gap-4">
             <StorySection title=" کشف همدلی ایمپو ✨" storyList={STORY_LIST} />

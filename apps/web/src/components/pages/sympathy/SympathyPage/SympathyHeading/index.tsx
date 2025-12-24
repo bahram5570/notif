@@ -9,7 +9,7 @@ const SympathyHeading = () => {
       contentElement={<SympathyHeadingContents />}
       image="/assets/images/sympathyLandingImage.webp"
       backgroundImage="/assets/images/sympathyLandingBackground.webp"
-      className="dark:!bg-[url()] dark:!bg-impo_Surface_InverseOnSurface "
+      className="dark:!bg-none dark:!bg-impo_Surface_InverseOnSurface "
     />
   );
 };

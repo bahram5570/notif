@@ -29,7 +29,7 @@ const StorySection = ({ title, storyList }: StorySectionPropsType) => {
   return (
     <>
       <div className="flex flex-col  gap-3">
-        <CustomTypography fontSize="Title_Small" color="Neutral_OnBackground">
+        <CustomTypography fontSize="Title_Small">
           {title}
         </CustomTypography>
         {/* <div className=" rounded-xl py-3 px-4 bg-impo_Neutral_Background">

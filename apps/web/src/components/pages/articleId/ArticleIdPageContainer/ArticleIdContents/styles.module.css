@@ -11,6 +11,7 @@
   height: auto;
   border-radius: 16px;
   margin: 20px 0;
+  aspect-ratio: 16 / 9;
 }
 
 .container p {
@@ -83,6 +84,7 @@
 }
 
 .container table td {
+  background: transparent !important;
   padding: 16px 8px !important;
 }
 

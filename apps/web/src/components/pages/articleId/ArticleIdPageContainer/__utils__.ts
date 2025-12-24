@@ -134,24 +134,33 @@ export const handleBodyUpdate = async (body: string) => {
     count++;
   });
 
+  // # Styling tables
+  $('td').each((_, element) => {
+    const el = $(element);
+    el.addClass('!border-impo_Neutral_OnBackground');
+  });
+
   // # Styling images
   $('img').each((_, element) => {
-    const img = $(element);
-
-    img.attr('width', '100%');
-    img.attr('height', 'auto');
-    img.attr('loading', 'lazy');
-    img.css({ 'aspect-ratio': '16 / 9' });
+    const el = $(element);
+    el.attr('loading', 'lazy');
   });
 
   // # Styling scripts
-  $('p, span, li, h1, h2, h3, h4, h5, h6').each((_, element) => {
+  $('p, span, section, li, h1, h2, h3, h4, h5, h6').each((_, element) => {
     const el = $(element);
-    el.addClass('text-impo_Neutral_OnBackground');
+
+    // # Skip Cheerio styling for elements when `data-no-cheerio-styling` is present
+    const noCheerioStyling = el.attr('data-no-cheerio-styling');
+
+    if (!noCheerioStyling) {
+      el.addClass('!text-impo_Neutral_OnBackground');
+    }
   });
+
   $('a').each((_, element) => {
     const el = $(element);
-    el.addClass('text-impo_Primary_Primary');
+    el.addClass('!text-impo_Primary_Primary');
   });
 
   return { updatedBody: $.html(), articleSubjectList };
