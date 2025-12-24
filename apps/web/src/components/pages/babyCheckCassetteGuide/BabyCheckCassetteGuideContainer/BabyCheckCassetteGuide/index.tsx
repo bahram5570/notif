@@ -3,7 +3,7 @@ import CustomTypography from '@components/ui/CustomTypography';
 
 const BabyCheckCassetteGuide = () => {
   return (
-    <div className="min-w-full px-4 py-5 bg-impo_Surface_SurfaceVariant">
+    <div className="min-w-full px-4 py-5 !bg-impo_Grey_50">
       <div className="rounded-xl mb-3 px-4 py-5 bg-impo_White">
         <CustomTypography fontSize="Body_Medium" className="mb-3">
           برای انجام تست، باید موارد زیر رو در نظر داشته باشید:

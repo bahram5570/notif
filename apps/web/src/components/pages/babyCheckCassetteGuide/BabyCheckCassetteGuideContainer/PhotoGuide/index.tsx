@@ -6,7 +6,7 @@ import CustomTypography from '@components/ui/CustomTypography';
 
 const PhotoGuide = () => {
   return (
-    <div className="min-w-full px-4 py-5 bg-impo_Surface_SurfaceVariant">
+    <div className="min-w-full px-4 py-5 bg-impo_Grey_50">
       <div className="rounded-xl mb-3 px-4 py-5 bg-impo_White">
         <CustomTypography fontSize="Lable_Medium">نکات مهم:</CustomTypography>
         <span className="w-full block h-[1px] my-3 mx-0 bg-impo_Neutral_Surface"></span>
