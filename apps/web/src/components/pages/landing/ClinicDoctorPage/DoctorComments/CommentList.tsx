@@ -6,7 +6,6 @@ import ArrowIcon from '@assets/icons/clinicLanding/arrowRight.svg';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { CommentsTypes } from '../types';
 import CommentItem from './CommentItem';
@@ -38,8 +37,7 @@ const CommentList = ({ comments }: { comments: CommentsTypes[] }) => {
           <CustomButton varient="text" fontSize="Lable_Medium" onClick={handleShowMore}>
             <CustomTypography
               fontSize={'Lable_Medium'}
-              className="flex justify-center gap-x-1 items-center"
-              color={{ freeColor: COLORS_LIST.Primary_Primary }}
+              className="flex justify-center gap-x-1 items-center !text-impo_Primary_Primary"
             >
               <ArrowIcon />
               مشاهده نظرات بیشتر

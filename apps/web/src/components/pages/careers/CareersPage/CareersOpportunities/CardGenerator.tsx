@@ -56,7 +56,7 @@ const CardGenerator = (props: CardGeneratorTypes) => {
     <CustomLink href={`/careers/${props.id}`}>
       <div
         ref={ref}
-        className={`w-full flex flex-col gap-2 p-4 rounded-xl border-[1px] duration-200 ${isHover ? 'border-impo_Primary_Primary bg-impo_Primary_PrimaryContainer' : 'border-impo_Neutral_Surface bg-impo_Transparent'}`}
+        className={`w-full flex flex-col gap-2 p-4 rounded-xl border-[1px] duration-200 ${isHover ? 'border-impo_Primary_Primary bg-impo_Neutral_Surface' : 'border-impo_Neutral_Surface bg-impo_Transparent'}`}
       >
         <div className="w-full flex justify-between items-center">
           <CustomTypography fontSize="Title_Small" className="!text-impo_Neutral_OnBackground">

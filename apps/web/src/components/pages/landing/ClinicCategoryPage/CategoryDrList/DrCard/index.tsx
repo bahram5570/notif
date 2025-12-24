@@ -11,7 +11,6 @@ import { StaticImageData } from 'next/image';
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { DrCardProps } from './types';
 

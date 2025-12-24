@@ -42,7 +42,7 @@ const ResumeInputs = ({ jobId }: ResumeInputsTypes) => {
     <div className="w-full flex flex-col items-center">
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <CustomInput
-          className="border-[1px] rounded-xl px-4 py-3  outline-impo_Grey_300 border-impo_Neutral_Surface"
+          className="border-[1px] rounded-xl px-4 py-3 outline-impo_Grey_300 !border-impo_Surface_SurfaceVariant !bg-impo_Neutral_Surface placeholder:!text-impo_Surface_OutlineVariant !text-impo_Neutral_OnBackground"
           placeholder="نام و نام خانوادگی"
           value={values.name}
           hasOutline={true}
@@ -50,7 +50,7 @@ const ResumeInputs = ({ jobId }: ResumeInputsTypes) => {
         />
 
         <CustomInput
-          className="border-[1px] rounded-xl px-4 py-3 outline-impo_Grey_300 border-impo_Neutral_Surface"
+          className="border-[1px] rounded-xl px-4 py-3 outline-impo_Grey_300 !border-impo_Surface_SurfaceVariant !bg-impo_Neutral_Surface placeholder:!text-impo_Surface_OutlineVariant !text-impo_Neutral_OnBackground"
           placeholder="آدرس ایمیل"
           value={values.email}
           hasOutline={true}
@@ -59,7 +59,7 @@ const ResumeInputs = ({ jobId }: ResumeInputsTypes) => {
         />
 
         <CustomInput
-          className="border-[1px] rounded-xl px-4 py-3 outline-impo_Grey_300 border-impo_Neutral_Surface"
+          className="border-[1px] rounded-xl px-4 py-3 outline-impo_Grey_300 !border-impo_Surface_SurfaceVariant !bg-impo_Neutral_Surface placeholder:!text-impo_Surface_OutlineVariant !text-impo_Neutral_OnBackground"
           placeholder="شماره همراه"
           value={values.phone}
           hasOutline={true}
@@ -67,7 +67,7 @@ const ResumeInputs = ({ jobId }: ResumeInputsTypes) => {
         />
 
         <div className="w-full flex items-center gap-2">
-          <div className="relative w-[190px] h-12 flex items-center justify-center gap-2 rounded-xl bg-impo_Neutral_Surface">
+          <div className="relative w-[190px] h-12 flex items-center justify-center gap-2 rounded-xl bg-impo_Surface_SurfaceVariant">
             <input
               type="file"
               onChange={(e) => fileDataHandler({ e })}
@@ -101,7 +101,7 @@ const ResumeInputs = ({ jobId }: ResumeInputsTypes) => {
         isLoading={isLoading}
         fontSize="Lable_Large"
         onClick={validateHandler}
-        className="w-full md:w-[230px] !py-[10px] md:!py-[12px] !bg-impo_Primary_Primary"
+        className="w-full md:w-[230px] !py-[10px] md:!py-[12px] !bg-impo_Primary_Primary !border-none"
       >
         <CustomTypography fontSize="Title_Small" className="!text-impo_Primary_OnPrimary">
           درخواست همکاری

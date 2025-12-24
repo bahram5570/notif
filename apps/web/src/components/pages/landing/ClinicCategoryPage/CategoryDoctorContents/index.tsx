@@ -1,11 +1,11 @@
-import { handleAnchorStyling } from '../__utils__';
+import { handleBodyUpdate } from '@components/pages/articleId/ArticleIdPageContainer/__utils__';
 
-import style from './styles.module.css';
+import style from '../../../../pages/articleId/ArticleIdPageContainer/ArticleIdContents/styles.module.css';
 
 import CustomTypography from '@components/ui/CustomTypography';
 
-const CategoryDoctorContents = ({ contents }: { contents: string }) => {
-  const updatedContents = handleAnchorStyling(contents);
+const CategoryDoctorContents = async ({ contents }: { contents: string }) => {
+  const { updatedBody } = await handleBodyUpdate(contents);
 
   return (
     <div className="mx-7 mb-12">
@@ -16,7 +16,7 @@ const CategoryDoctorContents = ({ contents }: { contents: string }) => {
       <span className="w-full block h-[1px] my-3 mx-0 bg-impo_Neutral_Surface"></span>
 
       <div
-        dangerouslySetInnerHTML={{ __html: updatedContents }}
+        dangerouslySetInnerHTML={{ __html: updatedBody }}
         className={`${style.container} !text-impo_Neutral_OnBackground`}
       />
     </div>

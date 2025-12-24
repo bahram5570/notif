@@ -73,7 +73,7 @@ const TestOnlineQuestions = () => {
           varient="fill"
           onClick={nextStepHandler}
           isDisable={selectedIndex === -1}
-          className="w-fit !mt-auto !h-12 !px-12 !bg-impo_Primary_Primary "
+          className="w-fit !mt-auto !h-12 !px-12 !bg-impo_Primary_Primary !border-none"
         >
           <CustomTypography fontSize="Title_Small" className="!text-impo_Primary_OnPrimary">
             {isLastStep ? 'مشاهده نتیجه' : 'مرحله بعدی'}

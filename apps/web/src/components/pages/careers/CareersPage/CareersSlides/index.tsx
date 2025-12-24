@@ -13,17 +13,13 @@ import { ArrowGeneratorTypes } from './types';
 
 const slidesList = [
   '/assets/images/careers/slide1.webp',
-  // '/assets/images/careers/slide2.webp',
   '/assets/images/careers/slide3.webp',
   '/assets/images/careers/slide4.webp',
-  // '/assets/images/careers/slide5.webp',
   '/assets/images/careers/slide6.webp',
   '/assets/images/careers/slide7.webp',
   '/assets/images/careers/slide1.webp',
-  // '/assets/images/careers/slide2.webp',
   '/assets/images/careers/slide3.webp',
   '/assets/images/careers/slide4.webp',
-  // '/assets/images/careers/slide5.webp',
   '/assets/images/careers/slide6.webp',
   '/assets/images/careers/slide7.webp',
 ];

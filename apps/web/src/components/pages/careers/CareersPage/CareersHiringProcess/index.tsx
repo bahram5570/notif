@@ -14,7 +14,11 @@ const CareersHiringProcess = () => {
       style={{ maxWidth: CAREER_CONTAINER_MAX_WIDTH + 140 }}
       className="w-full flex flex-col items-center px-6 md:px-4 pt-4 md:pt-10 mx-auto"
     >
-      <CustomTypography tagType="h2" fontSize="Headline_Medium" color={'Neutral_OnBackground'} className="pb-4 md:pb-8">
+      <CustomTypography
+        tagType="h2"
+        fontSize="Headline_Medium"
+        className="pb-4 md:pb-8 !text-impo_Neutral_OnBackground"
+      >
         فرآیند ایمپویی شدن
       </CustomTypography>
 
@@ -47,13 +51,13 @@ const CareersHiringProcess = () => {
                             "
                 >
                   <div
-                    className={`w-full h-full duration-700 !bg-impo_Primary_Primary ${isOnProgress ? 'translate-y-0 md:translate-x-0' : '-translate-y-full md:translate-x-full'}`}
+                    className={`w-full h-full duration-700 !bg-impo_Primary_OnPrimary ${isOnProgress ? 'translate-y-0 md:translate-x-0' : '-translate-y-full md:translate-x-full'}`}
                   />
                 </div>
               )}
 
               <div
-                className={`relative w-12 h-12 min-w-12 min-h-12 md:w-14 md:h-14 md:min-w-14 md:min-h-14 z-10 rounded-full flex justify-center items-center ${isOnIcon ? 'bg-impo_Primary_Primary' : 'bg-impo_Neutral_Surface'}`}
+                className={`relative w-12 h-12 min-w-12 min-h-12 md:w-14 md:h-14 md:min-w-14 md:min-h-14 z-10 rounded-full flex justify-center items-center ${isOnIcon ? 'bg-impo_Primary_OnPrimary' : 'bg-impo_Neutral_Surface'}`}
               >
                 <item.OffIcon className="w-[38px] h-[38px] fill-impo_Primary_Primary stroke-impo_Primary_Primary" />
                 <item.OnIcon

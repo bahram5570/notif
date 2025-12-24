@@ -2,7 +2,7 @@ import MonyIcon from '@assets/icons/clinicLanding/mony.svg';
 import StarIcon from '@assets/icons/star.svg';
 import { toPersianNumbers } from '@utils/numbers';
 
-import style from '../../ClinicCategoryPage/CategoryDoctorContents/styles.module.css';
+import style from '../../../../pages/articleId/ArticleIdPageContainer/ArticleIdContents/styles.module.css';
 
 import CustomTypography from '@components/ui/CustomTypography';
 

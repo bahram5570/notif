@@ -1,5 +1,4 @@
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
-import { SMALL_SCREEN_MAX_WIDTH } from '@constants/app.constants';
 
 import CategoryDoctorContents from './CategoryDoctorContents';
 import CategoryDrList from './CategoryDrList';
@@ -16,7 +15,6 @@ const ClinicCategoryPage = ({ clinicDataProps, params }: { clinicDataProps: Clin
           backgroundSize: 'contain',
           backgroundRepeat: 'no-repeat',
           backgroundPositionY: '20px',
-          // maxWidth: SMALL_SCREEN_MAX_WIDTH,
         }}
       >
         <div className="lg:w-10/12 lg:mx-auto">
@@ -26,7 +24,7 @@ const ClinicCategoryPage = ({ clinicDataProps, params }: { clinicDataProps: Clin
         </div>
       </div>
     </HeaderFooterContainer>
-  );  
+  );
 };
 
 export default ClinicCategoryPage;

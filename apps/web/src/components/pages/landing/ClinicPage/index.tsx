@@ -1,5 +1,4 @@
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
-import { SMALL_SCREEN_MAX_WIDTH } from '@constants/app.constants';
 
 import ClinicCategory from './ClinicCategory';
 import ClinicComments from './ClinicComments';
@@ -16,7 +15,6 @@ const ClinicPage = () => {
         style={{
           backgroundSize: 'cover',
           backgroundPosition: 'center -100rem',
-          // maxWidth: SMALL_SCREEN_MAX_WIDTH,
         }}
       >
         <div className="lg:w-10/12 lg:mx-auto">
