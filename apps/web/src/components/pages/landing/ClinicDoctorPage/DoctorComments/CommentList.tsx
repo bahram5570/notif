@@ -39,7 +39,7 @@ const CommentList = ({ comments }: { comments: CommentsTypes[] }) => {
               fontSize={'Lable_Medium'}
               className="flex justify-center gap-x-1 items-center !text-impo_Primary_Primary"
             >
-              <ArrowIcon />
+              <ArrowIcon className="stroke-impo_Primary_Primary" />
               مشاهده نظرات بیشتر
             </CustomTypography>
           </CustomButton>

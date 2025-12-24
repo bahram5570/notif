@@ -13,7 +13,7 @@ const DoctorHeading = (props: DoctorHeadingProps) => {
   const { breakPoint } = useBreakPoint();
 
   return (
-    <section className="dark:!bg-impo_Neutral_Surface light:[background:linear-gradient(245deg,_#FFF_24.63%,_#FFEEE9_90.72%)]   px-4 pb-0 [clip-path:ellipse(120%_100%_at_50%_100%)] min-h-[190px] scale-y-[-1]  lg:max-h-80">
+    <section className="dark:!bg-impo_Neutral_Surface dark:!bg-none bg-[linear-gradient(245deg,_#FFF_24.63%,_#FFEEE9_90.72%)] px-4 pb-0 [clip-path:ellipse(120%_100%_at_50%_100%)] min-h-[190px] scale-y-[-1]  lg:max-h-80">
       <div className="scale-y-[-1] grid grid-cols-2 items-center lg:h-72 lg:pr-6">
         <div className="border-r-1 pr-4 grid gap-y-3" style={{ borderRight: '1px solid #D0D0D0' }}>
           <CustomTypography
