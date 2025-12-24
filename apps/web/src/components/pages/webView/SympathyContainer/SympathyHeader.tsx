@@ -12,9 +12,7 @@ const SympathyHeader = () => {
           <CustomTypography fontSize="Title_Large" className="!text-impo_Pink_900">
             همدلی با ایمپو
           </CustomTypography>
-          <CustomTypography fontSize="Body_Large">
-            حمایت بیشتر، گفتگوی بیشتر، ارتباط صمیمانه‌تر!
-          </CustomTypography>
+          <CustomTypography fontSize="Body_Large">حمایت بیشتر، گفتگوی بیشتر، ارتباط صمیمانه‌تر!</CustomTypography>
         </div>
         <div className="flex flex-col gap-2">
           {HEADER_TIP_LIST.map((tip, index) => {

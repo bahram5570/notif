@@ -1,6 +1,6 @@
 'use client';
 
-import { colorMaker, typographyMaker } from '../CustomTypography/__utils__';
+import { typographyMaker } from '../CustomTypography/__utils__';
 import { resultMaker } from './__utils__';
 
 import useBreakPoint from '@hooks/useBreakPoint';
@@ -16,7 +16,6 @@ const CustomInput = ({
   fontSize,
   onValue,
   style,
-  color,
   value,
   maxLength,
 }: CustomInputTypes) => {
@@ -28,7 +27,6 @@ const CustomInput = ({
     onValue(result);
   };
 
-  const selectedColor = colorMaker(color);
   const updatedValue = resultMaker(value, numbersMode);
   const typographyDetails = typographyMaker({ fontSize, operatingSystem, isWeb: !breakPoint.laptop });
 
@@ -36,11 +34,11 @@ const CustomInput = ({
     <input
       type="text"
       value={updatedValue}
+      maxLength={maxLength}
       onChange={changeHandler}
       placeholder={placeholder}
-      style={{ color: selectedColor, ...typographyDetails, ...style }}
-      className={`w-full sm:h-full h-12 ${!hasOutline && 'outline-none'} ${className}`}
-      maxLength={maxLength}
+      style={{ ...typographyDetails, ...style }}
+      className={`w-full sm:h-full h-12 text-impo_Neutral_OnBackground bg-impo_Neutral_Background ${!hasOutline && 'outline-none'} ${className}`}
     />
   );
 };

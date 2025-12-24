@@ -34,7 +34,7 @@ const FixedFooter: FC<Props> = ({ storyImage, event }) => {
           id={event}
           onClick={() => downloadImage(storyImage)}
         >
-          {isLoading ? <Spinner color={'White'} size={18} /> : 'دانلود عکس'}
+          {isLoading ? <Spinner className="!border-impo_White" size={18} /> : 'دانلود عکس'}
         </CustomButton>
       </div>
     </div>

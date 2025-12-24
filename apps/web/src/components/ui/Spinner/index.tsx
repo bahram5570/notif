@@ -1,15 +1,14 @@
-import { colorMaker, sizesMaker } from './__utils__';
+import { sizesMaker } from './__utils__';
 
 import { SpinnerTypes } from './types';
 
-const Spinner = ({ className, size, color }: SpinnerTypes) => {
+const Spinner = ({ className, size }: SpinnerTypes) => {
   const sizes = sizesMaker(size);
-  const colors = colorMaker(color);
 
   return (
     <div
-      style={{ ...sizes, ...colors }}
-      className={`rounded-full border-[2px] !border-b-impo_Transparent animate-spin ${className}`}
+      style={{ ...sizes }}
+      className={`rounded-full border-[2px] border-impo_Primary_Primary !border-b-impo_Transparent animate-spin ${className}`}
     />
   );
 };

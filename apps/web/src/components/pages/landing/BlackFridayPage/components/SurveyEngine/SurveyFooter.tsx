@@ -21,7 +21,7 @@ const SurveyFooter: FC<Props> = ({ ready, onNext, isLoading }) => {
         isDisable={!ready}
         fontSize="Title_Small"
       >
-        {isLoading ? <Spinner color={'White'} size={18} /> : 'ادامه'}
+        {isLoading ? <Spinner className="!border-impo_White" size={18} /> : 'ادامه'}
       </CustomButton>
     </div>
   );

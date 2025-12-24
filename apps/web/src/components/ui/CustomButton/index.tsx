@@ -39,7 +39,7 @@ const CustomButton = (props: CustomButtonTypes) => {
       }}
       className={`h-[40px] w-[175px] px-4 ${props.className}`}
     >
-      {props.isLoading && <Spinner color={{ freeColor: buttonColors.color }} />}
+      {props.isLoading && <Spinner className="!border-impo_Grey_300" />}
 
       {!props.isLoading && (
         <>

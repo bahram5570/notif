@@ -66,9 +66,7 @@ const CommentsSlider = ({ list }: CommentsSliderTypes) => {
                           className="object-contain"
                         />
 
-                        <div
-                          className="absolute top-0 -right-3 w-6 h-6 min-w-6 min-h-6 rounded-full flex items-center justify-center bg-impo_White"
-                        >
+                        <div className="absolute top-0 -right-3 w-6 h-6 min-w-6 min-h-6 rounded-full flex items-center justify-center bg-impo_White">
                           <CustomImage src={item.downloadPortIcon} width={14} height={14} sizes="20px" alt="port" />
                         </div>
                       </div>

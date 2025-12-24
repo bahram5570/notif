@@ -25,7 +25,7 @@ const Reward: FC<Props> = ({ answers, subAnswers, isLoaded }) => {
   const data = computeReward(answers, subAnswers);
 
   return (
-    <div className="bg-white w-full">
+    <div className="bg-impo_White w-full">
       <div className="w-full max-w-[400px] h-full mx-auto px-4">
         <RewardCard image={data.image} title={data.title} description={data.description} />
         <CustomTypography className="text-center mt-4 mb-2" tagType="h3" fontSize="Lable_Medium">

@@ -47,7 +47,6 @@ const ContactUsForm = () => {
         <div className="w-full">
           <div className="flex items-center gap-1 pb-2">
             <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground">
-              {' '}
               موضوع
             </CustomTypography>
           </div>

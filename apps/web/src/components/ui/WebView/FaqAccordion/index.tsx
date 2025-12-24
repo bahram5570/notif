@@ -8,9 +8,7 @@ import { FaqAccordionPropsType } from './type';
 const FaqAccordion = ({ faqList, title }: FaqAccordionPropsType) => {
   return (
     <div className="rounded-xl py-6 px-4 divide-y-[1px] ">
-      <CustomTypography fontSize="Lable_Large">
-        {title}
-      </CustomTypography>
+      <CustomTypography fontSize="Lable_Large">{title}</CustomTypography>
 
       <div className="mt-4 ">
         {faqList.map((faq, index) => {

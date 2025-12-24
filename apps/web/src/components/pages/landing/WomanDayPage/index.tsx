@@ -158,7 +158,7 @@ export default function WomanDayPage() {
               className="w-full !mt-10 !rounded-xl"
               fontSize="Lable_Large"
             >
-              {isLoading ? <Spinner size={20} color={'White'} /> : 'خرید هدیه روز زن و مادر'}
+              {isLoading ? <Spinner size={20} className="!border-impo_White" /> : 'خرید هدیه روز زن و مادر'}
             </CustomButton>
           </div>
         </div>
