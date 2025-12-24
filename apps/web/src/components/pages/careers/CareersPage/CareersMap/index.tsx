@@ -21,7 +21,11 @@ const CareersMap = () => {
       style={{ maxWidth: CAREER_CONTAINER_MAX_WIDTH }}
       className="w-full flex flex-col items-center px-6 md:px-4 pt-4 md:pt-10 pb-10 mx-auto"
     >
-      <CustomTypography tagType="h2" fontSize="Headline_Medium" color={'Neutral_OnBackground'} className="pb-4 md:pb-8">
+      <CustomTypography
+        tagType="h2"
+        fontSize="Headline_Medium"
+        className="pb-4 md:pb-8 !text-impo_Neutral_OnBackground"
+      >
         دفتر مرکزی ایمپو
       </CustomTypography>
 

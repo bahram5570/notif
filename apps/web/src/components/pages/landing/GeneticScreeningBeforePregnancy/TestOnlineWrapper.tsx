@@ -35,7 +35,13 @@ const TestOnlineWrapper = ({ children }: { children: React.ReactNode }) => {
           src="/assets/images/genetic/coverHollow.webp"
           alt="coverHollow"
           fill={true}
-          className="object-cover"
+          className="object-cover dark:hidden block"
+        />
+        <CustomImage
+          src="/assets/images/genetic/coverHollowDark.webp"
+          alt="coverHollowDark"
+          fill={true}
+          className="object-cover dark:block hidden"
         />
       </div>
 

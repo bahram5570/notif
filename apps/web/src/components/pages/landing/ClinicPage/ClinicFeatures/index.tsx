@@ -6,9 +6,8 @@ import { FeatureList } from './constants';
 const ClinicFeatures = () => {
   return (
     <section
-      className="mt-12"
+      className="mt-12 bg-[url(/assets/images/clinicLanding/maskPattern.webp)] dark:bg-[url(/assets/images/clinicLanding/maskPatternDark.webp)]"
       style={{
-        backgroundImage: 'url(/assets/images/clinicLanding/maskPattern.webp)',
         backgroundSize: 'contain',
         backgroundPosition: 'center -11rem',
         backgroundRepeat: 'no-repeat',
@@ -32,7 +31,13 @@ const ClinicFeatures = () => {
         </CustomTypography>
         <div className="mt-[33px] mx-4 lg:mx-0 grid">
           {FeatureList.map((item, index) => (
-            <FeatureItem key={index} description={item.description} image={item.image} title={item.title} />
+            <FeatureItem
+              key={index}
+              description={item.description}
+              image={item.image}
+              imageDark={item.imageDark}
+              title={item.title}
+            />
           ))}
         </div>
       </div>

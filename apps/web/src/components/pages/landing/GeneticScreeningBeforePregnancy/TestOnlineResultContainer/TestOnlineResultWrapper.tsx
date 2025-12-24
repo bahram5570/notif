@@ -33,7 +33,7 @@ const TestOnlineResultWrapper = ({ children }: { children: React.ReactNode }) =>
                     left-0 
                     right-0 
                     w-full 
-                    h-[400px]
+                    h-[380px]
                     lg:h-screen 
                     pointer-events-auto 
                     -z-10 

@@ -1,16 +1,24 @@
-import style from './styles.module.css';
+import { handleBodyUpdate } from '@components/pages/articleId/ArticleIdPageContainer/__utils__';
+
+import style from '../../../../pages/articleId/ArticleIdPageContainer/ArticleIdContents/styles.module.css';
 
 import CustomTypography from '@components/ui/CustomTypography';
 
-const CategoryDoctorContents = ({ contents }: { contents: string }) => {
+const CategoryDoctorContents = async ({ contents }: { contents: string }) => {
+  const { updatedBody } = await handleBodyUpdate(contents);
+
   return (
     <div className="mx-7 mb-12">
-      <CustomTypography fontSize="Title_Small" tagType="h2">
+      <CustomTypography fontSize="Title_Small" tagType="h2" className="!text-impo_Neutral_OnBackground">
         راهنمای ویزیت آنلاین ایمپو
       </CustomTypography>
 
-      <span className="w-full block h-[1px] my-3 mx-0 bg-impo_Neutral_Surface" />
-      <div dangerouslySetInnerHTML={{ __html: contents }} className={style.container}></div>
+      <span className="w-full block h-[1px] my-3 mx-0 bg-impo_Neutral_Surface"></span>
+
+      <div
+        dangerouslySetInnerHTML={{ __html: updatedBody }}
+        className={`${style.container} !text-impo_Neutral_OnBackground`}
+      />
     </div>
   );
 };

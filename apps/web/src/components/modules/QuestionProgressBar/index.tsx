@@ -18,7 +18,7 @@ const QuestionProgressBar = ({ currentStep, questionListLength }: QuestionProgre
       </span>
       <div className="relative w-full h-1 rounded-full overflow-hidden bg-impo_White">
         <div
-          className="w-full h-full rounded-full block bg-impo_Primary_Primary"
+          className="w-full h-full rounded-full block bg-impo_Pink_500"
           style={{ transform: `translateX(${percent}%)` }}
         />
       </div>

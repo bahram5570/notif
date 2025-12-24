@@ -6,7 +6,6 @@ import { fileImageUrl } from '@services/http';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
 
 import { DoctorHeadingProps } from '../types';
 
@@ -14,13 +13,13 @@ const DoctorHeading = (props: DoctorHeadingProps) => {
   const { breakPoint } = useBreakPoint();
 
   return (
-    <section className="[background:linear-gradient(245deg,_#FFF_24.63%,_#FFEEE9_90.72%)]   px-4 pb-0 [clip-path:ellipse(120%_100%_at_50%_100%)] min-h-[190px] scale-y-[-1]  lg:max-h-80">
+    <section className="dark:!bg-impo_Neutral_Surface light:[background:linear-gradient(245deg,_#FFF_24.63%,_#FFEEE9_90.72%)]   px-4 pb-0 [clip-path:ellipse(120%_100%_at_50%_100%)] min-h-[190px] scale-y-[-1]  lg:max-h-80">
       <div className="scale-y-[-1] grid grid-cols-2 items-center lg:h-72 lg:pr-6">
         <div className="border-r-1 pr-4 grid gap-y-3" style={{ borderRight: '1px solid #D0D0D0' }}>
           <CustomTypography
             fontSize={breakPoint.desktop ? 'Title_Medium' : 'Lable_Large'}
             tagType="h2"
-            style={{ color: COLORS_LIST.Surface_InverseSurface }}
+            className="!text-impo_Surface_InverseSurface"
           >
             {props.name}
           </CustomTypography>
@@ -28,14 +27,14 @@ const DoctorHeading = (props: DoctorHeadingProps) => {
             <CustomTypography
               fontSize={breakPoint.desktop ? 'Body_Large' : 'Body_Small'}
               tagType="p"
-              style={{ color: COLORS_LIST.Surface_InverseSurface }}
+              className="!text-impo_Surface_InverseSurface"
             >
               {props.speciality}
             </CustomTypography>
             <CustomTypography
               fontSize={breakPoint.desktop ? 'Body_Large' : 'Body_Small'}
               tagType="p"
-              style={{ color: COLORS_LIST.Surface_InverseSurface }}
+              className="!text-impo_Surface_InverseSurface"
             >
               ش .ن: {props.nezam}
             </CustomTypography>

@@ -1,5 +1,4 @@
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
-import { SMALL_SCREEN_MAX_WIDTH } from '@constants/app.constants';
 
 import DoctorBanner from './DoctorBanner';
 import DoctorComments from './DoctorComments';
