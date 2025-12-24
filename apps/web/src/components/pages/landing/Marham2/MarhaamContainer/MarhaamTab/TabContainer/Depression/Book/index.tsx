@@ -29,10 +29,10 @@ const Book = () => {
           <CustomTypography fontSize="Title_Medium" style={{ color: '#076747' }}>
             تاثیر کتاب طنز
           </CustomTypography>
-          <CustomTypography fontSize="Body_Medium" color="Surface_InverseSurface">
+          <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
             مطالعه کتاب طنز، با ایجاد خنده و آرامش ذهنی، به کاهش افسردگی ناشی از جنگ و تقویت امید در دل کمک می‌کند.
           </CustomTypography>
-          <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+          <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
             این کتاب‌های صوتی، بهت کمک می‌کنن تا برای چند لحظه لبخند به لبت و چشم‌هات بیاد.
           </CustomTypography>
         </div>
@@ -80,7 +80,7 @@ const Book = () => {
 
       <div className="w-full my-3" style={{ border: `1px solid #8BAD7820` }}></div>
       <div className="flex flex-col gap-1">
-        {/* <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+        {/* <CustomTypography fontSize="Lable_MediumProminet" className='!text-impo_Neutral_OnBackground'>
           از کجا می‌تونی کتاب خوب پیدا کنی؟
         </CustomTypography> */}
 
@@ -88,7 +88,7 @@ const Book = () => {
           target="_blank"
           href="https://fidibo.com/page/marham?pageTitle=Marham&utm_source=impo&utm_medium=landing&utm_campaign=marham"
           // className="md:mb-5"
-          color="Success_Success"
+          className="!text-impo_Success_Success"
           style={{ textDecorationLine: 'underline' }}
           // className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 relative z-10"
         >
@@ -102,7 +102,7 @@ const Book = () => {
         </CustomTypography>
 
         {/* <div className="flex  gap-1 justify-start items-center">
-          <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+          <CustomTypography fontSize="Lable_MediumProminet" className='!text-impo_Neutral_OnBackground'>
             کد تخفیف 70 درصدی:
           </CustomTypography>
           <u style={{ ...typographyDetails }} className=" cursor-pointer text-impo_Primary_Primary" onClick={copylink}>

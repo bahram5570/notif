@@ -18,8 +18,7 @@ const MenHeadingContents = () => {
       <CustomTypography
         tagType="h1"
         fontSize="Headline_Medium"
-        color={'Neutral_OnBackground'}
-        className="py-2 lg:pt-2 lg:pb-1 text-center md:text-right"
+        className="py-2 lg:pt-2 lg:pb-1 text-center md:text-right !text-impo_Neutral_OnBackground"
       >
         مراقبت از خود و رابطه
       </CustomTypography>

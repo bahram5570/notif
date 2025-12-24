@@ -6,11 +6,7 @@ const TermsContainer = () => {
     <HeaderFooterContainer>
       <div className="w-full h-full bg-impo_White">
         <div className="bg-[url(/assets/images/termsHero.webp)] w-full h-full py-24 sm:pt-44 sm:pb-40 px-4 bg-no-repeat mb-8">
-          <CustomTypography
-            tagType="h3"
-            fontSize="Title_Large"
-            className="text-center pt-4 sm:!text-4xl"
-          >
+          <CustomTypography tagType="h3" fontSize="Title_Large" className="text-center pt-4 sm:!text-4xl">
             قوانین و مقررات ایمپو
           </CustomTypography>
         </div>
@@ -18,8 +14,7 @@ const TermsContainer = () => {
           <CustomTypography
             tagType="span"
             fontSize="Headline_Small"
-            className="mb-4 inline-block"
-            color="Neutral_OnBackground"
+            className="mb-4 inline-block !text-impo_Neutral_OnBackground"
           >
             قوانین
           </CustomTypography>
@@ -47,8 +42,7 @@ const TermsContainer = () => {
           <CustomTypography
             tagType="span"
             fontSize="Headline_Small"
-            className="mb-4 block"
-            color="Neutral_OnBackground"
+            className="mb-4 block !text-impo_Neutral_OnBackground"
           >
             تعاریف و اصطلاحات:
           </CustomTypography>
@@ -103,8 +97,7 @@ const TermsContainer = () => {
           <CustomTypography
             tagType="span"
             fontSize="Headline_Small"
-            className="mb-4 block"
-            color="Neutral_OnBackground"
+            className="mb-4 block !text-impo_Neutral_OnBackground"
           >
             دسته‌بندی قوانین و مقررات:
           </CustomTypography>
@@ -635,8 +628,7 @@ const TermsContainer = () => {
           <CustomTypography
             tagType="span"
             fontSize="Headline_Small"
-            className="mb-4 inline-block"
-            color="Neutral_OnBackground"
+            className="mb-4 inline-block !text-impo_Neutral_OnBackground"
           >
             مسئولیت ایمپو:
           </CustomTypography>

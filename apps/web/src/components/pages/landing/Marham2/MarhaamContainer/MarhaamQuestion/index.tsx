@@ -50,7 +50,7 @@ const MarhaamQuestion = ({ onResult }: JaanPanahQuestionsTypes) => {
           <div className="flex flex-row justify-center items-center gap-1 rounded-xl px-6 py-3 mb-4 bg-impo_Warning_WarininContainer border-impo_Warning_Warning">
             <WarningIcon />
 
-            <CustomTypography fontSize="Lable_Large" color={'Warning_OnWarininContainer'}>
+            <CustomTypography fontSize="Lable_Large" className="!text-impo_Warning_OnWarininContainer">
               مهلت استفاده از خدمات مرهم به پایان رسید
             </CustomTypography>
           </div>

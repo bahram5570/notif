@@ -14,7 +14,6 @@ const LandingsContentsGenerator = ({ title, description }: { title: string; desc
     <div className="flex flex-col items-center md:items-start justify-center md:justify-start">
       <CustomTypography
         tagType="h1"
-        // color={'Neutral_OnBackground'}
         className="py-2 lg:pt-2 lg:pb-1 text-center md:text-right !text-impo_Neutral_OnBackground"
         fontSize={breakPoint.tablet ? 'Headline_Medium' : 'Headline_Large'}
       >
@@ -24,7 +23,6 @@ const LandingsContentsGenerator = ({ title, description }: { title: string; desc
       <CustomTypography
         tagType="span"
         fontSize="Body_Large"
-        // color={'Surface_InverseSurface'}
         className="text-center md:text-right !text-impo_Surface_InverseSurface"
       >
         {description}

@@ -15,7 +15,7 @@ const StoryItem = ({ title, coverImage, isOpenHandler, currentIndexHandler, inde
         <CustomImage src={coverImage} alt={title} width={984} height={1143} className="w-full h-auto" />
       </div>
 
-      <CustomTypography fontSize="Body_Small" color="Neutral_OnBackground">
+      <CustomTypography fontSize="Body_Small" className="!text-impo_Neutral_OnBackground">
         {title}
       </CustomTypography>
     </div>

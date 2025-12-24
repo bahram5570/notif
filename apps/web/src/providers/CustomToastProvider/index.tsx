@@ -15,7 +15,7 @@ const CustomToastProvider = ({ children }: { children: React.ReactNode }) => {
       <div className="flex items-center gap-2">
         <div className="w-[1px] h-7 block bg-impo_Surface_OnSurfaceVariant" />
 
-        <CustomTypography color="White" fontSize="Lable_Small" numbersMode={numbersMode}>
+        <CustomTypography fontSize="Lable_Small" className="!text-impo_White" numbersMode={numbersMode}>
           {message}
         </CustomTypography>
       </div>

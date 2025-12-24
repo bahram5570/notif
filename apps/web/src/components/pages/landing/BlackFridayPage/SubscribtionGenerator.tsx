@@ -17,12 +17,11 @@ const SubscribtionGenerator = ({ discountNumber, eventName, mounth, price, price
         <CustomTypography
           fontSize="Lable_Large"
           tagType="p"
-          color={'White'}
-          className="bg-[linear-gradient(35deg,#FB1B6D,#3D1BFF)] rounded-t-2xl px-2 py-[10px] w-full text-center"
+          className="bg-[linear-gradient(35deg,#FB1B6D,#3D1BFF)] rounded-t-2xl px-2 py-[10px] w-full text-center !text-impo_White"
         >
           {`${discountNumber} تخفیف ویژه`}
         </CustomTypography>
-        <div className="pt-3 px-2 pb-4 rounded-b-[14px] bg-white">
+        <div className="pt-3 px-2 pb-4 rounded-b-[14px] bg-impo_White">
           <div className="flex gap-x-1 items-center">
             <CheckCircle />
             <CustomTypography fontSize="Title_Small" tagType="p" className="pt-[.5px] text-center">

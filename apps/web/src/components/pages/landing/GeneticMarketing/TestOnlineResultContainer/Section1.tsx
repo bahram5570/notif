@@ -34,7 +34,7 @@ const Section1 = ({ section, color }: Section1Props) => {
           className="w-full px-10 py-[12px] rounded-full flex justify-center"
           style={{ backgroundColor: COLORS_LIST.Primary_PrimaryContainer }}
         >
-          <CustomTypography fontSize="Lable_Large" color={'Primary_Primary'}>
+          <CustomTypography fontSize="Lable_Large" className="!text-impo_Primary_Primary">
             {geneticUserData.womanStatus === 'pregnancy'
               ? 'برای تجربه یک بارداری و اقدام امن کلیک کن '
               : 'راهکارها رو از اینجا ببین'}

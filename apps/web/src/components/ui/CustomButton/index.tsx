@@ -47,7 +47,7 @@ const CustomButton = (props: CustomButtonTypes) => {
             <CustomTypography
               fontSize={fontSize}
               className="w-full flex justify-center"
-              color={{ freeColor: buttonColors.color }}
+              style={{ color: buttonColors.color }}
             >
               {children}
             </CustomTypography>

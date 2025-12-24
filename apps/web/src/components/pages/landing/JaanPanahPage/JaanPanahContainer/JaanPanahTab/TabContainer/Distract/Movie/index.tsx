@@ -14,16 +14,16 @@ const Movie = ({ children }: MoviePropsType) => {
             دنیای قصه‌های رنگی؛ فیلم
           </CustomTypography>
 
-          <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+          <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
             چرا تماشای فیلم می‌تونه کمک‌کننده باشه؟
           </CustomTypography>
-          <CustomTypography fontSize="Body_Medium" color="Surface_InverseSurface">
+          <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
             فیلم می تونه پناه موقتی باشه برای چند دقیقه نفس‌کشیدن.
           </CustomTypography>
         </div>
 
         <div className="my-2">
-          <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+          <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
             تاثیر تماشای فیلم روی ذهن:
           </CustomTypography>
           <CustomImage
@@ -46,7 +46,7 @@ const Movie = ({ children }: MoviePropsType) => {
         </div>
 
         <div className="flex flex-col gap-1 my-3">
-          <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+          <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
             فیلم‌هایی که حالت رو خوب و آروم می‌کنن:
           </CustomTypography>
           <ul className="px-5 w-full grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 justify-items-center">
@@ -65,7 +65,7 @@ const Movie = ({ children }: MoviePropsType) => {
                   className="pt-4 md:p-0 w-[96px] md:w-[150px] lg:max-w-[320px] xl:max-w-[300px] my-3"
                   hasPreviewImage
                 />
-                <CustomTypography fontSize="Lable_Small" color="Surface_InverseSurface" className="text-center">
+                <CustomTypography fontSize="Lable_Small" className="text-center !text-impo_Surface_InverseSurface">
                   {item.description}
                 </CustomTypography>
               </li>
@@ -77,7 +77,7 @@ const Movie = ({ children }: MoviePropsType) => {
           <>
             <div className="w-full my-3" style={{ border: `1px solid #8BAD7820` }}></div>
             <div className="flex flex-col gap-1">
-              <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+              <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
                 این فیلم‌ها رو می‌تونی کنار فرزندانت ببینی:
               </CustomTypography>
               <ul className="px-5 w-full grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
@@ -93,7 +93,10 @@ const Movie = ({ children }: MoviePropsType) => {
                         className="pt-4 md:p-0 w-[96px] md:w-[150px] lg:max-w-[320px] xl:max-w-[300px] my-3"
                         hasPreviewImage
                       />
-                      <CustomTypography fontSize="Lable_Small" color="Surface_InverseSurface" className="text-center">
+                      <CustomTypography
+                        fontSize="Lable_Small"
+                        className="text-center !text-impo_Surface_InverseSurface"
+                      >
                         {item.description}
                       </CustomTypography>
                     </li>
@@ -106,7 +109,7 @@ const Movie = ({ children }: MoviePropsType) => {
         <div className="w-full my-3" style={{ border: `1px solid #8BAD7820` }}></div>
 
         <div className="flex flex-col gap-1">
-          <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+          <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
             انیمیشن‌؛ پناه بردن به دنیای رنگ و قصه
           </CustomTypography>
           <ul className="px-5 w-full grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
@@ -122,14 +125,13 @@ const Movie = ({ children }: MoviePropsType) => {
                     className="pt-4 md:p-0 w-[96px] md:w-[150px] lg:max-w-[320px] xl:max-w-[300px] my-3"
                     hasPreviewImage
                   />
-                  <CustomTypography fontSize="Lable_Small" color="Surface_InverseSurface" className="text-center">
+                  <CustomTypography fontSize="Lable_Small" className="text-center !text-impo_Surface_InverseSurface">
                     {item.description}
                   </CustomTypography>
                   {item.englishName && (
                     <CustomTypography
                       fontSize="Lable_Small"
-                      color="Surface_InverseSurface"
-                      className="text-center"
+                      className="text-center !text-impo_Surface_InverseSurface"
                       numbersMode="english"
                     >
                       {item.englishName}
@@ -145,11 +147,11 @@ const Movie = ({ children }: MoviePropsType) => {
           <>
             <div className="w-full my-3" style={{ border: `1px solid #8BAD7820` }}></div>
             <div className="flex flex-col gap-1">
-              <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+              <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
                 از کجا می‌تونی این انیمیشن‌ها رو ببینی؟
               </CustomTypography>
 
-              <CustomTypography fontSize="Body_Medium" color="Surface_InverseSurface">
+              <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
                 فرزند عزیزت می‌تونه انیمیشن‌های بالا رو از «فیلم‌نت» و به‌صورت رایگان، تماشا کنه. چون فیلم‌نت در راستای
                 آرامش فرزندان ایران، استفاده از بخش کودکان این اپ رو رایگان کرده.
               </CustomTypography>

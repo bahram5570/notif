@@ -14,10 +14,10 @@ const BannerBlackFriday = () => {
       }}
     >
       <div>
-        <CustomTypography fontSize="Headline_Small" color={'White'}>
+        <CustomTypography fontSize="Headline_Small" className="!text-impo_White">
           از خودت مراقبت کن
         </CustomTypography>
-        <CustomTypography fontSize="Body_Small" color={'White'}>
+        <CustomTypography fontSize="Body_Small" className="!text-impo_White">
           تا ۷۰ درصد تخفیف اشتراک ایمپو
         </CustomTypography>
       </div>

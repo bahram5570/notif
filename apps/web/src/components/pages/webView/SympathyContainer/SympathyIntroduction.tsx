@@ -3,7 +3,7 @@ import CustomTypography from '@components/ui/CustomTypography';
 const SympathyIntroduction = () => {
   return (
     <div className="flex flex-col gap-3">
-      <CustomTypography fontSize="Title_Small" color="Neutral_OnBackground">
+      <CustomTypography fontSize="Title_Small" className="!text-impo_Neutral_OnBackground">
         تو همدلی ایمپو چه خبره؟ 👀
       </CustomTypography>
 

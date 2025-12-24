@@ -40,8 +40,7 @@ export default function CircleTimer({ timer }: CircleTimerPropsType) {
       >
         <CustomTypography
           fontSize="Headline_Large"
-          className={`${breakPoint.mobile && '!text-[30px]'}   text-center`}
-          color="Surface_OnSurfaceVariant"
+          className={`!text-impo_Surface_OnSurfaceVariant ${breakPoint.mobile && '!text-[30px]'} text-center`}
         >
           {`${remainingTime} ثانیه`}
         </CustomTypography>

@@ -18,11 +18,7 @@ const ValuesBigScreen = ({ list }: ValuesBigScreenTypes) => {
               {item.title}
             </CustomTypography>
 
-            <CustomTypography
-              fontSize="Body_Small"
-              color={'Surface_InverseSurface'}
-              className="!text-impo_Neutral_OnBackground"
-            >
+            <CustomTypography fontSize="Body_Small" className="!text-impo_Neutral_OnBackground">
               {item.description}
             </CustomTypography>
           </div>

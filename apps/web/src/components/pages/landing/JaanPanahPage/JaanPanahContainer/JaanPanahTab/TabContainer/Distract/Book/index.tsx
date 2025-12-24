@@ -31,16 +31,16 @@ const Book = ({ children }: BookPropsType) => {
           یار مهربان؛ کتاب
         </CustomTypography>
 
-        <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+        <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
           کتاب چطور می‌تونه بهمون کمک کنه؟
         </CustomTypography>
-        <CustomTypography fontSize="Body_Medium" color="Surface_InverseSurface">
+        <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
           وقتی ذهن درگیر اضطراب و تکرار نگرانی‌هاست، خوندن چند صفحه کتاب می‌تونه بهت کمک کنه.
         </CustomTypography>
       </div>
 
       <div className="my-2">
-        <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+        <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
           تاثیر مطالعه روی ذهن:
         </CustomTypography>
         <CustomImage
@@ -55,7 +55,7 @@ const Book = ({ children }: BookPropsType) => {
       </div>
       <div className="w-full my-3" style={{ border: `1px solid #8BAD7820` }}></div>
       <div className="flex flex-col gap-1">
-        <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+        <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
           چه کتاب‌هایی برای این روزها مناسب‌ترن؟
         </CustomTypography>
 
@@ -75,14 +75,13 @@ const Book = ({ children }: BookPropsType) => {
                   className="pt-4 md:p-0 w-[96px] md:w-[150px] lg:max-w-[320px] xl:max-w-[300px] my-3"
                   hasPreviewImage
                 />
-                <CustomTypography fontSize="Lable_Small" color="Surface_InverseSurface" className="text-center">
+                <CustomTypography fontSize="Lable_Small" className="text-center !text-impo_Surface_InverseSurface">
                   {item.description}
                 </CustomTypography>
                 {item.englishName && (
                   <CustomTypography
                     fontSize="Lable_Small"
-                    color="Surface_InverseSurface"
-                    className="text-center"
+                    className="text-center !text-impo_Surface_InverseSurface"
                     numbersMode="english"
                   >
                     {item.englishName}
@@ -98,7 +97,7 @@ const Book = ({ children }: BookPropsType) => {
         <>
           <div className="w-full my-3" style={{ border: `1px solid #8BAD7820` }}></div>
           <div className="flex flex-col gap-1">
-            <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+            <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
               ین کتاب‌ها برای پرت کردن حواس فرزندت از جنگ، مناسبن:
             </CustomTypography>
             <ul className="px-5 w-full grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3">
@@ -114,14 +113,13 @@ const Book = ({ children }: BookPropsType) => {
                       className="pt-4 md:p-0 w-[96px] md:w-[150px] lg:max-w-[320px] xl:max-w-[300px] my-3"
                       hasPreviewImage
                     />
-                    <CustomTypography fontSize="Lable_Small" color="Surface_InverseSurface" className="text-center">
+                    <CustomTypography fontSize="Lable_Small" className="text-center !text-impo_Surface_InverseSurface">
                       {item.description}
                     </CustomTypography>
                     {item.englishName && (
                       <CustomTypography
                         fontSize="Lable_Small"
-                        color="Surface_InverseSurface"
-                        className="text-center"
+                        className="text-center !text-impo_Surface_InverseSurface"
                         numbersMode="english"
                       >
                         {item.englishName}
@@ -137,7 +135,7 @@ const Book = ({ children }: BookPropsType) => {
 
       <div className="w-full my-3" style={{ border: `1px solid #8BAD7820` }}></div>
       <div className="flex flex-col gap-1">
-        <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+        <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
           از کجا می‌تونی کتاب خوب پیدا کنی؟
         </CustomTypography>
 
@@ -145,18 +143,16 @@ const Book = ({ children }: BookPropsType) => {
           target="_blank"
           href="https://fidibo.com/"
           // className="md:mb-5"
-          color="Success_Success"
           // className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 relative z-10"
         >
           فیدیبو
         </CustomLink> */}
-        <CustomTypography fontSize="Body_Medium" color="Surface_InverseSurface">
+        <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
           با همراهی ایمپو، لیست کتاب‌های بالا رو می‌تونی به صورت رایگان از{' '}
           {/* <CustomLink
             target="_blank"
             href="https://fidibo.com/"
             className=""
-            color="Surface_InverseSurface"
             style={{ textDecorationLine: 'underline' }}
             // className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 relative z-10"
           > */}
@@ -165,7 +161,7 @@ const Book = ({ children }: BookPropsType) => {
         </CustomTypography>
 
         <div className="flex  gap-1 justify-start items-center">
-          <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+          <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
             کد تخفیف 100 درصدی:
           </CustomTypography>
           <u style={{ ...typographyDetails }} className=" cursor-pointer text-impo_Primary_Primary" onClick={copylink}>

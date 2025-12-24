@@ -24,14 +24,14 @@ const Movie = () => {
         <CustomTypography fontSize="Headline_Medium" style={{ color: '#076747' }}>
           مدیتیشن
         </CustomTypography>
-        <CustomTypography fontSize="Body_Medium" color={'Surface_InverseSurface'}>
+        <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
           مدیتیشن کمک می‌کنه مغز از حالت دفاع و واکنش سریع بیرون بیاد، مدیتیشن یه مکث می‌ندازه بین احساس و عمل،‌وقتی کم
           کم داری پرخاشگر میشی.
         </CustomTypography>
       </div>
 
       <div className="flex flex-col gap-1 my-3">
-        <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+        <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
           این مدیتیشن‌ها کمکت می‌کنن زود از کوره در نری.
         </CustomTypography>
         <ul className="px-5 w-full grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 justify-items-center">
@@ -50,7 +50,7 @@ const Movie = () => {
                 className="pt-4 md:p-0 w-[96px] md:w-[150px] lg:max-w-[320px] xl:max-w-[300px] my-3"
                 hasPreviewImage
               />
-              <CustomTypography fontSize="Lable_Small" color="Surface_InverseSurface" className="text-center">
+              <CustomTypography fontSize="Lable_Small" className="text-center !text-impo_Surface_InverseSurface">
                 {item.description}
               </CustomTypography>
             </li>
@@ -63,22 +63,21 @@ const Movie = () => {
         <CustomLink
           target="_blank"
           href="https://aramia.me/"
-          className="md:mb-5"
-          color="Success_Success"
+          className="md:mb-5 !text-impo_Success_Success"
           style={{ textDecorationLine: 'underline' }}
         >
           آرامیا
         </CustomLink>
 
-        <CustomTypography fontSize="Body_Medium" color="Surface_InverseSurface">
+        <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
           می‌تونه مرهمی باشه برای این روزهات؛
         </CustomTypography>
-        <CustomTypography fontSize="Body_Medium" color="Surface_InverseSurface">
+        <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
           مدیتیشن‌های آرامیا رو با کد تخفیف ۱۰۰٪ می‌تونین استفاده کنین.
         </CustomTypography>
 
         <div className="flex  gap-1 justify-start items-center">
-          <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+          <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
             کد تخفیف 100 درصدی:
           </CustomTypography>
           <u style={{ ...typographyDetails }} className=" cursor-pointer text-impo_Primary_Primary" onClick={copylink}>

@@ -27,7 +27,7 @@ const Diet = () => {
 
   return (
     <div className="p-4 flex flex-col gap-2">
-      <CustomTypography fontSize="Lable_Large" color="Neutral_OnBackground" className="p-4  text-center">
+      <CustomTypography fontSize="Lable_Large" className="p-4 text-center !text-impo_Neutral_OnBackground">
         غذای جسم و روح؛ هر دو مهمه
       </CustomTypography>
 
@@ -48,10 +48,10 @@ const Diet = () => {
           <CustomTypography fontSize="Title_Medium" style={{ color: '#076747' }}>
             چرا تغذیه و روتین‌های رفتاری مهمن؟
           </CustomTypography>
-          <CustomTypography fontSize="Body_Medium" color="Surface_InverseSurface">
+          <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
             توی شرایط بحرانی، ذهن اولین جاییه که خسته می‌شه… ولی یک بدن ضعیف میتونه این خستگی رو تشدید کنه.
           </CustomTypography>
-          <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+          <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
             چه کارهایی ساده و مفید هستن؟
           </CustomTypography>
         </div>
@@ -68,7 +68,7 @@ const Diet = () => {
                   src={item.image}
                   className="pt-4 md:p-0 w-[120px] md:w-[200px] lg:max-w-[320px] xl:max-w-[300px] my-3"
                 />
-                <CustomTypography fontSize="Body_Small" color="Surface_InverseSurface" className="text-center">
+                <CustomTypography fontSize="Body_Small" className="text-center !text-impo_Surface_InverseSurface">
                   {item.description}
                 </CustomTypography>
               </div>

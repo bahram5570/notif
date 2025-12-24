@@ -21,7 +21,7 @@ const WaysToCalmDown = () => {
   });
   return (
     <div className="p-4 flex flex-col gap-2">
-      <CustomTypography fontSize="Lable_Large" color="Neutral_OnBackground" className="p-4  text-center">
+      <CustomTypography fontSize="Lable_Large" className="p-4 !text-impo_Neutral_OnBackground text-center">
         آرامش؛ سخته ولی لازم
       </CustomTypography>
 
@@ -44,10 +44,10 @@ const WaysToCalmDown = () => {
             چند لحظه آرامش؛ مدیتیشن
           </CustomTypography>
 
-          <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+          <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
             مدیتیشن چطور می‌تونه به ما کمک کنه؟
           </CustomTypography>
-          <CustomTypography fontSize="Body_Medium" color="Surface_InverseSurface">
+          <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
             مدیتیشن کمک می‌کنه مغز از حالت هشدار مداوم خارج بشه. وقتی اضطراب تو بدن می‌چرخه، مدیتیشن باعث:
           </CustomTypography>
         </div>
@@ -63,7 +63,7 @@ const WaysToCalmDown = () => {
         />
 
         <div className="w-full my-3" style={{ border: `1px solid #8BAD7820` }}></div>
-        <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+        <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
           چه مدل‌هایی از مدیتیشن برای این روزها مناسب‌تره؟
         </CustomTypography>
 
@@ -79,19 +79,19 @@ const WaysToCalmDown = () => {
 
         <div className="w-full my-3" style={{ border: `1px solid #8BAD7820` }}></div>
         <div className="flex flex-col gap-1">
-          <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+          <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
             از کجا می‌تونی مدیتیشن مناسب پیدا کنی؟
           </CustomTypography>
 
-          <CustomTypography fontSize="Body_Medium" color="Surface_InverseSurface">
-            <CustomLink target="_blank" href="https://aramia.me/" className="md:mb-5" color="Success_Success">
+          <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
+            <CustomLink target="_blank" href="https://aramia.me/" className="md:mb-5 !text-impo_Success_Success">
               آرامیا
             </CustomLink>
             برای کمک به حفظ آرامش در این شرایط، دوره‌های مدیتیشن خودشون رو با کد تخفیف ۱۰۰٪ در دسترس عموم قرار دادن.
           </CustomTypography>
 
           <div className="flex  gap-1 justify-start items-center">
-            <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+            <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
               کد تخفیف 100 درصدی:
             </CustomTypography>
             <u
@@ -111,10 +111,10 @@ const WaysToCalmDown = () => {
             نُت‌هایی از جنس آرامش؛ موسیقی
           </CustomTypography>
 
-          <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+          <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
             موسیقی آرامش‌بخش چطور می‌تونه کمک‌کننده باشه؟
           </CustomTypography>
-          <CustomTypography fontSize="Body_Medium" color="Surface_InverseSurface">
+          <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
             وقتی استرس و تنش تو بدن جمع می‌شه، موسیقی می‌تونه مثل یک نسیم آروم، ذهن رو به‌جای امن‌تری ببره. گوش‌دادن به
             موسیقی بی‌کلام یا صداهای طبیعت می‌تونه باعث:
           </CustomTypography>
@@ -131,7 +131,7 @@ const WaysToCalmDown = () => {
         />
 
         <div className="w-full my-3" style={{ border: `1px solid #8BAD7820` }}></div>
-        <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+        <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
           چه مدل‌هایی از مدیتیشن برای این روزها مناسب‌تره؟
         </CustomTypography>
 
@@ -147,11 +147,11 @@ const WaysToCalmDown = () => {
 
         <div className="w-full my-3" style={{ border: `1px solid #8BAD7820` }}></div>
         <div className="flex flex-col gap-1">
-          <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+          <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
             از کجا موسیقی مناسب پیدا کنی؟
           </CustomTypography>
 
-          <CustomTypography fontSize="Body_Medium" color="Surface_InverseSurface">
+          <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
             پلتفرم‌های صوتی مثل …. و کانال‌های پادکست، پلی‌لیست‌های آرامش‌بخش ویژه‌ای دارن که کمک می‌کنن توی فضای پرتنش،
             چند دقیقه آروم‌تر باشی. با پیگیری و همراهی ایمپو، بخشی از این پلی‌لیست‌ها برای استفاده رایگان و عمومی در
             دسترس قرار گرفته

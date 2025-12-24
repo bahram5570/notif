@@ -23,7 +23,7 @@ const Speak = () => {
   }, []);
   return (
     <div className="p-4 flex flex-col gap-2">
-      <CustomTypography fontSize="Lable_Large" color="Neutral_OnBackground" className="p-4  text-center">
+      <CustomTypography fontSize="Lable_Large" className="p-4 !text-impo_Neutral_OnBackground text-center">
         بگو ای یار بگو
       </CustomTypography>
       <div style={{ backgroundColor: '#ECFBE3' }} className="p-4 rounded-2xl flex items-start gap-1">

@@ -182,7 +182,7 @@ const Description = () => {
       </div>
 
       <div className="w-full flex items-center justify-center gap-2 pt-6" onClick={() => setIsOpen(!isOpen)}>
-        <CustomTypography fontSize="Title_Small" color={'PrimaryMan_PrimaryMan'}>
+        <CustomTypography fontSize="Title_Small" className="!text-impo_PrimaryMan_PrimaryMan">
           {isOpen ? 'بستن' : 'خواندن اطلاعات بیشتر'}
         </CustomTypography>
 

@@ -49,7 +49,7 @@ const LandingGeneticMarketingLayout = () => {
           className="w-fit px-10 py-[12px] rounded-full flex justify-center"
           style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
         >
-          <CustomTypography fontSize="Lable_Medium" color={'White'}>
+          <CustomTypography fontSize="Lable_Medium" className="!text-impo_White">
             شروع و تکمیل پرسشنامه
           </CustomTypography>
         </CustomLink>

@@ -18,7 +18,7 @@ const FixedFooter: FC<Props> = ({ storyImage, event }) => {
 
   return (
     <div className="mt-10 text-center pb-10">
-      <CustomTypography className="text-center mb-2" tagType="p" fontSize="Title_Small" color={'Primary_Primary'}>
+      <CustomTypography className="text-center mb-2 !text-impo_Primary_Primary" tagType="p" fontSize="Title_Small">
         هدیه بیشتر میخوای؟
       </CustomTypography>
       <CustomTypography className="text-center" tagType="p" fontSize="Body_Medium">
