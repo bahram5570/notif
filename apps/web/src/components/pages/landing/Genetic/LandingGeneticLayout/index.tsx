@@ -23,6 +23,7 @@ const LandingGeneticLayout = () => {
                   sm:px-6 
                   py-5 
                   bg-[url(/assets/images/genetic/coverHollow.webp)] 
+                  dark:bg-[url(/assets/images/genetic/coverHollowDark.webp)]                
                   bg-contain
                   bg-no-repeat 
                   bg-top"
@@ -31,10 +32,14 @@ const LandingGeneticLayout = () => {
           <QuestionProgressBar currentStep="0" questionListLength={20} />
           <div className="mt-7 grid place-items-center lg:w-10/12 lg:mx-auto">
             <CustomImage src={logo} alt="logo" width={80} height={80} />
-            <CustomTypography tagType="h2" fontSize="Title_Small" className="mt-6">
+            <CustomTypography tagType="h2" fontSize="Title_Small" className="mt-6 !text-impo_Neutral_OnBackground">
               غربالگری ژنتیک ایمپو
             </CustomTypography>
-            <CustomTypography tagType="p" fontSize="Body_Medium" className="mt-2 text-center">
+            <CustomTypography
+              tagType="p"
+              fontSize="Body_Medium"
+              className="mt-2 text-center !text-impo_Neutral_OnBackground"
+            >
               غربالگری ژنتیک ایمپو یک ابزار برای غربالگری بر اساس پارامترهای ژنتیکی و تاثیرش روی سلامت ژنتیکی فرزندان،
               ناباروری، دسته بندی بر اساس سطح ریسک ژنتیکی و ارائه راهکارهای لازم بر اساس سطح ریسک مشخص شده برای هر فرد
               هست. برای این منظور لازمه که پرسشنامه‌ای که در ادامه بهت نمایش می‌دیم رو با دقت تکمیل کنی. نکته مهم اینه
@@ -71,9 +76,9 @@ const LandingGeneticLayout = () => {
       <div className="mt-6 w-fit mx-auto my-5 flex">
         <CustomLink
           href="/landing/genetic/testOnline"
-          className="w-fit px-10 py-[12px] rounded-full flex justify-center bg-impo_Primary_Primary"
+          className="w-fit px-10 py-[12px] rounded-full flex justify-center !bg-impo_Primary_Primary"
         >
-          <CustomTypography fontSize="Lable_Medium" className="!text-impo_White">
+          <CustomTypography fontSize="Lable_Medium" className="!text-impo_Primary_OnPrimary">
             شروع و تکمیل پرسشنامه
           </CustomTypography>
         </CustomLink>

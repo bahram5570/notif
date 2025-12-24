@@ -5,10 +5,7 @@ import { Section3Props } from './types';
 
 const Section3 = ({ section, id }: Section3Props) => {
   return (
-    <div
-      className="rounded-[12px] pt-4 pb-6 px-3 lg:px-4 text-center mt-4 !border-impo_Surface_SurfaceVariant"
-      style={{ border: `1px solid` }}
-    >
+    <div className="rounded-[12px] pt-4 pb-6 px-3 lg:px-4 text-center mt-4 border !border-impo_Surface_SurfaceVariant">
       <div className="mt-1">
         <div className="flex gap-x-3 items-center mb-[10px]">
           <div className="w-[64px] h-[64px]">

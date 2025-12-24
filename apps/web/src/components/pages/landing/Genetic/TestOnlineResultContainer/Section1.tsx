@@ -1,25 +1,26 @@
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { Section1Props } from './types';
 
 const Section1 = ({ section, id }: Section1Props) => {
   return (
     <div
-      className="rounded-[12px] py-4 px-3 text-center mt-4"
-      style={{ border: `1px solid ${COLORS_LIST.Neutral_Surface}` }}
+      className="rounded-[12px] py-4 px-3 text-center mt-4  !border-impo_Surface_SurfaceVariant"
+      style={{ border: `1px solid` }}
     >
-      <CustomTypography fontSize="Lable_Large">دوست عزیز سلام!</CustomTypography>
-      <CustomTypography fontSize="Body_Medium" className="mt-2">
+      <CustomTypography fontSize="Lable_Large" className="!text-impo_Neutral_OnBackground">
+        دوست عزیز سلام!
+      </CustomTypography>
+      <CustomTypography fontSize="Body_Medium" className="mt-2 !text-impo_Neutral_OnBackground">
         {section.intro}
       </CustomTypography>
 
-      <CustomTypography fontSize="Lable_Large" className="mt-3">
+      <CustomTypography fontSize="Lable_Large" className="mt-3 !text-impo_Neutral_OnBackground">
         {section.title}
       </CustomTypography>
 
-      <CustomTypography fontSize="Body_Medium" className="mt-2">
+      <CustomTypography fontSize="Body_Medium" className="mt-2 !text-impo_Neutral_OnBackground">
         {section.text}
       </CustomTypography>
 
@@ -35,27 +36,26 @@ const Section1 = ({ section, id }: Section1Props) => {
                 className="w-full h-full object-fill"
               />
             </div>
-            <CustomTypography fontSize="Body_Medium" className="mt-2">
+            <CustomTypography fontSize="Body_Medium" className="mt-2 !text-impo_Neutral_OnBackground">
               {item.title}
             </CustomTypography>
           </div>
         ))}
       </div>
 
-      <CustomTypography fontSize="Body_Medium" className="mt-6 mb-2">
+      <CustomTypography fontSize="Body_Medium" className="mt-6 mb-2 !text-impo_Neutral_OnBackground">
         {section.textBottom}
       </CustomTypography>
 
       {id === 1 && (
-        <div
-          className="p-3 rounded-xl mt-6 text-center"
-          style={{
-            border: `1px solid ${COLORS_LIST.Warning_Warning}`,
-            background: `${COLORS_LIST.Warning_Warning}20`,
-          }}
-        >
-          <CustomTypography fontSize="Lable_Large">باید نگران باشم؟</CustomTypography>
-          <CustomTypography fontSize="Body_Medium" className="mt-2">
+        <div className="p-3 rounded-xl mt-6 text-center  border !border-impo_Warning_Warning !bg-impo_Yellow_200">
+          <CustomTypography fontSize="Lable_Large" className="!text-impo_Neutral_OnBackground dark:!text-impo_Black">
+            باید نگران باشم؟
+          </CustomTypography>
+          <CustomTypography
+            fontSize="Body_Medium"
+            className="mt-2 !text-impo_Neutral_OnBackground dark:!text-impo_Black"
+          >
             این به معنی قطعیت مشکل نیست، ولی نشونه‌ی مهمیه که لازمه دقیق‌تر بررسی بشه تا بتونی با خیال راحت تصمیم بگیری.
           </CustomTypography>
         </div>

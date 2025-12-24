@@ -5,10 +5,7 @@ import { Section1Props } from './types';
 
 const Section1 = ({ section, id }: Section1Props) => {
   return (
-    <div
-      className="rounded-[12px] py-4 px-3 lg:px-4 text-center mt-4 !border-impo_Surface_SurfaceVariant"
-      style={{ border: `1px solid` }}
-    >
+    <div className="rounded-[12px] py-4 px-3 lg:px-4 text-center mt-4 border !border-impo_Surface_SurfaceVariant">
       <CustomTypography fontSize="Lable_Large" className="!text-impo_Neutral_OnBackground">
         دوست عزیز سلام!
       </CustomTypography>

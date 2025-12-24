@@ -16,7 +16,7 @@ const WomanStatusContainer = () => {
 
   return (
     <GeneticMarketingLayout>
-      <CustomTypography tagType="h2" fontSize="Title_Small" className="text-center">
+      <CustomTypography tagType="h2" fontSize="Title_Small" className="text-center !text-impo_Neutral_OnBackground">
         در حال حاضر تو کدوم مرحله از زندگیت هستی؟
       </CustomTypography>
       <div className="grid gap-y-4 w-full mt-16">
@@ -34,10 +34,13 @@ const WomanStatusContainer = () => {
           varient="fill"
           fontSize="Title_Small"
           onClick={handleNextStep}
+          className="!bg-impo_Primary_Primary !border-none"
           isDisable={isNextDisabled}
           isLoading={isLoading}
         >
-          مرحله بعد
+          <CustomTypography fontSize="Title_Small" className="!text-impo_Primary_OnPrimary">
+            مرحله بعد
+          </CustomTypography>
         </CustomButton>
         <CustomImage src={collaborationlogo} alt="collaborationlogo" width={999} height={999} className="w-[112px]" />
       </div>

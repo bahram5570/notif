@@ -4,14 +4,11 @@ import { toPersianNumbers } from '@utils/numbers';
 
 import styles from './styles.module.css';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import { InputModuleProps } from './types';
 
 const InputModule = ({ placeHolder, value, valueHandler, isTextTyps, autoFocus }: InputModuleProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const caretColor = COLORS_LIST.Primary_Primary;
-  const textColor = COLORS_LIST.Neutral_OnBackground;
+  const caretColor = '!text-impo_Primary_Primary';
 
   const handleFocus = () => {
     setTimeout(() => {
@@ -31,9 +28,9 @@ const InputModule = ({ placeHolder, value, valueHandler, isTextTyps, autoFocus }
       value={toPersianNumbers(value)}
       type={isTextTyps ? 'text' : 'tel'}
       onChange={(e) => changeHandler(e)}
-      style={{ color: textColor, caretColor, direction: isTextTyps ? 'rtl' : 'ltr' }}
+      style={{ caretColor, direction: isTextTyps ? 'rtl' : 'ltr' }}
       autoFocus={autoFocus}
-      className={`border-none bg-transparent w-full relative pt-7 text-center placeholder-[#c7c7c7] focus:outline-0 ${styles.input}`}
+      className={`border-none bg-transparent w-full relative pt-7 text-center placeholder-[#c7c7c7] focus:outline-0 !text-impo_Neutral_OnBackground ${styles.input}`}
     />
   );
 };
