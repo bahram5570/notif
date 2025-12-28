@@ -1,24 +1,36 @@
+'use client';
+
+import CustomTypography from '@components/ui/CustomTypography';
+
+import ExerciseSection from './ExerciseSection';
+import SensitiveResultHeading from './SensitiveResultHeading';
+import WarningSection from './WarningSection';
+import useGetResult from './__hooks__/useGetResult';
+import { SENSITIVE_POINTS_BODY_RESULT_DATA } from './constants';
+import { ResultLevelEnum } from './enum';
+
 const SensitivePointsBodyResultPage = () => {
+  const { resultLevel } = useGetResult();
+  const result = resultLevel
+    ? SENSITIVE_POINTS_BODY_RESULT_DATA[resultLevel]
+    : SENSITIVE_POINTS_BODY_RESULT_DATA[ResultLevelEnum.LOW];
+
   return (
-    <div className="lg:w-10/12 lg:mx-auto ">
-      <div
-        className="  flex justify-center     min-h-[190px]   lg:max-h-96 "
-        style={{
-          // backgroundImage: " url('/assets/images/sympathyLandingBackground.webp')",
-          backgroundImage:
-            "linear-gradient(135deg, rgba(186, 39, 255, 0.2), rgba(133, 25, 218, 0.2)), url('/assets/images/sensitive/bg.webp')",
-          filter: 'blur(120px)',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        {/* <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background: 'linear-gradient(135deg, rgba(186, 39, 255, 0.2), rgba(133, 25, 218, 0.2))',
-            filter: 'blur(120px)',
-          }}
-        /> */}
+    <div className="lg:w-10/12 lg:mx-auto relative ">
+      <SensitiveResultHeading imageHeader={result.imageHeader} title={result.title} />
+
+      <div className="flex flex-col justify-center mt-4 px-4 lg:mt-0">
+        <CustomTypography fontSize="Body_Medium" className="text-center">
+          {result.description}
+        </CustomTypography>
+
+        <WarningSection />
+
+        <ExerciseSection exercise={result.exercise} />
+
+        <CustomTypography fontSize="Body_Small" className="text-center py-4">
+          توصیه می‌شه این تست رو بعد از مدتی دوباره انجام بدی تا پیشرفتت رو بسنجی.
+        </CustomTypography>
       </div>
     </div>
   );

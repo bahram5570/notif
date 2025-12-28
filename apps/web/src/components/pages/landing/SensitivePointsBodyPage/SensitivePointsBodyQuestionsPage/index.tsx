@@ -15,8 +15,11 @@ const SensitivePointsBodyQuestionsPage = () => {
   const { currentQuestion } = useCurrentQuestion({ currentStep });
 
   return (
-    <div className="lg:w-10/12 lg:mx-auto ">
-      <div className="px-4 h-[530px]  flex flex-col gap-5">
+    <div className="">
+      <div
+        key={currentStep}
+        className="animate-fadeSlideIn  px-4 h-[468px]  flex flex-col gap-5 lg:w-10/12 lg:mx-auto "
+      >
         <div className="mt-6">
           <QuestionProgressBar
             currentStep={currentStep}
@@ -50,7 +53,7 @@ const SensitivePointsBodyQuestionsPage = () => {
           height={0}
           width={500}
           alt={currentQuestion.question}
-          className=" relative"
+          className=" relative p-4"
           key={currentStep}
         />
         <SensitiveQuestionFooter nextStepHandler={nextStepHandler} isDisable={selectedIndex === -1} />

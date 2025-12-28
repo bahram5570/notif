@@ -7,18 +7,26 @@ import CustomTypography from '@components/ui/CustomTypography';
 const SensitivePointsBodyPage = () => {
   return (
     <>
-      <div className="lg:w-10/12 lg:mx-auto h-full">
-        <div className="bg-impo_Red_200  scale-y-[-1] [clip-path:ellipse(100%_90%_at_50%_95%)]">
+      <div className="lg:w-10/12 lg:mx-auto h-full pb-[112px]">
+        <div className="relative scale-y-[-1] overflow-hidden [clip-path:ellipse(100%_80%_at_50%_95%)]">
+          <div
+            className="absolute inset-0 scale-y-[-1] !bg-repeat !bg-cover"
+            style={{
+              background:
+                "url('/assets/images/sensitive/bg.webp'), linear-gradient(135deg, rgba(186, 39, 255, 0.2), rgba(133, 25, 218, 0.2))",
+            }}
+          />
+
           <CustomImage
             src="/assets/images/sensitive/header.webp"
-            className="mx-auto pt-6 scale-y-[-1]"
-            height={0}
+            className="relative z-10 mx-auto pt-6 scale-y-[-1]"
             width={500}
+            height={0}
             alt="sensitive"
           />
         </div>
 
-        <div className="bg-impo_White px-4 flex flex-col gap-3">
+        <div className="bg-impo_White px-4 flex flex-col gap-3 -mt-10">
           <CustomTypography fontSize="Title_Small" className=" text-impo_black text-center">
             سارا عزیز سلام
           </CustomTypography>
@@ -58,22 +66,22 @@ const SensitivePointsBodyPage = () => {
               </li>
             </ul>
           </div>
-          <div className="mt-3 flex flex-col justify-center items-center gap-3">
-            <CustomLink href="/landing/sensitive/questions">
-              <CustomTypography
-                fontSize="Title_Small"
-                className="text-impo_White !bg-impo_Pink_500 rounded-full h-12 flex justify-center items-center px-4"
-              >
-                شروع و تکمیل پرسشنامه
-              </CustomTypography>
-            </CustomLink>
-            <div className="flex items-center justify-center">
-              <CustomTypography fontSize="Body_Small" className="text-impo_black">
-                تهیه و تایید علمی توسط متخصصین اپلیکیشن
-              </CustomTypography>
-              <ImpoIcon className="w-8 h-auto fill-impo_Pink_500" />
-            </div>
-          </div>
+        </div>
+      </div>
+      <div className=" fixed bottom-0 max-w-[900px] mx-auto left-0 right-0 bg-impo_White h-24 flex flex-col justify-center items-center gap-3">
+        <CustomLink href="/landing/sensitive/questions">
+          <CustomTypography
+            fontSize="Title_Small"
+            className="text-impo_White !bg-impo_Pink_500 rounded-full h-12 flex justify-center items-center px-4"
+          >
+            شروع و تکمیل پرسشنامه
+          </CustomTypography>
+        </CustomLink>
+        <div className="flex items-center justify-center">
+          <CustomTypography fontSize="Body_Small" className="text-impo_black">
+            تهیه و تایید علمی توسط متخصصین اپلیکیشن
+          </CustomTypography>
+          <ImpoIcon className="w-8 h-auto fill-impo_Pink_500" />
         </div>
       </div>
     </>
