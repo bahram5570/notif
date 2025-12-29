@@ -10,7 +10,7 @@ const SensitiveResultHeading = ({ imageHeader, title }: SensitiveResultHeadingPr
         className="relative flex justify-center items-end [clip-path:ellipse(120%_70%_at_50%_100%)] lg:[clip-path:ellipse(120%_80%_at_50%_100%)] min-h-[200px] lg:max-h-96 scale-y-[-1] !bg-repeat !bg-cover"
         style={{
           background:
-            "url('/assets/images/sensitive/bg.webp'),linear-gradient(135deg, rgba(186, 39, 255, 0.2), rgba(133, 25, 218, 0.2))",
+            'url("/assets/images/sensitive/bg.webp"),linear-gradient(135deg, rgba(186, 39, 255, 0.2), rgba(133, 25, 218, 0.2))',
         }}
       >
         <CustomImage
