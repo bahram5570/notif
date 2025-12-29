@@ -8,7 +8,7 @@ import { SensitiveQuestionFooterPropsType } from './type';
 const SensitiveQuestionFooter = ({ nextStepHandler, isDisable }: SensitiveQuestionFooterPropsType) => {
   return (
     <div
-      className=" fixed bottom-0 left-0 right-0 justify-end items-center max-w-[960px] h-[173px] w-full mx-auto flex flex-col gap-4"
+      className=" fixed bottom-0 left-0 right-0 justify-end items-center lg:max-w-[50%] max-w-[514px] h-[173px] w-full mx-auto flex flex-col gap-4"
       style={{ background: ' linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 40.96%)' }}
     >
       <div className="w-fit mx-auto  flex">

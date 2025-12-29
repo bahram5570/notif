@@ -6,7 +6,7 @@ import CustomTypography from '@components/ui/CustomTypography';
 
 const SensitivePointsBodyPage = () => {
   return (
-    <>
+    <div className="min-h-[100dvh]">
       <div className="lg:w-10/12 lg:mx-auto h-full pb-[112px]">
         <div className="relative scale-y-[-1] overflow-hidden [clip-path:ellipse(100%_80%_at_50%_95%)]">
           <div
@@ -68,7 +68,10 @@ const SensitivePointsBodyPage = () => {
           </div>
         </div>
       </div>
-      <div className=" fixed bottom-0 max-w-[900px] mx-auto left-0 right-0 bg-impo_White h-24 flex flex-col justify-center items-center gap-3">
+      <div
+        className=" fixed bottom-0 max-w-[900px] mx-auto left-0 right-0  h-44  flex flex-col justify-end pb-2 items-center gap-3"
+        style={{ background: ' linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 40.96%)' }}
+      >
         <CustomLink href="/landing/sensitive/questions">
           <CustomTypography
             fontSize="Title_Small"
@@ -84,7 +87,7 @@ const SensitivePointsBodyPage = () => {
           <ImpoIcon className="w-8 h-auto fill-impo_Pink_500" />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

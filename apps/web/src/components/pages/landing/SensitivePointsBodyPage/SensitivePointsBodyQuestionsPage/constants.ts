@@ -55,7 +55,7 @@ export const SENSITIVE_POINTS_BODY_QUESTION_DATA: SensitiveQuestionDataType[] = 
     ],
   },
   {
-    image: '/assets/images/sensitive/6.webp',
+    image: '/assets/images/sensitive/13.webp',
     question: ' بیشتر به لمس آرام، طولانی و تدریجی پاسخ بدنی مثبت نشان می‌دهم.',
     answers: [
       { answer: 'نه', score: 1 },

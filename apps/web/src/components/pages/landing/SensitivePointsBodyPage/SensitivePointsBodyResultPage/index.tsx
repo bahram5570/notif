@@ -13,14 +13,14 @@ const SensitivePointsBodyResultPage = () => {
   const { resultLevel } = useGetResult();
   const result = resultLevel
     ? SENSITIVE_POINTS_BODY_RESULT_DATA[resultLevel]
-    : SENSITIVE_POINTS_BODY_RESULT_DATA[ResultLevelEnum.LOW];
+    : SENSITIVE_POINTS_BODY_RESULT_DATA[ResultLevelEnum.MEDIUM];
 
   return (
     <div className="lg:w-10/12 lg:mx-auto relative ">
       <SensitiveResultHeading imageHeader={result.imageHeader} title={result.title} />
 
-      <div className="flex flex-col justify-center mt-4 px-4 lg:mt-0">
-        <CustomTypography fontSize="Body_Medium" className="text-center">
+      <div className="flex flex-col justify-center px-4 ">
+        <CustomTypography fontSize="Body_Medium" className="text-center -mt-7">
           {result.description}
         </CustomTypography>
 
