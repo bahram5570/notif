@@ -1,4 +1,4 @@
-import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
@@ -13,11 +13,13 @@ const Movie = () => {
   const { copylink } = useCopy();
   const { breakPoint } = useBreakPoint();
   const { operatingSystem } = useOperatingSystem();
-  const typographyDetails = typographyMaker({
-    fontSize: 'Lable_LargeProminet',
+
+  const typographyDetails = typographyFontStylesMaker({
     operatingSystem,
     isWeb: !breakPoint.laptop,
+    fontSize: 'Lable_LargeProminet',
   });
+
   return (
     <div className=" rounded-2xl py-6 px-4 bg-gradient-to-b from-[#ECFBE3] to-[#F7F7F7]">
       <div className="flex flex-col gap-1">

@@ -1,5 +1,5 @@
 import ArrowIcon from '@assets/icons/arrow3.svg';
-import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
@@ -11,8 +11,16 @@ const ArticleIdCommentsListGenerator = (props: ArticleIdCommentsListGeneratorTyp
   const { breakPoint } = useBreakPoint();
   const { operatingSystem } = useOperatingSystem();
 
-  const messageTypography = typographyMaker({ fontSize: 'Body_Large', operatingSystem, isWeb: !breakPoint.laptop });
-  const replyTypography = typographyMaker({ fontSize: 'Body_Large', operatingSystem, isWeb: !breakPoint.laptop });
+  const messageTypography = typographyFontStylesMaker({
+    fontSize: 'Body_Large',
+    operatingSystem,
+    isWeb: !breakPoint.laptop,
+  });
+  const replyTypography = typographyFontStylesMaker({
+    fontSize: 'Body_Large',
+    operatingSystem,
+    isWeb: !breakPoint.laptop,
+  });
 
   const htmlConvertor = (txt: string) => {
     return txt

@@ -1,6 +1,6 @@
 'use client';
 
-import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
@@ -16,10 +16,10 @@ const Book = () => {
   const { breakPoint } = useBreakPoint();
   const { operatingSystem } = useOperatingSystem();
 
-  const typographyDetails = typographyMaker({
-    fontSize: 'Lable_LargeProminet',
+  const typographyDetails = typographyFontStylesMaker({
     operatingSystem,
     isWeb: !breakPoint.laptop,
+    fontSize: 'Lable_LargeProminet',
   });
 
   return (

@@ -1,27 +1,12 @@
 'use client';
 
-import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
-
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
-import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import { BOOK_PART1 } from '../../PsychologicalAnesthesia/Movie/constants';
-import useCopy from './__hooks__/useCopy';
 
 const Book = () => {
-  const { copylink } = useCopy();
-  const { breakPoint } = useBreakPoint();
-  const { operatingSystem } = useOperatingSystem();
-
-  const typographyDetails = typographyMaker({
-    fontSize: 'Lable_LargeProminet',
-    operatingSystem,
-    isWeb: !breakPoint.laptop,
-  });
-
   return (
     <div className=" rounded-2xl py-6 px-4 bg-gradient-to-b from-[#ECFBE3] to-[#F7F7F7]">
       <div className="flex flex-col gap-1">
@@ -54,7 +39,7 @@ const Book = () => {
                   {item.percent && (
                     <div className="absolute bottom-0 left-0 w-8 h-8 flex justify-center items-center rounded-full bg-impo_Primary_Primary !text-impo_White">
                       <CustomTypography fontSize="Lable_Small" className="text-center !text-impo_Primary_OnPrimary">
-                        %{item.percent}
+                        {`%${item.percent}`}
                       </CustomTypography>
                     </div>
                   )}

@@ -1,7 +1,7 @@
 'use client';
 
-import { typographyMaker } from '../CustomTypography/__utils__';
 import { resultMaker } from './__utils__';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
 import useBreakPoint from '@hooks/useBreakPoint';
 import useOperatingSystem from '@hooks/useOperatingSystem';
@@ -9,11 +9,11 @@ import useOperatingSystem from '@hooks/useOperatingSystem';
 import { CustomInputTypes } from './types';
 
 const CustomInput = ({
+  fontSize = 'Body_Medium',
   hasOutline = false,
   placeholder = '',
   numbersMode,
   className,
-  fontSize,
   onValue,
   style,
   value,
@@ -28,7 +28,7 @@ const CustomInput = ({
   };
 
   const updatedValue = resultMaker(value, numbersMode);
-  const typographyDetails = typographyMaker({ fontSize, operatingSystem, isWeb: !breakPoint.laptop });
+  const typographyDetails = typographyFontStylesMaker({ fontSize, operatingSystem, isWeb: !breakPoint.laptop });
 
   return (
     <input

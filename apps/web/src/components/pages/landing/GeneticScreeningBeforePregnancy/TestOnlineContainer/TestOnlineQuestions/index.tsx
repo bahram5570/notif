@@ -1,5 +1,5 @@
 import LogoIcon from '@assets/images/genetic/logo.svg';
-import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
 import QuestionProgressBar from '@components/modules/QuestionProgressBar';
 import CustomButton from '@components/ui/CustomButton';
@@ -13,11 +13,17 @@ import { GENETIC_TEST_ONLINE_QUESTION_LIST } from '../constants';
 import TestOnlineQuestionsOption from './TestOnlineQuestionsOption';
 
 const TestOnlineQuestions = () => {
-  const { currentStep, data } = useTestOnlineSteps();
   const questionList = GENETIC_TEST_ONLINE_QUESTION_LIST;
+
   const { breakPoint } = useBreakPoint();
   const { operatingSystem } = useOperatingSystem();
-  const typographyDetails = typographyMaker({ fontSize: 'Body_Medium', operatingSystem, isWeb: !breakPoint.laptop });
+  const { currentStep, data } = useTestOnlineSteps();
+
+  const typographyDetails = typographyFontStylesMaker({
+    operatingSystem,
+    fontSize: 'Body_Medium',
+    isWeb: !breakPoint.laptop,
+  });
 
   const { nextStepHandler, selectedIndex, selectedIndexHandler, extraNote, setExtraNote } = useTestOnlineScore({
     currentStep,
@@ -61,9 +67,7 @@ const TestOnlineQuestions = () => {
             value={extraNote}
             rows={4}
             onChange={(e) => setExtraNote(e.target.value)}
-            style={{
-              ...typographyDetails,
-            }}
+            style={{ ...typographyDetails }}
           />
         </div>
       )}

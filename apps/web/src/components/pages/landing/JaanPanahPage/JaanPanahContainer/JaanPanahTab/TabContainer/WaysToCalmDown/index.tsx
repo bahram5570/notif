@@ -1,5 +1,5 @@
 import StarIcon from '@assets/icons/Stars.svg';
-import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
@@ -14,11 +14,12 @@ const WaysToCalmDown = () => {
   const { breakPoint } = useBreakPoint();
   const { operatingSystem } = useOperatingSystem();
 
-  const typographyDetails = typographyMaker({
-    fontSize: 'Lable_LargeProminet',
+  const typographyDetails = typographyFontStylesMaker({
     operatingSystem,
     isWeb: !breakPoint.laptop,
+    fontSize: 'Lable_LargeProminet',
   });
+
   return (
     <div className="p-4 flex flex-col gap-2">
       <CustomTypography fontSize="Lable_Large" className="p-4 !text-impo_Neutral_OnBackground text-center">

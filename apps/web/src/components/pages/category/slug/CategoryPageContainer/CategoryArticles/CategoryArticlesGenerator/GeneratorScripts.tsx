@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
@@ -25,7 +25,11 @@ const GeneratorScripts = ({ body, title, url }: GeneratorScriptsTypes) => {
     return `${result} ...`;
   };
 
-  const typographyDetails = typographyMaker({ fontSize: 'Body_Medium', operatingSystem, isWeb: !breakPoint.laptop });
+  const typographyDetails = typographyFontStylesMaker({
+    fontSize: 'Body_Medium',
+    operatingSystem,
+    isWeb: !breakPoint.laptop,
+  });
 
   return (
     <div className="w-full h-full flex flex-col justify-center lg:justify-start">

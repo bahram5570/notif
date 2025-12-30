@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomInput from '@components/ui/CustomInput';
@@ -14,16 +14,20 @@ import useSubmit from './__hooks__/useSubmit';
 import { UserInfoType } from './type';
 
 const ContactUsForm = () => {
-  const [userInfo, setUserInfo] = useState<UserInfoType>({} as UserInfoType);
+  const { submitHandler } = useSubmit();
   const { breakPoint } = useBreakPoint();
   const { operatingSystem } = useOperatingSystem();
-  const { submitHandler } = useSubmit();
+  const [userInfo, setUserInfo] = useState<UserInfoType>({} as UserInfoType);
 
   const onChangeHandler = (v: string | number, name: string) => {
     setUserInfo({ ...userInfo, [name]: v });
   };
 
-  const typographyDetails = typographyMaker({ fontSize: 'Body_Medium', operatingSystem, isWeb: !breakPoint.laptop });
+  const typographyDetails = typographyFontStylesMaker({
+    operatingSystem,
+    fontSize: 'Body_Medium',
+    isWeb: !breakPoint.laptop,
+  });
 
   return (
     <div className="flex flex-col sm:gap-3 gap-4  mx-4">
@@ -64,7 +68,6 @@ const ContactUsForm = () => {
         <div className="w-full">
           <div className="flex items-center gap-1 pb-2">
             <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground">
-              {' '}
               ایمیل
             </CustomTypography>
           </div>
@@ -81,7 +84,6 @@ const ContactUsForm = () => {
         <div className="w-full">
           <div className="flex items-center gap-1 pb-2">
             <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground">
-              {' '}
               شماره تلفن
             </CustomTypography>
           </div>
@@ -107,12 +109,10 @@ const ContactUsForm = () => {
 
         <textarea
           rows={6}
+          style={{ ...typographyDetails }}
           value={userInfo?.description || ''}
           className="w-full sm:p-4 p-2 rounded-xl bg-impo_Neutral_Surface !outline-impo_Primary_Primary"
           onChange={(e) => onChangeHandler(e.target.value, 'description')}
-          style={{
-            ...typographyDetails,
-          }}
         />
       </div>
       <div className=" flex justify-center items-center">

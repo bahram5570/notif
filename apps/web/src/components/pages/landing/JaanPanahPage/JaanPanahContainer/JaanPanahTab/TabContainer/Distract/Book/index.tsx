@@ -1,6 +1,6 @@
 'use client';
 
-import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
 import { JaanPanahHaveChildrenEnum } from '@components/pages/landing/JaanPanahPage/enum';
 import CustomImage from '@components/ui/CustomImage';
@@ -18,9 +18,9 @@ const Book = ({ children }: BookPropsType) => {
   const { breakPoint } = useBreakPoint();
   const { operatingSystem } = useOperatingSystem();
 
-  const typographyDetails = typographyMaker({
-    fontSize: 'Lable_LargeProminet',
+  const typographyDetails = typographyFontStylesMaker({
     operatingSystem,
+    fontSize: 'Lable_LargeProminet',
     isWeb: !breakPoint.laptop,
   });
 

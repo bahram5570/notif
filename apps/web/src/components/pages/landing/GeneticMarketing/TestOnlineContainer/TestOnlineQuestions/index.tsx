@@ -1,5 +1,5 @@
 import collaborationlogo from '@assets/images/geneticMarketing/collaborationlogo.webp';
-import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
@@ -13,11 +13,17 @@ import { GENETIC_TEST_ONLINE_QUESTION_LIST } from '../constants';
 import TestOnlineQuestionsOption from './TestOnlineQuestionsOption';
 
 const TestOnlineQuestions = () => {
-  const { currentStep, data } = useTestOnlineSteps();
   const questionList = GENETIC_TEST_ONLINE_QUESTION_LIST;
+
   const { breakPoint } = useBreakPoint();
   const { operatingSystem } = useOperatingSystem();
-  const typographyDetails = typographyMaker({ fontSize: 'Body_Medium', operatingSystem, isWeb: !breakPoint.laptop });
+  const { currentStep, data } = useTestOnlineSteps();
+
+  const typographyDetails = typographyFontStylesMaker({
+    operatingSystem,
+    fontSize: 'Body_Medium',
+    isWeb: !breakPoint.laptop,
+  });
 
   const isLastStep = Number(currentStep) === Object.keys(questionList).length - 1;
   const { nextStepHandler, selectedIndex, selectedIndexHandler, extraNote, setExtraNote } = useTestOnlineScore({

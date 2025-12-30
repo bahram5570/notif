@@ -1,4 +1,4 @@
-import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
 import useBreakPoint from '@hooks/useBreakPoint';
 import useOperatingSystem from '@hooks/useOperatingSystem';
@@ -9,7 +9,11 @@ const ArticleIdNewTextarea = ({ message, messageHandler }: ArticleIdNewTextareaT
   const { breakPoint } = useBreakPoint();
   const { operatingSystem } = useOperatingSystem();
 
-  const typographyDetails = typographyMaker({ fontSize: 'Body_Medium', operatingSystem, isWeb: !breakPoint.laptop });
+  const typographyDetails = typographyFontStylesMaker({
+    operatingSystem,
+    fontSize: 'Body_Medium',
+    isWeb: !breakPoint.laptop,
+  });
 
   return (
     <textarea
