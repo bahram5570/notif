@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import ProgressCycleLoading from '@components/ProgressCycleLoading';
-import CustomButton from '@components/ui/CustomButton';
+import CustomButton2 from '@components/ui/CustomButton2';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 
@@ -88,9 +88,9 @@ const JaanPanahQuestions = ({ onResult }: JaanPanahQuestionsTypes) => {
             </div>
           )}
 
-          <CustomButton varient="fill" isDisable={!currentValue} onClick={clickHandler} className="!mt-auto">
+          <CustomButton2 isDisable={!currentValue} onClick={clickHandler} className="!mt-auto">
             {btnScript}
-          </CustomButton>
+          </CustomButton2>
         </div>
       </div>
     </>

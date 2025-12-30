@@ -4,7 +4,7 @@ import ImpoIcon from '@assets/icons/impoNameMen.svg';
 import { scrollToIdHandler } from '@utils/navigation';
 
 import { DOWNLOAD_APP_SECTION_ID } from '@components/DownloadApp/DownloadAppWomen/constants';
-import CustomButton from '@components/ui/CustomButton';
+import CustomButton2 from '@components/ui/CustomButton2';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 
@@ -23,16 +23,14 @@ const MenHeadingContents = () => {
         مراقبت از خود و رابطه
       </CustomTypography>
 
-      <CustomButton
-        varient="fill"
-        backgroundColor="PrimaryMan_PrimaryMan"
-        className="!w-[120px] lg:!w-[182px] h-[40px] !mt-2 !mb-8"
+      <CustomButton2
+        className="!w-[120px] lg:!w-[182px] h-[40px] !mt-2 !mb-8 !bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan"
         onClick={() => scrollToIdHandler(DOWNLOAD_APP_SECTION_ID)}
         fontSize={breakPoint.laptop ? 'Lable_Large' : 'Title_Small'}
         id="install_men"
       >
         نصب ایمپو
-      </CustomButton>
+      </CustomButton2>
     </div>
   );
 };

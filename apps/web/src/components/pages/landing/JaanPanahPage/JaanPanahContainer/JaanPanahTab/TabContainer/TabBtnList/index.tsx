@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { JaanPanahCityConditionEnum } from '@components/pages/landing/JaanPanahPage/enum';
-import CustomButton from '@components/ui/CustomButton';
+import CustomButton2 from '@components/ui/CustomButton2';
 
 import { TAB_LIST_DANGER, TAB_LIST_NORMAL } from '../constants';
 import { TabBtnListPropsType } from './type';
@@ -20,21 +20,17 @@ const TabBtnList = ({ activeTab, handleActiveTab, cityCondition }: TabBtnListPro
   return (
     <div className="flex  flex-wrap  gap-2 p-[10px] w-full bg-impo_White">
       {tabList.map((tab, index) => (
-        <CustomButton
+        <CustomButton2
           key={index}
-          varient="FREE_COLORS"
           fontSize="Body_Medium"
           onClick={() => handleActiveTab(tab.id)}
-          textColor=""
-          backgroundColor=""
-          borderColor=""
           className={`!px-6 !py-3 !h-12 !w-fit !rounded-[100px] ${activeTab === tab.id ? 'bg-impo_Primary_PrimaryContainer text-impo_Primary_Primary border-impo_White' : 'bg-impo_White text-impo_Neutral_OnSurface border-impo_Surface_OutlineVariant'}`}
           style={{
             border: `1px solid `,
           }}
         >
           {tab.label}
-        </CustomButton>
+        </CustomButton2>
       ))}
     </div>
   );

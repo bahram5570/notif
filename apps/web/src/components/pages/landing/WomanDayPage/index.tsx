@@ -6,7 +6,7 @@ import landingImage from '@assets/images/womanDay/landingImage.webp';
 import womanDaySubscribetion from '@assets/images/womanDaySubscribetion.webp';
 import { toEnglishNumbers } from '@utils/numbers';
 
-import CustomButton from '@components/ui/CustomButton';
+import CustomButton2 from '@components/ui/CustomButton2';
 import CustomImage from '@components/ui/CustomImage';
 import CustomInput from '@components/ui/CustomInput';
 import CustomTypography from '@components/ui/CustomTypography';
@@ -151,15 +151,14 @@ export default function WomanDayPage() {
               />
             </div>
 
-            <CustomButton
+            <CustomButton2
               isDisable={isFormInvalid}
-              varient="fill"
               onClick={handleSubmit}
               className="w-full !mt-10 !rounded-xl"
               fontSize="Lable_Large"
             >
               {isLoading ? <Spinner size={20} className="!border-impo_White" /> : 'خرید هدیه روز زن و مادر'}
-            </CustomButton>
+            </CustomButton2>
           </div>
         </div>
       </div>

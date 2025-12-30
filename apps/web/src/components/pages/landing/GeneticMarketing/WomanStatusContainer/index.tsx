@@ -2,7 +2,7 @@
 
 import collaborationlogo from '@assets/images/geneticMarketing/collaborationlogo.webp';
 
-import CustomButton from '@components/ui/CustomButton';
+import CustomButton2 from '@components/ui/CustomButton2';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 
@@ -30,8 +30,7 @@ const WomanStatusContainer = () => {
         ))}
       </div>
       <div className="w-full mx-auto grid gap-y-6 justify-items-center justify-center fixed right-0 bottom-4">
-        <CustomButton
-          varient="fill"
+        <CustomButton2
           fontSize="Title_Small"
           onClick={handleNextStep}
           className="!bg-impo_Primary_Primary !border-none"
@@ -41,7 +40,7 @@ const WomanStatusContainer = () => {
           <CustomTypography fontSize="Title_Small" className="!text-impo_Primary_OnPrimary">
             مرحله بعد
           </CustomTypography>
-        </CustomButton>
+        </CustomButton2>
         <CustomImage src={collaborationlogo} alt="collaborationlogo" width={999} height={999} className="w-[112px]" />
       </div>
     </GeneticMarketingLayout>

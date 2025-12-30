@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import CustomButton from '@components/ui/CustomButton';
+import CustomButton2 from '@components/ui/CustomButton2';
 import CustomImage from '@components/ui/CustomImage';
 import CustomModal from '@components/ui/CustomModal';
 import CustomTypography from '@components/ui/CustomTypography';
@@ -83,9 +83,9 @@ const MarhaamContainer = () => {
             مهلت استفاده از خدمات مرهم به پایان رسید
           </CustomTypography>
 
-          <CustomButton varient="fill" className="!w-full !mt-2" onClick={() => isOpenHandler(false)}>
+          <CustomButton2 className="!w-full !mt-2" onClick={() => isOpenHandler(false)}>
             فهمیدم
-          </CustomButton>
+          </CustomButton2>
         </div>
       </CustomModal>
     </article>

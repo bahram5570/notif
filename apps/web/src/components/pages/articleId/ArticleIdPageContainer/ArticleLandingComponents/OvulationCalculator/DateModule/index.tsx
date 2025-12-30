@@ -1,7 +1,7 @@
 import SelectDateIcon from '@assets/icons/selectDate.svg';
 import { currentDate } from '@utils/dates';
 
-import CustomButton from '@components/ui/CustomButton';
+import CustomButton2 from '@components/ui/CustomButton2';
 import CustomModal from '@components/ui/CustomModal';
 import CustomTypography from '@components/ui/CustomTypography';
 import DateSelector from '@components/ui/DateSelector';
@@ -62,16 +62,16 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
           valueHandler={(v) => valuesHandler({ name: 'periodLength', value: v })}
         />
 
-        <CustomButton
-          varient="fill"
+        <CustomButton2
           isLoading={isLoading}
           onClick={() => submitHandler(values)}
           style={{ pointerEvents: isDisable ? 'none' : 'auto' }}
-          className="absolute h-[48px] w-full !mt-auto sm:max-w-[460px]"
+          className=" h-[48px] w-full !mt-auto sm:max-w-[460px]"
           id="cal_ovulation_tool"
+          fontSize="Lable_Large"
         >
           محاسبه روز تخمک گذاری
-        </CustomButton>
+        </CustomButton2>
       </div>
 
       <CustomModal position={position} isOpen={isOpen} onClose={() => isOpenHandler(false)}>
@@ -86,13 +86,13 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
 
           <DateSelector valueHandler={(v) => currentDateHandler(v)} startDate={startDate} defaultDate={defaultDate} />
 
-          <CustomButton
-            varient="fill"
+          <CustomButton2
             className="!w-full !mt-2"
+            fontSize="Lable_Large"
             onClick={() => valuesHandler({ name: 'lastPeriod', value: currentDate })}
           >
             انتخاب تاریخ
-          </CustomButton>
+          </CustomButton2>
         </div>
       </CustomModal>
     </>

@@ -4,7 +4,7 @@ import ImpoIcon from '@assets/icons/impo.svg';
 import { scrollToIdHandler } from '@utils/navigation';
 
 import { DOWNLOAD_APP_SECTION_ID } from '@components/DownloadApp/DownloadAppWomen/constants';
-import CustomButton from '@components/ui/CustomButton';
+import CustomButton2 from '@components/ui/CustomButton2';
 import CustomTypography from '@components/ui/CustomTypography';
 import { FOOTER_HEIGHT } from '@constants/app.constants';
 import { useRouter } from 'next/navigation';
@@ -31,9 +31,9 @@ const FooterDownloadApp = () => {
           <CustomTypography fontSize="Lable_Large">اپلیکیشن ایمپو</CustomTypography>
         </div>
 
-        <CustomButton varient="fill" className="w-fit" fontSize="Lable_Large" onClick={clickHandler}>
+        <CustomButton2 className="w-fit" fontSize="Lable_Large" onClick={clickHandler}>
           دریافت برنامه
-        </CustomButton>
+        </CustomButton2>
       </div>
     </div>
   );

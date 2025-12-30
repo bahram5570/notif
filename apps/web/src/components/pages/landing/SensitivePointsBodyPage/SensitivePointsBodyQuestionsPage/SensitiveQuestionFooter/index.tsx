@@ -2,7 +2,7 @@
 
 import ImpoIcon from '@assets/icons/impoName.svg';
 
-import CustomButton from '@components/ui/CustomButton';
+import CustomButton2 from '@components/ui/CustomButton2';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 
@@ -16,9 +16,9 @@ const SensitiveQuestionFooter = ({ nextStepHandler, isDisable }: SensitiveQuesti
       style={{ background: ' linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 40.96%)' }}
     >
       <div className="w-fit mx-auto  flex">
-        <CustomButton varient="fill" onClick={nextStepHandler} isDisable={isDisable} className="w-fit  !h-12 !px-12">
+        <CustomButton2 onClick={nextStepHandler} isDisable={isDisable} className="w-fit  !h-12 !px-12">
           مرحله بعدی
-        </CustomButton>
+        </CustomButton2>
       </div>
       <div className="flex items-center justify-center">
         <CustomTypography fontSize="Body_Small" className="text-impo_black">

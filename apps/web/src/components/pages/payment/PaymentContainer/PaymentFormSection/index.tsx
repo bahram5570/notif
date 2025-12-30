@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import CustomButton from '@components/ui/CustomButton';
+import CustomButton2 from '@components/ui/CustomButton2';
 import CustomInput from '@components/ui/CustomInput';
 import CustomTypography from '@components/ui/CustomTypography';
 
@@ -73,15 +73,14 @@ const PaymentFormSection = () => {
       </div>
 
       <div className=" self-end">
-        <CustomButton
-          varient="outline"
-          className="!w-2/5"
+        <CustomButton2
+          className="!w-2/5 bg-impo_Transparent !text-impo_Primary_Primary"
           fontSize="Lable_Large"
           onClick={() => handleSubmit(formData)}
           isDisable={!formData.username && !formData.paypalUsername}
         >
           ارسال
-        </CustomButton>
+        </CustomButton2>
       </div>
 
       <SuccessModal isOpen={isOpenModal} onClose={() => setIsOpenModal(false)} />

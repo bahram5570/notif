@@ -3,7 +3,7 @@ import { useState } from 'react';
 import WarningIcon from '@assets/icons/warningCircle.svg';
 
 import ProgressCycleLoading from '@components/ProgressCycleLoading';
-import CustomButton from '@components/ui/CustomButton';
+import CustomButton2 from '@components/ui/CustomButton2';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 
@@ -104,15 +104,14 @@ const MarhaamQuestion = ({ onResult }: JaanPanahQuestionsTypes) => {
             </>
           )}
 
-          <CustomButton
-            varient="fill"
+          <CustomButton2
             // isDisable={values === undefined && !isShowingBeginBtn}
             isDisable
             onClick={clickHandler}
             className="!mt-8"
           >
             {btnScript}
-          </CustomButton>
+          </CustomButton2>
         </div>
       </div>
     </>

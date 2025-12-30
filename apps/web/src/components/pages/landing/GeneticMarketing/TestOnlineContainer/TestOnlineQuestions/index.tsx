@@ -1,7 +1,7 @@
 import collaborationlogo from '@assets/images/geneticMarketing/collaborationlogo.webp';
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
-import CustomButton from '@components/ui/CustomButton';
+import CustomButton2 from '@components/ui/CustomButton2';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
@@ -75,9 +75,8 @@ const TestOnlineQuestions = () => {
       )}
 
       <div className="w-full mx-auto grid gap-y-6 justify-items-center justify-center fixed right-0 bottom-1">
-        <CustomButton
+        <CustomButton2
           isDisable={isDisable}
-          varient="fill"
           fontSize="Lable_Large"
           onClick={nextStepHandler}
           className="!bg-impo_Primary_Primary !border-none"
@@ -85,7 +84,7 @@ const TestOnlineQuestions = () => {
           <CustomTypography fontSize="Lable_Large" className="!text-impo_Primary_OnPrimary">
             {isLastStep ? 'مشاهده نتیجه' : 'مرحله بعدی'}
           </CustomTypography>
-        </CustomButton>
+        </CustomButton2>
         <CustomImage src={collaborationlogo} alt="collaborationlogo" width={999} height={999} className="w-[112px]" />
       </div>
     </>

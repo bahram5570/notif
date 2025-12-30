@@ -3,7 +3,7 @@
 import GoBack from '../components/GoBack';
 import welcomVectorMini from '@assets/images/blackFriday/welcomVectorMini.webp';
 
-import CustomButton from '@components/ui/CustomButton';
+import CustomButton2 from '@components/ui/CustomButton2';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 import Spinner from '@components/ui/Spinner';
@@ -39,9 +39,9 @@ const EnterPhonePage = () => {
 
         <div className="flex justify-center mt-4">
           {phoneNumber && (
-            <CustomButton varient="fill" onClick={submitHandler}>
+            <CustomButton2 onClick={submitHandler}>
               {isLoading ? <Spinner className="!border-impo_White" size={18} /> : 'ادامه'}
-            </CustomButton>
+            </CustomButton2>
           )}
         </div>
       </div>

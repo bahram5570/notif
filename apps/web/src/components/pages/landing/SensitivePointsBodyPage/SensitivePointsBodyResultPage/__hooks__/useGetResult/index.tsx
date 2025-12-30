@@ -1,3 +1,5 @@
+'use client';
+
 import { useEffect, useState } from 'react';
 
 import { SENSITIVE_POINTS_BODY_QUESTION_Total_SCORE } from '../../../SensitivePointsBodyQuestionsPage/constants';

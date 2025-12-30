@@ -5,6 +5,7 @@ import { useState } from 'react';
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
 import CustomButton from '@components/ui/CustomButton';
+import CustomButton2 from '@components/ui/CustomButton2';
 import CustomInput from '@components/ui/CustomInput';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
@@ -116,9 +117,14 @@ const ContactUsForm = () => {
         />
       </div>
       <div className=" flex justify-center items-center">
-        <CustomButton varient="outline" fontSize="Lable_Large" onClick={() => submitHandler(userInfo)} isDisable>
+        <CustomButton2
+          className="!bg-impo_Transparent border-impo_Primary_Primary text-impo_Primary_Primary"
+          fontSize="Lable_Large"
+          onClick={() => submitHandler(userInfo)}
+          isDisable
+        >
           ارسال
-        </CustomButton>
+        </CustomButton2>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import CustomButton from '@components/ui/CustomButton';
+import CustomButton2 from '@components/ui/CustomButton2';
 
 import DownloadModal from './DownloadModal';
 import GuideContentContainer from './GuideContentContainer';
@@ -28,9 +29,9 @@ const GuideContainer = ({ stepsContent }: GuideContainerPropsType) => {
         <GuideHeaderContainer currentStep={currentStep} prevStep={prevStep} stepList={STEP_LIST} />
         <GuideContentContainer stepsContent={stepsContent} currentStep={currentStep} />
         <div className="!fixed left-0 right-0 bottom-6 max-w-[500px] !mx-auto px-4">
-          <CustomButton onClick={clickHandler} varient="fill" className="w-full    !rounded-xl !h-12">
+          <CustomButton2 onClick={clickHandler} fontSize="Lable_Large" className="w-full    !rounded-xl !h-12">
             {stepsContent[currentStep].btnText}
-          </CustomButton>
+          </CustomButton2>
         </div>
       </div>
       <DownloadModal

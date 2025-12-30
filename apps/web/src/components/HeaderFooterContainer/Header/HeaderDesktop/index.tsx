@@ -2,7 +2,7 @@ import ImpoNameIcon from '@assets/icons/impoName.svg';
 import { scrollToIdHandler } from '@utils/navigation';
 
 import { DOWNLOAD_APP_SECTION_ID } from '@components/DownloadApp/DownloadAppWomen/constants';
-import CustomButton from '@components/ui/CustomButton';
+import CustomButton2 from '@components/ui/CustomButton2';
 import CustomLink from '@components/ui/CustomLink';
 
 import HeaderTheme from '../HeaderTheme';
@@ -46,15 +46,14 @@ const HeaderDesktop = () => {
         <div className="flex items-center gap-4">
           <HeaderTheme />
 
-          <CustomButton
-            varient="fill"
+          <CustomButton2
             id="install_header"
             fontSize="Title_Small"
-            className="w-[127px] h-[48px]"
+            className="w-[175px] h-[48px]"
             onClick={downloadLinkHandler}
           >
             نصب ایمپو
-          </CustomButton>
+          </CustomButton2>
         </div>
       </div>
     </>
