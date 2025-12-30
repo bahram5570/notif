@@ -16,7 +16,7 @@ const QuestionProgressBar = ({ currentStep, questionListLength }: QuestionProgre
       <span onClick={() => router.back()}>
         <ArrowBack />
       </span>
-      <div className="relative w-full h-1 rounded-full overflow-hidden bg-impo_White">
+      <div className="relative w-full h-1 rounded-full overflow-hidden bg-[#F7F7F7]">
         <div
           className="w-full h-full rounded-full block bg-impo_Pink_500"
           style={{ transform: `translateX(${percent}%)` }}
