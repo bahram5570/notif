@@ -16,10 +16,10 @@ const SensitivePointsBodyResultPage = () => {
     : SENSITIVE_POINTS_BODY_RESULT_DATA[ResultLevelEnum.MEDIUM];
 
   return (
-    <div className="lg:w-10/12 lg:mx-auto relative ">
+    <div className=" relative ">
       <SensitiveResultHeading imageHeader={result.imageHeader} title={result.title} />
 
-      <div className="flex flex-col justify-center px-4 ">
+      <div className="flex flex-col justify-center px-4 lg:w-10/12 lg:mx-auto">
         <CustomTypography fontSize="Body_Medium" className="text-center -mt-7">
           {result.description}
         </CustomTypography>

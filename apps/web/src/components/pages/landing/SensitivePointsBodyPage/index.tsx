@@ -1,10 +1,15 @@
+'use client';
+
 import ImpoIcon from '@assets/icons/impoName.svg';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
+import useBreakPoint from '@hooks/useBreakPoint';
 
 const SensitivePointsBodyPage = () => {
+  const { breakPoint } = useBreakPoint();
+
   return (
     <div className="min-h-[100dvh]">
       <div className="relative scale-y-[-1] overflow-hidden [clip-path:ellipse(100%_80%_at_50%_95%)]">
@@ -24,7 +29,7 @@ const SensitivePointsBodyPage = () => {
           alt="sensitive"
         />
       </div>
-      <div className="lg:w-10/12 lg:mx-auto h-full pb-[112px] lg:pb-14">
+      <div className="lg:w-10/12  lg:mx-auto h-full pb-[112px] lg:pb-14">
         <div className="bg-impo_White px-4 flex flex-col gap-3 -mt-10">
           <CustomTypography fontSize="Title_Small" className="text-impo_black text-center">
             سارا عزیز سلام
@@ -68,12 +73,12 @@ const SensitivePointsBodyPage = () => {
         </div>
       </div>
       <div
-        className="fixed lg:relative bottom-0 max-w-[900px] mx-auto left-0 right-0  h-44  flex flex-col justify-end lg:justify-start  pb-2 items-center gap-3"
+        className="fixed md:relative bottom-0 max-w-[900px] mx-auto left-0 right-0  h-44  flex flex-col justify-end lg:justify-start  pb-2 items-center gap-3"
         style={{ background: 'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 40.96%)' }}
       >
         <CustomLink href="/landing/sensitive/questions">
           <CustomTypography
-            fontSize="Title_Small"
+            fontSize={`${breakPoint.desktop ? 'Lable_Large' : 'Title_Small'}`}
             className="text-impo_White !bg-impo_Pink_500 rounded-full h-12 flex justify-center items-center px-4"
           >
             شروع و تکمیل پرسشنامه

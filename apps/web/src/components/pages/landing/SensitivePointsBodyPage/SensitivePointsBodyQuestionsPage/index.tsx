@@ -14,7 +14,7 @@ const SensitivePointsBodyQuestionsPage = () => {
 
   return (
     <>
-      <div key={currentStep} className="animate-fadeSlideIn  min-h-[100dvh]   flex flex-col gap-5  ">
+      <div key={currentStep} className="  min-h-[100dvh]   flex flex-col gap-5  ">
         <div className="mt-6 px-4 lg:w-10/12 lg:mx-auto">
           <QuestionProgressBar
             currentStep={currentStep}

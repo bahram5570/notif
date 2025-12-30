@@ -1,5 +1,8 @@
+'use client';
+
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
+import useBreakPoint from '@hooks/useBreakPoint';
 
 import SensitiveAnswersItem from '../SensitiveAnswersItem';
 import { SensitiveQuestionSectionPropsType } from './type';
@@ -9,9 +12,10 @@ const SensitiveQuestionSection = ({
   selectedIndex,
   selectedIndexHandler,
 }: SensitiveQuestionSectionPropsType) => {
+  const { breakPoint } = useBreakPoint();
   return (
     <>
-      <div className="px-4 flex flex-col gap-6 lg:w-10/12 lg:mx-auto lg:mb-14 mb-0">
+      <div className="animate-fadeSlideIn px-4 flex flex-col gap-6 lg:w-10/12 lg:mx-auto lg:mb-14 mb-0">
         <CustomTypography fontSize="Lable_Large">{currentQuestion.question}</CustomTypography>
         <div className="flex flex-col gap-4">
           {currentQuestion.answers.map((answer) => {
@@ -28,7 +32,7 @@ const SensitiveQuestionSection = ({
       </div>
 
       <div
-        className="  flex justify-center mt-auto lg:mt-0    [clip-path:ellipse(120%_100%_at_50%_100%)] min-h-[190px]   lg:max-h-96  !bg-repeat !bg-cover"
+        className={`flex justify-center mt-auto  [clip-path:ellipse(120%_100%_at_50%_100%)] min-h-[190px]  ${breakPoint.desktop && 'mt-0'} !bg-repeat !bg-cover`}
         style={{
           background:
             ' url("/assets/images/sensitive/bg.webp"),linear-gradient(135deg, rgba(186, 39, 255, 0.2), rgba(133, 25, 218, 0.2))',
@@ -40,7 +44,7 @@ const SensitiveQuestionSection = ({
           height={0}
           width={500}
           alt={currentQuestion.question}
-          className=" relative p-4"
+          className=" relative p-4 animate-fadeIn"
         />
       </div>
     </>

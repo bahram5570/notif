@@ -1,14 +1,18 @@
+'use client';
+
 import ImpoIcon from '@assets/icons/impoName.svg';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
+import useBreakPoint from '@hooks/useBreakPoint';
 
 import { SensitiveQuestionFooterPropsType } from './type';
 
 const SensitiveQuestionFooter = ({ nextStepHandler, isDisable }: SensitiveQuestionFooterPropsType) => {
+  const { breakPoint } = useBreakPoint();
   return (
     <div
-      className=" fixed lg:absolute bottom-0 left-0 right-0 lg:justify-center justify-end items-center lg:w-full max-w-[514px] h-[173px] w-full mx-auto flex flex-col gap-4"
+      className={`fixed lg:absolute ${breakPoint.laptop && 'absolute'} bottom-0 left-0 right-0 lg:justify-center justify-end items-center lg:w-full lg:max-w-full max-w-[514px]  h-[173px] w-full mx-auto flex flex-col gap-4`}
       style={{ background: ' linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 40.96%)' }}
     >
       <div className="w-fit mx-auto  flex">
