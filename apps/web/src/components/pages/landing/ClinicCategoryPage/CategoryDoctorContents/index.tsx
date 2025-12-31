@@ -5,7 +5,7 @@ import style from '../../../../pages/articleId/ArticleIdPageContainer/ArticleIdC
 import CustomTypography from '@components/ui/CustomTypography';
 
 const CategoryDoctorContents = async ({ contents }: { contents: string }) => {
-  const { updatedBody } = await handleBodyUpdate(contents);
+  const { abstractBody, articleBody } = await handleBodyUpdate(contents);
 
   return (
     <div className="mx-7 mb-12">
@@ -16,7 +16,7 @@ const CategoryDoctorContents = async ({ contents }: { contents: string }) => {
       <span className="w-full block h-[1px] my-3 mx-0 bg-impo_Neutral_Surface"></span>
 
       <div
-        dangerouslySetInnerHTML={{ __html: updatedBody }}
+        dangerouslySetInnerHTML={{ __html: abstractBody + articleBody }}
         className={`${style.container} !text-impo_Neutral_OnBackground`}
       />
     </div>

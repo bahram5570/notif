@@ -1,4 +1,3 @@
-import { COLORS_LIST } from '@theme/colors';
 import { FONTS_ANDROID } from '@theme/fonts';
 
 import { CtaBannerTypes } from './types';
@@ -28,6 +27,7 @@ const CtaBanner = ({ id, backgroundColor, title, description, image, link, butto
       >
         <div className="w-full md:w-7/12 flex flex-col items-center md:items-start pt-10 px-8">
           <p
+            data-no-cheerio-styling
             className="
                           text-black
                           !text-[19px] 
@@ -44,6 +44,7 @@ const CtaBanner = ({ id, backgroundColor, title, description, image, link, butto
           </p>
 
           <p
+            data-no-cheerio-styling
             className="
                           pt-2 
                           pb-5
@@ -58,15 +59,15 @@ const CtaBanner = ({ id, backgroundColor, title, description, image, link, butto
           >
             {description.trim()}
           </p>
-          <div id="cta_blog" className=" md:mt-auto md:mb-6  animate-bounce">
+
+          <div id="cta_blog" className=" md:mt-auto md:mb-6 animate-bounce">
             <a
-              href={link}
               id={id}
-              className="py-2 px-6 rounded-full block"
+              href={link}
+              data-no-cheerio-styling
+              className="py-2 px-6 rounded-full block !text-impo_White bg-impo_Pink_500"
               style={{
-                color: COLORS_LIST.White,
                 ...FONTS_ANDROID.Body_Large,
-                backgroundColor: COLORS_LIST.Primary_Primary,
               }}
             >
               {buttonLabel?.trim() || ''}

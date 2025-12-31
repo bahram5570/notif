@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import DarkIcon from '@assets/icons/themeDark.svg';
+import SystemIcon from '@assets/icons/themeSystem.svg';
 import { getTheme, themeHandler } from '@theme/__utils__';
 
 import CustomTypography from '@components/ui/CustomTypography';
@@ -8,14 +8,28 @@ import { HEADER_THEME_LIST } from '@constants/links.constants';
 import useBreakPoint from '@hooks/useBreakPoint';
 import { ThemeTypes } from '@theme/types';
 
+const initialTheme: ThemeTypes = 'system';
+const initialIcon = <SystemIcon className="w-5 lg:w-6 h-auto pl-[2px] fill-impo_Neutral_OnSurface" />;
+
 const HeaderTheme = () => {
   const { breakPoint } = useBreakPoint();
   const ref = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
-  const [themeMode, setThemeMode] = useState<ThemeTypes>('system');
+  const [themeMode, setThemeMode] = useState<ThemeTypes>(initialTheme);
+  const [currentIcon, setCurrentIcon] = useState<JSX.Element>(initialIcon);
+
+  const currentIconHandler = (v: ThemeTypes) => {
+    const item = HEADER_THEME_LIST.find((i) => i.mode === v);
+
+    if (item) {
+      setCurrentIcon(<item.Icon className="w-5 lg:w-6 h-auto pl-[2px] fill-impo_Neutral_OnSurface" />);
+    }
+  };
 
   useEffect(() => {
-    setThemeMode(getTheme());
+    const initialTheme = getTheme();
+    setThemeMode(initialTheme);
+    currentIconHandler(initialTheme);
   }, []);
 
   useEffect(() => {
@@ -60,12 +74,13 @@ const HeaderTheme = () => {
   const selectHandler = (mode: ThemeTypes) => {
     themeHandler(mode);
     setThemeMode(mode);
+    currentIconHandler(mode);
   };
 
   return (
     <div className="relative cursor-pointer !text-impo_Neutral_OnBackground hover:!text-impo_Primary_Primary" ref={ref}>
       <div className="w-9 h-9 lg:w-12 lg:h-12 flex items-center justify-center rounded-full bg-impo_Neutral_Surface">
-        <DarkIcon className="w-5 lg:w-6 h-auto pl-[2px] fill-impo_Neutral_OnSurface" />
+        {currentIcon}
       </div>
 
       <div

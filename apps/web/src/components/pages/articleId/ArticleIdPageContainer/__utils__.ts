@@ -110,9 +110,10 @@ export const handleBodyUpdate = async (body: string) => {
     result = result.replace(targetRegex, '');
   }
 
-  // # Making subjects list
-  let count = 1;
   const $ = cheerio.load(result);
+
+  // # Making subjects list (table of contents - TOC)
+  let count = 1;
   const articleSubjectList: ArticleSubjectListTypes = [];
 
   $('h2, h3').each((_, element) => {
@@ -163,5 +164,13 @@ export const handleBodyUpdate = async (body: string) => {
     el.addClass('!text-impo_Primary_Primary');
   });
 
-  return { updatedBody: $.html(), articleSubjectList };
+  // # Separate article to before and after its abstract
+  const html = $.html();
+  const endOfAbstract = $('h2, h3').first().prop('outerHTML') || '';
+  const htmlList = html.split(endOfAbstract);
+
+  const abstractBody = htmlList[0];
+  const articleBody = endOfAbstract + htmlList[1];
+
+  return { abstractBody, articleBody, articleSubjectList };
 };

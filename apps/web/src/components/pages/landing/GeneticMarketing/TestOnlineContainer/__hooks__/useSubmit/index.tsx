@@ -17,7 +17,7 @@ const useSubmit = () => {
   });
 
   const handleSubmit = (payload: PayloadDataTypes) => {
-    console.log(payload);
+    // console.log(payload);
     // callApi({ payload });
   };
   return { handleSubmit };

@@ -23,7 +23,7 @@ const ArticleIdSampleArticles = dynamic(() => import('./ArticleIdSampleArticles'
 const ArticleLandingComponents = dynamic(() => import('./ArticleLandingComponents'), { ssr: false });
 
 const ArticleIdPageContainer = async (props: ArticleIdPageContainerTypes) => {
-  const { updatedBody, articleSubjectList } = await handleBodyUpdate(props.body);
+  const { abstractBody, articleBody, articleSubjectList } = await handleBodyUpdate(props.body);
 
   const visitCardUrl = props.doctor?.visitCard ? fileImageUrl + props.doctor.visitCard : '/assets/images/notLoaded.svg';
 
@@ -58,11 +58,13 @@ const ArticleIdPageContainer = async (props: ArticleIdPageContainerTypes) => {
 
           <ArticleIdHeading imageCover={props.imageCover} title={props.title} />
 
+          <ArticleIdContents body={abstractBody} />
+
           <div className="w-full min-h-[71px]">
             <ArticleIdSubjectsList articleSubjectList={articleSubjectList} />
           </div>
 
-          <ArticleIdContents body={updatedBody} />
+          <ArticleIdContents body={articleBody} />
 
           {props.doctor && (
             <CustomImage

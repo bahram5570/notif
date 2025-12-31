@@ -24,13 +24,13 @@ const CustomButton = (props: CustomBUttonTypes) => {
       disabled={props.isDisable || props.isLoading}
       style={{ ...typographyFontStyles, ...props.style }}
       className={`
-                  text-impo_White 
                   h-[40px] 
                   px-4 
                   bg-impo_Primary_Primary 
-                  border-impo_Primary_Primary 
+                  text-impo_Primary_OnPrimary
                   border-[1.5px] 
                   rounded-full 
+                  border-impo_Primary_Primary 
                   ${props.isDisable ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer'}
                   ${props.className}
                 `}

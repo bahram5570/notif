@@ -38,7 +38,7 @@ const HeaderDesktop = () => {
                   "
       >
         <CustomLink href={'/'}>
-          <ImpoNameIcon className="w-[68px] h-auto pointer-events-none fill-impo_Pink_500" />
+          <ImpoNameIcon className="w-[68px] h-auto pointer-events-none fill-impo_Primary_Primary" />
         </CustomLink>
 
         <HeaderDesktopLinks />
