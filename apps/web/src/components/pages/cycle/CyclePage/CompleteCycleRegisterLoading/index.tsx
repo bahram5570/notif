@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { externalLink } from '@utils/navigation';
 
 import ProgressCycleLoading from '@components/ProgressCycleLoading';
-import CustomButton2 from '@components/ui/CustomButton2';
+import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
 import { useRouter } from 'next/navigation';
 
@@ -40,14 +40,14 @@ const CompleteCycleRegisterLoading = ({ redirectLink }: CompleteCycleRegisterLoa
       <ProgressCycleLoading onComplete={() => setIsLoaded(true)} />
 
       <div className="w-full flex justify-center pb-[20px] mt-auto duration-300" style={{ transform }}>
-        <CustomButton2
+        <CustomButton
           fontSize="Title_Small"
           onClick={redirectHandler}
           className="!h-12 !w-[230px]"
           id="acticationCr_complete_register"
         >
           ورود به ایمپو
-        </CustomButton2>
+        </CustomButton>
       </div>
     </div>
   );

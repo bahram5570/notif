@@ -2,7 +2,7 @@ import LogoIcon from '@assets/images/genetic/logo.svg';
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
 import QuestionProgressBar from '@components/modules/QuestionProgressBar';
-import CustomButton2 from '@components/ui/CustomButton2';
+import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 import useOperatingSystem from '@hooks/useOperatingSystem';
@@ -74,15 +74,14 @@ const TestOnlineQuestions = () => {
         </div>
       )}
       <div className="mt-6 w-fit mx-auto my-5 flex">
-        <CustomButton2
+        <CustomButton
+          fontSize="Title_Small"
           onClick={nextStepHandler}
           isDisable={selectedIndex === -1}
-          className="w-fit !mt-auto !h-12 !px-12 !bg-impo_Primary_Primary !border-none"
+          className="w-fit !mt-auto !h-12 !px-12"
         >
-          <CustomTypography fontSize="Title_Small" className="!text-impo_Primary_OnPrimary">
-            {isLastStep ? 'مشاهده نتیجه' : 'مرحله بعدی'}
-          </CustomTypography>
-        </CustomButton2>
+          {isLastStep ? 'مشاهده نتیجه' : 'مرحله بعدی'}
+        </CustomButton>
       </div>
     </div>
   );

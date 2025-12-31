@@ -42,12 +42,7 @@ const TestOnlineQuestions = () => {
         ))}
       </div>
 
-      <CustomButton
-        varient="fill"
-        onClick={nextStepHandler}
-        isDisable={selectedIndex === -1}
-        className="w-full !mt-auto h-12 sm:h-14"
-      >
+      <CustomButton onClick={nextStepHandler} isDisable={selectedIndex === -1} className="w-full !mt-auto h-12 sm:h-14">
         بریم بعدی
       </CustomButton>
     </>

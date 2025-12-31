@@ -4,7 +4,7 @@ import { resumePayloadValidator } from './__utils__';
 import UploadIcon from '@assets/icons/upload.svg';
 import { textShorter } from '@utils/scripts';
 
-import CustomButton2 from '@components/ui/CustomButton2';
+import CustomButton from '@components/ui/CustomButton';
 import CustomInput from '@components/ui/CustomInput';
 import CustomTypography from '@components/ui/CustomTypography';
 import Spinner from '@components/ui/Spinner';
@@ -96,16 +96,14 @@ const ResumeInputs = ({ jobId }: ResumeInputsTypes) => {
 
       <div className="w-full h-[1px] mt-4 mb-6 md:my-8 !bg-impo_Neutral_Surface" />
 
-      <CustomButton2
+      <CustomButton
         isLoading={isLoading}
-        fontSize="Lable_Large"
+        fontSize="Title_Small"
         onClick={validateHandler}
-        className="w-full md:w-[230px] !py-[10px] md:!py-[12px] !bg-impo_Primary_Primary !border-none"
+        className="w-full md:w-[230px] !py-[10px] md:!py-[12px]"
       >
-        <CustomTypography fontSize="Title_Small" className="!text-impo_Primary_OnPrimary">
-          درخواست همکاری
-        </CustomTypography>
-      </CustomButton2>
+        درخواست همکاری
+      </CustomButton>
     </div>
   );
 };

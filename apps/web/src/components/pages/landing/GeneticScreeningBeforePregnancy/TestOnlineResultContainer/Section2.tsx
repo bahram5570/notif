@@ -6,9 +6,7 @@ import { Section2Props } from './types';
 
 const Section2 = ({ section }: Section2Props) => {
   return (
-    <div
-      className="rounded-[12px] pt-4 pb-6 px-3 lg:px-4 text-center mt-4 border !border-impo_Surface_SurfaceVariant"
-    >
+    <div className="rounded-[12px] pt-4 pb-6 px-3 lg:px-4 text-center mt-4 border !border-impo_Surface_SurfaceVariant">
       <CustomTypography fontSize="Lable_Large" className="!text-impo_Neutral_OnBackground">
         باید چکار کنم؟
       </CustomTypography>

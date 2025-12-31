@@ -1,62 +1,48 @@
-import { buttonColorsMaker, fontSizeMaker } from './__utils__';
+import useTypographyMaker from '@hooks/useTypographyMaker';
 
-import { Button } from '@mui/material';
-
-import CustomTypography from '../CustomTypography';
 import Spinner from '../Spinner';
-import { CustomButtonTypes } from './types';
+import { CustomBUttonTypes } from './types';
 
-const CustomButton = (props: CustomButtonTypes) => {
-  const buttonColors = buttonColorsMaker(props);
-  const fontSize = fontSizeMaker(props.fontSize);
+const CustomButton = (props: CustomBUttonTypes) => {
+  const { typographyFontStyles, result } = useTypographyMaker({
+    children: props.children,
+    fontSize: props.fontSize,
+    numbersMode: props.numbersMode,
+  });
 
   const clickHandler = () => {
-    if (props.onClick && !props.isLoading && !props.isDisable) {
+    if (!props.isDisable && !props.isLoading) {
       props.onClick();
     }
   };
 
-  const children = props.children;
-  const isChildrenText = typeof children === 'string' && typeof children === 'string';
-
   return (
-    <Button
+    <button
       id={props.id}
-      title="CustomButton"
       onClick={clickHandler}
       aria-label="CustomButton"
-      disabled={props.isDisable}
-      sx={{
-        cursor: 'pointer',
-        borderWidth: '1.5px',
-        borderStyle: 'solid',
-        borderRadius: '999px',
-        textTransform: 'none',
-        borderColor: buttonColors.borderColor,
-        opacity: props.isDisable ? '0.5' : '1',
-        backgroundColor: buttonColors.backgroundColor,
-        ...props.style,
-      }}
-      className={`h-[40px] w-[175px] px-4 ${props.className}`}
+      disabled={props.isDisable || props.isLoading}
+      style={{ ...typographyFontStyles, ...props.style }}
+      className={`
+                  text-impo_White 
+                  h-[40px] 
+                  px-4 
+                  bg-impo_Primary_Primary 
+                  border-impo_Primary_Primary 
+                  border-[1.5px] 
+                  rounded-full 
+                  ${props.isDisable ? 'opacity-50 cursor-not-allowed' : 'opacity-100 cursor-pointer'}
+                  ${props.className}
+                `}
     >
-      {props.isLoading && <Spinner className="!border-impo_Grey_300" />}
-
-      {!props.isLoading && (
-        <>
-          {isChildrenText && (
-            <CustomTypography
-              fontSize={fontSize}
-              className="w-full flex justify-center"
-              style={{ color: buttonColors.color }}
-            >
-              {children}
-            </CustomTypography>
-          )}
-
-          {!isChildrenText && <>{children}</>}
-        </>
-      )}
-    </Button>
+      <div className="relative w-full h-full flex items-center justify-center">
+        {props.isLoading ? (
+          <Spinner className={`border-impo_Primary_OnPrimary ${props.spinnerClassName}`} />
+        ) : (
+          <>{result}</>
+        )}
+      </div>
+    </button>
   );
 };
 

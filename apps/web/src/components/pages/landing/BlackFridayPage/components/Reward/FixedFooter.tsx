@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import CustomButton2 from '@components/ui/CustomButton2';
+import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
 import Spinner from '@components/ui/Spinner';
 
@@ -27,14 +27,14 @@ const FixedFooter: FC<Props> = ({ storyImage, event }) => {
       </CustomTypography>
 
       <div className="flex justify-center mt-4">
-        <CustomButton2
+        <CustomButton
           className="w-[216px] !h-12"
           fontSize="Title_Small"
           id={event}
           onClick={() => downloadImage(storyImage)}
         >
           {isLoading ? <Spinner className="!border-impo_White" size={18} /> : 'دانلود عکس'}
-        </CustomButton2>
+        </CustomButton>
       </div>
     </div>
   );

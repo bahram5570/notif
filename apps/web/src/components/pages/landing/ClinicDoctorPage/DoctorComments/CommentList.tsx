@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import ArrowIcon from '@assets/icons/clinicLanding/arrowRight.svg';
 
-import CustomButton2 from '@components/ui/CustomButton2';
+import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
 
 import { CommentsTypes } from '../types';
@@ -34,7 +34,7 @@ const CommentList = ({ comments }: { comments: CommentsTypes[] }) => {
 
       {hasMore && (
         <div className="text-center mt-4 flex justify-center">
-          <CustomButton2
+          <CustomButton
             fontSize="Lable_Medium"
             onClick={handleShowMore}
             className="bg-impo_Transparent border-impo_Transparent"
@@ -46,7 +46,7 @@ const CommentList = ({ comments }: { comments: CommentsTypes[] }) => {
               <ArrowIcon className="stroke-impo_Primary_Primary" />
               مشاهده نظرات بیشتر
             </CustomTypography>
-          </CustomButton2>
+          </CustomButton>
         </div>
       )}
     </>

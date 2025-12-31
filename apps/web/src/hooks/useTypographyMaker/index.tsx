@@ -8,7 +8,7 @@ import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import { UseTypographyMakerTypes } from './types';
 
-const useTypographyMaker = ({ children, numbersMode, fontSize = 'Body_Medium' }: UseTypographyMakerTypes) => {
+const useTypographyMaker = ({ children, numbersMode, fontSize = 'Body_Large' }: UseTypographyMakerTypes) => {
   const { breakPoint } = useBreakPoint();
   const { operatingSystem } = useOperatingSystem();
 

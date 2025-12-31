@@ -1,4 +1,4 @@
-import CustomButton2 from '@components/ui/CustomButton2';
+import CustomButton from '@components/ui/CustomButton';
 
 import { TAB_LIST } from '../constants';
 import { TabBtnListPropsType } from './type';
@@ -7,7 +7,7 @@ const TabBtnList = ({ activeTab, handleActiveTab }: TabBtnListPropsType) => {
   return (
     <div className="flex sticky top-[70px] z-20 sm:relative sm:top-0 flex-wrap  gap-2 p-[10px] w-full bg-impo_White">
       {TAB_LIST.map((tab, index) => (
-        <CustomButton2
+        <CustomButton
           // fontSize={activeTab === tab.id ? 'Lable_Large' : 'Body_Medium'}
           key={index}
           fontSize="Body_Medium"
@@ -18,7 +18,7 @@ const TabBtnList = ({ activeTab, handleActiveTab }: TabBtnListPropsType) => {
           }}
         >
           {tab.label}
-        </CustomButton2>
+        </CustomButton>
       ))}
     </div>
   );

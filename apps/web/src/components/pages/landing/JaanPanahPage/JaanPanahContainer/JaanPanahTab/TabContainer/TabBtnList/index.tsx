@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { JaanPanahCityConditionEnum } from '@components/pages/landing/JaanPanahPage/enum';
-import CustomButton2 from '@components/ui/CustomButton2';
+import CustomButton from '@components/ui/CustomButton';
 
 import { TAB_LIST_DANGER, TAB_LIST_NORMAL } from '../constants';
 import { TabBtnListPropsType } from './type';
@@ -20,7 +20,7 @@ const TabBtnList = ({ activeTab, handleActiveTab, cityCondition }: TabBtnListPro
   return (
     <div className="flex  flex-wrap  gap-2 p-[10px] w-full bg-impo_White">
       {tabList.map((tab, index) => (
-        <CustomButton2
+        <CustomButton
           key={index}
           fontSize="Body_Medium"
           onClick={() => handleActiveTab(tab.id)}
@@ -30,7 +30,7 @@ const TabBtnList = ({ activeTab, handleActiveTab, cityCondition }: TabBtnListPro
           }}
         >
           {tab.label}
-        </CustomButton2>
+        </CustomButton>
       ))}
     </div>
   );

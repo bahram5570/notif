@@ -1,7 +1,7 @@
 import SelectDateIcon from '@assets/icons/selectDate.svg';
 import { currentDate } from '@utils/dates';
 
-import CustomButton2 from '@components/ui/CustomButton2';
+import CustomButton from '@components/ui/CustomButton';
 import CustomModal from '@components/ui/CustomModal';
 import CustomTypography from '@components/ui/CustomTypography';
 import DateSelector from '@components/ui/DateSelector';
@@ -62,7 +62,7 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
           valueHandler={(v) => valuesHandler({ name: 'periodLength', value: v })}
         />
 
-        <CustomButton2
+        <CustomButton
           isLoading={isLoading}
           onClick={() => submitHandler(values)}
           style={{ pointerEvents: isDisable ? 'none' : 'auto' }}
@@ -71,7 +71,7 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
           fontSize="Lable_Large"
         >
           محاسبه روز تخمک گذاری
-        </CustomButton2>
+        </CustomButton>
       </div>
 
       <CustomModal position={position} isOpen={isOpen} onClose={() => isOpenHandler(false)}>
@@ -86,13 +86,13 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
 
           <DateSelector valueHandler={(v) => currentDateHandler(v)} startDate={startDate} defaultDate={defaultDate} />
 
-          <CustomButton2
+          <CustomButton
             className="!w-full !mt-2"
             fontSize="Lable_Large"
             onClick={() => valuesHandler({ name: 'lastPeriod', value: currentDate })}
           >
             انتخاب تاریخ
-          </CustomButton2>
+          </CustomButton>
         </div>
       </CustomModal>
     </>

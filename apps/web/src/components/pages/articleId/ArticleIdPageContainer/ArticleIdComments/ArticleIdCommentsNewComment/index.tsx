@@ -1,6 +1,6 @@
 import { handleNewCommentDisable, handleNewCommentValidation } from './__utils__';
 
-import CustomButton2 from '@components/ui/CustomButton2';
+import CustomButton from '@components/ui/CustomButton';
 import CustomInput from '@components/ui/CustomInput';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
@@ -83,15 +83,16 @@ const ArticleIdCommentsNewComment = ({ articleId }: ArticleIdCommentsNewCommentT
       </div>
 
       <div className="w-full flex justify-center pt-10">
-        <CustomButton2
+        <CustomButton
           isLoading={isLoading}
           isDisable={isDisable}
           fontSize="Body_Large"
           onClick={submitHandler}
+          spinnerClassName="!border-impo_Primary_Primary"
           className="bg-impo_Transparent !text-impo_Primary_Primary w-[170px]"
         >
           ثبت دیدگاه
-        </CustomButton2>
+        </CustomButton>
       </div>
     </div>
   );

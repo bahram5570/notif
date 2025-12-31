@@ -1,4 +1,4 @@
-import CustomButton2 from '@components/ui/CustomButton2';
+import CustomButton from '@components/ui/CustomButton';
 import CustomModal from '@components/ui/CustomModal';
 import CustomTypography from '@components/ui/CustomTypography';
 
@@ -13,9 +13,9 @@ const SuccessModal = ({ isOpen, onClose }: SuccessModalPropsType) => {
           بعد از بررسی در صورت صحت اطلاعات، اشتراکت فعال و از طریق واتساپ بهت اطلاع‌رسانی می‌شه
         </CustomTypography>
 
-        <CustomButton2 onClick={onClose} className="!rounded-xl">
+        <CustomButton onClick={onClose} className="!rounded-xl">
           فهمیدم
-        </CustomButton2>
+        </CustomButton>
       </div>
     </CustomModal>
   );

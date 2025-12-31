@@ -1,5 +1,4 @@
 import CustomButton from '@components/ui/CustomButton';
-import CustomButton2 from '@components/ui/CustomButton2';
 
 import useProgress from './__hooks__/useProgress';
 import useTabSizes from './__hooks__/useTabSizes';
@@ -20,13 +19,13 @@ const AppFeaturesTabGenerator = ({
 
   return (
     <div className="relative p-[1px]" style={{ width: tabSizes.width, height: tabSizes.height }}>
-      <CustomButton2
+      <CustomButton
         className={`!h-full !w-full ${isSelected ? '!bg-impo_Primary_Primary !text-impo_Primary_OnPrimary !border-impo_Primary_OnPrimary' : '!bg-impo_White !text-impo_Black !border-impo_Surface_OutlineVariant'} `}
         onClick={() => currentTabHandler(tabIndex)}
         fontSize={tabSizes.isMobile ? 'Lable_Large' : 'Title_Small'}
       >
         {title}
-      </CustomButton2>
+      </CustomButton>
 
       <svg
         fill="none"

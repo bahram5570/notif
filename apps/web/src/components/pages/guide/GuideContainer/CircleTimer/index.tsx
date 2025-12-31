@@ -1,6 +1,6 @@
 'use client';
 
-import CustomButton2 from '@components/ui/CustomButton2';
+import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
@@ -45,13 +45,13 @@ export default function CircleTimer({ timer }: CircleTimerPropsType) {
           {`${remainingTime} ثانیه`}
         </CustomTypography>
 
-        <CustomButton2
+        <CustomButton
           onClick={handleStart}
           isDisable={isRunning}
           className="sm:w-full w-[70%] !mb-1 bg-impo_Primary_Primary !text-impo_White"
         >
           {progress === 1 ? 'شروع مجدد' : ' شروع تست'}
-        </CustomButton2>
+        </CustomButton>
         <div className="w-[65%] max-[400px]:w-[45%] max-[500px]:w-[40%] flex justify-center items-center">
           <CustomImage
             alt="timer"

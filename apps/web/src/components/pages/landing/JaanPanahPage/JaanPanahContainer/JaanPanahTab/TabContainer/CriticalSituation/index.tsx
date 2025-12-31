@@ -2,7 +2,7 @@
 
 import StarIcon from '@assets/icons/Stars.svg';
 
-import CustomButton2 from '@components/ui/CustomButton2';
+import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 
@@ -35,7 +35,7 @@ const CriticalSituation = () => {
               این فایل شامل نکات‌ ایمنی و البته آمادگی برای شرایط بحرانیه، بهتره دانلودش کنی و همراهت داشته‌ باشی.
             </CustomTypography>
 
-            <CustomButton2
+            <CustomButton
               className="rounded-full w-full md:w-[350px] h-12 lg:h-[50px] mx-auto flex items-center justify-center gap-2 relative z-10"
               onClick={downloadFileFromUrl}
             >
@@ -47,7 +47,7 @@ const CriticalSituation = () => {
                 {/* دریافت فایل pdf */}
                 برای روز مبادا
               </CustomTypography>
-            </CustomButton2>
+            </CustomButton>
           </div>
 
           <CustomImage

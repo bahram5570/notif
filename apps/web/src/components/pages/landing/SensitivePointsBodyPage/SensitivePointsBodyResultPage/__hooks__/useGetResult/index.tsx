@@ -7,8 +7,6 @@ import { ResultLevelEnum } from '../../enum';
 
 const useGetResult = () => {
   const [resultLevel, setResultLevel] = useState<ResultLevelEnum | null>(null);
-  const resultParam = sessionStorage.getItem(SENSITIVE_POINTS_BODY_QUESTION_Total_SCORE);
-  const result = resultParam && JSON.parse(resultParam);
 
   const getResultLevel = (score: number): ResultLevelEnum => {
     if (score <= 30) return ResultLevelEnum.LOW;
@@ -22,6 +20,9 @@ const useGetResult = () => {
   };
 
   useEffect(() => {
+    const resultParam = sessionStorage.getItem(SENSITIVE_POINTS_BODY_QUESTION_Total_SCORE);
+    const result = resultParam && JSON.parse(resultParam);
+
     if (result) {
       handleScoreChange(result);
       sessionStorage.removeItem(SENSITIVE_POINTS_BODY_QUESTION_Total_SCORE);

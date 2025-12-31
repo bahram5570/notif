@@ -2,7 +2,7 @@
 
 import collaborationlogo from '@assets/images/geneticMarketing/collaborationlogo.webp';
 
-import CustomButton2 from '@components/ui/CustomButton2';
+import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 
@@ -31,16 +31,9 @@ const PhoneNumberContainer = () => {
         <div
           className={`w-full mx-auto grid gap-y-6  justify-items-center justify-center mt-5 duration-200 ${phoneNumber.length > 0 ? `translate-y-0 ` : `translate-y-[100dvh]`}`}
         >
-          <CustomButton2
-            fontSize="Lable_Large"
-            className="!bg-impo_Primary_Primary !border-none"
-            onClick={submitHandler}
-            isLoading={isLoading}
-          >
-            <CustomTypography fontSize="Lable_Large" className="!text-impo_Primary_OnPrimary">
-              مرحله بعد
-            </CustomTypography>
-          </CustomButton2>
+          <CustomButton fontSize="Lable_Large" className="w-[120px]" onClick={submitHandler} isLoading={isLoading}>
+            مرحله بعد
+          </CustomButton>
         </div>
         <div className="w-full absolute bottom-4 left-0 flex justify-items-center justify-center">
           <CustomImage

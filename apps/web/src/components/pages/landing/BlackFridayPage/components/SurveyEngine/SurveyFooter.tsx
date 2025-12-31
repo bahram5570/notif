@@ -2,7 +2,7 @@
 
 import { FC } from 'react';
 
-import CustomButton2 from '@components/ui/CustomButton2';
+import CustomButton from '@components/ui/CustomButton';
 import Spinner from '@components/ui/Spinner';
 
 type Props = {
@@ -14,9 +14,9 @@ type Props = {
 const SurveyFooter: FC<Props> = ({ ready, onNext, isLoading }) => {
   return (
     <div className="flex justify-center items-center mt-8">
-      <CustomButton2 className="!w-[216px] h-[48px]" onClick={onNext} isDisable={!ready} fontSize="Title_Small">
+      <CustomButton className="!w-[216px] h-[48px]" onClick={onNext} isDisable={!ready} fontSize="Title_Small">
         {isLoading ? <Spinner className="!border-impo_White" size={18} /> : 'ادامه'}
-      </CustomButton2>
+      </CustomButton>
     </div>
   );
 };

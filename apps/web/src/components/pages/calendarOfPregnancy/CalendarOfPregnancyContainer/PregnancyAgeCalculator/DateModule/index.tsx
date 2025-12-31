@@ -1,7 +1,7 @@
 import SelectDateIcon from '@assets/icons/selectDate.svg';
 import { currentDate } from '@utils/dates';
 
-import CustomButton2 from '@components/ui/CustomButton2';
+import CustomButton from '@components/ui/CustomButton';
 import CustomModal from '@components/ui/CustomModal';
 import CustomTypography from '@components/ui/CustomTypography';
 import DateSelector from '@components/ui/DateSelector';
@@ -47,7 +47,7 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
           <SelectDateIcon className="w-6 h-auto stroke-impo_Grey_800" />
         </div>
 
-        <CustomButton2
+        <CustomButton
           fontSize="Lable_Large"
           isLoading={isLoading}
           onClick={() => submitHandler(selectedDate)}
@@ -56,7 +56,7 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
           id="cal_pregnancy_tool"
         >
           محاسبه سن بارداری
-        </CustomButton2>
+        </CustomButton>
       </div>
 
       <CustomModal position={position} isOpen={isOpen} onClose={() => isOpenHandler(false)}>
@@ -71,9 +71,9 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
 
           <DateSelector valueHandler={(v) => currentDateHandler(v)} startDate={startDate} defaultDate={defaultDate} />
 
-          <CustomButton2 fontSize="Lable_Large" onClick={selectedDateHandler} className="!w-full !mt-2">
+          <CustomButton fontSize="Lable_Large" onClick={selectedDateHandler} className="!w-full !mt-2">
             انتخاب تاریخ
-          </CustomButton2>
+          </CustomButton>
         </div>
       </CustomModal>
     </>
