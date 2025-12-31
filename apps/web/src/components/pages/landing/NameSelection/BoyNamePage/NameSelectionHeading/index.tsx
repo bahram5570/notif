@@ -11,8 +11,7 @@ const NameSelectionHeading = () => {
       <div className="absolute left-0 right-0 bottom-0 flex justify-center">
         <div className="w-[700dvw] h-[700dvw] min-w-[700dvw] min-h-[700dvw] rounded-full flex items-end overflow-hidden">
           <div
-            style={{ backgroundImage: 'linear-gradient(to bottom, #F3F5FE , #C9D6FB)' }}
-            className="
+            className={`
                         w-[100dvw] 
                         h-[710px] 
                         xl:h-[750px]  
@@ -22,7 +21,9 @@ const NameSelectionHeading = () => {
                         justify-center 
                         bg-cover 
                         bg-center
-                      "
+                        dark:!bg-impo_Surface_InverseOnSurface dark:!from-inherit dark:!to-inherit
+                        !bg-gradient-to-b !from-[#F3F5FE] !to-[#C9D6FB]
+                      `}
           >
             <div className="h-full w-full flex flex-col md:flex-row gap-2 md:gap-10 xl:gap-14 pt-[100px] md:pt-[160px] lg:pt-[100px]">
               <LandingHeadingContents contentElement={contentElement} />

@@ -4,7 +4,6 @@ import CustomImage from '@components/ui/CustomImage';
 // import { useState } from 'react';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
 import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -35,15 +34,13 @@ const CommentsSlider = ({ list }: CommentsSliderTypes) => {
               {({ isActive }) => (
                 <>
                   <div
-                    className="flex flex-col items-center justify-between gap-8 px-4 sm:px-6 py-4 sm:py-8 rounded-3xl mx-auto w-[340px] sm:w-[450px] !h-full"
+                    className="flex flex-col items-center justify-between gap-8 px-4 sm:px-6 py-4 sm:py-8 rounded-3xl mx-auto w-[340px] sm:w-[450px] !h-full bg-impo_Neutral_Surface"
                     style={{
-                      backgroundColor: COLORS_LIST.Surface_SurfaceVariant,
                       opacity: isActive ? '1' : '0.5',
                     }}
                   >
                     <CustomTypography
-                      className="text-center"
-                      color={'Neutral_OnSurface'}
+                      className="text-center !text-impo_Neutral_OnSurface"
                       fontSize={breakPoint.mobile ? 'Body_Large' : 'Body_Medium'}
                     >
                       {item.text}
@@ -51,7 +48,11 @@ const CommentsSlider = ({ list }: CommentsSliderTypes) => {
 
                     <div className="flex items-center gap-4">
                       <div dir="ltr">
-                        <CustomTypography fontSize="Body_Small" color={'Neutral_OnSurface'} numbersMode="english">
+                        <CustomTypography
+                          fontSize="Body_Small"
+                          className="!text-impo_Neutral_OnSurface"
+                          numbersMode="english"
+                        >
                           {item.userName}
                         </CustomTypography>
                       </div>
@@ -65,10 +66,7 @@ const CommentsSlider = ({ list }: CommentsSliderTypes) => {
                           className="object-contain"
                         />
 
-                        <div
-                          className="absolute top-0 -right-3 w-6 h-6 min-w-6 min-h-6 rounded-full flex items-center justify-center"
-                          style={{ backgroundColor: COLORS_LIST.White }}
-                        >
+                        <div className="absolute top-0 -right-3 w-6 h-6 min-w-6 min-h-6 rounded-full flex items-center justify-center bg-impo_White">
                           <CustomImage src={item.downloadPortIcon} width={14} height={14} sizes="20px" alt="port" />
                         </div>
                       </div>

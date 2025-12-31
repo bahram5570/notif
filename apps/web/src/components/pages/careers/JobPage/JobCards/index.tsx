@@ -6,7 +6,6 @@ import TimeIcon from '@assets/icons/careers/time.svg';
 import WorkTypeIcon from '@assets/icons/careers/workType.svg';
 
 import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
 
 import {
   CAREER_DEPARTMENT_TITLES,
@@ -37,7 +36,7 @@ const JobCards = (props: JobCardsTypes) => {
   return (
     <div className="w-full mb-6">
       <>{breakPoint.tablet ? <CardsSmallScreen list={list} /> : <CardsBigScreen list={list} />}</>
-      <div className="w-full h-[1px] mt-6 hidden md:block" style={{ backgroundColor: COLORS_LIST.Neutral_Surface }} />
+      <div className="w-full h-[1px] mt-6 hidden md:block bg-impo_Neutral_Surface" />
     </div>
   );
 };

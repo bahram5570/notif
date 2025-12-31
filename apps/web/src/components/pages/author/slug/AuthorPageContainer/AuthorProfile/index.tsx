@@ -15,11 +15,11 @@ const AuthorProfile = ({ authorName, authorPic, description }: AuthorProfileType
       </div>
 
       <div className="flex flex-col gap-2">
-        <CustomTypography fontSize="Lable_Large" tagType="h3">
+        <CustomTypography fontSize="Lable_Large" tagType="h3" className="!text-impo_Neutral_OnBackground">
           {authorName}
         </CustomTypography>
 
-        <CustomTypography fontSize="Lable_Small" color={'Surface_Outline'}>
+        <CustomTypography fontSize="Lable_Small" className="!text-impo_Surface_Outline">
           {description}
         </CustomTypography>
       </div>

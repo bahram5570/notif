@@ -37,7 +37,7 @@ export const YekanBakhVF = localFont({
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="fa" dir="rtl" className={YekanBakhVF.className}>
+    <html lang="fa" dir="rtl" suppressHydrationWarning={true} className={YekanBakhVF.className}>
       <head>
         <link
           as="font"
@@ -95,9 +95,23 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
             document.head.appendChild(s);
           `}
         </Script>
+
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`
+            const t = localStorage.getItem('theme');
+            if (t === 'dark') {
+              document.documentElement.classList.add('dark');
+            } else if (t === 'light') {
+              document.documentElement.classList.remove('dark');
+            } else {
+              const p = window.matchMedia("(prefers-color-scheme: dark)").matches;
+              document.documentElement.classList.toggle('dark', p);
+            }
+          `}
+        </Script>
       </head>
 
-      <body>
+      <body className="bg-impo_Neutral_Background">
         <noscript>
           <iframe
             width="0"

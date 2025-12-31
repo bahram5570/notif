@@ -5,7 +5,6 @@ import CustomInput from '@components/ui/CustomInput';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 import useCustomToast from '@hooks/useCustomToast';
-import { COLORS_LIST } from '@theme/colors';
 
 import ArticleIdNewRate from './ArticleIdNewRate';
 import ArticleIdNewTextarea from './ArticleIdNewTextarea';
@@ -34,9 +33,8 @@ const ArticleIdCommentsNewComment = ({ articleId }: ArticleIdCommentsNewCommentT
   return (
     <div className="w-full">
       <CustomTypography
+        className="pb-6 !text-impo_Surface_InverseSurface"
         fontSize={breakPoint.mobile ? 'Headline_Small' : 'Headline_Medium'}
-        color={'Surface_InverseSurface'}
-        className="pb-6"
       >
         ثبت نظر
       </CustomTypography>
@@ -59,9 +57,8 @@ const ArticleIdCommentsNewComment = ({ articleId }: ArticleIdCommentsNewCommentT
               hasOutline={true}
               fontSize="Body_Medium"
               value={commentPayload.name}
-              className="w-full p-4 rounded-xl"
               onValue={(v) => commentPayloadHandler(v, 'name')}
-              style={{ outlineColor: COLORS_LIST.Primary_Primary, backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
+              className="w-full p-4 rounded-xl outline-impo_Primary_Primary bg-impo_Surface_SurfaceVariant !text-impo_Neutral_OnBackground"
             />
           </div>
 
@@ -72,9 +69,8 @@ const ArticleIdCommentsNewComment = ({ articleId }: ArticleIdCommentsNewCommentT
               hasOutline={true}
               fontSize="Body_Medium"
               value={commentPayload.phone}
-              className="w-full p-4 rounded-xl"
               onValue={(v) => commentPayloadHandler(v, 'phone')}
-              style={{ outlineColor: COLORS_LIST.Primary_Primary, backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
+              className="w-full p-4 rounded-xl outline-impo_Primary_Primary bg-impo_Surface_SurfaceVariant !text-impo_Neutral_OnBackground"
             />
           </div>
         </div>
@@ -88,11 +84,12 @@ const ArticleIdCommentsNewComment = ({ articleId }: ArticleIdCommentsNewCommentT
 
       <div className="w-full flex justify-center pt-10">
         <CustomButton
-          varient="outline"
           isLoading={isLoading}
           isDisable={isDisable}
           fontSize="Body_Large"
           onClick={submitHandler}
+          spinnerClassName="!border-impo_Primary_Primary"
+          className="bg-impo_Transparent !text-impo_Primary_Primary w-[170px]"
         >
           ثبت دیدگاه
         </CustomButton>

@@ -1,11 +1,10 @@
-import { typographyMaker } from '@components/ui/CustomTypography/__utils__';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 import useOperatingSystem from '@hooks/useOperatingSystem';
-import { COLORS_LIST } from '@theme/colors';
 
 import useCopy from '../../Depression/Book/__hooks__/useCopy';
 import { MOVIE_PART1 } from './constants';
@@ -14,24 +13,26 @@ const Movie = () => {
   const { copylink } = useCopy();
   const { breakPoint } = useBreakPoint();
   const { operatingSystem } = useOperatingSystem();
-  const typographyDetails = typographyMaker({
-    fontSize: 'Lable_LargeProminet',
+
+  const typographyDetails = typographyFontStylesMaker({
     operatingSystem,
     isWeb: !breakPoint.laptop,
+    fontSize: 'Lable_LargeProminet',
   });
+
   return (
     <div className=" rounded-2xl py-6 px-4 bg-gradient-to-b from-[#ECFBE3] to-[#F7F7F7]">
       <div className="flex flex-col gap-1">
         <CustomTypography fontSize="Headline_Medium" style={{ color: '#076747' }}>
           مدیتیشن
         </CustomTypography>
-        <CustomTypography fontSize="Body_Medium" color={'Surface_InverseSurface'}>
+        <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
           مدیتیشن کمک می‌کنه مغز از حالت هشدار مداوم خارج بشه، وقتی اضطراب تو بدن می‌چرخه.
         </CustomTypography>
       </div>
 
       <div className="flex flex-col gap-1 my-3">
-        <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+        <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
           این مدیتیشن‌ها کمکت می‌کنن ذهنت رو آروم‌تر کنی.
         </CustomTypography>
         <ul className="px-5 w-full grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 justify-items-center">
@@ -49,9 +50,8 @@ const Movie = () => {
                 src={item.image}
                 className="pt-4 md:p-0 w-[96px] md:w-[150px] lg:max-w-[320px] xl:max-w-[300px] my-3"
                 hasPreviewImage
-                previewBackground={COLORS_LIST.White}
               />
-              <CustomTypography fontSize="Lable_Small" color="Surface_InverseSurface" className="text-center">
+              <CustomTypography fontSize="Lable_Small" className="text-center !text-impo_Surface_InverseSurface">
                 {item.description}
               </CustomTypography>
             </li>
@@ -64,29 +64,24 @@ const Movie = () => {
         <CustomLink
           target="_blank"
           href="https://aramia.me/"
-          className="md:mb-5"
-          color="Success_Success"
+          className="md:mb-5 !text-impo_Success_Success"
           style={{ textDecorationLine: 'underline' }}
         >
           آرامیا
         </CustomLink>
 
-        <CustomTypography fontSize="Body_Medium" color="Surface_InverseSurface">
+        <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
           می‌تونه مرهمی باشه برای این روزهات؛
         </CustomTypography>
-        <CustomTypography fontSize="Body_Medium" color="Surface_InverseSurface">
+        <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
           مدیتیشن‌های آرامیا رو با کد تخفیف ۱۰۰٪ می‌تونین استفاده کنین.{' '}
         </CustomTypography>
 
         <div className="flex  gap-1 justify-start items-center">
-          <CustomTypography fontSize="Lable_MediumProminet" color={'Neutral_OnBackground'}>
+          <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
             کد تخفیف 100 درصدی:
           </CustomTypography>
-          <u
-            style={{ ...typographyDetails, color: COLORS_LIST.Primary_Primary }}
-            className=" cursor-pointer"
-            onClick={copylink}
-          >
+          <u style={{ ...typographyDetails }} className=" cursor-pointer text-impo_Primary_Primary" onClick={copylink}>
             Marham
           </u>
         </div>

@@ -6,8 +6,7 @@ const NameSelectionHeadingContent = () => {
       <CustomTypography
         tagType="h1"
         fontSize="Headline_Medium"
-        color={'Neutral_OnBackground'}
-        className="py-2 lg:pt-2 lg:pb-1"
+        className="py-2 lg:pt-2 lg:pb-1 !text-impo_Neutral_OnBackground"
       >
         لیست کامل اسم‌ دختر ایرانی شیک و خاص با معنی
       </CustomTypography>
@@ -15,8 +14,7 @@ const NameSelectionHeadingContent = () => {
       <CustomTypography
         tagType="span"
         fontSize="Body_Large"
-        color={'Surface_InverseSurface'}
-        className="text-center lg:text-right"
+        className="text-center lg:text-right !text-impo_Neutral_OnBackground"
       >
         زمانی که می‌فهمی تو شکمت یک دختر کوچولوی مهربون وجود داره اون تصویر مبهمی که از فرزندت تو ذهنت بود، شفاف‌تر
         می‌شه و حالا دیگه می‌تونی روزی رو تصور کنی که دائم در گوشش زمزمه می‌کنی که او زیباترین دختر دنیاست. این تصویر یک

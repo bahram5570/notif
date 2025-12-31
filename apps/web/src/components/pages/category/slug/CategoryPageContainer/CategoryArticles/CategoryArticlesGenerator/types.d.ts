@@ -6,5 +6,7 @@ export interface CategoryArticlesGeneratorTypes extends ArticlesTypes {
 
 export interface GeneratorScriptsTypes extends Pick<CategoryArticlesGeneratorTypes, 'url' | 'title' | 'body'> {}
 
-export interface GeneratorProfileTypes
-  extends Pick<CategoryArticlesGeneratorTypes, 'author' | 'publishTime' | 'commentCount' | 'rateCount'> {}
+export interface GeneratorProfileTypes extends Pick<
+  CategoryArticlesGeneratorTypes,
+  'author' | 'publishTime' | 'commentCount' | 'rateCount'
+> {}

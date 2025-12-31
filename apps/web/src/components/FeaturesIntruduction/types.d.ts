@@ -3,6 +3,7 @@ export interface FeaturesIntruductionTypes {
   list: {
     image: string;
     title: string;
+    imageDark: string;
     description: string;
   }[];
 }

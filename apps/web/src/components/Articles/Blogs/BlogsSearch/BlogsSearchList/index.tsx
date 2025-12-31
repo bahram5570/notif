@@ -3,7 +3,6 @@ import styles from './styles.module.css';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
 
 import { BlogsSearchListTypes } from './types';
 
@@ -26,16 +25,17 @@ const BlogsSearchList = ({ articlesSearchList }: BlogsSearchListTypes) => {
                   right-0 
                   rounded-xl
                   shadow-md
+                  bg-impo_Neutral_Background
+                  border-[1px]
+                  border-impo_Surface_OutlineVariant
                   z-20
                   ${styles.modal}
                 `}
-      style={{ backgroundColor: COLORS_LIST.White }}
     >
       {articlesSearchList.length === 0 && (
         <CustomTypography
           fontSize={breakPoint.laptop ? 'Body_Medium' : 'Title_Small'}
-          color={'Surface_InverseSurface'}
-          className="p-5"
+          className="p-5 !text-impo_Surface_InverseSurface"
         >
           مقاله‌ای پیدا نشد!
         </CustomTypography>
@@ -45,12 +45,19 @@ const BlogsSearchList = ({ articlesSearchList }: BlogsSearchListTypes) => {
         articlesSearchList.map((item, index) => (
           <CustomLink href={`/${item.url}`} key={index}>
             <div
-              className="w-full h-[64px] flex items-center px-5 border-t-[1px]"
-              style={{ borderTopColor: index === 0 ? COLORS_LIST.Transparent : COLORS_LIST.Neutral_Surface }}
+              className={`
+                          w-full 
+                          h-[64px] 
+                          flex 
+                          items-center 
+                          px-5 
+                          border-t-[1px] 
+                          ${index === 0 ? 'border-t-impo_Transparent' : 'border-t-impo_Surface_OutlineVariant'}
+                        `}
             >
               <CustomTypography
+                className="!text-impo_Surface_InverseSurface"
                 fontSize={breakPoint.laptop ? 'Body_Medium' : 'Title_Small'}
-                color={'Surface_InverseSurface'}
               >
                 {item.title.trim()}
               </CustomTypography>

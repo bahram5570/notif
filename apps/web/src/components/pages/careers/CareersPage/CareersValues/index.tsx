@@ -32,7 +32,11 @@ const CareersValues = () => {
 
   return (
     <div className="w-full flex flex-col items-center pt-4 md:pt-8 pb-9 md:pb-12">
-      <CustomTypography tagType="h2" fontSize="Headline_Medium" color={'Neutral_OnBackground'} className="pb-4 md:pb-6">
+      <CustomTypography
+        tagType="h2"
+        fontSize="Headline_Medium"
+        className="pb-4 md:pb-6 !text-impo_Neutral_OnBackground"
+      >
         ارزش‌های ایمپو
       </CustomTypography>
 

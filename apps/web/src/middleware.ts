@@ -35,7 +35,7 @@ export const middleware = async (request: NextRequest) => {
 
   try {
     const uri = pathname.startsWith('/') && pathname.replace('/', '');
-    
+
     const { data } = await http<{
       url: string;
       status: number;

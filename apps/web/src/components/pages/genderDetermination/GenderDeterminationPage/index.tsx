@@ -15,7 +15,7 @@ const GenderDeterminationPage = () => {
           <GenderDeterminationHeading />
           <QrCode className="xl:top-[400px]" />
 
-          <div className="bg-[url(/assets/images/genderDeterminationBackground.webp)] bg-cover bg-top">
+          <div className="bg-[url(/assets/images/genderDeterminationBackground.webp)] bg-cover bg-top dark:bg-impo_Surface_InverseOnSurface dark:bg-none">
             <div className="relative w-full px-4 mx-auto md:w-11/12 lg:w-10/12 md:max-w-full">
               <GenderDeterminationDoctor />
               <GenderDeterminationContents />

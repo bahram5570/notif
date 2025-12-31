@@ -15,8 +15,7 @@ const CategoryBlogsCategories = ({ categoriesList }: CategoryBlogsCategoriesType
     <div className="w-full pb-10">
       <CustomTypography
         tagType="h3"
-        className="px-4 lg:px-0"
-        color={'Neutral_OnBackground'}
+        className="px-4 lg:px-0 !text-impo_Neutral_OnBackground"
         fontSize={breakPoint.laptop ? 'Title_Medium' : 'Headline_Medium'}
       >
         دسته بندی‌ها

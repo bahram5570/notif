@@ -6,12 +6,16 @@ export interface AccessNotificationContainerProps extends PageTypes {
   onComplete?: () => void;
 }
 
-export interface AccessNotificationHeadingImageProps
-  extends Pick<AccessNotificationContainerProps, 'doRepeat' | 'image'> {
+export interface AccessNotificationHeadingImageProps extends Pick<
+  AccessNotificationContainerProps,
+  'doRepeat' | 'image'
+> {
   backgroundColor: string;
 }
 
-export interface AccessNotificationScriptsProps
-  extends Pick<AccessNotificationContainerProps, 'title' | 'description' | 'firstName'> {}
+export interface AccessNotificationScriptsProps extends Pick<
+  AccessNotificationContainerProps,
+  'title' | 'description' | 'firstName'
+> {}
 
 export interface AccessNotificationBtnProps extends Pick<AccessNotificationContainerProps, 'btnLabel' | 'onComplete'> {}

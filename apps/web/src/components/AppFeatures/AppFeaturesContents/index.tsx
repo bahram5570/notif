@@ -2,7 +2,6 @@ import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
 
 import { APP_FEATURES_CONTENTS_LIST } from '../constants';
 import useContents from './__hooks__/useContents';
@@ -31,8 +30,8 @@ const AppFeaturesContents = ({ currentTab }: AppFeaturesContentsTypes) => {
                 <CustomLink
                   key={index + contentIndex}
                   href={item.lintTo}
-                  style={{ gridColumn, gridRow, backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
-                  className="relative w-full h-full rounded-2xl lg:rounded-3xl select-none pointer-events-none overflow-hidden"
+                  style={{ gridColumn, gridRow }}
+                  className="relative w-full h-full rounded-2xl lg:rounded-3xl select-none pointer-events-none overflow-hidden bg-impo_Neutral_Surface"
                 >
                   <CustomImage
                     key={image}
@@ -45,16 +44,15 @@ const AppFeaturesContents = ({ currentTab }: AppFeaturesContentsTypes) => {
 
                   <div className="absolute left-0 right-0 bottom-0 flex flex-col gap-1 p-4 lg:p-6">
                     <CustomTypography
-                      color={'Neutral_OnBackground'}
                       fontSize={breakPoint.laptop ? 'Lable_Small' : 'Title_Small'}
+                      className="!text-impo_Neutral_OnBackground"
                     >
                       {item.title}
                     </CustomTypography>
 
                     <CustomTypography
                       fontSize="Body_Small"
-                      color={'Neutral_OnSurface'}
-                      className={`${breakPoint.laptop && '!text-[9px]'}`}
+                      className={`${breakPoint.laptop && '!text-[9px] '} !text-impo_Neutral_OnSurface`}
                     >
                       {item.description}
                     </CustomTypography>

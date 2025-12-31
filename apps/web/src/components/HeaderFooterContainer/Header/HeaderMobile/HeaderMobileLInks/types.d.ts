@@ -14,3 +14,9 @@ export type MultiLinkGeneratorTypes = HEADER_MULTI_LINK & {
   closeHandler: () => void;
   selectHandler: () => void;
 };
+
+export type ThemeLinkGeneratorTypes = {
+  isSelected: boolean;
+  closeHandler: () => void;
+  selectHandler: () => void;
+};

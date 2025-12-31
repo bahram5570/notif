@@ -7,11 +7,10 @@ export interface DiscountCodeProps extends Pick<ResponseTypes, 'isValidDiscountC
   loadingResponse: boolean;
 }
 
-export interface CodeInputProps
-  extends Pick<
-    DiscountCodeProps,
-    'discountCodeHelper' | 'isValidDiscountCode' | 'loadingResponse' | 'codeHandler' | 'approvedCodeHandler'
-  > {
+export interface CodeInputProps extends Pick<
+  DiscountCodeProps,
+  'discountCodeHelper' | 'isValidDiscountCode' | 'loadingResponse' | 'codeHandler' | 'approvedCodeHandler'
+> {
   codeHandler: (v: string) => void;
   onClick: () => void;
   code: string;

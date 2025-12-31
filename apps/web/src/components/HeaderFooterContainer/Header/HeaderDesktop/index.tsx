@@ -4,8 +4,8 @@ import { scrollToIdHandler } from '@utils/navigation';
 import { DOWNLOAD_APP_SECTION_ID } from '@components/DownloadApp/DownloadAppWomen/constants';
 import CustomButton from '@components/ui/CustomButton';
 import CustomLink from '@components/ui/CustomLink';
-import { COLORS_LIST } from '@theme/colors';
 
+import HeaderTheme from '../HeaderTheme';
 import HeaderDesktopLinks from './HeaderDesktopLinks';
 
 const HeaderDesktop = () => {
@@ -16,7 +16,6 @@ const HeaderDesktop = () => {
   return (
     <>
       <div
-        style={{ backgroundColor: COLORS_LIST.White }}
         className="
                     relative 
                     w-full 
@@ -32,24 +31,30 @@ const HeaderDesktop = () => {
                     lg:px-8 
                     mt-4 
                     mx-auto 
-                    shadow-[0_0_16px_0_#6c23371f]
+                    bg-impo_OnBlack
+                    border-[1px]
+                    border-impo_Grey_200
+                    dark:border-impo_Surface_SurfaceVariant
                   "
       >
         <CustomLink href={'/'}>
-          <ImpoNameIcon className="w-[68px] h-auto pointer-events-none" style={{ fill: COLORS_LIST.Primary_Primary }} />
+          <ImpoNameIcon className="w-[68px] h-auto pointer-events-none fill-impo_Primary_Primary" />
         </CustomLink>
 
         <HeaderDesktopLinks />
 
-        <CustomButton
-          varient="fill"
-          fontSize="Title_Small"
-          className="w-[127px] h-[48px]"
-          onClick={downloadLinkHandler}
-          id='install_header'
-        >
-          نصب ایمپو
-        </CustomButton>
+        <div className="flex items-center gap-4">
+          <HeaderTheme />
+
+          <CustomButton
+            id="install_header"
+            fontSize="Title_Small"
+            className="w-[175px] h-[48px]"
+            onClick={downloadLinkHandler}
+          >
+            نصب ایمپو
+          </CustomButton>
+        </div>
       </div>
     </>
   );

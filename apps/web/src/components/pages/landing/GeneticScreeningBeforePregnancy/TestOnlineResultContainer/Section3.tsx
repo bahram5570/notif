@@ -1,15 +1,11 @@
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { Section3Props } from './types';
 
 const Section3 = ({ section, id }: Section3Props) => {
   return (
-    <div
-      className="rounded-[12px] pt-4 pb-6 px-3 text-center mt-4"
-      style={{ border: `1px solid ${COLORS_LIST.Neutral_Surface}` }}
-    >
+    <div className="rounded-[12px] pt-4 pb-6 px-3 lg:px-4 text-center mt-4 border !border-impo_Surface_SurfaceVariant">
       <div className="mt-1">
         <div className="flex gap-x-3 items-center mb-[10px]">
           <div className="w-[64px] h-[64px]">
@@ -21,9 +17,11 @@ const Section3 = ({ section, id }: Section3Props) => {
               className="w-full h-full object-cover"
             />
           </div>
-          <CustomTypography fontSize="Lable_Medium">{section[0].title}</CustomTypography>
+          <CustomTypography fontSize="Lable_Medium" className="!text-impo_Neutral_OnBackground">
+            {section[0].title}
+          </CustomTypography>
         </div>
-        <CustomTypography fontSize="Body_Medium" className="text-right">
+        <CustomTypography fontSize="Body_Medium" className="text-right !text-impo_Neutral_OnBackground">
           {section[0].text}
         </CustomTypography>
       </div>
@@ -43,8 +41,10 @@ const Section3 = ({ section, id }: Section3Props) => {
                   />
                 </div>
                 <div className="grid justify-items-start">
-                  <CustomTypography fontSize="Lable_Medium">{item.title}</CustomTypography>
-                  <CustomTypography fontSize="Body_Medium" className="text-right">
+                  <CustomTypography fontSize="Lable_Medium" className="!text-impo_Neutral_OnBackground">
+                    {item.title}
+                  </CustomTypography>
+                  <CustomTypography fontSize="Body_Medium" className="text-right !text-impo_Neutral_OnBackground">
                     {item.text}
                   </CustomTypography>
                 </div>

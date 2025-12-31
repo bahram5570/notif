@@ -39,8 +39,8 @@ const EnterPhonePage = () => {
 
         <div className="flex justify-center mt-4">
           {phoneNumber && (
-            <CustomButton varient="fill" onClick={submitHandler}>
-              {isLoading ? <Spinner color={'White'} size={18} /> : 'ادامه'}
+            <CustomButton onClick={submitHandler}>
+              {isLoading ? <Spinner className="!border-impo_White" size={18} /> : 'ادامه'}
             </CustomButton>
           )}
         </div>

@@ -6,7 +6,6 @@ import { jalaaliScriptDate, toJalaliData } from '@utils/dates';
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { GeneratorProfileTypes } from './types';
 
@@ -24,23 +23,29 @@ const GeneratorProfile = ({ author, publishTime, commentCount, rateCount }: Gene
             <CustomImage fill={true} src={imageUrl} alt={author.id} className="rounded-full object-cover" />
           </div>
 
-          <CustomTypography fontSize="Lable_Medium">{author.authorName}</CustomTypography>
+          <CustomTypography fontSize="Lable_Medium" className="!text-impo_Neutral_OnBackground">
+            {author.authorName}
+          </CustomTypography>
         </div>
       </CustomLink>
 
       <div className="flex items-center gap-4 md:gap-6">
-        <CustomTypography fontSize="Body_Small" color={'Surface_Outline'}>
+        <CustomTypography fontSize="Body_Small" className="!text-impo_Surface_Outline">
           {publishTimeScript}
         </CustomTypography>
 
         <div className="flex items-center gap-2">
-          <LikeIcon className="w-[14px]" style={{ fill: COLORS_LIST.Surface_Outline }} />
-          <CustomTypography fontSize="Body_Small">{rateCount}</CustomTypography>
+          <LikeIcon className="w-[14px] fill-impo_Surface_Outline" />
+          <CustomTypography fontSize="Body_Small" className="!text-impo_Surface_Outline">
+            {rateCount}
+          </CustomTypography>
         </div>
 
         <div className="flex items-center gap-2">
-          <CommentIcon className="w-[14px]" style={{ fill: COLORS_LIST.Surface_Outline }} />
-          <CustomTypography fontSize="Body_Small">{commentCount}</CustomTypography>
+          <CommentIcon className="w-[14px] fill-impo_Surface_Outline" />
+          <CustomTypography fontSize="Body_Small" className="!text-impo_Surface_Outline">
+            {commentCount}
+          </CustomTypography>
         </div>
       </div>
     </div>

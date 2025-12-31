@@ -5,20 +5,24 @@ const ImpoStory = () => {
   return (
     <div className=" px-4 md:px-0 mt-auto   md:w-8/12 lg:w-6/12 w-full  my-5">
       <CustomTypography
-        className="mx-auto w-full flex justify-center items-center sm:mt-[30px] sm:mb-[30px] mt-[20px] mb-[30px]"
         fontSize="Headline_Medium"
+        className="mx-auto w-full flex justify-center items-center sm:mt-[30px] sm:mb-[30px] mt-[20px] mb-[30px] !text-impo_Neutral_OnBackground"
       >
         داستان ایمپو
       </CustomTypography>
+
       <div className="flex flex-col justify-center items-center ">
         <CustomImage
-          src="/assets/images/aboutUs/2.jpg"
+          fill={true}
           alt="aboutUs"
-          fill
+          src="/assets/images/aboutUs/2.jpg"
           className="object-contain  w-full h-auto !relative rounded-lg"
         />
 
-        <CustomTypography fontSize="Title_Small" color="Neutral_OnBackground" className="p-4 !leading-9 text-justify">
+        <CustomTypography
+          fontSize="Title_Small"
+          className="p-4 !leading-9 text-justify !text-impo_Neutral_OnBackground"
+        >
           ایده اولیه اپلیکیشن ایمپو در تابستان 1398 شکل گرفت. وقتی که مساله پریود کاملا یک تابو محسوب میشد و کمتر خانمی
           بود که مراقبت های لازم از خودش رو در این دوره مهم و حیاتی انجام بده. ایمپو با شعار Iam important (من مهم هستم)
           و با هدف ایجاد یک تقویم فارسی قاعدگی برای پیش بینی زمان پریود، دوره پیش از قاعدگی و دوره باروری شروع به کار

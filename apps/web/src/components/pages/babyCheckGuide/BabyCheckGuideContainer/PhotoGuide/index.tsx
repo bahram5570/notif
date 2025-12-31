@@ -3,14 +3,13 @@ import TickIcon from '@assets/icons/Unread.svg';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 const PhotoGuide = () => {
   return (
-    <div style={{ background: COLORS_LIST.Surface_SurfaceVariant }} className="min-w-full px-4 py-5">
-      <div className="rounded-xl mb-3 px-4 py-5" style={{ background: COLORS_LIST.White }}>
+    <div className="min-w-full px-4 py-5 !bg-impo_Grey_50">
+      <div className="rounded-xl mb-3 px-4 py-5 bg-impo_White">
         <CustomTypography fontSize="Lable_Medium">نکات مهم:</CustomTypography>
-        <span className="w-full block h-[1px] my-3 mx-0" style={{ background: COLORS_LIST.Neutral_Surface }}></span>
+        <span className="w-full block h-[1px] my-3 mx-0 bg-impo_Neutral_Surface"></span>
         <div className="my-[18px] pr-[10px]">
           <CustomTypography fontSize="Body_Medium" className="mb-2">
             1. برای دریافت نتیجه دقیق، کیت را روی زمینه سفید و روشن قرار داده و سپس از آن عکس بگیرید.
@@ -22,7 +21,7 @@ const PhotoGuide = () => {
         </div>
       </div>
 
-      <div className="rounded-xl mb-3 px-4 py-5" style={{ background: COLORS_LIST.White }}>
+      <div className="rounded-xl mb-3 px-4 py-5 bg-white">
         <div className="flex items-center gap-1">
           <CustomTypography fontSize="Lable_Medium">محیط عکاسی</CustomTypography>
           <CustomTypography fontSize="Body_Small" tagType="span">
@@ -30,7 +29,7 @@ const PhotoGuide = () => {
           </CustomTypography>
         </div>
 
-        <span className="w-full block h-[1px] my-3 mx-0" style={{ background: COLORS_LIST.Neutral_Surface }}></span>
+        <span className="w-full block h-[1px] my-3 mx-0 bg-impo_Neutral_Surface"></span>
         <div>
           <CustomImage
             src="/assets/images/babyCheckGuide/sampleKit.webp"
@@ -62,9 +61,9 @@ const PhotoGuide = () => {
         </div>
       </div>
 
-      <div className="rounded-xl mb-5 px-4 py-5" style={{ background: COLORS_LIST.White }}>
+      <div className="rounded-xl mb-5 px-4 py-5 bg-impo_White">
         <CustomTypography fontSize="Lable_Medium"> بهترین موقعیت برای عکاسی</CustomTypography>
-        <span className="w-full block h-[1px] my-3 mx-0" style={{ background: COLORS_LIST.Neutral_Surface }}></span>
+        <span className="w-full block h-[1px] my-3 mx-0 bg-impo_Neutral_Surface"></span>
         <div className="my-[18px] pr-[10px]">
           <div className="flex gap-1 flex-col items-start">
             <CustomTypography fontSize="Body_Medium">۱. گوشی رو هم‌‌راستا و موازی با میز نگه دارید.</CustomTypography>

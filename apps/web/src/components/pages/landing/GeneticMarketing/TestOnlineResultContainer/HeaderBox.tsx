@@ -1,15 +1,11 @@
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { HeaderBoxProps } from './types';
 
 const HeaderBox = ({ header, color }: HeaderBoxProps) => {
   return (
-    <div className="rounded-[12px]" style={{ border: `1px solid ${COLORS_LIST[color as keyof typeof COLORS_LIST]}` }}>
-      <div
-        style={{ backgroundColor: COLORS_LIST[color as keyof typeof COLORS_LIST] }}
-        className="rounded-t-[10px] !text-white"
-      >
+    <div className={`rounded-[12px] border border-impo_${color}`}>
+      <div className={`rounded-t-[10px] !text-white bg-impo_${color}`}>
         <CustomTypography fontSize="Body_Medium" className="!text-center !text-white py-2">
           نتیجه تست شما:
         </CustomTypography>

@@ -1,5 +1,4 @@
 import CustomButton from '@components/ui/CustomButton';
-import { COLORS_LIST } from '@theme/colors';
 
 import useProgress from './__hooks__/useProgress';
 import useTabSizes from './__hooks__/useTabSizes';
@@ -21,13 +20,9 @@ const AppFeaturesTabGenerator = ({
   return (
     <div className="relative p-[1px]" style={{ width: tabSizes.width, height: tabSizes.height }}>
       <CustomButton
-        varient="FREE_COLORS"
-        className="!h-full !w-full"
+        className={`!h-full !w-full ${isSelected ? '!bg-impo_Primary_Primary !text-impo_Primary_OnPrimary !border-impo_Primary_OnPrimary' : '!bg-impo_White !text-impo_Black !border-impo_Surface_OutlineVariant'} `}
         onClick={() => currentTabHandler(tabIndex)}
         fontSize={tabSizes.isMobile ? 'Lable_Large' : 'Title_Small'}
-        backgroundColor={isSelected ? COLORS_LIST.Primary_Primary : COLORS_LIST.White}
-        textColor={isSelected ? COLORS_LIST.Primary_OnPrimary : COLORS_LIST.Neutral_OnSurface}
-        borderColor={isSelected ? COLORS_LIST.Primary_Primary : COLORS_LIST.Surface_OutlineVariant}
       >
         {title}
       </CustomButton>
@@ -44,7 +39,7 @@ const AppFeaturesTabGenerator = ({
           height="94%"
           strokeWidth={2}
           rx={tabSizes.rx}
-          stroke={COLORS_LIST.Primary_Primary}
+          className="!stroke-impo_Primary_Primary"
           strokeDasharray={strokeDasharray}
         />
       </svg>

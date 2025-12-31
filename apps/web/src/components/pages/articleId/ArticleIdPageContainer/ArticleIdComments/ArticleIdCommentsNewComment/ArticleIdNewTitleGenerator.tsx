@@ -1,16 +1,15 @@
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { ArticleIdNewTitleGeneratorTypes } from './types';
 
 const ArticleIdNewTitleGenerator = ({ title, hasStar }: ArticleIdNewTitleGeneratorTypes) => {
   return (
     <div className="flex items-center gap-1 pb-2">
-      <CustomTypography fontSize="Body_Medium" color={'Surface_Outline'}>
+      <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_Outline">
         {title}
       </CustomTypography>
 
-      {hasStar && <div style={{ color: COLORS_LIST.Red_500 }}>*</div>}
+      {hasStar && <div className="text-impo_Red_500">*</div>}
     </div>
   );
 };

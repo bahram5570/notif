@@ -1,6 +1,8 @@
 import CustomImage from '@components/ui/CustomImage';
+import useBreakPoint from '@hooks/useBreakPoint';
 
 const TestOnlineResultWrapper = ({ children }: { children: React.ReactNode }) => {
+  const { breakPoint } = useBreakPoint();
   return (
     <div
       className="
@@ -14,7 +16,14 @@ const TestOnlineResultWrapper = ({ children }: { children: React.ReactNode }) =>
                     flex-col
                     items-center
                     overflow-hidden
+                    lg:!bg-no-repeat 
+                    lg:!bg-top
                 "
+      style={{
+        background: breakPoint.desktop
+          ? `url(/assets/images/genetic-bg.webp),linear-gradient( #C9B3F750 15%,#FFFFFF, #FFFFFF , #FFFFFF)`
+          : undefined,
+      }}
     >
       <div
         className="
@@ -24,11 +33,12 @@ const TestOnlineResultWrapper = ({ children }: { children: React.ReactNode }) =>
                     left-0 
                     right-0 
                     w-full 
-                    h-[400px] 
+                    h-[380px]
+                    lg:h-screen 
                     pointer-events-auto 
                     -z-10 
                     overflow-hidden 
-                    sm:overflow-visible
+                    sm:overflow-visible lg:hidden
                   "
       >
         <CustomImage

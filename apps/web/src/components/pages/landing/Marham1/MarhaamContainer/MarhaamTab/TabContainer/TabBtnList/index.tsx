@@ -1,28 +1,20 @@
 import CustomButton from '@components/ui/CustomButton';
-import { COLORS_LIST } from '@theme/colors';
 
 import { TAB_LIST } from '../constants';
 import { TabBtnListPropsType } from './type';
 
 const TabBtnList = ({ activeTab, handleActiveTab }: TabBtnListPropsType) => {
   return (
-    <div
-      className="flex sticky top-[70px] sm:relative z-20 sm:top-0 flex-wrap  gap-2 p-[10px] w-full"
-      style={{ background: COLORS_LIST.White }}
-    >
+    <div className="flex sticky top-[70px] sm:relative z-20 sm:top-0 flex-wrap  gap-2 p-[10px] w-full bg-impo_White">
       {TAB_LIST.map((tab, index) => (
         <CustomButton
-          varient="FREE_COLORS"
           // fontSize={activeTab === tab.id ? 'Lable_Large' : 'Body_Medium'}
           fontSize="Body_Medium"
           key={index}
           onClick={() => handleActiveTab(tab.id)}
-          textColor={activeTab === tab.id ? COLORS_LIST.Primary_Primary : COLORS_LIST.Neutral_OnSurface}
-          backgroundColor={activeTab === tab.id ? COLORS_LIST.Primary_PrimaryContainer : COLORS_LIST.White}
-          borderColor={COLORS_LIST.White}
-          className="!px-6 !py-3 !h-12 !w-fit !rounded-[100px] "
+          className={`!px-6 !py-3 !h-12 !w-fit !rounded-[100px] ${activeTab === tab.id ? 'bg-impo_Primary_PrimaryContainer text-impo_Primary_Primary border-impo_White' : 'bg-impo_White text-impo_Neutral_OnSurface border-impo_Surface_OutlineVariant'} `}
           style={{
-            border: `1px solid ${activeTab === tab.id ? COLORS_LIST.White : COLORS_LIST.Surface_OutlineVariant}`,
+            border: `1px solid `,
           }}
         >
           {tab.label}

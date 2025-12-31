@@ -6,7 +6,6 @@ import CustomModal from '@components/ui/CustomModal';
 import CustomTypography from '@components/ui/CustomTypography';
 import DateSelector from '@components/ui/DateSelector';
 import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
 import m from 'moment-jalaali';
 
 import { PREGNANCY_WEEKS_TOTAL_DAYS } from '../constants';
@@ -35,36 +34,34 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
 
         <div
           onClick={() => isOpenHandler(true)}
-          style={{ backgroundColor: COLORS_LIST.White }}
-          className="w-full sm:max-w-[460px] flex justify-between rounded-2xl p-4 mt-6 cursor-pointer"
+          className="w-full sm:max-w-[460px] flex justify-between rounded-2xl p-4 mt-6 cursor-pointer bg-impo_White"
         >
           {selectedDate ? (
-            <CustomTypography fontSize="Body_Large">{selectedDate}</CustomTypography>
+            <CustomTypography fontSize="Body_Large" className="!text-impo_Grey_800">
+              {selectedDate}
+            </CustomTypography>
           ) : (
-            <CustomTypography fontSize="Body_Large" color={'Surface_Outline'}>
+            <CustomTypography fontSize="Body_Large" className="!text-impo_Grey_800">
               تاریخ آخرین پریود
             </CustomTypography>
           )}
 
-          <SelectDateIcon className="w-6 h-auto" style={{ stroke: COLORS_LIST.Surface_Outline }} />
+          <SelectDateIcon className="w-6 h-auto stroke-impo_Grey_800" />
         </div>
 
         <CustomButton
-          varient="fill"
+          fontSize="Lable_Large"
           isLoading={isLoading}
           onClick={() => submitHandler(selectedDate)}
           style={{ pointerEvents: !selectedDate ? 'none' : 'auto' }}
-          className="absolute h-[48px] w-full !mt-auto sm:max-w-[460px]"
+          className=" h-[48px] w-full !mt-auto sm:max-w-[460px]"
         >
           محاسبه سن بارداری
         </CustomButton>
       </div>
 
       <CustomModal position={position} isOpen={isOpen} onClose={() => isOpenHandler(false)}>
-        <div
-          className="w-[100vw] max-w-[460px] flex flex-col items-center p-6 md:p-10 md:rounded-2xl"
-          style={{ backgroundColor: COLORS_LIST.White }}
-        >
+        <div className="w-[100vw] max-w-[460px] flex flex-col items-center p-6 md:p-10 md:rounded-2xl bg-impo_White">
           <CustomTypography className="text-center">
             کاربر عزیز برای محاسبه اینکه توی هفته چندم بارداری هستی
           </CustomTypography>
@@ -75,7 +72,7 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
 
           <DateSelector valueHandler={(v) => currentDateHandler(v)} startDate={startDate} defaultDate={defaultDate} />
 
-          <CustomButton varient="fill" onClick={selectedDateHandler} className="!w-full !mt-2">
+          <CustomButton fontSize="Lable_Large" onClick={selectedDateHandler} className="!w-full !mt-2">
             انتخاب تاریخ
           </CustomButton>
         </div>

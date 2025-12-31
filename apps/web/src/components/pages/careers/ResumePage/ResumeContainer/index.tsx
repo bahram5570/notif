@@ -39,7 +39,7 @@ const ResumeContainer = () => {
           <>
             <CareerBreadcrumb list={breadScrumbList} />
 
-            <div className="w-full py-6 px-3 md:px-6 rounded-2xl shadow-[0_0_16px_#00000011] overflow-hidden">
+            <div className="w-full py-6 px-3 md:px-6 rounded-2xl shadow-[0_0_16px_#00000011] dark:!bg-impo_Neutral_Surface dark:border dark:border-impo_Surface_SurfaceVariant overflow-hidden">
               <ResumeTitle />
               <ResumeInputs jobId={jobId} />
             </div>

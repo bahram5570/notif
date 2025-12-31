@@ -58,36 +58,42 @@ export const MEN_COMMENTS_LIST = [
 export const MEN_FEATURES_INTRODUCTION_LIST = [
   {
     image: '/assets/images/featuresIntroduction/men/0.webp',
+    imageDark: '/assets/images/featuresIntroduction/men/dark-0.webp',
     title: 'همدلی با شریک عاطفی',
     description:
       'با ایمپو، شریک عاطفیت می‌تونه از چرخه قاعدگیت و تغییرات جسمی و روحیت آگاه بشه، تا بهتر همراهت باشه و لحظات رو با درک و همدلی بیشتری سپری کنین.',
   },
   {
     image: '/assets/images/featuresIntroduction/men/1.webp',
+    imageDark: '/assets/images/featuresIntroduction/men/dark-1.webp',
     title: 'ثبت نشانه‌های روزانه سلامت و چرخه قاعدگی',
     description:
       'تو ایمپو می‌تونی نشانه‌های روزانه مثل تغییرات خلق‌وخو، علائم جسمی و وضعیت سلامتت رو ثبت کنی، تا الگوهای بدن خودت رو بهتر بشناسی و راحت‌تر مدیریت کنی!',
   },
   {
     image: '/assets/images/featuresIntroduction/men/2.webp',
+    imageDark: '/assets/images/featuresIntroduction/men/dark-2.webp',
     title: 'یادآوری و اطلاع‌رسانی تاریخ‌های مهم',
     description:
       'تو ایمپو، همه تاریخ‌های مهم مثل شروع پریود، روز تخمک‌گذاری، دوره باروری و حتی ویزیت‌های پزشکی رو یادت میاریم، تا هیچ چیزی رو از دست ندی و به موقع برنامه‌ریزی کنی!',
   },
   {
     image: '/assets/images/featuresIntroduction/men/3.webp',
+    imageDark: '/assets/images/featuresIntroduction/men/dark-3.webp',
     title: 'پیش‌بینی دقیق چرخه قاعدگی و پریود پارتنرت',
     description:
       'تو بخش همدلی ایمپو، چرخه قاعدگی پارتنرت رو به دقت پیش‌بینی می‌کنیم؛ از تاریخ شروع و پایان پریود گرفته تا روزهای خاص چرخه، تا بتونی برنامه‌ریزی بهتری برای خودتون داشته باشی!',
   },
   {
     image: '/assets/images/featuresIntroduction/men/4.webp',
+    imageDark: '/assets/images/featuresIntroduction/men/dark-4.webp',
     title: 'کلینیک سلامت و ارتباط با متخصصان',
     description:
       'در کلینیک سلامت ایمپو، می‌تونی با متخصصان در ارتباط باشی، سوالاتت رو بپرسی و توصیه‌های مفید و علمی برای مراقبت از سلامتت دریافت کنی!',
   },
   {
     image: '/assets/images/featuresIntroduction/men/5.webp',
+    imageDark: '/assets/images/featuresIntroduction/men/dark-5.webp',
     title: 'خاطره بازی ',
     description:
       'با همدل ایمپو میتونی خاطرات قشنگتون رو توی قسمت خاطره بازی با عکس و متن و تاریخ ثبت کنی. اینجوری یه لیست قشنگ از خاطرات دارین که برای هر دو نفرتون نمایش داده میشه.',

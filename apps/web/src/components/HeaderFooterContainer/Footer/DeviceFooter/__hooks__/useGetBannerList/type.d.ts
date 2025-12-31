@@ -8,9 +8,9 @@ export type CategorybannerItemType = {
   id: string;
   title: string;
   logoUrl: string;
+  catName: string;
   btnData: btnDataType;
   backgroundColor: string[];
-  catName: string;
 };
 
 export type CategorybannerResponseType = {

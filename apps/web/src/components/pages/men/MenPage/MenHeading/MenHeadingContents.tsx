@@ -18,16 +18,13 @@ const MenHeadingContents = () => {
       <CustomTypography
         tagType="h1"
         fontSize="Headline_Medium"
-        color={'Neutral_OnBackground'}
-        className="py-2 lg:pt-2 lg:pb-1 text-center md:text-right"
+        className="py-2 lg:pt-2 lg:pb-1 text-center md:text-right !text-impo_Neutral_OnBackground"
       >
         مراقبت از خود و رابطه
       </CustomTypography>
 
       <CustomButton
-        varient="fill"
-        backgroundColor="PrimaryMan_PrimaryMan"
-        className="!w-[120px] lg:!w-[182px] h-[40px] !mt-2 !mb-8"
+        className="!w-[120px] lg:!w-[182px] h-[40px] !mt-2 !mb-8 !bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan"
         onClick={() => scrollToIdHandler(DOWNLOAD_APP_SECTION_ID)}
         fontSize={breakPoint.laptop ? 'Lable_Large' : 'Title_Small'}
         id="install_men"

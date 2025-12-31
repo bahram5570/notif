@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @import '@repo/components/styles.css';
+@import '@theme/theme.module.css';
 
 @import 'swiper/css';
 @import 'swiper/css/pagination';
@@ -47,8 +48,12 @@ td {
   background-color: #7e7e7e;
 }
 
-/* # Old banner styles */
+/* # Custom classes */
+.landing_container {
+  @apply w-full sm:w-9/12 md:w-8/12 lg:w-6/12;
+}
 
+/* # Old banner styles */
 .bannerBetweenNew {
   border-radius: 16px;
   margin: 0;
@@ -57,7 +62,6 @@ td {
 
 .bannerBetweenNew .frameBanner {
   padding-right: 24px;
-  /* background-image: url(../assets/images/betweenBanner/new/coverBgBanner.webp); */
   background-repeat: no-repeat;
   background-size: contain;
   display: grid;

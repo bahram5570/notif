@@ -1,4 +1,3 @@
-import { COLORS_LIST } from '@theme/colors';
 import { FONTS_ANDROID } from '@theme/fonts';
 
 import { CtaBannerTypes } from './types';
@@ -6,10 +5,9 @@ import { CtaBannerTypes } from './types';
 const CtaBanner = ({ id, backgroundColor, title, description, image, link, buttonLabel, name }: CtaBannerTypes) => {
   return (
     <div className="relative w-fit py-5 mx-auto">
-      <a href={link} id={id}>
-        <div
-          style={{ backgroundColor }}
-          className="
+      <div
+        style={{ backgroundColor }}
+        className="
                       w-full 
                       max-w-[1000px]
                       h-fit
@@ -26,10 +24,11 @@ const CtaBanner = ({ id, backgroundColor, title, description, image, link, butto
                       md:bg-[url(/assets/images/ctaBannerMaskDesktop.webp)] 
                       overflow-hidden
                     "
-        >
-          <div className="w-full md:w-7/12 flex flex-col items-center md:items-start pt-10 px-8">
-            <p
-              className="
+      >
+        <div className="w-full md:w-7/12 flex flex-col items-center md:items-start pt-10 px-8">
+          <p
+            data-no-cheerio-styling
+            className="
                           text-black
                           !text-[19px] 
                           !font-[700] 
@@ -40,12 +39,13 @@ const CtaBanner = ({ id, backgroundColor, title, description, image, link, butto
                           md:!leading-[140%] 
                           md:!tracking-[-0.36px]
                         "
-            >
-              {title.trim()}
-            </p>
+          >
+            {title.trim()}
+          </p>
 
-            <p
-              className="
+          <p
+            data-no-cheerio-styling
+            className="
                           pt-2 
                           pb-5
                           text-black
@@ -56,30 +56,32 @@ const CtaBanner = ({ id, backgroundColor, title, description, image, link, butto
                           md:!leading-[160%] 
                           md:!tracking-[-0.225px]
                         "
-            >
-              {description.trim()}
-            </p>
+          >
+            {description.trim()}
+          </p>
 
-            <div
-              className="py-2 px-6 md:mt-auto md:mb-6 rounded-full animate-bounce"
+          <div id="cta_blog" className=" md:mt-auto md:mb-6 animate-bounce">
+            <a
+              id={id}
+              href={link}
+              data-no-cheerio-styling
+              className="py-2 px-6 rounded-full block !text-impo_White bg-impo_Pink_500"
               style={{
-                color: COLORS_LIST.White,
                 ...FONTS_ANDROID.Body_Large,
-                backgroundColor: COLORS_LIST.Primary_Primary,
               }}
             >
               {buttonLabel?.trim() || ''}
-            </div>
+            </a>
           </div>
-
-          <img
-            alt={name}
-            src={image}
-            loading="lazy"
-            className="!w-full md:!w-5/12 !h-auto object-contain !mb-0 !mt-auto pt-4 md:pt-0"
-          />
         </div>
-      </a>
+
+        <img
+          alt={name}
+          src={image}
+          loading="lazy"
+          className="!w-full md:!w-5/12 !h-auto object-contain !mb-0 !mt-auto pt-4 md:pt-0"
+        />
+      </div>
     </div>
   );
 };

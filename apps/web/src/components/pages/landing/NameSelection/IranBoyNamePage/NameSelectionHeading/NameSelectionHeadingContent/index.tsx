@@ -6,8 +6,7 @@ const NameSelectionHeadingContent = () => {
       <CustomTypography
         tagType="h1"
         fontSize="Headline_Medium"
-        color={'Neutral_OnBackground'}
-        className="py-2 lg:pt-2 lg:pb-1 text-center md:text-left"
+        className="py-2 lg:pt-2 lg:pb-1 text-center md:text-left !text-impo_Neutral_OnBackground"
       >
         لیست کامل اسم پسر ایرانی بر اساس حروف الفبا
       </CustomTypography>
@@ -15,8 +14,7 @@ const NameSelectionHeadingContent = () => {
       <CustomTypography
         tagType="span"
         fontSize="Body_Large"
-        color={'Surface_InverseSurface'}
-        className="text-center lg:text-right"
+        className="text-center lg:text-right !text-impo_Neutral_OnBackground"
       >
         انتخاب اسم یکی از هیجان‌انگیز‌ترین و قشنگ‌ترین لحظه‌های دوران بارداری و صاحب فرزند شدنه. اگه متوجه شدید که جنسیت
         فرزندتون پسره و به دنبال یک «اسم پسر ایرانی» زیبا می‌گردین، باید بدونین که اسم‌های پسرونه اصیل زیادی وجود دارن

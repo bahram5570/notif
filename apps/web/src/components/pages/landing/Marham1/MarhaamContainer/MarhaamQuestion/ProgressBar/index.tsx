@@ -1,7 +1,5 @@
 import ArrowIcon from '@assets/icons/arrow2.svg';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import { ProgressBarTypes } from './types';
 
 const ProgressBar = ({ onBack, progressPercent, isLoading }: ProgressBarTypes) => {
@@ -12,13 +10,10 @@ const ProgressBar = ({ onBack, progressPercent, isLoading }: ProgressBarTypes) =
         className={`w-5 h-auto rotate-90 cursor-pointer ${isLoading ? '!opacity-30' : '!opacity-100'}`}
       />
 
-      <div
-        style={{ backgroundColor: COLORS_LIST.Neutral_Surface }}
-        className="relative w-full h-1 flex rounded-full overflow-hidden"
-      >
+      <div className="relative w-full h-1 flex rounded-full overflow-hidden bg-impo_Neutral_Surface">
         <div
-          className="w-full h-full rounded-full"
-          style={{ backgroundColor: COLORS_LIST.Primary_Primary, transform: `translateX(${100 - progressPercent}%)` }}
+          className="w-full h-full rounded-full bg-impo_Primary_Primary"
+          style={{ transform: `translateX(${100 - progressPercent}%)` }}
         />
       </div>
     </div>

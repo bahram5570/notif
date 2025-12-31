@@ -15,7 +15,11 @@ const ArticleIdHeading = ({ imageCover, title }: ArticleIdHeadingTypes) => {
 
   return (
     <div className="w-full flex flex-col gap-6 md:gap-8">
-      <CustomTypography fontSize={breakPoint.mobile ? 'Headline_Small' : 'Headline_Medium'} tagType="h1">
+      <CustomTypography
+        tagType="h1"
+        className="!text-impo_Neutral_OnBackground"
+        fontSize={breakPoint.mobile ? 'Headline_Small' : 'Headline_Medium'}
+      >
         {title}
       </CustomTypography>
 
@@ -29,18 +33,6 @@ const ArticleIdHeading = ({ imageCover, title }: ArticleIdHeadingTypes) => {
           className="w-full h-auto rounded-2xl object-cover"
         />
       </div>
-
-      {/* 
-      <CustomImage
-        width={960}
-        alt={title}
-        height={960}
-        quality={100}
-        src={imageUrl}
-        priority={true}
-        className="w-full h-auto rounded-2xl"
-        sizes="(max-width: 768px) 100vw, 60vw"
-      /> */}
     </div>
   );
 };

@@ -23,7 +23,7 @@ const CtaBannerList = async () => {
       {ctaData.length > 0 &&
         ctaData.map((item, index) => (
           <div className="w-full max-w-[900px] border-2 rounded-2xl p-6" key={index}>
-            <p className="text-left md:text-[20px]" dir="ltr">
+            <p className="text-left md:text-[20px] text-impo_Neutral_OnBackground" dir="ltr">
               {item.name.trim()}
             </p>
 

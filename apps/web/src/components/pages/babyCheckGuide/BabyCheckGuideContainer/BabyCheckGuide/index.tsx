@@ -1,11 +1,10 @@
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 const BabyCheckGuide = () => {
   return (
-    <div style={{ background: COLORS_LIST.Surface_SurfaceVariant }} className="min-w-full px-4 py-5">
-      <div className="rounded-xl mb-3 px-4 py-5" style={{ background: COLORS_LIST.White }}>
+    <div className="min-w-full px-4 py-5 !bg-impo_Grey_50">
+      <div className="rounded-xl mb-3 px-4 py-5 bg-impo_White">
         <CustomTypography fontSize="Body_Medium" className="mb-3">
           برای انجام تست، باید موارد زیر رو در نظر داشته باشید :
         </CustomTypography>
@@ -19,7 +18,7 @@ const BabyCheckGuide = () => {
             روز رو باید بر اساس طول دوره قاعدگی پیدا کنید.
           </CustomTypography>
         </div>
-        <span className="w-full block h-[1px] my-3 mx-0" style={{ background: COLORS_LIST.Neutral_Surface }}></span>
+        <span className="w-full block h-[1px] my-3 mx-0 bg-impo_Neutral_Surface"></span>
         <div className="my-[18px] pr-[10px]">
           <CustomTypography fontSize="Lable_Large" className="mb-2">
             ۲. نکات ضروری قبل از استفاده:
@@ -57,7 +56,7 @@ const BabyCheckGuide = () => {
           />
         </div>
 
-        <span className="w-full block h-[1px] my-3 mx-0" style={{ background: COLORS_LIST.Neutral_Surface }}></span>
+        <span className="w-full block h-[1px] my-3 mx-0 bg-impo_Neutral_Surface"></span>
 
         <div className="my-[18px] pr-[10px]">
           <CustomTypography fontSize="Lable_Large" className="mb-2">

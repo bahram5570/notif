@@ -11,11 +11,11 @@ const CalendarOfPregnancySlidesGenerator = ({ title, description, list }: Calend
 
   return (
     <div className="w-full">
-      <CustomTypography fontSize="Headline_Medium" tagType="h2" className="text-center">
+      <CustomTypography fontSize="Headline_Medium" tagType="h2" className="text-center !text-impo_Neutral_OnBackground">
         {title}
       </CustomTypography>
 
-      <CustomTypography fontSize="Body_Small" color="Surface_Outline" className="text-center pb-6">
+      <CustomTypography fontSize="Body_Small" className="text-center pb-6 !text-impo_Surface_Outline">
         {description}
       </CustomTypography>
 

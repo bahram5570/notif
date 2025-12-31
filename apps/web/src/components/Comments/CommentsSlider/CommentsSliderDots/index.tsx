@@ -1,5 +1,3 @@
-import { COLORS_LIST } from '@theme/colors';
-
 import { CommentsSliderDotsTypes } from './types';
 
 const CommentsSliderDots = ({ totalCount, currentIndex }: CommentsSliderDotsTypes) => {
@@ -12,10 +10,7 @@ const CommentsSliderDots = ({ totalCount, currentIndex }: CommentsSliderDotsType
     <div className="w-full flex items-center justify-center gap-2 pt-4">
       {list.map((item) => (
         <div
-          className="w-2 h-2 sm:w-3 sm:h-3 rounded-full"
-          style={{
-            backgroundColor: currentIndex === item ? COLORS_LIST.Surface_Outline : COLORS_LIST.Surface_OutlineVariant,
-          }}
+          className={`w-2 h-2 sm:w-3 sm:h-3 rounded-full ${currentIndex === item ? 'bg-impo_Surface_Outline' : 'bg-impo_Surface_OutlineVariant'}`}
           key={item}
         />
       ))}

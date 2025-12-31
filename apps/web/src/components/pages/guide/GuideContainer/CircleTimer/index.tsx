@@ -40,19 +40,15 @@ export default function CircleTimer({ timer }: CircleTimerPropsType) {
       >
         <CustomTypography
           fontSize="Headline_Large"
-          className={`${breakPoint.mobile && '!text-[30px]'}   text-center`}
-          color="Surface_OnSurfaceVariant"
+          className={`!text-impo_Surface_OnSurfaceVariant ${breakPoint.mobile && '!text-[30px]'} text-center`}
         >
           {`${remainingTime} ثانیه`}
         </CustomTypography>
 
         <CustomButton
-          varient="fill"
-          backgroundColor="Primary_Primary"
-          textColor="White"
           onClick={handleStart}
           isDisable={isRunning}
-          className="sm:w-full w-[70%] !mb-1"
+          className="sm:w-full w-[70%] !mb-1 bg-impo_Primary_Primary !text-impo_White"
         >
           {progress === 1 ? 'شروع مجدد' : ' شروع تست'}
         </CustomButton>

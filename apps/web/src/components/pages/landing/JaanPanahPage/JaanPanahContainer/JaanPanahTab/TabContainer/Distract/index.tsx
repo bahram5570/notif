@@ -12,7 +12,7 @@ import { DistractPropsType } from './type';
 const Distract = ({ children }: DistractPropsType) => {
   return (
     <div className="p-4 flex flex-col gap-2">
-      <CustomTypography fontSize="Lable_Large" color="Neutral_OnBackground" className="p-4  text-center">
+      <CustomTypography fontSize="Lable_Large" className="p-4 !text-impo_Surface_InverseSurface text-center">
         حواست رو پرت کن
       </CustomTypography>
       <div style={{ backgroundColor: '#ECFBE3' }} className="p-4 rounded-2xl flex items-start gap-1">

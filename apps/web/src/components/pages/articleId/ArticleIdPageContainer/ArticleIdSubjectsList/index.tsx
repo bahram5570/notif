@@ -1,57 +1,38 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 
-import ArrowIcon from '@assets/icons/arrow2.svg';
+// import ArrowIcon from '@assets/icons/arrow2.svg';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import ArticleIdSubjectsListGenerator from './ArticleIdSubjectsListGenerator';
 import { ArticleIdSubjectsListTypes } from './types';
 
 const ArticleIdSubjectsList = ({ articleSubjectList }: ArticleIdSubjectsListTypes) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [isOpen, setIsOpen] = useState(false);
-  const [maxHeight, setMaxHeight] = useState(0);
+  // const [isOpen, setIsOpen] = useState(true);
+  // const [maxHeight, setMaxHeight] = useState(0);
 
-  useEffect(() => {
-    const el = ref.current;
+  // useEffect(() => {
+  //   const el = ref.current;
 
-    setTimeout(() => {
-      if (el) {
-        setMaxHeight(el.scrollHeight);
-      }
-    }, 1000);
-  }, []);
+  //   setTimeout(() => {
+  //     if (el) {
+  //       setMaxHeight(el.scrollHeight);
+  //     }
+  //   }, 1000);
+  // }, []);
 
   return (
-    <div
-      className="w-full h-fit px-5 py-6 md:px-14 md:py-8 rounded-2xl"
-      style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
-    >
-      <div className="w-full flex items-center justify-between">
-        <CustomTypography fontSize="Lable_Medium" color={'Primary_Primary'}>
-          در این مطلب میخوانید:
+    <div className="w-full h-fit rounded-2xl">
+      <div className="w-full flex items-center justify-between border-[1px] border-x-transparent border-t-transparent border-b-impo_Surface_OutlineVariant pb-3">
+        <CustomTypography fontSize="Title_Small" className="!text-impo_Neutral_OnBackground" tagType="h2">
+          فهرست محتوا
         </CustomTypography>
-
-        <div className="w-fit flex items-center gap-2 cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
-          <CustomTypography fontSize="Lable_Medium" color={'Primary_Primary'}>
-            {isOpen ? 'بستن' : 'باز کردن'}
-          </CustomTypography>
-
-          <ArrowIcon
-            className="w-3 duration-100"
-            style={{ fill: COLORS_LIST.Primary_Primary, transform: isOpen ? 'rotate(0deg)' : 'rotate(180deg)' }}
-          />
-        </div>
       </div>
 
-      <div
-        ref={ref}
-        className="w-full h-fit flex flex-col duration-500 overflow-hidden"
-        style={{ maxHeight: isOpen ? maxHeight : 0 }}
-      >
+      <div ref={ref} className="w-full h-fit flex flex-col duration-500 overflow-hidden">
         {articleSubjectList.map((item, index) => (
           <ArticleIdSubjectsListGenerator {...item} isFirstElement={index === 0} key={index} />
         ))}

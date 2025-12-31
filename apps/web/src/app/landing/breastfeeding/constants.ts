@@ -67,12 +67,14 @@ export const BREASTFEEDING_COMMENTS_LIST = [
 export const BREASTFEEDING_FEATURES_INTRODUCTION_LIST = [
   {
     image: '/assets/images/featuresIntroduction/breastfeeding/0.webp',
+    imageDark: '/assets/images/featuresIntroduction/breastfeeding/dark-0.webp',
     title: 'یادآوری و اطلاع‌رسانی تاریخ‌های مهم',
     description:
       'با ایمپو، تاریخ‌های مهم مربوط به رشد و مراقبت کوچولوت رو یادت میاریم؛ مثل زمان واکسن‌ها، ویزیت‌های پزشکی و نکات کلیدی مراقبت، تا همه‌چیز رو به موقع مدیریت کنی!',
   },
   {
     image: '/assets/images/featuresIntroduction/breastfeeding/1.webp',
+    imageDark: '/assets/images/featuresIntroduction/breastfeeding/dark-1.webp',
     title: 'اطلاعات هفته به هفته نوزاد',
     description:
       'با ایمپو، رشد و تغییرات نوزادت رو هفته به هفته دنبال کن؛ از قد و وزن گرفته تا مهارت‌های جدید و نیازهای تغذیه‌ای، هر چیزی که برای مراقبت بهتر لازم داری!',

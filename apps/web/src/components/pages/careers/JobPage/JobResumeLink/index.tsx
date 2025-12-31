@@ -1,6 +1,5 @@
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { JobResumeLinkTypes } from './types';
 
@@ -9,9 +8,7 @@ const JobResumeLink = ({ id }: JobResumeLinkTypes) => {
     <CustomLink href={`${id}/resume`}>
       <CustomTypography
         fontSize="Lable_Large"
-        color={'Primary_OnPrimary'}
-        style={{ backgroundColor: COLORS_LIST.Primary_Primary }}
-        className="md:w-[230px] py-[10px] md:py-[12px] mx-auto rounded-full text-center"
+        className="md:w-[230px] py-[10px] !text-impo_Primary_OnPrimary !bg-impo_Primary_Primary md:py-[12px] mx-auto rounded-full text-center"
       >
         درخواست همکاری
       </CustomTypography>

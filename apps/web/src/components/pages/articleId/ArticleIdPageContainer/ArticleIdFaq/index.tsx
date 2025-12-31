@@ -2,8 +2,6 @@
 
 import { useState } from 'react';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import ArticleIdFaqGenerator from './ArticleIdFaqGenerator';
 import { ArticleIdFaqTypes } from './types';
 
@@ -14,10 +12,7 @@ const ArticleIdFaq = ({ faqs }: ArticleIdFaqTypes) => {
   return (
     <>
       {selectedItem && (
-        <div
-          className="w-full flex flex-col gap-4 pb-5 border-b-[1px]"
-          style={{ borderBottomColor: COLORS_LIST.Neutral_Surface }}
-        >
+        <div className="w-full flex flex-col gap-4 pb-5 border-b-[1px] border-b-impo_Neutral_Surface">
           {faqs.map((item, index) => (
             <ArticleIdFaqGenerator
               {...item}

@@ -2,14 +2,14 @@
 .input:-webkit-autofill:hover,
 .input:-webkit-autofill:focus,
 .input:-webkit-autofill:active {
-  border-color: #D0D0D0 !important;
+  border-color: #d0d0d0 !important;
 }
 
 .input {
-  border-color: #D0D0D0 !important;
+  border-color: #d0d0d0 !important;
   outline: 0 !important;
 }
 
 .input::placeholder {
-  color: #D0D0D0;
+  color: #d0d0d0;
 }

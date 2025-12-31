@@ -1,6 +1,5 @@
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 const GenderDeterminationDoctor = () => {
   return (
@@ -26,10 +25,7 @@ const GenderDeterminationDoctor = () => {
                     to-[#87CCFF] 
                 "
       >
-        <div
-          className="relative w-full h-full rounded-full overflow-hidden"
-          style={{ backgroundColor: COLORS_LIST.White }}
-        >
+        <div className="relative w-full h-full rounded-full overflow-hidden bg-impo_White">
           <CustomImage
             alt=""
             fill={true}
@@ -41,17 +37,19 @@ const GenderDeterminationDoctor = () => {
 
       <div className="flex flex-col items-center md:items-start pt-[80px] md:pt-[40px] md:pb-[60px] md:pr-[180px]">
         <div className="flex flex-col md:flex-row items-center gap-3 md:gap-5 pb-3">
-          <CustomTypography fontSize="Title_Medium" tagType="h3">
+          <CustomTypography fontSize="Title_Medium" tagType="h3" className="!text-impo_Neutral_OnBackground">
             مهدیه فتح‌الهی
           </CustomTypography>
 
-          <CustomTypography fontSize="Body_Large" tagType="h4">
+          <CustomTypography fontSize="Body_Large" tagType="h4" className="!text-impo_Neutral_OnBackground">
             کارشناس مامایی
           </CustomTypography>
         </div>
 
-        <CustomTypography>دارای مدرک دوره تعیین جنسیت موسس عصر جدید مامایی</CustomTypography>
-        <div className="w-full h-[1px] my-6 md:hidden" style={{ backgroundColor: COLORS_LIST.Pink_200 }} />
+        <CustomTypography className="!text-impo_Neutral_OnBackground">
+          دارای مدرک دوره تعیین جنسیت موسس عصر جدید مامایی
+        </CustomTypography>
+        <div className="w-full h-[1px] my-6 md:hidden bg-impo_Pink_200" />
       </div>
     </>
   );

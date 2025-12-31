@@ -1,6 +1,6 @@
+import DownloadAppLinkGenerator from '@components/DownloadApp/DownloadAppLinkGenerator';
 import CustomTypography from '@components/ui/CustomTypography';
 
-import DownloadAppLinkGenerator from '../../DownloadAppLinkGenerator';
 import { IRANIAN_STORES_LIST } from '../constants';
 
 const IranianStoresDesktop = () => {
@@ -12,7 +12,7 @@ const IranianStoresDesktop = () => {
             <div className="flex items-center w-full gap-[10px] pr-9">
               {item.icon}
 
-              <CustomTypography fontSize="Lable_Medium" color={'Neutral_OnSurface'}>
+              <CustomTypography fontSize="Lable_Medium" className="!text-impo_Surface_OnSurfaceVariant">
                 {item.title}
               </CustomTypography>
             </div>

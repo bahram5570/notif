@@ -1,21 +1,13 @@
-import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { FooterBoxProps } from './types';
 
 const FooterBox = ({ footer }: FooterBoxProps) => {
   return (
     <>
-      <div
-        className="p-3 rounded-xl mt-6 text-center mb-14"
-        style={{
-          border: `1px solid ${COLORS_LIST.Warning_Warning}`,
-          background: `${COLORS_LIST.Warning_Warning}20`,
-        }}
-      >
+      <div className="p-3 rounded-xl mt-6 text-center mb-14 border !border-impo_Warning_Warning !bg-impo_Yellow_200">
         <CustomTypography fontSize="Lable_Large">{footer.title}</CustomTypography>
-        <CustomTypography fontSize="Body_Medium" className="mt-2">
+        <CustomTypography fontSize="Body_Medium" className="mt-2 !text-impo_Neutral_OnBackground dark:!text-impo_Black">
           {footer.text}
         </CustomTypography>
       </div>

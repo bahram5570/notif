@@ -12,7 +12,8 @@ const GeneticMarketingLayout = ({ children, goBack = true }: GeneticMarketingLay
                   px-4 
                   sm:px-6 
                   py-5 
-                  bg-[url(/assets/images/geneticMarketing/coverHollow.webp)] 
+                  bg-[url(/assets/images/genetic/coverHollow.webp)] 
+                  dark:bg-[url(/assets/images/genetic/coverHollowDark.webp)]   
                   bg-contain
                   bg-no-repeat 
                   bg-[center_-40px]

@@ -1,7 +1,6 @@
 import StarIcon from '@assets/icons/star.svg';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { ArticleIdNewRateTypes } from './types';
 
@@ -17,20 +16,25 @@ const ArticleIdNewRate = ({ rate, rateHandler }: ArticleIdNewRateTypes) => {
           return (
             <StarIcon
               key={no}
-              className="w-6 cursor-pointer"
               onClick={() => rateHandler(no)}
-              style={{
-                fill: isSelected ? COLORS_LIST.Yellow : COLORS_LIST.Transparent,
-                stroke: isSelected ? COLORS_LIST.Transparent : COLORS_LIST.Surface_Outline,
-              }}
+              className={`
+                          w-6 
+                          cursor-pointer 
+                          ${isSelected ? 'fill-impo_Yellow stroke-impo_Transparent' : 'fill-impo_Transparent stroke-impo_Surface_Outline'}
+                        `}
             />
           );
         })}
       </div>
 
       <div className="w-fit flex justify-between gap-20">
-        <CustomTypography fontSize="Body_Small">خیلی کم</CustomTypography>
-        <CustomTypography fontSize="Body_Small">خیلی زیاد</CustomTypography>
+        <CustomTypography fontSize="Body_Small" className="!text-impo_Neutral_OnBackground">
+          خیلی کم
+        </CustomTypography>
+
+        <CustomTypography fontSize="Body_Small" className="!text-impo_Neutral_OnBackground">
+          خیلی زیاد
+        </CustomTypography>
       </div>
     </div>
   );

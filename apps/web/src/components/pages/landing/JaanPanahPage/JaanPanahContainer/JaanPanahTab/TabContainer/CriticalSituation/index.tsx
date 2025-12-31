@@ -5,7 +5,6 @@ import StarIcon from '@assets/icons/Stars.svg';
 import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import useDownloadPdf from './__hooks__/useDownloadPdf';
 
@@ -13,7 +12,7 @@ const CriticalSituation = () => {
   const { downloadFileFromUrl } = useDownloadPdf();
   return (
     <div className="p-4 flex flex-col gap-2">
-      <CustomTypography fontSize="Lable_Large" color="Neutral_OnBackground" className="p-4  text-center">
+      <CustomTypography fontSize="Lable_Large" className="p-4 text-center !text-impo_Neutral_OnBackground">
         آمادگی برای شرایط بحرانی
       </CustomTypography>
       <div style={{ backgroundColor: '#ECFBE3' }} className="p-4 rounded-2xl flex items-start gap-1">
@@ -37,16 +36,13 @@ const CriticalSituation = () => {
             </CustomTypography>
 
             <CustomButton
-              varient="fill"
               className="rounded-full w-full md:w-[350px] h-12 lg:h-[50px] mx-auto flex items-center justify-center gap-2 relative z-10"
               onClick={downloadFileFromUrl}
             >
               <CustomTypography
                 fontSize="Body_Medium"
-                color="Surface_InverseSurface"
                 numbersMode="english"
-                style={{ background: COLORS_LIST.Primary_Primary, color: COLORS_LIST.White }}
-                className="px-6 h-10   rounded-full text-center flex justify-center items-center"
+                className="px-6 h-10   rounded-full text-center flex justify-center items-center bg-impo_Primary_Primary !text-impo_White"
               >
                 {/* دریافت فایل pdf */}
                 برای روز مبادا

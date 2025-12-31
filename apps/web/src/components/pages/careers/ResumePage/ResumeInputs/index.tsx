@@ -10,7 +10,6 @@ import CustomTypography from '@components/ui/CustomTypography';
 import Spinner from '@components/ui/Spinner';
 import useCustomToast from '@hooks/useCustomToast';
 import useFileUpload from '@hooks/useFileUpload';
-import { COLORS_LIST } from '@theme/colors';
 
 import useSubmitHandler from './__hooks__/useSubmitHandler';
 import useValues from './__hooks__/useValues';
@@ -43,8 +42,7 @@ const ResumeInputs = ({ jobId }: ResumeInputsTypes) => {
     <div className="w-full flex flex-col items-center">
       <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
         <CustomInput
-          className="border-[1px] rounded-xl px-4 py-3 outline-gray-300"
-          style={{ borderColor: COLORS_LIST.Neutral_Surface }}
+          className="border-[1px] rounded-xl px-4 py-3 outline-impo_Grey_300 !border-impo_Surface_SurfaceVariant !bg-impo_Neutral_Surface placeholder:!text-impo_Surface_OutlineVariant !text-impo_Neutral_OnBackground"
           placeholder="نام و نام خانوادگی"
           value={values.name}
           hasOutline={true}
@@ -52,8 +50,7 @@ const ResumeInputs = ({ jobId }: ResumeInputsTypes) => {
         />
 
         <CustomInput
-          className="border-[1px] rounded-xl px-4 py-3 outline-gray-300"
-          style={{ borderColor: COLORS_LIST.Neutral_Surface }}
+          className="border-[1px] rounded-xl px-4 py-3 outline-impo_Grey_300 !border-impo_Surface_SurfaceVariant !bg-impo_Neutral_Surface placeholder:!text-impo_Surface_OutlineVariant !text-impo_Neutral_OnBackground"
           placeholder="آدرس ایمیل"
           value={values.email}
           hasOutline={true}
@@ -62,8 +59,7 @@ const ResumeInputs = ({ jobId }: ResumeInputsTypes) => {
         />
 
         <CustomInput
-          className="border-[1px] rounded-xl px-4 py-3 outline-gray-300"
-          style={{ borderColor: COLORS_LIST.Neutral_Surface }}
+          className="border-[1px] rounded-xl px-4 py-3 outline-impo_Grey_300 !border-impo_Surface_SurfaceVariant !bg-impo_Neutral_Surface placeholder:!text-impo_Surface_OutlineVariant !text-impo_Neutral_OnBackground"
           placeholder="شماره همراه"
           value={values.phone}
           hasOutline={true}
@@ -71,10 +67,7 @@ const ResumeInputs = ({ jobId }: ResumeInputsTypes) => {
         />
 
         <div className="w-full flex items-center gap-2">
-          <div
-            className="relative w-[190px] h-12 flex items-center justify-center gap-2 rounded-xl"
-            style={{ backgroundColor: COLORS_LIST.Neutral_Surface }}
-          >
+          <div className="relative w-[190px] h-12 flex items-center justify-center gap-2 rounded-xl bg-impo_Surface_SurfaceVariant">
             <input
               type="file"
               onChange={(e) => fileDataHandler({ e })}
@@ -85,8 +78,8 @@ const ResumeInputs = ({ jobId }: ResumeInputsTypes) => {
 
             {!uploadImageLoading && (
               <>
-                <UploadIcon className="w-5 h-auto" style={{ stroke: COLORS_LIST.Black }} />
-                <CustomTypography fontSize="Title_Small" color={'Neutral_OnSurface'}>
+                <UploadIcon className="w-5 h-auto !stroke-impo_Neutral_OnBackground" />
+                <CustomTypography fontSize="Title_Small" className="!text-impo_Neutral_OnSurface">
                   آپلود فایل رزومه
                 </CustomTypography>
               </>
@@ -101,12 +94,11 @@ const ResumeInputs = ({ jobId }: ResumeInputsTypes) => {
         </div>
       </div>
 
-      <div className="w-full h-[1px] mt-4 mb-6 md:my-8" style={{ backgroundColor: COLORS_LIST.Neutral_Surface }} />
+      <div className="w-full h-[1px] mt-4 mb-6 md:my-8 !bg-impo_Neutral_Surface" />
 
       <CustomButton
-        varient="fill"
         isLoading={isLoading}
-        fontSize="Lable_Large"
+        fontSize="Title_Small"
         onClick={validateHandler}
         className="w-full md:w-[230px] !py-[10px] md:!py-[12px]"
       >

@@ -13,7 +13,7 @@ const PregnancyLandingHeading = () => {
       imagePosition="bottom"
       contentElement={contentElement}
       image={PREGNANCY_HEADING_DATA.image}
-      backgroundImage={[PREGNANCY_HEADING_DATA.gradientFrom, PREGNANCY_HEADING_DATA.gradientTo]}
+      className={`!bg-gradient-to-b !from-[#FFF4F3] !to-[#FDCFCA] dark:!bg-impo_Surface_InverseOnSurface dark:!from-inherit dark:!to-inherit`}
     />
   );
 };

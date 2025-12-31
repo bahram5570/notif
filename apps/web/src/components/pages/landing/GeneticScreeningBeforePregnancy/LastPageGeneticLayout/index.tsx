@@ -18,17 +18,22 @@ const LastPageGeneticLayout = async () => {
                   sm:px-6 
                   py-5 
                   bg-[url(/assets/images/genetic/coverHollow.webp)] 
+                  dark:bg-[url(/assets/images/genetic/coverHollowDark.webp)]  
                   bg-contain
                   bg-no-repeat 
                   bg-top"
       >
-        <div className="pt-7">
+        <div className="pt-7 lg:w-10/12 lg:mx-auto">
           <div className="mt-14 grid place-items-center">
             <CustomImage src={logo} alt="logo" width={80} height={80} />
-            <CustomTypography tagType="h2" fontSize="Title_Small" className="mt-6">
+            <CustomTypography tagType="h2" fontSize="Title_Small" className="mt-6 !text-impo_Neutral_OnBackground">
               نکته آخر
             </CustomTypography>
-            <CustomTypography tagType="p" fontSize="Body_Medium" className="mt-2 text-center">
+            <CustomTypography
+              tagType="p"
+              fontSize="Body_Medium"
+              className="mt-2 text-center !text-impo_Neutral_OnBackground"
+            >
               این فقط یه ارزیابی اولیه‌ست، پس آزمایش‌ها و مشورت با مشاور ژنتیک رو جدی بگیر حتی اگر فرزند سالم داری و
               هیچوقت مشکل ژنتیکی‌ای متوجه‌تون نبوده. با خیال راحت برو جلو و اگه چیزی ذهنت رو مشغول کرد از ما بپرس تا
               کمکت کنیم!

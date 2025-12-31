@@ -11,7 +11,7 @@ const AppFeatures = () => {
 
   return (
     <section className="w-full flex flex-col items-center px-4">
-      <CustomTypography fontSize="Title_Medium" className="pb-6">
+      <CustomTypography fontSize="Title_Medium" className="pb-6 !text-impo_Neutral_OnBackground">
         ایمپو چطور میتونه کمکت کنه؟
       </CustomTypography>
 

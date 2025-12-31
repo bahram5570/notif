@@ -4,7 +4,6 @@ import ProgressCycleLoading from '@components/ProgressCycleLoading';
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
 
 import { JAAN_PANAH_QUESTIONS_LIST } from '../../constants';
 import ProgressBar from './ProgressBar';
@@ -46,10 +45,7 @@ const JaanPanahQuestions = ({ onResult }: JaanPanahQuestionsTypes) => {
 
         <div className="relative w-full h-[360px] flex flex-col items-center">
           {isLoading && (
-            <div
-              style={{ backgroundColor: COLORS_LIST.White }}
-              className="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center z-10"
-            >
+            <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col items-center z-10 bg-impo_White">
               <CustomTypography
                 className="text-center pb-16"
                 fontSize={breakPoint.tablet ? 'Title_Medium' : 'Title_Small'}
@@ -92,7 +88,7 @@ const JaanPanahQuestions = ({ onResult }: JaanPanahQuestionsTypes) => {
             </div>
           )}
 
-          <CustomButton varient="fill" isDisable={!currentValue} onClick={clickHandler} className="!mt-auto">
+          <CustomButton isDisable={!currentValue} onClick={clickHandler} className="!mt-auto">
             {btnScript}
           </CustomButton>
         </div>

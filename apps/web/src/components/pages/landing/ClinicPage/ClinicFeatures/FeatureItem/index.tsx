@@ -3,13 +3,26 @@ import CustomTypography from '@components/ui/CustomTypography';
 
 import { FeatureItemProps } from './types';
 
-const FeatureItem = ({ image, title, description }: FeatureItemProps) => {
+const FeatureItem = ({ image, title, description, imageDark }: FeatureItemProps) => {
   return (
-    <div className="flex items-center py-4 px-3 gap-x-[16px]">
-      <CustomImage alt={title} height={1000} width={1000} src={image} className="w-[64px] h-auto" />
+    <div className="flex items-center py-4 px-3 lg:px-0 gap-x-[16px]">
+      {/* light */}
+      <CustomImage alt={title} height={1000} width={1000} src={image} className="w-[64px] h-auto dark:hidden block" />
+      {/* dark */}
+      <CustomImage
+        alt={title}
+        height={1000}
+        width={1000}
+        src={imageDark}
+        className="w-[64px] h-auto dark:block hidden"
+      />
       <div className="grid gap-y-2">
-        <CustomTypography fontSize="Lable_Large">{title}</CustomTypography>
-        <CustomTypography fontSize="Body_Small">{description}</CustomTypography>
+        <CustomTypography fontSize="Lable_Large" className="!text-impo_Neutral_OnBackground">
+          {title}
+        </CustomTypography>
+        <CustomTypography fontSize="Body_Small" className="!text-impo_Neutral_OnBackground">
+          {description}
+        </CustomTypography>
       </div>
     </div>
   );

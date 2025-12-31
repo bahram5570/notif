@@ -6,8 +6,7 @@ const NameSelectionHeadingContent = () => {
       <CustomTypography
         tagType="h1"
         fontSize="Headline_Medium"
-        color={'Neutral_OnBackground'}
-        className="py-2 lg:pt-2 lg:pb-1 text-center md:text-left"
+        className="py-2 lg:pt-2 lg:pb-1 text-center md:text-left !text-impo_Neutral_OnBackground"
       >
         انتخاب اسم پسر؛ قصه شروع یک مسیر جدید
       </CustomTypography>
@@ -15,8 +14,7 @@ const NameSelectionHeadingContent = () => {
       <CustomTypography
         tagType="span"
         fontSize="Body_Large"
-        color={'Surface_InverseSurface'}
-        className="text-center lg:text-right"
+        className="text-center lg:text-right !text-impo_Neutral_OnBackground"
       >
         اسم پسر فقط یک واژه نیست، بلکه نشانه‌ای از هویت، ریشه‌ها و رویاهای والدینه. انتخاب اسم پسرانه باید خوش‌آوا،
         معنادار و هماهنگ با فرهنگ و ارزش‌های خانواده باشه. در این راهنما، با مجموعه‌ای از اسم پسر کمیاب، شنیدنی و

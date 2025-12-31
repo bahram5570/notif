@@ -13,7 +13,7 @@ const SuccessModal = ({ isOpen, onClose }: SuccessModalPropsType) => {
           بعد از بررسی در صورت صحت اطلاعات، اشتراکت فعال و از طریق واتساپ بهت اطلاع‌رسانی می‌شه
         </CustomTypography>
 
-        <CustomButton onClick={onClose} varient="fill" className="!rounded-xl">
+        <CustomButton onClick={onClose} className="!rounded-xl">
           فهمیدم
         </CustomButton>
       </div>

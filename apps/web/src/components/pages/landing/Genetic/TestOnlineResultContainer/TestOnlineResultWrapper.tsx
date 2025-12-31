@@ -27,7 +27,7 @@ const TestOnlineResultWrapper = ({ children }: { children: React.ReactNode }) =>
                     pointer-events-auto 
                     -z-10 
                     overflow-hidden 
-                    sm:overflow-visible
+                    sm:overflow-visible 
                   "
       >
         <CustomImage

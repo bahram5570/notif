@@ -2,7 +2,6 @@ import { memo } from 'react';
 
 import { toPersianNumbers } from '@utils/numbers';
 
-import { COLORS_LIST } from '@theme/colors';
 import { FONTS_ANDROID } from '@theme/fonts';
 
 import { WheelPickerCellGeneratorProps } from './types';
@@ -14,23 +13,20 @@ const WheelPickerCellGenerator = ({
 }: WheelPickerCellGeneratorProps) => {
   const colorFinder = () => {
     if (isSelectedItem) {
-      return COLORS_LIST.Neutral_OnBackground;
+      return 'text-impo_Neutral_OnBackground';
     }
 
     if (isBeforeOrAfterSelectedItem) {
-      return COLORS_LIST.Surface_Outline;
+      return 'text-impo_Surface_Outline';
     }
 
-    return COLORS_LIST.Transparent;
+    return 'text-impo_Transparent';
   };
 
   const scale = isSelectedItem ? '1' : '0.6';
 
   return (
-    <p
-      className="duration-200 pointer-events-none"
-      style={{ ...FONTS_ANDROID.Title_Medium, scale, color: colorFinder() }}
-    >
+    <p className={`duration-200 pointer-events-none ${colorFinder()}`} style={{ ...FONTS_ANDROID.Title_Medium, scale }}>
       {toPersianNumbers(title)}
     </p>
   );

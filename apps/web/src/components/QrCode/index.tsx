@@ -4,7 +4,6 @@ import { useEffect, useRef } from 'react';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 import { QrCodePropsType } from './type';
 
@@ -26,21 +25,28 @@ const QrCode = ({ className }: QrCodePropsType) => {
     <div
       ref={boxRef}
       className={`
-                  hidden lg:block lg:fixed z-20 rounded-t-2xl rounded-e-2xl -right-3 hover:-right-3
-                  ${className ?? 'lg:top-[595px] xl:top-[645px]'}
+                  hidden 
+                  lg:block 
+                  lg:fixed 
+                  z-20 
+                  rounded-t-2xl 
+                  rounded-e-2xl 
+                  -right-3 
+                  hover:-right-3
+                  lg:top-[595px] 
+                  xl:top-[645px] 
+                  bg-impo_Grey_50 dark:bg-impo_Black
+                  duration-500
+                  ${className}
                 `}
-      style={{
-        backgroundColor: COLORS_LIST.Neutral_Background,
-        boxShadow: ' 0px 4px 15px rgba(58, 112, 191, 0.1)',
-        transition: ' all .6s linear',
-      }}
     >
       <div className="flex flex-row justify-center items-center gap-4 py-4 pr-8 pl-5">
         <div className="flex flex-col justify-center items-start h-full gap-3">
-          <CustomTypography fontSize="Title_Small" color="Primary_Primary">
+          <CustomTypography fontSize="Title_Small" className="!text-impo_Primary_Primary">
             برای دانلود ایمپو
           </CustomTypography>
-          <CustomTypography fontSize="Body_Medium" color="Surface_OnSurfaceVariant">
+
+          <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_OnSurfaceVariant">
             از اینجا اسکن کن
           </CustomTypography>
         </div>

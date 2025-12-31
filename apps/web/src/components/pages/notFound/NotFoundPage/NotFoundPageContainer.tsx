@@ -21,9 +21,13 @@ const NotFoundPageContainer = () => {
       <div className="relative flex flex-col items-center gap-2 z-10">
         <NotFoundIcon className="w-[200px] sm:w-[250px]" />
 
-        <CustomTypography fontSize="Headline_Medium">به نظر می‌رسه گم شدی</CustomTypography>
+        <CustomTypography fontSize="Headline_Medium" className="!text-impo_Neutral_OnBackground">
+          به نظر می‌رسه گم شدی
+        </CustomTypography>
 
-        <CustomTypography fontSize="Body_Medium">صفحه ای که به دنبالش هستی در دسترس نیست</CustomTypography>
+        <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground">
+          صفحه ای که به دنبالش هستی در دسترس نیست
+        </CustomTypography>
       </div>
     </div>
   );

@@ -16,7 +16,7 @@ const WomanStatusContainer = () => {
 
   return (
     <GeneticMarketingLayout>
-      <CustomTypography tagType="h2" fontSize="Title_Small" className="text-center">
+      <CustomTypography tagType="h2" fontSize="Title_Small" className="text-center !text-impo_Neutral_OnBackground">
         در حال حاضر تو کدوم مرحله از زندگیت هستی؟
       </CustomTypography>
       <div className="grid gap-y-4 w-full mt-16">
@@ -31,9 +31,9 @@ const WomanStatusContainer = () => {
       </div>
       <div className="w-full mx-auto grid gap-y-6 justify-items-center justify-center fixed right-0 bottom-4">
         <CustomButton
-          varient="fill"
           fontSize="Title_Small"
           onClick={handleNextStep}
+          className="w-[120px]"
           isDisable={isNextDisabled}
           isLoading={isLoading}
         >

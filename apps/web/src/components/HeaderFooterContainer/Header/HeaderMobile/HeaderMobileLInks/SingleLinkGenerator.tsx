@@ -8,10 +8,10 @@ const SingleLinkGenerator = ({ linkTo, title, closeHandler }: SingleLinkGenerato
     <CustomLink
       href={linkTo}
       onClick={closeHandler}
-      className="flex items-center h-14 hover:!opacity-100"
       id={linkTo === '/men' ? 'impomen_header' : ''}
+      className="flex items-center h-14 hover:!opacity-100"
     >
-      <CustomTypography fontSize="Body_Medium" color={'Surface_InverseSurface'}>
+      <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_InverseSurface">
         {title}
       </CustomTypography>
     </CustomLink>

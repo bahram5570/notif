@@ -11,10 +11,9 @@ const HomeHeadingContentBtn = () => {
 
   return (
     <CustomButton
-      varient="fill"
       onClick={() => scrollToIdHandler(DOWNLOAD_APP_SECTION_ID)}
       fontSize={breakPoint.laptop ? 'Lable_Large' : 'Title_Small'}
-      className="!w-[120px] lg:!w-[182px] h-[40px] !mt-2 !mb-8"
+      className="!w-[120px] lg:!w-[182px] h-[40px] !mt-2 !mb-8 !bg-impo_Primary_Primary !border-impo_Primary_Primary !text-impo_Primary_OnPrimary"
       id="install_home"
     >
       دانلود ایمپو

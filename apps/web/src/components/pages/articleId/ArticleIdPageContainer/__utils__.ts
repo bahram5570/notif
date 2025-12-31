@@ -110,9 +110,10 @@ export const handleBodyUpdate = async (body: string) => {
     result = result.replace(targetRegex, '');
   }
 
-  // # Making subjects list
-  let count = 1;
   const $ = cheerio.load(result);
+
+  // # Making subjects list (table of contents - TOC)
+  let count = 1;
   const articleSubjectList: ArticleSubjectListTypes = [];
 
   $('h2, h3').each((_, element) => {
@@ -134,13 +135,42 @@ export const handleBodyUpdate = async (body: string) => {
     count++;
   });
 
-  $('img').each((_, element) => {
-    const img = $(element);
-
-    img.attr('width', '100%');
-    img.attr('height', 'auto');
-    img.attr('loading', 'lazy');
+  // # Styling tables
+  $('td').each((_, element) => {
+    const el = $(element);
+    el.addClass('!border-impo_Neutral_OnBackground');
   });
 
-  return { updatedBody: $.html(), articleSubjectList };
+  // # Styling images
+  $('img').each((_, element) => {
+    const el = $(element);
+    el.attr('loading', 'lazy');
+  });
+
+  // # Styling scripts
+  $('p, span, section, li, h1, h2, h3, h4, h5, h6').each((_, element) => {
+    const el = $(element);
+
+    // # Skip Cheerio styling for elements when `data-no-cheerio-styling` is present
+    const noCheerioStyling = el.attr('data-no-cheerio-styling');
+
+    if (!noCheerioStyling) {
+      el.addClass('!text-impo_Neutral_OnBackground');
+    }
+  });
+
+  $('a').each((_, element) => {
+    const el = $(element);
+    el.addClass('!text-impo_Primary_Primary');
+  });
+
+  // # Separate article to before and after its abstract
+  const html = $.html();
+  const endOfAbstract = $('h2, h3').first().prop('outerHTML') || '';
+  const htmlList = html.split(endOfAbstract);
+
+  const abstractBody = htmlList[0];
+  const articleBody = endOfAbstract + htmlList[1];
+
+  return { abstractBody, articleBody, articleSubjectList };
 };

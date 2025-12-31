@@ -1,0 +1,9 @@
+Spinner > remove color
+CustomInput > remove color
+CustomTypography > remove color
+CustomButton > remove color and background-color 
+Spinner > remove color 
+WheelPickerCellGenerator > remove COLORS_LIST
+COLORS_LIST > delete
+D > delete
+colorMaker > delete

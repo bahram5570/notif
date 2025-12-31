@@ -6,15 +6,19 @@ import CalendarOfPregnancySeperator from '../CalendarOfPregnancySeperator';
 const CalendarOfPregnancyTable = () => {
   return (
     <>
-      <CustomTypography fontSize="Headline_Medium" tagType="h2" className="pb-2 text-center">
+      <CustomTypography
+        tagType="h2"
+        fontSize="Headline_Medium"
+        className="pb-2 text-center !text-impo_Neutral_OnBackground"
+      >
         جدول ماه‌های بارداری
       </CustomTypography>
 
-      <CustomTypography className="!text-center pt-2 pb-6">
+      <CustomTypography className="!text-center pt-2 pb-6 !text-impo_Neutral_OnBackground">
         جدول زیر به شما کمک می‌کند بدانید، هر هفته بارداری معادل کدام ماه است:
       </CustomTypography>
 
-      <CustomImage src="/assets/images/tabelOfPregnancy.webp" alt="" width={600} height={0} />
+      <CustomImage src="/assets/images/tabelOfPregnancy.webp" alt="" width={600} height={0} className="mx-auto" />
 
       <CalendarOfPregnancySeperator />
     </>

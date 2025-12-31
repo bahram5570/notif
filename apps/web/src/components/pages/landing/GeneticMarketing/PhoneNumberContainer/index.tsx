@@ -16,7 +16,7 @@ const PhoneNumberContainer = () => {
   return (
     <GeneticMarketingLayout>
       <div className="overflow-hidden w-full">
-        <CustomTypography tagType="h2" fontSize="Title_Small" className="text-center">
+        <CustomTypography tagType="h2" fontSize="Title_Small" className="text-center !text-impo_Neutral_OnBackground">
           برای شروع تست، شماره‌ات رو اینجا وارد کن
         </CustomTypography>
 
@@ -29,9 +29,9 @@ const PhoneNumberContainer = () => {
         />
 
         <div
-          className={`w-full mx-auto grid gap-y-6 justify-items-center justify-center mt-5 duration-200 ${phoneNumber.length > 0 ? `translate-y-0 ` : `translate-y-[100dvh]`}`}
+          className={`w-full mx-auto grid gap-y-6  justify-items-center justify-center mt-5 duration-200 ${phoneNumber.length > 0 ? `translate-y-0 ` : `translate-y-[100dvh]`}`}
         >
-          <CustomButton varient="fill" fontSize="Lable_Large" onClick={submitHandler} isLoading={isLoading}>
+          <CustomButton fontSize="Lable_Large" className="w-[120px]" onClick={submitHandler} isLoading={isLoading}>
             مرحله بعد
           </CustomButton>
         </div>

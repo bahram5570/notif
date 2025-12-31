@@ -1,8 +1,6 @@
 'use client';
 
-import { useContext, useMemo } from 'react';
-
-import { colorMaker } from '../CustomTypography/__utils__';
+import { useContext } from 'react';
 
 import { PageNavigationLoadingContext } from '@providers/PageNavigationProvider';
 import Link from 'next/link';
@@ -19,23 +17,17 @@ const CustomLink = (props: CustomLinkTypes) => {
       linkProps.onClick(event);
     }
 
-    const isDisable = location.pathname === props.href;
-
-    if (!isDisable && linkProps.target !== '_blank') {
+    if (location.pathname !== props.href && linkProps.target !== '_blank') {
       pageNavigationHandler(true);
     }
   };
 
-  const selectedColor = useMemo(() => {
-    return colorMaker(color);
-  }, [color]);
-
   return (
     <Link
       {...linkProps}
+      style={{ ...style }}
       onClick={selectHandler}
       aria-label={linkProps.href}
-      style={{ ...style, color: selectedColor }}
       className={`hover:opacity-80 duration-200 ${className}`}
     >
       {children}

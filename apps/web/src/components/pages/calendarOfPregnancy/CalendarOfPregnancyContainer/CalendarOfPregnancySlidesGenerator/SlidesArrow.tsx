@@ -1,14 +1,11 @@
 import ArrowBackIosRoundedIcon from '@mui/icons-material/ArrowBackIosRounded';
 
-import { COLORS_LIST } from '@theme/colors';
-
 import { SlidesArrowTypes } from './types';
 
 const SlidesArrow = ({ isNextSlide, onClick, isDisabled }: SlidesArrowTypes) => {
   return (
     <div
       onClick={onClick}
-      style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
       className={`
                     min-w-10 
                     min-h-10 
@@ -19,11 +16,12 @@ const SlidesArrow = ({ isNextSlide, onClick, isDisabled }: SlidesArrowTypes) => 
                     justify-center 
                     rounded-full 
                     cursor-pointer 
+                    bg-impo_Surface_SurfaceVariant
                     ${!isNextSlide && '-scale-100'}
                     ${isDisabled && 'opacity-40 pointer-events-none'}
                 `}
     >
-      <ArrowBackIosRoundedIcon sx={{ width: 20, height: 20, fill: COLORS_LIST.Surface_InverseSurface }} />
+      <ArrowBackIosRoundedIcon className="w-5 h-5" />
     </div>
   );
 };

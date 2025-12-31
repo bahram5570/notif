@@ -2,24 +2,20 @@ import { toPersianNumbers } from '@utils/numbers';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import { COLORS_LIST } from '@theme/colors';
 
 const AddSympathySection = () => {
   return (
     <div className="flex flex-col  gap-3">
-      <CustomTypography fontSize="Title_Small" color="Neutral_OnBackground">
+      <CustomTypography fontSize="Title_Small" className="!text-impo_Neutral_OnBackground">
         فقط با دو تا قدم کوچیک، همدلی رو شروع کن 🥰
       </CustomTypography>
-      <div
-        className="rounded-xl py-6 px-3 flex flex-col gap-4 justify-center items-center"
-        style={{ backgroundColor: COLORS_LIST.Purple_100 }}
-      >
+      <div className="rounded-xl py-6 px-3 flex flex-col gap-4 justify-center items-center bg-impo_Purple_100">
         <div className="flex justify-center items-center gap-[30px]">
           <div>
-            <CustomTypography fontSize="Lable_Large" color="Neutral_OnBackground">
+            <CustomTypography fontSize="Lable_Large" className="!text-impo_Neutral_OnBackground">
               {`${toPersianNumbers(1)}. دعوت از پارتنرت`}
             </CustomTypography>
-            <CustomTypography fontSize="Body_Small" color="Neutral_OnBackground">
+            <CustomTypography fontSize="Body_Small" className="!text-impo_Neutral_OnBackground">
               از طریق دکمه پایین صفحه، وارد صفحه شروع همدلی میشی و شماره پارتنرت رو وارد میکنی تا پیامک دعوت به همدلی
               براش ارسال بشه
             </CustomTypography>
@@ -34,12 +30,16 @@ const AddSympathySection = () => {
         </div>
         <div className="flex justify-center items-center gap-[30px]">
           <div>
-            <CustomTypography fontSize="Lable_Large" color="Neutral_OnBackground">
+            <CustomTypography fontSize="Lable_Large" className="!text-impo_Neutral_OnBackground">
               {`${toPersianNumbers(2)}. وصل شدن به پارتنرت`}
             </CustomTypography>
-            <CustomTypography fontSize="Body_Small" color="Neutral_OnBackground">
+            <CustomTypography fontSize="Body_Small" className="!text-impo_Neutral_OnBackground">
               پارتنرت باید اپلیکیشن
-              <CustomTypography fontSize="Lable_Medium" color="Neutral_OnBackground" className=" inline" tagType="span">
+              <CustomTypography
+                fontSize="Lable_Medium"
+                className="!text-impo_Neutral_OnBackground inline"
+                tagType="span"
+              >
                 "ایمپو آقایان"
               </CustomTypography>
               رو نصب و درخواست همدلیت رو از تب همدلی قبول کنه، تا به همدیگه وصل بشید و همدلی شروع شه

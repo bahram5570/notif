@@ -31,11 +31,11 @@ const IranGirlNamePage = async () => {
           imageUrl="/assets/images/doctorKimia.jpg"
         />
 
-        <div className="w-full sm:w-9/12 md:w-8/12 lg:w-6/12 px-3 pb-16">
+        <div className=" landing_container px-3 pb-16">
           <AlphabetBtns
-            bgColor1="Pink_300"
-            bgColor2="Pink_100"
-            textColor="Pink_900"
+            bgColor1="bg-impo_Pink_300"
+            bgColor2="bg-impo_Pink_100"
+            textColor="!text-impo_Pink_900"
             list={PERSIAN_NAME_DICTIONARY}
             title="اسم دختر ایرانی اصیل لاکچری بر اساس حروف الفبا"
             description={<AlphabetContent />}
@@ -53,14 +53,16 @@ const IranGirlNamePage = async () => {
               <CustomTypography
                 fontSize="Headline_Small"
                 tagType="h2"
+                className="!text-impo_Neutral_OnBackground"
               >{`${item[1].labelTitle} «${item[1].category}»`}</CustomTypography>
 
               <NamesTable
                 list={item[1].list}
-                titleBgColor="Primary_Primary"
-                borderColor="Pink_300"
-                bgColor1="Pink_100"
-                bgColor2="Pink_50"
+                titleColor="!text-impo_Primary_OnPrimary"
+                titleBgColor="bg-impo_Primary_Primary"
+                borderColor="border-impo_Pink_300"
+                bgColor1="bg-impo_Pink_100"
+                bgColor2="bg-impo_Pink_50"
               />
             </div>
           ))}

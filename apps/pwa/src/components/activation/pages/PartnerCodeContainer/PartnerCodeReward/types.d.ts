@@ -1,7 +1,9 @@
 import { PartnerCodeContainerProps } from '../types';
 
-export interface PartnerCodeRewardProps
-  extends Pick<PartnerCodeContainerProps, 'reward' | 'onComplete' | 'firstName'> {}
+export interface PartnerCodeRewardProps extends Pick<
+  PartnerCodeContainerProps,
+  'reward' | 'onComplete' | 'firstName'
+> {}
 
 type RewardTypes = Pick<PartnerCodeRewardProps, 'reward'>['reward'];
 

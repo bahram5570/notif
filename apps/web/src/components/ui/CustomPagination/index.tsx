@@ -1,4 +1,4 @@
-import { typographyMaker } from '../CustomTypography/__utils__';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { toPersianNumbers } from '@utils/numbers';
 
 import { Pagination, PaginationItem } from '@mui/material';
@@ -17,7 +17,7 @@ const CustomPagination = ({
   page,
 }: CustomPaginationTypes) => {
   const { operatingSystem } = useOperatingSystem();
-  const typographyDetails = typographyMaker({ fontSize, operatingSystem, isWeb: true });
+  const typographyDetails = typographyFontStylesMaker({ fontSize, operatingSystem, isWeb: true });
 
   const selectHandler = (_: unknown, p: number) => {
     pageHandler(p);
@@ -33,7 +33,12 @@ const CustomPagination = ({
         showFirstButton={true}
         onChange={selectHandler}
         renderItem={(item) => (
-          <PaginationItem {...item} style={{ ...typographyDetails }} page={toPersianNumbers(item.page || 1)} />
+          <PaginationItem
+            {...item}
+            style={{ ...typographyDetails }}
+            page={toPersianNumbers(item.page || 1)}
+            className="!text-impo_Neutral_OnBackground"
+          />
         )}
       />
     </div>

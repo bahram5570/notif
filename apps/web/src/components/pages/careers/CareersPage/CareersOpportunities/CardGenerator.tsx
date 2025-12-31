@@ -7,7 +7,6 @@ import ArrowIcon from '@assets/icons/arrow1.svg';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
-import { COLORS_LIST } from '@theme/colors';
 
 import {
   CAREER_DEPARTMENT_TITLES,
@@ -57,46 +56,35 @@ const CardGenerator = (props: CardGeneratorTypes) => {
     <CustomLink href={`/careers/${props.id}`}>
       <div
         ref={ref}
-        className="w-full flex flex-col gap-2 p-4 rounded-xl border-[1px] duration-200"
-        style={{
-          borderColor: isHover ? COLORS_LIST.Primary_Primary : COLORS_LIST.Neutral_Surface,
-          backgroundColor: isHover ? COLORS_LIST.Primary_PrimaryContainer : COLORS_LIST.Transparent,
-        }}
+        className={`w-full flex flex-col gap-2 p-4 rounded-xl border-[1px] duration-200 ${isHover ? 'border-impo_Primary_Primary bg-impo_Neutral_Surface' : 'border-impo_Neutral_Surface bg-impo_Transparent'}`}
       >
         <div className="w-full flex justify-between items-center">
-          <CustomTypography fontSize="Title_Small" color={'Neutral_OnBackground'}>
+          <CustomTypography fontSize="Title_Small" className="!text-impo_Neutral_OnBackground">
             {props.title}
           </CustomTypography>
 
-          <div
-            className="w-fit py-[6px] px-[29px] rounded-full"
-            style={{ backgroundColor: COLORS_LIST.Surface_SurfaceVariant }}
-          >
-            <CustomTypography fontSize="Body_Medium" color={'Neutral_OnBackground'}>
+          <div className="w-fit py-[6px] px-[29px] rounded-full bg-impo_Surface_SurfaceVariant">
+            <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground">
               {departmentScript}
             </CustomTypography>
           </div>
         </div>
 
         <div className="w-full flex justify-between items-center">
-          <CustomTypography fontSize="Body_Small" color={'Neutral_OnBackground'}>
+          <CustomTypography fontSize="Body_Small" className="!text-impo_Neutral_OnBackground">
             {locationScript}
           </CustomTypography>
         </div>
 
         <div className="w-full flex justify-between items-center">
-          <CustomTypography fontSize="Body_Small" color={'Neutral_OnBackground'}>
+          <CustomTypography fontSize="Body_Small" className="!text-impo_Neutral_OnBackground">
             {`${employmentTimeScript} - ${employmentLocationScript}`}
           </CustomTypography>
 
           <div
-            className="w-8 h-8 flex items-center justify-center rounded-full"
-            style={{ backgroundColor: isHover ? COLORS_LIST.Primary_Primary : COLORS_LIST.Primary_PrimaryContainer }}
+            className={`w-8 h-8 flex items-center justify-center rounded-full ${isHover ? 'bg-impo_Primary_Primary' : 'bg-impo_Primary_PrimaryContainer'}`}
           >
-            <ArrowIcon
-              className="w-3 h-auto"
-              style={{ fill: isHover ? COLORS_LIST.White : COLORS_LIST.Primary_Primary }}
-            />
+            <ArrowIcon className={`w-3 h-auto ${isHover ? '!fill-impo_White' : '!fill-impo_Primary_Primary'}`} />
           </div>
         </div>
       </div>

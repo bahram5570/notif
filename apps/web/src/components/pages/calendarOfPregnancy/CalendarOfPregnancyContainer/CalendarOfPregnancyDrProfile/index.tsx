@@ -18,7 +18,10 @@ const CalendarOfPregnancyDrProfile = () => {
 
       <div className="flex flex-col justify-center gap-2">
         <div className="flex items-center gap-1">
-          <CustomTypography fontSize="Lable_Medium"> بازبینی توسط دکترمهبان پروانه‌حسینی</CustomTypography>
+          <CustomTypography fontSize="Lable_Medium" className="!text-impo_Neutral_OnBackground">
+            {' '}
+            بازبینی توسط دکترمهبان پروانه‌حسینی
+          </CustomTypography>
           <BlueTickIcon className="w-5" />
         </div>
       </div>

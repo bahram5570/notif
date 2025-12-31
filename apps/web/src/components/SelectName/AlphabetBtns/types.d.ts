@@ -1,7 +1,5 @@
 import { ReactElement } from 'react';
 
-import { COLORS_LIST } from '@theme/colors';
-
 export type AlphabetBtnsListTypes = {
   [x in string]: {
     category: string;
@@ -14,13 +12,11 @@ export type AlphabetBtnsListTypes = {
   };
 };
 
-type ColorsTypes = keyof typeof COLORS_LIST;
-
 export interface AlphabetBtnsTypes {
   title: string;
   description: ReactElement | string;
   list: AlphabetBtnsListTypes;
-  textColor: ColorsTypes;
-  bgColor1: ColorsTypes;
-  bgColor2: ColorsTypes;
+  textColor: string;
+  bgColor1: string;
+  bgColor2: string;
 }

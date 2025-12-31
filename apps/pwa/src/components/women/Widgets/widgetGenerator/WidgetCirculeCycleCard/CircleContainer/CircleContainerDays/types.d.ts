@@ -28,7 +28,9 @@ export interface CurrentDayGeneratorProps extends Pick<CircleContainerDaysProps,
   color: string;
 }
 
-export interface OvulationGeneratorProps
-  extends Pick<CircleContainerDaysProps, 'cycleLength' | 'currentDay' | 'ovulationDay'> {
+export interface OvulationGeneratorProps extends Pick<
+  CircleContainerDaysProps,
+  'cycleLength' | 'currentDay' | 'ovulationDay'
+> {
   color: string;
 }
