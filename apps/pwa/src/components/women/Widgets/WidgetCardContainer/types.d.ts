@@ -8,4 +8,5 @@ export interface WidgetCardContainerProps {
   buttonId?: string;
   onClick?: () => void;
   className?: string;
+  classNameBtn?: string;
 }

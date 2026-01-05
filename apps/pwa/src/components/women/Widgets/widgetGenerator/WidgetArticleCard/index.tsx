@@ -26,7 +26,15 @@ const WidgetArticleCard = ({ data }: WidgetArticleCardProps) => {
         </CustomSlider>
       </div>
 
-      <Button variant="fill" size="medium" color="surface" onClick={clickHandler}>
+      <Button
+        variant="fill"
+        size="medium"
+        color="FREE-STYLES"
+        buttonColor=""
+        contentsColor=""
+        className="dark:text-impo_White text-impo_black bg-impo_Grey_100 border-impo_Grey_100  dark:bg-impo_Neutral_Surface dark:border-impo_Neutral_Surface"
+        onClick={clickHandler}
+      >
         {data.buttonText}
       </Button>
     </WidgetCardContainer>

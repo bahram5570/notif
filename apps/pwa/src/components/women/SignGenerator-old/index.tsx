@@ -2,9 +2,8 @@ import { memo } from 'react';
 
 import SelectedIcon from '@assets/icons/selectedTick.svg';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
-import useTheme from '@hooks/useTheme';
 
 import useSignIcon from './__hooks__/useSignIcon';
 import useSignSelected from './__hooks__/useSignSelected';
@@ -13,7 +12,7 @@ import { SignGeneratorProps } from './types';
 
 const SignGenerator = ({ category, sign, initialIsSelected, onSelect }: SignGeneratorProps) => {
   const { callEvent } = useAnalytics();
-  const { colors } = useTheme();
+
   const { icon } = useSignIcon({ category, sign });
   const { isSelected, isSelectedHandler } = useSignSelected({
     sign,
@@ -22,7 +21,6 @@ const SignGenerator = ({ category, sign, initialIsSelected, onSelect }: SignGene
     initialIsSelected,
   });
 
-  const borderColor = isSelected ? colors.PrimaryWoman_Primary : colors.Neutral_Surface;
   const title = SIGNS_LIST?.[category]?.signs?.[sign]?.title || '';
 
   const clickHandler = () => {
@@ -34,9 +32,8 @@ const SignGenerator = ({ category, sign, initialIsSelected, onSelect }: SignGene
     <div className="cursor-pointer" onClick={clickHandler}>
       <div className="flex flex-col items-center gap-2 pointer-events-none ">
         <div
-          className="relative flex justify-center items-center border-[1px] rounded-full"
+          className={`relative flex justify-center items-center border-[1px] rounded-full ${isSelected ? 'border-impo_Primary_Primary' : 'border-impo_Neutral_Surface'}`}
           style={{
-            borderColor,
             width: ICONS_WIDTH,
             height: ICONS_WIDTH,
             minWidth: ICONS_WIDTH,
@@ -48,9 +45,9 @@ const SignGenerator = ({ category, sign, initialIsSelected, onSelect }: SignGene
           {isSelected && <SelectedIcon className="absolute -left-1 -bottom-1 w-6 h-auto" />}
         </div>
 
-        <Typography scale="Body" size="Small" textAlign="center">
+        <Dark_Typography fontSize="Body_Small" className="text-center text-impo_Neutral_OnBackground">
           {title}
-        </Typography>
+        </Dark_Typography>
       </div>
     </div>
   );

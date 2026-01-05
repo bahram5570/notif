@@ -8,8 +8,8 @@ const Dark_Typography = ({ children, fontSize, numbersMode, className, style, te
   return (
     <p
       data-testid={testId}
-      style={{ ...typographyFontStyles, ...style }}
-      className={`select-none w-fit h-fit whitespace-pre-line ${className}`}
+      style={{ ...typographyFontStyles, ...style, direction: 'rtl' }}
+      className={`select-none w-fit h-fit whitespace-pre-line  ${className}`}
     >
       {result}
     </p>

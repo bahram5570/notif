@@ -34,9 +34,10 @@ const WidgetProgramScroll = ({ data }: ProgramScrollPropType) => {
       title={data.title}
       button={data.button}
       onClick={() => callEvent('Action_From_ProgramScrollWidget')}
+      classNameBtn="dark:text-impo_White text-impo_black bg-impo_Grey_100 border-impo_Grey_100  dark:bg-impo_Neutral_Surface dark:border-impo_Neutral_Surface"
     >
       <div
-        className={`overflow-x-auto overflow-y-hidden  max-w-full flex flex-row-reverse gap-3 scrollbar ${!isWindows && 'hide'}`}
+        className={`overflow-x-auto overflow-y-hidden  max-w-full flex flex-row-reverse gap-3 scrollbar  ${!isWindows && 'hide'}`}
         ref={containerRef}
       >
         {data.items.map((item, index) => (

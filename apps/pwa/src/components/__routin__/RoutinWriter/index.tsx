@@ -1,5 +1,5 @@
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { WidgetRoutinWriterProps } from './type';
 
@@ -7,13 +7,13 @@ const RoutinWriter = ({ writerIcon, writerName, writerSpeciality }: WidgetRoutin
   return (
     <div className="w-full flex items-center justify-end gap-[10px]">
       <div className="flex flex-col items-end">
-        <Typography scale="Lable" size="Medium">
+        <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
           {writerName}
-        </Typography>
+        </Dark_Typography>
 
-        <Typography scale="Body" size="Small" color="Surface_Outline">
+        <Dark_Typography fontSize="Body_Small" className="text-impo_Surface_Outline">
           {writerSpeciality}
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <div className="relative w-10 h-10 min-w-10 min-h-10 rounded-full">

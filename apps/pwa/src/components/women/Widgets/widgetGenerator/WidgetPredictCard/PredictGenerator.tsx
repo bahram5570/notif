@@ -2,16 +2,14 @@ import EyeIcon from '@assets/icons/eye.svg';
 import { colorFormatConverter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import Typography from '@components/ui/Typography';
 import useAnalytics from '@hooks/useAnalytics';
-import useTheme from '@hooks/useTheme';
 
 import { PredictGeneratorProps } from './types';
 
 const PredictGenerator = (props: PredictGeneratorProps) => {
   const { inViewRef } = useAnalytics({ inView_eventName: 'PredictionWidgetSeenMoreThan5Sec' });
-
-  const { colors } = useTheme();
 
   return (
     <div
@@ -23,16 +21,15 @@ const PredictGenerator = (props: PredictGeneratorProps) => {
         <CustomImage
           src={props.icon}
           width={45}
-          className="border-[1px] rounded-full"
-          style={{ borderColor: colors.Neutral_Background }}
+          className="border-[1px] rounded-full border-impo_Neutral_Background dark:border-none"
         />
         <div className="flex flex-col justify-center items-end gap-2">
-          <Typography scale="Lable" size="Large">
+          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
             {props.title}
-          </Typography>
-          <Typography scale="Body" size="Medium" color="Surface_OnSurfaceVariant">
+          </Dark_Typography>
+          <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
             {props.trailingUp}
-          </Typography>
+          </Dark_Typography>
         </div>
       </div>
 
@@ -44,9 +41,9 @@ const PredictGenerator = (props: PredictGeneratorProps) => {
 
         {!props.showEyeIcon && (
           <>
-            <Typography scale="Body" size="Small" color="Surface_Outline">
+            <Dark_Typography fontSize="Body_Small" className="text-impo_Surface_Outline">
               {props.trailingDown}
-            </Typography>
+            </Dark_Typography>
           </>
         )}
       </div>

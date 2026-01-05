@@ -1,5 +1,5 @@
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import WidgetCardContainer from '@components/women/Widgets/WidgetCardContainer';
 
 import { WidgetEmptyReportCardProps } from './types';
@@ -8,9 +8,9 @@ const WidgetEmptyReportCard = ({ data }: WidgetEmptyReportCardProps) => {
   return (
     <WidgetCardContainer title={data.title} button={data.button}>
       <div className="flex justify-end">
-        <Typography scale="Body" size="Small">
+        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
           {data.description}
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <CustomImage src={data.image} className="py-3" />

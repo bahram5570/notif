@@ -1,4 +1,4 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import WidgetCardHealthReportContainer from '@components/women/Widgets/WidgetCardHealthReportContainer';
 
 import { WidgetMostRepeatedSignsEmptyProps } from './types';
@@ -10,9 +10,9 @@ const WidgetMostRepeatedSignsEmpty = ({ data, isPdfDownloading }: WidgetMostRepe
 
   return (
     <WidgetCardHealthReportContainer title={data.title} button={data.button}>
-      <Typography scale="Body" size="Small" color="Neutral_OnBackground" className="w-full">
+      <Dark_Typography fontSize="Body_Small" className="w-full text-impo_Neutral_OnBackground">
         هنوز نشانه پرتکراری برات شناسایی نشده
-      </Typography>
+      </Dark_Typography>
     </WidgetCardHealthReportContainer>
   );
 };
