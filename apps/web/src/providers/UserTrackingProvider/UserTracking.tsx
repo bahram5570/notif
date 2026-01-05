@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 
 // import { getUserTracking, newUserTracking, updateUserTracking } from './__utils__';
-// import { isDevelopeMode } from '@utils/system';
+// import { isDevelopeMode } from '@repo/core/utils/system';
 
 // import useUserTracking from '@hooks/useUserTracking';
 // import { usePathname } from 'next/navigation';

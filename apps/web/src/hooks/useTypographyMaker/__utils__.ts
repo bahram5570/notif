@@ -1,4 +1,4 @@
-import { FONTS_ANDROID, FONTS_IOS } from '@theme/fonts';
+import { FONTS_ANDROID, FONTS_IOS } from '@repo/core/theme/fonts';
 
 import { TypographyFontStylesMakerTypes } from './types';
 

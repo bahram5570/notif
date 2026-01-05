@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 
 import SystemIcon from '@assets/icons/themeSystem.svg';
-import { getTheme, themeHandler } from '@theme/__utils__';
+import { getTheme, themeHandler } from '@repo/core/theme/__utils__';
 
 import CustomTypography from '@components/ui/CustomTypography';
 import { HEADER_THEME_LIST } from '@constants/links.constants';
 import useBreakPoint from '@hooks/useBreakPoint';
-import { ThemeTypes } from '@theme/types';
+import { ThemeTypes } from '@repo/core/theme/types';
 
 const initialTheme: ThemeTypes = 'system';
 const initialIcon = <SystemIcon className="w-5 lg:w-6 h-auto pl-[2px] fill-impo_Neutral_OnSurface" />;
