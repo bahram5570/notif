@@ -2,16 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: YekanBakhVF;
-  src: url('/assets/shared/fonts/YekanBakh-VF.ttf');
-}
-
 @import '@repo/components/styles.css';
+@import '@repo/core/theme.css';
+
 @import 'swiper/css';
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';
 @import '~react-toastify/dist/ReactToastify.min.css';
+
+@font-face {
+  font-family: YekanBakhVF;
+  src: url('/assets/shared/fonts/YekanBakh-VF.ttf');
+}
 
 body {
   font-family: YekanBakhVF;

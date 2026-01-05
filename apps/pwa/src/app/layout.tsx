@@ -17,6 +17,9 @@ import ToastProvider from '@providers/ToastProvider';
 import WidgetActionsProvider from '@providers/WidgetActionsProvider';
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
+import Script from 'next/script';
+
+import D from './D';
 
 export const metadata: Metadata = {
   title: 'وب اپلیکیشن ایمپو',
@@ -37,9 +40,29 @@ const YekanBakhVF = localFont({
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="fa" className={YekanBakhVF.className}>
-      <body style={{ maxWidth: MAX_SCREEN_WIDTH, width: '100%', height: '100dvh', margin: 'auto' }}>
+    <html lang="fa" dir="ltr" suppressHydrationWarning={true} className={YekanBakhVF.className}>
+      <head>
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`
+            const t = localStorage.getItem('theme');
+            if (t === 'dark') {
+              document.documentElement.classList.add('dark');
+            } else if (t === 'light') {
+              document.documentElement.classList.remove('dark');
+            } else {
+              const p = window.matchMedia("(prefers-color-scheme: dark)").matches;
+              document.documentElement.classList.toggle('dark', p);
+            }
+          `}
+        </Script>
+      </head>
+
+      <body
+        className="bg-impo_Neutral_Background"
+        style={{ maxWidth: MAX_SCREEN_WIDTH, width: '100%', height: '100dvh', margin: 'auto' }}
+      >
         <main>
+          <D />
           <ScrollToTopProvider />
 
           <AnalyticsProvider>

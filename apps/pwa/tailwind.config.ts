@@ -1,6 +1,8 @@
+import preset from '@repo/core/configs/tailwind.config';
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
+  presets: [preset],
   content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
