@@ -1,7 +1,7 @@
 import BlueTickIcon from '@assets/icons/blueTick.svg';
 
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ShareExperienceGeneratorProps } from './types';
 
@@ -10,16 +10,15 @@ const ShareExperienceGenerator = ({ approvedProfile, avatar, name, text }: Share
     <div className="flex justify-between gap-2 w-full rounded-xl p-2">
       <div className="flex flex-col items-end gap-1 w-full">
         <div className="flex">
-          <Typography scale="Lable" size="Small">
+          <Dark_Typography fontSize="Lable_Small" className="text-impo_Neutral_OnBackground">
             {name}
-          </Typography>
+          </Dark_Typography>
 
           {approvedProfile && <BlueTickIcon />}
         </div>
-
-        <Typography scale="Body" size="Small" color="Surface_OnSurfaceVariant">
+        <Dark_Typography fontSize="Body_Small" className="text-impo_Surface_OnSurfaceVariant">
           {text}
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <CustomImage src={avatar} width={50} height={50} />

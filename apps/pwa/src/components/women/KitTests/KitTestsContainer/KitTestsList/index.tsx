@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 
 import { KitTestModuleTypeEnums } from '../../enum';
@@ -11,7 +10,6 @@ import { kitTestMainInfo } from './constants';
 import { DetailsTypes, KitTestsListProps } from './types';
 
 const KitTestsList = ({ moduleType, data, gregorianDate }: KitTestsListProps) => {
-  const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const [details, setDetails] = useState<DetailsTypes>(null);
   const { pageNavigationHandler } = usePageNavigationLoading();
@@ -40,12 +38,12 @@ const KitTestsList = ({ moduleType, data, gregorianDate }: KitTestsListProps) =>
     <>
       {details && (
         <>
-          <div className="w-full h-[1px] my-4" style={{ backgroundColor: colors.Neutral_Surface }} />
+          <div className="w-full h-[1px] my-4 bg-impo_Neutral_Surface" />
 
           <div className="w-full rounded-lg flex items-center justify-end gap-2  cursor-pointer" onClick={clickHandler}>
-            <Typography scale="Body" size="Small">
+            <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
               {details.buttonScript}
-            </Typography>
+            </Dark_Typography>
 
             <details.Icon className="w-8 h-auto" />
           </div>

@@ -7,4 +7,5 @@ export interface Dark_TypographyTypes {
   numbersMode?: 'persian' | 'english';
   fontSize?: keyof typeof FONTS_ANDROID;
   children: React.ReactNode | string | number;
+  direction?: 'rtl' | 'ltr';
 }

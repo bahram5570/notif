@@ -9,6 +9,7 @@ const WidgetSubscriptionCard = ({ data }: WidgetSubscriptionCardProps) => {
     <WidgetCardContainer
       title={data.title}
       button={data.submitButton}
+      classNameBtn="text-impo_White !bg-impo_Pink_500 !border-impo_Pink_500"
       titleElement={<WidgetSubscriptionHeadlineBtn {...data.headlineButton} />}
     >
       <SubscriptionGenerator {...data.package} />

@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
 import CustomSlider from '@components/ui/CustomSlider';
-import useTheme from '@hooks/useTheme';
 
 import { WidgetPeriodCycleHistoryDaysProps } from './types';
 
@@ -11,7 +10,6 @@ const WidgetPeriodCycleHistoryDays = ({
   ovulationDay,
   cycleLength,
 }: WidgetPeriodCycleHistoryDaysProps) => {
-  const { colors } = useTheme();
   const [daysList, setDaysList] = useState<string[]>([]);
 
   useEffect(() => {
@@ -21,11 +19,11 @@ const WidgetPeriodCycleHistoryDays = ({
       let color = '';
 
       if (i === ovulationDay) {
-        color = colors.CalendarWoman_Fertility_Ovulation;
+        color = 'bg-impo_Calendar_Fertility_Ovulation';
       } else if (i <= periodLength) {
-        color = colors.PrimaryWoman_Primary;
+        color = 'bg-impo_Primary_Primary';
       } else {
-        color = colors.Neutral_Surface;
+        color = 'bg-impo_Neutral_Surface';
       }
 
       list.push(color);
@@ -37,7 +35,7 @@ const WidgetPeriodCycleHistoryDays = ({
   return (
     <CustomSlider gap={isPdfDownloading ? 8 : 4} sidePadding={16} className="min-w-[calc(100%_+_32px)] !pb-0">
       {daysList.map((backgroundColor, index) => (
-        <div className="w-[6px] min-w-[6px] h-[16px] rounded" style={{ backgroundColor }} key={index} />
+        <div className={`w-[6px] min-w-[6px] h-[16px] rounded ${backgroundColor}`} key={index} />
       ))}
     </CustomSlider>
   );

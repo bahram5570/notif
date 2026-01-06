@@ -10,7 +10,7 @@ const WidgetBabyCheckHistoryCardDescription = ({
   description,
   icon,
 }: WidgetBabyCheckHistoryCardDescriptionProps) => {
-  const { typography, colors } = useTheme();
+  const { typography } = useTheme();
   const fontStyle = typography.Body.Small;
 
   const descriptionList = description.split('،');
@@ -24,8 +24,8 @@ const WidgetBabyCheckHistoryCardDescription = ({
           ...fontStyle,
           direction: 'rtl',
           textAlign: 'justify',
-          color: colors.Neutral_OnBackground,
         }}
+        className="text-impo_Neutral_OnBackground"
       >
         {isPdfDownloading && description}
 

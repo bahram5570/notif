@@ -1,10 +1,6 @@
-import useTheme from '@hooks/useTheme';
-
 import { TestKitModalsListRangeSVGProps } from './types';
 
 const TestKitModalsListRangeSVG = ({ result }: TestKitModalsListRangeSVGProps) => {
-  const { colors } = useTheme();
-
   return (
     <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clipPath="url(#clip0_12455_26898)">
@@ -23,7 +19,7 @@ const TestKitModalsListRangeSVG = ({ result }: TestKitModalsListRangeSVGProps) =
               width="24"
               height="7"
               transform="matrix(-4.37114e-08 1 1 4.37114e-08 16 16)"
-              fill={colors.Pink_500}
+              className="!fill-impo_Pink_500"
               opacity={result}
             />
           </g>

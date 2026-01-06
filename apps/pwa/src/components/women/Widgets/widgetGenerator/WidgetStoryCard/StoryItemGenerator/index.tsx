@@ -1,9 +1,8 @@
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 
 import { STORY_CIRCLE_WIDTH } from '../constants';
@@ -12,7 +11,6 @@ import { StoryItemGeneratorProps } from './types';
 const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGeneratorProps) => {
   const { callEvent } = useAnalytics();
 
-  const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
@@ -46,24 +44,21 @@ const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGenerat
 
         <div
           style={{
-            borderColor: isViewed ? colors.Surface_Outline : colors.PrimaryWoman_Primary,
             opacity: isViewed ? 0.2 : 1,
           }}
           className={`absolute top-0 left-0 right-0 bottom-0 border-[1.5px] rounded-full 
             ${isLoading ? 'animate-spin !border-t-transparent' : ''}
+            ${isViewed ? 'border-impo_Surface_Outline' : 'border-impo_Primary_Primary'}
           `}
         />
       </div>
 
-      <Typography
-        scale="Body"
-        size="Small"
-        color="Neutral_OnBackground"
-        className=" !whitespace-nowrap overflow-hidden"
-        textAlign="center"
+      <Dark_Typography
+        fontSize="Body_Small"
+        className=" !whitespace-nowrap overflow-hidden !text-impo_Neutral_OnBackground text-center"
       >
         {text}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

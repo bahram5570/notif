@@ -1,5 +1,5 @@
 import ArrowIcon from '@assets/icons/calendarArrow.svg';
-import { colorFormatConverter, textShorter } from '@utils/scripts';
+import { colorFormatConverter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
 import Typography from '@components/ui/Typography';

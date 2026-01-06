@@ -1,6 +1,7 @@
 import ImpoIcon from '@assets/icons/impoName.svg';
 
 import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 import Typography from '@components/ui/Typography';
 import WidgetGenerator from '@components/women/Widgets/widgetGenerator';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
@@ -28,19 +29,18 @@ const HealthReportContainerPdf = ({ data, backgroundColor }: HealthReportContain
   return (
     <>
       <div
-        className="w-full mt-auto py-4 fixed bottom-0 left-0 right-0 mx-auto  z-50 px-4 flex justify-center items-center "
-        style={{ maxWidth: MAX_SCREEN_WIDTH, backgroundColor: colors.White }}
+        className="w-full mt-auto py-4 fixed bottom-0 left-0 right-0 mx-auto  z-50 px-4 flex justify-center items-center bg-impo_Neutral_Surface"
+        style={{ maxWidth: MAX_SCREEN_WIDTH }}
       >
-        <Button
-          size="medium"
-          variant="fill"
-          color="primary"
+        <Dark_Button
+          fontSize="Lable_Large"
+          className="!bg-impo_Pink_500 !text-impo_White !border-impo_Pink_500"
           isDisable={NotData}
           isLoading={downloadStatus !== null}
           onClick={clickHandler}
         >
           دریافت pdf گزارش سلامت
-        </Button>
+        </Dark_Button>
       </div>
 
       {downloadStatus !== null && (

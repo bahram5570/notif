@@ -1,4 +1,4 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import WidgetAverageOfcycleLengthsCard from './WidgetAverageOfcycleLengthsCard';
 import { WidgetAverageOfcycleLengthsProps } from './types';
@@ -6,9 +6,9 @@ import { WidgetAverageOfcycleLengthsProps } from './types';
 const WidgetAverageOfcycleLengths = ({ data, isPdfDownloading }: WidgetAverageOfcycleLengthsProps) => {
   return (
     <div className="w-full">
-      <Typography scale="Title" size="Small" color="Neutral_OnBackground" className="ml-auto">
+      <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground ml-auto">
         {data.title}
-      </Typography>
+      </Dark_Typography>
 
       <div className="w-full flex gap-4 pt-4">
         <WidgetAverageOfcycleLengthsCard {...data.left} isPdfDownloading={isPdfDownloading} />

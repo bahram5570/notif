@@ -1,30 +1,23 @@
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { WidgetMotivationCardProps } from './types';
 
 const WidgetMotivationCard = ({ data }: WidgetMotivationCardProps) => {
-  const { colors } = useTheme();
-
   return (
-    <div
-      className="w-full px-3 py-2 rounded-xl flex flex-col items-end"
-      style={{ backgroundColor: colors.Neutral_Background }}
-    >
+    <div className="w-full px-3 py-2 rounded-xl flex flex-col items-end bg-impo_Neutral_Background">
       <div className="flex gap-2">
-        <Typography scale="Lable" size="Medium">
+        <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
           {data.title}
-        </Typography>
+        </Dark_Typography>
 
         <CustomImage src={data.icon} width={24} height={24} />
       </div>
 
-      <span className="w-full h-[1px] block my-2" style={{ backgroundColor: colors.Neutral_Surface }} />
-
-      <Typography scale="Body" size="Medium">
+      <span className="w-full h-[1px] block my-2 bg-impo_Neutral_Surface" />
+      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
         {data.description}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

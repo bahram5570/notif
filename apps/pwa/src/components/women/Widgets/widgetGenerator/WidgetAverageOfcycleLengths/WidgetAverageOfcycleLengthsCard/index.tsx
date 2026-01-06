@@ -1,5 +1,4 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import CircleProgress from './CircleProgress';
 import { WidgetAverageOfcycleLengthsCardProps } from './types';
@@ -12,25 +11,21 @@ const WidgetAverageOfcycleLengthsCard = ({
   length,
   title,
 }: WidgetAverageOfcycleLengthsCardProps) => {
-  const { colors } = useTheme();
-
   return (
     <div
-      className="w-full h-fit rounded-2xl flex items-center p-4 pb-1"
+      className="w-full  rounded-2xl flex items-center p-4 pb-1 bg-impo_Neutral_Background"
       style={{
-        backgroundColor: colors.White,
         flexDirection: isPdfDownloading ? 'row' : 'column',
         justifyContent: isPdfDownloading ? 'flex-end' : 'center',
       }}
     >
       <div className="flex flex-col" style={{ alignItems: isPdfDownloading ? 'flex-end' : 'center' }}>
-        <Typography scale="Lable" size="Large" color="Neutral_OnBackground">
+        <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
           {title}
-        </Typography>
-
-        <Typography scale="Body" size="Small" color="Neutral_OnBackground" textAlign="center" className="pt-1">
+        </Dark_Typography>
+        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground text-center pt-1">
           {description}
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <CircleProgress length={length} filledLength={filledLength} centeralText={centeralText} />

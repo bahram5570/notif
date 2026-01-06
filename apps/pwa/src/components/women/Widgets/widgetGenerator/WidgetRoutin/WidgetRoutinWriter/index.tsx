@@ -1,34 +1,22 @@
-import BlueTick from '@assets/icons/blueTick2.svg';
-
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { WidgetRoutinWriterProps } from './types';
 
 const WidgetRoutinWriter = ({ writerName, writerSpeciality, writerIcon }: WidgetRoutinWriterProps) => {
-  const { colors } = useTheme();
-
   return (
     <div className="w-full flex items-center justify-end gap-[10px]">
       <div className="flex flex-col items-end">
-        <Typography scale="Lable" size="Medium">
+        <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
           {writerName}
-        </Typography>
-
-        <Typography scale="Body" size="Small" color="Surface_Outline">
+        </Dark_Typography>
+        <Dark_Typography fontSize="Body_Small" className="text-impo_Surface_Outline">
           {writerSpeciality}
-        </Typography>
+        </Dark_Typography>
       </div>
 
-      <div
-        className="relative w-10 h-10 min-w-10 min-h-10 rounded-full"
-        // style={{ borderColor: colors.PrimaryWoman_Primary }}
-      >
-        {/* <div className="w-full h-full rounded-full overflow-hidden"> */}
+      <div className="relative w-10 h-10 min-w-10 min-h-10 rounded-full">
         <CustomImage src={writerIcon} />
-        {/* </div> */}
-        {/* <BlueTick className="absolute -left-1 -bottom-1 w-5 h-auto" /> */}
       </div>
     </div>
   );

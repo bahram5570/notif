@@ -9,7 +9,7 @@ const WidgetReportCard = ({ data }: WidgetReportCardProps) => {
     <WidgetCardContainer
       title={data.title}
       button={data.button}
-      classNameBtn="text-impo_White bg-impo_Pink_500 border-impo_Pink_500"
+      classNameBtn="text-impo_White !bg-impo_Pink_500 !border-impo_Pink_500"
     >
       <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground text-right ">
         {data.description}

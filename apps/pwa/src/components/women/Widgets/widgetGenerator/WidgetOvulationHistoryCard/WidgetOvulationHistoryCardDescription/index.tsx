@@ -10,7 +10,7 @@ const WidgetOvulationHistoryCardDescription = ({
   description,
   icon,
 }: WidgetOvulationHistoryCardDescriptionDescriptionProps) => {
-  const { typography, colors } = useTheme();
+  const { typography } = useTheme();
   const fontStyle = typography.Body.Small;
 
   const descriptionList = description.split('،');
@@ -24,8 +24,8 @@ const WidgetOvulationHistoryCardDescription = ({
           ...fontStyle,
           direction: 'rtl',
           textAlign: 'justify',
-          color: colors.Neutral_OnBackground,
         }}
+        className="text-impo_Neutral_OnBackground"
       >
         {isPdfDownloading && description}
 

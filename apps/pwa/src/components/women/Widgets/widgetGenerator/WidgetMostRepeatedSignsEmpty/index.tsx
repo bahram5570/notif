@@ -9,7 +9,11 @@ const WidgetMostRepeatedSignsEmpty = ({ data, isPdfDownloading }: WidgetMostRepe
   }
 
   return (
-    <WidgetCardHealthReportContainer title={data.title} button={data.button}>
+    <WidgetCardHealthReportContainer
+      title={data.title}
+      button={data.button}
+      classNameBtn="!bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnBackground"
+    >
       <Dark_Typography fontSize="Body_Small" className="w-full text-impo_Neutral_OnBackground">
         هنوز نشانه پرتکراری برات شناسایی نشده
       </Dark_Typography>

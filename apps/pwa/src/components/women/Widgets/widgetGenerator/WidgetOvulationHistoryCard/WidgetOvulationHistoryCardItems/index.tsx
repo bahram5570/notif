@@ -1,3 +1,4 @@
+import Dark_Typography from '@components/ui/Dark_Typography';
 import Typography from '@components/ui/Typography';
 import useTheme from '@hooks/useTheme';
 
@@ -18,32 +19,24 @@ const WidgetOvulationHistoryCardItems = (props: WidgetOvulationHistoryCardItemsP
         <div
           key={index}
           onClick={() => clickHandler(index, item.details.length > 0)}
-          style={{ backgroundColor: colors.Surface_SurfaceVariant }}
-          className="w-full h-[40px] px-2 rounded-lg flex items-center justify-between"
+          className="w-full h-[40px] px-2 rounded-lg flex items-center justify-between bg-impo_Surface_SurfaceVariant"
         >
           <div className="flex items-center gap-1">
-            <div
-              className="w-[54px] h-[22px] flex items-center justify-center rounded-full"
-              style={{ backgroundColor: colors.Success_Success }}
-            >
-              <Typography scale="Lable" size="Small" color="PrimaryWoman_OnPrimary">
+            <div className="w-[54px] h-[22px] flex items-center justify-center rounded-full bg-impo_Success_Success">
+              <Dark_Typography fontSize="Lable_Small" className="text-impo_Primary_OnPrimary">
                 {item.positive}
-              </Typography>
+              </Dark_Typography>
             </div>
 
-            <div
-              className="w-[54px] h-[22px] flex items-center justify-center rounded-full"
-              style={{ backgroundColor: colors.Error_Error }}
-            >
-              <Typography scale="Lable" size="Small" color="PrimaryWoman_OnPrimary">
+            <div className="w-[54px] h-[22px] flex items-center justify-center rounded-full bg-impo_Error_Error">
+              <Dark_Typography fontSize="Lable_Small" className="text-impo_Primary_OnPrimary">
                 {item.negative}
-              </Typography>
+              </Dark_Typography>
             </div>
           </div>
-
-          <Typography scale="Body" size="Medium" color="Neutral_OnBackground">
+          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             {item.text}
-          </Typography>
+          </Dark_Typography>
         </div>
       ))}
     </div>

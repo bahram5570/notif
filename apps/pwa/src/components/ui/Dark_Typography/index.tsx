@@ -2,14 +2,23 @@ import useTypographyMaker from '@hooks/useTypographyMaker';
 
 import { Dark_TypographyTypes } from './types';
 
-const Dark_Typography = ({ children, fontSize, numbersMode, className, style, testId }: Dark_TypographyTypes) => {
+const Dark_Typography = ({
+  children,
+  fontSize,
+  numbersMode,
+  className,
+  style,
+  testId,
+  direction = 'rtl',
+}: Dark_TypographyTypes) => {
   const { typographyFontStyles, result } = useTypographyMaker({ children, fontSize, numbersMode });
 
   return (
     <p
       data-testid={testId}
-      style={{ ...typographyFontStyles, ...style, direction: 'rtl' }}
-      className={`select-none w-fit h-fit whitespace-pre-line  ${className}`}
+      dir={direction}
+      style={{ ...typographyFontStyles, ...style }}
+      className={`select-none w-fit h-fit whitespace-pre-line r  ${className}`}
     >
       {result}
     </p>

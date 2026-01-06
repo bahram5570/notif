@@ -1,14 +1,11 @@
 import NeedToInvestigateIcon from '@assets/icons/needToInvestigate.svg';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import WidgetPeriodCycleHistoryDays from './WidgetPeriodCycleHistoryDays';
 import { WidgetPeriodCycleHistoryItemsProps } from './types';
 
 const WidgetPeriodCycleHistoryItems = ({ items, isPdfDownloading }: WidgetPeriodCycleHistoryItemsProps) => {
-  const { colors } = useTheme();
-
   return (
     <div className="w-full flex flex-col items-center">
       {items.map((item, index) => {
@@ -16,16 +13,14 @@ const WidgetPeriodCycleHistoryItems = ({ items, isPdfDownloading }: WidgetPeriod
 
         return (
           <div
-            className="w-full flex flex-col items-center gap-3 py-4 border-y-[1px] border-t-transparent"
-            style={{ borderBottomColor: isLastChild ? colors.Transparent : colors.Neutral_Surface }}
+            className={`w-full flex flex-col items-center gap-3 py-4 border-y-[1px] border-t-transparent ${isLastChild ? 'border-b-impo_Transparent' : 'border-b-impo_Neutral_Surface'}`}
             key={index}
           >
             <div className="flex items-center gap-1 ml-auto">
               {!item.normal && <NeedToInvestigateIcon className="w-5 h-auto" />}
-
-              <Typography scale="Lable" size="SmallProminet" color="Neutral_OnBackground">
+              <Dark_Typography fontSize="Lable_SmallProminet" className="text-impo_Neutral_OnBackground">
                 {item.title}
-              </Typography>
+              </Dark_Typography>
             </div>
 
             <WidgetPeriodCycleHistoryDays
@@ -36,13 +31,15 @@ const WidgetPeriodCycleHistoryItems = ({ items, isPdfDownloading }: WidgetPeriod
             />
 
             <div className="flex items-center gap-1 ml-auto">
-              <Typography scale="Body" size="Small" color="Surface_InverseSurface">
-                {` - طول دوره: ${item.cycleLength} روز`}
-              </Typography>
+              <Dark_Typography
+                fontSize="Body_Small"
+                className="text-impo_Surface_InverseSurface"
+              >{` - طول دوره: ${item.cycleLength} روز`}</Dark_Typography>
 
-              <Typography scale="Body" size="Small" color="Surface_InverseSurface">
-                {`طول پریود: ${item.periodLength} روز`}
-              </Typography>
+              <Dark_Typography
+                fontSize="Body_Small"
+                className="text-impo_Surface_InverseSurface"
+              >{`طول پریود: ${item.periodLength} روز`}</Dark_Typography>
             </div>
           </div>
         );

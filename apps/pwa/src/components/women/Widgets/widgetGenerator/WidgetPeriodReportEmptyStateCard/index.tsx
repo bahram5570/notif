@@ -1,5 +1,5 @@
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import WidgetCardHealthReportContainer from '@components/women/Widgets/WidgetCardHealthReportContainer';
 
 import WidgetPeriodReportEmptyStateCardGuides from './WidgetPeriodReportEmptyStateCardGuides';
@@ -9,9 +9,9 @@ import { WidgetPeriodReportEmptyStateCardProps } from './types';
 const WidgetPeriodReportEmptyStateCard = ({ data }: WidgetPeriodReportEmptyStateCardProps) => {
   return (
     <WidgetCardHealthReportContainer title={data.title}>
-      <Typography scale="Body" size="Small">
+      <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
         {data.description}
-      </Typography>
+      </Dark_Typography>
 
       <WidgetPeriodReportEmptyStateCardGuides />
 

@@ -1,5 +1,4 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
 import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
@@ -7,7 +6,6 @@ import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 import { WidgetHintCardLinkToProps } from './types';
 
 const WidgetHintCardLinkTo = ({ internalLink, externalLink }: WidgetHintCardLinkToProps) => {
-  const { colors } = useTheme();
   const { actionHandler } = useWidgetActions();
 
   const hasInternalLink = typeof internalLink === 'string' && internalLink.length > 0;
@@ -39,12 +37,11 @@ const WidgetHintCardLinkTo = ({ internalLink, externalLink }: WidgetHintCardLink
       {hasLink && (
         <div
           onClick={linkToHandler}
-          style={{ borderColor: colors.Surface_OutlineVariant }}
-          className="w-[110px] h-[32px] rounded-full border-[1px] flex items-center justify-center cursor-pointer"
+          className="w-[110px] h-[32px] rounded-full border-[1px] flex items-center justify-center cursor-pointer border-impo_Surface_OutlineVariant"
         >
-          <Typography scale="Lable" size="Medium" color="Neutral_OnSurface">
+          <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnSurface">
             باز کردن لینک
-          </Typography>
+          </Dark_Typography>
         </div>
       )}
     </>

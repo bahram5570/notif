@@ -1,8 +1,7 @@
 import TrashIcon from '@assets/icons/trash.svg';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { kitTestScripts } from '@components/women/KitTests/KitTestRange/constants';
-import useTheme from '@hooks/useTheme';
 
 import { KitTestModuleTypeEnums } from '../../enum';
 import TestKitModalsListRangeSVG from '../TestKitModalsListRangeSVG';
@@ -10,7 +9,6 @@ import useTestKitsDeleteModal from '../__hooks__/useTestKitsDeleteModal';
 import { TestKitModalsListsOvulationProps } from './types';
 
 const TestKitModalsListsOvulation = ({ data }: TestKitModalsListsOvulationProps) => {
-  const { colors } = useTheme();
   const { openDeleteModalHandler } = useTestKitsDeleteModal();
 
   const testScript = (result: number) => {
@@ -39,12 +37,12 @@ const TestKitModalsListsOvulation = ({ data }: TestKitModalsListsOvulationProps)
     <>
       {data && (
         <div className="w-full flex items-center justify-between gap-1">
-          <TrashIcon className="w-6" style={{ stroke: colors.Error_Error }} onClick={deleteHandler} />
+          <TrashIcon className="w-6 stroke-impo_Error_Error" onClick={deleteHandler} />
 
           <div className="flex items-center gap-2">
-            <Typography scale="Lable" size="Medium">
+            <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
               {testScript(data.result)}
-            </Typography>
+            </Dark_Typography>
 
             <TestKitModalsListRangeSVG result={data.result} />
           </div>

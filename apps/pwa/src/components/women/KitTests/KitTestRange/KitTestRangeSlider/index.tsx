@@ -1,13 +1,9 @@
-import useTheme from '@hooks/useTheme';
-
 import { KIT_TEST_RANGE_DEFAULT_RANGE_VALUE } from '../constants';
 import KitTestRangeSVG from './KitTestRangeSVG';
 import { KIT_TEST_RANGE_SLIDER_HEIGHT, KIT_TEST_RANGE_SLIDER_THUMB_SIZE } from './constants';
 import { KitTestRangeSliderProps } from './types';
 
 const KitTestRangeSlider = ({ rangeValue, rangeValueHandler }: KitTestRangeSliderProps) => {
-  const { colors } = useTheme();
-
   return (
     <>
       <KitTestRangeSVG rangeValue={rangeValue} />
@@ -29,18 +25,13 @@ const KitTestRangeSlider = ({ rangeValue, rangeValueHandler }: KitTestRangeSlide
           style={{ right: KIT_TEST_RANGE_SLIDER_THUMB_SIZE, transform: `translateX(${rangeValue}%)` }}
         >
           <div
-            className="rounded-full border-[2px] flex items-center justify-center"
+            className="rounded-full border-[2px] flex items-center justify-center bg-impo_White border-impo_Neutral_Surface"
             style={{
-              backgroundColor: colors.White,
-              borderColor: colors.Neutral_Surface,
               width: KIT_TEST_RANGE_SLIDER_THUMB_SIZE,
               height: KIT_TEST_RANGE_SLIDER_THUMB_SIZE,
             }}
           >
-            <div
-              className="w-full h-full rounded-full"
-              style={{ backgroundColor: colors.Pink_500, opacity: rangeValue / 100 }}
-            />
+            <div className="w-full h-full rounded-full bg-impo_Pink_500" style={{ opacity: rangeValue / 100 }} />
           </div>
         </div>
 

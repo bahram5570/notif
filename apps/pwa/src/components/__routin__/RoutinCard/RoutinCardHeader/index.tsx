@@ -21,7 +21,7 @@ const RoutinCardHeader = ({
     } else if (percentage > 0 && percentage < 100) {
       return 'bg-impo_Yellow_100 dark:bg-impo_Yellow_800';
     } else {
-      return 'bg-impo_Primary_Primary dark:bg-impo_Pink_900';
+      return 'bg-impo_Pink_100 dark:bg-impo_Pink_900';
     }
   };
 
@@ -54,7 +54,7 @@ const RoutinCardHeader = ({
 
   return (
     <div
-      className={`w-full h-14 rounded-t-2xl flex flex-row-reverse items-center px-4 py-3 gap-2   mb-2 ${backgroundHandler()}`}
+      className={`w-full h-14 rounded-t-2xl flex flex-row-reverse items-center px-4 py-3 gap-2 bg-impo_Pink_100   mb-2 ${backgroundHandler()}`}
     >
       <div
         className={`flex justify-center items-center w-8 h-8 rounded-full aspect-square border border-impo_Neutral_Background dark:border-impo_White ${style.backgroundColor}`}

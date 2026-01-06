@@ -18,16 +18,12 @@ const PredictGenerator = (props: PredictGeneratorProps) => {
       ref={inViewRef}
     >
       <div className="flex flex-row-reverse items-center gap-2 w-44">
-        <CustomImage
-          src={props.icon}
-          width={45}
-          className="border-[1px] rounded-full border-impo_Neutral_Background dark:border-none"
-        />
+        <CustomImage src={props.icon} width={45} className="border-[1px] rounded-full border-impo_White" />
         <div className="flex flex-col justify-center items-end gap-2">
-          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+          <Dark_Typography fontSize="Lable_Large" className="text-impo_Black">
             {props.title}
           </Dark_Typography>
-          <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
+          <Dark_Typography fontSize="Body_Medium" className="text-impo_Grey_600">
             {props.trailingUp}
           </Dark_Typography>
         </div>
@@ -41,7 +37,7 @@ const PredictGenerator = (props: PredictGeneratorProps) => {
 
         {!props.showEyeIcon && (
           <>
-            <Dark_Typography fontSize="Body_Small" className="text-impo_Surface_Outline">
+            <Dark_Typography fontSize="Body_Small" className="text-impo_Grey_500">
               {props.trailingDown}
             </Dark_Typography>
           </>

@@ -1,8 +1,6 @@
 import { useEffect } from 'react';
 
-import { colorFormatConverter } from '@utils/scripts';
-
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 import useAnalytics from '@hooks/useAnalytics';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
@@ -32,17 +30,13 @@ const WidgetBabyCheckHistoryCardViewAll = ({ data }: WidgetBabyCheckHistoryCardV
   };
 
   return (
-    <Button
-      size="medium"
-      variant="fill"
-      className="mt-2"
-      color="FREE-STYLES"
+    <Dark_Button
+      className="mt-2 !bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnBackground"
       onClick={linkToHandler}
-      buttonColor={colorFormatConverter(data.button.backgroundColor)}
-      contentsColor={colorFormatConverter(data.button.foregroundColor)}
+      fontSize="Lable_Large"
     >
       {data.button.text}
-    </Button>
+    </Dark_Button>
   );
 };
 

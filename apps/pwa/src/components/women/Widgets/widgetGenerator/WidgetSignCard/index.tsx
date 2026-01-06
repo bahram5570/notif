@@ -15,7 +15,7 @@ const WidgetSignCard = ({ data }: WidgetSignCardProps) => {
     <WidgetCardContainer
       title={data.title}
       button={data.button}
-      classNameBtn="text-impo_White bg-impo_Pink_500 border-impo_Pink_500"
+      classNameBtn="text-impo_White !bg-impo_Pink_500 !border-impo_Pink_500"
       onClick={() => callEvent('Action_From_SignCard')}
     >
       <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">

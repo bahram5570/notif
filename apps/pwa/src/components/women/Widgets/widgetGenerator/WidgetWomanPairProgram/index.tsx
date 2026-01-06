@@ -6,8 +6,6 @@ import WomanPairRoutin from './WomanPairRoutin';
 import { WomanPairProgramCardPropsPropsType } from './type';
 
 const WidgetWomanPairProgram = ({ data }: WomanPairProgramCardPropsPropsType) => {
-  const { colors } = useTheme();
-
   const hasOOneWidget = data.items.length === 1;
 
   return (
@@ -16,8 +14,7 @@ const WidgetWomanPairProgram = ({ data }: WomanPairProgramCardPropsPropsType) =>
         {data.items.map((item, index) => (
           <div className="flex flex-row w-full" key={index}>
             <div
-              className={`rounded-2xl flex flex-col  justify-between p-4 ${hasOOneWidget ? 'w-full' : 'w-80'}`}
-              style={{ backgroundColor: colors.Surface_SurfaceVariant }}
+              className={`rounded-2xl flex flex-col  justify-between bg-impo_Surface_SurfaceVariant p-4 ${hasOOneWidget ? 'w-full' : 'w-80'}`}
             >
               <WomanPairRoutin {...item} />
             </div>
