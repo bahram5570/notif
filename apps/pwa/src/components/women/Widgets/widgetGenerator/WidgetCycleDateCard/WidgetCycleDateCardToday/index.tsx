@@ -1,7 +1,6 @@
 import ArrowIcon from '@assets/icons/filledArrow.svg';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { WidgetCycleDateCardTodayProps } from './types';
 
@@ -11,7 +10,6 @@ const WidgetCycleDateCardToday = ({
   percentRatio,
   isInLatePeriod,
 }: WidgetCycleDateCardTodayProps) => {
-  const { colors } = useTheme();
   const currentDayPosition = currentDay * percentRatio;
   const textWidth = isInLatePeriod ? 96 : 'fit-content';
 
@@ -21,11 +19,15 @@ const WidgetCycleDateCardToday = ({
         style={{ right: `${currentDayPosition > 100 ? 100 : currentDayPosition}%` }}
         className="absolute bottom-1 flex flex-col items-center translate-x-1/2"
       >
-        <Typography scale="Lable" size="SmallProminet" color="Surface_InverseSurface" style={{ width: textWidth }}>
+        <Dark_Typography
+          fontSize="Lable_SmallProminet"
+          className="text-impo_Surface_InverseSurface"
+          style={{ width: textWidth }}
+        >
           {currentDayLabel}
-        </Typography>
+        </Dark_Typography>
 
-        <ArrowIcon className="w-3 pt-[6px]" style={{ fill: colors.Surface_InverseSurface }} />
+        <ArrowIcon className="w-3 pt-[6px] fill-impo_Surface_InverseSurface" />
       </div>
     </div>
   );

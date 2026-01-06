@@ -1,17 +1,17 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { WidgetCycleDateCardLabelsProps } from './types';
 
 const WidgetCycleDateCardLabels = ({ startLabel, endLabel }: WidgetCycleDateCardLabelsProps) => {
   return (
     <div className="w-full flex justify-between pt-3">
-      <Typography scale="Lable" size="Small" color="Neutral_OnBackground">
+      <Dark_Typography fontSize="Lable_Small" className="text-impo_Neutral_OnBackground">
         {endLabel}
-      </Typography>
+      </Dark_Typography>
 
-      <Typography scale="Lable" size="Small" color="Neutral_OnBackground">
+      <Dark_Typography fontSize="Lable_Small" className="text-impo_Neutral_OnBackground">
         {startLabel}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

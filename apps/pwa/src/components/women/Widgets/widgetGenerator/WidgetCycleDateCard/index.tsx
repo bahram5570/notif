@@ -1,6 +1,4 @@
-import Typography from '@components/ui/Typography';
 import WidgetCardContainer from '@components/women/Widgets/WidgetCardContainer';
-import useTheme from '@hooks/useTheme';
 
 import WidgetCycleDateCardFertility from './WidgetCycleDateCardFertility';
 import WidgetCycleDateCardLabels from './WidgetCycleDateCardLabels';
@@ -11,8 +9,6 @@ import WidgetCycleDateCardToday from './WidgetCycleDateCardToday';
 import { WidgetCycleDateCardProps } from './types';
 
 const WidgetCycleDateCard = ({ data }: WidgetCycleDateCardProps) => {
-  const { colors } = useTheme();
-
   const percentRatio = 100 / data.cycleLength;
 
   return (
@@ -25,10 +21,7 @@ const WidgetCycleDateCard = ({ data }: WidgetCycleDateCardProps) => {
           isInLatePeriod={data.isInLatePeriod}
         />
 
-        <div
-          className="w-full h-[28px] p-[2px] rounded-full "
-          style={{ backgroundColor: colors.Surface_SurfaceVariant }}
-        >
+        <div className="w-full h-[28px] p-[2px] rounded-full bg-impo_Surface_SurfaceVariant ">
           <div className="relative w-full h-full flex items-center" style={{ direction: 'rtl' }}>
             <WidgetCycleDateCardPeriod
               startPeriodLable={data.startPeriodLable}

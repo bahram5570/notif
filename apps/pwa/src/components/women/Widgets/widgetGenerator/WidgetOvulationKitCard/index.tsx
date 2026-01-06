@@ -1,5 +1,6 @@
 import { currentDate } from '@utils/dates';
 
+import Dark_Typography from '@components/ui/Dark_Typography';
 import Typography from '@components/ui/Typography';
 import KitTestOvulation from '@components/women/KitTests/KitTestsContainer/KitTestOvulation';
 import KitTestsList from '@components/women/KitTests/KitTestsContainer/KitTestsList';
@@ -18,9 +19,9 @@ const WidgetOvulationKitCard = ({ data }: WidgetOvulationKitCardProps) => {
   return (
     <WidgetCardContainer title={updatedData.title}>
       <>
-        <Typography scale="Body" size="Medium" color="Neutral_OnBackground" className="w-full pb-5">
+        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground w-full pb-5">
           {updatedData.description}
-        </Typography>
+        </Dark_Typography>
 
         <KitTestOvulation moduleType={KitTestModuleTypeEnums.Ovulation} gregorianDate={gDate} onComplete={onAdd} />
 

@@ -22,12 +22,7 @@ const HealthReportContainer = () => {
   const backgroundColor = colorFormatConverter(data?.backgroundColor || colors.Grey_50);
 
   return (
-    <WomenPageLayout
-      rightElement="BackButton"
-      rightElementScript="گزارش سلامت"
-      backgroundColor={backgroundColor}
-      headerBackgroundColor={colors.White}
-    >
+    <WomenPageLayout rightElement="BackButton" rightElementScript="گزارش سلامت" className="bg-impo_Neutral_Surface">
       <div className="p-4">
         {isLoading && <HealthReportContainerSkeleton />}
 

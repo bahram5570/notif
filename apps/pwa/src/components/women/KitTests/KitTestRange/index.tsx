@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
 import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import KitTestRangeResult from './KitTestRangeResult';
 import KitTestRangeSlider from './KitTestRangeSlider';
@@ -23,20 +24,18 @@ const KitTestRange = ({ moduleType, subimtHandler, AnalytisId }: KitTestRangePro
 
       <KitTestRangeSlider rangeValue={rangeValue} rangeValueHandler={rangeValueHandler} />
 
-      <Typography scale="Body" size="Medium" className="mb-4 mt-2">
+      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground mb-4 mt-2">
         {kitTestScripts[moduleType].guideScript}
-      </Typography>
+      </Dark_Typography>
 
-      <Button
-        size="medium"
-        variant="fill"
-        color="primary"
+      <Dark_Button
         isDisable={!isValueSelected}
+        fontSize="Lable_Large"
         onClick={() => subimtHandler(rangeValue / 100)}
         id={AnalytisId}
       >
         ادامه
-      </Button>
+      </Dark_Button>
     </div>
   );
 };

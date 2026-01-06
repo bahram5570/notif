@@ -1,7 +1,6 @@
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
-import useTheme from '@hooks/useTheme';
 
 import PragnencyBreastfeedingGenerator from './PragnencyBreastfeedingGenerator';
 import { WidgetPragnencyBreastfeedingCardProps } from './types';
@@ -9,24 +8,22 @@ import { WidgetPragnencyBreastfeedingCardProps } from './types';
 const WidgetPragnencyBreastfeedingCard = ({ data }: WidgetPragnencyBreastfeedingCardProps) => {
   const { inViewRef } = useAnalytics({ inView_eventName: 'PregnancyWidgetSeenMoreThan5Sec' });
 
-  const { colors } = useTheme();
-
-  const backgroundColor = colors.Neutral_Background.toLowerCase() + 'b3';
+  // const backgroundColor = colors.Neutral_Background.toLowerCase() + 'b3';
 
   return (
     <div className="px-4 pt-6">
-      <div className="flex flex-col gap-2 w-full py-2 px-3 rounded-xl" style={{ backgroundColor }} ref={inViewRef}>
+      <div className="flex flex-col gap-2 w-full py-2 px-3 rounded-xl bg-impo_Neutral_Background" ref={inViewRef}>
         <div className="flex gap-3 justify-center items-center">
           <div className="flex flex-col items-end gap-2 w-full pt-5">
-            <Typography scale="Title" size="Small">
+            <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
               {data.title}
-            </Typography>
+            </Dark_Typography>
 
-            <Typography scale="Body" size="Medium" color="Surface_Outline">
+            <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_Outline">
               {data.description}
-            </Typography>
+            </Dark_Typography>
 
-            <div className="w-full h-[1px] block" style={{ backgroundColor: colors.Neutral_Surface }} />
+            <div className="w-full h-[1px] block bg-impo_Neutral_Surface" />
 
             {data.tiles.map((item, index) => (
               <PragnencyBreastfeedingGenerator {...item} key={index} />
@@ -36,12 +33,12 @@ const WidgetPragnencyBreastfeedingCard = ({ data }: WidgetPragnencyBreastfeeding
           <CustomImage src={data.image} width={150} objectFit="cover" />
         </div>
 
-        <div className="w-full h-[1px] block" style={{ backgroundColor: colors.Neutral_Surface }} />
+        <div className="w-full h-[1px] block bg-impo_Neutral_Surface" />
 
         <div className="flex items-center justify-end gap-2">
-          <Typography scale="Lable" size="Large">
+          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground text-right">
             {data.trailing}
-          </Typography>
+          </Dark_Typography>
 
           {data.trailingIcon && <CustomImage src={data.trailingIcon} width={56} className="rounded-full" />}
         </div>

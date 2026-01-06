@@ -1,26 +1,24 @@
 import CloseIcon from '@assets/icons/plus.svg';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { useRouter } from 'next/navigation';
 
 import { TestKitModalsContainerProps } from './types';
 
 const TestKitModalsContainer = ({ title, children }: TestKitModalsContainerProps) => {
   const router = useRouter();
-  const { colors } = useTheme();
 
   return (
     <div className="flex flex-col items-center">
-      <div className="w-[72px] h-1 rounded-full" style={{ backgroundColor: colors.Surface_OutlineVariant }} />
+      <div className="w-[72px] h-1 rounded-full bg-impo_Surface_OutlineVariant" />
 
       <div className="relative flex justify-center items-center h-12 w-full mb-4 mt-2">
-        <Typography scale="Title" size="Small">
+        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           {title}
-        </Typography>
+        </Dark_Typography>
 
         <div className="w-12 h-12 flex items-center justify-center absolute top-0 left-0" onClick={() => router.back()}>
-          <CloseIcon className="w-6 h-auto rotate-45 cursor-pointer" style={{ stroke: colors.Neutral_OnSurface }} />
+          <CloseIcon className="w-6 h-auto rotate-45 cursor-pointer stroke-impo_Neutral_OnSurface" />
         </div>
       </div>
 

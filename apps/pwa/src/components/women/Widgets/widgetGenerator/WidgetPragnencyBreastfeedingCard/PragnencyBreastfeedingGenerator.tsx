@@ -2,14 +2,11 @@ import EyeIcon from '@assets/icons/eye.svg';
 import { colorFormatConverter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { PragnencyBreastfeedingGeneratorProps } from './types';
 
 const PragnencyBreastfeedingGenerator = (props: PragnencyBreastfeedingGeneratorProps) => {
-  const { colors } = useTheme();
-
   return (
     <div className={`flex items-center gap-1 ${props.text.length >= 20 ? 'flex-col-reverse' : ''}`}>
       {props.showEyeIcon && (
@@ -17,21 +14,16 @@ const PragnencyBreastfeedingGenerator = (props: PragnencyBreastfeedingGeneratorP
       )}
 
       {!props.showEyeIcon && (
-        <Typography scale="Body" size="Medium">
+        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-right">
           {props.text}
-        </Typography>
+        </Dark_Typography>
       )}
 
-      <Typography scale="Lable" size="Large">
+      <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground text-right">
         {props.name}
-      </Typography>
+      </Dark_Typography>
 
-      <CustomImage
-        src={props.icon}
-        width={32}
-        className="rounded-full"
-        style={{ backgroundColor: colors.Surface_SurfaceVariant }}
-      />
+      <CustomImage src={props.icon} width={32} className="rounded-full bg-impo_Surface_SurfaceVariant" />
     </div>
   );
 };

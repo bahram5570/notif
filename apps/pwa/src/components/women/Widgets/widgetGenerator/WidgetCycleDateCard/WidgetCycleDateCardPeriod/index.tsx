@@ -1,5 +1,4 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { WidgetCycleDateCardPeriodProps } from './types';
 
@@ -9,24 +8,20 @@ const WidgetCycleDateCardPeriod = ({
   percentRatio,
   periodEnd,
 }: WidgetCycleDateCardPeriodProps) => {
-  const { colors } = useTheme();
-
   return (
     <div
-      className="absolute top-0 bottom-0 flex items-center justify-between h-full px-2 rounded-full"
+      className="absolute top-0 bottom-0 flex items-center justify-between h-full px-2 rounded-full bg-impo_Pink_500"
       style={{
-        backgroundColor: colors.PrimaryWoman_Primary,
         width: `${percentRatio * periodEnd}%`,
         right: '0%',
       }}
     >
-      <Typography scale="Lable" size="Medium" color="Neutral_Background">
+      <Dark_Typography fontSize="Lable_Medium" className="text-impo_White">
         {startPeriodLable}
-      </Typography>
-
-      <Typography scale="Lable" size="Medium" color="Neutral_Background">
+      </Dark_Typography>
+      <Dark_Typography fontSize="Lable_Medium" className="text-impo_White">
         {endPeriodLabel}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

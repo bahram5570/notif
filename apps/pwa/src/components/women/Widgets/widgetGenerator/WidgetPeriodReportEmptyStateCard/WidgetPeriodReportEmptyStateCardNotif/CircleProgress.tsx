@@ -1,11 +1,8 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { CircleProgressProps } from './types';
 
 const CircleProgress = ({ days, percent }: CircleProgressProps) => {
-  const { colors } = useTheme();
-
   const zeroPercent = 471;
   const hundredPercent = 71;
   const totalPercent = zeroPercent - hundredPercent;
@@ -14,14 +11,11 @@ const CircleProgress = ({ days, percent }: CircleProgressProps) => {
   const resultPercent = -(totalPercent * filledPercent - zeroPercent);
 
   return (
-    <div
-      className="relative w-[48px] h-[48px] min-w-[48px] min-h-[48px] overflow-hidden flex items-center justify-center rounded-full"
-      style={{ backgroundColor: colors.White }}
-    >
+    <div className="relative w-[48px] h-[48px] min-w-[48px] min-h-[48px] overflow-hidden flex items-center justify-center rounded-full bg-impo_White">
       <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-        <Typography scale="Lable" size="Small" color="Black">
+        <Dark_Typography fontSize="Lable_Small" className="text-impo_Black">
           {`${days} روز`}
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <svg
@@ -39,7 +33,7 @@ const CircleProgress = ({ days, percent }: CircleProgressProps) => {
           strokeLinecap="round"
           strokeDasharray="471px"
           strokeDashoffset={resultPercent}
-          stroke={colors.PrimaryWoman_Primary}
+          className=" !stroke-impo_Primary_Primary"
         />
       </svg>
     </div>

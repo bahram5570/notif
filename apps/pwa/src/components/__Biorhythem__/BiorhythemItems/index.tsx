@@ -1,28 +1,26 @@
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { BiorhythmItemsPropsType } from './type';
 
 const BiorhythemItems = ({ items }: BiorhythmItemsPropsType) => {
-  const { colors } = useTheme();
-
   return (
     <>
       {items.map((item, index) => {
         const iconUrl = item.icon;
         return (
-          <div style={{ backgroundColor: colors.Neutral_Background }} className="rounded-2xl p-3" key={index}>
+          <div className="rounded-2xl p-3 bg-impo_Neutral_Surface" key={index}>
             <div className="flex flex-col gap-2 items-end">
               <div className="flex gap-2 items-center">
-                <Typography scale="Lable" size="Medium">
+                <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
                   {item.title}
-                </Typography>
+                </Dark_Typography>
+
                 <CustomImage src={iconUrl} className="w-10 h-10" />
               </div>
-              <Typography scale="Body" size="Small">
+              <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
                 {item.description}
-              </Typography>
+              </Dark_Typography>
             </div>
           </div>
         );

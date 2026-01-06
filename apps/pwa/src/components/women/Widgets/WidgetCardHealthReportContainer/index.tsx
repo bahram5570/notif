@@ -1,38 +1,35 @@
-import { colorFormatConverter } from '@utils/scripts';
-
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
 import { WidgetCardHealthReportContainerProps } from './types';
 
-const WidgetCardHealthReportContainer = ({ children, button, title }: WidgetCardHealthReportContainerProps) => {
-  const { colors } = useTheme();
+const WidgetCardHealthReportContainer = ({
+  children,
+  button,
+  title,
+  classNameBtn,
+}: WidgetCardHealthReportContainerProps) => {
   const { actionHandler } = useWidgetActions();
 
   return (
-    <div className="w-full h-fit rounded-2xl p-4" style={{ backgroundColor: colors.White }}>
-      <Typography scale="Lable" size="Large" color="Neutral_OnBackground" className="pb-1 ml-auto">
+    <div className="w-full h-fit rounded-2xl p-4 bg-impo_Neutral_Background">
+      <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground pb-1 ml-auto">
         {title}
-      </Typography>
+      </Dark_Typography>
 
       <>{children}</>
 
       {button && (
-        <Button
-          size="medium"
-          variant="fill"
-          className="mt-4"
-          color="FREE-STYLES"
+        <Dark_Button
+          className={`mt-4 ${classNameBtn}`}
           onClick={() => actionHandler(button.action)}
-          buttonColor={colorFormatConverter(button.backgroundColor)}
-          contentsColor={colorFormatConverter(button.foregroundColor)}
           isDisable={button?.action.actionType === ActionTypeEnum.None}
+          fontSize="Lable_Large"
         >
           {button.text}
-        </Button>
+        </Dark_Button>
       )}
     </div>
   );

@@ -4,4 +4,5 @@ export interface WidgetCardHealthReportContainerProps {
   button?: WidgetsButtonTypes;
   children: React.ReactNode;
   title: string;
+  classNameBtn?: string;
 }

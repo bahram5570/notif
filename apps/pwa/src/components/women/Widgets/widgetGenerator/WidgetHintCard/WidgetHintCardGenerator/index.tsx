@@ -1,5 +1,4 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import WidgetHintCardBookmark from './WidgetHintCardBookmark';
 import WidgetHintCardLinkTo from './WidgetHintCardLinkTo';
@@ -8,14 +7,12 @@ import useIsSeen from './__hooks__/useIsSeen';
 import { WidgetHintCardGeneratorProps } from './types';
 
 const WidgetHintCardGenerator = (props: WidgetHintCardGeneratorProps) => {
-  const { colors } = useTheme();
   const { ref } = useIsSeen({ isSeen: props.isSeen, minReadingDuration: props.minReadingDuration, id: props.id });
 
   return (
     <div
       ref={ref}
-      style={{ borderColor: colors.Neutral_Surface }}
-      className={`w-full flex flex-col items-end gap-1 ${props.isLastChild ? '' : 'border-b-[1px] pb-3'}`}
+      className={`w-full flex flex-col items-end gap-1 border-impo_Neutral_Surface ${props.isLastChild ? '' : 'border-b-[1px] pb-3'}`}
     >
       <WidgetHintCardGeneratorWriterInfo
         writerName={props.writerName}
@@ -23,9 +20,9 @@ const WidgetHintCardGenerator = (props: WidgetHintCardGeneratorProps) => {
         writerSpeciality={props.writerSpeciality}
       />
 
-      <Typography scale="Body" size="Medium" color="Neutral_OnBackground">
+      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
         {props.text}
-      </Typography>
+      </Dark_Typography>
 
       <div className="w-full flex items-center gap-2">
         <WidgetHintCardBookmark isBookmarked={props.isBookmarked} id={props.id} />

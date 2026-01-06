@@ -1,10 +1,6 @@
-import useTheme from '@hooks/useTheme';
-
 import { KitTestRangeSVGProps } from './types';
 
 const KitTestRangeSVG = ({ rangeValue }: KitTestRangeSVGProps) => {
-  const { colors } = useTheme();
-
   return (
     <div className="relative w-full mb-4">
       <div className="absolute bottom-[8%] left-[1px] right-[1px] h-[33%] bg-transparent shadow-[0_0_15px_0_rgba(0,0,0,0.3)]" />
@@ -22,9 +18,9 @@ const KitTestRangeSVG = ({ rangeValue }: KitTestRangeSVGProps) => {
           <rect
             width="26"
             height="8"
-            fill={colors.Pink_500}
             opacity={rangeValue / 100}
             transform="matrix(-4.37114e-08 -1 -1 4.37114e-08 144.004 72)"
+            className="!fill-impo_Pink_500"
           />
           <rect width="27" height="8" transform="matrix(-4.37114e-08 -1 -1 4.37114e-08 177.004 73)" fill="#DA2672" />
           <path

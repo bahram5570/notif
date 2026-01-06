@@ -2,8 +2,6 @@ import PartyingFaceIcon from '@assets/icons/Partying Face.svg';
 import SmilingFaceIcon from '@assets/icons/Smiling Face.svg';
 import ThinkingFaceIcon from '@assets/icons/Thinking Face.svg';
 
-import useTheme from '@hooks/useTheme';
-
 import RoutinBookmarked from './RoutinBookmarked';
 import RoutinProgressBar from './RoutinProgressBar';
 import { RoutinCardHeaderPropsType } from './type';
@@ -15,40 +13,38 @@ const RoutinCardHeader = ({
   programId,
   showBookmark = false,
 }: RoutinCardHeaderPropsType) => {
-  const { colors } = useTheme();
-
   const percentage = completeRatio * 100;
 
   const backgroundHandler = () => {
     if (percentage === 100) {
-      return colors.Success_SuccessContainer;
+      return 'bg-impo_Success_SuccessContainer dark:bg-impo_Success_OnSuccessContainer';
     } else if (percentage > 0 && percentage < 100) {
-      return colors.Yellow_100;
+      return 'bg-impo_Yellow_100 dark:bg-impo_Yellow_800';
     } else {
-      return colors.PrimaryWoman_PrimaryContainer;
+      return 'bg-impo_Pink_100 dark:bg-impo_Pink_900';
     }
   };
 
   const circleContent = () => {
     if (percentage === 100) {
       return {
-        icon: <PartyingFaceIcon className="w-4 h-4" />,
+        icon: <PartyingFaceIcon className="w-4 h-4  " />,
         style: {
-          backgroundColor: colors.Success_Success,
+          backgroundColor: 'bg-impo_Success_Success',
         },
       };
     } else if (percentage > 0 && percentage < 100) {
       return {
         icon: <SmilingFaceIcon className="w-4 h-4" />,
         style: {
-          backgroundColor: colors.Yellow_500,
+          backgroundColor: 'bg-impo_Yellow_500',
         },
       };
     } else {
       return {
         icon: <ThinkingFaceIcon className="w-4 h-4" />,
         style: {
-          backgroundColor: colors.Pink_400,
+          backgroundColor: 'bg-impo_Pink_400',
         },
       };
     }
@@ -58,12 +54,10 @@ const RoutinCardHeader = ({
 
   return (
     <div
-      style={{ backgroundColor: backgroundHandler() }}
-      className="w-full h-14 rounded-t-2xl flex flex-row-reverse items-center px-4 py-3 gap-2  mb-2"
+      className={`w-full h-14 rounded-t-2xl flex flex-row-reverse items-center px-4 py-3 gap-2 bg-impo_Pink_100   mb-2 ${backgroundHandler()}`}
     >
       <div
-        className="flex justify-center items-center w-8 h-8 rounded-full aspect-square"
-        style={{ backgroundColor: style.backgroundColor, border: `1px solid ${colors.Neutral_Background}` }}
+        className={`flex justify-center items-center w-8 h-8 rounded-full aspect-square border border-impo_Neutral_Background dark:border-impo_White ${style.backgroundColor}`}
       >
         {icon}
       </div>

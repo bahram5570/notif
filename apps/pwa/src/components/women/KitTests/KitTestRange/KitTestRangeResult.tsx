@@ -1,5 +1,4 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import {
   KIT_TEST_RANGE_HIGH_LIMIT,
@@ -10,8 +9,6 @@ import {
 import { KitTestRangeResultProps } from './types';
 
 const KitTestRangeResult = ({ moduleType, rangeValue, isValueSelected }: KitTestRangeResultProps) => {
-  const { colors } = useTheme();
-
   let result = '';
 
   if (isValueSelected) {
@@ -26,16 +23,15 @@ const KitTestRangeResult = ({ moduleType, rangeValue, isValueSelected }: KitTest
 
   return (
     <div
-      className="w-full pt-[10px] flex flex-col items-center rounded-lg mb-6"
-      style={{ backgroundColor: colors.Neutral_Surface, height: KIT_TEST_RANGE_RESULT_HEIGHT }}
+      className="w-full pt-[10px] flex flex-col items-center rounded-lg mb-6 bg-impo_Neutral_Surface"
+      style={{ height: KIT_TEST_RANGE_RESULT_HEIGHT }}
     >
-      <Typography scale="Title" size="Small">
+      <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
         نتیجه تست
-      </Typography>
-
-      <Typography scale="Body" size="Medium">
+      </Dark_Typography>
+      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
         {result}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };
