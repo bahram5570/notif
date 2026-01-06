@@ -2,7 +2,6 @@ import TrashIcon from '@assets/icons/trash.svg';
 
 import { SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME } from '@components/women/pages/mainRoutes/shareExperience/constants';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import ShareExperienceApproveModalsModule from '../../ShareExperienceModules/ShareExperienceApproveModalsModule';
 import useCommentDelete from './__hooks__/useCommentDelete';
@@ -12,7 +11,6 @@ import { DELETE_MODAL_SCRIPTS } from './constants';
 import { QueriesDataTypes } from './types';
 
 const ShareExperienceDeleteModal = () => {
-  const { colors } = useTheme();
   const { getQueryParams } = useQueryParamsHandler();
 
   const { replyApplyHandler, isReplyLoading } = useReplyDelete();
@@ -51,11 +49,8 @@ const ShareExperienceDeleteModal = () => {
   const idDelete = isExperience ? 'Delete_Experience ' : isComment ? 'shareExperienceDeleteComment' : '';
 
   const Icon = (
-    <div
-      className="flex items-center justify-center w-10 h-10 rounded-full"
-      style={{ backgroundColor: colors.Error_ErrorContainer }}
-    >
-      <TrashIcon className="w-7" style={{ stroke: colors.Error_Error }} />
+    <div className="flex items-center justify-center w-10 h-10 rounded-full bg-impo_Error_ErrorContainer">
+      <TrashIcon className="w-7 stroke-impo_Error_Error" />
     </div>
   );
 

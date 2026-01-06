@@ -2,8 +2,7 @@ import UploadIcon from '@assets/icons/gallery.svg';
 import CrossIcon from '@assets/icons/plus.svg';
 
 import CustomImage from '@components/ui/CustomImage';
-import Spinner from '@components/ui/Spinner';
-import useTheme from '@hooks/useTheme';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
 
 import { ShareExperienceNewFileProps } from './types';
 
@@ -11,11 +10,9 @@ const ShareExperienceNewFile = ({
   uploadImageLoading,
   removeFileHandler,
   fileDataHandler,
-  imageFile,
   onChangeBtnTop,
+  imageFile,
 }: ShareExperienceNewFileProps) => {
-  const { colors } = useTheme();
-
   const clickHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChangeBtnTop) {
       onChangeBtnTop();
@@ -32,16 +29,15 @@ const ShareExperienceNewFile = ({
           {!uploadImageLoading && (
             <div
               onClick={removeFileHandler}
-              style={{ backgroundColor: colors.Neutral_OnSurface }}
-              className="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center"
+              className="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center bg-impo_Neutral_OnSurface"
             >
-              <CrossIcon className="w-7 h-auto rotate-45" style={{ stroke: colors.White }} />
+              <CrossIcon className="w-7 h-auto rotate-45 stroke-impo_Neutral_OnBackground" />
             </div>
           )}
 
           {uploadImageLoading && (
             <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center backdrop-blur-md rounded-xl">
-              <Spinner color="surface" />
+              <Dark_Spinner className="border-impo_Neutral_Surface" />
             </div>
           )}
         </div>
@@ -49,7 +45,7 @@ const ShareExperienceNewFile = ({
 
       {!imageFile && (
         <div className="relative ml-auto">
-          <UploadIcon className="w-5 h-auto" style={{ stroke: colors.Surface_Outline }} />
+          <UploadIcon className="w-5 h-auto stroke-impo_Surface_Outline" />
 
           <input
             type="file"

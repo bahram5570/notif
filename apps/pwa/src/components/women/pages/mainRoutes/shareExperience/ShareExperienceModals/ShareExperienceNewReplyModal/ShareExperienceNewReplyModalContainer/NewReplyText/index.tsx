@@ -4,13 +4,10 @@ import { toPersianNumbers } from '@utils/numbers';
 
 import styles from './styles.module.css';
 
-import useTheme from '@hooks/useTheme';
-
 import { NEW_REPLY_MAX_CHARACTERS } from '../constants';
 import { NewReplyTextProps } from './types';
 
 const NewReplyText = ({ text, textHandler, onChangeBtnTop }: NewReplyTextProps) => {
-  const { typography } = useTheme();
   const textAreaRef = useRef<HTMLTextAreaElement | null>(null);
 
   const valueHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -36,12 +33,10 @@ const NewReplyText = ({ text, textHandler, onChangeBtnTop }: NewReplyTextProps) 
     <textarea
       rows={4}
       value={text}
-      onChange={valueHandler}
-      className={styles.textarea}
-      style={{ ...typography.Body.Medium }}
-      placeholder="نظرت رو اینجا بنویس..."
       ref={textAreaRef}
-      // onBlur={() => onChangeBtnTop(undefined)}
+      onChange={valueHandler}
+      placeholder="نظرت رو اینجا بنویس..."
+      className={`bg-impo_Neutral_Background text-impo_Neutral_OnBackground ${styles.textarea}`}
     />
   );
 };

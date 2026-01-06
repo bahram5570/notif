@@ -1,17 +1,15 @@
 import ArrowIcon from '@assets/icons/arrowElbowDown.svg';
 
-import Spinner from '@components/ui/Spinner';
-import Typography from '@components/ui/Typography';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { NewReplyQueriesTypes } from '@components/women/pages/mainRoutes/shareExperience/ShareExperienceModals/ShareExperienceNewReplyModal/types';
 import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@components/women/pages/mainRoutes/shareExperience/constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import { ReplyBtnProps } from './types';
 
 const ReplyBtn = ({ avatar, name, shareId, commentId, userId }: ReplyBtnProps) => {
-  const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
@@ -35,20 +33,20 @@ const ReplyBtn = ({ avatar, name, shareId, commentId, userId }: ReplyBtnProps) =
     <>
       <div
         onClick={clickHandler}
-        className="relative flex items-center justify-center gap-[2px] w-[72px] h-[30px] rounded-full py-1"
-        style={{
-          backgroundColor: colors.Neutral_Surface,
-        }}
+        className="relative flex items-center justify-center gap-[2px] w-[72px] h-[30px] rounded-full bg-impo_Neutral_Surface py-1"
       >
-        <Typography scale="Lable" size="Small" color="Neutral_OnSurface" style={{ opacity: isLoading ? 0 : 1 }}>
+        <Dark_Typography
+          fontSize="Lable_Small"
+          className={`text-impo_Neutral_OnSurface ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+        >
           پاسخ
-        </Typography>
+        </Dark_Typography>
 
-        <ArrowIcon className="w-4" style={{ fill: colors.Surface_Outline, opacity: isLoading ? 0 : 1 }} />
+        <ArrowIcon className={`w-4 fill-impo_Surface_Outline ${isLoading ? 'opacity-0' : 'opacity-100'}`} />
 
         {isLoading && (
           <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center pointer-events-none">
-            <Spinner color="outline" width={16} />
+            <Dark_Spinner className="border-impo_Surface_Outline" size={16} />
           </div>
         )}
       </div>

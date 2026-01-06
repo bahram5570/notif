@@ -3,12 +3,10 @@ import ThreeDotsIcon from '@assets/icons/threeDots.svg';
 import { SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME } from '@components/women/pages/mainRoutes/shareExperience/constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import { ShareExperienceReportModuleProps } from './types';
 
 const ShareExperienceReportModule = (props: ShareExperienceReportModuleProps) => {
-  const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
@@ -20,7 +18,7 @@ const ShareExperienceReportModule = (props: ShareExperienceReportModuleProps) =>
 
   return (
     <div className="w-10 flex justify-center" onClick={selectHandler}>
-      <ThreeDotsIcon className="w-1" style={{ fill: colors.Surface_InverseSurface }} />
+      <ThreeDotsIcon className="w-1 fill-impo_Surface_InverseSurface" />
     </div>
   );
 };

@@ -3,11 +3,10 @@ import { useEffect, useRef, useState } from 'react';
 import EditIcon from '@assets/icons/Pen 2.svg';
 import InfoIcon from '@assets/icons/info.svg';
 
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import useTheme from '@hooks/useTheme';
 
 import ShareExperienceAvatarModule from '../../../ShareExperienceModules/ShareExperienceAvatarModule';
 import useUpdateProfile from '../../ShareExperienceChangeAvatarModal/ShareExperienceChangeAvatarModalContainer/__hooks__/useUpdateProfile';
@@ -16,7 +15,6 @@ import { ShareExperienceEditProfileModalContainerPropsType } from './type';
 
 const ShareExperienceEditProfileModalContainer = ({ id }: ShareExperienceEditProfileModalContainerPropsType) => {
   const { profileData } = useGetData(id);
-  const { colors } = useTheme();
   const inputRef = useRef<HTMLInputElement>(null);
   const [userName, setUserName] = useState<string>('');
   const { onProfileChangeHandler, isLoading } = useUpdateProfile();
@@ -55,42 +53,44 @@ const ShareExperienceEditProfileModalContainer = ({ id }: ShareExperienceEditPro
             showChangeAvatarIcon={true}
             id={profileData.profile.id}
           />
+
           <div className="flex flex-col gap-3 mt-3">
             <div className="flex flex-col justify-end items-end gap-2">
-              <Typography scale="Body" size="Medium" className="px-3">
+              <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground px-3">
                 نام کاربری
-              </Typography>
+              </Dark_Typography>
+
               <div className="flex flex-wrap-reverse justify-between border rounded-xl px-4 py-3 w-full">
-                <EditIcon className="w-5 h-5" style={{ fill: colors.Neutral_OnBackground }} />
+                <EditIcon className="w-5 h-5 fill-impo_Neutral_OnBackground" />
+
                 <input
                   type="text"
-                  className=""
-                  value={userName}
-                  onChange={onUserChangeHandler}
                   ref={inputRef}
+                  value={userName}
                   onKeyUp={handleKeyDown}
+                  onChange={onUserChangeHandler}
+                  className="text-impo_Neutral_OnBackground bg-impo_Transparent"
                 />
               </div>
             </div>
-            <div className="rounded-lg flex flex-row gap-2 p-1" style={{ background: colors.Warning_WarininContainer }}>
-              <Typography scale="Body" size="Small">
+            <div className="rounded-lg flex flex-row gap-2 p-1 bg-impo_Warning_WarininContainer">
+              <Dark_Typography fontSize="Body_Small" className="text-impo_Black">
                 {profileData.usernameHintText}
-              </Typography>
-              <InfoIcon className="w-5 h-5" style={{ stroke: colors.Warning_Warning }} />
+              </Dark_Typography>
+
+              <InfoIcon className="w-5 h-5 stroke-impo_Warning_Warning" />
             </div>
           </div>
 
-          <Button
-            size="medium"
-            variant="fill"
-            color="primary"
+          <Dark_Button
             className="mt-auto"
             isLoading={isLoading}
             onClick={clickHandler}
+            fontSize="Lable_Large"
             isDisable={profileData.profile.username === userName}
           >
             ثبت تغییرات
-          </Button>
+          </Dark_Button>
         </div>
       )}
     </WomenPageLayout>

@@ -1,7 +1,5 @@
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
-import Spinner from '@components/ui/Spinner';
 import { FOOTER_HEIGTH } from '@components/women/WomenFooter/constants';
-import useTheme from '@hooks/useTheme';
 
 import ShareExperienceChangeAvatarModal from '../../ShareExperienceModals/ShareExperienceChangeAvatarModal';
 import ShareExperienceCommentsModal from '../../ShareExperienceModals/ShareExperienceCommentsModal';
@@ -26,7 +24,6 @@ const ShareExperienceExperiences = ({
   selectedCategoryId,
   profile,
 }: ShareExperienceExperiencesProps) => {
-  const { colors } = useTheme();
   const { shareExperienceOrdersList } = useShareExperienceOrders();
   const { isLoading, experiencesData, pageNo, totalCount, updatePageNo } = useExperiences(selectedCategoryId);
 
@@ -39,10 +36,7 @@ const ShareExperienceExperiences = ({
             avatarImage={profile.avatarImage}
             username={profile.username}
           />
-          <ShareExperienceCommentsModal
-            // expirences={experiencesData.expirences}
-            shareExperienceOrdersList={shareExperienceOrdersList}
-          />
+          <ShareExperienceCommentsModal shareExperienceOrdersList={shareExperienceOrdersList} />
           <ShareExperienceUnfollowModal />
           <ShareExperienceNewReplyModal />
           <ShareExperienceReportModal />
@@ -54,21 +48,18 @@ const ShareExperienceExperiences = ({
           <ShareExperienceEditProfileModal />
         </>
       )}
+
       <InfiniteScrollContainer
-        isLoading={isLoading}
         pageNo={pageNo}
+        height={'100dvh'}
+        isLoading={isLoading}
         totalCount={totalCount}
         callBack={updatePageNo}
         className="flex flex-col px-4 relative"
         style={{ paddingBottom: FOOTER_HEIGTH * 2 }}
-        height={'100dvh'}
       >
         {experiencesData?.expirences.map((item, index) => (
-          <div
-            key={index}
-            className="w-full border-t-[1px] pt-5 pb-4 z-0"
-            style={{ borderTopColor: colors.Surface_SurfaceVariant }}
-          >
+          <div key={index} className="w-full border-t-[1px] border-t-impo_Surface_SurfaceVariant pt-5 pb-4 z-0">
             <ShareExperienceTopPart {...item} />
 
             <div className="w-full pr-10">

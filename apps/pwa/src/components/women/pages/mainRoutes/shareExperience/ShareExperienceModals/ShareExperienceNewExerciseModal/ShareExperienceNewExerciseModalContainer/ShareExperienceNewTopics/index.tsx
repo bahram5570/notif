@@ -1,14 +1,13 @@
-import Button from '@components/ui/Button';
 import CustomModal from '@components/ui/CustomModal';
-import Spinner from '@components/ui/Spinner';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME } from '@components/women/pages/mainRoutes/shareExperience/constants';
 import useAnalytics from '@hooks/useAnalytics';
 import useOverflowHandler from '@hooks/useOverflowHandler';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import ShareExperienceNewTopicsGenerator from './ShareExperienceNewTopicsGenerator';
 import { ShareExperienceNewTopicsProps } from './types';
@@ -23,7 +22,6 @@ const ShareExperienceNewTopics = ({
 }: ShareExperienceNewTopicsProps) => {
   const { callEvent } = useAnalytics();
   const { getQueryParams } = useQueryParamsHandler();
-  const { colors } = useTheme();
   const isOpen = getQueryParams(SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME) !== null;
   useOverflowHandler(isOpen);
 
@@ -50,20 +48,15 @@ const ShareExperienceNewTopics = ({
           <div className="flex flex-col h-[calc(100dvh_-_48px)]" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
             {isLoading && (
               <div className="w-full flex justify-center">
-                <Spinner color="onBackground" />
+                <Dark_Spinner className="border-impo_Neutral_OnBackground" />
               </div>
             )}
 
             {!isLoading && topicsData && (
               <>
-                <Typography
-                  scale="Body"
-                  size="Medium"
-                  color="Neutral_OnBackground"
-                  className="pb-6 ml-auto !w-full flex justify-start items-start"
-                >
+                <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground pb-6 ml-auto">
                   این تجربه مربوط به کدوم تالاره؟
-                </Typography>
+                </Dark_Typography>
 
                 {topicsData.map((item, index) => (
                   <ShareExperienceNewTopicsGenerator
@@ -76,20 +69,15 @@ const ShareExperienceNewTopics = ({
                   />
                 ))}
 
-                <div
-                  className=" sticky bottom-0 left-0 right-0 top-0 mx-auto w-full mt-auto px-4 py-6 z-[1000] "
-                  style={{ backgroundColor: colors.White }}
-                >
-                  <Button
-                    size="medium"
-                    variant="fill"
-                    color="primary"
+                <div className="sticky bottom-0 left-0 right-0 top-0 mx-auto w-full mt-auto px-4 py-6 bg-impo_Neutral_Background z-[1000]">
+                  <Dark_Button
                     onClick={clickHandler}
                     isLoading={isSubmitLoading}
                     isDisable={topicId === null}
+                    fontSize="Lable_Large"
                   >
                     ثبت تجربه
-                  </Button>
+                  </Dark_Button>
                 </div>
               </>
             )}

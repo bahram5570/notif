@@ -4,13 +4,10 @@ import { toPersianNumbers } from '@utils/numbers';
 
 import styles from './styles.module.css';
 
-import useTheme from '@hooks/useTheme';
-
 import { SHARE_EXPERIENCE_NEW_MAX_CHARACTERS } from '../constants';
 import { ShareExperienceNewTextProps } from './types';
 
 const ShareExperienceNewText = ({ text, textHandler }: ShareExperienceNewTextProps) => {
-  const { typography } = useTheme();
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const valueHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -36,9 +33,8 @@ const ShareExperienceNewText = ({ text, textHandler }: ShareExperienceNewTextPro
       value={text}
       ref={textareaRef}
       onChange={valueHandler}
-      className={styles.textarea}
-      style={{ ...typography.Body.Medium }}
       placeholder="تجربت رو اینجا بنویس..."
+      className={`bg-impo_Neutral_Background text-impo_Neutral_OnBackground ${styles.textarea}`}
     />
   );
 };

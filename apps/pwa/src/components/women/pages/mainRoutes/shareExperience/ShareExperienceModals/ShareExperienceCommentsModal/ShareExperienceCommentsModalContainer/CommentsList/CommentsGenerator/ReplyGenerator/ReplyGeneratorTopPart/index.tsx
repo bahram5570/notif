@@ -1,4 +1,4 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import ShareExperienceProfileIconModule from '@components/women/pages/mainRoutes/shareExperience/ShareExperienceModules/ShareExperienceProfileIconModule';
 import useShareExperiencePassedTime from '@components/women/pages/mainRoutes/shareExperience/__hooks__/useShareExperiencePassedTime';
 
@@ -10,13 +10,11 @@ const ReplyGeneratorTopPart = (props: ReplyGeneratorTopPartProps) => {
   return (
     <div className="flex gap-2">
       <div className="flex gap-1">
-        <Typography scale="Lable" size="Small" color="Grey_500">
-          {`. ${timeScript}`}
-        </Typography>
+        <Dark_Typography fontSize="Lable_Small" className="text-impo_Grey_500">{`. ${timeScript}`}</Dark_Typography>
 
-        <Typography scale="Lable" size="Small" color="Neutral_OnBackground">
+        <Dark_Typography fontSize="Lable_Small" className="text-impo_Neutral_OnBackground">
           {props.name}
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <ShareExperienceProfileIconModule

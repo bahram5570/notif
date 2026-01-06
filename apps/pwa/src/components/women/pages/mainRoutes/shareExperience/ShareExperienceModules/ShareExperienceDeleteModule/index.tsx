@@ -4,13 +4,11 @@ import { SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME } from '@components/women/page
 import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import { ShareExperienceDeleteModuleProps } from './types';
 
 const ShareExperienceDeleteModule = (props: ShareExperienceDeleteModuleProps) => {
   const { callEvent } = useAnalytics();
-  const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
@@ -23,7 +21,7 @@ const ShareExperienceDeleteModule = (props: ShareExperienceDeleteModuleProps) =>
 
   return (
     <div className="w-10 flex justify-center" onClick={selectHandler}>
-      <TrashIcon className="w-5" style={{ stroke: colors.Surface_InverseSurface }} />
+      <TrashIcon className="w-5 stroke-impo_Surface_InverseSurface" />
     </div>
   );
 };

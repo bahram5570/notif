@@ -1,4 +1,4 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useShareExperiencePassedTime from '@components/women/pages/mainRoutes/shareExperience/__hooks__/useShareExperiencePassedTime';
 
 import ShareExperienceFollowModule from '../../../../ShareExperienceModules/ShareExperienceFollowModule';
@@ -20,13 +20,13 @@ const CommentsTopPart = (props: CommentsTopPartProps) => {
         />
 
         <div className="flex flex-col">
-          <Typography scale="Lable" size="Medium" color="Neutral_OnBackground">
+          <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
             {props.name}
-          </Typography>
+          </Dark_Typography>
 
-          <Typography scale="Lable" size="Small" color="Grey_500">
+          <Dark_Typography fontSize="Lable_Small" className="text-impo_Grey_500">
             {timeScript}
-          </Typography>
+          </Dark_Typography>
         </div>
       </div>
 

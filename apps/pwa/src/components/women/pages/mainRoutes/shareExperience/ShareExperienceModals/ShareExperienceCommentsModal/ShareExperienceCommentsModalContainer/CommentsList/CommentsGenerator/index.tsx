@@ -1,5 +1,4 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import CommentsGeneratorBottomPart from './CommentsGeneratorBottomPart';
 import CommentsGeneratorTopPart from './CommentsGeneratorTopPart';
@@ -7,12 +6,17 @@ import ReplyGenerator from './ReplyGenerator';
 import { CommentsGeneratorProps } from './types';
 
 const CommentsGenerator = (props: CommentsGeneratorProps) => {
-  const { colors } = useTheme();
-
   return (
     <div
-      className="w-full flex flex-col items-end pt-4 border-t-[1px]"
-      style={{ borderTopColor: props.isFirstIndex ? colors.Transparent : colors.Neutral_Surface }}
+      className={`
+                  w-full 
+                  flex 
+                  flex-col 
+                  items-end 
+                  pt-4 
+                  border-t-[1px]
+                  ${props.isFirstIndex ? 'border-t-impo_Transparent' : 'border-t-impo_Neutral_Surface'}
+                `}
     >
       <CommentsGeneratorTopPart
         approvedProfile={props.approvedProfile}
@@ -24,9 +28,9 @@ const CommentsGenerator = (props: CommentsGeneratorProps) => {
       />
 
       <div className="w-full flex flex-col items-end pr-10 -translate-y-4">
-        <Typography scale="Body" size="Small">
+        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
           {props.text}
-        </Typography>
+        </Dark_Typography>
 
         <CommentsGeneratorBottomPart
           selfComment={props.selfComment}

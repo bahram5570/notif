@@ -37,11 +37,12 @@ const ShareExperienceProfileIconModule = ({
     >
       <CustomImage
         src={avatar}
-        className="rounded-full pointer-events-none !object-cover"
         width={'100%'}
         hasPreviewImage
         previewImageShape="circle"
+        className="rounded-full pointer-events-none !object-cover"
       />
+
       {approvedProfile && <BlueTick className="w-4 absolute bottom-0 -left-1 pointer-events-none" />}
     </div>
   );

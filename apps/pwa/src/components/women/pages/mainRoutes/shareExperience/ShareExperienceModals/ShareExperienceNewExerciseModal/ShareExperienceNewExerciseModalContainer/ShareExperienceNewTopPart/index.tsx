@@ -1,5 +1,5 @@
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { SHARE_EXPERIENCE_NEW_MAX_CHARACTERS } from '../constants';
 import { ShareExperienceNewTopPartProps } from './types';
@@ -10,14 +10,14 @@ const ShareExperienceNewTopPart = ({ text, avatarImage, username }: ShareExperie
   return (
     <>
       <div className="w-full flex justify-between">
-        <Typography scale="Body" size="Medium" color="Surface_Outline">
+        <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_Outline">
           {countScript}
-        </Typography>
+        </Dark_Typography>
 
         <div className="flex gap-2">
-          <Typography scale="Body" size="Medium">
+          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             {username}
-          </Typography>
+          </Dark_Typography>
 
           <CustomImage src={avatarImage} width={40} className="rounded-full" />
         </div>

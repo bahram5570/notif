@@ -1,14 +1,14 @@
 import { useState } from 'react';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import { LottieJson } from '@lib/LottieJson';
 
 import { PageIconsProps } from './types';
 
 const PageIcons = ({ Icon, title, isSelected, url }: PageIconsProps) => {
-  const { pageNavigationHandler } = usePageNavigationLoading();
   const [resetkey, setResetKey] = useState(Math.random());
+  const { pageNavigationHandler } = usePageNavigationLoading();
 
   const navigateHandler = () => {
     setResetKey(Math.random());
@@ -31,9 +31,12 @@ const PageIcons = ({ Icon, title, isSelected, url }: PageIconsProps) => {
         style={{ opacity: isSelected ? 1 : 0.4 }}
       />
 
-      <Typography scale="Body" size="Small" color={isSelected ? 'Neutral_OnBackground' : 'Surface_Outline'}>
+      <Dark_Typography
+        fontSize="Body_Small"
+        className={`${isSelected ? 'text-impo_Neutral_OnBackground' : 'text-impo_Surface_Outline'}`}
+      >
         {title}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

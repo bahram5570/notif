@@ -1,10 +1,9 @@
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
-import Spinner from '@components/ui/Spinner';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@components/women/pages/mainRoutes/shareExperience/constants';
 import useOverflowHandler from '@hooks/useOverflowHandler';
-import useTheme from '@hooks/useTheme';
 
 import ShareExperienceContentsModule from '../../../ShareExperienceModules/ShareExperienceContentsModule';
 import ShareExperienceNewCommentFooterModule from '../../../ShareExperienceModules/ShareExperienceNewCommentFooterModule';
@@ -16,7 +15,6 @@ import useNewCommentQueries from './__hooks__/useNewCommentQueries';
 import { ShareExperienceCommentsModalContainerProps } from './types';
 
 const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsModalContainerProps) => {
-  const { colors } = useTheme();
   const { newCommentQueries } = useNewCommentQueries(props.id);
   const { isLoading, commentsData, updatePageNo, pageNo, isFirstLoad } = useCommentsList(props.id);
 
@@ -33,9 +31,10 @@ const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsMod
       >
         {isFirstLoad && (
           <div className="absolute left-0 right-0 bottom-20 w-full flex justify-center" style={{ top: 80 }}>
-            <Spinner color="outline" width={40} />
+            <Dark_Spinner className="border-impo_Surface_Outline" size={40} />
           </div>
         )}
+
         {!isFirstLoad && typeof commentsData !== 'undefined' && (
           <div
             className="relative flex flex-col px-4"
@@ -53,7 +52,7 @@ const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsMod
 
             <CommentsBottomPart {...commentsData} id={props.id} />
 
-            <div className="w-full h-1 my-4" style={{ backgroundColor: colors.Neutral_Surface }} />
+            <div className="w-full h-1 my-4 bg-impo_Neutral_Surface" />
 
             <CommentsList id={props.id} comments={commentsData.comments} />
           </div>

@@ -1,4 +1,4 @@
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 import { SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME } from '@components/women/pages/mainRoutes/shareExperience/constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
@@ -19,17 +19,10 @@ const ShareExperienceNewContinueBtn = ({ text, btnTop }: ShareExperienceNewConti
   };
 
   return (
-    <div className="fixed    right-0 left-0  z-40 mt-auto px-4 py-6" style={{ bottom: btnTop }}>
-      <Button
-        size="medium"
-        variant="fill"
-        color="primary"
-        isDisable={isDisable}
-        isLoading={isLoading}
-        onClick={clickHandler}
-      >
+    <div className="fixed right-0 left-0 mt-auto px-4 py-6 z-40" style={{ bottom: btnTop }}>
+      <Dark_Button isDisable={isDisable} isLoading={isLoading} fontSize="Lable_Large" onClick={clickHandler}>
         بعدی
-      </Button>
+      </Dark_Button>
     </div>
   );
 };

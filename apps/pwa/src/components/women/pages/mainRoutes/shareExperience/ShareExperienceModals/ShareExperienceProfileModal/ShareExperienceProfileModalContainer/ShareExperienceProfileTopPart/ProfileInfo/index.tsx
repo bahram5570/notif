@@ -1,4 +1,4 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ProfileInfoPropsType } from './type';
 
@@ -6,33 +6,33 @@ const ProfileInfo = ({ followCount, storyCount }: ProfileInfoPropsType) => {
   return (
     <div className="flex gap-4">
       <div className="flex flex-col justify-center items-center gap-1">
-        <Typography scale="Title" size="Small">
+        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           {followCount.followingCount.toString()}
-        </Typography>
+        </Dark_Typography>
 
-        <Typography scale="Body" size="Small">
+        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
           دنبال شده
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <div className="flex flex-col justify-center items-center gap-1">
-        <Typography scale="Title" size="Small">
+        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           {followCount.followerCount.toString()}
-        </Typography>
+        </Dark_Typography>
 
-        <Typography scale="Body" size="Small">
+        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
           دنبال کننده
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <div className="flex flex-col justify-center items-center gap-1">
-        <Typography scale="Title" size="Small">
+        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           {storyCount.toString()}
-        </Typography>
+        </Dark_Typography>
 
-        <Typography scale="Body" size="Small">
+        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
           تجربه ها
-        </Typography>
+        </Dark_Typography>
       </div>
     </div>
   );

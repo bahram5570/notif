@@ -1,7 +1,6 @@
 import CustomImage from '@components/ui/CustomImage';
-import RadioButton from '@components/ui/RadioButton';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_RadioButton from '@components/ui/Dark_RadioButton';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ShareExperienceNewTopicsGeneratorProps } from './types';
 
@@ -12,22 +11,28 @@ const ShareExperienceNewTopicsGenerator = ({
   image,
   name,
 }: ShareExperienceNewTopicsGeneratorProps) => {
-  const { colors } = useTheme();
-
   return (
     <div
       onClick={onSelect}
-      className="w-full flex items-center justify-between border-t-[1px] py-2 cursor-pointer"
-      style={{ borderTopColor: isFirstIndex ? colors.Transparent : colors.Surface_SurfaceVariant }}
+      className={`
+                  w-full 
+                  flex 
+                  items-center 
+                  justify-between 
+                  py-2 
+                  cursor-pointer
+                  border-t-[1px] 
+                  ${isFirstIndex ? 'border-t-impo_Transparent' : 'border-t-impo_Surface_SurfaceVariant'}
+                `}
     >
       <CustomImage src={image} width={48} className="rounded-full" />
 
       <div className="flex items-center gap-2">
-        <Typography scale="Lable" size="Medium" color="Surface_InverseSurface">
+        <Dark_Typography fontSize="Lable_Medium" className="text-impo_Surface_InverseSurface">
           {name}
-        </Typography>
+        </Dark_Typography>
 
-        <RadioButton isChecked={isSelected} />
+        <Dark_RadioButton isChecked={isSelected} />
       </div>
     </div>
   );

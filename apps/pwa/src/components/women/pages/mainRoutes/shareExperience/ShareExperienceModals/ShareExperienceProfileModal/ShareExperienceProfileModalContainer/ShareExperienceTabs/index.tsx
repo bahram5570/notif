@@ -1,28 +1,33 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ShareExperenceTabsPropsType } from './type';
 
 const ShareExperienceTabs = ({ options, tab, tabHandler }: ShareExperenceTabsPropsType) => {
-  const { colors } = useTheme();
-
   return (
     <div className="flex flex-row-reverse mx-4 mt-8">
       {options.map((option) => (
         <div
-          onClick={() => tabHandler(option.id)}
-          className="border-b-[1px] pb-2 flex justify-center w-1/2 select-none cursor-pointer"
-          style={{ borderColor: option.id === tab ? colors.Neutral_OnBackground : colors.Neutral_Surface }}
           key={option.id}
+          onClick={() => tabHandler(option.id)}
+          className={`
+                        pb-2 
+                        flex 
+                        justify-center 
+                        w-1/2 
+                        select-none
+                        cursor-pointer 
+                        border-b-[1px] 
+                        ${option.id === tab ? 'border-impo_Neutral_OnBackground' : 'border-impo_Neutral_Surface'}
+                    `}
         >
           {option.id === tab ? (
-            <Typography scale="Lable" size="Large" textAlign="center" color="Neutral_OnBackground">
+            <Dark_Typography fontSize="Lable_Large" className="text-center text-impo_Neutral_OnBackground">
               {option.text}
-            </Typography>
+            </Dark_Typography>
           ) : (
-            <Typography scale="Body" size="Medium" textAlign="center" color="Surface_Outline">
+            <Dark_Typography fontSize="Body_Medium" className="text-center text-impo_Surface_Outline">
               {option.text}
-            </Typography>
+            </Dark_Typography>
           )}
         </div>
       ))}

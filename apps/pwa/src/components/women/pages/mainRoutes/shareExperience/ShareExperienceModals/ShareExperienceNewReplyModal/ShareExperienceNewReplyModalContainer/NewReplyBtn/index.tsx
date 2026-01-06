@@ -1,4 +1,4 @@
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 import OverlayBar from '@components/ui/OverlayBar';
 import useAnalytics from '@hooks/useAnalytics';
 
@@ -15,17 +15,9 @@ const NewReplyBtn = ({ text, isLoading, submitHandler, btnTop }: NewReplyBtnProp
 
   return (
     <OverlayBar className="mt-auto px-4 py-6" btnTop={btnTop}>
-      <Button
-        size="small"
-        variant="fill"
-        color="primary"
-        className="!w-fit"
-        isDisable={isDisable}
-        isLoading={isLoading}
-        onClick={clickHandler}
-      >
+      <Dark_Button className="!w-fit" isDisable={isDisable} isLoading={isLoading} onClick={clickHandler}>
         پست کردن
-      </Button>
+      </Dark_Button>
     </OverlayBar>
   );
 };

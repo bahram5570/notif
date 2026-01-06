@@ -23,7 +23,7 @@ const RewardModal = ({ data, goToNext, correctAnswer }: RewardModalPropsType) =>
       isOpen={isOpenRewardModal}
       isFullScreen={false}
       isSlidingMode={true}
-      backgroundColor={backgroundColor}
+      // todo backgroundColor={backgroundColor}
       className="pb-0"
     >
       <div className="flex flex-col items-center pb-4 gap-2" data-testid={'reward-modal-trailonboarding'}>

@@ -1,9 +1,8 @@
-import Button from '@components/ui/Button';
 import CustomModal from '@components/ui/CustomModal';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import Loading from '@components/ui/Loading';
-import Typography from '@components/ui/Typography';
 import useAnalytics from '@hooks/useAnalytics';
-import useTheme from '@hooks/useTheme';
 import { useRouter } from 'next/navigation';
 
 import { ShareExperienceApproveModalsModuleProps } from './types';
@@ -21,7 +20,6 @@ const ShareExperienceApproveModalsModule = ({
 }: ShareExperienceApproveModalsModuleProps) => {
   const { callEvent } = useAnalytics();
   const router = useRouter();
-  const { colors } = useTheme();
 
   const clickHandler = () => {
     applyHandler();
@@ -36,30 +34,31 @@ const ShareExperienceApproveModalsModule = ({
         <div className="w-full rounded-xl flex flex-col items-center justify-center gap-4">
           {icon && icon}
 
-          <Typography scale="Title" size="Small" color="Neutral_OnSurface">
+          <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnSurface">
             {title}
-          </Typography>
+          </Dark_Typography>
 
-          <Typography scale="Body" size="Medium" color="Neutral_OnSurface" textAlign="center">
+          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnSurface text-center">
             {description}
-          </Typography>
+          </Dark_Typography>
 
           <div className="w-full flex items-center gap-4">
-            <Button
-              size="medium"
-              variant="fill"
-              color="FREE-STYLES"
-              onClick={clickHandler}
-              contentsColor={colors.Error_Error}
-              buttonColor={colors.Error_ErrorContainer}
+            <Dark_Button
+              fontSize="Body_Large"
               id={id}
+              onClick={clickHandler}
+              className="!bg-impo_Error_ErrorContainer !border-impo_Error_ErrorContainer !text-impo_Error_Error"
             >
               {applyButtonText}
-            </Button>
+            </Dark_Button>
 
-            <Button variant="fill" size="medium" color="surface" onClick={() => router.back()}>
+            <Dark_Button
+              fontSize="Body_Large"
+              onClick={() => router.back()}
+              className="!bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnBackground"
+            >
               {cancelButtonText}
-            </Button>
+            </Dark_Button>
           </div>
         </div>
       </CustomModal>

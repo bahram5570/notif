@@ -1,4 +1,4 @@
-import Spinner from '@components/ui/Spinner';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import useOverflowHandler from '@hooks/useOverflowHandler';
@@ -12,12 +12,12 @@ import { ShareExperienceProfileTabEnum } from './enum';
 import { ShareExperienceProfileModalContainerPropsTypes } from './type';
 
 const ShareExperienceProfileModalContainer = ({
-  userId,
   queryParam,
+  userId,
 }: ShareExperienceProfileModalContainerPropsTypes) => {
-  const { data, isLoading } = useShareExperenceProfileGetData(userId);
-  const { tab, tabHandler } = useShareExperienceProfileTabs();
   useOverflowHandler(queryParam !== null);
+  const { tab, tabHandler } = useShareExperienceProfileTabs();
+  const { data, isLoading } = useShareExperenceProfileGetData(userId);
 
   const rightElementScript = !isLoading && data ? `پروفایل ${data?.isSelf ? 'شما' : data?.profile.username}` : '';
 
@@ -42,7 +42,7 @@ const ShareExperienceProfileModalContainer = ({
       >
         {isLoading && (
           <div className="w-full flex justify-center pb-10">
-            <Spinner color="primary" />
+            <Dark_Spinner className="border-impo_Primary_Primary" />
           </div>
         )}
         {!isLoading && data && (

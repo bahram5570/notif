@@ -1,18 +1,16 @@
 import CommentsIcon from '@assets/icons/comment.svg';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import {
   SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME,
   SHARE_EXPERIENCE_ORDER_QUERY_NAME,
 } from '@components/women/pages/mainRoutes/shareExperience/constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import { ShareExperienceCommentsModuleProps } from './types';
 
 const ShareExperienceCommentsModule = (props: ShareExperienceCommentsModuleProps) => {
-  const { colors } = useTheme();
   const { newQueryParamsHandler, getQueryParams } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
@@ -28,11 +26,11 @@ const ShareExperienceCommentsModule = (props: ShareExperienceCommentsModuleProps
   return (
     <>
       <div onClick={clickHandler} className="flex items-center justify-center gap-1 w-10">
-        <Typography scale="Body" size="Large" color="Surface_InverseSurface" className="!h-5">
+        <Dark_Typography fontSize="Body_Large" className="text-impo_Surface_InverseSurface !h-5">
           {props.commentCount.toString()}
-        </Typography>
+        </Dark_Typography>
 
-        <CommentsIcon className="w-5" style={{ fill: colors.Surface_InverseSurface }} />
+        <CommentsIcon className="w-5 fill-impo_Surface_InverseSurface" />
       </div>
     </>
   );

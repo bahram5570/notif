@@ -1,13 +1,11 @@
 import ArrowIcon from '@assets/icons/arrow.svg';
 
-import Spinner from '@components/ui/Spinner';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 
 import { ICONS_SIZE } from './constant';
 
 const BackButton = () => {
-  const { colors } = useTheme();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
   const id = `BackButton_ShareExperience`;
@@ -24,10 +22,8 @@ const BackButton = () => {
       style={{ width: ICONS_SIZE, height: ICONS_SIZE }}
       onClick={clickHandler}
     >
-      {pageNavigationLoading === id && <Spinner color="outline" width={28} />}
-      {pageNavigationLoading !== id && (
-        <ArrowIcon className="w-6 h-full stroke-2" style={{ stroke: colors.Surface_Outline }} />
-      )}
+      {pageNavigationLoading === id && <Dark_Spinner size={28} className="border-impo_Surface_Outline" />}
+      {pageNavigationLoading !== id && <ArrowIcon className="w-6 h-full stroke-2 stroke-impo_Surface_Outline" />}
     </div>
   );
 };

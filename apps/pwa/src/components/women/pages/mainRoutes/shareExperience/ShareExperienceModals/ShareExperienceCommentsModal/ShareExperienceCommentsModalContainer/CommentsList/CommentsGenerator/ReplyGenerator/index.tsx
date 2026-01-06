@@ -1,5 +1,5 @@
-import Spinner from '@components/ui/Spinner';
-import Typography from '@components/ui/Typography';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import ReplyGeneratorBottomPart from './ReplyGeneratorBottomPart';
 import ReplyGeneratorTopPart from './ReplyGeneratorTopPart';
@@ -29,9 +29,9 @@ const ReplyGenerator = (props: ReplyGeneratorProps) => {
             userId={item.userId}
           />
 
-          <Typography scale="Body" size="Small" className="pr-10 -translate-y-4">
+          <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground pr-10 -translate-y-4">
             {item.text}
-          </Typography>
+          </Dark_Typography>
 
           <ReplyGeneratorBottomPart
             selfExperience={item.selfExperience}
@@ -48,15 +48,15 @@ const ReplyGenerator = (props: ReplyGeneratorProps) => {
 
       {count > 0 && !isLoading && (
         <div className="w-full flex items-center justify-end !translate-x-[40px]" onClick={showMoreHandler}>
-          <Typography scale="Body" size="Small" color="PrimaryWoman_Primary">
+          <Dark_Typography fontSize="Body_Small" className="text-impo_Primary_Primary">
             {showMoreScript}
-          </Typography>
+          </Dark_Typography>
         </div>
       )}
 
       {isLoading && (
         <div className="w-full flex justify-center">
-          <Spinner color="outline" width={20} />
+          <Dark_Spinner className="border-impo_Surface_Outline" size={20} />
         </div>
       )}
     </>
