@@ -2,15 +2,12 @@ import { useEffect, useRef } from 'react';
 
 import { colorFormatConverter } from '@utils/scripts';
 
-import useTheme from '@hooks/useTheme';
-
 import { UseLottieWavesColorProps } from './types';
 
 const useLottieWavesColor = ({ forgroundColor }: UseLottieWavesColorProps) => {
-  const { colors } = useTheme();
   const wavesRef = useRef<HTMLDivElement>(null);
 
-  const waveColor = colorFormatConverter(forgroundColor || colors.Pink_500);
+  const waveColor = colorFormatConverter(forgroundColor || '#F24F7A');
 
   useEffect(() => {
     const el = wavesRef.current;

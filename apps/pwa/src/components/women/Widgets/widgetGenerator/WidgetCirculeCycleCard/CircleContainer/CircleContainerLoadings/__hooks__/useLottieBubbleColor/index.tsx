@@ -2,15 +2,12 @@ import { useEffect, useRef } from 'react';
 
 import { colorFormatConverter } from '@utils/scripts';
 
-import useTheme from '@hooks/useTheme';
-
 import { UseLottieBubbleColorProps } from './types';
 
 const useLottieBubbleColor = ({ forgroundColor }: UseLottieBubbleColorProps) => {
-  const { colors } = useTheme();
   const bubbleRef = useRef<HTMLDivElement>(null);
 
-  const cycleColor = forgroundColor ? colorFormatConverter(forgroundColor) : colors.Pink_500;
+  const cycleColor = forgroundColor ? colorFormatConverter(forgroundColor) : '#FDE6EC';
 
   useEffect(() => {
     const el = bubbleRef.current;

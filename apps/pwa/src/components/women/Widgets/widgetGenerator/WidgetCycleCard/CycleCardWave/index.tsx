@@ -4,7 +4,6 @@ import waveJson from '@assets/lottie/cycleWave.json';
 import { colorFormatConverter } from '@utils/scripts';
 
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-import useTheme from '@hooks/useTheme';
 import { LottieJson } from '@lib/LottieJson';
 import { LottieRefCurrentProps } from 'lottie-react';
 
@@ -14,7 +13,6 @@ const CycleCardWave = ({ color }: CycleCardWaveProps) => {
   const lottieRef = useRef<LottieRefCurrentProps>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const [transform, setTransform] = useState('');
-  const { colors } = useTheme();
 
   useEffect(() => {
     const containerElement = containerRef.current;
@@ -23,7 +21,7 @@ const CycleCardWave = ({ color }: CycleCardWaveProps) => {
     if (containerElement && lottieElement) {
       lottieElement.setSpeed(0.3);
 
-      const updatedColor = colorFormatConverter(color || colors.Pink_500);
+      const updatedColor = colorFormatConverter(color || '#F24F7A');
       const pathElements = containerElement.getElementsByTagName('path');
 
       if (pathElements[0]) {

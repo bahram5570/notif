@@ -1,18 +1,12 @@
-import { useState } from 'react';
-
 import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import { LottieJson } from '@lib/LottieJson';
 
 import { PageIconsProps } from './types';
 
-const PageIcons = ({ Icon, title, isSelected, url }: PageIconsProps) => {
-  const [resetkey, setResetKey] = useState(Math.random());
+const PageIcons = ({ icons, title, isSelected, url }: PageIconsProps) => {
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const navigateHandler = () => {
-    setResetKey(Math.random());
-
     pageNavigationHandler({
       showProgressBar: true,
       id: 'PageIcons',
@@ -22,14 +16,10 @@ const PageIcons = ({ Icon, title, isSelected, url }: PageIconsProps) => {
 
   return (
     <div className="flex flex-col items-center cursor-pointer" onClick={navigateHandler}>
-      <LottieJson
-        loop={false}
-        key={resetkey}
-        autoplay={true}
-        animationData={Icon}
-        className="w-7 h-auto"
-        style={{ opacity: isSelected ? 1 : 0.4 }}
-      />
+      <>
+        {<icons.Light className={`w-7 h-auto block dark:hidden ${isSelected ? 'opacity-100' : 'opacity-40'}`} />}
+        {<icons.Dark className={`w-7 h-auto hidden dark:block ${isSelected ? 'opacity-100' : 'opacity-40'}`} />}
+      </>
 
       <Dark_Typography
         fontSize="Body_Small"

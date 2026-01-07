@@ -18,19 +18,25 @@ type ItemsTypes = Pick<
 >;
 export interface CircleContainerDaysProps extends ItemsTypes {}
 
+export type DaysColorsTypes = {
+  text: string;
+  border: string;
+  background: string;
+};
+
 export interface DayGeneratorProps extends Pick<CircleContainerDaysProps, 'cycleLength' | 'currentDay'> {
   day: number;
-  color: string;
   ovulationDay?: number;
+  colors: DaysColorsTypes;
 }
 
 export interface CurrentDayGeneratorProps extends Pick<CircleContainerDaysProps, 'cycleLength' | 'currentDay'> {
-  color: string;
+  colors: DaysColorsTypes;
 }
 
 export interface OvulationGeneratorProps extends Pick<
   CircleContainerDaysProps,
   'cycleLength' | 'currentDay' | 'ovulationDay'
 > {
-  color: string;
+  colors: DaysColorsTypes;
 }

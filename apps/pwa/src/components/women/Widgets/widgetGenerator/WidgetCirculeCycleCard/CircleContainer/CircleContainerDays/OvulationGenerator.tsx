@@ -4,7 +4,7 @@ import { toPersianNumbers } from '@utils/numbers';
 import useDayGeneratorFontStyles from './__hooks__/useDayGeneratorFontStyles';
 import { OvulationGeneratorProps } from './types';
 
-const OvulationGenerator = ({ color, currentDay, ovulationDay, cycleLength }: OvulationGeneratorProps) => {
+const OvulationGenerator = ({ colors, currentDay, ovulationDay, cycleLength }: OvulationGeneratorProps) => {
   const rotate = circleItemRotateMaker(ovulationDay, cycleLength);
   const typographyFontStyles = useDayGeneratorFontStyles('Body_Large');
 
@@ -18,14 +18,14 @@ const OvulationGenerator = ({ color, currentDay, ovulationDay, cycleLength }: Ov
         style={{ rotate: `${rotate}deg` }}
         className="absolute top-3 left-3 right-3 bottom-3 flex items-center justify-center -translate-y-[calc(50%_+_5px)]"
       >
-        <div className={`w-5 h-5 rounded-full border-[5px] border-${color} bg-impo_White`} />
+        <div className={`w-5 h-5 rounded-full border-[5px] bg-impo_White ${colors.border}`} />
       </div>
 
       <div
         style={{ rotate: `${rotate}deg` }}
         className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center -translate-y-[calc(50%_+_12px)]"
       >
-        <div className={`text-${color}`} style={{ ...typographyFontStyles, rotate: `${-rotate}deg` }}>
+        <div className={`${colors.text}`} style={{ ...typographyFontStyles, rotate: `${-rotate}deg` }}>
           {toPersianNumbers(ovulationDay)}
         </div>
       </div>

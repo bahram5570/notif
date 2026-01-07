@@ -4,7 +4,7 @@ import { toPersianNumbers } from '@utils/numbers';
 import useDayGeneratorFontStyles from './__hooks__/useDayGeneratorFontStyles';
 import { CurrentDayGeneratorProps } from './types';
 
-const CurrentDayGenerator = ({ color, currentDay, cycleLength }: CurrentDayGeneratorProps) => {
+const CurrentDayGenerator = ({ colors, currentDay, cycleLength }: CurrentDayGeneratorProps) => {
   const typographyFontStyles = useDayGeneratorFontStyles('Body_Small');
 
   const updatedCurrentDay = currentDay > cycleLength ? cycleLength : currentDay;
@@ -17,7 +17,7 @@ const CurrentDayGenerator = ({ color, currentDay, cycleLength }: CurrentDayGener
     >
       <div
         style={{ ...typographyFontStyles, rotate: `${-rotate}deg` }}
-        className={`w-8 h-8 rounded-full flex flex-col items-center justify-center text-impo_White bg-${color}`}
+        className={`w-8 h-8 rounded-full flex flex-col items-center justify-center text-impo_White ${colors.background}`}
       >
         <div className="h-4 scale-75">امروز</div>
 

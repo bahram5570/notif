@@ -6,23 +6,39 @@ import { CIRCLE_EXTRA_SIZE } from '../constants';
 import CurrentDayGenerator from './CurrentDayGenerator';
 import DayGenerator from './DayGenerator';
 import OvulationGenerator from './OvulationGenerator';
-import { CircleContainerDaysProps } from './types';
+import { CircleContainerDaysProps, DaysColorsTypes } from './types';
 
-const normalCurrentDayColor = 'impo_Yellow_500';
-const periodColor = 'impo_Primary_Primary';
-const pmsColor = 'impo_Cycle_Pms_Eyebrow';
-const fertilityColor = 'impo_Cyan_500';
+const normalCurrentDayColors: DaysColorsTypes = {
+  text: 'text-impo_Yellow_500',
+  background: 'bg-impo_Yellow_500',
+  border: 'border-impo_Yellow_500',
+};
+const periodColors: DaysColorsTypes = {
+  text: 'text-impo_Primary_Primary',
+  background: 'bg-impo_Primary_Primary',
+  border: 'border-impo_Primary_Primary',
+};
+const pmsColors: DaysColorsTypes = {
+  text: 'text-impo_Cycle_Pms_Eyebrow',
+  background: 'bg-impo_Cycle_Pms_Eyebrow',
+  border: 'border-impo_Cycle_Pms_Eyebrow',
+};
+const fertilityColors: DaysColorsTypes = {
+  text: 'text-impo_Cyan_500',
+  background: 'bg-impo_Cyan_500',
+  border: 'border-impo_Cyan_500',
+};
 
 const rotate = `${circleContainerRotateFinder(0)}deg`;
 
 const CircleContainerDays = (props: CircleContainerDaysProps) => {
-  let currentDayColor = normalCurrentDayColor;
+  let currentDayColors = normalCurrentDayColors;
   if (props.currentDay >= props.periodStart && props.currentDay <= props.periodEnd) {
-    currentDayColor = periodColor;
+    currentDayColors = periodColors;
   } else if (props.hasFertility && props.currentDay >= props.fertilityStart && props.currentDay <= props.fertilityEnd) {
-    currentDayColor = fertilityColor;
+    currentDayColors = fertilityColors;
   } else if (props.hasPms && props.currentDay >= props.pmsStart && props.currentDay <= props.pmsEnd) {
-    currentDayColor = pmsColor;
+    currentDayColors = pmsColors;
   }
 
   return (
@@ -37,7 +53,7 @@ const CircleContainerDays = (props: CircleContainerDaysProps) => {
     >
       <div className="relative w-full h-full rounded-full" style={{ rotate }}>
         {/* // # Current day */}
-        <CurrentDayGenerator color={currentDayColor} cycleLength={props.cycleLength} currentDay={props.currentDay} />
+        <CurrentDayGenerator colors={currentDayColors} cycleLength={props.cycleLength} currentDay={props.currentDay} />
 
         {/* // # Ovulation day */}
         {props.hasOvulation && (
@@ -45,7 +61,7 @@ const CircleContainerDays = (props: CircleContainerDaysProps) => {
             ovulationDay={props.ovulationDay}
             cycleLength={props.cycleLength}
             currentDay={props.currentDay}
-            color={fertilityColor}
+            colors={fertilityColors}
           />
         )}
 
@@ -54,14 +70,14 @@ const CircleContainerDays = (props: CircleContainerDaysProps) => {
           cycleLength={props.cycleLength}
           currentDay={props.currentDay}
           day={props.periodStart}
-          color={periodColor}
+          colors={periodColors}
         />
 
         <DayGenerator
           cycleLength={props.cycleLength}
           currentDay={props.currentDay}
           day={props.periodEnd}
-          color={periodColor}
+          colors={periodColors}
         />
 
         {/* // # Fertility */}
@@ -72,7 +88,7 @@ const CircleContainerDays = (props: CircleContainerDaysProps) => {
               cycleLength={props.cycleLength}
               currentDay={props.currentDay}
               day={props.fertilityStart}
-              color={fertilityColor}
+              colors={fertilityColors}
             />
 
             <DayGenerator
@@ -80,7 +96,7 @@ const CircleContainerDays = (props: CircleContainerDaysProps) => {
               cycleLength={props.cycleLength}
               currentDay={props.currentDay}
               day={props.fertilityEnd}
-              color={fertilityColor}
+              colors={fertilityColors}
             />
           </>
         )}
@@ -92,7 +108,7 @@ const CircleContainerDays = (props: CircleContainerDaysProps) => {
               cycleLength={props.cycleLength}
               currentDay={props.currentDay}
               day={props.pmsEnd}
-              color={pmsColor}
+              colors={pmsColors}
             />
           </>
         )}

@@ -16,7 +16,13 @@ const WomenFooterContainer = ({ pathName }: ContainerProps) => {
       className="fixed left-0 right-0 bottom-0 mx-auto px-4 pt-2 grid grid-flow-col bg-impo_Neutral_Background z-10"
     >
       {FOOTER_PAGES_LIST.map((item, index) => (
-        <PageIcons isSelected={item.url === pathName} title={item.title} Icon={item.Icon} url={item.url} key={index} />
+        <PageIcons
+          key={index}
+          url={item.url}
+          title={item.title}
+          icons={item.icons}
+          isSelected={item.url === pathName}
+        />
       ))}
     </div>
   );

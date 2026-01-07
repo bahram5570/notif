@@ -1,8 +1,8 @@
 export interface PageIconsProps {
+  icons: { Dark: any; Light: any };
   isSelected: boolean;
   title: string;
   url: string;
-  Icon: any;
 }
 
 export interface ContainerProps {
