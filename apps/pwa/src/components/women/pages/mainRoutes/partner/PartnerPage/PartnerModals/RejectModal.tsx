@@ -1,4 +1,6 @@
 import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import Typography from '@components/ui/Typography';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -20,20 +22,24 @@ const RejectModal = ({ onCloseModal }: ModalPropsType) => {
   return (
     <div className="flex flex-col items-center  gap-3 max-w-sm">
       <div className=" flex flex-col items-center p-2 w-full gap-2">
-        <Typography scale="Body" size="Large">
+        <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
           {isRecv
             ? ` از رد درخواست همدلی ${partnerName} مطمئن هستی؟`
             : `از لغو درخواست همدلی به ${partnerName} مطمئنی ؟ `}
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <div className="flex w-full justify-between gap-2">
-        <Button size="medium" variant="fill" color="primary" onClick={onClick} isLoading={isLoading}>
+        <Dark_Button onClick={onClick} isLoading={isLoading} fontSize="Lable_Large">
           !آره
-        </Button>
-        <Button size="medium" variant="fill" color="surface" onClick={onCloseModal}>
+        </Dark_Button>
+        <Dark_Button
+          className="!bg-impo_Neutral_Surface !text-impo_Neutral_OnSurface !border-impo_Neutral_Surface"
+          onClick={onCloseModal}
+          fontSize="Lable_Large"
+        >
           !نه
-        </Button>
+        </Dark_Button>
       </div>
     </div>
   );
