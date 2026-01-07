@@ -1,18 +1,16 @@
 import ArrowIcon from '@assets/icons/arrow.svg';
 
 import CustomImage from '@components/ui/CustomImage';
-import Spinner from '@components/ui/Spinner';
-import Typography from '@components/ui/Typography';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 
 import useCalendarDateFormat from '../__hooks__/useCalendarDateFormat';
 import ProgressBar from './ProgressBar';
 import { ChatHeaderPropsType } from './type';
 
 const ChatHeader = ({ createTime, partnerAvatar, partnerName, progress, avatar }: ChatHeaderPropsType) => {
-  const { colors } = useTheme();
   const { currentDate } = useCalendarDateFormat({ date: createTime });
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
@@ -35,22 +33,19 @@ const ChatHeader = ({ createTime, partnerAvatar, partnerName, progress, avatar }
               className="rounded-full !object-cover"
             />
             <div className="flex flex-col items-end justify-end">
-              <Typography scale="Title" size="Small" color="Neutral_OnBackground">
+              <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Title_Small">
                 {partnerName}
-              </Typography>
-
-              <Typography
-                scale="Body"
-                size="Small"
-                color="Neutral_OnBackground"
-              >{`تاریخ شروع چت :${currentDate}`}</Typography>
+              </Dark_Typography>
+              <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
+                {`تاریخ شروع چت :${currentDate}`}
+              </Dark_Typography>
             </div>
           </div>
 
           <div className="cursor-pointer flex justify-center items-center w-8 h-8" onClick={onClick}>
-            {pageNavigationLoading === 'back' && <Spinner color="outline" width={28} />}
+            {pageNavigationLoading === 'back' && <Dark_Spinner size={28} className="border-impo_Surface_Outline" />}
             {pageNavigationLoading !== 'back' && (
-              <ArrowIcon className="w-6 h-full stroke-2" style={{ stroke: colors.Surface_Outline }} />
+              <ArrowIcon className="w-6 h-full stroke-2 stroke-impo_Surface_Outline" />
             )}
           </div>
         </div>

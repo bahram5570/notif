@@ -1,16 +1,17 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ChallengeHeaderPropsType } from './type';
 
 const ChallengeHeader = ({ date, status }: ChallengeHeaderPropsType) => {
   return (
     <div className="flex flex-col gap-2">
-      <Typography scale="Title" size="Medium" color="PrimaryWoman_Primary" className="w-full" textAlign="center">
+      <Dark_Typography fontSize="Title_Medium" className="w-full text-center text-impo_Primary_Primary">
         {date}
-      </Typography>
-      <Typography scale="Body" size="Large" color="Black" className="w-full" textAlign="center">
+      </Dark_Typography>
+
+      <Dark_Typography fontSize="Body_Large" className="w-full text-center text-impo_Neutral_OnBackground">
         {status}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

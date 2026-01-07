@@ -4,14 +4,12 @@ import UploadIcon from '@assets/icons/upload.svg';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import { PartnerModalNameEnums } from '../PartnerModals/enums';
 import Avatar from './Avatar';
 import { AvatarContainerPropsType } from './type';
 
 const AvatarContainer = (props: AvatarContainerPropsType) => {
-  const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { canDeleteProfile, manAvatar, manName, valid, womanAvatar, womanName } = props;
@@ -37,9 +35,9 @@ const AvatarContainer = (props: AvatarContainerPropsType) => {
         onClick={handleClick}
         icon={
           canDeleteProfile ? (
-            <EditIcon style={{ fill: colors.White }} className="w-3 h-3" />
+            <EditIcon className="w-3 h-3 !fill-impo_White" />
           ) : (
-            <UploadIcon style={{ fill: colors.White }} className="w-3 h-3" />
+            <UploadIcon className="w-3 h-3 !fill-impo_White" />
           )
         }
       />

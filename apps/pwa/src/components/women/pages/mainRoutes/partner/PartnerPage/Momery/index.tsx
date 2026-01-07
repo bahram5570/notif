@@ -1,17 +1,16 @@
 import { textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 
 import CustomLink from '../CustomLink';
 import { MemeryPropsType } from './type';
 
 const Memory = ({ memory, valid }: MemeryPropsType) => {
   const { callEvent } = useAnalytics();
-  const { colors } = useTheme();
+
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const link = valid ? '/protected/createMemory' : '/protected/partnerStart';
@@ -21,14 +20,11 @@ const Memory = ({ memory, valid }: MemeryPropsType) => {
   };
 
   return (
-    <div
-      className="flex flex-col gap-4 py-4 px-8 rounded-xl  items-end"
-      style={{ border: `1px solid ${colors.Neutral_Surface}` }}
-    >
+    <div className="flex flex-col gap-4 py-4 px-8 rounded-xl  items-end border border-impo_Neutral_Surface">
       <div className="flex justify-between items-end ">
-        <Typography scale="Title" size="Small">
+        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           {memory.cardTitle}
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <div className="w-full relative" onClick={onClick}>
@@ -41,14 +37,13 @@ const Memory = ({ memory, valid }: MemeryPropsType) => {
 
       <div className="flex flex-col justify-end items-end">
         {valid && (
-          <Typography scale="Lable" size="Medium" color="Neutral_OnBackground">
+          <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
             {memory.title}
-          </Typography>
+          </Dark_Typography>
         )}
-
-        <Typography scale="Body" size="Medium" color="Neutral_OnBackground">
+        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
           {textShorter(memory.description, 120)}
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <CustomLink

@@ -1,13 +1,11 @@
 import ExportIcon from '@assets/icons/Export.svg';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useShareNavigator from '@hooks/useShareNavigator';
-import useTheme from '@hooks/useTheme';
 
 import { ShareTextBtnPropsType } from './type';
 
 const ShareTextBtn = ({ shareText }: ShareTextBtnPropsType) => {
-  const { colors } = useTheme();
   const { handleShare } = useShareNavigator();
 
   const onClick = () => {
@@ -16,14 +14,12 @@ const ShareTextBtn = ({ shareText }: ShareTextBtnPropsType) => {
 
   return (
     <div className="flex justify-center" onClick={onClick}>
-      <div
-        style={{ backgroundColor: colors.PrimaryWoman_PrimaryContainer }}
-        className="flex items-center gap-2 px-8 py-1 rounded-full border-[1px] select-none cursor-pointer w-full h-[48px]"
-      >
-        <Typography scale="Body" size="Large" color="PrimaryWoman_Primary">
+      <div className="flex items-center gap-2 px-8 py-1 rounded-full  select-none cursor-pointer w-full h-[48px] bg-impo_Primary_PrimaryContainer dark:bg-impo_Primary_OnPrimaryContainer">
+        <Dark_Typography fontSize="Body_Large" className="text-impo_Primary_Primary">
           ارسال کد برای همدل
-        </Typography>
-        <ExportIcon className="w-6 h-6" style={{ stroke: colors.PrimaryWoman_Primary }} />
+        </Dark_Typography>
+
+        <ExportIcon className="w-6 h-6 stroke-impo_Primary_Primary" />
       </div>
     </div>
   );

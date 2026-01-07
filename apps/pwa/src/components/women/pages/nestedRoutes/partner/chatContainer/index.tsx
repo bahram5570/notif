@@ -2,10 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import useTheme from '@hooks/useTheme';
-import { useParams } from 'next/navigation';
 
 import ChatContainerSkeleton from './ChatContainerSkeleton';
 import ChatHeader from './ChatHeader';
@@ -16,8 +14,6 @@ import useMessageList from './__hooks__/useMessageList';
 import useSubmit from './__hooks__/useSubmit';
 
 const ChatContainer = () => {
-  const { colors } = useTheme();
-
   const [key, setKey] = useState(0);
   const { data, isLoading } = useGetData();
   const {
@@ -44,18 +40,18 @@ const ChatContainer = () => {
     <>
       {isLoading && !data && <ChatContainerSkeleton />}
       {!isLoading && data && (
-        <div className={`w-full min-h-[100dvh] relative`} style={{ backgroundColor: colors.White }}>
+        <div className="w-full min-h-[100dvh] relative bg-impo_Neutral_Background">
           <ChatHeader {...data} progress={progressData} />
 
           <div
-            className=" flex relative z-0 flex-col overflow-y-auto  gap-5 pb-28 justify-center bg-[url('/assets/images/bg-chat.webp')] bg-contain"
+            className=" flex relative z-0 flex-col overflow-y-auto  gap-5 pb-28 justify-center bg-[url('/assets/images/bg-chat.webp')] bg-contain dark:bg-none"
             style={{ paddingTop: HEADER_HEIGHT + 90 }}
             ref={messageListRef}
           >
-            <div style={{ background: colors.Surface_SurfaceVariant }} className="px-[10px] py-3">
-              <Typography scale="Lable" size="Large" className="w-full" textAlign="center">
+            <div className="px-[10px] py-3 bg-impo_Surface_SurfaceVariant">
+              <Dark_Typography fontSize="Lable_Large" className="w-full text-center text-impo_Neutral_OnBackground">
                 {data.text}
-              </Typography>
+              </Dark_Typography>
             </div>
 
             <MessageListContainer messageList={messageList} partnerAvatar={data.partnerAvatar} />

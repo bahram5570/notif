@@ -1,16 +1,14 @@
-import Button from '@components/ui/Button';
 import CustomImage from '@components/ui/CustomImage';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import { PartnerModalNameEnums } from '../../PartnerModals/enums';
 import { RequestGeneratorTypeProps } from './type';
 
 const RequestGenerator = ({ item }: RequestGeneratorTypeProps) => {
-  const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
   const isLoading = pageNavigationLoading === item.name;
@@ -39,9 +37,10 @@ const RequestGenerator = ({ item }: RequestGeneratorTypeProps) => {
   return (
     <div className="p-2">
       <div className="flex items-center justify-end gap-2">
-        <Typography scale="Lable" size="Medium">
+        <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
           {!item.isRecv ? `درخواست به ${item.name}` : `${item.name}`}
-        </Typography>
+        </Dark_Typography>
+
         <CustomImage
           src={item.image || '/assets/images/man.webp'}
           width="48px"
@@ -51,45 +50,32 @@ const RequestGenerator = ({ item }: RequestGeneratorTypeProps) => {
       </div>
       <div className="flex items-center gap-3">
         {item.isRecv && (
-          <Button
-            size="medium"
-            variant="fill"
-            color="primary"
-            onClick={onAcceptClickHandler}
-            fullWidth={false}
-            isLoading={isLoading}
-          >
-            <Typography scale="Lable" size="Medium" color="PrimaryWoman_OnPrimary">
+          <Dark_Button onClick={onAcceptClickHandler} isLoading={isLoading}>
+            <Dark_Typography fontSize="Lable_Medium" className="text-impo_Primary_OnPrimary">
               قبول کردن
-            </Typography>
-          </Button>
+            </Dark_Typography>
+          </Dark_Button>
         )}
 
         {!item.isRecv && (
-          <div className="w-fit rounded-full px-4 h-10" style={{ backgroundColor: colors.Neutral_Surface }}>
+          <div className="w-fit rounded-full px-4 h-10 bg-impo_Neutral_Surface">
             <div className="flex justify-center items-center h-full">
-              <Typography scale="Lable" size="Medium" color="Surface_Outline">
+              <Dark_Typography fontSize="Lable_Medium" className="text-impo_Surface_Outline">
                 در انتظار...
-              </Typography>
+              </Dark_Typography>
             </div>
           </div>
         )}
 
-        <Button
-          size="medium"
-          variant="outline"
-          color="FREE-STYLES"
-          buttonColor={colors.Surface_OutlineVariant}
-          contentsColor=""
+        <Dark_Button
           onClick={onRejectClickHandler}
-          fullWidth={false}
+          className="bg-impo_Surface_OutlineVariant border !border-impo_Neutral_Surface max-w-fit"
           isLoading={isLoading}
-          style={{ border: `1px solid ${colors.Neutral_Surface}` }}
         >
-          <Typography scale="Lable" size="Medium" color="Neutral_OnSurface">
+          <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnSurface">
             {item.isRecv ? 'رد کردن' : 'لغو کردن'}
-          </Typography>
-        </Button>
+          </Dark_Typography>
+        </Dark_Button>
       </div>
     </div>
   );

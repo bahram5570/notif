@@ -3,14 +3,11 @@ import React from 'react';
 import ArrowUpIcon from '@assets/icons/Alt Arrow Up.svg';
 
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ProgressBarPropsType } from './type';
 
 const ProgressBar = ({ progress, avatar, partnerAvatar, className }: ProgressBarPropsType) => {
-  const { colors } = useTheme();
-
   const milestones = [
     { percent: progress.goldPercent, text: progress.goldText, img: '/assets/images/gold.webp', isGold: true },
     { percent: progress.silverPercent, text: progress.silverText, img: '/assets/images/silver.webp', isGold: false },
@@ -19,20 +16,16 @@ const ProgressBar = ({ progress, avatar, partnerAvatar, className }: ProgressBar
 
   return (
     <div className={`relative w-full p-4 ${className}`}>
-      <div className="relative w-full h-4 rounded-xl" style={{ background: colors.Surface_SurfaceVariant }}>
+      <div className="relative w-full h-4 rounded-xl bg-impo_Grey_50">
         <div className="absolute  flex flex-col items-center right-0 z-30 -top-2">
-          <div
-            className="w-8 h-8  text-white text-[10px] flex items-center justify-center rounded-full"
-            style={{ background: colors.Surface_OnSurfaceVariant }}
-          >
+          <div className="w-8 h-8  text-impo_White text-[10px] flex items-center justify-center rounded-full dark:bg-impo_Surface_SurfaceVariant bg-impo_Surface_OnSurfaceVariant ">
             شروع
           </div>
         </div>
         <div
-          className="absolute top-[20%] right-0 h-2  rounded-full"
+          className="absolute top-[20%] right-0 h-2  rounded-full bg-impo_Surface_Outline dark:bg-impo_Surface_OutlineVariant"
           style={{
             width: `${progress.currentPercent === 100 ? progress.currentPercent : progress.currentPercent + 3}%`,
-            background: colors.Surface_Outline,
           }}
         ></div>
 
@@ -49,25 +42,13 @@ const ProgressBar = ({ progress, avatar, partnerAvatar, className }: ProgressBar
               src={milestone.img}
               width={32}
               height={32}
-              className=" rounded-full"
-              style={{
-                border:
-                  milestone.percent <= progress.currentPercent
-                    ? `1px solid ${
-                        milestone.percent === progress.bronzePercent
-                          ? colors.Orange_500
-                          : milestone.percent === progress.silverPercent
-                            ? colors.Grey_500
-                            : colors.Yellow_500
-                      }`
-                    : 'none',
-              }}
+              className={`rounded-full   ${milestone.percent <= progress.currentPercent ? 'border' : 'border-none'} ${milestone.percent === progress.bronzePercent ? 'border-impo_Orange_500' : milestone.percent === progress.silverPercent ? 'border-impo_Grey_500' : 'border-impo_Yellow_500'}`}
             />
 
             {milestone.percent <= progress.currentPercent && (
-              <Typography scale="Lable" size="Small" textAlign="center">
+              <Dark_Typography fontSize="Lable_Small" className="text-center text-impo_Neutral_OnBackground">
                 {milestone.text}
-              </Typography>
+              </Dark_Typography>
             )}
           </div>
         ))}
@@ -80,29 +61,15 @@ const ProgressBar = ({ progress, avatar, partnerAvatar, className }: ProgressBar
           }}
         >
           <div className="flex items-center relative">
-            <div
-              className={`w-6 h-6 rounded-full overflow-hidden ml-0 relative `}
-              style={{ backgroundColor: colors.White, border: `2px solid ${colors.White}` }}
-            >
-              <CustomImage
-                src={partnerAvatar}
-                className="w-full h-full !object-cover"
-                style={{ border: `1px solid ${colors.Neutral_Background}` }}
-              />
+            <div className="w-6 h-6 rounded-full overflow-hidden ml-0 relative bg-impo_White border-2 border-impo_White">
+              <CustomImage src={partnerAvatar} className="w-full h-full !object-cover border border-impo_White" />
             </div>
-            <div
-              className={`w-6 h-6 rounded-full  overflow-hidden  ml-0 absolute left-4 `}
-              style={{ backgroundColor: colors.White, border: `2px solid ${colors.White}` }}
-            >
-              <CustomImage
-                src={avatar}
-                className="w-full h-full !object-cover"
-                style={{ border: `1px solid ${colors.Neutral_Background}` }}
-              />
+            <div className="w-6 h-6 rounded-full  overflow-hidden  ml-0 absolute left-4 bg-impo_White border-2 border-impo_White">
+              <CustomImage src={avatar} className="w-full h-full !object-cover border border-impo_White" />
             </div>
           </div>
 
-          <ArrowUpIcon className="w-4 h-3" style={{ fill: colors.Surface_InverseSurface }} />
+          <ArrowUpIcon className="w-4 h-3 !fill-impo_Surface_InverseSurface" />
         </div>
       </div>
     </div>

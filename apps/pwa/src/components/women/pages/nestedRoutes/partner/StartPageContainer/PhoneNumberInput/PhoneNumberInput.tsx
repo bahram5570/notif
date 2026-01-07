@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { toEnglishNumbers, toPersianNumbers } from '@utils/numbers';
 
 import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import Typography from '@components/ui/Typography';
 import useTheme from '@hooks/useTheme';
 
@@ -29,33 +31,26 @@ const PhoneNumberInput = () => {
 
   return (
     <>
-      <Typography scale="Body" size="Large" textAlign="center">
+      <Dark_Typography fontSize="Body_Large" className="text-center text-impo_Neutral_OnBackground">
         شماره موبایل، ایمیل یا کد همدلی پارتنرت رو اینجا وارد کن تا درخواست همدلیت براش ارسال بشه.
-      </Typography>
+      </Dark_Typography>
+
       <div className="w-full">
         <input
           type="text"
           placeholder="اینجا تایپ کنید"
-          className="w-full rounded-full px-4 py-3 text-right placeholder:text-right  placeholder:p-2"
+          className="w-full rounded-full px-4 py-3 text-right placeholder:text-right  placeholder:p-2 border border-impo_Neutral_Surface bg-impo_Neutral_Surface text-impo_Neutral_OnSurface"
           value={toPersianNumbers(phoneNumber)}
           onChange={changePhoneNumberHandler}
-          style={{ border: `1px solid ${colors.Neutral_Surface}` }}
           onKeyUp={onKeyUpHandler}
         />
       </div>
       <div className="flex justify-center w-1/2 items-center">
-        <Button
-          size="medium"
-          variant="fill"
-          color="primary"
-          onClick={onClickHandler}
-          isLoading={isLoading}
-          isDisable={!phoneNumber}
-        >
-          <Typography scale="Lable" size="Medium" color="White">
+        <Dark_Button onClick={onClickHandler} isLoading={isLoading} isDisable={!phoneNumber}>
+          <Dark_Typography fontSize="Lable_Medium" className="text-center text-impo_White">
             ادامه
-          </Typography>
-        </Button>
+          </Dark_Typography>
+        </Dark_Button>
       </div>
     </>
   );

@@ -5,12 +5,10 @@ import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import Typography from '@components/ui/Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import { PartnerModalNameEnums } from './enums';
 
 const AcceptModal = () => {
-  const { colors } = useTheme();
   const { getQueryParams, newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
@@ -28,13 +26,8 @@ const AcceptModal = () => {
 
   return (
     <div className="flex flex-col justify-center items-center gap-4 max-w-xs">
-      <div
-        className="w-10 h-10 flex justify-center items-center rounded-full"
-        style={{
-          backgroundColor: colors.PrimaryWoman_PrimaryContainer,
-        }}
-      >
-        <Hamdel className="w-6 h-6 " style={{ stroke: colors.PrimaryWoman_Primary }} />
+      <div className="w-10 h-10 flex justify-center items-center rounded-full bg-impo_Primary_PrimaryContainer">
+        <Hamdel className="w-6 h-6 stroke-impo_Primary_Primary" />
       </div>
       <div className="flex flex-col justify-center items-center gap-2">
         <Typography scale="Title" size="Medium" textAlign="center">

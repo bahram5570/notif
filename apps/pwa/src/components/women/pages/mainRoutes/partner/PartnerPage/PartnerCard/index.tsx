@@ -1,10 +1,9 @@
 import { generateLinearGradient } from './utils';
 
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useTheme from '@hooks/useTheme';
 
-import CustomLink from '../CustomLink';
 import { PartnerCardPropsType } from './type';
 
 const PartnerCard = ({ partner, valid }: PartnerCardPropsType) => {
@@ -15,14 +14,14 @@ const PartnerCard = ({ partner, valid }: PartnerCardPropsType) => {
 
   return (
     <div
-      className="flex flex-col gap-4 py-6 px-10 rounded-xl  items-end"
-      style={{ border: `1px solid ${colors.Neutral_Surface} ` }}
+      className="flex flex-col gap-4 py-6 px-10 rounded-xl  items-end border-impo_Neutral_Surface"
+      style={{ border: `1px solid  ` }}
     >
       {partner.cycleTitle && (
         <div className="flex justify-between items-end ">
-          <Typography scale="Title" size="Small">
+          <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
             {partner.cycleTitle}
-          </Typography>
+          </Dark_Typography>
         </div>
       )}
 
@@ -35,12 +34,12 @@ const PartnerCard = ({ partner, valid }: PartnerCardPropsType) => {
         <div className=" flex flex-row gap-2  sm:px-4 py-3  items-center rounded-xl  w-full mb-2">
           <div className="w-full flex flex-col gap-2 items-end">
             <div className="flex flex-col gap-2 items-end">
-              <Typography scale="Body" size="Medium" color="White" textAlign="center">
+              <Dark_Typography fontSize="Body_Medium" className="text-impo_White text-center">
                 {partner.cycleCard.title}
-              </Typography>
-              <Typography scale="Headline" size="Small" color="White" textAlign="center">
+              </Dark_Typography>
+              <Dark_Typography fontSize="Headline_Small" className="text-impo_White text-center">
                 {partner.cycleCard.subTitle}
-              </Typography>
+              </Dark_Typography>
             </div>
             {/* {valid && (
               <CustomLink
@@ -58,9 +57,9 @@ const PartnerCard = ({ partner, valid }: PartnerCardPropsType) => {
         </div>
 
         {partner.cycleCard.trailing && (
-          <Typography scale="Title" size="Medium" color="White" className="w-full pt-3" textAlign="center">
+          <Dark_Typography fontSize="Title_Medium" className="text-impo_White text-center w-full pt-3">
             {partner.cycleCard.trailing}
-          </Typography>
+          </Dark_Typography>
         )}
       </div>
     </div>

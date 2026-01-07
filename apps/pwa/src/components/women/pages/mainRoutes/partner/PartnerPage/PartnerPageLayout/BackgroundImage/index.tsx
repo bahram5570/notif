@@ -31,7 +31,7 @@ const BackgroundImage = ({ isValid, coverImage }: BackgroundImagePropsType) => {
         <div className="overflow-hidden  flex justify-center items-center">
           <CustomImage
             src={`${coverImage ? coverImage : '/assets/images/backgroundHamdel.webp'}`}
-            className="!object-cover z-0"
+            className={`!object-cover z-0 ${!canDeleteImage && 'dark:hidden'}`}
             alt="background"
             style={{
               width: '100%',

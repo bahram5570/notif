@@ -1,15 +1,13 @@
 import { textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 
 import useCalendarDateFormat from '../../../../__hooks__/useCalendarDateFormat';
 import { MemoryItemPropsType } from '../../type';
 
 const MemoryItem = (props: MemoryItemPropsType) => {
-  const { colors } = useTheme();
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { currentDate } = useCalendarDateFormat({ date: props.time });
 
@@ -26,21 +24,22 @@ const MemoryItem = (props: MemoryItemPropsType) => {
 
   return (
     <div onClick={onClick} className="flex flex-col justify-end items-end p-2 gap-2">
-      <Typography scale="Body" size="Medium" color="Neutral_OnBackground" textAlign="right" className="w-full">
+      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-right w-full">
         {currentDate}
-      </Typography>
+      </Dark_Typography>
+
       <CustomImage src={memoryImage} height={293} className="rounded-2xl w-full" />
       <div className="flex flex-col justify-end items-end">
         <div className="flex gap-2 items-center">
-          <Typography scale="Lable" size="Large">
+          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground ">
             {props.title}
-          </Typography>
-          <div className="w-2 h-2 rounded-full" style={{ background: colors.PrimaryWoman_Primary }}></div>
-        </div>
+          </Dark_Typography>
 
-        <Typography scale="Body" size="Small">
+          <div className="w-2 h-2 rounded-full bg-impo_Primary_Primary" />
+        </div>
+        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground ">
           {memoryText}
-        </Typography>
+        </Dark_Typography>
       </div>
     </div>
   );

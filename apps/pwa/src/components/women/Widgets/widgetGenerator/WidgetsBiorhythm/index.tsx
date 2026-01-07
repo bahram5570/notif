@@ -1,5 +1,3 @@
-import { colorFormatConverter } from '@utils/scripts';
-
 import BiorhythemItems from '@components/__Biorhythem__/BiorhythemItems';
 import Dark_Typography from '@components/ui/Dark_Typography';
 
@@ -12,7 +10,9 @@ const WidgetsBiorhythm = ({ data }: BiorhythmPropsType) => {
       // style={{ border: `1px solid ${colors.Neutral_Surface}` }}
     >
       <div className="flex justify-between items-end ">
-        <Dark_Typography fontSize="Title_Small">{data.title}</Dark_Typography>
+        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+          {data.title}
+        </Dark_Typography>
       </div>
       <div className="rounded-2xl p-4 flex flex-col gap-3 bg-impo_Neutral_Background">
         <BiorhythemItems {...data} />

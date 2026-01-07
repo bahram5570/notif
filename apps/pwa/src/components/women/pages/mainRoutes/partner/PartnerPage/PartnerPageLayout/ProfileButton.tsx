@@ -2,10 +2,8 @@ import ProfileIcon from '@assets/icons/headerProfile.svg';
 
 import Spinner from '@components/ui/Spinner';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 
 const ProfileButton = () => {
-  const { colors } = useTheme();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
   let path = '/protected/profile';
 
@@ -23,7 +21,7 @@ const ProfileButton = () => {
             {pageNavigationLoading === 'profile' ? (
               <Spinner color="outline" width={28} />
             ) : (
-              <ProfileIcon className="w-8 h-full" style={{ stroke: colors.Surface_Outline }} />
+              <ProfileIcon className="w-8 h-full stroke-impo_Surface_Outline" />
             )}
           </div>
         </div>

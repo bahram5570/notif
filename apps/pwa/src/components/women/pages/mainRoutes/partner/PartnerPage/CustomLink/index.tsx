@@ -1,5 +1,5 @@
+import Dark_Typography from '@components/ui/Dark_Typography';
 import Spinner from '@components/ui/Spinner';
-import Typography from '@components/ui/Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useTheme from '@hooks/useTheme';
 import Link from 'next/link';
@@ -35,17 +35,15 @@ const CustomLink = (props: CustomLinkPropType) => {
       href={link}
       style={{
         ...style,
-        backgroundColor,
-        color,
       }}
-      className="font-semibold w-full h-10 text-base rounded-full flex justify-center items-center"
+      className="font-semibold w-full h-10 text-base rounded-full flex justify-center items-center text-impo_Primary_Primary bg-impo_Primary_PrimaryContainer"
       onClick={clickHandler}
     >
       {isLoading && <Spinner width={20} color="primary" />}
       {!isLoading && (
-        <Typography scale="Lable" size={labelSize} color={labelColor}>
+        <Dark_Typography fontSize="Lable_Large" className="text-impo_Primary_Primary">
           {lable}
-        </Typography>
+        </Dark_Typography>
       )}
     </Link>
   );

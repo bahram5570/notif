@@ -1,22 +1,21 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { MemoryHeaderPropsType } from './type';
 
 const MemoryHeader = ({ currentDate }: MemoryHeaderPropsType) => {
-  const { colors } = useTheme();
   return (
     <div className="flex items-center justify-center gap-3">
       <div
-        style={{ border: `1px solid ${colors.Neutral_Surface}`, transform: 'rotate(180deg)' }}
-        className="h-0 w-24"
+        style={{ transform: 'rotate(180deg)' }}
+        className="h-0 w-24 border border-impo_Neutral_Surface dark:border-impo_Neutral_OnBackground"
       ></div>
-      <Typography scale="Body" size="Medium" color="Neutral_OnBackground" textAlign="center">
+      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
         {currentDate}
-      </Typography>
+      </Dark_Typography>
+
       <div
-        style={{ border: `1px solid ${colors.Neutral_Surface}`, transform: 'rotate(180deg)' }}
-        className="h-0 w-24"
+        style={{ transform: 'rotate(180deg)' }}
+        className="h-0 w-24 border border-impo_Neutral_Surface dark:border-impo_Neutral_OnBackground"
       ></div>
     </div>
   );

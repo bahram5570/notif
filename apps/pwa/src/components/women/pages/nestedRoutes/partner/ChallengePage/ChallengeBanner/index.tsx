@@ -1,5 +1,5 @@
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ChallengeBannerPropsType } from './type';
 
@@ -8,12 +8,12 @@ const ChallengeBanner = ({ bannerText, bannerTitle }: ChallengeBannerPropsType) 
     <div className="relative">
       <CustomImage src="/assets/images/bg-challenge.webp" />
       <div className="flex absolute top-0 w-full h-full justify-center items-center gap-1 flex-row-reverse">
-        <Typography scale="Body" size="Medium" color="Neutral_OnBackground">
+        <Dark_Typography fontSize="Body_Medium" className="text-impo_Black">
           {bannerTitle}
-        </Typography>
-        <Typography scale="Title" size="Small" color="Pink_800">
+        </Dark_Typography>
+        <Dark_Typography fontSize="Title_Small" className="dark:text-impo_Pink_50 text-impo_Pink_900">
           {bannerText}
-        </Typography>
+        </Dark_Typography>
       </div>
     </div>
   );

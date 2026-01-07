@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 
 import MessageContainerSkeleton from './MessageContainerSkeleton';
@@ -37,9 +37,10 @@ const MessageContainer = () => {
           rightElementScript="ارسال پیام"
           className="flex flex-col gap-5 px-4 min-h-[100dvh] "
         >
-          <Typography scale="Title" size="Small" textAlign="center" className="w-full">
+          <Dark_Typography fontSize="Title_Small" className="text-center w-full text-impo_Neutral_OnBackground">
             ارسال پیام به همدل
-          </Typography>
+          </Dark_Typography>
+
           {hasData && <MessageList messages={data} />}
           {hasData && !data[data.length - 1].readFlag && !data[data.length - 1].fromMan ? <Warning /> : <NewMessage />}
         </WomenPageLayout>

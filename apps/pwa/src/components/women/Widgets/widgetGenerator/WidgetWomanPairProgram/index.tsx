@@ -1,5 +1,4 @@
 import CustomSlider from '@components/ui/CustomSlider';
-import useTheme from '@hooks/useTheme';
 
 import WidgetCardContainer from '../../WidgetCardContainer';
 import WomanPairRoutin from './WomanPairRoutin';
@@ -14,7 +13,7 @@ const WidgetWomanPairProgram = ({ data }: WomanPairProgramCardPropsPropsType) =>
         {data.items.map((item, index) => (
           <div className="flex flex-row w-full" key={index}>
             <div
-              className={`rounded-2xl flex flex-col  justify-between bg-impo_Surface_SurfaceVariant p-4 ${hasOOneWidget ? 'w-full' : 'w-80'}`}
+              className={`rounded-2xl flex flex-col  justify-between bg-impo_Neutral_Surface p-4 ${hasOOneWidget ? 'w-full' : 'w-80'}`}
             >
               <WomanPairRoutin {...item} />
             </div>

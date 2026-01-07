@@ -1,28 +1,21 @@
 import { jalaaliScriptDate } from '@utils/dates';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import moment from 'moment-jalaali';
 
 const HeaderCreateMemory = () => {
-  const { colors } = useTheme();
-
   const gregorianMoment = moment(new Date().toISOString(), 'YYYY-MM-DD');
   const jalaaliDate = gregorianMoment.format('jYYYY/jMM/jDD');
 
   return (
     <div className="flex items-center justify-center gap-3">
-      <div
-        style={{ border: `1px solid ${colors.Neutral_Surface}`, transform: 'rotate(180deg)' }}
-        className="h-0 w-24"
-      ></div>
-      <Typography scale="Body" size="Medium" color="Neutral_OnBackground" textAlign="center">
-        {`امروز ${jalaaliScriptDate(jalaaliDate)} `}
-      </Typography>
-      <div
-        style={{ border: `1px solid ${colors.Neutral_Surface}`, transform: 'rotate(180deg)' }}
-        className="h-0 w-24"
-      ></div>
+      <div style={{ transform: 'rotate(180deg)' }} className="h-0 w-24 border border-impo_Neutral_Surface"></div>
+      <Dark_Typography
+        fontSize="Body_Medium"
+        className="text-impo_Neutral_OnBackground text-center"
+      >{`امروز ${jalaaliScriptDate(jalaaliDate)} `}</Dark_Typography>
+
+      <div style={{ transform: 'rotate(180deg)' }} className="h-0 w-24 border border-impo_Neutral_Surface"></div>
     </div>
   );
 };
