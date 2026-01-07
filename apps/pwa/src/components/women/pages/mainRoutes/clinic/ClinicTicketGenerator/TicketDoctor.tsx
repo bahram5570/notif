@@ -1,24 +1,25 @@
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { TicketDoctorProps } from './types';
 
 const TicketDoctor = ({ drName, drSpeciality, drImage, stylingTypes }: TicketDoctorProps) => {
-  const { colors } = useTheme();
-
-  const color = stylingTypes === 'heading' ? colors.Neutral_Background : colors.Neutral_OnBackground;
-
   return (
     <div className="flex items-center gap-1">
       <div className="flex flex-col items-end gap-1">
-        <Typography scale="Lable" size="Medium" color="FREE-STYLE" freeColor={color}>
+        <Dark_Typography
+          fontSize="Lable_Medium"
+          className={`${stylingTypes === 'heading' ? 'text-impo_Primary_OnPrimary' : 'text-impo_Neutral_OnBackground'}`}
+        >
           {drName}
-        </Typography>
+        </Dark_Typography>
 
-        <Typography scale="Body" size="Small" color="FREE-STYLE" freeColor={color}>
-          {drSpeciality}
-        </Typography>
+        <Dark_Typography
+          fontSize="Body_Small"
+          className={`${stylingTypes === 'heading' ? 'text-impo_Primary_OnPrimary' : 'text-impo_Neutral_OnBackground'}`}
+        >
+          {drName}
+        </Dark_Typography>
       </div>
 
       <CustomImage src={drImage} width={56} height={56} className="rounded-full" />

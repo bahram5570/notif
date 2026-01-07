@@ -1,66 +1,66 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import { useMemo } from 'react';
+
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ClinicStateEnums } from '../enumbs';
 import TicketRate from './TicketRate';
 import { TicketSmallLabelProps } from './types';
 
 const TicketSmallLabel = ({ state, stylingTypes, rate }: TicketSmallLabelProps) => {
-  const { colors } = useTheme();
+  const values = useMemo(() => {
+    const result = { backgroundColor: '', textColor: '', script: '' };
 
-  let backgroundColor = '';
-  let freeColor = '';
+    switch (stylingTypes) {
+      case 'heading':
+        result.backgroundColor = 'bg-impo_White';
+        result.textColor = 'text-impo_Black';
+        break;
+      case 'lists':
+        if (state === ClinicStateEnums.Rejected || state === ClinicStateEnums.rejectBySuppoer) {
+          result.backgroundColor = 'bg-impo_Error_ErrorContainer';
+          result.textColor = 'text-impo_Error_Error';
+        } else {
+          result.backgroundColor = 'bg-impo_Primary_PrimaryContainer';
+          result.textColor = 'text-Primary_OnPrimaryContainer';
+        }
+        break;
+      default:
+        result.backgroundColor = 'bg-impo_Primary_PrimaryContainer';
+        result.textColor = 'text-Primary_OnPrimaryContainer';
+        break;
+    }
 
-  switch (stylingTypes) {
-    case 'heading':
-      backgroundColor = colors.Neutral_Background;
-      freeColor = colors.Neutral_OnBackground;
-      break;
-    case 'lists':
-      if (state === ClinicStateEnums.Rejected || state === ClinicStateEnums.rejectBySuppoer) {
-        backgroundColor = colors.Error_ErrorContainer;
-        freeColor = colors.Error_Error;
-      } else {
-        backgroundColor = colors.Pink_100;
-        freeColor = colors.Neutral_OnBackground;
-      }
-      break;
-    default:
-      backgroundColor = colors.Pink_100;
-      freeColor = colors.Neutral_OnBackground;
-      break;
-  }
+    switch (state) {
+      case ClinicStateEnums.NoPay:
+        result.script = 'در انتظار پرداخت';
+        break;
+      case ClinicStateEnums.Pending:
+        result.script = 'در انتظار پاسخ پزشک';
+        break;
+      case ClinicStateEnums.NeedYourAnswer:
+        result.script = 'در انتظار پاسخ کاربر';
+        break;
+      case ClinicStateEnums.Closed:
+        result.script = 'بسته شده';
+        break;
+      case ClinicStateEnums.Rejected:
+        result.script = 'تیکت رد شده است';
+        break;
+      case ClinicStateEnums.rejectBySuppoer:
+        result.script = 'تیکت توسط پشتیبان رد شده است';
+        break;
+    }
 
-  let script = '';
-
-  switch (state) {
-    case ClinicStateEnums.NoPay:
-      script = 'در انتظار پرداخت';
-      break;
-    case ClinicStateEnums.Pending:
-      script = 'در انتظار پاسخ پزشک';
-      break;
-    case ClinicStateEnums.NeedYourAnswer:
-      script = 'در انتظار پاسخ کاربر';
-      break;
-    case ClinicStateEnums.Closed:
-      script = 'بسته شده';
-      break;
-    case ClinicStateEnums.Rejected:
-      script = 'تیکت رد شده است';
-      break;
-    case ClinicStateEnums.rejectBySuppoer:
-      script = 'تیکت توسط پشتیبان رد شده است';
-      break;
-  }
+    return result;
+  }, [state, stylingTypes]);
 
   return (
-    <div className="flex items-center justify-center rounded-full px-3 py-1" style={{ backgroundColor }}>
+    <div className={`flex items-center justify-center rounded-full px-3 py-1 ${values.backgroundColor}`}>
       <TicketRate rate={rate} />
 
-      <Typography scale="Body" size="Small" color="FREE-STYLE" freeColor={freeColor}>
-        {script}
-      </Typography>
+      <Dark_Typography fontSize="Body_Small" className={`${values.textColor}`}>
+        {values.script}
+      </Dark_Typography>
     </div>
   );
 };

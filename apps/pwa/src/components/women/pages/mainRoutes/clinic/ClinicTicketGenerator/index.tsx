@@ -1,5 +1,3 @@
-import useTheme from '@hooks/useTheme';
-
 import { ClinicStateEnums } from '../enumbs';
 import TicketArrow from './TicketArrow';
 import TicketBigLabel from './TicketBigLabel';
@@ -10,7 +8,6 @@ import { ClinicTicketGeneratorProps } from './types';
 import useClinicTicketNavigation from './useClinicTicketNavigation';
 
 const ClinicTicketGenerator = (props: ClinicTicketGeneratorProps) => {
-  const { colors } = useTheme();
   const { navigateTicketHandler } = useClinicTicketNavigation(props);
 
   const showArrow =
@@ -19,8 +16,14 @@ const ClinicTicketGenerator = (props: ClinicTicketGeneratorProps) => {
   return (
     <div className="w-full cursor-pointer" onClick={navigateTicketHandler}>
       <div
-        className="w-full px-2 py-3 rounded-xl  pointer-events-none"
-        style={{ backgroundColor: props.stylingTypes === 'heading' ? colors.Pink_500 : colors.Surface_SurfaceVariant }}
+        className={`
+                    w-full 
+                    px-2 
+                    py-3 
+                    rounded-xl 
+                    pointer-events-none 
+                    ${props.stylingTypes === 'heading' ? 'bg-impo_Primary_Primary' : 'bg-impo_Surface_SurfaceVariant'}
+                  `}
       >
         <div className="flex items-center justify-between">
           {!showArrow && <TicketArrow stylingTypes={props.stylingTypes} />}
@@ -44,11 +47,13 @@ const ClinicTicketGenerator = (props: ClinicTicketGeneratorProps) => {
         </div>
 
         <div
-          className="w-full h-[1px] my-2"
-          style={{
-            opacity: showArrow ? '0' : '1',
-            backgroundColor: props.stylingTypes === 'heading' ? colors.Pink_300 : colors.Neutral_Surface,
-          }}
+          className={`
+                      w-full 
+                      h-[1px] 
+                      my-2
+                      ${props.stylingTypes === 'heading' ? 'bg-impo_Primary_OnPrimary' : 'bg-impo_Neutral_Surface'}
+                      ${showArrow ? 'opacity-0' : 'opacity-100'}
+                    `}
         />
 
         <div className="w-full flex items-center justify-between">

@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+
+import Dark_Typography from '@components/ui/Dark_Typography';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import { TypingLoopPropsType } from './type';
 
 const TypingLoop = ({ collapseText1, collapseText2 }: TypingLoopPropsType) => {
-  const messages = [collapseText1, collapseText2];
-
   const [text, setText] = useState('');
   const [msgIndex, setMsgIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
+  const { operatingSystem } = useOperatingSystem();
   const [isDeleting, setIsDeleting] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
-  const { colors, typography } = useTheme();
+
+  const messages = [collapseText1, collapseText2];
+  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Lable_Medium', operatingSystem });
 
   useEffect(() => {
     const currentMessage = messages[msgIndex];
@@ -52,22 +55,17 @@ const TypingLoop = ({ collapseText1, collapseText2 }: TypingLoopPropsType) => {
     const blink = setInterval(() => {
       setShowCursor((prev) => !prev);
     }, 500);
+
     return () => clearInterval(blink);
   }, []);
 
   return (
-    <div
-      style={{
-        color: colors.Neutral_OnBackground,
-        ...typography.Lable.Medium,
-      }}
-      className="flex flex-row-reverse justify-center items-center gap-1"
-    >
-      <Typography scale="Lable" size="Medium" color="Neutral_OnBackground">
+    <div style={{ ...typographyFontStyles }} className="flex flex-row-reverse justify-center items-center gap-1">
+      <Dark_Typography fontSize="Lable_Medium" className="text-impo_Black">
         {text}
-      </Typography>
+      </Dark_Typography>
 
-      <span style={{ opacity: showCursor ? 1 : 0 }}>|</span>
+      <span className={`text-impo_Black ${showCursor ? 'opacity-100' : 'opacity-0'}`}>|</span>
     </div>
   );
 };

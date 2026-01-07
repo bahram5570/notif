@@ -1,48 +1,65 @@
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { SpecialistInfoGeneratorProps } from './types';
 
 const SpecialistInfoGenerator = ({
-  backgroundColor,
   nezamNumber,
+  isSelected,
   speciliaty,
   firstName,
   lastName,
   isOnline,
   image,
 }: SpecialistInfoGeneratorProps) => {
-  const { colors } = useTheme();
-
   return (
-    <div className="flex flex-row-reverse items-center gap-1 w-full p-2 rounded-xl mt-2" style={{ backgroundColor }}>
+    <div
+      className={`
+                  flex 
+                  flex-row-reverse 
+                  items-center 
+                  gap-1 
+                  w-full 
+                  p-2 
+                  rounded-xl 
+                  mt-2 
+                  ${isSelected ? 'bg-impo_Neutral_Background' : 'bg-impo_Surface_SurfaceVariant'}
+                `}
+    >
       <div className="relative w-12 h-12 min-w-12 min-h-12 rounded-full">
         <CustomImage src={image} width={48} height={48} className="rounded-full" />
 
         {isOnline && (
-          <div
-            className="absolute right-0 bottom-0 w-[14px] h-[14px] p-[2px] rounded-full z-10"
-            style={{ backgroundColor: colors.White }}
-          >
-            <div className="w-full h-full rounded-full" style={{ backgroundColor: colors.Green_500 }} />
+          <div className="absolute right-0 bottom-0 w-[14px] h-[14px] p-[2px] rounded-full bg-impo_White z-10">
+            <div className="w-full h-full rounded-full bg-impo_Green_500" />
           </div>
         )}
       </div>
 
       <div className="flex flex-col items-end gap-1">
-        <Typography scale="Lable" size="Medium">{`${firstName} ${lastName}`}</Typography>
+        <Dark_Typography
+          fontSize="Lable_Medium"
+          className={`${isSelected ? 'text-impo_Neutral_OnBackground' : 'text-impo_Neutral_OnBackground'}`}
+        >{`${firstName} ${lastName}`}</Dark_Typography>
 
         <div className="flex items-center gap-2">
-          <Typography scale="Lable" size="Small" color="Surface_InverseSurface">
+          <Dark_Typography
+            fontSize="Lable_Small"
+            className={`${isSelected ? 'text-impo_Neutral_OnBackground' : 'text-impo_Surface_InverseSurface'}`}
+          >
             {`ش.ن: ${nezamNumber}`}
-          </Typography>
+          </Dark_Typography>
 
-          <div className="w-[1px] h-4" style={{ backgroundColor: colors.Surface_OutlineVariant }} />
+          <div
+            className={`w-[1px] h-4 ${isSelected ? 'bg-impo_Neutral_OnBackground' : 'bg-impo_Surface_OutlineVariant'}`}
+          />
 
-          <Typography scale="Lable" size="Small" color="Surface_InverseSurface">
+          <Dark_Typography
+            fontSize="Lable_Small"
+            className={`${isSelected ? 'text-impo_Neutral_OnBackground' : 'text-impo_Surface_InverseSurface'}`}
+          >
             {speciliaty}
-          </Typography>
+          </Dark_Typography>
         </div>
       </div>
     </div>

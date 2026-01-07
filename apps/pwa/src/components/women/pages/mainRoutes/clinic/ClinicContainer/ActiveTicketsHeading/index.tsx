@@ -1,5 +1,5 @@
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import ClinicTicketGenerator from '../../ClinicTicketGenerator';
@@ -22,21 +22,19 @@ const ActiveTicketsHeading = ({ activeTicketsOneTitle, activeTicketsMore, ticket
       {hasTicket && (
         <div className="w-full flex flex-col items-end gap-2 pb-7">
           <div className="w-full flex flex-row-reverse items-center justify-between">
-            <Typography scale="Lable" size="Large">
+            <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
               {activeTicketsOneTitle}
-            </Typography>
+            </Dark_Typography>
 
             {isMoreThanOne && (
-              <Button
-                color="pink"
-                size="small"
-                variant="fill"
-                fullWidth={false}
+              <Dark_Button
                 onClick={openHandler}
+                fontSize="Lable_Medium"
                 navigationLoadingId="ActiveTicketsHeading"
+                className="!w-fit !h-8 bg-impo_Primary_PrimaryContainer border-impo_Primary_PrimaryContainer text-impo_Primary_Primary"
               >
                 {activeTicketsMore}
-              </Button>
+              </Dark_Button>
             )}
           </div>
 

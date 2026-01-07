@@ -1,24 +1,21 @@
 import StarIcon from '@assets/icons/star.svg';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { TicketRateProps } from './types';
 
 const TicketRate = ({ rate }: TicketRateProps) => {
-  const { colors } = useTheme();
-
   return (
     <>
       {rate > 0 && (
         <div className="flex items-center gap-1 pr-1">
-          <Typography scale="Lable" size="Large" className="!h-5">
+          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground !h-5">
             {rate.toString()}
-          </Typography>
+          </Dark_Typography>
 
-          <StarIcon className="w-6 h-auto" style={{ fill: colors.Yellow }} />
+          <StarIcon className="w-6 h-auto fill-impo_Yellow" />
 
-          <div className="w-[1px] h-[20px]" style={{ backgroundColor: colors.Pink_200 }} />
+          <div className="w-[1px] h-[20px] bg-impo_Pink_200" />
         </div>
       )}
     </>

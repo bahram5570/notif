@@ -6,16 +6,13 @@ import { textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Spinner from '@components/ui/Spinner';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import { FileInputProps } from './types';
 
 const FileInput = ({ fileName, valuesHandler }: FileInputProps) => {
-  const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
@@ -24,7 +21,7 @@ const FileInput = ({ fileName, valuesHandler }: FileInputProps) => {
   const fileNameScript = `${textShorter(fileNameList[0])} .${fileNameList[1]}`;
 
   return (
-    <div className="w-full px-4 rounded-lg" style={{ backgroundColor: colors.Surface_SurfaceVariant }}>
+    <div className="w-full px-4 rounded-lg bg-impo_Surface_SurfaceVariant">
       {fileName === '' && (
         <div
           className="relative w-full flex items-center justify-center gap-2 py-2 cursor-pointer"
@@ -34,11 +31,11 @@ const FileInput = ({ fileName, valuesHandler }: FileInputProps) => {
           }}
         >
           <>
-            <Typography scale="Body" size="Medium" className="pointer-events-none">
+            <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground pointer-events-none">
               ارسال آزمایش یا گزارش (اختیاری)
-            </Typography>
+            </Dark_Typography>
 
-            <AttachIcon className="w-3 h-auto rotate-45 pointer-events-none" style={{ fill: colors.Black }} />
+            <AttachIcon className="w-3 h-auto rotate-45 pointer-events-none fill-impo_Neutral_OnBackground" />
           </>
         </div>
       )}
@@ -47,26 +44,23 @@ const FileInput = ({ fileName, valuesHandler }: FileInputProps) => {
         <div className="relative w-full flex items-center justify-between gap-5 py-3">
           <div className="flex items-center gap-2">
             {isImageType && <CustomImage src={fileName} width={48} height={48} className="rounded-md" />}
+
             {!isImageType && (
-              <div
-                className="w-12 h-12 rounded-full flex items-center justify-center"
-                style={{ backgroundColor: colors.White }}
-              >
-                <DownloadedIcon className="w-7 h-auto" style={{ fill: colors.Surface_OutlineVariant }} />
+              <div className="w-12 h-12 rounded-full flex items-center justify-center bg-impo_White">
+                <DownloadedIcon className="w-7 h-auto fill-impo_Surface_OutlineVariant" />
               </div>
             )}
 
-            <Typography scale="Body" size="Medium" className="break-all" textAlign="left">
+            <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground break-all text-left">
               {fileNameScript}
-            </Typography>
+            </Dark_Typography>
           </div>
 
           <div
-            className="w-10 h-10 min-w-10 min-h-10 rounded-full flex justify-center items-center cursor-pointer"
-            style={{ backgroundColor: colors.Error_ErrorContainer }}
             onClick={() => valuesHandler({ name: 'fileName', value: '' })}
+            className="w-10 h-10 min-w-10 min-h-10 rounded-full flex justify-center items-center bg-impo_Error_ErrorContainer cursor-pointer"
           >
-            <TrashIcon className="w-5 h-auto" style={{ stroke: colors.Black }} />
+            <TrashIcon className="w-5 h-auto stroke-impo_Black" />
           </div>
         </div>
       )}

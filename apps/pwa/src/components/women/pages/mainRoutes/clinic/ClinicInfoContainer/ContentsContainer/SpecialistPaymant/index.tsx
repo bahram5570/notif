@@ -56,13 +56,13 @@ const SpecialistPaymant = (props: SpecialistPaymantProps) => {
             </Typography>
 
             <SpecialistInfoGenerator
+              isSelected={false}
               image={props.image}
               isOnline={props.isOnline}
               lastName={props.lastName}
               firstName={props.firstName}
               speciliaty={props.speciliaty}
               nezamNumber={props.nezamNumber}
-              backgroundColor={colors.Blue_50}
             />
           </div>
 

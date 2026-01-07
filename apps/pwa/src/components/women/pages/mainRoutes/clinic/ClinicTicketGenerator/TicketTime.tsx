@@ -3,18 +3,19 @@ import { useMemo } from 'react';
 import { toJalaliData } from '@utils/dates';
 import { addZero } from '@utils/scripts';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
-import useTheme from '@hooks/useTheme';
 
 import { TicketTimeProps } from './types';
 
 const TicketTime = ({ createTime, stylingTypes }: TicketTimeProps) => {
-  const { colors } = useTheme();
   const { culture } = useCulture();
 
-  const color = stylingTypes === 'heading' ? colors.Pink_50 : colors.Surface_Outline;
+  const colors = {
+    backgroundColor: stylingTypes === 'heading' ? 'bg-impo_Primary_OnPrimary' : 'bg-impo_Surface_Outline',
+    textColor: stylingTypes === 'heading' ? 'text-impo_Primary_OnPrimary' : 'text-impo_Surface_Outline',
+  };
 
   const date = new Date(createTime);
   const timeScript = `${date.getHours()}:${date.getMinutes()}`;
@@ -34,15 +35,15 @@ const TicketTime = ({ createTime, stylingTypes }: TicketTimeProps) => {
 
   return (
     <div className="flex items-center gap-1">
-      <Typography scale="Body" size="Small" color="FREE-STYLE" freeColor={color}>
+      <Dark_Typography fontSize="Body_Small" className={`${colors.textColor}`}>
         {dateScript}
-      </Typography>
+      </Dark_Typography>
 
-      <div className="w-[1px] h-[18px]" style={{ backgroundColor: color }} />
+      <div className={`w-[1px] h-[18px] ${colors.backgroundColor}`} />
 
-      <Typography scale="Body" size="Small" color="FREE-STYLE" freeColor={color}>
+      <Dark_Typography fontSize="Body_Small" className={`${colors.textColor}`}>
         {timeScript}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

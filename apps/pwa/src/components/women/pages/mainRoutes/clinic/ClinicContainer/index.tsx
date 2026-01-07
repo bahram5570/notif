@@ -1,6 +1,6 @@
 import { Suspense, useState } from 'react';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { FOOTER_HEIGTH } from '@components/women/WomenFooter/constants';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 
@@ -48,9 +48,9 @@ const ClinicContainer = () => {
                       activeTicketsOneTitle={data.activeTicketsOneTitle}
                     />
 
-                    <Typography scale="Headline" size="Small">
+                    <Dark_Typography fontSize="Headline_Small" className="text-impo_Neutral_OnBackground">
                       {data.title}
-                    </Typography>
+                    </Dark_Typography>
 
                     {data.types.map((item, index) => (
                       <ClinicCardGenerator

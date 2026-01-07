@@ -1,31 +1,26 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { SpecialistCardSectionMakerProps } from './types';
 
-const SpecialistCardSectionMaker = ({
-  notSelectedColor,
-  isSelectedColor,
-  isSelected,
-  value,
-  title,
-  Icon,
-}: SpecialistCardSectionMakerProps) => (
+const SpecialistCardSectionMaker = ({ isSelected, value, title, Icon }: SpecialistCardSectionMakerProps) => (
   <div className="flex flex-col items-center py-1 gap-1">
-    <Icon className="w-5 h-auto" style={{ stroke: isSelected ? isSelectedColor : notSelectedColor }} />
+    <Icon
+      className={`w-5 h-auto ${isSelected ? 'stroke-impo_Neutral_OnBackground' : 'stroke-impo_Neutral_OnBackground'}`}
+    />
 
-    <Typography
-      scale="Lable"
-      size="Small"
-      color="FREE-STYLE"
-      className="pt-2 pb-1"
-      freeColor={isSelected ? isSelectedColor : notSelectedColor}
+    <Dark_Typography
+      fontSize="Lable_Small"
+      className={`${isSelected ? 'text-impo_Neutral_OnBackground' : 'text-impo_Neutral_OnBackground'}`}
     >
       {title}
-    </Typography>
+    </Dark_Typography>
 
-    <Typography scale="Lable" size="Medium">
+    <Dark_Typography
+      fontSize="Lable_Medium"
+      className={`${isSelected ? 'text-impo_Neutral_OnBackground' : 'text-impo_Neutral_OnBackground'}`}
+    >
       {value}
-    </Typography>
+    </Dark_Typography>
   </div>
 );
 

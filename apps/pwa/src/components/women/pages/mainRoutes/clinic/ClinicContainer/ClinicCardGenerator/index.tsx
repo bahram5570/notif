@@ -1,17 +1,15 @@
 import { addCommas } from '@utils/numbers';
 
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 
 import { ClinicCardGeneratorProps } from './types';
 
 const ClinicCardGenerator = ({ description, id, image, name, price, priceUnit }: ClinicCardGeneratorProps) => {
   const { callEvent } = useAnalytics();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { colors } = useTheme();
 
   const clickHandler = () => {
     callEvent('Clinic_Ticket');
@@ -20,24 +18,21 @@ const ClinicCardGenerator = ({ description, id, image, name, price, priceUnit }:
 
   return (
     <div onClick={clickHandler} className="cursor-pointer">
-      <div
-        className="w-full h-fit px-3 py-4 rounded-xl flex items-center gap-2 pointer-events-none "
-        style={{ backgroundColor: colors.Surface_SurfaceVariant }}
-      >
+      <div className="w-full h-fit px-3 py-4 rounded-xl flex items-center gap-2 bg-impo_Surface_SurfaceVariant pointer-events-none ">
         <CustomImage src={image} width={90} height={90} />
 
         <div className="w-full flex flex-col items-end gap-1">
-          <Typography scale="Title" size="Small">
+          <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
             {name}
-          </Typography>
+          </Dark_Typography>
 
-          <Typography scale="Body" size="Small">
+          <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
             {description}
-          </Typography>
+          </Dark_Typography>
 
-          <Typography scale="Lable" size="SmallProminet">
+          <Dark_Typography fontSize="Lable_SmallProminet" className="text-impo_Neutral_OnBackground">
             {`${addCommas(price)} ${priceUnit}`}
-          </Typography>
+          </Dark_Typography>
         </div>
       </div>
     </div>

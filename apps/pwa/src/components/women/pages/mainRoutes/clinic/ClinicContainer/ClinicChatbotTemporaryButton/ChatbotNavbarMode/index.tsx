@@ -1,25 +1,23 @@
 import chatbotJson from '@assets/lottie/chatbot.json';
 
-import Spinner from '@components/ui/Spinner';
-import Typography from '@components/ui/Typography';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
-import Link from 'next/link';
 
 import TypingLoop from './TypingLoop';
 import { ChatbotNavbarModePropsType } from './type';
 
 const ChatbotNavbarMode = ({
-  collapseText1,
-  collapseText2,
   continueChatText,
   goToChatAction,
+  collapseText1,
+  collapseText2,
 }: ChatbotNavbarModePropsType) => {
-  const { colors } = useTheme();
   const { actionHandler } = useWidgetActions();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+
   const isLoading = pageNavigationLoading === 'aiChatbot';
 
   const onClick = () => {
@@ -28,11 +26,11 @@ const ChatbotNavbarMode = ({
   };
   return (
     <div
-      className="relative w-full h-full  rounded-[100px] flex flex-row-reverse gap-2  items-center p-2 mt-4"
+      className="relative w-full h-full rounded-[100px] flex flex-row-reverse gap-2 items-center p-2 mt-4"
       style={{ background: 'linear-gradient(to right, #FFB7C9, #B5D3FF)' }}
     >
       <div>
-        <div className="w-12 h-12  rounded-full " style={{ borderBlockColor: colors.White }}>
+        <div className="w-12 h-12 rounded-full bg-impo_White">
           <LottieJson animationData={chatbotJson} loop={true} />
         </div>
       </div>
@@ -46,16 +44,13 @@ const ChatbotNavbarMode = ({
       <div className="w-full flex ">
         <div onClick={onClick}>
           <div className="flex flex-row items-center gap-1 justify-center w-full h-[30px] mt-auto">
-            <div
-              className="px-4 py-2 flex justify-center items-center rounded-full w-full"
-              style={{ background: colors.PrimaryWoman_Primary }}
-            >
+            <div className="px-4 py-2 flex justify-center items-center rounded-full w-full bg-impo_Primary_Primary">
               {isLoading ? (
-                <Spinner width={24} color="FREE-STYLES" borderColor={colors.White} />
+                <Dark_Spinner size={24} className="border-impo_Neutral_Background" />
               ) : (
-                <Typography scale="Lable" size="Large" color="PrimaryMan_OnPrimaryMan">
+                <Dark_Typography fontSize="Lable_Large" className="text-impo_Primary_OnPrimary">
                   {continueChatText}
-                </Typography>
+                </Dark_Typography>
               )}
             </div>
           </div>

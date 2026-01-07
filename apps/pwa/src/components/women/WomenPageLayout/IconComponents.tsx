@@ -67,7 +67,7 @@ export const TicketsHistoryIconComponent = () => {
     <IconComponentMaker
       loadingId="history"
       path="/protected/clinic/ticketsHistory"
-      iconElement={<TicketsHistoryIcon className="w-8 h-full stroke-impo_Surface_Outline" />}
+      iconElement={<TicketsHistoryIcon className="w-8 h-full fill-impo_Surface_Outline" />}
     />
   );
 };

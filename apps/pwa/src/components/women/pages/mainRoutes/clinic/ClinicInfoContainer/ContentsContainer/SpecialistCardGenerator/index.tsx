@@ -2,10 +2,9 @@ import ClockIcon from '@assets/icons/clock1.svg';
 import PeopleIcon from '@assets/icons/people.svg';
 import StarIcon from '@assets/icons/star.svg';
 
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 import { usePathname } from 'next/navigation';
 
 import { CLINIC_DOCTOR_MODAL_QUERY_NAME } from '../../../ClinicDoctorModal/constants';
@@ -28,7 +27,6 @@ const SpecialistCardGenerator = ({
   rate,
   id,
 }: SpecialistCardGeneratorProps) => {
-  const { colors } = useTheme();
   const pathname = usePathname();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
@@ -51,13 +49,12 @@ const SpecialistCardGenerator = ({
 
   return (
     <div
-      style={{ backgroundColor: isSelected ? colors.Blue_100 : colors.Surface_SurfaceVariant }}
-      className="w-full p-2 rounded-xl "
       onClick={selectHandler}
+      className={`w-full p-2 rounded-xl ${isSelected ? 'bg-impo_Blue_100 dark:!bg-impo_Blue_50' : 'bg-impo_Surface_SurfaceVariant'}`}
     >
       <SpecialistInfoGenerator
-        backgroundColor={isSelected ? colors.White : colors.Surface_SurfaceVariant}
         nezamNumber={nezamNumber}
+        isSelected={isSelected}
         speciliaty={speciliaty}
         firstName={firstName}
         lastName={lastName}
@@ -65,54 +62,23 @@ const SpecialistCardGenerator = ({
         image={image}
       />
 
-      <div className="w-full h-[1px] my-1" style={{ backgroundColor: colors.Blue_100 }} />
-
-      <div className="flex justify-between items-center px-2">
+      <div className="flex justify-between items-center px-2 mt-[2px]">
         <SpecialistCardSectionMaker
-          isSelectedColor={colors.Surface_OnSurfaceVariant}
-          notSelectedColor={colors.Surface_Outline}
           value={rrCount.toString()}
           title="تعداد مشاوره ها"
           isSelected={isSelected}
           Icon={PeopleIcon}
         />
 
-        <div className="w-[1px] h-10 mx-1" style={{ backgroundColor: colors.Blue_100 }} />
+        <SpecialistCardSectionMaker title="میانگین امتیازات" isSelected={isSelected} Icon={StarIcon} value={rate} />
 
-        <SpecialistCardSectionMaker
-          isSelectedColor={colors.Surface_OnSurfaceVariant}
-          notSelectedColor={colors.Surface_Outline}
-          title="میانگین امتیازات"
-          isSelected={isSelected}
-          Icon={StarIcon}
-          value={rate}
-        />
-
-        <div className="w-[1px] h-10 mx-1" style={{ backgroundColor: colors.Blue_100 }} />
-
-        <SpecialistCardSectionMaker
-          isSelectedColor={colors.Surface_OnSurfaceVariant}
-          notSelectedColor={colors.Surface_Outline}
-          title="میانگین پاسخگویی"
-          isSelected={isSelected}
-          Icon={ClockIcon}
-          value={minTime}
-        />
+        <SpecialistCardSectionMaker title="میانگین پاسخگویی" isSelected={isSelected} Icon={ClockIcon} value={minTime} />
       </div>
 
       {hasCommentsButton && (
-        <Button
-          contentsColor={colors.Neutral_OnSurface}
-          onClick={selectDoctorHandler}
-          className="rounded-lg my-2"
-          buttonColor={colors.White}
-          navigationLoadingId={id}
-          color="FREE-STYLES"
-          variant="fill"
-          size="small"
-        >
+        <Dark_Button onClick={selectDoctorHandler} className="rounded-lg my-2" navigationLoadingId={id}>
           نظرات کاربران
-        </Button>
+        </Dark_Button>
       )}
     </div>
   );

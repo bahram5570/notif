@@ -1,12 +1,9 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ClinicStateEnums } from '../enumbs';
 import { TicketBigLabelProps } from './types';
 
 const TicketBigLabel = ({ state, stylingTypes }: TicketBigLabelProps) => {
-  const { colors } = useTheme();
-
   let script = '';
 
   switch (state) {
@@ -17,20 +14,25 @@ const TicketBigLabel = ({ state, stylingTypes }: TicketBigLabelProps) => {
       script = 'امتیاز به متخصص';
       break;
   }
+
   return (
     <div
-      className="w-full h-10 rounded-lg flex items-center justify-center"
-      style={{
-        backgroundColor: stylingTypes === 'heading' ? colors.PrimaryWoman_OnPrimary : colors.PrimaryWoman_Primary,
-      }}
+      className={`
+                  w-full 
+                  h-10 
+                  rounded-lg 
+                  flex 
+                  items-center 
+                  justify-center 
+                  ${stylingTypes === 'heading' ? 'bg-impo_Primary_OnPrimary' : 'bg-impo_Primary_Primary'}
+                `}
     >
-      <Typography
-        scale="Lable"
-        size="Large"
-        color={stylingTypes === 'heading' ? 'PrimaryWoman_Primary' : 'PrimaryWoman_OnPrimary'}
+      <Dark_Typography
+        fontSize="Lable_Large"
+        className={`${stylingTypes === 'heading' ? 'text-impo_Primary_Primary' : 'text-impo_Primary_OnPrimary'}`}
       >
         {script}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

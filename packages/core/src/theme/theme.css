@@ -143,16 +143,16 @@
   --color-Purple_800: #66369c;
   --color-Purple_900: #48266e;
 
-  --color-Blue_50: #f2f6fe;
-  --color-Blue_100: #e4ecfd;
-  --color-Blue_200: #c6d7fa;
-  --color-Blue_300: #a1c0f8;
-  --color-Blue_400: #72a5f5;
-  --color-Blue_500: #0086f3;
-  --color-Blue_600: #0078d9;
-  --color-Blue_700: #0068bc;
-  --color-Blue_800: #00559a;
-  --color-Blue_900: #003c6d;
+  --color-Blue_50: #f3f5fe;
+  --color-Blue_100: #e6ebfd;
+  --color-Blue_200: #c9d6fb;
+  --color-Blue_300: #a8befa;
+  --color-Blue_400: #7ea3f8;
+  --color-Blue_500: #3b82f6;
+  --color-Blue_600: #3574dc;
+  --color-Blue_700: #2e65bf;
+  --color-Blue_800: #25529c;
+  --color-Blue_900: #1a3a6e;
 
   --color-Cyan_50: #f2f7f8;
   --color-Cyan_100: #e4f0f1;
@@ -219,8 +219,8 @@
 
   --color-Primary_Primary: #f24f7a;
   --color-Primary_OnPrimary: #ffffff;
-  --color-Primary_PrimaryContainer: #7d2d43;
-  --color-Primary_OnPrimaryContainer: #ffd9e2;
+  --color-Primary_PrimaryContainer: #fce7eb;
+  --color-Primary_OnPrimaryContainer: #6c2337;
 
   --color-PrimaryMan_PrimaryMan: #3b82f6;
   --color-PrimaryMan_OnPrimaryMan: #ffffff;
@@ -337,7 +337,7 @@
 
   --color-Pink: #fde6ec;
   --color-Pink_50: #6c2337;
-  --color-Pink_100: #fce7eb;
+  --color-Pink_100: #99324d;
   --color-Pink_200: #bb3d5f;
   --color-Pink_300: #d8476d;
   --color-Pink_400: #f5869e;
@@ -358,16 +358,16 @@
   --color-Purple_800: #efe7fd;
   --color-Purple_900: #f7f3fe;
 
-  --color-Blue_50: #f2f6fe;
-  --color-Blue_100: #e4ecfd;
-  --color-Blue_200: #c6d7fa;
-  --color-Blue_300: #a1c0f8;
-  --color-Blue_400: #72a5f5;
-  --color-Blue_500: #0086f3;
-  --color-Blue_600: #0078d9;
-  --color-Blue_700: #0068bc;
-  --color-Blue_800: #00559a;
-  --color-Blue_900: #003c6d;
+  --color-Blue_50: #1a3a6e;
+  --color-Blue_100: #25529c;
+  --color-Blue_200: #2e65bf;
+  --color-Blue_300: #3574dc;
+  --color-Blue_400: #3b82f6;
+  --color-Blue_500: #7ea3f8;
+  --color-Blue_600: #a8befa;
+  --color-Blue_700: #c9d6fb;
+  --color-Blue_800: #e6ebfd;
+  --color-Blue_900: #f3f5fe;
 
   --color-Cyan_50: #0e494d;
   --color-Cyan_100: #14686d;

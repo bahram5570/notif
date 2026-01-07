@@ -13,8 +13,6 @@ export type SpecialistCardGeneratorProps = DoctorTypes & {
 };
 
 export interface SpecialistCardSectionMakerProps {
-  notSelectedColor: string;
-  isSelectedColor: string;
   isSelected: boolean;
   value: string;
   title: string;

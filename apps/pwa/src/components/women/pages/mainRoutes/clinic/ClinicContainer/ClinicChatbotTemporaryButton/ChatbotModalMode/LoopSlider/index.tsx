@@ -1,13 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { LoopSliderProps } from './type';
 
 export default function LoopSlider({ items, direction = 'left' }: LoopSliderProps) {
   const trackRef = useRef<HTMLDivElement>(null);
-  const { colors } = useTheme();
   const animationClass = direction === 'right' ? 'animate-scrollRight' : 'animate-scrollLeft';
 
   useEffect(() => {
@@ -32,12 +30,12 @@ export default function LoopSlider({ items, direction = 'left' }: LoopSliderProp
           {items.map((item, index) => (
             <div
               key={index}
-              className="flex flex-row justify-center items-center min-w-[200px] mx-1 px-4 py-3 rounded-lg text-center  whitespace-nowrap"
-              style={{ boxShadow: '0px 4px 15px rgba(58, 112, 191, 0.1)', backgroundColor: colors.White }}
+              style={{ boxShadow: '0px 4px 15px rgba(58, 112, 191, 0.1)' }}
+              className="flex flex-row justify-center items-center min-w-[200px] mx-1 px-4 py-3 rounded-lg text-center whitespace-nowrap bg-impo_Neutral_Background"
             >
-              <Typography scale="Body" size="Medium" textAlign="center">
+              <Dark_Typography fontSize="Body_Medium" className="text-center text-impo_Neutral_OnBackground">
                 {item.text}
-              </Typography>
+              </Dark_Typography>
             </div>
           ))}
         </div>

@@ -4,5 +4,5 @@ export interface SpecialistInfoGeneratorProps extends Pick<
   SpecialistCardGeneratorProps,
   'nezamNumber' | 'speciliaty' | 'firstName' | 'lastName' | 'isOnline' | 'image'
 > {
-  backgroundColor: string;
+  isSelected: boolean;
 }

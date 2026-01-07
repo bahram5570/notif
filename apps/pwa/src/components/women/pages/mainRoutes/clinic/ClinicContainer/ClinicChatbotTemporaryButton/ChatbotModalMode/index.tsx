@@ -1,19 +1,16 @@
 import chatbotJson from '@assets/lottie/chatbot.json';
 
-import Spinner from '@components/ui/Spinner';
-import Typography from '@components/ui/Typography';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
-import Link from 'next/link';
 
 import { CONTEXT_SLIDE_ONE, CONTEXT_SLIDE_TWO } from '../constants';
 import LoopSlider from './LoopSlider';
 import { ChatbotModalModePropsType } from './type';
 
 const ChatbotModalMode = ({ description, title, startChatText, goToChatAction }: ChatbotModalModePropsType) => {
-  const { colors } = useTheme();
   const { actionHandler } = useWidgetActions();
 
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
@@ -64,15 +61,15 @@ const ChatbotModalMode = ({ description, title, startChatText, goToChatAction }:
         }}
       >
         <div className="px-4 flex flex-col justify-center items-center gap-2">
-          <div className=" px-4 py-2 rounded-full" style={{ backgroundColor: colors.White }}>
-            <Typography scale="Title" size="Small" textAlign="center" color="Neutral_OnBackground">
+          <div className=" px-4 py-2 rounded-full bg-impo_Neutral_Background">
+            <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
               {title}
-            </Typography>
+            </Dark_Typography>
           </div>
 
-          <Typography scale="Body" size="Large" textAlign="center" color="Neutral_OnBackground">
+          <Dark_Typography fontSize="Body_Large" className="text-impo_Black">
             {description}
-          </Typography>
+          </Dark_Typography>
         </div>
 
         <div className="flex flex-col gap-2">
@@ -82,16 +79,13 @@ const ChatbotModalMode = ({ description, title, startChatText, goToChatAction }:
 
         <div onClick={onClick}>
           <div className="flex flex-row items-center gap-1 justify-center w-[266px] mt-auto">
-            <div
-              className="px-4 py-3 flex justify-center items-center rounded-full w-full"
-              style={{ background: colors.PrimaryWoman_Primary }}
-            >
+            <div className="px-4 py-3 flex justify-center items-center rounded-full w-full bg-impo_Primary_Primary">
               {isLoading ? (
-                <Spinner width={24} color="FREE-STYLES" borderColor={colors.White} />
+                <Dark_Spinner size={24} className="border-impo_Neutral_Background" />
               ) : (
-                <Typography scale="Lable" size="Large" color="PrimaryMan_OnPrimaryMan">
+                <Dark_Typography fontSize="Lable_Large" className="text-impo_Primary_OnPrimary">
                   {startChatText}
-                </Typography>
+                </Dark_Typography>
               )}
             </div>
           </div>
