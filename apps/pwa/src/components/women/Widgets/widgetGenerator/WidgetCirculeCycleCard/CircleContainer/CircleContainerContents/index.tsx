@@ -2,7 +2,7 @@ import { colorFormatConverter } from '@utils/scripts';
 
 import styles from './styles.module.css';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import Btn from './Btn';
 import { CircleContainerContentsProps } from './types';
@@ -13,17 +13,29 @@ const CircleContainerContents = ({ textColor, description, leading, title, butto
   return (
     <div className={styles.container}>
       <div className="relative flex h-[70%] flex-col justify-center items-center gap-3 px-10">
-        <Typography scale="Lable" size="Large" textAlign="center" color="FREE-STYLE" freeColor={color}>
+        <Dark_Typography
+          style={{ color }}
+          fontSize="Lable_Large"
+          className="text-center dark:!text-impo_Neutral_OnBackground"
+        >
           {leading}
-        </Typography>
+        </Dark_Typography>
 
-        <Typography scale="Headline" size="Small" textAlign="center" color="FREE-STYLE" freeColor={color}>
+        <Dark_Typography
+          style={{ color }}
+          fontSize="Headline_Small"
+          className="text-center dark:!text-impo_Neutral_OnBackground"
+        >
           {title}
-        </Typography>
+        </Dark_Typography>
 
-        <Typography scale="Body" size="Large" textAlign="center" color="FREE-STYLE" freeColor={color}>
+        <Dark_Typography
+          style={{ color }}
+          fontSize="Body_Large"
+          className="text-center dark:!text-impo_Neutral_OnBackground"
+        >
           {description}
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <Btn button={button} />

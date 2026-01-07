@@ -1,10 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 
-import { textShorter } from '@utils/scripts';
-
 import CustomImage from '@components/ui/CustomImage';
 import Dark_Typography from '@components/ui/Dark_Typography';
-import Typography from '@components/ui/Typography';
 import useAnalytics from '@hooks/useAnalytics';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';

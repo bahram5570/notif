@@ -7,7 +7,6 @@ import WidgetCirculeCycleCard from '@components/women/Widgets/widgetGenerator/Wi
 import WidgetCycleCard from '@components/women/Widgets/widgetGenerator/WidgetCycleCard';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import useOnMountActions from '@hooks/useOnMountActions';
-import useTheme from '@hooks/useTheme';
 
 import CycleAppBar from '../CycleAppBar';
 import CycleSkeleton from './CycleSkeleton';
@@ -17,13 +16,12 @@ import useWidgetsListMaker from './__hooks__/useWidgetsListMaker';
 import { ContainerProps } from './types';
 
 const CycleContainer = ({ data, customAppBar, children }: ContainerProps) => {
-  const { colors } = useTheme();
   const widgetsListProps = useWidgetsListMaker({ widgets: data?.wigets });
   const { loadingStatus } = useCycleLoadingStatus({ hasData: data ? true : false });
 
   useOnMountActions(loadingStatus === LoadingStatusEnum.successed ? data?.actions : undefined);
 
-  const appBarBackground = data ? colorFormatConverter(data.backgroundColor) : colors.Pink_50;
+  const appBarBackground = data ? colorFormatConverter(data.backgroundColor) : '#FDE6EC';
 
   const paddingTop =
     widgetsListProps.currentCycleThemeEnum === CycleThemeEnum.Circule
@@ -46,11 +44,8 @@ const CycleContainer = ({ data, customAppBar, children }: ContainerProps) => {
       )}
 
       <div
+        style={{ paddingTop, backgroundColor: appBarBackground }}
         className="relative h-full min-h-[100dvh] dark:!bg-impo_Neutral_Surface duration-300 z-0"
-        style={{
-          paddingTop,
-          backgroundColor: appBarBackground,
-        }}
       >
         <div className="flex flex-col h-full">
           {widgetsListProps.currentCycleThemeEnum === CycleThemeEnum.Flat && (
@@ -71,7 +66,7 @@ const CycleContainer = ({ data, customAppBar, children }: ContainerProps) => {
 
           {widgetsListProps.outsideCycleWidgetList && loadingStatus === LoadingStatusEnum.successed && (
             <>
-              <div className="flex flex-col ">
+              <div className="flex flex-col">
                 {widgetsListProps.outsideCycleWidgetList.map((widget, index) => (
                   <WidgetGenerator {...widget} key={index} />
                 ))}

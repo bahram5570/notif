@@ -2,24 +2,20 @@ import { circleContainerRotateFinder } from '../__utils__';
 
 import styles from '../styles.module.css';
 
-import useTheme from '@hooks/useTheme';
-
 import { CIRCLE_EXTRA_SIZE } from '../constants';
 import CurrentDayGenerator from './CurrentDayGenerator';
 import DayGenerator from './DayGenerator';
 import OvulationGenerator from './OvulationGenerator';
 import { CircleContainerDaysProps } from './types';
 
+const normalCurrentDayColor = 'impo_Yellow_500';
+const periodColor = 'impo_Primary_Primary';
+const pmsColor = 'impo_Cycle_Pms_Eyebrow';
+const fertilityColor = 'impo_Cyan_500';
+
+const rotate = `${circleContainerRotateFinder(0)}deg`;
+
 const CircleContainerDays = (props: CircleContainerDaysProps) => {
-  const { colors } = useTheme();
-
-  const rotate = `${circleContainerRotateFinder(0)}deg`;
-
-  const normalCurrentDayColor = colors.Yellow_500;
-  const periodColor = colors.PrimaryWoman_Primary;
-  const pmsColor = colors.CycleWoman_Pms_Eyebrow;
-  const fertilityColor = colors.Cyan_500;
-
   let currentDayColor = normalCurrentDayColor;
   if (props.currentDay >= props.periodStart && props.currentDay <= props.periodEnd) {
     currentDayColor = periodColor;

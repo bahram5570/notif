@@ -3,7 +3,6 @@ import { circleContainerRotateFinder, circleItemRotateMaker } from '../__utils__
 import styles from '../styles.module.css';
 
 import useAnalytics from '@hooks/useAnalytics';
-import useTheme from '@hooks/useTheme';
 
 import { CIRCLE_EXTRA_SIZE, CIRCLE_TOTAL_AVAILABLE_PROGRESS_PERCENTAGE } from '../constants';
 import useCircleLinesSizes from './__hooks__/useCircleLinesSizes';
@@ -14,7 +13,6 @@ const CircleContainerLines = (props: CircleContainerLinesProps) => {
 
   const containerSize = props.containerSize + CIRCLE_EXTRA_SIZE * 2;
 
-  const { colors } = useTheme();
   const { strokeDasharray, circleStyles, svgStyles } = useCircleLinesSizes({ containerSize });
 
   const progressMaker = (start: number, end: number) => {
@@ -24,6 +22,7 @@ const CircleContainerLines = (props: CircleContainerLinesProps) => {
 
   return (
     <div
+      ref={inViewRef}
       className={`absolute rounded-full pointer-events-none -z-10 overflow-hidden ${styles.container}`}
       style={{
         top: -CIRCLE_EXTRA_SIZE,
@@ -31,19 +30,15 @@ const CircleContainerLines = (props: CircleContainerLinesProps) => {
         right: -CIRCLE_EXTRA_SIZE,
         bottom: -CIRCLE_EXTRA_SIZE,
       }}
-      ref={inViewRef}
     >
       <div className="relative w-full h-full rounded-full" style={{ rotate: `${circleContainerRotateFinder(90)}deg` }}>
-        <div
-          className="absolute top-1 left-1 right-1 bottom-1 rounded-full"
-          style={{ backgroundColor: colors.White }}
-        />
+        <div className="absolute top-1 left-1 right-1 bottom-1 rounded-full bg-impo_White" />
 
         {/* // # Period */}
         <svg {...svgStyles} style={{ rotate: `${circleItemRotateMaker(props.periodStart, props.cycleLength)}deg` }}>
           <circle
             {...circleStyles}
-            stroke={colors.PrimaryWoman_Primary}
+            className="stroke-impo_Primary_Primary"
             strokeDashoffset={progressMaker(props.periodStart, props.periodEnd)}
           />
         </svg>
@@ -53,7 +48,7 @@ const CircleContainerLines = (props: CircleContainerLinesProps) => {
           <svg {...svgStyles} style={{ rotate: `${circleItemRotateMaker(props.pmsStart, props.cycleLength)}deg` }}>
             <circle
               {...circleStyles}
-              stroke={colors.CycleWoman_Pms_Eyebrow}
+              className="stroke-impo_Cycle_Pms_Eyebrow"
               strokeDashoffset={progressMaker(props.pmsStart, props.pmsEnd)}
             />
           </svg>
@@ -67,7 +62,7 @@ const CircleContainerLines = (props: CircleContainerLinesProps) => {
           >
             <circle
               {...circleStyles}
-              stroke={colors.Cyan_500}
+              className="stroke-impo_Cyan_500"
               strokeDashoffset={progressMaker(props.fertilityStart, props.fertilityEnd)}
             />
           </svg>
