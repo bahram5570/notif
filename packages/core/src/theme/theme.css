@@ -13,7 +13,7 @@
   --color-PrimaryMan_OnPrimaryMan: #ffffff;
   --color-PrimaryMan_PrimaryContainerMan: #e6ebfd;
   --color-PrimaryMan_OnPrimaryContainerMan: #1a3a6e;
-
+  /* delete */
   --color-Cycle_Pms_Eyebrow: #7d42bf;
   --color-Cycle_Pms_Title: #48266e;
   --color-Cycle_Pms_Subtitle: #48266e;
@@ -38,6 +38,32 @@
   --color-Cycle_Feeding_Title: #6c4824;
   --color-Cycle_Feeding_Subtitle: #6c4824;
   --color-Cycle_Feeding_Frame: #fef7f3;
+
+  /* new color  */
+  --color-Cycle_Pms_Text: #202020;
+  --color-Cycle_Pms_Wave: #a155f7;
+  --color-Cycle_Pms_Background: #f7f3fe;
+  --color-Cycle_Pms_Frame: #f7f3fe64;
+  --color-Cycle_Ovulation_Text: #202020;
+  --color-Cycle_Ovulation_Wave: #1fa4ad;
+  --color-Cycle_Ovulation_Background: #f2f7f8;
+  --color-Cycle_Ovulation_Frame: #f2f7f864;
+  --color-Cycle_Normal_Text: #202020;
+  --color-Cycle_Normal_Wave: #f2a050;
+  --color-Cycle_Normal_Background: #fef7f3;
+  --color-Cycle_Normal_Frame: #fef7f364;
+  --color-Cycle_Period_Text: #202020;
+  --color-Cycle_Period_Wave: #f24f7a;
+  --color-Cycle_Period_Background: #fef3f5;
+  --color-Cycle_Period_Frame: #fef7f964;
+  --color-Cycle_Pregnancy_Text: #202020;
+  --color-Cycle_Pregnancy_Wave: #fa643e;
+  --color-Cycle_Pregnancy_Background: #fff4f3;
+  --color-Cycle_Pregnancy_Frame: #fff4f364;
+  --color-Cycle_Feeding_Text: #202020;
+  --color-Cycle_Feeding_Wave: #3b82f6;
+  --color-Cycle_Feeding_Background: #f3f5fe;
+  --color-Cycle_Feeding_Frame: #f3f5fe64;
 
   --color-Secondary_Secondary: #5389de;
 
@@ -96,7 +122,7 @@
 
   --color-Pink: #fde6ec;
   --color-Pink_50: #fef3f5;
-  --color-Pink_100: #fce7eb;
+  --color-Pink_100: #99324d;
   --color-Pink_200: #faccd4;
   --color-Pink_300: #f7acbb;
   --color-Pink_400: #f5869e;
@@ -191,8 +217,8 @@
   --color-White: #ffffff;
   --color-OnBlack: #202020;
 
-  --color-Primary_Primary: #ffb2c1;
-  --color-Primary_OnPrimary: #5f112a;
+  --color-Primary_Primary: #f24f7a;
+  --color-Primary_OnPrimary: #ffffff;
   --color-Primary_PrimaryContainer: #7d2d43;
   --color-Primary_OnPrimaryContainer: #ffd9e2;
 
@@ -200,6 +226,8 @@
   --color-PrimaryMan_OnPrimaryMan: #ffffff;
   --color-PrimaryMan_PrimaryContainerMan: #e6ebfd;
   --color-PrimaryMan_OnPrimaryContainerMan: #1a3a6e;
+
+  /* delete */
 
   --color-Cycle_Pms_Eyebrow: #7d42bf;
   --color-Cycle_Pms_Title: #48266e;
@@ -226,16 +254,42 @@
   --color-Cycle_Feeding_Subtitle: #6c4824;
   --color-Cycle_Feeding_Frame: #fef7f3;
 
+  /* new color  */
+  --color-Cycle_Pms_Text: #202020;
+  --color-Cycle_Pms_Wave: #a155f7;
+  --color-Cycle_Pms_Background: #f7f3fe;
+  --color-Cycle_Pms_Frame: #f7f3fe64;
+  --color-Cycle_Ovulation_Text: #202020;
+  --color-Cycle_Ovulation_Wave: #1fa4ad;
+  --color-Cycle_Ovulation_Background: #f2f7f8;
+  --color-Cycle_Ovulation_Frame: #f2f7f864;
+  --color-Cycle_Normal_Text: #202020;
+  --color-Cycle_Normal_Wave: #f2a050;
+  --color-Cycle_Normal_Background: #fef7f3;
+  --color-Cycle_Normal_Frame: #fef7f364;
+  --color-Cycle_Period_Text: #202020;
+  --color-Cycle_Period_Wave: #f24f7a;
+  --color-Cycle_Period_Background: #fef3f5;
+  --color-Cycle_Period_Frame: #fef7f964;
+  --color-Cycle_Pregnancy_Text: #202020;
+  --color-Cycle_Pregnancy_Wave: #fa643e;
+  --color-Cycle_Pregnancy_Background: #fff4f3;
+  --color-Cycle_Pregnancy_Frame: #fff4f364;
+  --color-Cycle_Feeding_Text: #202020;
+  --color-Cycle_Feeding_Wave: #3b82f6;
+  --color-Cycle_Feeding_Background: #f3f5fe;
+  --color-Cycle_Feeding_Frame: #f3f5fe64;
+
   --color-Secondary_Secondary: #5389de;
 
   --color-Success_Success: #34b288;
-  --color-Success_SuccessContainer: #e5f2ec;
+  --color-Success_SuccessContainer: #17503d;
   --color-Success_OnSuccess: #ffffff;
   --color-Success_OnSuccessContainer: #17503d;
 
   --color-Neutral_Background: #202020;
   --color-Neutral_OnBackground: #ffffff;
-  --color-Neutral_Surface: #2b2b2b;
+  --color-Neutral_Surface: #2a2a2a;
   --color-Neutral_OnSurface: #f9f9f9;
 
   --color-Error_Error: #ef4444;
@@ -282,27 +336,27 @@
   --color-Grey_900: #474747;
 
   --color-Pink: #fde6ec;
-  --color-Pink_50: #fef3f5;
+  --color-Pink_50: #6c2337;
   --color-Pink_100: #fce7eb;
-  --color-Pink_200: #faccd4;
-  --color-Pink_300: #f7acbb;
+  --color-Pink_200: #bb3d5f;
+  --color-Pink_300: #d8476d;
   --color-Pink_400: #f5869e;
   --color-Pink_500: #f24f7a;
-  --color-Pink_600: #d8476d;
-  --color-Pink_700: #bb3d5f;
-  --color-Pink_800: #99324d;
-  --color-Pink_900: #6c2337;
+  --color-Pink_600: #f7acbb;
+  --color-Pink_700: #faccd4;
+  --color-Pink_800: #fce7eb;
+  --color-Pink_900: #fef3f5;
 
-  --color-Purple_50: #f7f3fe;
-  --color-Purple_100: #efe7fd;
-  --color-Purple_200: #decdfc;
-  --color-Purple_300: #ccaefa;
-  --color-Purple_400: #b889f9;
+  --color-Purple_50: #48266e;
+  --color-Purple_100: #66369c;
+  --color-Purple_200: #7d42bf;
+  --color-Purple_300: #7d42bf;
+  --color-Purple_400: #a155f7;
   --color-Purple_500: #a155f7;
-  --color-Purple_600: #904cdd;
-  --color-Purple_700: #7d42bf;
-  --color-Purple_800: #66369c;
-  --color-Purple_900: #48266e;
+  --color-Purple_600: #ccaefa;
+  --color-Purple_700: #decdfc;
+  --color-Purple_800: #efe7fd;
+  --color-Purple_900: #f7f3fe;
 
   --color-Blue_50: #f2f6fe;
   --color-Blue_100: #e4ecfd;
@@ -315,16 +369,16 @@
   --color-Blue_800: #00559a;
   --color-Blue_900: #003c6d;
 
-  --color-Cyan_50: #f2f7f8;
-  --color-Cyan_100: #e4f0f1;
-  --color-Cyan_200: #c6dfe2;
-  --color-Cyan_300: #a3cdd2;
-  --color-Cyan_400: #75bac0;
-  --color-Cyan_500: #1fa4ad;
-  --color-Cyan_600: #1c939b;
-  --color-Cyan_700: #187f86;
-  --color-Cyan_800: #14686d;
-  --color-Cyan_900: #0e494d;
+  --color-Cyan_50: #0e494d;
+  --color-Cyan_100: #14686d;
+  --color-Cyan_200: #187f86;
+  --color-Cyan_300: #1c939b;
+  --color-Cyan_400: #1fa4ad;
+  --color-Cyan_500: #75bac0;
+  --color-Cyan_600: #a3cdd2;
+  --color-Cyan_700: #c6dfe2;
+  --color-Cyan_800: #e4f0f1;
+  --color-Cyan_900: #f2f7f8;
 
   --color-Green_50: #f4f6f4;
   --color-Green_100: #e8ece8;
@@ -338,16 +392,16 @@
   --color-Green_900: #2b3e2a;
 
   --color-Yellow: #ffcc00;
-  --color-Yellow_50: #fef7f3;
-  --color-Yellow_100: #fcefe7;
-  --color-Yellow_200: #fadecc;
-  --color-Yellow_300: #f7cbad;
-  --color-Yellow_400: #f5b787;
-  --color-Yellow_500: #f2a050;
-  --color-Yellow_600: #d88f48;
-  --color-Yellow_700: #bb7c3e;
-  --color-Yellow_800: #996533;
-  --color-Yellow_900: #6c4824;
+  --color-Yellow_50: #6c4824;
+  --color-Yellow_100: #996533;
+  --color-Yellow_200: #bb7c3e;
+  --color-Yellow_300: #d88f48;
+  --color-Yellow_400: #f2a050;
+  --color-Yellow_500: #f5b787;
+  --color-Yellow_600: #f7cbad;
+  --color-Yellow_700: #fadecc;
+  --color-Yellow_800: #fcefe7;
+  --color-Yellow_900: #fef7f3;
 
   --color-Orange_50: #fff4f3;
   --color-Orange_100: #fee8e6;
