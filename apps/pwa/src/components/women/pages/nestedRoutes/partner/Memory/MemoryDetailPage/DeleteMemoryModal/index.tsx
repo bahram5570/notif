@@ -1,43 +1,41 @@
-import Button from '@components/ui/Button';
 import CustomModal from '@components/ui/CustomModal';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { useRouter } from 'next/navigation';
 
 import useDelete from './__hooks__/useDelete';
 
 const DeleteMemoryModal = () => {
-  const { colors } = useTheme();
   const router = useRouter();
   const { deleteHandler, isLoading } = useDelete();
 
   return (
     <CustomModal>
       <div className="w-[290px] flex flex-col items-center gap-4">
-        <Typography scale="Title" size="Small">
+        <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Title_Small">
           حذف خاطره
-        </Typography>
-        <Typography scale="Body" size="Medium">
+        </Dark_Typography>
+        <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Body_Medium">
           می‌خوای این خاطره رو حذف کنی؟
-        </Typography>
+        </Dark_Typography>
 
         <div className="w-full flex items-center justify-between gap-2">
-          <Button
-            size="medium"
-            variant="outline"
-            color="FREE-STYLES"
+          <Dark_Button
+            className="!text-impo_Error_Error bg-impo_Primary_PrimaryContainer dark:bg-impo_Primary_OnPrimaryContainer border-impo_Primary_PrimaryContainer  dark:border-impo_Primary_OnPrimaryContainer"
             onClick={deleteHandler}
-            contentsColor={colors.Error_Error}
-            buttonColor={colors.Error_ErrorContainer}
-            style={{ backgroundColor: colors.Error_ErrorContainer }}
+            fontSize="Lable_Large"
             isLoading={isLoading}
           >
             حذف
-          </Button>
+          </Dark_Button>
 
-          <Button variant="fill" size="medium" color="surface" onClick={() => router.back()}>
+          <Dark_Button
+            className="!text-impo_Neutral_OnSurface !bg-impo_Neutral_Surface !border-impo_Neutral_Surface"
+            onClick={() => router.back()}
+            fontSize="Lable_Large"
+          >
             خیر
-          </Button>
+          </Dark_Button>
         </div>
       </div>
     </CustomModal>

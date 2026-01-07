@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import moment from 'moment-jalaali';
@@ -48,9 +48,9 @@ const CreateMemoryPage = () => {
         style={{ paddingTop: HEADER_HEIGHT + 16 }}
       >
         <div className="flex items-center w-full justify-center">
-          <Typography scale="Title" size="Small" color="PrimaryWoman_Primary" textAlign="center">
+          <Dark_Typography fontSize="Title_Small" className="text-impo_Primary_Primary text-center">
             ایجاد خاطره جدید
-          </Typography>
+          </Dark_Typography>
         </div>
 
         <MemoryHeader currentDate={`امروز ${currentDate} `} />
@@ -63,20 +63,16 @@ const CreateMemoryPage = () => {
         <TextareaInput onchange={onChangeHandler} value={inputValue} />
 
         <footer className="mt-auto">
-          <Button
-            size="medium"
-            variant="fill"
-            color="primary"
-            fullWidth={true}
+          <Dark_Button
             className="px-6 py-2 "
             onClick={() => createMemoryHandler(inputValue)}
             isDisable={!inputValue.title}
             isLoading={isLoading}
           >
-            <Typography scale="Title" size="Small" color="PrimaryMan_OnPrimaryMan">
+            <Dark_Typography fontSize="Title_Small" className="text-impo_PrimaryMan_OnPrimaryMan">
               ثبت خاطره
-            </Typography>
-          </Button>
+            </Dark_Typography>
+          </Dark_Button>
         </footer>
       </div>
       <UploadModal fileDataHandler={fileDataHandler} uploadImageLoading={uploadImageLoading} />

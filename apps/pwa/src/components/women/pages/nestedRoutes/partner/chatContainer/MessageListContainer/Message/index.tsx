@@ -2,15 +2,13 @@ import TickIcon from '@assets/icons/tick.svg';
 import { toPersianNumbers } from '@utils/numbers';
 
 import CustomImage from '@components/ui/CustomImage';
-import Spinner from '@components/ui/Spinner';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { SideEnum } from './constants';
 import { MessagePropsType } from './type';
 
 const Message = ({ createTime, side, text, partnerAvatar, id }: MessagePropsType) => {
-  const { colors } = useTheme();
   const date = createTime ? new Date(createTime) : new Date();
   const currentDate = `${date.getHours()}:${date.getMinutes()}`;
 
@@ -23,36 +21,29 @@ const Message = ({ createTime, side, text, partnerAvatar, id }: MessagePropsType
           </div>
         )}
         <div
-          style={{
-            background: `${side === SideEnum.Self ? 'linear-gradient(110.42deg, #FFCEDD 3.32%, #F24F7A 99.1%)' : colors.Surface_SurfaceVariant}`,
-            border: `${side === SideEnum.Partner ? `1px solid ${colors.Surface_SurfaceVariant}` : ''}`,
-          }}
-          className={`max-w-[250px] h-auto rounded-2xl ${side === SideEnum.Partner ? ' mb-4' : 'mb-2'}`}
+          className={`max-w-[250px] h-auto rounded-2xl ${side === SideEnum.Partner ? ' mb-4 border border-impo_Surface_SurfaceVariant' : 'mb-2'}  ${side === SideEnum.Self ? 'bg-[linear-gradient(110.42deg,#FFCEDD_3.32%,#F24F7A_99.1%)]' : 'bg-impo_Surface_SurfaceVariant'}`}
         >
           <div className="flex flex-col gap-1 p-2">
-            <Typography
-              scale="Body"
-              size="Small"
-              color={`${side === SideEnum.Partner ? 'Neutral_OnBackground' : 'White'}`}
-              textAlign="justify"
+            <Dark_Typography
+              fontSize="Body_Small"
+              className={`text-justify ${side === SideEnum.Partner ? 'text-impo_Neutral_OnBackground' : 'text-impo_White'}`}
             >
               {text}
-            </Typography>
+            </Dark_Typography>
 
             <div className="flex items-center w-full justify-end gap-1">
-              <Typography
-                scale="Lable"
-                size="Small"
-                color={`${side === SideEnum.Partner ? 'Neutral_OnBackground' : 'White'}`}
+              <Dark_Typography
+                fontSize="Lable_Small"
+                className={` ${side === SideEnum.Partner ? 'text-impo_Neutral_OnBackground' : 'text-impo_White'}`}
               >
                 {toPersianNumbers(currentDate)}
-              </Typography>
+              </Dark_Typography>
+
               {id === '' ? (
-                <Spinner color="surface" width={16} />
+                <Dark_Spinner size={16} className="border-impo_Neutral_Surface" />
               ) : (
                 <TickIcon
-                  className="w-4 h-4"
-                  style={{ stroke: `${side === SideEnum.Partner ? colors.Neutral_OnBackground : colors.White}` }}
+                  className={`w-4 h-4 ${side === SideEnum.Partner ? 'stroke-impo_Neutral_OnBackground' : 'stroke-impo_White'}`}
                 />
               )}
             </div>

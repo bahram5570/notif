@@ -1,7 +1,6 @@
 import Refresh from '@assets/icons/refresh.svg';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import NotRequestData from './NotRequestData';
 import RequestList from './RequestList';
@@ -9,23 +8,17 @@ import RequestListSkeleton from './RequestList/RequestListSkeleton';
 import { RequestSectionPropsType } from './type';
 
 const RequestSection = ({ isLoading, list, getData, hasData }: RequestSectionPropsType) => {
-  const { colors } = useTheme();
-
   const title = hasData ? 'درخواست های همدلی' : ' درخواست ها';
 
   return (
-    <div
-      className=" flex flex-col gap-4 p-3 rounded-xl "
-      style={{ border: `1px solid ${colors.Neutral_Surface}`, backgroundColor: colors.White }}
-    >
+    <div className=" flex flex-col gap-4 p-3 rounded-xl border border-impo_Neutral_Surface bg-impo_Neutral_Background">
       <div className="flex justify-between items-center ">
         <div onClick={getData}>
           <Refresh className="w-10 h-10" />
         </div>
-
-        <Typography scale="Title" size="Small">
+        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           {title}
-        </Typography>
+        </Dark_Typography>
       </div>
       {isLoading && <RequestListSkeleton />}
 

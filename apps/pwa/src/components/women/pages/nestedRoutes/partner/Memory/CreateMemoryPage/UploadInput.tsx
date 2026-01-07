@@ -6,18 +6,27 @@ import { textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import { UploadInputPropsType } from './type';
 
 const UploadInput = ({ fileName, uploadImageLoading, valuesHandler }: UploadInputPropsType) => {
-  const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
   const [progress, setProgress] = useState(0);
+
+  const onClick = () => {
+    (newQueryParamsHandler({
+      [MODAL_QUERY_NAME]: 'true',
+      name: 'UploadMemoryImage',
+    }),
+      pageNavigationHandler({
+        showProgressBar: true,
+        id: 'UploadMemoryImage',
+      }));
+  };
 
   useEffect(() => {
     if (uploadImageLoading) {
@@ -38,66 +47,46 @@ const UploadInput = ({ fileName, uploadImageLoading, valuesHandler }: UploadInpu
     <>
       {fileName !== '' && (
         <div className="flex flex-col gap-3">
-          <div
-            style={{ background: colors.Surface_SurfaceVariant }}
-            className="flex  rounded-full justify-evenly items-center px-5 py-3 gap-3"
-          >
+          <div className="flex  rounded-full justify-evenly items-center px-5 py-3 gap-3 bg-impo_Surface_SurfaceVariant">
             <div className="flex gap-3">
               <CustomImage src={fileName} width={48} height={48} className="rounded-md" />
-
-              <Typography scale="Body" size="Medium" className="break-all" textAlign="left">
+              <Dark_Typography fontSize="Body_Medium" className="break-all text-left text-impo_Neutral_OnBackground">
                 {fileNameScript}
-              </Typography>
+              </Dark_Typography>
             </div>
 
             <div
-              className="w-10 h-10 min-w-10 min-h-10 rounded-full flex justify-center items-center cursor-pointer"
-              style={{ backgroundColor: colors.Error_ErrorContainer }}
+              className="w-10 h-10 min-w-10 min-h-10 rounded-full flex justify-center items-center cursor-pointer bg-impo_Error_ErrorContainer"
               onClick={() => valuesHandler('', 'fileName')}
             >
-              <TrashIcon className="w-5 h-auto" style={{ stroke: colors.Black }} />
+              <TrashIcon className="w-5 h-auto stroke-impo_Black" />
             </div>
           </div>
           {uploadImageLoading && (
-            <div className={`w-full h-1  rounded-full`} style={{ backgroundColor: colors.Grey_200 }}>
-              <div
-                className={`h-full rounded-full`}
-                style={{ width: `${progress}%`, background: colors.PrimaryWoman_Primary }}
-              ></div>
+            <div className="w-full h-1  rounded-full bg-impo_Grey_200">
+              <div className="h-full rounded-full bg-impo_Primary_Primary" style={{ width: `${progress}%` }}></div>
             </div>
           )}
         </div>
       )}
 
       {fileName === '' && (
-        <div
-          style={{ border: `1px solid ${colors.Neutral_Surface}` }}
-          className="rounded-2xl py-5 px-2 flex flex-col gap-3"
-        >
-          <Typography scale="Body" size="Small" color="Surface_Outline" className="w-full" textAlign="center">
+        <div className="rounded-2xl py-5 px-2 flex flex-col gap-3 border border-impo_Neutral_Surface">
+          <Dark_Typography fontSize="Body_Small" className="text-impo_Surface_Outline w-full text-center">
             میتونی برای خاطره خودت یک عکس آپلود کنی
-          </Typography>
+          </Dark_Typography>
 
           <div className=" p-2 flex  justify-center items-center ">
             <div
-              className="flex  justify-center items-center gap-2 rounded-full pl-6 pr-4 py-3"
-              style={{ background: colors.PrimaryWoman_PrimaryContainer }}
-              onClick={() => {
-                (newQueryParamsHandler({
-                  [MODAL_QUERY_NAME]: 'true',
-                  name: 'UploadMemoryImage',
-                }),
-                  pageNavigationHandler({
-                    showProgressBar: true,
-                    id: 'UploadMemoryImage',
-                  }));
-              }}
+              className="flex  justify-center items-center gap-2 rounded-full pl-6 pr-4 py-3 bg-impo_Primary_PrimaryContainer dark:bg-impo_Primary_OnPrimaryContainer"
+              onClick={onClick}
             >
-              <Typography scale="Lable" size="Large" color="PrimaryWoman_Primary">
+              <Dark_Typography fontSize="Lable_Large" className="text-impo_Primary_Primary">
                 آپلود عکس
-              </Typography>
+              </Dark_Typography>
+
               <div className="w-5 h-5 flex justify-center items-center">
-                <PaperClipIcon className="w-5 h-5" style={{ stroke: colors.PrimaryWoman_Primary }} />
+                <PaperClipIcon className="w-5 h-5 stroke-impo_Primary_Primary" />
               </div>
             </div>
           </div>

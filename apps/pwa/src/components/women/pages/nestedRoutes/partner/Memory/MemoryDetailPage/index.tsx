@@ -5,11 +5,10 @@ import { useEffect, useState } from 'react';
 import { gregorianFarsiScriptDate, jalaaliScriptDate } from '@utils/dates';
 
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
-import useTheme from '@hooks/useTheme';
 import moment from 'moment-jalaali';
 
 import MemoryHeader from '../CreateMemoryPage/MemoryHeader';
@@ -23,7 +22,7 @@ import useGetData from './__hooks__/useGetData';
 const MemoryDetailPage = () => {
   const [currentDate, setCurrentDate] = useState('');
   const { culture } = useCulture();
-  const { colors } = useTheme();
+
   const { partnerName } = useGetPartnerName();
 
   const { memoryData, isLoading } = useGetData();
@@ -63,24 +62,24 @@ const MemoryDetailPage = () => {
 
           <div className="relative">
             <CustomImage src={memoryImage} />
-            <div className="rounded-md py-1 px-4 absolute bottom-0 m-3" style={{ background: colors.Pink_50 }}>
-              <Typography scale="Lable" size="Medium" color="PrimaryWoman_Primary">
+            <div className="rounded-md py-1 px-4 absolute bottom-0 m-3 bg-impo_Pink_50">
+              <Dark_Typography fontSize="Lable_Medium" className="text-impo_Primary_Primary">
                 {`ایجاد شده توسط ${memoryData.fromMan ? partnerName?.name : 'شما'}`}
-              </Typography>
+              </Dark_Typography>
             </div>
           </div>
 
           <div className="flex flex-col justify-end items-end p-3">
             <div className="flex gap-2 items-center">
-              <Typography scale="Lable" size="Large">
+              <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
                 {memoryData.title}
-              </Typography>
-              <div className="w-2 h-2 rounded-full" style={{ background: colors.PrimaryWoman_Primary }}></div>
-            </div>
+              </Dark_Typography>
 
-            <Typography scale="Body" size="Small" textAlign="justify">
+              <div className="w-2 h-2 rounded-full bg-impo_Primary_Primary" />
+            </div>
+            <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground text-justify">
               {memoryData.text}
-            </Typography>
+            </Dark_Typography>
           </div>
 
           {memoryData.textPartner && (

@@ -1,7 +1,6 @@
 'use client';
 
 import WidgetGenerator from '@components/women/Widgets/widgetGenerator';
-import useTheme from '@hooks/useTheme';
 
 import AvatarContainer from './AvatarContainer';
 import Challenge from './Challenge';
@@ -18,7 +17,6 @@ import useGetRequestData from './__hooks__/useGetRequestData';
 const PartnerPage = () => {
   const { data, isLoading } = useGetData();
   const { data: requestData, getData, isLoading: requestLoading } = useGetRequestData();
-  const { colors } = useTheme();
 
   const hasRequestList = requestData && requestData.list.length > 0;
   const showEmptyLanding = data?.show_partner_empathy_landing
@@ -38,7 +36,7 @@ const PartnerPage = () => {
           <PartnerLandingWebView />
         ) : (
           <PartnerPageLayout isValid={data.valid} coverImage={data.coverImage}>
-            <div className=" rounded-[32px] px-3 py-6  mx-4 relative" style={{ backgroundColor: colors.White }}>
+            <div className=" rounded-[32px] px-3 py-6  mx-4 relative bg-impo_Neutral_Background">
               <AvatarContainer {...data} />
 
               <div>

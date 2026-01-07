@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 
 import CustomImage from '@components/ui/CustomImage';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import Typography from '@components/ui/Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 
@@ -32,13 +33,14 @@ const StartPageContainer = () => {
 
   return (
     <WomenPageLayout rightElement="BackButton" rightElementScript="شروع همدلی" paddingBottom={30}>
-      <CustomImage src="/assets/images/partner-start.webp" className="px-6" />
+      <CustomImage src="/assets/images/partner-start.webp" className="px-6 dark:hidden block" />
+      <CustomImage src="/assets/images/partner-start-dark.webp" className="px-6 hidden dark:block" />
       <div className="flex flex-col gap-4 items-center justify-center py-5 px-6">
         <PhoneNumberInput />
         <div className="border-t-[1px] p-4">
-          <Typography scale="Body" size="Large" textAlign="center">
+          <Dark_Typography fontSize="Body_Large" className="text-center text-impo_Neutral_OnBackground ">
             روش دوم هم اینه که کد اختصاصیت رو برای پارتنرت بفرستی
-          </Typography>
+          </Dark_Typography>
         </div>
 
         <div className="flex justify-center flex-col gap-4">

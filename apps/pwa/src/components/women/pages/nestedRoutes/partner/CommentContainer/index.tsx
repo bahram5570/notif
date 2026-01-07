@@ -2,17 +2,16 @@
 
 import { useState } from 'react';
 
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import useTheme from '@hooks/useTheme';
 
 import useSubmit from './__hooks__/useSubmit';
 
 const CommentContainer = () => {
   const [comment, setComment] = useState('');
-  const { colors } = useTheme();
+
   const { isLoading, submitHandler } = useSubmit();
 
   const onClick = () => {
@@ -30,41 +29,31 @@ const CommentContainer = () => {
         style={{ paddingTop: HEADER_HEIGHT + 16 }}
       >
         <div className="flex items-center w-full justify-center">
-          <Typography scale="Title" size="Small" color="PrimaryWoman_Primary" textAlign="center">
+          <Dark_Typography fontSize="Title_Small" className="text-impo_Primary_Primary text-center">
             نظرت چیه؟
-          </Typography>
+          </Dark_Typography>
         </div>
 
         <div className="flex items-center w-full justify-center">
-          <Typography scale="Body" size="Medium" textAlign="center">
+          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
             حست به این خاطره چیه؟
-          </Typography>
+          </Dark_Typography>
         </div>
 
         <textarea
           placeholder="حست به این خاطره رو اینجا بنویس"
-          className="w-full text-end px-4 py-3 rounded-2xl focus-visible:outline-1 focus-visible:outline placeholder:text-sm"
-          style={{ border: `1px solid ${colors.Neutral_Surface}`, outlineColor: colors.PrimaryWoman_Primary }}
+          className="w-full text-end px-4 py-3 rounded-2xl focus-visible:outline-1 focus-visible:outline placeholder:text-sm bg-impo_Neutral_Surface text-impo_Neutral_OnSurface  border border-impo_Neutral_Surface outline-impo_Primary_Primary"
           rows={4}
           value={comment}
           onChange={onChangeHandler}
         />
 
         <footer className="mt-auto">
-          <Button
-            size="medium"
-            variant="fill"
-            color="primary"
-            fullWidth={true}
-            className="px-6 py-2 "
-            onClick={onClick}
-            isDisable={!comment}
-            isLoading={isLoading}
-          >
-            <Typography scale="Lable" size="Large" color="PrimaryMan_OnPrimaryMan">
+          <Dark_Button className="px-6 py-2 " onClick={onClick} isDisable={!comment} isLoading={isLoading}>
+            <Dark_Typography fontSize="Lable_Large" className="text-impo_PrimaryMan_OnPrimaryMan">
               ثبت نظر
-            </Typography>
-          </Button>
+            </Dark_Typography>
+          </Dark_Button>
         </footer>
       </div>
     </WomenPageLayout>
