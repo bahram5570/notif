@@ -28,7 +28,7 @@ const EditCycleSettingPage = () => {
         <WomenPageLayout
           paddingTop={0}
           rightElement="BackButton"
-          backgroundColor={colors.Grey_50}
+          className="bg-impo_Grey_50"
           rightElementScript="انتخاب نحوه نمایش چرخه"
         >
           <div className="flex flex-col min-h-[100dvh] gap-6 pb-6" style={{ paddingTop: HEADER_HEIGHT }}>

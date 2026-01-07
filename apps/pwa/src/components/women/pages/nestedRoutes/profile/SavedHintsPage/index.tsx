@@ -15,10 +15,9 @@ const SavedHintsPage = () => {
 
   return (
     <WomenPageLayout
-      className="px-4"
       rightElement="BackButton"
       rightElementScript="توصیه‌های ذخیره شده"
-      backgroundColor={colors.Surface_SurfaceVariant}
+      className="px-4 bg-impo_Surface_SurfaceVariant"
     >
       {isLoading && <SavedHintsContainerSkeleton />}
 

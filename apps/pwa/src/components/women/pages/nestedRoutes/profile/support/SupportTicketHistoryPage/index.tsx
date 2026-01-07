@@ -12,11 +12,10 @@ const SupportTicketHistoryPage = () => {
 
   return (
     <WomenPageLayout
+      paddingBottom={96}
       rightElement="BackButton"
       rightElementScript="سابقه تیکت ها"
-      backgroundColor={colors.Grey_50}
-      className="flex flex-col items-end p-3 gap-3"
-      paddingBottom={96}
+      className="flex flex-col items-end p-3 gap-3 bg-impo_Grey_50"
     >
       {isLoading && <TicketHistorySkeleton />}
       {!isLoading && (

@@ -20,12 +20,7 @@ const PartnerSettingPage = () => {
     <>
       {isLoading && <PartnerSkeleton />}
       {!isLoading && (
-        <WomenPageLayout
-          rightElement="BackButton"
-          rightElementScript="هم‌دل من"
-          backgroundColor={colors.White}
-          paddingTop={0}
-        >
+        <WomenPageLayout rightElement="BackButton" rightElementScript="هم‌دل من" paddingTop={0}>
           <div
             className="p-3 flex flex-col gap-4 min-h-screen"
             style={{ backgroundColor: colors.Grey_50, paddingTop: HEADER_HEIGHT + 16 }}

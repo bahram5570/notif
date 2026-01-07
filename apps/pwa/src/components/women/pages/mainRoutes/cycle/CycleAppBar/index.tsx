@@ -9,7 +9,8 @@ const CycleAppBar = ({ date, appBarBackground }: CycleAppBarProps) => {
       leftElement1="Profile"
       rightElement="Calendar"
       hasScalingAnimation={true}
-      headerBackgroundColor={appBarBackground}
+      style={{ background: appBarBackground }}
+      className="dark:!bg-impo_Neutral_Surface"
     />
   );
 };

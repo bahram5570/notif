@@ -1,6 +1,5 @@
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import useAnalytics from '@hooks/useAnalytics';
-import useTheme from '@hooks/useTheme';
 
 import SignsContainer from '../SignsContainer';
 import SignsSkeleton from '../SignsSkeleton';
@@ -9,7 +8,6 @@ import useGetData from '../__hooks__/useGetData';
 
 const SignsPage = () => {
   useAnalytics({ mountTimer_eventName: 'SignsPageTimeSpent' });
-  const { colors } = useTheme();
   const { isLoading, infoList } = useGetData();
 
   return (
@@ -17,7 +15,7 @@ const SignsPage = () => {
       paddingTop={0}
       rightElement="BackButton"
       rightElementScript="نشانه های امروز"
-      headerBackgroundColor={colors.Surface_SurfaceVariant}
+      className="bg-impo_Surface_SurfaceVariant"
     >
       <>
         {isLoading && !infoList && <SignsSkeleton />}

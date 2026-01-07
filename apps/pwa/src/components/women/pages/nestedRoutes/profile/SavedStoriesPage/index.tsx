@@ -17,10 +17,9 @@ const SavedStoriesPage = () => {
 
   return (
     <WomenPageLayout
-      className="px-4"
       rightElement="BackButton"
       rightElementScript="استوری‌های ذخیره شده"
-      backgroundColor={colors.Surface_SurfaceVariant}
+      className="px-4 bg-impo_Surface_SurfaceVariant"
     >
       <div className="w-full p-4 rounded-xl" style={{ backgroundColor: colors.White }}>
         <Typography scale="Body" size="Medium">

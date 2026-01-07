@@ -32,7 +32,7 @@ const ContactSupportPage = () => {
       <WomenPageLayout
         paddingTop={0}
         rightElement="BackButton"
-        backgroundColor={colors.Grey_50}
+        className="bg-impo_Grey_50"
         rightElementScript="ارتباط با پشتیبانی"
       >
         {isLoading && <SupportChatSkeleton />}

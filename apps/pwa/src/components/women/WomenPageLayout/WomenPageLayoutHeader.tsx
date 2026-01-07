@@ -1,24 +1,22 @@
 'use client';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-import useTheme from '@hooks/useTheme';
 
 import WidgetScaleModule from '../Widgets/WidgetScaleModule';
 import { HEADER_HEIGHT, iconsList } from './constants';
 import { HeaderProps } from './types';
 
 const WomenPageLayoutHeader = (props: HeaderProps) => {
-  const { colors } = useTheme();
-
-  const backgroundColor =
-    typeof props.headerBackgroundColor === 'undefined' ? colors.White : props.headerBackgroundColor;
   const LeftElement1 = props.leftElement1 ? iconsList[props.leftElement1] : () => <></>;
   const LeftElement2 = props.leftElement2 ? iconsList[props.leftElement2] : () => <></>;
   const RightElement = props.rightElement ? iconsList[props.rightElement] : () => <></>;
 
   const contents = (
-    <div className="flex items-end w-full backdrop-blur-md" style={{ height: HEADER_HEIGHT, backgroundColor }}>
+    <div
+      style={{ height: HEADER_HEIGHT, ...props.style }}
+      className={`flex items-end w-full backdrop-blur-md bg-impo_Neutral_Background ${props.className}`}
+    >
       <div className="flex px-4 py-2 w-full">
         <div className="w-fit min-w-fit flex gap-4">
           <LeftElement1 />
@@ -26,16 +24,16 @@ const WomenPageLayoutHeader = (props: HeaderProps) => {
         </div>
 
         <div className="w-full flex justify-center items-center">
-          <Typography scale="Body" size="Large" color="Neutral_OnSurface">
+          <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnSurface">
             {props.middleScript || ''}
-          </Typography>
+          </Dark_Typography>
         </div>
 
         <div className="flex items-center gap-4 min-w-fit">
           {props.rightElementScript && (
-            <Typography scale="Body" size="Large">
+            <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
               {props.rightElementScript || ''}
-            </Typography>
+            </Dark_Typography>
           )}
 
           <RightElement />

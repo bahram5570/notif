@@ -5,7 +5,6 @@ import ProfileItemGenerator from '@components/__profile__/ProfileItemGenerator';
 import Button from '@components/ui/Button';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import useTheme from '@hooks/useTheme';
 
 import PeriodSettingsLingthGenerator from './PeriodSettingsLingthGenerator';
 import PeriodSettingsModals from './PeriodSettingsModals';
@@ -14,7 +13,6 @@ import useSubmit from './__hooks__/useSubmit';
 import useValues from './__hooks__/useValues';
 
 const PeriodSettingsPage = () => {
-  const { colors } = useTheme();
   const { submitHandler, submitLoading } = useSubmit();
   const { fetchDataLoading, isModified, values, valuesHandler } = useValues();
 
@@ -25,7 +23,7 @@ const PeriodSettingsPage = () => {
       <WomenPageLayout
         paddingTop={0}
         rightElement="BackButton"
-        backgroundColor={colors.Grey_50}
+        className="bg-impo_Grey_50"
         rightElementScript="انتخاب نحوه نمایش چرخه"
       >
         <div className="flex flex-col min-h-[100dvh] gap-6 pb-6 px-4" style={{ paddingTop: HEADER_HEIGHT + 24 }}>

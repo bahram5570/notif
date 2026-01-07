@@ -18,8 +18,7 @@ const CheckupQuestionListContainer = () => {
     <WomenPageLayout
       rightElement="BackButton"
       rightElementScript={questionTitle || ''}
-      backgroundColor={colors.Surface_SurfaceVariant}
-      className="px-3"
+      className="px-3 bg-impo_Surface_SurfaceVariant"
     >
       <div style={{ background: colors.Neutral_Background }} className="rounded-lg divide-y-[1px] px-3">
         {questionCheckupItemList.map((item, index) => {

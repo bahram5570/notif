@@ -4,18 +4,18 @@ export type HeaderProps = {
   leftElement1?: keyof typeof HeaderIconEnums;
   leftElement2?: keyof typeof HeaderIconEnums;
   rightElement?: keyof typeof HeaderIconEnums;
-  headerBackgroundColor?: string;
   hasScalingAnimation?: boolean;
   rightElementScript?: string;
+  style?: React.CSSProperties;
   middleScript?: string;
+  className?: string;
 };
 
 export type WomenPageLayoutProps = HeaderProps & {
   paddingBottom?: number | string;
   paddingTop?: number | string;
   children: React.ReactNode;
-  backgroundColor?: string;
-  className?: string;
+  headerClassName?: string;
 };
 
 export type IconsListTypes = {

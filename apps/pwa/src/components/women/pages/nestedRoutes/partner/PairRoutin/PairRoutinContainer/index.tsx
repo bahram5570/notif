@@ -38,7 +38,7 @@ const PairRoutinContainer = () => {
   });
 
   return (
-    <WomenPageLayout rightElement="BackButton" paddingTop={0} headerBackgroundColor="">
+    <WomenPageLayout rightElement="BackButton" paddingTop={0}>
       <RoutinUnlockTost />
 
       {isLoading && <RoutinSkeleton />}

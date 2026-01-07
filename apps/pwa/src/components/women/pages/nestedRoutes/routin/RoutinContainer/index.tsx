@@ -14,7 +14,7 @@ const RoutinContainer = () => {
   const { finalStepHandler } = useFinalStepWelcoming({ programId: data?.programId });
 
   return (
-    <WomenPageLayout rightElement="BackButton" paddingTop={0} headerBackgroundColor="">
+    <WomenPageLayout rightElement="BackButton" paddingTop={0}>
       {isLoading && <RoutinSkeleton />}
       {!isLoading && data && (
         <>

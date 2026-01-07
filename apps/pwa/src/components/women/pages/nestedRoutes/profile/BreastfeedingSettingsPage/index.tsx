@@ -22,7 +22,7 @@ const BreastfeedingSettingsPage = () => {
   return (
     <WomenPageLayout
       rightElement="BackButton"
-      backgroundColor={colors.Neutral_Surface}
+      className="bg-impo_Surface_SurfaceVariant"
       rightElementScript="ویرایش اطلاعات زایمان"
     >
       <div className="flex relative z-0 flex-col items-center gap-6 pb-6 ">

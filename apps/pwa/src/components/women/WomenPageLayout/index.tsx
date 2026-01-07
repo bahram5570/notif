@@ -4,6 +4,7 @@ import { WomenPageLayoutProps } from './types';
 
 const WomenPageLayout = (props: WomenPageLayoutProps) => {
   const headerProps = { ...props };
+  delete headerProps.headerClassName;
   delete headerProps.paddingBottom;
   delete headerProps.paddingTop;
   delete headerProps.className;
@@ -14,10 +15,10 @@ const WomenPageLayout = (props: WomenPageLayoutProps) => {
 
   return (
     <div
-      style={{ paddingTop, paddingBottom, backgroundColor: props.backgroundColor }}
+      style={{ paddingTop, paddingBottom }}
       className={`w-full min-h-[100dvh] flex flex-col ${props.className || {}}`}
     >
-      <WomenPageLayoutHeader {...headerProps} />
+      <WomenPageLayoutHeader {...headerProps} className={props.headerClassName} />
 
       <>{props.children}</>
     </div>

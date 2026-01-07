@@ -5,58 +5,49 @@ import ProfileIcon from '@assets/icons/headerProfile.svg';
 import HistoryIcon from '@assets/icons/history.svg';
 import InfoIcon from '@assets/icons/infoIcon.svg';
 
-import Spinner from '@components/ui/Spinner';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 import Link from 'next/link';
 
 import { ICONS_SIZE } from './constants';
 import { IconComponentMakerProps } from './types';
 
 export const BackButtonIconComponent = () => {
-  const { colors } = useTheme();
-
   return (
     <IconComponentMaker
-      iconElement={<ArrowIcon className="w-6 h-full stroke-2" style={{ stroke: colors.Surface_Outline }} />}
       path="BACK"
       loadingId="back"
+      iconElement={<ArrowIcon className="w-6 h-full stroke-2 stroke-impo_Surface_Outline" />}
     />
   );
 };
 
 export const PregnancyCheckupBackButtonIconComponent = () => {
-  const { colors } = useTheme();
-
   return (
     <IconComponentMaker
-      iconElement={<ArrowIcon className="w-6 h-full stroke-2" style={{ stroke: colors.Surface_Outline }} />}
       path="/"
       loadingId="back"
+      iconElement={<ArrowIcon className="w-6 h-full stroke-2 stroke-impo_Surface_Outline" />}
     />
   );
 };
 
 export const BackToSubscriptionIconComponent = () => {
-  const { colors } = useTheme();
-
   return (
     <IconComponentMaker
-      iconElement={<ArrowIcon className="w-6 h-full stroke-2" style={{ stroke: colors.Surface_Outline }} />}
       path="/protected/subscription"
       loadingId="backToSubscription"
+      iconElement={<ArrowIcon className="w-6 h-full stroke-2 stroke-impo_Surface_Outline" />}
     />
   );
 };
 
 export const PrifileIconComponent = () => {
-  const { colors } = useTheme();
-
   return (
     <IconComponentMaker
-      iconElement={<ProfileIcon className="w-8 h-full" style={{ stroke: colors.Surface_Outline }} />}
-      path="/protected/profile"
       loadingId="profile"
+      path="/protected/profile"
+      iconElement={<ProfileIcon className="w-8 h-full stroke-impo_Surface_Outline" />}
     />
   );
 };
@@ -64,35 +55,29 @@ export const PrifileIconComponent = () => {
 export const CalendarIconComponent = () => {
   return (
     <IconComponentMaker
-      iconElement={<CalendarIcon className="w-8 h-full" />}
-      path="/protected/calendar"
       loadingId="calendar"
+      path="/protected/calendar"
+      iconElement={<CalendarIcon className="w-8 h-full stroke-impo_Surface_Outline" />}
     />
   );
 };
 
 export const TicketsHistoryIconComponent = () => {
-  const { colors } = useTheme();
-
   return (
     <IconComponentMaker
-      iconElement={<TicketsHistoryIcon className="w-8 h-full" style={{ fill: colors.Surface_Outline }} />}
-      path="/protected/clinic/ticketsHistory"
       loadingId="history"
+      path="/protected/clinic/ticketsHistory"
+      iconElement={<TicketsHistoryIcon className="w-8 h-full stroke-impo_Surface_Outline" />}
     />
   );
 };
 
 export const ProfileTicketsHistory = () => {
-  const { colors } = useTheme();
   return (
-    <div
-      className="flex justify-center items-center w-12 h-12 rounded-full"
-      style={{ border: `1px solid ${colors.Neutral_Surface}` }}
-    >
+    <div className="flex justify-center items-center w-12 h-12 border-[1px] border-impo_Neutral_Surface rounded-full">
       <IconComponentMaker
-        path="/protected/supportTicketHistory"
         loadingId="profileTicketHistory"
+        path="/protected/supportTicketHistory"
         iconElement={<HistoryIcon className="w-6" />}
       />
     </div>
@@ -100,11 +85,9 @@ export const ProfileTicketsHistory = () => {
 };
 
 export const InfoIconComponent = () => {
-  const { colors } = useTheme();
-
   return (
     <Link href="https://impo.app/" target="_blank">
-      <InfoIcon className="w-7 h-full" style={{ fill: colors.Surface_Outline }} />
+      <InfoIcon className="w-7 h-full fill-impo_Surface_Outline" />
     </Link>
   );
 };
@@ -130,7 +113,7 @@ const IconComponentMaker: IconComponentMakerProps = ({ iconElement, path, loadin
       style={{ width: ICONS_SIZE, height: ICONS_SIZE }}
       onClick={clickHandler}
     >
-      {pageNavigationLoading === id && <Spinner color="outline" width={28} />}
+      {pageNavigationLoading === id && <Dark_Spinner size={28} className="border-impo_Surface_Outline" />}
       {pageNavigationLoading !== id && iconElement}
     </div>
   );

@@ -46,7 +46,7 @@ const CycleContainer = ({ data, customAppBar, children }: ContainerProps) => {
       )}
 
       <div
-        className="relative h-full min-h-[100dvh] duration-300 z-0"
+        className="relative h-full min-h-[100dvh] dark:!bg-impo_Neutral_Surface duration-300 z-0"
         style={{
           paddingTop,
           backgroundColor: appBarBackground,

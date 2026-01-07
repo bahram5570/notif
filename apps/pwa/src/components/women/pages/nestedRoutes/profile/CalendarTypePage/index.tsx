@@ -18,10 +18,9 @@ const CalendarTypePage = () => {
 
   return (
     <WomenPageLayout
-      className="px-4"
       paddingBottom={24}
       rightElement="BackButton"
-      backgroundColor={colors.Grey_50}
+      className="px-4 bg-impo_Grey_50"
       rightElementScript="نوع نمایش تقویم"
     >
       <div className="w-full mt-5 p-4 rounded-lg" style={{ backgroundColor: colors.White, direction: 'rtl' }}>

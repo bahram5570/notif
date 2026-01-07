@@ -27,7 +27,7 @@ const RoutinItemContainer = () => {
   });
 
   return (
-    <WomenPageLayout rightElement="BackButton" paddingTop={0} headerBackgroundColor="">
+    <WomenPageLayout rightElement="BackButton" paddingTop={0}>
       <div
         className=" w-full flex relative z-0 flex-col  gap-6  h-[100dvh]  px-4  pb-6"
         style={{ paddingTop: HEADER_HEIGHT + 16 }}

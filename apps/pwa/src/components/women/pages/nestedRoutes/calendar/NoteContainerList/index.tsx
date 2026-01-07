@@ -61,11 +61,11 @@ const NoteContainerList = () => {
 
   return (
     <WomenPageLayout
-      rightElement="BackButton"
-      rightElementScript="یادداشت ها"
-      backgroundColor={colors.Grey_50}
-      headerBackgroundColor={colors.Grey_50}
       paddingTop={0}
+      rightElement="BackButton"
+      className="bg-impo_Grey_50"
+      headerClassName="bg-impo_Grey_50"
+      rightElementScript="یادداشت ها"
     >
       {isLoading && <NoteContainerListSkeleton />}
 

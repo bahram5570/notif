@@ -9,7 +9,6 @@ import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useAnalytics from '@hooks/useAnalytics';
-import useTheme from '@hooks/useTheme';
 
 import DeleteNoteBtn from './DeleteNoteBtn';
 import NoteContainerSkeleton from './NoteContainerSkeleton';
@@ -20,7 +19,6 @@ import useSubmit from './__hooks__/useSubmit';
 
 const NoteContainer = () => {
   const { callEvent } = useAnalytics();
-  const { colors } = useTheme();
   const { noteValue, onChangeHandler, isLoading: getDataLoading } = useGetData();
   const { isLoading, submitHandler } = useSubmit({ noteId: noteValue.noteId });
   const [btnTop, setBtnTop] = useState<number>(0);
@@ -52,9 +50,9 @@ const NoteContainer = () => {
         <WomenPageLayout
           paddingTop={0}
           rightElement="BackButton"
+          className="bg-impo_Grey_50"
+          headerClassName="bg-impo_Grey_50"
           rightElementScript="ثبت یادداشت"
-          backgroundColor={colors.Grey_50}
-          headerBackgroundColor={colors.Grey_50}
         >
           <div className="flex flex-col min-h-[100dvh] gap-6 pb-6 px-4" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
             <div className="flex flex-col justify-center items-center p-4 gap-2">

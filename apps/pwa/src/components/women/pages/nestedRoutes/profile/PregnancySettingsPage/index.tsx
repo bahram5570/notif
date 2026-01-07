@@ -43,11 +43,7 @@ const PregnancySettingsPage = () => {
   };
 
   return (
-    <WomenPageLayout
-      rightElement="BackButton"
-      rightElementScript="تنظیمات بارداری"
-      backgroundColor={colors.Neutral_Surface}
-    >
+    <WomenPageLayout rightElement="BackButton" rightElementScript="تنظیمات بارداری" className="bg-impo_Neutral_Surface">
       <div className="flex flex-col items-center gap-2 px-4">
         {PREGNANCY_SETTINGS_LIST.map((item, index) => (
           <PregnancySettingsLinkGenerator

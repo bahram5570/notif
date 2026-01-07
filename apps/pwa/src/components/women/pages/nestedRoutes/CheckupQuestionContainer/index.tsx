@@ -27,10 +27,9 @@ const CheckupQuestionContainer = () => {
   return (
     <WomenPageLayout
       paddingTop={0}
-      className="px-4"
       rightElement="BackButton"
       rightElementScript={pregnancyTitle || ''}
-      backgroundColor={colors.Surface_SurfaceVariant}
+      className="px-4 bg-impo_Surface_SurfaceVariant"
     >
       {isLoading && <CheckupQuestionContainerSkeleton />}
 

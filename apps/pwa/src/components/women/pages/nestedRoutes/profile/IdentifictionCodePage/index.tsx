@@ -19,12 +19,7 @@ const IdentifictionCodePage = () => {
   const { data, isLoading } = useGetProfileData();
 
   return (
-    <WomenPageLayout
-      paddingTop={0}
-      rightElement="BackButton"
-      rightElementScript="کد معرف"
-      headerBackgroundColor={colors.Grey_50}
-    >
+    <WomenPageLayout paddingTop={0} rightElement="BackButton" rightElementScript="کد معرف" className="bg-impo_Grey_50">
       {isLoading && <IdentificationCodeSkeleton />}
       {!isLoading && data && (
         <div

@@ -2,7 +2,6 @@
 
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import useTheme from '@hooks/useTheme';
 
 import TicketContainerSkeleton from './TicketContainerSkeleton';
 import TicketList from './TicketList';
@@ -11,14 +10,13 @@ import useGetDataCategory from './__hooks__/useGetDataCategory';
 
 const SupportTicketsListPage = () => {
   const { data, dataLoading } = useGetDataCategory();
-  const { colors } = useTheme();
 
   return (
     <>
       <WomenPageLayout
         rightElement="BackButton"
+        className="bg-impo_Grey_50"
         rightElementScript="پشتیبانی"
-        backgroundColor={colors.Grey_50}
         leftElement2="ProfileSupportTicket"
         paddingTop={data && data.url ? HEADER_HEIGHT : 0}
       >
