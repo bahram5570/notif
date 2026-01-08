@@ -1,41 +1,44 @@
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import useDiscountCode from './__hooks__/useDiscountCode';
 import { DiscountInputProps } from './types';
 
 const DiscountInput = ({ id, approvedCodeHandler }: DiscountInputProps) => {
   const { code, codeHandler, submitHandler, isLoading } = useDiscountCode({ id, approvedCodeHandler });
-  const { colors, typography } = useTheme();
 
   return (
     <div className="w-full flex flex-col items-end gap-2">
-      <Typography scale="Title" size="Small">
+      <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
         کد تخفیف
-      </Typography>
+      </Dark_Typography>
 
       <div className="w-full flex items-center gap-2">
-        <Button
-          size="small"
-          variant="fill"
-          color="primary"
-          className="px-6"
-          fullWidth={false}
+        <Dark_Button
           isLoading={isLoading}
           onClick={submitHandler}
+          className="px-6 !w-fit !h-8"
           isDisable={code.trim() === ''}
         >
           اعمال
-        </Button>
+        </Dark_Button>
 
         <input
           type="text"
           value={code}
           placeholder="اینجا بنویس"
           onChange={(e) => codeHandler(e.target.value)}
-          className="w-full h-8 rounded-full px-4 py-[6px] border-[1px]"
-          style={{ borderColor: colors.Neutral_Surface, ...typography.Body.Medium }}
+          className="
+                      w-full 
+                      h-8 
+                      rounded-full 
+                      px-4 
+                      py-[6px] 
+                      border-[1px] 
+                      border-impo_Neutral_Surface 
+                      text-impo_Neutral_OnBackground 
+                      bg-impo_Neutral_Background
+                    "
         />
       </div>
     </div>

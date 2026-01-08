@@ -2,13 +2,12 @@ import { useEffect, useRef } from 'react';
 
 import { isDevelopeMode } from '@utils/system';
 
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import VpnText from '@components/ui/VpnText';
 import WomenPageLayoutHeader from '@components/women/WomenPageLayout/WomenPageLayoutHeader';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-import useTheme from '@hooks/useTheme';
 import { useRouter } from 'next/navigation';
 
 import SpecialistInfoGenerator from '../SpecialistInfoGenerator';
@@ -20,7 +19,6 @@ import { SpecialistPaymantProps } from './types';
 
 const SpecialistPaymant = (props: SpecialistPaymantProps) => {
   const router = useRouter();
-  const { colors } = useTheme();
   const isFirstTime = useRef(isDevelopeMode());
   const { approvedCodeHandler, submitHandler, isLoading } = useBuy({
     questionValues: props.questionValues,
@@ -42,8 +40,8 @@ const SpecialistPaymant = (props: SpecialistPaymantProps) => {
   return (
     <>
       <div
-        className="fixed top-0 left-0 right-0 bottom-0 px-4 mx-auto w-full min-h-[100dvh] max-h-[100dvh] overflow-y-auto z-30"
-        style={{ maxWidth: MAX_SCREEN_WIDTH, backgroundColor: colors.White }}
+        style={{ maxWidth: MAX_SCREEN_WIDTH }}
+        className="fixed top-0 left-0 right-0 bottom-0 px-4 mx-auto w-full min-h-[100dvh] max-h-[100dvh] overflow-y-auto bg-impo_Neutral_Background z-30"
       >
         <div className="relative z-40">
           <WomenPageLayoutHeader rightElement="BackButton" rightElementScript="پرداخت" />
@@ -51,9 +49,9 @@ const SpecialistPaymant = (props: SpecialistPaymantProps) => {
 
         <div className="flex flex-col gap-8 min-h-[100dvh] pb-4" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
           <div className="flex flex-col items-end ">
-            <Typography scale="Title" size="Small" className="pb-2">
+            <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground pb-2">
               مشاوره آنلاین با پزشک
-            </Typography>
+            </Dark_Typography>
 
             <SpecialistInfoGenerator
               isSelected={false}
@@ -77,18 +75,13 @@ const SpecialistPaymant = (props: SpecialistPaymantProps) => {
           />
 
           <InfoSupport support={props.support} />
+
           <div className="mt-auto flex flex-col w-full gap-2 ">
             <VpnText />
-            <Button
-              size="medium"
-              variant="fill"
-              color="primary"
-              isLoading={isLoading}
-              onClick={submitHandler}
-              id="Clinic_Payment_Press"
-            >
+
+            <Dark_Button isLoading={isLoading} onClick={submitHandler} id="Clinic_Payment_Press">
               {props.submit}
-            </Button>
+            </Dark_Button>
           </div>
         </div>
       </div>

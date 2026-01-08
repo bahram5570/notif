@@ -1,14 +1,11 @@
 import { addZero } from '@utils/scripts';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { SideTypeEnum } from '../../__hooks__/useGetData/enums';
 import { ChatContainerMakerProps } from './types';
 
 const ChatContainerMaker = ({ dateTime, children, sideType, width }: ChatContainerMakerProps) => {
-  const { colors } = useTheme();
-
   const isDoctor = sideType === SideTypeEnum.Doctor;
 
   const date = new Date(dateTime);
@@ -16,18 +13,23 @@ const ChatContainerMaker = ({ dateTime, children, sideType, width }: ChatContain
 
   return (
     <div
-      className="flex flex-col items-end gap-2 px-3 py-2 rounded-xl"
-      style={{
-        width,
-        marginLeft: isDoctor ? '0' : 'auto',
-        backgroundColor: isDoctor ? colors.Surface_SurfaceVariant : colors.Pink_50,
-      }}
+      style={{ width }}
+      className={`
+                  flex 
+                  flex-col 
+                  items-end 
+                  gap-2 
+                  px-3 
+                  py-2 
+                  rounded-xl
+                  ${isDoctor ? 'ml-0 bg-impo_Surface_SurfaceVariant' : 'ml-auto bg-impo_Pink_50'}
+                `}
     >
       <>{children}</>
 
-      <Typography scale="Lable" size="Small" color="Surface_Outline">
+      <Dark_Typography fontSize="Lable_Small" className="text-impo_Surface_Outline">
         {time}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

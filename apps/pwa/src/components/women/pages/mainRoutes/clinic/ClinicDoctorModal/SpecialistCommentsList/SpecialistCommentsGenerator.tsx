@@ -1,23 +1,24 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { SpecialistCommentsGeneratorProps } from './types';
 
 const SpecialistCommentsGenerator = ({ isPositive, scripts }: SpecialistCommentsGeneratorProps) => {
-  const { colors } = useTheme();
-
   return (
     <div className="flex flex-col gap-2 pt-1">
       {scripts.map((item, index) => (
         <div className="flex flex-row-reverse items-center gap-2" key={index}>
           <div
-            className="w-2 h-2 rounded-full"
-            style={{ backgroundColor: isPositive ? colors.Green_500 : colors.Red_500 }}
+            className={`
+                        w-2 
+                        h-2 
+                        rounded-full
+                        ${isPositive ? 'bg-impo_Green_500' : 'bg-impo_Red_500'}
+                      `}
           />
 
-          <Typography scale="Body" size="Small">
+          <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
             {item}
-          </Typography>
+          </Dark_Typography>
         </div>
       ))}
     </div>

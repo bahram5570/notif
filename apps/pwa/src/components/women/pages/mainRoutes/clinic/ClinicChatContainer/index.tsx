@@ -20,9 +20,9 @@ const ClinicChatContainer = () => {
   return (
     <>
       <WomenPageLayout
+        paddingBottom={120}
         rightElement="BackButton"
         rightElementScript={data?.drName}
-        paddingBottom={120}
         paddingTop={HEADER_HEIGHT + CHAT_HEADING_HEIGHT + 16}
       >
         {isLoading && <ChatSkeleton />}

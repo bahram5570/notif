@@ -1,14 +1,14 @@
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 const EmptyList = () => {
   return (
     <div className="flex flex-col items-center gap-3 mt-[20dvh]">
       <CustomImage src="/assets/images/ticketsHistoryEmptyList.webp" width={105} />
 
-      <Typography scale="Body" size="Medium">
+      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
         شما تا به حال مشاوره فعالی نداشته‌اید
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

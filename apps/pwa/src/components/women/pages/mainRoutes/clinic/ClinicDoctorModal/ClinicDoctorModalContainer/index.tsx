@@ -19,7 +19,7 @@ const ClinicDoctorModalContainer = ({ clinicInfo, drId }: SpecialistCommentsProp
         {isLoading && <SpecialistCommentsSkeleton />}
 
         {!isLoading && doctorData && commentsData && (
-          <div style={{ paddingTop: 20 }} className="relative px-4 pb-5 z-0">
+          <div className="relative px-4 pb-5 pt-5 z-0">
             <DoctorInfo
               image={doctorData.image}
               lastName={doctorData.lastName}

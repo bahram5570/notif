@@ -1,23 +1,17 @@
-import useTheme from '@hooks/useTheme';
-
-import Typography from '../Typography';
+import Dark_Typography from '../Dark_Typography';
 
 const VpnText = () => {
-  const { colors } = useTheme();
-
   return (
     <div className="flex flex-row-reverse items-center justify-start gap-1 ">
-      <div
-        style={{ backgroundColor: colors.Surface_InverseSurface }}
-        className="flex justify-center items-center h-3 p-2 rounded"
-      >
-        <Typography scale="Lable" size="Small" color="Neutral_Background">
+      <div className="flex justify-center items-center h-3 p-2 rounded bg-impo_Surface_InverseSurface">
+        <Dark_Typography fontSize="Lable_Small" className="text-impo_Neutral_Background">
           VPN
-        </Typography>
+        </Dark_Typography>
       </div>
-      <Typography scale="Body" size="Small" color="Neutral_OnBackground">
+
+      <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
         جهت ورود به درگاه بانک، لازم است فیلترشکن خاموش باشد.
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };
