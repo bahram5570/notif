@@ -1,10 +1,8 @@
 import Hamdel from '@assets/icons/hamdel.svg';
 
-import Button from '@components/ui/Button';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
-import Typography from '@components/ui/Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 

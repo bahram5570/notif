@@ -1,7 +1,5 @@
-import Button from '@components/ui/Button';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
-import Typography from '@components/ui/Typography';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import useReject from './__hooks__/useReject';

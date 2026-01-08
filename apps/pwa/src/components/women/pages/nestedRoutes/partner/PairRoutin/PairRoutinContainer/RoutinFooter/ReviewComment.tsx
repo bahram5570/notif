@@ -1,13 +1,11 @@
 import StarIcon from '@assets/icons/star.svg';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { RATING_LIST } from '@components/women/FeedbackModal/FeedbackStars/constants';
-import useTheme from '@hooks/useTheme';
 
 import { ReviewCommentPropsType } from './type';
 
 const ReviewComment = ({ rate }: ReviewCommentPropsType) => {
-  const { colors } = useTheme();
   const { description, rate: rateValue, title } = rate;
   return (
     <div
@@ -17,30 +15,28 @@ const ReviewComment = ({ rate }: ReviewCommentPropsType) => {
       }}
     >
       <div className="relative z-10 w-full flex justify-between items-center">
-        <div className="flex items-center px-2 py-1 rounded-full" style={{ backgroundColor: colors.White }}>
+        <div className="flex items-center px-2 py-1 rounded-full bg-impo_White">
           <div className="flex items-center gap-1 pr-1">
-            <Typography scale="Lable" size="Large" className="!h-5">
+            <Dark_Typography fontSize="Lable_Large" className="!h-5 text-impo_Black">
               {rateValue.toString()}
-            </Typography>
+            </Dark_Typography>
 
-            <StarIcon className="w-6 h-auto" style={{ fill: colors.Yellow }} />
+            <StarIcon className="w-6 h-auto fill-impo_Yellow" />
 
-            <div className="w-[1px] h-[20px]" style={{ backgroundColor: colors.Pink_200 }} />
+            <div className="w-[1px] h-[20px] bg-impo_Pink_200" />
           </div>
 
-          <Typography scale="Body" size="Small">
+          <Dark_Typography fontSize="Body_Small" className="text-impo_Black">
             {RATING_LIST[rateValue - 1].script}
-          </Typography>
+          </Dark_Typography>
         </div>
-
-        <Typography scale="Lable" size="Medium" color="Neutral_Background">
+        <Dark_Typography fontSize="Lable_Medium" className="text-impo_White">
           امتیاز شما به این روتین
-        </Typography>
+        </Dark_Typography>
       </div>
-
-      <Typography scale="Lable" size="Small" color="Neutral_Background">
+      <Dark_Typography fontSize="Lable_Small" className="text-impo_White">
         {description}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

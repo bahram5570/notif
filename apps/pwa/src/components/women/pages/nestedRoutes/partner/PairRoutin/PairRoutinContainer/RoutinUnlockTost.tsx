@@ -3,10 +3,9 @@ import { useEffect, useState } from 'react';
 import TickIcon from '@assets/icons/tickIcon.svg';
 import { convertToPersianOrdinal } from '@utils/numbers';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useCountDown from '@hooks/useCountDown';
-import useTheme from '@hooks/useTheme';
 
 import { ROUTIN_STEP, SHOW_ROUTIN_UNLOCK_TOST } from './constant';
 
@@ -15,7 +14,6 @@ const RoutinUnlockTost = () => {
   const [routinStep, setRoutinStep] = useState<number>(0);
   const showRoutinUnlockToast = localStorage.getItem(SHOW_ROUTIN_UNLOCK_TOST);
   const currentRoutinStep = localStorage.getItem(ROUTIN_STEP);
-  const { colors } = useTheme();
 
   const { startCounter: startShowMessage } = useCountDown({
     time: 9,
@@ -54,21 +52,15 @@ const RoutinUnlockTost = () => {
             maxWidth: MAX_SCREEN_WIDTH,
           }}
         >
-          <div
-            style={{
-              background: colors.Success_SuccessContainer,
-              border: `1px solid ${colors.Success_Success}`,
-            }}
-            className="flex justify-center items-center gap-3 rounded-lg p-4"
-          >
+          <div className="flex justify-center items-center gap-3 rounded-lg p-4 border border-impo_Success_Success bg-impo_Success_SuccessContainer">
             <div className="border-r-[1px]">
-              <Typography scale="Body" size="Small" className="px-2">
+              <Dark_Typography fontSize="Body_Small" className="px-2 text-impo_Black">
                 {`  مرحله ${convertToPersianOrdinal(routinStep)} با موفقیت انجام و مرحله ${convertToPersianOrdinal(routinStep + 1)} آنلاک شد`}
-              </Typography>
+              </Dark_Typography>
             </div>
 
             <div className="w-6 h-6 flex justify-center items-center">
-              <TickIcon className="w-4 h-auto" style={{ fill: colors.Success_Success }} />
+              <TickIcon className="w-4 h-auto fill-impo_Success_Success" />
             </div>
           </div>
         </div>

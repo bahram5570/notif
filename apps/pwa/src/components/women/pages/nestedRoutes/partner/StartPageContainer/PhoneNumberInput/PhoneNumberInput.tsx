@@ -2,16 +2,12 @@ import { useState } from 'react';
 
 import { toEnglishNumbers, toPersianNumbers } from '@utils/numbers';
 
-import Button from '@components/ui/Button';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
 
 import useCreate from '../__hooks__/useCreate';
 
 const PhoneNumberInput = () => {
-  const { colors } = useTheme();
   const [phoneNumber, setPhoneNumber] = useState<string>('');
   const { createHandler, isLoading } = useCreate();
 

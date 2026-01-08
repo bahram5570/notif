@@ -1,12 +1,11 @@
 'use client';
 
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import FeedbackModal from '@components/women/FeedbackModal';
 import { FOOTER_HEIGTH } from '@components/women/WomenFooter/constants';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import useTheme from '@hooks/useTheme';
 import { useRouter } from 'next/navigation';
 
 import { ProgramWidgetItemStatusEnum } from '../enum';
@@ -19,7 +18,7 @@ import useSeen from './__hooks__/useSeen';
 
 const PairRoutinItemContainer = () => {
   const route = useRouter();
-  const { colors } = useTheme();
+
   const { isLoading, data, programId } = useGetPairRoutinItemData();
   const { onSeenHandler, isLoading: seenLoading } = useSeen();
   const { isLoading: feedbackLoading, rateHandler } = useFeedback({
@@ -38,7 +37,7 @@ const PairRoutinItemContainer = () => {
         className=" w-full flex relative z-0 flex-col  gap-6  h-[100dvh]  px-4  pb-6"
         style={{ paddingTop: HEADER_HEIGHT + 16 }}
       >
-        <div className="w-full h-[360px] absolute top-0 left-0 right-0 bg-gradient-to-b from-[#FEE8E6] to-[#FEE8E600] -z-10" />
+        <div className="w-full h-[360px] absolute top-0 left-0 right-0 bg-gradient-to-b from-[#FEE8E6] to-[#FEE8E600] -z-10 dark:bg-none" />
 
         {isLoading && <RoutinItemSkeleton />}
 
@@ -50,29 +49,27 @@ const PairRoutinItemContainer = () => {
               icon={data.icon}
               status={data.status}
             />
+
             {data.status === ProgramWidgetItemStatusEnum.locked && <EmptyState />}
             {data.status !== ProgramWidgetItemStatusEnum.locked && (
               <>
                 <div
+                  className="!text-impo_Neutral_OnBackground"
+                  dir="rtl"
                   style={{ paddingBottom: FOOTER_HEIGTH }}
                   dangerouslySetInnerHTML={{ __html: JSON.parse(data.data) }}
                 />
                 <div className="mt-auto p-2">
-                  <Button
-                    color="FREE-STYLES"
-                    buttonColor={colors.PrimaryWoman_PrimaryContainer}
-                    contentsColor={colors.PrimaryWoman_Primary}
-                    fullWidth
-                    size="large"
+                  <Dark_Button
                     onClick={onSeenHandler}
                     isDisable={data.status === ProgramWidgetItemStatusEnum.Compelet}
-                    variant="fill"
                     isLoading={seenLoading}
+                    className="bg-impo_Primary_PrimaryContainer text-impo_Primary_Primary border-impo_Primary_PrimaryContainer"
                   >
-                    <Typography scale="Lable" size="Large" color="PrimaryWoman_Primary">
+                    <Dark_Typography fontSize="Lable_Large" className="text-impo_Primary_Primary">
                       {data.compeletButtonLabel}
-                    </Typography>
-                  </Button>
+                    </Dark_Typography>
+                  </Dark_Button>
                 </div>
               </>
             )}

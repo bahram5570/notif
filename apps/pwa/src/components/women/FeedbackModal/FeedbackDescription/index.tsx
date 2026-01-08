@@ -1,13 +1,17 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+
+import Dark_Typography from '@components/ui/Dark_Typography';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import { MAX_LETTERS_COUNT } from '../constants';
 import { FeedbackDescriptionPropsType } from './type';
 
 const FeedbackDescription = ({ description, descriptionHandler }: FeedbackDescriptionPropsType) => {
-  const { colors, typography } = useTheme();
+  const { operatingSystem } = useOperatingSystem();
   const lettersCount = description.trim().length;
   const lettersCountScript = `${lettersCount}/${MAX_LETTERS_COUNT}`;
+
+  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Medium', operatingSystem });
 
   const valueHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const value = e.target.value;
@@ -24,22 +28,22 @@ const FeedbackDescription = ({ description, descriptionHandler }: FeedbackDescri
   };
   return (
     <>
-      <Typography scale="Body" size="Medium" className="w-full">
+      <Dark_Typography fontSize="Body_Medium" className="w-full text-impo_Neutral_OnBackground">
         لطفا نظرت رو برامون بنویس تا بتونیم بررسی کنیم و در آینده سرویس بهتری ارائه بدیم.
-      </Typography>
+      </Dark_Typography>
 
       <textarea
         placeholder="نظرت رو اینجا بنویس.."
-        style={{ ...typography.Body.Medium, borderColor: colors.Neutral_Surface, direction: 'rtl' }}
+        style={{ ...typographyFontStyles }}
         value={description}
         rows={4}
+        dir="rtl"
         onChange={valueHandler}
-        className={`relative w-full rounded-xl p-2 border-[1px] outline-none resize-none mt-2 mb-1 `}
+        className="relative w-full rounded-xl p-2 border-[1px] outline-none resize-none mt-2 mb-1 border-impo_Neutral_Surface bg-impo_Neutral_Background text-impo_Neutral_OnBackground"
       />
-
-      <Typography scale="Body" size="Medium" color="Surface_Outline" className="pb-10 mr-auto">
+      <Dark_Typography fontSize="Body_Medium" className="pb-10 mr-auto text-impo_Surface_Outline">
         {lettersCountScript}
-      </Typography>
+      </Dark_Typography>
     </>
   );
 };

@@ -1,36 +1,25 @@
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 
 const NoComment = () => {
-  const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   return (
-    <div
-      className=" rounded-xl w-full flex flex-row-reverse justify-between items-center px-4 py-3"
-      style={{ background: colors.Grey_100 }}
-    >
+    <div className=" rounded-xl w-full flex flex-row-reverse justify-between items-center px-4 py-3 bg-impo_Neutral_Surface">
       <div className="flex flex-col items-end px-3 py-2 gap-2">
-        <Typography scale="Lable" size="Medium" color="Neutral_OnBackground">
+        <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Lable_Medium">
           هنوز نظرت رو ثبت نکردی؟
-        </Typography>
-        <Typography scale="Body" size="Small" color="Neutral_OnBackground">
+        </Dark_Typography>
+        <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
           نظرت راجع به برنامه برامون مهمه!
-        </Typography>
+        </Dark_Typography>
       </div>
-      <Button
-        color="primary"
-        fullWidth={false}
-        size="medium"
-        onClick={() => newQueryParamsHandler({ [MODALS.MODAL_FEEDBACK]: 'true' })}
-        variant="fill"
-      >
-        <Typography scale="Lable" size="Medium" color="PrimaryMan_OnPrimaryMan">
+      <Dark_Button onClick={() => newQueryParamsHandler({ [MODALS.MODAL_FEEDBACK]: 'true' })} className="max-w-fit">
+        <Dark_Typography className="text-impo_PrimaryMan_OnPrimaryMan" fontSize="Lable_Medium">
           ثبت نظر
-        </Typography>
-      </Button>
+        </Dark_Typography>
+      </Dark_Button>
     </div>
   );
 };

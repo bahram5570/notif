@@ -1,5 +1,5 @@
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { RoutinHeadingProps } from './types';
 
@@ -9,13 +9,12 @@ const RoutinHeading = ({ image, description, title }: RoutinHeadingProps) => {
       <CustomImage src={image} width={88} height={88} />
 
       <div className="flex flex-col items-end gap-2">
-        <Typography scale="Title" size="Small">
+        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           {title}
-        </Typography>
-
-        <Typography scale="Body" size="Small">
+        </Dark_Typography>
+        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
           {description}
-        </Typography>
+        </Dark_Typography>
       </div>
     </div>
   );
