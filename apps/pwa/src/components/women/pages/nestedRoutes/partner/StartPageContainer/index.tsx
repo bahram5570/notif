@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 
 import CustomImage from '@components/ui/CustomImage';
 import Dark_Typography from '@components/ui/Dark_Typography';
-import Typography from '@components/ui/Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 
 import PartnerCode from './PartnerCode';

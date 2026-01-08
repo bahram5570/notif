@@ -1,5 +1,5 @@
-import RadioButton from '@components/ui/RadioButton';
-import Typography from '@components/ui/Typography';
+import Dark_RadioButton from '@components/ui/Dark_RadioButton';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { LIST_LABEL } from './constants';
 import { PartnerRadioButtonPropsType } from './type';
@@ -11,11 +11,11 @@ const PartnerRadioButton = ({ onChange, value }: PartnerRadioButtonPropsType) =>
         return (
           <div className="flex items-center justify-end gap-3 w-full" key={index}>
             <label htmlFor={item.name}>
-              <Typography scale="Body" size="Medium" color="Surface_OnSurfaceVariant">
+              <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
                 {item.name}
-              </Typography>
+              </Dark_Typography>
             </label>
-            <RadioButton isChecked={value === item.value} onClick={() => onChange(item.value)} />
+            <Dark_RadioButton isChecked={value === item.value} onClick={() => onChange(item.value)} />
           </div>
         );
       })}

@@ -5,13 +5,11 @@ import CustomImage from '@components/ui/CustomImage';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import { PartnerModalNameEnums } from '../../PartnerModals/enums';
 import { BackgroundImagePropsType } from './type';
 
 const BackgroundImage = ({ isValid, coverImage }: BackgroundImagePropsType) => {
-  const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
   const canDeleteImage = coverImage ? true : false;
@@ -49,16 +47,15 @@ const BackgroundImage = ({ isValid, coverImage }: BackgroundImagePropsType) => {
         {isValid && (
           <div className={`absolute ${coverImage ? ' top-44' : 'top-32'} left-3 z-20 select-none`} onClick={onClick}>
             <div
-              className="w-8 h-8 flex justify-center items-center rounded-full cursor-pointer"
+              className="w-8 h-8 flex justify-center items-center rounded-full cursor-pointer bg-impo_Neutral_Background"
               style={{
-                backgroundColor: colors.Neutral_Background,
                 opacity: 50,
               }}
             >
               {coverImage ? (
-                <EditIcon style={{ fill: colors.Neutral_OnBackground }} className="w-4 h-4" />
+                <EditIcon className="w-4 h-4 fill-impo_Neutral_OnBackground" />
               ) : (
-                <UploadIcon style={{ fill: colors.Neutral_OnBackground }} className="w-4 h-4" />
+                <UploadIcon className="w-4 h-4 fill-impo_Neutral_OnBackground" />
               )}
             </div>
           </div>

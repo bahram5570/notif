@@ -1,8 +1,8 @@
 import Hamdel from '@assets/icons/hamdel.svg';
 
-import Button from '@components/ui/Button';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -30,32 +30,33 @@ const AcceptModal = () => {
         <Hamdel className="w-6 h-6 stroke-impo_Primary_Primary" />
       </div>
       <div className="flex flex-col justify-center items-center gap-2">
-        <Typography scale="Title" size="Medium" textAlign="center">
+        <Dark_Typography fontSize="Title_Medium" className="text-center text-impo_Neutral_OnBackground">
           همدلی
-        </Typography>
-        <div className="flex flex-col justify-center items-center gap-6">
-          <Typography scale="Body" size="Large" textAlign="center">
-            {`با قبول کردن درخواست همدلی ${partnerName} اجازه دسترسی به قسمت های زیر رو بهش میدی`}
-          </Typography>
-          <div className="flex flex-col justify-center items-center">
-            <Typography scale="Title" size="Small">
-              .مشاهده وضعیت چرخه
-            </Typography>
-            <Typography scale="Title" size="Small">
-              .مشاهده وضعیت بیوریتم
-            </Typography>
-          </div>
+        </Dark_Typography>
 
-          <Typography scale="Body" size="Large" textAlign="center">
+        <div className="flex flex-col justify-center items-center gap-6">
+          <Dark_Typography fontSize="Body_Large" className="text-center text-impo_Neutral_OnBackground">
+            {`با قبول کردن درخواست همدلی ${partnerName} اجازه دسترسی به قسمت های زیر رو بهش میدی`}
+          </Dark_Typography>
+
+          <div className="flex flex-col justify-center items-center">
+            <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+              .مشاهده وضعیت چرخه
+            </Dark_Typography>
+            <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+              .مشاهده وضعیت بیوریتم
+            </Dark_Typography>
+          </div>
+          <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground text-center">
             لازمه بدونی پارتنرت به مشاوره‌های آنلاین و یادداشت‌هات هیچگونه دسترسی نداره
-          </Typography>
+          </Dark_Typography>
         </div>
 
-        <Button size="medium" variant="fill" color="primary" onClick={onClickHandler}>
-          <Typography scale="Lable" size="Large" color="White">
+        <Dark_Button onClick={onClickHandler}>
+          <Dark_Typography fontSize="Lable_Large" className="text-impo_White ">
             باشه
-          </Typography>
-        </Button>
+          </Dark_Typography>
+        </Dark_Button>
       </div>
     </div>
   );

@@ -1,5 +1,4 @@
 import ActivationBtn from '@components/activation/ActivationBtn';
-import Button from '@components/ui/Button';
 import CustomModal from '@components/ui/CustomModal';
 import Typography from '@components/ui/Typography';
 import CustomLink from '@components/women/pages/mainRoutes/partner/PartnerPage/CustomLink';
@@ -21,11 +20,10 @@ const InterfaceCodeContainer = ({ onComplete }: InterfaceCodeContainerProps) => 
     <>
       <div className="fixed left-0 right-0 bottom-24 flex justify-center">
         <CustomLink
-          labelSize="SmallProminet"
-          backgroundColor="transparent"
           link={`?${ACTIVATION_INTERFACE_CODE}=true`}
           lable="کد معرف داری؟ اینجا اضافه کن"
           id="interface-code-link"
+          className="!bg-impo_Transparent"
         />
       </div>
 

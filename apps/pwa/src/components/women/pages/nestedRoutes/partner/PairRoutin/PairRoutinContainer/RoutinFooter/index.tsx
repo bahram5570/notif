@@ -9,7 +9,7 @@ const RoutinFooter = ({ rate }: RoutinFooterPropsType) => {
   }
 
   return (
-    <div className="mt-auto  ">
+    <div className="mt-auto pt-2 ">
       {rate.status === ProgramRateStatusEnum.Pending && <NoComment />}
       {rate.status === ProgramRateStatusEnum.Complete && <ReviewComment rate={rate} />}
     </div>

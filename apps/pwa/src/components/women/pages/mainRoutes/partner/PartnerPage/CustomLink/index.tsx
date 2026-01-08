@@ -1,25 +1,18 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
-import Spinner from '@components/ui/Spinner';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
+import useTypographyMaker from '@hooks/useTypographyMaker';
 import Link from 'next/link';
 
 import { CustomLinkPropType } from './type';
 
 const CustomLink = (props: CustomLinkPropType) => {
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
-  const { colors } = useTheme();
-
-  const {
-    link,
-    style,
-    lable,
-    id,
-    labelSize = 'Large',
-    labelColor = 'PrimaryWoman_Primary',
-    color = colors.PrimaryWoman_Primary,
-    backgroundColor = colors.PrimaryWoman_PrimaryContainer,
-  } = props;
+  const { link, style, lable, id, fontSize = 'Lable_Large' } = props;
+  const { typographyFontStyles, result } = useTypographyMaker({
+    children: lable,
+    fontSize: fontSize,
+    numbersMode: 'persian',
+  });
 
   const isLoading = pageNavigationLoading === id;
 
@@ -35,16 +28,14 @@ const CustomLink = (props: CustomLinkPropType) => {
       href={link}
       style={{
         ...style,
+        ...typographyFontStyles,
       }}
-      className="font-semibold w-full h-10 text-base rounded-full flex justify-center items-center text-impo_Primary_Primary bg-impo_Primary_PrimaryContainer"
+      dir="rtl"
+      className={` w-full h-10  rounded-full flex justify-center items-center text-impo_Primary_Primary bg-impo_Primary_PrimaryContainer ${props.className}`}
       onClick={clickHandler}
     >
-      {isLoading && <Spinner width={20} color="primary" />}
-      {!isLoading && (
-        <Dark_Typography fontSize="Lable_Large" className="text-impo_Primary_Primary">
-          {lable}
-        </Dark_Typography>
-      )}
+      {isLoading && <Dark_Spinner size={20} />}
+      {!isLoading && result}
     </Link>
   );
 };

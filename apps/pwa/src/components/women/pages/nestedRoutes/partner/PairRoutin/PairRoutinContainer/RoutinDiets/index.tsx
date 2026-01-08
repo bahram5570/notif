@@ -1,25 +1,20 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import RoutinDietsGenerator from './RoutinDietsGenerator';
 import { RoutinDietsProps } from './types';
 
 const RoutinDiets = ({ name, items }: RoutinDietsProps) => {
-  const { colors } = useTheme();
-
   return (
     <>
-      <Typography scale="Lable" size="Large" className="pb-3 ml-auto">
+      <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground pb-3 ml-auto">
         {name}
-      </Typography>
+      </Dark_Typography>
 
       {items.map((item, index) => {
         const lastItem = index === items.length - 1;
         return (
           <div key={index}>
-            {index > 0 && (
-              <div className="w-full h-[1px] my-3" style={{ backgroundColor: colors.Surface_SurfaceVariant }} />
-            )}
+            {index > 0 && <div className="w-full h-[1px] my-3 bg-impo_Surface_SurfaceVariant" />}
 
             <RoutinDietsGenerator item={item} index={index} isLastItem={lastItem} />
           </div>

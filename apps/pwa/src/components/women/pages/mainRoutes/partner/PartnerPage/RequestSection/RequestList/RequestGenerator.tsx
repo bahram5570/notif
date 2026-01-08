@@ -50,7 +50,7 @@ const RequestGenerator = ({ item }: RequestGeneratorTypeProps) => {
       </div>
       <div className="flex items-center gap-3">
         {item.isRecv && (
-          <Dark_Button onClick={onAcceptClickHandler} isLoading={isLoading}>
+          <Dark_Button className="max-w-fit" onClick={onAcceptClickHandler} isLoading={isLoading}>
             <Dark_Typography fontSize="Lable_Medium" className="text-impo_Primary_OnPrimary">
               قبول کردن
             </Dark_Typography>

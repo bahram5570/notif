@@ -1,6 +1,8 @@
-import Button from '@components/ui/Button';
+import ArrowIcon from '@assets/icons/arrow.svg';
+
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { useRouter } from 'next/navigation';
 
 const EmptyState = () => {
@@ -9,15 +11,24 @@ const EmptyState = () => {
   const onClick = () => {
     router.back();
   };
+
   return (
     <div className="p-4 flex flex-col gap-4">
       <CustomImage src="/assets/images/empty state.webp" />
       <div className="flex justify-center items-center">
-        <Button color="onSurface" hasArrow fullWidth={false} size="medium" onClick={onClick} variant="fill">
-          <Typography scale="Lable" size="Large" color="PrimaryMan_OnPrimaryMan">
-            بریم مرحله قبل
-          </Typography>
-        </Button>
+        <Dark_Button
+          onClick={onClick}
+          className="!bg-impo_Surface_OnSurfaceVariant dark:!bg-impo_Surface_SurfaceVariant !text-impo_Primary_OnPrimary !border-impo_Surface_OnSurfaceVariant dark:!border-impo_Surface_SurfaceVariant max-w-fit"
+        >
+          <div className={`w-full h-full flex justify-center gap-2 `}>
+            <div className="flex justify-center items-center">
+              <Dark_Typography fontSize="Lable_Large" className="text-impo_PrimaryMan_OnPrimaryMan">
+                بریم مرحله قبل
+              </Dark_Typography>
+            </div>
+            <ArrowIcon className="w-6 h-auto stroke-2 stroke-impo_Primary_OnPrimary" />
+          </div>
+        </Dark_Button>
       </div>
     </div>
   );
