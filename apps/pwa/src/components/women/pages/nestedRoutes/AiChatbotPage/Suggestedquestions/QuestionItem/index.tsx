@@ -1,12 +1,10 @@
 import ReplyIcon from '@assets/icons/Reply_2.svg';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { QuestionItemPropsType } from './type';
 
 const QuestionItem = ({ defaultQustionHandler, question }: QuestionItemPropsType) => {
-  const { colors } = useTheme();
   const isMultiLine = question.length > 43;
 
   const onClick = () => {
@@ -16,20 +14,19 @@ const QuestionItem = ({ defaultQustionHandler, question }: QuestionItemPropsType
   return (
     <div className="flex items-center justify-start flex-row-reverse gap-2">
       <div className="w-6 h-6">
-        <ReplyIcon className="w-6 h-auto" style={{ fill: colors.Grey_700 }} />
+        <ReplyIcon className="w-6 h-auto fill-impo_Grey_700" />
       </div>
 
       <div
-        className="bg-white/50 py-4 "
+        className="bg-white/50 dark:!bg-white/5 py-4 border border-impo_Grey_300"
         style={{
-          border: `0.25px solid ${colors.Grey_300}`,
           borderRadius: isMultiLine ? '32px 32px 4px 32px' : '100px 100px 4px 100px',
         }}
         onClick={onClick}
       >
-        <Typography scale="Body" size="Medium" className="px-6">
+        <Dark_Typography fontSize="Body_Medium" className="px-6 text-impo_Neutral_OnBackground">
           {question}
-        </Typography>
+        </Dark_Typography>
       </div>
     </div>
   );

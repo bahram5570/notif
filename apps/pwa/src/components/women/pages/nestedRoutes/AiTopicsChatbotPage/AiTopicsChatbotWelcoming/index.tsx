@@ -4,6 +4,8 @@ import { removeWelcomingHandler } from '@utils/aiChatBotWelcoming';
 import { colorFormatConverter } from '@utils/scripts';
 
 import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import Typography from '@components/ui/Typography';
 import AiChatbotWelcomingLayout from '@components/ui/__AiChatbot__/AiChatbotWelcomingLayout';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
@@ -38,33 +40,29 @@ const AiTopicsChatbotWelcoming = ({ onUpdateKeyHandler }: TopicsChatbotWelcoming
     <>
       <AiChatbotWelcomingLayout updateTopHandler={updateTopHandler}>
         <div className="absolute mx-auto   left-0 right-0 bottom-0 px-5 " style={{ maxWidth: MAX_SCREEN_WIDTH, top }}>
-          <div className="px-6 flex flex-col gap-12  glass-card shadow-lg rounded-[32px] pt-6 pb-8 ">
+          <div className="px-6 flex flex-col gap-12  glass-card dark:!bg-white/5 shadow-lg rounded-[32px] pt-6 pb-8 ">
             {isLoading && <TopicsChatbotWelcomingSkeleton />}
             {!isLoading && (
               <>
                 <div className=" flex flex-col gap-3">
                   <div className="flex flex-col justify-end items-end gap-1">
-                    <Typography scale="Title" size="Large">
+                    <Dark_Typography fontSize="Title_Large" className="text-impo_Neutral_OnBackground">
                       {data?.title}
-                    </Typography>
+                    </Dark_Typography>
                   </div>
-                  <Typography scale="Body" size="Medium">
+                  <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
                     {data?.description}
-                  </Typography>
+                  </Dark_Typography>
                 </div>
-                <Button
-                  variant="fill"
-                  size="large"
-                  color="FREE-STYLES"
-                  contentsColor={colorFormatConverter(data?.button.foregroundColor || '')}
-                  buttonColor={colorFormatConverter(data?.button.backgroundColor || '')}
+                <Dark_Button
+                  // contentsColor={colorFormatConverter(data?.button.foregroundColor || '')}
+                  // buttonColor={colorFormatConverter(data?.button.backgroundColor || '')}
                   onClick={onClick}
-                  fullWidth
                 >
-                  <Typography scale="Lable" size="Large" color="White">
+                  <Dark_Typography fontSize="Lable_Large" className="text-impo_White">
                     {data?.button.text}
-                  </Typography>
-                </Button>
+                  </Dark_Typography>
+                </Dark_Button>
               </>
             )}
           </div>

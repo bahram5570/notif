@@ -2,16 +2,14 @@ import { useState } from 'react';
 
 import CancelIcon from '@assets/icons/cancel.svg';
 
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-import useTheme from '@hooks/useTheme';
 
 import { CommenPropsType } from '../type';
 import useSubmit from './__hooks__/useSubmit';
 
 const SuggestionTopicChatModal = ({ onCloseModal }: CommenPropsType) => {
-  const { colors, typography } = useTheme();
   const { submitHandler, isLoading } = useSubmit();
   const [description, setDescription] = useState<string>('');
 
@@ -27,41 +25,36 @@ const SuggestionTopicChatModal = ({ onCloseModal }: CommenPropsType) => {
     <div className="flex flex-col gap-3">
       <div
         onClick={onCloseModal}
-        className="w-10 h-10  flex justify-center items-center rounded-full"
-        style={{
-          backgroundColor: colors.Surface_SurfaceVariant,
-        }}
+        className="w-10 h-10  flex justify-center items-center rounded-full bg-impo_Surface_SurfaceVariant"
       >
-        <CancelIcon className="w-6 h-auto" style={{ stroke: colors.Surface_Outline }} />
+        <CancelIcon className="w-6 h-auto stroke-impo_Surface_Outline" />
       </div>
       <div className="flex flex-col  rounded-2xl gap-3 items-end">
-        <Typography size="Large" scale="Lable">
+        <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
           هر موضوعی که دوست داری بنویس تا به تالارهای گفتگو با مونس اضافه بشه
-        </Typography>
+        </Dark_Typography>
 
         <textarea
           placeholder="نظرت رو اینجا بنویس.."
-          style={{ ...typography.Body.Medium, borderColor: colors.Neutral_Surface, direction: 'rtl' }}
+          style={{ direction: 'rtl' }}
           value={description}
           rows={4}
           onChange={valueHandler}
-          className={`relative w-full rounded-xl p-2 border-[1px] outline-none resize-none mt-2 mb-1 `}
+          className="relative w-full rounded-xl p-2 border-[1px] outline-none resize-none mt-2 mb-1 border-impo_Neutral_Surface bg-impo_Neutral_Surface text-impo_Neutral_OnSurface"
         />
 
         <div
           className="w-full flex flex-col items-center justify-end gap-2   mx-auto "
-          style={{ maxWidth: MAX_SCREEN_WIDTH, backgroundColor: colors.White }}
+          style={{ maxWidth: MAX_SCREEN_WIDTH }}
         >
-          <Button
-            variant="fill"
-            size="medium"
-            color="primary"
+          <Dark_Button
             onClick={onClick}
             isLoading={isLoading}
             isDisable={description.trim() === ''}
+            fontSize="Lable_Large"
           >
             ثبت نظر
-          </Button>
+          </Dark_Button>
         </div>
       </div>
     </div>

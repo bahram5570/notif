@@ -1,4 +1,6 @@
 import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import Typography from '@components/ui/Typography';
 import useTheme from '@hooks/useTheme';
 
@@ -15,30 +17,26 @@ const DeleteChatModal = ({ onCloseModal }: CommenPropsType) => {
   return (
     <div className="px-4 flex flex-col gap-2 max-w-xs mt-4">
       <div className="flex flex-col justify-center items-center">
-        <Typography size="Small" scale="Title">
+        <Dark_Typography className="text-impo_Black" fontSize="Title_Small">
           حذف مکالمه
-        </Typography>
-        <Typography scale="Body" size="Medium" color="Surface_InverseSurface" textAlign="center">
+        </Dark_Typography>
+        <Dark_Typography className="text-impo_Surface_InverseSurface text-center" fontSize="Body_Medium">
           مطمئنی که میخوای همه پیام‌هات در این تالار رو با مونس حدف کنی؟
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <div className="flex w-full justify-between gap-2">
-        <Button size="medium" variant="fill" color="primary" onClick={onClick} isLoading={isLoading}>
+        <Dark_Button onClick={onClick} isLoading={isLoading} fontSize="Lable_Large">
           بله، مطمئنم
-        </Button>
-        <Button
-          size="medium"
-          variant="fill"
-          color="FREE-STYLES"
-          buttonColor={colors.Surface_OutlineVariant}
-          contentsColor={colors.Neutral_OnBackground}
+        </Dark_Button>
+        <Dark_Button
           onClick={onCloseModal}
+          className="text-impo_Neutral_OnBackground bg-impo_Surface_OutlineVariant !border-impo_Surface_OutlineVariant"
         >
-          <Typography scale="Lable" size="Large">
+          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
             نه، اشتباه شد
-          </Typography>
-        </Button>
+          </Dark_Typography>
+        </Dark_Button>
       </div>
     </div>
   );

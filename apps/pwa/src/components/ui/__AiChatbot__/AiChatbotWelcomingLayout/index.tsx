@@ -28,7 +28,7 @@ const AiChatbotWelcomingLayout = ({ children, updateTopHandler }: WelcomingLayou
         background:
           'linear-gradient(360deg, #D7BAFD -15.17%, rgba(194, 211, 251, 0.8) 30.1%, rgba(199, 234, 241, 0.5) 75.9%, rgba(230, 240, 232, 0.5) 104.51%) ',
       }}
-      className="flex flex-col min-h-[100dvh] overflow-y-auto"
+      className="flex flex-col min-h-[100dvh] overflow-y-auto dark:!bg-none"
     >
       <>
         <div style={{ paddingTop: HEADER_HEIGHT - 20 }} className="h-full ">

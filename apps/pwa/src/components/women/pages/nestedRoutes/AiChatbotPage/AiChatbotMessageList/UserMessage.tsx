@@ -1,13 +1,12 @@
 import CustomImage from '@components/ui/CustomImage';
 import useOperatingSystem from '@hooks/useOperatingSystem';
-import useTheme from '@hooks/useTheme';
 
 import TextBlock from './TextBlock';
 import { UserMessagePropsType } from './type';
 
 const UserMessage = (props: UserMessagePropsType) => {
   const { operatingSystem } = useOperatingSystem();
-  const { colors } = useTheme();
+
   const isMultiLine = props.text.length > 80;
   const hasMedia = props.media.length > 0;
   const hasText = props.text.trim() !== '';
@@ -38,9 +37,8 @@ const UserMessage = (props: UserMessagePropsType) => {
 
       {hasText && (
         <div
-          className="!bg-white/50 ml-auto glass-card max-w-72  py-4 flex justify-end items-end"
+          className="!bg-white/50 dark:!bg-white/5 ml-auto glass-card max-w-72  py-4 flex justify-end items-end border border-impo_Grey_300"
           style={{
-            border: `0.25px solid ${colors.Grey_300}`,
             borderRadius: isMultiLine ? '32px 32px 4px 32px' : '100px 100px 4px 100px',
             wordBreak: 'break-word',
             whiteSpace: 'pre-wrap',

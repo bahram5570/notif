@@ -13,7 +13,7 @@ const AiTopicChatbotListLayout = ({ children, isLoading }: AiTopicChatbotListLay
           paddingTop: HEADER_HEIGHT + 50,
           paddingBottom: HEADER_HEIGHT * 2,
         }}
-        className="min-h-[100dvh] flex flex-col gap-8 px-4"
+        className="min-h-[100dvh] flex flex-col gap-8 px-4 dark:!bg-none "
       >
         {isLoading && <AiTopicChatbotListSkeleton />}
 

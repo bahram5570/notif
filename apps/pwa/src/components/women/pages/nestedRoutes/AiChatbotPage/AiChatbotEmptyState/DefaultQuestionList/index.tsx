@@ -1,4 +1,4 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { DefaultQuestionListPropType } from './type';
 
@@ -18,13 +18,13 @@ const DefaultQuestionList = ({ defaultQustionHandler, questions }: DefaultQuesti
           >
             {rowQuestions.map((question, index) => (
               <div
-                className="glass-card w-fit justify-center items-center rounded-full flex flex-col"
+                className="glass-card dark:!bg-impo_Neutral_Surface dark:shadow-xl dark:!border-none w-fit justify-center items-center rounded-full flex flex-col"
                 key={index}
                 onClick={() => onClick(question)}
               >
-                <Typography size="SmallProminet" scale="Lable" color="Surface_InverseSurface" className="p-2">
+                <Dark_Typography className="p-2 text-impo_Surface_InverseSurface" fontSize="Lable_SmallProminet">
                   {question}
-                </Typography>
+                </Dark_Typography>
               </div>
             ))}
           </div>

@@ -1,16 +1,16 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { AiTopicChatbotTopicHeaderPropsType } from './type';
 
 const AiTopicChatbotTopicHeader = ({ subtitle, title }: AiTopicChatbotTopicHeaderPropsType) => {
   return (
     <div className="flex flex-col items-end justify-end gap-2">
-      <Typography scale="Title" size="Large">
+      <Dark_Typography fontSize="Title_Large" className="text-impo_Neutral_OnBackground">
         {title}
-      </Typography>
-      <Typography size="Medium" scale="Body">
+      </Dark_Typography>
+      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
         {subtitle}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

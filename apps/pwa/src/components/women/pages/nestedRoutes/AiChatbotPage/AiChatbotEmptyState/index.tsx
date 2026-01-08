@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import AiIcon from '@assets/icons/aibg.svg';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import AiChatbotWelcomingLayout from '@components/ui/__AiChatbot__/AiChatbotWelcomingLayout';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
@@ -20,15 +20,15 @@ const AiChatbotEmptyState = (props: AiChatbotEmptyStatePropsType) => {
     <AiChatbotWelcomingLayout updateTopHandler={updateTopHandler}>
       <div className=" absolute w-full mx-auto" style={{ top, maxWidth: MAX_SCREEN_WIDTH }}>
         <div className=" relative  w-full h-full">
-          <AiIcon className="w-full " />
+          <AiIcon className="w-full dark:hidden " />
           <div className="px-6 flex flex-col gap-6  absolute top-10  pt-9 w-full">
-            <div className=" flex flex-col gap-2 justify-center items-center px-2">
-              <Typography scale="Title" size="Large" textAlign="center">
+            <div className=" flex flex-col gap-2 justify-center items-center px-2 dark:mt-9">
+              <Dark_Typography fontSize="Title_Large" className="text-center text-impo_Neutral_OnBackground">
                 {props.title}
-              </Typography>
-              <Typography scale="Body" size="Medium" textAlign="center">
+              </Dark_Typography>
+              <Dark_Typography fontSize="Body_Medium" className="text-center text-impo_Neutral_OnBackground">
                 {props.description}
-              </Typography>
+              </Dark_Typography>
             </div>
             <DefaultQuestionList defaultQustionHandler={props.defaultQustionHandler} questions={props.questions} />
           </div>
