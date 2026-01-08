@@ -1,18 +1,15 @@
 import InfoIcon from '@assets/icons/infoIcon.svg';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 const SelectedDaySignsNotAllowed = () => {
-  const { colors } = useTheme();
-
   return (
     <div className="flex justify-end gap-2 w-full pt-2">
-      <Typography scale="Body" size="Small">
+      <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
         نمیتونی برای آینده نشانه انتخاب کنی
-      </Typography>
+      </Dark_Typography>
 
-      <InfoIcon className="w-4 h-auto" style={{ fill: colors.Yellow_500 }} />
+      <InfoIcon className="w-4 h-auto fill-impo_Yellow_500" />
     </div>
   );
 };

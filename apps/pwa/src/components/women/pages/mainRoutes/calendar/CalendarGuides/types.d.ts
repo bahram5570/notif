@@ -4,4 +4,4 @@ export interface CalendarGuidesProps {
   calendarGuideInfo: CalendarGuideInfoTypes | null;
 }
 
-export type GuideListTypes = { color: string; text: string; borderColor?: string }[];
+export type GuideListTypes = { backgroundColor: string; text: string; borderColor?: string }[];

@@ -1,15 +1,15 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 const NoSigns = () => {
   return (
     <div className="flex flex-col items-end pr-4">
-      <Typography scale="Body" size="Large">
+      <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
         هنوز نشانه ای برای امروز ثبت نکردی
-      </Typography>
+      </Dark_Typography>
 
-      <Typography scale="Body" size="Medium" color="Neutral_OnSurface">
+      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnSurface">
         برای ثبت نشانه روی علامت + بزن
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

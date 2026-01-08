@@ -1,19 +1,17 @@
 import ArrowIcon from '@assets/icons/calendarArrow.svg';
 import PenIcon from '@assets/icons/pen.svg';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useSignDateState from '@hooks/__sign__/useSignDateState';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 
 import { SelectedDayNoNotePropsType } from './type';
 
 const SelectedDayNoNote = ({ date }: SelectedDayNoNotePropsType) => {
-  const { colors } = useTheme();
-  const { pageNavigationHandler } = usePageNavigationLoading();
   const { changeCurrentDate } = useSignDateState();
+  const { pageNavigationHandler } = usePageNavigationLoading();
 
-  const linkTo = () => {
+  const linkToHandler = () => {
     changeCurrentDate(date);
 
     pageNavigationHandler({
@@ -24,22 +22,18 @@ const SelectedDayNoNote = ({ date }: SelectedDayNoNotePropsType) => {
   };
 
   return (
-    <div className="flex flex-row-reverse items-center justify-between py-2" onClick={linkTo}>
+    <div className="flex flex-row-reverse items-center justify-between py-2" onClick={linkToHandler}>
       <div className="flex flex-row-reverse items-center gap-2">
-        <div
-          className="w-12 h-12  flex justify-center items-center rounded-full"
-          style={{
-            backgroundColor: colors.Surface_SurfaceVariant,
-          }}
-        >
+        <div className="w-12 h-12 bg-impo_Surface_SurfaceVariant flex justify-center items-center rounded-full">
           <PenIcon className="w-6 h-auto" />
         </div>
-        <Typography scale="Body" size="Large">
+
+        <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
           اولین یادداشت امروز رو ثبت کن
-        </Typography>
+        </Dark_Typography>
       </div>
 
-      <ArrowIcon className="w-6 h-6" style={{ stroke: colors.Surface_Outline }} />
+      <ArrowIcon className="w-6 h-6 stroke-impo_Surface_Outline" />
     </div>
   );
 };

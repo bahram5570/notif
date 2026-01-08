@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import { currentDate, gregorianFarsiScriptDate, jalaaliScriptDate } from '@utils/dates';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import NoteItem from '@components/women/pages/mainRoutes/calendar/CalendarDraggingPanel/SelectedDayNote/SelectedDayNoteList/NoteItem';
@@ -12,7 +12,6 @@ import { CalendarTypeEnum } from '@constants/date.constants';
 import useSignDateState from '@hooks/__sign__/useSignDateState';
 import useCulture from '@hooks/useCulture';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 import moment from 'moment-jalaali';
 
 import NoteContainerListSkeleton from './NoteContainerListSkeleton';
@@ -21,7 +20,6 @@ import useGetData from './__hooks__/useGetData';
 const { gDate } = currentDate();
 
 const NoteContainerList = () => {
-  const { colors } = useTheme();
   const { culture } = useCulture();
   const [currentDate, setCurrentDate] = useState('');
   const { isLoading, currentNoteList } = useGetData();
@@ -31,7 +29,7 @@ const NoteContainerList = () => {
   const selectedDate = calendarInitailSelectedDate ? calendarInitailSelectedDate : gDate;
   const hasData = currentNoteList && currentNoteList.length > 0;
 
-  const linkTo = () => {
+  const linkToHandler = () => {
     pageNavigationHandler({
       showProgressBar: true,
       id: 'CreateNewNote',
@@ -63,53 +61,46 @@ const NoteContainerList = () => {
     <WomenPageLayout
       paddingTop={0}
       rightElement="BackButton"
-      className="bg-impo_Grey_50"
-      headerClassName="bg-impo_Grey_50"
       rightElementScript="یادداشت ها"
+      className="bg-impo_Neutral_Surface"
+      headerClassName="bg-impo_Neutral_Surface"
     >
       {isLoading && <NoteContainerListSkeleton />}
 
       {!isLoading && (
         <div
-          className="flex flex-col min-h-[100dvh] gap-3 pb-6 px-4"
-          style={{ paddingTop: HEADER_HEIGHT + 16 }}
           data-testid={'note-list-container'}
+          style={{ paddingTop: HEADER_HEIGHT + 16 }}
+          className="flex flex-col min-h-[100dvh] gap-3 pb-6 px-4"
         >
           <div className="flex items-center justify-center gap-3">
-            <div
-              style={{ border: `1px solid ${colors.Neutral_Surface}`, transform: 'rotate(180deg)' }}
-              className="h-0 w-24"
-            />
+            <div className="h-0 w-24 border-[1px] border-impo_Surface_OutlineVariant rotate-180" />
 
-            <Typography scale="Body" size="Large" color="Neutral_OnBackground" textAlign="center">
+            <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground text-center">
               {currentDate}
-            </Typography>
+            </Dark_Typography>
 
-            <div
-              style={{ border: `1px solid ${colors.Neutral_Surface}`, transform: 'rotate(180deg)' }}
-              className="h-0 w-24"
-            />
+            <div className="h-0 w-24 border-[1px] border-impo_Surface_OutlineVariant rotate-180" />
           </div>
 
           {hasData &&
             currentNoteList.map((note) => {
               return (
                 <div data-testid={'note-Item-list-container'} key={note.noteId}>
-                  <NoteItem noteItem={note} hasNoteListPage />
+                  <NoteItem noteItem={note} isNoteListPage={true} />
                 </div>
               );
             })}
 
           <div className="flex justify-center items-center mt-auto">
             <div
-              onClick={linkTo}
+              onClick={linkToHandler}
               data-testid={'new-note-link-btn'}
-              style={{ background: colors.PrimaryWoman_Primary }}
-              className="flex items-center justify-center gap-2 px-6 py-3 rounded-full border-[1px] select-none cursor-pointer w-full"
+              className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-full bg-impo_Primary_Primary select-none cursor-pointer"
             >
-              <Typography scale="Lable" size="Large" color="White">
+              <Dark_Typography fontSize="Lable_Large" className="text-impo_White">
                 یادداشت جدید
-              </Typography>
+              </Dark_Typography>
             </div>
           </div>
         </div>

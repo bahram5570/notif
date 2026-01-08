@@ -1,13 +1,11 @@
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 import { useRouter } from 'next/navigation';
 
 import useDelete from './__hooks__/useDelete';
 
 const DeleteNoteModal = () => {
-  const { colors } = useTheme();
   const router = useRouter();
   const { deleteHandler, isLoading } = useDelete();
   const { getQueryParams } = useQueryParamsHandler();
@@ -16,30 +14,32 @@ const DeleteNoteModal = () => {
 
   return (
     <div className="max-w-md flex flex-col items-center gap-4">
-      <Typography scale="Title" size="Medium">
+      <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
         حذف یادداشت
-      </Typography>
-      <Typography scale="Body" size="Large">
+      </Dark_Typography>
+
+      <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
         مطمئنی می‌خوای این یادداشت رو حذف کنی؟
-      </Typography>
+      </Dark_Typography>
 
       <div className="w-full flex items-center justify-between gap-2 mt-3">
-        <Button
-          size="medium"
-          variant="outline"
-          color="FREE-STYLES"
-          onClick={() => deleteHandler({ noteId })}
-          contentsColor={colors.Error_Error}
-          buttonColor={colors.Error_ErrorContainer}
-          style={{ backgroundColor: colors.Error_ErrorContainer }}
+        <Dark_Button
           isLoading={isLoading}
+          fontSize="Lable_Medium"
+          onClick={() => deleteHandler({ noteId })}
+          className="!bg-impo_Error_ErrorContainer !border-impo_Error_ErrorContainer !text-impo_Error_Error"
         >
           مطمئنم
-        </Button>
+        </Dark_Button>
 
-        <Button variant="fill" size="medium" color="surface" onClick={() => router.back()}>
+        <Dark_Button
+          isLoading={isLoading}
+          fontSize="Lable_Medium"
+          onClick={() => router.back()}
+          className="!bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnSurface"
+        >
           خیر
-        </Button>
+        </Dark_Button>
       </div>
     </div>
   );

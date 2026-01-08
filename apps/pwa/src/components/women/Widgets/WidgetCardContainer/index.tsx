@@ -6,14 +6,14 @@ import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 import { WidgetCardContainerProps } from './types';
 
 const WidgetCardContainer = ({
-  title,
   titleElement,
-  button,
+  classNameBtn,
+  className,
   children,
   buttonId,
   onClick,
-  className,
-  classNameBtn,
+  button,
+  title,
 }: WidgetCardContainerProps) => {
   const { actionHandler } = useWidgetActions();
 
@@ -27,11 +27,9 @@ const WidgetCardContainer = ({
     }
   };
 
-  // const backgroundColor = colors.Neutral_Background.toLowerCase() + 'b3';
-
   return (
     <div className={`w-full ${className} px-4 pt-6`}>
-      <div className="w-full h-fit rounded-2xl p-4 bg-impo_Neutral_Background  ">
+      <div className="w-full h-fit rounded-2xl p-4 bg-impo_Neutral_Background">
         <div className="flex justify-between items-center border-b-[1px] pb-3 mb-3 border-impo_Neutral_Surface dark:border-impo_Surface_SurfaceVariant">
           <div className="min-w-fit">{titleElement}</div>
 
@@ -44,11 +42,11 @@ const WidgetCardContainer = ({
 
         {button && (
           <Dark_Button
+            id={buttonId}
             onClick={clickHandler}
+            fontSize="Lable_Large"
             className={`mt-4 ${classNameBtn}`}
             isDisable={button?.action.actionType === ActionTypeEnum.None}
-            id={buttonId}
-            fontSize="Lable_Large"
           >
             {button.text}
           </Dark_Button>

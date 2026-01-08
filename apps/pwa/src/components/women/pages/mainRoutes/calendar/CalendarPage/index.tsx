@@ -1,7 +1,6 @@
 import { FOOTER_HEIGTH } from '@components/women/WomenFooter/constants';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import useTheme from '@hooks/useTheme';
 
 import CalendarContainer from '../CalendarContainer';
 import CalendarDraggingPanel from '../CalendarDraggingPanel';
@@ -11,7 +10,6 @@ import CalendarSkeleton from '../CalendarSkeleton';
 import useCalendar from '../__hooks__/useCalendar';
 
 const CalendarPage = () => {
-  const { colors } = useTheme();
   const { isLoading, calendarData, calendarGuideInfo, selectedDate, selectedDateHandler } = useCalendar();
 
   return (
@@ -19,12 +17,8 @@ const CalendarPage = () => {
       {/* <SignsChangedToast /> */}
 
       <div
+        style={{ paddingBottom: FOOTER_HEIGTH + 16, paddingTop: HEADER_HEIGHT + 16 }}
         className="relative h-full min-h-[100dvh] max-h-[100dvh] overflow-hidden z-0"
-        style={{
-          paddingBottom: FOOTER_HEIGTH + 16,
-          paddingTop: HEADER_HEIGHT + 16,
-          backgroundColor: colors.White,
-        }}
       >
         {isLoading && <CalendarSkeleton />}
 

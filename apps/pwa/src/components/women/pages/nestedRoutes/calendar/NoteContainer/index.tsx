@@ -2,9 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import OverlayBar from '@components/ui/OverlayBar';
-import Typography from '@components/ui/Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
@@ -19,10 +19,10 @@ import useSubmit from './__hooks__/useSubmit';
 
 const NoteContainer = () => {
   const { callEvent } = useAnalytics();
-  const { noteValue, onChangeHandler, isLoading: getDataLoading } = useGetData();
-  const { isLoading, submitHandler } = useSubmit({ noteId: noteValue.noteId });
   const [btnTop, setBtnTop] = useState<number>(0);
   const textareaConainerRef = useRef<HTMLDivElement | null>(null);
+  const { noteValue, onChangeHandler, isLoading: getDataLoading } = useGetData();
+  const { isLoading, submitHandler } = useSubmit({ noteId: noteValue.noteId });
 
   const isEditMode = noteValue.noteId ? true : false;
 
@@ -33,6 +33,7 @@ const NoteContainer = () => {
 
   useEffect(() => {
     const el = textareaConainerRef.current;
+
     if (el) {
       const elTop = el.getBoundingClientRect().top;
       const elHeight = el.offsetHeight;
@@ -50,19 +51,19 @@ const NoteContainer = () => {
         <WomenPageLayout
           paddingTop={0}
           rightElement="BackButton"
-          className="bg-impo_Grey_50"
-          headerClassName="bg-impo_Grey_50"
           rightElementScript="ثبت یادداشت"
+          className="bg-impo_Neutral_Surface"
+          headerClassName="bg-impo_Neutral_Surface"
         >
           <div className="flex flex-col min-h-[100dvh] gap-6 pb-6 px-4" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
             <div className="flex flex-col justify-center items-center p-4 gap-2">
-              <Typography scale="Title" size="Small">
+              <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
                 میخوای به کارهات اولویت بدی؟
-              </Typography>
+              </Dark_Typography>
 
-              <Typography scale="Body" size="Medium" textAlign="center">
+              <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
                 کارهات رو اینجا بنویس و در صورت لزوم میتونی یادآور هم براش تنظیم کنی
-              </Typography>
+              </Dark_Typography>
             </div>
 
             <NoteInputGenerator noteValue={noteValue} onChangeHandler={onChangeHandler} ref={textareaConainerRef} />
@@ -70,17 +71,9 @@ const NoteContainer = () => {
             {isEditMode && <DeleteNoteBtn />}
 
             <OverlayBar btnTop={btnTop} className="py-3 px-2 mx-auto" style={{ maxWidth: MAX_SCREEN_WIDTH }}>
-              <Button
-                size="medium"
-                variant="fill"
-                color="primary"
-                isLoading={isLoading}
-                isDisable={!noteValue.title}
-                className="w-full"
-                onClick={onClick}
-              >
+              <Dark_Button isLoading={isLoading} isDisable={!noteValue.title} fontSize="Lable_Large" onClick={onClick}>
                 {isEditMode ? 'ویرایش یادداشت' : 'ثبت یادداشت'}
-              </Button>
+              </Dark_Button>
             </OverlayBar>
           </div>
 

@@ -1,19 +1,19 @@
 import PlusIcon from '@assets/icons/plus.svg';
 
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useSignDateState from '@hooks/__sign__/useSignDateState';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 
 import { CreateNewNoteBtnPropsType } from './type';
 
 const CreateNewNoteBtn = ({ date }: CreateNewNoteBtnPropsType) => {
-  const { colors } = useTheme();
-  const { pageNavigationHandler } = usePageNavigationLoading();
   const { changeCurrentDate } = useSignDateState();
+  const { pageNavigationHandler } = usePageNavigationLoading();
 
-  const linkTo = () => {
+  const linkToHandler = () => {
     changeCurrentDate(date);
+
     pageNavigationHandler({
       showProgressBar: true,
       id: 'CreateNewNote',
@@ -22,19 +22,15 @@ const CreateNewNoteBtn = ({ date }: CreateNewNoteBtnPropsType) => {
   };
 
   return (
-    <div className="flex justify-center items-center">
-      <div
-        style={{ background: colors.PrimaryWoman_Primary }}
-        className="flex items-center justify-center gap-2 px-6 py-3 rounded-full border-[1px] select-none cursor-pointer w-full"
-        onClick={linkTo}
-      >
-        <Typography scale="Lable" size="Large" color="White">
+    <Dark_Button onClick={linkToHandler}>
+      <div className="flex items-center justify-center gap-2 w-full">
+        <Dark_Typography fontSize="Lable_Large" className="text-impo_White">
           ثبت یادداشت جدید
-        </Typography>
+        </Dark_Typography>
 
-        <PlusIcon className="w-[18px] h-auto" style={{ stroke: colors.White, fill: colors.White }} />
+        <PlusIcon className="w-[18px] h-auto stroke-impo_White fill-impo_White" />
       </div>
-    </div>
+    </Dark_Button>
   );
 };
 

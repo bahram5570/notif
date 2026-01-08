@@ -1,21 +1,25 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+
+import Dark_Typography from '@components/ui/Dark_Typography';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import { NoteTextareaPropsType } from './type';
 
 const NoteTextarea = ({ description, label, name, onchangeHandler, value }: NoteTextareaPropsType) => {
-  const { typography } = useTheme();
+  const { operatingSystem } = useOperatingSystem();
+  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Large', operatingSystem });
 
   return (
     <div className="p-2 pt-3 flex flex-col gap-2">
       <div className="flex gap-1 flex-row-reverse ">
-        <Typography scale="Lable" size="Large">
+        <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
           {label}
-        </Typography>
+        </Dark_Typography>
+
         {description && (
-          <Typography scale="Lable" size="Large" color="Surface_Outline">
+          <Dark_Typography fontSize="Lable_Large" className="text-impo_Surface_Outline">
             {description}
-          </Typography>
+          </Dark_Typography>
         )}
       </div>
 
@@ -23,9 +27,9 @@ const NoteTextarea = ({ description, label, name, onchangeHandler, value }: Note
         rows={1}
         value={value ?? ''}
         placeholder="اینجا بنویس"
-        style={{ ...typography.Body.Large, direction: 'rtl' }}
+        style={{ ...typographyFontStyles, direction: 'rtl' }}
         onChange={(e) => onchangeHandler(e.target.value, name)}
-        className="w-full max-h-[100px] text-right resize-none outline-none"
+        className="w-full max-h-[100px] text-impo_Neutral_OnBackground text-right bg-impo_Transparent resize-none outline-none"
       />
     </div>
   );

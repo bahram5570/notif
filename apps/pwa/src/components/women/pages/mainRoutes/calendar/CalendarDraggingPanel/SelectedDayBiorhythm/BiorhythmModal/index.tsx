@@ -1,9 +1,8 @@
 import CancelIcon from '@assets/icons/cancel.svg';
 
 import CustomModal from '@components/ui/CustomModal';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 import { useRouter } from 'next/navigation';
 
 import { BioType, TextBioType } from '../../../__hooks__/useCalendarGetData/types';
@@ -11,7 +10,6 @@ import { BIORHYTHM_STATUS } from '../constant';
 import { BiorhythmModalPropsType } from './type';
 
 const BiorhythmModal = ({ biorhythmInfo }: BiorhythmModalPropsType) => {
-  const { colors } = useTheme();
   const router = useRouter();
   const { getQueryParams } = useQueryParamsHandler();
 
@@ -36,37 +34,33 @@ const BiorhythmModal = ({ biorhythmInfo }: BiorhythmModalPropsType) => {
       <div className="flex flex-col gap-3">
         <div
           onClick={onCloseHandler}
-          className="w-10 h-10  flex justify-center items-center rounded-full"
-          style={{
-            backgroundColor: colors.Blue_50,
-          }}
+          className="w-10 h-10 bg-impo_Blue_50 flex justify-center items-center rounded-full"
         >
-          <CancelIcon className="w-6 h-auto" style={{ stroke: colors.Surface_OnSurfaceVariant }} />
+          <CancelIcon className="w-6 h-auto stroke-impo_Surface_OnSurfaceVariant" />
         </div>
-        <div className="flex flex-col p-4 rounded-2xl gap-3" style={{ background: colors.Surface_SurfaceVariant }}>
+
+        <div className="flex flex-col p-4 rounded-2xl gap-3 bg-impo_Surface_SurfaceVariant">
           <div className="flex flex-col justify-center items-center gap-2 p-1">
             {Icon && <Icon className="w-16 h-16" />}
 
             <div className="flex flex-row-reverse gap-1 items-center">
-              <Typography scale="Title" size="Small">
+              <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
                 {` بیوریتم ${findStatus?.text}: %${findCurrentPercent}`}
-              </Typography>
+              </Dark_Typography>
             </div>
           </div>
 
           <div className="flex flex-col justify-end items-end px-1">
-            <div
-              className="flex flex-col justify-end items-end w-full  border-b-[1px] pb-2 "
-              style={{ borderColor: '#D6DEE9' }}
-            >
-              <Typography scale="Lable" size="Large" color="Neutral_OnBackground">
+            <div className="flex flex-col justify-end items-end w-full border-b-[1px] border-impo_Surface_Outline pb-2 ">
+              <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
                 توصیه امروز
-              </Typography>
+              </Dark_Typography>
             </div>
+
             <div className="py-2">
-              <Typography scale="Body" size="Medium">
+              <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
                 {findCurrentText}
-              </Typography>
+              </Dark_Typography>
             </div>
           </div>
         </div>

@@ -1,42 +1,44 @@
 import CheckListIcon from '@assets/icons/checkList.svg';
 import { textShorter } from '@utils/scripts';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 
 import { NoteItemPropsType } from './type';
 
-const NoteItem = ({ noteItem, hasNoteListPage }: NoteItemPropsType) => {
-  const { colors } = useTheme();
+const NoteItem = ({ noteItem, isNoteListPage }: NoteItemPropsType) => {
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { noteId, title } = noteItem;
 
-  const linkTo = () => {
+  const linkToHandler = () => {
     pageNavigationHandler({
       showProgressBar: true,
       id: 'SelectedDayNote',
-      linkTo: `/protected/note/addNote?noteId=${noteId}`,
+      linkTo: `/protected/note/addNote?noteId=${noteItem.noteId}`,
     });
   };
 
   return (
-    <div key={noteId} onClick={linkTo}>
+    <div key={noteItem.noteId} onClick={linkToHandler}>
       <div
-        className="flex flex-row-reverse px-3 py-4 rounded-lg items-center"
-        style={{ background: hasNoteListPage ? colors.White : colors.Surface_SurfaceVariant }}
         data-testid={'note-item'}
+        className={`
+                    flex 
+                    flex-row-reverse 
+                    px-3 
+                    py-4 
+                    rounded-lg 
+                    items-center
+                    ${isNoteListPage ? 'bg-impo_Neutral_Background' : 'bg-impo_Surface_SurfaceVariant'}
+                  `}
       >
         <div className="border-l-2 pl-2">
-          <CheckListIcon
-            className="w-6 h-6 "
-            style={{ fill: hasNoteListPage ? colors.White : colors.Surface_SurfaceVariant }}
-          />
+          <CheckListIcon className="w-6 h-auto stroke-impo_Neutral_OnBackground" />
         </div>
+
         <div className="pr-2">
-          <Typography scale="Body" size="Medium" color="Neutral_OnBackground">
-            {textShorter(title)}
-          </Typography>
+          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+            {textShorter(noteItem.title)}
+          </Dark_Typography>
         </div>
       </div>
     </div>

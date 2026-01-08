@@ -1,4 +1,4 @@
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 import CalendarContainer from '@components/women/pages/mainRoutes/calendar/CalendarContainer';
 
 import CalendarSkeleton from './CalendarSkeleton';
@@ -7,6 +7,11 @@ import { CalendarModalPropsType } from './type';
 
 const CalendarModal = ({ dateTime, onChangeHandler, onCloseModalHandler }: CalendarModalPropsType) => {
   const { isLoading, calendarData, selectedDate, selectedDateHandler } = useCalendar({ dateTime });
+
+  const applyHandler = () => {
+    onChangeHandler(selectedDate, 'time');
+    onCloseModalHandler();
+  };
 
   return (
     <div>
@@ -22,29 +27,17 @@ const CalendarModal = ({ dateTime, onChangeHandler, onCloseModalHandler }: Calen
           />
 
           <div className="flex px-3 gap-2">
-            <Button
-              size="medium"
-              variant="fill"
-              color="primary"
-              className="mt-auto py-3 px-2"
-              onClick={() => {
-                onChangeHandler(selectedDate, 'time');
-                onCloseModalHandler();
-              }}
-              isLoading={isLoading}
-            >
+            <Dark_Button isLoading={isLoading} onClick={applyHandler} className="mt-auto">
               تایید
-            </Button>
-            <Button
-              size="medium"
-              variant="fill"
-              color="surface"
-              className="mt-auto py-3 px-2"
-              onClick={onCloseModalHandler}
+            </Dark_Button>
+
+            <Dark_Button
               isLoading={isLoading}
+              onClick={onCloseModalHandler}
+              className="mt-auto !bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnSurface"
             >
               انصراف
-            </Button>
+            </Dark_Button>
           </div>
         </>
       )}
