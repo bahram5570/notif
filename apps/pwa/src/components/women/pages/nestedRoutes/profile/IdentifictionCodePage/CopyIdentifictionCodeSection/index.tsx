@@ -8,7 +8,7 @@ const CopyIdentifictionCodeSection = ({ interfaceCode, copyToClipboard }: CopyId
   return (
     <div className="flex justify-center">
       <div
-        className="flex items-center gap-2 px-9 py-2 rounded-full border-[1px] select-none cursor-pointer w-full h-[48px] bg-impo_Neutral_Background border-impo_Neutral_Background"
+        className="flex items-center gap-2 px-9 py-2 rounded-full border-[1px] select-none cursor-pointer w-full h-[48px] bg-impo_Surface_InverseOnSurface border-impo_Neutral_Background"
         onClick={() => {
           copyToClipboard(String(interfaceCode));
         }}

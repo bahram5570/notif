@@ -1,11 +1,9 @@
 import PlusIcon from '@assets/icons/plus.svg';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 
 const AddPartner = () => {
-  const { colors } = useTheme();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const onClick = () => {
@@ -14,20 +12,17 @@ const AddPartner = () => {
 
   return (
     <>
-      <Typography size="Medium" scale="Body" textAlign="right" className="w-full">
+      <Dark_Typography fontSize="Body_Medium" className="w-full text-right text-impo_Neutral_OnBackground">
         برای شروع همدلی، پارتنرت رو اضافه کن
-      </Typography>
+      </Dark_Typography>
       <div onClick={onClick} className="flex flex-row items-center justify-end w-full p-1">
-        <div
-          className="flex flex-row items-center gap-1 justify-end w-full  p-2 rounded-xl"
-          style={{ backgroundColor: colors.White }}
-        >
+        <div className="flex flex-row items-center gap-1 justify-end w-full  p-2 rounded-xl  bg-impo_Neutral_Background">
           <div className={`  p-2 w-full flex justify-end items-center`}>
-            <Typography scale="Body" size="Medium">
+            <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
               اضافه کردن همدل
-            </Typography>
+            </Dark_Typography>
           </div>
-          <PlusIcon className="w-6 h-6" style={{ stroke: colors.Surface_Outline }} />
+          <PlusIcon className="w-6 h-6 stroke-impo_Surface_Outline" />
         </div>
       </div>
     </>

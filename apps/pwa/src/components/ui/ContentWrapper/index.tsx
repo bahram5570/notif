@@ -1,4 +1,4 @@
-import Typography from '../Typography';
+import Dark_Typography from '../Dark_Typography';
 import { ContentWrapperPropsType } from './type';
 
 const ContentWrapper = ({ children, description, label }: ContentWrapperPropsType) => {
@@ -6,15 +6,15 @@ const ContentWrapper = ({ children, description, label }: ContentWrapperPropsTyp
     <div className="flex flex-col gap-2 items-end">
       <div className="flex flex-col items-end">
         {label && (
-          <Typography scale="Lable" size="MediumProminet" color="PrimaryWoman_Primary">
+          <Dark_Typography fontSize="Lable_MediumProminet" className="text-impo_Neutral_OnBackground">
             {label}
-          </Typography>
+          </Dark_Typography>
         )}
 
         {description && (
-          <Typography scale="Body" size="Small" color="Surface_Outline">
+          <Dark_Typography className="text-impo_Surface_Outline" fontSize="Body_Small">
             {description}
-          </Typography>
+          </Dark_Typography>
         )}
       </div>
       {children}

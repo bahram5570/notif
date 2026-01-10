@@ -12,7 +12,7 @@ const AboutUsPage = () => {
       paddingTop={0}
       rightElement="BackButton"
       rightElementScript="درباره ما"
-      className="flex flex-col items-center justify-center gap-6 relative  z-0 bg-impo_Surface_InverseOnSurface"
+      className="flex flex-col items-center justify-center gap-6 relative  z-0 bg-impo_Neutral_Background"
     >
       <div className="flex flex-col justify-center items-center w-3/4 gap-9">
         <div className="flex flex-col items-center justify-center gap-8">

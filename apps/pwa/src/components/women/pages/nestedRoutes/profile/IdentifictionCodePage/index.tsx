@@ -21,11 +21,11 @@ const IdentifictionCodePage = () => {
       paddingTop={0}
       rightElement="BackButton"
       rightElementScript="کد معرف"
-      className="bg-impo_Surface_InverseOnSurface"
+      className="bg-impo_Neutral_Background"
     >
       {isLoading && <IdentificationCodeSkeleton />}
       {!isLoading && data && (
-        <div className="flex relative z-0 flex-col items-center gap-6  h-dvh justify-center bg-impo_Surface_InverseOnSurface">
+        <div className="flex relative z-0 flex-col items-center gap-6  h-dvh justify-center bg-impo_Neutral_Background">
           <div className="flex flex-col justify-center items-center w-3/4 gap-9">
             <div className="flex flex-col items-center justify-center gap-8">
               <div className="flex flex-col items-center justify-center gap-7">

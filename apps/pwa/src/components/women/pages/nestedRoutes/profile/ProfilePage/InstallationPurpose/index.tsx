@@ -1,7 +1,7 @@
 import { colorFormatConverter } from '@utils/scripts';
 
-import Button from '@components/ui/Button';
 import CustomSlider from '@components/ui/CustomSlider';
+import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import useWidgetActions from '@hooks/useWidgetActions';
 
@@ -18,18 +18,19 @@ const InstallationPurpose = ({ changeStatusBtns }: InstallationPurposePropsType)
 
       <CustomSlider gap={10} sidePadding={16}>
         {changeStatusBtns.map((item, index) => (
-          <Button
+          <Dark_Button
             key={index}
-            size="medium"
-            variant="fill"
-            color="FREE-STYLES"
             className="min-w-fit"
             onClick={() => actionHandler(item.action)}
-            buttonColor={colorFormatConverter(item.backgroundColor)}
-            contentsColor={colorFormatConverter(item.foregroundColor)}
+            style={{
+              background: colorFormatConverter(item.backgroundColor),
+              color: colorFormatConverter(item.foregroundColor),
+              borderColor: colorFormatConverter(item.backgroundColor),
+            }}
+            fontSize="Lable_Large"
           >
             {item.text}
-          </Button>
+          </Dark_Button>
         ))}
       </CustomSlider>
     </div>

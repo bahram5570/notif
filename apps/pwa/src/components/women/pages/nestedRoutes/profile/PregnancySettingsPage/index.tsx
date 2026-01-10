@@ -2,7 +2,6 @@
 
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
 import { ActionTypeEnum, CyclePhaseEnum } from '@providers/WidgetActionsProvider/widgetEnums';
@@ -11,7 +10,6 @@ import PregnancySettingsLinkGenerator from './PregnancySettingsLinkGenerator';
 import { PREGNANCY_SETTINGS_LIST } from './constants';
 
 const PregnancySettingsPage = () => {
-  const { colors } = useTheme();
   const { actionHandler } = useWidgetActions();
   const { getQueryParams } = useQueryParamsHandler();
 
