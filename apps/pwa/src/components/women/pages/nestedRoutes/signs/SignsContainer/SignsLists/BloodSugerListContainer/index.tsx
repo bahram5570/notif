@@ -1,11 +1,8 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { BloodSugerListPropsType, CheckBloodSugerStatusType, InitailBloodSugerContextType } from './type';
 
 const BloodSugerListContainer = ({ bloodSugerList }: BloodSugerListPropsType) => {
-  const { colors } = useTheme();
-
   const hasData = bloodSugerList && bloodSugerList.length > 0;
 
   const checkBloodSugerStatus: CheckBloodSugerStatusType = (condition, value) => {
@@ -26,17 +23,20 @@ const BloodSugerListContainer = ({ bloodSugerList }: BloodSugerListPropsType) =>
   const initailBloodSugerContext: InitailBloodSugerContextType = {
     normal: {
       text: 'نرماله. عالیه همینطور پیش برو و مثل همیشه مراقب خودت باش',
-      border: colors.Success_Success,
+      border: 'border-[1px] border-impo_Success_Success',
+      backgroundColor: 'bg-impo_Success_Success',
       result: 'نرمال',
     },
     suspicious: {
       text: ' در محدوده مشکوک به دیابته. حتما رژیم غذاییت رو رعایت کن و بیشتر مراقب خودت باش',
-      border: colors.Warning_Warning,
+      border: 'border-[1px] border-impo_Warning_Warning',
+      backgroundColor: 'bg-impo_Warning_Warning',
       result: 'مشکوک به دیابت',
     },
     danger: {
       text: ' نشون میده که دیابت داری. حتما تحت نظر پزشک دارو مصرف کن',
-      border: colors.Error_Error,
+      border: 'border-[1px] border-impo_Error_Error',
+      backgroundColor: 'bg-impo_Error_Error',
       result: 'دیابت',
     },
   };
@@ -48,7 +48,7 @@ const BloodSugerListContainer = ({ bloodSugerList }: BloodSugerListPropsType) =>
   return (
     <>
       {hasData && (
-        <div className="flex flex-col gap-4 p-2">
+        <div className="flex flex-col gap-4 p-2 border-t-[1px] border-t-impo_Surface_SurfaceVariant">
           {bloodSugerList &&
             bloodSugerList.map((bloodSuger, index) => {
               const result: keyof InitailBloodSugerContextType = checkBloodSugerStatus(
@@ -61,26 +61,19 @@ const BloodSugerListContainer = ({ bloodSugerList }: BloodSugerListPropsType) =>
 
               return (
                 <div
-                  className={`flex flex-col rounded-md items-end ${index === 0 ? 'mt-3' : ''}`}
                   key={index}
-                  style={{
-                    border: `1px solid ${context.border}`,
-                  }}
+                  className={`flex flex-col rounded-md items-end ${context.border} ${index === 0 ? 'mt-3' : ''}`}
                 >
-                  <div
-                    style={{
-                      background: context.border,
-                    }}
-                    className="p-2  rounded-bl-md"
-                  >
-                    <Typography scale="Lable" size="Small" color="White">
+                  <div className={`p-2 rounded-bl-md ${context.backgroundColor}`}>
+                    <Dark_Typography fontSize="Lable_Small" className="text-impo_White">
                       {`نتیجه تست ${index + 1}: ${bloodSuger.value}mg/dL-${context.result}`}
-                    </Typography>
+                    </Dark_Typography>
                   </div>
+
                   <div className="p-2">
-                    <Typography scale="Body" size="Small">
+                    <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
                       {`نتیجه تست قند خون ${conditionType}  که انجام دادی،${context.text}`}
-                    </Typography>
+                    </Dark_Typography>
                   </div>
                 </div>
               );

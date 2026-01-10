@@ -1,54 +1,71 @@
 import LinkIcon from '@assets/icons/calendarSignLink.svg';
 
-import Spinner from '@components/ui/Spinner';
-import Typography from '@components/ui/Typography';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 import Link from 'next/link';
 
 import { CustomContainerPropsType } from './type';
 
 const CustomContainer = ({ allBtnLink, children, plusIconLink, title, showAllBtn }: CustomContainerPropsType) => {
-  const { colors } = useTheme();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
   const isLoading = pageNavigationLoading === allBtnLink;
 
-  const linkTo = () => {
+  const linkToHandler = () => {
     pageNavigationHandler({
       showProgressBar: true,
-      id: `cutomContainer${plusIconLink}`,
       linkTo: `${plusIconLink}`,
+      id: `cutomContainer${plusIconLink}`,
     });
   };
 
   return (
-    <div className=" rounded-2xl p-2 flex flex-col" style={{ background: colors.White }}>
-      <div onClick={linkTo} className="divide-y-2">
-        <div className="w-full flex flex-row-reverse items-center justify-between h-fit  p-3 ">
-          <Typography scale="Lable" size="Large">
+    <div className="bg-impo_Neutral_Background rounded-2xl p-2 flex flex-col">
+      <div onClick={linkToHandler}>
+        <div className="w-full flex flex-row-reverse items-center justify-between h-fit p-3">
+          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
             {title}
-          </Typography>
+          </Dark_Typography>
 
           <div className="relative cursor-pointer">
             <LinkIcon className="w-10 h-auto" />
           </div>
         </div>
+
         <>{children}</>
       </div>
+
       {showAllBtn && (
         <Link
           href={`${allBtnLink}`}
-          style={{ background: colors.Neutral_Surface }}
-          className="flex items-center justify-center gap-2 px-6 py-2 rounded-full border-[1px] select-none cursor-pointer z-20  my-2"
           onClick={() => {
             pageNavigationHandler({ showProgressBar: false, id: allBtnLink });
           }}
+          className="
+                      flex 
+                      items-center 
+                      justify-center 
+                      gap-2 
+                      px-6 
+                      py-2 
+                      my-2
+                      rounded-full 
+                      border-[1px] 
+                      border-impo_Neutral_Surface 
+                      select-none 
+                      cursor-pointer 
+                      bg-impo_Neutral_Surface 
+                      z-20 
+                    "
         >
-          <Typography scale="Lable" size="Large" color="Black">
-            مشاهده همه تست‌های انجام شده
-          </Typography>
-          {isLoading && <Spinner width={18} color="primary" />}
+          {!isLoading && (
+            <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+              مشاهده همه تست‌های انجام شده
+            </Dark_Typography>
+          )}
+
+          {isLoading && <Dark_Spinner size={20} className="border-impo_Neutral_OnBackground" />}
         </Link>
       )}
     </div>

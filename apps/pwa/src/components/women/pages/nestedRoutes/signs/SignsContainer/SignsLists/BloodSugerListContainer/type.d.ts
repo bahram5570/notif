@@ -8,6 +8,7 @@ type BloodSugarState = {
   text: string;
   border: string;
   result: string;
+  backgroundColor: string;
 };
 
 export type InitailBloodSugerContextType = {

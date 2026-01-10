@@ -8,6 +8,7 @@ type BloodPressureState = {
   text: string;
   border: string;
   result: string;
+  backgroundColor: string;
 };
 
 export type InitailBloodPressureContextType = {
