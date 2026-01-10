@@ -28,20 +28,21 @@ const FeedbackDescription = ({ description, descriptionHandler }: FeedbackDescri
   };
   return (
     <>
-      <Dark_Typography fontSize="Body_Medium" className="w-full text-impo_Neutral_OnBackground">
+      <Dark_Typography className="text-impo_Neutral_OnBackground w-full" fontSize="Body_Medium">
         لطفا نظرت رو برامون بنویس تا بتونیم بررسی کنیم و در آینده سرویس بهتری ارائه بدیم.
       </Dark_Typography>
 
       <textarea
         placeholder="نظرت رو اینجا بنویس.."
-        style={{ ...typographyFontStyles }}
+        style={{ ...typographyFontStyles, direction: 'rtl' }}
         value={description}
         rows={4}
         dir="rtl"
         onChange={valueHandler}
-        className="relative w-full rounded-xl p-2 border-[1px] outline-none resize-none mt-2 mb-1 border-impo_Neutral_Surface bg-impo_Neutral_Background text-impo_Neutral_OnBackground"
+        className={`relative w-full rounded-xl p-2 border-[1px] outline-none resize-none mt-2 mb-1 border-impo_Neutral_Surface bg-impo_Neutral_Background text-impo_Neutral_OnBackground`}
       />
-      <Dark_Typography fontSize="Body_Medium" className="pb-10 mr-auto text-impo_Surface_Outline">
+
+      <Dark_Typography className="text-impo_Surface_Outline pb-10 mr-auto" fontSize="Body_Medium">
         {lettersCountScript}
       </Dark_Typography>
     </>

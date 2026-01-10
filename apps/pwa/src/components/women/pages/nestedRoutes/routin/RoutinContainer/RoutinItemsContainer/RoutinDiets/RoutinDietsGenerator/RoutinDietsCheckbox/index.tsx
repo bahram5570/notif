@@ -3,17 +3,14 @@ import RadioIcon from '@assets/icons/Radio.svg';
 import { textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { ProgramWidgetItemStatusEnum } from '@components/women/pages/nestedRoutes/routin/enum';
-import useTheme from '@hooks/useTheme';
 
 import useSeenItem from './__hooks__/useSeenItem';
 import { RoutinDietsCheckboxPropsType } from './type';
 
 const RoutinDietsCheckbox = ({ item, programId, onClick, index }: RoutinDietsCheckboxPropsType) => {
   const { seenHandler, isLoading } = useSeenItem({ programId, item, index });
-
-  const { colors } = useTheme();
 
   return (
     <>
@@ -23,17 +20,15 @@ const RoutinDietsCheckbox = ({ item, programId, onClick, index }: RoutinDietsChe
           onClick={onClick}
         >
           <div className="flex flex-col items-end gap-1">
-            <Typography
-              scale="Lable"
-              size="Medium"
-              className={`${item.status === ProgramWidgetItemStatusEnum.Compelet ? 'line-through' : ''}`}
+            <Dark_Typography
+              fontSize="Lable_Medium"
+              className={`text-impo_Neutral_OnBackground ${item.status === ProgramWidgetItemStatusEnum.Compelet && 'line-through'}`}
             >
               {item.title}
-            </Typography>
-
-            <Typography scale="Body" size="Small">
+            </Dark_Typography>
+            <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
               {textShorter(item.subtitle, 40)}
-            </Typography>
+            </Dark_Typography>
           </div>
 
           <div className="flex flex-row-reverse gap-3">
@@ -47,7 +42,7 @@ const RoutinDietsCheckbox = ({ item, programId, onClick, index }: RoutinDietsChe
               {item.status === ProgramWidgetItemStatusEnum.Compelet ? (
                 <RadioFillIcon className="w-4 h-auto" />
               ) : (
-                <RadioIcon style={{ stroke: colors.Surface_OutlineVariant }} className="w-4 h-auto" />
+                <RadioIcon className="w-4 h-auto stroke-impo_Surface_OutlineVariant" />
               )}
             </div>
             <div className="relative w-12 h-12 min-w-12 min-h-12 rounded-full">

@@ -1,13 +1,12 @@
 'use client';
 
 import RoutinCta from '@components/__routin__/RoutinCta';
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import FeedbackModal from '@components/women/FeedbackModal';
 import { FOOTER_HEIGTH } from '@components/women/WomenFooter/constants';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import useTheme from '@hooks/useTheme';
 
 import { ProgramWidgetItemStatusEnum } from '../enum';
 import EmptyState from './EmptyState';
@@ -18,8 +17,6 @@ import useGetData from './__hooks__/useGetData';
 import useSeen from './__hooks__/useSeen';
 
 const RoutinItemContainer = () => {
-  const { colors } = useTheme();
-
   const { isLoading, data, programId } = useGetData();
   const { onSeenHandler, isLoading: seenLoading } = useSeen();
   const { isLoading: feedbackLoading, rateHandler } = useFeedback({
@@ -32,7 +29,7 @@ const RoutinItemContainer = () => {
         className=" w-full flex relative z-0 flex-col  gap-6  h-[100dvh]  px-4  pb-6"
         style={{ paddingTop: HEADER_HEIGHT + 16 }}
       >
-        <div className="w-full h-[360px] absolute top-0 left-0 right-0 bg-gradient-to-b from-[#FEE8E6] to-[#FEE8E600] -z-10" />
+        <div className="w-full h-[360px] absolute top-0 left-0 right-0 bg-gradient-to-b from-[#FEE8E6] to-[#FEE8E600] -z-10 dark:!bg-none" />
 
         {isLoading && <RoutinItemSkeleton />}
 
@@ -44,33 +41,30 @@ const RoutinItemContainer = () => {
               icon={data.icon}
               status={data.status}
             />
+
             {data.status === ProgramWidgetItemStatusEnum.locked && <EmptyState />}
             {data.status !== ProgramWidgetItemStatusEnum.locked && (
               <>
                 <div
                   style={{ paddingBottom: FOOTER_HEIGTH }}
                   dir="rtl"
+                  className="text-impo_Neutral_OnBackground"
                   dangerouslySetInnerHTML={{ __html: JSON.parse(data.data) }}
                 />
 
                 {data.cta.ctaBtnLabel && data.cta.ctaDescription && <RoutinCta cta={data.cta} />}
 
                 <div className="mt-auto p-2">
-                  <Button
-                    color="FREE-STYLES"
-                    buttonColor={colors.PrimaryWoman_PrimaryContainer}
-                    contentsColor={colors.PrimaryWoman_Primary}
-                    fullWidth
-                    size="large"
+                  <Dark_Button
                     onClick={onSeenHandler}
                     isDisable={data.status === ProgramWidgetItemStatusEnum.Compelet}
-                    variant="fill"
+                    className="text-impo_Primary_Primary bg-impo_Primary_PrimaryContainer border-impo_Primary_PrimaryContainer"
                     isLoading={seenLoading}
                   >
-                    <Typography scale="Lable" size="Large" color="PrimaryWoman_Primary">
+                    <Dark_Typography fontSize="Lable_Large" className="text-impo_Primary_Primary">
                       {data.compeletButtonLabel}
-                    </Typography>
-                  </Button>
+                    </Dark_Typography>
+                  </Dark_Button>
                 </div>
               </>
             )}

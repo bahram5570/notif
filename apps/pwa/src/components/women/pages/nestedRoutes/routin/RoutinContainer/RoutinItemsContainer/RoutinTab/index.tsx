@@ -1,12 +1,9 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { RoutinTabNameEnum } from './enum';
 import { RoutinTabProps } from './type';
 
 const RoutinTab = ({ commentTabName, itemsTabName, tab, tabHandler }: RoutinTabProps) => {
-  const { colors } = useTheme();
-
   const options = [
     { id: RoutinTabNameEnum.Items, text: itemsTabName },
     { id: RoutinTabNameEnum.Comments, text: commentTabName },
@@ -17,19 +14,15 @@ const RoutinTab = ({ commentTabName, itemsTabName, tab, tabHandler }: RoutinTabP
       {options.map((option) => (
         <div
           onClick={() => tabHandler(option.id)}
-          className="border-b-[1px] pb-2 flex justify-center w-1/2 select-none cursor-pointer"
-          style={{ borderColor: option.id === tab ? colors.PrimaryWoman_Primary : colors.Neutral_Surface }}
+          className={`border-b-[1px] pb-2 flex justify-center w-1/2 select-none cursor-pointer ${option.id === tab ? 'border-impo_Primary_Primary' : 'border-impo_Neutral_Surface'}`}
           key={option.id}
         >
-          {option.id === tab ? (
-            <Typography scale="Lable" size="Large" textAlign="center" color="PrimaryWoman_Primary">
-              {option.text}
-            </Typography>
-          ) : (
-            <Typography scale="Body" size="Medium" textAlign="center" color="Surface_Outline">
-              {option.text}
-            </Typography>
-          )}
+          <Dark_Typography
+            className={`${option.id === tab ? 'text-impo_Primary_Primary' : 'text-impo_Surface_Outline'} text-center`}
+            fontSize={`${option.id === tab ? 'Lable_Large' : 'Body_Medium'}`}
+          >
+            {option.text}
+          </Dark_Typography>
         </div>
       ))}
     </div>

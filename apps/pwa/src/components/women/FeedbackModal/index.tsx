@@ -27,11 +27,11 @@ const FeedbackModal = ({ title, onSubmit, isLoading }: FeedbackModalPropsType) =
   return (
     <CustomModal isOpen={isOpenFeedbackModal} isSlidingMode>
       <div
-        className="bg-impo_Neutral_Background"
         style={{ maxWidth: MAX_SCREEN_WIDTH, paddingBottom: RATING_FOOTER_HEIGHT - 40 }}
+        className="bg-impo_Neutral_Background"
       >
         <div className="relative w-full flex flex-col items-center rounded-xl px-2 pt-6 pb-6  z-0">
-          <Dark_Typography fontSize="Body_Medium" className="text-center text-impo_Neutral_OnBackground">
+          <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Body_Medium">
             {title}
           </Dark_Typography>
 

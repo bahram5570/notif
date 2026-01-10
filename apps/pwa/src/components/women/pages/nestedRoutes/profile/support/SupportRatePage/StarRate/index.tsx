@@ -1,12 +1,8 @@
 import StarIcon from '@assets/icons/star-1.svg';
 
-import useTheme from '@hooks/useTheme';
-
 import { StarRatePropsType } from './type';
 
 const StarRate = ({ valuesHandler, rate }: StarRatePropsType) => {
-  const { colors } = useTheme();
-
   const getTitle = (index: number) => {
     if (index === 0) return 'خیلی بد';
     if (index === 4) return 'خیلی خوب';
@@ -22,18 +18,16 @@ const StarRate = ({ valuesHandler, rate }: StarRatePropsType) => {
       {[...Array(5)].map((_, index) => (
         <div key={index} className="relative">
           <StarIcon
-            className="w-11 h-11"
+            className={`w-11 h-11 ${index < rate ? 'stroke-impo_Pink_400 fill-impo_Pink_400' : 'stroke-impo_Surface_OutlineVariant fill-impo_Surface_OutlineVariant'}`}
             style={{
-              stroke: index < rate ? colors.Pink_400 : colors.Surface_OutlineVariant,
-              fill: index < rate ? colors.Pink_400 : colors.Surface_OutlineVariant,
               cursor: 'pointer',
             }}
             onClick={() => handleRatingChange(index)}
           />
           {getTitle(index) && (
             <div
-              className="absolute top-14 text-sm text-center w-full whitespace-nowrap"
-              style={{ fontSize: '12px', color: '#333' }}
+              className="absolute top-14 text-sm text-center w-full whitespace-nowrap text-impo_Neutral_OnBackground"
+              style={{ fontSize: '12px' }}
             >
               {getTitle(index)}
             </div>

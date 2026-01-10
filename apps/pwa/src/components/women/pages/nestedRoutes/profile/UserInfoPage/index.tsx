@@ -4,10 +4,9 @@ import RulerIcon from '@assets/icons/ruler.svg';
 
 import ProfileContainerGenerator from '@components/__profile__/ProfileContainerGenerator';
 import ProfileItemGenerator from '@components/__profile__/ProfileItemGenerator';
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import useTheme from '@hooks/useTheme';
 
 import UserInfoBirthdate from './UserInfoBirthdate';
 import UserInfoCalendarType from './UserInfoCalendarType';
@@ -19,16 +18,12 @@ import useSubmit from './__hooks__/useSubmit';
 import useValues from './__hooks__/useValues';
 
 const UserInfoPage = () => {
-  const { colors } = useTheme();
   const { submitHandler, submitLoading } = useSubmit();
   const { fetchProfileLoading, isModified, values, valuesHandler } = useValues();
 
   const RulerElement = (
-    <div
-      style={{ backgroundColor: colors.Blue_50 }}
-      className="w-12 h-12 min-w-12 min-h-12 flex items-start justify-center rounded-full px-[10px] py-2 overflow-hidden"
-    >
-      <RulerIcon style={{ width: '100%', height: 'auto', fill: colors.PrimaryWoman_Primary }} />
+    <div className="w-12 h-12 min-w-12 min-h-12 flex items-start justify-center rounded-full px-[10px] py-2 overflow-hidden bg-impo_Blue_50 dark:bg-impo_Blue_900">
+      <RulerIcon className="fill-impo_Primary_Primary" style={{ width: '100%', height: 'auto' }} />
     </div>
   );
 
@@ -39,7 +34,7 @@ const UserInfoPage = () => {
       <WomenPageLayout
         paddingTop={0}
         rightElement="BackButton"
-        className="bg-impo_Grey_50"
+        className="bg-impo_Neutral_Surface"
         rightElementScript="اطلاعات کاربری"
       >
         <div
@@ -87,16 +82,14 @@ const UserInfoPage = () => {
               </ProfileContainerGenerator>
 
               <div className="flex mx-auto mt-auto pt-4 min-w-[204px]">
-                <Button
-                  size="medium"
-                  variant="fill"
-                  color="primary"
+                <Dark_Button
+                  fontSize="Lable_Large"
                   isDisable={isDisable}
                   isLoading={submitLoading}
                   onClick={() => submitHandler(values)}
                 >
                   ویرایش
-                </Button>
+                </Dark_Button>
               </div>
             </>
           )}

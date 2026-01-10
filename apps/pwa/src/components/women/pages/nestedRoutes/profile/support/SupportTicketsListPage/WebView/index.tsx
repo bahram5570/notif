@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import Spinner from '@components/ui/Spinner';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
 
 import { WebViewPropsType } from './type';
 
@@ -15,7 +15,7 @@ const WebView = ({ url }: WebViewPropsType) => {
     <div style={{ width: '100%', height: '100dvh' }}>
       {isLoading && (
         <div className="flex justify-center items-center w-full h-full ">
-          <Spinner width={50} color="primary" borderWidth={4} />
+          <Dark_Spinner size={50} />
         </div>
       )}
 

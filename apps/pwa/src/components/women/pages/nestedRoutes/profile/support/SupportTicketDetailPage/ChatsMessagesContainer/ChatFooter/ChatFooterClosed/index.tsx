@@ -1,34 +1,31 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
 const ChatFooterClosed = () => {
-  const { colors } = useTheme();
   const { ticketId } = useParams();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   return (
     <div className="w-full flex-col flex items-center justify-center gap-2 p-3">
       <div className="flex flex-col justify-center items-center gap-2">
-        <Typography scale="Lable" size="LargeProminet" color="PrimaryWoman_Primary">
+        <Dark_Typography fontSize="Lable_LargeProminet" className="text-impo_Primary_Primary">
           تیکت بسته شده
-        </Typography>
-        <Typography scale="Body" size="Medium" color="Surface_OnSurfaceVariant" textAlign="center">
+        </Dark_Typography>
+        <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant text-center">
           با ثبت نظرت، کمک بزرگی به تیم ایمپو برای بهبود اپلیکیشن خواهی کرد
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <Link
         href={`/protected/supportTicket/${ticketId}/rate`}
         onClick={() => pageNavigationHandler({ id: 'ChatFooterClosed', showProgressBar: true })}
-        style={{ background: colors.PrimaryWoman_Primary }}
-        className="w-full flex justify-center items-center rounded-full py-3 px-6"
+        className="w-full flex justify-center items-center rounded-full py-3 px-6 bg-impo_Primary_Primary"
       >
-        <Typography scale="Title" size="Small" color="PrimaryMan_OnPrimaryMan">
+        <Dark_Typography fontSize="Title_Small" className="text-impo_PrimaryMan_OnPrimaryMan">
           ثبت نظر
-        </Typography>
+        </Dark_Typography>
       </Link>
     </div>
   );

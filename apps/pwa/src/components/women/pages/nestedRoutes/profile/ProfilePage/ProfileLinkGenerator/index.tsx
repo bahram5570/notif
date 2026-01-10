@@ -1,4 +1,4 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import Link from 'next/link';
 
@@ -15,9 +15,9 @@ const ProfileLinkGenerator = ({ Icon, link, name, isLastItem }: ProfileGenerator
     >
       <div className="flex flex-row items-center gap-3 justify-end w-full">
         <div className={`${isLastItem ? 'border-none' : 'border-b-[1px]'}  py-4 w-full flex justify-end items-center`}>
-          <Typography scale="Body" size="Large">
+          <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
             {name}
-          </Typography>
+          </Dark_Typography>
         </div>
         {<Icon className="w-10 h-10" />}
       </div>

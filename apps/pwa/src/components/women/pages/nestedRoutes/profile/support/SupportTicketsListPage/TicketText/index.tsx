@@ -2,11 +2,10 @@ import { useMemo } from 'react';
 
 import { toJalaliData } from '@utils/dates';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 import Link from 'next/link';
 
 import TicketStatus from './TicketStatus';
@@ -14,7 +13,7 @@ import { TicketTextProps } from './type';
 
 const TicketText = (props: TicketTextProps) => {
   const { culture } = useCulture();
-  const { colors } = useTheme();
+
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { categoryName, createTime, id, lastFromUser, status, statusColor, statusText, text, title } = props;
 
@@ -33,24 +32,22 @@ const TicketText = (props: TicketTextProps) => {
     <Link
       href={`/protected/supportTicket/${id}`}
       onClick={() => pageNavigationHandler({ showProgressBar: true, id: 'ticketDetail' })}
-      className=" flex flex-col items-end gap-3 p-4 w-full rounded-xl"
-      style={{ backgroundColor: colors.White }}
+      className=" flex flex-col items-end gap-3 p-4 w-full rounded-xl bg-impo_Neutral_Background"
     >
       <div className="flex justify-between items-center w-full">
         <TicketStatus status={status} statusColor={statusColor} statusText={statusText} />
 
-        <Typography scale="Lable" size="SmallProminet" color="Surface_OnSurfaceVariant">
+        <Dark_Typography className="text-impo_Surface_OnSurfaceVariant" fontSize="Lable_SmallProminet">
           {title || categoryName}
-        </Typography>
+        </Dark_Typography>
       </div>
-
-      <Typography scale="Body" size="Small" color="Surface_Outline" textAlign="right">
+      <Dark_Typography className="text-impo_Surface_OnSurfaceVariant text-right" fontSize="Body_Small">
         {text}
-      </Typography>
+      </Dark_Typography>
 
-      <Typography scale="Body" size="Small" color="Surface_Outline" className="w-full" textAlign="left">
+      <Dark_Typography className="text-impo_Surface_Outline text-left w-full" fontSize="Body_Small">
         {dateScript}
-      </Typography>
+      </Dark_Typography>
     </Link>
   );
 };

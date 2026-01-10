@@ -1,22 +1,24 @@
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { externalLink } from '@utils/navigation';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import { LinkGeneratorType } from './type';
 
 const LinkGenerator = ({ Icon, link, name }: LinkGeneratorType) => {
-  const { colors, typography } = useTheme();
+  const { operatingSystem } = useOperatingSystem();
+  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Lable_Small', operatingSystem });
   return (
     <div
-      style={{ ...typography.Lable.Small, color: colors.Surface_OnSurfaceVariant }}
-      className="flex flex-col items-center gap-2 w-14 cursor-pointer "
+      style={{ ...typographyFontStyles }}
+      className="flex flex-col items-center gap-2 w-14 cursor-pointer  text-impo_Surface_OnSurfaceVariant"
       onClick={() => externalLink(link, true)}
     >
-      <Icon className="h-6 w-6" />
-      <Typography scale="Lable" size="Small" color="Surface_Outline">
+      <Icon className="h-6 w-6 !stroke-impo_Surface_OutlineVariant" />
+      <Dark_Typography fontSize="Lable_Small" className="text-impo_Surface_Outline">
         {name}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

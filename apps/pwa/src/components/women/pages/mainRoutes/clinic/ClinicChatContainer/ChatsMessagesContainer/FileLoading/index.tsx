@@ -39,15 +39,15 @@ const FileLoading = () => {
       {isFileLoading && (
         <ChatContainerMaker dateTime={dateTime} sideType={SideTypeEnum.Patient} width="fit-content">
           {isImageType && (
-            <div className="w-[260px] h-[240px] rounded-xl flex justify-center items-center bg-impo_Neutral_Surface animate-skeleton">
-              <Dark_Spinner className="border-impo_Primary_Primary" />
+            <div className="w-[260px] h-[240px] rounded-xl flex justify-center items-center animate-skeleton bg-impo_Neutral_Surface">
+              <Dark_Spinner />
             </div>
           )}
 
           {!isImageType && (
             <div className="w-[240px] flex items-center gap-2">
               <div className="relative w-10 h-10 min-w-10 min-h-10 rounded-full flex items-center justify-center bg-impo_Primary_Primary">
-                <Dark_Spinner className="border-impo_Neutral_Surface" size={20} />
+                <Dark_Spinner size={20} className="border-impo_Neutral_Surface" />
               </div>
             </div>
           )}

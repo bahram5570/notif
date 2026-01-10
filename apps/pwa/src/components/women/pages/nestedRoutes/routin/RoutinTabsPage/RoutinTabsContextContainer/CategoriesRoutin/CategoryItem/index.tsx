@@ -1,20 +1,18 @@
 import RoutinCard from '@components/__routin__/RoutinCard';
 import CustomSlider from '@components/ui/CustomSlider';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { data } from '../../../constants';
 import { CategoryItemPropsType } from './type';
 
 const CategoryItem = ({ categoryTitle, programs }: CategoryItemPropsType) => {
-  const { colors } = useTheme();
-
   return (
     <>
       <div className="flex flex-col gap-2 px-5 justify-end items-end">
-        <Typography scale="Title" size="Small" color="Neutral_OnBackground">
+        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           {categoryTitle}
-        </Typography>
+        </Dark_Typography>
+
         <CustomSlider gap={12}>
           {programs.map((program, index) => {
             const hasOneItem = data.length === 1;
@@ -26,7 +24,7 @@ const CategoryItem = ({ categoryTitle, programs }: CategoryItemPropsType) => {
           })}
         </CustomSlider>
       </div>
-      <div className=" h-[1px] mx-2 my-4" style={{ backgroundColor: colors.Neutral_Surface }} />
+      <div className=" h-[1px] mx-2 my-4 bg-impo_Neutral_Surface" />
     </>
   );
 };

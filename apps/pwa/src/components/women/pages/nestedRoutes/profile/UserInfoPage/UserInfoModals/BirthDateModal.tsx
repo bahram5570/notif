@@ -5,17 +5,15 @@ import { toGregorianData, toJalaliData } from '@utils/dates';
 
 import useListsMaker from '@components/activation/DateModule/__hooks__/useListsMaker';
 import { StateValuesHandlerTypes, ValuesTypes } from '@components/activation/DateModule/types';
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import WheelPicker from '@components/ui/WheelPicker';
 import { CalendarTypeEnum, DATE_SEPERATOR_REGEX } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
-import useTheme from '@hooks/useTheme';
 
 import { BirthDateModalTypes } from './types';
 
 const BirthDateModal = ({ value, valueHandler, onClose }: BirthDateModalTypes) => {
-  const { colors } = useTheme();
   const { culture } = useCulture();
   const [values, setValues] = useState<ValuesTypes>({ month: '', year: '', day: '' });
 
@@ -70,17 +68,14 @@ const BirthDateModal = ({ value, valueHandler, onClose }: BirthDateModalTypes) =
     <>
       <CakeIcon className="w-9 h-9" />
 
-      <Typography scale="Title" size="Small">
+      <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
         تاریخ تولد
-      </Typography>
+      </Dark_Typography>
 
-      <div className="relative grid grid-cols-3 place-items-center w-full px-4">
+      <div className="relative grid grid-cols-3 place-items-center w-full px-4 ">
         {daysList && monthsList && yearsList && (
           <>
-            <span
-              style={{ background: colors.Neutral_Surface }}
-              className="absolute left-0 right-0 h-10 pointer-events-none rounded-full"
-            />
+            <span className="absolute left-0 right-0 h-10 pointer-events-none rounded-full bg-impo_Neutral_Surface " />
 
             <WheelPicker
               list={yearsList}
@@ -103,9 +98,9 @@ const BirthDateModal = ({ value, valueHandler, onClose }: BirthDateModalTypes) =
         )}
       </div>
 
-      <Button variant="fill" size="medium" color="primary" onClick={saveHandler}>
+      <Dark_Button onClick={saveHandler} fontSize="Lable_Large">
         ذخیره
-      </Button>
+      </Dark_Button>
     </>
   );
 };
