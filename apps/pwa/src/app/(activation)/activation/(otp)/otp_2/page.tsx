@@ -11,11 +11,8 @@ import useCountDown from '@hooks/useCountDown';
 import useSectionSaver from '@providers/__activation__/ActivationProvider/__hooks__/useSectionSaver';
 import { useRouter } from 'next/navigation';
 
-import useExplanation from './__hooks__/useExplanation';
-
 const Otp2 = () => {
   // # کد
-  // useExplanation();
   const router = useRouter();
   const { sectionSaverHandler } = useSectionSaver();
   const { callEventActivation } = useActivationAnalytics();
