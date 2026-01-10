@@ -1,10 +1,9 @@
 import TrashIcon from '@assets/icons/trash.svg';
 
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { BabyCheckTypeEnums } from '@components/women/KitTests/KitTestBabyCheck/enum';
 import { kitTestScripts } from '@components/women/KitTests/KitTestRange/constants';
-import useTheme from '@hooks/useTheme';
 
 import { KitTestModuleTypeEnums } from '../../enum';
 import TestKitModalsListRangeSVG from '../TestKitModalsListRangeSVG';
@@ -12,7 +11,6 @@ import useTestKitsDeleteModal from '../__hooks__/useTestKitsDeleteModal';
 import { TestKitModalsListsBabyCheckProps } from './types';
 
 const TestKitModalsListsBabyCheck = ({ data }: TestKitModalsListsBabyCheckProps) => {
-  const { colors } = useTheme();
   const { openDeleteModalHandler } = useTestKitsDeleteModal();
 
   const analogScript = (result: number) => {
@@ -35,12 +33,11 @@ const TestKitModalsListsBabyCheck = ({ data }: TestKitModalsListsBabyCheckProps)
     <>
       {data.map((item, index) => (
         <div className="w-full flex flex-col" key={index}>
-          {index > 0 && <div className="w-full h-[1px] my-3" style={{ backgroundColor: colors.Neutral_Surface }} />}
+          {index > 0 && <div className="w-full h-[1px] my-3 bg-impo_Neutral_Surface" />}
 
           <div className="w-full flex items-center justify-between gap-1">
             <TrashIcon
-              className="w-6"
-              style={{ stroke: colors.Error_Error }}
+              className="w-6 stroke-impo_Error_Error"
               onClick={() =>
                 openDeleteModalHandler({
                   index,
@@ -56,13 +53,13 @@ const TestKitModalsListsBabyCheck = ({ data }: TestKitModalsListsBabyCheckProps)
                   <TestKitModalsListRangeSVG result={item.result} />
 
                   <div className="flex items-center gap-1">
-                    <Typography scale="Lable" size="Medium">
+                    <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
                       {analogScript(item.result)}
-                    </Typography>
+                    </Dark_Typography>
 
-                    <Typography scale="Body" size="Medium">
+                    <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
                       بیبی‌چک نواری:
-                    </Typography>
+                    </Dark_Typography>
                   </div>
                 </>
               )}
@@ -79,13 +76,13 @@ const TestKitModalsListsBabyCheck = ({ data }: TestKitModalsListsBabyCheckProps)
                   />
 
                   <div className="flex items-center gap-1">
-                    <Typography scale="Lable" size="Medium">
+                    <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
                       {item.result === 1 ? 'مثبت' : 'منفی'}
-                    </Typography>
+                    </Dark_Typography>
 
-                    <Typography scale="Body" size="Medium">
+                    <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
                       بیبی‌چک دیجیتال:
-                    </Typography>
+                    </Dark_Typography>
                   </div>
                 </>
               )}

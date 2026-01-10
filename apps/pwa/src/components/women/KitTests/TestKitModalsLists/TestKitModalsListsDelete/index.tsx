@@ -1,7 +1,7 @@
-import Button from '@components/ui/Button';
 import CustomModal from '@components/ui/CustomModal';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import Loading from '@components/ui/Loading';
-import Typography from '@components/ui/Typography';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 import { useRouter } from 'next/navigation';
@@ -35,36 +35,44 @@ const TestKitModalsListsDelete = ({ onDelete }: TestKitModalsListsDeleteProps) =
     <>
       <CustomModal isOpen={isOvulationOpen} className="!w-[calc(100%_-_32px)] flex items-center">
         <div className="w-full flex flex-col items-center gap-6">
-          <Typography scale="Lable" size="Large">
+          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
             تست تخمک گذاری مورد نظر حذف شود؟
-          </Typography>
+          </Dark_Typography>
 
           <div className="w-full flex justify-between gap-4">
-            <Button variant="fill" color="primary" size="medium" onClick={deleteHandler}>
+            <Dark_Button fontSize="Lable_Large" onClick={deleteHandler}>
               بله
-            </Button>
+            </Dark_Button>
 
-            <Button variant="fill" color="surface" size="medium" onClick={() => router.back()}>
+            <Dark_Button
+              fontSize="Lable_Large"
+              onClick={() => router.back()}
+              className="!bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnBackground"
+            >
               خیر
-            </Button>
+            </Dark_Button>
           </div>
         </div>
       </CustomModal>
 
       <CustomModal isOpen={isBabyCheckOpen} className="!w-[calc(100%_-_32px)] flex items-center">
         <div className="w-full flex flex-col items-center gap-6">
-          <Typography scale="Lable" size="Large">
+          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
             تست بارداری مورد نظر حذف شود؟
-          </Typography>
+          </Dark_Typography>
 
           <div className="w-full flex justify-between gap-4">
-            <Button variant="fill" color="primary" size="medium" onClick={deleteHandler}>
+            <Dark_Button fontSize="Lable_Large" onClick={deleteHandler}>
               بله
-            </Button>
+            </Dark_Button>
 
-            <Button variant="fill" color="surface" size="medium" onClick={() => router.back()}>
+            <Dark_Button
+              onClick={() => router.back()}
+              fontSize="Lable_Large"
+              className="!bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnBackground"
+            >
               خیر
-            </Button>
+            </Dark_Button>
           </div>
         </div>
       </CustomModal>

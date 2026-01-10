@@ -1,4 +1,4 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import useUpdateWeekNamesList from './__hooks__/useUpdateWeekNamesList';
 import { WeekNamesListProps } from './types';
@@ -11,29 +11,31 @@ const WeekNamesList = ({ infoList, slide }: WeekNamesListProps) => {
     <div className="w-full grid grid-cols-3">
       {updatedList && (
         <>
-          <Typography
-            scale="Body"
-            size="Medium"
-            textAlign="center"
-            className="mr-auto"
-            color={updatedSlide >= infoList.length ? 'Transparent' : 'Surface_Outline'}
+          <Dark_Typography
+            fontSize="Body_Medium"
+            className={`
+                        mr-auto
+                        text-center
+                        ${updatedSlide >= infoList.length ? 'text-impo_Transparent' : 'text-impo_Surface_Outline'}
+                      `}
           >
             {updatedList[updatedSlide + 1]}
-          </Typography>
+          </Dark_Typography>
 
-          <Typography scale="Title" size="Small" textAlign="center" className="mx-auto">
+          <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground text-center mx-auto">
             {updatedList[updatedSlide]}
-          </Typography>
+          </Dark_Typography>
 
-          <Typography
-            scale="Body"
-            size="Medium"
-            textAlign="center"
-            className="ml-auto"
-            color={updatedSlide <= 1 ? 'Transparent' : 'Surface_Outline'}
+          <Dark_Typography
+            fontSize="Body_Medium"
+            className={`
+                        ml-auto
+                        text-center
+                        ${updatedSlide <= 1 ? 'text-impo_Transparent' : 'text-impo_Surface_Outline'}
+                      `}
           >
-            {updatedList[updatedSlide - 1]}
-          </Typography>
+            {updatedList[updatedSlide + 1]}
+          </Dark_Typography>
         </>
       )}
     </div>

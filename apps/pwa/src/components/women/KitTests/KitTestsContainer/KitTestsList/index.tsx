@@ -38,9 +38,9 @@ const KitTestsList = ({ moduleType, data, gregorianDate }: KitTestsListProps) =>
     <>
       {details && (
         <>
-          <div className="w-full h-[1px] my-4 bg-impo_Neutral_Surface" />
+          <div className="w-full h-[1px] my-4 bg-impo_Surface_SurfaceVariant" />
 
-          <div className="w-full rounded-lg flex items-center justify-end gap-2  cursor-pointer" onClick={clickHandler}>
+          <div className="w-full rounded-lg flex items-center justify-end gap-2 cursor-pointer" onClick={clickHandler}>
             <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
               {details.buttonScript}
             </Dark_Typography>

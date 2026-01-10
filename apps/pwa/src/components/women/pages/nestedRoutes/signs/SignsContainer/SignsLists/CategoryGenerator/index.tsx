@@ -6,15 +6,14 @@ import useSelectedSigns from './__hooks__/useSelectedSigns';
 import { CategoryGeneratorProps, SelectedSignsHandlerTypes } from './types';
 
 const CategoryGenerator = ({
+  updateSingSelectedList,
+  selectHandler,
   category,
   title,
   signs,
   info,
-  selectHandler,
-  updateSingSelectedList,
 }: CategoryGeneratorProps) => {
   const { callEvent } = useAnalytics();
-
   const { selectedSigns, selectedSignsHandler } = useSelectedSigns(info.initialSelectedSigns);
 
   const selectSignHandler: SelectedSignsHandlerTypes = (ca, si) => {
@@ -46,9 +45,9 @@ const CategoryGenerator = ({
               key={key}
               sign={sign}
               category={category}
+              onSelect={selectSignHandler}
               selectedDate={info.gregorianDate}
               initialIsSelected={initialIsSelected}
-              onSelect={selectSignHandler}
             />
           );
         })}

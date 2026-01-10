@@ -14,8 +14,8 @@ const TestKitModalsBabyCheck = ({
   gregorianDate,
   babyCheckType,
   moduleType,
-  onComplete,
   AnalytisId,
+  onComplete,
 }: TestKitModalsBabyCheckProps) => {
   const router = useRouter();
   const { newQuery } = useCustomReactQuery();
@@ -23,7 +23,10 @@ const TestKitModalsBabyCheck = ({
   const successHandler = () => {
     router.back();
     newQuery({ queryKey: ['resetBabyCheck'], payload: {} });
-    onComplete && onComplete();
+
+    if (onComplete) {
+      onComplete();
+    }
   };
 
   const { submitHandler, isLoading } = useNewTestKit({ moduleType, gregorianDate, onSuccess: successHandler });
@@ -33,16 +36,16 @@ const TestKitModalsBabyCheck = ({
       <>
         {babyCheckType === BabyCheckTypeEnums.Analog && (
           <KitTestRange
+            AnalytisId={AnalytisId}
             moduleType={KitTestModuleTypeEnums.BabyCheck}
             subimtHandler={(result) => submitHandler({ babyCheckResult: result, babyCheckType })}
-            AnalytisId={AnalytisId}
           />
         )}
 
         {babyCheckType === BabyCheckTypeEnums.Digital && (
           <KitTestDigitalBabyCheck
-            submitHandler={(babyCheckResult) => submitHandler({ babyCheckResult, babyCheckType })}
             AnalytisId={AnalytisId}
+            submitHandler={(babyCheckResult) => submitHandler({ babyCheckResult, babyCheckType })}
           />
         )}
 

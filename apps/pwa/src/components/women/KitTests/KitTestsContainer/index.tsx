@@ -1,4 +1,4 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import WidgetCardContainer from '@components/women/Widgets/WidgetCardContainer';
 
 import KitTestBabyCheck from '../KitTestBabyCheck';
@@ -11,9 +11,9 @@ import { KitTestsContainerProps } from './types';
 const KitTestsContainer = (props: KitTestsContainerProps) => {
   return (
     <WidgetCardContainer title={kitTestMainScripts[props.moduleType].title} className="!px-0 !pt-0">
-      <Typography scale="Body" size="Medium" className="w-full pb-2 mb-4">
+      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground w-full pb-2 mb-4">
         {kitTestMainScripts[props.moduleType].subTitle}
-      </Typography>
+      </Dark_Typography>
 
       {props.moduleType === KitTestModuleTypeEnums.Ovulation && (
         <KitTestOvulation moduleType={props.moduleType} gregorianDate={props.gregorianDate} />

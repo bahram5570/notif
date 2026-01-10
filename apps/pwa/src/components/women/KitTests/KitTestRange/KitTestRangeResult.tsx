@@ -29,6 +29,7 @@ const KitTestRangeResult = ({ moduleType, rangeValue, isValueSelected }: KitTest
       <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
         نتیجه تست
       </Dark_Typography>
+
       <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
         {result}
       </Dark_Typography>

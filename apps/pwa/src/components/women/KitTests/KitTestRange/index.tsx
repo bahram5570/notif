@@ -29,10 +29,10 @@ const KitTestRange = ({ moduleType, subimtHandler, AnalytisId }: KitTestRangePro
       </Dark_Typography>
 
       <Dark_Button
-        isDisable={!isValueSelected}
-        fontSize="Lable_Large"
-        onClick={() => subimtHandler(rangeValue / 100)}
         id={AnalytisId}
+        fontSize="Lable_Large"
+        isDisable={!isValueSelected}
+        onClick={() => subimtHandler(rangeValue / 100)}
       >
         ادامه
       </Dark_Button>

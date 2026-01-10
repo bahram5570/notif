@@ -1,7 +1,6 @@
 import { Fragment, useEffect, useRef } from 'react';
 
 import { FOOTER_HEIGTH } from '@components/women/WomenFooter/constants';
-import useTheme from '@hooks/useTheme';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperTypes } from 'swiper/types';
 
@@ -10,7 +9,6 @@ import useSignsListInfo from './__hooks__/useSignsListInfo';
 import { SignsListsPros } from './types';
 
 const SignsLists = ({ infoList, slide, slideHandler, updateSingSelectedList }: SignsListsPros) => {
-  const { colors } = useTheme();
   const swiperRef = useRef<SwiperTypes | null>(null);
 
   useEffect(() => {
@@ -18,11 +16,11 @@ const SignsLists = ({ infoList, slide, slideHandler, updateSingSelectedList }: S
   }, [slide, swiperRef.current]);
 
   return (
-    <div style={{ backgroundColor: colors.Surface_SurfaceVariant, paddingBottom: FOOTER_HEIGTH, paddingTop: '1em' }}>
+    <div className="bg-impo_Surface_SurfaceVariant pt-4" style={{ paddingBottom: FOOTER_HEIGTH }}>
       <Swiper
-        onSlideChange={(s) => slideHandler(s.activeIndex)}
-        onSwiper={(s) => (swiperRef.current = s)}
         allowTouchMove={false}
+        onSwiper={(s) => (swiperRef.current = s)}
+        onSlideChange={(s) => slideHandler(s.activeIndex)}
       >
         {infoList.map((infoData, slideIndex) => {
           const { isVisibleSlideIndex, info, selectHandler } = useSignsListInfo({ infoData, slideIndex, slide });

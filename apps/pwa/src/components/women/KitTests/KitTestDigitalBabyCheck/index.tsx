@@ -1,5 +1,5 @@
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import KitTestDigitalBabyCheckGenerator from './KitTestDigitalBabyCheckGenerator';
 import useSelectedDigitalBabyCheck from './__hooks__/useSelectedDigitalBabyCheck';
@@ -17,9 +17,9 @@ const KitTestDigitalBabyCheck = ({ submitHandler, AnalytisId }: KitTestDigitalBa
 
   return (
     <div className="w-full flex flex-col items-center">
-      <Typography scale="Body" size="Medium">
+      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
         نتیجه تستت رو انتخاب کن:
-      </Typography>
+      </Dark_Typography>
 
       <div className="flex items-center justify-center gap-14 pt-4 pb-9">
         {KIT_TEST_DIGITAL_BABY_CHECK_LIST.map((item, index) => (
@@ -34,16 +34,14 @@ const KitTestDigitalBabyCheck = ({ submitHandler, AnalytisId }: KitTestDigitalBa
         ))}
       </div>
 
-      <Button
-        size="medium"
-        variant="fill"
-        color="primary"
+      <Dark_Button
+        id={AnalytisId}
+        fontSize="Lable_Large"
         onClick={clickHandler}
         isDisable={selectedDigitalBabyCheck === null}
-        id={AnalytisId}
       >
         ادامه
-      </Button>
+      </Dark_Button>
     </div>
   );
 };

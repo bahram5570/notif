@@ -1,4 +1,4 @@
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
@@ -41,16 +41,14 @@ const KitTestBabyCheck = ({ moduleType, gregorianDate }: KitTestBabyCheckProps) 
         ))}
       </div>
 
-      <Button
-        variant="fill"
-        size="medium"
-        color="primary"
+      <Dark_Button
         className="mt-8"
+        fontSize="Lable_Large"
         onClick={applyHandler}
         isDisable={selectedBabyCheck === null}
       >
         ادامه
-      </Button>
+      </Dark_Button>
     </>
   );
 };

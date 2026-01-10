@@ -25,18 +25,15 @@ const KitTestRangeSlider = ({ rangeValue, rangeValueHandler }: KitTestRangeSlide
           style={{ right: KIT_TEST_RANGE_SLIDER_THUMB_SIZE, transform: `translateX(${rangeValue}%)` }}
         >
           <div
-            className="rounded-full border-[2px] flex items-center justify-center bg-impo_White border-impo_Neutral_Surface"
-            style={{
-              width: KIT_TEST_RANGE_SLIDER_THUMB_SIZE,
-              height: KIT_TEST_RANGE_SLIDER_THUMB_SIZE,
-            }}
+            style={{ width: KIT_TEST_RANGE_SLIDER_THUMB_SIZE, height: KIT_TEST_RANGE_SLIDER_THUMB_SIZE }}
+            className="rounded-full border-[2px] flex items-center justify-center bg-impo_Neutral_Background border-impo_Neutral_Surface"
           >
-            <div className="w-full h-full rounded-full bg-impo_Pink_500" style={{ opacity: rangeValue / 100 }} />
+            <div className="w-full h-full rounded-full bg-impo_Primary_Primary" style={{ opacity: rangeValue / 100 }} />
           </div>
         </div>
 
         <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center pointer-events-none z-0">
-          <div className="w-full h-[12px] rounded-full bg-gradient-to-r from-[#F24F7A00] to-[#F24F7AFF] " />
+          <div className="w-full h-[12px] rounded-full bg-gradient-to-r from-impo_Transparent to-impo_Primary_Primary " />
         </div>
       </div>
     </>

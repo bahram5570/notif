@@ -1,24 +1,21 @@
 import ArrowIcon from '@assets/icons/vector.svg';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { SignsNavigationProps } from './types';
 
 const SignsNavigation = ({ slide, slideHandler, infoList }: SignsNavigationProps) => {
-  const { colors } = useTheme();
-
-  const slideActionHandler = (isNext: boolean) => {
-    if (isNext) {
-      if (slide < infoList.length - 1) {
-        slideHandler(slide + 1);
-      }
-    } else {
-      if (slide > 0) {
-        slideHandler(slide - 1);
-      }
-    }
-  };
+  // const slideActionHandler = (isNext: boolean) => {
+  //   if (isNext) {
+  //     if (slide < infoList.length - 1) {
+  //       slideHandler(slide + 1);
+  //     }
+  //   } else {
+  //     if (slide > 0) {
+  //       slideHandler(slide - 1);
+  //     }
+  //   }
+  // };
 
   return (
     // <div className="w-full flex items-center justify-between pb-1">
@@ -30,9 +27,9 @@ const SignsNavigation = ({ slide, slideHandler, infoList }: SignsNavigationProps
         />
       </div> */}
 
-      <Typography scale="Body" size="Large">
+      <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
         {infoList?.[slide].fullDateScript || ''}
-      </Typography>
+      </Dark_Typography>
 
       {/* <div className="h-12 w-8 flex items-center rotate-180" onClick={() => slideActionHandler(false)}>
         <ArrowIcon

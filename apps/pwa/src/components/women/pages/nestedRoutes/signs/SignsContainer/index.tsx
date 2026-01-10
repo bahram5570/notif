@@ -16,6 +16,7 @@ const SignsContainer = ({ infoList }: SignsContainerProps) => {
     <>
       <div className="relative w-full pb-4 z-0" style={{ paddingTop: SIGNS_SELECT_DAY_HEIGHT }}>
         <SignsSelectDay slide={slide} slideHandler={slideHandler} infoList={infoList} />
+
         <SignsLists
           slide={slide}
           slideHandler={slideHandler}
