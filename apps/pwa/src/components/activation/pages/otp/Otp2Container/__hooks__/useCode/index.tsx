@@ -11,9 +11,10 @@ import { SuccessHandlerTypes, UseCodeProps } from './types';
 const useCode = ({ identity, isRegister }: UseCodeProps) => {
   const { onToast } = useCustomToast();
 
-  const successHandler: SuccessHandlerTypes = ({ result }) => {
+  const successHandler: SuccessHandlerTypes = ({ result, OtpMessage }) => {
     if (result) {
-      onToast({ message: 'کد 6 رقمی ارسال شد' });
+      // onToast({ message: 'کد 6 رقمی ارسال شد' });
+      onToast({ message: OtpMessage, duration: 10000000 });
     }
   };
 

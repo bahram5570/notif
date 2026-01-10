@@ -3,4 +3,4 @@ export interface UseCodeProps {
   identity: string | undefined;
 }
 
-export type SuccessHandlerTypes = (v: { result: boolean }) => void;
+export type SuccessHandlerTypes = (v: { result: boolean; OtpMessage: string }) => void;
