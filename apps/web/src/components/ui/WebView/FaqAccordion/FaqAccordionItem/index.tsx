@@ -1,13 +1,19 @@
 import { useState } from 'react';
 
 import ArrowLeftIcon from '@assets/icons/arrowLeft.svg';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { toPersianNumbers } from '@utils/numbers';
 
 import CustomTypography from '@components/ui/CustomTypography';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import { FaqAccordionItemPropsType } from './type';
 
 const FaqAccordionItem = ({ question, answer, index }: FaqAccordionItemPropsType) => {
   const [isOpen, setIsOpen] = useState<boolean | undefined>(undefined);
+  const { operatingSystem } = useOperatingSystem();
+  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Small', operatingSystem, isWeb: true });
+  const typographyFontStyles1 = typographyFontStylesMaker({ fontSize: 'Lable_Large', operatingSystem, isWeb: true });
   const questionIndex = index + 1;
 
   return (
@@ -27,12 +33,12 @@ const FaqAccordionItem = ({ question, answer, index }: FaqAccordionItemPropsType
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <CustomTypography fontSize="Body_Small" className="pb-4">
-          <CustomTypography fontSize="Lable_Large" className="inline !text-impo_Pink_500" tagType="span">
+        <p style={{ ...typographyFontStyles }} className="pb-4">
+          <span style={{ ...typographyFontStyles1 }} className="inline !text-impo_Pink_500">
             پاسخ:
-          </CustomTypography>
-          {answer}
-        </CustomTypography>
+          </span>
+          {toPersianNumbers(answer)}
+        </p>
       </div>
     </div>
   );

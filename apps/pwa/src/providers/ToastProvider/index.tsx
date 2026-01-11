@@ -50,7 +50,7 @@ const ToastProvider = ({ children }: { children: React.ReactNode }) => {
 
         <div className="w-[1px] h-7 block" style={{ backgroundColor: colors.Surface_OnSurfaceVariant }} />
 
-        <Typography toEnglishNumber={englishNumbers} scale="Body" size="Small" color="Surface_InverseSurface">
+        <Typography toEnglishNumber={englishNumbers} scale="Lable" size="Large" color="Surface_InverseSurface">
           {message}
         </Typography>
       </div>
@@ -65,13 +65,13 @@ const ToastProvider = ({ children }: { children: React.ReactNode }) => {
       closeButton: false,
       closeOnClick: true,
       style: {
-        ...style,
         backgroundColor: backgroundColorsList[type],
         borderColor: borderColorList[type],
         borderStyle: 'solid',
         borderRadius: '12px',
         borderWidth: '2px',
         margin: '32px',
+        ...style,
       },
     });
   };
