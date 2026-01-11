@@ -2,10 +2,9 @@
 
 import { useState } from 'react';
 
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import useTheme from '@hooks/useTheme';
 
 import BloodSugerBtnGenerator from './BloodSugerBtnGenerator';
 import BloodSugerHeader from './BloodSugerHeader';
@@ -16,9 +15,8 @@ import { BLOOD_SUGER_INPUT_GENERATOR_LIST, initailValue } from './constants';
 import { InputValueType } from './type';
 
 const BloodSugerContainer = () => {
-  const [inputValue, setInputValue] = useState<InputValueType>(initailValue);
   const { isLoading, submitHandler } = useSubmit();
-  const { colors } = useTheme();
+  const [inputValue, setInputValue] = useState<InputValueType>(initailValue);
 
   const onChangeHandler = (v: string | number | null, name: string) => {
     setInputValue({ ...inputValue, [name]: v });
@@ -31,40 +29,30 @@ const BloodSugerContainer = () => {
   return (
     <WomenPageLayout rightElement="BackButton" paddingTop={0}>
       <div
-        style={{ paddingTop: HEADER_HEIGHT, background: colors.Surface_SurfaceVariant }}
-        className="min-h-[100dvh] relative flex flex-col gap-3"
+        style={{ paddingTop: HEADER_HEIGHT }}
+        className="min-h-[100dvh] relative flex flex-col gap-3 bg-impo_Neutral_Surface"
       >
         <BloodSugerHeader />
-        <div style={{ background: colors.Surface_SurfaceVariant, paddingTop: HEADER_HEIGHT }} className="px-3">
+
+        <div style={{ paddingTop: HEADER_HEIGHT }} className="px-3">
           <div className="flex flex-col gap-4 ">
-            <div
-              style={{ background: colors.White }}
-              className="p-3 w-full divide-y-[1px] flex flex-col gap-2 rounded-xl mt-4"
-            >
+            <div className="p-3 w-full flex flex-col gap-2 rounded-xl mt-4 bg-impo_Neutral_Background">
               {BLOOD_SUGER_INPUT_GENERATOR_LIST.map((item, index) => {
-                return <BloodSugerBtnGenerator {...item} value={inputValue[item.name]} key={index} />;
+                return <BloodSugerBtnGenerator {...item} value={inputValue[item.name]} index={index} key={index} />;
               })}
             </div>
+
             <TestResult condition={inputValue.condition} value={inputValue.value} />
           </div>
 
           <BloodSugerModal onChange={onChangeHandler} value={inputValue} />
         </div>
-        <footer className="mt-auto">
-          <div className="flex flex-col justify-center items-center p-4">
-            <Button
-              variant="fill"
-              size="medium"
-              color="primary"
-              onClick={onClick}
-              fullWidth={true}
-              isDisable={!inputValue.value}
-              isLoading={isLoading}
-            >
-              ثبت اطلاعات
-            </Button>
-          </div>
-        </footer>
+
+        <div className="flex flex-col justify-center items-center p-4 mt-auto">
+          <Dark_Button fontSize="Lable_Large" onClick={onClick} isLoading={isLoading} isDisable={!inputValue.value}>
+            ثبت اطلاعات
+          </Dark_Button>
+        </div>
       </div>
     </WomenPageLayout>
   );

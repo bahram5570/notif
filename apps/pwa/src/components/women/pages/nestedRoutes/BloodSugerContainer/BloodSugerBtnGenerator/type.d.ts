@@ -1,7 +1,8 @@
 import { InputValueType } from '../type';
 
 export type BloodSugerBtnGeneratorPropsType = {
-  name: keyof InputValueType;
   value: string | number | null;
+  name: keyof InputValueType;
   label: string;
+  index: number;
 };

@@ -1,18 +1,21 @@
 import PenIcon from '@assets/icons/Pen 2.svg';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Spinner from '@components/ui/Spinner';
-import Typography from '@components/ui/Typography';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import { BloodSugerBtnGeneratorPropsType } from './type';
 
-const BloodSugerBtnGenerator = ({ name, value, label }: BloodSugerBtnGeneratorPropsType) => {
-  const { colors } = useTheme();
+const BloodSugerBtnGenerator = ({ name, value, label, index }: BloodSugerBtnGeneratorPropsType) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+
+  const selectHandler = () => {
+    newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true', ['name']: name });
+    pageNavigationHandler({ showProgressBar: false, id: name });
+  };
 
   const isLoading = pageNavigationLoading === name;
 
@@ -26,40 +29,46 @@ const BloodSugerBtnGenerator = ({ name, value, label }: BloodSugerBtnGeneratorPr
       : value !== null && value;
 
   return (
-    <div className="flex items-center flex-row-reverse p-2">
-      <Typography scale="Lable" size="Medium" className="w-full">
+    <div
+      className={`
+                  flex 
+                  items-center 
+                  flex-row-reverse 
+                  p-2 
+                  ${index > 0 && 'border-t-[1px] border-t-impo_Surface_OutlineVariant'}
+                `}
+    >
+      <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground w-full">
         {label}
-      </Typography>
-      <div
-        className="w-full flex  items-center"
-        onClick={() => {
-          (newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true', ['name']: name }),
-            pageNavigationHandler({ showProgressBar: false, id: name }));
-        }}
-      >
+      </Dark_Typography>
+
+      <div onClick={selectHandler} className="w-full flex items-center">
         <div className="flex items-center flex-row-reverse gap-3">
-          {isLoading && <Spinner color="primary" width={20} />}
+          {isLoading && <Dark_Spinner size={20} className="border-impo_Primary_Primary" />}
+
           {!isLoading && (
             <>
               {!currentValue ? (
-                <Typography scale="Body" size="Medium" color="Surface_Outline">
+                <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_Outline">
                   انتخاب نشده
-                </Typography>
+                </Dark_Typography>
               ) : (
-                <div className="flex  gap-1">
-                  <Typography scale="Body" size="Large" color="Surface_OnSurfaceVariant">
+                <div className="flex gap-1">
+                  <Dark_Typography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">
                     {`${currentValue}`}
-                  </Typography>
+                  </Dark_Typography>
+
                   {name !== 'condition' && (
-                    <Typography scale="Body" size="Large" color="Surface_OnSurfaceVariant">
+                    <Dark_Typography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">
                       mg/dL
-                    </Typography>
+                    </Dark_Typography>
                   )}
                 </div>
               )}
             </>
           )}
-          <PenIcon className="w-6 h-6" style={{ fill: colors.PrimaryWoman_Primary }} />
+
+          <PenIcon className="w-6 h-6 fill-impo_Primary_Primary" />
         </div>
       </div>
     </div>

@@ -1,30 +1,33 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 const TestResult = ({ condition, value }: { condition: number | null; value: number | null }) => {
-  const { colors } = useTheme();
-
   const generateResults = () => {
     const range = condition === 0 ? 95 : 120;
+    const isNormal = value && value < range ? true : false;
+    const isSusspicious = value && value >= range && value <= range + 10 ? true : false;
+    const isDibet = value && value > range + 10 ? true : false;
 
     return [
       {
         title: 'نرمال',
         range: `${range}>`,
-        background: value && value < range ? colors.Success_SuccessContainer : 'transparent',
-        indicatorColor: colors.Success_Success,
+        background: isNormal ? 'bg-impo_Success_SuccessContainer' : 'bg-impo_Transparent',
+        textColor: isNormal ? 'text-impo_Black' : 'text-impo_Neutral_OnBackground',
+        indicatorColor: 'bg-impo_Success_Success',
       },
       {
         title: 'مشکوک به دیابت',
         range: `${range}-${range + 10}`,
-        background: value && value >= range && value <= range + 10 ? colors.Warning_WarininContainer : 'transparent',
-        indicatorColor: colors.Warning_Warning,
+        background: isSusspicious ? 'bg-impo_Warning_WarininContainer' : 'bg-impo_Transparent',
+        textColor: isSusspicious ? 'text-impo_Black' : 'text-impo_Neutral_OnBackground',
+        indicatorColor: 'bg-impo_Warning_Warning',
       },
       {
         title: 'دیابت',
         range: `${range + 10}>`,
-        background: value && value > range + 10 ? colors.Error_ErrorContainer : 'transparent',
-        indicatorColor: colors.Error_Error,
+        background: isDibet ? 'bg-impo_Error_ErrorContainer' : 'bg-impo_Transparent',
+        textColor: isDibet ? 'text-impo_Black' : 'text-impo_Neutral_OnBackground',
+        indicatorColor: 'bg-impo_Error_Error',
       },
     ];
   };
@@ -32,30 +35,33 @@ const TestResult = ({ condition, value }: { condition: number | null; value: num
   const results = generateResults();
 
   return (
-    <div style={{ background: colors.White }} className="p-3 w-full divide-y-[1px] flex flex-col gap-3 rounded-xl">
-      <Typography scale="Lable" size="Medium" className="w-full">
+    <div className="w-full flex flex-col gap-3 p-3 rounded-xl bg-impo_Neutral_Background">
+      <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground w-full">
         نتیجه تست قندخون
-      </Typography>
-      <div className="flex flex-col">
+      </Dark_Typography>
+
+      <div className="flex flex-col border-t-[1px] border-t-impo_Surface_OutlineVariant">
         {results.map((result, index) => (
           <div
             key={index}
-            className="flex flex-row-reverse justify-between items-center mt-2 px-3 py-2 rounded-lg"
-            style={{ background: result.background }}
+            className={`flex flex-row-reverse justify-between items-center mt-2 px-3 py-2 rounded-lg ${result.background}`}
           >
             <div className="flex flex-row-reverse items-center gap-2">
-              <div className="w-3 h-3 rounded-full" style={{ background: result.indicatorColor }}></div>
-              <Typography scale="Body" size="Medium">
+              <div className={`w-3 h-3 rounded-full ${result.indicatorColor}`} />
+
+              <Dark_Typography fontSize="Body_Medium" className={`${result.textColor}`}>
                 {result.title}
-              </Typography>
+              </Dark_Typography>
             </div>
+
             <div className="flex flex-row-reverse gap-1">
-              <Typography scale="Lable" size="Medium">
+              <Dark_Typography fontSize="Lable_Medium" className={`${result.textColor}`}>
                 mg/dL
-              </Typography>
-              <Typography scale="Lable" size="Medium">
+              </Dark_Typography>
+
+              <Dark_Typography fontSize="Lable_Medium" className={`${result.textColor}`}>
                 {result.range}
-              </Typography>
+              </Dark_Typography>
             </div>
           </div>
         ))}
