@@ -1,6 +1,6 @@
 import { colorFormatConverter } from '@utils/scripts';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { TicketStatusPropsType } from './type';
 
@@ -20,9 +20,9 @@ const TicketStatus = ({ statusColor, statusText }: TicketStatusPropsType) => {
 
   return (
     <div className={`px-2 py-1 rounded-full ${changeColorHandler()}`}>
-      <Typography scale="Lable" size="SmallProminet" color="FREE-STYLE" freeColor={colorFormatConverter(statusColor)}>
+      <Dark_Typography fontSize="Lable_SmallProminet" style={{ color: colorFormatConverter(statusColor) }}>
         {statusText}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

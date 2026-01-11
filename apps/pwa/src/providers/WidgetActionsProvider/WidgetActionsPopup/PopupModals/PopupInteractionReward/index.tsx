@@ -1,18 +1,14 @@
-import { useEffect, useState } from 'react';
-
 import { colorFormatConverter } from '@utils/scripts';
 
-import Button from '@components/ui/Button';
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useWidgetActions from '@hooks/useWidgetActions';
 
 import PopupTwoStepsContainer from '../PopupTwoStepsContainer';
 import { PopupInteractionRewardProps } from './types';
 
 const PopupInteractionReward = ({ data, hasTwoStepsInteractionReward }: PopupInteractionRewardProps) => {
-  const { colors } = useTheme();
   const { actionHandler } = useWidgetActions();
 
   const submitHandler = () => {
@@ -26,26 +22,29 @@ const PopupInteractionReward = ({ data, hasTwoStepsInteractionReward }: PopupInt
           <CustomImage src={data.image} />
         </div>
 
-        <div className="flex flex-col items-center h-full px-4 pt-10 pb-5" style={{ backgroundColor: colors.White }}>
-          <Typography scale="Headline" size="Small" textAlign="center" className="w-full px-6">
+        <div className="flex flex-col items-center h-full px-4 pt-10 pb-5 bg-impo_Neutral_Surface">
+          <Dark_Typography fontSize="Headline_Small" className="w-full px-6 text-center text-impo_Neutral_OnBackground">
             {data.title}
-          </Typography>
+          </Dark_Typography>
 
-          <Typography scale="Body" size="Medium" textAlign="center" className="w-full px-4 pt-1">
+          <Dark_Typography
+            fontSize="Body_Medium"
+            className="w-full px-4 pt-1 text-center text-impo_Neutral_OnBackground"
+          >
             {data.description}
-          </Typography>
+          </Dark_Typography>
 
-          <Button
-            size="large"
-            variant="fill"
-            className="mt-auto"
-            color="FREE-STYLES"
+          <Dark_Button
+            fontSize="Title_Small"
+            className="mt-auto h-12"
             onClick={submitHandler}
-            buttonColor={colorFormatConverter(data.button.backgroundColor)}
-            contentsColor={colorFormatConverter(data.button.foregroundColor)}
+            style={{
+              background: colorFormatConverter(data.button.backgroundColor),
+              color: colorFormatConverter(data.button.foregroundColor),
+            }}
           >
             {data.button.text}
-          </Button>
+          </Dark_Button>
         </div>
       </>
     </PopupTwoStepsContainer>

@@ -1,11 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import useTheme from '@hooks/useTheme';
-
 import { PopupTwoStepsContainerProgressBarProps, ProgressBarListTypes } from './types';
 
 const PopupTwoStepsContainerProgressBar = ({ currentStep }: PopupTwoStepsContainerProgressBarProps) => {
-  const { colors } = useTheme();
   const [progressBarList, setProgressBarList] = useState<ProgressBarListTypes>([]);
 
   useEffect(() => {
@@ -28,15 +25,8 @@ const PopupTwoStepsContainerProgressBar = ({ currentStep }: PopupTwoStepsContain
   return (
     <div className="flex gap-2 w-full px-10 pb-[72px]" style={{ direction: 'rtl' }}>
       {progressBarList.map((item, index) => (
-        <div
-          className="w-full h-1 rounded-full overflow-hidden"
-          style={{ backgroundColor: colors.Neutral_Background }}
-          key={index}
-        >
-          <div
-            className="h-full rounded-full"
-            style={{ backgroundColor: colors.PrimaryWoman_Primary, width: item.width }}
-          />
+        <div className="w-full h-1 rounded-full overflow-hidden bg-impo_White" key={index}>
+          <div className="h-full rounded-full bg-impo_Primary_Primary" style={{ width: item.width }} />
         </div>
       ))}
     </div>
