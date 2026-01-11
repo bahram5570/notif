@@ -1,8 +1,7 @@
 import CancelIcon from '@assets/icons/cancel.svg';
 
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
 
@@ -10,7 +9,6 @@ import useCheckJson from '../__hooks__/useCheckJson';
 import { PopUpTimerInteractionContentPropsType } from './type';
 
 const PopUpTimerInteractionContent = ({ actionCompleteHandler, data }: PopUpTimerInteractionContentPropsType) => {
-  const { colors } = useTheme();
   const { actionHandler } = useWidgetActions();
   const { jsonData, isJson } = useCheckJson({ icon: data.icon });
 
@@ -24,9 +22,8 @@ const PopUpTimerInteractionContent = ({ actionCompleteHandler, data }: PopUpTime
   };
   return (
     <div
-      className=" rounded-full flex flex-row-reverse justify-between pl-2 pr-3 py-3 items-center gap-5 relative "
+      className=" rounded-full flex flex-row-reverse justify-between pl-2 pr-3 py-3 items-center gap-5 relative bg-impo_Neutral_Background "
       style={{
-        backgroundColor: colors.Neutral_Background,
         boxShadow: '0px 8px 24px rgba(114, 114, 114, 0.18)',
       }}
     >
@@ -36,17 +33,17 @@ const PopUpTimerInteractionContent = ({ actionCompleteHandler, data }: PopUpTime
         </div>
 
         <div className="flex flex-col items-end gap-1">
-          <Typography scale="Lable" size="Medium">
+          <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
             {data.title}
-          </Typography>
-          <Typography scale="Lable" size="Small">
+          </Dark_Typography>
+          <Dark_Typography fontSize="Lable_Small" className="text-impo_Neutral_OnBackground">
             {data.description}
-          </Typography>
+          </Dark_Typography>
         </div>
       </div>
 
       <div className="w-8 h-8 flex justify-end items-center" onClick={closeHandler}>
-        <CancelIcon className="w-5 h-auto" style={{ stroke: colors.Surface_OnSurfaceVariant }} />
+        <CancelIcon className="w-5 h-auto stroke-impo_Surface_OnSurfaceVariant" />
       </div>
     </div>
   );
