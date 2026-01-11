@@ -1,11 +1,10 @@
 import { useState } from 'react';
 
 import { StateValuesHandlerTypes } from '@components/activation/DateModule/types';
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import WheelPicker from '@components/ui/WheelPicker';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 
 import { InputValueType } from '../type';
 import { ConditionModalPropsType } from './type';
@@ -16,7 +15,6 @@ const InputModal = ({ onChange, onCloseModal, value }: ConditionModalPropsType) 
     low: value.low || 20,
   });
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { colors } = useTheme();
 
   const stateValuesHandler: StateValuesHandlerTypes = (v, name) => {
     setValues((state) => ({ ...state, [name]: Number(v) }));
@@ -41,24 +39,21 @@ const InputModal = ({ onChange, onCloseModal, value }: ConditionModalPropsType) 
   return (
     <>
       <div className="flex flex-col justify-center items-center gap-2">
-        <Typography scale="Title" size="Small">
+        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           میزان فشار خونت رو وارد کن
-        </Typography>
-        <Typography scale="Body" size="Medium" textAlign="center">
+        </Dark_Typography>
+        <Dark_Typography fontSize="Body_Medium" className="text-center text-impo_Neutral_OnBackground ">
           حواست باشه که عدد سمت چپ، عدد بالاتر (سیستولیک) و عدد سمت راست، عدد پایین‌تر (دیاستولیک) فشار خونته
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <div className="relative grid grid-cols-1 place-items-center w-full px-4">
         <>
-          <span
-            className="absolute left-0 right-0 h-10   pointer-events-none rounded-full"
-            style={{ background: colors.Neutral_Surface }}
-          >
+          <span className="absolute left-0 right-0 h-10   pointer-events-none rounded-full bg-impo_Neutral_Surface">
             <div className="flex justify-center items-center h-full ml-40">
-              <Typography scale="Title" size="Medium">
+              <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
                 mmHg
-              </Typography>
+              </Dark_Typography>
             </div>
           </span>
           <div className="flex gap-2 relative">
@@ -77,16 +72,14 @@ const InputModal = ({ onChange, onCloseModal, value }: ConditionModalPropsType) 
         </>
       </div>
 
-      <Button
-        variant="fill"
-        size="medium"
-        color="primary"
+      <Dark_Button
         onClick={() => {
           (onChangeHandler(), pageNavigationHandler({ showProgressBar: true, id: 'bloodPressure' }));
         }}
+        fontSize="Lable_Large"
       >
         ثبت اطلاعات
-      </Button>
+      </Dark_Button>
     </>
   );
 };

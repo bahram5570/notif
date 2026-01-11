@@ -9,8 +9,7 @@ const useGetData = () => {
   const { getQueryParams } = useQueryParamsHandler();
   const searchData = getQueryParams('searchData');
 
-  // const api = searchData ? `feature/trailonboarding/page?${searchData}` : '';
-  const api = 'feature/trailonboarding/page?day=1&status=2&periodStatus=1';
+  const api = searchData ? `feature/trailonboarding/page?${searchData}` : '';
 
   const { data, isLoading, callApi } = useApi<FeatureIntroResponseType>({
     api: api,
