@@ -10,9 +10,7 @@ import { CustomContainerPropsType } from './type';
 const CustomContainer = ({ allBtnLink, children, plusIconLink, title, showAllBtn }: CustomContainerPropsType) => {
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
-  const isLoading = pageNavigationLoading === allBtnLink;
-
-  const linkToHandler = () => {
+  const newHandler = () => {
     pageNavigationHandler({
       showProgressBar: true,
       linkTo: `${plusIconLink}`,
@@ -20,9 +18,15 @@ const CustomContainer = ({ allBtnLink, children, plusIconLink, title, showAllBtn
     });
   };
 
+  const showAllHandler = () => {
+    pageNavigationHandler({ showProgressBar: false, id: allBtnLink });
+  };
+
+  const isLoading = pageNavigationLoading === allBtnLink;
+
   return (
     <div className="bg-impo_Neutral_Background rounded-2xl p-2 flex flex-col">
-      <div onClick={linkToHandler}>
+      <div onClick={newHandler}>
         <div className="w-full flex flex-row-reverse items-center justify-between h-fit p-3">
           <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
             {title}
@@ -39,9 +43,7 @@ const CustomContainer = ({ allBtnLink, children, plusIconLink, title, showAllBtn
       {showAllBtn && (
         <Link
           href={`${allBtnLink}`}
-          onClick={() => {
-            pageNavigationHandler({ showProgressBar: false, id: allBtnLink });
-          }}
+          onClick={showAllHandler}
           className="
                       flex 
                       items-center 

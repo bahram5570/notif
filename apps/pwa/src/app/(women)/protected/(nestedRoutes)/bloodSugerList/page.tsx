@@ -11,12 +11,12 @@ const BloodSugerList = () => {
 
   return (
     <>
-      {isLoading && <ListSkeleton />}
-      {!isLoading && (
-        <WomenPageLayout rightElement="BackButton" rightElementScript="تست دیابت بارداری">
-          <BloodSugerListContainer bloodSugerList={initailBloodSugerList} />
-        </WomenPageLayout>
-      )}
+      <WomenPageLayout rightElement="BackButton" rightElementScript="تست دیابت بارداری">
+        <>
+          {!isLoading && <ListSkeleton />}
+          {!isLoading && <BloodSugerListContainer bloodSugerList={initailBloodSugerList} />}
+        </>
+      </WomenPageLayout>
     </>
   );
 };

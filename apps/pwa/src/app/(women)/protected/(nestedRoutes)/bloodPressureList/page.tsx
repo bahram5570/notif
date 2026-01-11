@@ -10,12 +10,12 @@ const BloodPressureList = () => {
   const { initailPressureList, isLoading } = useGetData();
   return (
     <>
-      {isLoading && <ListSkeleton />}
-      {!isLoading && (
-        <WomenPageLayout rightElement="BackButton" rightElementScript="تست فشارخون بارداری">
-          <BloodPressureListContainer bloodPressureList={initailPressureList} />
-        </WomenPageLayout>
-      )}
+      <WomenPageLayout rightElement="BackButton" rightElementScript="تست فشارخون بارداری">
+        <>
+          {isLoading && <ListSkeleton />}
+          {!isLoading && <BloodPressureListContainer bloodPressureList={initailPressureList} />}
+        </>
+      </WomenPageLayout>
     </>
   );
 };
