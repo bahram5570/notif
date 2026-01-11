@@ -1,17 +1,18 @@
-import { CSSProperties, useMemo, useRef } from 'react';
+import { useRef } from 'react';
 
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { toEnglishNumbers, toPersianNumbers } from '@utils/numbers';
 
 import styles from './styles.module.css';
 
-import useTheme from '@hooks/useTheme';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import { ACTIVATION_INPUT_MODULE_ID } from '../ActivationHeading/constants';
 import { ActivationInputModuleProps } from './types';
 
 const ActivationInputModule = (props: ActivationInputModuleProps) => {
-  const { typography, colors } = useTheme();
   const inputRef = useRef<HTMLInputElement>(null);
+  const { operatingSystem } = useOperatingSystem();
 
   const handleFocus = () => {
     setTimeout(() => {
@@ -24,32 +25,33 @@ const ActivationInputModule = (props: ActivationInputModuleProps) => {
     handleFocus();
   };
 
-  const style = useMemo(() => {
-    const result: CSSProperties = {
-      direction: props.isTextTyps ? 'rtl' : 'ltr',
-      caretColor: colors.PrimaryWoman_Primary,
-      color: colors.Neutral_OnBackground,
-      ...typography.Title.Large,
-    };
-
-    return result;
-  }, []);
-
   const updatedValue = props.englishNumbers ? toEnglishNumbers(props.value) : toPersianNumbers(props.value);
+  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Title_Large', operatingSystem });
+  const direction = props.direction || 'ltr';
 
   return (
     <>
       <input
-        style={style}
         ref={inputRef}
         value={updatedValue}
         onFocus={handleFocus}
         onChange={changeHandler}
+        data-testid={props.testid}
         placeholder={props.placeHolder}
         id={ACTIVATION_INPUT_MODULE_ID}
         type={props.isTextTyps ? 'text' : 'tel'}
-        className={`border-none bg-transparent w-full relative pt-1 text-center placeholder-[#EFEFEF] ${styles.input}`}
-        data-testid={props.testid}
+        style={{ ...typographyFontStyles, direction }}
+        className={`
+                    relative 
+                    w-full 
+                    pt-1 
+                    border-none 
+                    bg-transparent 
+                    text-center 
+                    text-impo_Neutral_OnBackground
+                    placeholder-impo_Surface_Outline
+                    ${styles.input}
+                  `}
       />
     </>
   );

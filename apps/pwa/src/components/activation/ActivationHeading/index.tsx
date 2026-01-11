@@ -1,8 +1,7 @@
 import ImpoIcon from '@assets/images/questionsImpo.svg';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
-import useTheme from '@hooks/useTheme';
 import { OrderOfQuestionScriptsTypes } from '@providers/__activation__/types';
 
 import {
@@ -15,7 +14,6 @@ import { ActivationHeadingProps } from './types';
 import usePercentage from './usePercentage';
 
 const ActivationHeading = ({ scripts, progressPercentage, orderOfQuestionScripts }: ActivationHeadingProps) => {
-  const { colors } = useTheme();
   const { isLargeScreen } = useActivationIsLargeScreen();
   const { maxWidth, progressBarSizes, rotate } = usePercentage({ progressPercentage });
 
@@ -49,19 +47,31 @@ const ActivationHeading = ({ scripts, progressPercentage, orderOfQuestionScripts
 
           <div
             id={ACTIVATION_HEADING_SCRIPTS_ID}
-            className="w-full flex flex-col items-center gap-2 mt-4 px-4 duration-1000"
+            className="w-full flex flex-col items-center gap-2 mt-4 px-4 duration-1000 z-10"
           >
-            <Typography scale="Body" size="Medium" textAlign="center" style={{ order: scriptsOrder.description }}>
+            <Dark_Typography
+              fontSize="Body_Medium"
+              style={{ order: scriptsOrder.description }}
+              className="text-impo_Neutral_OnBackground text-center"
+            >
               {scripts.description}
-            </Typography>
+            </Dark_Typography>
 
-            <Typography scale="Title" size="Small" textAlign="center" style={{ order: scriptsOrder.title }}>
+            <Dark_Typography
+              fontSize="Title_Small"
+              style={{ order: scriptsOrder.title }}
+              className="text-impo_Neutral_OnBackground text-center"
+            >
               {scripts.title}
-            </Typography>
+            </Dark_Typography>
 
-            <Typography scale="Body" size="Medium" textAlign="center" style={{ order: scriptsOrder.subtitle }}>
+            <Dark_Typography
+              fontSize="Body_Medium"
+              style={{ order: scriptsOrder.subtitle }}
+              className="text-impo_Neutral_OnBackground text-center"
+            >
               {scripts.subtitle}
-            </Typography>
+            </Dark_Typography>
           </div>
         </div>
 
@@ -78,12 +88,19 @@ const ActivationHeading = ({ scripts, progressPercentage, orderOfQuestionScripts
         {hasProgressBar && (
           <>
             <div
-              className="absolute bottom-0 rounded-full border-4 flex align-bottom justify-center overflow-hidden"
-              style={{
-                borderColor: colors.Surface_SurfaceVariant,
-                background: colors.Neutral_Background,
-                ...progressBarSizes,
-              }}
+              style={{ ...progressBarSizes }}
+              className="
+                          absolute 
+                          bottom-0 
+                          rounded-full 
+                          border-4 
+                          border-impo_Surface_SurfaceVariant 
+                          bg-impo_Neutral_Background
+                          flex 
+                          align-bottom 
+                          justify-center 
+                          overflow-hidden 
+                        "
             >
               <div className="absolute bottom-10 flex justify-center align-middle">
                 <img
@@ -95,13 +112,8 @@ const ActivationHeading = ({ scripts, progressPercentage, orderOfQuestionScripts
             </div>
 
             <div
-              style={{
-                rotate,
-                borderColor: colors.Surface_SurfaceVariant,
-                borderBottomColor: colors.PrimaryWoman_Primary,
-                ...progressBarSizes,
-              }}
-              className="absolute bottom-0 rounded-full border-4"
+              style={{ rotate, ...progressBarSizes }}
+              className="absolute bottom-0 rounded-full border-4 border-impo_Surface_SurfaceVariant border-b-impo_Primary_Primary"
             />
           </>
         )}

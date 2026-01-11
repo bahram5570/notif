@@ -15,8 +15,8 @@ const Otp1 = () => {
   // # شماره همراه/ ایمیل
   const router = useRouter();
   const activationData = useActivationData();
-  const { payload, payloadHandler } = useActivationPayload();
   const { callEventActivation } = useActivationAnalytics();
+  const { payload, payloadHandler } = useActivationPayload();
 
   const otp1CompleteHandler: Otp1CompleteHandlerTypes = (info) => {
     payloadHandler({ password: info.password, identity: info.identity });
