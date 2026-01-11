@@ -3,10 +3,9 @@ import { useEffect, useState } from 'react';
 import CheckCircleIcon from '@assets/icons/checkCircle.svg';
 import InfoIcon from '@assets/icons/info.svg';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useCountDown from '@hooks/useCountDown';
-import useTheme from '@hooks/useTheme';
 import { LottieCanvas } from '@lib/LottieCanvas';
 
 import { ResponsePropsType } from '../../CheckupQuestionContainer/QuestionCheckup/__hooks__/useSubmit/type';
@@ -17,7 +16,6 @@ const PregnancyCheckupToast = () => {
   const [showLottie, setShowLottie] = useState(false);
   const [showStatus, setShowStatus] = useState(false);
   const [resultMessage, setResultMessage] = useState<ResponsePropsType | null>(null);
-  const { colors } = useTheme();
 
   const { startCounter: startShowMessage } = useCountDown({
     time: 5,
@@ -62,25 +60,16 @@ const PregnancyCheckupToast = () => {
         }}
       >
         <div
-          style={{
-            background:
-              resultMessage.status === ResultTypeEnum.Warning
-                ? colors.Warning_WarininContainer
-                : colors.Success_SuccessContainer,
-            border: `1px solid ${
-              resultMessage.status === ResultTypeEnum.Warning ? colors.Warning_Warning : colors.Success_Success
-            }`,
-          }}
-          className="flex justify-center items-center gap-3 rounded-lg px-4 py-2"
+          className={`flex justify-center items-center gap-3 rounded-lg px-4 py-2 border ${resultMessage.status === ResultTypeEnum.Warning ? 'border-impo_Warning_Warning bg-impo_Warning_WarininContainer' : 'border-impo_Success_Success bg-impo_Success_SuccessContainer'}`}
         >
           <div className="border-r-[1px]">
-            <Typography scale="Body" size="Medium" className="px-2">
+            <Dark_Typography fontSize="Body_Medium" className="px-2 text-impo_Neutral_OnBackground">
               {resultMessage.message}
-            </Typography>
+            </Dark_Typography>
           </div>
           <div className="w-6 h-6">
             {resultMessage.status === ResultTypeEnum.Warning ? (
-              <InfoIcon className="w-6 h-6" style={{ stroke: colors.Warning_Warning }} />
+              <InfoIcon className="w-6 h-6 stroke-impo_Warning_Warning" />
             ) : (
               <CheckCircleIcon />
             )}

@@ -1,16 +1,16 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { OnboardingContextPropsType } from './type';
 
 const OnboardingContext = ({ description, title }: OnboardingContextPropsType) => {
   return (
     <div className="flex flex-col justify-center items-center gap-2 h-20 px-4">
-      <Typography size="Small" scale="Headline" color="Neutral_OnBackground" textAlign="center">
+      <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Headline_Small">
         {title}
-      </Typography>
-      <Typography size="Medium" scale="Body" color="Surface_InverseSurface" textAlign="center">
+      </Dark_Typography>
+      <Dark_Typography className="text-impo_Surface_InverseSurface text-center" fontSize="Body_Medium">
         {description}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

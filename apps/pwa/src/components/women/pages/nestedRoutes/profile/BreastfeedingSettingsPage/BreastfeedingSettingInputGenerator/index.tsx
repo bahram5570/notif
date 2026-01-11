@@ -1,7 +1,6 @@
 import ContentWrapper from '@components/ui/ContentWrapper';
 import Dark_RadioButton from '@components/ui/Dark_RadioButton';
 import Dark_Typography from '@components/ui/Dark_Typography';
-import Typography from '@components/ui/Typography';
 import useTheme from '@hooks/useTheme';
 
 import BreastfeedingSettingBtnModal from './BreastfeedingSettingBtnModal';

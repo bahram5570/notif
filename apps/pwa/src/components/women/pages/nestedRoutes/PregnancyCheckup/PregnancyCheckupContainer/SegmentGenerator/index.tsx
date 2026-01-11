@@ -1,7 +1,7 @@
 import { colorFormatConverter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import SegmentWeeksGenerator from './SegmentWeeksGenerator';
 import { SegmentGeneratorPropsType } from './type';
@@ -17,12 +17,15 @@ const SegmentGenerator = (props: SegmentGeneratorPropsType) => {
       >
         <CustomImage src={props.image} />
         <div className="flex flex-col justify-end items-end pr-2">
-          <Typography scale="Lable" size="LargeProminet" style={{ color: colorFormatConverter(props.foregroundColor) }}>
+          <Dark_Typography
+            fontSize="Lable_LargeProminet"
+            style={{ color: colorFormatConverter(props.foregroundColor) }}
+          >
             {props.title}
-          </Typography>
-          <Typography scale="Body" size="Medium" color="Neutral_OnBackground">
+          </Dark_Typography>
+          <Dark_Typography fontSize="Lable_LargeProminet" className="text-impo_Black">
             {props.subtitle}
-          </Typography>
+          </Dark_Typography>
         </div>
       </div>
       <SegmentWeeksGenerator weeks={props.weeks} />

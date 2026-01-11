@@ -1,11 +1,10 @@
 'use client';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useAnalytics from '@hooks/useAnalytics';
-import useTheme from '@hooks/useTheme';
 
 import BannerSection from './BannerSection';
 import PregnancyCheckupContainerSkeleton from './PregnancyCheckupContainerSkeleton';
@@ -15,7 +14,6 @@ import useGetData from './__hooks__/useGetData';
 
 const PregnancyCheckupContainer = () => {
   useAnalytics({ mountTimer_eventName: 'PregnancyCheckupSpentTime' });
-  const { colors } = useTheme();
   const { data, isLoading } = useGetData();
   const hasData = data && data.segments.length > 0;
 
@@ -24,6 +22,7 @@ const PregnancyCheckupContainer = () => {
       rightElement="PregnancyCheckupBackButton"
       rightElementScript="آزمایش و مراقبت‌های بارداری"
       paddingTop={0}
+      className="bg-impo_Neutral_Surface"
     >
       <PregnancyCheckupTost />
       {isLoading && <PregnancyCheckupContainerSkeleton />}
@@ -31,26 +30,23 @@ const PregnancyCheckupContainer = () => {
         <div
           style={{
             paddingTop: HEADER_HEIGHT,
-            background: colors.Surface_SurfaceVariant,
+
             paddingBottom: HEADER_HEIGHT + 16,
           }}
-          className="min-h-[100dvh] relative flex flex-col gap-3"
+          className="min-h-[100dvh] relative flex flex-col gap-3 bg-impo_Neutral_Surface"
         >
           <div
-            className="flex fixed z-40 flex-row-reverse items-center justify-between px-4 gap-4 pb-3 w-full"
-            style={{ maxWidth: MAX_SCREEN_WIDTH, height: '80px', background: colors.White }}
+            className="flex fixed z-40 flex-row-reverse items-center justify-between px-4 gap-4 pb-3 w-full bg-impo_Neutral_Surface"
+            style={{ maxWidth: MAX_SCREEN_WIDTH, height: '80px' }}
           >
             <div className="flex flex-col gap-1 items-end px-2 py-1">
-              <Typography scale="Body" size="Medium" color="Neutral_OnBackground">
+              <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
                 توی هفته‌های مختلف بارداریت، اطلاعات مربوط به مراقبت ها و آزمایشاتی که باید داشته باشی رو برات گذاشتیم
-              </Typography>
+              </Dark_Typography>
             </div>
           </div>
 
-          <div
-            style={{ background: colors.Surface_SurfaceVariant, paddingTop: HEADER_HEIGHT }}
-            className="px-3 flex flex-col gap-2"
-          >
+          <div style={{ paddingTop: HEADER_HEIGHT }} className="px-3 flex flex-col gap-2 bg-impo_Neutral_Surface">
             {data.banner && <BannerSection banner={data.banner} />}
 
             {data.segments.map((segment, index) => {

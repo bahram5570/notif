@@ -2,18 +2,16 @@ import { useState } from 'react';
 
 import { colorFormatConverter } from '@utils/scripts';
 
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import OptionButton from '@components/ui/OptionButton';
-import Typography from '@components/ui/Typography';
 import useAnalytics from '@hooks/useAnalytics';
-import useTheme from '@hooks/useTheme';
 import useWidgetActions from '@hooks/useWidgetActions';
 
 import PopupTwoStepsContainer from '../PopupTwoStepsContainer';
 import { PopupSexTrackerProps } from './types';
 
 const PopupSexTracker = ({ data }: PopupSexTrackerProps) => {
-  const { colors } = useTheme();
   const { actionHandler } = useWidgetActions();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const { callEvent } = useAnalytics({ pageView_eventName: 'SexTracker_Interaction_Showed' });
@@ -31,16 +29,16 @@ const PopupSexTracker = ({ data }: PopupSexTrackerProps) => {
     <PopupTwoStepsContainer currentStep={1}>
       <div className="w-full px-4">
         <div className="flex flex-col items-center gap-1 pb-10">
-          <Typography scale="Title" size="Medium" color="Neutral_OnBackground">
+          <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
             {data.title}
-          </Typography>
+          </Dark_Typography>
 
-          <Typography scale="Body" size="Medium" color="Neutral_OnBackground" textAlign="center">
+          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
             {data.description}
-          </Typography>
+          </Dark_Typography>
         </div>
 
-        <div className="w-full px-4 pt-4 pb-6 rounded-xl" style={{ backgroundColor: colors.White }}>
+        <div className="w-full px-4 pt-4 pb-6 rounded-xl bg-impo_Neutral_Background">
           <div className="flex flex-col gap-3 w-full pb-[130px]">
             {data.items.map((option, index) => (
               <OptionButton
@@ -52,16 +50,18 @@ const PopupSexTracker = ({ data }: PopupSexTrackerProps) => {
             ))}
           </div>
 
-          <Button
-            size="large"
-            variant="fill"
-            color="FREE-STYLES"
+          <Dark_Button
             onClick={submitHandler}
-            buttonColor={colorFormatConverter(data.submit.backgroundColor)}
-            contentsColor={colorFormatConverter(data.submit.foregroundColor)}
+            style={{
+              background: colorFormatConverter(data.submit.backgroundColor),
+              color: colorFormatConverter(data.submit.foregroundColor),
+              borderColor: colorFormatConverter(data.submit.backgroundColor),
+            }}
+            fontSize="Title_Small"
+            className="h-12"
           >
             {data.submit.text}
-          </Button>
+          </Dark_Button>
         </div>
       </div>
     </PopupTwoStepsContainer>

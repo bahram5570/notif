@@ -3,9 +3,8 @@ import { useEffect, useState } from 'react';
 import CloseIcon from '@assets/icons/plus.svg';
 import { colorFormatConverter } from '@utils/scripts';
 
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
 import { useRouter } from 'next/navigation';
@@ -14,7 +13,6 @@ import { ClickHandlerTypes, PopupInteractionProps } from './types';
 
 const PopupInteraction = ({ data }: PopupInteractionProps) => {
   const router = useRouter();
-  const { colors } = useTheme();
   const { actionHandler } = useWidgetActions();
 
   const clickHandler: ClickHandlerTypes = (name) => {
@@ -49,43 +47,47 @@ const PopupInteraction = ({ data }: PopupInteractionProps) => {
         onClick={() => router.back()}
         className="w-12 h-12 flex items-center justify-center absolute -top-4 left-2 z-10"
       >
-        <CloseIcon className="w-8 h-auto rotate-45 cursor-pointer" style={{ stroke: colors.Neutral_OnSurface }} />
+        <CloseIcon className="w-8 h-auto rotate-45 cursor-pointer stroke-impo_Neutral_OnSurface" />
       </div>
 
       {jsonFile && <LottieJson loop={true} animationData={jsonFile} width={250} className="mt-8" />}
 
       <div className="flex flex-col items-center px-4">
-        <Typography scale="Title" size="Large" className="pt-5 text-center">
+        <Dark_Typography fontSize="Title_Large" className="pt-5 text-center text-impo_Neutral_OnBackground">
           {data.title}
-        </Typography>
+        </Dark_Typography>
 
-        <Typography scale="Body" size="Large" className="pt-1 text-center">
+        <Dark_Typography fontSize="Body_Large" className="pt-1 text-center text-impo_Neutral_OnBackground">
           {data.description}
-        </Typography>
+        </Dark_Typography>
 
         <div className="w-full flex items-center gap-2 pt-12">
-          <Button
-            size="medium"
-            variant="fill"
-            color="FREE-STYLES"
+          <Dark_Button
             onClick={() => clickHandler('first')}
-            buttonColor={colorFormatConverter(data.button.backgroundColor)}
-            contentsColor={colorFormatConverter(data.button.foregroundColor)}
+            style={{
+              background: colorFormatConverter(data.button.backgroundColor),
+              color: colorFormatConverter(data.button.foregroundColor),
+              borderColor: colorFormatConverter(data.button.backgroundColor),
+            }}
+            className="h-10"
+            fontSize="Lable_Large"
           >
             {data.button.text}
-          </Button>
+          </Dark_Button>
 
           {data.secondaryButton && (
-            <Button
-              size="medium"
-              variant="fill"
-              color="FREE-STYLES"
+            <Dark_Button
               onClick={() => clickHandler('second')}
-              buttonColor={colorFormatConverter(data.secondaryButton.backgroundColor)}
-              contentsColor={colorFormatConverter(data.secondaryButton.foregroundColor)}
+              style={{
+                background: colorFormatConverter(data.secondaryButton.backgroundColor),
+                color: colorFormatConverter(data.secondaryButton.foregroundColor),
+                borderColor: colorFormatConverter(data.secondaryButton.backgroundColor),
+              }}
+              className="h-10"
+              fontSize="Lable_Large"
             >
               {data.secondaryButton.text}
-            </Button>
+            </Dark_Button>
           )}
         </div>
       </div>

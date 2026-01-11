@@ -2,14 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 
 import ArrowDownIcon from '@assets/icons/ArrowDown.svg';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 const ReadMoreText = ({ text, maxLines = 3 }: { text: string; maxLines: number }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isTruncated, setIsTruncated] = useState(false);
   const textRef = useRef<HTMLDivElement>(null);
-  const { colors } = useTheme();
 
   useEffect(() => {
     if (textRef.current) {
@@ -36,21 +34,21 @@ const ReadMoreText = ({ text, maxLines = 3 }: { text: string; maxLines: number }
               : 'auto', // Ensure max height is applied
         }}
       >
-        <Typography scale="Body" size="Medium" className="py-2">
+        <Dark_Typography fontSize="Body_Medium" className="py-2 text-impo_Neutral_OnBackground">
           {text}
-        </Typography>
+        </Dark_Typography>
       </div>
 
       {isTruncated && (
         <div onClick={() => setIsExpanded(!isExpanded)} id="PregnancyCheckupCardClick">
           <div className="flex flex-row-reverse gap-1 justify-end mt-3">
-            <Typography scale="Lable" size="Small" color="PrimaryWoman_Primary">
+            <Dark_Typography className="text-impo_Primary_Primary" fontSize="Lable_Small">
               {isExpanded ? 'بستن اطلاعات بیشتر ' : 'خواندن اطلاعات بیشتر'}
-            </Typography>
+            </Dark_Typography>
             {isExpanded ? (
-              <ArrowDownIcon className="w-4 h-4" style={{ stroke: colors.PrimaryWoman_Primary }} />
+              <ArrowDownIcon className="w-4 h-4 stroke-impo_Primary_Primary" />
             ) : (
-              <ArrowDownIcon className="w-4 h-4 rotate-180" style={{ stroke: colors.PrimaryWoman_Primary }} />
+              <ArrowDownIcon className="w-4 h-4 rotate-180 stroke-impo_Primary_Primary" />
             )}
           </div>
         </div>
