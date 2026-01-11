@@ -13,8 +13,12 @@ const useCode = ({ identity, isRegister }: UseCodeProps) => {
 
   const successHandler: SuccessHandlerTypes = ({ result, otpMessage }) => {
     if (result) {
-      // onToast({ message: 'کد 6 رقمی ارسال شد' });
-      onToast({ message: otpMessage, duration: 10000, style: { margin: '0px' } });
+      onToast({
+        duration: 10000,
+        message: otpMessage,
+        position: 'bottom-center',
+        style: { margin: '0px 0px 32px 0px' },
+      });
     }
   };
 
