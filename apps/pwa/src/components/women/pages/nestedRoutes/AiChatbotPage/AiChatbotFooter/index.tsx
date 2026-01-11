@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import AiChatbotDeactiveMessage from './AiChatbotDeactiveMessage';
@@ -39,14 +39,14 @@ const AiChatbotFooter = (props: AiChatbotFooterPropsType) => {
             <AiChatbotInput {...props} closeHandler={closeHandler} />
 
             <div
-              className="flex justify-center items-center  h-10  w-full  "
+              className="flex justify-center items-center  h-10  w-full dark:!bg-impo_Neutral_Background"
               style={{
                 background: `${props.hasChatData ? 'rgb(239 241 254)' : 'inherit'}`,
               }}
             >
-              <Typography scale="Lable" size="Small" color="Surface_OnSurfaceVariant">
+              <Dark_Typography fontSize="Lable_Small" className="text-impo_Surface_OnSurfaceVariant">
                 مونس هم گاهی اشتباه می‌کنه! حتماً جواب‌ها رو چک کن.
-              </Typography>
+              </Dark_Typography>
             </div>
           </div>
         )}

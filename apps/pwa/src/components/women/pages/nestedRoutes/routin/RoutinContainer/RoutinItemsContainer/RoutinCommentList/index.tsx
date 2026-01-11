@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
-import Spinner from '@components/ui/Spinner';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 
 import CommentItem from './CommentItem';

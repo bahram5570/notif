@@ -1,29 +1,27 @@
 import RoutinWriter from '@components/__routin__/RoutinWriter';
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import CommentRate from './CommentRate';
 import { CommentItemPropsType } from './type';
 
 const CommentItem = (props: CommentItemPropsType) => {
-  const { colors } = useTheme();
-
   return (
-    <div className=" rounded-xl" style={{ backgroundColor: colors.Surface_SurfaceVariant }}>
+    <div className=" rounded-xl bg-impo_Surface_SurfaceVariant">
       <div className="px-3 py-4 flex flex-col justify-end items-end gap-4">
         <div className="flex flex-row-reverse justify-end items-center gap-2">
           <CustomImage src={props.imageUrl} width={40} height={40} />
           <div className="flex flex-col items-end gap-1">
-            <Typography scale="Body" size="Small">
+            <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
               {props.username}
-            </Typography>
+            </Dark_Typography>
+
             {props.rate > 0 && <CommentRate rate={props.rate} />}
           </div>
         </div>
-        <Typography scale="Body" size="Small">
+        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
           {props.commentText}
-        </Typography>
+        </Dark_Typography>
       </div>
       {props.hasReply && (
         <div className="px-3 py-4">
@@ -35,9 +33,9 @@ const CommentItem = (props: CommentItemPropsType) => {
                 writerSpeciality={props.reply.wrtiterDescription}
               />
             </div>
-            <Typography scale="Body" size="Small">
+            <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
               {props.reply.replyText}
-            </Typography>
+            </Dark_Typography>
           </div>
         </div>
       )}

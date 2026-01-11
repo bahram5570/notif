@@ -4,17 +4,15 @@ import CameraIcon from '@assets/icons/Camera-1.svg';
 import GalleryIcon from '@assets/icons/gallery-1.svg';
 import imageCompression from 'browser-image-compression';
 
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { FileInputTypes } from '@components/ui/FileInputManager/enum';
-import Typography from '@components/ui/Typography';
 import { FOOTER_HEIGTH } from '@components/women/WomenFooter/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useAiFileManager from '@hooks/__aichatbot__/useAiFileManager';
-import useTheme from '@hooks/useTheme';
 
 import { FileInputHandlerTypes, UploadImagesMoreActionPropsType } from './type';
 
 const UploadImagesMoreAction = ({ closeHandler, isOpen }: UploadImagesMoreActionPropsType) => {
-  const { colors } = useTheme();
   const { fileDataHandler } = useAiFileManager();
 
   useEffect(() => {
@@ -68,11 +66,10 @@ const UploadImagesMoreAction = ({ closeHandler, isOpen }: UploadImagesMoreAction
       onClick={closeHandler}
     >
       <div
-        className=" p-4 py-6 rounded-3xl w-44  backdrop-blur-[8px]  shadow-lg absolute right-4 "
+        className=" p-4 py-6 rounded-3xl w-44  backdrop-blur-[8px] border border-impo_White  shadow-lg absolute right-4 dark:!bg-white/10"
         style={{
           backgroundColor: 'rgba(255, 255, 255, 0.64)',
           bottom: FOOTER_HEIGTH + 20,
-          border: `1px solid ${colors.White}`,
         }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -88,22 +85,16 @@ const UploadImagesMoreAction = ({ closeHandler, isOpen }: UploadImagesMoreAction
             />
             <label htmlFor="camera-input">
               <div className="flex flex-row-reverse items-center gap-2">
-                <div
-                  className="flex justify-center items-center rounded-full w-8  h-8"
-                  style={{ backgroundColor: colors.Surface_OutlineVariant }}
-                >
-                  <CameraIcon className="w-[18px] h-[18px]" style={{ stroke: colors.Surface_Outline }} />
+                <div className="flex justify-center items-center rounded-full w-8  h-8 bg-impo_Surface_OutlineVariant">
+                  <CameraIcon className="w-[18px] h-[18px] stroke-impo_Surface_Outline" />
                 </div>
-                <Typography scale="Lable" size="Medium">
+                <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
                   دوربین
-                </Typography>
+                </Dark_Typography>
               </div>
             </label>
           </>
-          <div
-            className="w-[133px] h-0 rotate-180 my-2  opacity-60"
-            style={{ border: `1px solid ${colors.Surface_OutlineVariant}` }}
-          />
+          <div className="w-[133px] h-0 rotate-180 my-2  opacity-60 border border-impo_Surface_OutlineVariant" />
           <>
             <input
               type="file"
@@ -114,15 +105,12 @@ const UploadImagesMoreAction = ({ closeHandler, isOpen }: UploadImagesMoreAction
             />
             <label htmlFor="gallery-input">
               <div className="flex flex-row-reverse items-center gap-2">
-                <div
-                  className="flex justify-center items-center rounded-full w-8  h-8"
-                  style={{ backgroundColor: colors.Surface_OutlineVariant }}
-                >
-                  <GalleryIcon className="w-[18px] h-[18px]" style={{ stroke: colors.Surface_Outline }} />
+                <div className="flex justify-center items-center rounded-full w-8  h-8 bg-impo_Surface_OutlineVariant">
+                  <GalleryIcon className="w-[18px] h-[18px] stroke-impo_Surface_Outline" />
                 </div>
-                <Typography scale="Lable" size="Medium">
+                <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
                   گالری
-                </Typography>
+                </Dark_Typography>
               </div>
             </label>
           </>

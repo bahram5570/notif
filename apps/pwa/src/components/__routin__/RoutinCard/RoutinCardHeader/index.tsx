@@ -19,9 +19,9 @@ const RoutinCardHeader = ({
     if (percentage === 100) {
       return 'bg-impo_Success_SuccessContainer dark:bg-impo_Success_OnSuccessContainer';
     } else if (percentage > 0 && percentage < 100) {
-      return 'bg-impo_Yellow_100 dark:bg-impo_Yellow_800';
+      return 'bg-impo_Yellow_100 ';
     } else {
-      return 'bg-impo_Pink_100 dark:bg-impo_Pink_900';
+      return 'bg-impo_Pink_100';
     }
   };
 

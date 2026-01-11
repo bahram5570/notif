@@ -1,35 +1,34 @@
 import RefreshIcon from '@assets/icons/refresh.svg';
 
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ErrorMessagePropsType } from './type';
 
 const ErrorMessage = ({ onErrorHandler }: ErrorMessagePropsType) => {
-  const { colors } = useTheme();
-
   return (
     <div style={{ minHeight: `calc(100dvh - 360px )` }} className="mr-auto">
       <div
-        className=" p-4 flex flex-row-reverse items-center  gap-3  bg-white/50"
+        className=" p-4 flex flex-row-reverse items-center  gap-3  bg-white/50 dark:!bg-white/5 border border-impo_Grey_300"
         style={{
-          border: `0.25px solid ${colors.Grey_300}`,
           borderRadius: '32px 32px 32px 4px',
         }}
       >
-        <Typography scale="Lable" size="Medium">
+        <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
           ظاهرا ارتباط با ایمپو قطع شده. میتونی دوباره تلاش کنی.
-        </Typography>
+        </Dark_Typography>
 
-        <Button size="medium" variant="fill" fullWidth color="surface" onClick={onErrorHandler} className="!w-52  py-3">
-          <div className="flex flex-row-reverse w-full">
+        <Dark_Button
+          onClick={onErrorHandler}
+          className="!w-52  py-3 !bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnSurface"
+        >
+          <div className="flex flex-row-reverse w-full justify-center items-center">
             {/* <RefreshIcon /> */}
-            <Typography scale="Lable" size="Medium" color="Surface_InverseSurface">
+            <Dark_Typography fontSize="Lable_Medium" className="text-impo_Surface_InverseSurface">
               تلاش مجدد
-            </Typography>
+            </Dark_Typography>
           </div>
-        </Button>
+        </Dark_Button>
       </div>
     </div>
   );

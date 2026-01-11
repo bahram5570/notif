@@ -1,4 +1,4 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { SideEnum } from '@components/women/pages/nestedRoutes/partner/chatContainer/MessageListContainer/Message/constants';
 
 import ChatContainerMaker from './ChatContainerMaker';
@@ -11,9 +11,9 @@ const MessageGenerator = ({ createTime, fileName, id, sendByUser, text }: Messag
     <>
       {text.trim() !== '' && (
         <ChatContainerMaker dateTime={createTime} sideType={sideType} width={240}>
-          <Typography scale="Body" size="Small">
+          <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
             {text}
-          </Typography>
+          </Dark_Typography>
         </ChatContainerMaker>
       )}
 

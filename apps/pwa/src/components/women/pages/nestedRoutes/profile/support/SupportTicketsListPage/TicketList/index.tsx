@@ -1,4 +1,4 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -15,10 +15,9 @@ const TicketList = ({ id, items, tickets, title }: TicketListPropsType) => {
     <div className="flex flex-col items-end gap-3 min-h-[100dvh] p-4" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
       <>
         {!ticketId && tickets && tickets.map((ticket) => <TicketText {...ticket} key={ticket.id} />)}
-
-        <Typography scale="Lable" size="MediumProminet" color="PrimaryWoman_Primary">
+        <Dark_Typography className="text-impo_Primary_Primary" fontSize="Lable_MediumProminet">
           {title}
-        </Typography>
+        </Dark_Typography>
 
         {items?.map((link, index) => (
           <TicketLinkGenerator key={index} {...link} />

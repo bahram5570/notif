@@ -4,16 +4,14 @@ import HamdelIcon from '@assets/icons/hamdel.svg';
 import { gregorianFarsiScriptDate, jalaaliScriptDate } from '@utils/dates';
 
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
-import useTheme from '@hooks/useTheme';
 import moment from 'moment-jalaali';
 
 import { PartnerAvatarPropsType } from './type';
 
 const PartnerAvatar = ({ name, profileUrl, jointime }: PartnerAvatarPropsType) => {
-  const { colors } = useTheme();
   const { culture } = useCulture();
   const [currentDate, setCurrentDate] = useState('');
 
@@ -39,14 +37,14 @@ const PartnerAvatar = ({ name, profileUrl, jointime }: PartnerAvatarPropsType) =
     <div className="flex flex-col justify-center items-center gap-2">
       <CustomImage src={profileUrl} width={96} height={96} className="rounded-full" />
       <div className="flex flex-col items-center gap-1">
-        <Typography scale="Title" size="Small">
+        <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Title_Small">
           {name}
-        </Typography>
+        </Dark_Typography>
         <div className="flex items-center gap-1">
-          <Typography scale="Body" size="Medium" color="PrimaryWoman_Primary">
+          <Dark_Typography className="text-impo_Primary_Primary" fontSize="Body_Medium">
             {currentDate}
-          </Typography>
-          <HamdelIcon className="w-4 h-4" style={{ stroke: colors.PrimaryWoman_Primary }} />
+          </Dark_Typography>
+          <HamdelIcon className="w-4 h-4 stroke-impo_Primary_Primary" />
         </div>
       </div>
     </div>

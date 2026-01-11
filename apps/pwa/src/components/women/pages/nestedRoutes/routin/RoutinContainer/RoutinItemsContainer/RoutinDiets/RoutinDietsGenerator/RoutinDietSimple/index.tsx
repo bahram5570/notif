@@ -1,7 +1,7 @@
 import { textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { RoutinDietsSimplePropsType } from './type';
 
@@ -10,13 +10,12 @@ const RoutinDietsSimple = ({ item, onClick }: RoutinDietsSimplePropsType) => {
     <div className="flex flex-row-reverse justify-between items-center">
       <div className="w-full flex items-center justify-end gap-[10px] cursor-pointer" onClick={onClick}>
         <div className="flex flex-col items-end gap-1">
-          <Typography scale="Lable" size="Medium">
+          <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
             {item.title}
-          </Typography>
-
-          <Typography scale="Body" size="Small">
+          </Dark_Typography>
+          <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
             {textShorter(item.subtitle, 40)}
-          </Typography>
+          </Dark_Typography>
         </div>
 
         <div className="relative w-12 h-12 min-w-12 min-h-12 rounded-full">

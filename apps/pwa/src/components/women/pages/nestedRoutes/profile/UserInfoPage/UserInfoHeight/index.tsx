@@ -1,15 +1,12 @@
 import MinusIcon from '@assets/icons/minus.svg';
 import PlusIcon from '@assets/icons/plus.svg';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { ACTIVATION_HEIGHT_VALUES } from '@constants/activation.constants';
-import useTheme from '@hooks/useTheme';
 
 import { UserInfoHeightProps } from './types';
 
 const UserInfoHeight = ({ value, valueHandler }: UserInfoHeightProps) => {
-  const { colors } = useTheme();
-
   const hasValue = value > 0;
   const updatedValue = hasValue ? `${value}${ACTIVATION_HEIGHT_VALUES.unit}` : '---';
 
@@ -38,20 +35,17 @@ const UserInfoHeight = ({ value, valueHandler }: UserInfoHeightProps) => {
   };
 
   return (
-    <div
-      className="w-full h-10 rounded-xl flex items-center justify-between px-3"
-      style={{ backgroundColor: colors.Surface_SurfaceVariant }}
-    >
+    <div className="w-full h-10 rounded-xl flex items-center justify-between px-3 bg-impo_Surface_SurfaceVariant">
       <div className="w-6 h-6 flex items-center justify-center" onClick={() => heightValueHandler(false)}>
-        <MinusIcon style={{ width: '16px', height: 'auto', stroke: colors.Surface_Outline }} />
+        <MinusIcon className="stroke-impo_Surface_Outline" style={{ width: '16px', height: 'auto' }} />
       </div>
 
-      <Typography scale="Body" size="Large" color="Neutral_OnBackground">
+      <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
         {updatedValue}
-      </Typography>
+      </Dark_Typography>
 
       <div className="w-6 h-6 flex items-center justify-center" onClick={() => heightValueHandler(true)}>
-        <PlusIcon style={{ width: '16px', height: 'auto', stroke: colors.Surface_Outline }} />
+        <PlusIcon className="stroke-impo_Surface_Outline" style={{ width: '16px', height: 'auto' }} />
       </div>
     </div>
   );

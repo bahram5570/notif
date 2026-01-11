@@ -2,10 +2,9 @@
 
 import { Fragment } from 'react';
 
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { ChildTypeEnum } from '@constants/activation.constants';
-import useTheme from '@hooks/useTheme';
 
 import BreastfeedingSettingInputGenerator from './BreastfeedingSettingInputGenerator';
 import BreastfeedingSettingModal from './BreastfeedingSettingModal';
@@ -14,7 +13,6 @@ import useSubmit from './__hooks__/useSubmit';
 import { BREASTFEEDING_SETTING_INPUT_GENERATOR_LIST } from './constants';
 
 const BreastfeedingSettingsPage = () => {
-  const { colors } = useTheme();
   const { changeValueHandler, checkIsModified, values, checkIsEmptyChildName } = useModifiedData();
 
   const { submitHandler, isLoading } = useSubmit(values);
@@ -22,7 +20,7 @@ const BreastfeedingSettingsPage = () => {
   return (
     <WomenPageLayout
       rightElement="BackButton"
-      className="bg-impo_Surface_SurfaceVariant"
+      className="bg-impo_Neutral_Surface"
       rightElementScript="ویرایش اطلاعات زایمان"
     >
       <div className="flex relative z-0 flex-col items-center gap-6 pb-6 ">
@@ -44,18 +42,14 @@ const BreastfeedingSettingsPage = () => {
         </div>
 
         <div className="flex flex-col justify-center items-center mt-auto">
-          <Button
-            size="medium"
-            variant="fill"
-            color="primary"
-            fullWidth={false}
+          <Dark_Button
             className="w-2/4"
             isLoading={isLoading}
             onClick={submitHandler}
             isDisable={!checkIsModified() || checkIsEmptyChildName()}
           >
             ویرایش
-          </Button>
+          </Dark_Button>
         </div>
       </div>
 

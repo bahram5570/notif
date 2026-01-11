@@ -30,7 +30,7 @@ const WheelPickerCellGenerator = ({
 
   return (
     <p
-      className="duration-200 pointer-events-none"
+      className={`duration-200 pointer-events-none  ${isSelectedItem && '!text-impo_Neutral_OnBackground'}`}
       style={{ ...typography.Title.Medium, scale, color: colorFinder() }}
       {...addIdAttrs(isSelectedItem ? `wheelPickerCell_${title}` : '')}
     >

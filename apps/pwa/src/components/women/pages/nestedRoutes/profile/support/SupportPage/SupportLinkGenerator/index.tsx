@@ -1,15 +1,13 @@
 import CalendarArrow from '@assets/icons/calendarArrow.svg';
 
+import Dark_Typography from '@components/ui/Dark_Typography';
 import LinkedContent from '@components/ui/LinkedContent';
-import Typography from '@components/ui/Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 
 import { SupportLinkGeneratorType } from '../type';
 import useGetDataSupport from './__hooks__/useGetDataSupport';
 
 const SupportLinkGenerator = (props: SupportLinkGeneratorType) => {
-  const { colors } = useTheme();
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { supportPhone } = useGetDataSupport();
 
@@ -17,21 +15,21 @@ const SupportLinkGenerator = (props: SupportLinkGeneratorType) => {
     <>
       {props.typeLink === 'external' && (
         <a
-          className=" p-4  rounded-lg h-24"
+          className=" p-4  rounded-lg h-24 bg-impo_Neutral_Background"
           href={`tel:${supportPhone}`}
           onClick={() => pageNavigationHandler({ id: 'SupportLinkGenerator', showProgressBar: true })}
-          style={{ backgroundColor: colors.White }}
         >
           <div className="flex flex-col items-end gap-2">
-            <Typography scale="Lable" size="MediumProminet" color="PrimaryWoman_Primary">
+            <Dark_Typography fontSize="Lable_MediumProminet" className="text-impo_Primary_Primary">
               {props.title}
-            </Typography>
+            </Dark_Typography>
 
             <div className="flex flex-row-reverse items-center justify-between w-full">
-              <Typography scale="Body" size="Medium" color="Surface_Outline">
+              <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_Outline">
                 {props.discription}
-              </Typography>
-              <CalendarArrow style={{ stroke: colors.Surface_Outline }} className="w-4 h-4" />
+              </Dark_Typography>
+
+              <CalendarArrow className="w-4 h-4 stroke-impo_Surface_Outline" />
             </div>
           </div>
         </a>

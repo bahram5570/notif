@@ -1,30 +1,26 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import FeedbackModal from '@components/women/FeedbackModal';
-import useTheme from '@hooks/useTheme';
 
 import RoutinDietsGenerator from './RoutinDietsGenerator';
 import useFeedback from './RoutinDietsGenerator/RoutinDietsCheckbox/__hooks__/useFeedback';
 import { RoutinDietsProps } from './types';
 
 const RoutinDiets = ({ name, items, compeletItemType, programId }: RoutinDietsProps) => {
-  const { colors } = useTheme();
   const { isLoading: feedbackLoading, rateHandler } = useFeedback({ programId });
 
   return (
     <>
       <div className="mt-7">
-        <Typography scale="Lable" size="Large" className="pb-3 ml-auto">
+        <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground pb-3 ml-auto">
           {name}
-        </Typography>
+        </Dark_Typography>
 
         {items.map((item, index) => {
           const lastItem = index === items.length - 1;
 
           return (
             <div key={item.id}>
-              {index > 0 && (
-                <div className="w-full h-[1px] my-3" style={{ backgroundColor: colors.Surface_SurfaceVariant }} />
-              )}
+              {index > 0 && <div className="w-full h-[1px] my-3 bg-impo_Surface_SurfaceVariant" />}
 
               <RoutinDietsGenerator
                 item={item}

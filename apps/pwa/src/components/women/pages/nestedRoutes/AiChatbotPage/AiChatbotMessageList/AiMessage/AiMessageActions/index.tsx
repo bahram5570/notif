@@ -4,15 +4,12 @@ import DislikeIcon from '@assets/icons/Dislike.svg';
 import LikeIcon from '@assets/icons/Like-1.svg';
 import LikeFillIcon from '@assets/icons/Like-fill.svg';
 
-import useTheme from '@hooks/useTheme';
-
 import useCopy from './__hooks__/useCopy';
 import useDisLikeMessage from './__hooks__/useDisLikeMessage';
 import useLikeMessage from './__hooks__/useLikeMessage';
 import { AiMessageActionsPropsType } from './type';
 
 const AiMessageActions = (props: AiMessageActionsPropsType) => {
-  const { colors } = useTheme();
   const { copyToClipboard } = useCopy();
   const { likeMessageHandler } = useLikeMessage({ messageId: props.messageId });
   const { disLikeMessageHandler } = useDisLikeMessage(props.messageId);
@@ -32,18 +29,18 @@ const AiMessageActions = (props: AiMessageActionsPropsType) => {
   return (
     <div className="flex  flex-row-reverse justify-end gap-4 ">
       {props.like ? (
-        <LikeFillIcon className="w-[22px] h-[22px]" style={{ fill: colors.Grey_900 }} onClick={onLikeClick} />
+        <LikeFillIcon className="w-[22px] h-[22px] fill-impo_Surface_OnSurfaceVariant" onClick={onLikeClick} />
       ) : (
-        <LikeIcon className="w-[22px] h-[22px]" style={{ fill: colors.Grey_900 }} onClick={onLikeClick} />
+        <LikeIcon className="w-[22px] h-[22px] fill-impo_Surface_OnSurfaceVariant" onClick={onLikeClick} />
       )}
 
       {props.dislike ? (
-        <DislikeFillIcon className="w-[22px] h-[22px]" style={{ fill: colors.Grey_900 }} onClick={onDisLikeClick} />
+        <DislikeFillIcon className="w-[22px] h-[22px] fill-impo_Surface_OnSurfaceVariant" onClick={onDisLikeClick} />
       ) : (
-        <DislikeIcon className="w-[22px] h-[22px]" style={{ fill: colors.Grey_900 }} onClick={onDisLikeClick} />
+        <DislikeIcon className="w-[22px] h-[22px] fill-impo_Surface_OnSurfaceVariant" onClick={onDisLikeClick} />
       )}
 
-      <CopyIcon className="w-5 h-5" style={{ fill: colors.Grey_900 }} onClick={onCopyClick} />
+      <CopyIcon className="w-5 h-5 fill-impo_Surface_OnSurfaceVariant" onClick={onCopyClick} />
     </div>
   );
 };

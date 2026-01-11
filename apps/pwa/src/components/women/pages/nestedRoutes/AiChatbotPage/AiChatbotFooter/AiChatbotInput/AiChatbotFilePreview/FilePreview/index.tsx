@@ -4,13 +4,10 @@ import CancelIcon from '@assets/icons/cancel.svg';
 import style from './styles.module.css';
 
 import CustomImage from '@components/ui/CustomImage';
-import useTheme from '@hooks/useTheme';
 
 import { FilePreviewPropsType } from './type';
 
 const FilePreview = (props: FilePreviewPropsType) => {
-  const { colors } = useTheme();
-
   const onRemoveHandler = () => {
     if (props.url) {
       props.removeFileHandler(props.url);
@@ -35,8 +32,7 @@ const FilePreview = (props: FilePreviewPropsType) => {
       {props.error && (
         <div className=" absolute top-0  left-0 right-0 bottom-0 w-full h-full  flex justify-center items-center z-30">
           <div
-            className="w-8 absolute  h-8 flex flex-col justify-center items-center rounded-full"
-            style={{ backgroundColor: colors.Surface_OutlineVariant }}
+            className="w-8 absolute  h-8 flex flex-col justify-center items-center rounded-full bg-impo_Surface_OutlineVariant"
             onClick={props.retryUploadHandler}
           >
             <RefreshIcon />
@@ -46,12 +42,9 @@ const FilePreview = (props: FilePreviewPropsType) => {
 
       <div
         onClick={onRemoveHandler}
-        className="w-6 h-6 absolute right-0 m-2 flex justify-center items-center rounded-full z-30"
-        style={{
-          backgroundColor: colors.Neutral_Surface,
-        }}
+        className="w-6 h-6 absolute right-0 m-2 flex justify-center items-center rounded-full z-30 bg-impo_Neutral_Surface"
       >
-        <CancelIcon className="w-4 h-auto" style={{ stroke: colors.Neutral_OnBackground }} />
+        <CancelIcon className="w-4 h-auto stroke-impo_Neutral_OnBackground" />
       </div>
 
       <CustomImage

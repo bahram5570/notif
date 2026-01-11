@@ -1,19 +1,17 @@
 import PlusIcon from '@assets/icons/plus.svg';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Spinner from '@components/ui/Spinner';
-import Typography from '@components/ui/Typography';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useFileUpload from '@hooks/useFileUpload';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import { EmptyStatePropsType } from './type';
 
 const EmptyState = ({ valuesHandler }: EmptyStatePropsType) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { colors } = useTheme();
 
   const { uploadImageLoading } = useFileUpload({
     onSuccess: (v: string) => valuesHandler({ name: 'fileName', value: v }),
@@ -27,15 +25,15 @@ const EmptyState = ({ valuesHandler }: EmptyStatePropsType) => {
           pageNavigationHandler({ showProgressBar: false, id: 'supportUploadChat' }));
       }}
     >
-      {uploadImageLoading && <Spinner color="primary" width={20} />}
+      {uploadImageLoading && <Dark_Spinner size={20} />}
 
       {!uploadImageLoading && (
         <>
-          <Typography scale="Lable" size="Medium" className="pointer-events-none">
+          <Dark_Typography fontSize="Lable_Medium" className="pointer-events-none text-impo_Neutral_OnBackground">
             از اینجا میتونی عکس یا فایل اضافه کنی
-          </Typography>
+          </Dark_Typography>
 
-          <PlusIcon className="w-4 h-4  pointer-events-none" style={{ stroke: colors.Black }} />
+          <PlusIcon className="w-4 h-4  pointer-events-none stroke-impo_Neutral_OnBackground" />
         </>
       )}
     </div>

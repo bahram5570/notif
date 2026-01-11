@@ -20,10 +20,10 @@ const FeedbackStars = ({ rate, rateHandler }: FeedbackStarsPropsType) => {
 
       {rate === 0 && (
         <div className="flex justify-between w-[230px]">
-          <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+          <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
             {RATING_LIST[0].script}
           </Dark_Typography>
-          <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+          <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
             {RATING_LIST[4].script}
           </Dark_Typography>
         </div>
@@ -31,7 +31,7 @@ const FeedbackStars = ({ rate, rateHandler }: FeedbackStarsPropsType) => {
 
       {rate > 0 && (
         <div className="flex justify-center w-[230px]">
-          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+          <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Lable_Large">
             {RATING_LIST[rate - 1].script}
           </Dark_Typography>
         </div>

@@ -10,7 +10,7 @@ const SupportPage = () => {
     <WomenPageLayout
       rightElement="BackButton"
       rightElementScript="پشتیبانی"
-      className="flex flex-col gap-4 px-4 bg-impo_Grey_50"
+      className="flex flex-col gap-4 px-4 bg-impo_Neutral_Surface"
     >
       {SUPPORT_LINK_LIST.map((link, index) => {
         return <SupportLinkGenerator {...link} key={index} />;

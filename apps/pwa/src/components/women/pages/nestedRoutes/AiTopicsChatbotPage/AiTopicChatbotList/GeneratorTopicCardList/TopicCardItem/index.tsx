@@ -1,8 +1,8 @@
 import { textShorter } from '@utils/scripts';
 
-import Button from '@components/ui/Button';
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { TopicCardItemPropsType } from './type';
 
@@ -12,26 +12,26 @@ const TopicCardItem = (props: TopicCardItemPropsType) => {
   };
 
   return (
-    <div className="glass-card !bg-white/40 shadow-sm rounded-3xl p-4 flex flex-col h-full gap-3 relative">
+    <div className="glass-card !bg-white/30 dark:!bg-white/5 shadow-sm rounded-3xl p-4 flex flex-col h-full gap-3 relative">
       <div className="flex flex-col items-end gap-2">
         <div className="flex justify-start items-start w-full">
           <CustomImage src={props.icon} height={40} width={40} />
         </div>
         <div className="flex flex-col items-end gap-3">
-          <Typography scale="Lable" size="Large">
+          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
             {textShorter(props.title, 35)}
-          </Typography>
-          <Typography scale="Body" size="Small">
+          </Dark_Typography>
+          <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
             {textShorter(props.description, 80)}
-          </Typography>
+          </Dark_Typography>
         </div>
       </div>
       <div className="mt-auto">
-        <Button variant="fill" size="medium" color="primary" fullWidth onClick={onClick}>
-          <Typography scale="Lable" size="SmallProminet" color="White">
+        <Dark_Button onClick={onClick}>
+          <Dark_Typography fontSize="Lable_SmallProminet" className="text-impo_White">
             {props.btnLabel}
-          </Typography>
-        </Button>
+          </Dark_Typography>
+        </Dark_Button>
       </div>
     </div>
   );

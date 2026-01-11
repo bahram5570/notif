@@ -1,5 +1,6 @@
 'use client';
 
+import Dark_Typography from '@components/ui/Dark_Typography';
 import Typography from '@components/ui/Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
@@ -27,6 +28,7 @@ const ProfilePage = () => {
       rightElementScript="صفحه قبل"
       paddingBottom={0}
       paddingTop={0}
+      className="bg-impo_Neutral_Background"
     >
       <div className="flex flex-col min-h-[100dvh] gap-6 pb-6" style={{ paddingTop: HEADER_HEIGHT }}>
         {Loading && <ProfileSkeleton />}
@@ -46,9 +48,9 @@ const ProfilePage = () => {
         <div className="flex flex-col justify-center items-center mt-auto">
           <LogOut />
 
-          <Typography scale="Body" size="Small" toEnglishNumber={true}>
+          <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Body_Small" numbersMode="english">
             {APP_VERSION || ''}
-          </Typography>
+          </Dark_Typography>
         </div>
       </div>
 

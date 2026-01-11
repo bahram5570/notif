@@ -4,8 +4,8 @@ import PregnancyIcon from '@assets/icons/pregnancy.svg';
 import { toGregorianData, toJalaliData } from '@utils/dates';
 
 import DateModule from '@components/activation/DateModule';
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
 import useDateIntervals from '@providers/__activation__/ActivationProvider/__hooks__/useDateIntervals';
@@ -56,9 +56,9 @@ const ChildBirthDate = ({ changeValueHandler, onCloseModal, childBirthDate }: Ch
       <div className="flex flex-col gap-2 justify-center items-center">
         <PregnancyIcon className="w-9 h-9" />
 
-        <Typography scale="Title" size="Small">
+        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           تاریخ زایمان
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <DateModule
@@ -68,9 +68,7 @@ const ChildBirthDate = ({ changeValueHandler, onCloseModal, childBirthDate }: Ch
         startDate={pregnancyPeriodStart}
       />
 
-      <Button variant="fill" size="medium" color="primary" onClick={applyHandler}>
-        ذخیره
-      </Button>
+      <Dark_Button onClick={applyHandler}>ذخیره</Dark_Button>
     </>
   );
 };

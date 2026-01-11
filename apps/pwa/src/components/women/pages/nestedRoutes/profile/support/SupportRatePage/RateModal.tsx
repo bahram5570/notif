@@ -1,6 +1,6 @@
-import Button from '@components/ui/Button';
 import CustomModal from '@components/ui/CustomModal';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import useSubmit from './__hooks__/useSubmit';
 import { RateModalPropsType } from './type';
@@ -14,22 +14,15 @@ const RateModal = ({ rate, rateDescription }: RateModalPropsType) => {
   return (
     <CustomModal>
       <div className="flex flex-col gap-4 p-4 justify-center items-center max-w-sm">
-        <Typography scale="Title" size="Medium" color="Success_Success">
+        <Dark_Typography fontSize="Title_Medium" className="text-impo_Success_Success">
           نظر شما ثبت شد
-        </Typography>
-        <Typography scale="Body" size="Medium" color="Neutral_OnSurface" textAlign="center">
+        </Dark_Typography>
+        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnSurface text-center">
           بابت ثبت نظرت ازت ممنونیم، کمک بزرگی به تیم ایمپو برای بهبود اپلیکیشن کردی
-        </Typography>
-        <Button
-          size="medium"
-          variant="fill"
-          color="primary"
-          className="mt-auto"
-          onClick={onClickHandler}
-          isLoading={isLoading}
-        >
+        </Dark_Typography>
+        <Dark_Button className="mt-auto" onClick={onClickHandler} isLoading={isLoading} fontSize="Lable_Large">
           ثبت نظر
-        </Button>
+        </Dark_Button>
       </div>
     </CustomModal>
   );

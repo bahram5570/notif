@@ -1,22 +1,12 @@
-import useTheme from '@hooks/useTheme';
-
 import EmptyState from './EmptyState';
 import HasFile from './HasFile';
 import { FileInputProps } from './type';
 
 const FileInput = ({ fileName, valuesHandler }: FileInputProps) => {
-  const { colors } = useTheme();
-
   return (
     <div className="flex justify-center items-center w-full">
       <div
-        className={`px-5 w-full ${fileName ? 'rounded-lg' : 'rounded-full'} `}
-        style={{
-          border: !fileName
-            ? `1px solid ${colors.Surface_OutlineVariant}`
-            : `1px solid ${colors.Surface_SurfaceVariant}`,
-          background: fileName ? colors.Surface_SurfaceVariant : colors.White,
-        }}
+        className={`px-5 w-full border  ${fileName ? 'rounded-lg bg-impo_Surface_SurfaceVariant border-impo_Surface_SurfaceVariant' : 'rounded-full bg-impo_Neutral_Background border-impo_Surface_OutlineVariant'} `}
       >
         {fileName === '' && <EmptyState valuesHandler={valuesHandler} />}
 

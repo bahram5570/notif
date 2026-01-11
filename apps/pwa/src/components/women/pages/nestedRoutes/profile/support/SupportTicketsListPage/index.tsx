@@ -15,7 +15,7 @@ const SupportTicketsListPage = () => {
     <>
       <WomenPageLayout
         rightElement="BackButton"
-        className="bg-impo_Grey_50"
+        className="bg-impo_Neutral_Surface"
         rightElementScript="پشتیبانی"
         leftElement2="ProfileSupportTicket"
         paddingTop={data && data.url ? HEADER_HEIGHT : 0}

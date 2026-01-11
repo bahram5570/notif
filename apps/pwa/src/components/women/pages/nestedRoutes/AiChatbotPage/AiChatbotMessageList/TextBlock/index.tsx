@@ -21,7 +21,7 @@ const TextBlock = (props: TextBlockProps) => {
 
   return (
     <p
-      className={`${props.isAnimated ? 'opacity-0 animate-fade-in' : ''} ${props.className}`}
+      className={`${props.isAnimated ? 'opacity-0 animate-fade-in' : ''} ${props.className} !text-impo_Neutral_OnBackground `}
       style={{
         animationDelay: `${props.animationDelay}s`,
         whiteSpace: 'pre-wrap',
