@@ -2,13 +2,11 @@
 
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import QuestionCheckupItem from './QuestionCheckupItem';
 import { ItemType } from './QuestionCheckupItem/type';
 
 const CheckupQuestionListContainer = () => {
-  const { colors } = useTheme();
   const { getQueryParams } = useQueryParamsHandler();
   const questionItems = getQueryParams('items');
   const questionTitle = getQueryParams('title');
@@ -18,11 +16,11 @@ const CheckupQuestionListContainer = () => {
     <WomenPageLayout
       rightElement="BackButton"
       rightElementScript={questionTitle || ''}
-      className="px-3 bg-impo_Surface_SurfaceVariant"
+      className="px-3 bg-impo_Neutral_Surface"
     >
-      <div style={{ background: colors.Neutral_Background }} className="rounded-lg divide-y-[1px] px-3">
+      <div className="rounded-lg  px-3 bg-impo_Neutral_Background">
         {questionCheckupItemList.map((item, index) => {
-          return <QuestionCheckupItem key={index} {...item} />;
+          return <QuestionCheckupItem key={index} {...item} lastIndex={questionCheckupItemList.length === index} />;
         })}
       </div>
     </WomenPageLayout>

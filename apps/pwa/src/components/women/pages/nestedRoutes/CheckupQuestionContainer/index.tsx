@@ -29,7 +29,7 @@ const CheckupQuestionContainer = () => {
       paddingTop={0}
       rightElement="BackButton"
       rightElementScript={pregnancyTitle || ''}
-      className="px-4 bg-impo_Surface_SurfaceVariant"
+      className="px-4 bg-impo_Neutral_Surface"
     >
       {isLoading && <CheckupQuestionContainerSkeleton />}
 

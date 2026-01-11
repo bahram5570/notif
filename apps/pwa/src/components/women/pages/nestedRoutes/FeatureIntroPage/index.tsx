@@ -2,19 +2,17 @@
 
 import Spinner from '@components/ui/Spinner';
 import useFeatureIntro from '@hooks/__featureIntro__/useFeatureIntro';
-import useTheme from '@hooks/useTheme';
 
 import FeatureIntroPageGenerator from './FeatureIntroPageGenerator';
 import FeatureIntroPageHeader from './FeatureIntroPageHeader';
 
 const FeatureIntroPage = () => {
-  const { colors } = useTheme();
   const { currentStep, goToNext, isLoading, totalPages, data } = useFeatureIntro();
 
   const IsLastItem = data ? currentStep === data.pages.length - 1 : false;
 
   return (
-    <div className="w-full min-h-[100dvh] " style={{ backgroundColor: colors.Surface_SurfaceVariant }}>
+    <div className="w-full min-h-[100dvh] bg-impo_Neutral_Surface">
       {isLoading && (
         <div className="w-full h-dvh flex justify-center items-center">
           <Spinner color="primary" width={50} borderWidth={5} />

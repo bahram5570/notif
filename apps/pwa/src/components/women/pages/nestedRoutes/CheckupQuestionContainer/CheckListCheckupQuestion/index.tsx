@@ -1,4 +1,4 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import CheckupQuestionContainer from '../CheckupQuestionContainer';
 import { CheckListCheckupQuestionPropsType } from './type';
@@ -12,17 +12,17 @@ const CheckListCheckupQuestion = ({ checkList }: CheckListCheckupQuestionPropsTy
     <CheckupQuestionContainer>
       <div className=" px-4 py-2 w-full">
         <div className="flex flex-col justify-end items-end w-full">
-          <Typography scale="Lable" size="Large" className="py-2 border-b-[1px] w-full">
+          <Dark_Typography fontSize="Lable_Large" className="py-2 border-b w-full text-impo_Neutral_OnBackground">
             {checkList.title}
-          </Typography>
+          </Dark_Typography>
           <div>
-            <ul className="list-disc px-5 py-2" style={{ direction: 'rtl' }}>
+            <ul className="list-disc text-impo_Neutral_OnBackground px-5 py-2" style={{ direction: 'rtl' }}>
               {checkList.items.map((item, index) => {
                 return (
                   <li key={index} className="t">
-                    <Typography scale="Body" size="Medium">
+                    <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Body_Medium">
                       {item}
-                    </Typography>
+                    </Dark_Typography>
                   </li>
                 );
               })}

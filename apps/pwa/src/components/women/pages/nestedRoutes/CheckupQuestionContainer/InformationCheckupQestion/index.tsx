@@ -1,4 +1,4 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import CheckupQuestionContainer from '../CheckupQuestionContainer';
 import ReadMoreText from './ReadMoreText';
@@ -13,9 +13,9 @@ const InformationCheckupQestion = ({ information }: InformationCheckupQestionPro
     <CheckupQuestionContainer>
       <div className=" px-4 py-2">
         <div className="flex flex-col justify-end items-end  divide-y-[1px]">
-          <Typography scale="Lable" size="Large" className="py-2">
+          <Dark_Typography fontSize="Lable_Large" className="py-2 text-impo_Neutral_OnBackground">
             {information.title}
-          </Typography>
+          </Dark_Typography>
 
           <ReadMoreText maxLines={4} text={information.text || ''} />
         </div>

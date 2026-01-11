@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import Dark_Typography from '@components/ui/Dark_Typography';
 import Typography from '@components/ui/Typography';
 
 import RadioButtonGenerator from './RadioButtonGenerator';
@@ -24,9 +25,9 @@ const QuestionGenerator = ({ options, text, handleSelectionChange }: QuestionGen
 
   return (
     <div className="flex flex-col gap-2">
-      <Typography scale="Body" size="Medium" className="w-full mt-2">
+      <Dark_Typography className="w-full mt-2 text-impo_Neutral_OnBackground" fontSize="Body_Medium">
         {text}
-      </Typography>
+      </Dark_Typography>
       <div className="flex flex-col gap-2 w-full">
         {optionList.map((option, index) => {
           return (

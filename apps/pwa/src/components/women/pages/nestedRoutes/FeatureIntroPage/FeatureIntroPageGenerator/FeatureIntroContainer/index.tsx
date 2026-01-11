@@ -1,16 +1,16 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { FeatureIntroContainerPropsType } from './type';
 
 const FeatureIntroContainer = ({ children, description, title }: FeatureIntroContainerPropsType) => {
   return (
     <div className="flex flex-col justify-center items-center gap-2 px-3 relative mt-12">
-      <Typography scale="Headline" size="Medium">
+      <Dark_Typography className=" text-impo_Neutral_OnBackground" fontSize="Headline_Medium">
         {title}
-      </Typography>
-      <Typography scale="Body" size="Medium" textAlign="center" className="px-3">
+      </Dark_Typography>
+      <Dark_Typography fontSize="Body_Medium" className="px-3 text-impo_Neutral_OnBackground text-center">
         {description}
-      </Typography>
+      </Dark_Typography>
 
       {children}
     </div>

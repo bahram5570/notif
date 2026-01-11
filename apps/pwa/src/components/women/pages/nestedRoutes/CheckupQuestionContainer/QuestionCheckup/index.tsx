@@ -1,9 +1,8 @@
 import { useState } from 'react';
 
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
-import useTheme from '@hooks/useTheme';
 
 import QuestionGenerator from './QuestionGenerator';
 import useSubmit from './__hooks__/useSubmit';
@@ -11,7 +10,6 @@ import { QuestionCheckupPropsType } from './type';
 
 const QuestionCheckup = ({ question }: QuestionCheckupPropsType) => {
   const { callEvent } = useAnalytics();
-  const { colors } = useTheme();
   const { isLoading, submitHandler } = useSubmit();
   const [selectedValueList, setSelectedValueList] = useState<{ [key: string]: number }>({});
 
@@ -34,12 +32,12 @@ const QuestionCheckup = ({ question }: QuestionCheckupPropsType) => {
   const checkEmptySelectedValueList = Object.keys(selectedValueList).length === 0;
   return (
     <>
-      <div style={{ background: colors.White }} className="rounded-xl w-full flex flex-row relative ">
+      <div className="rounded-xl w-full flex flex-row relative bg-impo_Neutral_Background">
         <div className="w-full p-3">
           <div className="flex flex-col justify-end items-end  divide-y-[1px]">
-            <Typography scale="Lable" size="Large" className="py-2">
+            <Dark_Typography fontSize="Lable_Large" className="py-2 text-impo_Neutral_OnBackground">
               {question.title}
-            </Typography>
+            </Dark_Typography>
             <div className="w-full">
               {question.questions.map((question, index) => {
                 return (
@@ -56,17 +54,15 @@ const QuestionCheckup = ({ question }: QuestionCheckupPropsType) => {
           </div>
         </div>
       </div>
-      <Button
-        size="medium"
-        variant="fill"
-        color="primary"
+      <Dark_Button
         onClick={clickHandler}
         className="mt-auto"
         isLoading={isLoading}
         isDisable={checkEmptySelectedValueList}
+        fontSize="Lable_Large"
       >
         ثبت اطلاعات
-      </Button>
+      </Dark_Button>
     </>
   );
 };
