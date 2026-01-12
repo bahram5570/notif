@@ -13,7 +13,7 @@ const BloodSugerList = () => {
     <>
       <WomenPageLayout rightElement="BackButton" rightElementScript="تست دیابت بارداری">
         <>
-          {!isLoading && <ListSkeleton />}
+          {isLoading && <ListSkeleton />}
           {!isLoading && <BloodSugerListContainer bloodSugerList={initailBloodSugerList} />}
         </>
       </WomenPageLayout>
