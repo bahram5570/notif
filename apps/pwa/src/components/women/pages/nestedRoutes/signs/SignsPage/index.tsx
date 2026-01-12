@@ -15,8 +15,8 @@ const SignsPage = () => {
       paddingTop={0}
       rightElement="BackButton"
       rightElementScript="نشانه های امروز"
-      className="bg-impo_Surface_SurfaceVariant"
-      headerClassName="bg-impo_Surface_SurfaceVariant"
+      className="!bg-impo_Neutral_Surface"
+      headerClassName="!bg-impo_Neutral_Surface"
     >
       <>
         {isLoading && !infoList && <SignsSkeleton />}

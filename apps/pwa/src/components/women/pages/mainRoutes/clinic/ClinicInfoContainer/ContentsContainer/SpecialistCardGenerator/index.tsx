@@ -50,7 +50,7 @@ const SpecialistCardGenerator = ({
   return (
     <div
       onClick={selectHandler}
-      className={`w-full p-2 rounded-xl ${isSelected ? 'bg-impo_Blue_100 dark:!bg-impo_Blue_50' : 'bg-impo_Surface_SurfaceVariant'}`}
+      className={`w-full p-2 rounded-xl ${isSelected ? 'bg-impo_Blue_100 dark:!bg-impo_Blue_800' : 'bg-impo_Neutral_Surface'}`}
     >
       <SpecialistInfoGenerator
         nezamNumber={nezamNumber}

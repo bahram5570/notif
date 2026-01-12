@@ -58,6 +58,10 @@ input[type='number'] {
   background-color: #353535;
 }
 
+.dark .swiper-pagination-bullet {
+  background-color: #ffff;
+}
+
 .scrollbar {
   padding-bottom: 10px;
 }

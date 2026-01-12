@@ -24,7 +24,7 @@ const WidgetPeriodCycleHistoryGuides = () => {
   ];
 
   return (
-    <div className="w-full rounded-lg py-3 mt-3 bg-impo_Surface_SurfaceVariant">
+    <div className="w-full rounded-lg py-3 mt-3 bg-impo_Neutral_Surface">
       <CustomSlider gap={12} sidePadding={8}>
         {list.map((item, index) => (
           <div className="flex items-center gap-1 min-w-fit" key={index}>

@@ -13,7 +13,7 @@ const SignsList = ({ signs }: SignsListProps) => {
         return (
           <div
             key={index}
-            className="w-14 h-14 min-w-14 min-h-14 border-[1px] border-impo_Neutral_Surface rounded-full overflow-hidden pointer-events-none"
+            className="w-14 h-14 min-w-14 min-h-14 border-[1px] border-impo_Neutral_Surface bg-impo_White rounded-full overflow-hidden pointer-events-none"
           >
             {icon}
           </div>

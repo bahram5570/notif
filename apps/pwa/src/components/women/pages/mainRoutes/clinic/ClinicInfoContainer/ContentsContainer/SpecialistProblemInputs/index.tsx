@@ -59,7 +59,7 @@ const SpecialistProblemInputs = ({ info, infoHelper, questionValuesHandler }: Sp
             value={toPersianNumbers(values.text)}
             style={{ direction: 'rtl', ...typographyFontStyles }}
             onChange={(e) => valuesHandler({ name: 'text', value: e.target.value })}
-            className="w-full max-h-[100px] rounded-xl text-right p-2 resize-none outline-none bg-impo_Neutral_Background text-impo_Neutral_OnBackground"
+            className="w-full max-h-[100px] rounded-xl text-right p-2 resize-none outline-none bg-impo_Neutral_Background text-impo_Neutral_OnBackground placeholder:text-impo_Surface_OutlineVariant"
           />
         </div>
 

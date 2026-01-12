@@ -19,7 +19,7 @@ const CalendarDraggingPanel = ({ selectedDate, calendarData }: CalendarDraggingP
       <div
         ref={ref}
         style={{ maxWidth: MAX_SCREEN_WIDTH, top: positionY }}
-        className="absolute left-0 right-0 bottom-0 mx-auto bg-impo_Surface_SurfaceVariant z-30"
+        className="absolute left-0 right-0 bottom-0 mx-auto bg-impo_Neutral_Surface z-30"
       >
         <div
           className="flex flex-col items-center gap-6 px-4 py-2"

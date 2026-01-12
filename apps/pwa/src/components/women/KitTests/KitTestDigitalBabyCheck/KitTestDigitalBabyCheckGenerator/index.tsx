@@ -1,4 +1,4 @@
-import CheckIcon from '@assets/icons/check.svg';
+import SelectedIcon from '@assets/icons/selectedTick.svg';
 
 import CustomImage from '@components/ui/CustomImage';
 import Dark_Typography from '@components/ui/Dark_Typography';
@@ -34,11 +34,7 @@ const KitTestDigitalBabyCheckGenerator = ({
                     `}
         />
 
-        {isSelected && (
-          <div className="absolute right-0 bottom-0 w-6 h-6 rounded-full bg-impo_White">
-            <CheckIcon />
-          </div>
-        )}
+        {isSelected && <SelectedIcon className="absolute right-0 bottom-0 w-6 h-6 " />}
 
         <CustomImage src={icon} width={48} />
       </div>

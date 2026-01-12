@@ -28,10 +28,10 @@ const NoteItem = ({ noteItem, isNoteListPage }: NoteItemPropsType) => {
                     py-4 
                     rounded-lg 
                     items-center
-                    ${isNoteListPage ? 'bg-impo_Neutral_Background' : 'bg-impo_Surface_SurfaceVariant'}
+                    ${isNoteListPage ? 'bg-impo_Neutral_Background' : 'bg-impo_Neutral_Surface'}
                   `}
       >
-        <div className="border-l-2 pl-2">
+        <div className="border-l-2 pl-2  border-l-impo_Surface_OutlineVariant">
           <CheckListIcon className="w-6 h-auto stroke-impo_Neutral_OnBackground" />
         </div>
 

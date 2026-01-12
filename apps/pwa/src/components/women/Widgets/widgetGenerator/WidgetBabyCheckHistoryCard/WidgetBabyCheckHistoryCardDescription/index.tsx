@@ -1,5 +1,7 @@
 import { Fragment } from 'react';
 
+import { toPersianNumbers } from '@utils/numbers';
+
 import CustomImage from '@components/ui/CustomImage';
 import useTheme from '@hooks/useTheme';
 
@@ -27,7 +29,7 @@ const WidgetBabyCheckHistoryCardDescription = ({
         }}
         className="text-impo_Neutral_OnBackground"
       >
-        {isPdfDownloading && description}
+        {isPdfDownloading && toPersianNumbers(description)}
 
         {!isPdfDownloading &&
           descriptionList.map((ch, index) => (

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { percentFinder } from '../__utils__';
 
+import Dark_Typography from '@components/ui/Dark_Typography';
 import Typography from '@components/ui/Typography';
 import useTheme from '@hooks/useTheme';
 
@@ -99,16 +100,15 @@ const WidgetPeriodReportCardLines = ({
 
       {/* // # X axis script */}
       <div
-        className="absolute left-0 flex flex-col items-center pt-2 pointer-events-none z-20"
-        style={{ backgroundColor: colors.White, top: rangesHeigth + rangeExtraSpace + 1 }}
+        className="absolute left-0 flex flex-col items-center pt-2 pointer-events-none z-20 bg-impo_Neutral_Background"
+        style={{ top: rangesHeigth + rangeExtraSpace + 1 }}
       >
-        <Typography size="Small" scale="Lable" color="Neutral_OnSurface">
+        <Dark_Typography fontSize="Lable_Small" className="text-impo_Neutral_OnSurface">
           تاریخ
-        </Typography>
-
-        <Typography size="Small" scale="Lable" color="Neutral_OnSurface">
+        </Dark_Typography>
+        <Dark_Typography fontSize="Lable_Small" className="text-impo_Neutral_OnSurface">
           شروع دوره
-        </Typography>
+        </Dark_Typography>
       </div>
     </>
   );

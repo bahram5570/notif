@@ -5,12 +5,12 @@ import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import { NoteTextareaPropsType } from './type';
 
-const NoteTextarea = ({ description, label, name, onchangeHandler, value }: NoteTextareaPropsType) => {
+const NoteTextarea = ({ description, label, name, onchangeHandler, value, isLastItem }: NoteTextareaPropsType) => {
   const { operatingSystem } = useOperatingSystem();
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Large', operatingSystem });
 
   return (
-    <div className="p-2 pt-3 flex flex-col gap-2">
+    <div className={`p-2 pt-3 flex flex-col gap-2  ${!isLastItem && 'border-b border-impo_Neutral_Surface'}`}>
       <div className="flex gap-1 flex-row-reverse ">
         <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
           {label}
@@ -29,7 +29,7 @@ const NoteTextarea = ({ description, label, name, onchangeHandler, value }: Note
         placeholder="اینجا بنویس"
         style={{ ...typographyFontStyles, direction: 'rtl' }}
         onChange={(e) => onchangeHandler(e.target.value, name)}
-        className="w-full max-h-[100px] text-impo_Neutral_OnBackground text-right bg-impo_Transparent resize-none outline-none"
+        className="w-full max-h-[100px] text-impo_Neutral_OnBackground text-right bg-impo_Transparent resize-none outline-none placeholder:text-impo_Surface_SurfaceVariant"
       />
     </div>
   );

@@ -45,7 +45,8 @@ const SignGenerator = ({ category, sign, initialIsSelected, onSelect, selectedDa
                       items-center 
                       border-[1px] 
                       rounded-full 
-                      ${isSelected ? 'border-impo_Primary_Primary' : 'border-impo_Neutral_Surface'}
+                      bg-impo_White
+                      ${isSelected ? 'border-impo_Primary_Primary' : 'border-impo_Grey_200 dark:border-impo_Grey_800'}
                     `}
         >
           <>{icon}</>

@@ -13,7 +13,7 @@ const SpecialistCommentsList = ({ commentsData }: SpecialistCommentsListProps) =
       </Dark_Typography>
 
       {commentsData.map((item, index) => (
-        <div className="w-full flex flex-col items-end p-4 rounded-xl bg-impo_Surface_SurfaceVariant" key={index}>
+        <div className="w-full flex flex-col items-end p-4 rounded-xl bg-impo_Neutral_Surface" key={index}>
           <div className="flex justify-between w-full pb-2">
             <div className="grid grid-cols-3">
               <Dark_Typography fontSize="Title_Small" className="text-impo_Surface_InverseSurface mx-auto">
@@ -34,7 +34,7 @@ const SpecialistCommentsList = ({ commentsData }: SpecialistCommentsListProps) =
             {item.descritpion}
           </Dark_Typography>
 
-          <div className="w-full h-[1px] mt-3 mb-1 bg-impo_Surface_OnSurfaceVariant" />
+          <div className="w-full h-[1px] mt-3 mb-1 bg-impo_Neutral_OnBackground opacity-20" />
 
           <SpecialistCommentsGenerator isPositive={true} scripts={item.positives} />
 

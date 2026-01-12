@@ -19,7 +19,7 @@ const Weight = ({ weight }: WeightPropsType) => {
 
   return (
     <div className=" rounded-2xl p-2 flex flex-col bg-impo_Neutral_Background">
-      <div className="w-full flex flex-row-reverse items-center justify-between h-fit p-2 border-b-[1px] border-b-impo_Surface_SurfaceVariant">
+      <div className="w-full flex flex-row-reverse items-center justify-between h-fit p-2 border-b-[1px] border-b-impo_Neutral_Surface">
         <div className="flex flex-col items-end gap-1">
           <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
             ویرایش وزن
@@ -30,7 +30,7 @@ const Weight = ({ weight }: WeightPropsType) => {
           </Dark_Typography>
         </div>
 
-        <div className=" w-12 h-12 bg-impo_Blue_50 flex justify-center items-center rounded-full">
+        <div className=" w-12 h-12 bg-impo_Blue_50 dark:bg-impo_Blue_900 flex justify-center items-center rounded-full">
           <WeightIcon className="w-6 h-auto" />
         </div>
       </div>
@@ -42,7 +42,7 @@ const Weight = ({ weight }: WeightPropsType) => {
 
         <div
           onClick={linkToHandler}
-          className="w-full rounded-xl h-10 flex flex-row-reverse justify-between p-3 items-center bg-impo_Surface_SurfaceVariant"
+          className="w-full rounded-xl h-10 flex flex-row-reverse justify-between p-3 items-center bg-impo_Neutral_Surface"
         >
           <div className="w-full">
             <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">

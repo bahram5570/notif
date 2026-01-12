@@ -21,7 +21,7 @@ const WidgetCycleDateCardFertility = (props: WidgetCycleDateCardFertilityProps) 
 
       {props.hasOvulation && (
         <div
-          className="absolute top-[2px] max-w-[20px] max-h-[20px] min-w-[20px] min-h-[20px] flex items-center justify-center border-[1px] rounded-full border-impo_White"
+          className="absolute top-[2px] max-w-[20px] max-h-[20px] min-w-[20px] min-h-[20px] flex items-center justify-center border-[1px] rounded-full  border-white/40"
           style={{
             // borderColor: `${colors.Neutral_Background}99`,
             right: `${props.ovulationDay * props.percentRatio}%`,

@@ -35,7 +35,7 @@ const useCalendarDayInfo = (day?: UseCalendarDayInfoProps) => {
     case DayTypeEnums.Breastfeeding:
       calendarDayInfo.dayColor = 'text-impo_Calendar_Breastfeeding_OnBackground';
       calendarDayInfo.birthIconColor = 'fill-impo_Calendar_Breastfeeding_OnBackground';
-      calendarDayInfo.dayTypeColor = 'text-impo_Calendar_Breastfeeding_OnBackground';
+      calendarDayInfo.dayTypeColor = 'text-impo_Blue_500 dark:text-impo_Blue_400';
       calendarDayInfo.backgroundColor = 'bg-impo_Calendar_Breastfeeding_Background1';
       break;
 
@@ -49,7 +49,7 @@ const useCalendarDayInfo = (day?: UseCalendarDayInfoProps) => {
     case DayTypeEnums.Pregnancy:
       calendarDayInfo.dayColor = 'text-impo_Calendar_Pregnancy_OnBackground';
       calendarDayInfo.birthIconColor = 'fill-impo_Calendar_Pregnancy_OnBackground';
-      calendarDayInfo.dayTypeColor = 'text-impo_Calendar_Pregnancy_OnBackground';
+      calendarDayInfo.dayTypeColor = 'text-impo_Orange_500 dark:text-impo_Orange_400';
       calendarDayInfo.backgroundColor = 'bg-impo_Calendar_Pregnancy_Background1';
       break;
 
@@ -63,35 +63,35 @@ const useCalendarDayInfo = (day?: UseCalendarDayInfoProps) => {
     case DayTypeEnums.Ovulation:
       calendarDayInfo.dayColor = 'text-impo_White';
       calendarDayInfo.birthIconColor = 'fill-impo_White';
-      calendarDayInfo.dayTypeColor = 'text-impo_Cyan_500';
+      calendarDayInfo.dayTypeColor = 'text-impo_Cyan_500 dark:text-impo_Cyan_400';
       calendarDayInfo.backgroundColor = 'bg-impo_Calendar_Fertility_Ovulation';
       break;
 
     case DayTypeEnums.Fertility:
       calendarDayInfo.dayColor = 'text-impo_Calendar_Fertility_OnBackground';
       calendarDayInfo.birthIconColor = 'fill-impo_Calendar_Fertility_OnBackground';
-      calendarDayInfo.dayTypeColor = 'text-impo_Cyan_500';
+      calendarDayInfo.dayTypeColor = 'text-impo_Cyan_500 dark:text-impo_Cyan_400';
       calendarDayInfo.backgroundColor = 'bg-impo_Calendar_Fertility_Background';
       break;
 
     case DayTypeEnums.Period:
       calendarDayInfo.dayColor = 'text-impo_Calendar_Period_OnBackground';
       calendarDayInfo.birthIconColor = 'fill-impo_Calendar_Period_OnBackground';
-      calendarDayInfo.dayTypeColor = 'text-impo_Red_500';
+      calendarDayInfo.dayTypeColor = 'text-impo_Pink_500';
       calendarDayInfo.backgroundColor = 'bg-impo_Calendar_Period_Background';
       break;
 
     case DayTypeEnums.Pms:
       calendarDayInfo.dayColor = 'text-impo_Calendar_PMS_OnBackground';
       calendarDayInfo.birthIconColor = 'fill-impo_Calendar_PMS_OnBackground';
-      calendarDayInfo.dayTypeColor = 'text-impo_Purple_500';
+      calendarDayInfo.dayTypeColor = 'text-impo_Purple_500 dark:text-impo_Purple_400';
       calendarDayInfo.backgroundColor = 'bg-impo_Calendar_PMS_Background';
       break;
 
     case DayTypeEnums.LatePeriod:
-      calendarDayInfo.dayColor = 'text-impo_Grey_800';
+      calendarDayInfo.dayColor = 'text-impo_Black';
       calendarDayInfo.birthIconColor = 'fill-impo_Grey_800';
-      calendarDayInfo.dayTypeColor = 'text-impo_Grey_800';
+      calendarDayInfo.dayTypeColor = 'text-impo_Grey_800 dark:text-impo_Grey_200 ';
       calendarDayInfo.backgroundColor = 'bg-impo_Grey_200';
       break;
 

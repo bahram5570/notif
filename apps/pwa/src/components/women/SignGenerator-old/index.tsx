@@ -32,10 +32,10 @@ const SignGenerator = ({ category, sign, initialIsSelected, onSelect }: SignGene
     <div className="cursor-pointer" onClick={clickHandler}>
       <div className="flex flex-col items-center gap-2 pointer-events-none ">
         <div
-          className={`relative flex justify-center items-center border-[1px] rounded-full ${isSelected ? 'border-impo_Primary_Primary' : 'border-impo_Neutral_Surface'}`}
+          className={`relative flex justify-center items-center border-[1px] rounded-full ${isSelected ? 'border-impo_Primary_Primary' : 'border-impo_Neutral_Surface'} bg-impo_White`}
           style={{
-            width: ICONS_WIDTH,
-            height: ICONS_WIDTH,
+            // width: ICONS_WIDTH,
+            // height: ICONS_WIDTH,
             minWidth: ICONS_WIDTH,
             minHeight: ICONS_WIDTH,
           }}

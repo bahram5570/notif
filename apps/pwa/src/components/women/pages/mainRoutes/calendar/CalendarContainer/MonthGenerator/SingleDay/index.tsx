@@ -28,7 +28,7 @@ const SingleDay = ({ isSelected, selectedDateHandler, day, dateType }: SingleDay
                   outline-1 
                   outline-offset-1 
                   ${backgroundColor}
-                  ${isSelected ? 'outline-impo_Neutral_OnSurface' : 'outline-impo_Transparent'}
+                  ${isSelected ? 'outline-impo_Neutral_OnSurface' : 'outline-impo_Transparent '}
                 `}
     >
       <HasSignDot day={day} isSelected={isSelected} />
