@@ -78,6 +78,7 @@ export const HEADER_LINKS_LIST: HEADER_LINKS_TYPES = [
       { title: 'سلامت آقایان', linkTo: '/category/hello-gentlemen' },
       { title: 'همدلی و رابطه عاطفی', linkTo: '/category/relationship' },
       { title: 'بیماری‌ها', linkTo: '/category/diseases' },
+      { title: 'خودمراقبتی', linkTo: '/category/selfcare' },
     ],
   },
   { title: 'کلینیک سلامت', linkTo: '/landing/clinic' },

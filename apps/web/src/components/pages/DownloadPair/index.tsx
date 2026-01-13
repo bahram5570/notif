@@ -1,5 +1,7 @@
 'use client';
 
+import DlPair from '@assets/images/dlpair.webp';
+
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
@@ -7,7 +9,6 @@ import useDownloadLinks from '@hooks/useDownloadLinks';
 
 const DownloadPairPage = () => {
   const { womanDirectApplcationalink, manDirectApplcationalink } = useDownloadLinks();
-  const IMAGEURL = '';
 
   return (
     <div className="w-full max-w-[500px] relative py-6 px-4 bg-gradient-to-b from-pink-100 to-white h-dvh dark:bg-none">
@@ -49,8 +50,8 @@ const DownloadPairPage = () => {
           </CustomTypography>
         </div>
       </div>
-      <div className="flex justify-center mt-5">
-        <CustomImage alt="mockup" src={IMAGEURL} />
+      <div className="flex justify-center mt-6">
+        <CustomImage alt="mockup" src={DlPair} className="w-64" />
       </div>
     </div>
   );
