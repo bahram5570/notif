@@ -23,7 +23,7 @@ const HomePageContainer = () => {
         <AppFeatures />
         <Scores title="امتیاز کاربران در اَپ‌استور" />
         <LandingArticles
-          showAllArticlesLinkTo="blogs"
+          showAllArticlesLinkTo="/blogs"
           url="support/article/articles/1/10/publishedFilter"
           title="دنبال بهترین و به‌روزترین مقالات برای حل مشکلات چرخه قاعدگیت هستی؟"
           subTitle="مقالات ایمپو از به‌روزترین و تخصصی‌ترین منابع و توسط متخصصین هر حوزه نوشته می‌شه و بهت کمک می‌کنه تا جواب سوالاتت رو در کوتاه‌ترین زمان پیدا کنی"

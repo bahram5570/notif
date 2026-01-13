@@ -148,7 +148,7 @@ export const handleBodyUpdate = async (body: string) => {
   });
 
   // # Styling scripts
-  $('p, span, section, li, h1, h2, h3, h4, h5, h6').each((_, element) => {
+  $('p, span, section,td, li, h1, h2, h3, h4, h5, h6').each((_, element) => {
     const el = $(element);
 
     // # Skip Cheerio styling for elements when `data-no-cheerio-styling` is present
