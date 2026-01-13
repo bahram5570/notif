@@ -23,7 +23,7 @@ const SympathyPage = () => {
         />
         <Scores title="امتیاز کاربران در اَپ‌استور" />
         <LandingArticles
-          showAllArticlesLinkTo="blogs"
+          showAllArticlesLinkTo="/blogs"
           url="support/article/articles/category/66237e86251126b65492b0c2/0/10"
           title="جدیدترین مقاله‌ها در مورد مسائل زوج‌ها و بهبود رابطه جنسی رو می‌تونی در این بخش مطالعه کنی"
           subTitle="مقالات ایمپو از به‌روزترین و تخصصی‌ترین منابع و توسط متخصصین هر حوزه نوشته می‌شه و بهت کمک می‌کنه تا جواب سوالاتت رو در کوتاه‌ترین زمان پیدا کنی"

@@ -5,7 +5,7 @@ import { ArticleIdSampleArticlesTypes } from './types';
 const ArticleIdSampleArticles = ({ categoryId, categoryTitle }: ArticleIdSampleArticlesTypes) => {
   return (
     <LandingArticles
-      showAllArticlesLinkTo="blogs"
+      showAllArticlesLinkTo="/blogs"
       url={`support/article/articles/category/${categoryId}/1/10`}
       title={`سایر مقالات دسته ${categoryTitle}`}
     />

@@ -24,7 +24,7 @@ const MenPage = () => {
         />
         <Scores title="امتیاز کاربران در اَپ‌استور" />
         <LandingArticles
-          showAllArticlesLinkTo="blogs"
+          showAllArticlesLinkTo="/blogs"
           url="support/article/articles/category/64e9a588bd64be4a71068877/0/10"
           title="جدیدترین مقاله‌ها در حوزه سلامتی روحی و جسمی آقایان رو می‌تونی در این بخش مطالعه کنی"
           subTitle="مقالات ایمپو از به‌روزترین و تخصصی‌ترین منابع و توسط متخصصین هر حوزه نوشته می‌شه و بهت کمک می‌کنه تا جواب سوالاتت رو در کوتاه‌ترین زمان پیدا کنی"

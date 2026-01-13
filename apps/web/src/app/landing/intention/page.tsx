@@ -38,7 +38,7 @@ const Intention = () => {
         />
         <Scores title="امتیاز کاربران در اَپ‌استور" />
         <LandingArticles
-          showAllArticlesLinkTo="blogs"
+          showAllArticlesLinkTo="/blogs"
           url="support/article/articles/category/64e9a587bd64be4a71068872/0/10"
           title="تصمیم گرفتی باردار بشی و دنبال منبعی موثق برای اقدام به بارداری می‌گردی؟"
           subTitle="مقالات ایمپو از به‌روزترین و تخصصی‌ترین منابع و توسط متخصصین هر حوزه نوشته می‌شه و بهت کمک می‌کنه تا جواب سوالاتت رو در کوتاه‌ترین زمان پیدا کنی"

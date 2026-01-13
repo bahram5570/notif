@@ -39,7 +39,7 @@ const Pregnancy = () => {
         />
         <Scores title="امتیاز کاربران در اپ استور به عنوان بهترین اپلیکیشن بارداری برای ایفون" />
         <LandingArticles
-          showAllArticlesLinkTo="blogs"
+          showAllArticlesLinkTo="/blogs"
           url="support/article/articles/category/64e9a587bd64be4a71068872/0/10"
           title="به‌دنبال مرجعی برای مراقبت‌های هفته به هفته و ماهانه در بارداری هستی؟"
           subTitle="مقالات ایمپو با استفاده از به‌روزترین و تخصصی ترین منابع و توسط متخصصین هر حوزه نوشته می‌شه و بهت کمک می‌کنه تا جواب سوالاتت رو در کوتاه‌ترین زمان پیدا کنی."
