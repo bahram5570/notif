@@ -1,7 +1,9 @@
 import { Fragment } from 'react';
 
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+
 import CustomImage from '@components/ui/CustomImage';
-import useTheme from '@hooks/useTheme';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import { WidgetOvulationHistoryCardDescriptionDescriptionProps } from './types';
 
@@ -10,18 +12,20 @@ const WidgetOvulationHistoryCardDescription = ({
   description,
   icon,
 }: WidgetOvulationHistoryCardDescriptionDescriptionProps) => {
-  const { typography } = useTheme();
-  const fontStyle = typography.Body.Small;
+  const { operatingSystem } = useOperatingSystem();
+  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Small', operatingSystem });
 
   const descriptionList = description.split('،');
 
   return (
     <div className="w-full">
-      {!isPdfDownloading && <CustomImage src={icon} width={56} height={56} className="float-start mr-6 -mt-5" />}
+      {!isPdfDownloading && (
+        <CustomImage src={icon} width={56} height={56} className="float-start mr-6 -mt-[14px] !overflow-visible" />
+      )}
 
       <p
         style={{
-          ...fontStyle,
+          ...typographyFontStyles,
           direction: 'rtl',
           textAlign: 'justify',
         }}

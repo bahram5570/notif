@@ -14,12 +14,10 @@ import useGetData from './__hooks__/useGetData';
 
 const HealthReportContainer = () => {
   useAnalytics({ mountTimer_eventName: 'HealthReportSpentTime' });
-  const { colors } = useTheme();
+
   const { isLoading, data } = useGetData();
 
   useOnMountActions(data?.actions);
-
-  const backgroundColor = colorFormatConverter(data?.backgroundColor || colors.Grey_50);
 
   return (
     <WomenPageLayout rightElement="BackButton" rightElementScript="گزارش سلامت" className="bg-impo_Neutral_Surface">
@@ -29,7 +27,7 @@ const HealthReportContainer = () => {
         {!isLoading && data && (
           <>
             <HealthReportContainerWidgets data={data} />
-            <HealthReportContainerPdf data={data} backgroundColor={backgroundColor} />
+            <HealthReportContainerPdf data={data} />
           </>
         )}
       </div>

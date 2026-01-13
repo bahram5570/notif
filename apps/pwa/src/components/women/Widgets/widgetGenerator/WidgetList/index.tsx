@@ -1,5 +1,3 @@
-import useTheme from '@hooks/useTheme';
-
 import WidgetGenerator from '..';
 import { WidgetListProps } from './types';
 

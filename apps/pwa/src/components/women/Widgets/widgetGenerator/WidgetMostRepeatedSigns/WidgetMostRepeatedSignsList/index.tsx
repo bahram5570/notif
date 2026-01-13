@@ -1,13 +1,10 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useSignIcon from '@components/women/SignGenerator/__hooks__/useSignIcon';
 import { ICONS_WIDTH, SIGNS_LIST } from '@components/women/SignGenerator/constants';
-import useTheme from '@hooks/useTheme';
 
 import { WidgetMostRepeatedSignsListProps } from './types';
 
 const WidgetMostRepeatedSignsList = ({ items, isPdfDownloading }: WidgetMostRepeatedSignsListProps) => {
-  const { colors } = useTheme();
-
   return (
     <div
       style={{ direction: 'rtl' }}
@@ -20,30 +17,25 @@ const WidgetMostRepeatedSignsList = ({ items, isPdfDownloading }: WidgetMostRepe
         return (
           <div className="w-full h-full flex flex-col items-center gap-2" key={index}>
             <div
-              className="relative flex items-center justify-center rounded-full border-[1px]"
+              className="relative flex items-center justify-center rounded-full border-[1px] border-impo_Neutral_Surface"
               style={{
                 width: ICONS_WIDTH,
                 height: ICONS_WIDTH,
                 minWidth: ICONS_WIDTH,
                 minHeight: ICONS_WIDTH,
-                borderColor: colors.Neutral_Surface,
               }}
             >
               <>{icon}</>
 
-              <div
-                className="absolute -bottom-1 -left-1 w-6 h-6 rounded-full flex items-center justify-center"
-                style={{ backgroundColor: colors.PrimaryWoman_Primary }}
-              >
-                <Typography scale="Lable" size="SmallProminet" color="White">
+              <div className="absolute -bottom-1 -left-1 w-6 h-6 rounded-full flex items-center justify-center bg-impo_Primary_Primary">
+                <Dark_Typography fontSize="Lable_SmallProminet" className="text-impo_White">
                   {item.count.toString()}
-                </Typography>
+                </Dark_Typography>
               </div>
             </div>
-
-            <Typography scale="Body" size="Small" color="Neutral_OnBackground">
+            <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
               {title}
-            </Typography>
+            </Dark_Typography>
           </div>
         );
       })}

@@ -13,10 +13,10 @@ const WidgetPeriodReportEmptyStateCard = ({ data }: WidgetPeriodReportEmptyState
         {data.description}
       </Dark_Typography>
 
-      <WidgetPeriodReportEmptyStateCardGuides />
+      {/* <WidgetPeriodReportEmptyStateCardGuides /> */}
 
       <div className="relative w-full min-h-[170px]">
-        <CustomImage src={data.image} className="pb-4" />
+        <CustomImage src={'/assets/images/report.webp'} className="mt-2 pb-3" />
         <WidgetPeriodReportEmptyStateCardNotif days={data.days} percent={data.percent} text={data.text} />
       </div>
     </WidgetCardHealthReportContainer>
