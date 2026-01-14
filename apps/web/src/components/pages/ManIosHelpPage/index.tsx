@@ -26,35 +26,35 @@ const ManIosHelpPage = () => {
         </CustomTypography>
       </div>
       <div className="grid mt-4">
-        <div className="grid justify-center justify-items-center gap-y-2">
+        <div className="grid justify-center justify-items-center gap-y-3">
           <CustomTypography className="!text-impo_Neutral_OnBackground text-center mt-2" fontSize="Body_Medium">
             1- اگه موقع باز کردن ایمپو آقایان از این صفحه نتونستی جلوتر بری
           </CustomTypography>
           <CustomImage alt="help" src={s1} />
         </div>
         <Divider className="!my-4 !border-impo_Neutral_OnBackground opacity-10" />
-        <div className="grid justify-center justify-items-center gap-y-2">
+        <div className="grid justify-center justify-items-center gap-y-3">
           <CustomTypography className="!text-impo_Neutral_OnBackground text-center mt-2" fontSize="Body_Medium">
             2- از قسمت تنظیمات (impo men) رو سرچ کن
           </CustomTypography>
           <CustomImage alt="help" src={s2} />
         </div>
         <Divider className="!my-4 !border-impo_Neutral_OnBackground opacity-10" />
-        <div className="grid justify-center justify-items-center gap-y-2">
+        <div className="grid justify-center justify-items-center gap-y-3">
           <CustomTypography className="!text-impo_Neutral_OnBackground text-center mt-2" fontSize="Body_Medium">
             3- از اینجا Notifications رو انتخاب کن
           </CustomTypography>
           <CustomImage alt="help" src={s3} />
         </div>
         <Divider className="!my-4 !border-impo_Neutral_OnBackground opacity-10" />
-        <div className="grid justify-center justify-items-center  gap-y-2">
+        <div className="grid justify-center justify-items-center gap-y-3">
           <CustomTypography className="!text-impo_Neutral_OnBackground text-center mt-2" fontSize="Body_Medium">
             4- و دسترسی Notifications رو خاموش کن
           </CustomTypography>
           <CustomImage alt="help" src={s4} />
         </div>
         <Divider className="!my-4 !border-impo_Neutral_OnBackground opacity-10" />
-        <div className="grid justify-center justify-items-center gap-y-2 mb-8">
+        <div className="grid justify-center justify-items-center gap-y-3 mb-8">
           <CustomTypography className="!text-impo_Neutral_OnBackground text-center mt-2" fontSize="Body_Medium">
             5- بعد از اون اپلیکیشن ایمپو آقایان به این صورت باز میشه
           </CustomTypography>
