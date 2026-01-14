@@ -253,83 +253,208 @@ const PrivacyPolicy = () => {
             fontSize="Title_Large"
             className="pt-4 sm:!text-4xl !text-impo_Neutral_OnBackground"
           >
-            اصلاح محتوا و نقش کاربران
+            داده‌های شما فروخته نمی‌شوند!
           </CustomTypography>
           <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
-            در ایمپو، بازخورد کاربران نقش مهمی در بهبود کیفیت محتوا دارد. اگر در هر یک از مقالات نکته‌ای مشاهده کردید که
-            نیاز به اصلاح، به‌روزرسانی یا توضیح بیشتر دارد، در قسمت نظرات هر مقاله، دیدگاه خود را ثبت کنید و به ما اطلاع
-            دهید. این اطمینان را به شما می‌دهیم که موضوع را به‌صورت دقیق بررسی و در صورت تایید پزشک، اصلاح کنیم.
-          </CustomTypography>
-          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
-            در صورت نیاز، محتوای مربوطه بر اساس منابع معتبر علمی اصلاح یا به‌روزرسانی شده و
-            <strong>تاریخ آخرین ویرایش</strong> به‌صورت شفاف ثبت می‌گردد. تمامی انتقادات، پیشنهادات و گزارش‌های کاربران
-            درباره محتوای منتشرشده در ایمپو با دقت بررسی می‌شود و
-            <strong>نتیجه بررسی از طریق همان مسیر اطلاع‌رسانی خواهد شد</strong>.
-          </CustomTypography>
-          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
-            بازخورد شما بخشی از فرآیند بهبود مستمر محتوای ایمپو است و به ما کمک می‌کند اطلاعات دقیق‌تر و قابل‌اعتماد‌تری
-            ارائه دهیم.
+            ایمپو به‌طور شفاف متعهد است که داده‌های شخصی و سلامت کاربران را نمی‌فروشد. استفاده از اطلاعات کاربران صرفاً
+            در چارچوب اهداف اعلام‌شده در این سیاست و با رعایت حقوق کاربران انجام می‌شود.
           </CustomTypography>
           <CustomTypography
             tagType="h2"
             fontSize="Title_Large"
             className="pt-4 sm:!text-4xl !text-impo_Neutral_OnBackground"
           >
-            شفافیت در مورد همکاری‌ها در ایمپو
+            حقوق حریم خصوصی کاربران در ایمپو
           </CustomTypography>
           <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
-            شفافیت در مورد همکاری‌ها در ایمپو
+            در ایمپو، ما متعهدیم همان سطح از حقوق حریم خصوصی را برای شما در نظر بگیریم که در سخت‌گیرانه‌ترین
+            استانداردهای جهانی حفاظت از داده‌ها تعریف شده‌اند. چون باور داریم
+            <strong>کنترل اطلاعات شخصی، به‌ویژه داده‌های سلامت، باید همیشه در اختیار خود شما باشد</strong>.
           </CustomTypography>
           <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
-            <strong>محتوای سلامت در ایمپو مستقل از همکاری‌های تجاری تولید می‌شود.</strong> اگر محتوایی شامل معرفی محصول
-            یا همکاری خاصی باشد، این موضوع <strong>به‌صورت شفاف</strong> به کاربران اعلام خواهد شد.
+            • دسترسی به اطلاعات شخصی
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            فقط <strong>خود شما یا شخصی که به‌صورت رسمی از طرف شما اجازه دارد</strong> می‌تواند به داده‌های شخصیتان
+            دسترسی پیدا کند.
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            • درخواست اصلاح اطلاعات شخصی
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            اگر فکر می‌کنید اطلاعاتی که از شما نگهداری می‌کنیم نادرست یا ناقص است، می‌توانید از ما بخواهید آن را اصلاح
+            کنیم. ما این درخواست‌ها را با دقت بررسی می‌کنیم.
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            • حذف حساب کاربری
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            شما می‌توانید از طریق تماس یا تیکیت با تیم پشتیبانی ایمپو درخواست حذف حساب کاربری را ثبت کنید.
+            <strong>قبل از درخواست حذف، این نکته را در نظر داشته باشید که</strong> پس از شروع فرآیند حذف حساب کاربری،
+            <strong>امکان بازگشت وجود ندارد</strong>.
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            • حذف اطلاعات شخصی
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            شما می‌توانید هر زمان درخواست حذف اطلاعات شخصی خود را ثبت کنید. البته توجه داشته باشید که حذف برخی داده‌ها
+            ممکن است باعث شود بعضی قابلیت‌هایی که به اطلاعات گذشته وابسته‌اند، برایتان غیرفعال شوند.
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            • محدود کردن پردازش اطلاعات
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            در برخی شرایط، می‌توانید درخواست کنید که پردازش اطلاعات شخصی شما به‌طور موقت محدود شود. مثلاً اگر نسبت به
+            صحت یک داده تردید دارید، می‌توانید از ما بخواهید تا زمان بررسی، از استفاده از آن داده خودداری کنیم.
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            • دسترسی به اطلاعات شخصی
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            شما حق دارید بدانید چه اطلاعاتی درباره شما در ایمپو پردازش می‌شود. می‌توانید درخواست دسترسی به همه داده‌های
+            شخصی خود و دریافت یک نسخه از آن‌ها را داشته باشید، در قالبی ساخت‌یافته و قابل‌انتقال.
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            هدف ما این است که شفافیت، فقط یک شعار نباشد؛ شما واقعاً بتوانید به داده‌های خود دسترسی داشته باشید.
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            • حق انتقال‌پذیری داده‌ها
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            اگر بخواهید، می‌توانید داده‌های شخصی خود را در قالبی دریافت کنید که امکان انتقال یا استفاده از آن‌ها در
+            سرویس‌های دیگر برایتان فراهم باشد.
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            • اعتراض به پردازش اطلاعات
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            اگر با نحوه استفاده از اطلاعات شخصی خود موافق نیستید، مثلاً در مواردی مانند ارتباطات یا اطلاع‌رسانی‌های
+            مستقیم، می‌توانید به این نوع پردازش اعتراض کنید و درخواست توقف آن را بدهید.
           </CustomTypography>
           <CustomTypography
             tagType="h2"
             fontSize="Title_Large"
             className="pt-4 sm:!text-4xl !text-impo_Neutral_OnBackground"
           >
-            یادآوری مهم
+            چطور می‌توانید از حقوق حریم خصوصی خود استفاده کنید؟
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            در ایمپو، اعمال حقوق حریم خصوصی قرار نیست پیچیده یا مبهم باشد. اگر درباره اطلاعات شخصی‌تان سوالی دارید یا
+            می‌خواهید یکی از حقوق خود را اعمال کنید، می‌توانید از طریق تماس با تیم پشتیبانی ایمپو از طریق مسیرهای
+            ارتباطی اعلام‌شده در وب‌سایت درخواست خود را ثبت کنید.
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            ما تلاش می‌کنیم درخواست‌های مربوط به حریم خصوصی را حداکثر <strong>تا یک ماه پس از دریافت</strong> بررسی و
+            اجرا کنیم.
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            در برخی موارد مثلاً زمانی که حذف کامل داده‌های ذخیره‌شده در نسخه‌های پشتیبان (Backup) لازم باشد، ممکن است
+            این فرآیند تا ۹۰ روز زمان ببرد. اگر برای رسیدگی به درخواست شما به زمان بیشتری نیاز داشته باشیم، حتماً موضوع
+            را به شما اطلاع می‌دهیم و دلیل آن را شفاف توضیح می‌کنیم.
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            <strong>پردازش داده‌های سلامت در ایمپو فقط با رضایت شما انجام می‌شود.</strong> شما می‌توانید هر زمان که
+            بخواهید این رضایت را از طریق تماس با تیم ایمپو پس بگیرید ما به انتخاب شما احترام می‌گذاریم، چه بخواهید ادامه
+            دهید، چه تصمیم بگیرید اطلاعاتتان حذف شود.
+          </CustomTypography>
+          <CustomTypography
+            tagType="h2"
+            fontSize="Title_Large"
+            className="pt-4 sm:!text-4xl !text-impo_Neutral_OnBackground"
+          >
+            امنیت اطلاعات کاربران{' '}
+          </CustomTypography>
+
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            ایمپو از اقدامات فنی و سازمانی متناسب برای حفاظت از اطلاعات کاربران استفاده می‌کند، از جمله کنترل دسترسی و
+            تدابیر امنیتی معقول. با این حال، هیچ سیستم دیجیتالی کاملاً مصون از خطر نیست و امنیت مطلق قابل تضمین
+            نیست.{' '}
+          </CustomTypography>
+          <CustomTypography tagType="h2" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            مدت نگهداری اطلاعات{' '}
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            اطلاعات شخصی کاربران تنها تا زمانی نگهداری می‌شود که برای ارائه خدمات ایمپو یا رعایت الزامات قانونی ضروری
+            باشد. پس از آن، داده‌ها به‌صورت امن حذف یا ناشناس‌سازی می‌شوند.{' '}
+          </CustomTypography>
+          <CustomTypography tagType="h2" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            عدم اشتراک داده‌ها با اشخاص ثالث{' '}
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            ما اطلاعات شخصی شما را با اشخاص ثالث به اشتراک نمی‌گذاریم.ایمپو{' '}
+            <strong>هرگز داده‌های سلامت شما را برای اهداف تبلیغاتی یا بازاریابی</strong> با اشخاص ثالث به اشتراک
+            نمی‌گذارد.
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            اطلاعات مربوط به سلامت، مثل داده‌های چرخه، علائم یا وضعیت جسمی و احساسی به هیچ‌وجه در اختیار ابزارهای
+            بازاریابی یا پلتفرم‌های تبلیغاتی قرار نمی‌گیرد.
+          </CustomTypography>
+          <CustomTypography tagType="h2" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            حریم خصوصی کودکان{' '}
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            <strong>خدمات ایمپو برای استفاده کودکان طراحی نشده است.</strong> در صورت اطلاع از جمع‌آوری ناخواسته اطلاعات
+            مربوط به کودکان، ایمپو اقدامات لازم برای حذف این اطلاعات را انجام خواهد داد.{' '}
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            <strong>همچنین، در ایمپو نمایش محتوا با توجه به سن محدود و شخصی سازی می‌شود؛</strong> به این معنی که برخی از
+            محتواها که برای سنین پایین مناسب نیستند، نمایش داده نمی‌شود.{' '}
+          </CustomTypography>
+          <CustomTypography tagType="h2" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            انتقال و پردازش بین‌المللی اطلاعات{' '}
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            در صورت استفاده از زیرساخت‌ها یا سرویس‌دهندگان خارجی، ممکن است اطلاعات کاربران در خارج از کشور محل اقامت
+            آن‌ها پردازش شود. ایمپو متعهد است در هر مکان، سطح حفاظت از داده‌ها را مطابق با این سیاست حفظ کند.{' '}
+          </CustomTypography>
+          <CustomTypography tagType="h2" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            حریم خصوصی در بخش همدلی و ایمپو آقایان{' '}
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            در ایمپو، چه در نسخه بانوان و چه در ایمپو آقایان، ما به تفاوت تجربه‌ها، بدن‌ها و احساسات کاربران احترام
+            می‌گذاریم. طراحی خدمات ایمپو به‌گونه‌ای انجام شده که:{' '}
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            • از قضاوت، شرم یا ایجاد فشار روانی پرهیز شود.
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            • اطلاعات شخصی کاربران با نهایت احترام و محرمانگی مدیریت شود.
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            • تجربه‌ای امن، همدلانه و قابل اعتماد برای همه کاربران فراهم گردد.
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            • ایمپو، هیچ‌گونه دسترسی به پیام‌های خصوصی در بخش همدلی ندارد.
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            ما باور داریم مراقبت از داده‌های سلامت، بخشی از مراقبت از خودِ انسان‌هاست.{' '}
+          </CustomTypography>
+          <CustomTypography tagType="h2" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            حریم خصوصی در بخش کلینیک ایمپو{' '}
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            ایمپو هیچ‌گونه دسترسی به اطلاعات بخش کلینیک ندارد و این اطلاعات را پردازش نمی‌کند. هر آنچه که در بخش کلینیک
+            با پزشک درمیان می‌گذارید کاملا محرمانه محسوب می‌شود و ایمپو هیچ‌‍گونه دسترسی به این ‌پیام‌ها ندارد.{' '}
+          </CustomTypography>
+          <CustomTypography tagType="h2" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            تغییرات سیاست حریم خصوصی{' '}
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            ایمپو ممکن است این سیاست را به‌روزرسانی کند. تغییرات مهم از طریق وب‌سایت یا اپلیکیشن اطلاع‌رسانی شده و تاریخ
+            آخرین به‌روزرسانی در ابتدای این صفحه درج خواهد شد.{' '}
+          </CustomTypography>
+          <CustomTypography tagType="h2" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            ارتباط با ایمپو درباره حریم خصوصی{' '}
+          </CustomTypography>
+          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
+            در صورت داشتن هرگونه سوال، درخواست یا نگرانی درباره حریم خصوصی یا اطلاعات شخصی، می‌توانید از طریق راه‌های
+            ارتباطی رسمی اعلام‌شده در وب‌سایت ایمپو با ما در تماس باشید.{' '}
           </CustomTypography>
           <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
             <strong>
-              محتوای ایمپو با هدف افزایش آگاهی عمومی تهیه شده و جایگزین تشخیص، درمان یا مراقبت پزشکی تخصصی نیست.
+              این سیاست حریم خصوصی بخشی از تعهد ایمپو به شفافیت، مسئولیت‌پذیری و مراقبت محترمانه از داده‌های سلامت
+              کاربران است.
             </strong>
-            در موارد ضروری یا اورژانسی، مراجعه به پزشک یا متخصص الزامی است.
-          </CustomTypography>
-          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
-            <strong>این صفحه بخشی از تعهد ایمپو به تولید محتوای سلامت مسئولانه، همدلانه و قابل اعتماد است.</strong>
-          </CustomTypography>
-          <CustomTypography
-            tagType="h2"
-            fontSize="Title_Large"
-            className="pt-4 sm:!text-4xl !text-impo_Neutral_OnBackground"
-          >
-            پرسش‌های متداول
-          </CustomTypography>
-          <CustomTypography tagType="h3" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
-            1. آیا محتوای ایمپو جایگزین پزشک است؟
-          </CustomTypography>
-          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
-            خیر. محتوای ایمپو آموزشی و آگاهی‌بخش است و جایگزین تشخیص یا درمان پزشکی تخصصی نیست.
-          </CustomTypography>
-          <CustomTypography tagType="h3" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
-            محتوای ایمپو هر چند وقت یک‌بار به‌روزرسانی می‌شود؟
-          </CustomTypography>
-          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
-            محتواها به‌صورت دوره‌ای و در صورت تغییر شواهد علمی یا توصیه‌های پزشکی بازبینی و به‌روزرسانی می‌شوند.
-          </CustomTypography>
-          <CustomTypography tagType="h3" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
-            3. چه کسی صحت علمی محتوا را بررسی می‌کند؟
-          </CustomTypography>
-          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
-            برای موضوعات حساس سلامت، محتوای ایمپو توسط بازبین علمی یا پزشکی بررسی می‌شود
-          </CustomTypography>
-          <CustomTypography tagType="h3" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
-            4. اگر خطایی در محتوا ببینم چه کار می‌توانم بکنم؟
-          </CustomTypography>
-          <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
-            می‌توانید از طریق راه‌های ارتباطی ایمپو بازخورد یا گزارش خطا ارسال کنید تا بررسی و اصلاح شود.
           </CustomTypography>
         </div>
       </div>
