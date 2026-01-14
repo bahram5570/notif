@@ -1,14 +1,15 @@
 import { useEffect, useRef } from 'react';
 
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { toPersianNumbers } from '@utils/numbers';
 
-import useTheme from '@hooks/useTheme';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import { KeyDownHandlerTypes, SingleCodeProps, ValueHandlerTypes } from './types';
 
 const SingleCode = ({ focusInfo, stepIndex, stepValue, stepHandler, deleteHandler, otpStatus }: SingleCodeProps) => {
-  const { colors, typography } = useTheme();
   const ref = useRef<HTMLInputElement>(null);
+  const { operatingSystem } = useOperatingSystem();
 
   const isSelected = focusInfo.index === stepIndex;
 
@@ -46,8 +47,7 @@ const SingleCode = ({ focusInfo, stepIndex, stepValue, stepHandler, deleteHandle
     }
   };
 
-  const font = typography.Headline.Small;
-  const borderColor = isSelected ? colors.Surface_Outline : colors.Surface_OutlineVariant;
+  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Headline_Small', operatingSystem });
 
   return (
     <input
@@ -55,13 +55,23 @@ const SingleCode = ({ focusInfo, stepIndex, stepValue, stepHandler, deleteHandle
       type="tel"
       onChange={valueHandler}
       onKeyDown={keyDownHandler}
-      style={{ ...font, borderColor }}
+      style={{ ...typographyFontStyles }}
       value={toPersianNumbers(stepValue)}
-      className={`w-10 h-10 rounded-xl border-[1px] text-center pointer-events-none caret-transparent 
-        ${otpStatus === 'wrong' && 'animate-otpError'}
-        ${otpStatus === 'correct' && 'animate-otpSuccess'}
-      `}
       data-testid={`otp-input-${stepIndex}`}
+      className={`
+                  w-10 
+                  h-10 
+                  text-center 
+                  pointer-events-none 
+                  caret-transparent 
+                  bg-impo_Transparent
+                  text-impo_Neutral_OnBackground
+                  border-[1px] 
+                  rounded-xl 
+                  ${isSelected ? 'border-impo_Surface_Outline' : 'border-impo_Surface_OutlineVariant'}
+                  ${otpStatus === 'wrong' && 'animate-otpError'}
+                  ${otpStatus === 'correct' && 'animate-otpSuccess'}
+                `}
     />
   );
 };

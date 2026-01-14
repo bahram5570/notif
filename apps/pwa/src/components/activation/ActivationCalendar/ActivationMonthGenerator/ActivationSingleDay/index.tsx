@@ -1,14 +1,11 @@
 import { memo, useMemo } from 'react';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { CALENDAR_CELL_SIZE, CalendarTypeEnum, DATE_SEPERATOR_REGEX } from '@constants/date.constants';
-import useTheme from '@hooks/useTheme';
 
 import { ActivationSingleDayProps } from './types';
 
 const ActivationSingleDay = ({ isSelected, day, calendarType, selectedDayHandler }: ActivationSingleDayProps) => {
-  const { colors } = useTheme();
-
   const dayScript = useMemo(() => {
     let fullDate = '';
 
@@ -27,25 +24,26 @@ const ActivationSingleDay = ({ isSelected, day, calendarType, selectedDayHandler
 
   return (
     <div
-      onClick={() => selectedDayHandler(day.gregorianDate)}
-      className="relative rounded-lg flex flex-col justify-center items-center"
-      style={{
-        width: CALENDAR_CELL_SIZE,
-        height: CALENDAR_CELL_SIZE,
-        opacity: day.isValidDate ? '1' : '0.5',
-        pointerEvents: day.isValidDate ? 'auto' : 'none',
-        backgroundColor: isSelected ? colors.PrimaryWoman_Primary : colors.Transparent,
-      }}
       data-testid={`activation_single_day_${dayScript}`}
+      onClick={() => selectedDayHandler(day.gregorianDate)}
+      style={{ width: CALENDAR_CELL_SIZE, height: CALENDAR_CELL_SIZE }}
+      className={`
+                  relative 
+                  flex 
+                  flex-col 
+                  justify-center 
+                  items-center
+                  rounded-lg 
+                  ${isSelected ? 'bg-impo_Primary_Primary' : 'bg-impo_Transparent'}
+                  ${day.isValidDate ? 'opacity-100 pointer-events-auto' : 'opacity-50 pointer-events-none'}
+                `}
     >
-      <Typography
-        scale="Body"
-        size="Medium"
-        color="FREE-STYLE"
-        freeColor={isSelected ? colors.White : colors.Neutral_OnBackground}
+      <Dark_Typography
+        fontSize="Body_Medium"
+        className={`${isSelected ? 'text-impo_White' : 'text-impo_Neutral_OnBackground'}`}
       >
         {dayScript}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

@@ -1,23 +1,14 @@
 import { useEffect, useState } from 'react';
 
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
-import useTheme from '@hooks/useTheme';
 
 import CircleProgressBar from './CircleProgressBar';
 import { ProgressCycleEnums } from './enums';
 import { ProgressCycleLoadingProps } from './types';
 
-const ProgressCycleLoading = ({
-  backgroundColor,
-  circleColor,
-  onComplete,
-  isSuccess,
-  titles,
-  image,
-}: ProgressCycleLoadingProps) => {
-  const { colors } = useTheme();
+const ProgressCycleLoading = ({ onComplete, isSuccess, titles, image }: ProgressCycleLoadingProps) => {
   const { isLargeScreen } = useActivationIsLargeScreen();
   const [loadingStatus, setLoadingStatus] = useState<ProgressCycleEnums>(ProgressCycleEnums.Start);
 
@@ -30,29 +21,26 @@ const ProgressCycleLoading = ({
   return (
     <>
       {loadingStatus !== ProgressCycleEnums.Null && (
-        <div
-          className="w-full h-full flex flex-col justify-center items-center"
-          style={{ backgroundColor: backgroundColor || colors.Neutral_Background }}
-        >
+        <div className="w-full h-full flex flex-col justify-center items-center bg-impo_Neutral_Background">
           {isLargeScreen && (
             <div className="mb-16 w-[200px]">
               <CustomImage src={image} />
             </div>
           )}
 
-          <Typography scale="Title" size="Small" textAlign="center" className="w-full px-7">
+          <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground text-center w-full px-7">
             {titles.main}
-          </Typography>
+          </Dark_Typography>
 
-          <CircleProgressBar loadingStatus={loadingStatus} circleColor={circleColor} onComplete={onComplete} />
+          <CircleProgressBar loadingStatus={loadingStatus} onComplete={onComplete} />
 
-          <Typography scale="Body" size="Medium">
+          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             {titles.subTitle1}
-          </Typography>
+          </Dark_Typography>
 
-          <Typography scale="Body" size="Medium">
+          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             {titles.subTitle2}
-          </Typography>
+          </Dark_Typography>
         </div>
       )}
     </>

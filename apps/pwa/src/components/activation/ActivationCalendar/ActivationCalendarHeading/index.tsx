@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import ArrowIcon from '@assets/icons/calendarArrow.svg';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import {
   CALENDAR_CELL_SIZE,
   CalendarTypeEnum,
@@ -62,29 +62,30 @@ const ActivationCalendarHeading = (props: ActivationCalendarHeadingProps) => {
   return (
     <div className="flex justify-between pb-5 mx-auto" style={{ width }}>
       <ArrowIcon
-        className="w-10 h-6"
-        style={{ stroke: '#1C1B1E' }}
-        onClick={() => props.currentSlideHandler('previousSlide')}
         data-testid={'btn_previous'}
+        className="w-10 h-6 stroke-impo_Surface_Outline"
+        onClick={() => props.currentSlideHandler('previousSlide')}
       />
 
       <div className="flex flex-col items-center gap-1">
-        <Typography size="Small" scale="Title" color="Neutral_OnBackground" testId={'calendar_month_title'}>
+        <Dark_Typography
+          fontSize="Title_Small"
+          testId={'calendar_month_title'}
+          className="text-impo_Neutral_OnBackground"
+        >
           {monthScript}
-        </Typography>
+        </Dark_Typography>
 
-        <Typography
-          size="Medium"
-          scale="Lable"
-          color={props.selectedDay === '' ? 'Surface_Outline' : 'PrimaryWoman_Primary'}
+        <Dark_Typography
+          fontSize="Lable_Medium"
+          className={`${props.selectedDay === '' ? 'text-impo_Surface_Outline' : 'text-impo_Primary_Primary'}`}
         >
           {selectedDayScript}
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <ArrowIcon
-        style={{ stroke: '#1C1B1E' }}
-        className="w-10 h-6 rotate-180"
+        className="w-10 h-6 stroke-impo_Surface_Outline rotate-180"
         onClick={() => props.currentSlideHandler('nextSlide')}
         data-testid={'btn_next'}
       />

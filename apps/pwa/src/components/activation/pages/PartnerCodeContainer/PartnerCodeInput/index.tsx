@@ -38,7 +38,7 @@ const PartnerCodeInput = ({ question, onSubmit, isLoading }: PartnerCodeInputPro
         description={question.description}
       />
 
-      <div style={{ width: '100%', paddingTop: isLargeScreen ? '96px' : '140px' }}>
+      <div style={{ width: '100%', paddingTop: isLargeScreen ? '100px' : '140px' }}>
         <ActivationInputModule valueHandler={valueHandler} placeHolder="اینجا بنویس" value={code} isTextTyps={false} />
       </div>
 

@@ -1,9 +1,9 @@
-import BackButton from '@components/ui/BackButton';
+import Dark_BackButton from '@components/ui/Dark_BackButton';
 
 const ActivationBackBtn = () => {
   return (
     <div className="absolute top-4 right-4 w-12 h-12 flex justify-center items-center z-20 ">
-      <BackButton variant="text" color="outline" />
+      <Dark_BackButton />
     </div>
   );
 };

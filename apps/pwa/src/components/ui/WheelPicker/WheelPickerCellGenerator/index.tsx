@@ -32,9 +32,9 @@ const WheelPickerCellGenerator = ({
 
   return (
     <p
-      className={`duration-200 pointer-events-none  ${colorFinder()}`}
-      style={{ ...typographyFontStyles, scale }}
       {...addIdAttrs(isSelectedItem ? `wheelPickerCell_${title}` : '')}
+      className={`duration-200 pointer-events-none ${colorFinder()}`}
+      style={{ ...typographyFontStyles, scale }}
     >
       {toPersianNumbers(title)}
     </p>

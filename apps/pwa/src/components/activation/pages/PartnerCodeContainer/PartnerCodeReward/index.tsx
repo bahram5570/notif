@@ -12,7 +12,7 @@ const PartnerCodeReward = ({ reward, firstName, onComplete }: PartnerCodeRewardP
   return (
     <div
       style={{ backgroundColor: color1 }}
-      className="relative overflow-x-hidden min-h-[100dvh] animate-mainActivationModule flex flex-col gap-5"
+      className="relative overflow-x-hidden min-h-[100dvh] animate-mainActivationModule flex flex-col gap-5 dark:!bg-impo_Neutral_Background"
     >
       <div className="flex flex-col items-center">
         <PartnerCodeRewardHeadingImage image={reward.image} backgroundColor={color2} doRepeat={reward.doRepeat} />

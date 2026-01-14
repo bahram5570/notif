@@ -12,5 +12,5 @@ export interface Dark_ButtonTypes {
   numbersMode?: 'persian' | 'english';
   fontSize?: keyof typeof FONTS_ANDROID;
   navigationLoadingId?: string | number;
-  children: string | number | React.ReactElement;
+  children: string | number | React.ReactElement | React.ReactNode;
 }

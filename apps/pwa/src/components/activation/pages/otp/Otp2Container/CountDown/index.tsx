@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useCountDown from '@hooks/useCountDown';
 
 import { RESEND_CODE_TIME } from '../constants';
@@ -27,9 +27,12 @@ const CountDown = ({ resetCodeHandler }: CountDownProps) => {
 
   return (
     <div className=" p-4" style={{ cursor: isTimeOut ? 'pointer' : 'not-allowed' }} onClick={resetHandler}>
-      <Typography scale="Body" size="Medium" color={isTimeOut ? 'PrimaryWoman_Primary' : 'Neutral_OnBackground'}>
+      <Dark_Typography
+        fontSize="Body_Medium"
+        className={`${isTimeOut ? 'text-impo_Primary_Primary' : 'text-impo_Neutral_OnBackground'}`}
+      >
         {script}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

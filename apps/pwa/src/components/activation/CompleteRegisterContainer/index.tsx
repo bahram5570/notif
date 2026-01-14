@@ -1,7 +1,6 @@
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useGoalFinder from '@hooks/__activation__/useGoalFinder';
 import useApi from '@hooks/useApi';
-import useTheme from '@hooks/useTheme';
 
 import AccessNotificationContainer from '../pages/AccessNotificationContainer';
 import PartnerCodeContainer from '../pages/PartnerCodeContainer';
@@ -17,7 +16,6 @@ const CompleteRegisterContainer = ({
   fetchedUser,
   payload,
 }: CompleteRegisterContainerProps) => {
-  const { colors } = useTheme();
   const { step, stepHandler } = useCompleteRegisterSteps({ accessNotificationData, partnerData });
   const { goalInfo } = useGoalFinder({ status: payload.status, periodStatus: payload.periodStatus });
 
@@ -43,8 +41,8 @@ const CompleteRegisterContainer = ({
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 bottom-0 w-full h-full mx-auto z-50"
-      style={{ maxWidth: MAX_SCREEN_WIDTH, backgroundColor: colors.Neutral_Background }}
+      style={{ maxWidth: MAX_SCREEN_WIDTH }}
+      className="fixed top-0 left-0 right-0 bottom-0 w-full h-full mx-auto bg-impo_Neutral_Background z-50"
     >
       {step === CompleteRegisterStepsEnum.AccessNotification && accessNotificationData && (
         <AccessNotificationContainer

@@ -13,7 +13,14 @@ const HeadingImage = ({ backgroundColor, image, doRepeat, order }: HeadingImageP
   return (
     <div
       style={{ backgroundColor, order }}
-      className={`relative w-full flex pointer-events-none ${isLargeScreen ? 'h-[55dvh]' : 'h-[45dvh]'}`}
+      className={`
+                  relative 
+                  w-full 
+                  flex 
+                  pointer-events-none 
+                  dark:!bg-impo_Neutral_Surface 
+                  ${isLargeScreen ? 'h-[55dvh]' : 'h-[45dvh]'}
+                `}
     >
       {isLottie && <LottieCanvas src={image} autoplay={true} loop={doRepeat} />}
 

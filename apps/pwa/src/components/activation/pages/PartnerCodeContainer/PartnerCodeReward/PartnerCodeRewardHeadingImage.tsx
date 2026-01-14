@@ -12,8 +12,8 @@ const PartnerCodeRewardHeadingImage = ({ backgroundColor, image, doRepeat }: Par
 
   return (
     <div
-      className={`relative w-fullflex pointer-events-none ${isLargeScreen ? 'h-[55dvh]' : 'h-[30dvh]'}`}
       style={{ backgroundColor }}
+      className={`relative w-fullflex pointer-events-none dark:!bg-impo_Neutral_Surface ${isLargeScreen ? 'h-[55dvh]' : 'h-[30dvh]'}`}
     >
       {image.trim() !== '' && (
         <>

@@ -69,12 +69,11 @@ const ContinueBtn = (props: ContinueBtnProps) => {
           }}
         >
           <ActivationBtn
-            btnTestId={props.btnTestId}
             onClick={continueHandler}
+            btnTestId={props.btnTestId}
             isLoading={props.isLoading}
             showBtn={props.showContinueBtn}
             navigationLoadingId={navigationLoadingId}
-
             // todo key={resetKey + '1'}
           >
             ادامه

@@ -4,15 +4,13 @@ import AndroidIcon from '@assets/icons/android.svg';
 import AppleIcon from '@assets/icons/apple.svg';
 
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import AddToHomeScreenContainer from './AddToHomeScreenContainer';
 import useAddToHomeConstants from './__hooks__/useAddToHomeConstants';
 import { AddToHomeScreenBrowserContentTypes } from './types';
 
 const AddToHomeScreenBrowserContent = ({ browserInfo, operatingSystem }: AddToHomeScreenBrowserContentTypes) => {
-  const { colors, typography } = useTheme();
   const { browserData } = useAddToHomeConstants();
 
   const data = useMemo(() => {
@@ -44,14 +42,12 @@ const AddToHomeScreenBrowserContent = ({ browserInfo, operatingSystem }: AddToHo
   return (
     <AddToHomeScreenContainer className="py-[100px]">
       <div className="w-full flex items-center gap-3 pb-6">
-        {data.type === 'ios' && <AppleIcon className="w-8 h-auto" style={{ fill: colors.Surface_OutlineVariant }} />}
-        {data.type === 'android' && (
-          <AndroidIcon className="w-8 h-auto" style={{ fill: colors.Surface_OutlineVariant }} />
-        )}
+        {data.type === 'ios' && <AppleIcon className="w-8 h-auto fill-impo_Surface_OutlineVariant" />}
+        {data.type === 'android' && <AndroidIcon className="w-8 h-auto fill-impo_Surface_OutlineVariant" />}
 
-        <Typography scale="Title" size="Small" color="Neutral_OnBackground" className="pt-1">
+        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground pt-1">
           {data.title}
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <div className="w-full flex flex-col items-center gap-6">
@@ -60,19 +56,16 @@ const AddToHomeScreenBrowserContent = ({ browserInfo, operatingSystem }: AddToHo
             {item.script && (
               <div className="w-full flex items-start gap-1 pb-4">
                 {typeof item.no === 'number' && (
-                  <div
-                    style={{ backgroundColor: colors.PrimaryWoman_Primary }}
-                    className="w-6 h-6 min-w-6 min-h-6 rounded-full flex items-center justify-center"
-                  >
-                    <Typography scale="Body" size="Large" color="White">
+                  <div className="w-6 h-6 min-w-6 min-h-6 rounded-full flex items-center justify-center bg-impo_Primary_Primary">
+                    <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_Background">
                       {item.no.toString()}
-                    </Typography>
+                    </Dark_Typography>
                   </div>
                 )}
 
-                <div style={{ ...typography.Body.Medium, color: colors.Neutral_OnBackground }} className="pt-[1px]">
+                <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground pt-[1px]">
                   {item.script}
-                </div>
+                </Dark_Typography>
               </div>
             )}
 

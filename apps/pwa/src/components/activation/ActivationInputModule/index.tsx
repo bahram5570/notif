@@ -49,7 +49,7 @@ const ActivationInputModule = (props: ActivationInputModuleProps) => {
                     bg-transparent 
                     text-center 
                     text-impo_Neutral_OnBackground
-                    placeholder-impo_Surface_Outline
+                    placeholder-impo_Surface_OutlineVariant
                     ${styles.input}
                   `}
       />

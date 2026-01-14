@@ -1,15 +1,13 @@
 import { useMemo } from 'react';
 
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import AddToHomeScreenContainer from './AddToHomeScreenContainer';
 import useAddToHomeConstants from './__hooks__/useAddToHomeConstants';
 import { AddToHomeScreenMainContentTypes } from './types';
 
 const AddToHomeScreenMainContent = ({ onClick, operatingSystem }: AddToHomeScreenMainContentTypes) => {
-  const { colors } = useTheme();
   const { mainData } = useAddToHomeConstants();
 
   const data = useMemo(() => {
@@ -19,33 +17,32 @@ const AddToHomeScreenMainContent = ({ onClick, operatingSystem }: AddToHomeScree
   return (
     <AddToHomeScreenContainer className="pt-[200px]">
       <>
-        <data.icon className="absolute -top-9 left-4 w-14 h-auto -z-20" style={{ fill: colors.Pink_50 }} />
+        <data.icon className="absolute -top-9 left-4 w-14 h-auto -z-20 fill-impo_Pink_50" />
 
-        <Typography scale="Title" size="Medium" color="Pink_700">
+        <Dark_Typography fontSize="Title_Medium" className="text-impo_Pink_700">
           {data.title}
-        </Typography>
+        </Dark_Typography>
 
-        <Typography scale="Body" size="Medium" color="Neutral_OnBackground" className="pt-2 pb-4">
+        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground pt-2 pb-4">
           {data.subTitle}
-        </Typography>
+        </Dark_Typography>
 
         <div className="min-w-[215px] flex flex-col items-center gap-3 pb-8">
           {data.items.map((item, index) => (
             <div
               key={index}
-              style={{ borderColor: colors.Surface_OutlineVariant }}
-              className="w-full border-[1px] rounded-full flex justify-center p-1"
+              className="w-full border-[1px] border-impo_Surface_OutlineVariant rounded-full flex justify-center p-1"
             >
-              <Typography scale="Body" size="Medium" color="Neutral_OnBackground">
+              <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
                 {item}
-              </Typography>
+              </Dark_Typography>
             </div>
           ))}
         </div>
 
-        <Button color="primary" size="large" variant="fill" onClick={onClick}>
+        <Dark_Button onClick={onClick} fontSize="Lable_Large">
           {data.btnScript}
-        </Button>
+        </Dark_Button>
       </>
     </AddToHomeScreenContainer>
   );

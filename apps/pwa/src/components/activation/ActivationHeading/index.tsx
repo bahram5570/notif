@@ -1,6 +1,7 @@
 import ImpoIcon from '@assets/images/questionsImpo.svg';
 
 import Dark_Typography from '@components/ui/Dark_Typography';
+import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
 import { OrderOfQuestionScriptsTypes } from '@providers/__activation__/types';
 
@@ -79,8 +80,14 @@ const ActivationHeading = ({ scripts, progressPercentage, orderOfQuestionScripts
           <div className="absolute bottom-10 flex justify-center align-middle">
             <img
               alt="hollow"
-              src="/assets/images/questionsHollow.png"
-              className={`w-[100vw] max-w-[${maxWidth}] h-auto scale-[2.5] z-0`}
+              src="/assets/images/coverHollow.png"
+              className={`w-[100vw] max-w-[${MAX_SCREEN_WIDTH}] h-auto scale-[2.5] z-0 block dark:hidden`}
+            />
+
+            <img
+              alt="hollow"
+              src="/assets/images/coverHollow_noBackground.png"
+              className={`w-[100vw] max-w-[${MAX_SCREEN_WIDTH}] h-auto scale-[2.5] z-0 hidden dark:block`}
             />
           </div>
         )}
@@ -96,6 +103,7 @@ const ActivationHeading = ({ scripts, progressPercentage, orderOfQuestionScripts
                           border-4 
                           border-impo_Surface_SurfaceVariant 
                           bg-impo_Neutral_Background
+                          dark:bg-impo_Neutral_Surface
                           flex 
                           align-bottom 
                           justify-center 
@@ -105,8 +113,14 @@ const ActivationHeading = ({ scripts, progressPercentage, orderOfQuestionScripts
               <div className="absolute bottom-10 flex justify-center align-middle">
                 <img
                   alt="hollow"
-                  src="/assets/images/questionsHollow.png"
-                  className={`w-[100vw] max-w-[${maxWidth}] h-auto scale-[2.5] z-0`}
+                  src="/assets/images/coverHollow.png"
+                  className={`w-[100vw] max-w-[${maxWidth}] h-auto scale-[2.5] z-0 block dark:hidden`}
+                />
+
+                <img
+                  alt="hollow"
+                  src="/assets/images/coverHollow_noBackground.png"
+                  className={`w-[100vw] max-w-[${maxWidth}] h-auto scale-[2.5] z-0 hidden dark:block`}
                 />
               </div>
             </div>

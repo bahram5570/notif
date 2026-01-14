@@ -1,29 +1,32 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ActivationTabsTypes } from './types';
 
 const ActivationTabs = ({ tab, tabHandler, tabsList }: ActivationTabsTypes) => {
-  const { colors } = useTheme();
-
   return (
     <div className="flex flex-row-reverse mx-4 mt-8" data-testid="activation_tabs">
       {tabsList.map((item) => (
         <div
           key={item.value}
-          onClick={() => tabHandler(item.value)}
-          className="border-b-[1px] pb-2 flex justify-center w-1/2 select-none cursor-pointer"
-          style={{ borderColor: item.value === tab ? colors.PrimaryWoman_Primary : colors.Neutral_Surface }}
           data-testid={`tab_${item.value}`}
+          onClick={() => tabHandler(item.value)}
+          className={`
+                      w-1/2 
+                      pb-2 
+                      flex 
+                      justify-center 
+                      select-none 
+                      cursor-pointer
+                      border-b-[1px] 
+                      ${item.value === tab ? 'border-impo_Primary_Primary' : 'border-impo_Neutral_Surface'}
+                    `}
         >
-          <Typography
-            scale="Lable"
-            size="Medium"
-            textAlign="center"
-            color={item.value === tab ? 'PrimaryWoman_Primary' : 'Surface_Outline'}
+          <Dark_Typography
+            fontSize="Lable_Medium"
+            className={`text-center ${item.value === tab ? 'text-impo_Primary_Primary' : 'text-impo_Surface_Outline'}`}
           >
             {item.text}
-          </Typography>
+          </Dark_Typography>
         </div>
       ))}
     </div>

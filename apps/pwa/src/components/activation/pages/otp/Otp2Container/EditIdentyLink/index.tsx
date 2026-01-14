@@ -1,4 +1,4 @@
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 import { useRouter } from 'next/navigation';
 
 import { EditIdentyLinkProps } from './types';
@@ -11,11 +11,13 @@ const EditIdentyLink = ({ isPhone }: EditIdentyLinkProps) => {
   };
 
   return (
-    <div className="w-fit">
-      <Button variant="fill" size="medium" color="pink" onClick={backHandler}>
-        ویرایش {isPhone ? 'شماره' : 'ایمیل'}
-      </Button>
-    </div>
+    <Dark_Button
+      onClick={backHandler}
+      fontSize="Lable_Large"
+      className="!w-fit bg-impo_Pink border-impo_Pink text-impo_White"
+    >
+      {isPhone ? 'ویرایش شماره' : 'ویرایش ایمیل'}
+    </Dark_Button>
   );
 };
 

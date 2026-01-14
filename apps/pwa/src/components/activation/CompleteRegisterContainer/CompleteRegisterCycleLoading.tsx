@@ -8,8 +8,8 @@ import { CompleteRegisterCycleLoadingProps } from './types';
 
 const CompleteRegisterCycleLoading = ({
   createCycleImage,
-  fetchedUser,
   clearStorage,
+  fetchedUser,
 }: CompleteRegisterCycleLoadingProps) => {
   const { sequenceHandler } = useRouteSequence();
 

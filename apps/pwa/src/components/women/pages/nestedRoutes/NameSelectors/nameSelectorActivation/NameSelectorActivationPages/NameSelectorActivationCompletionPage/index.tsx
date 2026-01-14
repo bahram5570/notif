@@ -25,9 +25,7 @@ const NameSelectorActivationCompletionPage = () => {
   return (
     <ProgressCycleLoading
       isSuccess={isSuccess}
-      circleColor={colors.White}
       onComplete={completeHandler}
-      backgroundColor={colors.Transparent}
       image={'/assets/images/selectName.webp'}
       titles={{
         main: 'در حال ساخت و پردازش یک لیست از اسامی خاص، متناسب با فیلترهای انتخابی‌ات هستیم',

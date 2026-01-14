@@ -3,7 +3,7 @@
 import { toEnglishNumbers } from '@utils/numbers';
 
 import MainActivationModule from '@components/activation/MainActivationModule';
-import Spinner from '@components/ui/Spinner';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
 import useIsRendered from '@hooks/useIsRendered';
 
 import Codes from './Codes';
@@ -80,7 +80,7 @@ const Otp2Container = ({
 
         {!isLoading && !isLoginRegisterSuccess && <EditLink isPhone={isPhone ? true : false} />}
 
-        {isLoading && <Spinner color="primary" />}
+        {isLoading && <Dark_Spinner className="border-impo_Primary_Primary" />}
 
         {isLoginRegisterSuccess && <LoginSuccess />}
       </div>

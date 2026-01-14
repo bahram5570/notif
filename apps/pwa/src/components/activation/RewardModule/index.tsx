@@ -1,6 +1,6 @@
 import { colorFormatConverter } from '@utils/scripts';
 
-import BackButton from '@components/ui/BackButton';
+import Dark_BackButton from '@components/ui/Dark_BackButton';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import { OrderOfRewardElementsTypes } from '@providers/__activation__/types';
 
@@ -14,10 +14,10 @@ const RewardModule = ({
   orderOfRewardElements,
   currentRewardData,
   isOnMountModule,
+  noBackButton,
   btnHandler,
   firstName,
   isLoading,
-  noBackButton,
 }: RewardModuleProps) => {
   usePreventScroll();
 
@@ -29,13 +29,13 @@ const RewardModule = ({
     <>
       {currentRewardData && (
         <div
-          className="fixed top-0 left-0 right-0 bottom-0 mx-auto z-40"
           style={{ backgroundColor: color1, maxWidth: MAX_SCREEN_WIDTH }}
+          className="fixed top-0 left-0 right-0 bottom-0 mx-auto dark:!bg-impo_Neutral_Background z-40"
         >
           <div className="relative w-full min-h-[100dvh] flex flex-col gap-5">
             {!noBackButton && (
               <div className="absolute top-4 right-4 z-10 w-12 h-12 flex justify-center items-center">
-                <BackButton variant="text" color="outline" />
+                <Dark_BackButton />
               </div>
             )}
 

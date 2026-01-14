@@ -23,7 +23,6 @@ const D = () => {
 
   return (
     <div className="fixed top-0 left-0 p-5 z-[100] bg-green-300">
-
       <select value={themeMode} onChange={(e) => selectHanadler(e.target.value as ThemeTypes)}>
         <option value="system">system</option>
         <option value="light">light</option>
