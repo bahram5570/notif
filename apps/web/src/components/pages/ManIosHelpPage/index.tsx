@@ -16,10 +16,10 @@ const ManIosHelpPage = () => {
     <div className="w-full max-w-[500px] relative py-6 px-4 bg-gradient-to-b from-blue-100 to-white h-dvh dark:bg-none">
       <div className="grid">
         <CustomTypography className="!text-impo_Blue_500 text-center" fontSize="Headline_Medium">
-          اگر ایمپو آقایان روی باز نمیشه
+          اگر ایمپو آقایان روی گوشی‌های
         </CustomTypography>
         <CustomTypography className="!text-impo_Blue_500 text-center" fontSize="Headline_Medium">
-          با سیستم عامل IOS
+          با سیستم عامل IOS باز نمیشه
         </CustomTypography>
         <CustomTypography className="!text-impo_Neutral_OnBackground text-center mt-2" fontSize="Lable_Large">
           مراحل زیر رو برای باز شدن اپلیکیشن دنبال کنید
