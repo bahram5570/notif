@@ -26,7 +26,7 @@ const ManIosHelpPage = () => {
         </CustomTypography>
       </div>
       <div className="grid mt-4">
-        <div className="grid justify-center justify-items-center gap-y-2 gap-y-3">
+        <div className="grid justify-center justify-items-center gap-y-2">
           <CustomTypography className="!text-impo_Neutral_OnBackground text-center mt-2" fontSize="Body_Medium">
             1- اگه موقع باز کردن ایمپو آقایان از این صفحه نتونستی جلوتر بری
           </CustomTypography>
