@@ -13,7 +13,7 @@ const TopPart = ({ openDatesHandler, goalInfo, payloadHandler }: TopPartProps) =
       className="relative w-full pt-14 px-4 flex flex-col overflow-hidden z-0"
       style={{ height: FAKE_CYCLE_HEADING_HEIGHT }}
     >
-      <WavesContainer topPartBackgroundColor={goalInfo.topPartBackgroundColor} />
+      <WavesContainer waveColor={goalInfo.waveColor} />
 
       <GoalSelector selectedGoalTitle={goalInfo.selectedGoalTitle} payloadHandler={payloadHandler} />
 

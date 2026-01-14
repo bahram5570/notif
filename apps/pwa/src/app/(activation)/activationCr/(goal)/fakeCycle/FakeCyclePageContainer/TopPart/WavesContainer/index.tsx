@@ -1,23 +1,32 @@
-import Waves from '@components/women/Widgets/widgetGenerator/WidgetCycleCard_old/Waves';
+import CycleCardWave from '@components/women/Widgets/widgetGenerator/WidgetCycleCard/CycleCardWave';
 import { TOTAL_WAVE_CONTAINER_SIZE } from '@components/women/Widgets/widgetGenerator/WidgetCycleCard_old/constants';
 
 import { WavesContainerProps } from './types';
 
-const WavesContainer = ({ topPartBackgroundColor }: WavesContainerProps) => {
+const WavesContainer = ({ waveColor }: WavesContainerProps) => {
   return (
     <>
       <div
-        className="absolute left-1/2 bottom-0 -translate-x-1/2 mx-auto rounded-full z-0"
+        className={`
+                    absolute 
+                    left-1/2 
+                    bottom-0 
+                    -translate-x-1/2 
+                    mx-auto 
+                    rounded-full 
+                    z-0
+                    dark:!bg-impo_Neutral_Surface
+                  `}
         style={{
+          backgroundColor: `${waveColor}10`,
           width: TOTAL_WAVE_CONTAINER_SIZE,
           height: TOTAL_WAVE_CONTAINER_SIZE,
           minWidth: TOTAL_WAVE_CONTAINER_SIZE,
           minHeight: TOTAL_WAVE_CONTAINER_SIZE,
-          backgroundColor: `${topPartBackgroundColor}22`,
         }}
       />
 
-      <Waves backgroundColour={''} forgroundColor={topPartBackgroundColor} loadingStatus={2} />
+      <CycleCardWave color={waveColor} />
     </>
   );
 };

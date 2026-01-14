@@ -17,8 +17,13 @@ const PageContainer = ({ goalInfo, callCreateSampleApi, payloadHandler }: PageCo
       {fakeCycleDates === null && (
         <FakeCycleContainer>
           <div
-            style={{ backgroundColor: goalInfo.backgroundColor, paddingBottom: FAKE_CYCLE_FOOTER_HEIGTH }}
-            className="w-full min-h-[100dvh]"
+            style={{ paddingBottom: FAKE_CYCLE_FOOTER_HEIGTH }}
+            className={`
+                        w-full 
+                        min-h-[100dvh]
+                        ${goalInfo.backgroundColor}
+                        dark:bg-impo_Neutral_Background
+                      `}
           >
             <TopPart goalInfo={goalInfo} openDatesHandler={openDatesHandler} payloadHandler={payloadHandler} />
             <BottomPart selectedGoal={goalInfo.selectedGoal} openDatesHandler={openDatesHandler} />
