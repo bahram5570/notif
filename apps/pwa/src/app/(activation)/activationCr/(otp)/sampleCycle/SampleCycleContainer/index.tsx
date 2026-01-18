@@ -10,7 +10,7 @@ import { SampleCycleContainerProps } from './types';
 
 const SampleCycleContainer = ({ payload }: SampleCycleContainerProps) => {
   const { isRendered } = useIsRendered();
-  const { data, textColor } = useGetData();
+  const { data } = useGetData();
 
   if (!isRendered) {
     return <></>;
@@ -18,7 +18,7 @@ const SampleCycleContainer = ({ payload }: SampleCycleContainerProps) => {
 
   return (
     <FakeCycleContainer>
-      <CycleContainer data={data} customAppBar={<SampleCycleHeading textColor={textColor} payload={payload} />}>
+      <CycleContainer data={data} customAppBar={<SampleCycleHeading payload={payload} />}>
         <BottomPart payload={payload} />
         <SampleCycleContinueBtn />
       </CycleContainer>

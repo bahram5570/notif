@@ -5,18 +5,13 @@ import LengthCycleIcon from '@assets/icons/fakeCycleLengthCycle.svg';
 import PregnancyIcon from '@assets/icons/fakeCyclePregnancy.svg';
 
 import { GoalNamesEnum, InstallationPurposeEnum } from '@constants/activation.constants';
-import useTheme from '@hooks/useTheme';
 
 import { GoalInfoTypes, UseGoalFinderProps } from './types';
 
 const useGoalFinder = ({ status, periodStatus }: UseGoalFinderProps) => {
-  const { colors } = useTheme();
-
   const pregnancySvgIcon = <PregnancyIcon className="w-6 h-auto fill-impo_Surface_Outline" />;
   const lastPeriodSvgIcon = <LastPeriodIcon className="w-6 h-auto stroke-impo_Surface_Outline" />;
   const lengthCycleSvgIcon = <LengthCycleIcon className="w-6 h-auto stroke-impo_Surface_Outline" />;
-
-  <div className="text-impo_Cycle_BabyTracker_Subtitle" />;
 
   const [goalInfo, setGoalInfo] = useState<GoalInfoTypes>({
     title: '',

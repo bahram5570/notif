@@ -22,7 +22,7 @@ const PageContainer = ({ goalInfo, callCreateSampleApi, payloadHandler }: PageCo
                         w-full 
                         min-h-[100dvh]
                         ${goalInfo.backgroundColor}
-                        dark:bg-impo_Neutral_Background
+                        dark:bg-impo_Neutral_Surface
                       `}
           >
             <TopPart goalInfo={goalInfo} openDatesHandler={openDatesHandler} payloadHandler={payloadHandler} />

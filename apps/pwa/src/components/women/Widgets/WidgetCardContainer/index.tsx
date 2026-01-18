@@ -28,7 +28,7 @@ const WidgetCardContainer = ({
   };
 
   return (
-    <div className={`w-full ${className} px-4 pt-6`}>
+    <div className={`w-full px-4 pt-6 ${className}`}>
       <div className="w-full h-fit rounded-2xl p-4 bg-impo_Neutral_Background">
         <div className="flex justify-between items-center border-b-[1px] pb-3 mb-3 border-impo_Neutral_Surface dark:border-impo_Surface_SurfaceVariant">
           <div className="min-w-fit">{titleElement}</div>

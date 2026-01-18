@@ -1,13 +1,10 @@
 import { WidgetPragnencyBreastfeedingCardProps } from '@components/women/Widgets/widgetGenerator/WidgetPragnencyBreastfeedingCard/types';
 import { WidgetPredictCardProps } from '@components/women/Widgets/widgetGenerator/WidgetPredictCard/types';
 import { GoalNamesEnum } from '@constants/activation.constants';
-import useTheme from '@hooks/useTheme';
 
 import { BottomPartDataTypes, PredictFooterTypes } from './types';
 
 const useBottomPartData = () => {
-  const { colors } = useTheme();
-
   const intentionData: WidgetPredictCardProps = {
     data: {
       backgroundColour: '',
@@ -15,27 +12,27 @@ const useBottomPartData = () => {
       title: 'پیش‌بینی چرخه آیندت',
       items: [
         {
-          backgroundColor: colors.Pink_50,
+          backgroundColor: '#fef3f5',
           icon: '/assets/images/fakeCycle/nextPeriod.png',
-          eyeIconColor: colors.Pink_400,
+          eyeIconColor: '#f5869e',
           title: 'پریود بعدی',
           showEyeIcon: true,
           trailingDown: '',
           trailingUp: '',
         },
         {
-          backgroundColor: colors.Cyan_50,
+          backgroundColor: '#f2f7f8',
           icon: '/assets/images/fakeCycle/ovulation.png',
-          eyeIconColor: colors.Cyan_400,
+          eyeIconColor: '#75bac0',
           title: 'تخمک گذاری بعدی',
           showEyeIcon: true,
           trailingDown: '',
           trailingUp: '',
         },
         {
-          backgroundColor: colors.Purple_50,
+          backgroundColor: '#f7f3fe',
           icon: '/assets/images/fakeCycle/pms.png',
-          eyeIconColor: colors.Purple_400,
+          eyeIconColor: '#b889f9',
           title: 'PMS بعدی',
           showEyeIcon: true,
           trailingDown: '',
@@ -52,27 +49,27 @@ const useBottomPartData = () => {
       title: 'پیش‌بینی چرخه آیندت',
       items: [
         {
-          backgroundColor: colors.Pink_50,
+          backgroundColor: '#fef3f5',
           icon: '/assets/images/fakeCycle/nextPeriod.png',
-          eyeIconColor: colors.Pink_400,
+          eyeIconColor: '#f5869e',
           title: 'پریود بعدی',
           showEyeIcon: true,
           trailingDown: '',
           trailingUp: '',
         },
         {
-          backgroundColor: colors.Cyan_50,
+          backgroundColor: '#f2f7f8',
           icon: '/assets/images/fakeCycle/ovulation.png',
-          eyeIconColor: colors.Cyan_400,
+          eyeIconColor: '#75bac0',
           title: 'تخمک گذاری بعدی',
           showEyeIcon: true,
           trailingDown: '',
           trailingUp: '',
         },
         {
-          backgroundColor: colors.Purple_50,
+          backgroundColor: '#f7f3fe',
           icon: '/assets/images/fakeCycle/pms.png',
-          eyeIconColor: colors.Purple_400,
+          eyeIconColor: '#b889f9',
           title: 'PMS بعدی',
           showEyeIcon: true,
           trailingDown: '',

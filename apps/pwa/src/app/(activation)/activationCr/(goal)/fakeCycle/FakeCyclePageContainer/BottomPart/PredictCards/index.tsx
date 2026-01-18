@@ -9,7 +9,7 @@ const PredictCards = ({ selectedGoal, bottomPartData, openDatesHandler }: Predic
   const info = bottomPartData[selectedGoal];
 
   return (
-    <div className="relative w-full px-4">
+    <div className="relative w-full">
       {info.goal === GoalNamesEnum.PREGNANCY && (
         <>
           <WidgetPragnencyBreastfeedingCard data={info.predictData.data} />

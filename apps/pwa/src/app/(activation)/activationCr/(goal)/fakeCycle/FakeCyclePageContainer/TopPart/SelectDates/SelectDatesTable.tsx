@@ -1,5 +1,4 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { SelectDatesTableProps } from './types';
 
@@ -10,32 +9,22 @@ const SelectDatesTable = ({
   selectDatesTopIcon,
   isPregnancy,
 }: SelectDatesTableProps) => {
-  const { colors } = useTheme();
-
   return (
-    <div
-      className="w-full rounded-xl select-none overflow-hidden"
-      style={{ backgroundColor: colors.Neutral_Background }}
-    >
+    <div className="w-full rounded-xl bg-impo_Neutral_Background select-none overflow-hidden">
       <div className="w-full flex justify-between px-4 py-5">
         {selectDatesTopIcon}
 
-        <Typography scale="Body" size="Large" color="Surface_Outline">
+        <Dark_Typography fontSize="Body_Large" className="text-impo_Surface_Outline">
           {selectDatesTopText}
-        </Typography>
+        </Dark_Typography>
       </div>
 
-      <div className="relative w-full h-[1px]" style={{ backgroundColor: colors.Neutral_Surface }}>
+      <div className="relative w-full h-[1px] bg-impo_Neutral_Surface">
         {isPregnancy && (
           <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-            <Typography
-              size="Small"
-              scale="Title"
-              className="px-2"
-              style={{ backgroundColor: colors.Neutral_Background }}
-            >
+            <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_Background px-2">
               یا
-            </Typography>
+            </Dark_Typography>
           </div>
         )}
       </div>
@@ -43,9 +32,9 @@ const SelectDatesTable = ({
       <div className="w-full flex justify-between px-4 py-5">
         {selectDatesBottomIcon}
 
-        <Typography scale="Body" size="Large" color="Surface_Outline">
+        <Dark_Typography fontSize="Body_Large" className="text-impo_Surface_Outline">
           {selectDatesBottomText}
-        </Typography>
+        </Dark_Typography>
       </div>
     </div>
   );

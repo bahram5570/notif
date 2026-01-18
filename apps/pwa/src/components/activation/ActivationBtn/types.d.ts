@@ -6,5 +6,4 @@ export type ActivationBtnProps = Pick<
 > & {
   showBtn?: boolean;
   btnTestId?: string;
-  width?: number | string;
 };

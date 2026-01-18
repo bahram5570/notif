@@ -47,7 +47,7 @@ const Dark_Button = forwardRef((props: Dark_ButtonTypes, ref: React.LegacyRef<HT
                   ${props.className}
                 `}
     >
-      <div className="relative w-full h-full flex items-center justify-center">
+      <div className="relative w-full min-w-fit h-full flex items-center justify-center">
         {isLoading ? <Dark_Spinner className={` ${props.spinnerClassName}`} /> : <>{result}</>}
       </div>
     </button>

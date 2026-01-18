@@ -37,8 +37,8 @@ const ActivationBtn = (props: ActivationBtnProps) => {
         onClick={props.onClick}
         testId={props.btnTestId}
         isLoading={props.isLoading}
+        className="w-[204px] !min-w-fit"
         navigationLoadingId={props.navigationLoadingId}
-        style={{ minWidth: 'fit-content', width: props.width || '204px' }}
       >
         {props.children}
       </Dark_Button>

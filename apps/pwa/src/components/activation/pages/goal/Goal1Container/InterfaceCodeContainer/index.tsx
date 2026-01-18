@@ -63,7 +63,7 @@ const InterfaceCodeContainer = ({ onComplete }: InterfaceCodeContainerProps) => 
                         "
             />
 
-            <ActivationBtn width="100%" showBtn={true} isLoading={isLoading} onClick={submitHandler}>
+            <ActivationBtn showBtn={true} isLoading={isLoading} onClick={submitHandler}>
               ارسال
             </ActivationBtn>
           </div>
