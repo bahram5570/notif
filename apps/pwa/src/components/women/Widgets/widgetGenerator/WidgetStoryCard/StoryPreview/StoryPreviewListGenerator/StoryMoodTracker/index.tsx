@@ -1,8 +1,7 @@
 import ImpoIcon from '@assets/icons/impoName.svg';
 import TickIcon from '@assets/icons/selectedTick.svg';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { LottieJson } from '@lib/LottieJson';
 
 import useMoodTrackerIsLargeScreen from './__hooks__/useMoodTrackerIsLargeScreen';
@@ -11,7 +10,6 @@ import { MOOD_TRACKER_ICONS_LIST } from './constants';
 import { StoryMoodTrackerProps } from './types';
 
 const StoryMoodTracker = ({ moodTrackerData }: StoryMoodTrackerProps) => {
-  const { colors } = useTheme();
   const { selectHandler } = useToggleMoodTracker();
   const { isLargeScreen } = useMoodTrackerIsLargeScreen();
 
@@ -34,17 +32,21 @@ const StoryMoodTracker = ({ moodTrackerData }: StoryMoodTrackerProps) => {
                 "
     >
       <div className="w-full flex flex-col items-center" style={{ paddingBottom: isLargeScreen ? 32 : 16 }}>
-        <Typography scale="Title" size="Large" color="Pink_600" className="pb-2">
+        <Dark_Typography fontSize="Title_Large" className="pb-2 text-impo_Pink_600 dark:text-impo_Pink_300">
           امروز "دوشــــــــنبه"
-        </Typography>
-
-        <Typography scale="Lable" size="Large" color="Surface_InverseSurface">
+        </Dark_Typography>
+        <Dark_Typography
+          fontSize="Lable_Large"
+          className=" text-impo_Surface_InverseSurface dark:text-impo_Surface_InverseOnSurface"
+        >
           حال و هوات چطوره؟
-        </Typography>
-
-        <Typography scale="Body" size="Medium" color="Surface_InverseSurface">
+        </Dark_Typography>
+        <Dark_Typography
+          fontSize="Body_Medium"
+          className=" text-impo_Surface_InverseSurface dark:text-impo_Surface_InverseOnSurface"
+        >
           از این پایین انتخابش کن
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <div
@@ -59,31 +61,33 @@ const StoryMoodTracker = ({ moodTrackerData }: StoryMoodTrackerProps) => {
               onClick={() => selectHandler(item.isSelected, item.type)}
             >
               <div
-                style={{
-                  backgroundColor: item.isSelected ? colors.Pink_50 : colors.White,
-                  borderColor: item.isSelected ? colors.PrimaryWoman_Primary : colors.Transparent,
-                }}
-                className="relative w-[72px] h-[72px] p-3 flex items-center justify-center rounded-full border-[2px]"
+                className={`relative w-[72px] h-[72px] p-3 flex items-center justify-center rounded-full border-[2px] ${item.isSelected ? 'bg-impo_Pink_50 dark:bg-impo_Pink_900 border-impo_Primary_Primary' : 'bg-impo_White border-impo_Transparent'}`}
               >
                 <LottieJson animationData={MOOD_TRACKER_ICONS_LIST[item.type]} loop={true} />
                 {item.isSelected && <TickIcon className="absolute -bottom-1 -right-1 w-8 h-8 z-10" />}
               </div>
 
-              <Typography scale="Lable" size="Medium" color="Surface_InverseSurface" textAlign="center">
+              <Dark_Typography
+                fontSize="Lable_Medium"
+                className="text-impo_Surface_InverseSurface dark:text-impo_Surface_InverseOnSurface text-center"
+              >
                 {item.label}
-              </Typography>
+              </Dark_Typography>
             </div>
           );
         })}
       </div>
 
       <div className="w-full mt-auto flex flex-col items-center gap-2">
-        <ImpoIcon className="w-12 h-auto" style={{ fill: colors.PrimaryWoman_Primary }} />
+        <ImpoIcon className="w-12 h-auto fill-impo_Primary_Primary" />
 
         {isLargeScreen && (
-          <Typography scale="Body" size="Medium" color="Surface_Outline" textAlign="center">
+          <Dark_Typography
+            fontSize="Body_Medium"
+            className="text-impo_Surface_Outline dark:text-impo_Surface_OutlineVariant text-center"
+          >
             اگه هر روز حال و هوات رو اینجا ثبت کنی، بعد از 30 روز یک گزارش یک ماهه از مودت رو برات آماده می‌کنیم
-          </Typography>
+          </Dark_Typography>
         )}
       </div>
     </div>

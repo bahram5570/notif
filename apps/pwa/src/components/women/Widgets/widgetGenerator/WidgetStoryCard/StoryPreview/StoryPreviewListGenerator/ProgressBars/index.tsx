@@ -3,8 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import CrossIcon from '@assets/icons/plus.svg';
 import ImpoIcon from '@assets/images/questionsImpo.svg';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { useRouter } from 'next/navigation';
 
 import { STORY_PROGRESS_HEIGHT } from '../../../constants';
@@ -19,7 +18,7 @@ const ProgressBars = ({
   stories,
 }: ProgressBarsProps) => {
   const router = useRouter();
-  const { colors } = useTheme();
+
   const timer = useRef<NodeJS.Timeout>();
   const [progressPercent, setProgressPercent] = useState(0);
 
@@ -68,14 +67,13 @@ const ProgressBars = ({
 
           return (
             <div
-              className="relative w-full h-[2px] rounded-full overflow-hidden shadow-[0_4px_10px_#00000044] "
-              style={{ backgroundColor: colors.Surface_Outline }}
+              className="relative w-full h-[2px] rounded-full overflow-hidden shadow-[0_4px_10px_#00000044] bg-impo_Surface_Outline dark:bg-impo_Surface_OutlineVariant"
               key={index}
             >
               <div
                 dir="rtl"
-                className="w-full h-full rounded-full duration-300"
-                style={{ backgroundColor: colors.White, transform: `translateX(${translateProgress}%)` }}
+                className="w-full h-full rounded-full duration-300 bg-impo_White"
+                style={{ transform: `translateX(${translateProgress}%)` }}
               />
             </div>
           );
@@ -87,18 +85,20 @@ const ProgressBars = ({
           <ImpoIcon className="w-12 h-12" />
 
           <div>
-            <Typography scale="Body" size="Small" color="Surface_Outline">
+            <Dark_Typography
+              className="text-impo_Surface_Outline dark:text-impo_Surface_OutlineVariant"
+              fontSize="Body_Small"
+            >
               بازبینی شده توسط
-            </Typography>
-
-            <Typography scale="Body" size="Medium" color="Neutral_OnBackground">
+            </Dark_Typography>
+            <Dark_Typography className="text-impo_Black" fontSize="Body_Medium">
               تیم تولید محتوای ایمپو
-            </Typography>
+            </Dark_Typography>
           </div>
         </div>
 
         <div className="w-12 h-12 flex items-center justify-center cursor-pointer" onClick={() => router.back()}>
-          <CrossIcon className="w-8 h-auto rotate-45" style={{ stroke: colors.Surface_Outline }} />
+          <CrossIcon className="w-8 h-auto rotate-45  stroke-impo_Surface_Outline" />
         </div>
       </div>
     </div>

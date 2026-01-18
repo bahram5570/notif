@@ -18,7 +18,7 @@ const BiorhythmContainer = ({ Icon, percent, text, typeText, type }: BiorhythmCo
   };
 
   return (
-    <div onClick={selectHandler} className="flex rounded-2xl p-3 w-1/3 justify-center bg-impo_Surface_SurfaceVariant">
+    <div onClick={selectHandler} className="flex rounded-2xl p-3 w-1/3 justify-center bg-impo_Neutral_Surface">
       <div className="flex flex-col justify-center items-center gap-2 p-1">
         <Icon className="w-12 h-12" />
 

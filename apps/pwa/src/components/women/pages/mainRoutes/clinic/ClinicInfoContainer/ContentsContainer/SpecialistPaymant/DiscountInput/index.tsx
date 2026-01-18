@@ -38,6 +38,7 @@ const DiscountInput = ({ id, approvedCodeHandler }: DiscountInputProps) => {
                       border-impo_Neutral_Surface 
                       text-impo_Neutral_OnBackground 
                       bg-impo_Neutral_Background
+                      placeholder:text-impo_Surface_OutlineVariant
                     "
         />
       </div>

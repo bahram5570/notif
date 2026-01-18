@@ -24,15 +24,17 @@ const NoteInputGenerator = forwardRef<HTMLDivElement | null, NoteInputGeneratorP
         <div
           ref={ref}
           onFocus={onFocusHandler}
-          className="flex flex-col gap-1 p-3 rounded-xl divide-y-[1px] bg-impo_Neutral_Background"
+          className="flex flex-col gap-1 p-3 rounded-xl  bg-impo_Neutral_Background"
         >
           {NOTE_INPUT_LIST.textareaInput.map((textarea, index) => {
+            const isLastItem = NOTE_INPUT_LIST.textareaInput.length - 1 === index;
             return (
               <NoteTextarea
                 key={index}
                 {...textarea}
                 value={noteValue[textarea.name]}
                 onchangeHandler={onChangeHandler}
+                isLastItem={isLastItem}
               />
             );
           })}

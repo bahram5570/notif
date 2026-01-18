@@ -27,7 +27,7 @@ const WidgetArticleCard = ({ data }: WidgetArticleCardProps) => {
       </div>
 
       <Dark_Button
-        className="dark:text-impo_White text-impo_black bg-impo_Grey_100 border-impo_Grey_100  dark:bg-impo_Neutral_Surface dark:border-impo_Neutral_Surface"
+        className="!text-impo_Neutral_OnSurface  !bg-impo_Neutral_Surface !border-impo_Neutral_Surface"
         onClick={clickHandler}
         fontSize="Lable_Large"
       >

@@ -3,12 +3,9 @@ import { useEffect, useState } from 'react';
 import SaveEmptyIcon from '@assets/icons/saveEmpty.svg';
 import SaveFillIcon from '@assets/icons/saveFill.svg';
 
-import useTheme from '@hooks/useTheme';
-
 import { SaveStoryProps } from './types';
 
 const SaveStory = ({ selectHandler, isBookmarked }: SaveStoryProps) => {
-  const { colors } = useTheme();
   const [isSaved, setIsSaved] = useState(false);
 
   useEffect(() => {
@@ -26,8 +23,8 @@ const SaveStory = ({ selectHandler, isBookmarked }: SaveStoryProps) => {
       onClick={isSavedHandler}
       id="StoryBookMarked"
     >
-      {!isSaved && <SaveEmptyIcon className="w-6 h-auto" style={{ stroke: colors.White }} />}
-      {isSaved && <SaveFillIcon className="w-6 h-auto" style={{ fill: colors.White }} />}
+      {!isSaved && <SaveEmptyIcon className="w-6 h-auto  stroke-impo_White" />}
+      {isSaved && <SaveFillIcon className="w-6 h-auto fill-impo_White" />}
     </div>
   );
 };

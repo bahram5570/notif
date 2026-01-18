@@ -21,7 +21,7 @@ const WidgetCycleDateCard = ({ data }: WidgetCycleDateCardProps) => {
           isInLatePeriod={data.isInLatePeriod}
         />
 
-        <div className="w-full h-[28px] p-[2px] rounded-full bg-impo_Surface_SurfaceVariant ">
+        <div className="w-full h-[28px] p-[2px] rounded-full bg-impo_Neutral_Surface ">
           <div className="relative w-full h-full flex items-center" style={{ direction: 'rtl' }}>
             <WidgetCycleDateCardPeriod
               startPeriodLable={data.startPeriodLable}

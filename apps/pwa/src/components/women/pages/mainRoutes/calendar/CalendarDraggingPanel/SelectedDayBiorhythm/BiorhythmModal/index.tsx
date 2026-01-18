@@ -32,14 +32,11 @@ const BiorhythmModal = ({ biorhythmInfo }: BiorhythmModalPropsType) => {
   return (
     <CustomModal isSlidingMode>
       <div className="flex flex-col gap-3">
-        <div
-          onClick={onCloseHandler}
-          className="w-10 h-10 bg-impo_Blue_50 flex justify-center items-center rounded-full"
-        >
+        <div onClick={onCloseHandler} className="w-10 h-10  flex justify-center items-center rounded-full">
           <CancelIcon className="w-6 h-auto stroke-impo_Surface_OnSurfaceVariant" />
         </div>
 
-        <div className="flex flex-col p-4 rounded-2xl gap-3 bg-impo_Surface_SurfaceVariant">
+        <div className="flex flex-col p-4 rounded-2xl gap-3 bg-impo_Neutral_Surface">
           <div className="flex flex-col justify-center items-center gap-2 p-1">
             {Icon && <Icon className="w-16 h-16" />}
 
@@ -51,7 +48,7 @@ const BiorhythmModal = ({ biorhythmInfo }: BiorhythmModalPropsType) => {
           </div>
 
           <div className="flex flex-col justify-end items-end px-1">
-            <div className="flex flex-col justify-end items-end w-full border-b-[1px] border-impo_Surface_Outline pb-2 ">
+            <div className="flex flex-col justify-end items-end w-full border-b-[1px] border-impo_Surface_OutlineVariant pb-2 ">
               <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
                 توصیه امروز
               </Dark_Typography>

@@ -16,7 +16,7 @@ const SignsLists = ({ infoList, slide, slideHandler, updateSingSelectedList }: S
   }, [slide, swiperRef.current]);
 
   return (
-    <div className="bg-impo_Surface_SurfaceVariant pt-4" style={{ paddingBottom: FOOTER_HEIGTH }}>
+    <div className="bg-impo_Neutral_Surface pt-4" style={{ paddingBottom: FOOTER_HEIGTH }}>
       <Swiper
         allowTouchMove={false}
         onSwiper={(s) => (swiperRef.current = s)}

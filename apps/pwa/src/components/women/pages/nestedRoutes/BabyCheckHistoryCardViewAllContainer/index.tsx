@@ -1,6 +1,6 @@
 'use client';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import WidgetBabyCheckHistoryCardItems from '@components/women/Widgets/widgetGenerator/WidgetBabyCheckHistoryCard/WidgetBabyCheckHistoryCardItems';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 
@@ -14,9 +14,9 @@ const BabyCheckHistoryCardViewAllContainer = () => {
   return (
     <WomenPageLayout rightElement="BackButton" rightElementScript={data?.title}>
       <div className="px-4">
-        <Typography scale="Body" size="Medium" color="Neutral_OnBackground">
+        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
           با انتخاب هر کدوم از چرخه‌های زیر، می‌تونی جزئیات مربوط به تست‌های انجام شده در اون چرخه رو ببینی
-        </Typography>
+        </Dark_Typography>
 
         {data && <WidgetBabyCheckHistoryCardItems items={data.items} onSelect={linkToHandler} />}
       </div>

@@ -20,7 +20,7 @@ const ReportGenerator = ({ icon, text, title, trailing, backgroundColor }: Repor
           {text}
         </Dark_Typography>
 
-        <div className="h-5 w-[1px] block bg-impo_Surface_Outline" />
+        <div className="h-5 w-[1px] block bg-impo_Surface_OutlineVariant dark:bg-impo_Surface_Outline" />
 
         <Dark_Typography fontSize="Lable_Medium" className="text-impo_Black">
           {title}

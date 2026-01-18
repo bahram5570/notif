@@ -13,6 +13,7 @@ const WidgetPregnancyCheckup = ({ data }: WidgetPregnancyCheckupPropsTypes) => {
       button={data.button}
       buttonId="CheckupWidgetButton"
       onClick={() => callEvent('CheckupWidgetButton')}
+      classNameBtn="!text-impo_Neutral_OnSurface  !bg-impo_Neutral_Surface !border-impo_Neutral_Surface"
     >
       <div className="flex flex-col gap-2">
         {data.items.map((item, index) => {

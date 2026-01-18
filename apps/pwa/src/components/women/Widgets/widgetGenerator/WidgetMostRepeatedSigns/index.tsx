@@ -6,7 +6,7 @@ import { WidgetMostRepeatedSignsProps } from './types';
 
 const WidgetMostRepeatedSigns = ({ data, isPdfDownloading }: WidgetMostRepeatedSignsProps) => {
   return (
-    <WidgetCardHealthReportContainer title={data.title}>
+    <WidgetCardHealthReportContainer title={data.title} isPdfDownloading={isPdfDownloading}>
       <>
         <WidgetMostRepeatedSignsTitles
           guidDescription={data.guidDescription}

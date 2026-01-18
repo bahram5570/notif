@@ -1,12 +1,8 @@
 import Dark_Typography from '@components/ui/Dark_Typography';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
 
 import { WidgetOvulationHistoryCardItemsProps } from './types';
 
 const WidgetOvulationHistoryCardItems = (props: WidgetOvulationHistoryCardItemsProps) => {
-  const { colors } = useTheme();
-
   const clickHandler = (v: number, hasData: boolean) => {
     if (props.onSelect && hasData) {
       props.onSelect(v);

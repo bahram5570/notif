@@ -40,7 +40,7 @@ const WidgetPragnencyBreastfeedingCard = ({ data }: WidgetPragnencyBreastfeeding
             {data.trailing}
           </Dark_Typography>
 
-          {data.trailingIcon && <CustomImage src={data.trailingIcon} width={56} className="rounded-full" />}
+          {data.trailingIcon && <CustomImage src={data.trailingIcon} width={56} className="rounded-full " />}
         </div>
       </div>
     </div>

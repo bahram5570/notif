@@ -2,6 +2,7 @@ import ImpoIcon from '@assets/icons/impoName.svg';
 
 import Button from '@components/ui/Button';
 import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import Typography from '@components/ui/Typography';
 import WidgetGenerator from '@components/women/Widgets/widgetGenerator';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
@@ -13,7 +14,7 @@ import HealthReportDate from './HealthReportDate';
 import usePdfDownload from './__hooks__/usePdfDownload';
 import { HealthReportContainerPdfProps } from './types';
 
-const HealthReportContainerPdf = ({ data, backgroundColor }: HealthReportContainerPdfProps) => {
+const HealthReportContainerPdf = ({ data }: HealthReportContainerPdfProps) => {
   const { callEvent } = useAnalytics();
   const { colors } = useTheme();
   const { ref, downloadStatus, downloadStatusHandler } = usePdfDownload();
@@ -45,47 +46,42 @@ const HealthReportContainerPdf = ({ data, backgroundColor }: HealthReportContain
 
       {downloadStatus !== null && (
         <>
-          <div className="fixed top-0 left-0 right-0 bottom-0 -z-40 " style={{ backgroundColor: colors.White }} />
+          <div className="fixed top-0 left-0 right-0 bottom-0 -z-40 bg-impo_White " />
 
-          <div className="fixed top-0 left-0 right-0 bottom-0 w-full -z-50" style={{ backgroundColor }}>
-            <div
-              ref={ref}
-              style={{ backgroundColor }}
-              className="min-w-[210mm] max-w-[210mm] h-fit min-h-[297mm] px-8 py-6"
-            >
-              <div
-                className="w-full flex justify-between items-center border-b-[1px] pb-4 mb-4"
-                style={{ borderBottomColor: colors.Neutral_Surface }}
-              >
-                <Typography scale="Lable" size="Small" color="Surface_Outline">
+          <div className="fixed top-0 left-0 right-0 bottom-0 w-full -z-50 bg-impo_Grey_50 ">
+            <div ref={ref} className="min-w-[210mm] max-w-[210mm] h-fit min-h-[297mm] px-8 py-6 bg-impo_Grey_50 ">
+              <div className="w-full flex justify-between items-center border-b-[1px] pb-4 mb-4  dark:border-b-impo_Neutral_OnSurface border-b-impo_Neutral_Surface">
+                <Dark_Typography
+                  fontSize="Lable_Small"
+                  className="dark:text-impo_Surface_Outline text-impo_Surface_OutlineVariant"
+                >
                   Impo.app
-                </Typography>
+                </Dark_Typography>
 
                 <div className="flex items-center gap-2">
-                  <Typography scale="Lable" size="Small">
+                  <Dark_Typography fontSize="Lable_Small" className="text-impo_Black">
                     بزرگترین پلتفرم حوزه سلامت قاعدگی زنان
-                  </Typography>
+                  </Dark_Typography>
 
-                  <ImpoIcon className="w-[72px] h-auto" style={{ fill: colors.PrimaryWoman_Primary }} />
+                  <ImpoIcon className="w-[72px] h-auto fill-impo_Primary_Primary" />
                 </div>
               </div>
 
               <div className="w-full flex flex-col items-end pb-4">
-                <Typography scale="Headline" size="Medium">
+                <Dark_Typography fontSize="Headline_Medium" className="text-impo_Black">
                   {` گزارش دوره ${PeriodReportType?.data?.items?.length} ماهه پریود`}
-                </Typography>
+                </Dark_Typography>
 
                 {data && <HealthReportDate data={data} />}
               </div>
 
               <div className="w-full flex flex-col items-end pb-6">
-                <Typography scale="Body" size="Large">
+                <Dark_Typography fontSize="Body_Large" className="text-impo_Black">
                   این گزارش نشون دهنده زمان های پیش بینی شده و اتفاق افتاده پریود شماست.
-                </Typography>
-
-                <Typography scale="Body" size="Large">
+                </Dark_Typography>
+                <Dark_Typography fontSize="Body_Large" className="text-impo_Black">
                   میتونی این گزارش رو برای خودت ذخیره کنی و یا برای پزشکت بفرستی.
-                </Typography>
+                </Dark_Typography>
               </div>
 
               <div className="w-full flex flex-col gap-4">

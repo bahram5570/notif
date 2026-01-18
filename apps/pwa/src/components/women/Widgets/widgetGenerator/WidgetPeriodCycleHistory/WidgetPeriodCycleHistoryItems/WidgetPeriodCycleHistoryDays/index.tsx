@@ -23,7 +23,7 @@ const WidgetPeriodCycleHistoryDays = ({
       } else if (i <= periodLength) {
         color = 'bg-impo_Primary_Primary';
       } else {
-        color = 'bg-impo_Neutral_Surface';
+        color = `bg-impo_Neutral_Surface ${isPdfDownloading && 'dark:!bg-impo_Neutral_OnSurface'}`;
       }
 
       list.push(color);
@@ -33,7 +33,7 @@ const WidgetPeriodCycleHistoryDays = ({
   }, []);
 
   return (
-    <CustomSlider gap={isPdfDownloading ? 8 : 4} sidePadding={16} className="min-w-[calc(100%_+_32px)] !pb-0">
+    <CustomSlider gap={isPdfDownloading ? 8 : 4} sidePadding={16} className="min-w-[calc(100%_+_32px)] !pb-0 ">
       {daysList.map((backgroundColor, index) => (
         <div className={`w-[6px] min-w-[6px] h-[16px] rounded ${backgroundColor}`} key={index} />
       ))}

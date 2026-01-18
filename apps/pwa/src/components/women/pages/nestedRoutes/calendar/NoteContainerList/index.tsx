@@ -74,13 +74,13 @@ const NoteContainerList = () => {
           className="flex flex-col min-h-[100dvh] gap-3 pb-6 px-4"
         >
           <div className="flex items-center justify-center gap-3">
-            <div className="h-0 w-24 border-[1px] border-impo_Surface_OutlineVariant rotate-180" />
+            <div className="h-0 w-24 border-[1px] border-impo_Neutral_Background rotate-180" />
 
             <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground text-center">
               {currentDate}
             </Dark_Typography>
 
-            <div className="h-0 w-24 border-[1px] border-impo_Surface_OutlineVariant rotate-180" />
+            <div className="h-0 w-24 border-[1px] border-impo_Neutral_Background  rotate-180" />
           </div>
 
           {hasData &&

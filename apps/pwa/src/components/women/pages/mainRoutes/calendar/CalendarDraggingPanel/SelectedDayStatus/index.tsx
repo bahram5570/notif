@@ -7,7 +7,7 @@ const SelectedDayStatus = ({ selectedDateInfo, monthName, day }: SelectedDayStat
   const { dayTitle, dayTypeColor } = useCalendarDayInfo(selectedDateInfo);
 
   return (
-    <div className="w-full flex flex-col justify-center items-center gap-1">
+    <div className="w-full flex flex-col justify-center items-center gap-1  ">
       <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
         {`${day} ${monthName}`}
       </Dark_Typography>

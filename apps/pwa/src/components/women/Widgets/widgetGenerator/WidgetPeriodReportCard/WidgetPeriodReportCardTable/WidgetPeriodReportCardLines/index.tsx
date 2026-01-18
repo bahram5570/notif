@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { percentFinder } from '../__utils__';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { WidgetPeriodReportCardLinesProps } from './types';
 
@@ -15,8 +14,8 @@ const WidgetPeriodReportCardLines = ({
   cycleLength,
   min,
   max,
+  isPdfDownloading,
 }: WidgetPeriodReportCardLinesProps) => {
-  const { colors } = useTheme();
   const [rangeList, setRangeList] = useState<number[]>([]);
 
   useEffect(() => {
@@ -43,17 +42,14 @@ const WidgetPeriodReportCardLines = ({
           const result = `${range.toString()}${plus}`;
 
           return (
-            <Typography
+            <Dark_Typography
               key={range}
-              scale="Body"
-              size="Small"
-              textAlign="center"
-              color="Surface_Outline"
               style={{ bottom: percentFinder({ min, max, value: range }) }}
-              className="absolute right-0 w-full translate-y-1/2"
+              fontSize="Body_Small"
+              className={`absolute right-0 w-full translate-y-1/2 text-impo_Surface_Outline text-center ${isPdfDownloading && 'dark:!text-impo_Surface_OutlineVariant'}`}
             >
               {result}
-            </Typography>
+            </Dark_Typography>
           );
         })}
       </div>
@@ -64,8 +60,8 @@ const WidgetPeriodReportCardLines = ({
         style={{ height: rangesHeigth, left: numbersWidth, top: rangeExtraSpace }}
       >
         <div
-          className="w-full h-1 border-t-2 border-dashed scale-x-[3]"
-          style={{ borderColor: colors.Pink_200, height: percentFinder({ min, max, value: cycleLength }) }}
+          className="w-full h-1 border-t-2 border-dashed scale-x-[3] border-impo_Pink_200"
+          style={{ height: percentFinder({ min, max, value: cycleLength }) }}
         />
       </div>
 
@@ -75,40 +71,44 @@ const WidgetPeriodReportCardLines = ({
         style={{ height: rangesHeigth, left: numbersWidth, top: rangeExtraSpace }}
       >
         <div
-          className="w-full h-1 border-t-2 border-dashed scale-x-[3]"
-          style={{ borderColor: colors.Pink_400, height: percentFinder({ min, max, value: periodLength }) }}
+          className="w-full h-1 border-t-2 border-dashed scale-x-[3] border-impo_Pink_400"
+          style={{ height: percentFinder({ min, max, value: periodLength }) }}
         />
       </div>
 
       {/* // # X axis */}
       <div
-        style={{ backgroundColor: colors.Neutral_Surface, top: rangesHeigth + rangeExtraSpace, left: numbersWidth }}
-        className="absolute right-0 h-[1px] pointer-events-none"
+        style={{ top: rangesHeigth + rangeExtraSpace, left: numbersWidth }}
+        className={`absolute right-0 h-[1px] pointer-events-none bg-impo_Surface_SurfaceVariant ${isPdfDownloading && 'dark:!bg-impo_Grey_50'}`}
       />
 
       {/* // # Y axis */}
       <div
         style={{
-          backgroundColor: colors.Neutral_Surface,
           height: rangesHeigth + rangeExtraSpace,
           top: `-${rangeExtraSpace - rangeExtraSpace}px`,
           left: numbersWidth,
         }}
-        className="absolute w-[1px] pointer-events-none"
+        className={`absolute w-[1px] pointer-events-none  bg-impo_Surface_SurfaceVariant ${isPdfDownloading && 'dark:!bg-impo_Grey_50'}`}
       />
 
       {/* // # X axis script */}
       <div
-        className="absolute left-0 flex flex-col items-center pt-2 pointer-events-none z-20"
-        style={{ backgroundColor: colors.White, top: rangesHeigth + rangeExtraSpace + 1 }}
+        className={`absolute left-0 flex flex-col items-center pt-2 pointer-events-none z-20 bg-impo_Neutral_Background ${isPdfDownloading && '!bg-impo_White'}`}
+        style={{ top: rangesHeigth + rangeExtraSpace + 1 }}
       >
-        <Typography size="Small" scale="Lable" color="Neutral_OnSurface">
+        <Dark_Typography
+          fontSize="Lable_Small"
+          className={`text-impo_Neutral_OnSurface ${isPdfDownloading && '!text-impo_Black'}`}
+        >
           تاریخ
-        </Typography>
-
-        <Typography size="Small" scale="Lable" color="Neutral_OnSurface">
+        </Dark_Typography>
+        <Dark_Typography
+          fontSize="Lable_Small"
+          className={`text-impo_Neutral_OnSurface ${isPdfDownloading && '!text-impo_Black'}`}
+        >
           شروع دوره
-        </Typography>
+        </Dark_Typography>
       </div>
     </>
   );

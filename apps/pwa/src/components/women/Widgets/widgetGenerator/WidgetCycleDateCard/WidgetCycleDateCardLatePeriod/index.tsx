@@ -2,15 +2,14 @@ import { useEffect, useState } from 'react';
 
 import { currentDate } from '@utils/dates';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
-import useTheme from '@hooks/useTheme';
 import moment from 'moment-jalaali';
 
 const WidgetCycleDateCardLatePeriod = () => {
   const { jDate, gDate } = currentDate();
-  const { colors } = useTheme();
+
   const { culture } = useCulture();
   const [currentDay, setCurrentDay] = useState<string>('');
 
@@ -32,15 +31,14 @@ const WidgetCycleDateCardLatePeriod = () => {
 
   return (
     <div
-      className="absolute top-0 bottom-0 w-6 flex items-center justify-center h-full px-2 rounded-full"
+      className="absolute top-0 bottom-0 w-6 flex items-center justify-center h-full px-2 rounded-full bg-impo_Grey_500"
       style={{
         right: `96%`,
-        backgroundColor: colors.Grey_500,
       }}
     >
-      <Typography scale="Lable" size="Medium" color="Neutral_Background">
+      <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
         {currentDay}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

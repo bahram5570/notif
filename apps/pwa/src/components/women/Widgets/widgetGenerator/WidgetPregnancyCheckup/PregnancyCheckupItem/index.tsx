@@ -2,7 +2,7 @@ import ArrowIcon from '@assets/icons/calendarArrow.svg';
 import { colorFormatConverter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 import useWidgetActions from '@hooks/useWidgetActions';
 
@@ -23,7 +23,7 @@ const PregnancyCheckupItem = ({
   };
   return (
     <div
-      style={{ background: `${colorFormatConverter(backgroundColor)}33` }}
+      style={{ background: `${colorFormatConverter(backgroundColor)}` }}
       className=" rounded-lg flex flex-row-reverse gap-2 p-3"
       onClick={linkTo}
     >
@@ -31,18 +31,15 @@ const PregnancyCheckupItem = ({
         <CustomImage src={icon} className="w-8 h-8" />
       </div>
       <div className="flex flex-col gap-1">
-        <div
-          className="flex w-full justify-between pb-3 border-b-[1px] "
-          style={{ borderBottomColor: `${colorFormatConverter(backgroundColor)}66` }}
-        >
+        <div className="flex w-full justify-between pb-3 border-b border-b-black/15">
           <ArrowIcon className="w-6 h-6" style={{ stroke: colorFormatConverter(backgroundColor) }} />
-          <Typography scale="Body" size="Large">
+          <Dark_Typography fontSize="Body_Large" className="text-impo_Black">
             {title}
-          </Typography>
+          </Dark_Typography>
         </div>
-        <Typography scale="Body" size="Medium">
+        <Dark_Typography fontSize="Body_Medium" className="text-impo_Black">
           {description}
-        </Typography>
+        </Dark_Typography>
       </div>
     </div>
   );

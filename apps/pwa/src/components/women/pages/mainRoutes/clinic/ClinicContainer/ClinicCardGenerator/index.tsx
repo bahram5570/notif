@@ -18,7 +18,7 @@ const ClinicCardGenerator = ({ description, id, image, name, price, priceUnit }:
 
   return (
     <div onClick={clickHandler} className="cursor-pointer">
-      <div className="w-full h-fit px-3 py-4 rounded-xl flex items-center gap-2 bg-impo_Surface_SurfaceVariant pointer-events-none ">
+      <div className="w-full h-fit px-3 py-4 rounded-xl flex items-center gap-2 bg-impo_Neutral_Surface pointer-events-none ">
         <CustomImage src={image} width={90} height={90} />
 
         <div className="w-full flex flex-col items-end gap-1">

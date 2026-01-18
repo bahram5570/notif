@@ -21,7 +21,7 @@ const FileInput = ({ fileName, valuesHandler }: FileInputProps) => {
   const fileNameScript = `${textShorter(fileNameList[0])} .${fileNameList[1]}`;
 
   return (
-    <div className="w-full px-4 rounded-lg bg-impo_Surface_SurfaceVariant">
+    <div className="w-full px-4 rounded-lg bg-impo_Neutral_Surface">
       {fileName === '' && (
         <div
           className="relative w-full flex items-center justify-center gap-2 py-2 cursor-pointer"

@@ -4,11 +4,11 @@ import WidgetPeriodReportCardGuides from './WidgetPeriodReportCardGuides';
 import WidgetPeriodReportCardTable from './WidgetPeriodReportCardTable';
 import { WidgetPeriodReportCardProps } from './types';
 
-const WidgetPeriodReportCard = ({ data }: WidgetPeriodReportCardProps) => {
+const WidgetPeriodReportCard = ({ data, isPdfDownloading }: WidgetPeriodReportCardProps) => {
   return (
-    <WidgetCardHealthReportContainer title={data.title}>
+    <WidgetCardHealthReportContainer title={data.title} isPdfDownloading={isPdfDownloading}>
       <>
-        <WidgetPeriodReportCardGuides />
+        <WidgetPeriodReportCardGuides isPdfDownloading={isPdfDownloading} />
 
         <WidgetPeriodReportCardTable
           min={data.min}
@@ -16,6 +16,7 @@ const WidgetPeriodReportCard = ({ data }: WidgetPeriodReportCardProps) => {
           items={data.items}
           cycleLength={data.cycleLength}
           periodLength={data.periodLength}
+          isPdfDownloading={isPdfDownloading}
         />
       </>
     </WidgetCardHealthReportContainer>

@@ -3,10 +3,9 @@ import { useMemo } from 'react';
 import { percentFinder } from '../__utils__';
 import { toJalaliData } from '@utils/dates';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
-import useTheme from '@hooks/useTheme';
 
 import { WidgetPeriodReportCardCandleGeneratorProps } from './types';
 
@@ -16,8 +15,8 @@ const WidgetPeriodReportCardCandleGenerator = ({
   start,
   min,
   max,
+  isPdfDownloading,
 }: WidgetPeriodReportCardCandleGeneratorProps) => {
-  const { colors } = useTheme();
   const { culture } = useCulture();
 
   const dateScript = useMemo(() => {
@@ -41,17 +40,15 @@ const WidgetPeriodReportCardCandleGenerator = ({
   return (
     <div className="relative w-4 h-full flex items-end justify-center pointer-events-none z-0">
       <div
-        className="absolute left-0 right-0 bottom-0 rounded-3xl flex justify-center"
-        style={{ backgroundColor: colors.Neutral_Surface, height: percentFinder({ min, max, value: cycleLength }) }}
+        className={`absolute left-0 right-0 bottom-0 rounded-3xl flex justify-center dark:bg-impo_Neutral_Surface bg-impo_Surface_OutlineVariant ${isPdfDownloading && '!bg-impo_Surface_OutlineVariant'}`}
+        style={{ height: percentFinder({ min, max, value: cycleLength }) }}
       >
-        <Typography
-          scale="Lable"
-          size="SmallProminet"
-          color="Surface_InverseSurface"
-          className="-translate-y-4 scale-90"
+        <Dark_Typography
+          fontSize="Lable_SmallProminet"
+          className="-translate-y-4 scale-90 text-impo_Surface_InverseSurface"
         >
           {cycleLength.toString()}
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <div
@@ -60,21 +57,18 @@ const WidgetPeriodReportCardCandleGenerator = ({
           height: percentFinder({ min, max, value: periodLength }),
         }}
       >
-        <div
-          className="h-full w-full flex items-end justify-center rounded-3xl"
-          style={{ backgroundColor: colors.PrimaryWoman_Primary }}
-        >
+        <div className="h-full w-full flex items-end justify-center rounded-3xl bg-impo_Primary_Primary">
           {periodLength >= 5 && (
-            <Typography scale="Lable" size="Small" color="PrimaryWoman_OnPrimary" className="scale-90">
+            <Dark_Typography fontSize="Lable_Small" className="scale-90 text-impo_Primary_OnPrimary">
               {periodLength.toString()}
-            </Typography>
+            </Dark_Typography>
           )}
         </div>
       </div>
 
-      <Typography scale="Body" size="Small" color="Surface_Outline" className="translate-y-7">
+      <Dark_Typography fontSize="Body_Small" className="translate-y-7 text-impo_Surface_Outline">
         {dateScript}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

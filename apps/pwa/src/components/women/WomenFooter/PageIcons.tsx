@@ -23,7 +23,7 @@ const PageIcons = ({ icons, title, isSelected, url }: PageIconsProps) => {
 
       <Dark_Typography
         fontSize="Body_Small"
-        className={`${isSelected ? 'text-impo_Neutral_OnBackground' : 'text-impo_Surface_Outline'}`}
+        className={`${isSelected ? 'text-impo_Neutral_OnBackground opacity-100' : 'text-impo_Neutral_OnBackground opacity-40'}`}
       >
         {title}
       </Dark_Typography>

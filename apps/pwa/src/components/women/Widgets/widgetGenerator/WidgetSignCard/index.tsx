@@ -15,10 +15,10 @@ const WidgetSignCard = ({ data }: WidgetSignCardProps) => {
     <WidgetCardContainer
       title={data.title}
       button={data.button}
-      classNameBtn="text-impo_White !bg-impo_Pink_500 !border-impo_Pink_500"
+      classNameBtn="!text-impo_Neutral_OnSurface  !bg-impo_Neutral_Surface !border-impo_Neutral_Surface"
       onClick={() => callEvent('Action_From_SignCard')}
     >
-      <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+      <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground ">
         {data.description}
       </Dark_Typography>
 

@@ -10,9 +10,9 @@ const WidgetPeriodCycleHistory = ({ data, isPdfDownloading }: WidgetPeriodCycleH
   const itemsList = hasMoreThanThreeItems ? data.items.slice(0, 3) : data.items;
 
   return (
-    <WidgetCardHealthReportContainer title={data.title}>
+    <WidgetCardHealthReportContainer title={data.title} isPdfDownloading={isPdfDownloading}>
       <>
-        <WidgetPeriodCycleHistoryGuides />
+        <WidgetPeriodCycleHistoryGuides isPdfDownloading={isPdfDownloading} />
         <WidgetPeriodCycleHistoryItems items={itemsList} isPdfDownloading={isPdfDownloading} />
         {hasMoreThanThreeItems && <WidgetPeriodCycleHistoryViewAll data={data} />}
       </>
