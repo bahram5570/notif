@@ -9,7 +9,8 @@ import { FOOTER_HEIGHT } from '@constants/app.constants';
 import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
 import { usePathname } from 'next/navigation';
 
-import BannerSupport from '../BannerSupport';
+import DownloadSticky from '../DownloadSticky';
+// import BannerSupport from '../BannerSupport';
 import DeviceFooterLinkGenerator from './DeviceFooterLinkGenerator';
 // import FooterBlackFriday from './FooterBlackFriday';
 import FooterNavLink from './FooterNavLink';
@@ -17,11 +18,13 @@ import { DeviceFooterTypes } from './types';
 
 const DeviceFooter = ({ isArticlePage, hasFooterLink }: DeviceFooterTypes) => {
   const pathname = usePathname();
+  console.log(pathname);
 
   return (
     <>
       {/* <FooterBlackFriday /> */}
-      {hasFooterLink && <FooterNavLink />}
+      {pathname !== '/' && hasFooterLink && <FooterNavLink />}
+      {pathname === '/' && <DownloadSticky />}
 
       <footer
         style={{ height: FOOTER_HEIGHT }}
@@ -42,14 +45,14 @@ const DeviceFooter = ({ isArticlePage, hasFooterLink }: DeviceFooterTypes) => {
                     z-10
                     "
       >
-        <BannerSupport />
-        {/* <DeviceFooterLinkGenerator
+        {/* <BannerSupport /> */}
+        <DeviceFooterLinkGenerator
           title="خانه"
           Icon={<HomeIcon className="stroke-impo_Surface_Outline fill-impo_Surface_Outline w-7" />}
           href="/"
           isSelected={pathname === '/'}
           id="navbar-home"
-        /> */}
+        />
 
         {/* <DeviceFooterLinkGenerator
           title="چرخه"
@@ -59,21 +62,21 @@ const DeviceFooter = ({ isArticlePage, hasFooterLink }: DeviceFooterTypes) => {
           id="navbar-cycle"
         /> */}
 
-        {/* <DeviceFooterLinkGenerator
+        <DeviceFooterLinkGenerator
           title="مقالات"
           Icon={<ArticlesIcon className="stroke-impo_Surface_Outline fill-impo_Surface_Outline w-7" />}
           href="/blogs"
           isSelected={!!isArticlePage}
           id="navbar-blogs"
-        /> */}
+        />
 
-        {/* <DeviceFooterLinkGenerator
+        <DeviceFooterLinkGenerator
           title="ورود"
           Icon={<LoginIcon className="stroke-impo_Surface_Outline fill-impo_Surface_Outline w-7" />}
           href={PWA_LINK_WOMEN_URL}
           isSelected={false}
           id="navbar-login"
-        /> */}
+        />
       </footer>
     </>
   );
