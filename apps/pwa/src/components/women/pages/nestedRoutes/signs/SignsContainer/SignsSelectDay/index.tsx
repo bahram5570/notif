@@ -9,7 +9,7 @@ const SignsSelectDay = ({ slide, slideHandler, infoList }: SignsSelectDayProps) 
   return (
     <div
       style={{ height: SIGNS_SELECT_DAY_HEIGHT, maxWidth: MAX_SCREEN_WIDTH }}
-      className="fixed left-0 right-0 top-0 px-4 pb-4 mx-auto flex items-end z-40"
+      className="fixed left-0 right-0 top-0 px-4 pb-4 mx-auto flex items-end z-40 !bg-impo_Neutral_Surface"
     >
       <div className="w-full rounded-xl px-4 pt-6 bg-impo_Neutral_Background">
         <WeekNamesList slide={slide} infoList={infoList} />
