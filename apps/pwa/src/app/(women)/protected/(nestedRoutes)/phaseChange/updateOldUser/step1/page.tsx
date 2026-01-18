@@ -3,8 +3,8 @@
 import ImpoIcon from '@assets/images/questionsImpo.svg';
 
 import { getUserCookie } from '@actions/cookie.actions';
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { InstallationPurposeEnum } from '@constants/activation.constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import usePhaseChangePayload from '@providers/PhaseChangeProvider/__hooks__/usePhaseChangePayload';
@@ -51,25 +51,23 @@ const Step1 = () => {
       <ImpoIcon className="w-20 mt-20" />
 
       <div className="flex flex-col items-center gap-2 px-5 pt-[100px]">
-        <Typography scale="Title" size="Medium" textAlign="center">
+        <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground text-center">
           همراه عزیز ایمپو سلام!
-        </Typography>
+        </Dark_Typography>
 
-        <Typography scale="Body" size="Large" textAlign="center">
+        <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground text-center">
           از اینکه به جمع ایمپویی‌ها پیوستی و برای مراقبت از خودت اپلیکیشن ایمپو رو نصب کردی، خوشحالیم&#128525;
-        </Typography>
+        </Dark_Typography>
       </div>
 
-      <Button
-        size="large"
-        variant="fill"
-        color="primary"
+      <Dark_Button
+        fontSize="Lable_Large"
         onClick={selectHandler}
         className="mt-auto !w-[204px]"
         isLoading={loadingId === pageNavigationLoading}
       >
         بزن بریم
-      </Button>
+      </Dark_Button>
     </div>
   );
 };

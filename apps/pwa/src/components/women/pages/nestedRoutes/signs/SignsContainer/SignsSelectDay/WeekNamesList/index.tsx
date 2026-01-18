@@ -11,14 +11,7 @@ const WeekNamesList = ({ infoList, slide }: WeekNamesListProps) => {
     <div className="w-full grid grid-cols-3">
       {updatedList && (
         <>
-          <Dark_Typography
-            fontSize="Body_Medium"
-            className={`
-                        mr-auto
-                        text-center
-                        ${updatedSlide >= infoList.length ? 'text-impo_Transparent' : 'text-impo_Surface_Outline'}
-                      `}
-          >
+          <Dark_Typography fontSize="Body_Medium" className="mr-auto text-center text-impo_Surface_Outline">
             {updatedList[updatedSlide + 1]}
           </Dark_Typography>
 
@@ -26,14 +19,7 @@ const WeekNamesList = ({ infoList, slide }: WeekNamesListProps) => {
             {updatedList[updatedSlide]}
           </Dark_Typography>
 
-          <Dark_Typography
-            fontSize="Body_Medium"
-            className={`
-                        ml-auto
-                        text-center
-                        ${updatedSlide <= 1 ? 'text-impo_Transparent' : 'text-impo_Surface_Outline'}
-                      `}
-          >
+          <Dark_Typography fontSize="Body_Medium" className="ml-auto text-center text-impo_Surface_Outline">
             {updatedList[updatedSlide + 1]}
           </Dark_Typography>
         </>

@@ -5,7 +5,6 @@ import { SHARE_EXPERIENCE_CHANGE_AVATAR_QUERY_NAME } from '@components/women/pag
 import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import { ShareExperienceAvatarModulePropsType } from './type';
 
@@ -16,7 +15,6 @@ const ShareExperienceAvatarModule = ({
   id,
 }: ShareExperienceAvatarModulePropsType) => {
   const { callEvent } = useAnalytics();
-  const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
@@ -26,8 +24,8 @@ const ShareExperienceAvatarModule = ({
 
     const paramsData = JSON.stringify({
       id: id,
-      avatar: avatarImage,
       username: username,
+      avatar: avatarImage,
       dummyData: Math.random(),
     });
 
@@ -42,25 +40,19 @@ const ShareExperienceAvatarModule = ({
           onClick={() => callEvent(showChangeAvatarIcon ? 'ShareExperienceSelfProfile' : 'ShareExperienceOtherProfile')}
         >
           <CustomImage
-            src={avatarImage}
-            hasPreviewImage={true}
             width={88}
             height={88}
-            previewImageShape="circle"
+            src={avatarImage}
+            hasPreviewImage={true}
             className="!object-cover"
+            previewImageShape="circle"
           />
         </div>
 
         {showChangeAvatarIcon && (
           <div className="absolute top-[65%] left-[76%] z-30 select-none" onClick={selectProfileHandler}>
-            <div
-              className="w-[28px] h-[28px] flex justify-center items-center rounded-full cursor-pointer"
-              style={{
-                backgroundColor: colors.Neutral_OnBackground,
-                opacity: 50,
-              }}
-            >
-              <UploadIcon style={{ fill: colors.White }} className="w-4 h-4" />
+            <div className="w-[28px] h-[28px] flex justify-center items-center rounded-full bg-impo_Neutral_OnBackground cursor-pointer">
+              <UploadIcon className="w-4 h-4 fill-impo_Neutral_Background" />
             </div>
           </div>
         )}

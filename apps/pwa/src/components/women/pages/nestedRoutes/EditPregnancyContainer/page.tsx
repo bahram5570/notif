@@ -6,7 +6,7 @@ import ActivationBackBtn from '@components/activation/ActivationBackBtn';
 import ActivationHeading from '@components/activation/ActivationHeading';
 import { HEADING_HEIGHT } from '@components/activation/ActivationHeading/constants';
 import DateModule from '@components/activation/DateModule';
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 import useActivationPregnancyTabs from '@hooks/__activation__/useActivationPregnancyTabs';
 import useProfileData from '@hooks/__profile__/useProfileData';
 
@@ -42,16 +42,14 @@ const EditPregnancyContainer = () => {
         />
 
         <div className="flex mx-auto mt-auto pb-6 w-[204px] min-w-fit">
-          <Button
-            size="medium"
-            variant="fill"
-            color="primary"
+          <Dark_Button
             className="mt-auto"
             isLoading={isLoading}
+            fontSize="Lable_Large"
             onClick={() => submitHandler({ pregnancyDate, isDelivery: tab === 1 ? true : false })}
           >
             ثبت تغییرات
-          </Button>
+          </Dark_Button>
         </div>
       </div>
     </div>

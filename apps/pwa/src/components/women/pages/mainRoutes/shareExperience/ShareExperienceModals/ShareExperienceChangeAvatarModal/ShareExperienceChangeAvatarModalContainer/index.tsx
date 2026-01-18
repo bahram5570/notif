@@ -38,7 +38,7 @@ const ShareExperienceChangeAvatarModalContainer = ({
         عکس خود را انتخاب کنید
       </Dark_Typography>
 
-      <div className="divide-y divide-impo_Surface_SurfaceVariant flex flex-col gap-3">
+      <div className="flex flex-col">
         <FileInputManager
           ShowFileInput={false}
           fileDataHandler={fileDataHandler}
@@ -50,7 +50,7 @@ const ShareExperienceChangeAvatarModalContainer = ({
             آواتار پیش فرض
           </Dark_Typography>
 
-          <div className="w-14 h-14 border-[1px] border-impo_Surface_SurfaceVariant rounded-full flex justify-center items-center">
+          <div className="w-12 h-12 border-[1px] border-impo_Surface_SurfaceVariant rounded-full flex justify-center items-center">
             <GalleryWideIcon className="w-6 h-6 stroke-impo_Neutral_OnBackground" />
           </div>
         </div>

@@ -37,7 +37,7 @@ const ShareExperienceProfileModalContainer = ({
   return (
     <WomenPageLayout paddingTop={0} rightElement="BackButton" rightElementScript={rightElementScript}>
       <div
-        className=" h-[100dvh]  flex flex-col px-3"
+        className=" h-[100dvh] flex flex-col px-3"
         style={{ paddingTop: HEADER_HEIGHT + 16, paddingBottom: HEADER_HEIGHT }}
       >
         {isLoading && (
@@ -45,6 +45,7 @@ const ShareExperienceProfileModalContainer = ({
             <Dark_Spinner className="border-impo_Primary_Primary" />
           </div>
         )}
+
         {!isLoading && data && (
           <>
             <ShareExperienceProfileTopPart

@@ -2,13 +2,11 @@ import InfoIcon from '@assets/icons/dangerTriangle.svg';
 
 import { SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME } from '@components/women/pages/mainRoutes/shareExperience/constants';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import ShareExperienceApproveModalsModule from '../../ShareExperienceModules/ShareExperienceApproveModalsModule';
 import useShareExperienceReport from './__hooks__/useShareExperienceReport';
 
 const ShareExperienceReportModal = () => {
-  const { colors } = useTheme();
   const { getQueryParams } = useQueryParamsHandler();
   const { reportHandler, isLoading } = useShareExperienceReport();
 
@@ -16,11 +14,8 @@ const ShareExperienceReportModal = () => {
   const queryData = queryParams && JSON.parse(queryParams);
 
   const Icon = (
-    <div
-      className="flex items-center justify-center w-10 h-10 rounded-full"
-      style={{ backgroundColor: colors.Error_ErrorContainer }}
-    >
-      <InfoIcon className="w-7" style={{ fill: colors.Error_Error }} />
+    <div className="flex items-center justify-center w-10 h-10 bg-impo_Error_ErrorContainer rounded-full">
+      <InfoIcon className="w-7 fill-impo_Error_Error" />
     </div>
   );
 

@@ -18,7 +18,6 @@ const ProgressBars = ({
   stories,
 }: ProgressBarsProps) => {
   const router = useRouter();
-
   const timer = useRef<NodeJS.Timeout>();
   const [progressPercent, setProgressPercent] = useState(0);
 
@@ -67,13 +66,22 @@ const ProgressBars = ({
 
           return (
             <div
-              className="relative w-full h-[2px] rounded-full overflow-hidden shadow-[0_4px_10px_#00000044] bg-impo_Surface_Outline dark:bg-impo_Surface_OutlineVariant"
               key={index}
+              className="
+                          relative 
+                          w-full 
+                          h-[2px] 
+                          rounded-full 
+                          overflow-hidden 
+                          shadow-[0_4px_10px_#00000044] 
+                          bg-impo_Surface_Outline 
+                          dark:bg-impo_Surface_OutlineVariant
+                        "
             >
               <div
                 dir="rtl"
-                className="w-full h-full rounded-full duration-300 bg-impo_White"
                 style={{ transform: `translateX(${translateProgress}%)` }}
+                className="w-full h-full rounded-full duration-300 bg-impo_White"
               />
             </div>
           );
@@ -91,6 +99,7 @@ const ProgressBars = ({
             >
               بازبینی شده توسط
             </Dark_Typography>
+
             <Dark_Typography className="text-impo_Black" fontSize="Body_Medium">
               تیم تولید محتوای ایمپو
             </Dark_Typography>
@@ -98,7 +107,7 @@ const ProgressBars = ({
         </div>
 
         <div className="w-12 h-12 flex items-center justify-center cursor-pointer" onClick={() => router.back()}>
-          <CrossIcon className="w-8 h-auto rotate-45  stroke-impo_Surface_Outline" />
+          <CrossIcon className="w-8 h-auto rotate-45 stroke-impo_Surface_Outline" />
         </div>
       </div>
     </div>

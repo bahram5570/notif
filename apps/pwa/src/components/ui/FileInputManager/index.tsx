@@ -55,6 +55,7 @@ const FileInputManager = ({
             capture="environment"
             onChange={handleFileInput(FileInputTypes.CAMERA)}
           />
+
           <label htmlFor="camera-input">
             <div className="flex justify-end items-center gap-2">
               <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">

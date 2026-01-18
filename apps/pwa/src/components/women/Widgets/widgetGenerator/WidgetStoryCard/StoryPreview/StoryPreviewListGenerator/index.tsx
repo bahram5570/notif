@@ -63,9 +63,9 @@ const StoryPreviewListGenerator = ({
                 className="w-full h-auto"
                 src={storySlideProps.image}
                 alt={storySlideProps.image}
+                sizes="(max-width: 480px) 100vw, 480px"
                 onLoad={storySlideProps.isLoadingHandler}
                 key={storySlideProps.image + storySlideProps.currentSlideIndex}
-                sizes="(max-width: 480px) 100vw, 480px"
               />
             </div>
           )}
