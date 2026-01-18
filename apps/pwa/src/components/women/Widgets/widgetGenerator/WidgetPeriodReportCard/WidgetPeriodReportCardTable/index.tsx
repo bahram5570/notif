@@ -11,6 +11,7 @@ const WidgetPeriodReportCardTable = ({
   items,
   min,
   max,
+  isPdfDownloading,
 }: WidgetPeriodReportCardTableProps) => {
   const rangesHeigth = (max - min) * 3.5;
   const rangeExtraSpace = 20;
@@ -26,6 +27,7 @@ const WidgetPeriodReportCardTable = ({
         numbersWidth={numbersWidth}
         cycleLength={cycleLength}
         min={min}
+        isPdfDownloading={isPdfDownloading}
         max={max}
       />
 
@@ -46,6 +48,7 @@ const WidgetPeriodReportCardTable = ({
                   start={item.start}
                   min={min}
                   max={max}
+                  isPdfDownloading={isPdfDownloading}
                 />
               </SwiperSlide>
             ))}

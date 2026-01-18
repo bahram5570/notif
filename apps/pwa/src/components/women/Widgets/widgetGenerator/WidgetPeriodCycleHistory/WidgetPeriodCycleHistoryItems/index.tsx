@@ -13,12 +13,15 @@ const WidgetPeriodCycleHistoryItems = ({ items, isPdfDownloading }: WidgetPeriod
 
         return (
           <div
-            className={`w-full flex flex-col items-center gap-3 py-4 border-y-[1px] border-t-transparent ${isLastChild ? 'border-b-impo_Transparent' : 'border-b-impo_Neutral_Surface'}`}
+            className={`w-full flex flex-col items-center gap-3 py-4 border-y-[1px] border-t-transparent ${isLastChild ? 'border-b-impo_Transparent' : `border-b-impo_Neutral_Surface ${isPdfDownloading && 'dark:!border-b-impo_Neutral_Surface !border-b-impo_Neutral_OnSurface'}`} `}
             key={index}
           >
             <div className="flex items-center gap-1 ml-auto">
               {!item.normal && <NeedToInvestigateIcon className="w-5 h-auto" />}
-              <Dark_Typography fontSize="Lable_SmallProminet" className="text-impo_Neutral_OnBackground">
+              <Dark_Typography
+                fontSize="Lable_SmallProminet"
+                className={`text-impo_Neutral_OnBackground ${isPdfDownloading && '!text-impo_Black'}`}
+              >
                 {item.title}
               </Dark_Typography>
             </div>
@@ -33,12 +36,12 @@ const WidgetPeriodCycleHistoryItems = ({ items, isPdfDownloading }: WidgetPeriod
             <div className="flex items-center gap-1 ml-auto">
               <Dark_Typography
                 fontSize="Body_Small"
-                className="text-impo_Surface_InverseSurface"
+                className={`text-impo_Surface_InverseSurface ${isPdfDownloading && 'text-impo_Grey_900'}`}
               >{` - طول دوره: ${item.cycleLength} روز`}</Dark_Typography>
 
               <Dark_Typography
                 fontSize="Body_Small"
-                className="text-impo_Surface_InverseSurface"
+                className={`text-impo_Surface_InverseSurface ${isPdfDownloading && 'text-impo_Grey_900'}`}
               >{`طول پریود: ${item.periodLength} روز`}</Dark_Typography>
             </div>
           </div>

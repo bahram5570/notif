@@ -14,6 +14,7 @@ const WidgetPeriodReportCardLines = ({
   cycleLength,
   min,
   max,
+  isPdfDownloading,
 }: WidgetPeriodReportCardLinesProps) => {
   const [rangeList, setRangeList] = useState<number[]>([]);
 
@@ -45,7 +46,7 @@ const WidgetPeriodReportCardLines = ({
               key={range}
               style={{ bottom: percentFinder({ min, max, value: range }) }}
               fontSize="Body_Small"
-              className="absolute right-0 w-full translate-y-1/2 text-impo_Surface_Outline text-center"
+              className={`absolute right-0 w-full translate-y-1/2 text-impo_Surface_Outline text-center ${isPdfDownloading && 'dark:!text-impo_Surface_OutlineVariant'}`}
             >
               {result}
             </Dark_Typography>
@@ -78,7 +79,7 @@ const WidgetPeriodReportCardLines = ({
       {/* // # X axis */}
       <div
         style={{ top: rangesHeigth + rangeExtraSpace, left: numbersWidth }}
-        className="absolute right-0 h-[1px] pointer-events-none bg-impo_Surface_SurfaceVariant"
+        className={`absolute right-0 h-[1px] pointer-events-none bg-impo_Surface_SurfaceVariant ${isPdfDownloading && 'dark:!bg-impo_Grey_50'}`}
       />
 
       {/* // # Y axis */}
@@ -88,18 +89,24 @@ const WidgetPeriodReportCardLines = ({
           top: `-${rangeExtraSpace - rangeExtraSpace}px`,
           left: numbersWidth,
         }}
-        className="absolute w-[1px] pointer-events-none  bg-impo_Surface_SurfaceVariant"
+        className={`absolute w-[1px] pointer-events-none  bg-impo_Surface_SurfaceVariant ${isPdfDownloading && 'dark:!bg-impo_Grey_50'}`}
       />
 
       {/* // # X axis script */}
       <div
-        className="absolute left-0 flex flex-col items-center pt-2 pointer-events-none z-20 bg-impo_Neutral_Background"
+        className={`absolute left-0 flex flex-col items-center pt-2 pointer-events-none z-20 bg-impo_Neutral_Background ${isPdfDownloading && '!bg-impo_White'}`}
         style={{ top: rangesHeigth + rangeExtraSpace + 1 }}
       >
-        <Dark_Typography fontSize="Lable_Small" className="text-impo_Neutral_OnSurface">
+        <Dark_Typography
+          fontSize="Lable_Small"
+          className={`text-impo_Neutral_OnSurface ${isPdfDownloading && '!text-impo_Black'}`}
+        >
           تاریخ
         </Dark_Typography>
-        <Dark_Typography fontSize="Lable_Small" className="text-impo_Neutral_OnSurface">
+        <Dark_Typography
+          fontSize="Lable_Small"
+          className={`text-impo_Neutral_OnSurface ${isPdfDownloading && '!text-impo_Black'}`}
+        >
           شروع دوره
         </Dark_Typography>
       </div>

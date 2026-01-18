@@ -87,7 +87,7 @@ const WidgetGenerator = ({ data, type, isPdfDownloading = false }: WidgetsTypes)
       result = <WidgetOvulationHistoryCard data={data} isPdfDownloading={isPdfDownloading} />;
       break;
     case WidgetsEnum.PeriodReportCard:
-      result = <WidgetPeriodReportCard data={data} />;
+      result = <WidgetPeriodReportCard data={data} isPdfDownloading={isPdfDownloading} />;
       break;
     case WidgetsEnum.PeriodReportEmptyStateCard:
       result = <WidgetPeriodReportEmptyStateCard data={data} />;

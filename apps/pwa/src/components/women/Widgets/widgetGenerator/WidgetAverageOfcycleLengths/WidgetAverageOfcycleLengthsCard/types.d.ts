@@ -5,4 +5,6 @@ type WidgetsTypes = Pick<WidgetAverageOfcycleLengthsProps, 'data'>['data']['left
 export interface WidgetAverageOfcycleLengthsCardProps extends WidgetsTypes {}
 
 type ProgressTypes = Pick<WidgetAverageOfcycleLengthsCardProps, 'length' | 'filledLength' | 'centeralText'>;
-export interface CircleProgressProps extends ProgressTypes {}
+export interface CircleProgressProps extends ProgressTypes {
+  isPdfDownloading?: boolean | undefined;
+}

@@ -3,7 +3,9 @@ import NeedToInvestigateIcon from '@assets/icons/needToInvestigate.svg';
 import CustomSlider from '@components/ui/CustomSlider';
 import Dark_Typography from '@components/ui/Dark_Typography';
 
-const WidgetPeriodCycleHistoryGuides = () => {
+import { WidgetPeriodCycleHistoryGuidesPropsType } from './type';
+
+const WidgetPeriodCycleHistoryGuides = ({ isPdfDownloading }: WidgetPeriodCycleHistoryGuidesPropsType) => {
   const list = [
     {
       title: 'پریود',
@@ -24,11 +26,16 @@ const WidgetPeriodCycleHistoryGuides = () => {
   ];
 
   return (
-    <div className="w-full rounded-lg py-3 mt-3 bg-impo_Neutral_Surface">
+    <div
+      className={`w-full rounded-lg py-3 mt-3 bg-impo_Neutral_Surface ${isPdfDownloading && '!bg-impo_Neutral_Surface dark:!bg-impo_Neutral_OnSurface'}`}
+    >
       <CustomSlider gap={12} sidePadding={8}>
         {list.map((item, index) => (
           <div className="flex items-center gap-1 min-w-fit" key={index}>
-            <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+            <Dark_Typography
+              fontSize="Body_Small"
+              className={`text-impo_Neutral_OnBackground ${isPdfDownloading && '!text-impo_Black'}`}
+            >
               {item.title}
             </Dark_Typography>
 

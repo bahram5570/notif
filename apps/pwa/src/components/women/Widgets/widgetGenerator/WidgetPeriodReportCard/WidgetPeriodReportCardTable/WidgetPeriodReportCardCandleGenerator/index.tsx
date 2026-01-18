@@ -15,6 +15,7 @@ const WidgetPeriodReportCardCandleGenerator = ({
   start,
   min,
   max,
+  isPdfDownloading,
 }: WidgetPeriodReportCardCandleGeneratorProps) => {
   const { culture } = useCulture();
 
@@ -39,7 +40,7 @@ const WidgetPeriodReportCardCandleGenerator = ({
   return (
     <div className="relative w-4 h-full flex items-end justify-center pointer-events-none z-0">
       <div
-        className="absolute left-0 right-0 bottom-0 rounded-3xl flex justify-center dark:bg-impo_Neutral_Surface bg-impo_Surface_OutlineVariant"
+        className={`absolute left-0 right-0 bottom-0 rounded-3xl flex justify-center dark:bg-impo_Neutral_Surface bg-impo_Surface_OutlineVariant ${isPdfDownloading && '!bg-impo_Surface_OutlineVariant'}`}
         style={{ height: percentFinder({ min, max, value: cycleLength }) }}
       >
         <Dark_Typography

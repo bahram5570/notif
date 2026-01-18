@@ -13,22 +13,33 @@ const WidgetAverageOfcycleLengthsCard = ({
 }: WidgetAverageOfcycleLengthsCardProps) => {
   return (
     <div
-      className="w-full  rounded-2xl flex items-center p-4 pb-1 bg-impo_Neutral_Background"
+      className={`w-full  rounded-2xl flex items-center p-4 pb-1 bg-impo_Neutral_Background   ${isPdfDownloading && '!bg-impo_White'}`}
       style={{
         flexDirection: isPdfDownloading ? 'row' : 'column',
         justifyContent: isPdfDownloading ? 'flex-end' : 'center',
       }}
     >
       <div className="flex flex-col" style={{ alignItems: isPdfDownloading ? 'flex-end' : 'center' }}>
-        <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+        <Dark_Typography
+          fontSize="Lable_Large"
+          className={`text-impo_Neutral_OnBackground ${isPdfDownloading && '!text-impo_Black'}`}
+        >
           {title}
         </Dark_Typography>
-        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground text-center pt-1">
+        <Dark_Typography
+          fontSize="Body_Small"
+          className={`text-impo_Neutral_OnBackground ${isPdfDownloading && '!text-impo_Black'} text-center pt-1`}
+        >
           {description}
         </Dark_Typography>
       </div>
 
-      <CircleProgress length={length} filledLength={filledLength} centeralText={centeralText} />
+      <CircleProgress
+        length={length}
+        filledLength={filledLength}
+        centeralText={centeralText}
+        isPdfDownloading={isPdfDownloading}
+      />
     </div>
   );
 };

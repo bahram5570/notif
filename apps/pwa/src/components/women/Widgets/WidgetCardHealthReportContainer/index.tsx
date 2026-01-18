@@ -10,12 +10,16 @@ const WidgetCardHealthReportContainer = ({
   button,
   title,
   classNameBtn,
+  isPdfDownloading,
 }: WidgetCardHealthReportContainerProps) => {
   const { actionHandler } = useWidgetActions();
 
   return (
-    <div className="w-full h-fit rounded-2xl p-4 bg-impo_Neutral_Background">
-      <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground pb-1 ml-auto">
+    <div className={`w-full h-fit rounded-2xl p-4 bg-impo_Neutral_Background ${isPdfDownloading && 'bg-impo_White'}`}>
+      <Dark_Typography
+        fontSize="Lable_Large"
+        className={`text-impo_Neutral_OnBackground ${isPdfDownloading && '!text-impo_Black'} pb-1 ml-auto`}
+      >
         {title}
       </Dark_Typography>
 

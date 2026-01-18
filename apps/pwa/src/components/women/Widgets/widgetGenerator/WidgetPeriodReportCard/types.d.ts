@@ -1,3 +1,3 @@
 import { WidgetPeriodReportCardTypes } from '@providers/WidgetActionsProvider/widgetCards';
 
-export interface WidgetPeriodReportCardProps extends Pick<WidgetPeriodReportCardTypes, 'data'> {}
+export interface WidgetPeriodReportCardProps extends Pick<WidgetPeriodReportCardTypes, 'data' | 'isPdfDownloading'> {}

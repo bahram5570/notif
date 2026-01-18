@@ -10,14 +10,14 @@ const WidgetBabyCheckHistoryCard = ({ data, isPdfDownloading }: WidgetBabyCheckH
   const itemsList = hasMoreThanThreeItems ? data.items.slice(0, 3) : data.items;
 
   return (
-    <WidgetCardHealthReportContainer title={data.title}>
+    <WidgetCardHealthReportContainer title={data.title} isPdfDownloading={isPdfDownloading}>
       <>
         <WidgetBabyCheckHistoryCardDescription
           isPdfDownloading={isPdfDownloading}
           description={data.description}
           icon={data.icon}
         />
-        <WidgetBabyCheckHistoryCardItems items={itemsList} />
+        <WidgetBabyCheckHistoryCardItems items={itemsList} isPdfDownloading={isPdfDownloading} />
         {!isPdfDownloading && <WidgetBabyCheckHistoryCardViewAll data={data} />}
       </>
     </WidgetCardHealthReportContainer>

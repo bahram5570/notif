@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { toPersianNumbers } from '@utils/numbers';
 
 import CustomImage from '@components/ui/CustomImage';
 import useOperatingSystem from '@hooks/useOperatingSystem';
@@ -31,12 +32,12 @@ const WidgetOvulationHistoryCardDescription = ({
         }}
         className="text-impo_Neutral_OnBackground"
       >
-        {isPdfDownloading && description}
+        {isPdfDownloading && toPersianNumbers(description)}
 
         {!isPdfDownloading &&
           descriptionList.map((ch, index) => (
             <Fragment key={index}>
-              {ch}
+              {toPersianNumbers(ch)}
               {descriptionList.length - 1 > index && (
                 <>
                   ، <br />

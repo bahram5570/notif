@@ -6,7 +6,10 @@ import { WidgetAverageOfcycleLengthsProps } from './types';
 const WidgetAverageOfcycleLengths = ({ data, isPdfDownloading }: WidgetAverageOfcycleLengthsProps) => {
   return (
     <div className="w-full">
-      <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground ml-auto">
+      <Dark_Typography
+        fontSize="Title_Small"
+        className={`text-impo_Neutral_OnBackground ml-auto ${isPdfDownloading && '!text-impo_Black'}`}
+      >
         {data.title}
       </Dark_Typography>
 

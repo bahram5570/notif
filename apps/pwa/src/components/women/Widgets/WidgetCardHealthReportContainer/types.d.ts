@@ -5,4 +5,5 @@ export interface WidgetCardHealthReportContainerProps {
   children: React.ReactNode;
   title: string;
   classNameBtn?: string;
+  isPdfDownloading?: boolean | undefined;
 }

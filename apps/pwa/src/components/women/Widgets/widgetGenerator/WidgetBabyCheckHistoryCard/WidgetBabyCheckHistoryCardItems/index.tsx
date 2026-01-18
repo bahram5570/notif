@@ -15,7 +15,7 @@ const WidgetBabyCheckHistoryCardItems = (props: WidgetBabyCheckHistoryCardItemsP
         <div
           key={index}
           onClick={() => clickHandler(index, item.details.length > -1)}
-          className="w-full h-[40px] px-2 rounded-lg flex items-center justify-between bg-impo_Surface_SurfaceVariant"
+          className={`w-full h-[40px] px-2 rounded-lg flex items-center justify-between bg-impo_Surface_SurfaceVariant ${props.isPdfDownloading && 'dark:!bg-impo_Grey_50'}`}
         >
           <div className="flex items-center gap-1">
             <div className="w-[54px] h-[22px] flex items-center justify-center rounded-full bg-impo_Success_Success">
@@ -30,7 +30,10 @@ const WidgetBabyCheckHistoryCardItems = (props: WidgetBabyCheckHistoryCardItemsP
               </Dark_Typography>
             </div>
           </div>
-          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+          <Dark_Typography
+            fontSize="Body_Medium"
+            className={`text-impo_Neutral_OnBackground ${props.isPdfDownloading && '!text-impo_Black'}`}
+          >
             {item.text}
           </Dark_Typography>
         </div>

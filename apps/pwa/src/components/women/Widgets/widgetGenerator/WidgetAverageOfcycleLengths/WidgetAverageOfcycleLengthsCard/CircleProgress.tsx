@@ -2,7 +2,7 @@ import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { CircleProgressProps } from './types';
 
-const CircleProgress = ({ length, filledLength, centeralText }: CircleProgressProps) => {
+const CircleProgress = ({ length, filledLength, centeralText, isPdfDownloading }: CircleProgressProps) => {
   const zeroPercent = 471;
   const hundredPercent = 71;
   const totalPercent = zeroPercent - hundredPercent;
@@ -15,7 +15,10 @@ const CircleProgress = ({ length, filledLength, centeralText }: CircleProgressPr
   return (
     <div className="relative -mt-1" style={{ ...sizes }}>
       <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+        <Dark_Typography
+          fontSize="Title_Small"
+          className={`text-impo_Neutral_OnBackground ${isPdfDownloading && '!text-impo_Black'}`}
+        >
           {centeralText}
         </Dark_Typography>
       </div>
@@ -30,7 +33,7 @@ const CircleProgress = ({ length, filledLength, centeralText }: CircleProgressPr
           strokeDashoffset={hundredPercent}
           fill="transparent"
           strokeDasharray="471px"
-          className="!stroke-impo_Neutral_Surface"
+          className={`!stroke-impo_Neutral_Surface ${isPdfDownloading && ' dark:!stroke-impo_Neutral_OnSurface !stroke-impo_Neutral_Surface'}`}
         />
 
         <circle
