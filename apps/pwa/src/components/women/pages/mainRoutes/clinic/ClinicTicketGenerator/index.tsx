@@ -22,7 +22,7 @@ const ClinicTicketGenerator = (props: ClinicTicketGeneratorProps) => {
                     py-3 
                     rounded-xl 
                     pointer-events-none 
-                    ${props.stylingTypes === 'heading' ? 'bg-impo_Primary_Primary' : 'bg-impo_Surface_SurfaceVariant'}
+                    ${props.stylingTypes === 'heading' ? 'bg-impo_Primary_Primary' : 'bg-impo_Neutral_Surface'}
                   `}
       >
         <div className="flex items-center justify-between">
@@ -51,7 +51,7 @@ const ClinicTicketGenerator = (props: ClinicTicketGeneratorProps) => {
                       w-full 
                       h-[1px] 
                       my-2
-                      ${props.stylingTypes === 'heading' ? 'bg-impo_Primary_OnPrimary' : 'bg-impo_Neutral_Surface'}
+                      ${props.stylingTypes === 'heading' ? ' bg-impo_Pink_400' : 'bg-impo_Neutral_Surface dark:bg-impo_Surface_SurfaceVariant'}
                       ${showArrow ? 'opacity-0' : 'opacity-100'}
                     `}
         />

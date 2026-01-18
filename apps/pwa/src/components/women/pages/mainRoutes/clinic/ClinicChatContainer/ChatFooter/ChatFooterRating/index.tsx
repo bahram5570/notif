@@ -1,4 +1,4 @@
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import { RATING_QUERY_NAME } from './constants';
@@ -8,15 +8,14 @@ const ChatFooterRating = () => {
 
   return (
     <>
-      <Button
-        size="medium"
-        variant="fill"
-        color="primary"
+      <Dark_Button
+        fontSize="Lable_Large"
+        className="h-10"
         navigationLoadingId="ChatFooterRating"
         onClick={() => newQueryParamsHandler({ [RATING_QUERY_NAME]: 'true' })}
       >
         ثبت نظر
-      </Button>
+      </Dark_Button>
     </>
   );
 };

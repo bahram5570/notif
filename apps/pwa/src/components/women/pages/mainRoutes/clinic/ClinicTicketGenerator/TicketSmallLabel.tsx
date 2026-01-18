@@ -55,7 +55,7 @@ const TicketSmallLabel = ({ state, stylingTypes, rate }: TicketSmallLabelProps) 
   }, [state, stylingTypes]);
 
   return (
-    <div className={`flex items-center justify-center rounded-full px-3 py-1 ${values.backgroundColor}`}>
+    <div className={`flex items-center justify-center rounded-full px-3 py-1  ${values.backgroundColor}`}>
       <TicketRate rate={rate} />
 
       <Dark_Typography fontSize="Body_Small" className={`${values.textColor}`}>

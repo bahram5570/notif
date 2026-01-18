@@ -3,7 +3,6 @@
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import CheckListCheckupQuestion from './CheckListCheckupQuestion';
 import CheckupQuestionContainerSkeleton from './CheckupQuestionContainerSkeleton';
@@ -13,7 +12,6 @@ import QuestionCheckup from './QuestionCheckup';
 import useGetData from './__hooks__/useGetData';
 
 const CheckupQuestionContainer = () => {
-  const { colors } = useTheme();
   const { getQueryParams } = useQueryParamsHandler();
 
   const pregnancyWeek = getQueryParams('week');

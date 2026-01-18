@@ -1,27 +1,21 @@
 import LinkToIcon from '@assets/icons/linkTo.svg';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 const ChatFooterRejected = () => {
-  const { colors } = useTheme();
-
   return (
-    <div
-      className="w-full h-[56px] rounded-lg border-[1px] flex flex-col items-center justify-center gap-1"
-      style={{ borderColor: colors.Surface_OutlineVariant, backgroundColor: colors.Surface_SurfaceVariant }}
-    >
+    <div className="w-full h-[56px] rounded-lg border-[1px] flex flex-col items-center justify-center gap-1 border-impo_Surface_OutlineVariant bg-impo_Neutral_Surface">
       <div className="flex items-end gap-1">
-        <Typography scale="Lable" size="Medium">
+        <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
           این تیکت رد شد
-        </Typography>
+        </Dark_Typography>
 
-        <LinkToIcon className="w-6 h-auto" style={{ stroke: colors.Surface_Outline }} />
+        <LinkToIcon className="w-6 h-auto stroke-impo_Surface_Outline" />
       </div>
 
-      <Typography scale="Lable" size="Small">
+      <Dark_Typography fontSize="Lable_Small" className="text-impo_Neutral_OnBackground">
         دلیل: نامربوط بودن بیماری با تخصص پزشک
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

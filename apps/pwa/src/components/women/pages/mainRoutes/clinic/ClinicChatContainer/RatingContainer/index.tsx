@@ -1,8 +1,7 @@
 import CustomImage from '@components/ui/CustomImage';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import Loading from '@components/ui/Loading';
-import Typography from '@components/ui/Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-import useTheme from '@hooks/useTheme';
 
 import RatingDescription from './RatingDescription';
 import RatingFeedback from './RatingFeedback';
@@ -17,7 +16,6 @@ import useValues from './__hooks__/useValues';
 import { RatingContainerProps } from './types';
 
 const RatingContainer = ({ isLoading, feedbacks, drImage, drName }: RatingContainerProps) => {
-  const { colors } = useTheme();
   const valuesProps = useValues();
   const { submitHandler, isRateLoading } = useSubmitRate({
     rate: valuesProps.rate,
@@ -27,8 +25,8 @@ const RatingContainer = ({ isLoading, feedbacks, drImage, drName }: RatingContai
 
   return (
     <div
-      style={{ maxWidth: MAX_SCREEN_WIDTH, backgroundColor: colors.White, paddingBottom: RATING_FOOTER_HEIGHT + 20 }}
-      className="fixed top-0 left-0 right-0 bottom-0 min-h-[100dvh] max-h-[100dvh] flex flex-col mx-auto px-4 pt-6 overflow-y-auto z-30"
+      style={{ maxWidth: MAX_SCREEN_WIDTH, paddingBottom: RATING_FOOTER_HEIGHT + 20 }}
+      className="fixed top-0 left-0 right-0 bottom-0 min-h-[100dvh] max-h-[100dvh] flex flex-col mx-auto px-4 pt-6 overflow-y-auto z-30 bg-impo_Neutral_Background"
     >
       <RatingHeading />
 
@@ -40,24 +38,23 @@ const RatingContainer = ({ isLoading, feedbacks, drImage, drName }: RatingContai
 
           <div
             style={{
-              backgroundColor: colors.Surface_SurfaceVariant,
               marginTop: RATING_HEADING_HEIGHT + 40,
             }}
-            className="relative w-full flex flex-col items-center rounded-xl px-2 pt-12 pb-6 mt-[40px] z-0"
+            className="relative w-full flex flex-col items-center rounded-xl px-2 pt-12 pb-6 mt-[40px] z-0 bg-impo_Neutral_Surface"
           >
             <div className="absolute left-0 right-0 -top-[40px] flex justify-center">
               <CustomImage src={drImage} width={80} className="rounded-full" />
             </div>
 
-            <Typography scale="Title" size="Small">
+            <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
               {drName}
-            </Typography>
+            </Dark_Typography>
 
-            <div className="w-full h-[1px] my-2" style={{ backgroundColor: colors.Surface_OutlineVariant }} />
+            <div className="w-full h-[1px] my-2 bg-impo_Surface_OutlineVariant" />
 
-            <Typography scale="Body" size="Medium" textAlign="center" className="px-5">
+            <Dark_Typography fontSize="Body_Medium" className="px-5 text-center text-impo_Neutral_OnBackground">
               امیدواریم این راهنمایی واست مفید باشه، به پاسخی که دریافت کردی چه امتیازی میدی؟
-            </Typography>
+            </Dark_Typography>
 
             <RatingStars rate={valuesProps.rate} rateHandler={valuesProps.rateHandler} />
 
