@@ -1,3 +1,4 @@
+// import EditCycleIcon from '@assets/icons/edit-cycle.svg';
 import BreastfeedingSetting from '../BreastfeedingSettings';
 import PeriodSettings from '../PeriodSettings';
 import PregnancySettings from '../PregnancySettings';
@@ -23,6 +24,8 @@ const ProfileLinkList = ({ hasSubscribtion, isDelivery, pregnancyDate, status }:
       {filteredProfileLinks.map((item, index) => (
         <ProfileLinkGenerator key={index} {...item} isLastItem={filteredProfileLinks.length - 1 === index} />
       ))}
+
+      {/* <ProfileLinkGenerator name="fff" isLastItem={false} needsSubscription={false} link="" Icon={EditCycleIcon} /> */}
     </>
   );
 };

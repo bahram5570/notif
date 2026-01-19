@@ -15,12 +15,21 @@ const ProfileLinkGenerator = ({ Icon, link, name, isLastItem }: ProfileGenerator
     >
       <div className="flex flex-row items-center gap-3 justify-end w-full">
         <div
-          className={`${isLastItem ? 'border-none' : 'border-b'}  py-4 w-full flex justify-end items-center border-impo_Neutral_Surface`}
+          className={`
+                      py-4 
+                      w-full 
+                      flex 
+                      justify-end 
+                      border-impo_Neutral_Surface
+                      items-center 
+                      ${isLastItem ? 'border-none' : 'border-b'}
+                    `}
         >
           <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
             {name}
           </Dark_Typography>
         </div>
+
         {<Icon className="w-10 h-10" />}
       </div>
     </Link>
