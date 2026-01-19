@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 
 import EditActivationCardGenerator from '../EditActivationCardGenerator';
 import useEditActivationPayload from '../__hooks__/useEditActivationPayload';
@@ -35,16 +35,14 @@ const EditActivationQuestions = ({ questions }: EditActivationQuestionsProps) =>
       })}
 
       <div className="w-full pt-2 mt-auto">
-        <Button
+        <Dark_Button
           onClick={() => submitHandler(editActivationPayload)}
+          fontSize="Lable_Large"
           isLoading={isLoading}
           isDisable={isDisable}
-          color="primary"
-          variant="fill"
-          size="medium"
         >
           ثبت اطلاعات
-        </Button>
+        </Dark_Button>
       </div>
     </>
   );

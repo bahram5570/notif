@@ -1,15 +1,12 @@
 import { binarySeparator } from '@utils/numbers';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { EditActivationInitStrategyEnum } from '../__hooks__/useGetData/enum';
 import EditActivationOptionGenerator from './EditActivationOptionGenerator';
 import { EditActivationCardGeneratorProps } from './types';
 
 const EditActivationCardGenerator = (props: EditActivationCardGeneratorProps) => {
-  const { colors } = useTheme();
-
   let selectedValuesList: number[] = [];
 
   switch (props.initStrategy) {
@@ -23,10 +20,10 @@ const EditActivationCardGenerator = (props: EditActivationCardGeneratorProps) =>
   }
 
   return (
-    <div className="w-full flex flex-col items-end px-4 pt-3 rounded-xl" style={{ backgroundColor: colors.White }}>
-      <Typography scale="Lable" size="Medium" color="Neutral_OnBackground" className="pb-2">
+    <div className="w-full flex flex-col items-end px-4 pt-3 rounded-xl bg-impo_White dark:bg-impo_Neutral_Surface">
+      <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground pb-2">
         {props.title}
-      </Typography>
+      </Dark_Typography>
 
       {props.options.map((item, index) => {
         const isSelected = selectedValuesList.includes(item.value);

@@ -1,7 +1,9 @@
 import CycleCardWave from '@components/women/Widgets/widgetGenerator/WidgetCycleCard/CycleCardWave';
-import { TOTAL_WAVE_CONTAINER_SIZE } from '@components/women/Widgets/widgetGenerator/WidgetCycleCard_old/constants';
+import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import { WavesContainerProps } from './types';
+
+const TOTAL_WAVE_CONTAINER_SIZE = MAX_SCREEN_WIDTH * 5;
 
 const WavesContainer = ({ waveColor }: WavesContainerProps) => {
   return (

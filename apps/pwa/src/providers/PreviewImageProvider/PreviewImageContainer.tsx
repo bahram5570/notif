@@ -5,7 +5,6 @@ import Image from 'next/image';
 
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useOverflowHandler from '@hooks/useOverflowHandler';
-import useTheme from '@hooks/useTheme';
 import { useRouter } from 'next/navigation';
 
 import { PreviewImageContainerProps } from './types';
@@ -13,7 +12,6 @@ import { PreviewImageContainerProps } from './types';
 const PreviewImageContainer = ({ src, shape = 'full' }: PreviewImageContainerProps) => {
   useOverflowHandler();
   const router = useRouter();
-  const { colors } = useTheme();
 
   useEffect(() => {
     // # Disable touch events for IOS
@@ -30,14 +28,10 @@ const PreviewImageContainer = ({ src, shape = 'full' }: PreviewImageContainerPro
 
   return (
     <div
-      style={{ maxWidth: MAX_SCREEN_WIDTH, backgroundColor: colors.Black }}
-      className="fixed top-0 left-0 right-0 bottom-0 mx-auto  backdrop-blur-sm z-[500]"
+      style={{ maxWidth: MAX_SCREEN_WIDTH }}
+      className="fixed top-0 left-0 right-0 bottom-0 mx-auto bg-impo_Black backdrop-blur-sm z-[500]"
     >
-      <CrossIcon
-        onClick={() => router.back()}
-        style={{ stroke: colors.White }}
-        className="absolute top-9 left-4  cursor-pointer  z-10"
-      />
+      <CrossIcon onClick={() => router.back()} className="absolute top-9 left-4 stroke-white cursor-pointer z-10" />
 
       <div className="relative w-full h-full flex justify-center">
         {shape === 'full' && <Image src={src} alt="" fill={true} className="object-contain" />}

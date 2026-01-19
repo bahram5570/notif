@@ -2,7 +2,6 @@ import ImpoNameIcon from '@assets/icons/impoNameEnglish.svg';
 
 import CustomImage from '@components/ui/CustomImage';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-import useTheme from '@hooks/useTheme';
 
 import SplashContentsMessages from './SplashContentsMessages';
 import SplashContentsProgress from './SplashContentsProgress';

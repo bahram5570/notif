@@ -6,7 +6,7 @@ import { isDevelopeMode } from '@utils/system';
 
 import CompleteRegisterContainer from '@components/activation/CompleteRegisterContainer';
 import { PayloadHandlerTypes } from '@components/activation/MainActivationModule/types';
-import Spinner from '@components/ui/Spinner';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
 import useChangePhase from '@hooks/__activation__/useChangePhase';
 import usePhaseChangePayload from '@providers/PhaseChangeProvider/__hooks__/usePhaseChangePayload';
 import { ActivationPayloadTypes } from '@providers/__activation__/types';
@@ -52,7 +52,7 @@ const PreventionToTrackerContainer = ({ updatedPayload }: { updatedPayload: Acti
     <div className="relative w-full h-[100dvh]">
       {isLoading && (
         <div className="w-full h-full flex items-center justify-center">
-          <Spinner color="outline" />
+          <Dark_Spinner className="border-impo_Surface_Outline" />
         </div>
       )}
 

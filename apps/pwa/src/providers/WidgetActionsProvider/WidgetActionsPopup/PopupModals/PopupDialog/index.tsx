@@ -1,10 +1,8 @@
 import { colorFormatConverter } from '@utils/scripts';
 
-import Button from '@components/ui/Button';
 import CustomImage from '@components/ui/CustomImage';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
-import Typography from '@components/ui/Typography';
 import useWidgetActions from '@hooks/useWidgetActions';
 
 import { ClickHandlerTypes, PopupDialogProps } from './types';

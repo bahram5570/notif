@@ -1,6 +1,5 @@
-import { colorFormatConverter, textShorter } from '@utils/scripts';
+import { textShorter } from '@utils/scripts';
 
-import Button from '@components/ui/Button';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import useWidgetActions from '@hooks/useWidgetActions';

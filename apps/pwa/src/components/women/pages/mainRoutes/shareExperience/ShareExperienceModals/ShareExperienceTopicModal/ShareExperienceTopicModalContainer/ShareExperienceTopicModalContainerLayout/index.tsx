@@ -1,7 +1,7 @@
 import CustomImage from '@components/ui/CustomImage';
+import Dark_BackButton from '@components/ui/Dark_BackButton';
 import Dark_Typography from '@components/ui/Dark_Typography';
 
-import BackButton from './BackButton';
 import { ShareExperienceTopicModalContainerLayoutPropsTypes } from './type';
 
 const ShareExperienceTopicModalContainerLayout = ({
@@ -65,7 +65,7 @@ const ShareExperienceTopicModalContainerLayout = ({
                       ${scrolled ? 'bg-impo_Neutral_Background' : 'bg-impo_Transparent'}
                     `}
         >
-          <BackButton />
+          <Dark_BackButton />
         </div>
 
         {children}

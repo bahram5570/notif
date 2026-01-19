@@ -1,12 +1,9 @@
 import { useState } from 'react';
 
 import { removeWelcomingHandler } from '@utils/aiChatBotWelcoming';
-import { colorFormatConverter } from '@utils/scripts';
 
-import Button from '@components/ui/Button';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
-import Typography from '@components/ui/Typography';
 import AiChatbotWelcomingLayout from '@components/ui/__AiChatbot__/AiChatbotWelcomingLayout';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useWidgetActions from '@hooks/useWidgetActions';

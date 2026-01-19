@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 
 import Dark_Spinner from '@components/ui/Dark_Spinner';
 import Dark_Typography from '@components/ui/Dark_Typography';
-import Spinner from '@components/ui/Spinner';
 import { FOOTER_HEIGTH } from '@components/women/WomenFooter/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';

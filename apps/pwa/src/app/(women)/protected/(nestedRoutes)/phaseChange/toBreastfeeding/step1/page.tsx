@@ -3,7 +3,6 @@
 import OnMountRewardModule from '@components/activation/OnMountRewardModule';
 import Breastfeeding1Container from '@components/activation/pages/breastfeeding/Breastfeeding1Container';
 import useProfileData from '@hooks/__profile__/useProfileData';
-import useTheme from '@hooks/useTheme';
 import usePhaseChangeData from '@providers/PhaseChangeProvider/__hooks__/usePhaseChangeData';
 import usePhaseChangePayload from '@providers/PhaseChangeProvider/__hooks__/usePhaseChangePayload';
 
@@ -15,7 +14,6 @@ const Step1 = () => {
   const { payload, payloadHandler } = usePhaseChangePayload();
   const activationData = usePhaseChangeData();
   const { profileData } = useProfileData();
-  const { colors } = useTheme();
 
   usePhaseChangeInstallationPurpose({ payloadHandler, installationPurpose: 'breastfeeding' });
 
@@ -33,7 +31,7 @@ const Step1 = () => {
             btnLabel: 'تکمیل اطلاعات',
             title: 'مادر شدنت هزاران بار مبارک🥳️',
             image: '/assets/lottie/childbirth.lottie',
-            gradient: [colors.Pink_100, colors.White],
+            gradient: ['#fce7eb', '#ffffff'],
             description: 'فرشته‌ی کوچک تو، این هدیه‌ی زیبای خدا،حالا در آغوشته. ',
           }}
           showRewardLottie={true}

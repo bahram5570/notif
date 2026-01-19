@@ -36,17 +36,3 @@ const CycleCardBtn = ({ buttonsList }: CycleCardBtnProps) => {
 
 export default CycleCardBtn;
 
-// <Button
-//   key={index}
-//   size="medium"
-//   variant="fill"
-//   fullWidth={false}
-//   color="FREE-STYLES"
-//   className="min-w-[140px]"
-//   onClick={() => actionHandler(item.action)}
-//   buttonColor={colorFormatConverter(item.backgroundColor)}
-//   contentsColor={colorFormatConverter(item.foregroundColor)}
-//   isDisable={item.action.actionType === ActionTypeEnum.None}
-// >
-//   {item.text}
-// </Button>
