@@ -2,7 +2,7 @@
 
 import ProfileContainerGenerator from '@components/__profile__/ProfileContainerGenerator';
 import ProfileItemGenerator from '@components/__profile__/ProfileItemGenerator';
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 
@@ -23,8 +23,8 @@ const PeriodSettingsPage = () => {
       <WomenPageLayout
         paddingTop={0}
         rightElement="BackButton"
-        className="bg-impo_Grey_50"
-        rightElementScript="انتخاب نحوه نمایش چرخه"
+        className="bg-impo_Neutral_Surface"
+        rightElementScript="ویرایش اطلاعات چرخه"
       >
         <div className="flex flex-col min-h-[100dvh] gap-6 pb-6 px-4" style={{ paddingTop: HEADER_HEIGHT + 24 }}>
           {fetchDataLoading && <PeriodSettingsSkeleton />}
@@ -42,16 +42,14 @@ const PeriodSettingsPage = () => {
               </ProfileContainerGenerator>
 
               <div className="mt-auto pt-4 mx-auto min-w-[204px]">
-                <Button
-                  size="medium"
-                  variant="fill"
-                  color="primary"
+                <Dark_Button
+                  fontSize="Lable_Large"
                   isDisable={isDisable}
                   isLoading={submitLoading}
                   onClick={() => submitHandler(values)}
                 >
                   ویرایش
-                </Button>
+                </Dark_Button>
               </div>
             </>
           )}

@@ -1,25 +1,20 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import useScriptMaker from './__hooks__/useScriptMaker';
 import { TestGeneratorProps } from './types';
 
 const TestGenerator = (props: TestGeneratorProps) => {
-  const { colors } = useTheme();
   const { dateScript, resultScript } = useScriptMaker(props);
 
   return (
-    <div
-      className="w-full h-[56px] flex items-center justify-between px-4 rounded-lg"
-      style={{ backgroundColor: colors.Surface_SurfaceVariant }}
-    >
-      <Typography scale="Body" size="Medium" color="Neutral_OnBackground">
+    <div className="w-full h-[56px] flex items-center justify-between px-4 rounded-lg bg-impo_Surface_SurfaceVariant">
+      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
         {dateScript}
-      </Typography>
+      </Dark_Typography>
 
-      <Typography scale="Body" size="Medium" color="Neutral_OnBackground">
+      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
         {resultScript}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

@@ -1,6 +1,7 @@
 'use client';
 
 import CustomImage from '@components/ui/CustomImage';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import Typography from '@components/ui/Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 
@@ -20,15 +21,12 @@ const BabyCheckHistoryCardDetailsContainer = ({ detailsIndex }: BabyCheckHistory
           <div className="w-full flex flex-col items-center px-4">
             <CustomImage src={data.icon} width={88} height={88} />
 
-            <Typography
-              scale="Body"
-              size="Medium"
-              textAlign="center"
-              className="pt-3 pb-4 px-5"
-              color="Neutral_OnBackground"
+            <Dark_Typography
+              fontSize="Body_Medium"
+              className="pt-3 pb-4 px-5 text-impo_Neutral_OnBackground text-center"
             >
               اینجا جزئیات تست‍هایی که توی این چرخه انجام دادی رو بهت نشون میدیم
-            </Typography>
+            </Dark_Typography>
 
             <div className="w-full flex flex-col items-center gap-2">
               {detailsList.map((item, index) => (
