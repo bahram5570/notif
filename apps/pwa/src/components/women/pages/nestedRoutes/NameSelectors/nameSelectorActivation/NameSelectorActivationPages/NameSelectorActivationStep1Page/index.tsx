@@ -21,16 +21,16 @@ const NameSelectorActivationStep1Page = () => {
       <div className="relative w-full h-[304px] flex justify-center pointer-events-none">
         <CustomImage
           src={'/assets/images/selectNameHollow.webp'}
-          className="w-[550px] h-[550px] min-w-[550px] min-h-[550px] -translate-y-[50px]"
+          className="w-[550px] h-[550px] min-w-[550px] min-h-[550px] -translate-y-[78px]"
         />
       </div>
 
-      <div className="w-full flex flex-col items-center">
+      <div className="w-full flex flex-col items-center -translate-y-[40px]">
         <Dark_Typography fontSize="Title_Medium" className="text-impo_White text-center">
           {data.weclome.title}
         </Dark_Typography>
 
-        <Dark_Typography fontSize="Body_Large" className="text-impo_White pt-2 pb-10">
+        <Dark_Typography fontSize="Body_Large" className="text-impo_White text-center pt-2 pb-10">
           {data.weclome.description}
         </Dark_Typography>
 

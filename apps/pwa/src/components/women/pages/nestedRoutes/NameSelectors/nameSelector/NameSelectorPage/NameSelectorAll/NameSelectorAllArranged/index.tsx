@@ -1,7 +1,6 @@
 import ArrowIcon from '@assets/icons/arrow.svg';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import NameSelectorCard from '../../../NameSelectorCard';
 import useNameSelectorData from '../../../__hooks__/useNameSelectorData';
@@ -10,7 +9,6 @@ import useNameSelectorFetchAll from './__hooks__/useNameSelectorFetchAll';
 import useNameSelectorStartingLetter from './__hooks__/useNameSelectorStartingLetter';
 
 const NameSelectorAllArranged = () => {
-  const { colors } = useTheme();
   const { startingLetterInfo } = useNameSelectorStartingLetter();
   const { paginationHandler, isLoading } = useNameSelectorFetchAll();
   const { data, applyFilters, resetFiltersHandler } = useNameSelectorData();
@@ -20,8 +18,19 @@ const NameSelectorAllArranged = () => {
   return (
     <div
       key={applyFilters ? 'k1' : 'k2'}
-      style={{ borderColor: colors.Neutral_Surface }}
-      className="border-[1px] rounded-2xl px-3 pb-6 flex flex-col gap-3 max-h-[calc(100dvh_-220px_-46px_-72px)] overflow-auto hideScrollbar"
+      className="
+                  border-[1px] 
+                  border-impo_Neutral_Surface 
+                  rounded-2xl 
+                  px-3 
+                  pb-6 
+                  flex 
+                  flex-col 
+                  gap-3 
+                  max-h-[calc(100dvh_-220px_-46px_-72px)] 
+                  overflow-auto 
+                  hideScrollbar
+                "
     >
       {allData && (
         <>
@@ -33,14 +42,13 @@ const NameSelectorAllArranged = () => {
               children={
                 <div
                   onClick={() => resetFiltersHandler()}
-                  style={{ backgroundColor: colors.Neutral_OnBackground }}
-                  className="w-fit h-[40px] flex items-center gap-2 px-5 rounded-full mt-3"
+                  className="w-fit h-[40px] flex items-center gap-2 px-5 rounded-full mt-3 bg-impo_Neutral_OnBackground"
                 >
-                  <ArrowIcon className="w-5 h-auto rotate-180 pt-1" style={{ stroke: colors.PrimaryWoman_OnPrimary }} />
+                  <ArrowIcon className="w-5 h-auto rotate-180 pt-1 stroke-impo_Primary_OnPrimary" />
 
-                  <Typography scale="Lable" size="Large" color="PrimaryWoman_OnPrimary">
+                  <Dark_Typography fontSize="Lable_Large" className="text-impo_Primary_OnPrimary">
                     حذف فیلتر ها
-                  </Typography>
+                  </Dark_Typography>
                 </div>
               }
             />

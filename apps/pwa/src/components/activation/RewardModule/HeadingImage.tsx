@@ -18,7 +18,7 @@ const HeadingImage = ({ backgroundColor, image, doRepeat, order }: HeadingImageP
                   w-full 
                   flex 
                   pointer-events-none 
-                  dark:!bg-impo_Transparent
+                  dark:!bg-impo_Neutral_Surface
                   ${isLargeScreen ? 'h-[55dvh]' : 'h-[45dvh]'}
                 `}
     >

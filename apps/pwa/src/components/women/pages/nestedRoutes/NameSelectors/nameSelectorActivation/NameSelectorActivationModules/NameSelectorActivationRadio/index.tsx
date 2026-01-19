@@ -30,8 +30,11 @@ const NameSelectorActivationRadio = ({
                     flex 
                     items-center 
                     gap-2
-                    ${isSelected ? 'bg-impo_Pink_50 dark:bg-impo_Transparent' : 'bg-impo_Neutral_Background'}
-                    ${isSelected ? 'border-impo_Primary_Primary' : 'bg-impo_Transparent'}
+                    ${
+                      isSelected
+                        ? 'bg-impo_Pink_50 dark:bg-impo_Surface_SurfaceVariant border-impo_Primary_Primary'
+                        : 'bg-impo_Neutral_Surface border-impo_Surface_SurfaceVariant'
+                    }
                   `}
       >
         <div

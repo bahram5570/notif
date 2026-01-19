@@ -1,7 +1,9 @@
 'use client';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+
+import Dark_Typography from '@components/ui/Dark_Typography';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import NameSelectorActivationCard from '../../NameSelectorActivationModules/NameSelectorActivationCard';
 import NameSelectorActivationMainModule from '../../NameSelectorActivationModules/NameSelectorActivationMainModule';
@@ -9,9 +11,11 @@ import useNameSelectorActivationData from '../../__hooks__/useNameSelectorActiva
 import useNameSelectorActivationSteps from '../../__hooks__/useNameSelectorActivationSteps';
 
 const NameSelectorActivationStep4Page = () => {
-  const { typography, colors } = useTheme();
+  const { operatingSystem } = useOperatingSystem();
   const { data, payload, payloadHandler } = useNameSelectorActivationData();
   const { isNextStepLoading, nextStepNavigation, stepInfo } = useNameSelectorActivationSteps();
+
+  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Medium', operatingSystem });
 
   const valueHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.toString().trim().slice(0, 1);
@@ -26,29 +30,26 @@ const NameSelectorActivationStep4Page = () => {
     return <></>;
   }
 
-  const textColor = colors.Neutral_OnBackground;
-  const font = typography.Body.Medium;
-
   return (
     <NameSelectorActivationMainModule>
       <NameSelectorActivationCard
+        currentStep={stepInfo.page}
         onClick={nextStepNavigation}
         btnText={data.charFilter.btn}
         isLoading={isNextStepLoading}
         isDisable={payload.charFilter === ''}
-        currentStep={stepInfo.page}
       >
-        <Typography scale="Title" size="Small" color="Surface_InverseSurface" className="pb-4">
+        <Dark_Typography fontSize="Title_Small" className="text-impo_Surface_InverseSurface pb-4">
           {data.charFilter.title}
-        </Typography>
+        </Dark_Typography>
 
         <input
           type="text"
           onChange={valueHandler}
           value={payload.charFilter}
           placeholder={data.charFilter.hint}
-          style={{ ...font, backgroundColor: colors.White, color: textColor }}
-          className="w-full border-none rounded-xl p-4 placeholder-[#7E7E7E]"
+          style={{ ...typographyFontStyles }}
+          className="w-full border-none rounded-xl p-4 bg-impo_Neutral_Background text-impo_Neutral_OnBackground placeholder-[#7E7E7E]"
         />
       </NameSelectorActivationCard>
     </NameSelectorActivationMainModule>

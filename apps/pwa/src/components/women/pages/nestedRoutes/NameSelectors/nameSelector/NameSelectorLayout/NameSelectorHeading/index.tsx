@@ -1,8 +1,8 @@
 'use client';
 
-import BackButton from '@components/ui/BackButton';
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_BackButton from '@components/ui/Dark_BackButton';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import { NAME_SELECTOR_HEADING_HEIGHT, NAME_SELECTOR_HEADING_WIDTH } from '../constants';
@@ -13,7 +13,17 @@ const NameSelectorHeading = ({ description }: NameSelectorHeadingProps) => {
     <div className="relative w-full flex flex-col overflow-hidden">
       <div className="relative flex justify-center items-end w-full" style={{ height: NAME_SELECTOR_HEADING_HEIGHT }}>
         <div
-          className="flex items-end rounded-full overflow-hidden bg-gradient-to-b from-[#FFB68FB8] to-[#FF5A3D29]"
+          className="
+                      flex 
+                      items-end 
+                      rounded-full 
+                      overflow-hidden 
+                      bg-gradient-to-b 
+                      from-[#FFB68FB8] 
+                      to-[#FF5A3D29] 
+                      dark:from-impo_Neutral_Surface 
+                      dark:to-impo_Neutral_Surface
+                    "
           style={{ minHeight: NAME_SELECTOR_HEADING_WIDTH, minWidth: NAME_SELECTOR_HEADING_WIDTH }}
         >
           <div
@@ -22,19 +32,19 @@ const NameSelectorHeading = ({ description }: NameSelectorHeadingProps) => {
           >
             <CustomImage
               src={'/assets/images/selectNameHeartsMask.webp'}
-              className="absolute top-0 left-0 right-0 bottom-0 opacity-50 pointer-events-none"
+              className="absolute top-0 left-0 right-0 bottom-0 opacity-50 pointer-events-none dark:hidden"
             />
 
             <CustomImage src={'/assets/images/selectNameMom.webp'} width={120} height={190} className="mt-auto" />
 
             <div className="">
               <div className="w-12 h-12 flex justify-center items-center my-4 mr-4 ml-auto">
-                <BackButton variant="text" color="outline" />
+                <Dark_BackButton />
               </div>
 
-              <Typography scale="Body" size="Medium" color="Surface_InverseSurface" className="pr-4">
+              <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_InverseSurface pr-4">
                 {description}
-              </Typography>
+              </Dark_Typography>
             </div>
           </div>
         </div>

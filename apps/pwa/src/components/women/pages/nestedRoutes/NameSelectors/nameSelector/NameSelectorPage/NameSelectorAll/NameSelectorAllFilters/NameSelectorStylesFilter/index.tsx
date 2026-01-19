@@ -1,8 +1,7 @@
 import { textShorter } from '@utils/scripts';
 
-import Spinner from '@components/ui/Spinner';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 
 import NameSelectorFilters from '../../../../NameSelectorFilters';
@@ -11,7 +10,6 @@ import NameSelectorFilterResetBtn from '../NameSelectorFilterResetBtn';
 import useNameSelectorFilterModals from '../__hooks__/useNameSelectorFilterModals';
 
 const NameSelectorStylesFilter = () => {
-  const { colors } = useTheme();
   const { allFilters, resetFiltersHandler } = useNameSelectorData();
   const { isOpenHandler, isOpen, isLoading } = useNameSelectorFilterModals(MODALS.NAME_SELECTOR_FILTER_STYLES);
 
@@ -22,27 +20,35 @@ const NameSelectorStylesFilter = () => {
     <>
       <div
         onClick={isOpenHandler}
-        className="relative flex items-center h-8 gap-1 border-[1px] rounded-full"
-        style={{
-          borderColor: colors.Neutral_Surface,
-          padding: selectedFilters ? '0 16px 0 6px' : '0 16px',
-          backgroundColor: selectedFilters ? colors.Surface_SurfaceVariant : colors.White,
-        }}
+        className={`
+                    relative 
+                    flex 
+                    items-center 
+                    h-8 
+                    gap-1 
+                    border-[1px] 
+                    border-impo_Neutral_Surface
+                    rounded-full
+                    ${selectedFilters ? 'bg-impo_Surface_SurfaceVariant pr-[16px] pl-[6px]' : 'bg-impo_Neutral_Background px-[16px]'}
+                  `}
       >
         {selectedFilters && (
           <>
             <NameSelectorFilterResetBtn onClick={() => resetFiltersHandler('styles')} />
-            <div className="w-[1px] h-[20px]" style={{ backgroundColor: colors.Surface_OutlineVariant }} />
+            <div className="w-[1px] h-[20px] bg-impo_Surface_OutlineVariant" />
           </>
         )}
 
-        <Typography scale="Body" size="Small" style={{ opacity: isLoading ? 0 : 1 }}>
+        <Dark_Typography
+          fontSize="Body_Small"
+          className={`text-impo_Neutral_OnBackground ${isLoading ? 'opacity-0' : 'opacity-100'}`}
+        >
           {btnScript}
-        </Typography>
+        </Dark_Typography>
 
         {isLoading && (
           <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-            <Spinner color="onBackground" width={20} />
+            <Dark_Spinner size={20} className="border-impo_Neutral_OnBackground" />
           </div>
         )}
       </div>

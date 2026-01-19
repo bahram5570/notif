@@ -1,6 +1,5 @@
-import Button from '@components/ui/Button';
 import CustomModal from '@components/ui/CustomModal';
-import useTheme from '@hooks/useTheme';
+import Dark_Button from '@components/ui/Dark_Button';
 import { useRouter } from 'next/navigation';
 
 import useNameSelectorData from '../__hooks__/useNameSelectorData';
@@ -12,7 +11,6 @@ import { NameSelectorFiltersProps } from './types';
 
 const NameSelectorFilters = (props: NameSelectorFiltersProps) => {
   const router = useRouter();
-  const { colors } = useTheme();
   const { applyFiltersHandler, setAllFilters } = useNameSelectorData();
   const { stylesValue, stylesValueHandler, isStylesDisable, stylesList } = useNameSelectorFiltersStyles(props.isOpen);
   const { genderValue, genderValuetHandler, isGenderDisable, genderList } = useNameSelectorFiltersGender(props.isOpen);
@@ -39,10 +37,7 @@ const NameSelectorFilters = (props: NameSelectorFiltersProps) => {
   return (
     <CustomModal isOpen={props.isOpen} isSlidingMode={true}>
       <div className="flex flex-col">
-        <div
-          className="w-[72px] h-[4px] rounded-full mx-auto mb-6"
-          style={{ backgroundColor: colors.Surface_OutlineVariant }}
-        />
+        <div className="w-[72px] h-[4px] rounded-full mx-auto mb-6 bg-impo_Surface_OutlineVariant" />
 
         <div className="flex flex-col items-end gap-2 h-fit max-h-[60vh] overflow-y-auto hideScrollbar">
           {props.inputType === 'gender' && genderList && (
@@ -54,14 +49,18 @@ const NameSelectorFilters = (props: NameSelectorFiltersProps) => {
           )}
         </div>
 
-        <div className="flex flex-col justify-end gap-3 h-[120px]" style={{ backgroundColor: colors.White }}>
-          <Button variant="fill" size="medium" color="surface" onClick={() => router.back()}>
+        <div className="flex flex-col justify-end gap-3 h-[120px] bg-impo_Neutral_Background">
+          <Dark_Button
+            fontSize="Lable_Large"
+            onClick={() => router.back()}
+            className="!bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnBackground"
+          >
             انصراف
-          </Button>
+          </Dark_Button>
 
-          <Button variant="fill" size="medium" color="primary" isDisable={isDisable} onClick={applyHandler}>
+          <Dark_Button fontSize="Lable_Large" isDisable={isDisable} onClick={applyHandler}>
             اعمال فیلتر
-          </Button>
+          </Dark_Button>
         </div>
       </div>
     </CustomModal>

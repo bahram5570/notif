@@ -1,33 +1,33 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import useNameSelectorTabs from '../../__hooks__/useNameSelectorTabs';
 import { NAME_SELECTOR_TABS_LIST } from '../constants';
 
 const NameSelectorTabs = () => {
-  const { colors } = useTheme();
   const { tab, tabHandler } = useNameSelectorTabs();
 
   return (
-    <div
-      style={{ borderBottomColor: colors.Neutral_Surface }}
-      className="w-[calc(100%_-32px)] mx-auto grid grid-cols-3 border-b-[1px]"
-    >
+    <div className="w-[calc(100%_-32px)] mx-auto grid grid-cols-3 border-b-[1px] border-b-impo_Neutral_Surface">
       {NAME_SELECTOR_TABS_LIST.map((item, index) => {
         const isSelected = item.tab === tab;
 
         const btnStyles: any = isSelected
-          ? { scale: 'Lable', size: 'Large', color: 'Neutral_OnBackground' }
-          : { scale: 'Body', size: 'Medium', color: 'Surface_Outline' };
+          ? { fontSize: 'Lable_Large', className: 'text-impo_Neutral_OnBackground' }
+          : { fontSize: 'Body_Medium', className: 'text-impo_Surface_Outline' };
 
         return (
           <div
             key={index}
             onClick={() => tabHandler(item.tab)}
-            className="flex justify-center py-3 border-b-[1px]"
-            style={{ borderBottomColor: isSelected ? colors.Neutral_OnBackground : colors.Transparent }}
+            className={`
+                        flex 
+                        justify-center 
+                        py-3 
+                        border-b-[1px]
+                        ${isSelected ? 'border-b-impo_Neutral_OnBackground' : 'border-b-impo_Transparent'}
+                      `}
           >
-            <Typography {...btnStyles}>{item.title}</Typography>
+            <Dark_Typography {...btnStyles}>{item.title}</Dark_Typography>
           </div>
         );
       })}
