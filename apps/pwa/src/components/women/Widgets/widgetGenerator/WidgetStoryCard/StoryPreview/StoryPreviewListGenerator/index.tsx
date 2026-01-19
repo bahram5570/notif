@@ -1,7 +1,7 @@
 import { colorFormatConverter } from '@utils/scripts';
 import Image from 'next/image';
 
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { WidgetStoryTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
@@ -88,16 +88,17 @@ const StoryPreviewListGenerator = ({
 
           {storySlideProps.ctaButton !== null && (
             <div className="mt-auto p-4 pb-16 z-20">
-              <Button
-                size="medium"
-                variant="fill"
-                color="FREE-STYLES"
+              <Dark_Button
                 onClick={() => actionHandler(storySlideProps.ctaButton!.action)}
-                buttonColor={colorFormatConverter(storySlideProps.ctaButton.backgroundColor)}
-                contentsColor={colorFormatConverter(storySlideProps.ctaButton.foregroundColor)}
+                style={{
+                  backgroundColor: colorFormatConverter(storySlideProps.ctaButton.backgroundColor),
+                  color: colorFormatConverter(storySlideProps.ctaButton.foregroundColor),
+                  borderColor: colorFormatConverter(storySlideProps.ctaButton.backgroundColor),
+                }}
+                fontSize="Lable_Large"
               >
                 {storySlideProps.ctaButton.text}
-              </Button>
+              </Dark_Button>
             </div>
           )}
 

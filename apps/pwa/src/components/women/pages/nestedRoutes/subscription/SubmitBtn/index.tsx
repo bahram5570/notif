@@ -1,8 +1,7 @@
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import VpnText from '@components/ui/VpnText';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-import useTheme from '@hooks/useTheme';
 
 import useSubmitSubscription from './__hooks__/useSubmitSubscription';
 import { SubmitBtnProps } from './types';
@@ -17,43 +16,39 @@ const SubmitBtn = ({
   totalText,
   totalUnit,
 }: SubmitBtnProps) => {
-  const { colors } = useTheme();
   const { submitHandler, isLoading } = useSubmitSubscription();
 
   return (
     <div
-      className="fixed left-0 right-0 bottom-0 mx-auto shadow-[0_0_16px_0_#6c23371f] pt-3 pb-8 z-30"
+      className="fixed left-0 right-0 bottom-0 mx-auto shadow-[0_0_16px_0_#6c23371f] pt-3 pb-8 z-30 bg-impo_Neutral_Background"
       style={{
         maxWidth: MAX_SCREEN_WIDTH,
-        backgroundColor: colors.Neutral_Background,
       }}
     >
       <div className="flex flex-col justify-center gap-2 px-4">
         <VpnText />
         <div className="flex flex-row-reverse gap-2 items-center my-2">
           <div className="flex flex-col items-end w-full">
-            <Typography scale="Body" size="Medium" color="Surface_OnSurfaceVariant">
+            <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
               {totalText}
-            </Typography>
+            </Dark_Typography>
             <div className="flex flex-row-reverse items-center gap-1">
-              <Typography scale="Title" size="Small" color="Neutral_OnBackground">
+              <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
                 {totalAmount}
-              </Typography>
-              <Typography scale="Lable" size="SmallProminet">
+              </Dark_Typography>
+              <Dark_Typography fontSize="Lable_SmallProminet" className="text-impo_Neutral_OnBackground">
                 {totalUnit}
-              </Typography>
+              </Dark_Typography>
             </div>
           </div>
-          <Button
-            size="medium"
-            variant="fill"
-            color="primary"
+          <Dark_Button
             isLoading={isLoading}
             id="SubscriptionPayment"
             onClick={() => submitHandler(isFree, { discount: approvedCode, isWeb: true, packageId, value })}
+            fontSize="Lable_Large"
           >
             {payButtonText}
-          </Button>
+          </Dark_Button>
         </div>
       </div>
     </div>

@@ -1,8 +1,7 @@
 import DiscountCodeIcon from '@assets/icons/discountCode.svg';
 import PlusIcon from '@assets/icons/plus.svg';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import CodeInput from './CodeInput';
 import useDiscountCode from './__hooks__/useDiscountCode';
@@ -15,24 +14,23 @@ const DiscountCode = ({
   loadingResponse,
   onApply,
 }: DiscountCodeProps) => {
-  const { colors } = useTheme();
   const { showDiscountInput, toggleShowHandler, code, codeHandler } = useDiscountCode();
 
   return (
-    <div className="w-full rounded-xl p-3" style={{ backgroundColor: colors.Surface_SurfaceVariant }}>
+    <div className="w-full rounded-xl p-3 bg-impo_Surface_SurfaceVariant">
       <div className="flex items-center justify-between">
         <PlusIcon
-          className="w-7 h-auto"
-          style={{ stroke: colors.Surface_Outline, rotate: showDiscountInput ? '45deg' : '0deg' }}
+          className="w-7 h-auto stroke-impo_Surface_Outline"
+          style={{ rotate: showDiscountInput ? '45deg' : '0deg' }}
           onClick={toggleShowHandler}
         />
 
         <div className="flex items-center gap-2 ">
-          <Typography scale="Body" size="Medium">
+          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             کد تخفیف خود را اینجا وارد کنید
-          </Typography>
+          </Dark_Typography>
 
-          <DiscountCodeIcon className="w-6 h-auto" style={{ stroke: colors.Surface_Outline }} />
+          <DiscountCodeIcon className="w-6 h-auto stroke-impo_Surface_Outline" />
         </div>
       </div>
 

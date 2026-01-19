@@ -1,7 +1,9 @@
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+
 import ContentWrapper from '@components/ui/ContentWrapper';
 import Dark_RadioButton from '@components/ui/Dark_RadioButton';
 import Dark_Typography from '@components/ui/Dark_Typography';
-import useTheme from '@hooks/useTheme';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import BreastfeedingSettingBtnModal from './BreastfeedingSettingBtnModal';
 import { BreastfeedingSettingInputGeneratorPropsType } from './type';
@@ -15,7 +17,8 @@ const BreastfeedingSettingInputGenerator = ({
   changeValueHandler,
   ...rest
 }: BreastfeedingSettingInputGeneratorPropsType) => {
-  const { colors, typography } = useTheme();
+  const { operatingSystem } = useOperatingSystem();
+  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Large', operatingSystem });
 
   return (
     <div className="rounded-lg flex flex-col p-4 gap-3 w-full bg-impo_Neutral_Background">
@@ -28,7 +31,7 @@ const BreastfeedingSettingInputGenerator = ({
                 value={value}
                 className="w-full text-impo_Surface_OnSurfaceVariant bg-impo_Neutral_Background"
                 onChange={(v) => changeValueHandler(v.target.value, name)}
-                style={{ ...typography.Body.Large }}
+                style={{ ...typographyFontStyles }}
               />
             )}
             {type === 'modal' && <BreastfeedingSettingBtnModal name={name} value={value} />}

@@ -1,11 +1,8 @@
 'use client';
 
-import { colorFormatConverter } from '@utils/scripts';
-
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import useAnalytics from '@hooks/useAnalytics';
 import useOnMountActions from '@hooks/useOnMountActions';
-import useTheme from '@hooks/useTheme';
 
 import HealthReportContainerSkeleton from './HealthReportContainerSkeleton';
 import HealthReportContainerWidgets from './HealthReportContainerWidgets';

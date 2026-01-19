@@ -1,15 +1,17 @@
 import React from 'react';
 
 import { decodeUnicode } from '../AiMessage/utils';
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { toPersianNumbers } from '@utils/numbers';
 
-import useTheme from '@hooks/useTheme';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import { TextBlockProps } from './type';
 
 const TextBlock = (props: TextBlockProps) => {
-  const { typography } = useTheme();
+  const { operatingSystem } = useOperatingSystem();
 
+  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Medium', operatingSystem });
   const decoded = decodeUnicode(props.text);
   const finalText = toPersianNumbers(decoded);
 
@@ -27,7 +29,7 @@ const TextBlock = (props: TextBlockProps) => {
         whiteSpace: 'pre-wrap',
         wordWrap: 'break-word',
         display: 'inline',
-        ...typography.Body.Medium,
+        ...typographyFontStyles,
         ...props.style,
       }}
       onAnimationStart={props.onAnimationStart}

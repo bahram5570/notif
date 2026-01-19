@@ -1,5 +1,5 @@
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import useCodeStatus from './__hooks__/useCodeStatus';
 import { CodeInputProps } from './types';
@@ -27,27 +27,25 @@ const CodeInput = ({
   return (
     <>
       <div className="flex items-center gap-2 pt-4">
-        <Button
-          size="medium"
-          variant="fill"
-          color="primary"
+        <Dark_Button
           onClick={clickHandler}
           isLoading={loadingResponse}
           isDisable={code.trim() === ''}
+          fontSize="Lable_Large"
         >
           اعمال
-        </Button>
+        </Dark_Button>
 
         <input
-          className="w-[220px] h-full border-[1px] rounded-full py-1.5 px-4"
+          className="w-[220px] h-full border-[1px] rounded-full py-1.5 px-4 bg-impo_Surface_SurfaceVariant"
           onChange={(e) => codeHandler(e.target.value)}
         />
       </div>
 
       {scriptInfo && !isValidDiscountCode && (
-        <Typography scale="Body" size="Small" className="ml-auto pt-2" color="FREE-STYLE" freeColor={scriptInfo.color}>
+        <Dark_Typography fontSize="Body_Small" className={`ml-auto pt-2 ${scriptInfo.color}`}>
           {scriptInfo.script}
-        </Typography>
+        </Dark_Typography>
       )}
     </>
   );

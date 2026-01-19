@@ -1,8 +1,8 @@
 import LogoutIcon from '@assets/icons/logout.svg';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
 import Dark_Typography from '@components/ui/Dark_Typography';
-import Spinner from '@components/ui/Spinner';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -34,7 +34,7 @@ const LogOut = () => {
           خروج از حساب کاربری
         </Dark_Typography>
 
-        {isLoading && <Spinner width={24} color="primary" />}
+        {isLoading && <Dark_Spinner size={24} />}
         {!isLoading && <LogoutIcon className="w-6 h-auto stroke-impo_Neutral_OnBackground" />}
       </div>
     </div>

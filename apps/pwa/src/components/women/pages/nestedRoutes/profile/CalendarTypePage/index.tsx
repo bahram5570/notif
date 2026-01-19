@@ -33,8 +33,7 @@ const CalendarTypePage = () => {
             <div
               key={index}
               onClick={() => selectedTypeHandler(item.value)}
-              className={`w-full h-12 flex items-center gap-2 border-t-[1px] `}
-              // ${borderTopColor: index > 0 ?'border-t-impo_Neutral_Surface":"border-t-impo_Transparent'}
+              className={`w-full h-12 flex items-center gap-2 border-t-[1px] ${index > 0 ? 'border-t-impo_Neutral_Surface' : 'border-t-impo_Transparent'}`}
             >
               <Dark_RadioButton isChecked={isSelected} />
 

@@ -1,11 +1,8 @@
 import StarIcon from '@assets/icons/star-1.svg';
 
-import useTheme from '@hooks/useTheme';
-
 import { CommentRatePropsType } from './type';
 
 const CommentRate = ({ rate }: CommentRatePropsType) => {
-  const { colors } = useTheme();
   const rateValue = rate.toFixed();
   return (
     <div className="flex gap-1 flex-row-reverse">
@@ -14,8 +11,7 @@ const CommentRate = ({ rate }: CommentRatePropsType) => {
         return (
           <StarIcon
             key={i}
-            className={`w-4 h-4 `}
-            style={{ fill: ratingValue <= Number(rateValue) ? '#FFCC00' : colors.Surface_OutlineVariant }}
+            className={`w-4 h-4 ${ratingValue <= Number(rateValue) ? 'fill-impo_Yellow' : 'fill-impo_Surface_OutlineVariant'}`}
           />
         );
       })}

@@ -4,7 +4,6 @@ import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import WheelPicker from '@components/ui/WheelPicker';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 
 import { ValueModalPropsType } from './type';
 
@@ -12,7 +11,6 @@ const ValueModal = ({ name, onChange, onCloseModal, value }: ValueModalPropsType
   const defaultValue = Number(value) || 100;
   const [values, setValues] = useState<number>(defaultValue);
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { colors } = useTheme();
 
   const stateValuesHandler: (v: number | string) => void = (v) => {
     setValues(Number(v));

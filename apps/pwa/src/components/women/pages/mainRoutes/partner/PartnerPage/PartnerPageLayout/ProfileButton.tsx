@@ -1,6 +1,6 @@
 import ProfileIcon from '@assets/icons/headerProfile.svg';
 
-import Spinner from '@components/ui/Spinner';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
 const ProfileButton = () => {
@@ -19,7 +19,7 @@ const ProfileButton = () => {
         <div className="flex gap-4 items-center">
           <div className="cursor-pointer flex justify-center items-center w-8 h-8" onClick={clickHandler}>
             {pageNavigationLoading === 'profile' ? (
-              <Spinner color="outline" width={28} />
+              <Dark_Spinner size={28} className="border-impo_Surface_Outline" />
             ) : (
               <ProfileIcon className="w-8 h-full stroke-impo_Surface_Outline" />
             )}

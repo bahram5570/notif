@@ -1,10 +1,7 @@
-import Button from '@components/ui/Button';
 import CustomModal from '@components/ui/CustomModal';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
-import Typography from '@components/ui/Typography';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 
 import { RewardModalPropsType } from './type';
