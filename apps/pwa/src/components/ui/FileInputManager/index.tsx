@@ -46,7 +46,7 @@ const FileInputManager = ({
   return (
     <>
       {ShowCameraInput && (
-        <div className="p-2 border-b border-b-impo_Neutral_Surface">
+        <div className="px-2 py-3 border-b border-b-impo_Neutral_Surface">
           <input
             type="file"
             accept="image/*"
@@ -75,7 +75,7 @@ const FileInputManager = ({
       )}
 
       {ShowGalleryInput && (
-        <div className={`p-2  ${ShowFileInput && 'border-b border-b-impo_Neutral_Surface'}`}>
+        <div className={`px-2 py-3  ${ShowFileInput && 'border-b border-b-impo_Neutral_Surface'}`}>
           <input
             type="file"
             accept="image/*"

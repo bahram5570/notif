@@ -44,14 +44,14 @@ const ShareExperienceTopicModalContainer = ({
           callBack={updatePageNo}
           style={{ paddingBottom: FOOTER_HEIGTH * 2 }}
           totalCount={topicExperiencesData?.totalCount || 10}
-          className={`max-h-screen pt-72 ${styles.scroller} overflow-y-auto`}
+          className={`max-h-screen pt-72 ${styles.scroller} overflow-y-auto `}
         >
           <>
             <div ref={markerRef} style={{ height: 1, width: '100%' }} />
             {topicExperiencesData?.expirences.map((item, index) => (
               <div
                 key={index}
-                className="w-full px-4 pt-5 pb-4 bg-impo_Neutral_Background border-t-[1px] border-t-impo_Surface_SurfaceVariant z-20"
+                className="w-full px-4 pt-5 pb-4 bg-impo_Neutral_Background border-b-[1px] border-b-impo_Neutral_Surface z-20 "
               >
                 <ShareExperienceTopPart {...item} />
 

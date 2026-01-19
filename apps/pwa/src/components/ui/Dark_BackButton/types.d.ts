@@ -5,5 +5,5 @@ export interface Dark_BackButtonProps {
   isLoading?: boolean;
   hasBorder?: boolean;
   style?: React.CSSProperties;
-  color?: 'outline' | 'onBackground' | 'background' | 'primary';
+  color?: 'outline' | 'onBackground' | 'background' | 'primary' | 'surface';
 }

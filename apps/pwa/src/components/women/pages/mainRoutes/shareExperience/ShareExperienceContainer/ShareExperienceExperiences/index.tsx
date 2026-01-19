@@ -59,7 +59,7 @@ const ShareExperienceExperiences = ({
         style={{ paddingBottom: FOOTER_HEIGTH * 2 }}
       >
         {experiencesData?.expirences.map((item, index) => (
-          <div key={index} className="w-full border-t-[1px] border-t-impo_Surface_SurfaceVariant pt-5 pb-4 z-0">
+          <div key={index} className="w-full border-t-[1px] border-t-impo_Neutral_Surface  pt-5 pb-4 z-0">
             <ShareExperienceTopPart {...item} />
 
             <div className="w-full pr-10">

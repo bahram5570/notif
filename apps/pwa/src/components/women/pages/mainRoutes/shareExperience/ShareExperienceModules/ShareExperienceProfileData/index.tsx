@@ -14,7 +14,7 @@ const ShareExperienceProfileData = ({ isSelf, experienceDataList, isLoading }: S
         <div className="flex flex-col p-4">
           {experienceDataList.map((item) => {
             return (
-              <div key={item.id} className="w-full border-t-[1px] border-t-impo_Surface_SurfaceVariant pt-5 pb-4 z-0">
+              <div key={item.id} className="w-full border-b-[1px] border-b-impo_Neutral_Surface pt-5 pb-4 z-0">
                 <ShareExperienceTopPart {...item} selfExperience={isSelf} />
 
                 <div className="w-full pr-10">

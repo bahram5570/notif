@@ -67,7 +67,7 @@ const ShareExperienceProfileTopPart = ({
                     }
                   `}
       >
-        <div className="flex flex-row gap-2">
+        <div className="flex flex-row gap-2 text-impo_Primary_OnPrimary">
           {textBtn}
           {isSelf && <EditIcon className={`w-5 h-5 rotate-[360] fill-impo_Neutral_OnBackground`} />}
         </div>

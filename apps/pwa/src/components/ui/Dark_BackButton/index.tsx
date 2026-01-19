@@ -37,6 +37,10 @@ const Dark_BackButton = (props: Dark_BackButtonProps) => {
       result.spinnerColor = 'border-impo_Neutral_Background';
       result.borderColor = 'border-impo_Neutral_Background';
       result.iconColor = 'stroke-impo_Neutral_Background';
+    } else if (props.color === 'surface') {
+      result.spinnerColor = 'border-impo_Neutral_Background';
+      result.borderColor = 'border-impo_Neutral_Background';
+      result.iconColor = 'stroke-impo_Surface_InverseSurface dark:stroke-impo_Surface_InverseOnSurface';
     } else {
       result.spinnerColor = 'border-impo_Surface_Outline';
       result.borderColor = 'border-impo_Surface_Outline';
@@ -71,7 +75,7 @@ const Dark_BackButton = (props: Dark_BackButtonProps) => {
                   ${props.className}
                 `}
     >
-      {!isLoading && <ArrowIcon className={`w-6 h-auto m-auto stroke-2 ${colors.iconColor}`} />}
+      {!isLoading && <ArrowIcon className={`w-6 h-auto m-auto stroke-2  ${colors.iconColor}`} />}
       {isLoading && <Dark_Spinner className={`${colors.spinnerColor}`} />}
     </div>
   );
