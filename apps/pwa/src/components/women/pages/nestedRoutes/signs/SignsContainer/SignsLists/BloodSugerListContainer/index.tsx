@@ -64,7 +64,7 @@ const BloodSugerListContainer = ({ bloodSugerList }: BloodSugerListPropsType) =>
                   key={index}
                   className={`flex flex-col rounded-md items-end ${context.border} ${index === 0 ? 'mt-3' : ''}`}
                 >
-                  <div className={`p-2 rounded-bl-md ${context.backgroundColor}`}>
+                  <div className={`p-2 rounded-bl-md rounded-tr  ${context.backgroundColor}`}>
                     <Dark_Typography fontSize="Lable_Small" className="text-impo_White">
                       {`نتیجه تست ${index + 1}: ${bloodSuger.value}mg/dL-${context.result}`}
                     </Dark_Typography>

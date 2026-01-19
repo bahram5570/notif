@@ -62,7 +62,7 @@ const InputModal = ({ onChange, onCloseModal, value }: ConditionModalPropsType) 
               defaultValue={values.high}
               valueHandler={(v) => stateValuesHandler(v.toString(), 'high')}
             />
-            <span className="flex justify-center items-center">/</span>
+            <span className="flex justify-center items-center text-impo_Surface_SurfaceVariant">/</span>
             <WheelPicker
               list={lowList}
               defaultValue={values.low}

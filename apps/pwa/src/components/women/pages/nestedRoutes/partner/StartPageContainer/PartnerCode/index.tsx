@@ -18,7 +18,7 @@ const PartnerCode = ({ isLoading, refreshLoading, onRefreshCodeHandler, partnerC
 
   return (
     <div className="w-full">
-      <div style={{ border: `1px dashed` }} className="flex w-full justify-between p-1 items-center rounded-xl gap-2">
+      <div className="flex w-full justify-between p-1 items-center rounded-xl gap-2 border border-dashed border-impo_Surface_OutlineVariant">
         <div onClick={onRefreshCodeHandler}>
           <Refresh className="w-8 h-8 " />
         </div>

@@ -21,7 +21,7 @@ const NewMessage = () => {
     <>
       <textarea
         placeholder="برای همدل خود یک پیام ارسال کنید"
-        className="w-full text-end px-4 py-3 rounded-2xl focus-visible:outline-1 focus-visible:outline placeholder:text-sm border border-impo_Neutral_Surface outline-impo_Primary_Primary "
+        className="w-full text-end px-4 py-3 rounded-2xl focus-visible:outline-1 focus-visible:outline placeholder:text-sm placeholder:text-impo_Surface_OutlineVariant text-impo_Neutral_OnBackground border border-impo_Neutral_Surface outline-impo_Primary_Primary bg-impo_Neutral_Surface "
         rows={4}
         value={newMessage}
         onChange={onChangeHandler}

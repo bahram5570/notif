@@ -62,7 +62,7 @@ const MemoryDetailPage = () => {
 
           <div className="relative">
             <CustomImage src={memoryImage} />
-            <div className="rounded-md py-1 px-4 absolute bottom-0 m-3 bg-impo_Pink_50">
+            <div className="rounded-md py-1 px-4 absolute bottom-0 m-3 bg-impo_Pink_50 dark:bg-impo_Pink_900">
               <Dark_Typography fontSize="Lable_Medium" className="text-impo_Primary_Primary">
                 {`ایجاد شده توسط ${memoryData.fromMan ? partnerName?.name : 'شما'}`}
               </Dark_Typography>
