@@ -13,7 +13,7 @@ const TicketTime = ({ createTime, stylingTypes }: TicketTimeProps) => {
   const { culture } = useCulture();
 
   const colors = {
-    backgroundColor: stylingTypes === 'heading' ? 'bg-impo_Primary_OnPrimary' : 'bg-impo_Surface_Outline',
+    backgroundColor: stylingTypes === 'heading' ? 'bg-impo_Primary_OnPrimary' : 'bg-impo_Surface_OutlineVariant',
     textColor: stylingTypes === 'heading' ? 'text-impo_Primary_OnPrimary' : 'text-impo_Surface_Outline',
   };
 
@@ -39,7 +39,7 @@ const TicketTime = ({ createTime, stylingTypes }: TicketTimeProps) => {
         {dateScript}
       </Dark_Typography>
 
-      <div className={`w-[1px] h-[18px] ${colors.backgroundColor}`} />
+      <div className={`w-[1px] h-[18px]  ${colors.backgroundColor}`} />
 
       <Dark_Typography fontSize="Body_Small" className={`${colors.textColor}`}>
         {timeScript}

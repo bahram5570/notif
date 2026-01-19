@@ -1,15 +1,13 @@
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Spinner from '@components/ui/Spinner';
-import Typography from '@components/ui/Typography';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import RatingDescriptionModal from './RatingDescriptionModal';
 import { RatingDescriptionProps } from './types';
 
 const RatingDescription = ({ rate, description, descriptionHandler, onClick }: RatingDescriptionProps) => {
-  const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
@@ -28,24 +26,21 @@ const RatingDescription = ({ rate, description, descriptionHandler, onClick }: R
       {rate > 0 && (
         <>
           <div className="flex flex-col items-end gap-2 pt-6 pb-4  cursor-pointer" onClick={openModalHandler}>
-            <Typography scale="Body" size="Small">
+            <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
               لطفا نظرت رو برامون بنویس تا بتونیم بررسی کنیم و در آینده سرویس بهتری ارائه بدیم.
-            </Typography>
+            </Dark_Typography>
 
-            <div
-              className="w-full h-10 flex items-center justify-end rounded-full px-4 border-[1px]"
-              style={{ borderColor: colors.Neutral_Surface }}
-            >
+            <div className="w-full h-10 flex items-center justify-end rounded-full px-4 border-[1px] border-impo_Neutral_Surface">
               {isLoading && (
                 <div className="mx-auto">
-                  <Spinner color="outline" width={24} />
+                  <Dark_Spinner size={24} className="border-impo_Surface_Outline" />
                 </div>
               )}
 
               {!isLoading && (
-                <Typography scale="Body" size="Medium" color="Surface_Outline">
+                <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_Outline">
                   نظرت رو اینجا بنویس
-                </Typography>
+                </Dark_Typography>
               )}
             </div>
           </div>

@@ -1,5 +1,4 @@
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import useTheme from '@hooks/useTheme';
 
 const AiTopicChatbotListSkeleton = () => {
   return (

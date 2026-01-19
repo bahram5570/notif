@@ -22,12 +22,15 @@ const ChatContainerMaker = ({ dateTime, children, sideType, width }: ChatContain
                   px-3 
                   py-2 
                   rounded-xl
-                  ${isDoctor ? 'ml-0 bg-impo_Surface_SurfaceVariant' : 'ml-auto bg-impo_Pink_50'}
+                  ${isDoctor ? 'ml-0 dark:bg-impo_Surface_OutlineVariant bg-impo_Surface_SurfaceVariant' : 'ml-auto bg-impo_Pink_50 dark:bg-impo_Pink_900'}
                 `}
     >
       <>{children}</>
 
-      <Dark_Typography fontSize="Lable_Small" className="text-impo_Surface_Outline">
+      <Dark_Typography
+        fontSize="Lable_Small"
+        className="dark:text-impo_Surface_SurfaceVariant text-impo_Surface_Outline"
+      >
         {time}
       </Dark_Typography>
     </div>

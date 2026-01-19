@@ -9,7 +9,6 @@ import useGetData from '@components/women/pages/mainRoutes/partner/PartnerPage/_
 import useOperatingSystem from '@hooks/useOperatingSystem';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 
 import { PROFILE_MODAL_QUERY_NAME } from '../../ProfileLinkList/constants';
 import { ProfileModalNameEnums } from '../../ProfileModals/enum';

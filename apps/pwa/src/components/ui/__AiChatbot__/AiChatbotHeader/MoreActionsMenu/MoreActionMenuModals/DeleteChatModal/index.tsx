@@ -1,14 +1,10 @@
-import Button from '@components/ui/Button';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
 
 import { CommenPropsType } from '../type';
 import useDelete from './__hooks__/useDelete';
 
 const DeleteChatModal = ({ onCloseModal }: CommenPropsType) => {
-  const { colors } = useTheme();
   const { isLoading, onDeleteHandler } = useDelete();
 
   const onClick = () => {

@@ -5,7 +5,6 @@ import { useState } from 'react';
 import Dark_Button from '@components/ui/Dark_Button';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import useTheme from '@hooks/useTheme';
 
 import BloodPressureBtn from './BloodPressureBtn';
 import BloodPressureHeader from './BloodPressureHeader';
@@ -18,7 +17,6 @@ import { InputValueType } from './type';
 const BloodPressureContainer = () => {
   const [inputValue, setInputValue] = useState<InputValueType>(initailValue);
   const { isLoading, submitHandler } = useSubmit();
-  const { colors } = useTheme();
 
   const onChangeHandler = (v: InputValueType) => {
     setInputValue(v);

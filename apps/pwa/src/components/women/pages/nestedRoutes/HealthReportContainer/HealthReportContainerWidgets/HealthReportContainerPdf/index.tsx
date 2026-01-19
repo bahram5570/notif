@@ -1,13 +1,10 @@
 import ImpoIcon from '@assets/icons/impoName.svg';
 
-import Button from '@components/ui/Button';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
-import Typography from '@components/ui/Typography';
 import WidgetGenerator from '@components/women/Widgets/widgetGenerator';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useAnalytics from '@hooks/useAnalytics';
-import useTheme from '@hooks/useTheme';
 import { WidgetsEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
 import HealthReportDate from './HealthReportDate';
@@ -16,7 +13,7 @@ import { HealthReportContainerPdfProps } from './types';
 
 const HealthReportContainerPdf = ({ data }: HealthReportContainerPdfProps) => {
   const { callEvent } = useAnalytics();
-  const { colors } = useTheme();
+
   const { ref, downloadStatus, downloadStatusHandler } = usePdfDownload();
 
   const PeriodReportType = data.widgets.find((widget) => widget.type === WidgetsEnum.PeriodReportCard);

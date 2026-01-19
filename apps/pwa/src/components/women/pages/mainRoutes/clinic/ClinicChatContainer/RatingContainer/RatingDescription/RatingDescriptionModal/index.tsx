@@ -1,15 +1,18 @@
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+
 import styles from './RatingDescriptionModal.module.css';
 
-import Button from '@components/ui/Button';
 import CustomModal from '@components/ui/CustomModal';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import { MAX_LETTERS_COUNT } from './constants';
 import { RatingDescriptionModalProps } from './types';
 
 const RatingDescriptionModal = ({ descriptionHandler, description, onClick }: RatingDescriptionModalProps) => {
-  const { colors, typography } = useTheme();
+  const { operatingSystem } = useOperatingSystem();
+  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Medium', operatingSystem });
 
   const lettersCount = description.trim().length;
   const lettersCountScript = `${lettersCount}/${MAX_LETTERS_COUNT}`;
@@ -31,26 +34,26 @@ const RatingDescriptionModal = ({ descriptionHandler, description, onClick }: Ra
   return (
     <CustomModal isSlidingMode={true}>
       <>
-        <Typography scale="Body" size="Small">
+        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
           لطفا نظرت رو برامون بنویس تا بتونیم بررسی کنیم و در آینده سرویس بهتری ارائه بدیم.
-        </Typography>
+        </Dark_Typography>
 
         <textarea
           placeholder="نظرت رو اینجا بنویس.."
-          style={{ ...typography.Body.Medium, borderColor: colors.Neutral_Surface, direction: 'rtl' }}
+          style={{ ...typographyFontStyles, direction: 'rtl' }}
           value={description}
           rows={4}
           onChange={valueHandler}
-          className={`relative w-full rounded-xl p-2 border-[1px] outline-none resize-none mt-2 mb-1 ${styles.textarea}`}
+          className={`relative w-full rounded-xl p-2 border-[1px] outline-none resize-none mt-2 mb-1 bg-impo_Neutral_Background text-impo_Neutral_OnBackground border-impo_Neutral_Surface${styles.textarea}`}
         />
 
-        <Typography scale="Body" size="Medium" color="Surface_Outline" className="pb-10 mr-auto">
+        <Dark_Typography fontSize="Body_Medium" className="pb-10 mr-auto text-impo_Surface_Outline">
           {lettersCountScript}
-        </Typography>
+        </Dark_Typography>
 
-        <Button variant="fill" color="primary" size="medium" onClick={onClick}>
+        <Dark_Button fontSize="Lable_Large" onClick={onClick}>
           ارسال بازخورد
-        </Button>
+        </Dark_Button>
       </>
     </CustomModal>
   );
