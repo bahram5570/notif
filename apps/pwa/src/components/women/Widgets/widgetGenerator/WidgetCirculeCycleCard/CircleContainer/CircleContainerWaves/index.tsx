@@ -1,4 +1,3 @@
-import circularCycleLoadingTick from '@assets/lottie/circularCycleLoadingTick.json';
 import wavesJson from '@assets/lottie/cycleWaves.json';
 import { colorFormatConverter } from '@utils/scripts';
 
@@ -6,6 +5,7 @@ import Dark_Typography from '@components/ui/Dark_Typography';
 import { LoadingStatusEnum } from '@components/women/pages/mainRoutes/cycle/CycleContainer/__hooks__/useCycleLoadingStatus/loadingStatus.enum';
 import { LottieJson } from '@lib/LottieJson';
 
+import CircleContainerWavesTick from './CircleContainerWavesTick';
 import useLottieWavesColor from './__hooks__/useLottieWavesColor';
 import { CircleContainerWavesProps } from './types';
 
@@ -54,7 +54,7 @@ const CircleContainerWaves = ({ forgroundColor, loadingStatus }: CircleContainer
                     ${loadingStatus === LoadingStatusEnum.loaded ? 'scale-100' : 'scale-0'} 
                   `}
       >
-        <LottieJson animationData={circularCycleLoadingTick} loop={false} className="w-12 h-auto" />
+        <CircleContainerWavesTick />
 
         <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
           چرخه بروزرسانی شد

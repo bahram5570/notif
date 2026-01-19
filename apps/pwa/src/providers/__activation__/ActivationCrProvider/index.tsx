@@ -28,8 +28,8 @@ const ActivationProviderCr = ({ children, questionsData, errorCode }: Activation
     setPayload({ ...payload, ...v });
   };
 
-  // useActivationCrRouteProtection();
-  // useActivationBackQuery({ queryName: ACTIVATION_REWARD_QUERY_NAME });
+  useActivationCrRouteProtection();
+  useActivationBackQuery({ queryName: ACTIVATION_REWARD_QUERY_NAME });
 
   return (
     <ActivationCrContext.Provider value={{ payload, payloadHandler, data }}>

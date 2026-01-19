@@ -39,7 +39,11 @@ const RadioGenerator = ({ option, selectedItem, selectedItemHandler }: RadioGene
                     }
                   `}
       >
-        {option.icon && <CustomImage src={option.icon} width={84} />}
+        {option.icon && (
+          <div className="relative w-[84px] h-[84px] min-w-[84px] min-h-[84px]">
+            <CustomImage src={option.icon} />
+          </div>
+        )}
 
         <div className="w-full flex flex-col gap-1">
           <div className="flex justify-end items-start gap-2">

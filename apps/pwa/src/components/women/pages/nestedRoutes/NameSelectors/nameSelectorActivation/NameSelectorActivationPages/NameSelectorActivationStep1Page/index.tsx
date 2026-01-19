@@ -1,8 +1,8 @@
 'use client';
 
-import Button from '@components/ui/Button';
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import NameSelectorActivationMainModule from '../../NameSelectorActivationModules/NameSelectorActivationMainModule';
 import useNameSelectorActivationData from '../../__hooks__/useNameSelectorActivationData';
@@ -26,25 +26,24 @@ const NameSelectorActivationStep1Page = () => {
       </div>
 
       <div className="w-full flex flex-col items-center">
-        <Typography scale="Title" size="Medium" color="Neutral_Background" textAlign="center">
+        <Dark_Typography fontSize="Title_Medium" className="text-impo_White text-center">
           {data.weclome.title}
-        </Typography>
+        </Dark_Typography>
 
-        <Typography scale="Body" size="Large" color="Neutral_Background" textAlign="center" className="pt-2 pb-10">
+        <Dark_Typography fontSize="Body_Large" className="text-impo_White pt-2 pb-10">
           {data.weclome.description}
-        </Typography>
+        </Dark_Typography>
 
-        <Button
-          size="large"
-          variant="fill"
-          color="onBackground"
-          className="!w-[206px]"
+        <Dark_Button
+          fontSize="Lable_Large"
           onClick={nextStepNavigation}
           isLoading={isNextStepLoading}
+          spinnerClassName="border-impo_Neutral_Background"
           id={`BabyNameActivationStep${stepInfo} BabyNameSelectionStart`}
+          className="!bg-impo_Neutral_OnBackground !border-impo_Neutral_OnBackground !text-impo_Neutral_Background !w-[206px]"
         >
           {data.weclome.btn}
-        </Button>
+        </Dark_Button>
       </div>
     </NameSelectorActivationMainModule>
   );

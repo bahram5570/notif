@@ -24,7 +24,7 @@ const PredictGenerator = (props: PredictGeneratorProps) => {
             {props.title}
           </Dark_Typography>
 
-          <Dark_Typography fontSize="Body_Medium" className="text-impo_Grey_600">
+          <Dark_Typography fontSize="Body_Medium" className="text-impo_Grey_600 dark:text-impo_Grey_300">
             {props.trailingUp}
           </Dark_Typography>
         </div>
@@ -35,7 +35,7 @@ const PredictGenerator = (props: PredictGeneratorProps) => {
 
         {!props.showEyeIcon && (
           <>
-            <Dark_Typography fontSize="Body_Small" className="text-impo_Grey_500">
+            <Dark_Typography fontSize="Body_Small" className="text-impo_Grey_500 dark:text-impo_Grey_400">
               {props.trailingDown}
             </Dark_Typography>
           </>

@@ -2,7 +2,7 @@
 
 import { SelectNameGenderEnum } from '@services/selectNameServices/enums';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import NameSelectorActivationCard from '../../NameSelectorActivationModules/NameSelectorActivationCard';
 import NameSelectorActivationMainModule from '../../NameSelectorActivationModules/NameSelectorActivationMainModule';
@@ -29,14 +29,14 @@ const NameSelectorActivationStep2Page = () => {
     <NameSelectorActivationMainModule>
       <NameSelectorActivationCard
         btnText={data.gender.btn}
+        currentStep={stepInfo.page}
         onClick={nextStepNavigation}
         isLoading={isNextStepLoading}
         isDisable={payload.gender === SelectNameGenderEnum.None}
-        currentStep={stepInfo.page}
       >
-        <Typography scale="Title" size="Small" color="Surface_InverseSurface" className="mx-auto pb-8">
+        <Dark_Typography fontSize="Title_Small" className="text-impo_Surface_InverseSurface mx-auto pb-8">
           {data.gender.title}
-        </Typography>
+        </Dark_Typography>
 
         <div className="w-full flex flex-col gap-3">
           {data.gender.items.map((item, index) => (

@@ -13,8 +13,8 @@ const RegisterTypeBtn = ({ isPhone, isPhoneToggleHandler }: RegisterTypeBtnProps
       style={{ maxWidth: MAX_SCREEN_WIDTH }}
       className="fixed top-0 left-0 right-0 mx-auto cursor-pointer w-[100dvw] z-20"
     >
-      <div onClick={isPhoneToggleHandler} className="mt-6 ml-4 w-fit px-4 py-2 rounded-full bg-impo_Pink_100">
-        <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+      <div onClick={isPhoneToggleHandler} className="mt-6 ml-4 w-fit px-4 py-2 rounded-full bg-impo_Pink_100 dark:bg-impo_Pink_800">
+        <Dark_Typography fontSize="Lable_Medium" className="text-impo_Black">
           {script}
         </Dark_Typography>
       </div>

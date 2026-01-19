@@ -1,35 +1,30 @@
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 
 import { NameSelectorActivationCardProps } from './types';
 
 const NameSelectorActivationCard = ({
+  currentStep,
+  isLoading,
+  isDisable,
   children,
   onClick,
   btnText,
-  isLoading,
-  isDisable,
-  currentStep,
 }: NameSelectorActivationCardProps) => {
   return (
-    <div
-      style={{ backgroundColor: '#ffffffdd' }}
-      className="w-full h-fit min-h-[520px] flex flex-col py-8 px-3 rounded-2xl mt-6"
-    >
+    <div className="w-full h-fit min-h-[520px] flex flex-col py-8 px-3 rounded-2xl mt-6 bg-[#ffffffdd] dark:bg-impo_Neutral_Surface">
       <>{children}</>
 
       <div className="w-full flex justify-center pt-5 mt-auto">
-        <Button
-          size="large"
-          variant="fill"
+        <Dark_Button
           onClick={onClick}
-          color="onBackground"
           isLoading={isLoading}
           isDisable={isDisable}
           className="!w-[206px]"
+          fontSize="Lable_Large"
           id={`BabyNameActivationStep${currentStep}`}
         >
           {btnText}
-        </Button>
+        </Dark_Button>
       </div>
     </div>
   );

@@ -2,7 +2,7 @@ import NameSelectorActivationStep1Page from '@components/women/pages/nestedRoute
 
 const NameSelectorStep1 = () => {
   return (
-    <div className="relative w-full h-fit min-h-[100dvh] bg-gradient-to-bl from-[#FF8570] to-[#F9504A]">
+    <div className="relative w-full h-fit min-h-[100dvh] bg-gradient-to-bl from-[#FF8570] to-[#F9504A] dark:bg-none">
       <NameSelectorActivationStep1Page />
     </div>
   );

@@ -1,15 +1,13 @@
-import dotsLoading from '@assets/lottie/dotsLoading.json';
-
 import Dark_Typography from '@components/ui/Dark_Typography';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { LoadingStatusEnum } from '@components/women/pages/mainRoutes/cycle/CycleContainer/__hooks__/useCycleLoadingStatus/loadingStatus.enum';
-import { LottieJson } from '@lib/LottieJson';
 
 import WidgetGenerator from '..';
 import CycleCardBtn from './CycleCardBtn';
 import CycleCardShortLinks from './CycleCardShortLinks';
 import CycleCardWave from './CycleCardWave';
 import CycleScripts from './CycleScripts';
+import WidgetCycleCardDots from './WidgetCycleCardDots';
 import { CYCLE_CARD_PADDING_BOTTOM, CYCLE_CARD_SHORT_LINKS_HEIGHT, CYCLE_CARD_TOTAL_HEIGHT } from './constants';
 import { WidgetCycleCardProps } from './types';
 
@@ -49,7 +47,7 @@ const WidgetCycleCard = ({ data, insideCycleWidgetList, loadingStatus }: WidgetC
 
         {loadingStatus !== LoadingStatusEnum.successed && (
           <div className="w-full flex justify-center items-center my-auto">
-            <LottieJson animationData={dotsLoading} className="w-14" />
+            <WidgetCycleCardDots />
 
             <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
               چرخه در حال بروزرسانی

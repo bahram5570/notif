@@ -1,45 +1,66 @@
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { NameSelectorActivationRadioProps } from './types';
 
 const NameSelectorActivationRadio = ({
+  isSelected,
+  subTitle,
+  onClick,
   image,
   title,
-  onClick,
-  subTitle,
-  isSelected,
 }: NameSelectorActivationRadioProps) => {
-  const { colors } = useTheme();
-
   return (
-    <div className="relative w-full cursor-pointer" style={{ paddingTop: image ? '8px' : '0px' }} onClick={onClick}>
+    <div
+      onClick={onClick}
+      className={`
+                  relative 
+                  w-full 
+                  cursor-pointer
+                  ${image ? 'pt-2' : 'pt-0'}
+                `}
+    >
       <div
-        className="w-full h-[54px] px-3 rounded-2xl border-[1px] flex items-center gap-2"
-        style={{
-          backgroundColor: isSelected ? colors.Pink_50 : colors.White,
-          borderColor: isSelected ? colors.PrimaryWoman_Primary : colors.Transparent,
-        }}
+        className={`
+                    w-full 
+                    h-[54px] 
+                    px-3 
+                    rounded-2xl 
+                    border-[1px] 
+                    flex 
+                    items-center 
+                    gap-2
+                    ${isSelected ? 'bg-impo_Pink_50 dark:bg-impo_Transparent' : 'bg-impo_Neutral_Background'}
+                    ${isSelected ? 'border-impo_Primary_Primary' : 'bg-impo_Transparent'}
+                  `}
       >
         <div
-          className="w-4 h-4 min-w-4 min-h-4 rounded-full flex items-center justify-center border-[1px] p-[2px]"
-          style={{ borderColor: isSelected ? colors.PrimaryWoman_Primary : colors.Surface_OutlineVariant }}
+          className={`
+                      w-4 
+                      h-4 
+                      min-w-4 
+                      min-h-4 
+                      rounded-full 
+                      flex 
+                      items-center 
+                      justify-center 
+                      border-[1px] 
+                      p-[2px]
+                      ${isSelected ? 'border-impo_Primary_Primary' : 'bg-impo_Transparent'}
+                    `}
         >
-          {isSelected && (
-            <div className="w-full h-full rounded-full" style={{ backgroundColor: colors.PrimaryWoman_Primary }} />
-          )}
+          {isSelected && <div className="w-full h-full rounded-full bg-impo_Primary_Primary" />}
         </div>
 
         <div className="flex items-center gap-1">
-          <Typography scale="Body" size="Medium">
+          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             {title}
-          </Typography>
+          </Dark_Typography>
 
           {isSelected && subTitle && (
-            <Typography scale="Body" size="Medium">
+            <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
               {subTitle}
-            </Typography>
+            </Dark_Typography>
           )}
         </div>
 
