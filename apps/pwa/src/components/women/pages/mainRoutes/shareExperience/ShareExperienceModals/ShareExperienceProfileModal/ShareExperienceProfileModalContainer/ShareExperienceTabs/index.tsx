@@ -21,7 +21,7 @@ const ShareExperienceTabs = ({ options, tab, tabHandler }: ShareExperenceTabsPro
                     `}
         >
           {option.id === tab ? (
-            <Dark_Typography fontSize="Lable_Large" className="text-center text-impo_Neutral_OnBackground">
+            <Dark_Typography fontSize="Lable_Medium" className="text-center text-impo_Neutral_OnBackground">
               {option.text}
             </Dark_Typography>
           ) : (

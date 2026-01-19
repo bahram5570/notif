@@ -34,13 +34,14 @@ const ShareExperienceTopicModalContainerLayout = ({
               <div className="absolute bottom-0 left-0 right-0 flex justify-end items-center py-4 px-4">
                 {!scrolled && (
                   <div className="flex flex-col justify-end items-end">
-                    <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground z-10">
+                    <Dark_Typography fontSize="Title_Medium" className="text-impo_White z-10">
                       {topicName}
                     </Dark_Typography>
-
-                    <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground z-10">
-                      {bio}
-                    </Dark_Typography>
+                    {bio && (
+                      <Dark_Typography fontSize="Body_Large" className="text-impo_White z-10">
+                        {bio}
+                      </Dark_Typography>
+                    )}
                   </div>
                 )}
               </div>
@@ -65,7 +66,7 @@ const ShareExperienceTopicModalContainerLayout = ({
                       ${scrolled ? 'bg-impo_Neutral_Background' : 'bg-impo_Transparent'}
                     `}
         >
-          <Dark_BackButton />
+          <Dark_BackButton color="surface" />
         </div>
 
         {children}

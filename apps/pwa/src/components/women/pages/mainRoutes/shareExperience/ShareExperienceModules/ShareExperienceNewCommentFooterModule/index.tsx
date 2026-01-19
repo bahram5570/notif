@@ -35,14 +35,16 @@ const ShareExperienceNewCommentFooterModule = ({
                   flex 
                   items-center 
                   justify-between 
-                  bg-impo_Neutral_Background 
-                  shadow-[0px_-2px_5px_#00000022] 
-                  dark:shadow-[0px_-2px_5px_#ffffff22] 
+                  bg-impo_Neutral_Surface 
+                 
                   z-30
                 "
     >
       <div className="w-fit px-3 py-1 rounded-full bg-impo_Primary_Primary select-none pointer-events-none">
-        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_Background">
+        <Dark_Typography
+          fontSize="Body_Small"
+          className="text-impo_Primary_OnPrimary text-center flex flex-col justify-center items-center !h-8 !w-16"
+        >
           ارسال
         </Dark_Typography>
       </div>

@@ -18,6 +18,7 @@ const useShareExperienceGetData = () => {
     api: 'shareeexperience/v3',
     onSuccess: successHandler,
     method: 'GET',
+    fetchOnMount: false,
   });
 
   useEffect(() => {

@@ -36,7 +36,7 @@ const NewReplyText = ({ text, textHandler, onChangeBtnTop }: NewReplyTextProps) 
       ref={textAreaRef}
       onChange={valueHandler}
       placeholder="نظرت رو اینجا بنویس..."
-      className={`bg-impo_Neutral_Background text-impo_Neutral_OnBackground ${styles.textarea}`}
+      className={`bg-impo_Neutral_Background text-impo_Neutral_OnBackground mt-3 placeholder:text-impo_Surface_OutlineVariant ${styles.textarea}`}
     />
   );
 };

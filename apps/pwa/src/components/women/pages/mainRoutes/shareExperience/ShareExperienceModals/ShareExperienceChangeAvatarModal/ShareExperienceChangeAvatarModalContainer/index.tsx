@@ -45,7 +45,10 @@ const ShareExperienceChangeAvatarModalContainer = ({
           uploadImageLoading={uploadImageLoading}
         />
 
-        <div className="flex justify-end items-center gap-2 p-2" onClick={selectAvatarHandler}>
+        <div
+          className="flex justify-end items-center gap-2 px-2 py-3 border-t border-t-impo_Neutral_Surface"
+          onClick={selectAvatarHandler}
+        >
           <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
             آواتار پیش فرض
           </Dark_Typography>

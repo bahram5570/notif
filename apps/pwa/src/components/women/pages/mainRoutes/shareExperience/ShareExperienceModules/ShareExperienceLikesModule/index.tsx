@@ -19,7 +19,7 @@ const ShareExperienceLikesModule = (props: ShareExperienceLikesModuleProps) => {
   };
 
   const iconsStyles = { opacity: props.isSelf ? 0.4 : 1, width: 20 };
-  const filledIcon = <LikeFillIcon className="fill-impo_Red_500" style={{ ...iconsStyles }} />;
+  const filledIcon = <LikeFillIcon className="fill-impo_Primary_Primary" style={{ ...iconsStyles }} />;
   const emptiedIcon = <LikeEmptyIcon className="fill-impo_Surface_InverseSurface" style={{ ...iconsStyles }} />;
 
   return (

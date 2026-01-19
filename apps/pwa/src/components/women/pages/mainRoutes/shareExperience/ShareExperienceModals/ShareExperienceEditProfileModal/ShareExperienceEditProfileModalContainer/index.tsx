@@ -60,7 +60,7 @@ const ShareExperienceEditProfileModalContainer = ({ id }: ShareExperienceEditPro
                 نام کاربری
               </Dark_Typography>
 
-              <div className="flex flex-wrap-reverse justify-between border rounded-xl px-4 py-3 w-full">
+              <div className="flex flex-wrap-reverse justify-between border border-impo_Surface_OutlineVariant rounded-xl px-4 py-3 w-full">
                 <EditIcon className="w-5 h-5 fill-impo_Neutral_OnBackground" />
 
                 <input
@@ -73,7 +73,7 @@ const ShareExperienceEditProfileModalContainer = ({ id }: ShareExperienceEditPro
                 />
               </div>
             </div>
-            <div className="rounded-lg flex flex-row gap-2 p-1 bg-impo_Warning_WarininContainer">
+            <div className="rounded-lg flex flex-row gap-2  px-3 py-4 bg-impo_Warning_WarininContainer">
               <Dark_Typography fontSize="Body_Small" className="text-impo_Black">
                 {profileData.usernameHintText}
               </Dark_Typography>
