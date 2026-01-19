@@ -10,7 +10,7 @@ const ChallengContext = ({ card, valid }: ChallengContextPropsType) => {
   const { callEvent } = useAnalytics();
 
   return (
-    <div className=" flex flex-col gap-4 p-4 rounded-xl shadow-sm bg-impo_Neutral_Background">
+    <div className=" flex flex-col gap-4 py-4 px-2 rounded-xl shadow-sm bg-impo_Neutral_Surface">
       <div className="flex justify-center items-center px-2">
         <CustomImage src={card.leftIcon} style={{ scale: !valid ? '2' : 'inherit' }} />
         <div className="px-3">

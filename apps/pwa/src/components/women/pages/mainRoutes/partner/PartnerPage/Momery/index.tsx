@@ -20,7 +20,7 @@ const Memory = ({ memory, valid }: MemeryPropsType) => {
   };
 
   return (
-    <div className="flex flex-col gap-4 py-4 px-8 rounded-xl  items-end border border-impo_Neutral_Surface">
+    <div className="flex flex-col gap-4 py-4 px-3  rounded-xl  items-end border border-impo_Neutral_Surface">
       <div className="flex justify-between items-end ">
         <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           {memory.cardTitle}

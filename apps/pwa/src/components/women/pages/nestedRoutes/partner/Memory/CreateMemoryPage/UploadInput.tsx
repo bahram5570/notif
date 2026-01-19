@@ -47,7 +47,7 @@ const UploadInput = ({ fileName, uploadImageLoading, valuesHandler }: UploadInpu
     <>
       {fileName !== '' && (
         <div className="flex flex-col gap-3">
-          <div className="flex  rounded-full justify-evenly items-center px-5 py-3 gap-3 bg-impo_Surface_SurfaceVariant">
+          <div className="flex rounded-2xl justify-between items-center px-5 py-3 gap-3 bg-impo_Surface_SurfaceVariant">
             <div className="flex gap-3">
               <CustomImage src={fileName} width={48} height={48} className="rounded-md" />
               <Dark_Typography fontSize="Body_Medium" className="break-all text-left text-impo_Neutral_OnBackground">
@@ -78,7 +78,7 @@ const UploadInput = ({ fileName, uploadImageLoading, valuesHandler }: UploadInpu
 
           <div className=" p-2 flex  justify-center items-center ">
             <div
-              className="flex  justify-center items-center gap-2 rounded-full pl-6 pr-4 py-3 bg-impo_Primary_PrimaryContainer dark:bg-impo_Primary_OnPrimaryContainer"
+              className="flex  justify-center items-center gap-2 rounded-full pl-6 pr-4 py-3 bg-impo_Primary_PrimaryContainer "
               onClick={onClick}
             >
               <Dark_Typography fontSize="Lable_Large" className="text-impo_Primary_Primary">

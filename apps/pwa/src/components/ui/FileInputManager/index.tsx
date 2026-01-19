@@ -75,7 +75,7 @@ const FileInputManager = ({
       )}
 
       {ShowGalleryInput && (
-        <div className="p-2 border-b border-b-impo_Neutral_Surface">
+        <div className={`p-2  ${ShowFileInput && 'border-b border-b-impo_Neutral_Surface'}`}>
           <input
             type="file"
             accept="image/*"

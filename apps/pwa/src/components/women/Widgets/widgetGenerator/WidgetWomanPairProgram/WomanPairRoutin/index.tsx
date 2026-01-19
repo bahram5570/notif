@@ -26,7 +26,7 @@ const WomanPairRoutin = (props: WomanPairRoutinPropsType) => {
           writerSpeciality={props.writerSpeciality}
         />
 
-        <div className="w-full h-[1px] my-2 bg-impo_Blue_100" />
+        <div className="w-full h-[1px] my-2 bg-impo_Grey_200" />
         <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
           {textShorter(props.description, 80)}
         </Dark_Typography>

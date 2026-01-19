@@ -39,7 +39,7 @@ const FeedbackDescription = ({ description, descriptionHandler }: FeedbackDescri
         rows={4}
         dir="rtl"
         onChange={valueHandler}
-        className={`relative w-full rounded-xl p-2 border-[1px] outline-none resize-none mt-2 mb-1 border-impo_Neutral_Surface bg-impo_Neutral_Background text-impo_Neutral_OnBackground`}
+        className={`relative w-full rounded-xl p-2 border-[1px] outline-none resize-none mt-2 mb-1 placeholder:text-impo_Surface_OutlineVariant border-impo_Neutral_Surface bg-impo_Neutral_Background text-impo_Neutral_OnBackground`}
       />
 
       <Dark_Typography className="text-impo_Surface_Outline pb-10 mr-auto" fontSize="Body_Medium">

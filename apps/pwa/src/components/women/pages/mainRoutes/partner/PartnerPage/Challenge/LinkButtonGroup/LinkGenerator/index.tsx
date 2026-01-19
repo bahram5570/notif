@@ -34,8 +34,12 @@ const LinkGenerator = ({ Icon, link, name, MessageNumber }: LinkGeneratorPropsTy
         </span>
       )}
 
-      <div className="mx-3 flex flex-row items-center gap-1">
-        <Dark_Typography fontSize="Lable_Small" className="text-impo_Neutral_OnBackground">
+      <div className="mx-1 flex flex-row items-center gap-1">
+        <Dark_Typography
+          fontSize="Lable_Small"
+          className="text-impo_Neutral_OnBackground"
+          style={{ whiteSpace: 'pre-line' }}
+        >
           {name}
         </Dark_Typography>
 

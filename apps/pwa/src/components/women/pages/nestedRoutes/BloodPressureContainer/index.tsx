@@ -27,13 +27,13 @@ const BloodPressureContainer = () => {
   };
 
   return (
-    <WomenPageLayout rightElement="BackButton" paddingTop={0} className="bg-impo_Neutral_Surface">
+    <WomenPageLayout rightElement="BackButton" paddingTop={0}>
       <div
         style={{ paddingTop: HEADER_HEIGHT }}
         className="min-h-[100dvh] relative flex flex-col gap-3 bg-impo_Neutral_Surface"
       >
         <BloodPressureHeader />
-        <div style={{ paddingTop: HEADER_HEIGHT }} className="px-3">
+        <div style={{ paddingTop: HEADER_HEIGHT + 10 }} className="px-3">
           <div className="flex flex-col gap-4  bg-impo_Neutral_Surface">
             <div className="p-3 w-full divide-y-[1px] flex flex-col gap-2 rounded-xl mt-4 bg-impo_Neutral_Background">
               <BloodPressureBtn value={inputValue} />

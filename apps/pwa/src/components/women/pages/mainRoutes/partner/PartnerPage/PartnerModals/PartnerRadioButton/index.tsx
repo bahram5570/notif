@@ -6,10 +6,14 @@ import { PartnerRadioButtonPropsType } from './type';
 
 const PartnerRadioButton = ({ onChange, value }: PartnerRadioButtonPropsType) => {
   return (
-    <div className="flex flex-col gap-2 items-end divide-y-[1px]">
+    <div className="flex flex-col gap-2 items-end ">
       {LIST_LABEL.map((item, index) => {
+        const lastItem = LIST_LABEL.length - 1 === index;
         return (
-          <div className="flex items-center justify-end gap-3 w-full" key={index}>
+          <div
+            className={`flex items-center justify-end gap-3 w-full ${!lastItem && 'border-b border-b-impo_Surface_SurfaceVariant'}`}
+            key={index}
+          >
             <label htmlFor={item.name}>
               <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
                 {item.name}

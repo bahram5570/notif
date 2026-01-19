@@ -9,10 +9,7 @@ const PartnerCard = ({ partner, valid }: PartnerCardPropsType) => {
   const backgroundColor = partner.cycleCard?.gradient.length > 0 && generateLinearGradient(partner.cycleCard?.gradient);
 
   return (
-    <div
-      className="flex flex-col gap-4 py-6 px-10 rounded-xl  items-end border-impo_Neutral_Surface"
-      style={{ border: `1px solid  ` }}
-    >
+    <div className="flex flex-col gap-4 py-6 px-3 rounded-xl  items-end border border-impo_Neutral_Surface">
       {partner.cycleTitle && (
         <div className="flex justify-between items-end ">
           <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
@@ -30,10 +27,16 @@ const PartnerCard = ({ partner, valid }: PartnerCardPropsType) => {
         <div className=" flex flex-row gap-2  sm:px-4 py-3  items-center rounded-xl  w-full mb-2">
           <div className="w-full flex flex-col gap-2 items-end">
             <div className="flex flex-col gap-2 items-end">
-              <Dark_Typography fontSize="Body_Medium" className="text-impo_White text-center">
+              <Dark_Typography
+                fontSize="Body_Medium"
+                className={` text-center ${valid ? 'text-impo_White' : 'text-impo_Black'}`}
+              >
                 {partner.cycleCard.title}
               </Dark_Typography>
-              <Dark_Typography fontSize="Headline_Small" className="text-impo_White text-center">
+              <Dark_Typography
+                fontSize="Headline_Small"
+                className={` text-center ${valid ? 'text-impo_White' : 'text-impo_Black'}`}
+              >
                 {partner.cycleCard.subTitle}
               </Dark_Typography>
             </div>

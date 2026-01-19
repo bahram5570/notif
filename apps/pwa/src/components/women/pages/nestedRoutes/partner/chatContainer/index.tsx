@@ -48,7 +48,7 @@ const ChatContainer = () => {
             style={{ paddingTop: HEADER_HEIGHT + 90 }}
             ref={messageListRef}
           >
-            <div className="px-[10px] py-3 bg-impo_Surface_SurfaceVariant">
+            <div className="px-[10px] py-3 bg-impo_Neutral_Surface">
               <Dark_Typography fontSize="Lable_Large" className="w-full text-center text-impo_Neutral_OnBackground">
                 {data.text}
               </Dark_Typography>

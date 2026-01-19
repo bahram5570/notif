@@ -39,7 +39,7 @@ const BackgroundImage = ({ isValid, coverImage }: BackgroundImagePropsType) => {
         </div>
 
         <div
-          className="absolute inset-0 opacity-95"
+          className="absolute inset-0 opacity-95 dark:!bg-gradient-to-b dark:!from-[#2a2a2a50] dark:!to-[#FFFFFF]"
           style={{
             background: 'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 94.5%)',
           }}

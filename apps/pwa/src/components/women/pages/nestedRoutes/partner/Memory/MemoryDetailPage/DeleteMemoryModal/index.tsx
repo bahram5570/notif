@@ -21,7 +21,7 @@ const DeleteMemoryModal = () => {
 
         <div className="w-full flex items-center justify-between gap-2">
           <Dark_Button
-            className="!text-impo_Error_Error bg-impo_Primary_PrimaryContainer dark:bg-impo_Primary_OnPrimaryContainer border-impo_Primary_PrimaryContainer  dark:border-impo_Primary_OnPrimaryContainer"
+            className="!text-impo_Error_Error bg-impo_Primary_PrimaryContainer  border-impo_Primary_PrimaryContainer  "
             onClick={deleteHandler}
             fontSize="Lable_Large"
             isLoading={isLoading}

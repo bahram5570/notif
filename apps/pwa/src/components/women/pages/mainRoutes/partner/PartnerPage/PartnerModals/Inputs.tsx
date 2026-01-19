@@ -11,7 +11,7 @@ const Inputs = ({ fileDataHandler, canDeleteImage, deleteHandler, uploadImageLoa
       <Dark_Typography fontSize="Title_Small" className="w-full p-2 text-center text-impo_Neutral_OnBackground">
         عکس خود را انتخاب کنید
       </Dark_Typography>
-      <div className=" divide-y flex flex-col gap-3">
+      <div className="  flex flex-col gap-3">
         <FileInputManager
           ShowFileInput={false}
           fileDataHandler={fileDataHandler}
@@ -19,7 +19,10 @@ const Inputs = ({ fileDataHandler, canDeleteImage, deleteHandler, uploadImageLoa
         />
 
         {canDeleteImage && JSON.parse(canDeleteImage) && (
-          <div className="flex justify-end items-center gap-2 p-2" onClick={deleteHandler}>
+          <div
+            className="flex justify-end items-center gap-2 p-2 border-t border-t-impo_Neutral_Surface"
+            onClick={deleteHandler}
+          >
             <Dark_Typography className="text-impo_Error_Error" fontSize="Body_Large">
               حذف عکس
             </Dark_Typography>

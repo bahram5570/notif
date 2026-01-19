@@ -16,8 +16,8 @@ const HistoryItem = (props: HistoryItemPropsType) => {
 
   return (
     <div onClick={onClick}>
-      <div className="divide-y-[1px] flex flex-col gap-3 p-5 rounded-2xl border border-impo_Neutral_Surface">
-        <div className="flex flex-row-reverse w-full gap-3 justify-between items-center">
+      <div className=" flex flex-col gap-3 p-5 rounded-2xl border border-impo_Neutral_Surface">
+        <div className="flex flex-row-reverse w-full gap-3 justify-between items-center border-b border-impo_Surface_SurfaceVariant pb-3">
           <div className="flex flex-row-reverse gap-2">
             <div className="flex flex-col justify-center items-center gap-3">
               <div className="flex items-center relative w-14">

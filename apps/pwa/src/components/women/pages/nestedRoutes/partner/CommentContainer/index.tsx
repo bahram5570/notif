@@ -42,7 +42,7 @@ const CommentContainer = () => {
 
         <textarea
           placeholder="حست به این خاطره رو اینجا بنویس"
-          className="w-full text-end px-4 py-3 rounded-2xl focus-visible:outline-1 focus-visible:outline placeholder:text-sm bg-impo_Neutral_Surface text-impo_Neutral_OnSurface  border border-impo_Neutral_Surface outline-impo_Primary_Primary"
+          className="w-full text-end px-4 py-3 rounded-2xl focus-visible:outline-1 focus-visible:outline placeholder:text-sm bg-impo_Neutral_Surface text-impo_Neutral_OnSurface  placeholder:text-impo_Surface_OutlineVariant border border-impo_Neutral_Surface outline-impo_Primary_Primary"
           rows={4}
           value={comment}
           onChange={onChangeHandler}

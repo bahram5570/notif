@@ -36,7 +36,7 @@ const StartPageContainer = () => {
       <CustomImage src="/assets/images/partner-start-dark.webp" className="px-6 hidden dark:block" />
       <div className="flex flex-col gap-4 items-center justify-center py-5 px-6">
         <PhoneNumberInput />
-        <div className="border-t-[1px] p-4">
+        <div className="border-t-[1px] border-t-impo_Surface_SurfaceVariant p-4">
           <Dark_Typography fontSize="Body_Large" className="text-center text-impo_Neutral_OnBackground ">
             روش دوم هم اینه که کد اختصاصیت رو برای پارتنرت بفرستی
           </Dark_Typography>
