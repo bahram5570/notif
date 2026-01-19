@@ -1,6 +1,6 @@
 import { colorFormatConverter } from '@utils/scripts';
 
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
@@ -15,17 +15,19 @@ const WidgetSubscriptionHeadlineBtn = ({
   const { actionHandler } = useWidgetActions();
 
   return (
-    <Button
-      size="small"
-      variant="fill"
-      color="FREE-STYLES"
+    <Dark_Button
       onClick={() => actionHandler(action)}
-      buttonColor={colorFormatConverter(backgroundColor)}
-      contentsColor={colorFormatConverter(foregroundColor)}
       isDisable={action.actionType === ActionTypeEnum.None}
+      style={{
+        backgroundColor: colorFormatConverter(backgroundColor),
+        borderColor: colorFormatConverter(backgroundColor),
+        color: colorFormatConverter(foregroundColor),
+      }}
+      className="h-8"
+      fontSize="Lable_Medium"
     >
       {text}
-    </Button>
+    </Dark_Button>
   );
 };
 

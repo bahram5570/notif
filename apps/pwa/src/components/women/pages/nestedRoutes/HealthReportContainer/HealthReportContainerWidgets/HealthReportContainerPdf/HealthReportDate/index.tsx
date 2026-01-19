@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import { gregorianFarsiScriptDate, jalaaliScriptDate, toJalaliData } from '@utils/dates';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
 import { WidgetsEnum } from '@providers/WidgetActionsProvider/widgetEnums';
@@ -48,9 +48,9 @@ const HealthReportDate = ({ data }: HealthReportDatePropsType) => {
   }, [culture.calendarType, fromStart, toStart, toCycleLength]);
 
   return (
-    <Typography scale="Body" size="Large" color="Surface_Outline">
+    <Dark_Typography fontSize="Body_Large" className="text-impo_Surface_Outline">
       {`از ${scripts.from}  تا  ${scripts.to}`}
-    </Typography>
+    </Dark_Typography>
   );
 };
 

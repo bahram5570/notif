@@ -9,7 +9,7 @@ const ProfileItemGenerator = ({ title, description, element, children }: Profile
         {element}
 
         <div className="w-full flex flex-col items-end">
-          <Dark_Typography fontSize="Lable_LargeProminet" className="text-impo_Primary_Primary">
+          <Dark_Typography fontSize="Lable_LargeProminet" className="text-impo_Neutral_OnBackground">
             {title}
           </Dark_Typography>
 

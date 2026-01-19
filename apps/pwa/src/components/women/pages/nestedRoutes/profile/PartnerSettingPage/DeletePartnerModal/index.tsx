@@ -1,15 +1,13 @@
 import TrashIcon from '@assets/icons/trash.svg';
 
-import Button from '@components/ui/Button';
 import CustomModal from '@components/ui/CustomModal';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { useRouter } from 'next/navigation';
 
 import useDelete from './__hooks__/useDelete';
 
 const DeletePartnerModal = () => {
-  const { colors } = useTheme();
   const router = useRouter();
   const { deleteHandler, isLoading } = useDelete();
 
@@ -22,38 +20,39 @@ const DeletePartnerModal = () => {
             backgroundColor: 'rgb(242, 79, 122,0.15)',
           }}
         >
-          <TrashIcon className="w-6 h-6 rounded-full" style={{ stroke: colors.Error_Error }} />
+          <TrashIcon className="w-6 h-6 rounded-full stroke-impo_Error_Error" />
         </div>
 
-        <Typography scale="Title" size="Medium">
+        <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
           حذف همدل
-        </Typography>
+        </Dark_Typography>
         <div className="flex flex-col items-center">
-          <Typography scale="Body" size="Medium">
+          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             از حذف همدلت مطمئنی؟
-          </Typography>
-          <Typography scale="Body" size="Medium" textAlign="center">
-            بعد از حذف همدلی کلیه اطلاعاتت (تاریخچه چالش ها، خاطره بازی، پیام ها) پاک میشه
-          </Typography>
+          </Dark_Typography>
+
+          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
+            بعد از حذف همدلی کلیه اطلاعاتت (تاریخچه چالش ها، خاطره بازی، پیام ها) پاک میشه{' '}
+          </Dark_Typography>
         </div>
 
         <div className="w-full flex items-center justify-between gap-2">
-          <Button
-            size="medium"
-            variant="outline"
-            color="FREE-STYLES"
+          <Dark_Button
             onClick={deleteHandler}
-            contentsColor={colors.Error_Error}
-            buttonColor={colors.Error_ErrorContainer}
-            style={{ backgroundColor: colors.Error_ErrorContainer }}
             isLoading={isLoading}
+            className="!text-impo_Error_Error !bg-impo_Error_ErrorContainer !border-impo_Error_ErrorContainer h-10"
+            fontSize="Lable_Large"
           >
             مطمئنم
-          </Button>
+          </Dark_Button>
 
-          <Button variant="fill" size="medium" color="surface" onClick={() => router.back()}>
+          <Dark_Button
+            fontSize="Lable_Large"
+            className="h-10 !bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnSurface"
+            onClick={() => router.back()}
+          >
             خیر
-          </Button>
+          </Dark_Button>
         </div>
       </div>
     </CustomModal>

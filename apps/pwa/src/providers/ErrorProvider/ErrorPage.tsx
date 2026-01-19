@@ -1,6 +1,6 @@
-import Button from '@components/ui/Button';
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 const ErrorPage = () => {
@@ -12,18 +12,16 @@ const ErrorPage = () => {
       <div className="flex flex-col items-center my-auto">
         <CustomImage className="w-[200px] h-auto" src="/assets/images/serverError.webp" />
 
-        <Typography scale="Title" size="Medium" textAlign="center" className="pt-8 pb-2">
+        <Dark_Typography fontSize="Title_Medium" className="pt-8 pb-2 text-center text-impo_Neutral_OnBackground">
           ارتباط با ایمپو امکان پذیر نیست
-        </Typography>
+        </Dark_Typography>
 
-        <Typography scale="Body" size="Medium" color="Surface_Outline" textAlign="center" className="px-5">
+        <Dark_Typography fontSize="Body_Medium" className="px-5 text-impo_Surface_Outline text-center">
           مشکلی برامون پیش اومده که در حال بررسی و حلش هستیم. لطفا چند دقیقه دیگه دوباره امتحان کن
-        </Typography>
+        </Dark_Typography>
       </div>
 
-      <Button variant="fill" size="large" color="primary" onClick={() => window.location.reload()}>
-        تلاش مجدد
-      </Button>
+      <Dark_Button onClick={() => window.location.reload()}>تلاش مجدد</Dark_Button>
     </div>
   );
 };

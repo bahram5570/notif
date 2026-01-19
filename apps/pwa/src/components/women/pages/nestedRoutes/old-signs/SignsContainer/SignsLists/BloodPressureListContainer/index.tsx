@@ -1,11 +1,8 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { BloodPressureListPropsType, CheckBloodPressureStatusType, InitailBloodPressureContextType } from './type';
 
 const BloodPressureListContainer = ({ bloodPressureList }: BloodPressureListPropsType) => {
-  const { colors } = useTheme();
-
   const hasData = bloodPressureList && bloodPressureList.length > 0;
 
   const checkBloodPressure: CheckBloodPressureStatusType = (high, low) => {
@@ -22,13 +19,13 @@ const BloodPressureListContainer = ({ bloodPressureList }: BloodPressureListProp
   const initailBloodPressureContext: InitailBloodPressureContextType = {
     normal: {
       text: 'میزان فشار خونت نرماله. مثل همیشه مراقب خودت باش!',
-      border: colors.Success_Success,
+      border: 'bg-impo_Success_Success',
       result: 'فشار خون نرمال',
     },
 
     danger: {
       text: ' میزان فشار خونت بالاتر از حد نرماله. حتما برای کنترلش تحت نظر پزشک باش!',
-      border: colors.Error_Error,
+      border: 'bg-impo_Error_Error',
       result: 'فشار خون غیرنرمال',
     },
   };
@@ -64,14 +61,14 @@ const BloodPressureListContainer = ({ bloodPressureList }: BloodPressureListProp
                     }}
                     className="p-2  rounded-bl-md"
                   >
-                    <Typography scale="Lable" size="Small" color="White">
+                    <Dark_Typography fontSize="Lable_Small" className="text-impo_White">
                       {`نتیجه تست ${index + 1} :${bloodPressureValue}mmHg- ${context.result}`}
-                    </Typography>
+                    </Dark_Typography>
                   </div>
                   <div className="p-2">
-                    <Typography scale="Body" size="Small">
+                    <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
                       {`${context.text}`}
-                    </Typography>
+                    </Dark_Typography>
                   </div>
                 </div>
               );

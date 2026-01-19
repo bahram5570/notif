@@ -2,7 +2,7 @@
 
 import NotFoundIcon from '@assets/icons/404.svg';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import WomenFooterContainer from '@components/women/WomenFooter/WomenFooterContainer';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { LottieCanvas } from '@lib/LottieCanvas';
@@ -24,13 +24,13 @@ const NotFoundPage = () => {
         <div className="relative flex flex-col items-center gap-2 z-10">
           <NotFoundIcon className="w-[200px] sm:w-[250px]" />
 
-          <Typography size="Medium" scale="Headline">
+          <Dark_Typography fontSize="Headline_Medium" className="text-impo_Neutral_OnBackground">
             به نظر می‌رسه گم شدی
-          </Typography>
+          </Dark_Typography>
 
-          <Typography scale="Body" size="Medium">
+          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             صفحه ای که به دنبالش هستی در دسترس نیست
-          </Typography>
+          </Dark_Typography>
         </div>
       </div>
       <WomenFooterContainer pathName={''} />

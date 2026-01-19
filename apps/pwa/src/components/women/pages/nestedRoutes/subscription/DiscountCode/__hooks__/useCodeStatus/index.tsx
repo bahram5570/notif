@@ -1,13 +1,10 @@
 import { useEffect, useState } from 'react';
 
-import useTheme from '@hooks/useTheme';
-
 import { ScriptInfoTypes, UseCodeStatusProps } from './types';
 
 const useCodeStatus = ({ discountCodeHelper, isValidDiscountCode, approveCodeHandler }: UseCodeStatusProps) => {
   const [scriptInfo, setScriptInfo] = useState<ScriptInfoTypes>(null);
   const [hasSubmitCode, setHasSubmitCode] = useState(false);
-  const { colors } = useTheme();
 
   const hasSubmitCodeHandler = (b: boolean) => {
     setHasSubmitCode(b);
@@ -21,7 +18,7 @@ const useCodeStatus = ({ discountCodeHelper, isValidDiscountCode, approveCodeHan
 
   useEffect(() => {
     if (hasSubmitCode) {
-      const color = isValidDiscountCode ? colors.Success_Success : colors.Error_Error;
+      const color = isValidDiscountCode ? 'text-impo_Success_Success' : 'text-impo_Error_Error';
       const script = discountCodeHelper;
       setScriptInfo({ color, script });
     }

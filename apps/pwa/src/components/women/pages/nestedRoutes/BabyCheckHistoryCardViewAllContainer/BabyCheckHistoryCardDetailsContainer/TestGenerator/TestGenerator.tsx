@@ -1,32 +1,27 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import useTestGeneratorScriptMaker from './__hooks__/useTestGeneratorScriptMaker';
 import { TestGeneratorProps } from './types';
 
 const TestGenerator = (props: TestGeneratorProps) => {
-  const { colors } = useTheme();
   const scripts = useTestGeneratorScriptMaker(props);
 
   return (
-    <div
-      className="w-full h-[56px] flex items-center justify-between px-4 rounded-lg"
-      style={{ backgroundColor: colors.Surface_SurfaceVariant }}
-    >
-      <Typography scale="Body" size="Medium" color="Neutral_OnBackground">
+    <div className="w-full h-[56px] flex items-center justify-between px-4 rounded-lg bg-impo_Surface_SurfaceVariant">
+      <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Body_Medium">
         {scripts.dateScript}
-      </Typography>
+      </Dark_Typography>
 
       <div className="flex items-center gap-2">
-        <Typography scale="Body" size="Medium" color="Neutral_OnBackground">
+        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
           {scripts.resultScript}
-        </Typography>
+        </Dark_Typography>
 
-        <div className="w-[1px] h-[24px]" style={{ backgroundColor: colors.Neutral_Surface }} />
+        <div className="w-[1px] h-[24px] bg-impo_Neutral_Surface" />
 
-        <Typography scale="Body" size="Medium" color="Neutral_OnBackground" textAlign="center" className="w-[52px]">
+        <Dark_Typography fontSize="Body_Medium" className="w-[52px] text-impo_Neutral_OnBackground text-center">
           {scripts.typeScript}
-        </Typography>
+        </Dark_Typography>
       </div>
     </div>
   );

@@ -1,13 +1,16 @@
 import ReactMarkdown from 'react-markdown';
 
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { toPersianNumbers } from '@utils/numbers';
 
-import useTheme from '@hooks/useTheme';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import { MarkDownTextPropsType } from './type';
 
 const MarkDownText = ({ markdown }: MarkDownTextPropsType) => {
-  const { colors, typography } = useTheme();
+  const { operatingSystem } = useOperatingSystem();
+
+  const fontStyles = typographyFontStylesMaker({ fontSize: 'Body_Small', operatingSystem });
 
   return (
     <ReactMarkdown
@@ -15,32 +18,34 @@ const MarkDownText = ({ markdown }: MarkDownTextPropsType) => {
         h1: ({ node, ...props }) => (
           <h1
             style={{
-              ...typography.Body.Small,
-              color: colors.Neutral_Background,
+              ...fontStyles,
 
               direction: 'rtl',
             }}
+            className="text-impo_White"
             {...props}
           />
         ),
         p: ({ node, ...props }) => (
           <p
             style={{
-              ...typography.Body.Small,
-              color: colors.Neutral_Background,
+              ...fontStyles,
+
               direction: 'rtl',
             }}
+            className="text-impo_White"
             {...props}
           />
         ),
         li: ({ node, ...props }) => (
           <li
             style={{
-              ...typography.Body.Small,
-              color: colors.Neutral_Background,
+              ...fontStyles,
+
               direction: 'rtl',
               marginBottom: '6px',
             }}
+            className="text-impo_White"
             {...props}
           />
         ),
@@ -54,7 +59,7 @@ const MarkDownText = ({ markdown }: MarkDownTextPropsType) => {
             {...props}
           />
         ),
-        strong: ({ node, ...props }) => <strong style={{ color: colors.Neutral_Background }} {...props} />,
+        strong: ({ node, ...props }) => <strong {...props} className="text-impo_White" />,
       }}
     >
       {toPersianNumbers(markdown)}

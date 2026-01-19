@@ -1,5 +1,5 @@
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { WidgetMostRepeatedSignsTitlesProps } from './types';
 
@@ -15,21 +15,21 @@ const WidgetMostRepeatedSignsTitles = ({
 
   return (
     <>
-      <Typography scale="Body" size="Small" color="Neutral_OnBackground" className="w-full">
+      <Dark_Typography fontSize="Body_Small" className="w-full text-impo_Neutral_OnBackground">
         {description}
-      </Typography>
+      </Dark_Typography>
 
       {!isPdfDownloading && (
         <div className="w-full flex items-center justify-end pt-[6px]">
-          <Typography scale="Body" size="Small" color="Neutral_OnBackground">
+          <Dark_Typography fontSize="Body_Small" className="w-full text-impo_Neutral_OnBackground">
             {guideString}
-          </Typography>
+          </Dark_Typography>
 
           {guideImage && <CustomImage src={guideImage} width={16} height={16} className="pl-[2px]" />}
 
-          <Typography scale="Lable" size="SmallProminet" color="Neutral_OnBackground" className="pl-1">
+          <Dark_Typography fontSize="Lable_SmallProminet" className="pl-1 text-impo_Neutral_OnBackground">
             {guidTitle}
-          </Typography>
+          </Dark_Typography>
         </div>
       )}
     </>

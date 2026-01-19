@@ -3,10 +3,9 @@
 import { useState } from 'react';
 
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import WomenPageLayout from '@components/women/WomenPageLayout';
 import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
-import useTheme from '@hooks/useTheme';
 import { LottieCanvas } from '@lib/LottieCanvas';
 
 import ApprovedCodeToast from './ApprovedCodeToast';
@@ -26,7 +25,6 @@ const SubscriptionPage = () => {
   const [resetKey, setResetKey] = useState(0);
   const { loadingPage, loadingResponse, callApi, data, currentPackage, currentPackageHandler } = useGetData();
 
-  const { colors } = useTheme();
   const handleReset = () => setResetKey((prev) => prev + 1);
 
   const mediasData = data && data.medias.length > 0;
@@ -82,18 +80,17 @@ const SubscriptionPage = () => {
 
               {morePackagesData && !showAll && (
                 <div className="w-full flex items-center gap-2 py-4 " id="SubscriptionLoadMore">
-                  <div className="w-full h-[1px] block" style={{ backgroundColor: colors.Neutral_Surface }} />
+                  <div className="w-full h-[1px] block bg-impo_Neutral_Surface" />
                   <div
-                    className="px-4 py-2 min-w-fit rounded-full"
-                    style={{ backgroundColor: colors.PrimaryWoman_PrimaryContainer }}
+                    className="px-4 py-2 min-w-fit rounded-full bg-impo_Primary_PrimaryContainer"
                     onClick={showAllHandler}
                   >
-                    <Typography scale="Lable" size="Medium" color="PrimaryWoman_Primary">
+                    <Dark_Typography fontSize="Lable_Medium" className="text-impo_Primary_Primary">
                       از اینجا پیشنهادهای بیشتر رو ببین
-                    </Typography>
+                    </Dark_Typography>
                   </div>
 
-                  <div className="w-full h-[1px] block" style={{ backgroundColor: colors.Neutral_Surface }} />
+                  <div className="w-full h-[1px] block bg-impo_Neutral_Surface" />
                 </div>
               )}
 
@@ -107,9 +104,9 @@ const SubscriptionPage = () => {
               )}
 
               <a href={`tel:${data.supportPhone}`}>
-                <Typography scale="Body" size="Medium" textAlign="center">
+                <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
                   {data.supportText}
-                </Typography>
+                </Dark_Typography>
               </a>
               {mediasData && (
                 <>
