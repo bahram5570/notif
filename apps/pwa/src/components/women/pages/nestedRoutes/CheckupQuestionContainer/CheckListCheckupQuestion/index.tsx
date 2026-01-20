@@ -12,7 +12,10 @@ const CheckListCheckupQuestion = ({ checkList }: CheckListCheckupQuestionPropsTy
     <CheckupQuestionContainer>
       <div className=" px-4 py-2 w-full">
         <div className="flex flex-col justify-end items-end w-full">
-          <Dark_Typography fontSize="Lable_Large" className="py-2 border-b w-full text-impo_Neutral_OnBackground">
+          <Dark_Typography
+            fontSize="Lable_Large"
+            className="py-2 border-b border-b-impo_Neutral_Surface w-full text-impo_Neutral_OnBackground"
+          >
             {checkList.title}
           </Dark_Typography>
           <div>

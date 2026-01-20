@@ -26,7 +26,7 @@ const ShareExperienceTopicModalContainerLayout = ({
                     ${scrolled ? 'opacity-0' : 'opacity-100'}
                   `}
       >
-        <div className="relative">
+        <div className="relative ">
           {!isLoading && (
             <>
               <CustomImage src={coverImage} className="w-full h-full object-cover" />

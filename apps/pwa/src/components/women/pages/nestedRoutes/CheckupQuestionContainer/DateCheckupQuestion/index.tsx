@@ -12,8 +12,8 @@ const DateCheckupQuestion = ({ from, to }: DateCheckupQestionPropsType) => {
   return (
     <div className="rounded-xl flex flex-row bg-impo_Neutral_Background">
       <div className="px-3 py-1  w-full">
-        <div className="flex flex-col   divide-y-[1px]">
-          <div className="flex flex-row-reverse justify-between w-full p-3">
+        <div className="flex flex-col   ">
+          <div className="flex flex-row-reverse justify-between w-full p-3 border-b border-b-impo_Neutral_Surface">
             <div className="flex items-center gap-1">
               <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
                 تاریخ انجام
@@ -33,7 +33,7 @@ const DateCheckupQuestion = ({ from, to }: DateCheckupQestionPropsType) => {
                 تاریخ انقضا
               </Dark_Typography>
 
-              <DateToIcon className="w-6 h-6 stroke-impo_Surface_OnSurfaceVariant" />
+              <DateToIcon className="w-6 h-6 stroke-impo_Surface_OnSurfaceVariant " />
             </div>
 
             <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">

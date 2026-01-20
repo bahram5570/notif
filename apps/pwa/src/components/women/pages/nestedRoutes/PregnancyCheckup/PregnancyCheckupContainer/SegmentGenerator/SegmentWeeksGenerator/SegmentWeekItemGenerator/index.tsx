@@ -29,7 +29,10 @@ const SegmentWeekItemGenerator = ({ isCurrentWeek, items, label, needTest, week 
   };
 
   return (
-    <div className="flex flex-row-reverse justify-between items-center p-4" onClick={linkTo}>
+    <div
+      className="flex flex-row-reverse justify-between items-center p-4  border-b border-b-impo_Neutral_Surface"
+      onClick={linkTo}
+    >
       {isCurrentWeek && (
         <div className="flex flex-row-reverse items-center gap-1">
           <PolygonIcon className="w-4 h-4 fill-impo_Pink_500" />

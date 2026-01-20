@@ -7,7 +7,7 @@ const RadioButtonGenerator = ({ isSelected, label, value, handleChange }: RadioB
   return (
     <div
       onClick={() => handleChange(value)}
-      className={`w-full rounded-lg flex flex-col justify-between gap-3 py-2 px-3 ${isSelected ? 'bg-impo_Primary_PrimaryContainer' : 'bg-impo_Surface_SurfaceVariant'}`}
+      className={`w-full rounded-lg flex flex-col justify-between gap-3 py-2 px-3 ${isSelected ? 'bg-impo_Primary_PrimaryContainer' : 'bg-impo_Neutral_Surface'}`}
     >
       <div className="w-full flex flex-col  justify-between gap-3 cursor-pointer">
         <div className="flex flex-row-reverse items-center">
