@@ -44,7 +44,7 @@ const ShareExperienceTopicModalContainer = ({
           callBack={updatePageNo}
           style={{ paddingBottom: FOOTER_HEIGTH * 2 }}
           totalCount={topicExperiencesData?.totalCount || 10}
-          className={`max-h-screen pt-72 ${styles.scroller} overflow-y-auto `}
+          className={`max-h-screen pt-72 ${styles.scroller} overflow-y-auto  `}
         >
           <>
             <div ref={markerRef} style={{ height: 1, width: '100%' }} />

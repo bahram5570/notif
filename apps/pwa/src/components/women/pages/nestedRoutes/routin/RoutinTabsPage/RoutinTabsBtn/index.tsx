@@ -32,7 +32,7 @@ const RoutinTabsBtn = ({ activeTab, handleTabChange, tabsOrder }: RoutinTabsBtnP
             ref={(el) => {
               tabRefs.current[activeTab] = el;
             }}
-            className={`rounded-full  py-2 w-full ${activeTab === index ? 'px-3 bg-impo_Primary_PrimaryContainer' : 'bg-impo_Surface_SurfaceVariant'} border border-impo_Neutral_Surface`}
+            className={`rounded-full  py-2 w-full ${activeTab === index ? 'px-3 bg-impo_Primary_PrimaryContainer' : 'bg-impo_Neutral_Surface'} border border-impo_Neutral_Surface`}
             key={tab.tabType}
             onClick={() => handleTabChange(index)}
           >

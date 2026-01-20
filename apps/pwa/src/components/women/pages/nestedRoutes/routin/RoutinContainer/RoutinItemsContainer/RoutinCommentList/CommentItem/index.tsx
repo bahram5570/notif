@@ -7,7 +7,7 @@ import { CommentItemPropsType } from './type';
 
 const CommentItem = (props: CommentItemPropsType) => {
   return (
-    <div className=" rounded-xl bg-impo_Surface_SurfaceVariant">
+    <div className=" rounded-xl bg-impo_Neutral_Surface">
       <div className="px-3 py-4 flex flex-col justify-end items-end gap-4">
         <div className="flex flex-row-reverse justify-end items-center gap-2">
           <CustomImage src={props.imageUrl} width={40} height={40} />
