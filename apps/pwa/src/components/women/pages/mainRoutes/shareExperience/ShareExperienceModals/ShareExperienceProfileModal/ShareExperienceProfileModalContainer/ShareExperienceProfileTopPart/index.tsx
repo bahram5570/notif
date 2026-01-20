@@ -31,7 +31,7 @@ const ShareExperienceProfileTopPart = ({
       const paramsData = JSON.stringify({ id: profile.id, dummyData: Math.random() });
       newQueryParamsHandler({ [SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME]: paramsData });
     } else {
-      followHandler({ userId: profile.id, isFollow });
+      followHandler({ userId: profile.id, isFollow, userName: profile.username });
     }
   };
 

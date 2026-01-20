@@ -15,7 +15,7 @@ const useCopy = () => {
         toast.feedbackToastHandler({
           message: 'متن کپی شد ',
           duration: 2000,
-          isCopyToast: true,
+          toastWithDescription: false,
         });
       } catch (err) {
         console.error(err);
@@ -36,7 +36,7 @@ const useCopy = () => {
           toast.feedbackToastHandler({
             message: 'متن کپی شد ',
             duration: 2000,
-            isCopyToast: true,
+            toastWithDescription: false,
           });
         } else {
           throw new Error('Fallback copy failed');

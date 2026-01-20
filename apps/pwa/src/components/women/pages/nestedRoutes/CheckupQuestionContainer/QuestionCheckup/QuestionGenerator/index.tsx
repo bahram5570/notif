@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import Dark_Typography from '@components/ui/Dark_Typography';
-import Typography from '@components/ui/Typography';
 
 import RadioButtonGenerator from './RadioButtonGenerator';
 import { QuestionGeneratorPropsType } from './type';

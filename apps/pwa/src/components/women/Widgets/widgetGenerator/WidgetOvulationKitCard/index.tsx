@@ -1,7 +1,6 @@
 import { currentDate } from '@utils/dates';
 
 import Dark_Typography from '@components/ui/Dark_Typography';
-import Typography from '@components/ui/Typography';
 import KitTestOvulation from '@components/women/KitTests/KitTestsContainer/KitTestOvulation';
 import KitTestsList from '@components/women/KitTests/KitTestsContainer/KitTestsList';
 import { KitTestModuleTypeEnums } from '@components/women/KitTests/enum';

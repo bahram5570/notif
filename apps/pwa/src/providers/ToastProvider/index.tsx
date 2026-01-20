@@ -15,14 +15,13 @@ export const ToastContext = createContext<ToastContextType>({
 
 const ToastProvider = ({ children }: { children: React.ReactNode }) => {
   const { toastHandler } = useNotifyToast();
-  const { feedbackToastHandler, shouldRender, toastData, visible } = useFeedBackToast();
+  const { feedbackToastHandler, toastData, visible } = useFeedBackToast();
 
   return (
     <ToastContext.Provider value={{ feedbackToastHandler, notifyToastHandler: toastHandler }}>
       {children}
       <ToastContainer />
-
-      <FeedbackToast visible={visible} shouldRender={shouldRender} toastData={toastData} />
+      {visible && <FeedbackToast toastData={toastData} visible={visible} />}
     </ToastContext.Provider>
   );
 };
