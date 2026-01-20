@@ -15,7 +15,7 @@ const useBuy = ({ id, questionValues, type }: UseBuyProps) => {
   const { callEvent } = useAnalytics();
   const clinicInfo = (useParams().clinicInfo as string).split('-');
   const [approvedCode, setApprovedCode] = useState('');
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
   const router = useRouter();
 
   const isCompletePayment = clinicInfo[1] === 'completePayment';
@@ -37,7 +37,7 @@ const useBuy = ({ id, questionValues, type }: UseBuyProps) => {
         router.push(`/protected/clinic/clinicChat?ticketId=${v.id}`);
       }
     } else {
-      onToast({ message: 'مشکلی در پرداخت پیش آمد، دوباره تلاش کنید' });
+      toast.notifyToastHandler({ message: 'مشکلی در پرداخت پیش آمد، دوباره تلاش کنید' });
     }
   };
 

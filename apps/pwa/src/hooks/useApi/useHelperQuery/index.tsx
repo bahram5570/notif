@@ -12,7 +12,7 @@ import { UseHelperQueryProps } from './types';
 const useHelperQuery = <T,>(props: UseHelperQueryProps<T>) => {
   // # Toggling the "enabled" by "callApi" will call the api
   const [enabled, setEnabled] = useState(initialEnabledValue(props.fetchOnMount));
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
 
   const callApi = () => {
     setEnabled(true);
@@ -67,7 +67,7 @@ const useHelperQuery = <T,>(props: UseHelperQueryProps<T>) => {
 
   useEffect(() => {
     if (isError && !isLoading && props.onError) {
-      onToast({ message: ERROR_SERVER, type: 'error' });
+      toast.notifyToastHandler({ message: ERROR_SERVER, type: 'error' });
       props.onError();
     }
   }, [isError, isLoading]);

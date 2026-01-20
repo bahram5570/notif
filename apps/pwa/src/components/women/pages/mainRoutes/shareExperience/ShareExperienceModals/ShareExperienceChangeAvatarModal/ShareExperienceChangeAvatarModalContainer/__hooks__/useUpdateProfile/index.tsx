@@ -12,7 +12,7 @@ const useUpdateProfile = () => {
   const [payloadShareExperienceData, setPayloadShareExperienceData] = useState<ShareExperienceResponseTypes>();
   const { refetchQuery, updateQuery, getQuery } = useCustomReactQuery();
   const shareExperienceData = getQuery<ShareExperienceResponseTypes>({ queryKey: ['shareExperience'] });
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
   const route = useRouter();
 
   const successHandler = () => {
@@ -32,7 +32,8 @@ const useUpdateProfile = () => {
 
   const onProfileChangeHandler = ({ avatarImage, username }: onProfileChangeHandlerPropsType) => {
     if (!username) {
-      onToast({ message: 'نام کاربری را وارد کنید', type: 'error' });
+      toast.notifyToastHandler({ message: 'نام کاربری را وارد کنید', type: 'error' });
+
       return;
     }
 

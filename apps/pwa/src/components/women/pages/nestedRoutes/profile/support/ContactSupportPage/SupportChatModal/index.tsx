@@ -19,7 +19,7 @@ const SupportChatModal = ({ valuesHandler }: SupportChatModalPropsType) => {
 
   return (
     <CustomModal isSlidingMode>
-      <div className="divide-y flex flex-col gap-3">
+      <div className=" flex flex-col gap-3">
         <FileInputManager ShowFileInput fileDataHandler={fileDataHandler} uploadImageLoading={uploadImageLoading} />
       </div>
     </CustomModal>

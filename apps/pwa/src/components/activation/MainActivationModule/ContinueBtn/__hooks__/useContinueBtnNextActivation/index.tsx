@@ -8,13 +8,13 @@ import { ContinueBtnNextActivationOnContinueTypes, NextActivationHandlerTypes } 
 
 const useContinueBtnNextActivation = (onContinue: ContinueBtnNextActivationOnContinueTypes) => {
   const router = useRouter();
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
   const { sectionSaverHandler } = useSectionSaver();
   const [resetKey, setResetKey] = useState(Math.random().toString());
 
   const nextActivationHandler: NextActivationHandlerTypes = (v) => {
     if (v.invalidMessage) {
-      onToast({ message: v.invalidMessage, type: 'error' });
+      toast.notifyToastHandler({ message: v.invalidMessage, type: 'error' });
       setResetKey(Math.random().toString());
       return;
     }

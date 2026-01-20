@@ -7,14 +7,18 @@ import { OTP_COUNT_DOWN_TIME } from '../../constants';
 import { OtpStatusHandlerTypes, OtpStatusTypes } from './types';
 
 const useOtpStatus = (applyOtpStatus: OtpStatusTypes) => {
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
   const [otpStatus, setOtpStatus] = useState<OtpStatusTypes>(null);
 
   const otpStatusHandler: OtpStatusHandlerTypes = (v) => {
     setOtpStatus(v);
 
     if (v === 'wrong') {
-      onToast({ message: 'کد وارد شده اشتباه است', type: 'error', duration: OTP_COUNT_DOWN_TIME * 1000 });
+      toast.notifyToastHandler({
+        message: 'کد وارد شده اشتباه است',
+        type: 'error',
+        duration: OTP_COUNT_DOWN_TIME * 1000,
+      });
     }
   };
 

@@ -13,7 +13,7 @@ const ChatContainerMaker = ({ dateTime, children, sideType, width }: ChatContain
 
   return (
     <div
-      className={`flex flex-col items-end gap-2 px-3 py-2 rounded-xl ${isDoctor ? 'bg-impo_Surface_SurfaceVariant' : 'bg-impo_Pink_50'}`}
+      className={`flex flex-col items-end gap-2 px-3 py-2 rounded-xl  ${isDoctor ? 'bg-impo_Surface_SurfaceVariant' : 'bg-impo_Pink_50 dark:bg-impo_Pink_900'}`}
       style={{
         width,
         marginLeft: isDoctor ? '0' : 'auto',
@@ -21,7 +21,7 @@ const ChatContainerMaker = ({ dateTime, children, sideType, width }: ChatContain
     >
       <>{children}</>
 
-      <Dark_Typography className="text-impo_Surface_Outline" fontSize="Lable_Small">
+      <Dark_Typography className="text-impo_Surface_OutlineVariant" fontSize="Lable_Small">
         {time}
       </Dark_Typography>
     </div>

@@ -11,11 +11,11 @@ const PartnerCodeInputContinueBtn = ({
   isLoading,
   onSubmit,
 }: PartnerCodeInputContinueBtnProps) => {
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
 
   const clickHandler = () => {
     if (invalidMessage) {
-      onToast({ message: invalidMessage, type: 'error' });
+      toast.notifyToastHandler({ message: invalidMessage, type: 'error' });
     } else {
       onSubmit();
     }

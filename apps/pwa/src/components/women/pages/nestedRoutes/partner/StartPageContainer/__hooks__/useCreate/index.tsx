@@ -7,13 +7,13 @@ import { DataResponseType } from './type';
 
 const useCreate = () => {
   const { refetchQuery } = useCustomReactQuery();
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
 
   const router = useRouter();
 
   const successHandler = (data: DataResponseType) => {
     if (!data.valid) {
-      return onToast({
+      return toast.notifyToastHandler({
         message: 'شماره / ایمیلی که وارد کردی مشکل داره. لطفا یک شماره یا ایمیل دیگه رو وارد کن',
         type: 'error',
       });

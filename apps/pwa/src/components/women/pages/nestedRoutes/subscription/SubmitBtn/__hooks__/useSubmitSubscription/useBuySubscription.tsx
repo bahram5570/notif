@@ -12,13 +12,13 @@ const loadingId = 'buySubscription';
 
 const useBuySubscription = () => {
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
 
   const buySubscriptionSuccessHandler = async (v: BuySubscriptionResponseTypes) => {
     const user = await getUserCookie();
 
     if (!v.isSuccess) {
-      return onToast({ type: 'error', message: 'مشکلی پیش آمده' });
+      return toast.notifyToastHandler({ type: 'error', message: 'مشکلی پیش آمده' });
     }
 
     if (v.isSuccess) {

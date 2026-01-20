@@ -13,7 +13,7 @@ const ShareExperienceUnfollowModal = () => {
 
   const applyHandler = () => {
     const userId = queryData?.userId;
-    followHandler({ userId, isFollow: true });
+    followHandler({ userId, isFollow: true, userName: queryData.userName });
   };
 
   return (

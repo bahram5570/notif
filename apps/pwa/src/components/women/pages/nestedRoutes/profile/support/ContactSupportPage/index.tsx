@@ -42,7 +42,7 @@ const ContactSupportPage = () => {
 
         {!isLoading && (
           <div className="flex flex-col items-end gap-3 min-h-[100dvh] p-4" style={{ paddingTop: HEADER_HEIGHT + 20 }}>
-            <Dark_Typography fontSize="Lable_MediumProminet" className="text-impo_Primary_Primary">
+            <Dark_Typography fontSize="Lable_MediumProminet" className="text-impo_Neutral_OnBackground">
               ارتباط با پشتیبانی
             </Dark_Typography>
 
@@ -54,7 +54,7 @@ const ContactSupportPage = () => {
                     value={toPersianNumbers(values.text)}
                     style={{ ...typographyFontStyles, direction: 'rtl' }}
                     onChange={(e) => valuesHandler({ name: 'text', value: e.target.value })}
-                    className="w-full max-h-[100px] rounded-xl text-right p-2 resize-none outline-none bg-impo_Neutral_Background text-impo_Neutral_OnBackground"
+                    className="w-full max-h-[100px] rounded-xl text-right p-2 resize-none outline-none bg-impo_Neutral_Background text-impo_Neutral_OnBackground placeholder:text-impo_Surface_OutlineVariant"
                     placeholder={`${profileData?.name} ، سوال یا مشکلت رو اینجا بنویس تا پشتیبان‌های ایمپودر اولین فرصت بهت پاسخ بدن.`}
                   />
 

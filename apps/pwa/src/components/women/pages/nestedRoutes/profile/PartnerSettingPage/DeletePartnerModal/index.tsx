@@ -14,12 +14,7 @@ const DeletePartnerModal = () => {
   return (
     <CustomModal isSlidingMode={false}>
       <div className="w-[290px] flex flex-col items-center gap-4">
-        <div
-          className="w-10 h-10 flex justify-center items-center rounded-full"
-          style={{
-            backgroundColor: 'rgb(242, 79, 122,0.15)',
-          }}
-        >
+        <div className="w-10 h-10 flex justify-center items-center rounded-full bg-impo_Primary_PrimaryContainer">
           <TrashIcon className="w-6 h-6 rounded-full stroke-impo_Error_Error" />
         </div>
 

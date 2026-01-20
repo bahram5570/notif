@@ -1,11 +1,9 @@
 import { decodeUnicode, parseFormattedText } from '../../../utils';
 
 import useCustomToast from '@hooks/useCustomToast';
-import { useToast } from '@providers/ToastProvider/CustomToastProvider';
 
 const useCopy = () => {
-  const { onToast } = useCustomToast();
-  const { showToast } = useToast();
+  const toast = useCustomToast();
 
   const copyToClipboard = async (text: string) => {
     const formattedLine = parseFormattedText(text);
@@ -14,14 +12,14 @@ const useCopy = () => {
       try {
         await navigator.clipboard.writeText(decoded);
 
-        showToast({
+        toast.feedbackToastHandler({
           message: 'متن کپی شد ',
           duration: 2000,
           isCopyToast: true,
         });
       } catch (err) {
         console.error(err);
-        onToast({ message: 'خطا در کپی کردن متن', type: 'error' });
+        toast.notifyToastHandler({ message: 'خطا در کپی کردن متن', type: 'error' });
       }
     } else {
       try {
@@ -35,7 +33,7 @@ const useCopy = () => {
 
         const successful = document.execCommand('copy');
         if (successful) {
-          showToast({
+          toast.feedbackToastHandler({
             message: 'متن کپی شد ',
             duration: 2000,
             isCopyToast: true,
@@ -46,7 +44,7 @@ const useCopy = () => {
         document.body.removeChild(textArea);
       } catch (err) {
         console.error('Fallback error: ', err);
-        onToast({ message: 'خطا در کپی کردن متن', type: 'error' });
+        toast.notifyToastHandler({ message: 'خطا در کپی کردن متن', type: 'error' });
       }
     }
 

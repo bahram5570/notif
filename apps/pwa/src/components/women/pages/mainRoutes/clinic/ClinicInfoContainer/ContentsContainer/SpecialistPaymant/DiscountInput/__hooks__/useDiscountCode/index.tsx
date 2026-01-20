@@ -11,7 +11,7 @@ import { ApplyDiscountResponseTypes, UseDiscountCodeProps } from './types';
 const useDiscountCode = ({ id, approvedCodeHandler }: UseDiscountCodeProps) => {
   const type = Number(useParams()?.clinicInfo);
   const [code, setCode] = useState('');
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
 
   const { getQuery, updateQuery } = useCustomReactQuery();
 
@@ -26,7 +26,7 @@ const useDiscountCode = ({ id, approvedCodeHandler }: UseDiscountCodeProps) => {
       }
     }
 
-    onToast({ message: v.discountMessage });
+    toast.notifyToastHandler({ message: v.discountMessage });
   };
 
   const { callApi, isLoading } = useApi<ApplyDiscountResponseTypes>({

@@ -11,7 +11,7 @@ const PartnerRadioButton = ({ onChange, value }: PartnerRadioButtonPropsType) =>
         const lastItem = LIST_LABEL.length - 1 === index;
         return (
           <div
-            className={`flex items-center justify-end gap-3 w-full ${!lastItem && 'border-b border-b-impo_Surface_SurfaceVariant'}`}
+            className={`flex items-center justify-end gap-3 w-full ${!lastItem && 'border-b border-b-impo_Neutral_Surface'}`}
             key={index}
           >
             <label htmlFor={item.name}>

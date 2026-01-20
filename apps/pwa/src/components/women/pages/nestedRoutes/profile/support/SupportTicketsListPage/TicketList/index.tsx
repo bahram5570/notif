@@ -15,7 +15,7 @@ const TicketList = ({ id, items, tickets, title }: TicketListPropsType) => {
     <div className="flex flex-col items-end gap-3 min-h-[100dvh] p-4" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
       <>
         {!ticketId && tickets && tickets.map((ticket) => <TicketText {...ticket} key={ticket.id} />)}
-        <Dark_Typography className="text-impo_Primary_Primary" fontSize="Lable_MediumProminet">
+        <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Lable_MediumProminet">
           {title}
         </Dark_Typography>
 

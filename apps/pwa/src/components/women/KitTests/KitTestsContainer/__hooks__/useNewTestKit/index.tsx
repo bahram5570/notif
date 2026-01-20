@@ -10,7 +10,7 @@ import useCustomToast from '@hooks/useCustomToast';
 import { NewTestResponseTypes, UseNewTestKitProps } from './types';
 
 const useNewTestKit = ({ moduleType, gregorianDate, onSuccess }: UseNewTestKitProps) => {
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
   const { refetchQuery } = useCustomReactQuery();
   const [resetKey, setResetKey] = useState(Math.random());
 
@@ -24,7 +24,7 @@ const useNewTestKit = ({ moduleType, gregorianDate, onSuccess }: UseNewTestKitPr
       }
     } else {
       if (moduleType === KitTestModuleTypeEnums.Ovulation) {
-        onToast({ message: 'فقط یک بار در روز امکان ثبت تست تخمک‌گذاری وجود داره!' });
+        toast.notifyToastHandler({ message: 'فقط یک بار در روز امکان ثبت تست تخمک‌گذاری وجود داره!' });
       }
     }
   };

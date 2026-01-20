@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME } from '@components/women/pages/mainRoutes/shareExperience/constants';
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import useCustomToast from '@hooks/useCustomToast';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
@@ -14,6 +15,7 @@ import { ApiInfoTypes, FollowHandlerTypes } from './types';
 const useShareExperienceFollow = (experienceId?: string) => {
   const router = useRouter();
   const { getQueryParams } = useQueryParamsHandler();
+  const toast = useCustomToast();
   const [apiInfo, setApiInfo] = useState<null | ApiInfoTypes>(null);
   const { updateQuery, getQuery } = useCustomReactQuery(['experiences']);
 
@@ -77,6 +79,11 @@ const useShareExperienceFollow = (experienceId?: string) => {
     }
 
     setApiInfo(null);
+
+    toast.feedbackToastHandler({
+      message: `${apiInfo?.isFollow ? `${apiInfo?.userName} از لیست کسانی که دنبالشون می کردی حذف شد` : `${apiInfo?.userName} با موفقیت دنبال شد`}`,
+      toastWithDescription: false,
+    });
   };
 
   const errorHandler = () => {

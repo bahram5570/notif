@@ -26,7 +26,7 @@ const RadioButtonGenerator = ({
             {title}
           </Dark_Typography>
         </div>
-        <div className="flex justify-center items-center w-full border border-impo_Surface_OutlineVariant ">
+        <div className="flex justify-center items-center w-full  ">
           <CustomImage src={imageUrl} className="mt-3" />
         </div>
       </div>

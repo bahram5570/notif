@@ -6,11 +6,11 @@ import { useRouter } from 'next/navigation';
 
 const useShareExperienceReport = () => {
   const router = useRouter();
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
   const [api, setApi] = useState<null | string>(null);
 
   const successHandler = () => {
-    onToast({ message: 'پست با موفقیت ریپورت شد' });
+    toast.notifyToastHandler({ message: 'پست با موفقیت ریپورت شد' });
     router.back();
     setApi(null);
   };

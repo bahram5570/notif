@@ -27,6 +27,7 @@ const PeriodSettings = ({ status }: PeriodSettingsType) => {
           needsSubscription={true}
           Icon={PeriodSettingsIcon}
           name="ویرایش اطلاعات چرخه"
+          isFirstItem={true}
         />
       )}
     </>

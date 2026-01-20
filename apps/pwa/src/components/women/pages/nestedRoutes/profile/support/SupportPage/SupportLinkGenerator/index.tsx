@@ -15,16 +15,16 @@ const SupportLinkGenerator = (props: SupportLinkGeneratorType) => {
     <>
       {props.typeLink === 'external' && (
         <a
-          className=" p-4  rounded-lg h-24 bg-impo_Neutral_Background"
+          className=" p-4  rounded-lg  bg-impo_Neutral_Background"
           href={`tel:${supportPhone}`}
           onClick={() => pageNavigationHandler({ id: 'SupportLinkGenerator', showProgressBar: true })}
         >
           <div className="flex flex-col items-end gap-2">
-            <Dark_Typography fontSize="Lable_MediumProminet" className="text-impo_Primary_Primary">
+            <Dark_Typography fontSize="Lable_MediumProminet" className="text-impo_Neutral_OnBackground">
               {props.title}
             </Dark_Typography>
 
-            <div className="flex flex-row-reverse items-center justify-between w-full">
+            <div className="flex flex-row-reverse items-center justify-between w-full pb-3">
               <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_Outline">
                 {props.discription}
               </Dark_Typography>
@@ -41,7 +41,7 @@ const SupportLinkGenerator = (props: SupportLinkGeneratorType) => {
           }
           title={props.title}
           discription={props.discription}
-          className="rounded-lg h-24"
+          className="rounded-lg"
         />
       )}
     </>

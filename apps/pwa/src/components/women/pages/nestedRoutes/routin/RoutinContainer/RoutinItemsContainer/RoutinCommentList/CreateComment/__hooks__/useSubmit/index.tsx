@@ -7,7 +7,7 @@ import { CommentItemType, CommentsResponseTypes } from '../../../__hooks__/useGe
 
 const useSubmit = ({ programId }: { programId: string }) => {
   const { newQuery, updateQuery, getQuery } = useCustomReactQuery();
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
 
   const commentsData = getQuery<CommentsResponseTypes>({ queryKey: ['routinComments' + programId] });
   const routinData = getQuery<RoutinResponseTypes>({ queryKey: ['routinItems'] });
@@ -24,7 +24,7 @@ const useSubmit = ({ programId }: { programId: string }) => {
     const routinPayload = { ...routinData, commentCount: routinData?.commentCount ? routinData.commentCount + 1 : 1 };
     updateQuery({ queryKey: ['routinItems'], payload: routinPayload });
 
-    onToast({
+    toast.notifyToastHandler({
       type: 'success',
       message: ' نظر شما با موفقیت ثبت شد',
       position: 'bottom-center',

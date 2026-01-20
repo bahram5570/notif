@@ -28,6 +28,7 @@ const ShareExperienceFollowModule = (props: ShareExperienceFollowModuleProps) =>
           experienceId: props.experienceId,
           userId: props.userId,
           dummyData: Math.random(),
+          userName: props.name,
         });
         newQueryParamsHandler({ [SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME]: queryData });
 
@@ -36,7 +37,7 @@ const ShareExperienceFollowModule = (props: ShareExperienceFollowModuleProps) =>
           id: loadingId,
         });
       } else {
-        followHandler({ userId: props.userId, isFollow: false });
+        followHandler({ userId: props.userId, isFollow: false, userName: props.name });
       }
     }
   };

@@ -7,7 +7,7 @@ const useCopy = () => {
   const { callEvent } = useAnalytics();
 
   const [isCopied, setIsCopied] = useState(false);
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
 
   const copyToClipboard = async (text: string) => {
     callEvent('InviteFromCopyCode');
@@ -15,11 +15,11 @@ const useCopy = () => {
       try {
         await navigator.clipboard.writeText(text);
         setIsCopied(true);
-        onToast({ message: 'کپی شد', type: 'success' });
+        toast.notifyToastHandler({ message: 'کپی شد', type: 'success' });
         setTimeout(() => setIsCopied(false), 1000);
       } catch (err) {
         console.error(err);
-        onToast({ message: 'خطا در کپی کردن متن', type: 'error' });
+        toast.notifyToastHandler({ message: 'خطا در کپی کردن متن', type: 'error' });
       }
     } else {
       try {
@@ -34,7 +34,7 @@ const useCopy = () => {
         const successful = document.execCommand('copy');
         if (successful) {
           setIsCopied(true);
-          onToast({ message: 'کپی شد', type: 'success' });
+          toast.notifyToastHandler({ message: 'کپی شد', type: 'success' });
           setTimeout(() => setIsCopied(false), 1000);
         } else {
           throw new Error('Fallback copy failed');
@@ -42,7 +42,7 @@ const useCopy = () => {
         document.body.removeChild(textArea);
       } catch (err) {
         console.error('Fallback error: ', err);
-        onToast({ message: 'خطا در کپی کردن متن', type: 'error' });
+        toast.notifyToastHandler({ message: 'خطا در کپی کردن متن', type: 'error' });
       }
     }
   };

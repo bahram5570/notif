@@ -24,6 +24,7 @@ const BreastfeedingSetting = ({ status, isDelivery, pregnancyDate }: Breastfeedi
           needsSubscription
           Icon={PregnancySettingsIcon}
           name={'ویرایش اطلاعات زایمان'}
+          isFirstItem={true}
         />
       )}
     </>

@@ -17,7 +17,7 @@ import { SpecialistProblemInputsProps } from './types';
 
 const SpecialistProblemInputs = ({ info, infoHelper, questionValuesHandler }: SpecialistProblemInputsProps) => {
   const router = useRouter();
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
   const { callEvent } = useAnalytics();
   const { values, valuesHandler } = useValues();
   const { operatingSystem } = useOperatingSystem();
@@ -38,7 +38,7 @@ const SpecialistProblemInputs = ({ info, infoHelper, questionValuesHandler }: Sp
   const paymentHandler = () => {
     callEvent('Clinic_Payment');
     if (values.text.trim() === '') {
-      onToast({ message: 'اول مشکلت بنویس و بعد ارسال کن' });
+      toast.notifyToastHandler({ message: 'اول مشکلت بنویس و بعد ارسال کن' });
     } else {
       questionValuesHandler({ text: values.text, fileName: values.fileName });
       pageNavigationHandler({ showProgressBar: false, id: loadingId });

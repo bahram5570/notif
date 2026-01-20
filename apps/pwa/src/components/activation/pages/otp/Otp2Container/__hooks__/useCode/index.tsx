@@ -9,11 +9,11 @@ import useCustomToast from '@hooks/useCustomToast';
 import { SuccessHandlerTypes, UseCodeProps } from './types';
 
 const useCode = ({ identity, isRegister }: UseCodeProps) => {
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
 
   const successHandler: SuccessHandlerTypes = ({ result }) => {
     if (result) {
-      onToast({ message: 'کد 6 رقمی ارسال شد' });
+      toast.notifyToastHandler({ message: 'کد 6 رقمی ارسال شد' });
     }
   };
 

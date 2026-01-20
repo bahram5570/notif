@@ -40,7 +40,7 @@ const ChatFooterMessageInput = () => {
             placeholder="پیامت رو بنویس"
             value={toPersianNumbers(text)}
             style={{ ...typographyFontStyles }}
-            className="border-none outline-none w-full   bg-impo_Neutral_Background text-impo_Neutral_OnBackground"
+            className="border-none outline-none w-full   bg-impo_Neutral_Background text-impo_Neutral_OnBackground placeholder:text-impo_Surface_OutlineVariant"
             onChange={(e) => textHandler(e.target.value)}
           />
         </div>
