@@ -21,13 +21,13 @@ const InstallationPurpose = ({ changeStatusBtns }: InstallationPurposePropsType)
           <Dark_Button
             key={index}
             className="min-w-fit"
+            fontSize="Lable_Large"
             onClick={() => actionHandler(item.action)}
             style={{
-              background: colorFormatConverter(item.backgroundColor),
               color: colorFormatConverter(item.foregroundColor),
+              background: colorFormatConverter(item.backgroundColor),
               borderColor: colorFormatConverter(item.backgroundColor),
             }}
-            fontSize="Lable_Large"
           >
             {item.text}
           </Dark_Button>

@@ -22,7 +22,7 @@ const PregnancySettings = ({ status, isDelivery, pregnancyDate }: PregnancySetti
         <ProfileLinkGenerator
           link={linkTo}
           needsSubscription
-          isLastItem={false}
+          isFirstItem={true}
           name={'تنظیمات بارداری'}
           Icon={PregnancySettingsIcon}
         />

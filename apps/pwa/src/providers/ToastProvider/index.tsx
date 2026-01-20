@@ -6,8 +6,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import InfoIcon from '@assets/icons/infoIcon.svg';
 import TickIcon from '@assets/icons/tickIcon.svg';
 
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import CustomToastProvider from './CustomToastProvider';
 import { OptionTypes, ToastTypes } from './types';
@@ -15,44 +14,45 @@ import { OptionTypes, ToastTypes } from './types';
 export const ToastContext = createContext<ToastTypes>({ onToast: () => {} });
 
 const ToastProvider = ({ children }: { children: React.ReactNode }) => {
-  const { colors } = useTheme();
-
   const toastHandler = ({
-    message,
-    duration,
-    type = 'success',
-    // icon = 'success',
     englishNumbers = false,
     position = 'top-right',
+    type = 'success',
+    duration,
+    message,
     style,
   }: OptionTypes) => {
     const iconsList = {
-      warning: <InfoIcon className="w-5 h-auto" style={{ fill: colors.Yellow }} />,
-      success: <TickIcon className="w-4 h-auto" style={{ fill: colors.Success_Success }} />,
-      error: <InfoIcon className="w-5 h-auto" style={{ fill: colors.Error_Error }} />,
+      warning: <InfoIcon className="w-5 h-auto fill-impo_Yellow" />,
+      error: <InfoIcon className="w-5 h-auto fill-impo_Error_Error" />,
+      success: <TickIcon className="w-4 h-auto fill-impo_Success_Success" />,
     };
 
     const backgroundColorsList = {
-      error: colors.Error_ErrorContainer,
-      success: colors.Success_SuccessContainer,
-      warning: colors.Warning_WarininContainer,
+      error: '#fce6e6',
+      success: '#e5f2ec',
+      warning: '#ffedd5',
     };
 
     const borderColorList = {
-      error: colors.Error_Error,
-      success: colors.Success_Success,
-      warning: colors.Warning_Warning,
+      error: '#ef4444',
+      success: '#34b288',
+      warning: '#f5900b',
     };
 
     const content = (
       <div className="flex items-center gap-2">
         {iconsList[type]}
 
-        <div className="w-[1px] h-7 block" style={{ backgroundColor: colors.Surface_OnSurfaceVariant }} />
+        <div className="w-[1px] h-7 block bg-impo_Surface_OnSurfaceVariant" />
 
-        <Typography toEnglishNumber={englishNumbers} scale="Body" size="Small" color="Surface_InverseSurface">
+        <Dark_Typography
+          fontSize="Body_Small"
+          className="text-impo_Black"
+          numbersMode={englishNumbers ? 'english' : 'persian'}
+        >
           {message}
-        </Typography>
+        </Dark_Typography>
       </div>
     );
 
@@ -60,10 +60,10 @@ const ToastProvider = ({ children }: { children: React.ReactNode }) => {
       rtl: true,
       theme: 'colored',
       position: position,
-      autoClose: duration || 3000,
-      progressStyle: { backgroundColor: colors.Grey_600 },
       closeButton: false,
       closeOnClick: true,
+      autoClose: duration || 3000,
+      progressStyle: { backgroundColor: '#8d8d8d' },
       style: {
         ...style,
         backgroundColor: backgroundColorsList[type],

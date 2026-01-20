@@ -22,9 +22,8 @@ const BreastfeedingSetting = ({ status, isDelivery, pregnancyDate }: Breastfeedi
         <ProfileLinkGenerator
           link={linkTo}
           needsSubscription
-          isLastItem={false}
-          name={'ویرایش اطلاعات زایمان'}
           Icon={PregnancySettingsIcon}
+          name={'ویرایش اطلاعات زایمان'}
         />
       )}
     </>

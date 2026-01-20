@@ -10,5 +10,5 @@ type ProfileLinkType = {
 type ProfileLinkListType = ProfileLinkType[];
 
 interface ProfileGeneratorProps extends ProfileLinkType {
-  isLastItem: boolean;
+  isFirstItem?: boolean;
 }

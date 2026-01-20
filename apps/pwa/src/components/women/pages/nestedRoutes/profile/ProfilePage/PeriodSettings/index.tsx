@@ -24,7 +24,6 @@ const PeriodSettings = ({ status }: PeriodSettingsType) => {
       {linkTo && (
         <ProfileLinkGenerator
           link={linkTo}
-          isLastItem={false}
           needsSubscription={true}
           Icon={PeriodSettingsIcon}
           name="ویرایش اطلاعات چرخه"

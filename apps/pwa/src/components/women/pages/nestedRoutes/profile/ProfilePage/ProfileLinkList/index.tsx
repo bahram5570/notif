@@ -1,5 +1,5 @@
-// import EditCycleIcon from '@assets/icons/edit-cycle.svg';
 import BreastfeedingSetting from '../BreastfeedingSettings';
+import DarkModeSettings from '../DarkModeSettings';
 import PeriodSettings from '../PeriodSettings';
 import PregnancySettings from '../PregnancySettings';
 import ProfileLinkGenerator from '../ProfileLinkGenerator';
@@ -22,10 +22,10 @@ const ProfileLinkList = ({ hasSubscribtion, isDelivery, pregnancyDate, status }:
       )}
 
       {filteredProfileLinks.map((item, index) => (
-        <ProfileLinkGenerator key={index} {...item} isLastItem={filteredProfileLinks.length - 1 === index} />
+        <ProfileLinkGenerator {...item} key={index} />
       ))}
 
-      {/* <ProfileLinkGenerator name="fff" isLastItem={false} needsSubscription={false} link="" Icon={EditCycleIcon} /> */}
+      <DarkModeSettings />
     </>
   );
 };

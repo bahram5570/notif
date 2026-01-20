@@ -11,7 +11,8 @@ const Inputs = ({ fileDataHandler, canDeleteImage, deleteHandler, uploadImageLoa
       <Dark_Typography fontSize="Title_Small" className="w-full p-2 text-center text-impo_Neutral_OnBackground">
         عکس خود را انتخاب کنید
       </Dark_Typography>
-      <div className="  flex flex-col gap-3">
+
+      <div className="flex flex-col gap-3">
         <FileInputManager
           ShowFileInput={false}
           fileDataHandler={fileDataHandler}

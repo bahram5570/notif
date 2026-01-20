@@ -24,10 +24,10 @@ const ProfilePage = () => {
   return (
     <WomenPageLayout
       rightElement={hasSubscribtion ? 'BackButton' : 'BackToSubscription'}
+      className="bg-impo_Neutral_Background"
       rightElementScript="صفحه قبل"
       paddingBottom={0}
       paddingTop={0}
-      className="bg-impo_Neutral_Background"
     >
       <div className="flex flex-col min-h-[100dvh] gap-6 pb-6" style={{ paddingTop: HEADER_HEIGHT }}>
         {Loading && <ProfileSkeleton />}
