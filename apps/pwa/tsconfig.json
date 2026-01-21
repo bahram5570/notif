@@ -9,7 +9,6 @@
       "@actions/*": ["./src/app/actions/*"],
       "@services/*": ["./src/services/*"],
       "@assets/*": ["./public/assets/*"],
-      "@theme/*": ["./src/theme/*"],
       "@utils/*": ["./src/utils/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@app/*": ["./src/app/*"],
@@ -25,14 +24,14 @@
   },
   "include": [
     "**/*.ts",
+    "cypress",
     "**/*.tsx",
     "svgr.jest.ts",
     "next-env.d.ts",
     "jest.setup.ts",
     "jest.config.ts",
     ".next/types/**/*.ts",
-    "public/serviceWorker.js",
-    "cypress"
+    "public/serviceWorker.js"
   ],
   "exclude": ["node_modules"]
 }

@@ -4,11 +4,8 @@ import Dark_Spinner from '@components/ui/Dark_Spinner';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTheme from '@hooks/useTheme';
 
 const MessagerHeader = () => {
-  const { colors } = useTheme();
-
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
   const onClick = () => {
@@ -33,7 +30,7 @@ const MessagerHeader = () => {
           <div className="cursor-pointer flex justify-center items-center w-8 h-8" onClick={onClick}>
             {pageNavigationLoading === 'back' && <Dark_Spinner className="border-impo_Surface_Outline" size={28} />}
             {pageNavigationLoading !== 'back' && (
-              <ArrowIcon className="w-6 h-full stroke-2" style={{ stroke: colors.Surface_Outline }} />
+              <ArrowIcon className="w-6 h-full stroke-2 stroke-impo_Surface_Outline" />
             )}
           </div>
         </div>
