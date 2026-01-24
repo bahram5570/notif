@@ -10,7 +10,7 @@ const DrDownloadPage = () => {
   const iosWebAppLink = 'https://impodoctor.liara.run';
 
   return (
-    <div className="w-full max-w-[500px] h-dvh px-4 relative dark:bg-none bg-gradient-to-b !from-[#EBC4F0] to-[#FFFFF]">
+    <div className="w-full max-w-[500px] h-dvh px-4 relative dark:bg-none bg-gradient-to-b !from-[#EBC4F0] to-[#FFFFF] pb-5">
       <div className="mb-1 mt-10">
         <CustomTypography
           fontSize="Headline_Medium"
@@ -56,12 +56,14 @@ const DrDownloadPage = () => {
       </div>
       <div className="mt-4 rounded-xl p-3 grid grid-flow-col align-top gap-x-1 dark:bg-impo_Neutral_Surface dark:border-none bg-[#FFF1E3] border border-[#FFC400]">
         <InfoIcon />
-        <CustomTypography fontSize="Body_Large" tagType="p" className="text-right !text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Medium" tagType="p" className="text-right !text-impo_Neutral_OnBackground">
           <strong>نکته:</strong> اگر متخصص نیستی و یا قبلا در ایمپو ثبت‌نام نشدی، نمی‌تونی از اپلیکیشن ایمپو دکتر
           استفاده کنی
         </CustomTypography>
       </div>
-      <CustomImage src={MockupDrDownload} alt="MockupDrDownload" className="mt-6" />
+      <div className="flex justify-center">
+        <CustomImage src={MockupDrDownload} alt="MockupDrDownload" className="mt-6 max-w-[350px]" />
+      </div>
     </div>
   );
 };
