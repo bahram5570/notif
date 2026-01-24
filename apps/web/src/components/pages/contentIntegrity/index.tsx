@@ -279,7 +279,7 @@ const ContentIntegrity = () => {
             خیر. محتوای ایمپو آموزشی و آگاهی‌بخش است و جایگزین تشخیص یا درمان پزشکی تخصصی نیست.
           </CustomTypography>
           <CustomTypography tagType="h3" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
-            محتوای ایمپو هر چند وقت یک‌بار به‌روزرسانی می‌شود؟
+            2. محتوای ایمپو هر چند وقت یک‌بار به‌روزرسانی می‌شود؟
           </CustomTypography>
           <CustomTypography tagType="p" fontSize="Body_Small" className=" !text-impo_Neutral_OnBackground">
             محتواها به‌صورت دوره‌ای و در صورت تغییر شواهد علمی یا توصیه‌های پزشکی بازبینی و به‌روزرسانی می‌شوند.
