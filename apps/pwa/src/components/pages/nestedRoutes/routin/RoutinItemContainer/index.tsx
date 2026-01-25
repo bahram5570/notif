@@ -1,9 +1,9 @@
 'use client';
 
 import FeedbackModal from '@components/FeedbackModal';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import { FOOTER_HEIGTH } from '@components/WomenFooter/constants';
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
 import RoutinCta from '@components/__routin__/RoutinCta';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
@@ -24,7 +24,7 @@ const RoutinItemContainer = () => {
   });
 
   return (
-    <WomenPageLayout rightElement="BackButton" paddingTop={0}>
+    <MainPageLayout rightElement="BackButton" paddingTop={0}>
       <div
         className=" w-full flex relative z-0 flex-col  gap-6  h-[100dvh]  px-4  pb-6"
         style={{ paddingTop: HEADER_HEIGHT + 16 }}
@@ -76,7 +76,7 @@ const RoutinItemContainer = () => {
         onSubmit={rateHandler}
         isLoading={feedbackLoading}
       />
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

@@ -5,8 +5,8 @@ import { useState } from 'react';
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { toPersianNumbers } from '@utils/numbers';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import useProfileData from '@hooks/__profile__/useProfileData';
@@ -32,7 +32,7 @@ const ContactSupportPage = () => {
 
   return (
     <>
-      <WomenPageLayout
+      <MainPageLayout
         paddingTop={0}
         rightElement="BackButton"
         className="bg-impo_Neutral_Surface"
@@ -76,7 +76,7 @@ const ContactSupportPage = () => {
         )}
 
         <SupportChatModal valuesHandler={valuesHandler} />
-      </WomenPageLayout>
+      </MainPageLayout>
     </>
   );
 };

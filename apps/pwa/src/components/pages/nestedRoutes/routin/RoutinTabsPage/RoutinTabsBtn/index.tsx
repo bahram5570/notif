@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 

@@ -15,9 +15,11 @@ const useShareExperienceInitialRedirect = () => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
 
   const redirectStorage = sessionStorage.getItem(SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE);
-  const queryString = Array.from(searchParams.entries())
-    .map(([key, value]) => `${key}=${value}`)
-    .join('&');
+  const queryString = searchParams
+    ? Array.from(searchParams.entries())
+        .map(([key, value]) => `${key}=${value}`)
+        .join('&')
+    : '';
 
   useEffect(() => {
     if (isFirstTime1.current) {

@@ -4,7 +4,7 @@ import { GetQueryTypes, newQueryParamsHandlerTypes, removeQueryParamsHandlerType
 
 const useQueryParamsHandler = () => {
   const router = useRouter();
-  const pathname = usePathname();
+  const pathname = usePathname() || '';
   const searchParams = window === undefined ? undefined : useSearchParams();
 
   const newQueryParamsHandler: newQueryParamsHandlerTypes = (q) => {

@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation';
 import { SubmitResponsePropsType, UseSubmitPropsType } from './type';
 
 const useSubmit = ({ resetChild }: UseSubmitPropsType) => {
-  const { chatId } = useParams();
+  const chatId = useParams()?.chatId;
 
   const { callApi, isLoading, data } = useApi<SubmitResponsePropsType>({
     api: `challenge/${chatId}/chat`,

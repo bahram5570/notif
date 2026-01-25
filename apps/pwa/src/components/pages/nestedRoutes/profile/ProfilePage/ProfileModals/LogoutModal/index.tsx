@@ -1,4 +1,4 @@
-import LogoutIcon from '@assets/icons/logout.svg';
+import LogoutIcon from '@assets/icons/profile/logout.svg';
 
 import { deleteUserCookie, setCultureCookie } from '@actions/cookie.actions';
 import Dark_Button from '@components/ui/Dark_Button';

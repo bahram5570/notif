@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import PeriodSettingsIcon from '@assets/icons/periodSettings.svg';
+import PeriodSettingsIcon from '@assets/icons/profile/periodSettings.svg';
 
 import { InstallationPurposeEnum } from '@constants/activation.constants';
 

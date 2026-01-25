@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import PregnancySettingsIcon from '@assets/icons/pregnancySettings.svg';
+import PregnancySettingsIcon from '@assets/icons/profile/pregnancySettings.svg';
 
 import { InstallationPurposeEnum } from '@constants/activation.constants';
 

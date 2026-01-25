@@ -1,8 +1,8 @@
-import WomenPageLayoutHeader from './WomenPageLayoutHeader';
+import MainPageLayoutHeader from './MainPageLayoutHeader';
 import { HEADER_HEIGHT } from './constants';
-import { WomenPageLayoutProps } from './types';
+import { MainPageLayoutProps } from './types';
 
-const WomenPageLayout = (props: WomenPageLayoutProps) => {
+const MainPageLayout = (props: MainPageLayoutProps) => {
   const headerProps = { ...props };
   delete headerProps.headerClassName;
   delete headerProps.paddingBottom;
@@ -18,11 +18,11 @@ const WomenPageLayout = (props: WomenPageLayoutProps) => {
       style={{ paddingTop, paddingBottom }}
       className={`w-full min-h-[100dvh] flex flex-col ${props.className || {}}`}
     >
-      <WomenPageLayoutHeader {...headerProps} className={props.headerClassName} />
+      <MainPageLayoutHeader {...headerProps} className={props.headerClassName} />
 
       <>{props.children}</>
     </div>
   );
 };
 
-export default WomenPageLayout;
+export default MainPageLayout;

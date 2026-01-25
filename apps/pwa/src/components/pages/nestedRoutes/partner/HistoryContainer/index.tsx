@@ -1,7 +1,7 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 
 import HistoryContainerSkeleton from './HistoryContainerSkeleton';
 import HistoryItemList from './HistoryItemList';
@@ -17,7 +17,7 @@ const HistoryContainer = () => {
     <>
       {isLoading && <HistoryContainerSkeleton />}
       {!isLoading && (
-        <WomenPageLayout
+        <MainPageLayout
           rightElement="BackButton"
           rightElementScript="تاریخچه سوالاتمون"
           paddingTop={!hasData ? 0 : HEADER_HEIGHT + 16}
@@ -27,7 +27,7 @@ const HistoryContainer = () => {
           ) : (
             <HistoryItemList lastExperienceRef={lastExperienceRef} challengeData={challengeData} />
           )}
-        </WomenPageLayout>
+        </MainPageLayout>
       )}
     </>
   );

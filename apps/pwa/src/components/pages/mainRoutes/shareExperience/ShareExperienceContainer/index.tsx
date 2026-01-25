@@ -1,6 +1,6 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 
 import ShareExperienceAvatar from './ShareExperienceAvatar';
 import ShareExperienceCategories from './ShareExperienceCategories';
@@ -21,7 +21,7 @@ const ShareExperienceContainer = () => {
   const { topics } = useTopics(data?.topics);
 
   return (
-    <WomenPageLayout leftElement1="Profile">
+    <MainPageLayout leftElement1="Profile">
       <>
         {isLoading && !data && <ShareExperienceSkeleton />}
 
@@ -51,7 +51,7 @@ const ShareExperienceContainer = () => {
           </>
         )}
       </>
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

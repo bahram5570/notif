@@ -1,7 +1,7 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 
 import AddPartner from './AddPartner';
 import DeletePartner from './DeletePartner';
@@ -18,7 +18,7 @@ const PartnerSettingPage = () => {
     <>
       {isLoading && <PartnerSkeleton />}
       {!isLoading && (
-        <WomenPageLayout
+        <MainPageLayout
           rightElement="BackButton"
           rightElementScript="هم‌دل من"
           paddingTop={0}
@@ -40,7 +40,7 @@ const PartnerSettingPage = () => {
             )}
           </div>
           <DeletePartnerModal />
-        </WomenPageLayout>
+        </MainPageLayout>
       )}
     </>
   );

@@ -1,4 +1,4 @@
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import CustomImage from '@components/ui/CustomImage';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';

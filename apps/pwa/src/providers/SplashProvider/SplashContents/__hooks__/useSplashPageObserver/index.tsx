@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useSplashPageObserverTypes } from './types';
 
 const useSplashPageObserver = ({ splashStatushHandler }: useSplashPageObserverTypes) => {
-  const pathname = usePathname();
+  const pathname = usePathname() || '';
 
   useEffect(() => {
     const isCyclePage = pathname.includes('protected/cycle');

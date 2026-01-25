@@ -1,6 +1,6 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 import BloodSugerListContainer from '@components/pages/nestedRoutes/signs/SignsContainer/SignsLists/BloodSugerListContainer';
 
 import ListSkeleton from '../bloodPressureList/ListSkeleton';
@@ -11,12 +11,12 @@ const BloodSugerList = () => {
 
   return (
     <>
-      <WomenPageLayout rightElement="BackButton" rightElementScript="تست دیابت بارداری">
+      <MainPageLayout rightElement="BackButton" rightElementScript="تست دیابت بارداری">
         <>
           {isLoading && <ListSkeleton />}
           {!isLoading && <BloodSugerListContainer bloodSugerList={initailBloodSugerList} />}
         </>
-      </WomenPageLayout>
+      </MainPageLayout>
     </>
   );
 };

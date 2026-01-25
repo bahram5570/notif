@@ -1,4 +1,4 @@
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import RoutinBookmarked from '@components/__routin__/RoutinCard/RoutinCardHeader/RoutinBookmarked';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 

@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 
 const useShowWelcoming = () => {
   const [showWelcoming, setShowWelcoming] = useState(false);
-  const pathname = usePathname();
+  const pathname = usePathname() || '';
 
   useEffect(() => {
     const isLogginProcess = !pathname.includes('protected');

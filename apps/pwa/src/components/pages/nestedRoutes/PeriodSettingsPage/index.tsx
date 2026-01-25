@@ -1,7 +1,7 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import ProfileContainerGenerator from '@components/__profile__/ProfileContainerGenerator';
 import ProfileItemGenerator from '@components/__profile__/ProfileItemGenerator';
 import Dark_Button from '@components/ui/Dark_Button';
@@ -20,7 +20,7 @@ const PeriodSettingsPage = () => {
 
   return (
     <>
-      <WomenPageLayout
+      <MainPageLayout
         paddingTop={0}
         rightElement="BackButton"
         className="bg-impo_Neutral_Surface"
@@ -54,7 +54,7 @@ const PeriodSettingsPage = () => {
             </>
           )}
         </div>
-      </WomenPageLayout>
+      </MainPageLayout>
 
       <PeriodSettingsModals values={values} valuesHandler={valuesHandler} />
     </>

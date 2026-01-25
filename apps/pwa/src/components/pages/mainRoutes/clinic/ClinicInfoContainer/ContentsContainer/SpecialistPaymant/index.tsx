@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react';
 
 import { isDevelopeMode } from '@utils/system';
 
-import WomenPageLayoutHeader from '@components/WomenPageLayout/WomenPageLayoutHeader';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayoutHeader from '@components/MainPageLayout/MainPageLayoutHeader';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import VpnText from '@components/ui/VpnText';
@@ -44,7 +44,7 @@ const SpecialistPaymant = (props: SpecialistPaymantProps) => {
         className="fixed top-0 left-0 right-0 bottom-0 px-4 mx-auto w-full min-h-[100dvh] max-h-[100dvh] overflow-y-auto bg-impo_Neutral_Background z-30"
       >
         <div className="relative z-40">
-          <WomenPageLayoutHeader rightElement="BackButton" rightElementScript="پرداخت" />
+          <MainPageLayoutHeader rightElement="BackButton" rightElementScript="پرداخت" />
         </div>
 
         <div className="flex flex-col gap-8 min-h-[100dvh] pb-4" style={{ paddingTop: HEADER_HEIGHT + 16 }}>

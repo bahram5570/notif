@@ -1,6 +1,6 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 import OnboardingIntro from '@components/ui/OnboardingIntro';
 
 import RoutinItemsContainer from './RoutinItemsContainer';
@@ -14,7 +14,7 @@ const RoutinContainer = () => {
   const { finalStepHandler } = useFinalStepWelcoming({ programId: data?.programId });
 
   return (
-    <WomenPageLayout rightElement="BackButton" paddingTop={0}>
+    <MainPageLayout rightElement="BackButton" paddingTop={0}>
       {isLoading && <RoutinSkeleton />}
       {!isLoading && data && (
         <>
@@ -24,7 +24,7 @@ const RoutinContainer = () => {
           {!data.wc.isActive && <RoutinItemsContainer {...data} />}
         </>
       )}
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

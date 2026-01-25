@@ -1,6 +1,6 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
@@ -41,7 +41,7 @@ const PregnancySettingsPage = () => {
   };
 
   return (
-    <WomenPageLayout rightElement="BackButton" rightElementScript="تنظیمات بارداری" className="bg-impo_Neutral_Surface">
+    <MainPageLayout rightElement="BackButton" rightElementScript="تنظیمات بارداری" className="bg-impo_Neutral_Surface">
       <div className="flex flex-col items-center gap-2 px-4">
         {PREGNANCY_SETTINGS_LIST.map((item, index) => (
           <PregnancySettingsLinkGenerator
@@ -53,7 +53,7 @@ const PregnancySettingsPage = () => {
           />
         ))}
       </div>
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

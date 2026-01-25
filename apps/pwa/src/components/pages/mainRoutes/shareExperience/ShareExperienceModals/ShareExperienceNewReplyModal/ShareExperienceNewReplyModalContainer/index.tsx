@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 
 import NewReplyBtn from './NewReplyBtn';
 import NewReplyText from './NewReplyText';
@@ -20,13 +20,13 @@ const ShareExperienceNewReplyModalContainer = ({ data }: ShareExperienceNewReply
   };
 
   return (
-    <WomenPageLayout rightElement="BackButton" rightElementScript="نظر جدید" paddingTop={0}>
+    <MainPageLayout rightElement="BackButton" rightElementScript="نظر جدید" paddingTop={0}>
       <div className="flex flex-col min-h-[100dvh]" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
         <NewReplyTopPart text={text} name={data.name} avatar={data.avatar} />
         <NewReplyText text={text} textHandler={textHandler} onChangeBtnTop={onChangeBtnTop} />
         <NewReplyBtn text={text} submitHandler={submitHandler} isLoading={isLoading} btnTop={btnTop} />
       </div>
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

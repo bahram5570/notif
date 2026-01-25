@@ -1,4 +1,4 @@
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 
 import AiTopicChatbotListSkeleton from './AiTopicChatbotListSkeleton';
 import { AiTopicChatbotListLayoutPropsType } from './type';

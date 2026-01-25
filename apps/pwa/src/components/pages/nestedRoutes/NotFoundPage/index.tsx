@@ -2,14 +2,14 @@
 
 import NotFoundIcon from '@assets/icons/404.svg';
 
+import MainPageLayout from '@components/MainPageLayout';
 import WomenFooterContainer from '@components/WomenFooter/WomenFooterContainer';
-import WomenPageLayout from '@components/WomenPageLayout';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import { LottieCanvas } from '@lib/LottieCanvas';
 
 const NotFoundPage = () => {
   return (
-    <WomenPageLayout rightElement="BackButton">
+    <MainPageLayout rightElement="BackButton">
       <div className="relative w-full flex flex-col items-center h-full px-4 pt-[360px] sm:pt-[460px] pb-[80px]">
         <div className="absolute top-0 sm:top-10 left-0 right-0 flex justify-center z-0">
           <LottieCanvas
@@ -34,7 +34,7 @@ const NotFoundPage = () => {
         </div>
       </div>
       <WomenFooterContainer pathName={''} />
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

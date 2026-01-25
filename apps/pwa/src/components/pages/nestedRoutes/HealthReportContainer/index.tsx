@@ -1,6 +1,6 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 import useAnalytics from '@hooks/useAnalytics';
 import useOnMountActions from '@hooks/useOnMountActions';
 
@@ -17,7 +17,7 @@ const HealthReportContainer = () => {
   useOnMountActions(data?.actions);
 
   return (
-    <WomenPageLayout rightElement="BackButton" rightElementScript="گزارش سلامت" className="bg-impo_Neutral_Surface">
+    <MainPageLayout rightElement="BackButton" rightElementScript="گزارش سلامت" className="bg-impo_Neutral_Surface">
       <div className="p-4">
         {isLoading && <HealthReportContainerSkeleton />}
 
@@ -28,7 +28,7 @@ const HealthReportContainer = () => {
           </>
         )}
       </div>
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

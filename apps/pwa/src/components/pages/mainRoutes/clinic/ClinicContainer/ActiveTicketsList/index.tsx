@@ -1,5 +1,5 @@
-import WomenPageLayoutHeader from '@components/WomenPageLayout/WomenPageLayoutHeader';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayoutHeader from '@components/MainPageLayout/MainPageLayoutHeader';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useOverflowHandler from '@hooks/useOverflowHandler';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
@@ -25,7 +25,7 @@ const ActiveTicketsList = ({ tickets }: ActiveTicketsListProps) => {
       style={{ maxWidth: MAX_SCREEN_WIDTH, paddingTop: HEADER_HEIGHT + 16 }}
       className="fixed top-0 left-0 right-0 bottom-0 w-full min-h-[100dvh] max-h-[100dvh] overflow-y-auto mx-auto px-4 pb-4 bg-impo_Neutral_Background z-40"
     >
-      <WomenPageLayoutHeader rightElement="BackButton" rightElementScript="مشاوره های فعال" />
+      <MainPageLayoutHeader rightElement="BackButton" rightElementScript="مشاوره های فعال" />
 
       {!tickets && <ActiveTicketSkeleton />}
 

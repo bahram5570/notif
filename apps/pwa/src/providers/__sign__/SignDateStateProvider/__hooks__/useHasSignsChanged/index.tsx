@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 
 const useHasSignsChanged = () => {
   const [hasSignsChanged, setHasSignsChanged] = useState(false);
-  const pathname = usePathname();
+  const pathname = usePathname() || '';
 
   const changeSignsStaus = () => {
     setHasSignsChanged(true);

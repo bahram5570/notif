@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import EditIcon from '@assets/icons/Pen 2.svg';
 import InfoIcon from '@assets/icons/info.svg';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
 
@@ -41,7 +41,7 @@ const ShareExperienceEditProfileModalContainer = ({ id }: ShareExperienceEditPro
   }, [profileData]);
 
   return (
-    <WomenPageLayout rightElement="BackButton" rightElementScript="ویرایش پروفایل" paddingTop={0}>
+    <MainPageLayout rightElement="BackButton" rightElementScript="ویرایش پروفایل" paddingTop={0}>
       {profileData && (
         <div
           className="flex flex-col gap-6 min-h-[100dvh]"
@@ -93,7 +93,7 @@ const ShareExperienceEditProfileModalContainer = ({ id }: ShareExperienceEditPro
           </Dark_Button>
         </div>
       )}
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

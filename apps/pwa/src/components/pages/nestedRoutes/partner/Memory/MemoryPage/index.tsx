@@ -1,7 +1,7 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 
 import MemoryContainerSkeleton from './MemoryContainerSkeleton';
@@ -19,7 +19,7 @@ const MemoryPage = () => {
       {isLoading && <MemoryContainerSkeleton />}
 
       {!isLoading && (
-        <WomenPageLayout
+        <MainPageLayout
           rightElement="BackButton"
           rightElementScript="خاطره بازی"
           paddingTop={!hasData ? 0 : HEADER_HEIGHT + 16}
@@ -33,7 +33,7 @@ const MemoryPage = () => {
           >
             {!hasData ? <NotData /> : <MemoryData memories={memoriesData?.memories} />}
           </InfiniteScrollContainer>
-        </WomenPageLayout>
+        </MainPageLayout>
       )}
     </>
   );

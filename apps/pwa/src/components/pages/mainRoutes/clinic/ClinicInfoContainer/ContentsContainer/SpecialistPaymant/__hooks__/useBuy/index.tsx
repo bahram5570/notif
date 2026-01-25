@@ -12,11 +12,13 @@ import { useParams, useRouter } from 'next/navigation';
 import { ApprovedCodeHandlerTypes, BuyResponseTypes, UseBuyProps } from './types';
 
 const useBuy = ({ id, questionValues, type }: UseBuyProps) => {
-  const { callEvent } = useAnalytics();
-  const clinicInfo = (useParams().clinicInfo as string).split('-');
-  const [approvedCode, setApprovedCode] = useState('');
-  const toast = useCustomToast();
   const router = useRouter();
+  const toast = useCustomToast();
+  const { callEvent } = useAnalytics();
+  const [approvedCode, setApprovedCode] = useState('');
+
+  const params = useParams()?.clinicInfo || '';
+  const clinicInfo = (params as string).split('-');
 
   const isCompletePayment = clinicInfo[1] === 'completePayment';
   const payValue = clinicInfo[0];

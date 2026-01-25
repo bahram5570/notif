@@ -4,7 +4,7 @@ import { useParams } from 'next/navigation';
 import { SubmitHandlerPropsType } from './type';
 
 const useSubmit = () => {
-  const { ticketId } = useParams();
+  const ticketId = useParams()?.ticketId;
 
   const successHandler = () => {
     window.history.go(-2);

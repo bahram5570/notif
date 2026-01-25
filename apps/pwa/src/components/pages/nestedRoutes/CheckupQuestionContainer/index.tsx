@@ -1,7 +1,7 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import CheckListCheckupQuestion from './CheckListCheckupQuestion';
@@ -23,7 +23,7 @@ const CheckupQuestionContainer = () => {
   const hasData = data && data.data;
 
   return (
-    <WomenPageLayout
+    <MainPageLayout
       paddingTop={0}
       rightElement="BackButton"
       rightElementScript={pregnancyTitle || ''}
@@ -39,7 +39,7 @@ const CheckupQuestionContainer = () => {
           <QuestionCheckup question={data.data.question} />
         </div>
       )}
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

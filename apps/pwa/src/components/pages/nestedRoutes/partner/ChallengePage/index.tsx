@@ -1,7 +1,7 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 
 import ChallengeBanner from './ChallengeBanner';
 import ChallengeHeader from './ChallengeHeader';
@@ -16,7 +16,7 @@ const ChallengePage = () => {
     <>
       {isLoading && <ChallengeSkeleton />}
       {!isLoading && data && (
-        <WomenPageLayout rightElement="BackButton" rightElementScript="چالش روزانه" paddingTop={0}>
+        <MainPageLayout rightElement="BackButton" rightElementScript="چالش روزانه" paddingTop={0}>
           <div
             className="flex relative z-0 flex-col  gap-3 pb-6 min-h-screen px-3"
             style={{ paddingTop: HEADER_HEIGHT + 16 }}
@@ -26,7 +26,7 @@ const ChallengePage = () => {
 
             <ChallengeQuestion {...data} />
           </div>
-        </WomenPageLayout>
+        </MainPageLayout>
       )}
     </>
   );

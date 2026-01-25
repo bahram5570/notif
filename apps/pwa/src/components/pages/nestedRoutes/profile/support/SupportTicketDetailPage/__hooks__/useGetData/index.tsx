@@ -4,7 +4,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { ChatResponseTypes } from './type';
 
 const useGetData = () => {
-  const { ticketId } = useParams();
+  const ticketId = useParams()?.ticketId;
   const router = useRouter();
 
   const errorHandler = () => {

@@ -8,7 +8,7 @@ import WomenFooterContainer from './WomenFooterContainer';
 import { FOOTER_PAGES_LIST } from './constants';
 
 const WomenFooter = () => {
-  const pathName = usePathname();
+  const pathName = usePathname() || '';
 
   const hasFooter = FOOTER_PAGES_LIST.some(
     (item) => item.url.toLocaleLowerCase() === pathName.toLocaleLowerCase().split('?')[0],

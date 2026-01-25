@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 import CustomImage from '@components/ui/CustomImage';
 import Dark_Typography from '@components/ui/Dark_Typography';
 
@@ -31,7 +31,7 @@ const StartPageContainer = () => {
   }, [refreshCode?.code]);
 
   return (
-    <WomenPageLayout rightElement="BackButton" rightElementScript="شروع همدلی" paddingBottom={30}>
+    <MainPageLayout rightElement="BackButton" rightElementScript="شروع همدلی" paddingBottom={30}>
       <CustomImage src="/assets/images/partner-start.webp" className="px-6 dark:hidden block" />
       <CustomImage src="/assets/images/partner-start-dark.webp" className="px-6 hidden dark:block" />
       <div className="flex flex-col gap-4 items-center justify-center py-5 px-6">
@@ -52,7 +52,7 @@ const StartPageContainer = () => {
           <ShareTextBtn shareText={userCodeInfo.shareText || ''} />
         </div>
       </div>
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

@@ -1,4 +1,4 @@
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 
 const AiChatbotMessageListLayout = ({ children, imageType }: { children: React.ReactNode; imageType: boolean }) => {
   return (

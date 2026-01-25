@@ -1,8 +1,8 @@
 'use client';
 
+import MainPageLayout from '@components/MainPageLayout';
 import StoryItemGenerator from '@components/Widgets/widgetGenerator/WidgetStoryCard/StoryItemGenerator';
 import StoryPreview from '@components/Widgets/widgetGenerator/WidgetStoryCard/StoryPreview';
-import WomenPageLayout from '@components/WomenPageLayout';
 import Dark_Typography from '@components/ui/Dark_Typography';
 
 import SavedStoriesSkeleton from './SavedStoriesSkeleton';
@@ -14,7 +14,7 @@ const SavedStoriesPage = () => {
   const hasData = !isLoading && typeof data !== 'undefined';
 
   return (
-    <WomenPageLayout
+    <MainPageLayout
       rightElement="BackButton"
       rightElementScript="استوری‌های ذخیره شده"
       className="px-4 bg-impo_Neutral_Surface"
@@ -46,7 +46,7 @@ const SavedStoriesPage = () => {
           )}
         </div>
       </div>
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

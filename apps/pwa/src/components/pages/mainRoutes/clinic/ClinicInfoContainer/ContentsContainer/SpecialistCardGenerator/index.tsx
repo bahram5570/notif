@@ -27,7 +27,7 @@ const SpecialistCardGenerator = ({
   rate,
   id,
 }: SpecialistCardGeneratorProps) => {
-  const pathname = usePathname();
+  const pathname = usePathname() || '';
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
 

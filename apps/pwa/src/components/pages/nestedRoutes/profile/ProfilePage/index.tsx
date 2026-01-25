@@ -1,7 +1,7 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import { APP_VERSION } from '@constants/app.constants';
 import useProfileData from '@hooks/__profile__/useProfileData';
@@ -22,7 +22,7 @@ const ProfilePage = () => {
   const Loading = isLoading || subscriptionLoading;
 
   return (
-    <WomenPageLayout
+    <MainPageLayout
       rightElement={hasSubscribtion ? 'BackButton' : 'BackToSubscription'}
       className="bg-impo_Neutral_Background"
       rightElementScript="صفحه قبل"
@@ -54,7 +54,7 @@ const ProfilePage = () => {
       </div>
 
       <ProfileModals />
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

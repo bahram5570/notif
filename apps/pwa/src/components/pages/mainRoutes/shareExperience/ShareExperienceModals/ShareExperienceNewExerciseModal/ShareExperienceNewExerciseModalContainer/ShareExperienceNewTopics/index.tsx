@@ -1,5 +1,5 @@
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import { SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import CustomModal from '@components/ui/CustomModal';
 import Dark_Button from '@components/ui/Dark_Button';
@@ -39,7 +39,7 @@ const ShareExperienceNewTopics = ({
         isFullScreen={true}
         zIndex={78}
       >
-        <WomenPageLayout
+        <MainPageLayout
           rightElement="BackButton"
           rightElementScript="انتخاب تالار"
           paddingTop={0}
@@ -82,7 +82,7 @@ const ShareExperienceNewTopics = ({
               </>
             )}
           </div>
-        </WomenPageLayout>
+        </MainPageLayout>
       </CustomModal>
     </>
   );

@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 
 const ScrollToTopProvider = () => {
-  const pathname = usePathname();
+  const pathname = usePathname() || '';
 
   useEffect(() => {
     setTimeout(() => {

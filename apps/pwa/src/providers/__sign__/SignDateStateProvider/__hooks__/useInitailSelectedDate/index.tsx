@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 
 const useInitailSelectedDate = () => {
   const [calendarInitailSelectedDate, setCalendarInitailSelectedDate] = useState<string | null>(null);
-  const pathname = usePathname();
+  const pathname = usePathname() || '';
 
   const changeCurrentDate = (date: string) => {
     setCalendarInitailSelectedDate(date);

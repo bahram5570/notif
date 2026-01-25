@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import CustomImage from '@components/ui/CustomImage';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import { LottieCanvas } from '@lib/LottieCanvas';
@@ -31,7 +31,7 @@ const SubscriptionPage = () => {
   const morePackagesData = data && data.morePackages.length > 0;
 
   return (
-    <WomenPageLayout
+    <MainPageLayout
       className="relative"
       leftElement1="Profile"
       paddingTop={HEADER_HEIGHT}
@@ -129,7 +129,7 @@ const SubscriptionPage = () => {
           </div>
         </>
       )}
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

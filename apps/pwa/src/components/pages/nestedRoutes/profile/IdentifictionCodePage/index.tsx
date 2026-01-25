@@ -2,7 +2,7 @@
 
 import inviteGift from '@assets/lottie/inviteGift.json';
 
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import { LottieJson } from '@lib/LottieJson';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
@@ -17,7 +17,7 @@ const IdentifictionCodePage = () => {
   const { data, isLoading } = useGetProfileData();
 
   return (
-    <WomenPageLayout
+    <MainPageLayout
       paddingTop={0}
       rightElement="BackButton"
       rightElementScript="کد معرف"
@@ -48,7 +48,7 @@ const IdentifictionCodePage = () => {
           </div>
         </div>
       )}
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

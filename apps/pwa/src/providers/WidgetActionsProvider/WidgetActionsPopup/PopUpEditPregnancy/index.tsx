@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import DateModule from '@components/activation/DateModule';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
@@ -25,7 +25,7 @@ const PopUpEditPregnancy = () => {
       style={{ maxWidth: MAX_SCREEN_WIDTH }}
       className="fixed top-0 left-0 right-0 bottom-0 mx-auto bg-impo_Neutral_Background z-50"
     >
-      <WomenPageLayout rightElement="BackButton" paddingTop={0} paddingBottom={0}>
+      <MainPageLayout rightElement="BackButton" paddingTop={0} paddingBottom={0}>
         <div className="flex flex-col items-center px-4 py-8 min-h-[100dvh]">
           <Dark_Typography
             fontSize="Body_Medium"
@@ -58,7 +58,7 @@ const PopUpEditPregnancy = () => {
             ثبت تغییرات
           </Dark_Button>
         </div>
-      </WomenPageLayout>
+      </MainPageLayout>
     </div>
   );
 };

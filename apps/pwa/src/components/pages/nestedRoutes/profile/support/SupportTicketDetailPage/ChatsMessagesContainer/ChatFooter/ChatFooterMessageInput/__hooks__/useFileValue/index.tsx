@@ -11,11 +11,11 @@ import useUpdateChatReactQuery from '../useUpdateChatReactQuery';
 const useFileValue = () => {
   const [uploadingFileType, setUploadingFileType] = useState('');
   const [storedFileName, setStoredFileName] = useState('');
-  const router = useRouter();
   const { upgateHandler } = useUpdateChatReactQuery();
   const { updateQuery } = useCustomReactQuery();
+  const router = useRouter();
 
-  const { ticketId } = useParams();
+  const ticketId = useParams()?.ticketId;
 
   const successHandler = () => {
     upgateHandler({ text: '', fileName: storedFileName });

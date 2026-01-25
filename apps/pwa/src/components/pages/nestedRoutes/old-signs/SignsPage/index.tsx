@@ -1,4 +1,4 @@
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 import useAnalytics from '@hooks/useAnalytics';
 
 import SignsContainer from '../SignsContainer';
@@ -11,7 +11,7 @@ const SignsPage = () => {
   const { isLoading, infoList } = useGetData();
 
   return (
-    <WomenPageLayout
+    <MainPageLayout
       paddingTop={0}
       rightElement="BackButton"
       rightElementScript="نشانه های امروز"
@@ -26,7 +26,7 @@ const SignsPage = () => {
           </>
         )}
       </>
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

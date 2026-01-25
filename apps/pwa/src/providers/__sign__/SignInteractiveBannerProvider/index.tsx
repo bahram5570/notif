@@ -16,7 +16,7 @@ export const SignInteractiveBannerContext = createContext<SignInteractiveBannerC
 
 const SignInteractiveBannerProvider = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
-  const pathname = usePathname();
+  const pathname = usePathname() || '';
   const { actionHandler } = useWidgetActions();
   const [currentAction, setCurrentAction] = useState<ActionTypes | null>(null);
 

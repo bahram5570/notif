@@ -1,4 +1,4 @@
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 import useAnalytics from '@hooks/useAnalytics';
 
 import SignsContainer from '../SignsContainer';
@@ -11,7 +11,7 @@ const SignsPage = () => {
   useAnalytics({ mountTimer_eventName: 'SignsPageTimeSpent' });
 
   return (
-    <WomenPageLayout
+    <MainPageLayout
       paddingTop={0}
       rightElement="BackButton"
       rightElementScript="نشانه های امروز"
@@ -28,7 +28,7 @@ const SignsPage = () => {
           </>
         )}
       </>
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

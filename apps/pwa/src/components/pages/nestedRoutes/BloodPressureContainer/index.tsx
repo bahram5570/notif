@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Button from '@components/ui/Dark_Button';
 
 import BloodPressureBtn from './BloodPressureBtn';
@@ -27,7 +27,7 @@ const BloodPressureContainer = () => {
   };
 
   return (
-    <WomenPageLayout rightElement="BackButton" paddingTop={0}>
+    <MainPageLayout rightElement="BackButton" paddingTop={0}>
       <div
         style={{ paddingTop: HEADER_HEIGHT }}
         className="min-h-[100dvh] relative flex flex-col gap-3 bg-impo_Neutral_Surface"
@@ -57,7 +57,7 @@ const BloodPressureContainer = () => {
           </div>
         </footer>
       </div>
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

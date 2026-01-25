@@ -1,4 +1,4 @@
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 
 import ClinicTicketGenerator from '../ClinicTicketGenerator';
 import ClinicTicketsHistorySkeleton from './ClinicTicketsHistorySkeleton';
@@ -11,7 +11,7 @@ const ClinicTicketHistoryContainer = () => {
   const isEmptyList = data?.tickets.length === 0;
 
   return (
-    <WomenPageLayout rightElement="BackButton" rightElementScript="تاریخچه مشاوره ها" className="px-4 !pb-10">
+    <MainPageLayout rightElement="BackButton" rightElementScript="تاریخچه مشاوره ها" className="px-4 !pb-10">
       <>
         {isLoading && <ClinicTicketsHistorySkeleton />}
 
@@ -44,7 +44,7 @@ const ClinicTicketHistoryContainer = () => {
           </>
         )}
       </>
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

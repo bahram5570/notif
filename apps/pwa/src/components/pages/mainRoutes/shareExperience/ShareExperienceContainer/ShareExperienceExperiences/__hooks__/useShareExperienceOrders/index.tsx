@@ -12,7 +12,7 @@ const useShareExperienceOrders = () => {
   const searchParams = useSearchParams();
   const [shareExperienceOrdersList, setShareExperienceOrdersList] = useState<ShareExperienceOrdersListTypes>({});
 
-  const queryParams = Object.fromEntries(searchParams.entries());
+  const queryParams = searchParams ? Object.fromEntries(searchParams.entries()) : {};
 
   useEffect(() => {
     const queryParamsList = Object.entries(queryParams);

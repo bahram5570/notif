@@ -7,7 +7,7 @@ import { NameSelectorActivationPageNamesTypes } from '../../types';
 
 const useNameSelectorActivationSteps = () => {
   const { callEvent } = useAnalytics();
-  const pageName = usePathname();
+  const pageName = usePathname() || '';
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
   const stageName = pageName.replace('/protected/nameSelectorActivation/', '') as NameSelectorActivationPageNamesTypes;

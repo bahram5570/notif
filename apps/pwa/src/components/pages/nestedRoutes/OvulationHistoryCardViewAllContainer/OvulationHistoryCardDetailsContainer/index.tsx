@@ -1,6 +1,6 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 import CustomImage from '@components/ui/CustomImage';
 import Dark_Typography from '@components/ui/Dark_Typography';
 
@@ -14,7 +14,7 @@ const OvulationHistoryCardDetailsContainer = ({ detailsIndex }: OvulationHistory
   const detailsList = data?.items[detailsIndex].details || [];
 
   return (
-    <WomenPageLayout rightElement="BackButton" rightElementScript={data?.title}>
+    <MainPageLayout rightElement="BackButton" rightElementScript={data?.title}>
       <>
         {data && (
           <div className="w-full flex flex-col items-center px-4">
@@ -35,7 +35,7 @@ const OvulationHistoryCardDetailsContainer = ({ detailsIndex }: OvulationHistory
           </div>
         )}
       </>
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

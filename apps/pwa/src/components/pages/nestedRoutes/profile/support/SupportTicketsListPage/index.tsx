@@ -1,7 +1,7 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 
 import TicketContainerSkeleton from './TicketContainerSkeleton';
 import TicketList from './TicketList';
@@ -13,7 +13,7 @@ const SupportTicketsListPage = () => {
 
   return (
     <>
-      <WomenPageLayout
+      <MainPageLayout
         rightElement="BackButton"
         className="bg-impo_Neutral_Surface"
         rightElementScript="پشتیبانی"
@@ -28,7 +28,7 @@ const SupportTicketsListPage = () => {
             {data && data.url && <WebView url={data.url} />}
           </>
         )}
-      </WomenPageLayout>
+      </MainPageLayout>
     </>
   );
 };

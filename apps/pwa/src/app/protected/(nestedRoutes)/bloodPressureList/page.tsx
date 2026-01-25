@@ -1,6 +1,6 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 import BloodPressureListContainer from '@components/pages/nestedRoutes/signs/SignsContainer/SignsLists/BloodPressureListContainer';
 
 import ListSkeleton from './ListSkeleton';
@@ -10,12 +10,12 @@ const BloodPressureList = () => {
   const { initailPressureList, isLoading } = useGetData();
   return (
     <>
-      <WomenPageLayout rightElement="BackButton" rightElementScript="تست فشارخون بارداری">
+      <MainPageLayout rightElement="BackButton" rightElementScript="تست فشارخون بارداری">
         <>
           {isLoading && <ListSkeleton />}
           {!isLoading && <BloodPressureListContainer bloodPressureList={initailPressureList} />}
         </>
-      </WomenPageLayout>
+      </MainPageLayout>
     </>
   );
 };

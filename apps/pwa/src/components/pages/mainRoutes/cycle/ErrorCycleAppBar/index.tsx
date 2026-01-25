@@ -1,7 +1,7 @@
-import WomenPageLayoutHeader from '@components/WomenPageLayout/WomenPageLayoutHeader';
+import MainPageLayoutHeader from '@components/MainPageLayout/MainPageLayoutHeader';
 
 const ErrorCycleAppBar = () => {
-  return <WomenPageLayoutHeader leftElement1="Profile" />;
+  return <MainPageLayoutHeader leftElement1="Profile" />;
 };
 
 export default ErrorCycleAppBar;

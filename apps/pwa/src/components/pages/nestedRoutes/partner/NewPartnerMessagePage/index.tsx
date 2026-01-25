@@ -2,7 +2,7 @@
 
 import styles from './styles.module.css';
 
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
 
 import MessageListContainer from './MessageListContainer';

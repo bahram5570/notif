@@ -1,6 +1,6 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 
 import RoutinTabsBtn from './RoutinTabsBtn';
 import RoutinTabsContextContainer from './RoutinTabsContextContainer';
@@ -13,7 +13,7 @@ const RoutinTabsPage = () => {
   const { activeTab, handleTabChange } = useRoutinTabData();
 
   return (
-    <WomenPageLayout rightElement="BackButton" rightElementScript={data?.title || ''}>
+    <MainPageLayout rightElement="BackButton" rightElementScript={data?.title || ''}>
       {isLoading && !data && <RoutinTabsContextSkeleton />}
       {!isLoading && data && (
         <>
@@ -22,7 +22,7 @@ const RoutinTabsPage = () => {
           <RoutinTabsContextContainer activeTab={activeTab} tabsOrder={data?.tabsOrder || []} />
         </>
       )}
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

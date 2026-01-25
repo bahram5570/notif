@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import { gregorianFarsiScriptDate, jalaaliScriptDate } from '@utils/dates';
 
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 import CustomImage from '@components/ui/CustomImage';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
@@ -54,7 +54,7 @@ const MemoryDetailPage = () => {
   const memoryImage = memoryData.fileName || '/assets/images/partner.webp';
 
   return (
-    <WomenPageLayout rightElement="BackButton" rightElementScript="مرور خاطرات">
+    <MainPageLayout rightElement="BackButton" rightElementScript="مرور خاطرات">
       {isLoading && <MemoryDetailSkeleton />}
       {!isLoading && (
         <div className="flex flex-col relative z-0  gap-3 pb-16">
@@ -101,7 +101,7 @@ const MemoryDetailPage = () => {
       )}
 
       <DeleteMemoryModal />
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

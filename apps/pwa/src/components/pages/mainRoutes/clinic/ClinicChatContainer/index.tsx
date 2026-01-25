@@ -1,5 +1,5 @@
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import ChatFooter from './ChatFooter';
@@ -19,7 +19,7 @@ const ClinicChatContainer = () => {
 
   return (
     <>
-      <WomenPageLayout
+      <MainPageLayout
         paddingBottom={120}
         rightElement="BackButton"
         rightElementScript={data?.drName}
@@ -34,7 +34,7 @@ const ClinicChatContainer = () => {
             <ChatFooter isRate={data.isRate} state={data.state} />
           </>
         )}
-      </WomenPageLayout>
+      </MainPageLayout>
 
       {isRateModalOpen && (
         <RatingContainer

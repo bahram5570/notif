@@ -5,8 +5,8 @@ import { useState } from 'react';
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { toPersianNumbers } from '@utils/numbers';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import useOperatingSystem from '@hooks/useOperatingSystem';
@@ -35,7 +35,7 @@ const SupportRatePage = () => {
   };
 
   return (
-    <WomenPageLayout rightElement="BackButton" rightElementScript="ثبت نظر" paddingTop={0}>
+    <MainPageLayout rightElement="BackButton" rightElementScript="ثبت نظر" paddingTop={0}>
       <div className="flex flex-col items-end gap-3 min-h-[100dvh] p-4" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
         <div className="flex flex-col gap-10 w-full">
           <StarRate valuesHandler={valuesHandler} rate={rateValues.rate} />
@@ -69,7 +69,7 @@ const SupportRatePage = () => {
         </div>
       </div>
       <RateModal {...rateValues} />
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

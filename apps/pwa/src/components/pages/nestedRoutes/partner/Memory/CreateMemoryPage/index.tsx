@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import moment from 'moment-jalaali';
@@ -42,7 +42,7 @@ const CreateMemoryPage = () => {
   });
 
   return (
-    <WomenPageLayout rightElement="BackButton" rightElementScript="ثبت خاطره" paddingTop={0}>
+    <MainPageLayout rightElement="BackButton" rightElementScript="ثبت خاطره" paddingTop={0}>
       <div
         className="flex relative z-0 flex-col  gap-3 pb-6 min-h-screen px-3"
         style={{ paddingTop: HEADER_HEIGHT + 16 }}
@@ -76,7 +76,7 @@ const CreateMemoryPage = () => {
         </footer>
       </div>
       <UploadModal fileDataHandler={fileDataHandler} uploadImageLoading={uploadImageLoading} />
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

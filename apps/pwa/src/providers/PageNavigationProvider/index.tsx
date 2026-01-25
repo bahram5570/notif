@@ -18,7 +18,7 @@ const PageNavigationLoadingProvider = ({ children }: { children: React.ReactNode
   }
 
   const router = useRouter();
-  const path = usePathname();
+  const path = usePathname() || '';
   const timer = useRef<NodeJS.Timeout>();
   const searchParams = useSearchParams();
   const [progressBarLoading, setPogressBarLoading] = useState<LoadingStatesTypes>(false);

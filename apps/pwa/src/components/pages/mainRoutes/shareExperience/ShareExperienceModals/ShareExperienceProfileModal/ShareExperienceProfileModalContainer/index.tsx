@@ -1,5 +1,5 @@
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
 import useOverflowHandler from '@hooks/useOverflowHandler';
 
@@ -35,7 +35,7 @@ const ShareExperienceProfileModalContainer = ({
     : [];
 
   return (
-    <WomenPageLayout paddingTop={0} rightElement="BackButton" rightElementScript={rightElementScript}>
+    <MainPageLayout paddingTop={0} rightElement="BackButton" rightElementScript={rightElementScript}>
       <div
         className=" h-[100dvh] flex flex-col px-3"
         style={{ paddingTop: HEADER_HEIGHT + 16, paddingBottom: HEADER_HEIGHT }}
@@ -62,7 +62,7 @@ const ShareExperienceProfileModalContainer = ({
           </>
         )}
       </div>
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 import Dark_Typography from '@components/ui/Dark_Typography';
 
 import MessageContainerSkeleton from './MessageContainerSkeleton';
@@ -32,7 +32,7 @@ const MessageContainer = () => {
     <>
       {isLoading && <MessageContainerSkeleton />}
       {!isLoading && (
-        <WomenPageLayout
+        <MainPageLayout
           rightElement="BackButton"
           rightElementScript="ارسال پیام"
           className="flex flex-col gap-5 px-4 min-h-[100dvh] "
@@ -43,7 +43,7 @@ const MessageContainer = () => {
 
           {hasData && <MessageList messages={data} />}
           {hasData && !data[data.length - 1].readFlag && !data[data.length - 1].fromMan ? <Warning /> : <NewMessage />}
-        </WomenPageLayout>
+        </MainPageLayout>
       )}
     </>
   );

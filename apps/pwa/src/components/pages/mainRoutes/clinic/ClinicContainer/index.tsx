@@ -1,7 +1,7 @@
 import { Suspense, useState } from 'react';
 
+import MainPageLayout from '@components/MainPageLayout';
 import { FOOTER_HEIGTH } from '@components/WomenFooter/constants';
-import WomenPageLayout from '@components/WomenPageLayout';
 import Dark_Typography from '@components/ui/Dark_Typography';
 
 import ActiveTicketsHeading from './ActiveTicketsHeading';
@@ -26,7 +26,7 @@ const ClinicContainer = () => {
   return (
     <>
       <Suspense>
-        <WomenPageLayout
+        <MainPageLayout
           rightElement="Info"
           leftElement1="Profile"
           leftElement2="TicketsHistory"
@@ -72,7 +72,7 @@ const ClinicContainer = () => {
               </>
             )}
           </div>
-        </WomenPageLayout>
+        </MainPageLayout>
 
         <ActiveTicketsList tickets={data?.tickets} />
       </Suspense>

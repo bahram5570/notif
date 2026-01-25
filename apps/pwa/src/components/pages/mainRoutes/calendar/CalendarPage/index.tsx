@@ -1,6 +1,6 @@
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import { FOOTER_HEIGTH } from '@components/WomenFooter/constants';
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
 
 import CalendarContainer from '../CalendarContainer';
 import CalendarDraggingPanel from '../CalendarDraggingPanel';
@@ -13,7 +13,7 @@ const CalendarPage = () => {
   const { isLoading, calendarData, calendarGuideInfo, selectedDate, selectedDateHandler } = useCalendar();
 
   return (
-    <WomenPageLayout leftElement1="Profile" paddingTop={0}>
+    <MainPageLayout leftElement1="Profile" paddingTop={0}>
       {/* <SignsChangedToast /> */}
 
       <div
@@ -37,7 +37,7 @@ const CalendarPage = () => {
           </>
         )}
       </div>
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

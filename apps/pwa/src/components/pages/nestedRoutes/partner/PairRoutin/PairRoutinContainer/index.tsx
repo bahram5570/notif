@@ -1,8 +1,8 @@
 'use client';
 
 import FeedbackModal from '@components/FeedbackModal';
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import OnboardingIntro from '@components/ui/OnboardingIntro';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import { useRouter } from 'next/navigation';
@@ -36,7 +36,7 @@ const PairRoutinContainer = () => {
   });
 
   return (
-    <WomenPageLayout rightElement="BackButton" paddingTop={0}>
+    <MainPageLayout rightElement="BackButton" paddingTop={0}>
       <RoutinUnlockTost />
 
       {isLoading && <RoutinSkeleton />}
@@ -76,7 +76,7 @@ const PairRoutinContainer = () => {
           />
         </>
       )}
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

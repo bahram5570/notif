@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 
 import CommentItem from './CommentItem';

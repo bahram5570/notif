@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
 const ChatFooterClosed = () => {
-  const { ticketId } = useParams();
+  const ticketId = useParams()?.ticketId;
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   return (

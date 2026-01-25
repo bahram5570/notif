@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react';
 
 import { currentDate, gregorianFarsiScriptDate, jalaaliScriptDate } from '@utils/dates';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import NoteItem from '@components/pages/mainRoutes/calendar/CalendarDraggingPanel/SelectedDayNote/SelectedDayNoteList/NoteItem';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
@@ -58,7 +58,7 @@ const NoteContainerList = () => {
   }, [culture.calendarType]);
 
   return (
-    <WomenPageLayout
+    <MainPageLayout
       paddingTop={0}
       rightElement="BackButton"
       rightElementScript="یادداشت ها"
@@ -105,7 +105,7 @@ const NoteContainerList = () => {
           </div>
         </div>
       )}
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

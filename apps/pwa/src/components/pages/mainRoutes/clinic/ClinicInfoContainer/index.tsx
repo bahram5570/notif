@@ -1,4 +1,4 @@
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 
 import ClinicDoctorModal from '../ClinicDoctorModal';
 import ClinicInfoSkeleton from './ClinicInfoSkeleton';
@@ -11,10 +11,10 @@ const ClinicInfoContainer = ({ clinicInfo }: ClinicInfoProps) => {
 
   return (
     <>
-      <WomenPageLayout rightElement="BackButton" rightElementScript={data?.info.name} paddingTop={0}>
+      <MainPageLayout rightElement="BackButton" rightElementScript={data?.info.name} paddingTop={0}>
         {isLoading && <ClinicInfoSkeleton />}
         {!isLoading && data && <ContentsContainer data={data} />}
-      </WomenPageLayout>
+      </MainPageLayout>
 
       <ClinicDoctorModal />
     </>

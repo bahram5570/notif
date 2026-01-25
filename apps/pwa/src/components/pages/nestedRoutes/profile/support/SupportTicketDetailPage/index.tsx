@@ -1,6 +1,6 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 
 import ChatsMessagesContainer from './ChatsMessagesContainer';
 import ChatFooter from './ChatsMessagesContainer/ChatFooter';
@@ -12,7 +12,7 @@ const SupportTicketDetailPage = () => {
 
   return (
     <>
-      <WomenPageLayout rightElement="BackButton" rightElementScript="تیکت به پشتیبانی">
+      <MainPageLayout rightElement="BackButton" rightElementScript="تیکت به پشتیبانی">
         {isLoading && <SupportTicketDetailSkeleton />}
         {!isLoading && (
           <>
@@ -25,7 +25,7 @@ const SupportTicketDetailPage = () => {
             )}
           </>
         )}
-      </WomenPageLayout>
+      </MainPageLayout>
     </>
   );
 };

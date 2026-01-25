@@ -1,4 +1,4 @@
-import LogoutIcon from '@assets/icons/logout.svg';
+import LogoutIcon from '@assets/icons/profile/logout.svg';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';

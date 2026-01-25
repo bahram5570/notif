@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import useOverflowHandler from '@hooks/useOverflowHandler';
 
 import ShareExperienceNewContinueBtn from './ShareExperienceNewContinueBtn';
@@ -58,7 +58,7 @@ const ShareExperienceNewExerciseModalContainer = ({
 
   return (
     <>
-      <WomenPageLayout rightElement="BackButton" rightElementScript="تجربه جدید" paddingTop={0}>
+      <MainPageLayout rightElement="BackButton" rightElementScript="تجربه جدید" paddingTop={0}>
         <div className="flex flex-col h-[100dvh] overflow-y-auto" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
           <ShareExperienceNewTopPart avatarImage={avatarImage} text={text} username={username} />
 
@@ -76,7 +76,7 @@ const ShareExperienceNewExerciseModalContainer = ({
 
           <ShareExperienceNewContinueBtn text={text} btnTop={btnTop} />
         </div>
-      </WomenPageLayout>
+      </MainPageLayout>
 
       <ShareExperienceNewTopics
         topicId={topicId}

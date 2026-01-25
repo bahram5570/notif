@@ -1,6 +1,6 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import QuestionCheckupItem from './QuestionCheckupItem';
@@ -13,7 +13,7 @@ const CheckupQuestionListContainer = () => {
   const questionCheckupItemList: ItemType[] = (questionItems && JSON.parse(questionItems)) || [];
 
   return (
-    <WomenPageLayout
+    <MainPageLayout
       rightElement="BackButton"
       rightElementScript={questionTitle || ''}
       className="px-3 bg-impo_Neutral_Surface"
@@ -23,7 +23,7 @@ const CheckupQuestionListContainer = () => {
           return <QuestionCheckupItem key={index} {...item} lastIndex={questionCheckupItemList.length === index} />;
         })}
       </div>
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

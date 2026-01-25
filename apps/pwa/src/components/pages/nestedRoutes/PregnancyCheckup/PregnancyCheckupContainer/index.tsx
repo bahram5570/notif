@@ -1,7 +1,7 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useAnalytics from '@hooks/useAnalytics';
@@ -18,7 +18,7 @@ const PregnancyCheckupContainer = () => {
   const hasData = data && data.segments.length > 0;
 
   return (
-    <WomenPageLayout
+    <MainPageLayout
       rightElement="PregnancyCheckupBackButton"
       rightElementScript="آزمایش و مراقبت‌های بارداری"
       paddingTop={0}
@@ -55,7 +55,7 @@ const PregnancyCheckupContainer = () => {
           </div>
         </div>
       )}
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

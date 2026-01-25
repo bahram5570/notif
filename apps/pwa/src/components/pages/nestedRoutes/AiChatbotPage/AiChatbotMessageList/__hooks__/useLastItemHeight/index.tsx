@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 
 import { UseLastItemHeightPropsType } from './type';
 

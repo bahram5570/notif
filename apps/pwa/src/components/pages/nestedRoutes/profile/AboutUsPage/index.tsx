@@ -1,6 +1,6 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 import Dark_Typography from '@components/ui/Dark_Typography';
 
 import LinkGenerator from './LinkGenerator';
@@ -8,7 +8,7 @@ import { LINK_SOCIAL_LIST } from './constants';
 
 const AboutUsPage = () => {
   return (
-    <WomenPageLayout
+    <MainPageLayout
       paddingTop={0}
       rightElement="BackButton"
       rightElementScript="درباره ما"
@@ -55,7 +55,7 @@ const AboutUsPage = () => {
           })}
         </div>
       </div>
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

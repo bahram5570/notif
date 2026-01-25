@@ -5,9 +5,9 @@ import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import WidgetScaleModule from '../Widgets/WidgetScaleModule';
 import { HEADER_HEIGHT, iconsList } from './constants';
-import { HeaderProps } from './types';
+import { MainPageLayoutHeaderProps } from './types';
 
-const WomenPageLayoutHeader = (props: HeaderProps) => {
+const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
   const LeftElement1 = props.leftElement1 ? iconsList[props.leftElement1] : () => <></>;
   const LeftElement2 = props.leftElement2 ? iconsList[props.leftElement2] : () => <></>;
   const RightElement = props.rightElement ? iconsList[props.rightElement] : () => <></>;
@@ -52,4 +52,4 @@ const WomenPageLayoutHeader = (props: HeaderProps) => {
   );
 };
 
-export default WomenPageLayoutHeader;
+export default MainPageLayoutHeader;

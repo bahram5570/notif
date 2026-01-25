@@ -1,5 +1,5 @@
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
@@ -21,7 +21,7 @@ const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsMod
   useOverflowHandler(props.queryParam !== null);
 
   return (
-    <WomenPageLayout rightElement="BackButton" paddingTop={0}>
+    <MainPageLayout rightElement="BackButton" paddingTop={0}>
       <InfiniteScrollContainer
         height="100dvh"
         isLoading={isLoading}
@@ -66,7 +66,7 @@ const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsMod
           avatar={newCommentQueries?.avatar || ''}
         />
       )}
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

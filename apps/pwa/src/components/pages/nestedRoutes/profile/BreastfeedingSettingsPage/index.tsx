@@ -2,7 +2,7 @@
 
 import { Fragment } from 'react';
 
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 import Dark_Button from '@components/ui/Dark_Button';
 import { ChildTypeEnum } from '@constants/activation.constants';
 
@@ -18,7 +18,7 @@ const BreastfeedingSettingsPage = () => {
   const { submitHandler, isLoading } = useSubmit(values);
 
   return (
-    <WomenPageLayout
+    <MainPageLayout
       rightElement="BackButton"
       className="bg-impo_Neutral_Surface"
       rightElementScript="ویرایش اطلاعات زایمان"
@@ -54,7 +54,7 @@ const BreastfeedingSettingsPage = () => {
       </div>
 
       <BreastfeedingSettingModal changeValueHandler={changeValueHandler} value={values} />
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

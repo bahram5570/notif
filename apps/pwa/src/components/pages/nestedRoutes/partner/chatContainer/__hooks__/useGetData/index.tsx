@@ -7,7 +7,7 @@ import { ResponsePropsType } from './type';
 
 const useGetData = () => {
   const router = useRouter();
-  const { chatId } = useParams();
+  const chatId = useParams()?.chatId;
 
   const errorHandler = () => {
     router.replace('/not-found');

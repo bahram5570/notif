@@ -1,6 +1,6 @@
 import { HeaderIconEnums } from './enums';
 
-export type HeaderProps = {
+export type MainPageLayoutHeaderProps = {
   leftElement1?: keyof typeof HeaderIconEnums;
   leftElement2?: keyof typeof HeaderIconEnums;
   rightElement?: keyof typeof HeaderIconEnums;
@@ -11,7 +11,7 @@ export type HeaderProps = {
   className?: string;
 };
 
-export type WomenPageLayoutProps = HeaderProps & {
+export type MainPageLayoutProps = MainPageLayoutHeaderProps & {
   paddingBottom?: number | string;
   paddingTop?: number | string;
   children: React.ReactNode;

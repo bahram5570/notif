@@ -1,4 +1,4 @@
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 import Dark_Typography from '@components/ui/Dark_Typography';
 
 import TicketText from '../SupportTicketsListPage/TicketText';
@@ -9,7 +9,7 @@ const SupportTicketHistoryPage = () => {
   const { data, isLoading } = useGetData();
 
   return (
-    <WomenPageLayout
+    <MainPageLayout
       paddingBottom={96}
       rightElement="BackButton"
       rightElementScript="سابقه تیکت ها"
@@ -31,7 +31,7 @@ const SupportTicketHistoryPage = () => {
           )}
         </>
       )}
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

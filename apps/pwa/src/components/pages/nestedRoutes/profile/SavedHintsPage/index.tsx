@@ -1,7 +1,7 @@
 'use client';
 
+import MainPageLayout from '@components/MainPageLayout';
 import WidgetHintCardGenerator from '@components/Widgets/widgetGenerator/WidgetHintCard/WidgetHintCardGenerator';
-import WomenPageLayout from '@components/WomenPageLayout';
 
 import SavedHintsContainerSkeleton from './SavedHintsContainerSkeleton';
 import useGetData from './__hooks__/useGetData';
@@ -12,7 +12,7 @@ const SavedHintsPage = () => {
   const hasData = !isLoading && typeof data !== 'undefined';
 
   return (
-    <WomenPageLayout
+    <MainPageLayout
       rightElement="BackButton"
       rightElementScript="توصیه‌های ذخیره شده"
       className="px-4 bg-impo_Neutral_Surface"
@@ -28,7 +28,7 @@ const SavedHintsPage = () => {
           ))}
         </div>
       )}
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

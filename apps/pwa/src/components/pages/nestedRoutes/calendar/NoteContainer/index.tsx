@@ -2,8 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import OverlayBar from '@components/ui/OverlayBar';
@@ -48,7 +48,7 @@ const NoteContainer = () => {
       {getDataLoading && <NoteContainerSkeleton />}
 
       {!getDataLoading && (
-        <WomenPageLayout
+        <MainPageLayout
           paddingTop={0}
           rightElement="BackButton"
           rightElementScript="ثبت یادداشت"
@@ -78,7 +78,7 @@ const NoteContainer = () => {
           </div>
 
           <NoteModal noteValue={noteValue} onChangeHandler={onChangeHandler} />
-        </WomenPageLayout>
+        </MainPageLayout>
       )}
     </>
   );

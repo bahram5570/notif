@@ -6,8 +6,8 @@ import { useParams } from 'next/navigation';
 import useUpdateChatReactQuery from '../useUpdateChatReactQuery';
 
 const useTextValue = () => {
-  const { ticketId } = useParams();
   const [text, setText] = useState('');
+  const ticketId = useParams()?.ticketId;
   const { upgateHandler } = useUpdateChatReactQuery();
 
   const textHandler = (v: string) => {

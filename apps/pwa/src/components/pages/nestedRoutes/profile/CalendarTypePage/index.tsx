@@ -1,6 +1,6 @@
 'use client';
 
-import WomenPageLayout from '@components/WomenPageLayout';
+import MainPageLayout from '@components/MainPageLayout';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_RadioButton from '@components/ui/Dark_RadioButton';
 import Dark_Typography from '@components/ui/Dark_Typography';
@@ -15,7 +15,7 @@ const CalendarTypePage = () => {
   const { submitHandler, isLoading } = useCalendarTypeSubmit(selectedType);
 
   return (
-    <WomenPageLayout
+    <MainPageLayout
       paddingBottom={24}
       rightElement="BackButton"
       className="px-4 bg-impo_Neutral_Surface"
@@ -54,7 +54,7 @@ const CalendarTypePage = () => {
       >
         ویرایش
       </Dark_Button>
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 

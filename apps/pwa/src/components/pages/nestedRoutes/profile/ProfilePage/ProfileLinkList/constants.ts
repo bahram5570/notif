@@ -1,13 +1,13 @@
-import AboutUsIcon from '@assets/icons/aboutus.svg';
-import ChartIcon from '@assets/icons/chart.svg';
-import EditCycleIcon from '@assets/icons/edit-cycle.svg';
-import EditActivationIcon from '@assets/icons/editActivation.svg';
-import InterfaceCodeIcon from '@assets/icons/interfacecode.svg';
-import SaveIcon from '@assets/icons/save.svg';
-import SavedHintsIcon from '@assets/icons/savedHints.svg';
-import SupportIcon from '@assets/icons/support.svg';
-import UserIcon from '@assets/icons/user.svg';
-import PartnerIcon from '@assets/icons/widgetPartner.svg';
+import AboutUsIcon from '@assets/icons/profile/aboutus.svg';
+import ChartIcon from '@assets/icons/profile/chart.svg';
+import EditCycleIcon from '@assets/icons/profile/edit-cycle.svg';
+import EditActivationIcon from '@assets/icons/profile/editActivation.svg';
+import InterfaceCodeIcon from '@assets/icons/profile/interfacecode.svg';
+import SaveIcon from '@assets/icons/profile/profileSave.svg';
+import UserIcon from '@assets/icons/profile/profileUser.svg';
+import SavedHintsIcon from '@assets/icons/profile/savedHints.svg';
+import SupportIcon from '@assets/icons/profile/support.svg';
+import PartnerIcon from '@assets/icons/profile/widgetPartner.svg';
 
 import { ProfileLinkListType } from '../ProfileLinkGenerator/type';
 

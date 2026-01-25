@@ -1,4 +1,4 @@
-import EditCycleIcon from '@assets/icons/edit-cycle.svg';
+import ProfileThemeIcon from '@assets/icons/profile/theme.svg';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import Dark_Typography from '@components/ui/Dark_Typography';
@@ -29,7 +29,7 @@ const DarkModeSettings = () => {
         </Dark_Typography>
       </div>
 
-      <EditCycleIcon className="w-10 h-10" />
+      <ProfileThemeIcon className="w-10 h-10" />
     </div>
   );
 };

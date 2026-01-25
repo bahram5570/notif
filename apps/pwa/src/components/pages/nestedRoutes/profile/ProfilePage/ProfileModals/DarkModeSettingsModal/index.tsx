@@ -36,7 +36,7 @@ const DarkModeSettingsModal = () => {
                       `}
           >
             <div className="flex justify-center items-center w-12 h-12 border-[1px] border-impo_Surface_SurfaceVariant rounded-full">
-              <item.Icon className="w-full h-auto stroke-impo_Surface_Outline" />
+              <item.Icon className="w-full h-auto fill-impo_Surface_Outline" />
             </div>
 
             <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">

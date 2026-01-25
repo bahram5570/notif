@@ -1,10 +1,10 @@
-import WomenPageLayoutHeader from '@components/WomenPageLayout/WomenPageLayoutHeader';
+import MainPageLayoutHeader from '@components/MainPageLayout/MainPageLayoutHeader';
 
 import { CycleAppBarProps } from './types';
 
 const CycleAppBar = ({ date, appBarBackground }: CycleAppBarProps) => {
   return (
-    <WomenPageLayoutHeader
+    <MainPageLayoutHeader
       middleScript={date}
       leftElement1="Profile"
       rightElement="Calendar"

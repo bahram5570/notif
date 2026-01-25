@@ -1,5 +1,5 @@
-import WomenPageLayout from '@components/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import useOverflowHandler from '@hooks/useOverflowHandler';
 
 import DoctorInfo from '../DoctorInfo';
@@ -14,7 +14,7 @@ const ClinicDoctorModalContainer = ({ clinicInfo, drId }: SpecialistCommentsProp
   const { isLoading, doctorData, commentsData } = useGetData({ clinicInfo, drId });
 
   return (
-    <WomenPageLayout rightElement="BackButton" rightElementScript="متخصص" paddingTop={0}>
+    <MainPageLayout rightElement="BackButton" rightElementScript="متخصص" paddingTop={0}>
       <div className="w-full h-[100dvh] overflow-y-auto pb-10" style={{ paddingTop: HEADER_HEIGHT }}>
         {isLoading && <SpecialistCommentsSkeleton />}
 
@@ -34,7 +34,7 @@ const ClinicDoctorModalContainer = ({ clinicInfo, drId }: SpecialistCommentsProp
           </div>
         )}
       </div>
-    </WomenPageLayout>
+    </MainPageLayout>
   );
 };
 
