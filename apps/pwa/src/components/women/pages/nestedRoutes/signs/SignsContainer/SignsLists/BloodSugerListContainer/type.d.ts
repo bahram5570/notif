@@ -1,4 +1,4 @@
-import { BloodSugerType } from '@app/(women)/protected/(mainRoutes)/calendar/__hooks__/useCalendarGetData/types';
+import { BloodSugerType } from '@components/women/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
 
 export type BloodSugerListPropsType = {
   bloodSugerList: BloodSugerType[];

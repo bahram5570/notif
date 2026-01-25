@@ -19,8 +19,6 @@ import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 import Script from 'next/script';
 
-import D from './D';
-
 export const metadata: Metadata = {
   title: 'وب اپلیکیشن ایمپو',
   description: 'وب اپلیکیشن ایمپو',
@@ -62,7 +60,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         style={{ maxWidth: MAX_SCREEN_WIDTH, width: '100%', height: '100dvh', margin: 'auto' }}
       >
         <main>
-          <D />
           <ScrollToTopProvider />
 
           <AnalyticsProvider>

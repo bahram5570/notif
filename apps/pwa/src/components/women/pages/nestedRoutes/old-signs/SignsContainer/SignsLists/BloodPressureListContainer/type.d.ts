@@ -1,4 +1,4 @@
-import { BloodPressureType } from '@app/(women)/protected/(mainRoutes)/calendar/__hooks__/useCalendarGetData/types';
+import { BloodPressureType } from '@components/women/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
 
 export type BloodPressureListPropsType = {
   bloodPressureList: BloodPressureType[];

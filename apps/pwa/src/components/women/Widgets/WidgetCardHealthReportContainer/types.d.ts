@@ -1,9 +1,9 @@
-import { WidgetsButtonTypes } from '@app/(women)/protected/(mainRoutes)/widgetCommon';
+import { WidgetsButtonTypes } from '@providers/WidgetActionsProvider/widgetCommon';
 
 export interface WidgetCardHealthReportContainerProps {
-  button?: WidgetsButtonTypes;
-  children: React.ReactNode;
   title: string;
   classNameBtn?: string;
+  children: React.ReactNode;
+  button?: WidgetsButtonTypes;
   isPdfDownloading?: boolean | undefined;
 }
