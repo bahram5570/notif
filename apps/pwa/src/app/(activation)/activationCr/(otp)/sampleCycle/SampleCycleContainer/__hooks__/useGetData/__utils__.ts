@@ -1,6 +1,6 @@
 import { colorFormatConverter } from '@utils/scripts';
 
-import { CycleResponseTypes } from '@components/women/pages/mainRoutes/cycle/types';
+import { CycleResponseTypes } from '@components/pages/mainRoutes/cycle/types';
 import { WidgetsEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
 export const textColorFinder = (data: undefined | CycleResponseTypes) => {

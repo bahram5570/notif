@@ -1,4 +1,4 @@
-import EditActivationPageContainer from '@components/women/pages/nestedRoutes/profile/EditActivationPage';
+import EditActivationPageContainer from '@components/pages/nestedRoutes/profile/EditActivationPage';
 
 const EditActivation = () => {
   return <EditActivationPageContainer />;

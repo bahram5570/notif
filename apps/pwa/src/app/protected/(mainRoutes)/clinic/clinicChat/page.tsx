@@ -2,7 +2,7 @@
 
 import { Suspense } from 'react';
 
-import ClinicChatContainer from '@components/women/pages/mainRoutes/clinic/ClinicChatContainer';
+import ClinicChatContainer from '@components/pages/mainRoutes/clinic/ClinicChatContainer';
 
 const ClinicChat = () => {
   return (

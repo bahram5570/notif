@@ -1,4 +1,4 @@
-import EditPregnancyContainer from '@components/women/pages/nestedRoutes/EditPregnancyContainer/page';
+import EditPregnancyContainer from '@components/pages/nestedRoutes/EditPregnancyContainer/page';
 
 const EditPregnancy = () => {
   return <EditPregnancyContainer />;

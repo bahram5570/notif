@@ -1,4 +1,4 @@
-import CyclePage from '@components/women/pages/mainRoutes/cycle/CyclePage';
+import CyclePage from '@components/pages/mainRoutes/cycle/CyclePage';
 
 const Cycle = () => {
   return <CyclePage />;

@@ -1,4 +1,4 @@
-import PregnancyCheckupContainer from '@components/women/pages/nestedRoutes/PregnancyCheckup/PregnancyCheckupContainer';
+import PregnancyCheckupContainer from '@components/pages/nestedRoutes/PregnancyCheckup/PregnancyCheckupContainer';
 
 const pregnancyCheckup = () => {
   return <PregnancyCheckupContainer />;

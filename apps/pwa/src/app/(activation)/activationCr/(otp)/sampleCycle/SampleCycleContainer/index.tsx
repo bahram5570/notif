@@ -1,5 +1,5 @@
 import FakeCycleContainer from '@app/(activation)/activationCr/(goal)/fakeCycle/FakeCyclePageContainer/PageContainer/FakeCycleContainer';
-import CycleContainer from '@components/women/pages/mainRoutes/cycle/CycleContainer';
+import CycleContainer from '@components/pages/mainRoutes/cycle/CycleContainer';
 import useIsRendered from '@hooks/useIsRendered';
 
 import BottomPart from './BottomPart';

@@ -1,4 +1,4 @@
-import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
+import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
 
 import OnboardingContext from './OnboardingContext';
 import OnboardingImageSlider from './OnboardingImageSlider';

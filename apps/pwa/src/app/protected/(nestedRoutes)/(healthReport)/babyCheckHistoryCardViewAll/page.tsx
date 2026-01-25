@@ -1,4 +1,4 @@
-import BabyCheckHistoryCardViewAllContainer from '@components/women/pages/nestedRoutes/BabyCheckHistoryCardViewAllContainer';
+import BabyCheckHistoryCardViewAllContainer from '@components/pages/nestedRoutes/BabyCheckHistoryCardViewAllContainer';
 
 const BabyCheckHistoryCardViewAll = () => {
   return <BabyCheckHistoryCardViewAllContainer />;

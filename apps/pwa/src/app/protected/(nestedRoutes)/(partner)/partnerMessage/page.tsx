@@ -1,4 +1,4 @@
-import MessageContainer from '@components/women/pages/nestedRoutes/partner/MessageContainer';
+import MessageContainer from '@components/pages/nestedRoutes/partner/MessageContainer';
 
 const PartnerMessage = () => {
   return <MessageContainer />;

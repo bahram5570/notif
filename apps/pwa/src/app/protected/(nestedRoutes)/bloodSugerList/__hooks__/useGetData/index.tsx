@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
-import { CalendarWidgetEnums } from '@components/women/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/CalendarEnums';
+import { CalendarWidgetEnums } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/CalendarEnums';
 import {
   BloodSugerType,
   InfoCalendarResponseTypes,
   ItemsTypes,
-} from '@components/women/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
+} from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
 import useSignDateState from '@hooks/__sign__/useSignDateState';
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';

@@ -1,4 +1,4 @@
-import AddWeightContainer from '@components/women/pages/nestedRoutes/AddWeightContainer';
+import AddWeightContainer from '@components/pages/nestedRoutes/AddWeightContainer';
 
 const addWeight = () => {
   return <AddWeightContainer />;

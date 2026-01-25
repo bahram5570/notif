@@ -1,9 +1,9 @@
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
 import ActivationBtn from '@components/activation/ActivationBtn';
+import CustomLink from '@components/pages/mainRoutes/partner/PartnerPage/CustomLink';
 import CustomModal from '@components/ui/CustomModal';
 import Dark_Typography from '@components/ui/Dark_Typography';
-import CustomLink from '@components/women/pages/mainRoutes/partner/PartnerPage/CustomLink';
 import { ACTIVATION_INTERFACE_CODE } from '@constants/activation.constants';
 import useOperatingSystem from '@hooks/useOperatingSystem';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';

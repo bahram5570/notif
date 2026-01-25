@@ -1,4 +1,4 @@
-import RoutinContainer from '@components/women/pages/nestedRoutes/routin/RoutinContainer';
+import RoutinContainer from '@components/pages/nestedRoutes/routin/RoutinContainer';
 
 const Routin = () => {
   return <RoutinContainer />;

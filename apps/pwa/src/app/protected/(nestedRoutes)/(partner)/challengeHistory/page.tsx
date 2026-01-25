@@ -1,4 +1,4 @@
-import HistoryContainer from '@components/women/pages/nestedRoutes/partner/HistoryContainer';
+import HistoryContainer from '@components/pages/nestedRoutes/partner/HistoryContainer';
 
 const ChallengeHistory = () => {
   return <HistoryContainer />;

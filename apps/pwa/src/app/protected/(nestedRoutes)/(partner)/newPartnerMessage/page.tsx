@@ -1,4 +1,4 @@
-import NewPartnerMessagePage from '@components/women/pages/nestedRoutes/partner/NewPartnerMessagePage';
+import NewPartnerMessagePage from '@components/pages/nestedRoutes/partner/NewPartnerMessagePage';
 
 const newPartnerMessage = () => {
   return <NewPartnerMessagePage />;

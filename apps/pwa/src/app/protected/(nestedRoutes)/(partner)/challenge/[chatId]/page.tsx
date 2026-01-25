@@ -1,4 +1,4 @@
-import ChatContainer from '@components/women/pages/nestedRoutes/partner/chatContainer';
+import ChatContainer from '@components/pages/nestedRoutes/partner/chatContainer';
 
 const Chat = () => {
   return <ChatContainer />;

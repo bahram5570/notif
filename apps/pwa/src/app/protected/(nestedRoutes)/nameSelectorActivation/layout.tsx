@@ -1,4 +1,4 @@
-import NameSelectorActivationLayout from '@components/women/pages/nestedRoutes/NameSelectors/nameSelectorActivation/NameSelectorActivationLayout';
+import NameSelectorActivationLayout from '@components/pages/nestedRoutes/NameSelectors/nameSelectorActivation/NameSelectorActivationLayout';
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   return (

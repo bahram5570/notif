@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic';
 
-const DynamicComponentWithNoSSR = dynamic(() => import('@components/women/pages/nestedRoutes/signs/SignsPage'), {
+const DynamicComponentWithNoSSR = dynamic(() => import('@components/pages/nestedRoutes/signs/SignsPage'), {
   ssr: false,
 });
 

@@ -1,4 +1,4 @@
-import UserInfoContainer from '@components/women/pages/nestedRoutes/profile/UserInfoPage';
+import UserInfoContainer from '@components/pages/nestedRoutes/profile/UserInfoPage';
 
 const UserInfo = () => {
   return <UserInfoContainer />;

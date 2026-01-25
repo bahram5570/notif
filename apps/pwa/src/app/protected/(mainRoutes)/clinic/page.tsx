@@ -1,6 +1,6 @@
 'use client';
 
-import ClinicContainer from '@components/women/pages/mainRoutes/clinic/ClinicContainer';
+import ClinicContainer from '@components/pages/mainRoutes/clinic/ClinicContainer';
 
 const Clinic = () => {
   return <ClinicContainer />;

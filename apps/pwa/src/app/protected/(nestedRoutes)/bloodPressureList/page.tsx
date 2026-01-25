@@ -1,7 +1,7 @@
 'use client';
 
-import WomenPageLayout from '@components/women/WomenPageLayout';
-import BloodPressureListContainer from '@components/women/pages/nestedRoutes/signs/SignsContainer/SignsLists/BloodPressureListContainer';
+import WomenPageLayout from '@components/WomenPageLayout';
+import BloodPressureListContainer from '@components/pages/nestedRoutes/signs/SignsContainer/SignsLists/BloodPressureListContainer';
 
 import ListSkeleton from './ListSkeleton';
 import useGetData from './__hooks__/useGetData';

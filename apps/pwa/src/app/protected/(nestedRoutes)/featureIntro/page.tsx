@@ -1,4 +1,4 @@
-import FeatureIntroPage from '@components/women/pages/nestedRoutes/FeatureIntroPage';
+import FeatureIntroPage from '@components/pages/nestedRoutes/FeatureIntroPage';
 
 const FeatureIntro = () => {
   return <FeatureIntroPage />;

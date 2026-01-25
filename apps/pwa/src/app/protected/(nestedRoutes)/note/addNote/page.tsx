@@ -1,4 +1,4 @@
-import NoteContainer from '@components/women/pages/nestedRoutes/calendar/NoteContainer';
+import NoteContainer from '@components/pages/nestedRoutes/calendar/NoteContainer';
 
 const AddNote = () => {
   return <NoteContainer />;

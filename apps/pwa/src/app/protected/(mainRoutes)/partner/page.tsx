@@ -1,4 +1,4 @@
-import PartnerPage from '@components/women/pages/mainRoutes/partner/PartnerPage';
+import PartnerPage from '@components/pages/mainRoutes/partner/PartnerPage';
 
 const Partner = () => {
   return <PartnerPage />;

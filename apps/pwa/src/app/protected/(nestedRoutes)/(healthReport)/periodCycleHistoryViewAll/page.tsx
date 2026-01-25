@@ -1,4 +1,4 @@
-import PeriodCycleHistoryViewAllContainer from '@components/women/pages/nestedRoutes/PeriodCycleHistoryViewAllContainer';
+import PeriodCycleHistoryViewAllContainer from '@components/pages/nestedRoutes/PeriodCycleHistoryViewAllContainer';
 
 const PeriodCycleHistoryViewAll = () => {
   return <PeriodCycleHistoryViewAllContainer />;

@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
+import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
 import DateModule from '@components/activation/DateModule';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
-import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import useAnalytics from '@hooks/useAnalytics';
 
 import useEditCycleDateIntervals from './__hooks__/useEditCycleDateIntervals';

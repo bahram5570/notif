@@ -1,4 +1,4 @@
-import MemoryDetailPage from '@components/women/pages/nestedRoutes/partner/Memory/MemoryDetailPage';
+import MemoryDetailPage from '@components/pages/nestedRoutes/partner/Memory/MemoryDetailPage';
 
 const MemoryDetail = () => {
   return <MemoryDetailPage />;

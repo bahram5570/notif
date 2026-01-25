@@ -1,4 +1,4 @@
-import SubscriptionPage from '@components/women/pages/nestedRoutes/subscription/SubscriptionPage';
+import SubscriptionPage from '@components/pages/nestedRoutes/subscription/SubscriptionPage';
 
 const Subscription = () => {
   return <SubscriptionPage />;

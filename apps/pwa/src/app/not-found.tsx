@@ -1,4 +1,4 @@
-import NotFoundPage from '@components/women/pages/nestedRoutes/NotFoundPage';
+import NotFoundPage from '@components/pages/nestedRoutes/NotFoundPage';
 
 const NotFound = () => {
   return <NotFoundPage />;

@@ -1,4 +1,4 @@
-import ChallengePage from '@components/women/pages/nestedRoutes/partner/ChallengePage';
+import ChallengePage from '@components/pages/nestedRoutes/partner/ChallengePage';
 
 const Challenge = () => {
   return <ChallengePage />;

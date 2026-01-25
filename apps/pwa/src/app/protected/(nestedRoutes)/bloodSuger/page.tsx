@@ -1,4 +1,4 @@
-import BloodSugerContainer from '@components/women/pages/nestedRoutes/BloodSugerContainer';
+import BloodSugerContainer from '@components/pages/nestedRoutes/BloodSugerContainer';
 
 const BloodSuger = () => {
   return <BloodSugerContainer />;

@@ -1,4 +1,4 @@
-import AiTopicsChatbotPage from '@components/women/pages/nestedRoutes/AiTopicsChatbotPage';
+import AiTopicsChatbotPage from '@components/pages/nestedRoutes/AiTopicsChatbotPage';
 
 const aiChatbotTopics = () => {
   return <AiTopicsChatbotPage />;

@@ -1,4 +1,4 @@
-import HealthReportContainer from '@components/women/pages/nestedRoutes/HealthReportContainer';
+import HealthReportContainer from '@components/pages/nestedRoutes/HealthReportContainer';
 
 const HealthReport = () => {
   return <HealthReportContainer />;

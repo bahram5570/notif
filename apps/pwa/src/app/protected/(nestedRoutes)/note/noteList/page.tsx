@@ -1,4 +1,4 @@
-import NoteContainerList from '@components/women/pages/nestedRoutes/calendar/NoteContainerList';
+import NoteContainerList from '@components/pages/nestedRoutes/calendar/NoteContainerList';
 
 const NoteList = () => {
   return <NoteContainerList />;

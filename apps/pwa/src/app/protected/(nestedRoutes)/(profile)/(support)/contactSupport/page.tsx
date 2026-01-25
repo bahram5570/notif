@@ -1,4 +1,4 @@
-import SupportChatContainer from '@components/women/pages/nestedRoutes/profile/support/ContactSupportPage';
+import SupportChatContainer from '@components/pages/nestedRoutes/profile/support/ContactSupportPage';
 
 const ContactSupport = () => {
   return <SupportChatContainer />;

@@ -1,4 +1,4 @@
-import CheckupQuestionContainer from '@components/women/pages/nestedRoutes/CheckupQuestionContainer';
+import CheckupQuestionContainer from '@components/pages/nestedRoutes/CheckupQuestionContainer';
 
 const CheckupQuestion = () => {
   return <CheckupQuestionContainer />;

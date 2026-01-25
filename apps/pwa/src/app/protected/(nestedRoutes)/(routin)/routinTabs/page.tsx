@@ -1,4 +1,4 @@
-import RoutinTabsPage from '@components/women/pages/nestedRoutes/routin/RoutinTabsPage';
+import RoutinTabsPage from '@components/pages/nestedRoutes/routin/RoutinTabsPage';
 
 const RoutinTabs = () => {
   return <RoutinTabsPage />;

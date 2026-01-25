@@ -1,4 +1,4 @@
-import TicketContainer from '@components/women/pages/nestedRoutes/profile/support/SupportTicketsListPage';
+import TicketContainer from '@components/pages/nestedRoutes/profile/support/SupportTicketsListPage';
 
 const Ticket = () => {
   return <TicketContainer />;

@@ -1,0 +1,66 @@
+'use client';
+
+import { useEffect, useRef, useState } from 'react';
+
+import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
+import Dark_Typography from '@components/ui/Dark_Typography';
+
+import ChatContainerSkeleton from './ChatContainerSkeleton';
+import ChatHeader from './ChatHeader';
+import Input from './Input';
+import MessageListContainer from './MessageListContainer';
+import useGetData from './__hooks__/useGetData';
+import useMessageList from './__hooks__/useMessageList';
+import useSubmit from './__hooks__/useSubmit';
+
+const ChatContainer = () => {
+  const [key, setKey] = useState(0);
+  const { data, isLoading } = useGetData();
+  const {
+    submitHandler,
+    data: newMessageData,
+    isLoading: submitLoading,
+  } = useSubmit({ resetChild: () => setKey((prev) => prev + 1) });
+
+  const { messageList, onChangeMessageListHandler, progressData } = useMessageList({
+    data,
+    newMessageData,
+    submitLoading,
+  });
+
+  const messageListRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (messageListRef.current) {
+      messageListRef.current.scrollIntoView({ behavior: 'smooth', block: 'end' });
+    }
+  }, [messageList]);
+
+  return (
+    <>
+      {isLoading && !data && <ChatContainerSkeleton />}
+      {!isLoading && data && (
+        <div className="w-full min-h-[100dvh] relative bg-impo_Neutral_Background">
+          <ChatHeader {...data} progress={progressData} />
+
+          <div
+            className=" flex relative z-0 flex-col overflow-y-auto  gap-5 pb-28 justify-center bg-[url('/assets/images/bg-chat.webp')] bg-contain dark:bg-none"
+            style={{ paddingTop: HEADER_HEIGHT + 90 }}
+            ref={messageListRef}
+          >
+            <div className="px-[10px] py-3 bg-impo_Neutral_Surface">
+              <Dark_Typography fontSize="Lable_Large" className="w-full text-center text-impo_Neutral_OnBackground">
+                {data.text}
+              </Dark_Typography>
+            </div>
+
+            <MessageListContainer messageList={messageList} partnerAvatar={data.partnerAvatar} />
+            <Input submitHandler={submitHandler} onChange={onChangeMessageListHandler} key={key} />
+          </div>
+        </div>
+      )}
+    </>
+  );
+};
+
+export default ChatContainer;

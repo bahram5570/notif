@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
+import WomenPageLayout from '@components/WomenPageLayout';
+import { HEADER_HEIGHT } from '@components/WomenPageLayout/constants';
 import DateModule from '@components/activation/DateModule';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
-import WomenPageLayout from '@components/women/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useActivationPregnancyTabs from '@hooks/__activation__/useActivationPregnancyTabs';
 import useProfileData from '@hooks/__profile__/useProfileData';

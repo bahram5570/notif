@@ -1,4 +1,4 @@
-import SavedHintsContainer from '@components/women/pages/nestedRoutes/profile/SavedHintsPage';
+import SavedHintsContainer from '@components/pages/nestedRoutes/profile/SavedHintsPage';
 
 const SavedHints = () => {
   return <SavedHintsContainer />;

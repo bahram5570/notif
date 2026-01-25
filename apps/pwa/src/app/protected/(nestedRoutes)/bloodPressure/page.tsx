@@ -1,4 +1,4 @@
-import BloodPressureContainer from '@components/women/pages/nestedRoutes/BloodPressureContainer';
+import BloodPressureContainer from '@components/pages/nestedRoutes/BloodPressureContainer';
 
 const BloodPressure = () => {
   return <BloodPressureContainer />;

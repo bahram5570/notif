@@ -1,4 +1,4 @@
-import PartnerSettingContainer from '@components/women/pages/nestedRoutes/profile/PartnerSettingPage';
+import PartnerSettingContainer from '@components/pages/nestedRoutes/profile/PartnerSettingPage';
 
 const Partner = () => {
   return <PartnerSettingContainer />;

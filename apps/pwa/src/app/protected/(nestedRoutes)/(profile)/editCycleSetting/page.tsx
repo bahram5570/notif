@@ -1,4 +1,4 @@
-import EditCycleContainer from '@components/women/pages/nestedRoutes/profile/EditCycleSettingPage';
+import EditCycleContainer from '@components/pages/nestedRoutes/profile/EditCycleSettingPage';
 
 const EditCycle = () => {
   return <EditCycleContainer />;

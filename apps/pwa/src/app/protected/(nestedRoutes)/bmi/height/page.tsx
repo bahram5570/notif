@@ -1,4 +1,4 @@
-import HeightContainer from '@components/women/pages/nestedRoutes/bmi/HeightContainer';
+import HeightContainer from '@components/pages/nestedRoutes/bmi/HeightContainer';
 
 const Height = () => {
   return <HeightContainer />;

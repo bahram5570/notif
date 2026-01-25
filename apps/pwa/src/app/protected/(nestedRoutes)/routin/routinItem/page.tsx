@@ -1,6 +1,6 @@
 'use client';
 
-import RoutinItemContainer from '@components/women/pages/nestedRoutes/routin/RoutinItemContainer';
+import RoutinItemContainer from '@components/pages/nestedRoutes/routin/RoutinItemContainer';
 
 const RoutinItem = () => {
   return <RoutinItemContainer />;

@@ -1,4 +1,4 @@
-import WeightbeforpregnancyContainer from '@components/women/pages/nestedRoutes/bmi/WeightbeforpregnancyContainer';
+import WeightbeforpregnancyContainer from '@components/pages/nestedRoutes/bmi/WeightbeforpregnancyContainer';
 
 const Weightbeforpregnancy = () => {
   return <WeightbeforpregnancyContainer />;

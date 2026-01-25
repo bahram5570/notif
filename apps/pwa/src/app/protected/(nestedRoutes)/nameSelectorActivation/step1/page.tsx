@@ -1,4 +1,4 @@
-import NameSelectorActivationStep1Page from '@components/women/pages/nestedRoutes/NameSelectors/nameSelectorActivation/NameSelectorActivationPages/NameSelectorActivationStep1Page';
+import NameSelectorActivationStep1Page from '@components/pages/nestedRoutes/NameSelectors/nameSelectorActivation/NameSelectorActivationPages/NameSelectorActivationStep1Page';
 
 const NameSelectorStep1 = () => {
   return (

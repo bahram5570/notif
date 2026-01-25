@@ -1,4 +1,4 @@
-import CalendarTypePage from '@components/women/pages/nestedRoutes/profile/CalendarTypePage';
+import CalendarTypePage from '@components/pages/nestedRoutes/profile/CalendarTypePage';
 
 const CalendarType = () => {
   return <CalendarTypePage />;

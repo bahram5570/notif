@@ -1,7 +1,7 @@
 import dynamic from 'next/dynamic';
 
 const DynamicComponentWithNoSSR = dynamic(
-  () => import('@components/women/pages/nestedRoutes/profile/IdentifictionCodePage'),
+  () => import('@components/pages/nestedRoutes/profile/IdentifictionCodePage'),
   {
     ssr: false,
   },

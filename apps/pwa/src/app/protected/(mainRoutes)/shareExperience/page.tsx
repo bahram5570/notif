@@ -1,4 +1,4 @@
-import ShareExperienceContainer from '@components/women/pages/mainRoutes/shareExperience/ShareExperienceContainer';
+import ShareExperienceContainer from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer';
 
 const ShareExperience = () => {
   return <ShareExperienceContainer />;

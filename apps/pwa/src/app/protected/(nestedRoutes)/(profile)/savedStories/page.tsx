@@ -1,4 +1,4 @@
-import SavedStoriesContainer from '@components/women/pages/nestedRoutes/profile/SavedStoriesPage';
+import SavedStoriesContainer from '@components/pages/nestedRoutes/profile/SavedStoriesPage';
 
 const SavedStories = () => {
   return <SavedStoriesContainer />;

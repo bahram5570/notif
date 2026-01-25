@@ -1,6 +1,6 @@
 'use server';
 
-import WomenFooter from '@components/women/WomenFooter';
+import WomenFooter from '@components/WomenFooter';
 
 const Layout = async ({ children }: { children: React.ReactNode }) => {
   return (

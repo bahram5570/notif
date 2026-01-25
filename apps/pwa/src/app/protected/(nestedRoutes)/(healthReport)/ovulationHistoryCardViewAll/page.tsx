@@ -1,4 +1,4 @@
-import OvulationHistoryCardViewAllContainer from '@components/women/pages/nestedRoutes/OvulationHistoryCardViewAllContainer';
+import OvulationHistoryCardViewAllContainer from '@components/pages/nestedRoutes/OvulationHistoryCardViewAllContainer';
 
 const OvulationHistoryCardViewAll = () => {
   return <OvulationHistoryCardViewAllContainer />;

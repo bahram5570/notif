@@ -1,4 +1,4 @@
-import StartPageContainer from '@components/women/pages/nestedRoutes/partner/StartPageContainer';
+import StartPageContainer from '@components/pages/nestedRoutes/partner/StartPageContainer';
 
 const partnerStart = () => {
   return <StartPageContainer />;

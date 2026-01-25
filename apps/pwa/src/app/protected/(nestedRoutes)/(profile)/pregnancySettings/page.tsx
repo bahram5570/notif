@@ -1,4 +1,4 @@
-import PregnancySettingsContainer from '@components/women/pages/nestedRoutes/profile/PregnancySettingsPage';
+import PregnancySettingsContainer from '@components/pages/nestedRoutes/profile/PregnancySettingsPage';
 
 const PregnancySettings = () => {
   return <PregnancySettingsContainer />;

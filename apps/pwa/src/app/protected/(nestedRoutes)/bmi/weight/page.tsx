@@ -1,4 +1,4 @@
-import WeightContainer from '@components/women/pages/nestedRoutes/bmi/WeightContainer';
+import WeightContainer from '@components/pages/nestedRoutes/bmi/WeightContainer';
 
 const Weight = () => {
   return <WeightContainer />;

@@ -1,4 +1,4 @@
-import AboutUsContainer from '@components/women/pages/nestedRoutes/profile/AboutUsPage';
+import AboutUsContainer from '@components/pages/nestedRoutes/profile/AboutUsPage';
 
 const AboutUs = () => {
   return <AboutUsContainer />;

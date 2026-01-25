@@ -1,4 +1,4 @@
-import NameSelectorPage from '@components/women/pages/nestedRoutes/NameSelectors/nameSelector/NameSelectorPage';
+import NameSelectorPage from '@components/pages/nestedRoutes/NameSelectors/nameSelector/NameSelectorPage';
 
 const NameSelectors = () => {
   return <NameSelectorPage />;

@@ -1,4 +1,4 @@
-import BreastfeedingSettingsContainer from '@components/women/pages/nestedRoutes/profile/BreastfeedingSettingsPage';
+import BreastfeedingSettingsContainer from '@components/pages/nestedRoutes/profile/BreastfeedingSettingsPage';
 
 const BreastfeedingSettings = () => {
   return <BreastfeedingSettingsContainer />;

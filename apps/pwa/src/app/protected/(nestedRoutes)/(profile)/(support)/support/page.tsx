@@ -1,4 +1,4 @@
-import SupportContainer from '@components/women/pages/nestedRoutes/profile/support/SupportPage';
+import SupportContainer from '@components/pages/nestedRoutes/profile/support/SupportPage';
 
 const Support = () => {
   return <SupportContainer />;

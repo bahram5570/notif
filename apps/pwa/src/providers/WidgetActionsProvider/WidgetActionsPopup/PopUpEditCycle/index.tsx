@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
+import WomenPageLayout from '@components/WomenPageLayout';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import WomenPageLayout from '@components/women/WomenPageLayout';
 import useAnalytics from '@hooks/useAnalytics';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
 
