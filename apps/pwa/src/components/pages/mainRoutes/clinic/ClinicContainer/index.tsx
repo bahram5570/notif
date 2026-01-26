@@ -1,7 +1,7 @@
 import { Suspense, useState } from 'react';
 
+import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import MainPageLayout from '@components/MainPageLayout';
-import { FOOTER_HEIGTH } from '@components/WomenFooter/constants';
 import Dark_Typography from '@components/ui/Dark_Typography';
 
 import ActiveTicketsHeading from './ActiveTicketsHeading';

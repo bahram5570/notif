@@ -27,23 +27,13 @@ const ShareExperienceNewCommentFooterModule = ({
     <div
       onClick={selectHandler}
       style={{ maxWidth: MAX_SCREEN_WIDTH }}
-      className="
-                  sticky 
-                  left-0 
-                  right-0 
-                  bottom-0 
-            
-
-                  flex flex-col
-                  gap-3
-                  z-30
-                "
+      className="sticky left-0 right-0 bottom-0 flex flex-col gap-3 z-30"
     >
       {toast && <ShareExperienceToast toastMessage={toast} />}
 
       {canSendComment && (
         <div
-          className=" w-full bg-impo_Neutral_Surface  flex  items-center  justify-between  px-5 "
+          className="w-full bg-impo_Neutral_Surface flex items-center justify-between px-5 "
           style={{ height: NEW_COMMENT_FOOTER_SIZE, maxWidth: MAX_SCREEN_WIDTH }}
         >
           <div className="w-fit px-3 py-1 rounded-full bg-impo_Primary_Primary select-none pointer-events-none">

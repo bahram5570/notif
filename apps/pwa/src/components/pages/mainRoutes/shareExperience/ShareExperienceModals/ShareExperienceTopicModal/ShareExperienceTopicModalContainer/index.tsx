@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import styles from '../../../styles.module.css';
 
-import { FOOTER_HEIGTH } from '@components/WomenFooter/constants';
+import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import useOverflowHandler from '@hooks/useOverflowHandler';

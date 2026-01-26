@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { FOOTER_HEIGTH } from '@components/WomenFooter/constants';
+import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';

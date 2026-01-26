@@ -1,4 +1,4 @@
-import { FOOTER_HEIGTH } from '@components/WomenFooter/constants';
+import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import Dark_Button from '@components/ui/Dark_Button';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 

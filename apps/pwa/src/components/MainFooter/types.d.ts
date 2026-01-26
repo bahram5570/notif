@@ -5,6 +5,6 @@ export interface PageIconsProps {
   url: string;
 }
 
-export interface ContainerProps {
+export interface MainFooterContainerProps {
   pathName: string;
 }

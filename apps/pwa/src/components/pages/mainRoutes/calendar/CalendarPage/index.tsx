@@ -1,6 +1,6 @@
+import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import { FOOTER_HEIGTH } from '@components/WomenFooter/constants';
 
 import CalendarContainer from '../CalendarContainer';
 import CalendarDraggingPanel from '../CalendarDraggingPanel';

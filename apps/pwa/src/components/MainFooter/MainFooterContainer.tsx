@@ -3,9 +3,9 @@ import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import PageIcons from './PageIcons';
 import { FOOTER_HEIGTH, FOOTER_PAGES_LIST } from './constants';
-import { ContainerProps } from './types';
+import { MainFooterContainerProps } from './types';
 
-const WomenFooterContainer = ({ pathName }: ContainerProps) => {
+const MainFooterContainer = ({ pathName }: MainFooterContainerProps) => {
   const { operatingSystem } = useOperatingSystem();
 
   const height = operatingSystem === 'ios' ? FOOTER_HEIGTH + 16 : FOOTER_HEIGTH;
@@ -27,4 +27,4 @@ const WomenFooterContainer = ({ pathName }: ContainerProps) => {
     </div>
   );
 };
-export default WomenFooterContainer;
+export default MainFooterContainer;

@@ -1,7 +1,7 @@
 import EditIcon from '@assets/icons/Edit.svg';
 import TrashIcon from '@assets/icons/trash.svg';
 
-import { FOOTER_HEIGTH } from '@components/WomenFooter/constants';
+import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';

@@ -4,7 +4,7 @@ import CameraIcon from '@assets/icons/Camera-1.svg';
 import GalleryIcon from '@assets/icons/gallery-1.svg';
 import imageCompression from 'browser-image-compression';
 
-import { FOOTER_HEIGTH } from '@components/WomenFooter/constants';
+import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import { FileInputTypes } from '@components/ui/FileInputManager/enum';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';

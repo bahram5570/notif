@@ -1,9 +1,9 @@
 'use client';
 
 import FeedbackModal from '@components/FeedbackModal';
+import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import { FOOTER_HEIGTH } from '@components/WomenFooter/constants';
 import RoutinCta from '@components/__routin__/RoutinCta';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';

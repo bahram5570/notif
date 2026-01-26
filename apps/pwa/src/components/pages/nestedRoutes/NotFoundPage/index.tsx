@@ -2,8 +2,8 @@
 
 import NotFoundIcon from '@assets/icons/404.svg';
 
+import MainFooterContainer from '@components/MainFooter/MainFooterContainer';
 import MainPageLayout from '@components/MainPageLayout';
-import WomenFooterContainer from '@components/WomenFooter/WomenFooterContainer';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import { LottieCanvas } from '@lib/LottieCanvas';
 
@@ -33,7 +33,7 @@ const NotFoundPage = () => {
           </Dark_Typography>
         </div>
       </div>
-      <WomenFooterContainer pathName={''} />
+      <MainFooterContainer pathName={''} />
     </MainPageLayout>
   );
 };

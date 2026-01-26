@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import CrossIcon from '@assets/icons/plus.svg';
 
-import { FOOTER_HEIGTH } from '@components/WomenFooter/constants';
+import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import { ClinicChatbotLayoutPropsType } from './type';

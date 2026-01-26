@@ -4,17 +4,17 @@ import { memo } from 'react';
 
 import { usePathname } from 'next/navigation';
 
-import WomenFooterContainer from './WomenFooterContainer';
+import MainFooterContainer from './MainFooterContainer';
 import { FOOTER_PAGES_LIST } from './constants';
 
-const WomenFooter = () => {
+const MainFooter = () => {
   const pathName = usePathname() || '';
 
   const hasFooter = FOOTER_PAGES_LIST.some(
     (item) => item.url.toLocaleLowerCase() === pathName.toLocaleLowerCase().split('?')[0],
   );
 
-  return <>{hasFooter && <WomenFooterContainer pathName={pathName} />}</>;
+  return <>{hasFooter && <MainFooterContainer pathName={pathName} />}</>;
 };
 
-export default memo(WomenFooter);
+export default memo(MainFooter);
