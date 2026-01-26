@@ -17,10 +17,10 @@ const DiscountCode = ({
   const { showDiscountInput, toggleShowHandler, code, codeHandler } = useDiscountCode();
 
   return (
-    <div className="w-full rounded-xl p-3 bg-impo_Surface_SurfaceVariant">
+    <div className="w-full rounded-xl p-3 bg-impo_Neutral_Surface">
       <div className="flex items-center justify-between">
         <PlusIcon
-          className="w-7 h-auto stroke-impo_Surface_Outline"
+          className="w-6 h-auto stroke-impo_Surface_Outline"
           style={{ rotate: showDiscountInput ? '45deg' : '0deg' }}
           onClick={toggleShowHandler}
         />
@@ -30,7 +30,7 @@ const DiscountCode = ({
             کد تخفیف خود را اینجا وارد کنید
           </Dark_Typography>
 
-          <DiscountCodeIcon className="w-6 h-auto stroke-impo_Surface_Outline" />
+          <DiscountCodeIcon className="w-7 h-7 stroke-impo_Surface_Outline" />
         </div>
       </div>
 

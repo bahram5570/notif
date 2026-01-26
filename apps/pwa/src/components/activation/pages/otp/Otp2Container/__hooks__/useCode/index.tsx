@@ -4,30 +4,21 @@ import { getFirebaseCookieToken } from '@utils/cookies';
 import { toEnglishNumbers } from '@utils/numbers';
 
 import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
 
-import { SuccessHandlerTypes, UseCodeProps } from './types';
+import { OtpDataResponseTypes, UseCodeProps } from './types';
 
 const useCode = ({ identity, isRegister }: UseCodeProps) => {
-  const toast = useCustomToast();
-
-  const successHandler: SuccessHandlerTypes = ({ result }) => {
-    if (result) {
-      toast.notifyToastHandler({ message: 'کد 6 رقمی ارسال شد' });
-    }
-  };
-
   const method = isRegister ? 'POST' : 'PUT';
   const payload = {
     token: '',
     phoneModel: '',
     deviceToken: getFirebaseCookieToken(),
     identity: toEnglishNumbers(identity || ''),
+    otpTypes: null,
   };
-  const api = isRegister ? 'customerAccount/GetIdentity' : 'customerAccount/setIdentity';
+  const api = isRegister ? 'CustomerAccount/v2/GetIdentity' : 'CustomerAccount/v2/setIdentity';
 
-  const { callApi } = useApi({
-    onSuccess: successHandler,
+  const { data, callApi, isLoading } = useApi<OtpDataResponseTypes>({
     method,
     api,
   });
@@ -38,11 +29,20 @@ const useCode = ({ identity, isRegister }: UseCodeProps) => {
     }
   }, [identity]);
 
-  const resetCodeHandler = () => {
+  const resetCodeHandler = (type: number) => {
+    const payload = {
+      token: '',
+      phoneModel: '',
+      deviceToken: getFirebaseCookieToken(),
+      identity: toEnglishNumbers(identity || ''),
+      otpTypes: type,
+    };
     callApi(payload);
   };
 
-  return { resetCodeHandler };
+  const otpInfo = data?.info;
+
+  return { resetCodeHandler, otpInfo, getDataLoading: isLoading };
 };
 
 export default useCode;

@@ -3,11 +3,10 @@ import { useEffect } from 'react';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import useCountDown from '@hooks/useCountDown';
 
-import { RESEND_CODE_TIME } from '../constants';
 import { CountDownProps } from './types';
 
-const CountDown = ({ resetCodeHandler }: CountDownProps) => {
-  const { count, startCounter } = useCountDown({ time: RESEND_CODE_TIME });
+const CountDown = ({ resetCodeHandler, waitMessage, waitTime }: CountDownProps) => {
+  const { count, startCounter } = useCountDown({ time: waitTime });
 
   useEffect(() => {
     startCounter();
@@ -21,7 +20,7 @@ const CountDown = ({ resetCodeHandler }: CountDownProps) => {
   const sec = String(count % 60).padStart(2, '0');
   const min = Math.floor(count / 60);
   const time = count > 0 ? `(${min}:${sec})` : '';
-  const script = `کد تایید رو دریافت نکردم ${time}`;
+  const script = ` ${waitMessage} ${time}`;
 
   const isTimeOut = count === 0;
 

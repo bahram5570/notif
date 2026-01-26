@@ -3,6 +3,9 @@ import { PageInfoStateTypes } from '@providers/__activation__/ActivationProvider
 export interface ActivationHeadingProps extends Pick<
   PageInfoStateTypes,
   'progressPercentage' | 'scripts' | 'orderOfQuestionScripts'
-> {}
+> {
+  banner?: string;
+  isShowLogo?: boolean;
+}
 
 export interface UsePercentageProps extends Pick<ActivationHeadingProps, 'progressPercentage'> {}

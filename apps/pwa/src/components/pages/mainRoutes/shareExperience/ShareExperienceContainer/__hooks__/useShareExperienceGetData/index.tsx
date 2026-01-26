@@ -20,12 +20,11 @@ const useShareExperienceGetData = () => {
     method: 'GET',
 
     // TODO: fix initial render and new comment modal
-    fetchOnMount: false,
   });
 
-  useEffect(() => {
-    callApi();
-  }, []);
+  // useEffect(() => {
+  //   callApi();
+  // }, []);
 
   const onSuccessNewHandler = () => {
     refetchQuery({ queryKey: ['shareExperience'] });

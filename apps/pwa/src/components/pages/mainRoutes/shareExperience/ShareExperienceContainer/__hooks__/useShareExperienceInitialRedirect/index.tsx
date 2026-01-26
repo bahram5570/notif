@@ -41,7 +41,7 @@ const useShareExperienceInitialRedirect = () => {
     }
 
     if (!redirectStorage) {
-      history.replaceState(null, '', '/protected/shareExperience');
+      // history.replaceState(null, '', '/protected/shareExperience');
     }
 
     return () => {

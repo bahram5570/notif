@@ -10,6 +10,8 @@ import Codes from './Codes';
 import CountDown from './CountDown';
 import EditLink from './EditIdentyLink';
 import LoginSuccess from './LoginSuccess';
+import OptionList from './OptionList';
+import Otp2Skeleton from './Otp2Skeleton';
 import useCode from './__hooks__/useCode';
 import useLogin from './__hooks__/useLogin';
 import useOtpInfo from './__hooks__/useOtpInfo';
@@ -27,7 +29,7 @@ const Otp2Container = ({
   const { identity, isPhone, isRegister, password } = useOtpInfo();
   const { otpStatus, otpStatusHandler } = useOtpStatus(applyOtpStatus);
 
-  const { resetCodeHandler } = useCode({ identity, isRegister });
+  const { resetCodeHandler, otpInfo, getDataLoading } = useCode({ identity, isRegister });
 
   const { loginHandler, loginLoading, isLoginSuccess } = useLogin({
     identity,
@@ -51,9 +53,8 @@ const Otp2Container = ({
     identity: toEnglishNumbers(identity || ''),
   });
 
-  const subtitle = `کد 6 رقمی ارسال شده به ${isPhone ? 'شماره' : 'ایمیل'} ${identity} رو وارد کن`;
   const customPageInfo = {
-    scripts: { title: 'کد عبور رو وارد کن', description: '', subtitle },
+    scripts: { title: otpInfo?.title || '', description: '', subtitle: otpInfo?.subTitle || '' },
     orderOfQuestionScripts: { title: 1, subtitle: 3, description: 2 },
     showContinueBtn: false,
     nextActivationList: {},
@@ -64,6 +65,7 @@ const Otp2Container = ({
 
   const isLoading = isValidateLoading || loginLoading || isRegisterLoading;
   const isLoginRegisterSuccess = isLoginSuccess || isRegisterSuccess;
+  const hasOptionList = otpInfo && otpInfo.options.length > 0;
 
   const { isRendered } = useIsRendered();
 
@@ -72,19 +74,43 @@ const Otp2Container = ({
   }
 
   return (
-    <MainActivationModule {...customPageInfo} className="pt-5" btnTestId="otp2">
-      <div className="flex flex-col items-center">
-        <Codes submitHandler={submitHandler} isLoading={isLoading} otpStatus={otpStatus} />
+    <>
+      {getDataLoading && !otpInfo && <Otp2Skeleton />}
+      {!getDataLoading && otpInfo && (
+        <MainActivationModule
+          {...customPageInfo}
+          className="pt-5"
+          btnTestId="otp2"
+          isShowLogo={false}
+          banner={otpInfo.banner}
+        >
+          <div className="flex flex-col items-center ">
+            <Codes submitHandler={submitHandler} isLoading={isLoading} otpStatus={otpStatus} />
 
-        <CountDown resetCodeHandler={resetCodeHandler} />
+            <CountDown
+              resetCodeHandler={() => {
+                resetCodeHandler(otpInfo.type);
+              }}
+              waitMessage={otpInfo.waitMessage}
+              waitTime={otpInfo.waitTime}
+            />
 
-        {!isLoading && !isLoginRegisterSuccess && <EditLink isPhone={isPhone ? true : false} />}
+            {!isLoading && !isLoginRegisterSuccess && <EditLink isPhone={isPhone ? true : false} />}
 
-        {isLoading && <Dark_Spinner className="border-impo_Primary_Primary" />}
+            {isLoading && <Dark_Spinner className="border-impo_Primary_Primary" />}
 
-        {isLoginRegisterSuccess && <LoginSuccess />}
-      </div>
-    </MainActivationModule>
+            {isLoginRegisterSuccess && <LoginSuccess />}
+            {hasOptionList && (
+              <OptionList
+                optionList={otpInfo.options}
+                resetCodeHandler={resetCodeHandler}
+                isValidateLoading={isLoading}
+              />
+            )}
+          </div>
+        </MainActivationModule>
+      )}
+    </>
   );
 };
 

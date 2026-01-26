@@ -1,22 +1,27 @@
 import useApi from '@hooks/useApi';
 import { useRouter } from 'next/navigation';
 
-import { UseSubmitProps } from './types';
+import { NewExperienceResponseType, UseSubmitProps } from './types';
 
 const useSubmit = ({ image, text, topicId, onSuccessNewHandler }: UseSubmitProps) => {
   const router = useRouter();
+  let toastMessage = '';
 
-  const successHandler = () => {
+  const successHandler = ({ toast, valid }: NewExperienceResponseType) => {
     router.back();
-    setTimeout(() => {
-      router.back();
-      onSuccessNewHandler();
-    }, 0);
+    if (valid) {
+      setTimeout(() => {
+        router.back();
+        onSuccessNewHandler();
+      }, 0);
+    } else {
+      toastMessage = toast;
+    }
   };
 
-  const { isLoading: isSubmitLoading, callApi } = useApi({
+  const { isLoading: isSubmitLoading, callApi } = useApi<NewExperienceResponseType>({
     api: 'shareeexperience/v3/experience',
-    onSuccess: successHandler,
+    onSuccess: (v) => successHandler(v),
     method: 'POST',
   });
 
@@ -24,7 +29,7 @@ const useSubmit = ({ image, text, topicId, onSuccessNewHandler }: UseSubmitProps
     callApi({ image, text, topicId });
   };
 
-  return { submitHandler, isSubmitLoading };
+  return { submitHandler, isSubmitLoading, toastMessage };
 };
 
 export default useSubmit;

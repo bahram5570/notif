@@ -5,3 +5,8 @@ export interface UseSubmitProps extends Pick<ShareExperienceNewExerciseModalCont
   image: string;
   text: string;
 }
+
+export type NewExperienceResponseType = {
+  toast: string;
+  valid: boolean;
+};

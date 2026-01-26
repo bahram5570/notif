@@ -11,6 +11,8 @@ export type MainActivationModuleProps = PageInfoStateTypes & {
   isLoading?: boolean;
   className?: string;
   btnTestId?: string;
+  banner?: string;
+  isShowLogo?: boolean;
 };
 
 export type PayloadHandlerTypes = (v: { [key in string]: string | number | boolean }) => void;
