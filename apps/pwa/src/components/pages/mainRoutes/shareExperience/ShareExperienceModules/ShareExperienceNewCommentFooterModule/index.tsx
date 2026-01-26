@@ -13,7 +13,7 @@ const ShareExperienceNewCommentFooterModule = ({
   queries,
   avatar,
   toast,
-  canSendComment,
+  canSendComment = true,
 }: ShareExperienceNewCommentFooterModuleProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
