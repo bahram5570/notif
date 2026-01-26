@@ -6,7 +6,7 @@ import { LottieJson } from '@lib/LottieJson';
 const AiChatbotMessageListLoading = () => {
   return (
     <div className="flex justify-start items-baseline" style={{ minHeight: `calc(100dvh - 360px )` }}>
-      <div className="flex items-center rounded-full !bg-white/40 dark:!bg-white/5  glass-card   pr-2 pl-4">
+      <div className="flex items-center rounded-full !bg-white/40   glass-card   pr-2 pl-4">
         <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
           دارم فکر میکنم...
         </Dark_Typography>

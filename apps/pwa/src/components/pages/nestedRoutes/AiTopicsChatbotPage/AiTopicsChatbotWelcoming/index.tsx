@@ -37,7 +37,7 @@ const AiTopicsChatbotWelcoming = ({ onUpdateKeyHandler }: TopicsChatbotWelcoming
     <>
       <AiChatbotWelcomingLayout updateTopHandler={updateTopHandler}>
         <div className="absolute mx-auto   left-0 right-0 bottom-0 px-5 " style={{ maxWidth: MAX_SCREEN_WIDTH, top }}>
-          <div className="px-6 flex flex-col gap-12  glass-card dark:!bg-white/5 shadow-lg rounded-[32px] pt-6 pb-8 ">
+          <div className="px-6 flex flex-col gap-12  glass-card  shadow-lg rounded-[32px] pt-6 pb-8 ">
             {isLoading && <TopicsChatbotWelcomingSkeleton />}
             {!isLoading && (
               <>

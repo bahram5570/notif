@@ -14,7 +14,7 @@ const AiChatbotLimitUploadMessage = ({
 
   return (
     <div className={` flex  justify-center items-end w-full ${isLimit ? 'pr-4' : 'pl-8'} `}>
-      <div className="glass-card flex justify-center items-center shadow-sm !bg-white/70 dark:!bg-white/5 rounded-[100px] px-4 py-1 h-10">
+      <div className="glass-card flex justify-center items-center shadow-sm !bg-white/70  rounded-[100px] px-4 py-1 h-10">
         <Dark_Typography fontSize="Body_Small" className="text-impo_Surface_InverseSurface">
           {isLimit ? `آپلود عکس : ${text} تا  ${currentDate} ظرفیت تمام شد` : `آپلود عکس : ( ${text} استفاده شد)`}
         </Dark_Typography>

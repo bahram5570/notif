@@ -25,7 +25,7 @@ const MoreActionMenuModals = () => {
     <CustomModal
       isOpen={isOpen}
       isSlidingMode={aiChatModalQueryName !== AiChatModalNameEnums.DeleteAiChat}
-      className={`${aiChatModalQueryName === AiChatModalNameEnums.DeleteAiChat && 'glass-card !bg-white/80 dark:!bg-white/20 !rounded-[32px]'}`}
+      className={`${aiChatModalQueryName === AiChatModalNameEnums.DeleteAiChat && 'glass-card !bg-white/80  !rounded-[32px]'}`}
     >
       <>
         {aiChatModalQueryName === AiChatModalNameEnums.DeleteAiChat && <DeleteChatModal onCloseModal={onCloseModal} />}

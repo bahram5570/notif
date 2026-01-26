@@ -20,7 +20,7 @@ body {
 }
 
 .glass-card {
-  @apply bg-white/10 backdrop-blur-[8px]  border border-white/30;
+  @apply bg-white/10 dark:!bg-[#2B2B2B80] backdrop-blur-[8px]  border border-white/30;
 }
 
 .glass-card-hover:hover {

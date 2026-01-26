@@ -52,7 +52,7 @@ const MoreActionsMenu = ({
       onClick={closeHandler}
     >
       <div
-        className=" p-4 py-6 rounded-3xl  backdrop-blur-[8px] border border-white shadow-lg absolute left-4 top-[70px] dark:!bg-white/10"
+        className=" p-4 py-6 rounded-3xl  backdrop-blur-[8px] border border-impo_Surface_SurfaceVariant shadow-lg absolute left-4 top-[70px] dark:!bg-white/10"
         style={{ backgroundColor: 'rgba(255, 255, 255, 0.64)' }}
         onClick={(e) => e.stopPropagation()}
       >

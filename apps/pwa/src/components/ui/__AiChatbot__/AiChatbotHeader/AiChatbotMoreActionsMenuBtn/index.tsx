@@ -16,7 +16,7 @@ const AiChatbotMoreActionsMenuBtn = ({ showSuggestionBtn, disableDeleteBtn }: Ai
   return (
     <>
       <div
-        className="flex justify-center items-center w-12 h-12 rounded-full glass-card !bg-white/70 dark:!bg-white/5 cursor-pointer shadow-sm"
+        className="flex justify-center items-center w-12 h-12 rounded-full glass-card !bg-white/70  cursor-pointer shadow-sm"
         onClick={closeHandler}
       >
         <DotIcon className="w-6 h-6 fill-impo_Surface_InverseSurface" />

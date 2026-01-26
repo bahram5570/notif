@@ -14,7 +14,7 @@ const AiChatbotBackBtn = () => {
   };
   return (
     <div
-      className="cursor-pointer flex justify-center items-center  w-12 h-12 rounded-full glass-card  !bg-white/70 dark:!bg-white/5  dark:!bg-white/5shadow-sm"
+      className="cursor-pointer flex justify-center items-center  w-12 h-12 rounded-full glass-card  !bg-white/70    shadow-sm"
       onClick={clickHandler}
     >
       {pageNavigationLoading === id && <Dark_Spinner className="!border-impo_Surface_Outline" size={28} />}

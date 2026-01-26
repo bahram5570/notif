@@ -18,7 +18,7 @@ const AiChatbotDeactiveMessage = ({ deactiveMessage, title, deactiveButton }: Ai
   };
 
   return (
-    <div className="flex flex-col  relative mx-4 my-3 rounded-3xl gap-3 p-4 glass-card !bg-white/60 dark:!bg-white/5">
+    <div className="flex flex-col  relative mx-4 my-3 rounded-3xl gap-3 p-4 glass-card !bg-white/60 ">
       <div className="flex flex-row-reverse ">
         <LottieJson animationData={chatbotJson} loop={false} autoPlay={false} className="w-14 h-14" />
 

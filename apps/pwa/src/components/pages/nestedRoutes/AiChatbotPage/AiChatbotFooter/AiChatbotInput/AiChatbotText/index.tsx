@@ -56,7 +56,7 @@ const AiChatbotText = ({ hintPromptText, isLoading, clickHandler, checkMultiLine
         ref={textRef}
         onFocus={handleFocus}
         placeholder={hintPromptText}
-        className={`w-full px-3 py-2 bg-transparent outline-none resize-none ${style.scroller} text-impo_Surface_InverseSurface bg-impo_Neutral_Surface`}
+        className={`w-full px-3 py-2 bg-transparent outline-none resize-none ${style.scroller} text-impo_Surface_InverseSurface placeholder:text-impo_Surface_InverseSurface bg-impo_Neutral_Surface`}
         style={{
           ...typographyFontStyles,
           direction: 'rtl',
