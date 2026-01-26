@@ -15,9 +15,7 @@ const CompleteRegisterCycleLoading = ({
 
   const completeHandler = async () => {
     // # Don't change the order
-    const updateduser = { ...fetchedUser };
-    updateduser.createdTime = Date.now();
-    await setUserCookie(updateduser);
+    await setUserCookie(fetchedUser);
 
     if (clearStorage) {
       sessionStorage.clear();

@@ -25,11 +25,6 @@ export type LoginResponseTypes = {
   calendarType: CalendarTypeEnum;
 };
 
-export interface HandleUserStatusTypes {
-  response: NextResponse;
-  userCookie: { name: string; value: string };
-}
-
 export interface HandleActivationCrLogginTypes {
   request: NextRequest;
   response: NextResponse;

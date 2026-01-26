@@ -1,4 +1,4 @@
-import { handleActivationCrLoggin, handleUserStatus } from '@services/loginServices';
+import { handleActivationCrLoggin } from '@services/loginServices';
 import { paymentStatusService } from '@services/paymentServices';
 import { handleReferralLinksService } from '@services/referralLinksServices';
 
@@ -90,9 +90,6 @@ export const middleware = async (request: NextRequest) => {
     if (isActivationPage) {
       return NextResponse.redirect(new URL('/protected/cycle', request.url));
     }
-
-    // # If the 'createdTime' of user cookie is passed, refetch the user data
-    return await handleUserStatus({ userCookie, response });
   }
 
   return response;

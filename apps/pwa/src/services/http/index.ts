@@ -20,13 +20,12 @@ export const testBaseUrl = BASE_URL_STAGE_SSL;
 
 const http = async <T>(props: HttpTypes) => {
   const result: HttpResultTypes<T> = { data: undefined, error: undefined };
+  const url = `${baseUrl}/${props.url}`;
 
   try {
     const { options } = await applyOptions(props);
-    const url = `${baseUrl}/${props.url}`;
 
-    const newOptions = { ...options } as any;
-    const res = await fetch(url, { ...newOptions });
+    const res = await fetch(url, { cache: 'no-store', ...(options as any) });
 
     if (!res.ok) {
       const status = res.status;

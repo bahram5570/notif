@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { cookieCreatedTime, getFirebaseCookieToken } from '@utils/cookies';
+import { getFirebaseCookieToken } from '@utils/cookies';
 import { toEnglishNumbers } from '@utils/numbers';
 
 import { UserCookieTypes } from '@actions/cookie.actions';
@@ -26,7 +26,6 @@ const useLogin = ({ identity, password, otpStatusHandler, onSubmitLogin }: UseLo
   const loginSuccessHandler: LoginSuccessHandlerTypes = (v) => {
     userCookieValue = {
       installationPurpose: { periodStatus: v.periodStatus, status: v.status },
-      createdTime: cookieCreatedTime(),
       identity: identity || '',
       password: password || '',
       cycleTheme: v.cycleTheme,

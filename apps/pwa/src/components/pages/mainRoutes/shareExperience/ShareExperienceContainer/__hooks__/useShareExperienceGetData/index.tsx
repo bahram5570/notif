@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
@@ -13,19 +13,12 @@ const useShareExperienceGetData = () => {
     setData(v);
   };
 
-  const { isLoading, callApi } = useApi<ShareExperienceResponseTypes>({
+  const { isLoading } = useApi<ShareExperienceResponseTypes>({
     queryKey: ['shareExperience'],
     api: 'shareeexperience/v3',
     onSuccess: successHandler,
     method: 'GET',
-
-    // TODO: fix initial render and new comment modal
-    fetchOnMount: false,
   });
-
-  useEffect(() => {
-    callApi();
-  }, []);
 
   const onSuccessNewHandler = () => {
     refetchQuery({ queryKey: ['shareExperience'] });

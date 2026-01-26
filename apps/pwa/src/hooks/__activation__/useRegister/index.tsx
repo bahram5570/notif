@@ -1,8 +1,6 @@
 import { useState } from 'react';
 
-import { CycleThemeEnum } from '@services/loginServices/enum';
 import { LoginResponseTypes } from '@services/loginServices/types';
-import { cookieCreatedTime } from '@utils/cookies';
 import { registerPayloadUpdater } from '@utils/register';
 
 import { UserCookieTypes } from '@actions/cookie.actions';
@@ -41,7 +39,6 @@ const useRegister = (payload: ActivationPayloadTypes, onCallBack?: (v: OtpStatus
         installationPurpose: { periodStatus: updatedPayload.periodStatus, status: updatedPayload.status },
         identity: updatedPayload.identity || '',
         password: updatedPayload.password || '',
-        createdTime: cookieCreatedTime(),
         cycleTheme: v.cycleTheme,
         loginId: v.loginId,
         token: v.token,

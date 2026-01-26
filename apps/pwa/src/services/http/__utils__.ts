@@ -1,20 +1,7 @@
 import { deleteUserCookie, getUserCookie, setCultureCookie } from '@actions/cookie.actions';
 import { CULTURE_INITIAL_VALUES } from '@providers/CultureProvider/constants';
 
-import { CacheTypes, HttpTypes, OptionsTypes } from './types';
-
-const cacheOptionsFinder = (props: HttpTypes) => {
-  let cacheOptions: CacheTypes = {};
-  const cache = props.cache || 'no-cache';
-
-  if (props.cache === 'force-cache') {
-    cacheOptions = { cache, revalidate: props.revalidate || 0 };
-  } else {
-    cacheOptions = { cache };
-  }
-
-  return { cacheOptions };
-};
+import { HttpTypes, OptionsTypes } from './types';
 
 const authTokenFinder = async () => {
   const user = await getUserCookie();
@@ -24,11 +11,9 @@ const authTokenFinder = async () => {
 };
 
 export const applyOptions = async (props: HttpTypes) => {
-  const { cacheOptions } = cacheOptionsFinder(props);
   const { Authorization } = await authTokenFinder();
 
   let options: OptionsTypes = { method: props.method || 'GET' };
-  options = props.contentType === 'multipart/form-data' ? { ...options } : { ...options, ...cacheOptions };
 
   let headers = {};
   headers = { ...headers, Authorization };

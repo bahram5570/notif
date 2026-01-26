@@ -3,8 +3,6 @@ import { useRef } from 'react';
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { toEnglishNumbers, toPersianNumbers } from '@utils/numbers';
 
-import styles from './styles.module.css';
-
 import useOperatingSystem from '@hooks/useOperatingSystem';
 
 import { ACTIVATION_INPUT_MODULE_ID } from '../ActivationHeading/constants';
@@ -50,7 +48,6 @@ const ActivationInputModule = (props: ActivationInputModuleProps) => {
                     text-center 
                     text-impo_Neutral_OnBackground
                     placeholder-impo_Surface_OutlineVariant
-                    ${styles.input}
                   `}
       />
     </>

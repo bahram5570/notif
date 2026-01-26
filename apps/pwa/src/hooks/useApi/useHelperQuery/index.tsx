@@ -19,12 +19,7 @@ const useHelperQuery = <T,>(props: UseHelperQueryProps<T>) => {
   };
 
   const queryFn = async () => {
-    const res = await http<T>({
-      revalidate: props.cache === 'force-cache' ? props.revalidate : undefined,
-      cache: props.cache,
-      url: props.api,
-      method: 'GET',
-    });
+    const res = await http<T>({ url: props.api, method: 'GET' });
 
     if (res.error) {
       throw res.error;
