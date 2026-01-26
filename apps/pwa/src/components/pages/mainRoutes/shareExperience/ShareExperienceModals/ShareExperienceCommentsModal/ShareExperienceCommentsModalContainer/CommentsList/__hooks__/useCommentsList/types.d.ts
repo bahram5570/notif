@@ -58,4 +58,6 @@ export type CommentsResponseTypes = {
   approvedProfile: boolean;
   comments: CommentsListTypes;
   state: ShareExperienceStateEnum;
+  toast: string;
+  canSendComment: boolean;
 };

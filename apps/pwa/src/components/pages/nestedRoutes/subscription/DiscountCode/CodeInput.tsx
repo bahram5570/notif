@@ -37,7 +37,7 @@ const CodeInput = ({
         </Dark_Button>
 
         <input
-          className="w-[220px] h-full border-[1px] rounded-full py-1.5 px-4 bg-impo_Surface_SurfaceVariant"
+          className="w-[220px] h-full border rounded-full py-1.5 px-4 bg-impo_Neutral_Surface text-impo_Neutral_OnBackground "
           onChange={(e) => codeHandler(e.target.value)}
         />
       </div>

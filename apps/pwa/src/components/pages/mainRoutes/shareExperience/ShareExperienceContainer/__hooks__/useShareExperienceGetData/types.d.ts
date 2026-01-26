@@ -4,6 +4,8 @@ export type ShareExperienceResponseTypes = {
   selfTitleText: string;
   inputText: string;
   text: string;
+  bannerMedia: string;
+  toastText: string;
   topics: {
     coverImage: string;
     inputText: string;

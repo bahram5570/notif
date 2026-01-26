@@ -18,7 +18,10 @@ const SuggestedTopicCard = (props: SuggestedTopicCardPropsType) => {
       <ChatbotBg className="rounded-3xl absolute top-0 left-0" />
       <div className="flex flex-col items-end gap-4 py-10 px-4">
         <div className="flex flex-row-reverse justify-start items-center w-full gap-2">
-          <CustomImage src={props.icon} height={40} width={40} />
+          <div className="w-10 h-10 rounded-full bg-impo_Surface_OnSurfaceVariant flex justify-center items-center">
+            <CustomImage src={props.icon} height={24} width={24} />
+          </div>
+
           <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_Background">
             {textShorter(props.title, 33)}
           </Dark_Typography>

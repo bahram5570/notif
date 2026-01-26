@@ -1,3 +1,4 @@
+import InfoIcon from '@assets/icons/info.svg';
 import ImpoIcon from '@assets/images/questionsImpo.svg';
 
 import Dark_Typography from '@components/ui/Dark_Typography';
@@ -14,7 +15,13 @@ import {
 import { ActivationHeadingProps } from './types';
 import usePercentage from './usePercentage';
 
-const ActivationHeading = ({ scripts, progressPercentage, orderOfQuestionScripts }: ActivationHeadingProps) => {
+const ActivationHeading = ({
+  scripts,
+  progressPercentage,
+  orderOfQuestionScripts,
+  isShowLogo,
+  banner,
+}: ActivationHeadingProps) => {
   const { isLargeScreen } = useActivationIsLargeScreen();
   const { maxWidth, progressBarSizes, rotate } = usePercentage({ progressPercentage });
 
@@ -29,7 +36,7 @@ const ActivationHeading = ({ scripts, progressPercentage, orderOfQuestionScripts
   return (
     <>
       <div
-        className="w-full flex justify-center pt-8 pointer-events-none z-10"
+        className={`w-full flex justify-center pt-8 pointer-events-none z-10 ${isShowLogo ? 'pt-0' : 'pt-8'}`}
         style={{
           maxWidth,
           height: mainHeight,
@@ -37,8 +44,8 @@ const ActivationHeading = ({ scripts, progressPercentage, orderOfQuestionScripts
           position: progressPercentage === undefined ? 'relative' : 'absolute',
         }}
       >
-        <div className="flex flex-col w-full mt-5">
-          {isLargeScreen && (
+        <div className="flex flex-col w-full  gap-3 justify-center mt-5">
+          {isLargeScreen && isShowLogo && (
             <ImpoIcon
               id={ACTIVATION_HEADING_ICON_ID}
               className="mx-auto duration-1000 z-10"
@@ -74,13 +81,21 @@ const ActivationHeading = ({ scripts, progressPercentage, orderOfQuestionScripts
               {scripts.subtitle}
             </Dark_Typography>
           </div>
+          {banner && (
+            <div className=" mx-4 mt-4">
+              <div className="flex flex-row-reverse items-start gap-2 bg-impo_Warning_WarininContainer rounded-lg px-3 py-3">
+                <InfoIcon className="w-6 h-auto stroke-impo_Warning_Warning" />
+                <Dark_Typography fontSize="Body_Small">{banner}</Dark_Typography>
+              </div>
+            </div>
+          )}
         </div>
 
         {!hasProgressBar && (
           <div className="absolute bottom-10 flex justify-center align-middle">
             <img
               alt="hollow"
-              src="/assets/images/coverHollow.png"
+              src="/assets/images/coverHollow.webp"
               className={`w-[100vw] max-w-[${MAX_SCREEN_WIDTH}] h-auto scale-[2.5] z-0 block dark:hidden`}
             />
 

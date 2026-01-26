@@ -30,6 +30,8 @@ const MainActivationModule = (props: MainActivationModuleProps) => {
         orderOfQuestionScripts={props.orderOfQuestionScripts}
         progressPercentage={props.progressPercentage}
         scripts={props.scripts}
+        banner={props.banner}
+        isShowLogo={props.isShowLogo}
       />
 
       <div

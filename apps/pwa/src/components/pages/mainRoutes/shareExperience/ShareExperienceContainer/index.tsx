@@ -2,6 +2,8 @@
 
 import MainPageLayout from '@components/MainPageLayout';
 
+import ShareExperienceBanner from '../ShareExperienceModules/ShareExperienceBanner';
+import ShareExperienceToast from '../ShareExperienceModules/ShareExperienceToast';
 import ShareExperienceAvatar from './ShareExperienceAvatar';
 import ShareExperienceCategories from './ShareExperienceCategories';
 import ShareExperienceExperiences from './ShareExperienceExperiences';
@@ -31,6 +33,7 @@ const ShareExperienceContainer = () => {
             <ShareExperienceNewLink />
 
             {topics && <ShareExperienceTopics topics={topics} />}
+            {data.bannerMedia && <ShareExperienceBanner bannerMedia={data.bannerMedia} />}
 
             {categories && selectedCategoryId && (
               <ShareExperienceCategories
@@ -38,6 +41,12 @@ const ShareExperienceContainer = () => {
                 selectedCategoryId={selectedCategoryId}
                 selectedCategoryIdHandler={selectedCategoryIdHandler}
               />
+            )}
+
+            {data.toastText && (
+              <div className="px-4 pb-4">
+                <ShareExperienceToast toastMessage={data.toastText} showCloseBtn />
+              </div>
             )}
 
             {selectedCategoryId && (

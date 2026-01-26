@@ -64,6 +64,8 @@ const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsMod
           queries={{ [SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME]: JSON.stringify(newCommentQueries) }}
           placeholder="نظرت رو درباره این تجربه بنویس"
           avatar={newCommentQueries?.avatar || ''}
+          toast={commentsData.toast}
+          canSendComment={commentsData.canSendComment}
         />
       )}
     </MainPageLayout>

@@ -12,11 +12,14 @@ const TopicCardItem = (props: TopicCardItemPropsType) => {
   };
 
   return (
-    <div className="glass-card !bg-white/30 dark:!bg-white/5 shadow-sm rounded-3xl p-4 flex flex-col h-full gap-3 relative">
+    <div className="glass-card !bg-white/30 dark:!bg-[#2B2B2B60] shadow-sm rounded-3xl p-4 flex flex-col h-full gap-3 relative">
       <div className="flex flex-col items-end gap-2">
-        <div className="flex justify-start items-start w-full">
-          <CustomImage src={props.icon} height={40} width={40} />
+        <div className="flex  justify-end items-end w-full">
+          <div className="w-10 h-10 rounded-full bg-impo_Surface_SurfaceVariant flex justify-center items-center">
+            <CustomImage src={props.icon} height={24} width={24} />
+          </div>
         </div>
+
         <div className="flex flex-col items-end gap-3">
           <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
             {textShorter(props.title, 35)}

@@ -22,7 +22,7 @@ const FeedbackToast = ({ toastData, visible }: FeedbackToastProps) => {
       >
         <Dark_Typography
           fontSize={toastData.toastWithDescription ? 'Title_Small' : 'Body_Small'}
-          className={`${toastData.toastWithDescription ? 'px-8 text-impo_Surface_InverseOnSurface' : 'text-impo_White'}`}
+          className={`${!toastData.toastWithDescription ? 'px-8 text-impo_Surface_InverseOnSurface' : 'text-impo_White'}`}
         >
           {toastData?.message}
         </Dark_Typography>

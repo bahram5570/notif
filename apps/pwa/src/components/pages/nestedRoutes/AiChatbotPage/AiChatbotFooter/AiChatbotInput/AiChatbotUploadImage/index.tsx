@@ -6,7 +6,7 @@ const AiChatbotUploadImage = ({ closeHandler, disableBtn }: AiChatbotUploadImage
   return (
     <>
       <div
-        className={`!w-14 !h-14 rounded-full glass-card !bg-white/60 dark:!bg-white/5 shadow-sm flex justify-center items-center ${disableBtn && 'pointer-events-none'}`}
+        className={`!w-14 !h-14 rounded-full glass-card !bg-white/60  shadow-sm flex justify-center items-center ${disableBtn && 'pointer-events-none'}`}
         onClick={closeHandler}
       >
         <UploadIcon

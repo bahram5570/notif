@@ -25,7 +25,7 @@ const SuggestionTopicChatModal = ({ onCloseModal }: CommenPropsType) => {
     <div className="flex flex-col gap-3">
       <div
         onClick={onCloseModal}
-        className="w-10 h-10  flex justify-center items-center rounded-full bg-impo_Surface_SurfaceVariant"
+        className="w-10 h-10  flex justify-center items-center rounded-full bg-impo_Neutral_Surface"
       >
         <CancelIcon className="w-6 h-auto stroke-impo_Surface_Outline" />
       </div>
@@ -40,7 +40,7 @@ const SuggestionTopicChatModal = ({ onCloseModal }: CommenPropsType) => {
           value={description}
           rows={4}
           onChange={valueHandler}
-          className="relative w-full rounded-xl p-2 border-[1px] outline-none resize-none mt-2 mb-1 border-impo_Neutral_Surface bg-impo_Neutral_Surface text-impo_Neutral_OnSurface"
+          className="relative w-full rounded-xl p-2 border-[1px] outline-none resize-none mt-2 mb-1 border-impo_Neutral_Surface bg-impo_Neutral_Surface text-impo_Neutral_OnSurface placeholder:text-impo_Surface_OutlineVariant"
         />
 
         <div

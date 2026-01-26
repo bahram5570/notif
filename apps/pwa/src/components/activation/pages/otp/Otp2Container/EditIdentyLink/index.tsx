@@ -14,9 +14,9 @@ const EditIdentyLink = ({ isPhone }: EditIdentyLinkProps) => {
     <Dark_Button
       onClick={backHandler}
       fontSize="Lable_Large"
-      className="!w-fit bg-impo_Pink border-impo_Pink text-impo_White"
+      className="!w-[200px] bg-impo_Primary_PrimaryContainer border-impo_Primary_PrimaryContainer mb-3 !text-impo_Black"
     >
-      {isPhone ? 'ویرایش شماره' : 'ویرایش ایمیل'}
+      {isPhone ? 'ویرایش شماره همراه' : 'ویرایش ایمیل'}
     </Dark_Button>
   );
 };

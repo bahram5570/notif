@@ -37,7 +37,7 @@ const UserMessage = (props: UserMessagePropsType) => {
 
       {hasText && (
         <div
-          className="!bg-white/50 dark:!bg-white/5 ml-auto glass-card max-w-72  py-4 flex justify-end items-end border border-impo_Grey_300"
+          className="!bg-white/50  ml-auto glass-card max-w-72  py-4 flex justify-end items-end border border-impo_Grey_300"
           style={{
             borderRadius: isMultiLine ? '32px 32px 4px 32px' : '100px 100px 4px 100px',
             wordBreak: 'break-word',

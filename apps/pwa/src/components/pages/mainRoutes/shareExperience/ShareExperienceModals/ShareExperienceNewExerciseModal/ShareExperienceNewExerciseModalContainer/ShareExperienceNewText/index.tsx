@@ -7,7 +7,7 @@ import styles from './styles.module.css';
 import { SHARE_EXPERIENCE_NEW_MAX_CHARACTERS } from '../constants';
 import { ShareExperienceNewTextProps } from './types';
 
-const ShareExperienceNewText = ({ text, textHandler }: ShareExperienceNewTextProps) => {
+const ShareExperienceNewText = ({ text, textHandler, placeholder }: ShareExperienceNewTextProps) => {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const valueHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -33,7 +33,7 @@ const ShareExperienceNewText = ({ text, textHandler }: ShareExperienceNewTextPro
       value={text}
       ref={textareaRef}
       onChange={valueHandler}
-      placeholder="تجربت رو اینجا بنویس..."
+      placeholder={placeholder}
       className={`bg-impo_Neutral_Background text-impo_Neutral_OnBackground ${styles.textarea}`}
     />
   );
