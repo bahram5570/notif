@@ -22,8 +22,24 @@ const UserInfoPage = () => {
   const { fetchProfileLoading, isModified, values, valuesHandler } = useValues();
 
   const RulerElement = (
-    <div className="w-12 h-12 min-w-12 min-h-12 flex items-start justify-center rounded-full px-[10px] py-2 overflow-hidden bg-impo_Blue_50 dark:bg-impo_Blue_900">
-      <RulerIcon className="fill-impo_Primary_Primary" style={{ width: '100%', height: 'auto' }} />
+    <div
+      className="
+                  w-12 
+                  h-12 
+                  min-w-12 
+                  min-h-12 
+                  flex 
+                  items-start 
+                  justify-center 
+                  rounded-full 
+                  px-[10px] 
+                  py-2 
+                  overflow-hidden 
+                  bg-impo_Blue_50 
+                  dark:bg-impo_Blue_900
+                "
+    >
+      <RulerIcon className="fill-impo_Primary_Primary w-full h-auto" />
     </div>
   );
 

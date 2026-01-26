@@ -11,7 +11,7 @@ const DoctorInfo = ({ firstName, lastName, image, speciliaty, nezamNumber }: Doc
       <Dark_Typography
         fontSize="Headline_Small"
         className="text-impo_Neutral_OnBackground pt-2"
-      >{`دکتر ${firstName} ${lastName}`}</Dark_Typography>
+      >{`${firstName} ${lastName}`}</Dark_Typography>
 
       <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnSurface">
         {speciliaty}

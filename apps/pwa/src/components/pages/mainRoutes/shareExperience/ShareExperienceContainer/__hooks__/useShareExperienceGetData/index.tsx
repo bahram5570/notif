@@ -18,6 +18,8 @@ const useShareExperienceGetData = () => {
     api: 'shareeexperience/v3',
     onSuccess: successHandler,
     method: 'GET',
+
+    // TODO: fix initial render and new comment modal
     fetchOnMount: false,
   });
 

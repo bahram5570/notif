@@ -25,12 +25,7 @@ const StoryPreview = ({ list, saveHandler }: StoryPreviewPorps) => {
 
   return (
     <>
-      <CustomModal
-        isFullScreen={true}
-        isOpen={isOpen}
-        // todo backgroundColor="#000000"
-        className="!p-0"
-      >
+      <CustomModal isOpen={isOpen} isFullScreen={true} className="!p-0">
         <>
           {isOpen && (
             <Swiper
