@@ -69,7 +69,7 @@ const ContentGenetic = async () => {
           آزمایش‌های تشخیصی، اطلاعات مشخص و قطعی در مورد اینکه آیا نوزاد یک اختلال ژنتیکی دارد ارائه می‌دهند. این
           آزمایش‌ها می‌توانند بسیاری از شرایط ژنتیکی ناشی از ناهنجاری‌های کروموزومی را شناسایی کنند و معمولاً به والدین
           اطلاع می‌دهند که آیا نوزادشان بیماری ژنتیکی خاصی دارد یا خیر. برای آشنایی با انواع
-          <CustomLink href="/genetic-testing" className="!text-impo_Primary_Primary">
+          <CustomLink href="/genetic-testing" className="!text-impo_Primary_Primary mx-[3px] inline-block">
             آزمایش ژنتیک
           </CustomLink>
           مقاله آن را می‌توانید مطالعه کنید.
@@ -84,7 +84,7 @@ const ContentGenetic = async () => {
             آزمایش ژنتیک قبل از به بارداری، با هدف ارزیابی خطر انتقال اختلالات ژنتیکی به فرزندان انجام می‌شود.
           </strong>
           این آزمایش‌ها به زوجین کمک می‌کنند تا قبل از
-          <CustomLink href="/trying-to-get-pregnant" className="!text-impo_Primary_Primary">
+          <CustomLink href="/trying-to-get-pregnant" className="!text-impo_Primary_Primary mx-[3px] inline-block">
             اقدام به بارداری
           </CustomLink>
           ، از وجود ژن‌های جهش‌یافته مرتبط با بیماری‌های ارثی در DNA خود آگاه شوند. با انجام این غربالگری، می‌توان
@@ -93,11 +93,11 @@ const ContentGenetic = async () => {
         <CustomTypography className="pt-4 pb-2 !text-impo_Neutral_OnBackground" tagType="p">
           این اطلاعات به زوج‌ها امکان می‌دهد تا با آگاهی کامل از خطرات احتمالی، تصمیمات بهتری در مورد فرزندآوری اتخاذ
           کنند و در صورت لزوم، از روش‌های کمک باروری مانند IVF
-          <CustomLink href="/ivf-assisted-reproduction" className="!text-impo_Primary_Primary">
+          <CustomLink href="/ivf-assisted-reproduction" className="!text-impo_Primary_Primary mx-[3px] inline-block">
             (آی وی اف)
           </CustomLink>
           همراه با تشخیص ژنتیکی قبل از
-          <CustomLink href="/bleeding-nesting" className="!text-impo_Primary_Primary">
+          <CustomLink href="/bleeding-nesting" className="!text-impo_Primary_Primary mx-[3px] inline-block">
             لانه‌گزینی
           </CustomLink>
           (PGT) برای کاهش خطر ابتلا به بیماری در فرزند خود استفاده کنند.
@@ -119,7 +119,7 @@ const ContentGenetic = async () => {
           </CustomTypography>
           <CustomTypography className="pt-4 pb-2 !text-impo_Neutral_OnBackground" tagType="p">
             این دسته شامل بیماری‌هایی مانند فیبروز سیستیک، کم‌خونی داسی‌شکل،
-            <CustomLink href="/thalassemia" className="!text-impo_Primary_Primary">
+            <CustomLink href="/thalassemia" className="!text-impo_Primary_Primary mx-[3px] inline-block">
               تالاسمی
             </CustomLink>
             بیماری تای-ساکس و دیستروفی عضلانی دوشن است. این بیماری‌ها ناشی از جهش در یک ژن خاص هستند.
@@ -170,11 +170,11 @@ const ContentGenetic = async () => {
         <CustomTypography className="pt-4 pb-2 !text-impo_Neutral_OnBackground" tagType="p">
           آزمایش ژنتیک قبل از اقدام به بارداری به طور خاص برای زوج‌هایی که در معرض خطر بیشتری برای انتقال اختلالات
           ژنتیکی به فرزندانشان هستند، توصیه می‌شود. به زوج‌هایی با سابقه خانوادگی اختلالات ژنتیکی،
-          <CustomLink href="/sterility" className="!text-impo_Primary_Primary">
+          <CustomLink href="/sterility" className="!text-impo_Primary_Primary mx-[3px] inline-block">
             ناباروری
           </CustomLink>
           ،
-          <CustomLink href="/abortion" className="!text-impo_Primary_Primary">
+          <CustomLink href="/abortion" className="!text-impo_Primary_Primary mx-[3px] inline-block">
             سقط جنین‌
           </CustomLink>
           های مکرر یا مرده‌زایی، توصیه می‌شود حتما این آزمایشات را انجام دهند. همچنین، افرادی که در یک گروه نژادی یا
@@ -185,7 +185,7 @@ const ContentGenetic = async () => {
           بارداری را انجام دهند. با این حال، حتی زوج‌هایی که هیچ سابقه خانوادگی یا عوامل خطر شناخته‌شده‌ای ندارند،
           می‌توانند از این آزمایش بهره‌مند شوند تا اطلاعات بیشتری در مورد سابقه سلامتی خود به دست آورند و از وجود ژن‌های
           ناقل بیماری‌های ژنتیکی آگاه شوند. برای آشنایی با لیست تمامی
-          <CustomLink href="/pre-pregnancy-tests" className="!text-impo_Primary_Primary">
+          <CustomLink href="/pre-pregnancy-tests" className="!text-impo_Primary_Primary mx-[3px] inline-block">
             آزمایشات قبل بارداری
           </CustomLink>
           ، مقاله آن را بهتر است مطالعه کنید.
@@ -309,7 +309,7 @@ const ContentGenetic = async () => {
         <div className="mt-4">
           <CustomLink
             href="https://www.ivf.com.au/blog/why-all-couples-should-consider-genetic-carrier-screening-prior-to-conceiving"
-            className="!text-impo_Primary_Primary"
+            className="!text-impo_Primary_Primary mx-[3px] inline-block"
             target="_blank"
           >
             IVF
@@ -318,7 +318,7 @@ const ContentGenetic = async () => {
         <div>
           <CustomLink
             href="https://www.uchicagomedicine.org/conditions-services/pregnancy-childbirth/high-risk-pregnancy-maternal-fetal-medicine/prenatal-diagnosis-genetics"
-            className="!text-impo_Primary_Primary"
+            className="!text-impo_Primary_Primary mx-[3px] inline-block"
             target="_blank"
           >
             uchicagomedicine

@@ -69,7 +69,7 @@ const Description = () => {
         </CustomTypography>
         <CustomTypography fontSize="Body_Large" className="pb-3 !text-impo_Neutral_OnBackground">
           اگه هنوز درمورد جنسیت فرزند عزیزت مطمئن نیستی، حتما راهنما انتخاب
-          <CustomLink href="/landing/iran-boy-name" className="!text-impo_Primary_Primary">
+          <CustomLink href="/landing/iran-boy-name" className="!text-impo_Primary_Primary mx-[3px] inline-block">
             اسم پسر ایرانی
           </CustomLink>
           رو امتحان کن تا نام‌های اصیل و با معنی زیبا رو از دست ندی.

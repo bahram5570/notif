@@ -4,7 +4,10 @@ const AlphabetContent = () => {
   return (
     <>
       اگه دوران بارداریتون رو سپری می‌کنین و
-      <CustomLink className="!text-impo_PrimaryMan_PrimaryMan" href="/pregnancy-symptoms-of-having-a-boy">
+      <CustomLink
+        className="!text-impo_PrimaryMan_PrimaryMan mx-[3px] inline-block"
+        href="/pregnancy-symptoms-of-having-a-boy"
+      >
         علائم صد در صد جنین پسر
       </CustomLink>
       رو دارین و دنبال یه اسم پسر فارسی زیبا و اصیل برای پسر کوچولوتون می‌گردین، بهترین روش اینه که از حروف الفبا شروع

@@ -10,11 +10,14 @@ const IntroductionSection = () => {
       <CustomTypography fontSize="Body_Large" className="!text-impo_Surface_InverseSurface">
         انتخاب اسم برای این فرشته کوچولو مسافر، یکی از شیرین‌ترین دغدغه‌های مامانای بارداره. بعضی‌ از پدر و مادرها تو
         تک‌تک
-        <CustomLink href="/pregnancy-symptoms" className="!text-impo_Primary_Primary">
+        <CustomLink href="/pregnancy-symptoms" className="!text-impo_Primary_Primary mx-[3px] inline-block">
           علائم بارداری
         </CustomLink>
         به دنبال
-        <CustomLink href="/pregnancy-symptoms-of-having-a-boy" className="!text-impo_Primary_Primary">
+        <CustomLink
+          href="/pregnancy-symptoms-of-having-a-boy"
+          className="!text-impo_Primary_Primary mx-[3px] inline-block"
+        >
           علائم صد در صد جنین پسر
         </CustomLink>
         و دختر می‌گردن اما خیلی‌ها منتظر نتیجه سونوگرافی میمونن تا اسم مسافر کوچولوشونو انتخاب کنن.
@@ -30,12 +33,12 @@ const IntroductionSection = () => {
         این طوری هیچ انتخابی رو از دست نمیدی و هر اسمی که دلت رو برد، کافیه لایک کنی تا در لیست علاقه‌مندی‌هات ذخیره
         بشه. انتخاب نهایی اینطوری خیلی آسون‌تر می‌شه. اپلیکیشن ایمپو، همراه مطمئن و مهربون شما برای تمام لحظه‌های
         بارداری، از
-        <CustomLink href="/calendarOfPregnancy" className="!text-impo_Primary_Primary">
+        <CustomLink href="/calendarOfPregnancy" className="!text-impo_Primary_Primary mx-[3px] inline-block">
           محاسبه سن بارداری،
         </CustomLink>
         یادآوری آزمایشات و بررسی علائم تا انتخاب اسم فرشته کوچولوی شماست. اگه هنوز جنسیت فرزند زیبات مشخص نشده، پیشنهاد
         می‌کنیم راهنما انتخاب
-        <CustomLink href="/landing/boy-name" className="!text-impo_Primary_Primary">
+        <CustomLink href="/landing/boy-name" className="!text-impo_Primary_Primary mx-[3px] inline-block">
           اسم پسر
         </CustomLink>
         رو هم امتحان کنی.

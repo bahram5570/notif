@@ -35,7 +35,7 @@ const Description = () => {
 
       <CustomTypography fontSize="Body_Large" className="pb-3 !text-impo_Neutral_OnBackground">
         یکی از اولین چیزایی که مادر و پدر‌ها با اولین
-        <CustomLink href="/pregnancy-symptoms" className="!text-impo_PrimaryMan_PrimaryMan">
+        <CustomLink href="/pregnancy-symptoms" className="!text-impo_PrimaryMan_PrimaryMan mx-[3px] inline-block">
           علائم بارداری
         </CustomLink>
         به ذهنشون میاد، این که اسم بچم رو چی بذارم! اگه شما هم این دغدغه رو دارین، باید بگیم که اگرچه انتخاب اسم برای
@@ -50,7 +50,7 @@ const Description = () => {
       <TitleGenerator tagType="h3">اهمیت توجه به ریشه و معنی در انتخاب اسم پسر ایرانی</TitleGenerator>
       <CustomTypography fontSize="Body_Large" className="!text-impo_Neutral_OnBackground">
         اگه
-        <CustomLink href="/pregnancy-symptoms-of-having-a-girl" className="!text-impo_PrimaryMan_PrimaryMan">
+        <CustomLink href="/pregnancy-symptoms-of-having-a-girl" className="!text-impo_PrimaryMan_PrimaryMan mx-[3px] inline-block">
           علائم صد در صد جنین دختر
         </CustomLink>
         یا پسر دارین، حتماً به دنبال اسامی دختر و پسر زیبا و پر‌معنی هستین!
@@ -130,7 +130,7 @@ const Description = () => {
         <CustomTypography fontSize="Body_Large" className="!text-impo_Neutral_OnBackground">
           اوستایی، به زبان باستانی ایران اشاره داره که در متون مقدس زرتشتیان، به‌ویژه اوستا (کتاب مقدس آیین زرتشت)، به
           کار می‌رفته. بسیاری از اسم‌های اوستایی به مفاهیم معنوی و زرتشتی اشاره دارن و امروزه هم به‌عنوان اسم پسر و
-          <CustomLink href="/landing/iran-girl-name" className="!text-impo_PrimaryMan_PrimaryMan">
+          <CustomLink href="/landing/iran-girl-name" className="!text-impo_PrimaryMan_PrimaryMan mx-[3px] inline-block">
             اسم دختر ایرانی
           </CustomLink>
           اصیل شناخته میشن.

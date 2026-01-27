@@ -126,8 +126,7 @@ const TermsContainer = () => {
 
           <CustomTypography tagType="p" className="mb-10  block md:!text-[18px] !text-impo_Neutral_OnBackground">
             ورود کاربر و بهره‌گیری از پروفایل شخصی در نرم‌افزارهای کاربردی، تلفن همراه و سایر خدمات ارائه شده توسط
-            مجموعه به معنای آگاه بودن و پذیرفتن شرایط و قوانین و همچنین نحوه استفاده از سرویس‌‏ها و خدمات ایمپو
-            است.
+            مجموعه به معنای آگاه بودن و پذیرفتن شرایط و قوانین و همچنین نحوه استفاده از سرویس‌‏ها و خدمات ایمپو است.
           </CustomTypography>
           <CustomTypography tagType="p" className="mb-10  block md:!text-[18px] !text-impo_Neutral_OnBackground">
             کلیه اصول و رویه‏‌های ایمپو منطبق با قوانین جمهوری اسلامی ایران بوده و متعاقبا کاربر نیز موظف به رعایت
@@ -343,7 +342,6 @@ const TermsContainer = () => {
           </CustomTypography>
           <CustomTypography tagType="p" className="mb-10  block md:!text-[18px] !text-impo_Neutral_OnBackground">
             <strong>
-              
               • هرگونه بی احترامی به پزشک/مشاور برابر قانون، پیگرد قانونی خواهد داشت و نیز ارائه خدمات به فرد خاطی متوقف
               خواهد شد. چنان‌چه کاربر خدمت‌گیرنده به فحاشی، توهین و سایر رفتارهای خلاف قانون و اخلاق علیه کاربر
               خدمت‌دهنده اقدام کند، حق مراجعه کاربر خدمت‌دهنده به مراجع ذی‌صلاح محفوظ است. علاوه بر آن به دلیل وارد آمدن
@@ -431,8 +429,7 @@ const TermsContainer = () => {
           </CustomTypography>
           <CustomTypography tagType="p" className="mb-10  block md:!text-[18px] !text-impo_Neutral_OnBackground">
             • اطلاعات کاربری کلیه کاربران نزد کاربر خدمت‌دهنده محرمانه است و کاربر حق ندارد اطلاعات مربوط به حساب طرف
-            مقابل را (اعم از مشخصات هویتی، شماره تماس، آدرس، عکس و غیره) ذخیره یا منتشر کند و در دسترس دیگران قرار
-            دهد.
+            مقابل را (اعم از مشخصات هویتی، شماره تماس، آدرس، عکس و غیره) ذخیره یا منتشر کند و در دسترس دیگران قرار دهد.
           </CustomTypography>
           <CustomTypography tagType="p" className="mb-10  block md:!text-[18px] !text-impo_Neutral_OnBackground">
             • در ایمپو کاربر خدمت‌دهنده مختار است یک درخواست را بپذیرد یا رد کند. بنابراین، هر درخواستی که از سوی کاربر
@@ -457,8 +454,7 @@ const TermsContainer = () => {
           <CustomTypography tagType="p" className="mb-10  block md:!text-[18px] !text-impo_Neutral_OnBackground">
             • مشاوره آنلاین ایمپو علاوه بر سهولت دسترسی تمامی ایرانیان و همچنین کاربرانی که امکان مراجعه حضوری ندارند
             به‌منظوربرقراری ارتباط بین بیمار و پزشک/مشاور به جهت دریافت مشاوره یا درمان مقدماتی در سریع‌ترین زمانبه‌وجود
-            آمده است؛ لذا تاخیر در ارائه خدمات و به تعویق افتادن زمان مکالمه بیمار، مغایر با هدف و رویکرد ایمپو
-            است.
+            آمده است؛ لذا تاخیر در ارائه خدمات و به تعویق افتادن زمان مکالمه بیمار، مغایر با هدف و رویکرد ایمپو است.
           </CustomTypography>
           <CustomTypography tagType="h3" className="mb-10  block md:!text-[18px] !text-impo_Neutral_OnBackground">
             <u>2.5. سایر قوانین کلینیک </u>
@@ -669,7 +665,6 @@ const TermsContainer = () => {
           <CustomTypography tagType="p" className="mb-10  block md:!text-[18px] !text-impo_Neutral_OnBackground">
             <u>
               <strong>
-                
                 توجه: لازم به ذکر است در صورت احتمال سوء استفاده از سامانه، حق رهگیری و پیگیری قانونی مطابق با قوانین
                 جاری جمهوری اسلامی ایران برای ایمپو محفوظ است.
               </strong>
@@ -717,7 +712,7 @@ const TermsContainer = () => {
             محتوای ایمپو بر اساس منابع علمی معتبر نگارش و توسط تیم پزشکی ایمپو بازبینی علمی می‌شود. محتوای ایمپو فقط
             جنبه پزشکی دارد و جایگزین پزشک نیست. در شرایط اورژانسی فقط باید به مراکز درمانی مراجعه شود. برای آشنایی با
             فرآیند تولید محتوای ایمپو، صفحه
-            <CustomLink href={'/content-integrity'} className="!text-impo_Primary_Primary">
+            <CustomLink href={'/content-integrity'} className="!text-impo_Primary_Primary mx-[3px] inline-block">
               استانداردهای تولید محتوا
             </CustomLink>
             ایمپو را مطالعه کنید.
@@ -728,7 +723,7 @@ const TermsContainer = () => {
             <strong>مراقبت آگاهانه، محترمانه و همدلانه از کاربران است.</strong> از آن‌جا که بخشی از اطلاعاتی که در ایمپو
             ثبت می‌کنید به سلامت جسمی و احساسی شما مربوط می‌شود، ما خود را امانت‌دار این داده‌ها می‌دانیم. برای اطلاعات
             بیشتر صفحه
-            <CustomLink href={'/privacy-policy'} className="!text-impo_Primary_Primary">
+            <CustomLink href={'/privacy-policy'} className="!text-impo_Primary_Primary mx-[3px] inline-block">
               حریم خصوصی ایمپو
             </CustomLink>
             را می‌توانید مطالعه کنید.
