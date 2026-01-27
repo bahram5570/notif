@@ -3,4 +3,5 @@ export interface NewReplyBtnProps {
   isLoading: boolean;
   submitHandler: () => void;
   btnTop: number | undefined;
+  toast: string;
 }

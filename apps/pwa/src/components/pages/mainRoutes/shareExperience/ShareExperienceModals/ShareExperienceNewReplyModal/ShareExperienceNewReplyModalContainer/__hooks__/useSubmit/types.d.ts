@@ -23,4 +23,6 @@ export type NewReplyResponseTypes = {
 
 export type NewCommentResponseTypes = {
   commentId: string;
+  toast: string;
+  valid: boolean;
 };

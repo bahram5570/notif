@@ -21,15 +21,15 @@ const CommentsGeneratorBottomPart = (props: CommentsGeneratorBottomPartProps) =>
         shareId={props.id}
         type="comment"
       />
-
-      <ReplyBtn
-        commentId={props.shareId}
-        userId={props.userId}
-        avatar={props.avatar}
-        shareId={props.id}
-        name={props.name}
-        canSendComment={props.canSendComment}
-      />
+      {props.CanSendReply && (
+        <ReplyBtn
+          commentId={props.shareId}
+          userId={props.userId}
+          avatar={props.avatar}
+          shareId={props.id}
+          name={props.name}
+        />
+      )}
     </div>
   );
 };

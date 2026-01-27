@@ -12,10 +12,16 @@ import { NewCommentResponseTypes, NewReplyResponseTypes, UseSubmitProps } from '
 const useSubmit = ({ text, data }: UseSubmitProps) => {
   const router = useRouter();
   const { updateQuery, getQuery } = useCustomReactQuery();
+  let toast: string = '';
 
   const successHandler = (v: unknown) => {
     if (data.type === 'comment') {
       const response = v as NewCommentResponseTypes;
+
+      if (!response.valid) {
+        toast = response.toast;
+        return;
+      }
 
       const experiencesData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['experiences'] });
       if (experiencesData) {
@@ -75,7 +81,7 @@ const useSubmit = ({ text, data }: UseSubmitProps) => {
     callApi({ text });
   };
 
-  return { submitHandler, isLoading };
+  return { submitHandler, isLoading, toast };
 };
 
 export default useSubmit;

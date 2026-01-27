@@ -60,4 +60,5 @@ export type CommentsResponseTypes = {
   state: ShareExperienceStateEnum;
   toast: string;
   canSendComment: boolean;
+  CanSendReply: boolean;
 };

@@ -4,5 +4,4 @@ export interface ReplyBtnProps extends Pick<NewReplyQueriesTypes, 'name' | 'avat
   userId: string;
   shareId: string;
   commentId: string;
-  canSendComment: boolean;
 }

@@ -9,7 +9,7 @@ import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import { ReplyBtnProps } from './types';
 
-const ReplyBtn = ({ avatar, name, shareId, commentId, userId, canSendComment }: ReplyBtnProps) => {
+const ReplyBtn = ({ avatar, name, shareId, commentId, userId }: ReplyBtnProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
@@ -17,7 +17,6 @@ const ReplyBtn = ({ avatar, name, shareId, commentId, userId, canSendComment }: 
   const isLoading = pageNavigationLoading === loadingId;
 
   const clickHandler = () => {
-    if (!canSendComment) return;
     if (!isLoading) {
       const queries: NewReplyQueriesTypes = { name, avatar, type: 'reply', shareId, commentId, userId };
       const queryData = JSON.stringify(queries);
