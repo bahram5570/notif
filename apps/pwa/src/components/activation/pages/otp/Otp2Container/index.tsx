@@ -105,6 +105,7 @@ const Otp2Container = ({
                 optionList={otpInfo.options}
                 resetCodeHandler={resetCodeHandler}
                 isValidateLoading={isLoading}
+                otpStatus={otpStatus}
               />
             )}
           </div>

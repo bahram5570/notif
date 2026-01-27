@@ -29,7 +29,7 @@ const ShareExperienceNewFile = ({
           {!uploadImageLoading && (
             <div
               onClick={removeFileHandler}
-              className="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center bg-impo_Neutral_OnSurface"
+              className="absolute top-2 right-2 w-8 h-8 rounded-full flex items-center justify-center bg-impo_Neutral_Surface"
             >
               <CrossIcon className="w-7 h-auto rotate-45 stroke-impo_Neutral_OnBackground" />
             </div>

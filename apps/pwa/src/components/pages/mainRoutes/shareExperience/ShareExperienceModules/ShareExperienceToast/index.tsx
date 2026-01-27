@@ -14,7 +14,9 @@ const ShareExperienceToast = ({ toastMessage, showCloseBtn }: ShareExperienceToa
     return null;
   }
   return (
-    <div className="p-4 bg-impo_Warning_WarininContainer   items-center rounded-2xl flex justify-between">
+    <div
+      className={`p-4 bg-impo_Warning_WarininContainer   rounded-2xl flex items-center ${showCloseBtn ? 'justify-between' : 'justify-end'}`}
+    >
       {showCloseBtn && (
         <div onClick={() => setShowToast(false)} className="w-6 h-6 rounded-full flex items-center justify-center ">
           <CloseIcon className="w-4 h-auto rotate-45 stroke-impo_Grey_200 dark:stroke-impo_Grey_700" />

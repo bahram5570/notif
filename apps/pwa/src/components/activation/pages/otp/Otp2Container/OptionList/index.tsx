@@ -5,8 +5,11 @@ import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { OptionListPropsType } from './type';
 
-const OptionList = ({ optionList, resetCodeHandler, isValidateLoading }: OptionListPropsType) => {
+const OptionList = ({ optionList, resetCodeHandler, isValidateLoading, otpStatus }: OptionListPropsType) => {
   const onClick = (type: number) => {
+    if (otpStatus === 'correct') {
+      return;
+    }
     if (!isValidateLoading) {
       resetCodeHandler(type);
     }

@@ -28,6 +28,7 @@ const CommentsGeneratorBottomPart = (props: CommentsGeneratorBottomPartProps) =>
         avatar={props.avatar}
         shareId={props.id}
         name={props.name}
+        canSendComment={props.canSendComment}
       />
     </div>
   );
