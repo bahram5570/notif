@@ -2,15 +2,14 @@
 
 import { useEffect } from 'react';
 
-import posthog from 'posthog-js';
-import { PostHogProvider } from 'posthog-js/react';
+// import posthog from 'posthog-js';
+// import { PostHogProvider } from 'posthog-js/react';
 
 const AnalyticsProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     // if (process.env.NODE_ENV !== 'production') {
     //   return;
     // }
-
     // posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
     //   autocapture: false,
     //   api_host: '/ingest',
@@ -30,9 +29,11 @@ const AnalyticsProvider = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   return (
-    <PostHogProvider client={posthog}>
+    <>
+      {/* <PostHogProvider client={posthog}> */}
       <>{children}</>
-    </PostHogProvider>
+      {/* </PostHogProvider> */}
+    </>
   );
 };
 

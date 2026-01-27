@@ -3,7 +3,7 @@ import PaymentProvider from '@providers/PaymentProvider';
 import PermissionsProvider from '@providers/PermissionsProvider';
 import ProfileProvider from '@providers/ProfileProvider';
 import RetentionEventProvider from '@providers/RetentionEventProvider';
-import SentryProvider from '@providers/SentryProvider';
+// import SentryProvider from '@providers/SentryProvider';
 import SplashProvider from '@providers/SplashProvider';
 import SignDateStateProvider from '@providers/__sign__/SignDateStateProvider';
 import SignInteractiveBannerProvider from '@providers/__sign__/SignInteractiveBannerProvider';
@@ -11,7 +11,7 @@ import SignInteractiveBannerProvider from '@providers/__sign__/SignInteractiveBa
 const Layout = async ({ children }: { children: React.ReactNode }) => {
   return (
     <AddToHomeScreenProvider>
-      <SentryProvider />
+      {/* <SentryProvider /> */}
       <PaymentProvider />
       <PermissionsProvider />
       <RetentionEventProvider />
