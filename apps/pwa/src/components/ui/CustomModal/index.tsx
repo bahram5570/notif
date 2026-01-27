@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom';
 
 import { MAX_SCREEN_WIDTH, PORTAL_ID } from '@constants/app.constants';
 import useIsRendered from '@hooks/useIsRendered';
-import useTheme from '@hooks/useTheme';
 import { useRouter } from 'next/navigation';
 
 import useModalStatus from './__hooks__/useModalStatus';
@@ -15,13 +14,11 @@ const CustomModal = ({
   zIndex = MODAL_DEFAULT_Z_INDEX,
   isSlidingMode = false,
   isFullScreen = false,
-  backgroundColor,
   className,
   children,
   isOpen,
 }: CustomModalProps) => {
   const router = useRouter();
-  const { colors } = useTheme();
   const { isRendered } = useIsRendered();
   const { isDelayPassed } = useModalRendered();
   const { isModalOpen, isSlidingModeTrue } = useModalStatus({ isOpen, isSlidingMode });
@@ -78,7 +75,7 @@ const CustomModal = ({
           <div
             key={isModalOpen ? 'k1' : 'k2'}
             className={`
-                px-4 pt-6 pb-10 rounded-xl
+                px-4 pt-6 pb-10 rounded-xl bg-impo_Neutral_Background
                 ${!isSlidingModeTrue && !isModalOpen && 'animate-modalCenterModeClose'}
                 ${!isSlidingModeTrue && isModalOpen && 'animate-modalCenterModeOpen'}
                 ${isSlidingModeTrue && !isModalOpen && 'animate-modalSlidingModeClose'}
@@ -91,7 +88,6 @@ const CustomModal = ({
               minHeight: MODAL_MIN_SIZE,
               height: isFullScreen ? '100%' : 'fit-content',
               width: isFullScreen || isSlidingModeTrue ? '100%' : 'fit-content',
-              backgroundColor: typeof backgroundColor === 'undefined' ? colors.White : backgroundColor,
             }}
           >
             <>{children}</>

@@ -1,33 +1,36 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import useSampleCycleHeadingInfo from './__hooks__/useSampleCycleHeadingInfo';
 import { SAMPLE_CYCLE_HEADING_HEIGHT } from './constants';
 import { SampleCycleHeadingProps } from './types';
 
-const SampleCycleHeading = ({ textColor, payload }: SampleCycleHeadingProps) => {
+const SampleCycleHeading = ({ payload }: SampleCycleHeadingProps) => {
   const { headingInfo, todayScript } = useSampleCycleHeadingInfo({ payload });
 
   return (
     <>
       <div
-        className="absolute top-0 left-0 right-0 h-fit flex flex-col items-center justify-end gap-1 p-3 z-10"
-        style={{ minHeight: SAMPLE_CYCLE_HEADING_HEIGHT, backgroundColor: headingInfo.backgroundColor }}
+        style={{ minHeight: SAMPLE_CYCLE_HEADING_HEIGHT }}
+        className={`absolute top-0 left-0 right-0 h-fit flex flex-col items-center justify-end gap-1 p-3 z-10 ${headingInfo.backgroundColor}`}
       >
-        <Typography scale="Body" size="Large" textAlign="center" color="White">
+        <Dark_Typography fontSize="Body_Large" className="text-impo_White text-center">
           طبق اطلاعاتی که وارد کردی، ایمپو برات این پیش بینی رو کرده
-        </Typography>
+        </Dark_Typography>
 
-        <Typography scale="Body" size="Small" textAlign="center" color="FREE-STYLE" freeColor={headingInfo.textColor}>
+        <Dark_Typography fontSize="Body_Small" className={`text-center ${headingInfo.textColor}`}>
           {headingInfo.text}
-        </Typography>
+        </Dark_Typography>
       </div>
 
       <div style={{ height: SAMPLE_CYCLE_HEADING_HEIGHT }} />
 
-      <div className="absolute left-0 right-0 flex justify-center" style={{ top: SAMPLE_CYCLE_HEADING_HEIGHT + 30 }}>
-        <Typography scale="Lable" size="Medium" color="FREE-STYLE" freeColor={textColor}>
+      <div
+        className="absolute left-0 right-0 flex justify-center z-10"
+        style={{ top: SAMPLE_CYCLE_HEADING_HEIGHT + 30 }}
+      >
+        <Dark_Typography fontSize="Lable_Medium" className={`text-center text-impo_Neutral_OnBackground`}>
           {todayScript}
-        </Typography>
+        </Dark_Typography>
       </div>
     </>
   );

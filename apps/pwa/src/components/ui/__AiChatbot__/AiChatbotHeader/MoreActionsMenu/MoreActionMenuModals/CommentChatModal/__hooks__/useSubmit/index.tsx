@@ -1,16 +1,16 @@
 import useAichatbotHistoryManager from '@hooks/__aichatbot__/useAichatbotHistoryManager';
 import useApi from '@hooks/useApi';
-import { useToast } from '@providers/ToastProvider/CustomToastProvider';
+import useCustomToast from '@hooks/useCustomToast';
 import { useRouter } from 'next/navigation';
 
 const useSubmit = () => {
   const { itemIdData, categoryIdData, chatData } = useAichatbotHistoryManager();
-  const { showToast } = useToast();
+  const toast = useCustomToast();
   const route = useRouter();
 
   const successHandler = () => {
     route.back();
-    showToast({
+    toast.feedbackToastHandler({
       message: 'نظرت با موفقیت ثبت شد ✅',
       description: 'بازخوردت برامون خیلی مهمه و در آینده حتما بهبودش میدیم',
       duration: 4000,

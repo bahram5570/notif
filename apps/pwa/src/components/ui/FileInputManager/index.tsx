@@ -5,10 +5,8 @@ import CameraIcon from '@assets/icons/camera.svg';
 import GalleryIcon from '@assets/icons/gallery.svg';
 import imageCompression from 'browser-image-compression';
 
-import useTheme from '@hooks/useTheme';
-
-import Spinner from '../Spinner';
-import Typography from '../Typography';
+import Dark_Spinner from '../Dark_Spinner';
+import Dark_Typography from '../Dark_Typography';
 import { FileInputTypes } from './enum';
 import { FileInputHandlerTypes, FileInputManagerPropsType } from './type';
 
@@ -19,7 +17,6 @@ const FileInputManager = ({
   fileDataHandler,
   ShowFileInput,
 }: FileInputManagerPropsType) => {
-  const { colors } = useTheme();
   const [activeInput, setActiveInput] = useState<string | null>(null);
 
   const handleFileInput: FileInputHandlerTypes = (type) => async (e) => {
@@ -49,7 +46,7 @@ const FileInputManager = ({
   return (
     <>
       {ShowCameraInput && (
-        <div className=" p-2">
+        <div className="px-2 py-3 border-b border-b-impo_Neutral_Surface">
           <input
             type="file"
             accept="image/*"
@@ -58,27 +55,27 @@ const FileInputManager = ({
             capture="environment"
             onChange={handleFileInput(FileInputTypes.CAMERA)}
           />
+
           <label htmlFor="camera-input">
             <div className="flex justify-end items-center gap-2">
-              <Typography scale="Body" size="Large" color="Neutral_OnBackground">
+              <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
                 دوربین
-              </Typography>
-              <div
-                className="w-12 h-12 rounded-full flex justify-center items-center"
-                style={{ border: `1px solid ${colors.Surface_SurfaceVariant}` }}
-              >
+              </Dark_Typography>
+
+              <div className="w-12 h-12 border-[1px] border-impo_Surface_SurfaceVariant rounded-full flex justify-center items-center">
                 {uploadImageLoading && activeInput === FileInputTypes.CAMERA ? (
-                  <Spinner width={20} color="primary" />
+                  <Dark_Spinner size={20} className="border-impo_Primary_Primary" />
                 ) : (
-                  <CameraIcon className="w-10 h-10" style={{ stroke: colors.Surface_Outline }} />
+                  <CameraIcon className="w-10 h-10 stroke-impo_Surface_Outline" />
                 )}
               </div>
             </div>
           </label>
         </div>
       )}
+
       {ShowGalleryInput && (
-        <div className="p-2">
+        <div className={`px-2 py-3  ${ShowFileInput && 'border-b border-b-impo_Neutral_Surface'}`}>
           <input
             type="file"
             accept="image/*"
@@ -88,17 +85,15 @@ const FileInputManager = ({
           />
           <label htmlFor="gallery-input">
             <div className="flex justify-end items-center gap-2">
-              <Typography scale="Body" size="Large" color="Neutral_OnBackground">
+              <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
                 گالری
-              </Typography>
-              <div
-                className="w-12 h-12 rounded-full flex justify-center items-center"
-                style={{ border: `1px solid ${colors.Surface_SurfaceVariant}` }}
-              >
+              </Dark_Typography>
+
+              <div className="w-12 h-12 border-[1px] border-impo_Surface_SurfaceVariant rounded-full flex justify-center items-center">
                 {uploadImageLoading && activeInput === FileInputTypes.GALLERY ? (
-                  <Spinner width={20} color="primary" />
+                  <Dark_Spinner size={20} className="border-impo_Primary_Primary" />
                 ) : (
-                  <GalleryIcon className="w-5 h-5" style={{ stroke: colors.Surface_Outline }} />
+                  <GalleryIcon className="w-5 h-5 stroke-impo_Surface_Outline" />
                 )}
               </div>
             </div>
@@ -111,17 +106,15 @@ const FileInputManager = ({
           <input type="file" id="file-input" className="hidden" onChange={handleFileInput(FileInputTypes.FILE)} />
           <label htmlFor="file-input">
             <div className="flex justify-end items-center gap-2">
-              <Typography scale="Body" size="Large" color="Neutral_OnBackground">
+              <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
                 فایل
-              </Typography>
-              <div
-                className="w-12 h-12 rounded-full flex justify-center items-center"
-                style={{ border: `1px solid ${colors.Surface_SurfaceVariant}` }}
-              >
+              </Dark_Typography>
+
+              <div className="w-12 h-12 border-[1px] border-impo_Surface_SurfaceVariant rounded-full flex justify-center items-center">
                 {uploadImageLoading && activeInput === FileInputTypes.FILE ? (
-                  <Spinner width={20} color="primary" />
+                  <Dark_Spinner size={20} className="border-impo_Primary_Primary" />
                 ) : (
-                  <FileIcon className="w-5 h-5" style={{ stroke: colors.Surface_Outline }} />
+                  <FileIcon className="w-5 h-5 stroke-impo_Surface_Outline" />
                 )}
               </div>
             </div>

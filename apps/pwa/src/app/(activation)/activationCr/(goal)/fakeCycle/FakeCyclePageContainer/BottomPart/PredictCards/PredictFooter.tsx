@@ -1,38 +1,34 @@
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { PredictFooterProps } from './types';
 
 const PredictFooter = ({ btn, script, isPregnancy, openDatesHandler }: PredictFooterProps) => {
-  const { colors } = useTheme();
-
   return (
     <div
-      className={`pt-4 rounded-b-2xl overflow-hidden ${isPregnancy ? '-translate-y-2' : '-translate-y-4'}`}
-      style={{ backgroundColor: colors.Neutral_Background.toLowerCase() + 'b3' }}
+      className={`
+                  w-[calc(100%-32px)] 
+                  mx-auto 
+                  pt-4 
+                  rounded-b-2xl 
+                  overflow-hidden 
+                  bg-impo_Neutral_Background 
+                  ${isPregnancy ? '-translate-y-2' : '-translate-y-4'}
+                `}
     >
-      <div
-        className="w-full flex justify-between items-center gap-3 p-3"
-        style={{ backgroundColor: colors.PrimaryWoman_Primary }}
-      >
-        <Button
-          size="medium"
-          variant="fill"
-          fullWidth={false}
-          color="FREE-STYLES"
+      <div className="w-full flex justify-between items-center gap-3 p-3 bg-impo_Primary_Primary">
+        <Dark_Button
+          fontSize="Lable_Medium"
           onClick={openDatesHandler}
-          buttonColor={colors.White}
-          className="!min-w-fit px-2 py-3"
           navigationLoadingId="PredictFooter"
-          contentsColor={colors.PrimaryWoman_Primary}
+          className="!bg-impo_Primary_OnPrimary !text-impo_Black !w-fit !min-w-fit px-2 py-3"
         >
           {btn}
-        </Button>
+        </Dark_Button>
 
-        <Typography scale="Lable" size="Medium" color="Neutral_Background">
+        <Dark_Typography fontSize="Lable_Medium" className="text-impo_Primary_OnPrimary">
           {script}
-        </Typography>
+        </Dark_Typography>
       </div>
     </div>
   );

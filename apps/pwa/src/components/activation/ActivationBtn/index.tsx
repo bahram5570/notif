@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 
 import { ActivationBtnProps } from './types';
 
@@ -31,19 +31,17 @@ const ActivationBtn = (props: ActivationBtnProps) => {
     <div
       className={`w-full flex justify-center duration-200 ${props.showBtn ? 'translate-y-0' : 'translate-y-[50vh]'}`}
     >
-      <Button
+      <Dark_Button
         ref={btnRef}
-        size="medium"
-        variant="fill"
-        color="primary"
+        fontSize="Lable_Large"
         onClick={props.onClick}
-        isLoading={props.isLoading}
-        navigationLoadingId={props.navigationLoadingId}
-        style={{ minWidth: 'fit-content', width: props.width || '204px' }}
         testId={props.btnTestId}
+        isLoading={props.isLoading}
+        className="w-[204px] !min-w-fit"
+        navigationLoadingId={props.navigationLoadingId}
       >
         {props.children}
-      </Button>
+      </Dark_Button>
     </div>
   );
 };

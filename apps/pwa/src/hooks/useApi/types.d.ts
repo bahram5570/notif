@@ -1,6 +1,6 @@
-import { CacheTypes, HttpContentTypeTyps, MethodNameTypes } from '@services/http/types';
+import { HttpContentTypeTyps, MethodNameTypes } from '@services/http/types';
 
-type GetTypes<T> = CacheTypes & {
+type GetTypes<T> = {
   method: 'GET';
   initialData?: T;
   queryKey: [string];

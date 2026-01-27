@@ -8,16 +8,14 @@ import { CompleteRegisterCycleLoadingProps } from './types';
 
 const CompleteRegisterCycleLoading = ({
   createCycleImage,
-  fetchedUser,
   clearStorage,
+  fetchedUser,
 }: CompleteRegisterCycleLoadingProps) => {
   const { sequenceHandler } = useRouteSequence();
 
   const completeHandler = async () => {
     // # Don't change the order
-    const updateduser = { ...fetchedUser };
-    updateduser.createdTime = Date.now();
-    await setUserCookie(updateduser);
+    await setUserCookie(fetchedUser);
 
     if (clearStorage) {
       sessionStorage.clear();

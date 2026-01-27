@@ -1,24 +1,19 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import useSplashProgress from './__hooks__/useSplashProgress';
 import { SplashContentsProgressProps } from './types';
 
 const SplashContentsProgress = ({ splashStatushHandler, splashStatus }: SplashContentsProgressProps) => {
-  const { colors } = useTheme();
   const { progressPercent } = useSplashProgress({ splashStatushHandler, splashStatus });
 
   return (
     <div className="flex flex-col gap-1">
-      <Typography scale="Title" size="Small" color="Neutral_Background">{`${progressPercent}%`}</Typography>
+      <Dark_Typography fontSize="Title_Small" className="text-impo_White">{`${progressPercent}%`}</Dark_Typography>
 
-      <div
-        className="w-[140px] h-[8px] rounded-full p-[1px] overflow-hidden"
-        style={{ backgroundColor: colors.Neutral_Background }}
-      >
+      <div className="w-[140px] h-[8px] rounded-full p-[1px] bg-impo_White overflow-hidden">
         <div
-          className="w-full h-full rounded-full duration-100"
-          style={{ backgroundColor: colors.PrimaryWoman_Primary, maxWidth: `${progressPercent}%` }}
+          style={{ maxWidth: `${progressPercent}%` }}
+          className="w-full h-full rounded-full duration-100 bg-impo_Primary_Primary"
         />
       </div>
     </div>

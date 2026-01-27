@@ -1,0 +1,46 @@
+import { useState } from 'react';
+
+import { currentDate, toJalaliData } from '@utils/dates';
+
+import { NoteType } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
+import useSignDateState from '@hooks/__sign__/useSignDateState';
+import useApi from '@hooks/useApi';
+import moment from 'moment-jalaali';
+
+import { ResponsePropsType } from './type';
+
+const { gDate } = currentDate();
+
+const useGetData = () => {
+  const [currentNoteList, setCurrentNoteList] = useState<NoteType[]>();
+  const { calendarInitailSelectedDate } = useSignDateState();
+  const selectedDate = calendarInitailSelectedDate;
+
+  const currentDate = selectedDate ? moment(selectedDate, 'YYYY-MM-DD').format('YYYY-MM-DD HH:mm') : gDate;
+
+  const successHandler = (v: ResponsePropsType) => {
+    const noteList = v.items;
+    const hasNoteListData = noteList.length > 0;
+
+    if (hasNoteListData) {
+      const findCurrentNote = noteList.filter((note) => note.time === currentDate);
+      const noteListValue = findCurrentNote.map((note) => ({
+        ...note,
+        dateTime: toJalaliData(note.time),
+        files: note.fileName,
+      }));
+      setCurrentNoteList(noteListValue);
+    }
+  };
+
+  const { isLoading } = useApi<ResponsePropsType>({
+    api: 'date/note',
+    method: 'GET',
+    queryKey: ['NoteList'],
+    onSuccess: successHandler,
+  });
+
+  return { isLoading, currentNoteList };
+};
+
+export default useGetData;

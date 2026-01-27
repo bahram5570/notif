@@ -1,4 +1,4 @@
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ProfileItemGeneratorTypes } from './types';
 
@@ -9,13 +9,13 @@ const ProfileItemGenerator = ({ title, description, element, children }: Profile
         {element}
 
         <div className="w-full flex flex-col items-end">
-          <Typography scale="Lable" size="LargeProminet" color="PrimaryWoman_Primary">
+          <Dark_Typography fontSize="Lable_LargeProminet" className="text-impo_Neutral_OnBackground">
             {title}
-          </Typography>
+          </Dark_Typography>
 
-          <Typography scale="Body" size="Small" color="Surface_Outline" className="pt-1">
+          <Dark_Typography fontSize="Body_Small" className="pt-1 text-impo_Surface_Outline">
             {description}
-          </Typography>
+          </Dark_Typography>
         </div>
       </div>
 

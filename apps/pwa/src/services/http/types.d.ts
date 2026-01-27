@@ -1,19 +1,8 @@
-type DoCacheTypes = {
-  cache?: 'force-cache';
-  revalidate?: number;
-};
-
-type NoCacheTypes = {
-  cache?: 'no-cache';
-};
-
 export type MethodNameTypes = 'GET' | 'DELETE' | 'POST' | 'PUT';
-
-export type CacheTypes = DoCacheTypes | NoCacheTypes;
 
 export type HttpContentTypeTyps = 'application/json' | 'multipart/form-data';
 
-export type HttpTypes = CacheTypes & {
+export type HttpTypes = {
   contentType?: HttpContentTypeTyps;
   method?: MethodNameTypes;
   payload?: object;

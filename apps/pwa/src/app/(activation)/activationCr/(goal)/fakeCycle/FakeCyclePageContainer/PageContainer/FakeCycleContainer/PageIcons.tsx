@@ -1,26 +1,20 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { PageIconsProps } from './types';
 
 const PageIcons = ({ Icon, title, isSelected, selectedHandler }: PageIconsProps) => {
-  const { colors } = useTheme();
-
   return (
     <div className="flex flex-col items-center cursor-pointer" onClick={selectedHandler}>
       <Icon
-        className="w-7 h-auto"
-        style={{ stroke: isSelected ? colors.Neutral_OnBackground : colors.Surface_Outline }}
+        className={`w-7 h-auto ${isSelected ? 'stroke-impo_Neutral_OnBackground' : 'stroke-impo_Surface_Outline'}`}
       />
 
-      <Typography
-        scale="Body"
-        size="Small"
-        className="select-none"
-        color={isSelected ? 'Neutral_OnBackground' : 'Surface_Outline'}
+      <Dark_Typography
+        fontSize="Body_Small"
+        className={`select-none ${isSelected ? 'text-impo_Neutral_OnBackground' : 'text-impo_Surface_Outline'}`}
       >
         {title}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

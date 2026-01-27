@@ -1,4 +1,4 @@
-import { BabyCheckTypeEnums } from '@components/women/KitTests/KitTestBabyCheck/enum';
+import { BabyCheckTypeEnums } from '@components/KitTests/KitTestBabyCheck/enum';
 
 import { InitialSelectedSignsTypes } from '../(nestedRoutes)/signs/__hooks__/useGetData/types';
 import { ActionTypes, WidgetsButtonTypes } from './widgetCommon';

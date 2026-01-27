@@ -1,12 +1,12 @@
 import useApi from '@hooks/useApi';
-import { useToast } from '@providers/ToastProvider/CustomToastProvider';
+import useCustomToast from '@hooks/useCustomToast';
 import { useRouter } from 'next/navigation';
 
 const useSubmit = () => {
-  const { showToast } = useToast();
+  const toast = useCustomToast();
   const route = useRouter();
   const onSuccessHandler = () => {
-    showToast({
+    toast.feedbackToastHandler({
       message: 'پیشنهادت با موفقیت ثبت شد ✅',
       description: 'پیشنهادت برامون ارزشمنده و در آینده حتما به موضوعات پیشنهادی اضافه میشه',
       duration: 4000,

@@ -1,4 +1,4 @@
-import { FONTS_ANDROID } from '@theme/fonts';
+import { FONTS_ANDROID } from '@repo/core/theme/fonts';
 
 export interface CustomBUttonTypes {
   id?: string;

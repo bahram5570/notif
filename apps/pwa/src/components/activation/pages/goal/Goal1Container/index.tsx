@@ -40,20 +40,21 @@ const Goal1Container = ({
   return (
     <MainActivationModule
       {...pageInfo}
+      btnTestId="btn_goal1"
       isLoading={isLoading}
       onContinue={onContinue}
       onRegister={onRegister}
       invalidMessage={invalidMessage}
       showContinueBtn={showContinueBtn}
-      btnTestId="btn_goal1"
     >
       <>
         <ActivationInputModule
+          direction="rtl"
           isTextTyps={true}
+          testid="firstNameInput"
           value={payload.firstName}
           placeHolder="اینجا بنویس"
           valueHandler={valueHandler}
-          testid="firstNameInput"
         />
 
         <InterfaceCodeContainer onComplete={interfaceCodeHandler} />

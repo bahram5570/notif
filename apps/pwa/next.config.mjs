@@ -1,4 +1,4 @@
-import { withSentryConfig } from '@sentry/nextjs';
+// import { withSentryConfig } from '@sentry/nextjs';
 
 /** @type {import('next').NextConfig} */
 
@@ -36,30 +36,32 @@ const nextConfig = {
 
   output: 'standalone',
 
-  // # PostHog rewrites
-  async rewrites() {
-    return [
-      {
-        source: '/ingest/static/:path*',
-        destination: 'https://us-assets.i.posthog.com/static/:path*',
-      },
-      {
-        source: '/ingest/:path*',
-        destination: 'https://us.i.posthog.com/:path*',
-      },
-    ];
-  },
+  // // # PostHog rewrites
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/ingest/static/:path*',
+  //       destination: 'https://us-assets.i.posthog.com/static/:path*',
+  //     },
+  //     {
+  //       source: '/ingest/:path*',
+  //       destination: 'https://us.i.posthog.com/:path*',
+  //     },
+  //   ];
+  // },
 
-  // # Support PostHog trailing slash API requests
-  skipTrailingSlashRedirect: true,
+  // // # Support PostHog trailing slash API requests
+  // skipTrailingSlashRedirect: true,
 };
 
-export default withSentryConfig(nextConfig, {
-  org: 'sentry',
-  project: 'pwa',
-  disableLogger: true,
-  silent: !process.env.CI,
-  tunnelRoute: '/monitoring',
-  widenClientFileUpload: true,
-  sentryUrl: 'https://sentry.weareimpo.ir/',
-});
+export default nextConfig;
+
+// export default withSentryConfig(nextConfig, {
+//   org: 'sentry',
+//   project: 'pwa',
+//   disableLogger: true,
+//   silent: !process.env.CI,
+//   tunnelRoute: '/monitoring',
+//   widenClientFileUpload: true,
+//   sentryUrl: 'https://sentry.weareimpo.ir/',
+// });

@@ -1,8 +1,9 @@
+import InfoIcon from '@assets/icons/info.svg';
 import ImpoIcon from '@assets/images/questionsImpo.svg';
 
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
+import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
-import useTheme from '@hooks/useTheme';
 import { OrderOfQuestionScriptsTypes } from '@providers/__activation__/types';
 
 import {
@@ -14,8 +15,13 @@ import {
 import { ActivationHeadingProps } from './types';
 import usePercentage from './usePercentage';
 
-const ActivationHeading = ({ scripts, progressPercentage, orderOfQuestionScripts }: ActivationHeadingProps) => {
-  const { colors } = useTheme();
+const ActivationHeading = ({
+  scripts,
+  progressPercentage,
+  orderOfQuestionScripts,
+  isShowLogo,
+  banner,
+}: ActivationHeadingProps) => {
   const { isLargeScreen } = useActivationIsLargeScreen();
   const { maxWidth, progressBarSizes, rotate } = usePercentage({ progressPercentage });
 
@@ -30,7 +36,7 @@ const ActivationHeading = ({ scripts, progressPercentage, orderOfQuestionScripts
   return (
     <>
       <div
-        className="w-full flex justify-center pt-8 pointer-events-none z-10"
+        className={`w-full flex justify-center pt-8 pointer-events-none z-10 ${isShowLogo ? 'pt-0' : 'pt-8'}`}
         style={{
           maxWidth,
           height: mainHeight,
@@ -38,8 +44,8 @@ const ActivationHeading = ({ scripts, progressPercentage, orderOfQuestionScripts
           position: progressPercentage === undefined ? 'relative' : 'absolute',
         }}
       >
-        <div className="flex flex-col w-full mt-5">
-          {isLargeScreen && (
+        <div className="flex flex-col w-full  gap-3 justify-center mt-5">
+          {isLargeScreen && isShowLogo && (
             <ImpoIcon
               id={ACTIVATION_HEADING_ICON_ID}
               className="mx-auto duration-1000 z-10"
@@ -49,28 +55,54 @@ const ActivationHeading = ({ scripts, progressPercentage, orderOfQuestionScripts
 
           <div
             id={ACTIVATION_HEADING_SCRIPTS_ID}
-            className="w-full flex flex-col items-center gap-2 mt-4 px-4 duration-1000"
+            className="w-full flex flex-col items-center gap-2 mt-4 px-4 duration-1000 z-10"
           >
-            <Typography scale="Body" size="Medium" textAlign="center" style={{ order: scriptsOrder.description }}>
+            <Dark_Typography
+              fontSize="Body_Medium"
+              style={{ order: scriptsOrder.description }}
+              className="text-impo_Neutral_OnBackground text-center"
+            >
               {scripts.description}
-            </Typography>
+            </Dark_Typography>
 
-            <Typography scale="Title" size="Small" textAlign="center" style={{ order: scriptsOrder.title }}>
+            <Dark_Typography
+              fontSize="Title_Small"
+              style={{ order: scriptsOrder.title }}
+              className="text-impo_Neutral_OnBackground text-center"
+            >
               {scripts.title}
-            </Typography>
+            </Dark_Typography>
 
-            <Typography scale="Body" size="Medium" textAlign="center" style={{ order: scriptsOrder.subtitle }}>
+            <Dark_Typography
+              fontSize="Body_Medium"
+              style={{ order: scriptsOrder.subtitle }}
+              className="text-impo_Neutral_OnBackground text-center"
+            >
               {scripts.subtitle}
-            </Typography>
+            </Dark_Typography>
           </div>
+          {banner && (
+            <div className=" mx-4 mt-4">
+              <div className="flex flex-row-reverse items-start gap-2 bg-impo_Warning_WarininContainer rounded-lg px-3 py-3">
+                <InfoIcon className="w-6 h-auto stroke-impo_Warning_Warning" />
+                <Dark_Typography fontSize="Body_Small">{banner}</Dark_Typography>
+              </div>
+            </div>
+          )}
         </div>
 
         {!hasProgressBar && (
           <div className="absolute bottom-10 flex justify-center align-middle">
             <img
               alt="hollow"
-              src="/assets/images/questionsHollow.png"
-              className={`w-[100vw] max-w-[${maxWidth}] h-auto scale-[2.5] z-0`}
+              src="/assets/images/coverHollow.webp"
+              className={`w-[100vw] max-w-[${MAX_SCREEN_WIDTH}] h-auto scale-[2.5] z-0 block dark:hidden`}
+            />
+
+            <img
+              alt="hollow"
+              src="/assets/images/coverHollow_noBackground.png"
+              className={`w-[100vw] max-w-[${MAX_SCREEN_WIDTH}] h-auto scale-[2.5] z-0 hidden dark:block`}
             />
           </div>
         )}
@@ -78,30 +110,39 @@ const ActivationHeading = ({ scripts, progressPercentage, orderOfQuestionScripts
         {hasProgressBar && (
           <>
             <div
-              className="absolute bottom-0 rounded-full border-4 flex align-bottom justify-center overflow-hidden"
-              style={{
-                borderColor: colors.Surface_SurfaceVariant,
-                background: colors.Neutral_Background,
-                ...progressBarSizes,
-              }}
+              style={{ ...progressBarSizes }}
+              className="
+                          absolute 
+                          bottom-0 
+                          rounded-full 
+                          border-4 
+                          border-impo_Surface_SurfaceVariant 
+                          bg-impo_Neutral_Background
+                          dark:bg-impo_Neutral_Surface
+                          flex 
+                          align-bottom 
+                          justify-center 
+                          overflow-hidden 
+                        "
             >
               <div className="absolute bottom-10 flex justify-center align-middle">
                 <img
                   alt="hollow"
-                  src="/assets/images/questionsHollow.png"
-                  className={`w-[100vw] max-w-[${maxWidth}] h-auto scale-[2.5] z-0`}
+                  src="/assets/images/coverHollow.png"
+                  className={`w-[100vw] max-w-[${maxWidth}] h-auto scale-[2.5] z-0 block dark:hidden`}
+                />
+
+                <img
+                  alt="hollow"
+                  src="/assets/images/coverHollow_noBackground.png"
+                  className={`w-[100vw] max-w-[${maxWidth}] h-auto scale-[2.5] z-0 hidden dark:block`}
                 />
               </div>
             </div>
 
             <div
-              style={{
-                rotate,
-                borderColor: colors.Surface_SurfaceVariant,
-                borderBottomColor: colors.PrimaryWoman_Primary,
-                ...progressBarSizes,
-              }}
-              className="absolute bottom-0 rounded-full border-4"
+              style={{ rotate, ...progressBarSizes }}
+              className="absolute bottom-0 rounded-full border-4 border-impo_Surface_SurfaceVariant border-b-impo_Primary_Primary"
             />
           </>
         )}

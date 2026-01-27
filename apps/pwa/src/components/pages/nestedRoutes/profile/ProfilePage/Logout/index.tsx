@@ -1,0 +1,44 @@
+import LogoutIcon from '@assets/icons/profile/logout.svg';
+
+import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
+import Dark_Typography from '@components/ui/Dark_Typography';
+import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+
+import { PROFILE_MODAL_QUERY_NAME } from '../ProfileLinkList/constants';
+import { ProfileModalNameEnums } from '../ProfileModals/enum';
+
+const LogOut = () => {
+  const { newQueryParamsHandler } = useQueryParamsHandler();
+  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+
+  const selectHandler = () => {
+    newQueryParamsHandler({
+      [MODAL_QUERY_NAME]: 'true',
+      [PROFILE_MODAL_QUERY_NAME]: ProfileModalNameEnums.Logout,
+    });
+
+    pageNavigationHandler({ showProgressBar: false, id: ProfileModalNameEnums.Logout });
+  };
+
+  const isLoading = pageNavigationLoading === ProfileModalNameEnums.Logout;
+
+  return (
+    <div className="flex justify-center">
+      <div
+        className="flex items-center gap-2 px-6 py-2 rounded-full border-[1px] select-none cursor-pointer my-9 border-impo_Surface_OutlineVariant"
+        onClick={selectHandler}
+      >
+        <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+          خروج از حساب کاربری
+        </Dark_Typography>
+
+        {isLoading && <Dark_Spinner size={24} />}
+        {!isLoading && <LogoutIcon className="w-6 h-auto stroke-impo_Neutral_OnBackground" />}
+      </div>
+    </div>
+  );
+};
+
+export default LogOut;

@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 import { colorFormatConverter } from '@utils/scripts';
 
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import OptionButton from '@components/ui/OptionButton';
-import Typography from '@components/ui/Typography';
 import useWidgetActions from '@hooks/useWidgetActions';
 
 import { PopupMultiOptionProps, SelectHandlerTypes } from './types';
@@ -27,9 +27,9 @@ const PopupMultiOption = ({ data }: PopupMultiOptionProps) => {
 
   return (
     <div className="w-full flex flex-col items-center">
-      <Typography scale="Lable" size="Large">
+      <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
         {data.title}
-      </Typography>
+      </Dark_Typography>
 
       <div className="w-full flex flex-col gap-3 py-6">
         {data.items.map((option, index) => (
@@ -42,16 +42,17 @@ const PopupMultiOption = ({ data }: PopupMultiOptionProps) => {
         ))}
       </div>
 
-      <Button
-        size="large"
-        variant="fill"
-        color="FREE-STYLES"
+      <Dark_Button
         onClick={submitHandler}
-        buttonColor={colorFormatConverter(data.submit.backgroundColor)}
-        contentsColor={colorFormatConverter(data.submit.foregroundColor)}
+        style={{
+          background: colorFormatConverter(data.submit.backgroundColor),
+          color: colorFormatConverter(data.submit.foregroundColor),
+        }}
+        className="h-12"
+        fontSize="Title_Small"
       >
         {data.submit.text}
-      </Button>
+      </Dark_Button>
     </div>
   );
 };

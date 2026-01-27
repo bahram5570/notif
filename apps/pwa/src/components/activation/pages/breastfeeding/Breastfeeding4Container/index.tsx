@@ -45,6 +45,7 @@ const Breastfeeding4Container = ({
           placeHolder="اینجا بنویس"
           value={payload.childName}
           isTextTyps={true}
+          direction="rtl"
         />
       </>
     </MainActivationModule>

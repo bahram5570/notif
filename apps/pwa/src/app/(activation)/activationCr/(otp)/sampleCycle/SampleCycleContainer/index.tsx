@@ -1,5 +1,5 @@
 import FakeCycleContainer from '@app/(activation)/activationCr/(goal)/fakeCycle/FakeCyclePageContainer/PageContainer/FakeCycleContainer';
-import CycleContainer from '@components/women/pages/mainRoutes/cycle/CycleContainer';
+import CycleContainer from '@components/pages/mainRoutes/cycle/CycleContainer';
 import useIsRendered from '@hooks/useIsRendered';
 
 import BottomPart from './BottomPart';
@@ -10,7 +10,7 @@ import { SampleCycleContainerProps } from './types';
 
 const SampleCycleContainer = ({ payload }: SampleCycleContainerProps) => {
   const { isRendered } = useIsRendered();
-  const { data, textColor } = useGetData();
+  const { data } = useGetData();
 
   if (!isRendered) {
     return <></>;
@@ -18,7 +18,7 @@ const SampleCycleContainer = ({ payload }: SampleCycleContainerProps) => {
 
   return (
     <FakeCycleContainer>
-      <CycleContainer data={data} customAppBar={<SampleCycleHeading textColor={textColor} payload={payload} />}>
+      <CycleContainer data={data} customAppBar={<SampleCycleHeading payload={payload} />}>
         <BottomPart payload={payload} />
         <SampleCycleContinueBtn />
       </CycleContainer>

@@ -2,14 +2,12 @@
 import ActivationBtn from '@components/activation/ActivationBtn';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
-import useTheme from '@hooks/useTheme';
 import { useRouter } from 'next/navigation';
 
 import { SAMPLE_CYCLE_CONTINUE_BTN_HEIGHT } from './constants';
 
 const SampleCycleContinueBtn = () => {
   const router = useRouter();
-  const { colors } = useTheme();
   const { callEventActivation } = useActivationAnalytics();
 
   const nextHandler = () => {
@@ -19,13 +17,8 @@ const SampleCycleContinueBtn = () => {
 
   return (
     <div
-      className="fixed left-0 right-0 bottom-0 mx-auto px-4 pt-4 z-30"
-      style={{
-        maxWidth: MAX_SCREEN_WIDTH,
-        height: SAMPLE_CYCLE_CONTINUE_BTN_HEIGHT,
-        // height: FAKE_CYCLE_FOOTER_HEIGTH + SAMPLE_CYCLE_CONTINUE_BTN_HEIGHT,
-        backgroundColor: colors.Neutral_Background,
-      }}
+      style={{ maxWidth: MAX_SCREEN_WIDTH, height: SAMPLE_CYCLE_CONTINUE_BTN_HEIGHT }}
+      className="fixed left-0 right-0 bottom-0 mx-auto px-4 pt-4 bg-impo_Neutral_Background z-30"
     >
       <ActivationBtn navigationLoadingId={'ContinueBtn'} onClick={nextHandler} showBtn={true}>
         مرحله بعد

@@ -1,9 +1,7 @@
-import { colorFormatConverter } from '@utils/scripts';
-
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import DateModule from '@components/activation/DateModule';
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
-import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 import useDateIntervals from '@providers/__activation__/ActivationProvider/__hooks__/useDateIntervals';
 
@@ -16,9 +14,9 @@ const PopUpEditCycleLastPeriod = ({
   startTime,
   data,
 }: PopUpEditCycleLastPeriodProps) => {
+  const { callEvent } = useAnalytics();
   const { periodStart, periodEnd } = useDateIntervals();
   const { submitHandler, isLoading } = useSubmitLastPeriod(editPageHandler);
-  const { callEvent } = useAnalytics();
 
   const clickHandler = () => {
     submitHandler(startTime);
@@ -27,28 +25,23 @@ const PopUpEditCycleLastPeriod = ({
 
   return (
     <>
-      <Typography scale="Body" size="Medium" style={{ paddingTop: HEADER_HEIGHT }}>
+      <Dark_Typography
+        fontSize="Body_Medium"
+        style={{ paddingTop: HEADER_HEIGHT }}
+        className="text-impo_Neutral_OnBackground"
+      >
         {data.title}
-      </Typography>
+      </Dark_Typography>
 
-      <Typography scale="Title" size="Small" className="mt-1 mb-[80px]">
+      <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground mt-1 mb-[80px]">
         {data.description}
-      </Typography>
+      </Dark_Typography>
 
       <DateModule valueHandler={startTimeHandler} startDate={periodStart} endDate={periodEnd} defaultDate={periodEnd} />
 
-      <Button
-        size="medium"
-        variant="fill"
-        color="FREE-STYLES"
-        className="mt-auto"
-        isLoading={isLoading}
-        onClick={clickHandler}
-        buttonColor={colorFormatConverter(data.button.backgroundColor)}
-        contentsColor={colorFormatConverter(data.button.foregroundColor)}
-      >
+      <Dark_Button isLoading={isLoading} onClick={clickHandler} fontSize="Lable_Large" className="mt-auto">
         {data.button.text}
-      </Button>
+      </Dark_Button>
     </>
   );
 };

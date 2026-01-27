@@ -10,7 +10,7 @@ self.addEventListener('install', (event) => {
 
   event.waitUntil(
     caches.open(OFFLINE_CACHE_NAME).then((cache) => {
-      return cache.add(CACHE_OFFLINE_PAGE);
+      return cache.addAll([CACHE_OFFLINE_PAGE]);
     }),
   );
 });

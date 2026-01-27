@@ -2,7 +2,7 @@ import { memo } from 'react';
 
 import { toPersianNumbers } from '@utils/numbers';
 
-import { FONTS_ANDROID } from '@theme/fonts';
+import { FONTS_ANDROID } from '@repo/core/theme/fonts';
 
 import { WheelPickerCellGeneratorProps } from './types';
 

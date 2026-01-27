@@ -2,23 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: YekanBakhVF;
-  src: url('/assets/shared/fonts/YekanBakh-VF.ttf');
-}
-
 @import '@repo/components/styles.css';
+@import '@repo/core/theme.css';
+
 @import 'swiper/css';
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';
 @import '~react-toastify/dist/ReactToastify.min.css';
+
+@font-face {
+  font-family: YekanBakhVF;
+  src: url('/assets/shared/fonts/YekanBakh-VF.ttf');
+}
 
 body {
   font-family: YekanBakhVF;
 }
 
 .glass-card {
-  @apply bg-white/10 backdrop-blur-[8px]  border border-white/30;
+  @apply bg-white/10 dark:!bg-[#2B2B2B80] backdrop-blur-[8px]  border border-white/30;
 }
 
 .glass-card-hover:hover {
@@ -44,6 +46,24 @@ input[type='number'] {
   -moz-appearance: textfield;
 }
 
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 9999s ease-in-out 0s;
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: #202020 !important;
+  caret-color: #202020 !important;
+}
+.dark input:-webkit-autofill,
+.dark input:-webkit-autofill:hover,
+.dark input:-webkit-autofill:focus,
+.dark input:-webkit-autofill:active {
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff !important;
+}
+
 .hideScrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -54,6 +74,10 @@ input[type='number'] {
 
 .swiper-pagination-bullet-active {
   background-color: #353535;
+}
+
+.dark .swiper-pagination-bullet {
+  background-color: #ffff;
 }
 
 .scrollbar {

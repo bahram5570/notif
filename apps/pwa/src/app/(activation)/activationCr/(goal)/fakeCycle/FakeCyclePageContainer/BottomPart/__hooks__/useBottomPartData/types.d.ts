@@ -1,5 +1,5 @@
-import { WidgetPragnencyBreastfeedingCardProps } from '@components/women/Widgets/widgetGenerator/WidgetPragnencyBreastfeedingCard/types';
-import { WidgetPredictCardProps } from '@components/women/Widgets/widgetGenerator/WidgetPredictCard/types';
+import { WidgetPragnencyBreastfeedingCardProps } from '@components/Widgets/widgetGenerator/WidgetPragnencyBreastfeedingCard/types';
+import { WidgetPredictCardProps } from '@components/Widgets/widgetGenerator/WidgetPredictCard/types';
 import { GoalNamesEnum } from '@constants/activation.constants';
 
 export type PredictFooterTypes = {

@@ -1,10 +1,9 @@
 import CloseIcon from '@assets/icons/plus.svg';
 import { colorFormatConverter } from '@utils/scripts';
 
-import Button from '@components/ui/Button';
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { useRouter } from 'next/navigation';
 
@@ -12,13 +11,12 @@ import { PopupImageTextButtonProps } from './types';
 
 const PopupImageTextButton = ({ data }: PopupImageTextButtonProps) => {
   const router = useRouter();
-  const { colors } = useTheme();
   const { actionHandler } = useWidgetActions();
 
   return (
     <div className="relative w-full h-full flex flex-col items-center px-4 pt-4 pb-6">
       <div onClick={() => router.back()} className="w-12 h-12 flex items-center justify-center mr-auto">
-        <CloseIcon className="w-6 h-auto rotate-45 cursor-pointer" style={{ stroke: colors.Neutral_OnSurface }} />
+        <CloseIcon className="w-6 h-auto rotate-45 cursor-pointer stroke-impo_Neutral_OnSurface" />
       </div>
 
       <div className="w-full min-h-[370px] mb-6">
@@ -26,26 +24,27 @@ const PopupImageTextButton = ({ data }: PopupImageTextButtonProps) => {
       </div>
 
       <div className="w-full flex flex-col items-center gap-1">
-        <Typography scale="Title" size="Medium" color="Neutral_OnBackground" textAlign="center">
+        <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground text-center">
           {data.title}
-        </Typography>
+        </Dark_Typography>
 
-        <Typography scale="Body" size="Medium" color="Neutral_OnBackground" textAlign="center">
+        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
           {data.description}
-        </Typography>
+        </Dark_Typography>
       </div>
 
-      <Button
-        size="medium"
-        variant="fill"
-        color="FREE-STYLES"
-        className="mt-auto"
+      <Dark_Button
+        fontSize="Lable_Large"
+        className="mt-auto h-10"
         onClick={() => actionHandler(data.button.action)}
-        buttonColor={colorFormatConverter(data.button.backgroundColor)}
-        contentsColor={colorFormatConverter(data.button.foregroundColor)}
+        style={{
+          background: colorFormatConverter(data.button.backgroundColor),
+          color: colorFormatConverter(data.button.foregroundColor),
+          borderColor: colorFormatConverter(data.button.backgroundColor),
+        }}
       >
         {data.button.text}
-      </Button>
+      </Dark_Button>
     </div>
   );
 };

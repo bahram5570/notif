@@ -7,7 +7,7 @@ import { ERROR_SERVER } from '../constants';
 import { UseHelperMutateProps } from './types';
 
 const useHelperMutate = <T,>(props: UseHelperMutateProps<T>) => {
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
 
   const mutationFn = async (payload?: object) => {
     const contentType = props.method === 'POST' || props.method === 'PUT' ? props.contentType : undefined;
@@ -20,7 +20,7 @@ const useHelperMutate = <T,>(props: UseHelperMutateProps<T>) => {
     });
 
     if (res.error) {
-      onToast({ message: ERROR_SERVER, type: 'error' });
+      toast.notifyToastHandler({ message: ERROR_SERVER, type: 'error' });
       throw res.error;
     }
 

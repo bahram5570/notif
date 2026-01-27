@@ -1,11 +1,9 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import useProgress from './__hooks__/useProgress';
 import { CircleProgressBarProps } from './types';
 
-const CircleProgressBar = ({ loadingStatus, onComplete, circleColor }: CircleProgressBarProps) => {
-  const { colors } = useTheme();
+const CircleProgressBar = ({ loadingStatus, onComplete }: CircleProgressBarProps) => {
   const { strokeDashoffset, percentage } = useProgress({ loadingStatus, onComplete });
 
   return (
@@ -26,7 +24,7 @@ const CircleProgressBar = ({ loadingStatus, onComplete, circleColor }: CirclePro
           strokeWidth="16px"
           strokeDashoffset="0"
           strokeDasharray="565.48px"
-          stroke={circleColor || colors.Surface_OutlineVariant}
+          className="stroke-impo_Surface_OutlineVariant"
         />
         <circle
           r="90"
@@ -37,14 +35,14 @@ const CircleProgressBar = ({ loadingStatus, onComplete, circleColor }: CirclePro
           strokeLinecap="round"
           strokeDasharray="565.48px"
           strokeDashoffset={strokeDashoffset}
-          stroke={colors.PrimaryWoman_Primary}
+          className="stroke-impo_Primary_Primary"
         />
       </svg>
 
       <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center">
-        <Typography scale="Headline" size="Large" className="scale-75">
+        <Dark_Typography fontSize="Headline_Large" className="text-impo_Neutral_OnBackground scale-75">
           {percentage.toString()}
-        </Typography>
+        </Dark_Typography>
       </div>
     </div>
   );

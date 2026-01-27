@@ -1,0 +1,60 @@
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
+import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+
+import ClinicTicketGenerator from '../../ClinicTicketGenerator';
+import { ACTIVE_TICKETS_LIST_QUERY_NAME } from './constants';
+import { ActiveTicketsHeadingProps } from './types';
+
+const ActiveTicketsHeading = ({ activeTicketsOneTitle, activeTicketsMore, tickets }: ActiveTicketsHeadingProps) => {
+  const { newQueryParamsHandler } = useQueryParamsHandler();
+
+  const openHandler = () => {
+    newQueryParamsHandler({ [ACTIVE_TICKETS_LIST_QUERY_NAME]: 'true' });
+  };
+
+  const isMoreThanOne = tickets.length > 1;
+  const hasTicket = tickets.length > 0;
+  const firstTicket = tickets[0];
+
+  return (
+    <>
+      {hasTicket && (
+        <div className="w-full flex flex-col items-end gap-2 pb-7">
+          <div className="w-full flex flex-row-reverse items-center justify-between">
+            <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+              {activeTicketsOneTitle}
+            </Dark_Typography>
+
+            {isMoreThanOne && (
+              <Dark_Button
+                onClick={openHandler}
+                fontSize="Lable_Medium"
+                navigationLoadingId="ActiveTicketsHeading"
+                className="!w-fit !h-8 bg-impo_Primary_PrimaryContainer border-impo_Primary_PrimaryContainer text-impo_Primary_Primary"
+              >
+                {activeTicketsMore}
+              </Dark_Button>
+            )}
+          </div>
+
+          <ClinicTicketGenerator
+            stylingTypes="heading"
+            rate={firstTicket.rate}
+            text={firstTicket.text}
+            state={firstTicket.state}
+            drName={firstTicket.drName}
+            drImage={firstTicket.drImage}
+            ticketId={firstTicket.ticketId}
+            fileName={firstTicket.fileName}
+            ticketType={firstTicket.ticketType}
+            createTime={firstTicket.createTime}
+            drSpeciality={firstTicket.drSpeciality}
+          />
+        </div>
+      )}
+    </>
+  );
+};
+
+export default ActiveTicketsHeading;

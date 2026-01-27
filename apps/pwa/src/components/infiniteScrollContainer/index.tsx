@@ -1,19 +1,19 @@
 import { useEffect, useRef } from 'react';
 
-import Spinner from '@components/ui/Spinner';
+import Dark_Spinner from '@components/ui/Dark_Spinner';
 
 import { PAGE_SIZE } from './constatns';
 import { InfiniteScrollContainerPropsType } from './type';
 
 const InfiniteScrollContainer = ({
-  children,
-  callBack,
+  pageSize = PAGE_SIZE,
   totalCount,
   isLoading,
-  pageNo,
-  pageSize = PAGE_SIZE,
-  height,
   className,
+  children,
+  callBack,
+  pageNo,
+  height,
   style,
 }: InfiniteScrollContainerPropsType) => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -45,6 +45,7 @@ const InfiniteScrollContainer = ({
   return (
     <div
       ref={containerRef}
+      id="infiniteScrollContainer"
       className={`overflow-y-auto ${className}`}
       style={{
         ...style,
@@ -52,13 +53,12 @@ const InfiniteScrollContainer = ({
         pointerEvents: isLoading ? 'none' : 'auto',
         touchAction: isLoading ? 'none' : 'auto',
       }}
-      id="infiniteScrollContainer"
     >
       {children}
 
       {isLoading && (
-        <div className="w-full  h-full flex justify-center py-6 ">
-          <Spinner color="outline" width={40} />
+        <div className="w-full h-full flex justify-center py-6 ">
+          <Dark_Spinner size={40} className="border-impo_Surface_Outline" />
         </div>
       )}
     </div>

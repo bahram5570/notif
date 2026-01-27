@@ -16,7 +16,7 @@ export const CurrentRoutinIndexContext = createContext<CurrentRoutinIndexContext
 
 const CurrentRoutinIndexProvider = ({ children }: { children: React.ReactNode }) => {
   const [routinState, setRoutinState] = useState<RoutinState>(initailValue);
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
 
   const updateRoutinState = (nameOrState: keyof RoutinState | Partial<RoutinState>, value?: number | boolean) => {
     setRoutinState((prev) => {
@@ -35,7 +35,7 @@ const CurrentRoutinIndexProvider = ({ children }: { children: React.ReactNode })
           ? `  مرحله ${convertToPersianOrdinal(routinState.currentIndex)} با موفقیت انجام و مرحله ${convertToPersianOrdinal(routinState.currentIndex + 1)} آنلاک شد`
           : `  مرحله ${convertToPersianOrdinal(routinState.currentIndex)} چک لیست با موفقیت انجام شد`;
 
-      onToast({
+      toast.notifyToastHandler({
         type: 'success',
         message,
         position: 'bottom-center',

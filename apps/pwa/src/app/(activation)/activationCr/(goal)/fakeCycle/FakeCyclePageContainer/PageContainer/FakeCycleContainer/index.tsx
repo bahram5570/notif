@@ -1,14 +1,12 @@
 import { useState } from 'react';
 
 // import { MAX_SCREEN_WIDTH } from '@constants/app.constants'
-// import useTheme from '@hooks/useTheme';
 import ArticlesWebSite from './ArticlesWebSite';
 // import PageIcons from './PageIcons';
 // import { FAKE_CYCLE_FOOTER_HEIGTH, FAKE_CYCLE_FOOTER_LIST } from './constants';
 import { FakeCycleContainerProps, SelectedPageTypes } from './types';
 
 const FakeCycleContainer = ({ children }: FakeCycleContainerProps) => {
-  // const { colors } = useTheme();
   const [selectedPage, setSelectedPage] = useState<SelectedPageTypes>('cycle');
 
   return (

@@ -1,0 +1,67 @@
+'use client';
+
+import MainPageLayout from '@components/MainPageLayout';
+
+import ShareExperienceBanner from '../ShareExperienceModules/ShareExperienceBanner';
+import ShareExperienceToast from '../ShareExperienceModules/ShareExperienceToast';
+import ShareExperienceAvatar from './ShareExperienceAvatar';
+import ShareExperienceCategories from './ShareExperienceCategories';
+import ShareExperienceExperiences from './ShareExperienceExperiences';
+import ShareExperienceNewLink from './ShareExperienceNewLink';
+import ShareExperienceSkeleton from './ShareExperienceSkeleton';
+import ShareExperienceTopics from './ShareExperienceTopics';
+import useCategories from './__hooks__/useCategories';
+import useShareExperienceGetData from './__hooks__/useShareExperienceGetData';
+import useShareExperienceInitialRedirect from './__hooks__/useShareExperienceInitialRedirect';
+import useTopics from './__hooks__/useTopics';
+
+const ShareExperienceContainer = () => {
+  useShareExperienceInitialRedirect();
+  const { isLoading, data, onSuccessNewHandler } = useShareExperienceGetData();
+
+  const { categories, selectedCategoryId, selectedCategoryIdHandler } = useCategories(data?.categories);
+  const { topics } = useTopics(data?.topics);
+
+  return (
+    <MainPageLayout leftElement1="Profile">
+      <>
+        {isLoading && !data && <ShareExperienceSkeleton />}
+
+        {!isLoading && data && (
+          <>
+            <ShareExperienceAvatar profile={data.profile} />
+            <ShareExperienceNewLink />
+
+            {topics && <ShareExperienceTopics topics={topics} />}
+            {data.bannerMedia && <ShareExperienceBanner bannerMedia={data.bannerMedia} />}
+
+            {categories && selectedCategoryId && (
+              <ShareExperienceCategories
+                categories={categories}
+                selectedCategoryId={selectedCategoryId}
+                selectedCategoryIdHandler={selectedCategoryIdHandler}
+              />
+            )}
+
+            {data.toastText && (
+              <div className="px-4 pb-4">
+                <ShareExperienceToast toastMessage={data.toastText} showCloseBtn />
+              </div>
+            )}
+
+            {selectedCategoryId && (
+              <ShareExperienceExperiences
+                profile={data.profile}
+                key={selectedCategoryId}
+                selectedCategoryId={selectedCategoryId}
+                onSuccessNewHandler={onSuccessNewHandler}
+              />
+            )}
+          </>
+        )}
+      </>
+    </MainPageLayout>
+  );
+};
+
+export default ShareExperienceContainer;

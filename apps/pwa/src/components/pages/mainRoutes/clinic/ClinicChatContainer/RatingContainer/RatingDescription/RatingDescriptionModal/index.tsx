@@ -1,0 +1,62 @@
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+
+import styles from './RatingDescriptionModal.module.css';
+
+import CustomModal from '@components/ui/CustomModal';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
+import useOperatingSystem from '@hooks/useOperatingSystem';
+
+import { MAX_LETTERS_COUNT } from './constants';
+import { RatingDescriptionModalProps } from './types';
+
+const RatingDescriptionModal = ({ descriptionHandler, description, onClick }: RatingDescriptionModalProps) => {
+  const { operatingSystem } = useOperatingSystem();
+  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Medium', operatingSystem });
+
+  const lettersCount = description.trim().length;
+  const lettersCountScript = `${lettersCount}/${MAX_LETTERS_COUNT}`;
+
+  const valueHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.target.value;
+
+    if (lettersCount < MAX_LETTERS_COUNT) {
+      descriptionHandler(value);
+    } else {
+      const valueLettersCount = value.length;
+
+      if (valueLettersCount <= lettersCount) {
+        descriptionHandler(value);
+      }
+    }
+  };
+
+  return (
+    <CustomModal isSlidingMode={true}>
+      <>
+        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+          لطفا نظرت رو برامون بنویس تا بتونیم بررسی کنیم و در آینده سرویس بهتری ارائه بدیم.
+        </Dark_Typography>
+
+        <textarea
+          placeholder="نظرت رو اینجا بنویس.."
+          style={{ ...typographyFontStyles, direction: 'rtl' }}
+          value={description}
+          rows={4}
+          onChange={valueHandler}
+          className={`relative w-full rounded-xl p-2 border-[1px] outline-none resize-none mt-2 mb-1 bg-impo_Neutral_Background text-impo_Neutral_OnBackground border-impo_Neutral_Surface${styles.textarea}`}
+        />
+
+        <Dark_Typography fontSize="Body_Medium" className="pb-10 mr-auto text-impo_Surface_Outline">
+          {lettersCountScript}
+        </Dark_Typography>
+
+        <Dark_Button fontSize="Lable_Large" onClick={onClick}>
+          ارسال بازخورد
+        </Dark_Button>
+      </>
+    </CustomModal>
+  );
+};
+
+export default RatingDescriptionModal;

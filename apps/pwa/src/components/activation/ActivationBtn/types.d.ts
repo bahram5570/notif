@@ -1,7 +1,9 @@
-import { ButtonProps } from '@components/ui/Button/types';
+import { Dark_ButtonTypes } from '@components/ui/Dark_Button/types';
 
-export type ActivationBtnProps = Pick<ButtonProps, 'children' | 'isLoading' | 'navigationLoadingId' | 'onClick'> & {
+export type ActivationBtnProps = Pick<
+  Dark_ButtonTypes,
+  'children' | 'isLoading' | 'navigationLoadingId' | 'onClick'
+> & {
   showBtn?: boolean;
-  width?: number | string;
   btnTestId?: string;
 };

@@ -2,12 +2,9 @@ export const addZero = (n: number | string) => {
   return ('0' + n).slice(-2);
 };
 
-export function addIdAttrs(name: string) {
-  return {
-    id: name,
-    'data-testid': name,
-  };
-}
+export const addIdAttrs = (name: string) => {
+  return { id: name, 'data-testid': name };
+};
 
 export const colorFormatConverter = (color: string) => {
   return color.toLowerCase().replace('0xff', '#');

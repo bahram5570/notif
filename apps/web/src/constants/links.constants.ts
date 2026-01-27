@@ -3,7 +3,7 @@ import LightIcon from '@assets/icons/themeLight.svg';
 import SystemIcon from '@assets/icons/themeSystem.svg';
 
 import { HEADER_LINKS_TYPES } from '@components/HeaderFooterContainer/Header/types';
-import { ThemeTypes } from '@theme/types';
+import { ThemeTypes } from '@repo/core/theme/types';
 
 export const STAGE_URL = 'http://195.88.208.143:8082';
 export const SSL_STAGE_URL = 'https://stage.weareimpo.ir';

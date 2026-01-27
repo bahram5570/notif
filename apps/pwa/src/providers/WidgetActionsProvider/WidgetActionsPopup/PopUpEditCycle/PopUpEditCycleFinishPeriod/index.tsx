@@ -1,11 +1,9 @@
 import { useState } from 'react';
 
-import { colorFormatConverter } from '@utils/scripts';
-
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import DateModule from '@components/activation/DateModule';
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
-import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 
 import useEditCycleDateIntervals from './__hooks__/useEditCycleDateIntervals';
@@ -26,13 +24,17 @@ const PopUpEditCycleFinishPeriod = ({ data, startTime, periodLength }: PopUpEdit
 
   return (
     <>
-      <Typography scale="Body" size="Medium" style={{ paddingTop: HEADER_HEIGHT }}>
+      <Dark_Typography
+        fontSize="Body_Medium"
+        className="text-impo_Neutral_OnBackground"
+        style={{ paddingTop: HEADER_HEIGHT }}
+      >
         {data.title}
-      </Typography>
+      </Dark_Typography>
 
-      <Typography scale="Title" size="Small" className="mt-1 mb-[80px]">
+      <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground mt-1 mb-[80px]">
         {data.description}
-      </Typography>
+      </Dark_Typography>
 
       {datesInterval && (
         <DateModule
@@ -43,18 +45,9 @@ const PopUpEditCycleFinishPeriod = ({ data, startTime, periodLength }: PopUpEdit
         />
       )}
 
-      <Button
-        size="medium"
-        variant="fill"
-        onClick={clickHandler}
-        color="FREE-STYLES"
-        className="mt-auto"
-        isLoading={isLoading}
-        buttonColor={colorFormatConverter(data.button.backgroundColor)}
-        contentsColor={colorFormatConverter(data.button.foregroundColor)}
-      >
+      <Dark_Button isLoading={isLoading} onClick={clickHandler} fontSize="Lable_Large" className="mt-auto">
         {data.button.text}
-      </Button>
+      </Dark_Button>
     </>
   );
 };

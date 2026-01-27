@@ -1,4 +1,4 @@
-import { WidgetsButtonTypes } from '@app/(women)/protected/(mainRoutes)/widgetCommon';
+import { WidgetsButtonTypes } from '@providers/WidgetActionsProvider/widgetCommon';
 
 export interface PopUpEditCycleFinishPeriodProps {
   startTime: string;

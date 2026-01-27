@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @import '@repo/components/styles.css';
-@import '@theme/theme.module.css';
+@import '@repo/core/theme.css';
 
 @import 'swiper/css';
 @import 'swiper/css/pagination';

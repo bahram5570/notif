@@ -1,4 +1,4 @@
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 
 import SelectDatesTable from './SelectDatesTable';
 import { SelectDatesProps } from './types';
@@ -22,16 +22,9 @@ const SelectDates = ({
         isPregnancy={isPregnancy}
       />
 
-      <Button
-        size="medium"
-        variant="fill"
-        color="primary"
-        className="py-3 "
-        onClick={() => {}}
-        navigationLoadingId="SelectDates"
-      >
+      <Dark_Button fontSize="Lable_Large" className="h-[48px]" onClick={() => {}} navigationLoadingId="SelectDates">
         {selectDatesBtnText}
-      </Button>
+      </Dark_Button>
     </div>
   );
 };

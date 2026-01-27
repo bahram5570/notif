@@ -6,7 +6,7 @@ import { usePathname, useRouter } from 'next/navigation';
 
 const useSubscriptionGuard = (remainDays?: number) => {
   const router = useRouter();
-  const pathname = usePathname();
+  const pathname = usePathname() || '';
   const { callEvent } = useAnalytics();
 
   useEffect(() => {

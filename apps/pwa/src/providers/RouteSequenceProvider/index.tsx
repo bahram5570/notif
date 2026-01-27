@@ -16,7 +16,7 @@ export const RouteSequenceContext = createContext<RouteSequenceContextTypes>({ s
 
 const RouteSequenceProvider = ({ children }: RouteSequenceProviderProps) => {
   const router = useRouter();
-  const pathname = usePathname();
+  const pathname = usePathname() || '';
   const { searchParams } = useQueryParamsHandler();
   const [routesList, setRoutesList] = useState<RouteSequenceListTypes>(null);
 

@@ -1,23 +1,21 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { MoreActionBtnPropsType } from './type';
 
 const MoreActionBtn = ({ onClickHandler, title, isDeleteBtn = false, Icon }: MoreActionBtnPropsType) => {
-  const { colors } = useTheme();
-
-  const backgroundColor = isDeleteBtn ? colors.Error_ErrorContainer : colors.Surface_OutlineVariant;
-  const stroke = isDeleteBtn ? colors.Error_Error : '';
-  const fill = !isDeleteBtn ? colors.Neutral_OnSurface : '';
-
   return (
     <div className="flex flex-row-reverse items-center gap-2" onClick={onClickHandler}>
-      <div className="flex justify-center items-center rounded-full w-[34px] h-[34px]" style={{ backgroundColor }}>
-        <Icon className="w-[18px] h-[18px]" style={{ stroke, fill }} />
+      <div
+        className={`flex justify-center items-center rounded-full w-[34px] h-[34px] ${isDeleteBtn ? 'bg-impo_Error_ErrorContainer' : 'bg-impo_Surface_OutlineVariant'}`}
+      >
+        <Icon
+          className={`w-[18px] h-[18px] ${!isDeleteBtn && 'fill-impo_Neutral_OnSurface'} ${isDeleteBtn && 'stroke-impo_Error_Error'}`}
+        />
       </div>
-      <Typography scale="Lable" size="Medium">
+
+      <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
         {title}
-      </Typography>
+      </Dark_Typography>
     </div>
   );
 };

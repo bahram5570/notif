@@ -1,3 +1,3 @@
-import { exportMaker } from '@repo/core/utils/system';
+import { exportMaker } from '@repo/core/utils/build';
 
 exportMaker({ appName: 'pwa', port: 3001 });

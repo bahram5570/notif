@@ -5,7 +5,7 @@ import { isDevelopeMode } from '@utils/system';
 import { usePathname } from 'next/navigation';
 
 const useResetOnPageChange = (onReset: () => void) => {
-  const pathname = usePathname();
+  const pathname = usePathname() || '';
   const isFirstTime = useRef(isDevelopeMode());
 
   useEffect(() => {

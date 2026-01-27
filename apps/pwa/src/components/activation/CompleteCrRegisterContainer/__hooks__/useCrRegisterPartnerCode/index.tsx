@@ -9,8 +9,7 @@ import { UseCrRegisterPartnerCodeProps } from './types';
 
 const useCrRegisterPartnerCode = ({ token, onComplete }: UseCrRegisterPartnerCodeProps) => {
   const [isLoading, setIsLoading] = useState(false);
-  const { onToast } = useCustomToast();
-
+  const toast = useCustomToast();
   const callApi = async (v: { code: string }) => {
     setIsLoading(true);
 
@@ -30,7 +29,7 @@ const useCrRegisterPartnerCode = ({ token, onComplete }: UseCrRegisterPartnerCod
 
       onComplete();
     } catch (error) {
-      onToast({ message: ERROR_SERVER, type: 'error' });
+      toast.notifyToastHandler({ message: ERROR_SERVER, type: 'error' });
     }
 
     setIsLoading(false);

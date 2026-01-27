@@ -1,20 +1,18 @@
 import { useState } from 'react';
 
+import MainPageLayout from '@components/MainPageLayout';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import DateModule from '@components/activation/DateModule';
-import Button from '@components/ui/Button';
-import Typography from '@components/ui/Typography';
-import WomenPageLayout from '@components/women/WomenPageLayout';
-import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useActivationPregnancyTabs from '@hooks/__activation__/useActivationPregnancyTabs';
 import useProfileData from '@hooks/__profile__/useProfileData';
-import useTheme from '@hooks/useTheme';
 
 import Tabs from './Tabs';
 import useUpdateCycle from './__hooks__/useUpdateCycle';
 
 const PopUpEditPregnancy = () => {
-  const { colors } = useTheme();
   const { profileData } = useProfileData();
   const { isLoading, submitHandler } = useUpdateCycle();
   const [pregnancyDate, setPregnancyDate] = useState('');
@@ -24,18 +22,22 @@ const PopUpEditPregnancy = () => {
 
   return (
     <div
-      className="fixed top-0 left-0 right-0 bottom-0 mx-auto z-50"
-      style={{ maxWidth: MAX_SCREEN_WIDTH, backgroundColor: colors.White }}
+      style={{ maxWidth: MAX_SCREEN_WIDTH }}
+      className="fixed top-0 left-0 right-0 bottom-0 mx-auto bg-impo_Neutral_Background z-50"
     >
-      <WomenPageLayout rightElement="BackButton" paddingTop={0} paddingBottom={0}>
+      <MainPageLayout rightElement="BackButton" paddingTop={0} paddingBottom={0}>
         <div className="flex flex-col items-center px-4 py-8 min-h-[100dvh]">
-          <Typography scale="Body" size="Medium" style={{ paddingTop: HEADER_HEIGHT }}>
+          <Dark_Typography
+            fontSize="Body_Medium"
+            style={{ paddingTop: HEADER_HEIGHT }}
+            className="text-impo_Neutral_OnBackground"
+          >
             برای محاسبه هفته بارداری:
-          </Typography>
+          </Dark_Typography>
 
-          <Typography scale="Body" size="Medium">
+          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             یکی از روش‌های زیر رو انتخاب کن
-          </Typography>
+          </Dark_Typography>
 
           <Tabs tab={tab} tabHandler={tabHandler} />
 
@@ -47,18 +49,16 @@ const PopUpEditPregnancy = () => {
             valueHandler={setPregnancyDate}
           />
 
-          <Button
-            size="medium"
-            variant="fill"
-            color="primary"
+          <Dark_Button
             className="mt-auto"
             isLoading={isLoading}
+            fontSize="Lable_Large"
             onClick={() => submitHandler({ pregnancyDate, isDelivery: tab === 1 ? true : false })}
           >
             ثبت تغییرات
-          </Button>
+          </Dark_Button>
         </div>
-      </WomenPageLayout>
+      </MainPageLayout>
     </div>
   );
 };

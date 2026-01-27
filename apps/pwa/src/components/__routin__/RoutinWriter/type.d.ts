@@ -1,4 +1,4 @@
-import { WidgetRoutinProps } from '@components/women/Widgets/widgetGenerator/WidgetRoutin/types';
+import { WidgetRoutinProps } from '@components/Widgets/widgetGenerator/WidgetRoutin/types';
 
 type WidgetRoutinPropsDataTypes = Pick<WidgetRoutinProps, 'data'>['data'];
 type WriterInfoTypes = Pick<WidgetRoutinPropsDataTypes, 'writerIcon' | 'writerName' | 'writerSpeciality'>;

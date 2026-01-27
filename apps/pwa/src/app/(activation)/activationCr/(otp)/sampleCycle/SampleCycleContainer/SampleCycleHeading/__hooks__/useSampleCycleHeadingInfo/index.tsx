@@ -6,12 +6,10 @@ import { GoalNamesEnum } from '@constants/activation.constants';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useGoalFinder from '@hooks/__activation__/useGoalFinder';
 import useCulture from '@hooks/useCulture';
-import useTheme from '@hooks/useTheme';
 
 import { UseSampleCycleHeadingInfoProps } from './types';
 
 const useSampleCycleHeadingInfo = ({ payload }: UseSampleCycleHeadingInfoProps) => {
-  const { colors } = useTheme();
   const { culture } = useCulture();
   const { goalInfo } = useGoalFinder({ periodStatus: payload.periodStatus, status: payload.status });
 
@@ -34,9 +32,21 @@ const useSampleCycleHeadingInfo = ({ payload }: UseSampleCycleHeadingInfoProps) 
     }
 
     const list = {
-      [GoalNamesEnum.PREGNANCY]: { text, backgroundColor: colors.Orange_600, textColor: colors.Orange_200 },
-      [GoalNamesEnum.INTENTION]: { text, backgroundColor: colors.Cyan_600, textColor: colors.Cyan_200 },
-      [GoalNamesEnum.TRACKER]: { text, backgroundColor: colors.Pink_600, textColor: colors.Pink_200 },
+      [GoalNamesEnum.PREGNANCY]: {
+        text,
+        backgroundColor: 'bg-impo_Orange_600 dark:bg-impo_Orange_300',
+        textColor: 'text-impo_Orange_200 dark:text-impo_Orange_700',
+      },
+      [GoalNamesEnum.INTENTION]: {
+        text,
+        backgroundColor: 'bg-impo_Cyan_600 dark:bg-impo_Cyan_300',
+        textColor: 'text-impo_Cyan_200 dark:text-impo_Cyan_700',
+      },
+      [GoalNamesEnum.TRACKER]: {
+        text,
+        backgroundColor: 'bg-impo_Pink_600 dark:bg-impo_Pink_300',
+        textColor: 'text-impo_Pink_200 dark:text-impo_Pink_700',
+      },
     };
 
     return list[goalInfo.selectedGoal];

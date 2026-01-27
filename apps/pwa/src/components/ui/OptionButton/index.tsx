@@ -1,31 +1,47 @@
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
-
+import Dark_Typography from '../Dark_Typography';
 import { OptionButtonProps } from './types';
 
 const OptionButton = ({ isSelected, text, onClick }: OptionButtonProps) => {
-  const { colors } = useTheme();
-
-  const backgroundColor = isSelected ? colors.Pink_100 : colors.Surface_SurfaceVariant;
-  const borderColor = isSelected ? colors.PrimaryWoman_Primary : colors.Surface_SurfaceVariant;
-  const RadioBorderColor = isSelected ? colors.PrimaryWoman_Primary : colors.Surface_OutlineVariant;
-
   return (
     <div
       onClick={onClick}
-      style={{ backgroundColor, borderColor }}
-      className="w-full h-12 flex items-center justify-end gap-2 px-3 border-[1px] rounded-lg cursor-pointer"
+      className={`
+                  w-full 
+                  h-12 
+                  flex 
+                  items-center 
+                  justify-end 
+                  gap-2 
+                  px-3 
+                  border-[1px] 
+                  rounded-lg 
+                  cursor-pointer 
+                  ${
+                    isSelected
+                      ? 'bg-impo_Pink_100 dark:bg-impo_Pink_800 border-impo_Primary_Primary'
+                      : 'bg-impo_Neutral_Surface border-impo_Surface_SurfaceVariant'
+                  }
+                `}
     >
-      <Typography scale="Body" size="Medium" color="Neutral_OnBackground">
+      <Dark_Typography
+        fontSize="Body_Medium"
+        className={`text-impo_Neutral_OnBackground ${isSelected && '!text-impo_Black'} `}
+      >
         {text.toString()}
-      </Typography>
+      </Dark_Typography>
 
-      <div className="relative w-4 h-4 border-[1px] rounded-full" style={{ borderColor: RadioBorderColor }}>
+      <div
+        className={`
+                    relative 
+                    w-4 
+                    h-4 
+                    rounded-full 
+                    border-[1px] 
+                    ${isSelected ? 'border-impo_Primary_Primary' : 'border-impo_Surface_OutlineVariant'}
+                  `}
+      >
         {isSelected && (
-          <div
-            style={{ backgroundColor: colors.PrimaryWoman_Primary }}
-            className="absolute top-[2px] left-[2px] right-[2px] bottom-[2px] p-[2px] rounded-full"
-          />
+          <div className="absolute top-[2px] left-[2px] right-[2px] bottom-[2px] p-[2px] rounded-full bg-impo_Primary_Primary" />
         )}
       </div>
     </div>

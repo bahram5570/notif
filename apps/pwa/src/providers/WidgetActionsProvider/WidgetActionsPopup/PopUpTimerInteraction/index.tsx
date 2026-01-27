@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { FOOTER_HEIGTH } from '@components/women/WomenFooter/constants';
+import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import PopUpTimerInteractionContent from './PopUpTimerInteractionContent';

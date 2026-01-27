@@ -1,4 +1,4 @@
-import { HEADER_HEIGHT } from '@components/women/WomenPageLayout/constants';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import AiChatbotBackBtn from './AiChatbotBackBtn';

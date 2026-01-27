@@ -11,3 +11,24 @@ export type OptionTypes = {
 export type ToastTypes = {
   onToast: (v: OptionTypes) => void;
 };
+
+export type NotifyOptions = {
+  message: string;
+  type?: 'success' | 'error' | 'warning';
+  duration?: number;
+  position?: 'top-right' | 'top-left' | 'bottom-center';
+  englishNumbers?: boolean;
+  style?: React.CSSProperties;
+};
+
+export type FeedbackOptions = {
+  message: string;
+  description?: string;
+  toastWithDescription?: boolean;
+  duration?: number;
+};
+
+type ToastContextType = {
+  notifyToastHandler: (options: NotifyOptions) => void;
+  feedbackToastHandler: (options: FeedbackOptions) => void;
+};

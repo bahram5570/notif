@@ -1,19 +1,20 @@
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { AiChatbotTitleHeaderPropsType } from './type';
 
 const AiChatbotTitleHeader = ({ chatTitle }: AiChatbotTitleHeaderPropsType) => {
   return (
-    <div className="flex flex-row-reverse items-center gap-2 rounded-full pl-6 py-1 pr-4 glass-card !bg-white/70 shadow-sm">
+    <div className="flex flex-row-reverse items-center gap-2 rounded-full pl-6 py-1 pr-4 glass-card !bg-white/70  shadow-sm">
       <CustomImage src="/assets/images/mones.webp" width={32} height={32} />
       <div className="flex flex-col justify-center items-end">
-        <Typography scale="Lable" size="Large">
+        <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
           {chatTitle || 'مونس'}
-        </Typography>
-        <Typography scale="Body" size="Small" color="Surface_InverseSurface">
+        </Dark_Typography>
+
+        <Dark_Typography fontSize="Body_Small" className="text-impo_Surface_InverseSurface">
           دستیار هوش مصنوعی
-        </Typography>
+        </Dark_Typography>
       </div>
     </div>
   );

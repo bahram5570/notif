@@ -1,7 +1,7 @@
 'use server';
 
 import { CycleThemeEnum } from '@services/loginServices/enum';
-import { cookieCreatedTime, getUserExpiresDate } from '@utils/cookies';
+import { getUserExpiresDate } from '@utils/cookies';
 import { toEnglishNumbers } from '@utils/numbers';
 
 import { CULTURE_COOKIE_NAME, USER_COOKIE_NAME } from '@constants/cookie.constants';
@@ -34,7 +34,6 @@ export const deleteCultureCookie = async () => {
 export type UserCookieTypes = {
   installationPurpose: { status: number; periodStatus: number };
   cycleTheme: CycleThemeEnum;
-  createdTime?: number;
   password: string;
   identity: string;
   loginId: string;
@@ -42,9 +41,8 @@ export type UserCookieTypes = {
 };
 
 export const setUserCookie = async (props: UserCookieTypes) => {
-  const expires = getUserExpiresDate(30);
   const identity = toEnglishNumbers(props.identity);
-  const createdTime = props.createdTime || cookieCreatedTime();
+  const expires = getUserExpiresDate(30);
 
   const value = JSON.stringify({
     installationPurpose: props.installationPurpose,
@@ -52,7 +50,6 @@ export const setUserCookie = async (props: UserCookieTypes) => {
     password: props.password,
     loginId: props.loginId,
     token: props.token,
-    createdTime,
     identity,
   });
 

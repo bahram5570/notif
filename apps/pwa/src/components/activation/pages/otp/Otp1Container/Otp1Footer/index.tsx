@@ -1,37 +1,36 @@
+import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+
 import { ACTIVATION_HEADING_SCRIPTS_ID } from '@components/activation/ActivationHeading/constants';
-import Typography from '@components/ui/Typography';
-import useTheme from '@hooks/useTheme';
+import Dark_Typography from '@components/ui/Dark_Typography';
+import useOperatingSystem from '@hooks/useOperatingSystem';
 import Link from 'next/link';
 
 const Otp1Footer = () => {
-  const { colors, typography } = useTheme();
-
-  const linkFont = typography.Body.Medium;
-  const linkColor = colors.PrimaryWoman_Primary;
+  const { operatingSystem } = useOperatingSystem();
+  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Medium', operatingSystem });
 
   return (
     <div
-      className="fixed left-0 right-0 bottom-0 mx-auto px-4 pt-4 duration-200 z-30 overflow-hidden"
-      style={{ backgroundColor: colors.Neutral_Background }}
       id={ACTIVATION_HEADING_SCRIPTS_ID}
+      className="fixed left-0 right-0 bottom-0 mx-auto px-4 pt-4 bg-impo_Neutral_Background duration-200 z-30 overflow-hidden"
     >
       <div className="flex flex-row-reverse flex-wrap justify-center gap-1 pt-6 pb-5">
-        <Typography scale="Body" size="Medium" className="whitespace-nowrap">
+        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground whitespace-nowrap">
           با ورود به ایمپو،
-        </Typography>
+        </Dark_Typography>
 
         <Link
           target="_blank"
           href="https://impo.app/terms"
-          className="whitespace-nowrap border-b-[1px]"
-          style={{ ...linkFont, color: linkColor, borderColor: linkColor }}
+          style={{ ...typographyFontStyles }}
+          className="text-impo_Primary_Primary whitespace-nowrap border-b-[1px] border-impo_Primary_Primary"
         >
           قوانین و شرایط
         </Link>
 
-        <Typography scale="Body" size="Medium" className="whitespace-nowrap">
+        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground whitespace-nowrap">
           استفاده از اپلیکیشن رو می‌پذیرم
-        </Typography>
+        </Dark_Typography>
       </div>
     </div>
   );

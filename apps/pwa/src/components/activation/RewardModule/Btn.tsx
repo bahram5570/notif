@@ -1,4 +1,4 @@
-import Button from '@components/ui/Button';
+import Dark_Button from '@components/ui/Dark_Button';
 
 import ActivationBtn from '../ActivationBtn';
 import { BtnProps, RewardBtnTypes } from './types';
@@ -9,26 +9,20 @@ const Btn = ({ btnLabel, btnLabel2, btnHandler, isOnMountModule, isLoading }: Bt
   };
 
   return (
-    <div className="w-full flex flex-col mt-auto px-4 pb-9 pt-1">
+    <div className="w-full flex flex-col mt-auto px-4 pb-[60px] pt-1">
       <div className="flex mx-auto w-[204px] min-w-fit">
         {btnLabel2 && (
-          <Button
-            size="medium"
-            variant="text"
-            color="onBackground"
-            navigationLoadingId={'rewardModuleBtn'}
-            onClick={() => clickHandler({ isBtn2: true })}
-          >
+          <Dark_Button navigationLoadingId={'rewardModuleBtn'} onClick={() => clickHandler({ isBtn2: true })}>
             {btnLabel2}
-          </Button>
+          </Dark_Button>
         )}
 
         <ActivationBtn
           showBtn={true}
           isLoading={isLoading}
           onClick={clickHandler}
-          navigationLoadingId={isOnMountModule ? undefined : 'rewardModuleBtn'}
           btnTestId="rewardModuleBtn"
+          navigationLoadingId={isOnMountModule ? undefined : 'rewardModuleBtn'}
         >
           {btnLabel}
         </ActivationBtn>

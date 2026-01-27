@@ -5,7 +5,6 @@ import TrashIcon from '@assets/icons/trash.svg';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useTheme from '@hooks/useTheme';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 
 import MoreActionBtn from './MoreActionBtn';
@@ -18,7 +17,6 @@ const MoreActionsMenu = ({
   showSuggestionBtn = false,
   disableDeleteBtn,
 }: MoreActionsMenuPropsType) => {
-  const { colors } = useTheme();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
@@ -54,7 +52,7 @@ const MoreActionsMenu = ({
       onClick={closeHandler}
     >
       <div
-        className=" p-4 py-6 rounded-3xl  backdrop-blur-[8px] border border-white shadow-lg absolute left-4 top-[70px]"
+        className=" p-4 py-6 rounded-3xl  backdrop-blur-[8px] border border-impo_Surface_SurfaceVariant shadow-lg absolute left-4 top-[70px] dark:!bg-white/10"
         style={{ backgroundColor: 'rgba(255, 255, 255, 0.64)' }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -70,10 +68,7 @@ const MoreActionsMenu = ({
                     Icon={TrashIcon}
                   />
 
-                  <div
-                    className="w-[133px] h-0 rotate-180  opacity-40"
-                    style={{ border: `1px solid ${colors.Surface_OutlineVariant}` }}
-                  />
+                  <div className="w-[133px] h-0 rotate-180  opacity-40 border border-impo_Surface_OutlineVariant" />
                 </>
               )}
 

@@ -8,7 +8,7 @@ import { ApiInfoTypes, UseInterfaceCodeProps } from './types';
 
 const useInterfaceCode = ({ onComplete }: UseInterfaceCodeProps) => {
   const router = useRouter();
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
   const [code, setCode] = useState('');
   const [apiInfo, setApiInfo] = useState<ApiInfoTypes>(null);
 
@@ -21,9 +21,9 @@ const useInterfaceCode = ({ onComplete }: UseInterfaceCodeProps) => {
       setCode('');
       router.back();
       onComplete(code);
-      onToast({ message: 'کد معرف با موفقیت ثبت شد', type: 'success' });
+      toast.notifyToastHandler({ message: 'کد معرف با موفقیت ثبت شد', type: 'success' });
     } else {
-      onToast({ message: 'کد معرف نامعتبر است', type: 'error' });
+      toast.notifyToastHandler({ message: 'کد معرف نامعتبر است', type: 'error' });
     }
 
     setApiInfo(null);

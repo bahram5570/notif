@@ -2,7 +2,7 @@ import {
   SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME,
   SHARE_EXPERIENCE_ORDER_QUERY_NAME,
   SHARE_EXPERIENCE_TOPIC_MODAL_QUERY_NAME,
-} from '@components/women/pages/mainRoutes/shareExperience/constants';
+} from '@components/pages/mainRoutes/shareExperience/constants';
 
 export const shareExperienceTopicQueryMaker = (id: string) => {
   const queryValue = JSON.stringify({ id, dummyData: Math.random() });

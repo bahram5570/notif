@@ -1,5 +1,5 @@
-import WidgetPragnencyBreastfeedingCard from '@components/women/Widgets/widgetGenerator/WidgetPragnencyBreastfeedingCard';
-import WidgetPredictCard from '@components/women/Widgets/widgetGenerator/WidgetPredictCard';
+import WidgetPragnencyBreastfeedingCard from '@components/Widgets/widgetGenerator/WidgetPragnencyBreastfeedingCard';
+import WidgetPredictCard from '@components/Widgets/widgetGenerator/WidgetPredictCard';
 import { GoalNamesEnum } from '@constants/activation.constants';
 
 import PredictFooter from './PredictFooter';
@@ -9,7 +9,7 @@ const PredictCards = ({ selectedGoal, bottomPartData, openDatesHandler }: Predic
   const info = bottomPartData[selectedGoal];
 
   return (
-    <div className="relative w-full px-4">
+    <div className="relative w-full">
       {info.goal === GoalNamesEnum.PREGNANCY && (
         <>
           <WidgetPragnencyBreastfeedingCard data={info.predictData.data} />

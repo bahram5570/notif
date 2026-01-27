@@ -1,8 +1,8 @@
 import { colorFormatConverter } from '@utils/scripts';
 
-import Button from '@components/ui/Button';
 import CustomImage from '@components/ui/CustomImage';
-import Typography from '@components/ui/Typography';
+import Dark_Button from '@components/ui/Dark_Button';
+import Dark_Typography from '@components/ui/Dark_Typography';
 import useWidgetActions from '@hooks/useWidgetActions';
 
 import { ClickHandlerTypes, PopupDialogProps } from './types';
@@ -28,39 +28,43 @@ const PopupDialog = ({ data }: PopupDialogProps) => {
     <div className="w-full flex flex-col items-center">
       {image && <CustomImage src={image} width={56} height={56} className="mb-4" />}
 
-      <Typography scale="Title" size="Medium" textAlign="center" color="Neutral_OnSurface">
+      <Dark_Typography fontSize="Title_Medium" className="text-center text-impo_Neutral_OnSurface">
         {data.title || ''}
-      </Typography>
+      </Dark_Typography>
 
-      <Typography scale="Body" size="Medium" textAlign="center" color="Neutral_OnSurface" className="mt-1 mb-5">
+      <Dark_Typography fontSize="Body_Medium" className="mt-1 mb-5 text-center text-impo_Neutral_OnSurface">
         {data.description || ''}
-      </Typography>
+      </Dark_Typography>
 
       <div className="w-full flex items-center gap-2">
-        <Button
-          size="medium"
-          variant="fill"
-          color="FREE-STYLES"
-          style={{ direction: 'rtl' }}
+        <Dark_Button
+          style={{
+            direction: 'rtl',
+            background: colorFormatConverter(data.first.backgroundColor),
+            color: colorFormatConverter(data.first.foregroundColor),
+            borderColor: colorFormatConverter(data.first.backgroundColor),
+          }}
+          className="h-10"
           onClick={() => clickHandler('first')}
-          buttonColor={colorFormatConverter(data.first.backgroundColor)}
-          contentsColor={colorFormatConverter(data.first.foregroundColor)}
+          fontSize="Lable_Large"
         >
           {data.first.text}
-        </Button>
+        </Dark_Button>
 
         {data.second && (
-          <Button
-            size="medium"
-            variant="fill"
-            color="FREE-STYLES"
-            style={{ direction: 'rtl' }}
+          <Dark_Button
+            style={{
+              direction: 'rtl',
+              background: colorFormatConverter(data.second.backgroundColor),
+              color: colorFormatConverter(data.second.foregroundColor),
+              borderColor: colorFormatConverter(data.second.backgroundColor),
+            }}
             onClick={() => clickHandler('second')}
-            buttonColor={colorFormatConverter(data.second.backgroundColor)}
-            contentsColor={colorFormatConverter(data.second.foregroundColor)}
+            fontSize="Lable_Large"
+            className="h-10"
           >
             {data.second.text}
-          </Button>
+          </Dark_Button>
         )}
       </div>
     </div>

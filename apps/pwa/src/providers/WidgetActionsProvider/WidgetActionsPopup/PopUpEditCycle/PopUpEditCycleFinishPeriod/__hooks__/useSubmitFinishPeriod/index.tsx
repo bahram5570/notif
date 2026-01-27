@@ -13,7 +13,7 @@ import { SuccessHandlerTypes } from './types';
 const useSubmitFinishPeriod = (endTime: string) => {
   const router = useRouter();
   const { culture } = useCulture();
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
 
   const updatedEndTime = useMemo(() => {
     switch (culture.calendarType) {
@@ -30,7 +30,7 @@ const useSubmitFinishPeriod = (endTime: string) => {
     if (v.valid) {
       router.back();
     } else {
-      onToast({ message: v.message });
+      toast.notifyToastHandler({ message: v.message });
     }
   };
 

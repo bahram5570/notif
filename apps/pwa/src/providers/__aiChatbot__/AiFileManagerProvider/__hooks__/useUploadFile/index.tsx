@@ -9,7 +9,7 @@ import { FileDataHandlerTypes, FileResponseTypes } from './type';
 const MAX_SIZE = 10 * 1024 * 1024;
 const useUploadFile = () => {
   const [files, setFiles] = useState<UploadItemType[]>([]);
-  const { onToast } = useCustomToast();
+  const toast = useCustomToast();
   const [lastFile, setLastFile] = useState<File | null>(null);
 
   const successHandler = (v: FileResponseTypes) => {
@@ -41,7 +41,7 @@ const useUploadFile = () => {
     if (!selected) return;
 
     if (selected.size > MAX_SIZE) {
-      onToast({ message: 'حجم عکس نباید بیشتر از 10 مگابایت باشد.', type: 'error' });
+      toast.notifyToastHandler({ message: 'حجم عکس نباید بیشتر از 10 مگابایت باشد.', type: 'error' });
       return;
     }
 
