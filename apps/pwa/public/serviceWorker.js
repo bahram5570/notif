@@ -1,19 +1,21 @@
 importScripts('https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js');
 importScripts('https://www.gstatic.com/firebasejs/11.6.0/firebase-messaging-compat.js');
 
-const OFFLINE_CACHE_NAME = 'offlinePage';
 const STORED_NOTIFICATION_CACHE_NAME = 'storedNotification';
-const CACHE_OFFLINE_PAGE = '/offlinePage.html';
-const CACHE_FONT = '/assets/shared/fonts/YekanBakh-VF.ttf';
+
+const OFFLINE_CACHE_NAME = 'offlinePage';
+const OFFLINE_HTML_PAGE = '/offlinePage.html';
+const OFFLINE_IMAGE = '/assets/images/offline.png';
+const OFFLINE_FONT = '/assets/shared/fonts/YekanBakh-VF.ttf';
 
 self.addEventListener('install', (event) => {
-  self.skipWaiting();
-
   event.waitUntil(
     caches.open(OFFLINE_CACHE_NAME).then((cache) => {
-      return cache.addAll([CACHE_OFFLINE_PAGE, CACHE_FONT]);
+      return cache.addAll([OFFLINE_IMAGE, OFFLINE_FONT, OFFLINE_HTML_PAGE]);
     }),
   );
+
+  self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
@@ -34,6 +36,18 @@ self.addEventListener('activate', (event) => {
 });
 
 self.addEventListener('fetch', (event) => {
+  const url = new URL(event.request.url);
+
+  if (
+    event.request.method !== 'GET' ||
+    !event.request.url.startsWith('http') ||
+    url.origin !== self.location.origin ||
+    url.pathname.startsWith('/api/') ||
+    url.pathname.startsWith('/_next/')
+  ) {
+    return;
+  }
+
   event.respondWith(
     fetch(event.request)
       .then(async (response) => {
@@ -41,57 +55,25 @@ self.addEventListener('fetch', (event) => {
           return response;
         }
 
-        return await offlineResponse();
+        throw new Error();
       })
       .catch(async () => {
-        try {
-          return await offlineResponse();
-        } catch (error) {
-          return await offlineResponse();
+        const cache = await caches.open(OFFLINE_CACHE_NAME);
+
+        if (['image', 'font'].includes(event.request.destination)) {
+          if (url.pathname === OFFLINE_IMAGE) {
+            return await cache.match(OFFLINE_IMAGE);
+          }
+
+          if (url.pathname === OFFLINE_FONT) {
+            return await cache.match(OFFLINE_FONT);
+          }
         }
+
+        return await cache.match(OFFLINE_HTML_PAGE);
       }),
   );
 });
-
-const offlineResponse = async () => {
-  const errorResponse = new Response(
-    `
-      <!DOCTYPE html>
-      <html lang="fa">
-        <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>ایمپو</title>
-          <style>
-            body { text-align: center; padding: 50px; }
-          </style>
-        </head>
-        
-        <body>
-          <h1>مشکلی پیش اومده!</h1>
-        </body>
-      </html>
-    `,
-    {
-      status: 503,
-      statusText: 'Service Unavailable',
-      headers: { 'Content-Type': 'text/html' },
-    },
-  );
-
-  try {
-    const cache = await caches.open(OFFLINE_CACHE_NAME);
-    const offlinePage = await cache.match('/offlinePage.html');
-
-    if (offlinePage) {
-      return offlinePage;
-    } else {
-      return errorResponse;
-    }
-  } catch (error) {
-    return errorResponse;
-  }
-};
 
 // # Firebase setup
 
