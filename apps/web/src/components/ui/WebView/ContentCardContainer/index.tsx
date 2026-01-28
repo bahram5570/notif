@@ -4,7 +4,7 @@ const ContentCardContainer = ({ bgUrl, children }: ContentCardContainerPropsType
   const background = `url(${bgUrl})`;
 
   return (
-    <div className="rounded-xl  bg-cover bg-center bg-impo_Neutral_Background" style={{ backgroundImage: background }}>
+    <div className="rounded-xl  bg-cover bg-center bg-impo_White" style={{ backgroundImage: background }}>
       {children}
     </div>
   );

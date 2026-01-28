@@ -9,6 +9,9 @@ export const FOOTER_PAGES_LIST: FooterPagesListTypes = [
       { title: 'دانلودها', linkTo: '/download', smallScreenOrder: 3 },
       { title: 'درباره‌ی ما', linkTo: '/aboutUs', smallScreenOrder: 2 },
       { title: 'تماس با ما', linkTo: '/contactUs', smallScreenOrder: 4 },
+      { title: 'قوانین و مقررات', linkTo: '/terms', smallScreenOrder: 4 },
+      { title: 'استانداردهای تولید محتوا', linkTo: '/content-integrity', smallScreenOrder: 4 },
+      { title: 'حریم خصوصی', linkTo: '/privacy-policy', smallScreenOrder: 4 },
     ],
   },
 

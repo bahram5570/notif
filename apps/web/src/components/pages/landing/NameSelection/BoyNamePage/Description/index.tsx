@@ -37,7 +37,7 @@ const Description = () => {
         وقتی به لیست بلند بالای اسم‌های پسرانه جدید و شیک نگاه می‌کنی، ممکنه کمی گیج بشی. برای انتخاب اسم پسر خاص و تک
         باید حسابی بهش فکر کنین چون این اسم قراره تا همیشه همراه بچه شما باشه و هویتش رو بسازه. اگه تازه وارد مسیر شیرین
         بارداری شدی و هنوز سوالای زیادی تو ذهنت هست، یه سر به مقاله
-        <CustomLink href="/pregnancy" className="px-1 !text-impo_Primary_Primary">
+        <CustomLink href="/pregnancy" className="px-1 !text-impo_Primary_Primary inline-block">
           بارداری
         </CustomLink>
         بزن تا با نکات کاربردی این دوران بیشتر آشنا شی.

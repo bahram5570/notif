@@ -9,19 +9,19 @@ const IntroductionSection = () => {
       </CustomTypography>
       <CustomTypography fontSize="Body_Large" className="!text-impo_Surface_InverseSurface">
         اپلیکیشن ایمپو علاوه بر قابلیت‌هایی مثل
-        <CustomLink href="/calendarOfPregnancy" className="!text-impo_PrimaryMan_PrimaryMan">
+        <CustomLink href="/calendarOfPregnancy" className="!text-impo_PrimaryMan_PrimaryMan mx-[3px] inline-block">
           محاسبه سن بارداری
         </CustomLink>
         ، کلینیک سلامت و
-        <CustomLink href="/landing/clinic" className="!text-impo_PrimaryMan_PrimaryMan">
+        <CustomLink href="/landing/clinic" className="!text-impo_PrimaryMan_PrimaryMan mx-[3px] inline-block">
           دکتر آنلاین
         </CustomLink>
         ، توصیه‌های پزشکی مفید، یادآوری آزمایشات و مراقبت‌های بارداری، یه ابزار کاربردی دیگه هم برای انتخاب
-        <CustomLink href="/landing/girl-name" className="!text-impo_PrimaryMan_PrimaryMan">
+        <CustomLink href="/landing/girl-name" className="!text-impo_PrimaryMan_PrimaryMan mx-[3px] inline-block">
           اسم دختر
         </CustomLink>
         و
-        <CustomLink href="/landing/boy-name" className="!text-impo_PrimaryMan_PrimaryMan">
+        <CustomLink href="/landing/boy-name" className="!text-impo_PrimaryMan_PrimaryMan mx-[3px] inline-block">
           اسم پسر
         </CustomLink>
         داره.

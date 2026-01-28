@@ -18,11 +18,11 @@ const LandingPregnancyLayout = async () => {
       <CustomTypography className="text-justify !text-impo_Neutral_OnBackground">
         تست حاملگی آنلاین ایمپو، شامل 12 تا سواله که به کمک جواب‌های شما، احتمال بارداری رو در سه حالت زیاد، کم و متوسط
         براتون محاسبه می‌کنه. این سوال‌ها در مورد علائم اولیه بارداری مثل
-        <CustomLink href="/bleeding-nesting" className="!text-impo_Primary_Primary">
+        <CustomLink href="/bleeding-nesting" className="!text-impo_Primary_Primary mx-[3px] inline-block">
           خونریزی لانه‌گزینی،
         </CustomLink>
         حالت تهوع، خستگی،
-        <CustomLink href="/late-period" className="!text-impo_Primary_Primary">
+        <CustomLink href="/late-period" className="!text-impo_Primary_Primary mx-[3px] inline-block">
           عقب افتادن پریود
         </CustomLink>
         همچنین، داشتن رابطه جنسی محافظت نشده، احتمال بارداری رو خیلی زیاد می‌کنه. در این تست، تمامی عوامل مهمی که احتمال
@@ -67,19 +67,19 @@ const LandingPregnancyLayout = async () => {
         <CustomTypography className="text-justify pt-2 !text-impo_Neutral_OnBackground">
           هیچ تست بارداری آنلاین رایگانی، صد در صد دقیق نیست و احتمال خطای بالایی داره؛ برای تشخیص قطعی بارداری باید
           حتما از بی بی چک استفاده کنین یا
-          <CustomLink href="/hcg-blood-test" className="!text-impo_Primary_Primary">
+          <CustomLink href="/hcg-blood-test" className="!text-impo_Primary_Primary mx-[3px] inline-block">
             آزمایش خون بارداری
           </CustomLink>
           بدین. بنابراین تست آنلاین بارداری جایگزین
-          <CustomLink href="/baby-check" className="!text-impo_Primary_Primary">
+          <CustomLink href="/baby-check" className="!text-impo_Primary_Primary mx-[3px] inline-block">
             بی بی چک
           </CustomLink>
           یست؛ با این حال، تست حاملگی آنلاین ایمپو، فاکتورهای مهمی مثل
-          <CustomLink href="/pregnancy-symptoms" className="!text-impo_Primary_Primary">
+          <CustomLink href="/pregnancy-symptoms" className="!text-impo_Primary_Primary mx-[3px] inline-block">
             ریزترین علائم بارداری در هفته اول،
           </CustomLink>
           قب افتادن پریود و روش
-          <CustomLink href="/contraception" className="!text-impo_Primary_Primary">
+          <CustomLink href="/contraception" className="!text-impo_Primary_Primary mx-[3px] inline-block">
             پیشگیری از بارداری
           </CustomLink>
           رو بررسی می‌کنه تا بتونین برای زمان استفاده از بی بی چک تصمیم بگیرین. در مقاله بی بی چک روش استفاده و تفسیر

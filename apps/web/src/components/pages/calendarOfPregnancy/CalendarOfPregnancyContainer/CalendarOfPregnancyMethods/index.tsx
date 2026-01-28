@@ -21,13 +21,16 @@ const CalendarOfPregnancyMethods = () => {
 
       <CustomTypography className=" pt-2 pb-6 !text-impo_Neutral_OnBackground">
         در این روش تاریخ زایمان شما حدود 40 هفته پس از اولین روز از آخرین
-        <CustomLink href="https://impo.app/menstrual-cycle" className="!text-impo_Primary_Primary">
+        <CustomLink
+          href="https://impo.app/menstrual-cycle"
+          className="!text-impo_Primary_Primary mx-[3px] inline-block"
+        >
           پریود
         </CustomLink>
         شما خواهد بود. اپلیکیشن ایمپو پیش از اقدام به بارداری می‌تواند به شما در ثبت تاریخ پریود کمک کند. اگر
         <CustomLink
           href="https://impo.app/irregular-periods-reasons-and-treatment"
-          className="!text-impo_Primary_Primary"
+          className="!text-impo_Primary_Primary mx-[3px] inline-block"
         >
           پریود نامنظم
         </CustomLink>
@@ -40,7 +43,7 @@ const CalendarOfPregnancyMethods = () => {
 
       <CustomTypography className=" pt-2 pb-6 !text-impo_Neutral_OnBackground">
         اگر تاریخ دقیق
-        <CustomLink href="https://impo.app/ovulation" className="!text-impo_Primary_Primary">
+        <CustomLink href="https://impo.app/ovulation" className="!text-impo_Primary_Primary mx-[3px] inline-block">
           تخمک گذاری
         </CustomLink>
         را می‌دانید کافیست 38 هفته به آن اضافه کنید تا تاریخ زایمان و تولد فرزندتان را بدست آورید.
@@ -52,7 +55,7 @@ const CalendarOfPregnancyMethods = () => {
 
       <CustomTypography className=" pt-2 pb-6 !text-impo_Neutral_OnBackground">
         آزمایش خون بتا یا
-        <CustomLink href="https://impo.app/hcg-blood-test" className="!text-impo_Primary_Primary">
+        <CustomLink href="https://impo.app/hcg-blood-test" className="!text-impo_Primary_Primary mx-[3px] inline-block">
           آزمایش خون بارداری
         </CustomLink>
         با بررسی سطح فاکتوری به نام هورمون hCG به تشخیص بارداری کمک می‌کند.
