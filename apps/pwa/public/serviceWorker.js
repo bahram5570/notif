@@ -4,13 +4,14 @@ importScripts('https://www.gstatic.com/firebasejs/11.6.0/firebase-messaging-comp
 const OFFLINE_CACHE_NAME = 'offlinePage';
 const STORED_NOTIFICATION_CACHE_NAME = 'storedNotification';
 const CACHE_OFFLINE_PAGE = '/offlinePage.html';
+const CACHE_FONT = '/assets/shared/fonts/YekanBakh-VF.ttf';
 
 self.addEventListener('install', (event) => {
   self.skipWaiting();
 
   event.waitUntil(
     caches.open(OFFLINE_CACHE_NAME).then((cache) => {
-      return cache.addAll([CACHE_OFFLINE_PAGE]);
+      return cache.addAll([CACHE_OFFLINE_PAGE, CACHE_FONT]);
     }),
   );
 });
