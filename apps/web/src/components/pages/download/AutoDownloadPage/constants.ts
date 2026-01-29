@@ -8,13 +8,13 @@ import { HelpDataType } from './types';
 
 export const HelpData: HelpDataType = {
   chrome: [
-    { img: chromeStep1, title: 'اول روی این پیام کلیک کن' },
-    { img: chromeStep2, title: 'یا روی نوتیفیکیشن بالای صفحه کلیک کن' },
-    { img: chromeStep3, title: 'وارد صفحه دانلود شو و روی فایل نصب کلیک کن' },
+    { img: chromeStep1, title: ' روی این پیام کلیک کنید' },
+    { img: chromeStep2, title: 'یا روی نوتیفیکیشن بالای صفحه کلیک کنید' },
+    { img: chromeStep3, title: 'وارد فایل دانلودها شوید و فایل را نصب کنید' },
   ],
   samsungbrowser: [
-    { img: samsungStep1, title: 'روی نوتیفیکیشن بالای صفحه کلیک کن' },
-    { img: samsungStep2, title: 'وارد صفحه دانلود شو و روی فایل نصب کلیک کن' },
+    { img: samsungStep1, title: 'روی نوتیفیکیشن بالای صفحه کلیک کنید' },
+    { img: samsungStep2, title: 'وارد فایل دانلودها شوید و فایل را نصب کنید' },
   ],
   other: [],
 };
