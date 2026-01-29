@@ -17,7 +17,7 @@ const DownloadAppWomen2Conteiner = () => {
         title="دانلود مستقیم"
         directId="women-android-direct"
         href={womanDirectApplcationalink}
-        Icon={<AndroidIcon className="w-6 min-w-6 h-auto fill-impo_White" />}
+        Icon={<AndroidIcon className="w-6 min-w-6 h-auto fill-impo_White dark:fill-impo_Black" />}
       />
     </div>
   );
@@ -27,7 +27,7 @@ const DownloadAppWomen2Conteiner = () => {
       <LinkGenerator
         directId="women-ios-direct"
         href={APP_STORE_LINK_WOMEN_URL}
-        Icon={<AppStoreDownloadIcon className="w-[100px] h-auto fill-impo_White" />}
+        Icon={<AppStoreDownloadIcon className="w-[100px] h-auto fill-impo_White dark:fill-impo_Black !scale-125" />}
       />
     </div>
   );
