@@ -1,9 +1,11 @@
 import { handleBodyUpdate } from './__utils__';
-import { fileImageUrl } from '@services/http';
+import { articleImageUrl, fileImageUrl } from '@services/http';
 
 import DownloadApp from '@components/DownloadApp/DownloadAppWomen';
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
 import CustomImage from '@components/ui/CustomImage';
+import CustomLink from '@components/ui/CustomLink';
+import CustomTypography from '@components/ui/CustomTypography';
 import dynamic from 'next/dynamic';
 
 import ArticleIdBeforeAfter from './ArticleIdBeforeAfter';
@@ -26,6 +28,9 @@ const ArticleIdPageContainer = async (props: ArticleIdPageContainerTypes) => {
   const { abstractBody, articleBody, articleSubjectList } = await handleBodyUpdate(props.body);
 
   const visitCardUrl = props.doctor?.visitCard ? fileImageUrl + props.doctor.visitCard : '/assets/images/notLoaded.svg';
+  const authorImageUrl = props.author.authorPic
+    ? articleImageUrl + props.author.authorPic
+    : '/assets/images/notLoaded.svg';
 
   return (
     <HeaderFooterContainer isArticlePage={true} hasFooterLink={true}>
@@ -51,6 +56,7 @@ const ArticleIdPageContainer = async (props: ArticleIdPageContainerTypes) => {
             publishTime={props.publishTime}
             rateCount={props.rateCount}
             name={props.doctor?.name}
+            authorPic={props.author.authorPic}
             id={props.author.id}
           />
 
@@ -79,6 +85,27 @@ const ArticleIdPageContainer = async (props: ArticleIdPageContainerTypes) => {
 
           <ArticleIdFaq faqs={props.faqs} />
 
+          {props.doctor && (
+            <CustomLink href={`/author/${props.author.id}`} className="flex items-center">
+              <div className="flex gap-3 items-center">
+                <div className="relative w-16 h-16">
+                  <CustomImage
+                    className="rounded-full object-cover"
+                    alt={props.author.authorName || ''}
+                    src={authorImageUrl}
+                    fill={true}
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <CustomTypography
+                    fontSize="Body_Small"
+                    className={`!text-impo_Neutral_OnBackground`}
+                  >{`نویسنده: ${props.author.authorName}`}</CustomTypography>
+                </div>
+              </div>
+            </CustomLink>
+          )}
           <ArticleIdScore rate={props.rate} rateCount={props.rateCount} />
 
           <ArticleIdBeforeAfter after={props.after} before={props.before} />

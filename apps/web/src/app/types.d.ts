@@ -46,6 +46,7 @@ export type ArticlesTypes = {
     email: string;
     bio: string;
     id: string;
+    linkedin: string;
   };
   before: {
     title: string;

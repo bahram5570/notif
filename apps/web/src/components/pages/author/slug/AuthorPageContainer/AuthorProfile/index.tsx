@@ -5,7 +5,7 @@ import CustomTypography from '@components/ui/CustomTypography';
 
 import { AuthorProfileTypes } from './types';
 
-const AuthorProfile = ({ authorName, authorPic, description }: AuthorProfileTypes) => {
+const AuthorProfile = ({ authorName, authorPic }: AuthorProfileTypes) => {
   const imageUrl = authorPic ? articleImageUrl + authorPic : '/assets/images/notLoaded.svg';
 
   return (
@@ -15,12 +15,12 @@ const AuthorProfile = ({ authorName, authorPic, description }: AuthorProfileType
       </div>
 
       <div className="flex flex-col gap-2">
-        <CustomTypography fontSize="Lable_Large" tagType="h3" className="!text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Lable_Large" tagType="h1" className="!text-impo_Neutral_OnBackground">
           {authorName}
         </CustomTypography>
 
         <CustomTypography fontSize="Lable_Small" className="!text-impo_Surface_Outline">
-          {description}
+          نویسنده در حوزه سلامت
         </CustomTypography>
       </div>
     </div>

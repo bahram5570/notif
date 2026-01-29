@@ -1,5 +1,5 @@
 import BlueTickIcon from '@assets/icons/blueTick.svg';
-import { fileImageUrl } from '@services/http';
+import { articleImageUrl, fileImageUrl } from '@services/http';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
@@ -10,17 +10,18 @@ import { ArticleIdProfileTypes } from './types';
 
 const ArticleIdProfile = (props: ArticleIdProfileTypes) => {
   const profileImageUrl = props.profileImage ? fileImageUrl + props.profileImage : '/assets/images/notLoaded.svg';
+  const authorImageUrl = props.authorPic ? articleImageUrl + props.authorPic : '/assets/images/notLoaded.svg';
 
   return (
     <>
       <div className="w-full min-h-[64px] flex flex-col md:flex-row md:items-center justify-between">
         <CustomLink href={`/author/${props.id}`} className="flex items-center">
-          <div className="flex gap-3">
+          <div className={`flex gap-3 ${props.name && 'items-center'}`}>
             <div className="relative w-16 h-16">
               <CustomImage
                 className="rounded-full object-cover"
                 alt={props.name || ''}
-                src={profileImageUrl}
+                src={!props.name ? authorImageUrl : profileImageUrl}
                 sizes="64px"
                 fill={true}
               />
@@ -38,10 +39,12 @@ const ArticleIdProfile = (props: ArticleIdProfileTypes) => {
                 </div>
               )}
 
-              <CustomTypography
-                fontSize="Body_Small"
-                className={`!text-impo_Neutral_OnBackground ${typeof props.name === 'undefined' && 'my-auto'}`}
-              >{`نویسنده: ${props.authorName}`}</CustomTypography>
+              {!props.name && (
+                <CustomTypography
+                  fontSize="Body_Small"
+                  className={`!text-impo_Neutral_OnBackground ${typeof props.name === 'undefined' && 'my-auto'}`}
+                >{`نویسنده: ${props.authorName}`}</CustomTypography>
+              )}
             </div>
           </div>
         </CustomLink>
