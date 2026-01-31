@@ -1,4 +1,4 @@
-import { Suspense, useState } from 'react';
+import { Suspense } from 'react';
 
 import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
 

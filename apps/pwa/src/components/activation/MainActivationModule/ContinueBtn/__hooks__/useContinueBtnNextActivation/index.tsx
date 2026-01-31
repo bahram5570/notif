@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import useCustomToast from '@hooks/useCustomToast';
-import useSectionSaver from '@providers/__activation__/ActivationProvider/__hooks__/useSectionSaver';
 import { useRouter } from 'next/navigation';
 
 import { ContinueBtnNextActivationOnContinueTypes, NextActivationHandlerTypes } from './types';
@@ -9,7 +8,6 @@ import { ContinueBtnNextActivationOnContinueTypes, NextActivationHandlerTypes } 
 const useContinueBtnNextActivation = (onContinue: ContinueBtnNextActivationOnContinueTypes) => {
   const router = useRouter();
   const toast = useCustomToast();
-  const { sectionSaverHandler } = useSectionSaver();
   const [resetKey, setResetKey] = useState(Math.random().toString());
 
   const nextActivationHandler: NextActivationHandlerTypes = (v) => {
@@ -24,7 +22,6 @@ const useContinueBtnNextActivation = (onContinue: ContinueBtnNextActivationOnCon
     }
 
     if (typeof v.nextActivation === 'string' && v.nextActivation !== '') {
-      sectionSaverHandler(v.nextActivation);
       router.push(v.nextActivation);
     } else {
       if (v.onRegister) {

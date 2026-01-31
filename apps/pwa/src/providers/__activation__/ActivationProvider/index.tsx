@@ -3,10 +3,10 @@
 import { createContext, useState } from 'react';
 
 import { PayloadHandlerTypes } from '@components/activation/MainActivationModule/types';
-import { ACTIVATION_PAYLOAD_VALUES } from '@constants/activation.constants';
+import { ACTIVATION_PAYLOAD_VALUES, ACTIVATION_REWARD_QUERY_NAME } from '@constants/activation.constants';
+import useActivationBackQuery from '@hooks/__activation__/useActivationBackQuery';
 
-import useActivationGoBackHandler from './__hooks__/useActivationGoBackHandler';
-import useActivationSectionRouteProtection from './__hooks__/useActivationSectionRouteProtection';
+import useActivationRouteProtection from './__hooks__/useActivationRouteProtection';
 import useData from './__hooks__/useData';
 import { ActivationProviderProps, ActivationTypes } from './types';
 
@@ -28,8 +28,8 @@ const ActivationProvider = ({ children, questionsData, errorCode }: ActivationPr
     setPayload({ ...payload, ...v });
   };
 
-  useActivationSectionRouteProtection({ payloadHandler });
-  useActivationGoBackHandler();
+  useActivationBackQuery({ queryName: ACTIVATION_REWARD_QUERY_NAME });
+  useActivationRouteProtection();
 
   return (
     <ActivationContext.Provider value={{ payload, payloadHandler, data }}>

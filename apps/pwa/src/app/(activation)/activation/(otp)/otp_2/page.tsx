@@ -8,13 +8,11 @@ import { OtpStatusTypes } from '@components/activation/pages/otp/Otp2Container/_
 import { OTP_COUNT_DOWN_TIME } from '@components/activation/pages/otp/Otp2Container/constants';
 import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import useCountDown from '@hooks/useCountDown';
-import useSectionSaver from '@providers/__activation__/ActivationProvider/__hooks__/useSectionSaver';
 import { useRouter } from 'next/navigation';
 
 const Otp2 = () => {
   // # کد
   const router = useRouter();
-  const { sectionSaverHandler } = useSectionSaver();
   const { callEventActivation } = useActivationAnalytics();
   const [isRegisterSuccess, setIsRegisterSuccess] = useState(false);
   const [applyOtpStatus, setApplyOtpStatus] = useState<OtpStatusTypes>(null);
@@ -27,7 +25,6 @@ const Otp2 = () => {
 
   const nextRouteHandler = () => {
     router.push('goal_1');
-    sectionSaverHandler('goal_1');
   };
 
   const { startCounter } = useCountDown({

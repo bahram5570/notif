@@ -1,7 +1,5 @@
 import { useEffect } from 'react';
 
-import { sectionStorageChecker } from '@providers/__activation__/ActivationProvider/__hooks__/useActivationGoBackHandler/__utils__';
-
 import { SAMPLE_CYCLE_STORAGE_NAME } from '@providers/__activation__/ActivationCrProvider/__constants__/activationCrContants';
 import { useRouter } from 'next/navigation';
 
@@ -19,7 +17,6 @@ const useFakeCycleBackHandler = () => {
       }) > -1;
 
     if (hasSelectedQuery) {
-      sectionStorageChecker();
       router.replace('fakeCycle');
       sessionStorage.removeItem(SAMPLE_CYCLE_STORAGE_NAME);
     }
