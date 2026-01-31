@@ -61,8 +61,8 @@ const ChatbotModalMode = ({ description, title, startChatText, goToChatAction }:
         }}
       >
         <div className="px-4 flex flex-col justify-center items-center gap-2">
-          <div className=" px-4 py-2 rounded-full bg-impo_Neutral_Background">
-            <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+          <div className=" px-4 py-2 rounded-full bg-impo_White">
+            <Dark_Typography fontSize="Title_Small" className="text-impo_Black">
               {title}
             </Dark_Typography>
           </div>

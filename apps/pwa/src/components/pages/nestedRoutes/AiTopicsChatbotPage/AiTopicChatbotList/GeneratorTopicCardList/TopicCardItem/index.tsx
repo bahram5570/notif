@@ -16,7 +16,7 @@ const TopicCardItem = (props: TopicCardItemPropsType) => {
       <div className="flex flex-col items-end gap-2">
         <div className="flex  justify-end items-end w-full">
           <div className="w-10 h-10 rounded-full bg-impo_Surface_SurfaceVariant flex justify-center items-center">
-            <CustomImage src={props.icon} height={24} width={24} />
+            <CustomImage src={props.icon} className="min-w-6 min-h-6 " />
           </div>
         </div>
 
