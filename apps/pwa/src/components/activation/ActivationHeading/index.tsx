@@ -19,7 +19,7 @@ const ActivationHeading = ({
   scripts,
   progressPercentage,
   orderOfQuestionScripts,
-  isShowLogo,
+  isShowLogo = true,
   banner,
 }: ActivationHeadingProps) => {
   const { isLargeScreen } = useActivationIsLargeScreen();

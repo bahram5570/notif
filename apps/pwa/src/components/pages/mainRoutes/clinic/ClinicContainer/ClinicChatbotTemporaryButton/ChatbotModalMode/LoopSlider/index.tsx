@@ -31,9 +31,9 @@ export default function LoopSlider({ items, direction = 'left' }: LoopSliderProp
             <div
               key={index}
               style={{ boxShadow: '0px 4px 15px rgba(58, 112, 191, 0.1)' }}
-              className="flex flex-row justify-center items-center min-w-[200px] mx-1 px-4 py-3 rounded-lg text-center whitespace-nowrap bg-impo_Neutral_Background"
+              className="flex flex-row justify-center items-center min-w-[200px] mx-1 px-4 py-3 rounded-lg text-center whitespace-nowrap bg-impo_White"
             >
-              <Dark_Typography fontSize="Body_Medium" className="text-center text-impo_Neutral_OnBackground">
+              <Dark_Typography fontSize="Body_Medium" className="text-center text-impo_Black">
                 {item.text}
               </Dark_Typography>
             </div>

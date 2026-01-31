@@ -26,7 +26,7 @@ const ClinicChatbotLayout = ({
   return (
     <div
       ref={targetRef}
-      className={`fixed left-0 right-0 mx-auto z-30 bg-impo_Neutral_Background ${isModalVisible ? 'h-96' : 'h-14'} ${className}`}
+      className={`fixed left-0 right-0 mx-auto z-30 bg-white ${isModalVisible ? 'h-96' : 'h-14'} ${className}`}
       style={{
         maxWidth: MAX_SCREEN_WIDTH,
         bottom: isModalVisible ? FOOTER_HEIGTH + 16 : FOOTER_HEIGTH + 30,
@@ -34,10 +34,10 @@ const ClinicChatbotLayout = ({
     >
       <>
         {isModalVisible && (
-          <div className="absolute w-10 top-4 left-4 h-10 flex flex-col justify-center items-center cursor-pointer rounded-full bg-impo_Neutral_Background z-50">
+          <div className="absolute w-10 top-4 left-4 h-10 flex flex-col justify-center items-center cursor-pointer rounded-full bg-impo_White z-50">
             <CrossIcon
               onClick={handleCloseModal}
-              className="w-7 h-auto rotate-45 mx-auto stroke-[2px] stroke-impo_Surface_Outline"
+              className="w-6 h-auto rotate-45 mx-auto stroke-[2px] stroke-impo_Surface_Outline"
             />
           </div>
         )}

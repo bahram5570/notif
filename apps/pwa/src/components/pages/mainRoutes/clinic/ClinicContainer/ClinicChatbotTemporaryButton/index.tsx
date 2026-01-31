@@ -8,7 +8,7 @@ import { ClinicChatbotTemporaryButtonPropsType } from './type';
 
 const ClinicChatbotTemporaryButton = ({ chatbot, onChangeValueHandler }: ClinicChatbotTemporaryButtonPropsType) => {
   const { isChatbotModalVisible } = useChatbotModalVisibility();
-  const [isModalVisible, setIsModalVisible] = useState(isChatbotModalVisible);
+  const [isModalVisible, setIsModalVisible] = useState(true);
 
   const handleCloseModal = () => {
     setIsModalVisible(false);
