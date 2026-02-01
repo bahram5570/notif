@@ -7,6 +7,7 @@ export interface ArticleIdProfileTypes extends ItemsTypes {
   wordsCount: number;
   name: string | undefined;
   profileImage: string | undefined;
+  authorPic: string | undefined;
 }
 
 export interface ArticleIdProfileInfoTypes extends Pick<

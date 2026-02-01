@@ -1,3 +1,4 @@
+import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 
 import { CategoryMainTitleTypes } from './types';
@@ -7,7 +8,7 @@ const CategoryMainTitle = ({ title }: CategoryMainTitleTypes) => {
     <div className="w-full pb-16">
       {/* <CustomTypography tagType="h1" fontSize="Headline_Medium">{`مقالات مربوط به ${title}`}</CustomTypography> */}
       <CustomTypography
-        tagType="h1"
+        tagType="h3"
         fontSize="Headline_Small"
         className="!text-impo_Neutral_OnBackground"
       >{`مقالات مربوط به ${title}`}</CustomTypography>

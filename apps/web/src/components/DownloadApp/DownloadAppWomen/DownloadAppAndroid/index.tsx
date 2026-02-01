@@ -8,12 +8,14 @@ import DownloadAppLinkGenerator from '@components/DownloadApp/DownloadAppLinkGen
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import { CAFEBAZAAR_LINK_WOMEN_URL, MYKET_LINK_WOMEN_URL } from '@constants/links.constants';
+import useBreakPoint from '@hooks/useBreakPoint';
 import useDownloadLinks from '@hooks/useDownloadLinks';
 import useUserTracking from '@hooks/useUserTracking';
 
 const DownloadAppAndroid = () => {
   const { callUserTracking } = useUserTracking();
   const { womanDirectApplcationalink } = useDownloadLinks();
+  const { breakPoint } = useBreakPoint();
 
   const directId = 'women-android-direct';
 
@@ -27,7 +29,7 @@ const DownloadAppAndroid = () => {
         <CustomLink
           id={directId}
           target="_blank"
-          href={womanDirectApplcationalink}
+          href={breakPoint.mobile && breakPoint.tablet ? '/download/autodownload' : womanDirectApplcationalink}
           aria-label="DownloadAppAndroid"
           onClick={() => callUserTracking(directId)}
           className="rounded-full w-full h-12 lg:h-[60px] mx-auto flex items-center justify-center gap-2 bg-impo_Neutral_OnBackground"
