@@ -1,4 +1,3 @@
-// import { notificationPermission } from '@utils/system';
 import Dark_Button from '@components/ui/Dark_Button';
 
 // import { firebaseToken } from '@lib/firebaseConfig';

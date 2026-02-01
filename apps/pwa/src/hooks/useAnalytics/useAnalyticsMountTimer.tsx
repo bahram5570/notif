@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import { isDevelopeMode } from '@utils/system';
+import { isDevelopeMode } from '@repo/core/utils/system';
 
 import { UseAnalyticsMountTimerTypes } from './types';
 

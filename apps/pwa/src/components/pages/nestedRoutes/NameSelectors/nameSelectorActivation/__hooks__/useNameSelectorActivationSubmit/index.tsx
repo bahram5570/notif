@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
+import { isDevelopeMode } from '@repo/core/utils/system';
 import { SelectNameGenderEnum } from '@services/selectNameServices/enums';
-import { isDevelopeMode } from '@utils/system';
 
 import useApi from '@hooks/useApi';
 

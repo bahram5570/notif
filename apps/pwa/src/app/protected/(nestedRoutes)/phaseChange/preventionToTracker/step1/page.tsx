@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 
-import { isDevelopeMode } from '@utils/system';
+import { isDevelopeMode } from '@repo/core/utils/system';
 
 import CompleteRegisterContainer from '@components/activation/CompleteRegisterContainer';
 import { PayloadHandlerTypes } from '@components/activation/MainActivationModule/types';

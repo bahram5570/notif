@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import { isDevelopeMode } from '@utils/system';
+import { isDevelopeMode } from '@repo/core/utils/system';
 
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { useSearchParams } from 'next/navigation';

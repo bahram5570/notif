@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 
 import { permissionHandler } from './__utils__';
-import { isDevelopeMode } from '@utils/system';
+import { isDevelopeMode } from '@repo/core/utils/system';
 
 import useOperatingSystem from '@hooks/useOperatingSystem';
 import { useRouter } from 'next/navigation';

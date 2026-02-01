@@ -2,11 +2,10 @@
 
 import { useEffect, useRef } from 'react';
 
+import { isDevelopeMode } from '@repo/core/utils/system';
 import { getPaymentCookie, removePaymentCookie } from '@utils/cookies';
-import { isDevelopeMode } from '@utils/system';
 
 import useAnalytics from '@hooks/useAnalytics';
-// import { getPaymentAction, removePaymentAction } from '@actions/payment';
 import { useRouter } from 'next/navigation';
 
 import { PAYMENT_QUERY_NAME } from './constants';

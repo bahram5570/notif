@@ -7,20 +7,20 @@
       "import": "./dist/utils/*.js",
       "types": "./dist/utils/*.d.ts"
     },
+    "./hooks/*": {
+      "import": "./dist/hooks/*.js",
+      "types": "./dist/hooks/*.d.ts"
+    },
     "./theme/*": {
       "import": "./dist/theme/*.js",
       "types": "./dist/theme/*.d.ts"
     },
     "./theme.css": "./dist/theme/theme.css",
-    "./hooks/*": {
-      "import": "./dist/hooks/*.js",
-      "types": "./dist/hooks/*.d.ts"
-    },
     "./configs/*": "./dist/configs/*.ts"
   },
   "scripts": {
     "copy-theme-css": "cpy ./src/theme/theme.css ./dist/theme --flat",
     "copy-configs": "cpy ./src/configs ./dist/configs --flat",
-    "build": "tsc --project tsconfig.json && npm run copy-theme-css && npm run copy-configs"
+    "build": "rimraf dist && tsc --project tsconfig.json && npm run copy-theme-css && npm run copy-configs"
   }
 }

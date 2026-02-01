@@ -29,9 +29,9 @@ const MainActivationModule = (props: MainActivationModuleProps) => {
       <ActivationHeading
         orderOfQuestionScripts={props.orderOfQuestionScripts}
         progressPercentage={props.progressPercentage}
+        isShowLogo={props.isShowLogo}
         scripts={props.scripts}
         banner={props.banner}
-        isShowLogo={props.isShowLogo}
       />
 
       <div

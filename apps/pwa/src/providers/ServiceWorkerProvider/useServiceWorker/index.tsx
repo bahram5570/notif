@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 import { notifHandlerActionMaker } from './__utils__';
-import { isDevelopeMode } from '@utils/system';
+import { isDevelopeMode } from '@repo/core/utils/system';
 
 import useWidgetActions from '@hooks/useWidgetActions';
 import { getFirebaseMessaging } from '@lib/firebaseConfig';

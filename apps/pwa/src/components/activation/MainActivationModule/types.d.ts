@@ -8,11 +8,11 @@ export type MainActivationModuleProps = PageInfoStateTypes & {
   showContinueBtn?: boolean;
   onRegister?: () => void;
   onContinue?: () => void;
+  isShowLogo?: boolean;
   isLoading?: boolean;
   className?: string;
   btnTestId?: string;
   banner?: string;
-  isShowLogo?: boolean;
 };
 
 export type PayloadHandlerTypes = (v: { [key in string]: string | number | boolean }) => void;

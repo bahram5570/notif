@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { isDevelopeMode } from '@utils/system';
+import { isDevelopeMode } from '@repo/core/utils/system';
 
 import useDelayCallback from '@hooks/useDelayCallback';
 

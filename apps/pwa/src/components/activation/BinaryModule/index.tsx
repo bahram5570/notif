@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { binaryMaker, indexToBinary, toBinary } from './__utils__';
-import { isDevelopeMode } from '@utils/system';
+import { isDevelopeMode } from '@repo/core/utils/system';
 
 import ItemGenerator from './ItemGenerator';
 import useSingleSelectFinder from './__hooks__/useSingleSelectFinder';
