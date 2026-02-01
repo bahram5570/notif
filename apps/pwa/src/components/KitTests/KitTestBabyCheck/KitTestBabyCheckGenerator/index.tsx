@@ -1,7 +1,7 @@
 import SelectedIcon from '@assets/icons/selectedTick.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { KitTestBabyCheckGeneratorProps } from './types';
 
@@ -40,9 +40,9 @@ const KitTestBabyCheckGenerator = ({
         <CustomImage src={icon} />
       </div>
 
-      <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
         {title}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

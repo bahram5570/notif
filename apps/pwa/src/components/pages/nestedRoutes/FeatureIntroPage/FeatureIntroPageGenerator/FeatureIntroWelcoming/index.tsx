@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import { LottieCanvas } from '@lib/LottieCanvas';
 
@@ -43,9 +44,9 @@ const FeatureIntroWelcoming = ({ data, goToNext }: FeatureIntroWelcomingPropsTyp
           )}
         </div>
         {!isOpen && (
-          <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnSurface">
+          <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnSurface">
             {data.primaryText}
-          </Dark_Typography>
+          </CustomTypography>
         )}
 
         {isOpen && (

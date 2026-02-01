@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 const TestResult = ({ condition, value }: { condition: number | null; value: number | null }) => {
   const generateResults = () => {
@@ -36,9 +36,9 @@ const TestResult = ({ condition, value }: { condition: number | null; value: num
 
   return (
     <div className="w-full flex flex-col gap-3 p-3 rounded-xl bg-impo_Neutral_Background">
-      <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground w-full">
+      <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground w-full">
         نتیجه تست قندخون
-      </Dark_Typography>
+      </CustomTypography>
 
       <div className="flex flex-col border-t-[1px] border-t-impo_Surface_OutlineVariant">
         {results.map((result, index) => (
@@ -49,19 +49,19 @@ const TestResult = ({ condition, value }: { condition: number | null; value: num
             <div className="flex flex-row-reverse items-center gap-2">
               <div className={`w-3 h-3 rounded-full ${result.indicatorColor}`} />
 
-              <Dark_Typography fontSize="Body_Medium" className={`${result.textColor}`}>
+              <CustomTypography fontSize="Body_Medium" className={`${result.textColor}`}>
                 {result.title}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
 
             <div className="flex flex-row-reverse gap-1">
-              <Dark_Typography fontSize="Lable_Medium" className={`${result.textColor}`}>
+              <CustomTypography fontSize="Lable_Medium" className={`${result.textColor}`}>
                 mg/dL
-              </Dark_Typography>
+              </CustomTypography>
 
-              <Dark_Typography fontSize="Lable_Medium" className={`${result.textColor}`}>
+              <CustomTypography fontSize="Lable_Medium" className={`${result.textColor}`}>
                 {result.range}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           </div>
         ))}

@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 
 import ResetIcon from '@assets/icons/calendarReset.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { currentDate } from '@utils/dates';
 
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
 
@@ -39,9 +39,9 @@ const ResetBtn = ({ selectedDate, resetKeyHandler }: ResetBtnProps) => {
         onClick={() => resetKeyHandler(dateType)}
       >
         <div className="flex items-center gap-1">
-          <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
             بازگشت به امروز
-          </Dark_Typography>
+          </CustomTypography>
 
           <ResetIcon className="w-4 stroke-impo_Neutral_OnBackground" />
         </div>

@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
 import TickIcon from '@assets/icons/CheckCircle-2.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { useRouter } from 'next/navigation';
 
 import useUpdateProfile from '../../ShareExperienceChangeAvatarModal/ShareExperienceChangeAvatarModalContainer/__hooks__/useUpdateProfile';
@@ -40,9 +40,9 @@ const ShareExperienceDefultAvatarListModalContainer = ({
       <div className="px-4 overflow-y-auto max-h-[calc(100vh-200px)]">
         <div className="flex justify-center items-center mx-auto">
           <div className="flex flex-col items-center gap-2">
-            <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
               پروفایل من
-            </Dark_Typography>
+            </CustomTypography>
 
             <div className="overflow-hidden rounded-full flex justify-center items-center">
               <CustomImage src={profileData?.profile.avatarImage || ''} width={120} height={120} />
@@ -52,9 +52,9 @@ const ShareExperienceDefultAvatarListModalContainer = ({
 
         {avatarList.length > 0 && (
           <div className="flex flex-col gap-2 justify-end items-end">
-            <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground mt-4">
+            <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground mt-4">
               آواتار های پیش‌فرض
-            </Dark_Typography>
+            </CustomTypography>
 
             <div className="grid grid-cols-3 gap-4 px-3  w-full">
               {avatarList.map((avatar, index) => {

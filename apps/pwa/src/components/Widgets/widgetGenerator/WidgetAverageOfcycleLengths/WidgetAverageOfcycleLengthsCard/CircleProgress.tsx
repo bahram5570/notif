@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { CircleProgressProps } from './types';
 
@@ -15,12 +15,12 @@ const CircleProgress = ({ length, filledLength, centeralText, isPdfDownloading }
   return (
     <div className="relative -mt-1" style={{ ...sizes }}>
       <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-        <Dark_Typography
+        <CustomTypography
           fontSize="Title_Small"
           className={`text-impo_Neutral_OnBackground ${isPdfDownloading && '!text-impo_Black'}`}
         >
           {centeralText}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       <svg viewBox="-21.25 -21.25 212.5 212.5" version="1.1" xmlns="http://www.w3.org/2000/svg" className="-rotate-90">

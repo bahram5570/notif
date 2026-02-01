@@ -1,8 +1,8 @@
 import { memo } from 'react';
 
 import SelectedIcon from '@assets/icons/selectedTick.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 
 import useSignIcon from './__hooks__/useSignIcon';
@@ -45,9 +45,9 @@ const SignGenerator = ({ category, sign, initialIsSelected, onSelect }: SignGene
           {isSelected && <SelectedIcon className="absolute -left-1 -bottom-1 w-6 h-auto" />}
         </div>
 
-        <Dark_Typography fontSize="Body_Small" className="text-center text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Small" className="text-center text-impo_Neutral_OnBackground">
           {title}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
     </div>
   );

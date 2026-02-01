@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { ShareExperenceTabsPropsType } from './type';
 
@@ -21,13 +21,13 @@ const ShareExperienceTabs = ({ options, tab, tabHandler }: ShareExperenceTabsPro
                     `}
         >
           {option.id === tab ? (
-            <Dark_Typography fontSize="Lable_Medium" className="text-center text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Lable_Medium" className="text-center text-impo_Neutral_OnBackground">
               {option.text}
-            </Dark_Typography>
+            </CustomTypography>
           ) : (
-            <Dark_Typography fontSize="Body_Medium" className="text-center text-impo_Surface_Outline">
+            <CustomTypography fontSize="Body_Medium" className="text-center text-impo_Surface_Outline">
               {option.text}
-            </Dark_Typography>
+            </CustomTypography>
           )}
         </div>
       ))}

@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_RadioButton from '@components/ui/Dark_RadioButton';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { RadioButtonGeneratorPropsType } from './type';
 
@@ -13,12 +14,12 @@ const RadioButtonGenerator = ({ isSelected, label, value, handleChange }: RadioB
         <div className="flex flex-row-reverse items-center">
           <Dark_RadioButton isChecked={isSelected} onClick={() => {}} />
 
-          <Dark_Typography
+          <CustomTypography
             fontSize="Body_Medium"
             className={`text-impo_Neutral_OnBackground ${isSelected && 'dark:text-impo_Black'}`}
           >
             {label}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       </div>
     </div>

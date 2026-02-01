@@ -1,7 +1,7 @@
 import ImpoIcon from '@assets/icons/impoName.svg';
 import TickIcon from '@assets/icons/selectedTick.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { LottieJson } from '@lib/LottieJson';
 
 import useMoodTrackerIsLargeScreen from './__hooks__/useMoodTrackerIsLargeScreen';
@@ -32,21 +32,21 @@ const StoryMoodTracker = ({ moodTrackerData }: StoryMoodTrackerProps) => {
                 "
     >
       <div className="w-full flex flex-col items-center" style={{ paddingBottom: isLargeScreen ? 32 : 16 }}>
-        <Dark_Typography fontSize="Title_Large" className="pb-2 text-impo_Pink_600 dark:text-impo_Pink_300">
+        <CustomTypography fontSize="Title_Large" className="pb-2 text-impo_Pink_600 dark:text-impo_Pink_300">
           امروز "دوشــــــــنبه"
-        </Dark_Typography>
-        <Dark_Typography
+        </CustomTypography>
+        <CustomTypography
           fontSize="Lable_Large"
           className=" text-impo_Surface_InverseSurface dark:text-impo_Surface_InverseOnSurface"
         >
           حال و هوات چطوره؟
-        </Dark_Typography>
-        <Dark_Typography
+        </CustomTypography>
+        <CustomTypography
           fontSize="Body_Medium"
           className=" text-impo_Surface_InverseSurface dark:text-impo_Surface_InverseOnSurface"
         >
           از این پایین انتخابش کن
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       <div
@@ -67,12 +67,12 @@ const StoryMoodTracker = ({ moodTrackerData }: StoryMoodTrackerProps) => {
                 {item.isSelected && <TickIcon className="absolute -bottom-1 -right-1 w-8 h-8 z-10" />}
               </div>
 
-              <Dark_Typography
+              <CustomTypography
                 fontSize="Lable_Medium"
                 className="text-impo_Surface_InverseSurface dark:text-impo_Surface_InverseOnSurface text-center"
               >
                 {item.label}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           );
         })}
@@ -82,12 +82,12 @@ const StoryMoodTracker = ({ moodTrackerData }: StoryMoodTrackerProps) => {
         <ImpoIcon className="w-12 h-auto fill-impo_Primary_Primary" />
 
         {isLargeScreen && (
-          <Dark_Typography
+          <CustomTypography
             fontSize="Body_Medium"
             className="text-impo_Surface_Outline dark:text-impo_Surface_OutlineVariant text-center"
           >
             اگه هر روز حال و هوات رو اینجا ثبت کنی، بعد از 30 روز یک گزارش یک ماهه از مودت رو برات آماده می‌کنیم
-          </Dark_Typography>
+          </CustomTypography>
         )}
       </div>
     </div>

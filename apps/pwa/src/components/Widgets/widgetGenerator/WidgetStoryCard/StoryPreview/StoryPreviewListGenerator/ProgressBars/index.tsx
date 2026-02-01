@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import CrossIcon from '@assets/icons/plus.svg';
 import ImpoIcon from '@assets/images/questionsImpo.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { useRouter } from 'next/navigation';
 
 import { STORY_PROGRESS_HEIGHT } from '../../../constants';
@@ -93,16 +93,16 @@ const ProgressBars = ({
           <ImpoIcon className="w-12 h-12" />
 
           <div>
-            <Dark_Typography
+            <CustomTypography
               className="text-impo_Surface_Outline dark:text-impo_Surface_OutlineVariant"
               fontSize="Body_Small"
             >
               بازبینی شده توسط
-            </Dark_Typography>
+            </CustomTypography>
 
-            <Dark_Typography className="text-impo_Black" fontSize="Body_Medium">
+            <CustomTypography className="text-impo_Black" fontSize="Body_Medium">
               تیم تولید محتوای ایمپو
-            </Dark_Typography>
+            </CustomTypography>
           </div>
         </div>
 

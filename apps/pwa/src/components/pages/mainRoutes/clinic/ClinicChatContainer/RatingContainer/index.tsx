@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import Loading from '@components/ui/Loading';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
@@ -46,15 +47,15 @@ const RatingContainer = ({ isLoading, feedbacks, drImage, drName }: RatingContai
               <CustomImage src={drImage} width={80} className="rounded-full" />
             </div>
 
-            <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
               {drName}
-            </Dark_Typography>
+            </CustomTypography>
 
             <div className="w-full h-[1px] my-2 bg-impo_Surface_OutlineVariant" />
 
-            <Dark_Typography fontSize="Body_Medium" className="px-5 text-center text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Body_Medium" className="px-5 text-center text-impo_Neutral_OnBackground">
               امیدواریم این راهنمایی واست مفید باشه، به پاسخی که دریافت کردی چه امتیازی میدی؟
-            </Dark_Typography>
+            </CustomTypography>
 
             <RatingStars rate={valuesProps.rate} rateHandler={valuesProps.rateHandler} />
 

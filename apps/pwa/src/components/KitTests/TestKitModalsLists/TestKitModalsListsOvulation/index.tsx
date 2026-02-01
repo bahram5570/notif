@@ -1,7 +1,7 @@
 import TrashIcon from '@assets/icons/trash.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { kitTestScripts } from '@components/KitTests/KitTestRange/constants';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { KitTestModuleTypeEnums } from '../../enum';
 import TestKitModalsListRangeSVG from '../TestKitModalsListRangeSVG';
@@ -40,9 +40,9 @@ const TestKitModalsListsOvulation = ({ data }: TestKitModalsListsOvulationProps)
           <TrashIcon className="w-6 stroke-impo_Error_Error" onClick={deleteHandler} />
 
           <div className="flex items-center gap-2">
-            <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
               {testScript(data.result)}
-            </Dark_Typography>
+            </CustomTypography>
 
             <TestKitModalsListRangeSVG result={data.result} />
           </div>

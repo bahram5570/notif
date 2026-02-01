@@ -1,8 +1,9 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import NameSelectorActivationMainModule from '../../NameSelectorActivationModules/NameSelectorActivationMainModule';
 import useNameSelectorActivationData from '../../__hooks__/useNameSelectorActivationData';
@@ -26,13 +27,13 @@ const NameSelectorActivationStep1Page = () => {
       </div>
 
       <div className="w-full flex flex-col items-center -translate-y-[40px]">
-        <Dark_Typography fontSize="Title_Medium" className="text-impo_White text-center">
+        <CustomTypography fontSize="Title_Medium" className="text-impo_White text-center">
           {data.weclome.title}
-        </Dark_Typography>
+        </CustomTypography>
 
-        <Dark_Typography fontSize="Body_Large" className="text-impo_White text-center pt-2 pb-10">
+        <CustomTypography fontSize="Body_Large" className="text-impo_White text-center pt-2 pb-10">
           {data.weclome.description}
-        </Dark_Typography>
+        </CustomTypography>
 
         <Dark_Button
           fontSize="Lable_Large"

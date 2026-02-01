@@ -1,4 +1,5 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import { FeedbackToastProps } from './type';
@@ -20,20 +21,20 @@ const FeedbackToast = ({ toastData, visible }: FeedbackToastProps) => {
       <div
         className={`  flex flex-col justify-center items-center gap-2 ${toastData?.toastWithDescription ? 'rounded-3xl py-6 px-4 bg-impo_Neutral_Surface' : 'rounded-lg py-3 px-4 bg-impo_Surface_InverseSurface'}`}
       >
-        <Dark_Typography
+        <CustomTypography
           fontSize={toastData.toastWithDescription ? 'Title_Small' : 'Body_Small'}
           className={`${!toastData.toastWithDescription ? 'px-8 text-impo_Surface_InverseOnSurface' : 'text-impo_White'}`}
         >
           {toastData?.message}
-        </Dark_Typography>
+        </CustomTypography>
 
         {toastData?.description && (
-          <Dark_Typography
+          <CustomTypography
             fontSize="Body_Medium"
             className={`text-center ${toastData?.toastWithDescription ? 'text-impo_Surface_InverseSurface' : 'text-impo_Surface_InverseOnSurface'}`}
           >
             {toastData.description}
-          </Dark_Typography>
+          </CustomTypography>
         )}
       </div>
     </div>

@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toJalaliData } from '@utils/dates';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
@@ -37,17 +37,17 @@ const TicketText = (props: TicketTextProps) => {
       <div className="flex justify-between items-center w-full">
         <TicketStatus status={status} statusColor={statusColor} statusText={statusText} />
 
-        <Dark_Typography className="text-impo_Surface_OnSurfaceVariant" fontSize="Lable_SmallProminet">
+        <CustomTypography className="text-impo_Surface_OnSurfaceVariant" fontSize="Lable_SmallProminet">
           {title || categoryName}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
-      <Dark_Typography className="text-impo_Surface_OnSurfaceVariant text-right" fontSize="Body_Small">
+      <CustomTypography className="text-impo_Surface_OnSurfaceVariant text-right" fontSize="Body_Small">
         {text}
-      </Dark_Typography>
+      </CustomTypography>
 
-      <Dark_Typography className="text-impo_Surface_Outline text-left w-full" fontSize="Body_Small">
+      <CustomTypography className="text-impo_Surface_Outline text-left w-full" fontSize="Body_Small">
         {dateScript}
-      </Dark_Typography>
+      </CustomTypography>
     </Link>
   );
 };

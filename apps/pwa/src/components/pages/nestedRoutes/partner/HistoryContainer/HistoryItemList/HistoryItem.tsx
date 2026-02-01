@@ -1,7 +1,7 @@
 import CaretLeftIcon from '@assets/icons/CaretLeft.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
 import ProgressBar from '../../chatContainer/ProgressBar';
@@ -33,18 +33,18 @@ const HistoryItem = (props: HistoryItemPropsType) => {
                   <CustomImage src={props.manAvatar} className="w-full h-full !object-cover border border-impo_White" />
                 </div>
               </div>
-              <Dark_Typography fontSize="Lable_Medium" className="text-impo_Primary_Primary w-full text-center">
+              <CustomTypography fontSize="Lable_Medium" className="text-impo_Primary_Primary w-full text-center">
                 {props.title}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
             <div className="flex flex-col items-end gap-2">
-              <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
                 {props.text}
-              </Dark_Typography>
+              </CustomTypography>
 
-              <Dark_Typography fontSize="Lable_SmallProminet" className="text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Lable_SmallProminet" className="text-impo_Neutral_OnBackground">
                 {props.description}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           </div>
 

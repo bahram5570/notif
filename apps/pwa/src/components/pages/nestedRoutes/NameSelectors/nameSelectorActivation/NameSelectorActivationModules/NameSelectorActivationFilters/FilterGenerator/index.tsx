@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { FilterGeneratorProps } from './types';
 
@@ -24,14 +24,14 @@ const FilterGenerator = ({ subtitle, title, isSelected, onClick }: FilterGenerat
                 `}
     >
       <div className="overflow-hidden duration-300" style={{ maxWidth: isSelected ? 200 : 0 }}>
-        <Dark_Typography fontSize="Body_Small" className={`text-impo_Neutral_OnBackground !whitespace-nowrap`}>
+        <CustomTypography fontSize="Body_Small" className={`text-impo_Neutral_OnBackground !whitespace-nowrap`}>
           {subtitle}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
-      <Dark_Typography fontSize="Body_Medium" className={`text-impo_Neutral_OnBackground !whitespace-nowrap`}>
+      <CustomTypography fontSize="Body_Medium" className={`text-impo_Neutral_OnBackground !whitespace-nowrap`}>
         {title}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

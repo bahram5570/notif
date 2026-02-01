@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import VpnText from '@components/ui/VpnText';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
@@ -29,16 +30,16 @@ const SubmitBtn = ({
         <VpnText />
         <div className="flex flex-row-reverse gap-2 items-center my-2">
           <div className="flex flex-col items-end w-full">
-            <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
+            <CustomTypography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
               {totalText}
-            </Dark_Typography>
+            </CustomTypography>
             <div className="flex flex-row-reverse items-center gap-1">
-              <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
                 {totalAmount}
-              </Dark_Typography>
-              <Dark_Typography fontSize="Lable_SmallProminet" className="text-impo_Neutral_OnBackground">
+              </CustomTypography>
+              <CustomTypography fontSize="Lable_SmallProminet" className="text-impo_Neutral_OnBackground">
                 {totalUnit}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           </div>
           <Dark_Button

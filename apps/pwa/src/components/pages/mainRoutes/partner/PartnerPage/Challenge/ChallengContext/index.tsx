@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 
 import CustomLink from '../../CustomLink';
@@ -14,9 +15,9 @@ const ChallengContext = ({ card, valid }: ChallengContextPropsType) => {
       <div className="flex justify-center items-center px-2">
         <CustomImage src={card.leftIcon} style={{ scale: !valid ? '2' : 'inherit' }} />
         <div className="px-3">
-          <Dark_Typography fontSize="Lable_Large" className="text-center p-2 text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Lable_Large" className="text-center p-2 text-impo_Neutral_OnBackground">
             {card.text}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
 
         {card.rightIcon !== '' && <CustomImage src={card.rightIcon} />}

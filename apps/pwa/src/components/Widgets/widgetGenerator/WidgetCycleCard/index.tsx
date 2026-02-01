@@ -1,6 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import { LoadingStatusEnum } from '@components/pages/mainRoutes/cycle/CycleContainer/__hooks__/useCycleLoadingStatus/loadingStatus.enum';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import WidgetGenerator from '..';
 import CycleCardBtn from './CycleCardBtn';
@@ -49,9 +50,9 @@ const WidgetCycleCard = ({ data, insideCycleWidgetList, loadingStatus }: WidgetC
           <div className="w-full flex justify-center items-center my-auto">
             <WidgetCycleCardDots />
 
-            <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
               چرخه در حال بروزرسانی
-            </Dark_Typography>
+            </CustomTypography>
           </div>
         )}
 

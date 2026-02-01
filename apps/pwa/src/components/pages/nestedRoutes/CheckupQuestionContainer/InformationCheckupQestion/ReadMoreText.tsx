@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import ArrowDownIcon from '@assets/icons/ArrowDown.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 const ReadMoreText = ({ text, maxLines = 3 }: { text: string; maxLines: number }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -34,17 +33,17 @@ const ReadMoreText = ({ text, maxLines = 3 }: { text: string; maxLines: number }
               : 'auto', // Ensure max height is applied
         }}
       >
-        <Dark_Typography fontSize="Body_Medium" className="py-2 text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Medium" className="py-2 text-impo_Neutral_OnBackground">
           {text}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       {isTruncated && (
         <div onClick={() => setIsExpanded(!isExpanded)} id="PregnancyCheckupCardClick">
           <div className="flex flex-row-reverse gap-1 justify-end mt-3">
-            <Dark_Typography className="text-impo_Primary_Primary" fontSize="Lable_Small">
+            <CustomTypography className="text-impo_Primary_Primary" fontSize="Lable_Small">
               {isExpanded ? 'بستن اطلاعات بیشتر ' : 'خواندن اطلاعات بیشتر'}
-            </Dark_Typography>
+            </CustomTypography>
             {isExpanded ? (
               <ArrowDownIcon className="w-4 h-4 stroke-impo_Primary_Primary" />
             ) : (

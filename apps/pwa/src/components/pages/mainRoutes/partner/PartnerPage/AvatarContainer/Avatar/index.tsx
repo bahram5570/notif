@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { AvatarPropsType } from './type';
 
@@ -29,9 +30,9 @@ const Avatar = ({ name, src, hasPreview, icon, onClick }: AvatarPropsType) => {
           </div>
         )}
       </div>
-      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
         {name}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

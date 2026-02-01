@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
 import ArrowIcon from '@assets/icons/calendarArrow.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import {
   CALENDAR_CELL_SIZE,
   CalendarTypeEnum,
@@ -68,20 +68,20 @@ const ActivationCalendarHeading = (props: ActivationCalendarHeadingProps) => {
       />
 
       <div className="flex flex-col items-center gap-1">
-        <Dark_Typography
+        <CustomTypography
           fontSize="Title_Small"
           testId={'calendar_month_title'}
           className="text-impo_Neutral_OnBackground"
         >
           {monthScript}
-        </Dark_Typography>
+        </CustomTypography>
 
-        <Dark_Typography
+        <CustomTypography
           fontSize="Lable_Medium"
           className={`${props.selectedDay === '' ? 'text-impo_Surface_Outline' : 'text-impo_Primary_Primary'}`}
         >
           {selectedDayScript}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       <ArrowIcon

@@ -1,7 +1,7 @@
 import LikeEmptyIcon from '@assets/icons/like.svg';
 import LikeFillIcon from '@assets/icons/likeFill.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 
 import { ShareExperienceStateEnum } from '../../ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/enum';
@@ -31,9 +31,9 @@ const ShareExperienceLikesModule = (props: ShareExperienceLikesModuleProps) => {
           callEvent('shareExperienceDislikePost');
         }}
       >
-        <Dark_Typography fontSize="Body_Large" className="text-impo_Surface_InverseSurface !h-5 !w-2/5">
+        <CustomTypography fontSize="Body_Large" className="text-impo_Surface_InverseSurface !h-5 !w-2/5">
           {props.disliked.toString()}
-        </Dark_Typography>
+        </CustomTypography>
 
         <div className="-scale-y-100 w-3/5">
           {props.state === ShareExperienceStateEnum.Dislike ? filledIcon : emptiedIcon}
@@ -47,9 +47,9 @@ const ShareExperienceLikesModule = (props: ShareExperienceLikesModuleProps) => {
           callEvent('shareExperienceLikePost');
         }}
       >
-        <Dark_Typography fontSize="Body_Large" className="text-impo_Surface_InverseSurface !h-5 !w-2/5">
+        <CustomTypography fontSize="Body_Large" className="text-impo_Surface_InverseSurface !h-5 !w-2/5">
           {props.likeCount.toString()}
-        </Dark_Typography>
+        </CustomTypography>
 
         <div className="w-3/5">{props.state === ShareExperienceStateEnum.Like ? filledIcon : emptiedIcon}</div>
       </div>

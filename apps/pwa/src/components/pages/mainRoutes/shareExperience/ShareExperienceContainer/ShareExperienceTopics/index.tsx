@@ -1,8 +1,8 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { shareExperienceTopicQueryMaker } from '@utils/shareExperience';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomSlider from '@components/ui/CustomSlider';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -21,9 +21,9 @@ const ShareExperienceTopics = ({ topics }: ShareExperienceTopicsProps) => {
 
   return (
     <div className="flex flex-col gap-4 items-end ">
-      <Dark_Typography fontSize="Lable_Large" className="px-3 text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Lable_Large" className="px-3 text-impo_Neutral_OnBackground">
         تالار تجربه
-      </Dark_Typography>
+      </CustomTypography>
 
       <CustomSlider gap={12} sidePadding={16}>
         <>
@@ -34,9 +34,9 @@ const ShareExperienceTopics = ({ topics }: ShareExperienceTopicsProps) => {
                   <CustomImage src={item.image} width={130} height={140} />
 
                   <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center py-2 px-2">
-                    <Dark_Typography fontSize="Body_Small" className="text-impo_White">
+                    <CustomTypography fontSize="Body_Small" className="text-impo_White">
                       {item.name}
-                    </Dark_Typography>
+                    </CustomTypography>
                   </div>
                 </div>
               </div>

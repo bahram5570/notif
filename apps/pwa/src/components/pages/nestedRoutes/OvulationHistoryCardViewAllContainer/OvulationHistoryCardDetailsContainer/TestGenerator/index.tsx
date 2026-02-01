@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useScriptMaker from './__hooks__/useScriptMaker';
 import { TestGeneratorProps } from './types';
@@ -8,13 +8,13 @@ const TestGenerator = (props: TestGeneratorProps) => {
 
   return (
     <div className="w-full h-[56px] flex items-center justify-between px-4 rounded-lg bg-impo_Surface_SurfaceVariant">
-      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
         {dateScript}
-      </Dark_Typography>
+      </CustomTypography>
 
-      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
         {resultScript}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

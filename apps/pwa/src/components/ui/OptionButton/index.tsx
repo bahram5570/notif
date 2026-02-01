@@ -1,4 +1,5 @@
-import Dark_Typography from '../Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { OptionButtonProps } from './types';
 
 const OptionButton = ({ isSelected, text, onClick }: OptionButtonProps) => {
@@ -23,12 +24,12 @@ const OptionButton = ({ isSelected, text, onClick }: OptionButtonProps) => {
                   }
                 `}
     >
-      <Dark_Typography
+      <CustomTypography
         fontSize="Body_Medium"
         className={`text-impo_Neutral_OnBackground ${isSelected && '!text-impo_Black'} `}
       >
         {text.toString()}
-      </Dark_Typography>
+      </CustomTypography>
 
       <div
         className={`

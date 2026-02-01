@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { RoutinTabNameEnum } from './enum';
 import { RoutinTabProps } from './type';
@@ -17,12 +17,12 @@ const RoutinTab = ({ commentTabName, itemsTabName, tab, tabHandler }: RoutinTabP
           className={`border-b-[1px] pb-2 flex justify-center w-1/2 select-none cursor-pointer ${option.id === tab ? 'border-impo_Primary_Primary' : 'border-impo_Neutral_Surface'}`}
           key={option.id}
         >
-          <Dark_Typography
+          <CustomTypography
             className={`${option.id === tab ? 'text-impo_Primary_Primary' : 'text-impo_Surface_Outline'} text-center`}
             fontSize={`${option.id === tab ? 'Lable_Large' : 'Body_Medium'}`}
           >
             {option.text}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       ))}
     </div>

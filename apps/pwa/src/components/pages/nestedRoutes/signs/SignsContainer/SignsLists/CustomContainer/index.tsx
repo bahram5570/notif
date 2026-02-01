@@ -1,7 +1,7 @@
 import LinkIcon from '@assets/icons/calendarSignLink.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import Link from 'next/link';
 
@@ -28,9 +28,9 @@ const CustomContainer = ({ allBtnLink, children, plusIconLink, title, showAllBtn
     <div className="bg-impo_Neutral_Background rounded-2xl p-2 flex flex-col">
       <div onClick={newHandler}>
         <div className="w-full flex flex-row-reverse items-center justify-between h-fit p-3">
-          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
             {title}
-          </Dark_Typography>
+          </CustomTypography>
 
           <div className="relative cursor-pointer">
             <LinkIcon className="w-10 h-auto" />
@@ -62,9 +62,9 @@ const CustomContainer = ({ allBtnLink, children, plusIconLink, title, showAllBtn
                     "
         >
           {!isLoading && (
-            <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
               مشاهده همه تست‌های انجام شده
-            </Dark_Typography>
+            </CustomTypography>
           )}
 
           {isLoading && <Dark_Spinner size={20} className="border-impo_Neutral_OnBackground" />}

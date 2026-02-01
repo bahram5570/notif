@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import ClinicTicketGenerator from '../../ClinicTicketGenerator';
@@ -22,9 +23,9 @@ const ActiveTicketsHeading = ({ activeTicketsOneTitle, activeTicketsMore, ticket
       {hasTicket && (
         <div className="w-full flex flex-col items-end gap-2 pb-7">
           <div className="w-full flex flex-row-reverse items-center justify-between">
-            <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
               {activeTicketsOneTitle}
-            </Dark_Typography>
+            </CustomTypography>
 
             {isMoreThanOne && (
               <Dark_Button

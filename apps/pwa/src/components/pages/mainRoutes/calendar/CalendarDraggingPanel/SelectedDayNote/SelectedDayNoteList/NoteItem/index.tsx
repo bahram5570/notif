@@ -1,7 +1,7 @@
 import CheckListIcon from '@assets/icons/checkList.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@utils/scripts';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
 import { NoteItemPropsType } from './type';
@@ -36,9 +36,9 @@ const NoteItem = ({ noteItem, isNoteListPage }: NoteItemPropsType) => {
         </div>
 
         <div className="pr-2">
-          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             {textShorter(noteItem.title)}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       </div>
     </div>

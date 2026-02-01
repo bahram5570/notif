@@ -1,8 +1,7 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { SelectNameGenderEnum } from '@services/selectNameServices/enums';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import NameSelectorActivationCard from '../../NameSelectorActivationModules/NameSelectorActivationCard';
 import NameSelectorActivationMainModule from '../../NameSelectorActivationModules/NameSelectorActivationMainModule';
@@ -34,9 +33,9 @@ const NameSelectorActivationStep2Page = () => {
         isLoading={isNextStepLoading}
         isDisable={payload.gender === SelectNameGenderEnum.None}
       >
-        <Dark_Typography fontSize="Title_Small" className="text-impo_Surface_InverseSurface mx-auto pb-8">
+        <CustomTypography fontSize="Title_Small" className="text-impo_Surface_InverseSurface mx-auto pb-8">
           {data.gender.title}
-        </Dark_Typography>
+        </CustomTypography>
 
         <div className="w-full flex flex-col gap-3">
           {data.gender.items.map((item, index) => (

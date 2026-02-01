@@ -1,8 +1,9 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
 import Dark_BackButton from '@components/ui/Dark_BackButton';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import { NAME_SELECTOR_HEADING_HEIGHT, NAME_SELECTOR_HEADING_WIDTH } from '../constants';
@@ -42,9 +43,9 @@ const NameSelectorHeading = ({ description }: NameSelectorHeadingProps) => {
                 <Dark_BackButton />
               </div>
 
-              <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_InverseSurface pr-4">
+              <CustomTypography fontSize="Body_Medium" className="text-impo_Surface_InverseSurface pr-4">
                 {description}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           </div>
         </div>

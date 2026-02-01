@@ -1,8 +1,8 @@
 import TrashIcon from '@assets/icons/trash.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomModal from '@components/ui/CustomModal';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { useRouter } from 'next/navigation';
 
 import useDelete from './__hooks__/useDelete';
@@ -18,17 +18,17 @@ const DeletePartnerModal = () => {
           <TrashIcon className="w-6 h-6 rounded-full stroke-impo_Error_Error" />
         </div>
 
-        <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
           حذف همدل
-        </Dark_Typography>
+        </CustomTypography>
         <div className="flex flex-col items-center">
-          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             از حذف همدلت مطمئنی؟
-          </Dark_Typography>
+          </CustomTypography>
 
-          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
+          <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
             بعد از حذف همدلی کلیه اطلاعاتت (تاریخچه چالش ها، خاطره بازی، پیام ها) پاک میشه{' '}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
 
         <div className="w-full flex items-center justify-between gap-2">

@@ -1,7 +1,8 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import DateModule from '@components/activation/DateModule';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 import useDateIntervals from '@providers/__activation__/ActivationProvider/__hooks__/useDateIntervals';
 
@@ -25,17 +26,17 @@ const PopUpEditCycleLastPeriod = ({
 
   return (
     <>
-      <Dark_Typography
+      <CustomTypography
         fontSize="Body_Medium"
         style={{ paddingTop: HEADER_HEIGHT }}
         className="text-impo_Neutral_OnBackground"
       >
         {data.title}
-      </Dark_Typography>
+      </CustomTypography>
 
-      <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground mt-1 mb-[80px]">
+      <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground mt-1 mb-[80px]">
         {data.description}
-      </Dark_Typography>
+      </CustomTypography>
 
       <DateModule valueHandler={startTimeHandler} startDate={periodStart} endDate={periodEnd} defaultDate={periodEnd} />
 

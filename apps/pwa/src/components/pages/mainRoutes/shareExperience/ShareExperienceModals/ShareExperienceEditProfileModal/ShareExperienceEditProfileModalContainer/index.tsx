@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 
 import EditIcon from '@assets/icons/Pen 2.svg';
 import InfoIcon from '@assets/icons/info.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import ShareExperienceAvatarModule from '../../../ShareExperienceModules/ShareExperienceAvatarModule';
 import useUpdateProfile from '../../ShareExperienceChangeAvatarModal/ShareExperienceChangeAvatarModalContainer/__hooks__/useUpdateProfile';
@@ -56,9 +56,9 @@ const ShareExperienceEditProfileModalContainer = ({ id }: ShareExperienceEditPro
 
           <div className="flex flex-col gap-3 mt-3">
             <div className="flex flex-col justify-end items-end gap-2">
-              <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground px-3">
+              <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground px-3">
                 نام کاربری
-              </Dark_Typography>
+              </CustomTypography>
 
               <div className="flex flex-wrap-reverse justify-between border border-impo_Surface_OutlineVariant rounded-xl px-4 py-3 w-full">
                 <EditIcon className="w-5 h-5 fill-impo_Neutral_OnBackground" />
@@ -74,9 +74,9 @@ const ShareExperienceEditProfileModalContainer = ({ id }: ShareExperienceEditPro
               </div>
             </div>
             <div className="rounded-lg flex flex-row gap-2  px-3 py-4 bg-impo_Warning_WarininContainer">
-              <Dark_Typography fontSize="Body_Small" className="text-impo_Black">
+              <CustomTypography fontSize="Body_Small" className="text-impo_Black">
                 {profileData.usernameHintText}
-              </Dark_Typography>
+              </CustomTypography>
 
               <InfoIcon className="w-5 h-5 stroke-impo_Warning_Warning" />
             </div>

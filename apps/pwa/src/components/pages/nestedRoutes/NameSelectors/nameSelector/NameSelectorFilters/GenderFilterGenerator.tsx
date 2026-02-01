@@ -1,4 +1,5 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import useOverflowHandler from '@hooks/useOverflowHandler';
 
 import { GenderFilterGeneratorProps } from './types';
@@ -8,18 +9,18 @@ const GenderFilterGenerator = ({ value, list, onSelect }: GenderFilterGeneratorP
 
   return (
     <>
-      <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground pb-1">
+      <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground pb-1">
         جنسیت نوزاد:
-      </Dark_Typography>
+      </CustomTypography>
 
       {list.map((item, index) => {
         const isSelected = value === item.value;
 
         return (
           <div className="w-full flex items-center justify-end gap-2" onClick={() => onSelect(item.value)} key={index}>
-            <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
               {item.title}
-            </Dark_Typography>
+            </CustomTypography>
 
             <div
               className={`

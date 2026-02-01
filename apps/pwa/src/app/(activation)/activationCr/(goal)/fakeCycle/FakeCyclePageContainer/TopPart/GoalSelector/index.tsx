@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import ArrowIcon from '@assets/icons/vector.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { GOALS_LIST, GOAL_SELECTOR_HEIGHT, GOAL_SELECTOR_WIDTH } from './constants';
 import { GoalSelectorProps, SelectHandlerTypes } from './types';
@@ -53,9 +52,9 @@ const GoalSelector = ({ selectedGoalTitle, payloadHandler }: GoalSelectorProps) 
                     `}
         />
 
-        <Dark_Typography fontSize="Lable_MediumProminet" className="text-impo_Surface_OnSurfaceVariant">
+        <CustomTypography fontSize="Lable_MediumProminet" className="text-impo_Surface_OnSurfaceVariant">
           {selectedGoalTitle}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       {isOpen && (
@@ -69,9 +68,9 @@ const GoalSelector = ({ selectedGoalTitle, payloadHandler }: GoalSelectorProps) 
               onClick={() => selectHandler(item.value)}
               key={index}
             >
-              <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground ml-auto">
+              <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground ml-auto">
                 {item.title}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           ))}
         </div>

@@ -1,6 +1,7 @@
 import { memo, useMemo } from 'react';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { CALENDAR_CELL_SIZE, CalendarTypeEnum, DATE_SEPERATOR_REGEX } from '@constants/date.constants';
 
 import { ActivationSingleDayProps } from './types';
@@ -38,12 +39,12 @@ const ActivationSingleDay = ({ isSelected, day, calendarType, selectedDayHandler
                   ${day.isValidDate ? 'opacity-100 pointer-events-auto' : 'opacity-50 pointer-events-none'}
                 `}
     >
-      <Dark_Typography
+      <CustomTypography
         fontSize="Body_Medium"
         className={`${isSelected ? 'text-impo_White' : 'text-impo_Neutral_OnBackground'}`}
       >
         {dayScript}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

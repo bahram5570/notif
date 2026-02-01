@@ -1,6 +1,6 @@
 import CloseIcon from '@assets/icons/plus.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import { useRouter } from 'next/navigation';
 
@@ -22,9 +22,9 @@ const RatingHeading = () => {
           <CloseIcon className="w-8 h-auto rotate-45 stroke-impo_Neutral_OnBackground" />
         </div>
 
-        <Dark_Typography fontSize="Lable_Large" className="text-impo_Surface_OnSurfaceVariant">
+        <CustomTypography fontSize="Lable_Large" className="text-impo_Surface_OnSurfaceVariant">
           ثبت نظر
-        </Dark_Typography>
+        </CustomTypography>
       </div>
     </div>
   );

@@ -1,7 +1,6 @@
 import ChatIcon from '@assets/icons/message-icon.svg';
 import StarIcon from '@assets/icons/star-1.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { RoutinRatingStatsPropsType } from './type';
 
@@ -11,15 +10,15 @@ const RoutinRatingStats = ({ commentCount, rateAvg }: RoutinRatingStatsPropsType
   return (
     <div className="flex  items-end justify-end gap-6">
       <div className="flex flex-row items-center justify-center gap-2">
-        <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
+        <CustomTypography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
           {commentCount.toString()}
-        </Dark_Typography>
+        </CustomTypography>
         <ChatIcon className="w-5 h-5" />
       </div>
       <div className="flex flex-row items-center justify-center gap-2">
-        <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
+        <CustomTypography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
           {average}
-        </Dark_Typography>
+        </CustomTypography>
         <StarIcon
           className="w-5 h-auto"
           style={{

@@ -1,6 +1,5 @@
 import NeedToInvestigateIcon from '@assets/icons/needToInvestigate.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import WidgetPeriodCycleHistoryDays from './WidgetPeriodCycleHistoryDays';
 import { WidgetPeriodCycleHistoryItemsProps } from './types';
@@ -18,12 +17,12 @@ const WidgetPeriodCycleHistoryItems = ({ items, isPdfDownloading }: WidgetPeriod
           >
             <div className="flex items-center gap-1 ml-auto">
               {!item.normal && <NeedToInvestigateIcon className="w-5 h-auto" />}
-              <Dark_Typography
+              <CustomTypography
                 fontSize="Lable_SmallProminet"
                 className={`text-impo_Neutral_OnBackground ${isPdfDownloading && '!text-impo_Black'}`}
               >
                 {item.title}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
 
             <WidgetPeriodCycleHistoryDays
@@ -34,15 +33,15 @@ const WidgetPeriodCycleHistoryItems = ({ items, isPdfDownloading }: WidgetPeriod
             />
 
             <div className="flex items-center gap-1 ml-auto">
-              <Dark_Typography
+              <CustomTypography
                 fontSize="Body_Small"
                 className={`text-impo_Surface_InverseSurface ${isPdfDownloading && 'text-impo_Grey_900'}`}
-              >{` - طول دوره: ${item.cycleLength} روز`}</Dark_Typography>
+              >{` - طول دوره: ${item.cycleLength} روز`}</CustomTypography>
 
-              <Dark_Typography
+              <CustomTypography
                 fontSize="Body_Small"
                 className={`text-impo_Surface_InverseSurface ${isPdfDownloading && 'text-impo_Grey_900'}`}
-              >{`طول پریود: ${item.periodLength} روز`}</Dark_Typography>
+              >{`طول پریود: ${item.periodLength} روز`}</CustomTypography>
             </div>
           </div>
         );

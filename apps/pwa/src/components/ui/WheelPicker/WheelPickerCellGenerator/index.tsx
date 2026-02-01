@@ -4,7 +4,7 @@ import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { toPersianNumbers } from '@utils/numbers';
 import { addIdAttrs } from '@utils/scripts';
 
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import { WheelPickerCellGeneratorProps } from './types';
 

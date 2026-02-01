@@ -1,10 +1,10 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { currentDate } from '@utils/dates';
 
 import KitTestOvulation from '@components/KitTests/KitTestsContainer/KitTestOvulation';
 import KitTestsList from '@components/KitTests/KitTestsContainer/KitTestsList';
 import { KitTestModuleTypeEnums } from '@components/KitTests/enum';
 import WidgetCardContainer from '@components/Widgets/WidgetCardContainer';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import OvulationKitModal from './OvulationKitModal';
 import useUpdateOvulationData from './__hooks__/useUpdateOvulationData';
@@ -18,9 +18,9 @@ const WidgetOvulationKitCard = ({ data }: WidgetOvulationKitCardProps) => {
   return (
     <WidgetCardContainer title={updatedData.title}>
       <>
-        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground w-full pb-5">
+        <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground w-full pb-5">
           {updatedData.description}
-        </Dark_Typography>
+        </CustomTypography>
 
         <KitTestOvulation moduleType={KitTestModuleTypeEnums.Ovulation} gregorianDate={gDate} onComplete={onAdd} />
 

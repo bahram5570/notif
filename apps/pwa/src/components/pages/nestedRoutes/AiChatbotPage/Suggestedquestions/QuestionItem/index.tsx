@@ -1,6 +1,5 @@
 import ReplyIcon from '@assets/icons/Reply_2.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { QuestionItemPropsType } from './type';
 
@@ -24,9 +23,9 @@ const QuestionItem = ({ defaultQustionHandler, question }: QuestionItemPropsType
         }}
         onClick={onClick}
       >
-        <Dark_Typography fontSize="Body_Medium" className="px-6 text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Medium" className="px-6 text-impo_Neutral_OnBackground">
           {question}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
     </div>
   );

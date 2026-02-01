@@ -1,6 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomModal from '@components/ui/CustomModal';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 
@@ -23,16 +24,16 @@ const RewardModal = ({ data, goToNext, correctAnswer }: RewardModalPropsType) =>
     >
       <div className="flex flex-col items-center pb-4 gap-2" data-testid={'reward-modal-trailonboarding'}>
         <div className="flex flex-col items-end w-full px-4 gap-1">
-          <Dark_Typography
+          <CustomTypography
             fontSize="Title_Medium"
             className={`${correctAnswer ? 'text-impo_Success_Success' : 'text-impo_Error_Error'}`}
           >
             {data.title}
-          </Dark_Typography>
+          </CustomTypography>
 
-          <Dark_Typography fontSize="Body_Medium" className="text-center pt-2 pb-4 text-impo_Neutral_OnSurface">
+          <CustomTypography fontSize="Body_Medium" className="text-center pt-2 pb-4 text-impo_Neutral_OnSurface">
             {data.description}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
 
         <Dark_Button

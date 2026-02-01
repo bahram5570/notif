@@ -3,7 +3,7 @@
 import { typographyFontStylesMaker } from './__utils__';
 import { toEnglishNumbers, toPersianNumbers } from '@utils/numbers';
 
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import { UseTypographyMakerTypes } from './types';
 

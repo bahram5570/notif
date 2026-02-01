@@ -1,8 +1,8 @@
 import LogoutIcon from '@assets/icons/profile/logout.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -30,9 +30,9 @@ const LogOut = () => {
         className="flex items-center gap-2 px-6 py-2 rounded-full border-[1px] select-none cursor-pointer my-9 border-impo_Surface_OutlineVariant"
         onClick={selectHandler}
       >
-        <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
           خروج از حساب کاربری
-        </Dark_Typography>
+        </CustomTypography>
 
         {isLoading && <Dark_Spinner size={24} />}
         {!isLoading && <LogoutIcon className="w-6 h-auto stroke-impo_Neutral_OnBackground" />}

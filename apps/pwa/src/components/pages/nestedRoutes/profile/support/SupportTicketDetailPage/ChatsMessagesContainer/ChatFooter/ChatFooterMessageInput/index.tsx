@@ -5,9 +5,9 @@ import { toPersianNumbers } from '@utils/numbers';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import useOperatingSystem from '@hooks/useOperatingSystem';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import ChatFooterMessageModal from './ChatFooterMessageModal';
 import useTextValue from './__hooks__/useTextValue';

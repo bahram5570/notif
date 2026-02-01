@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
@@ -67,9 +68,9 @@ const PartnerLandingWebView = () => {
           onClick={linkTo}
         >
           <div className="w-full flex items-center justify-center h-12 rounded-[64px] z-10 bg-impo_Primary_Primary">
-            <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
               شروع همدلی با پارتنرت
-            </Dark_Typography>
+            </CustomTypography>
           </div>
         </div>
       )}

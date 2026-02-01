@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 
 import QuestionGenerator from './QuestionGenerator';
@@ -35,12 +36,12 @@ const QuestionCheckup = ({ question }: QuestionCheckupPropsType) => {
       <div className="rounded-xl w-full flex flex-row relative bg-impo_Neutral_Background">
         <div className="w-full p-3">
           <div className="flex flex-col justify-end items-end  ">
-            <Dark_Typography
+            <CustomTypography
               fontSize="Lable_Large"
               className="py-2 text-impo_Neutral_OnBackground border-b border-b-impo_Neutral_Surface"
             >
               {question.title}
-            </Dark_Typography>
+            </CustomTypography>
             <div className="w-full">
               {question.questions.map((question, index) => {
                 return (

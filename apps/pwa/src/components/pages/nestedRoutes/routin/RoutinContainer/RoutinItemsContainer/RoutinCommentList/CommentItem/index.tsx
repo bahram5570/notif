@@ -1,6 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import RoutinWriter from '@components/__routin__/RoutinWriter';
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import CommentRate from './CommentRate';
 import { CommentItemPropsType } from './type';
@@ -12,16 +13,16 @@ const CommentItem = (props: CommentItemPropsType) => {
         <div className="flex flex-row-reverse justify-end items-center gap-2">
           <CustomImage src={props.imageUrl} width={40} height={40} />
           <div className="flex flex-col items-end gap-1">
-            <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
               {props.username}
-            </Dark_Typography>
+            </CustomTypography>
 
             {props.rate > 0 && <CommentRate rate={props.rate} />}
           </div>
         </div>
-        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
           {props.commentText}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
       {props.hasReply && (
         <div className="px-3 py-4">
@@ -33,9 +34,9 @@ const CommentItem = (props: CommentItemPropsType) => {
                 writerSpeciality={props.reply.wrtiterDescription}
               />
             </div>
-            <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
               {props.reply.replyText}
-            </Dark_Typography>
+            </CustomTypography>
           </div>
         </div>
       )}

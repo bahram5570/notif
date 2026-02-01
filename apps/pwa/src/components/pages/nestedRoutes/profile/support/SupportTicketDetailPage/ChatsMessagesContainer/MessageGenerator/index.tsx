@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { SideEnum } from '@components/pages/nestedRoutes/partner/chatContainer/MessageListContainer/Message/constants';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import ChatContainerMaker from './ChatContainerMaker';
 import MessageGeneratorMedia from './MessageGeneratorMedia';
@@ -11,12 +12,12 @@ const MessageGenerator = ({ createTime, fileName, id, sendByUser, text }: Messag
     <>
       {text.trim() !== '' && (
         <ChatContainerMaker dateTime={createTime} sideType={sideType} width={240}>
-          <Dark_Typography
+          <CustomTypography
             fontSize="Body_Small"
             className={`text-impo_Black ${sideType === SideEnum.Partner && 'text-impo_Neutral_OnBackground'}`}
           >
             {text}
-          </Dark_Typography>
+          </CustomTypography>
         </ChatContainerMaker>
       )}
 

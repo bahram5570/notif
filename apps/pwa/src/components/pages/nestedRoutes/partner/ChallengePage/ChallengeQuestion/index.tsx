@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import ChallengeBtn from '../ChallengeBtn';
 import { ChallengeQuestionPropsType } from './type';
@@ -33,9 +34,9 @@ const ChallengeQuestion = ({ avatarUrl, helper, question, id, btn }: ChallengeQu
   return (
     <>
       <div className="flex flex-col justify-end items-end gap-2 mt-4" ref={textareaConainerRef}>
-        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
           {question}
-        </Dark_Typography>
+        </CustomTypography>
 
         <div className="flex w-full flex-row-reverse gap-1">
           <CustomImage src={avatarUrl} className="w-8 h-8 rounded-full !object-cover" />

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomSlider from '@components/ui/CustomSlider';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { CalendarGuidesProps, GuideListTypes } from './types';
 
@@ -40,9 +41,9 @@ const CalendarGuides = ({ calendarGuideInfo }: CalendarGuidesProps) => {
     <CustomSlider sidePadding={16} className="py-4 mb-4">
       {guideList.map((item, index) => (
         <div className="min-w-fit flex items-center gap-1" key={index}>
-          <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
             {item.text}
-          </Dark_Typography>
+          </CustomTypography>
 
           <div
             className={`

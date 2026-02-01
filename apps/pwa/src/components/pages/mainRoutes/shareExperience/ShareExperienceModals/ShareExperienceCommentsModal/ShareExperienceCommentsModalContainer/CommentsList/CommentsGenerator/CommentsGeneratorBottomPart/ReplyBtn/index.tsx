@@ -1,9 +1,9 @@
 import ArrowIcon from '@assets/icons/arrowElbowDown.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { NewReplyQueriesTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceModals/ShareExperienceNewReplyModal/types';
 import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -35,12 +35,12 @@ const ReplyBtn = ({ avatar, name, shareId, commentId, userId }: ReplyBtnProps) =
         onClick={clickHandler}
         className="relative flex items-center justify-center gap-[2px] w-[72px] h-[30px] rounded-full bg-impo_Neutral_Surface py-1"
       >
-        <Dark_Typography
+        <CustomTypography
           fontSize="Lable_Small"
           className={`text-impo_Neutral_OnSurface ${isLoading ? 'opacity-0' : 'opacity-100'}`}
         >
           پاسخ
-        </Dark_Typography>
+        </CustomTypography>
 
         <ArrowIcon className={`w-4 fill-impo_Surface_Outline ${isLoading ? 'opacity-0' : 'opacity-100'}`} />
 

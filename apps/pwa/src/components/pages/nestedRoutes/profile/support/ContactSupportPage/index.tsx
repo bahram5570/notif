@@ -3,14 +3,14 @@
 import { useState } from 'react';
 
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toPersianNumbers } from '@utils/numbers';
 
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useProfileData from '@hooks/__profile__/useProfileData';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import FileInput from './FileInput';
 import { ValuesHandlerTypes } from './FileInput/type';
@@ -42,9 +42,9 @@ const ContactSupportPage = () => {
 
         {!isLoading && (
           <div className="flex flex-col items-end gap-3 min-h-[100dvh] p-4" style={{ paddingTop: HEADER_HEIGHT + 20 }}>
-            <Dark_Typography fontSize="Lable_MediumProminet" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Lable_MediumProminet" className="text-impo_Neutral_OnBackground">
               ارتباط با پشتیبانی
-            </Dark_Typography>
+            </CustomTypography>
 
             {profileData && (
               <>

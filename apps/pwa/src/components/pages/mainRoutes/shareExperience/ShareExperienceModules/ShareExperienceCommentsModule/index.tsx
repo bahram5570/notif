@@ -1,10 +1,10 @@
 import CommentsIcon from '@assets/icons/comment.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import {
   SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME,
   SHARE_EXPERIENCE_ORDER_QUERY_NAME,
 } from '@components/pages/mainRoutes/shareExperience/constants';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -26,9 +26,9 @@ const ShareExperienceCommentsModule = (props: ShareExperienceCommentsModuleProps
   return (
     <>
       <div onClick={clickHandler} className="flex items-center justify-center gap-1 w-10">
-        <Dark_Typography fontSize="Body_Large" className="text-impo_Surface_InverseSurface !h-5">
+        <CustomTypography fontSize="Body_Large" className="text-impo_Surface_InverseSurface !h-5">
           {props.commentCount.toString()}
-        </Dark_Typography>
+        </CustomTypography>
 
         <CommentsIcon className="w-5 fill-impo_Surface_InverseSurface" />
       </div>

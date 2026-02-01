@@ -1,8 +1,9 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { APP_VERSION } from '@constants/app.constants';
 import useProfileData from '@hooks/__profile__/useProfileData';
 
@@ -47,9 +48,9 @@ const ProfilePage = () => {
         <div className="flex flex-col justify-center items-center mt-auto">
           <LogOut />
 
-          <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Body_Small" numbersMode="english">
+          <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Body_Small" numbersMode="english">
             {APP_VERSION || ''}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       </div>
 

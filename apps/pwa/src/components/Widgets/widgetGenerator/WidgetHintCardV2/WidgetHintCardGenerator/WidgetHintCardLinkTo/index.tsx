@@ -1,4 +1,5 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
 import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
@@ -39,9 +40,9 @@ const WidgetHintCardLinkTo = ({ internalLink, externalLink }: WidgetHintCardLink
           onClick={linkToHandler}
           className="w-[110px] h-[32px] rounded-full border-[1px] flex items-center justify-center cursor-pointer border-impo_Surface_OutlineVariant"
         >
-          <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnSurface">
+          <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnSurface">
             باز کردن لینک
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       )}
     </>

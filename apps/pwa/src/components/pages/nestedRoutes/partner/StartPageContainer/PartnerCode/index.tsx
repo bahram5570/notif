@@ -1,8 +1,8 @@
 import CopyIcon from '@assets/icons/Copy.svg';
 import Refresh from '@assets/icons/refresh.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import useCopy from '../__hooks__/useCopy';
 import { PartnerCodePropsType } from './type';
@@ -29,9 +29,9 @@ const PartnerCode = ({ isLoading, refreshLoading, onRefreshCodeHandler, partnerC
             </div>
           )}
           {!isLoading && partnerCode && (
-            <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground px-2">
+            <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground px-2">
               {partnerCode}
-            </Dark_Typography>
+            </CustomTypography>
           )}
         </div>
         {partnerCode && (

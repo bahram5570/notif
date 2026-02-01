@@ -1,9 +1,9 @@
 import TrashIcon from '@assets/icons/trash.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { BabyCheckTypeEnums } from '@components/KitTests/KitTestBabyCheck/enum';
 import { kitTestScripts } from '@components/KitTests/KitTestRange/constants';
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { KitTestModuleTypeEnums } from '../../enum';
 import TestKitModalsListRangeSVG from '../TestKitModalsListRangeSVG';
@@ -53,13 +53,13 @@ const TestKitModalsListsBabyCheck = ({ data }: TestKitModalsListsBabyCheckProps)
                   <TestKitModalsListRangeSVG result={item.result} />
 
                   <div className="flex items-center gap-1">
-                    <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+                    <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
                       {analogScript(item.result)}
-                    </Dark_Typography>
+                    </CustomTypography>
 
-                    <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+                    <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
                       بیبی‌چک نواری:
-                    </Dark_Typography>
+                    </CustomTypography>
                   </div>
                 </>
               )}
@@ -76,13 +76,13 @@ const TestKitModalsListsBabyCheck = ({ data }: TestKitModalsListsBabyCheckProps)
                   />
 
                   <div className="flex items-center gap-1">
-                    <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+                    <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
                       {item.result === 1 ? 'مثبت' : 'منفی'}
-                    </Dark_Typography>
+                    </CustomTypography>
 
-                    <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+                    <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
                       بیبی‌چک دیجیتال:
-                    </Dark_Typography>
+                    </CustomTypography>
                   </div>
                 </>
               )}

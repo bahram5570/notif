@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { WidgetCycleDateCardFertilityProps } from './types';
 
@@ -15,9 +15,9 @@ const WidgetCycleDateCardFertility = (props: WidgetCycleDateCardFertilityProps) 
         width: `${(props.fertilityEnd - props.fertilityStart) * props.percentRatio}%`,
       }}
     >
-      <Dark_Typography fontSize="Lable_Medium" className="text-impo_White">
+      <CustomTypography fontSize="Lable_Medium" className="text-impo_White">
         {props.startFertility}
-      </Dark_Typography>
+      </CustomTypography>
 
       {props.hasOvulation && (
         <div
@@ -27,15 +27,15 @@ const WidgetCycleDateCardFertility = (props: WidgetCycleDateCardFertilityProps) 
             right: `${props.ovulationDay * props.percentRatio}%`,
           }}
         >
-          <Dark_Typography fontSize="Lable_Medium" className="text-impo_White !h-[19px] overflow-hidden">
+          <CustomTypography fontSize="Lable_Medium" className="text-impo_White !h-[19px] overflow-hidden">
             {props.ovulationLabel}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       )}
 
-      <Dark_Typography fontSize="Lable_Medium" className="text-impo_White">
+      <CustomTypography fontSize="Lable_Medium" className="text-impo_White">
         {props.endFertility}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

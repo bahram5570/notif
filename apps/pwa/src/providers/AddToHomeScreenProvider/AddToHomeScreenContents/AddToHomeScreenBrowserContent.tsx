@@ -2,9 +2,9 @@ import { useMemo } from 'react';
 
 import AndroidIcon from '@assets/icons/android.svg';
 import AppleIcon from '@assets/icons/apple.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import AddToHomeScreenContainer from './AddToHomeScreenContainer';
 import useAddToHomeConstants from './__hooks__/useAddToHomeConstants';
@@ -45,9 +45,9 @@ const AddToHomeScreenBrowserContent = ({ browserInfo, operatingSystem }: AddToHo
         {data.type === 'ios' && <AppleIcon className="w-8 h-auto fill-impo_Surface_OutlineVariant" />}
         {data.type === 'android' && <AndroidIcon className="w-8 h-auto fill-impo_Surface_OutlineVariant" />}
 
-        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground pt-1">
+        <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground pt-1">
           {data.title}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       <div className="w-full flex flex-col items-center gap-6">
@@ -57,15 +57,15 @@ const AddToHomeScreenBrowserContent = ({ browserInfo, operatingSystem }: AddToHo
               <div className="w-full flex items-start gap-1 pb-4">
                 {typeof item.no === 'number' && (
                   <div className="w-6 h-6 min-w-6 min-h-6 rounded-full flex items-center justify-center bg-impo_Primary_Primary">
-                    <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_Background">
+                    <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_Background">
                       {item.no.toString()}
-                    </Dark_Typography>
+                    </CustomTypography>
                   </div>
                 )}
 
-                <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground pt-[1px]">
+                <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground pt-[1px]">
                   {item.script}
-                </Dark_Typography>
+                </CustomTypography>
               </div>
             )}
 

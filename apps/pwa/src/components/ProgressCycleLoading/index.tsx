@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
 
 import CircleProgressBar from './CircleProgressBar';
@@ -28,19 +29,19 @@ const ProgressCycleLoading = ({ onComplete, isSuccess, titles, image }: Progress
             </div>
           )}
 
-          <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground text-center w-full px-7">
+          <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground text-center w-full px-7">
             {titles.main}
-          </Dark_Typography>
+          </CustomTypography>
 
           <CircleProgressBar loadingStatus={loadingStatus} onComplete={onComplete} />
 
-          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             {titles.subTitle1}
-          </Dark_Typography>
+          </CustomTypography>
 
-          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             {titles.subTitle2}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       )}
     </>

@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
 import TickIcon from '@assets/icons/tickIcon.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { convertToPersianOrdinal } from '@utils/numbers';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useCountDown from '@hooks/useCountDown';
 
@@ -54,9 +54,9 @@ const RoutinUnlockTost = () => {
         >
           <div className="flex justify-center items-center gap-3 rounded-lg p-4 border border-impo_Success_Success bg-impo_Success_SuccessContainer">
             <div className="border-r-[1px]">
-              <Dark_Typography fontSize="Body_Small" className="px-2 text-impo_Black">
+              <CustomTypography fontSize="Body_Small" className="px-2 text-impo_Black">
                 {`  مرحله ${convertToPersianOrdinal(routinStep)} با موفقیت انجام و مرحله ${convertToPersianOrdinal(routinStep + 1)} آنلاک شد`}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
 
             <div className="w-6 h-6 flex justify-center items-center">

@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import RoutinDietsGenerator from './RoutinDietsGenerator';
 import { RoutinDietsProps } from './types';
@@ -6,9 +6,9 @@ import { RoutinDietsProps } from './types';
 const RoutinDiets = ({ name, items }: RoutinDietsProps) => {
   return (
     <>
-      <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground pb-3 ml-auto">
+      <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground pb-3 ml-auto">
         {name}
-      </Dark_Typography>
+      </CustomTypography>
 
       {items.map((item, index) => {
         const lastItem = index === items.length - 1;

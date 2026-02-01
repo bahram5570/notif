@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import useCodeStatus from './__hooks__/useCodeStatus';
 import { CodeInputProps } from './types';
@@ -43,9 +44,9 @@ const CodeInput = ({
       </div>
 
       {scriptInfo && !isValidDiscountCode && (
-        <Dark_Typography fontSize="Body_Small" className={`ml-auto pt-2 ${scriptInfo.color}`}>
+        <CustomTypography fontSize="Body_Small" className={`ml-auto pt-2 ${scriptInfo.color}`}>
           {scriptInfo.script}
-        </Dark_Typography>
+        </CustomTypography>
       )}
     </>
   );

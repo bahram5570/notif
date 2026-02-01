@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { CircleProgressProps } from './types';
 
@@ -13,9 +13,9 @@ const CircleProgress = ({ days, percent }: CircleProgressProps) => {
   return (
     <div className="relative w-[48px] h-[48px] min-w-[48px] min-h-[48px] overflow-hidden flex items-center justify-center rounded-full bg-impo_White">
       <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-        <Dark_Typography fontSize="Lable_Small" className="text-impo_Black">
+        <CustomTypography fontSize="Lable_Small" className="text-impo_Black">
           {`${days} روز`}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       <svg

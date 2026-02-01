@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import moment from 'moment-jalaali';
 import { useRouter } from 'next/navigation';
 
@@ -48,9 +49,9 @@ const CreateMemoryPage = () => {
         style={{ paddingTop: HEADER_HEIGHT + 16 }}
       >
         <div className="flex items-center w-full justify-center">
-          <Dark_Typography fontSize="Title_Small" className="text-impo_Primary_Primary text-center">
+          <CustomTypography fontSize="Title_Small" className="text-impo_Primary_Primary text-center">
             ایجاد خاطره جدید
-          </Dark_Typography>
+          </CustomTypography>
         </div>
 
         <MemoryHeader currentDate={`امروز ${currentDate} `} />
@@ -69,9 +70,9 @@ const CreateMemoryPage = () => {
             isDisable={!inputValue.title}
             isLoading={isLoading}
           >
-            <Dark_Typography fontSize="Title_Small" className="text-impo_PrimaryMan_OnPrimaryMan">
+            <CustomTypography fontSize="Title_Small" className="text-impo_PrimaryMan_OnPrimaryMan">
               ثبت خاطره
-            </Dark_Typography>
+            </CustomTypography>
           </Dark_Button>
         </footer>
       </div>

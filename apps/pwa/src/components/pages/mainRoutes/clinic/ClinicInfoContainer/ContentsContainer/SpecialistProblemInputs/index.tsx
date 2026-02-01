@@ -1,13 +1,13 @@
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toPersianNumbers } from '@utils/numbers';
 
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 import useCustomToast from '@hooks/useCustomToast';
 import useFileUpload from '@hooks/useFileUpload';
-import useOperatingSystem from '@hooks/useOperatingSystem';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 import { useRouter } from 'next/navigation';
 
 import FileInput from './FileInput';
@@ -48,9 +48,9 @@ const SpecialistProblemInputs = ({ info, infoHelper, questionValuesHandler }: Sp
   return (
     <>
       <div className="w-full py-4 px-2 rounded-2xl border-[1px] border-impo_Neutral_Surface">
-        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
           {info}
-        </Dark_Typography>
+        </CustomTypography>
 
         <div className="flex flex-col gap-4 py-4">
           <textarea

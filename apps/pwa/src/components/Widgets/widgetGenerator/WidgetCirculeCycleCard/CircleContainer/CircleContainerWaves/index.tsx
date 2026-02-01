@@ -1,8 +1,8 @@
 import wavesJson from '@assets/lottie/cycleWaves.json';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@utils/scripts';
 
 import { LoadingStatusEnum } from '@components/pages/mainRoutes/cycle/CycleContainer/__hooks__/useCycleLoadingStatus/loadingStatus.enum';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { LottieJson } from '@lib/LottieJson';
 
 import CircleContainerWavesTick from './CircleContainerWavesTick';
@@ -30,12 +30,12 @@ const CircleContainerWaves = ({ forgroundColor, loadingStatus }: CircleContainer
       </div>
 
       <div className="animate-cycleUpdatingScript absolute left-0 right-0 top-0 bottom-0 flex justify-center items-center pointer-events-none">
-        <Dark_Typography
+        <CustomTypography
           fontSize="Title_Medium"
           className={`text-impo_Neutral_OnBackground duration-300 ${loadingStatus === LoadingStatusEnum.loading ? 'scale-100' : 'scale-0'}`}
         >
           چرخه در حال بروزرسانی
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       <div
@@ -56,9 +56,9 @@ const CircleContainerWaves = ({ forgroundColor, loadingStatus }: CircleContainer
       >
         <CircleContainerWavesTick />
 
-        <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
           چرخه بروزرسانی شد
-        </Dark_Typography>
+        </CustomTypography>
       </div>
     </>
   );

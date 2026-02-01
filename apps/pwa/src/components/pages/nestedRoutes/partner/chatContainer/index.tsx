@@ -2,8 +2,9 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import ChatContainerSkeleton from './ChatContainerSkeleton';
 import ChatHeader from './ChatHeader';
@@ -49,9 +50,9 @@ const ChatContainer = () => {
             ref={messageListRef}
           >
             <div className="px-[10px] py-3 bg-impo_Neutral_Surface">
-              <Dark_Typography fontSize="Lable_Large" className="w-full text-center text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Lable_Large" className="w-full text-center text-impo_Neutral_OnBackground">
                 {data.text}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
 
             <MessageListContainer messageList={messageList} partnerAvatar={data.partnerAvatar} />

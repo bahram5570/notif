@@ -1,10 +1,11 @@
 import { useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import DateModule from '@components/activation/DateModule';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useActivationPregnancyTabs from '@hooks/__activation__/useActivationPregnancyTabs';
 import useProfileData from '@hooks/__profile__/useProfileData';
@@ -27,17 +28,17 @@ const PopUpEditPregnancy = () => {
     >
       <MainPageLayout rightElement="BackButton" paddingTop={0} paddingBottom={0}>
         <div className="flex flex-col items-center px-4 py-8 min-h-[100dvh]">
-          <Dark_Typography
+          <CustomTypography
             fontSize="Body_Medium"
             style={{ paddingTop: HEADER_HEIGHT }}
             className="text-impo_Neutral_OnBackground"
           >
             برای محاسبه هفته بارداری:
-          </Dark_Typography>
+          </CustomTypography>
 
-          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             یکی از روش‌های زیر رو انتخاب کن
-          </Dark_Typography>
+          </CustomTypography>
 
           <Tabs tab={tab} tabHandler={tabHandler} />
 

@@ -1,7 +1,7 @@
 import NeedToInvestigateIcon from '@assets/icons/needToInvestigate.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomSlider from '@components/ui/CustomSlider';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { WidgetPeriodCycleHistoryGuidesPropsType } from './type';
 
@@ -32,12 +32,12 @@ const WidgetPeriodCycleHistoryGuides = ({ isPdfDownloading }: WidgetPeriodCycleH
       <CustomSlider gap={12} sidePadding={8}>
         {list.map((item, index) => (
           <div className="flex items-center gap-1 min-w-fit" key={index}>
-            <Dark_Typography
+            <CustomTypography
               fontSize="Body_Small"
               className={`text-impo_Neutral_OnBackground ${isPdfDownloading && '!text-impo_Black'}`}
             >
               {item.title}
-            </Dark_Typography>
+            </CustomTypography>
 
             <>{item.el}</>
           </div>

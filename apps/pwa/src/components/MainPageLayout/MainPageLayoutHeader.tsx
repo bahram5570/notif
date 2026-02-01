@@ -1,6 +1,7 @@
 'use client';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import WidgetScaleModule from '../Widgets/WidgetScaleModule';
@@ -24,16 +25,16 @@ const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
         </div>
 
         <div className="w-full flex justify-center items-center">
-          <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnSurface">
+          <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnSurface">
             {props.middleScript || ''}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
 
         <div className="flex items-center gap-4 min-w-fit">
           {props.rightElementScript && (
-            <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
               {props.rightElementScript || ''}
-            </Dark_Typography>
+            </CustomTypography>
           )}
 
           <RightElement />

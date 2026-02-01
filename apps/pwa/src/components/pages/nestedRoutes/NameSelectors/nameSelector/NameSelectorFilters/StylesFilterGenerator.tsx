@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
 
 import TickIcon from '@assets/icons/selectedTick.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useOverflowHandler from '@hooks/useOverflowHandler';
 
 import { StylesFilterGeneratorProps } from './types';
@@ -23,9 +23,9 @@ const StylesFilterGenerator = ({ value, list, onSelect }: StylesFilterGeneratorP
           <Fragment key={mainIndex}>
             {!isFirstItem && <div className="w-full h-[1px] my-1 bg-impo_Neutral_Surface" />}
 
-            <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground pb-1">
+            <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground pb-1">
               {mainTitle}
-            </Dark_Typography>
+            </CustomTypography>
 
             {items.map((item, index) => {
               const isSelected = value.includes(item.value);
@@ -36,9 +36,9 @@ const StylesFilterGenerator = ({ value, list, onSelect }: StylesFilterGeneratorP
                   onClick={() => onSelect(item.value)}
                   key={index}
                 >
-                  <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+                  <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
                     {item.title}
-                  </Dark_Typography>
+                  </CustomTypography>
 
                   <div
                     className={`

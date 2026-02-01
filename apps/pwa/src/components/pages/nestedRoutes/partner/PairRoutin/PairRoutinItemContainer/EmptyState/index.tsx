@@ -1,8 +1,8 @@
 import ArrowIcon from '@assets/icons/arrow.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { useRouter } from 'next/navigation';
 
 const EmptyState = () => {
@@ -22,9 +22,9 @@ const EmptyState = () => {
         >
           <div className={`w-full h-full flex justify-center gap-2 `}>
             <div className="flex justify-center items-center">
-              <Dark_Typography fontSize="Lable_Large" className="text-impo_PrimaryMan_OnPrimaryMan">
+              <CustomTypography fontSize="Lable_Large" className="text-impo_PrimaryMan_OnPrimaryMan">
                 بریم مرحله قبل
-              </Dark_Typography>
+              </CustomTypography>
             </div>
             <ArrowIcon className="w-6 h-auto stroke-2 stroke-impo_Primary_OnPrimary" />
           </div>

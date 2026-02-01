@@ -1,7 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@utils/scripts';
 
 import WidgetScaleModule from '@components/Widgets/WidgetScaleModule';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { CycleScriptsProps } from './types';
 
@@ -11,29 +11,29 @@ const CycleScripts = ({ description, leading, textColor, title }: CycleScriptsPr
   return (
     <WidgetScaleModule>
       <div className="flex flex-col justify-end items-center gap-3 px-4">
-        <Dark_Typography
+        <CustomTypography
           fontSize="Title_Small"
           style={{ color: color }}
           className="text-center dark:!text-impo_Neutral_OnBackground"
         >
           {leading}
-        </Dark_Typography>
+        </CustomTypography>
 
-        <Dark_Typography
+        <CustomTypography
           fontSize="Headline_Small"
           style={{ color: color }}
           className="text-center dark:!text-impo_Neutral_OnBackground"
         >
           {title}
-        </Dark_Typography>
+        </CustomTypography>
 
-        <Dark_Typography
+        <CustomTypography
           fontSize="Title_Small"
           style={{ color: color }}
           className="text-center dark:!text-impo_Neutral_OnBackground"
         >
           {description}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
     </WidgetScaleModule>
   );

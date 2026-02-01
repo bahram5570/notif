@@ -1,7 +1,7 @@
 import InfoIcon from '@assets/icons/info.svg';
 import ImpoIcon from '@assets/images/questionsImpo.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
 import { OrderOfQuestionScriptsTypes } from '@providers/__activation__/types';
@@ -57,35 +57,35 @@ const ActivationHeading = ({
             id={ACTIVATION_HEADING_SCRIPTS_ID}
             className="w-full flex flex-col items-center gap-2 mt-4 px-4 duration-1000 z-10"
           >
-            <Dark_Typography
+            <CustomTypography
               fontSize="Body_Medium"
               style={{ order: scriptsOrder.description }}
               className="text-impo_Neutral_OnBackground text-center"
             >
               {scripts.description}
-            </Dark_Typography>
+            </CustomTypography>
 
-            <Dark_Typography
+            <CustomTypography
               fontSize="Title_Small"
               style={{ order: scriptsOrder.title }}
               className="text-impo_Neutral_OnBackground text-center"
             >
               {scripts.title}
-            </Dark_Typography>
+            </CustomTypography>
 
-            <Dark_Typography
+            <CustomTypography
               fontSize="Body_Medium"
               style={{ order: scriptsOrder.subtitle }}
               className="text-impo_Neutral_OnBackground text-center"
             >
               {scripts.subtitle}
-            </Dark_Typography>
+            </CustomTypography>
           </div>
           {banner && (
             <div className=" mx-4 mt-4">
               <div className="flex flex-row-reverse items-start gap-2 bg-impo_Warning_WarininContainer rounded-lg px-3 py-3">
                 <InfoIcon className="w-6 h-auto stroke-impo_Warning_Warning" />
-                <Dark_Typography fontSize="Body_Small">{banner}</Dark_Typography>
+                <CustomTypography fontSize="Body_Small">{banner}</CustomTypography>
               </div>
             </div>
           )}

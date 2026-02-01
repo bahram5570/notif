@@ -1,4 +1,5 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import Link from 'next/link';
 
@@ -10,17 +11,17 @@ const TicketFooter = ({ id, title }: TicketFooterPropsType) => {
   return (
     <footer className="mt-auto flex flex-col justify-center items-center w-full p-4">
       <div className="flex flex-col justify-center items-center gap-4">
-        <Dark_Typography fontSize="Title_Small" className="text-impo_Surface_OnSurfaceVariant">
+        <CustomTypography fontSize="Title_Small" className="text-impo_Surface_OnSurfaceVariant">
           مشکلت رو تو سوالات بالا پیدا نکردی؟
-        </Dark_Typography>
+        </CustomTypography>
         <Link
           onClick={() => pageNavigationHandler({ id: 'supportChat', showProgressBar: true })}
           href={{ pathname: '/protected/contactSupport', query: { id, name: title } }}
           className="px-6 py-3 rounded-full bg-impo_Primary_Primary"
         >
-          <Dark_Typography fontSize="Lable_Large" className="text-impo_PrimaryMan_OnPrimaryMan">
+          <CustomTypography fontSize="Lable_Large" className="text-impo_PrimaryMan_OnPrimaryMan">
             ارتباط با پشتیبانی
-          </Dark_Typography>
+          </CustomTypography>
         </Link>
       </div>
     </footer>

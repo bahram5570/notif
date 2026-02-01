@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import KitTestDigitalBabyCheckGenerator from './KitTestDigitalBabyCheckGenerator';
 import useSelectedDigitalBabyCheck from './__hooks__/useSelectedDigitalBabyCheck';
@@ -17,9 +18,9 @@ const KitTestDigitalBabyCheck = ({ submitHandler, AnalytisId }: KitTestDigitalBa
 
   return (
     <div className="w-full flex flex-col items-center">
-      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
         نتیجه تستت رو انتخاب کن:
-      </Dark_Typography>
+      </CustomTypography>
 
       <div className="flex items-center justify-center gap-14 pt-4 pb-9">
         {KIT_TEST_DIGITAL_BABY_CHECK_LIST.map((item, index) => (

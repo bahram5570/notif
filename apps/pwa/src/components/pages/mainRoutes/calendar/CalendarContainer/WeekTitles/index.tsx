@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import {
   CALENDAR_CELL_SIZE,
   CALENDAR_GREGORIAN_FARSI_WEEK_NAMES,
@@ -26,9 +27,9 @@ const WeekTitles = () => {
     <div className="w-fit grid grid-cols-7 justify-center gap-4 pb-2 mx-auto">
       {weeksList.map((item) => (
         <div className="flex justify-center" style={{ width: CALENDAR_CELL_SIZE }} key={item}>
-          <Dark_Typography fontSize="Body_Small" className="text-impo_Surface_Outline">
+          <CustomTypography fontSize="Body_Small" className="text-impo_Surface_Outline">
             {item}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       ))}
     </div>

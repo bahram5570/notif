@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import { RoutinTabsBtnPropsType } from './type';
@@ -36,12 +37,12 @@ const RoutinTabsBtn = ({ activeTab, handleTabChange, tabsOrder }: RoutinTabsBtnP
             key={tab.tabType}
             onClick={() => handleTabChange(index)}
           >
-            <Dark_Typography
+            <CustomTypography
               className={`${activeTab === index ? 'text-impo_Primary_Primary' : 'text-impo_Neutral_OnBackground'}  text-center !w-32 `}
               fontSize={`${activeTab === index ? 'Lable_Medium' : 'Body_Small'}`}
             >
               {tab.tabName}
-            </Dark_Typography>
+            </CustomTypography>
           </div>
         );
       })}

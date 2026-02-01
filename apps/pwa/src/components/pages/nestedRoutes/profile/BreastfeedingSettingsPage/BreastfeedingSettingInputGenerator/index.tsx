@@ -1,9 +1,9 @@
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import ContentWrapper from '@components/ui/ContentWrapper';
 import Dark_RadioButton from '@components/ui/Dark_RadioButton';
-import Dark_Typography from '@components/ui/Dark_Typography';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import BreastfeedingSettingBtnModal from './BreastfeedingSettingBtnModal';
 import { BreastfeedingSettingInputGeneratorPropsType } from './type';
@@ -43,9 +43,9 @@ const BreastfeedingSettingInputGenerator = ({
                     className={`flex items-center justify-end gap-3 w-full ${rest.listLabel.length - 1 !== index && ' border-b border-impo_Neutral_Surface'}`}
                     onClick={() => changeValueHandler(Number(item.value), name)}
                   >
-                    <Dark_Typography className="text-impo_Surface_OnSurfaceVariant" fontSize="Body_Medium">
+                    <CustomTypography className="text-impo_Surface_OnSurfaceVariant" fontSize="Body_Medium">
                       {item.name}
-                    </Dark_Typography>
+                    </CustomTypography>
 
                     <Dark_RadioButton isChecked={value === item.value} />
                   </div>

@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CircleProgress from './CircleProgress';
 import { WidgetAverageOfcycleLengthsCardProps } from './types';
@@ -20,18 +20,18 @@ const WidgetAverageOfcycleLengthsCard = ({
       }}
     >
       <div className="flex flex-col" style={{ alignItems: isPdfDownloading ? 'flex-end' : 'center' }}>
-        <Dark_Typography
+        <CustomTypography
           fontSize="Lable_Large"
           className={`text-impo_Neutral_OnBackground ${isPdfDownloading && '!text-impo_Black'}`}
         >
           {title}
-        </Dark_Typography>
-        <Dark_Typography
+        </CustomTypography>
+        <CustomTypography
           fontSize="Body_Small"
           className={`text-impo_Neutral_OnBackground ${isPdfDownloading && '!text-impo_Black'} text-center pt-1`}
         >
           {description}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       <CircleProgress

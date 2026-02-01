@@ -1,9 +1,9 @@
 import { isSelectedFinder } from './__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import SignGeneratorOld from '@components/SignGenerator-old';
 import WidgetCardContainer from '@components/Widgets/WidgetCardContainer';
 import CustomSlider from '@components/ui/CustomSlider';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 
 import { WidgetSignCardProps } from './types';
@@ -18,9 +18,9 @@ const WidgetSignCard = ({ data }: WidgetSignCardProps) => {
       classNameBtn="!text-impo_Neutral_OnSurface  !bg-impo_Neutral_Surface !border-impo_Neutral_Surface"
       onClick={() => callEvent('Action_From_SignCard')}
     >
-      <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground ">
+      <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground ">
         {data.description}
-      </Dark_Typography>
+      </CustomTypography>
 
       <CustomSlider gap={40} className="pt-4">
         {data.signs.map((item, index) => {

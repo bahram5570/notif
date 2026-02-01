@@ -1,7 +1,7 @@
 import CancelIcon from '@assets/icons/cancel.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomModal from '@components/ui/CustomModal';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
@@ -41,23 +41,23 @@ const BiorhythmModal = ({ biorhythmInfo }: BiorhythmModalPropsType) => {
             {Icon && <Icon className="w-16 h-16" />}
 
             <div className="flex flex-row-reverse gap-1 items-center">
-              <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
                 {` بیوریتم ${findStatus?.text}: %${findCurrentPercent}`}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           </div>
 
           <div className="flex flex-col justify-end items-end px-1">
             <div className="flex flex-col justify-end items-end w-full border-b-[1px] border-impo_Surface_OutlineVariant pb-2 ">
-              <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
                 توصیه امروز
-              </Dark_Typography>
+              </CustomTypography>
             </div>
 
             <div className="py-2">
-              <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
                 {findCurrentText}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           </div>
         </div>

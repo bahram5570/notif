@@ -1,6 +1,6 @@
 import CalendarArrow from '@assets/icons/calendarArrow.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '../Dark_Typography';
 import { LinkedContentPropsType } from './type';
 
 const LinkedContent = ({ onClickHandler, className, discription, title }: LinkedContentPropsType) => {
@@ -8,16 +8,16 @@ const LinkedContent = ({ onClickHandler, className, discription, title }: Linked
     <div className={`  p-4  ${className} bg-impo_Neutral_Background`}>
       <div className="flex flex-col items-end gap-2 " onClick={onClickHandler}>
         {title && (
-          <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Lable_MediumProminet">
+          <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Lable_MediumProminet">
             {title}
-          </Dark_Typography>
+          </CustomTypography>
         )}
 
         <div className=" flex flex-row justify-between items-center  w-full">
           <CalendarArrow className="w-4 h-4 stroke-impo_Surface_Outline" />
-          <Dark_Typography className="text-impo_Surface_Outline" fontSize="Body_Small">
+          <CustomTypography className="text-impo_Surface_Outline" fontSize="Body_Small">
             {discription}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       </div>
     </div>

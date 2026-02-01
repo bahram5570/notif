@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 
 import PragnencyBreastfeedingGenerator from './PragnencyBreastfeedingGenerator';
@@ -15,13 +16,13 @@ const WidgetPragnencyBreastfeedingCard = ({ data }: WidgetPragnencyBreastfeeding
       <div className="flex flex-col gap-2 w-full py-2 px-3 rounded-xl bg-impo_Neutral_Background" ref={inViewRef}>
         <div className="flex gap-3 justify-center items-center">
           <div className="flex flex-col items-end gap-2 w-full pt-5">
-            <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
               {data.title}
-            </Dark_Typography>
+            </CustomTypography>
 
-            <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_Outline">
+            <CustomTypography fontSize="Body_Medium" className="text-impo_Surface_Outline">
               {data.description}
-            </Dark_Typography>
+            </CustomTypography>
 
             <div className="w-full h-[1px] block bg-impo_Neutral_Surface" />
 
@@ -36,9 +37,9 @@ const WidgetPragnencyBreastfeedingCard = ({ data }: WidgetPragnencyBreastfeeding
         <div className="w-full h-[1px] block bg-impo_Neutral_Surface" />
 
         <div className="flex items-center justify-end gap-2">
-          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground text-right">
+          <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground text-right">
             {data.trailing}
-          </Dark_Typography>
+          </CustomTypography>
 
           {data.trailingIcon && <CustomImage src={data.trailingIcon} width={56} className="rounded-full " />}
         </div>

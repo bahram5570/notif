@@ -1,8 +1,8 @@
 import PenIcon from '@assets/icons/Pen 2.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -38,9 +38,9 @@ const BloodSugerBtnGenerator = ({ name, value, label, index }: BloodSugerBtnGene
                   ${index > 0 && 'border-t-[1px] border-t-impo_Surface_OutlineVariant'}
                 `}
     >
-      <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground w-full">
+      <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground w-full">
         {label}
-      </Dark_Typography>
+      </CustomTypography>
 
       <div onClick={selectHandler} className="w-full flex items-center">
         <div className="flex items-center flex-row-reverse gap-3">
@@ -49,19 +49,19 @@ const BloodSugerBtnGenerator = ({ name, value, label, index }: BloodSugerBtnGene
           {!isLoading && (
             <>
               {!currentValue ? (
-                <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_Outline">
+                <CustomTypography fontSize="Body_Medium" className="text-impo_Surface_Outline">
                   انتخاب نشده
-                </Dark_Typography>
+                </CustomTypography>
               ) : (
                 <div className="flex gap-1">
-                  <Dark_Typography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">
+                  <CustomTypography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">
                     {`${currentValue}`}
-                  </Dark_Typography>
+                  </CustomTypography>
 
                   {name !== 'condition' && (
-                    <Dark_Typography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">
+                    <CustomTypography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">
                       mg/dL
-                    </Dark_Typography>
+                    </CustomTypography>
                   )}
                 </div>
               )}

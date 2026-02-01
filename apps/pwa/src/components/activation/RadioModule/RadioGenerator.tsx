@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { RadioGeneratorProps } from './types';
 
@@ -47,9 +48,9 @@ const RadioGenerator = ({ option, selectedItem, selectedItemHandler }: RadioGene
 
         <div className="w-full flex flex-col gap-1">
           <div className="flex justify-end items-start gap-2">
-            <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
               {option.text}
-            </Dark_Typography>
+            </CustomTypography>
 
             <div
               className={`
@@ -75,9 +76,9 @@ const RadioGenerator = ({ option, selectedItem, selectedItemHandler }: RadioGene
                 className={`w-full h-[1px] mr-7 ${option.icon ? 'bg-impo_Transparent my-0.5' : 'bg-impo_Surface_OutlineVariant my-2'}`}
               />
 
-              <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground mr-7">
+              <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground mr-7">
                 {option.description}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           </div>
         </div>

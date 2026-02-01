@@ -1,7 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { addCommas } from '@utils/numbers';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
@@ -22,17 +22,17 @@ const ClinicCardGenerator = ({ description, id, image, name, price, priceUnit }:
         <CustomImage src={image} width={90} height={90} />
 
         <div className="w-full flex flex-col items-end gap-1">
-          <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
             {name}
-          </Dark_Typography>
+          </CustomTypography>
 
-          <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
             {description}
-          </Dark_Typography>
+          </CustomTypography>
 
-          <Dark_Typography fontSize="Lable_SmallProminet" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Lable_SmallProminet" className="text-impo_Neutral_OnBackground">
             {`${addCommas(price)} ${priceUnit}`}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       </div>
     </div>

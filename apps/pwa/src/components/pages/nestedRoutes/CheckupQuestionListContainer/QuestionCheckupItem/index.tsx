@@ -1,8 +1,8 @@
 import { segmentActionHandler } from '../../PregnancyCheckup/PregnancyCheckupContainer/utils';
 import ArrowIcon from '@assets/icons/calendarArrow.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import useWidgetActions from '@hooks/useWidgetActions';
@@ -28,9 +28,9 @@ const QuestionCheckupItem = ({ icon, name, type, lastIndex }: QuestionCheckupIte
       id="PregnancyCareWeekClick"
     >
       <div className="flex flex-row items-center gap-3">
-        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
           {name}
-        </Dark_Typography>
+        </CustomTypography>
         <CustomImage src={icon} />
       </div>
 

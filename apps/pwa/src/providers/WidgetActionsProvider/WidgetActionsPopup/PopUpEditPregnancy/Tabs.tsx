@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { EDIT_PREGNANCY_TABS_LIST } from './constants';
 import { TabsTypes } from './types';
@@ -19,7 +19,7 @@ const Tabs = ({ tab, tabHandler }: TabsTypes) => {
                       ${option.id === tab ? 'border-b-impo_Primary_Primary' : 'border-b-impo_Neutral_Surface'}
                     `}
         >
-          <Dark_Typography
+          <CustomTypography
             fontSize="Lable_Medium"
             className={`
                         text-center 
@@ -27,7 +27,7 @@ const Tabs = ({ tab, tabHandler }: TabsTypes) => {
                       `}
           >
             {option.text}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       ))}
     </div>

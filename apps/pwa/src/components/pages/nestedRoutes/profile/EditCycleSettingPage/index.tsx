@@ -1,10 +1,11 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import EditCycleSkeleton from './EditCycleSkeleton';
@@ -31,9 +32,9 @@ const EditCycleSettingPage = () => {
         >
           <div className="flex flex-col min-h-[100dvh] gap-6 pb-6" style={{ paddingTop: HEADER_HEIGHT }}>
             <div className="p-3 flex flex-col gap-3 " style={{ marginBottom: FOOTER_HEIGTH + 16 }}>
-              <Dark_Typography fontSize="Body_Medium" className="w-full text-right text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Body_Medium" className="w-full text-right text-impo_Neutral_OnBackground">
                 میتونی انتخاب کنی کدوم چرخه رو بهت نشون بدیم
-              </Dark_Typography>
+              </CustomTypography>
 
               <div className="flex gap-3 flex-col">
                 {RADIO_ITEMS_LIST.map((item, index) => (

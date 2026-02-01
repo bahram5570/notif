@@ -1,9 +1,9 @@
 import React from 'react';
 
 import ArrowUpIcon from '@assets/icons/Alt Arrow Up.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ProgressBarPropsType } from './type';
 
@@ -46,9 +46,9 @@ const ProgressBar = ({ progress, avatar, partnerAvatar, className }: ProgressBar
             />
 
             {milestone.percent <= progress.currentPercent && (
-              <Dark_Typography fontSize="Lable_Small" className="text-center text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Lable_Small" className="text-center text-impo_Neutral_OnBackground">
                 {milestone.text}
-              </Dark_Typography>
+              </CustomTypography>
             )}
           </div>
         ))}

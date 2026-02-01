@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { ClinicStateEnums } from '../enumbs';
 import { TicketBigLabelProps } from './types';
@@ -27,12 +27,12 @@ const TicketBigLabel = ({ state, stylingTypes }: TicketBigLabelProps) => {
                   ${stylingTypes === 'heading' ? 'bg-impo_Primary_OnPrimary' : 'bg-impo_Primary_Primary'}
                 `}
     >
-      <Dark_Typography
+      <CustomTypography
         fontSize="Lable_Large"
         className={`${stylingTypes === 'heading' ? 'text-impo_Primary_Primary' : 'text-impo_Primary_OnPrimary'}`}
       >
         {script}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

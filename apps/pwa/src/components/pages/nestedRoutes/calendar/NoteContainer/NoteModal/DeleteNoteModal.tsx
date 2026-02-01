@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
@@ -14,13 +15,13 @@ const DeleteNoteModal = () => {
 
   return (
     <div className="max-w-md flex flex-col items-center gap-4">
-      <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
         حذف یادداشت
-      </Dark_Typography>
+      </CustomTypography>
 
-      <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
         مطمئنی می‌خوای این یادداشت رو حذف کنی؟
-      </Dark_Typography>
+      </CustomTypography>
 
       <div className="w-full flex items-center justify-between gap-2 mt-3">
         <Dark_Button

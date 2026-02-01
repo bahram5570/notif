@@ -1,12 +1,12 @@
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import ActivationBtn from '@components/activation/ActivationBtn';
 import CustomLink from '@components/pages/mainRoutes/partner/PartnerPage/CustomLink';
 import CustomModal from '@components/ui/CustomModal';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { ACTIVATION_INTERFACE_CODE } from '@constants/activation.constants';
-import useOperatingSystem from '@hooks/useOperatingSystem';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import useInterfaceCode from './__hooks__/useInterfaceCode';
 import { InterfaceCodeContainerProps } from './types';
@@ -33,13 +33,13 @@ const InterfaceCodeContainer = ({ onComplete }: InterfaceCodeContainerProps) => 
       <CustomModal isOpen={isOpen} isFullScreen={false} isSlidingMode={true}>
         {isOpen && (
           <div className="flex flex-col items-center pb-4">
-            <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
               کد معرف
-            </Dark_Typography>
+            </CustomTypography>
 
-            <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnSurface text-center pt-2 pb-4">
+            <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnSurface text-center pt-2 pb-4">
               اینجا کدمعرفتو وارد کن تا هم خودت هم دوستت ده روز اشتراک رایگان بگیرین
-            </Dark_Typography>
+            </CustomTypography>
 
             <input
               value={code}

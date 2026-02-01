@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import WheelPicker from '@components/ui/WheelPicker';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
@@ -27,9 +28,9 @@ const ConditionModal = ({ name, onChange, onCloseModal, value }: ConditionModalP
 
   return (
     <>
-      <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
         زمان اندازه‌گیری قند خونت رو انتخاب کن
-      </Dark_Typography>
+      </CustomTypography>
       <div className="relative grid grid-cols-1 place-items-center w-full px-4">
         <>
           <span className="absolute left-0 right-0 h-10   pointer-events-none rounded-full bg-impo_Neutral_Surface" />

@@ -1,6 +1,5 @@
 import StarIcon from '@assets/icons/star.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { RATING_LIST } from './constants';
 import { FeedbackStarsPropsType } from './type';
@@ -20,20 +19,20 @@ const FeedbackStars = ({ rate, rateHandler }: FeedbackStarsPropsType) => {
 
       {rate === 0 && (
         <div className="flex justify-between w-[230px]">
-          <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
+          <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
             {RATING_LIST[0].script}
-          </Dark_Typography>
-          <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
+          </CustomTypography>
+          <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
             {RATING_LIST[4].script}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       )}
 
       {rate > 0 && (
         <div className="flex justify-center w-[230px]">
-          <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Lable_Large">
+          <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Lable_Large">
             {RATING_LIST[rate - 1].script}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       )}
     </div>

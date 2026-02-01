@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import ChatContainerMaker from './ChatContainerMaker';
 import MessageGeneratorMedia from './MessageGeneratorMedia';
@@ -9,9 +9,9 @@ const MessageGenerator = ({ dateTime, media, sideType, text }: MessageGeneratorP
     <>
       {text.trim() !== '' && (
         <ChatContainerMaker dateTime={dateTime} sideType={sideType} width={240}>
-          <Dark_Typography fontSize="Body_Small" className="text-impo_Black">
+          <CustomTypography fontSize="Body_Small" className="text-impo_Black">
             {text}
-          </Dark_Typography>
+          </CustomTypography>
         </ChatContainerMaker>
       )}
 

@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
@@ -23,13 +24,13 @@ const BiorhythmContainer = ({ Icon, percent, text, typeText, type }: BiorhythmCo
         <Icon className="w-12 h-12" />
 
         <div className="flex flex-row-reverse gap-1">
-          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
             {` ${text}:`}
-          </Dark_Typography>
+          </CustomTypography>
 
-          <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
             {`%${percent.toString()}`}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       </div>
     </div>

@@ -1,10 +1,10 @@
 import CrownIcon from '@assets/icons/crown.svg';
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
-import useOperatingSystem from '@hooks/useOperatingSystem';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 import Link from 'next/link';
 
 import { SubscriptionProps } from '../__hooks__/userNameDetail/type';
@@ -30,15 +30,15 @@ const SubscriptionButton = ({ remaindDays }: SubscriptionProps) => {
           style={{ ...typographyFontStyles }}
           onClick={clickHandler}
         >
-          <Dark_Typography fontSize="Lable_Medium" className="text-impo_Primary_Primary">
+          <CustomTypography fontSize="Lable_Medium" className="text-impo_Primary_Primary">
             تمدید اشتراک
-          </Dark_Typography>
+          </CustomTypography>
         </Link>
 
         <div className="gap-1 lg:gap-2 flex flex-row items-center">
-          <Dark_Typography fontSize="Lable_Medium" className="text-impo_White">
+          <CustomTypography fontSize="Lable_Medium" className="text-impo_White">
             {`${remaindDays < 0 ? 0 : remaindDays} روز مانده تا پایان اشتراک`}
-          </Dark_Typography>
+          </CustomTypography>
 
           <CrownIcon className="w-8 h-8 mb-2 fill-impo_White" />
         </div>

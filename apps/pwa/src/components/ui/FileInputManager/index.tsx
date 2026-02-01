@@ -3,10 +3,10 @@ import { useState } from 'react';
 import FileIcon from '@assets/icons/Paper.svg';
 import CameraIcon from '@assets/icons/camera.svg';
 import GalleryIcon from '@assets/icons/gallery.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import imageCompression from 'browser-image-compression';
 
 import Dark_Spinner from '../Dark_Spinner';
-import Dark_Typography from '../Dark_Typography';
 import { FileInputTypes } from './enum';
 import { FileInputHandlerTypes, FileInputManagerPropsType } from './type';
 
@@ -58,9 +58,9 @@ const FileInputManager = ({
 
           <label htmlFor="camera-input">
             <div className="flex justify-end items-center gap-2">
-              <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
                 دوربین
-              </Dark_Typography>
+              </CustomTypography>
 
               <div className="w-12 h-12 border-[1px] border-impo_Surface_SurfaceVariant rounded-full flex justify-center items-center">
                 {uploadImageLoading && activeInput === FileInputTypes.CAMERA ? (
@@ -85,9 +85,9 @@ const FileInputManager = ({
           />
           <label htmlFor="gallery-input">
             <div className="flex justify-end items-center gap-2">
-              <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
                 گالری
-              </Dark_Typography>
+              </CustomTypography>
 
               <div className="w-12 h-12 border-[1px] border-impo_Surface_SurfaceVariant rounded-full flex justify-center items-center">
                 {uploadImageLoading && activeInput === FileInputTypes.GALLERY ? (
@@ -106,9 +106,9 @@ const FileInputManager = ({
           <input type="file" id="file-input" className="hidden" onChange={handleFileInput(FileInputTypes.FILE)} />
           <label htmlFor="file-input">
             <div className="flex justify-end items-center gap-2">
-              <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
                 فایل
-              </Dark_Typography>
+              </CustomTypography>
 
               <div className="w-12 h-12 border-[1px] border-impo_Surface_SurfaceVariant rounded-full flex justify-center items-center">
                 {uploadImageLoading && activeInput === FileInputTypes.FILE ? (

@@ -1,10 +1,11 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import { SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import CustomModal from '@components/ui/CustomModal';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 import useOverflowHandler from '@hooks/useOverflowHandler';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
@@ -54,9 +55,9 @@ const ShareExperienceNewTopics = ({
 
             {!isLoading && topicsData && (
               <>
-                <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground pb-6 ml-auto">
+                <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground pb-6 ml-auto">
                   این تجربه مربوط به کدوم تالاره؟
-                </Dark_Typography>
+                </CustomTypography>
 
                 {topicsData.map((item, index) => (
                   <ShareExperienceNewTopicsGenerator

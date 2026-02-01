@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import WidgetHintCardBookmark from './WidgetHintCardBookmark';
 import WidgetHintCardLinkTo from './WidgetHintCardLinkTo';
@@ -25,9 +25,9 @@ const WidgetHintCardGenerator = (props: WidgetHintCardGeneratorProps) => {
         writerSpeciality={props.writerSpeciality}
       />
 
-      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground w-full">
+      <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground w-full">
         {props.text}
-      </Dark_Typography>
+      </CustomTypography>
 
       <div className="w-full flex items-center gap-2 pt-1 mt-auto">
         <div className="w-fit aspect-square rounded-full border-[1px] border-impo_Surface_OutlineVariant">

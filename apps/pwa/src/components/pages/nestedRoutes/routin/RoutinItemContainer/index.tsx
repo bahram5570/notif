@@ -1,12 +1,13 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import FeedbackModal from '@components/FeedbackModal';
 import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import RoutinCta from '@components/__routin__/RoutinCta';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ProgramWidgetItemStatusEnum } from '../enum';
 import EmptyState from './EmptyState';
@@ -61,9 +62,9 @@ const RoutinItemContainer = () => {
                     className="text-impo_Primary_Primary bg-impo_Primary_PrimaryContainer border-impo_Primary_PrimaryContainer"
                     isLoading={seenLoading}
                   >
-                    <Dark_Typography fontSize="Lable_Large" className="text-impo_Primary_Primary">
+                    <CustomTypography fontSize="Lable_Large" className="text-impo_Primary_Primary">
                       {data.compeletButtonLabel}
-                    </Dark_Typography>
+                    </CustomTypography>
                   </Dark_Button>
                 </div>
               </>

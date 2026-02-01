@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import useDiscountCode from './__hooks__/useDiscountCode';
 import { DiscountInputProps } from './types';
@@ -9,9 +10,9 @@ const DiscountInput = ({ id, approvedCodeHandler }: DiscountInputProps) => {
 
   return (
     <div className="w-full flex flex-col items-end gap-2">
-      <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
         کد تخفیف
-      </Dark_Typography>
+      </CustomTypography>
 
       <div className="w-full flex items-center gap-2">
         <Dark_Button

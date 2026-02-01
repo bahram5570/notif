@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { SpecialistCommentsGeneratorProps } from './types';
 
@@ -16,9 +16,9 @@ const SpecialistCommentsGenerator = ({ isPositive, scripts }: SpecialistComments
                       `}
           />
 
-          <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
             {item}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       ))}
     </div>

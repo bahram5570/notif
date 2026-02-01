@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import RoutinCard from '@components/__routin__/RoutinCard';
 import useAnalytics from '@hooks/useAnalytics';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import WidgetCardContainer from '../../WidgetCardContainer';
 import { ProgramScrollPropType } from './type';

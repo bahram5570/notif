@@ -1,6 +1,5 @@
 import ArrowIcon from '@assets/icons/calendarArrow.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { PregnancySettingsLinkGeneratorProps } from './types';
 
@@ -18,13 +17,13 @@ const PregnancySettingsLinkGenerator = ({
       <ArrowIcon className="w-4 h-auto stroke-impo_Surface_Outline" />
 
       <div className="flex flex-col gap-1" dir="rtl">
-        <Dark_Typography fontSize="Lable_MediumProminet" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Lable_MediumProminet" className="text-impo_Neutral_OnBackground">
           {title}
-        </Dark_Typography>
+        </CustomTypography>
 
-        <Dark_Typography fontSize="Body_Small" className="text-impo_Surface_Outline">
+        <CustomTypography fontSize="Body_Small" className="text-impo_Surface_Outline">
           {description}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
     </div>
   );

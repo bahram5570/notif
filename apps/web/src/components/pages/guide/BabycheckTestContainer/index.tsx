@@ -3,6 +3,7 @@
 import CustomTypography from '@components/ui/CustomTypography';
 import useBreakPoint from '@hooks/useBreakPoint';
 import { FONTS_ANDROID } from '@repo/core/theme/fonts';
+
 import GuideContainer from '../GuideContainer';
 import { StepsContentType } from '../GuideContainer/type';
 

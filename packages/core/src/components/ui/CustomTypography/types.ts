@@ -1,11 +1,11 @@
-import { FONTS_ANDROID } from '@repo/core/theme/fonts';
+import { FONTS_ANDROID } from '../../../theme/fonts';
 
-export interface Dark_TypographyTypes {
+export interface CustomTypographyTypes {
   testId?: string;
   className?: string;
+  direction?: 'rtl' | 'ltr';
   style?: React.CSSProperties;
   numbersMode?: 'persian' | 'english';
   fontSize?: keyof typeof FONTS_ANDROID;
   children: React.ReactNode | string | number;
-  direction?: 'rtl' | 'ltr';
 }

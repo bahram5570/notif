@@ -1,7 +1,6 @@
 import CancelIcon from '@assets/icons/cancel.svg';
 import TickIcon from '@assets/icons/tickIcon.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { OptionListContainerPropsType } from './type';
 
@@ -30,12 +29,12 @@ const OptionListContainer = ({ options, handleClick, selectedIndex }: OptionList
                 )}
               </div>
             )}
-            <Dark_Typography
+            <CustomTypography
               fontSize="Body_Medium"
               className={`${isSelected ? 'text-impo_Success_SuccessContainer' : 'text-impo_Neutral_OnBackground'}`}
             >
               {option.title}
-            </Dark_Typography>
+            </CustomTypography>
           </div>
         );
       })}

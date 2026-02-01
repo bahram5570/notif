@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { NameSelectorActivationRadioProps } from './types';
 
@@ -56,14 +57,14 @@ const NameSelectorActivationRadio = ({
         </div>
 
         <div className="flex items-center gap-1">
-          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             {title}
-          </Dark_Typography>
+          </CustomTypography>
 
           {isSelected && subTitle && (
-            <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
               {subTitle}
-            </Dark_Typography>
+            </CustomTypography>
           )}
         </div>
 

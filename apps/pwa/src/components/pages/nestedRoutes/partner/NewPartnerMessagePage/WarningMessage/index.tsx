@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import CloseIcon from '@assets/icons/plus.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { ItemPropsType } from '../MessageListContainer/Message/type';
 
@@ -31,10 +30,10 @@ const WarningMessage = ({ messageList }: { messageList: ItemPropsType[] }) => {
             onClick={showWarningMessageHandler}
           />
 
-          <Dark_Typography fontSize="Lable_Large" className="w-full text-center text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Lable_Large" className="w-full text-center text-impo_Neutral_OnBackground">
             برای استفاده از این پیام‌رسان لازمه پارتنرت هم آخرین نسخه ایمپو رو نصب کنه. این امکان فعلا برای گوشی‌های ios
             فراهم نیست
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       )}
     </>

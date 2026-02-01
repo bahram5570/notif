@@ -1,7 +1,7 @@
 import chatbotJson from '@assets/lottie/chatbot.json';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
@@ -23,19 +23,19 @@ const AiChatbotDeactiveMessage = ({ deactiveMessage, title, deactiveButton }: Ai
         <LottieJson animationData={chatbotJson} loop={false} autoPlay={false} className="w-14 h-14" />
 
         <div className="flex flex-col justify-center items-end ">
-          <Dark_Typography fontSize="Lable_MediumProminet" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Lable_MediumProminet" className="text-impo_Neutral_OnBackground">
             {title}
-          </Dark_Typography>
-          <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+          </CustomTypography>
+          <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
             {deactiveMessage}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       </div>
       {deactiveButton && (
         <Dark_Button onClick={onClick}>
-          <Dark_Typography fontSize="Lable_Medium" className="text-impo_White">
+          <CustomTypography fontSize="Lable_Medium" className="text-impo_White">
             {deactiveButton.text}
-          </Dark_Typography>
+          </CustomTypography>
         </Dark_Button>
       )}
     </div>

@@ -1,7 +1,8 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -37,9 +38,9 @@ const RequestGenerator = ({ item }: RequestGeneratorTypeProps) => {
   return (
     <div className="p-2">
       <div className="flex items-center justify-end gap-2">
-        <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
           {!item.isRecv ? `درخواست به ${item.name}` : `${item.name}`}
-        </Dark_Typography>
+        </CustomTypography>
 
         <CustomImage
           src={item.image || '/assets/images/man.webp'}
@@ -51,18 +52,18 @@ const RequestGenerator = ({ item }: RequestGeneratorTypeProps) => {
       <div className="flex items-center gap-3">
         {item.isRecv && (
           <Dark_Button className="max-w-fit" onClick={onAcceptClickHandler} isLoading={isLoading}>
-            <Dark_Typography fontSize="Lable_Medium" className="text-impo_Primary_OnPrimary">
+            <CustomTypography fontSize="Lable_Medium" className="text-impo_Primary_OnPrimary">
               قبول کردن
-            </Dark_Typography>
+            </CustomTypography>
           </Dark_Button>
         )}
 
         {!item.isRecv && (
           <div className="w-fit rounded-full px-4 h-10 bg-impo_Neutral_Surface">
             <div className="flex justify-center items-center h-full">
-              <Dark_Typography fontSize="Lable_Medium" className="text-impo_Surface_Outline">
+              <CustomTypography fontSize="Lable_Medium" className="text-impo_Surface_Outline">
                 در انتظار...
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           </div>
         )}
@@ -72,9 +73,9 @@ const RequestGenerator = ({ item }: RequestGeneratorTypeProps) => {
           className="bg-impo_Surface_OutlineVariant border !border-impo_Neutral_Surface max-w-fit"
           isLoading={isLoading}
         >
-          <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnSurface">
+          <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnSurface">
             {item.isRecv ? 'رد کردن' : 'لغو کردن'}
-          </Dark_Typography>
+          </CustomTypography>
         </Dark_Button>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import ArrowIcon from '@assets/icons/calendarArrow.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { CALENDAR_CELL_SIZE } from '@constants/date.constants';
 
 import { CalendarHeadingProps } from './types';
@@ -12,9 +12,9 @@ const CalendarHeading = ({ headingScript, navigateHandler }: CalendarHeadingProp
     <div className="flex justify-between pb-5 mx-auto" style={{ width }}>
       <ArrowIcon className="w-10 h-6 stroke-impo_Surface_Outline" onClick={() => navigateHandler(false)} />
 
-      <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
         {headingScript}
-      </Dark_Typography>
+      </CustomTypography>
 
       <ArrowIcon className="w-10 h-6 stroke-impo_Surface_Outline rotate-180" onClick={() => navigateHandler(true)} />
     </div>

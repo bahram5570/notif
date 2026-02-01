@@ -73,7 +73,11 @@ const ContentIntegrity = () => {
             </CustomTypography>
             <CustomTypography tagType="li" fontSize="Body_Large" className="!text-impo_Neutral_OnBackground">
               مرورهای سیستماتیک و مطالعات علمی قابل استناد در
-              <CustomLink href={'https://scholar.google.com/'} target="_blank" className="!text-impo_Primary_Primary mx-[3px] inline-block">
+              <CustomLink
+                href={'https://scholar.google.com/'}
+                target="_blank"
+                className="!text-impo_Primary_Primary mx-[3px] inline-block"
+              >
                 گوگل اسکولار
               </CustomLink>
               بعد از سال 2022
@@ -81,15 +85,27 @@ const ContentIntegrity = () => {
           </ul>
           <CustomTypography tagType="p" fontSize="Body_Large" className="!text-impo_Neutral_OnBackground mt-4">
             منابع پزشکی معتبر بین‌المللی مانند
-            <CustomLink href={'https://www.healthline.com/'} target="_blank" className="!text-impo_Primary_Primary mx-[3px] inline-block">
+            <CustomLink
+              href={'https://www.healthline.com/'}
+              target="_blank"
+              className="!text-impo_Primary_Primary mx-[3px] inline-block"
+            >
               health line
             </CustomLink>
             ,
-            <CustomLink href={'https://www.webmd.com/'} target="_blank" className="!text-impo_Primary_Primary mx-[3px] inline-block">
+            <CustomLink
+              href={'https://www.webmd.com/'}
+              target="_blank"
+              className="!text-impo_Primary_Primary mx-[3px] inline-block"
+            >
               webmed
             </CustomLink>
             و
-            <CustomLink href={'https://www.mayoclinic.org/'} target="_blank" className="!text-impo_Primary_Primary mx-[3px] inline-block">
+            <CustomLink
+              href={'https://www.mayoclinic.org/'}
+              target="_blank"
+              className="!text-impo_Primary_Primary mx-[3px] inline-block"
+            >
               Mayo Clinic
             </CustomLink>
             <strong>

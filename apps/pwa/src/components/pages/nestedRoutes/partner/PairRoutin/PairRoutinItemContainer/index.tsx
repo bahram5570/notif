@@ -1,11 +1,12 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import FeedbackModal from '@components/FeedbackModal';
 import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { useRouter } from 'next/navigation';
 
 import { ProgramWidgetItemStatusEnum } from '../enum';
@@ -66,9 +67,9 @@ const PairRoutinItemContainer = () => {
                     isLoading={seenLoading}
                     className="bg-impo_Primary_PrimaryContainer text-impo_Primary_Primary border-impo_Primary_PrimaryContainer"
                   >
-                    <Dark_Typography fontSize="Lable_Large" className="text-impo_Primary_Primary">
+                    <CustomTypography fontSize="Lable_Large" className="text-impo_Primary_Primary">
                       {data.compeletButtonLabel}
-                    </Dark_Typography>
+                    </CustomTypography>
                   </Dark_Button>
                 </div>
               </>

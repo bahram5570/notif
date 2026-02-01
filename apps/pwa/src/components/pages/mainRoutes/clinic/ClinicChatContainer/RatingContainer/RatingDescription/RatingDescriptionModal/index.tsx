@@ -1,11 +1,11 @@
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import styles from './RatingDescriptionModal.module.css';
 
 import CustomModal from '@components/ui/CustomModal';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import { MAX_LETTERS_COUNT } from './constants';
 import { RatingDescriptionModalProps } from './types';
@@ -34,9 +34,9 @@ const RatingDescriptionModal = ({ descriptionHandler, description, onClick }: Ra
   return (
     <CustomModal isSlidingMode={true}>
       <>
-        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
           لطفا نظرت رو برامون بنویس تا بتونیم بررسی کنیم و در آینده سرویس بهتری ارائه بدیم.
-        </Dark_Typography>
+        </CustomTypography>
 
         <textarea
           placeholder="نظرت رو اینجا بنویس.."
@@ -47,9 +47,9 @@ const RatingDescriptionModal = ({ descriptionHandler, description, onClick }: Ra
           className={`relative w-full rounded-xl p-2 border-[1px] outline-none resize-none mt-2 mb-1 bg-impo_Neutral_Background text-impo_Neutral_OnBackground border-impo_Neutral_Surface${styles.textarea}`}
         />
 
-        <Dark_Typography fontSize="Body_Medium" className="pb-10 mr-auto text-impo_Surface_Outline">
+        <CustomTypography fontSize="Body_Medium" className="pb-10 mr-auto text-impo_Surface_Outline">
           {lettersCountScript}
-        </Dark_Typography>
+        </CustomTypography>
 
         <Dark_Button fontSize="Lable_Large" onClick={onClick}>
           ارسال بازخورد

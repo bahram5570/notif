@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_RadioButton from '@components/ui/Dark_RadioButton';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { CHANGE_CALENDAR_TYPE_LIST } from './constants';
 import { UserInfoCalendarTypeTypes } from './types';
@@ -16,9 +17,9 @@ const UserInfoCalendarType = ({ value, valueHandler }: UserInfoCalendarTypeTypes
         >
           <Dark_RadioButton isChecked={item.value === value} />
 
-          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnSurface">
+          <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnSurface">
             {item.text}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       ))}
     </>

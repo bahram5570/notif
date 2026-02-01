@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { toPersianNumbers } from '@utils/numbers';
 
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import { KeyDownHandlerTypes, SingleCodeProps, ValueHandlerTypes } from './types';
 

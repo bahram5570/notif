@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import OverlayBar from '@components/ui/OverlayBar';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
@@ -16,9 +17,9 @@ const ChallengeBtn = ({ answerValue, btn, id, question, btnTop }: ChallengeBtnPr
   return (
     <OverlayBar btnTop={btnTop} className="px-6 py-2 mx-auto" style={{ maxWidth: MAX_SCREEN_WIDTH }}>
       <Dark_Button onClick={onClick} isDisable={!answerValue} isLoading={submitLoading}>
-        <Dark_Typography className="text-impo_PrimaryMan_OnPrimaryMan" fontSize="Lable_Large">
+        <CustomTypography className="text-impo_PrimaryMan_OnPrimaryMan" fontSize="Lable_Large">
           {btn.text}
-        </Dark_Typography>
+        </CustomTypography>
       </Dark_Button>
     </OverlayBar>
   );

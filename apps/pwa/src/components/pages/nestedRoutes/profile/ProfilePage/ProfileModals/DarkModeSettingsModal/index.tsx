@@ -1,6 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { themeHandler } from '@repo/core/theme/__utils__';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { ThemeTypes } from '@repo/core/theme/types';
 import { useRouter } from 'next/navigation';
 
@@ -16,9 +16,9 @@ const DarkModeSettingsModal = () => {
 
   return (
     <div className="w-full flex flex-col items-center ga">
-      <Dark_Typography className="w-full p-2 text-center text-impo_Neutral_OnBackground" fontSize="Title_Small">
+      <CustomTypography className="w-full p-2 text-center text-impo_Neutral_OnBackground" fontSize="Title_Small">
         پوسته
-      </Dark_Typography>
+      </CustomTypography>
 
       <div className="w-full flex flex-col" dir="rtl">
         {DARK_MODE_ITEMS_LIST.map((item, index) => (
@@ -39,9 +39,9 @@ const DarkModeSettingsModal = () => {
               <item.Icon className="w-full h-auto fill-impo_Surface_Outline" />
             </div>
 
-            <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
               {item.title}
-            </Dark_Typography>
+            </CustomTypography>
           </div>
         ))}
       </div>

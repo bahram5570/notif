@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { LottieCanvas } from '@lib/LottieCanvas';
 
 import ApprovedCodeToast from './ApprovedCodeToast';
@@ -85,9 +86,9 @@ const SubscriptionPage = () => {
                     className="px-4 py-2 min-w-fit rounded-full bg-impo_Primary_PrimaryContainer"
                     onClick={showAllHandler}
                   >
-                    <Dark_Typography fontSize="Lable_Medium" className="text-impo_Primary_Primary">
+                    <CustomTypography fontSize="Lable_Medium" className="text-impo_Primary_Primary">
                       از اینجا پیشنهادهای بیشتر رو ببین
-                    </Dark_Typography>
+                    </CustomTypography>
                   </div>
 
                   <div className="w-full h-[1px] block bg-impo_Neutral_Surface" />
@@ -104,9 +105,9 @@ const SubscriptionPage = () => {
               )}
 
               <a href={`tel:${data.supportPhone}`}>
-                <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
+                <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
                   {data.supportText}
-                </Dark_Typography>
+                </CustomTypography>
               </a>
               {mediasData && (
                 <>

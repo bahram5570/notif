@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
@@ -33,9 +34,9 @@ const WidgetCardContainer = ({
         <div className="flex justify-between items-center border-b-[1px] pb-3 mb-3 border-impo_Neutral_Surface">
           <div className="min-w-fit">{titleElement}</div>
 
-          <Dark_Typography fontSize="Title_Small" className="!text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Title_Small" className="!text-impo_Neutral_OnBackground">
             {title}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
 
         <>{children}</>

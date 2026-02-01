@@ -1,7 +1,7 @@
 import chatbotJson from '@assets/lottie/chatbot.json';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
@@ -62,14 +62,14 @@ const ChatbotModalMode = ({ description, title, startChatText, goToChatAction }:
       >
         <div className="px-4 flex flex-col justify-center items-center gap-2">
           <div className=" px-4 py-2 rounded-full bg-impo_White">
-            <Dark_Typography fontSize="Title_Small" className="text-impo_Black">
+            <CustomTypography fontSize="Title_Small" className="text-impo_Black">
               {title}
-            </Dark_Typography>
+            </CustomTypography>
           </div>
 
-          <Dark_Typography fontSize="Body_Large" className="text-impo_Black">
+          <CustomTypography fontSize="Body_Large" className="text-impo_Black">
             {description}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
 
         <div className="flex flex-col gap-2">
@@ -83,9 +83,9 @@ const ChatbotModalMode = ({ description, title, startChatText, goToChatAction }:
               {isLoading ? (
                 <Dark_Spinner size={24} className="border-impo_Neutral_Background" />
               ) : (
-                <Dark_Typography fontSize="Lable_Large" className="text-impo_Primary_OnPrimary">
+                <CustomTypography fontSize="Lable_Large" className="text-impo_Primary_OnPrimary">
                   {startChatText}
-                </Dark_Typography>
+                </CustomTypography>
               )}
             </div>
           </div>

@@ -1,7 +1,7 @@
 import SaveEmptyIcon from '@assets/icons/saveEmpty.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomSlider from '@components/ui/CustomSlider';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ShareExperienceCategoriesProps } from './types';
 
@@ -35,12 +35,12 @@ const ShareExperienceCategories = ({
                             ${isSelected ? 'border-impo_Neutral_OnBackground bg-impo_Neutral_OnBackground' : 'border-impo_Neutral_Surface bg-impo_Neutral_Background'}
                           `}
               >
-                <Dark_Typography
+                <CustomTypography
                   fontSize="Body_Medium"
                   className={`${isSelected ? 'text-impo_Neutral_Background' : 'text-impo_Neutral_OnBackground'}`}
                 >
                   {item.title}
-                </Dark_Typography>
+                </CustomTypography>
 
                 {item.icon.trim().length > 0 &&
                   (isSelected ? (

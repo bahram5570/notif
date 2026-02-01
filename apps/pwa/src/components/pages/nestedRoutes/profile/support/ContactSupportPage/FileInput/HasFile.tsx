@@ -1,10 +1,10 @@
 import DownloadedIcon from '@assets/icons/downloaded.svg';
 import TrashIcon from '@assets/icons/trash.svg';
 import { chatFileTypeDetector } from '@components/pages/mainRoutes/clinic/ClinicChatContainer/ChatsMessagesContainer/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { HasFilePropsType } from './type';
 
@@ -23,9 +23,9 @@ const HasFile = ({ fileName, valuesHandler }: HasFilePropsType) => {
           </div>
         )}
 
-        <Dark_Typography className="break-all text-left text-impo_Neutral_OnBackground" fontSize="Body_Medium">
+        <CustomTypography className="break-all text-left text-impo_Neutral_OnBackground" fontSize="Body_Medium">
           {fileNameScript}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       <div

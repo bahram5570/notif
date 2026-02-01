@@ -1,8 +1,8 @@
 import ArrowIcon from '@assets/icons/arrow.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
@@ -33,12 +33,12 @@ const ChatHeader = ({ createTime, partnerAvatar, partnerName, progress, avatar }
               className="rounded-full !object-cover"
             />
             <div className="flex flex-col items-end justify-end">
-              <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Title_Small">
+              <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Title_Small">
                 {partnerName}
-              </Dark_Typography>
-              <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
+              </CustomTypography>
+              <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
                 {`تاریخ شروع چت :${currentDate}`}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           </div>
 

@@ -2,10 +2,10 @@ import { useEffect } from 'react';
 
 import CameraIcon from '@assets/icons/Camera-1.svg';
 import GalleryIcon from '@assets/icons/gallery-1.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import imageCompression from 'browser-image-compression';
 
 import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { FileInputTypes } from '@components/ui/FileInputManager/enum';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useAiFileManager from '@hooks/__aichatbot__/useAiFileManager';
@@ -88,9 +88,9 @@ const UploadImagesMoreAction = ({ closeHandler, isOpen }: UploadImagesMoreAction
                 <div className="flex justify-center items-center rounded-full w-8  h-8 bg-impo_Surface_OutlineVariant">
                   <CameraIcon className="w-[18px] h-[18px] stroke-impo_Surface_Outline" />
                 </div>
-                <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+                <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
                   دوربین
-                </Dark_Typography>
+                </CustomTypography>
               </div>
             </label>
           </>
@@ -108,9 +108,9 @@ const UploadImagesMoreAction = ({ closeHandler, isOpen }: UploadImagesMoreAction
                 <div className="flex justify-center items-center rounded-full w-8  h-8 bg-impo_Surface_OutlineVariant">
                   <GalleryIcon className="w-[18px] h-[18px] stroke-impo_Surface_Outline" />
                 </div>
-                <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+                <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
                   گالری
-                </Dark_Typography>
+                </CustomTypography>
               </div>
             </label>
           </>

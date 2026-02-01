@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MoreActionBtnPropsType } from './type';
 
@@ -13,9 +13,9 @@ const MoreActionBtn = ({ onClickHandler, title, isDeleteBtn = false, Icon }: Mor
         />
       </div>
 
-      <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
         {title}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

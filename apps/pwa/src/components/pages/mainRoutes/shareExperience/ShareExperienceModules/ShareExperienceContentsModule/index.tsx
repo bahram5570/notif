@@ -1,7 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { shareExperienceCommentQueryMaker } from '@utils/shareExperience';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -25,9 +25,9 @@ const ShareExperienceContentsModule = ({ text, image, hasLinkTo, isSelf, id }: S
   return (
     <div className="w-full flex flex-col gap-3 pt-1 pb-4 px-2" dir="rtl">
       <div onClick={selectHandler}>
-        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
           {text}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       {image.trim().length > 0 && (

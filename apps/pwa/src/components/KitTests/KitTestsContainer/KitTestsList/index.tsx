@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
@@ -41,9 +42,9 @@ const KitTestsList = ({ moduleType, data, gregorianDate }: KitTestsListProps) =>
           <div className="w-full h-[1px] my-4 bg-impo_Surface_SurfaceVariant" />
 
           <div className="w-full rounded-lg flex items-center justify-end gap-2 cursor-pointer" onClick={clickHandler}>
-            <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
               {details.buttonScript}
-            </Dark_Typography>
+            </CustomTypography>
 
             <details.Icon className="w-8 h-auto" />
           </div>

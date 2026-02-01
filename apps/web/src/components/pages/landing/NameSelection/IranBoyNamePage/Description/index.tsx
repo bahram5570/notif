@@ -50,7 +50,10 @@ const Description = () => {
       <TitleGenerator tagType="h3">اهمیت توجه به ریشه و معنی در انتخاب اسم پسر ایرانی</TitleGenerator>
       <CustomTypography fontSize="Body_Large" className="!text-impo_Neutral_OnBackground">
         اگه
-        <CustomLink href="/pregnancy-symptoms-of-having-a-girl" className="!text-impo_PrimaryMan_PrimaryMan mx-[3px] inline-block">
+        <CustomLink
+          href="/pregnancy-symptoms-of-having-a-girl"
+          className="!text-impo_PrimaryMan_PrimaryMan mx-[3px] inline-block"
+        >
           علائم صد در صد جنین دختر
         </CustomLink>
         یا پسر دارین، حتماً به دنبال اسامی دختر و پسر زیبا و پر‌معنی هستین!

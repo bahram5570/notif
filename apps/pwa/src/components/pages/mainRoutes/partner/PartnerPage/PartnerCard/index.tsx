@@ -1,7 +1,7 @@
 import { generateLinearGradient } from './utils';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { PartnerCardPropsType } from './type';
 
@@ -12,9 +12,9 @@ const PartnerCard = ({ partner, valid }: PartnerCardPropsType) => {
     <div className="flex flex-col gap-4 py-6 px-3 rounded-xl  items-end border border-impo_Neutral_Surface">
       {partner.cycleTitle && (
         <div className="flex justify-between items-end ">
-          <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
             {partner.cycleTitle}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       )}
 
@@ -27,18 +27,18 @@ const PartnerCard = ({ partner, valid }: PartnerCardPropsType) => {
         <div className=" flex flex-row gap-2  sm:px-4 py-3  items-center rounded-xl  w-full mb-2">
           <div className="w-full flex flex-col gap-2 items-end">
             <div className="flex flex-col gap-2 items-end">
-              <Dark_Typography
+              <CustomTypography
                 fontSize="Body_Medium"
                 className={` text-center ${valid ? 'text-impo_White' : 'text-impo_Black'}`}
               >
                 {partner.cycleCard.title}
-              </Dark_Typography>
-              <Dark_Typography
+              </CustomTypography>
+              <CustomTypography
                 fontSize="Headline_Small"
                 className={` text-center ${valid ? 'text-impo_White' : 'text-impo_Black'}`}
               >
                 {partner.cycleCard.subTitle}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
             {/* {valid && (
               <CustomLink
@@ -56,9 +56,9 @@ const PartnerCard = ({ partner, valid }: PartnerCardPropsType) => {
         </div>
 
         {partner.cycleCard.trailing && (
-          <Dark_Typography fontSize="Title_Medium" className="text-impo_White text-center w-full pt-3">
+          <CustomTypography fontSize="Title_Medium" className="text-impo_White text-center w-full pt-3">
             {partner.cycleCard.trailing}
-          </Dark_Typography>
+          </CustomTypography>
         )}
       </div>
     </div>

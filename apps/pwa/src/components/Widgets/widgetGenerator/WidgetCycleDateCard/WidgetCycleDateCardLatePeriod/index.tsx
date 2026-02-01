@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { currentDate } from '@utils/dates';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
 import moment from 'moment-jalaali';
@@ -36,9 +36,9 @@ const WidgetCycleDateCardLatePeriod = () => {
         right: `96%`,
       }}
     >
-      <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
         {currentDay}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
@@ -23,9 +24,9 @@ const PeriodSettingsLingthGenerator = ({ name, values }: PeriodSettingsLingthGen
       {isLoading && <Dark_Spinner size={24} />}
 
       {!isLoading && (
-        <Dark_Typography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">
+        <CustomTypography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">
           {valueScript}
-        </Dark_Typography>
+        </CustomTypography>
       )}
     </div>
   );

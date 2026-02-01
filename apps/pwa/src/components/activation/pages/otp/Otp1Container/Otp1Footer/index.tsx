@@ -1,8 +1,8 @@
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { ACTIVATION_HEADING_SCRIPTS_ID } from '@components/activation/ActivationHeading/constants';
-import Dark_Typography from '@components/ui/Dark_Typography';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 import Link from 'next/link';
 
 const Otp1Footer = () => {
@@ -15,9 +15,9 @@ const Otp1Footer = () => {
       className="fixed left-0 right-0 bottom-0 mx-auto px-4 pt-4 bg-impo_Neutral_Background duration-200 z-30 overflow-hidden"
     >
       <div className="flex flex-row-reverse flex-wrap justify-center gap-1 pt-6 pb-5">
-        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground whitespace-nowrap">
+        <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground whitespace-nowrap">
           با ورود به ایمپو،
-        </Dark_Typography>
+        </CustomTypography>
 
         <Link
           target="_blank"
@@ -28,9 +28,9 @@ const Otp1Footer = () => {
           قوانین و شرایط
         </Link>
 
-        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground whitespace-nowrap">
+        <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground whitespace-nowrap">
           استفاده از اپلیکیشن رو می‌پذیرم
-        </Dark_Typography>
+        </CustomTypography>
       </div>
     </div>
   );

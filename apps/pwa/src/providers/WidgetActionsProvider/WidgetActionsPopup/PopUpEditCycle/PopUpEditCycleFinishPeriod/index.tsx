@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import DateModule from '@components/activation/DateModule';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 
 import useEditCycleDateIntervals from './__hooks__/useEditCycleDateIntervals';
@@ -24,17 +25,17 @@ const PopUpEditCycleFinishPeriod = ({ data, startTime, periodLength }: PopUpEdit
 
   return (
     <>
-      <Dark_Typography
+      <CustomTypography
         fontSize="Body_Medium"
         className="text-impo_Neutral_OnBackground"
         style={{ paddingTop: HEADER_HEIGHT }}
       >
         {data.title}
-      </Dark_Typography>
+      </CustomTypography>
 
-      <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground mt-1 mb-[80px]">
+      <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground mt-1 mb-[80px]">
         {data.description}
-      </Dark_Typography>
+      </CustomTypography>
 
       {datesInterval && (
         <DateModule

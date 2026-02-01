@@ -1,8 +1,8 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useWidgetActions from '@hooks/useWidgetActions';
 
 import PopupTwoStepsContainer from '../PopupTwoStepsContainer';
@@ -23,16 +23,19 @@ const PopupInteractionReward = ({ data, hasTwoStepsInteractionReward }: PopupInt
         </div>
 
         <div className="flex flex-col items-center h-full px-4 pt-10 pb-5 bg-impo_Neutral_Surface">
-          <Dark_Typography fontSize="Headline_Small" className="w-full px-6 text-center text-impo_Neutral_OnBackground">
+          <CustomTypography
+            fontSize="Headline_Small"
+            className="w-full px-6 text-center text-impo_Neutral_OnBackground"
+          >
             {data.title}
-          </Dark_Typography>
+          </CustomTypography>
 
-          <Dark_Typography
+          <CustomTypography
             fontSize="Body_Medium"
             className="w-full px-4 pt-1 text-center text-impo_Neutral_OnBackground"
           >
             {data.description}
-          </Dark_Typography>
+          </CustomTypography>
 
           <Dark_Button
             fontSize="Title_Small"

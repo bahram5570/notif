@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import useReject from './__hooks__/useReject';
@@ -20,11 +21,11 @@ const RejectModal = ({ onCloseModal }: ModalPropsType) => {
   return (
     <div className="flex flex-col items-center  gap-3 max-w-sm">
       <div className=" flex flex-col items-center p-2 w-full gap-2">
-        <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
           {isRecv
             ? ` از رد درخواست همدلی ${partnerName} مطمئن هستی؟`
             : `از لغو درخواست همدلی به ${partnerName} مطمئنی ؟ `}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       <div className="flex w-full justify-between gap-2">

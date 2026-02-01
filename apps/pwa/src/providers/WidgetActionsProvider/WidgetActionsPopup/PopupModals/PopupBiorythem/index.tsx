@@ -1,7 +1,7 @@
 import CrossIcon from '@assets/icons/plus.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import BiorhythemItems from '@components/__Biorhythem__/BiorhythemItems';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { useRouter } from 'next/navigation';
 
 import { PopupBiorythemProps } from './type';
@@ -17,9 +17,9 @@ const PopupBiorythem = ({ data }: PopupBiorythemProps) => {
       />
       <div className="flex flex-col gap-4 p-4 rounded-xl  items-end mt-5 border border-impo_Neutral_Surface dark:border-none">
         <div className="flex justify-between items-end ">
-          <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Title_Small">
+          <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Title_Small">
             {data.title}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
         <div className="rounded-2xl p-4 flex flex-col gap-3 bg-impo_Surface_SurfaceVariant">
           <BiorhythemItems {...data} />

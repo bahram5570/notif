@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
@@ -53,12 +54,12 @@ const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGenerat
         />
       </div>
 
-      <Dark_Typography
+      <CustomTypography
         fontSize="Body_Small"
         className=" !whitespace-nowrap overflow-hidden !text-impo_Neutral_OnBackground text-center"
       >
         {text}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

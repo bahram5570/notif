@@ -1,8 +1,8 @@
 import EditIcon from '@assets/icons/Pen 2.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -45,9 +45,9 @@ const ShareExperienceProfileTopPart = ({
             username={profile.username}
             id={profile.id}
           />
-          <Dark_Typography fontSize="Lable_Small" className="text-impo_Neutral_OnBackground w-full text-right">
+          <CustomTypography fontSize="Lable_Small" className="text-impo_Neutral_OnBackground w-full text-right">
             {profile.username}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
 
         <ProfileInfo followCount={followCount} storyCount={storyCount} />

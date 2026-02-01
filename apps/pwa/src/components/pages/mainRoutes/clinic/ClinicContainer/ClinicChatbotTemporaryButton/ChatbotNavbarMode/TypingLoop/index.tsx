@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import { TypingLoopPropsType } from './type';
 
@@ -61,9 +61,9 @@ const TypingLoop = ({ collapseText1, collapseText2 }: TypingLoopPropsType) => {
 
   return (
     <div style={{ ...typographyFontStyles }} className="flex flex-row-reverse justify-center items-center gap-1">
-      <Dark_Typography fontSize="Lable_Medium" className="text-impo_Black">
+      <CustomTypography fontSize="Lable_Medium" className="text-impo_Black">
         {text}
-      </Dark_Typography>
+      </CustomTypography>
 
       <span className={`text-impo_Black ${showCursor ? 'opacity-100' : 'opacity-0'}`}>|</span>
     </div>

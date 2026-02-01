@@ -1,7 +1,7 @@
 import MinusIcon from '@assets/icons/minus.svg';
 import PlusIcon from '@assets/icons/plus.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { ACTIVATION_HEIGHT_VALUES } from '@constants/activation.constants';
 
 import { UserInfoHeightProps } from './types';
@@ -40,9 +40,9 @@ const UserInfoHeight = ({ value, valueHandler }: UserInfoHeightProps) => {
         <MinusIcon className="stroke-impo_Surface_Outline" style={{ width: '16px', height: 'auto' }} />
       </div>
 
-      <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
         {updatedValue}
-      </Dark_Typography>
+      </CustomTypography>
 
       <div className="w-6 h-6 flex items-center justify-center" onClick={() => heightValueHandler(true)}>
         <PlusIcon className="stroke-impo_Surface_Outline" style={{ width: '16px', height: 'auto' }} />

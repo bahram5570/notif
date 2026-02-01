@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import { LottieCanvas } from '@lib/LottieCanvas';
 
@@ -18,9 +19,9 @@ const RewardOverlay = ({ initialReward }: RewardOverlayPropsType) => {
         className={`fixed left-0 right-0 bottom-[35%] w-full h-[50dvh]  mx-auto select-none pointer-events-none z-30`}
       />
       <CustomImage src="/assets/images/reward.webp" className="object-cover z-40" width={100} height={100} />
-      <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_Background text-center">
+      <CustomTypography fontSize="Title_Medium" className="text-impo_Neutral_Background text-center">
         {initialReward}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

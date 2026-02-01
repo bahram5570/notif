@@ -1,7 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@utils/scripts';
 
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 
 import NameSelectorFilters from '../../../../NameSelectorFilters';
@@ -39,12 +39,12 @@ const NameSelectorStylesFilter = () => {
           </>
         )}
 
-        <Dark_Typography
+        <CustomTypography
           fontSize="Body_Small"
           className={`text-impo_Neutral_OnBackground ${isLoading ? 'opacity-0' : 'opacity-100'}`}
         >
           {btnScript}
-        </Dark_Typography>
+        </CustomTypography>
 
         {isLoading && (
           <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">

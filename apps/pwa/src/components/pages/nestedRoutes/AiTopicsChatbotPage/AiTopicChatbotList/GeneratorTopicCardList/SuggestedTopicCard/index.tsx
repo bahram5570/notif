@@ -1,8 +1,8 @@
 import ChatbotBg from '@assets/icons/bgChatbot.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { SuggestedTopicCardPropsType } from './type';
 
@@ -22,13 +22,13 @@ const SuggestedTopicCard = (props: SuggestedTopicCardPropsType) => {
             <CustomImage src={props.icon} className="min-w-6 min-h-6 " />
           </div>
 
-          <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_Background">
+          <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_Background">
             {textShorter(props.title, 33)}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
-        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_Surface">
+        <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_Surface">
           {textShorter(props.description, 80)}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
     </div>
   );

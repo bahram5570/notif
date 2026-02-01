@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { BloodPressureListPropsType, CheckBloodPressureStatusType, InitailBloodPressureContextType } from './type';
 
@@ -55,15 +55,15 @@ const BloodPressureListContainer = ({ bloodPressureList }: BloodPressureListProp
                   className={`flex flex-col rounded-md items-end ${context.border} ${index === 0 ? 'mt-3' : ''}`}
                 >
                   <div className={`p-2 rounded-bl-md rounded-tr ${context.backgroundColor}`}>
-                    <Dark_Typography fontSize="Lable_Small" className="text-impo_White">
+                    <CustomTypography fontSize="Lable_Small" className="text-impo_White">
                       {`نتیجه تست ${index + 1} :${bloodPressureValue}mmHg- ${context.result}`}
-                    </Dark_Typography>
+                    </CustomTypography>
                   </div>
 
                   <div className="p-2">
-                    <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+                    <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
                       {`${context.text}`}
-                    </Dark_Typography>
+                    </CustomTypography>
                   </div>
                 </div>
               );

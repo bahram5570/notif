@@ -1,6 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomModal from '@components/ui/CustomModal';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
@@ -31,9 +32,9 @@ const FeedbackModal = ({ title, onSubmit, isLoading }: FeedbackModalPropsType) =
         className="bg-impo_Neutral_Background"
       >
         <div className="relative w-full flex flex-col items-center rounded-xl px-2 pt-6 pb-6  z-0">
-          <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Body_Medium">
+          <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Body_Medium">
             {title}
-          </Dark_Typography>
+          </CustomTypography>
 
           <FeedbackStars rate={valuesProps.rate} rateHandler={valuesProps.rateHandler} />
         </div>

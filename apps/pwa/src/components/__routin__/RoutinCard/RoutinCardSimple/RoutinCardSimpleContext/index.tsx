@@ -1,7 +1,8 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import RoutinRatingStats from '@components/__routin__/RoutinRatingStats';
 import RoutinWriter from '@components/__routin__/RoutinWriter';
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { RoutinCardSimpleContextPropsType } from './type';
 
@@ -13,9 +14,9 @@ const RoutinCardSimpleContext = ({ data }: RoutinCardSimpleContextPropsType) => 
           <CustomImage src={data.image} />
         </div>
         <div className="flex justify-end flex-col items-end gap-2 border-impo_Red_400">
-          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
             {data.title}
-          </Dark_Typography>
+          </CustomTypography>
 
           <RoutinRatingStats commentCount={data.commentCount} rateAvg={data.rateAvg} />
         </div>

@@ -1,8 +1,7 @@
 import { memo } from 'react';
 
 import StarIcon from '@assets/icons/star2.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { SPLASH_MESSAGES_LIST } from './constants';
 
@@ -17,9 +16,9 @@ const SplashContentsMessages = () => {
         <StarIcon className="w-[14px] h-auto absolute bottom-0 right-0 fill-impo_Yellow opacity-50" />
       </div>
 
-      <Dark_Typography fontSize="Body_Large" className="text-impo_White">
+      <CustomTypography fontSize="Body_Large" className="text-impo_White">
         {message}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

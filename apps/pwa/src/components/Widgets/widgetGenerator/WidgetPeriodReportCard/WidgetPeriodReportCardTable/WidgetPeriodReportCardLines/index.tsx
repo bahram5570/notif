@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { percentFinder } from '../__utils__';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { WidgetPeriodReportCardLinesProps } from './types';
 
@@ -42,14 +41,14 @@ const WidgetPeriodReportCardLines = ({
           const result = `${range.toString()}${plus}`;
 
           return (
-            <Dark_Typography
+            <CustomTypography
               key={range}
               style={{ bottom: percentFinder({ min, max, value: range }) }}
               fontSize="Body_Small"
               className={`absolute right-0 w-full translate-y-1/2 text-impo_Surface_Outline text-center ${isPdfDownloading && 'dark:!text-impo_Surface_OutlineVariant'}`}
             >
               {result}
-            </Dark_Typography>
+            </CustomTypography>
           );
         })}
       </div>
@@ -97,18 +96,18 @@ const WidgetPeriodReportCardLines = ({
         className={`absolute left-0 flex flex-col items-center pt-2 pointer-events-none z-20 bg-impo_Neutral_Background ${isPdfDownloading && '!bg-impo_White'}`}
         style={{ top: rangesHeigth + rangeExtraSpace + 1 }}
       >
-        <Dark_Typography
+        <CustomTypography
           fontSize="Lable_Small"
           className={`text-impo_Neutral_OnSurface ${isPdfDownloading && '!text-impo_Black'}`}
         >
           تاریخ
-        </Dark_Typography>
-        <Dark_Typography
+        </CustomTypography>
+        <CustomTypography
           fontSize="Lable_Small"
           className={`text-impo_Neutral_OnSurface ${isPdfDownloading && '!text-impo_Black'}`}
         >
           شروع دوره
-        </Dark_Typography>
+        </CustomTypography>
       </div>
     </>
   );

@@ -1,6 +1,6 @@
 'use client';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import NameSelectorActivationCard from '../../NameSelectorActivationModules/NameSelectorActivationCard';
 import NameSelectorActivationFilters from '../../NameSelectorActivationModules/NameSelectorActivationFilters';
@@ -43,9 +43,9 @@ const NameSelectorActivationStep3Page = () => {
         isDisable={currentValue === ''}
         currentStep={stepInfo.page}
       >
-        <Dark_Typography fontSize="Title_Small" className="text-impo_Surface_InverseSurface pb-4">
+        <CustomTypography fontSize="Title_Small" className="text-impo_Surface_InverseSurface pb-4">
           {data.style.title}
-        </Dark_Typography>
+        </CustomTypography>
 
         <div className="w-full flex flex-col gap-3">
           {mainList.map((item, index) => (
@@ -60,9 +60,9 @@ const NameSelectorActivationStep3Page = () => {
 
         {selectedSubList && (
           <>
-            <Dark_Typography fontSize="Title_Small" className="text-impo_Surface_InverseSurface pb-4 pt-8">
+            <CustomTypography fontSize="Title_Small" className="text-impo_Surface_InverseSurface pb-4 pt-8">
               {data.style.filterTitle}
-            </Dark_Typography>
+            </CustomTypography>
 
             <NameSelectorActivationFilters
               key={mainValue}

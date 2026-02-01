@@ -1,8 +1,9 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -27,9 +28,9 @@ const BreastfeedingSettingBtnModal = ({ name, value }: BreastfeedingSettingBtnMo
         {isLoading && <Dark_Spinner size={24} />}
 
         {!isLoading && (
-          <Dark_Typography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">
+          <CustomTypography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">
             {dateScript}
-          </Dark_Typography>
+          </CustomTypography>
         )}
       </div>
     </>

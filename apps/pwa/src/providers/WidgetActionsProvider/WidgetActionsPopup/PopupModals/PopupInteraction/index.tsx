@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
 import CloseIcon from '@assets/icons/plus.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@utils/scripts';
 
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
 import { useRouter } from 'next/navigation';
@@ -53,13 +53,13 @@ const PopupInteraction = ({ data }: PopupInteractionProps) => {
       {jsonFile && <LottieJson loop={true} animationData={jsonFile} width={250} className="mt-8" />}
 
       <div className="flex flex-col items-center px-4">
-        <Dark_Typography fontSize="Title_Large" className="pt-5 text-center text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Title_Large" className="pt-5 text-center text-impo_Neutral_OnBackground">
           {data.title}
-        </Dark_Typography>
+        </CustomTypography>
 
-        <Dark_Typography fontSize="Body_Large" className="pt-1 text-center text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Large" className="pt-1 text-center text-impo_Neutral_OnBackground">
           {data.description}
-        </Dark_Typography>
+        </CustomTypography>
 
         <div className="w-full flex items-center gap-2 pt-12">
           <Dark_Button

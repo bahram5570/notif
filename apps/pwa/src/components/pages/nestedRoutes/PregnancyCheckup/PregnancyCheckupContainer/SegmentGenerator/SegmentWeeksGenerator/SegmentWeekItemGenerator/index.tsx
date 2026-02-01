@@ -1,8 +1,8 @@
 import { segmentActionHandler } from '../../../utils';
 import PolygonIcon from '@assets/icons/Polygon.svg';
 import ArrowIcon from '@assets/icons/calendarArrow.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useWidgetActions from '@hooks/useWidgetActions';
@@ -36,24 +36,24 @@ const SegmentWeekItemGenerator = ({ isCurrentWeek, items, label, needTest, week 
       {isCurrentWeek && (
         <div className="flex flex-row-reverse items-center gap-1">
           <PolygonIcon className="w-4 h-4 fill-impo_Pink_500" />
-          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
             {label}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       )}
 
       {!isCurrentWeek && (
-        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
           {label}
-        </Dark_Typography>
+        </CustomTypography>
       )}
 
       <div className="flex flex-row-reverse items-center justify-between gap-3">
         {needTest && (
           <div className="px-2 py-[6px] rounded-full bg-impo_Warning_Warning">
-            <Dark_Typography fontSize="Lable_Small" className="text-impo_Warning_OnWarning">
+            <CustomTypography fontSize="Lable_Small" className="text-impo_Warning_OnWarning">
               نیاز به پر کردن آزمایش
-            </Dark_Typography>
+            </CustomTypography>
           </div>
         )}
 

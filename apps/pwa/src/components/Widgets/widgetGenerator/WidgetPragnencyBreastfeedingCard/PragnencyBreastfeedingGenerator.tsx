@@ -1,8 +1,8 @@
 import EyeIcon from '@assets/icons/eye.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { PragnencyBreastfeedingGeneratorProps } from './types';
 
@@ -14,14 +14,14 @@ const PragnencyBreastfeedingGenerator = (props: PragnencyBreastfeedingGeneratorP
       )}
 
       {!props.showEyeIcon && (
-        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-right">
+        <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-right">
           {props.text}
-        </Dark_Typography>
+        </CustomTypography>
       )}
 
-      <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground text-right">
+      <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground text-right">
         {props.name}
-      </Dark_Typography>
+      </CustomTypography>
 
       <CustomImage src={props.icon} width={32} className="rounded-full bg-impo_Surface_SurfaceVariant" />
     </div>

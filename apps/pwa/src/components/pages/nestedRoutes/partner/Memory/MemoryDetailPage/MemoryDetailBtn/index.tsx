@@ -1,9 +1,9 @@
 import EditIcon from '@assets/icons/Edit.svg';
 import TrashIcon from '@assets/icons/trash.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
@@ -36,9 +36,9 @@ const MemoryDetailBtn = ({ fromMan, memoryId, validPartner }: MemoryDetailBtnPro
       <div onClick={deleteHandler}>
         <div className="flex flex-row items-center gap-1 justify-center ">
           <div className="pl-6 pr-4 py-2 flex justify-end items-center rounded-full gap-1 border border-impo_Surface_OutlineVariant">
-            <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnSurface">
+            <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnSurface">
               حذف خاطره
-            </Dark_Typography>
+            </CustomTypography>
 
             <TrashIcon className="w-5 h-5 stroke-impo_Neutral_OnSurface" />
           </div>
@@ -48,9 +48,9 @@ const MemoryDetailBtn = ({ fromMan, memoryId, validPartner }: MemoryDetailBtnPro
         <div onClick={onClick}>
           <div className="flex flex-row items-center gap-1 justify-center ">
             <div className="pl-6 pr-4 py-2 flex justify-end items-center rounded-full gap-1 bg-impo_Primary_Primary">
-              <Dark_Typography fontSize="Title_Small" className="text-impo_PrimaryMan_OnPrimaryMan">
+              <CustomTypography fontSize="Title_Small" className="text-impo_PrimaryMan_OnPrimaryMan">
                 نظرت چیه؟
-              </Dark_Typography>
+              </CustomTypography>
 
               <EditIcon className="w-5 h-5 !stroke-impo_White" />
             </div>

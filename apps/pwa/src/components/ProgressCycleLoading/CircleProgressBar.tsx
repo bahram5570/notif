@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useProgress from './__hooks__/useProgress';
 import { CircleProgressBarProps } from './types';
@@ -40,9 +40,9 @@ const CircleProgressBar = ({ loadingStatus, onComplete }: CircleProgressBarProps
       </svg>
 
       <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center">
-        <Dark_Typography fontSize="Headline_Large" className="text-impo_Neutral_OnBackground scale-75">
+        <CustomTypography fontSize="Headline_Large" className="text-impo_Neutral_OnBackground scale-75">
           {percentage.toString()}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
     </div>
   );

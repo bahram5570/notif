@@ -1,7 +1,7 @@
 import PlusIcon from '@assets/icons/plus.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useSignDateState from '@hooks/__sign__/useSignDateState';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
@@ -24,9 +24,9 @@ const CreateNewNoteBtn = ({ date }: CreateNewNoteBtnPropsType) => {
   return (
     <Dark_Button onClick={linkToHandler}>
       <div className="flex items-center justify-center gap-2 w-full">
-        <Dark_Typography fontSize="Lable_Large" className="text-impo_White">
+        <CustomTypography fontSize="Lable_Large" className="text-impo_White">
           ثبت یادداشت جدید
-        </Dark_Typography>
+        </CustomTypography>
 
         <PlusIcon className="w-[18px] h-auto stroke-impo_White fill-impo_White" />
       </div>

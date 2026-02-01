@@ -1,6 +1,5 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { addZero } from '@utils/scripts';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { SideTypeEnum } from '../../__hooks__/useGetData/enums';
 import { ChatContainerMakerProps } from './types';
@@ -27,12 +26,12 @@ const ChatContainerMaker = ({ dateTime, children, sideType, width }: ChatContain
     >
       <>{children}</>
 
-      <Dark_Typography
+      <CustomTypography
         fontSize="Lable_Small"
         className="dark:text-impo_Surface_SurfaceVariant text-impo_Surface_Outline"
       >
         {time}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

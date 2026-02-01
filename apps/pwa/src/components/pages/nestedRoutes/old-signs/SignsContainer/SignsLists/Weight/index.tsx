@@ -1,7 +1,7 @@
 import CalendarArrow from '@assets/icons/calendarArrow.svg';
 import WeightIcon from '@assets/icons/weight.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
 import { WeightPropsType } from './type';
@@ -22,12 +22,12 @@ const Weight = ({ weight }: WeightPropsType) => {
       <div className="divide-y-[1px] p-2">
         <div className="w-full flex flex-row-reverse items-center justify-between h-fit  p-2 ">
           <div className="flex flex-col items-end gap-1">
-            <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
               ویرایش وزن
-            </Dark_Typography>
-            <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+            </CustomTypography>
+            <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
               از اینجا میتونی وزنت رو ویرایش کنی
-            </Dark_Typography>
+            </CustomTypography>
           </div>
 
           <div className=" w-12 h-12  flex justify-center items-center rounded-full bg-impo_Blue_50">
@@ -35,17 +35,17 @@ const Weight = ({ weight }: WeightPropsType) => {
           </div>
         </div>
         <div className="flex flex-col items-end gap-1 p-1">
-          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             وزن
-          </Dark_Typography>
+          </CustomTypography>
           <div
             className="w-full rounded-xl h-10 flex flex-row-reverse justify-between p-3 items-center bg-impo_Surface_SurfaceVariant"
             onClick={linkTo}
           >
             <div className="w-full">
-              <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
                 {`${!weight ? 'kg__' : `${weight}kg`} `}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
             <div className="w-full">
               <CalendarArrow className="w-[18px] h-auto rotate-[268deg] stroke-impo_Surface_OutlineVariant" />

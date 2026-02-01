@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
 import { percentFinder } from '../__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toJalaliData } from '@utils/dates';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
 
@@ -43,12 +43,12 @@ const WidgetPeriodReportCardCandleGenerator = ({
         className={`absolute left-0 right-0 bottom-0 rounded-3xl flex justify-center dark:bg-impo_Neutral_Surface bg-impo_Surface_OutlineVariant ${isPdfDownloading && '!bg-impo_Surface_OutlineVariant'}`}
         style={{ height: percentFinder({ min, max, value: cycleLength }) }}
       >
-        <Dark_Typography
+        <CustomTypography
           fontSize="Lable_SmallProminet"
           className="-translate-y-4 scale-90 text-impo_Surface_InverseSurface"
         >
           {cycleLength.toString()}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       <div
@@ -59,16 +59,16 @@ const WidgetPeriodReportCardCandleGenerator = ({
       >
         <div className="h-full w-full flex items-end justify-center rounded-3xl bg-impo_Primary_Primary">
           {periodLength >= 5 && (
-            <Dark_Typography fontSize="Lable_Small" className="scale-90 text-impo_Primary_OnPrimary">
+            <CustomTypography fontSize="Lable_Small" className="scale-90 text-impo_Primary_OnPrimary">
               {periodLength.toString()}
-            </Dark_Typography>
+            </CustomTypography>
           )}
         </div>
       </div>
 
-      <Dark_Typography fontSize="Body_Small" className="translate-y-7 text-impo_Surface_Outline">
+      <CustomTypography fontSize="Body_Small" className="translate-y-7 text-impo_Surface_Outline">
         {dateScript}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

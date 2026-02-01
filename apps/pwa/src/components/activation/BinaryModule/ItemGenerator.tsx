@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import CheckIcon from '@assets/icons/check.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { ItemGeneratorProps } from './types';
 
@@ -36,9 +35,9 @@ const ItemGenerator = ({ option, isSelected, selectedItemHandler }: ItemGenerato
                   `}
       >
         <div className="flex justify-end items-center gap-2">
-          <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
             {option.text}
-          </Dark_Typography>
+          </CustomTypography>
 
           <div
             className={`
@@ -76,9 +75,9 @@ const ItemGenerator = ({ option, isSelected, selectedItemHandler }: ItemGenerato
           <div ref={ref} className="w-full flex flex-col items-end">
             <div className={`w-full h-[1px] my-2 mr-7 bg-impo_Surface_OutlineVariant`} />
 
-            <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground mr-7">
+            <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground mr-7">
               {option.description}
-            </Dark_Typography>
+            </CustomTypography>
           </div>
         </div>
       </div>

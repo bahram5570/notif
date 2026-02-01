@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { SpecialistCardSectionMakerProps } from './types';
 
@@ -6,19 +6,19 @@ const SpecialistCardSectionMaker = ({ isSelected, value, title, Icon }: Speciali
   <div className="flex flex-col items-center py-1 gap-1">
     <Icon className={`w-5 h-auto ${isSelected ? 'stroke-impo_Black' : 'stroke-impo_Neutral_OnBackground'}`} />
 
-    <Dark_Typography
+    <CustomTypography
       fontSize="Lable_Small"
       className={`${isSelected ? 'text-impo_Black' : 'text-impo_Neutral_OnBackground'}`}
     >
       {title}
-    </Dark_Typography>
+    </CustomTypography>
 
-    <Dark_Typography
+    <CustomTypography
       fontSize="Lable_Medium"
       className={`${isSelected ? 'text-impo_Black' : 'text-impo_Neutral_OnBackground'}`}
     >
       {value}
-    </Dark_Typography>
+    </CustomTypography>
   </div>
 );
 

@@ -1,6 +1,7 @@
 import { useRef, useState } from 'react';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import AiChatbotDeactiveMessage from './AiChatbotDeactiveMessage';
@@ -44,9 +45,9 @@ const AiChatbotFooter = (props: AiChatbotFooterPropsType) => {
                 background: `${props.hasChatData ? 'rgb(239 241 254)' : 'inherit'}`,
               }}
             >
-              <Dark_Typography fontSize="Lable_Small" className="text-impo_Surface_OnSurfaceVariant">
+              <CustomTypography fontSize="Lable_Small" className="text-impo_Surface_OnSurfaceVariant">
                 مونس هم گاهی اشتباه می‌کنه! حتماً جواب‌ها رو چک کن.
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           </div>
         )}

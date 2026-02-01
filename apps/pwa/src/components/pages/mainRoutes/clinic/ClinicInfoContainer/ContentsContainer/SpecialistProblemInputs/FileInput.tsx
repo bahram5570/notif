@@ -2,11 +2,11 @@ import { chatFileTypeDetector } from '../../../ClinicChatContainer/ChatsMessages
 import AttachIcon from '@assets/icons/attach.svg';
 import DownloadedIcon from '@assets/icons/downloaded.svg';
 import TrashIcon from '@assets/icons/trash.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -31,9 +31,9 @@ const FileInput = ({ fileName, valuesHandler }: FileInputProps) => {
           }}
         >
           <>
-            <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground pointer-events-none">
+            <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground pointer-events-none">
               ارسال آزمایش یا گزارش (اختیاری)
-            </Dark_Typography>
+            </CustomTypography>
 
             <AttachIcon className="w-3 h-auto rotate-45 pointer-events-none fill-impo_Neutral_OnBackground" />
           </>
@@ -51,9 +51,9 @@ const FileInput = ({ fileName, valuesHandler }: FileInputProps) => {
               </div>
             )}
 
-            <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground break-all text-left">
+            <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground break-all text-left">
               {fileNameScript}
-            </Dark_Typography>
+            </CustomTypography>
           </div>
 
           <div

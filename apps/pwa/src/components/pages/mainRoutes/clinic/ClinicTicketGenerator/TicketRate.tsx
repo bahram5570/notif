@@ -1,6 +1,5 @@
 import StarIcon from '@assets/icons/star.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { TicketRateProps } from './types';
 
@@ -9,9 +8,9 @@ const TicketRate = ({ rate }: TicketRateProps) => {
     <>
       {rate > 0 && (
         <div className="flex items-center gap-1 pr-1">
-          <Dark_Typography fontSize="Lable_Large" className="text-impo_Black !h-5">
+          <CustomTypography fontSize="Lable_Large" className="text-impo_Black !h-5">
             {rate.toString()}
-          </Dark_Typography>
+          </CustomTypography>
 
           <StarIcon className="w-6 h-auto fill-impo_Yellow" />
 

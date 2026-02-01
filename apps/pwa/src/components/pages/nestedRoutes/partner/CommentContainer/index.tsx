@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import useSubmit from './__hooks__/useSubmit';
 
@@ -29,15 +30,15 @@ const CommentContainer = () => {
         style={{ paddingTop: HEADER_HEIGHT + 16 }}
       >
         <div className="flex items-center w-full justify-center">
-          <Dark_Typography fontSize="Title_Small" className="text-impo_Primary_Primary text-center">
+          <CustomTypography fontSize="Title_Small" className="text-impo_Primary_Primary text-center">
             نظرت چیه؟
-          </Dark_Typography>
+          </CustomTypography>
         </div>
 
         <div className="flex items-center w-full justify-center">
-          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
+          <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
             حست به این خاطره چیه؟
-          </Dark_Typography>
+          </CustomTypography>
         </div>
 
         <textarea
@@ -50,9 +51,9 @@ const CommentContainer = () => {
 
         <footer className="mt-auto">
           <Dark_Button className="px-6 py-2 " onClick={onClick} isDisable={!comment} isLoading={isLoading}>
-            <Dark_Typography fontSize="Lable_Large" className="text-impo_PrimaryMan_OnPrimaryMan">
+            <CustomTypography fontSize="Lable_Large" className="text-impo_PrimaryMan_OnPrimaryMan">
               ثبت نظر
-            </Dark_Typography>
+            </CustomTypography>
           </Dark_Button>
         </footer>
       </div>

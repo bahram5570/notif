@@ -2,12 +2,12 @@
 
 import { useEffect, useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { currentDate, gregorianFarsiScriptDate, jalaaliScriptDate } from '@utils/dates';
 
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import NoteItem from '@components/pages/mainRoutes/calendar/CalendarDraggingPanel/SelectedDayNote/SelectedDayNoteList/NoteItem';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useSignDateState from '@hooks/__sign__/useSignDateState';
 import useCulture from '@hooks/useCulture';
@@ -76,9 +76,9 @@ const NoteContainerList = () => {
           <div className="flex items-center justify-center gap-3">
             <div className="h-0 w-24 border-[1px] border-impo_Neutral_Background rotate-180" />
 
-            <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground text-center">
+            <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnBackground text-center">
               {currentDate}
-            </Dark_Typography>
+            </CustomTypography>
 
             <div className="h-0 w-24 border-[1px] border-impo_Neutral_Background  rotate-180" />
           </div>
@@ -98,9 +98,9 @@ const NoteContainerList = () => {
               data-testid={'new-note-link-btn'}
               className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-full bg-impo_Primary_Primary select-none cursor-pointer"
             >
-              <Dark_Typography fontSize="Lable_Large" className="text-impo_White">
+              <CustomTypography fontSize="Lable_Large" className="text-impo_White">
                 یادداشت جدید
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           </div>
         </div>

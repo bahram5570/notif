@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 import Hamdel from '@assets/icons/hamdel.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import PartnerRadioButton from './PartnerRadioButton';
@@ -30,20 +30,20 @@ const TypeRelationship = () => {
         <div className="w-11 h-11 flex justify-center items-center rounded-full bg-impo_Primary_PrimaryContainer">
           <Hamdel className="w-6 h-6  stroke-impo_Primary_Primary" />
         </div>
-        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           نوع رابطه
-        </Dark_Typography>
-        <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_Outline">
+        </CustomTypography>
+        <CustomTypography fontSize="Body_Medium" className="text-impo_Surface_Outline">
           می‌تونی بعدا نوع رابطه رو در قسمت پروفایل ویرایش کنی
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       <PartnerRadioButton onChange={changeValueHandler} value={distanceTypeValue} />
 
       <Dark_Button onClick={onClick}>
-        <Dark_Typography fontSize="Lable_Large" className="text-impo_White">
+        <CustomTypography fontSize="Lable_Large" className="text-impo_White">
           باشه
-        </Dark_Typography>
+        </CustomTypography>
       </Dark_Button>
     </div>
   );

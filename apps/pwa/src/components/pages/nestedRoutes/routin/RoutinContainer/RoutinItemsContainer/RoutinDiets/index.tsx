@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import FeedbackModal from '@components/FeedbackModal';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import RoutinDietsGenerator from './RoutinDietsGenerator';
 import useFeedback from './RoutinDietsGenerator/RoutinDietsCheckbox/__hooks__/useFeedback';
@@ -11,9 +12,9 @@ const RoutinDiets = ({ name, items, compeletItemType, programId }: RoutinDietsPr
   return (
     <>
       <div className="mt-7">
-        <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground pb-3 ml-auto">
+        <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground pb-3 ml-auto">
           {name}
-        </Dark_Typography>
+        </CustomTypography>
 
         {items.map((item, index) => {
           const lastItem = index === items.length - 1;

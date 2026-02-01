@@ -1,8 +1,8 @@
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { externalLink } from '@utils/navigation';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import { LinkGeneratorType } from './type';
 
@@ -16,9 +16,9 @@ const LinkGenerator = ({ Icon, link, name }: LinkGeneratorType) => {
       onClick={() => externalLink(link, true)}
     >
       <Icon className="h-6 w-6 !stroke-impo_Surface_OutlineVariant" />
-      <Dark_Typography fontSize="Lable_Small" className="text-impo_Surface_Outline">
+      <CustomTypography fontSize="Lable_Small" className="text-impo_Surface_Outline">
         {name}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

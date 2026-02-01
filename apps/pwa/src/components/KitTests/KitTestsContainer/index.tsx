@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import WidgetCardContainer from '@components/Widgets/WidgetCardContainer';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import KitTestBabyCheck from '../KitTestBabyCheck';
 import { KitTestModuleTypeEnums } from '../enum';
@@ -11,9 +12,9 @@ import { KitTestsContainerProps } from './types';
 const KitTestsContainer = (props: KitTestsContainerProps) => {
   return (
     <WidgetCardContainer title={kitTestMainScripts[props.moduleType].title} className="!px-0 !pt-0">
-      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground w-full pb-2 mb-4">
+      <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground w-full pb-2 mb-4">
         {kitTestMainScripts[props.moduleType].subTitle}
-      </Dark_Typography>
+      </CustomTypography>
 
       {props.moduleType === KitTestModuleTypeEnums.Ovulation && (
         <KitTestOvulation moduleType={props.moduleType} gregorianDate={props.gregorianDate} />

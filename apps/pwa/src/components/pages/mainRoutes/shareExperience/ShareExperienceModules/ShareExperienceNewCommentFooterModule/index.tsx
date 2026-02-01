@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
@@ -41,18 +42,18 @@ const ShareExperienceNewCommentFooterModule = ({
           style={{ height: NEW_COMMENT_FOOTER_SIZE, maxWidth: MAX_SCREEN_WIDTH }}
         >
           <div className="w-fit px-3 py-1 rounded-full bg-impo_Primary_Primary select-none pointer-events-none">
-            <Dark_Typography
+            <CustomTypography
               fontSize="Body_Small"
               className="text-impo_Primary_OnPrimary text-center flex flex-col justify-center items-center !h-8 !w-16"
             >
               ارسال
-            </Dark_Typography>
+            </CustomTypography>
           </div>
 
           <div className="flex items-center gap-4 select-none pointer-events-none">
-            <Dark_Typography fontSize="Body_Small" className="text-impo_Surface_OutlineVariant">
+            <CustomTypography fontSize="Body_Small" className="text-impo_Surface_OutlineVariant">
               {placeholder}
-            </Dark_Typography>
+            </CustomTypography>
 
             <CustomImage src={avatar} width={36} className="rounded-full" />
           </div>

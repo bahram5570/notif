@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { RatingFeedbackListGeneratorProps } from './types';
 
@@ -38,12 +38,12 @@ const RatingFeedbackListGenerator = ({
             onClick={selectHandler}
             className={`w-[145px] h-[42px] mx-auto rounded-lg flex items-center justify-center border-[1px] cursor-pointer ${isSelected ? `${backgroundColor} ${borderColor} ` : 'bg-impo_Transparent border-impo_Surface_OutlineVariant'}`}
           >
-            <Dark_Typography
+            <CustomTypography
               fontSize="Body_Small"
               className={`scale-90 text-center ${isSelected ? contextColor : 'text-impo_Neutral_OnBackground'}`}
             >
               {item}
-            </Dark_Typography>
+            </CustomTypography>
           </div>
         );
       })}

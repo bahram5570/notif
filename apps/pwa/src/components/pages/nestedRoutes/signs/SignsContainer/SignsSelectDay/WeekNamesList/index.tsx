@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { gregorianFarsiWeekNames, jalaaliWeekNames } from '@utils/dates';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
 import moment from 'moment-jalaali';
@@ -46,17 +46,17 @@ const WeekNamesList = ({ infoList, slide }: WeekNamesListProps) => {
 
   return (
     <div className="w-full grid grid-cols-3">
-      <Dark_Typography fontSize="Body_Medium" className="mr-auto text-center text-impo_Surface_Outline">
+      <CustomTypography fontSize="Body_Medium" className="mr-auto text-center text-impo_Surface_Outline">
         {weekNames.tomorrow}
-      </Dark_Typography>
+      </CustomTypography>
 
-      <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground text-center mx-auto">
+      <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground text-center mx-auto">
         {weekNames.today}
-      </Dark_Typography>
+      </CustomTypography>
 
-      <Dark_Typography fontSize="Body_Medium" className="ml-auto text-center text-impo_Surface_Outline">
+      <CustomTypography fontSize="Body_Medium" className="ml-auto text-center text-impo_Surface_Outline">
         {weekNames.yesterday}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

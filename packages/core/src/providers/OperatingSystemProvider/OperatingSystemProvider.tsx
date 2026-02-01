@@ -12,7 +12,7 @@ const initialValues: OperatingSystemContextTypes = {
 
 export const OperatingSystemContext = createContext<OperatingSystemContextTypes>(initialValues);
 
-const OperatingSystemProvider = ({ children }: { children: React.ReactNode }) => {
+export const OperatingSystemProvider = ({ children }: { children: React.ReactNode }) => {
   const [operatingSystem, setOperatingSystem] = useState<OperatingSystemTypes>(initialValues.operatingSystem);
   const [isAddToHome, setIsAddToHome] = useState<IsAddToHomeTypes>(initialValues.isAddToHome);
   const [browserInfo, setBrowserInfo] = useState<BrowserInfoTypes>(initialValues.browserInfo);
@@ -74,5 +74,3 @@ const OperatingSystemProvider = ({ children }: { children: React.ReactNode }) =>
     </OperatingSystemContext.Provider>
   );
 };
-
-export default OperatingSystemProvider;

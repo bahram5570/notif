@@ -1,5 +1,5 @@
 import CustomImage from '@components/ui/CustomImage';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import TextBlock from './TextBlock';
 import { UserMessagePropsType } from './type';

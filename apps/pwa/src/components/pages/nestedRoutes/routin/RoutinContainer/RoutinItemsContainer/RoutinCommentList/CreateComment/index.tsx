@@ -5,7 +5,7 @@ import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
 import Dark_Spinner from '@components/ui/Dark_Spinner';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import useSubmit from './__hooks__/useSubmit';
 import { CreateCommentPropsType } from './type';

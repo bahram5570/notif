@@ -1,7 +1,7 @@
 import ArrowIcon from '@assets/icons/arrow.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
@@ -21,9 +21,9 @@ const MessagerHeader = () => {
         <div className="flex items-center gap-4 min-w-fit">
           <div className="flex flex-row-reverse gap-2 items-center">
             <div className="flex flex-col items-end justify-end">
-              <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
                 گفتگو با همدل
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           </div>
 

@@ -1,7 +1,6 @@
 import DateFromIcon from '@assets/icons/dateFrom.svg';
 import DateToIcon from '@assets/icons/dateTo.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useDatesScript from './__hooks__/useDatesScript';
 import { DateCheckupQestionPropsType } from './type';
@@ -15,30 +14,30 @@ const DateCheckupQuestion = ({ from, to }: DateCheckupQestionPropsType) => {
         <div className="flex flex-col   ">
           <div className="flex flex-row-reverse justify-between w-full p-3 border-b border-b-impo_Neutral_Surface">
             <div className="flex items-center gap-1">
-              <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
                 تاریخ انجام
-              </Dark_Typography>
+              </CustomTypography>
 
               <DateFromIcon className="w-6 h-6 stroke-impo_Surface_OnSurfaceVariant" />
             </div>
 
-            <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
               {fromScript}
-            </Dark_Typography>
+            </CustomTypography>
           </div>
 
           <div className="flex flex-row-reverse justify-between w-full p-3">
             <div className="flex items-center gap-1">
-              <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Lable_Large">
+              <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Lable_Large">
                 تاریخ انقضا
-              </Dark_Typography>
+              </CustomTypography>
 
               <DateToIcon className="w-6 h-6 stroke-impo_Surface_OnSurfaceVariant " />
             </div>
 
-            <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
               {toScript}
-            </Dark_Typography>
+            </CustomTypography>
           </div>
         </div>
       </div>

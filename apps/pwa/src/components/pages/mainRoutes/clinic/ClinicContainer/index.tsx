@@ -1,8 +1,9 @@
 import { Suspense, useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import MainPageLayout from '@components/MainPageLayout';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import ActiveTicketsHeading from './ActiveTicketsHeading';
 import ActiveTicketsList from './ActiveTicketsList';
@@ -48,9 +49,9 @@ const ClinicContainer = () => {
                       activeTicketsOneTitle={data.activeTicketsOneTitle}
                     />
 
-                    <Dark_Typography fontSize="Headline_Small" className="text-impo_Neutral_OnBackground">
+                    <CustomTypography fontSize="Headline_Small" className="text-impo_Neutral_OnBackground">
                       {data.title}
-                    </Dark_Typography>
+                    </CustomTypography>
 
                     {data.types.map((item, index) => (
                       <ClinicCardGenerator

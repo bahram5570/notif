@@ -1,7 +1,7 @@
 import chatbotJson from '@assets/lottie/chatbot.json';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
@@ -48,9 +48,9 @@ const ChatbotNavbarMode = ({
               {isLoading ? (
                 <Dark_Spinner size={24} className="border-impo_Neutral_Background" />
               ) : (
-                <Dark_Typography fontSize="Lable_Large" className="text-impo_Primary_OnPrimary">
+                <CustomTypography fontSize="Lable_Large" className="text-impo_Primary_OnPrimary">
                   {continueChatText}
-                </Dark_Typography>
+                </CustomTypography>
               )}
             </div>
           </div>

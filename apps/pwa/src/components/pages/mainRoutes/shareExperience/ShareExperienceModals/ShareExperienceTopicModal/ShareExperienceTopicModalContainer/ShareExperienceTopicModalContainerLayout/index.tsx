@@ -1,6 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
 import Dark_BackButton from '@components/ui/Dark_BackButton';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ShareExperienceTopicModalContainerLayoutPropsTypes } from './type';
 
@@ -34,13 +35,13 @@ const ShareExperienceTopicModalContainerLayout = ({
               <div className="absolute bottom-0 left-0 right-0 flex justify-end items-center py-4 px-4">
                 {!scrolled && (
                   <div className="flex flex-col justify-end items-end">
-                    <Dark_Typography fontSize="Title_Medium" className="text-impo_White z-10">
+                    <CustomTypography fontSize="Title_Medium" className="text-impo_White z-10">
                       {topicName}
-                    </Dark_Typography>
+                    </CustomTypography>
                     {bio && (
-                      <Dark_Typography fontSize="Body_Large" className="text-impo_White z-10">
+                      <CustomTypography fontSize="Body_Large" className="text-impo_White z-10">
                         {bio}
-                      </Dark_Typography>
+                      </CustomTypography>
                     )}
                   </div>
                 )}

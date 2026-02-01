@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import CheckCircleIcon from '@assets/icons/checkCircle.svg';
 import InfoIcon from '@assets/icons/info.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useCountDown from '@hooks/useCountDown';
 import { LottieCanvas } from '@lib/LottieCanvas';
@@ -63,9 +63,9 @@ const PregnancyCheckupToast = () => {
           className={`flex justify-center items-center gap-3 rounded-lg px-4 py-2 border ${resultMessage.status === ResultTypeEnum.Warning ? 'border-impo_Warning_Warning bg-impo_Warning_WarininContainer' : 'border-impo_Success_Success bg-impo_Success_SuccessContainer'}`}
         >
           <div className="border-r-[1px]  border-r-impo_Neutral_Surface dark:border-r-impo_Neutral_OnSurface">
-            <Dark_Typography fontSize="Body_Medium" className="px-2  text-impo_Black">
+            <CustomTypography fontSize="Body_Medium" className="px-2  text-impo_Black">
               {resultMessage.message}
-            </Dark_Typography>
+            </CustomTypography>
           </div>
           <div className="w-6 h-6">
             {resultMessage.status === ResultTypeEnum.Warning ? (

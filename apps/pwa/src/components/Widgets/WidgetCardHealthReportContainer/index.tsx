@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
@@ -16,12 +17,12 @@ const WidgetCardHealthReportContainer = ({
 
   return (
     <div className={`w-full h-fit rounded-2xl p-4 bg-impo_Neutral_Background ${isPdfDownloading && 'bg-impo_White'}`}>
-      <Dark_Typography
+      <CustomTypography
         fontSize="Lable_Large"
         className={`text-impo_Neutral_OnBackground ${isPdfDownloading && '!text-impo_Black'} pb-1 ml-auto`}
       >
         {title}
-      </Dark_Typography>
+      </CustomTypography>
 
       <>{children}</>
 

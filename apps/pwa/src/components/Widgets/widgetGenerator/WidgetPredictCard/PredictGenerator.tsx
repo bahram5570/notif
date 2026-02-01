@@ -1,8 +1,8 @@
 import EyeIcon from '@assets/icons/eye.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 
 import { PredictGeneratorProps } from './types';
@@ -20,13 +20,13 @@ const PredictGenerator = (props: PredictGeneratorProps) => {
         <CustomImage src={props.icon} width={45} className="border-[1px] rounded-full border-impo_White" />
 
         <div className="flex flex-col justify-center items-end gap-2">
-          <Dark_Typography fontSize="Lable_Large" className="text-impo_Black">
+          <CustomTypography fontSize="Lable_Large" className="text-impo_Black">
             {props.title}
-          </Dark_Typography>
+          </CustomTypography>
 
-          <Dark_Typography fontSize="Body_Medium" className="text-impo_Grey_600 dark:text-impo_Grey_300">
+          <CustomTypography fontSize="Body_Medium" className="text-impo_Grey_600 dark:text-impo_Grey_300">
             {props.trailingUp}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       </div>
 
@@ -35,9 +35,9 @@ const PredictGenerator = (props: PredictGeneratorProps) => {
 
         {!props.showEyeIcon && (
           <>
-            <Dark_Typography fontSize="Body_Small" className="text-impo_Grey_500 dark:text-impo_Grey_400">
+            <CustomTypography fontSize="Body_Small" className="text-impo_Grey_500 dark:text-impo_Grey_400">
               {props.trailingDown}
-            </Dark_Typography>
+            </CustomTypography>
           </>
         )}
       </div>

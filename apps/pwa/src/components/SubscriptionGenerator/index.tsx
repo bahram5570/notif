@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react';
 
 import TickIcon from '@assets/icons/subscriptionTick.svg';
 import subscriptionbg from '@assets/lottie/subscription_background.json';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { LottieJson } from '@lib/LottieJson';
 import { LottieRefCurrentProps } from 'lottie-react';
 
@@ -42,16 +42,16 @@ const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
 
       {props.specialText && (
         <div className="flex justify-center py-2 my-2 w-fit  rounded-full px-4 absolute -top-[1.75rem] right-0 mr-5 bg-impo_Calendar_Period_Background">
-          <Dark_Typography fontSize="Lable_Medium" className="text-impo_Black">
+          <CustomTypography fontSize="Lable_Medium" className="text-impo_Black">
             {props.specialText}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       )}
       {props.discountText && (
         <div className="flex justify-start w-fit px-2 py-2 rounded-ss-[14px]  rounded-ee-2xl bg-impo_Calendar_Period_Background">
-          <Dark_Typography fontSize="Lable_Medium" className="px-2 text-impo_Black">
+          <CustomTypography fontSize="Lable_Medium" className="px-2 text-impo_Black">
             {props.discountText}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       )}
 
@@ -59,35 +59,35 @@ const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
         <div className="flex justify-between w-full">
           <div className="flex items-center gap-1">
             {!props.isFree && (
-              <Dark_Typography
+              <CustomTypography
                 fontSize="Lable_Small"
                 className={`${isSelected ? 'text-impo_Neutral_Background' : 'text-impo_Neutral_OnBackground'}`}
               >
                 {props.unit}
-              </Dark_Typography>
+              </CustomTypography>
             )}
 
-            <Dark_Typography
+            <CustomTypography
               fontSize="Title_Small"
               className={`${isSelected ? 'text-impo_Neutral_Background' : 'text-impo_Neutral_OnBackground'} mr-1`}
             >
               {totalPayText}
-            </Dark_Typography>
-            <Dark_Typography
+            </CustomTypography>
+            <CustomTypography
               fontSize="Lable_Medium"
               className={`${isSelected ? 'text-impo_Neutral_Background' : 'text-impo_Neutral_OnBackground'} opacity-90`}
             >
               {props.subTitle}
-            </Dark_Typography>
+            </CustomTypography>
 
             {realValueText && (
               <div className="relative">
-                <Dark_Typography
+                <CustomTypography
                   fontSize="Lable_Small"
                   className={`${isSelected ? 'text-impo_Neutral_Background' : 'text-impo_Surface_Outline'} `}
                 >
                   {realValueText}
-                </Dark_Typography>
+                </CustomTypography>
 
                 <div
                   className={`absolute top-1.5 left-0 right-0 w-full h-[1px] block ${isSelected ? 'bg-impo_Neutral_OnBackground' : 'bg-impo_Surface_Outline'}`}
@@ -97,12 +97,12 @@ const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
           </div>
 
           <div className="flex items-center gap-2">
-            <Dark_Typography
+            <CustomTypography
               fontSize={isSelected ? 'Title_Large' : 'Title_Small'}
               className={`${isSelected ? 'text-impo_Neutral_Background' : 'text-impo_Neutral_OnBackground'} `}
             >
               {props.title}
-            </Dark_Typography>
+            </CustomTypography>
 
             {isSelected && <TickIcon className="w-6 h-auto stroke-impo_Primary_OnPrimary" style={{ strokeWidth: 2 }} />}
 

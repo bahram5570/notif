@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CommentsGeneratorBottomPart from './CommentsGeneratorBottomPart';
 import CommentsGeneratorTopPart from './CommentsGeneratorTopPart';
@@ -28,9 +28,9 @@ const CommentsGenerator = (props: CommentsGeneratorProps) => {
       />
 
       <div className="w-full flex flex-col items-end pr-10 -translate-y-4">
-        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
           {props.text}
-        </Dark_Typography>
+        </CustomTypography>
 
         <CommentsGeneratorBottomPart
           selfComment={props.selfComment}

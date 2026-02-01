@@ -1,7 +1,7 @@
 import GalleryWideIcon from '@assets/icons/galleryWide.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import FileInputManager from '@components/ui/FileInputManager';
 import useFileUpload from '@hooks/useFileUpload';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
@@ -34,9 +34,9 @@ const ShareExperienceChangeAvatarModalContainer = ({
 
   return (
     <div className="py-5">
-      <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground text-center w-full p-2">
+      <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground text-center w-full p-2">
         عکس خود را انتخاب کنید
-      </Dark_Typography>
+      </CustomTypography>
 
       <div className="flex flex-col">
         <FileInputManager
@@ -49,9 +49,9 @@ const ShareExperienceChangeAvatarModalContainer = ({
           className="flex justify-end items-center gap-2 px-2 py-3 border-t border-t-impo_Neutral_Surface"
           onClick={selectAvatarHandler}
         >
-          <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
             آواتار پیش فرض
-          </Dark_Typography>
+          </CustomTypography>
 
           <div className="w-12 h-12 border-[1px] border-impo_Surface_SurfaceVariant rounded-full flex justify-center items-center">
             <GalleryWideIcon className="w-6 h-6 stroke-impo_Neutral_OnBackground" />

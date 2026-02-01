@@ -1,6 +1,5 @@
 import CopyIcon from '@assets/icons/Copy.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { CopyIdentifictionCodeSectionPropsType } from './type';
 
@@ -14,9 +13,9 @@ const CopyIdentifictionCodeSection = ({ interfaceCode, copyToClipboard }: CopyId
         }}
         id="InviteFromCopyCode"
       >
-        <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Title_Medium">
+        <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Title_Medium">
           {interfaceCode}
-        </Dark_Typography>
+        </CustomTypography>
         <CopyIcon className="w-8 h-8 stroke-impo_Surface_Outline" />
       </div>
     </div>

@@ -1,6 +1,6 @@
 import WelcomingIcon from '@assets/icons/welcoming.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import ProgressBar from './ProgressBar';
@@ -28,14 +28,14 @@ const Welcoming = () => {
       >
         <WelcomingIcon />
 
-        <Dark_Typography fontSize="Title_Large" className="text-impo_Neutral_OnBackground py-2">
+        <CustomTypography fontSize="Title_Large" className="text-impo_Neutral_OnBackground py-2">
           ایمپویی عزیز سلام
-        </Dark_Typography>
+        </CustomTypography>
 
-        <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnSurface text-center">
+        <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnSurface text-center">
           ایمپو یعنی تو مهم هستی. ما اینجا تلاش می کنیم تا حال جسمی و روحی خوبی داشته باشی و بتونی در زمان قاعدگی یا
           بارداری بیشتر مراقب خودت باشی
-        </Dark_Typography>
+        </CustomTypography>
 
         <ProgressBar />
       </div>

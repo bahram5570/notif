@@ -1,8 +1,8 @@
 import PenIcon from '@assets/icons/Pen 2.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -23,26 +23,26 @@ const BloodPressureBtn = ({ value }: BloodPressureBtnPropsType) => {
 
   return (
     <div className="flex items-center flex-row-reverse p-2">
-      <Dark_Typography fontSize="Lable_Medium" className="w-full text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Lable_Medium" className="w-full text-impo_Neutral_OnBackground">
         عدد فشارخون
-      </Dark_Typography>
+      </CustomTypography>
       <div className="w-full flex  items-center" onClick={onClick}>
         {isLoading && <Dark_Spinner size={24} />}
         {!isLoading && (
           <div className="flex items-center flex-row-reverse gap-3">
             {!currentValue ? (
-              <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_Outline">
+              <CustomTypography fontSize="Body_Medium" className="text-impo_Surface_Outline">
                 انتخاب نشده
-              </Dark_Typography>
+              </CustomTypography>
             ) : (
               <div className="flex  gap-1">
-                <Dark_Typography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">
+                <CustomTypography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">
                   {`${currentValue}`}
-                </Dark_Typography>
+                </CustomTypography>
 
-                <Dark_Typography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">
+                <CustomTypography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">
                   mmHg
-                </Dark_Typography>
+                </CustomTypography>
               </div>
             )}
 

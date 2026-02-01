@@ -1,7 +1,7 @@
 import LinkIcon from '@assets/icons/calendarSignLink.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import Link from 'next/link';
 
@@ -24,9 +24,9 @@ const CustomContainer = ({ allBtnLink, children, plusIconLink, title, showAllBtn
     <div className=" rounded-2xl p-2 flex flex-col bg-impo_White">
       <div onClick={linkTo} className="divide-y-2">
         <div className="w-full flex flex-row-reverse items-center justify-between h-fit  p-3 ">
-          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
             {title}
-          </Dark_Typography>
+          </CustomTypography>
 
           <div className="relative cursor-pointer">
             <LinkIcon className="w-10 h-auto" />
@@ -42,9 +42,9 @@ const CustomContainer = ({ allBtnLink, children, plusIconLink, title, showAllBtn
             pageNavigationHandler({ showProgressBar: false, id: allBtnLink });
           }}
         >
-          <Dark_Typography fontSize="Lable_Large" className="text-impo_Black">
+          <CustomTypography fontSize="Lable_Large" className="text-impo_Black">
             مشاهده همه تست‌های انجام شده
-          </Dark_Typography>
+          </CustomTypography>
           {isLoading && <Dark_Spinner size={18} />}
         </Link>
       )}

@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
 import CakeIcon from '@assets/icons/Cake.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toGregorianData, toJalaliData } from '@utils/dates';
 
 import useListsMaker from '@components/activation/DateModule/__hooks__/useListsMaker';
 import { StateValuesHandlerTypes, ValuesTypes } from '@components/activation/DateModule/types';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import WheelPicker from '@components/ui/WheelPicker';
 import { CalendarTypeEnum, DATE_SEPERATOR_REGEX } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
@@ -68,9 +68,9 @@ const BirthDateModal = ({ value, valueHandler, onClose }: BirthDateModalTypes) =
     <>
       <CakeIcon className="w-9 h-9" />
 
-      <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
         تاریخ تولد
-      </Dark_Typography>
+      </CustomTypography>
 
       <div className="relative grid grid-cols-3 place-items-center w-full px-4 ">
         {daysList && monthsList && yearsList && (

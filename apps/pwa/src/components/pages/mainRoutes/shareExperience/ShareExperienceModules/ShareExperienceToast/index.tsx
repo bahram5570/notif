@@ -2,8 +2,7 @@ import { useState } from 'react';
 
 import InfoIcon from '@assets/icons/info.svg';
 import CloseIcon from '@assets/icons/plus.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { ShareExperienceToastPropsType } from './type';
 
@@ -25,7 +24,7 @@ const ShareExperienceToast = ({ toastMessage, showCloseBtn }: ShareExperienceToa
 
       <div className="flex flex-row-reverse  items-center gap-1">
         <InfoIcon className="w-5 h-5 stroke-impo_Warning_Warning" />
-        <Dark_Typography fontSize="Lable_SmallProminet">{toastMessage}</Dark_Typography>
+        <CustomTypography fontSize="Lable_SmallProminet">{toastMessage}</CustomTypography>
       </div>
     </div>
   );

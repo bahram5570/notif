@@ -1,4 +1,5 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import useSignDateState from '@hooks/__sign__/useSignDateState';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
@@ -31,9 +32,12 @@ const SelectedDayNoteList = ({ noteList, date }: SelectedDayNoteListPropsList) =
       <div className="flex items-center justify-center " onClick={linkTo}>
         <div className="h-0 w-24 border-[1px] border-impo_Neutral_Surface dark:border-impo_Surface_SurfaceVariant rotate-180" />
 
-        <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground text-center mb-1 p-0 w-full">
+        <CustomTypography
+          fontSize="Lable_Medium"
+          className="text-impo_Neutral_OnBackground text-center mb-1 p-0 w-full"
+        >
           مشاهده همه یادداشت‌ها
-        </Dark_Typography>
+        </CustomTypography>
 
         <div className="h-0 w-24 border-[1px]  border-impo_Neutral_Surface dark:border-impo_Surface_SurfaceVariant rotate-180" />
       </div>

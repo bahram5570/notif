@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import MainPageLayout from '@components/MainPageLayout';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import TicketText from '../SupportTicketsListPage/TicketText';
 import TicketHistorySkeleton from './TicketHistorySkeleton';
@@ -21,9 +22,9 @@ const SupportTicketHistoryPage = () => {
           {!data && <></>}
           {data && (
             <>
-              <Dark_Typography className="text-impo_Primary_Primary" fontSize="Lable_MediumProminet">
+              <CustomTypography className="text-impo_Primary_Primary" fontSize="Lable_MediumProminet">
                 تیکت های شما
-              </Dark_Typography>
+              </CustomTypography>
               {data.items.map((ticket) => (
                 <TicketText key={ticket.id} {...ticket} />
               ))}

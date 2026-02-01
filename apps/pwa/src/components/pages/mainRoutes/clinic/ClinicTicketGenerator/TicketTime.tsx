@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toJalaliData } from '@utils/dates';
 import { addZero } from '@utils/scripts';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
 
@@ -35,15 +35,15 @@ const TicketTime = ({ createTime, stylingTypes }: TicketTimeProps) => {
 
   return (
     <div className="flex items-center gap-1">
-      <Dark_Typography fontSize="Body_Small" className={`${colors.textColor}`}>
+      <CustomTypography fontSize="Body_Small" className={`${colors.textColor}`}>
         {dateScript}
-      </Dark_Typography>
+      </CustomTypography>
 
       <div className={`w-[1px] h-[18px]  ${colors.backgroundColor}`} />
 
-      <Dark_Typography fontSize="Body_Small" className={`${colors.textColor}`}>
+      <CustomTypography fontSize="Body_Small" className={`${colors.textColor}`}>
         {timeScript}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

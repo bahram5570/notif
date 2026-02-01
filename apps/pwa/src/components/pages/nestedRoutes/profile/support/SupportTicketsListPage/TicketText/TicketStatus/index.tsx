@@ -1,6 +1,5 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@utils/scripts';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { TicketStatusPropsType } from './type';
 
@@ -20,9 +19,9 @@ const TicketStatus = ({ statusColor, statusText }: TicketStatusPropsType) => {
 
   return (
     <div className={`px-2 py-1 rounded-full ${changeColorHandler()}`}>
-      <Dark_Typography fontSize="Lable_SmallProminet" style={{ color: colorFormatConverter(statusColor) }}>
+      <CustomTypography fontSize="Lable_SmallProminet" style={{ color: colorFormatConverter(statusColor) }}>
         {statusText}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

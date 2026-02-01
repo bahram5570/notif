@@ -1,7 +1,7 @@
 import LockIcon from '@assets/icons/LockKeyhole.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ProgramWidgetItemStatusEnum } from '../../enum';
 import { RoutinItemHeadingProps } from './types';
@@ -18,12 +18,12 @@ const RoutinItemHeading = ({ title, description, icon, status }: RoutinItemHeadi
       </div>
 
       <div className="flex flex-col items-end gap-2">
-        <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Title_Small">
+        <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Title_Small">
           {title}
-        </Dark_Typography>
-        <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
+        </CustomTypography>
+        <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
           {description}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
     </div>
   );

@@ -1,6 +1,5 @@
 import ArrowIcon from '@assets/icons/arrow.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { SlideItemFooterPropsType } from './type';
 
@@ -23,9 +22,9 @@ const SlideItemFooter = ({ clickHandler, currentIndex, data }: SlideItemFooterPr
           className={`${lastIndex ? '!w-[276px] !h-12' : '!w-10 h-10'}  px-0 flex justify-center items-center rounded-full !bg-impo_Black !border-impo_Black`}
         >
           {lastIndex ? (
-            <Dark_Typography fontSize="Lable_Large" className="text-impo_PrimaryMan_OnPrimaryMan">
+            <CustomTypography fontSize="Lable_Large" className="text-impo_PrimaryMan_OnPrimaryMan">
               {data.textBtn}
-            </Dark_Typography>
+            </CustomTypography>
           ) : (
             <ArrowIcon className="w-4 h-4 transform rotate-180 stroke-impo_White" />
           )}

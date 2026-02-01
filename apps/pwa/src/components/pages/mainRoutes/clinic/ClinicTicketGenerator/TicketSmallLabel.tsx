@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { ClinicStateEnums } from '../enumbs';
 import TicketRate from './TicketRate';
@@ -58,9 +58,9 @@ const TicketSmallLabel = ({ state, stylingTypes, rate }: TicketSmallLabelProps) 
     <div className={`flex items-center justify-center rounded-full px-3 py-1  ${values.backgroundColor}`}>
       <TicketRate rate={rate} />
 
-      <Dark_Typography fontSize="Body_Small" className={`${values.textColor}`}>
+      <CustomTypography fontSize="Body_Small" className={`${values.textColor}`}>
         {values.script}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

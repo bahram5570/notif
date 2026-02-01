@@ -1,15 +1,16 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
 import CustomSlider from '@components/ui/CustomSlider';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { SlidesProps } from './types';
 
 const Slides = ({ slides }: SlidesProps) => {
   return (
     <div className="w-full">
-      <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground ml-auto p-6">
+      <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground ml-auto p-6">
         ایمپو چطور می‌تونه کمکت کنه؟
-      </Dark_Typography>
+      </CustomTypography>
 
       <CustomSlider gap={0}>
         {slides.map((item, index) => (

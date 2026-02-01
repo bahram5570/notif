@@ -1,9 +1,9 @@
 'use client';
 
 import inviteGift from '@assets/lottie/inviteGift.json';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import MainPageLayout from '@components/MainPageLayout';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { LottieJson } from '@lib/LottieJson';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
 
@@ -36,10 +36,10 @@ const IdentifictionCodePage = () => {
                     loop={isCopied}
                     className="pointer-events-none w-full"
                   />
-                  <Dark_Typography fontSize="Body_Medium" className=" text-center text-impo_Surface_OnSurfaceVariant">
+                  <CustomTypography fontSize="Body_Medium" className=" text-center text-impo_Surface_OnSurfaceVariant">
                     {`${data?.name} عزیز،با معرفی ایمپو به دوستانت و هر نصب اپلیکیشن با کد معرف تو،10 روز اشتراک رایگان از ایمپو
                 هدیه بگیر`}
-                  </Dark_Typography>
+                  </CustomTypography>
                   <CopyIdentifictionCodeSection interfaceCode={data.interfaceCode} copyToClipboard={copyToClipboard} />
                 </div>
                 <ShareIdentifictionCodeSection interfaceShareText={data.interfaceShareText} />

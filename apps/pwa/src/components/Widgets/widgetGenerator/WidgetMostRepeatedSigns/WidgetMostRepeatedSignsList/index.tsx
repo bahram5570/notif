@@ -1,6 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import useSignIcon from '@components/SignGenerator/__hooks__/useSignIcon';
 import { ICONS_WIDTH, SIGNS_LIST } from '@components/SignGenerator/constants';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { WidgetMostRepeatedSignsListProps } from './types';
 
@@ -28,14 +29,14 @@ const WidgetMostRepeatedSignsList = ({ items, isPdfDownloading }: WidgetMostRepe
               <>{icon}</>
 
               <div className="absolute -bottom-1 -left-1 w-6 h-6 rounded-full flex items-center justify-center bg-impo_Primary_Primary">
-                <Dark_Typography fontSize="Lable_SmallProminet" className="text-impo_White">
+                <CustomTypography fontSize="Lable_SmallProminet" className="text-impo_White">
                   {item.count.toString()}
-                </Dark_Typography>
+                </CustomTypography>
               </div>
             </div>
-            <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
               {title}
-            </Dark_Typography>
+            </CustomTypography>
           </div>
         );
       })}

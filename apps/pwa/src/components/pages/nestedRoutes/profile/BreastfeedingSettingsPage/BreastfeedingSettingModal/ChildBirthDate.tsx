@@ -1,11 +1,11 @@
 import { useMemo, useState } from 'react';
 
 import PregnancyIcon from '@assets/icons/pregnancy.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toGregorianData, toJalaliData } from '@utils/dates';
 
 import DateModule from '@components/activation/DateModule';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
 import useDateIntervals from '@providers/__activation__/ActivationProvider/__hooks__/useDateIntervals';
@@ -56,9 +56,9 @@ const ChildBirthDate = ({ changeValueHandler, onCloseModal, childBirthDate }: Ch
       <div className="flex flex-col gap-2 justify-center items-center">
         <PregnancyIcon className="w-9 h-9" />
 
-        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           تاریخ زایمان
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       <DateModule

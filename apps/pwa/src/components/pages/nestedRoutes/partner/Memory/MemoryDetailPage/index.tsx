@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { gregorianFarsiScriptDate, jalaaliScriptDate } from '@utils/dates';
 
 import MainPageLayout from '@components/MainPageLayout';
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
 import moment from 'moment-jalaali';
@@ -63,23 +63,23 @@ const MemoryDetailPage = () => {
           <div className="relative">
             <CustomImage src={memoryImage} />
             <div className="rounded-md py-1 px-4 absolute bottom-0 m-3 bg-impo_Pink_50 dark:bg-impo_Pink_900">
-              <Dark_Typography fontSize="Lable_Medium" className="text-impo_Primary_Primary">
+              <CustomTypography fontSize="Lable_Medium" className="text-impo_Primary_Primary">
                 {`ایجاد شده توسط ${memoryData.fromMan ? partnerName?.name : 'شما'}`}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           </div>
 
           <div className="flex flex-col justify-end items-end p-3">
             <div className="flex gap-2 items-center">
-              <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
                 {memoryData.title}
-              </Dark_Typography>
+              </CustomTypography>
 
               <div className="w-2 h-2 rounded-full bg-impo_Primary_Primary" />
             </div>
-            <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground text-justify">
+            <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground text-justify">
               {memoryData.text}
-            </Dark_Typography>
+            </CustomTypography>
           </div>
 
           {memoryData.textPartner && (

@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { isDevelopeMode } from '@repo/core/utils/system';
 
 import MainPageLayoutHeader from '@components/MainPageLayout/MainPageLayoutHeader';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import VpnText from '@components/ui/VpnText';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import { useRouter } from 'next/navigation';
@@ -49,9 +49,9 @@ const SpecialistPaymant = (props: SpecialistPaymantProps) => {
 
         <div className="flex flex-col gap-8 min-h-[100dvh] pb-4" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
           <div className="flex flex-col items-end ">
-            <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground pb-2">
+            <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground pb-2">
               مشاوره آنلاین با پزشک
-            </Dark_Typography>
+            </CustomTypography>
 
             <SpecialistInfoGenerator
               isSelected={false}

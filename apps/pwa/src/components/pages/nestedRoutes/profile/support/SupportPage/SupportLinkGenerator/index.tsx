@@ -1,6 +1,6 @@
 import CalendarArrow from '@assets/icons/calendarArrow.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import LinkedContent from '@components/ui/LinkedContent';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
@@ -20,14 +20,14 @@ const SupportLinkGenerator = (props: SupportLinkGeneratorType) => {
           onClick={() => pageNavigationHandler({ id: 'SupportLinkGenerator', showProgressBar: true })}
         >
           <div className="flex flex-col items-end gap-2">
-            <Dark_Typography fontSize="Lable_MediumProminet" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Lable_MediumProminet" className="text-impo_Neutral_OnBackground">
               {props.title}
-            </Dark_Typography>
+            </CustomTypography>
 
             <div className="flex flex-row-reverse items-center justify-between w-full pb-3">
-              <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_Outline">
+              <CustomTypography fontSize="Body_Medium" className="text-impo_Surface_Outline">
                 {props.discription}
-              </Dark_Typography>
+              </CustomTypography>
 
               <CalendarArrow className="w-4 h-4 stroke-impo_Surface_Outline" />
             </div>

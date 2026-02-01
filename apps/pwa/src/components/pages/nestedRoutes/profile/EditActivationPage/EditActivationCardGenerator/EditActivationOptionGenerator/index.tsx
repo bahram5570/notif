@@ -1,6 +1,5 @@
 import TickIcon from '@assets/icons/selectedTick.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { EditActivationOptionGeneratorProps } from './types';
 
@@ -19,9 +18,9 @@ const EditActivationOptionGenerator = (props: EditActivationOptionGeneratorProps
                   ${props.isFirstIndex ? 'border-t-impo_Transparent' : 'border-t-impo_Surface_SurfaceVariant'}
                 `}
     >
-      <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
         {props.title}
-      </Dark_Typography>
+      </CustomTypography>
 
       <div
         className={`

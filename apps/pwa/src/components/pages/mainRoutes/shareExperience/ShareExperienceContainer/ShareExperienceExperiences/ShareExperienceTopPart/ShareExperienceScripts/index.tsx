@@ -1,7 +1,7 @@
 import PinIcon from '@assets/icons/pin.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useShareExperiencePassedTime from '@components/pages/mainRoutes/shareExperience/__hooks__/useShareExperiencePassedTime';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ShareExperienceScriptsProps } from './types';
 
@@ -13,16 +13,16 @@ const ShareExperienceScripts = ({ createTime, name, isPin, topicName }: ShareExp
       <div className="flex items-center gap-1">
         {isPin && <PinIcon className="w-[13px] fill-impo_Surface_OnSurfaceVariant" />}
 
-        <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
           {name}
-        </Dark_Typography>
+        </CustomTypography>
 
-        <Dark_Typography fontSize="Lable_Small" className="text-impo_Grey_500">{`. ${timeScript}`}</Dark_Typography>
+        <CustomTypography fontSize="Lable_Small" className="text-impo_Grey_500">{`. ${timeScript}`}</CustomTypography>
       </div>
 
-      <Dark_Typography fontSize="Body_Small" className="text-impo_Surface_InverseSurface">
+      <CustomTypography fontSize="Body_Small" className="text-impo_Surface_InverseSurface">
         {topicName}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

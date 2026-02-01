@@ -1,7 +1,6 @@
 import DiscountCodeIcon from '@assets/icons/discountCode.svg';
 import PlusIcon from '@assets/icons/plus.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CodeInput from './CodeInput';
 import useDiscountCode from './__hooks__/useDiscountCode';
@@ -26,9 +25,9 @@ const DiscountCode = ({
         />
 
         <div className="flex items-center gap-2 ">
-          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             کد تخفیف خود را اینجا وارد کنید
-          </Dark_Typography>
+          </CustomTypography>
 
           <DiscountCodeIcon className="w-7 h-7 stroke-impo_Surface_Outline" />
         </div>

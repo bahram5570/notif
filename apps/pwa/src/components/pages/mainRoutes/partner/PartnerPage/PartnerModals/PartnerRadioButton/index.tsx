@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_RadioButton from '@components/ui/Dark_RadioButton';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { LIST_LABEL } from './constants';
 import { PartnerRadioButtonPropsType } from './type';
@@ -15,9 +16,9 @@ const PartnerRadioButton = ({ onChange, value }: PartnerRadioButtonPropsType) =>
             key={index}
           >
             <label htmlFor={item.name}>
-              <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
+              <CustomTypography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
                 {item.name}
-              </Dark_Typography>
+              </CustomTypography>
             </label>
             <Dark_RadioButton isChecked={value === item.value} onClick={() => onChange(item.value)} />
           </div>

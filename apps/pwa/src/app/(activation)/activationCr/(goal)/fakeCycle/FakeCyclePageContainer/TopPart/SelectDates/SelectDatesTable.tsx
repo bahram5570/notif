@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { SelectDatesTableProps } from './types';
 
@@ -14,17 +14,17 @@ const SelectDatesTable = ({
       <div className="w-full flex justify-between px-4 py-5">
         {selectDatesTopIcon}
 
-        <Dark_Typography fontSize="Body_Large" className="text-impo_Surface_Outline">
+        <CustomTypography fontSize="Body_Large" className="text-impo_Surface_Outline">
           {selectDatesTopText}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       <div className="relative w-full h-[1px] bg-impo_Neutral_Surface">
         {isPregnancy && (
           <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-            <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_Background px-2">
+            <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_Background px-2">
               یا
-            </Dark_Typography>
+            </CustomTypography>
           </div>
         )}
       </div>
@@ -32,9 +32,9 @@ const SelectDatesTable = ({
       <div className="w-full flex justify-between px-4 py-5">
         {selectDatesBottomIcon}
 
-        <Dark_Typography fontSize="Body_Large" className="text-impo_Surface_Outline">
+        <CustomTypography fontSize="Body_Large" className="text-impo_Surface_Outline">
           {selectDatesBottomText}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
     </div>
   );

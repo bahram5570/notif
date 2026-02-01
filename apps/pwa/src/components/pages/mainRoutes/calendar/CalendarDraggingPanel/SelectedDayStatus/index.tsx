@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useCalendarDayInfo from '../../CalendarContainer/__hooks__/useCalendarDayInfo';
 import { SelectedDayStatusPorps } from './types';
@@ -8,13 +8,13 @@ const SelectedDayStatus = ({ selectedDateInfo, monthName, day }: SelectedDayStat
 
   return (
     <div className="w-full flex flex-col justify-center items-center gap-1  ">
-      <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
         {`${day} ${monthName}`}
-      </Dark_Typography>
+      </CustomTypography>
 
-      <Dark_Typography fontSize="Body_Large" className={`${dayTypeColor}`}>
+      <CustomTypography fontSize="Body_Large" className={`${dayTypeColor}`}>
         {dayTitle}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

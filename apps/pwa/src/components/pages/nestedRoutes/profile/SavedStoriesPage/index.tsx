@@ -1,9 +1,10 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import MainPageLayout from '@components/MainPageLayout';
 import StoryItemGenerator from '@components/Widgets/widgetGenerator/WidgetStoryCard/StoryItemGenerator';
 import StoryPreview from '@components/Widgets/widgetGenerator/WidgetStoryCard/StoryPreview';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import SavedStoriesSkeleton from './SavedStoriesSkeleton';
 import useGetData from './__hooks__/useGetData';
@@ -20,9 +21,9 @@ const SavedStoriesPage = () => {
       className="px-4 bg-impo_Neutral_Surface"
     >
       <div className="w-full p-4 rounded-xl bg-impo_Neutral_Background">
-        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
           اینجا میتونی توصیه های تخصصی که ذخیره کردی رو به صورت کلی داشته باشی
-        </Dark_Typography>
+        </CustomTypography>
 
         <div className="w-full h-[1px] mt-2 mb-4 bg-impo_Neutral_Surface" />
 

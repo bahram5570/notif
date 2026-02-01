@@ -2,8 +2,8 @@ import { toast } from 'react-toastify';
 
 import InfoIcon from '@assets/icons/infoIcon.svg';
 import TickIcon from '@assets/icons/tickIcon.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { OptionTypes } from '@providers/ToastProvider/types';
 
 const useNotifyToast = () => {
@@ -40,13 +40,13 @@ const useNotifyToast = () => {
 
         <div className="w-[1px] h-7 block bg-impo_Surface_OnSurfaceVariant" />
 
-        <Dark_Typography
+        <CustomTypography
           fontSize="Body_Small"
           className="text-impo_Black"
           numbersMode={englishNumbers ? 'english' : 'persian'}
         >
           {message}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
     );
 

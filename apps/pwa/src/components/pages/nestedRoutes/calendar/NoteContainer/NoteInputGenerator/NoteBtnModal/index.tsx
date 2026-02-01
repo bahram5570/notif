@@ -1,8 +1,8 @@
 import PenIcon from '@assets/icons/Pen 2.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -24,14 +24,14 @@ const NoteBtnModal = ({ description, label, name, value }: NoteBtnModalPropsType
     <div className="py-1  px-2 flex flex-col gap-2 ">
       <div className="flex items-center flex-row-reverse p-1">
         <div className="flex gap-1 flex-row-reverse ">
-          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
             {label}
-          </Dark_Typography>
+          </CustomTypography>
 
           {description && (
-            <Dark_Typography fontSize="Lable_Large" className="text-impo_Surface_Outline">
+            <CustomTypography fontSize="Lable_Large" className="text-impo_Surface_Outline">
               {description}
-            </Dark_Typography>
+            </CustomTypography>
           )}
         </div>
 
@@ -40,9 +40,9 @@ const NoteBtnModal = ({ description, label, name, value }: NoteBtnModalPropsType
 
           {!isLoading && (
             <div className="flex items-center flex-row-reverse gap-3">
-              <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
                 {displayDate}
-              </Dark_Typography>
+              </CustomTypography>
 
               <PenIcon className="w-6 h-6 fill-impo_Primary_Primary" />
             </div>

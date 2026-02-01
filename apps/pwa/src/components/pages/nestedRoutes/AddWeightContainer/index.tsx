@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import ActivationBackBtn from '@components/activation/ActivationBackBtn';
 import ActivationHeading from '@components/activation/ActivationHeading';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import WheelPicker from '@components/ui/WheelPicker';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -44,9 +45,9 @@ const AddWeightContainer = () => {
         <>
           <span className="absolute left-0 right-0 h-10 bg-impo_Neutral_Surface pointer-events-none rounded-full mx-5">
             <div className="flex justify-center items-center h-full ml-20">
-              <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
                 kg
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           </span>
 

@@ -4,12 +4,12 @@ import { useInView } from 'react-intersection-observer';
 import HeartEmptyIcon from '@assets/icons/heartEmpty.svg';
 import HeartFillIcon from '@assets/icons/heartFill.svg';
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { SelectNameGenderEnum } from '@services/selectNameServices/enums';
 
 import CustomImage from '@components/ui/CustomImage';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import useNameSelectorLike from '../__hooks__/useNameSelectorLike';
 import { NAME_SELECTOR_CARD_HEIGHT } from './constants';
@@ -36,9 +36,9 @@ const NameSelectorCard = (props: NameSelectorCardProps) => {
     <>
       {props.startingLetter && (
         <div className="flex justify-end w-full border-b-[1px] border-b-impo_Surface_OutlineVariant pb-2 pt-6">
-          <Dark_Typography fontSize="Lable_Large" className="text-impo_Surface_InverseSurface">
+          <CustomTypography fontSize="Lable_Large" className="text-impo_Surface_InverseSurface">
             {props.startingLetter}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       )}
 
@@ -60,9 +60,9 @@ const NameSelectorCard = (props: NameSelectorCardProps) => {
                   <CustomImage src={image} className="absolute top-[1px] -left-[2px] w-[66px] h-[66px]" />
                 </div>
 
-                <Dark_Typography fontSize="Lable_Large" className="text-impo_Black">
+                <CustomTypography fontSize="Lable_Large" className="text-impo_Black">
                   {props.title}
-                </Dark_Typography>
+                </CustomTypography>
               </div>
 
               <div onClick={() => isLikedHandler(props)} className="w-10 h-10 flex items-center justify-center">

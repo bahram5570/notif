@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { WidgetCycleDateCardPeriodProps } from './types';
 
@@ -16,12 +16,12 @@ const WidgetCycleDateCardPeriod = ({
         right: '0%',
       }}
     >
-      <Dark_Typography fontSize="Lable_Medium" className="text-impo_White">
+      <CustomTypography fontSize="Lable_Medium" className="text-impo_White">
         {startPeriodLable}
-      </Dark_Typography>
-      <Dark_Typography fontSize="Lable_Medium" className="text-impo_White">
+      </CustomTypography>
+      <CustomTypography fontSize="Lable_Medium" className="text-impo_White">
         {endPeriodLabel}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

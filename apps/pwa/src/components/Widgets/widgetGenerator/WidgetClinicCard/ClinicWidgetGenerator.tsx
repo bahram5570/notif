@@ -1,7 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ClinicWidgetGeneratorProps } from './types';
 
@@ -31,18 +31,18 @@ const ClinicWidgetGenerator = ({
         className="absolute right-[20px] bottom-0 rounded-full border-[1px] z-10 border-impo_Neutral_Background dark:border-impo_White"
       />
 
-      <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
         {title}
-      </Dark_Typography>
+      </CustomTypography>
 
       <div className="flex items-baseline gap-1 ">
-        <Dark_Typography fontSize="Lable_Small" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Lable_Small" className="text-impo_Neutral_OnBackground">
           {textShorter(tailing, 20)}
-        </Dark_Typography>
+        </CustomTypography>
 
-        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
           {subtitle}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
     </div>
   );

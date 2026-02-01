@@ -1,8 +1,8 @@
 import PlusIcon from '@assets/icons/plus.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useFileUpload from '@hooks/useFileUpload';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
@@ -29,9 +29,9 @@ const EmptyState = ({ valuesHandler }: EmptyStatePropsType) => {
 
       {!uploadImageLoading && (
         <>
-          <Dark_Typography fontSize="Lable_Medium" className="pointer-events-none text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Lable_Medium" className="pointer-events-none text-impo_Neutral_OnBackground">
             از اینجا میتونی عکس یا فایل اضافه کنی
-          </Dark_Typography>
+          </CustomTypography>
 
           <PlusIcon className="w-4 h-4  pointer-events-none stroke-impo_Neutral_OnBackground" />
         </>

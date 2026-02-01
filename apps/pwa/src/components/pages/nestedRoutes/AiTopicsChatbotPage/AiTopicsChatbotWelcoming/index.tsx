@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { removeWelcomingHandler } from '@utils/aiChatBotWelcoming';
 
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import AiChatbotWelcomingLayout from '@components/ui/__AiChatbot__/AiChatbotWelcomingLayout';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useWidgetActions from '@hooks/useWidgetActions';
@@ -43,22 +43,22 @@ const AiTopicsChatbotWelcoming = ({ onUpdateKeyHandler }: TopicsChatbotWelcoming
               <>
                 <div className=" flex flex-col gap-3">
                   <div className="flex flex-col justify-end items-end gap-1">
-                    <Dark_Typography fontSize="Title_Large" className="text-impo_Neutral_OnBackground">
+                    <CustomTypography fontSize="Title_Large" className="text-impo_Neutral_OnBackground">
                       {data?.title}
-                    </Dark_Typography>
+                    </CustomTypography>
                   </div>
-                  <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+                  <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
                     {data?.description}
-                  </Dark_Typography>
+                  </CustomTypography>
                 </div>
                 <Dark_Button
                   // contentsColor={colorFormatConverter(data?.button.foregroundColor || '')}
                   // buttonColor={colorFormatConverter(data?.button.backgroundColor || '')}
                   onClick={onClick}
                 >
-                  <Dark_Typography fontSize="Lable_Large" className="text-impo_White">
+                  <CustomTypography fontSize="Lable_Large" className="text-impo_White">
                     {data?.button.text}
-                  </Dark_Typography>
+                  </CustomTypography>
                 </Dark_Button>
               </>
             )}

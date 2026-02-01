@@ -1,4 +1,4 @@
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import FilePreview from './FilePreview';
 import { AiChatbotFilePreviewPropsType } from './type';

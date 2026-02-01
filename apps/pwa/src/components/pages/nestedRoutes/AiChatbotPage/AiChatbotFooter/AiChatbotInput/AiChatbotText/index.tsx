@@ -7,7 +7,7 @@ import { toPersianNumbers } from '@utils/numbers';
 
 import style from './styles.module.css';
 
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import { AiChatbotTextPropsType } from './type';
 

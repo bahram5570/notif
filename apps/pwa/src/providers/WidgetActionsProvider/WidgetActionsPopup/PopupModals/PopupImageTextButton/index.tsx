@@ -1,9 +1,9 @@
 import CloseIcon from '@assets/icons/plus.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { useRouter } from 'next/navigation';
 
@@ -24,13 +24,13 @@ const PopupImageTextButton = ({ data }: PopupImageTextButtonProps) => {
       </div>
 
       <div className="w-full flex flex-col items-center gap-1">
-        <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground text-center">
+        <CustomTypography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground text-center">
           {data.title}
-        </Dark_Typography>
+        </CustomTypography>
 
-        <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
+        <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
           {data.description}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       <Dark_Button

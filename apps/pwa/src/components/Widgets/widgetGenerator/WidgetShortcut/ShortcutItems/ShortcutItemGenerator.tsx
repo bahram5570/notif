@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
@@ -50,9 +51,9 @@ const ShortcutItemGenerator = (props: ShortcutItemGeneratorProps) => {
         {isJson ? jsonData && <LottieJson animationData={jsonData} /> : <CustomImage src={props.icon} />}
       </div>
 
-      <Dark_Typography fontSize="Lable_SmallProminet" className="text-center text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Lable_SmallProminet" className="text-center text-impo_Neutral_OnBackground">
         {props.title}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

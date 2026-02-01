@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import MainPageLayout from '@components/MainPageLayout';
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import PartnerCode from './PartnerCode';
 import PhoneNumberInput from './PhoneNumberInput/PhoneNumberInput';
@@ -37,9 +38,9 @@ const StartPageContainer = () => {
       <div className="flex flex-col gap-4 items-center justify-center py-5 px-6">
         <PhoneNumberInput />
         <div className="border-t-[1px] border-t-impo_Surface_SurfaceVariant p-4">
-          <Dark_Typography fontSize="Body_Large" className="text-center text-impo_Neutral_OnBackground ">
+          <CustomTypography fontSize="Body_Large" className="text-center text-impo_Neutral_OnBackground ">
             روش دوم هم اینه که کد اختصاصیت رو برای پارتنرت بفرستی
-          </Dark_Typography>
+          </CustomTypography>
         </div>
 
         <div className="flex justify-center flex-col gap-4">

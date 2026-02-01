@@ -1,10 +1,10 @@
 'use client';
 
 import NotFoundIcon from '@assets/icons/404.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import MainFooterContainer from '@components/MainFooter/MainFooterContainer';
 import MainPageLayout from '@components/MainPageLayout';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { LottieCanvas } from '@lib/LottieCanvas';
 
 const NotFoundPage = () => {
@@ -24,13 +24,13 @@ const NotFoundPage = () => {
         <div className="relative flex flex-col items-center gap-2 z-10">
           <NotFoundIcon className="w-[200px] sm:w-[250px]" />
 
-          <Dark_Typography fontSize="Headline_Medium" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Headline_Medium" className="text-impo_Neutral_OnBackground">
             به نظر می‌رسه گم شدی
-          </Dark_Typography>
+          </CustomTypography>
 
-          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             صفحه ای که به دنبالش هستی در دسترس نیست
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       </div>
       <MainFooterContainer pathName={''} />

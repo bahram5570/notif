@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import GeneratorTopicCardList from '../GeneratorTopicCardList';
 import { AiTopicListPropsType } from './type';
@@ -9,10 +9,10 @@ const AiTopicList = ({ hasUsedTopicsListData, onLinkHandler, topics }: AiTopicLi
       {hasUsedTopicsListData && (
         <>
           <div className="h-0 w-full rotate-180 opacity-40 border border-impo_Neutral_Background" />
-          <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
             {/* {data.topicTitle} */}
             تالارهای پیشنهادی
-          </Dark_Typography>
+          </CustomTypography>
         </>
       )}
 

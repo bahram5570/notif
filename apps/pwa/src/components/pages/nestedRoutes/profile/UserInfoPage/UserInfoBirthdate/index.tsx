@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toJalaliData } from '@utils/dates';
 
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
@@ -42,9 +42,9 @@ const UserInfoBirthdate = ({ value, valueHandler, name }: UserInfoBirthdateTypes
       {isLoading && <Dark_Spinner size={24} />}
 
       {!isLoading && (
-        <Dark_Typography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">
+        <CustomTypography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">
           {`${updatedValue}`}
-        </Dark_Typography>
+        </CustomTypography>
       )}
     </div>
   );

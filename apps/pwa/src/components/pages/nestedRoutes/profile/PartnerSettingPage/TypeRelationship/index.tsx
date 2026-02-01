@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import PartnerRadioButton from '@components/pages/mainRoutes/partner/PartnerPage/PartnerModals/PartnerRadioButton';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import useChangeType from './__hooks__/useChangeType';
 import { TypeRelationshipPropsType } from './type';
@@ -22,9 +23,9 @@ const TypeRelationship = ({ distanceType }: TypeRelationshipPropsType) => {
     <div className="p-4 rounded-xl bg-impo_Neutral_Background">
       <div className="flex flex-col gap-3">
         <div className="flex flex-col items-end">
-          <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Lable_MediumProminet">
+          <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Lable_MediumProminet">
             نوع رابطه
-          </Dark_Typography>
+          </CustomTypography>
         </div>
 
         <PartnerRadioButton onChange={changeValueHandler} value={distanceTypeValue} />

@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import ReplyGeneratorBottomPart from './ReplyGeneratorBottomPart';
 import ReplyGeneratorTopPart from './ReplyGeneratorTopPart';
@@ -29,9 +30,9 @@ const ReplyGenerator = (props: ReplyGeneratorProps) => {
             userId={item.userId}
           />
 
-          <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground pr-10 -translate-y-4">
+          <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground pr-10 -translate-y-4">
             {item.text}
-          </Dark_Typography>
+          </CustomTypography>
 
           <ReplyGeneratorBottomPart
             selfExperience={item.selfExperience}
@@ -48,9 +49,9 @@ const ReplyGenerator = (props: ReplyGeneratorProps) => {
 
       {count > 0 && !isLoading && (
         <div className="w-full flex items-center justify-end !translate-x-[40px]" onClick={showMoreHandler}>
-          <Dark_Typography fontSize="Body_Small" className="text-impo_Primary_Primary">
+          <CustomTypography fontSize="Body_Small" className="text-impo_Primary_Primary">
             {showMoreScript}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       )}
 

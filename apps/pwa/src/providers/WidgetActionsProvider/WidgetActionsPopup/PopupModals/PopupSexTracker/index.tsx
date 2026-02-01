@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@utils/scripts';
 
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import OptionButton from '@components/ui/OptionButton';
 import useAnalytics from '@hooks/useAnalytics';
 import useWidgetActions from '@hooks/useWidgetActions';
@@ -29,13 +29,13 @@ const PopupSexTracker = ({ data }: PopupSexTrackerProps) => {
     <PopupTwoStepsContainer currentStep={1}>
       <div className="w-full px-4">
         <div className="flex flex-col items-center gap-1 pb-10">
-          <Dark_Typography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground">
             {data.title}
-          </Dark_Typography>
+          </CustomTypography>
 
-          <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
+          <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
             {data.description}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
 
         <div className="w-full px-4 pt-4 pb-6 rounded-xl bg-impo_Neutral_Background">

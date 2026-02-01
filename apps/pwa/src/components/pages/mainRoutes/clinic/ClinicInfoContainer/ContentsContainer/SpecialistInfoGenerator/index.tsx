@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { SpecialistInfoGeneratorProps } from './types';
 
@@ -37,27 +38,27 @@ const SpecialistInfoGenerator = ({
       </div>
 
       <div className="flex flex-col items-end gap-1">
-        <Dark_Typography
+        <CustomTypography
           fontSize="Lable_Medium"
           className={`${isSelected ? 'text-impo_Black' : 'text-impo_Neutral_OnBackground'}`}
-        >{`${firstName} ${lastName}`}</Dark_Typography>
+        >{`${firstName} ${lastName}`}</CustomTypography>
 
         <div className="flex items-center gap-2">
-          <Dark_Typography
+          <CustomTypography
             fontSize="Lable_Small"
             className={`${isSelected ? 'text-impo_Black' : 'text-impo_Surface_InverseSurface'}`}
           >
             {`ش.ن: ${nezamNumber}`}
-          </Dark_Typography>
+          </CustomTypography>
 
           <div className={`w-[1px] h-4 ${isSelected ? 'text-impo_Black' : 'bg-impo_Surface_OutlineVariant'}`} />
 
-          <Dark_Typography
+          <CustomTypography
             fontSize="Lable_Small"
             className={`${isSelected ? 'text-impo_Black' : 'text-impo_Surface_InverseSurface'}`}
           >
             {speciliaty}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       </div>
     </div>

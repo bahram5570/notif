@@ -1,7 +1,7 @@
 import ArrowIcon from '@assets/icons/calendarArrow.svg';
 import PenIcon from '@assets/icons/pen.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useSignDateState from '@hooks/__sign__/useSignDateState';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
@@ -28,9 +28,9 @@ const SelectedDayNoNote = ({ date }: SelectedDayNoNotePropsType) => {
           <PenIcon className="w-6 h-auto" />
         </div>
 
-        <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
           اولین یادداشت امروز رو ثبت کن
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       <ArrowIcon className="w-6 h-6 stroke-impo_Surface_Outline" />

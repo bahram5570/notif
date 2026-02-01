@@ -1,9 +1,9 @@
 import { memo } from 'react';
 
 import GiveBirthIcon from '@assets/icons/calendarGiveBirth.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { CALENDAR_CELL_SIZE, DATE_SEPERATOR_REGEX } from '@constants/date.constants';
 
 import useCalendarDayInfo from '../../__hooks__/useCalendarDayInfo';
@@ -41,14 +41,14 @@ const SingleDay = ({ isSelected, selectedDateHandler, day, dateType }: SingleDay
 
           {!isGiveBirth && (
             <>
-              <Dark_Typography fontSize="Body_Medium" className={`${dayColor} ${day.isToday && 'translate-y-1.5'}`}>
+              <CustomTypography fontSize="Body_Medium" className={`${dayColor} ${day.isToday && 'translate-y-1.5'}`}>
                 {Number(day[dateType].split(DATE_SEPERATOR_REGEX)[2]).toString()}
-              </Dark_Typography>
+              </CustomTypography>
 
               {day.isToday && (
-                <Dark_Typography fontSize="Body_Small" className={`${dayColor} -translate-y-1.5`}>
+                <CustomTypography fontSize="Body_Small" className={`${dayColor} -translate-y-1.5`}>
                   امروز
-                </Dark_Typography>
+                </CustomTypography>
               )}
             </>
           )}

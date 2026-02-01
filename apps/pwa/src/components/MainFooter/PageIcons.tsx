@@ -1,4 +1,5 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
 import { PageIconsProps } from './types';
@@ -21,12 +22,12 @@ const PageIcons = ({ icons, title, isSelected, url }: PageIconsProps) => {
         {<icons.Dark className={`w-7 h-auto hidden dark:block ${isSelected ? 'opacity-100' : 'opacity-40'}`} />}
       </>
 
-      <Dark_Typography
+      <CustomTypography
         fontSize="Body_Small"
         className={`${isSelected ? 'text-impo_Neutral_OnBackground opacity-100' : 'text-impo_Neutral_OnBackground opacity-40'}`}
       >
         {title}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useNameSelectorTabs from '../../__hooks__/useNameSelectorTabs';
 import { NAME_SELECTOR_TABS_LIST } from '../constants';
@@ -27,7 +27,7 @@ const NameSelectorTabs = () => {
                         ${isSelected ? 'border-b-impo_Neutral_OnBackground' : 'border-b-impo_Transparent'}
                       `}
           >
-            <Dark_Typography {...btnStyles}>{item.title}</Dark_Typography>
+            <CustomTypography {...btnStyles}>{item.title}</CustomTypography>
           </div>
         );
       })}

@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
@@ -18,9 +19,9 @@ const RoutinCta = ({ cta }: RoutinCtaPropsType) => {
       }}
     >
       <div className="px-4 py-4 flex flex-col items-end gap-2">
-        <Dark_Typography className="text-impo_Neutral_OnSurface" fontSize="Lable_Medium">
+        <CustomTypography className="text-impo_Neutral_OnSurface" fontSize="Lable_Medium">
           {cta.ctaBtnLabel}
-        </Dark_Typography>
+        </CustomTypography>
 
         <div className="w-full flex justify-start">
           <Dark_Button

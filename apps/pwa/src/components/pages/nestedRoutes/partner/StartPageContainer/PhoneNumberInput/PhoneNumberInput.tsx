@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toEnglishNumbers, toPersianNumbers } from '@utils/numbers';
 
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import useCreate from '../__hooks__/useCreate';
 
@@ -27,9 +27,9 @@ const PhoneNumberInput = () => {
 
   return (
     <>
-      <Dark_Typography fontSize="Body_Large" className="text-center text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Body_Large" className="text-center text-impo_Neutral_OnBackground">
         شماره موبایل، ایمیل یا کد همدلی پارتنرت رو اینجا وارد کن تا درخواست همدلیت براش ارسال بشه.
-      </Dark_Typography>
+      </CustomTypography>
 
       <div className="w-full">
         <input
@@ -43,9 +43,9 @@ const PhoneNumberInput = () => {
       </div>
       <div className="flex justify-center w-1/2 items-center">
         <Dark_Button onClick={onClickHandler} isLoading={isLoading} isDisable={!phoneNumber}>
-          <Dark_Typography fontSize="Lable_Medium" className="text-center text-impo_White">
+          <CustomTypography fontSize="Lable_Medium" className="text-center text-impo_White">
             ادامه
-          </Dark_Typography>
+          </CustomTypography>
         </Dark_Button>
       </div>
     </>

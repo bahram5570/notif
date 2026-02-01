@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { DefaultQuestionListPropType } from './type';
 
@@ -22,9 +22,9 @@ const DefaultQuestionList = ({ defaultQustionHandler, questions }: DefaultQuesti
                 key={index}
                 onClick={() => onClick(question)}
               >
-                <Dark_Typography className="p-2 text-impo_Surface_InverseSurface" fontSize="Lable_SmallProminet">
+                <CustomTypography className="p-2 text-impo_Surface_InverseSurface" fontSize="Lable_SmallProminet">
                   {question}
-                </Dark_Typography>
+                </CustomTypography>
               </div>
             ))}
           </div>

@@ -1,6 +1,5 @@
 import Refresh from '@assets/icons/refresh.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import NotRequestData from './NotRequestData';
 import RequestList from './RequestList';
@@ -16,9 +15,9 @@ const RequestSection = ({ isLoading, list, getData, hasData }: RequestSectionPro
         <div onClick={getData}>
           <Refresh className="w-10 h-10" />
         </div>
-        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           {title}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
       {isLoading && <RequestListSkeleton />}
 

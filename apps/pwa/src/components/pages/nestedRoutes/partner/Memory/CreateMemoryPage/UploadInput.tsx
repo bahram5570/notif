@@ -2,11 +2,11 @@ import { useEffect, useState } from 'react';
 
 import PaperClipIcon from '@assets/icons/paperclip.svg';
 import TrashIcon from '@assets/icons/trash.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -50,9 +50,9 @@ const UploadInput = ({ fileName, uploadImageLoading, valuesHandler }: UploadInpu
           <div className="flex rounded-2xl justify-between items-center px-5 py-3 gap-3 bg-impo_Surface_SurfaceVariant">
             <div className="flex gap-3">
               <CustomImage src={fileName} width={48} height={48} className="rounded-md" />
-              <Dark_Typography fontSize="Body_Medium" className="break-all text-left text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Body_Medium" className="break-all text-left text-impo_Neutral_OnBackground">
                 {fileNameScript}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
 
             <div
@@ -72,18 +72,18 @@ const UploadInput = ({ fileName, uploadImageLoading, valuesHandler }: UploadInpu
 
       {fileName === '' && (
         <div className="rounded-2xl py-5 px-2 flex flex-col gap-3 border border-impo_Neutral_Surface">
-          <Dark_Typography fontSize="Body_Small" className="text-impo_Surface_Outline w-full text-center">
+          <CustomTypography fontSize="Body_Small" className="text-impo_Surface_Outline w-full text-center">
             میتونی برای خاطره خودت یک عکس آپلود کنی
-          </Dark_Typography>
+          </CustomTypography>
 
           <div className=" p-2 flex  justify-center items-center ">
             <div
               className="flex  justify-center items-center gap-2 rounded-full pl-6 pr-4 py-3 bg-impo_Primary_PrimaryContainer "
               onClick={onClick}
             >
-              <Dark_Typography fontSize="Lable_Large" className="text-impo_Primary_Primary">
+              <CustomTypography fontSize="Lable_Large" className="text-impo_Primary_Primary">
                 آپلود عکس
-              </Dark_Typography>
+              </CustomTypography>
 
               <div className="w-5 h-5 flex justify-center items-center">
                 <PaperClipIcon className="w-5 h-5 stroke-impo_Primary_Primary" />

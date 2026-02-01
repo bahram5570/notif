@@ -4,12 +4,24 @@
   "type": "module",
   "exports": {
     "./utils/*": {
-      "import": "./dist/utils/*.js",
-      "types": "./dist/utils/*.d.ts"
+      "import": "./dist/utils/*/index.js",
+      "types": "./dist/utils/*/index.d.ts"
     },
     "./hooks/*": {
-      "import": "./dist/hooks/*.js",
-      "types": "./dist/hooks/*.d.ts"
+      "import": "./dist/hooks/*/index.js",
+      "types": "./dist/hooks/*/index.d.ts"
+    },
+    "./providers/*": {
+      "import": "./dist/providers/*/index.js",
+      "types": "./dist/providers/*/index.d.ts"
+    },
+    "./components/*": {
+      "import": "./dist/components/*/index.js",
+      "types": "./dist/components/*/index.d.ts"
+    },
+    "./components.css": {
+      "import": "./dist/components/index.css",
+      "default": "./dist/components/index.css"
     },
     "./theme/*": {
       "import": "./dist/theme/*.js",
@@ -20,8 +32,13 @@
   },
   "scripts": {
     "clear": "rimraf dist",
-    "copy-theme-css": "cpy ./src/theme/theme.css ./dist/theme --flat",
-    "copy-configs": "cpy ./src/configs ./dist/configs --flat",
-    "build": "npm run clear && tsc --project tsconfig.json && npm run copy-theme-css && npm run copy-configs"
+    "copy:configs": "cpy ./src/configs ./dist/configs --flat",
+    "copy:theme-css": "cpy ./src/theme/theme.css ./dist/theme --flat",
+    "copy:components-styles": "cd ./src/components && tailwindcss -i ./components.css -o ../../dist/components/index.css",
+    "build": "npm run clear && tsc --project tsconfig.json && npm run copy:theme-css && npm run copy:configs && npm run copy:components-styles"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   }
 }

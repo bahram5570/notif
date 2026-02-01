@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { DoctorInfoProps } from './types';
 
@@ -8,18 +9,18 @@ const DoctorInfo = ({ firstName, lastName, image, speciliaty, nezamNumber }: Doc
     <div className="flex flex-col items-center">
       <CustomImage src={image} width={120} height={120} className="rounded-full" />
 
-      <Dark_Typography
+      <CustomTypography
         fontSize="Headline_Small"
         className="text-impo_Neutral_OnBackground pt-2"
-      >{`${firstName} ${lastName}`}</Dark_Typography>
+      >{`${firstName} ${lastName}`}</CustomTypography>
 
-      <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnSurface">
+      <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnSurface">
         {speciliaty}
-      </Dark_Typography>
+      </CustomTypography>
 
-      <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnSurface">
+      <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnSurface">
         {`نظام پزشکی ${nezamNumber}`}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

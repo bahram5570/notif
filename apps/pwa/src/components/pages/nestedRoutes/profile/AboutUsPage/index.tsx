@@ -1,7 +1,8 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import MainPageLayout from '@components/MainPageLayout';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import LinkGenerator from './LinkGenerator';
 import { LINK_SOCIAL_LIST } from './constants';
@@ -18,34 +19,34 @@ const AboutUsPage = () => {
         <div className="flex flex-col items-center justify-center gap-8">
           <div className="flex flex-col items-center justify-center">
             <div className="flex flex-col items-center justify-center gap-6">
-              <Dark_Typography className="text-impo_Primary_Primary" fontSize="Headline_Large">
+              <CustomTypography className="text-impo_Primary_Primary" fontSize="Headline_Large">
                 Impo
-              </Dark_Typography>
+              </CustomTypography>
 
               <div className="flex flex-col items-center justify-center">
-                <Dark_Typography className="text-impo_Surface_OnSurfaceVariant" fontSize="Lable_Large">
+                <CustomTypography className="text-impo_Surface_OnSurfaceVariant" fontSize="Lable_Large">
                   از دل این جمله بیرون اومده
-                </Dark_Typography>
+                </CustomTypography>
 
-                <Dark_Typography className="text-impo_Primary_Primary" fontSize="Headline_Medium">
+                <CustomTypography className="text-impo_Primary_Primary" fontSize="Headline_Medium">
                   I am important
-                </Dark_Typography>
-                <Dark_Typography className="text-impo_Surface_OnSurfaceVariant" fontSize="Lable_Large">
+                </CustomTypography>
+                <CustomTypography className="text-impo_Surface_OnSurfaceVariant" fontSize="Lable_Large">
                   یعنی من مهم هستم
-                </Dark_Typography>
+                </CustomTypography>
               </div>
             </div>
           </div>
           <div className="flex flex-col items-center justify-center text-center">
-            <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
+            <CustomTypography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
               ایمپو در کنار شماست تا هر روز بهتون یادآوری کنه که باید بیشتر حواستون به خودتون باشه.
-            </Dark_Typography>
-            <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
+            </CustomTypography>
+            <CustomTypography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
               اینجاییم که با خودمون در صلح باشیم و سبک زندگیمون رو با تغییر نگرشمون تغییر بدیم
-            </Dark_Typography>
-            <Dark_Typography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
+            </CustomTypography>
+            <CustomTypography fontSize="Body_Medium" className="text-impo_Surface_OnSurfaceVariant">
               اینو یادت نره تو خیلی مهم و ارزشمندی!
-            </Dark_Typography>
+            </CustomTypography>
           </div>
         </div>
 

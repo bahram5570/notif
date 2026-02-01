@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 import CancelIcon from '@assets/icons/cancel.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import useSubmit from './__hooks__/useSubmit';
@@ -30,9 +30,9 @@ const CommentChatModal = ({ onCloseModal }: CommentChatModalPropsType) => {
         <CancelIcon className="w-6 h-auto stroke-impo_Surface_Outline" />
       </div>
       <div className="flex flex-col  rounded-2xl gap-3 items-end">
-        <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
           نظرت راجع به این گفتگو با مونس چیه؟
-        </Dark_Typography>
+        </CustomTypography>
 
         <textarea
           placeholder="نظرت رو اینجا بنویس.."

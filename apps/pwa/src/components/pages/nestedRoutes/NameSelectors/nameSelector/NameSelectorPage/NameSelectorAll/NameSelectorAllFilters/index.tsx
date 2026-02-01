@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import NameSelectorGenderFilter from './NameSelectorGenderFilter';
 import NameSelectorStylesFilter from './NameSelectorStylesFilter';
@@ -6,9 +6,9 @@ import NameSelectorStylesFilter from './NameSelectorStylesFilter';
 const NameSelectorAllFilters = () => {
   return (
     <div className="w-full h-[56px] flex flex-row-reverse items-center gap-2">
-      <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
         فیلترها:
-      </Dark_Typography>
+      </CustomTypography>
 
       <NameSelectorGenderFilter />
       <NameSelectorStylesFilter />

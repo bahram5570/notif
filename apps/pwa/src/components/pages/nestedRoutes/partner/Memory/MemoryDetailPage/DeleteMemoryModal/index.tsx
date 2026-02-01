@@ -1,6 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomModal from '@components/ui/CustomModal';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { useRouter } from 'next/navigation';
 
 import useDelete from './__hooks__/useDelete';
@@ -12,12 +13,12 @@ const DeleteMemoryModal = () => {
   return (
     <CustomModal>
       <div className="w-[290px] flex flex-col items-center gap-4">
-        <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Title_Small">
+        <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Title_Small">
           حذف خاطره
-        </Dark_Typography>
-        <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Body_Medium">
+        </CustomTypography>
+        <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Body_Medium">
           می‌خوای این خاطره رو حذف کنی؟
-        </Dark_Typography>
+        </CustomTypography>
 
         <div className="w-full flex items-center justify-between gap-2">
           <Dark_Button

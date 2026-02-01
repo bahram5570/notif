@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { InputValueType } from '../type';
 
@@ -31,12 +31,12 @@ const TestResult = ({ high = 0, low = 0 }: InputValueType) => {
 
   return (
     <div className="p-3 w-full   flex flex-col gap-3 rounded-xl bg-impo_Neutral_Background ">
-      <Dark_Typography
+      <CustomTypography
         fontSize="Lable_Medium"
         className="w-full text-impo_Neutral_OnBackground  border-b border-b-impo_Neutral_Surface pb-3"
       >
         نتیجه تست فشارخون
-      </Dark_Typography>
+      </CustomTypography>
       <div className="flex flex-col">
         {results.map((result, index) => (
           <div
@@ -45,11 +45,11 @@ const TestResult = ({ high = 0, low = 0 }: InputValueType) => {
           >
             <div className="flex flex-row-reverse items-center gap-2">
               <div className={`w-3 h-3 rounded-full ${result.indicatorColor}`}></div>
-              <Dark_Typography fontSize="Body_Medium">{result.title}</Dark_Typography>
+              <CustomTypography fontSize="Body_Medium">{result.title}</CustomTypography>
             </div>
             <div className="flex flex-row-reverse gap-1">
-              <Dark_Typography fontSize="Lable_Medium">mmHg</Dark_Typography>
-              <Dark_Typography fontSize="Lable_Medium">{result.range}</Dark_Typography>
+              <CustomTypography fontSize="Lable_Medium">mmHg</CustomTypography>
+              <CustomTypography fontSize="Lable_Medium">{result.range}</CustomTypography>
             </div>
           </div>
         ))}

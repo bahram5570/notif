@@ -1,7 +1,7 @@
 import ChangeArrowsIcon from '@assets/icons/changeArrows.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import { SPECIALISTS_LIST_QUERY_NAME } from '../constants';
@@ -17,9 +17,9 @@ const ActiveSpecialist = ({ isMoreThanOne }: ActiveSpecialistProps) => {
   return (
     <>
       <div className="relative z-0 w-full flex flex-row-reverse items-center justify-between">
-        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           متخصص فعال
-        </Dark_Typography>
+        </CustomTypography>
 
         {isMoreThanOne && (
           <Dark_Button
@@ -28,9 +28,9 @@ const ActiveSpecialist = ({ isMoreThanOne }: ActiveSpecialistProps) => {
             className="!w-fit !h-8 !bg-impo_Neutral_Surface !border-impo_Neutral_Surface"
           >
             <div className="flex items-center gap-1">
-              <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnSurface">
+              <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnSurface">
                 تغییر متخصص
-              </Dark_Typography>
+              </CustomTypography>
               <ChangeArrowsIcon className="w-4 h-auto fill-impo_Primary_Primary" />
             </div>
           </Dark_Button>

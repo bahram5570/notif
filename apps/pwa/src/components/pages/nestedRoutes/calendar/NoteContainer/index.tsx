@@ -2,10 +2,11 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import OverlayBar from '@components/ui/OverlayBar';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useAnalytics from '@hooks/useAnalytics';
@@ -57,13 +58,13 @@ const NoteContainer = () => {
         >
           <div className="flex flex-col min-h-[100dvh] gap-6 pb-6 px-4" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
             <div className="flex flex-col justify-center items-center p-4 gap-2">
-              <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
                 میخوای به کارهات اولویت بدی؟
-              </Dark_Typography>
+              </CustomTypography>
 
-              <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
+              <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
                 کارهات رو اینجا بنویس و در صورت لزوم میتونی یادآور هم براش تنظیم کنی
-              </Dark_Typography>
+              </CustomTypography>
             </div>
 
             <NoteInputGenerator noteValue={noteValue} onChangeHandler={onChangeHandler} ref={textareaConainerRef} />

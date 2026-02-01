@@ -1,6 +1,5 @@
 import ArrowIcon from '@assets/icons/arrow.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import NameSelectorCard from '../../../NameSelectorCard';
 import useNameSelectorData from '../../../__hooks__/useNameSelectorData';
@@ -46,9 +45,9 @@ const NameSelectorAllArranged = () => {
                 >
                   <ArrowIcon className="w-5 h-auto rotate-180 pt-1 stroke-impo_Primary_OnPrimary" />
 
-                  <Dark_Typography fontSize="Lable_Large" className="text-impo_Primary_OnPrimary">
+                  <CustomTypography fontSize="Lable_Large" className="text-impo_Primary_OnPrimary">
                     حذف فیلتر ها
-                  </Dark_Typography>
+                  </CustomTypography>
                 </div>
               }
             />

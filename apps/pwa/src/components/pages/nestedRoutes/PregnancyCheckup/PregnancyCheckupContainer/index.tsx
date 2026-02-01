@@ -1,8 +1,9 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useAnalytics from '@hooks/useAnalytics';
 
@@ -40,9 +41,9 @@ const PregnancyCheckupContainer = () => {
             style={{ maxWidth: MAX_SCREEN_WIDTH, height: '80px' }}
           >
             <div className="flex flex-col gap-1 items-end px-2 py-1">
-              <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
+              <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
                 توی هفته‌های مختلف بارداریت، اطلاعات مربوط به مراقبت ها و آزمایشاتی که باید داشته باشی رو برات گذاشتیم
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           </div>
 

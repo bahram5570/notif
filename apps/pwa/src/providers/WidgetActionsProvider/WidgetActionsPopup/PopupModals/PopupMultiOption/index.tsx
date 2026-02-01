@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@utils/scripts';
 
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import OptionButton from '@components/ui/OptionButton';
 import useWidgetActions from '@hooks/useWidgetActions';
 
@@ -27,9 +27,9 @@ const PopupMultiOption = ({ data }: PopupMultiOptionProps) => {
 
   return (
     <div className="w-full flex flex-col items-center">
-      <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
         {data.title}
-      </Dark_Typography>
+      </CustomTypography>
 
       <div className="w-full flex flex-col gap-3 py-6">
         {data.items.map((option, index) => (

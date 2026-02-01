@@ -1,4 +1,5 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 
 import { ProfileGeneratorProps } from './type';
@@ -23,9 +24,9 @@ const ProfileLinkGenerator = ({ Icon, link, name, isFirstItem }: ProfileGenerato
                     ${isFirstItem ? 'border-t-impo_Transparent' : 'border-t-impo_Neutral_Surface'}
                   `}
       >
-        <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
           {name}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       <Icon className="w-10 h-10" />

@@ -1,7 +1,7 @@
 import RefreshIcon from '@assets/icons/refresh.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ErrorMessagePropsType } from './type';
 
@@ -14,9 +14,9 @@ const ErrorMessage = ({ onErrorHandler }: ErrorMessagePropsType) => {
           borderRadius: '32px 32px 32px 4px',
         }}
       >
-        <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
           ظاهرا ارتباط با ایمپو قطع شده. میتونی دوباره تلاش کنی.
-        </Dark_Typography>
+        </CustomTypography>
 
         <Dark_Button
           onClick={onErrorHandler}
@@ -24,9 +24,9 @@ const ErrorMessage = ({ onErrorHandler }: ErrorMessagePropsType) => {
         >
           <div className="flex flex-row-reverse w-full justify-center items-center">
             {/* <RefreshIcon /> */}
-            <Dark_Typography fontSize="Lable_Medium" className="text-impo_Surface_InverseSurface">
+            <CustomTypography fontSize="Lable_Medium" className="text-impo_Surface_InverseSurface">
               تلاش مجدد
-            </Dark_Typography>
+            </CustomTypography>
           </div>
         </Dark_Button>
       </div>

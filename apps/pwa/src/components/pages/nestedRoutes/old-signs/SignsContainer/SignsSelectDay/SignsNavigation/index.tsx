@@ -1,6 +1,5 @@
 import ArrowIcon from '@assets/icons/vector.svg';
-
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { SignsNavigationProps } from './types';
 
@@ -27,9 +26,9 @@ const SignsNavigation = ({ slide, slideHandler, infoList }: SignsNavigationProps
         />
       </div> */}
 
-      <Dark_Typography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
         {infoList?.[slide].fullDateScript || ''}
-      </Dark_Typography>
+      </CustomTypography>
 
       {/* <div className="h-12 w-8 flex items-center rotate-180" onClick={() => slideActionHandler(false)}>
         <ArrowIcon

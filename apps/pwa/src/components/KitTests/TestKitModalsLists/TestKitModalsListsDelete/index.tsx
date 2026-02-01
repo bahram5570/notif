@@ -1,6 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomModal from '@components/ui/CustomModal';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import Loading from '@components/ui/Loading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
@@ -35,9 +36,9 @@ const TestKitModalsListsDelete = ({ onDelete }: TestKitModalsListsDeleteProps) =
     <>
       <CustomModal isOpen={isOvulationOpen} className="!w-[calc(100%_-_32px)] flex items-center">
         <div className="w-full flex flex-col items-center gap-6">
-          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
             تست تخمک گذاری مورد نظر حذف شود؟
-          </Dark_Typography>
+          </CustomTypography>
 
           <div className="w-full flex justify-between gap-4">
             <Dark_Button fontSize="Lable_Large" onClick={deleteHandler}>
@@ -57,9 +58,9 @@ const TestKitModalsListsDelete = ({ onDelete }: TestKitModalsListsDeleteProps) =
 
       <CustomModal isOpen={isBabyCheckOpen} className="!w-[calc(100%_-_32px)] flex items-center">
         <div className="w-full flex flex-col items-center gap-6">
-          <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
             تست بارداری مورد نظر حذف شود؟
-          </Dark_Typography>
+          </CustomTypography>
 
           <div className="w-full flex justify-between gap-4">
             <Dark_Button fontSize="Lable_Large" onClick={deleteHandler}>

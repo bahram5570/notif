@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import KitTestRangeResult from './KitTestRangeResult';
 import KitTestRangeSlider from './KitTestRangeSlider';
@@ -23,9 +24,9 @@ const KitTestRange = ({ moduleType, subimtHandler, AnalytisId }: KitTestRangePro
 
       <KitTestRangeSlider rangeValue={rangeValue} rangeValueHandler={rangeValueHandler} />
 
-      <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground mb-4 mt-2">
+      <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground mb-4 mt-2">
         {kitTestScripts[moduleType].guideScript}
-      </Dark_Typography>
+      </CustomTypography>
 
       <Dark_Button
         id={AnalytisId}

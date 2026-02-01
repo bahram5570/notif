@@ -1,8 +1,8 @@
 import ImpoIcon from '@assets/icons/impoName.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import WidgetGenerator from '@components/Widgets/widgetGenerator';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useAnalytics from '@hooks/useAnalytics';
 import { WidgetsEnum } from '@providers/WidgetActionsProvider/widgetEnums';
@@ -48,37 +48,37 @@ const HealthReportContainerPdf = ({ data }: HealthReportContainerPdfProps) => {
           <div className="fixed top-0 left-0 right-0 bottom-0 w-full -z-50 bg-impo_Grey_50 ">
             <div ref={ref} className="min-w-[210mm] max-w-[210mm] h-fit min-h-[297mm] px-8 py-6 bg-impo_Grey_50 ">
               <div className="w-full flex justify-between items-center border-b-[1px] pb-4 mb-4  dark:border-b-impo_Neutral_OnSurface border-b-impo_Neutral_Surface">
-                <Dark_Typography
+                <CustomTypography
                   fontSize="Lable_Small"
                   className="dark:text-impo_Surface_Outline text-impo_Surface_OutlineVariant"
                 >
                   Impo.app
-                </Dark_Typography>
+                </CustomTypography>
 
                 <div className="flex items-center gap-2">
-                  <Dark_Typography fontSize="Lable_Small" className="text-impo_Black">
+                  <CustomTypography fontSize="Lable_Small" className="text-impo_Black">
                     بزرگترین پلتفرم حوزه سلامت قاعدگی زنان
-                  </Dark_Typography>
+                  </CustomTypography>
 
                   <ImpoIcon className="w-[72px] h-auto fill-impo_Primary_Primary" />
                 </div>
               </div>
 
               <div className="w-full flex flex-col items-end pb-4">
-                <Dark_Typography fontSize="Headline_Medium" className="text-impo_Black">
+                <CustomTypography fontSize="Headline_Medium" className="text-impo_Black">
                   {` گزارش دوره ${PeriodReportType?.data?.items?.length} ماهه پریود`}
-                </Dark_Typography>
+                </CustomTypography>
 
                 {data && <HealthReportDate data={data} />}
               </div>
 
               <div className="w-full flex flex-col items-end pb-6">
-                <Dark_Typography fontSize="Body_Large" className="text-impo_Black">
+                <CustomTypography fontSize="Body_Large" className="text-impo_Black">
                   این گزارش نشون دهنده زمان های پیش بینی شده و اتفاق افتاده پریود شماست.
-                </Dark_Typography>
-                <Dark_Typography fontSize="Body_Large" className="text-impo_Black">
+                </CustomTypography>
+                <CustomTypography fontSize="Body_Large" className="text-impo_Black">
                   میتونی این گزارش رو برای خودت ذخیره کنی و یا برای پزشکت بفرستی.
-                </Dark_Typography>
+                </CustomTypography>
               </div>
 
               <div className="w-full flex flex-col gap-4">

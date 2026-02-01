@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { WidgetBabyCheckHistoryCardItemsProps } from './types';
 
@@ -19,23 +19,23 @@ const WidgetBabyCheckHistoryCardItems = (props: WidgetBabyCheckHistoryCardItemsP
         >
           <div className="flex items-center gap-1">
             <div className="w-[54px] h-[22px] flex items-center justify-center rounded-full bg-impo_Success_Success">
-              <Dark_Typography fontSize="Lable_Small" className="text-impo_Primary_OnPrimary">
+              <CustomTypography fontSize="Lable_Small" className="text-impo_Primary_OnPrimary">
                 {item.positive}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
 
             <div className="w-[54px] h-[22px] flex items-center justify-center rounded-full bg-impo_Error_Error">
-              <Dark_Typography fontSize="Lable_Small" className="text-impo_Primary_OnPrimary">
+              <CustomTypography fontSize="Lable_Small" className="text-impo_Primary_OnPrimary">
                 {item.negative}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           </div>
-          <Dark_Typography
+          <CustomTypography
             fontSize="Body_Medium"
             className={`text-impo_Neutral_OnBackground ${props.isPdfDownloading && '!text-impo_Black'}`}
           >
             {item.text}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       ))}
     </div>

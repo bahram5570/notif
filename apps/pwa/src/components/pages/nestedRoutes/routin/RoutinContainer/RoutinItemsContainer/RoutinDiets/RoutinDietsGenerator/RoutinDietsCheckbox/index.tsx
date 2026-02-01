@@ -1,10 +1,10 @@
 import RadioFillIcon from '@assets/icons/Radio-fill.svg';
 import RadioIcon from '@assets/icons/Radio.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@utils/scripts';
 
 import { ProgramWidgetItemStatusEnum } from '@components/pages/nestedRoutes/routin/enum';
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import useSeenItem from './__hooks__/useSeenItem';
 import { RoutinDietsCheckboxPropsType } from './type';
@@ -20,15 +20,15 @@ const RoutinDietsCheckbox = ({ item, programId, onClick, index }: RoutinDietsChe
           onClick={onClick}
         >
           <div className="flex flex-col items-end gap-1">
-            <Dark_Typography
+            <CustomTypography
               fontSize="Lable_Medium"
               className={`text-impo_Neutral_OnBackground ${item.status === ProgramWidgetItemStatusEnum.Compelet && 'line-through'}`}
             >
               {item.title}
-            </Dark_Typography>
-            <Dark_Typography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
+            </CustomTypography>
+            <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
               {textShorter(item.subtitle, 40)}
-            </Dark_Typography>
+            </CustomTypography>
           </div>
 
           <div className="flex flex-row-reverse gap-3">

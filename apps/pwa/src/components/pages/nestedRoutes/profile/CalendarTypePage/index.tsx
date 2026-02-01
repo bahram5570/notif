@@ -1,9 +1,10 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import MainPageLayout from '@components/MainPageLayout';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_RadioButton from '@components/ui/Dark_RadioButton';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import useCalendarTypeSelect from './__hooks__/useCalendarTypeSelect';
 import useCalendarTypeSubmit from './__hooks__/useCalendarTypeSubmit';
@@ -22,9 +23,9 @@ const CalendarTypePage = () => {
       rightElementScript="نوع نمایش تقویم"
     >
       <div className="w-full mt-5 p-4 rounded-lg bg-impo_Neutral_Background" style={{ direction: 'rtl' }}>
-        <Dark_Typography fontSize="Body_Small" className="pb-4 text-impo_Surface_InverseSurface">
+        <CustomTypography fontSize="Body_Small" className="pb-4 text-impo_Surface_InverseSurface">
           نوع تقویم خود را انتخاب کنید
-        </Dark_Typography>
+        </CustomTypography>
 
         {CHANGE_CALENDAR_TYPE_LIST.map((item, index) => {
           const isSelected = item.value === selectedType;
@@ -37,9 +38,9 @@ const CalendarTypePage = () => {
             >
               <Dark_RadioButton isChecked={isSelected} />
 
-              <Dark_Typography fontSize="Body_Medium" className="text-impo_Neutral_OnSurface">
+              <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnSurface">
                 {item.text}
-              </Dark_Typography>
+              </CustomTypography>
             </div>
           );
         })}

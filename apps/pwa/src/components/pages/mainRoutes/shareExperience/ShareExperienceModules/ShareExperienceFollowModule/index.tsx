@@ -1,6 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
@@ -60,12 +61,12 @@ const ShareExperienceFollowModule = (props: ShareExperienceFollowModuleProps) =>
                     ${props.isFollow ? 'bg-impo_Neutral_Surface' : 'bg-impo_OnBlack'}
                   `}
       >
-        <Dark_Typography
+        <CustomTypography
           fontSize="Body_Medium"
           className={`w-full text-impo_Neutral_OnSurface ${isLoading ? 'opacity-0' : 'opacity-100'}`}
         >
           {props.isFollow ? 'دنبال شده' : 'دنبال کردن'}
-        </Dark_Typography>
+        </CustomTypography>
 
         {isLoading && (
           <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center pointer-events-none">

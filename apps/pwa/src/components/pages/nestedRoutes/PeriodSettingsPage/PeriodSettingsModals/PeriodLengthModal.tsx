@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 import BloodIcon from '@assets/icons/Blood.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useListMaker from '@components/activation/CyclesModule/__hooks__/useListMaker';
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import WheelPicker from '@components/ui/WheelPicker';
 
 import { PeriodLengthModalTypes } from './types';
@@ -24,9 +24,9 @@ const PeriodLengthModal = ({ value, totalCycleLength, valueHandler, onClose }: P
     <>
       <BloodIcon className="w-9 h-9 mb-2" />
 
-      <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
         طول پریود
-      </Dark_Typography>
+      </CustomTypography>
 
       <div className="relative grid grid-cols-1 place-items-center w-full px-4">
         {dataList && (

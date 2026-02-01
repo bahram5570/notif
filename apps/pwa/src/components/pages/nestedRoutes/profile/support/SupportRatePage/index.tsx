@@ -3,15 +3,15 @@
 import { useState } from 'react';
 
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toPersianNumbers } from '@utils/numbers';
 
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Dark_Typography from '@components/ui/Dark_Typography';
-import useOperatingSystem from '@hooks/useOperatingSystem';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import RateModal from './RateModal';
 import StarRate from './StarRate';
@@ -63,9 +63,9 @@ const SupportRatePage = () => {
           }}
           className="w-full flex justify-center items-center rounded-full py-3 px-6 mt-auto bg-impo_Primary_Primary"
         >
-          <Dark_Typography className="text-impo_PrimaryMan_OnPrimaryMan" fontSize="Title_Small">
+          <CustomTypography className="text-impo_PrimaryMan_OnPrimaryMan" fontSize="Title_Small">
             ارسال نظر
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       </div>
       <RateModal {...rateValues} />

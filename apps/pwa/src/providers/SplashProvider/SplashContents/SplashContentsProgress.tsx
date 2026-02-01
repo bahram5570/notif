@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useSplashProgress from './__hooks__/useSplashProgress';
 import { SplashContentsProgressProps } from './types';
@@ -8,7 +8,7 @@ const SplashContentsProgress = ({ splashStatushHandler, splashStatus }: SplashCo
 
   return (
     <div className="flex flex-col gap-1">
-      <Dark_Typography fontSize="Title_Small" className="text-impo_White">{`${progressPercent}%`}</Dark_Typography>
+      <CustomTypography fontSize="Title_Small" className="text-impo_White">{`${progressPercent}%`}</CustomTypography>
 
       <div className="w-[140px] h-[8px] rounded-full p-[1px] bg-impo_White overflow-hidden">
         <div

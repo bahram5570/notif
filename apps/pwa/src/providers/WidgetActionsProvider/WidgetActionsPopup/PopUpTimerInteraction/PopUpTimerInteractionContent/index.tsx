@@ -1,7 +1,7 @@
 import CancelIcon from '@assets/icons/cancel.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
 
@@ -33,12 +33,12 @@ const PopUpTimerInteractionContent = ({ actionCompleteHandler, data }: PopUpTime
         </div>
 
         <div className="flex flex-col items-end gap-1">
-          <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
             {data.title}
-          </Dark_Typography>
-          <Dark_Typography fontSize="Lable_Small" className="text-impo_Neutral_OnBackground">
+          </CustomTypography>
+          <CustomTypography fontSize="Lable_Small" className="text-impo_Neutral_OnBackground">
             {data.description}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       </div>
 

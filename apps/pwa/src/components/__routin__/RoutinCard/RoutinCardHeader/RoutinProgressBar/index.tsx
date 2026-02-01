@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { RoutinProgressBarPropsType } from './type';
 
@@ -8,12 +8,12 @@ const RoutinProgressBar = ({ completeRatio, completeTitle }: RoutinProgressBarPr
 
   return (
     <div className="w-full flex flex-col items-end gap-2">
-      <Dark_Typography
+      <CustomTypography
         fontSize="Lable_Small"
         className="text-impo_Surface_InverseSurface dark:text-impo_Surface_InverseOnSurface"
       >
         {completeTitle}
-      </Dark_Typography>
+      </CustomTypography>
       <div
         className="w-full rounded-full h-[6px] bg-impo_Neutral_Background dark:bg-impo_White"
         style={{

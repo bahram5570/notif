@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { WidgetCycleDateCardPmsProps } from './types';
 
@@ -18,12 +18,12 @@ const WidgetCycleDateCardPms = (props: WidgetCycleDateCardPmsProps) => {
         width: `${(props.pmsEnd - props.pmsStart) * props.percentRatio}%`,
       }}
     >
-      <Dark_Typography fontSize="Lable_Medium" className="text-impo_White">
+      <CustomTypography fontSize="Lable_Medium" className="text-impo_White">
         {props.startPmsLabel}
-      </Dark_Typography>
-      <Dark_Typography fontSize="Lable_Medium" className="text-impo_White">
+      </CustomTypography>
+      <CustomTypography fontSize="Lable_Medium" className="text-impo_White">
         {props.endPmsLabel}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import StarIcon from '@assets/icons/star.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { RATING_LIST } from '@components/FeedbackModal/FeedbackStars/constants';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { ReviewCommentPropsType } from './type';
 
@@ -17,26 +17,26 @@ const ReviewComment = ({ rate }: ReviewCommentPropsType) => {
       <div className="relative z-10 w-full flex justify-between items-center">
         <div className="flex items-center px-2 py-1 rounded-full bg-impo_White">
           <div className="flex items-center gap-1 pr-1">
-            <Dark_Typography fontSize="Lable_Large" className="!h-5 text-impo_Black">
+            <CustomTypography fontSize="Lable_Large" className="!h-5 text-impo_Black">
               {rateValue.toString()}
-            </Dark_Typography>
+            </CustomTypography>
 
             <StarIcon className="w-6 h-auto fill-impo_Yellow" />
 
             <div className="w-[1px] h-[20px] bg-impo_Pink_200 dark:bg-impo_Pink_700" />
           </div>
 
-          <Dark_Typography fontSize="Body_Small" className="text-impo_Black">
+          <CustomTypography fontSize="Body_Small" className="text-impo_Black">
             {RATING_LIST[rateValue - 1].script}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
-        <Dark_Typography fontSize="Lable_Medium" className="text-impo_White">
+        <CustomTypography fontSize="Lable_Medium" className="text-impo_White">
           امتیاز شما به این روتین
-        </Dark_Typography>
+        </CustomTypography>
       </div>
-      <Dark_Typography fontSize="Lable_Small" className="text-impo_White">
+      <CustomTypography fontSize="Lable_Small" className="text-impo_White">
         {description}
-      </Dark_Typography>
+      </CustomTypography>
     </div>
   );
 };

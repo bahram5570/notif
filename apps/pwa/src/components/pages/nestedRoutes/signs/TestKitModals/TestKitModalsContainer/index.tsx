@@ -1,6 +1,6 @@
 import CloseIcon from '@assets/icons/plus.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
 import { useRouter } from 'next/navigation';
 
 import { TestKitModalsContainerProps } from './types';
@@ -13,9 +13,9 @@ const TestKitModalsContainer = ({ title, children }: TestKitModalsContainerProps
       <div className="w-[72px] h-1 rounded-full bg-impo_Surface_OutlineVariant" />
 
       <div className="relative flex justify-center items-center h-12 w-full mb-4 mt-2">
-        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           {title}
-        </Dark_Typography>
+        </CustomTypography>
 
         <div className="w-12 h-12 flex items-center justify-center absolute top-0 left-0" onClick={() => router.back()}>
           <CloseIcon className="w-6 h-auto rotate-45 cursor-pointer stroke-impo_Neutral_OnSurface" />

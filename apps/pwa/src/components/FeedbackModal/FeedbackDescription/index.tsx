@@ -1,7 +1,7 @@
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Typography from '@components/ui/Dark_Typography';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
 
 import { MAX_LETTERS_COUNT } from '../constants';
 import { FeedbackDescriptionPropsType } from './type';
@@ -28,9 +28,9 @@ const FeedbackDescription = ({ description, descriptionHandler }: FeedbackDescri
   };
   return (
     <>
-      <Dark_Typography className="text-impo_Neutral_OnBackground w-full" fontSize="Body_Medium">
+      <CustomTypography className="text-impo_Neutral_OnBackground w-full" fontSize="Body_Medium">
         لطفا نظرت رو برامون بنویس تا بتونیم بررسی کنیم و در آینده سرویس بهتری ارائه بدیم.
-      </Dark_Typography>
+      </CustomTypography>
 
       <textarea
         placeholder="نظرت رو اینجا بنویس.."
@@ -42,9 +42,9 @@ const FeedbackDescription = ({ description, descriptionHandler }: FeedbackDescri
         className={`relative w-full rounded-xl p-2 border-[1px] outline-none resize-none mt-2 mb-1 placeholder:text-impo_Surface_OutlineVariant border-impo_Neutral_Surface bg-impo_Neutral_Background text-impo_Neutral_OnBackground`}
       />
 
-      <Dark_Typography className="text-impo_Surface_Outline pb-10 mr-auto" fontSize="Body_Medium">
+      <CustomTypography className="text-impo_Surface_Outline pb-10 mr-auto" fontSize="Body_Medium">
         {lettersCountScript}
-      </Dark_Typography>
+      </CustomTypography>
     </>
   );
 };

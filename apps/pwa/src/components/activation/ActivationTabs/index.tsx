@@ -1,4 +1,4 @@
-import Dark_Typography from '@components/ui/Dark_Typography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { ActivationTabsTypes } from './types';
 
@@ -21,12 +21,12 @@ const ActivationTabs = ({ tab, tabHandler, tabsList }: ActivationTabsTypes) => {
                       ${item.value === tab ? 'border-impo_Primary_Primary' : 'border-impo_Neutral_Surface'}
                     `}
         >
-          <Dark_Typography
+          <CustomTypography
             fontSize="Lable_Medium"
             className={`text-center ${item.value === tab ? 'text-impo_Primary_Primary' : 'text-impo_Surface_Outline'}`}
           >
             {item.text}
-          </Dark_Typography>
+          </CustomTypography>
         </div>
       ))}
     </div>

@@ -1,7 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@utils/scripts';
 
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
@@ -14,9 +14,9 @@ const WomanPairRoutin = (props: WomanPairRoutinPropsType) => {
   return (
     <>
       <div className="flex justify-end items-center border-b-[1px] pb-3 mb-3 border-impo_Neutral_Surface">
-        <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           {props.title}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       <div className="flex flex-col items-end rounded-xl p-3 ">
@@ -27,9 +27,9 @@ const WomanPairRoutin = (props: WomanPairRoutinPropsType) => {
         />
 
         <div className="w-full h-[1px] my-2 bg-impo_Grey_200" />
-        <Dark_Typography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
           {textShorter(props.description, 80)}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
 
       <Dark_Button

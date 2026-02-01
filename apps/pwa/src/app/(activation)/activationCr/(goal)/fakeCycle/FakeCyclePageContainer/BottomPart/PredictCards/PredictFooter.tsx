@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Typography from '@components/ui/Dark_Typography';
 
 import { PredictFooterProps } from './types';
 
@@ -26,9 +27,9 @@ const PredictFooter = ({ btn, script, isPregnancy, openDatesHandler }: PredictFo
           {btn}
         </Dark_Button>
 
-        <Dark_Typography fontSize="Lable_Medium" className="text-impo_Primary_OnPrimary">
+        <CustomTypography fontSize="Lable_Medium" className="text-impo_Primary_OnPrimary">
           {script}
-        </Dark_Typography>
+        </CustomTypography>
       </div>
     </div>
   );
