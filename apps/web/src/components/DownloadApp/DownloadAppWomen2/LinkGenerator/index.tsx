@@ -15,9 +15,9 @@ const LinkGenerator = ({ href, directId, title, Icon }: LinkGeneratorTypes) => {
       id={directId}
       target="_blank"
       onClick={() => callUserTracking(directId)}
-      className="rounded-full w-full h-12 lg:h-[60px] flex items-center justify-center gap-2 bg-impo_Black"
+      className="rounded-full w-full h-12 lg:h-[60px] flex items-center justify-center gap-2 bg-impo_Black dark:bg-impo_White"
     >
-      <CustomTypography fontSize="Title_Small" className="!text-impo_White">
+      <CustomTypography fontSize="Title_Small" className="!text-impo_White dark:!text-impo_Black">
         {title}
       </CustomTypography>
 
