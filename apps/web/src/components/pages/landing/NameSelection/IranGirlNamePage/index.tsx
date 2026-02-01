@@ -5,6 +5,7 @@ import DownloadApp from '@components/DownloadApp/DownloadAppWomen';
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
 import QrCode from '@components/QrCode';
 import AlphabetBtns from '@components/SelectName/AlphabetBtns';
+import AuthorProfile from '@components/SelectName/AuthorProfile';
 import NamesTable from '@components/SelectName/NamesTable';
 import SelectNameAuthorProfile from '@components/SelectName/SelectNameAuthorProfile';
 import CustomTypography from '@components/ui/CustomTypography';
@@ -24,12 +25,7 @@ const IranGirlNamePage = async () => {
       <div className="w-full flex flex-col items-center pb-12 mx-auto">
         <NameSelectionHeading />
         <QrCode />
-        <SelectNameAuthorProfile
-          name=" کیمیا رفیعی"
-          publishDate="31 مرداد"
-          readingTime=" 12 دقیقه برای خواندن"
-          imageUrl="/assets/images/doctorKimia.jpg"
-        />
+        <SelectNameAuthorProfile publishDate="31 مرداد" readingTime=" 12 دقیقه برای خواندن" />
 
         <div className=" landing_container px-3 pb-16">
           <AlphabetBtns
@@ -66,6 +62,12 @@ const IranGirlNamePage = async () => {
               />
             </div>
           ))}
+
+          <AuthorProfile
+            name="کیمیا رفیعی"
+            imageUrl="/assets/images/doctorKimia.jpg"
+            url="/author/6714fdf38b22ad802f6f0c56"
+          />
 
           <Description />
         </div>
