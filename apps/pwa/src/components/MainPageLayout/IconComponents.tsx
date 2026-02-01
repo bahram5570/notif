@@ -1,3 +1,4 @@
+import BellIcon from '@assets/icons/Bell.svg';
 import ArrowIcon from '@assets/icons/arrow.svg';
 import TicketsHistoryIcon from '@assets/icons/chats.svg';
 import CalendarIcon from '@assets/icons/headerCalendar.svg';
@@ -81,6 +82,16 @@ export const ProfileTicketsHistory = () => {
         iconElement={<HistoryIcon className="w-6" />}
       />
     </div>
+  );
+};
+
+export const NotificationIconComponent = () => {
+  return (
+    <IconComponentMaker
+      loadingId="notification"
+      path="/protected/notificationCenter"
+      iconElement={<BellIcon className="w-8 h-full stroke-impo_Surface_Outline" />}
+    />
   );
 };
 

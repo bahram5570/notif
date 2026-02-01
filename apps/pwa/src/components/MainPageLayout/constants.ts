@@ -3,6 +3,7 @@ import {
   BackToSubscriptionIconComponent,
   CalendarIconComponent,
   InfoIconComponent,
+  NotificationIconComponent,
   PregnancyCheckupBackButtonIconComponent,
   PrifileIconComponent,
   ProfileTicketsHistory,
@@ -23,4 +24,5 @@ export const iconsList: IconsListTypes = {
   [HeaderIconEnums.ProfileSupportTicket]: ProfileTicketsHistory,
   [HeaderIconEnums.BackToSubscription]: BackToSubscriptionIconComponent,
   [HeaderIconEnums.PregnancyCheckupBackButton]: PregnancyCheckupBackButtonIconComponent,
+  [HeaderIconEnums.Notification]: NotificationIconComponent,
 };
