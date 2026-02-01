@@ -4,6 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "node index.js"
+    "web:clear": "rimraf ../../apps/web/public/assets/shared",
+    "web:copy": "cpy ./src/** ../../apps/web/public/assets/shared",
+    "pwa:clear": "rimraf ../../apps/pwa/public/assets/shared",
+    "pwa:copy": "cpy ./src/** ../../apps/pwa/public/assets/shared",
+    "build": "npm run web:clear && npm run pwa:clear && npm run web:copy && npm run pwa:copy"
   }
 }

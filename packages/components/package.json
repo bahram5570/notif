@@ -13,7 +13,8 @@
     }
   },
   "scripts": {
-    "build": "rimraf dist && tsc --project tsconfig.json && tailwindcss -i ./src/styles.css -o ./dist/styles/index.css"
+    "clear": "rimraf dist",
+    "build": "npm run clear && tsc --project tsconfig.json && tailwindcss -i ./src/styles.css -o ./dist/styles/index.css"
   },
   "peerDependencies": {
     "react": "^18.0.0",

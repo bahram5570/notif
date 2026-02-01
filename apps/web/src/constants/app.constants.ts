@@ -1,6 +1,5 @@
 export const MAX_WIDTH = 2000;
 
-export const SMALL_SCREEN_MAX_WIDTH = 480;
 export const WEB_VIEW_MAX_WIDTH = 640;
 
 export const MAX_HEIGHT = 1400;

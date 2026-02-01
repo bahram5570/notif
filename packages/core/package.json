@@ -19,8 +19,9 @@
     "./configs/*": "./dist/configs/*.ts"
   },
   "scripts": {
+    "clear": "rimraf dist",
     "copy-theme-css": "cpy ./src/theme/theme.css ./dist/theme --flat",
     "copy-configs": "cpy ./src/configs ./dist/configs --flat",
-    "build": "rimraf dist && tsc --project tsconfig.json && npm run copy-theme-css && npm run copy-configs"
+    "build": "npm run clear && tsc --project tsconfig.json && npm run copy-theme-css && npm run copy-configs"
   }
 }

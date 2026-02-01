@@ -148,7 +148,7 @@ export const handleBodyUpdate = async (body: string) => {
   });
 
   // # Styling scripts
-  $('p, span, section,td, li, h1, h2, h3, h4, h5, h6').each((_, element) => {
+  $('p, span, section, td, li, h1, h2, h3, h4, h5, h6').each((_, element) => {
     const el = $(element);
 
     // # Skip Cheerio styling for elements when `data-no-cheerio-styling` is present
@@ -169,8 +169,23 @@ export const handleBodyUpdate = async (body: string) => {
   const endOfAbstract = $('h2, h3').first().prop('outerHTML') || '';
   const htmlList = html.split(endOfAbstract);
 
-  const abstractBody = htmlList[0];
-  const articleBody = endOfAbstract + htmlList[1];
+  let abstractBody = htmlList[0];
+  let articleBody = endOfAbstract + htmlList[1];
+
+  const $abstract = cheerio.load(abstractBody);
+  const $article = cheerio.load(articleBody);
+
+  const firstImageBlock = $abstract('p:has(img), figure:has(img)').first();
+
+  if (firstImageBlock.length) {
+    const insertTarget = $article('h2, h3').first();
+    const cloned = firstImageBlock.clone();
+    insertTarget.length ? insertTarget.before(cloned) : $article('body').prepend(cloned);
+    firstImageBlock.remove();
+  }
+
+  abstractBody = $abstract.html();
+  articleBody = $article.html();
 
   return { abstractBody, articleBody, articleSubjectList };
 };

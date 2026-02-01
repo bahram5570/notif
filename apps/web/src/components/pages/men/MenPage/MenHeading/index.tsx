@@ -9,6 +9,7 @@ const MenHeading = () => {
       contentElement={<MenHeadingContents />}
       image="/assets/images/menLandingImage.webp"
       backgroundImage="/assets/images/menLandingBackground.webp"
+      className={`dark:!bg-gradient-to-b dark:from-impo_Surface_InverseOnSurface dark:to-impo_Surface_InverseOnSurface`}
     />
   );
 };
