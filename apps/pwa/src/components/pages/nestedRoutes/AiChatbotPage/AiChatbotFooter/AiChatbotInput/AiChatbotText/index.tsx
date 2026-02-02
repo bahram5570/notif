@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-import ArrowIcon from '@assets/icons/arrow.svg';
 import StopIcon from '@assets/icons/stop.svg';
+import ArrowIcon from '@assets/shared/icons/arrow.svg';
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { toPersianNumbers } from '@utils/numbers';
 

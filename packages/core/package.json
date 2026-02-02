@@ -1,6 +1,6 @@
 {
   "name": "@repo/core",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "exports": {
     "./utils/*": {
@@ -28,11 +28,18 @@
     "./configs.css": "./dist/configs/index.css"
   },
   "scripts": {
-    "clear": "rimraf dist",
+    "clear:dist": "rimraf dist",
+    "clear:web-assets": "rimraf ../../apps/web/public/assets/shared",
+    "clear:pwa-assets": "rimraf ../../apps/pwa/public/assets/shared",
+    "copy:web-assets": "cpy ./src/assets/shared/** ../../apps/web/public/assets/shared",
+    "copy:pwa-assets": "cpy ./src/assets/shared/** ../../apps/pwa/public/assets/shared",
+    "build:assets": "npm run clear:web-assets && npm run clear:pwa-assets && npm run copy:web-assets && npm run copy:pwa-assets",
     "copy:theme-css": "cpy ./src/theme/theme.css ./dist/theme --flat",
     "copy:configs": "cpy ./src/configs !./src/configs/tailwind.config.css ./dist/configs --flat",
     "copy:tailwind-config-styles": "cd ./src/configs && tailwindcss -i ./tailwind.config.css -o ../../dist/configs/index.css",
-    "build": "npm run clear && tsc --project tsconfig.json && npm run copy:theme-css && npm run copy:configs && npm run copy:tailwind-config-styles"
+    "build:configs": "npm run clear:dist && npm run copy:theme-css && npm run copy:configs && npm run copy:tailwind-config-styles",
+    "build:packages": "tsc --project tsconfig.json",
+    "build": "npm run clear:dist && npm run build:assets && npm run build:configs && npm run build:packages"
   },
   "peerDependencies": {
     "react": "^18.0.0",

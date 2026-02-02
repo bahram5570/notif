@@ -1,4 +1,4 @@
-import ArrowIcon from '@assets/icons/arrow.svg';
+import ArrowIcon from '@assets/shared/icons/arrow.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 

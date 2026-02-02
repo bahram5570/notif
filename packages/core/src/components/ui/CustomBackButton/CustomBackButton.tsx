@@ -2,14 +2,13 @@
 
 import { useMemo } from 'react';
 
-// import ArrowIcon from '@assets/icons/arrow.svg';
-// import ArrowIcon from '../../../../../assets/src/icons/arrow.svg';
+import ArrowIcon from '@assets/shared/icons/arrow.svg';
 
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { CustomSpinner } from '../CustomSpinner';
 import { CustomBackButtonTypes } from './types';
 
-const loadingId = 'BackButton';
+const loadingId = 'CustomBackButton';
 
 export const CustomBackButton = (props: CustomBackButtonTypes) => {
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
@@ -75,7 +74,7 @@ export const CustomBackButton = (props: CustomBackButtonTypes) => {
                   ${props.className}
                 `}
     >
-      {/* {!isLoading && <ArrowIcon className={`w-6 h-auto m-auto stroke-2  ${colors.iconColor}`} />} */}
+      {!isLoading && <ArrowIcon className={`w-6 h-auto m-auto stroke-2  ${colors.iconColor}`} />}
       {isLoading && <CustomSpinner className={`${colors.spinnerColor}`} />}
     </div>
   );

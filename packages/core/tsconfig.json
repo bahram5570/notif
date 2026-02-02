@@ -4,7 +4,11 @@
   "compilerOptions": {
     "outDir": "dist",
     "declaration": true,
-    "emitDeclarationOnly": false
+    "emitDeclarationOnly": false,
+    "types": ["./src/assets/types"],
+    "paths": {
+      "@assets/*": ["./src/assets/*"]
+    }
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist", "src/configs/*"]

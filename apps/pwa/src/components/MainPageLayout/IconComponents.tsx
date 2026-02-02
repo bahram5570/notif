@@ -1,9 +1,9 @@
-import ArrowIcon from '@assets/icons/arrow.svg';
 import TicketsHistoryIcon from '@assets/icons/chats.svg';
 import CalendarIcon from '@assets/icons/headerCalendar.svg';
 import ProfileIcon from '@assets/icons/headerProfile.svg';
 import HistoryIcon from '@assets/icons/history.svg';
 import InfoIcon from '@assets/icons/infoIcon.svg';
+import ArrowIcon from '@assets/shared/icons/arrow.svg';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
