@@ -1,13 +1,13 @@
 import AttachIcon from '@assets/icons/attach.svg';
 import SendIcon from '@assets/icons/ticketSend.svg';
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { toPersianNumbers } from '@utils/numbers';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import ChatFooterMessageModal from './ChatFooterMessageModal';
 import useTextValue from './__hooks__/useTextValue';
@@ -50,7 +50,7 @@ const ChatFooterMessageInput = () => {
           style={{ opacity: text.trim() === '' ? '0.5' : '1' }}
           className="w-12 h-12 min-w-12 min-h-12 rounded-full flex items-center justify-center cursor-pointer bg-impo_Primary_Primary"
         >
-          {textLoading && <Dark_Spinner className="border-impo_White" size={20} />}
+          {textLoading && <CustomSpinner className="border-impo_White" size={20} />}
           {!textLoading && <SendIcon className="w-5 h-auto ml-1 stroke-impo_White fill-impo_White" />}
         </div>
       </div>

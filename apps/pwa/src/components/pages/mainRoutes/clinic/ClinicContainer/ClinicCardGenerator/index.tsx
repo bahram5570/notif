@@ -3,7 +3,7 @@ import { addCommas } from '@utils/numbers';
 
 import CustomImage from '@components/ui/CustomImage';
 import useAnalytics from '@hooks/useAnalytics';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { ClinicCardGeneratorProps } from './types';
 

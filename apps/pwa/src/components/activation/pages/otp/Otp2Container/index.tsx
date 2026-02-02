@@ -1,9 +1,9 @@
 'use client';
 
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { toEnglishNumbers } from '@utils/numbers';
 
 import MainActivationModule from '@components/activation/MainActivationModule';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 import useIsRendered from '@hooks/useIsRendered';
 
 import Codes from './Codes';
@@ -97,7 +97,7 @@ const Otp2Container = ({
 
             {!isLoading && !isLoginRegisterSuccess && <EditLink isPhone={isPhone ? true : false} />}
 
-            {isLoading && <Dark_Spinner className="border-impo_Primary_Primary" />}
+            {isLoading && <CustomSpinner className="border-impo_Primary_Primary" />}
 
             {isLoginRegisterSuccess && <LoginSuccess />}
             {hasOptionList && (

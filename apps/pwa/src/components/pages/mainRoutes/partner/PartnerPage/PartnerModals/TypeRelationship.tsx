@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 import Hamdel from '@assets/icons/hamdel.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import PartnerRadioButton from './PartnerRadioButton';
@@ -40,11 +40,11 @@ const TypeRelationship = () => {
 
       <PartnerRadioButton onChange={changeValueHandler} value={distanceTypeValue} />
 
-      <Dark_Button onClick={onClick}>
+      <CustomButton onClick={onClick}>
         <CustomTypography fontSize="Lable_Large" className="text-impo_White">
           باشه
         </CustomTypography>
-      </Dark_Button>
+      </CustomButton>
     </div>
   );
 };

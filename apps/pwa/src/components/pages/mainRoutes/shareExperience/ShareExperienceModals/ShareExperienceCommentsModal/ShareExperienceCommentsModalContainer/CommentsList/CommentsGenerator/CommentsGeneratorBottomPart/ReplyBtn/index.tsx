@@ -1,11 +1,11 @@
 import ArrowIcon from '@assets/icons/arrowElbowDown.svg';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { NewReplyQueriesTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceModals/ShareExperienceNewReplyModal/types';
 import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { ReplyBtnProps } from './types';
 
@@ -46,7 +46,7 @@ const ReplyBtn = ({ avatar, name, shareId, commentId, userId }: ReplyBtnProps) =
 
         {isLoading && (
           <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center pointer-events-none">
-            <Dark_Spinner className="border-impo_Surface_Outline" size={16} />
+            <CustomSpinner className="border-impo_Surface_Outline" size={16} />
           </div>
         )}
       </div>

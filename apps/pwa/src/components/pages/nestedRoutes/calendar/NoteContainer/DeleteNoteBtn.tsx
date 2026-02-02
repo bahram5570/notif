@@ -2,8 +2,8 @@ import TrashIcon from '@assets/icons/trash.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 const DeleteNoteBtn = () => {
   const { newQueryParamsHandler } = useQueryParamsHandler();

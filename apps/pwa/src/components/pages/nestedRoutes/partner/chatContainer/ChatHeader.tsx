@@ -1,10 +1,10 @@
 import ArrowIcon from '@assets/icons/arrow.svg';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import useCalendarDateFormat from '../__hooks__/useCalendarDateFormat';
 import ProgressBar from './ProgressBar';
@@ -43,7 +43,7 @@ const ChatHeader = ({ createTime, partnerAvatar, partnerName, progress, avatar }
           </div>
 
           <div className="cursor-pointer flex justify-center items-center w-8 h-8" onClick={onClick}>
-            {pageNavigationLoading === 'back' && <Dark_Spinner size={28} className="border-impo_Surface_Outline" />}
+            {pageNavigationLoading === 'back' && <CustomSpinner size={28} className="border-impo_Surface_Outline" />}
             {pageNavigationLoading !== 'back' && (
               <ArrowIcon className="w-6 h-full stroke-2 stroke-impo_Surface_Outline" />
             )}

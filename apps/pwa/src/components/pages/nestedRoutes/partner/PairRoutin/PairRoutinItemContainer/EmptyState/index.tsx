@@ -1,8 +1,8 @@
 import ArrowIcon from '@assets/icons/arrow.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Button from '@components/ui/Dark_Button';
 import { useRouter } from 'next/navigation';
 
 const EmptyState = () => {
@@ -16,7 +16,7 @@ const EmptyState = () => {
     <div className="p-4 flex flex-col gap-4">
       <CustomImage src="/assets/images/empty state.webp" />
       <div className="flex justify-center items-center">
-        <Dark_Button
+        <CustomButton
           onClick={onClick}
           className="!bg-impo_Surface_OnSurfaceVariant dark:!bg-impo_Surface_SurfaceVariant !text-impo_Primary_OnPrimary !border-impo_Surface_OnSurfaceVariant dark:!border-impo_Surface_SurfaceVariant max-w-fit"
         >
@@ -28,7 +28,7 @@ const EmptyState = () => {
             </div>
             <ArrowIcon className="w-6 h-auto stroke-2 stroke-impo_Primary_OnPrimary" />
           </div>
-        </Dark_Button>
+        </CustomButton>
       </div>
     </div>
   );

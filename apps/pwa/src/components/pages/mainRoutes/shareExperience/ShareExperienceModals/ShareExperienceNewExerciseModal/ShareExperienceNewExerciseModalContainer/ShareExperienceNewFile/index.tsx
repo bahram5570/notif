@@ -1,8 +1,8 @@
 import UploadIcon from '@assets/icons/gallery.svg';
 import CrossIcon from '@assets/icons/plus.svg';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 
 import { ShareExperienceNewFileProps } from './types';
 
@@ -37,7 +37,7 @@ const ShareExperienceNewFile = ({
 
           {uploadImageLoading && (
             <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center backdrop-blur-md rounded-xl">
-              <Dark_Spinner className="border-impo_Neutral_Surface" />
+              <CustomSpinner className="border-impo_Neutral_Surface" />
             </div>
           )}
         </div>

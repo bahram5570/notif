@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 import { permissionHandler } from './__utils__';
 import { isDevelopeMode } from '@repo/core/utils/system';
 
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import { useRouter } from 'next/navigation';
 
 const PermissionsProvider = () => {

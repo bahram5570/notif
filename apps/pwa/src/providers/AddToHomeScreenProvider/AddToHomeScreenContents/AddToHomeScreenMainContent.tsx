@@ -1,8 +1,7 @@
 import { useMemo } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import Dark_Button from '@components/ui/Dark_Button';
 
 import AddToHomeScreenContainer from './AddToHomeScreenContainer';
 import useAddToHomeConstants from './__hooks__/useAddToHomeConstants';
@@ -41,9 +40,9 @@ const AddToHomeScreenMainContent = ({ onClick, operatingSystem }: AddToHomeScree
           ))}
         </div>
 
-        <Dark_Button onClick={onClick} fontSize="Lable_Large">
+        <CustomButton onClick={onClick} fontSize="Lable_Large">
           {data.btnScript}
-        </Dark_Button>
+        </CustomButton>
       </>
     </AddToHomeScreenContainer>
   );

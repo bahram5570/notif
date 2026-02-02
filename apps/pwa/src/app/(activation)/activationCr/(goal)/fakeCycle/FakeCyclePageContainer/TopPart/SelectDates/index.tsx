@@ -1,4 +1,4 @@
-import Dark_Button from '@components/ui/Dark_Button';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
 import SelectDatesTable from './SelectDatesTable';
 import { SelectDatesProps } from './types';
@@ -22,9 +22,9 @@ const SelectDates = ({
         isPregnancy={isPregnancy}
       />
 
-      <Dark_Button fontSize="Lable_Large" className="h-[48px]" onClick={() => {}} navigationLoadingId="SelectDates">
+      <CustomButton fontSize="Lable_Large" className="h-[48px]" onClick={() => {}} navigationLoadingId="SelectDates">
         {selectDatesBtnText}
-      </Dark_Button>
+      </CustomButton>
     </div>
   );
 };

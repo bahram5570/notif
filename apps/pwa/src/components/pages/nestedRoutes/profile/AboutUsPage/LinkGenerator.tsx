@@ -2,7 +2,7 @@ import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { externalLink } from '@utils/navigation';
 
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import { LinkGeneratorType } from './type';
 

@@ -1,9 +1,9 @@
-import { sizesMaker } from './__utils__';
+import { CustomSpinnerTypes } from './types';
 
-import { Dark_SpinnerTypes } from './types';
+export const CustomSpinner = ({ className, size }: CustomSpinnerTypes) => {
+  const selectedSize = size || '24px';
+  const sizes = { width: selectedSize, minWidth: selectedSize, height: selectedSize, minHeight: selectedSize };
 
-const Dark_Spinner = ({ className, size }: Dark_SpinnerTypes) => {
-  const sizes = sizesMaker(size);
   const defaultBorderColor = className?.includes('border-') ? '' : 'border-impo_Primary_OnPrimary';
 
   return (
@@ -13,5 +13,3 @@ const Dark_Spinner = ({ className, size }: Dark_SpinnerTypes) => {
     />
   );
 };
-
-export default Dark_Spinner;

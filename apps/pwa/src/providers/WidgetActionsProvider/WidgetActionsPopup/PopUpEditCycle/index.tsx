@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
+
 import MainPageLayout from '@components/MainPageLayout';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 import useAnalytics from '@hooks/useAnalytics';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
 
@@ -26,7 +27,7 @@ const PopUpEditCycle = ({ popUp, isPopUpActionCommpleteHandler }: PopUpEditCycle
 
   return (
     <MainPageLayout rightElement="BackButton" paddingTop={0} paddingBottom={0}>
-      {isLoading && <Dark_Spinner className="border-impo_Primary_Primary" />}
+      {isLoading && <CustomSpinner className="border-impo_Primary_Primary" />}
 
       {!isLoading && profileData && popUp && (
         <div className="flex flex-col items-center px-4 py-8 min-h-[100dvh]">

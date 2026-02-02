@@ -1,8 +1,8 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@utils/scripts';
 
 import CustomSlider from '@components/ui/CustomSlider';
-import Dark_Button from '@components/ui/Dark_Button';
 import useWidgetActions from '@hooks/useWidgetActions';
 
 import { InstallationPurposePropsType } from './type';
@@ -18,7 +18,7 @@ const InstallationPurpose = ({ changeStatusBtns }: InstallationPurposePropsType)
 
       <CustomSlider gap={10} sidePadding={16}>
         {changeStatusBtns.map((item, index) => (
-          <Dark_Button
+          <CustomButton
             key={index}
             className="min-w-fit"
             fontSize="Lable_Large"
@@ -30,7 +30,7 @@ const InstallationPurpose = ({ changeStatusBtns }: InstallationPurposePropsType)
             }}
           >
             {item.text}
-          </Dark_Button>
+          </CustomButton>
         ))}
       </CustomSlider>
     </div>

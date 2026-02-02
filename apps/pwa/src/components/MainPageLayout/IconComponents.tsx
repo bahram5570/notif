@@ -4,9 +4,9 @@ import CalendarIcon from '@assets/icons/headerCalendar.svg';
 import ProfileIcon from '@assets/icons/headerProfile.svg';
 import HistoryIcon from '@assets/icons/history.svg';
 import InfoIcon from '@assets/icons/infoIcon.svg';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
-import Dark_Spinner from '@components/ui/Dark_Spinner';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import Link from 'next/link';
 
 import { ICONS_SIZE } from './constants';
@@ -113,7 +113,7 @@ const IconComponentMaker: IconComponentMakerProps = ({ iconElement, path, loadin
       style={{ width: ICONS_SIZE, height: ICONS_SIZE }}
       onClick={clickHandler}
     >
-      {pageNavigationLoading === id && <Dark_Spinner size={28} className="border-impo_Surface_Outline" />}
+      {pageNavigationLoading === id && <CustomSpinner size={28} className="border-impo_Surface_Outline" />}
       {pageNavigationLoading !== id && iconElement}
     </div>
   );

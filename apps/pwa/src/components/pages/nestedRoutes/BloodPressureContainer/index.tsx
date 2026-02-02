@@ -2,9 +2,10 @@
 
 import { useState } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import Dark_Button from '@components/ui/Dark_Button';
 
 import BloodPressureBtn from './BloodPressureBtn';
 import BloodPressureHeader from './BloodPressureHeader';
@@ -45,7 +46,7 @@ const BloodPressureContainer = () => {
         </div>
         <footer className="mt-auto">
           <div className="flex flex-col justify-center items-center p-4">
-            <Dark_Button
+            <CustomButton
               onClick={onClick}
               className="h-10"
               fontSize="Lable_Large"
@@ -53,7 +54,7 @@ const BloodPressureContainer = () => {
               isLoading={isLoading}
             >
               ثبت اطلاعات
-            </Dark_Button>
+            </CustomButton>
           </div>
         </footer>
       </div>

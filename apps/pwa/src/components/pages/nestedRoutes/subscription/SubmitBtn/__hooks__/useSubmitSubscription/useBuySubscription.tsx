@@ -4,7 +4,7 @@ import { externalLink } from '@utils/navigation';
 import { getUserCookie } from '@actions/cookie.actions';
 import useApi from '@hooks/useApi';
 import useCustomToast from '@hooks/useCustomToast';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { BuySubscriptionResponseTypes } from './types';
 

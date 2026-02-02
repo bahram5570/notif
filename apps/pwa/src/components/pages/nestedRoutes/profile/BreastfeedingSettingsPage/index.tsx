@@ -2,8 +2,9 @@
 
 import { Fragment } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+
 import MainPageLayout from '@components/MainPageLayout';
-import Dark_Button from '@components/ui/Dark_Button';
 import { ChildTypeEnum } from '@constants/activation.constants';
 
 import BreastfeedingSettingInputGenerator from './BreastfeedingSettingInputGenerator';
@@ -42,14 +43,14 @@ const BreastfeedingSettingsPage = () => {
         </div>
 
         <div className="flex flex-col justify-center items-center mt-auto">
-          <Dark_Button
+          <CustomButton
             className="w-2/4"
             isLoading={isLoading}
             onClick={submitHandler}
             isDisable={!checkIsModified() || checkIsEmptyChildName()}
           >
             ویرایش
-          </Dark_Button>
+          </CustomButton>
         </div>
       </div>
 

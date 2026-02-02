@@ -1,6 +1,5 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import Dark_Button from '@components/ui/Dark_Button';
 
 import KitTestDigitalBabyCheckGenerator from './KitTestDigitalBabyCheckGenerator';
 import useSelectedDigitalBabyCheck from './__hooks__/useSelectedDigitalBabyCheck';
@@ -35,14 +34,14 @@ const KitTestDigitalBabyCheck = ({ submitHandler, AnalytisId }: KitTestDigitalBa
         ))}
       </div>
 
-      <Dark_Button
+      <CustomButton
         id={AnalytisId}
         fontSize="Lable_Large"
         onClick={clickHandler}
         isDisable={selectedDigitalBabyCheck === null}
       >
         ادامه
-      </Dark_Button>
+      </CustomButton>
     </div>
   );
 };

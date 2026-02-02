@@ -1,13 +1,13 @@
 'use client';
 
 import ImpoIcon from '@assets/images/questionsImpo.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { getUserCookie } from '@actions/cookie.actions';
-import Dark_Button from '@components/ui/Dark_Button';
 import { InstallationPurposeEnum } from '@constants/activation.constants';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import usePhaseChangePayload from '@providers/PhaseChangeProvider/__hooks__/usePhaseChangePayload';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 const loadingId = 'completeActionId';
 
@@ -60,14 +60,14 @@ const Step1 = () => {
         </CustomTypography>
       </div>
 
-      <Dark_Button
+      <CustomButton
         fontSize="Lable_Large"
         onClick={selectHandler}
         className="mt-auto !w-[204px]"
         isLoading={loadingId === pageNavigationLoading}
       >
         بزن بریم
-      </Dark_Button>
+      </CustomButton>
     </div>
   );
 };

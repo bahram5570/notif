@@ -1,7 +1,7 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Button from '@components/ui/Dark_Button';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 const ErrorPage = () => {
@@ -22,7 +22,7 @@ const ErrorPage = () => {
         </CustomTypography>
       </div>
 
-      <Dark_Button onClick={() => window.location.reload()}>تلاش مجدد</Dark_Button>
+      <CustomButton onClick={() => window.location.reload()}>تلاش مجدد</CustomButton>
     </div>
   );
 };

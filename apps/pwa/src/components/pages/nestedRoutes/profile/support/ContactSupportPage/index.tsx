@@ -3,14 +3,14 @@
 import { useState } from 'react';
 
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toPersianNumbers } from '@utils/numbers';
 
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import Dark_Button from '@components/ui/Dark_Button';
 import useProfileData from '@hooks/__profile__/useProfileData';
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import FileInput from './FileInput';
 import { ValuesHandlerTypes } from './FileInput/type';
@@ -61,7 +61,7 @@ const ContactSupportPage = () => {
                   <FileInput fileName={values.fileName} valuesHandler={valuesHandler} />
                 </div>
 
-                <Dark_Button
+                <CustomButton
                   className="mt-auto"
                   isDisable={!values.text}
                   isLoading={submitLoading}
@@ -69,7 +69,7 @@ const ContactSupportPage = () => {
                   onClick={() => submitHandler({ fileName: values.fileName, text: values.text })}
                 >
                   ثبت نظر
-                </Dark_Button>
+                </CustomButton>
               </>
             )}
           </div>

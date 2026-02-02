@@ -2,7 +2,7 @@ import CheckListIcon from '@assets/icons/checkList.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@utils/scripts';
 
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { NoteItemPropsType } from './type';
 

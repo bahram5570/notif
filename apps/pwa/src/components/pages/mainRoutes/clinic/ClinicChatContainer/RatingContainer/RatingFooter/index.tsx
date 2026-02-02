@@ -1,6 +1,6 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import { RATING_FOOTER_HEIGHT } from './constants';
@@ -17,9 +17,9 @@ const RatingFooter = ({ rate, onClick }: RatingFooterProps) => {
       </CustomTypography>
 
       {rate > 0 && (
-        <Dark_Button fontSize="Lable_Large" onClick={onClick}>
+        <CustomButton fontSize="Lable_Large" onClick={onClick}>
           ثبت نظر
-        </Dark_Button>
+        </CustomButton>
       )}
     </div>
   );

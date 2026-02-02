@@ -1,7 +1,7 @@
-import { Dark_ButtonTypes } from '@components/ui/Dark_Button/types';
+import { CustomButtonTypes } from '@repo/core/components/ui/CustomButton';
 
 export type ActivationBtnProps = Pick<
-  Dark_ButtonTypes,
+  CustomButtonTypes,
   'children' | 'isLoading' | 'navigationLoadingId' | 'onClick'
 > & {
   showBtn?: boolean;

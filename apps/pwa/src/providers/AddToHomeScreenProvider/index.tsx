@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 import { isDevelopeMode } from '@repo/core/utils/system';
 
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import AddToHomeScreenContents from './AddToHomeScreenContents';
 

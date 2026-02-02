@@ -1,13 +1,13 @@
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toPersianNumbers } from '@utils/numbers';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import useAnalytics from '@hooks/useAnalytics';
 import useCustomToast from '@hooks/useCustomToast';
 import useFileUpload from '@hooks/useFileUpload';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useRouter } from 'next/navigation';
 
 import FileInput from './FileInput';
@@ -67,9 +67,9 @@ const SpecialistProblemInputs = ({ info, infoHelper, questionValuesHandler }: Sp
       </div>
 
       <div className="w-full mt-auto pt-5">
-        <Dark_Button onClick={paymentHandler} isLoading={pageNavigationLoading === loadingId}>
+        <CustomButton onClick={paymentHandler} isLoading={pageNavigationLoading === loadingId}>
           مرحله بعد
-        </Dark_Button>
+        </CustomButton>
       </div>
 
       <SpecialistProblemModal fileDataHandler={fileDataHandler} uploadImageLoading={uploadImageLoading} />

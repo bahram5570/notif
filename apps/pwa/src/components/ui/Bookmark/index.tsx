@@ -5,7 +5,7 @@ import { BookmarkPropsType } from './type';
 
 const Bookmark = ({ clickHandler, isBookmarked, id }: BookmarkPropsType) => {
   return (
-    <div className="w-8 h-8  flex items-center justify-center  pointer-events-auto" onClick={clickHandler} id={id}>
+    <div className="w-8 h-8 flex items-center justify-center  pointer-events-auto" onClick={clickHandler} id={id}>
       {!isBookmarked && (
         <BookmarkEmptyIcon className="w-5 h-auto stroke-impo_Surface_InverseSurface dark:stroke-impo_Surface_InverseOnSurface" />
       )}

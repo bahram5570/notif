@@ -19,23 +19,20 @@
       "import": "./dist/components/*/index.js",
       "types": "./dist/components/*/index.d.ts"
     },
-    "./components.css": {
-      "import": "./dist/components/index.css",
-      "default": "./dist/components/index.css"
-    },
     "./theme/*": {
       "import": "./dist/theme/*.js",
       "types": "./dist/theme/*.d.ts"
     },
     "./theme.css": "./dist/theme/theme.css",
-    "./configs/*": "./dist/configs/*.ts"
+    "./configs/*": "./dist/configs/*.ts",
+    "./configs.css": "./dist/configs/index.css"
   },
   "scripts": {
     "clear": "rimraf dist",
-    "copy:configs": "cpy ./src/configs ./dist/configs --flat",
     "copy:theme-css": "cpy ./src/theme/theme.css ./dist/theme --flat",
-    "copy:components-styles": "cd ./src/components && tailwindcss -i ./components.css -o ../../dist/components/index.css",
-    "build": "npm run clear && tsc --project tsconfig.json && npm run copy:theme-css && npm run copy:configs && npm run copy:components-styles"
+    "copy:configs": "cpy ./src/configs !./src/configs/tailwind.config.css ./dist/configs --flat",
+    "copy:tailwind-config-styles": "cd ./src/configs && tailwindcss -i ./tailwind.config.css -o ../../dist/configs/index.css",
+    "build": "npm run clear && tsc --project tsconfig.json && npm run copy:theme-css && npm run copy:configs && npm run copy:tailwind-config-styles"
   },
   "peerDependencies": {
     "react": "^18.0.0",

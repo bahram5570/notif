@@ -1,8 +1,8 @@
-import { FONTS_ANDROID } from '@repo/core/theme/fonts';
+import { FONTS_ANDROID } from '../../../theme/fonts';
 
-export interface Dark_ButtonTypes {
-  testId?: string;
+export interface CustomButtonTypes {
   id?: string;
+  testId?: string;
   className?: string;
   isDisable?: boolean;
   isLoading?: boolean;

@@ -3,7 +3,7 @@ import PenIcon from '@assets/icons/pen.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useSignDateState from '@hooks/__sign__/useSignDateState';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { SelectedDayNoNotePropsType } from './type';
 

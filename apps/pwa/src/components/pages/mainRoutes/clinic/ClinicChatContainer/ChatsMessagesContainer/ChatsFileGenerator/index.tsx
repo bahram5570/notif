@@ -1,9 +1,9 @@
 import DownloadIcon from '@assets/icons/download.svg';
 import DownloadedIcon from '@assets/icons/downloaded.svg';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@utils/scripts';
 
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 import useFileDownload from '@hooks/useFileDownload';
 
 import { ChatsFileGeneratorProps } from './types';
@@ -22,7 +22,7 @@ const ChatsFileGenerator = ({ media }: ChatsFileGeneratorProps) => {
       >
         {!isDownloaded && !downloadLoading && <DownloadIcon className="w-6 h-auto fill-impo_Primary_OnPrimary" />}
         {isDownloaded && !downloadLoading && <DownloadedIcon className="w-6 h-auto stroke-impo_Primary_OnPrimary" />}
-        {downloadLoading && <Dark_Spinner size={20} className="border-impo_Neutral_Surface" />}
+        {downloadLoading && <CustomSpinner size={20} className="border-impo_Neutral_Surface" />}
       </div>
 
       <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">

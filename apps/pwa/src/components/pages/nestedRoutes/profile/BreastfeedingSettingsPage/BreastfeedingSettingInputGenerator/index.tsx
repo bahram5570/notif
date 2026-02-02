@@ -3,7 +3,7 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import ContentWrapper from '@components/ui/ContentWrapper';
 import Dark_RadioButton from '@components/ui/Dark_RadioButton';
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import BreastfeedingSettingBtnModal from './BreastfeedingSettingBtnModal';
 import { BreastfeedingSettingInputGeneratorPropsType } from './type';

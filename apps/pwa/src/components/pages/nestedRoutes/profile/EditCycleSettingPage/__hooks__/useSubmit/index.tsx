@@ -3,8 +3,8 @@ import { CycleThemeEnum } from '@services/loginServices/enum';
 import { getUserCookie, setUserCookie } from '@actions/cookie.actions';
 import { APP_VERSION } from '@constants/app.constants';
 import useApi from '@hooks/useApi';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 const loadingId = 'EditCycleContainer';
 

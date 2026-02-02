@@ -1,8 +1,8 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Button from '@components/ui/Dark_Button';
 import useWidgetActions from '@hooks/useWidgetActions';
 
 import PopupTwoStepsContainer from '../PopupTwoStepsContainer';
@@ -37,7 +37,7 @@ const PopupInteractionReward = ({ data, hasTwoStepsInteractionReward }: PopupInt
             {data.description}
           </CustomTypography>
 
-          <Dark_Button
+          <CustomButton
             fontSize="Title_Small"
             className="mt-auto h-12"
             onClick={submitHandler}
@@ -47,7 +47,7 @@ const PopupInteractionReward = ({ data, hasTwoStepsInteractionReward }: PopupInt
             }}
           >
             {data.button.text}
-          </Dark_Button>
+          </CustomButton>
         </div>
       </>
     </PopupTwoStepsContainer>

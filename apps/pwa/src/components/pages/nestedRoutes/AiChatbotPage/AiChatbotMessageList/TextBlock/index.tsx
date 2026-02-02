@@ -4,7 +4,7 @@ import { decodeUnicode } from '../AiMessage/utils';
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { toPersianNumbers } from '@utils/numbers';
 
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import { TextBlockProps } from './type';
 

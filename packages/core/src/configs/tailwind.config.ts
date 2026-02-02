@@ -3,22 +3,41 @@ import colors from 'tailwindcss/colors';
 
 const preset: Config = {
   darkMode: 'class',
-  content: [],
+  content: [
+    '../hooks/**/*.{js,ts,jsx,tsx,mdx}',
+    '../providers/**/*.{js,ts,jsx,tsx,mdx}',
+    '../components/**/*.{js,ts,jsx,tsx,mdx}',
+  ],
   theme: {
+    extend: {
+      keyframes: {
+        pageNavigation: {
+          '0%': { transform: 'translateX(100%)' },
+          '100%': { transform: 'translateX(10%)' },
+        },
+      },
+      animation: {
+        pageNavigation: 'pageNavigation 5s linear forwards',
+      },
+    },
     colors: {
       ...colors,
       impo_Transparent: 'transparent',
       impo_Black: 'var(--color-Black)',
       impo_White: 'var(--color-White)',
       impo_OnBlack: 'var(--color-OnBlack)',
+
       impo_Primary_Primary: 'var(--color-Primary_Primary)',
       impo_Primary_OnPrimary: 'var(--color-Primary_OnPrimary)',
       impo_Primary_PrimaryContainer: 'var(--color-Primary_PrimaryContainer)',
       impo_Primary_OnPrimaryContainer: 'var(--color-Primary_OnPrimaryContainer)',
+
       impo_PrimaryMan_PrimaryMan: 'var(--color-PrimaryMan_PrimaryMan)',
       impo_PrimaryMan_OnPrimaryMan: 'var(--color-PrimaryMan_OnPrimaryMan)',
       impo_PrimaryMan_PrimaryContainerMan: 'var(--color-PrimaryMan_PrimaryContainerMan)',
       impo_PrimaryMan_OnPrimaryContainerMan: 'var(--color-PrimaryMan_OnPrimaryContainerMan)',
+
+      impo_Secondary_Secondary: 'var(--color-Secondary_Secondary)',
 
       impo_Cycle_Pms_Eyebrow: 'var(--color-Cycle_Pms_Eyebrow)',
       impo_Cycle_Pms_Title: 'var(--color-Cycle_Pms_Title)',
@@ -64,23 +83,26 @@ const preset: Config = {
       impo_Cycle_Feeding_Background: 'var(--color-Cycle_Feeding_Background)',
       impo_Cycle_Feeding_Frame: 'var(--color-Cycle_Feeding_Frame)',
 
-      impo_Secondary_Secondary: 'var(--color-Secondary_Secondary)',
       impo_Success_Success: 'var(--color-Success_Success)',
       impo_Success_SuccessContainer: 'var(--color-Success_SuccessContainer)',
       impo_Success_OnSuccess: 'var(--color-Success_OnSuccess)',
       impo_Success_OnSuccessContainer: 'var(--color-Success_OnSuccessContainer)',
+
       impo_Neutral_Background: 'var(--color-Neutral_Background)',
       impo_Neutral_OnBackground: 'var(--color-Neutral_OnBackground)',
       impo_Neutral_Surface: 'var(--color-Neutral_Surface)',
       impo_Neutral_OnSurface: 'var(--color-Neutral_OnSurface)',
+
       impo_Error_Error: 'var(--color-Error_Error)',
       impo_Error_OnError: 'var(--color-Error_OnError)',
       impo_Error_ErrorContainer: 'var(--color-Error_ErrorContainer)',
       impo_Error_OnErrorContainer: 'var(--color-Error_OnErrorContainer)',
+
       impo_Warning_Warning: 'var(--color-Warning_Warning)',
       impo_Warning_OnWarning: 'var(--color-Warning_OnWarning)',
       impo_Warning_WarininContainer: 'var(--color-Warning_WarininContainer)',
       impo_Warning_OnWarininContainer: 'var(--color-Warning_OnWarininContainer)',
+
       impo_Surface_Scrim: 'var(--color-Surface_Scrim)',
       impo_Surface_Outline: 'var(--color-Surface_Outline)',
       impo_Surface_OutlineVariant: 'var(--color-Surface_OutlineVariant)',
@@ -88,6 +110,7 @@ const preset: Config = {
       impo_Surface_OnSurfaceVariant: 'var(--color-Surface_OnSurfaceVariant)',
       impo_Surface_InverseSurface: 'var(--color-Surface_InverseSurface)',
       impo_Surface_InverseOnSurface: 'var(--color-Surface_InverseOnSurface)',
+
       impo_Calendar_PMS_Background: 'var(--color-Calendar_PMS_Background)',
       impo_Calendar_PMS_OnBackground: 'var(--color-Calendar_PMS_OnBackground)',
       impo_Calendar_Period_Background: 'var(--color-Calendar_Period_Background)',
@@ -101,6 +124,7 @@ const preset: Config = {
       impo_Calendar_Breastfeeding_Background1: 'var(--color-Calendar_Breastfeeding_Background1)',
       impo_Calendar_Breastfeeding_Background2: 'var(--color-Calendar_Breastfeeding_Background2)',
       impo_Calendar_Breastfeeding_OnBackground: 'var(--color-Calendar_Breastfeeding_OnBackground)',
+
       impo_Grey_50: 'var(--color-Grey_50)',
       impo_Grey_100: 'var(--color-Grey_100)',
       impo_Grey_200: 'var(--color-Grey_200)',
@@ -111,6 +135,7 @@ const preset: Config = {
       impo_Grey_700: 'var(--color-Grey_700)',
       impo_Grey_800: 'var(--color-Grey_800)',
       impo_Grey_900: 'var(--color-Grey_900)',
+
       impo_Pink: 'var(--color-Pink)',
       impo_Pink_50: 'var(--color-Pink_50)',
       impo_Pink_100: 'var(--color-Pink_100)',
@@ -122,6 +147,7 @@ const preset: Config = {
       impo_Pink_700: 'var(--color-Pink_700)',
       impo_Pink_800: 'var(--color-Pink_800)',
       impo_Pink_900: 'var(--color-Pink_900)',
+
       impo_Purple_50: 'var(--color-Purple_50)',
       impo_Purple_100: 'var(--color-Purple_100)',
       impo_Purple_200: 'var(--color-Purple_200)',
@@ -132,6 +158,7 @@ const preset: Config = {
       impo_Purple_700: 'var(--color-Purple_700)',
       impo_Purple_800: 'var(--color-Purple_800)',
       impo_Purple_900: 'var(--color-Purple_900)',
+
       impo_Blue_50: 'var(--color-Blue_50)',
       impo_Blue_100: 'var(--color-Blue_100)',
       impo_Blue_200: 'var(--color-Blue_200)',
@@ -142,6 +169,7 @@ const preset: Config = {
       impo_Blue_700: 'var(--color-Blue_700)',
       impo_Blue_800: 'var(--color-Blue_800)',
       impo_Blue_900: 'var(--color-Blue_900)',
+
       impo_Cyan_50: 'var(--color-Cyan_50)',
       impo_Cyan_100: 'var(--color-Cyan_100)',
       impo_Cyan_200: 'var(--color-Cyan_200)',
@@ -152,6 +180,7 @@ const preset: Config = {
       impo_Cyan_700: 'var(--color-Cyan_700)',
       impo_Cyan_800: 'var(--color-Cyan_800)',
       impo_Cyan_900: 'var(--color-Cyan_900)',
+
       impo_Green_50: 'var(--color-Green_50)',
       impo_Green_100: 'var(--color-Green_100)',
       impo_Green_200: 'var(--color-Green_200)',
@@ -162,6 +191,7 @@ const preset: Config = {
       impo_Green_700: 'var(--color-Green_700)',
       impo_Green_800: 'var(--color-Green_800)',
       impo_Green_900: 'var(--color-Green_900)',
+
       impo_Yellow: 'var(--color-Yellow)',
       impo_Yellow_50: 'var(--color-Yellow_50)',
       impo_Yellow_100: 'var(--color-Yellow_100)',
@@ -173,6 +203,7 @@ const preset: Config = {
       impo_Yellow_700: 'var(--color-Yellow_700)',
       impo_Yellow_800: 'var(--color-Yellow_800)',
       impo_Yellow_900: 'var(--color-Yellow_900)',
+
       impo_Orange_50: 'var(--color-Orange_50)',
       impo_Orange_100: 'var(--color-Orange_100)',
       impo_Orange_200: 'var(--color-Orange_200)',
@@ -183,6 +214,7 @@ const preset: Config = {
       impo_Orange_700: 'var(--color-Orange_700)',
       impo_Orange_800: 'var(--color-Orange_800)',
       impo_Orange_900: 'var(--color-Orange_900)',
+
       impo_Red_50: 'var(--color-Red_50)',
       impo_Red_100: 'var(--color-Red_100)',
       impo_Red_200: 'var(--color-Red_200)',

@@ -2,7 +2,7 @@ import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { ACTIVATION_HEADING_SCRIPTS_ID } from '@components/activation/ActivationHeading/constants';
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import Link from 'next/link';
 
 const Otp1Footer = () => {

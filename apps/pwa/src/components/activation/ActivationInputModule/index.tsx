@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { toEnglishNumbers, toPersianNumbers } from '@utils/numbers';
 
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import { ACTIVATION_INPUT_MODULE_ID } from '../ActivationHeading/constants';
 import { ActivationInputModuleProps } from './types';

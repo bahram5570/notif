@@ -2,9 +2,10 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
+
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 import useOverflowHandler from '@hooks/useOverflowHandler';
 
 import ShareExperienceNewContinueBtn from './ShareExperienceNewContinueBtn';
@@ -62,7 +63,7 @@ const ShareExperienceNewExerciseModalContainer = ({
   return (
     <>
       <MainPageLayout rightElement="BackButton" rightElementScript="تجربه جدید" paddingTop={0}>
-        {configLoading && !config && <Dark_Spinner />}
+        {configLoading && !config && <CustomSpinner />}
         {!configLoading && config && (
           <div className="flex flex-col h-[100dvh] overflow-y-auto" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
             <ShareExperienceNewTopPart avatarImage={avatarImage} text={text} username={username} />

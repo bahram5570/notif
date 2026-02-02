@@ -1,6 +1,5 @@
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 
 import ReplyGeneratorBottomPart from './ReplyGeneratorBottomPart';
 import ReplyGeneratorTopPart from './ReplyGeneratorTopPart';
@@ -57,7 +56,7 @@ const ReplyGenerator = (props: ReplyGeneratorProps) => {
 
       {isLoading && (
         <div className="w-full flex justify-center">
-          <Dark_Spinner className="border-impo_Surface_Outline" size={20} />
+          <CustomSpinner className="border-impo_Surface_Outline" size={20} />
         </div>
       )}
     </>

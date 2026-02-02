@@ -1,11 +1,11 @@
 import { useMemo, useState } from 'react';
 
 import PregnancyIcon from '@assets/icons/pregnancy.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toGregorianData, toJalaliData } from '@utils/dates';
 
 import DateModule from '@components/activation/DateModule';
-import Dark_Button from '@components/ui/Dark_Button';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
 import useDateIntervals from '@providers/__activation__/ActivationProvider/__hooks__/useDateIntervals';
@@ -68,7 +68,7 @@ const ChildBirthDate = ({ changeValueHandler, onCloseModal, childBirthDate }: Ch
         startDate={pregnancyPeriodStart}
       />
 
-      <Dark_Button onClick={applyHandler}>ذخیره</Dark_Button>
+      <CustomButton onClick={applyHandler}>ذخیره</CustomButton>
     </>
   );
 };

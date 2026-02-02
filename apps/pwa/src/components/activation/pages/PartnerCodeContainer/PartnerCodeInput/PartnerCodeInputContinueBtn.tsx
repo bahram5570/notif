@@ -1,5 +1,6 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+
 import { CONTINUE_BTN_HEIGHT } from '@components/activation/ActivationHeading/constants';
-import Dark_Button from '@components/ui/Dark_Button';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useCustomToast from '@hooks/useCustomToast';
 
@@ -27,9 +28,9 @@ const PartnerCodeInputContinueBtn = ({
       style={{ bottom: showContinueBtn ? '0' : '-100%', height: CONTINUE_BTN_HEIGHT, maxWidth: MAX_SCREEN_WIDTH }}
     >
       <div className="flex mx-auto w-[204px] min-w-fit">
-        <Dark_Button fontSize="Lable_Large" isLoading={isLoading} onClick={clickHandler}>
+        <CustomButton fontSize="Lable_Large" isLoading={isLoading} onClick={clickHandler}>
           ادامه
-        </Dark_Button>
+        </CustomButton>
       </div>
     </div>
   );

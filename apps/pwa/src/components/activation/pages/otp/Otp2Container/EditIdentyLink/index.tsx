@@ -1,4 +1,5 @@
-import Dark_Button from '@components/ui/Dark_Button';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+
 import { useRouter } from 'next/navigation';
 
 import { EditIdentyLinkProps } from './types';
@@ -11,13 +12,13 @@ const EditIdentyLink = ({ isPhone }: EditIdentyLinkProps) => {
   };
 
   return (
-    <Dark_Button
+    <CustomButton
       onClick={backHandler}
       fontSize="Lable_Large"
       className="!w-[200px] bg-impo_Primary_PrimaryContainer border-impo_Primary_PrimaryContainer mb-3 !text-impo_Black"
     >
       {isPhone ? 'ویرایش شماره همراه' : 'ویرایش ایمیل'}
-    </Dark_Button>
+    </CustomButton>
   );
 };
 

@@ -1,11 +1,11 @@
 import LogoutIcon from '@assets/icons/profile/logout.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { deleteUserCookie, setCultureCookie } from '@actions/cookie.actions';
-import Dark_Button from '@components/ui/Dark_Button';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import { CULTURE_INITIAL_VALUES } from '@providers/CultureProvider/constants';
 import { STORED_NOTIFICATIONS_CACHE_NAME } from '@providers/ServiceWorkerProvider/constants';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useRouter } from 'next/navigation';
 
 const LogoutModal = () => {
@@ -38,21 +38,21 @@ const LogoutModal = () => {
       </CustomTypography>
 
       <div className="w-full flex items-center justify-between gap-2">
-        <Dark_Button
+        <CustomButton
           isLoading={isLoading}
           onClick={logoutHandler}
           className="!text-impo_Error_Error !bg-impo_Error_ErrorContainer !border-impo_Error_ErrorContainer"
           fontSize="Lable_Large"
         >
           خروج
-        </Dark_Button>
-        <Dark_Button
+        </CustomButton>
+        <CustomButton
           onClick={() => router.back()}
           className="!text-impo_Neutral_OnSurface !border-impo_Neutral_Surface !bg-impo_Neutral_Surface "
           fontSize="Lable_Large"
         >
           خیر
-        </Dark_Button>
+        </CustomButton>
       </div>
     </div>
   );

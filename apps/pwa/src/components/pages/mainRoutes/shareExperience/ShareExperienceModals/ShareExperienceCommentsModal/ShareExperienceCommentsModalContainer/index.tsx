@@ -1,8 +1,9 @@
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
+
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 import useOverflowHandler from '@hooks/useOverflowHandler';
 
 import ShareExperienceContentsModule from '../../../ShareExperienceModules/ShareExperienceContentsModule';
@@ -31,7 +32,7 @@ const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsMod
       >
         {isFirstLoad && (
           <div className="absolute left-0 right-0 bottom-20 w-full flex justify-center" style={{ top: 80 }}>
-            <Dark_Spinner className="border-impo_Surface_Outline" size={40} />
+            <CustomSpinner className="border-impo_Surface_Outline" size={40} />
           </div>
         )}
 

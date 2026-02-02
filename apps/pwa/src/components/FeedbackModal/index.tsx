@@ -1,7 +1,7 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomModal from '@components/ui/CustomModal';
-import Dark_Button from '@components/ui/Dark_Button';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
@@ -49,9 +49,9 @@ const FeedbackModal = ({ title, onSubmit, isLoading }: FeedbackModalPropsType) =
           className="fixed bottom-0 left-0 right-0 flex flex-col items-center justify-end gap-2 px-4 pb-6 mx-auto z-30 bg-impo_Neutral_Background"
           style={{ maxWidth: MAX_SCREEN_WIDTH }}
         >
-          <Dark_Button onClick={submitHandler} isLoading={isLoading} isDisable={!valuesProps.rate}>
+          <CustomButton onClick={submitHandler} isLoading={isLoading} isDisable={!valuesProps.rate}>
             ثبت نظر
-          </Dark_Button>
+          </CustomButton>
         </div>
       </div>
     </CustomModal>

@@ -2,11 +2,11 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { isDevelopeMode } from '@repo/core/utils/system';
 
 import CompleteRegisterContainer from '@components/activation/CompleteRegisterContainer';
 import { PayloadHandlerTypes } from '@components/activation/MainActivationModule/types';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 import useChangePhase from '@hooks/__activation__/useChangePhase';
 import usePhaseChangePayload from '@providers/PhaseChangeProvider/__hooks__/usePhaseChangePayload';
 import { ActivationPayloadTypes } from '@providers/__activation__/types';
@@ -52,7 +52,7 @@ const PreventionToTrackerContainer = ({ updatedPayload }: { updatedPayload: Acti
     <div className="relative w-full h-[100dvh]">
       {isLoading && (
         <div className="w-full h-full flex items-center justify-center">
-          <Dark_Spinner className="border-impo_Surface_Outline" />
+          <CustomSpinner className="border-impo_Surface_Outline" />
         </div>
       )}
 

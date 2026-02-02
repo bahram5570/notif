@@ -3,9 +3,9 @@ import EditIcon from '@assets/icons/Pen 2.svg';
 import TrashIcon from '@assets/icons/trash.svg';
 
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import MoreActionBtn from './MoreActionBtn';
 import { AiChatModalNameEnums } from './enum';

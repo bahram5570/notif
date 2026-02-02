@@ -1,6 +1,6 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { colorFormatConverter } from '@utils/scripts';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
@@ -25,7 +25,7 @@ const Btn = ({ button }: BtnProps) => {
                 `}
     >
       {button.map((item, index) => (
-        <Dark_Button
+        <CustomButton
           key={index}
           fontSize="Lable_Large"
           className="z-10 min-w-[140px] !w-fit"
@@ -38,7 +38,7 @@ const Btn = ({ button }: BtnProps) => {
           }}
         >
           {item.text}
-        </Dark_Button>
+        </CustomButton>
       ))}
     </div>
   );

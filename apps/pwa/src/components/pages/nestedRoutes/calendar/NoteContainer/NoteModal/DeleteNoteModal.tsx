@@ -1,6 +1,6 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
@@ -24,23 +24,23 @@ const DeleteNoteModal = () => {
       </CustomTypography>
 
       <div className="w-full flex items-center justify-between gap-2 mt-3">
-        <Dark_Button
+        <CustomButton
           isLoading={isLoading}
           fontSize="Lable_Medium"
           onClick={() => deleteHandler({ noteId })}
           className="!bg-impo_Error_ErrorContainer !border-impo_Error_ErrorContainer !text-impo_Error_Error"
         >
           مطمئنم
-        </Dark_Button>
+        </CustomButton>
 
-        <Dark_Button
+        <CustomButton
           isLoading={isLoading}
           fontSize="Lable_Medium"
           onClick={() => router.back()}
           className="!bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnSurface"
         >
           خیر
-        </Dark_Button>
+        </CustomButton>
       </div>
     </div>
   );

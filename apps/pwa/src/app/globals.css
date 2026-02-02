@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '@repo/core/components.css';
+@import '@repo/core/configs.css';
 @import '@repo/core/theme.css';
 
 @import 'swiper/css';

@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 
-import Dark_Button from '@components/ui/Dark_Button';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { OVULATION_HISTORY_CARD_VIEW_ALL } from './constants';
 import { WidgetOvulationHistoryCardViewAllProps } from './types';
@@ -26,13 +27,13 @@ const WidgetOvulationHistoryCardViewAll = ({ data }: WidgetOvulationHistoryCardV
   };
 
   return (
-    <Dark_Button
+    <CustomButton
       className="mt-2 !bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnBackground"
       onClick={linkToHandler}
       fontSize="Lable_Large"
     >
       {data.button.text}
-    </Dark_Button>
+    </CustomButton>
   );
 };
 

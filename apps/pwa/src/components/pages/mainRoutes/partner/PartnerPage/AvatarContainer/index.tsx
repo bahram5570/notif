@@ -2,8 +2,8 @@ import EditIcon from '@assets/icons/Gallery Edit.svg';
 import UploadIcon from '@assets/icons/upload.svg';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { PartnerModalNameEnums } from '../PartnerModals/enums';
 import Avatar from './Avatar';

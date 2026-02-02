@@ -1,7 +1,8 @@
-import Dark_Button from '@components/ui/Dark_Button';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import KitTestBabyCheckGenerator from './KitTestBabyCheckGenerator';
 import useSelectedBabyCheck from './__hooks__/useSelectedBabyCheck';
@@ -41,14 +42,14 @@ const KitTestBabyCheck = ({ moduleType, gregorianDate }: KitTestBabyCheckProps) 
         ))}
       </div>
 
-      <Dark_Button
+      <CustomButton
         className="mt-8"
         fontSize="Lable_Large"
         onClick={applyHandler}
         isDisable={selectedBabyCheck === null}
       >
         ادامه
-      </Dark_Button>
+      </CustomButton>
     </>
   );
 };

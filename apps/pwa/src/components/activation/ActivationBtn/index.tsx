@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import Dark_Button from '@components/ui/Dark_Button';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
 import { ActivationBtnProps } from './types';
 
@@ -31,7 +31,7 @@ const ActivationBtn = (props: ActivationBtnProps) => {
     <div
       className={`w-full flex justify-center duration-200 ${props.showBtn ? 'translate-y-0' : 'translate-y-[50vh]'}`}
     >
-      <Dark_Button
+      <CustomButton
         ref={btnRef}
         fontSize="Lable_Large"
         onClick={props.onClick}
@@ -41,7 +41,7 @@ const ActivationBtn = (props: ActivationBtnProps) => {
         navigationLoadingId={props.navigationLoadingId}
       >
         {props.children}
-      </Dark_Button>
+      </CustomButton>
     </div>
   );
 };

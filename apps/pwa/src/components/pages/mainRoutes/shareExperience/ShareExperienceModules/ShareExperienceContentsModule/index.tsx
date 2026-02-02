@@ -2,8 +2,8 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { shareExperienceCommentQueryMaker } from '@utils/shareExperience';
 
 import CustomImage from '@components/ui/CustomImage';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { ShareExperienceContentsModuleProps } from './types';
 

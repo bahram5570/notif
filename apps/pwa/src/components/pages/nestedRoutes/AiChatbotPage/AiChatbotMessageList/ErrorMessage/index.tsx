@@ -1,7 +1,6 @@
 import RefreshIcon from '@assets/icons/refresh.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import Dark_Button from '@components/ui/Dark_Button';
 
 import { ErrorMessagePropsType } from './type';
 
@@ -18,7 +17,7 @@ const ErrorMessage = ({ onErrorHandler }: ErrorMessagePropsType) => {
           ظاهرا ارتباط با ایمپو قطع شده. میتونی دوباره تلاش کنی.
         </CustomTypography>
 
-        <Dark_Button
+        <CustomButton
           onClick={onErrorHandler}
           className="!w-52  py-3 !bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnSurface"
         >
@@ -28,7 +27,7 @@ const ErrorMessage = ({ onErrorHandler }: ErrorMessagePropsType) => {
               تلاش مجدد
             </CustomTypography>
           </div>
-        </Dark_Button>
+        </CustomButton>
       </div>
     </div>
   );

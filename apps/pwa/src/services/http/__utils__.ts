@@ -39,5 +39,6 @@ export const applyOptions = async (props: HttpTypes) => {
 export const clearCacheHandler = async () => {
   await deleteUserCookie();
   await setCultureCookie(CULTURE_INITIAL_VALUES);
+
   window.location.href = '/';
 };

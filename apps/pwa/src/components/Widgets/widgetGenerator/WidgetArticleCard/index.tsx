@@ -1,8 +1,8 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { externalLink } from '@utils/navigation';
 
 import WidgetCardContainer from '@components/Widgets/WidgetCardContainer';
 import CustomSlider from '@components/ui/CustomSlider';
-import Dark_Button from '@components/ui/Dark_Button';
 import useAnalytics from '@hooks/useAnalytics';
 
 import ArticleGenerator from './ArticleGenerator';
@@ -26,13 +26,13 @@ const WidgetArticleCard = ({ data }: WidgetArticleCardProps) => {
         </CustomSlider>
       </div>
 
-      <Dark_Button
+      <CustomButton
         className="!text-impo_Neutral_OnSurface  !bg-impo_Neutral_Surface !border-impo_Neutral_Surface"
         onClick={clickHandler}
         fontSize="Lable_Large"
       >
         {data.buttonText}
-      </Dark_Button>
+      </CustomButton>
     </WidgetCardContainer>
   );
 };

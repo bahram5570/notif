@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { StateValuesHandlerTypes } from '@components/activation/DateModule/types';
-import Dark_Button from '@components/ui/Dark_Button';
 import WheelPicker from '@components/ui/WheelPicker';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { InputValueType } from '../type';
 import { ConditionModalPropsType } from './type';
@@ -73,14 +73,14 @@ const InputModal = ({ onChange, onCloseModal, value }: ConditionModalPropsType) 
         </>
       </div>
 
-      <Dark_Button
+      <CustomButton
         onClick={() => {
           (onChangeHandler(), pageNavigationHandler({ showProgressBar: true, id: 'bloodPressure' }));
         }}
         fontSize="Lable_Large"
       >
         ثبت اطلاعات
-      </Dark_Button>
+      </CustomButton>
     </>
   );
 };

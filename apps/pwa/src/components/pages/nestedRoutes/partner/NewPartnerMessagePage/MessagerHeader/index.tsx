@@ -1,9 +1,9 @@
 import ArrowIcon from '@assets/icons/arrow.svg';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 const MessagerHeader = () => {
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
@@ -28,7 +28,7 @@ const MessagerHeader = () => {
           </div>
 
           <div className="cursor-pointer flex justify-center items-center w-8 h-8" onClick={onClick}>
-            {pageNavigationLoading === 'back' && <Dark_Spinner className="border-impo_Surface_Outline" size={28} />}
+            {pageNavigationLoading === 'back' && <CustomSpinner className="border-impo_Surface_Outline" size={28} />}
             {pageNavigationLoading !== 'back' && (
               <ArrowIcon className="w-6 h-full stroke-2 stroke-impo_Surface_Outline" />
             )}

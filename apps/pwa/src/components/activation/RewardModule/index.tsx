@@ -1,6 +1,6 @@
+import { CustomBackButton } from '@repo/core/components/ui/CustomBackButton';
 import { colorFormatConverter } from '@utils/scripts';
 
-import Dark_BackButton from '@components/ui/Dark_BackButton';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import { OrderOfRewardElementsTypes } from '@providers/__activation__/types';
 
@@ -35,7 +35,7 @@ const RewardModule = ({
           <div className="relative w-full min-h-[100dvh] flex flex-col gap-5">
             {!noBackButton && (
               <div className="absolute top-4 right-4 z-10 w-12 h-12 flex justify-center items-center">
-                <Dark_BackButton />
+                <CustomBackButton />
               </div>
             )}
 

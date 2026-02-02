@@ -1,6 +1,6 @@
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 
 import NameSelectorFilters from '../../../../NameSelectorFilters';
@@ -42,7 +42,7 @@ const NameSelectorGenderFilter = () => {
 
         {isLoading && (
           <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center">
-            <Dark_Spinner className="border-impo_Neutral_OnBackground" size={20} />
+            <CustomSpinner className="border-impo_Neutral_OnBackground" size={20} />
           </div>
         )}
       </div>

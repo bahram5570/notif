@@ -1,5 +1,6 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+
 import CustomModal from '@components/ui/CustomModal';
-import Dark_Button from '@components/ui/Dark_Button';
 import { useRouter } from 'next/navigation';
 
 import useNameSelectorData from '../__hooks__/useNameSelectorData';
@@ -50,17 +51,17 @@ const NameSelectorFilters = (props: NameSelectorFiltersProps) => {
         </div>
 
         <div className="flex flex-col justify-end gap-3 h-[120px] bg-impo_Neutral_Background">
-          <Dark_Button
+          <CustomButton
             fontSize="Lable_Large"
             onClick={() => router.back()}
             className="!bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnBackground"
           >
             انصراف
-          </Dark_Button>
+          </CustomButton>
 
-          <Dark_Button fontSize="Lable_Large" isDisable={isDisable} onClick={applyHandler}>
+          <CustomButton fontSize="Lable_Large" isDisable={isDisable} onClick={applyHandler}>
             اعمال فیلتر
-          </Dark_Button>
+          </CustomButton>
         </div>
       </div>
     </CustomModal>

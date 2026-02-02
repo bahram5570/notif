@@ -1,12 +1,12 @@
 'use client';
 
 import RulerIcon from '@assets/icons/ruler.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import ProfileContainerGenerator from '@components/__profile__/ProfileContainerGenerator';
 import ProfileItemGenerator from '@components/__profile__/ProfileItemGenerator';
-import Dark_Button from '@components/ui/Dark_Button';
 
 import UserInfoBirthdate from './UserInfoBirthdate';
 import UserInfoCalendarType from './UserInfoCalendarType';
@@ -98,14 +98,14 @@ const UserInfoPage = () => {
               </ProfileContainerGenerator>
 
               <div className="flex mx-auto mt-auto pt-4 min-w-[204px]">
-                <Dark_Button
+                <CustomButton
                   fontSize="Lable_Large"
                   isDisable={isDisable}
                   isLoading={submitLoading}
                   onClick={() => submitHandler(values)}
                 >
                   ویرایش
-                </Dark_Button>
+                </CustomButton>
               </div>
             </>
           )}

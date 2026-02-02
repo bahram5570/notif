@@ -1,5 +1,5 @@
 import CustomImage from '@components/ui/CustomImage';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import FeatureIntroBtn from '../FeatureIntroBtn';
 import TrailonboardingContainer from '../FeatureIntroContainer';

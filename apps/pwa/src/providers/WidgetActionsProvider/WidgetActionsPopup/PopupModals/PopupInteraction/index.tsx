@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
 import CloseIcon from '@assets/icons/plus.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@utils/scripts';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
 import { useRouter } from 'next/navigation';
@@ -62,7 +62,7 @@ const PopupInteraction = ({ data }: PopupInteractionProps) => {
         </CustomTypography>
 
         <div className="w-full flex items-center gap-2 pt-12">
-          <Dark_Button
+          <CustomButton
             onClick={() => clickHandler('first')}
             style={{
               background: colorFormatConverter(data.button.backgroundColor),
@@ -73,10 +73,10 @@ const PopupInteraction = ({ data }: PopupInteractionProps) => {
             fontSize="Lable_Large"
           >
             {data.button.text}
-          </Dark_Button>
+          </CustomButton>
 
           {data.secondaryButton && (
-            <Dark_Button
+            <CustomButton
               onClick={() => clickHandler('second')}
               style={{
                 background: colorFormatConverter(data.secondaryButton.backgroundColor),
@@ -87,7 +87,7 @@ const PopupInteraction = ({ data }: PopupInteractionProps) => {
               fontSize="Lable_Large"
             >
               {data.secondaryButton.text}
-            </Dark_Button>
+            </CustomButton>
           )}
         </div>
       </div>

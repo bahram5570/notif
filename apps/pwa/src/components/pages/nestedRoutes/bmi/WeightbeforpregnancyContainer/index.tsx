@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+
 import ActivationBackBtn from '@components/activation/ActivationBackBtn';
 import ActivationHeading from '@components/activation/ActivationHeading';
 import WeightHeightModule from '@components/activation/WeightHeightModule';
-import Dark_Button from '@components/ui/Dark_Button';
 
 import useSubmit from './__hooks__/useSubmit';
 
@@ -36,14 +37,14 @@ const WeightbeforpregnancyContainer = () => {
       <WeightHeightModule type="weight" valueHandler={valueHandler} />
 
       <div className="flex mx-auto mt-auto pb-6 w-[204px] min-w-fit">
-        <Dark_Button
+        <CustomButton
           onClick={onClick}
           isLoading={isLoading}
           fontSize="Lable_Large"
           navigationLoadingId="DatesContainer"
         >
           ادامه
-        </Dark_Button>
+        </CustomButton>
       </div>
     </div>
   );

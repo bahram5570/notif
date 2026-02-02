@@ -1,4 +1,4 @@
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { ClinicStateEnums } from '../../enumbs';
 import { ClinicTicketGeneratorProps } from '../types';

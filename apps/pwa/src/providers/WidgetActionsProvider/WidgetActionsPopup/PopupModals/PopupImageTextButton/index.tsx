@@ -1,9 +1,9 @@
 import CloseIcon from '@assets/icons/plus.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Button from '@components/ui/Dark_Button';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { useRouter } from 'next/navigation';
 
@@ -33,7 +33,7 @@ const PopupImageTextButton = ({ data }: PopupImageTextButtonProps) => {
         </CustomTypography>
       </div>
 
-      <Dark_Button
+      <CustomButton
         fontSize="Lable_Large"
         className="mt-auto h-10"
         onClick={() => actionHandler(data.button.action)}
@@ -44,7 +44,7 @@ const PopupImageTextButton = ({ data }: PopupImageTextButtonProps) => {
         }}
       >
         {data.button.text}
-      </Dark_Button>
+      </CustomButton>
     </div>
   );
 };

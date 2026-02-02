@@ -1,9 +1,9 @@
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Spinner from '@components/ui/Dark_Spinner';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { PeriodSettingsLingthGeneratorTypes } from './types';
 
@@ -21,7 +21,7 @@ const PeriodSettingsLingthGenerator = ({ name, values }: PeriodSettingsLingthGen
 
   return (
     <div onClick={selectHandler} className="w-full flex justify-end items-center">
-      {isLoading && <Dark_Spinner size={24} />}
+      {isLoading && <CustomSpinner size={24} />}
 
       {!isLoading && (
         <CustomTypography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">

@@ -1,7 +1,7 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomModal from '@components/ui/CustomModal';
-import Dark_Button from '@components/ui/Dark_Button';
 import Loading from '@components/ui/Loading';
 import useAnalytics from '@hooks/useAnalytics';
 import { useRouter } from 'next/navigation';
@@ -44,22 +44,22 @@ const ShareExperienceApproveModalsModule = ({
           </CustomTypography>
 
           <div className="w-full flex items-center gap-4">
-            <Dark_Button
+            <CustomButton
               fontSize="Body_Large"
               id={id}
               onClick={clickHandler}
               className="!bg-impo_Error_ErrorContainer !border-impo_Error_ErrorContainer !text-impo_Error_Error"
             >
               {applyButtonText}
-            </Dark_Button>
+            </CustomButton>
 
-            <Dark_Button
+            <CustomButton
               fontSize="Body_Large"
               onClick={() => router.back()}
               className="!bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnBackground"
             >
               {cancelButtonText}
-            </Dark_Button>
+            </CustomButton>
           </div>
         </div>
       </CustomModal>

@@ -1,5 +1,5 @@
 import useAnalytics from '@hooks/useAnalytics';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { usePathname } from 'next/navigation';
 
 import { NAME_SELECTOR_ACTIVATION_PAGES_INFO } from '../../constants';

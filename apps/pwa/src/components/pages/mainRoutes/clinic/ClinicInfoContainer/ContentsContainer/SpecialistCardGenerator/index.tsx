@@ -1,10 +1,10 @@
 import ClockIcon from '@assets/icons/clock1.svg';
 import PeopleIcon from '@assets/icons/people.svg';
 import StarIcon from '@assets/icons/star.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
-import Dark_Button from '@components/ui/Dark_Button';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { usePathname } from 'next/navigation';
 
 import { CLINIC_DOCTOR_MODAL_QUERY_NAME } from '../../../ClinicDoctorModal/constants';
@@ -76,9 +76,9 @@ const SpecialistCardGenerator = ({
       </div>
 
       {hasCommentsButton && (
-        <Dark_Button onClick={selectDoctorHandler} className="rounded-lg my-2" navigationLoadingId={id}>
+        <CustomButton onClick={selectDoctorHandler} className="rounded-lg my-2" navigationLoadingId={id}>
           نظرات کاربران
-        </Dark_Button>
+        </CustomButton>
       )}
     </div>
   );

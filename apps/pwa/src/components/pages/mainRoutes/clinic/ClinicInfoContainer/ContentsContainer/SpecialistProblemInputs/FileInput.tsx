@@ -7,8 +7,8 @@ import { textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { FileInputProps } from './types';
 

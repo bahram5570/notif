@@ -1,10 +1,10 @@
 import EditIcon from '@assets/icons/Pen 2.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import Dark_Button from '@components/ui/Dark_Button';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import ShareExperienceAvatarModule from '../../../../ShareExperienceModules/ShareExperienceAvatarModule';
 import useShareExperienceFollow from '../../../ShareExperienceUnfollowModal/__hooks__/useShareExperienceFollow';
@@ -53,7 +53,7 @@ const ShareExperienceProfileTopPart = ({
         <ProfileInfo followCount={followCount} storyCount={storyCount} />
       </div>
 
-      <Dark_Button
+      <CustomButton
         isLoading={isFollowLoading}
         onClick={clickHandler}
         fontSize="Lable_Medium"
@@ -73,7 +73,7 @@ const ShareExperienceProfileTopPart = ({
           {textBtn}
           {isSelf && <EditIcon className={`w-5 h-5 rotate-[360] fill-impo_Neutral_OnBackground`} />}
         </div>
-      </Dark_Button>
+      </CustomButton>
     </div>
   );
 };

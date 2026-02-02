@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { IFRAME_URL } from './constants';
 
@@ -45,7 +45,7 @@ const PartnerLandingWebView = () => {
     <div className={`${!hideButton && 'pb-40'}`} style={{ width: '100%', height: '100dvh' }}>
       {isLoading && (
         <div className="flex justify-center items-center w-full h-full ">
-          <Dark_Spinner size={50} />
+          <CustomSpinner size={50} />
         </div>
       )}
 

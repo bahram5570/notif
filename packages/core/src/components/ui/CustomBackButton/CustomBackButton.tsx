@@ -2,16 +2,16 @@
 
 import { useMemo } from 'react';
 
-import ArrowIcon from '@assets/icons/arrow.svg';
+// import ArrowIcon from '@assets/icons/arrow.svg';
+// import ArrowIcon from '../../../../../assets/src/icons/arrow.svg';
 
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-
-import Dark_Spinner from '../Dark_Spinner';
-import { Dark_BackButtonProps } from './types';
+import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
+import { CustomSpinner } from '../CustomSpinner';
+import { CustomBackButtonTypes } from './types';
 
 const loadingId = 'BackButton';
 
-const Dark_BackButton = (props: Dark_BackButtonProps) => {
+export const CustomBackButton = (props: CustomBackButtonTypes) => {
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
   const colors = useMemo(() => {
@@ -75,10 +75,8 @@ const Dark_BackButton = (props: Dark_BackButtonProps) => {
                   ${props.className}
                 `}
     >
-      {!isLoading && <ArrowIcon className={`w-6 h-auto m-auto stroke-2  ${colors.iconColor}`} />}
-      {isLoading && <Dark_Spinner className={`${colors.spinnerColor}`} />}
+      {/* {!isLoading && <ArrowIcon className={`w-6 h-auto m-auto stroke-2  ${colors.iconColor}`} />} */}
+      {isLoading && <CustomSpinner className={`${colors.spinnerColor}`} />}
     </div>
   );
 };
-
-export default Dark_BackButton;

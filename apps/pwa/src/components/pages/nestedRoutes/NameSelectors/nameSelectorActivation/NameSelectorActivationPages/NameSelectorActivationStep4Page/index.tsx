@@ -3,7 +3,7 @@
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import NameSelectorActivationCard from '../../NameSelectorActivationModules/NameSelectorActivationCard';
 import NameSelectorActivationMainModule from '../../NameSelectorActivationModules/NameSelectorActivationMainModule';

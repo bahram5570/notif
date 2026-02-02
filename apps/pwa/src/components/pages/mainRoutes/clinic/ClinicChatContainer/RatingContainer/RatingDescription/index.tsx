@@ -1,9 +1,9 @@
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import RatingDescriptionModal from './RatingDescriptionModal';
 import { RatingDescriptionProps } from './types';
@@ -34,7 +34,7 @@ const RatingDescription = ({ rate, description, descriptionHandler, onClick }: R
             <div className="w-full h-10 flex items-center justify-end rounded-full px-4 border-[1px] border-impo_Neutral_Surface">
               {isLoading && (
                 <div className="mx-auto">
-                  <Dark_Spinner size={24} className="border-impo_Surface_Outline" />
+                  <CustomSpinner size={24} className="border-impo_Surface_Outline" />
                 </div>
               )}
 

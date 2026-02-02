@@ -2,7 +2,7 @@ import CalendarArrow from '@assets/icons/calendarArrow.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import LinkedContent from '@components/ui/LinkedContent';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { SupportLinkGeneratorType } from '../type';
 import useGetDataSupport from './__hooks__/useGetDataSupport';

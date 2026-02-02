@@ -1,6 +1,7 @@
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
+
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 import useOverflowHandler from '@hooks/useOverflowHandler';
 
 import ShareExperenceProfileTabList from './ShareExperenceProfileTabList';
@@ -42,7 +43,7 @@ const ShareExperienceProfileModalContainer = ({
       >
         {isLoading && (
           <div className="w-full flex justify-center pb-10">
-            <Dark_Spinner className="border-impo_Primary_Primary" />
+            <CustomSpinner className="border-impo_Primary_Primary" />
           </div>
         )}
 

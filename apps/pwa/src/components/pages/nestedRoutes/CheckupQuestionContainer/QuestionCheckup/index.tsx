@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import useAnalytics from '@hooks/useAnalytics';
 
 import QuestionGenerator from './QuestionGenerator';
@@ -58,7 +58,7 @@ const QuestionCheckup = ({ question }: QuestionCheckupPropsType) => {
           </div>
         </div>
       </div>
-      <Dark_Button
+      <CustomButton
         onClick={clickHandler}
         className="mt-auto"
         isLoading={isLoading}
@@ -66,7 +66,7 @@ const QuestionCheckup = ({ question }: QuestionCheckupPropsType) => {
         fontSize="Lable_Large"
       >
         ثبت اطلاعات
-      </Dark_Button>
+      </CustomButton>
     </>
   );
 };

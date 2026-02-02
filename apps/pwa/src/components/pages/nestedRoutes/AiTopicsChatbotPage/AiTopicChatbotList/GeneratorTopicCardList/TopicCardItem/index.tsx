@@ -1,8 +1,8 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Button from '@components/ui/Dark_Button';
 
 import { TopicCardItemPropsType } from './type';
 
@@ -30,11 +30,11 @@ const TopicCardItem = (props: TopicCardItemPropsType) => {
         </div>
       </div>
       <div className="mt-auto">
-        <Dark_Button onClick={onClick}>
+        <CustomButton onClick={onClick}>
           <CustomTypography fontSize="Lable_SmallProminet" className="text-impo_White">
             {props.btnLabel}
           </CustomTypography>
-        </Dark_Button>
+        </CustomButton>
       </div>
     </div>
   );

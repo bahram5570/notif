@@ -1,7 +1,7 @@
 import ChangeArrowsIcon from '@assets/icons/changeArrows.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import { SPECIALISTS_LIST_QUERY_NAME } from '../constants';
@@ -22,7 +22,7 @@ const ActiveSpecialist = ({ isMoreThanOne }: ActiveSpecialistProps) => {
         </CustomTypography>
 
         {isMoreThanOne && (
-          <Dark_Button
+          <CustomButton
             onClick={openSpecialistsHandler}
             navigationLoadingId="ActiveSpecialist"
             className="!w-fit !h-8 !bg-impo_Neutral_Surface !border-impo_Neutral_Surface"
@@ -33,7 +33,7 @@ const ActiveSpecialist = ({ isMoreThanOne }: ActiveSpecialistProps) => {
               </CustomTypography>
               <ChangeArrowsIcon className="w-4 h-auto fill-impo_Primary_Primary" />
             </div>
-          </Dark_Button>
+          </CustomButton>
         )}
       </div>
     </>

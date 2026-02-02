@@ -4,8 +4,8 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import FileInputManager from '@components/ui/FileInputManager';
 import useFileUpload from '@hooks/useFileUpload';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import useUpdateProfile from './__hooks__/useUpdateProfile';
 import { ShareExperienceChangeAvatarModalContainerPropsType } from './type';

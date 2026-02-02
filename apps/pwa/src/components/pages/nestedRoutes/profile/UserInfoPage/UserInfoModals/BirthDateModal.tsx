@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
 import CakeIcon from '@assets/icons/Cake.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toGregorianData, toJalaliData } from '@utils/dates';
 
 import useListsMaker from '@components/activation/DateModule/__hooks__/useListsMaker';
 import { StateValuesHandlerTypes, ValuesTypes } from '@components/activation/DateModule/types';
-import Dark_Button from '@components/ui/Dark_Button';
 import WheelPicker from '@components/ui/WheelPicker';
 import { CalendarTypeEnum, DATE_SEPERATOR_REGEX } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
@@ -98,9 +98,9 @@ const BirthDateModal = ({ value, valueHandler, onClose }: BirthDateModalTypes) =
         )}
       </div>
 
-      <Dark_Button onClick={saveHandler} fontSize="Lable_Large">
+      <CustomButton onClick={saveHandler} fontSize="Lable_Large">
         ذخیره
-      </Dark_Button>
+      </CustomButton>
     </>
   );
 };

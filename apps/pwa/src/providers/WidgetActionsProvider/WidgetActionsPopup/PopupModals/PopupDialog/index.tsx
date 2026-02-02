@@ -1,8 +1,8 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Button from '@components/ui/Dark_Button';
 import useWidgetActions from '@hooks/useWidgetActions';
 
 import { ClickHandlerTypes, PopupDialogProps } from './types';
@@ -37,7 +37,7 @@ const PopupDialog = ({ data }: PopupDialogProps) => {
       </CustomTypography>
 
       <div className="w-full flex items-center gap-2">
-        <Dark_Button
+        <CustomButton
           style={{
             direction: 'rtl',
             background: colorFormatConverter(data.first.backgroundColor),
@@ -49,10 +49,10 @@ const PopupDialog = ({ data }: PopupDialogProps) => {
           fontSize="Lable_Large"
         >
           {data.first.text}
-        </Dark_Button>
+        </CustomButton>
 
         {data.second && (
-          <Dark_Button
+          <CustomButton
             style={{
               direction: 'rtl',
               background: colorFormatConverter(data.second.backgroundColor),
@@ -64,7 +64,7 @@ const PopupDialog = ({ data }: PopupDialogProps) => {
             className="h-10"
           >
             {data.second.text}
-          </Dark_Button>
+          </CustomButton>
         )}
       </div>
     </div>

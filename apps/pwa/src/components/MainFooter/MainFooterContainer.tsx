@@ -1,5 +1,5 @@
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import PageIcons from './PageIcons';
 import { FOOTER_HEIGTH, FOOTER_PAGES_LIST } from './constants';

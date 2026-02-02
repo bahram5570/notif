@@ -4,12 +4,12 @@ import { useInView } from 'react-intersection-observer';
 import HeartEmptyIcon from '@assets/icons/heartEmpty.svg';
 import HeartFillIcon from '@assets/icons/heartFill.svg';
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { SelectNameGenderEnum } from '@services/selectNameServices/enums';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import useNameSelectorLike from '../__hooks__/useNameSelectorLike';
 import { NAME_SELECTOR_CARD_HEIGHT } from './constants';
@@ -96,7 +96,7 @@ const NameSelectorCard = (props: NameSelectorCardProps) => {
 
       {isLoading && (
         <div className="w-full h-[150px] flex justify-center pt-[50px]">
-          <Dark_Spinner className="border-impo_Surface_Outline" />
+          <CustomSpinner className="border-impo_Surface_Outline" />
         </div>
       )}
     </>

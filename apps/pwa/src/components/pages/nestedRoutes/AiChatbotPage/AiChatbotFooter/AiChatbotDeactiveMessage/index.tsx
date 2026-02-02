@@ -1,7 +1,7 @@
 import chatbotJson from '@assets/lottie/chatbot.json';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import useAnalytics from '@hooks/useAnalytics';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
@@ -32,11 +32,11 @@ const AiChatbotDeactiveMessage = ({ deactiveMessage, title, deactiveButton }: Ai
         </div>
       </div>
       {deactiveButton && (
-        <Dark_Button onClick={onClick}>
+        <CustomButton onClick={onClick}>
           <CustomTypography fontSize="Lable_Medium" className="text-impo_White">
             {deactiveButton.text}
           </CustomTypography>
-        </Dark_Button>
+        </CustomButton>
       )}
     </div>
   );

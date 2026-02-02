@@ -1,8 +1,7 @@
 import CopyIcon from '@assets/icons/Copy.svg';
 import Refresh from '@assets/icons/refresh.svg';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 
 import useCopy from '../__hooks__/useCopy';
 import { PartnerCodePropsType } from './type';
@@ -25,7 +24,7 @@ const PartnerCode = ({ isLoading, refreshLoading, onRefreshCodeHandler, partnerC
         <div className="w-full flex justify-center items-center">
           {loading && (
             <div className="flex w-20 justify-center items-center">
-              <Dark_Spinner className="border-impo_Primary_Primary" size={30} />
+              <CustomSpinner className="border-impo_Primary_Primary" size={30} />
             </div>
           )}
           {!isLoading && partnerCode && (

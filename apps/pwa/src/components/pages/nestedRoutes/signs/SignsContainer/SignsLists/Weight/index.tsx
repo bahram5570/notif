@@ -2,7 +2,7 @@ import CalendarArrow from '@assets/icons/calendarArrow.svg';
 import WeightIcon from '@assets/icons/weight.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { WeightPropsType } from './type';
 

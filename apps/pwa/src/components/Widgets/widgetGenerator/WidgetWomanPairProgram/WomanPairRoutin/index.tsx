@@ -1,7 +1,7 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@utils/scripts';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
@@ -32,14 +32,14 @@ const WomanPairRoutin = (props: WomanPairRoutinPropsType) => {
         </CustomTypography>
       </div>
 
-      <Dark_Button
+      <CustomButton
         className="mt-auto"
         onClick={() => actionHandler(props.button.action)}
         fontSize="Lable_Large"
         isDisable={props.button?.action.actionType === ActionTypeEnum.None}
       >
         {props.button.text}
-      </Dark_Button>
+      </CustomButton>
     </>
   );
 };

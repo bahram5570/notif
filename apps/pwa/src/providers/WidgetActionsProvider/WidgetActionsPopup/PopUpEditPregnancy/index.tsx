@@ -1,11 +1,11 @@
 import { useState } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import DateModule from '@components/activation/DateModule';
-import Dark_Button from '@components/ui/Dark_Button';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useActivationPregnancyTabs from '@hooks/__activation__/useActivationPregnancyTabs';
 import useProfileData from '@hooks/__profile__/useProfileData';
@@ -50,14 +50,14 @@ const PopUpEditPregnancy = () => {
             valueHandler={setPregnancyDate}
           />
 
-          <Dark_Button
+          <CustomButton
             className="mt-auto"
             isLoading={isLoading}
             fontSize="Lable_Large"
             onClick={() => submitHandler({ pregnancyDate, isDelivery: tab === 1 ? true : false })}
           >
             ثبت تغییرات
-          </Dark_Button>
+          </CustomButton>
         </div>
       </MainPageLayout>
     </div>

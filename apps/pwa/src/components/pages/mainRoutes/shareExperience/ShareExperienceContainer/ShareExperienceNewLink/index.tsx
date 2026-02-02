@@ -2,8 +2,8 @@ import LinkIcon from '@assets/icons/calendarSignLink.svg';
 
 import { SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 const ShareExperienceNewLink = () => {
   const { newQueryParamsHandler } = useQueryParamsHandler();

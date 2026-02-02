@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import ChallengeBtn from '../ChallengeBtn';
 import { ChallengeQuestionPropsType } from './type';

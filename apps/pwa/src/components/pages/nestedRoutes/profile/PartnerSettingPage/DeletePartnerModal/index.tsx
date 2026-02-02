@@ -1,8 +1,8 @@
 import TrashIcon from '@assets/icons/trash.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomModal from '@components/ui/CustomModal';
-import Dark_Button from '@components/ui/Dark_Button';
 import { useRouter } from 'next/navigation';
 
 import useDelete from './__hooks__/useDelete';
@@ -32,22 +32,22 @@ const DeletePartnerModal = () => {
         </div>
 
         <div className="w-full flex items-center justify-between gap-2">
-          <Dark_Button
+          <CustomButton
             onClick={deleteHandler}
             isLoading={isLoading}
             className="!text-impo_Error_Error !bg-impo_Error_ErrorContainer !border-impo_Error_ErrorContainer h-10"
             fontSize="Lable_Large"
           >
             مطمئنم
-          </Dark_Button>
+          </CustomButton>
 
-          <Dark_Button
+          <CustomButton
             fontSize="Lable_Large"
             className="h-10 !bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnSurface"
             onClick={() => router.back()}
           >
             خیر
-          </Dark_Button>
+          </CustomButton>
         </div>
       </div>
     </CustomModal>

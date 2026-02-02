@@ -11,7 +11,7 @@ import NoteItem from '@components/pages/mainRoutes/calendar/CalendarDraggingPane
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useSignDateState from '@hooks/__sign__/useSignDateState';
 import useCulture from '@hooks/useCulture';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import moment from 'moment-jalaali';
 
 import NoteContainerListSkeleton from './NoteContainerListSkeleton';

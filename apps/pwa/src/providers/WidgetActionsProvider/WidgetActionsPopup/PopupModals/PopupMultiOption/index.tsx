@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@utils/scripts';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import OptionButton from '@components/ui/OptionButton';
 import useWidgetActions from '@hooks/useWidgetActions';
 
@@ -42,7 +42,7 @@ const PopupMultiOption = ({ data }: PopupMultiOptionProps) => {
         ))}
       </div>
 
-      <Dark_Button
+      <CustomButton
         onClick={submitHandler}
         style={{
           background: colorFormatConverter(data.submit.backgroundColor),
@@ -52,7 +52,7 @@ const PopupMultiOption = ({ data }: PopupMultiOptionProps) => {
         fontSize="Title_Small"
       >
         {data.submit.text}
-      </Dark_Button>
+      </CustomButton>
     </div>
   );
 };

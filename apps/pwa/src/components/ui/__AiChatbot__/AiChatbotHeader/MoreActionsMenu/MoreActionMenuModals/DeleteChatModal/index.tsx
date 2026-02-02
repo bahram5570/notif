@@ -1,6 +1,5 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import Dark_Button from '@components/ui/Dark_Button';
 
 import { CommenPropsType } from '../type';
 import useDelete from './__hooks__/useDelete';
@@ -23,17 +22,17 @@ const DeleteChatModal = ({ onCloseModal }: CommenPropsType) => {
       </div>
 
       <div className="flex w-full justify-between gap-2">
-        <Dark_Button onClick={onClick} isLoading={isLoading} fontSize="Lable_Large">
+        <CustomButton onClick={onClick} isLoading={isLoading} fontSize="Lable_Large">
           بله، مطمئنم
-        </Dark_Button>
-        <Dark_Button
+        </CustomButton>
+        <CustomButton
           onClick={onCloseModal}
           className="text-impo_Neutral_OnBackground bg-impo_Surface_OutlineVariant !border-impo_Surface_OutlineVariant"
         >
           <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
             نه، اشتباه شد
           </CustomTypography>
-        </Dark_Button>
+        </CustomButton>
       </div>
     </div>
   );

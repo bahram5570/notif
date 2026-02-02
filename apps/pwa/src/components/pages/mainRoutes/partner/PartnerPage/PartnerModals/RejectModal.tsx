@@ -1,6 +1,6 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import useReject from './__hooks__/useReject';
@@ -29,16 +29,16 @@ const RejectModal = ({ onCloseModal }: ModalPropsType) => {
       </div>
 
       <div className="flex w-full justify-between gap-2">
-        <Dark_Button onClick={onClick} isLoading={isLoading} fontSize="Lable_Large">
+        <CustomButton onClick={onClick} isLoading={isLoading} fontSize="Lable_Large">
           !آره
-        </Dark_Button>
-        <Dark_Button
+        </CustomButton>
+        <CustomButton
           className="!bg-impo_Neutral_Surface !text-impo_Neutral_OnSurface !border-impo_Neutral_Surface"
           onClick={onCloseModal}
           fontSize="Lable_Large"
         >
           !نه
-        </Dark_Button>
+        </CustomButton>
       </div>
     </div>
   );

@@ -1,9 +1,9 @@
 'use client';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Button from '@components/ui/Dark_Button';
 
 import NameSelectorActivationMainModule from '../../NameSelectorActivationModules/NameSelectorActivationMainModule';
 import useNameSelectorActivationData from '../../__hooks__/useNameSelectorActivationData';
@@ -35,7 +35,7 @@ const NameSelectorActivationStep1Page = () => {
           {data.weclome.description}
         </CustomTypography>
 
-        <Dark_Button
+        <CustomButton
           fontSize="Lable_Large"
           onClick={nextStepNavigation}
           isLoading={isNextStepLoading}
@@ -44,7 +44,7 @@ const NameSelectorActivationStep1Page = () => {
           className="!bg-impo_Neutral_OnBackground !border-impo_Neutral_OnBackground !text-impo_Neutral_Background !w-[206px]"
         >
           {data.weclome.btn}
-        </Dark_Button>
+        </CustomButton>
       </div>
     </NameSelectorActivationMainModule>
   );

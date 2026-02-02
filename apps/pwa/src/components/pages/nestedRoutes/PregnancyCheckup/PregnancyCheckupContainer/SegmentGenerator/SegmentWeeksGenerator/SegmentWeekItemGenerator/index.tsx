@@ -4,8 +4,8 @@ import ArrowIcon from '@assets/icons/calendarArrow.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useAnalytics from '@hooks/useAnalytics';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useWidgetActions from '@hooks/useWidgetActions';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { WeekItemGeneratorPropsType } from './type';
 

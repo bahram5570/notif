@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 import BloodIcon from '@assets/icons/Blood.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useListMaker from '@components/activation/CyclesModule/__hooks__/useListMaker';
-import Dark_Button from '@components/ui/Dark_Button';
 import WheelPicker from '@components/ui/WheelPicker';
 
 import { PeriodLengthModalTypes } from './types';
@@ -38,9 +38,9 @@ const PeriodLengthModal = ({ value, totalCycleLength, valueHandler, onClose }: P
         )}
       </div>
 
-      <Dark_Button fontSize="Lable_Large" onClick={changeHandler}>
+      <CustomButton fontSize="Lable_Large" onClick={changeHandler}>
         ذخیره
-      </Dark_Button>
+      </CustomButton>
     </>
   );
 };

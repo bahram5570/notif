@@ -1,6 +1,6 @@
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import FeatureIntroBtn from '../FeatureIntroBtn';
 import TrailonboardingContainer from '../FeatureIntroContainer';

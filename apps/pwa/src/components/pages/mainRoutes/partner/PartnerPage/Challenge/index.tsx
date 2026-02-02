@@ -1,5 +1,6 @@
-import Dark_Button from '@components/ui/Dark_Button';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import ChallengContext from './ChallengContext';
 import LinkButtonGroup from './LinkButtonGroup';
@@ -22,9 +23,9 @@ const Challenge = ({ card, valid, button }: ChallengePropsType) => {
         <>
           <LinkButtonGroup button={button} valid={valid} />
           <div className=" mt-2">
-            <Dark_Button fontSize="Lable_Large" onClick={clickHandler}>
+            <CustomButton fontSize="Lable_Large" onClick={clickHandler}>
               گفتگو با همدل
-            </Dark_Button>
+            </CustomButton>
           </div>
         </>
       )}

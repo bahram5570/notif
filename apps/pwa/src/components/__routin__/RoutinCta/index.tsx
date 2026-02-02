@@ -1,6 +1,6 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
@@ -24,14 +24,14 @@ const RoutinCta = ({ cta }: RoutinCtaPropsType) => {
         </CustomTypography>
 
         <div className="w-full flex justify-start">
-          <Dark_Button
+          <CustomButton
             className="max-w-fit"
             fontSize="Lable_Large"
             onClick={() => actionHandler(cta.action)}
             isDisable={cta.action.actionType === ActionTypeEnum.None}
           >
             {cta.ctaBtnLabel}
-          </Dark_Button>
+          </CustomButton>
         </div>
       </div>
     </div>

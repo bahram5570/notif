@@ -1,11 +1,11 @@
 'use client';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import Dark_Button from '@components/ui/Dark_Button';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import EditCycleSkeleton from './EditCycleSkeleton';
@@ -53,7 +53,7 @@ const EditCycleSettingPage = () => {
               style={{ maxWidth: MAX_SCREEN_WIDTH }}
             >
               <div className="flex flex-col justify-center items-center px-5">
-                <Dark_Button
+                <CustomButton
                   fontSize="Lable_Large"
                   className="w-4/5"
                   isLoading={isLoading}
@@ -61,7 +61,7 @@ const EditCycleSettingPage = () => {
                   onClick={submitHandler}
                 >
                   ثبت تغییرات
-                </Dark_Button>
+                </CustomButton>
               </div>
             </div>
           </div>

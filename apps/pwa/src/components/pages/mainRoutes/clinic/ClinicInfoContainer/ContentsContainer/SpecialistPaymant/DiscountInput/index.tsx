@@ -1,6 +1,5 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import Dark_Button from '@components/ui/Dark_Button';
 
 import useDiscountCode from './__hooks__/useDiscountCode';
 import { DiscountInputProps } from './types';
@@ -15,14 +14,14 @@ const DiscountInput = ({ id, approvedCodeHandler }: DiscountInputProps) => {
       </CustomTypography>
 
       <div className="w-full flex items-center gap-2">
-        <Dark_Button
+        <CustomButton
           isLoading={isLoading}
           onClick={submitHandler}
           className="px-6 !w-fit !h-8"
           isDisable={code.trim() === ''}
         >
           اعمال
-        </Dark_Button>
+        </CustomButton>
 
         <input
           type="text"

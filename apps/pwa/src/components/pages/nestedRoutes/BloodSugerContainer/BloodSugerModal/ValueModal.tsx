@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import WheelPicker from '@components/ui/WheelPicker';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { ValueModalPropsType } from './type';
 
@@ -51,14 +51,14 @@ const ValueModal = ({ name, onChange, onCloseModal, value }: ValueModalPropsType
         </>
       </div>
 
-      <Dark_Button
+      <CustomButton
         onClick={() => {
           (onChangeHandler(), pageNavigationHandler({ showProgressBar: true, id: name }));
         }}
         fontSize="Lable_Large"
       >
         ثبت اطلاعات
-      </Dark_Button>
+      </CustomButton>
     </>
   );
 };

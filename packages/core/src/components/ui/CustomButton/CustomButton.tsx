@@ -1,17 +1,17 @@
 import { forwardRef } from 'react';
 
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useTypographyMaker from '@hooks/useTypographyMaker';
+import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
+import { useTypographyMaker } from '../../../hooks/useTypographyMaker';
+import { CustomSpinner } from '../CustomSpinner';
+import { CustomButtonTypes } from './types';
 
-import Dark_Spinner from '../Dark_Spinner';
-import { Dark_ButtonTypes } from './types';
-
-const Dark_Button = forwardRef((props: Dark_ButtonTypes, ref: React.LegacyRef<HTMLButtonElement>) => {
+export const CustomButton = forwardRef((props: CustomButtonTypes, ref: React.LegacyRef<HTMLButtonElement>) => {
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+
   const { typographyFontStyles, result } = useTypographyMaker({
+    numbersMode: props.numbersMode,
     children: props.children,
     fontSize: props.fontSize,
-    numbersMode: props.numbersMode,
   });
 
   const isLoading = props.isLoading || pageNavigationLoading === props.navigationLoadingId;
@@ -48,10 +48,8 @@ const Dark_Button = forwardRef((props: Dark_ButtonTypes, ref: React.LegacyRef<HT
                 `}
     >
       <div className="relative w-full min-w-fit h-full flex items-center justify-center">
-        {isLoading ? <Dark_Spinner className={` ${props.spinnerClassName}`} /> : <>{result}</>}
+        {isLoading ? <CustomSpinner className={` ${props.spinnerClassName}`} /> : <>{result}</>}
       </div>
     </button>
   );
 });
-
-export default Dark_Button;

@@ -1,10 +1,10 @@
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 import useAnalytics from '@hooks/useAnalytics';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import useShareExperienceFollow from '../../ShareExperienceModals/ShareExperienceUnfollowModal/__hooks__/useShareExperienceFollow';
 import { ShareExperienceFollowModuleProps } from './types';
@@ -70,7 +70,7 @@ const ShareExperienceFollowModule = (props: ShareExperienceFollowModuleProps) =>
 
         {isLoading && (
           <div className="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center pointer-events-none">
-            <Dark_Spinner size={16} className="border-impo_Surface_Outline" />
+            <CustomSpinner size={16} className="border-impo_Surface_Outline" />
           </div>
         )}
       </div>

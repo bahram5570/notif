@@ -1,10 +1,10 @@
 import PenIcon from '@assets/icons/Pen 2.svg';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { BloodSugerBtnGeneratorPropsType } from './type';
 
@@ -44,7 +44,7 @@ const BloodSugerBtnGenerator = ({ name, value, label, index }: BloodSugerBtnGene
 
       <div onClick={selectHandler} className="w-full flex items-center">
         <div className="flex items-center flex-row-reverse gap-3">
-          {isLoading && <Dark_Spinner size={20} className="border-impo_Primary_Primary" />}
+          {isLoading && <CustomSpinner size={20} className="border-impo_Primary_Primary" />}
 
           {!isLoading && (
             <>

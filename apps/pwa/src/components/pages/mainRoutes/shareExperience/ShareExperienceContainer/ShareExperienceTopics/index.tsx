@@ -3,8 +3,8 @@ import { shareExperienceTopicQueryMaker } from '@utils/shareExperience';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomSlider from '@components/ui/CustomSlider';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { ShareExperienceTopicsProps } from './type';
 

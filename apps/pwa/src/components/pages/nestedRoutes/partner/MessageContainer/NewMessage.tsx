@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import Dark_Button from '@components/ui/Dark_Button';
 
 import useSubmit from './__hooks__/useSubmit';
 
@@ -28,11 +27,11 @@ const NewMessage = () => {
         onChange={onChangeHandler}
       />
       <div className="flex justify-center items-center">
-        <Dark_Button className="px-6 py-2 max-w-fit" onClick={onClick} isDisable={!newMessage} isLoading={isLoading}>
+        <CustomButton className="px-6 py-2 max-w-fit" onClick={onClick} isDisable={!newMessage} isLoading={isLoading}>
           <CustomTypography fontSize="Lable_Large" className="text-impo_PrimaryMan_OnPrimaryMan">
             ارسال پیام
           </CustomTypography>
-        </Dark_Button>
+        </CustomButton>
       </div>
     </>
   );

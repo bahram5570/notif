@@ -4,7 +4,7 @@ import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { toPersianNumbers } from '@utils/numbers';
 
 import CustomImage from '@components/ui/CustomImage';
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import { WidgetOvulationHistoryCardDescriptionDescriptionProps } from './types';
 

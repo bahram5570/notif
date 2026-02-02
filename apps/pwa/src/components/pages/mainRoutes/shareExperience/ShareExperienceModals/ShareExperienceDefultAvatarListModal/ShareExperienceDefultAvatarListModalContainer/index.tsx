@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 
 import TickIcon from '@assets/icons/CheckCircle-2.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Button from '@components/ui/Dark_Button';
 import { useRouter } from 'next/navigation';
 
 import useUpdateProfile from '../../ShareExperienceChangeAvatarModal/ShareExperienceChangeAvatarModalContainer/__hooks__/useUpdateProfile';
@@ -71,9 +71,9 @@ const ShareExperienceDefultAvatarListModalContainer = ({
       </div>
 
       <div className="py-4 px-2 sticky bottom-0 w-full bg-impo_Neutral_Background">
-        <Dark_Button fontSize="Lable_Large" className="w-full py-2" onClick={onClick}>
+        <CustomButton fontSize="Lable_Large" className="w-full py-2" onClick={onClick}>
           انتخاب پروفایل
-        </Dark_Button>
+        </CustomButton>
       </div>
     </div>
   );

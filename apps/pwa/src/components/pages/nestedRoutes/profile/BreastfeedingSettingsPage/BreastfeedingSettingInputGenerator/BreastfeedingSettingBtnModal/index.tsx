@@ -1,11 +1,11 @@
 'use client';
 
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import useDateScript from './__hooks__/useDateScript';
 import { BreastfeedingSettingBtnModalPropsType } from './type';
@@ -25,7 +25,7 @@ const BreastfeedingSettingBtnModal = ({ name, value }: BreastfeedingSettingBtnMo
   return (
     <>
       <div className="w-full flex justify-end items-center" onClick={clickHandler}>
-        {isLoading && <Dark_Spinner size={24} />}
+        {isLoading && <CustomSpinner size={24} />}
 
         {!isLoading && (
           <CustomTypography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">

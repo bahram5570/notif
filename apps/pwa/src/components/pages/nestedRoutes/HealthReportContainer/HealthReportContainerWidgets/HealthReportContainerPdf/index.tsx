@@ -1,8 +1,8 @@
 import ImpoIcon from '@assets/icons/impoName.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import WidgetGenerator from '@components/Widgets/widgetGenerator';
-import Dark_Button from '@components/ui/Dark_Button';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useAnalytics from '@hooks/useAnalytics';
 import { WidgetsEnum } from '@providers/WidgetActionsProvider/widgetEnums';
@@ -30,7 +30,7 @@ const HealthReportContainerPdf = ({ data }: HealthReportContainerPdfProps) => {
         className="w-full mt-auto py-4 fixed bottom-0 left-0 right-0 mx-auto  z-50 px-4 flex justify-center items-center bg-impo_Neutral_Surface"
         style={{ maxWidth: MAX_SCREEN_WIDTH }}
       >
-        <Dark_Button
+        <CustomButton
           fontSize="Lable_Large"
           className="!bg-impo_Pink_500 !text-impo_White !border-impo_Pink_500"
           isDisable={NotData}
@@ -38,7 +38,7 @@ const HealthReportContainerPdf = ({ data }: HealthReportContainerPdfProps) => {
           onClick={clickHandler}
         >
           دریافت pdf گزارش سلامت
-        </Dark_Button>
+        </CustomButton>
       </div>
 
       {downloadStatus !== null && (

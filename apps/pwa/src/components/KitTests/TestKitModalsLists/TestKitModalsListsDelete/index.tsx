@@ -1,7 +1,7 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomModal from '@components/ui/CustomModal';
-import Dark_Button from '@components/ui/Dark_Button';
 import Loading from '@components/ui/Loading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
@@ -41,17 +41,17 @@ const TestKitModalsListsDelete = ({ onDelete }: TestKitModalsListsDeleteProps) =
           </CustomTypography>
 
           <div className="w-full flex justify-between gap-4">
-            <Dark_Button fontSize="Lable_Large" onClick={deleteHandler}>
+            <CustomButton fontSize="Lable_Large" onClick={deleteHandler}>
               بله
-            </Dark_Button>
+            </CustomButton>
 
-            <Dark_Button
+            <CustomButton
               fontSize="Lable_Large"
               onClick={() => router.back()}
               className="!bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnBackground"
             >
               خیر
-            </Dark_Button>
+            </CustomButton>
           </div>
         </div>
       </CustomModal>
@@ -63,17 +63,17 @@ const TestKitModalsListsDelete = ({ onDelete }: TestKitModalsListsDeleteProps) =
           </CustomTypography>
 
           <div className="w-full flex justify-between gap-4">
-            <Dark_Button fontSize="Lable_Large" onClick={deleteHandler}>
+            <CustomButton fontSize="Lable_Large" onClick={deleteHandler}>
               بله
-            </Dark_Button>
+            </CustomButton>
 
-            <Dark_Button
+            <CustomButton
               onClick={() => router.back()}
               fontSize="Lable_Large"
               className="!bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnBackground"
             >
               خیر
-            </Dark_Button>
+            </CustomButton>
           </div>
         </div>
       </CustomModal>

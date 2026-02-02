@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import Dark_Button from '@components/ui/Dark_Button';
 import moment from 'moment-jalaali';
 import { useRouter } from 'next/navigation';
 
@@ -64,7 +64,7 @@ const CreateMemoryPage = () => {
         <TextareaInput onchange={onChangeHandler} value={inputValue} />
 
         <footer className="mt-auto">
-          <Dark_Button
+          <CustomButton
             className="px-6 py-2 "
             onClick={() => createMemoryHandler(inputValue)}
             isDisable={!inputValue.title}
@@ -73,7 +73,7 @@ const CreateMemoryPage = () => {
             <CustomTypography fontSize="Title_Small" className="text-impo_PrimaryMan_OnPrimaryMan">
               ثبت خاطره
             </CustomTypography>
-          </Dark_Button>
+          </CustomButton>
         </footer>
       </div>
       <UploadModal fileDataHandler={fileDataHandler} uploadImageLoading={uploadImageLoading} />

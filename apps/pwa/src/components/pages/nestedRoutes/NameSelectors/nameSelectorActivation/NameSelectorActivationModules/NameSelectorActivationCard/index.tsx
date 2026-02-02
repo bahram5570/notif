@@ -1,4 +1,4 @@
-import Dark_Button from '@components/ui/Dark_Button';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
 import { NameSelectorActivationCardProps } from './types';
 
@@ -15,7 +15,7 @@ const NameSelectorActivationCard = ({
       <>{children}</>
 
       <div className="w-full flex justify-center pt-5 mt-auto">
-        <Dark_Button
+        <CustomButton
           onClick={onClick}
           isLoading={isLoading}
           isDisable={isDisable}
@@ -24,7 +24,7 @@ const NameSelectorActivationCard = ({
           id={`BabyNameActivationStep${currentStep}`}
         >
           {btnText}
-        </Dark_Button>
+        </CustomButton>
       </div>
     </div>
   );

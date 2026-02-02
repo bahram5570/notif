@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import DateModule from '@components/activation/DateModule';
-import Dark_Button from '@components/ui/Dark_Button';
 import useAnalytics from '@hooks/useAnalytics';
 
 import useEditCycleDateIntervals from './__hooks__/useEditCycleDateIntervals';
@@ -46,9 +46,9 @@ const PopUpEditCycleFinishPeriod = ({ data, startTime, periodLength }: PopUpEdit
         />
       )}
 
-      <Dark_Button isLoading={isLoading} onClick={clickHandler} fontSize="Lable_Large" className="mt-auto">
+      <CustomButton isLoading={isLoading} onClick={clickHandler} fontSize="Lable_Large" className="mt-auto">
         {data.button.text}
-      </Dark_Button>
+      </CustomButton>
     </>
   );
 };

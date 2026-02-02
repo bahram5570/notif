@@ -12,7 +12,7 @@ export const PageNavigationLoadingContext = createContext<PageNavigationLoadingC
   pageNavigationHandler: () => {},
 });
 
-const PageNavigationLoadingProvider = ({ children }: { children: React.ReactNode }) => {
+export const PageNavigationLoadingProvider = ({ children }: { children: React.ReactNode }) => {
   if (typeof window === 'undefined') {
     return;
   }
@@ -92,5 +92,3 @@ const PageNavigationLoadingProvider = ({ children }: { children: React.ReactNode
     </PageNavigationLoadingContext.Provider>
   );
 };
-
-export default PageNavigationLoadingProvider;

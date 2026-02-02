@@ -1,9 +1,9 @@
 import TickIcon from '@assets/icons/tick.svg';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toPersianNumbers } from '@utils/numbers';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 
 import { SideEnum } from './constants';
 import { MessagePropsType } from './type';
@@ -40,7 +40,7 @@ const Message = ({ createTime, side, text, partnerAvatar, id }: MessagePropsType
               </CustomTypography>
 
               {id === '' ? (
-                <Dark_Spinner size={16} className="border-impo_Neutral_Surface" />
+                <CustomSpinner size={16} className="border-impo_Neutral_Surface" />
               ) : (
                 <TickIcon
                   className={`w-4 h-4 ${side === SideEnum.Partner ? 'stroke-impo_Neutral_OnBackground' : 'stroke-impo_White'}`}

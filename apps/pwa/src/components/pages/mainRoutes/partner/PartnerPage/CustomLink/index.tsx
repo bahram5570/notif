@@ -1,6 +1,7 @@
-import Dark_Spinner from '@components/ui/Dark_Spinner';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
+
 import useTypographyMaker from '@hooks/useTypographyMaker';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import Link from 'next/link';
 
 import { CustomLinkPropType } from './type';
@@ -34,7 +35,7 @@ const CustomLink = (props: CustomLinkPropType) => {
       className={` w-full h-10  rounded-full flex justify-center items-center text-impo_Primary_Primary bg-impo_Primary_PrimaryContainer ${props.className}`}
       onClick={clickHandler}
     >
-      {isLoading && <Dark_Spinner size={20} />}
+      {isLoading && <CustomSpinner size={20} />}
       {!isLoading && result}
     </Link>
   );

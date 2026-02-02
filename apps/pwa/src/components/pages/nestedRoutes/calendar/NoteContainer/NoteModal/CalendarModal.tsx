@@ -1,5 +1,6 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+
 import CalendarContainer from '@components/pages/mainRoutes/calendar/CalendarContainer';
-import Dark_Button from '@components/ui/Dark_Button';
 
 import CalendarSkeleton from './CalendarSkeleton';
 import useCalendar from './__hooks__/useCalendar';
@@ -27,17 +28,17 @@ const CalendarModal = ({ dateTime, onChangeHandler, onCloseModalHandler }: Calen
           />
 
           <div className="flex px-3 gap-2">
-            <Dark_Button isLoading={isLoading} onClick={applyHandler} className="mt-auto">
+            <CustomButton isLoading={isLoading} onClick={applyHandler} className="mt-auto">
               تایید
-            </Dark_Button>
+            </CustomButton>
 
-            <Dark_Button
+            <CustomButton
               isLoading={isLoading}
               onClick={onCloseModalHandler}
               className="mt-auto !bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnSurface"
             >
               انصراف
-            </Dark_Button>
+            </CustomButton>
           </div>
         </>
       )}

@@ -1,9 +1,9 @@
 'use client';
 
+import { CustomBackButton } from '@repo/core/components/ui/CustomBackButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import Dark_BackButton from '@components/ui/Dark_BackButton';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import { NAME_SELECTOR_HEADING_HEIGHT, NAME_SELECTOR_HEADING_WIDTH } from '../constants';
@@ -40,7 +40,7 @@ const NameSelectorHeading = ({ description }: NameSelectorHeadingProps) => {
 
             <div className="">
               <div className="w-12 h-12 flex justify-center items-center my-4 mr-4 ml-auto">
-                <Dark_BackButton />
+                <CustomBackButton />
               </div>
 
               <CustomTypography fontSize="Body_Medium" className="text-impo_Surface_InverseSurface pr-4">

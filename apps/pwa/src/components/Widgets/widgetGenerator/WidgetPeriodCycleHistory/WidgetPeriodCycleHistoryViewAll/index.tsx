@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 
-import Dark_Button from '@components/ui/Dark_Button';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { PERIOD_CYCLE_HISTORY_VIEW_ALL } from './constants';
 import { WidgetPeriodCycleHistoryViewAllProps } from './types';
@@ -26,13 +27,13 @@ const WidgetPeriodCycleHistoryViewAll = ({ data }: WidgetPeriodCycleHistoryViewA
   };
 
   return (
-    <Dark_Button
+    <CustomButton
       className="mt-2 h-10 !bg-impo_Neutral_Surface !text-impo_Neutral_OnSurface !border-impo_Neutral_Surface"
       fontSize="Lable_Large"
       onClick={linkToHandler}
     >
       مشاهده همه دوره‌های گذشته
-    </Dark_Button>
+    </CustomButton>
   );
 };
 

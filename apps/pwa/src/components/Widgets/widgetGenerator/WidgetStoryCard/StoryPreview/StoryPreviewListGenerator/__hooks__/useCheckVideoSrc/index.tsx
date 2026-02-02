@@ -1,4 +1,4 @@
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 const useCheckVideoSrc = () => {
   const { operatingSystem } = useOperatingSystem();

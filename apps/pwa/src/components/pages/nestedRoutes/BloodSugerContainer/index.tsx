@@ -2,9 +2,10 @@
 
 import { useState } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import Dark_Button from '@components/ui/Dark_Button';
 
 import BloodSugerBtnGenerator from './BloodSugerBtnGenerator';
 import BloodSugerHeader from './BloodSugerHeader';
@@ -49,9 +50,9 @@ const BloodSugerContainer = () => {
         </div>
 
         <div className="flex flex-col justify-center items-center p-4 mt-auto">
-          <Dark_Button fontSize="Lable_Large" onClick={onClick} isLoading={isLoading} isDisable={!inputValue.value}>
+          <CustomButton fontSize="Lable_Large" onClick={onClick} isLoading={isLoading} isDisable={!inputValue.value}>
             ثبت اطلاعات
-          </Dark_Button>
+          </CustomButton>
         </div>
       </div>
     </MainPageLayout>

@@ -1,8 +1,8 @@
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { PartnerLinkNameEnum } from './enum';
 import { LinkGeneratorPropsType } from './type';

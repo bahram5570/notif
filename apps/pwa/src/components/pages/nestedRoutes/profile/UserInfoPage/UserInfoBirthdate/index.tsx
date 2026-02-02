@@ -1,14 +1,14 @@
 import { useMemo } from 'react';
 
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toJalaliData } from '@utils/dates';
 
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { UserInfoBirthdateTypes } from './types';
 
@@ -39,7 +39,7 @@ const UserInfoBirthdate = ({ value, valueHandler, name }: UserInfoBirthdateTypes
 
   return (
     <div onClick={selectHandler} className="w-full flex justify-end items-center">
-      {isLoading && <Dark_Spinner size={24} />}
+      {isLoading && <CustomSpinner size={24} />}
 
       {!isLoading && (
         <CustomTypography fontSize="Body_Large" className="text-impo_Surface_OnSurfaceVariant">

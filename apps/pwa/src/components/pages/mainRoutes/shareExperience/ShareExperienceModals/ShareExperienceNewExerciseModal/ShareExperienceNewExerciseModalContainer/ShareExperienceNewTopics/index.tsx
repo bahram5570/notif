@@ -1,11 +1,11 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import { SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import CustomModal from '@components/ui/CustomModal';
-import Dark_Button from '@components/ui/Dark_Button';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 import useAnalytics from '@hooks/useAnalytics';
 import useOverflowHandler from '@hooks/useOverflowHandler';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
@@ -49,7 +49,7 @@ const ShareExperienceNewTopics = ({
           <div className="flex flex-col h-[calc(100dvh_-_48px)]" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
             {isLoading && (
               <div className="w-full flex justify-center">
-                <Dark_Spinner className="border-impo_Neutral_OnBackground" />
+                <CustomSpinner className="border-impo_Neutral_OnBackground" />
               </div>
             )}
 
@@ -71,14 +71,14 @@ const ShareExperienceNewTopics = ({
                 ))}
 
                 <div className="sticky bottom-0 left-0 right-0 top-0 mx-auto w-full mt-auto px-4 py-6 bg-impo_Neutral_Background z-[1000]">
-                  <Dark_Button
+                  <CustomButton
                     onClick={clickHandler}
                     isLoading={isSubmitLoading}
                     isDisable={topicId === null}
                     fontSize="Lable_Large"
                   >
                     ثبت تجربه
-                  </Dark_Button>
+                  </CustomButton>
                 </div>
               </>
             )}

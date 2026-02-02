@@ -6,7 +6,7 @@ import CustomLink from '@components/pages/mainRoutes/partner/PartnerPage/CustomL
 import CustomModal from '@components/ui/CustomModal';
 import { ACTIVATION_INTERFACE_CODE } from '@constants/activation.constants';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import useInterfaceCode from './__hooks__/useInterfaceCode';
 import { InterfaceCodeContainerProps } from './types';

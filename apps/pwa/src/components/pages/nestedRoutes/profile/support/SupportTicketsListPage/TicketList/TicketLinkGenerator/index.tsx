@@ -1,6 +1,6 @@
 import LinkedContent from '@components/ui/LinkedContent';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { TicketLinkGeneratorPropsType } from './type';
 

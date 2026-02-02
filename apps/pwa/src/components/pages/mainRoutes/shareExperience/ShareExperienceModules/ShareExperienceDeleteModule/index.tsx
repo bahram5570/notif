@@ -2,8 +2,8 @@ import TrashIcon from '@assets/icons/trash.svg';
 
 import { SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import useAnalytics from '@hooks/useAnalytics';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { ShareExperienceDeleteModuleProps } from './types';
 

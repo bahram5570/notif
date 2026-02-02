@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import ActivationBackBtn from '@components/activation/ActivationBackBtn';
 import ActivationHeading from '@components/activation/ActivationHeading';
-import Dark_Button from '@components/ui/Dark_Button';
 import WheelPicker from '@components/ui/WheelPicker';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -62,14 +62,14 @@ const AddWeightContainer = () => {
       </div>
 
       <div className="flex mx-auto mt-auto pb-6 w-[204px] min-w-fit">
-        <Dark_Button
+        <CustomButton
           isLoading={isLoading}
           fontSize="Lable_Large"
           navigationLoadingId="DatesContainer"
           onClick={() => submitHandler(currentWeight)}
         >
           ثبت اطلاعات
-        </Dark_Button>
+        </CustomButton>
       </div>
     </div>
   );

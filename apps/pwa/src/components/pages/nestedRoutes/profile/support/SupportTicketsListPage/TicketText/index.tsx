@@ -5,7 +5,7 @@ import { toJalaliData } from '@utils/dates';
 
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import Link from 'next/link';
 
 import TicketStatus from './TicketStatus';

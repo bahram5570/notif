@@ -1,6 +1,6 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { colorFormatConverter } from '@utils/scripts';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
@@ -15,7 +15,7 @@ const WidgetSubscriptionHeadlineBtn = ({
   const { actionHandler } = useWidgetActions();
 
   return (
-    <Dark_Button
+    <CustomButton
       onClick={() => actionHandler(action)}
       isDisable={action.actionType === ActionTypeEnum.None}
       style={{
@@ -27,7 +27,7 @@ const WidgetSubscriptionHeadlineBtn = ({
       fontSize="Lable_Medium"
     >
       {text}
-    </Dark_Button>
+    </CustomButton>
   );
 };
 

@@ -1,11 +1,11 @@
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import styles from './RatingDescriptionModal.module.css';
 
 import CustomModal from '@components/ui/CustomModal';
-import Dark_Button from '@components/ui/Dark_Button';
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import { MAX_LETTERS_COUNT } from './constants';
 import { RatingDescriptionModalProps } from './types';
@@ -51,9 +51,9 @@ const RatingDescriptionModal = ({ descriptionHandler, description, onClick }: Ra
           {lettersCountScript}
         </CustomTypography>
 
-        <Dark_Button fontSize="Lable_Large" onClick={onClick}>
+        <CustomButton fontSize="Lable_Large" onClick={onClick}>
           ارسال بازخورد
-        </Dark_Button>
+        </CustomButton>
       </>
     </CustomModal>
   );

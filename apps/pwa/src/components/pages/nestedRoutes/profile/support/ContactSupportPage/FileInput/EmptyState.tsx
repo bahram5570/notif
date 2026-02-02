@@ -1,11 +1,11 @@
 import PlusIcon from '@assets/icons/plus.svg';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 import useFileUpload from '@hooks/useFileUpload';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { EmptyStatePropsType } from './type';
 
@@ -25,7 +25,7 @@ const EmptyState = ({ valuesHandler }: EmptyStatePropsType) => {
           pageNavigationHandler({ showProgressBar: false, id: 'supportUploadChat' }));
       }}
     >
-      {uploadImageLoading && <Dark_Spinner size={20} />}
+      {uploadImageLoading && <CustomSpinner size={20} />}
 
       {!uploadImageLoading && (
         <>

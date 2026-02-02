@@ -1,6 +1,6 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import ClinicTicketGenerator from '../../ClinicTicketGenerator';
@@ -28,14 +28,14 @@ const ActiveTicketsHeading = ({ activeTicketsOneTitle, activeTicketsMore, ticket
             </CustomTypography>
 
             {isMoreThanOne && (
-              <Dark_Button
+              <CustomButton
                 onClick={openHandler}
                 fontSize="Lable_Medium"
                 navigationLoadingId="ActiveTicketsHeading"
                 className="!w-fit !h-8 bg-impo_Primary_PrimaryContainer border-impo_Primary_PrimaryContainer text-impo_Primary_Primary"
               >
                 {activeTicketsMore}
-              </Dark_Button>
+              </CustomButton>
             )}
           </div>
 

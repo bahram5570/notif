@@ -3,8 +3,8 @@ import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useAnalytics from '@hooks/useAnalytics';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import Link from 'next/link';
 
 import { SubscriptionProps } from '../__hooks__/userNameDetail/type';

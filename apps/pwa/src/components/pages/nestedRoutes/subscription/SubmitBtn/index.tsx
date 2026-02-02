@@ -1,6 +1,6 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import VpnText from '@components/ui/VpnText';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
@@ -42,14 +42,14 @@ const SubmitBtn = ({
               </CustomTypography>
             </div>
           </div>
-          <Dark_Button
+          <CustomButton
             isLoading={isLoading}
             id="SubscriptionPayment"
             onClick={() => submitHandler(isFree, { discount: approvedCode, isWeb: true, packageId, value })}
             fontSize="Lable_Large"
           >
             {payButtonText}
-          </Dark_Button>
+          </CustomButton>
         </div>
       </div>
     </div>

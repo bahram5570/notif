@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { isDevelopeMode } from '@repo/core/utils/system';
 
 import MainPageLayoutHeader from '@components/MainPageLayout/MainPageLayoutHeader';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import Dark_Button from '@components/ui/Dark_Button';
 import VpnText from '@components/ui/VpnText';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import { useRouter } from 'next/navigation';
@@ -79,9 +79,9 @@ const SpecialistPaymant = (props: SpecialistPaymantProps) => {
           <div className="mt-auto flex flex-col w-full gap-2 ">
             <VpnText />
 
-            <Dark_Button isLoading={isLoading} onClick={submitHandler} id="Clinic_Payment_Press">
+            <CustomButton isLoading={isLoading} onClick={submitHandler} id="Clinic_Payment_Press">
               {props.submit}
-            </Dark_Button>
+            </CustomButton>
           </div>
         </div>
       </div>

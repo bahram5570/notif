@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 
 import ResetIcon from '@assets/icons/calendarReset.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { currentDate } from '@utils/dates';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
 
@@ -34,7 +34,7 @@ const ResetBtn = ({ selectedDate, resetKeyHandler }: ResetBtnProps) => {
       className="w-full flex justify-center pt-4 overflow-hidden duration-200"
       style={{ maxHeight: isTodaySelected ? 0 : RESET_BUTTON_MAX_HEIGHT }}
     >
-      <Dark_Button
+      <CustomButton
         className="!w-fit !h-8 border-impo_Surface_OutlineVariant !bg-impo_Neutral_Background"
         onClick={() => resetKeyHandler(dateType)}
       >
@@ -45,7 +45,7 @@ const ResetBtn = ({ selectedDate, resetKeyHandler }: ResetBtnProps) => {
 
           <ResetIcon className="w-4 stroke-impo_Neutral_OnBackground" />
         </div>
-      </Dark_Button>
+      </CustomButton>
     </div>
   );
 };

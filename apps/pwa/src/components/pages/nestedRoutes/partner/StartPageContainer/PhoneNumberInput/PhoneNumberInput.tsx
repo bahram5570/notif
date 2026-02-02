@@ -1,9 +1,8 @@
 import { useState } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toEnglishNumbers, toPersianNumbers } from '@utils/numbers';
-
-import Dark_Button from '@components/ui/Dark_Button';
 
 import useCreate from '../__hooks__/useCreate';
 
@@ -42,11 +41,11 @@ const PhoneNumberInput = () => {
         />
       </div>
       <div className="flex justify-center w-1/2 items-center">
-        <Dark_Button onClick={onClickHandler} isLoading={isLoading} isDisable={!phoneNumber}>
+        <CustomButton onClick={onClickHandler} isLoading={isLoading} isDisable={!phoneNumber}>
           <CustomTypography fontSize="Lable_Medium" className="text-center text-impo_White">
             ادامه
           </CustomTypography>
-        </Dark_Button>
+        </CustomButton>
       </div>
     </>
   );

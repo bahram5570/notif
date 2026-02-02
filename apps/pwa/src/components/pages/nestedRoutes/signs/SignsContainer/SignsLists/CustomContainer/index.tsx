@@ -1,8 +1,8 @@
 import LinkIcon from '@assets/icons/calendarSignLink.svg';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Spinner from '@components/ui/Dark_Spinner';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import Link from 'next/link';
 
 import { CustomContainerPropsType } from './type';
@@ -67,7 +67,7 @@ const CustomContainer = ({ allBtnLink, children, plusIconLink, title, showAllBtn
             </CustomTypography>
           )}
 
-          {isLoading && <Dark_Spinner size={20} className="border-impo_Neutral_OnBackground" />}
+          {isLoading && <CustomSpinner size={20} className="border-impo_Neutral_OnBackground" />}
         </Link>
       )}
     </div>

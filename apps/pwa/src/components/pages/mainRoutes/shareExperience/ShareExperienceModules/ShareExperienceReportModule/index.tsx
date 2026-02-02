@@ -1,8 +1,8 @@
 import ThreeDotsIcon from '@assets/icons/threeDots.svg';
 
 import { SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { ShareExperienceReportModuleProps } from './types';
 

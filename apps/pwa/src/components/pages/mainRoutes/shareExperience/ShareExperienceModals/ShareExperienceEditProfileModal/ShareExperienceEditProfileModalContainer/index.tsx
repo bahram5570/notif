@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 
 import EditIcon from '@assets/icons/Pen 2.svg';
 import InfoIcon from '@assets/icons/info.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import Dark_Button from '@components/ui/Dark_Button';
 
 import ShareExperienceAvatarModule from '../../../ShareExperienceModules/ShareExperienceAvatarModule';
 import useUpdateProfile from '../../ShareExperienceChangeAvatarModal/ShareExperienceChangeAvatarModalContainer/__hooks__/useUpdateProfile';
@@ -82,7 +82,7 @@ const ShareExperienceEditProfileModalContainer = ({ id }: ShareExperienceEditPro
             </div>
           </div>
 
-          <Dark_Button
+          <CustomButton
             className="mt-auto"
             isLoading={isLoading}
             onClick={clickHandler}
@@ -90,7 +90,7 @@ const ShareExperienceEditProfileModalContainer = ({ id }: ShareExperienceEditPro
             isDisable={profileData.profile.username === userName}
           >
             ثبت تغییرات
-          </Dark_Button>
+          </CustomButton>
         </div>
       )}
     </MainPageLayout>

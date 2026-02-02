@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 import CancelIcon from '@assets/icons/cancel.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import useSubmit from './__hooks__/useSubmit';
@@ -47,14 +47,14 @@ const CommentChatModal = ({ onCloseModal }: CommentChatModalPropsType) => {
           className="w-full flex flex-col items-center justify-end gap-2   mx-auto "
           style={{ maxWidth: MAX_SCREEN_WIDTH }}
         >
-          <Dark_Button
+          <CustomButton
             onClick={onClick}
             isLoading={isLoading}
             isDisable={description.trim() === ''}
             fontSize="Lable_Large"
           >
             ثبت نظر
-          </Dark_Button>
+          </CustomButton>
         </div>
       </div>
     </div>

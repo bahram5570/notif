@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import Image from 'next/image';
 
-import Dark_Spinner from '../Dark_Spinner';
 import CustomImageError from './CustomImageError';
 import useImageSrc from './__hooks__/useImageSrc';
 import usePreviewImage from './__hooks__/usePreviewImage';
@@ -46,7 +46,7 @@ const CustomImage = (props: CustomImageProps) => {
 
         {previewImageLoading && (
           <div className="absolute inset-0 z-20 flex items-center justify-center bg-impo_Surface_SurfaceVariant backdrop-blur-sm">
-            <Dark_Spinner className="border-impo_Neutral_Surface" />
+            <CustomSpinner className="border-impo_Neutral_Surface" />
           </div>
         )}
 

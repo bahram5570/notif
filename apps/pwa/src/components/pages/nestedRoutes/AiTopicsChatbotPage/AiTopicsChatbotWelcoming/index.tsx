@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { removeWelcomingHandler } from '@utils/aiChatBotWelcoming';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import AiChatbotWelcomingLayout from '@components/ui/__AiChatbot__/AiChatbotWelcomingLayout';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useWidgetActions from '@hooks/useWidgetActions';
@@ -51,7 +51,7 @@ const AiTopicsChatbotWelcoming = ({ onUpdateKeyHandler }: TopicsChatbotWelcoming
                     {data?.description}
                   </CustomTypography>
                 </div>
-                <Dark_Button
+                <CustomButton
                   // contentsColor={colorFormatConverter(data?.button.foregroundColor || '')}
                   // buttonColor={colorFormatConverter(data?.button.backgroundColor || '')}
                   onClick={onClick}
@@ -59,7 +59,7 @@ const AiTopicsChatbotWelcoming = ({ onUpdateKeyHandler }: TopicsChatbotWelcoming
                   <CustomTypography fontSize="Lable_Large" className="text-impo_White">
                     {data?.button.text}
                   </CustomTypography>
-                </Dark_Button>
+                </CustomButton>
               </>
             )}
           </div>

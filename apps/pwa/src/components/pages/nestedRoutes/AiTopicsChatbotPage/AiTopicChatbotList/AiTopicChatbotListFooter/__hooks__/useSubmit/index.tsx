@@ -1,7 +1,7 @@
 import { setSessionStoragePromptText } from '@utils/aiChatbot';
 
 import { SubmitHandlerType } from '@components/pages/nestedRoutes/AiChatbotPage/__hooks__/useSubmit/type';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 const useSubmit = () => {
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();

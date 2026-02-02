@@ -1,7 +1,7 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useSignDateState from '@hooks/__sign__/useSignDateState';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import CreateNewNoteBtn from './CreateNewNoteBtn';
 import NoteItem from './NoteItem';

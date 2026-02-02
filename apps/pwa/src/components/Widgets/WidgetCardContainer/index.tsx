@@ -1,6 +1,6 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
@@ -42,7 +42,7 @@ const WidgetCardContainer = ({
         <>{children}</>
 
         {button && (
-          <Dark_Button
+          <CustomButton
             id={buttonId}
             onClick={clickHandler}
             fontSize="Lable_Large"
@@ -50,7 +50,7 @@ const WidgetCardContainer = ({
             isDisable={button?.action.actionType === ActionTypeEnum.None}
           >
             {button.text}
-          </Dark_Button>
+          </CustomButton>
         )}
       </div>
     </div>

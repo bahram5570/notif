@@ -1,8 +1,8 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import DateModule from '@components/activation/DateModule';
-import Dark_Button from '@components/ui/Dark_Button';
 import useAnalytics from '@hooks/useAnalytics';
 import useDateIntervals from '@providers/__activation__/ActivationProvider/__hooks__/useDateIntervals';
 
@@ -40,9 +40,9 @@ const PopUpEditCycleLastPeriod = ({
 
       <DateModule valueHandler={startTimeHandler} startDate={periodStart} endDate={periodEnd} defaultDate={periodEnd} />
 
-      <Dark_Button isLoading={isLoading} onClick={clickHandler} fontSize="Lable_Large" className="mt-auto">
+      <CustomButton isLoading={isLoading} onClick={clickHandler} fontSize="Lable_Large" className="mt-auto">
         {data.button.text}
-      </Dark_Button>
+      </CustomButton>
     </>
   );
 };

@@ -3,7 +3,7 @@
 import { toEnglishNumbers, toPersianNumbers } from '../../utils/numbers';
 import { typographyFontStylesMaker } from '../../utils/system';
 
-import useOperatingSystem from '../useOperatingSystem';
+import { useOperatingSystem } from '../useOperatingSystem';
 import { UseTypographyMakerTypes } from './types';
 
 export const useTypographyMaker = ({ children, numbersMode, fontSize = 'Body_Medium' }: UseTypographyMakerTypes) => {

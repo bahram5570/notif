@@ -1,5 +1,6 @@
 'use client';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import FeedbackModal from '@components/FeedbackModal';
@@ -7,7 +8,6 @@ import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import RoutinCta from '@components/__routin__/RoutinCta';
-import Dark_Button from '@components/ui/Dark_Button';
 
 import { ProgramWidgetItemStatusEnum } from '../enum';
 import EmptyState from './EmptyState';
@@ -56,7 +56,7 @@ const RoutinItemContainer = () => {
                 {data.cta.ctaBtnLabel && data.cta.ctaDescription && <RoutinCta cta={data.cta} />}
 
                 <div className="mt-auto p-2">
-                  <Dark_Button
+                  <CustomButton
                     onClick={onSeenHandler}
                     isDisable={data.status === ProgramWidgetItemStatusEnum.Compelet}
                     className="text-impo_Primary_Primary bg-impo_Primary_PrimaryContainer border-impo_Primary_PrimaryContainer"
@@ -65,7 +65,7 @@ const RoutinItemContainer = () => {
                     <CustomTypography fontSize="Lable_Large" className="text-impo_Primary_Primary">
                       {data.compeletButtonLabel}
                     </CustomTypography>
-                  </Dark_Button>
+                  </CustomButton>
                 </div>
               </>
             )}

@@ -1,10 +1,10 @@
 import Hamdel from '@assets/icons/hamdel.svg';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Dark_Button from '@components/ui/Dark_Button';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { PartnerModalNameEnums } from './enums';
 
@@ -52,11 +52,11 @@ const AcceptModal = () => {
           </CustomTypography>
         </div>
 
-        <Dark_Button onClick={onClickHandler}>
+        <CustomButton onClick={onClickHandler}>
           <CustomTypography fontSize="Lable_Large" className="text-impo_White ">
             باشه
           </CustomTypography>
-        </Dark_Button>
+        </CustomButton>
       </div>
     </div>
   );

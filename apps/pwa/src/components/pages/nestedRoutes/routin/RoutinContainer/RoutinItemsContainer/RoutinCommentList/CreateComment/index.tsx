@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 import PaperPlaneRightIcon from '@assets/icons/PaperPlaneRight.svg';
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-import useOperatingSystem from '@repo/core/hooks/useOperatingSystem';
+import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import useSubmit from './__hooks__/useSubmit';
 import { CreateCommentPropsType } from './type';
@@ -47,7 +47,7 @@ const CreateComment = ({ commentPlaceholder, programId }: CreateCommentPropsType
       >
         {isLoading && (
           <div className="absolute left-0 right-0 top-0 bottom-0 flex justify-center items-center">
-            <Dark_Spinner size={24} className="border-impo_PrimaryMan_OnPrimaryMan" />
+            <CustomSpinner size={24} className="border-impo_PrimaryMan_OnPrimaryMan" />
           </div>
         )}
         {!isLoading && (

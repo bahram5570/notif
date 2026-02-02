@@ -1,10 +1,10 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import Dark_Button from '@components/ui/Dark_Button';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { PartnerModalNameEnums } from '../../PartnerModals/enums';
 import { RequestGeneratorTypeProps } from './type';
@@ -51,11 +51,11 @@ const RequestGenerator = ({ item }: RequestGeneratorTypeProps) => {
       </div>
       <div className="flex items-center gap-3">
         {item.isRecv && (
-          <Dark_Button className="max-w-fit" onClick={onAcceptClickHandler} isLoading={isLoading}>
+          <CustomButton className="max-w-fit" onClick={onAcceptClickHandler} isLoading={isLoading}>
             <CustomTypography fontSize="Lable_Medium" className="text-impo_Primary_OnPrimary">
               قبول کردن
             </CustomTypography>
-          </Dark_Button>
+          </CustomButton>
         )}
 
         {!item.isRecv && (
@@ -68,7 +68,7 @@ const RequestGenerator = ({ item }: RequestGeneratorTypeProps) => {
           </div>
         )}
 
-        <Dark_Button
+        <CustomButton
           onClick={onRejectClickHandler}
           className="bg-impo_Surface_OutlineVariant border !border-impo_Neutral_Surface max-w-fit"
           isLoading={isLoading}
@@ -76,7 +76,7 @@ const RequestGenerator = ({ item }: RequestGeneratorTypeProps) => {
           <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnSurface">
             {item.isRecv ? 'رد کردن' : 'لغو کردن'}
           </CustomTypography>
-        </Dark_Button>
+        </CustomButton>
       </div>
     </div>
   );

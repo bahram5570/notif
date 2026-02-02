@@ -1,9 +1,10 @@
 'use client';
 
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
+
 import styles from './styles.module.css';
 
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 
 import MessageListContainer from './MessageListContainer';
 import MessagerHeader from './MessagerHeader';
@@ -46,7 +47,7 @@ const NewPartnerMessagePage = () => {
       >
         {showLoading && (
           <div className="flex justify-center items-center absolute w-full">
-            <Dark_Spinner size={30} />
+            <CustomSpinner size={30} />
           </div>
         )}
         <WarningMessage messageList={messageList} />

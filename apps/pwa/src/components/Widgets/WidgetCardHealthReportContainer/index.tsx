@@ -1,6 +1,6 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
@@ -27,14 +27,14 @@ const WidgetCardHealthReportContainer = ({
       <>{children}</>
 
       {button && (
-        <Dark_Button
+        <CustomButton
           className={`mt-4 ${classNameBtn}`}
           onClick={() => actionHandler(button.action)}
           isDisable={button?.action.actionType === ActionTypeEnum.None}
           fontSize="Lable_Large"
         >
           {button.text}
-        </Dark_Button>
+        </CustomButton>
       )}
     </div>
   );

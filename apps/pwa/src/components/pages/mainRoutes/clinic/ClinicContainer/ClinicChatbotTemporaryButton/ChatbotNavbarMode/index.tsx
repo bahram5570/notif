@@ -1,10 +1,10 @@
 import chatbotJson from '@assets/lottie/chatbot.json';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_Spinner from '@components/ui/Dark_Spinner';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import TypingLoop from './TypingLoop';
 import { ChatbotNavbarModePropsType } from './type';
@@ -46,7 +46,7 @@ const ChatbotNavbarMode = ({
           <div className="flex flex-row items-center gap-1 justify-center w-full h-[30px] mt-auto">
             <div className="px-4 py-2 flex justify-center items-center rounded-full w-full bg-impo_Primary_Primary">
               {isLoading ? (
-                <Dark_Spinner size={24} className="border-impo_Neutral_Background" />
+                <CustomSpinner size={24} className="border-impo_Neutral_Background" />
               ) : (
                 <CustomTypography fontSize="Lable_Large" className="text-impo_Primary_OnPrimary">
                   {continueChatText}

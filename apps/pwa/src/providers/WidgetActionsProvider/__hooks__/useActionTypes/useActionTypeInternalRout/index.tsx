@@ -1,6 +1,6 @@
 import { actionRouteConverter } from './__utils__/actionRouteConverter';
 
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { CallInternalRoutTypes } from './types';
 

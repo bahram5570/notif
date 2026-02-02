@@ -1,7 +1,7 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { colorFormatConverter } from '@utils/scripts';
 
 import WidgetScaleModule from '@components/Widgets/WidgetScaleModule';
-import Dark_Button from '@components/ui/Dark_Button';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
@@ -14,7 +14,7 @@ const CycleCardBtn = ({ buttonsList }: CycleCardBtnProps) => {
     <WidgetScaleModule>
       <div className="w-full flex justify-center gap-4 pt-4">
         {buttonsList.map((item, index) => (
-          <Dark_Button
+          <CustomButton
             key={index}
             fontSize="Lable_Large"
             className="z-10 min-w-[140px] !w-fit"
@@ -27,7 +27,7 @@ const CycleCardBtn = ({ buttonsList }: CycleCardBtnProps) => {
             }}
           >
             {item.text}
-          </Dark_Button>
+          </CustomButton>
         ))}
       </div>
     </WidgetScaleModule>

@@ -1,6 +1,7 @@
 'use client';
 
-import Dark_Spinner from '@components/ui/Dark_Spinner';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
+
 import useFeatureIntro from '@hooks/__featureIntro__/useFeatureIntro';
 
 import FeatureIntroPageGenerator from './FeatureIntroPageGenerator';
@@ -15,7 +16,7 @@ const FeatureIntroPage = () => {
     <div className="w-full min-h-[100dvh] bg-impo_Neutral_Surface">
       {isLoading && (
         <div className="w-full h-dvh flex justify-center items-center">
-          <Dark_Spinner size={50} />
+          <CustomSpinner size={50} />
         </div>
       )}
 

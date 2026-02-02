@@ -1,5 +1,6 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+
 import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
-import Dark_Button from '@components/ui/Dark_Button';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import useSignSelected from './__hooks__/useSignSelected';
@@ -13,9 +14,9 @@ const SingsFooter = ({ singSelectedList, selectedDate, isDisableBtn }: SingsFoot
       style={{ height: FOOTER_HEIGTH, maxWidth: MAX_SCREEN_WIDTH }}
       className="fixed left-0 right-0 bottom-0 px-4 pb-4 mx-auto flex bg-impo_Neutral_Background items-end z-40"
     >
-      <Dark_Button fontSize="Title_Small" isLoading={isLoading} onClick={addSingHandler} isDisable={isDisableBtn}>
+      <CustomButton fontSize="Title_Small" isLoading={isLoading} onClick={addSingHandler} isDisable={isDisableBtn}>
         ثبت نشانه‌ها
-      </Dark_Button>
+      </CustomButton>
     </div>
   );
 };

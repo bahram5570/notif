@@ -1,5 +1,6 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+
 import ShareExperienceToast from '@components/pages/mainRoutes/shareExperience/ShareExperienceModules/ShareExperienceToast';
-import Dark_Button from '@components/ui/Dark_Button';
 import OverlayBar from '@components/ui/OverlayBar';
 import useAnalytics from '@hooks/useAnalytics';
 
@@ -22,9 +23,9 @@ const NewReplyBtn = ({ text, isLoading, submitHandler, btnTop, toast }: NewReply
         </div>
       )}
 
-      <Dark_Button className="!w-fit" isDisable={isDisable} isLoading={isLoading} onClick={clickHandler}>
+      <CustomButton className="!w-fit" isDisable={isDisable} isLoading={isLoading} onClick={clickHandler}>
         پست کردن
-      </Dark_Button>
+      </CustomButton>
     </OverlayBar>
   );
 };

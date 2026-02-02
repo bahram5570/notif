@@ -1,8 +1,7 @@
 import { useState } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import Dark_Button from '@components/ui/Dark_Button';
 
 import KitTestRangeResult from './KitTestRangeResult';
 import KitTestRangeSlider from './KitTestRangeSlider';
@@ -28,14 +27,14 @@ const KitTestRange = ({ moduleType, subimtHandler, AnalytisId }: KitTestRangePro
         {kitTestScripts[moduleType].guideScript}
       </CustomTypography>
 
-      <Dark_Button
+      <CustomButton
         id={AnalytisId}
         fontSize="Lable_Large"
         isDisable={!isValueSelected}
         onClick={() => subimtHandler(rangeValue / 100)}
       >
         ادامه
-      </Dark_Button>
+      </CustomButton>
     </div>
   );
 };

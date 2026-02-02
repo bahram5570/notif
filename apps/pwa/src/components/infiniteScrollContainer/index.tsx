@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import Dark_Spinner from '@components/ui/Dark_Spinner';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import { PAGE_SIZE } from './constatns';
 import { InfiniteScrollContainerPropsType } from './type';
@@ -58,7 +58,7 @@ const InfiniteScrollContainer = ({
 
       {isLoading && (
         <div className="w-full h-full flex justify-center py-6 ">
-          <Dark_Spinner size={40} className="border-impo_Surface_Outline" />
+          <CustomSpinner size={40} className="border-impo_Surface_Outline" />
         </div>
       )}
     </div>

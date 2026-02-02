@@ -1,7 +1,7 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomModal from '@components/ui/CustomModal';
-import Dark_Button from '@components/ui/Dark_Button';
 
 import useSubmit from './__hooks__/useSubmit';
 import { RateModalPropsType } from './type';
@@ -21,9 +21,9 @@ const RateModal = ({ rate, rateDescription }: RateModalPropsType) => {
         <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnSurface text-center">
           بابت ثبت نظرت ازت ممنونیم، کمک بزرگی به تیم ایمپو برای بهبود اپلیکیشن کردی
         </CustomTypography>
-        <Dark_Button className="mt-auto" onClick={onClickHandler} isLoading={isLoading} fontSize="Lable_Large">
+        <CustomButton className="mt-auto" onClick={onClickHandler} isLoading={isLoading} fontSize="Lable_Large">
           ثبت نظر
-        </Dark_Button>
+        </CustomButton>
       </div>
     </CustomModal>
   );

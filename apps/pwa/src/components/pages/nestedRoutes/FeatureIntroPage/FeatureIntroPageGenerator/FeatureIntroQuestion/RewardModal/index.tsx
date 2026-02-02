@@ -1,7 +1,7 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomModal from '@components/ui/CustomModal';
-import Dark_Button from '@components/ui/Dark_Button';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 
@@ -36,13 +36,13 @@ const RewardModal = ({ data, goToNext, correctAnswer }: RewardModalPropsType) =>
           </CustomTypography>
         </div>
 
-        <Dark_Button
+        <CustomButton
           onClick={goToNext}
           className="h-12 !bg-impo_Neutral_OnSurface !border-impo_Neutral_OnSurface !text-impo_Neutral_Background"
           fontSize="Title_Small"
         >
           {data.btnText}
-        </Dark_Button>
+        </CustomButton>
       </div>
     </CustomModal>
   );

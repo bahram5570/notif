@@ -1,9 +1,9 @@
 'use client';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import MainPageLayout from '@components/MainPageLayout';
-import Dark_Button from '@components/ui/Dark_Button';
 import Dark_RadioButton from '@components/ui/Dark_RadioButton';
 
 import useCalendarTypeSelect from './__hooks__/useCalendarTypeSelect';
@@ -46,7 +46,7 @@ const CalendarTypePage = () => {
         })}
       </div>
 
-      <Dark_Button
+      <CustomButton
         isDisable={isDisable}
         isLoading={isLoading}
         onClick={submitHandler}
@@ -54,7 +54,7 @@ const CalendarTypePage = () => {
         fontSize="Lable_Large"
       >
         ویرایش
-      </Dark_Button>
+      </CustomButton>
     </MainPageLayout>
   );
 };

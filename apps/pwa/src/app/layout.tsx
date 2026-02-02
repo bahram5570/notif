@@ -5,7 +5,6 @@ import AnalyticsProvider from '@providers/AnalyticsProvider';
 import CultureProvider from '@providers/CultureProvider';
 import ErrorProvider from '@providers/ErrorProvider';
 import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
-import PageNavigationProvider from '@providers/PageNavigationProvider';
 import PreviewImageProvider from '@providers/PreviewImageProvider';
 import ReactQueryProvider from '@providers/ReactQueryProvider';
 import RouteSequenceProvider from '@providers/RouteSequenceProvider';
@@ -15,6 +14,7 @@ import ThemeModeProvider from '@providers/ThemeModeProvider';
 import ToastProvider from '@providers/ToastProvider';
 import WidgetActionsProvider from '@providers/WidgetActionsProvider';
 import { OperatingSystemProvider } from '@repo/core/providers/OperatingSystemProvider';
+import { PageNavigationLoadingProvider } from '@repo/core/providers/PageNavigationLoadingProvider';
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 import Script from 'next/script';
@@ -69,7 +69,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
                   <ReactQueryProvider>
                     <ErrorProvider>
                       <ToastProvider>
-                        <PageNavigationProvider>
+                        <PageNavigationLoadingProvider>
                           <RouteSequenceProvider>
                             <WidgetActionsProvider>
                               <ServiceWorkerProvider>
@@ -81,7 +81,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
                               </ServiceWorkerProvider>
                             </WidgetActionsProvider>
                           </RouteSequenceProvider>
-                        </PageNavigationProvider>
+                        </PageNavigationLoadingProvider>
                       </ToastProvider>
                     </ErrorProvider>
                   </ReactQueryProvider>

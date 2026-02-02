@@ -3,7 +3,7 @@ import { textShorter } from '@utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
 import useAnalytics from '@hooks/useAnalytics';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import CustomLink from '../CustomLink';
 import { MemeryPropsType } from './type';

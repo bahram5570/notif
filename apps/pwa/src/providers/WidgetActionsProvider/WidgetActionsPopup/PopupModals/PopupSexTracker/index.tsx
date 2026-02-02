@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@utils/scripts';
 
-import Dark_Button from '@components/ui/Dark_Button';
 import OptionButton from '@components/ui/OptionButton';
 import useAnalytics from '@hooks/useAnalytics';
 import useWidgetActions from '@hooks/useWidgetActions';
@@ -50,7 +50,7 @@ const PopupSexTracker = ({ data }: PopupSexTrackerProps) => {
             ))}
           </div>
 
-          <Dark_Button
+          <CustomButton
             onClick={submitHandler}
             style={{
               background: colorFormatConverter(data.submit.backgroundColor),
@@ -61,7 +61,7 @@ const PopupSexTracker = ({ data }: PopupSexTrackerProps) => {
             className="h-12"
           >
             {data.submit.text}
-          </Dark_Button>
+          </CustomButton>
         </div>
       </div>
     </PopupTwoStepsContainer>

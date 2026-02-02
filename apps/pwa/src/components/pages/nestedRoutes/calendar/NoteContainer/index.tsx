@@ -2,11 +2,11 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import Dark_Button from '@components/ui/Dark_Button';
 import OverlayBar from '@components/ui/OverlayBar';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useAnalytics from '@hooks/useAnalytics';
@@ -72,9 +72,9 @@ const NoteContainer = () => {
             {isEditMode && <DeleteNoteBtn />}
 
             <OverlayBar btnTop={btnTop} className="py-3 px-2 mx-auto" style={{ maxWidth: MAX_SCREEN_WIDTH }}>
-              <Dark_Button isLoading={isLoading} isDisable={!noteValue.title} fontSize="Lable_Large" onClick={onClick}>
+              <CustomButton isLoading={isLoading} isDisable={!noteValue.title} fontSize="Lable_Large" onClick={onClick}>
                 {isEditMode ? 'ویرایش یادداشت' : 'ثبت یادداشت'}
-              </Dark_Button>
+              </CustomButton>
             </OverlayBar>
           </div>
 

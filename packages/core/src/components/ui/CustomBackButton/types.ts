@@ -1,4 +1,4 @@
-export interface Dark_BackButtonProps {
+export interface CustomBackButtonTypes {
   testId?: string;
   className?: string;
   isDisable?: boolean;

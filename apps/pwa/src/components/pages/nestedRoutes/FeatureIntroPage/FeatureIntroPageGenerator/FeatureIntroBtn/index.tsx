@@ -1,4 +1,5 @@
-import Dark_Button from '@components/ui/Dark_Button';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 
 import { FeatureIntroBtnPropsType } from './type';
@@ -6,7 +7,7 @@ import { FeatureIntroBtnPropsType } from './type';
 const FeatureIntroBtn = ({ onClick, textBtn, testId, isDisable = false }: FeatureIntroBtnPropsType) => {
   return (
     <div className="fixed bottom-0 p-4 mx-auto w-full" style={{ maxWidth: MAX_SCREEN_WIDTH }}>
-      <Dark_Button
+      <CustomButton
         onClick={onClick}
         testId={testId}
         isDisable={isDisable}
@@ -14,7 +15,7 @@ const FeatureIntroBtn = ({ onClick, textBtn, testId, isDisable = false }: Featur
         className="h-12 !bg-impo_Neutral_OnSurface !text-impo_Neutral_Background !border-impo_Neutral_OnSurface"
       >
         {textBtn}
-      </Dark_Button>
+      </CustomButton>
     </div>
   );
 };

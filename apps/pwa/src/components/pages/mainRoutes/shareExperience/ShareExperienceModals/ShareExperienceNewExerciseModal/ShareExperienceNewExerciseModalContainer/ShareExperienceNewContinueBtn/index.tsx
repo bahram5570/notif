@@ -1,8 +1,9 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+
 import ShareExperienceToast from '@components/pages/mainRoutes/shareExperience/ShareExperienceModules/ShareExperienceToast';
 import { SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import Dark_Button from '@components/ui/Dark_Button';
-import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { ShareExperienceNewContinueBtnProps } from './types';
 
@@ -26,9 +27,9 @@ const ShareExperienceNewContinueBtn = ({ text, btnTop, sendEnable, toast }: Shar
     >
       {toast && <ShareExperienceToast toastMessage={toast} />}
       {sendEnable && (
-        <Dark_Button isDisable={isDisable} isLoading={isLoading} fontSize="Lable_Large" onClick={clickHandler}>
+        <CustomButton isDisable={isDisable} isLoading={isLoading} fontSize="Lable_Large" onClick={clickHandler}>
           بعدی
-        </Dark_Button>
+        </CustomButton>
       )}
     </div>
   );
