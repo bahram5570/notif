@@ -41,7 +41,9 @@ const useGetNotificationHistory = () => {
     setPageNo((prev) => prev + 1);
   };
 
-  return { notificationhistoryData, isLoading, updatePageNo, pageNo, totalCount };
+  const firstLoading = isLoading && pageNo === 0;
+
+  return { notificationhistoryData, isLoading, updatePageNo, pageNo, totalCount, firstLoading };
 };
 
 export default useGetNotificationHistory;

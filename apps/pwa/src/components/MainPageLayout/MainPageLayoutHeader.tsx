@@ -12,7 +12,7 @@ const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
   const LeftElement2 = props.leftElement2 ? iconsList[props.leftElement2] : () => <></>;
   const RightElement = props.rightElement ? iconsList[props.rightElement] : () => <></>;
 
-  const hasBBothLeftElements = props.leftElement1 && props.leftElement2;
+  const hasBothLeftElements = props.leftElement1 && props.leftElement2;
 
   const contents = (
     <div
@@ -23,12 +23,12 @@ const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
         <div className="w-fit min-w-fit flex gap-4">
           <>
             <div
-              className={`h-11 w-11 min-w-11 min-h-11  flex items-center justify-center ${hasBBothLeftElements && 'bg-impo_Grey_100 dark:bg-impo_Grey_800 rounded-full'}`}
+              className={`h-10 w-10 min-w-10 min-h-10  flex items-center justify-center ${hasBothLeftElements && 'bg-impo_Grey_50 rounded-full'}`}
             >
               <LeftElement1 />
             </div>
             <div
-              className={`h-11 w-11 min-w-11 min-h-11  flex items-center justify-center ${hasBBothLeftElements && 'bg-impo_Grey_100 dark:bg-impo_Grey_800 rounded-full'}`}
+              className={`h-10 w-10 min-w-10 min-h-10  flex items-center justify-center ${hasBothLeftElements && 'bg-impo_Grey_50  rounded-full'}`}
             >
               <LeftElement2 />
             </div>
@@ -49,7 +49,7 @@ const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
           )}
 
           <div
-            className={`h-11 w-11 min-w-11 min-h-11  flex items-center justify-center ${hasBBothLeftElements && 'bg-impo_Grey_100 dark:bg-impo_Grey_800 rounded-full'}`}
+            className={`h-10 w-10 min-w-10 min-h-10  flex items-center justify-center ${hasBothLeftElements && 'bg-impo_Grey_50  rounded-full'}`}
           >
             <RightElement />
           </div>

@@ -15,11 +15,12 @@ const NotificationItem = (props: NotificationItemProps) => {
 
   return (
     <div
-      className=" bg-impo_Neutral_Surface rounded-lg px-2 py-3 w-full flex flex-row-reverse gap-2 items-start"
+      className=" bg-impo_Neutral_Surface rounded-lg px-3 py-4 w-full flex flex-row-reverse gap-2 items-start"
       onClick={onClick}
     >
-      <CustomImage src="/assets/images/Profile1.webp" className="w-8 h-8 min-w-8 min-h-8" />
-      <div className="flex flex-col items-end gap-1">
+      {props.icon && <CustomImage src={props.icon} className="w-8 h-8 min-w-8 min-h-8" />}
+
+      <div className="flex flex-col items-end gap-2">
         <div className="flex justify-between w-full flex-row-reverse">
           <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
             {props.title}

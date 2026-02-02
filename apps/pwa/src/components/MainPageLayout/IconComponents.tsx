@@ -48,7 +48,7 @@ export const PrifileIconComponent = () => {
     <IconComponentMaker
       loadingId="profile"
       path="/protected/profile"
-      iconElement={<ProfileIcon className="w-8 h-full stroke-impo_Surface_Outline" />}
+      iconElement={<ProfileIcon className="w-6 h-full stroke-impo_Surface_InverseSurface" />}
     />
   );
 };
@@ -58,7 +58,7 @@ export const CalendarIconComponent = () => {
     <IconComponentMaker
       loadingId="calendar"
       path="/protected/calendar"
-      iconElement={<CalendarIcon className="w-8 h-full stroke-impo_Surface_Outline" />}
+      iconElement={<CalendarIcon className="w-6 h-full stroke-impo_Surface_InverseSurface" />}
     />
   );
 };
@@ -89,8 +89,8 @@ export const NotificationIconComponent = () => {
   return (
     <IconComponentMaker
       loadingId="notification"
-      path="/protected/notificationCenter"
-      iconElement={<BellIcon className="w-8 h-full stroke-impo_Surface_Outline" />}
+      path="/protected/notificationHistory"
+      iconElement={<BellIcon className="w-6 h-full stroke-impo_Surface_InverseSurface" />}
     />
   );
 };

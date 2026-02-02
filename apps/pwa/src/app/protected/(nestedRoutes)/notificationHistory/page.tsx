@@ -1,7 +1,7 @@
 import NotificationCenterPage from '@components/pages/nestedRoutes/NotificationCenterPage';
 
-const NotificationCenter = () => {
+const NotificationHistory = () => {
   return <NotificationCenterPage />;
 };
 
-export default NotificationCenter;
+export default NotificationHistory;

@@ -1,30 +1,37 @@
 'use client';
 
-import MainPageLayout from '@components/MainPageLayout';
+import MainPageLayoutHeader from '@components/MainPageLayout/MainPageLayoutHeader';
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 
+import NotificationCenterSkeleton from './NotificationCenterSkeleton';
+import NotificationEmptyState from './NotificationEmptyState';
 import NotificationItem from './NotificationItem';
 import useGetNotificationHistory from './__hooks__/useGetNotificationHistory';
 
 const NotificationCenterPage = () => {
-  const { notificationhistoryData, isLoading, pageNo, updatePageNo, totalCount } = useGetNotificationHistory();
+  const { notificationhistoryData, isLoading, pageNo, updatePageNo, totalCount, firstLoading } =
+    useGetNotificationHistory();
 
   const hasData = notificationhistoryData && notificationhistoryData.items.length > 0;
+  const infiniteScrollLoading = isLoading && !firstLoading;
 
   return (
-    <MainPageLayout middleScript="پیام ها" rightElement="BackButton">
+    <>
+      <MainPageLayoutHeader middleScript="پیام ها" rightElement="BackButton" />
       <InfiniteScrollContainer
-        isLoading={isLoading}
+        isLoading={infiniteScrollLoading}
         pageNo={pageNo}
         pageSize={10}
         totalCount={totalCount}
         callBack={updatePageNo}
         height={'100dvh'}
         className="pb-4"
+        style={{ paddingTop: HEADER_HEIGHT + 10 }}
       >
-        {isLoading && <div>Loading...</div>}
-        {!hasData && !isLoading && <div>No notifications found.</div>}
-        {hasData && !isLoading && (
+        {firstLoading && <NotificationCenterSkeleton />}
+        {!hasData && !firstLoading && <NotificationEmptyState />}
+        {hasData && !firstLoading && (
           <div className="flex flex-col gap-3 px-4">
             {notificationhistoryData.items.map((item, index) => {
               return <NotificationItem key={index} {...item} />;
@@ -32,7 +39,7 @@ const NotificationCenterPage = () => {
           </div>
         )}
       </InfiniteScrollContainer>
-    </MainPageLayout>
+    </>
   );
 };
 
