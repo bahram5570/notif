@@ -24,6 +24,7 @@ const useShareExperienceOrders = () => {
 
       if (queryData) {
         const orderNumber = queryData[SHARE_EXPERIENCE_ORDER_QUERY_NAME];
+
         list.push({ queryName: item[0], orderNumber });
       }
     });
@@ -31,7 +32,8 @@ const useShareExperienceOrders = () => {
     list = list.sort((a, b) => a.orderNumber - b.orderNumber);
 
     list.forEach((item, index) => {
-      result = { ...result, [item.queryName]: MODAL_DEFAULT_Z_INDEX + index };
+      const order = +item.orderNumber.toString().slice(-5);
+      result = { ...result, [item.queryName]: order };
     });
 
     setShareExperienceOrdersList(result);

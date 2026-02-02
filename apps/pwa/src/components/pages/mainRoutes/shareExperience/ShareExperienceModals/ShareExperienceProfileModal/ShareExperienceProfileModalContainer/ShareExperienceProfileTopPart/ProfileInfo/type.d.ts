@@ -2,4 +2,6 @@ import { ShareExperienceProfileTopPartPropsType } from '../type';
 
 type ItemType = Pick<ShareExperienceProfileTopPartPropsType, 'followCount' | 'storyCount'>;
 
-export interface ProfileInfoPropsType extends ItemType {}
+export interface ProfileInfoPropsType extends ItemType {
+  userId: string;
+}

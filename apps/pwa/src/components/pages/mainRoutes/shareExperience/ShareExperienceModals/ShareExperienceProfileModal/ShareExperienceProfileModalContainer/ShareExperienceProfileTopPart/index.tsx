@@ -50,7 +50,7 @@ const ShareExperienceProfileTopPart = ({
           </Dark_Typography>
         </div>
 
-        <ProfileInfo followCount={followCount} storyCount={storyCount} />
+        <ProfileInfo followCount={followCount} storyCount={storyCount} userId={profile.id} />
       </div>
 
       <Dark_Button
