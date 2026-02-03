@@ -11,5 +11,5 @@
     }
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist", "src/configs/*"]
+  "exclude": ["node_modules", "dist", "src/theme/tailwind.config.ts"]
 }

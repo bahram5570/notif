@@ -24,13 +24,14 @@
       "types": "./dist/theme/*.d.ts"
     },
     "./theme.css": "./dist/theme/theme.css",
-    "./theme.tailwind.config.css": "./dist/theme/tailwind.config.css"
+    "./theme.tailwind.css": "./dist/theme/tailwind.css"
   },
   "scripts": {
     "clear:dist": "rimraf dist",
-    "copy:theme": "cpy ./src/theme/theme.css !./src/theme/tailwind.config.css ./dist/theme --flat",
-    "copy:tailwind-styles": "cd ./src/theme && tailwindcss -i ./tailwind.config.css -o ../../dist/theme/tailwind.config.css",
-    "build": "npm run clear:dist && npm run copy:theme && npm run copy:tailwind-styles && tsc --project tsconfig.json"
+    "copy:theme.css": "cpy ./src/theme/theme.css ./dist/theme --flat",
+    "copy:tailwind.config": "cpy ./src/theme/tailwind.config.ts ./dist/theme --flat",
+    "build:tailwind.css": "cd ./src/theme && tailwindcss -i ./tailwind.css -o ../../dist/theme/tailwind.css",
+    "build": "npm run clear:dist && tsc --project tsconfig.json && npm run copy:tailwind.config && npm run copy:theme.css && npm run build:tailwind.css"
   },
   "peerDependencies": {
     "react": "^18.0.0",

@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 @import '@repo/core/theme.css';
-@import '@repo/core/theme.tailwind.config.css';
+@import '@repo/core/theme.tailwind.css';
 
 @import '~react-toastify/dist/ReactToastify.min.css';
 
