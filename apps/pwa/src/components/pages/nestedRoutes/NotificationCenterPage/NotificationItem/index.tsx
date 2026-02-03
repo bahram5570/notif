@@ -20,7 +20,7 @@ const NotificationItem = (props: NotificationItemProps) => {
     >
       {props.icon && <CustomImage src={props.icon} className="w-8 h-8 min-w-8 min-h-8" />}
 
-      <div className="flex flex-col items-end gap-2">
+      <div className="flex flex-col items-end gap-2 w-full">
         <div className="flex justify-between w-full flex-row-reverse">
           <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
             {props.title}
