@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 const useIsDismissibleAction = () => {
   const { getQueryParams } = useQueryParamsHandler();

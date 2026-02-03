@@ -1,5 +1,5 @@
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ActiveSpecialist from './ActiveSpecialist';
 import SpecialistsList from './ActiveSpecialist/SpecialistsList';

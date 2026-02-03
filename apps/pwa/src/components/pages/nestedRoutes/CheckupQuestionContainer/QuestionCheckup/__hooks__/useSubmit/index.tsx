@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { MESSAGE_PREGNANCY_CHECKUP_RESULT } from '@components/pages/nestedRoutes/PregnancyCheckup/constant';
 import useApi from '@hooks/useApi';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
 import { PregnancyQuestionTypeEnum } from '../../../enum';

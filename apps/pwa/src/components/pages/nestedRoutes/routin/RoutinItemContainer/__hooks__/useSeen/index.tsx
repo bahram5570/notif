@@ -1,8 +1,8 @@
 import useCurrentRoutinIndex from '@hooks/__routin__/useCurrentRoutinIndex';
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
 import { IS_LAST_ROUTIN_ITEM } from '../../../RoutinContainer/constant';

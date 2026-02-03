@@ -1,14 +1,14 @@
 import EditIcon from '@assets/icons/Gallery Edit.svg';
 import UploadIcon from '@assets/icons/upload.svg';
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 import { toPersianNumbers } from '@utils/numbers';
 
 import useGetData from '@components/pages/mainRoutes/partner/PartnerPage/__hooks__/useGetData';
 import CustomImage from '@components/ui/CustomImage';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { PROFILE_MODAL_QUERY_NAME } from '../../ProfileLinkList/constants';
 import { ProfileModalNameEnums } from '../../ProfileModals/enum';

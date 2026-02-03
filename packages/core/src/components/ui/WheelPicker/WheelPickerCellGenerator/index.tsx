@@ -1,11 +1,9 @@
 import { memo } from 'react';
 
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
-import { toPersianNumbers } from '@utils/numbers';
-import { addIdAttrs } from '@utils/scripts';
+import { toPersianNumbers } from '../../../../utils/numbers';
+import { typographyFontStylesMaker } from '../../../../utils/system';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
-
+import { useOperatingSystem } from '../../../../hooks/useOperatingSystem';
 import { WheelPickerCellGeneratorProps } from './types';
 
 const WheelPickerCellGenerator = ({
@@ -31,11 +29,7 @@ const WheelPickerCellGenerator = ({
   const scale = isSelectedItem ? '1' : '0.6';
 
   return (
-    <p
-      {...addIdAttrs(isSelectedItem ? `wheelPickerCell_${title}` : '')}
-      className={`duration-200 pointer-events-none ${colorFinder()}`}
-      style={{ ...typographyFontStyles, scale }}
-    >
+    <p className={`duration-200 pointer-events-none ${colorFinder()}`} style={{ ...typographyFontStyles, scale }}>
       {toPersianNumbers(title)}
     </p>
   );

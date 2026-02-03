@@ -4,7 +4,7 @@ import Hamdel from '@assets/icons/hamdel.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import PartnerRadioButton from './PartnerRadioButton';
 import useAccept from './__hooks__/useAccept';

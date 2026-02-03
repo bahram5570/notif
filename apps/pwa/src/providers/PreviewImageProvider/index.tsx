@@ -1,7 +1,7 @@
 'use client';
 
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import PreviewImageContainer from './PreviewImageContainer';
 import { PreviewImageTypes } from './types';

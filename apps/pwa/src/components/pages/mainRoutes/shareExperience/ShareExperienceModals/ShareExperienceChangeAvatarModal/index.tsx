@@ -1,6 +1,6 @@
 import { SHARE_EXPERIENCE_CHANGE_AVATAR_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import CustomModal from '@components/ui/CustomModal';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ShareExperienceChangeAvatarModalContainer from './ShareExperienceChangeAvatarModalContainer';
 import { QueryDataShareExperienceChangeAvatarModal } from './type';

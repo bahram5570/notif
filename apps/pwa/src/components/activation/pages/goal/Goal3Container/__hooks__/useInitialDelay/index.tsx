@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import useDelayCallback from '@hooks/useDelayCallback';
+import { useDelayCallback } from '@repo/core/hooks/useDelayCallback';
 
 const useInitialDelay = () => {
   const [isInitialRendered, setIsInitialRendered] = useState(false);

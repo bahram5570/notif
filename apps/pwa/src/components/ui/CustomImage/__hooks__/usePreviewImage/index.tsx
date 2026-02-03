@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 import { PreviewImageTypes } from '@providers/PreviewImageProvider/types';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { PreviewImageHandlerTypes } from './types';
 

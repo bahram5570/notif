@@ -1,6 +1,6 @@
 import { APP_VERSION } from '@constants/app.constants';
 import useApi from '@hooks/useApi';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
 import { SubmitHandlerPropsType } from './type';

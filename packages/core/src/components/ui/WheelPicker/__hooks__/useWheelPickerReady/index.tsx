@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { isDevelopeMode } from '@repo/core/utils/system';
+import { isDevelopeMode } from '../../../../../utils/system';
 
-import useDelayCallback from '@hooks/useDelayCallback';
+import { useDelayCallback } from '../../../../../hooks/useDelayCallback';
 
 const useWheelPickerReady = () => {
   const isFirstTime = useRef(isDevelopeMode());

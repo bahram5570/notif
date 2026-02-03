@@ -2,9 +2,9 @@
 
 import { useState } from 'react';
 
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 import { toPersianNumbers } from '@utils/numbers';
 
 import MainPageLayout from '@components/MainPageLayout';

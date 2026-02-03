@@ -1,7 +1,7 @@
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
 import { UseSubmitRateProps } from './types';

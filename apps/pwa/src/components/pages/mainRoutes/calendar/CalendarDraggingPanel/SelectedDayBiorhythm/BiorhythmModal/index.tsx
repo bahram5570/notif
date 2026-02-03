@@ -2,7 +2,7 @@ import CancelIcon from '@assets/icons/cancel.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomModal from '@components/ui/CustomModal';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
 import { BioType, TextBioType } from '../../../__hooks__/useCalendarGetData/types';

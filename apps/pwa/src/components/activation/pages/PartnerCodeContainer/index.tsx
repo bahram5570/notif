@@ -1,4 +1,4 @@
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import PartnerCodeInput from './PartnerCodeInput';
 import PartnerCodeReward from './PartnerCodeReward';

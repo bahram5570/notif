@@ -1,6 +1,6 @@
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import styles from './RatingDescriptionModal.module.css';
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 const useRoutinTabData = () => {
   const { getQueryParams } = useQueryParamsHandler();

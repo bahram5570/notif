@@ -1,6 +1,6 @@
 import CrownIcon from '@assets/icons/crown.svg';
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import useAnalytics from '@hooks/useAnalytics';
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';

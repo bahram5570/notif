@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { MODAL_QUERY_NAME } from '../../constants';
 import { UseModalStatusProps } from './types';

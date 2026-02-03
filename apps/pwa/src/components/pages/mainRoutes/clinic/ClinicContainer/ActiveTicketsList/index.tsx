@@ -2,7 +2,7 @@ import MainPageLayoutHeader from '@components/MainPageLayout/MainPageLayoutHeade
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useOverflowHandler from '@hooks/useOverflowHandler';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ClinicTicketGenerator from '../../ClinicTicketGenerator';
 import { ACTIVE_TICKETS_LIST_QUERY_NAME } from '../ActiveTicketsHeading/constants';

@@ -1,7 +1,7 @@
 import UploadImageModal from '@components/pages/mainRoutes/partner/PartnerPage/PartnerModals/UploadImageModal';
 import CustomModal from '@components/ui/CustomModal';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { PROFILE_MODAL_QUERY_NAME } from '../ProfileLinkList/constants';
 import DarkModeSettingsModal from './DarkModeSettingsModal';

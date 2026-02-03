@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import { isDevelopeMode } from '@repo/core/utils/system';
 
-import useDelayCallback from '@hooks/useDelayCallback';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useDelayCallback } from '@repo/core/hooks/useDelayCallback';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
 import { MODAL_QUERY_NAME } from './constants';

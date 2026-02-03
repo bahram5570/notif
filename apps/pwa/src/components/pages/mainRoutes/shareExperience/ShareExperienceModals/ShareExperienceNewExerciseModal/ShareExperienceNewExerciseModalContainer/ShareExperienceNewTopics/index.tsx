@@ -8,7 +8,7 @@ import { SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME } from '@components/pages/mainRo
 import CustomModal from '@components/ui/CustomModal';
 import useAnalytics from '@hooks/useAnalytics';
 import useOverflowHandler from '@hooks/useOverflowHandler';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ShareExperienceNewTopicsGenerator from './ShareExperienceNewTopicsGenerator';
 import { ShareExperienceNewTopicsProps } from './types';

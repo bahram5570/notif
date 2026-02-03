@@ -1,8 +1,8 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 const NoComment = () => {
   const { newQueryParamsHandler } = useQueryParamsHandler();

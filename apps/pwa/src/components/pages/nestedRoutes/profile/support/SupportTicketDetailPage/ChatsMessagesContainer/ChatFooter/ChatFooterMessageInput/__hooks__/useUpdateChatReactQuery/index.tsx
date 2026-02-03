@@ -1,6 +1,6 @@
 import { CHAT_PAGE_ID } from '@components/pages/mainRoutes/clinic/ClinicChatContainer/constants';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
-import useDelayCallback from '@hooks/useDelayCallback';
+import { useDelayCallback } from '@repo/core/hooks/useDelayCallback';
 
 import { ChatResponseTypes } from '../../../../../__hooks__/useGetData/type';
 import { UpgateHandlerTypes } from './types';

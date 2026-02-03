@@ -4,7 +4,7 @@ import { chatFileTypeDetector } from '../__utils__';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
-import useDelayCallback from '@hooks/useDelayCallback';
+import { useDelayCallback } from '@repo/core/hooks/useDelayCallback';
 
 import { SideTypeEnum } from '../../__hooks__/useGetData/enums';
 import { CHAT_PAGE_ID } from '../../constants';

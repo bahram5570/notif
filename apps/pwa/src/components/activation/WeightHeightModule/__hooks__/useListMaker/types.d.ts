@@ -1,8 +1,7 @@
-import { WheelPickerProps } from '@components/ui/WheelPicker/types';
+import { WheelPickerItemTypes } from '@repo/core/components/ui/WheelPicker';
 
 import { WeightHeightModuleProps } from '../../types';
 
 export interface UseListMakerProps extends Pick<WeightHeightModuleProps, 'type'> {}
 
-type ValueTypes = Pick<WheelPickerProps, 'list'>['list'][0];
-export type DataListTypes = { list: ValueTypes[]; defaultValue: number } | null;
+export type DataListTypes = { list: WheelPickerItemTypes[]; defaultValue: number } | null;

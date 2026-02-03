@@ -1,5 +1,5 @@
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 const usePopupModal = (hasPopup: boolean) => {
   const { getQueryParams } = useQueryParamsHandler();

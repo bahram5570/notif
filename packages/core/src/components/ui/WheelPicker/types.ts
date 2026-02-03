@@ -9,3 +9,7 @@ export interface WheelPickerProps {
   list: WheelPickerItemTypes[];
   testId?: string;
 }
+
+export interface WheelPickerDividerProps {
+  isTop: boolean;
+}

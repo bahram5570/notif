@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { BabyCheckTypeEnums } from '@components/KitTests/KitTestBabyCheck/enum';
 import { KitTestModuleTypeEnums } from '@components/KitTests/enum';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { ModalInfoTypes } from './types';
 

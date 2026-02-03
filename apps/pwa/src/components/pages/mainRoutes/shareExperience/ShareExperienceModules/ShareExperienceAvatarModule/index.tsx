@@ -3,8 +3,8 @@ import UploadIcon from '@assets/icons/upload.svg';
 import { SHARE_EXPERIENCE_CHANGE_AVATAR_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import CustomImage from '@components/ui/CustomImage';
 import useAnalytics from '@hooks/useAnalytics';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { ShareExperienceAvatarModulePropsType } from './type';
 

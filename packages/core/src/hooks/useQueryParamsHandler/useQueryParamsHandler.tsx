@@ -2,7 +2,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { GetQueryTypes, newQueryParamsHandlerTypes, removeQueryParamsHandlerTypes } from './types';
 
-const useQueryParamsHandler = () => {
+export const useQueryParamsHandler = () => {
   const router = useRouter();
   const pathname = usePathname() || '';
   const searchParams = window === undefined ? undefined : useSearchParams();
@@ -30,5 +30,3 @@ const useQueryParamsHandler = () => {
 
   return { newQueryParamsHandler, removeQueryParamsHandler, getQueryParams, searchParams };
 };
-
-export default useQueryParamsHandler;

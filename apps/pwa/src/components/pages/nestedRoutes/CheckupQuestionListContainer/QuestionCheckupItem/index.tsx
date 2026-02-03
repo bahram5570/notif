@@ -4,8 +4,8 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
 import useAnalytics from '@hooks/useAnalytics';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import useWidgetActions from '@hooks/useWidgetActions';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { QuestionCheckupItemPropsType } from './type';
 

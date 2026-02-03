@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react';
 
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 import { PopupTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { CallNextStepTypes, UseActionTypeNextStepProps } from './types';
 

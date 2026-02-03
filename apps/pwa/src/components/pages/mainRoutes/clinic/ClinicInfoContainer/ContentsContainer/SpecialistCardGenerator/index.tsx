@@ -3,8 +3,8 @@ import PeopleIcon from '@assets/icons/people.svg';
 import StarIcon from '@assets/icons/star.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { usePathname } from 'next/navigation';
 
 import { CLINIC_DOCTOR_MODAL_QUERY_NAME } from '../../../ClinicDoctorModal/constants';

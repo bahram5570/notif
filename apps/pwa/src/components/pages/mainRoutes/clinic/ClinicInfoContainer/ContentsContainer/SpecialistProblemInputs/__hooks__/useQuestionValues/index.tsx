@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { isDevelopeMode } from '@repo/core/utils/system';
 
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
 import { SPECIALIST_PAYMENT_QUERY_NAME } from '../../../constants';

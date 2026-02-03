@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 import ActivationCalendar from '@components/activation/ActivationCalendar';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import useDateIntervals from '@providers/__activation__/ActivationProvider/__hooks__/useDateIntervals';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { FAKE_CYCLE_QUESTIONS_NAME } from '../../constants';
 import { FakeCycleDatesEnums } from '../../enums';

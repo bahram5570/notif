@@ -3,9 +3,9 @@ import { useState } from 'react';
 import CycleLengthIcon from '@assets/icons/cycleLength.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { WheelPicker } from '@repo/core/components/ui/WheelPicker';
 
 import useListMaker from '@components/activation/CyclesModule/__hooks__/useListMaker';
-import WheelPicker from '@components/ui/WheelPicker';
 
 import { CycleLengthModalTypes } from './types';
 

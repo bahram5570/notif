@@ -1,5 +1,5 @@
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 const useNameSelectorFilterModals = (modalQueryName: string) => {
   const { newQueryParamsHandler, getQueryParams } = useQueryParamsHandler();

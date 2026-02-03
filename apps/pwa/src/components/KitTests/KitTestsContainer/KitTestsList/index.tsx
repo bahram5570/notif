@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { KitTestModuleTypeEnums } from '../../enum';
 import { kitTestMainInfo } from './constants';

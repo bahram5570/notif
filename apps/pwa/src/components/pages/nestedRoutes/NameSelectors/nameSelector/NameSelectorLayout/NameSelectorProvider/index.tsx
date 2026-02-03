@@ -4,7 +4,7 @@ import { createContext, useEffect, useState } from 'react';
 
 import { SelectNameGenderEnum } from '@services/selectNameServices/enums';
 
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import NameSelectorHeading from '../NameSelectorHeading';
 import NameSelectorTabs from '../NameSelectorTabs';

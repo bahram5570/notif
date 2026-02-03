@@ -2,7 +2,7 @@
 
 import { createContext, useEffect, useState } from 'react';
 
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { usePathname, useRouter } from 'next/navigation';
 
 import {

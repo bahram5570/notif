@@ -1,5 +1,5 @@
-import WheelPicker from '@components/ui/WheelPicker';
-import WheelPickerDivider from '@components/ui/WheelPicker/WheelPickerDivider';
+import { WheelPicker, WheelPickerDivider } from '@repo/core/components/ui/WheelPicker';
+
 import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
 
 import useInitialValueHandler from './__hooks__/useInitialValueHandler';

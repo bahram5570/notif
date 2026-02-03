@@ -1,12 +1,12 @@
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import ActivationBtn from '@components/activation/ActivationBtn';
 import CustomLink from '@components/pages/mainRoutes/partner/PartnerPage/CustomLink';
 import CustomModal from '@components/ui/CustomModal';
 import { ACTIVATION_INTERFACE_CODE } from '@constants/activation.constants';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import useInterfaceCode from './__hooks__/useInterfaceCode';
 import { InterfaceCodeContainerProps } from './types';

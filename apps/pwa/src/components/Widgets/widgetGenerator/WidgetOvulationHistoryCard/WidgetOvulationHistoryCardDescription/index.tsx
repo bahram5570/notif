@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 import { toPersianNumbers } from '@utils/numbers';
 
 import CustomImage from '@components/ui/CustomImage';

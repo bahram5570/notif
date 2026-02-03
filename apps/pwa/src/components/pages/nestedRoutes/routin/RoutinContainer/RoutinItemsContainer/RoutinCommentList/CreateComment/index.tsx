@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 import PaperPlaneRightIcon from '@assets/icons/PaperPlaneRight.svg';
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';

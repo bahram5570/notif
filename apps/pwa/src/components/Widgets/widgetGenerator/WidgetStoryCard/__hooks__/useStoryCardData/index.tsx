@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { STORY_CARD_DATA_NAME, STORY_MOOD_TRACKER_NAME } from '../../constants';
 import { OriginalStoryDataTypes } from './types';

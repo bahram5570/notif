@@ -3,8 +3,8 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomModal from '@components/ui/CustomModal';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import FeedbackModalDescription from './FeedbackDescription';
 import FeedbackStars from './FeedbackStars';

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { PopupTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { PopUpTypes } from '../usePopUpHandlers/types';
 

@@ -1,5 +1,5 @@
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 import { externalLink } from '@utils/navigation';
 
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';

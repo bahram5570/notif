@@ -3,8 +3,8 @@ import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { PROFILE_MODAL_QUERY_NAME } from '../ProfileLinkList/constants';
 import { ProfileModalNameEnums } from '../ProfileModals/enum';

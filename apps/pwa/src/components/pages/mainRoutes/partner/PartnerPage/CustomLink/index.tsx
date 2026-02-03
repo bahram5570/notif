@@ -1,7 +1,7 @@
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
-import useTypographyMaker from '@hooks/useTypographyMaker';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { useTypographyMaker } from '@repo/core/hooks/useTypographyMaker';
 import Link from 'next/link';
 
 import { CustomLinkPropType } from './type';

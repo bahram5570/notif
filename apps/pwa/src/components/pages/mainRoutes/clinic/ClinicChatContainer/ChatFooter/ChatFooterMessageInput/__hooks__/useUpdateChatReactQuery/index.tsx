@@ -1,5 +1,5 @@
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
-import useDelayCallback from '@hooks/useDelayCallback';
+import { useDelayCallback } from '@repo/core/hooks/useDelayCallback';
 
 import { SideTypeEnum } from '../../../../__hooks__/useGetData/enums';
 import { ChatResponseTypes } from '../../../../__hooks__/useGetData/types';

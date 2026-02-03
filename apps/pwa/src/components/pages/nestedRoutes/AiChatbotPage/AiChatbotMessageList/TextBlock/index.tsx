@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { decodeUnicode } from '../AiMessage/utils';
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 import { toPersianNumbers } from '@utils/numbers';
 
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';

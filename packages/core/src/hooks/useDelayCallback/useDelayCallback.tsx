@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { TimerTypes, UseTimerTypes } from './types';
 
-const useDelayCallback = (callBack: UseTimerTypes) => {
+export const useDelayCallback = (callBack: UseTimerTypes) => {
   const [count, setCount] = useState<null | number>(null);
   const ref = useRef<TimerTypes>();
 
@@ -33,11 +33,10 @@ const useDelayCallback = (callBack: UseTimerTypes) => {
     };
   }, []);
 
+  // # By millisecond
   const startDelay = (timeOut: number) => {
     setCount(timeOut);
   };
 
   return { startDelay };
 };
-
-export default useDelayCallback;

@@ -1,5 +1,5 @@
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import ContentWrapper from '@components/ui/ContentWrapper';
 import Dark_RadioButton from '@components/ui/Dark_RadioButton';

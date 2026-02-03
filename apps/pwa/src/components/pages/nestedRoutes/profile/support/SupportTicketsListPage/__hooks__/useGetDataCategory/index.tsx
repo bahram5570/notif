@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { APP_VERSION } from '@constants/app.constants';
 import useApi from '@hooks/useApi';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { TicketcategoryResponseType } from './type';
 

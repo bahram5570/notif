@@ -1,6 +1,6 @@
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ChatFooter from './ChatFooter';
 import { RATING_QUERY_NAME } from './ChatFooter/ChatFooterRating/constants';

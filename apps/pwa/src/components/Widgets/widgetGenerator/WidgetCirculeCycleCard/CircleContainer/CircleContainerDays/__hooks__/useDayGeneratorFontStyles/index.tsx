@@ -1,4 +1,4 @@
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import { FONTS_ANDROID } from '@repo/core/theme/fonts';

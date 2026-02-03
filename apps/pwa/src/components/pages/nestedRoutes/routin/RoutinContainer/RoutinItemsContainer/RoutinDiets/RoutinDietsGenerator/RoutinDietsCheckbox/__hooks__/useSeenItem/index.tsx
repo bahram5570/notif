@@ -3,8 +3,8 @@ import { ProgramWidgetItemStatusEnum } from '@components/pages/nestedRoutes/rout
 import useCurrentRoutinIndex from '@hooks/__routin__/useCurrentRoutinIndex';
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { UseSeenItemPropsType } from './type';
 

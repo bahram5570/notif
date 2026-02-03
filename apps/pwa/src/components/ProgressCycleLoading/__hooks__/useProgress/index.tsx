@@ -1,15 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { ProgressCycleEnums } from '@components/ProgressCycleLoading/enums';
-import { TimerTypes } from '@hooks/useDelayCallback/types';
 
 import { MAX_STROKE_DASHOFFSET, START_MODE_LOADING_PERCENTAGE } from './constants';
-import { UseProgressProps } from './types';
+import { TimersTypes, UseProgressProps } from './types';
 
 const useProgress = ({ loadingStatus, onComplete }: UseProgressProps) => {
-  const timer1 = useRef<TimerTypes>(null);
-  const timer2 = useRef<TimerTypes>(null);
-  const timer3 = useRef<TimerTypes>(null);
+  const timer1 = useRef<TimersTypes>(null);
+  const timer2 = useRef<TimersTypes>(null);
+  const timer3 = useRef<TimersTypes>(null);
   const [percentage, setPercentage] = useState(0);
 
   useEffect(() => {

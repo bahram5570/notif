@@ -1,13 +1,13 @@
 import AttachIcon from '@assets/icons/attach.svg';
 import SendIcon from '@assets/icons/ticketSend.svg';
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 import { toPersianNumbers } from '@utils/numbers';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ChatFooterMessageModal from './ChatFooterMessageModal';
 import useTextValue from './__hooks__/useTextValue';

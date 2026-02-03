@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { WheelPicker } from '@repo/core/components/ui/WheelPicker';
 
 import { StateValuesHandlerTypes } from '@components/activation/DateModule/types';
-import WheelPicker from '@components/ui/WheelPicker';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { InputValueType } from '../type';

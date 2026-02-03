@@ -1,5 +1,5 @@
 import { GoalNamesEnum } from '@constants/activation.constants';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { FAKE_CYCLE_QUESTIONS_NAME } from '../../constants';
 import { FakeCycleDatesEnums } from '../../enums';

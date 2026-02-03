@@ -2,7 +2,7 @@
 
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import CheckListCheckupQuestion from './CheckListCheckupQuestion';
 import CheckupQuestionContainerSkeleton from './CheckupQuestionContainerSkeleton';

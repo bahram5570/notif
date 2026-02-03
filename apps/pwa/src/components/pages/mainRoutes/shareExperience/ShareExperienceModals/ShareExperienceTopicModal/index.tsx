@@ -1,6 +1,6 @@
 import { SHARE_EXPERIENCE_TOPIC_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import CustomModal from '@components/ui/CustomModal';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ShareExperienceTopicModalContainer from './ShareExperienceTopicModalContainer';
 import { QueryDataShareExperienceTopicModal, ShareExperienceTopicModalProps } from './type';

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import useDelayCallback from '@hooks/useDelayCallback';
+import { useDelayCallback } from '@repo/core/hooks/useDelayCallback';
 
 import { CallbackTypes } from './types';
 

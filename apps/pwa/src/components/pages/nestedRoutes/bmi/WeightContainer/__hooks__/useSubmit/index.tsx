@@ -2,9 +2,9 @@ import { currentDate } from '@utils/dates';
 
 import { multipleStepRoutes } from '@components/pages/nestedRoutes/bmi/multipleStepRoutes';
 import useApi from '@hooks/useApi';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import useWidgetActions from '@hooks/useWidgetActions';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 const { gDate } = currentDate();
 

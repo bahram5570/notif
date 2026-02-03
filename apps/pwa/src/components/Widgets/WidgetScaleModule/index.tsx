@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import styles from './WidgetScaleModule.module.css';
 
-import useDelayCallback from '@hooks/useDelayCallback';
+import { useDelayCallback } from '@repo/core/hooks/useDelayCallback';
 
 import { WidgetScaleModuleProps } from './types';
 

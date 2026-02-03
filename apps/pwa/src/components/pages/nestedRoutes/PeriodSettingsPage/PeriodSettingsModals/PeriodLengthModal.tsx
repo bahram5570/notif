@@ -3,9 +3,9 @@ import { useState } from 'react';
 import BloodIcon from '@assets/icons/Blood.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { WheelPicker } from '@repo/core/components/ui/WheelPicker';
 
 import useListMaker from '@components/activation/CyclesModule/__hooks__/useListMaker';
-import WheelPicker from '@components/ui/WheelPicker';
 
 import { PeriodLengthModalTypes } from './types';
 

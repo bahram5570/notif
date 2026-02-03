@@ -5,8 +5,8 @@ import {
   SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME,
   SHARE_EXPERIENCE_ORDER_QUERY_NAME,
 } from '@components/pages/mainRoutes/shareExperience/constants';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { ShareExperienceCommentsModuleProps } from './types';
 

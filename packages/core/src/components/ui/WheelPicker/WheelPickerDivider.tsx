@@ -1,7 +1,7 @@
-import { WHEEL_PICKER_CELL_HEIGHT } from '../constants';
+import { WHEEL_PICKER_CELL_HEIGHT } from './constants';
 import { WheelPickerDividerProps } from './types';
 
-const WheelPickerDivider = ({ isTop }: WheelPickerDividerProps) => {
+export const WheelPickerDivider = ({ isTop }: WheelPickerDividerProps) => {
   const position = isTop ? { top: WHEEL_PICKER_CELL_HEIGHT * 2 } : { bottom: WHEEL_PICKER_CELL_HEIGHT * 2 };
 
   return (
@@ -11,5 +11,3 @@ const WheelPickerDivider = ({ isTop }: WheelPickerDividerProps) => {
     />
   );
 };
-
-export default WheelPickerDivider;

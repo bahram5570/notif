@@ -1,6 +1,6 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { RATING_QUERY_NAME } from './constants';
 

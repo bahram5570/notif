@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { isDevelopeMode } from '@repo/core/utils/system';
 
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useSearchParams } from 'next/navigation';
 
 import { SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE } from '../../../constants';

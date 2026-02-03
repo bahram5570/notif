@@ -15,7 +15,7 @@ import {
 } from './constants';
 import { WheelPickerProps } from './types';
 
-const WheelPicker = ({ list, defaultValue, valueHandler, testId, onInitialValuesSteps }: WheelPickerProps) => {
+export const WheelPicker = ({ list, defaultValue, valueHandler, testId, onInitialValuesSteps }: WheelPickerProps) => {
   const { wheelPickerListData, listIsUpdated } = useWheelPickerListData({ list, defaultValue });
   const swiperRef = useRef<SwiperTypes | null>(null);
   const isInitialSlideSet = useRef(false);
@@ -112,5 +112,3 @@ const WheelPicker = ({ list, defaultValue, valueHandler, testId, onInitialValues
     </div>
   );
 };
-
-export default WheelPicker;

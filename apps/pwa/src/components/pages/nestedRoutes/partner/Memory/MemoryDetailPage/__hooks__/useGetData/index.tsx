@@ -1,5 +1,5 @@
 import useApi from '@hooks/useApi';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { PAGE_NO } from '../../../MemoryPage/__hooks__/useGetData/constants';
 import { ResponsePropsType } from '../../../MemoryPage/__hooks__/useGetData/type';

@@ -1,6 +1,6 @@
 import { APP_VERSION } from '@constants/app.constants';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { ChallengeResponseType } from '../__hooks__/useGetData/type';
 import Inputs from './Inputs';

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
-import WheelPicker from '@components/ui/WheelPicker';
-import WheelPickerDivider from '@components/ui/WheelPicker/WheelPickerDivider';
+import { WheelPicker, WheelPickerDivider } from '@repo/core/components/ui/WheelPicker';
+
 import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
 
 import useDefaultDate from './__hooks__/useDefaultDate';

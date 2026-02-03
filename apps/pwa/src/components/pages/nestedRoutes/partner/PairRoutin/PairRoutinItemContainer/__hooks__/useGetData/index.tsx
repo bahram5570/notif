@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { RoutinItemResponseTypes } from '@components/pages/nestedRoutes/routin/RoutinItemContainer/__hooks__/useGetData/types';
 import useApi from '@hooks/useApi';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 const useGetPairRoutinItemData = () => {
   const { getQueryParams } = useQueryParamsHandler();
