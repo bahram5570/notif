@@ -4,6 +4,7 @@ type NumberMode = 'persian' | 'english';
 
 export interface CustomInputTypes {
   value: string;
+  dir?: 'ltr' | 'rtl';
   className?: string;
   maxLength?: number;
   placeholder?: string;
