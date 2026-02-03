@@ -1,6 +1,6 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { colorFormatConverter } from '@utils/scripts';
+import { colorFormatConverter } from '@repo/core/utils/scripts';
 
 import CustomSlider from '@components/ui/CustomSlider';
 import useWidgetActions from '@hooks/useWidgetActions';

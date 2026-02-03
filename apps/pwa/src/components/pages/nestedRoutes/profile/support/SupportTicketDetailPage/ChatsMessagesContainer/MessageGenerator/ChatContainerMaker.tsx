@@ -1,5 +1,5 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { addZero } from '@utils/scripts';
+import { addZero } from '@repo/core/utils/numbers';
 
 import { SideTypeEnum } from '@components/pages/mainRoutes/clinic/ClinicChatContainer/__hooks__/useGetData/enums';
 

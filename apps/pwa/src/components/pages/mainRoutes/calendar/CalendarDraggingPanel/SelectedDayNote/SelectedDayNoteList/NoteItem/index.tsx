@@ -1,6 +1,6 @@
 import CheckListIcon from '@assets/icons/checkList.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { textShorter } from '@utils/scripts';
+import { textShorter } from '@repo/core/utils/scripts';
 
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 

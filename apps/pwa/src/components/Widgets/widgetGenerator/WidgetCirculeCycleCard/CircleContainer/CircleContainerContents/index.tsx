@@ -1,5 +1,5 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { colorFormatConverter } from '@utils/scripts';
+import { colorFormatConverter } from '@repo/core/utils/scripts';
 
 import styles from './styles.module.css';
 

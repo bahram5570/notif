@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { colorFormatConverter } from '@utils/scripts';
+import { colorFormatConverter } from '@repo/core/utils/scripts';
 
 import OptionButton from '@components/ui/OptionButton';
 import useAnalytics from '@hooks/useAnalytics';

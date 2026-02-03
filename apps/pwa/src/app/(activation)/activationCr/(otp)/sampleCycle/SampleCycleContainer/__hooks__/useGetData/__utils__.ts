@@ -1,4 +1,4 @@
-import { colorFormatConverter } from '@utils/scripts';
+import { colorFormatConverter } from '@repo/core/utils/scripts';
 
 import { CycleResponseTypes } from '@components/pages/mainRoutes/cycle/types';
 import { WidgetsEnum } from '@providers/WidgetActionsProvider/widgetEnums';

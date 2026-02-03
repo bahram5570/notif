@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import PaperClipIcon from '@assets/icons/paperclip.svg';
 import TrashIcon from '@assets/icons/trash.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { textShorter } from '@utils/scripts';
+import { textShorter } from '@repo/core/utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';

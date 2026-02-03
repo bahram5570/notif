@@ -4,8 +4,8 @@ import { useState } from 'react';
 
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
-import { toPersianNumbers } from '@utils/numbers';
 
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';

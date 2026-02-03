@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { toEnglishNumbers } from '@utils/numbers';
+import { toEnglishNumbers } from '@repo/core/utils/numbers';
 
 import { INITIAL_DATA, LAST_STEP_INDEX } from './constants';
 import { StepsHandlerTypes, StepsTypes, UseCodesProps } from './types';

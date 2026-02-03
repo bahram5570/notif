@@ -1,5 +1,5 @@
+import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { testBaseUrl } from '@services/http';
-import { toPersianNumbers } from '@utils/numbers';
 import { dateModuleFindSlide } from '@utils/tests';
 
 import {

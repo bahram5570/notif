@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 
 import PauseIcon from '@assets/icons/Pause.svg';
 import PlayIcon from '@assets/icons/Play.svg';
-import { textShorter } from '@utils/scripts';
+import { textShorter } from '@repo/core/utils/scripts';
 
 import useFetchAudio from './__hooks__/useFetchAudio';
 import { VoiceMessagePlayerPropsType } from './type';

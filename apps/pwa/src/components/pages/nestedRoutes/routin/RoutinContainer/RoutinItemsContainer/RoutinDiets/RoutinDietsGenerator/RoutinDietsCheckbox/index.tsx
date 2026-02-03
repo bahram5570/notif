@@ -1,7 +1,7 @@
 import RadioFillIcon from '@assets/icons/Radio-fill.svg';
 import RadioIcon from '@assets/icons/Radio.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { textShorter } from '@utils/scripts';
+import { textShorter } from '@repo/core/utils/scripts';
 
 import { ProgramWidgetItemStatusEnum } from '@components/pages/nestedRoutes/routin/enum';
 import CustomImage from '@components/ui/CustomImage';

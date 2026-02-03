@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import waveJson from '@assets/lottie/cycleWave.json';
-import { colorFormatConverter } from '@utils/scripts';
+import { colorFormatConverter } from '@repo/core/utils/scripts';
 
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import { LottieJson } from '@lib/LottieJson';

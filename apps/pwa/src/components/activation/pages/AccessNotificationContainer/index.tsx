@@ -1,4 +1,4 @@
-import { colorFormatConverter } from '@utils/scripts';
+import { colorFormatConverter } from '@repo/core/utils/scripts';
 
 import AccessNotificationBtn from './AccessNotificationBtn';
 import AccessNotificationHeadingImage from './AccessNotificationHeadingImage';

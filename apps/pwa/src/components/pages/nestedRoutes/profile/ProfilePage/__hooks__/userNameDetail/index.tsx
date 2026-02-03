@@ -1,7 +1,7 @@
 import EditIcon from '@assets/icons/Gallery Edit.svg';
 import UploadIcon from '@assets/icons/upload.svg';
+import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
-import { toPersianNumbers } from '@utils/numbers';
 
 import useGetData from '@components/pages/mainRoutes/partner/PartnerPage/__hooks__/useGetData';
 import CustomImage from '@components/ui/CustomImage';

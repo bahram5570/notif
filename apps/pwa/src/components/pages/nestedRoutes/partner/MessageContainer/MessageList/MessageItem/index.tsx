@@ -1,7 +1,7 @@
 import { formatPersionDate } from '../../utils';
 import HamdelIcon from '@assets/icons/hamdel.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { toPersianNumbers } from '@utils/numbers';
+import { toPersianNumbers } from '@repo/core/utils/numbers';
 
 import { MessageItemPropsType } from './type';
 

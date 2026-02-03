@@ -1,6 +1,6 @@
 import TickIcon from '@assets/icons/tick.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { toPersianNumbers } from '@utils/numbers';
+import { toPersianNumbers } from '@repo/core/utils/numbers';
 
 import { SideEnum } from './constants';
 import { MessagePropsType } from './type';

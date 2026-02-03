@@ -1,8 +1,8 @@
 'use server';
 
+import { toEnglishNumbers } from '@repo/core/utils/numbers';
 import { CycleThemeEnum } from '@services/loginServices/enum';
 import { getUserExpiresDate } from '@utils/cookies';
-import { toEnglishNumbers } from '@utils/numbers';
 
 import { CULTURE_COOKIE_NAME, USER_COOKIE_NAME } from '@constants/cookie.constants';
 import { CultureTypes } from '@providers/CultureProvider/types';

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { toEnglishNumbers, toPersianNumbers } from '@utils/numbers';
+import { toEnglishNumbers, toPersianNumbers } from '@repo/core/utils/numbers';
 
 import useCreate from '../__hooks__/useCreate';
 

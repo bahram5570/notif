@@ -1,5 +1,5 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { colorFormatConverter } from '@utils/scripts';
+import { colorFormatConverter } from '@repo/core/utils/scripts';
 import Image from 'next/image';
 
 import useWidgetActions from '@hooks/useWidgetActions';

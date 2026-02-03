@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { addZero } from '@utils/scripts';
+import { addZero } from '@repo/core/utils/numbers';
 
 import { DATE_SEPERATOR_REGEX } from '@constants/date.constants';
 

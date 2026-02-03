@@ -1,4 +1,4 @@
-import { toEnglishNumbers } from '@utils/numbers';
+import { toEnglishNumbers } from '@repo/core/utils/numbers';
 
 import { InvalidMessageTypes, useValidationProps } from './types';
 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
+import { toEnglishNumbers } from '@repo/core/utils/numbers';
 import { getFirebaseCookieToken } from '@utils/cookies';
-import { toEnglishNumbers } from '@utils/numbers';
 
 import { UserCookieTypes } from '@actions/cookie.actions';
 import { APP_VERSION } from '@constants/app.constants';

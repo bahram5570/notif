@@ -1,5 +1,5 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { textShorter } from '@utils/scripts';
+import { textShorter } from '@repo/core/utils/scripts';
 
 import CustomImage from '@components/ui/CustomImage';
 import useAnalytics from '@hooks/useAnalytics';

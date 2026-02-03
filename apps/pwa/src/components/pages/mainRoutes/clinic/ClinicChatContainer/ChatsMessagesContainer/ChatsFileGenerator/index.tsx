@@ -2,7 +2,7 @@ import DownloadIcon from '@assets/icons/download.svg';
 import DownloadedIcon from '@assets/icons/downloaded.svg';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { textShorter } from '@utils/scripts';
+import { textShorter } from '@repo/core/utils/scripts';
 
 import useFileDownload from '@hooks/useFileDownload';
 

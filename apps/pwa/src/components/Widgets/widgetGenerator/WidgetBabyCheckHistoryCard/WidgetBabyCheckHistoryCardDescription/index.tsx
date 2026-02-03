@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 
+import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
-import { toPersianNumbers } from '@utils/numbers';
 
 import CustomImage from '@components/ui/CustomImage';
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';

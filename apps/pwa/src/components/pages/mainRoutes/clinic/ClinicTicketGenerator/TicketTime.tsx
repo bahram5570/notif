@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { addZero } from '@repo/core/utils/numbers';
 import { toJalaliData } from '@utils/dates';
-import { addZero } from '@utils/scripts';
 
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';

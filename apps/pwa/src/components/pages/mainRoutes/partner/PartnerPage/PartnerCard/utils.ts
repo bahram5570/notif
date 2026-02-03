@@ -1,4 +1,4 @@
-import { colorFormatConverter } from '@utils/scripts';
+import { colorFormatConverter } from '@repo/core/utils/scripts';
 
 export const generateLinearGradient = (colors: string[]): string => {
   if (colors.length < 4) {

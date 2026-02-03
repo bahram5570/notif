@@ -1,4 +1,4 @@
-import { addZero } from '@utils/scripts';
+import { addZero } from '@repo/core/utils/numbers';
 
 import { GREGORIAN_FARSI_MONTH_LIST, JALALI_MONTH_LIST } from '@constants/date.constants';
 

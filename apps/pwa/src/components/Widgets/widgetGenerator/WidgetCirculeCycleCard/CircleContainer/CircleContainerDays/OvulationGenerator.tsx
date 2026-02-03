@@ -1,5 +1,5 @@
 import { circleItemRotateMaker } from '../__utils__';
-import { toPersianNumbers } from '@utils/numbers';
+import { toPersianNumbers } from '@repo/core/utils/numbers';
 
 import useDayGeneratorFontStyles from './__hooks__/useDayGeneratorFontStyles';
 import { OvulationGeneratorProps } from './types';

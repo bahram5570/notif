@@ -1,8 +1,8 @@
 import AttachIcon from '@assets/icons/attach.svg';
 import SendIcon from '@assets/icons/ticketSend.svg';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
+import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
-import { toPersianNumbers } from '@utils/numbers';
 
 import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';

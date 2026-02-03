@@ -1,7 +1,7 @@
 import ReactMarkdown from 'react-markdown';
 
+import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
-import { toPersianNumbers } from '@utils/numbers';
 
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 

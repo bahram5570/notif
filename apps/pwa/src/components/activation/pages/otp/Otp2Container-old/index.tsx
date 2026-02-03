@@ -1,7 +1,7 @@
 'use client';
 
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
-import { toEnglishNumbers } from '@utils/numbers';
+import { toEnglishNumbers } from '@repo/core/utils/numbers';
 
 import MainActivationModule from '@components/activation/MainActivationModule';
 import useIsRendered from '@hooks/useIsRendered';

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import { colorFormatConverter } from '@utils/scripts';
+import { colorFormatConverter } from '@repo/core/utils/scripts';
 
 import { UseLottieBubbleColorProps } from './types';
 

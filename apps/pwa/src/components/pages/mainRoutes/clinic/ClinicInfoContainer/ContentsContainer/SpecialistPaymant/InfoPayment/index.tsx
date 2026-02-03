@@ -1,5 +1,5 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { addCommas } from '@utils/numbers';
+import { addCommas } from '@repo/core/utils/numbers';
 
 import { InfoPaymentProps } from './types';
 

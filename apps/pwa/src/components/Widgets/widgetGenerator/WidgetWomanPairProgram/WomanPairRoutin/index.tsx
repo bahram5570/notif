@@ -1,6 +1,6 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { textShorter } from '@utils/scripts';
+import { textShorter } from '@repo/core/utils/scripts';
 
 import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';

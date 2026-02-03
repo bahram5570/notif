@@ -1,4 +1,4 @@
-import { colorFormatConverter } from '@utils/scripts';
+import { colorFormatConverter } from '@repo/core/utils/scripts';
 
 import PartnerCodeRewardButtons from './PartnerCodeRewardButtons';
 import PartnerCodeRewardHeadingImage from './PartnerCodeRewardHeadingImage';

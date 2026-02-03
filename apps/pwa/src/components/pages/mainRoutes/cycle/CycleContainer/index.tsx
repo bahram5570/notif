@@ -1,5 +1,5 @@
+import { colorFormatConverter } from '@repo/core/utils/scripts';
 import { CycleThemeEnum } from '@services/loginServices/enum';
-import { colorFormatConverter } from '@utils/scripts';
 
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import WidgetScaleModule from '@components/Widgets/WidgetScaleModule';

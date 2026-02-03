@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
+import { toEnglishNumbers } from '@repo/core/utils/numbers';
 import { getFirebaseCookieToken } from '@utils/cookies';
-import { toEnglishNumbers } from '@utils/numbers';
 
 import useApi from '@hooks/useApi';
 import useCustomToast from '@hooks/useCustomToast';

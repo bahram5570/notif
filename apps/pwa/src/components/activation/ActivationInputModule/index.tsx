@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
+import { toEnglishNumbers, toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
-import { toEnglishNumbers, toPersianNumbers } from '@utils/numbers';
 
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 

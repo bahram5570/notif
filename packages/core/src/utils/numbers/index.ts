@@ -11,7 +11,6 @@ export const toPersianNumbers = (number: number | string): string => {
     '8': '۸',
     '9': '۹',
   };
-
   return number.toString().replace(/[0-9]/g, (w) => {
     return persianNumbers[w];
   });
@@ -37,4 +36,8 @@ export const toEnglishNumbers = (number: number | string): string => {
 
 export const addCommas = (n: number | string) => {
   return n.toLocaleString();
+};
+
+export const addZero = (n: number | string) => {
+  return ('0' + n).slice(-2);
 };

@@ -1,6 +1,6 @@
 import wavesJson from '@assets/lottie/cycleWaves.json';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { colorFormatConverter } from '@utils/scripts';
+import { colorFormatConverter } from '@repo/core/utils/scripts';
 
 import { LoadingStatusEnum } from '@components/pages/mainRoutes/cycle/CycleContainer/__hooks__/useCycleLoadingStatus/loadingStatus.enum';
 import { LottieJson } from '@lib/LottieJson';

@@ -1,6 +1,6 @@
 import { ChangeEvent, useEffect, useRef } from 'react';
 
-import { toPersianNumbers } from '@utils/numbers';
+import { toPersianNumbers } from '@repo/core/utils/numbers';
 
 import styles from './styles.module.css';
 

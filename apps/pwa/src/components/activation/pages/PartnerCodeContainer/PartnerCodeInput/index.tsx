@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { toEnglishNumbers } from '@utils/numbers';
+import { toEnglishNumbers } from '@repo/core/utils/numbers';
 
 import ActivationInputModule from '@components/activation/ActivationInputModule';
 import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { toEnglishNumbers } from '@utils/numbers';
+import { toEnglishNumbers } from '@repo/core/utils/numbers';
 
 import ActivationInputModule from '@components/activation/ActivationInputModule';
 import MainActivationModule from '@components/activation/MainActivationModule';
