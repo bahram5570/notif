@@ -1,6 +1,6 @@
 'use client';
 
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 
 import BackgroundImage from './BackgroundImage';
 import ProfileButton from './ProfileButton';

@@ -7,7 +7,6 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "test:unit": "jest --watch",
     "export": "node export-maker-file.js"
   },
   "dependencies": {
@@ -20,8 +19,6 @@
     "firebase": "^11.6.0",
     "heic2any": "^0.0.4",
     "html-to-image": "^1.11.11",
-    "jest-fixed-jsdom": "^0.0.9",
-    "jest-transformer-svg": "^2.1.0",
     "js-cookie": "^3.0.5",
     "jspdf": "^2.5.2",
     "lottie-react": "^2.4.0",
@@ -36,17 +33,9 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
-    "@testing-library/jest-dom": "^6.6.4",
-    "@testing-library/react": "^16.3.0",
-    "@testing-library/user-event": "^14.6.1",
-    "@types/jest": "^30.0.0",
     "@types/js-cookie": "^3.0.6",
     "@types/moment-jalaali": "^0.7.9",
-    "@types/swiper": "^5.4.3",
-    "jest": "^30.0.5",
-    "jest-css-modules-transform": "^4.4.2",
-    "jest-environment-jsdom": "^30.0.5",
-    "msw": "^2.10.4",
-    "ts-jest": "^29.4.1"
+    "@types/swiper": "^5.4.3"
+
   }
 }

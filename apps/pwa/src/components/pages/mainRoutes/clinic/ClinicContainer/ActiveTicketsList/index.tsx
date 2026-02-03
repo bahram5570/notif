@@ -1,7 +1,7 @@
 import MainPageLayoutHeader from '@components/MainPageLayout/MainPageLayoutHeader';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useOverflowHandler from '@hooks/useOverflowHandler';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ClinicTicketGenerator from '../../ClinicTicketGenerator';

@@ -1,4 +1,4 @@
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 
 import AiChatbotInput from '../../../AiChatbotPage/AiChatbotFooter/AiChatbotInput';
 import useSubmit from './__hooks__/useSubmit';

@@ -6,9 +6,9 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import DateModule from '@components/activation/DateModule';
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useActivationPregnancyTabs from '@hooks/__activation__/useActivationPregnancyTabs';
 import useProfileData from '@hooks/__profile__/useProfileData';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 
 import Tabs from './Tabs';
 import useUpdateCycle from './__hooks__/useUpdateCycle';

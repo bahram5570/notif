@@ -4,8 +4,8 @@ import TickIcon from '@assets/icons/tickIcon.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { convertToPersianOrdinal } from '@utils/numbers';
 
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useCountDown from '@hooks/useCountDown';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 
 import { ROUTIN_STEP, SHOW_ROUTIN_UNLOCK_TOST } from './constant';
 

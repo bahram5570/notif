@@ -1,5 +1,5 @@
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 
 import AiChatbotBackBtn from './AiChatbotBackBtn';
 import AiChatbotLimitUploadMessage from './AiChatbotLimitUploadMessage';

@@ -1,6 +1,6 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 
 import { FeedbackToastProps } from './type';
 

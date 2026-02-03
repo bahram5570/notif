@@ -3,7 +3,7 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { addIdAttrs } from '@utils/scripts';
 
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 
 import useWelcomingSteps from './__hooks__/useWelcomingSteps';
 import { StepsList } from './__hooks__/useWelcomingSteps/constants';

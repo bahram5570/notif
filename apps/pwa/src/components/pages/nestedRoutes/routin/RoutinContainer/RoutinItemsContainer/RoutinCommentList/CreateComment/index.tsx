@@ -4,7 +4,7 @@ import PaperPlaneRightIcon from '@assets/icons/PaperPlaneRight.svg';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import useSubmit from './__hooks__/useSubmit';

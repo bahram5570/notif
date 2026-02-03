@@ -24,12 +24,9 @@
   },
   "include": [
     "**/*.ts",
-    "cypress",
     "**/*.tsx",
     "svgr.jest.ts",
     "next-env.d.ts",
-    "jest.setup.ts",
-    "jest.config.ts",
     ".next/types/**/*.ts",
     "public/serviceWorker.js"
   ],

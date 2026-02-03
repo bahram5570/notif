@@ -7,8 +7,8 @@ import imageCompression from 'browser-image-compression';
 
 import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import { FileInputTypes } from '@components/ui/FileInputManager/enum';
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useAiFileManager from '@hooks/__aichatbot__/useAiFileManager';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 
 import { FileInputHandlerTypes, UploadImagesMoreActionPropsType } from './type';
 

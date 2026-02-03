@@ -3,8 +3,8 @@ import { useEffect } from 'react';
 import CrossIcon from '@assets/icons/cross.svg';
 import Image from 'next/image';
 
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useOverflowHandler from '@hooks/useOverflowHandler';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 import { useRouter } from 'next/navigation';
 
 import { PreviewImageContainerProps } from './types';

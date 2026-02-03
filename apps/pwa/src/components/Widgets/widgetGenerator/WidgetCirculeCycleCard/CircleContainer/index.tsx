@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { getUserCookie } from '@actions/cookie.actions';
 import { LoadingStatusEnum } from '@components/pages/mainRoutes/cycle/CycleContainer/__hooks__/useCycleLoadingStatus/loadingStatus.enum';
 import { InstallationPurposeEnum } from '@constants/activation.constants';
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 
 import CircleContainerContents from './CircleContainerContents';
 import CircleContainerDays from './CircleContainerDays';

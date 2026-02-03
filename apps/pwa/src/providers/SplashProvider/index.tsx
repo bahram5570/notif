@@ -5,8 +5,8 @@ import { createPortal } from 'react-dom';
 
 import { initialSplashStatusHandler, storeSplashHandler } from './utils';
 
-import { PORTAL_SPLASH_ID } from '@constants/app.constants';
 import useIsRendered from '@hooks/useIsRendered';
+import { PORTAL_SPLASH_ID } from '@repo/core/constants/app.contants';
 
 import SplashContents from './SplashContents';
 import { SplashStatusTypes, SplashTypes } from './types';

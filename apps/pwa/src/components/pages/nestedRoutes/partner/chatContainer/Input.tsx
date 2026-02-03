@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import PaperPlaneRightIcon from '@assets/icons/PaperPlaneRight.svg';
 
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 
 import { ItemPropsType } from './__hooks__/useGetData/type';
 import { initailMessageValue } from './constants';

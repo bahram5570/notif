@@ -2,8 +2,8 @@ import { createPortal } from 'react-dom';
 
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
-import { MAX_SCREEN_WIDTH, PORTAL_ID } from '@constants/app.constants';
 import useIsRendered from '@hooks/useIsRendered';
+import { MAX_SCREEN_WIDTH, PORTAL_ID } from '@repo/core/constants/app.contants';
 
 const Loading = () => {
   const { isRendered } = useIsRendered();

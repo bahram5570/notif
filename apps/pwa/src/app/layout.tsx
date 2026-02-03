@@ -1,6 +1,5 @@
 import './globals.css';
 
-import { MAX_SCREEN_WIDTH, PORTAL_ID, PORTAL_SPLASH_ID } from '@constants/app.constants';
 import AnalyticsProvider from '@providers/AnalyticsProvider';
 import CultureProvider from '@providers/CultureProvider';
 import ErrorProvider from '@providers/ErrorProvider';
@@ -13,6 +12,7 @@ import ServiceWorkerProvider from '@providers/ServiceWorkerProvider';
 import ThemeModeProvider from '@providers/ThemeModeProvider';
 import ToastProvider from '@providers/ToastProvider';
 import WidgetActionsProvider from '@providers/WidgetActionsProvider';
+import { MAX_SCREEN_WIDTH, PORTAL_ID, PORTAL_SPLASH_ID } from '@repo/core/constants/app.contants';
 import { OperatingSystemProvider } from '@repo/core/providers/OperatingSystemProvider';
 import { PageNavigationLoadingProvider } from '@repo/core/providers/PageNavigationLoadingProvider';
 import type { Metadata, Viewport } from 'next';

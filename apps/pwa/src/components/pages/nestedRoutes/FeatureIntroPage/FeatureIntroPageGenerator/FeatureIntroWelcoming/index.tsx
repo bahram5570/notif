@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import { LottieCanvas } from '@lib/LottieCanvas';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 
 import FeatureIntroBtn from '../FeatureIntroBtn';
 import FeatureIntroContainer from '../FeatureIntroContainer';

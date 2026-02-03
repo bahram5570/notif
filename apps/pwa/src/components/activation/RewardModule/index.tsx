@@ -1,8 +1,8 @@
 import { CustomBackButton } from '@repo/core/components/ui/CustomBackButton';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import { OrderOfRewardElementsTypes } from '@providers/__activation__/types';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 
 import Btn from './Btn';
 import HeadingImage from './HeadingImage';

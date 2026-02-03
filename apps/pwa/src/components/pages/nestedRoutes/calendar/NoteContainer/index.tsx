@@ -8,8 +8,8 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import OverlayBar from '@components/ui/OverlayBar';
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useAnalytics from '@hooks/useAnalytics';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 
 import DeleteNoteBtn from './DeleteNoteBtn';
 import NoteContainerSkeleton from './NoteContainerSkeleton';

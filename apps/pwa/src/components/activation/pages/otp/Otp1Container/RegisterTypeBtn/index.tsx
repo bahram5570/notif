@@ -1,7 +1,7 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { ACTIVATION_HEADING_SCRIPTS_ID } from '@components/activation/ActivationHeading/constants';
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 
 import { RegisterTypeBtnProps } from './types';
 

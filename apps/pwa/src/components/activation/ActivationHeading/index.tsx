@@ -2,9 +2,9 @@ import InfoIcon from '@assets/icons/info.svg';
 import ImpoIcon from '@assets/images/questionsImpo.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
 import { OrderOfQuestionScriptsTypes } from '@providers/__activation__/types';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 
 import {
   ACTIVATION_HEADING_ICON_ID,

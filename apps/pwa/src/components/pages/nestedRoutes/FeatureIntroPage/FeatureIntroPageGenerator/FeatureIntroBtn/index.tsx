@@ -1,6 +1,6 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 
 import { FeatureIntroBtnPropsType } from './type';
 

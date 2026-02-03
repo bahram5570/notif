@@ -4,7 +4,7 @@ import CancelIcon from '@assets/icons/cancel.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 
 import useSubmit from './__hooks__/useSubmit';
 import { CommentChatModalPropsType } from './type';

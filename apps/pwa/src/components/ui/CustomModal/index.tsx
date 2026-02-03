@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-import { MAX_SCREEN_WIDTH, PORTAL_ID } from '@constants/app.constants';
 import useIsRendered from '@hooks/useIsRendered';
+import { MAX_SCREEN_WIDTH, PORTAL_ID } from '@repo/core/constants/app.contants';
 import { useRouter } from 'next/navigation';
 
 import useModalStatus from './__hooks__/useModalStatus';

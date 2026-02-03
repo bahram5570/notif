@@ -2,8 +2,8 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomModal from '@components/ui/CustomModal';
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import FeedbackModalDescription from './FeedbackDescription';

@@ -1,6 +1,6 @@
 import { SHARE_EXPERIENCE_PROFILE_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import CustomImage from '@components/ui/CustomImage';
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 

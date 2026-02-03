@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import waveJson from '@assets/lottie/cycleWave.json';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import { LottieJson } from '@lib/LottieJson';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 import { LottieRefCurrentProps } from 'lottie-react';
 
 import { CycleCardWaveProps } from './types';

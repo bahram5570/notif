@@ -2,7 +2,7 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import OverlayBar from '@components/ui/OverlayBar';
-import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 
 import useSubmit from './__hooks__/useSubmit';
 import { ChallengeBtnPropsType } from './type';
