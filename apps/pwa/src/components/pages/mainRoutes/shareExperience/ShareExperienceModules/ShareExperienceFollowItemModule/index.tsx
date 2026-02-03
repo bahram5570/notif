@@ -2,9 +2,13 @@ import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
 
 import ShareExperienceProfileIconModule from '../ShareExperienceProfileIconModule';
+import useFollowUser from './__hooks__/useFollowUser';
 import { ShareExperienceFollowItemModulePropsType } from './type';
 
 const ShareExperienceFollowItemModule = ({ isLastItem, item }: ShareExperienceFollowItemModulePropsType) => {
+  const { followHandler } = useFollowUser({ isFollow: item.isFollowed, userId: item.id });
+  const buttonText = item.isFollowed ? 'دنبال شده' : 'دنبال کردن';
+
   return (
     <div
       className={`py-4  ${!isLastItem && 'border-b border-b-impo_Surface_SurfaceVariant'} flex flex-row-reverse justify-between items-center`}
@@ -21,12 +25,13 @@ const ShareExperienceFollowItemModule = ({ isLastItem, item }: ShareExperienceFo
           {item.name}
         </Dark_Typography>
       </div>
-
-      <Dark_Button className=" !border-impo_Grey_100 bg-impo_Transparent !w-fit px-5" onClick={() => {}}>
-        <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnSurface">
-          دنبال کردن
-        </Dark_Typography>
-      </Dark_Button>
+      {!item.isSheMe && (
+        <Dark_Button className=" !border-impo_Grey_100 bg-impo_Transparent !w-fit px-5" onClick={followHandler}>
+          <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnSurface">
+            {buttonText}
+          </Dark_Typography>
+        </Dark_Button>
+      )}
     </div>
   );
 };

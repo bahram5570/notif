@@ -1,3 +1,5 @@
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
+
 import ShareExperienceFollowItemModule from '../ShareExperienceFollowItemModule';
 import EmptyState from './EmptyState';
 import { ShareExperienceFollowListModulePropsType } from './type';
@@ -5,7 +7,7 @@ import { ShareExperienceFollowListModulePropsType } from './type';
 const ShareExperienceFollowListModule = ({ items, EmptyStateScript }: ShareExperienceFollowListModulePropsType) => {
   const hasItem = items.length > 0;
   return (
-    <div className="flex flex-col px-4">
+    <div className="flex flex-col px-4 h-full" style={{ paddingTop: HEADER_HEIGHT + 10 }}>
       {!hasItem && <EmptyState EmptyStateScript={EmptyStateScript} />}
       {hasItem &&
         items.map((item, index) => {
