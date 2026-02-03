@@ -24,7 +24,8 @@
       "types": "./dist/theme/*.d.ts"
     },
     "./theme.css": "./dist/theme/theme.css",
-    "./theme.tailwind.css": "./dist/theme/tailwind.css"
+    "./theme.tailwind.css": "./dist/theme/tailwind.css",
+    "./theme.tailwind.config": "./dist/theme/tailwind.config.ts"
   },
   "scripts": {
     "clear:dist": "rimraf dist",
