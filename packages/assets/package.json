@@ -1,0 +1,12 @@
+{
+  "name": "@repo/assets",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "clear:web-assets": "rimraf ../../apps/web/public/assets/shared",
+    "clear:pwa-assets": "rimraf ../../apps/pwa/public/assets/shared",
+    "copy:web-assets": "cpy ./src/shared/** ../../apps/web/public/assets/shared",
+    "copy:pwa-assets": "cpy ./src/shared/** ../../apps/pwa/public/assets/shared",
+    "build": "npm run clear:web-assets && npm run clear:pwa-assets && npm run copy:web-assets && npm run copy:pwa-assets"
+  }
+}

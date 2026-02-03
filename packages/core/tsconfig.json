@@ -5,10 +5,9 @@
     "outDir": "dist",
     "declaration": true,
     "emitDeclarationOnly": false,
-    "types": ["./src/assets/types"],
+    "types": ["./types"],
     "paths": {
-      "@assets/*": ["./src/assets/*"],
-      "@aaaaaaa/*": ["../assets/*"]
+      "@assets/*": ["../assets/src/*"]
     }
   },
   "include": ["src"],

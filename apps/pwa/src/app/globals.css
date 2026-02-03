@@ -2,12 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '@repo/core/configs.css';
 @import '@repo/core/theme.css';
+@import '@repo/core/theme.tailwind.config.css';
 
-@import 'swiper/css';
-@import 'swiper/css/navigation';
-@import 'swiper/css/pagination';
 @import '~react-toastify/dist/ReactToastify.min.css';
 
 @font-face {

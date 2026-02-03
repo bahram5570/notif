@@ -5,7 +5,9 @@
   "scripts": {
     "lint": "turbo run lint",
     "format": "prettier --write .",
-    "packages:build": "cd packages/core && npm run build",
+    "core:build": "cd packages/core && npm run build",
+    "assets:build": "cd packages/assets && npm run build",
+    "packages:build": "npm run assets:build && npm run core:build",
     "pwa:build": "npm run packages:build && cd apps/pwa && npm install && npm run build",
     "pwa:vercel:build": "npm run packages:build && cd apps/pwa && npm run build",
     "pwa:test:unit": "cd apps/pwa && npm run test:unit",
