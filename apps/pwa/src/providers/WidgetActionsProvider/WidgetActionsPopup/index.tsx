@@ -1,4 +1,4 @@
-import CustomModal from '@components/ui/CustomModal';
+import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
 import { PopupTypeEnum } from '../widgetEnums';
 import PopUpEditCycle from './PopUpEditCycle';

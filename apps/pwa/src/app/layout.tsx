@@ -5,16 +5,14 @@ import CultureProvider from '@providers/CultureProvider';
 import ErrorProvider from '@providers/ErrorProvider';
 import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
 import PreviewImageProvider from '@providers/PreviewImageProvider';
-import ReactQueryProvider from '@providers/ReactQueryProvider';
-import RouteSequenceProvider from '@providers/RouteSequenceProvider';
-import ScrollToTopProvider from '@providers/ScrollToTopProvider';
 import ServiceWorkerProvider from '@providers/ServiceWorkerProvider';
-import ThemeModeProvider from '@providers/ThemeModeProvider';
 import ToastProvider from '@providers/ToastProvider';
 import WidgetActionsProvider from '@providers/WidgetActionsProvider';
 import { MAX_SCREEN_WIDTH, PORTAL_ID, PORTAL_SPLASH_ID } from '@repo/core/constants/app.contants';
 import { OperatingSystemProvider } from '@repo/core/providers/OperatingSystemProvider';
 import { PageNavigationLoadingProvider } from '@repo/core/providers/PageNavigationLoadingProvider';
+import { ReactQueryProvider } from '@repo/core/providers/ReactQueryProvider';
+import { RouteSequenceProvider } from '@repo/core/providers/RouteSequenceProvider';
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 import Script from 'next/script';
@@ -59,33 +57,52 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         className="bg-impo_Neutral_Background"
         style={{ maxWidth: MAX_SCREEN_WIDTH, width: '100%', height: '100dvh', margin: 'auto' }}
       >
-        <main>
-          <ScrollToTopProvider />
+        {/* // # Scrolls to top on initial render - client-side & server-side */}
+        <Script>
+          {`
+            window.addEventListener('load', () => {
+              if (!window.location.hash) {
+                window.scrollTo(0, 0);
+              }
+            });
 
+            window.addEventListener('popstate', () => {
+              setTimeout(() => {
+                if (!window.location.hash) {
+                  window.scrollTo(0, 0);
+                }
+              }, 0);
+            });
+            
+            if ('scrollRestoration' in history) {
+              history.scrollRestoration = 'manual';
+            }
+          `}
+        </Script>
+
+        <main>
           <AnalyticsProvider>
             <OperatingSystemProvider>
               <CultureProvider>
-                <ThemeModeProvider>
-                  <ReactQueryProvider>
-                    <ErrorProvider>
-                      <ToastProvider>
-                        <PageNavigationLoadingProvider>
-                          <RouteSequenceProvider>
-                            <WidgetActionsProvider>
-                              <ServiceWorkerProvider>
-                                <>{children}</>
-                                <ModalsQueryParamsProvider />
-                                <PreviewImageProvider />
-                                <div id={PORTAL_SPLASH_ID} />
-                                <div id={PORTAL_ID} />
-                              </ServiceWorkerProvider>
-                            </WidgetActionsProvider>
-                          </RouteSequenceProvider>
-                        </PageNavigationLoadingProvider>
-                      </ToastProvider>
-                    </ErrorProvider>
-                  </ReactQueryProvider>
-                </ThemeModeProvider>
+                <ReactQueryProvider>
+                  <ErrorProvider>
+                    <ToastProvider>
+                      <PageNavigationLoadingProvider>
+                        <RouteSequenceProvider>
+                          <WidgetActionsProvider>
+                            <ServiceWorkerProvider>
+                              <>{children}</>
+                              <ModalsQueryParamsProvider />
+                              <PreviewImageProvider />
+                              <div id={PORTAL_SPLASH_ID} />
+                              <div id={PORTAL_ID} />
+                            </ServiceWorkerProvider>
+                          </WidgetActionsProvider>
+                        </RouteSequenceProvider>
+                      </PageNavigationLoadingProvider>
+                    </ToastProvider>
+                  </ErrorProvider>
+                </ReactQueryProvider>
               </CultureProvider>
             </OperatingSystemProvider>
           </AnalyticsProvider>

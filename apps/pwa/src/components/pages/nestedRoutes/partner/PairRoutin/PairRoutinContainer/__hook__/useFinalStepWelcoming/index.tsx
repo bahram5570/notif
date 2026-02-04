@@ -1,7 +1,7 @@
 import useProfileData from '@hooks/__profile__/useProfileData';
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
-import useRouteSequence from '@hooks/useRouteSequence';
+import { useRouteSequence } from '@repo/core/hooks/useRouteSequence';
 
 import { PairRoutinResponsive } from '../useGetData/type';
 import { UseFinalStepWelcomingPropsType } from './type';

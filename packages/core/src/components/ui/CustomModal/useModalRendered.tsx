@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { isDevelopeMode } from '@repo/core/utils/system';
+import { isDevelopeMode } from '../../../utils/system';
 
-import { useDelayCallback } from '@repo/core/hooks/useDelayCallback';
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
-import { MODAL_QUERY_NAME } from './constants';
+import { MODAL_QUERY_NAME } from '../../../constants/app.contants';
+import { useDelayCallback } from '../../../hooks/useDelayCallback';
+import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
 
 const useModalRendered = () => {
   const [isDelayPassed, setIsdelayPassed] = useState(false);

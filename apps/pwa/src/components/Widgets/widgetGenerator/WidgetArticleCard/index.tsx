@@ -1,8 +1,8 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
+import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
 import { externalLink } from '@utils/navigation';
 
 import WidgetCardContainer from '@components/Widgets/WidgetCardContainer';
-import CustomSlider from '@components/ui/CustomSlider';
 import useAnalytics from '@hooks/useAnalytics';
 
 import ArticleGenerator from './ArticleGenerator';

@@ -1,6 +1,6 @@
 import FakeCycleContainer from '@app/(activation)/activationCr/(goal)/fakeCycle/FakeCyclePageContainer/PageContainer/FakeCycleContainer';
 import CycleContainer from '@components/pages/mainRoutes/cycle/CycleContainer';
-import useIsRendered from '@hooks/useIsRendered';
+import { useIsRendered } from '@repo/core/hooks/useIsRendered';
 
 import BottomPart from './BottomPart';
 import SampleCycleContinueBtn from './SampleCycleContinueBtn';

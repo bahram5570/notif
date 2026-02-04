@@ -2,7 +2,7 @@ import { storeSplashHandler } from '@providers/SplashProvider/utils';
 
 import { setUserCookie } from '@actions/cookie.actions';
 import ProgressCycleLoading from '@components/ProgressCycleLoading';
-import useRouteSequence from '@hooks/useRouteSequence';
+import { useRouteSequence } from '@repo/core/hooks/useRouteSequence';
 
 import { CompleteRegisterCycleLoadingProps } from './types';
 

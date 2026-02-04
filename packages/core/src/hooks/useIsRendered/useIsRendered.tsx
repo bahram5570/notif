@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const useIsRendered = () => {
+export const useIsRendered = () => {
   const [isRendered, setIsRendered] = useState(false);
 
   useEffect(() => {
@@ -10,5 +10,3 @@ const useIsRendered = () => {
 
   return { isRendered };
 };
-
-export default useIsRendered;

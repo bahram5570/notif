@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import CustomSlider from '@components/ui/CustomSlider';
+import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
 
 import { WidgetPeriodCycleHistoryDaysProps } from './types';
 

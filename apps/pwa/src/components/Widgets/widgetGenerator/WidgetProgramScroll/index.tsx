@@ -14,7 +14,7 @@ const WidgetProgramScroll = ({ data }: ProgramScrollPropType) => {
   const containerRef = useRef<HTMLDivElement | null>(null);
 
   const isWindows = operatingSystem === 'windows';
-  const hasOOneItem = data.items.length === 1;
+  const hasOneItem = data.items.length === 1;
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -45,7 +45,7 @@ const WidgetProgramScroll = ({ data }: ProgramScrollPropType) => {
             <RoutinCard
               data={item}
               showDescription={false}
-              className={hasOOneItem ? 'w-full' : 'w-20'}
+              className={hasOneItem ? 'w-full' : 'w-20'}
               width={containerWidth - 50}
             />
           </div>

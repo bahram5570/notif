@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import CustomSlider from '@components/ui/CustomSlider';
 
 import { CalendarGuidesProps, GuideListTypes } from './types';
 

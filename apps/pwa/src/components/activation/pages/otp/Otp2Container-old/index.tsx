@@ -4,7 +4,7 @@ import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { toEnglishNumbers } from '@repo/core/utils/numbers';
 
 import MainActivationModule from '@components/activation/MainActivationModule';
-import useIsRendered from '@hooks/useIsRendered';
+import { useIsRendered } from '@repo/core/hooks/useIsRendered';
 
 import Codes from './Codes';
 import CountDown from './CountDown';

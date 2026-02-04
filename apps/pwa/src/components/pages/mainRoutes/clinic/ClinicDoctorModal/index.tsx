@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 
+import { CustomModal } from '@repo/core/components/ui/CustomModal';
 import { isDevelopeMode } from '@repo/core/utils/system';
 
-import CustomModal from '@components/ui/CustomModal';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 

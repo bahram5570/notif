@@ -5,7 +5,7 @@ import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import useGetData from '@components/pages/mainRoutes/partner/PartnerPage/__hooks__/useGetData';
 import CustomImage from '@components/ui/CustomImage';
-import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
+import { MODAL_QUERY_NAME } from '@repo/core/constants/app.contants';
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';

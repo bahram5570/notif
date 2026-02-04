@@ -1,6 +1,6 @@
 import useProfileData from '@hooks/__profile__/useProfileData';
 import useApi from '@hooks/useApi';
-import useRouteSequence from '@hooks/useRouteSequence';
+import { useRouteSequence } from '@repo/core/hooks/useRouteSequence';
 
 import { UseFinalStepWelcomingPropsType } from './type';
 

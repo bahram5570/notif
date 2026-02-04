@@ -6,6 +6,8 @@ import { isDevelopeMode } from '@repo/core/utils/system';
 
 import { EXCLUDE_PAGES_MODALS, MODALS } from './modalsConstants';
 
+// # Clear all modal query params (that mentioned in 'MODALS') on initial load/refresh by backing the history
+// # except the pages mentioned in 'EXCLUDE_PAGES_MODALS'
 const ModalsQueryParamsProvider = () => {
   const isFirstTime = useRef(isDevelopeMode());
 

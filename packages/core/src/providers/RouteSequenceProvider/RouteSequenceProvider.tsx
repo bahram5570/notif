@@ -2,9 +2,9 @@
 
 import { createContext, useEffect, useState } from 'react';
 
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { usePathname, useRouter } from 'next/navigation';
 
+import { useQueryParamsHandler } from '../../hooks/useQueryParamsHandler';
 import {
   RouteSequenceContextTypes,
   RouteSequenceListTypes,
@@ -14,7 +14,7 @@ import {
 
 export const RouteSequenceContext = createContext<RouteSequenceContextTypes>({ sequenceHandler: () => {} });
 
-const RouteSequenceProvider = ({ children }: RouteSequenceProviderProps) => {
+export const RouteSequenceProvider = ({ children }: RouteSequenceProviderProps) => {
   const router = useRouter();
   const pathname = usePathname() || '';
   const { searchParams } = useQueryParamsHandler();
@@ -77,5 +77,3 @@ const RouteSequenceProvider = ({ children }: RouteSequenceProviderProps) => {
     </RouteSequenceContext.Provider>
   );
 };
-
-export default RouteSequenceProvider;

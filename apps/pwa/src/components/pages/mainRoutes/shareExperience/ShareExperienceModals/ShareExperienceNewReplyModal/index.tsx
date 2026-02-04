@@ -1,5 +1,6 @@
+import { CustomModal } from '@repo/core/components/ui/CustomModal';
+
 import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import CustomModal from '@components/ui/CustomModal';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ShareExperienceNewReplyModalContainer from './ShareExperienceNewReplyModalContainer';

@@ -1,5 +1,6 @@
+import { CustomModal } from '@repo/core/components/ui/CustomModal';
+
 import TestKitModalsListsDelete from '@components/KitTests/TestKitModalsLists/TestKitModalsListsDelete';
-import CustomModal from '@components/ui/CustomModal';
 
 import TestKitModalsBabyCheck from './TestKitModalsBabyCheck';
 import TestKitModalsContainerList from './TestKitModalsContainerList';

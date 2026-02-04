@@ -1,16 +1,16 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-import useIsRendered from '@hooks/useIsRendered';
-import { MAX_SCREEN_WIDTH, PORTAL_ID } from '@repo/core/constants/app.contants';
 import { useRouter } from 'next/navigation';
 
+import { MAX_SCREEN_WIDTH, PORTAL_ID } from '../../../constants/app.contants';
+import { useIsRendered } from '../../../hooks/useIsRendered';
 import useModalStatus from './__hooks__/useModalStatus';
 import { MODAL_BACKGROUND_ID, MODAL_DEFAULT_Z_INDEX, MODAL_MIN_SIZE } from './constants';
 import { CustomModalProps } from './types';
 import useModalRendered from './useModalRendered';
 
-const CustomModal = ({
+export const CustomModal = ({
   zIndex = MODAL_DEFAULT_Z_INDEX,
   isSlidingMode = false,
   isFullScreen = false,
@@ -98,5 +98,3 @@ const CustomModal = ({
     </>
   );
 };
-
-export default CustomModal;

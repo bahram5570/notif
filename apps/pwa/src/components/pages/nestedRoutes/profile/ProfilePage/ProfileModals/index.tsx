@@ -1,6 +1,7 @@
+import { CustomModal } from '@repo/core/components/ui/CustomModal';
+
 import UploadImageModal from '@components/pages/mainRoutes/partner/PartnerPage/PartnerModals/UploadImageModal';
-import CustomModal from '@components/ui/CustomModal';
-import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
+import { MODAL_QUERY_NAME } from '@repo/core/constants/app.contants';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { PROFILE_MODAL_QUERY_NAME } from '../ProfileLinkList/constants';

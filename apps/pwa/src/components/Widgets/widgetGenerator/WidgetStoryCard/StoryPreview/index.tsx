@@ -1,4 +1,5 @@
-import CustomModal from '@components/ui/CustomModal';
+import { CustomModal } from '@repo/core/components/ui/CustomModal';
+
 import useAnalytics from '@hooks/useAnalytics';
 import 'swiper/css/effect-flip';
 import { Swiper, SwiperSlide } from 'swiper/react';

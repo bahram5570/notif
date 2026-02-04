@@ -1,8 +1,8 @@
 import TrashIcon from '@assets/icons/trash.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
+import { CustomModal } from '@repo/core/components/ui/CustomModal';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import CustomModal from '@components/ui/CustomModal';
 import { useRouter } from 'next/navigation';
 
 import useDelete from './__hooks__/useDelete';

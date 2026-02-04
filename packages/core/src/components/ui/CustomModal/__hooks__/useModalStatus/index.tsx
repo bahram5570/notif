@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-
-import { MODAL_QUERY_NAME } from '../../constants';
+import { MODAL_QUERY_NAME } from '../../../../../constants/app.contants';
+import { useQueryParamsHandler } from '../../../../../hooks/useQueryParamsHandler';
 import { UseModalStatusProps } from './types';
 
 const useModalStatus = ({ isOpen, isSlidingMode }: UseModalStatusProps) => {

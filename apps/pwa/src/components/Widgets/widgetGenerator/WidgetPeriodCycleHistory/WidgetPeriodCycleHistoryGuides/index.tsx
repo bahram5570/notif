@@ -1,7 +1,6 @@
 import NeedToInvestigateIcon from '@assets/icons/needToInvestigate.svg';
+import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import CustomSlider from '@components/ui/CustomSlider';
 
 import { WidgetPeriodCycleHistoryGuidesPropsType } from './type';
 

@@ -1,8 +1,9 @@
+import { CustomModal } from '@repo/core/components/ui/CustomModal';
+
 import TestKitModalsListsDelete from '@components/KitTests/TestKitModalsLists/TestKitModalsListsDelete';
 import TestKitModalsListsOvulation from '@components/KitTests/TestKitModalsLists/TestKitModalsListsOvulation';
 import TestKitModalsContainer from '@components/pages/nestedRoutes/signs/TestKitModals/TestKitModalsContainer';
 import useTestKitModalsInfo from '@components/pages/nestedRoutes/signs/TestKitModals/__hooks__/useTestKitModalsInfo';
-import CustomModal from '@components/ui/CustomModal';
 
 import { OvulationKitModalPropsType } from './type';
 

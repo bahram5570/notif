@@ -1,4 +1,4 @@
-// # Naming queryis ---> component name + description
+// # Naming query params ---> component name + description
 
 export const MODALS = {
   // # image

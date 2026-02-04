@@ -1,9 +1,10 @@
+import { CustomModal } from '@repo/core/components/ui/CustomModal';
+
 import TestKitModalsListsBabyCheck from '@components/KitTests/TestKitModalsLists/TestKitModalsListsBabyCheck';
 import TestKitModalsListsDelete from '@components/KitTests/TestKitModalsLists/TestKitModalsListsDelete';
 import TestKitModalsBabyCheck from '@components/pages/nestedRoutes/signs/TestKitModals/TestKitModalsBabyCheck';
 import TestKitModalsContainer from '@components/pages/nestedRoutes/signs/TestKitModals/TestKitModalsContainer';
 import useTestKitModalsInfo from '@components/pages/nestedRoutes/signs/TestKitModals/__hooks__/useTestKitModalsInfo';
-import CustomModal from '@components/ui/CustomModal';
 
 import { TestBabyKitModalsPropsType } from './type';
 

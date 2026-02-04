@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import useApi from '@hooks/useApi';
-import useRouteSequence from '@hooks/useRouteSequence';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
+import { useRouteSequence } from '@repo/core/hooks/useRouteSequence';
 
 import { FreeSubscriptionResponseTypes } from './types';
 

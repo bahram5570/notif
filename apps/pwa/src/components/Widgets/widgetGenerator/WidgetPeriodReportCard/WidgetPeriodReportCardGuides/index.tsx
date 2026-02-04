@@ -1,6 +1,5 @@
+import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import CustomSlider from '@components/ui/CustomSlider';
 
 import { WidgetPeriodReportCardGuidesPropsType } from './type';
 

@@ -1,9 +1,9 @@
 import { isSelectedFinder } from './__utils__';
+import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import SignGeneratorOld from '@components/SignGenerator-old';
 import WidgetCardContainer from '@components/Widgets/WidgetCardContainer';
-import CustomSlider from '@components/ui/CustomSlider';
 import useAnalytics from '@hooks/useAnalytics';
 
 import { WidgetSignCardProps } from './types';

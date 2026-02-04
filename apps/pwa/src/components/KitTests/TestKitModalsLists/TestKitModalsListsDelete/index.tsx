@@ -1,7 +1,7 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
+import { CustomModal } from '@repo/core/components/ui/CustomModal';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import CustomModal from '@components/ui/CustomModal';
 import Loading from '@components/ui/Loading';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';

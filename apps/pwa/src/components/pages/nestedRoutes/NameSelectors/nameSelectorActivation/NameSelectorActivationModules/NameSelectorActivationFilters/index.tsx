@@ -1,4 +1,5 @@
-import CustomSlider from '@components/ui/CustomSlider';
+import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
+
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import FilterGenerator from './FilterGenerator';

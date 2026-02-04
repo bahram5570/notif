@@ -3,10 +3,11 @@ import { useEffect, useState } from 'react';
 import { queryDataHandler } from './__utils__';
 
 import { SHARE_EXPERIENCE_ORDER_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import { MODAL_DEFAULT_Z_INDEX } from '@components/ui/CustomModal/constants';
 import { useSearchParams } from 'next/navigation';
 
 import { ListTypes, ShareExperienceOrdersListTypes } from './types';
+
+const MODAL_DEFAULT_Z_INDEX = 70;
 
 const useShareExperienceOrders = () => {
   const searchParams = useSearchParams();

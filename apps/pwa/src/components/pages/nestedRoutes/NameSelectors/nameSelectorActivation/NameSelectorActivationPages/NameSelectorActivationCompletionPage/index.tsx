@@ -1,7 +1,7 @@
 'use client';
 
 import ProgressCycleLoading from '@components/ProgressCycleLoading';
-import useRouteSequence from '@hooks/useRouteSequence';
+import { useRouteSequence } from '@repo/core/hooks/useRouteSequence';
 
 import { NAME_SELECTOR_TABINDEX_QUERY_NAME } from '../../../nameSelector/NameSelectorLayout/constants';
 import { NameSelectorTabsEnum } from '../../../nameSelector/NameSelectorLayout/enum';

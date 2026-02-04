@@ -4,7 +4,7 @@ import { toEnglishNumbers } from '@repo/core/utils/numbers';
 
 import ActivationInputModule from '@components/activation/ActivationInputModule';
 import MainActivationModule from '@components/activation/MainActivationModule';
-import useIsRendered from '@hooks/useIsRendered';
+import { useIsRendered } from '@repo/core/hooks/useIsRendered';
 
 import Otp1Footer from './Otp1Footer';
 import RegisterTypeBtn from './RegisterTypeBtn';

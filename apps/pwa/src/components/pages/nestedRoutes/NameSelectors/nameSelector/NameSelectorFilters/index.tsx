@@ -1,6 +1,6 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
+import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
-import CustomModal from '@components/ui/CustomModal';
 import { useRouter } from 'next/navigation';
 
 import useNameSelectorData from '../__hooks__/useNameSelectorData';

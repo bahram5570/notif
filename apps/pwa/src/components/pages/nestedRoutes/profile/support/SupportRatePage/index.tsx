@@ -8,7 +8,7 @@ import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
+import { MODAL_QUERY_NAME } from '@repo/core/constants/app.contants';
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';

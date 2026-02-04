@@ -1,10 +1,10 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
+import { CustomModal } from '@repo/core/components/ui/CustomModal';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import styles from './RatingDescriptionModal.module.css';
 
-import CustomModal from '@components/ui/CustomModal';
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import { MAX_LETTERS_COUNT } from './constants';

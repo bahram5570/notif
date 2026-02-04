@@ -1,7 +1,7 @@
+import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import RoutinCard from '@components/__routin__/RoutinCard';
-import CustomSlider from '@components/ui/CustomSlider';
 
 import { data } from '../../../constants';
 import { CategoryItemPropsType } from './type';

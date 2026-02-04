@@ -1,4 +1,5 @@
-import CustomModal from '@components/ui/CustomModal';
+import { CustomModal } from '@repo/core/components/ui/CustomModal';
+
 import FileInputManager from '@components/ui/FileInputManager';
 
 import { UploadModalPropsType } from './type';

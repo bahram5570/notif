@@ -1,6 +1,6 @@
-import { MODAL_QUERY_NAME } from '@components/ui/CustomModal/constants';
 import useApi from '@hooks/useApi';
 import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { MODAL_QUERY_NAME } from '@repo/core/constants/app.contants';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 

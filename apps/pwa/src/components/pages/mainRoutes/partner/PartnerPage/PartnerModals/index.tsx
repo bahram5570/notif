@@ -1,4 +1,5 @@
-import CustomModal from '@components/ui/CustomModal';
+import { CustomModal } from '@repo/core/components/ui/CustomModal';
+
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
