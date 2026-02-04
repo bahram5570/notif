@@ -33,34 +33,6 @@ const config: Config = {
           '0%': { transform: 'translateX(100%)' },
           '100%': { transform: 'translateX(0%)' },
         },
-        pageNavigation: {
-          '0%': { transform: 'translateX(100%)' },
-          '100%': { transform: 'translateX(10%)' },
-        },
-        modalBackgroundOpen: {
-          '0%': { backgroundColor: '#00000000' },
-          '100%': { backgroundColor: '#00000088' },
-        },
-        modalBackgroundClose: {
-          '0%': { backgroundColor: '#00000088' },
-          '100%': { backgroundColor: '#00000000' },
-        },
-        modalCenterModeOpen: {
-          '0%': { transform: 'scale(0)' },
-          '100%': { transform: 'scale(1)' },
-        },
-        modalCenterModeClose: {
-          '0%': { transform: 'scale(1)' },
-          '100%': { transform: 'scale(0)' },
-        },
-        modalSlidingModeOpen: {
-          '0%': { transform: 'translateY(100%)' },
-          '100%': { transform: 'translateY(0%)' },
-        },
-        modalSlidingModeClose: {
-          '0%': { transform: 'translateY(0%)' },
-          '100%': { transform: 'translateY(100%)' },
-        },
         ratingDescriptionOpen: {
           '0%': { transform: 'translateY(100%)' },
           '100%': { transform: 'translateY(0%)' },
@@ -103,13 +75,6 @@ const config: Config = {
         SignsChangedToast: 'SignsChangedToast 10s linear forwards',
         welcoming: 'welcoming 6s linear forwards',
         signsChangedToast: 'signsChangedToast 10s linear forwards',
-        pageNavigation: 'pageNavigation 5s linear forwards',
-        modalBackgroundOpen: 'modalBackgroundOpen 0.2s linear forwards',
-        modalBackgroundClose: 'modalBackgroundClose 0.2s linear forwards',
-        modalCenterModeOpen: 'modalCenterModeOpen 0.2s linear forwards',
-        modalCenterModeClose: 'modalCenterModeClose 0.2s linear forwards',
-        modalSlidingModeOpen: 'modalSlidingModeOpen 0.2s linear forwards',
-        modalSlidingModeClose: 'modalSlidingModeClose 0.2s linear forwards',
         skeleton: 'skeleton 1.5s linear infinite',
         scrollLeft: 'scrollLeft 20s linear infinite',
         scrollRight: 'scrollRight 20s linear infinite',

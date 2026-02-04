@@ -1,9 +1,8 @@
 import RefreshIcon from '@assets/icons/Restart.svg';
 import CancelIcon from '@assets/icons/cancel.svg';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 
 import style from './styles.module.css';
-
-import CustomImage from '@components/ui/CustomImage';
 
 import { FilePreviewPropsType } from './type';
 

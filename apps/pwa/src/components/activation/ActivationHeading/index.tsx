@@ -4,7 +4,7 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
 import { OrderOfQuestionScriptsTypes } from '@providers/__activation__/types';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import {
   ACTIVATION_HEADING_ICON_ID,

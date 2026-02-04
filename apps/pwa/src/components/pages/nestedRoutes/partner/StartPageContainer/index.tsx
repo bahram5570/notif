@@ -2,10 +2,10 @@
 
 import { useEffect, useState } from 'react';
 
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import MainPageLayout from '@components/MainPageLayout';
-import CustomImage from '@components/ui/CustomImage';
 
 import PartnerCode from './PartnerCode';
 import PhoneNumberInput from './PhoneNumberInput/PhoneNumberInput';

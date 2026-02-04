@@ -2,7 +2,7 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import VpnText from '@components/ui/VpnText';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import useSubmitSubscription from './__hooks__/useSubmitSubscription';
 import { SubmitBtnProps } from './types';

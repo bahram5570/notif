@@ -1,6 +1,6 @@
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import CustomImage from '@components/ui/CustomImage';
 import Dark_RadioButton from '@components/ui/Dark_RadioButton';
 
 import { ShareExperienceNewTopicsGeneratorProps } from './types';

@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 
 import { useRouter } from 'next/navigation';
 
-import { MAX_SCREEN_WIDTH, PORTAL_ID } from '../../../constants/app.contants';
+import { MAX_SCREEN_WIDTH, PORTAL_ID } from '../../../constants/app.constants';
 import { useIsRendered } from '../../../hooks/useIsRendered';
 import useModalStatus from './__hooks__/useModalStatus';
 import { MODAL_BACKGROUND_ID, MODAL_DEFAULT_Z_INDEX, MODAL_MIN_SIZE } from './constants';

@@ -15,9 +15,39 @@ const preset: Config = {
           '0%': { transform: 'translateX(100%)' },
           '100%': { transform: 'translateX(10%)' },
         },
+        modalBackgroundOpen: {
+          '0%': { backgroundColor: '#00000000' },
+          '100%': { backgroundColor: '#00000088' },
+        },
+        modalBackgroundClose: {
+          '0%': { backgroundColor: '#00000088' },
+          '100%': { backgroundColor: '#00000000' },
+        },
+        modalCenterModeOpen: {
+          '0%': { transform: 'scale(0)' },
+          '100%': { transform: 'scale(1)' },
+        },
+        modalCenterModeClose: {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(0)' },
+        },
+        modalSlidingModeOpen: {
+          '0%': { transform: 'translateY(100%)' },
+          '100%': { transform: 'translateY(0%)' },
+        },
+        modalSlidingModeClose: {
+          '0%': { transform: 'translateY(0%)' },
+          '100%': { transform: 'translateY(100%)' },
+        },
       },
       animation: {
         pageNavigation: 'pageNavigation 5s linear forwards',
+        modalBackgroundOpen: 'modalBackgroundOpen 0.2s linear forwards',
+        modalBackgroundClose: 'modalBackgroundClose 0.2s linear forwards',
+        modalCenterModeOpen: 'modalCenterModeOpen 0.2s linear forwards',
+        modalCenterModeClose: 'modalCenterModeClose 0.2s linear forwards',
+        modalSlidingModeOpen: 'modalSlidingModeOpen 0.2s linear forwards',
+        modalSlidingModeClose: 'modalSlidingModeClose 0.2s linear forwards',
       },
     },
     colors: {

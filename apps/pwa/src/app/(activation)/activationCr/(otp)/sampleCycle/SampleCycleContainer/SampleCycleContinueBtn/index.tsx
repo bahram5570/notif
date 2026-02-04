@@ -1,7 +1,7 @@
 // import { FAKE_CYCLE_FOOTER_HEIGTH } from '@app/(activation)/activationCr/(goal)/fakeCycle/FakeCyclePageContainer/PageContainer/FakeCycleContainer/constants';
 import ActivationBtn from '@components/activation/ActivationBtn';
 import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useRouter } from 'next/navigation';
 
 import { SAMPLE_CYCLE_CONTINUE_BTN_HEIGHT } from './constants';

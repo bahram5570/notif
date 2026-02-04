@@ -5,7 +5,7 @@ import styles from '../../../styles.module.css';
 import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import useOverflowHandler from '@hooks/useOverflowHandler';
+import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 
 import ShareExperienceBottomPart from '../../../ShareExperienceContainer/ShareExperienceExperiences/ShareExperienceBottomPart';
 import ShareExperienceTopPart from '../../../ShareExperienceContainer/ShareExperienceExperiences/ShareExperienceTopPart';

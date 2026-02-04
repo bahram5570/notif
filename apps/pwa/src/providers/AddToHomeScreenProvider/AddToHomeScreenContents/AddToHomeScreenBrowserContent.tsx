@@ -2,9 +2,8 @@ import { useMemo } from 'react';
 
 import AndroidIcon from '@assets/icons/android.svg';
 import AppleIcon from '@assets/icons/apple.svg';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import CustomImage from '@components/ui/CustomImage';
 
 import AddToHomeScreenContainer from './AddToHomeScreenContainer';
 import useAddToHomeConstants from './__hooks__/useAddToHomeConstants';

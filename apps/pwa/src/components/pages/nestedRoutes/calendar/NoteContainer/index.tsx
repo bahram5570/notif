@@ -9,7 +9,7 @@ import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import OverlayBar from '@components/ui/OverlayBar';
 import useAnalytics from '@hooks/useAnalytics';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import DeleteNoteBtn from './DeleteNoteBtn';
 import NoteContainerSkeleton from './NoteContainerSkeleton';

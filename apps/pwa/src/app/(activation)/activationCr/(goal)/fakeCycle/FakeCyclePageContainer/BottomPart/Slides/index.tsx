@@ -1,7 +1,6 @@
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import CustomImage from '@components/ui/CustomImage';
 
 import { SlidesProps } from './types';
 

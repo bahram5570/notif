@@ -1,7 +1,6 @@
 import LockIcon from '@assets/icons/LockKeyhole.svg';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import CustomImage from '@components/ui/CustomImage';
 
 import { ProgramWidgetItemStatusEnum } from '../../enum';
 import { RoutinItemHeadingProps } from './types';

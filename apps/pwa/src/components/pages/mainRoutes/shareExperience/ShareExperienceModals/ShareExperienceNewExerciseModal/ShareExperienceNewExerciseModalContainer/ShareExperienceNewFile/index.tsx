@@ -1,8 +1,7 @@
 import UploadIcon from '@assets/icons/gallery.svg';
 import CrossIcon from '@assets/icons/plus.svg';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
-
-import CustomImage from '@components/ui/CustomImage';
 
 import { ShareExperienceNewFileProps } from './types';
 

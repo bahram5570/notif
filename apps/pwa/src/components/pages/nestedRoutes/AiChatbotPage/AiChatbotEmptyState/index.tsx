@@ -4,7 +4,7 @@ import AiIcon from '@assets/icons/aibg.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import AiChatbotWelcomingLayout from '@components/ui/__AiChatbot__/AiChatbotWelcomingLayout';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import DefaultQuestionList from './DefaultQuestionList';
 import { AiChatbotEmptyStatePropsType } from './type';

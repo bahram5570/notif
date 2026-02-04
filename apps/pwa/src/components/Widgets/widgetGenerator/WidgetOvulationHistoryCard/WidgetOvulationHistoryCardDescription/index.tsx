@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
-import CustomImage from '@components/ui/CustomImage';
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import { WidgetOvulationHistoryCardDescriptionDescriptionProps } from './types';

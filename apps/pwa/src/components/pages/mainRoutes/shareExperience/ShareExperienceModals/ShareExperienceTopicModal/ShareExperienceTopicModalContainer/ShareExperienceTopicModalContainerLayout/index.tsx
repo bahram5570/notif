@@ -1,7 +1,6 @@
 import { CustomBackButton } from '@repo/core/components/ui/CustomBackButton';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import CustomImage from '@components/ui/CustomImage';
 
 import { ShareExperienceTopicModalContainerLayoutPropsTypes } from './type';
 

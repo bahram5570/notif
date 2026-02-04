@@ -1,6 +1,6 @@
 import { chatFileTypeDetector } from '../__utils__';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 
-import CustomImage from '@components/ui/CustomImage';
 import VoiceMessagePlayer from '@components/ui/VoiceMessagePlayer';
 
 import ChatsFileGenerator from '../ChatsFileGenerator';

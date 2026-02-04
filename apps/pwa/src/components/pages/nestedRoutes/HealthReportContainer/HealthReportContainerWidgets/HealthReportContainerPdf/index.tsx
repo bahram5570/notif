@@ -5,7 +5,7 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import WidgetGenerator from '@components/Widgets/widgetGenerator';
 import useAnalytics from '@hooks/useAnalytics';
 import { WidgetsEnum } from '@providers/WidgetActionsProvider/widgetEnums';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import HealthReportDate from './HealthReportDate';
 import usePdfDownload from './__hooks__/usePdfDownload';

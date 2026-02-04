@@ -1,7 +1,7 @@
 import WelcomingIcon from '@assets/icons/welcoming.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import ProgressBar from './ProgressBar';
 import useWelcomingSteps from './__hooks__/useWelcomingSteps';

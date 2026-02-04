@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import { RoutinTabsBtnPropsType } from './type';
 

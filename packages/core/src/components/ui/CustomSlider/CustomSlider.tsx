@@ -1,6 +1,6 @@
 import { SliderProps } from './types';
 
-export const CustomSlider = ({ children, className, gap, id, sidePadding }: SliderProps) => {
+export const CustomSlider = ({ children, className, gap = '16px', id, sidePadding }: SliderProps) => {
   return (
     <div
       id={id}

@@ -1,8 +1,8 @@
 import ArrowIcon from '@assets/shared/icons/arrow.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import CustomImage from '@components/ui/CustomImage';
 import { useRouter } from 'next/navigation';
 
 const EmptyState = () => {

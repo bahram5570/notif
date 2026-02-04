@@ -2,7 +2,7 @@
 
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import WidgetScaleModule from '../Widgets/WidgetScaleModule';
 import { HEADER_HEIGHT, iconsList } from './constants';

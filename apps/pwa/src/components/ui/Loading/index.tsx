@@ -2,7 +2,7 @@ import { createPortal } from 'react-dom';
 
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
-import { MAX_SCREEN_WIDTH, PORTAL_ID } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH, PORTAL_ID } from '@repo/core/constants/app.constants';
 import { useIsRendered } from '@repo/core/hooks/useIsRendered';
 
 const Loading = () => {

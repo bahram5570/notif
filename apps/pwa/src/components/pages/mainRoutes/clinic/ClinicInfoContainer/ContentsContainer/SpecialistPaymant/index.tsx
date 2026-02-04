@@ -7,7 +7,7 @@ import { isDevelopeMode } from '@repo/core/utils/system';
 import MainPageLayoutHeader from '@components/MainPageLayout/MainPageLayoutHeader';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import VpnText from '@components/ui/VpnText';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useRouter } from 'next/navigation';
 
 import SpecialistInfoGenerator from '../SpecialistInfoGenerator';

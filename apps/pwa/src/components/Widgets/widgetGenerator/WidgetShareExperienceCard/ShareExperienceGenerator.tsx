@@ -1,7 +1,6 @@
 import BlueTickIcon from '@assets/icons/blueTick.svg';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import CustomImage from '@components/ui/CustomImage';
 
 import { ShareExperienceGeneratorProps } from './types';
 

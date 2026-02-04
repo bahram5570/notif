@@ -1,9 +1,6 @@
 // # Naming query params ---> component name + description
 
 export const MODALS = {
-  // # image
-  PREVIEW_IMAGE: 'PREVIEW_IMAGE',
-
   // # widgets
   WIDGET_POPUP: 'WIDGET_POPUP',
 

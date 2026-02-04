@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { MODAL_QUERY_NAME } from '../../../../../constants/app.contants';
+import { MODAL_QUERY_NAME } from '../../../../../constants/modal.constants';
 import { useQueryParamsHandler } from '../../../../../hooks/useQueryParamsHandler';
 import { UseModalStatusProps } from './types';
 

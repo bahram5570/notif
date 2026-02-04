@@ -1,4 +1,5 @@
-import CustomImage from '@components/ui/CustomImage';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
+
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import FeatureIntroBtn from '../FeatureIntroBtn';

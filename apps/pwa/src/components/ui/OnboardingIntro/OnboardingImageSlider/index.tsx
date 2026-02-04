@@ -1,4 +1,4 @@
-import CustomImage from '@components/ui/CustomImage';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 
 import { OnboardingImageSliderPropsType } from './type';
 

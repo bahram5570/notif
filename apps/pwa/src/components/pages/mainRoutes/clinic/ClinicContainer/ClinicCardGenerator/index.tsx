@@ -1,7 +1,7 @@
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { addCommas } from '@repo/core/utils/numbers';
 
-import CustomImage from '@components/ui/CustomImage';
 import useAnalytics from '@hooks/useAnalytics';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 

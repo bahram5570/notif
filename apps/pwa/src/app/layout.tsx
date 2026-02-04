@@ -4,13 +4,13 @@ import './globals.css';
 import CultureProvider from '@providers/CultureProvider';
 import ErrorProvider from '@providers/ErrorProvider';
 import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
-import PreviewImageProvider from '@providers/PreviewImageProvider';
 import ServiceWorkerProvider from '@providers/ServiceWorkerProvider';
 import ToastProvider from '@providers/ToastProvider';
 import WidgetActionsProvider from '@providers/WidgetActionsProvider';
-import { MAX_SCREEN_WIDTH, PORTAL_ID, PORTAL_SPLASH_ID } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH, PORTAL_ID, PORTAL_SPLASH_ID } from '@repo/core/constants/app.constants';
 import { OperatingSystemProvider } from '@repo/core/providers/OperatingSystemProvider';
 import { PageNavigationProvider } from '@repo/core/providers/PageNavigationProvider';
+import { PreviewImageProvider } from '@repo/core/providers/PreviewImageProvider';
 import { ReactQueryProvider } from '@repo/core/providers/ReactQueryProvider';
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
@@ -57,7 +57,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         style={{ maxWidth: MAX_SCREEN_WIDTH, width: '100%', height: '100dvh', margin: 'auto' }}
       >
         {/* // # Scrolls to top on initial render - client-side & server-side */}
-        <Script>
+        {/* <Script>
           {`
             window.addEventListener('load', () => {
               if (!window.location.hash) {
@@ -77,31 +77,31 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
               history.scrollRestoration = 'manual';
             }
           `}
-        </Script>
+        </Script> */}
 
         <main>
           {/* <AnalyticsProvider> */}
-            <OperatingSystemProvider>
-              <CultureProvider>
-                <ReactQueryProvider>
-                  <ErrorProvider>
-                    <ToastProvider>
-                      <PageNavigationProvider>
-                        <WidgetActionsProvider>
-                          <ServiceWorkerProvider>
-                            <>{children}</>
-                            <ModalsQueryParamsProvider />
-                            <PreviewImageProvider />
-                            <div id={PORTAL_SPLASH_ID} />
-                            <div id={PORTAL_ID} />
-                          </ServiceWorkerProvider>
-                        </WidgetActionsProvider>
-                      </PageNavigationProvider>
-                    </ToastProvider>
-                  </ErrorProvider>
-                </ReactQueryProvider>
-              </CultureProvider>
-            </OperatingSystemProvider>
+          <OperatingSystemProvider>
+            <CultureProvider>
+              <ReactQueryProvider>
+                <ErrorProvider>
+                  <ToastProvider>
+                    <PageNavigationProvider>
+                      <WidgetActionsProvider>
+                        <ServiceWorkerProvider>
+                          <>{children}</>
+                          <ModalsQueryParamsProvider />
+                          <PreviewImageProvider />
+                          <div id={PORTAL_SPLASH_ID} />
+                          <div id={PORTAL_ID} />
+                        </ServiceWorkerProvider>
+                      </WidgetActionsProvider>
+                    </PageNavigationProvider>
+                  </ToastProvider>
+                </ErrorProvider>
+              </ReactQueryProvider>
+            </CultureProvider>
+          </OperatingSystemProvider>
           {/* </AnalyticsProvider> */}
         </main>
       </body>

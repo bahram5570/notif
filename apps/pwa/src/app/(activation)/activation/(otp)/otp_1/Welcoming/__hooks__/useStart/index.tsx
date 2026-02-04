@@ -12,7 +12,8 @@ import { UseStartTypes } from './types';
 
 const useStart: UseStartTypes = (onStart) => {
   useEffect(() => {
-    const isWelcomingPreviewed = sessionStorage.getItem(ACTIVATION_WELCOMING_PREVIEWED_NAME);
+    const isWelcomingPreviewed =
+      typeof sessionStorage === 'undefined' ? null : sessionStorage.getItem(ACTIVATION_WELCOMING_PREVIEWED_NAME);
 
     if (!isWelcomingPreviewed) {
       onStart(StepsList.START);

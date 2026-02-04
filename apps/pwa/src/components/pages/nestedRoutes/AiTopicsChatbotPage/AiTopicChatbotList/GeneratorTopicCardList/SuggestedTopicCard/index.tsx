@@ -1,8 +1,7 @@
 import ChatbotBg from '@assets/icons/bgChatbot.svg';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@repo/core/utils/scripts';
-
-import CustomImage from '@components/ui/CustomImage';
 
 import { SuggestedTopicCardPropsType } from './type';
 

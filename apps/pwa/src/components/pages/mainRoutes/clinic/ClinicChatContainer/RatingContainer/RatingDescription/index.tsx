@@ -1,7 +1,7 @@
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { MODAL_QUERY_NAME } from '@repo/core/constants/app.contants';
+import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 

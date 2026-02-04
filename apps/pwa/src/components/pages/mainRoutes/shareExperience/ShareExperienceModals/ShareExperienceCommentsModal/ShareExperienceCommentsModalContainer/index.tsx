@@ -4,7 +4,7 @@ import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import useOverflowHandler from '@hooks/useOverflowHandler';
+import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 
 import ShareExperienceContentsModule from '../../../ShareExperienceModules/ShareExperienceContentsModule';
 import ShareExperienceNewCommentFooterModule from '../../../ShareExperienceModules/ShareExperienceNewCommentFooterModule';

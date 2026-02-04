@@ -5,7 +5,8 @@ export const setWelcomingHandler = () => {
 };
 
 export const getWelcomingHandler = () => {
-  const isWelcoming = sessionStorage.getItem(IS_WELCOMING_IN_CHAT_BOT_TOPICS);
+  const isWelcoming =
+    typeof sessionStorage === 'undefined' ? null : sessionStorage.getItem(IS_WELCOMING_IN_CHAT_BOT_TOPICS);
   return isWelcoming;
 };
 

@@ -1,9 +1,8 @@
 import TickIcon from '@assets/icons/tick.svg';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toPersianNumbers } from '@repo/core/utils/numbers';
-
-import CustomImage from '@components/ui/CustomImage';
 
 import { SideEnum } from './constants';
 import { MessagePropsType } from './type';

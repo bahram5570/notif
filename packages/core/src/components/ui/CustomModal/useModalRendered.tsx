@@ -4,7 +4,7 @@ import { isDevelopeMode } from '../../../utils/system';
 
 import { useRouter } from 'next/navigation';
 
-import { MODAL_QUERY_NAME } from '../../../constants/app.contants';
+import { MODAL_QUERY_NAME } from '../../../constants/modal.constants';
 import { useDelayCallback } from '../../../hooks/useDelayCallback';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
 

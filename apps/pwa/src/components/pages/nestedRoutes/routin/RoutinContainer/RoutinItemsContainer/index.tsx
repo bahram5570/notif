@@ -1,6 +1,6 @@
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import RoutinBookmarked from '@components/__routin__/RoutinCard/RoutinCardHeader/RoutinBookmarked';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import RoutinCommentList from './RoutinCommentList';
 import RoutinHeading from './RoutinHeading';

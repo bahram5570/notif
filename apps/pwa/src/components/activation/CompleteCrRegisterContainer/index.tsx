@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import useActivationCrRegister from '@hooks/__activation__/useActivationCrRegister';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import PartnerCodeContainer from '../pages/PartnerCodeContainer';
 import useCompleteCrRegisterSteps from './__hooks__/useCompleteCrRegisterSteps';

@@ -7,7 +7,7 @@ const useIsPhone = () => {
   const [isPhone, setIsPhone] = useState(true);
 
   useEffect(() => {
-    const hasStoredData = sessionStorage.getItem(OTP_INFO_NAME);
+    const hasStoredData = typeof sessionStorage === 'undefined' ? null : sessionStorage.getItem(OTP_INFO_NAME);
     const initialData = hasStoredData ? (JSON.parse(hasStoredData) as OtpInfoTypes).isPhone : true;
     setIsPhone(initialData);
   }, []);

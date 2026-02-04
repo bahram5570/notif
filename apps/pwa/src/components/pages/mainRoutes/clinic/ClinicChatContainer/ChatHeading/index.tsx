@@ -2,7 +2,7 @@ import InfoIcon from '@assets/icons/infoIcon.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import { CHAT_HEADING_HEIGHT } from '../constants';
 

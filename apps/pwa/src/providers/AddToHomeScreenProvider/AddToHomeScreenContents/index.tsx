@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import AddToHomeScreenBackground from './AddToHomeScreenBackground';
 import AddToHomeScreenBrowserContent from './AddToHomeScreenBrowserContent';

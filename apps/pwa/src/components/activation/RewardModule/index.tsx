@@ -2,7 +2,7 @@ import { CustomBackButton } from '@repo/core/components/ui/CustomBackButton';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 
 import { OrderOfRewardElementsTypes } from '@providers/__activation__/types';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import Btn from './Btn';
 import HeadingImage from './HeadingImage';

@@ -2,11 +2,11 @@ import { chatFileTypeDetector } from '../../../ClinicChatContainer/ChatsMessages
 import AttachIcon from '@assets/icons/attach.svg';
 import DownloadedIcon from '@assets/icons/downloaded.svg';
 import TrashIcon from '@assets/icons/trash.svg';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@repo/core/utils/scripts';
 
-import CustomImage from '@components/ui/CustomImage';
-import { MODAL_QUERY_NAME } from '@repo/core/constants/app.contants';
+import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 

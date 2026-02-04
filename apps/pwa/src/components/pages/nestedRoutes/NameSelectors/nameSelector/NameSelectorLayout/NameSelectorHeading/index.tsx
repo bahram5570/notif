@@ -1,10 +1,10 @@
 'use client';
 
 import { CustomBackButton } from '@repo/core/components/ui/CustomBackButton';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import CustomImage from '@components/ui/CustomImage';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import { NAME_SELECTOR_HEADING_HEIGHT, NAME_SELECTOR_HEADING_WIDTH } from '../constants';
 import { NameSelectorHeadingProps } from './types';

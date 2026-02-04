@@ -1,6 +1,6 @@
 import useGoalFinder from '@hooks/__activation__/useGoalFinder';
 import useApi from '@hooks/useApi';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import AccessNotificationContainer from '../pages/AccessNotificationContainer';
 import PartnerCodeContainer from '../pages/PartnerCodeContainer';

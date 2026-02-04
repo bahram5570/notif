@@ -4,7 +4,7 @@ import waveJson from '@assets/lottie/cycleWave.json';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 
 import { LottieJson } from '@lib/LottieJson';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { LottieRefCurrentProps } from 'lottie-react';
 
 import { CycleCardWaveProps } from './types';

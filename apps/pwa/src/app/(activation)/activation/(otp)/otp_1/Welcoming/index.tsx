@@ -1,9 +1,8 @@
 'use client';
 
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { addIdAttrs } from '@utils/scripts';
 
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import useWelcomingSteps from './__hooks__/useWelcomingSteps';
 import { StepsList } from './__hooks__/useWelcomingSteps/constants';
@@ -22,7 +21,6 @@ const Welcoming = ({ onComplete }: { onComplete?: onCompleteType }) => {
   return (
     <>
       <div
-        {...addIdAttrs('welcoming')}
         style={{ maxWidth: MAX_SCREEN_WIDTH }}
         className="fixed top-0 left-0 right-0 bottom-0 h-[100dvh] flex flex-col items-center gap-2 px-5 pt-[370px] mx-auto"
       >

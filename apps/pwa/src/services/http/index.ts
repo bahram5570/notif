@@ -1,22 +1,8 @@
 import { applyOptions, clearCacheHandler } from './__utils__';
 
-import {
-  BASE_URL_LOCAL_1,
-  BASE_URL_SERVER,
-  BASE_URL_STAGE_1,
-  BASE_URL_STAGE_2,
-  BASE_URL_STAGE_SSL,
-} from '@constants/links.constants';
-
 import { HttpResultTypes, HttpTypes } from './types';
 
-export const baseUrl = BASE_URL_SERVER;
-// export const baseUrl = BASE_URL_STAGE_SSL;
-// export const baseUrl = BASE_URL_STAGE_1;
-// export const baseUrl = BASE_URL_STAGE_2;
-// export const baseUrl = BASE_URL_LOCAL_1;
-
-export const testBaseUrl = BASE_URL_STAGE_SSL;
+export const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || '';
 
 const http = async <T>(props: HttpTypes) => {
   const result: HttpResultTypes<T> = { data: undefined, error: undefined };

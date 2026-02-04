@@ -1,7 +1,7 @@
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { shareExperienceCommentQueryMaker } from '@utils/shareExperience';
 
-import CustomImage from '@components/ui/CustomImage';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 

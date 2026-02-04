@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import CrossIcon from '@assets/icons/plus.svg';
 
 import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import { ClinicChatbotLayoutPropsType } from './type';
 

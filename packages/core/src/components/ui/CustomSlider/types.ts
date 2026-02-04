@@ -1,7 +1,7 @@
 export interface SliderProps {
   children: React.ReactNode;
+  gap?: number | string;
   sidePadding?: number;
   className?: string;
-  gap?: number;
   id?: string;
 }

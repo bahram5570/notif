@@ -1,10 +1,10 @@
 import BlueTick from '@assets/icons/blueTick2.svg';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 
 import {
   SHARE_EXPERIENCE_ORDER_QUERY_NAME,
   SHARE_EXPERIENCE_PROFILE_QUERY_NAME,
 } from '@components/pages/mainRoutes/shareExperience/constants';
-import CustomImage from '@components/ui/CustomImage';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 

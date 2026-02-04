@@ -1,6 +1,5 @@
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import CustomImage from '@components/ui/CustomImage';
 
 import { SHARE_EXPERIENCE_NEW_MAX_CHARACTERS } from '../constants';
 import { ShareExperienceNewTopPartProps } from './types';

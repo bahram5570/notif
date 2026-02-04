@@ -1,6 +1,6 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useOverflowHandler from '@hooks/useOverflowHandler';
+import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 
 import { GenderFilterGeneratorProps } from './types';
 

@@ -1,6 +1,5 @@
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import CustomImage from '@components/ui/CustomImage';
 
 import { NEW_REPLY_MAX_CHARACTERS } from '../constants';
 import { NewReplyTopPartProps } from './types';

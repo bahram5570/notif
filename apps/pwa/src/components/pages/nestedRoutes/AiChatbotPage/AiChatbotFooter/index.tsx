@@ -2,7 +2,7 @@ import { useRef, useState } from 'react';
 
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import AiChatbotDeactiveMessage from './AiChatbotDeactiveMessage';
 import AiChatbotInput from './AiChatbotInput';

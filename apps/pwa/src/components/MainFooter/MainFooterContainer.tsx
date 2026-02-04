@@ -1,4 +1,4 @@
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import PageIcons from './PageIcons';

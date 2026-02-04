@@ -7,7 +7,7 @@ import { ResponsePropsType } from '../../../MemoryPage/__hooks__/useGetData/type
 const useGetData = () => {
   const { getQueryParams } = useQueryParamsHandler();
   const memoryId = getQueryParams('memoryId');
-  const pageNo = sessionStorage.getItem(PAGE_NO);
+  const pageNo = typeof sessionStorage === 'undefined' ? null : sessionStorage.getItem(PAGE_NO);
   const currentPage = pageNo ? pageNo : '0';
 
   const { data, isLoading } = useApi<ResponsePropsType>({

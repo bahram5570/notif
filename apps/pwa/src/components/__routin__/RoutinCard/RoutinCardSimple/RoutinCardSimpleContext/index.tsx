@@ -1,8 +1,8 @@
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import RoutinRatingStats from '@components/__routin__/RoutinRatingStats';
 import RoutinWriter from '@components/__routin__/RoutinWriter';
-import CustomImage from '@components/ui/CustomImage';
 
 import { RoutinCardSimpleContextPropsType } from './type';
 

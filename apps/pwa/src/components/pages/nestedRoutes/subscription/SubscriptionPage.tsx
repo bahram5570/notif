@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import CustomImage from '@components/ui/CustomImage';
 import { LottieCanvas } from '@lib/LottieCanvas';
 
 import ApprovedCodeToast from './ApprovedCodeToast';

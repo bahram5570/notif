@@ -6,7 +6,7 @@ import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import useOverflowHandler from '@hooks/useOverflowHandler';
+import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 
 import ShareExperienceNewContinueBtn from './ShareExperienceNewContinueBtn';
 import ShareExperienceNewFile from './ShareExperienceNewFile';

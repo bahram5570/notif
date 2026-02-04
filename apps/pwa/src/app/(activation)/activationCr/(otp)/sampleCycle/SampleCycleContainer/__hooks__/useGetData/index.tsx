@@ -7,7 +7,7 @@ const useGetData = () => {
   const [data, setData] = useState<undefined | CycleResponseTypes>(undefined);
 
   useEffect(() => {
-    const storedData = sessionStorage.getItem(SAMPLE_CYCLE_STORAGE_NAME);
+    const storedData = typeof sessionStorage === 'undefined' ? null : sessionStorage.getItem(SAMPLE_CYCLE_STORAGE_NAME);
 
     if (storedData !== null) {
       setData(JSON.parse(storedData));

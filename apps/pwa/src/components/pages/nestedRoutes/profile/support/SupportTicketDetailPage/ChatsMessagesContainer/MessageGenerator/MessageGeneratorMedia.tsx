@@ -1,7 +1,7 @@
 import { chatFileTypeDetector } from '@components/pages/mainRoutes/clinic/ClinicChatContainer/ChatsMessagesContainer/__utils__';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 
 import ChatsFileGenerator from '@components/pages/mainRoutes/clinic/ClinicChatContainer/ChatsMessagesContainer/ChatsFileGenerator';
-import CustomImage from '@components/ui/CustomImage';
 
 import ChatContainerMaker from './ChatContainerMaker';
 import { MessageGeneratorMediaProps } from './types';

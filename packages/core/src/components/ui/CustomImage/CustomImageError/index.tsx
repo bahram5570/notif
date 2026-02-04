@@ -1,4 +1,4 @@
-import NoImageIcon from '@assets/icons/noImage.svg';
+import NoImageIcon from '@assets/shared/icons/noImage.svg';
 
 const CustomImageError = () => {
   return (

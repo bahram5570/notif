@@ -1,8 +1,8 @@
 import EditIcon from '@assets/icons/Gallery Edit.svg';
 import UploadIcon from '@assets/icons/upload.svg';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 
-import CustomImage from '@components/ui/CustomImage';
-import { MODAL_QUERY_NAME } from '@repo/core/constants/app.contants';
+import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 

@@ -5,7 +5,7 @@ export const setSessionStoragePromptText = (text: string) => {
 };
 
 export const getSessionStoragePromptText = () => {
-  const promptText = sessionStorage.getItem(PROMPT_TEXT);
+  const promptText = typeof sessionStorage === 'undefined' ? null : sessionStorage.getItem(PROMPT_TEXT);
 
   return promptText;
 };

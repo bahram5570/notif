@@ -1,9 +1,9 @@
 import { memo } from 'react';
 
 import GiveBirthIcon from '@assets/icons/calendarGiveBirth.svg';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import CustomImage from '@components/ui/CustomImage';
 import { CALENDAR_CELL_SIZE, DATE_SEPERATOR_REGEX } from '@constants/date.constants';
 
 import useCalendarDayInfo from '../../__hooks__/useCalendarDayInfo';

@@ -3,12 +3,12 @@ import { useInView } from 'react-intersection-observer';
 
 import HeartEmptyIcon from '@assets/icons/heartEmpty.svg';
 import HeartFillIcon from '@assets/icons/heartFill.svg';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 import { SelectNameGenderEnum } from '@services/selectNameServices/enums';
 
-import CustomImage from '@components/ui/CustomImage';
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import useNameSelectorLike from '../__hooks__/useNameSelectorLike';

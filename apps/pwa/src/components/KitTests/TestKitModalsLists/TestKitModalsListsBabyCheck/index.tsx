@@ -1,9 +1,9 @@
 import TrashIcon from '@assets/icons/trash.svg';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { BabyCheckTypeEnums } from '@components/KitTests/KitTestBabyCheck/enum';
 import { kitTestScripts } from '@components/KitTests/KitTestRange/constants';
-import CustomImage from '@components/ui/CustomImage';
 
 import { KitTestModuleTypeEnums } from '../../enum';
 import TestKitModalsListRangeSVG from '../TestKitModalsListRangeSVG';

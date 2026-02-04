@@ -4,7 +4,7 @@ import ActivationBtn from '@components/activation/ActivationBtn';
 import RewardModule from '@components/activation/RewardModule';
 import { RewardBtnTypes } from '@components/activation/RewardModule/types';
 import { ACTIVATION_INTERFACE_CODE, ACTIVATION_REWARD_QUERY_NAME } from '@constants/activation.constants';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { ACTIVATION_INPUT_MODULE_ID, CONTINUE_BTN_HEIGHT } from '../../ActivationHeading/constants';

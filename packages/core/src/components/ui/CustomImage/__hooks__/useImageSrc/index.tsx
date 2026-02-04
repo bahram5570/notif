@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import { baseUrl } from '@services/http';
-
 import { UseImageSrcProps } from './types';
 
 const useImageSrc = ({ src, imageApi = '/file', onError }: UseImageSrcProps) => {
@@ -39,6 +37,7 @@ const useImageSrc = ({ src, imageApi = '/file', onError }: UseImageSrcProps) => 
       return fileSrc;
     }
 
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
     return `${baseUrl}${imageApi}/${src}`;
   };
 

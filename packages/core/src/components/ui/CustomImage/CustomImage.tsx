@@ -1,14 +1,14 @@
 import { useState } from 'react';
 
-import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import Image from 'next/image';
 
+import { CustomSpinner } from '../CustomSpinner';
 import CustomImageError from './CustomImageError';
 import useImageSrc from './__hooks__/useImageSrc';
 import usePreviewImage from './__hooks__/usePreviewImage';
 import { CustomImageProps } from './types';
 
-const CustomImage = (props: CustomImageProps) => {
+export const CustomImage = (props: CustomImageProps) => {
   const [hasError, setHasError] = useState(false);
   const { previewImageHandler, previewImageLoading } = usePreviewImage();
 
@@ -23,6 +23,14 @@ const CustomImage = (props: CustomImageProps) => {
   };
 
   const { updatedSrc } = useImageSrc({ src: props.src, imageApi: props.imageApi, onError: errorHandler });
+
+  const clickHandler = () => {
+    previewImageHandler({
+      src: updatedSrc,
+      shape: props.previewImageShape,
+      hasPreviewImage: props.hasPreviewImage,
+    });
+  };
 
   const parentStyles =
     props.width === undefined
@@ -54,21 +62,15 @@ const CustomImage = (props: CustomImageProps) => {
           <>
             <Image
               {...imageStyles}
+              id={props.id}
               alt={props.alt || ''}
+              onClick={clickHandler}
               onError={errorHandler}
               onLoad={isLoadedHandler}
               objectFit={props.objectFit}
               priority={props.priority || false}
-              src={updatedSrc || '/assets/icons/noImage.svg'}
+              src={updatedSrc || '/assets/shared/icons/noImage.svg'}
               className={`${props.hasPreviewImage ? 'cursor-pointer' : 'pointer-events-none'} ${props.className || ''}`}
-              onClick={() =>
-                previewImageHandler({
-                  src: updatedSrc,
-                  shape: props.previewImageShape,
-                  hasPreviewImage: props.hasPreviewImage,
-                })
-              }
-              id={props.id}
             />
           </>
         )}
@@ -76,5 +78,3 @@ const CustomImage = (props: CustomImageProps) => {
     </div>
   );
 };
-
-export default CustomImage;

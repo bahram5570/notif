@@ -1,6 +1,6 @@
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import useOverflowHandler from '@hooks/useOverflowHandler';
+import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 
 import DoctorInfo from '../DoctorInfo';
 import NoComments from '../NoComments';

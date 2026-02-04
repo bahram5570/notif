@@ -3,7 +3,7 @@ import { ReactElement, useEffect, useState } from 'react';
 import useSignDateState from '@hooks/__sign__/useSignDateState';
 import useCountDown from '@hooks/useCountDown';
 import { LottieCanvas } from '@lib/LottieCanvas';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 const SignsChangedToast = () => {
   const [showStatus, setShowStatus] = useState(false);

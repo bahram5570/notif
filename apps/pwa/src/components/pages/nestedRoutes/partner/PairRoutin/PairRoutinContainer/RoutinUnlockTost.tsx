@@ -5,7 +5,7 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { convertToPersianOrdinal } from '@utils/numbers';
 
 import useCountDown from '@hooks/useCountDown';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import { ROUTIN_STEP, SHOW_ROUTIN_UNLOCK_TOST } from './constant';
 

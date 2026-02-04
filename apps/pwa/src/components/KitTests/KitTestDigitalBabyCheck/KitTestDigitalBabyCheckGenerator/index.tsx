@@ -1,7 +1,6 @@
 import SelectedIcon from '@assets/icons/selectedTick.svg';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import CustomImage from '@components/ui/CustomImage';
 
 import { KitTestDigitalBabyCheckGeneratorProps } from './types';
 

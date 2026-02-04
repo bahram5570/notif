@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const useOverflowHandler = (isMount?: boolean) => {
+export const useOverflowHandler = (isMount?: boolean) => {
   useEffect(() => {
     const el = document.body;
 
@@ -17,5 +17,3 @@ const useOverflowHandler = (isMount?: boolean) => {
     };
   }, [isMount]);
 };
-
-export default useOverflowHandler;

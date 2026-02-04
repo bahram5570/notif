@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 const DiscountLoading = () => {
   useEffect(() => {

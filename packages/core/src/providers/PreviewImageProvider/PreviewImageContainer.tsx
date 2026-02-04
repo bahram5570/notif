@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 
-import CrossIcon from '@assets/icons/cross.svg';
+import CrossIcon from '@assets/shared/icons/cross.svg';
 import Image from 'next/image';
 
-import useOverflowHandler from '@hooks/useOverflowHandler';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
 import { useRouter } from 'next/navigation';
 
+import { MAX_SCREEN_WIDTH } from '../../constants/app.constants';
+import { useOverflowHandler } from '../../hooks/useOverflowHandler';
 import { PreviewImageContainerProps } from './types';
 
 const PreviewImageContainer = ({ src, shape = 'full' }: PreviewImageContainerProps) => {
@@ -31,7 +31,10 @@ const PreviewImageContainer = ({ src, shape = 'full' }: PreviewImageContainerPro
       style={{ maxWidth: MAX_SCREEN_WIDTH }}
       className="fixed top-0 left-0 right-0 bottom-0 mx-auto bg-impo_Black backdrop-blur-sm z-[500]"
     >
-      <CrossIcon onClick={() => router.back()} className="absolute top-9 left-4 stroke-white cursor-pointer z-10" />
+      <CrossIcon
+        onClick={() => router.back()}
+        className="absolute top-9 left-4 w-10 h-auto fill-impo_White cursor-pointer z-10"
+      />
 
       <div className="relative w-full h-full flex justify-center">
         {shape === 'full' && <Image src={src} alt="" fill={true} className="object-contain" />}

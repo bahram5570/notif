@@ -13,7 +13,8 @@ import { AiMessagePropsType } from './type';
 const AiMessage = (props: AiMessagePropsType) => {
   const [isAnimating, setIsAnimating] = useState(false);
   const formattedLine = parseFormattedText(props.text);
-  const showSuggestedQuestion = sessionStorage.getItem(SHOW_SUGGESTED_QUESTION);
+  const showSuggestedQuestion =
+    typeof sessionStorage === 'undefined' ? null : sessionStorage.getItem(SHOW_SUGGESTED_QUESTION);
 
   const animationEndHandler = (v: boolean) => {
     setIsAnimating(v);

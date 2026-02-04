@@ -1,7 +1,7 @@
 import ActivationBackBtn from '@components/activation/ActivationBackBtn';
 import ActivationBtn from '@components/activation/ActivationBtn';
 import ActivationHeading from '@components/activation/ActivationHeading';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import { DatesContainerProps } from './types';
 

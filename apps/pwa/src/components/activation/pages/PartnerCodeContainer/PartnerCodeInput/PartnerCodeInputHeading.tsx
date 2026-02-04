@@ -1,12 +1,13 @@
 import { useEffect } from 'react';
 
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
+
 import ActivationBackBtn from '@components/activation/ActivationBackBtn';
 import ActivationHeading from '@components/activation/ActivationHeading';
 import {
   ACTIVATION_HEADING_ICON_ID,
   ACTIVATION_HEADING_SCRIPTS_ID,
 } from '@components/activation/ActivationHeading/constants';
-import CustomImage from '@components/ui/CustomImage';
 import { OrderOfQuestionScriptsTypes } from '@providers/__activation__/types';
 
 import { PartnerCodeInputHeadingProps } from './types';

@@ -1,7 +1,7 @@
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import WidgetCardContainer from '@components/Widgets/WidgetCardContainer';
-import CustomImage from '@components/ui/CustomImage';
 
 import { WidgetEmptyReportCardProps } from './types';
 

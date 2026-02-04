@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from 'react';
 
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { gregorianFarsiScriptDate, jalaaliScriptDate } from '@utils/dates';
 
 import MainPageLayout from '@components/MainPageLayout';
-import CustomImage from '@components/ui/CustomImage';
 import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
 import moment from 'moment-jalaali';

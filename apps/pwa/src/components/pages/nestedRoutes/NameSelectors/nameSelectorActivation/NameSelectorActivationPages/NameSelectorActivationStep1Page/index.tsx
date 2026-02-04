@@ -1,9 +1,8 @@
 'use client';
 
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import CustomImage from '@components/ui/CustomImage';
 
 import NameSelectorActivationMainModule from '../../NameSelectorActivationModules/NameSelectorActivationMainModule';
 import useNameSelectorActivationData from '../../__hooks__/useNameSelectorActivationData';

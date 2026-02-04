@@ -1,8 +1,8 @@
 import { segmentActionHandler } from '../../PregnancyCheckup/PregnancyCheckupContainer/utils';
 import ArrowIcon from '@assets/icons/calendarArrow.svg';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import CustomImage from '@components/ui/CustomImage';
 import useAnalytics from '@hooks/useAnalytics';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';

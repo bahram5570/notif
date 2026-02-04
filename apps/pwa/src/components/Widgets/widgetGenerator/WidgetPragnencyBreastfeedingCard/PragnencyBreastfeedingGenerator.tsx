@@ -1,8 +1,7 @@
 import EyeIcon from '@assets/icons/eye.svg';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
-
-import CustomImage from '@components/ui/CustomImage';
 
 import { PragnencyBreastfeedingGeneratorProps } from './types';
 

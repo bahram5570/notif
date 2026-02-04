@@ -3,7 +3,7 @@ import EditIcon from '@assets/icons/Pen 2.svg';
 import TrashIcon from '@assets/icons/trash.svg';
 
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.contants';
+import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 

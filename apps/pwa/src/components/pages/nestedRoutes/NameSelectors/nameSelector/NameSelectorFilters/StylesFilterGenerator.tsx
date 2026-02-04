@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import TickIcon from '@assets/icons/selectedTick.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useOverflowHandler from '@hooks/useOverflowHandler';
+import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 
 import { StylesFilterGeneratorProps } from './types';
 

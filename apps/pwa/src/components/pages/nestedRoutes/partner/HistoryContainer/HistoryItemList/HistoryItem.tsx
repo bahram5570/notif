@@ -1,7 +1,7 @@
 import CaretLeftIcon from '@assets/icons/CaretLeft.svg';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import CustomImage from '@components/ui/CustomImage';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import ProgressBar from '../../chatContainer/ProgressBar';
