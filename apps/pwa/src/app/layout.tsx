@@ -1,6 +1,6 @@
 import './globals.css';
 
-import AnalyticsProvider from '@providers/AnalyticsProvider';
+// import AnalyticsProvider from '@providers/AnalyticsProvider';
 import CultureProvider from '@providers/CultureProvider';
 import ErrorProvider from '@providers/ErrorProvider';
 import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
@@ -10,9 +10,8 @@ import ToastProvider from '@providers/ToastProvider';
 import WidgetActionsProvider from '@providers/WidgetActionsProvider';
 import { MAX_SCREEN_WIDTH, PORTAL_ID, PORTAL_SPLASH_ID } from '@repo/core/constants/app.contants';
 import { OperatingSystemProvider } from '@repo/core/providers/OperatingSystemProvider';
-import { PageNavigationLoadingProvider } from '@repo/core/providers/PageNavigationLoadingProvider';
+import { PageNavigationProvider } from '@repo/core/providers/PageNavigationProvider';
 import { ReactQueryProvider } from '@repo/core/providers/ReactQueryProvider';
-import { RouteSequenceProvider } from '@repo/core/providers/RouteSequenceProvider';
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 import Script from 'next/script';
@@ -81,31 +80,29 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         </Script>
 
         <main>
-          <AnalyticsProvider>
+          {/* <AnalyticsProvider> */}
             <OperatingSystemProvider>
               <CultureProvider>
                 <ReactQueryProvider>
                   <ErrorProvider>
                     <ToastProvider>
-                      <PageNavigationLoadingProvider>
-                        <RouteSequenceProvider>
-                          <WidgetActionsProvider>
-                            <ServiceWorkerProvider>
-                              <>{children}</>
-                              <ModalsQueryParamsProvider />
-                              <PreviewImageProvider />
-                              <div id={PORTAL_SPLASH_ID} />
-                              <div id={PORTAL_ID} />
-                            </ServiceWorkerProvider>
-                          </WidgetActionsProvider>
-                        </RouteSequenceProvider>
-                      </PageNavigationLoadingProvider>
+                      <PageNavigationProvider>
+                        <WidgetActionsProvider>
+                          <ServiceWorkerProvider>
+                            <>{children}</>
+                            <ModalsQueryParamsProvider />
+                            <PreviewImageProvider />
+                            <div id={PORTAL_SPLASH_ID} />
+                            <div id={PORTAL_ID} />
+                          </ServiceWorkerProvider>
+                        </WidgetActionsProvider>
+                      </PageNavigationProvider>
                     </ToastProvider>
                   </ErrorProvider>
                 </ReactQueryProvider>
               </CultureProvider>
             </OperatingSystemProvider>
-          </AnalyticsProvider>
+          {/* </AnalyticsProvider> */}
         </main>
       </body>
     </html>

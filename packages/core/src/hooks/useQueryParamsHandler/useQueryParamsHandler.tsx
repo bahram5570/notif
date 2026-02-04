@@ -5,7 +5,7 @@ import { GetQueryTypes, newQueryParamsHandlerTypes, removeQueryParamsHandlerType
 export const useQueryParamsHandler = () => {
   const router = useRouter();
   const pathname = usePathname() || '';
-  const searchParams = window === undefined ? undefined : useSearchParams();
+  const searchParams = typeof window === 'undefined' ? undefined : useSearchParams();
 
   const newQueryParamsHandler: newQueryParamsHandlerTypes = (q) => {
     const params = new URLSearchParams(searchParams?.toString());

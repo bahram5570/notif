@@ -1,26 +1,15 @@
-'use client';
+import { useEffect, useRef, useState } from 'react';
 
-import { createContext, useEffect, useRef, useState } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
 
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
+import { LoadingStatesTypes, PageNavigationHandlerTypes } from '../../types';
 
-import LoadingProgressBar from './LoadingProgressBar';
-import { LoadingStatesTypes, PageNavigationHandlerTypes, PageNavigationLoadingContextTypes } from './types';
-
-export const PageNavigationLoadingContext = createContext<PageNavigationLoadingContextTypes>({
-  pageNavigationLoading: false,
-  pageNavigationHandler: () => {},
-});
-
-export const PageNavigationLoadingProvider = ({ children }: { children: React.ReactNode }) => {
-  if (typeof window === 'undefined') {
-    return;
-  }
-
+const usePageNavigationLoading = () => {
   const router = useRouter();
   const path = usePathname() || '';
   const timer = useRef<NodeJS.Timeout>();
-  const searchParams = useSearchParams();
+  const { searchParams } = useQueryParamsHandler();
   const [progressBarLoading, setPogressBarLoading] = useState<LoadingStatesTypes>(false);
   const [pageNavigationLoading, setPageNavigationLoading] = useState<LoadingStatesTypes>(false);
 
@@ -76,19 +65,7 @@ export const PageNavigationLoadingProvider = ({ children }: { children: React.Re
     }
   };
 
-  const [isRendered, setIsRendered] = useState(false);
-  useEffect(() => setIsRendered(true), []);
-
-  if (!isRendered) {
-    return <></>;
-  }
-
-  return (
-    <PageNavigationLoadingContext.Provider value={{ pageNavigationHandler, pageNavigationLoading }}>
-      <>
-        {progressBarLoading && <LoadingProgressBar />}
-        {children}
-      </>
-    </PageNavigationLoadingContext.Provider>
-  );
+  return { pageNavigationLoading, pageNavigationHandler, progressBarLoading };
 };
+
+export default usePageNavigationLoading;

@@ -1,20 +1,11 @@
-'use client';
-
-import { createContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { usePathname, useRouter } from 'next/navigation';
 
-import { useQueryParamsHandler } from '../../hooks/useQueryParamsHandler';
-import {
-  RouteSequenceContextTypes,
-  RouteSequenceListTypes,
-  RouteSequenceProviderProps,
-  SequenceHandlerTypes,
-} from './types';
+import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
+import { RouteSequenceListTypes, SequenceHandlerTypes } from '../../types';
 
-export const RouteSequenceContext = createContext<RouteSequenceContextTypes>({ sequenceHandler: () => {} });
-
-export const RouteSequenceProvider = ({ children }: RouteSequenceProviderProps) => {
+const usePageNavigationRouteSequence = () => {
   const router = useRouter();
   const pathname = usePathname() || '';
   const { searchParams } = useQueryParamsHandler();
@@ -71,9 +62,7 @@ export const RouteSequenceProvider = ({ children }: RouteSequenceProviderProps) 
     router.push(updatedList[0]);
   };
 
-  return (
-    <RouteSequenceContext.Provider value={{ sequenceHandler }}>
-      <>{children}</>
-    </RouteSequenceContext.Provider>
-  );
+  return { sequenceHandler };
 };
+
+export default usePageNavigationRouteSequence;

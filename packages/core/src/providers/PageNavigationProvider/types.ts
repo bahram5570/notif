@@ -1,3 +1,7 @@
+export type RouteSequenceListTypes = string[] | null;
+
+export type SequenceHandlerTypes = (v: string[]) => void;
+
 export type PageNavigationHandlerTypes = (v: {
   showProgressBar: boolean;
   linkTo?: string | -1;
@@ -6,7 +10,8 @@ export type PageNavigationHandlerTypes = (v: {
 
 export type LoadingStatesTypes = false | string | number;
 
-export type PageNavigationLoadingContextTypes = {
+export type PageNavigationContextTypes = {
+  sequenceHandler: SequenceHandlerTypes;
   pageNavigationHandler: PageNavigationHandlerTypes;
   pageNavigationLoading: LoadingStatesTypes;
 };

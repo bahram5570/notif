@@ -1,7 +1,8 @@
 import { useContext } from 'react';
 
-import { RouteSequenceContext } from '../../providers/RouteSequenceProvider';
+import { PageNavigationContext } from '../../providers/PageNavigationProvider';
 
 export const useRouteSequence = () => {
-  return useContext(RouteSequenceContext);
+  const { sequenceHandler } = useContext(PageNavigationContext);
+  return { sequenceHandler };
 };
