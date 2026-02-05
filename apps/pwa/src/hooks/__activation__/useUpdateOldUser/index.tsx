@@ -2,7 +2,8 @@ import { useState } from 'react';
 
 import { registerPayloadUpdater } from '@utils/register';
 
-import { UserCookieTypes, getUserCookie } from '@actions/cookie.actions';
+import { getUserCookie, getUserInfoCookie } from '@actions/userCookies.actions';
+import { FetchedUserTypes } from '@components/activation/CompleteRegisterContainer/types';
 import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
 import { ActivationPayloadTypes } from '@providers/__activation__/types';
@@ -14,13 +15,14 @@ const useUpdateOldUser = (payload: ActivationPayloadTypes) => {
   const { updatedPayload } = registerPayloadUpdater(payload, culture.calendarType);
 
   const [pair, setPair] = useState(false);
-  const [fetchedUser, setFetchedUser] = useState<UserCookieTypes | null>(null);
+  const [fetchedUser, setFetchedUser] = useState<FetchedUserTypes | null>(null);
 
   const updateOldUserSuccessHandler: UpdateOldUserSuccessHandlerTypes = async (v) => {
     const user = await getUserCookie();
+    const userInfo = await getUserInfoCookie();
 
-    if (user) {
-      setFetchedUser(user);
+    if (user && userInfo) {
+      setFetchedUser({ userCookie: user, userInfoCookie: userInfo });
       setPair(v.pair);
     }
   };

@@ -1,13 +1,15 @@
 import { ActivationDataTypes } from '@services/activationServices/types';
 
-import { UserCookieTypes } from '@actions/cookie.actions';
+import { UserCookieTypes, UserInfoCookieTypes } from '@actions/userCookies.actions';
 import { ActivationPayloadTypes } from '@providers/__activation__/types';
+
+export type FetchedUserTypes = { userCookie: UserCookieTypes; userInfoCookie: UserInfoCookieTypes };
 
 type PageTypes = Pick<ActivationDataTypes, 'reward'>['reward'][0]['page'];
 export interface CompleteRegisterContainerProps {
-  payload: ActivationPayloadTypes;
   clearStorage?: boolean;
-  fetchedUser: UserCookieTypes;
+  fetchedUser: FetchedUserTypes;
+  payload: ActivationPayloadTypes;
   accessNotificationData?: PageTypes;
   partnerData?: { reward?: PageTypes; question?: PageTypes };
 }

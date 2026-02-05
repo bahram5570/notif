@@ -1,4 +1,5 @@
-import { UserCookieTypes } from '@actions/cookie.actions';
+import { UserCookieTypes, UserInfoCookieTypes } from '@actions/userCookies.actions';
+import { FetchedUserTypes } from '@components/activation/CompleteRegisterContainer/types';
 
 import { OtpStatusTypes } from './__hooks__/useOtpStatus/types';
 
@@ -7,5 +8,5 @@ export interface Otp2ContainerProps {
   isRegisterSuccess?: boolean;
   onSubmitRegister: () => void;
   applyOtpStatus?: OtpStatusTypes;
-  onSubmitLogin: (v: UserCookieTypes) => void;
+  onSubmitLogin: (v: FetchedUserTypes) => void;
 }

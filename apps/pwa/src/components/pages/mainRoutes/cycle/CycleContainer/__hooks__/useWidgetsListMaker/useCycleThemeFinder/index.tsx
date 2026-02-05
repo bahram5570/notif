@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { CycleThemeEnum } from '@services/loginServices/enum';
 
-import { getUserCookie } from '@actions/cookie.actions';
+import { getUserInfoCookie } from '@actions/userCookies.actions';
 import { WidgetsEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
 import { CurrentCycleTypes } from './types';
@@ -13,7 +13,7 @@ const useCycleThemeFinder = () => {
 
   useEffect(() => {
     const handleCycleTheme = async () => {
-      const user = await getUserCookie();
+      const user = await getUserInfoCookie();
       const cycleTheme = (user?.cycleTheme || CycleThemeEnum.Flat) as CycleThemeEnum;
 
       switch (cycleTheme) {

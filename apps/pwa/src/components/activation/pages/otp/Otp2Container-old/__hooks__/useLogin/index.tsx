@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { toEnglishNumbers } from '@repo/core/utils/numbers';
 import { getFirebaseCookieToken } from '@utils/cookies';
 
-import { UserCookieTypes } from '@actions/cookie.actions';
+import { UserCookieTypes, UserInfoCookieTypes } from '@actions/userCookies.actions';
 import { APP_VERSION } from '@constants/app.constants';
 import useApi from '@hooks/useApi';
 import useCountDown from '@hooks/useCountDown';
@@ -13,6 +13,7 @@ import { OTP_COUNT_DOWN_TIME } from '../../constants';
 import { ForgotSuccessHandlerTypes, LoginSuccessHandlerTypes, UseLoginPros } from './types';
 
 let userCookieValue: UserCookieTypes;
+let userInfoCookieValue: UserInfoCookieTypes;
 
 const useLogin = ({ identity, password, otpStatusHandler, onSubmitLogin }: UseLoginPros) => {
   const { cultureHandler } = useCulture();
@@ -25,12 +26,15 @@ const useLogin = ({ identity, password, otpStatusHandler, onSubmitLogin }: UseLo
 
   const loginSuccessHandler: LoginSuccessHandlerTypes = (v) => {
     userCookieValue = {
-      installationPurpose: { periodStatus: v.periodStatus, status: v.status },
       identity: identity || '',
       password: password || '',
-      cycleTheme: v.cycleTheme,
       loginId: v.loginId,
       token: v.token,
+    };
+
+    userInfoCookieValue = {
+      cycleTheme: v.cycleTheme,
+      installationPurpose: { periodStatus: v.periodStatus, status: v.status },
     };
 
     cultureHandler('calendarType', v.calendarType);

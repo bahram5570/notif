@@ -1,4 +1,4 @@
-import { deleteUserCookie, getUserCookie, setCultureCookie } from '@actions/cookie.actions';
+import { deleteUserCookie, deleteUserInfoCookie, getUserCookie, setCultureCookie } from '@actions/userCookies.actions';
 import { CULTURE_INITIAL_VALUES } from '@providers/CultureProvider/constants';
 
 import { HttpTypes, OptionsTypes } from './types';
@@ -38,6 +38,7 @@ export const applyOptions = async (props: HttpTypes) => {
 
 export const clearCacheHandler = async () => {
   await deleteUserCookie();
+  await deleteUserInfoCookie();
   await setCultureCookie(CULTURE_INITIAL_VALUES);
 
   window.location.href = '/';

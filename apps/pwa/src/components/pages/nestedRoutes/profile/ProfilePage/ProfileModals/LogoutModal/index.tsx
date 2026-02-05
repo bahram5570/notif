@@ -2,7 +2,7 @@ import LogoutIcon from '@assets/icons/profile/logout.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { deleteUserCookie, setCultureCookie } from '@actions/cookie.actions';
+import { deleteUserCookie, deleteUserInfoCookie, setCultureCookie } from '@actions/userCookies.actions';
 import { CULTURE_INITIAL_VALUES } from '@providers/CultureProvider/constants';
 import { STORED_NOTIFICATIONS_CACHE_NAME } from '@providers/ServiceWorkerProvider/constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
@@ -19,6 +19,7 @@ const LogoutModal = () => {
     localStorage.clear();
     sessionStorage.clear();
     await deleteUserCookie();
+    await deleteUserInfoCookie();
     await setCultureCookie(CULTURE_INITIAL_VALUES);
     await caches.delete(STORED_NOTIFICATIONS_CACHE_NAME);
 

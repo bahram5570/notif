@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { getUserCookie } from '@actions/cookie.actions';
+import { getUserInfoCookie } from '@actions/userCookies.actions';
 import { LoadingStatusEnum } from '@components/pages/mainRoutes/cycle/CycleContainer/__hooks__/useCycleLoadingStatus/loadingStatus.enum';
 import { InstallationPurposeEnum } from '@constants/activation.constants';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
@@ -20,12 +20,12 @@ const CircleContainer = ({ data, loadingStatus }: CircleContainerProps) => {
 
   useEffect(() => {
     const handleResult = async () => {
-      const user = await getUserCookie();
+      const userInfo = await getUserInfoCookie();
 
       const result =
-        user !== null &&
-        user.installationPurpose.status !== InstallationPurposeEnum.pregnancy.status &&
-        user.installationPurpose.status !== InstallationPurposeEnum.breastfeeding.status;
+        userInfo !== null &&
+        userInfo.installationPurpose.status !== InstallationPurposeEnum.pregnancy.status &&
+        userInfo.installationPurpose.status !== InstallationPurposeEnum.breastfeeding.status;
 
       setShowNumbers(result);
     };

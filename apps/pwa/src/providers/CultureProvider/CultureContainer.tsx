@@ -2,7 +2,7 @@
 
 import { createContext, useEffect, useState } from 'react';
 
-import { setCultureCookie } from '@app/actions/cookie.actions';
+import { setCultureCookie } from '@actions/userCookies.actions';
 
 import { CULTURE_INITIAL_VALUES } from './constants';
 import { CultureConextTypes, CultureContainerTypes, CultureHandlerTypes, CultureTypes } from './types';

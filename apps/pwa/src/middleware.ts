@@ -2,7 +2,7 @@ import { handleActivationCrLoggin } from '@services/loginServices';
 import { paymentStatusService } from '@services/paymentServices';
 import { handleReferralLinksService } from '@services/referralLinksServices';
 
-import { UserCookieTypes } from '@actions/cookie.actions';
+import { UserCookieTypes } from '@actions/userCookies.actions';
 import { PARTNER_CODE_SHOW_INPUT_QUERY_NAME } from '@components/activation/pages/PartnerCodeContainer/constants';
 import { USER_COOKIE_NAME } from '@constants/cookie.constants';
 import { ACTIVATION_CR_REGISTER_QUERY_NAME } from '@constants/routes.constants';

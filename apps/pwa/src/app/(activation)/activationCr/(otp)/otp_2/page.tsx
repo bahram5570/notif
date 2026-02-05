@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
-import { UserCookieTypes } from '@actions/cookie.actions';
+import { UserCookieTypes } from '@actions/userCookies.actions';
+import { FetchedUserTypes } from '@components/activation/CompleteRegisterContainer/types';
 import Otp2Container from '@components/activation/pages/otp/Otp2Container';
 import { OtpStatusTypes } from '@components/activation/pages/otp/Otp2Container/__hooks__/useOtpStatus/types';
 import { OTP_COUNT_DOWN_TIME } from '@components/activation/pages/otp/Otp2Container/constants';
@@ -54,7 +55,7 @@ const Otp2 = () => {
     }
   }, [fetchedUser]);
 
-  const loginHandler = (v: UserCookieTypes) => {
+  const loginHandler = (v: FetchedUserTypes) => {
     sessionStorage.clear();
     completeRegisterHandler(v);
     callEventActivation('LOGIN');

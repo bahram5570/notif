@@ -1,7 +1,7 @@
 import { setPaymentCookie } from '@utils/cookies';
 import { externalLink } from '@utils/navigation';
 
-import { getUserCookie } from '@actions/cookie.actions';
+import { getUserCookie } from '@actions/userCookies.actions';
 import useApi from '@hooks/useApi';
 import useCustomToast from '@hooks/useCustomToast';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';

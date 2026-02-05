@@ -1,6 +1,6 @@
 'use server';
 
-import { getCultureCookie } from '@app/actions/cookie.actions';
+import { getCultureCookie } from '@actions/userCookies.actions';
 
 import CultureContainer from './CultureContainer';
 

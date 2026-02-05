@@ -4,7 +4,7 @@ import { toEnglishNumbers } from '@repo/core/utils/numbers';
 import { CycleThemeEnum } from '@services/loginServices/enum';
 import { getUserExpiresDate } from '@utils/cookies';
 
-import { CULTURE_COOKIE_NAME, USER_COOKIE_NAME } from '@constants/cookie.constants';
+import { CULTURE_COOKIE_NAME, USER_COOKIE_NAME, USER_INFO_COOKIE_NAME } from '@constants/cookie.constants';
 import { CultureTypes } from '@providers/CultureProvider/types';
 import { cookies } from 'next/headers';
 
@@ -32,8 +32,6 @@ export const deleteCultureCookie = async () => {
 // # User
 
 export type UserCookieTypes = {
-  installationPurpose: { status: number; periodStatus: number };
-  cycleTheme: CycleThemeEnum;
   password: string;
   identity: string;
   loginId: string;
@@ -45,8 +43,6 @@ export const setUserCookie = async (props: UserCookieTypes) => {
   const expires = getUserExpiresDate(30);
 
   const value = JSON.stringify({
-    installationPurpose: props.installationPurpose,
-    cycleTheme: props.cycleTheme,
     password: props.password,
     loginId: props.loginId,
     token: props.token,
@@ -64,4 +60,30 @@ export const getUserCookie = async () => {
 
 export const deleteUserCookie = async () => {
   cookies().delete(USER_COOKIE_NAME);
+};
+
+// # User info
+
+export type UserInfoCookieTypes = {
+  installationPurpose: { status: number; periodStatus: number };
+  cycleTheme: CycleThemeEnum;
+};
+
+export const setUserInfoCookie = async (props: UserInfoCookieTypes) => {
+  const value = JSON.stringify({
+    installationPurpose: props.installationPurpose,
+    cycleTheme: props.cycleTheme,
+  });
+
+  cookies().set({ name: USER_INFO_COOKIE_NAME, value, httpOnly: false, path: '/', secure: false });
+};
+
+export const getUserInfoCookie = async () => {
+  const cookie = cookies().get(USER_INFO_COOKIE_NAME);
+  const result: UserInfoCookieTypes | null = cookie ? JSON.parse(cookie.value) : null;
+  return result;
+};
+
+export const deleteUserInfoCookie = async () => {
+  cookies().delete(USER_INFO_COOKIE_NAME);
 };

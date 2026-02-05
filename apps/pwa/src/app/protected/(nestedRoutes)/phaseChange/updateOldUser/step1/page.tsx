@@ -4,7 +4,7 @@ import ImpoIcon from '@assets/images/questionsImpo.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { getUserCookie } from '@actions/cookie.actions';
+import { getUserInfoCookie } from '@actions/userCookies.actions';
 import { InstallationPurposeEnum } from '@constants/activation.constants';
 import usePhaseChangePayload from '@providers/PhaseChangeProvider/__hooks__/usePhaseChangePayload';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
@@ -16,7 +16,7 @@ const Step1 = () => {
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
   const selectHandler = async () => {
-    const user = await getUserCookie();
+    const user = await getUserInfoCookie();
 
     if (user) {
       const installationPurpose = user.installationPurpose;

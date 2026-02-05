@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
-import { UserCookieTypes, setUserCookie } from '@actions/cookie.actions';
+import { setUserCookie, setUserInfoCookie } from '@actions/userCookies.actions';
+import { FetchedUserTypes } from '@components/activation/CompleteRegisterContainer/types';
 import Otp2Container from '@components/activation/pages/otp/Otp2Container';
 import { OtpStatusTypes } from '@components/activation/pages/otp/Otp2Container/__hooks__/useOtpStatus/types';
 import { OTP_COUNT_DOWN_TIME } from '@components/activation/pages/otp/Otp2Container/constants';
@@ -39,8 +40,12 @@ const Otp2 = () => {
     setApplyOtpStatus('correct');
   };
 
-  const loginHandler = async (v: UserCookieTypes) => {
-    await setUserCookie(v);
+  const loginHandler = async (v: FetchedUserTypes) => {
+    console.log(v);
+
+    await setUserCookie(v.userCookie);
+    await setUserInfoCookie(v.userInfoCookie);
+
     sessionStorage.clear();
     callEventActivation('LOGIN');
     router.replace('/protected/cycle');

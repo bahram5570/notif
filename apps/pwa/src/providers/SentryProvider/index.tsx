@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 
-import { getUserCookie } from '@actions/cookie.actions';
+import { getUserCookie } from '@actions/userCookies.actions';
 import * as Sentry from '@sentry/nextjs';
 
 const SentryProvider = () => {

@@ -1,12 +1,12 @@
-import { getUserCookie } from '@actions/cookie.actions';
+import { getUserInfoCookie } from '@actions/userCookies.actions';
 import { CyclePhaseEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
 import { currentPhaseFinder } from './currentPhaseFinder';
 
 export const enterphaseHandler = async (queries: string) => {
   let result = '';
-  const user = await getUserCookie();
-  const storedInstallationPurpose = user?.installationPurpose || null;
+  const userInfo = await getUserInfoCookie();
+  const storedInstallationPurpose = userInfo?.installationPurpose || null;
 
   const queryPhase = new URLSearchParams(queries || '')?.get('phase');
   const phase = queryPhase === null ? null : (Number(queryPhase) as CyclePhaseEnum);

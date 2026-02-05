@@ -1,6 +1,6 @@
 import { getFirebaseCookieToken, getUserExpiresDate } from '@utils/cookies';
 
-import { getUserCookie } from '@actions/cookie.actions';
+import { getUserCookie } from '@actions/userCookies.actions';
 import { FIREBASE_COOKIE_NAME } from '@constants/cookie.constants';
 import { initializeApp } from 'firebase/app';
 import { Messaging, getMessaging, getToken, isSupported } from 'firebase/messaging';

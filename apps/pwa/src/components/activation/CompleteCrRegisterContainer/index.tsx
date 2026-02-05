@@ -24,7 +24,7 @@ const CompleteCrRegisterContainer = ({ partnerData, fetchedUser, payload }: Comp
   };
 
   const { callApi, isLoading } = useCrRegisterPartnerCode({
-    token: fetchedUser.token,
+    token: fetchedUser.userCookie.token,
     onComplete: partnerCodeCompleteHandler,
   });
 

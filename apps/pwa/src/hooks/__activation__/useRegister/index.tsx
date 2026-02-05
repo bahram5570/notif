@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { LoginResponseTypes } from '@services/loginServices/types';
 import { registerPayloadUpdater } from '@utils/register';
 
-import { UserCookieTypes } from '@actions/cookie.actions';
+import { FetchedUserTypes } from '@components/activation/CompleteRegisterContainer/types';
 import { OtpStatusTypes } from '@components/activation/pages/otp/Otp2Container/__hooks__/useOtpStatus/types';
 import { APP_VERSION } from '@constants/app.constants';
 import useApi from '@hooks/useApi';
@@ -19,7 +19,7 @@ const useRegister = (payload: ActivationPayloadTypes, onCallBack?: (v: OtpStatus
 
   const [pair, setPair] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [fetchedUser, setFetchedUser] = useState<UserCookieTypes | null>(null);
+  const [fetchedUser, setFetchedUser] = useState<FetchedUserTypes | null>(null);
   const [registerData, setRegisterData] = useState<RegisterResponseTypes | null>(null);
   const [notificationReward, setNotificationReward] = useState<NotificationRewardTypes | undefined>(undefined);
 
@@ -36,12 +36,16 @@ const useRegister = (payload: ActivationPayloadTypes, onCallBack?: (v: OtpStatus
       setPair(registerData.pair);
       setNotificationReward(registerData.reward.page);
       setFetchedUser({
-        installationPurpose: { periodStatus: updatedPayload.periodStatus, status: updatedPayload.status },
-        identity: updatedPayload.identity || '',
-        password: updatedPayload.password || '',
-        cycleTheme: v.cycleTheme,
-        loginId: v.loginId,
-        token: v.token,
+        userCookie: {
+          identity: updatedPayload.identity || '',
+          password: updatedPayload.password || '',
+          loginId: v.loginId,
+          token: v.token,
+        },
+        userInfoCookie: {
+          installationPurpose: { periodStatus: updatedPayload.periodStatus, status: updatedPayload.status },
+          cycleTheme: v.cycleTheme,
+        },
       });
 
       setIsLoading(false);

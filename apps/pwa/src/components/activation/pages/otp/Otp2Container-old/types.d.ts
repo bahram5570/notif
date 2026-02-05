@@ -1,4 +1,4 @@
-import { UserCookieTypes } from '@actions/cookie.actions';
+import { UserCookieTypes } from '@actions/userCookies.actions';
 
 import { OtpStatusTypes } from './__hooks__/useOtpStatus/types';
 

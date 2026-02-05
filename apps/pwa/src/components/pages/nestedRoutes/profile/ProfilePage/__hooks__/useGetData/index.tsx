@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { LoginResponseTypes } from '@services/loginServices/types';
 import { getFirebaseCookieToken } from '@utils/cookies';
 
-import { getUserCookie } from '@actions/cookie.actions';
+import { getUserCookie } from '@actions/userCookies.actions';
 import { APP_VERSION } from '@constants/app.constants';
 import useApi from '@hooks/useApi';
 

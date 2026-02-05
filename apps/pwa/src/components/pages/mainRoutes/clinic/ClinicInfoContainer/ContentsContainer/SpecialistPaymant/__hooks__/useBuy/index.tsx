@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { setPaymentCookie } from '@utils/cookies';
 import { externalLink } from '@utils/navigation';
 
-import { getUserCookie } from '@actions/cookie.actions';
+import { getUserCookie } from '@actions/userCookies.actions';
 import useAnalytics from '@hooks/useAnalytics';
 import useApi from '@hooks/useApi';
 import useCustomToast from '@hooks/useCustomToast';

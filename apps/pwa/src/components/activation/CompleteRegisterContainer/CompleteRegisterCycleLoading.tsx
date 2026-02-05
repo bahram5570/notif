@@ -1,6 +1,6 @@
 import { storeSplashHandler } from '@providers/SplashProvider/utils';
 
-import { setUserCookie } from '@actions/cookie.actions';
+import { setUserCookie, setUserInfoCookie } from '@actions/userCookies.actions';
 import ProgressCycleLoading from '@components/ProgressCycleLoading';
 import { useRouteSequence } from '@repo/core/hooks/useRouteSequence';
 
@@ -15,7 +15,8 @@ const CompleteRegisterCycleLoading = ({
 
   const completeHandler = async () => {
     // # Don't change the order
-    await setUserCookie(fetchedUser);
+    await setUserCookie(fetchedUser.userCookie);
+    await setUserInfoCookie(fetchedUser.userInfoCookie);
 
     if (clearStorage) {
       sessionStorage.clear();
