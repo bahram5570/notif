@@ -1,4 +1,4 @@
-import { currentDate } from '@utils/dates';
+import { currentDate } from '@repo/core/utils/dates';
 
 import WidgetCardContainer from '@components/Widgets/WidgetCardContainer';
 import moment from 'moment-jalaali';

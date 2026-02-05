@@ -1,4 +1,4 @@
-import { CalendarTypeEnum } from '@constants/date.constants';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 
 import { SingleDateTypes } from '../__hooks__/useActivationCalendarData/types';
 import { CurrentSlideHandlerTypes } from '../__hooks__/useActivationCalendarSlide/types';

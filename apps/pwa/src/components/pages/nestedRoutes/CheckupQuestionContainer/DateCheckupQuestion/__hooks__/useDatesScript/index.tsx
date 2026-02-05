@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
-import { toJalaliData } from '@utils/dates';
+import { toJalaliData } from '@repo/core/utils/dates';
 
-import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 
 import { UseDatesScriptType } from './types';
 

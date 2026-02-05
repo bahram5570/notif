@@ -1,4 +1,4 @@
-import { currentDate } from '@utils/dates';
+import { currentDate } from '../utils/dates';
 
 const { gYear, jYear } = currentDate();
 

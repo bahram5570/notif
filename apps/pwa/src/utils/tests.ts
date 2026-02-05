@@ -3,7 +3,7 @@ import {
   DATE_SEPERATOR_REGEX,
   GREGORIAN_START_DATE,
   JALALI_START_DATE,
-} from '@constants/date.constants';
+} from '@repo/core/constants/date.constants';
 
 export const applyDelay = async () => {
   return await new Promise((resolve) => setTimeout(resolve, 1000));

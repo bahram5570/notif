@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { currentDate } from '@utils/dates';
+import { currentDate } from '@repo/core/utils/dates';
 
 import { SelectedDateHandlerTypes } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendar/types';
 import useCalendarGetData from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData';

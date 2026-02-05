@@ -4,13 +4,13 @@ import {
   gregorianFarsiWeekNames,
   jalaaliScriptDate,
   jalaaliWeekNames,
-} from '@utils/dates';
+} from '@repo/core/utils/dates';
 
 import {
   CalendarWidgetEnums,
   DayTypeEnums,
 } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/CalendarEnums';
-import { CalendarTypeEnum } from '@constants/date.constants';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 import moment from 'moment-jalaali';
 
 import {

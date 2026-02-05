@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { addZero } from '@repo/core/utils/numbers';
 
-import { CalendarTypeEnum, DATE_SEPERATOR_REGEX } from '@constants/date.constants';
+import { CalendarTypeEnum, DATE_SEPERATOR_REGEX } from '@repo/core/constants/date.constants';
 
 import { ListTypes } from '../useListsMaker/types';
 import { DATE_MODULE_GREGORIAN_MONTH_LIST, DATE_MODULE_JALALI_MONTH_LIST } from './constants';

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { currentDate } from '@utils/dates';
+import { currentDate } from '@repo/core/utils/dates';
 
 import { KitTestModuleTypeEnums } from '@components/KitTests/enum';
 import useApi from '@hooks/useApi';

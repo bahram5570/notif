@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 
 const useCalendarTypeSelect = () => {
   const { culture } = useCulture();

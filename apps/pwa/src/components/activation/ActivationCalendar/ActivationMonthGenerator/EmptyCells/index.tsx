@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
-import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 import moment from 'moment-jalaali';
 
 import { EmptyCellsProps } from './types';

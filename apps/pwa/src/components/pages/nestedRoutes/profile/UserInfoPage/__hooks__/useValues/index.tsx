@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { CalendarTypeEnum } from '@constants/date.constants';
 import useProfileData from '@hooks/__profile__/useProfileData';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 
 import { UserInfoValuesTypes, ValuesHandlerTypes } from './types';
 

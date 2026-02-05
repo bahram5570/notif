@@ -1,4 +1,4 @@
-import { currentDate } from '@utils/dates';
+import { currentDate } from '@repo/core/utils/dates';
 
 import { multipleStepRoutes } from '@components/pages/nestedRoutes/bmi/multipleStepRoutes';
 import useApi from '@hooks/useApi';

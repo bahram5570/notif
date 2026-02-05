@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
-import { gregorianFarsiMonthNames, jalaaliMonthNames } from '@utils/dates';
+import { gregorianFarsiMonthNames, jalaaliMonthNames } from '@repo/core/utils/dates';
 
-import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 
 import { CalendarDataTypes, SingleDateTypes } from '../../../__hooks__/useCalendarGetData/types';
 

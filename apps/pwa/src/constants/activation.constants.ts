@@ -1,8 +1,8 @@
 import { ActivationTabsListTypes } from '@components/activation/ActivationTabs/types';
 import { CULTURE_INITIAL_VALUES } from '@providers/CultureProvider/constants';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 
 import { APP_VERSION } from './app.constants';
-import { CalendarTypeEnum } from './date.constants';
 
 export const ACTIVATION_PAYLOAD_VALUES = {
   height: -1,

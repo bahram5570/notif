@@ -1,9 +1,9 @@
-import { toGregorianData } from '@utils/dates';
+import { toGregorianData } from '@repo/core/utils/dates';
 
-import { CalendarTypeEnum } from '@constants/date.constants';
 import useUpdateCycleCard from '@hooks/__cycle__/useUpdateCycleCard';
 import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 
 import { UseSubmitLastPeriodTypes } from './types';
 

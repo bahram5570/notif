@@ -1,4 +1,4 @@
-import { currentDate } from '@utils/dates';
+import { currentDate } from '@repo/core/utils/dates';
 
 import KitTestsContainer from '@components/KitTests/KitTestsContainer';
 import { KitTestModuleTypeEnums } from '@components/KitTests/enum';

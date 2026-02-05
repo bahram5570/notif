@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { gregorianFarsiWeekNames, jalaaliWeekNames } from '@utils/dates';
+import { gregorianFarsiWeekNames, jalaaliWeekNames } from '@repo/core/utils/dates';
 
-import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 import moment from 'moment-jalaali';
 
 import { WeekNamesListProps } from './types';

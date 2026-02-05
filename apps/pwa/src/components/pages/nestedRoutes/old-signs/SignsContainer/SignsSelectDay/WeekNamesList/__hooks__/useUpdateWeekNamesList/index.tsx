@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import { gregorianFarsiWeekNames, jalaaliWeekNames } from '@utils/dates';
+import { gregorianFarsiWeekNames, jalaaliWeekNames } from '@repo/core/utils/dates';
 
-import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 import moment from 'moment-jalaali';
 
 import { UpdatedListTypes, UseUpdateWeekNamesListProps } from './types';

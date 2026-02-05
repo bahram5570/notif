@@ -1,7 +1,7 @@
-import { currentDate } from '@utils/dates';
+import { currentDate } from '@repo/core/utils/dates';
 
-import { CalendarTypeEnum } from '@constants/date.constants';
 import { CultureTypes } from '@providers/CultureProvider/types';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 
 export const dateModuleTodaySelector = (calendarType: Pick<CultureTypes, 'calendarType'>['calendarType']) => {
   const { gDate, jDate } = currentDate();

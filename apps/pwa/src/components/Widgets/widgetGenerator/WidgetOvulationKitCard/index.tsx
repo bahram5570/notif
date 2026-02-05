@@ -1,5 +1,5 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { currentDate } from '@utils/dates';
+import { currentDate } from '@repo/core/utils/dates';
 
 import KitTestOvulation from '@components/KitTests/KitTestsContainer/KitTestOvulation';
 import KitTestsList from '@components/KitTests/KitTestsContainer/KitTestsList';

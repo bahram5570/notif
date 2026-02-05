@@ -9,7 +9,7 @@ import {
   DATE_SEPERATOR_REGEX,
   GREGORIAN_FARSI_MONTH_LIST,
   JALALI_MONTH_LIST,
-} from '@constants/date.constants';
+} from '@repo/core/constants/date.constants';
 import moment from 'moment-jalaali';
 
 import { ActivationCalendarHeadingProps } from './types';

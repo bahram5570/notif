@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { addZero } from '@repo/core/utils/numbers';
 
-import { DATE_SEPERATOR_REGEX } from '@constants/date.constants';
+import { DATE_SEPERATOR_REGEX } from '@repo/core/constants/date.constants';
 
 import useStartEndDate from '../useStartEndDate';
 import { UseDefaultDatePros } from './types';

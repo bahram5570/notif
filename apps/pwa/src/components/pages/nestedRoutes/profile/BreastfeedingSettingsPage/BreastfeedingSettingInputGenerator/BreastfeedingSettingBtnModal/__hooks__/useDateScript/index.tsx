@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
-import { gregorianFarsiScriptDate, jalaaliScriptDate } from '@utils/dates';
+import { gregorianFarsiScriptDate, jalaaliScriptDate } from '@repo/core/utils/dates';
 
-import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 import moment from 'moment-jalaali';
 
 const useDateScript = (date: string) => {

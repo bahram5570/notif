@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
-import { gregorianFarsiPassedTime, jalaaliPassedTime } from '@utils/dates';
+import { gregorianFarsiPassedTime, jalaaliPassedTime } from '@repo/core/utils/dates';
 
-import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 
 const useShareExperiencePassedTime = (createTime: string) => {
   const { culture } = useCulture();

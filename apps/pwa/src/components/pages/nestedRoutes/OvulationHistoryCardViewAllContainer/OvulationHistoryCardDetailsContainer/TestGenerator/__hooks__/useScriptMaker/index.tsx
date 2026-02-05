@@ -1,10 +1,10 @@
 import { useMemo } from 'react';
 
-import { gregorianFarsiScriptDate, jalaaliScriptDate, toJalaliData } from '@utils/dates';
+import { gregorianFarsiScriptDate, jalaaliScriptDate, toJalaliData } from '@repo/core/utils/dates';
 
 import { kitTestScripts } from '@components/KitTests/KitTestRange/constants';
-import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 import moment from 'moment-jalaali';
 
 import { TestGeneratorProps } from '../../types';

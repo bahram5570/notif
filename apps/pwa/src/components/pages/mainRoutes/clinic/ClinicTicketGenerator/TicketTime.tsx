@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
 
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { toJalaliData } from '@repo/core/utils/dates';
 import { addZero } from '@repo/core/utils/numbers';
-import { toJalaliData } from '@utils/dates';
 
-import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 
 import { TicketTimeProps } from './types';
 

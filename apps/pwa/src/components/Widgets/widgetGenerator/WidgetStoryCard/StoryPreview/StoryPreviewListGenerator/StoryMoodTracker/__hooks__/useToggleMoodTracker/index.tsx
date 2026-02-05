@@ -1,4 +1,4 @@
-import { currentDate } from '@utils/dates';
+import { currentDate } from '@repo/core/utils/dates';
 
 import { OriginalStoryDataTypes } from '@components/Widgets/widgetGenerator/WidgetStoryCard/__hooks__/useStoryCardData/types';
 import {

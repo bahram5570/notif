@@ -1,7 +1,7 @@
-import { addZero } from '@repo/core/utils/numbers';
-
-import { GREGORIAN_FARSI_MONTH_LIST, JALALI_MONTH_LIST, WEEK_LIST } from '@constants/date.constants';
 import m from 'moment-jalaali';
+
+import { GREGORIAN_FARSI_MONTH_LIST, JALALI_MONTH_LIST, WEEK_LIST } from '../../constants/date.constants';
+import { addZero } from '../numbers';
 
 export const currentDate = () => {
   const moment = m();

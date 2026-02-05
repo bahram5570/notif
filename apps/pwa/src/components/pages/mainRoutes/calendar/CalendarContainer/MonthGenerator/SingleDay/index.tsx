@@ -4,7 +4,7 @@ import GiveBirthIcon from '@assets/icons/calendarGiveBirth.svg';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { CALENDAR_CELL_SIZE, DATE_SEPERATOR_REGEX } from '@constants/date.constants';
+import { CALENDAR_CELL_SIZE, DATE_SEPERATOR_REGEX } from '@repo/core/constants/date.constants';
 
 import useCalendarDayInfo from '../../__hooks__/useCalendarDayInfo';
 import HasSignDot from './HasSignDot';

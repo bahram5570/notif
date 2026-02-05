@@ -1,8 +1,8 @@
+import { toGregorianData } from '@repo/core/utils/dates';
 import { toEnglishNumbers } from '@repo/core/utils/numbers';
-import { toGregorianData } from '@utils/dates';
 
-import { CalendarTypeEnum } from '@constants/date.constants';
 import { ActivationPayloadKeysTypes, ActivationPayloadTypes } from '@providers/__activation__/types';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 
 export const registerPayloadUpdater = (payload: ActivationPayloadTypes, calendarType: CalendarTypeEnum) => {
   const result = { ...payload };

@@ -1,5 +1,5 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { jalaaliScriptDate } from '@utils/dates';
+import { jalaaliScriptDate } from '@repo/core/utils/dates';
 
 import moment from 'moment-jalaali';
 

@@ -1,9 +1,9 @@
-import { toGregorianData } from '@utils/dates';
+import { toGregorianData } from '@repo/core/utils/dates';
 
 import { APP_VERSION } from '@constants/app.constants';
-import { CalendarTypeEnum } from '@constants/date.constants';
 import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 import { useRouter } from 'next/navigation';
 
 import { ItemType } from '../useGetData/type';

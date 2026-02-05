@@ -1,4 +1,4 @@
-import { CalendarTypeEnum, DATE_SEPERATOR_REGEX } from '@constants/date.constants';
+import { CalendarTypeEnum, DATE_SEPERATOR_REGEX } from '@repo/core/constants/date.constants';
 import m from 'moment-jalaali';
 
 import { DaysListUpdaterTypes, MonthListUpdaterTypes, StartAndEndDatesTypes } from './types';

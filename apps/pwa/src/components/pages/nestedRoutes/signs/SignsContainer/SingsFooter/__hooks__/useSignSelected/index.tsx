@@ -1,4 +1,4 @@
-import { currentDate } from '@utils/dates';
+import { currentDate } from '@repo/core/utils/dates';
 
 import useSignInteractiveBanner from '@hooks/__sign__/useSignInteractiveBanner';
 import useApi from '@hooks/useApi';

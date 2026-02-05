@@ -1,4 +1,4 @@
-import { CalendarTypeEnum } from '@constants/date.constants';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 
 import { CultureTypes } from './types';
 

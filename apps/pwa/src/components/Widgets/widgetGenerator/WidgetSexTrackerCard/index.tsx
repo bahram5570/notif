@@ -1,4 +1,4 @@
-import { currentDate } from '@utils/dates';
+import { currentDate } from '@repo/core/utils/dates';
 
 import { SIGNS_LIST } from '@components/SignGenerator/constants';
 import CategoryGenerator from '@components/pages/nestedRoutes/signs/SignsContainer/SignsLists/CategoryGenerator';

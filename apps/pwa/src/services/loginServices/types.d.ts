@@ -1,4 +1,4 @@
-import { CalendarTypeEnum } from '@constants/date.constants';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 import { Next, NextRequest, NextResponse } from 'next/server';
 
 import { CycleThemeEnum } from './enum';

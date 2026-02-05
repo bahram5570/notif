@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { toJalaliData } from '@utils/dates';
+import { toJalaliData } from '@repo/core/utils/dates';
 
 import { BabyCheckTypeEnums } from '@components/KitTests/KitTestBabyCheck/enum';
 import { DigitalBabyCheckEnum } from '@components/KitTests/KitTestDigitalBabyCheck/enum';
@@ -9,8 +9,8 @@ import {
   KIT_TEST_RANGE_LOW_LIMIT,
   kitTestScripts,
 } from '@components/KitTests/KitTestRange/constants';
-import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 import moment from 'moment-jalaali';
 
 import { TestGeneratorProps } from '../../types';

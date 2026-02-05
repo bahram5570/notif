@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import HamdelIcon from '@assets/icons/hamdel.svg';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { gregorianFarsiScriptDate, jalaaliScriptDate } from '@utils/dates';
+import { gregorianFarsiScriptDate, jalaaliScriptDate } from '@repo/core/utils/dates';
 
-import { CalendarTypeEnum } from '@constants/date.constants';
 import useCulture from '@hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 import moment from 'moment-jalaali';
 
 import { PartnerAvatarPropsType } from './type';

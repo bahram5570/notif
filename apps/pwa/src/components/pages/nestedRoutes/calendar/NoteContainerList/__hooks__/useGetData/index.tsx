@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { currentDate, toJalaliData } from '@utils/dates';
+import { currentDate, toJalaliData } from '@repo/core/utils/dates';
 
 import { NoteType } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
 import useSignDateState from '@hooks/__sign__/useSignDateState';

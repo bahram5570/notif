@@ -1,7 +1,7 @@
 import ArrowIcon from '@assets/icons/calendarArrow.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { CALENDAR_CELL_SIZE } from '@constants/date.constants';
+import { CALENDAR_CELL_SIZE } from '@repo/core/constants/date.constants';
 
 import { CalendarHeadingProps } from './types';
 
