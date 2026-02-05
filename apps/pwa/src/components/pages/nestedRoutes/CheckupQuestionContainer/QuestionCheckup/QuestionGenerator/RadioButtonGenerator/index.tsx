@@ -1,6 +1,6 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_RadioButton from '@components/ui/Dark_RadioButton';
+import RadioButton from '@components/ui/RadioButton';
 
 import { RadioButtonGeneratorPropsType } from './type';
 
@@ -12,7 +12,7 @@ const RadioButtonGenerator = ({ isSelected, label, value, handleChange }: RadioB
     >
       <div className="w-full flex flex-col  justify-between gap-3 cursor-pointer">
         <div className="flex flex-row-reverse items-center">
-          <Dark_RadioButton isChecked={isSelected} onClick={() => {}} />
+          <RadioButton isChecked={isSelected} onClick={() => {}} />
 
           <CustomTypography
             fontSize="Body_Medium"

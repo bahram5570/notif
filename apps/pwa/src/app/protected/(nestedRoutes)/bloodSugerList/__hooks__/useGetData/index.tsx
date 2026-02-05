@@ -8,7 +8,7 @@ import {
 } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
 import useSignDateState from '@hooks/__sign__/useSignDateState';
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 const useGetData = () => {
   const [initailBloodSugerList, setInitailBloodSugerList] = useState<BloodSugerType[]>([]);

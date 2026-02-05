@@ -3,7 +3,7 @@ import { useEffect, useRef } from 'react';
 import { isDevelopeMode } from '@repo/core/utils/system';
 
 import { BABY_CHECK_HISTORY_CARD_VIEW_ALL } from '@components/Widgets/widgetGenerator/WidgetBabyCheckHistoryCard/WidgetBabyCheckHistoryCardViewAll/constants';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useRouter } from 'next/navigation';
 
 import { ResponseTypes } from './types';

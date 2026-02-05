@@ -4,8 +4,8 @@ import { currentDate } from '@utils/dates';
 
 import { KitTestModuleTypeEnums } from '@components/KitTests/enum';
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import useCustomToast from '@hooks/useCustomToast';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import { NewTestResponseTypes, UseNewTestKitProps } from './types';
 

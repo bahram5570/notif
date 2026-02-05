@@ -1,6 +1,6 @@
 import useProfileData from '@hooks/__profile__/useProfileData';
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useRouteSequence } from '@repo/core/hooks/useRouteSequence';
 
 import { PairRoutinResponsive } from '../useGetData/type';

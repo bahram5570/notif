@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import { BabyCheckTypeEnums } from '../../enum';
 import { SelectedBabyCheckHandlerTypes } from './types';

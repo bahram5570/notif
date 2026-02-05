@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { PAGE_SIZE } from '@components/infiniteScrollContainer/constatns';
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import { RecommendedRoutinResponseType } from './type';
 

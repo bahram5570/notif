@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { ShareExperienceResponseTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/__hooks__/useShareExperienceGetData/types';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import { NewReplyQueriesTypes } from '../../../../ShareExperienceNewReplyModal/types';
 

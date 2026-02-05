@@ -4,7 +4,7 @@ import { onSubmitType } from '@components/FeedbackModal/type';
 import { RoutinResponseTypes } from '@components/pages/nestedRoutes/routin/RoutinContainer/__hooks__/useGetData/types';
 import { ProgramRateStatusEnum } from '@components/pages/nestedRoutes/routin/enum';
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useRouter } from 'next/navigation';
 
 import { FeedbackDataType, UseFeedbackPropsType } from './type';

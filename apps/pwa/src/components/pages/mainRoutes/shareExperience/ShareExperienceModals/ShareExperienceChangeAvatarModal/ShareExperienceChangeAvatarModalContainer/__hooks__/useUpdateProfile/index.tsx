@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { ShareExperienceResponseTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/__hooks__/useShareExperienceGetData/types';
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import useCustomToast from '@hooks/useCustomToast';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useRouter } from 'next/navigation';
 
 import { onProfileChangeHandlerPropsType } from './type';

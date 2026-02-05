@@ -1,7 +1,7 @@
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_RadioButton from '@components/ui/Dark_RadioButton';
+import RadioButton from '@components/ui/RadioButton';
 
 import { ShareExperienceNewTopicsGeneratorProps } from './types';
 
@@ -33,7 +33,7 @@ const ShareExperienceNewTopicsGenerator = ({
           {name}
         </CustomTypography>
 
-        <Dark_RadioButton isChecked={isSelected} />
+        <RadioButton isChecked={isSelected} />
       </div>
     </div>
   );

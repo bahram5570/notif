@@ -1,4 +1,4 @@
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import { CommentsResponseTypes } from '../../../../ShareExperienceModals/ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/__hooks__/useCommentsList/types';
 import { UpdateCommentHandlerTypes } from './types';

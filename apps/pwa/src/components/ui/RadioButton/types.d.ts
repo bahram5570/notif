@@ -1,4 +1,4 @@
-export interface Dark_RadioButtonProps {
+export interface RadioButtonProps {
   testId?: string;
   isChecked: boolean;
   isDisable?: boolean;

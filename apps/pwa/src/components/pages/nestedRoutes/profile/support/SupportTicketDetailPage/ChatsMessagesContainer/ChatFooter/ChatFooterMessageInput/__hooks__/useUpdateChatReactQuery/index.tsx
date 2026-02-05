@@ -1,5 +1,5 @@
 import { CHAT_PAGE_ID } from '@components/pages/mainRoutes/clinic/ClinicChatContainer/constants';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useDelayCallback } from '@repo/core/hooks/useDelayCallback';
 
 import { ChatResponseTypes } from '../../../../../__hooks__/useGetData/type';

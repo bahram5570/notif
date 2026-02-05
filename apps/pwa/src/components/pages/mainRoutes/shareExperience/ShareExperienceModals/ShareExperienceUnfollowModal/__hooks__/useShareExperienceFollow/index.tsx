@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import useCustomToast from '@hooks/useCustomToast';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 

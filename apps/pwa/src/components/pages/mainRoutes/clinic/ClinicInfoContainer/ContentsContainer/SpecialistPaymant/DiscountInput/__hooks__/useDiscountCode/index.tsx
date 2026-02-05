@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import useCustomToast from '@hooks/useCustomToast';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useParams } from 'next/navigation';
 
 import { ClinicInfoResponseTypes } from '../../../../../__hooks__/useGetDataClinicInfo/types';

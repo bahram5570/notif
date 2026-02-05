@@ -1,6 +1,6 @@
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import useCustomToast from '@hooks/useCustomToast';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import { RoutinResponseTypes } from '../../../../../__hooks__/useGetData/types';
 import { CommentItemType, CommentsResponseTypes } from '../../../__hooks__/useGetCommentData/type';

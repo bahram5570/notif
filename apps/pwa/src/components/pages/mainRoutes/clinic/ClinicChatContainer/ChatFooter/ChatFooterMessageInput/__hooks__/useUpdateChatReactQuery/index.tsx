@@ -1,4 +1,4 @@
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useDelayCallback } from '@repo/core/hooks/useDelayCallback';
 
 import { SideTypeEnum } from '../../../../__hooks__/useGetData/enums';

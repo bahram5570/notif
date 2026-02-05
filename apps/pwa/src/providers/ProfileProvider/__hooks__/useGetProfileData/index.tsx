@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { APP_VERSION } from '@constants/app.constants';
 import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import { ProfileResponseTypes } from './type';
 

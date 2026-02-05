@@ -4,7 +4,7 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import MainPageLayout from '@components/MainPageLayout';
-import Dark_RadioButton from '@components/ui/Dark_RadioButton';
+import RadioButton from '@components/ui/RadioButton';
 
 import useCalendarTypeSelect from './__hooks__/useCalendarTypeSelect';
 import useCalendarTypeSubmit from './__hooks__/useCalendarTypeSubmit';
@@ -36,7 +36,7 @@ const CalendarTypePage = () => {
               onClick={() => selectedTypeHandler(item.value)}
               className={`w-full h-12 flex items-center gap-2 border-t-[1px] ${index > 0 ? 'border-t-impo_Neutral_Surface' : 'border-t-impo_Transparent'}`}
             >
-              <Dark_RadioButton isChecked={isSelected} />
+              <RadioButton isChecked={isSelected} />
 
               <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnSurface">
                 {item.text}

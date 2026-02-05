@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import { OriginalStoryDataTypes } from '../../../__hooks__/useStoryCardData/types';
 import { STORY_CARD_DATA_NAME } from '../../../constants';

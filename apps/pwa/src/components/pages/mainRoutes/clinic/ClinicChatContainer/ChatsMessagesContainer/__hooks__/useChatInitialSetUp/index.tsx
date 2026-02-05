@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 const useChatInitialSetUp = (ref: React.RefObject<HTMLDivElement>) => {
   const { newQuery } = useCustomReactQuery(['chatFileLoading']);

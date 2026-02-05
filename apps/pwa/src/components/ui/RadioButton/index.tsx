@@ -1,6 +1,6 @@
-import { Dark_RadioButtonProps } from './types';
+import { RadioButtonProps } from './types';
 
-const Dark_RadioButton = ({ isChecked, onClick, isDisable, testId }: Dark_RadioButtonProps) => {
+const RadioButton = ({ isChecked, onClick, isDisable, testId }: RadioButtonProps) => {
   const clickHandler = () => {
     if (!isDisable && onClick) {
       onClick();
@@ -39,4 +39,4 @@ const Dark_RadioButton = ({ isChecked, onClick, isDisable, testId }: Dark_RadioB
   );
 };
 
-export default Dark_RadioButton;
+export default RadioButton;

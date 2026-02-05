@@ -1,6 +1,6 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import Dark_RadioButton from '@components/ui/Dark_RadioButton';
+import RadioButton from '@components/ui/RadioButton';
 
 import { LIST_LABEL } from './constants';
 import { PartnerRadioButtonPropsType } from './type';
@@ -20,7 +20,7 @@ const PartnerRadioButton = ({ onChange, value }: PartnerRadioButtonPropsType) =>
                 {item.name}
               </CustomTypography>
             </label>
-            <Dark_RadioButton isChecked={value === item.value} onClick={() => onChange(item.value)} />
+            <RadioButton isChecked={value === item.value} onClick={() => onChange(item.value)} />
           </div>
         );
       })}

@@ -4,7 +4,7 @@ import KitTestRange from '@components/KitTests/KitTestRange';
 import useNewTestKit from '@components/KitTests/KitTestsContainer/__hooks__/useNewTestKit';
 import { KitTestModuleTypeEnums } from '@components/KitTests/enum';
 import Loading from '@components/ui/Loading';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useRouter } from 'next/navigation';
 
 import TestKitModalsContainer from '../TestKitModalsContainer';

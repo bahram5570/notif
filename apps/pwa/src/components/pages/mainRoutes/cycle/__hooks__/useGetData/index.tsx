@@ -2,10 +2,10 @@ import { useContext, useEffect, useState } from 'react';
 
 import useUpdateCycleCard from '@hooks/__cycle__/useUpdateCycleCard';
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import useSplash from '@hooks/useSplash';
 import { ErrorContext } from '@providers/ErrorProvider';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { CycleResponseTypes } from '../../types';

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { EXPERIENCES_PAGE_SIZE } from '@components/pages/mainRoutes/shareExperience/constants';
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import { ExperiencesResponseTypes, QueryExperiencesDataTypes, SelectedCategoryIdTypes } from './types';
 

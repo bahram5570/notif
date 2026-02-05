@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import { UPDATE_CYCLE_CARD_QUERY_KEY_NAME } from './constants';
 import { CycleCardStatusHandlerTypes, CycleCardStatusTypes } from './types';

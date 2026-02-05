@@ -1,4 +1,4 @@
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import { CommentsIdTypes } from '../../CommentsList/__hooks__/useCommentsList/types';
 

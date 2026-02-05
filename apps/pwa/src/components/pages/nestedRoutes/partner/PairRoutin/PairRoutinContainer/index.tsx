@@ -4,7 +4,7 @@ import FeedbackModal from '@components/FeedbackModal';
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import OnboardingIntro from '@components/ui/OnboardingIntro';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useRouter } from 'next/navigation';
 
 import useFeedback from '../PairRoutinItemContainer/__hooks__/useFeedback';

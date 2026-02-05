@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { KitTestModuleTypeEnums } from '@components/KitTests/enum';
 import { CalendarWidgetEnums } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/CalendarEnums';
 import { InfoCalendarResponseTypes } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import { KitTestHistoryTypes, UseGetDataProps } from './types';
 

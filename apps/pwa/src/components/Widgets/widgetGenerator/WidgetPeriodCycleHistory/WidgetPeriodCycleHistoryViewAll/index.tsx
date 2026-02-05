@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { PERIOD_CYCLE_HISTORY_VIEW_ALL } from './constants';

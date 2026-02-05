@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import useUpdateCycleCard from '@hooks/__cycle__/useUpdateCycleCard';
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import useActionComplete from '../useActionComplete';
 

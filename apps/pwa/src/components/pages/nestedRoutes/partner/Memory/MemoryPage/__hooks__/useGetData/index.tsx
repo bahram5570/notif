@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import { MEMORY_PAGE_SIZE, PAGE_NO } from './constants';
 import { MemoriesDataType, ResponsePropsType } from './type';

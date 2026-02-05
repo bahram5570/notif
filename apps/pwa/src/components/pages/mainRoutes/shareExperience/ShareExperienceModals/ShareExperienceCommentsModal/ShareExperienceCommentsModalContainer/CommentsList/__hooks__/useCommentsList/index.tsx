@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { EXPERIENCES_COMMENTS_PAGE_SIZE } from '@components/pages/mainRoutes/shareExperience/constants';
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import useShareExperiencePageNo from '../../../__hooks__/useShareExperiencePageNo';
 import { CommentsIdTypes, CommentsResponseTypes } from './types';

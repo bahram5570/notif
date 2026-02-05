@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import { REPLIES_PAGE_SIZE, REPLIES_SKIP } from './constants';
 import { DataRepliesListTypes, RepliesListResponseTypes, UseReplyListProps } from './types';

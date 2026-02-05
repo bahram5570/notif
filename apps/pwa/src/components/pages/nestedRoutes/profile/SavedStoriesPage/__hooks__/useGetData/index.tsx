@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { SavedStoriesResponseTypes } from './types';

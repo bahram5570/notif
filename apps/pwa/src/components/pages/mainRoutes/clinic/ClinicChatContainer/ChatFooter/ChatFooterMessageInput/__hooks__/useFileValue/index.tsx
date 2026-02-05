@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
 import useApi from '@hooks/useApi';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
 import useFileUpload from '@hooks/useFileUpload';
 import { FileDataHandlerTypes } from '@hooks/useFileUpload/types';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useRouter } from 'next/navigation';
 
 import useUpdateChatReactQuery from '../useUpdateChatReactQuery';
