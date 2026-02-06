@@ -2,15 +2,17 @@
 
 export const MODALS = {
   // # widgets
+  // todo ---> packages\core\src\constants\modal.constants.ts
   WIDGET_POPUP: 'WIDGET_POPUP',
-
+  
   // # kits
   TEST_KITS_LIST_DELETE: 'TEST_KITS_LIST_DELETE',
   TEST_KITS_LIST_BABYCHECK: 'TEST_KITS_LIST_BABYCHECK',
   TEST_KITS_LIST_OVULATION: 'TEST_KITS_LIST_OVULATION',
   TEST_KITS_BABYCHECK: 'TEST_KITS_BABYCHECK',
-
+  
   // # story
+  // todo ---> packages\core\src\constants\modal.constants.ts
   STORY_MODAL_ID: 'STORY_MODAL_ID',
 
   // # nameSelector

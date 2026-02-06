@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "type": "module",
   "exports": {
+    "./lib/*": {
+      "import": "./dist/lib/*/index.js",
+      "types": "./dist/lib/*/index.d.ts"
+    },
     "./utils/*": {
       "import": "./dist/utils/*/index.js",
       "types": "./dist/utils/*/index.d.ts"

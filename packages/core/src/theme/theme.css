@@ -29,6 +29,17 @@
   width: 0px;
 }
 
+.OnMountActionsEventListener-styles::-webkit-scrollbar {
+  display: none;
+}
+
+.OnMountActionsEventListener-styles {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* # Colors */
+
 :root {
   --color-Transparent: transparent;
   --color-Black: #000000;

@@ -3,7 +3,7 @@ import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 
-import useWidgetActions from '@hooks/useWidgetActions';
+import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 
 import { InstallationPurposePropsType } from './type';
 

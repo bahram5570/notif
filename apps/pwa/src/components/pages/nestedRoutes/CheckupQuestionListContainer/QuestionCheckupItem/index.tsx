@@ -3,9 +3,9 @@ import ArrowIcon from '@assets/icons/calendarArrow.svg';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useWidgetActions from '@hooks/useWidgetActions';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 
 import { QuestionCheckupItemPropsType } from './type';
 

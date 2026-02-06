@@ -5,8 +5,8 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { removeWelcomingHandler } from '@utils/aiChatBotWelcoming';
 
 import AiChatbotWelcomingLayout from '@components/ui/__AiChatbot__/AiChatbotWelcomingLayout';
-import useWidgetActions from '@hooks/useWidgetActions';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 
 import TopicsChatbotWelcomingSkeleton from './TopicsChatbotWelcomingSkeleton';
 import useGetData from './__hooks__/useGetData';

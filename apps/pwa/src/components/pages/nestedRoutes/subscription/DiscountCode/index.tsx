@@ -1,5 +1,5 @@
 import DiscountCodeIcon from '@assets/icons/discountCode.svg';
-import PlusIcon from '@assets/icons/plus.svg';
+import PlusIcon from '@assets/shared/icons/plus.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CodeInput from './CodeInput';

@@ -1,7 +1,7 @@
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 
-import useWidgetActions from '@hooks/useWidgetActions';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
+import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 
 import { WidgetMediaProps } from './types';
 

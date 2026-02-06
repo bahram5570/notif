@@ -1,4 +1,4 @@
-import CrossIcon from '@assets/icons/plus.svg';
+import CrossIcon from '@assets/shared/icons/plus.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import BiorhythemItems from '@components/__Biorhythem__/BiorhythemItems';

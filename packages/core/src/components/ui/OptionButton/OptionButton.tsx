@@ -1,8 +1,7 @@
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
+import { CustomTypography } from '../CustomTypography';
 import { OptionButtonProps } from './types';
 
-const OptionButton = ({ isSelected, text, onClick }: OptionButtonProps) => {
+export const OptionButton = ({ isSelected, text, onClick }: OptionButtonProps) => {
   return (
     <div
       onClick={onClick}
@@ -48,5 +47,3 @@ const OptionButton = ({ isSelected, text, onClick }: OptionButtonProps) => {
     </div>
   );
 };
-
-export default OptionButton;

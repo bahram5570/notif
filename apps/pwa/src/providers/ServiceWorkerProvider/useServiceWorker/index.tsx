@@ -3,8 +3,8 @@ import { useEffect, useRef } from 'react';
 import { notifHandlerActionMaker } from './__utils__';
 import { isDevelopeMode } from '@repo/core/utils/system';
 
-import useWidgetActions from '@hooks/useWidgetActions';
 import { getFirebaseMessaging } from '@lib/firebaseConfig';
+import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 import { MessagePayload, onMessage } from 'firebase/messaging';
 
 import { STORED_NOTIFICATIONS_CACHE_NAME } from '../constants';

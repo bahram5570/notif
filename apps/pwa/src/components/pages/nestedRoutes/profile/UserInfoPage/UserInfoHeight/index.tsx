@@ -1,5 +1,5 @@
 import MinusIcon from '@assets/icons/minus.svg';
-import PlusIcon from '@assets/icons/plus.svg';
+import PlusIcon from '@assets/shared/icons/plus.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { ACTIVATION_HEIGHT_VALUES } from '@constants/activation.constants';

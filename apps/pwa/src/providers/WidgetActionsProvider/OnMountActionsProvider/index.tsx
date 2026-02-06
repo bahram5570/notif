@@ -2,7 +2,7 @@
 
 import { createContext, useState } from 'react';
 
-import useWidgetActions from '@hooks/useWidgetActions';
+import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 
 import { ActionTypes } from '../widgetCommon';
 import OnMountActionsEventListener from './OnMountActionsEventListener';

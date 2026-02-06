@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-import CrossIcon from '@assets/icons/plus.svg';
+import CrossIcon from '@assets/shared/icons/plus.svg';
 
 import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';

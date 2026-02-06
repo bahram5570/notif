@@ -1,4 +1,4 @@
-import useWidgetActions from '@hooks/useWidgetActions';
+import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 
 import RoutinCardHeader from '../RoutinCardHeader';
 import RoutinCardDetailedContext from './RoutinCardDetailedContext';

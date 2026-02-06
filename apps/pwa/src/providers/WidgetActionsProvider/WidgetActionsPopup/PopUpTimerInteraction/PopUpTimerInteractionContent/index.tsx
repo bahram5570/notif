@@ -2,8 +2,8 @@ import CancelIcon from '@assets/icons/cancel.svg';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
+import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 
 import useCheckJson from '../__hooks__/useCheckJson';
 import { PopUpTimerInteractionContentPropsType } from './type';

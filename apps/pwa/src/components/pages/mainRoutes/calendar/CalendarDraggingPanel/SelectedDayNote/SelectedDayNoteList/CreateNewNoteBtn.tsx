@@ -1,4 +1,4 @@
-import PlusIcon from '@assets/icons/plus.svg';
+import PlusIcon from '@assets/shared/icons/plus.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 

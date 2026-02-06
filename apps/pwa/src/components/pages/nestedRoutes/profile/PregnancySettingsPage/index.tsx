@@ -1,10 +1,10 @@
 'use client';
 
 import MainPageLayout from '@components/MainPageLayout';
-import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
 import { ActionTypeEnum, CyclePhaseEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 
 import PregnancySettingsLinkGenerator from './PregnancySettingsLinkGenerator';
 import { PREGNANCY_SETTINGS_LIST } from './constants';

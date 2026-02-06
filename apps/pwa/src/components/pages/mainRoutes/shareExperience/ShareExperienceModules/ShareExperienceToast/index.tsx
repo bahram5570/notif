@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import InfoIcon from '@assets/icons/info.svg';
-import CloseIcon from '@assets/icons/plus.svg';
+import CloseIcon from '@assets/shared/icons/plus.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { ShareExperienceToastPropsType } from './type';

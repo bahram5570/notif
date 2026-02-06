@@ -1,4 +1,4 @@
-import PlusIcon from '@assets/icons/plus.svg';
+import PlusIcon from '@assets/shared/icons/plus.svg';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 

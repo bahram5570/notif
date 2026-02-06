@@ -1,0 +1,1 @@
+export { WidgetActionsProvider } from './WidgetActionsProvider';

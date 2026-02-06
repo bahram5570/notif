@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import useWidgetActions from '@hooks/useWidgetActions';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 
 import { ONBOARDING_STEP } from './constans';
 import { UseStepPropsType } from './type';

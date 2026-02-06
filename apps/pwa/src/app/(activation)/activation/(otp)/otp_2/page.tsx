@@ -41,8 +41,6 @@ const Otp2 = () => {
   };
 
   const loginHandler = async (v: FetchedUserTypes) => {
-    console.log(v);
-
     await setUserCookie(v.userCookie);
     await setUserInfoCookie(v.userInfoCookie);
 

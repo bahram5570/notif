@@ -1,4 +1,4 @@
-import CrossIcon from '@assets/icons/plus.svg';
+import CrossIcon from '@assets/shared/icons/plus.svg';
 
 import { NameSelectorFilterResetBtnProps } from './types';
 

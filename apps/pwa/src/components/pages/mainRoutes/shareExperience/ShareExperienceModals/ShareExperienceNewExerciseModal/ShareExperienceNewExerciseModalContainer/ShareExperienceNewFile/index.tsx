@@ -1,5 +1,5 @@
 import UploadIcon from '@assets/icons/gallery.svg';
-import CrossIcon from '@assets/icons/plus.svg';
+import CrossIcon from '@assets/shared/icons/plus.svg';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 

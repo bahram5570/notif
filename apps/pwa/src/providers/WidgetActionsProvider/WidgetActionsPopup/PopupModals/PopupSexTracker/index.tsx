@@ -2,11 +2,11 @@ import { useState } from 'react';
 
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { OptionButton } from '@repo/core/components/ui/OptionButton';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 
-import OptionButton from '@components/ui/OptionButton';
-import useWidgetActions from '@hooks/useWidgetActions';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
+import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 
 import PopupTwoStepsContainer from '../PopupTwoStepsContainer';
 import { PopupSexTrackerProps } from './types';

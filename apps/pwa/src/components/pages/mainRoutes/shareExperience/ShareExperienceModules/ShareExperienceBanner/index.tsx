@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import CloseIcon from '@assets/icons/plus.svg';
+import CloseIcon from '@assets/shared/icons/plus.svg';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 
 const ShareExperienceBanner = ({ bannerMedia }: { bannerMedia: string }) => {

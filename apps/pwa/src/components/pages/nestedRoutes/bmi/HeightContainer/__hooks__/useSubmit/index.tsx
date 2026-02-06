@@ -1,7 +1,7 @@
-import useWidgetActions from '@hooks/useWidgetActions';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 
 import { multipleStepRoutes } from '../../../multipleStepRoutes';
 

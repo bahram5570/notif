@@ -4,7 +4,7 @@ import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@repo/core/utils/scripts';
 
-import useWidgetActions from '@hooks/useWidgetActions';
+import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 
 import { ProgramWidgetItemStatusEnum } from '../../../enum';
 import { IS_LAST_ROUTIN_ITEM, ROUTIN_STEP } from '../../constant';

@@ -1,10 +1,10 @@
-import CloseIcon from '@assets/icons/plus.svg';
+import CloseIcon from '@assets/shared/icons/plus.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 
-import useWidgetActions from '@hooks/useWidgetActions';
+import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 import { useRouter } from 'next/navigation';
 
 import { PopupImageTextButtonProps } from './types';

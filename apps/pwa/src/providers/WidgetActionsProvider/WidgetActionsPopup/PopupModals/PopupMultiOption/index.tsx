@@ -2,10 +2,10 @@ import { useState } from 'react';
 
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { OptionButton } from '@repo/core/components/ui/OptionButton';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 
-import OptionButton from '@components/ui/OptionButton';
-import useWidgetActions from '@hooks/useWidgetActions';
+import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 
 import { PopupMultiOptionProps, SelectHandlerTypes } from './types';
 

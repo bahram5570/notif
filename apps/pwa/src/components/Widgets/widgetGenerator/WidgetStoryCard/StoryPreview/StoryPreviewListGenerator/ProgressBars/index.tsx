@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-import CrossIcon from '@assets/icons/plus.svg';
 import ImpoIcon from '@assets/images/questionsImpo.svg';
+import CrossIcon from '@assets/shared/icons/plus.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { useRouter } from 'next/navigation';

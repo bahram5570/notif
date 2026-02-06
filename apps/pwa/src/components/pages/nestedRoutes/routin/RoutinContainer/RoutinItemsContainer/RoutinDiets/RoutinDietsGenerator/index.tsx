@@ -1,5 +1,5 @@
 import useCurrentRoutinIndex from '@hooks/__routin__/useCurrentRoutinIndex';
-import useWidgetActions from '@hooks/useWidgetActions';
+import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 
 import { ProgramWidgetCompleteEnum } from '../../../../enum';
 import { IS_LAST_ROUTIN_ITEM } from '../../../constant';

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import CloseIcon from '@assets/icons/plus.svg';
+import CloseIcon from '@assets/shared/icons/plus.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { ItemPropsType } from '../MessageListContainer/Message/type';

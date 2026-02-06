@@ -3,8 +3,8 @@ import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 
-import useWidgetActions from '@hooks/useWidgetActions';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
+import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 
 import { PregnancyCheckupItemPropsTypes } from './type';
 

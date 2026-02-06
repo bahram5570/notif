@@ -1,8 +1,8 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useWidgetActions from '@hooks/useWidgetActions';
 import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
+import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 
 import { WidgetCardHealthReportContainerProps } from './types';
 
