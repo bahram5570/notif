@@ -1,9 +1,9 @@
 import { useRef } from 'react';
 
 import { APP_VERSION } from '@constants/app.constants';
-import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { ProfileResponseTypes } from './type';
 
@@ -21,7 +21,7 @@ const useGetProfileData = (onComplete?: () => void) => {
     }
   };
 
-  const { isLoading: dataLoading, callApi: getData } = useApi<ProfileResponseTypes>({
+  const { isLoading: dataLoading, callApi: getData } = usePwaApi<ProfileResponseTypes>({
     method: 'POST',
     api: 'profile/woman/info',
     onSuccess: successHandler,

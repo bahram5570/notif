@@ -2,15 +2,13 @@ import LogoutIcon from '@assets/icons/profile/logout.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { deleteUserCookie, deleteUserInfoCookie, setCultureCookie } from '@actions/userCookies.actions';
-import { CULTURE_INITIAL_VALUES } from '@providers/CultureProvider/constants';
+import { clearUserCookiesHandler } from '@actions/userCookies.actions';
 import { STORED_NOTIFICATIONS_CACHE_NAME } from '@providers/ServiceWorkerProvider/constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useRouter } from 'next/navigation';
 
 const LogoutModal = () => {
   const router = useRouter();
-
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
   const isLoading = pageNavigationLoading === 'LogoutModal';
@@ -18,9 +16,7 @@ const LogoutModal = () => {
   const logoutHandler = async () => {
     localStorage.clear();
     sessionStorage.clear();
-    await deleteUserCookie();
-    await deleteUserInfoCookie();
-    await setCultureCookie(CULTURE_INITIAL_VALUES);
+    await clearUserCookiesHandler();
     await caches.delete(STORED_NOTIFICATIONS_CACHE_NAME);
 
     pageNavigationHandler({ showProgressBar: false, id: 'LogoutModal', linkTo: '/' });

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { RoutinItemResponseTypes } from './types';
@@ -14,7 +14,7 @@ const useGetData = () => {
   const programId = params ? params.get('catId') : '';
   const api = searchData ? `widgets/program/item/info?${searchData}` : '';
 
-  const { callApi, isLoading, data } = useApi<RoutinItemResponseTypes>({
+  const { callApi, isLoading, data } = usePwaApi<RoutinItemResponseTypes>({
     api,
     method: 'GET',
     fetchOnMount: false,

@@ -1,6 +1,6 @@
 import useAichatbotHistoryManager from '@hooks/__aichatbot__/useAichatbotHistoryManager';
-import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 const useSubmit = () => {
@@ -17,7 +17,11 @@ const useSubmit = () => {
     });
   };
 
-  const { callApi, isLoading } = useApi({ api: 'feature/ai/opiniononchat', method: 'POST', onSuccess: successHandler });
+  const { callApi, isLoading } = usePwaApi({
+    api: 'feature/ai/opiniononchat',
+    method: 'POST',
+    onSuccess: successHandler,
+  });
 
   const submitHandler = ({ text }: { text: string }) => {
     const payload = {

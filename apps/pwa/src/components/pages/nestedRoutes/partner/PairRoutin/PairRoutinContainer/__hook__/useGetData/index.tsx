@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { PairRoutinResponsive } from './type';
@@ -18,7 +18,7 @@ const useGetData = () => {
     newQuery({ queryKey: ['pairRoutinItems'], payload: v });
   };
 
-  const { callApi, isLoading } = useApi<PairRoutinResponsive>({
+  const { callApi, isLoading } = usePwaApi<PairRoutinResponsive>({
     api,
     method: 'GET',
     fetchOnMount: false,

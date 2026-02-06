@@ -1,5 +1,5 @@
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { PayloadTypes } from './type';
 
@@ -10,7 +10,7 @@ const useReadMessage = () => {
     refetchQuery({ queryKey: ['messageNotRead'] });
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     method: 'POST',
     onSuccess: successHandler,
     api: 'message',

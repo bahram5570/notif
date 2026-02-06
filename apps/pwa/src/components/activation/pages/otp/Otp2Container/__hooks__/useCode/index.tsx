@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { toEnglishNumbers } from '@repo/core/utils/numbers';
 import { getFirebaseCookieToken } from '@utils/cookies';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { OtpDataResponseTypes, UseCodeProps } from './types';
 
@@ -18,7 +18,7 @@ const useCode = ({ identity, isRegister }: UseCodeProps) => {
   };
   const api = isRegister ? 'CustomerAccount/v2/GetIdentity' : 'CustomerAccount/v2/setIdentity';
 
-  const { data, callApi, isLoading } = useApi<OtpDataResponseTypes>({
+  const { data, callApi, isLoading } = usePwaApi<OtpDataResponseTypes>({
     method,
     api,
   });

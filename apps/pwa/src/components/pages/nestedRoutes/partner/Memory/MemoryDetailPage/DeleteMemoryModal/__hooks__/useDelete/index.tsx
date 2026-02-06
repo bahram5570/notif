@@ -1,4 +1,4 @@
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
@@ -14,7 +14,7 @@ const useDelete = () => {
       router.back();
     }, 0);
   };
-  const { callApi, isLoading } = useApi({ api: 'memory', method: 'POST', onSuccess: successHandler });
+  const { callApi, isLoading } = usePwaApi({ api: 'memory', method: 'POST', onSuccess: successHandler });
 
   const deleteHandler = () => {
     const payload = {

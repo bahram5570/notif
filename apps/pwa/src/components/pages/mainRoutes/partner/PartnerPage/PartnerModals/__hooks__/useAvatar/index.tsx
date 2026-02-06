@@ -1,5 +1,5 @@
 import { APP_VERSION } from '@constants/app.constants';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { ResponseType } from './type';
@@ -11,7 +11,7 @@ const useAvatar = () => {
     router.back();
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     method: 'POST',
     onSuccess: successHandler,
     api: `profile/image?AppVersion=${APP_VERSION || ''}`,

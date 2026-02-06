@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { KitTestModuleTypeEnums } from '@components/KitTests/enum';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import m from 'moment-jalaali';
 import { useRouter } from 'next/navigation';
 
@@ -50,7 +50,7 @@ const useTestKitDelete = ({ isDeleteModalOpen, onDelete }: UseTestKitDeleteProps
       break;
   }
 
-  const { isLoading, callApi } = useApi({
+  const { isLoading, callApi } = usePwaApi({
     api,
     method: 'DELETE',
     onError: errorHandler,

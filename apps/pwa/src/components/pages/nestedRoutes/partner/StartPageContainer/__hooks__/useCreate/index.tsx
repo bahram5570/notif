@@ -1,6 +1,6 @@
-import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { DataResponseType } from './type';
@@ -22,7 +22,7 @@ const useCreate = () => {
 
     router.back();
   };
-  const { callApi: create, isLoading } = useApi({
+  const { callApi: create, isLoading } = usePwaApi({
     api: 'partner/create',
     method: 'POST',
     onSuccess: (data: DataResponseType) => successHandler(data),

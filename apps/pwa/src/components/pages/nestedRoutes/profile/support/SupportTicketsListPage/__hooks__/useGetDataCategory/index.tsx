@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { APP_VERSION } from '@constants/app.constants';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { TicketcategoryResponseType } from './type';
@@ -16,7 +16,7 @@ const useGetDataCategory = () => {
     isLoading: dataLoading,
     callApi: getData,
     data,
-  } = useApi<TicketcategoryResponseType>({
+  } = usePwaApi<TicketcategoryResponseType>({
     method: 'GET',
     fetchOnMount: false,
     queryKey: ['ticketCategory'],

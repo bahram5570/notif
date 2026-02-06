@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { INITAIL_PACKAGE } from './constants';
 import { PackagesTypes, ResponseTypes, currentPackageHandlerTypes } from './types';
@@ -11,7 +11,7 @@ const useGetData = () => {
   const [data, setData] = useState<ResponseTypes | null>(null);
   const [currentPackage, setCurrentPackage] = useState<PackagesTypes>(INITAIL_PACKAGE);
 
-  const { callApi, isLoading } = useApi<ResponseTypes>({
+  const { callApi, isLoading } = usePwaApi<ResponseTypes>({
     api: 'info/subscribtions_v6',
     method: 'POST',
     onSuccess: (v) => {

@@ -1,4 +1,4 @@
-import http from '@services/http';
+import { pwaHttp } from '@repo/core/utils/pwaHttp';
 
 import { ShareExperienceStateEnum } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/enum';
 
@@ -88,5 +88,5 @@ export const handleLikeInfo: HandleLikeInfoTypes = ({ v, likeInfo }) => {
 
 export const replyLikeCallApi: ReplyLikeCallApiTypes = async (url, method) => {
   const updatedMethod = method === 'POST' ? 'GET' : 'DELETE';
-  await http({ url, method: updatedMethod, payload: updatedMethod === 'DELETE' ? {} : undefined });
+  await pwaHttp({ url, method: updatedMethod, payload: updatedMethod === 'DELETE' ? {} : undefined });
 };

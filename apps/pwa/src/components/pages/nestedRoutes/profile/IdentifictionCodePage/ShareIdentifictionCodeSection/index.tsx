@@ -1,8 +1,8 @@
 import ExportIcon from '@assets/icons/Export.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useAnalytics from '@hooks/useAnalytics';
 import useShareNavigator from '@hooks/useShareNavigator';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import { ShareIdentifictionCodeSectionPropsType } from './type';
 

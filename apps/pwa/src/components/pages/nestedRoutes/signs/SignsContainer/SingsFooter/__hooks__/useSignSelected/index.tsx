@@ -1,7 +1,7 @@
 import { currentDate } from '@repo/core/utils/dates';
 
 import useSignInteractiveBanner from '@hooks/__sign__/useSignInteractiveBanner';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { ResponseType, useSignSelectedProps } from './types';
@@ -15,7 +15,7 @@ const useSignSelected = ({ selectedDate, singSelectedList }: useSignSelectedProp
     interactiveBannerActionHandler(v.action);
   };
 
-  const { callApi, isLoading } = useApi<ResponseType>({
+  const { callApi, isLoading } = usePwaApi<ResponseType>({
     method: 'PUT',
     api: 'info/woman/sign/add',
     onSuccess: (v) => successHandler(v),

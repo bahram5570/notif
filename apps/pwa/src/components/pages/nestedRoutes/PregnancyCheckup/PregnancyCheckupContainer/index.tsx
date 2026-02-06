@@ -4,8 +4,8 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import useAnalytics from '@hooks/useAnalytics';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import BannerSection from './BannerSection';
 import PregnancyCheckupContainerSkeleton from './PregnancyCheckupContainerSkeleton';

@@ -3,9 +3,9 @@ import { useEffect, useState } from 'react';
 import { currentDate } from '@repo/core/utils/dates';
 
 import useSignDateState from '@hooks/__sign__/useSignDateState';
-import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
 import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import moment from 'moment-jalaali';
 
@@ -55,7 +55,7 @@ const useGetData = () => {
     }
   };
 
-  const { isLoading } = useApi<ResponsePropsType>({
+  const { isLoading } = usePwaApi<ResponsePropsType>({
     api: 'date/note',
     method: 'GET',
     queryKey: ['currentNote'],

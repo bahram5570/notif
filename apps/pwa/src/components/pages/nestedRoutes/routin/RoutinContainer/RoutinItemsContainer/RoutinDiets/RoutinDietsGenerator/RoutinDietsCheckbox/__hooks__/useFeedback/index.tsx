@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { onSubmitType } from '@components/FeedbackModal/type';
 import { RoutinResponseTypes } from '@components/pages/nestedRoutes/routin/RoutinContainer/__hooks__/useGetData/types';
 import { ProgramRateStatusEnum } from '@components/pages/nestedRoutes/routin/enum';
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { FeedbackDataType, UseFeedbackPropsType } from './type';
@@ -35,7 +35,7 @@ const useFeedback = ({ programId }: UseFeedbackPropsType) => {
     route.back();
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     api: 'widgets/program/rate',
     method: 'POST',
     onSuccess: successHandler,

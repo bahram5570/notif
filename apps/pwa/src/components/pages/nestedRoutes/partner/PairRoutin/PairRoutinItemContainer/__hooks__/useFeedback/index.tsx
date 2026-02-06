@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { onSubmitType } from '@components/FeedbackModal/type';
 import { ProgramRateStatusEnum } from '@components/pages/nestedRoutes/routin/enum';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { FeedbackDataType, UseFeedbackPropsType } from './type';
 
@@ -18,7 +18,7 @@ const useFeedback = ({ programId, onComplete }: UseFeedbackPropsType) => {
     onComplete();
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     api: 'widgets/womanpairprogram/rate',
     method: 'POST',
     onSuccess: successHandler,

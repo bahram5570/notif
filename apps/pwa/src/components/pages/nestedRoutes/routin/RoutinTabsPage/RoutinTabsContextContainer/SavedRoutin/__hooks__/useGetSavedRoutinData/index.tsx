@@ -1,9 +1,9 @@
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { SavedRoutinResponseType } from './type';
 
 const useGetSavedRoutinData = () => {
-  const { data, isLoading } = useApi<SavedRoutinResponseType>({
+  const { data, isLoading } = usePwaApi<SavedRoutinResponseType>({
     api: 'widgets/program/pages/bookmarked',
     method: 'GET',
     queryKey: ['savedRoutin'],

@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import useApi from '@hooks/useApi';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { SavedStoriesResponseTypes } from './types';
@@ -12,7 +12,7 @@ const useGetData = () => {
   const { getQueryParams } = useQueryParamsHandler();
   const [removeList, setRemoveList] = useState<string[]>([]);
 
-  const { isLoading, data } = useApi<SavedStoriesResponseTypes>({
+  const { isLoading, data } = usePwaApi<SavedStoriesResponseTypes>({
     method: 'GET',
     queryKey: ['savedStories'],
     api: 'story/bookmark/0/1000000',

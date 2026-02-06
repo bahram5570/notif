@@ -1,7 +1,7 @@
 import AddLoveIcon from '@assets/icons/add-love.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import CustomLink from '../CustomLink';
 

@@ -1,4 +1,4 @@
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { InputValueType } from '../../type';
@@ -9,7 +9,7 @@ const useSubmit = () => {
   const successHandler = () => {
     router.back();
   };
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     method: 'PUT',
     onSuccess: successHandler,
     api: 'memory',

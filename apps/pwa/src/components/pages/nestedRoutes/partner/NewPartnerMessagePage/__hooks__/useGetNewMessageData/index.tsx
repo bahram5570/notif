@@ -1,4 +1,4 @@
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { ResponseMessageDataType } from '../../MessageListContainer/Message/type';
 import useRefetchChat from '../useRefetchChat';
@@ -21,7 +21,7 @@ const useGetNewMessageData = ({
     callApi,
     isLoading: messageLoading,
     data,
-  } = useApi<ResponseMessageDataType>({ api: 'pair/chat/newone', method: 'POST', onSuccess: (v) => onSuccess(v) });
+  } = usePwaApi<ResponseMessageDataType>({ api: 'pair/chat/newone', method: 'POST', onSuccess: (v) => onSuccess(v) });
 
   const getNewMessageData = () => {
     if (lastMessageId) {

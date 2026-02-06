@@ -1,10 +1,10 @@
 import useAichatbotHistoryManager from '@hooks/__aichatbot__/useAichatbotHistoryManager';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 const useLikeMessage = ({ messageId }: { messageId: string }) => {
   const { chatData, updateObject } = useAichatbotHistoryManager();
 
-  const { callApi } = useApi({ api: 'feature/ai/message/like', method: 'PUT' });
+  const { callApi } = usePwaApi({ api: 'feature/ai/message/like', method: 'PUT' });
 
   const likeMessageHandler = () => {
     if (chatData) {

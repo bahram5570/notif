@@ -3,7 +3,7 @@ import { memo } from 'react';
 import SelectedIcon from '@assets/icons/selectedTick.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import useSignIcon from './__hooks__/useSignIcon';
 import useSignSelected from './__hooks__/useSignSelected';

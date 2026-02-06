@@ -1,4 +1,4 @@
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useParams } from 'next/navigation';
 
 import { SubmitHandlerPropsType } from './type';
@@ -10,7 +10,7 @@ const useSubmit = () => {
     window.history.go(-2);
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     api: `support/ticket/${ticketId}/rate`,
     method: 'POST',
     onSuccess: successHandler,

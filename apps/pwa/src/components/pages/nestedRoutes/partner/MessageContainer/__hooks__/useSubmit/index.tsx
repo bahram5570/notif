@@ -1,5 +1,5 @@
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { SubmitHandlerPropsType } from './type';
 
@@ -10,7 +10,7 @@ const useSubmit = () => {
     refetchQuery({ queryKey: ['messagePartner'] });
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     method: 'PUT',
     onSuccess: successHandler,
     api: 'message',

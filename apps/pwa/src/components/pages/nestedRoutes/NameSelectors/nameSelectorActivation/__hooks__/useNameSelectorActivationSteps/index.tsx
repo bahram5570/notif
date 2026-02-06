@@ -1,4 +1,4 @@
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { usePathname } from 'next/navigation';
 

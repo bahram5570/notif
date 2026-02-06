@@ -1,6 +1,6 @@
-import useApi from '@hooks/useApi';
 import useWidgetActions from '@hooks/useWidgetActions';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { multipleStepRoutes } from '../../../multipleStepRoutes';
@@ -17,7 +17,7 @@ const useSubmit = () => {
     updateProfileDateByDellay();
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     method: 'PUT',
     onSuccess: onSuccessHandler,
     api: 'profile/woman/info/setheight',

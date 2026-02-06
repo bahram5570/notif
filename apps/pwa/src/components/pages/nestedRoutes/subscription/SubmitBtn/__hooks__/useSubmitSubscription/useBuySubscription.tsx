@@ -2,9 +2,9 @@ import { setPaymentCookie } from '@utils/cookies';
 import { externalLink } from '@utils/navigation';
 
 import { getUserCookie } from '@actions/userCookies.actions';
-import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { BuySubscriptionResponseTypes } from './types';
 
@@ -27,7 +27,7 @@ const useBuySubscription = () => {
     }
   };
 
-  const { callApi } = useApi<BuySubscriptionResponseTypes>({
+  const { callApi } = usePwaApi<BuySubscriptionResponseTypes>({
     method: 'POST',
     api: 'financial/subscribtiondiscount',
     onSuccess: buySubscriptionSuccessHandler,

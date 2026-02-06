@@ -1,6 +1,6 @@
 'use client';
 
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import { NameSelectorTabsEnum } from '../NameSelectorLayout/enum';
 import useNameSelectorTabs from '../__hooks__/useNameSelectorTabs';

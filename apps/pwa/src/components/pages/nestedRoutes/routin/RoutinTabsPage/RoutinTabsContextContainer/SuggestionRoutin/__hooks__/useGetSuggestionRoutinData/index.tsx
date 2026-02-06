@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import { PAGE_SIZE } from '@components/infiniteScrollContainer/constatns';
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { RecommendedRoutinResponseType } from './type';
 
@@ -21,7 +21,7 @@ const useGetSuggestionRoutinData = () => {
     }
   };
 
-  const { isLoading, callApi } = useApi<RecommendedRoutinResponseType>({
+  const { isLoading, callApi } = usePwaApi<RecommendedRoutinResponseType>({
     api: `widgets/program/pages/recommended?pageNo=${pageNo}&pageSize=${PAGE_SIZE}`,
     method: 'GET',
     queryKey: ['recommended'],

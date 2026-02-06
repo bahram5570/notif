@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react';
 import { isDevelopeMode } from '@repo/core/utils/system';
 import { getPaymentCookie, removePaymentCookie } from '@utils/cookies';
 
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { useRouter } from 'next/navigation';
 
 import { PAYMENT_QUERY_NAME } from './constants';

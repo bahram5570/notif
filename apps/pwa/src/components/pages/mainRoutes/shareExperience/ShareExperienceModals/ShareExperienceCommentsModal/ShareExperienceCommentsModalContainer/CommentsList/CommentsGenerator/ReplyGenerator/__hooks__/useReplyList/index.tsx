@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { REPLIES_PAGE_SIZE, REPLIES_SKIP } from './constants';
 import { DataRepliesListTypes, RepliesListResponseTypes, UseReplyListProps } from './types';
@@ -32,7 +32,7 @@ const useReplyList = (props: UseReplyListProps) => {
   const api = `shareeexperience/v3/experience/${props.shareId}/comment/${props.commentId}/replies/${REPLIES_SKIP}/${pageNo}/${REPLIES_PAGE_SIZE}`;
   const showMoreQueryKey: [string] = [`repliesList ${currentRepliesCount} ${props.shareId} ${props.commentId}`];
 
-  const { isLoading, callApi } = useApi({
+  const { isLoading, callApi } = usePwaApi({
     api,
     method: 'GET',
     fetchOnMount: false,

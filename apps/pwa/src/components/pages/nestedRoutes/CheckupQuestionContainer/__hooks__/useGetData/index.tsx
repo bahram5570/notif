@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { ResponsePropsType, UseGetDataPropsType } from './type';
 
 const useGetData = ({ type, week }: UseGetDataPropsType) => {
-  const { isLoading, callApi, data } = useApi<ResponsePropsType>({
+  const { isLoading, callApi, data } = usePwaApi<ResponsePropsType>({
     method: 'POST',
     api: 'info/pregnancy/checkup/data',
   });

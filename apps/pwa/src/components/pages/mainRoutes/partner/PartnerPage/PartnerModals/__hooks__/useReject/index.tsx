@@ -1,5 +1,5 @@
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 const useReject = () => {
@@ -11,7 +11,7 @@ const useReject = () => {
     route.back();
   };
 
-  const { callApi: reject, isLoading } = useApi({ api: 'partner/reject', method: 'PUT', onSuccess: successHandler });
+  const { callApi: reject, isLoading } = usePwaApi({ api: 'partner/reject', method: 'PUT', onSuccess: successHandler });
 
   const rejectHandler = (id: string | null) => {
     const payload = {

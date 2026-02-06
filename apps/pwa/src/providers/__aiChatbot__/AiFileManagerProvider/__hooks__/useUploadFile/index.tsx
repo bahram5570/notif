@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { UploadItemType } from '../../type';
 import { FileDataHandlerTypes, FileResponseTypes } from './type';
@@ -20,7 +20,7 @@ const useUploadFile = () => {
     setFiles((prev) => prev.map((f) => (f.loading ? { ...f, loading: false, error: true } : f)));
   };
 
-  const { callApi } = useApi<FileResponseTypes>({
+  const { callApi } = usePwaApi<FileResponseTypes>({
     api: 'feature/ai/media',
     contentType: 'multipart/form-data',
     method: 'POST',

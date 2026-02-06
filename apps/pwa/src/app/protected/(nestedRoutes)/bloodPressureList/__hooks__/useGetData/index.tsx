@@ -7,8 +7,8 @@ import {
   ItemsTypes,
 } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
 import useSignDateState from '@hooks/__sign__/useSignDateState';
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 const useGetData = () => {
   const [initailPressureList, setInitailPressureList] = useState<BloodPressureType[]>([]);
@@ -33,7 +33,7 @@ const useGetData = () => {
     }
   };
 
-  const { isLoading, callApi } = useApi<InfoCalendarResponseTypes>({
+  const { isLoading, callApi } = usePwaApi<InfoCalendarResponseTypes>({
     method: 'GET',
     api: 'info/calendar',
     onSuccess: (v) => findCurrentList(v),

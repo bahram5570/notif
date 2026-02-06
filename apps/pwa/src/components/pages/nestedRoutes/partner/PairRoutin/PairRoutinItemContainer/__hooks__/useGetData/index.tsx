@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { RoutinItemResponseTypes } from '@components/pages/nestedRoutes/routin/RoutinItemContainer/__hooks__/useGetData/types';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 const useGetPairRoutinItemData = () => {
@@ -13,7 +13,7 @@ const useGetPairRoutinItemData = () => {
   const programId = params ? params.get('catId') : '';
   const api = searchData ? `widgets/womanpairprogram/item/info?${searchData}` : '';
 
-  const { callApi, isLoading, data } = useApi<RoutinItemResponseTypes>({
+  const { callApi, isLoading, data } = usePwaApi<RoutinItemResponseTypes>({
     api,
     method: 'GET',
     fetchOnMount: false,

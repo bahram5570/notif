@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { currentDate } from '@repo/core/utils/dates';
 
 import { RETENTION_EVENT } from '@constants/storage.constants';
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import { RETENTION_EVENT_DELAY_SECONDS } from './constants';
 

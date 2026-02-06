@@ -3,9 +3,9 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
-import useAnalytics from '@hooks/useAnalytics';
-import useCustomToast from '@hooks/useCustomToast';
 import useFileUpload from '@hooks/useFileUpload';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useRouter } from 'next/navigation';

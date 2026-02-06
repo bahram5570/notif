@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { NO_NEED_SUBSCRIPTION_PAGES_LIST } from '@constants/routes.constants';
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { usePathname, useRouter } from 'next/navigation';
 
 const useSubscriptionGuard = (remainDays?: number) => {

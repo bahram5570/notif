@@ -1,5 +1,5 @@
 import useProfileData from '@hooks/__profile__/useProfileData';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouteSequence } from '@repo/core/hooks/useRouteSequence';
 
 import { UseFinalStepWelcomingPropsType } from './type';
@@ -19,7 +19,7 @@ const useFinalStepWelcoming = ({ programId }: UseFinalStepWelcomingPropsType) =>
     ]);
   };
 
-  const { callApi, isLoading: finalStepLoading } = useApi({
+  const { callApi, isLoading: finalStepLoading } = usePwaApi({
     method: 'GET',
     fetchOnMount: false,
     onSuccess: successHandler,

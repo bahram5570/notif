@@ -1,9 +1,9 @@
-import http from '@services/http';
+import { pwaHttp } from '@repo/core/utils/pwaHttp';
 
 import { ActivationQuestionsDataTypes, ActivationResponseTypes } from './types';
 
 export const fetchActivationData = async (url: string) => {
-  const { data, error } = await http<ActivationResponseTypes>({ url });
+  const { data, error } = await pwaHttp<ActivationResponseTypes>({ url });
   const result: ActivationQuestionsDataTypes = { questionsData: { question: {}, reward: {} }, errorCode: null };
 
   if (data) {

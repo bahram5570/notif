@@ -2,7 +2,7 @@ import InfoIcon from '@assets/icons/info.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { externalLink } from '@utils/navigation';
 
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import { CalendarWidgetEnums } from '../../__hooks__/useCalendarGetData/CalendarEnums';
 import BiorhythmContainer from './BiorhythmContainer';

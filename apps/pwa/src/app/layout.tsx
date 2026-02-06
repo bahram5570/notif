@@ -1,17 +1,17 @@
 import './globals.css';
 
-// import AnalyticsProvider from '@providers/AnalyticsProvider';
 import CultureProvider from '@providers/CultureProvider';
 import ErrorProvider from '@providers/ErrorProvider';
 import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
 import ServiceWorkerProvider from '@providers/ServiceWorkerProvider';
-import ToastProvider from '@providers/ToastProvider';
 import WidgetActionsProvider from '@providers/WidgetActionsProvider';
 import { MAX_SCREEN_WIDTH, PORTAL_ID, PORTAL_SPLASH_ID } from '@repo/core/constants/app.constants';
+// import { AnalyticsProvider } from '@repo/core/providers/AnalyticsProvider';
 import { OperatingSystemProvider } from '@repo/core/providers/OperatingSystemProvider';
 import { PageNavigationProvider } from '@repo/core/providers/PageNavigationProvider';
 import { PreviewImageProvider } from '@repo/core/providers/PreviewImageProvider';
 import { ReactQueryProvider } from '@repo/core/providers/ReactQueryProvider';
+import { ToastProvider } from '@repo/core/providers/ToastProvider';
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 import Script from 'next/script';
@@ -56,29 +56,6 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         className="bg-impo_Neutral_Background"
         style={{ maxWidth: MAX_SCREEN_WIDTH, width: '100%', height: '100dvh', margin: 'auto' }}
       >
-        {/* // # Scrolls to top on initial render - client-side & server-side */}
-        {/* <Script>
-          {`
-            window.addEventListener('load', () => {
-              if (!window.location.hash) {
-                window.scrollTo(0, 0);
-              }
-            });
-
-            window.addEventListener('popstate', () => {
-              setTimeout(() => {
-                if (!window.location.hash) {
-                  window.scrollTo(0, 0);
-                }
-              }, 0);
-            });
-            
-            if ('scrollRestoration' in history) {
-              history.scrollRestoration = 'manual';
-            }
-          `}
-        </Script> */}
-
         <main>
           {/* <AnalyticsProvider> */}
           <OperatingSystemProvider>

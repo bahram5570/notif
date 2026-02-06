@@ -6,7 +6,7 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import MainPageLayout from '@components/MainPageLayout';
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import { SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 

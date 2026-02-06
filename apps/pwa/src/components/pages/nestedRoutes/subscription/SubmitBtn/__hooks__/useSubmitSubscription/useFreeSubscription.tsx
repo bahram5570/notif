@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import useApi from '@hooks/useApi';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouteSequence } from '@repo/core/hooks/useRouteSequence';
 
 import { FreeSubscriptionResponseTypes } from './types';
@@ -22,7 +22,7 @@ const useFreeSubscription = () => {
     updateProfileDateByDellay();
   };
 
-  const { isLoading, callApi, data } = useApi<FreeSubscriptionResponseTypes>({
+  const { isLoading, callApi, data } = usePwaApi<FreeSubscriptionResponseTypes>({
     api: `info/subscribtions/free/${id}`,
     queryKey: ['freeSubscription'],
     onSuccess: successHandler,

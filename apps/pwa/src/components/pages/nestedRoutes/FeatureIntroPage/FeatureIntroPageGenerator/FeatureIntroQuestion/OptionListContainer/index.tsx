@@ -1,5 +1,5 @@
 import CancelIcon from '@assets/icons/cancel.svg';
-import TickIcon from '@assets/icons/tickIcon.svg';
+import TickIcon from '@assets/shared/icons/tickIcon.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { OptionListContainerPropsType } from './type';

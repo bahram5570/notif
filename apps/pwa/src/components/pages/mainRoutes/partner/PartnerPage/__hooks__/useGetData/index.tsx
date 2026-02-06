@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { ChallengeResponseType } from './type';
 
@@ -12,7 +12,7 @@ const useGetData = () => {
     isLoading,
     data: partnerInfo,
     callApi,
-  } = useApi<ChallengeResponseType>({
+  } = usePwaApi<ChallengeResponseType>({
     method: 'GET',
     queryKey: ['partnerKey'],
     api: 'challenge/v1',

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { useRouter } from 'next/navigation';
 
 import { ContinueBtnNextActivationOnContinueTypes, NextActivationHandlerTypes } from './types';

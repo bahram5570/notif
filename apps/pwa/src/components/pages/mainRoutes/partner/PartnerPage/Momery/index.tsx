@@ -2,7 +2,7 @@ import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@repo/core/utils/scripts';
 
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import CustomLink from '../CustomLink';

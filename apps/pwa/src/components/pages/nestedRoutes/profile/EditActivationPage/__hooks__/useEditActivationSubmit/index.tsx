@@ -1,4 +1,4 @@
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { EditActivationPayloadTypes } from '../useEditActivationPayload/types';
@@ -10,7 +10,7 @@ const useEditActivationSubmit = () => {
     router.back();
   };
 
-  const { isLoading, callApi } = useApi({ api: 'info/activation/update', method: 'PUT', onSuccess: successHandler });
+  const { isLoading, callApi } = usePwaApi({ api: 'info/activation/update', method: 'PUT', onSuccess: successHandler });
 
   const submitHandler = (v: EditActivationPayloadTypes) => {
     let payload = {};

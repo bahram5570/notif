@@ -1,5 +1,5 @@
 import useSignDateState from '@hooks/__sign__/useSignDateState';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 const useSubmit = () => {
@@ -9,7 +9,7 @@ const useSubmit = () => {
   const successHandler = () => {
     router.back();
   };
-  const { callApi, isLoading } = useApi({ api: 'info/woman/weight', method: 'POST', onSuccess: successHandler });
+  const { callApi, isLoading } = usePwaApi({ api: 'info/woman/weight', method: 'POST', onSuccess: successHandler });
 
   const submitHandler = (weight: number) => {
     const selectedDate = calendarInitailSelectedDate;

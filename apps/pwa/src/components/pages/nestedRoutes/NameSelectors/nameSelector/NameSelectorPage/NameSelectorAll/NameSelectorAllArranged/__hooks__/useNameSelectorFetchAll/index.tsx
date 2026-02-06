@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { SelectNameGenderEnum } from '@services/selectNameServices/enums';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import useNameSelectorData from '../../../../../__hooks__/useNameSelectorData';
 import { NameSelectorApiHandlerTypes, NameSelectorApiInfoTypes, NameSelectorFetchAllResponseTypes } from './types';
@@ -40,7 +40,7 @@ const useNameSelectorFetchAll = () => {
     setApiInfo(null);
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     method: 'GET',
     fetchOnMount: false,
     onError: errorHandler,

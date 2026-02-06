@@ -1,4 +1,4 @@
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useParams } from 'next/navigation';
 
 import { SubmitResponsePropsType, UseSubmitPropsType } from './type';
@@ -6,7 +6,7 @@ import { SubmitResponsePropsType, UseSubmitPropsType } from './type';
 const useSubmit = ({ resetChild }: UseSubmitPropsType) => {
   const chatId = useParams()?.chatId;
 
-  const { callApi, isLoading, data } = useApi<SubmitResponsePropsType>({
+  const { callApi, isLoading, data } = usePwaApi<SubmitResponsePropsType>({
     api: `challenge/${chatId}/chat`,
     method: 'POST',
     onSuccess: resetChild,

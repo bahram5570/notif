@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
 import { SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
@@ -93,7 +93,7 @@ const useShareExperienceFollow = (experienceId?: string) => {
   const api =
     apiInfo === null ? '' : `shareeexperience/v3/profile/${apiInfo.userId}/${apiInfo.isFollow ? 'unfollow' : 'follow'}`;
 
-  const { callApi, isLoading: isFollowLoading } = useApi({
+  const { callApi, isLoading: isFollowLoading } = usePwaApi({
     api,
     method: 'GET',
     fetchOnMount: false,

@@ -1,5 +1,5 @@
-import useAnalytics from '@hooks/useAnalytics';
-import useApi from '@hooks/useApi';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { OtpInfoTypes } from '../../types';
 import { useRegisterStatusProps } from './types';
@@ -25,7 +25,7 @@ const useRegisterStatus = ({ identity, isPhone, otp1CompleteHandler }: useRegist
     isLoading: loading,
     callApi,
     data,
-  } = useApi({
+  } = usePwaApi({
     method: 'GET',
     fetchOnMount: false,
     queryKey: ['identity'],

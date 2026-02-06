@@ -1,6 +1,6 @@
 import { isLikedMaker } from './__utils__';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import useNameSelectorData from '../useNameSelectorData';
 import { IsLikedHandlerTypes } from './types';
@@ -24,13 +24,13 @@ const useNameSelectorLike = () => {
     }
   };
 
-  const { callApi: callAdd } = useApi({
+  const { callApi: callAdd } = usePwaApi({
     method: 'PUT',
     api: 'feature/babyname/favorite/add',
     onSuccess: () => successHandler(true),
   });
 
-  const { callApi: callRemove } = useApi({
+  const { callApi: callRemove } = usePwaApi({
     method: 'PUT',
     api: 'feature/babyname/favorite/remove',
     onSuccess: () => successHandler(false),

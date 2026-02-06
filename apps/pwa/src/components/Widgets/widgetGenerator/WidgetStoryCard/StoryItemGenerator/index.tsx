@@ -1,8 +1,8 @@
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useAnalytics from '@hooks/useAnalytics';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 

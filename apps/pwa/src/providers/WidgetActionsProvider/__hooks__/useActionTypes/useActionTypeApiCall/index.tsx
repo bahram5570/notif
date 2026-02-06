@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import useUpdateCycleCard from '@hooks/__cycle__/useUpdateCycleCard';
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import useActionComplete from '../useActionComplete';
 
@@ -30,7 +30,7 @@ const useActionTypeApiCall = (onActionComplete: () => void) => {
     removeQuery({ queryKey });
   };
 
-  const { callApi } = useApi({
+  const { callApi } = usePwaApi({
     method: 'GET',
     api: api || '',
     queryKey: queryKey,

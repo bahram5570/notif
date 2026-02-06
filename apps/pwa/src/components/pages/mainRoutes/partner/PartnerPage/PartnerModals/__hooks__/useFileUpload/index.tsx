@@ -1,5 +1,5 @@
 import { APP_VERSION } from '@constants/app.constants';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { FileDataHandlerTypes, FileResponseTypes, OptionsTypes } from './type';
 
@@ -18,7 +18,7 @@ const useFileUpload = (options?: OptionsTypes) => {
     }
   };
 
-  const { callApi, isLoading: uploadImageLoading } = useApi<FileResponseTypes>({
+  const { callApi, isLoading: uploadImageLoading } = usePwaApi<FileResponseTypes>({
     api: `${options?.api || 'profile/image'}?AppVersion=${APP_VERSION || ''}`,
     contentType: 'multipart/form-data',
     onSuccess: successHandler,

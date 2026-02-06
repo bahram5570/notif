@@ -1,4 +1,4 @@
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { RequestPartnerResponseType } from './type';
 
@@ -7,7 +7,7 @@ const useGetRequestData = () => {
     data,
     isLoading,
     callApi: getData,
-  } = useApi<RequestPartnerResponseType>({ method: 'GET', queryKey: ['partnerRequest'], api: 'partner/requests' });
+  } = usePwaApi<RequestPartnerResponseType>({ method: 'GET', queryKey: ['partnerRequest'], api: 'partner/requests' });
 
   return { data, isLoading, getData };
 };

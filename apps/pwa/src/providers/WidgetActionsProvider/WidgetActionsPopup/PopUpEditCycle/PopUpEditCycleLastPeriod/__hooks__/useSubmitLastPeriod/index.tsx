@@ -1,9 +1,9 @@
 import { toGregorianData } from '@repo/core/utils/dates';
 
 import useUpdateCycleCard from '@hooks/__cycle__/useUpdateCycleCard';
-import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
 import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { UseSubmitLastPeriodTypes } from './types';
 
@@ -18,7 +18,7 @@ const useSubmitLastPeriod = (editPageHandler: UseSubmitLastPeriodTypes) => {
     }
   };
 
-  const { callApi, isLoading } = useApi({ api: 'info/add/cycle/bystart', method: 'PUT', onSuccess: successHandler });
+  const { callApi, isLoading } = usePwaApi({ api: 'info/add/cycle/bystart', method: 'PUT', onSuccess: successHandler });
 
   const submitHandler = (v: string) => {
     let startTime = v;

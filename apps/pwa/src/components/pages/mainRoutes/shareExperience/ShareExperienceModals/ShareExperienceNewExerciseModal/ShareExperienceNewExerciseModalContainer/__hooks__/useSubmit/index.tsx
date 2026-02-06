@@ -1,4 +1,4 @@
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { NewExperienceResponseType, UseSubmitProps } from './types';
@@ -19,7 +19,7 @@ const useSubmit = ({ image, text, topicId, onSuccessNewHandler }: UseSubmitProps
     }
   };
 
-  const { isLoading: isSubmitLoading, callApi } = useApi<NewExperienceResponseType>({
+  const { isLoading: isSubmitLoading, callApi } = usePwaApi<NewExperienceResponseType>({
     api: 'shareeexperience/v3/experience',
     onSuccess: (v) => successHandler(v),
     method: 'POST',

@@ -1,9 +1,9 @@
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { ResponseAiChatWelcomingType } from './type';
 
 const useGetData = () => {
-  const { data, isLoading } = useApi<ResponseAiChatWelcomingType>({
+  const { data, isLoading } = usePwaApi<ResponseAiChatWelcomingType>({
     api: 'feature/ai/chat/welcomePage',
     queryKey: ['aiChatWelcomePage'],
     method: 'GET',

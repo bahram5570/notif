@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import useShareExperiencePageNo from '@components/pages/mainRoutes/shareExperience/ShareExperienceModals/ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/__hooks__/useShareExperiencePageNo';
 import { EXPERIENCES_PROFILE_PAGE_SIZE } from '@components/pages/mainRoutes/shareExperience/constants';
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { SelfExperienceDataType, UseSelfExperienceDataPropsType } from './type';
 
@@ -27,7 +27,7 @@ const useSelfExperienceData = ({ id, isSelf }: UseSelfExperienceDataPropsType) =
     ? `shareeexperience/v3/experience/self/${pageNo}/${EXPERIENCES_PROFILE_PAGE_SIZE}`
     : `shareeexperience/v3/profile/${id}/self/${pageNo}/${EXPERIENCES_PROFILE_PAGE_SIZE}`;
 
-  const { isLoading, callApi } = useApi<SelfExperienceDataType>({
+  const { isLoading, callApi } = usePwaApi<SelfExperienceDataType>({
     api: api,
     method: 'GET',
     fetchOnMount: false,

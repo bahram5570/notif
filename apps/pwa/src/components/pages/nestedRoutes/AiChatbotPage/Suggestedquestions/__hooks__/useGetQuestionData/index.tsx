@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { QuestionDataResponse, UseGetQuestionDataPropsType } from './type';
 
 const useGetQuestionData = ({ messageId }: UseGetQuestionDataPropsType) => {
   const api = messageId ? `feature/ai/chat/question/${messageId}` : '';
-  const { isLoading, data, callApi } = useApi<QuestionDataResponse>({
+  const { isLoading, data, callApi } = usePwaApi<QuestionDataResponse>({
     method: 'GET',
     api,
     queryKey: ['questionListData'],

@@ -1,6 +1,6 @@
 import useProfileData from '@hooks/__profile__/useProfileData';
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouteSequence } from '@repo/core/hooks/useRouteSequence';
 
 import { PairRoutinResponsive } from '../useGetData/type';
@@ -26,7 +26,7 @@ const useFinalStepWelcoming = ({ programId }: UseFinalStepWelcomingPropsType) =>
     ]);
   };
 
-  const { callApi, isLoading: finalStepLoading } = useApi({
+  const { callApi, isLoading: finalStepLoading } = usePwaApi({
     method: 'GET',
     fetchOnMount: false,
     onSuccess: successHandler,

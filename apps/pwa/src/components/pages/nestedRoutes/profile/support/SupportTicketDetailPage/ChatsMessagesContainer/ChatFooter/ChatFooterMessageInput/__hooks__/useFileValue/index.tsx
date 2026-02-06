@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import useApi from '@hooks/useApi';
 import useFileUpload from '@hooks/useFileUpload';
 import { FileDataHandlerTypes } from '@hooks/useFileUpload/types';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useParams, useRouter } from 'next/navigation';
 
 import useUpdateChatReactQuery from '../useUpdateChatReactQuery';
@@ -23,7 +23,7 @@ const useFileValue = () => {
     router.back();
   };
 
-  const { callApi, isLoading: fileLoading } = useApi({
+  const { callApi, isLoading: fileLoading } = usePwaApi({
     method: 'POST',
     onSuccess: successHandler,
     api: `support/ticket/${ticketId}`,

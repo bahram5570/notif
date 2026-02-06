@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { ClinicInfoResponseTypes } from './types';
@@ -18,7 +18,7 @@ const useGetDataClinicInfo = (clinicInfo: string) => {
     router.replace('/not-found');
   };
 
-  const { callApi, isLoading } = useApi<ClinicInfoResponseTypes>({
+  const { callApi, isLoading } = usePwaApi<ClinicInfoResponseTypes>({
     onSuccess: successHandler,
     onError: errorHandler,
     api: 'advice/ticketInfo',

@@ -1,4 +1,4 @@
-import InfoIcon from '@assets/icons/infoIcon.svg';
+import InfoIcon from '@assets/shared/icons/infoIcon.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 const SelectedDaySignsNotAllowed = () => {

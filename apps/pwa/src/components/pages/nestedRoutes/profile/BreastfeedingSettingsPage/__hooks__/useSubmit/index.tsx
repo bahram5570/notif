@@ -1,6 +1,6 @@
 import { ChildTypeEnum } from '@constants/activation.constants';
-import useApi from '@hooks/useApi';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { SubmitHandlerPropsType } from './type';
@@ -14,7 +14,7 @@ const useSubmit = ({ childBirthDate, childName, childType }: SubmitHandlerPropsT
     router.back();
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     method: 'PUT',
     onSuccess: successHandler,
     api: 'info/breastfeeding/edit',

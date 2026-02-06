@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import QuestionGenerator from './QuestionGenerator';
 import useSubmit from './__hooks__/useSubmit';

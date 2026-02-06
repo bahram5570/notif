@@ -6,10 +6,10 @@ import { registerPayloadUpdater } from '@utils/register';
 import { FetchedUserTypes } from '@components/activation/CompleteRegisterContainer/types';
 import { OtpStatusTypes } from '@components/activation/pages/otp/Otp2Container/__hooks__/useOtpStatus/types';
 import { APP_VERSION } from '@constants/app.constants';
-import useApi from '@hooks/useApi';
 import useCountDown from '@hooks/useCountDown';
 import useCulture from '@hooks/useCulture';
 import { ActivationPayloadTypes } from '@providers/__activation__/types';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { NotificationRewardTypes, RegisterResponseTypes } from './types';
 
@@ -53,7 +53,7 @@ const useRegister = (payload: ActivationPayloadTypes, onCallBack?: (v: OtpStatus
     }
   };
 
-  const { callApi: callLoginApi } = useApi<LoginResponseTypes>({
+  const { callApi: callLoginApi } = usePwaApi<LoginResponseTypes>({
     method: 'POST',
     onError: errorHandler,
     onSuccess: completeHandler,
@@ -85,7 +85,7 @@ const useRegister = (payload: ActivationPayloadTypes, onCallBack?: (v: OtpStatus
     }
   };
 
-  const { callApi: callRegisterApi } = useApi({
+  const { callApi: callRegisterApi } = usePwaApi({
     method: 'POST',
     onError: errorHandler,
     onSuccess: registerSuccessHandler,

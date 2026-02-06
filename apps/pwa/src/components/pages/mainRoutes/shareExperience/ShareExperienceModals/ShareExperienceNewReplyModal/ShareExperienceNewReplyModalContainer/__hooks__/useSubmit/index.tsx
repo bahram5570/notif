@@ -1,8 +1,8 @@
 import { newCommentMaker } from './__utils__';
 
 import { QueryExperiencesDataTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { DataRepliesListTypes } from '../../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/CommentsGenerator/ReplyGenerator/__hooks__/useReplyList/types';
@@ -75,7 +75,7 @@ const useSubmit = ({ text, data }: UseSubmitProps) => {
       break;
   }
 
-  const { callApi, isLoading } = useApi({ api, method: 'POST', onSuccess: successHandler });
+  const { callApi, isLoading } = usePwaApi({ api, method: 'POST', onSuccess: successHandler });
 
   const submitHandler = () => {
     callApi({ text });

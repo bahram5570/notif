@@ -2,7 +2,7 @@
 
 import { createContext, useEffect, useState } from 'react';
 
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { useRouter } from 'next/navigation';
 
 import {

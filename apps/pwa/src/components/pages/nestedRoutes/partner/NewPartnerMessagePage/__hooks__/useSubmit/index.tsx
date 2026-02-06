@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { SideEnum } from '../../MessageListContainer/Message/constants';
 import { ResponseType, UseSubmitPropsType } from './type';
@@ -23,7 +23,7 @@ const useSubmit = ({ newMessageHandler, restHandler, chatToken }: UseSubmitProps
     }
   };
 
-  const { callApi, isLoading } = useApi<ResponseType>({
+  const { callApi, isLoading } = usePwaApi<ResponseType>({
     api: 'pair/chat/message',
     method: 'POST',
     onSuccess: (v) => onSuccess(v),

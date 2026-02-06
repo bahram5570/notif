@@ -1,5 +1,5 @@
 import MainPageLayout from '@components/MainPageLayout';
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import SignsContainer from '../SignsContainer';
 import SignsSkeleton from '../SignsSkeleton';

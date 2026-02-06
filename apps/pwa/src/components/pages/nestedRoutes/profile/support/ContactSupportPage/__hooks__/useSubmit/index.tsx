@@ -1,5 +1,5 @@
 import { APP_VERSION } from '@constants/app.constants';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
@@ -16,7 +16,7 @@ const useSubmit = () => {
     route.replace(`/protected/supportTicket/${id}`);
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     method: 'POST',
     api: 'support/chat',
     onSuccess: (v: { id: string }) => successHandler(v.id),

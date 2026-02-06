@@ -1,4 +1,4 @@
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { PartnerCodeResponseType } from '../useGetdata/type';
 
@@ -7,7 +7,7 @@ const useRefreshCode = () => {
     data: refreshCode,
     isLoading: refreshLoading,
     callApi,
-  } = useApi<PartnerCodeResponseType>({
+  } = usePwaApi<PartnerCodeResponseType>({
     method: 'PUT',
     api: 'partner/code',
   });

@@ -1,6 +1,6 @@
 import { APP_VERSION } from '@constants/app.constants';
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 const useDelete = () => {
@@ -11,7 +11,7 @@ const useDelete = () => {
     router.back();
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     method: 'POST',
     onSuccess: onSuccessHandler,
     api: `info/unpair?AppVersion=${APP_VERSION || ''}`,

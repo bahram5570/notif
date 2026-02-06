@@ -4,9 +4,9 @@ import { phaseChangePayloadUpdater } from './__utils__';
 
 import { getUserCookie, getUserInfoCookie } from '@actions/userCookies.actions';
 import { FetchedUserTypes } from '@components/activation/CompleteRegisterContainer/types';
-import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { UsePhaseChangeProps } from './types';
 
@@ -27,7 +27,7 @@ const usePhaseChange = ({ payload, api }: UsePhaseChangeProps) => {
     }
   };
 
-  const { isLoading, callApi } = useApi({
+  const { isLoading, callApi } = usePwaApi({
     api,
     method: 'PUT',
     onSuccess: phaseChangeSuccessHandler,

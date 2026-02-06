@@ -1,6 +1,6 @@
-import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { RoutinResponseTypes } from '../../../../../__hooks__/useGetData/types';
 import { CommentItemType, CommentsResponseTypes } from '../../../__hooks__/useGetCommentData/type';
@@ -37,7 +37,7 @@ const useSubmit = ({ programId }: { programId: string }) => {
     }
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     api: 'widgets/program/comment',
     method: 'POST',
     onSuccess: (v: CommentItemType) => successHandler(v),

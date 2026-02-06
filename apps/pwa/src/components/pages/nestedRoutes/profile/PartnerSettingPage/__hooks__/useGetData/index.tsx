@@ -1,9 +1,9 @@
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { ResponsePropsType } from './type';
 
 const useGetData = () => {
-  const { isLoading, data } = useApi<ResponsePropsType>({
+  const { isLoading, data } = usePwaApi<ResponsePropsType>({
     method: 'GET',
     queryKey: ['partnerSection'],
     api: 'partner',

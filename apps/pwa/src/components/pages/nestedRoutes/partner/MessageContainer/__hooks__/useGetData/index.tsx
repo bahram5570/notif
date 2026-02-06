@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { MessageResponseType, MessageType } from './type';
 
@@ -11,7 +11,7 @@ const useGetData = () => {
     const lastTwo = v.messages.slice(-2);
     setData(lastTwo);
   };
-  const { isLoading } = useApi<MessageResponseType>({
+  const { isLoading } = usePwaApi<MessageResponseType>({
     method: 'GET',
     queryKey: ['messagePartner'],
     api: 'message',

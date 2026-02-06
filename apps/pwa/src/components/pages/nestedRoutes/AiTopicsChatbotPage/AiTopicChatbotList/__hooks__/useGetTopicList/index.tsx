@@ -1,9 +1,9 @@
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { TopicListResponseType } from './type';
 
 const useGetTopicList = () => {
-  const { data, isLoading } = useApi<TopicListResponseType>({
+  const { data, isLoading } = usePwaApi<TopicListResponseType>({
     api: 'feature/ai/chat/topic/list',
     method: 'GET',
     queryKey: ['aiChatTopicList'],

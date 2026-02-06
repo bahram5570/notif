@@ -1,4 +1,4 @@
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { UseDeletePropsType } from './type';
@@ -15,7 +15,7 @@ const useDelete = ({ api, onSuccess }: UseDeletePropsType) => {
     }
   };
 
-  const { callApi } = useApi({
+  const { callApi } = usePwaApi({
     method: 'POST',
     onSuccess: (v: boolean) => successHandler(v),
     api,

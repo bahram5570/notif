@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { RoutinResponseTypes } from './types';
@@ -18,7 +18,7 @@ const useGetData = () => {
     newQuery({ queryKey: ['routinItems'], payload: v });
   };
 
-  const { callApi, isLoading } = useApi<RoutinResponseTypes>({
+  const { callApi, isLoading } = usePwaApi<RoutinResponseTypes>({
     api,
     method: 'GET',
     fetchOnMount: false,

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { PAGE_SIZE } from './constants';
 import { CommentsResponseTypes, UseGetCommentDataPropsType } from './type';
@@ -22,7 +22,7 @@ const useGetCommentData = ({ programId }: UseGetCommentDataPropsType) => {
     }
   };
 
-  const { callApi, isLoading } = useApi<CommentsResponseTypes>({
+  const { callApi, isLoading } = usePwaApi<CommentsResponseTypes>({
     api: `widgets/program/comment?programId=${programId}&pageNo=${pageNo}&pageSize=${PAGE_SIZE}`,
     method: 'GET',
     queryKey: ['routinComments'],

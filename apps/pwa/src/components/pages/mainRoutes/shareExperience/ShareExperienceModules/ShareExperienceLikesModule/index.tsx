@@ -2,7 +2,7 @@ import LikeEmptyIcon from '@assets/icons/like.svg';
 import LikeFillIcon from '@assets/icons/likeFill.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import { ShareExperienceStateEnum } from '../../ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/enum';
 import useLikes from './__hooks__/useLikes';

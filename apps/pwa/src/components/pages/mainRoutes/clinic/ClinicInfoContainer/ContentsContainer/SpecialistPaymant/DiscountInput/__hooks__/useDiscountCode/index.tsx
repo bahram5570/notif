@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useParams } from 'next/navigation';
 
 import { ClinicInfoResponseTypes } from '../../../../../__hooks__/useGetDataClinicInfo/types';
@@ -29,7 +29,7 @@ const useDiscountCode = ({ id, approvedCodeHandler }: UseDiscountCodeProps) => {
     toast.notifyToastHandler({ message: v.discountMessage });
   };
 
-  const { callApi, isLoading } = useApi<ApplyDiscountResponseTypes>({
+  const { callApi, isLoading } = usePwaApi<ApplyDiscountResponseTypes>({
     api: 'advice/applyDiscount',
     onSuccess: successHandler,
     method: 'POST',

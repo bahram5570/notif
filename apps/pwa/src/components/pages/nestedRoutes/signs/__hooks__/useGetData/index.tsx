@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { signsDaysListMaker, signsItemsListMaker, sortedSignsListMaker } from './__utils__';
 
 import { InfoCalendarResponseTypes } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
-import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { InfoListTypes } from './types';
 
@@ -22,7 +22,7 @@ const useGetData = () => {
     setInfoList(sortedSignsLis);
   };
 
-  const { isLoading } = useApi<InfoCalendarResponseTypes>({
+  const { isLoading } = usePwaApi<InfoCalendarResponseTypes>({
     method: 'GET',
     api: 'info/calendar',
     onSuccess: successHandler,

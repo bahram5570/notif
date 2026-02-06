@@ -1,9 +1,9 @@
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { ActiveRoutinResponseType } from './type';
 
 const useGetActiveRoutinData = () => {
-  const { data, isLoading } = useApi<ActiveRoutinResponseType>({
+  const { data, isLoading } = usePwaApi<ActiveRoutinResponseType>({
     api: 'widgets/program/pages/active',
     method: 'GET',
     queryKey: ['activeRoutin'],

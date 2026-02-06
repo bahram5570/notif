@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { MEMORY_PAGE_SIZE, PAGE_NO } from './constants';
 import { MemoriesDataType, ResponsePropsType } from './type';
@@ -28,7 +28,7 @@ const useGetData = () => {
 
   const api = `memory/${pageNo}/${MEMORY_PAGE_SIZE}`;
 
-  const { callApi, isLoading: apiLoading } = useApi<ResponsePropsType>({
+  const { callApi, isLoading: apiLoading } = usePwaApi<ResponsePropsType>({
     api,
     method: 'GET',
     onSuccess: successHandler,

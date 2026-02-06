@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { UseIsSeenProps } from './types';
 
@@ -12,7 +12,7 @@ const useIsSeen = (props: UseIsSeenProps) => {
   const timer = useRef<NodeJS.Timeout>();
   const [isSeen, setIsSeen] = useState(props.isSeen);
   const [counter, setCounter] = useState(initialCounterTime);
-  const { callApi } = useApi({ api: 'archive/hint/seen', method: 'POST' });
+  const { callApi } = usePwaApi({ api: 'archive/hint/seen', method: 'POST' });
 
   useEffect(() => {
     timer.current = setInterval(() => {

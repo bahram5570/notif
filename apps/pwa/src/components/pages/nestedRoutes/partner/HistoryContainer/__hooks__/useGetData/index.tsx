@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { CHALLENGE_PAGE_SIZE } from './constants';
 import { ChallengeDataPropsType, ResponsePropsType } from './type';
@@ -28,7 +28,7 @@ const useGetData = () => {
 
   const api = `challenge/archive/${pageNo}/${CHALLENGE_PAGE_SIZE}`;
 
-  const { callApi, isLoading: apiLoading } = useApi<ResponsePropsType>({
+  const { callApi, isLoading: apiLoading } = usePwaApi<ResponsePropsType>({
     api,
     method: 'GET',
     onSuccess: successHandler,

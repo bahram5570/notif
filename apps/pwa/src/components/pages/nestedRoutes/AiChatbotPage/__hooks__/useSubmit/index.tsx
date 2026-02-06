@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import useAichatbotHistoryManager from '@hooks/__aichatbot__/useAichatbotHistoryManager';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import useEventSource from '../useEventSource';
 import useShowErrorMessage from '../useShowErrorMessage';
@@ -31,7 +31,7 @@ const useSubmit = () => {
     streamHandler({ id: v.messageId });
   };
 
-  const { callApi, isLoading: loading } = useApi<NewMessageResponse>({
+  const { callApi, isLoading: loading } = usePwaApi<NewMessageResponse>({
     method: 'POST',
     api: 'feature/ai/v2/sendstreammessage',
     onSuccess: (v: NewMessageResponse) => successHandler(v),

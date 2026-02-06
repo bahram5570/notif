@@ -1,6 +1,6 @@
 import { getFirebaseCookieToken } from '@utils/cookies';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { SubmitHandlerTypes, SuccessHandlerTypes, UseValidationProps } from './types';
 
@@ -17,7 +17,7 @@ const useValidation = ({ validationCompleteHandler, otpStatusHandler, isRegister
 
   const api = isRegister ? 'customerAccount/Validate' : 'customerAccount/ValidateIdentity';
 
-  const { isLoading: isValidateLoading, callApi } = useApi({ api, method: 'POST', onSuccess: successHandler });
+  const { isLoading: isValidateLoading, callApi } = usePwaApi({ api, method: 'POST', onSuccess: successHandler });
 
   const submitHandler: SubmitHandlerTypes = (code) => {
     const payload = { identity, code, phoneModel: '', deviceToken: getFirebaseCookieToken() };

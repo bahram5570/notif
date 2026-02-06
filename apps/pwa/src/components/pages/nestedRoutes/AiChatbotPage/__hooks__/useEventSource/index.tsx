@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { baseUrl } from '@services/http';
+import { baseUrl } from '@repo/core/utils/pwaHttp';
 
 import { getUserCookie } from '@actions/userCookies.actions';
 import { EventSource } from 'eventsource';

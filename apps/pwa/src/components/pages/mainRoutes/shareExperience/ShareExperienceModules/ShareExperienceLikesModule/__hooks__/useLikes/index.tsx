@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { handleLikeInfo, replyLikeCallApi } from './__utils__';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import useLikeComment from '../useLikeComment';
 import useLikeExeprience from '../useLikeExeprience';
@@ -47,7 +47,7 @@ const useLikes = (props: UseLikesProps) => {
     setApiInfo({ api: apiResult, method: newApi.method });
   };
 
-  const { callApi: likeCallApi } = useApi({ api: apiInfo?.api || '', method: apiInfo?.method || 'POST' });
+  const { callApi: likeCallApi } = usePwaApi({ api: apiInfo?.api || '', method: apiInfo?.method || 'POST' });
 
   useEffect(() => {
     if (apiInfo) {

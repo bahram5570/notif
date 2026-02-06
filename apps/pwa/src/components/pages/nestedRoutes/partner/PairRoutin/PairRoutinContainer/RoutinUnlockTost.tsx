@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import TickIcon from '@assets/icons/tickIcon.svg';
+import TickIcon from '@assets/shared/icons/tickIcon.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { convertToPersianOrdinal } from '@utils/numbers';
 

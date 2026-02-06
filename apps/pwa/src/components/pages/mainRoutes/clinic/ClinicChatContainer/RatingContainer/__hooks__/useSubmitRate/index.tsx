@@ -1,6 +1,6 @@
-import useApi from '@hooks/useApi';
 import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
@@ -26,7 +26,7 @@ const useSubmitRate = ({ rate, description, feedbackValues }: UseSubmitRateProps
     }
   };
 
-  const { callApi, isLoading: isRateLoading } = useApi({
+  const { callApi, isLoading: isRateLoading } = usePwaApi({
     method: 'POST',
     onSuccess: successHandler,
     api: `advice/ticket/${ticketId}/DrRate`,

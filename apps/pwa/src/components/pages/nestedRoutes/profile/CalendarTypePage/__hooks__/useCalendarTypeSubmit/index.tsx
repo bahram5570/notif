@@ -1,7 +1,7 @@
-import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
 import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 const useCalendarTypeSubmit = (calendarType: CalendarTypeEnum) => {
@@ -15,7 +15,7 @@ const useCalendarTypeSubmit = (calendarType: CalendarTypeEnum) => {
     router.back();
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     method: 'PUT',
     onSuccess: successHandler,
     api: 'profile/woman/info',

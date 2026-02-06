@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import { EXPERIENCES_PAGE_SIZE } from '@components/pages/mainRoutes/shareExperience/constants';
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { ExperiencesResponseTypes, useGetDataPropsType } from './type';
 
@@ -24,7 +24,7 @@ const useGetData = ({ topicId }: useGetDataPropsType) => {
 
   const api = `shareeexperience/v3/topic/${topicId}/${pageNo}/${EXPERIENCES_PAGE_SIZE}`;
 
-  const { callApi, isLoading: apiLoading } = useApi<ExperiencesResponseTypes>({
+  const { callApi, isLoading: apiLoading } = usePwaApi<ExperiencesResponseTypes>({
     api,
     method: 'GET',
     fetchOnMount: false,

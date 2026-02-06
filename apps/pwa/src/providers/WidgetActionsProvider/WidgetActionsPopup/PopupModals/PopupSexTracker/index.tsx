@@ -5,8 +5,8 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 
 import OptionButton from '@components/ui/OptionButton';
-import useAnalytics from '@hooks/useAnalytics';
 import useWidgetActions from '@hooks/useWidgetActions';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import PopupTwoStepsContainer from '../PopupTwoStepsContainer';
 import { PopupSexTrackerProps } from './types';

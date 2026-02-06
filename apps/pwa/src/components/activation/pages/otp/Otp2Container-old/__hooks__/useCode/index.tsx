@@ -3,8 +3,8 @@ import { useEffect } from 'react';
 import { toEnglishNumbers } from '@repo/core/utils/numbers';
 import { getFirebaseCookieToken } from '@utils/cookies';
 
-import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { SuccessHandlerTypes, UseCodeProps } from './types';
 
@@ -26,7 +26,7 @@ const useCode = ({ identity, isRegister }: UseCodeProps) => {
   };
   const api = isRegister ? 'customerAccount/GetIdentity' : 'customerAccount/setIdentity';
 
-  const { callApi } = useApi({
+  const { callApi } = usePwaApi({
     onSuccess: successHandler,
     method,
     api,

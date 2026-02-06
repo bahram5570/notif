@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import Bookmark from '@components/ui/Bookmark';
-import useAnalytics from '@hooks/useAnalytics';
-import useApi from '@hooks/useApi';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { ApiInfoTypes, WidgetHintCardBookmarkProps } from './types';
 
@@ -23,7 +23,7 @@ const WidgetHintCardBookmark = (props: WidgetHintCardBookmarkProps) => {
     }
   };
 
-  const { callApi } = useApi({ api: apiInfo?.api || '', method: apiInfo?.method || 'DELETE' });
+  const { callApi } = usePwaApi({ api: apiInfo?.api || '', method: apiInfo?.method || 'DELETE' });
 
   useEffect(() => {
     if (apiInfo) {

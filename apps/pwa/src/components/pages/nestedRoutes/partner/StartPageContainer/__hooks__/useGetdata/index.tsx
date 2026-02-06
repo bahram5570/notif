@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { PartnerCodeResponseType } from './type';
 
@@ -9,7 +9,7 @@ const useGetData = () => {
     data,
     isLoading,
     callApi: getData,
-  } = useApi<PartnerCodeResponseType>({
+  } = usePwaApi<PartnerCodeResponseType>({
     method: 'GET',
     api: 'partner/code',
     queryKey: ['partnerCode'],

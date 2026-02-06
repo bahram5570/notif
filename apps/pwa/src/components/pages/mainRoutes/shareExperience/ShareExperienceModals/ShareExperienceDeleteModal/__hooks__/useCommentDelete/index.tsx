@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { QueryExperiencesDataTypes } from '../../../../ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
@@ -46,7 +46,7 @@ const useCommentDelete = () => {
   };
 
   const api = `shareeexperience/v3/experience/${idInfo?.shareId}/comments/${idInfo?.commentId}`;
-  const { callApi, isLoading: isCommentLoading } = useApi({
+  const { callApi, isLoading: isCommentLoading } = usePwaApi({
     api,
     method: 'DELETE',
     onError: errorHandler,

@@ -2,7 +2,7 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
 import ShareExperienceToast from '@components/pages/mainRoutes/shareExperience/ShareExperienceModules/ShareExperienceToast';
 import OverlayBar from '@components/ui/OverlayBar';
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import { NewReplyBtnProps } from './types';
 

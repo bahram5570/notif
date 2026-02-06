@@ -5,16 +5,16 @@ import {
   STORY_CARD_DATA_NAME,
   STORY_MOOD_TRACKER_NAME,
 } from '@components/Widgets/widgetGenerator/WidgetStoryCard/constants';
-import useApi from '@hooks/useApi';
 import { WidgetStoryTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 const { gDate } = currentDate();
 
 const useToggleMoodTracker = () => {
   const { getQuery, updateQuery } = useCustomReactQuery();
-  const { callApi: callAddApi } = useApi({ api: 'feature/moodtracker/mood', method: 'POST' });
-  const { callApi: callDeleteApi } = useApi({ api: 'feature/moodtracker/mood', method: 'DELETE' });
+  const { callApi: callAddApi } = usePwaApi({ api: 'feature/moodtracker/mood', method: 'POST' });
+  const { callApi: callDeleteApi } = usePwaApi({ api: 'feature/moodtracker/mood', method: 'DELETE' });
 
   const selectHandler = (isSelected: boolean, type: number) => {
     if (isSelected) {

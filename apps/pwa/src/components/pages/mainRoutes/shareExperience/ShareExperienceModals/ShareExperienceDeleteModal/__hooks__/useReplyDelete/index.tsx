@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { DataRepliesListTypes } from '../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/CommentsGenerator/ReplyGenerator/__hooks__/useReplyList/types';
@@ -35,7 +35,7 @@ const useReplyDelete = () => {
   };
 
   const api = `shareeexperience/v3/experience/${idInfo?.shareId}/comment/${idInfo?.commentId}/reply/${idInfo?.replyId}`;
-  const { callApi, isLoading: isReplyLoading } = useApi({
+  const { callApi, isLoading: isReplyLoading } = usePwaApi({
     api,
     method: 'DELETE',
     onError: errorHandler,

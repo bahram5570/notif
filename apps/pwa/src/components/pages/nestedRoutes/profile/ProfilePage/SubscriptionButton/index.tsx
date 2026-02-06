@@ -2,7 +2,7 @@ import CrownIcon from '@assets/icons/crown.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import Link from 'next/link';

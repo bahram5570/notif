@@ -1,6 +1,6 @@
 import SignGenerator from '@components/SignGenerator';
 import WidgetCardContainer from '@components/Widgets/WidgetCardContainer';
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import useSelectedSigns from './__hooks__/useSelectedSigns';
 import { CategoryGeneratorProps, SelectedSignsHandlerTypes } from './types';

@@ -1,9 +1,9 @@
 import { toGregorianData } from '@repo/core/utils/dates';
 
 import { APP_VERSION } from '@constants/app.constants';
-import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
 import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { ItemType } from '../useGetData/type';
@@ -25,7 +25,7 @@ const useSubmit = ({ noteId }: UseSubmitPropsType) => {
 
   const method = isEditMode ? 'POST' : 'PUT';
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     api: `date/note?AppVersion=${APP_VERSION || ''}`,
     method: method,
     onSuccess: successHandler,

@@ -4,9 +4,9 @@ import { registerPayloadUpdater } from '@utils/register';
 
 import { getUserCookie, getUserInfoCookie } from '@actions/userCookies.actions';
 import { FetchedUserTypes } from '@components/activation/CompleteRegisterContainer/types';
-import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
 import { ActivationPayloadTypes } from '@providers/__activation__/types';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { UpdateOldUserSuccessHandlerTypes } from './types';
 
@@ -27,7 +27,7 @@ const useUpdateOldUser = (payload: ActivationPayloadTypes) => {
     }
   };
 
-  const { isLoading, callApi } = useApi({
+  const { isLoading, callApi } = usePwaApi({
     method: 'PUT',
     api: 'info/v2/update',
     onSuccess: updateOldUserSuccessHandler,

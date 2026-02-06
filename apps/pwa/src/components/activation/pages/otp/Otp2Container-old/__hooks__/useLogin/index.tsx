@@ -5,9 +5,9 @@ import { getFirebaseCookieToken } from '@utils/cookies';
 
 import { UserCookieTypes, UserInfoCookieTypes } from '@actions/userCookies.actions';
 import { APP_VERSION } from '@constants/app.constants';
-import useApi from '@hooks/useApi';
 import useCountDown from '@hooks/useCountDown';
 import useCulture from '@hooks/useCulture';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { OTP_COUNT_DOWN_TIME } from '../../constants';
 import { ForgotSuccessHandlerTypes, LoginSuccessHandlerTypes, UseLoginPros } from './types';
@@ -43,7 +43,7 @@ const useLogin = ({ identity, password, otpStatusHandler, onSubmitLogin }: UseLo
     startCounter();
   };
 
-  const { isLoading: isLoginLoading, callApi: callLoginApi } = useApi({
+  const { isLoading: isLoginLoading, callApi: callLoginApi } = usePwaApi({
     onError: () => otpStatusHandler('wrong'),
     api: 'CustomerAccount/Loginv6',
     onSuccess: loginSuccessHandler,
@@ -65,7 +65,7 @@ const useLogin = ({ identity, password, otpStatusHandler, onSubmitLogin }: UseLo
     }
   };
 
-  const { isLoading: forgotLoading, callApi: callForgetApi } = useApi({
+  const { isLoading: forgotLoading, callApi: callForgetApi } = usePwaApi({
     onError: () => otpStatusHandler('wrong'),
     onSuccess: forgotSuccessHandler,
     api: 'CustomerAccount/forgot',

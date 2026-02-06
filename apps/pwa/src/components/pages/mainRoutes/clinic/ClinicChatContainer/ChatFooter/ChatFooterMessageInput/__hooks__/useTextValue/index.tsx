@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import useUpdateChatReactQuery from '../useUpdateChatReactQuery';
 
@@ -17,7 +17,7 @@ const useTextValue = (ticketId: string) => {
     setText('');
   };
 
-  const { callApi, isLoading: textLoading } = useApi({
+  const { callApi, isLoading: textLoading } = usePwaApi({
     method: 'PUT',
     onSuccess: successHandler,
     api: `advice/ticket/${ticketId}`,

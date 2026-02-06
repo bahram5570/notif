@@ -4,7 +4,7 @@ import { createContext, useEffect, useState } from 'react';
 
 import { convertToPersianOrdinal } from '@utils/numbers';
 
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 
 import { initailValue } from './constant';
 import { CurrentRoutinIndexContextPropsType, RoutinState } from './type';

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { ApiInfoTypes, UseInterfaceCodeProps } from './types';
@@ -33,7 +33,7 @@ const useInterfaceCode = ({ onComplete }: UseInterfaceCodeProps) => {
     setApiInfo(null);
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     method: 'GET',
     fetchOnMount: false,
     onError: errorHandler,

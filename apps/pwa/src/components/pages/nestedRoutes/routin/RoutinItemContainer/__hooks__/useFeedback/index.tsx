@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { onSubmitType } from '@components/FeedbackModal/type';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { ProgramRateStatusEnum } from '../../../enum';
@@ -23,7 +23,7 @@ const useFeedback = ({ programId }: UseFeedbackPropsType) => {
     }, 0);
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     api: 'widgets/program/rate',
     method: 'POST',
     onSuccess: successHandler,

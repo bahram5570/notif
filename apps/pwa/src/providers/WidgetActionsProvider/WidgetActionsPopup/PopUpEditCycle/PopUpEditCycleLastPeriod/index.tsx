@@ -3,8 +3,8 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import DateModule from '@components/activation/DateModule';
-import useAnalytics from '@hooks/useAnalytics';
 import useDateIntervals from '@providers/__activation__/ActivationProvider/__hooks__/useDateIntervals';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import useSubmitLastPeriod from './__hooks__/useSubmitLastPeriod';
 import { PopUpEditCycleLastPeriodProps } from './types';

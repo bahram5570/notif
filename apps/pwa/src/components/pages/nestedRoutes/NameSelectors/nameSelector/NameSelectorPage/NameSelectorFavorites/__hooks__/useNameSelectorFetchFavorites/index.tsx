@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import useNameSelectorData from '../../../../__hooks__/useNameSelectorData';
 import { FavoriteResponseTypes } from './types';
@@ -17,7 +17,7 @@ const useNameSelectorFetchFavorites = () => {
     setApi('');
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     api,
     method: 'GET',
     queryKey: [api],

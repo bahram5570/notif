@@ -1,9 +1,9 @@
 import { currentDate, toGregorianData } from '@repo/core/utils/dates';
 
-import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
 import { SAMPLE_CYCLE_STORAGE_NAME } from '@providers/__activation__/ActivationCrProvider/__constants__/activationCrContants';
 import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { CreateSampleResponse, UseCreateSampleProps } from './types';
 
@@ -21,7 +21,7 @@ const useCreateSample = ({ payload }: UseCreateSampleProps) => {
     error: createCycleError,
     callApi,
     data,
-  } = useApi<CreateSampleResponse>({
+  } = usePwaApi<CreateSampleResponse>({
     method: 'POST',
     api: 'widgets/sample',
     onSuccess: onSuccessHandler,

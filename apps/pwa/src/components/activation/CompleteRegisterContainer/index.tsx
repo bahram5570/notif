@@ -1,6 +1,6 @@
 import useGoalFinder from '@hooks/__activation__/useGoalFinder';
-import useApi from '@hooks/useApi';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import AccessNotificationContainer from '../pages/AccessNotificationContainer';
 import PartnerCodeContainer from '../pages/PartnerCodeContainer';
@@ -37,7 +37,7 @@ const CompleteRegisterContainer = ({
     partnerCodeCompleteHandler();
   };
 
-  const { callApi, isLoading } = useApi({ api: 'partner/create', method: 'POST', onSuccess: successHandler });
+  const { callApi, isLoading } = usePwaApi({ api: 'partner/create', method: 'POST', onSuccess: successHandler });
 
   return (
     <div

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { PAGE_SIZE } from '@components/infiniteScrollContainer/constatns';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { ItemPropsType, ResponseMessageDataType } from '../../MessageListContainer/Message/type';
 import { UseGetMessageDataPropsType } from './type';
@@ -57,7 +57,7 @@ const useGetMessageData = ({ chatToken }: UseGetMessageDataPropsType) => {
     callApi,
     isLoading: messageLoading,
     data,
-  } = useApi<ResponseMessageDataType>({
+  } = usePwaApi<ResponseMessageDataType>({
     api: 'pair/chat/list',
     method: 'POST',
     onSuccess: (v) => onSuccess(v),

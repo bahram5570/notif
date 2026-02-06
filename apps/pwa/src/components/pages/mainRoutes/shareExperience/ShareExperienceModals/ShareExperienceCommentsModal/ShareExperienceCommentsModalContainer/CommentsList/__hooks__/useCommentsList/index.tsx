@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import { EXPERIENCES_COMMENTS_PAGE_SIZE } from '@components/pages/mainRoutes/shareExperience/constants';
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import useShareExperiencePageNo from '../../../__hooks__/useShareExperiencePageNo';
 import { CommentsIdTypes, CommentsResponseTypes } from './types';
@@ -23,7 +23,7 @@ const useCommentsList = (id: CommentsIdTypes) => {
     }
   };
 
-  const { callApi, isLoading } = useApi<CommentsResponseTypes>({
+  const { callApi, isLoading } = usePwaApi<CommentsResponseTypes>({
     method: 'GET',
     fetchOnMount: false,
     onSuccess: successHandler,

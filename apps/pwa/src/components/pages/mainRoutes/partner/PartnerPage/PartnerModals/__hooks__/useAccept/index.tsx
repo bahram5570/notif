@@ -1,5 +1,5 @@
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { AcceptResponseType } from './type';
@@ -19,7 +19,7 @@ const useAccept = () => {
     }
   };
 
-  const { data, callApi: accept } = useApi({
+  const { data, callApi: accept } = usePwaApi({
     api: 'partner/accept',
     method: 'PUT',
     onSuccess: (v: AcceptResponseType) => successHandler(v),

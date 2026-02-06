@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 import { CycleResponseTypes } from '@components/pages/mainRoutes/cycle/types';
-import useApi from '@hooks/useApi';
 import { WidgetsEnum } from '@providers/WidgetActionsProvider/widgetEnums';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { UseUpdateOvulationDataData } from './type';
 
@@ -21,7 +21,7 @@ const useUpdateOvulationData = ({ data }: UseUpdateOvulationDataData) => {
     setUpdatedData(newOvulationWidget.data);
   };
 
-  const { callApi: getNewWidgetData } = useApi<CycleResponseTypes>({
+  const { callApi: getNewWidgetData } = usePwaApi<CycleResponseTypes>({
     api: 'wigets',
     method: 'GET',
     fetchOnMount: false,

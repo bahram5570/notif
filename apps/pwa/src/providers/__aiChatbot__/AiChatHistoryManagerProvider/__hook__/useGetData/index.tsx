@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { AiChatbotDataResponseType } from './type';
@@ -15,7 +15,7 @@ const useGetData = () => {
       ? `feature/ai/v2/chat/list?promptCategoryId=${categoryIdData}&promptItemId=${itemIdData}`
       : 'feature/ai/v2/chat/list';
 
-  const { data, isLoading, callApi } = useApi<AiChatbotDataResponseType>({
+  const { data, isLoading, callApi } = usePwaApi<AiChatbotDataResponseType>({
     api,
     method: 'GET',
     queryKey: ['aiChatbot'],

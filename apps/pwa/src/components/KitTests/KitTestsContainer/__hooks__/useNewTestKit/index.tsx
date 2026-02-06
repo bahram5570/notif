@@ -3,9 +3,9 @@ import { useState } from 'react';
 import { currentDate } from '@repo/core/utils/dates';
 
 import { KitTestModuleTypeEnums } from '@components/KitTests/enum';
-import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { NewTestResponseTypes, UseNewTestKitProps } from './types';
 
@@ -39,7 +39,7 @@ const useNewTestKit = ({ moduleType, gregorianDate, onSuccess }: UseNewTestKitPr
       break;
   }
 
-  const { callApi, isLoading } = useApi({ api, method: 'POST', onSuccess: successHandler });
+  const { callApi, isLoading } = usePwaApi({ api, method: 'POST', onSuccess: successHandler });
 
   const submitHandler = (v: any) => {
     const { time } = currentDate();

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useParams, useRouter } from 'next/navigation';
 
 import { ResponsePropsType } from './type';
@@ -13,7 +13,7 @@ const useGetData = () => {
     router.replace('/not-found');
   };
 
-  const { data, isLoading } = useApi<ResponsePropsType>({
+  const { data, isLoading } = usePwaApi<ResponsePropsType>({
     api: `challenge/${chatId}/chat`,
     method: 'GET',
     queryKey: [`chat-${chatId}`],

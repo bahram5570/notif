@@ -1,4 +1,4 @@
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { SubmitHandlerPropsType, UseSubmitPropsType } from './type';
@@ -13,7 +13,7 @@ const useSubmit = ({ id, btn }: UseSubmitPropsType) => {
     router.back();
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     api: `challenge/form/${id}`,
     method: 'POST',
     onSuccess: successHandler,

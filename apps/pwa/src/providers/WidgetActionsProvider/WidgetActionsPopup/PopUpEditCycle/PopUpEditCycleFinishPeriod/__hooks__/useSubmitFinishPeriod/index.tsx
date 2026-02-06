@@ -2,10 +2,10 @@ import { useMemo } from 'react';
 
 import { toGregorianData } from '@repo/core/utils/dates';
 
-import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
-import useCustomToast from '@hooks/useCustomToast';
 import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { SuccessHandlerTypes } from './types';
@@ -34,7 +34,7 @@ const useSubmitFinishPeriod = (endTime: string) => {
     }
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     method: 'GET',
     fetchOnMount: false,
     queryKey: ['endTime'],

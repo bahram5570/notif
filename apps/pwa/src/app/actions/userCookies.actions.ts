@@ -6,6 +6,7 @@ import { getUserExpiresDate } from '@utils/cookies';
 
 import { CULTURE_COOKIE_NAME, USER_COOKIE_NAME, USER_INFO_COOKIE_NAME } from '@constants/cookie.constants';
 import { CultureTypes } from '@providers/CultureProvider/types';
+import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
 import { cookies } from 'next/headers';
 
 // # Culture
@@ -23,10 +24,6 @@ export const getCultureCookie = async () => {
   const cookie = cookies().get(CULTURE_COOKIE_NAME);
   const result: CultureTypes | null = cookie ? JSON.parse(cookie.value) : null;
   return result;
-};
-
-export const deleteCultureCookie = async () => {
-  cookies().delete(CULTURE_COOKIE_NAME);
 };
 
 // # User
@@ -58,10 +55,6 @@ export const getUserCookie = async () => {
   return result;
 };
 
-export const deleteUserCookie = async () => {
-  cookies().delete(USER_COOKIE_NAME);
-};
-
 // # User info
 
 export type UserInfoCookieTypes = {
@@ -84,6 +77,10 @@ export const getUserInfoCookie = async () => {
   return result;
 };
 
-export const deleteUserInfoCookie = async () => {
+// # Clear
+
+export const clearUserCookiesHandler = async () => {
+  cookies().delete(USER_COOKIE_NAME);
   cookies().delete(USER_INFO_COOKIE_NAME);
+  await setCultureCookie({ calendarType: CalendarTypeEnum.Jalali });
 };

@@ -1,4 +1,4 @@
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 const useActivationAnalytics = () => {
   const { callEvent } = useAnalytics();

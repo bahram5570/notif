@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import MainPageLayout from '@components/MainPageLayout';
-import useAnalytics from '@hooks/useAnalytics';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import PopUpEditCycleFinishPeriod from './PopUpEditCycleFinishPeriod';
 import PopUpEditCycleLastPeriod from './PopUpEditCycleLastPeriod';

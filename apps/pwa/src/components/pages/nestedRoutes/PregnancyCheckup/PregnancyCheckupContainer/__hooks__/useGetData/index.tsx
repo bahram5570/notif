@@ -1,10 +1,10 @@
 import { APP_VERSION } from '@constants/app.constants';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { ResponsePropsType } from './type';
 
 const useGetData = () => {
-  const { data, isLoading } = useApi<ResponsePropsType>({
+  const { data, isLoading } = usePwaApi<ResponsePropsType>({
     method: 'GET',
     queryKey: ['pregnancyCheckuplist'],
     api: `info/pregnancy/checkups?AppVersion=${APP_VERSION || ''}`,

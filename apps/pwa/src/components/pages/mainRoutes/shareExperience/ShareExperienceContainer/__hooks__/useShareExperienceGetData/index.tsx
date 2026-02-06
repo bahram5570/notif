@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { ShareExperienceResponseTypes } from './types';
 
@@ -13,7 +13,7 @@ const useShareExperienceGetData = () => {
     setData(v);
   };
 
-  const { isLoading } = useApi<ShareExperienceResponseTypes>({
+  const { isLoading } = usePwaApi<ShareExperienceResponseTypes>({
     queryKey: ['shareExperience'],
     api: 'shareeexperience/v3',
     onSuccess: successHandler,

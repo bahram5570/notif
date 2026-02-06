@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { IsViewListTypes, UseIsViewProps, ViewStoryHandlerTypes } from './types';
 
@@ -48,7 +48,7 @@ const useIsView = ({ list, isOpen }: UseIsViewProps) => {
   const isViewList: IsViewListTypes | null = isUpdated ? updateList : null;
 
   //  # Call api
-  const { callApi } = useApi({ api: api || '', method: 'POST' });
+  const { callApi } = usePwaApi({ api: api || '', method: 'POST' });
 
   useEffect(() => {
     if (api) {

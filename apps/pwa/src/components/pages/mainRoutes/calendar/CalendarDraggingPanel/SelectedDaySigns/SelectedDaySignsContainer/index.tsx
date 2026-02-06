@@ -1,7 +1,7 @@
 import LinkIcon from '@assets/icons/calendarSignLink.svg';
 
 import useSignDateState from '@hooks/__sign__/useSignDateState';
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { CalendarInitialSelectedDateType } from '../../../__hooks__/useCalendar/types';

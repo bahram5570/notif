@@ -5,7 +5,7 @@ import { getFirebaseCookieToken } from '@utils/cookies';
 
 import { getUserCookie } from '@actions/userCookies.actions';
 import { APP_VERSION } from '@constants/app.constants';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 const useGetData = () => {
   const [subscriptionLoading, setSubscriptionLoading] = useState(true);
@@ -14,7 +14,7 @@ const useGetData = () => {
     setSubscriptionLoading(b);
   };
 
-  const { callApi: getSubscription, data: subscriptionData } = useApi<LoginResponseTypes>({
+  const { callApi: getSubscription, data: subscriptionData } = usePwaApi<LoginResponseTypes>({
     method: 'POST',
     api: 'CustomerAccount/Loginv6',
     onError: () => subscriptionLoadingHandler(false),

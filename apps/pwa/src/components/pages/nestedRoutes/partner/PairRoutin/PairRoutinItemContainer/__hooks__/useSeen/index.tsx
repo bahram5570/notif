@@ -1,6 +1,6 @@
-import useApi from '@hooks/useApi';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
@@ -31,7 +31,7 @@ const useSeen = () => {
     localStorage.removeItem(IS_LAST_ROUTIN_ITEM);
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     api: 'widgets/womanpairprogram/item/seen',
     method: 'POST',
     onSuccess: successHandler,

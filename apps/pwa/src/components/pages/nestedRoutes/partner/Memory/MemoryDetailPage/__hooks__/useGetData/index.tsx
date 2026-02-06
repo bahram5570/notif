@@ -1,4 +1,4 @@
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { PAGE_NO } from '../../../MemoryPage/__hooks__/useGetData/constants';
@@ -10,7 +10,7 @@ const useGetData = () => {
   const pageNo = typeof sessionStorage === 'undefined' ? null : sessionStorage.getItem(PAGE_NO);
   const currentPage = pageNo ? pageNo : '0';
 
-  const { data, isLoading } = useApi<ResponsePropsType>({
+  const { data, isLoading } = usePwaApi<ResponsePropsType>({
     api: `memory/${currentPage}/10`,
     method: 'GET',
     queryKey: ['memoryDetail'],

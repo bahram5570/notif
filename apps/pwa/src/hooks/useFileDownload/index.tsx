@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { baseUrl } from '@services/http';
+import { baseUrl } from '@repo/core/utils/pwaHttp';
 
 import { BlobInfoTypes } from './types';
 

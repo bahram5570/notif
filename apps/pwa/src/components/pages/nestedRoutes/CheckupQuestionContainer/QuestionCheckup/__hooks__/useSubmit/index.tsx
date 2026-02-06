@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import { MESSAGE_PREGNANCY_CHECKUP_RESULT } from '@components/pages/nestedRoutes/PregnancyCheckup/constant';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
@@ -21,7 +21,7 @@ const useSubmit = () => {
     // router.back();
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     method: 'PUT',
     api: api,
     onSuccess: (v: ResponsePropsType) => successHandler(v),

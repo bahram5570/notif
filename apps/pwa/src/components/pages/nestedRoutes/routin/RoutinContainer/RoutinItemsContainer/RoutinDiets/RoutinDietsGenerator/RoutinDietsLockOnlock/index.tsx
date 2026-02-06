@@ -1,5 +1,5 @@
 import LockIcon from '@assets/icons/LockKeyhole.svg';
-import TickIcon from '@assets/icons/tickIcon.svg';
+import TickIcon from '@assets/shared/icons/tickIcon.svg';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@repo/core/utils/scripts';

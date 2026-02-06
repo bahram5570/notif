@@ -1,4 +1,4 @@
-import http from '@services/http';
+import { pwaHttp } from '@repo/core/utils/pwaHttp';
 
 import { APP_VERSION } from '@constants/app.constants';
 import { HydrationBoundary, QueryClient, dehydrate } from '@tanstack/react-query';
@@ -13,7 +13,7 @@ const getData = async () => {
     version: APP_VERSION,
   };
 
-  return await http<ProfileResponseTypes>({ url: 'profile/woman/info', method: 'POST', payload });
+  return await pwaHttp<ProfileResponseTypes>({ url: 'profile/woman/info', method: 'POST', payload });
 };
 
 const ProfileProvider = async ({ children }: { children: React.ReactNode }) => {

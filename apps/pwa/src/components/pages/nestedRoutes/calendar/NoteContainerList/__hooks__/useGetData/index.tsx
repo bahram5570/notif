@@ -4,7 +4,7 @@ import { currentDate, toJalaliData } from '@repo/core/utils/dates';
 
 import { NoteType } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
 import useSignDateState from '@hooks/__sign__/useSignDateState';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import moment from 'moment-jalaali';
 
 import { ResponsePropsType } from './type';
@@ -33,7 +33,7 @@ const useGetData = () => {
     }
   };
 
-  const { isLoading } = useApi<ResponsePropsType>({
+  const { isLoading } = usePwaApi<ResponsePropsType>({
     api: 'date/note',
     method: 'GET',
     queryKey: ['NoteList'],

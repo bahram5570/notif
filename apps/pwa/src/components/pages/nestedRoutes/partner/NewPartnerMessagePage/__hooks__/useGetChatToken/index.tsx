@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { ResponseChatToken } from './type';
 
@@ -13,7 +13,7 @@ const useGetChatToken = () => {
     setTimeInterval(v.timeIntervalNumber);
   };
 
-  const { isLoading } = useApi<ResponseChatToken>({
+  const { isLoading } = usePwaApi<ResponseChatToken>({
     api: 'pair/chat/gettoken',
     method: 'GET',
     queryKey: ['chatToker'],

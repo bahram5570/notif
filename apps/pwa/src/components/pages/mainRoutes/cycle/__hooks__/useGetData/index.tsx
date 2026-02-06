@@ -1,11 +1,11 @@
 import { useContext, useEffect, useState } from 'react';
 
 import useUpdateCycleCard from '@hooks/__cycle__/useUpdateCycleCard';
-import useApi from '@hooks/useApi';
 import useSplash from '@hooks/useSplash';
 import { ErrorContext } from '@providers/ErrorProvider';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { CycleResponseTypes } from '../../types';
@@ -33,7 +33,7 @@ const useGetData = () => {
     splashCompleteHandler();
   };
 
-  const { data, isLoading } = useApi<CycleResponseTypes>({
+  const { data, isLoading } = usePwaApi<CycleResponseTypes>({
     api: 'wigets',
     method: 'GET',
     queryKey: ['wigets'],

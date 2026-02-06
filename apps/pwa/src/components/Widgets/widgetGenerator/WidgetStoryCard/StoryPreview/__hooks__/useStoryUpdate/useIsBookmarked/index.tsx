@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { ApiInfoTypes, IsBookmarkedHandlerTypes, IsBookmarkedListTypes, useIsBookmarkedProps } from './types';
 
@@ -49,7 +49,7 @@ const useIsBookmarked = ({ list, isOpen }: useIsBookmarkedProps) => {
   //  # Call api
   const api = apiInfo?.api || '';
   const method = apiInfo?.method || 'POST';
-  const { callApi } = useApi({ api, method });
+  const { callApi } = usePwaApi({ api, method });
 
   useEffect(() => {
     if (apiInfo) {

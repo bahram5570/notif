@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 import { ShareExperienceResponseTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/__hooks__/useShareExperienceGetData/types';
-import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { onProfileChangeHandlerPropsType } from './type';
@@ -24,7 +24,7 @@ const useUpdateProfile = () => {
     route.back();
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     api: 'shareeexperience/v3/profile',
     method: 'POST',
     onSuccess: successHandler,

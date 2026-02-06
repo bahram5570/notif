@@ -1,5 +1,5 @@
 import useSignDateState from '@hooks/__sign__/useSignDateState';
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { InputValueType } from '../../type';
@@ -12,7 +12,7 @@ const useSubmit = () => {
     router.back();
   };
 
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     api: 'info/woman/bloodpressure/add',
     method: 'POST',
     onSuccess: successHandler,

@@ -1,15 +1,15 @@
 import { useState } from 'react';
 
-import { baseUrl } from '@services/http';
+import { baseUrl } from '@repo/core/utils/pwaHttp';
 
-import { ERROR_SERVER } from '@hooks/useApi/constants';
-import useCustomToast from '@hooks/useCustomToast';
+import { ERROR_SERVER } from '@repo/core/constants/scripts.constants';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 
 import { UseCrRegisterPartnerCodeProps } from './types';
 
 const useCrRegisterPartnerCode = ({ token, onComplete }: UseCrRegisterPartnerCodeProps) => {
   const [isLoading, setIsLoading] = useState(false);
-  const toast = useCustomToast();
+  const { notifyToastHandler } = useCustomToast();
   const callApi = async (v: { code: string }) => {
     setIsLoading(true);
 
@@ -29,7 +29,7 @@ const useCrRegisterPartnerCode = ({ token, onComplete }: UseCrRegisterPartnerCod
 
       onComplete();
     } catch (error) {
-      toast.notifyToastHandler({ message: ERROR_SERVER, type: 'error' });
+      notifyToastHandler({ message: ERROR_SERVER, type: 'error' });
     }
 
     setIsLoading(false);

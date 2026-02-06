@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { FileDataHandlerTypes, FileResponseTypes, FileUploadImageFileTypes, OptionsTypes } from './types';
 
@@ -23,7 +23,7 @@ const useFileUpload = (options?: OptionsTypes) => {
     setImageFile(null);
   };
 
-  const { callApi, isLoading: uploadImageLoading } = useApi<FileResponseTypes>({
+  const { callApi, isLoading: uploadImageLoading } = usePwaApi<FileResponseTypes>({
     api: options?.api || 'doctor/file',
     contentType: 'multipart/form-data',
     method: options?.method || 'POST',

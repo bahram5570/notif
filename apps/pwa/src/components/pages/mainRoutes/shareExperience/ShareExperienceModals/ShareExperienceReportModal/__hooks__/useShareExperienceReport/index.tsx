@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 const useShareExperienceReport = () => {
@@ -19,7 +19,7 @@ const useShareExperienceReport = () => {
     setApi(null);
   };
 
-  const { isLoading, callApi } = useApi({
+  const { isLoading, callApi } = usePwaApi({
     method: 'GET',
     api: api || '',
     fetchOnMount: false,

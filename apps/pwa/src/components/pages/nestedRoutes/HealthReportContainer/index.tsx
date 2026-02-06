@@ -1,8 +1,8 @@
 'use client';
 
 import MainPageLayout from '@components/MainPageLayout';
-import useAnalytics from '@hooks/useAnalytics';
 import useOnMountActions from '@hooks/useOnMountActions';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import HealthReportContainerSkeleton from './HealthReportContainerSkeleton';
 import HealthReportContainerWidgets from './HealthReportContainerWidgets';

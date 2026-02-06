@@ -3,8 +3,8 @@ import PolygonIcon from '@assets/icons/Polygon.svg';
 import ArrowIcon from '@assets/icons/calendarArrow.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useAnalytics from '@hooks/useAnalytics';
 import useWidgetActions from '@hooks/useWidgetActions';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { WeekItemGeneratorPropsType } from './type';

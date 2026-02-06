@@ -1,7 +1,7 @@
 import SaveEmptyIcon from '@assets/icons/saveEmpty.svg';
 import SaveFillIcon from '@assets/icons/saveFill.svg';
 
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import useShareExperienceBookmark from './__hooks__/useShareExperienceBookmark';
 import { ShareExperienceBookmarkModuleProps } from './types';

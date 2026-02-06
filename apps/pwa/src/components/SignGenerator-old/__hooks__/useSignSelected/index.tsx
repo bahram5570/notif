@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { currentDate } from '@repo/core/utils/dates';
 
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { useSignSelectedProps } from './types';
 
@@ -12,7 +12,7 @@ const useSignSelected = ({ initialIsSelected, category, sign, onSelect, selected
   const [isSelected, setIsSelected] = useState(initialIsSelected);
 
   const actionType = isSelected ? 'add' : 'remove';
-  const { callApi } = useApi({ method: 'POST', api: `info/woman/sign/${actionType}` });
+  const { callApi } = usePwaApi({ method: 'POST', api: `info/woman/sign/${actionType}` });
 
   const isSelectedHandler = () => {
     if (onSelect) {

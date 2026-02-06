@@ -1,5 +1,5 @@
-import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 const useSubmit = () => {
@@ -14,7 +14,11 @@ const useSubmit = () => {
     route.back();
   };
 
-  const { callApi, isLoading } = useApi({ api: 'feature/ai/opiniononai', method: 'POST', onSuccess: onSuccessHandler });
+  const { callApi, isLoading } = usePwaApi({
+    api: 'feature/ai/opiniononai',
+    method: 'POST',
+    onSuccess: onSuccessHandler,
+  });
 
   const submitHandler = (text: string) => {
     const payload = {

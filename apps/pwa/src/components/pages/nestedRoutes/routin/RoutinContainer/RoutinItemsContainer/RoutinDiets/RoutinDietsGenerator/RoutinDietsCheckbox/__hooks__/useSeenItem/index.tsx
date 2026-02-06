@@ -1,9 +1,9 @@
 import { RoutinResponseTypes } from '@components/pages/nestedRoutes/routin/RoutinContainer/__hooks__/useGetData/types';
 import { ProgramWidgetItemStatusEnum } from '@components/pages/nestedRoutes/routin/enum';
 import useCurrentRoutinIndex from '@hooks/__routin__/useCurrentRoutinIndex';
-import useApi from '@hooks/useApi';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { UseSeenItemPropsType } from './type';
@@ -49,7 +49,7 @@ const useSeenItem = ({ programId, item, index }: UseSeenItemPropsType) => {
     }
   };
 
-  const { callApi, isLoading } = useApi({ api, method: 'POST', onSuccess: successHandler });
+  const { callApi, isLoading } = usePwaApi({ api, method: 'POST', onSuccess: successHandler });
 
   const seenHandler = () => {
     const payload = {

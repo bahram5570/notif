@@ -1,6 +1,6 @@
 import { decodeUnicode, parseFormattedText } from '../../../utils';
 
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 
 const useCopy = () => {
   const toast = useCustomToast();

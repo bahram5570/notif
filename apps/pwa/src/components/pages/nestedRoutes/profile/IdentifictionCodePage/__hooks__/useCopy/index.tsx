@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import useAnalytics from '@hooks/useAnalytics';
-import useCustomToast from '@hooks/useCustomToast';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 
 const useCopy = () => {
   const { callEvent } = useAnalytics();

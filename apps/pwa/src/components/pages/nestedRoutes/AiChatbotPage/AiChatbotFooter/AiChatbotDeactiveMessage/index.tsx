@@ -2,9 +2,9 @@ import chatbotJson from '@assets/lottie/chatbot.json';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useAnalytics from '@hooks/useAnalytics';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import { AiChatbotDeactiveMessagePropsType } from './type';
 

@@ -4,9 +4,9 @@ import { setPaymentCookie } from '@utils/cookies';
 import { externalLink } from '@utils/navigation';
 
 import { getUserCookie } from '@actions/userCookies.actions';
-import useAnalytics from '@hooks/useAnalytics';
-import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useParams, useRouter } from 'next/navigation';
 
 import { ApprovedCodeHandlerTypes, BuyResponseTypes, UseBuyProps } from './types';
@@ -43,7 +43,7 @@ const useBuy = ({ id, questionValues, type }: UseBuyProps) => {
     }
   };
 
-  const { callApi, isLoading } = useApi<BuyResponseTypes>({
+  const { callApi, isLoading } = usePwaApi<BuyResponseTypes>({
     method: 'PUT',
     onSuccess: successHandler,
     api: isCompletePayment ? `advice/newweb/${payValue}` : 'advice/newweb',

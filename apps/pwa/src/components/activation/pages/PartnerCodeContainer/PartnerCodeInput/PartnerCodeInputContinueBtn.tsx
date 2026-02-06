@@ -1,8 +1,8 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
 import { CONTINUE_BTN_HEIGHT } from '@components/activation/ActivationHeading/constants';
-import useCustomToast from '@hooks/useCustomToast';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 
 import { PartnerCodeInputContinueBtnProps } from './types';
 

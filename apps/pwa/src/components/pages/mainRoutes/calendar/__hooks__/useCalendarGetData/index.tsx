@@ -1,7 +1,7 @@
 import { calendarDayInfoMaker, calendarIntervalMaker, calendarMonthInfoMaker } from './__utils__';
 
-import useApi from '@hooks/useApi';
 import useCulture from '@hooks/useCulture';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { CalendarDataTypes, InfoCalendarResponseTypes, SingleDateTypes, UseGetDataProps } from './types';
 
@@ -38,7 +38,7 @@ const useCalendarGetData = ({ onValues, hasSigns }: UseGetDataProps) => {
     });
   };
 
-  const { isLoading } = useApi<InfoCalendarResponseTypes>({
+  const { isLoading } = usePwaApi<InfoCalendarResponseTypes>({
     method: 'GET',
     api: 'info/calendar',
     onSuccess: successHandler,

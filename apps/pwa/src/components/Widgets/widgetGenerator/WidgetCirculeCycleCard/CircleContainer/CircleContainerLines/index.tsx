@@ -2,7 +2,7 @@ import { circleContainerRotateFinder, circleItemRotateMaker } from '../__utils__
 
 import styles from '../styles.module.css';
 
-import useAnalytics from '@hooks/useAnalytics';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import { CIRCLE_EXTRA_SIZE, CIRCLE_TOTAL_AVAILABLE_PROGRESS_PERCENTAGE } from '../constants';
 import useCircleLinesSizes from './__hooks__/useCircleLinesSizes';

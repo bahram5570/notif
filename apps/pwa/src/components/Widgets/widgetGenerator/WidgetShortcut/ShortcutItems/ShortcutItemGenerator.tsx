@@ -3,9 +3,9 @@ import { useEffect, useMemo, useState } from 'react';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useAnalytics from '@hooks/useAnalytics';
 import useWidgetActions from '@hooks/useWidgetActions';
 import { LottieJson } from '@lib/LottieJson';
+import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import { ShortcutItemGeneratorProps } from './types';
 

@@ -1,6 +1,6 @@
 import useAichatbotHistoryManager from '@hooks/__aichatbot__/useAichatbotHistoryManager';
-import useApi from '@hooks/useApi';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 const useDelete = () => {
@@ -13,7 +13,7 @@ const useDelete = () => {
     removeQuery({ queryKey: ['AiChatMessageList'] });
     refetchQuery({ queryKey: ['aiChatbot'] });
   };
-  const { callApi, isLoading } = useApi({
+  const { callApi, isLoading } = usePwaApi({
     method: 'DELETE',
     api: 'feature/ai/topic/delete',
     onSuccess: successHandler,

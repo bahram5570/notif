@@ -1,7 +1,7 @@
-import useApi from '@hooks/useApi';
+import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 const useChangeType = () => {
-  const { isLoading, callApi } = useApi({
+  const { isLoading, callApi } = usePwaApi({
     method: 'POST',
     api: 'partner/type',
   });
