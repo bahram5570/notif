@@ -1,18 +1,28 @@
 'use client';
 
+import pdfIcon from '@assets/images/pdfIcon.webp';
+
+import CustomButton from '@components/ui/CustomButton';
+import CustomImage from '@components/ui/CustomImage';
+import CustomTypography from '@components/ui/CustomTypography';
+
 import { SuccessProps } from './types';
 
 export default function Success({ onClose }: SuccessProps) {
   return (
-    <div className="text-center py-12">
-      <h3 className="text-2xl font-bold text-gray-900 mb-4">ثبت موفق!</h3>
-      <p className="text-gray-600 mb-8">ممنون از همراهی شما</p>
-      <button
+    <div className="text-center">
+      <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground mb-3 text-center">
+        کاربر عزیز، فایل pdf شما آماده‌س و میتونی از طریق لینک زیر دانلودش کنی!
+      </CustomTypography>
+
+      <CustomImage alt="pdf" src={pdfIcon} className="w-[65px] h-[75px] flex justify-self-center" />
+      <CustomButton
         onClick={onClose}
-        className="px-10 py-3.5 bg-green-600 text-white font-medium rounded-xl hover:bg-green-700 transition"
+        fontSize="Body_Large"
+        className="!bg-impo_Black w-full border-none mt-[59px] py-[13.5px]"
       >
-        بستن
-      </button>
+        دانلود فایل pdf
+      </CustomButton>
     </div>
   );
 }

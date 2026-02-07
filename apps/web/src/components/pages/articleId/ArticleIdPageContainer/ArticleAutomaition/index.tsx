@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 
+import ArrowBack from '@assets/icons/arrowBack.svg';
 import autoArticleImg from '@assets/images/autoArticleImg.webp';
 
 import Dialog from '@mui/material/Dialog';
@@ -12,8 +13,8 @@ import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 
 import LeadSteps from './LeadSteps';
+import { useScrollHandler } from './_hooks/useScrollHandler';
 import { LeadPopupProps, Step } from './types';
-import { useScrollHandler } from './useScrollHandler';
 
 export default function ArticleAutomaition({ threshold = 50 }: LeadPopupProps = {}) {
   const passed = useScrollHandler(threshold);
@@ -65,12 +66,18 @@ export default function ArticleAutomaition({ threshold = 50 }: LeadPopupProps = 
       onClose={handleClose}
       onOpen={() => {}}
       disableSwipeToOpen
-      PaperProps={{ className: 'rounded-t-2xl bg-white  shadow-2xl' }}
+      PaperProps={{ className: 'rounded-t-2xl bg-white shadow-2xl' }}
     >
       <div className="!bg-impo_Primary_Primary relative">
         <button onClick={handleClose} className="absolute top-6 left-6 text-white text-xl">
           ✕
         </button>
+        {step === 'otp' && (
+          <button onClick={() => setStep('phone')} className="absolute top-[22px] right-6 right-6 text-white text-xl">
+            <ArrowBack />
+          </button>
+        )}
+
         <div className="w-[72px] h-[2px] mx-auto my-3 bg-gray-200 rounded-full" />
         <div className="mt-[14px] flex items-center px-4 justify-between">
           <div className="grid pt-5">

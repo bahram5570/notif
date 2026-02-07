@@ -1,147 +1,74 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { toPersianNumbers } from '@utils/numbers';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
 
+import { getInputClass } from './_Utils/getInputClass';
+import { useOtpCode } from './_hooks/useOtpCode';
+import { useOtpResend } from './_hooks/useOtpResend';
+import { useOtpSubmit } from './_hooks/useOtpSubmit';
+import { useOtpTimer } from './_hooks/useOtpTimer';
 import { OtpProps } from './types';
 
-const LEN = 5;
+const LEN = 6;
 
-export default function OtpInput({ onNext, onBack }: OtpProps) {
-  const [code, setCode] = useState<string[]>(Array(LEN).fill(''));
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [timer, setTimer] = useState(60);
-  const [isSuccess, setIsSuccess] = useState(false);
-  const [isErrorShake, setIsErrorShake] = useState(false);
+export default function OtpInput({ onNext, phone }: OtpProps) {
+  const { code, refs, handleChange, handleKeyDown, resetCode } = useOtpCode();
+  const { timer, formatTimer, resetTimer } = useOtpTimer(120);
+  const { submitLoading, isSuccess, isErrorShake, handleSubmit } = useOtpSubmit(onNext);
 
-  const refs = useRef<(HTMLInputElement | null)[]>([]);
-
-  useEffect(() => {
-    if (timer > 0) {
-      const id = setInterval(() => setTimer((t) => t - 1), 1000);
-      return () => clearInterval(id);
-    }
-  }, [timer]);
-
-  const handleChange = (val: string, i: number) => {
-    if (!/^\d?$/.test(val)) return;
-
-    const next = [...code];
-    next[i] = val;
-    setCode(next);
-
-    if (val && i < LEN - 1) {
-      refs.current[i + 1]?.focus();
-    }
-
-    if (error) setError('');
-    if (isErrorShake) setIsErrorShake(false);
-  };
-
-  const handleSubmit = async () => {
-    const full = code.join('');
-    if (full.length !== LEN) {
-      setError('۵ رقم وارد کنید');
-      setIsErrorShake(true);
-      setTimeout(() => setIsErrorShake(false), 600);
-      return;
-    }
-
-    setLoading(true);
-    setError('');
-    setIsErrorShake(false);
-
-    try {
-      await new Promise((r) => setTimeout(r, 1200));
-
-      setIsSuccess(true);
-      setTimeout(() => {
-        onNext();
-      }, 1200);
-    } catch {
-      setError('کد اشتباه است');
-      setIsErrorShake(true);
-      setTimeout(() => setIsErrorShake(false), 600);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const inputClassBase = `
-    w-14 h-14 text-center text-2xl 
-    border-2 rounded-xl outline-none transition-all duration-300
-    font-bold
-  `;
-
-  const getInputClass = (index: number) => {
-    let classes = inputClassBase;
-
-    if (isSuccess) {
-      classes += ' border-green-500 bg-green-50/40 animate-pulse-slow';
-    } else if (isErrorShake || error) {
-      classes += ' border-red-500 bg-red-50/40';
-      if (isErrorShake) classes += ' animate-shake-short';
-    } else if (code[index]) {
-      classes += ' border-blue-400';
-    } else {
-      classes += ' border-gray-300';
-    }
-
-    return classes.trim();
-  };
+  const { resendLoading, handleResend } = useOtpResend(resetTimer, resetCode, (msg) => {});
 
   return (
-    <div className="space-y-6">
+    <div>
       <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground mb-3">
-        لطفا کد تایید 6 رقمی که به شماره همراه 09155824584 پیامک کردیم رو اینجا وارد کن
+        لطفا کد تایید 6 رقمی که به شماره همراه {toPersianNumbers(phone || '')} پیامک کردیم رو اینجا وارد کن
       </CustomTypography>
 
-      <div className="flex gap-3 sm:gap-4 justify-center">
+      <div className="flex gap-2 justify-center flex-row-reverse mt-3">
         {code.map((digit, i) => (
           <input
             key={i}
-            ref={(el: HTMLInputElement | null) => {
+            ref={(el) => {
               refs.current[i] = el;
             }}
-            value={digit}
+            value={toPersianNumbers(digit)}
             onChange={(e) => handleChange(e.target.value, i)}
+            onKeyDown={(e) => handleKeyDown(e, i)}
             maxLength={1}
             inputMode="numeric"
+            pattern="[0-9]*"
             autoComplete="one-time-code"
-            className={getInputClass(i)}
+            className={getInputClass(digit, isSuccess, isErrorShake)}
             dir="ltr"
+            style={{ direction: 'ltr' }}
           />
         ))}
       </div>
 
-      {error && <p className="text-red-600 text-center text-sm font-medium">{error}</p>}
+      <div className="flex justify-center gap-6 text-sm mt-4">
+        <CustomButton
+          onClick={handleResend}
+          isDisable={timer > 0 || resendLoading}
+          isLoading={resendLoading}
+          fontSize="Body_Medium"
+          className="!bg-impo_Transparent !text-impo_Neutral_OnBackground !opacity-[1] border-none"
+        >
+          {`کد تایید رو دریافت نکردم ${timer > 0 ? `(${toPersianNumbers(formatTimer())})` : ''}`}
+        </CustomButton>
+      </div>
 
       <CustomButton
-        onClick={handleSubmit}
-        isDisable={code.some((c) => !c) || loading}
-        isLoading={loading}
-        fontSize="Lable_Large"
-        className="w-full !bg-impo_Black border-none"
+        onClick={() => handleSubmit(code)}
+        isDisable={code.some((c) => !c) || submitLoading}
+        isLoading={submitLoading}
+        fontSize="Body_Large"
+        className="!bg-impo_Black w-full border-none mt-[59px] py-[13.5px]"
       >
-        {loading ? 'در حال بررسی...' : 'تأیید کد'}
+        دریافت فایل pdf
       </CustomButton>
-
-      <div className="flex justify-center gap-6 text-sm">
-        <button onClick={onBack} className="text-blue-600 hover:underline font-medium">
-          تغییر شماره
-        </button>
-
-        <button
-          onClick={() => setTimer(60)}
-          disabled={timer > 0 || loading}
-          className="text-blue-600 hover:underline disabled:text-gray-400 font-medium"
-        >
-          {timer > 0 ? `ارسال مجدد (${timer})` : 'ارسال مجدد کد'}
-        </button>
-      </div>
     </div>
   );
 }

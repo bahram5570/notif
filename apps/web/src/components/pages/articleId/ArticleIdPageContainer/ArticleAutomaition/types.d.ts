@@ -12,7 +12,7 @@ export interface PhoneProps {
 
 export interface OtpProps {
   onNext: () => void;
-  onBack: () => void;
+  phone?: string;
 }
 
 export interface SuccessProps {

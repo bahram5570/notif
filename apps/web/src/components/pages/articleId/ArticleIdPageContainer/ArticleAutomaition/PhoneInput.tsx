@@ -1,40 +1,14 @@
 'use client';
 
-import { useState } from 'react';
-
 import CustomButton from '@components/ui/CustomButton';
 import CustomInput from '@components/ui/CustomInput';
 import CustomTypography from '@components/ui/CustomTypography';
 
+import { usePhoneSubmit } from './_hooks/usePhoneSubmit';
 import { PhoneProps } from './types';
 
 export default function PhoneInput({ onNext }: PhoneProps) {
-  const [value, setValue] = useState('');
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
-
-  const clean = value.replace(/\D/g, '');
-  const valid = value.length === 11;
-
-  const handleSubmit = async (e?: React.FormEvent) => {
-    e?.preventDefault();
-    if (!valid) {
-      setError('شماره باید ۱۰ یا ۱۱ رقم باشد');
-      return;
-    }
-
-    setLoading(true);
-    setError('');
-
-    try {
-      await new Promise((r) => setTimeout(r, 1000));
-      onNext(clean.startsWith('0') ? '+98' + clean.slice(1) : '+98' + clean);
-    } catch {
-      setError('خطا در ارسال کد');
-    } finally {
-      setLoading(false);
-    }
-  };
+  const { value, setValue, isValid, isSubmitting, handleSubmit } = usePhoneSubmit({ onSuccess: onNext });
 
   return (
     <div>
@@ -54,8 +28,8 @@ export default function PhoneInput({ onNext }: PhoneProps) {
         />
         <CustomButton
           onClick={() => void handleSubmit()}
-          isDisable={!valid}
-          isLoading={loading}
+          isDisable={!isValid}
+          isLoading={isSubmitting}
           fontSize="Lable_Large"
           className="w-full !bg-impo_Black border-none !mt-[110px]"
         >
