@@ -1,6 +1,6 @@
 import './globals.css';
 
-import { MAX_SCREEN_WIDTH, PORTAL_ID, PORTAL_SPLASH_ID } from '@constants/app.constants';
+import { MAX_SCREEN_WIDTH, PORTAL_FEEDBACK_TOAST_ID, PORTAL_ID, PORTAL_SPLASH_ID } from '@constants/app.constants';
 import AnalyticsProvider from '@providers/AnalyticsProvider';
 import CultureProvider from '@providers/CultureProvider';
 import ErrorProvider from '@providers/ErrorProvider';
@@ -78,6 +78,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
                                 <PreviewImageProvider />
                                 <div id={PORTAL_SPLASH_ID} />
                                 <div id={PORTAL_ID} />
+                                <div id={PORTAL_FEEDBACK_TOAST_ID} />
                               </ServiceWorkerProvider>
                             </WidgetActionsProvider>
                           </RouteSequenceProvider>

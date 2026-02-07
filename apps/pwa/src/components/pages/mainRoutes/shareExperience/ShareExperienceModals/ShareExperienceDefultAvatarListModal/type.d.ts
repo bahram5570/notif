@@ -1,4 +1,4 @@
 export type QueryDataShareExperienceDefultAvatarListModal = {
-  dummyData: number;
+  shareExperienceOrder: number;
   id: string | undefined;
 };

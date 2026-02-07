@@ -5,8 +5,19 @@ import ShareExperienceProfileIconModule from '../ShareExperienceProfileIconModul
 import useFollowUser from './__hooks__/useFollowUser';
 import { ShareExperienceFollowItemModulePropsType } from './type';
 
-const ShareExperienceFollowItemModule = ({ isLastItem, item }: ShareExperienceFollowItemModulePropsType) => {
-  const { followHandler } = useFollowUser({ isFollow: item.isFollowed, userId: item.id });
+const ShareExperienceFollowItemModule = ({
+  isLastItem,
+  item,
+  pageType,
+  userId,
+}: ShareExperienceFollowItemModulePropsType) => {
+  const { followHandler, isLoading } = useFollowUser({
+    isFollow: item.isFollowed,
+    userId,
+    pageType,
+    itemId: item.id,
+    userName: item.name,
+  });
   const buttonText = item.isFollowed ? 'دنبال شده' : 'دنبال کردن';
 
   return (
@@ -18,7 +29,7 @@ const ShareExperienceFollowItemModule = ({ isLastItem, item }: ShareExperienceFo
           approvedProfile={false}
           avatar={item.image}
           size={48}
-          isSelf={false}
+          isSelf={item.isSheMe}
           id={item.id}
         />
         <Dark_Typography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
@@ -26,7 +37,11 @@ const ShareExperienceFollowItemModule = ({ isLastItem, item }: ShareExperienceFo
         </Dark_Typography>
       </div>
       {!item.isSheMe && (
-        <Dark_Button className=" !border-impo_Grey_100 bg-impo_Transparent !w-fit px-5" onClick={followHandler}>
+        <Dark_Button
+          className=" !border-impo_Grey_100 bg-impo_Transparent !w-fit px-5"
+          onClick={followHandler}
+          isLoading={isLoading}
+        >
           <Dark_Typography fontSize="Lable_Medium" className="text-impo_Neutral_OnSurface">
             {buttonText}
           </Dark_Typography>

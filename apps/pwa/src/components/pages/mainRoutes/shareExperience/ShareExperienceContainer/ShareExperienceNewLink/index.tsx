@@ -1,6 +1,9 @@
 import LinkIcon from '@assets/icons/calendarSignLink.svg';
 
-import { SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import {
+  SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME,
+  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
+} from '@components/pages/mainRoutes/shareExperience/constants';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
@@ -10,7 +13,10 @@ const ShareExperienceNewLink = () => {
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const clickHandler = () => {
-    newQueryParamsHandler({ [SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME]: 'true' });
+    const queryData = JSON.stringify({
+      [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime(),
+    });
+    newQueryParamsHandler({ [SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME]: queryData });
     pageNavigationHandler({ showProgressBar: true, id: 'ShareExperienceNewLink' });
   };
 

@@ -1,7 +1,10 @@
 import ArrowIcon from '@assets/icons/arrowElbowDown.svg';
 
 import { NewReplyQueriesTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceModals/ShareExperienceNewReplyModal/types';
-import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import {
+  SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME,
+  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
+} from '@components/pages/mainRoutes/shareExperience/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
@@ -18,7 +21,15 @@ const ReplyBtn = ({ avatar, name, shareId, commentId, userId }: ReplyBtnProps) =
 
   const clickHandler = () => {
     if (!isLoading) {
-      const queries: NewReplyQueriesTypes = { name, avatar, type: 'reply', shareId, commentId, userId };
+      const queries: NewReplyQueriesTypes = {
+        name,
+        avatar,
+        type: 'reply',
+        shareId,
+        commentId,
+        userId,
+        [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime(),
+      };
       const queryData = JSON.stringify(queries);
 
       newQueryParamsHandler({ [SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME]: queryData });

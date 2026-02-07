@@ -1,8 +1,9 @@
+import { FollowItemType } from '../ShareExperienceFollowListModule/__hooks__/useGetFollowData/type';
 import { ShareExperienceFollowListModulePropsType } from '../ShareExperienceFollowListModule/type';
 
-export type ItemType = Pick<ShareExperienceFollowListModulePropsType, 'items'>['items'][0];
+export type DataType = Pick<ShareExperienceFollowListModulePropsType, 'pageType' | 'userId'>;
 
-export type ShareExperienceFollowItemModulePropsType = {
+export interface ShareExperienceFollowItemModulePropsType extends DataType {
   isLastItem: boolean;
-  item: ItemType;
-};
+  item: FollowItemType;
+}

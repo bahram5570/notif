@@ -28,6 +28,7 @@ const ProfileInfo = ({ followCount, storyCount, userId }: ProfileInfoPropsType) 
   };
 
   return (
+    //
     <div className="flex gap-4">
       <div className="flex flex-col justify-center items-center gap-1" onClick={followingSelectHandler}>
         <Dark_Typography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
