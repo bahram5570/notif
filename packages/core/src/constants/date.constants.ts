@@ -2,15 +2,12 @@ import { currentDate } from '../utils/dates';
 
 const { gYear, jYear } = currentDate();
 
-export enum CalendarTypeEnum {
-  Jalali = 0,
-  Gregorian = 1,
-}
-
 export const DATE_SEPERATOR_REGEX = /[-\/]/;
 
 export const JALALI_START_DATE = `${jYear - 60}/01/01`;
 export const GREGORIAN_START_DATE = `${gYear - 60}-01-01`;
+// export const JALALI_START_DATE = `${1350}/01/01`;
+// export const GREGORIAN_START_DATE = `${1970}-01-01`;
 
 // # PREGNANCY_INTERVAL قبلا 280 روز بوده اما در انتخاب 280 روزمین وارد روز سفید میشدیم برای همون یک واحد کم کردیم که محدوده انتخاب درست شود
 export const BREAST_FEEDING_INTERVAL = 365;

@@ -1,10 +1,10 @@
 import './globals.css';
 
-import CultureProvider from '@providers/CultureProvider';
 import ErrorProvider from '@providers/ErrorProvider';
 import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
 import ServiceWorkerProvider from '@providers/ServiceWorkerProvider';
 import { MAX_SCREEN_WIDTH, PORTAL_ID, PORTAL_SPLASH_ID } from '@repo/core/constants/app.constants';
+import { CultureProvider } from '@repo/core/providers/CultureProvider';
 // import { AnalyticsProvider } from '@repo/core/providers/AnalyticsProvider';
 import { OperatingSystemProvider } from '@repo/core/providers/OperatingSystemProvider';
 import { PageNavigationProvider } from '@repo/core/providers/PageNavigationProvider';
@@ -15,6 +15,8 @@ import { WidgetActionsProvider } from '@repo/core/providers/WidgetActionsProvide
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 import Script from 'next/script';
+
+export const dynamic = 'force-dynamic';
 
 export const metadata: Metadata = {
   title: 'وب اپلیکیشن ایمپو',

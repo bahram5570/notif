@@ -2,7 +2,8 @@ import { memo, useMemo } from 'react';
 
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { CALENDAR_CELL_SIZE, CalendarTypeEnum, DATE_SEPERATOR_REGEX } from '@repo/core/constants/date.constants';
+import { CALENDAR_CELL_SIZE, DATE_SEPERATOR_REGEX } from '@repo/core/constants/date.constants';
+import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 
 import { ActivationSingleDayProps } from './types';
 

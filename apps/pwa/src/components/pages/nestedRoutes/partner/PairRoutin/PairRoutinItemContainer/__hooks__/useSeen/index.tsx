@@ -12,7 +12,7 @@ const useSeen = () => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { refetchQuery } = useCustomReactQuery();
   const searchData = getQueryParams('searchData');
-  const isLastItem = localStorage.getItem(IS_LAST_ROUTIN_ITEM);
+  const isLastItem = typeof localStorage === 'undefined' ? null : localStorage.getItem(IS_LAST_ROUTIN_ITEM);
   const checkIsLastItem = isLastItem && JSON.parse(isLastItem);
 
   const params = searchData ? new URLSearchParams(searchData) : null;

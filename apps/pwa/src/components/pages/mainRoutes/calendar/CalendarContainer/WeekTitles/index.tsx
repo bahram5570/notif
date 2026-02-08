@@ -2,13 +2,13 @@ import { useMemo } from 'react';
 
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useCulture from '@hooks/useCulture';
 import {
   CALENDAR_CELL_SIZE,
   CALENDAR_GREGORIAN_FARSI_WEEK_NAMES,
   CALENDAR_JALALI_WEEK_NAMES,
-  CalendarTypeEnum,
 } from '@repo/core/constants/date.constants';
+import { useCulture } from '@repo/core/hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 
 const WeekTitles = () => {
   const { culture } = useCulture();

@@ -5,8 +5,7 @@ import { CycleThemeEnum } from '@services/loginServices/enum';
 import { getUserExpiresDate } from '@utils/cookies';
 
 import { CULTURE_COOKIE_NAME, USER_COOKIE_NAME, USER_INFO_COOKIE_NAME } from '@constants/cookie.constants';
-import { CultureTypes } from '@providers/CultureProvider/types';
-import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { CalendarTypeEnum, CultureTypes } from '@repo/core/providers/CultureProvider';
 import { cookies } from 'next/headers';
 
 // # Culture

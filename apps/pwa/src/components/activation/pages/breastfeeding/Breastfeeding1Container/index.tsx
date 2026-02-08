@@ -4,10 +4,10 @@ import { currentDate } from '@repo/core/utils/dates';
 
 import DateModule from '@components/activation/DateModule';
 import MainActivationModule from '@components/activation/MainActivationModule';
-import useCulture from '@hooks/useCulture';
 import useDateIntervals from '@providers/__activation__/ActivationProvider/__hooks__/useDateIntervals';
 import usePageInfo from '@providers/__activation__/ActivationProvider/__hooks__/usePageInfo';
-import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { useCulture } from '@repo/core/hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 
 import { Breastfeeding1ContainerProps } from './types';
 

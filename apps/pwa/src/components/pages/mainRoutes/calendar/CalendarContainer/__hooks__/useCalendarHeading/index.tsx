@@ -2,8 +2,9 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { gregorianFarsiMonthNames, jalaaliMonthNames } from '@repo/core/utils/dates';
 
-import useCulture from '@hooks/useCulture';
-import { CalendarTypeEnum, DATE_SEPERATOR_REGEX } from '@repo/core/constants/date.constants';
+import { DATE_SEPERATOR_REGEX } from '@repo/core/constants/date.constants';
+import { useCulture } from '@repo/core/hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import { Swiper as SwiperTypes } from 'swiper/types';
 
 import { NavigateHandlerTypes, UseCalendarHeadingProps } from './types';

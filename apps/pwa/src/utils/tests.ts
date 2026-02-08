@@ -1,9 +1,5 @@
-import {
-  CalendarTypeEnum,
-  DATE_SEPERATOR_REGEX,
-  GREGORIAN_START_DATE,
-  JALALI_START_DATE,
-} from '@repo/core/constants/date.constants';
+import { DATE_SEPERATOR_REGEX, GREGORIAN_START_DATE, JALALI_START_DATE } from '@repo/core/constants/date.constants';
+import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 
 export const applyDelay = async () => {
   return await new Promise((resolve) => setTimeout(resolve, 1000));

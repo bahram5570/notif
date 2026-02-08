@@ -1,6 +1,5 @@
 import { ActivationTabsListTypes } from '@components/activation/ActivationTabs/types';
-import { CULTURE_INITIAL_VALUES } from '@providers/CultureProvider/constants';
-import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { CULTURE_INITIAL_VALUES, CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 
 import { APP_VERSION } from './app.constants';
 

@@ -1,4 +1,4 @@
-import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { CalendarTypeEnum } from './enum';
 
 export type CultureTypes = {
   calendarType: CalendarTypeEnum;
@@ -11,7 +11,7 @@ export type CultureConextTypes = {
   cultureHandler: CultureHandlerTypes;
 };
 
-export interface CultureContainerTypes {
+export interface CultureProviderTypes {
   children: React.ReactNode;
   defaultValues: CultureTypes | null;
 }

@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 
 import { APP_VERSION } from '@constants/app.constants';
-import useCulture from '@hooks/useCulture';
+import { useCulture } from '@repo/core/hooks/useCulture';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 

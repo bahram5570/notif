@@ -1,6 +1,6 @@
 'use client';
 
-import useCulture from '@hooks/useCulture';
+import { useCulture } from '@repo/core/hooks/useCulture';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import ActivationCalendarHeading from './ActivationCalendarHeading';

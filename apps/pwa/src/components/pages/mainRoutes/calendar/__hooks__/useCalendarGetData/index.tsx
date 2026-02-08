@@ -1,6 +1,6 @@
 import { calendarDayInfoMaker, calendarIntervalMaker, calendarMonthInfoMaker } from './__utils__';
 
-import useCulture from '@hooks/useCulture';
+import { useCulture } from '@repo/core/hooks/useCulture';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { CalendarDataTypes, InfoCalendarResponseTypes, SingleDateTypes, UseGetDataProps } from './types';

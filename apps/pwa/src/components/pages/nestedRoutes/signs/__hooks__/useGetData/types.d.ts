@@ -8,7 +8,7 @@ import {
   InfoCalendarResponseTypes,
   ItemsTypes,
 } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
-import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 
 export type InitialSelectedSignsTypes = Pick<CalendarSignsType, 'data'>['data']['signs'];
 export type InitailBloodPressureTypes = Pick<CalendarSignsType, 'data'>['data']['bloodPressures'];

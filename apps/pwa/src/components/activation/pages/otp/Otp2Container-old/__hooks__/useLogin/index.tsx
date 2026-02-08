@@ -6,7 +6,7 @@ import { getFirebaseCookieToken } from '@utils/cookies';
 import { UserCookieTypes, UserInfoCookieTypes } from '@actions/userCookies.actions';
 import { APP_VERSION } from '@constants/app.constants';
 import useCountDown from '@hooks/useCountDown';
-import useCulture from '@hooks/useCulture';
+import { useCulture } from '@repo/core/hooks/useCulture';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { OTP_COUNT_DOWN_TIME } from '../../constants';

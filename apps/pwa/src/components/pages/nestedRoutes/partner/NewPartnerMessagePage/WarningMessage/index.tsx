@@ -6,7 +6,7 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { ItemPropsType } from '../MessageListContainer/Message/type';
 
 const WarningMessage = ({ messageList }: { messageList: ItemPropsType[] }) => {
-  const storedValue = localStorage.getItem('showWarningMessage');
+  const storedValue = typeof localStorage === 'undefined' ? null : localStorage.getItem('showWarningMessage');
   const isVisible: boolean = storedValue ? JSON.parse(storedValue) : true;
   const [showWarningMessage, setShowWarningMessage] = useState(isVisible);
 

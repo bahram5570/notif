@@ -15,7 +15,8 @@ const RetentionEventProvider = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       const { gDate } = currentDate();
-      const retentionEvent: null | string = localStorage.getItem(RETENTION_EVENT) || null;
+      const retentionEvent: null | string =
+        typeof localStorage === 'undefined' ? null : localStorage.getItem(RETENTION_EVENT) || null;
 
       if (retentionEvent !== gDate) {
         localStorage.setItem(RETENTION_EVENT, gDate);

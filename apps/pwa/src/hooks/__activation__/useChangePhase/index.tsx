@@ -4,8 +4,8 @@ import { phaseChangePayloadUpdater } from './__utils__';
 
 import { getUserCookie, getUserInfoCookie } from '@actions/userCookies.actions';
 import { FetchedUserTypes } from '@components/activation/CompleteRegisterContainer/types';
-import useCulture from '@hooks/useCulture';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
+import { useCulture } from '@repo/core/hooks/useCulture';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { UsePhaseChangeProps } from './types';

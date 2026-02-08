@@ -7,8 +7,8 @@ import { FetchedUserTypes } from '@components/activation/CompleteRegisterContain
 import { OtpStatusTypes } from '@components/activation/pages/otp/Otp2Container/__hooks__/useOtpStatus/types';
 import { APP_VERSION } from '@constants/app.constants';
 import useCountDown from '@hooks/useCountDown';
-import useCulture from '@hooks/useCulture';
 import { ActivationPayloadTypes } from '@providers/__activation__/types';
+import { useCulture } from '@repo/core/hooks/useCulture';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { NotificationRewardTypes, RegisterResponseTypes } from './types';

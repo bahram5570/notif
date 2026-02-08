@@ -4,8 +4,8 @@ import { registerPayloadUpdater } from '@utils/register';
 
 import { getUserCookie, getUserInfoCookie } from '@actions/userCookies.actions';
 import { FetchedUserTypes } from '@components/activation/CompleteRegisterContainer/types';
-import useCulture from '@hooks/useCulture';
 import { ActivationPayloadTypes } from '@providers/__activation__/types';
+import { useCulture } from '@repo/core/hooks/useCulture';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { UpdateOldUserSuccessHandlerTypes } from './types';

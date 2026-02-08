@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import useCulture from '@hooks/useCulture';
-import { CULTURE_INITIAL_VALUES } from '@providers/CultureProvider/constants';
-import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { useCulture } from '@repo/core/hooks/useCulture';
+import { CULTURE_INITIAL_VALUES, CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 
 const useActivationBirthdateTabs = (onChangeValue: (v: CalendarTypeEnum) => void) => {
   const { culture, cultureHandler } = useCulture();

@@ -1,7 +1,7 @@
 import { toGregorianData } from '@repo/core/utils/dates';
 
 import { ActivationPayloadTypes } from '@providers/__activation__/types';
-import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 
 export const phaseChangePayloadUpdater = (payload: ActivationPayloadTypes, calendarType: CalendarTypeEnum) => {
   const copyPayload = { ...payload };

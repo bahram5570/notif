@@ -2,9 +2,9 @@ import { useEffect, useMemo, useState } from 'react';
 
 import { toGregorianData, toJalaliData } from '@repo/core/utils/dates';
 
-import useCulture from '@hooks/useCulture';
 import useDateIntervals from '@providers/__activation__/ActivationProvider/__hooks__/useDateIntervals';
-import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { useCulture } from '@repo/core/hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 
 import { UseActivationPregnancyTabsTypes } from './types';
 

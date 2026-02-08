@@ -4,8 +4,8 @@ import { currentDate, gregorianFarsiMonthNames, jalaaliMonthNames, toJalaliData 
 
 import { GoalNamesEnum } from '@constants/activation.constants';
 import useGoalFinder from '@hooks/__activation__/useGoalFinder';
-import useCulture from '@hooks/useCulture';
-import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { useCulture } from '@repo/core/hooks/useCulture';
+import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 
 import { UseSampleCycleHeadingInfoProps } from './types';
 

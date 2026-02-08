@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { SHOULD_SHOW_CHATBOT_MODAL } from '../../constants';
 
 const useChatbotModalVisibility = () => {
-  const storedValue = localStorage.getItem(SHOULD_SHOW_CHATBOT_MODAL);
+  const storedValue = typeof localStorage === 'undefined' ? null : localStorage.getItem(SHOULD_SHOW_CHATBOT_MODAL);
   const isVisible: boolean = storedValue ? JSON.parse(storedValue) : true;
 
   useEffect(() => {

@@ -1,5 +1,5 @@
 import { CultureTypes } from '@providers/CultureProvider/types';
-import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 
 import { ActivationCalendarTypes } from '../../types';
 

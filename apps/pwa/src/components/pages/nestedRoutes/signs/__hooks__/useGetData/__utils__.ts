@@ -10,7 +10,7 @@ import {
   CalendarWidgetEnums,
   DayTypeEnums,
 } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/CalendarEnums';
-import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import moment from 'moment-jalaali';
 
 import {

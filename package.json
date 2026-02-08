@@ -38,6 +38,7 @@
     "posthog-node": "^5.8.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-intersection-observer": "^9.14.1",
     "react-toastify": "^10.0.5",
     "rimraf": "^6.1.2",
     "swiper": "^11.2.10",

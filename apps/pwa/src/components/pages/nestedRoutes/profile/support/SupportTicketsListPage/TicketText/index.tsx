@@ -3,9 +3,9 @@ import { useMemo } from 'react';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toJalaliData } from '@repo/core/utils/dates';
 
-import useCulture from '@hooks/useCulture';
-import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { useCulture } from '@repo/core/hooks/useCulture';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import Link from 'next/link';
 
 import TicketStatus from './TicketStatus';

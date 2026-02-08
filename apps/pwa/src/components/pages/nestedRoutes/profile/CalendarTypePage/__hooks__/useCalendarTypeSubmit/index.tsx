@@ -1,7 +1,7 @@
-import useCulture from '@hooks/useCulture';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
-import { CalendarTypeEnum } from '@repo/core/constants/date.constants';
+import { useCulture } from '@repo/core/hooks/useCulture';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import { useRouter } from 'next/navigation';
 
 const useCalendarTypeSubmit = (calendarType: CalendarTypeEnum) => {

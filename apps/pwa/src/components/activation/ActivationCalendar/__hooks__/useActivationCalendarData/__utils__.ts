@@ -1,6 +1,7 @@
 import { currentDate } from '@repo/core/utils/dates';
 
-import { CalendarTypeEnum, DATE_SEPERATOR_REGEX } from '@repo/core/constants/date.constants';
+import { DATE_SEPERATOR_REGEX } from '@repo/core/constants/date.constants';
+import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import moment from 'moment-jalaali';
 
 import {

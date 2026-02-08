@@ -12,8 +12,9 @@ import { ROUTIN_STEP, SHOW_ROUTIN_UNLOCK_TOST } from './constant';
 const RoutinUnlockTost = () => {
   const [showRoutinToast, setShowRoutinToast] = useState<boolean | null>(null);
   const [routinStep, setRoutinStep] = useState<number>(0);
-  const showRoutinUnlockToast = localStorage.getItem(SHOW_ROUTIN_UNLOCK_TOST);
-  const currentRoutinStep = localStorage.getItem(ROUTIN_STEP);
+  const showRoutinUnlockToast =
+    typeof localStorage === 'undefined' ? null : localStorage.getItem(SHOW_ROUTIN_UNLOCK_TOST);
+  const currentRoutinStep = typeof localStorage === 'undefined' ? null : localStorage.getItem(ROUTIN_STEP);
 
   const { startCounter: startShowMessage } = useCountDown({
     time: 9,

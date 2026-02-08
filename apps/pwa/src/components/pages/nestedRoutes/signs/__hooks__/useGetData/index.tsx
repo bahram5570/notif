@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { signsDaysListMaker, signsItemsListMaker, sortedSignsListMaker } from './__utils__';
 
 import { InfoCalendarResponseTypes } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
-import useCulture from '@hooks/useCulture';
+import { useCulture } from '@repo/core/hooks/useCulture';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { InfoListTypes } from './types';
