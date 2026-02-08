@@ -34,15 +34,14 @@ const useGetFollowData = ({ userId, pageType }: UseGetFollowingDataPropsType) =>
 
   useEffect(() => {
     if (userId) {
-      callApi();
+      setPageNo(0);
     }
   }, [userId]);
 
   useEffect(() => {
-    if (pageNo > 0 && !isLoading) {
-      callApi();
-    }
-  }, [pageNo, isLoading]);
+    if (!userId) return;
+    callApi();
+  }, [pageNo]);
 
   const updatePageNo = () => {
     setPageNo((prev) => prev + 1);
