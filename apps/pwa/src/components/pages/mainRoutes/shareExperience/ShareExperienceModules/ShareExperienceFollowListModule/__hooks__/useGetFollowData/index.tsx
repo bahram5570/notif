@@ -22,7 +22,7 @@ const useGetFollowData = ({ userId, pageType }: UseGetFollowingDataPropsType) =>
     }
   };
 
-  const api = `shareeexperience/v3/profile/${pageType}/${userId}?pageSize=${PAGE_SIZE}&pageNo=${0}`;
+  const api = `shareeexperience/v3/profile/${pageType}/${userId}?pageSize=${PAGE_SIZE}&pageNo=${pageNo}`;
 
   const { callApi, data, isLoading } = useApi<FollowResponseType>({
     api,
@@ -36,15 +36,20 @@ const useGetFollowData = ({ userId, pageType }: UseGetFollowingDataPropsType) =>
     if (userId) {
       callApi();
     }
-  }, [userId, pageType]);
+  }, [userId]);
+
+  useEffect(() => {
+    if (pageNo > 0 && !isLoading) {
+      callApi();
+    }
+  }, [pageNo, isLoading]);
 
   const updatePageNo = () => {
     setPageNo((prev) => prev + 1);
   };
 
   const firstLoading = isLoading && pageNo === 0;
-
-  return { data, isLoading, firstLoading, updatePageNo, pageNo, followQueryData };
+  return { data, isLoading, updatePageNo, pageNo, followQueryData, firstLoading };
 };
 
 export default useGetFollowData;

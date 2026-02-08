@@ -16,7 +16,7 @@ const ShareExperienceFollowerModalContainer = ({ userId, queryParam }: ShareExpe
       />
       <ShareExperienceFollowListModule
         userId={userId}
-        EmptyStateScript="هنوز کسی رو دنبال نکردی"
+        EmptyStateScript="هنوز دنبال کننده ایی نداری"
         pageType="followers"
       />
     </>

@@ -1,6 +1,5 @@
 import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
-import Dark_Spinner from '@components/ui/Dark_Spinner';
 
 import ShareExperienceFollowItemModule from '../ShareExperienceFollowItemModule';
 import EmptyState from './EmptyState';
@@ -12,29 +11,22 @@ const ShareExperienceFollowListModule = ({
   EmptyStateScript,
   pageType,
 }: ShareExperienceFollowListModulePropsType) => {
-  const { followQueryData, isLoading, pageNo, updatePageNo, firstLoading } = useGetFollowData({
+  const { followQueryData, isLoading, pageNo, updatePageNo } = useGetFollowData({
     userId,
     pageType,
   });
 
-  const loading = isLoading && !firstLoading;
   const hasItem = followQueryData && followQueryData.items.length > 0;
 
   return (
     <InfiniteScrollContainer
-      isLoading={loading}
+      isLoading={isLoading}
       pageNo={pageNo}
       totalCount={followQueryData?.totalCount || 10}
       callBack={updatePageNo}
       height={'100dvh'}
     >
-      {firstLoading && (
-        <div className="w-full flex justify-center pb-10">
-          <Dark_Spinner className="border-impo_Primary_Primary" />
-        </div>
-      )}
-
-      {!firstLoading && followQueryData && (
+      {followQueryData && (
         <div className="flex flex-col px-4 h-full" style={{ paddingTop: HEADER_HEIGHT + 10 }}>
           {!hasItem && <EmptyState EmptyStateScript={EmptyStateScript} />}
           {hasItem &&
