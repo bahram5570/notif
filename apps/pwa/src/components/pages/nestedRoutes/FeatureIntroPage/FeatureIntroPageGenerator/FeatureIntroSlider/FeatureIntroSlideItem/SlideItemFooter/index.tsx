@@ -1,4 +1,4 @@
-import ArrowIcon from '@assets/shared/icons/arrow.svg';
+import ArrowIcon from '@assets/shared/shared/icons/arrow.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { SlideItemFooterPropsType } from './type';

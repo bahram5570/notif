@@ -1,4 +1,4 @@
-import ArrowIcon from '@assets/shared/icons/arrow.svg';
+import ArrowIcon from '@assets/shared/shared/icons/arrow.svg';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
