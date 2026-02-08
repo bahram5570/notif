@@ -7,6 +7,7 @@ const CycleAppBar = ({ date, appBarBackground }: CycleAppBarProps) => {
     <MainPageLayoutHeader
       middleScript={date}
       leftElement1="Profile"
+      leftElement2="Notification"
       rightElement="Calendar"
       hasScalingAnimation={true}
       style={{ background: appBarBackground }}

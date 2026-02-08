@@ -7,4 +7,5 @@ export enum HeaderIconEnums {
   Info = 'Info',
   ProfileSupportTicket = 'ProfileSupportTicket',
   PregnancyCheckupBackButton = 'PregnancyCheckupBackButton',
+  Notification = 'Notification',
 }

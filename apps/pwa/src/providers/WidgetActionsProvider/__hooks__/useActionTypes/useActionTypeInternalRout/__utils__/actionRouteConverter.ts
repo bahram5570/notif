@@ -33,6 +33,10 @@ export const actionRouteConverter = async (serverLink: string) => {
     case '/support/category':
       result = '/protected/supportTicket';
       break;
+    case '/support/ticket/chat':
+      const id = queries.split('id=')[1];
+      result = `/protected/supportTicket/${id}`;
+      break;
 
     case '/partner/messenger':
       result = '/protected/partnerMessage';
