@@ -1,5 +1,6 @@
 import './globals.css';
 
+import { getCultureCookie } from '@actions/userCookies.actions';
 import ErrorProvider from '@providers/ErrorProvider';
 import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
 import ServiceWorkerProvider from '@providers/ServiceWorkerProvider';
@@ -36,6 +37,8 @@ const YekanBakhVF = localFont({
 });
 
 const RootLayout = async ({ children }: { children: React.ReactNode }) => {
+  const culture = await getCultureCookie();
+
   return (
     <html lang="fa" dir="ltr" suppressHydrationWarning={true} className={YekanBakhVF.className}>
       <head>
@@ -61,7 +64,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
         <main>
           {/* <AnalyticsProvider> */}
           <OperatingSystemProvider>
-            <CultureProvider defaultValues={null}>
+            <CultureProvider defaultValues={culture}>
               <ReactQueryProvider>
                 <ErrorProvider>
                   <ToastProvider>

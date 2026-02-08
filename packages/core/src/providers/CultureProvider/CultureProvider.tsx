@@ -2,10 +2,11 @@
 
 import { createContext, useEffect, useState } from 'react';
 
+// @ts-ignore
+import { setCultureCookie } from '@actions/userCookies.actions';
+
 import { CalendarTypeEnum } from './enum';
 import { CultureConextTypes, CultureHandlerTypes, CultureProviderTypes, CultureTypes } from './types';
-
-// import { setCultureCookie } from '@actions/userCookies.actions';
 
 export const CULTURE_INITIAL_VALUES: CultureTypes = { calendarType: CalendarTypeEnum.Jalali };
 
@@ -21,13 +22,13 @@ export const CultureProvider = ({ children, defaultValues }: CultureProviderType
     const result = { ...culture, [name]: value };
 
     setCulture(result);
-    // await setCultureCookie(result);
+    await setCultureCookie(result);
   };
 
   useEffect(() => {
     const handleDefaultValues = async () => {
       if (defaultValues === null) {
-        // await setCultureCookie(CULTURE_INITIAL_VALUES);
+        await setCultureCookie(CULTURE_INITIAL_VALUES);
       }
     };
 
