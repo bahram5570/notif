@@ -69,6 +69,7 @@ const CustomImage = (props: CustomImageProps) => {
                 })
               }
               id={props.id}
+              unoptimized={true}
             />
           </>
         )}
