@@ -23,7 +23,7 @@ const ShareExperienceContainer = () => {
   const { topics } = useTopics(data?.topics);
 
   return (
-    <MainPageLayout leftElement1="Profile">
+    <MainPageLayout leftElement1="Profile" leftElement2="Notification">
       <>
         {isLoading && !data && <ShareExperienceSkeleton />}
 

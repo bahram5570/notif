@@ -1,8 +1,8 @@
 import { CycleThemeEnum } from '@services/loginServices/enum';
 
 import { getUserInfoCookie, setUserInfoCookie } from '@actions/userCookies.actions';
-import { APP_VERSION } from '@constants/app.constants';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
+import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 

@@ -6,6 +6,8 @@ import ShareExperienceCommentsModal from '../../ShareExperienceModals/ShareExper
 import ShareExperienceDefultAvatarListModal from '../../ShareExperienceModals/ShareExperienceDefultAvatarListModal';
 import ShareExperienceDeleteModal from '../../ShareExperienceModals/ShareExperienceDeleteModal';
 import ShareExperienceEditProfileModal from '../../ShareExperienceModals/ShareExperienceEditProfileModal';
+import ShareExperienceFollowerModal from '../../ShareExperienceModals/ShareExperienceFollower';
+import ShareExperienceFollowingModal from '../../ShareExperienceModals/ShareExperienceFollowing';
 import ShareExperienceNewExerciseModal from '../../ShareExperienceModals/ShareExperienceNewExerciseModal';
 import ShareExperienceNewReplyModal from '../../ShareExperienceModals/ShareExperienceNewReplyModal';
 import ShareExperienceProfileModal from '../../ShareExperienceModals/ShareExperienceProfileModal';
@@ -46,6 +48,8 @@ const ShareExperienceExperiences = ({
           <ShareExperienceChangeAvatarModal />
           <ShareExperienceDefultAvatarListModal />
           <ShareExperienceEditProfileModal />
+          <ShareExperienceFollowerModal shareExperienceOrdersList={shareExperienceOrdersList} />
+          <ShareExperienceFollowingModal shareExperienceOrdersList={shareExperienceOrdersList} />
         </>
       )}
 

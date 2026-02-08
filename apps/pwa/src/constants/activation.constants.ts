@@ -1,7 +1,6 @@
 import { ActivationTabsListTypes } from '@components/activation/ActivationTabs/types';
+import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { CULTURE_INITIAL_VALUES, CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
-
-import { APP_VERSION } from './app.constants';
 
 export const ACTIVATION_PAYLOAD_VALUES = {
   height: -1,
@@ -41,8 +40,8 @@ export const ACTIVATION_PAYLOAD_VALUES = {
   weightBeforePregnancy: -1,
   preventionSexCommited: -1,
   pragnencyHistoryStatus: -1,
-  calendarType: CULTURE_INITIAL_VALUES.calendarType,
   version: APP_VERSION || '',
+  calendarType: CULTURE_INITIAL_VALUES.calendarType,
 };
 
 export const ACTIVATION_INTERFACE_CODE = 'ACTIVATION_INTERFACE_CODE';

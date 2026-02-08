@@ -1,6 +1,6 @@
 import { pwaHttp } from '@repo/core/utils/pwaHttp';
 
-import { APP_VERSION } from '@constants/app.constants';
+import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { HydrationBoundary, QueryClient, dehydrate } from '@tanstack/react-query';
 
 import ProfileProviderContainer from './ProfileProviderContainer';

@@ -21,7 +21,7 @@ const CommentsGeneratorBottomPart = (props: CommentsGeneratorBottomPartProps) =>
         shareId={props.id}
         type="comment"
       />
-      {props.CanSendReply && (
+      {props.canSendComment && (
         <ReplyBtn
           commentId={props.shareId}
           userId={props.userId}

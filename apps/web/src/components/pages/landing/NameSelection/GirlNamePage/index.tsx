@@ -5,6 +5,7 @@ import DownloadApp from '@components/DownloadApp/DownloadAppWomen';
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
 import QrCode from '@components/QrCode';
 import AlphabetBtns from '@components/SelectName/AlphabetBtns';
+import AuthorProfile from '@components/SelectName/AuthorProfile';
 import NamesTable from '@components/SelectName/NamesTable';
 import SelectNameAuthorProfile from '@components/SelectName/SelectNameAuthorProfile';
 import CustomTypography from '@components/ui/CustomTypography';
@@ -23,12 +24,7 @@ const GirlNamePage = async () => {
       <div className="w-full flex flex-col items-center pb-12 mx-auto">
         <NameSelectionHeading />
         <QrCode />
-        <SelectNameAuthorProfile
-          name="مهلا شریعتی"
-          publishDate="31 مرداد"
-          readingTime=" 12 دقیقه برای خواندن"
-          imageUrl="/assets/images/doctor.webp"
-        />
+        <SelectNameAuthorProfile publishDate="31 مرداد" readingTime=" 12 دقیقه برای خواندن" />
 
         <div className=" landing_container px-3 pb-16">
           <AlphabetBtns
@@ -68,6 +64,11 @@ const GirlNamePage = async () => {
             </div>
           ))}
 
+          <AuthorProfile
+            name="مهلا شریعتی"
+            imageUrl="/assets/images/doctor.webp"
+            url="/author/681b4c84e92afe0c649c9d40"
+          />
           <Description />
         </div>
 

@@ -5,7 +5,7 @@ import {
 } from '@components/pages/mainRoutes/shareExperience/constants';
 
 export const shareExperienceTopicQueryMaker = (id: string) => {
-  const queryValue = JSON.stringify({ id, dummyData: Math.random() });
+  const queryValue = JSON.stringify({ id, [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime() });
   const queryKey = SHARE_EXPERIENCE_TOPIC_MODAL_QUERY_NAME;
   return { queryKey, queryValue };
 };

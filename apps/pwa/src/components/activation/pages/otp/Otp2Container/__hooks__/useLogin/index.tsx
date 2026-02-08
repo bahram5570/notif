@@ -4,8 +4,8 @@ import { toEnglishNumbers } from '@repo/core/utils/numbers';
 import { getFirebaseCookieToken } from '@utils/cookies';
 
 import { UserCookieTypes, UserInfoCookieTypes } from '@actions/userCookies.actions';
-import { APP_VERSION } from '@constants/app.constants';
 import useCountDown from '@hooks/useCountDown';
+import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { useCulture } from '@repo/core/hooks/useCulture';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 

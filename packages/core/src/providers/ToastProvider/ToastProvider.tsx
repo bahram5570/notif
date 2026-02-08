@@ -1,8 +1,10 @@
 'use client';
 
 import { createContext } from 'react';
+import { createPortal } from 'react-dom';
 import { ToastContainer } from 'react-toastify';
 
+import { PORTAL_FEEDBACK_TOAST_ID } from '../../constants/app.constants';
 import FeedbackToast from './FeedbackToast';
 import useFeedBackToast from './__hooks__/useFeedBackToast';
 import useNotifyToast from './__hooks__/useNotifyToast';
@@ -17,12 +19,22 @@ export const ToastProvider = ({ children }: { children: React.ReactNode }) => {
   const { toastHandler } = useNotifyToast();
   const { feedbackToastHandler, toastData, visible } = useFeedBackToast();
 
-  return (
-    <ToastContext.Provider value={{ feedbackToastHandler, notifyToastHandler: toastHandler }}>
-      <>{children}</>
+  const showFeedbackToast = typeof window !== 'undefined' && visible;
 
-      <ToastContainer />
-      {visible && <FeedbackToast toastData={toastData} visible={visible} />}
-    </ToastContext.Provider>
+  return (
+    <>
+      {showFeedbackToast &&
+        createPortal(
+          <>
+            <FeedbackToast toastData={toastData} visible={visible} />
+          </>,
+          document.getElementById(PORTAL_FEEDBACK_TOAST_ID) as Element,
+        )}
+
+      <ToastContext.Provider value={{ feedbackToastHandler, notifyToastHandler: toastHandler }}>
+        <>{children}</>
+        <ToastContainer />
+      </ToastContext.Provider>
+    </>
   );
 };

@@ -1,4 +1,4 @@
-import { APP_VERSION } from '@constants/app.constants';
+import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';

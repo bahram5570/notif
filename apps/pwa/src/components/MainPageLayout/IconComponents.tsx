@@ -1,3 +1,4 @@
+import BellIcon from '@assets/icons/Bell.svg';
 import TicketsHistoryIcon from '@assets/icons/chats.svg';
 import CalendarIcon from '@assets/icons/headerCalendar.svg';
 import ProfileIcon from '@assets/icons/headerProfile.svg';
@@ -47,7 +48,7 @@ export const PrifileIconComponent = () => {
     <IconComponentMaker
       loadingId="profile"
       path="/protected/profile"
-      iconElement={<ProfileIcon className="w-8 h-full stroke-impo_Surface_Outline" />}
+      iconElement={<ProfileIcon className="w-6 h-full stroke-impo_Surface_InverseSurface" />}
     />
   );
 };
@@ -57,7 +58,7 @@ export const CalendarIconComponent = () => {
     <IconComponentMaker
       loadingId="calendar"
       path="/protected/calendar"
-      iconElement={<CalendarIcon className="w-8 h-full stroke-impo_Surface_Outline" />}
+      iconElement={<CalendarIcon className="w-6 h-full stroke-impo_Surface_InverseSurface" />}
     />
   );
 };
@@ -81,6 +82,16 @@ export const ProfileTicketsHistory = () => {
         iconElement={<HistoryIcon className="w-6" />}
       />
     </div>
+  );
+};
+
+export const NotificationIconComponent = () => {
+  return (
+    <IconComponentMaker
+      loadingId="notification"
+      path="/protected/notificationHistory"
+      iconElement={<BellIcon className="w-6 h-full stroke-impo_Surface_InverseSurface" />}
+    />
   );
 };
 

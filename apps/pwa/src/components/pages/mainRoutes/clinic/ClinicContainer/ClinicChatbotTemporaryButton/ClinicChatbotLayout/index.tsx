@@ -26,7 +26,7 @@ const ClinicChatbotLayout = ({
   return (
     <div
       ref={targetRef}
-      className={`fixed left-0 right-0 mx-auto z-30 bg-white ${isModalVisible ? 'h-96' : 'h-14'} ${className}`}
+      className={`fixed left-0 right-0 mx-auto z-30  ${isModalVisible ? 'h-96 bg-white' : 'h-14'} ${className}`}
       style={{
         maxWidth: MAX_SCREEN_WIDTH,
         bottom: isModalVisible ? FOOTER_HEIGTH + 16 : FOOTER_HEIGTH + 30,

@@ -1,7 +1,10 @@
 import GalleryWideIcon from '@assets/icons/galleryWide.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import {
+  SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME,
+  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
+} from '@components/pages/mainRoutes/shareExperience/constants';
 import FileInputManager from '@components/ui/FileInputManager';
 import useFileUpload from '@hooks/useFileUpload';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
@@ -27,7 +30,7 @@ const ShareExperienceChangeAvatarModalContainer = ({
     if (id) {
       pageNavigationHandler({ id: id, showProgressBar: true });
 
-      const paramsData = JSON.stringify({ id, dummyData: Math.random() });
+      const paramsData = JSON.stringify({ id, [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime() });
       newQueryParamsHandler({ [SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME]: paramsData });
     }
   };

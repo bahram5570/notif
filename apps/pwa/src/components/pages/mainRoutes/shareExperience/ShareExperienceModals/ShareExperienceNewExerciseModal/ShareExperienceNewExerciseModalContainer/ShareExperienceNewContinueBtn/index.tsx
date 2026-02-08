@@ -1,7 +1,10 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
 import ShareExperienceToast from '@components/pages/mainRoutes/shareExperience/ShareExperienceModules/ShareExperienceToast';
-import { SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import {
+  SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME,
+  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
+} from '@components/pages/mainRoutes/shareExperience/constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
@@ -17,7 +20,10 @@ const ShareExperienceNewContinueBtn = ({ text, btnTop, sendEnable, toast }: Shar
 
   const clickHandler = () => {
     pageNavigationHandler({ id, showProgressBar: false });
-    newQueryParamsHandler({ [SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME]: 'true' });
+    const queryData = JSON.stringify({
+      [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime(),
+    });
+    newQueryParamsHandler({ [SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME]: queryData });
   };
 
   return (

@@ -14,9 +14,11 @@ export const SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME = 'shareExperienceNe
 export const SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME = 'shareExperienceCommentsModal';
 export const SHARE_EXPERIENCE_TOPIC_MODAL_QUERY_NAME = 'shareExperienceTopicModal';
 export const SHARE_EXPERIENCE_PROFILE_QUERY_NAME = 'shareExperienceProfileModal';
-export const SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME = 'shareExperienceNewReplyModal';
+export const SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME = 'shareExperienceNewReplyModal'; //
 export const SHARE_EXPERIENCE_CHANGE_AVATAR_QUERY_NAME = 'shareExperienceChangeAvatarModal';
 export const SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME = 'shareExperienceDefultAvatarListModal';
 export const SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME = 'shareExperienceEditProfileModal';
+export const SHARE_EXPERIENCE_FOLLOWER_QUERY_NAME = 'shareExperienceFollowerModal';
+export const SHARE_EXPERIENCE_FOLLOWING_QUERY_NAME = 'shareExperienceFollowingModal';
 
 export const SHARE_EXPERIENCE_ORDER_QUERY_NAME = 'shareExperienceOrder';

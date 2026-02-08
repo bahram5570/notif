@@ -1,7 +1,10 @@
 import UploadIcon from '@assets/icons/upload.svg';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 
-import { SHARE_EXPERIENCE_CHANGE_AVATAR_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import {
+  SHARE_EXPERIENCE_CHANGE_AVATAR_QUERY_NAME,
+  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
+} from '@components/pages/mainRoutes/shareExperience/constants';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
@@ -26,7 +29,7 @@ const ShareExperienceAvatarModule = ({
       id: id,
       username: username,
       avatar: avatarImage,
-      dummyData: Math.random(),
+      [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime(),
     });
 
     newQueryParamsHandler({ [SHARE_EXPERIENCE_CHANGE_AVATAR_QUERY_NAME]: paramsData });

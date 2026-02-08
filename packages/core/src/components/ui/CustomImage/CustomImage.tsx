@@ -63,6 +63,7 @@ export const CustomImage = (props: CustomImageProps) => {
             <Image
               {...imageStyles}
               id={props.id}
+              unoptimized={true}
               alt={props.alt || ''}
               onClick={clickHandler}
               onError={errorHandler}

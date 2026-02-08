@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import { ShareExperienceResponseTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/__hooks__/useShareExperienceGetData/types';
-import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { SHARE_EXPERIENCE_ORDER_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import useCustomReactQuery from '@hooks/useCustomReactQuery';
 
 import { NewReplyQueriesTypes } from '../../../../ShareExperienceNewReplyModal/types';
 
@@ -18,6 +19,7 @@ const useNewCommentQueries = (shareId: string) => {
         name: data.profile.username,
         type: 'comment',
         shareId,
+        [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime(),
       });
     }
   }, [data]);

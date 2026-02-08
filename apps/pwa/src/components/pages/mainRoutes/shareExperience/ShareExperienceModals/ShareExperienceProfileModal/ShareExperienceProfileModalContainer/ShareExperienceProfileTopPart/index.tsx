@@ -2,7 +2,10 @@ import EditIcon from '@assets/icons/Pen 2.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import {
+  SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME,
+  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
+} from '@components/pages/mainRoutes/shareExperience/constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
@@ -28,7 +31,7 @@ const ShareExperienceProfileTopPart = ({
     if (isSelf) {
       pageNavigationHandler({ id: profile.id, showProgressBar: true });
 
-      const paramsData = JSON.stringify({ id: profile.id, dummyData: Math.random() });
+      const paramsData = JSON.stringify({ id: profile.id, [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime() });
       newQueryParamsHandler({ [SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME]: paramsData });
     } else {
       followHandler({ userId: profile.id, isFollow, userName: profile.username });
@@ -50,7 +53,7 @@ const ShareExperienceProfileTopPart = ({
           </CustomTypography>
         </div>
 
-        <ProfileInfo followCount={followCount} storyCount={storyCount} />
+        <ProfileInfo followCount={followCount} storyCount={storyCount} userId={profile.id} />
       </div>
 
       <CustomButton

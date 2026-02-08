@@ -3,7 +3,10 @@ import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { NewReplyQueriesTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceModals/ShareExperienceNewReplyModal/types';
-import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import {
+  SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME,
+  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
+} from '@components/pages/mainRoutes/shareExperience/constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
@@ -18,7 +21,15 @@ const ReplyBtn = ({ avatar, name, shareId, commentId, userId }: ReplyBtnProps) =
 
   const clickHandler = () => {
     if (!isLoading) {
-      const queries: NewReplyQueriesTypes = { name, avatar, type: 'reply', shareId, commentId, userId };
+      const queries: NewReplyQueriesTypes = {
+        name,
+        avatar,
+        type: 'reply',
+        shareId,
+        commentId,
+        userId,
+        [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime(),
+      };
       const queryData = JSON.stringify(queries);
 
       newQueryParamsHandler({ [SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME]: queryData });

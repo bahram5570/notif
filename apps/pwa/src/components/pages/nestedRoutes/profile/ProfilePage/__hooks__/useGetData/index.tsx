@@ -4,7 +4,7 @@ import { LoginResponseTypes } from '@services/loginServices/types';
 import { getFirebaseCookieToken } from '@utils/cookies';
 
 import { getUserCookie } from '@actions/userCookies.actions';
-import { APP_VERSION } from '@constants/app.constants';
+import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 const useGetData = () => {

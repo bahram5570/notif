@@ -1,6 +1,6 @@
 import { toGregorianData } from '@repo/core/utils/dates';
 
-import { APP_VERSION } from '@constants/app.constants';
+import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { useCulture } from '@repo/core/hooks/useCulture';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';

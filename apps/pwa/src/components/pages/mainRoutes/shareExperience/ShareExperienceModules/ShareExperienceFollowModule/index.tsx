@@ -1,7 +1,10 @@
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import {
+  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
+  SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME,
+} from '@components/pages/mainRoutes/shareExperience/constants';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
@@ -30,6 +33,7 @@ const ShareExperienceFollowModule = (props: ShareExperienceFollowModuleProps) =>
           userId: props.userId,
           dummyData: Math.random(),
           userName: props.name,
+          [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime(),
         });
         newQueryParamsHandler({ [SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME]: queryData });
 
