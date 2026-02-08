@@ -1,6 +1,9 @@
 import ThreeDotsIcon from '@assets/icons/threeDots.svg';
 
-import { SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import {
+  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
+  SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME,
+} from '@components/pages/mainRoutes/shareExperience/constants';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -11,7 +14,7 @@ const ShareExperienceReportModule = (props: ShareExperienceReportModuleProps) =>
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const selectHandler = () => {
-    const queryData = JSON.stringify({ id: props.id, dummyData: Math.random() });
+    const queryData = JSON.stringify({ id: props.id, [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime() });
     newQueryParamsHandler({ [SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME]: queryData });
     pageNavigationHandler({ id: props.id, showProgressBar: true });
   };

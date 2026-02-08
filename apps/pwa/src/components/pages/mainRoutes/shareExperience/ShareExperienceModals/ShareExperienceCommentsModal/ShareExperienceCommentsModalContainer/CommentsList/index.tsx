@@ -4,7 +4,7 @@ import CommentsGenerator from './CommentsGenerator';
 import CommentsListEmpty from './CommentsListEmpty';
 import { CommentsListProps } from './types';
 
-const CommentsList: React.FC<CommentsListProps> = ({ comments, id, CanSendReply }) => {
+const CommentsList: React.FC<CommentsListProps> = ({ comments, id, canSendReply }) => {
   return (
     <div className="w-full h-full flex flex-col items-center">
       <>
@@ -16,7 +16,7 @@ const CommentsList: React.FC<CommentsListProps> = ({ comments, id, CanSendReply 
             shareId={id}
             isFirstIndex={index === 0}
             key={index}
-            CanSendReply={CanSendReply}
+            canSendComment={canSendReply}
           />
         ))}
       </>

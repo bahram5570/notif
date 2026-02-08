@@ -25,6 +25,7 @@ const ShareExperienceProfileIconModule = ({
       pageNavigationHandler({ id, showProgressBar: true });
 
       const paramsData = JSON.stringify({ id, [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime() });
+
       newQueryParamsHandler({ [SHARE_EXPERIENCE_PROFILE_QUERY_NAME]: paramsData });
     }
   };

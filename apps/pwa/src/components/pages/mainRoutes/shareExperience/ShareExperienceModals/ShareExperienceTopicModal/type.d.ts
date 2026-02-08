@@ -2,7 +2,7 @@ import { ShareExperienceExperiencesProps } from '../../ShareExperienceContainer/
 
 export interface QueryDataShareExperienceTopicModal {
   id: string;
-  dummyData: number;
+  shareExperienceOrder: number;
 }
 
 type ProfileTypes = Pick<Pick<ShareExperienceExperiencesProps, 'profile'>['profile'], 'avatarImage'>;

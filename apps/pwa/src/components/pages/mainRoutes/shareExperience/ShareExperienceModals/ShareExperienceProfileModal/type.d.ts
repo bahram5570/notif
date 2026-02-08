@@ -2,7 +2,7 @@ import { ShareExperienceOrdersListTypes } from '../../ShareExperienceContainer/S
 
 export interface QueryDataShareExperienceProfileModal {
   id: string;
-  dummyData: number;
+  shareExperienceOrder: number;
 }
 
 export interface ShareExperienceProfileModalProps {

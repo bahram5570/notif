@@ -8,8 +8,8 @@ const FeedbackToast = ({ toastData, visible }: FeedbackToastProps) => {
 
   return (
     <div
-      className={`fixed inset-0 flex justify-center items-center mx-auto pointer-events-none transition-all duration-500 ease-in-out z-50 max-w-40 px-6 ${
-        visible ? 'opacity-100 visible' : 'opacity-0 invisible'
+      className={`fixed inset-0 flex justify-center items-center mx-auto pointer-events-none transition-all duration-500 ease-in-out z-[999999] px-6 ${
+        visible ? 'opacity-100' : 'opacity-0'
       }`}
       style={{
         background: `${!toastData?.toastWithDescription ? 'rgba(0, 0, 0, 0.16)' : ''}`,

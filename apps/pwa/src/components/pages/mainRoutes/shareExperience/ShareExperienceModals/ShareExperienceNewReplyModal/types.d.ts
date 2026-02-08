@@ -13,4 +13,5 @@ type ItemsTypes = CommentTypes | ReplyTypes;
 export type NewReplyQueriesTypes = ItemsTypes & {
   name: string;
   avatar: string;
+  shareExperienceOrder: number;
 };

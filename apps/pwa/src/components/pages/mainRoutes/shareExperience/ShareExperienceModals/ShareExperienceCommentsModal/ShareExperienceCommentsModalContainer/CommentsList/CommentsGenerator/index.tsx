@@ -42,7 +42,7 @@ const CommentsGenerator = (props: CommentsGeneratorProps) => {
           shareId={props.id}
           id={props.shareId}
           name={props.name}
-          CanSendReply={props.CanSendReply}
+          canSendComment={props.canSendComment}
         />
 
         <ReplyGenerator

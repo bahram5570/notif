@@ -1,4 +1,7 @@
-import { SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import {
+  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
+  SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME,
+} from '@components/pages/mainRoutes/shareExperience/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import useAnalytics from '@hooks/useAnalytics';
@@ -29,6 +32,7 @@ const ShareExperienceFollowModule = (props: ShareExperienceFollowModuleProps) =>
           userId: props.userId,
           dummyData: Math.random(),
           userName: props.name,
+          [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime(),
         });
         newQueryParamsHandler({ [SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME]: queryData });
 
