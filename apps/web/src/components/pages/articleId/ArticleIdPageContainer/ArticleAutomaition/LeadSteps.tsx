@@ -11,7 +11,7 @@ export default function LeadSteps({ step, setStep, onClose }: LeadStepsProps) {
   const [userPhone, setUserPhone] = useState<string>('');
 
   return (
-    <div className="px-5 sm:px-8 py-5 sm:py-6">
+    <div className="px-4 py-5">
       {step === 'phone' && (
         <PhoneInput
           onNext={(phone: string) => {

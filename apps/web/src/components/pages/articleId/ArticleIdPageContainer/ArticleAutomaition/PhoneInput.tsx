@@ -1,7 +1,8 @@
 'use client';
 
+import CustomInput from './components/CustomInput';
+
 import CustomButton from '@components/ui/CustomButton';
-import CustomInput from '@components/ui/CustomInput';
 import CustomTypography from '@components/ui/CustomTypography';
 
 import { usePhoneSubmit } from './_hooks/usePhoneSubmit';
@@ -18,11 +19,12 @@ export default function PhoneInput({ onNext }: PhoneProps) {
       <form onSubmit={handleSubmit} className="space-y-5">
         <CustomInput
           dir="ltr"
+          type="tel"
           maxLength={11}
           numbersMode="persian"
           placeholder="شماره تلفن همراهت"
           value={value}
-          className={`p-3 rounded-xl border border-impo_Neutral_Surface ${value ? 'text-left' : 'text-right'}`}
+          className={`p-3 rounded-xl border placeholder:!text-impo_Surface_OutlineVariant focus:!border-impo_Primary_Primary border-impo_Neutral_Surface ${value ? 'text-left' : 'text-right'}`}
           fontSize="Body_Large"
           onValue={setValue}
         />

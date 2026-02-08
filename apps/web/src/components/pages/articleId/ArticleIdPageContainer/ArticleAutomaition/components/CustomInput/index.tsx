@@ -18,6 +18,8 @@ const CustomInput = ({
   style,
   value,
   maxLength,
+  dir = 'ltr',
+  type = 'text',
 }: CustomInputTypes) => {
   const { breakPoint } = useBreakPoint();
   const { operatingSystem } = useOperatingSystem();
@@ -32,7 +34,8 @@ const CustomInput = ({
 
   return (
     <input
-      type="text"
+      dir={dir}
+      type={type}
       value={updatedValue}
       maxLength={maxLength}
       onChange={changeHandler}

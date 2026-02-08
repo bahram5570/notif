@@ -12,8 +12,6 @@ import { useOtpSubmit } from './_hooks/useOtpSubmit';
 import { useOtpTimer } from './_hooks/useOtpTimer';
 import { OtpProps } from './types';
 
-const LEN = 6;
-
 export default function OtpInput({ onNext, phone }: OtpProps) {
   const { code, refs, handleChange, handleKeyDown, resetCode } = useOtpCode();
   const { timer, formatTimer, resetTimer } = useOtpTimer(120);
@@ -21,12 +19,13 @@ export default function OtpInput({ onNext, phone }: OtpProps) {
 
   const { resendLoading, handleResend } = useOtpResend(resetTimer, resetCode, (msg) => {});
 
+  const finalPhone = `لطفا کد تایید 6 رقمی که به شماره همراه ${toPersianNumbers(phone || '')} پیامک کردیم رو اینجا وارد کن`;
+
   return (
     <div>
       <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground mb-3">
-        لطفا کد تایید 6 رقمی که به شماره همراه {toPersianNumbers(phone || '')} پیامک کردیم رو اینجا وارد کن
+        {finalPhone}
       </CustomTypography>
-
       <div className="flex gap-2 justify-center flex-row-reverse mt-3">
         {code.map((digit, i) => (
           <input
@@ -41,7 +40,7 @@ export default function OtpInput({ onNext, phone }: OtpProps) {
             inputMode="numeric"
             pattern="[0-9]*"
             autoComplete="one-time-code"
-            className={getInputClass(digit, isSuccess, isErrorShake)}
+            className={`${getInputClass(digit, isSuccess, isErrorShake)}`}
             dir="ltr"
             style={{ direction: 'ltr' }}
           />
@@ -54,7 +53,7 @@ export default function OtpInput({ onNext, phone }: OtpProps) {
           isDisable={timer > 0 || resendLoading}
           isLoading={resendLoading}
           fontSize="Body_Medium"
-          className="!bg-impo_Transparent !text-impo_Neutral_OnBackground !opacity-[1] border-none"
+          className={`!bg-impo_Transparent !text-impo_Neutral_OnBackground !opacity-[1] border-none ${timer === 0 && '!text-impo_Primary_Primary'}`}
         >
           {`کد تایید رو دریافت نکردم ${timer > 0 ? `(${toPersianNumbers(formatTimer())})` : ''}`}
         </CustomButton>

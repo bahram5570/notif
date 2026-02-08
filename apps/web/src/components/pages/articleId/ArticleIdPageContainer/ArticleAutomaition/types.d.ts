@@ -2,8 +2,6 @@ export type Step = 'phone' | 'otp' | 'success';
 
 export interface LeadPopupProps {
   threshold?: number;
-  once?: boolean;
-  storageKey?: string;
 }
 
 export interface PhoneProps {

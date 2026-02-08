@@ -14,8 +14,9 @@ export default function Success({ onClose }: SuccessProps) {
       <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground mb-3 text-center">
         کاربر عزیز، فایل pdf شما آماده‌س و میتونی از طریق لینک زیر دانلودش کنی!
       </CustomTypography>
-
-      <CustomImage alt="pdf" src={pdfIcon} className="w-[65px] h-[75px] flex justify-self-center" />
+      <div className="flex justify-center">
+        <CustomImage alt="pdf" src={pdfIcon} className="w-[65px] h-[75px]" />
+      </div>
       <CustomButton
         onClick={onClose}
         fontSize="Body_Large"
