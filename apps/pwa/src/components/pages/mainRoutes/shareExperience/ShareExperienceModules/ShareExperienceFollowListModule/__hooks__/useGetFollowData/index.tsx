@@ -27,7 +27,7 @@ const useGetFollowData = ({ userId, pageType }: UseGetFollowingDataPropsType) =>
   const { callApi, data, isLoading } = useApi<FollowResponseType>({
     api,
     method: 'GET',
-    queryKey: ['followingData'],
+    queryKey: [`${pageType}Data`],
     fetchOnMount: false,
     onSuccess: successHandler,
   });
@@ -36,7 +36,7 @@ const useGetFollowData = ({ userId, pageType }: UseGetFollowingDataPropsType) =>
     if (userId) {
       callApi();
     }
-  }, [userId]);
+  }, [userId, pageType]);
 
   const updatePageNo = () => {
     setPageNo((prev) => prev + 1);
