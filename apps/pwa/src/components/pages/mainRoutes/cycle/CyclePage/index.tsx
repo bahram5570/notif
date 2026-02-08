@@ -6,8 +6,9 @@ import CycleContainer from '../CycleContainer';
 import ErrorCycleAppBar from '../ErrorCycleAppBar';
 import useGetData from '../__hooks__/useGetData';
 
-const CyclePage = () => {
+const CyclePage = ({ res }) => {
   const { data, cycleResetKey, hasError } = useGetData();
+  console.log(res);
 
   return (
     <div style={{ paddingBottom: FOOTER_HEIGTH + 16 }} key={cycleResetKey}>

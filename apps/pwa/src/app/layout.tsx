@@ -35,7 +35,7 @@ const YekanBakhVF = localFont({
   src: '../../public/assets/shared/fonts/YekanBakh-VF.ttf',
 });
 
-const RootLayout = ({ children }: { children: React.ReactNode }) => {
+const RootLayout = async ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="fa" dir="ltr" suppressHydrationWarning={true} className={YekanBakhVF.className}>
       <head>
@@ -61,7 +61,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <main>
           {/* <AnalyticsProvider> */}
           <OperatingSystemProvider>
-            <CultureProvider>
+            <CultureProvider defaultValues={null}>
               <ReactQueryProvider>
                 <ErrorProvider>
                   <ToastProvider>
