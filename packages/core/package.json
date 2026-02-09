@@ -37,10 +37,9 @@
   },
   "scripts": {
     "clear:dist": "rimraf dist",
-    "copy:theme.css": "cpy ./src/theme/theme.css ./dist/theme --flat",
-    "copy:tailwind.config": "cpy ./src/theme/tailwind.config.ts ./dist/theme --flat",
+    "copy:files": "node copy-files.js",
     "build:tailwind.css": "cd ./src/theme && tailwindcss -i ./tailwind.css -o ../../dist/theme/tailwind.css",
-    "build": "npm run clear:dist && tsc --project tsconfig.json && npm run copy:tailwind.config && npm run copy:theme.css && npm run build:tailwind.css"
+    "build": "npm run clear:dist && tsc --project tsconfig.json && npm run build:tailwind.css && npm run copy:files"
   },
   "peerDependencies": {
     "react": "^18.0.0",

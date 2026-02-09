@@ -1,12 +1,8 @@
 {
   "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "noEmit": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
-    ],
+    "jsx": "preserve",
+    "types": ["./assets"],
     "paths": {
       "@app/*": ["./src/app/*"],
       "@lib/*": ["./src/lib/*"],
@@ -18,7 +14,13 @@
       "@constants/*": ["./src/constants/*"],
       "@components/*": ["./src/components/*"]
     },
-    "jsx": "preserve"
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "noEmit": true,
+    "strictNullChecks": true
   },
   "include": [
     "**/*.ts",

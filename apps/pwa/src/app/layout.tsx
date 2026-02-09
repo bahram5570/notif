@@ -4,7 +4,12 @@ import { getCultureCookie } from '@actions/userCookies.actions';
 import ErrorProvider from '@providers/ErrorProvider';
 import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
 import ServiceWorkerProvider from '@providers/ServiceWorkerProvider';
-import { MAX_SCREEN_WIDTH, PORTAL_ID, PORTAL_SPLASH_ID } from '@repo/core/constants/app.constants';
+import {
+  MAX_SCREEN_WIDTH,
+  PORTAL_FEEDBACK_TOAST_ID,
+  PORTAL_ID,
+  PORTAL_SPLASH_ID,
+} from '@repo/core/constants/app.constants';
 import { CultureProvider } from '@repo/core/providers/CultureProvider';
 // import { AnalyticsProvider } from '@repo/core/providers/AnalyticsProvider';
 import { OperatingSystemProvider } from '@repo/core/providers/OperatingSystemProvider';
@@ -76,6 +81,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
                           <PreviewImageProvider />
                           <div id={PORTAL_SPLASH_ID} />
                           <div id={PORTAL_ID} />
+                          <div id={PORTAL_FEEDBACK_TOAST_ID} />
                         </ServiceWorkerProvider>
                       </WidgetActionsProvider>
                     </PageNavigationProvider>

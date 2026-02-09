@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import Bookmark from '@components/ui/Bookmark';
+import { CustomBookmark } from '@repo/core/components/ui/CustomBookmark';
+
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
@@ -32,7 +33,7 @@ const WidgetHintCardBookmark = (props: WidgetHintCardBookmarkProps) => {
     }
   }, [apiInfo]);
 
-  return <Bookmark id="hintBookMarked" clickHandler={clickHandler} isBookmarked={isBookmarked} />;
+  return <CustomBookmark id="hintBookMarked" clickHandler={clickHandler} isBookmarked={isBookmarked} />;
 };
 
 export default WidgetHintCardBookmark;

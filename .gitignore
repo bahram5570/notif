@@ -3,3 +3,5 @@ node_modules
 .next
 *dist*
 .env.sentry-build-plugin
+apps/pwa/public/assets/shared
+apps/web/public/assets/shared

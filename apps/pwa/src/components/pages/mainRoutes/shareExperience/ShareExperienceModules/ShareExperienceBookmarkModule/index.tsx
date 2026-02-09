@@ -1,5 +1,5 @@
-import SaveEmptyIcon from '@assets/icons/saveEmpty.svg';
-import SaveFillIcon from '@assets/icons/saveFill.svg';
+import SaveEmptyIcon from '@assets/shared/icons/saveEmpty.svg';
+import SaveFillIcon from '@assets/shared/icons/saveFill.svg';
 
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 

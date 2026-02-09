@@ -1,2 +1,2 @@
 export * from './CustomButton';
-export type * from './types';
+export type { CustomButtonTypes } from './types';

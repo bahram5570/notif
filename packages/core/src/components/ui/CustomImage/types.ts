@@ -1,10 +1,4 @@
-// import { FileUploadImageFileTypes } from '@hooks/useFileUpload/types';
-// import { PreviewImageShapeTypes } from '@providers/PreviewImageProvider/types';
 import { PreviewImageShapeTypes } from '../../../providers/PreviewImageProvider/types';
-
-// type ImageApiTypes = '/file' | '/support/article/panel/image' | '/woman';
-
-// export type FileUploadImageFileTypes = null | { image: string; imageType: string };
 
 export type CustomImageProps = {
   id?: string;

@@ -1,6 +1,6 @@
 import ChatIcon from '@assets/icons/message-icon.svg';
-import BookmarkIcon from '@assets/icons/saveEmpty.svg';
 import StarIcon from '@assets/icons/star-1.svg';
+import BookmarkIcon from '@assets/shared/icons/saveEmpty.svg';
 
 const RoutinTabSkeleton = () => {
   return (

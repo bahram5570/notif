@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import Bookmark from '@components/ui/Bookmark';
+import { CustomBookmark } from '@repo/core/components/ui/CustomBookmark';
+
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { RoutinBookmarkedPropsType } from './type';
@@ -35,7 +36,7 @@ const RoutinBookmarked = (props: RoutinBookmarkedPropsType) => {
     setIsBookmarked(props.isBookmarked);
   }, [props.isBookmarked]);
 
-  return <Bookmark clickHandler={clickHandler} isBookmarked={isBookmarked} />;
+  return <CustomBookmark clickHandler={clickHandler} isBookmarked={isBookmarked} />;
 };
 
 export default RoutinBookmarked;

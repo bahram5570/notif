@@ -1,8 +1,9 @@
-import fs from 'fs-extra';
+import fse from 'fs-extra';
+import fsp from 'fs/promises';
 import path from 'path';
 
-export const exportMaker = async (props: { appName: string; port: number }) => {
-  const distName = `${props.appName}-dist-1`;
+export const exportMaker = async ({ port, appName }: { appName: string; port: number }) => {
+  const distName = `${appName}-dist-1`;
 
   const rootDir = process.cwd();
   const distDir = path.join(rootDir, distName);
@@ -10,28 +11,49 @@ export const exportMaker = async (props: { appName: string; port: number }) => {
   const staticSrc = path.join(rootDir, '.next', 'static');
   const standaloneSrc = path.join(rootDir, '.next', 'standalone');
 
-  const appDir = path.join(distDir, 'apps', props.appName);
+  const appDir = path.join(distDir, 'apps', appName);
   const nextDir = path.join(appDir, '.next');
 
   try {
-    await fs.remove(distDir);
-    await fs.copy(standaloneSrc, distDir);
-    await fs.copy(publicSrc, path.join(appDir, 'public'));
-    await fs.copy(staticSrc, path.join(nextDir, 'static'));
+    await fse.remove(distDir);
+    await fse.copy(standaloneSrc, distDir);
+    await fse.copy(publicSrc, path.join(appDir, 'public'));
+    await fse.copy(staticSrc, path.join(nextDir, 'static'));
 
     const packageJsonContent = {
-      name: props.appName,
+      name: appName,
       private: true,
       scripts: {
-        start: `set PORT=${props.port} && node apps/${props.appName}/server.js`,
+        start: `set PORT=${port} && node apps/${appName}/server.js`,
       },
     };
 
-    await fs.writeJson(path.join(distDir, 'package.json'), packageJsonContent, { spaces: 2 });
+    await fse.writeJson(path.join(distDir, 'package.json'), packageJsonContent, { spaces: 2 });
 
     console.log(`✅ Build "${distName}" completed successfully!`);
   } catch (error) {
     console.error(`❌ Build "${distName}" failed: `, error);
+    process.exit(1);
+  }
+};
+
+export const filesCopyMaker = async ({ source, destination }: { source: string; destination: string }) => {
+  try {
+    const src = path.resolve(process.cwd(), source);
+    let dest = path.resolve(process.cwd(), destination);
+
+    const srcStat = await fsp.stat(src);
+    const destStat = await fsp.stat(dest).catch(() => null);
+
+    if (srcStat.isDirectory() || (destStat && destStat.isDirectory())) {
+      dest = path.join(dest, path.basename(src));
+    }
+    await fsp.mkdir(path.dirname(dest), { recursive: true });
+    await fsp.cp(src, dest, { recursive: true, force: true });
+
+    console.log(`✅ Copy assets completed successfully!`);
+  } catch (error) {
+    console.error(`❌ Copy assets failed: `, error);
     process.exit(1);
   }
 };
