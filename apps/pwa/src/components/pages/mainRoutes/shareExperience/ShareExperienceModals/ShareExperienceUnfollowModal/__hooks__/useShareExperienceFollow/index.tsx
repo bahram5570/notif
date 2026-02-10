@@ -10,18 +10,26 @@ import { useRouter } from 'next/navigation';
 import { QueryExperiencesDataTypes } from '../../../../ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
 import { CommentsResponseTypes } from '../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/__hooks__/useCommentsList/types';
 import { SelfExperienceDataType } from '../../../ShareExperienceProfileModal/ShareExperienceProfileModalContainer/ShareExperenceProfileTabList/ShareExperienceProfileActivities/__hooks__/useActivitiesData/type';
+import { ShareExperenceProfileResponsePropsType } from '../../../ShareExperienceProfileModal/ShareExperienceProfileModalContainer/__hooks__/useGetData/type';
 import { ApiInfoTypes, FollowHandlerTypes } from './types';
 
 const useShareExperienceFollow = (experienceId?: string) => {
   const router = useRouter();
-  const { getQueryParams } = useQueryParamsHandler();
   const toast = useCustomToast();
+  const { getQueryParams } = useQueryParamsHandler();
   const [apiInfo, setApiInfo] = useState<null | ApiInfoTypes>(null);
   const { updateQuery, getQuery } = useCustomReactQuery(['experiences']);
 
   const successHandler = () => {
     const experiencesData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['experiences'] });
     const commentsData = getQuery<CommentsResponseTypes>({ queryKey: ['comments ' + experienceId] });
+    const exitTopicExperienceData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['topicExperiences'] });
+    const exitActivitiesData = getQuery<SelfExperienceDataType>({ queryKey: ['activities'] });
+    const exitSelfExperienceData = getQuery<SelfExperienceDataType>({ queryKey: ['selfExperience'] });
+    const shareExperienceProfileData = getQuery<ShareExperenceProfileResponsePropsType>({
+      queryKey: ['shareExperienceProfileData'],
+    });
+
     if (experiencesData) {
       experiencesData.expirences.forEach((item) => {
         if (item.userId === apiInfo?.userId) {
@@ -30,47 +38,50 @@ const useShareExperienceFollow = (experienceId?: string) => {
       });
 
       updateQuery({ queryKey: ['experiences'], payload: experiencesData });
+    }
 
-      const exitCommentQueryData = getQuery({ queryKey: ['comments ' + experienceId] });
-      const exitTopicExperienceData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['topicExperiences'] });
-      const exitActivitiesData = getQuery<SelfExperienceDataType>({ queryKey: ['activities'] });
-      const exitSelfExperienceData = getQuery<SelfExperienceDataType>({ queryKey: ['selfExperience'] });
+    if (commentsData) {
+      updateQuery({
+        queryKey: ['comments ' + experienceId],
+        payload: { ...commentsData, isFollow: !commentsData.isFollow },
+      });
+    }
 
-      if (exitCommentQueryData) {
-        const findCurrentExperience = experiencesData.expirences.find((experience) => experience.id === experienceId);
-        const list = { ...commentsData, isFollow: findCurrentExperience?.isFollow };
-        updateQuery({ queryKey: ['comments ' + experienceId], payload: list });
-      }
+    if (exitTopicExperienceData) {
+      exitTopicExperienceData.expirences.forEach((item) => {
+        if (item.userId === apiInfo?.userId) {
+          item.isFollow = !apiInfo.isFollow;
+        }
+      });
 
-      if (exitTopicExperienceData) {
-        exitTopicExperienceData.expirences.forEach((item) => {
-          if (item.userId === apiInfo?.userId) {
-            item.isFollow = !apiInfo.isFollow;
-          }
-        });
+      updateQuery({ queryKey: ['topicExperiences'], payload: exitTopicExperienceData });
+    }
 
-        updateQuery({ queryKey: ['topicExperiences'], payload: exitTopicExperienceData });
-      }
+    if (exitActivitiesData) {
+      exitActivitiesData.list.forEach((item) => {
+        if (item.userId === apiInfo?.userId) {
+          item.isFollow = !apiInfo.isFollow;
+        }
+      });
 
-      if (exitActivitiesData) {
-        exitActivitiesData.list.forEach((item) => {
-          if (item.userId === apiInfo?.userId) {
-            item.isFollow = !apiInfo.isFollow;
-          }
-        });
+      updateQuery({ queryKey: ['activities'], payload: exitActivitiesData });
+    }
 
-        updateQuery({ queryKey: ['activities'], payload: exitActivitiesData });
-      }
+    if (exitSelfExperienceData) {
+      exitSelfExperienceData.list.forEach((item) => {
+        if (item.userId === apiInfo?.userId) {
+          item.isFollow = !apiInfo.isFollow;
+        }
+      });
 
-      if (exitSelfExperienceData) {
-        exitSelfExperienceData.list.forEach((item) => {
-          if (item.userId === apiInfo?.userId) {
-            item.isFollow = !apiInfo.isFollow;
-          }
-        });
+      updateQuery({ queryKey: ['selfExperience'], payload: exitSelfExperienceData });
+    }
 
-        updateQuery({ queryKey: ['selfExperience'], payload: exitSelfExperienceData });
-      }
+    if (shareExperienceProfileData) {
+      updateQuery({
+        queryKey: ['shareExperienceProfileData'],
+        payload: { ...shareExperienceProfileData, isFollow: !shareExperienceProfileData.isFollow },
+      });
     }
 
     const isModalOpen = getQueryParams(SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME);
