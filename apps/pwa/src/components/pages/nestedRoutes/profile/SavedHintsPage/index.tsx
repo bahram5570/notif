@@ -1,6 +1,7 @@
 'use client';
 
-import MainPageLayout from '@components/MainPageLayout';
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+
 import WidgetHintCardGenerator from '@components/Widgets/widgetGenerator/WidgetHintCard/WidgetHintCardGenerator';
 
 import SavedHintsContainerSkeleton from './SavedHintsContainerSkeleton';

@@ -1,5 +1,5 @@
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import ShareExperienceFollowItemModule from '../ShareExperienceFollowItemModule';
 import EmptyState from './EmptyState';

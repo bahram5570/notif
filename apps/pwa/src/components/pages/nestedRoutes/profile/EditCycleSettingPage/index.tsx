@@ -1,12 +1,10 @@
 'use client';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
-import MainPageLayout from '@components/MainPageLayout';
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGTH, HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import EditCycleSkeleton from './EditCycleSkeleton';
 import RadioButtonGenerator from './RadioButtonGenerator';

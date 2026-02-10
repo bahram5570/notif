@@ -1,5 +1,5 @@
-import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
+import { FOOTER_HEIGTH } from '@repo/core/constants/app.constants';
 
 import ShareExperienceChangeAvatarModal from '../../ShareExperienceModals/ShareExperienceChangeAvatarModal';
 import ShareExperienceCommentsModal from '../../ShareExperienceModals/ShareExperienceCommentsModal';

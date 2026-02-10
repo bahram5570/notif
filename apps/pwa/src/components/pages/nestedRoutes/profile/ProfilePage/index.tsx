@@ -1,11 +1,10 @@
 'use client';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import MainPageLayout from '@components/MainPageLayout';
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import useProfileData from '@hooks/__profile__/useProfileData';
-import { APP_VERSION } from '@repo/core/constants/app.constants';
+import { APP_VERSION, HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import InstallationPurpose from './InstallationPurpose';
 import LogOut from './Logout';

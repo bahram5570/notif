@@ -1,7 +1,6 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
-import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGTH, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import useSignSelected from './__hooks__/useSignSelected';
 import { SingsFooterPropsType } from './type';

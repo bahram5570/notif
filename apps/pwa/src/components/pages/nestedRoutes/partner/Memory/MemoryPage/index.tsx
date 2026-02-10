@@ -1,8 +1,9 @@
 'use client';
 
-import MainPageLayout from '@components/MainPageLayout';
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import MemoryContainerSkeleton from './MemoryContainerSkeleton';
 import MemoryData from './MemoryData';

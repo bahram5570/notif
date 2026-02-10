@@ -2,9 +2,9 @@
 
 import { Fragment } from 'react';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
-import MainPageLayout from '@components/MainPageLayout';
 import { ChildTypeEnum } from '@constants/activation.constants';
 
 import BreastfeedingSettingInputGenerator from './BreastfeedingSettingInputGenerator';

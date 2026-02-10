@@ -1,4 +1,4 @@
-import MainPageLayout from '@components/MainPageLayout';
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 
 import ClinicDoctorModal from '../ClinicDoctorModal';
 import ClinicInfoSkeleton from './ClinicInfoSkeleton';

@@ -1,7 +1,7 @@
+import { WidgetScaleModule } from '@repo/core/components/Widgets/WidgetScaleModule';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 
-import WidgetScaleModule from '@components/Widgets/WidgetScaleModule';
 import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 

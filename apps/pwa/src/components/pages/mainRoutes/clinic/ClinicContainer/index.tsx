@@ -1,9 +1,9 @@
 import { Suspense, useState } from 'react';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
-import MainPageLayout from '@components/MainPageLayout';
+import { FOOTER_HEIGTH } from '@repo/core/constants/app.constants';
 
 import ActiveTicketsHeading from './ActiveTicketsHeading';
 import ActiveTicketsList from './ActiveTicketsList';

@@ -1,8 +1,8 @@
 'use client';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import MainPageLayout from '@components/MainPageLayout';
 import WidgetBabyCheckHistoryCardItems from '@components/Widgets/widgetGenerator/WidgetBabyCheckHistoryCard/WidgetBabyCheckHistoryCardItems';
 
 import useGetData from './__hooks__/useGetData';

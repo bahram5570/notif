@@ -1,9 +1,9 @@
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
-import MainPageLayout from '@components/MainPageLayout';
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 
 import ShareExperienceContentsModule from '../../../ShareExperienceModules/ShareExperienceContentsModule';

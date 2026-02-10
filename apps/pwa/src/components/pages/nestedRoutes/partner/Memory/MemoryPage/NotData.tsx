@@ -1,7 +1,7 @@
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import useGetPartnerName from './__hooks__/useGetPartnerName';

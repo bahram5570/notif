@@ -2,14 +2,14 @@
 
 import { useState } from 'react';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
-import MainPageLayout from '@components/MainPageLayout';
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import useProfileData from '@hooks/__profile__/useProfileData';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 
 import FileInput from './FileInput';

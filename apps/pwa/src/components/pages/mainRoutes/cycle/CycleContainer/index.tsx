@@ -1,12 +1,12 @@
+import { WidgetScaleModule } from '@repo/core/components/Widgets/WidgetScaleModule';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 import { CycleThemeEnum } from '@services/loginServices/enum';
 
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import WidgetScaleModule from '@components/Widgets/WidgetScaleModule';
 import WidgetGenerator from '@components/Widgets/widgetGenerator';
 import WidgetCirculeCycleCard from '@components/Widgets/widgetGenerator/WidgetCirculeCycleCard';
 import WidgetCycleCard from '@components/Widgets/widgetGenerator/WidgetCycleCard';
 import useOnMountActions from '@hooks/useOnMountActions';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import CycleAppBar from '../CycleAppBar';
 import CycleSkeleton from './CycleSkeleton';

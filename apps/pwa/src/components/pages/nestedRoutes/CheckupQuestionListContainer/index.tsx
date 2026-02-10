@@ -1,6 +1,7 @@
 'use client';
 
-import MainPageLayout from '@components/MainPageLayout';
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import QuestionCheckupItem from './QuestionCheckupItem';

@@ -2,13 +2,12 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import MainPageLayout from '@components/MainPageLayout';
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import OverlayBar from '@components/ui/OverlayBar';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import DeleteNoteBtn from './DeleteNoteBtn';

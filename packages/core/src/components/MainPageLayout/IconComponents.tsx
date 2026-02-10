@@ -1,15 +1,15 @@
-import BellIcon from '@assets/icons/Bell.svg';
-import TicketsHistoryIcon from '@assets/icons/chats.svg';
-import CalendarIcon from '@assets/icons/headerCalendar.svg';
-import ProfileIcon from '@assets/icons/headerProfile.svg';
-import HistoryIcon from '@assets/icons/history.svg';
 import ArrowIcon from '@assets/shared/icons/arrow.svg';
+import BellIcon from '@assets/shared/icons/bell.svg';
+import TicketsHistoryIcon from '@assets/shared/icons/chats.svg';
+import CalendarIcon from '@assets/shared/icons/headerCalendar.svg';
+import ProfileIcon from '@assets/shared/icons/headerProfile.svg';
+import HistoryIcon from '@assets/shared/icons/history.svg';
 import InfoIcon from '@assets/shared/icons/infoIcon.svg';
-import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import Link from 'next/link';
 
+import { usePageNavigationLoading } from '../../hooks/usePageNavigationLoading';
+import { CustomSpinner } from '../ui/CustomSpinner';
 import { ICONS_SIZE } from './constants';
 import { IconComponentMakerProps } from './types';
 

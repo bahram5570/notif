@@ -1,9 +1,9 @@
 'use client';
 
 import inviteGift from '@assets/lottie/inviteGift.json';
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import MainPageLayout from '@components/MainPageLayout';
 import { LottieJson } from '@lib/LottieJson';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
 

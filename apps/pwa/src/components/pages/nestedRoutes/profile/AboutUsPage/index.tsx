@@ -1,8 +1,7 @@
 'use client';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import MainPageLayout from '@components/MainPageLayout';
 
 import LinkGenerator from './LinkGenerator';
 import { LINK_SOCIAL_LIST } from './constants';

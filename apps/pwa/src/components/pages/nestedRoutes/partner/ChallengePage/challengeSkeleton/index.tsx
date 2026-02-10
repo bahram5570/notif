@@ -1,4 +1,4 @@
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 const ChallengeSkeleton = () => {
   return (

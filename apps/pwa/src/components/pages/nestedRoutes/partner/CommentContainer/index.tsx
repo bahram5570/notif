@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import MainPageLayout from '@components/MainPageLayout';
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import useSubmit from './__hooks__/useSubmit';
 

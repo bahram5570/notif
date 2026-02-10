@@ -1,6 +1,6 @@
 'use client';
 
-import MainPageLayout from '@components/MainPageLayout';
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 
 import ChatsMessagesContainer from './ChatsMessagesContainer';
 import ChatFooter from './ChatsMessagesContainer/ChatFooter';

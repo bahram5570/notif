@@ -1,6 +1,6 @@
-import MainPageLayoutHeader from '@components/MainPageLayout/MainPageLayoutHeader';
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { MainPageLayoutHeader } from '@repo/core/components/MainPageLayout';
+
+import { HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 

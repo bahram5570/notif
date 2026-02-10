@@ -1,7 +1,7 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import { LoadingStatusEnum } from '@components/pages/mainRoutes/cycle/CycleContainer/__hooks__/useCycleLoadingStatus/loadingStatus.enum';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import WidgetGenerator from '..';
 import CycleCardBtn from './CycleCardBtn';

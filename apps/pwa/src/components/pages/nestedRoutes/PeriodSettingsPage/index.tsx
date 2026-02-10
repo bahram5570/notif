@@ -1,11 +1,11 @@
 'use client';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
-import MainPageLayout from '@components/MainPageLayout';
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import ProfileContainerGenerator from '@components/__profile__/ProfileContainerGenerator';
 import ProfileItemGenerator from '@components/__profile__/ProfileItemGenerator';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import PeriodSettingsLingthGenerator from './PeriodSettingsLingthGenerator';
 import PeriodSettingsModals from './PeriodSettingsModals';

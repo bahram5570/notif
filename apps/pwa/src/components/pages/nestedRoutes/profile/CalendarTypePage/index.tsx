@@ -1,9 +1,9 @@
 'use client';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import MainPageLayout from '@components/MainPageLayout';
 import RadioButton from '@components/ui/RadioButton';
 
 import useCalendarTypeSelect from './__hooks__/useCalendarTypeSelect';

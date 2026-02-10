@@ -1,4 +1,4 @@
-import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
+import { FOOTER_HEIGTH } from '@repo/core/constants/app.constants';
 import { useRouter } from 'next/navigation';
 
 import SpecialistCardGenerator from '../../SpecialistCardGenerator';

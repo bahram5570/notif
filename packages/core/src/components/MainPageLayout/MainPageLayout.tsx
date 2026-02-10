@@ -1,8 +1,8 @@
-import MainPageLayoutHeader from './MainPageLayoutHeader';
-import { HEADER_HEIGHT } from './constants';
+import { HEADER_HEIGHT } from '../../constants/app.constants';
+import { MainPageLayoutHeader } from './MainPageLayoutHeader';
 import { MainPageLayoutProps } from './types';
 
-const MainPageLayout = (props: MainPageLayoutProps) => {
+export const MainPageLayout = (props: MainPageLayoutProps) => {
   const headerProps = { ...props };
   delete headerProps.headerClassName;
   delete headerProps.paddingBottom;
@@ -24,5 +24,3 @@ const MainPageLayout = (props: MainPageLayoutProps) => {
     </div>
   );
 };
-
-export default MainPageLayout;

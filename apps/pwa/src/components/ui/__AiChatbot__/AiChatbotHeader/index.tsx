@@ -1,5 +1,4 @@
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import AiChatbotBackBtn from './AiChatbotBackBtn';
 import AiChatbotLimitUploadMessage from './AiChatbotLimitUploadMessage';
@@ -10,14 +9,11 @@ import { AiChatbotHeaderPropsType } from './type';
 const AiChatbotHeader = (props: AiChatbotHeaderPropsType) => {
   return (
     <div
-      className={`fixed w-full left-0 right-0 top-0 mx-auto flex flex-col  gap-2 z-40  `}
-      style={{
-        maxWidth: MAX_SCREEN_WIDTH,
-        height: HEADER_HEIGHT + 50,
-      }}
+      style={{ maxWidth: MAX_SCREEN_WIDTH, height: HEADER_HEIGHT + 50 }}
+      className={`fixed w-full left-0 right-0 top-0 mx-auto flex flex-col gap-2 z-40`}
     >
       <div
-        className={`flex w-full ${props.showActionMenu ? 'justify-between' : 'justify-end'}  items-end px-4 pt-3 pb-1`}
+        className={`w-full flex items-end px-4 pt-3 pb-1 ${props.showActionMenu ? 'justify-between' : 'justify-end'}`}
       >
         {props.showActionMenu && (
           <AiChatbotMoreActionsMenuBtn

@@ -1,6 +1,7 @@
 'use client';
 
-import MainPageLayout from '@components/MainPageLayout';
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+
 import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
 import { ActionTypeEnum, CyclePhaseEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';

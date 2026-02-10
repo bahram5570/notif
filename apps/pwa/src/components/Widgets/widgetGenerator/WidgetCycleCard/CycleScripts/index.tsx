@@ -1,7 +1,6 @@
+import { WidgetScaleModule } from '@repo/core/components/Widgets/WidgetScaleModule';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
-
-import WidgetScaleModule from '@components/Widgets/WidgetScaleModule';
 
 import { CycleScriptsProps } from './types';
 

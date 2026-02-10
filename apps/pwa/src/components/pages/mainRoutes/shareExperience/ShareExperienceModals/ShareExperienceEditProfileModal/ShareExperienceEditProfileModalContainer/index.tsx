@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 
 import EditIcon from '@assets/icons/Pen 2.svg';
 import InfoIcon from '@assets/icons/info.svg';
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import MainPageLayout from '@components/MainPageLayout';
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import ShareExperienceAvatarModule from '../../../ShareExperienceModules/ShareExperienceAvatarModule';
 import useUpdateProfile from '../../ShareExperienceChangeAvatarModal/ShareExperienceChangeAvatarModalContainer/__hooks__/useUpdateProfile';

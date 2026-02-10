@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import DateModule from '@components/activation/DateModule';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import useEditCycleDateIntervals from './__hooks__/useEditCycleDateIntervals';

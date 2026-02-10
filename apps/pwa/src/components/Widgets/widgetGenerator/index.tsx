@@ -1,7 +1,8 @@
+import { WidgetScaleModule } from '@repo/core/components/Widgets/WidgetScaleModule';
+
 import { WidgetsTypes } from '@providers/WidgetActionsProvider/widgetCards';
 import { WidgetsEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 
-import WidgetScaleModule from '../WidgetScaleModule';
 import WidgetAdvertiseCardList from './WidgetAdvertiseCardList';
 import WidgetArticleCard from './WidgetArticleCard';
 import WidgetAverageOfcycleLengths from './WidgetAverageOfcycleLengths';

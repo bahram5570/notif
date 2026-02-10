@@ -1,8 +1,9 @@
 'use client';
 
-import MainPageLayoutHeader from '@components/MainPageLayout/MainPageLayoutHeader';
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
+import { MainPageLayoutHeader } from '@repo/core/components/MainPageLayout';
+
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import NotificationCenterSkeleton from './NotificationCenterSkeleton';
 import NotificationEmptyState from './NotificationEmptyState';

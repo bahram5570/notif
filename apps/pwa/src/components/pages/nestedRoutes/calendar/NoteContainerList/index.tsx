@@ -2,13 +2,13 @@
 
 import { useEffect, useState } from 'react';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { currentDate, gregorianFarsiScriptDate, jalaaliScriptDate } from '@repo/core/utils/dates';
 
-import MainPageLayout from '@components/MainPageLayout';
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import NoteItem from '@components/pages/mainRoutes/calendar/CalendarDraggingPanel/SelectedDayNote/SelectedDayNoteList/NoteItem';
 import useSignDateState from '@hooks/__sign__/useSignDateState';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useCulture } from '@repo/core/hooks/useCulture';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';

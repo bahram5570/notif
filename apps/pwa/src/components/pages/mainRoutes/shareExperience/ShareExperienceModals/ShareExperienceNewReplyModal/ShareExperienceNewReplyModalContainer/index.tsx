@@ -1,7 +1,8 @@
 import { useState } from 'react';
 
-import MainPageLayout from '@components/MainPageLayout';
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import ShareExperienceToast from '../../../ShareExperienceModules/ShareExperienceToast';
 import NewReplyBtn from './NewReplyBtn';

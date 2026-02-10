@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react';
 
 import chatbotJson from '@assets/lottie/chatbot.json';
 
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import { LottieJson } from '@lib/LottieJson';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import { WelcomingLayoutPropsType } from './type';
 

@@ -1,8 +1,8 @@
 'use client';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import MainPageLayout from '@components/MainPageLayout';
 import StoryItemGenerator from '@components/Widgets/widgetGenerator/WidgetStoryCard/StoryItemGenerator';
 import StoryPreview from '@components/Widgets/widgetGenerator/WidgetStoryCard/StoryPreview';
 

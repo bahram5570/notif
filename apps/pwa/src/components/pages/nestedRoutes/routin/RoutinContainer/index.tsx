@@ -1,6 +1,7 @@
 'use client';
 
-import MainPageLayout from '@components/MainPageLayout';
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+
 import OnboardingIntro from '@components/ui/OnboardingIntro';
 
 import RoutinItemsContainer from './RoutinItemsContainer';

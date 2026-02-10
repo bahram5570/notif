@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import { UseLastItemHeightPropsType } from './type';
 

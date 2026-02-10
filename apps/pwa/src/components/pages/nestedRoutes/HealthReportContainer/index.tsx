@@ -1,6 +1,7 @@
 'use client';
 
-import MainPageLayout from '@components/MainPageLayout';
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+
 import useOnMountActions from '@hooks/useOnMountActions';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 

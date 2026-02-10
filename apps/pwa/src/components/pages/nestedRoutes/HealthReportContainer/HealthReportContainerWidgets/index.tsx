@@ -1,5 +1,5 @@
-import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
 import WidgetGenerator from '@components/Widgets/widgetGenerator';
+import { FOOTER_HEIGTH } from '@repo/core/constants/app.constants';
 
 import { HealthReportContainerWidgetsProps } from './types';
 

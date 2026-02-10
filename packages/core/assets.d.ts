@@ -18,6 +18,11 @@ declare module '*.jpg' {
   export default src;
 }
 
+declare module '*.module.css' {
+  const classes: { readonly [key: string]: string };
+  export default classes;
+}
+
 declare module '*.ttf';
 declare module '*.woff';
 declare module '*.woff2';

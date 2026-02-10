@@ -1,9 +1,8 @@
 'use client';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import MainPageLayout from '@components/MainPageLayout';
 
 import useGetData from '../__hooks__/useGetData';
 import TestGenerator from './TestGenerator';

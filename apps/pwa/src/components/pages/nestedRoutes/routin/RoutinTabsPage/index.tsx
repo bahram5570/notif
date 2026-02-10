@@ -1,6 +1,6 @@
 'use client';
 
-import MainPageLayout from '@components/MainPageLayout';
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 
 import RoutinTabsBtn from './RoutinTabsBtn';
 import RoutinTabsContextContainer from './RoutinTabsContextContainer';

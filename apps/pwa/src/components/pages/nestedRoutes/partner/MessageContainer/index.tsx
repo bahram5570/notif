@@ -2,9 +2,8 @@
 
 import { useEffect } from 'react';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import MainPageLayout from '@components/MainPageLayout';
 
 import MessageContainerSkeleton from './MessageContainerSkeleton';
 import MessageList from './MessageList';

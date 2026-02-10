@@ -1,8 +1,8 @@
 'use client';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import MainPageLayout from '@components/MainPageLayout';
 import WidgetOvulationHistoryCardItems from '@components/Widgets/widgetGenerator/WidgetOvulationHistoryCard/WidgetOvulationHistoryCardItems';
 
 import useGetData from './__hooks__/useGetData';

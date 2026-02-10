@@ -1,6 +1,6 @@
 'use server';
 
-import MainFooter from '@components/MainFooter';
+import { MainFooter } from '@repo/core/components/MainFooter';
 
 const Layout = async ({ children }: { children: React.ReactNode }) => {
   return (

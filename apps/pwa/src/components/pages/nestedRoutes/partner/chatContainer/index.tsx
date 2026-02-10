@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import ChatContainerSkeleton from './ChatContainerSkeleton';
 import ChatHeader from './ChatHeader';

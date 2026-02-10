@@ -1,11 +1,10 @@
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
-
+import { FOOTER_HEIGTH, MAX_SCREEN_WIDTH } from '../../constants/app.constants';
+import { useOperatingSystem } from '../../hooks/useOperatingSystem';
 import PageIcons from './PageIcons';
-import { FOOTER_HEIGTH, FOOTER_PAGES_LIST } from './constants';
+import { FOOTER_PAGES_LIST } from './constants';
 import { MainFooterContainerProps } from './types';
 
-const MainFooterContainer = ({ pathName }: MainFooterContainerProps) => {
+export const MainFooterContainer = ({ pathName }: MainFooterContainerProps) => {
   const { operatingSystem } = useOperatingSystem();
 
   const height = operatingSystem === 'ios' ? FOOTER_HEIGTH + 16 : FOOTER_HEIGTH;
@@ -27,4 +26,3 @@ const MainFooterContainer = ({ pathName }: MainFooterContainerProps) => {
     </div>
   );
 };
-export default MainFooterContainer;

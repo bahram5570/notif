@@ -1,6 +1,7 @@
 'use client';
 
-import MainPageLayout from '@components/MainPageLayout';
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+
 import BloodSugerListContainer from '@components/pages/nestedRoutes/signs/SignsContainer/SignsLists/BloodSugerListContainer';
 
 import ListSkeleton from '../bloodPressureList/ListSkeleton';

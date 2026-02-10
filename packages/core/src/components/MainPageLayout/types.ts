@@ -19,7 +19,7 @@ export type MainPageLayoutProps = MainPageLayoutHeaderProps & {
 };
 
 export type IconsListTypes = {
-  [key in HeaderIconEnums]: React.JSX;
+  [key in HeaderIconEnums]: any;
 };
 
-export type IconComponentMakerProps = (propd: { iconElement: React.JSX; path: string; loadingId: string }) => React.JSX;
+export type IconComponentMakerProps = (props: { loadingId: string; iconElement: any; path: string }) => any;

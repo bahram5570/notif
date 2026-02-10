@@ -4,7 +4,7 @@ import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import styles from './styles.module.css';
 
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import MessageListContainer from './MessageListContainer';
 import MessagerHeader from './MessagerHeader';

@@ -1,4 +1,4 @@
-import ProfileIcon from '@assets/icons/headerProfile.svg';
+import ProfileIcon from '@assets/shared/icons/headerProfile.svg';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';

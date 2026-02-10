@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
-import MainPageLayout from '@components/MainPageLayout';
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import BloodSugerBtnGenerator from './BloodSugerBtnGenerator';
 import BloodSugerHeader from './BloodSugerHeader';

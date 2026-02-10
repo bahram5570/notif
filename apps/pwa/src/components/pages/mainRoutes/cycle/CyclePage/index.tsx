@@ -1,6 +1,6 @@
 'use client';
 
-import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
+import { FOOTER_HEIGTH } from '@repo/core/constants/app.constants';
 
 import CycleContainer from '../CycleContainer';
 import ErrorCycleAppBar from '../ErrorCycleAppBar';

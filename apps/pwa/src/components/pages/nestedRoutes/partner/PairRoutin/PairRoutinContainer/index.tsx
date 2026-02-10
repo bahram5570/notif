@@ -1,9 +1,10 @@
 'use client';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+
 import FeedbackModal from '@components/FeedbackModal';
-import MainPageLayout from '@components/MainPageLayout';
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import OnboardingIntro from '@components/ui/OnboardingIntro';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useRouter } from 'next/navigation';
 

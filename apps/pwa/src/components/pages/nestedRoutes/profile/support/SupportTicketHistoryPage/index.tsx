@@ -1,6 +1,5 @@
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import MainPageLayout from '@components/MainPageLayout';
 
 import TicketText from '../SupportTicketsListPage/TicketText';
 import TicketHistorySkeleton from './TicketHistorySkeleton';

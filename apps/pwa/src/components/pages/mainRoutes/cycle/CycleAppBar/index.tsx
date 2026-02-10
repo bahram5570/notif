@@ -1,4 +1,4 @@
-import MainPageLayoutHeader from '@components/MainPageLayout/MainPageLayoutHeader';
+import { MainPageLayoutHeader } from '@repo/core/components/MainPageLayout';
 
 import { CycleAppBarProps } from './types';
 

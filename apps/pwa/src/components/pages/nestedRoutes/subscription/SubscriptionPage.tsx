@@ -2,12 +2,12 @@
 
 import { useState } from 'react';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import MainPageLayout from '@components/MainPageLayout';
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import { LottieCanvas } from '@lib/LottieCanvas';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import ApprovedCodeToast from './ApprovedCodeToast';
 import DiscountLoading from './DiscontLoading';

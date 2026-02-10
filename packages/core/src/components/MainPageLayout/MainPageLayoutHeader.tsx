@@ -1,14 +1,12 @@
 'use client';
 
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
-
-import WidgetScaleModule from '../Widgets/WidgetScaleModule';
-import { HEADER_HEIGHT, iconsList } from './constants';
+import { HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '../../constants/app.constants';
+import { WidgetScaleModule } from '../Widgets/WidgetScaleModule';
+import { CustomTypography } from '../ui/CustomTypography';
+import { iconsList } from './constants';
 import { MainPageLayoutHeaderProps } from './types';
 
-const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
+export const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
   const LeftElement1 = props.leftElement1 ? iconsList[props.leftElement1] : () => <></>;
   const LeftElement2 = props.leftElement2 ? iconsList[props.leftElement2] : () => <></>;
   const RightElement = props.rightElement ? iconsList[props.rightElement] : () => <></>;
@@ -24,12 +22,12 @@ const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
         <div className="w-fit min-w-fit flex gap-4">
           <>
             <div
-              className={`h-10 w-10 min-w-10 min-h-10  flex items-center justify-center ${hasBothLeftElements && 'bg-impo_Grey_50 rounded-full'}`}
+              className={`h-10 w-10 min-w-10 min-h-10 flex items-center justify-center ${hasBothLeftElements && 'bg-impo_Grey_50 rounded-full'}`}
             >
               <LeftElement1 />
             </div>
             <div
-              className={`h-10 w-10 min-w-10 min-h-10  flex items-center justify-center ${hasBothLeftElements && 'bg-impo_Grey_50  rounded-full'}`}
+              className={`h-10 w-10 min-w-10 min-h-10 flex items-center justify-center ${hasBothLeftElements && 'bg-impo_Grey_50 rounded-full'}`}
             >
               <LeftElement2 />
             </div>
@@ -50,7 +48,7 @@ const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
           )}
 
           <div
-            className={`h-10 w-10 min-w-10 min-h-10  flex items-center justify-center ${hasBothLeftElements && 'bg-impo_Grey_50  rounded-full'}`}
+            className={`h-10 w-10 min-w-10 min-h-10 flex items-center justify-center ${hasBothLeftElements && 'bg-impo_Grey_50 rounded-full'}`}
           >
             <RightElement />
           </div>
@@ -68,5 +66,3 @@ const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
     </div>
   );
 };
-
-export default MainPageLayoutHeader;

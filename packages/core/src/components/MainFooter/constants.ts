@@ -20,5 +20,3 @@ export const FOOTER_PAGES_LIST = [
   { url: '/protected/clinic', icons: { Dark: ClinicDarkIcon, Light: ClinicLightIcon }, title: 'کلینیک' },
   { url: '/protected/calendar', icons: { Dark: CalendarDarkIcon, Light: CalendarLightIcon }, title: 'تقویم' },
 ];
-
-export const FOOTER_HEIGTH = 80;

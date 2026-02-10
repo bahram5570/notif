@@ -1,4 +1,5 @@
-import MainPageLayoutHeader from '@components/MainPageLayout/MainPageLayoutHeader';
+import { MainPageLayoutHeader } from '@repo/core/components/MainPageLayout';
+
 import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 
 import ShareExperienceFollowListModule from '../../../ShareExperienceModules/ShareExperienceFollowListModule';

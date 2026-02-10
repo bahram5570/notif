@@ -1,6 +1,7 @@
 'use client';
 
-import MainPageLayout from '@components/MainPageLayout';
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+
 import WidgetPeriodCycleHistoryGuides from '@components/Widgets/widgetGenerator/WidgetPeriodCycleHistory/WidgetPeriodCycleHistoryGuides';
 import WidgetPeriodCycleHistoryItems from '@components/Widgets/widgetGenerator/WidgetPeriodCycleHistory/WidgetPeriodCycleHistoryItems';
 

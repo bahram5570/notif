@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
-import MainPageLayout from '@components/MainPageLayout';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 

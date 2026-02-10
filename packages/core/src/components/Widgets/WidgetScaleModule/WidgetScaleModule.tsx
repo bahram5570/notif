@@ -1,12 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
-import styles from './WidgetScaleModule.module.css';
+import { useDelayCallback } from '../../../hooks/useDelayCallback';
 
-import { useDelayCallback } from '@repo/core/hooks/useDelayCallback';
-
-import { WidgetScaleModuleProps } from './types';
-
-const WidgetScaleModule = ({ children }: WidgetScaleModuleProps) => {
+export const WidgetScaleModule = ({ children }: { children: React.ReactNode }) => {
   const [showElement, setShowElement] = useState(Boolean);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -26,10 +22,8 @@ const WidgetScaleModule = ({ children }: WidgetScaleModuleProps) => {
   }, [ref.current]);
 
   return (
-    <div ref={ref} className={`${styles.main} ${showElement && styles.scalingAnimation}`}>
+    <div ref={ref} className={`WidgetScaleModule ${showElement && 'WidgetScaleModule_scaling'}`}>
       {children}
     </div>
   );
 };
-
-export default WidgetScaleModule;

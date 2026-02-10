@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
-import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import RoutinCard from '@components/__routin__/RoutinCard';
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import RoutinListEmpty from '../RoutinListEmpty';
 import RoutinTabSkeleton from '../RoutinTabSkeleton';

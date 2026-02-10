@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useRef } from 'react';
 
-import { FOOTER_HEIGTH } from '@components/MainFooter/constants';
+import { FOOTER_HEIGTH } from '@repo/core/constants/app.constants';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperTypes } from 'swiper/types';
 
