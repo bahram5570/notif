@@ -3,6 +3,7 @@ import './globals.css';
 import { getCultureCookie } from '@actions/userCookies.actions';
 import ErrorProvider from '@providers/ErrorProvider';
 import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
+import PwaWidgetActionsProvider from '@providers/PwaWidgetActionsProvider';
 import ServiceWorkerProvider from '@providers/ServiceWorkerProvider';
 import {
   MAX_SCREEN_WIDTH,
@@ -17,7 +18,6 @@ import { PageNavigationProvider } from '@repo/core/providers/PageNavigationProvi
 import { PreviewImageProvider } from '@repo/core/providers/PreviewImageProvider';
 import { ReactQueryProvider } from '@repo/core/providers/ReactQueryProvider';
 import { ToastProvider } from '@repo/core/providers/ToastProvider';
-import { WidgetActionsProvider } from '@repo/core/providers/WidgetActionsProvider';
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
 import Script from 'next/script';
@@ -74,7 +74,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
                 <ErrorProvider>
                   <ToastProvider>
                     <PageNavigationProvider>
-                      <WidgetActionsProvider>
+                      <PwaWidgetActionsProvider>
                         <ServiceWorkerProvider>
                           <>{children}</>
                           <ModalsQueryParamsProvider />
@@ -83,7 +83,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
                           <div id={PORTAL_ID} />
                           <div id={PORTAL_FEEDBACK_TOAST_ID} />
                         </ServiceWorkerProvider>
-                      </WidgetActionsProvider>
+                      </PwaWidgetActionsProvider>
                     </PageNavigationProvider>
                   </ToastProvider>
                 </ErrorProvider>

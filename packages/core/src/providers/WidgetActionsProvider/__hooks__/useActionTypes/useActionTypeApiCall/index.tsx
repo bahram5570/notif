@@ -1,49 +1,28 @@
-import { useEffect, useState } from 'react';
+import { pwaHttp } from '../../../../../utils/pwaHttp';
 
-import { useCustomReactQuery } from '../../../../../hooks/useCustomReactQuery';
-import { usePwaApi } from '../../../../../hooks/usePwaApi';
 // import useUpdateCycleCard from '@hooks/__cycle__/useUpdateCycleCard';
 
 import useActionComplete from '../useActionComplete';
+import { UseActionTypeApiCallTypes } from './types';
 
-const useActionTypeApiCall = (onActionComplete: () => void) => {
-  const { removeQuery } = useCustomReactQuery();
-  const [api, setApi] = useState<string | null>(null);
-  // todo
+const useActionTypeApiCall = ({ onActionComplete, onCallBack }: UseActionTypeApiCallTypes) => {
   // const { cycleCardStatusHandler } = useUpdateCycleCard();
-  const [queryKey, setQueryKey] = useState<[string]>(['']);
   const { onComplete } = useActionComplete(onActionComplete);
 
-  const callApiCallHandler = (v: string) => {
-    setApi(v);
-    onComplete();
-    setQueryKey([`apiCall-${v}-${Math.random()}`]);
-  };
+  const callApiCallHandler = async (url: string) => {
+    const { data } = await pwaHttp({ url, method: 'GET' });
 
-  const successHandler = () => {
-    const isCyclePage = location.pathname.includes('cycle');
-    if (isCyclePage) {
+    // todo : handle cycle update & check 'onComplete' is ok
+    if (data) {
+      onCallBack('cycle');
+      // const isCyclePage = location.pathname.includes('cycle');
+      // if (isCyclePage) {
       // cycleCardStatusHandler('refetch');
+      // }
     }
 
-    setApi(null);
-    setQueryKey(['']);
-    removeQuery({ queryKey });
+    onComplete();
   };
-
-  const { callApi } = usePwaApi({
-    method: 'GET',
-    api: api || '',
-    queryKey: queryKey,
-    fetchOnMount: false,
-    onSuccess: successHandler,
-  });
-
-  useEffect(() => {
-    if (api !== null) {
-      callApi();
-    }
-  }, [api]);
 
   return { callApiCallHandler };
 };

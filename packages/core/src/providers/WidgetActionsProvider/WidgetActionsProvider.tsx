@@ -12,7 +12,7 @@ import usePopUpHandlers from './WidgetActionsPopup/__hooks__/usePopUpHandlers';
 import useActionTypes from './__hooks__/useActionTypes';
 import useIsCurrentNextStepFinished from './__hooks__/useIsCurrentNextStepFinished';
 import useResetOnPageChange from './__hooks__/useResetOnPageChange';
-import { ActionListHandlerTypes, WidgetActionsContextTypes } from './types';
+import { ActionListHandlerTypes, WidgetActionsContextTypes, WidgetActionsProviderTypes } from './types';
 import { ActionTypes } from './widgetCommon';
 
 export const WidgetActionsContext = createContext<WidgetActionsContextTypes>({
@@ -20,7 +20,11 @@ export const WidgetActionsContext = createContext<WidgetActionsContextTypes>({
   onMountActionsHandler: () => {},
 });
 
-export const WidgetActionsProvider = ({ children }: { children: React.ReactNode }) => {
+export const WidgetActionsProvider = ({
+  internalRoutesConverter,
+  onCallBack,
+  children,
+}: WidgetActionsProviderTypes) => {
   const router = useRouter();
   const { getQueryParams } = useQueryParamsHandler();
   const { popUpHandler, popUp } = usePopUpHandlers();
@@ -120,11 +124,13 @@ export const WidgetActionsProvider = ({ children }: { children: React.ReactNode 
   // # Action types & handlers
   const { actionHandler, actionsFinder } = useActionTypes({
     actionList,
+    onCallBack,
     popUpHandler,
     actionListIndex,
     actionListHandler,
     actionCompleteHandler,
     nextStepCompleteHandler,
+    internalRoutesConverter,
     isCurrentNextStepFinishedHandler,
     actionListValueHandler: (v) => setActionList(v),
     actionListIndexValueHandler: (v) => setActionListIndex(v),

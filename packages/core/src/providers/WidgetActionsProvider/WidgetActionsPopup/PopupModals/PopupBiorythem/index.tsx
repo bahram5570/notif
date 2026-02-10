@@ -1,8 +1,7 @@
+import BiorhythmItems from '../../../../../components/BiorhythmItems/BiorhythmItems';
 import { CustomTypography } from '../../../../../components/ui/CustomTypography';
 import CrossIcon from '@assets/shared/icons/plus.svg';
 
-// todo
-// import BiorhythemItems from '@components/__Biorhythem__/BiorhythemItems';
 import { useRouter } from 'next/navigation';
 
 import { PopupBiorythemProps } from './type';
@@ -24,7 +23,7 @@ const PopupBiorythem = ({ data }: PopupBiorythemProps) => {
         </div>
 
         <div className="rounded-2xl p-4 flex flex-col gap-3 bg-impo_Surface_SurfaceVariant">
-          {/* <BiorhythemItems {...data} /> */}
+          <BiorhythmItems {...data} />
         </div>
       </div>
     </>

@@ -63,14 +63,14 @@ const PopupInteraction = ({ data }: PopupInteractionProps) => {
 
         <div className="w-full flex items-center gap-2 pt-12">
           <CustomButton
+            className="h-10"
+            fontSize="Lable_Large"
             onClick={() => clickHandler('first')}
             style={{
               background: colorFormatConverter(data.button.backgroundColor),
               color: colorFormatConverter(data.button.foregroundColor),
               borderColor: colorFormatConverter(data.button.backgroundColor),
             }}
-            className="h-10"
-            fontSize="Lable_Large"
           >
             {data.button.text}
           </CustomButton>

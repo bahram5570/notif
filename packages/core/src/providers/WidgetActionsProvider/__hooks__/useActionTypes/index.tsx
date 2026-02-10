@@ -22,11 +22,23 @@ const useActionTypes = (props: UseActionTypesProps) => {
   const { callActionList } = useActionTypeActionList(props.actionListHandler);
 
   const { callNone } = useActionTypeNone(props.actionCompleteHandler);
+
   const { callDone } = useActionTypeDone(props.actionCompleteHandler);
-  const { callApiCallHandler } = useActionTypeApiCall(props.actionCompleteHandler);
+
   const { callHandleByApp } = useActionTypeHandleByApp(props.actionCompleteHandler);
+
   const { callExternalRout } = useActionTypeExternalRout(props.actionCompleteHandler);
-  const { callInternalRout } = useActionTypeInternalRout(props.actionCompleteHandler);
+
+  const { callApiCallHandler } = useActionTypeApiCall({
+    onActionComplete: props.actionCompleteHandler,
+    onCallBack: props.onCallBack,
+  });
+
+  const { callInternalRout } = useActionTypeInternalRout({
+    internalRoutesConverter: props.internalRoutesConverter,
+    onActionComplete: props.actionCompleteHandler,
+    onCallBack: props.onCallBack,
+  });
 
   // # Action handlers
 

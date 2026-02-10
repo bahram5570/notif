@@ -1,15 +1,16 @@
-// todo
-// import { actionRouteConverter } from './__utils__/actionRouteConverter';
 import { usePageNavigationLoading } from '../../../../../hooks/usePageNavigationLoading';
-import { CallInternalRoutTypes } from './types';
+import { CallInternalRoutTypes, UseActionTypeInternalRoutTypes } from './types';
 
-const useActionTypeInternalRout = (onActionComplete: () => void) => {
+const useActionTypeInternalRout = ({
+  internalRoutesConverter,
+  onActionComplete,
+  onCallBack,
+}: UseActionTypeInternalRoutTypes) => {
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const callInternalRout: CallInternalRoutTypes = ({ actionInternal }) => {
     const handleRoute = async () => {
-      // const linkTo = await actionRouteConverter(actionInternal);
-      const linkTo = '';
+      const linkTo = await internalRoutesConverter(actionInternal);
 
       pageNavigationHandler({
         linkTo,

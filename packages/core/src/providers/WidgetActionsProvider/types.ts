@@ -7,4 +7,13 @@ export type WidgetActionsContextTypes = {
   onMountActionsHandler: (v: ActionTypes[]) => void;
 };
 
+export type InternalRoutesConverterTypes = (serverLink: string) => Promise<string>;
+export type OnCallBackTypes = (name: string) => void;
+
+export interface WidgetActionsProviderTypes {
+  children: React.ReactNode;
+  onCallBack: OnCallBackTypes;
+  internalRoutesConverter: InternalRoutesConverterTypes;
+}
+
 export type ActionListHandlerTypes = (v: ActionTypes[]) => void;
