@@ -25,6 +25,7 @@ const ShareExperienceExperiences = ({
   onSuccessNewHandler,
   selectedCategoryId,
   profile,
+  scrollRef,
 }: ShareExperienceExperiencesProps) => {
   const { shareExperienceOrdersList } = useShareExperienceOrders();
   const { isLoading, experiencesData, pageNo, totalCount, updatePageNo } = useExperiences(selectedCategoryId);
@@ -55,8 +56,8 @@ const ShareExperienceExperiences = ({
 
       <InfiniteScrollContainer
         pageNo={pageNo}
-        height={'100dvh'}
         isLoading={isLoading}
+        scrollContainerRef={scrollRef}
         totalCount={totalCount}
         callBack={updatePageNo}
         className="flex flex-col px-4 relative"

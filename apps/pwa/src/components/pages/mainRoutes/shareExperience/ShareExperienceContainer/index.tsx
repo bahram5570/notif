@@ -1,6 +1,8 @@
 'use client';
 
-import MainPageLayout from '@components/MainPageLayout';
+import { useRef } from 'react';
+
+import MainPageLayoutHeader from '@components/MainPageLayout/MainPageLayoutHeader';
 
 import ShareExperienceBanner from '../ShareExperienceModules/ShareExperienceBanner';
 import ShareExperienceToast from '../ShareExperienceModules/ShareExperienceToast';
@@ -18,13 +20,18 @@ import useTopics from './__hooks__/useTopics';
 const ShareExperienceContainer = () => {
   useShareExperienceInitialRedirect();
   const { isLoading, data, onSuccessNewHandler } = useShareExperienceGetData();
-
+  const scrollRef = useRef<HTMLDivElement>(null);
   const { categories, selectedCategoryId, selectedCategoryIdHandler } = useCategories(data?.categories);
   const { topics } = useTopics(data?.topics);
 
   return (
-    <MainPageLayout leftElement1="Profile" leftElement2="Notification">
-      <>
+    <>
+      <MainPageLayoutHeader leftElement1="Profile" leftElement2="Notification" />
+      <div
+        ref={scrollRef}
+        className={`flex-1 overflow-y-auto ${isLoading ? 'pointer-events-none' : ''}`}
+        style={{ height: '100dvh' }}
+      >
         {isLoading && !data && <ShareExperienceSkeleton />}
 
         {!isLoading && data && (
@@ -55,12 +62,13 @@ const ShareExperienceContainer = () => {
                 key={selectedCategoryId}
                 selectedCategoryId={selectedCategoryId}
                 onSuccessNewHandler={onSuccessNewHandler}
+                scrollRef={scrollRef}
               />
             )}
           </>
         )}
-      </>
-    </MainPageLayout>
+      </div>
+    </>
   );
 };
 

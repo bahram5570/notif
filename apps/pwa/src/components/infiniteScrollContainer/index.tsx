@@ -15,24 +15,29 @@ const InfiniteScrollContainer = ({
   pageNo,
   height,
   style,
+  scrollContainerRef,
 }: InfiniteScrollContainerPropsType) => {
-  const containerRef = useRef<HTMLDivElement>(null);
+  const selfRef = useRef<HTMLDivElement>(null);
+  const isFetchingRef = useRef(false);
 
   useEffect(() => {
-    const el = containerRef.current;
+    if (!isLoading) {
+      isFetchingRef.current = false;
+    }
+  }, [isLoading]);
+
+  useEffect(() => {
+    const el = scrollContainerRef?.current ?? selfRef.current;
     if (!el) return;
 
     const handleScroll = (e: Event) => {
-      const target = e.target as HTMLDivElement;
-      if (!target) return;
+      const isNearBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 100;
 
-      const isEndBottom = target.scrollTop + target.clientHeight >= target.scrollHeight - 100;
-
-      if (isEndBottom && !isLoading) {
+      if (isNearBottom && !isLoading) {
         const currentItemsCount = (pageNo + 1) * pageSize;
-        const isAllItemsLoaded = currentItemsCount >= totalCount;
+        if (currentItemsCount <= totalCount) {
+          isFetchingRef.current = true;
 
-        if (!isAllItemsLoaded) {
           callBack();
         }
       }
@@ -40,19 +45,14 @@ const InfiniteScrollContainer = ({
 
     el.addEventListener('scroll', handleScroll);
     return () => el.removeEventListener('scroll', handleScroll);
-  }, [isLoading, pageNo, totalCount]);
+  }, [isLoading, pageNo, totalCount, scrollContainerRef]);
 
   return (
     <div
-      ref={containerRef}
+      ref={selfRef}
       id="infiniteScrollContainer"
       className={`overflow-y-auto ${className}`}
-      style={{
-        ...style,
-        height,
-        pointerEvents: isLoading ? 'none' : 'auto',
-        touchAction: isLoading ? 'none' : 'auto',
-      }}
+      style={scrollContainerRef ? style : { height, overflowY: 'auto', ...style }}
     >
       {children}
 

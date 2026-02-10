@@ -8,4 +8,5 @@ export type InfiniteScrollContainerPropsType = {
   height?: string | number;
   className?: string;
   style?: React.CSSProperties;
+  scrollContainerRef?: React.RefObject<HTMLElement>;
 };
