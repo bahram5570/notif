@@ -1,7 +1,7 @@
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { Loading } from '@repo/core/components/ui/Loading';
 
-import Loading from '@components/ui/Loading';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import RatingDescription from './RatingDescription';

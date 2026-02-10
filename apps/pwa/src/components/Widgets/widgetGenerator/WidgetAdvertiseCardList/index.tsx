@@ -1,8 +1,8 @@
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 
-import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
+import { ActionTypes } from '@repo/core/providers/WidgetActionsProvider';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 

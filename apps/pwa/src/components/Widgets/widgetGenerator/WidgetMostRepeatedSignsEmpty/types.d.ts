@@ -1,4 +1,4 @@
-import { WidgetMostRepeatedSignsEmptyTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { WidgetMostRepeatedSignsEmptyTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export interface WidgetMostRepeatedSignsEmptyProps extends Pick<
   WidgetMostRepeatedSignsEmptyTypes,

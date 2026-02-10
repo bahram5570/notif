@@ -80,3 +80,18 @@ export enum CyclePhaseEnum {
   Breastfeeding = 4,
   EditPregnancyCycle = 5,
 }
+
+export enum KitTestModuleTypeEnums {
+  BabyCheck = 'babyCheck',
+  Ovulation = 'ovulation',
+}
+
+export enum BabyCheckTypeEnums {
+  Analog = 0,
+  Digital = 1,
+}
+
+export enum DigitalBabyCheckEnum {
+  Negative = 0,
+  Positive = 1,
+}

@@ -2,10 +2,9 @@
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 
-import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
-import { ActionTypeEnum, CyclePhaseEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
+import { ActionTypeEnum, ActionTypes, CyclePhaseEnum } from '@repo/core/providers/WidgetActionsProvider';
 
 import PregnancySettingsLinkGenerator from './PregnancySettingsLinkGenerator';
 import { PREGNANCY_SETTINGS_LIST } from './constants';

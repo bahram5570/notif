@@ -1,4 +1,4 @@
-import { CyclePhaseEnum } from '@providers/WidgetActionsProvider/widgetEnums';
+import { CyclePhaseEnum } from '@repo/core/providers/WidgetActionsProvider';
 
 export type PregnancySettingsListTypes = {
   title: string;

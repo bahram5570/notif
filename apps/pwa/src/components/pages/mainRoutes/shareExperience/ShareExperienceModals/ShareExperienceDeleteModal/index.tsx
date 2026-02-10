@@ -1,4 +1,4 @@
-import TrashIcon from '@assets/icons/trash.svg';
+import TrashIcon from '@assets/shared/icons/trash.svg';
 
 import { SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';

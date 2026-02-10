@@ -1,4 +1,4 @@
-import { WidgetsButtonTypes } from '@providers/WidgetActionsProvider/widgetCommon';
+import { WidgetsButtonTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export interface CycleCardBtnProps {
   buttonsList: WidgetsButtonTypes[];

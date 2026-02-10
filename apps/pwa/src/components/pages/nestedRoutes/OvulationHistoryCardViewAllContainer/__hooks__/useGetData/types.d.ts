@@ -1,3 +1,3 @@
-import { WidgetOvulationHistoryCardTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { WidgetOvulationHistoryCardTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export type ResponseTypes = Pick<WidgetOvulationHistoryCardTypes, 'data'>['data'];

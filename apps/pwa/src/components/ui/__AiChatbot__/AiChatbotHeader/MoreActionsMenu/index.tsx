@@ -1,6 +1,6 @@
 import DialogIcon from '@assets/icons/Dialog.svg';
 import EditIcon from '@assets/icons/Pen 2.svg';
-import TrashIcon from '@assets/icons/trash.svg';
+import TrashIcon from '@assets/shared/icons/trash.svg';
 
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';

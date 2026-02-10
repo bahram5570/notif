@@ -1,4 +1,4 @@
-import { KitTestModuleTypeEnums } from '@components/KitTests/enum';
+import { KitTestModuleTypeEnums } from '@repo/core/providers/WidgetActionsProvider';
 
 export interface TestKitModalsContainerListProps {
   gregorianDate: string;

@@ -1,5 +1,4 @@
-import { BabyCheckTypeEnums } from '@components/KitTests/KitTestBabyCheck/enum';
-import { KitTestModuleTypeEnums } from '@components/KitTests/enum';
+import { BabyCheckTypeEnums, KitTestModuleTypeEnums } from '@repo/core/providers/WidgetActionsProvider';
 
 import { TestKitModalsContainerListProps } from '../../types';
 

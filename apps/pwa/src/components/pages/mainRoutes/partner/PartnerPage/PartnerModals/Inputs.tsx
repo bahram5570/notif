@@ -1,4 +1,4 @@
-import TrashIcon from '@assets/icons/trash.svg';
+import TrashIcon from '@assets/shared/icons/trash.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import FileInputManager from '@components/ui/FileInputManager';

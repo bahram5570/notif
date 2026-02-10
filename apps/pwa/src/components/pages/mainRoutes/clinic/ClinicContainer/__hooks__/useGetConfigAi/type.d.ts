@@ -1,4 +1,4 @@
-import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
+import { ActionTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export type UseGetConfigAiTypes = {
   isAvailable: boolean;

@@ -1,7 +1,7 @@
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 
 import { CycleResponseTypes } from '@components/pages/mainRoutes/cycle/types';
-import { WidgetsEnum } from '@providers/WidgetActionsProvider/widgetEnums';
+import { WidgetsEnum } from '@repo/core/providers/WidgetActionsProvider';
 
 export const textColorFinder = (data: undefined | CycleResponseTypes) => {
   let textColor = '#000000';

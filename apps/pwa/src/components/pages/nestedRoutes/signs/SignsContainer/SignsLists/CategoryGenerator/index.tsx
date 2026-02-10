@@ -1,5 +1,6 @@
+import { WidgetCardContainer } from '@repo/core/components/Widgets/WidgetCardContainer';
+
 import SignGenerator from '@components/SignGenerator';
-import WidgetCardContainer from '@components/Widgets/WidgetCardContainer';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import useSelectedSigns from './__hooks__/useSelectedSigns';

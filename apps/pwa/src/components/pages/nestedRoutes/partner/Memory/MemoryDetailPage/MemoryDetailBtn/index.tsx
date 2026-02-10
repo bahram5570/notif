@@ -1,5 +1,5 @@
 import EditIcon from '@assets/icons/Edit.svg';
-import TrashIcon from '@assets/icons/trash.svg';
+import TrashIcon from '@assets/shared/icons/trash.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { FOOTER_HEIGTH, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';

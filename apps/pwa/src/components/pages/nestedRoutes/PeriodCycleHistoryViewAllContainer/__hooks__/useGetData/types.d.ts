@@ -1,3 +1,3 @@
-import { WidgetPeriodCycleHistoryTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { WidgetPeriodCycleHistoryTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export type ResponseTypes = Pick<WidgetPeriodCycleHistoryTypes, 'data'>['data'];

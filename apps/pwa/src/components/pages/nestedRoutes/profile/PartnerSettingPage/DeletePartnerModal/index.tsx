@@ -1,4 +1,4 @@
-import TrashIcon from '@assets/icons/trash.svg';
+import TrashIcon from '@assets/shared/icons/trash.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';

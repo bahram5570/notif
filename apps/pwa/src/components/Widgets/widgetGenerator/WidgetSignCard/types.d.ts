@@ -1,4 +1,4 @@
-import { WidgetSignCardTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { WidgetSignCardTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export interface WidgetSignCardProps extends Pick<WidgetSignCardTypes, 'data'> {}
 

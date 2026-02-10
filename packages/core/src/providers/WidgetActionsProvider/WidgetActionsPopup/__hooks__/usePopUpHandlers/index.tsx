@@ -2,8 +2,9 @@ import { useState } from 'react';
 
 import { WIDGET_POPUP } from '../../../../../constants/modal.constants';
 import { useQueryParamsHandler } from '../../../../../hooks/useQueryParamsHandler';
+import { PopUpTypes } from '../../../widgetCommon';
 import { PopupTypeEnum } from '../../../widgetEnums';
-import { PopUpHandlerTypes, PopUpTypes } from './types';
+import { PopUpHandlerTypes } from './types';
 
 const usePopUpHandlers = () => {
   const [popUp, setPopUp] = useState<PopUpTypes>(null);

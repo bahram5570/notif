@@ -1,4 +1,4 @@
-import { ProgramScrolltemType, WidgetProgramScrollType } from '@providers/WidgetActionsProvider/widgetCards';
+import { WidgetProgramScrollType } from '@repo/core/providers/WidgetActionsProvider';
 
 export type RoutinDataTypes = Pick<WidgetProgramScrollType, 'data'>['data']['items'][0];
 

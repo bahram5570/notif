@@ -1,13 +1,12 @@
-import { OpenDeleteModalHandlerTypes } from '@components/KitTests/TestKitModalsLists/__hooks__/useTestKitsDeleteModal/types';
-import { KitTestModuleTypeEnums } from '@components/KitTests/enum';
 import { CalendarWidgetEnums } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/CalendarEnums';
 import { InfoCalendarResponseTypes } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { KitTestModuleTypeEnums } from '@repo/core/providers/WidgetActionsProvider';
 
 const useTestKitModalsDelete = () => {
   const { getQuery, updateQuery } = useCustomReactQuery();
 
-  const deleteHandler: OpenDeleteModalHandlerTypes = (v) => {
+  const deleteHandler = (v: { moduleType: KitTestModuleTypeEnums; index: number; createTime: string }) => {
     const data = getQuery<InfoCalendarResponseTypes>({ queryKey: ['signsInfoCalendar'] });
 
     if (data) {

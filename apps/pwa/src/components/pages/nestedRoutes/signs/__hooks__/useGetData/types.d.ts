@@ -1,4 +1,3 @@
-import { BabyCheckTypeEnums } from '@components/KitTests/KitTestBabyCheck/enum';
 import {
   CalendarWidgetEnums,
   DayTypeEnums,
@@ -9,6 +8,7 @@ import {
   ItemsTypes,
 } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
+import { BabyCheckTypeEnums } from '@repo/core/providers/WidgetActionsProvider';
 
 export type InitialSelectedSignsTypes = Pick<CalendarSignsType, 'data'>['data']['signs'];
 export type InitailBloodPressureTypes = Pick<CalendarSignsType, 'data'>['data']['bloodPressures'];

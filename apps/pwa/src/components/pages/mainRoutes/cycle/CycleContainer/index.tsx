@@ -5,8 +5,8 @@ import { CycleThemeEnum } from '@services/loginServices/enum';
 import WidgetGenerator from '@components/Widgets/widgetGenerator';
 import WidgetCirculeCycleCard from '@components/Widgets/widgetGenerator/WidgetCirculeCycleCard';
 import WidgetCycleCard from '@components/Widgets/widgetGenerator/WidgetCycleCard';
-import useOnMountActions from '@hooks/useOnMountActions';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+import { useWidgetOnMountActions } from '@repo/core/hooks/useWidgetOnMountActions';
 
 import CycleAppBar from '../CycleAppBar';
 import CycleSkeleton from './CycleSkeleton';
@@ -19,7 +19,7 @@ const CycleContainer = ({ data, customAppBar, children }: ContainerProps) => {
   const widgetsListProps = useWidgetsListMaker({ widgets: data?.wigets });
   const { loadingStatus } = useCycleLoadingStatus({ hasData: data ? true : false });
 
-  useOnMountActions(loadingStatus === LoadingStatusEnum.successed ? data?.actions : undefined);
+  useWidgetOnMountActions(loadingStatus === LoadingStatusEnum.successed ? data?.actions : undefined);
 
   const appBarBackground = data ? colorFormatConverter(data.backgroundColor) : '#FDE6EC';
 

@@ -1,4 +1,4 @@
-import WidgetCardContainer from '@components/Widgets/WidgetCardContainer';
+import { WidgetCardContainer } from '@repo/core/components/Widgets/WidgetCardContainer';
 
 import ShareExperienceGenerator from './ShareExperienceGenerator';
 import { WidgetShareExperienceCardProps } from './types';

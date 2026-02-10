@@ -8,7 +8,8 @@ import CloseIcon from '@assets/shared/icons/plus.svg';
 import { useRouter } from 'next/navigation';
 
 import { useWidgetActions } from '../../../../../hooks/useWidgetActions';
-import { LottieJson } from '../../../../../lib/LottieJson';
+// todo
+// import { LottieJson } from '../../../../../lib/LottieJson';
 import { ClickHandlerTypes, PopupInteractionProps } from './types';
 
 const PopupInteraction = ({ data }: PopupInteractionProps) => {
@@ -50,7 +51,7 @@ const PopupInteraction = ({ data }: PopupInteractionProps) => {
         <CloseIcon className="w-8 h-auto rotate-45 cursor-pointer stroke-impo_Neutral_OnSurface" />
       </div>
 
-      {jsonFile && <LottieJson loop={true} animationData={jsonFile} width={250} className="mt-8" />}
+      {/* {jsonFile && <LottieJson loop={true} animationData={jsonFile} width={250} className="mt-8" />} */}
 
       <div className="flex flex-col items-center px-4">
         <CustomTypography fontSize="Title_Large" className="pt-5 text-center text-impo_Neutral_OnBackground">

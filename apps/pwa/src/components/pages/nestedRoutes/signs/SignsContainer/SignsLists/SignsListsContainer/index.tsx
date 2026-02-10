@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 
-import KitTests from '@components/KitTests';
+import { KitTests } from '@repo/core/components/Widgets/KitTests';
+
 import { SIGNS_LIST } from '@components/SignGenerator/constants';
 import {
   CalendarWidgetEnums,

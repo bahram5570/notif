@@ -1,5 +1,6 @@
+import { WidgetCardContainer } from '@repo/core/components/Widgets/WidgetCardContainer';
+
 import SubscriptionGenerator from '@components/SubscriptionGenerator';
-import WidgetCardContainer from '@components/Widgets/WidgetCardContainer';
 
 import WidgetSubscriptionHeadlineBtn from './WidgetSubscriptionHeadlineBtn';
 import { WidgetSubscriptionCardProps } from './types';

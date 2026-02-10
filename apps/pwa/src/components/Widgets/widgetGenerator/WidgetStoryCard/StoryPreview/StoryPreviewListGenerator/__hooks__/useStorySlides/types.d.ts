@@ -1,4 +1,4 @@
-import { StoryCtaButtonTypes, StoryImageTypes, StoryVideoTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { StoryCtaButtonTypes, StoryImageTypes, StoryVideoTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 import { ViewStoryHandlerTypes } from '../../../__hooks__/useStoryUpdate/useIsView/types';
 import { StoryPreviewListGeneratorProps } from '../../types';

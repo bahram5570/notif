@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import PaperClipIcon from '@assets/icons/paperclip.svg';
-import TrashIcon from '@assets/icons/trash.svg';
+import TrashIcon from '@assets/shared/icons/trash.svg';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@repo/core/utils/scripts';

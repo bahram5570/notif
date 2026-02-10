@@ -1,4 +1,4 @@
-import { WidgetPredictCardTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { WidgetPredictCardTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export interface WidgetPredictCardProps extends Pick<WidgetPredictCardTypes, 'data'> {}
 

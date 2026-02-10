@@ -1,4 +1,4 @@
-import { WidgetOvulationHistoryCardTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { WidgetOvulationHistoryCardTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export interface WidgetOvulationHistoryCardProps extends Pick<
   WidgetOvulationHistoryCardTypes,

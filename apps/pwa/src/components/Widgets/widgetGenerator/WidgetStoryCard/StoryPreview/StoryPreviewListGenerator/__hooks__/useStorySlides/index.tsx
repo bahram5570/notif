@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { WidgetStoryTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
+import { WidgetStoryTypeEnum } from '@repo/core/providers/WidgetActionsProvider';
 
 import {
   SlideIndexHandlerTypes,

@@ -3,8 +3,8 @@
 import { createContext, useEffect, useState } from 'react';
 
 import { NEED_LOADING_SIGN_INTERACTIVE_BANNER_LIST } from '@constants/routes.constants';
-import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
 import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
+import { ActionTypes } from '@repo/core/providers/WidgetActionsProvider';
 import { usePathname, useRouter } from 'next/navigation';
 
 import { SignInteractiveBannerContextType } from './type';

@@ -3,9 +3,9 @@ import { useMemo } from 'react';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { gregorianFarsiScriptDate, jalaaliScriptDate, toJalaliData } from '@repo/core/utils/dates';
 
-import { WidgetsEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 import { useCulture } from '@repo/core/hooks/useCulture';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
+import { WidgetsEnum } from '@repo/core/providers/WidgetActionsProvider';
 import moment from 'moment-jalaali';
 
 import { HealthReportDatePropsType } from './type';

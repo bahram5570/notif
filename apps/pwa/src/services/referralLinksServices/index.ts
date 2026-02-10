@@ -1,4 +1,4 @@
-import { actionRouteConverter } from '@providers/WidgetActionsProvider/__hooks__/useActionTypes/useActionTypeInternalRout/__utils__/actionRouteConverter';
+import { actionRouteConverter } from '@providers/PwaWidgetActionsProvider/__utils__';
 
 import { NextResponse } from 'next/server';
 

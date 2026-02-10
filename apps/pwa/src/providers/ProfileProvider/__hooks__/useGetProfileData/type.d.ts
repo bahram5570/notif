@@ -1,8 +1,8 @@
 import { CycleThemeEnum } from '@services/loginServices/enum';
 
 import { ChildTypeEnum, PeriodStatusEnum, WomanStatusEnum } from '@constants/activation.constants';
-import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
+import { ActionTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 import { SexualStatusEnum } from './enum';
 

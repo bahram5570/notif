@@ -1,7 +1,5 @@
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
-import TestKitModalsListsBabyCheck from '@components/KitTests/TestKitModalsLists/TestKitModalsListsBabyCheck';
-import TestKitModalsListsDelete from '@components/KitTests/TestKitModalsLists/TestKitModalsListsDelete';
 import TestKitModalsBabyCheck from '@components/pages/nestedRoutes/signs/TestKitModals/TestKitModalsBabyCheck';
 import TestKitModalsContainer from '@components/pages/nestedRoutes/signs/TestKitModals/TestKitModalsContainer';
 import useTestKitModalsInfo from '@components/pages/nestedRoutes/signs/TestKitModals/__hooks__/useTestKitModalsInfo';
@@ -17,11 +15,11 @@ const TestBabyKitModalsLists = ({ onAdd, onDelete, data }: TestBabyKitModalsProp
         <>
           {modalInfo && (
             <div className="h-full">
-              {modalInfo.type === 'lists' && (
+              {/* {modalInfo.type === 'lists' && (
                 <TestKitModalsContainer title={data.title}>
                   <TestKitModalsListsBabyCheck data={data.items} />
                 </TestKitModalsContainer>
-              )}
+              )} */}
 
               {modalInfo.type === 'babyCheckSelectors' && (
                 <TestKitModalsBabyCheck
@@ -36,7 +34,7 @@ const TestBabyKitModalsLists = ({ onAdd, onDelete, data }: TestBabyKitModalsProp
         </>
       </CustomModal>
 
-      <TestKitModalsListsDelete onDelete={(v) => onDelete(v.index)} />
+      {/* <TestKitModalsListsDelete onDelete={(v) => onDelete(v.index)} /> */}
     </>
   );
 };

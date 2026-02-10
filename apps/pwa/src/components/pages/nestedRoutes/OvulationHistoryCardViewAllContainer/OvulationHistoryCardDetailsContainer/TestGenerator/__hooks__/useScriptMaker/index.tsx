@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
+import { kitTestScripts } from '@repo/core/components/Widgets/KitTests';
 import { gregorianFarsiScriptDate, jalaaliScriptDate, toJalaliData } from '@repo/core/utils/dates';
 
-import { kitTestScripts } from '@components/KitTests/KitTestRange/constants';
 import { useCulture } from '@repo/core/hooks/useCulture';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import moment from 'moment-jalaali';

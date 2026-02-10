@@ -2,8 +2,8 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@repo/core/utils/scripts';
 
-import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
+import { ActionTypeEnum } from '@repo/core/providers/WidgetActionsProvider';
 
 import WidgetRoutinWriter from '../../WidgetRoutin/WidgetRoutinWriter';
 import { WomanPairRoutinPropsType } from './type';

@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import SelectedIcon from '@assets/icons/selectedTick.svg';
+import SelectedIcon from '@assets/shared/icons/selectedTick.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';

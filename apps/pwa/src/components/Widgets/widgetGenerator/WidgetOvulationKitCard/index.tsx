@@ -1,10 +1,6 @@
+import { WidgetCardContainer } from '@repo/core/components/Widgets/WidgetCardContainer';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { currentDate } from '@repo/core/utils/dates';
-
-import KitTestOvulation from '@components/KitTests/KitTestsContainer/KitTestOvulation';
-import KitTestsList from '@components/KitTests/KitTestsContainer/KitTestsList';
-import { KitTestModuleTypeEnums } from '@components/KitTests/enum';
-import WidgetCardContainer from '@components/Widgets/WidgetCardContainer';
 
 import OvulationKitModal from './OvulationKitModal';
 import useUpdateOvulationData from './__hooks__/useUpdateOvulationData';
@@ -22,13 +18,13 @@ const WidgetOvulationKitCard = ({ data }: WidgetOvulationKitCardProps) => {
           {updatedData.description}
         </CustomTypography>
 
-        <KitTestOvulation moduleType={KitTestModuleTypeEnums.Ovulation} gregorianDate={gDate} onComplete={onAdd} />
+        {/* <KitTestOvulation moduleType={KitTestModuleTypeEnums.Ovulation} gregorianDate={gDate} onComplete={onAdd} /> */}
 
-        <KitTestsList
+        {/* <KitTestsList
           gregorianDate={gDate}
           moduleType={KitTestModuleTypeEnums.Ovulation}
           data={{ babyChecks: [], ovulationResult: updatedData }}
-        />
+        /> */}
 
         <OvulationKitModal data={updatedData} onDelete={onDelete} />
       </>

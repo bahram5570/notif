@@ -1,5 +1,3 @@
-import { NextStepTypes } from '../../../widgetCommon';
-
-export type PopUpTypes = null | NextStepTypes;
+import { PopUpTypes } from '../../../widgetCommon';
 
 export type PopUpHandlerTypes = (v: PopUpTypes) => void;

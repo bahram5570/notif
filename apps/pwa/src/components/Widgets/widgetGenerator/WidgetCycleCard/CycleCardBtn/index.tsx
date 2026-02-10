@@ -2,8 +2,8 @@ import { WidgetScaleModule } from '@repo/core/components/Widgets/WidgetScaleModu
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 
-import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
+import { ActionTypeEnum } from '@repo/core/providers/WidgetActionsProvider';
 
 import { CycleCardBtnProps } from './types';
 

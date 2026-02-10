@@ -22,6 +22,7 @@ export const WidgetActionsContext = createContext<WidgetActionsContextTypes>({
 
 export const WidgetActionsProvider = ({
   internalRoutesConverter,
+  PopUpEditCycle,
   onCallBack,
   children,
 }: WidgetActionsProviderTypes) => {
@@ -150,7 +151,7 @@ export const WidgetActionsProvider = ({
         <>{children}</>
       </OnMountActionsProvider>
 
-      <WidgetActionsPopup popUp={popUp} actionCompleteHandler={actionCompleteHandler} />
+      <WidgetActionsPopup popUp={popUp} actionCompleteHandler={actionCompleteHandler} PopUpEditCycle={PopUpEditCycle} />
     </WidgetActionsContext.Provider>
   );
 };

@@ -1,8 +1,6 @@
 import { currentDate } from '@repo/core/utils/dates';
 
-import KitTestsContainer from '@components/KitTests/KitTestsContainer';
-import { KitTestModuleTypeEnums } from '@components/KitTests/enum';
-import { KitTestsTypes } from '@components/pages/nestedRoutes/signs/__hooks__/useGetData/types';
+import { KitTestsTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 import TestBabyKitModalsLists from './TestBabyKitModalsLists';
 import useNewBabyCheckData from './__hooks__/useNewBabyCheckData';
@@ -20,8 +18,8 @@ const WidgetBabyCheckKitCard = ({ data }: WidgetBabyCheckKitCardProps) => {
 
   return (
     <>
-      <KitTestsContainer data={testData} gregorianDate={gDate} moduleType={KitTestModuleTypeEnums.BabyCheck} />
-      <TestBabyKitModalsLists onAdd={onAdd} onDelete={onDelete} data={updatedData} />
+      {/* <KitTestsContainer data={testData} gregorianDate={gDate} moduleType={KitTestModuleTypeEnums.BabyCheck} />
+      <TestBabyKitModalsLists onAdd={onAdd} onDelete={onDelete} data={updatedData} /> */}
     </>
   );
 };

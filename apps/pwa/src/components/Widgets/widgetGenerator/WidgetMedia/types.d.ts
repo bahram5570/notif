@@ -1,3 +1,3 @@
-import { WidgetMediaTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { WidgetMediaTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export interface WidgetMediaProps extends Pick<WidgetMediaTypes, 'data'> {}

@@ -1,4 +1,4 @@
-import { WidgetSubscriptionCardTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { WidgetSubscriptionCardTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 type PackagesTypes = Pick<WidgetSubscriptionCardTypes, 'data'>['data']['package'];
 

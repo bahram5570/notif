@@ -5,9 +5,9 @@ import {
   STORY_CARD_DATA_NAME,
   STORY_MOOD_TRACKER_NAME,
 } from '@components/Widgets/widgetGenerator/WidgetStoryCard/constants';
-import { WidgetStoryTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { WidgetStoryTypeEnum } from '@repo/core/providers/WidgetActionsProvider';
 
 const { gDate } = currentDate();
 

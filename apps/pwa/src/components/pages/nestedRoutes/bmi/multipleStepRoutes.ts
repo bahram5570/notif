@@ -1,5 +1,4 @@
-import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
-import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
+import { ActionTypeEnum, ActionTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export const multipleStepRoutes = (query: string | null) => {
   const action: ActionTypes = {

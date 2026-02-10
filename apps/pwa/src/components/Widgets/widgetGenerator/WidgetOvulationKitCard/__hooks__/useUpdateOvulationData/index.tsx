@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 import { CycleResponseTypes } from '@components/pages/mainRoutes/cycle/types';
-import { WidgetsEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { WidgetsEnum } from '@repo/core/providers/WidgetActionsProvider';
 
 import { UseUpdateOvulationDataData } from './type';
 

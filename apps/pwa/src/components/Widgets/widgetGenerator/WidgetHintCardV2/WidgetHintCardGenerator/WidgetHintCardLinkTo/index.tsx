@@ -1,8 +1,7 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
-import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
+import { ActionTypeEnum, ActionTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 import { WidgetHintCardLinkToProps } from './types';
 

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { CycleThemeEnum } from '@services/loginServices/enum';
 
 import { getUserInfoCookie } from '@actions/userCookies.actions';
-import { WidgetsEnum } from '@providers/WidgetActionsProvider/widgetEnums';
+import { WidgetsEnum } from '@repo/core/providers/WidgetActionsProvider';
 
 import { CurrentCycleTypes } from './types';
 

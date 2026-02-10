@@ -1,3 +1,3 @@
-import { WidgetOvulationKitCardTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { WidgetOvulationKitCardTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export interface WidgetOvulationKitCardProps extends Pick<WidgetOvulationKitCardTypes, 'data'> {}

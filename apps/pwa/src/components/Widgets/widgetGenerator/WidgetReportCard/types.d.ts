@@ -1,4 +1,4 @@
-import { WidgetReportCardTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { WidgetReportCardTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export interface WidgetReportCardProps extends Pick<WidgetReportCardTypes, 'data'> {}
 

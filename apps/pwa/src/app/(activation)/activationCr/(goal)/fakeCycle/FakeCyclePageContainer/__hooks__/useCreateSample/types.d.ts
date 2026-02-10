@@ -1,4 +1,4 @@
-import { WidgetsTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { WidgetsTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 import { FakeCyclePageContainerProps } from '../../types';
 

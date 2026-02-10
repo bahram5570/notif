@@ -1,7 +1,6 @@
 import { WidgetScaleModule } from '@repo/core/components/Widgets/WidgetScaleModule';
 
-import { WidgetsTypes } from '@providers/WidgetActionsProvider/widgetCards';
-import { WidgetsEnum } from '@providers/WidgetActionsProvider/widgetEnums';
+import { WidgetsEnum, WidgetsTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 import WidgetAdvertiseCardList from './WidgetAdvertiseCardList';
 import WidgetArticleCard from './WidgetArticleCard';
@@ -133,21 +132,25 @@ const WidgetGenerator = ({ data, type, isPdfDownloading = false }: WidgetsTypes)
     case WidgetsEnum.Biorhythm:
       result = <WidgetsBiorhythm data={data} />;
       break;
-    case WidgetsEnum.ProgramScrollWidget:
-      result = <WidgetProgramScroll data={data} />;
-      break;
+    // todo
+    // case WidgetsEnum.ProgramScrollWidget:
+    //   result = <WidgetProgramScroll data={data} />;
+    //   break;
     case WidgetsEnum.WomanPairProgram:
       result = <WidgetWomanPairProgram data={data} />;
       break;
-    case WidgetsEnum.ShortcutWidget:
-      result = <WidgetShortcut data={data} />;
-      break;
-    case WidgetsEnum.HintCardV2:
-      result = <WidgetHintCardV2 data={data} />;
-      break;
-    case WidgetsEnum.AdvertiseCardList:
-      result = <WidgetAdvertiseCardList data={data} />;
-      break;
+    // todo
+    // case WidgetsEnum.ShortcutWidget:
+    //   result = <WidgetShortcut data={data} />;
+    //   break;
+    // todo
+    // case WidgetsEnum.HintCardV2:
+    //   result = <WidgetHintCardV2 data={data} />;
+    //   break;
+    // todo
+    // case WidgetsEnum.AdvertiseCardList:
+    //   result = <WidgetAdvertiseCardList data={data} />;
+    //   break;
   }
 
   return result === null ? <></> : <WidgetScaleModule>{result}</WidgetScaleModule>;

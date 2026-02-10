@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { WidgetsEnum } from '@providers/WidgetActionsProvider/widgetEnums';
+import { WidgetsEnum } from '@repo/core/providers/WidgetActionsProvider';
 
 import {
   CirculeCycleCardDataTypes,

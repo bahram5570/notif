@@ -1,4 +1,4 @@
-import { WidgetClinicCardTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { WidgetClinicCardTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export interface WidgetClinicCardProps extends Pick<WidgetClinicCardTypes, 'data'> {}
 

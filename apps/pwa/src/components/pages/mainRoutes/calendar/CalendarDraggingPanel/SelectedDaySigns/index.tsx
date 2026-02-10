@@ -1,6 +1,6 @@
+import { WidgetCardContainer } from '@repo/core/components/Widgets/WidgetCardContainer';
 import { currentDate } from '@repo/core/utils/dates';
 
-import WidgetCardContainer from '@components/Widgets/WidgetCardContainer';
 import moment from 'moment-jalaali';
 
 import SelectedDaySignsContainer from './SelectedDaySignsContainer';

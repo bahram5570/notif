@@ -1,6 +1,7 @@
 'use client';
 
-import WidgetCardContainer from '../../WidgetCardContainer';
+import { WidgetCardContainer } from '@repo/core/components/Widgets/WidgetCardContainer';
+
 import ShortcutItems from './ShortcutItems';
 import { ShortcutWidgetCardProps } from './type';
 

@@ -1,1 +1,0 @@
-export const SIGNS_SELECT_DAY_HEIGHT = 230;

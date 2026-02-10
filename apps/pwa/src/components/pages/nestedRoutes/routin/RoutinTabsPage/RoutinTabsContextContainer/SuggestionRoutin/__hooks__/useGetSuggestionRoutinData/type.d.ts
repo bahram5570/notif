@@ -1,4 +1,4 @@
-import { ActionTypes, WidgetsButtonTypes } from '@providers/WidgetActionsProvider/widgetCommon';
+import { ActionTypes, WidgetsButtonTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export type ProgramType = {
   completeTitle: string;

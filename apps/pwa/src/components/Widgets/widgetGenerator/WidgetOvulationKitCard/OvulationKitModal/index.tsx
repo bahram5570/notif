@@ -1,7 +1,5 @@
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
-import TestKitModalsListsDelete from '@components/KitTests/TestKitModalsLists/TestKitModalsListsDelete';
-import TestKitModalsListsOvulation from '@components/KitTests/TestKitModalsLists/TestKitModalsListsOvulation';
 import TestKitModalsContainer from '@components/pages/nestedRoutes/signs/TestKitModals/TestKitModalsContainer';
 import useTestKitModalsInfo from '@components/pages/nestedRoutes/signs/TestKitModals/__hooks__/useTestKitModalsInfo';
 
@@ -12,7 +10,7 @@ const OvulationKitModal = ({ data, onDelete }: OvulationKitModalPropsType) => {
 
   return (
     <>
-      <CustomModal isSlidingMode={true} isOpen={modalInfo !== null}>
+      {/* <CustomModal isSlidingMode={true} isOpen={modalInfo !== null}>
         {modalInfo && (
           <div className="h-full">
             <TestKitModalsContainer title={data.title}>
@@ -22,7 +20,7 @@ const OvulationKitModal = ({ data, onDelete }: OvulationKitModalPropsType) => {
         )}
       </CustomModal>
 
-      <TestKitModalsListsDelete onDelete={onDelete} />
+      <TestKitModalsListsDelete onDelete={onDelete} /> */}
     </>
   );
 };

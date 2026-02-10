@@ -1,6 +1,6 @@
+import { WidgetCardContainer } from '@repo/core/components/Widgets/WidgetCardContainer';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import WidgetCardContainer from '@components/Widgets/WidgetCardContainer';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import ClinicWidgetGenerator from './ClinicWidgetGenerator';

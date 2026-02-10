@@ -1,16 +1,31 @@
 'use client';
 
-import { actionRouteConverter } from './actionRouteConverter/__utils__';
+import { actionRouteConverter } from './__utils__';
 
+import useUpdateCycleCard from '@hooks/__cycle__/useUpdateCycleCard';
 import { WidgetActionsProvider } from '@repo/core/providers/WidgetActionsProvider';
 
+import PopUpEditCycle from './PopUpEditCycle';
+
 const PwaWidgetActionsProvider = ({ children }: { children: React.ReactNode }) => {
+  const { cycleCardStatusHandler } = useUpdateCycleCard();
+
   const callBackHandler = (name: string) => {
-    console.log(name);
+    if (name === 'cycle') {
+      const isCyclePage = location.pathname.includes('cycle');
+
+      if (isCyclePage) {
+        cycleCardStatusHandler('refetch');
+      }
+    }
   };
 
   return (
-    <WidgetActionsProvider internalRoutesConverter={actionRouteConverter} onCallBack={callBackHandler}>
+    <WidgetActionsProvider
+      onCallBack={callBackHandler}
+      PopUpEditCycle={PopUpEditCycle}
+      internalRoutesConverter={actionRouteConverter}
+    >
       <>{children}</>
     </WidgetActionsProvider>
   );

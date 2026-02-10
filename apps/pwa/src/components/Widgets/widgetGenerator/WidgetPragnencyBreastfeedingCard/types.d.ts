@@ -1,4 +1,4 @@
-import { WidgetPragnencyBreastfeedingCardTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { WidgetPragnencyBreastfeedingCardTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export interface WidgetPragnencyBreastfeedingCardProps extends Pick<WidgetPragnencyBreastfeedingCardTypes, 'data'> {}
 

@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 import { MODAL_QUERY_NAME } from '../../../../../constants/modal.constants';
 import { useQueryParamsHandler } from '../../../../../hooks/useQueryParamsHandler';
+import { PopUpTypes } from '../../../widgetCommon';
 import { PopupTypeEnum } from '../../../widgetEnums';
-import { PopUpTypes } from '../usePopUpHandlers/types';
 
 const useTwoStepsStatus = (popUp: PopUpTypes) => {
   const { getQueryParams } = useQueryParamsHandler();

@@ -1,5 +1,4 @@
-import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
-import { ActionTypeEnum, PopupTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
+import { ActionTypeEnum, ActionTypes, PopupTypeEnum } from '@repo/core/providers/WidgetActionsProvider';
 
 import { NotificationsDataTypes } from './types';
 

@@ -1,6 +1,6 @@
+import { WidgetCardContainer } from '@repo/core/components/Widgets/WidgetCardContainer';
 import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
 
-import WidgetCardContainer from '../../WidgetCardContainer';
 import WomanPairRoutin from './WomanPairRoutin';
 import { WomanPairProgramCardPropsPropsType } from './type';
 

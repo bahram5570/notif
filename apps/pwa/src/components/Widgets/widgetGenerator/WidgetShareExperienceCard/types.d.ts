@@ -1,4 +1,4 @@
-import { WidgetShareExperienceCardTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { WidgetShareExperienceCardTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export interface WidgetShareExperienceCardProps extends Pick<WidgetShareExperienceCardTypes, 'data'> {}
 

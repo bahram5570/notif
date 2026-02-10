@@ -2,8 +2,8 @@
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 
-import useOnMountActions from '@hooks/useOnMountActions';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
+import { useWidgetOnMountActions } from '@repo/core/hooks/useWidgetOnMountActions';
 
 import HealthReportContainerSkeleton from './HealthReportContainerSkeleton';
 import HealthReportContainerWidgets from './HealthReportContainerWidgets';
@@ -15,7 +15,7 @@ const HealthReportContainer = () => {
 
   const { isLoading, data } = useGetData();
 
-  useOnMountActions(data?.actions);
+  useWidgetOnMountActions(data?.actions);
 
   return (
     <MainPageLayout rightElement="BackButton" rightElementScript="گزارش سلامت" className="bg-impo_Neutral_Surface">

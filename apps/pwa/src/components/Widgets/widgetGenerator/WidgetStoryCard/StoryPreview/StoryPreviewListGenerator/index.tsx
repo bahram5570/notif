@@ -2,8 +2,8 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 import Image from 'next/image';
 
-import { WidgetStoryTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
+import { WidgetStoryTypeEnum } from '@repo/core/providers/WidgetActionsProvider';
 
 import { STORY_MOOD_TRACKER_NAME } from '../../constants';
 import { ViewStoryHandlerTypes } from '../__hooks__/useStoryUpdate/useIsView/types';

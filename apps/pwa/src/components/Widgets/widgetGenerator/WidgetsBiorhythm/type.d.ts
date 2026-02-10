@@ -1,4 +1,4 @@
-import { WidgetBiorhythmTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { WidgetBiorhythmTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export interface WidgetBiorhythmCardProps extends Pick<WidgetBiorhythmTypes, 'data'> {}
 

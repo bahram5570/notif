@@ -1,6 +1,6 @@
-import TestKitModalsListsBabyCheck from '@components/KitTests/TestKitModalsLists/TestKitModalsListsBabyCheck';
-import TestKitModalsListsOvulation from '@components/KitTests/TestKitModalsLists/TestKitModalsListsOvulation';
-import { KitTestModuleTypeEnums } from '@components/KitTests/enum';
+import { TestKitModalsListsBabyCheck, TestKitModalsListsOvulation } from '@repo/core/components/Widgets/KitTests';
+
+import { KitTestModuleTypeEnums } from '@repo/core/providers/WidgetActionsProvider';
 
 import TestKitModalsContainer from '../TestKitModalsContainer';
 import useGetData from './__hooks__/useGetData';

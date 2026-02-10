@@ -1,4 +1,5 @@
-import WidgetCardContainer from '@components/Widgets/WidgetCardContainer';
+import { WidgetCardContainer } from '@repo/core/components/Widgets/WidgetCardContainer';
+
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import PregnancyCheckupItem from './PregnancyCheckupItem';

@@ -1,5 +1,5 @@
 import ImpoIcon from '@assets/icons/impoName.svg';
-import TickIcon from '@assets/icons/selectedTick.svg';
+import TickIcon from '@assets/shared/icons/selectedTick.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { LottieJson } from '@lib/LottieJson';

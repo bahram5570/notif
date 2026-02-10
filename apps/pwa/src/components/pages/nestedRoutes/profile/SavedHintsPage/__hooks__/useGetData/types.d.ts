@@ -1,4 +1,4 @@
-import { HintCardTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { HintCardTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 type ItemsTypes = Pick<HintCardTypes, 'data'>['data']['list'];
 export type SavedHintsResponseTypes = {

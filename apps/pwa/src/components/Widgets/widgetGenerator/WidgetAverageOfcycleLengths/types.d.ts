@@ -1,4 +1,4 @@
-import { WidgetAverageOfcycleLengthsTypes } from '@providers/WidgetActionsProvider/widgetCards';
+import { WidgetAverageOfcycleLengthsTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export interface WidgetAverageOfcycleLengthsProps extends Pick<
   WidgetAverageOfcycleLengthsTypes,

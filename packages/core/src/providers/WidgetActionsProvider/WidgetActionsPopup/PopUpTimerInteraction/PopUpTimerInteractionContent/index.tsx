@@ -3,7 +3,8 @@ import { CustomTypography } from '../../../../../components/ui/CustomTypography'
 import CloseIcon from '@assets/shared/icons/plus.svg';
 
 import { useWidgetActions } from '../../../../../hooks/useWidgetActions';
-import { LottieJson } from '../../../../../lib/LottieJson';
+// todo
+// import { LottieJson } from '../../../../../lib/LottieJson';
 import useCheckJson from '../__hooks__/useCheckJson';
 import { PopUpTimerInteractionContentPropsType } from './type';
 
@@ -29,7 +30,7 @@ const PopUpTimerInteractionContent = ({ actionCompleteHandler, data }: PopUpTime
     >
       <div className="flex flex-row-reverse gap-2" onClick={clickHandler}>
         <div className="w-10 h-10">
-          {isJson ? jsonData && <LottieJson animationData={jsonData} /> : <CustomImage src={data.icon} />}
+          {/* {isJson ? jsonData && <LottieJson animationData={jsonData} /> : <CustomImage src={data.icon} />} */}
         </div>
 
         <div className="flex flex-col items-end gap-1">

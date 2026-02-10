@@ -1,10 +1,8 @@
-import { BabyCheckTypeEnums } from '@components/KitTests/KitTestBabyCheck/enum';
-import KitTestDigitalBabyCheck from '@components/KitTests/KitTestDigitalBabyCheck';
-import KitTestRange from '@components/KitTests/KitTestRange';
-import useNewTestKit from '@components/KitTests/KitTestsContainer/__hooks__/useNewTestKit';
-import { KitTestModuleTypeEnums } from '@components/KitTests/enum';
-import Loading from '@components/ui/Loading';
+import { KitTestDigitalBabyCheck, KitTestRange, useNewTestKit } from '@repo/core/components/Widgets/KitTests';
+import { Loading } from '@repo/core/components/ui/Loading';
+
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { BabyCheckTypeEnums, KitTestModuleTypeEnums } from '@repo/core/providers/WidgetActionsProvider';
 import { useRouter } from 'next/navigation';
 
 import TestKitModalsContainer from '../TestKitModalsContainer';

@@ -1,8 +1,4 @@
-import {
-  CycleCardTypes,
-  WidgetCirculeCycleCardTypes,
-  WidgetsTypes,
-} from '@providers/WidgetActionsProvider/widgetCards';
+import { CycleCardTypes, WidgetCirculeCycleCardTypes, WidgetsTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 import { CycleResponseTypes } from '../../../types';
 

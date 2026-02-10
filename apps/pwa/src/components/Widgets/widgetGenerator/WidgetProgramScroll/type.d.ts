@@ -1,4 +1,4 @@
-import { WidgetProgramScrollType } from '@providers/WidgetActionsProvider/widgetCards';
+import { WidgetProgramScrollType } from '@repo/core/providers/WidgetActionsProvider';
 
 export interface ProgramScrollProps extends Pick<WidgetProgramScrollType, 'data'> {}
 

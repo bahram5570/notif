@@ -1,6 +1,6 @@
+import { WidgetCardContainer } from '@repo/core/components/Widgets/WidgetCardContainer';
 import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
 
-import WidgetCardContainer from '@components/Widgets/WidgetCardContainer';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import PredictGenerator from './PredictGenerator';

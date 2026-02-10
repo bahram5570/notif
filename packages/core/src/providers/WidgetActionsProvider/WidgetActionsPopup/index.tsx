@@ -1,8 +1,6 @@
 import { CustomModal } from '../../../components/ui/CustomModal';
 
 import { PopupTypeEnum } from '../widgetEnums';
-// todo
-// import PopUpEditCycle from './PopUpEditCycle';
 import PopUpTimerInteraction from './PopUpTimerInteraction';
 import PopupBiorythem from './PopupModals/PopupBiorythem';
 import PopupDialog from './PopupModals/PopupDialog';
@@ -16,7 +14,7 @@ import usePopupModal from './__hooks__/usePopupModal';
 import useTwoStepsStatus from './__hooks__/useTwoStepsStatus';
 import { WidgetActionsPopupProps } from './types';
 
-const WidgetActionsPopup = ({ actionCompleteHandler, popUp }: WidgetActionsPopupProps) => {
+const WidgetActionsPopup = ({ actionCompleteHandler, popUp, PopUpEditCycle }: WidgetActionsPopupProps) => {
   if (popUp && popUp.type === PopupTypeEnum.TimerInteraction) {
     return <PopUpTimerInteraction data={popUp.data} actionCompleteHandler={actionCompleteHandler} />;
   }
@@ -45,18 +43,18 @@ const WidgetActionsPopup = ({ actionCompleteHandler, popUp }: WidgetActionsPopup
         <>
           {popUp && (
             <>
+              {popUp.type === PopupTypeEnum.Dialog && <PopupDialog data={popUp.data} />}
+              {popUp.type === PopupTypeEnum.BioRythem && <PopupBiorythem data={popUp.data} />}
+              {popUp.type === PopupTypeEnum.SexTracker && <PopupSexTracker data={popUp.data} />}
               {popUp.type === PopupTypeEnum.MultiOption && <PopupMultiOption data={popUp.data} />}
               {popUp.type === PopupTypeEnum.Interaction && <PopupInteraction data={popUp.data} />}
-              {popUp.type === PopupTypeEnum.Dialog && <PopupDialog data={popUp.data} />}
-              {/* {popUp.type === PopupTypeEnum.EditCycle && (
+              {popUp.type === PopupTypeEnum.ImageTextButton && <PopupImageTextButton data={popUp.data} />}
+              {popUp.type === PopupTypeEnum.EditCycle && PopUpEditCycle && (
                 <PopUpEditCycle popUp={popUp} isPopUpActionCommpleteHandler={isPopUpActionCommpleteHandler} />
-              )} */}
+              )}
               {popUp.type === PopupTypeEnum.InteractionReward && (
                 <PopupInteractionReward data={popUp.data} hasTwoStepsInteractionReward={hasTwoStepsInteractionReward} />
               )}
-              {popUp.type === PopupTypeEnum.SexTracker && <PopupSexTracker data={popUp.data} />}
-              {popUp.type === PopupTypeEnum.ImageTextButton && <PopupImageTextButton data={popUp.data} />}
-              {popUp.type === PopupTypeEnum.BioRythem && <PopupBiorythem data={popUp.data} />}
             </>
           )}
         </>

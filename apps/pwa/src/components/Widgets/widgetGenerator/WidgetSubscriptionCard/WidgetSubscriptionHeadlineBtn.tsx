@@ -1,10 +1,10 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 
-import { ActionTypeEnum } from '@providers/WidgetActionsProvider/widgetEnums';
 import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 
 import { WidgetSubscriptionHeadlineBtnProps } from './types';
+import { ActionTypeEnum } from '@repo/core/providers/WidgetActionsProvider';
 
 const WidgetSubscriptionHeadlineBtn = ({
   backgroundColor,

@@ -1,5 +1,4 @@
-import { WidgetsTypes } from '@providers/WidgetActionsProvider/widgetCards';
-import { ActionTypes } from '@providers/WidgetActionsProvider/widgetCommon';
+import { ActionTypes, WidgetsTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 export type HealthReportResponseTypes = {
   date: string;

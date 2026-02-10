@@ -1,7 +1,7 @@
 import { Blood } from '@assets/icons/Blood.svg';
 
-import { BabyCheckTypeEnums } from '@components/KitTests/KitTestBabyCheck/enum';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
+import { BabyCheckTypeEnums } from '@repo/core/providers/WidgetActionsProvider';
 
 import { CalendarWidgetEnums } from './CalendarEnums';
 
