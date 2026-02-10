@@ -13,6 +13,7 @@ const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
   const RightElement = props.rightElement ? iconsList[props.rightElement] : () => <></>;
 
   const hasBothLeftElements = props.leftElement1 && props.leftElement2;
+  const hasRightElement = props.rightElement;
 
   const contents = (
     <div
@@ -49,7 +50,7 @@ const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
           )}
 
           <div
-            className={`h-10 w-10 min-w-10 min-h-10  flex items-center justify-center ${hasBothLeftElements && 'bg-impo_Grey_50  rounded-full'}`}
+            className={`h-10 w-10 min-w-10 min-h-10  flex items-center justify-center ${hasBothLeftElements && hasRightElement && 'bg-impo_Grey_50  rounded-full'}`}
           >
             <RightElement />
           </div>
