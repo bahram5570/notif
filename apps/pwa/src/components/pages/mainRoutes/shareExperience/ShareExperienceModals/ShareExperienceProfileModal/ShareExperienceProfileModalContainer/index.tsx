@@ -17,18 +17,21 @@ const ShareExperienceProfileModalContainer = ({
 }: ShareExperienceProfileModalContainerPropsTypes) => {
   useOverflowHandler(queryParam !== null);
   const { tab, tabHandler } = useShareExperienceProfileTabs();
-  const { data, isLoading } = useShareExperenceProfileGetData(userId);
+  const { shareExperienceProfileData, isLoading } = useShareExperenceProfileGetData(userId);
 
-  const rightElementScript = !isLoading && data ? `پروفایل ${data?.isSelf ? 'شما' : data?.profile.username}` : '';
+  const rightElementScript =
+    !isLoading && shareExperienceProfileData
+      ? `پروفایل ${shareExperienceProfileData?.isSelf ? 'شما' : shareExperienceProfileData?.profile.username}`
+      : '';
 
-  const optionList = data
+  const optionList = shareExperienceProfileData
     ? [
         {
-          text: data?.selfTitleText,
+          text: shareExperienceProfileData?.selfTitleText,
           id: ShareExperienceProfileTabEnum.Self,
         },
         {
-          text: data?.activitiesTitleText,
+          text: shareExperienceProfileData?.activitiesTitleText,
           id: ShareExperienceProfileTabEnum.Activities,
         },
       ]
@@ -46,19 +49,23 @@ const ShareExperienceProfileModalContainer = ({
           </div>
         )}
 
-        {!isLoading && data && (
+        {!isLoading && shareExperienceProfileData && (
           <>
             <ShareExperienceProfileTopPart
-              followCount={data.followCount}
-              storyCount={data.storyCount}
-              isFollow={data.isFollow}
-              profile={data.profile}
-              isSelf={data.isSelf}
+              followCount={shareExperienceProfileData.followCount}
+              storyCount={shareExperienceProfileData.storyCount}
+              isFollow={shareExperienceProfileData.isFollow}
+              profile={shareExperienceProfileData.profile}
+              isSelf={shareExperienceProfileData.isSelf}
             />
 
             <ShareExperienceTabs tab={tab} tabHandler={tabHandler} options={optionList} />
 
-            <ShareExperenceProfileTabList id={data.profile.id} isSelf={data.isSelf} tab={tab} />
+            <ShareExperenceProfileTabList
+              id={shareExperienceProfileData.profile.id}
+              isSelf={shareExperienceProfileData.isSelf}
+              tab={tab}
+            />
           </>
         )}
       </div>

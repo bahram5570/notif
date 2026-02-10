@@ -1,5 +1,6 @@
 import { shareExperienceTopicQueryMaker } from '@utils/shareExperience';
 
+import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import CustomImage from '@components/ui/CustomImage';
 import CustomSlider from '@components/ui/CustomSlider';
 import Dark_Typography from '@components/ui/Dark_Typography';
@@ -20,7 +21,7 @@ const ShareExperienceTopics = ({ topics }: ShareExperienceTopicsProps) => {
   };
 
   return (
-    <div className="flex flex-col gap-4 items-end ">
+    <div className="flex flex-col gap-4 items-end " style={{ paddingTop: HEADER_HEIGHT + 10 }}>
       <Dark_Typography fontSize="Lable_Large" className="px-3 text-impo_Neutral_OnBackground">
         تالار تجربه
       </Dark_Typography>

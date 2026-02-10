@@ -1,15 +1,27 @@
 import { useEffect } from 'react';
 
 import useApi from '@hooks/useApi';
+import useCustomReactQuery from '@hooks/useCustomReactQuery';
 
 import { ShareExperenceProfileResponsePropsType } from './type';
 
 const useShareExperenceProfileGetData = (userId: string | undefined) => {
-  const { callApi, data, isLoading } = useApi<ShareExperenceProfileResponsePropsType>({
+  const { getQuery, newQuery } = useCustomReactQuery(['shareExperienceProfileData']);
+
+  const shareExperienceProfileData = getQuery<ShareExperenceProfileResponsePropsType>({
+    queryKey: ['shareExperienceProfileData'],
+  });
+
+  const successHandler = (v: ShareExperenceProfileResponsePropsType) => {
+    newQuery({ queryKey: ['shareExperienceProfileData'], payload: v });
+  };
+
+  const { callApi, isLoading } = useApi<ShareExperenceProfileResponsePropsType>({
     api: `shareeexperience/v3/profile/${userId}`,
     method: 'GET',
     queryKey: ['shareExperienceProfile'],
     fetchOnMount: false,
+    onSuccess: successHandler,
   });
 
   useEffect(() => {
@@ -18,7 +30,7 @@ const useShareExperenceProfileGetData = (userId: string | undefined) => {
     }
   }, [userId]);
 
-  return { data, isLoading, callApi };
+  return { shareExperienceProfileData, isLoading, callApi };
 };
 
 export default useShareExperenceProfileGetData;
