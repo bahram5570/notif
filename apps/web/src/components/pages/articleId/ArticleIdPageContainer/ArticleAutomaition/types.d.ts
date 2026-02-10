@@ -1,11 +1,19 @@
 export type Step = 'phone' | 'otp' | 'success';
 
+export type ContentCategoryType = {
+  id?: string;
+  title: string;
+  subtitle: string;
+};
+
 export interface LeadPopupProps {
   threshold?: number;
+  contentCategory: ContentCategoryType;
 }
 
 export interface PhoneProps {
-  onNext: (phone: string) => void;
+  contentCategoryId?: string;
+  onNext: (phone: string, contentCategoryId?: string) => void;
 }
 
 export interface OtpProps {
@@ -21,4 +29,5 @@ export interface LeadStepsProps {
   step: Step;
   setStep: (s: Step) => void;
   onClose: () => void;
+  contentCategoryId?: string;
 }

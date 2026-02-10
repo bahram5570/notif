@@ -13,7 +13,7 @@ import LeadSteps from './LeadSteps';
 import { useScrollHandler } from './_hooks/useScrollHandler';
 import { LeadPopupProps, Step } from './types';
 
-export default function ArticleAutomaition({ threshold = 50 }: LeadPopupProps = {}) {
+export default function ArticleAutomaition({ threshold = 50, contentCategory }: LeadPopupProps) {
   const passed = useScrollHandler(threshold);
   const [open, setOpen] = useState(false);
   const [hasBeenClosed, setHasBeenClosed] = useState(false);
@@ -49,9 +49,8 @@ export default function ArticleAutomaition({ threshold = 50 }: LeadPopupProps = 
           <button onClick={handleClose} className="absolute top-2 right-5 text-white text-lg">
             ✕
           </button>
-          <HeaderContent />
+          <HeaderContent title={contentCategory.title} subtitle={contentCategory.subtitle} />
         </div>
-
         <LeadSteps step={step} setStep={setStep} onClose={handleClose} />
       </Dialog>
     );
@@ -78,11 +77,11 @@ export default function ArticleAutomaition({ threshold = 50 }: LeadPopupProps = 
 
         <div className="w-[72px] h-[2px] mx-auto my-3 bg-gray-200 rounded-full" />
         <div className="mt-[14px] flex items-center px-4 justify-between">
-          <HeaderContent />
+          <HeaderContent title={contentCategory.title} subtitle={contentCategory.subtitle} />
         </div>
       </div>
       <div className="!bg-impo_Neutral_Background">
-        <LeadSteps step={step} setStep={setStep} onClose={handleClose} />
+        <LeadSteps step={step} setStep={setStep} onClose={handleClose} contentCategoryId={contentCategory.id} />
       </div>
     </SwipeableDrawer>
   );

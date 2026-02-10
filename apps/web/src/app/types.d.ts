@@ -1,4 +1,9 @@
 export type ArticlesTypes = {
+  contentCategory: {
+    id: string;
+    title: string;
+    subtitle: string;
+  };
   doctor: null | {
     profileImage: string;
     speciality: string;

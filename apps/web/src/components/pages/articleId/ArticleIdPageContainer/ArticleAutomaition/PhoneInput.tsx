@@ -8,15 +8,16 @@ import CustomTypography from '@components/ui/CustomTypography';
 import { usePhoneSubmit } from './_hooks/usePhoneSubmit';
 import { PhoneProps } from './types';
 
-export default function PhoneInput({ onNext }: PhoneProps) {
-  const { value, setValue, isValid, isSubmitting, handleSubmit } = usePhoneSubmit({ onSuccess: onNext });
+export default function PhoneInput({ onNext, contentCategoryId }: PhoneProps & { contentCategoryId?: string }) {
+  const { value, setValue, isValid, isSubmitting, submit } = usePhoneSubmit(() => onNext(value, contentCategoryId));
 
   return (
-    <div>
-      <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground mb-3">
+    <div className="space-y-6">
+      <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground">
         برای اینکه بهت یه راهنمای کامل از موضوع این مقاله رو بدیم لازمه شماره همراهت رو وارد کنی
       </CustomTypography>
-      <form onSubmit={handleSubmit} className="space-y-5">
+
+      <form onSubmit={(e) => submit(e, contentCategoryId)} className="space-y-5">
         <CustomInput
           dir="ltr"
           type="tel"
@@ -28,12 +29,13 @@ export default function PhoneInput({ onNext }: PhoneProps) {
           fontSize="Body_Large"
           onValue={setValue}
         />
+
         <CustomButton
-          onClick={() => void handleSubmit()}
-          isDisable={!isValid}
+          onClick={() => submit(undefined, contentCategoryId)}
+          isDisable={!isValid || isSubmitting}
           isLoading={isSubmitting}
           fontSize="Lable_Large"
-          className="w-full !bg-impo_Black border-none !mt-[110px]"
+          className="w-full !bg-impo_Black border-none mt-10"
         >
           ثبت شماره همراه
         </CustomButton>

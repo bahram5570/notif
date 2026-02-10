@@ -3,15 +3,17 @@ import autoArticleImg from '@assets/images/autoArticleImg.webp';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 
-const HeaderContent = () => {
+import { ContentCategoryType } from './types';
+
+const HeaderContent = ({ title, subtitle }: ContentCategoryType) => {
   return (
     <>
       <div className="grid gap-y-1">
         <CustomTypography fontSize="Title_Small" className="!text-white">
-          راهنمای کامل بارداری سریع
+          {title}
         </CustomTypography>
         <CustomTypography fontSize="Body_Large" className="!text-white">
-          از زمان طلایی اقدام تا افزایش باروری
+          {subtitle}
         </CustomTypography>
       </div>
       <CustomImage alt="image" src={autoArticleImg} width={105} />

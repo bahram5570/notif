@@ -2,34 +2,25 @@
 
 import { useState } from 'react';
 
-import useCustomToast from '@hooks/useCustomToast';
+import { useSendOtp } from './useSendOtp';
 
-import { UsePhoneSubmitOptions } from './types';
-
-export function usePhoneSubmit({ onSuccess }: UsePhoneSubmitOptions) {
-  const { onToast } = useCustomToast();
-
+export function usePhoneSubmit(onSuccess: () => void) {
   const [value, setValue] = useState('');
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { isSending, sendOtp } = useSendOtp();
 
   const isValid = value.length === 11;
 
-  const submit = async (e?: React.FormEvent) => {
+  const submit = async (e?: React.FormEvent, categoryId?: string) => {
     e?.preventDefault();
 
     if (!isValid) {
-      onToast({ type: 'error', message: 'شماره باید ۱۱ رقم باشد' });
       return;
     }
 
-    setIsSubmitting(true);
-
-    try {
-      await onSuccess(value);
-    } catch (err) {
-      onToast({ type: 'error', message: 'خطا در ارسال کد' });
-    } finally {
-      setIsSubmitting(false);
+    const success = await sendOtp(value, categoryId);
+    
+    if (success) {
+      onSuccess();
     }
   };
 
@@ -37,8 +28,7 @@ export function usePhoneSubmit({ onSuccess }: UsePhoneSubmitOptions) {
     value,
     setValue,
     isValid,
-    isSubmitting,
+    isSubmitting: isSending,
     submit,
-    handleSubmit: submit,
   };
 }
