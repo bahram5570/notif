@@ -1,4 +1,4 @@
-import ImpoIcon from '@assets/icons/impoName.svg';
+import ImpoIcon from '@assets/shared/icons/impoName.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 

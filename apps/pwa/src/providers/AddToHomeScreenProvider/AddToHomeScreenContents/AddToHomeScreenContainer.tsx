@@ -1,4 +1,4 @@
-import ImpoIcon from '@assets/images/questionsImpo.svg';
+import ImpoIcon from '@assets/shared/icons/impoLogo.svg';
 
 const ICON_WIDTH = 64;
 

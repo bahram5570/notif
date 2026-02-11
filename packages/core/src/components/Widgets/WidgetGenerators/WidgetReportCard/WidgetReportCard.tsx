@@ -1,0 +1,24 @@
+import { CustomTypography } from '../../../ui/CustomTypography';
+import { WidgetCardContainer } from '../../WidgetCardContainer';
+import ReportGenerator from './ReportGenerator';
+import { WidgetReportCardProps } from './types';
+
+export const WidgetReportCard = ({ data }: WidgetReportCardProps) => {
+  return (
+    <WidgetCardContainer
+      title={data.title}
+      button={data.button}
+      classNameBtn="!text-impo_Neutral_OnSurface  !bg-impo_Neutral_Surface !border-impo_Neutral_Surface"
+    >
+      <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground text-right ">
+        {data.description}
+      </CustomTypography>
+
+      <div className="w-full pt-4 flex flex-col gap-1">
+        {data.list.map((item, index) => (
+          <ReportGenerator {...item} key={index} />
+        ))}
+      </div>
+    </WidgetCardContainer>
+  );
+};

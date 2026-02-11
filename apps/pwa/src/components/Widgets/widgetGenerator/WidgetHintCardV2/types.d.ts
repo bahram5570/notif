@@ -1,3 +1,3 @@
-import { HintCard2Types } from '@repo/core/providers/WidgetActionsProvider';
+import { WidgetHintCard2Types } from '@repo/core/providers/WidgetActionsProvider';
 
-export interface WidgetHintCardV2Props extends Pick<HintCard2Types, 'data'> {}
+export interface WidgetHintCardV2Props extends Pick<WidgetHintCard2Types, 'data'> {}

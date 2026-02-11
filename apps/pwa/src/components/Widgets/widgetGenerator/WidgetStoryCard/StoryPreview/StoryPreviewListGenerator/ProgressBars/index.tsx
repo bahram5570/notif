@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import ImpoIcon from '@assets/images/questionsImpo.svg';
+import ImpoIcon from '@assets/shared/icons/impoLogo.svg';
 import CrossIcon from '@assets/shared/icons/plus.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 

@@ -1,6 +1,6 @@
-import { StoryCardTypes } from '@repo/core/providers/WidgetActionsProvider';
+import { WidgetStoryCardTypes } from '@repo/core/providers/WidgetActionsProvider';
 
-type ItemsTypes = Pick<StoryCardTypes, 'data'>['data']['list'];
+type ItemsTypes = Pick<WidgetStoryCardTypes, 'data'>['data']['list'];
 export type SavedStoriesResponseTypes = {
   total: number;
   items: ItemsTypes;

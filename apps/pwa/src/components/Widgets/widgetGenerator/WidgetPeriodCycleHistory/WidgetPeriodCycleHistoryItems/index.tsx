@@ -1,4 +1,4 @@
-import NeedToInvestigateIcon from '@assets/icons/needToInvestigate.svg';
+import NeedToInvestigateIcon from '@assets/shared/icons/needToInvestigate.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import WidgetPeriodCycleHistoryDays from './WidgetPeriodCycleHistoryDays';

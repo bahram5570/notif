@@ -1,5 +1,5 @@
-import ArrowIcon from '@assets/icons/calendarArrow.svg';
 import CancelIcon from '@assets/icons/cancel.svg';
+import ArrowIcon from '@assets/shared/icons/calendarArrow.svg';
 
 import { useRouter } from 'next/navigation';
 

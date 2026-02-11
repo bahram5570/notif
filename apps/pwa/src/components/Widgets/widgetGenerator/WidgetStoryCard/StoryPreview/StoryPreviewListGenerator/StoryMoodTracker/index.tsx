@@ -1,4 +1,4 @@
-import ImpoIcon from '@assets/icons/impoName.svg';
+import ImpoIcon from '@assets/shared/icons/impoName.svg';
 import TickIcon from '@assets/shared/icons/selectedTick.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
@@ -26,7 +26,7 @@ const StoryMoodTracker = ({ moodTrackerData }: StoryMoodTrackerProps) => {
                   pt-[100px] 
                   pb-7 
                   px-4 
-                  bg-[url('/assets/images/storyMoodTrackerBg.webp')] 
+                  bg-[url('/assets/shared/images/storyMoodTrackerBg.webp')] 
                   bg-cover 
                   bg-no-repeat
                 "

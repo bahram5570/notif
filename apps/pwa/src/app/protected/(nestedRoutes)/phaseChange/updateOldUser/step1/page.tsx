@@ -1,6 +1,6 @@
 'use client';
 
-import ImpoIcon from '@assets/images/questionsImpo.svg';
+import ImpoIcon from '@assets/shared/icons/impoLogo.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 

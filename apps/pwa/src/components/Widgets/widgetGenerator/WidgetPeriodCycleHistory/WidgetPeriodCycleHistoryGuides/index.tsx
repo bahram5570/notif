@@ -1,4 +1,4 @@
-import NeedToInvestigateIcon from '@assets/icons/needToInvestigate.svg';
+import NeedToInvestigateIcon from '@assets/shared/icons/needToInvestigate.svg';
 import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 

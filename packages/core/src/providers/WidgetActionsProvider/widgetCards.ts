@@ -16,12 +16,14 @@ type SignTypes = { category: number; sign: number };
 
 export type WidgetsTypes = IsPdfDownloadingTypes &
   (
-    | CycleCardTypes
+    | WidgetCycleCardTypes
     | WidgetCirculeCycleCardTypes
-    | MotivationCardTypes
-    | StoryCardTypes
-    | HintCardTypes
-    | ArticleCardTypes
+    | WidgetMotivationCardTypes
+    | WidgetStoryCardTypes
+    | WidgetHintCardTypes
+    | WidgetHintCard2Types
+    | WidgetArticleCardTypes
+    | WidgetShortcutWidgetTypes
     | WidgetReportCardTypes
     | WidgetShareExperienceCardTypes
     | WidgetSignCardTypes
@@ -40,6 +42,7 @@ export type WidgetsTypes = IsPdfDownloadingTypes &
     | WidgetOvulationHistoryCardTypes
     | WidgetOvulationKitCardTypes
     | WidgetSexTrackerCardTypes
+    | WidgetAdvertiseCardListTypes
     | WidgetBabyCheckKitCardTypes
     | WidgetPeriodReportEmptyStateCardTypes
     | WidgetCycleDateCardTypes
@@ -54,7 +57,7 @@ export type WidgetsTypes = IsPdfDownloadingTypes &
 
 // # ----------------------------------------------------------
 
-export type CycleCardTypes = IsPdfDownloadingTypes & {
+export type WidgetCycleCardTypes = IsPdfDownloadingTypes & {
   type: WidgetsEnum.CycleCard;
   data: {
     shortcut: { items: ShortcutItemType[] };
@@ -70,7 +73,7 @@ export type CycleCardTypes = IsPdfDownloadingTypes & {
 
 // # ----------------------------------------------------------
 
-export type MotivationCardTypes = IsPdfDownloadingTypes & {
+export type WidgetMotivationCardTypes = IsPdfDownloadingTypes & {
   type: WidgetsEnum.MotivationCard;
   data: { description: string; title: string; icon: string };
 };
@@ -104,7 +107,7 @@ type StoriesTypes = {
   id: string;
 };
 
-export type StoryCardTypes = IsPdfDownloadingTypes & {
+export type WidgetStoryCardTypes = IsPdfDownloadingTypes & {
   type: WidgetsEnum.StoryCard;
   data: {
     backgroundColour: string;
@@ -125,7 +128,7 @@ export type StoryCardTypes = IsPdfDownloadingTypes & {
 
 // # ----------------------------------------------------------
 
-export type HintCardTypes = IsPdfDownloadingTypes & {
+export type WidgetHintCardTypes = IsPdfDownloadingTypes & {
   type: WidgetsEnum.HintCard;
   data: {
     minReadingDuration: number;
@@ -148,7 +151,7 @@ export type HintCardTypes = IsPdfDownloadingTypes & {
 
 // # ----------------------------------------------------------
 
-export type HintCard2Types = IsPdfDownloadingTypes & {
+export type WidgetHintCard2Types = IsPdfDownloadingTypes & {
   type: WidgetsEnum.HintCardV2;
   data: {
     backgroundColour: string;
@@ -170,7 +173,7 @@ export type HintCard2Types = IsPdfDownloadingTypes & {
 
 // # ----------------------------------------------------------
 
-export type ArticleCardTypes = IsPdfDownloadingTypes & {
+export type WidgetArticleCardTypes = IsPdfDownloadingTypes & {
   type: WidgetsEnum.ArticleCard;
   data: {
     backgroundColour: string;
@@ -767,7 +770,7 @@ export type ShortcutItemType = {
   icon: string;
 };
 
-export type ShortcutWidgetTypes = IsPdfDownloadingTypes & {
+export type WidgetShortcutWidgetTypes = IsPdfDownloadingTypes & {
   type: WidgetsEnum.ShortcutWidget;
   data: {
     backgroundColour: string;

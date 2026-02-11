@@ -1,4 +1,4 @@
-import ArrowIcon from '@assets/icons/calendarArrow.svg';
+import ArrowIcon from '@assets/shared/icons/calendarArrow.svg';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@repo/core/utils/scripts';

@@ -1,4 +1,4 @@
-import CalendarArrow from '@assets/icons/calendarArrow.svg';
+import CalendarArrow from '@assets/shared/icons/calendarArrow.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { LinkedContentPropsType } from './type';

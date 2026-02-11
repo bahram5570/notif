@@ -1,4 +1,4 @@
-import { filesCopyMaker } from './copyFilesHandler.js';
+import { filesCopyMaker } from '../copyFilesHandler/index.js';
 
 await filesCopyMaker({ source: 'src/theme/theme.css', destination: './dist/theme', packageName: 'theme.css' });
 await filesCopyMaker({

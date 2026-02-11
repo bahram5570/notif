@@ -1,3 +1,3 @@
-import { ShortcutWidgetTypes } from '@repo/core/providers/WidgetActionsProvider';
+import { WidgetShortcutWidgetTypes } from '@repo/core/providers/WidgetActionsProvider';
 
-export interface ShortcutWidgetCardProps extends Pick<ShortcutWidgetTypes, 'data'> {}
+export interface ShortcutWidgetCardProps extends Pick<WidgetShortcutWidgetTypes, 'data'> {}

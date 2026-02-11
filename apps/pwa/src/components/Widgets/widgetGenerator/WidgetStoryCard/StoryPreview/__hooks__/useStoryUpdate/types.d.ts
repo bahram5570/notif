@@ -1,4 +1,4 @@
-import { StoryCardTypes } from '@repo/core/providers/WidgetActionsProvider';
+import { WidgetStoryCardTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 import { StoryPreviewPorps } from '../../types';
 

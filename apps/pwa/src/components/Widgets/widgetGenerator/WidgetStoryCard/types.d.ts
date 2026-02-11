@@ -1,3 +1,3 @@
-import { StoryCardTypes } from '@repo/core/providers/WidgetActionsProvider';
+import { WidgetStoryCardTypes } from '@repo/core/providers/WidgetActionsProvider';
 
-export interface WidgetStoryCardProps extends Pick<StoryCardTypes, 'data'> {}
+export interface WidgetStoryCardProps extends Pick<WidgetStoryCardTypes, 'data'> {}

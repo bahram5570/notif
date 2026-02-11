@@ -1,4 +1,4 @@
-import ArrowIcon from '@assets/icons/calendarArrow.svg';
+import ArrowIcon from '@assets/shared/icons/calendarArrow.svg';
 
 import { ArrowGeneratorProps } from './types';
 

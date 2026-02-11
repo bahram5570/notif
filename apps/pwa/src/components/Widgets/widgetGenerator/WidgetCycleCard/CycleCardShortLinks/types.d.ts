@@ -1,4 +1,4 @@
-import { CycleCardTypes } from '@repo/core/providers/WidgetActionsProvider';
+import { WidgetCycleCardTypes } from '@repo/core/providers/WidgetActionsProvider';
 
-type ItemsTypes = Pick<CycleCardTypes, 'data'>['data']['shortcut'];
+type ItemsTypes = Pick<WidgetCycleCardTypes, 'data'>['data']['shortcut'];
 export interface CycleCardShortLinksProps extends ItemsTypes {}

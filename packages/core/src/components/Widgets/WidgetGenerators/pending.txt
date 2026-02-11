@@ -1,0 +1,9 @@
+WidgetBabyCheckKitCard
+WidgetCirculeCycleCard
+WidgetCycleCard
+WidgetMostRepeatedSigns
+WidgetOvulationKitCard
+WidgetProgramScroll
+WidgetSexTrackerCard
+WidgetSignCard
+WidgetSubscriptionCard

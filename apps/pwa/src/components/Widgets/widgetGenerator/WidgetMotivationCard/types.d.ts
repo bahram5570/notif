@@ -1,3 +1,3 @@
-import { MotivationCardTypes } from '@repo/core/providers/WidgetActionsProvider';
+import { WidgetMotivationCardTypes } from '@repo/core/providers/WidgetActionsProvider';
 
-export interface WidgetMotivationCardProps extends Pick<MotivationCardTypes, 'data'> {}
+export interface WidgetMotivationCardProps extends Pick<WidgetMotivationCardTypes, 'data'> {}

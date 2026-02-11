@@ -1,4 +1,4 @@
-import EyeIcon from '@assets/icons/eye.svg';
+import EyeIcon from '@assets/shared/icons/eye.svg';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@repo/core/utils/scripts';

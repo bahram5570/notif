@@ -1,3 +1,3 @@
-import { exportMaker } from '../../packages/core/copyFilesHandler.js';
+import { exportMaker } from '../../packages/copyFilesHandler/index.js';
 
 exportMaker({ appName: 'web', port: 3000 });

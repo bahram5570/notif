@@ -1,4 +1,4 @@
-import ArrowIcon from '@assets/icons/filledArrow.svg';
+import ArrowIcon from '@assets/shared/icons/filledArrow.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { WidgetCycleDateCardTodayProps } from './types';

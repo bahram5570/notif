@@ -1,5 +1,5 @@
 import InfoIcon from '@assets/icons/info.svg';
-import ImpoIcon from '@assets/images/questionsImpo.svg';
+import ImpoIcon from '@assets/shared/icons/impoLogo.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';

@@ -1,4 +1,4 @@
-import BlueTickIcon from '@assets/icons/blueTick.svg';
+import BlueTickIcon from '@assets/shared/icons/blueTick.svg';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
