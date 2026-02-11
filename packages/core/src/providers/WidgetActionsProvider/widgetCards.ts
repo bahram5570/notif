@@ -1,5 +1,3 @@
-// import { BabyCheckTypeEnums } from '@components/KitTests/KitTestBabyCheck/enum';
-// import { InitialSelectedSignsTypes } from '../(nestedRoutes)/signs/__hooks__/useGetData/types';
 import { ActionTypes, WidgetsButtonTypes } from './widgetCommon';
 import { BabyCheckTypeEnums, WidgetStoryTypeEnum, WidgetsEnum } from './widgetEnums';
 
@@ -13,6 +11,8 @@ type NotEyeIcon = {
 type EyeIconTypes = HasEyeIcon | NotEyeIcon;
 
 type IsPdfDownloadingTypes = { isPdfDownloading?: boolean };
+
+type SignTypes = { category: number; sign: number };
 
 export type WidgetsTypes = IsPdfDownloadingTypes &
   (
@@ -251,16 +251,14 @@ export type WidgetShareExperienceCardTypes = IsPdfDownloadingTypes & {
 
 // # ----------------------------------------------------------
 
-type SignsTypes = { category: number; sign: number };
-
 export type WidgetSignCardTypes = IsPdfDownloadingTypes & {
   type: WidgetsEnum.SignCard;
   data: {
-    selectedSigns: SignsTypes[];
+    selectedSigns: SignTypes[];
     button: WidgetsButtonTypes;
     backgroundColour: string;
     description: string;
-    signs: SignsTypes[];
+    signs: SignTypes[];
     title: string;
   };
 };
@@ -547,10 +545,8 @@ export type WidgetSexTrackerCardTypes = IsPdfDownloadingTypes & {
   type: WidgetsEnum.SexTrackerCard;
   data: {
     title: string;
+    signs: SignTypes[];
     description: string;
-    // todo
-    signs: any;
-    // signs: InitialSelectedSignsTypes;
   };
 };
 

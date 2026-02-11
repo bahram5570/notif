@@ -1,6 +1,5 @@
+import { WidgetCardHealthReportContainer } from '@repo/core/components/Widgets/WidgetCardHealthReportContainer';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import WidgetCardHealthReportContainer from '@components/Widgets/WidgetCardHealthReportContainer';
 
 import { WidgetMostRepeatedSignsEmptyProps } from './types';
 

@@ -1,4 +1,4 @@
-import { WidgetsButtonTypes } from '@repo/core/providers/WidgetActionsProvider';
+import { WidgetsButtonTypes } from '../../../providers/WidgetActionsProvider';
 
 export interface WidgetCardHealthReportContainerProps {
   title: string;

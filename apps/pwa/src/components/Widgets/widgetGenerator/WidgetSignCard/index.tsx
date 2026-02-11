@@ -3,7 +3,7 @@ import { WidgetCardContainer } from '@repo/core/components/Widgets/WidgetCardCon
 import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import SignGeneratorOld from '@components/SignGenerator-old';
+import SignGenerator from '@components/SignGenerator';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
 import { WidgetSignCardProps } from './types';
@@ -15,7 +15,7 @@ const WidgetSignCard = ({ data }: WidgetSignCardProps) => {
     <WidgetCardContainer
       title={data.title}
       button={data.button}
-      classNameBtn="!text-impo_Neutral_OnSurface  !bg-impo_Neutral_Surface !border-impo_Neutral_Surface"
+      classNameBtn="!text-impo_Neutral_OnSurface !bg-impo_Neutral_Surface !border-impo_Neutral_Surface"
       onClick={() => callEvent('Action_From_SignCard')}
     >
       <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground ">
@@ -30,7 +30,7 @@ const WidgetSignCard = ({ data }: WidgetSignCardProps) => {
             sign: item.sign,
           });
 
-          return <SignGeneratorOld {...item} initialIsSelected={isSelected} key={index} />;
+          return <SignGenerator {...item} initialIsSelected={isSelected} key={index} />;
         })}
       </CustomSlider>
     </WidgetCardContainer>

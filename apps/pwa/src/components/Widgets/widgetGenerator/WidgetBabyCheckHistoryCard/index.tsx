@@ -1,4 +1,4 @@
-import WidgetCardHealthReportContainer from '@components/Widgets/WidgetCardHealthReportContainer';
+import { WidgetCardHealthReportContainer } from '@repo/core/components/Widgets/WidgetCardHealthReportContainer';
 
 import WidgetBabyCheckHistoryCardDescription from './WidgetBabyCheckHistoryCardDescription';
 import WidgetBabyCheckHistoryCardItems from './WidgetBabyCheckHistoryCardItems';
