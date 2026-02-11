@@ -5,10 +5,10 @@ import { useState } from 'react';
 import { useSendOtp } from './useSendOtp';
 
 export function usePhoneSubmit(onSuccess: () => void) {
-  const [value, setValue] = useState('');
+  const [phoneValue, setPhoneValue] = useState('');
   const { isSending, sendOtp } = useSendOtp();
 
-  const isValid = value.length === 11;
+  const isValid = phoneValue.length === 11;
 
   const submit = async (e?: React.FormEvent, categoryId?: string) => {
     e?.preventDefault();
@@ -17,16 +17,16 @@ export function usePhoneSubmit(onSuccess: () => void) {
       return;
     }
 
-    const success = await sendOtp(value, categoryId);
-    
+    const success = await sendOtp(phoneValue, categoryId);
+
     if (success) {
       onSuccess();
     }
   };
 
   return {
-    value,
-    setValue,
+    phoneValue,
+    setPhoneValue,
     isValid,
     isSubmitting: isSending,
     submit,

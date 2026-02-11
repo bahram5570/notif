@@ -17,7 +17,7 @@ export default function OtpInput({ onNext, phone }: OtpProps) {
   const { timer, formatTimer, resetTimer } = useOtpTimer(120);
   const { submitLoading, isSuccess, isErrorShake, handleSubmit } = useOtpSubmit(onNext);
 
-  const { resendLoading, handleResend } = useOtpResend(resetTimer, resetCode, (msg) => {});
+  const { resendLoading, handleResend } = useOtpResend(resetTimer, resetCode, () => {});
 
   const finalPhone = `لطفا کد تایید 6 رقمی که به شماره همراه ${toPersianNumbers(phone || '')} پیامک کردیم رو اینجا وارد کن`;
 

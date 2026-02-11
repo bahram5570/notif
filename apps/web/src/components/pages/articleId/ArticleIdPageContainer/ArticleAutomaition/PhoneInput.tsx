@@ -2,14 +2,21 @@
 
 import CustomInput from './components/CustomInput';
 
+
+
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
+
+
 
 import { usePhoneSubmit } from './_hooks/usePhoneSubmit';
 import { PhoneProps } from './types';
 
+
 export default function PhoneInput({ onNext, contentCategoryId }: PhoneProps & { contentCategoryId?: string }) {
-  const { value, setValue, isValid, isSubmitting, submit } = usePhoneSubmit(() => onNext(value, contentCategoryId));
+  const { phoneValue, setPhoneValue, isValid, isSubmitting, submit } = usePhoneSubmit(() =>
+    onNext(phoneValue, contentCategoryId),
+  );
 
   return (
     <div className="space-y-6">
@@ -24,10 +31,10 @@ export default function PhoneInput({ onNext, contentCategoryId }: PhoneProps & {
           maxLength={11}
           numbersMode="persian"
           placeholder="شماره تلفن همراهت"
-          value={value}
-          className={`p-3 rounded-xl border placeholder:!text-impo_Surface_OutlineVariant focus:!border-impo_Primary_Primary border-impo_Neutral_Surface ${value ? 'text-left' : 'text-right'}`}
+          value={phoneValue}
+          className={`p-3 rounded-xl border placeholder:!text-impo_Surface_OutlineVariant focus:!border-impo_Primary_Primary border-impo_Neutral_Surface ${phoneValue ? 'text-left' : 'text-right'}`}
           fontSize="Body_Large"
-          onValue={setValue}
+          onValue={setPhoneValue}
         />
 
         <CustomButton

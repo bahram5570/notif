@@ -33,9 +33,9 @@ export function useSendOtp() {
         phone: toEnglishNumbers(phone),
         categoryId: contentCategoryId,
       });
-      return true; // موفقیت
+      return true; 
     } catch {
-      return false; // خطا
+      return false; 
     }
   };
 
