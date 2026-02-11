@@ -1,5 +1,7 @@
-import { usePageNavigationLoading } from '../../hooks/usePageNavigationLoading';
-import { CustomTypography } from '../ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+
 import { PageIconsProps } from './types';
 
 const PageIcons = ({ icons, title, isSelected, url }: PageIconsProps) => {

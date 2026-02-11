@@ -2,10 +2,10 @@
 
 import { usePathname } from 'next/navigation';
 
-import { MainFooterContainer } from './MainFooterContainer';
+import MainFooterContainer from './MainFooterContainer';
 import { FOOTER_PAGES_LIST } from './constants';
 
-export const MainFooter = () => {
+const MainFooter = () => {
   const pathName = usePathname() || '';
 
   const hasFooter = FOOTER_PAGES_LIST.some(
@@ -14,3 +14,5 @@ export const MainFooter = () => {
 
   return <>{hasFooter && <MainFooterContainer pathName={pathName} />}</>;
 };
+
+export default MainFooter;

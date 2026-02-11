@@ -2,7 +2,11 @@ import fse from 'fs-extra';
 import fsp from 'fs/promises';
 import path from 'path';
 
-export const exportMaker = async ({ port, appName }: { appName: string; port: number }) => {
+/**
+ * @param {{ appName: string; port: number }}
+ * @returns {Promise<void>}
+ */
+export const exportMaker = async ({ port, appName }) => {
   const distName = `${appName}-dist-1`;
 
   const rootDir = process.cwd();
@@ -37,7 +41,11 @@ export const exportMaker = async ({ port, appName }: { appName: string; port: nu
   }
 };
 
-export const filesCopyMaker = async ({ source, destination }: { source: string; destination: string }) => {
+/**
+ * @param {{ source: string; destination: string; packageName: string }}
+ * @returns {Promise<void>}
+ */
+export const filesCopyMaker = async ({ source, destination, packageName }) => {
   try {
     const src = path.resolve(process.cwd(), source);
     let dest = path.resolve(process.cwd(), destination);
@@ -51,9 +59,9 @@ export const filesCopyMaker = async ({ source, destination }: { source: string; 
     await fsp.mkdir(path.dirname(dest), { recursive: true });
     await fsp.cp(src, dest, { recursive: true, force: true });
 
-    console.log(`✅ Copy assets completed successfully!`);
+    console.log(`✅ Copy "${packageName}" completed successfully!`);
   } catch (error) {
-    console.error(`❌ Copy assets failed: `, error);
+    console.error(`❌ Copy "${packageName}" failed: `, error);
     process.exit(1);
   }
 };

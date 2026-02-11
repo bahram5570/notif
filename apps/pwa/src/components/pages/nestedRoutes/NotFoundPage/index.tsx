@@ -1,10 +1,10 @@
 'use client';
 
 import NotFoundIcon from '@assets/icons/404.svg';
-import { MainFooterContainer } from '@repo/core/components/MainFooter';
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
+import MainFooterContainer from '@components/MainFooter/MainFooterContainer';
 import { LottieCanvas } from '@lib/LottieCanvas';
 
 const NotFoundPage = () => {
@@ -33,6 +33,7 @@ const NotFoundPage = () => {
           </CustomTypography>
         </div>
       </div>
+
       <MainFooterContainer pathName={''} />
     </MainPageLayout>
   );
