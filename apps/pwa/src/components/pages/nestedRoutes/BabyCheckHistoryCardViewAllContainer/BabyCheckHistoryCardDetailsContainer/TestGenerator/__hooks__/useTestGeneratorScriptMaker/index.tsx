@@ -4,7 +4,7 @@ import {
   KIT_TEST_RANGE_HIGH_LIMIT,
   KIT_TEST_RANGE_LOW_LIMIT,
   kitTestScripts,
-} from '@repo/core/components/Widgets/KitTests';
+} from '@repo/core/components/KitTests';
 import { toJalaliData } from '@repo/core/utils/dates';
 
 import { useCulture } from '@repo/core/hooks/useCulture';

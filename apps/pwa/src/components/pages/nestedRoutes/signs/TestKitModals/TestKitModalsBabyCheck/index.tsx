@@ -1,4 +1,4 @@
-import { KitTestDigitalBabyCheck, KitTestRange, useNewTestKit } from '@repo/core/components/Widgets/KitTests';
+import { KitTestDigitalBabyCheck, KitTestRange, useNewTestKit } from '@repo/core/components/KitTests';
 import { Loading } from '@repo/core/components/ui/Loading';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';

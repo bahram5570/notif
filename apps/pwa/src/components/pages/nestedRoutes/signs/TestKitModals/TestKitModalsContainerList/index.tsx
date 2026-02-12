@@ -1,4 +1,4 @@
-import { TestKitModalsListsBabyCheck, TestKitModalsListsOvulation } from '@repo/core/components/Widgets/KitTests';
+import { TestKitModalsListsBabyCheck, TestKitModalsListsOvulation } from '@repo/core/components/KitTests';
 
 import { KitTestModuleTypeEnums } from '@repo/core/providers/WidgetActionsProvider';
 

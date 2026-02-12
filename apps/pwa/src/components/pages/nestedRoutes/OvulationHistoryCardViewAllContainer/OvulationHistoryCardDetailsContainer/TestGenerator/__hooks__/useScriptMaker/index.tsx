@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 
-import { kitTestScripts } from '@repo/core/components/Widgets/KitTests';
+import { kitTestScripts } from '@repo/core/components/KitTests';
 import { gregorianFarsiScriptDate, jalaaliScriptDate, toJalaliData } from '@repo/core/utils/dates';
 
 import { useCulture } from '@repo/core/hooks/useCulture';

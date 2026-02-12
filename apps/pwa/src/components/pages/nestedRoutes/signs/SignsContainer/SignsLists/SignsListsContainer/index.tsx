@@ -2,7 +2,7 @@ import { Fragment } from 'react';
 
 import { SignCategoryGenerator } from '@repo/core/components/SignCategoryGenerator';
 import { SIGNS_LIST } from '@repo/core/components/SignGenerator';
-import { KitTests } from '@repo/core/components/Widgets/KitTests';
+import { KitTests } from '@repo/core/components/KitTests';
 
 import { CalendarWidgetEnums } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/CalendarEnums';
 import { DayTypeEnums } from '@repo/core/providers/WidgetActionsProvider';

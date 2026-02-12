@@ -1,4 +1,4 @@
-import { TestKitModalsListsDelete } from '@repo/core/components/Widgets/KitTests';
+import { TestKitModalsListsDelete } from '@repo/core/components/KitTests';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
 import TestKitModalsBabyCheck from './TestKitModalsBabyCheck';
