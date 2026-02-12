@@ -1,6 +1,6 @@
 import { useAnalytics } from '../../../../hooks/useAnalytics';
 import { WidgetCardContainer } from '../../WidgetCardContainer';
-import WidgetHintCardGenerator from './WidgetHintCardGenerator';
+import { WidgetHintCardGenerator } from './WidgetHintCardGenerator';
 import { WidgetHintCardProps } from './types';
 
 export const WidgetHintCard = ({ data }: WidgetHintCardProps) => {

@@ -1,7 +1,7 @@
 import { WidgetCardHealthReportContainer } from '../../WidgetCardHealthReportContainer';
 import WidgetOvulationHistoryCardDescription from './WidgetOvulationHistoryCardDescription';
-import WidgetOvulationHistoryCardItems from './WidgetOvulationHistoryCardItems';
-import WidgetOvulationHistoryCardViewAll from './WidgetOvulationHistoryCardViewAll';
+import { WidgetOvulationHistoryCardItems } from './WidgetOvulationHistoryCardItems';
+import { WidgetOvulationHistoryCardViewAll } from './WidgetOvulationHistoryCardViewAll';
 import { WidgetOvulationHistoryCardProps } from './types';
 
 export const WidgetOvulationHistoryCard = ({ data, isPdfDownloading }: WidgetOvulationHistoryCardProps) => {

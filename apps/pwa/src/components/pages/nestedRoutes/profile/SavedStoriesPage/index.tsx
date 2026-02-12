@@ -1,10 +1,8 @@
 'use client';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+import { StoryItemGenerator, StoryPreview } from '@repo/core/components/Widgets/WidgetGenerators/WidgetStoryCard';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import StoryItemGenerator from '@components/Widgets/widgetGenerator/WidgetStoryCard/StoryItemGenerator';
-import StoryPreview from '@components/Widgets/widgetGenerator/WidgetStoryCard/StoryPreview';
 
 import SavedStoriesSkeleton from './SavedStoriesSkeleton';
 import useGetData from './__hooks__/useGetData';

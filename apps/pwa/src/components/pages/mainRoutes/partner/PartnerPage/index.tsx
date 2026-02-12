@@ -1,6 +1,6 @@
 'use client';
 
-import WidgetGenerator from '@components/Widgets/widgetGenerator';
+import { WidgetGenerators } from '@repo/core/components/Widgets/WidgetGenerators';
 
 import AvatarContainer from './AvatarContainer';
 import Challenge from './Challenge';
@@ -58,7 +58,7 @@ const PartnerPage = () => {
                   {data.valid && (
                     <div className="flex flex-col">
                       {data.womanWidgets.map((widget, index) => (
-                        <WidgetGenerator {...widget} key={index} />
+                        <WidgetGenerators {...widget} key={index} />
                       ))}
                     </div>
                   )}

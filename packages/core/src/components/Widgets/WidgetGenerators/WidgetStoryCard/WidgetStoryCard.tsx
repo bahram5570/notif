@@ -1,7 +1,7 @@
 import { CustomSlider } from '../../../ui/CustomSlider';
 import { CustomTypography } from '../../../ui/CustomTypography';
-import StoryItemGenerator from './StoryItemGenerator';
-import StoryPreview from './StoryPreview';
+import { StoryItemGenerator } from './StoryItemGenerator';
+import { StoryPreview } from './StoryPreview';
 import useStoryCardData from './__hooks__/useStoryCardData';
 import { WidgetStoryCardProps } from './types';
 

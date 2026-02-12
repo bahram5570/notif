@@ -1,6 +1,6 @@
 import { WidgetCardHealthReportContainer } from '../../WidgetCardHealthReportContainer';
-import WidgetPeriodCycleHistoryGuides from './WidgetPeriodCycleHistoryGuides';
-import WidgetPeriodCycleHistoryItems from './WidgetPeriodCycleHistoryItems';
+import { WidgetPeriodCycleHistoryGuides } from './WidgetPeriodCycleHistoryGuides';
+import { WidgetPeriodCycleHistoryItems } from './WidgetPeriodCycleHistoryItems';
 import WidgetPeriodCycleHistoryViewAll from './WidgetPeriodCycleHistoryViewAll';
 import { WidgetPeriodCycleHistoryProps } from './types';
 

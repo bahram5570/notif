@@ -2,9 +2,9 @@ import NeedToInvestigateIcon from '@assets/shared/icons/needToInvestigate.svg';
 
 import { CustomSlider } from '../../../../ui/CustomSlider';
 import { CustomTypography } from '../../../../ui/CustomTypography';
-import { WidgetPeriodCycleHistoryGuidesPropsType } from './type';
+import { WidgetPeriodCycleHistoryGuidesPropsType } from './types';
 
-const WidgetPeriodCycleHistoryGuides = ({ isPdfDownloading }: WidgetPeriodCycleHistoryGuidesPropsType) => {
+export const WidgetPeriodCycleHistoryGuides = ({ isPdfDownloading }: WidgetPeriodCycleHistoryGuidesPropsType) => {
   const list = [
     {
       title: 'پریود',
@@ -45,5 +45,3 @@ const WidgetPeriodCycleHistoryGuides = ({ isPdfDownloading }: WidgetPeriodCycleH
     </div>
   );
 };
-
-export default WidgetPeriodCycleHistoryGuides;

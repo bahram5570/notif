@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 
+import { PERIOD_CYCLE_HISTORY_VIEW_ALL } from '@repo/core/components/Widgets/WidgetGenerators/WidgetPeriodCycleHistory';
 import { isDevelopeMode } from '@repo/core/utils/system';
 
-import { PERIOD_CYCLE_HISTORY_VIEW_ALL } from '@components/Widgets/widgetGenerator/WidgetPeriodCycleHistory/WidgetPeriodCycleHistoryViewAll/constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useRouter } from 'next/navigation';
 

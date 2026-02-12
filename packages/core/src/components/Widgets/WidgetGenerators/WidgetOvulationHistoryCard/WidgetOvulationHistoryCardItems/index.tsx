@@ -1,7 +1,7 @@
 import { CustomTypography } from '../../../../ui/CustomTypography';
 import { WidgetOvulationHistoryCardItemsProps } from './types';
 
-const WidgetOvulationHistoryCardItems = (props: WidgetOvulationHistoryCardItemsProps) => {
+export const WidgetOvulationHistoryCardItems = (props: WidgetOvulationHistoryCardItemsProps) => {
   const clickHandler = (v: number, hasData: boolean) => {
     if (props.onSelect && hasData) {
       props.onSelect(v);
@@ -38,5 +38,3 @@ const WidgetOvulationHistoryCardItems = (props: WidgetOvulationHistoryCardItemsP
     </div>
   );
 };
-
-export default WidgetOvulationHistoryCardItems;

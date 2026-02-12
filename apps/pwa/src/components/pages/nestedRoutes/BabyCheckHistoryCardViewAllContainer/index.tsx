@@ -1,9 +1,8 @@
 'use client';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+import { WidgetBabyCheckHistoryCardItems } from '@repo/core/components/Widgets/WidgetGenerators/WidgetBabyCheckHistoryCard';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import WidgetBabyCheckHistoryCardItems from '@components/Widgets/widgetGenerator/WidgetBabyCheckHistoryCard/WidgetBabyCheckHistoryCardItems';
 
 import useGetData from './__hooks__/useGetData';
 import useSelectedTest from './__hooks__/useSelectedTest';

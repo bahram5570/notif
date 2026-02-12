@@ -1,8 +1,7 @@
 'use client';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
-
-import WidgetHintCardGenerator from '@components/Widgets/widgetGenerator/WidgetHintCard/WidgetHintCardGenerator';
+import { WidgetHintCardGenerator } from '@repo/core/components/Widgets/WidgetGenerators/WidgetHintCard';
 
 import SavedHintsContainerSkeleton from './SavedHintsContainerSkeleton';
 import useGetData from './__hooks__/useGetData';

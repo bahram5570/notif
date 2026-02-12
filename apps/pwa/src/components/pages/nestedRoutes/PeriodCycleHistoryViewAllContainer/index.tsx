@@ -1,9 +1,10 @@
 'use client';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
-
-import WidgetPeriodCycleHistoryGuides from '@components/Widgets/widgetGenerator/WidgetPeriodCycleHistory/WidgetPeriodCycleHistoryGuides';
-import WidgetPeriodCycleHistoryItems from '@components/Widgets/widgetGenerator/WidgetPeriodCycleHistory/WidgetPeriodCycleHistoryItems';
+import {
+  WidgetPeriodCycleHistoryGuides,
+  WidgetPeriodCycleHistoryItems,
+} from '@repo/core/components/Widgets/WidgetGenerators/WidgetPeriodCycleHistory';
 
 import useGetData from './__hooks__/useGetData';
 

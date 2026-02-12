@@ -1,6 +1,6 @@
 import { CustomSlider } from '../../../../ui/CustomSlider';
 import { CustomTypography } from '../../../../ui/CustomTypography';
-import { WidgetPeriodReportCardGuidesPropsType } from './type';
+import { WidgetPeriodReportCardGuidesPropsType } from './types';
 
 const WidgetPeriodReportCardGuides = ({ isPdfDownloading }: WidgetPeriodReportCardGuidesPropsType) => {
   return (

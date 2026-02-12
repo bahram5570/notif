@@ -7,7 +7,7 @@ import { CustomTypography } from '../../../../ui/CustomTypography';
 import { STORY_CIRCLE_WIDTH } from '../constants';
 import { StoryItemGeneratorProps } from './types';
 
-const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGeneratorProps) => {
+export const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGeneratorProps) => {
   const { callEvent } = useAnalytics();
 
   const { newQueryParamsHandler } = useQueryParamsHandler();
@@ -61,5 +61,3 @@ const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGenerat
     </div>
   );
 };
-
-export default StoryItemGenerator;

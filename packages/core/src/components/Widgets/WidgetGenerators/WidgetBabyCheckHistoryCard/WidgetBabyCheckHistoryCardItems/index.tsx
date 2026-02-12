@@ -1,7 +1,7 @@
 import { CustomTypography } from '../../../../ui/CustomTypography';
 import { WidgetBabyCheckHistoryCardItemsProps } from './types';
 
-const WidgetBabyCheckHistoryCardItems = (props: WidgetBabyCheckHistoryCardItemsProps) => {
+export const WidgetBabyCheckHistoryCardItems = (props: WidgetBabyCheckHistoryCardItemsProps) => {
   const clickHandler = (v: number, hasData: boolean) => {
     if (props.onSelect && hasData) {
       props.onSelect(v);
@@ -50,5 +50,3 @@ const WidgetBabyCheckHistoryCardItems = (props: WidgetBabyCheckHistoryCardItemsP
     </div>
   );
 };
-
-export default WidgetBabyCheckHistoryCardItems;

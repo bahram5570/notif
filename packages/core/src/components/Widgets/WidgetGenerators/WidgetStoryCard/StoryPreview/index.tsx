@@ -8,7 +8,7 @@ import useCurrentStory from './__hooks__/useListStory';
 import useStoryUpdate from './__hooks__/useStoryUpdate';
 import { StoryPreviewPorps } from './types';
 
-const StoryPreview = ({ list, saveHandler }: StoryPreviewPorps) => {
+export const StoryPreview = ({ list, saveHandler }: StoryPreviewPorps) => {
   const { callEvent } = useAnalytics();
   const { swiperRef, isOpen, storyIndex, storyIndexHandler, navigateStoryHandler } = useCurrentStory(list);
 
@@ -53,5 +53,3 @@ const StoryPreview = ({ list, saveHandler }: StoryPreviewPorps) => {
     </>
   );
 };
-
-export default StoryPreview;

@@ -1,1 +1,0 @@
-export const SHORTCUT_ITEMS_ROW_COUNT = 4;

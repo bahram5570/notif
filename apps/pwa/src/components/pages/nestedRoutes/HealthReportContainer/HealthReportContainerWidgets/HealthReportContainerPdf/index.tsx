@@ -1,8 +1,8 @@
 import ImpoIcon from '@assets/shared/icons/impoName.svg';
+import { WidgetGenerators } from '@repo/core/components/Widgets/WidgetGenerators';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import WidgetGenerator from '@components/Widgets/widgetGenerator';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { WidgetsEnum } from '@repo/core/providers/WidgetActionsProvider';
@@ -83,7 +83,7 @@ const HealthReportContainerPdf = ({ data }: HealthReportContainerPdfProps) => {
 
               <div className="w-full flex flex-col gap-4">
                 {data.widgets.map((widget, index) => (
-                  <WidgetGenerator {...widget} isPdfDownloading={true} key={`pdf-${index}`} />
+                  <WidgetGenerators {...widget} isPdfDownloading={true} key={`pdf-${index}`} />
                 ))}
               </div>
             </div>

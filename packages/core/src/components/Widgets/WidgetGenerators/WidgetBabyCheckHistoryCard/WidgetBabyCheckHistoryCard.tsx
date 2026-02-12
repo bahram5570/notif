@@ -1,7 +1,7 @@
 import { WidgetCardHealthReportContainer } from '../../WidgetCardHealthReportContainer';
 import WidgetBabyCheckHistoryCardDescription from './WidgetBabyCheckHistoryCardDescription';
-import WidgetBabyCheckHistoryCardItems from './WidgetBabyCheckHistoryCardItems';
-import WidgetBabyCheckHistoryCardViewAll from './WidgetBabyCheckHistoryCardViewAll';
+import { WidgetBabyCheckHistoryCardItems } from './WidgetBabyCheckHistoryCardItems';
+import { WidgetBabyCheckHistoryCardViewAll } from './WidgetBabyCheckHistoryCardViewAll';
 import { WidgetBabyCheckHistoryCardProps } from './types';
 
 export const WidgetBabyCheckHistoryCard = ({ data, isPdfDownloading }: WidgetBabyCheckHistoryCardProps) => {

@@ -1,10 +1,10 @@
+import { WidgetGenerators } from '@repo/core/components/Widgets/WidgetGenerators';
 import { WidgetCirculeCycleCard } from '@repo/core/components/Widgets/WidgetGenerators/WidgetCirculeCycleCard';
 import { WidgetCycleCard } from '@repo/core/components/Widgets/WidgetGenerators/WidgetCycleCard';
 import { WidgetScaleModule } from '@repo/core/components/Widgets/WidgetScaleModule';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 import { CycleThemeEnum } from '@services/loginServices/enum';
 
-import WidgetGenerator from '@components/Widgets/widgetGenerator';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useWidgetOnMountActions } from '@repo/core/hooks/useWidgetOnMountActions';
 import { CycleLoadingStatusEnum } from '@repo/core/providers/WidgetActionsProvider';
@@ -68,7 +68,7 @@ const CycleContainer = ({ data, customAppBar, children }: ContainerProps) => {
             <>
               <div className="flex flex-col">
                 {widgetsListProps.outsideCycleWidgetList.map((widget, index) => (
-                  <WidgetGenerator {...widget} key={index} />
+                  <WidgetGenerators {...widget} key={index} />
                 ))}
               </div>
 

@@ -4,7 +4,7 @@ import { CustomTypography } from '../../../../ui/CustomTypography';
 import WidgetPeriodCycleHistoryDays from './WidgetPeriodCycleHistoryDays';
 import { WidgetPeriodCycleHistoryItemsProps } from './types';
 
-const WidgetPeriodCycleHistoryItems = ({ items, isPdfDownloading }: WidgetPeriodCycleHistoryItemsProps) => {
+export const WidgetPeriodCycleHistoryItems = ({ items, isPdfDownloading }: WidgetPeriodCycleHistoryItemsProps) => {
   return (
     <div className="w-full flex flex-col items-center">
       {items.map((item, index) => {
@@ -49,5 +49,3 @@ const WidgetPeriodCycleHistoryItems = ({ items, isPdfDownloading }: WidgetPeriod
     </div>
   );
 };
-
-export default WidgetPeriodCycleHistoryItems;

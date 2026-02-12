@@ -5,7 +5,7 @@ import WidgetHintCardGeneratorWriterInfo from './WidgetHintCardWriterInfo';
 import useIsSeen from './__hooks__/useIsSeen';
 import { WidgetHintCardGeneratorProps } from './types';
 
-const WidgetHintCardGenerator = (props: WidgetHintCardGeneratorProps) => {
+export const WidgetHintCardGenerator = (props: WidgetHintCardGeneratorProps) => {
   const { ref } = useIsSeen({ isSeen: props.isSeen, minReadingDuration: props.minReadingDuration, id: props.id });
 
   return (
@@ -30,5 +30,3 @@ const WidgetHintCardGenerator = (props: WidgetHintCardGeneratorProps) => {
     </div>
   );
 };
-
-export default WidgetHintCardGenerator;

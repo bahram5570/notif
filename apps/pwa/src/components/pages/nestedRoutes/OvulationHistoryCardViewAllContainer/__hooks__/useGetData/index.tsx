@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 
+import { OVULATION_HISTORY_CARD_VIEW_ALL } from '@repo/core/components/Widgets/WidgetGenerators/WidgetOvulationHistoryCard';
 import { isDevelopeMode } from '@repo/core/utils/system';
 
-import { OVULATION_HISTORY_CARD_VIEW_ALL } from '@components/Widgets/widgetGenerator/WidgetOvulationHistoryCard/WidgetOvulationHistoryCardViewAll/constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useRouter } from 'next/navigation';
 

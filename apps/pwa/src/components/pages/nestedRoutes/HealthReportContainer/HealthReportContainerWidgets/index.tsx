@@ -1,4 +1,5 @@
-import WidgetGenerator from '@components/Widgets/widgetGenerator';
+import { WidgetGenerators } from '@repo/core/components/Widgets/WidgetGenerators';
+
 import { FOOTER_HEIGTH } from '@repo/core/constants/app.constants';
 
 import { HealthReportContainerWidgetsProps } from './types';
@@ -7,7 +8,7 @@ const HealthReportContainerWidgets = ({ data }: HealthReportContainerWidgetsProp
   return (
     <div className="flex flex-col gap-4" style={{ marginBottom: FOOTER_HEIGTH + 16 }}>
       {data.widgets.map((widget, index) => (
-        <WidgetGenerator {...widget} key={index} />
+        <WidgetGenerators {...widget} key={index} />
       ))}
     </div>
   );
