@@ -4,7 +4,8 @@ import LastPeriodIcon from '@assets/icons/fakeCycleLastPeriod.svg';
 import LengthCycleIcon from '@assets/icons/fakeCycleLengthCycle.svg';
 import PregnancyIcon from '@assets/icons/fakeCyclePregnancy.svg';
 
-import { GoalNamesEnum, InstallationPurposeEnum } from '@constants/activation.constants';
+import { GoalNamesEnum } from '@constants/activation.constants';
+import { InstallationPurposeEnum } from '@repo/core/constants/user.constants';
 
 import { GoalInfoTypes, UseGoalFinderProps } from './types';
 

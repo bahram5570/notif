@@ -2,19 +2,19 @@ import { useEffect, useState } from 'react';
 
 import useSignInteractiveBanner from '@hooks/__sign__/useSignInteractiveBanner';
 import useCountDown from '@hooks/useCountDown';
+import { CycleLoadingStatusEnum } from '@repo/core/providers/WidgetActionsProvider';
 
-import { LoadingStatusEnum } from './loadingStatus.enum';
 import { UseCycleLoadingStatusProps } from './types';
 
 const useCycleLoadingStatus = ({ hasData }: UseCycleLoadingStatusProps) => {
   const { isLoadedHandler } = useSignInteractiveBanner();
-  const [loadingStatus, setLoadingStatus] = useState<LoadingStatusEnum>(LoadingStatusEnum.loading);
+  const [loadingStatus, setLoadingStatus] = useState<CycleLoadingStatusEnum>(CycleLoadingStatusEnum.loading);
 
   const { startCounter: startSuccessed } = useCountDown({
     time: 2,
     onCallBack: () => {
       isLoadedHandler();
-      setLoadingStatus(LoadingStatusEnum.successed);
+      setLoadingStatus(CycleLoadingStatusEnum.successed);
     },
   });
 
@@ -22,7 +22,7 @@ const useCycleLoadingStatus = ({ hasData }: UseCycleLoadingStatusProps) => {
     time: 3,
     onCallBack: () => {
       startSuccessed();
-      setLoadingStatus(LoadingStatusEnum.loaded);
+      setLoadingStatus(CycleLoadingStatusEnum.loaded);
     },
   });
 

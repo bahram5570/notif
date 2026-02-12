@@ -110,3 +110,9 @@ export enum DayTypeEnums {
   GiveBirth = 512,
   LatePeriod = 1024,
 }
+
+export enum CycleLoadingStatusEnum {
+  loading = 0,
+  loaded = 1,
+  successed = 2,
+}

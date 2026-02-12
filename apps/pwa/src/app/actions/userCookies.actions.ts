@@ -62,12 +62,14 @@ export type UserInfoCookieTypes = {
 };
 
 export const setUserInfoCookie = async (props: UserInfoCookieTypes) => {
+  const expires = getUserExpiresDate(30);
+
   const value = JSON.stringify({
     installationPurpose: props.installationPurpose,
     cycleTheme: props.cycleTheme,
   });
 
-  cookies().set({ name: USER_INFO_COOKIE_NAME, value, httpOnly: false, path: '/', secure: false });
+  cookies().set({ name: USER_INFO_COOKIE_NAME, value, httpOnly: false, path: '/', secure: false, expires });
 };
 
 export const getUserInfoCookie = async () => {

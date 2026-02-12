@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import PeriodSettingsIcon from '@assets/icons/profile/periodSettings.svg';
 
-import { InstallationPurposeEnum } from '@constants/activation.constants';
+import { InstallationPurposeEnum } from '@repo/core/constants/user.constants';
 
 import ProfileLinkGenerator from '../ProfileLinkGenerator';
 import { PeriodSettingsType } from './type';

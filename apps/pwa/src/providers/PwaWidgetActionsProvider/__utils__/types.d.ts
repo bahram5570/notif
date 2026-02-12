@@ -1,4 +1,4 @@
-import { InstallationPurposeEnum } from '@constants/activation.constants';
+import { InstallationPurposeEnum } from '@repo/core/constants/user.constants';
 
 export type CallInternalRoutTypes = (props: { actionInternal: string }) => void;
 

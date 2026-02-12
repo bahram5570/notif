@@ -5,8 +5,8 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { getUserInfoCookie } from '@actions/userCookies.actions';
-import { InstallationPurposeEnum } from '@constants/activation.constants';
 import usePhaseChangePayload from '@providers/PhaseChangeProvider/__hooks__/usePhaseChangePayload';
+import { InstallationPurposeEnum } from '@repo/core/constants/user.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 const loadingId = 'completeActionId';

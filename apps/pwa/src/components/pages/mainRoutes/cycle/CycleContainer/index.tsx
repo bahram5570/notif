@@ -1,17 +1,17 @@
+import { WidgetCirculeCycleCard } from '@repo/core/components/Widgets/WidgetGenerators/WidgetCirculeCycleCard';
+import { WidgetCycleCard } from '@repo/core/components/Widgets/WidgetGenerators/WidgetCycleCard';
 import { WidgetScaleModule } from '@repo/core/components/Widgets/WidgetScaleModule';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 import { CycleThemeEnum } from '@services/loginServices/enum';
 
 import WidgetGenerator from '@components/Widgets/widgetGenerator';
-import WidgetCirculeCycleCard from '@components/Widgets/widgetGenerator/WidgetCirculeCycleCard';
-import WidgetCycleCard from '@components/Widgets/widgetGenerator/WidgetCycleCard';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useWidgetOnMountActions } from '@repo/core/hooks/useWidgetOnMountActions';
+import { CycleLoadingStatusEnum } from '@repo/core/providers/WidgetActionsProvider';
 
 import CycleAppBar from '../CycleAppBar';
 import CycleSkeleton from './CycleSkeleton';
 import useCycleLoadingStatus from './__hooks__/useCycleLoadingStatus';
-import { LoadingStatusEnum } from './__hooks__/useCycleLoadingStatus/loadingStatus.enum';
 import useWidgetsListMaker from './__hooks__/useWidgetsListMaker';
 import { ContainerProps } from './types';
 
@@ -19,14 +19,14 @@ const CycleContainer = ({ data, customAppBar, children }: ContainerProps) => {
   const widgetsListProps = useWidgetsListMaker({ widgets: data?.wigets });
   const { loadingStatus } = useCycleLoadingStatus({ hasData: data ? true : false });
 
-  useWidgetOnMountActions(loadingStatus === LoadingStatusEnum.successed ? data?.actions : undefined);
+  useWidgetOnMountActions(loadingStatus === CycleLoadingStatusEnum.successed ? data?.actions : undefined);
 
   const appBarBackground = data ? colorFormatConverter(data.backgroundColor) : '#FDE6EC';
 
   const paddingTop =
     widgetsListProps.currentCycleThemeEnum === CycleThemeEnum.Circule
       ? HEADER_HEIGHT
-      : loadingStatus === LoadingStatusEnum.successed && widgetsListProps.cycleCardData === null
+      : loadingStatus === CycleLoadingStatusEnum.successed && widgetsListProps.cycleCardData === null
         ? HEADER_HEIGHT
         : 0;
 
@@ -36,7 +36,7 @@ const CycleContainer = ({ data, customAppBar, children }: ContainerProps) => {
 
   return (
     <>
-      {data && loadingStatus === LoadingStatusEnum.successed && (
+      {data && loadingStatus === CycleLoadingStatusEnum.successed && (
         <>
           {customAppBar && <WidgetScaleModule>{customAppBar}</WidgetScaleModule>}
           {!customAppBar && <CycleAppBar date={data.date} appBarBackground={appBarBackground} />}
@@ -64,7 +64,7 @@ const CycleContainer = ({ data, customAppBar, children }: ContainerProps) => {
             />
           )}
 
-          {widgetsListProps.outsideCycleWidgetList && loadingStatus === LoadingStatusEnum.successed && (
+          {widgetsListProps.outsideCycleWidgetList && loadingStatus === CycleLoadingStatusEnum.successed && (
             <>
               <div className="flex flex-col">
                 {widgetsListProps.outsideCycleWidgetList.map((widget, index) => (
@@ -77,7 +77,7 @@ const CycleContainer = ({ data, customAppBar, children }: ContainerProps) => {
           )}
         </div>
 
-        {loadingStatus !== LoadingStatusEnum.successed && <CycleSkeleton />}
+        {loadingStatus !== CycleLoadingStatusEnum.successed && <CycleSkeleton />}
       </div>
     </>
   );

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import PregnancySettingsIcon from '@assets/icons/profile/pregnancySettings.svg';
 
-import { InstallationPurposeEnum } from '@constants/activation.constants';
+import { InstallationPurposeEnum } from '@repo/core/constants/user.constants';
 
 import ProfileLinkGenerator from '../ProfileLinkGenerator';
 import { BreastfeedingSettingPropsType } from './type';

@@ -1,4 +1,4 @@
-import { InstallationPurposeEnum } from '@constants/activation.constants';
+import { InstallationPurposeEnum } from '@repo/core/constants/user.constants';
 
 import { CurrentPhase, EnterphaseInstallationPurposeTypes } from './types';
 

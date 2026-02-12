@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { InstallationPurposeEnum } from '@constants/activation.constants';
+import { InstallationPurposeEnum } from '@repo/core/constants/user.constants';
 
 import { UsePhaseChangeInstallationPurposeProps } from './types';
 

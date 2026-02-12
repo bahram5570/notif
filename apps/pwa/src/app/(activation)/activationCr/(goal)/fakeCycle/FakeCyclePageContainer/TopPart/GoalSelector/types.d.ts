@@ -1,5 +1,5 @@
-import { InstallationPurposeEnum } from '@constants/activation.constants';
 import { GoalInfoTypes, SelectedGoalTitleTypes } from '@hooks/__activation__/useGoalFinder/types';
+import { InstallationPurposeEnum } from '@repo/core/constants/user.constants';
 
 import { PageContainerProps } from '../../PageContainer/types';
 

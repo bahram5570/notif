@@ -46,7 +46,8 @@ const ShortcutItemGenerator = (props: ShortcutItemGeneratorProps) => {
       className="flex flex-col justify-start items-center gap-2 pointer-events-auto"
     >
       <div className="w-12 h-12">
-        {isJson ? jsonData && <LottieJson animationData={jsonData} /> : <CustomImage src={props.icon} />}
+        {/* // todo : it crash! */}
+        {/* {isJson ? jsonData && <LottieJson animationData={jsonData} /> : <CustomImage src={props.icon} />} */}
       </div>
 
       <CustomTypography fontSize="Lable_SmallProminet" className="text-center text-impo_Neutral_OnBackground">

@@ -1,4 +1,5 @@
-import CycleCardWave from '@components/Widgets/widgetGenerator/WidgetCycleCard/CycleCardWave';
+import { CycleCardWave } from '@repo/core/components/Widgets/WidgetGenerators/WidgetCycleCard';
+
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import { WavesContainerProps } from './types';

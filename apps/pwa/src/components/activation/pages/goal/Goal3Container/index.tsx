@@ -1,7 +1,7 @@
 import MainActivationModule from '@components/activation/MainActivationModule';
 import RadioModule from '@components/activation/RadioModule';
-import { InstallationPurposeEnum } from '@constants/activation.constants';
 import usePageInfo from '@providers/__activation__/ActivationProvider/__hooks__/usePageInfo';
+import { InstallationPurposeEnum } from '@repo/core/constants/user.constants';
 
 import useInitialDelay from './__hooks__/useInitialDelay';
 import { Goal3ContainerProps } from './types';

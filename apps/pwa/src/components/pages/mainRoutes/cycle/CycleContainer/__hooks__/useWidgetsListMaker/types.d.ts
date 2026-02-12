@@ -1,18 +1,14 @@
 import {
   WidgetCirculeCycleCardTypes,
   WidgetCycleCardTypes,
-  WidgetsTypes,
+  WidgetsListTypes,
 } from '@repo/core/providers/WidgetActionsProvider';
 
-import { CycleResponseTypes } from '../../../types';
-
-type CycleWidget = Pick<CycleResponseTypes, 'wigets'>;
-
 export interface UseWidgetsListMakerProps {
-  widgets: CycleWidget['wigets'] | undefined;
+  widgets: WidgetsListTypes | undefined;
 }
 
-export type CycleWidgetListsTypes = CycleWidget['wigets'] | null;
+export type CycleWidgetListsTypes = WidgetsListTypes | null;
 
 export type CycleCardDataTypes = Pick<WidgetCycleCardTypes, 'data'>['data'] | null;
 

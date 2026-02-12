@@ -39,6 +39,14 @@ const preset: Config = {
           '0%': { transform: 'translateY(0%)' },
           '100%': { transform: 'translateY(100%)' },
         },
+        widgetCurculeContainer: {
+          '0%': { transform: 'rotate(-20deg)', opacity: '0' },
+          '100%': { transform: 'rotate(0deg)', opacity: '1' },
+        },
+        widgetCurculeCycle: {
+          '0%': { maxHeight: '0px', opacity: '0' },
+          '100%': { maxHeight: '400px', opacity: '1' },
+        },
       },
       animation: {
         pageNavigation: 'pageNavigation 5s linear forwards',
@@ -48,6 +56,8 @@ const preset: Config = {
         modalCenterModeClose: 'modalCenterModeClose 0.2s linear forwards',
         modalSlidingModeOpen: 'modalSlidingModeOpen 0.2s linear forwards',
         modalSlidingModeClose: 'modalSlidingModeClose 0.2s linear forwards',
+        widgetCurculeContainer: 'widgetCurculeContainer 0.5s linear backwards',
+        widgetCurculeCycle: 'widgetCurculeCycle 0.3s linear backwards',
       },
     },
     colors: {

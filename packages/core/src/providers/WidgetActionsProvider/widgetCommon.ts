@@ -1,3 +1,4 @@
+import { WidgetsTypes } from './widgetCards';
 import { ActionTypeEnum, BabyCheckTypeEnums, PopupTypeEnum } from './widgetEnums';
 
 export type NextStepTypes = {
@@ -32,3 +33,5 @@ export type KitTestsTypes = null | {
   }[];
   ovulationResult: null | { result: number; createTime: string; count: number };
 };
+
+export type WidgetsListTypes = ({ order: number } & WidgetsTypes)[];
