@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { RoutinCard } from '@repo/core/components/Routin/RoutinCard';
 import { WidgetCardContainer } from '@repo/core/components/Widgets/WidgetCardContainer';
 
-import RoutinCard from '@components/__routin__/RoutinCard';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 

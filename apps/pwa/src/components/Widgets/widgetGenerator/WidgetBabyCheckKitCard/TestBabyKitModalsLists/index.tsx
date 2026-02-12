@@ -1,8 +1,5 @@
+import { TestKitModalsBabyCheck, TestKitModalsContainer, useTestKitModalsInfo } from '@repo/core/components/KitTests';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
-
-import TestKitModalsBabyCheck from '@components/pages/nestedRoutes/signs/TestKitModals/TestKitModalsBabyCheck';
-import TestKitModalsContainer from '@components/pages/nestedRoutes/signs/TestKitModals/TestKitModalsContainer';
-import useTestKitModalsInfo from '@components/pages/nestedRoutes/signs/TestKitModals/__hooks__/useTestKitModalsInfo';
 
 import { TestBabyKitModalsPropsType } from './type';
 

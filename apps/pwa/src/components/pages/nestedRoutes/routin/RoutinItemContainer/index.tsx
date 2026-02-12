@@ -1,11 +1,11 @@
 'use client';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+import { RoutinCta } from '@repo/core/components/Routin/RoutinCta';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import FeedbackModal from '@components/FeedbackModal';
-import RoutinCta from '@components/__routin__/RoutinCta';
 import { FOOTER_HEIGTH, HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import { ProgramWidgetItemStatusEnum } from '../enum';

@@ -1,10 +1,8 @@
-import { TestKitModalsListsDelete } from '@repo/core/components/KitTests';
+import { TestKitModalsBabyCheck, TestKitModalsListsDelete, useTestKitModalsInfo } from '@repo/core/components/KitTests';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
-import TestKitModalsBabyCheck from './TestKitModalsBabyCheck';
 import TestKitModalsContainerList from './TestKitModalsContainerList';
 import useTestKitModalsDelete from './__hooks__/useTestKitModalsDelete';
-import useTestKitModalsInfo from './__hooks__/useTestKitModalsInfo';
 
 const TestKitModals = () => {
   const { modalInfo } = useTestKitModalsInfo();

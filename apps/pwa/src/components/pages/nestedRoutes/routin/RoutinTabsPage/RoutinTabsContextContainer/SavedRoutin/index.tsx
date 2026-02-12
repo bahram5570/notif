@@ -1,4 +1,4 @@
-import RoutinCard from '@components/__routin__/RoutinCard';
+import { RoutinCard } from '@repo/core/components/Routin/RoutinCard';
 
 import RoutinListEmpty from '../RoutinListEmpty';
 import RoutinTabSkeleton from '../RoutinTabSkeleton';

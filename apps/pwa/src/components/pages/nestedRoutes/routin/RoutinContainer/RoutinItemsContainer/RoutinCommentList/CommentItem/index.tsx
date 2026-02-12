@@ -1,7 +1,7 @@
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import RoutinWriter from '@components/__routin__/RoutinWriter';
+import RoutinWriter from '@components/pages/nestedRoutes/partner/PairRoutin/PairRoutinContainer/RoutinWriter';
 
 import CommentRate from './CommentRate';
 import { CommentItemPropsType } from './type';

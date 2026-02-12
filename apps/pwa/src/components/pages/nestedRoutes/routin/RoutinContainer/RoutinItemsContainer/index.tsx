@@ -1,4 +1,5 @@
-import RoutinBookmarked from '@components/__routin__/RoutinCard/RoutinCardHeader/RoutinBookmarked';
+import { RoutinBookmarked } from '@repo/core/components/Routin/RoutinBookmarked';
+
 import { HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import RoutinCommentList from './RoutinCommentList';
@@ -15,7 +16,7 @@ const RoutinItemsContainer = (props: RoutinItemsContainerPropsType) => {
   return (
     <>
       <div
-        className=" fixed top-11 left-0 right-6 bottom-0  mx-auto pl-6 pb-[100px]  z-40  pointer-events-none"
+        className="fixed top-11 left-0 right-6 bottom-0  mx-auto pl-6 pb-[100px] z-40 pointer-events-none"
         style={{ maxWidth: MAX_SCREEN_WIDTH }}
       >
         <RoutinBookmarked isBookmarked={props.isbookmarked} programId={props.programId} />

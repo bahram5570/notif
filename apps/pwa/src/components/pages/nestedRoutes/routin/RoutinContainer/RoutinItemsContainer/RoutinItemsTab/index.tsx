@@ -1,4 +1,4 @@
-import RoutinCta from '@components/__routin__/RoutinCta';
+import { RoutinCta } from '@repo/core/components/Routin/RoutinCta';
 
 import RoutinDiets from '../RoutinDiets';
 import { RoutinItemsTabPropsType } from './type';

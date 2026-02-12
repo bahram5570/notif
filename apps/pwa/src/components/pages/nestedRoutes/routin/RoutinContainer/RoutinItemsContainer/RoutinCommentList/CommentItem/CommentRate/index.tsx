@@ -1,4 +1,4 @@
-import StarIcon from '@assets/icons/star-1.svg';
+import StarIcon from '@assets/shared/icons/star-1.svg';
 
 import { CommentRatePropsType } from './type';
 

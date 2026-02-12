@@ -50,6 +50,7 @@ export type WidgetsTypes = IsPdfDownloadingTypes &
     | WidgetAverageOfcycleLengthsTypes
     | WidgetPregnancyCheckupTypes
     | WidgetBiorhythmTypes
+    | WidgetProgramScrollType
     | WidgetWomanPairProgramTypes
   );
 // todo

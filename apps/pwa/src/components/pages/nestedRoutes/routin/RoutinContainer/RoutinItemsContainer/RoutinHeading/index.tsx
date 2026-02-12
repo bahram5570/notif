@@ -1,8 +1,7 @@
+import { RoutinRatingStats } from '@repo/core/components/Routin/RoutinRatingStats';
+import { RoutinWriter } from '@repo/core/components/Routin/RoutinWriter';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import RoutinRatingStats from '@components/__routin__/RoutinRatingStats';
-import RoutinWriter from '@components/__routin__/RoutinWriter';
 
 import { RoutinHeadingProps } from './types';
 

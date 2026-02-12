@@ -1,12 +1,9 @@
-import { CustomModal } from '@repo/core/components/ui/CustomModal';
-
-import TestKitModalsContainer from '@components/pages/nestedRoutes/signs/TestKitModals/TestKitModalsContainer';
-import useTestKitModalsInfo from '@components/pages/nestedRoutes/signs/TestKitModals/__hooks__/useTestKitModalsInfo';
-
-import { OvulationKitModalPropsType } from './type';
+// import { TestKitModalsContainer, useTestKitModalsInfo } from '@repo/core/components/KitTests';
+// import { CustomModal } from '@repo/core/components/ui/CustomModal';
+import { OvulationKitModalPropsType } from './types';
 
 const OvulationKitModal = ({ data, onDelete }: OvulationKitModalPropsType) => {
-  const { modalInfo } = useTestKitModalsInfo();
+  // const { modalInfo } = useTestKitModalsInfo();
 
   return (
     <>
