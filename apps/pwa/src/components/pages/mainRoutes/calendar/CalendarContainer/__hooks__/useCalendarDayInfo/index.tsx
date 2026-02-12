@@ -1,4 +1,6 @@
-import { CalendarWidgetEnums, DayTypeEnums } from '../../../__hooks__/useCalendarGetData/CalendarEnums';
+import { DayTypeEnums } from '@repo/core/providers/WidgetActionsProvider';
+
+import { CalendarWidgetEnums } from '../../../__hooks__/useCalendarGetData/CalendarEnums';
 import { CalendarDayInfoTypes, UseCalendarDayInfoProps } from './types';
 
 const useCalendarDayInfo = (day?: UseCalendarDayInfoProps) => {

@@ -1,8 +1,8 @@
-import { ICONS_WIDTH } from '@components/SignGenerator/constants';
+import { ICONS_WIDTH } from '@repo/core/components/SignGenerator';
+
+const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
 const SignsSkeleton = () => {
-  const list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
-
   return (
     <div className="w-full px-4 animate-skeleton" style={{ paddingTop: 100 }}>
       <div className="w-full rounded-xl px-4 pb-4 pt-6 mt-4 flex flex-col items-end">

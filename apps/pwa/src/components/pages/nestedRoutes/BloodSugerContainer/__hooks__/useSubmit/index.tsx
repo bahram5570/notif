@@ -1,5 +1,5 @@
-import useSignDateState from '@hooks/__sign__/useSignDateState';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { useSignDateState } from '@repo/core/hooks/useSignDateState';
 import { useRouter } from 'next/navigation';
 
 import { InputValueType } from '../../type';

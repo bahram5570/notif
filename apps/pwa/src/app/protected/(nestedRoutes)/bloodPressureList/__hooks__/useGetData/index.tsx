@@ -6,9 +6,9 @@ import {
   InfoCalendarResponseTypes,
   ItemsTypes,
 } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
-import useSignDateState from '@hooks/__sign__/useSignDateState';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { useSignDateState } from '@repo/core/hooks/useSignDateState';
 
 const useGetData = () => {
   const [initailPressureList, setInitailPressureList] = useState<BloodPressureType[]>([]);

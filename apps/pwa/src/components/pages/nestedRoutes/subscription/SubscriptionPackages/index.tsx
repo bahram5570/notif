@@ -1,4 +1,4 @@
-import SubscriptionGenerator from '@components/SubscriptionGenerator';
+import { SubscriptionGenerator } from '@repo/core/components/SubscriptionGenerator';
 
 import { SubscriptionPackagesProps } from './types';
 

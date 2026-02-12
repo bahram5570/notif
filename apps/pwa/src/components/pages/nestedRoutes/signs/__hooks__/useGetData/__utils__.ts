@@ -6,11 +6,9 @@ import {
   jalaaliWeekNames,
 } from '@repo/core/utils/dates';
 
-import {
-  CalendarWidgetEnums,
-  DayTypeEnums,
-} from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/CalendarEnums';
+import { CalendarWidgetEnums } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/CalendarEnums';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
+import { DayTypeEnums } from '@repo/core/providers/WidgetActionsProvider';
 import moment from 'moment-jalaali';
 
 import {

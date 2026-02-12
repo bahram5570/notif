@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { SelectedSignsHandlerTypes } from '../../CategoryGenerator/types';
+import { SelectedSignsHandlerTypes } from '@repo/core/components/SignCategoryGenerator';
+
 import { UseSignsListInfoProps } from './types';
 
 const useSignsListInfo = ({ infoData, slideIndex, slide }: UseSignsListInfoProps) => {

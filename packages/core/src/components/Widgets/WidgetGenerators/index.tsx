@@ -12,7 +12,7 @@ import { WidgetHintCard } from './WidgetHintCard';
 import { WidgetHintCardV2 } from './WidgetHintCardV2';
 import { WidgetList } from './WidgetList';
 import { WidgetMedia } from './WidgetMedia';
-// import { WidgetMostRepeatedSigns } from './WidgetMostRepeatedSigns';
+import { WidgetMostRepeatedSigns } from './WidgetMostRepeatedSigns';
 import { WidgetMostRepeatedSignsEmpty } from './WidgetMostRepeatedSignsEmpty';
 import { WidgetMotivationCard } from './WidgetMotivationCard';
 import { WidgetOvulationHistoryCard } from './WidgetOvulationHistoryCard';
@@ -26,12 +26,12 @@ import { WidgetPregnancyCheckup } from './WidgetPregnancyCheckup';
 // import { WidgetProgramScroll } from './WidgetProgramScroll';
 import { WidgetReportCard } from './WidgetReportCard';
 import { WidgetRoutin } from './WidgetRoutin';
-// import { WidgetSexTrackerCard } from './WidgetSexTrackerCard';
+import { WidgetSexTrackerCard } from './WidgetSexTrackerCard';
 import { WidgetShareExperienceCard } from './WidgetShareExperienceCard';
 import { WidgetShortcut } from './WidgetShortcut';
-// import { WidgetSignCard } from './WidgetSignCard';
+import { WidgetSignCard } from './WidgetSignCard';
 import { WidgetStoryCard } from './WidgetStoryCard';
-// import { WidgetSubscriptionCard } from './WidgetSubscriptionCard';
+import { WidgetSubscriptionCard } from './WidgetSubscriptionCard';
 import { WidgetWomanPairProgram } from './WidgetWomanPairProgram';
 import { WidgetsBiorhythm } from './WidgetsBiorhythm';
 
@@ -63,18 +63,18 @@ export const WidgetGenerators = ({ data, type, isPdfDownloading = false }: Widge
     case WidgetsEnum.BreastfeedingCard:
       result = <WidgetPragnencyBreastfeedingCard data={data} />;
       break;
-    // case WidgetsEnum.SubscriptionCard:
-    //   result = <WidgetSubscriptionCard data={data} />;
-    //   break;
+    case WidgetsEnum.SubscriptionCard:
+      result = <WidgetSubscriptionCard data={data} />;
+      break;
     case WidgetsEnum.MotivationCard:
       result = <WidgetMotivationCard data={data} />;
       break;
     case WidgetsEnum.ClinicCard:
       result = <WidgetClinicCard data={data} />;
       break;
-    // case WidgetsEnum.SignCard:
-    //   result = <WidgetSignCard data={data} />;
-    //   break;
+    case WidgetsEnum.SignCard:
+      result = <WidgetSignCard data={data} />;
+      break;
     case WidgetsEnum.ShareExperienceCard:
       result = <WidgetShareExperienceCard data={data} />;
       break;
@@ -90,9 +90,9 @@ export const WidgetGenerators = ({ data, type, isPdfDownloading = false }: Widge
     case WidgetsEnum.PeriodReportEmptyStateCard:
       result = <WidgetPeriodReportEmptyStateCard data={data} />;
       break;
-    // case WidgetsEnum.MostRepeatedSigns:
-    //   result = <WidgetMostRepeatedSigns data={data} isPdfDownloading={isPdfDownloading} />;
-    //   break;
+    case WidgetsEnum.MostRepeatedSigns:
+      result = <WidgetMostRepeatedSigns data={data} isPdfDownloading={isPdfDownloading} />;
+      break;
     case WidgetsEnum.MostRepeatedSignsEmpty:
       result = <WidgetMostRepeatedSignsEmpty data={data} isPdfDownloading={isPdfDownloading} />;
       break;
@@ -105,9 +105,9 @@ export const WidgetGenerators = ({ data, type, isPdfDownloading = false }: Widge
     // case WidgetsEnum.OvulationKitCard:
     //   result = <WidgetOvulationKitCard data={data} />;
     //   break;
-    // case WidgetsEnum.SexTrackerCard:
-    //   result = <WidgetSexTrackerCard data={data} />;
-    //   break;
+    case WidgetsEnum.SexTrackerCard:
+      result = <WidgetSexTrackerCard data={data} />;
+      break;
     case WidgetsEnum.PeriodCycleHistory:
       result = <WidgetPeriodCycleHistory data={data} isPdfDownloading={isPdfDownloading} />;
       break;

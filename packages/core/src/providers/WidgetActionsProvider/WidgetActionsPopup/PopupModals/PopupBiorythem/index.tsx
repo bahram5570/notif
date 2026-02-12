@@ -1,4 +1,4 @@
-import BiorhythmItems from '../../../../../components/BiorhythmItems/BiorhythmItems';
+import { BiorhythmItems } from '../../../../../components/BiorhythmItems/BiorhythmItems';
 import { CustomTypography } from '../../../../../components/ui/CustomTypography';
 import CrossIcon from '@assets/shared/icons/plus.svg';
 

@@ -1,4 +1,4 @@
-import BiorhythmItems from '../../../BiorhythmItems/BiorhythmItems';
+import { BiorhythmItems } from '../../../BiorhythmItems/BiorhythmItems';
 import { CustomTypography } from '../../../ui/CustomTypography';
 import { BiorhythmPropsType } from './types';
 
@@ -10,7 +10,7 @@ export const WidgetsBiorhythm = ({ data }: BiorhythmPropsType) => {
           {data.title}
         </CustomTypography>
       </div>
-      
+
       <div className="rounded-2xl p-4 flex flex-col gap-3 bg-impo_Neutral_Background">
         <BiorhythmItems {...data} />
       </div>

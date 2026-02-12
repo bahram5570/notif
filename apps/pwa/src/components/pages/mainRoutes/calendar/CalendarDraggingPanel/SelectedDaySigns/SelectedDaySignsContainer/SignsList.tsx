@@ -1,6 +1,5 @@
+import { useSignIcon } from '@repo/core/components/SignGenerator';
 import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
-
-import useSignIcon from '@components/SignGenerator/__hooks__/useSignIcon';
 
 import { SIGNS_LIST_SLIDER_ID } from './constants';
 import { SignsListProps } from './types';

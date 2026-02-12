@@ -1,4 +1,3 @@
-import { SignGeneratorProps } from '@components/SignGenerator/types';
 import { ActionTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 import { SingSelectedListType } from '../../../__hooks__/useSingSelectedList/type';

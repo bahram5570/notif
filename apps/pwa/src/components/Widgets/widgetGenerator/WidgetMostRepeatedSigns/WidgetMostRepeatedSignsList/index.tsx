@@ -1,7 +1,5 @@
+import { ICONS_WIDTH, SIGNS_LIST, useSignIcon } from '@repo/core/components/SignGenerator';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import useSignIcon from '@components/SignGenerator/__hooks__/useSignIcon';
-import { ICONS_WIDTH, SIGNS_LIST } from '@components/SignGenerator/constants';
 
 import { WidgetMostRepeatedSignsListProps } from './types';
 

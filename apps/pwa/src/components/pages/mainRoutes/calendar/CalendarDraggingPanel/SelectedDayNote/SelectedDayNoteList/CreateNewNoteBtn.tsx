@@ -2,8 +2,8 @@ import PlusIcon from '@assets/shared/icons/plus.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useSignDateState from '@hooks/__sign__/useSignDateState';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { useSignDateState } from '@repo/core/hooks/useSignDateState';
 
 import { CreateNewNoteBtnPropsType } from './type';
 

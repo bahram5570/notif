@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 
 import { currentDate } from '@repo/core/utils/dates';
 
-import useSignDateState from '@hooks/__sign__/useSignDateState';
 import useSignInteractiveBanner from '@hooks/__sign__/useSignInteractiveBanner';
 import { useCulture } from '@repo/core/hooks/useCulture';
+import { useSignDateState } from '@repo/core/hooks/useSignDateState';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import moment from 'moment-jalaali';
 

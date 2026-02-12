@@ -1,7 +1,6 @@
+import { SignCategoryGenerator } from '@repo/core/components/SignCategoryGenerator';
+import { SIGNS_LIST } from '@repo/core/components/SignGenerator';
 import { currentDate } from '@repo/core/utils/dates';
-
-import { SIGNS_LIST } from '@components/SignGenerator/constants';
-import CategoryGenerator from '@components/pages/nestedRoutes/signs/SignsContainer/SignsLists/CategoryGenerator';
 
 import { WidgetSexTrackerCardProps } from './types';
 
@@ -14,7 +13,7 @@ const WidgetSexTrackerCard = ({ data }: WidgetSexTrackerCardProps) => {
 
   return (
     <>
-      <CategoryGenerator category={category} title={data.title} signs={signs} info={info} />
+      <SignCategoryGenerator category={category} title={data.title} signs={signs} info={info} />
     </>
   );
 };

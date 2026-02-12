@@ -1,16 +1,14 @@
 import { Fragment } from 'react';
 
+import { SignCategoryGenerator } from '@repo/core/components/SignCategoryGenerator';
+import { SIGNS_LIST } from '@repo/core/components/SignGenerator';
 import { KitTests } from '@repo/core/components/Widgets/KitTests';
 
-import { SIGNS_LIST } from '@components/SignGenerator/constants';
-import {
-  CalendarWidgetEnums,
-  DayTypeEnums,
-} from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/CalendarEnums';
+import { CalendarWidgetEnums } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/CalendarEnums';
+import { DayTypeEnums } from '@repo/core/providers/WidgetActionsProvider';
 
 import BloodPressureListContainer from '../BloodPressureListContainer';
 import BloodSugerListContainer from '../BloodSugerListContainer';
-import CategoryGenerator from '../CategoryGenerator';
 import CustomContainer from '../CustomContainer';
 import Weight from '../Weight';
 import { SignsListsContainerProps } from './types';
@@ -56,7 +54,7 @@ const SignsListsContainer = ({ info, selectHandler, updateSingSelectedList }: Si
         }
 
         return (
-          <CategoryGenerator
+          <SignCategoryGenerator
             key={key}
             info={info}
             title={signItems[1].title}

@@ -2,7 +2,7 @@ import { CustomImage } from '../ui/CustomImage';
 import { CustomTypography } from '../ui/CustomTypography';
 import { BiorhythmItemsTypes } from './types';
 
-const BiorhythmItems = ({ items }: BiorhythmItemsTypes) => {
+export const BiorhythmItems = ({ items }: BiorhythmItemsTypes) => {
   return (
     <>
       {items.map((item, index) => {
@@ -27,5 +27,3 @@ const BiorhythmItems = ({ items }: BiorhythmItemsTypes) => {
     </>
   );
 };
-
-export default BiorhythmItems;

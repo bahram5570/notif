@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import useSignDateState from '@hooks/__sign__/useSignDateState';
+import { useSignDateState } from '@repo/core/hooks/useSignDateState';
 
 import { SlideHandlerTypes, UseSignsSlideProps } from './types';
 
