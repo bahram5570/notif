@@ -2,9 +2,9 @@ import chatbotJson from '@assets/lottie/chatbot.json';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { LottieJson } from '@lib/LottieJson';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
+import { LottieJson } from '@repo/core/lib/LottieJson';
 
 import TypingLoop from './TypingLoop';
 import { ChatbotNavbarModePropsType } from './type';

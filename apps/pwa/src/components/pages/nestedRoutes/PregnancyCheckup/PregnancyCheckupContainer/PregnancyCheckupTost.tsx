@@ -5,8 +5,8 @@ import InfoIcon from '@assets/icons/info.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useCountDown from '@hooks/useCountDown';
-import { LottieCanvas } from '@lib/LottieCanvas';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { LottieCanvas } from '@repo/core/lib/LottieCanvas';
 
 import { ResponsePropsType } from '../../CheckupQuestionContainer/QuestionCheckup/__hooks__/useSubmit/type';
 import { MESSAGE_PREGNANCY_CHECKUP_RESULT } from '../constant';

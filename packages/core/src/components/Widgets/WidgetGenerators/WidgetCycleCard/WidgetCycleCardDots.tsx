@@ -1,9 +1,8 @@
 import { useEffect, useRef } from 'react';
 
-// todo
-import { LottieJson } from '../../../../lib/LottieJson';
+import dotsLoading from '@assets/shared/lottie/dotsLoading.json';
 
-// import dotsLoading from '@assets/lottie/dotsLoading.json';
+import { LottieJson } from '../../../../lib/LottieJson';
 
 const WidgetCycleCardDots = () => {
   const dotsRef = useRef<HTMLDivElement>(null);
@@ -22,7 +21,7 @@ const WidgetCycleCardDots = () => {
 
   return (
     <div ref={dotsRef} className="w-14">
-      {/* <LottieJson animationData={dotsLoading} className="w-full h-auto" /> */}
+      <LottieJson animationData={dotsLoading} className="w-full h-auto" />
     </div>
   );
 };

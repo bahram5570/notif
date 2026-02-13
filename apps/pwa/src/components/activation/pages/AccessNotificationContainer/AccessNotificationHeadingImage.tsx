@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { LottieCanvas } from '@lib/LottieCanvas';
+import { LottieCanvas } from '@repo/core/lib/LottieCanvas';
 
 import { AccessNotificationHeadingImageProps } from './types';
 

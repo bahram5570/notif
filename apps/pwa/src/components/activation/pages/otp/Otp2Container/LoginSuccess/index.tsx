@@ -1,4 +1,4 @@
-import { LottieCanvas } from '@lib/LottieCanvas';
+import { LottieCanvas } from '@repo/core/lib/LottieCanvas';
 
 const LoginSuccess = () => {
   return (

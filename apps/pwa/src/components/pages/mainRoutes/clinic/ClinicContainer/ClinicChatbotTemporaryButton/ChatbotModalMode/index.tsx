@@ -2,9 +2,9 @@ import chatbotJson from '@assets/lottie/chatbot.json';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { LottieJson } from '@lib/LottieJson';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
+import { LottieJson } from '@repo/core/lib/LottieJson';
 
 import { CONTEXT_SLIDE_ONE, CONTEXT_SLIDE_TWO } from '../constants';
 import LoopSlider from './LoopSlider';

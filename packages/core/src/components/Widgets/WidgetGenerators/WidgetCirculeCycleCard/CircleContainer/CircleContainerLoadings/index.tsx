@@ -1,5 +1,5 @@
-// todo
-// import circularCycleLoadingAnimation from '@assets/shared/lottie/circularCycleLoading.json';
+import circularCycleLoadingAnimation from '@assets/shared/lottie/circularCycleLoading.json';
+
 import { LottieJson } from '../../../../../../lib/LottieJson';
 import { CycleLoadingStatusEnum } from '../../../../../../providers/WidgetActionsProvider';
 import useLottieBubbleColor from './__hooks__/useLottieBubbleColor';
@@ -11,12 +11,12 @@ const CircleContainerLoadings = ({ forgroundColor, loadingStatus }: CircleContai
   return (
     <>
       <div ref={bubbleRef}>
-        {/* <LottieJson
+        <LottieJson
           animationData={circularCycleLoadingAnimation}
           className={`absolute -top-10 -left-10 -right-10 -bottom-8 pointer-events-none duration-[3000ms] -z-10
             ${loadingStatus === CycleLoadingStatusEnum.successed ? 'scale-75' : 'scale-100'}
         `}
-        /> */}
+        />
       </div>
     </>
   );

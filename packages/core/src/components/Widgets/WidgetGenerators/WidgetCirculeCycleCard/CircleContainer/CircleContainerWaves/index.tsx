@@ -1,7 +1,5 @@
 import { colorFormatConverter } from '../../../../../../utils/scripts';
-
-// todo
-// import wavesJson from '@assets/shared/lottie/cycleWaves.json';
+import wavesJson from '@assets/shared/lottie/cycleWaves.json';
 
 import { LottieJson } from '../../../../../../lib/LottieJson';
 import { CycleLoadingStatusEnum } from '../../../../../../providers/WidgetActionsProvider';
@@ -26,7 +24,7 @@ const CircleContainerWaves = ({ forgroundColor, loadingStatus }: CircleContainer
           className="w-full h-full duration-500"
           style={{ backgroundColor: waveBackground, paddingTop: wavePaddingTop }}
         >
-          {/* <LottieJson animationData={wavesJson} /> */}
+          <LottieJson animationData={wavesJson} />
         </div>
       </div>
 

@@ -1,8 +1,8 @@
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { LottieCanvas } from '@lib/LottieCanvas';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { LottieCanvas } from '@repo/core/lib/LottieCanvas';
 
 import { RewardOverlayPropsType } from './type';
 

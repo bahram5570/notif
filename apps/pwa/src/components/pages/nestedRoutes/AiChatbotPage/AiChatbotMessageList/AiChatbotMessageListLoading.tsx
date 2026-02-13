@@ -1,7 +1,7 @@
 import chatbotJson from '@assets/lottie/chatbot.json';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { LottieJson } from '@lib/LottieJson';
+import { LottieJson } from '@repo/core/lib/LottieJson';
 
 const AiChatbotMessageListLoading = () => {
   return (

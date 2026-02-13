@@ -1,9 +1,9 @@
 import { ReactElement, useEffect, useState } from 'react';
 
 import useCountDown from '@hooks/useCountDown';
-import { LottieCanvas } from '@lib/LottieCanvas';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useSignDateState } from '@repo/core/hooks/useSignDateState';
+import { LottieCanvas } from '@repo/core/lib/LottieCanvas';
 
 const SignsChangedToast = () => {
   const [showStatus, setShowStatus] = useState(false);

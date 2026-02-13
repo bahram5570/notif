@@ -6,8 +6,7 @@ export const WidgetList = ({ data }: WidgetListProps) => {
     <>
       {data.widgetList.map((item, index) => (
         <div className="flex flex-row w-full" key={index}>
-          {/* // todo  */}
-          {/* <WidgetGenerators {...item} /> */}
+          <WidgetGenerators {...item} />
         </div>
       ))}
     </>

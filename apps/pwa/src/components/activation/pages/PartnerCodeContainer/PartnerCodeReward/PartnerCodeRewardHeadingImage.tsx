@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import useActivationIsLargeScreen from '@hooks/__activation__/useActivationIsLargeScreen';
-import { LottieCanvas } from '@lib/LottieCanvas';
+import { LottieCanvas } from '@repo/core/lib/LottieCanvas';
 
 import { PartnerCodeRewardHeadingImageProps } from './types';
 

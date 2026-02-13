@@ -1,9 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 import TickIcon from '@assets/shared/icons/subscriptionTick.svg';
-
-// todo
-// import subscriptionbg from '@assets/shared/lottie/subscription_background.json';
+import subscriptionbg from '@assets/shared/lottie/subscription_background.json';
 
 import { LottieRefCurrentProps } from 'lottie-react';
 
@@ -38,9 +36,9 @@ export const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
         background: isSelected ? 'linear-gradient(260.29deg, #E62A6F 3.07%, #7A1BFF 108.68%)' : '',
       }}
     >
-      {/* {props.isSpecial && isSelected && (
+      {props.isSpecial && isSelected && (
         <LottieJson animationData={subscriptionbg} lottieRef={lottieRef} loop={true} className="absolute inset-0 z-0" />
-      )} */}
+      )}
 
       {props.specialText && (
         <div className="flex justify-center py-2 my-2 w-fit rounded-full px-4 absolute -top-[1.75rem] right-0 mr-5 bg-impo_Calendar_Period_Background">

@@ -4,8 +4,8 @@ import inviteGift from '@assets/lottie/inviteGift.json';
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { LottieJson } from '@lib/LottieJson';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
+import { LottieJson } from '@repo/core/lib/LottieJson';
 
 import CopyIdentifictionCodeSection from './CopyIdentifictionCodeSection';
 import IdentificationCodeSkeleton from './IdentifictionCodeSkeleton';

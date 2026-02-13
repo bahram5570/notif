@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 import RewardModule from '@components/activation/RewardModule';
-import { LottieCanvas } from '@lib/LottieCanvas';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { LottieCanvas } from '@repo/core/lib/LottieCanvas';
 
 import { IsOpenHandlerTypes, OnMountRewardModuleProps } from './types';
 

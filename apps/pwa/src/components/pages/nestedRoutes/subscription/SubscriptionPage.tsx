@@ -6,8 +6,8 @@ import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { LottieCanvas } from '@lib/LottieCanvas';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+import { LottieCanvas } from '@repo/core/lib/LottieCanvas';
 
 import ApprovedCodeToast from './ApprovedCodeToast';
 import DiscountLoading from './DiscontLoading';

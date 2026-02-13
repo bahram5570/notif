@@ -53,8 +53,6 @@ export type WidgetsTypes = IsPdfDownloadingTypes &
     | WidgetProgramScrollType
     | WidgetWomanPairProgramTypes
   );
-// todo
-// | WidgetProgramScrollWidgetType
 
 // # ----------------------------------------------------------
 

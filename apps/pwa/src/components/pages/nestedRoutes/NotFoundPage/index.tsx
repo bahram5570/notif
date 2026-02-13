@@ -5,7 +5,7 @@ import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import MainFooterContainer from '@components/MainFooter/MainFooterContainer';
-import { LottieCanvas } from '@lib/LottieCanvas';
+import { LottieCanvas } from '@repo/core/lib/LottieCanvas';
 
 const NotFoundPage = () => {
   return (
