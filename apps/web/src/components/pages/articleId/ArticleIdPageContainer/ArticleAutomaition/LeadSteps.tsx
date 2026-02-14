@@ -9,22 +9,32 @@ import { LeadStepsProps } from './types';
 
 export default function LeadSteps({ step, setStep, onClose, contentCategoryId }: LeadStepsProps) {
   const [userPhone, setUserPhone] = useState<string>('');
+  const [sentOtpId, setSentOtpId] = useState<string | undefined>(undefined);
+  const [downloadLink, setDownloadLink] = useState<string | undefined>(undefined);
 
   return (
-    <div className="px-4 py-5">
+    <div className="px-5 sm:px-8 py-5 sm:py-6">
       {step === 'phone' && (
         <PhoneInput
-          contentCategoryId={contentCategoryId}
-          onNext={(phone: string) => {
+          onNext={(phone, returnedOtpId) => {
             setUserPhone(phone);
+            setSentOtpId(returnedOtpId);
             setStep('otp');
           }}
+          contentCategoryId={contentCategoryId}
         />
       )}
 
-      {step === 'otp' && <OtpInput onNext={() => setStep('success')} phone={userPhone} />}
+      {step === 'otp' && (
+        <OtpInput
+          onNext={() => setStep('success')}
+          phone={userPhone}
+          sentOtpId={sentOtpId}
+          onLinkReceived={(link) => setDownloadLink(link)}
+        />
+      )}
 
-      {step === 'success' && <Success onClose={onClose} />}
+      {step === 'success' && <Success onClose={onClose} link={downloadLink} />}
     </div>
   );
 }

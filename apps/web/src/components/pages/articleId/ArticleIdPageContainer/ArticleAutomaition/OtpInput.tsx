@@ -1,5 +1,7 @@
 'use client';
 
+import { useEffect } from 'react';
+
 import { toPersianNumbers } from '@utils/numbers';
 
 import CustomButton from '@components/ui/CustomButton';
@@ -7,25 +9,47 @@ import CustomTypography from '@components/ui/CustomTypography';
 
 import { getInputClass } from './_Utils/getInputClass';
 import { useOtpCode } from './_hooks/useOtpCode';
-import { useOtpResend } from './_hooks/useOtpResend';
 import { useOtpSubmit } from './_hooks/useOtpSubmit';
 import { useOtpTimer } from './_hooks/useOtpTimer';
+import { useSendOtp } from './_hooks/useSendOtp';
 import { OtpProps } from './types';
 
-export default function OtpInput({ onNext, phone }: OtpProps) {
+let TIME = 120;
+
+export default function OtpInput({ onNext, phone, onLinkReceived, sentOtpId }: OtpProps) {
   const { code, refs, handleChange, handleKeyDown, resetCode } = useOtpCode();
-  const { timer, formatTimer, resetTimer } = useOtpTimer(120);
-  const { submitLoading, isSuccess, isErrorShake, handleSubmit } = useOtpSubmit(onNext);
+  const { timer, formatTimer, resetTimer } = useOtpTimer(TIME);
 
-  const { resendLoading, handleResend } = useOtpResend(resetTimer, resetCode, () => {});
+  const { isSending: resendLoading, sendOtp } = useSendOtp();
 
-  const finalPhone = `لطفا کد تایید 6 رقمی که به شماره همراه ${toPersianNumbers(phone || '')} پیامک کردیم رو اینجا وارد کن`;
+  const { submitLoading, isSuccess, isErrorShake, handleSubmit, link } = useOtpSubmit(onNext, sentOtpId || '');
+
+  const finalText = `لطفا کد تایید 6 رقمی که به شماره همراه ${toPersianNumbers(phone || '')} پیامک کردیم رو اینجا وارد کن`;
+
+  const handleResend = async () => {
+    if (!phone) return;
+
+    const { success } = await sendOtp(phone);
+
+    if (success) {
+      resetTimer(TIME);
+      resetCode();
+      refs.current?.[0]?.focus?.();
+    }
+  };
+
+  useEffect(() => {
+    if (isSuccess && link && onLinkReceived) {
+      onLinkReceived(link);
+    }
+  }, [isSuccess, link, onLinkReceived]);
 
   return (
     <div>
       <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground mb-3">
-        {finalPhone}
+        {finalText}
       </CustomTypography>
+
       <div className="flex gap-2 justify-center flex-row-reverse mt-3">
         {code.map((digit, i) => (
           <input
@@ -40,7 +64,7 @@ export default function OtpInput({ onNext, phone }: OtpProps) {
             inputMode="numeric"
             pattern="[0-9]*"
             autoComplete="one-time-code"
-            className={`${getInputClass(digit, isSuccess, isErrorShake)}`}
+            className={getInputClass(digit, isSuccess, isErrorShake)}
             dir="ltr"
             style={{ direction: 'ltr' }}
           />

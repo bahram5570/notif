@@ -2,21 +2,14 @@
 
 import CustomInput from './components/CustomInput';
 
-
-
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
-
-
 
 import { usePhoneSubmit } from './_hooks/usePhoneSubmit';
 import { PhoneProps } from './types';
 
-
 export default function PhoneInput({ onNext, contentCategoryId }: PhoneProps & { contentCategoryId?: string }) {
-  const { phoneValue, setPhoneValue, isValid, isSubmitting, submit } = usePhoneSubmit(() =>
-    onNext(phoneValue, contentCategoryId),
-  );
+  const { phoneValue, setPhoneValue, isValid, isSubmitting, submit } = usePhoneSubmit(onNext);
 
   return (
     <div className="space-y-6">
@@ -24,7 +17,7 @@ export default function PhoneInput({ onNext, contentCategoryId }: PhoneProps & {
         برای اینکه بهت یه راهنمای کامل از موضوع این مقاله رو بدیم لازمه شماره همراهت رو وارد کنی
       </CustomTypography>
 
-      <form onSubmit={(e) => submit(e, contentCategoryId)} className="space-y-5">
+      <form className="space-y-5">
         <CustomInput
           dir="ltr"
           type="tel"

@@ -1,15 +1,45 @@
+'use client';
+
 import { useState } from 'react';
 
+import useApi from '@hooks/useApi';
 import useCustomToast from '@hooks/useCustomToast';
 
-type OnSuccess = () => void | Promise<void>;
+import { VerifyOtpResponse } from './types';
 
-export function useOtpSubmit(onSuccess: OnSuccess) {
+export function useOtpSubmit(onSuccess: () => void, sentOtpId: string) {
   const { onToast } = useCustomToast();
 
   const [submitLoading, setSubmitLoading] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isErrorShake, setIsErrorShake] = useState(false);
+  const [link, setLink] = useState<string | undefined>(undefined);
+
+  const { callApi } = useApi({
+    method: 'POST',
+    url: 'article/contentcategory/validateotp',
+    onSuccess: (response: VerifyOtpResponse) => {
+      if (response.valid) {
+        setIsSuccess(true);
+        if (response.link) {
+          setLink(response.link);
+        }
+        setTimeout(onSuccess, 1200);
+      } else {
+        onToast({ type: 'error', message: response.message || 'کد نامعتبر است' });
+        setIsErrorShake(true);
+        setTimeout(() => setIsErrorShake(false), 600);
+      }
+    },
+    onError: (err) => {
+      onToast({
+        type: 'error',
+        message: err?.message || 'خطا در تأیید کد',
+      });
+      setIsErrorShake(true);
+      setTimeout(() => setIsErrorShake(false), 600);
+    },
+  });
 
   const handleSubmit = async (code: string[]) => {
     const full = code.join('');
@@ -23,17 +53,14 @@ export function useOtpSubmit(onSuccess: OnSuccess) {
     setSubmitLoading(true);
 
     try {
-      await new Promise((r) => setTimeout(r, 1200));
-      setIsSuccess(true);
-      setTimeout(onSuccess, 1200);
-    } catch {
-      onToast({ type: 'error', message: 'کد اشتباه است' });
-      setIsErrorShake(true);
-      setTimeout(() => setIsErrorShake(false), 600);
+      await callApi({
+        id: sentOtpId,
+        code: full,
+      });
     } finally {
       setSubmitLoading(false);
     }
   };
 
-  return { submitLoading, isSuccess, isErrorShake, handleSubmit };
+  return { link, submitLoading, isSuccess, isErrorShake, handleSubmit };
 }

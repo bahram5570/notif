@@ -5,3 +5,15 @@ export interface UsePhoneSubmitOptions {
   minLength?: number;
   errorMessage?: string;
 }
+
+export type VerifyOtpResponse = {
+  valid: boolean;
+  link?: string;
+  message?: string;
+};
+
+export type SendOtpTyps = {
+  valid: boolean;
+  id: string;
+};
+

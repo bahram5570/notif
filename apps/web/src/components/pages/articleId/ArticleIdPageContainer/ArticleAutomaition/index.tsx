@@ -51,7 +51,7 @@ export default function ArticleAutomaition({ threshold = 50, contentCategory }: 
           </button>
           <HeaderContent title={contentCategory.title} subtitle={contentCategory.subtitle} />
         </div>
-        <LeadSteps step={step} setStep={setStep} onClose={handleClose} />
+        <LeadSteps step={step} setStep={setStep} onClose={handleClose} contentCategoryId={contentCategory.id} />
       </Dialog>
     );
   }

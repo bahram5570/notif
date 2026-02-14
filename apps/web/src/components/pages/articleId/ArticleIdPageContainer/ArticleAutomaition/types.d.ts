@@ -13,16 +13,19 @@ export interface LeadPopupProps {
 
 export interface PhoneProps {
   contentCategoryId?: string;
-  onNext: (phone: string, contentCategoryId?: string) => void;
+  onNext: (phone: string, sentOtpId?: string) => void;
 }
 
 export interface OtpProps {
   onNext: () => void;
   phone?: string;
+  sentOtpId?: string;
+  onLinkReceived?: (link: string) => void;
 }
 
 export interface SuccessProps {
   onClose: () => void;
+  link?: string;
 }
 
 export interface LeadStepsProps {

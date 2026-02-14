@@ -8,7 +8,17 @@ import CustomTypography from '@components/ui/CustomTypography';
 
 import { SuccessProps } from './types';
 
-export default function Success({ onClose }: SuccessProps) {
+export default function Success({ onClose, link }: SuccessProps) {
+  const handleDownload = () => {
+    const linkElement: any = document.createElement('a');
+    linkElement.href = link;
+    linkElement.target = '_blank';
+    document.body.appendChild(linkElement);
+    linkElement.click();
+    document.body.removeChild(linkElement);
+    onClose();
+  };
+
   return (
     <div className="text-center">
       <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground mb-3 text-center">
@@ -18,7 +28,7 @@ export default function Success({ onClose }: SuccessProps) {
         <CustomImage alt="pdf" src={pdfIcon} className="w-[65px] h-[75px]" />
       </div>
       <CustomButton
-        onClick={onClose}
+        onClick={handleDownload}
         fontSize="Body_Large"
         className="!bg-impo_Black w-full border-none mt-[59px] py-[13.5px]"
       >

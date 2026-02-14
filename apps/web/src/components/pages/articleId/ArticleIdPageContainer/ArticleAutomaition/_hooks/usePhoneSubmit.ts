@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 import { useSendOtp } from './useSendOtp';
 
-export function usePhoneSubmit(onSuccess: () => void) {
+export function usePhoneSubmit(onSuccess: (phone: string, sentOtpId?: string) => void) {
   const [phoneValue, setPhoneValue] = useState('');
   const { isSending, sendOtp } = useSendOtp();
 
@@ -12,15 +12,9 @@ export function usePhoneSubmit(onSuccess: () => void) {
 
   const submit = async (e?: React.FormEvent, categoryId?: string) => {
     e?.preventDefault();
-
-    if (!isValid) {
-      return;
-    }
-
-    const success = await sendOtp(phoneValue, categoryId);
-
+    const { success, id } = await sendOtp(phoneValue, categoryId);
     if (success) {
-      onSuccess();
+      onSuccess(phoneValue, id);
     }
   };
 

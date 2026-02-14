@@ -5,15 +5,28 @@ import { toEnglishNumbers } from '@utils/numbers';
 import useApi from '@hooks/useApi';
 import useCustomToast from '@hooks/useCustomToast';
 
+import { SendOtpTyps } from './types';
+
 export function useSendOtp() {
   const { onToast } = useCustomToast();
+
+  let resolver: ((value: SendOtpTyps) => void) | null = null;
 
   const { isLoading, callApi } = useApi({
     method: 'POST',
     url: 'article/contentcategory/otp',
-    onSuccess: (response) => {
-      console.log('OTP ارسال شد:', response);
+
+    onSuccess: (response: SendOtpTyps) => {
+      if (response.valid) {
+        onToast({
+          type: 'success',
+          message: 'کد تایید با موفقیت ارسال شد',
+        });
+      }
+
+      resolver?.(response);
     },
+
     onError: (err) => {
       onToast({
         type: 'error',
@@ -22,21 +35,26 @@ export function useSendOtp() {
     },
   });
 
-  const sendOtp = async (phone: string, contentCategoryId?: string) => {
+  const sendOtp = async (phone: string, contentCategoryId?: string): Promise<{ success: boolean; id?: string }> => {
     if (!phone || phone.length !== 11) {
       onToast({ type: 'error', message: 'شماره باید ۱۱ رقم باشد' });
-      return false;
+      return { success: false };
     }
 
-    try {
-      await callApi({
+    const response = await new Promise<SendOtpTyps>((resolve) => {
+      resolver = resolve;
+
+      callApi({
         phone: toEnglishNumbers(phone),
         categoryId: contentCategoryId,
       });
-      return true; 
-    } catch {
-      return false; 
+    });
+
+    if (response.valid) {
+      return { success: true, id: response.id };
     }
+
+    return { success: false };
   };
 
   return {
