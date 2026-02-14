@@ -13,6 +13,7 @@ import ShareExperienceNewLink from './ShareExperienceNewLink';
 import ShareExperienceSkeleton from './ShareExperienceSkeleton';
 import ShareExperienceTopics from './ShareExperienceTopics';
 import useCategories from './__hooks__/useCategories';
+import useClearQueryParams from './__hooks__/useClearQueryParams';
 import useShareExperienceGetData from './__hooks__/useShareExperienceGetData';
 import useShareExperienceInitialRedirect from './__hooks__/useShareExperienceInitialRedirect';
 import useTopics from './__hooks__/useTopics';
@@ -20,9 +21,11 @@ import useTopics from './__hooks__/useTopics';
 const ShareExperienceContainer = () => {
   useShareExperienceInitialRedirect();
   const { isLoading, data, onSuccessNewHandler } = useShareExperienceGetData();
+
   const scrollRef = useRef<HTMLDivElement>(null);
   const { categories, selectedCategoryId, selectedCategoryIdHandler } = useCategories(data?.categories);
   const { topics } = useTopics(data?.topics);
+  useClearQueryParams();
 
   return (
     <>
