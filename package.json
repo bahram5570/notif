@@ -1,6 +1,6 @@
 {
   "name": "impo-apps",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "lint": "turbo run lint",
@@ -8,18 +8,24 @@
     "core:build": "cd packages/core && npm run build",
     "assets:build": "cd packages/assets && npm run build",
     "packages:build": "npm run assets:build && npm run core:build",
+    "web:build": "npm run packages:build && cd apps/web && npm install && npm run build",
+    "web:vercel:build": "npm run packages:build && cd apps/web && npm run build",
+    "web:export": "cd apps/web && npm run export",
+    "web:install": "cd apps/web && npm install",
+    "web:start": "cd apps/web && npm run start",
+    "web:dev": "cd apps/web && npm run dev",
     "pwa:build": "npm run packages:build && cd apps/pwa && npm install && npm run build",
     "pwa:vercel:build": "npm run packages:build && cd apps/pwa && npm install && npm run build",
     "pwa:export": "cd apps/pwa && npm run export",
     "pwa:start": "cd apps/pwa && npm run start",
     "pwa:install": "cd apps/pwa && npm install",
     "pwa:dev": "cd apps/pwa && npm run dev",
-    "web:build": "npm run packages:build && cd apps/web && npm install && npm run build",
-    "web:vercel:build": "npm run packages:build && cd apps/web && npm run build",
-    "web:export": "cd apps/web && npm run export",
-    "web:install": "cd apps/web && npm install",
-    "web:start": "cd apps/web && npm run start",
-    "web:dev": "cd apps/web && npm run dev"
+    "men-pwa:build": "npm run packages:build && cd apps/men-pwa && npm install && npm run build",
+    "men-pwa:vercel:build": "npm run packages:build && cd apps/men-pwa && npm install && npm run build",
+    "men-pwa:export": "cd apps/men-pwa && npm run export",
+    "men-pwa:start": "cd apps/men-pwa && npm run start",
+    "men-pwa:install": "cd apps/men-pwa && npm install",
+    "men-pwa:dev": "cd apps/men-pwa && npm run dev"
   },
   "dependencies": {
     "@lottiefiles/dotlottie-react": "^0.8.6",

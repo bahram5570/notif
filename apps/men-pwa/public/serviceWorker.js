@@ -94,7 +94,7 @@ const messaging = firebase.messaging();
 
 messaging.onBackgroundMessage((payload) => {
   self.registration.showNotification(payload.data?.title || '', {
-    icon: '/assets/shared/icons/impoLogo.svg',
+    icon: '/assets/shared/icons/min-impoLogo.svg',
     body: payload.data?.message || '',
     image: payload.data?.image || '',
     data: payload.data,
@@ -109,7 +109,7 @@ self.addEventListener('message', (event) => {
   }
 
   self.registration.showNotification(payload?.title || '', {
-    icon: '/assets/shared/icons/impoLogo.svg',
+    icon: '/assets/shared/icons/min-impoLogo.svg',
     body: payload?.message || '',
     data: event.data,
   });

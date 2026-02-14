@@ -1,0 +1,28 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "types": ["./assets"],
+    "paths": {
+      "@components/*": ["./src/components/*"],
+      "@providers/*": ["./src/providers/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@actions/*": ["./src/app/actions/*"],
+      "@services/*": ["./src/services/*"],
+      "@assets/*": ["./public/assets/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@app/*": ["./src/app/*"],
+      "@lib/*": ["./src/lib/*"]
+    },
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "noEmit": true,
+    "strictNullChecks": true
+  },
+  "include": ["**/*.ts", "**/*.tsx", "svgr.jest.ts", "next-env.d.ts", ".next/types/**/*.ts", "public/serviceWorker.js"],
+  "exclude": ["node_modules"]
+}

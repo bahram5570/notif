@@ -1,0 +1,136 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>وب اپلیکیشن ایمپو</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      @font-face {
+        font-family: YekanBakhVF;
+        src: url('/assets/shared/fonts/YekanBakh-VF.ttf');
+      }
+
+      * {
+        font-family: YekanBakhVF;
+        box-sizing: border-box;
+      }
+
+      body {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        max-width: 480px;
+        min-height: 100dvh;
+        max-height: 100dvh;
+        margin: auto;
+        padding: 24px 16px;
+        background-color: '#ffffff';
+      }
+
+      p {
+        text-align: center;
+        margin: initial;
+        padding: initial;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: calc(100% - 44px);
+        padding-top: 10dvh;
+      }
+
+      .offlineImage {
+        width: 200px;
+        height: auto;
+      }
+
+      .title {
+        font-size: 24px;
+        font-weight: 600;
+        padding-top: 36px;
+        padding-bottom: 16px;
+        color: #202020;
+      }
+
+      .description {
+        font-size: 16px;
+        color: #7e7e7e;
+      }
+
+      .reload_button {
+        width: 100%;
+        height: 44px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: auto;
+        border: none;
+        border-radius: 9999px;
+        outline: none;
+        font-size: 18px;
+        font-weight: 500;
+        background-color: #efefef;
+        color: #202020;
+      }
+    </style>
+  </head>
+
+  <body id="body">
+    <div class="container">
+      <img id="offlineImage" src="/assets/images/offline.png" alt="offline" class="offlineImage" />
+
+      <p id="title" class="title">اینترنتت وصل نیست</p>
+
+      <p id="description" class="description">
+        به نظر میاد که دسترسیت به اینترنت قطع شده، در صورتی که فیلترشکنت روشنه خاموشش کن و دوباره امتحان کن
+      </p>
+    </div>
+
+    <button id="reload_button" class="reload_button" onclick="refetch()">تلاش مجدد</button>
+
+    <script>
+      function refetch() {
+        if (window.navigator.onLine) {
+          const pathname = window.location.pathname;
+
+          if (pathname === '/offlinePage.html') {
+            window.history.back();
+          } else {
+            window.location.reload();
+          }
+        }
+      }
+
+      function handleDarkModeStyles() {
+        const bodyELement = document.getElementById('body');
+        const titleELement = document.getElementById('title');
+        const descriptionElement = document.getElementById('description');
+        const reloadButtonElement = document.getElementById('reload_button');
+
+        const theme = localStorage.getItem('theme');
+        let isDark = false;
+
+        if (theme === 'dark') {
+          isDark = true;
+        } else if (theme === 'light') {
+          isDark = false;
+        } else {
+          isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        }
+
+        if (isDark && bodyELement && titleELement && descriptionElement && reloadButtonElement) {
+          bodyELement.style.backgroundColor = '#202020';
+          titleELement.style.color = '#ffffff';
+          descriptionElement.style.color = '#d0d0d0';
+          reloadButtonElement.style.color = '#ffffff';
+          reloadButtonElement.style.backgroundColor = '#646464';
+        }
+      }
+
+      handleDarkModeStyles();
+    </script>
+  </body>
+</html>

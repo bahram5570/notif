@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@repo/core/theme.css';
+@import '@repo/core/theme.tailwind.css';
+
+@import '~react-toastify/dist/ReactToastify.min.css';
+
+@font-face {
+  font-family: YekanBakhVF;
+  src: url('/assets/shared/fonts/YekanBakh-VF.ttf');
+}
+
+body {
+  font-family: YekanBakhVF;
+}
