@@ -1,10 +1,16 @@
 'use server';
 
+import { getExpireDate } from '@repo/core/utils/cookies';
 import { toEnglishNumbers } from '@repo/core/utils/numbers';
 import { CycleThemeEnum } from '@services/loginServices/enum';
-import { getUserExpiresDate } from '@utils/cookies';
 
-import { CULTURE_COOKIE_NAME, USER_COOKIE_NAME, USER_INFO_COOKIE_NAME } from '@constants/cookie.constants';
+import {
+  CULTURE_COOKIE_NAME,
+  FIREBASE_COOKIE_NAME,
+  PAYMENT_COOKIE_NAME,
+  USER_COOKIE_NAME,
+  USER_INFO_COOKIE_NAME,
+} from '@constants/cookie.constants';
 import { CalendarTypeEnum, CultureTypes } from '@repo/core/providers/CultureProvider';
 import { cookies } from 'next/headers';
 
@@ -26,7 +32,6 @@ export const getCultureCookie = async () => {
 };
 
 // # User
-
 export type UserCookieTypes = {
   password: string;
   identity: string;
@@ -36,7 +41,7 @@ export type UserCookieTypes = {
 
 export const setUserCookie = async (props: UserCookieTypes) => {
   const identity = toEnglishNumbers(props.identity);
-  const expires = getUserExpiresDate(30);
+  const expires = getExpireDate(30);
 
   const value = JSON.stringify({
     password: props.password,
@@ -55,14 +60,13 @@ export const getUserCookie = async () => {
 };
 
 // # User info
-
 export type UserInfoCookieTypes = {
   installationPurpose: { status: number; periodStatus: number };
   cycleTheme: CycleThemeEnum;
 };
 
 export const setUserInfoCookie = async (props: UserInfoCookieTypes) => {
-  const expires = getUserExpiresDate(30);
+  const expires = getExpireDate(30);
 
   const value = JSON.stringify({
     installationPurpose: props.installationPurpose,
@@ -78,10 +82,42 @@ export const getUserInfoCookie = async () => {
   return result;
 };
 
-// # Clear
+// # Firebase
+export const getFirebaseTokenCookie = async () => {
+  const cookie = cookies().get(FIREBASE_COOKIE_NAME);
+  const result = cookie ? cookie.value : null;
+  return result;
+};
 
+export const setFirebaseTokenCookie = async (ft: string) => {
+  const expires = getExpireDate(365);
+  cookies().set({ name: FIREBASE_COOKIE_NAME, value: ft, httpOnly: false, path: '/', secure: false, expires });
+};
+
+// # Payment
+type PaymentCookieTypes = { route: string };
+
+export const setPaymentCookie = async (v: PaymentCookieTypes) => {
+  const expires = getExpireDate(10);
+  const value = JSON.stringify(v);
+  cookies().set({ name: PAYMENT_COOKIE_NAME, value, httpOnly: false, path: '/', secure: false, expires });
+};
+
+export const getPaymentCookie = async () => {
+  const cookie = cookies().get(PAYMENT_COOKIE_NAME);
+  const result: PaymentCookieTypes | null = cookie ? JSON.parse(cookie.value) : null;
+  return result;
+};
+
+export const removePaymentCookie = async () => {
+  cookies().delete(PAYMENT_COOKIE_NAME);
+};
+
+// # Clear
 export const clearUserCookiesHandler = async () => {
   cookies().delete(USER_COOKIE_NAME);
   cookies().delete(USER_INFO_COOKIE_NAME);
+
+  await removePaymentCookie();
   await setCultureCookie({ calendarType: CalendarTypeEnum.Jalali });
 };

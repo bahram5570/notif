@@ -1,5 +1,4 @@
-import { ActionTypeEnum, ActionTypes, PopupTypeEnum } from '@repo/core/providers/WidgetActionsProvider';
-
+import { ActionTypeEnum, ActionTypes, PopupTypeEnum } from '../WidgetActionsProvider';
 import { NotificationsDataTypes } from './types';
 
 export const notifHandlerActionMaker = (data: NotificationsDataTypes) => {

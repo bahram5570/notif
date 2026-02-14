@@ -1,10 +1,10 @@
 // @ts-ignore
-import { clearUserCookiesHandler, getUserCookie } from '@actions/userCookies.actions';
+import * as actions from '@actions/userCookies.actions';
 
 import { PwaHttpOptionsTypes, PwaHttpTypes } from './types';
 
 export const httpOptionsMaker = async (props: PwaHttpTypes) => {
-  const user = await getUserCookie();
+  const user = await actions.getUserCookie();
   const Authorization = user ? `Bearer ${user.token}` : undefined;
 
   let headers = {};
@@ -31,6 +31,6 @@ export const httpOptionsMaker = async (props: PwaHttpTypes) => {
 };
 
 export const pwaHttpLogoutHandler = async () => {
-  await clearUserCookiesHandler();
+  await actions.clearUserCookiesHandler();
   window.location.href = '/';
 };

@@ -1,45 +1,62 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { toEnglishNumbers } from '@repo/core/utils/numbers';
-import { getFirebaseCookieToken } from '@utils/cookies';
 
+import { getFirebaseTokenCookie } from '@actions/userCookies.actions';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { SuccessHandlerTypes, UseCodeProps } from './types';
 
 const useCode = ({ identity, isRegister }: UseCodeProps) => {
-  const toast = useCustomToast();
+  const { notifyToastHandler } = useCustomToast();
+  const [payload, setPayload] = useState<object | null>(null);
+
+  const payloadHandler = async (otpTypes?: number) => {
+    const token = await getFirebaseTokenCookie();
+
+    const result = {
+      token: '',
+      phoneModel: '',
+      deviceToken: token,
+      identity: toEnglishNumbers(identity || ''),
+      otpTypes: otpTypes === undefined ? null : otpTypes,
+    };
+
+    return result;
+  };
+
+  useEffect(() => {
+    if (identity) {
+      const handleData = async () => {
+        const result = await payloadHandler();
+        setPayload(result);
+      };
+
+      handleData();
+    }
+  }, [identity]);
 
   const successHandler: SuccessHandlerTypes = ({ result }) => {
     if (result) {
-      toast.notifyToastHandler({ message: 'کد 6 رقمی ارسال شد' });
+      notifyToastHandler({ message: 'کد 6 رقمی ارسال شد' });
     }
   };
 
   const method = isRegister ? 'POST' : 'PUT';
-  const payload = {
-    token: '',
-    phoneModel: '',
-    deviceToken: getFirebaseCookieToken(),
-    identity: toEnglishNumbers(identity || ''),
-  };
   const api = isRegister ? 'customerAccount/GetIdentity' : 'customerAccount/setIdentity';
 
-  const { callApi } = usePwaApi({
-    onSuccess: successHandler,
-    method,
-    api,
-  });
+  const { callApi } = usePwaApi({ onSuccess: successHandler, method, api });
 
   useEffect(() => {
-    if (identity !== undefined) {
+    if (payload) {
       callApi(payload);
     }
-  }, [identity]);
+  }, [payload]);
 
-  const resetCodeHandler = () => {
-    callApi(payload);
+  const resetCodeHandler = async (type?: number) => {
+    const result = await payloadHandler(type);
+    callApi(result);
   };
 
   return { resetCodeHandler };

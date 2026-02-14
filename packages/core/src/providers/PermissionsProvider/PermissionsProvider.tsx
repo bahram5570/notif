@@ -2,19 +2,29 @@
 
 import { useEffect, useRef } from 'react';
 
-import { permissionHandler } from './__utils__';
-import { isDevelopeMode } from '@repo/core/utils/system';
+import { isDevelopeMode } from '../../utils/system';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import { useRouter } from 'next/navigation';
 
-const PermissionsProvider = () => {
+import { useOperatingSystem } from '../../hooks/useOperatingSystem';
+import { firebaseTokenHandler } from '../../lib/firebase';
+import { PermissionsProviderTypes } from './types';
+
+export const PermissionsProvider = ({ firebaseConfigs, vapidKey }: PermissionsProviderTypes) => {
   const router = useRouter();
   const isFirstTime = useRef(isDevelopeMode());
   const { operatingSystem, isAddToHome } = useOperatingSystem();
 
   const reloadHandler = () => {
     router.refresh();
+  };
+
+  const permissionHandler = async () => {
+    await Notification.requestPermission().then(async (result) => {
+      if (result === 'granted') {
+        await firebaseTokenHandler({ firebaseConfigs, vapidKey, onReload: reloadHandler });
+      }
+    });
   };
 
   useEffect(() => {
@@ -26,11 +36,11 @@ const PermissionsProvider = () => {
     const accessHandler = async () => {
       if ('Notification' in window && isAddToHome !== null) {
         if (operatingSystem === 'ios' && isAddToHome) {
-          await permissionHandler(reloadHandler);
+          await permissionHandler();
         }
 
         if (operatingSystem === 'android' || operatingSystem === 'windows') {
-          await permissionHandler(reloadHandler);
+          await permissionHandler();
         }
       }
     };
@@ -40,5 +50,3 @@ const PermissionsProvider = () => {
 
   return <></>;
 };
-
-export default PermissionsProvider;

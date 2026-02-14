@@ -1,16 +1,18 @@
+'use client';
+
 import { useEffect, useRef } from 'react';
 
+import { isDevelopeMode } from '../../utils/system';
 import { notifHandlerActionMaker } from './__utils__';
-import { isDevelopeMode } from '@repo/core/utils/system';
 
-import { getFirebaseMessaging } from '@lib/firebaseConfig';
-import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 import { MessagePayload, onMessage } from 'firebase/messaging';
 
-import { STORED_NOTIFICATIONS_CACHE_NAME } from '../constants';
-import { NotificationsDataTypes } from './types';
+import { STORED_NOTIFICATIONS_CACHE_NAME } from '../../constants/app.constants';
+import { useWidgetActions } from '../../hooks/useWidgetActions';
+import { getFirebaseMessaging } from '../../lib/firebase';
+import { NotificationsDataTypes, ServiceWorkerProviderTypes } from './types';
 
-const useServiceWorker = () => {
+export const ServiceWorkerProvider = ({ children, firebaseConfigs }: ServiceWorkerProviderTypes) => {
   const isFirstTime = useRef(isDevelopeMode());
   const { actionHandler } = useWidgetActions();
 
@@ -49,7 +51,7 @@ const useServiceWorker = () => {
         await navigator.serviceWorker.register('/serviceWorker.js').then(async () => {
           // # Initializes Firebase Messaging to handle push notifications when the app is open
 
-          await getFirebaseMessaging().then((messaging) => {
+          await getFirebaseMessaging(firebaseConfigs).then((messaging) => {
             if (messaging) {
               onMessage(messaging, (payload) => {
                 handleAppNotification(payload);
@@ -79,6 +81,6 @@ const useServiceWorker = () => {
       window.removeEventListener('focus', handleServiceWorker);
     };
   }, []);
-};
 
-export default useServiceWorker;
+  return <>{children}</>;
+};

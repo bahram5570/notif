@@ -1,4 +1,4 @@
-import { getUserExpiresDate } from '@utils/cookies';
+import { getExpireDate } from '@repo/core/utils/cookies';
 
 import { FetchedUserTypes } from '@components/activation/CompleteRegisterContainer/types';
 import { FIREBASE_COOKIE_NAME, USER_COOKIE_NAME, USER_INFO_COOKIE_NAME } from '@constants/cookie.constants';
@@ -17,7 +17,7 @@ export const handleActivationCrLoggin = async (props: HandleActivationCrLogginTy
     const userData = JSON.parse(data) as FetchedUserTypes;
 
     response.cookies.set(USER_COOKIE_NAME, JSON.stringify(userData.userCookie), {
-      expires: getUserExpiresDate(365),
+      expires: getExpireDate(365),
       httpOnly: true,
       secure: false,
       path: '/',

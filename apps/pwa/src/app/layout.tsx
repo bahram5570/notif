@@ -1,10 +1,10 @@
 import './globals.css';
 
 import { getCultureCookie } from '@actions/userCookies.actions';
+import { FIREBASE_CONFIG } from '@constants/app.constants';
 import ErrorProvider from '@providers/ErrorProvider';
 import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
 import PwaWidgetActionsProvider from '@providers/PwaWidgetActionsProvider';
-import ServiceWorkerProvider from '@providers/ServiceWorkerProvider';
 import {
   MAX_SCREEN_WIDTH,
   PORTAL_FEEDBACK_TOAST_ID,
@@ -17,6 +17,7 @@ import { OperatingSystemProvider } from '@repo/core/providers/OperatingSystemPro
 import { PageNavigationProvider } from '@repo/core/providers/PageNavigationProvider';
 import { PreviewImageProvider } from '@repo/core/providers/PreviewImageProvider';
 import { ReactQueryProvider } from '@repo/core/providers/ReactQueryProvider';
+import { ServiceWorkerProvider } from '@repo/core/providers/ServiceWorkerProvider';
 import { ToastProvider } from '@repo/core/providers/ToastProvider';
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
@@ -75,7 +76,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
                   <ToastProvider>
                     <PageNavigationProvider>
                       <PwaWidgetActionsProvider>
-                        <ServiceWorkerProvider>
+                        <ServiceWorkerProvider firebaseConfigs={FIREBASE_CONFIG}>
                           <>{children}</>
                           <ModalsQueryParamsProvider />
                           <PreviewImageProvider />

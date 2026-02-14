@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import { LoginResponseTypes } from '@services/loginServices/types';
-import { getFirebaseCookieToken } from '@utils/cookies';
 
-import { getUserCookie } from '@actions/userCookies.actions';
+import { getFirebaseTokenCookie, getUserCookie } from '@actions/userCookies.actions';
 import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
@@ -24,14 +23,15 @@ const useGetData = () => {
   useEffect(() => {
     const handleApi = async () => {
       const user = await getUserCookie();
+      const deviceToken = await getFirebaseTokenCookie();
 
       const payload = {
+        deviceToken,
         phoneModel: '',
         channelVersion: '',
         version: APP_VERSION || '',
         identity: user?.identity || '',
         password: user?.password || '',
-        deviceToken: getFirebaseCookieToken(),
       };
 
       getSubscription(payload);

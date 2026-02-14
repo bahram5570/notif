@@ -3,8 +3,8 @@
 import { useEffect, useRef } from 'react';
 
 import { isDevelopeMode } from '@repo/core/utils/system';
-import { getPaymentCookie, removePaymentCookie } from '@utils/cookies';
 
+import { getPaymentCookie, removePaymentCookie } from '@actions/userCookies.actions';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { useRouter } from 'next/navigation';
 
@@ -22,14 +22,14 @@ const PaymentProvider = () => {
       return;
     }
 
-    const handlePayment = () => {
-      const data = getPaymentCookie();
+    const handlePayment = async () => {
+      const data = await getPaymentCookie();
 
       const params = new URLSearchParams(window.location.search).get(PAYMENT_QUERY_NAME);
       const queryData = params ? (JSON.parse(params) as PaymentQueryTypes) : null;
 
       if (data) {
-        removePaymentCookie();
+        await removePaymentCookie();
 
         if (!queryData) {
           return;

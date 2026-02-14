@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 // @ts-ignore
-import { getUserInfoCookie } from '@actions/userCookies.actions';
+import * as actions from '@actions/userCookies.actions';
 
 import { MAX_SCREEN_WIDTH } from '../../../../../constants/app.constants';
 import { InstallationPurposeEnum } from '../../../../../constants/user.constants';
@@ -21,7 +21,7 @@ const CircleContainer = ({ data, loadingStatus }: CircleContainerProps) => {
 
   useEffect(() => {
     const handleResult = async () => {
-      const userInfo = await getUserInfoCookie();
+      const userInfo = await actions.getUserInfoCookie();
 
       const result =
         userInfo !== null &&
