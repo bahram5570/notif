@@ -35,7 +35,7 @@ const ArticleIdPageContainer = async (props: ArticleIdPageContainerTypes) => {
 
   return (
     <HeaderFooterContainer isArticlePage={true} hasFooterLink={true}>
-      {props.contentCategory !== null && <ArticleAutomaition contentCategory={props.contentCategory} />}
+      {props.contentCategory && <ArticleAutomaition contentCategory={props.contentCategory} />}
 
       <div className="relative w-full flex justify-center">
         <article className=" flex flex-col gap-6 md:gap-12 pt-[100px] md:pt-[150px] landing_container px-4 md:px-0">
