@@ -9,8 +9,10 @@ export const SHARE_EXPERIENCE_PROFILE_CONTAINER_ID = 'shareExperienceProfileCona
 export const SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME = 'shareExperienceUnfollowModal';
 export const SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME = 'shareExperienceReportModal';
 export const SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME = 'shareExperienceDeleteModal';
+
 export const SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME = 'shareExperienceTopicsModal';
 export const SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME = 'shareExperienceNewExerciseModal';
+
 export const SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME = 'shareExperienceCommentsModal';
 export const SHARE_EXPERIENCE_TOPIC_MODAL_QUERY_NAME = 'shareExperienceTopicModal';
 export const SHARE_EXPERIENCE_PROFILE_QUERY_NAME = 'shareExperienceProfileModal';

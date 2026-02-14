@@ -1,5 +1,6 @@
 import { SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import CustomModal from '@components/ui/CustomModal';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import ShareExperienceDefultAvatarListModalContainer from './ShareExperienceDefultAvatarListModalContainer';
@@ -7,6 +8,7 @@ import { QueryDataShareExperienceDefultAvatarListModal } from './type';
 
 const ShareExperienceDefultAvatarListModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
+  const { getZIndex } = useOverlayIndex();
 
   const isOpen = getQueryParams(SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME) !== null;
 
@@ -14,12 +16,14 @@ const ShareExperienceDefultAvatarListModal = () => {
   const queryData =
     queryParams === null ? null : (JSON.parse(queryParams) as QueryDataShareExperienceDefultAvatarListModal);
 
+  const zIndex = getZIndex(SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME, queryData?.id);
+
   return (
     <CustomModal
       className=" !min-h-fit mt-32 !rounded-s-xl !rounded-e-xl !px-0"
       isSlidingMode={false}
       isOpen={isOpen}
-      zIndex={77}
+      zIndex={zIndex}
       isFullScreen
     >
       <>{isOpen && <ShareExperienceDefultAvatarListModalContainer id={queryData?.id} />}</>

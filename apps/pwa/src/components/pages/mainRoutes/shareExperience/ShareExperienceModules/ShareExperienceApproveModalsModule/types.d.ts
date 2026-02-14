@@ -8,4 +8,5 @@ export interface ShareExperienceApproveModalsModuleProps {
   isOpen: boolean;
   title: string;
   id?: string;
+  zIndex?: number;
 }

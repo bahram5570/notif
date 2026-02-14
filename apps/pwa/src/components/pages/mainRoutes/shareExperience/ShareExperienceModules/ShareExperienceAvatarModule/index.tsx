@@ -1,10 +1,8 @@
 import UploadIcon from '@assets/icons/upload.svg';
 
-import {
-  SHARE_EXPERIENCE_CHANGE_AVATAR_QUERY_NAME,
-  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
-} from '@components/pages/mainRoutes/shareExperience/constants';
+import { SHARE_EXPERIENCE_CHANGE_AVATAR_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import CustomImage from '@components/ui/CustomImage';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
@@ -20,6 +18,7 @@ const ShareExperienceAvatarModule = ({
   const { callEvent } = useAnalytics();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
+  const { increaseZIndex } = useOverlayIndex();
 
   const selectProfileHandler = () => {
     callEvent('ShareExperienceSelfProfile');
@@ -29,9 +28,9 @@ const ShareExperienceAvatarModule = ({
       id: id,
       username: username,
       avatar: avatarImage,
-      [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime(),
     });
 
+    increaseZIndex(SHARE_EXPERIENCE_CHANGE_AVATAR_QUERY_NAME, id);
     newQueryParamsHandler({ [SHARE_EXPERIENCE_CHANGE_AVATAR_QUERY_NAME]: paramsData });
   };
 

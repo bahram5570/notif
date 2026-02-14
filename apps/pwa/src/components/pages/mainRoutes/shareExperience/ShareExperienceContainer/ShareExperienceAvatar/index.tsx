@@ -4,6 +4,7 @@ import {
 } from '@components/pages/mainRoutes/shareExperience/constants';
 import CustomImage from '@components/ui/CustomImage';
 import { MAX_SCREEN_WIDTH } from '@constants/app.constants';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -12,6 +13,7 @@ import { ShareExperienceAvatarProps } from './types';
 const ShareExperienceAvatar = ({ profile }: ShareExperienceAvatarProps) => {
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { newQueryParamsHandler } = useQueryParamsHandler();
+  const { increaseZIndex } = useOverlayIndex();
 
   const selectHandler = () => {
     pageNavigationHandler({ id: profile.userId, showProgressBar: true });
@@ -20,6 +22,7 @@ const ShareExperienceAvatar = ({ profile }: ShareExperienceAvatarProps) => {
       id: profile.userId,
       [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime(),
     });
+    increaseZIndex(SHARE_EXPERIENCE_PROFILE_QUERY_NAME, profile.userId);
     newQueryParamsHandler({ [SHARE_EXPERIENCE_PROFILE_QUERY_NAME]: paramsData });
   };
 

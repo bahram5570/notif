@@ -1,12 +1,14 @@
 import { SHARE_EXPERIENCE_PROFILE_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import CustomModal from '@components/ui/CustomModal';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import ShareExperienceProfileModalContainer from './ShareExperienceProfileModalContainer';
-import { QueryDataShareExperienceProfileModal, ShareExperienceProfileModalProps } from './type';
+import { QueryDataShareExperienceProfileModal } from './type';
 
-const ShareExperienceProfileModal = ({ shareExperienceOrdersList }: ShareExperienceProfileModalProps) => {
+const ShareExperienceProfileModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
+  const { getZIndex } = useOverlayIndex();
 
   const isOpen = getQueryParams(SHARE_EXPERIENCE_PROFILE_QUERY_NAME) !== null;
 
@@ -16,7 +18,7 @@ const ShareExperienceProfileModal = ({ shareExperienceOrdersList }: ShareExperie
       ? null
       : (JSON.parse(shareExperienceProfileParam) as QueryDataShareExperienceProfileModal);
 
-  const zIndex = shareExperienceOrdersList?.[SHARE_EXPERIENCE_PROFILE_QUERY_NAME];
+  const zIndex = getZIndex(SHARE_EXPERIENCE_PROFILE_QUERY_NAME, queryData?.id || '');
 
   return (
     <>

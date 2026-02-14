@@ -1,6 +1,7 @@
 import TrashIcon from '@assets/icons/trash.svg';
 
 import { SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import ShareExperienceApproveModalsModule from '../../ShareExperienceModules/ShareExperienceApproveModalsModule';
@@ -12,7 +13,7 @@ import { QueriesDataTypes } from './types';
 
 const ShareExperienceDeleteModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
-
+  const { getZIndex } = useOverlayIndex();
   const { replyApplyHandler, isReplyLoading } = useReplyDelete();
   const { commentApplyHandler, isCommentLoading } = useCommentDelete();
   const { experienceApplyHandler, isExperienceLoading } = useExperienceDelete();
@@ -22,20 +23,24 @@ const ShareExperienceDeleteModal = () => {
 
   const description = queryData ? DELETE_MODAL_SCRIPTS[queryData.type].description : '';
   const title = queryData ? DELETE_MODAL_SCRIPTS[queryData.type].title : '';
+  let zIndex;
 
   const applyHandler = () => {
     if (queryData) {
       switch (queryData.type) {
         case 'experience':
           experienceApplyHandler(queryData.shareId);
+          zIndex = getZIndex(SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME, queryData?.shareId);
           break;
 
         case 'comment':
           commentApplyHandler({ shareId: queryData.shareId, commentId: queryData.commentId });
+          zIndex = getZIndex(SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME, queryData.commentId);
           break;
 
         case 'reply':
           replyApplyHandler({ shareId: queryData.shareId, commentId: queryData.commentId, replyId: queryData.replyId });
+          zIndex = getZIndex(SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME, queryData.replyId);
           break;
       }
     }
@@ -66,6 +71,7 @@ const ShareExperienceDeleteModal = () => {
         title={title}
         icon={Icon}
         id={idDelete}
+        zIndex={zIndex}
       />
     </>
   );

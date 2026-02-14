@@ -4,6 +4,7 @@ import { HEADER_HEIGHT } from '@components/MainPageLayout/constants';
 import CustomImage from '@components/ui/CustomImage';
 import CustomSlider from '@components/ui/CustomSlider';
 import Dark_Typography from '@components/ui/Dark_Typography';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -12,12 +13,14 @@ import { ShareExperienceTopicsProps } from './type';
 const ShareExperienceTopics = ({ topics }: ShareExperienceTopicsProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
+  const { increaseZIndex } = useOverlayIndex();
 
   const clickHandler = (id: string) => {
     pageNavigationHandler({ id, showProgressBar: true });
 
     const { queryKey, queryValue } = shareExperienceTopicQueryMaker(id);
     newQueryParamsHandler({ [queryKey]: queryValue });
+    increaseZIndex(queryKey, id);
   };
 
   return (

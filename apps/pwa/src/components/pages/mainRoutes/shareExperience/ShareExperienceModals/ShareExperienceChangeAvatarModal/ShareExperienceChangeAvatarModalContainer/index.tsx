@@ -1,11 +1,9 @@
 import GalleryWideIcon from '@assets/icons/galleryWide.svg';
 
-import {
-  SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME,
-  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
-} from '@components/pages/mainRoutes/shareExperience/constants';
+import { SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import FileInputManager from '@components/ui/FileInputManager';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import useFileUpload from '@hooks/useFileUpload';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
@@ -20,7 +18,7 @@ const ShareExperienceChangeAvatarModalContainer = ({
   const { onProfileChangeHandler } = useUpdateProfile();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-
+  const { increaseZIndex } = useOverlayIndex();
   const { fileDataHandler, uploadImageLoading } = useFileUpload({
     onSuccess: (v: string) => onProfileChangeHandler({ avatarImage: v, username: username }),
     api: 'shareeexperience/v3/file',
@@ -30,7 +28,8 @@ const ShareExperienceChangeAvatarModalContainer = ({
     if (id) {
       pageNavigationHandler({ id: id, showProgressBar: true });
 
-      const paramsData = JSON.stringify({ id, [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime() });
+      const paramsData = JSON.stringify({ id });
+      increaseZIndex(SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME, id);
       newQueryParamsHandler({ [SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME]: paramsData });
     }
   };

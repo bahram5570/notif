@@ -5,6 +5,7 @@ import {
   SHARE_EXPERIENCE_PROFILE_QUERY_NAME,
 } from '@components/pages/mainRoutes/shareExperience/constants';
 import CustomImage from '@components/ui/CustomImage';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -19,14 +20,15 @@ const ShareExperienceProfileIconModule = ({
 }: ShareExperienceProfileIconModuleProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
+  const { increaseZIndex } = useOverlayIndex();
 
   const selectProfileHandler = () => {
     if (!isSelf) {
       pageNavigationHandler({ id, showProgressBar: true });
 
       const paramsData = JSON.stringify({ id, [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime() });
-
       newQueryParamsHandler({ [SHARE_EXPERIENCE_PROFILE_QUERY_NAME]: paramsData });
+      increaseZIndex(SHARE_EXPERIENCE_PROFILE_QUERY_NAME, id);
     }
   };
 

@@ -4,6 +4,7 @@ import {
 } from '@components/pages/mainRoutes/shareExperience/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
 import Dark_Typography from '@components/ui/Dark_Typography';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import useAnalytics from '@hooks/useAnalytics';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
@@ -16,6 +17,7 @@ const ShareExperienceFollowModule = (props: ShareExperienceFollowModuleProps) =>
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { followHandler, isFollowLoading } = useShareExperienceFollow(props.experienceId);
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { increaseZIndex } = useOverlayIndex();
 
   const loadingId = `ShareExperienceFollowModule ${props.userId}`;
   const isLoading = isFollowLoading || pageNavigationLoading === loadingId;
@@ -32,8 +34,8 @@ const ShareExperienceFollowModule = (props: ShareExperienceFollowModuleProps) =>
           userId: props.userId,
           dummyData: Math.random(),
           userName: props.name,
-          [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime(),
         });
+        increaseZIndex(SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME, props.userId);
         newQueryParamsHandler({ [SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME]: queryData });
 
         pageNavigationHandler({

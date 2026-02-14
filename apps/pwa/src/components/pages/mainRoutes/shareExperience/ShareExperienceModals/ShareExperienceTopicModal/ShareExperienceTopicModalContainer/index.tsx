@@ -76,6 +76,7 @@ const ShareExperienceTopicModalContainer = ({
             queries={{ [SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME]: 'true' }}
             placeholder={topicExperiencesData?.inputText || ''}
             avatar={avatarImage || ''}
+            queryName={SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME}
           />
         )}
       </ShareExperienceTopicModalContainerLayout>

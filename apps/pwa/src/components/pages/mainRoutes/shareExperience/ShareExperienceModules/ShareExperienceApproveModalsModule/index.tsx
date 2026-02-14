@@ -2,6 +2,7 @@ import CustomModal from '@components/ui/CustomModal';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
 import Loading from '@components/ui/Loading';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import useAnalytics from '@hooks/useAnalytics';
 import { useRouter } from 'next/navigation';
 
@@ -17,8 +18,10 @@ const ShareExperienceApproveModalsModule = ({
   title,
   icon,
   id,
+  zIndex = 76,
 }: ShareExperienceApproveModalsModuleProps) => {
   const { callEvent } = useAnalytics();
+
   const router = useRouter();
 
   const clickHandler = () => {
@@ -30,7 +33,7 @@ const ShareExperienceApproveModalsModule = ({
     <>
       {isLoading && <Loading />}
 
-      <CustomModal className="!w-[calc(100%_-_32px)] !min-h-fit" isOpen={isOpen} zIndex={76}>
+      <CustomModal className="!w-[calc(100%_-_32px)] !min-h-fit" isOpen={isOpen} zIndex={zIndex}>
         <div className="w-full rounded-xl flex flex-col items-center justify-center gap-4">
           {icon && icon}
 

@@ -1,36 +1,48 @@
 'use client';
 
-import { createContext, useRef, useState } from 'react';
+import { createContext, useState } from 'react';
 
-import { useSearchParams } from 'next/navigation';
+import { MODAL_DEFAULT_Z_INDEX } from '@components/ui/CustomModal/constants';
 
-import { MODAL_DEFAULT_Z_INDEX } from './constant';
-import { OverlayIndexContextType } from './type';
+import { GetZindexHandlerType, IncreaseZIndexHandlerType, OverlayIndexContextType } from './type';
 
 export const OverlayIndexContext = createContext<OverlayIndexContextType>({
   increaseZIndex: () => {},
-  zIndex: MODAL_DEFAULT_Z_INDEX,
+  getZIndex: () => MODAL_DEFAULT_Z_INDEX,
 });
 
 const OverlayIndexProvider = ({ children }: { children: React.ReactNode }) => {
-  const [zIndex, setZIndex] = useState(MODAL_DEFAULT_Z_INDEX);
-  const searchParams = useSearchParams();
-  const prevValuesRef = useRef<string[]>([]);
+  const [modalZIndexes, setModalZIndexes] = useState<Record<string, number>>({});
 
-  const handleIncreaseZIndex = () => {
-    const values = Array.from(searchParams.values());
-    const prevValues = prevValuesRef.current;
+  // use id for makes uniq key of modalZIndex object
 
-    const changed = values.some((v, i) => v !== prevValues[i]) || values.length !== prevValues.length;
-
-    if (changed) {
-      setZIndex((prev) => prev + 1);
+  const handleIncreaseZIndex: IncreaseZIndexHandlerType = (modalKey, value) => {
+    let instanceKey;
+    if (value) {
+      instanceKey = `${modalKey}:${value}`;
+    } else {
+      instanceKey = `${modalKey}`;
     }
-    prevValuesRef.current = values;
+
+    setModalZIndexes((prev) => {
+      const maxZ = Math.max(MODAL_DEFAULT_Z_INDEX, ...Object.values(prev));
+      return { ...prev, [instanceKey]: maxZ + 1 };
+    });
+  };
+
+  const getZIndex: GetZindexHandlerType = (modalKey, value) => {
+    let instanceKey;
+    if (value) {
+      instanceKey = `${modalKey}:${value}`;
+    } else {
+      instanceKey = `${modalKey}`;
+    }
+
+    return modalZIndexes[instanceKey] ?? MODAL_DEFAULT_Z_INDEX;
   };
 
   return (
-    <OverlayIndexContext.Provider value={{ increaseZIndex: handleIncreaseZIndex, zIndex }}>
+    <OverlayIndexContext.Provider value={{ increaseZIndex: handleIncreaseZIndex, getZIndex }}>
       {children}
     </OverlayIndexContext.Provider>
   );

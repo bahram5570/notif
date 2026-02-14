@@ -7,6 +7,7 @@ import {
 } from '@components/pages/mainRoutes/shareExperience/constants';
 import Dark_Spinner from '@components/ui/Dark_Spinner';
 import Dark_Typography from '@components/ui/Dark_Typography';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -15,6 +16,7 @@ import { ReplyBtnProps } from './types';
 const ReplyBtn = ({ avatar, name, shareId, commentId, userId }: ReplyBtnProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { increaseZIndex } = useOverlayIndex();
 
   const loadingId = `ReplyBtn ${shareId} ${commentId} ${userId}`;
   const isLoading = pageNavigationLoading === loadingId;
@@ -28,10 +30,9 @@ const ReplyBtn = ({ avatar, name, shareId, commentId, userId }: ReplyBtnProps) =
         shareId,
         commentId,
         userId,
-        [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime(),
       };
       const queryData = JSON.stringify(queries);
-
+      increaseZIndex(SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME, commentId);
       newQueryParamsHandler({ [SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME]: queryData });
       pageNavigationHandler({
         showProgressBar: false,

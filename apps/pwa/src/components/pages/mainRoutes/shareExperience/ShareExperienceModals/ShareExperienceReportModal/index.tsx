@@ -1,6 +1,7 @@
 import InfoIcon from '@assets/icons/dangerTriangle.svg';
 
 import { SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
 import ShareExperienceApproveModalsModule from '../../ShareExperienceModules/ShareExperienceApproveModalsModule';
@@ -8,6 +9,7 @@ import useShareExperienceReport from './__hooks__/useShareExperienceReport';
 
 const ShareExperienceReportModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
+  const { getZIndex } = useOverlayIndex();
   const { reportHandler, isLoading } = useShareExperienceReport();
 
   const queryParams = getQueryParams(SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME);
@@ -18,6 +20,8 @@ const ShareExperienceReportModal = () => {
       <InfoIcon className="w-7 fill-impo_Error_Error" />
     </div>
   );
+
+  const zIndex = getZIndex(SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME, queryData?.experienceId);
 
   return (
     <>
@@ -30,6 +34,7 @@ const ShareExperienceReportModal = () => {
         isLoading={isLoading}
         title="ریپورت پست"
         icon={Icon}
+        zIndex={zIndex}
       />
     </>
   );

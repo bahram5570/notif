@@ -6,6 +6,7 @@ import {
 } from '@components/pages/mainRoutes/shareExperience/constants';
 import Dark_Button from '@components/ui/Dark_Button';
 import Dark_Typography from '@components/ui/Dark_Typography';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import usePageNavigationLoading from '@hooks/usePageNavigationLoading';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
 
@@ -24,6 +25,7 @@ const ShareExperienceProfileTopPart = ({
   const { followHandler, isFollowLoading } = useShareExperienceFollow();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
+  const { increaseZIndex } = useOverlayIndex();
 
   const textBtn = isSelf ? 'ویرایش پروفایل' : isFollow ? 'دنبال شده' : 'دنبال کردن';
 
@@ -32,6 +34,7 @@ const ShareExperienceProfileTopPart = ({
       pageNavigationHandler({ id: profile.id, showProgressBar: true });
 
       const paramsData = JSON.stringify({ id: profile.id, [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime() });
+      increaseZIndex(SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME, profile.id);
       newQueryParamsHandler({ [SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME]: paramsData });
     } else {
       followHandler({ userId: profile.id, isFollow, userName: profile.username });
