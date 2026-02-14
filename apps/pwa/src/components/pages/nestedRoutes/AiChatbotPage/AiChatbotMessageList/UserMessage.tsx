@@ -12,13 +12,20 @@ const UserMessage = (props: UserMessagePropsType) => {
   const hasMedia = props.media.length > 0;
   const hasText = props.text.trim() !== '';
 
-  const isWindows = operatingSystem === 'windows';
-
   return (
     <div className="flex flex-col items-end mt-8 gap-3">
       {hasMedia && (
         <div
-          className={`flex flex-row-reverse w-full overflow-x-auto overflow-y-hidden gap-1 px-2  scrollbar  ${!isWindows && 'hide'}`}
+          className={`
+                      flex 
+                      flex-row-reverse 
+                      w-full 
+                      overflow-x-auto 
+                      overflow-y-hidden 
+                      gap-1 
+                      px-2 
+                      scrollbar ${operatingSystem !== 'windows' && 'hide'}
+                    `}
         >
           {props.media.map((image, index) => {
             return (

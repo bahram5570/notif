@@ -1,6 +1,9 @@
+import { useOperatingSystem } from '../../../hooks/useOperatingSystem';
 import { SliderProps } from './types';
 
 export const CustomSlider = ({ children, className, gap = '16px', id, sidePadding }: SliderProps) => {
+  const { operatingSystem } = useOperatingSystem();
+
   return (
     <div
       id={id}
@@ -11,7 +14,7 @@ export const CustomSlider = ({ children, className, gap = '16px', id, sidePaddin
                   overflow-y-hidden 
                   flex 
                   flex-row-reverse 
-                  scrollbar 
+                  scrollbar ${operatingSystem !== 'windows' && 'hide'}
                   ${className}
                 `}
     >

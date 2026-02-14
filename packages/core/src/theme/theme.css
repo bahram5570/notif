@@ -2,59 +2,9 @@
 @import 'swiper/css/navigation';
 @import 'swiper/css/pagination';
 
-.scrollbar {
-  padding-bottom: 10px;
-}
-.scrollbar::-webkit-scrollbar-thumb {
-  background: #c7c7c7;
-  border-radius: 8px;
-}
-.scrollbar::-webkit-scrollbar {
-  height: 8px;
-  width: 8px;
-}
-.scrollbar.hide {
-  padding-bottom: 0px;
-}
-.scrollbar.hide::-webkit-scrollbar-thumb {
-  background: transparent;
-}
-.scrollbar.hide::-webkit-scrollbar {
-  height: 0px;
-  width: 0px;
-}
+@import './shared-styles.css';
 
-.OnMountActionsEventListener-styles::-webkit-scrollbar {
-  display: none;
-}
-.OnMountActionsEventListener-styles {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.WidgetScaleModule {
-  opacity: 0;
-  width: 100%;
-  position: fixed;
-}
-.WidgetScaleModule_scaling {
-  opacity: 1;
-  width: 100%;
-  overflow: hidden;
-  position: initial;
-  animation: WidgetScaleModuleAnimation 0.5s;
-}
-@keyframes WidgetScaleModuleAnimation {
-  from {
-    max-height: 0;
-  }
-  to {
-    max-height: var(--maxHight);
-  }
-}
-
-/* # Colors */
-
+/* # Light colors */
 :root {
   --color-Transparent: transparent;
   --color-Black: #000000;
@@ -261,6 +211,7 @@
   --color-Red_900: #6b1e1e;
 }
 
+/* # Dark colors */
 .dark {
   --color-Transparent: transparent;
   --color-Black: #000000;

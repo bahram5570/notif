@@ -24,43 +24,6 @@ body {
   @apply bg-white/20 shadow-lg;
 }
 
-button,
-input {
-  outline: none;
-}
-
-input {
-  direction: rtl;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type='number'] {
-  -moz-appearance: textfield;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  transition: background-color 9999s ease-in-out 0s;
-  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
-  box-shadow: 0 0 0 1000px transparent inset !important;
-  -webkit-text-fill-color: #202020 !important;
-  caret-color: #202020 !important;
-}
-.dark input:-webkit-autofill,
-.dark input:-webkit-autofill:hover,
-.dark input:-webkit-autofill:focus,
-.dark input:-webkit-autofill:active {
-  -webkit-text-fill-color: #ffffff !important;
-  caret-color: #ffffff !important;
-}
-
 .hideScrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -75,39 +38,4 @@ input:-webkit-autofill:active {
 
 .dark .swiper-pagination-bullet {
   background-color: #ffff;
-}
-
-.scrollbar {
-  padding-bottom: 10px;
-}
-
-/* Desktop Scrollbar (Windows / macOS / Android Chrome) */
-.scrollbar::-webkit-scrollbar {
-  height: 8px;
-  width: 8px;
-}
-
-.scrollbar::-webkit-scrollbar-thumb {
-  background: #c7c7c7;
-  border-radius: 8px;
-}
-
-/* HIDE SCROLLBAR ON IOS ONLY */
-@supports (-webkit-touch-callout: none) {
-  .scrollbar {
-    -webkit-overflow-scrolling: auto !important;
-    scrollbar-width: none !important;
-  }
-
-  .scrollbar::-webkit-scrollbar {
-    display: none !important;
-  }
-
-  .scrollbar::-webkit-scrollbar-thumb {
-    background: transparent !important;
-  }
-
-  .scrollbar.hide {
-    padding-bottom: 0;
-  }
 }
