@@ -1,9 +1,8 @@
 import { useState } from 'react';
 
 import { toEnglishNumbers } from '@repo/core/utils/numbers';
-import { getFirebaseCookieToken } from '@utils/cookies';
 
-import { UserCookieTypes, UserInfoCookieTypes } from '@actions/userCookies.actions';
+import { UserCookieTypes, UserInfoCookieTypes, getFirebaseTokenCookie } from '@actions/userCookies.actions';
 import useCountDown from '@hooks/useCountDown';
 import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { useCulture } from '@repo/core/hooks/useCulture';
@@ -50,15 +49,17 @@ const useLogin = ({ identity, password, otpStatusHandler, onSubmitLogin }: UseLo
     method: 'POST',
   });
 
-  const forgotSuccessHandler: ForgotSuccessHandlerTypes = ({ result }) => {
+  const forgotSuccessHandler: ForgotSuccessHandlerTypes = async ({ result }) => {
     if (result) {
+      const token = await getFirebaseTokenCookie();
+
       callLoginApi({
         identity,
         password,
         phoneModel: '',
         channelVersion: '',
+        deviceToken: token,
         version: APP_VERSION,
-        deviceToken: getFirebaseCookieToken(),
       });
     } else {
       otpStatusHandler('wrong');

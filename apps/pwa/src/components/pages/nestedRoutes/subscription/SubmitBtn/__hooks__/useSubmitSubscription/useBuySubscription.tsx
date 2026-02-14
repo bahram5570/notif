@@ -1,7 +1,6 @@
-import { setPaymentCookie } from '@utils/cookies';
 import { externalLink } from '@utils/navigation';
 
-import { getUserCookie } from '@actions/userCookies.actions';
+import { getUserCookie, setPaymentCookie } from '@actions/userCookies.actions';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
@@ -22,7 +21,7 @@ const useBuySubscription = () => {
     }
 
     if (v.isSuccess) {
-      setPaymentCookie({ route: '/protected/cycle' });
+      await setPaymentCookie({ route: '/protected/cycle' });
       externalLink(`https://web.impo.app/financial/AsanPardakht/${v.token}/${user?.identity}`);
     }
   };

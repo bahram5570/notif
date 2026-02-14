@@ -1,9 +1,8 @@
 import { useState } from 'react';
 
-import { setPaymentCookie } from '@utils/cookies';
 import { externalLink } from '@utils/navigation';
 
-import { getUserCookie } from '@actions/userCookies.actions';
+import { getUserCookie, setPaymentCookie } from '@actions/userCookies.actions';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
@@ -32,7 +31,7 @@ const useBuy = ({ id, questionValues, type }: UseBuyProps) => {
         const user = await getUserCookie();
 
         if (user?.identity) {
-          setPaymentCookie({ route: `/protected/clinic/clinicChat?ticketId=${v.id}` });
+          await setPaymentCookie({ route: `/protected/clinic/clinicChat?ticketId=${v.id}` });
           externalLink(`https://web.impo.app/financial/AsanPardakht/${v.bankResp.token}/${user.identity}`);
         }
       } else {
