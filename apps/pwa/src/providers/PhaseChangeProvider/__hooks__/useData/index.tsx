@@ -1,14 +1,14 @@
-import { useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { ActivationDataTypes } from '@services/activationServices/types';
 
-import { ErrorContext } from '@providers/ErrorProvider';
+import { useCustomError } from '@repo/core/hooks/useCustomError';
 
 import { UseDataProps } from './types';
 
 const useData = ({ questionsData, errorCode }: UseDataProps) => {
   const [data, setData] = useState<ActivationDataTypes>({ question: {}, reward: {} });
-  const { onError } = useContext(ErrorContext);
+  const { onError } = useCustomError();
 
   useEffect(() => {
     if (questionsData && !errorCode) {

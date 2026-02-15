@@ -19,7 +19,6 @@ body {
 .glass-card {
   @apply bg-white/10 dark:!bg-[#2B2B2B80] backdrop-blur-[8px] border border-white/30;
 }
-
 .glass-card-hover:hover {
   @apply bg-white/20 shadow-lg;
 }
@@ -35,7 +34,6 @@ body {
 .swiper-pagination-bullet-active {
   background-color: #353535;
 }
-
 .dark .swiper-pagination-bullet {
   background-color: #ffff;
 }

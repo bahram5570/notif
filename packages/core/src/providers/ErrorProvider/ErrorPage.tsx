@@ -1,14 +1,14 @@
-import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { CustomButton } from '../../components/ui/CustomButton';
+import { CustomImage } from '../../components/ui/CustomImage';
+import { CustomTypography } from '../../components/ui/CustomTypography';
 
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { MAX_SCREEN_WIDTH } from '../../constants/app.constants';
 
 const ErrorPage = () => {
   return (
     <div
-      className="fixed top-0 left-0 right-0 bottom-0 min-h-[90dvh] max-h-[90dvh] w-full flex flex-col justify-end m-auto px-4 py-5 z-20"
       style={{ maxWidth: MAX_SCREEN_WIDTH }}
+      className="fixed top-0 left-0 right-0 bottom-0 min-h-[90dvh] max-h-[90dvh] w-full flex flex-col justify-end m-auto px-4 py-5 z-20"
     >
       <div className="flex flex-col items-center my-auto">
         <CustomImage className="w-[200px] h-auto" src="/assets/images/serverError.webp" />

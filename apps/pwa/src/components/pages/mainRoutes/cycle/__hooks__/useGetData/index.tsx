@@ -2,8 +2,8 @@ import { useContext, useEffect, useState } from 'react';
 
 import useUpdateCycleCard from '@hooks/__cycle__/useUpdateCycleCard';
 import useSplash from '@hooks/useSplash';
-import { ErrorContext } from '@providers/ErrorProvider';
 import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { useCustomError } from '@repo/core/hooks/useCustomError';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
@@ -11,7 +11,7 @@ import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { CycleResponseTypes } from '../../types';
 
 const useGetData = () => {
-  const { onError } = useContext(ErrorContext);
+  const { onError } = useCustomError();
   const { splashCompleteHandler } = useSplash();
   const { refetchQuery } = useCustomReactQuery();
   const { getQueryParams } = useQueryParamsHandler();

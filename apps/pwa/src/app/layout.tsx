@@ -2,7 +2,6 @@ import './globals.css';
 
 import { getCultureCookie } from '@actions/userCookies.actions';
 import { FIREBASE_CONFIG } from '@constants/app.constants';
-import ErrorProvider from '@providers/ErrorProvider';
 import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
 import PwaWidgetActionsProvider from '@providers/PwaWidgetActionsProvider';
 import {
@@ -12,6 +11,7 @@ import {
   PORTAL_SPLASH_ID,
 } from '@repo/core/constants/app.constants';
 import { CultureProvider } from '@repo/core/providers/CultureProvider';
+import { ErrorProvider } from '@repo/core/providers/ErrorProvider';
 // import { AnalyticsProvider } from '@repo/core/providers/AnalyticsProvider';
 import { OperatingSystemProvider } from '@repo/core/providers/OperatingSystemProvider';
 import { PageNavigationProvider } from '@repo/core/providers/PageNavigationProvider';
