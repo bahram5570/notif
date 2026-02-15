@@ -1,6 +1,8 @@
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { FOOTER_HEIGTH } from '@repo/core/constants/app.constants';
 
+import ShareExperienceAssociationItemModal from '../../ShareExperienceModals/ShareExperienceAssociationItemModal';
+import ShareExperienceAssociationListModal from '../../ShareExperienceModals/ShareExperienceAssociationListModal';
 import ShareExperienceChangeAvatarModal from '../../ShareExperienceModals/ShareExperienceChangeAvatarModal';
 import ShareExperienceCommentsModal from '../../ShareExperienceModals/ShareExperienceCommentsModal';
 import ShareExperienceDefultAvatarListModal from '../../ShareExperienceModals/ShareExperienceDefultAvatarListModal';
@@ -15,6 +17,7 @@ import ShareExperienceReportModal from '../../ShareExperienceModals/ShareExperie
 import ShareExperienceTopicModal from '../../ShareExperienceModals/ShareExperienceTopicModal';
 import ShareExperienceUnfollowModal from '../../ShareExperienceModals/ShareExperienceUnfollowModal';
 import ShareExperienceContentsModule from '../../ShareExperienceModules/ShareExperienceContentsModule';
+import ShareExperienceAssociation from '../ShareExperienceAssociation';
 import ShareExperienceBottomPart from './ShareExperienceBottomPart';
 import ShareExperienceTopPart from './ShareExperienceTopPart';
 import useExperiences from './__hooks__/useExperiences';
@@ -49,6 +52,8 @@ const ShareExperienceExperiences = ({
           <ShareExperienceEditProfileModal />
           <ShareExperienceFollowerModal />
           <ShareExperienceFollowingModal />
+          <ShareExperienceAssociationListModal />
+          <ShareExperienceAssociationItemModal />
         </>
       )}
 
@@ -61,23 +66,28 @@ const ShareExperienceExperiences = ({
         className="flex flex-col px-4 relative"
         style={{ paddingBottom: FOOTER_HEIGTH * 2 }}
       >
-        {experiencesData?.expirences.map((item, index) => (
-          <div key={index} className="w-full border-t-[1px] border-t-impo_Neutral_Surface  pt-5 pb-4 z-0">
-            <ShareExperienceTopPart {...item} />
+        {experiencesData?.expirences.map((item, index) => {
+          return (
+            <>
+              {index === 1 && <ShareExperienceAssociation />}{' '}
+              <div key={index} className="w-full border-t-[1px] border-t-impo_Neutral_Surface  pt-5 pb-4 z-0">
+                <ShareExperienceTopPart {...item} />
 
-            <div className="w-full pr-10">
-              <ShareExperienceContentsModule
-                image={item.image}
-                text={item.text}
-                hasLinkTo={true}
-                isSelf={false}
-                id={item.id}
-              />
+                <div className="w-full pr-10">
+                  <ShareExperienceContentsModule
+                    image={item.image}
+                    text={item.text}
+                    hasLinkTo={true}
+                    isSelf={false}
+                    id={item.id}
+                  />
 
-              <ShareExperienceBottomPart {...item} />
-            </div>
-          </div>
-        ))}
+                  <ShareExperienceBottomPart {...item} />
+                </div>
+              </div>
+            </>
+          );
+        })}
       </InfiniteScrollContainer>
     </>
   );

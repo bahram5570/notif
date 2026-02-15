@@ -22,5 +22,7 @@ export const SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME = 'shareExperienceDe
 export const SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME = 'shareExperienceEditProfileModal';
 export const SHARE_EXPERIENCE_FOLLOWER_QUERY_NAME = 'shareExperienceFollowerModal';
 export const SHARE_EXPERIENCE_FOLLOWING_QUERY_NAME = 'shareExperienceFollowingModal';
+export const SHARE_EXPERIENCE_ASSOCIATION_LIST_QUERY_NAME = 'shareExperienceAssociationListModal';
+export const SHARE_EXPERIENCE_ASSOCIATION_ITEM_QUERY_NAME = 'shareExperienceAssociationItemModal';
 
 export const SHARE_EXPERIENCE_ORDER_QUERY_NAME = 'shareExperienceOrder';
