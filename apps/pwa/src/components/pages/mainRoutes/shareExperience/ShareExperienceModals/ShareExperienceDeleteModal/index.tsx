@@ -23,24 +23,23 @@ const ShareExperienceDeleteModal = () => {
 
   const description = queryData ? DELETE_MODAL_SCRIPTS[queryData.type].description : '';
   const title = queryData ? DELETE_MODAL_SCRIPTS[queryData.type].title : '';
-  let zIndex;
 
   const applyHandler = () => {
     if (queryData) {
       switch (queryData.type) {
         case 'experience':
           experienceApplyHandler(queryData.shareId);
-          zIndex = getZIndex(SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME, queryData?.shareId);
+
           break;
 
         case 'comment':
           commentApplyHandler({ shareId: queryData.shareId, commentId: queryData.commentId });
-          zIndex = getZIndex(SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME, queryData.shareId);
+
           break;
 
         case 'reply':
           replyApplyHandler({ shareId: queryData.shareId, commentId: queryData.commentId, replyId: queryData.replyId });
-          zIndex = getZIndex(SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME, queryData.shareId);
+
           break;
       }
     }
@@ -58,6 +57,8 @@ const ShareExperienceDeleteModal = () => {
       <TrashIcon className="w-7 stroke-impo_Error_Error" />
     </div>
   );
+
+  const zIndex = getZIndex(SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME, queryData?.shareId);
 
   return (
     <>
