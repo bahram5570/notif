@@ -18,7 +18,7 @@ const ShareExperienceUnfollowModal = () => {
     followHandler({ userId, isFollow: true, userName: queryData.userName });
   };
 
-  const zIndex = getZIndex(SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME, queryData?.experienceId);
+  const zIndex = getZIndex(SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME, queryData?.userId);
 
   return (
     <>

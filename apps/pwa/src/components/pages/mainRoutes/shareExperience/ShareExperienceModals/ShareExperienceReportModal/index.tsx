@@ -21,7 +21,7 @@ const ShareExperienceReportModal = () => {
     </div>
   );
 
-  const zIndex = getZIndex(SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME, queryData?.experienceId);
+  const zIndex = getZIndex(SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME, queryData?.id);
 
   return (
     <>

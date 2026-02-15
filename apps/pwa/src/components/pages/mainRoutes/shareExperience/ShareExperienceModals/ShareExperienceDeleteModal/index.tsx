@@ -35,12 +35,12 @@ const ShareExperienceDeleteModal = () => {
 
         case 'comment':
           commentApplyHandler({ shareId: queryData.shareId, commentId: queryData.commentId });
-          zIndex = getZIndex(SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME, queryData.commentId);
+          zIndex = getZIndex(SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME, queryData.shareId);
           break;
 
         case 'reply':
           replyApplyHandler({ shareId: queryData.shareId, commentId: queryData.commentId, replyId: queryData.replyId });
-          zIndex = getZIndex(SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME, queryData.replyId);
+          zIndex = getZIndex(SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME, queryData.shareId);
           break;
       }
     }
