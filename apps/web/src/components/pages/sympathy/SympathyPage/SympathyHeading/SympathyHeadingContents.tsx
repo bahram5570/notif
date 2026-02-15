@@ -1,6 +1,6 @@
 'use client';
 
-import ImpoIcon from '@assets/icons/impoNameSympathy.svg';
+// import ImpoIcon from '@assets/icons/impoNameSympathy.svg';
 import { scrollToIdHandler } from '@utils/navigation';
 
 import { DOWNLOAD_APP_SECTION_ID } from '@components/DownloadApp/DownloadAppWomen/constants';
@@ -13,12 +13,18 @@ const SympathyHeadingContents = () => {
 
   return (
     <div className="flex flex-col items-center md:items-start">
-      <ImpoIcon className="w-[270px] lg:w-[370px] h-auto" />
-
+      {/* <ImpoIcon className="w-[270px] lg:w-[370px] h-auto" /> */}
       <CustomTypography
         tagType="h1"
+        className="py-2 lg:pt-2 lg:pb-1 text-center md:text-right !text-impo_Primary_Primary mb-3"
+        fontSize={breakPoint.tablet ? 'Headline_Medium' : 'Headline_Large'}
+      >
+        همدلی و شناخت بیشتر با برنامه پریودی برای پارتنر
+      </CustomTypography>
+      <CustomTypography
+        tagType="p"
         fontSize="Headline_Medium"
-        className="py-2 lg:pt-2 lg:pb-1 text-center md:text-right !text-impo_Neutral_OnBackground"
+        className="py-2 lg:pt-2 lg:pb-1 text-center md:text-right !text-impo_Neutral_OnBackground mb-2"
       >
         لذت و آرامش در رابطه
       </CustomTypography>
