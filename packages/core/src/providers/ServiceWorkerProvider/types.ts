@@ -1,4 +1,4 @@
-import { FirebaseConfigsTypes, FirebaseTokenHandlerTypes } from '../../lib/firebase/types';
+import { FirebaseTokenHandlerTypes } from '../../lib/firebase/types';
 
 export type NotificationsDataTypes = {
   id: string;

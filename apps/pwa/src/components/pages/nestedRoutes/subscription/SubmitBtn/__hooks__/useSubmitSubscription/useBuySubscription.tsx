@@ -1,4 +1,4 @@
-import { externalLink } from '@utils/navigation';
+import { externalLink } from '@repo/core/utils/navigation';
 
 import { getUserCookie, setPaymentCookie } from '@actions/userCookies.actions';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';

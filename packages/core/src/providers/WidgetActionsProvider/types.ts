@@ -12,7 +12,7 @@ export type OnCallBackTypes = (name: string) => void;
 
 export interface WidgetActionsProviderTypes {
   children: React.ReactNode;
-  onCallBack: OnCallBackTypes;
+  onCallBack?: OnCallBackTypes;
   PopUpEditCycle?: React.ElementType;
   internalRoutesConverter: InternalRoutesConverterTypes;
 }

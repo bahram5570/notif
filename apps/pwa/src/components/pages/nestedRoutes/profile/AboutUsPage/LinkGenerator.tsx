@@ -1,6 +1,6 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { externalLink } from '@repo/core/utils/navigation';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
-import { externalLink } from '@utils/navigation';
 
 import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 

@@ -3,7 +3,7 @@ export type FirebaseConfigsTypes = {
   apiKey: string;
   projectId: string;
   authDomain: string;
-  databaseURL: string;
+  databaseURL?: string;
   storageBucket: string;
   measurementId: string;
   messagingSenderId: string;
