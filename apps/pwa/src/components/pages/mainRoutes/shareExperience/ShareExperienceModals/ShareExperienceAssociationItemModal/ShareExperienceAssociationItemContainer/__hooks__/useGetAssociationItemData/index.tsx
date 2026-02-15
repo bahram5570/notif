@@ -1,10 +1,15 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { useGetAssociationItemDataPropsType } from './type';
 
 const useGetAssociationItemData = ({ AssociationId }: useGetAssociationItemDataPropsType) => {
+  const [pageNo, setPageNo] = useState(0);
+  const [totalCount, setTotalCount] = useState(0);
+
+  const successHandler = () => {};
+
   const { isLoading, callApi } = usePwaApi({
     api: `/`,
     method: 'GET',
@@ -18,7 +23,16 @@ const useGetAssociationItemData = ({ AssociationId }: useGetAssociationItemDataP
   //     }
   //   }, [AssociationId]);
 
-  return { isLoading };
+  useEffect(() => {
+    if (pageNo > 0 && !isLoading) {
+      callApi();
+    }
+  }, [pageNo, isLoading]);
+
+  const updatePageNo = () => {
+    setPageNo((prev) => prev + 1);
+  };
+  return { isLoading, pageNo, totalCount, updatePageNo };
 };
 
 export default useGetAssociationItemData;

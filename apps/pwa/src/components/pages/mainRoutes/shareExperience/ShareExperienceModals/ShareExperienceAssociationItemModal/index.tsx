@@ -19,7 +19,7 @@ const ShareExperienceAssociationItemModal = () => {
   const zIndex = getZIndex(SHARE_EXPERIENCE_ASSOCIATION_ITEM_QUERY_NAME, AssociationId);
 
   return (
-    <CustomModal zIndex={zIndex} isOpen={isOpen} isFullScreen>
+    <CustomModal zIndex={zIndex} isOpen={isOpen} isFullScreen className="!py-0 overflow-y-auto !px-0">
       <ShareExperienceAssociationItemContainer AssociationId={AssociationId} />
     </CustomModal>
   );
