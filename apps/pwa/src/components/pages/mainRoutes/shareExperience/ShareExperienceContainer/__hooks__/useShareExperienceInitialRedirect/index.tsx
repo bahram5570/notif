@@ -4,8 +4,7 @@ import { isDevelopeMode } from '@repo/core/utils/system';
 
 import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-import { usePathname, useSearchParams } from 'next/navigation';
-import { useRouter } from 'next/router';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE } from '../../../constants';
 

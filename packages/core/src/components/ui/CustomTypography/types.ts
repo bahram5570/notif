@@ -8,4 +8,5 @@ export interface CustomTypographyTypes {
   numbersMode?: 'persian' | 'english';
   fontSize?: keyof typeof FONTS_ANDROID;
   children: React.ReactNode | string | number;
+  tagType?: 'p' | 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'section' | 'span' | 'li';
 }
