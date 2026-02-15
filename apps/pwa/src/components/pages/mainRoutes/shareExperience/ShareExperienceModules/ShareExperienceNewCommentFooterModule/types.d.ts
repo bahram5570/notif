@@ -4,4 +4,6 @@ export interface ShareExperienceNewCommentFooterModuleProps {
   queries: { [key in string]: number | string };
   toast?: string;
   canSendComment?: boolean;
+  queryName: string;
+  id?: string;
 }

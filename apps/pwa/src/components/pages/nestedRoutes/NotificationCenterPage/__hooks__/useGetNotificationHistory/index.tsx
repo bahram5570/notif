@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { PAGE_SIZE } from '@components/infiniteScrollContainer/constatns';
-import useCustomReactQuery from '@hooks/useCustomReactQuery';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { NotificationHistoryResponseType, QueryNotificationHistoryTypes } from './type';

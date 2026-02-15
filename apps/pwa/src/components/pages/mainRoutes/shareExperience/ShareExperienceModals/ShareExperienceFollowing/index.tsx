@@ -1,13 +1,15 @@
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { SHARE_EXPERIENCE_FOLLOWING_QUERY_NAME } from '../../constants';
 import ShareExperienceFollowingModalContainer from './ShareExperienceFollowingModalContainer';
-import { QueryDataShareExperienceFollowingModal, ShareExperienceFollowingModalProps } from './type';
+import { QueryDataShareExperienceFollowingModal } from './type';
 
-const ShareExperienceFollowingModal = ({ shareExperienceOrdersList }: ShareExperienceFollowingModalProps) => {
+const ShareExperienceFollowingModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
+  const { getZIndex } = useOverlayIndex();
 
   const isOpen = getQueryParams(SHARE_EXPERIENCE_FOLLOWING_QUERY_NAME) !== null;
 
@@ -17,7 +19,7 @@ const ShareExperienceFollowingModal = ({ shareExperienceOrdersList }: ShareExper
       ? null
       : (JSON.parse(shareExperienceFollowerParam) as QueryDataShareExperienceFollowingModal);
 
-  const zIndex = shareExperienceOrdersList?.[SHARE_EXPERIENCE_FOLLOWING_QUERY_NAME];
+  const zIndex = getZIndex(SHARE_EXPERIENCE_FOLLOWING_QUERY_NAME, queryData?.userId);
 
   return (
     <CustomModal

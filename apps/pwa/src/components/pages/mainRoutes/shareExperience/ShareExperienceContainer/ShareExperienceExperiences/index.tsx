@@ -18,15 +18,14 @@ import ShareExperienceContentsModule from '../../ShareExperienceModules/ShareExp
 import ShareExperienceBottomPart from './ShareExperienceBottomPart';
 import ShareExperienceTopPart from './ShareExperienceTopPart';
 import useExperiences from './__hooks__/useExperiences';
-import useShareExperienceOrders from './__hooks__/useShareExperienceOrders';
 import { ShareExperienceExperiencesProps } from './types';
 
 const ShareExperienceExperiences = ({
   onSuccessNewHandler,
   selectedCategoryId,
   profile,
+  scrollRef,
 }: ShareExperienceExperiencesProps) => {
-  const { shareExperienceOrdersList } = useShareExperienceOrders();
   const { isLoading, experiencesData, pageNo, totalCount, updatePageNo } = useExperiences(selectedCategoryId);
 
   return (
@@ -38,25 +37,25 @@ const ShareExperienceExperiences = ({
             avatarImage={profile.avatarImage}
             username={profile.username}
           />
-          <ShareExperienceCommentsModal shareExperienceOrdersList={shareExperienceOrdersList} />
+          <ShareExperienceCommentsModal />
           <ShareExperienceUnfollowModal />
           <ShareExperienceNewReplyModal />
           <ShareExperienceReportModal />
           <ShareExperienceDeleteModal />
           <ShareExperienceTopicModal avatarImage={profile.avatarImage} />
-          <ShareExperienceProfileModal shareExperienceOrdersList={shareExperienceOrdersList} />
+          <ShareExperienceProfileModal />
           <ShareExperienceChangeAvatarModal />
           <ShareExperienceDefultAvatarListModal />
           <ShareExperienceEditProfileModal />
-          <ShareExperienceFollowerModal shareExperienceOrdersList={shareExperienceOrdersList} />
-          <ShareExperienceFollowingModal shareExperienceOrdersList={shareExperienceOrdersList} />
+          <ShareExperienceFollowerModal />
+          <ShareExperienceFollowingModal />
         </>
       )}
 
       <InfiniteScrollContainer
         pageNo={pageNo}
-        height={'100dvh'}
         isLoading={isLoading}
+        scrollContainerRef={scrollRef}
         totalCount={totalCount}
         callBack={updatePageNo}
         className="flex flex-col px-4 relative"

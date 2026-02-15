@@ -3,6 +3,7 @@ import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { shareExperienceTopicQueryMaker } from '@utils/shareExperience';
 
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
@@ -11,12 +12,14 @@ import { ShareExperienceTopicsProps } from './type';
 const ShareExperienceTopics = ({ topics }: ShareExperienceTopicsProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
+  const { increaseZIndex } = useOverlayIndex();
 
   const clickHandler = (id: string) => {
     pageNavigationHandler({ id, showProgressBar: true });
 
     const { queryKey, queryValue } = shareExperienceTopicQueryMaker(id);
     newQueryParamsHandler({ [queryKey]: queryValue });
+    increaseZIndex(queryKey, id);
   };
 
   return (

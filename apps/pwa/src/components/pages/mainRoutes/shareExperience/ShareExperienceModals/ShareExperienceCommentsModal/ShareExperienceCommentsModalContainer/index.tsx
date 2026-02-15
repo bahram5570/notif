@@ -67,6 +67,8 @@ const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsMod
           avatar={newCommentQueries?.avatar || ''}
           toast={commentsData.toast}
           canSendComment={commentsData.canSendComment}
+          queryName={SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME}
+          id={props.id}
         />
       )}
     </MainPageLayout>

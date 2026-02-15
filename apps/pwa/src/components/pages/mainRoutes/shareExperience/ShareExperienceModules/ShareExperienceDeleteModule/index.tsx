@@ -1,9 +1,7 @@
 import TrashIcon from '@assets/shared/icons/trash.svg';
 
-import {
-  SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME,
-  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
-} from '@components/pages/mainRoutes/shareExperience/constants';
+import { SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
@@ -14,11 +12,13 @@ const ShareExperienceDeleteModule = (props: ShareExperienceDeleteModuleProps) =>
   const { callEvent } = useAnalytics();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
+  const { increaseZIndex } = useOverlayIndex();
 
   const selectHandler = () => {
     callEvent('shareExperienceDeletePost');
-    const queryData = JSON.stringify({ ...props, [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime() });
+    const queryData = JSON.stringify({ ...props });
     newQueryParamsHandler({ [SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME]: queryData });
+    increaseZIndex(SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME, props.shareId);
     pageNavigationHandler({ id: props.shareId, showProgressBar: true });
   };
 

@@ -27,7 +27,8 @@ const ShareExperienceTopicModalContainer = ({
   });
 
   const markerRef = useRef<HTMLDivElement>(null);
-  const { scrolled } = useScroll({ ref: markerRef });
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const { scrolled } = useScroll({ ref: markerRef, root: scrollRef });
 
   return (
     <>
@@ -37,38 +38,37 @@ const ShareExperienceTopicModalContainer = ({
         bio={topicExperiencesData?.bio}
         isLoading={isLoading}
         scrolled={scrolled}
+        scrollRef={scrollRef}
+        markerRef={markerRef}
       >
         <InfiniteScrollContainer
           pageNo={pageNo}
           isLoading={apiLoading}
+          scrollContainerRef={scrollRef}
           callBack={updatePageNo}
+          totalCount={topicExperiencesData?.totalCount || 0}
           style={{ paddingBottom: FOOTER_HEIGTH * 2 }}
-          totalCount={topicExperiencesData?.totalCount || 10}
-          className={`max-h-screen pt-72 ${styles.scroller} overflow-y-auto  `}
         >
-          <>
-            <div ref={markerRef} style={{ height: 1, width: '100%' }} />
-            {topicExperiencesData?.expirences.map((item, index) => (
-              <div
-                key={index}
-                className="w-full px-4 pt-5 pb-4 bg-impo_Neutral_Background border-b-[1px] border-b-impo_Neutral_Surface z-20 "
-              >
-                <ShareExperienceTopPart {...item} />
+          {topicExperiencesData?.expirences.map((item, index) => (
+            <div
+              key={index}
+              className="w-full px-4 pt-5 pb-4 bg-impo_Neutral_Background border-b  border-b-impo_Neutral_Surface"
+            >
+              <ShareExperienceTopPart {...item} />
 
-                <div className="w-full pr-10">
-                  <ShareExperienceContentsModule
-                    isSelf={item.selfExperience}
-                    image={item.image}
-                    text={item.text}
-                    hasLinkTo={true}
-                    id={item.id}
-                  />
+              <div className="w-full pr-10">
+                <ShareExperienceContentsModule
+                  isSelf={item.selfExperience}
+                  image={item.image}
+                  text={item.text}
+                  hasLinkTo
+                  id={item.id}
+                />
 
-                  <ShareExperienceBottomPart {...item} />
-                </div>
+                <ShareExperienceBottomPart {...item} />
               </div>
-            ))}
-          </>
+            </div>
+          ))}
         </InfiniteScrollContainer>
 
         {!isLoading && (
@@ -76,6 +76,7 @@ const ShareExperienceTopicModalContainer = ({
             queries={{ [SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME]: 'true' }}
             placeholder={topicExperiencesData?.inputText || ''}
             avatar={avatarImage || ''}
+            queryName={SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME}
           />
         )}
       </ShareExperienceTopicModalContainerLayout>

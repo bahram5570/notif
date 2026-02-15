@@ -18,8 +18,10 @@ const ShareExperienceApproveModalsModule = ({
   title,
   icon,
   id,
+  zIndex = 76,
 }: ShareExperienceApproveModalsModuleProps) => {
   const { callEvent } = useAnalytics();
+
   const router = useRouter();
 
   const clickHandler = () => {
@@ -31,7 +33,7 @@ const ShareExperienceApproveModalsModule = ({
     <>
       {isLoading && <Loading />}
 
-      <CustomModal className="!w-[calc(100%_-_32px)] !min-h-fit" isOpen={isOpen} zIndex={76}>
+      <CustomModal className="!w-[calc(100%_-_32px)] !min-h-fit" isOpen={isOpen} zIndex={zIndex}>
         <div className="w-full rounded-xl flex flex-col items-center justify-center gap-4">
           {icon && icon}
 

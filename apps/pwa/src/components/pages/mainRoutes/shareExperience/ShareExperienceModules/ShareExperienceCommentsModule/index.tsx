@@ -1,25 +1,26 @@
 import CommentsIcon from '@assets/icons/comment.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import {
-  SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME,
-  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
-} from '@components/pages/mainRoutes/shareExperience/constants';
+import { SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { ShareExperienceCommentsModuleProps } from './types';
 
 const ShareExperienceCommentsModule = (props: ShareExperienceCommentsModuleProps) => {
-  const { newQueryParamsHandler, getQueryParams } = useQueryParamsHandler();
+  const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
+  const { increaseZIndex } = useOverlayIndex();
 
   const clickHandler = () => {
     if (!props.isSelf) {
       pageNavigationHandler({ id: props.id, showProgressBar: true });
 
-      const paramsData = JSON.stringify({ id: props.id, [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime() });
+      const paramsData = JSON.stringify({ id: props.id });
       newQueryParamsHandler({ [SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME]: paramsData });
+
+      increaseZIndex(SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME, props.id);
     }
   };
 

@@ -5,9 +5,8 @@ import { queryDataHandler } from './__utils__';
 import { SHARE_EXPERIENCE_ORDER_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import { useSearchParams } from 'next/navigation';
 
+import { MODAL_DEFAULT_Z_INDEX } from './constants';
 import { ListTypes, ShareExperienceOrdersListTypes } from './types';
-
-const MODAL_DEFAULT_Z_INDEX = 70;
 
 const useShareExperienceOrders = () => {
   const searchParams = useSearchParams();

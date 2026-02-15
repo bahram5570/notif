@@ -1,6 +1,7 @@
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
 import { SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ShareExperienceNewExerciseModalContainer from './ShareExperienceNewExerciseModalContainer';
@@ -12,13 +13,16 @@ const ShareExperienceNewExerciseModal = ({
   username,
 }: ShareExperienceNewExerciseModalProps) => {
   const { getQueryParams } = useQueryParamsHandler();
+  const { getZIndex } = useOverlayIndex();
 
   const newExperienceParms = getQueryParams(SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME);
   const isOpen = newExperienceParms !== null;
 
+  const zIndex = getZIndex(SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME);
+
   return (
     <>
-      <CustomModal isOpen={isOpen} isSlidingMode={true} isFullScreen={true} className="!py-0" zIndex={75}>
+      <CustomModal isOpen={isOpen} isSlidingMode={true} isFullScreen={true} className="!py-0" zIndex={zIndex}>
         <>
           {isOpen && (
             <ShareExperienceNewExerciseModalContainer

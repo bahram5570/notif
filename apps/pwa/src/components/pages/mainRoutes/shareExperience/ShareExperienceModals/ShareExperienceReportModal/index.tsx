@@ -1,6 +1,7 @@
 import InfoIcon from '@assets/icons/dangerTriangle.svg';
 
 import { SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ShareExperienceApproveModalsModule from '../../ShareExperienceModules/ShareExperienceApproveModalsModule';
@@ -8,6 +9,7 @@ import useShareExperienceReport from './__hooks__/useShareExperienceReport';
 
 const ShareExperienceReportModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
+  const { getZIndex } = useOverlayIndex();
   const { reportHandler, isLoading } = useShareExperienceReport();
 
   const queryParams = getQueryParams(SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME);
@@ -19,6 +21,8 @@ const ShareExperienceReportModal = () => {
     </div>
   );
 
+  const zIndex = getZIndex(SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME, queryData?.id);
+
   return (
     <>
       <ShareExperienceApproveModalsModule
@@ -29,6 +33,7 @@ const ShareExperienceReportModal = () => {
         applyButtonText="بله"
         isLoading={isLoading}
         title="ریپورت پست"
+        zIndex={zIndex}
         icon={Icon}
       />
     </>

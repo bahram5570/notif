@@ -3,4 +3,5 @@ import { ShareExperienceResponseTypes } from '../__hooks__/useShareExperienceGet
 export interface ShareExperienceExperiencesProps extends Pick<ShareExperienceResponseTypes, 'profile'> {
   selectedCategoryId: string | null;
   onSuccessNewHandler: () => void;
+  scrollRef: React.RefObject<HTMLElement>;
 }

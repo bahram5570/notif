@@ -43,7 +43,6 @@ const useExperiences = (selectedCategoryId: SelectedCategoryIdTypes) => {
   }, [selectedCategoryId]);
 
   useEffect(() => {
-    // # Calls api on pagingation
     if (pageNo > 0 && !isLoading) {
       callApi();
     }
