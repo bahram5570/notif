@@ -17,8 +17,9 @@ import {
 } from './constants';
 
 export const metadata: Metadata = {
-  title: 'پیشگیری از بارداری یا اقدام به بارداری',
-  description: 'Preventing pregnancy or trying to get pregnant',
+  title: 'برنامه تخمک‌گذاری؛ پیش‌بینی دقیق با ایمپو',
+  description:
+    'با برنامه تخمک‌گذاری ایمپو، روزهای باروریت رو دقیق ببین، یادآوری بهترین زمان اقدام رو بگیر و با روتین‌های تخصصی شانس بارداریت رو بیشتر کن.',
   robots: { follow: true, index: true },
   alternates: {
     canonical: `${HOST_URL}/landing/intention`,

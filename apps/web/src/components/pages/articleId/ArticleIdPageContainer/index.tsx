@@ -8,6 +8,7 @@ import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import dynamic from 'next/dynamic';
 
+import ArticleAutomaition from './ArticleAutomaition';
 import ArticleIdBeforeAfter from './ArticleIdBeforeAfter';
 import ArticleIdBreadcrumb from './ArticleIdBreadcrumb';
 import ArticleIdComments from './ArticleIdComments';
@@ -34,6 +35,8 @@ const ArticleIdPageContainer = async (props: ArticleIdPageContainerTypes) => {
 
   return (
     <HeaderFooterContainer isArticlePage={true} hasFooterLink={true}>
+      {props.contentCategory && <ArticleAutomaition contentCategory={props.contentCategory} />}
+
       <div className="relative w-full flex justify-center">
         <article className=" flex flex-col gap-6 md:gap-12 pt-[100px] md:pt-[150px] landing_container px-4 md:px-0">
           <div className="w-full min-h-[42px]">

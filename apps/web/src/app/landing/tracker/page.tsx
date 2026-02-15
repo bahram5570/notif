@@ -13,8 +13,9 @@ import TrackerHeading from './TrackerHeading';
 import { TRACKER_ACHIEVEMENTS_LIST, TRACKER_COMMENTS_LIST, TRACKER_FEATURES_INTRODUCTION_LIST } from './constants';
 
 export const metadata: Metadata = {
-  title: 'پریود ترکر و تقویم قاعدگی ایمپو',
-  description: 'impo calendar',
+  title: 'ایمپو؛ برنامه پریودی و نرم افزار محاسبه سیکل قاعدگی',
+  description:
+    'برنامه پریودی فارسی برای محاسبه سیکل قاعدگی؛ پیش‌بینی تخمک‌گذاری، یادآوری پریود و مدیریت علائم PMS در اپلیکیشن ایمپو',
   robots: { follow: true, index: true },
   alternates: {
     canonical: `${HOST_URL}/landing/tracker`,
