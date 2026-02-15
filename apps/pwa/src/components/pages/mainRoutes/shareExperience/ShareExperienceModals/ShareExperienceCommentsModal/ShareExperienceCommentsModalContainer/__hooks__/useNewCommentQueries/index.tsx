@@ -19,7 +19,6 @@ const useNewCommentQueries = (shareId: string) => {
         name: data.profile.username,
         type: 'comment',
         shareId,
-        [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime(),
       });
     }
   }, [data]);
