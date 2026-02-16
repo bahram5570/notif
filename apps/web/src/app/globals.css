@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '@repo/components/styles.css';
 @import '@repo/core/theme.css';
+@import '@repo/core/theme.tailwind.css';
 
 @import 'swiper/css';
 @import 'swiper/css/pagination';
