@@ -5,6 +5,7 @@ import {
   SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME,
   SHARE_EXPERIENCE_ORDER_QUERY_NAME,
 } from '@components/pages/mainRoutes/shareExperience/constants';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
@@ -13,6 +14,7 @@ import { ShareExperienceNewContinueBtnProps } from './types';
 const ShareExperienceNewContinueBtn = ({ text, btnTop, sendEnable, toast }: ShareExperienceNewContinueBtnProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { increaseZIndex } = useOverlayIndex();
 
   const isDisable = text.trim().length < 1;
   const id = 'form';
@@ -20,10 +22,9 @@ const ShareExperienceNewContinueBtn = ({ text, btnTop, sendEnable, toast }: Shar
 
   const clickHandler = () => {
     pageNavigationHandler({ id, showProgressBar: false });
-    const queryData = JSON.stringify({
-      [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime(),
-    });
-    newQueryParamsHandler({ [SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME]: queryData });
+
+    newQueryParamsHandler({ [SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME]: 'true' });
+    increaseZIndex(SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME);
   };
 
   return (

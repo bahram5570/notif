@@ -5,6 +5,7 @@ import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
@@ -23,6 +24,7 @@ const ShareExperienceNewTopics = ({
 }: ShareExperienceNewTopicsProps) => {
   const { callEvent } = useAnalytics();
   const { getQueryParams } = useQueryParamsHandler();
+  const { getZIndex } = useOverlayIndex();
   const isOpen = getQueryParams(SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME) !== null;
   useOverflowHandler(isOpen);
 
@@ -31,6 +33,8 @@ const ShareExperienceNewTopics = ({
     callEvent('Share_Experience');
   };
 
+  const zIndex = getZIndex(SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME);
+
   return (
     <>
       <CustomModal
@@ -38,7 +42,7 @@ const ShareExperienceNewTopics = ({
         isSlidingMode={true}
         className="overflow-y-auto !pb-0"
         isFullScreen={true}
-        zIndex={78}
+        zIndex={zIndex}
       >
         <MainPageLayout
           rightElement="BackButton"
