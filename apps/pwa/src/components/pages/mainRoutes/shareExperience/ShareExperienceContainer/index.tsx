@@ -22,7 +22,7 @@ const ShareExperienceContainer = () => {
   const { isLoading, data, onSuccessNewHandler } = useShareExperienceGetData();
 
   const scrollRef = useRef<HTMLDivElement>(null);
-  const { categories, selectedCategoryId, selectedCategoryIdHandler } = useCategories(data?.categories);
+  const { categories, selectedCategoryId, selectedCategoryHandler, showAssociation } = useCategories(data?.categories);
   const { topics } = useTopics(data?.topics);
 
   return (
@@ -47,7 +47,7 @@ const ShareExperienceContainer = () => {
               <ShareExperienceCategories
                 categories={categories}
                 selectedCategoryId={selectedCategoryId}
-                selectedCategoryIdHandler={selectedCategoryIdHandler}
+                selectedCategoryHandler={selectedCategoryHandler}
               />
             )}
 
@@ -64,6 +64,9 @@ const ShareExperienceContainer = () => {
                 selectedCategoryId={selectedCategoryId}
                 onSuccessNewHandler={onSuccessNewHandler}
                 scrollRef={scrollRef}
+                showAssociation={showAssociation}
+                associationSectionTitle={data.associationSectionTitle}
+                associations={data.associations}
               />
             )}
           </>

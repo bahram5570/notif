@@ -1,3 +1,10 @@
+export type AssociationType = {
+  id: string;
+  title: string;
+  isFollow: boolean;
+  cover: string;
+};
+
 export type ShareExperienceResponseTypes = {
   groupsTitleText: string;
   otherTitleText: string;
@@ -6,6 +13,7 @@ export type ShareExperienceResponseTypes = {
   text: string;
   bannerMedia: string;
   toastText: string;
+  associationSectionTitle: string;
   topics: {
     coverImage: string;
     inputText: string;
@@ -27,5 +35,7 @@ export type ShareExperienceResponseTypes = {
     title: string;
     icon: string;
     id: string;
+    showAssociation: boolean;
   }[];
+  associations: AssociationType[];
 };
