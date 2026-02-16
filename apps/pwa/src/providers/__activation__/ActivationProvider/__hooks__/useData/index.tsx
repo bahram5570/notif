@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { ActivationDataTypes } from '@services/activationServices/types';
 
-import { useCustomError } from '@repo/core/hooks/useCustomError';
+import useCustomError from '@hooks/useCustomError';
 
 import { UseDataProps } from './types';
 

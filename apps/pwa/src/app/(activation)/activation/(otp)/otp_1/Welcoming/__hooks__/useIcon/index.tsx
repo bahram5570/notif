@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { ACTIVATION_HEADING_ICON_ID } from '@components/activation/ActivationHeading/constants';
-import useCountDown from '@hooks/useCountDown';
+import { useCountDown } from '@repo/core/hooks/useCountDown';
 
 import { StepsList } from '../useWelcomingSteps/constants';
 import { UseIconProps } from './types';

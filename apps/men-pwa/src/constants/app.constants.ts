@@ -1,3 +1,5 @@
+export const PORTAL_SPLASH_ID = 'portalSplashId';
+
 export const FIREBASE_CONFIG = {
   apiKey: 'AIzaSyAUh4czxJGRHkPVskCse_rJYF1xlPzPFK8',
   appId: '1:835926115491:web:cf5ba1ef6f157c0320eb16',

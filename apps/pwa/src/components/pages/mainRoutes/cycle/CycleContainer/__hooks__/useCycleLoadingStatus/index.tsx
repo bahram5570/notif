@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import useSignInteractiveBanner from '@hooks/__sign__/useSignInteractiveBanner';
-import useCountDown from '@hooks/useCountDown';
+import { useCountDown } from '@repo/core/hooks/useCountDown';
 import { CycleLoadingStatusEnum } from '@repo/core/providers/WidgetActionsProvider';
 
 import { UseCycleLoadingStatusProps } from './types';

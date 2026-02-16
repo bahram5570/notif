@@ -1,0 +1,10 @@
+import { OtpDataResponseTypes } from '../__hooks__/useCode/types';
+import { OtpStatusTypes } from '../__hooks__/useOtpStatus/types';
+
+type DataType = Pick<OtpDataResponseTypes, 'info'>['info']['options'];
+export type OptionListPropsType = {
+  optionList: DataType;
+  resetCodeHandler: (type: number) => void;
+  isValidateLoading: boolean;
+  otpStatus: OtpStatusTypes;
+};

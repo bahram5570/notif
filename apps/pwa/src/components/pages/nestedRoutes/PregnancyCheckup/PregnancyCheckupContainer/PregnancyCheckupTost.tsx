@@ -4,8 +4,8 @@ import CheckCircleIcon from '@assets/icons/checkCircle.svg';
 import InfoIcon from '@assets/icons/info.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useCountDown from '@hooks/useCountDown';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { useCountDown } from '@repo/core/hooks/useCountDown';
 import { LottieCanvas } from '@repo/core/lib/LottieCanvas';
 
 import { ResponsePropsType } from '../../CheckupQuestionContainer/QuestionCheckup/__hooks__/useSubmit/type';
