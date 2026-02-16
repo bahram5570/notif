@@ -3,7 +3,6 @@ export const FOOTER_HEIGTH = 80;
 export const HEADER_HEIGHT = 80;
 
 export const PORTAL_ID = 'portalId';
-export const PORTAL_SPLASH_ID = 'portalSplashId';
 export const PORTAL_FEEDBACK_TOAST_ID = 'portalFeedBackToastId';
 
 export const STORED_NOTIFICATIONS_CACHE_NAME = 'storedNotification';

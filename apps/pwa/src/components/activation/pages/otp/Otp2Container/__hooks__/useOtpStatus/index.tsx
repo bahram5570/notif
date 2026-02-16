@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import useCountDown from '@hooks/useCountDown';
+import { useCountDown } from '@repo/core/hooks/useCountDown';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 
 import { OTP_COUNT_DOWN_TIME } from '../../constants';

@@ -30,12 +30,15 @@ export const getCultureCookie = async () => {
 };
 
 // # User
-export type UserCookieTypes = {};
+export type UserCookieTypes = {
+  password: string;
+  identity: string;
+  token: string;
+};
 
 export const setUserCookie = async (props: UserCookieTypes) => {
   const expires = getExpireDate(30);
-
-  const value = '';
+  const value = JSON.stringify(props);
 
   cookies().set({ name: USER_COOKIE_NAME, value, httpOnly: true, path: '/', secure: false, expires });
 };

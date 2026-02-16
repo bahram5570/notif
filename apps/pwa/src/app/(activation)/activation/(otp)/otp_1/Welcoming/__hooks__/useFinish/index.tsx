@@ -6,7 +6,7 @@ import {
   ACTIVATION_INPUT_MODULE_ID,
 } from '@components/activation/ActivationHeading/constants';
 import { ACTIVATION_WELCOMING_PREVIEWED_NAME } from '@constants/activation.constants';
-import useCountDown from '@hooks/useCountDown';
+import { useCountDown } from '@repo/core/hooks/useCountDown';
 
 import { StepsList } from '../useWelcomingSteps/constants';
 import { UseFinishProps } from './types';

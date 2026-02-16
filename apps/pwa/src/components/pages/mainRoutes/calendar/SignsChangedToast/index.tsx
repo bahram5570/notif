@@ -1,7 +1,7 @@
 import { ReactElement, useEffect, useState } from 'react';
 
-import useCountDown from '@hooks/useCountDown';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { useCountDown } from '@repo/core/hooks/useCountDown';
 import { useSignDateState } from '@repo/core/hooks/useSignDateState';
 import { LottieCanvas } from '@repo/core/lib/LottieCanvas';
 

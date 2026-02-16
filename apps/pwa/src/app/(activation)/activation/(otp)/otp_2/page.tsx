@@ -8,7 +8,7 @@ import Otp2Container from '@components/activation/pages/otp/Otp2Container';
 import { OtpStatusTypes } from '@components/activation/pages/otp/Otp2Container/__hooks__/useOtpStatus/types';
 import { OTP_COUNT_DOWN_TIME } from '@components/activation/pages/otp/Otp2Container/constants';
 import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
-import useCountDown from '@hooks/useCountDown';
+import { useCountDown } from '@repo/core/hooks/useCountDown';
 import { useRouter } from 'next/navigation';
 
 const Otp2 = () => {

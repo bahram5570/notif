@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from 'react';
 
-import { UserCookieTypes } from '@actions/userCookies.actions';
 import { FetchedUserTypes } from '@components/activation/CompleteRegisterContainer/types';
 import Otp2Container from '@components/activation/pages/otp/Otp2Container';
 import { OtpStatusTypes } from '@components/activation/pages/otp/Otp2Container/__hooks__/useOtpStatus/types';
@@ -10,8 +9,8 @@ import { OTP_COUNT_DOWN_TIME } from '@components/activation/pages/otp/Otp2Contai
 import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import useActivationCrRegister from '@hooks/__activation__/useActivationCrRegister';
 import useRegister from '@hooks/__activation__/useRegister';
-import useCountDown from '@hooks/useCountDown';
 import useActivationCrPayload from '@providers/__activation__/ActivationCrProvider/__hooks__/useActivationCrPayload';
+import { useCountDown } from '@repo/core/hooks/useCountDown';
 
 const Otp2 = () => {
   // # کد

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useCountDown from '@hooks/useCountDown';
+import { useCountDown } from '@repo/core/hooks/useCountDown';
 
 import { CountDownProps } from './types';
 

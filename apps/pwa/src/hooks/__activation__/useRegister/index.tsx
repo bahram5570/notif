@@ -5,9 +5,9 @@ import { registerPayloadUpdater } from '@utils/register';
 
 import { FetchedUserTypes } from '@components/activation/CompleteRegisterContainer/types';
 import { OtpStatusTypes } from '@components/activation/pages/otp/Otp2Container/__hooks__/useOtpStatus/types';
-import useCountDown from '@hooks/useCountDown';
 import { ActivationPayloadTypes } from '@providers/__activation__/types';
 import { APP_VERSION } from '@repo/core/constants/app.constants';
+import { useCountDown } from '@repo/core/hooks/useCountDown';
 import { useCulture } from '@repo/core/hooks/useCulture';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 

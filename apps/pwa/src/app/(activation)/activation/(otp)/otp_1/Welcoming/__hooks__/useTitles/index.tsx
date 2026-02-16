@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import useCountDown from '@hooks/useCountDown';
+import { useCountDown } from '@repo/core/hooks/useCountDown';
 
 import { StepsList } from '../useWelcomingSteps/constants';
 import { UseTitlesProps } from './types';

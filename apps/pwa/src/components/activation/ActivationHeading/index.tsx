@@ -95,7 +95,7 @@ const ActivationHeading = ({
           <div className="absolute bottom-10 flex justify-center align-middle">
             <img
               alt="hollow"
-              src="/assets/images/coverHollow.webp"
+              src="/assets/images/coverHollow.png"
               className={`w-[100vw] max-w-[${MAX_SCREEN_WIDTH}] h-auto scale-[2.5] z-0 block dark:hidden`}
             />
 
