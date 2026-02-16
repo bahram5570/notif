@@ -9,7 +9,7 @@ const useActionTypeApiCall = ({ onActionComplete, onCallBack }: UseActionTypeApi
   const callApiCallHandler = async (url: string) => {
     const { data } = await pwaHttp({ url, method: 'GET' });
 
-    if (data) {
+    if (data && onCallBack) {
       onCallBack('cycle');
     }
 

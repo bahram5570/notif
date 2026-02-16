@@ -1,6 +1,6 @@
 import InfoIcon from '@assets/icons/info.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { externalLink } from '@utils/navigation';
+import { externalLink } from '@repo/core/utils/navigation';
 
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 

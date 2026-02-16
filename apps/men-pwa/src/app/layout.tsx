@@ -1,13 +1,16 @@
 import './globals.css';
 
 import { getCultureCookie } from '@actions/userCookies.actions';
+import { FIREBASE_CONFIG } from '@constants/app.constants';
+import MenPwaWidgetActionsProvider from '@providers/MenPwaWidgetActionsProvider';
 import { MAX_SCREEN_WIDTH, PORTAL_ID } from '@repo/core/constants/app.constants';
 import { CultureProvider } from '@repo/core/providers/CultureProvider';
-// import { AnalyticsProvider } from '@repo/core/providers/AnalyticsProvider';
+import { ErrorProvider } from '@repo/core/providers/ErrorProvider';
 import { OperatingSystemProvider } from '@repo/core/providers/OperatingSystemProvider';
 import { PageNavigationProvider } from '@repo/core/providers/PageNavigationProvider';
 import { PreviewImageProvider } from '@repo/core/providers/PreviewImageProvider';
 import { ReactQueryProvider } from '@repo/core/providers/ReactQueryProvider';
+import { ServiceWorkerProvider } from '@repo/core/providers/ServiceWorkerProvider';
 import { ToastProvider } from '@repo/core/providers/ToastProvider';
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
@@ -61,15 +64,19 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
           <OperatingSystemProvider>
             <CultureProvider defaultValues={culture}>
               <ReactQueryProvider>
-                {/* <ErrorProvider> */}
-                <ToastProvider>
-                  <PageNavigationProvider>
-                    <>{children}</>
-                    <PreviewImageProvider />
-                    <div id={PORTAL_ID} />
-                  </PageNavigationProvider>
-                </ToastProvider>
-                {/* </ErrorProvider> */}
+                <ErrorProvider>
+                  <ToastProvider>
+                    <PageNavigationProvider>
+                      <MenPwaWidgetActionsProvider>
+                        <ServiceWorkerProvider firebaseConfigs={FIREBASE_CONFIG}>
+                          <>{children}</>
+                          <PreviewImageProvider />
+                          <div id={PORTAL_ID} />
+                        </ServiceWorkerProvider>
+                      </MenPwaWidgetActionsProvider>
+                    </PageNavigationProvider>
+                  </ToastProvider>
+                </ErrorProvider>
               </ReactQueryProvider>
             </CultureProvider>
           </OperatingSystemProvider>

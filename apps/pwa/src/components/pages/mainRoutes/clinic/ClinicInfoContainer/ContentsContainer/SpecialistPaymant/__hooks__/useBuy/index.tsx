@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { externalLink } from '@utils/navigation';
+import { externalLink } from '@repo/core/utils/navigation';
 
 import { getUserCookie, setPaymentCookie } from '@actions/userCookies.actions';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
