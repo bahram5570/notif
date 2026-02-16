@@ -1,4 +1,4 @@
-import preset from '@repo/core/configs/tailwind.config';
+import preset from '@repo/core/theme.tailwind.config';
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
