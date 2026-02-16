@@ -1,3 +1,5 @@
+import { Fragment } from 'react';
+
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { FOOTER_HEIGTH } from '@repo/core/constants/app.constants';
 
@@ -28,6 +30,9 @@ const ShareExperienceExperiences = ({
   selectedCategoryId,
   profile,
   scrollRef,
+  showAssociation,
+  associationSectionTitle,
+  associations,
 }: ShareExperienceExperiencesProps) => {
   const { isLoading, experiencesData, pageNo, totalCount, updatePageNo } = useExperiences(selectedCategoryId);
 
@@ -63,14 +68,20 @@ const ShareExperienceExperiences = ({
         scrollContainerRef={scrollRef}
         totalCount={totalCount}
         callBack={updatePageNo}
-        className="flex flex-col px-4 relative"
+        className="flex flex-col  relative"
         style={{ paddingBottom: FOOTER_HEIGTH * 2 }}
       >
         {experiencesData?.expirences.map((item, index) => {
           return (
-            <>
-              {index === 1 && <ShareExperienceAssociation />}{' '}
-              <div key={index} className="w-full border-t-[1px] border-t-impo_Neutral_Surface  pt-5 pb-4 z-0">
+            <Fragment key={index}>
+              {index === 1 && showAssociation && (
+                <ShareExperienceAssociation
+                  associationSectionTitle={associationSectionTitle}
+                  associations={associations}
+                />
+              )}
+
+              <div className="w-full border-t-[1px] border-t-impo_Neutral_Surface  pt-5 pb-4 z-0 px-4">
                 <ShareExperienceTopPart {...item} />
 
                 <div className="w-full pr-10">
@@ -85,7 +96,7 @@ const ShareExperienceExperiences = ({
                   <ShareExperienceBottomPart {...item} />
                 </div>
               </div>
-            </>
+            </Fragment>
           );
         })}
       </InfiniteScrollContainer>

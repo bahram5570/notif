@@ -21,7 +21,10 @@ const ViewAllButton = () => {
 
   return (
     <div className="py-3 px-2 flex flex-row-reverse items-center gap-1" onClick={clickHandler}>
-      <CustomTypography fontSize="Lable_Small" className="text-impo_Primary_Primary !whitespace-nowrap overflow-hidden">
+      <CustomTypography
+        fontSize="Lable_SmallProminet"
+        className="text-impo_Primary_Primary !whitespace-nowrap overflow-hidden"
+      >
         مشاهده همه
       </CustomTypography>
       <ArrowRightIcon className="w-4 h-4  fill-impo_Primary_Primary rotate-180" />

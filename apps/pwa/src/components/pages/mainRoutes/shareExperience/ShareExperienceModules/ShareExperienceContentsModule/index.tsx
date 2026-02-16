@@ -33,6 +33,11 @@ const ShareExperienceContentsModule = ({ text, image, hasLinkTo, isSelf, id }: S
         </CustomTypography>
       </div>
 
+      <div className="bg-impo_Grey_100 w-fit py-[6px] px-[10px] rounded-lg">
+        <CustomTypography fontSize="Lable_Small" className="text-impo_Neutral_OnBackground">
+          مامان اولی ها
+        </CustomTypography>
+      </div>
       {image.trim().length > 0 && (
         <CustomImage
           src={image}
