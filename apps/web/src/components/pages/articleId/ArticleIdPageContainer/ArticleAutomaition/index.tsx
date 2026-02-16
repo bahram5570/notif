@@ -8,6 +8,8 @@ import Dialog from '@mui/material/Dialog';
 import SwipeableDrawer from '@mui/material/SwipeableDrawer';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
+import CustomButton from '@components/ui/CustomButton';
+
 import HeaderContent from './HeaderContent';
 import LeadSteps from './LeadSteps';
 import { useScrollHandler } from './_hooks/useScrollHandler';
@@ -46,9 +48,9 @@ export default function ArticleAutomaition({ threshold = 50, contentCategory }: 
         PaperProps={{ className: '!rounded-[16px] bg-white shadow-2xl overflow-hidden' }}
       >
         <div className="pt-[14px] flex items-center px-4 justify-between !bg-impo_Primary_Primary">
-          <button onClick={handleClose} className="absolute top-2 right-5 text-white text-lg">
+          <CustomButton onClick={handleClose} className="absolute top-2 right-5 text-white text-lg !p-0 !m-0 h-fit">
             ✕
-          </button>
+          </CustomButton>
           <HeaderContent title={contentCategory.title} subtitle={contentCategory.subtitle} />
         </div>
         <div className="!bg-impo_Neutral_Background">
@@ -68,13 +70,22 @@ export default function ArticleAutomaition({ threshold = 50, contentCategory }: 
       PaperProps={{ className: 'rounded-t-2xl bg-white shadow-2xl' }}
     >
       <div className="!bg-impo_Primary_Primary relative">
-        <button onClick={handleClose} className="absolute top-6 left-6 text-white text-xl">
+        <CustomButton
+          onClick={handleClose}
+          className="absolute top-6 left-6 text-white text-xl !h-fit !p-0 !m-0"
+          fontSize="Title_Medium"
+        >
           ✕
-        </button>
+        </CustomButton>
+
         {step === 'otp' && (
-          <button onClick={() => setStep('phone')} className="absolute top-[22px] right-6 text-white text-xl">
+          <CustomButton
+            fontSize="Title_Medium"
+            onClick={() => setStep('phone')}
+            className="absolute top-[22px] right-6 text-white text-xl !h-fit !p-0 !m-0"
+          >
             <ArrowBack />
-          </button>
+          </CustomButton>
         )}
 
         <div className="w-[72px] h-[2px] mx-auto my-3 bg-gray-200 rounded-full" />

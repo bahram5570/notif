@@ -14,7 +14,7 @@ export default function PhoneInput({ onNext, contentCategoryId }: PhoneProps & {
   return (
     <div className="space-y-6">
       <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground">
-        برای اینکه بهت یه راهنمای کامل از موضوع این مقاله رو بدیم لازمه شماره همراهت رو وارد کنی
+        برای دریافت این راهنما لازمه شماره همراهت رو وارد کنی.
       </CustomTypography>
 
       <form className="space-y-5">
