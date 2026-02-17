@@ -3,11 +3,13 @@ import { MainPageLayoutHeader } from '@repo/core/components/MainPageLayout';
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
+import EmptyState from './EmptyState';
 import ShareExperienceAssociationItem from './ShareExperienceAssociationItem';
 import useGetAssociationListData from './__hooks__/useGetAssociationListData';
 
 const ShareExperienceAssociationListContainer = () => {
   const { associationListData, isLoading, pageNo, updatePageNo } = useGetAssociationListData();
+  const hasAssociationList = associationListData && associationListData.items.length > 0;
 
   return (
     <>
@@ -19,9 +21,10 @@ const ShareExperienceAssociationListContainer = () => {
         totalCount={associationListData?.totalCount || 10}
         callBack={updatePageNo}
         height={'100dvh'}
-        style={{ paddingTop: HEADER_HEIGHT + 10 }}
+        style={{ paddingTop: hasAssociationList ? HEADER_HEIGHT + 10 : 0 }}
       >
-        {associationListData && (
+        {!hasAssociationList && <EmptyState />}
+        {hasAssociationList && (
           <div className="flex flex-col  h-full">
             {associationListData.items.map((item, index) => {
               const isLastItem = associationListData.items.length - 1 === index;
