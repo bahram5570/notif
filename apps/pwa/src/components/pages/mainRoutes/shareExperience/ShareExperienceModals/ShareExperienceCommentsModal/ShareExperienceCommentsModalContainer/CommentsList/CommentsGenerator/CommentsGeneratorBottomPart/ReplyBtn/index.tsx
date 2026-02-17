@@ -29,7 +29,7 @@ const ReplyBtn = ({ avatar, name, shareId, commentId, userId }: ReplyBtnProps) =
         userId,
       };
       const queryData = JSON.stringify(queries);
-      increaseZIndex(SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME, shareId);
+      increaseZIndex(SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME, commentId);
       newQueryParamsHandler({ [SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME]: queryData });
       pageNavigationHandler({
         showProgressBar: false,

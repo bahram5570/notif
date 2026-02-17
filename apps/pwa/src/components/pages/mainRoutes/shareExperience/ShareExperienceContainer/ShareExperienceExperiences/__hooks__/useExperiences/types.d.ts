@@ -1,7 +1,10 @@
+import { ActionTypes } from '@repo/core/providers/WidgetActionsProvider';
+
 import { ShareExperienceExperiencesProps } from '../../types';
 import { ShareExperienceStateEnum } from './enum';
 
 export type SelectedCategoryIdTypes = Pick<ShareExperienceExperiencesProps, 'selectedCategoryId'>['selectedCategoryId'];
+export type TagType = { title: string; action: ActionTypes };
 
 export type ExperienceType = {
   state: ShareExperienceStateEnum;
@@ -24,6 +27,7 @@ export type ExperienceType = {
   text: string;
   name: string;
   id: string;
+  tags?: TagType[];
 };
 
 export type ExperiencesResponseTypes = {

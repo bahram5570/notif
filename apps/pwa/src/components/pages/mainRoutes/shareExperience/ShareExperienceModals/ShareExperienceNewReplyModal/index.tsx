@@ -5,9 +5,9 @@ import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ShareExperienceNewReplyModalContainer from './ShareExperienceNewReplyModalContainer';
-import { NewReplyQueriesTypes } from './types';
+import { NewReplyQueriesTypes, ShareExperienceNewReplyModalPropsType } from './types';
 
-const ShareExperienceNewReplyModal = () => {
+const ShareExperienceNewReplyModal = ({ avatarImage, username }: ShareExperienceNewReplyModalPropsType) => {
   const { getQueryParams } = useQueryParamsHandler();
   const { getZIndex } = useOverlayIndex();
 
@@ -21,7 +21,11 @@ const ShareExperienceNewReplyModal = () => {
   return (
     <>
       <CustomModal isOpen={isOpen} isSlidingMode={true} isFullScreen={true} className="!py-0" zIndex={zIndex}>
-        <>{isOpen && <ShareExperienceNewReplyModalContainer data={queriesData} />}</>
+        <>
+          {isOpen && (
+            <ShareExperienceNewReplyModalContainer data={queriesData} avatarImage={avatarImage} username={username} />
+          )}
+        </>
       </CustomModal>
     </>
   );

@@ -6,13 +6,13 @@ import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { AssociationInfoResponseType, UseGetAssociationInfoPropsType } from './type';
 
 const useGetAssociationInfo = ({ associationId }: UseGetAssociationInfoPropsType) => {
-  const { newQuery, getQuery } = useCustomReactQuery([`associationInfo${associationId}`]);
+  const { newQuery, getQuery } = useCustomReactQuery(['associationInfoData']);
 
   const successHandler = (v: AssociationInfoResponseType) => {
-    newQuery({ payload: v, queryKey: [`associationInfo${associationId}`] });
+    newQuery({ payload: v, queryKey: ['associationInfoData'] });
   };
 
-  const associationInfoData = getQuery<AssociationInfoResponseType>({ queryKey: [`associationInfo${associationId}`] });
+  const associationInfoData = getQuery<AssociationInfoResponseType>({ queryKey: ['associationInfoData'] });
 
   const { isLoading, callApi } = usePwaApi<AssociationInfoResponseType>({
     api: `shareeexperience/v3/association/${associationId}`,

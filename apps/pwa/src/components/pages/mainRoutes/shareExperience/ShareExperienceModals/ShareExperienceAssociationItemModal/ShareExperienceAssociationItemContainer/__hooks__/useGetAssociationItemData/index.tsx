@@ -8,10 +8,10 @@ import { AssociationExperiencesResponseType, useGetAssociationItemDataPropsType 
 
 const useGetAssociationItemData = ({ AssociationId }: useGetAssociationItemDataPropsType) => {
   const [pageNo, setPageNo] = useState(0);
-  const { newQuery, updateQuery, getQuery } = useCustomReactQuery([`associationExperienceList${AssociationId}`]);
+  const { newQuery, updateQuery, getQuery, removeQuery } = useCustomReactQuery([`associationExperienceList`]);
 
   const associationExperienceList = getQuery<AssociationExperiencesResponseType>({
-    queryKey: [`associationExperienceList${AssociationId}`],
+    queryKey: [`associationExperienceList`],
   });
 
   const successHandler = (v: AssociationExperiencesResponseType) => {
@@ -20,9 +20,9 @@ const useGetAssociationItemData = ({ AssociationId }: useGetAssociationItemDataP
         ...associationExperienceList,
         experiences: [...associationExperienceList.experiences, ...v.experiences],
       };
-      updateQuery({ queryKey: [`associationExperienceList${AssociationId}`], payload: list });
+      updateQuery({ queryKey: [`associationExperienceList`], payload: list });
     } else {
-      newQuery({ payload: v, queryKey: [`associationExperienceList${AssociationId}`] });
+      newQuery({ payload: v, queryKey: [`associationExperienceList`] });
     }
   };
 
@@ -36,6 +36,7 @@ const useGetAssociationItemData = ({ AssociationId }: useGetAssociationItemDataP
 
   useEffect(() => {
     if (AssociationId) {
+      removeQuery({ queryKey: ['associationExperienceList'] });
       callApi();
     }
   }, [AssociationId]);

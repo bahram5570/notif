@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { FOOTER_HEIGTH } from '@repo/core/constants/app.constants';
@@ -27,9 +27,18 @@ const ShareExperienceAssociationItemContainer = ({
 
   return (
     <div ref={scrollRef} className="h-full overflow-y-auto">
+      {isLoading && (
+        <div className="flex flex-col justify-center items-center h-full w-full">
+          <CustomSpinner size={30} className="border-impo_Primary_Primary" />
+        </div>
+      )}
       {associationInfoData && !isLoading && (
         <>
-          <ShareExperienceNewLink />
+          <ShareExperienceNewLink
+            associationId={AssociationId}
+            fromAssociationSection={true}
+            isFollowed={associationInfoData.isFollowed}
+          />
           <ShareExperienceAssociationItemHeader
             isScrolled={isScrolled}
             {...associationInfoData}
@@ -63,6 +72,7 @@ const ShareExperienceAssociationItemContainer = ({
                           hasLinkTo={true}
                           isSelf={false}
                           id={item.id}
+                          tags={item.tags}
                         />
 
                         <ShareExperienceBottomPart {...item} />

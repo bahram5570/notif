@@ -5,8 +5,9 @@ import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ShareExperienceCommentsModalContainer from './ShareExperienceCommentsModalContainer';
+import { ShareExperienceCommentsModalProps } from './types';
 
-const ShareExperienceCommentsModal = () => {
+const ShareExperienceCommentsModal = ({ avatarImage }: ShareExperienceCommentsModalProps) => {
   const { getQueryParams } = useQueryParamsHandler();
   const { getZIndex } = useOverlayIndex();
 
@@ -22,7 +23,11 @@ const ShareExperienceCommentsModal = () => {
       <CustomModal isOpen={isOpen} isSlidingMode={true} isFullScreen={true} className="!py-0 !px-0" zIndex={zIndex}>
         <>
           {isOpen && (
-            <ShareExperienceCommentsModalContainer id={queryData.id} queryParam={ShareExperienceCommnetModalParms} />
+            <ShareExperienceCommentsModalContainer
+              id={queryData.id}
+              queryParam={ShareExperienceCommnetModalParms}
+              avatarImage={avatarImage}
+            />
           )}
         </>
       </CustomModal>

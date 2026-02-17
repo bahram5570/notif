@@ -10,7 +10,7 @@ const useFollowHandler = ({ isFollow, associationId }: UseFollowHandlerPropsType
   const { updateQuery, getQuery } = useCustomReactQuery(['associationListData']);
 
   const associationListData = getQuery<AssociationListResponseType>({ queryKey: ['associationListData'] });
-  const associationInfoData = getQuery<AssociationInfoResponseType>({ queryKey: [`associationInfo${associationId}`] });
+  const associationInfoData = getQuery<AssociationInfoResponseType>({ queryKey: [`associationInfoData`] });
 
   const successHandler = ({ valid }: SuccessHandlerPropsType) => {
     if (valid) {
@@ -28,7 +28,7 @@ const useFollowHandler = ({ isFollow, associationId }: UseFollowHandlerPropsType
         newData.isFollowed = !newData.isFollowed;
         newData.followerCount = isFollow ? newData.followerCount - 1 : newData.followerCount + 1;
 
-        updateQuery({ queryKey: [`associationInfo${associationId}`], payload: newData });
+        updateQuery({ queryKey: [`associationInfoData`], payload: newData });
       }
     }
   };

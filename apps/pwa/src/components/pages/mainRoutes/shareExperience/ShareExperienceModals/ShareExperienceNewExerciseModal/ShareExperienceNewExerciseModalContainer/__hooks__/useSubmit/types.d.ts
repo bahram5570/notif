@@ -1,6 +1,9 @@
 import { ShareExperienceNewExerciseModalContainerProps } from '../../types';
 
-export interface UseSubmitProps extends Pick<ShareExperienceNewExerciseModalContainerProps, 'onSuccessNewHandler'> {
+export interface UseSubmitProps extends Pick<
+  ShareExperienceNewExerciseModalContainerProps,
+  'onSuccessNewHandler' | 'associationId'
+> {
   topicId: string;
   image: string;
   text: string;

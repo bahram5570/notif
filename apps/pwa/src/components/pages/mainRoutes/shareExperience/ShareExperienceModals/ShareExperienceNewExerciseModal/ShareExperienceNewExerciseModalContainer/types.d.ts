@@ -8,4 +8,5 @@ type OnSuccessTypes = Pick<ShareExperienceNewExerciseModalProps, 'onSuccessNewHa
 type ItemsTypes = OnSuccessTypes & ShareExperienceNewExerciseModalTypes;
 export interface ShareExperienceNewExerciseModalContainerProps extends ItemsTypes {
   queryParam: string | null;
+  associationId: string | undefined;
 }

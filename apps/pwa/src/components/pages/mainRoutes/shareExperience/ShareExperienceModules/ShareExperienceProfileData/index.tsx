@@ -24,6 +24,7 @@ const ShareExperienceProfileData = ({ isSelf, experienceDataList, isLoading }: S
                     text={item.text}
                     hasLinkTo={true}
                     id={item.id}
+                    tags={item.tags}
                   />
 
                   <ShareExperienceBottomPart {...item} selfExperience={item.selfExperience} />

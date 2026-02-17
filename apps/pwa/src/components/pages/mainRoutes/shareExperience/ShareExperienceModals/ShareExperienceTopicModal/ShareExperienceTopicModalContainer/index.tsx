@@ -63,6 +63,7 @@ const ShareExperienceTopicModalContainer = ({
                   text={item.text}
                   hasLinkTo
                   id={item.id}
+                  tags={item.tags}
                 />
 
                 <ShareExperienceBottomPart {...item} />

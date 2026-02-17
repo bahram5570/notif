@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
 
 import useFileUpload from '@hooks/useFileUpload';
+import { useRouter } from 'next/navigation';
 
 const useImage = () => {
   const [image, setImage] = useState('');
+  const router = useRouter();
 
   const successHandler = (v: string) => {
     setImage(v);
+    router.back();
   };
 
   const { fileDataHandler, imageFile, removeFileHandler, uploadImageLoading } = useFileUpload({

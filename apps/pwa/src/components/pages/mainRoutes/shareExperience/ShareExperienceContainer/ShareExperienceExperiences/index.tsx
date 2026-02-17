@@ -45,9 +45,9 @@ const ShareExperienceExperiences = ({
             avatarImage={profile.avatarImage}
             username={profile.username}
           />
-          <ShareExperienceCommentsModal />
+          <ShareExperienceCommentsModal avatarImage={profile.avatarImage} />
           <ShareExperienceUnfollowModal />
-          <ShareExperienceNewReplyModal />
+          <ShareExperienceNewReplyModal avatarImage={profile.avatarImage} username={profile.username} />
           <ShareExperienceReportModal />
           <ShareExperienceDeleteModal />
           <ShareExperienceTopicModal avatarImage={profile.avatarImage} />
@@ -91,6 +91,7 @@ const ShareExperienceExperiences = ({
                     hasLinkTo={true}
                     isSelf={false}
                     id={item.id}
+                    tags={item.tags}
                   />
 
                   <ShareExperienceBottomPart {...item} />

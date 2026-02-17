@@ -1,3 +1,4 @@
+import { TagType } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
 import { ShareExperienceExperiencesProps } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceExperiences/types';
 import { ShareExperienceTopicsProps } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceTopics/type';
 
@@ -37,6 +38,7 @@ export type ExperiencesResponseTypes = {
     userId: string;
     isBookmarked: boolean;
     isFollow: boolean;
+    tags?: TagType[];
   }[];
 };
 

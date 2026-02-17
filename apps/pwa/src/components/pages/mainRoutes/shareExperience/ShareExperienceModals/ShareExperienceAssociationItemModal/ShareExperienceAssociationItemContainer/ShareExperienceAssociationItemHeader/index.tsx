@@ -53,9 +53,13 @@ const ShareExperienceAssociationItemHeader = (props: ShareExperienceAssociationI
       </div>
 
       <div
-        className={` transition-all duration-600 ease-in-out ${props.isScrolled ? 'opacity-0 -translate-y-2 scale-y-95 max-h-0' : 'opacity-100 translate-y-0 scale-y-100 max-h-[300px]'}`}
+        className={`origin-top transform-gpu will-change-[max-height,opacity,transform] ${
+          props.isScrolled ? 'opacity-0 -translate-y-2 scale-y-95 max-h-0' : 'opacity-100 translate-y-0 scale-y-100 max-h-[300px]'
+        }`}
         style={{
           overflow: 'hidden',
+          transition:
+            'max-height 900ms cubic-bezier(0.22, 1, 0.36, 1), opacity 520ms ease-out, transform 900ms cubic-bezier(0.22, 1, 0.36, 1)',
         }}
       >
         <div className="flex flex-col gap-2 items-end">
