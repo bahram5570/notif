@@ -29,7 +29,7 @@ const ShareExperienceAssociationItemModules = ({
 
   return (
     <div className={className} onClick={clickHandler}>
-      <CustomImage src={image} width={imageWidth} height={imageHeight} />
+      <CustomImage src={image} width={imageWidth} height={imageHeight} className=" rounded-full" />
       <CustomTypography
         className="text-impo_Neutral_OnBackground !whitespace-nowrap overflow-hidden"
         fontSize="Lable_SmallProminet"

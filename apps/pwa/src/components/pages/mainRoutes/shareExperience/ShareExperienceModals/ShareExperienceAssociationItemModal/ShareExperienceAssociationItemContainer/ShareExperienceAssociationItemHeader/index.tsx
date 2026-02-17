@@ -60,7 +60,7 @@ const ShareExperienceAssociationItemHeader = (props: ShareExperienceAssociationI
       >
         <div className="flex flex-col gap-2 items-end">
           <div className="flex flex-row-reverse items-center  gap-3">
-            <CustomImage src={props.cover} width={72} height={72} />
+            <CustomImage src={props.cover} width={72} height={72} className="rounded-full" />
             <AssociationItemHeaderInfo
               experienceCount={props.experienceCount}
               followerCount={props.followerCount}
