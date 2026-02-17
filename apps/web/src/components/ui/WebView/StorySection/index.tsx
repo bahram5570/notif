@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 
-import CustomSlider from '@repo/components/ui/CustomSlider';
+// import CustomSlider from '@repo/components/ui/CustomSlider';
 
 import CustomTypography from '@components/ui/CustomTypography';
 import useOperatingSystem from '@hooks/useOperatingSystem';
