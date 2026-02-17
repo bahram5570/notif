@@ -7,7 +7,6 @@ import RetentionEventProvider from '@providers/RetentionEventProvider';
 // import SentryProvider from '@providers/SentryProvider';
 import SplashProvider from '@providers/SplashProvider';
 import SignInteractiveBannerProvider from '@providers/__sign__/SignInteractiveBannerProvider';
-// import PermissionsProvider from '@providers/PermissionsProvider';
 import { PermissionsProvider } from '@repo/core/providers/PermissionsProvider';
 import { SignDateStateProvider } from '@repo/core/providers/SignDateStateProvider';
 
