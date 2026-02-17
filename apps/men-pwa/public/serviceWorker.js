@@ -77,15 +77,14 @@ self.addEventListener('fetch', (event) => {
 
 // # Firebase setup
 
-const firebaseConfig = {
-  appId: '1:497330213206:web:538d02ea2d3155564086f7',
-  apiKey: 'AIzaSyDE0iz1eBW9Ku2do2kKmsJnUj6tvB4_Z2U',
-  databaseURL: 'https://impo-53eb6.firebaseio.com',
-  authDomain: 'impo-53eb6.firebaseapp.com',
-  storageBucket: 'impo-53eb6.appspot.com',
-  messagingSenderId: '497330213206',
-  measurementId: 'G-ESJG2B6KLW',
-  projectId: 'impo-53eb6',
+export const firebaseConfig = {
+  apiKey: 'AIzaSyAUh4czxJGRHkPVskCse_rJYF1xlPzPFK8',
+  appId: '1:835926115491:web:cf5ba1ef6f157c0320eb16',
+  authDomain: 'impo-men.firebaseapp.com',
+  storageBucket: 'impo-men.appspot.com',
+  messagingSenderId: '835926115491',
+  measurementId: 'G-4GK5HZ6XZJ',
+  projectId: 'impo-men',
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -94,7 +93,7 @@ const messaging = firebase.messaging();
 
 messaging.onBackgroundMessage((payload) => {
   self.registration.showNotification(payload.data?.title || '', {
-    icon: '/assets/shared/icons/min-impoLogo.svg',
+    icon: '/assets/shared/icons/men-impoLogo.svg',
     body: payload.data?.message || '',
     image: payload.data?.image || '',
     data: payload.data,

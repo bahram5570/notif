@@ -1,7 +1,7 @@
 import { StaticImageData } from 'next/image';
 
 type HelpStep = {
-  img: StaticImageData;
+  img: string;
   title: string;
 };
 
