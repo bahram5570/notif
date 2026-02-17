@@ -1,7 +1,7 @@
 export type AssociationType = {
   id: string;
   title: string;
-  isFollow: boolean;
+  isFollowed: boolean;
   cover: string;
 };
 
