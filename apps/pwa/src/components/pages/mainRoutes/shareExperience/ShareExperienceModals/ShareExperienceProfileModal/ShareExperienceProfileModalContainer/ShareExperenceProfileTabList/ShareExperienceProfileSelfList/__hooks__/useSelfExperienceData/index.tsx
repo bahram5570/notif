@@ -23,9 +23,7 @@ const useSelfExperienceData = ({ id, isSelf }: UseSelfExperienceDataPropsType) =
     }
   };
 
-  const api = isSelf
-    ? `shareeexperience/v3/experience/self/${pageNo}/${EXPERIENCES_PROFILE_PAGE_SIZE}`
-    : `shareeexperience/v3/profile/${id}/self/${pageNo}/${EXPERIENCES_PROFILE_PAGE_SIZE}`;
+  const api = `shareeexperience/v3/profile/${id}/self/${pageNo}/${EXPERIENCES_PROFILE_PAGE_SIZE}`;
 
   const { isLoading, callApi } = usePwaApi<SelfExperienceDataType>({
     api: api,
