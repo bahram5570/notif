@@ -4,7 +4,7 @@ import { ShareExperienceExperiencesProps } from '../../types';
 import { ShareExperienceStateEnum } from './enum';
 
 export type SelectedCategoryIdTypes = Pick<ShareExperienceExperiencesProps, 'selectedCategoryId'>['selectedCategoryId'];
-export type TagType = { title: string; action: ActionTypes };
+export type TagType = { title: string; action: ActionTypes | null };
 
 export type ExperienceType = {
   state: ShareExperienceStateEnum;

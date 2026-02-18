@@ -3,6 +3,7 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { shareExperienceCommentQueryMaker } from '@utils/shareExperience';
 
 import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
@@ -22,9 +23,14 @@ const ShareExperienceContentsModule = ({
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { increaseZIndex } = useOverlayIndex();
   const { actionHandler } = useWidgetActions();
+  const toast = useCustomToast();
 
   const clickHandler = (tag: TagType) => {
-    actionHandler(tag.action);
+    if (tag.action) {
+      return actionHandler(tag.action);
+    }
+
+    toast.notifyToastHandler({ message: 'این پاتوق فعلا غیرفعال شده', position: 'top-right', type: 'warning' });
   };
 
   const hasTags = tags && tags.length > 0;
