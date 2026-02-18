@@ -8,8 +8,6 @@ import { ShareExperienceProfileActivitiesPropsType } from './type';
 const ShareExperienceProfileActivities = ({ id, isSelf }: ShareExperienceProfileActivitiesPropsType) => {
   const { selfExperienceData, isLoading, pageNo, updatePageNo } = useActivitiesData({ id });
 
-  console.log(selfExperienceData, 'sdlkasdlsadl');
-
   return (
     <InfiniteScrollContainer
       isLoading={isLoading}
