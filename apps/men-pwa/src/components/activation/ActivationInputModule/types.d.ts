@@ -4,6 +4,7 @@ export interface ActivationInputModuleProps {
   englishNumbers?: boolean;
   placeHolder?: string;
   isTextTyps: boolean;
+  className?: string;
   testid?: string;
   value: string;
 }

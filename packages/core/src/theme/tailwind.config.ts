@@ -47,6 +47,11 @@ const preset: Config = {
           '0%': { maxHeight: '0px', opacity: '0' },
           '100%': { maxHeight: '400px', opacity: '1' },
         },
+        skeleton: {
+          '0%': { opacity: '1' },
+          '50%': { opacity: '0.2' },
+          '100%': { opacity: '1' },
+        },
       },
       animation: {
         pageNavigation: 'pageNavigation 5s linear forwards',
@@ -58,6 +63,7 @@ const preset: Config = {
         modalSlidingModeClose: 'modalSlidingModeClose 0.2s linear forwards',
         widgetCurculeContainer: 'widgetCurculeContainer 0.5s linear backwards',
         widgetCurculeCycle: 'widgetCurculeCycle 0.3s linear backwards',
+        skeleton: 'skeleton 1.5s linear infinite',
       },
     },
     colors: {

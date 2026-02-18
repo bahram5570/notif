@@ -24,7 +24,7 @@ const ActivationInputModule = (props: ActivationInputModuleProps) => {
   };
 
   const updatedValue = props.englishNumbers ? toEnglishNumbers(props.value) : toPersianNumbers(props.value);
-  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Title_Large', operatingSystem });
+  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Large', operatingSystem });
   const direction = props.direction || 'ltr';
 
   return (
@@ -40,13 +40,16 @@ const ActivationInputModule = (props: ActivationInputModuleProps) => {
         style={{ ...typographyFontStyles, direction }}
         className={`
                     relative 
-                    w-full 
-                    pt-1 
-                    border-none 
+                    w-[calc(100%-32px)] 
+                    p-2 
+                    border-[1px]
+                    border-impo_Neutral_Surface
+                    rounded-full
                     bg-transparent 
                     text-center 
                     text-impo_Neutral_OnBackground
                     placeholder-impo_Surface_OutlineVariant
+                    ${props.className}
                   `}
       />
     </>

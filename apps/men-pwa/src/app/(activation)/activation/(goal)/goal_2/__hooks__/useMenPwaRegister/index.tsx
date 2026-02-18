@@ -1,45 +1,44 @@
 import { registerPayloadUpdater } from '@utils/register';
 
-import { UserCookieTypes, UserInfoCookieTypes, getFirebaseTokenCookie } from '@actions/userCookies.actions';
+import {
+  UserCookieTypes,
+  UserInfoCookieTypes,
+  getFirebaseTokenCookie,
+  setUserCookie,
+  setUserInfoCookie,
+} from '@actions/userCookies.actions';
 import { LoginSuccessHandlerTypes } from '@components/activation/pages/otp/Otp2Container/__hooks__/useLogin/types';
-import { OTP_COUNT_DOWN_TIME } from '@components/activation/pages/otp/Otp2Container/constants';
 import useActivationPayload from '@providers/__activation__/ActivationProvider/__hooks__/useActivationPayload';
 import { APP_VERSION } from '@repo/core/constants/app.constants';
-import { useCountDown } from '@repo/core/hooks/useCountDown';
 import { useCulture } from '@repo/core/hooks/useCulture';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { useRouter } from 'next/navigation';
 
-import { UseMenPwaRegisterTypes } from './types';
-
-let userCookieValue: UserCookieTypes;
-let userInfoCookieValue: UserInfoCookieTypes;
-
-const useMenPwaRegister = ({ completeHander, loginHandler }: UseMenPwaRegisterTypes) => {
+const useMenPwaRegister = () => {
+  const router = useRouter();
   const { culture } = useCulture();
   const { payload } = useActivationPayload();
 
-  const { startCounter } = useCountDown({
-    time: OTP_COUNT_DOWN_TIME,
-    onCallBack: () => loginHandler({ userCookie: userCookieValue, userInfoCookie: userInfoCookieValue }),
-  });
-
-  const loginSuccessHandler: LoginSuccessHandlerTypes = (v) => {
-    userCookieValue = {
+  const loginSuccessHandler: LoginSuccessHandlerTypes = async (v) => {
+    const userCookieValue: UserCookieTypes = {
       identity: payload.identity || '',
       password: payload.password || '',
       token: v.token,
     };
 
-    userInfoCookieValue = {};
+    const userInfoCookieValue: UserInfoCookieTypes = {};
 
-    completeHander();
-    startCounter();
+    await setUserCookie(userCookieValue);
+    await setUserInfoCookie(userInfoCookieValue);
+    sessionStorage.clear();
+
+    router.replace('/protected/partner');
   };
 
-  const { callApi: callLoginApi } = usePwaApi({
-    onSuccess: loginSuccessHandler,
-    api: 'ManAccount/Loginv3',
+  const { callApi: callLoginApi, isLoading: loginLoading } = usePwaApi({
     method: 'POST',
+    api: 'ManAccount/Loginv3',
+    onSuccess: loginSuccessHandler,
   });
 
   const registerSuccessHandler = async ({ result }: { result: boolean }) => {
@@ -58,16 +57,20 @@ const useMenPwaRegister = ({ completeHander, loginHandler }: UseMenPwaRegisterTy
     }
   };
 
-  const { callApi } = usePwaApi({ api: 'ManAccount/Registerv2', method: 'POST', onSuccess: registerSuccessHandler });
+  const { callApi, isLoading: registerLoading } = usePwaApi({
+    method: 'POST',
+    api: 'ManAccount/Registerv2',
+    onSuccess: registerSuccessHandler,
+  });
 
   const registerHandler = () => {
     const { updatedPayload } = registerPayloadUpdater(payload, culture.calendarType);
-    // todo: As a placeholder. Remove after 'birthDate' set up.
-    updatedPayload.birthDate = '2000-01-01';
     callApi(updatedPayload);
   };
 
-  return { registerHandler };
+  const isLoading = loginLoading || registerLoading;
+
+  return { registerHandler, isLoading };
 };
 
 export default useMenPwaRegister;

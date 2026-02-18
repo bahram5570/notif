@@ -35,14 +35,12 @@ const MainActivationModule = (props: MainActivationModuleProps) => {
       />
 
       <div
+        className="relative flex flex-col items-center overflow-y-auto z-0"
         style={{
           paddingTop: props.progressPercentage === undefined ? 0 : paddingTopHeight,
           height: props.progressPercentage === undefined ? '100%' : '100dvh',
           paddingBottom: CONTINUE_BTN_HEIGHT * 2,
           scrollbarWidth: 'none',
-          position: 'relative',
-          overflowY: 'auto',
-          zIndex: 0,
         }}
       >
         <>{props.children}</>

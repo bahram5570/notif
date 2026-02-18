@@ -49,11 +49,6 @@ const config: Config = {
           '0%': { backgroundColor: '#00000044' },
           '100%': { backgroundColor: '#00000000' },
         },
-        skeleton: {
-          '0%': { opacity: '1' },
-          '50%': { opacity: '0.2' },
-          '100%': { opacity: '1' },
-        },
         scrollLeft: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
@@ -75,7 +70,6 @@ const config: Config = {
         SignsChangedToast: 'SignsChangedToast 10s linear forwards',
         welcoming: 'welcoming 6s linear forwards',
         signsChangedToast: 'signsChangedToast 10s linear forwards',
-        skeleton: 'skeleton 1.5s linear infinite',
         scrollLeft: 'scrollLeft 20s linear infinite',
         scrollRight: 'scrollRight 20s linear infinite',
         'fade-in': 'fade-in 0.9s ease forwards',

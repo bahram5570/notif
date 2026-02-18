@@ -42,7 +42,6 @@ const Otp1Container = ({ payload, payloadHandler, otp1CompleteHandler, onContinu
     orderOfQuestionScripts: { title: 1, subtitle: 3, description: 2 },
     firstName: payload.firstName,
     nextActivationList: {},
-    noBackButton: true,
     nextActivation: '',
     payloadKeys: [],
   };
@@ -60,7 +59,6 @@ const Otp1Container = ({ payload, payloadHandler, otp1CompleteHandler, onContinu
         onContinue={onContinue}
         isLoading={isLoading}
         {...customPageInfo}
-        btnTestId="otp1"
       >
         <>
           <ActivationInputModule

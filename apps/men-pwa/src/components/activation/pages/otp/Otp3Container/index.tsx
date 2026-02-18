@@ -63,7 +63,7 @@ const Otp3Container = ({ otp3CompleteHandler }: Otp3ContainerProps) => {
           fontSize="Lable_Large"
           navigationLoadingId={'phone'}
           onClick={() => otp3CompleteHandler(true)}
-          className="!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan text-impo_White rounded-lg mb-2"
+          className="!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan text-impo_White mb-2"
         >
           ورود یا ثبت نام با موبایل
         </CustomButton>
@@ -73,7 +73,7 @@ const Otp3Container = ({ otp3CompleteHandler }: Otp3ContainerProps) => {
           navigationLoadingId={'email'}
           spinnerClassName="border-impo_Black"
           onClick={() => otp3CompleteHandler(false)}
-          className="!bg-impo_Neutral_Surface dark:!bg-impo_Neutral_OnSurface !border-impo_Neutral_Surface text-impo_Black rounded-lg"
+          className="!bg-impo_Neutral_Surface dark:!bg-impo_Neutral_OnSurface !border-impo_Neutral_Surface text-impo_Black"
         >
           ورود یا ثبت نام با ایمیل
         </CustomButton>

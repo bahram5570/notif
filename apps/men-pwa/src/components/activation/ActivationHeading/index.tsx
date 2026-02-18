@@ -36,15 +36,19 @@ const ActivationHeading = ({
   return (
     <>
       <div
-        className={`w-full flex justify-center pt-8 pointer-events-none z-10 ${isShowLogo ? 'pt-0' : 'pt-8'}`}
+        className={`w-full flex justify-center pointer-events-none z-10`}
         style={{
           maxWidth,
-          height: mainHeight,
+          height: hasProgressBar ? mainHeight : 'unset',
           overflow: hasProgressBar ? 'hidden' : 'unset',
+          paddingBottom: hasProgressBar ? '0px' : '16px',
           position: progressPercentage === undefined ? 'relative' : 'absolute',
         }}
       >
-        <div className="flex flex-col w-full gap-3 justify-center mt-5">
+        <div
+          className="flex flex-col w-full gap-3 justify-center mt-5"
+          style={{ marginTop: hasProgressBar ? '20px' : '76px' }}
+        >
           {isLargeScreen && isShowLogo && (
             <ImpoIcon
               id={ACTIVATION_HEADING_ICON_ID}
@@ -81,7 +85,7 @@ const ActivationHeading = ({
               {scripts.subtitle}
             </CustomTypography>
           </div>
-          
+
           {banner && (
             <div className=" mx-4 mt-4">
               <div className="flex flex-row-reverse items-start gap-2 bg-impo_Warning_WarininContainer rounded-lg px-3 py-3">
