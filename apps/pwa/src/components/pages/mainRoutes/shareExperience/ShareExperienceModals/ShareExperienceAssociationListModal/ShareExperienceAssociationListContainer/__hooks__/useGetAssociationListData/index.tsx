@@ -42,7 +42,9 @@ const useGetAssociationListData = () => {
     setPageNo((prev) => prev + 1);
   };
 
-  return { isLoading, associationListData, pageNo, updatePageNo };
+  const firstLoading = isLoading && pageNo === 0;
+
+  return { isLoading, associationListData, pageNo, updatePageNo, firstLoading };
 };
 
 export default useGetAssociationListData;
