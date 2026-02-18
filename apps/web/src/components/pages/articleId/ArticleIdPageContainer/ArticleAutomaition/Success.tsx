@@ -8,7 +8,7 @@ import CustomTypography from '@components/ui/CustomTypography';
 
 import { SuccessProps } from './types';
 
-export default function Success({ onClose, link }: SuccessProps) {
+export default function Success({ onClose, link, pdfId }: SuccessProps) {
   const handleDownload = () => {
     const linkElement: any = document.createElement('a');
     linkElement.href = link;
@@ -30,6 +30,7 @@ export default function Success({ onClose, link }: SuccessProps) {
       <CustomButton
         onClick={handleDownload}
         fontSize="Body_Large"
+        id={pdfId}
         className="!bg-impo_Black w-full border-none mt-[59px] py-[13.5px]"
       >
         دانلود فایل pdf

@@ -54,7 +54,13 @@ export default function ArticleAutomaition({ threshold = 50, contentCategory }: 
           <HeaderContent title={contentCategory.title} subtitle={contentCategory.subtitle} />
         </div>
         <div className="!bg-impo_Neutral_Background">
-          <LeadSteps step={step} setStep={setStep} onClose={handleClose} contentCategoryId={contentCategory.id} />
+          <LeadSteps
+            step={step}
+            setStep={setStep}
+            onClose={handleClose}
+            contentCategoryId={contentCategory.id}
+            trackingId={{ pdfId: contentCategory.pdfId, phoneId: contentCategory.phoneId }}
+          />
         </div>
       </Dialog>
     );
@@ -94,7 +100,13 @@ export default function ArticleAutomaition({ threshold = 50, contentCategory }: 
         </div>
       </div>
       <div className="!bg-impo_Neutral_Background">
-        <LeadSteps step={step} setStep={setStep} onClose={handleClose} contentCategoryId={contentCategory.id} />
+        <LeadSteps
+          step={step}
+          setStep={setStep}
+          onClose={handleClose}
+          contentCategoryId={contentCategory.id}
+          trackingId={{ pdfId: contentCategory.pdfId, phoneId: contentCategory.phoneId }}
+        />
       </div>
     </SwipeableDrawer>
   );

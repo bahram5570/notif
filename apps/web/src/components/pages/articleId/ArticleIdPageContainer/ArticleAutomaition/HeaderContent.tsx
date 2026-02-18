@@ -3,9 +3,9 @@ import autoArticleImg from '@assets/images/autoArticleImg.webp';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
 
-import { ContentCategoryType } from './types';
+import { HeaderContentProps } from './types';
 
-const HeaderContent = ({ title, subtitle }: ContentCategoryType) => {
+const HeaderContent = ({ title, subtitle }: HeaderContentProps) => {
   return (
     <>
       <div className="grid gap-y-1">

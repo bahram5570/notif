@@ -3,6 +3,8 @@ export type ArticlesTypes = {
     id: string;
     title: string;
     subtitle: string;
+    phoneId: string;
+    pdfId: string;
   };
   doctor: null | {
     profileImage: string;
