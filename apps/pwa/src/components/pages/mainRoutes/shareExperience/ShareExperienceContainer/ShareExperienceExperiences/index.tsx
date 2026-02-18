@@ -74,7 +74,7 @@ const ShareExperienceExperiences = ({
         {experiencesData?.expirences.map((item, index) => {
           return (
             <Fragment key={index}>
-              {index === 1 && showAssociation && (
+              {index === 1 && showAssociation && associations.length > 0 && (
                 <ShareExperienceAssociation
                   associationSectionTitle={associationSectionTitle}
                   associations={associations}
