@@ -31,8 +31,7 @@ const WarningMessage = ({ messageList }: { messageList: ItemPropsType[] }) => {
           />
 
           <CustomTypography fontSize="Lable_Large" className="w-full text-center text-impo_Neutral_OnBackground">
-            برای استفاده از این پیام‌رسان لازمه پارتنرت هم آخرین نسخه ایمپو رو نصب کنه. این امکان فعلا برای گوشی‌های ios
-            فراهم نیست
+            برای استفاده از این پیام‌رسان لازمه پارتنرت هم آخرین نسخه ایمپو رو نصب کنه
           </CustomTypography>
         </div>
       )}

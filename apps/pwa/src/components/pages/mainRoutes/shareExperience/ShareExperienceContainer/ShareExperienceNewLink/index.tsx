@@ -13,6 +13,7 @@ const ShareExperienceNewLink = ({
   fromAssociationSection = false,
   associationId,
   isFollowed,
+  resetPageNo,
 }: ShareExperienceNewLinkPropsType) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
@@ -27,6 +28,9 @@ const ShareExperienceNewLink = ({
           position: 'bottom-center',
           type: 'warning',
         });
+      }
+      if (resetPageNo) {
+        resetPageNo();
       }
       const queryParam = { associationId };
       newQueryParamsHandler({ [SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME]: JSON.stringify(queryParam) });

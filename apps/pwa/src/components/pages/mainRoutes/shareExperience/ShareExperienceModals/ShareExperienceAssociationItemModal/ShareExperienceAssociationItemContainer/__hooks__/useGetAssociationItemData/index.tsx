@@ -50,7 +50,11 @@ const useGetAssociationItemData = ({ AssociationId }: useGetAssociationItemDataP
   const updatePageNo = () => {
     setPageNo((prev) => prev + 1);
   };
-  return { experiencesLoading, pageNo, associationExperienceList, updatePageNo };
+
+  const resetPageNo = () => {
+    setPageNo(0);
+  };
+  return { experiencesLoading, pageNo, associationExperienceList, updatePageNo, resetPageNo };
 };
 
 export default useGetAssociationItemData;

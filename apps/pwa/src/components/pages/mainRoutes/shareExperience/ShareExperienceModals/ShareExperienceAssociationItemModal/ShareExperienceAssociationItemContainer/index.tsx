@@ -18,9 +18,10 @@ const ShareExperienceAssociationItemContainer = ({
   AssociationId,
 }: ShareExperienceAssociationItemContainerPropsType) => {
   const { isScrolled, scrollRef } = useScroll();
-  const { associationExperienceList, pageNo, updatePageNo, experiencesLoading } = useGetAssociationItemData({
-    AssociationId,
-  });
+  const { associationExperienceList, pageNo, updatePageNo, experiencesLoading, resetPageNo } =
+    useGetAssociationItemData({
+      AssociationId,
+    });
   const { associationInfoData, isLoading } = useGetAssociationInfo({ associationId: AssociationId });
 
   const hasExperienceList = associationExperienceList && associationExperienceList.experiences.length > 0;
@@ -38,6 +39,7 @@ const ShareExperienceAssociationItemContainer = ({
             associationId={AssociationId}
             fromAssociationSection={true}
             isFollowed={associationInfoData.isFollowed}
+            resetPageNo={resetPageNo}
           />
           <ShareExperienceAssociationItemHeader
             isScrolled={isScrolled}
@@ -54,7 +56,7 @@ const ShareExperienceAssociationItemContainer = ({
             style={{ paddingBottom: FOOTER_HEIGTH }}
           >
             <div style={{ paddingTop: isScrolled ? '80px' : '220px' }}>
-              {!hasExperienceList && <EmptyState associationName={associationInfoData.title} />}
+              {!hasExperienceList && !experiencesLoading && <EmptyState associationName={associationInfoData.title} />}
 
               {hasExperienceList &&
                 associationExperienceList?.experiences.map((item, index) => {
