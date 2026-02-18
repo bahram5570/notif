@@ -9,6 +9,7 @@ import CustomTypography from '@components/ui/CustomTypography';
 import dynamic from 'next/dynamic';
 
 import ArticleAutomaition from './ArticleAutomaition';
+import ArticleIdAuthor from './ArticleIdAuthor';
 import ArticleIdBeforeAfter from './ArticleIdBeforeAfter';
 import ArticleIdBreadcrumb from './ArticleIdBreadcrumb';
 import ArticleIdComments from './ArticleIdComments';
@@ -89,25 +90,7 @@ const ArticleIdPageContainer = async (props: ArticleIdPageContainerTypes) => {
           <ArticleIdFaq faqs={props.faqs} />
 
           {props.doctor && (
-            <CustomLink href={`/author/${props.author.id}`} className="flex items-center">
-              <div className="flex gap-3 items-center">
-                <div className="relative w-16 h-16">
-                  <CustomImage
-                    className="rounded-full object-cover"
-                    alt={props.author.authorName || ''}
-                    src={authorImageUrl}
-                    fill={true}
-                  />
-                </div>
-
-                <div className="flex flex-col gap-2">
-                  <CustomTypography
-                    fontSize="Body_Small"
-                    className={`!text-impo_Neutral_OnBackground`}
-                  >{`نویسنده: ${props.author.authorName}`}</CustomTypography>
-                </div>
-              </div>
-            </CustomLink>
+            <ArticleIdAuthor authorName={props.author.authorName} authorPic={authorImageUrl} id={props.author.id} />
           )}
           <ArticleIdScore rate={props.rate} rateCount={props.rateCount} />
 
