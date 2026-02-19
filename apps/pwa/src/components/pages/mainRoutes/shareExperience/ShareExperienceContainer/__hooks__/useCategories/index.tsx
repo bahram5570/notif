@@ -15,6 +15,7 @@ const useCategories = (data: CategoriesListTypes) => {
 
       if (initialSelected) {
         setSelectedCategoryId(initialSelected.id);
+        setShowAssociation(initialSelected.showAssociation);
       }
     }
   }, [data]);
