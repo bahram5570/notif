@@ -67,7 +67,7 @@ const BirthDateModal = ({ value, valueHandler, onClose }: BirthDateModalTypes) =
 
   return (
     <>
-      <CakeIcon className="w-9 h-9 stroke-impo_Primary_Primary" />
+      <CakeIcon className="w-9 h-9 stroke-impo_PrimaryMan_PrimaryMan" />
 
       <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
         تاریخ تولد
@@ -99,7 +99,11 @@ const BirthDateModal = ({ value, valueHandler, onClose }: BirthDateModalTypes) =
         )}
       </div>
 
-      <CustomButton onClick={saveHandler} fontSize="Lable_Large">
+      <CustomButton
+        onClick={saveHandler}
+        fontSize="Lable_Large"
+        className="!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan"
+      >
         ذخیره
       </CustomButton>
     </>

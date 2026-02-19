@@ -4,6 +4,7 @@ import { getCultureCookie } from '@actions/userCookies.actions';
 import { FIREBASE_CONFIG, PORTAL_SPLASH_ID } from '@constants/app.constants';
 import ErrorProvider from '@providers/ErrorProvider';
 import MenPwaWidgetActionsProvider from '@providers/MenPwaWidgetActionsProvider';
+import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
 import { MAX_SCREEN_WIDTH, PORTAL_ID } from '@repo/core/constants/app.constants';
 import { CultureProvider } from '@repo/core/providers/CultureProvider';
 import { OperatingSystemProvider } from '@repo/core/providers/OperatingSystemProvider';
@@ -70,6 +71,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
                       <MenPwaWidgetActionsProvider>
                         <ServiceWorkerProvider firebaseConfigs={FIREBASE_CONFIG}>
                           <>{children}</>
+                          <ModalsQueryParamsProvider />
                           <PreviewImageProvider />
                           <div id={PORTAL_SPLASH_ID} />
                           <div id={PORTAL_ID} />

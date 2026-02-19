@@ -10,8 +10,8 @@ import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-import { PROFILE_MODAL_QUERY_NAME } from '../../ProfileLinkList/constants';
-import { ProfileModalNameEnums } from '../../ProfileModals/enum';
+import { PROFILE_MODAL_QUERY_NAME } from '../ProfileLinkList/constants';
+import { ProfileModalNameEnums } from '../ProfileModals/enum';
 import { UserNameDetailsProps } from './type';
 
 const UserNameDetail = ({ name, username, avatar }: UserNameDetailsProps) => {
@@ -33,7 +33,7 @@ const UserNameDetail = ({ name, username, avatar }: UserNameDetailsProps) => {
     pageNavigationHandler({ showProgressBar: false, id: ProfileModalNameEnums.EditProfileImage });
   };
 
-  function preventIOSPhoneLink(number: string) {
+  const preventIOSPhoneLink =(number: string) => {
     return number.split('').join('\u200B');
   }
 

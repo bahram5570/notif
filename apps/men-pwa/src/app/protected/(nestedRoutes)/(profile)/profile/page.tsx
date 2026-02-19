@@ -1,4 +1,4 @@
-import ProfilePage from '@components/pages/nestedRoutes/profile/ProfilePage';
+import ProfilePage from '@components/pages/nestedRoutes/__profile__/ProfilePage';
 
 const Profile = () => {
   return <ProfilePage />;

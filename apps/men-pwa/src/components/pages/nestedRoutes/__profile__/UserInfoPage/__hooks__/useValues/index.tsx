@@ -5,7 +5,7 @@ import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 
 import { UserInfoValuesTypes, ValuesHandlerTypes } from './types';
 
-let initialValues: UserInfoValuesTypes = { calendarType: CalendarTypeEnum.Jalali, name: '', birthDate: '', height: -1 };
+let initialValues: UserInfoValuesTypes = { calendarType: CalendarTypeEnum.Jalali, name: '', birthdate: '' };
 
 const useValues = () => {
   const [values, setValues] = useState<UserInfoValuesTypes>(initialValues);
@@ -14,10 +14,9 @@ const useValues = () => {
   useEffect(() => {
     if (profileData) {
       const result: UserInfoValuesTypes = {
-        name: profileData.name,
-        height: profileData.height,
-        birthDate: profileData.birthDate,
-        calendarType: profileData.calendarType,
+        name: profileData.generalInfo.name,
+        birthdate: profileData.generalInfo.birthdate,
+        calendarType: profileData.generalInfo.calendarType,
       };
 
       setValues(result);
@@ -31,8 +30,7 @@ const useValues = () => {
 
   const isModified = !(
     values.name === initialValues.name &&
-    values.height === initialValues.height &&
-    values.birthDate === initialValues.birthDate &&
+    values.birthdate === initialValues.birthdate &&
     values.calendarType === initialValues.calendarType
   );
 

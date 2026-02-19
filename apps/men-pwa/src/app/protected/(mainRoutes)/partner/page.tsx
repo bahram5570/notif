@@ -1,5 +1,5 @@
-const Parnter = () => {
+const Partner = () => {
   return <div>Partner</div>;
 };
 
-export default Parnter;
+export default Partner;

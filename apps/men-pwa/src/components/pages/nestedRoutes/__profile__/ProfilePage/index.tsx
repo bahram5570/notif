@@ -6,41 +6,37 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import useProfileData from '@hooks/__profile__/useProfileData';
 import { APP_VERSION, HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
-import InstallationPurpose from './InstallationPurpose';
 import LogOut from './Logout';
 import ProfileLinkList from './ProfileLinkList';
 import ProfileModals from './ProfileModals';
-import ProfileSkeleton from './ProfileSkeleton';
 import SubscriptionButton from './SubscriptionButton';
-import useGetData from './__hooks__/useGetData';
-import UserNameDetail from './userNameDetail';
+import UserNameDetail from './UserNameDetail';
 
 const ProfilePage = () => {
-  const { hasSubscribtion, subscriptionLoading } = useGetData();
-  const { profileData, isLoading } = useProfileData();
-
-  const Loading = isLoading || subscriptionLoading;
+  const { profileData } = useProfileData();
 
   return (
     <MainPageLayout
-      rightElement={hasSubscribtion ? 'BackButton' : 'BackToSubscription'}
-      className="bg-impo_Neutral_Background"
-      rightElementScript="صفحه قبل"
-      paddingBottom={0}
       paddingTop={0}
+      paddingBottom={0}
+      rightElementScript="صفحه قبل"
+      className="bg-impo_Neutral_Background"
+      rightElement={profileData?.subscribtaion.valid ? 'BackButton' : 'BackToSubscription'}
     >
       <div className="flex flex-col min-h-[100dvh] gap-6 pb-6" style={{ paddingTop: HEADER_HEIGHT }}>
-        {Loading && <ProfileSkeleton />}
-
-        {!Loading && profileData && (
+        {profileData && (
           <div className="flex-grow gap-2">
-            <UserNameDetail name={profileData.name} username={profileData.username} avatar={profileData.avatar} />
+            <UserNameDetail
+              identity={profileData.identity}
+              name={profileData.generalInfo.name}
+              avatarImage={profileData.avatarImage}
+              canDeleteAvatar={profileData.canDeleteAvatar}
+              defaultAvatarImage={profileData.defaultAvatarImage}
+            />
 
-            <SubscriptionButton remaindDays={profileData.remaindDays} />
+            <SubscriptionButton currentDayCount={profileData.subscribtaion.currentDayCount} />
 
-            {hasSubscribtion && <InstallationPurpose changeStatusBtns={profileData.changeStatusBtns} />}
-
-            <ProfileLinkList {...profileData} hasSubscribtion={hasSubscribtion} />
+            <ProfileLinkList />
           </div>
         )}
 
