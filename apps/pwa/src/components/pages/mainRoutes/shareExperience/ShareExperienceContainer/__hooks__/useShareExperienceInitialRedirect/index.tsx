@@ -39,12 +39,17 @@ const useShareExperienceInitialRedirect = () => {
     }
 
     if (redirectStorage) {
-      const data = redirectStorage.split('=');
-      newQueryParamsHandler({ [data[0]]: data[1] });
-      increaseZIndex(data[0], data[1]);
-    }
+      const [key, value] = redirectStorage.split('=');
 
-    sessionStorage.removeItem(SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE);
+      const params = new URLSearchParams(searchParams.toString());
+
+      params.append(key, value);
+
+      router.replace(`${pathname}?${params.toString()}`);
+
+      increaseZIndex(key, value);
+      sessionStorage.removeItem(SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE);
+    }
   }, [queryString]);
 
   // useEffect(() => {
