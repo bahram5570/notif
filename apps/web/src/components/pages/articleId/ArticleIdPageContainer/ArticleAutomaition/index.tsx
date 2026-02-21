@@ -48,10 +48,15 @@ export default function ArticleAutomaition({ threshold = 50, contentCategory }: 
         PaperProps={{ className: '!rounded-[16px] bg-white shadow-2xl overflow-hidden' }}
       >
         <div className="pt-[14px] flex items-center px-4 justify-between !bg-impo_Primary_Primary">
-          <CustomButton onClick={handleClose} className="absolute top-2 right-5 text-white text-lg !p-0 !m-0 h-fit">
+          <CustomButton
+            onClick={handleClose}
+            className="absolute top-2 right-5 text-white !bg-transparent text-lg !p-0 !m-0 h-fit"
+          >
             ✕
           </CustomButton>
-          <HeaderContent title={contentCategory.title} subtitle={contentCategory.subtitle} />
+          <div className="mt-[14px] flex items-center justify-between">
+            <HeaderContent title={contentCategory.title} subtitle={contentCategory.subtitle} />
+          </div>
         </div>
         <div className="!bg-impo_Neutral_Background">
           <LeadSteps
