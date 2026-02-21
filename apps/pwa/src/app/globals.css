@@ -16,6 +16,11 @@ body {
   font-family: YekanBakhVF;
 }
 
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 .glass-card {
   @apply bg-white/10 dark:!bg-[#2B2B2B80] backdrop-blur-[8px] border border-white/30;
 }

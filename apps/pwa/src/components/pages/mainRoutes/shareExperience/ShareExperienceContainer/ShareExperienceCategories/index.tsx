@@ -5,7 +5,7 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { ShareExperienceCategoriesProps } from './types';
 
 const ShareExperienceCategories = ({
-  selectedCategoryIdHandler,
+  selectedCategoryHandler,
   selectedCategoryId,
   categories,
 }: ShareExperienceCategoriesProps) => {
@@ -19,7 +19,7 @@ const ShareExperienceCategories = ({
             return (
               <div
                 key={index}
-                onClick={() => selectedCategoryIdHandler(item.id)}
+                onClick={() => selectedCategoryHandler(item.id, item.showAssociation)}
                 className={`
                             flex 
                             items-center 

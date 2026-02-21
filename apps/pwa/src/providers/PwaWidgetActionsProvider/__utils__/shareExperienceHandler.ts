@@ -1,10 +1,14 @@
-import { shareExperienceCommentQueryMaker, shareExperienceTopicQueryMaker } from '@utils/shareExperience';
+import {
+  shareExperienceAssociationQueryMaker,
+  shareExperienceCommentQueryMaker,
+  shareExperienceTopicQueryMaker,
+} from '@utils/shareExperience';
 
 import { SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE } from '@components/pages/mainRoutes/shareExperience/constants';
 
 export const shareExperienceHandler = (queries?: string) => {
   const params = new URLSearchParams(queries);
-  const route = params.get('route') as null | '/topic' | '/comment';
+  const route = params.get('route') as null | '/topic' | '/comment' | '/association';
   const id = params.get('id');
 
   if (route && id) {
@@ -16,6 +20,9 @@ export const shareExperienceHandler = (queries?: string) => {
         break;
       case '/comment':
         modal = shareExperienceCommentQueryMaker(id);
+        break;
+      case '/association':
+        modal = shareExperienceAssociationQueryMaker(id);
         break;
     }
 

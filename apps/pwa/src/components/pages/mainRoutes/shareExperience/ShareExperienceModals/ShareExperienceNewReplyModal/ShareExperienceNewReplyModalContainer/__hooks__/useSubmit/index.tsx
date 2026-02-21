@@ -5,6 +5,7 @@ import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
+import { AssociationExperiencesResponseType } from '../../../../ShareExperienceAssociationItemModal/ShareExperienceAssociationItemContainer/__hooks__/useGetAssociationItemData/type';
 import { DataRepliesListTypes } from '../../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/CommentsGenerator/ReplyGenerator/__hooks__/useReplyList/types';
 import { CommentsResponseTypes } from '../../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/__hooks__/useCommentsList/types';
 import { NewCommentResponseTypes, NewReplyResponseTypes, UseSubmitProps } from './types';
@@ -47,6 +48,17 @@ const useSubmit = ({ text, data }: UseSubmitProps) => {
         commentsData.commentCount++;
 
         updateQuery({ queryKey: ['comments ' + data.shareId], payload: commentsData });
+      }
+
+      const associationExperienceList = getQuery<AssociationExperiencesResponseType>({
+        queryKey: [`associationExperienceList`],
+      });
+      if (associationExperienceList) {
+        const experienceIndex = associationExperienceList.experiences.findIndex((item) => item.id === data.shareId);
+        if (experienceIndex > -1) {
+          associationExperienceList.experiences[experienceIndex].commentCount++;
+          updateQuery({ queryKey: ['associationExperienceList'], payload: associationExperienceList });
+        }
       }
     } else if (data.type === 'reply') {
       const response = v as NewReplyResponseTypes;

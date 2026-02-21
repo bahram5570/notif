@@ -1,12 +1,11 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from 'react';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import OverlayBar from '@components/ui/OverlayBar';
 import { HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
@@ -19,7 +18,7 @@ import useSubmit from './__hooks__/useSubmit';
 
 const NoteContainer = () => {
   const { callEvent } = useAnalytics();
-  const [btnTop, setBtnTop] = useState<number>(0);
+
   const textareaConainerRef = useRef<HTMLDivElement | null>(null);
   const { noteValue, onChangeHandler, isLoading: getDataLoading } = useGetData();
   const { isLoading, submitHandler } = useSubmit({ noteId: noteValue.noteId });
@@ -30,18 +29,6 @@ const NoteContainer = () => {
     isEditMode ? callEvent('NoteEdit') : callEvent('NoteAdd');
     submitHandler(noteValue);
   };
-
-  useEffect(() => {
-    const el = textareaConainerRef.current;
-
-    if (el) {
-      const elTop = el.getBoundingClientRect().top;
-      const elHeight = el.offsetHeight;
-      const elPaddingTop = 20;
-
-      setBtnTop(elTop + elHeight + elPaddingTop);
-    }
-  }, [getDataLoading]);
 
   return (
     <>
@@ -70,11 +57,14 @@ const NoteContainer = () => {
 
             {isEditMode && <DeleteNoteBtn />}
 
-            <OverlayBar btnTop={btnTop} className="py-3 px-2 mx-auto" style={{ maxWidth: MAX_SCREEN_WIDTH }}>
+            <div
+              className="fixed h-fit right-0 left-0 bottom-0 z-40 py-3 px-2 mx-auto"
+              style={{ maxWidth: MAX_SCREEN_WIDTH }}
+            >
               <CustomButton isLoading={isLoading} isDisable={!noteValue.title} fontSize="Lable_Large" onClick={onClick}>
                 {isEditMode ? 'ویرایش یادداشت' : 'ثبت یادداشت'}
               </CustomButton>
-            </OverlayBar>
+            </div>
           </div>
 
           <NoteModal noteValue={noteValue} onChangeHandler={onChangeHandler} />

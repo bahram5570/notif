@@ -1,6 +1,8 @@
 import { ExcercisesListTypes } from '../__hooks__/useShareExperienceComments/types';
+import { ShareExperienceCommentsModalProps } from '../types';
 
-export interface ShareExperienceCommentsModalContainerProps {
+type ItemType = Pick<ShareExperienceCommentsModalProps, 'avatarImage'>;
+export interface ShareExperienceCommentsModalContainerProps extends ItemType {
   id: string;
   queryParam: string | null;
 }

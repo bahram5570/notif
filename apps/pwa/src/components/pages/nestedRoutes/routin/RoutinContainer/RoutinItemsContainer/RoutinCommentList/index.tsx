@@ -9,18 +9,10 @@ import CreateComment from './CreateComment';
 import useGetCommentData from './__hooks__/useGetCommentData';
 import { RoutinCommentListPropsType } from './type';
 
-const RoutinCommentList = ({ programId, commentPlaceholder }: RoutinCommentListPropsType) => {
+const RoutinCommentList = ({ programId, commentPlaceholder, scrollRef }: RoutinCommentListPropsType) => {
   const { commentsData, isLoading, pageNo, updatePageNo } = useGetCommentData({ programId });
 
   const hasData = commentsData && commentsData.items.length > 0;
-
-  useEffect(() => {
-    document.body.style.overflow = 'hidden';
-
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, []);
 
   return (
     <>
@@ -28,9 +20,9 @@ const RoutinCommentList = ({ programId, commentPlaceholder }: RoutinCommentListP
         callBack={updatePageNo}
         isLoading={isLoading}
         pageNo={pageNo}
+        scrollContainerRef={scrollRef}
         totalCount={commentsData?.totalCount || 0}
-        height={`calc(100dvh - ${HEADER_HEIGHT + 280}px)`}
-        style={{ paddingBottom: HEADER_HEIGHT * 4, paddingTop: 50 }}
+        style={{ paddingBottom: HEADER_HEIGHT, paddingTop: 50 }}
       >
         <div className=" flex flex-col px-4 gap-3 ">
           {!hasData && !isLoading && <CommentsListEmpty />}

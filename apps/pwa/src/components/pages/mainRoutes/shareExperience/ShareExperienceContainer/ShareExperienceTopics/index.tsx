@@ -4,6 +4,7 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { shareExperienceTopicQueryMaker } from '@utils/shareExperience';
 
 import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
@@ -23,24 +24,25 @@ const ShareExperienceTopics = ({ topics }: ShareExperienceTopicsProps) => {
   };
 
   return (
-    <div className="flex flex-col gap-4 items-end ">
+    <div className="flex flex-col gap-4 items-end " style={{ paddingTop: HEADER_HEIGHT + 10 }}>
       <CustomTypography fontSize="Lable_Large" className="px-3 text-impo_Neutral_OnBackground">
         تالار تجربه
       </CustomTypography>
 
-      <CustomSlider gap={12} sidePadding={16}>
+      <CustomSlider gap={16} sidePadding={16}>
         <>
           {topics.map((item, index) => {
             return (
               <div key={index} onClick={() => clickHandler(item.id)}>
-                <div className="relative">
-                  <CustomImage src={item.image} width={130} height={140} />
+                <div className="flex flex-col gap-2 justify-center items-center">
+                  <CustomImage src={item.image} width={64} height={64} className=" rounded-full" />
 
-                  <div className="absolute bottom-0 left-0 right-0 flex justify-center items-center py-2 px-2">
-                    <CustomTypography fontSize="Body_Small" className="text-impo_White">
-                      {item.name}
-                    </CustomTypography>
-                  </div>
+                  <CustomTypography
+                    fontSize="Lable_Small"
+                    className="text-impo_Neutral_OnBackground !whitespace-nowrap overflow-hidden"
+                  >
+                    {item.name}
+                  </CustomTypography>
                 </div>
               </div>
             );

@@ -3,4 +3,6 @@ import { RoutinResponseTypes } from '../__hooks__/useGetData/types';
 
 type ItemType = Pick<RoutinResponseTypes, 'programId' | 'commentPlaceholder'>;
 
-export interface RoutinCommentListPropsType extends ItemType {}
+export interface RoutinCommentListPropsType extends ItemType {
+  scrollRef: RefObject<HTMLDivElement>;
+}

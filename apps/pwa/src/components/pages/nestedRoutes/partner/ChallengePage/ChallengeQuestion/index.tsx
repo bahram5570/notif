@@ -11,7 +11,7 @@ import { ChallengeQuestionPropsType } from './type';
 const ChallengeQuestion = ({ avatarUrl, helper, question, id, btn }: ChallengeQuestionPropsType) => {
   const [answerValue, setAnswerValue] = useState('');
 
-  const [btnTop, setBtnTop] = useState<number>();
+  const [btnTop, setBtnTop] = useState<number>(0);
   const textareaConainerRef = useRef<HTMLDivElement | null>(null);
   const { operatingSystem } = useSystem();
 
@@ -19,17 +19,17 @@ const ChallengeQuestion = ({ avatarUrl, helper, question, id, btn }: ChallengeQu
     setAnswerValue(e.target.value);
   };
 
-  useEffect(() => {
-    if (!answerValue) return;
-    const el = textareaConainerRef.current;
-    if (el) {
-      const elTop = el.getBoundingClientRect().top;
-      const elHeight = el.offsetHeight;
-      const elPaddingTop = operatingSystem === 'ios' ? 120 : 20;
+  // useEffect(() => {
+  //   if (!answerValue) return;
+  //   const el = textareaConainerRef.current;
+  //   if (el) {
+  //     const elTop = el.getBoundingClientRect().top;
+  //     const elHeight = el.offsetHeight;
+  //     const elPaddingTop = operatingSystem === 'ios' ? 120 : 20;
 
-      setBtnTop(elTop + elHeight + elPaddingTop);
-    }
-  }, [answerValue]);
+  //     setBtnTop(elTop + elHeight + elPaddingTop);
+  //   }
+  // }, [answerValue]);
 
   return (
     <>

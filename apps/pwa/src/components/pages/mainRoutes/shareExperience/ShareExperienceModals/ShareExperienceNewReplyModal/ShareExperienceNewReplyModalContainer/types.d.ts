@@ -1,5 +1,6 @@
-import { NewReplyQueriesTypes } from '../types';
+import { NewReplyQueriesTypes, ShareExperienceNewReplyModalPropsType } from '../types';
 
-export interface ShareExperienceNewReplyModalContainerProps {
+export type ItemType = Pick<ShareExperienceNewReplyModalPropsType, 'avatarImage' | 'username'>;
+export interface ShareExperienceNewReplyModalContainerProps extends ItemType {
   data: NewReplyQueriesTypes;
 }

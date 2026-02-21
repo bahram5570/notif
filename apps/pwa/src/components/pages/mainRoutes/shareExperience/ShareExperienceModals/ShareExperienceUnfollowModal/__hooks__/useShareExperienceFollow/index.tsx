@@ -8,6 +8,7 @@ import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
 import { QueryExperiencesDataTypes } from '../../../../ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
+import { AssociationExperiencesResponseType } from '../../../ShareExperienceAssociationItemModal/ShareExperienceAssociationItemContainer/__hooks__/useGetAssociationItemData/type';
 import { CommentsResponseTypes } from '../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/__hooks__/useCommentsList/types';
 import { SelfExperienceDataType } from '../../../ShareExperienceProfileModal/ShareExperienceProfileModalContainer/ShareExperenceProfileTabList/ShareExperienceProfileActivities/__hooks__/useActivitiesData/type';
 import { ShareExperenceProfileResponsePropsType } from '../../../ShareExperienceProfileModal/ShareExperienceProfileModalContainer/__hooks__/useGetData/type';
@@ -30,6 +31,10 @@ const useShareExperienceFollow = (experienceId?: string) => {
       queryKey: ['shareExperienceProfileData'],
     });
 
+    const associationExperienceList = getQuery<AssociationExperiencesResponseType>({
+      queryKey: [`associationExperienceList`],
+    });
+
     if (experiencesData) {
       experiencesData.expirences.forEach((item) => {
         if (item.userId === apiInfo?.userId) {
@@ -38,6 +43,16 @@ const useShareExperienceFollow = (experienceId?: string) => {
       });
 
       updateQuery({ queryKey: ['experiences'], payload: experiencesData });
+    }
+
+    if (associationExperienceList) {
+      associationExperienceList.experiences.forEach((item) => {
+        if (item.userId === apiInfo?.userId) {
+          item.isFollow = !apiInfo.isFollow;
+        }
+      });
+
+      updateQuery({ queryKey: ['associationExperienceList'], payload: associationExperienceList });
     }
 
     if (commentsData) {

@@ -10,6 +10,7 @@ import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 
 import ShareExperienceNewContinueBtn from './ShareExperienceNewContinueBtn';
 import ShareExperienceNewFile from './ShareExperienceNewFile';
+import UploadFileModal from './ShareExperienceNewFile/UploadFileModal';
 import ShareExperienceNewText from './ShareExperienceNewText';
 import ShareExperienceNewTopPart from './ShareExperienceNewTopPart';
 import ShareExperienceNewTopics from './ShareExperienceNewTopics';
@@ -25,6 +26,7 @@ const ShareExperienceNewExerciseModalContainer = ({
   avatarImage,
   username,
   queryParam,
+  associationId,
 }: ShareExperienceNewExerciseModalContainerProps) => {
   const { config, configLoading } = useConfigNewExperience();
   const { isLoading, topicsData, topicId, topicIdHandler } = useTopics();
@@ -37,6 +39,7 @@ const ShareExperienceNewExerciseModalContainer = ({
   const { submitHandler, isSubmitLoading, toastMessage } = useSubmit({
     image: fileProps.image,
     topicId: topicId || '',
+    associationId,
     onSuccessNewHandler,
     text,
   });
@@ -63,33 +66,41 @@ const ShareExperienceNewExerciseModalContainer = ({
   return (
     <>
       <MainPageLayout rightElement="BackButton" rightElementScript="تجربه جدید" paddingTop={0}>
-        {configLoading && !config && <CustomSpinner />}
-        {!configLoading && config && (
-          <div className="flex flex-col h-[100dvh] overflow-y-auto" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
-            <ShareExperienceNewTopPart avatarImage={avatarImage} text={text} username={username} />
-
-            <div className="w-full pr-[48px]  flex flex-col gap-2 -translate-y-2" ref={conainerRef}>
-              <ShareExperienceNewText textHandler={textHandler} text={text} placeholder={config.placeholder} />
-
-              <ShareExperienceNewFile
-                imageFile={fileProps.imageFile}
-                fileDataHandler={fileProps.fileDataHandler}
-                removeFileHandler={fileProps.removeFileHandler}
-                uploadImageLoading={fileProps.uploadImageLoading}
-                onChangeBtnTop={onChangeBtnTop}
-              />
+        <div className="flex flex-col h-[100dvh] overflow-y-auto" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
+          {configLoading && !config && (
+            <div className="flex justify-center items-cente w-full h-full">
+              <CustomSpinner size={20} className="border-impo_Primary_Primary  r" />
             </div>
+          )}
+          {!configLoading && config && (
+            <>
+              <ShareExperienceNewTopPart avatarImage={avatarImage} text={text} username={username} />
+              <div className="w-full pr-[48px]  flex flex-col gap-2 -translate-y-2" ref={conainerRef}>
+                <ShareExperienceNewText textHandler={textHandler} text={text} placeholder={config.placeholder} />
 
-            <ShareExperienceNewContinueBtn
-              text={text}
-              btnTop={btnTop}
-              sendEnable={config.sendEnable}
-              toast={config.toast || toastMessage}
-            />
-          </div>
-        )}
+                <ShareExperienceNewFile
+                  imageFile={fileProps.imageFile}
+                  fileDataHandler={fileProps.fileDataHandler}
+                  removeFileHandler={fileProps.removeFileHandler}
+                  uploadImageLoading={fileProps.uploadImageLoading}
+                  onChangeBtnTop={onChangeBtnTop}
+                />
+              </div>
+              <ShareExperienceNewContinueBtn
+                text={text}
+                btnTop={btnTop}
+                sendEnable={config.sendEnable}
+                toast={config.toast || toastMessage}
+                associationId={associationId}
+                isSubmitLoading={isSubmitLoading}
+                submitHandler={submitHandler}
+              />
+            </>
+          )}
+        </div>
       </MainPageLayout>
 
+      <UploadFileModal fileDataHandler={fileProps.fileDataHandler} uploadImageLoading={fileProps.uploadImageLoading} />
       <ShareExperienceNewTopics
         topicId={topicId}
         isLoading={isLoading}

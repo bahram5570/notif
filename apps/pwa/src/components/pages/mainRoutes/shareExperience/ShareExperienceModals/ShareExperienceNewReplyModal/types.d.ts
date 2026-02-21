@@ -14,3 +14,8 @@ export type NewReplyQueriesTypes = ItemsTypes & {
   name: string;
   avatar: string;
 };
+
+export type ShareExperienceNewReplyModalPropsType = {
+  avatarImage: string;
+  username: string;
+};

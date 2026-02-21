@@ -16,9 +16,13 @@ const ShareExperienceNewExerciseModal = ({
   const { getZIndex } = useOverlayIndex();
 
   const newExperienceParms = getQueryParams(SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME);
+  const queryData = newExperienceParms === null ? null : (JSON.parse(newExperienceParms) as { associationId: string });
+
   const isOpen = newExperienceParms !== null;
 
-  const zIndex = getZIndex(SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME);
+  const zIndex = queryData
+    ? getZIndex(SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME, queryData.associationId)
+    : getZIndex(SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME);
 
   return (
     <>
@@ -31,6 +35,7 @@ const ShareExperienceNewExerciseModal = ({
               avatarImage={avatarImage}
               username={username}
               queryParam={newExperienceParms}
+              associationId={queryData?.associationId}
             />
           )}
         </>

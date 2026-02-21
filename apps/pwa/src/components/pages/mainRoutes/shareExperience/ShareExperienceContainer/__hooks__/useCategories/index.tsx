@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react';
 
-import { CategoriesListTypes, SelectedCategoryIdHandlerTypes } from './types';
+import { CategoriesListTypes, SelectedCategoryHandlerTypes } from './types';
 
 const useCategories = (data: CategoriesListTypes) => {
   const [categories, setCategories] = useState<null | CategoriesListTypes>(null);
   const [selectedCategoryId, setSelectedCategoryId] = useState<null | string>(null);
+  const [showAssociation, setShowAssociation] = useState(false);
 
   useEffect(() => {
     if (data) {
@@ -14,15 +15,17 @@ const useCategories = (data: CategoriesListTypes) => {
 
       if (initialSelected) {
         setSelectedCategoryId(initialSelected.id);
+        setShowAssociation(initialSelected.showAssociation);
       }
     }
   }, [data]);
 
-  const selectedCategoryIdHandler: SelectedCategoryIdHandlerTypes = (id) => {
+  const selectedCategoryHandler: SelectedCategoryHandlerTypes = (id, showAssociation) => {
     setSelectedCategoryId(id);
+    setShowAssociation(showAssociation);
   };
 
-  return { categories, selectedCategoryId, selectedCategoryIdHandler };
+  return { categories, selectedCategoryId, selectedCategoryHandler, showAssociation };
 };
 
 export default useCategories;

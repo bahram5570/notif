@@ -1,0 +1,35 @@
+import ArrowRightIcon from '@assets/icons/ArrowRight.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+
+import { SHARE_EXPERIENCE_ASSOCIATION_LIST_QUERY_NAME } from '../../../constants';
+
+const ViewAllButton = () => {
+  const { newQueryParamsHandler } = useQueryParamsHandler();
+  const { pageNavigationHandler } = usePageNavigationLoading();
+  const { increaseZIndex } = useOverlayIndex();
+
+  const clickHandler = () => {
+    pageNavigationHandler({ id: 'shareExperienceAssociation', showProgressBar: true });
+
+    newQueryParamsHandler({ [SHARE_EXPERIENCE_ASSOCIATION_LIST_QUERY_NAME]: 'true' });
+    increaseZIndex(SHARE_EXPERIENCE_ASSOCIATION_LIST_QUERY_NAME);
+  };
+
+  return (
+    <div className="py-3 px-2 flex flex-row-reverse items-center gap-1" onClick={clickHandler}>
+      <CustomTypography
+        fontSize="Lable_SmallProminet"
+        className="text-impo_Primary_Primary !whitespace-nowrap overflow-hidden"
+      >
+        مشاهده همه
+      </CustomTypography>
+      <ArrowRightIcon className="w-4 h-4  fill-impo_Primary_Primary rotate-180" />
+    </div>
+  );
+};
+
+export default ViewAllButton;

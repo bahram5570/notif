@@ -49,6 +49,7 @@ const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsMod
               text={commentsData.text}
               hasLinkTo={false}
               id={props.id}
+              // tags={commentsData.tags}
             />
 
             <CommentsBottomPart {...commentsData} id={props.id} />
@@ -64,7 +65,7 @@ const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsMod
         <ShareExperienceNewCommentFooterModule
           queries={{ [SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME]: JSON.stringify(newCommentQueries) }}
           placeholder="نظرت رو درباره این تجربه بنویس"
-          avatar={newCommentQueries?.avatar || ''}
+          avatar={props.avatarImage}
           toast={commentsData.toast}
           canSendComment={commentsData.canSendComment}
           queryName={SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME}

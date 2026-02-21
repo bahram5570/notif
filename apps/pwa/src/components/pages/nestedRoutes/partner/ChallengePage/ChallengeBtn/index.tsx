@@ -15,13 +15,16 @@ const ChallengeBtn = ({ answerValue, btn, id, question, btnTop }: ChallengeBtnPr
   };
 
   return (
-    <OverlayBar btnTop={btnTop} className="px-6 py-2 mx-auto" style={{ maxWidth: MAX_SCREEN_WIDTH }}>
+    <div
+      className="fixed right-0 left-0 flex flex-col justify-center mx-auto z-40 gap-5 px-6 py-2"
+      style={{ bottom: btnTop, maxWidth: MAX_SCREEN_WIDTH }}
+    >
       <CustomButton onClick={onClick} isDisable={!answerValue} isLoading={submitLoading}>
         <CustomTypography className="text-impo_PrimaryMan_OnPrimaryMan" fontSize="Lable_Large">
           {btn.text}
         </CustomTypography>
       </CustomButton>
-    </OverlayBar>
+    </div>
   );
 };
 

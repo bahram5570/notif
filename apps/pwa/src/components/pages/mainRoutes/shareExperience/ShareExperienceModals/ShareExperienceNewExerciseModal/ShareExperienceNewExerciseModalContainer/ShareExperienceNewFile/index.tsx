@@ -3,6 +3,10 @@ import CrossIcon from '@assets/shared/icons/plus.svg';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
+import { SHARE_EXPERIENCE_UPLOAD_FILE_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
+import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+
 import { ShareExperienceNewFileProps } from './types';
 
 const ShareExperienceNewFile = ({
@@ -12,10 +16,22 @@ const ShareExperienceNewFile = ({
   onChangeBtnTop,
   imageFile,
 }: ShareExperienceNewFileProps) => {
-  const clickHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const { newQueryParamsHandler } = useQueryParamsHandler();
+  const { increaseZIndex } = useOverlayIndex();
+  // const clickHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   if (onChangeBtnTop) {
+  //     onChangeBtnTop();
+  //     fileDataHandler({ e });
+  //   }
+  // };
+
+  const clickHandler = () => {
     if (onChangeBtnTop) {
       onChangeBtnTop();
-      fileDataHandler({ e });
+
+      increaseZIndex(SHARE_EXPERIENCE_UPLOAD_FILE_MODAL_QUERY_NAME);
+      newQueryParamsHandler({ [SHARE_EXPERIENCE_UPLOAD_FILE_MODAL_QUERY_NAME]: 'true' });
+      // fileDataHandler({ e });
     }
   };
 
@@ -43,14 +59,14 @@ const ShareExperienceNewFile = ({
       )}
 
       {!imageFile && (
-        <div className="relative ml-auto">
+        <div className="relative ml-auto" onClick={clickHandler}>
           <UploadIcon className="w-5 h-auto stroke-impo_Surface_Outline" />
 
-          <input
+          {/* <input
             type="file"
             onChange={clickHandler}
             className="absolute top-0 left-0 right-0 bottom-0 opacity-0 select-none"
-          />
+          /> */}
         </div>
       )}
     </>
