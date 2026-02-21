@@ -7,7 +7,7 @@ import PhoneInput from './PhoneInput';
 import Success from './Success';
 import { LeadStepsProps } from './types';
 
-export default function LeadSteps({ step, setStep, onClose, contentCategoryId }: LeadStepsProps) {
+export default function LeadSteps({ step, setStep, onClose, contentCategoryId, trackingId }: LeadStepsProps) {
   const [userPhone, setUserPhone] = useState<string>('');
   const [sentOtpId, setSentOtpId] = useState<string | undefined>(undefined);
   const [downloadLink, setDownloadLink] = useState<string | undefined>(undefined);
@@ -22,6 +22,7 @@ export default function LeadSteps({ step, setStep, onClose, contentCategoryId }:
             setStep('otp');
           }}
           contentCategoryId={contentCategoryId}
+          phoneId={trackingId.phoneId}
         />
       )}
 
@@ -34,7 +35,7 @@ export default function LeadSteps({ step, setStep, onClose, contentCategoryId }:
         />
       )}
 
-      {step === 'success' && <Success onClose={onClose} link={downloadLink} />}
+      {step === 'success' && <Success onClose={onClose} link={downloadLink} pdfId={trackingId.pdfId} />}
     </div>
   );
 }

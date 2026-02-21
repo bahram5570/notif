@@ -8,13 +8,13 @@ import CustomButton from '@components/ui/CustomButton';
 import { usePhoneSubmit } from './_hooks/usePhoneSubmit';
 import { PhoneProps } from './types';
 
-export default function PhoneInput({ onNext, contentCategoryId }: PhoneProps & { contentCategoryId?: string }) {
+export default function PhoneInput({ onNext, contentCategoryId, phoneId }: PhoneProps) {
   const { phoneValue, setPhoneValue, isValid, isSubmitting, submit } = usePhoneSubmit(onNext);
 
   return (
     <div className="space-y-6">
       <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground">
-        برای اینکه بهت یه راهنمای کامل از موضوع این مقاله رو بدیم لازمه شماره همراهت رو وارد کنی
+        برای دریافت این راهنما لازمه شماره همراهت رو وارد کنی.
       </CustomTypography>
 
       <form className="space-y-5">
@@ -35,6 +35,7 @@ export default function PhoneInput({ onNext, contentCategoryId }: PhoneProps & {
           isDisable={!isValid || isSubmitting}
           isLoading={isSubmitting}
           fontSize="Lable_Large"
+          id={phoneId}
           className="w-full !bg-impo_Black border-none mt-10"
         >
           ثبت شماره همراه
