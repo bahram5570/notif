@@ -1,7 +1,7 @@
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
-import { FOOTER_HEIGTH } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import ShareExperienceBottomPart from '../../../ShareExperienceContainer/ShareExperienceExperiences/ShareExperienceBottomPart';
 import ShareExperienceTopPart from '../../../ShareExperienceContainer/ShareExperienceExperiences/ShareExperienceTopPart';
@@ -53,7 +53,7 @@ const ShareExperienceAssociationItemContainer = ({
             totalCount={associationExperienceList?.totalCount || 10}
             callBack={updatePageNo}
             className="flex-1 overflow-y-auto px-4"
-            style={{ paddingBottom: FOOTER_HEIGTH }}
+            style={{ paddingBottom: FOOTER_HEIGHT }}
           >
             <div style={{ paddingTop: isScrolled ? '80px' : '220px' }}>
               {!hasExperienceList && !experiencesLoading && <EmptyState associationName={associationInfoData.title} />}
