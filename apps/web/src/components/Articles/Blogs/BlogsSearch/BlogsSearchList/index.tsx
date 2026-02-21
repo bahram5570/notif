@@ -2,12 +2,12 @@ import styles from './styles.module.css';
 
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { BlogsSearchListTypes } from './types';
 
 const BlogsSearchList = ({ articlesSearchList }: BlogsSearchListTypes) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   return (
     <div

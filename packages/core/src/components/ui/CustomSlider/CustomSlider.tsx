@@ -1,8 +1,8 @@
-import { useOperatingSystem } from '../../../hooks/useOperatingSystem';
+import { useSystem } from '../../../hooks/useSystem';
 import { SliderProps } from './types';
 
 export const CustomSlider = ({ children, className, gap = '16px', id, sidePadding }: SliderProps) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
 
   return (
     <div

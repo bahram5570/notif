@@ -5,15 +5,15 @@ import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import ChatFooterModal from '../ChatFooterModal';
 import useTextValue from './__hooks__/useTextValue';
 
 const ChatFooterMessageInput = () => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const { getQueryParams } = useQueryParamsHandler();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();

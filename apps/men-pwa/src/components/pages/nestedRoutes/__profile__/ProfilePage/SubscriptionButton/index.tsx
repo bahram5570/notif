@@ -2,14 +2,14 @@ import CrownIcon from '@assets/icons/crown.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { useSystem } from '@repo/core/hooks/useSystem';
 import Link from 'next/link';
 
 import { SubscriptionButtonProps } from './types';
 
 const SubscriptionButton = ({ currentDayCount }: SubscriptionButtonProps) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Lable_Large', operatingSystem });

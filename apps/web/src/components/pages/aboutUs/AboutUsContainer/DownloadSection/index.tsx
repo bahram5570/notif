@@ -8,10 +8,10 @@ import { DOWNLOAD_APP_SECTION_ID } from '@components/DownloadApp/DownloadAppWome
 import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 const DownloadSection = () => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   return (
     <div className="grid lg:grid-cols-2 grid-cols-1  w-full h-full bg-impo_Surface_SurfaceVariant">

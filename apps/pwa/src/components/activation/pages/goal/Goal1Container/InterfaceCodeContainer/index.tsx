@@ -5,14 +5,14 @@ import { typographyFontStylesMaker } from '@repo/core/utils/system';
 import ActivationBtn from '@components/activation/ActivationBtn';
 import CustomLink from '@components/pages/mainRoutes/partner/PartnerPage/CustomLink';
 import { ACTIVATION_INTERFACE_CODE } from '@constants/activation.constants';
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import useInterfaceCode from './__hooks__/useInterfaceCode';
 import { InterfaceCodeContainerProps } from './types';
 
 const InterfaceCodeContainer = ({ onComplete }: InterfaceCodeContainerProps) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const { getQueryParams } = useQueryParamsHandler();
   const { code, codeHandler, submitHandler, isLoading } = useInterfaceCode({ onComplete });
 

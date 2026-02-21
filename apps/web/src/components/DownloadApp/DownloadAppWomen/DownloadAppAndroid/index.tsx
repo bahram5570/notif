@@ -8,14 +8,14 @@ import DownloadAppLinkGenerator from '@components/DownloadApp/DownloadAppLinkGen
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import { CAFEBAZAAR_LINK_WOMEN_URL, MYKET_LINK_WOMEN_URL } from '@constants/links.constants';
-import useBreakPoint from '@hooks/useBreakPoint';
 import useDownloadLinks from '@hooks/useDownloadLinks';
 import useUserTracking from '@hooks/useUserTracking';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 const DownloadAppAndroid = () => {
   const { callUserTracking } = useUserTracking();
   const { womanDirectApplcationalink } = useDownloadLinks();
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   const directId = 'women-android-direct';
 

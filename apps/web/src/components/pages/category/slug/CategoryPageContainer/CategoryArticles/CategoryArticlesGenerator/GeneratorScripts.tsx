@@ -4,14 +4,12 @@ import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { GeneratorScriptsTypes } from './types';
 
 const GeneratorScripts = ({ body, title, url }: GeneratorScriptsTypes) => {
-  const { breakPoint } = useBreakPoint();
-  const { operatingSystem } = useOperatingSystem();
+  const { breakPoint, operatingSystem } = useSystem();
 
   const bodyShorter = (input: string) => {
     const text = input.replace(/<[^>]+>/g, '');

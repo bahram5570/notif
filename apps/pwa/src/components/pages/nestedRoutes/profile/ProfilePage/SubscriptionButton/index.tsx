@@ -3,15 +3,15 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { useSystem } from '@repo/core/hooks/useSystem';
 import Link from 'next/link';
 
 import { SubscriptionProps } from '../userNameDetail/type';
 
 const SubscriptionButton = ({ remaindDays }: SubscriptionProps) => {
   const { callEvent } = useAnalytics();
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Lable_Large', operatingSystem });

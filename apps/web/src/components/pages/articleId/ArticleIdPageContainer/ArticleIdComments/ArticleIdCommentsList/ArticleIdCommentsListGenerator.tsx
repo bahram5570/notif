@@ -2,14 +2,12 @@ import ArrowIcon from '@assets/icons/arrow3.svg';
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { ArticleIdCommentsListGeneratorTypes } from './types';
 
 const ArticleIdCommentsListGenerator = (props: ArticleIdCommentsListGeneratorTypes) => {
-  const { breakPoint } = useBreakPoint();
-  const { operatingSystem } = useOperatingSystem();
+  const { breakPoint, operatingSystem } = useSystem();
 
   const messageTypography = typographyFontStylesMaker({
     fontSize: 'Body_Large',

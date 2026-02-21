@@ -2,14 +2,14 @@
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import CircleTimer from '../CircleTimer';
 import { STEP_LIST } from '../constants';
 import { GuideContentContainerPropsType } from './type';
 
 const GuideContentContainer = ({ stepsContent, currentStep }: GuideContentContainerPropsType) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
   return (
     <>
       <div className=" mt-9 pb-28 overflow-y-auto overflow-x-hidden ">

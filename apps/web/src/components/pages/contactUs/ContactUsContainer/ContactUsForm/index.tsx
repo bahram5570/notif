@@ -7,16 +7,14 @@ import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import CustomButton from '@components/ui/CustomButton';
 import CustomInput from '@components/ui/CustomInput';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import useSubmit from './__hooks__/useSubmit';
 import { UserInfoType } from './type';
 
 const ContactUsForm = () => {
   const { submitHandler } = useSubmit();
-  const { breakPoint } = useBreakPoint();
-  const { operatingSystem } = useOperatingSystem();
+  const { breakPoint, operatingSystem } = useSystem();
   const [userInfo, setUserInfo] = useState<UserInfoType>({} as UserInfoType);
 
   const onChangeHandler = (v: string | number, name: string) => {

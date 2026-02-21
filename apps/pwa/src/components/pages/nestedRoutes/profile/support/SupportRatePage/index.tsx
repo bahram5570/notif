@@ -9,16 +9,16 @@ import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import RateModal from './RateModal';
 import StarRate from './StarRate';
 import { RateValuesType, ValuesHandlerTypes } from './type';
 
 const SupportRatePage = () => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const [rateValues, setRateValues] = useState<RateValuesType>({ rate: 0, rateDescription: '' });
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();

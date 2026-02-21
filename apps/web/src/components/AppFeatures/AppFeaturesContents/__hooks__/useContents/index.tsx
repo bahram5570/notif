@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { APP_FEATURES_CONTENTS_LIST } from '../../../constants';
 import { ContentsStylesTypes, UseContentsTypes } from './types';
@@ -20,7 +20,7 @@ const desktopGapSize = 12;
 const useContents = ({ currentTab }: UseContentsTypes) => {
   const selectedList = APP_FEATURES_CONTENTS_LIST[currentTab.toString()];
 
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
   const [isRendered, setIsRendered] = useState(false);
   const [contentsStyles, setContentsStyles] = useState<ContentsStylesTypes>({
     maxHeight: 20000,

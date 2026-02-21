@@ -3,7 +3,7 @@ import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import ContentWrapper from '@components/ui/ContentWrapper';
 import RadioButton from '@components/ui/RadioButton';
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import BreastfeedingSettingBtnModal from './BreastfeedingSettingBtnModal';
 import { BreastfeedingSettingInputGeneratorPropsType } from './type';
@@ -17,7 +17,7 @@ const BreastfeedingSettingInputGenerator = ({
   changeValueHandler,
   ...rest
 }: BreastfeedingSettingInputGeneratorPropsType) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Large', operatingSystem });
 
   return (

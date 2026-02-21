@@ -9,7 +9,7 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 import { SelectNameGenderEnum } from '@services/selectNameServices/enums';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import useNameSelectorLike from '../__hooks__/useNameSelectorLike';
 import { NAME_SELECTOR_CARD_HEIGHT } from './constants';
@@ -18,7 +18,7 @@ import { NameSelectorCardProps } from './types';
 const NameSelectorCard = (props: NameSelectorCardProps) => {
   const { ref, inView } = useInView();
   const { isLikedHandler } = useNameSelectorLike();
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
 
   const isLastIndex = props.onPagination && props.isLastIndex;
   const isLoading = props.onPagination && isLastIndex && props.isLoading;

@@ -2,7 +2,7 @@
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import SensitiveAnswersItem from '../SensitiveAnswersItem';
 import { SensitiveQuestionSectionPropsType } from './type';
@@ -12,7 +12,7 @@ const SensitiveQuestionSection = ({
   selectedIndex,
   selectedIndexHandler,
 }: SensitiveQuestionSectionPropsType) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
   return (
     <>
       <div className="animate-fadeSlideIn px-4 flex flex-col gap-6 lg:w-10/12 lg:mx-auto lg:mb-14 mb-0">

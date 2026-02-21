@@ -1,8 +1,8 @@
 import CustomImage from '@components/ui/CustomImage';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 const TestOnlineResultWrapper = ({ children }: { children: React.ReactNode }) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
   return (
     <div
       className="

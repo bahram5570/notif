@@ -8,7 +8,7 @@ import Icon5 from '@assets/icons/careers/value-5.svg';
 import Icon6 from '@assets/icons/careers/value-6.svg';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import ValuesBigScreen from './ValuesBigScreen';
 import ValuesSmallScreen from './ValuesSmallScreen';
@@ -28,7 +28,7 @@ const list: CareersValuesItemTypes[] = [
 ];
 
 const CareersValues = () => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   return (
     <div className="w-full flex flex-col items-center pt-4 md:pt-8 pb-9 md:pb-12">

@@ -10,7 +10,7 @@ import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import useProfileData from '@hooks/__profile__/useProfileData';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import FileInput from './FileInput';
 import { ValuesHandlerTypes } from './FileInput/type';
@@ -19,7 +19,7 @@ import SupportChatSkeleton from './SupportChatSkeleton';
 import useSubmit from './__hooks__/useSubmit';
 
 const ContactSupportPage = () => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const { isLoading, profileData } = useProfileData();
   const [values, setValues] = useState({ text: '', fileName: '' });
   const { isLoading: submitLoading, submitHandler } = useSubmit();

@@ -1,13 +1,13 @@
 'use client';
 
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import DeviceFooter from './DeviceFooter';
 import NormalFooter from './NormalFooter';
 import { FooterTypes } from './types';
 
 const Footer = ({ hasFooterLink, isArticlePage }: FooterTypes) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
 
   const isDeviceMode = operatingSystem === 'ios' || operatingSystem === 'android';
 

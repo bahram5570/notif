@@ -7,12 +7,12 @@ import StarRoundedIcon from '@mui/icons-material/StarRounded';
 
 import StatisticsMaker from '@components/StatisticsMaker';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { ScoresTypes } from './types';
 
 const Scores = ({ title }: ScoresTypes) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   const list = [
     <div className={'flex flex-col items-center gap-2 lg:gap-5 mx-auto min-w-[194px] pb-6 lg:pb-0'} key={'1'}>

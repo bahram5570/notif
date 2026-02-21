@@ -8,12 +8,12 @@ import { currentDate } from '@utils/dates';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
 import { APP_VERSION } from '@constants/app.constants';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 const { jYear } = currentDate();
 
 const FooterSocials = () => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   return (
     <>

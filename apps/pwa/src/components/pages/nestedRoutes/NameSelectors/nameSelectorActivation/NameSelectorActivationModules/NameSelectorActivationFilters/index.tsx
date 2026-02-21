@@ -1,6 +1,6 @@
 import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import FilterGenerator from './FilterGenerator';
 import useArrangeList from './__hooks__/useArrangeList';
@@ -8,7 +8,7 @@ import { NameSelectorActivationFiltersProps } from './types';
 
 const NameSelectorActivationFilters = ({ items, onSelect, currentValue }: NameSelectorActivationFiltersProps) => {
   const { arrangedList } = useArrangeList(items);
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
 
   const sliderGap = operatingSystem === 'windows' ? '20px' : '12px';
 

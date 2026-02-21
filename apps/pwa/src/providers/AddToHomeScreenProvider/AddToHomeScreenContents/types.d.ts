@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
 
-import { BrowserInfoTypes, OperatingSystemTypes } from '@providers/OperatingSystemProvider/types';
+import { BrowserInfoTypes, OperatingSystemTypes } from '@repo/core/providers/SystemProvider';
 
 export interface AddToHomeScreenContentsProps {
   operatingSystem: OperatingSystemTypes;

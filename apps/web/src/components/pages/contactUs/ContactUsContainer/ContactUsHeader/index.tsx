@@ -5,10 +5,10 @@ import LogoTypeIcon from '@assets/icons/logoType.svg';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 const ContactUsHeader = () => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   return (
     <div className="grid lg:grid-cols-2 grid-cols-1  w-full h-full">

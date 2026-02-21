@@ -2,7 +2,7 @@
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { FeaturesIntruductionCardGeneratorTypes } from './types';
 
@@ -13,7 +13,7 @@ const FeaturesIntruductionCardGenerator = ({
   title,
   imageDark,
 }: FeaturesIntruductionCardGeneratorTypes) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   const order = breakPoint.tablet ? 1 : isInverse ? 2 : 1;
 

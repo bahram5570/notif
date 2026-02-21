@@ -3,7 +3,7 @@ import { toPersianNumbers } from '@utils/numbers';
 
 import { Pagination, PaginationItem } from '@mui/material';
 
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { CustomPaginationTypes } from './types';
 
@@ -16,7 +16,8 @@ const CustomPagination = ({
   style,
   page,
 }: CustomPaginationTypes) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
+
   const typographyDetails = typographyFontStylesMaker({ fontSize, operatingSystem, isWeb: true });
 
   const selectHandler = (_: unknown, p: number) => {

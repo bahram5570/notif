@@ -4,12 +4,12 @@ import { articleImageUrl } from '@services/http';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { ArticleIdHeadingTypes } from './types';
 
 const ArticleIdHeading = ({ imageCover, title }: ArticleIdHeadingTypes) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   const imageUrl = imageCover ? articleImageUrl + imageCover : '/assets/images/notLoaded.svg';
 

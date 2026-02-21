@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { SIGNS_LIST_SLIDER_ID } from '../../SelectedDaySigns/SelectedDaySignsContainer/constants';
 import { CALENDAR_DRAGGING_PANEL_ID } from '../../constants';
 
 const useCalendarDrag = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
 
   const [positionY, setPositionY] = useState(0);
   const [isGrabbing, setIsGrabbing] = useState(false);

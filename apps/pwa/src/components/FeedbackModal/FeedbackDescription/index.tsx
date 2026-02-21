@@ -1,13 +1,13 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { MAX_LETTERS_COUNT } from '../constants';
 import { FeedbackDescriptionPropsType } from './type';
 
 const FeedbackDescription = ({ description, descriptionHandler }: FeedbackDescriptionPropsType) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const lettersCount = description.trim().length;
   const lettersCountScript = `${lettersCount}/${MAX_LETTERS_COUNT}`;
 

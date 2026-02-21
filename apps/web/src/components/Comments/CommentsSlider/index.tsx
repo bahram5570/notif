@@ -3,7 +3,7 @@
 import CustomImage from '@components/ui/CustomImage';
 // import { useState } from 'react';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 import 'swiper/css/autoplay';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -12,7 +12,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { CommentsSliderTypes } from './types';
 
 const CommentsSlider = ({ list }: CommentsSliderTypes) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
   // const [currentIndex, setCurrentIndex] = useState(0);
 
   const slidesPerView = breakPoint.mobile ? 1 : breakPoint.laptop ? 3 : 5;

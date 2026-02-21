@@ -5,12 +5,11 @@ import { HOST_URL, SERVER_URL } from '@constants/links.constants';
 import CustomToastProvider from '@providers/CustomToastProvider';
 import DownloadLinksProvider from '@providers/DownloadLinksProvider';
 import MuiProvider from '@providers/MuiProvider';
-import PageNavigationProvider from '@providers/PageNavigationProvider';
+import { PageNavigationProvider } from '@repo/core/providers/PageNavigationProvider';
+import { SystemProvider } from '@repo/core/providers/SystemProvider';
 import { Metadata } from 'next';
 import localFont from 'next/font/local';
 import Script from 'next/script';
-
-import OperatingSystemProvider from '../providers/OperatingSystemProvider';
 
 export const metadata: Metadata = {
   openGraph: {
@@ -145,7 +144,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         </Script>
 
         <DownloadLinksProvider>
-          <OperatingSystemProvider>
+          <SystemProvider>
             {/* <UserTrackingProvider> */}
             <MuiProvider>
               <CustomToastProvider>
@@ -160,7 +159,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
               </CustomToastProvider>
             </MuiProvider>
             {/* </UserTrackingProvider> */}
-          </OperatingSystemProvider>
+          </SystemProvider>
         </DownloadLinksProvider>
       </body>
     </html>

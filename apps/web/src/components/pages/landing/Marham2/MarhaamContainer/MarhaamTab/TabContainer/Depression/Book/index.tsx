@@ -5,16 +5,14 @@ import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { BOOK_PART1 } from '../../PsychologicalAnesthesia/Movie/constants';
 import useCopy from './__hooks__/useCopy';
 
 const Book = () => {
   const { copylink } = useCopy();
-  const { breakPoint } = useBreakPoint();
-  const { operatingSystem } = useOperatingSystem();
+  const { breakPoint, operatingSystem } = useSystem();
 
   const typographyDetails = typographyFontStylesMaker({
     operatingSystem,

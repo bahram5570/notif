@@ -5,7 +5,7 @@ import LocationIcon from '@assets/icons/careers/location.svg';
 import TimeIcon from '@assets/icons/careers/time.svg';
 import WorkTypeIcon from '@assets/icons/careers/workType.svg';
 
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import {
   CAREER_DEPARTMENT_TITLES,
@@ -19,7 +19,7 @@ import CardsSmallScreen from './CardsSmallScreen';
 import { JobCardsTypes } from './types';
 
 const JobCards = (props: JobCardsTypes) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   const location = CAREER_LOCATION_TITLES[props.location];
   const departman = CAREER_DEPARTMENT_TITLES[props.departman];

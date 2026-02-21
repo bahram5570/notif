@@ -4,14 +4,14 @@ import ImpoIcon from '@assets/icons/impoMen.svg';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { DOWNLOAD_APP_SECTION_ID } from '../DownloadAppWomen/constants';
 import DownloadAppAndroid from './DownloadAppAndroid';
 import DownloadAppIos from './DownloadAppIos';
 
 const DownloadAppMen = () => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   return (
     <div

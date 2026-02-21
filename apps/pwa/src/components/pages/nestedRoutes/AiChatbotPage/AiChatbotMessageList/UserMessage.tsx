@@ -1,12 +1,12 @@
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import TextBlock from './TextBlock';
 import { UserMessagePropsType } from './type';
 
 const UserMessage = (props: UserMessagePropsType) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
 
   const isMultiLine = props.text.length > 80;
   const hasMedia = props.media.length > 0;

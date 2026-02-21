@@ -1,7 +1,8 @@
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 const useCheckVideoSrc = () => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
+
   const checkFormatVideo = (src: string) => {
     if (operatingSystem === 'ios') {
       const splitSrc = src.split('.');

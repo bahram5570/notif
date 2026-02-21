@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { TypingLoopPropsType } from './type';
 
@@ -11,7 +11,7 @@ const TypingLoop = ({ collapseText1, collapseText2 }: TypingLoopPropsType) => {
   const [text, setText] = useState('');
   const [msgIndex, setMsgIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const [isDeleting, setIsDeleting] = useState(false);
   const [showCursor, setShowCursor] = useState(true);
 

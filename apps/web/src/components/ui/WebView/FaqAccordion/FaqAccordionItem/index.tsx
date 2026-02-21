@@ -5,13 +5,14 @@ import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import { toPersianNumbers } from '@utils/numbers';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { FaqAccordionItemPropsType } from './type';
 
 const FaqAccordionItem = ({ question, answer, index }: FaqAccordionItemPropsType) => {
+  const { operatingSystem } = useSystem();
   const [isOpen, setIsOpen] = useState<boolean | undefined>(undefined);
-  const { operatingSystem } = useOperatingSystem();
+
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Small', operatingSystem, isWeb: true });
   const typographyFontStyles1 = typographyFontStylesMaker({ fontSize: 'Lable_Large', operatingSystem, isWeb: true });
   const questionIndex = index + 1;

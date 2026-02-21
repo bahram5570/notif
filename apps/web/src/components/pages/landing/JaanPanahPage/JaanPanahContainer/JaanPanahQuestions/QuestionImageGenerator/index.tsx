@@ -1,11 +1,11 @@
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { QuestionImageGeneratorTypes } from './types';
 
 const QuestionImageGenerator = ({ title, image, isSelected, onClick }: QuestionImageGeneratorTypes) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   return (
     <div onClick={onClick} className="w-[104px] h-fit flex flex-col items-center gap-3 cursor-pointer">

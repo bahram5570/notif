@@ -4,12 +4,12 @@ import { decodeUnicode } from '../AiMessage/utils';
 import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { TextBlockProps } from './type';
 
 const TextBlock = (props: TextBlockProps) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
 
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Medium', operatingSystem });
   const decoded = decodeUnicode(props.text);

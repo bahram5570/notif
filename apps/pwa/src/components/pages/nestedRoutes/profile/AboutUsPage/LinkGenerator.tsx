@@ -2,12 +2,12 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { externalLink } from '@repo/core/utils/navigation';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { LinkGeneratorType } from './type';
 
 const LinkGenerator = ({ Icon, link, name }: LinkGeneratorType) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Lable_Small', operatingSystem });
   return (
     <div

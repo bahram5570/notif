@@ -7,13 +7,13 @@ import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import style from './styles.module.css';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { AiChatbotTextPropsType } from './type';
 
 const AiChatbotText = ({ hintPromptText, isLoading, clickHandler, checkMultiLine }: AiChatbotTextPropsType) => {
   const textRef = useRef<HTMLTextAreaElement | null>(null);
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const [chatText, setChatText] = useState('');
 
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Medium', operatingSystem });

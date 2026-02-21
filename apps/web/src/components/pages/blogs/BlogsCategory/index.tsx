@@ -1,13 +1,13 @@
 'use client';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import BlogsCategories from './BlogsCategories';
 import { BlogsCategoryTypes } from './types';
 
 const BlogsCategory = ({ categories }: BlogsCategoryTypes) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   return (
     <div className="w-full lg:w-10/12 md:max-w-full mx-auto">

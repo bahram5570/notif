@@ -1,10 +1,10 @@
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import FilePreview from './FilePreview';
 import { AiChatbotFilePreviewPropsType } from './type';
 
 const AiChatbotFilePreview = ({ files, removeFileHandler, retryUploadHandler }: AiChatbotFilePreviewPropsType) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
 
   return (
     <div

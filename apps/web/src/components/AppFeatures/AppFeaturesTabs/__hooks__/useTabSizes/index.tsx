@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 const useTabSizes = () => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
   const [tabSizes, setTabSizes] = useState({ totalDashArray: 374, rx: 22, height: 40, width: 170, isMobile: false });
 
   useEffect(() => {

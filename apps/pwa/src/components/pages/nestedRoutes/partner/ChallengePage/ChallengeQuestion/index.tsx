@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import ChallengeBtn from '../ChallengeBtn';
 import { ChallengeQuestionPropsType } from './type';
@@ -13,7 +13,7 @@ const ChallengeQuestion = ({ avatarUrl, helper, question, id, btn }: ChallengeQu
 
   const [btnTop, setBtnTop] = useState<number>();
   const textareaConainerRef = useRef<HTMLDivElement | null>(null);
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
 
   const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     setAnswerValue(e.target.value);

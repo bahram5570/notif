@@ -5,13 +5,13 @@ import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import useSubmit from './__hooks__/useSubmit';
 import { CreateCommentPropsType } from './type';
 
 const CreateComment = ({ commentPlaceholder, programId }: CreateCommentPropsType) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const [commentText, setCommentText] = useState('');
   const { submitHandler, isLoading } = useSubmit({ programId });
 

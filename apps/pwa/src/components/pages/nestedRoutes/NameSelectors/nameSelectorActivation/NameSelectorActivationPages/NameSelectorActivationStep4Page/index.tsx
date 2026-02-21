@@ -3,7 +3,7 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import NameSelectorActivationCard from '../../NameSelectorActivationModules/NameSelectorActivationCard';
 import NameSelectorActivationMainModule from '../../NameSelectorActivationModules/NameSelectorActivationMainModule';
@@ -11,7 +11,7 @@ import useNameSelectorActivationData from '../../__hooks__/useNameSelectorActiva
 import useNameSelectorActivationSteps from '../../__hooks__/useNameSelectorActivationSteps';
 
 const NameSelectorActivationStep4Page = () => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const { data, payload, payloadHandler } = useNameSelectorActivationData();
   const { isNextStepLoading, nextStepNavigation, stepInfo } = useNameSelectorActivationSteps();
 

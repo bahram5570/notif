@@ -4,12 +4,12 @@ import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { UserNameDetailsProps } from './type';
 
 const UserNameDetail = ({ avatarImage, defaultAvatarImage, canDeleteAvatar, name, identity }: UserNameDetailsProps) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
 
   const handleClick = () => {};
 

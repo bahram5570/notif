@@ -5,13 +5,13 @@ import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import styles from './RatingDescriptionModal.module.css';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { MAX_LETTERS_COUNT } from './constants';
 import { RatingDescriptionModalProps } from './types';
 
 const RatingDescriptionModal = ({ descriptionHandler, description, onClick }: RatingDescriptionModalProps) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Medium', operatingSystem });
 
   const lettersCount = description.trim().length;

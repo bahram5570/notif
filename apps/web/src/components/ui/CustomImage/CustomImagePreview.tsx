@@ -4,13 +4,13 @@ import Image from 'next/image';
 
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import CustomModal from '../CustomModal';
 import { CustomImagePreviewTypes } from './types';
 
 const CustomImagePreview = ({ src, previewImage, previewBackground, closeHandler }: CustomImagePreviewTypes) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
 
   const ImageComponent = (
     <div

@@ -3,16 +3,15 @@
 import { useState } from 'react';
 
 // import CustomSlider from '@repo/components/ui/CustomSlider';
-
 import CustomTypography from '@components/ui/CustomTypography';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import StoryItem from './StoryItem';
 import StoryPreview from './StoryPreview';
 import { IsOpenHandlerPropsType, StorySectionPropsType } from './type';
 
 const StorySection = ({ title, storyList }: StorySectionPropsType) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const [isOpen, setIsOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState<number | undefined>(undefined);
 

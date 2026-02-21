@@ -3,13 +3,13 @@ import { useRef } from 'react';
 import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { UserInfoNameTypes } from './types';
 
 const UserInfoName = ({ value, valueHandler }: UserInfoNameTypes) => {
   const inputRef = useRef<HTMLInputElement>(null);
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
 
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Large', operatingSystem });
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {

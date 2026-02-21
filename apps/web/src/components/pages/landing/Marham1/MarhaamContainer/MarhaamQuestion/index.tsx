@@ -5,7 +5,7 @@ import WarningIcon from '@assets/icons/warningCircle.svg';
 import ProgressCycleLoading from '@components/ProgressCycleLoading';
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { MARHAAM_QUESTIONS_LIST } from '../../constants';
 import { MarhaamFeelingEnum } from '../../enum';
@@ -13,7 +13,7 @@ import QuestionOptionGenerator from './QuestionOptionGenerator';
 import { JaanPanahQuestionsTypes } from './types';
 
 const MarhaamQuestion = ({ onResult }: JaanPanahQuestionsTypes) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
   const [isLoading, setIsLoading] = useState(false);
   const [isShowingBeginBtn, setIsShowingBeginBtn] = useState(true);
   const [values, setValues] = useState<MarhaamFeelingEnum>();

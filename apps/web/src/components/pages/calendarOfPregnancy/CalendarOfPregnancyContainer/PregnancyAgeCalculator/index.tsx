@@ -2,13 +2,13 @@
 
 import useCalculatePregnancyDate from '@components/pages/articleId/ArticleIdPageContainer/ArticleLandingComponents/PregnancyAgeCalculator/__hooks__/useCalculatePregnancyDate';
 import WavesContainer from '@components/pages/articleId/ArticleIdPageContainer/ArticleLandingComponents/WavesContainer';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import DateModule from './DateModule';
 import ResultModule from './ResultModule';
 
 const PregnancyAgeCalculator = () => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   const { submitHandler, isLoading, weeksResult, pregnancyDateResult, resetHandler } = useCalculatePregnancyDate();
 

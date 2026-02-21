@@ -4,15 +4,13 @@ import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import useCopy from '../Distract/__hooks__/useCopy';
 
 const WaysToCalmDown = () => {
   const { copylink } = useCopy();
-  const { breakPoint } = useBreakPoint();
-  const { operatingSystem } = useOperatingSystem();
+  const { breakPoint, operatingSystem } = useSystem();
 
   const typographyDetails = typographyFontStylesMaker({
     operatingSystem,

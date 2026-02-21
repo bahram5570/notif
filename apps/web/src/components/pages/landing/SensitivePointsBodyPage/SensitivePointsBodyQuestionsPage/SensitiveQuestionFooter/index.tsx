@@ -4,12 +4,12 @@ import ImpoIcon from '@assets/icons/impoName.svg';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { SensitiveQuestionFooterPropsType } from './type';
 
 const SensitiveQuestionFooter = ({ nextStepHandler, isDisable }: SensitiveQuestionFooterPropsType) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
   return (
     <div
       className={`fixed lg:absolute ${breakPoint.laptop && 'absolute'} bottom-0 left-0 right-0 lg:justify-center justify-end items-center lg:w-full lg:max-w-full max-w-[514px]  h-[173px] w-full mx-auto flex flex-col gap-4`}

@@ -6,14 +6,14 @@ import { isDevelopeMode } from '../../utils/system';
 
 import { useRouter } from 'next/navigation';
 
-import { useOperatingSystem } from '../../hooks/useOperatingSystem';
+import { useSystem } from '../../hooks/useSystem';
 import { firebaseTokenHandler } from '../../lib/firebase';
 import { PermissionsProviderTypes } from './types';
 
 export const PermissionsProvider = ({ firebaseConfigs, vapidKey }: PermissionsProviderTypes) => {
   const router = useRouter();
   const isFirstTime = useRef(isDevelopeMode());
-  const { operatingSystem, isAddToHome } = useOperatingSystem();
+  const { operatingSystem, isAddToHome } = useSystem();
 
   const reloadHandler = () => {
     router.refresh();

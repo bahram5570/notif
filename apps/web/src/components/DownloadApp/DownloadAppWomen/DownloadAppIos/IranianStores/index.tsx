@@ -7,13 +7,13 @@ import PwaIcon from '@assets/icons/downloads/pwa.svg';
 import DownloadAppLinkGenerator from '@components/DownloadApp/DownloadAppLinkGenerator';
 import CustomTypography from '@components/ui/CustomTypography';
 import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import IranianStoresDesktop from './IranianStoresDesktop';
 import IranianStoresMobile from './IranianStoresMobile';
 
 const IranianStores = () => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   return (
     <>

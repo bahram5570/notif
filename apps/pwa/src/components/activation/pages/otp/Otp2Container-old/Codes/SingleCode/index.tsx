@@ -3,13 +3,13 @@ import { useEffect, useRef } from 'react';
 import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { KeyDownHandlerTypes, SingleCodeProps, ValueHandlerTypes } from './types';
 
 const SingleCode = ({ focusInfo, stepIndex, stepValue, stepHandler, deleteHandler, otpStatus }: SingleCodeProps) => {
   const ref = useRef<HTMLInputElement>(null);
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
 
   const isSelected = focusInfo.index === stepIndex;
 

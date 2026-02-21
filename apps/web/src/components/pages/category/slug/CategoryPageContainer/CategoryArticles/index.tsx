@@ -4,8 +4,8 @@ import { useEffect } from 'react';
 
 import CustomPagination from '@components/ui/CustomPagination';
 import { CURRENT_CATEGORY } from '@constants/categoryParam.constans';
-import useBreakPoint from '@hooks/useBreakPoint';
 import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import CategoryArticlesGenerator from './CategoryArticlesGenerator';
 import CategorySkeleton from './CategorySkeleton';
@@ -13,7 +13,7 @@ import useCategoryGetData from './__hooks__/useCategoryGetData';
 import { CategoryArticlesTypes } from './types';
 
 const CategoryArticles = ({ id, slug }: CategoryArticlesTypes) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { isLoading, data, totalPage, page, pageHandler } = useCategoryGetData(id);
 

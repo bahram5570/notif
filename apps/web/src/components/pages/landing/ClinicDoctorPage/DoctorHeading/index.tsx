@@ -5,12 +5,12 @@ import { fileImageUrl } from '@services/http';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { DoctorHeadingProps } from '../types';
 
 const DoctorHeading = (props: DoctorHeadingProps) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   return (
     <section className="dark:!bg-impo_Neutral_Surface dark:!bg-none bg-[linear-gradient(245deg,_#FFF_24.63%,_#FFEEE9_90.72%)] px-4 pb-0 [clip-path:ellipse(120%_100%_at_50%_100%)] min-h-[190px] scale-y-[-1]  lg:max-h-80">

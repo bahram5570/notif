@@ -2,13 +2,13 @@
 
 import BlogsCategories from '@components/pages/blogs/BlogsCategory/BlogsCategories';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import useFilteredCategoriesList from './__hooks__/useFilteredCategoriesList';
 import { CategoryBlogsCategoriesTypes } from './types';
 
 const CategoryBlogsCategories = ({ categoriesList }: CategoryBlogsCategoriesTypes) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
   const { filteredCategoriesList } = useFilteredCategoriesList(categoriesList);
 
   return (

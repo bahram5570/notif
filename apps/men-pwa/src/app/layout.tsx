@@ -7,11 +7,11 @@ import MenPwaWidgetActionsProvider from '@providers/MenPwaWidgetActionsProvider'
 import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
 import { MAX_SCREEN_WIDTH, PORTAL_ID } from '@repo/core/constants/app.constants';
 import { CultureProvider } from '@repo/core/providers/CultureProvider';
-import { OperatingSystemProvider } from '@repo/core/providers/OperatingSystemProvider';
 import { PageNavigationProvider } from '@repo/core/providers/PageNavigationProvider';
 import { PreviewImageProvider } from '@repo/core/providers/PreviewImageProvider';
 import { ReactQueryProvider } from '@repo/core/providers/ReactQueryProvider';
 import { ServiceWorkerProvider } from '@repo/core/providers/ServiceWorkerProvider';
+import { SystemProvider } from '@repo/core/providers/SystemProvider';
 import { ToastProvider } from '@repo/core/providers/ToastProvider';
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
@@ -62,7 +62,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
         style={{ maxWidth: MAX_SCREEN_WIDTH, width: '100%', height: '100dvh', margin: 'auto' }}
       >
         <main>
-          <OperatingSystemProvider>
+          <SystemProvider>
             <CultureProvider defaultValues={culture}>
               <ReactQueryProvider>
                 <ErrorProvider>
@@ -82,7 +82,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
                 </ErrorProvider>
               </ReactQueryProvider>
             </CultureProvider>
-          </OperatingSystemProvider>
+          </SystemProvider>
         </main>
       </body>
     </html>

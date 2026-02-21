@@ -3,8 +3,8 @@ import { handleNewCommentDisable, handleNewCommentValidation } from './__utils__
 import CustomButton from '@components/ui/CustomButton';
 import CustomInput from '@components/ui/CustomInput';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
 import useCustomToast from '@hooks/useCustomToast';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import ArticleIdNewRate from './ArticleIdNewRate';
 import ArticleIdNewTextarea from './ArticleIdNewTextarea';
@@ -14,7 +14,7 @@ import { ArticleIdCommentsNewCommentTypes } from './types';
 
 const ArticleIdCommentsNewComment = ({ articleId }: ArticleIdCommentsNewCommentTypes) => {
   const { onToast } = useCustomToast();
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
   const { submitNewCommentHandler, isLoading, commentPayload, commentPayloadHandler, ratePayload, ratePayloadHandler } =
     useNewComment(articleId);
 

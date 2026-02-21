@@ -1,13 +1,11 @@
 import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 
-import useBreakPoint from '@hooks/useBreakPoint';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { ArticleIdNewTextareaTypes } from './types';
 
 const ArticleIdNewTextarea = ({ message, messageHandler }: ArticleIdNewTextareaTypes) => {
-  const { breakPoint } = useBreakPoint();
-  const { operatingSystem } = useOperatingSystem();
+  const { breakPoint, operatingSystem } = useSystem();
 
   const typographyDetails = typographyFontStylesMaker({
     operatingSystem,

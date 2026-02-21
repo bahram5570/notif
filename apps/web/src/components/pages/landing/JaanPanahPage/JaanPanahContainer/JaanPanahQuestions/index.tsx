@@ -3,7 +3,7 @@ import { useState } from 'react';
 import ProgressCycleLoading from '@components/ProgressCycleLoading';
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { JAAN_PANAH_QUESTIONS_LIST } from '../../constants';
 import ProgressBar from './ProgressBar';
@@ -14,7 +14,7 @@ import useQuestions from './__hooks__/useQuestions';
 import { JaanPanahQuestionsTypes } from './types';
 
 const JaanPanahQuestions = ({ onResult }: JaanPanahQuestionsTypes) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
   const [isLoading, setIsLoading] = useState(false);
   const { values, valuesHandler, step, stepHandler, progressPercent } = useQuestions();
 

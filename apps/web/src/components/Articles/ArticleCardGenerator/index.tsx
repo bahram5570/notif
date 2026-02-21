@@ -3,12 +3,12 @@ import { articleImageUrl } from '@services/http';
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { ArticleCardGeneratorTypes } from './types';
 
 const ArticleCardGenerator = ({ data }: ArticleCardGeneratorTypes) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   const imageUrl = data.imageCover ? articleImageUrl + data.imageCover : '/assets/images/notLoaded.svg';
 

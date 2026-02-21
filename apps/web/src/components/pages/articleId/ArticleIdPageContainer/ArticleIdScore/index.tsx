@@ -1,12 +1,12 @@
 'use client';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { ArticleIdScoreTypes } from './types';
 
 const ArticleIdScore = ({ rate, rateCount }: ArticleIdScoreTypes) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   return (
     <div className="w-full flex justify-between">

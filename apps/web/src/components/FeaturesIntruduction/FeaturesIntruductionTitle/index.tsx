@@ -1,12 +1,12 @@
 'use client';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { FeaturesIntruductionTitleTypes } from './types';
 
 const FeaturesIntruductionTitle = ({ mainTitle }: FeaturesIntruductionTitleTypes) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   return (
     <CustomTypography

@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { CATEGORY_PAGE_SIZE } from '../__hooks__/useCategoryGetData/constants';
 
 const CategorySkeleton = () => {
   const [list, setList] = useState<number[]>([]);
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   useEffect(() => {
     const result: number[] = [];

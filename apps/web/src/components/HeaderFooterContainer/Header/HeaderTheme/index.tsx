@@ -5,14 +5,14 @@ import { getTheme, themeHandler } from '@repo/core/theme/__utils__';
 
 import CustomTypography from '@components/ui/CustomTypography';
 import { HEADER_THEME_LIST } from '@constants/links.constants';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 import { ThemeTypes } from '@repo/core/theme/types';
 
 const initialTheme: ThemeTypes = 'system';
 const initialIcon = <SystemIcon className="w-5 lg:w-6 h-auto pl-[2px] fill-impo_Neutral_OnSurface" />;
 
 const HeaderTheme = () => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
   const ref = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [themeMode, setThemeMode] = useState<ThemeTypes>(initialTheme);

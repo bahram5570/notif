@@ -4,10 +4,10 @@ import FooterInfo from '@components/HeaderFooterContainer/Footer/NormalFooter/Fo
 import FooterPages from '@components/HeaderFooterContainer/Footer/NormalFooter/FooterPages';
 import FooterSocials from '@components/HeaderFooterContainer/Footer/NormalFooter/FooterSocials';
 import FooterTrust from '@components/HeaderFooterContainer/Footer/NormalFooter/FooterTrust';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 const HomeFooter = () => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
 
   if (operatingSystem === 'windows') {
     return <></>;

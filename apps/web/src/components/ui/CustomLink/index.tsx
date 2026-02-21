@@ -1,16 +1,13 @@
 'use client';
 
-import { useContext } from 'react';
-
-import { PageNavigationLoadingContext } from '@providers/PageNavigationProvider';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import Link from 'next/link';
 
 import { CustomLinkTypes } from './types';
 
 const CustomLink = (props: CustomLinkTypes) => {
   const { children, className, style, color, ...linkProps } = props;
-
-  const { pageNavigationHandler } = useContext(PageNavigationLoadingContext);
+  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
   const selectHandler = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (linkProps.onClick) {
@@ -18,7 +15,7 @@ const CustomLink = (props: CustomLinkTypes) => {
     }
 
     if (location.pathname !== props.href && linkProps.target !== '_blank') {
-      pageNavigationHandler(true);
+      pageNavigationHandler({ showProgressBar: true, id: '1' });
     }
   };
 

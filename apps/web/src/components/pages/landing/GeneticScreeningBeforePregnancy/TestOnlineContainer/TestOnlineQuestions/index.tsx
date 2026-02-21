@@ -4,8 +4,7 @@ import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
 import QuestionProgressBar from '@components/modules/QuestionProgressBar';
 import CustomButton from '@components/ui/CustomButton';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
-import useOperatingSystem from '@hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import useTestOnlineScore from '../__hooks__/useTestOnlineScore';
 import useTestOnlineSteps from '../__hooks__/useTestOnlineSteps';
@@ -15,8 +14,7 @@ import TestOnlineQuestionsOption from './TestOnlineQuestionsOption';
 const TestOnlineQuestions = () => {
   const questionList = GENETIC_TEST_ONLINE_QUESTION_LIST;
 
-  const { breakPoint } = useBreakPoint();
-  const { operatingSystem } = useOperatingSystem();
+  const { breakPoint, operatingSystem } = useSystem();
   const { currentStep, data } = useTestOnlineSteps();
 
   const typographyDetails = typographyFontStylesMaker({

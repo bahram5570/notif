@@ -6,7 +6,7 @@ import ArrowIcon from '@assets/icons/arrow1.svg';
 
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import {
   CAREER_DEPARTMENT_TITLES,
@@ -17,7 +17,7 @@ import {
 import { CardGeneratorTypes } from './types';
 
 const CardGenerator = (props: CardGeneratorTypes) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
   const ref = useRef<HTMLDivElement>(null);
   const [isHover, setIsHover] = useState(false);
 

@@ -3,11 +3,11 @@ import ReactMarkdown from 'react-markdown';
 import { toPersianNumbers } from '../../../utils/numbers';
 import { typographyFontStylesMaker } from '../../../utils/system';
 
-import { useOperatingSystem } from '../../../hooks/useOperatingSystem';
+import { useSystem } from '../../../hooks/useSystem';
 import { MarkDownTextPropsType } from './types';
 
 const MarkDownText = ({ markdown }: MarkDownTextPropsType) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
 
   const fontStyles = typographyFontStylesMaker({ fontSize: 'Body_Small', operatingSystem });
 

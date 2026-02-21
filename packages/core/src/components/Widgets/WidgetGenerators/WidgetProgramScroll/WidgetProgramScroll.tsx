@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useAnalytics } from '../../../../hooks/useAnalytics';
-import { useOperatingSystem } from '../../../../hooks/useOperatingSystem';
+import { useSystem } from '../../../../hooks/useSystem';
 import { RoutinCard } from '../../../Routin/RoutinCard';
 import { WidgetCardContainer } from '../../WidgetCardContainer';
 import { ProgramScrollPropType } from './types';
 
 export const WidgetProgramScroll = ({ data }: ProgramScrollPropType) => {
   const { callEvent } = useAnalytics();
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const [containerWidth, setContainerWidth] = useState(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
 

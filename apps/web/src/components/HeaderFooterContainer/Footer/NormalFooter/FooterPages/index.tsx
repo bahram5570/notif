@@ -1,11 +1,11 @@
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { FOOTER_PAGES_LIST } from './constants';
 
 const FooterPages = () => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-10 md:col-span-8 md:row-span-2">

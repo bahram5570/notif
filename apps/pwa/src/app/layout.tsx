@@ -7,12 +7,12 @@ import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
 import PwaWidgetActionsProvider from '@providers/PwaWidgetActionsProvider';
 import { MAX_SCREEN_WIDTH, PORTAL_FEEDBACK_TOAST_ID, PORTAL_ID } from '@repo/core/constants/app.constants';
 import { CultureProvider } from '@repo/core/providers/CultureProvider';
-// import { AnalyticsProvider } from '@repo/core/providers/AnalyticsProvider';
-import { OperatingSystemProvider } from '@repo/core/providers/OperatingSystemProvider';
 import { PageNavigationProvider } from '@repo/core/providers/PageNavigationProvider';
 import { PreviewImageProvider } from '@repo/core/providers/PreviewImageProvider';
 import { ReactQueryProvider } from '@repo/core/providers/ReactQueryProvider';
 import { ServiceWorkerProvider } from '@repo/core/providers/ServiceWorkerProvider';
+// import { AnalyticsProvider } from '@repo/core/providers/AnalyticsProvider';
+import { SystemProvider } from '@repo/core/providers/SystemProvider';
 import { ToastProvider } from '@repo/core/providers/ToastProvider';
 import type { Metadata, Viewport } from 'next';
 import localFont from 'next/font/local';
@@ -64,7 +64,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
       >
         <main>
           {/* <AnalyticsProvider> */}
-          <OperatingSystemProvider>
+          <SystemProvider>
             <CultureProvider defaultValues={culture}>
               <ReactQueryProvider>
                 <ErrorProvider>
@@ -85,7 +85,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
                 </ErrorProvider>
               </ReactQueryProvider>
             </CultureProvider>
-          </OperatingSystemProvider>
+          </SystemProvider>
           {/* </AnalyticsProvider> */}
         </main>
       </body>

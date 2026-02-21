@@ -2,11 +2,11 @@ import { toPersianNumbers } from '../../../../../../utils/numbers';
 import { typographyFontStylesMaker } from '../../../../../../utils/system';
 import { circleItemRotateMaker } from '../__utils__';
 
-import { useOperatingSystem } from '../../../../../../hooks/useOperatingSystem';
+import { useSystem } from '../../../../../../hooks/useSystem';
 import { CurrentDayGeneratorProps } from './types';
 
 const CurrentDayGenerator = ({ colors, currentDay, cycleLength }: CurrentDayGeneratorProps) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Small', operatingSystem });
 
   const updatedCurrentDay = currentDay > cycleLength ? cycleLength : currentDay;

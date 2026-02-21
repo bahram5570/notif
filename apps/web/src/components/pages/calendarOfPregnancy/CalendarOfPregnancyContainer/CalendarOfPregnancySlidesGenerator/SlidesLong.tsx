@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 
 import ItemGenerator from './ItemGenerator';
@@ -9,7 +9,7 @@ import { SlidesLongTypes } from './types';
 
 const SlidesLong = ({ list }: SlidesLongTypes) => {
   const ref = useRef<SwiperRef>(null);
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
   const [activeIndex, setActiveIndex] = useState(0);
 
   const slidesHandler = (isNextSlide: boolean) => {

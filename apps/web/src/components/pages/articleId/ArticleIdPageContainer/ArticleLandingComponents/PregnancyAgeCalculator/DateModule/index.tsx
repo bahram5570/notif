@@ -5,7 +5,7 @@ import CustomButton from '@components/ui/CustomButton';
 import CustomModal from '@components/ui/CustomModal';
 import CustomTypography from '@components/ui/CustomTypography';
 import DateSelector from '@components/ui/DateSelector';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 import m from 'moment-jalaali';
 
 import { PREGNANCY_WEEKS_TOTAL_DAYS } from '../constants';
@@ -18,7 +18,7 @@ mo.subtract(PREGNANCY_WEEKS_TOTAL_DAYS - 1, 'days');
 const startDate = mo.format('jYYYY/jMM/jDD') as `${string}/${string}/${string}`;
 
 const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
   const { isOpen, isOpenHandler, currentDate, currentDateHandler, selectedDate, selectedDateHandler } =
     useSelectedDate();
 

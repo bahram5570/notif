@@ -1,14 +1,14 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { PartnerLinkNameEnum } from './enum';
 import { LinkGeneratorPropsType } from './type';
 
 const LinkGenerator = ({ Icon, link, name, MessageNumber }: LinkGeneratorPropsType) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
 
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Lable_Small', operatingSystem });
 

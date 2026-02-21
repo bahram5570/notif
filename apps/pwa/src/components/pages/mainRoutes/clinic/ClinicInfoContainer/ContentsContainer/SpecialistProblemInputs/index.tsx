@@ -6,8 +6,8 @@ import { typographyFontStylesMaker } from '@repo/core/utils/system';
 import useFileUpload from '@hooks/useFileUpload';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { useSystem } from '@repo/core/hooks/useSystem';
 import { useRouter } from 'next/navigation';
 
 import FileInput from './FileInput';
@@ -20,7 +20,7 @@ const SpecialistProblemInputs = ({ info, infoHelper, questionValuesHandler }: Sp
   const toast = useCustomToast();
   const { callEvent } = useAnalytics();
   const { values, valuesHandler } = useValues();
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Small', operatingSystem });

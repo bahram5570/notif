@@ -1,7 +1,7 @@
 'use client';
 
 import { FOOTER_HEIGHT } from '@constants/app.constants';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 // import BannerSupport from '../BannerSupport';
 import FooterInfo from './FooterInfo';
@@ -10,7 +10,7 @@ import FooterSocials from './FooterSocials';
 import FooterTrust from './FooterTrust';
 
 const NormalFooter = () => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   return (
     <footer className="w-full md:w-11/12 lg:w-10/12 px-4 md:px-0 mt-auto mx-auto" style={{ height: FOOTER_HEIGHT }}>

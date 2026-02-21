@@ -3,7 +3,7 @@
 import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import useTimer from './__hooks__/useTimer';
 import { CircleTimerPropsType } from './type';
@@ -12,7 +12,7 @@ export default function CircleTimer({ timer }: CircleTimerPropsType) {
   const { centerX, centerY, dashoffset, handleStart, remainingTime, circumference, isRunning, progress } = useTimer({
     timer,
   });
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   return (
     <div className="px-4 relative">

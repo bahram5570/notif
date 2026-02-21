@@ -4,14 +4,14 @@ import { useEffect, useState } from 'react';
 
 import { isDevelopeMode } from '@repo/core/utils/system';
 
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import AddToHomeScreenContents from './AddToHomeScreenContents';
 
 const AddToHomeScreenProvider = ({ children }: { children: React.ReactNode }) => {
   const [showContent, setShowContent] = useState(false);
 
-  const { isAddToHome, operatingSystem, browserInfo } = useOperatingSystem();
+  const { isAddToHome, operatingSystem, browserInfo } = useSystem();
 
   useEffect(() => {
     if (isDevelopeMode()) {

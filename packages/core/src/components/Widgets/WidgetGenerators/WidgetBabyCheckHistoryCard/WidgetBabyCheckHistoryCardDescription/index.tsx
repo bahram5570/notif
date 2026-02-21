@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import { toPersianNumbers } from '../../../../../utils/numbers';
 import { typographyFontStylesMaker } from '../../../../../utils/system';
 
-import { useOperatingSystem } from '../../../../../hooks/useOperatingSystem';
+import { useSystem } from '../../../../../hooks/useSystem';
 import { CustomImage } from '../../../../ui/CustomImage';
 import { WidgetBabyCheckHistoryCardDescriptionProps } from './types';
 
@@ -12,7 +12,7 @@ const WidgetBabyCheckHistoryCardDescription = ({
   description,
   icon,
 }: WidgetBabyCheckHistoryCardDescriptionProps) => {
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Small', operatingSystem });
 
   const descriptionList = description.split('،');

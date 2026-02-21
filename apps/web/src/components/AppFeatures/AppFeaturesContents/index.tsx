@@ -1,14 +1,14 @@
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { APP_FEATURES_CONTENTS_LIST } from '../constants';
 import useContents from './__hooks__/useContents';
 import { AppFeaturesContentsTypes } from './types';
 
 const AppFeaturesContents = ({ currentTab }: AppFeaturesContentsTypes) => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
   const { contentsStyles, isRendered } = useContents({ currentTab });
 
   const contentsList = Object.entries(APP_FEATURES_CONTENTS_LIST);

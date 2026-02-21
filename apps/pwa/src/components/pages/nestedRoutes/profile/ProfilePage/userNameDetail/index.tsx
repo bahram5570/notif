@@ -6,9 +6,9 @@ import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import useGetData from '@components/pages/mainRoutes/partner/PartnerPage/__hooks__/useGetData';
 import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
-import { useOperatingSystem } from '@repo/core/hooks/useOperatingSystem';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { PROFILE_MODAL_QUERY_NAME } from '../ProfileLinkList/constants';
 import { ProfileModalNameEnums } from '../ProfileModals/enum';
@@ -16,7 +16,7 @@ import { UserNameDetailsProps } from './type';
 
 const UserNameDetail = ({ name, username, avatar }: UserNameDetailsProps) => {
   const { data } = useGetData();
-  const { operatingSystem } = useOperatingSystem();
+  const { operatingSystem } = useSystem();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
@@ -33,9 +33,9 @@ const UserNameDetail = ({ name, username, avatar }: UserNameDetailsProps) => {
     pageNavigationHandler({ showProgressBar: false, id: ProfileModalNameEnums.EditProfileImage });
   };
 
-  const preventIOSPhoneLink =(number: string) => {
+  const preventIOSPhoneLink = (number: string) => {
     return number.split('').join('\u200B');
-  }
+  };
 
   return (
     <div className="flex flex-col justify-center items-center gap-5">

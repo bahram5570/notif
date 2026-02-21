@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { toPersianNumbers } from '../../../../utils/numbers';
 import { typographyFontStylesMaker } from '../../../../utils/system';
 
-import { useOperatingSystem } from '../../../../hooks/useOperatingSystem';
+import { useSystem } from '../../../../hooks/useSystem';
 import { WheelPickerCellGeneratorProps } from './types';
 
 const WheelPickerCellGenerator = ({
@@ -11,8 +11,13 @@ const WheelPickerCellGenerator = ({
   isSelectedItem,
   title,
 }: WheelPickerCellGeneratorProps) => {
-  const { operatingSystem } = useOperatingSystem();
-  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Title_Medium', operatingSystem });
+  const { operatingSystem, breakPoint } = useSystem();
+
+  const typographyFontStyles = typographyFontStylesMaker({
+    operatingSystem,
+    fontSize: 'Title_Medium',
+    isLargeScreen: !breakPoint.laptop,
+  });
 
   const colorFinder = () => {
     if (isSelectedItem) {

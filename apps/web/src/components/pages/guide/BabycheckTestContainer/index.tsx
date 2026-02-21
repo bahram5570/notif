@@ -1,14 +1,14 @@
 'use client';
 
 import CustomTypography from '@components/ui/CustomTypography';
-import useBreakPoint from '@hooks/useBreakPoint';
+import { useSystem } from '@repo/core/hooks/useSystem';
 import { FONTS_ANDROID } from '@repo/core/theme/fonts';
 
 import GuideContainer from '../GuideContainer';
 import { StepsContentType } from '../GuideContainer/type';
 
 const BabycheckTestContainer = () => {
-  const { breakPoint } = useBreakPoint();
+  const { breakPoint } = useSystem();
 
   const stepsContent: StepsContentType[] = [
     {
