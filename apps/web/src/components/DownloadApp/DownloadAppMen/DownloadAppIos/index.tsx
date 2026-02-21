@@ -1,9 +1,9 @@
 import AppStoreDownloadIcon from '@assets/icons/downloads/appStoreDownload.svg';
 import AppleIcon from '@assets/icons/downloads/apple.svg';
 import PwaIcon from '@assets/icons/downloads/pwa.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 import { APP_STORE_LINK_MEN_URL, PWA_LINK_MEN_URL } from '@constants/links.constants';
 import useUserTracking from '@hooks/useUserTracking';
 

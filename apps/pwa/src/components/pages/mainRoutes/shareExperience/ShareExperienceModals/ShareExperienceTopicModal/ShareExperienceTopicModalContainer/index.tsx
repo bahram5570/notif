@@ -4,7 +4,7 @@ import styles from '../../../styles.module.css';
 
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import { FOOTER_HEIGTH } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 
 import ShareExperienceBottomPart from '../../../ShareExperienceContainer/ShareExperienceExperiences/ShareExperienceBottomPart';
@@ -47,7 +47,7 @@ const ShareExperienceTopicModalContainer = ({
           scrollContainerRef={scrollRef}
           callBack={updatePageNo}
           totalCount={topicExperiencesData?.totalCount || 0}
-          style={{ paddingBottom: FOOTER_HEIGTH * 2 }}
+          style={{ paddingBottom: FOOTER_HEIGHT * 2 }}
         >
           {topicExperiencesData?.expirences.map((item, index) => (
             <div

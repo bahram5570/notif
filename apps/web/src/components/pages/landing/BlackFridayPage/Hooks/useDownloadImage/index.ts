@@ -1,12 +1,12 @@
 import { useCallback, useState } from 'react';
 
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 
 import { DownloadImageOptions } from './types';
 
 const useDownloadImage = ({ filename = 'story-impo.png' }: DownloadImageOptions = {}) => {
   const [isLoading, setIsLoading] = useState<boolean>();
-  const { onToast } = useCustomToast();
+  const { notifyToastHandler } = useCustomToast();
 
   const downloadImage = useCallback(
     async (imageUrl: string) => {
@@ -21,7 +21,7 @@ const useDownloadImage = ({ filename = 'story-impo.png' }: DownloadImageOptions 
         link.href = url;
         link.download = filename;
         link.click();
-        onToast({ type: 'success', message: 'عکس دانلود شد' });
+        notifyToastHandler({ type: 'success', message: 'عکس دانلود شد' });
         URL.revokeObjectURL(url);
       } catch (err) {
         console.error('Download failed:', err);

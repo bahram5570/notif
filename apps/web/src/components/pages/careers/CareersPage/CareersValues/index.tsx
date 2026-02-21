@@ -6,8 +6,8 @@ import Icon3 from '@assets/icons/careers/value-3.svg';
 import Icon4 from '@assets/icons/careers/value-4.svg';
 import Icon5 from '@assets/icons/careers/value-5.svg';
 import Icon6 from '@assets/icons/careers/value-6.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import ValuesBigScreen from './ValuesBigScreen';

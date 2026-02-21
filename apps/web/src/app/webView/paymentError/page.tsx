@@ -1,9 +1,9 @@
 import errorIcon from '@assets/images/errorIcon.webp';
 import logoPayment from '@assets/images/logoPayment.webp';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {

@@ -1,12 +1,12 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { fileImageUrl } from '@services/http';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
-import { FOOTER_HEIGHT } from '@constants/app.constants';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import useGetBannerList from '../../__hooks__/useGetBannerList';
 import { FooterNavLinkTypes } from './types';

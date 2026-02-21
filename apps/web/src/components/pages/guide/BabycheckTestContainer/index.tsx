@@ -1,6 +1,7 @@
 'use client';
 
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { useSystem } from '@repo/core/hooks/useSystem';
 import { FONTS_ANDROID } from '@repo/core/theme/fonts';
 

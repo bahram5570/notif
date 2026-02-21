@@ -2,12 +2,12 @@
 
 import LogoTypeIconMobileSize from '@assets/icons/logoType-mobile-size.svg';
 import LogoTypeIcon from '@assets/icons/logoType.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { scrollToIdHandler } from '@utils/navigation';
 
 import { DOWNLOAD_APP_SECTION_ID } from '@components/DownloadApp/DownloadAppWomen/constants';
 import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 const DownloadSection = () => {

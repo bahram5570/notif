@@ -5,7 +5,7 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import FeedbackModal from '@components/FeedbackModal';
-import { FOOTER_HEIGTH, HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGHT, HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useRouter } from 'next/navigation';
 
 import { ProgramWidgetItemStatusEnum } from '../enum';
@@ -56,7 +56,7 @@ const PairRoutinItemContainer = () => {
                 <div
                   className="!text-impo_Neutral_OnBackground"
                   dir="rtl"
-                  style={{ paddingBottom: FOOTER_HEIGTH }}
+                  style={{ paddingBottom: FOOTER_HEIGHT }}
                   dangerouslySetInnerHTML={{ __html: JSON.parse(data.data) }}
                 />
                 <div className="mt-auto p-2">

@@ -1,4 +1,4 @@
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 import { toPersianNumbers } from '@utils/numbers';
 
 import { Pagination, PaginationItem } from '@mui/material';
@@ -18,7 +18,7 @@ const CustomPagination = ({
 }: CustomPaginationTypes) => {
   const { operatingSystem } = useSystem();
 
-  const typographyDetails = typographyFontStylesMaker({ fontSize, operatingSystem, isWeb: true });
+  const typographyDetails = typographyFontStylesMaker({ fontSize, operatingSystem, isLargeScreen: true });
 
   const selectHandler = (_: unknown, p: number) => {
     pageHandler(p);

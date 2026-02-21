@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 
-import CustomModal from '@components/ui/CustomModal';
+import CustomWebModal from '@components/ui/CustomWebModal';
 import { WEB_VIEW_MAX_WIDTH } from '@constants/app.constants';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import StoryPreviewListGenerator from './StoryPreviewListGenerator';
@@ -34,7 +34,7 @@ const StoryPreview = ({ storyList, isOpen, isOpenHandler, currentIndex }: StoryP
 
   return (
     <>
-      <CustomModal isOpen={isOpen} onClose={onCloseHandler}>
+      <CustomWebModal isOpen={isOpen} onClose={onCloseHandler}>
         <>
           {isOpen && (
             <div className="relative w-[100vw] h-[100dvh] bg-impo_Black " style={{ maxWidth: WEB_VIEW_MAX_WIDTH }}>
@@ -59,7 +59,7 @@ const StoryPreview = ({ storyList, isOpen, isOpenHandler, currentIndex }: StoryP
             </div>
           )}
         </>
-      </CustomModal>
+      </CustomWebModal>
     </>
   );
 };

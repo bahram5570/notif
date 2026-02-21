@@ -2,10 +2,10 @@
 
 import { useEffect } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toPersianNumbers } from '@utils/numbers';
 
 import CustomButton from '@components/ui/CustomButton';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { getInputClass } from './_Utils/getInputClass';
 import { useOtpCode } from './_hooks/useOtpCode';

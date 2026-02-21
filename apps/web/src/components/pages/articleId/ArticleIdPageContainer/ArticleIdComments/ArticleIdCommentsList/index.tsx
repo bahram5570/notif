@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomPagination from '@components/ui/CustomPagination';
-import CustomTypography from '@components/ui/CustomTypography';
 import Spinner from '@components/ui/Spinner';
 
 import ArticleIdCommentsListGenerator from './ArticleIdCommentsListGenerator';

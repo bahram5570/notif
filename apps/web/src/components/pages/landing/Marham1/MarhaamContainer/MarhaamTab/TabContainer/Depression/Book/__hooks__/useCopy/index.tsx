@@ -1,17 +1,17 @@
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 
 const useCopy = () => {
   const discountCode = 'Marham';
-  const { onToast } = useCustomToast();
+  const { notifyToastHandler } = useCustomToast();
   const copylink = async () => {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       try {
         await navigator.clipboard.writeText(discountCode);
 
-        onToast({ type: 'success', message: 'کد تخفیف کپی شد' });
+        notifyToastHandler({ type: 'success', message: 'کد تخفیف کپی شد' });
       } catch (err) {
         console.error(err);
-        onToast({ message: 'خطا در کپی کردن متن', type: 'error' });
+        notifyToastHandler({ message: 'خطا در کپی کردن متن', type: 'error' });
       }
     } else {
       try {
@@ -25,14 +25,14 @@ const useCopy = () => {
 
         const successful = document.execCommand('copy');
         if (successful) {
-          onToast({ type: 'success', message: 'کد تخفیف کپی شد' });
+          notifyToastHandler({ type: 'success', message: 'کد تخفیف کپی شد' });
         } else {
           throw new Error('Fallback copy failed');
         }
         document.body.removeChild(textArea);
       } catch (err) {
         console.error('Fallback error: ', err);
-        onToast({ message: 'خطا در کپی کردن متن', type: 'error' });
+        notifyToastHandler({ message: 'خطا در کپی کردن متن', type: 'error' });
       }
     }
   };

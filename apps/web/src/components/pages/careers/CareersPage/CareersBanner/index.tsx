@@ -1,8 +1,8 @@
 import LampIcon from '@assets/icons/careers/on-lamp.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { CAREER_CONTAINER_MAX_WIDTH } from '@components/pages/careers/constants';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 const CareersBanner = () => {
   return (

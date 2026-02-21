@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
 
 import { ResultModuleTypes } from './types';

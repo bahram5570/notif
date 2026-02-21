@@ -1,10 +1,10 @@
 'use client';
 
 import DlPair from '@assets/images/dlpair.webp';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 import useDownloadLinks from '@hooks/useDownloadLinks';
 
 const DownloadPairPage = () => {

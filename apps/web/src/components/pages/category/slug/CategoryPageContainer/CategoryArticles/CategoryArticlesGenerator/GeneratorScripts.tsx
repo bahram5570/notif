@@ -1,9 +1,9 @@
 import { memo } from 'react';
 
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { GeneratorScriptsTypes } from './types';
@@ -26,7 +26,7 @@ const GeneratorScripts = ({ body, title, url }: GeneratorScriptsTypes) => {
   const typographyDetails = typographyFontStylesMaker({
     fontSize: 'Body_Medium',
     operatingSystem,
-    isWeb: !breakPoint.laptop,
+    isLargeScreen: !breakPoint.laptop,
   });
 
   return (

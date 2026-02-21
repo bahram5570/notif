@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { getTotalScore } from '../../../TestOnlineResultContainer/__hooks__/useTestOnlineResult/__utils__';
 
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import {
   GENETIC_TEST_ONLINE_QUESTION_LIST,

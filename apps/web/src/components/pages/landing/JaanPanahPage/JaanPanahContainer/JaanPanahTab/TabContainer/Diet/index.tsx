@@ -3,13 +3,13 @@
 import { useEffect, useState } from 'react';
 
 import StarIcon from '@assets/icons/Stars.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { ctaBannerService } from '@services/ctaBannerServices';
 
 import CtaBanner from '@components/CtaBanner';
 import { CraBannerItemTypes } from '@components/CtaBanner/types';
 import { CALENDAR_OF_PREGNANCY_BANNER_NAME } from '@components/pages/calendarOfPregnancy/CalendarOfPregnancyContainer/constants';
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { DIET_LIST } from './constant';
 

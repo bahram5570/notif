@@ -2,11 +2,12 @@
 
 import { MapContainer, Marker, TileLayer } from 'react-leaflet';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import styles from './styles.module.css';
 import 'leaflet/dist/leaflet.css';
 
 import { CAREER_CONTAINER_MAX_WIDTH } from '@components/pages/careers/constants';
-import CustomTypography from '@components/ui/CustomTypography';
 import L, { LatLngTuple } from 'leaflet';
 
 const impoPosition: LatLngTuple = [36.32829, 59.511057];

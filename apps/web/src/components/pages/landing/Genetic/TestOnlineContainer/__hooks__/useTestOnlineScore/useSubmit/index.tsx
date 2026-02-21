@@ -1,12 +1,12 @@
 import { SERVER_URL } from '@constants/links.constants';
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import Cookies from 'js-cookie';
 import { useRouter } from 'next/navigation';
 
 import { PayloadDataTypes } from './types';
 
 const useSubmit = () => {
-  const { onToast } = useCustomToast();
+  const { notifyToastHandler } = useCustomToast();
   const router = useRouter();
 
   const handleSubmit = async (payload: PayloadDataTypes) => {
@@ -26,7 +26,7 @@ const useSubmit = () => {
     if (data.valid) {
       router.push('/landing/genetic/result');
     } else {
-      onToast({ type: 'error', message: 'خطا در ارسال اطلاعات' });
+      notifyToastHandler({ type: 'error', message: 'خطا در ارسال اطلاعات' });
     }
   };
 

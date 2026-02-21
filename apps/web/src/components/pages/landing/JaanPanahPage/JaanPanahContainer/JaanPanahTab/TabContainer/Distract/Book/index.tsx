@@ -1,10 +1,10 @@
 'use client';
 
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import { JaanPanahHaveChildrenEnum } from '@components/pages/landing/JaanPanahPage/enum';
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { BOOK_PART1, BOOK_PART2 } from '../Movie/constants';
@@ -18,7 +18,7 @@ const Book = ({ children }: BookPropsType) => {
   const typographyDetails = typographyFontStylesMaker({
     operatingSystem,
     fontSize: 'Lable_LargeProminet',
-    isWeb: !breakPoint.laptop,
+    isLargeScreen: !breakPoint.laptop,
   });
 
   return (

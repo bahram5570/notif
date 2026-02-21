@@ -1,9 +1,9 @@
 import InfoIcon from '@assets/icons/info.svg';
 import MockupDrDownload from '@assets/images/mockupDrDownload.webp';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 const DrDownloadPage = () => {
   const androidDownloadLink = 'https://s3.ir-tbz-sh1.arvanstorage.ir/impo/apk/doctor_v1_1_0.apk';

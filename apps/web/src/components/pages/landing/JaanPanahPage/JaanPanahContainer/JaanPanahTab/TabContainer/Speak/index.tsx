@@ -3,12 +3,12 @@
 import { useEffect, useState } from 'react';
 
 import StarIcon from '@assets/icons/Stars.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { ctaBannerService } from '@services/ctaBannerServices';
 
 import CtaBanner from '@components/CtaBanner';
 import { CraBannerItemTypes } from '@components/CtaBanner/types';
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 
 const Speak = () => {
   const [banner, setBanner] = useState<CraBannerItemTypes | undefined>();

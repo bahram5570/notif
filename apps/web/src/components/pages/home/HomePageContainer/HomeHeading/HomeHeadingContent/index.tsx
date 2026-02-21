@@ -1,6 +1,5 @@
 import ImpoNameIcon from '@assets/icons/impoName.svg';
-
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import HomeHeadingContentBtn from './HomeHeadingContentBtn';
 

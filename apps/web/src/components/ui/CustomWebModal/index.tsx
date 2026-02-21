@@ -5,9 +5,9 @@ import React, { useMemo } from 'react';
 import styles from './styles.module.css';
 import { Dialog, Slide } from '@mui/material';
 
-import { CustomModalTypes } from './types';
+import { CustomWebModalTypes } from './types';
 
-const CustomModal = ({ children, isOpen, onClose, slideDirection, position = 'center' }: CustomModalTypes) => {
+const CustomWebModal = ({ children, isOpen, onClose, slideDirection, position = 'center' }: CustomWebModalTypes) => {
   const Transition = useMemo(
     () =>
       React.forwardRef((props: any, ref: any) => (
@@ -36,4 +36,4 @@ const CustomModal = ({ children, isOpen, onClose, slideDirection, position = 'ce
   );
 };
 
-export default CustomModal;
+export default CustomWebModal;

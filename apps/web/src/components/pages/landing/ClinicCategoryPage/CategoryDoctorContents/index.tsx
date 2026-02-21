@@ -1,8 +1,7 @@
 import { handleBodyUpdate } from '@components/pages/articleId/ArticleIdPageContainer/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import style from '../../../../pages/articleId/ArticleIdPageContainer/ArticleIdContents/styles.module.css';
-
-import CustomTypography from '@components/ui/CustomTypography';
 
 const CategoryDoctorContents = async ({ contents }: { contents: string }) => {
   const { abstractBody, articleBody } = await handleBodyUpdate(contents);

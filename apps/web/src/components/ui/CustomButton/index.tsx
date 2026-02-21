@@ -1,4 +1,4 @@
-import useTypographyMaker from '@hooks/useTypographyMaker';
+import { useTypographyMaker } from '@repo/core/hooks/useTypographyMaker';
 
 import Spinner from '../Spinner';
 import { CustomBUttonTypes } from './types';

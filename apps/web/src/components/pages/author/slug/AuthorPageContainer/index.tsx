@@ -1,11 +1,11 @@
 import LinkdinIcon from '@assets/icons/linkedin1.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import BlogsBreadcrumb from '@components/Articles/Blogs/BlogsBreadcrumb';
 import DownloadApp from '@components/DownloadApp/DownloadAppWomen';
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
 import CategoryMainTitle from '@components/pages/category/slug/CategoryPageContainer/CategoryMainTitle';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import AuthorProfile from './AuthorProfile';
 import AuthorArticles from './AutorArticles';

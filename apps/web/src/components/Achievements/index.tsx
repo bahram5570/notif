@@ -1,7 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { addComma } from '@utils/numbers';
 
 import StatisticsMaker from '@components/StatisticsMaker';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { AchievementsTypes } from './types';
 

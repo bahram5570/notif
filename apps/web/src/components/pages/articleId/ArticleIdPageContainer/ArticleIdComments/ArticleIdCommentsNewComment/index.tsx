@@ -1,9 +1,9 @@
 import { handleNewCommentDisable, handleNewCommentValidation } from './__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomInput from '@components/ui/CustomInput';
-import CustomTypography from '@components/ui/CustomTypography';
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import ArticleIdNewRate from './ArticleIdNewRate';
@@ -13,7 +13,7 @@ import useNewComment from './__hooks__/useNewComment';
 import { ArticleIdCommentsNewCommentTypes } from './types';
 
 const ArticleIdCommentsNewComment = ({ articleId }: ArticleIdCommentsNewCommentTypes) => {
-  const { onToast } = useCustomToast();
+  const { notifyToastHandler } = useCustomToast();
   const { breakPoint } = useSystem();
   const { submitNewCommentHandler, isLoading, commentPayload, commentPayloadHandler, ratePayload, ratePayloadHandler } =
     useNewComment(articleId);
@@ -24,7 +24,7 @@ const ArticleIdCommentsNewComment = ({ articleId }: ArticleIdCommentsNewCommentT
     if (typeof invalidMessage === 'undefined') {
       submitNewCommentHandler();
     } else {
-      onToast({ type: 'error', message: invalidMessage });
+      notifyToastHandler({ type: 'error', message: invalidMessage });
     }
   };
 

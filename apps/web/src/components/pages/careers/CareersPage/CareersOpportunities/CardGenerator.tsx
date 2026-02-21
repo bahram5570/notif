@@ -3,9 +3,9 @@
 import { useEffect, useRef, useState } from 'react';
 
 import ArrowIcon from '@assets/icons/arrow1.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import {

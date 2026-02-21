@@ -1,9 +1,9 @@
 import collaborationlogo from '@assets/images/geneticMarketing/collaborationlogo.webp';
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import useTestOnlineScore from '../__hooks__/useTestOnlineScore';
@@ -20,7 +20,7 @@ const TestOnlineQuestions = () => {
   const typographyDetails = typographyFontStylesMaker({
     operatingSystem,
     fontSize: 'Body_Medium',
-    isWeb: !breakPoint.laptop,
+    isLargeScreen: !breakPoint.laptop,
   });
 
   const isLastStep = Number(currentStep) === Object.keys(questionList).length - 1;

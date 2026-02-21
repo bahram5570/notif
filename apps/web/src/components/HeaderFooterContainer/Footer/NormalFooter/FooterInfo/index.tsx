@@ -1,7 +1,6 @@
 import ImpoIcon from '@assets/icons/impo.svg';
 import ImpoNameIcon from '@assets/icons/impoName.svg';
-
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 const FooterInfo = () => {
   return (

@@ -1,4 +1,4 @@
-import { FOOTER_HEIGTH } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useRouter } from 'next/navigation';
 
 import SpecialistCardGenerator from '../../SpecialistCardGenerator';
@@ -13,7 +13,7 @@ const SpecialistsList = ({ dr, selectedId, selectedDoctorHandler }: SpecialistsL
   };
 
   return (
-    <div className="relative z-0" style={{ paddingBottom: FOOTER_HEIGTH + 16 }}>
+    <div className="relative z-0" style={{ paddingBottom: FOOTER_HEIGHT + 16 }}>
       <div className="flex flex-col gap-2">
         {dr.map((item, index) => (
           <SpecialistCardGenerator

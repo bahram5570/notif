@@ -3,12 +3,12 @@
 import { toEnglishNumbers } from '@utils/numbers';
 
 import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 
 import { SendOtpTyps } from './types';
 
 export function useSendOtp() {
-  const { onToast } = useCustomToast();
+  const { notifyToastHandler } = useCustomToast();
 
   let resolver: ((value: SendOtpTyps) => void) | null = null;
 
@@ -18,7 +18,7 @@ export function useSendOtp() {
 
     onSuccess: (response: SendOtpTyps) => {
       if (response.valid) {
-        onToast({
+        notifyToastHandler({
           type: 'success',
           message: 'کد تایید با موفقیت ارسال شد',
         });
@@ -28,7 +28,7 @@ export function useSendOtp() {
     },
 
     onError: (err) => {
-      onToast({
+      notifyToastHandler({
         type: 'error',
         message: err?.message || 'خطا در ارسال کد تأیید',
       });
@@ -37,7 +37,7 @@ export function useSendOtp() {
 
   const sendOtp = async (phone: string, contentCategoryId?: string): Promise<{ success: boolean; id?: string }> => {
     if (!phone || phone.length !== 11) {
-      onToast({ type: 'error', message: 'شماره باید ۱۱ رقم باشد' });
+      notifyToastHandler({ type: 'error', message: 'شماره باید ۱۱ رقم باشد' });
       return { success: false };
     }
 

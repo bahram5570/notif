@@ -1,9 +1,9 @@
 import BlueTickIcon from '@assets/icons/blueTick.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { articleImageUrl, fileImageUrl } from '@services/http';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import ArticleIdProfileInfo from './ArticleIdProfileInfo';
 import { ArticleIdProfileTypes } from './types';

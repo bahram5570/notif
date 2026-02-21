@@ -1,10 +1,10 @@
 'use client';
 
 import collaborationlogo from '@assets/images/geneticMarketing/collaborationlogo.webp';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import GeneticMarketingLayout from '../GeneticMarketingLayout';
 import InputModule from './InputModule';

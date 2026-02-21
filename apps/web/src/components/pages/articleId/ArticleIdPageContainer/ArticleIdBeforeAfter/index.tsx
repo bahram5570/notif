@@ -1,8 +1,8 @@
 import ArrowIcon from '@assets/icons/arrow2.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@utils/scripts';
 
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { ArticleIdBeforeAfterTypes } from './types';
 

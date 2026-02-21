@@ -1,16 +1,16 @@
 import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { useRouter } from 'next/navigation';
 
 import { ResumeValuesTypes } from '../useValues/types';
 
 const useSubmitHandler = () => {
   const router = useRouter();
-  const { onToast } = useCustomToast();
+  const { notifyToastHandler } = useCustomToast();
 
   const successHandler = (v: { valid: boolean }) => {
     if (v.valid) {
-      onToast({ type: 'success', message: 'رزومه شما با موفقیت ارسال شد، نتیجه رو بهتون اطلاع میدیم.' });
+      notifyToastHandler({ type: 'success', message: 'رزومه شما با موفقیت ارسال شد، نتیجه رو بهتون اطلاع میدیم.' });
       router.push('/careers');
     }
   };

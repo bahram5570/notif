@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import StarRating from '@components/StarRating';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { CommentItemProps } from './types';
 

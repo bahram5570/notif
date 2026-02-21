@@ -5,8 +5,7 @@
 @import '@repo/core/theme.css';
 @import '@repo/core/theme.tailwind.css';
 
-@import 'swiper/css';
-@import 'swiper/css/pagination';
+@import '~react-toastify/dist/ReactToastify.min.css';
 
 @font-face {
   font-family: 'YekanBakhVF';
@@ -24,10 +23,6 @@ body::-webkit-scrollbar {
 body::-webkit-scrollbar-thumb {
   background: #f24f7a;
   border-radius: 10px;
-}
-
-textarea {
-  resize: none;
 }
 
 .MuiPagination-ul button {

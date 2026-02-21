@@ -1,14 +1,14 @@
 import AppDownloadIcon from '@assets/icons/download-Minimalistic.svg';
 import AppStoreDownloadIcon from '@assets/icons/downloads/appStoreDownload.svg';
 import GooglePlayIcon from '@assets/icons/downloads/googlePlay.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { Dialog } from '@mui/material';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 
 import CustomLink from '@components/ui/CustomLink';
-import CustomModal from '@components/ui/CustomModal';
-import CustomTypography from '@components/ui/CustomTypography';
+import CustomWebModal from '@components/ui/CustomWebModal';
 
 import { DownloadModalPropsType } from './type';
 

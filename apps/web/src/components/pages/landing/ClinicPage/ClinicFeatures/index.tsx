@@ -1,4 +1,4 @@
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import FeatureItem from './FeatureItem';
 import { FeatureList } from './constants';

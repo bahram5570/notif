@@ -1,11 +1,11 @@
 import CommentIcon from '@assets/icons/comment.svg';
 import LikeIcon from '@assets/icons/like.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { articleImageUrl } from '@services/http';
 import { jalaaliScriptDate, toJalaliData } from '@utils/dates';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { GeneratorProfileTypes } from './types';
 

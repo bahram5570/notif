@@ -5,12 +5,12 @@ import StarIcon from '@assets/icons/clinicLanding/star.svg';
 import TimeIcon from '@assets/icons/clinicLanding/time.svg';
 import UsersIcon from '@assets/icons/clinicLanding/users.svg';
 import emptyProfile from '@assets/images/clinicLanding/emptyProfile.webp';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { fileImageUrl } from '@services/http';
 import { StaticImageData } from 'next/image';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { DrCardProps } from './types';
 

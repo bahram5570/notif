@@ -1,6 +1,6 @@
 import { MouseEvent } from 'react';
 
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { ArticleIdSubjectsListGeneratorTypes } from './types';
 

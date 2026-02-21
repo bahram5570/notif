@@ -2,11 +2,11 @@
 
 import { useState } from 'react';
 
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomInput from '@components/ui/CustomInput';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import useSubmit from './__hooks__/useSubmit';
@@ -24,7 +24,7 @@ const ContactUsForm = () => {
   const typographyDetails = typographyFontStylesMaker({
     operatingSystem,
     fontSize: 'Body_Medium',
-    isWeb: !breakPoint.laptop,
+    isLargeScreen: !breakPoint.laptop,
   });
 
   return (

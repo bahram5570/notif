@@ -1,6 +1,5 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { clinicCategoryService } from '@services/clinicLandingServices';
-
-import CustomTypography from '@components/ui/CustomTypography';
 
 import CategoryItem from './CategoryItem';
 

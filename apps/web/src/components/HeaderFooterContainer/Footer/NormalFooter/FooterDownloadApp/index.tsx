@@ -1,12 +1,12 @@
 'use client';
 
 import ImpoIcon from '@assets/icons/impo.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { scrollToIdHandler } from '@utils/navigation';
 
 import { DOWNLOAD_APP_SECTION_ID } from '@components/DownloadApp/DownloadAppWomen/constants';
 import CustomButton from '@components/ui/CustomButton';
-import CustomTypography from '@components/ui/CustomTypography';
-import { FOOTER_HEIGHT } from '@constants/app.constants';
+import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useRouter } from 'next/navigation';
 
 const FooterDownloadApp = () => {

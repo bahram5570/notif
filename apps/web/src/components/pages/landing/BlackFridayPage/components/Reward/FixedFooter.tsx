@@ -1,7 +1,8 @@
 import { FC } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomButton from '@components/ui/CustomButton';
-import CustomTypography from '@components/ui/CustomTypography';
 import Spinner from '@components/ui/Spinner';
 
 import useDownloadImage from '../../Hooks/useDownloadImage';

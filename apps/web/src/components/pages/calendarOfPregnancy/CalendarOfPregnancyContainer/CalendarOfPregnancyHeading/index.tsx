@@ -1,7 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { ctaBannerService } from '@services/ctaBannerServices';
 
 import CtaBanner from '@components/CtaBanner';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import CalendarOfPregnancyDrProfile from '../CalendarOfPregnancyDrProfile';
 import CalendarOfPregnancySeperator from '../CalendarOfPregnancySeperator';

@@ -1,7 +1,8 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import BlogsCategories from '@components/pages/blogs/BlogsCategory/BlogsCategories';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import useFilteredCategoriesList from './__hooks__/useFilteredCategoriesList';

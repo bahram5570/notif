@@ -1,4 +1,4 @@
-import { FOOTER_HEIGTH, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import PageIcons from './PageIcons';
@@ -8,7 +8,7 @@ import { MainFooterContainerProps } from './types';
 const MainFooterContainer = ({ pathName }: MainFooterContainerProps) => {
   const { operatingSystem } = useSystem();
 
-  const height = operatingSystem === 'ios' ? FOOTER_HEIGTH + 16 : FOOTER_HEIGTH;
+  const height = operatingSystem === 'ios' ? FOOTER_HEIGHT + 16 : FOOTER_HEIGHT;
 
   return (
     <div

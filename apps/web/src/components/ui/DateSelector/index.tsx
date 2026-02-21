@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 
+import { WheelPicker, WheelPickerDivider } from '@repo/core/components/ui/WheelPicker';
 import { currentDate } from '@utils/dates';
-
-import WheelPicker from '@components/ui/WheelPicker';
-import WheelPickerDivider from '@components/ui/WheelPicker/WheelPickerDivider';
 
 import useDefaultDate from './__hooks__/useDefaultDate';
 import { START_DATE } from './__hooks__/useInitialLists/constants';

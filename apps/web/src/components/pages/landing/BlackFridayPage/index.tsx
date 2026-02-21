@@ -4,10 +4,10 @@ import { useEffect } from 'react';
 
 import WarningCircle from '@assets/icons/warningCircle.svg';
 import welcomVector from '@assets/images/blackFriday/welcomVector.webp';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 // import SubscribtionGenerator from './SubscribtionGenerator';
 // import { SubscribtionList } from './constants';

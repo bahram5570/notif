@@ -1,14 +1,14 @@
 import React from 'react';
 
 import WebIcon from '@assets/icons/web.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { Dialog, Slide } from '@mui/material';
 import { TransitionProps } from '@mui/material/transitions';
 
 import DownloadAppLinkGenerator from '@components/DownloadApp/DownloadAppLinkGenerator';
-import CustomTypography from '@components/ui/CustomTypography';
 import styled from '@emotion/styled';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
 import { DOWNLOAD_MODAL_QUERY_NAME, IRANIAN_STORES_LIST } from '../constants';

@@ -1,6 +1,5 @@
 import StarIcon from '@assets/icons/Stars.svg';
-
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import Movie from './Movie';
 

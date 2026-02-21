@@ -1,9 +1,9 @@
 'use client';
 
 import CustomInput from './components/CustomInput';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomButton from '@components/ui/CustomButton';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { usePhoneSubmit } from './_hooks/usePhoneSubmit';
 import { PhoneProps } from './types';

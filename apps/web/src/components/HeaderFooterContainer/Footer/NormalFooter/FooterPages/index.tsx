@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { FOOTER_PAGES_LIST } from './constants';

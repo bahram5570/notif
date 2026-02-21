@@ -1,4 +1,5 @@
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import FaqAccordion from '@components/ui/WebView/FaqAccordion';
 import StorySection from '@components/ui/WebView/StorySection';
 import { WEB_VIEW_MAX_WIDTH } from '@constants/app.constants';

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 import WarningIcon from '@assets/icons/warningCircle.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import ProgressCycleLoading from '@components/ProgressCycleLoading';
 import CustomButton from '@components/ui/CustomButton';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { MARHAAM_QUESTIONS_LIST } from '../../constants';

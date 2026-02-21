@@ -1,4 +1,4 @@
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { GENETIC_TEST_ONLINE_QUESTION_LIST, GENETIC_TEST_ONLINE_STEP_QUERY_NAME } from '../../constants';
 import { GeneticTestOnlineQuestionListTypes } from '../../types';

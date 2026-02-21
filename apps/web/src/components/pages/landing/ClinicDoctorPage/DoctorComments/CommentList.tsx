@@ -3,9 +3,9 @@
 import { useState } from 'react';
 
 import ArrowIcon from '@assets/icons/clinicLanding/arrowRight.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomButton from '@components/ui/CustomButton';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { CommentsTypes } from '../types';
 import CommentItem from './CommentItem';

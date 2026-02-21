@@ -2,9 +2,9 @@
 
 import LogoTypeIconMobileSize from '@assets/icons/logoType-mobile-size.svg';
 import LogoTypeIcon from '@assets/icons/logoType.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 const ContactUsHeader = () => {

@@ -1,9 +1,9 @@
 'use client';
 
 import ImpoIcon from '@assets/icons/impoMen.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { DOWNLOAD_APP_SECTION_ID } from '../DownloadAppWomen/constants';

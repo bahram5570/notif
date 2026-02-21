@@ -1,4 +1,4 @@
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { TITLE_LIST } from './constant';
 import { NamesTableProps } from './type';

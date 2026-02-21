@@ -6,7 +6,7 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import FeedbackModal from '@components/FeedbackModal';
-import { FOOTER_HEIGTH, HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGHT, HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import { ProgramWidgetItemStatusEnum } from '../enum';
 import EmptyState from './EmptyState';
@@ -46,7 +46,7 @@ const RoutinItemContainer = () => {
             {data.status !== ProgramWidgetItemStatusEnum.locked && (
               <>
                 <div
-                  style={{ paddingBottom: FOOTER_HEIGTH }}
+                  style={{ paddingBottom: FOOTER_HEIGHT }}
                   dir="rtl"
                   className="text-impo_Neutral_OnBackground"
                   dangerouslySetInnerHTML={{ __html: JSON.parse(data.data) }}

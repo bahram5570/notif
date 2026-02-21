@@ -2,9 +2,9 @@
 
 import WhatsAppIcon from '@assets/icons/WhatsApp.svg';
 import TelegramIcon from '@assets/icons/telegram2.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import useCopy from '../__hooks__/useCopy';
 import { TELEGRAM_LINK, WHATSAPP_NUMBER } from '../constants';

@@ -1,10 +1,10 @@
 'use client';
 
 import emptyDr from '@assets/images/clinicLanding/emptyDr.webp';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { fileImageUrl } from '@services/http';
 
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { DoctorHeadingProps } from '../types';

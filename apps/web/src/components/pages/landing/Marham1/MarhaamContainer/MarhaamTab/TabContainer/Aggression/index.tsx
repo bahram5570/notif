@@ -1,7 +1,7 @@
 import StarIcon from '@assets/icons/Stars.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CtaBanner from '@components/CtaBanner';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import Movie from './Movie';
 

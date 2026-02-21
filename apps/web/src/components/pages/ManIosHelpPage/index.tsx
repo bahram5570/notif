@@ -5,11 +5,11 @@ import s2 from '@assets/images/manioshelp/s2.webp';
 import s3 from '@assets/images/manioshelp/s3.webp';
 import s4 from '@assets/images/manioshelp/s4.webp';
 import s5 from '@assets/images/manioshelp/s5.webp';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { Divider } from '@mui/material';
 
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 
 const ManIosHelpPage = () => {
   return (

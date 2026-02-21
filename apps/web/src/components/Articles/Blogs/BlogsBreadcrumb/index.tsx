@@ -1,9 +1,10 @@
 import { Fragment } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { Breadcrumbs } from '@mui/material';
 
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { BlogsBreadcrumbTypes } from './types';
 

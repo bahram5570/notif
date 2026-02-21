@@ -3,8 +3,7 @@
 import { useRef } from 'react';
 
 // import ArrowIcon from '@assets/icons/arrow2.svg';
-
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import ArticleIdSubjectsListGenerator from './ArticleIdSubjectsListGenerator';
 import { ArticleIdSubjectsListTypes } from './types';

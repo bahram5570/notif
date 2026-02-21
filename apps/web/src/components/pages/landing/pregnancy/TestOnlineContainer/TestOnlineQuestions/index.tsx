@@ -1,7 +1,7 @@
 import LogoIcon from '@assets/icons/impo2.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomButton from '@components/ui/CustomButton';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import TestOnlineProgressBar from '../TestOnlineProgressBar';
 import useTestOnlineScore from '../__hooks__/useTestOnlineScore';

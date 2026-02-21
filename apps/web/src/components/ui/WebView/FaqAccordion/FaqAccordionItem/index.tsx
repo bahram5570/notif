@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
 import ArrowLeftIcon from '@assets/icons/arrowLeft.svg';
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 import { toPersianNumbers } from '@utils/numbers';
 
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { FaqAccordionItemPropsType } from './type';
@@ -13,8 +13,16 @@ const FaqAccordionItem = ({ question, answer, index }: FaqAccordionItemPropsType
   const { operatingSystem } = useSystem();
   const [isOpen, setIsOpen] = useState<boolean | undefined>(undefined);
 
-  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Small', operatingSystem, isWeb: true });
-  const typographyFontStyles1 = typographyFontStylesMaker({ fontSize: 'Lable_Large', operatingSystem, isWeb: true });
+  const typographyFontStyles = typographyFontStylesMaker({
+    fontSize: 'Body_Small',
+    operatingSystem,
+    isLargeScreen: true,
+  });
+  const typographyFontStyles1 = typographyFontStylesMaker({
+    fontSize: 'Lable_Large',
+    operatingSystem,
+    isLargeScreen: true,
+  });
   const questionIndex = index + 1;
 
   return (

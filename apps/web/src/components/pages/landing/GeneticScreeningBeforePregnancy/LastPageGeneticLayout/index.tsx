@@ -1,9 +1,9 @@
 import drProfile from '@assets/images/genetic/drProfile.webp';
 import logo from '@assets/images/genetic/logo.webp';
 import Verified from '@assets/images/genetic/verified.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { ExpertList } from './constants';
 

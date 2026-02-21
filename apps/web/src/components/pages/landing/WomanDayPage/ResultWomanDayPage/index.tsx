@@ -3,11 +3,11 @@
 import Copy from '@assets/images/womanDay/Copy.svg';
 import mother from '@assets/images/womanDay/mother.webp';
 import partner from '@assets/images/womanDay/partner.webp';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import useCopy from '../Hooks/useCopy';
 import useGetData from '../Hooks/useGetData';

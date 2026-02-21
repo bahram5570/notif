@@ -1,7 +1,7 @@
 import ArrowIcon from '@assets/icons/arrow3.svg';
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { ArticleIdCommentsListGeneratorTypes } from './types';
@@ -12,12 +12,12 @@ const ArticleIdCommentsListGenerator = (props: ArticleIdCommentsListGeneratorTyp
   const messageTypography = typographyFontStylesMaker({
     fontSize: 'Body_Large',
     operatingSystem,
-    isWeb: !breakPoint.laptop,
+    isLargeScreen: !breakPoint.laptop,
   });
   const replyTypography = typographyFontStylesMaker({
     fontSize: 'Body_Large',
     operatingSystem,
-    isWeb: !breakPoint.laptop,
+    isLargeScreen: !breakPoint.laptop,
   });
 
   const htmlConvertor = (txt: string) => {

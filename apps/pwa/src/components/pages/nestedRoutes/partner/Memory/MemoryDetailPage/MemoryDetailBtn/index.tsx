@@ -2,7 +2,7 @@ import EditIcon from '@assets/icons/Edit.svg';
 import TrashIcon from '@assets/shared/icons/trash.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { FOOTER_HEIGTH, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
@@ -30,7 +30,7 @@ const MemoryDetailBtn = ({ fromMan, memoryId, validPartner }: MemoryDetailBtnPro
   return (
     <div
       className="fixed left-0 right-0 bottom-0 mx-auto px-4 pt-3 grid grid-flow-col bg-impo_Neutral_Background"
-      style={{ maxWidth: MAX_SCREEN_WIDTH, height: FOOTER_HEIGTH }}
+      style={{ maxWidth: MAX_SCREEN_WIDTH, height: FOOTER_HEIGHT }}
     >
       <div onClick={deleteHandler}>
         <div className="flex flex-row items-center gap-1 justify-center ">

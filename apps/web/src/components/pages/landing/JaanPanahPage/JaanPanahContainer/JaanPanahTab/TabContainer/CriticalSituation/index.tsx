@@ -1,10 +1,10 @@
 'use client';
 
 import StarIcon from '@assets/icons/Stars.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import useDownloadPdf from './__hooks__/useDownloadPdf';
 

@@ -1,18 +1,18 @@
 import useApi from '@hooks/useApi';
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { useRouter } from 'next/navigation';
 
 import { PayloadDataTypes } from './type';
 
 const useSubmit = (nextRoute: string) => {
   const router = useRouter();
-  const { onToast } = useCustomToast();
+  const { notifyToastHandler } = useCustomToast();
 
   const successHandler = (v: { valid: boolean }) => {
     if (v.valid) {
       router.push(nextRoute);
     } else {
-      onToast({ type: 'error', message: 'خطا در برقراری ارتباط' });
+      notifyToastHandler({ type: 'error', message: 'خطا در برقراری ارتباط' });
     }
   };
 

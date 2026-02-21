@@ -1,4 +1,4 @@
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import { useSystem } from '@repo/core/hooks/useSystem';
 
@@ -10,7 +10,7 @@ const ArticleIdNewTextarea = ({ message, messageHandler }: ArticleIdNewTextareaT
   const typographyDetails = typographyFontStylesMaker({
     operatingSystem,
     fontSize: 'Body_Medium',
-    isWeb: !breakPoint.laptop,
+    isLargeScreen: !breakPoint.laptop,
   });
 
   return (

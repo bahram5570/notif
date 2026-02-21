@@ -1,10 +1,10 @@
 import drProfile from '@assets/images/geneticMarketing/drProfile.webp';
 import logo from '@assets/images/geneticMarketing/logo.webp';
 import Verified from '@assets/images/geneticMarketing/verified.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { ExpertList } from './constants';
 

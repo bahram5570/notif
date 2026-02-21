@@ -1,17 +1,17 @@
 import { handleValidation } from './__utils__';
 
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 
 import { UserInfoType } from '../../type';
 
 const useSubmit = () => {
-  const { onToast } = useCustomToast();
+  const { notifyToastHandler } = useCustomToast();
 
   const submitHandler = (payload: UserInfoType) => {
     const invalidMessage = handleValidation(payload);
 
     if (invalidMessage) {
-      return onToast({ type: 'error', message: invalidMessage });
+      return notifyToastHandler({ type: 'error', message: invalidMessage });
     }
   };
 

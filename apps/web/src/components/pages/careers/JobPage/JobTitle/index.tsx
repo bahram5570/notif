@@ -1,7 +1,7 @@
 import ImpoNameIcon from '@assets/icons/impo3.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { JobTitleTypes } from './types';
 

@@ -2,21 +2,21 @@
 
 import { resumePayloadValidator } from './__utils__';
 import UploadIcon from '@assets/icons/upload.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@utils/scripts';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomInput from '@components/ui/CustomInput';
-import CustomTypography from '@components/ui/CustomTypography';
 import Spinner from '@components/ui/Spinner';
-import useCustomToast from '@hooks/useCustomToast';
 import useFileUpload from '@hooks/useFileUpload';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 
 import useSubmitHandler from './__hooks__/useSubmitHandler';
 import useValues from './__hooks__/useValues';
 import { ResumeInputsTypes } from './types';
 
 const ResumeInputs = ({ jobId }: ResumeInputsTypes) => {
-  const { onToast } = useCustomToast();
+  const { notifyToastHandler } = useCustomToast();
   const { values, valuesHandler } = useValues();
   const { submitHandler, isLoading } = useSubmitHandler();
 
@@ -31,7 +31,7 @@ const ResumeInputs = ({ jobId }: ResumeInputsTypes) => {
     const { errorMessage, updatedValues } = resumePayloadValidator(values);
 
     if (errorMessage) {
-      onToast({ type: 'error', message: errorMessage });
+      notifyToastHandler({ type: 'error', message: errorMessage });
       return;
     }
 

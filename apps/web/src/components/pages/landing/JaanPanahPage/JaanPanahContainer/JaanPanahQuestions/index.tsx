@@ -1,8 +1,9 @@
 import { useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import ProgressCycleLoading from '@components/ProgressCycleLoading';
 import CustomButton from '@components/ui/CustomButton';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { JAAN_PANAH_QUESTIONS_LIST } from '../../constants';

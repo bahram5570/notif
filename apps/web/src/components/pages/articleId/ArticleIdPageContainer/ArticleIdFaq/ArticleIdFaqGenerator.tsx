@@ -2,8 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import CrossIcon from '@assets/icons/cross.svg';
 import MinusIcon from '@assets/icons/minus.svg';
-
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { ArticleIdFaqGeneratorTypes } from './types';
 

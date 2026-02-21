@@ -1,6 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 const PrivacyPolicy = () => {
   return (

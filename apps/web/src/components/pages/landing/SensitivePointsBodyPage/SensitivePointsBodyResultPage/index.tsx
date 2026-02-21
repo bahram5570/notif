@@ -1,6 +1,6 @@
 'use client';
 
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import ExerciseSection from './ExerciseSection';
 import SensitiveResultHeading from './SensitiveResultHeading';

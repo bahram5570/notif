@@ -1,4 +1,4 @@
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useProgress from './__hooks__/useProgress';
 import { ProgressCycleLoadingProps } from './types';

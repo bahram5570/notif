@@ -7,7 +7,7 @@ import imageCompression from 'browser-image-compression';
 
 import { FileInputTypes } from '@components/ui/FileInputManager/enum';
 import useAiFileManager from '@hooks/__aichatbot__/useAiFileManager';
-import { FOOTER_HEIGTH, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import { FileInputHandlerTypes, UploadImagesMoreActionPropsType } from './type';
 
@@ -68,7 +68,7 @@ const UploadImagesMoreAction = ({ closeHandler, isOpen }: UploadImagesMoreAction
         className=" p-4 py-6 rounded-3xl w-44  backdrop-blur-[8px] border border-impo_White  shadow-lg absolute right-4 dark:!bg-white/10"
         style={{
           backgroundColor: 'rgba(255, 255, 255, 0.64)',
-          bottom: FOOTER_HEIGTH + 20,
+          bottom: FOOTER_HEIGHT + 20,
         }}
         onClick={(e) => e.stopPropagation()}
       >

@@ -3,11 +3,11 @@
 import { useEffect, useRef, useState } from 'react';
 
 import ArrowIcon from '@assets/icons/arrow2.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@utils/scripts';
 
 import { ItemGenerator, LinkGenerator, TextGenerator, TitleGenerator } from '@components/SelectName/Description';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 const Description = () => {
   const ref = useRef<HTMLDivElement>(null);

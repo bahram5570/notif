@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import DownloadAppLinkGenerator from '@components/DownloadApp/DownloadAppLinkGenerator';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { IRANIAN_STORES_LIST } from '../constants';
 

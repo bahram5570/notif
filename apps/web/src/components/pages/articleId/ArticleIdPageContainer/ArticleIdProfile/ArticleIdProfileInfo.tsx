@@ -1,8 +1,7 @@
 import CommentIcon from '@assets/icons/comment.svg';
 import LikeIcon from '@assets/icons/like.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { jalaaliScriptDate, toJalaliData } from '@utils/dates';
-
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { ArticleIdProfileInfoTypes } from './types';
 

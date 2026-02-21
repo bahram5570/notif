@@ -1,7 +1,8 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import CircleTimer from '../CircleTimer';

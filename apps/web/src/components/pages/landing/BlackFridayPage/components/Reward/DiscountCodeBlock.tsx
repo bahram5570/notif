@@ -2,11 +2,11 @@ import { FC, useState } from 'react';
 
 import Copy from '@assets/images/blackFriday/copy.svg';
 import Unread from '@assets/images/blackFriday/unread.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toEnglishNumbers } from '@utils/numbers';
 
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 
 import { SubscribtionReferal } from '../../constants';
 
@@ -17,7 +17,7 @@ type Props = {
 };
 
 const DiscountCodeBlock: FC<Props> = ({ code, eventUse, eventCopy }) => {
-  const { onToast } = useCustomToast();
+  const { notifyToastHandler } = useCustomToast();
 
   const [copied, setCopied] = useState(false);
 
@@ -41,11 +41,11 @@ const DiscountCodeBlock: FC<Props> = ({ code, eventUse, eventCopy }) => {
       }
 
       setCopied(true);
-      onToast({ message: 'کد تخفیف با موفقیت کپی شد', type: 'success' });
+      notifyToastHandler({ message: 'کد تخفیف با موفقیت کپی شد', type: 'success' });
 
       setTimeout(() => setCopied(false), 4000);
     } catch (err) {
-      onToast({ message: 'کپی کردن انجام نشد', type: 'error' });
+      notifyToastHandler({ message: 'کپی کردن انجام نشد', type: 'error' });
     }
   };
 

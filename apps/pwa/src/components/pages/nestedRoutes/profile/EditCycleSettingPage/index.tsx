@@ -4,7 +4,7 @@ import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { FOOTER_HEIGTH, HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGHT, HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import EditCycleSkeleton from './EditCycleSkeleton';
 import RadioButtonGenerator from './RadioButtonGenerator';
@@ -29,7 +29,7 @@ const EditCycleSettingPage = () => {
           rightElementScript="انتخاب نحوه نمایش چرخه"
         >
           <div className="flex flex-col min-h-[100dvh] gap-6 pb-6" style={{ paddingTop: HEADER_HEIGHT }}>
-            <div className="p-3 flex flex-col gap-3 " style={{ marginBottom: FOOTER_HEIGTH + 16 }}>
+            <div className="p-3 flex flex-col gap-3 " style={{ marginBottom: FOOTER_HEIGHT + 16 }}>
               <CustomTypography fontSize="Body_Medium" className="w-full text-right text-impo_Neutral_OnBackground">
                 میتونی انتخاب کنی کدوم چرخه رو بهت نشون بدیم
               </CustomTypography>

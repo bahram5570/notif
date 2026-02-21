@@ -5,8 +5,8 @@ import ArticlesIcon from '@assets/icons/deviceFooter/articles.svg';
 import HomeIcon from '@assets/icons/deviceFooter/home.svg';
 import LoginIcon from '@assets/icons/deviceFooter/login.svg';
 
-import { FOOTER_HEIGHT } from '@constants/app.constants';
 import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
+import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 import { usePathname } from 'next/navigation';
 
 import DownloadSticky from '../DownloadSticky';

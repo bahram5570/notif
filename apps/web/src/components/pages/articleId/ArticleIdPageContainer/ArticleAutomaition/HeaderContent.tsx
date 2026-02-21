@@ -1,7 +1,7 @@
 import autoArticleImg from '@assets/images/autoArticleImg.webp';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { ContentCategoryType } from './types';
 

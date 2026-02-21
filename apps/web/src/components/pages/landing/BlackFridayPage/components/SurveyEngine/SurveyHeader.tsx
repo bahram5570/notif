@@ -2,7 +2,7 @@
 
 import { FC } from 'react';
 
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import GoBack from '../GoBack';
 

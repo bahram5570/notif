@@ -1,9 +1,9 @@
 import StarIcon from '@assets/icons/Stars.svg';
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import useCopy from '../Distract/__hooks__/useCopy';
@@ -14,7 +14,7 @@ const WaysToCalmDown = () => {
 
   const typographyDetails = typographyFontStylesMaker({
     operatingSystem,
-    isWeb: !breakPoint.laptop,
+    isLargeScreen: !breakPoint.laptop,
     fontSize: 'Lable_LargeProminet',
   });
 

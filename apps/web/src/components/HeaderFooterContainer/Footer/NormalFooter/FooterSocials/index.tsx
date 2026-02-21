@@ -3,11 +3,11 @@ import InstagramIcon from '@assets/icons/instagram2.svg';
 import LinkdinIcon from '@assets/icons/linkedin1.svg';
 import TelegramIcon from '@assets/icons/telegram.svg';
 import XIcon from '@assets/icons/x.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { currentDate } from '@utils/dates';
 
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
-import { APP_VERSION } from '@constants/app.constants';
+import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 const { jYear } = currentDate();

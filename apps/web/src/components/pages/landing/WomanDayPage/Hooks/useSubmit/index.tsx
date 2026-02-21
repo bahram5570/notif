@@ -1,12 +1,12 @@
 import { useState } from 'react';
 
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { useRouter } from 'next/navigation';
 
 import { PayloadDataTypes } from './types';
 
 const useSubmit = () => {
-  const { onToast } = useCustomToast();
+  const { notifyToastHandler } = useCustomToast();
   const router = useRouter();
 
   const [isLoading, setIsLoading] = useState(false);
@@ -30,11 +30,11 @@ const useSubmit = () => {
         router.push(data.backUrl);
         setIsLoading(false);
       } else {
-        onToast({ type: 'error', message: 'خطا در ارسال اطلاعات' });
+        notifyToastHandler({ type: 'error', message: 'خطا در ارسال اطلاعات' });
         setIsLoading(false);
       }
     } catch (err) {
-      onToast({ type: 'error', message: 'مشکلی پیش آمد، دوباره تلاش کنید.' });
+      notifyToastHandler({ type: 'error', message: 'مشکلی پیش آمد، دوباره تلاش کنید.' });
       setIsLoading(false);
     }
   };

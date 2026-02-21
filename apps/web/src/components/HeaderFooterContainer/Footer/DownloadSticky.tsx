@@ -1,9 +1,9 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { scrollToIdHandler } from '@utils/navigation';
 
 import { DOWNLOAD_APP_SECTION_ID } from '@components/DownloadApp/DownloadAppWomen/constants';
 import CustomButton from '@components/ui/CustomButton';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 const DownloadSticky = () => {
   return (

@@ -1,8 +1,8 @@
 import AppStoreDownloadIcon from '@assets/icons/downloads/appStoreDownload.svg';
 import AppleIcon from '@assets/icons/downloads/apple.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 import { APP_STORE_LINK_WOMEN_URL } from '@constants/links.constants';
 import useUserTracking from '@hooks/useUserTracking';
 

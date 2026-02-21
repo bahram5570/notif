@@ -1,7 +1,8 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import JaanPanahQuestions from './JaanPanahQuestions';
 import QuestionContents from './JaanPanahQuestions/QuestionContents';

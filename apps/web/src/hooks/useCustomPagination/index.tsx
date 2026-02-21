@@ -1,4 +1,4 @@
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { PAGE_QUERY_NAME } from './constants';
 

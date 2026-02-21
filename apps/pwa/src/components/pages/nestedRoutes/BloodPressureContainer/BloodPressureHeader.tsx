@@ -1,13 +1,13 @@
 import BloodPressureIcon from '@assets/icons/Blood_Pressure.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { FOOTER_HEIGTH, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 const BloodPressureHeader = () => {
   return (
     <div
       className="flex fixed z-40 flex-row-reverse items-center justify-between px-4 gap-4 pb-3 bg-impo_Neutral_Background"
-      style={{ maxWidth: MAX_SCREEN_WIDTH, height: FOOTER_HEIGTH + 10 }}
+      style={{ maxWidth: MAX_SCREEN_WIDTH, height: FOOTER_HEIGHT + 10 }}
     >
       <div className="flex flex-col gap-1 items-end">
         <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">

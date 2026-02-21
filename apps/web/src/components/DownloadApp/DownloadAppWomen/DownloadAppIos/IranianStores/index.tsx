@@ -3,9 +3,9 @@
 import { Suspense } from 'react';
 
 import PwaIcon from '@assets/icons/downloads/pwa.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import DownloadAppLinkGenerator from '@components/DownloadApp/DownloadAppLinkGenerator';
-import CustomTypography from '@components/ui/CustomTypography';
 import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
 import { useSystem } from '@repo/core/hooks/useSystem';
 

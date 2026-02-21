@@ -1,8 +1,8 @@
 import CloseIcon from '@assets/icons/Close Circle.svg';
 import TickIcon from '@assets/icons/Unread.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 
 const PhotoGuide = () => {
   return (

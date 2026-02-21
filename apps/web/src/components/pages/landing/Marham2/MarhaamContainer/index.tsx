@@ -2,10 +2,11 @@
 
 import { useState } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
-import CustomModal from '@components/ui/CustomModal';
-import CustomTypography from '@components/ui/CustomTypography';
+import CustomWebModal from '@components/ui/CustomWebModal';
 
 import MarhaamQuestion from './MarhaamQuestion';
 import QuestionContents from './MarhaamQuestion/QuestionContents';
@@ -75,7 +76,7 @@ const MarhaamContainer = () => {
         </div>
       </div>
 
-      <CustomModal position={'center'} isOpen={isOpen} onClose={() => isOpenHandler(false)}>
+      <CustomWebModal position={'center'} isOpen={isOpen} onClose={() => isOpenHandler(false)}>
         <div className="w-[100vw] max-w-[320px] flex flex-col items-center p-6 md:p-10 rounded-2xl bg-impo_White">
           <CustomTypography className="text-center" fontSize="Title_Small">
             مهلت استفاده از خدمات مرهم به پایان رسید
@@ -85,7 +86,7 @@ const MarhaamContainer = () => {
             فهمیدم
           </CustomButton>
         </div>
-      </CustomModal>
+      </CustomWebModal>
     </article>
   );
 };

@@ -4,11 +4,11 @@ import { useState } from 'react';
 
 import { toEnglishNumbers } from '@utils/numbers';
 
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { useRouter } from 'next/navigation';
 
 export const usePhoneNumber = () => {
-  const { onToast } = useCustomToast();
+  const { notifyToastHandler } = useCustomToast();
   const [phoneNumber, setPhoneNumber] = useState<string>('');
   const [isLoading, setIsLoading] = useState<boolean>();
   const router = useRouter();
@@ -22,12 +22,12 @@ export const usePhoneNumber = () => {
     const normalizedPhone = toEnglishNumbers(phoneNumber).trim();
 
     if (!normalizedPhone.startsWith('09')) {
-      onToast({ message: 'شماره باید با 09 شروع شود', type: 'error' });
+      notifyToastHandler({ message: 'شماره باید با 09 شروع شود', type: 'error' });
       return false;
     }
 
     if (normalizedPhone.length < 11) {
-      onToast({ message: 'شماره همراه باید 11 رقم باشد', type: 'error' });
+      notifyToastHandler({ message: 'شماره همراه باید 11 رقم باشد', type: 'error' });
       return false;
     }
 

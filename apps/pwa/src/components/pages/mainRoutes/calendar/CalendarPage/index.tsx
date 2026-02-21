@@ -1,6 +1,6 @@
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 
-import { FOOTER_HEIGTH, HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGHT, HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import CalendarContainer from '../CalendarContainer';
 import CalendarDraggingPanel from '../CalendarDraggingPanel';
@@ -17,7 +17,7 @@ const CalendarPage = () => {
       {/* <SignsChangedToast /> */}
 
       <div
-        style={{ paddingBottom: FOOTER_HEIGTH + 16, paddingTop: HEADER_HEIGHT + 16 }}
+        style={{ paddingBottom: FOOTER_HEIGHT + 16, paddingTop: HEADER_HEIGHT + 16 }}
         className="relative h-full min-h-[100dvh] max-h-[100dvh] overflow-hidden z-0"
       >
         {isLoading && <CalendarSkeleton />}

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 
 import { COMMENTS_MAX_CHARACTERS } from '../../constants';
 import useNewCommentSubmit from '../useNewCommentSubmit';
@@ -10,7 +10,7 @@ const ratePayloadInitialValues: RatePayloadTypes = { rate: 0 };
 const commentPayloadInitialValues: CommentPayloadTypes = { name: '', phone: '', message: '' };
 
 const useNewComment = (articleId: string) => {
-  const { onToast } = useCustomToast();
+  const { notifyToastHandler } = useCustomToast();
   const [ratePayload, setRatePayload] = useState<RatePayloadTypes>(ratePayloadInitialValues);
   const [commentPayload, setCommentPayload] = useState<CommentPayloadTypes>(commentPayloadInitialValues);
 
@@ -33,7 +33,7 @@ const useNewComment = (articleId: string) => {
   const successHandler = () => {
     setRatePayload(ratePayloadInitialValues);
     setCommentPayload(commentPayloadInitialValues);
-    onToast({ type: 'success', message: 'ثبت نظر جدید با موفقیت انجام شد' });
+    notifyToastHandler({ type: 'success', message: 'ثبت نظر جدید با موفقیت انجام شد' });
   };
 
   const { submitHandler, isLoading } = useNewCommentSubmit({ articleId, successHandler });

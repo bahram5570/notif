@@ -1,10 +1,10 @@
 'use client';
 
 import genderDeterminationLottie from '@assets/lottie/genderDetermination.json';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
-import { LottieJson } from '@lib/LottieJson';
+import { LottieJson } from '@repo/core/lib/LottieJson';
 
 const GenderDeterminationHeading = () => {
   return (

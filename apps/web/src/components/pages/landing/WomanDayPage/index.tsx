@@ -4,14 +4,14 @@ import { useState } from 'react';
 
 import landingImage from '@assets/images/womanDay/landingImage.webp';
 import womanDaySubscribetion from '@assets/images/womanDaySubscribetion.webp';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toEnglishNumbers } from '@utils/numbers';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
 import CustomInput from '@components/ui/CustomInput';
-import CustomTypography from '@components/ui/CustomTypography';
 import Spinner from '@components/ui/Spinner';
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 
 import useSubmit from './Hooks/useSubmit';
 
@@ -23,7 +23,7 @@ const GENDER_OPTIONS = [
 export default function WomanDayPage() {
   const { submit, isLoading } = useSubmit();
 
-  const { onToast } = useCustomToast();
+  const { notifyToastHandler } = useCustomToast();
 
   const [form, setForm] = useState({
     selfName: '',
@@ -64,7 +64,7 @@ export default function WomanDayPage() {
 
     if (phoneError) {
       setErrors((prev) => ({ ...prev, phone: phoneError }));
-      onToast({ type: 'error', message: phoneError });
+      notifyToastHandler({ type: 'error', message: phoneError });
       return;
     }
     submit(form);

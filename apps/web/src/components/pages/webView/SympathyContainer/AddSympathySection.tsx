@@ -1,17 +1,25 @@
 'use client';
 
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 import { toPersianNumbers } from '@utils/numbers';
 
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 const AddSympathySection = () => {
   const { operatingSystem } = useSystem();
 
-  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Small', operatingSystem, isWeb: true });
-  const typographyFontStyles1 = typographyFontStylesMaker({ fontSize: 'Lable_Medium', operatingSystem, isWeb: true });
+  const typographyFontStyles = typographyFontStylesMaker({
+    fontSize: 'Body_Small',
+    operatingSystem,
+    isLargeScreen: true,
+  });
+  const typographyFontStyles1 = typographyFontStylesMaker({
+    fontSize: 'Lable_Medium',
+    operatingSystem,
+    isLargeScreen: true,
+  });
 
   return (
     <div className="flex flex-col  gap-3">

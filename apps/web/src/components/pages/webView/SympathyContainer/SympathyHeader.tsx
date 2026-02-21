@@ -1,7 +1,7 @@
 import TickIcon from '@assets/icons/tick.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { HEADER_TIP_LIST } from './constants';
 

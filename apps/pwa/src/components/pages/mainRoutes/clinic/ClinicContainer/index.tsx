@@ -3,7 +3,7 @@ import { Suspense, useState } from 'react';
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { FOOTER_HEIGTH } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import ActiveTicketsHeading from './ActiveTicketsHeading';
 import ActiveTicketsList from './ActiveTicketsList';
@@ -31,7 +31,7 @@ const ClinicContainer = () => {
           rightElement="Info"
           leftElement1="Profile"
           leftElement2="TicketsHistory"
-          paddingBottom={FOOTER_HEIGTH + 16}
+          paddingBottom={FOOTER_HEIGHT + 16}
         >
           <div
             className="relative flex flex-col items-center gap-4 px-6 z-0"

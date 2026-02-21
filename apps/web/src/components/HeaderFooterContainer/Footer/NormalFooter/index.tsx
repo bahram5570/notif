@@ -1,6 +1,6 @@
 'use client';
 
-import { FOOTER_HEIGHT } from '@constants/app.constants';
+import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 // import BannerSupport from '../BannerSupport';

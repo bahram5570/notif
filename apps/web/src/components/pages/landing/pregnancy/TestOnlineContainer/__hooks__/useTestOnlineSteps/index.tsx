@@ -1,4 +1,4 @@
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { PREGNANCY_TEST_ONLINE_QUESTION_LIST, PREGNANCY_TEST_ONLINE_STEP_QUERY_NAME } from '../../constants';
 import { PregnancyTestOnlineQuestionListTypes } from '../../types';

@@ -1,9 +1,9 @@
 'use client';
 
 import NotFoundIcon from '@assets/images/404.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import CustomTypography from '@components/ui/CustomTypography';
-import { LottieCanvas } from '@lib/LottieCanvas';
+import { LottieCanvas } from '@repo/core/lib/LottieCanvas';
 
 const NotFoundPageContainer = () => {
   return (

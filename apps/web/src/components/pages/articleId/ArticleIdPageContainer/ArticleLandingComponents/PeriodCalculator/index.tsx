@@ -1,6 +1,6 @@
 'use client';
 
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import WavesContainer from '../WavesContainer';
 import DateModule from './DateModule';

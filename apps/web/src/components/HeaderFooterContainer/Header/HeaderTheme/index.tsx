@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 
 import SystemIcon from '@assets/icons/themeSystem.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { getTheme, themeHandler } from '@repo/core/theme/__utils__';
 
-import CustomTypography from '@components/ui/CustomTypography';
 import { HEADER_THEME_LIST } from '@constants/links.constants';
 import { useSystem } from '@repo/core/hooks/useSystem';
 import { ThemeTypes } from '@repo/core/theme/types';

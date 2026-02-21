@@ -1,7 +1,7 @@
 import BlueTickIcon from '@assets/icons/blueTick.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 
 const CalendarOfPregnancyDrProfile = () => {
   return (

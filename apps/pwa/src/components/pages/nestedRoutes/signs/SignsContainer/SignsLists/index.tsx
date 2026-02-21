@@ -1,6 +1,6 @@
 import { Fragment, useEffect, useRef } from 'react';
 
-import { FOOTER_HEIGTH } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperTypes } from 'swiper/types';
 
@@ -16,7 +16,7 @@ const SignsLists = ({ infoList, slide, slideHandler, updateSingSelectedList }: S
   }, [slide, swiperRef.current]);
 
   return (
-    <div className="bg-impo_Neutral_Surface pt-4" style={{ paddingBottom: FOOTER_HEIGTH }}>
+    <div className="bg-impo_Neutral_Surface pt-4" style={{ paddingBottom: FOOTER_HEIGHT }}>
       <Swiper
         allowTouchMove={false}
         onSwiper={(s) => (swiperRef.current = s)}

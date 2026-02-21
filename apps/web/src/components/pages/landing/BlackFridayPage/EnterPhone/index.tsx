@@ -2,10 +2,10 @@
 
 import GoBack from '../components/GoBack';
 import welcomVectorMini from '@assets/images/blackFriday/welcomVectorMini.webp';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 import Spinner from '@components/ui/Spinner';
 
 import { useSendPhone } from '../Hooks/useSendPhone';

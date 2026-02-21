@@ -1,9 +1,9 @@
 import roadmapVisit from '@assets/images/clinicLanding/roadmapVisit.webp';
 import roadmapVisitDark from '@assets/images/clinicLanding/roadmapVisitDark.webp';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 import { PWA_LINK_WOMEN_URL } from '@constants/links.constants';
 
 import VisitList from './VisitList';

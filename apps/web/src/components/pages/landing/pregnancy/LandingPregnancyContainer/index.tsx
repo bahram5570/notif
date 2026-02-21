@@ -1,8 +1,8 @@
 import BlueTickIcon from '@assets/icons/blueTick2.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { TEST_ONLINE_DOCTOR_INFO } from './constants';
 

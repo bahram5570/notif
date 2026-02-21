@@ -1,7 +1,7 @@
 import WhatsAppIcon from '@assets/icons/WhatsApp.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { WHATSAPP_NUMBER } from '../constants';
 

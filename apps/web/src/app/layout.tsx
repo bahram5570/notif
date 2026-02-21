@@ -2,11 +2,11 @@ import './globals.css';
 
 import { MAX_WIDTH } from '@constants/app.constants';
 import { HOST_URL, SERVER_URL } from '@constants/links.constants';
-import CustomToastProvider from '@providers/CustomToastProvider';
 import DownloadLinksProvider from '@providers/DownloadLinksProvider';
 import MuiProvider from '@providers/MuiProvider';
 import { PageNavigationProvider } from '@repo/core/providers/PageNavigationProvider';
 import { SystemProvider } from '@repo/core/providers/SystemProvider';
+import { ToastProvider } from '@repo/core/providers/ToastProvider';
 import { Metadata } from 'next';
 import localFont from 'next/font/local';
 import Script from 'next/script';
@@ -147,7 +147,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
           <SystemProvider>
             {/* <UserTrackingProvider> */}
             <MuiProvider>
-              <CustomToastProvider>
+              <ToastProvider>
                 <PageNavigationProvider>
                   <div
                     className="relative flex flex-col items-center mx-auto min-h-[100dvh]"
@@ -156,7 +156,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
                     <>{children}</>
                   </div>
                 </PageNavigationProvider>
-              </CustomToastProvider>
+              </ToastProvider>
             </MuiProvider>
             {/* </UserTrackingProvider> */}
           </SystemProvider>

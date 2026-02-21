@@ -1,11 +1,11 @@
 import geneticTest from '@assets/images/geneticTest.webp';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { ctaBannerService } from '@services/ctaBannerServices';
 
 import CtaBanner from '@components/CtaBanner';
 import ArticleIdFaq from '@components/pages/articleId/ArticleIdPageContainer/ArticleIdFaq';
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { FAQS } from './constants';
 

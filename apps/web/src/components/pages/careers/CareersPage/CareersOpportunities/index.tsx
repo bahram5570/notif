@@ -1,5 +1,6 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { CAREER_CONTAINER_MAX_WIDTH } from '@components/pages/careers/constants';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import CardGenerator from './CardGenerator';
 import { CareersOpportunitiesTypes } from './types';

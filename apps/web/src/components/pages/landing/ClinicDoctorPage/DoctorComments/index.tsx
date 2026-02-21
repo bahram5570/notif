@@ -1,4 +1,4 @@
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { CommentsTypes } from '../types';
 import CommentList from './CommentList';

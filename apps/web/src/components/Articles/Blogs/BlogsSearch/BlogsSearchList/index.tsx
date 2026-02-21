@@ -1,7 +1,8 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import styles from './styles.module.css';
 
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { BlogsSearchListTypes } from './types';

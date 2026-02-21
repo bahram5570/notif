@@ -1,6 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import BlogsSearch from '@components/Articles/Blogs/BlogsSearch';
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 
 const BlogsMainHeading = () => {
   return (

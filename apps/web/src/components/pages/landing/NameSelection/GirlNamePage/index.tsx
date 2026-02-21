@@ -1,3 +1,4 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { ctaBannerService } from '@services/ctaBannerServices';
 
 import CtaBanner from '@components/CtaBanner';
@@ -8,7 +9,6 @@ import AlphabetBtns from '@components/SelectName/AlphabetBtns';
 import AuthorProfile from '@components/SelectName/AuthorProfile';
 import NamesTable from '@components/SelectName/NamesTable';
 import SelectNameAuthorProfile from '@components/SelectName/SelectNameAuthorProfile';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import Description from './Description';
 import IntroductionSection from './IntroductionSection';

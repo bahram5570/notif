@@ -4,8 +4,4 @@ export const WEB_VIEW_MAX_WIDTH = 640;
 
 export const MAX_HEIGHT = 1400;
 
-export const FOOTER_HEIGHT = 80;
-
-export const APP_VERSION = process.env.NEXT_PUBLIC_VERSION || '';
-
 export const CACHE_REVALIDATE_TIME = 60 * 60 * 24; // # 1 day

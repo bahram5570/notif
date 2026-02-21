@@ -1,6 +1,6 @@
 import { TransitionProps } from '@mui/material/transitions';
 
-export interface CustomModalTypes {
+export interface CustomWebModalTypes {
   isOpen: boolean;
   onClose: () => void;
   children: React.ReactNode;

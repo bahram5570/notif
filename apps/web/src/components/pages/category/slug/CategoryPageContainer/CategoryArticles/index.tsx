@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 import CustomPagination from '@components/ui/CustomPagination';
 import { CURRENT_CATEGORY } from '@constants/categoryParam.constans';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import CategoryArticlesGenerator from './CategoryArticlesGenerator';

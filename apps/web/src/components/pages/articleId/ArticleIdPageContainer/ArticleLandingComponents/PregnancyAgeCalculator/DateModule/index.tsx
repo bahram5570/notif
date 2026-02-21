@@ -1,9 +1,9 @@
 import SelectDateIcon from '@assets/icons/selectDate.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { currentDate } from '@utils/dates';
 
 import CustomButton from '@components/ui/CustomButton';
-import CustomModal from '@components/ui/CustomModal';
-import CustomTypography from '@components/ui/CustomTypography';
+import CustomWebModal from '@components/ui/CustomWebModal';
 import DateSelector from '@components/ui/DateSelector';
 import { useSystem } from '@repo/core/hooks/useSystem';
 import m from 'moment-jalaali';
@@ -60,7 +60,7 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
         </CustomButton>
       </div>
 
-      <CustomModal position={position} isOpen={isOpen} onClose={() => isOpenHandler(false)}>
+      <CustomWebModal position={position} isOpen={isOpen} onClose={() => isOpenHandler(false)}>
         <div className="w-[100vw] max-w-[460px] flex flex-col items-center p-6 md:p-10 md:rounded-2xl bg-impo_White">
           <CustomTypography className="text-center">
             کاربر عزیز برای محاسبه اینکه توی هفته چندم بارداری هستی
@@ -76,7 +76,7 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
             انتخاب تاریخ
           </CustomButton>
         </div>
-      </CustomModal>
+      </CustomWebModal>
     </>
   );
 };

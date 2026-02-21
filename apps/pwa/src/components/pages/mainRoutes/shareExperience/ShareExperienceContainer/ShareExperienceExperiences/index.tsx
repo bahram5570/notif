@@ -1,5 +1,5 @@
 import InfiniteScrollContainer from '@components/infiniteScrollContainer';
-import { FOOTER_HEIGTH } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import ShareExperienceChangeAvatarModal from '../../ShareExperienceModals/ShareExperienceChangeAvatarModal';
 import ShareExperienceCommentsModal from '../../ShareExperienceModals/ShareExperienceCommentsModal';
@@ -59,7 +59,7 @@ const ShareExperienceExperiences = ({
         totalCount={totalCount}
         callBack={updatePageNo}
         className="flex flex-col px-4 relative"
-        style={{ paddingBottom: FOOTER_HEIGTH * 2 }}
+        style={{ paddingBottom: FOOTER_HEIGHT * 2 }}
       >
         {experiencesData?.expirences.map((item, index) => (
           <div key={index} className="w-full border-t-[1px] border-t-impo_Neutral_Surface  pt-5 pb-4 z-0">

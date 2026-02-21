@@ -3,10 +3,10 @@ import Bazar2Icon from '@assets/icons/bazar2.svg';
 import AndroidIcon from '@assets/icons/downloads/android.svg';
 import MyKet1Icon from '@assets/icons/myket1.svg';
 import MyKet2Icon from '@assets/icons/myket2.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import DownloadAppLinkGenerator from '@components/DownloadApp/DownloadAppLinkGenerator';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 import { CAFEBAZAAR_LINK_WOMEN_URL, MYKET_LINK_WOMEN_URL } from '@constants/links.constants';
 import useDownloadLinks from '@hooks/useDownloadLinks';
 import useUserTracking from '@hooks/useUserTracking';

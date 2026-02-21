@@ -1,12 +1,12 @@
 'use client';
 
 import AppStoreIcon from '@assets/icons/downloads/appStore.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import styles from './styles.module.css';
 import StarRoundedIcon from '@mui/icons-material/StarRounded';
 
 import StatisticsMaker from '@components/StatisticsMaker';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { ScoresTypes } from './types';

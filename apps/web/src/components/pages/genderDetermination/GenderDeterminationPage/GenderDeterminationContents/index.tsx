@@ -1,6 +1,5 @@
 import StarIcon from '@assets/icons/star2.svg';
-
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 const GenderDeterminationContents = () => {
   return (

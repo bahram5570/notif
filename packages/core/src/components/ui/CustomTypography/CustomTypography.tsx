@@ -1,3 +1,5 @@
+'use client';
+
 import { useTypographyMaker } from '../../../hooks/useTypographyMaker';
 import { CustomTypographyTypes } from './types';
 

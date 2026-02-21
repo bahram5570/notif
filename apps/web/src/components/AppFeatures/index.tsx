@@ -1,6 +1,6 @@
 'use client';
 
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import AppFeaturesContents from './AppFeaturesContents';
 import AppFeaturesTabs from './AppFeaturesTabs';

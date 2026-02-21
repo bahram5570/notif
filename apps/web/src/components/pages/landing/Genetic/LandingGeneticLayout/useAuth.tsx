@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import useApi from '@hooks/useApi';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import Cookies from 'js-cookie';
 
 const useAuth = () => {

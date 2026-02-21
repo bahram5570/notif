@@ -3,9 +3,9 @@
 import { useEffect, useState } from 'react';
 
 import Logo from '@assets/icons/impo2.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 import useDownloadLinks from '@hooks/useDownloadLinks';
 import { useRouter } from 'next/navigation';
 

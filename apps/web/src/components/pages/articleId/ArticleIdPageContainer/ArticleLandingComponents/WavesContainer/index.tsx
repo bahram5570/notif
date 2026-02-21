@@ -1,7 +1,7 @@
 import wavesJson from '@assets/lottie/cycleWaves.json';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import CustomTypography from '@components/ui/CustomTypography';
-import { LottieJson } from '@lib/LottieJson';
+import { LottieJson } from '@repo/core/lib/LottieJson';
 
 import useWavesColor from './__hooks__/useWavesColor';
 import { WavesContainerTypes } from './types';

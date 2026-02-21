@@ -1,7 +1,7 @@
 import CheckCircle from '@assets/images/blackFriday/checkCircle.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { SubscribtionReferal } from './constants';
 import { SubscribtionListType } from './types';

@@ -1,10 +1,10 @@
 import { useRef } from 'react';
 
 import ArrowIcon from '@assets/icons/arrow2.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import styles from './styles.module.css';
 
-import CustomTypography from '@components/ui/CustomTypography';
 import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperRef, SwiperSlide } from 'swiper/react';
 

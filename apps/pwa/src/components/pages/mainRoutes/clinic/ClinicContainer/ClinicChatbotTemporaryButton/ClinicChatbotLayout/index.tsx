@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import CrossIcon from '@assets/shared/icons/plus.svg';
 
-import { FOOTER_HEIGTH, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
 import { ClinicChatbotLayoutPropsType } from './type';
 
@@ -28,7 +28,7 @@ const ClinicChatbotLayout = ({
       className={`fixed left-0 right-0 mx-auto z-30  ${isModalVisible ? 'h-96 bg-white' : 'h-14'} ${className}`}
       style={{
         maxWidth: MAX_SCREEN_WIDTH,
-        bottom: isModalVisible ? FOOTER_HEIGTH + 16 : FOOTER_HEIGTH + 30,
+        bottom: isModalVisible ? FOOTER_HEIGHT + 16 : FOOTER_HEIGHT + 30,
       }}
     >
       <>

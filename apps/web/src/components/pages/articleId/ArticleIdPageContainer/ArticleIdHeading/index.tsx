@@ -1,9 +1,9 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { articleImageUrl } from '@services/http';
 
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { ArticleIdHeadingTypes } from './types';

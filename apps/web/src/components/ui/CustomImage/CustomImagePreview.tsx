@@ -6,7 +6,7 @@ import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 
 import { useSystem } from '@repo/core/hooks/useSystem';
 
-import CustomModal from '../CustomModal';
+import CustomWebModal from '../CustomWebModal';
 import { CustomImagePreviewTypes } from './types';
 
 const CustomImagePreview = ({ src, previewImage, previewBackground, closeHandler }: CustomImagePreviewTypes) => {
@@ -32,7 +32,7 @@ const CustomImagePreview = ({ src, previewImage, previewBackground, closeHandler
 
   return (
     <>
-      <CustomModal isOpen={previewImage} onClose={closeHandler}>
+      <CustomWebModal isOpen={previewImage} onClose={closeHandler}>
         <div className="relative w-[100dvw] h-[100dvh]">
           <CloseRoundedIcon
             onClick={closeHandler}
@@ -50,7 +50,7 @@ const CustomImagePreview = ({ src, previewImage, previewBackground, closeHandler
             </TransformWrapper>
           )}
         </div>
-      </CustomModal>
+      </CustomWebModal>
     </>
   );
 };

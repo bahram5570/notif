@@ -2,10 +2,11 @@
 // import EyeIcon from '@assets/icons/eye.svg';
 // import RulerIcon from '@assets/icons/ruler.svg';
 // import WeightIcon from '@assets/icons/weight.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomButton from '@components/ui/CustomButton';
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 // import PregnancyProgressbar from '../PregnancyProgressbar';
 import { ResultModuleTypes } from './types';

@@ -1,7 +1,8 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { CAREER_CONTAINER_MAX_WIDTH } from '@components/pages/careers/constants';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import useSteps from './__hooks__/useSteps';
 import { HIRING_ITEMS_LIST } from './constants';

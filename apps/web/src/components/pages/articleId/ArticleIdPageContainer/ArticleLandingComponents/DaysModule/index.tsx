@@ -1,7 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import AddRoundedIcon from '@mui/icons-material/AddRounded';
 import RemoveRoundedIcon from '@mui/icons-material/RemoveRounded';
-
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { DaysModuleTypes } from './types';
 

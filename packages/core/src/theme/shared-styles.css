@@ -1,4 +1,3 @@
-button,
 input {
   outline: none;
 }
@@ -29,6 +28,14 @@ input:-webkit-autofill:active {
 .dark input:-webkit-autofill:active {
   -webkit-text-fill-color: #ffffff !important;
   caret-color: #ffffff !important;
+}
+
+button {
+  outline: none;
+}
+
+textarea {
+  resize: none;
 }
 
 .scrollbar {

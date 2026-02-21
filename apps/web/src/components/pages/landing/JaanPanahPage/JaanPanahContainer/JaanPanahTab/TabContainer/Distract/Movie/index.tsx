@@ -1,6 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { JaanPanahHaveChildrenEnum } from '@components/pages/landing/JaanPanahPage/enum';
 import CustomImage from '@components/ui/CustomImage';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import { MOVIE_PART1, MOVIE_PART2, MOVIE_PART3 } from './constants';
 import { MoviePropsType } from './type';

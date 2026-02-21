@@ -1,9 +1,9 @@
 import LogoIcon from '@assets/images/genetic/logo.svg';
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import QuestionProgressBar from '@components/modules/QuestionProgressBar';
 import CustomButton from '@components/ui/CustomButton';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import useTestOnlineScore from '../__hooks__/useTestOnlineScore';
@@ -20,7 +20,7 @@ const TestOnlineQuestions = () => {
   const typographyDetails = typographyFontStylesMaker({
     operatingSystem,
     fontSize: 'Body_Medium',
-    isWeb: !breakPoint.laptop,
+    isLargeScreen: !breakPoint.laptop,
   });
 
   const { nextStepHandler, selectedIndex, selectedIndexHandler, extraNote, setExtraNote } = useTestOnlineScore({

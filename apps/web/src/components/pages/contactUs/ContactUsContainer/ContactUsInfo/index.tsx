@@ -1,8 +1,7 @@
 import CallIcon from '@assets/icons/call-calling.svg';
 // import LocationIcon from '@assets/icons/location.svg';
 import EmailIcon from '@assets/icons/sms.svg';
-
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 const ContactUsInfo = () => {
   return (

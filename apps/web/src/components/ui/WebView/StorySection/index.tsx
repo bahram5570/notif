@@ -3,7 +3,8 @@
 import { useState } from 'react';
 
 // import CustomSlider from '@repo/components/ui/CustomSlider';
-import CustomTypography from '@components/ui/CustomTypography';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import StoryItem from './StoryItem';

@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
-import useCustomToast from '@hooks/useCustomToast';
+import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 
 import { PayloadDataTypes } from './types';
 
 const useGetData = ({ giftUrl }: { giftUrl: string }) => {
-  const { onToast } = useCustomToast();
+  const { notifyToastHandler } = useCustomToast();
 
   const [isLoading, setIsLoading] = useState(true);
   const [giftData, setGiftData] = useState<PayloadDataTypes>();
@@ -19,10 +19,10 @@ const useGetData = ({ giftUrl }: { giftUrl: string }) => {
       if (data.valid) {
         setGiftData(data);
       } else {
-        onToast({ type: 'error', message: 'خطا در دریافت اطلاعات' });
+        notifyToastHandler({ type: 'error', message: 'خطا در دریافت اطلاعات' });
       }
     } catch (error) {
-      onToast({ type: 'error', message: 'خطا در دریافت اطلاعات' });
+      notifyToastHandler({ type: 'error', message: 'خطا در دریافت اطلاعات' });
     } finally {
       setIsLoading(false);
     }

@@ -3,10 +3,10 @@
 import collaborationlogo from '@assets/images/geneticMarketing/collaborationlogo.webp';
 import drProfileMini from '@assets/images/geneticMarketing/drProfileMini.webp';
 import Verified from '@assets/images/geneticMarketing/verified.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 
 import GeneticMarketingLayout from '../GeneticMarketingLayout';
 

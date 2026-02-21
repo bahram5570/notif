@@ -1,7 +1,8 @@
 'use client';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 import useUserTracking from '@hooks/useUserTracking';
 
 import { LinkGeneratorTypes } from './types';

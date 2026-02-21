@@ -1,6 +1,7 @@
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
 import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { APP_FEATURES_CONTENTS_LIST } from '../constants';

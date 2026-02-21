@@ -1,10 +1,9 @@
 import { FC } from 'react';
 
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import Image from 'next/image';
 
 import style from './style.module.css';
-
-import CustomTypography from '@components/ui/CustomTypography';
 
 type Props = {
   image: string;

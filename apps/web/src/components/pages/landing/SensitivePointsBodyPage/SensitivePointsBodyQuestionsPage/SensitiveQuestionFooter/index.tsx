@@ -1,9 +1,9 @@
 'use client';
 
 import ImpoIcon from '@assets/icons/impoName.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomButton from '@components/ui/CustomButton';
-import CustomTypography from '@components/ui/CustomTypography';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { SensitiveQuestionFooterPropsType } from './type';

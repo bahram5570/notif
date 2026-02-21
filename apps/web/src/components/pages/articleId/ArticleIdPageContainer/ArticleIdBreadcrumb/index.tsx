@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 import BlogsBreadcrumb from '@components/Articles/Blogs/BlogsBreadcrumb';
 import { CURRENT_CATEGORY } from '@constants/categoryParam.constans';
-import useQueryParamsHandler from '@hooks/useQueryParamsHandler';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { ArticleIdBreadcrumbTypes } from './types';
 

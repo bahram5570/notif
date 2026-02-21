@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { FOOTER_HEIGTH, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { IFRAME_URL } from './constants';
@@ -63,7 +63,7 @@ const PartnerLandingWebView = () => {
       {!hideButton && (
         <div
           className=" fixed right-0 left-0 mx-auto h-20 flex justify-center items-center px-4 bg-impo_Neutral_Background"
-          style={{ maxWidth: MAX_SCREEN_WIDTH, bottom: FOOTER_HEIGTH }}
+          style={{ maxWidth: MAX_SCREEN_WIDTH, bottom: FOOTER_HEIGHT }}
           onClick={linkTo}
         >
           <div className="w-full flex items-center justify-center h-12 rounded-[64px] z-10 bg-impo_Primary_Primary">

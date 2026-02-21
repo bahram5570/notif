@@ -1,7 +1,7 @@
 'use client';
 
 import { resultMaker } from './__utils__';
-import { typographyFontStylesMaker } from '@hooks/useTypographyMaker/__utils__';
+import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import { useSystem } from '@repo/core/hooks/useSystem';
 
@@ -28,7 +28,7 @@ const CustomInput = ({
   };
 
   const updatedValue = resultMaker(value, numbersMode);
-  const typographyDetails = typographyFontStylesMaker({ fontSize, operatingSystem, isWeb: !breakPoint.laptop });
+  const typographyDetails = typographyFontStylesMaker({ fontSize, operatingSystem, isLargeScreen: !breakPoint.laptop });
 
   return (
     <input
