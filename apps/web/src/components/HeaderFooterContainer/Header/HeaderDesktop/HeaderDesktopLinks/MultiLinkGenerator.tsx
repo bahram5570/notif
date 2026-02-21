@@ -51,7 +51,7 @@ const MultiLinkGenerator = ({ linkTo, title }: HEADER_MULTI_LINK) => {
                            !text-impo_Neutral_OnBackground
                            hover:!text-impo_Primary_Primary
                            hover:bg-impo_Surface_SurfaceVariant
-                           whitespace-nowrap
+                           !whitespace-nowrap
                            px-2
                            py-2
                            rounded-md
