@@ -24,7 +24,7 @@ const ShareExperienceNewLink = ({
     if (fromAssociationSection && associationId) {
       if (!isFollowed) {
         return toast.notifyToastHandler({
-          message: 'برای ثبت تجربه ابتدا باید انجمن رو دنبال کنی',
+          message: 'برای ثبت تجربه ابتدا باید این پاتوق رو دنبال کنی',
           position: 'bottom-center',
           type: 'warning',
         });

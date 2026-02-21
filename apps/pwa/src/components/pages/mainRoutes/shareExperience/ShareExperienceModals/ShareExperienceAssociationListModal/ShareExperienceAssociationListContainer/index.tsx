@@ -14,7 +14,7 @@ const ShareExperienceAssociationListContainer = () => {
 
   return (
     <>
-      <MainPageLayoutHeader rightElement="BackButton" middleScript="انجمن ها" className="bg-impo_Neutral_Surface" />
+      <MainPageLayoutHeader rightElement="BackButton" middleScript="پاتوق ها" className="bg-impo_Neutral_Surface" />
       {firstLoading && !associationListData && (
         <div className="flex justify-center items-center w-full h-full " style={{ paddingTop: HEADER_HEIGHT + 10 }}>
           <CustomSpinner />
