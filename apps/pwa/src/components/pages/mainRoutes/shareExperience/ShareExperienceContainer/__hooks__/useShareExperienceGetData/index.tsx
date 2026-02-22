@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
@@ -13,17 +13,22 @@ const useShareExperienceGetData = () => {
     setData(v);
   };
 
-  const { isLoading } = usePwaApi<ShareExperienceResponseTypes>({
+  const { isLoading, callApi } = usePwaApi<ShareExperienceResponseTypes>({
     queryKey: ['shareExperience'],
     api: 'shareeexperience/v3',
     onSuccess: successHandler,
     method: 'GET',
+    fetchOnMount: false,
   });
 
   const onSuccessNewHandler = () => {
     refetchQuery({ queryKey: ['shareExperience'] });
     setData(undefined);
   };
+
+  useEffect(() => {
+    callApi();
+  }, []);
 
   return { isLoading, data, onSuccessNewHandler };
 };

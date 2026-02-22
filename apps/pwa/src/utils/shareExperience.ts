@@ -11,7 +11,7 @@ export const shareExperienceTopicQueryMaker = (id: string) => {
 };
 
 export const shareExperienceCommentQueryMaker = (id: string) => {
-  const queryValue = JSON.stringify({ id });
+  const queryValue = id;
   const queryKey = SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME;
   return { queryKey, queryValue };
 };

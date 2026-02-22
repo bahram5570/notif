@@ -12,11 +12,10 @@ const ShareExperienceCommentsModal = ({ avatarImage }: ShareExperienceCommentsMo
   const { getZIndex } = useOverlayIndex();
 
   const ShareExperienceCommnetModalParms = getQueryParams(SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME);
-  const queryData =
-    ShareExperienceCommnetModalParms === null ? null : (JSON.parse(ShareExperienceCommnetModalParms) as { id: string });
+  const queryData = ShareExperienceCommnetModalParms === null ? null : (ShareExperienceCommnetModalParms as string);
   const isOpen = queryData !== null;
 
-  const zIndex = getZIndex(SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME, queryData?.id);
+  const zIndex = getZIndex(SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME, queryData || '');
 
   return (
     <>
@@ -24,7 +23,7 @@ const ShareExperienceCommentsModal = ({ avatarImage }: ShareExperienceCommentsMo
         <>
           {isOpen && (
             <ShareExperienceCommentsModalContainer
-              id={queryData.id}
+              id={queryData}
               queryParam={ShareExperienceCommnetModalParms}
               avatarImage={avatarImage}
             />

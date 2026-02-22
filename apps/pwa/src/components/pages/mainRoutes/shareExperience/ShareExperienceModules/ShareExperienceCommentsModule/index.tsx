@@ -17,8 +17,7 @@ const ShareExperienceCommentsModule = (props: ShareExperienceCommentsModuleProps
     if (!props.isSelf) {
       pageNavigationHandler({ id: props.id, showProgressBar: true });
 
-      const paramsData = JSON.stringify({ id: props.id });
-      newQueryParamsHandler({ [SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME]: paramsData });
+      newQueryParamsHandler({ [SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME]: props.id });
 
       increaseZIndex(SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME, props.id);
     }

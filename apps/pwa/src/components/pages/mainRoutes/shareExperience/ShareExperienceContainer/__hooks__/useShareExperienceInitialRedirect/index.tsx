@@ -3,7 +3,6 @@ import { useEffect, useRef } from 'react';
 import { isDevelopeMode } from '@repo/core/utils/system';
 
 import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE } from '../../../constants';
@@ -15,8 +14,6 @@ const useShareExperienceInitialRedirect = () => {
   const pathname = usePathname();
   const router = useRouter();
   // const isFirstTime2 = useRef(isDevelopeMode());
-
-  const { newQueryParamsHandler } = useQueryParamsHandler();
 
   const redirectStorage =
     typeof sessionStorage === 'undefined' ? null : sessionStorage.getItem(SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE);
