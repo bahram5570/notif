@@ -1,0 +1,19 @@
+'use client';
+
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
+import ArticleIdFaq from '../articleId/ArticleIdPageContainer/ArticleIdFaq';
+import { FAQS } from './constants';
+
+const FaqContainer = () => {
+  return (
+    <div className="mb-10">
+      <CustomTypography fontSize="Title_Medium" tagType="h2" className="!text-impo_Neutral_OnBackground my-4">
+        سوالات متداول
+      </CustomTypography>
+      <ArticleIdFaq faqs={FAQS} />
+    </div>
+  );
+};
+
+export default FaqContainer;
