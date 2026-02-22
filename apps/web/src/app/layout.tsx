@@ -97,14 +97,19 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 
         <Script id="theme-init" strategy="beforeInteractive">
           {`
-            const t = localStorage.getItem('theme');
-            if (t === 'dark') {
-              document.documentElement.classList.add('dark');
-            } else if (t === 'light') {
-              document.documentElement.classList.remove('dark');
+            // # If it's running on iframe, "window.self" and "window.top" are not equal
+            if (window.self === window.top) {
+              const t = localStorage.getItem('theme');
+              if (t === 'dark') {
+                document.documentElement.classList.add('dark');
+              } else if (t === 'light') {
+                document.documentElement.classList.remove('dark');
+              } else {
+                const p = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.classList.toggle('dark', p);
+              }
             } else {
-              const p = window.matchMedia("(prefers-color-scheme: dark)").matches;
-              document.documentElement.classList.toggle('dark', p);
+              document.documentElement.classList.remove('dark');
             }
           `}
         </Script>
