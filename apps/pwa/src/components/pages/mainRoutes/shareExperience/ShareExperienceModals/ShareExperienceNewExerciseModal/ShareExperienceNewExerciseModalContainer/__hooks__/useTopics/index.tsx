@@ -1,11 +1,14 @@
 import { useState } from 'react';
 
-import useShareExperienceGetData from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/__hooks__/useShareExperienceGetData';
+import { ShareExperienceResponseTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/__hooks__/useShareExperienceGetData/types';
+import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import { TopicIdHandlerTypes, TopicIdTypes } from './types';
 
 const useTopics = () => {
-  const { data, isLoading } = useShareExperienceGetData();
+  const { getQuery } = useCustomReactQuery();
+  const data = getQuery<ShareExperienceResponseTypes>({ queryKey: ['shareExperience'] });
+
   const [topicId, setTopicId] = useState<TopicIdTypes>(null);
 
   const topicIdHandler: TopicIdHandlerTypes = (id) => {
@@ -14,7 +17,7 @@ const useTopics = () => {
 
   const topicsData = data?.topics;
 
-  return { isLoading, topicsData, topicId, topicIdHandler };
+  return { topicsData, topicId, topicIdHandler };
 };
 
 export default useTopics;
