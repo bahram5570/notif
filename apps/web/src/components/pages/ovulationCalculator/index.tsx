@@ -6,18 +6,19 @@ import ArticleIdAuthor from '../articleId/ArticleIdPageContainer/ArticleIdAuthor
 import OvulationCalculator from '../articleId/ArticleIdPageContainer/ArticleLandingComponents/OvulationCalculator';
 import BodyContent from './BodyContent';
 import CallToAction from './CallToAction';
+import CallToActionSticky from './CallToActionSticky';
 import FaqContainer from './FaqContainer';
 import HeadingContent from './HeadingContent';
 
 const OvulationCalculatorComponent = () => {
   return (
     <HeaderFooterContainer>
-      <div className="my-36 container w-full">
+      <div className="my-20 container w-full px-4">
         <HeadingContent />
         <div className="!w-fit flex justify-self-center">
           <OvulationCalculator />
         </div>
-        <CallToAction name="ovulation4" />
+        <CallToActionSticky name="ovulation4" />
         <BodyContent />
         <CallToAction name="ovulation3" />
         <FaqContainer />

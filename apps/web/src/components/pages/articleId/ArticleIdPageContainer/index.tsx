@@ -1,11 +1,9 @@
 import { handleBodyUpdate } from './__utils__';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { articleImageUrl, fileImageUrl } from '@services/http';
 
 import DownloadApp from '@components/DownloadApp/DownloadAppWomen';
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
 import CustomImage from '@components/ui/CustomImage';
-import CustomLink from '@components/ui/CustomLink';
 import dynamic from 'next/dynamic';
 
 import ArticleAutomaition from './ArticleAutomaition';
