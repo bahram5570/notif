@@ -54,7 +54,7 @@ const BodyContent = () => {
         <strong>تاریخ دقیق پریود شدن</strong> در نظر بگیرید. در واقع زمانی‌که لکه‌بینی خفیف یا ترشحات قهوه‌ای‌رنگ وجود
         دارد، به‌عنوان شروع در نظر گرفته نمی‌شوند و باید خونریزی قابل‌توجه باشد تا شمارش روزهای سیکل قاعدگی آغاز شود.
       </CustomTypography>
-      <CustomTypography fontSize="Headline_Small" tagType="p" className="!text-impo_Neutral_OnBackground">
+      <CustomTypography fontSize="Body_Medium" tagType="p" className="!text-impo_Neutral_OnBackground">
         ابزار محاسبه روز اول پریود آنلاین با درنظرگرفتن تاریخ آخرین پریود شما، طول دوره و طول پریود، روز اول پریود بعدی
         شما را پیش‌بینی می‌کند.
       </CustomTypography>
@@ -95,19 +95,39 @@ const BodyContent = () => {
         <strong>محاسبه روز اول پریود انلاین</strong>و اطلاع از زمان دقیق تخمک‌گذاری خدمات زیر را ارائه می‌دهد:
       </CustomTypography>
       <ul>
-        <CustomTypography fontSize="Body_Medium" tagType="li" className="!text-impo_Neutral_OnBackground">
+        <CustomTypography
+          fontSize="Body_Medium"
+          tagType="li"
+          className="!text-impo_Neutral_OnBackground list-disc mr-4"
+        >
           روتین‌های اختصاصی خودمراقبتی متناسب با هر فاز چرخه قاعدگی
         </CustomTypography>
-        <CustomTypography fontSize="Body_Medium" tagType="li" className="!text-impo_Neutral_OnBackground">
+        <CustomTypography
+          fontSize="Body_Medium"
+          tagType="li"
+          className="!text-impo_Neutral_OnBackground list-disc mr-4"
+        >
           ارسال پیام یادآوری به پارتنر در دوران PMS، تخمک‌گذاری و پریود برای درک و همدلی بیشتر
         </CustomTypography>
-        <CustomTypography fontSize="Body_Medium" tagType="li" className="!text-impo_Neutral_OnBackground">
+        <CustomTypography
+          fontSize="Body_Medium"
+          tagType="li"
+          className="!text-impo_Neutral_OnBackground list-disc mr-4"
+        >
           پیشنهادهای تغذیه‌ای و رژیم غذایی متناسب با مرحله سیکل قاعدگی، وضعیت سلامتی و شاخص‌هایی مانند BMI
         </CustomTypography>
-        <CustomTypography fontSize="Body_Medium" tagType="li" className="!text-impo_Neutral_OnBackground">
+        <CustomTypography
+          fontSize="Body_Medium"
+          tagType="li"
+          className="!text-impo_Neutral_OnBackground list-disc mr-4"
+        >
           ارائه توصیه‌های تخصصی با ثبت علائمی مثل شدت خونریزی، نشانه‌های جسمانی و نوع ترشحات
         </CustomTypography>
-        <CustomTypography fontSize="Body_Medium" tagType="li" className="!text-impo_Neutral_OnBackground">
+        <CustomTypography
+          fontSize="Body_Medium"
+          tagType="li"
+          className="!text-impo_Neutral_OnBackground list-disc mr-4"
+        >
           گزارش سلامت دوره‌ای پس از چند سیکل ثبت اطلاعات، همراه با آمار دقیق و تحلیل کامل چرخه قاعدگی شما
         </CustomTypography>
       </ul>

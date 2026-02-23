@@ -123,19 +123,39 @@ const BodyContent = () => {
         ایمپو علاوه‌بر محاسبه زمان تخمک گذاری بعد از پریود آنلاین، خدمات زیر را به شما ارائه می‌دهد:
       </CustomTypography>
       <ul>
-        <CustomTypography fontSize="Body_Medium" tagType="li" className="!text-impo_Neutral_OnBackground">
+        <CustomTypography
+          fontSize="Body_Medium"
+          tagType="li"
+          className="!text-impo_Neutral_OnBackground list-disc mr-4"
+        >
           تعداد دفعات رابطه جنسی برای بارداری سریع
         </CustomTypography>
-        <CustomTypography fontSize="Body_Medium" tagType="li" className="!text-impo_Neutral_OnBackground">
+        <CustomTypography
+          fontSize="Body_Medium"
+          tagType="li"
+          className="!text-impo_Neutral_OnBackground list-disc mr-4"
+        >
           بهترین پوزیشن‌ها برای افزایش احتمال بارداری
         </CustomTypography>
-        <CustomTypography fontSize="Body_Medium" tagType="li" className="!text-impo_Neutral_OnBackground">
+        <CustomTypography
+          fontSize="Body_Medium"
+          tagType="li"
+          className="!text-impo_Neutral_OnBackground list-disc mr-4"
+        >
           روش‌های تقویت تخمدان و بهبود بارداری
         </CustomTypography>
-        <CustomTypography fontSize="Body_Medium" tagType="li" className="!text-impo_Neutral_OnBackground">
+        <CustomTypography
+          fontSize="Body_Medium"
+          tagType="li"
+          className="!text-impo_Neutral_OnBackground list-disc mr-4"
+        >
           روش‌های تقویت اسپرم
         </CustomTypography>
-        <CustomTypography fontSize="Body_Medium" tagType="li" className="!text-impo_Neutral_OnBackground">
+        <CustomTypography
+          fontSize="Body_Medium"
+          tagType="li"
+          className="!text-impo_Neutral_OnBackground list-disc mr-4"
+        >
           به‌همراه توصیه‌های تخصصی برای یک بارداری سریع و ساده
         </CustomTypography>
       </ul>
