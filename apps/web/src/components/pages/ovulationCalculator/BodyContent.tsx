@@ -42,49 +42,61 @@ const BodyContent = () => {
           کیت تخمک‌ گذاری
         </CustomLink>
         می‌تواند دقت تعیین این روزها را افزایش دهد. برخی روش‌ها مانند «شتلز» معتقدند زمان نزدیکی نسبت به روز تخمک‌گذاری
-        می‌تواند بر احتمال تعیین جنسیت جنین اثر بگذارد، هرچند این روش‌ها قطعیت علمی ندارند و بیشتر برای برنامه‌ریزی
-        زمانی کاربرد دارند.
+        می‌تواند بر احتمال{' '}
+        <CustomLink href="/gender-determination" className="!text-impo_Primary_Primary mx-1 inline-block">
+          تعیین جنسیت
+        </CustomLink>{' '}
+        جنین اثر بگذارد، هرچند این روش‌ها قطعیت علمی ندارند و بیشتر برای برنامه‌ریزی زمانی کاربرد دارند.
       </CustomTypography>
       <CustomTypography fontSize="Headline_Small" tagType="h3" className="!text-impo_Neutral_OnBackground">
         محاسبه آنلاین زمان تخمک‌گذاری برای پسردار شدن
       </CustomTypography>
       <CustomTypography fontSize="Body_Medium" tagType="p" className="!text-impo_Neutral_OnBackground">
-        برخی باورهای علمی می‌گویند نزدیکی در روز تخمک‌گذاری یا نزدیک به آن می‌تواند شانس بارداری پسر را بیشتر کند! زیرا
-        اسپرم‌های "Y"سرعت زیادی دارند و اگر هم‌زمان با آزاد شدن تخمک وارد رحم شوند، احتمال رسیدنشان به تخمک بیشتر
-        است.گرفتن
+        برخی باورهای علمی می‌گویند نزدیکی در روز تخمک‌گذاری یا نزدیک به آن می‌تواند شانس بارداری پسر را بیشتر کند! طبق
+        نظریه شتلز، داشتن رابطه جنسی در روز تخمک‌گذاری یا حداکثر یک روز قبل از آن، ممکن است احتمال پسردار شدن را بیشتر
+        کند. این نظریه بر این اساس استوار است که اسپرم‌های Y (پسر) سریع‌تر حرکت می‌کنند اما عمر کوتاه‌تری دارند؛
+        بنابراین باید دقیقا زمانی وارد رحم شوند که تخمک آزاد شده یا در شرف آزاد شدن است.{' '}
+      </CustomTypography>
+      <CustomTypography fontSize="Body_Medium" tagType="p" className="!text-impo_Neutral_OnBackground">
+        به‌طور مثال، اگر تخمک‌گذاری شما در روز ۱۴ چرخه اتفاق می‌افتد، روزهای ۱۳ و ۱۴ چرخه بهترین زمان‌ها برای رابطه جنسی
+        با هدف افزایش احتمال پسردار شدن محسوب می‌شوند. گرفتن{' '}
         <CustomLink href="/how-to-conceive-a-baby-boy" className="!text-impo_Primary_Primary mx-1 inline-block">
           رژیم پسرزایی
-        </CustomLink>
+        </CustomLink>{' '}
         نیز کمک می‌کند تا در زمان تخمک‌گذاری شرایط جسمانی برای بارداری فرزند پسر مناسب‌ باشد.
       </CustomTypography>
       <CustomTypography fontSize="Headline_Small" tagType="h3" className="!text-impo_Neutral_OnBackground">
         محاسبه آنلاین زمان تخمک‌گذاری برای دختردار شدن
       </CustomTypography>
       <CustomTypography fontSize="Body_Medium" tagType="p" className="!text-impo_Neutral_OnBackground">
-        اگر می‌خواهید بدانید
+        اگر می‌خواهید بدانید{' '}
         <CustomLink href="/how-to-conceive-a-baby-girl" className="!text-impo_Primary_Primary mx-1 inline-block">
           چند روز بعد از پریودی فرزند دختر می‌شود؟
-        </CustomLink>
+        </CustomLink>{' '}
         باید بگوییم بر اساس برخی باورهای علمی مانند نظریه شتلز، برای افزایش احتمال بارداری دختر باید ۲ تا ۳ روز قبل از
         تخمک‌گذاری اقدام کنید. <strong>محاسبه زمان تخمک‌ گذاری بعد از پریود</strong> آنلاین به شما کمک می‌کند این بازه
-        را بهتر شناسایی نمایید. برخی داده‌ها نیز نشان می‌دهد اسپرم‌های حامل کروموزوم "X" در این بازه ماندگاری بیشتری
-        دارند و ممکن است تا زمان آزاد شدن تخمک زنده بمانند.
+        را بهتر شناسایی نمایید. بر اساس این نظریه، اسپرم‌های حامل کروموزوم X (دختر) در محیط واژن بیشتر دوام می‌آورند و
+        اگر لقاح با فاصله بیشتری از زمان آزاد شدن تخمک انجام شود، احتمال موفقیت آن‌ها بالاتر می‌رود.
       </CustomTypography>
       <CustomTypography fontSize="Headline_Medium" tagType="h2" className="!text-impo_Neutral_OnBackground">
         محاسبه آنلاین زمان تخمک گذاری در پریود نامنظم
       </CustomTypography>
       <CustomTypography fontSize="Body_Medium" tagType="p" className="!text-impo_Neutral_OnBackground">
-        در پریودهای نامنظم، پیش‌بینی دقیق زمان تخمک‌گذاری دشوارتر است. در این حالت ابزارهای
+        در پریودهای نامنظم، پیش‌بینی دقیق زمان تخمک‌گذاری دشوارتر است. در این حالت ابزارهای{' '}
         <strong>محاسبه آنلاین تخمک گذاری</strong> از میانگین چند سیکل قبلی استفاده می‌کنند، اما دقت آن‌ها محدود است. در
         این شرایط ترکیب <strong>ماشین حساب تخمک گذاری آنلاین</strong> با تست‌های کیت تخمک‌گذاری (LH) و بررسی علائم بدن،
-        نتیجه‌ای قابل‌اعتمادتر می‌دهد. اگر می‌خواهید بدانید
+        نتیجه‌ای قابل‌اعتمادتر می‌دهد. اگر می‌خواهید بدانید{' '}
         <CustomLink
           href="/irregular-periods-reasons-and-treatment"
           className="!text-impo_Primary_Primary mx-1 inline-block"
         >
           چه زمانی قاعدگی نامنظم خطرناک می‌شود
-        </CustomLink>
+        </CustomLink>{' '}
         و ممکن است احتمال باروری را کاهش دهد، مقاله درج شده را مطالعه کنید.
+      </CustomTypography>
+      <CustomTypography fontSize="Body_Medium" tagType="p" className="!text-impo_Neutral_OnBackground">
+        اپلیکیشن ایمپو با تحلیل الگوی قاعدگی شما در چند دوره اخیر و محاسبه آنلاین زمان تخمک‌گذاری در پریود نامنظم، بازه
+        تخمک‌گذاری را با دقت بیشتری پیش‌بینی می‌کند.
       </CustomTypography>
       <CustomTypography fontSize="Headline_Medium" tagType="h2" className="!text-impo_Neutral_OnBackground">
         محاسبه سیکل قاعدگی و تخمک گذاری آنلاین
