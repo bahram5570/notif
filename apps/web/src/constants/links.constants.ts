@@ -58,7 +58,7 @@ export const HEADER_LINKS_LIST: HEADER_LINKS_TYPES = [
     linkTo: [
       { title: 'محاسبه سن بارداری و تقویم  بارداری', linkTo: '/calendarOfPregnancy' },
       { title: 'تست حاملگی آنلاین', linkTo: '/landing/pregnancy' },
-      { title: 'محاسبه آنلاین تخمک گذاری', linkTo: '/ovulation' },
+      { title: 'محاسبه آنلاین تخمک گذاری', linkTo: '/ovulation-calculator' },
       { title: 'محاسبه آنلاین سیکل قاعدگی', linkTo: '/menstrual-cycle' },
       { title: 'ابزار انتخاب اسم دختر', linkTo: '/landing/girl-name' },
       { title: 'ابزار انتخاب اسم پسر', linkTo: '/landing/boy-name' },

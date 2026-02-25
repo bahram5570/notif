@@ -34,7 +34,7 @@ const BodyContent = () => {
         به بارداری را پیدا کنید. در ادامه نمودار تخمک گذاری در یک چرخه 28 روزه را مشاهده می‌کنید:
       </CustomTypography>
       <CustomImage
-        alt="ovulation"
+        alt="نمودار تخمک گذاری"
         src={ovulationCalc}
         className="mx-auto my-6 max-w-[1000px] w-full rounded-2xl"
         width={9999}

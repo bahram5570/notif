@@ -7,7 +7,7 @@ import { FaqTypes } from './types';
 
 const FaqContainer = ({ faqList }: { faqList: FaqTypes }) => {
   return (
-    <div className="mb-10">
+    <div className="mb-10 mt-20">
       <CustomTypography fontSize="Title_Medium" tagType="h2" className="!text-impo_Neutral_OnBackground my-4">
         سوالات متداول
       </CustomTypography>

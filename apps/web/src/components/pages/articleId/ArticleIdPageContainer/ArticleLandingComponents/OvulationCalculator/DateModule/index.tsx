@@ -68,6 +68,7 @@ const DateModule = ({ submitHandler, isLoading }: DateModuleTypes) => {
           style={{ pointerEvents: isDisable ? 'none' : 'auto' }}
           className=" h-[48px] w-full !mt-auto sm:max-w-[460px]"
           id="cal_ovulation_tool"
+          spinnerClassName="!border-impo_White"
           fontSize="Lable_Large"
         >
           محاسبه روز تخمک گذاری
