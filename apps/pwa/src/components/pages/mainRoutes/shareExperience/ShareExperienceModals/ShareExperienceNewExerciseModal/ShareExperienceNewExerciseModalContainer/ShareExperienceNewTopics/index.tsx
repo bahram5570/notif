@@ -1,7 +1,6 @@
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
-import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
@@ -19,7 +18,7 @@ const ShareExperienceNewTopics = ({
   topicIdHandler,
   submitHandler,
   topicsData,
-  isLoading,
+
   topicId,
 }: ShareExperienceNewTopicsProps) => {
   const { callEvent } = useAnalytics();
@@ -51,13 +50,7 @@ const ShareExperienceNewTopics = ({
           className=" relative"
         >
           <div className="flex flex-col h-[calc(100dvh_-_48px)]" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
-            {isLoading && (
-              <div className="w-full flex justify-center">
-                <CustomSpinner className="border-impo_Neutral_OnBackground" />
-              </div>
-            )}
-
-            {!isLoading && topicsData && (
+            {topicsData && (
               <>
                 <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground pb-6 ml-auto">
                   این تجربه مربوط به کدوم تالاره؟
