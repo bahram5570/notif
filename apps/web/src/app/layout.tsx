@@ -116,6 +116,18 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
                 }
               }
             } catch {
+            // # If it's running on iframe, "window.self" and "window.top" are not equal
+            if (window.self === window.top) {
+              const t = localStorage.getItem('theme');
+              if (t === 'dark') {
+                document.documentElement.classList.add('dark');
+              } else if (t === 'light') {
+                document.documentElement.classList.remove('dark');
+              } else {
+                const p = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                document.documentElement.classList.toggle('dark', p);
+              }
+            } else {
               document.documentElement.classList.remove('dark');
             }
           `}

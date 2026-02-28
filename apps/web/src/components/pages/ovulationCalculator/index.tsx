@@ -14,7 +14,7 @@ import { FAQS } from './constants';
 const OvulationCalculatorComponent = () => {
   return (
     <HeaderFooterContainer>
-      <div className="my-20 container w-full px-4">
+      <div className="mb-20 mt-32 container w-full px-4">
         <HeadingContent
           title="ابزار آنلاین محاسبه زمان تخمک‌گذاری بعد از پریود"
           subTitle="با استفاده از ابزار آنلاین محاسبه زمان تخمک‌گذاری، زمان‌های طلایی بارداری را بهتر بشناسید. در این بازه‌های حساس
@@ -23,7 +23,7 @@ const OvulationCalculatorComponent = () => {
         <div className="!w-fit flex justify-self-center">
           <OvulationCalculator />
         </div>
-        <CallToActionSticky name="ovulation4" />
+        <CallToActionSticky />
         <BodyContent />
         <CallToAction name="ovulation3" />
         <FaqContainer faqList={FAQS} />

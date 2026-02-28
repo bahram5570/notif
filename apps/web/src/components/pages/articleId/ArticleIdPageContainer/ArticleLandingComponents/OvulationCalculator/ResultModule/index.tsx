@@ -8,12 +8,12 @@ import { ResultModuleTypes } from './types';
 const ResultModule = ({ result, onReset }: ResultModuleTypes) => {
   return (
     <div className="w-full h-full flex flex-col items-center">
-      <div className="w-full sm:w-[400px] h-fit py-6 rounded-2xl border-[1px] mt-8 mb-10 border-impo_Cyan_600 bg-impo_White">
-        <CustomTypography fontSize="Lable_Medium" className="text-center !text-impo_Black">
+      <div className="w-full sm:w-[400px] h-fit py-6 rounded-2xl text-center border-[1px] mt-8 mb-10 border-impo_Cyan_600 bg-impo_White">
+        <CustomTypography fontSize="Lable_Medium" className="text-center !text-impo_Black w-full">
           روز تخمک گذاری این دوره شما:
         </CustomTypography>
 
-        <CustomTypography fontSize="Title_Large" className="text-center pt-2 !text-impo_Black">
+        <CustomTypography fontSize="Title_Large" className="text-center pt-2 !text-impo_Black  w-full">
           {result}
         </CustomTypography>
       </div>
@@ -31,7 +31,7 @@ const ResultModule = ({ result, onReset }: ResultModuleTypes) => {
         className="absolute bottom-6 left-4 right-4 h-[48px] sm:max-w-[460px] mx-auto mt-auto flex items-center justify-center rounded-full bg-impo_Pink_500"
       >
         <CustomTypography fontSize="Title_Small" className="!text-impo_White">
-          از ایمپو استفاده کن
+          دریافت تقویم تخمک‌گذاری
         </CustomTypography>
       </CustomLink>
     </div>

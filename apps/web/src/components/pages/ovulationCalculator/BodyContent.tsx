@@ -1,5 +1,7 @@
+import ovulationCalc from '@assets/images/ovulationCalc.webp';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
+import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 
 const BodyContent = () => {
@@ -31,7 +33,12 @@ const BodyContent = () => {
         این نمودار که با استفاده از ماشین‌حساب تخمک‌گذاری آنلاین تهیه می‌شود، به شما کمک می‌کند بهترین زمان برای اقدام
         به بارداری را پیدا کنید. در ادامه نمودار تخمک گذاری در یک چرخه 28 روزه را مشاهده می‌کنید:
       </CustomTypography>
-      {/* تصویر */}
+      <CustomImage
+        alt="نمودار تخمک گذاری"
+        src={ovulationCalc}
+        className="mx-auto my-6 max-w-[1000px] w-full rounded-2xl"
+        width={9999}
+      />
       <CustomTypography fontSize="Headline_Medium" tagType="h2" className="!text-impo_Neutral_OnBackground">
         تقویم تخمک‌گذاری و تعیین جنسیت
       </CustomTypography>

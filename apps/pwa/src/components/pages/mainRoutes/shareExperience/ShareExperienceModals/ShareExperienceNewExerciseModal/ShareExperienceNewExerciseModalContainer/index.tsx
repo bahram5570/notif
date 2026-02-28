@@ -29,7 +29,7 @@ const ShareExperienceNewExerciseModalContainer = ({
   associationId,
 }: ShareExperienceNewExerciseModalContainerProps) => {
   const { config, configLoading } = useConfigNewExperience();
-  const { isLoading, topicsData, topicId, topicIdHandler } = useTopics();
+  const { topicsData, topicId, topicIdHandler } = useTopics();
   const { text, textHandler } = useText();
   const fileProps = useImage();
   const [btnTop, setBtnTop] = useState<number>(0);
@@ -103,7 +103,6 @@ const ShareExperienceNewExerciseModalContainer = ({
       <UploadFileModal fileDataHandler={fileProps.fileDataHandler} uploadImageLoading={fileProps.uploadImageLoading} />
       <ShareExperienceNewTopics
         topicId={topicId}
-        isLoading={isLoading}
         topicsData={topicsData}
         submitHandler={submitHandler}
         topicIdHandler={topicIdHandler}

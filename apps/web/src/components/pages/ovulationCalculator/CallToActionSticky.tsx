@@ -3,11 +3,7 @@ import { ctaBannerService } from '@services/ctaBannerServices';
 
 import CustomLink from '@components/ui/CustomLink';
 
-const CallToActionSticky = async ({ name }: { name: string }) => {
-  const { ctaData } = await ctaBannerService(name);
-
-  if (!ctaData) return;
-
+const CallToActionSticky = async () => {
   return (
     <div
       className="
@@ -28,12 +24,12 @@ const CallToActionSticky = async ({ name }: { name: string }) => {
       style={{ background: 'linear-gradient(127deg, rgb(245, 134, 158) 0%, rgb(250, 204, 212) 100%' }}
     >
       <CustomTypography className="!text-impo_Black" fontSize="Lable_Medium">
-        {ctaData.title}
+        محاسبه زمان دقیق تخمک‌گذاری
       </CustomTypography>
 
       <CustomLink
         target="_blank"
-        href={ctaData.link}
+        href={'/download'}
         className="rounded-full w-fit px-4 py-3 h-[38px] flex items-center justify-self-end justify-center relative z-10 bg-impo_Primary_Primary"
       >
         <CustomTypography fontSize="Lable_Medium" className="!text-impo_White">
