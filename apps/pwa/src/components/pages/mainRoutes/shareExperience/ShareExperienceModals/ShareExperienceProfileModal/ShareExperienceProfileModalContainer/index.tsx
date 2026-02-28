@@ -4,6 +4,7 @@ import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 
+import ShareExperienceProfileReportModule from '../../../ShareExperienceModules/ShareExperienceProfileReportModule';
 import ShareExperenceProfileTabList from './ShareExperenceProfileTabList';
 import ShareExperienceProfileTopPart from './ShareExperienceProfileTopPart';
 import ShareExperienceTabs from './ShareExperienceTabs';
@@ -52,6 +53,7 @@ const ShareExperienceProfileModalContainer = ({
 
         {!isLoading && shareExperienceProfileData && (
           <>
+            <ShareExperienceProfileReportModule userId={shareExperienceProfileData.profile.id} />
             <ShareExperienceProfileTopPart
               followCount={shareExperienceProfileData.followCount}
               storyCount={shareExperienceProfileData.storyCount}

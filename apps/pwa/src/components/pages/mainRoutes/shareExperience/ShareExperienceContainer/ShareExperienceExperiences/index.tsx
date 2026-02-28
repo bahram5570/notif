@@ -15,6 +15,7 @@ import ShareExperienceFollowingModal from '../../ShareExperienceModals/ShareExpe
 import ShareExperienceNewExerciseModal from '../../ShareExperienceModals/ShareExperienceNewExerciseModal';
 import ShareExperienceNewReplyModal from '../../ShareExperienceModals/ShareExperienceNewReplyModal';
 import ShareExperienceProfileModal from '../../ShareExperienceModals/ShareExperienceProfileModal';
+import ShareExperienceProfileReportModal from '../../ShareExperienceModals/ShareExperienceProfileReportModal';
 import ShareExperienceReportModal from '../../ShareExperienceModals/ShareExperienceReportModal';
 import ShareExperienceTopicModal from '../../ShareExperienceModals/ShareExperienceTopicModal';
 import ShareExperienceUnfollowModal from '../../ShareExperienceModals/ShareExperienceUnfollowModal';
@@ -59,6 +60,7 @@ const ShareExperienceExperiences = ({
           <ShareExperienceFollowingModal />
           <ShareExperienceAssociationListModal />
           <ShareExperienceAssociationItemModal />
+          <ShareExperienceProfileReportModal />
         </>
       )}
 

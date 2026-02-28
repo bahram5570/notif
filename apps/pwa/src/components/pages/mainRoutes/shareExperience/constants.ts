@@ -25,5 +25,6 @@ export const SHARE_EXPERIENCE_FOLLOWING_QUERY_NAME = 'shareExperienceFollowingMo
 export const SHARE_EXPERIENCE_ASSOCIATION_LIST_QUERY_NAME = 'shareExperienceAssociationListModal';
 export const SHARE_EXPERIENCE_ASSOCIATION_ITEM_QUERY_NAME = 'shareExperienceAssociationItemModal';
 export const SHARE_EXPERIENCE_UPLOAD_FILE_MODAL_QUERY_NAME = 'shareExperienceUploadFileModal';
+export const SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME = 'shareExperienceProfileReportModal';
 
 export const SHARE_EXPERIENCE_ORDER_QUERY_NAME = 'shareExperienceOrder';
