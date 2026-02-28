@@ -8,7 +8,8 @@ export const SUPPORT_LINK_LIST: SupportLinkGeneratorType[] = [
     typeLink: 'internal',
   },
   {
-    discription: 'جهت ارائه شکایات و گزارش ها میتونید از ساعت 9 تا 21 تماس بگیرید.',
+    discription:
+      'جهت ارائه شکایات و گزارش ها میتونید از ساعات پاسخگویی: شنبه تا چهارشنبه: 8 تا 24\nپنجشنبه ، جمعه و تعطیلات رسمی: 8 تا 16:30',
     title: 'تماس تلفنی',
     typeLink: 'external',
     supportPhone: '',
