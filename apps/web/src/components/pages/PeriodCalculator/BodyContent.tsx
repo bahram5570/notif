@@ -1,5 +1,7 @@
+import periodCalculator from '@assets/images/periodCalculator.webp';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
+import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 
 const BodyContent = () => {
@@ -22,7 +24,12 @@ const BodyContent = () => {
         </CustomLink>
         به کمک ابزار باشد.
       </CustomTypography>
-      {/* تصویر */}
+      <CustomImage
+        alt="نحوه محاسبه سیکل قاعدگی"
+        src={periodCalculator}
+        className="mx-auto my-6 max-w-[1000px] w-full rounded-2xl"
+        width={9999}
+      />
       <CustomTypography fontSize="Headline_Small" tagType="h3" className="!text-impo_Neutral_OnBackground">
         از کجا بفهمیم سیکل قاعدگی چند روزه است؟ (محاسبه طول سیکل قاعدگی)
       </CustomTypography>
