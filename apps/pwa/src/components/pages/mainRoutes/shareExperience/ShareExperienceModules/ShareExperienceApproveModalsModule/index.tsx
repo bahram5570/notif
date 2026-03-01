@@ -51,6 +51,8 @@ const ShareExperienceApproveModalsModule = ({
               id={id}
               onClick={clickHandler}
               className="!bg-impo_Error_ErrorContainer !border-impo_Error_ErrorContainer !text-impo_Error_Error"
+              isLoading={isLoading}
+              isDisable={isLoading}
             >
               {applyButtonText}
             </CustomButton>

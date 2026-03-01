@@ -53,7 +53,10 @@ const ShareExperienceProfileModalContainer = ({
 
         {!isLoading && shareExperienceProfileData && (
           <>
-            <ShareExperienceProfileReportModule userId={shareExperienceProfileData.profile.id} />
+            {!shareExperienceProfileData.isSelf && (
+              <ShareExperienceProfileReportModule userId={shareExperienceProfileData.profile.id} />
+            )}
+
             <ShareExperienceProfileTopPart
               followCount={shareExperienceProfileData.followCount}
               storyCount={shareExperienceProfileData.storyCount}
