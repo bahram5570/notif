@@ -1,2 +1,3 @@
 export const ERROR_NO_INTERNET = 'بعد از اطمینان از وصل بودن اینترنت، دوباره تلاش کن';
 export const ERROR_SERVER = 'مشکلی پیش اومده. لطفا بعدا دوباره تلاش کن';
+export const ERROR_403 = 'شما به این بخش دسترسی ندارید!';

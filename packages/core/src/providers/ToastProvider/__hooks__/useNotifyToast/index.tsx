@@ -12,8 +12,8 @@ const useNotifyToast = () => {
     position = 'top-right',
     // icon = 'success',
     type = 'success',
-    message,
     duration,
+    message,
     style,
   }: OptionTypes) => {
     const iconsList = {

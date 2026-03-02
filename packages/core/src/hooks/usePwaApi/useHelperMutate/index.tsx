@@ -2,7 +2,7 @@ import { pwaHttp } from '../../../utils/pwaHttp';
 
 import { useMutation } from '@tanstack/react-query';
 
-import { ERROR_SERVER } from '../../../constants/scripts.constants';
+import { ERROR_403, ERROR_SERVER } from '../../../constants/scripts.constants';
 import { useCustomToast } from '../../useCustomToast';
 import { UseHelperMutateProps } from './types';
 
@@ -20,7 +20,12 @@ const useHelperMutate = <T,>(props: UseHelperMutateProps<T>) => {
     });
 
     if (res.error) {
-      notifyToastHandler({ message: ERROR_SERVER, type: 'error' });
+      if (res.error.status === 403) {
+        notifyToastHandler({ message: ERROR_403, type: 'error' });
+      } else {
+        notifyToastHandler({ message: ERROR_SERVER, type: 'error' });
+      }
+
       throw res.error;
     }
 
