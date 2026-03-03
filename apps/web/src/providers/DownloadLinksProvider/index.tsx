@@ -4,14 +4,16 @@ import DownloadLinksProviderContext from './DownloadLinksProviderContext';
 import { DownloadLinksTypes } from './types';
 
 const DownloadLinksProvider = async ({ children }: { children: React.ReactNode }) => {
-  const revalidate = 60 * 60; // # 1 hour
+  // const revalidate = 60 * 60; // # 1 hour
 
   const { data } = await http<DownloadLinksTypes>({
     method: 'GET',
-    revalidate,
-    cache: 'force-cache',
+    // revalidate,
+    // cache: 'force-cache',
     url: 'appsetting/getapplicationlink',
   });
+
+  console.log(data);
 
   const links: DownloadLinksTypes = {
     manDirectApplcationalink: data?.manDirectApplcationalink || '',
