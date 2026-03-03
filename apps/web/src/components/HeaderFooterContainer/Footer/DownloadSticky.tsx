@@ -29,7 +29,10 @@ const DownloadSticky = () => {
       >
         <CustomTypography fontSize="Lable_Large">نصب ایمپو خانم‌ها</CustomTypography>
       </CustomButton>
-      <CustomLink href={`/men`} className="rounded-full bg-impo_Blue_500 text-impo_White py-2 px-4 text-center w-full">
+      <CustomLink
+        href={`/men`}
+        className="rounded-full bg-impo_Blue_500 text-impo_White py-2 px-4 text-center w-full flex justify-items-center justify-center"
+      >
         <CustomTypography fontSize="Lable_Large">نصب ایمپو آقایان</CustomTypography>
       </CustomLink>
     </div>

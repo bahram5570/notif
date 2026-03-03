@@ -13,8 +13,6 @@ const DownloadLinksProvider = async ({ children }: { children: React.ReactNode }
     url: 'appsetting/getapplicationlink',
   });
 
-  console.log(data);
-
   const links: DownloadLinksTypes = {
     manDirectApplcationalink: data?.manDirectApplcationalink || '',
     womanDirectApplcationalink: data?.womanDirectApplcationalink || '',
