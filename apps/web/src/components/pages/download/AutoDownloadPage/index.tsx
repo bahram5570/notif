@@ -7,18 +7,18 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomImage from '@components/ui/CustomImage';
 import useDownloadLinks from '@hooks/useDownloadLinks';
-import { useRouter } from 'next/navigation';
 
 import { HelpData, getBrowser } from './constants';
 import { BrowserType } from './types';
 
 const AutoDownloadPage = () => {
   const [browser, setBrowser] = useState<BrowserType>('other');
-  const router = useRouter();
   const { womanDirectApplcationalink } = useDownloadLinks();
 
   useEffect(() => {
-    router.push(womanDirectApplcationalink);
+    if (womanDirectApplcationalink) {
+      window.location.href = womanDirectApplcationalink;
+    }
     setBrowser(getBrowser());
   }, []);
 
