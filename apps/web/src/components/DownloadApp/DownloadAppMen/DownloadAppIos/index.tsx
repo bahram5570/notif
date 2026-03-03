@@ -1,17 +1,17 @@
 import AppStoreDownloadIcon from '@assets/icons/downloads/appStoreDownload.svg';
 import AppleIcon from '@assets/icons/downloads/apple.svg';
-import PwaIcon from '@assets/icons/downloads/pwa.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import CustomLink from '@components/ui/CustomLink';
-import { APP_STORE_LINK_MEN_URL, PWA_LINK_MEN_URL } from '@constants/links.constants';
+import { APP_STORE_LINK_MEN_URL } from '@constants/links.constants';
 import useUserTracking from '@hooks/useUserTracking';
+
+import IranianStoresMan from './IranianStoresMan';
 
 const DownloadAppIos = () => {
   const { callUserTracking } = useUserTracking();
 
   const directId = 'women-ios-direct';
-  const pwaId = 'men-pwa';
 
   return (
     <div className="flex flex-col items-center w-full">
@@ -46,39 +46,10 @@ const DownloadAppIos = () => {
           </CustomLink>
         </div>
 
-        <div id="download_pwa_men">
-          <CustomLink
-            id={pwaId}
-            target="_blank"
-            href={PWA_LINK_MEN_URL}
-            aria-label="DownloadAppAndroidMen"
-            // onClick={() => callUserTracking(pwaId)}
-            className="
-                        rounded-full 
-                        w-full 
-                        h-12 
-                        lg:h-[60px] 
-                        mx-auto 
-                        flex 
-                        items-center 
-                        justify-center 
-                        gap-2 
-                        relative 
-                        z-10 
-                        bg-impo_White dark:bg-impo_Surface_SurfaceVariant
-                        border-[1px]
-                        border-impo_Surface_OutlineVariant
-                      "
-          >
-            <PwaIcon className="w-6 fill-impo_Surface_OnSurfaceVariant" />
-
-            <CustomTypography fontSize="Title_Small" className="!text-impo_Surface_OnSurfaceVariant">
-              نسخه وب اپ
-            </CustomTypography>
-          </CustomLink>
-        </div>
-
         <AppleIcon className="w-[50px] h-auto absolute -top-[40px] right-[40px] fill-impo_Surface_OutlineVariant" />
+        <div className="w-full grid grid-cols-2 gap-1">
+          <IranianStoresMan />
+        </div>
       </div>
     </div>
   );
