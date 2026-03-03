@@ -97,6 +97,25 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 
         <Script id="theme-init" strategy="beforeInteractive">
           {`
+            // # Force light mode when the app is running inside an iframe
+            try {
+              const isIframe = window.self !== window.top;
+
+              if (isIframe) {
+                document.documentElement.classList.remove('dark');
+              } else {
+                const t = localStorage.getItem('theme');
+
+                if (t === 'dark') {
+                  document.documentElement.classList.add('dark');
+                } else if (t === 'light') {
+                  document.documentElement.classList.remove('dark');
+                } else {
+                  const p = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  document.documentElement.classList.toggle('dark', p);
+                }
+              }
+            } catch {
             // # If it's running on iframe, "window.self" and "window.top" are not equal
             if (window.self === window.top) {
               const t = localStorage.getItem('theme');
