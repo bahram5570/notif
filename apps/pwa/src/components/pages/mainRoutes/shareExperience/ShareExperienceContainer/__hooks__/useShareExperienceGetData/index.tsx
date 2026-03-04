@@ -17,8 +17,8 @@ const useShareExperienceGetData = () => {
     queryKey: ['shareExperience'],
     api: 'shareeexperience/v3',
     onSuccess: successHandler,
-    method: 'GET',
     fetchOnMount: false,
+    method: 'GET',
   });
 
   const onSuccessNewHandler = () => {

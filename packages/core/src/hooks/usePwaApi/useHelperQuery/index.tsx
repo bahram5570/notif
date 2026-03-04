@@ -5,7 +5,7 @@ import { initialEnabledValue } from './__utils__';
 
 import { useQuery } from '@tanstack/react-query';
 
-import { ERROR_SERVER } from '../../../constants/scripts.constants';
+import { ERROR_403, ERROR_SERVER } from '../../../constants/scripts.constants';
 import { useCustomToast } from '../../useCustomToast';
 import { UseHelperQueryProps } from './types';
 
@@ -31,7 +31,6 @@ const useHelperQuery = <T,>(props: UseHelperQueryProps<T>) => {
   const {
     data,
     error,
-    isError,
     isSuccess,
     isFetching,
     isLoading: loading,
@@ -42,6 +41,7 @@ const useHelperQuery = <T,>(props: UseHelperQueryProps<T>) => {
     refetchOnReconnect: false,
     queryKey: props.queryKey,
     refetchOnMount: false,
+    retry: 1,
     enabled,
     queryFn,
   });
@@ -61,11 +61,20 @@ const useHelperQuery = <T,>(props: UseHelperQueryProps<T>) => {
   }, [isSuccess, isLoading, data]);
 
   useEffect(() => {
-    if (isError && !isLoading && props.onError) {
-      notifyToastHandler({ message: ERROR_SERVER, type: 'error' });
-      props.onError();
+    if (error && !isLoading) {
+      const status = (error as unknown as { status: number }).status;
+
+      if (status === 403) {
+        notifyToastHandler({ message: ERROR_403, type: 'error' });
+      } else {
+        notifyToastHandler({ message: ERROR_SERVER, type: 'error' });
+
+        if (props.onError) {
+          props.onError();
+        }
+      }
     }
-  }, [isError, isLoading]);
+  }, [error, isLoading]);
 
   return { data, error, isLoading, callApi };
 };

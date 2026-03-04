@@ -9,6 +9,9 @@ const ContactUsInfo = () => {
       <CustomTypography fontSize="Headline_Medium" className="!text-impo_Neutral_OnBackground">
         راه های ارتباطی
       </CustomTypography>
+      <CustomTypography fontSize="Body_Large" className="!select-auto text-end !text-impo_Neutral_OnBackground mb-5">
+        ساعات پاسخگویی: شنبه تا چهارشنبه: 8 تا 24 پنجشنبه ، جمعه و تعطیلات رسمی: 8 تا 16:30
+      </CustomTypography>
       <div className="flex flex-col md:gap-8 gap-4">
         <div className="flex flex-row items-start gap-3">
           <CallIcon className="w-7 h-7 !stroke-impo_Neutral_OnBackground" />
