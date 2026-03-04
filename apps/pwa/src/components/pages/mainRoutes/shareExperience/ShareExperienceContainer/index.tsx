@@ -9,6 +9,7 @@ import ShareExperienceToast from '../ShareExperienceModules/ShareExperienceToast
 import ShareExperienceAvatar from './ShareExperienceAvatar';
 import ShareExperienceCategories from './ShareExperienceCategories';
 import ShareExperienceExperiences from './ShareExperienceExperiences';
+import ShareExperienceFailureModal from './ShareExperienceFailureModal';
 import ShareExperienceNewLink from './ShareExperienceNewLink';
 import ShareExperienceSkeleton from './ShareExperienceSkeleton';
 import ShareExperienceTopics from './ShareExperienceTopics';
@@ -37,37 +38,38 @@ const ShareExperienceContainer = () => {
 
         {!isLoading && data && (
           <>
-            <ShareExperienceAvatar profile={data.profile} />
-            <ShareExperienceNewLink />
-
-            {topics && <ShareExperienceTopics topics={topics} />}
-            {data.bannerMedia && <ShareExperienceBanner bannerMedia={data.bannerMedia} />}
-
-            {categories && selectedCategoryId && (
-              <ShareExperienceCategories
-                categories={categories}
-                selectedCategoryId={selectedCategoryId}
-                selectedCategoryHandler={selectedCategoryHandler}
-              />
-            )}
-
-            {data.toastText && (
-              <div className="px-4 pb-4">
-                <ShareExperienceToast toastMessage={data.toastText} showCloseBtn />
-              </div>
-            )}
-
-            {selectedCategoryId && (
-              <ShareExperienceExperiences
-                profile={data.profile}
-                key={selectedCategoryId}
-                selectedCategoryId={selectedCategoryId}
-                onSuccessNewHandler={onSuccessNewHandler}
-                scrollRef={scrollRef}
-                showAssociation={showAssociation}
-                associationSectionTitle={data.associationSectionTitle}
-                associations={data.associations}
-              />
+            {data.failure && <ShareExperienceFailureModal error={data.error} />}
+            {!data.failure && (
+              <>
+                <ShareExperienceAvatar profile={data.profile} />
+                <ShareExperienceNewLink />
+                {topics && <ShareExperienceTopics topics={topics} />}
+                {data.bannerMedia && <ShareExperienceBanner bannerMedia={data.bannerMedia} />}
+                {categories && selectedCategoryId && (
+                  <ShareExperienceCategories
+                    categories={categories}
+                    selectedCategoryId={selectedCategoryId}
+                    selectedCategoryHandler={selectedCategoryHandler}
+                  />
+                )}
+                {data.toastText && (
+                  <div className="px-4 pb-4">
+                    <ShareExperienceToast toastMessage={data.toastText} showCloseBtn />
+                  </div>
+                )}
+                {selectedCategoryId && (
+                  <ShareExperienceExperiences
+                    profile={data.profile}
+                    key={selectedCategoryId}
+                    selectedCategoryId={selectedCategoryId}
+                    onSuccessNewHandler={onSuccessNewHandler}
+                    scrollRef={scrollRef}
+                    showAssociation={showAssociation}
+                    associationSectionTitle={data.associationSectionTitle}
+                    associations={data.associations}
+                  />
+                )}
+              </>
             )}
           </>
         )}

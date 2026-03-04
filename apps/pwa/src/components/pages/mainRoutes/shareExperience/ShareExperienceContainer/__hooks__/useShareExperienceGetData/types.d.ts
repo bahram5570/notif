@@ -6,6 +6,11 @@ export type AssociationType = {
 };
 
 export type ShareExperienceResponseTypes = {
+  failure: boolean;
+  error: {
+    message: string;
+    btnLabel: string;
+  };
   groupsTitleText: string;
   otherTitleText: string;
   selfTitleText: string;

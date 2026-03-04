@@ -15,7 +15,7 @@ const useShareExperienceGetData = () => {
 
   const { isLoading, callApi } = usePwaApi<ShareExperienceResponseTypes>({
     queryKey: ['shareExperience'],
-    api: 'shareeexperience/v3',
+    api: 'shareeexperience/v3/new',
     onSuccess: successHandler,
     fetchOnMount: false,
     method: 'GET',
