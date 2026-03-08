@@ -1,5 +1,5 @@
-import Bazar1Icon from '@assets/icons/bazar1.svg';
-import Bazar2Icon from '@assets/icons/bazar2.svg';
+// import Bazar1Icon from '@assets/icons/bazar1.svg';
+// import Bazar2Icon from '@assets/icons/bazar2.svg';
 import AndroidIcon from '@assets/icons/downloads/android.svg';
 import MyKet1Icon from '@assets/icons/myket1.svg';
 import MyKet2Icon from '@assets/icons/myket2.svg';
@@ -44,7 +44,7 @@ const DownloadAppAndroid = () => {
         <AndroidIcon className="w-[50px] h-auto absolute -top-[30px] right-[40px] fill-impo_Surface_OutlineVariant" />
       </div>
 
-      <div className="w-full grid grid-cols-2 gap-2">
+      <div className="w-full grid grid-cols-1 gap-2">
         <div id="download_myket">
           <DownloadAppLinkGenerator href={MYKET_LINK_WOMEN_URL} id="women-myket">
             <div className="w-full flex items-center justify-center gap-1">
@@ -59,7 +59,7 @@ const DownloadAppAndroid = () => {
           </DownloadAppLinkGenerator>
         </div>
 
-        <div id="download_cafebazaar">
+        {/* <div id="download_cafebazaar">
           <DownloadAppLinkGenerator href={CAFEBAZAAR_LINK_WOMEN_URL} id="women-bazar">
             <div className="w-full flex items-center justify-center gap-1">
               <Bazar1Icon className="w-6 min-w-6 h-auto" />
@@ -71,7 +71,7 @@ const DownloadAppAndroid = () => {
               <Bazar2Icon className="w-[38px] h-auto" />
             </div>
           </DownloadAppLinkGenerator>
-        </div>
+        </div> */}
       </div>
     </div>
   );
