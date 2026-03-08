@@ -11,7 +11,7 @@ const useCopy = () => {
         toast.notifyToastHandler({ message: 'کپی شد', type: 'success' });
       } catch (err) {
         console.error(err);
-        toast.notifyToastHandler({ message: 'خطا در کپی کردن متن', type: 'error' });
+        toast.notifyToastHandler({ message: 'خطا در کپی کردن ', type: 'error' });
       }
     } else {
       try {
@@ -32,7 +32,7 @@ const useCopy = () => {
         document.body.removeChild(textArea);
       } catch (err) {
         console.error('Fallback error: ', err);
-        toast.notifyToastHandler({ message: 'خطا در کپی کردن متن', type: 'error' });
+        toast.notifyToastHandler({ message: 'خطا در کپی کردن ', type: 'error' });
       }
     }
 

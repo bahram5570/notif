@@ -1,18 +1,20 @@
-import CopyIcon from '@assets/icons/Copy.svg';
-import Refresh from '@assets/icons/refresh.svg';
-import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import CopyIcon from '@assets/shared/icons/Copy.svg';
+import Refresh from '@assets/shared/icons/refresh.svg';
 
-import useCopy from '../__hooks__/useCopy';
-import { PartnerCodePropsType } from './type';
+import useCopy from '../../hooks/useCopy';
+import { CustomSpinner } from '../ui/CustomSpinner';
+import { CustomTypography } from '../ui/CustomTypography';
+import useRefreshCode from './__hooks__/useRefreshCode';
+import { RefreshPartnerCodePropsType } from './type';
 
-const PartnerCode = ({ isLoading, refreshLoading, onRefreshCodeHandler, partnerCode }: PartnerCodePropsType) => {
+export const RefreshPartnerCode = (props: RefreshPartnerCodePropsType) => {
+  const { onRefreshCodeHandler, refreshLoading } = useRefreshCode({ callBackHandler: props.callBackHandler });
   const { copyToClipboard } = useCopy();
-  const loading = isLoading || refreshLoading;
+  const loading = props.isLoading || refreshLoading;
 
   const copyHandler = () => {
-    if (!partnerCode) return;
-    copyToClipboard(partnerCode);
+    if (!props.partnerCode) return;
+    copyToClipboard(props.partnerCode);
   };
 
   return (
@@ -27,13 +29,13 @@ const PartnerCode = ({ isLoading, refreshLoading, onRefreshCodeHandler, partnerC
               <CustomSpinner className="border-impo_Primary_Primary" size={30} />
             </div>
           )}
-          {!isLoading && partnerCode && (
+          {!props.isLoading && props.partnerCode && (
             <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground px-2">
-              {partnerCode}
+              {props.partnerCode}
             </CustomTypography>
           )}
         </div>
-        {partnerCode && (
+        {props.partnerCode && (
           <div onClick={copyHandler}>
             <CopyIcon className="w-8 scale-100 h-8 stroke-impo_Surface_Outline" />
           </div>
@@ -42,5 +44,3 @@ const PartnerCode = ({ isLoading, refreshLoading, onRefreshCodeHandler, partnerC
     </div>
   );
 };
-
-export default PartnerCode;

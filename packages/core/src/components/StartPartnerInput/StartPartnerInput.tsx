@@ -1,21 +1,20 @@
 import { useState } from 'react';
 
-import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { toEnglishNumbers, toPersianNumbers } from '@repo/core/utils/numbers';
+import { toEnglishNumbers, toPersianNumbers } from '../../utils/numbers';
 
-import useCreate from '../__hooks__/useCreate';
+import { CustomButton } from '../ui/CustomButton';
+import { CustomTypography } from '../ui/CustomTypography';
+import { StartPartnerInputPropsType } from './type';
 
-const PhoneNumberInput = () => {
+export const StartPartnerInput = (props: StartPartnerInputPropsType) => {
   const [phoneNumber, setPhoneNumber] = useState<string>('');
-  const { createHandler, isLoading } = useCreate();
 
   const changePhoneNumberHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setPhoneNumber(e.target.value);
   };
 
   const onClickHandler = () => {
-    createHandler(toEnglishNumbers(phoneNumber));
+    props.createHandler(toEnglishNumbers(phoneNumber));
   };
 
   const onKeyUpHandler = (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -26,10 +25,6 @@ const PhoneNumberInput = () => {
 
   return (
     <>
-      <CustomTypography fontSize="Body_Large" className="text-center text-impo_Neutral_OnBackground">
-        شماره موبایل، ایمیل یا کد همدلی پارتنرت رو اینجا وارد کن تا درخواست همدلیت براش ارسال بشه.
-      </CustomTypography>
-
       <div className="w-full">
         <input
           type="text"
@@ -41,7 +36,12 @@ const PhoneNumberInput = () => {
         />
       </div>
       <div className="flex justify-center w-1/2 items-center">
-        <CustomButton onClick={onClickHandler} isLoading={isLoading} isDisable={!phoneNumber}>
+        <CustomButton
+          className={`${props.isMan && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
+          onClick={onClickHandler}
+          isLoading={props.isLoading}
+          isDisable={!phoneNumber}
+        >
           <CustomTypography fontSize="Lable_Medium" className="text-center text-impo_White">
             ادامه
           </CustomTypography>
@@ -50,5 +50,3 @@ const PhoneNumberInput = () => {
     </>
   );
 };
-
-export default PhoneNumberInput;

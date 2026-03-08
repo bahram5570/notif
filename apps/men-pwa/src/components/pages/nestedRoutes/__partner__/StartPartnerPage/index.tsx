@@ -10,36 +10,37 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import useCreate from './__hooks__/useCreate';
 import useGetData from './__hooks__/useGetdata';
 
-const StartPageContainer = () => {
+const StartPartnerPage = () => {
   const { isLoading, userCodeInfo, userCodeInfoHandler } = useGetData();
   const { createHandler, isLoading: createLoading } = useCreate();
 
   return (
     <MainPageLayout rightElement="BackButton" rightElementScript="شروع همدلی" paddingBottom={30}>
-      <CustomImage src="/assets/images/partner-start.webp" className="px-6 dark:hidden block" />
-      <CustomImage src="/assets/images/partner-start-dark.webp" className="px-6 hidden dark:block" />
+      <CustomImage src="/assets/images/partner-start.webp" />
+
       <div className="flex flex-col gap-4 items-center justify-center py-5 px-6">
         <CustomTypography fontSize="Body_Large" className="text-center text-impo_Neutral_OnBackground">
           شماره موبایل، ایمیل یا کد همدلی پارتنرت رو اینجا وارد کن تا درخواست همدلیت براش ارسال بشه.
         </CustomTypography>
-        <StartPartnerInput createHandler={createHandler} isLoading={createLoading} isMan={false} />
+        <StartPartnerInput createHandler={createHandler} isLoading={createLoading} isMan={true} />
+
         <div className="border-t-[1px] border-t-impo_Surface_SurfaceVariant p-4">
           <CustomTypography fontSize="Body_Large" className="text-center text-impo_Neutral_OnBackground ">
             روش دوم هم اینه که کد اختصاصیت رو برای پارتنرت بفرستی
           </CustomTypography>
         </div>
 
-        <div className="flex justify-center flex-col gap-4">
+        <div className="flex justify-center flex-col gap-4 ">
           <RefreshPartnerCode
             isLoading={isLoading}
             partnerCode={userCodeInfo.code}
             callBackHandler={userCodeInfoHandler}
           />
-          <SharePartnerCode shareText={userCodeInfo.shareText} text="ارسال کد برای همدل" isMan={false} />
+          <SharePartnerCode shareText={userCodeInfo.shareText} text="ارسال کد برای همدل" isMan={true} />
         </div>
       </div>
     </MainPageLayout>
   );
 };
 
-export default StartPageContainer;
+export default StartPartnerPage;
