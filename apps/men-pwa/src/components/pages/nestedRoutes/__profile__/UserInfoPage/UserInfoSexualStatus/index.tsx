@@ -27,4 +27,3 @@ const UserInfoSexualStatus = ({ value, valueHandler }: UserInfoSexualStatusTypes
 };
 
 export default UserInfoSexualStatus;
-سعحخخقف 
