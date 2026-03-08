@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
-import { toEnglishNumbers, toPersianNumbers } from '../../utils/numbers';
+import { toEnglishNumbers, toPersianNumbers } from '../../../utils/numbers';
 
-import { CustomButton } from '../ui/CustomButton';
-import { CustomTypography } from '../ui/CustomTypography';
+import { CustomButton } from '../../ui/CustomButton';
+import { CustomTypography } from '../../ui/CustomTypography';
 import { StartPartnerInputPropsType } from './type';
 
 export const StartPartnerInput = (props: StartPartnerInputPropsType) => {

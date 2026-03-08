@@ -1,9 +1,9 @@
 'use client';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
-import { RefreshPartnerCode } from '@repo/core/components/RefreshPartnerCode';
 import { SharePartnerCode } from '@repo/core/components/SharePartnerCode';
-import { StartPartnerInput } from '@repo/core/components/StartPartnerInput';
+import { RefreshPartnerCode } from '@repo/core/components/partner/RefreshPartnerCode';
+import { StartPartnerInput } from '@repo/core/components/partner/StartPartnerInput';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
