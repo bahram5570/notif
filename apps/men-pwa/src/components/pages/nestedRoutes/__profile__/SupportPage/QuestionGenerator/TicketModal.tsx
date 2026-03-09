@@ -14,7 +14,7 @@ const TicketModal = ({ text }: { text: string }) => {
 
   return (
     <CustomModal isOpen className="mx-3 !py-4 !px-6 !min-h-[175px]">
-      <div className="flex flex-col gap-4 justify-center items-center max-w-sm">
+      <div className="flex flex-col mt-6 gap-4 justify-center items-center max-w-sm">
         <CheckCircle />
         <CustomTypography fontSize="Title_Medium" className="text-impo_Neutral_OnSurface">
           ثبت تیکت

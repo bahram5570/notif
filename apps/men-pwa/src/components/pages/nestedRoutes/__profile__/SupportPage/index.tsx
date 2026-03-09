@@ -7,9 +7,9 @@ import SupportLinkGenerator from './SupportLinkGenerator';
 import useGetSupportInfo from './SupportLinkGenerator/__hooks__/useGetSupportInfo';
 
 const SupportPage = () => {
-  const { supportInfo, isLoading } = useGetSupportInfo();
+  const { supportInfo } = useGetSupportInfo();
 
-  if (!supportInfo) return;
+  if (!supportInfo) return <Loading />;
 
   return (
     <MainPageLayout
@@ -17,8 +17,6 @@ const SupportPage = () => {
       rightElementScript="پشتیبانی"
       className="flex flex-col gap-4 px-4 bg-impo_Neutral_Surface"
     >
-      {isLoading && <Loading />}
-
       <SupportLinkGenerator title={supportInfo.description} description={supportInfo.title} items={supportInfo.items} />
       <SupportLinkGenerator
         title="تماس تلفنی"
