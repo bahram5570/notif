@@ -51,7 +51,7 @@ const Memory = ({ memory, valid }: MemeryPropsType) => {
         link={link}
         id="memory-link"
         onClick={() => callEvent('Pair_Memory_Card')}
-        className="!text-impo_PrimaryMan_PrimaryMan bg-impo_PrimaryMan_PrimaryContainerMan"
+        className="!text-impo_PrimaryMan_PrimaryMan !bg-impo_PrimaryMan_PrimaryContainerMan"
       />
     </div>
   );

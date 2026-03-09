@@ -5,7 +5,6 @@ import UploadIcon from '@assets/icons/upload.svg';
 import { MainPageLayoutHeader } from '@repo/core/components/MainPageLayout';
 import { WidgetGenerators } from '@repo/core/components/Widgets/WidgetGenerators';
 import { RequestSection } from '@repo/core/components/partner/RequestSection';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
@@ -15,6 +14,7 @@ import Memory from './Momery';
 import NotRequestData from './NotRequestData';
 import PartnerCard from './PartnerCard';
 import PartnerContainerSkeleton from './PartnerContainerSkeleton';
+import PartnerModals from './PartnerModals';
 import useGetPartnerData from './__hooks__/useGetPartnerData';
 
 const PartnerPage = () => {
@@ -27,12 +27,13 @@ const PartnerPage = () => {
       {isLoading && !data && <PartnerContainerSkeleton />}
       {!isLoading && data && (
         <div
-          className="w-full  px-4 min-h-[100dvh] flex flex-col gap-3"
+          className="w-full   px-4 min-h-[100dvh] flex flex-col gap-3"
           style={{
-            backgroundImage: `linear-gradient(180deg, rgba(59, 130, 246, 0.2) 0%, rgba(31, 72, 137, 0.1) 100%),url(${backgroundImage})`,
+            backgroundImage: `url(${backgroundImage})`,
             backgroundSize: 'contain',
             backgroundRepeat: 'no-repeat',
             paddingTop: HEADER_HEIGHT + 50,
+            paddingBottom: HEADER_HEIGHT,
           }}
         >
           {data.valid && (
@@ -75,6 +76,7 @@ const PartnerPage = () => {
           )}
 
           <Memory memory={data.memory} valid={data.valid} />
+          {/* <PartnerModals /> */}
         </div>
       )}
     </>

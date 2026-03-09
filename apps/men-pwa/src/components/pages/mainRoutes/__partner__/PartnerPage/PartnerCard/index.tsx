@@ -8,7 +8,7 @@ const PartnerCard = ({ partner, valid }: PartnerCardPropsType) => {
   const backgroundColor = partner.cycleCard?.gradient.length > 0 && generateLinearGradient(partner.cycleCard?.gradient);
 
   return (
-    <div className="flex flex-col gap-4 py-6  items-end ">
+    <div className="flex flex-col gap-4 py-3  items-end ">
       {partner.cycleTitle && (
         <div className="flex justify-between items-end ">
           <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
