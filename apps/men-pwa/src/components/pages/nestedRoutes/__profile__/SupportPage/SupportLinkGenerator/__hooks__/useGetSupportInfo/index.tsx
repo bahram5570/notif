@@ -2,14 +2,16 @@ import { useEffect, useState } from 'react';
 
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
-const useGetSupportInfo = () => {
-  const [supportPhone, setSupportPhone] = useState<string>();
+import { SupportLinkGeneratorType } from '../../../type';
 
-  const successHandler = (v: any) => {
-    setSupportPhone(v.phone);
+const useGetSupportInfo = () => {
+  const [supportInfo, setSupportInfo] = useState<SupportLinkGeneratorType>();
+
+  const successHandler = (v: SupportLinkGeneratorType) => {
+    setSupportInfo(v);
   };
 
-  const { callApi } = usePwaApi({
+  const { callApi, isLoading } = usePwaApi({
     method: 'GET',
     fetchOnMount: false,
     onSuccess: successHandler,
@@ -21,7 +23,7 @@ const useGetSupportInfo = () => {
     callApi();
   }, []);
 
-  return { supportPhone };
+  return { supportInfo, isLoading };
 };
 
 export default useGetSupportInfo;
