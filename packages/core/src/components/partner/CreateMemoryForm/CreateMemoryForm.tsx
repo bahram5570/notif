@@ -1,6 +1,6 @@
 import { useRouter } from 'next/navigation';
 
-import TextareaInput from './TextareaInput';
+import { TextareaInput } from './TextareaInput';
 import UploadInput from './UploadInput';
 import UploadModal from './UploadModal';
 import useFileUpload from './__hooks__/useFileUpload';

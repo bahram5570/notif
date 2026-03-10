@@ -17,7 +17,7 @@ export const PartnerMemoryItem = (props: PartnerMemoryItemPropsType) => {
     pageNavigationHandler({
       id: 'memoryItem',
       showProgressBar: true,
-      linkTo: `/protected/memoryDetail?memory=${encodeURIComponent(JSON.stringify(props))}`,
+      linkTo: `/protected/memoryDetail?memoryId=${props.id}&partnerName=${props.partName}`,
     });
   };
 

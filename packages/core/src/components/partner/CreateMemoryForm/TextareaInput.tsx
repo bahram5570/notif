@@ -1,6 +1,6 @@
 import { TextareaInputPropsType } from './type';
 
-const TextareaInput = ({ value, onChangeHandler, placeholder, rows, name }: TextareaInputPropsType) => {
+export const TextareaInput = ({ value, onChangeHandler, placeholder, rows, name }: TextareaInputPropsType) => {
   const onchange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     onChangeHandler(e.target.value, name);
   };
@@ -18,5 +18,3 @@ const TextareaInput = ({ value, onChangeHandler, placeholder, rows, name }: Text
     </>
   );
 };
-
-export default TextareaInput;
