@@ -1,15 +1,15 @@
 'use client';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
-import { Loading } from '@repo/core/components/ui/Loading';
 
 import SupportLinkGenerator from './SupportLinkGenerator';
 import useGetSupportInfo from './SupportLinkGenerator/__hooks__/useGetSupportInfo';
+import SupportPageSkeleton from './SupportPageSkeleton';
 
 const SupportPage = () => {
   const { supportInfo } = useGetSupportInfo();
 
-  if (!supportInfo) return <Loading />;
+  if (!supportInfo) return <SupportPageSkeleton />;
 
   return (
     <MainPageLayout
