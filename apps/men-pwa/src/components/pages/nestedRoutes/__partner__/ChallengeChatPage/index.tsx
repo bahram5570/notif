@@ -29,7 +29,7 @@ const ChallengeChatPage = () => {
         <>
           <ChallengeChatHeader {...data} progress={progressData} />
           <div
-            className=" flex relative z-0 flex-col overflow-y-auto  gap-5 pb-28 justify-center bg-[url('/assets/images/bg-chat.webp')] bg-contain dark:bg-none"
+            className=" flex relative z-0 flex-col overflow-y-auto  gap-5 pb-28 justify-center bg-[url('/assets/shared/images/bg-chat.webp')] bg-contain dark:bg-none"
             style={{ paddingTop: HEADER_HEIGHT + 90 }}
             ref={messageListRef}
           >

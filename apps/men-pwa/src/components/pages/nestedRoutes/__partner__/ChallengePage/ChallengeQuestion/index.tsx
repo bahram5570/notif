@@ -32,7 +32,7 @@ const ChallengeQuestion = ({ avatarUrl, helper, question, id, btn }: ChallengeQu
               rows={2}
               value={answerValue}
               onChangeHandler={onChangeHandler}
-              className="outline-impo_PrimaryMan_PrimaryMan"
+              className="outline-impo_PrimaryMan_PrimaryMan  rounded-full"
             />
           </div>
         </div>
