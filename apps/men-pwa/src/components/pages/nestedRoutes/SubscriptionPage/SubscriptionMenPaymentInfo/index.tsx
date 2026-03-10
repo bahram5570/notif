@@ -42,7 +42,7 @@ const SubscriptionMenPaymentInfo = (props: SubscriptionMenPaymentInfoTypes) => {
           <CustomTypography
             fontSize="Body_Small"
             className="text-impo_Surface_Outline"
-          >{`${props.valueText} ${unitText}`}</CustomTypography>
+          >{`${props.vatText} ${unitText}`}</CustomTypography>
         </div>
 
         <div className='w-full h-[1px] bg-impo_Grey_50 my-3' />
