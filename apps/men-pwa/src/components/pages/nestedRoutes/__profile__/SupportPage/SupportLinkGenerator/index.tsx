@@ -11,7 +11,7 @@ const SupportLinkGenerator = (props: SupportLinkGeneratorType) => {
 
   return (
     <>
-      {props.phone ? (
+      {props.phone && (
         <a
           className="p-4 rounded-lg bg-impo_Neutral_Background"
           href={`tel:${props.phone}`}
@@ -31,7 +31,9 @@ const SupportLinkGenerator = (props: SupportLinkGeneratorType) => {
             </div>
           </div>
         </a>
-      ) : (
+      )}
+
+      {!props.phone && (
         <div className="p-4 rounded-lg bg-impo_Neutral_Background">
           <div className="flex flex-col items-end gap-1">
             <CustomTypography fontSize="Lable_MediumProminet" className="text-impo_PrimaryMan_PrimaryMan">
