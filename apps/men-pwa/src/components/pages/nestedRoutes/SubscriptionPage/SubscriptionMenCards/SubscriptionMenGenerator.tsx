@@ -1,8 +1,12 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { addCommas } from '@repo/core/utils/numbers';
 
 import { SubscriptionMenGeneratorTypes } from './types';
 
 const SubscriptionMenGenerator = (props: SubscriptionMenGeneratorTypes) => {
+  const realValue = props.realValue === props.value ? null : addCommas(props.realValue);
+  const value = props.isFree ? 'رایگان' : `${addCommas(props.value)} ${props.unit}`;
+
   return (
     <div
       onClick={props.onSelect}
@@ -57,18 +61,20 @@ const SubscriptionMenGenerator = (props: SubscriptionMenGeneratorTypes) => {
         </CustomTypography>
 
         <div className="flex flex-row-reverse items-center gap-2">
-          <CustomTypography
-            fontSize="Body_Small"
-            className="text-impo_Surface_OutlineVariant line-through decoration-impo_Red_500"
-          >
-            {`${props.valueText} ${props.unit}`}
-          </CustomTypography>
+          {realValue && (
+            <CustomTypography
+              fontSize="Body_Small"
+              className="text-impo_Surface_OutlineVariant line-through decoration-impo_Red_500"
+            >
+              {`${realValue} ${props.unit}`}
+            </CustomTypography>
+          )}
 
           <CustomTypography
             fontSize="Body_Small"
             className={`text-impo_Neutral_OnBackground ${props.isSelected && 'dark:text-impo_Black'}`}
           >
-            {`${props.discountText} ${props.unit}`}
+            {value}
           </CustomTypography>
         </div>
       </div>

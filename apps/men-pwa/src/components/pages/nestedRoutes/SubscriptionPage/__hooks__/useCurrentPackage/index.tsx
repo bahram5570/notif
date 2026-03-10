@@ -2,20 +2,22 @@ import { useEffect, useState } from 'react';
 
 import { SubscriptionPackageTypes } from '../useGetData/types';
 
-const useCurrentPackage = (initialData?: SubscriptionPackageTypes) => {
-  const [currentPackage, setCurrentPackage] = useState<SubscriptionPackageTypes | null>(null);
+const useCurrentPackage = (packages?: SubscriptionPackageTypes[]) => {
+  const [currentPackageId, setCurrentPackageId] = useState<string | null>(null);
 
   useEffect(() => {
-    if (initialData) {
-      setCurrentPackage(initialData);
+    if (packages && currentPackageId === null) {
+      setCurrentPackageId(packages[0].id);
     }
-  }, [initialData]);
+  }, [packages, currentPackageId]);
 
-  const currentPackageHandler = (v: SubscriptionPackageTypes) => {
-    setCurrentPackage(v);
+  const currentPackageIdHandler = (v: string) => {
+    setCurrentPackageId(v);
   };
 
-  return { currentPackage, currentPackageHandler };
+  const currentPackage = packages?.find((p) => p.id === currentPackageId);
+
+  return { currentPackageId, currentPackageIdHandler, currentPackage };
 };
 
 export default useCurrentPackage;

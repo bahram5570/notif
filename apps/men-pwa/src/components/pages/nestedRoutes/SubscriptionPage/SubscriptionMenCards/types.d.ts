@@ -2,8 +2,8 @@ import { SubscriptionPackageTypes } from '../__hooks__/useGetData/types';
 
 export interface SubscriptionMenCardsTypes {
   packages: SubscriptionPackageTypes[];
-  currentPackage: SubscriptionPackageTypes;
-  currentPackageHandler: (v: SubscriptionPackageTypes) => void;
+  currentPackageHandler: (v: id) => void;
+  currentPackageId: string;
 }
 
 export interface SubscriptionMenGeneratorTypes extends SubscriptionPackageTypes {
