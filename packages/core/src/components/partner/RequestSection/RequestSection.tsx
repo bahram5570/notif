@@ -1,6 +1,7 @@
 import RefreshIcon from '@assets/shared/icons/refresh.svg';
 
 import { CustomTypography } from '../../ui/CustomTypography';
+import { PartnerModals } from './PartnerModals/PartnerModals';
 import RequestList from './RequestList';
 import RequestListSkeleton from './RequestList/RequestListSkeleton';
 import useGetRequestData from './__hooks__/useGetRequestData';
@@ -24,6 +25,7 @@ export const RequestSection = ({ element, isMan }: RequestSectionPropsType) => {
       {isLoading && <RequestListSkeleton />}
 
       {!isLoading && hasRequestList ? <RequestList list={data.list} isMan={isMan} /> : element}
+      <PartnerModals />
     </div>
   );
 };
