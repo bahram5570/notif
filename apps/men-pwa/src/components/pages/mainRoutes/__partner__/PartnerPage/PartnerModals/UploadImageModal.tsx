@@ -2,7 +2,7 @@ import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-import { ChallengeResponseType } from '../__hooks__/useGetData/type';
+// import { ChallengeResponseType } from '../__hooks__/useGetData/type';
 import Inputs from './Inputs';
 import useAvatar from './__hooks__/useAvatar';
 import useDelete from './__hooks__/useDelete';
@@ -12,7 +12,7 @@ const UploadImageModal = () => {
   const { editHandler } = useAvatar();
   const { getQuery, updateQuery } = useCustomReactQuery(['partner']);
   const { getQueryParams } = useQueryParamsHandler();
-  const partnerInfo = getQuery<ChallengeResponseType>({ queryKey: ['partner'] });
+  const partnerInfo = getQuery<any>({ queryKey: ['partner'] });
   const { deleteHandler } = useDelete({
     api: `profile/image/?AppVersion=${APP_VERSION || ''}`,
     onSuccess: () =>

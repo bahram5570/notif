@@ -2,7 +2,7 @@ import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-import { ChallengeResponseType } from '../__hooks__/useGetData/type';
+// import { ChallengeResponseType } from '../__hooks__/useGetData/type';
 import Inputs from './Inputs';
 import useChangeImage from './__hooks__/useChangeImage';
 import useDelete from './__hooks__/useDelete';
@@ -12,7 +12,7 @@ const UploadBackgroundImageModal = () => {
   const { editHandler } = useChangeImage();
   const { getQuery, updateQuery } = useCustomReactQuery(['partner']);
   const { getQueryParams } = useQueryParamsHandler();
-  const partnerInfo = getQuery<ChallengeResponseType>({ queryKey: ['partner'] });
+  const partnerInfo = getQuery<any>({ queryKey: ['partner'] });
   const { deleteHandler } = useDelete({
     api: `pair/cover/?AppVersion=${APP_VERSION || ''}`,
     onSuccess: () => updateQuery({ queryKey: ['partner'], payload: { ...partnerInfo, coverImage: '' } }),
