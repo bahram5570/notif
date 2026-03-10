@@ -18,7 +18,7 @@ const DeletePartner = () => {
       }}
     >
       <CustomTypography fontSize="Lable_Large" className="text-impo_Error_Error">
-        حذف همدل من
+        حذف همدل
       </CustomTypography>
       <TrashIcon className="w-6 h-6 stroke-impo_Error_Error" />
     </div>

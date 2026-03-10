@@ -35,7 +35,7 @@ const DeletePartnerModal = () => {
           <CustomButton
             onClick={deleteHandler}
             isLoading={isLoading}
-            className="!text-impo_Error_Error !bg-impo_Error_ErrorContainer !border-impo_Error_ErrorContainer h-10"
+            className="!text-white bg-blue-500 !border-none h-10"
             fontSize="Lable_Large"
           >
             مطمئنم
@@ -46,7 +46,7 @@ const DeletePartnerModal = () => {
             className="h-10 !bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnSurface"
             onClick={() => router.back()}
           >
-            خیر
+            نه
           </CustomButton>
         </div>
       </div>

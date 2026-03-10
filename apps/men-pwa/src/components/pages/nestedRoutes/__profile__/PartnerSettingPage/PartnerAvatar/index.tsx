@@ -41,10 +41,10 @@ const PartnerAvatar = ({ name, profileUrl, jointime }: PartnerAvatarPropsType) =
           {name}
         </CustomTypography>
         <div className="flex items-center gap-1">
-          <CustomTypography className="text-impo_Primary_Primary" fontSize="Body_Medium">
+          <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Body_Medium">
             {currentDate}
           </CustomTypography>
-          <HamdelIcon className="w-4 h-4 stroke-impo_Primary_Primary" />
+          <HamdelIcon className="w-4 h-4 stroke-impo_Neutral_OnBackground" />
         </div>
       </div>
     </div>
