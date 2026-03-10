@@ -43,9 +43,12 @@ const AcceptModal = ({ isMan }: CommanPropsType) => {
           </CustomTypography>
 
           <div className="flex flex-col justify-center items-center">
-            <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
-              .مشاهده وضعیت چرخه
-            </CustomTypography>
+            {!isMan && (
+              <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+                .مشاهده وضعیت چرخه
+              </CustomTypography>
+            )}
+
             <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
               .مشاهده وضعیت بیوریتم
             </CustomTypography>

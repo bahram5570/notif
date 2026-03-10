@@ -25,7 +25,7 @@ export const RequestSection = ({ element, isMan }: RequestSectionPropsType) => {
       {isLoading && <RequestListSkeleton />}
 
       {!isLoading && hasRequestList ? <RequestList list={data.list} isMan={isMan} /> : element}
-      <PartnerModals />
+      <PartnerModals isMan={isMan} />
     </div>
   );
 };

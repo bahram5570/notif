@@ -28,10 +28,13 @@ const RejectModal = ({ onCloseModal, isMan }: ModalPropsType) => {
         </CustomTypography>
       </div>
 
-      <div
-        className={`flex w-full justify-between gap-2 ${isMan && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
-      >
-        <CustomButton onClick={onClick} isLoading={isLoading} fontSize="Lable_Large">
+      <div className={`flex w-full justify-between gap-2 `}>
+        <CustomButton
+          className={`${isMan && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
+          onClick={onClick}
+          isLoading={isLoading}
+          fontSize="Lable_Large"
+        >
           !آره
         </CustomButton>
         <CustomButton

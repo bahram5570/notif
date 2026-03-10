@@ -4,7 +4,7 @@ import { CustomRadioButton } from '../../../../ui/CustomRadioButton';
 import { LIST_LABEL } from './constants';
 import { PartnerRadioButtonPropsType } from './type';
 
-const PartnerRadioButton = ({ onChange, value }: PartnerRadioButtonPropsType) => {
+const PartnerRadioButton = ({ onChange, value, isMan }: PartnerRadioButtonPropsType) => {
   return (
     <div className="flex flex-col gap-2 items-end ">
       {LIST_LABEL.map((item, index) => {
