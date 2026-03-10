@@ -14,15 +14,15 @@ const ChallengContext = ({ card, valid }: ChallengContextPropsType) => {
     <div className=" flex flex-col gap-4 py-4 px-2 rounded-xl shadow-sm bg-impo_Neutral_Surface">
       <div className="flex justify-center items-center px-2">
         {/* <CustomImage src={card.leftIcon} style={{ scale: !valid ? '2' : 'inherit' }} /> */}
-        <CustomImage src={card.leftIcon} />
+        <CustomImage src={card.leftIcon} className="w-1/4 " />
 
-        <div className="px-3">
+        <div className="px-3 w-full">
           <CustomTypography fontSize="Lable_Large" className="text-center p-2 text-impo_Neutral_OnBackground">
             {card.text}
           </CustomTypography>
         </div>
 
-        {card.rightIcon !== '' && <CustomImage src={card.rightIcon} />}
+        {card.rightIcon !== '' && <CustomImage src={card.rightIcon} className="w-1/4" />}
       </div>
       {card.btnText && (
         <PartnerCustomLink
