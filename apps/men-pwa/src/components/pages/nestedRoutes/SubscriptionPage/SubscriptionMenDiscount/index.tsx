@@ -16,7 +16,7 @@ const SubscriptionMenDiscount = ({
   const { showDiscountInput, toggleShowHandler, code, codeHandler } = useDiscountCode();
 
   return (
-    <div className="w-full rounded-xl p-3 mb-5 bg-impo_Neutral_Surface">
+    <div className="w-full rounded-xl p-3 mb-6 bg-impo_Neutral_Surface">
       <div className="flex items-center justify-between">
         <PlusIcon
           className="w-5 h-auto stroke-impo_Surface_Outline"

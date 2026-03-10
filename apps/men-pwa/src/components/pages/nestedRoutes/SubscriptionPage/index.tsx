@@ -58,11 +58,11 @@ const SubscriptionPage = () => {
 
             <div className="relative w-full h-full max-h-[140px] pb-4 flex flex-col items-center justify-end gap-1 z-20">
               <CustomTypography fontSize="Title_Small" className="text-impo_White">
-                عاشقانه ترین ها رو با ایمپو تجربه کن!
+                برای مراقبت از خودت و رابطه‌ت
               </CustomTypography>
 
               <CustomTypography fontSize="Body_Small" className="text-impo_White">
-                با اشتراک ایمپو می تونی از همه امکانات اپلیکیشن استفاده کنی
+                و استفاده از همه امکانات ایمپو، یکی از طرح‌های زیر را انتخاب کن
               </CustomTypography>
             </div>
 
@@ -90,7 +90,7 @@ const SubscriptionPage = () => {
               <CustomButton
                 onClick={payHandler}
                 isLoading={isSubscriptionLoading}
-                className="!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan mt-10"
+                className="!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan mt-8"
               >
                 پرداخت
               </CustomButton>

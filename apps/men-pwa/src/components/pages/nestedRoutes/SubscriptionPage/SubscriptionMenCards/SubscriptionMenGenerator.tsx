@@ -30,7 +30,7 @@ const SubscriptionMenGenerator = (props: SubscriptionMenGeneratorTypes) => {
     >
       {props.specificText && (
         <div className="absolute -top-[1px] -left-[1px] bg-impo_PrimaryMan_PrimaryMan rounded-br-lg rounded-tl-lg">
-          <CustomTypography fontSize="Lable_Small" className="text-impo_White px-3 py-1">
+          <CustomTypography fontSize="Lable_Medium" className="text-impo_White px-3 py-1">
             {props.specificText}
           </CustomTypography>
         </div>
