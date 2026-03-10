@@ -11,6 +11,7 @@ import UserInfoBirthdate from './UserInfoBirthdate';
 import UserInfoCalendarType from './UserInfoCalendarType';
 import UserInfoModals from './UserInfoModals';
 import UserInfoName from './UserInfoName';
+import UserInfoSexualStatus from './UserInfoSexualStatus';
 import UserInfoSkeleton from './UserInfoSkeleton';
 import useSubmit from './__hooks__/useSubmit';
 import useValues from './__hooks__/useValues';
@@ -47,6 +48,17 @@ const UserInfoPage = () => {
                     name="birthdate"
                     value={values.birthdate}
                     valueHandler={(v) => valuesHandler('birthdate', v)}
+                  />
+                </ProfileItemGenerator>
+              </ProfileContainerGenerator>
+              <ProfileContainerGenerator>
+                <ProfileItemGenerator
+                  title="رابطه جنسی"
+                  description="برای ارائه بهترین توصیه‌ها برای رابطه جنسی بهتره که بدونیم"
+                >
+                  <UserInfoSexualStatus
+                    value={values.sexualStatus}
+                    valueHandler={(v) => valuesHandler('sexualStatus', v)}
                   />
                 </ProfileItemGenerator>
               </ProfileContainerGenerator>
