@@ -1,41 +1,28 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+import { SharePartnerCode } from '@repo/core/components/SharePartnerCode';
+import { RefreshPartnerCode } from '@repo/core/components/partner/RefreshPartnerCode';
+import { StartPartnerInput } from '@repo/core/components/partner/StartPartnerInput';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import PartnerCode from './PartnerCode';
-import PhoneNumberInput from './PhoneNumberInput/PhoneNumberInput';
-import ShareTextBtn from './ShareTextBtn';
+import useCreate from './__hooks__/useCreate';
 import useGetData from './__hooks__/useGetdata';
-import useRefreshCode from './__hooks__/useRefreshCode';
-import { UserCodeInfoType } from './type';
 
 const StartPageContainer = () => {
-  const { data, isLoading } = useGetData();
-  const { onRefreshCodeHandler, refreshLoading, refreshCode } = useRefreshCode();
-  const [userCodeInfo, setUserCodeInfo] = useState<UserCodeInfoType>({ code: '', shareText: '' });
-
-  useEffect(() => {
-    if (data) {
-      setUserCodeInfo({ code: data.code, shareText: data.shareText });
-    }
-  }, [data]);
-
-  useEffect(() => {
-    if (refreshCode) {
-      setUserCodeInfo({ code: refreshCode.code, shareText: refreshCode.shareText });
-    }
-  }, [refreshCode?.code]);
+  const { isLoading, userCodeInfo, userCodeInfoHandler } = useGetData();
+  const { createHandler, isLoading: createLoading } = useCreate();
 
   return (
     <MainPageLayout rightElement="BackButton" rightElementScript="شروع همدلی" paddingBottom={30}>
       <CustomImage src="/assets/images/partner-start.webp" className="px-6 dark:hidden block" />
       <CustomImage src="/assets/images/partner-start-dark.webp" className="px-6 hidden dark:block" />
       <div className="flex flex-col gap-4 items-center justify-center py-5 px-6">
-        <PhoneNumberInput />
+        <CustomTypography fontSize="Body_Large" className="text-center text-impo_Neutral_OnBackground">
+          شماره موبایل، ایمیل یا کد همدلی پارتنرت رو اینجا وارد کن تا درخواست همدلیت براش ارسال بشه.
+        </CustomTypography>
+        <StartPartnerInput createHandler={createHandler} isLoading={createLoading} isMan={false} />
         <div className="border-t-[1px] border-t-impo_Surface_SurfaceVariant p-4">
           <CustomTypography fontSize="Body_Large" className="text-center text-impo_Neutral_OnBackground ">
             روش دوم هم اینه که کد اختصاصیت رو برای پارتنرت بفرستی
@@ -43,13 +30,12 @@ const StartPageContainer = () => {
         </div>
 
         <div className="flex justify-center flex-col gap-4">
-          <PartnerCode
-            partnerCode={userCodeInfo.code}
+          <RefreshPartnerCode
             isLoading={isLoading}
-            refreshLoading={refreshLoading}
-            onRefreshCodeHandler={onRefreshCodeHandler}
+            partnerCode={userCodeInfo.code}
+            callBackHandler={userCodeInfoHandler}
           />
-          <ShareTextBtn shareText={userCodeInfo.shareText || ''} />
+          <SharePartnerCode shareText={userCodeInfo.shareText} text="ارسال کد برای همدل" isMan={false} />
         </div>
       </div>
     </MainPageLayout>

@@ -52,6 +52,7 @@ export type WidgetsTypes = IsPdfDownloadingTypes &
     | WidgetBiorhythmTypes
     | WidgetProgramScrollType
     | WidgetWomanPairProgramTypes
+    | ManProgramScrollWidgetType
   );
 
 // # ----------------------------------------------------------
@@ -730,6 +731,17 @@ type ProgramScrolltemType = {
 
 export type WidgetProgramScrollType = IsPdfDownloadingTypes & {
   type: WidgetsEnum.ProgramScrollWidget;
+  data: {
+    backgroundColour: string;
+    description: string;
+    items: ProgramScrolltemType[];
+    title: string;
+    button: WidgetsButtonTypes;
+  };
+};
+// # ----------------------------------------------------------
+export type ManProgramScrollWidgetType = IsPdfDownloadingTypes & {
+  type: WidgetsEnum.ManProgramScrollWidget;
   data: {
     backgroundColour: string;
     description: string;
