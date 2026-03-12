@@ -19,7 +19,7 @@ const PartnerRadioButton = ({ onChange, value, isMan }: PartnerRadioButtonPropsT
                 {item.name}
               </CustomTypography>
             </label>
-            <CustomRadioButton isChecked={value === item.value} onClick={() => onChange(item.value)} />
+            <CustomRadioButton isChecked={value === item.value} onClick={() => onChange(item.value)} isMan={isMan} />
           </div>
         );
       })}

@@ -43,7 +43,7 @@ const TypeRelationship = ({ isMan }: CommanPropsType) => {
         </CustomTypography>
       </div>
 
-      <PartnerRadioButton onChange={changeValueHandler} value={distanceTypeValue} />
+      <PartnerRadioButton onChange={changeValueHandler} value={distanceTypeValue} isMan={isMan} />
 
       <CustomButton
         onClick={onClick}

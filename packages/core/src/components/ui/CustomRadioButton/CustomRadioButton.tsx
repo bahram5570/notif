@@ -1,6 +1,6 @@
 import { RadioButtonProps } from './type';
 
-export const CustomRadioButton = ({ isChecked, onClick, isDisable, testId }: RadioButtonProps) => {
+export const CustomRadioButton = ({ isChecked, onClick, isDisable, testId, isMan = false }: RadioButtonProps) => {
   const clickHandler = () => {
     if (!isDisable && onClick) {
       onClick();
@@ -20,7 +20,7 @@ export const CustomRadioButton = ({ isChecked, onClick, isDisable, testId }: Rad
                     rounded-full 
                     flex 
                     border-2
-                    ${isChecked ? 'border-impo_Primary_Primary' : 'border-impo_Surface_Outline'}
+                    ${isChecked ? (isMan ? 'border-impo_PrimaryMan_PrimaryMan' : 'border-impo_Primary_Primary') : 'border-impo_Surface_Outline'}
                   `}
       >
         {isChecked && (
@@ -30,7 +30,7 @@ export const CustomRadioButton = ({ isChecked, onClick, isDisable, testId }: Rad
                         h-3 
                         rounded-full 
                         m-auto
-                        ${isChecked ? 'bg-impo_Primary_Primary' : 'bg-impo_Surface_Outline'}
+                        ${isChecked ? (isMan ? 'bg-impo_PrimaryMan_PrimaryMan' : 'bg-impo_Primary_Primary') : 'bg-impo_Surface_Outline'}
                       `}
           />
         )}

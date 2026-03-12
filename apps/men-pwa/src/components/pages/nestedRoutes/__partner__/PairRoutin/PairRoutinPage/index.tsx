@@ -1,24 +1,24 @@
 'use client';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+import { RoutinFooter } from '@repo/core/components/Routin/RoutinFooter';
+import { RoutinUnlockTost } from '@repo/core/components/Routin/RoutinUnlockTost';
+import { RoutinWriter } from '@repo/core/components/Routin/RoutinWriter';
+import { FeedbackModal } from '@repo/core/components/ui/FeedbackModal';
+import { OnboardingIntro } from '@repo/core/components/ui/OnboardingIntro';
 
-import FeedbackModal from '@components/FeedbackModal';
-import OnboardingIntro from '@components/ui/OnboardingIntro';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useRouter } from 'next/navigation';
 
-import useFeedback from '../PairRoutinItemContainer/__hooks__/useFeedback';
+import useFeedback from '../PairRoutinItemPage/__hooks__/useFeedback';
 import RoutinDiets from './RoutinDiets';
-import RoutinFooter from './RoutinFooter';
 import RoutinHeading from './RoutinHeading';
 import RoutinSkeleton from './RoutinSkeleton';
-import RoutinUnlockTost from './RoutinUnlockTost';
-import RoutinWriter from './RoutinWriter';
 import useFinalStepWelcoming from './__hook__/useFinalStepWelcoming';
 import useGetData from './__hook__/useGetData';
 
-const PairRoutinContainer = () => {
+const PairRoutinPage = () => {
   const route = useRouter();
   const { updateQuery } = useCustomReactQuery();
   const { data, isLoading } = useGetData();
@@ -71,9 +71,10 @@ const PairRoutinContainer = () => {
           )}
 
           <FeedbackModal
-            title=" امیدواریم این مرحله واست مفید باشه، به این مرحله از روتین  چه امتیازی میدی؟"
+            title="امیدواریم این برنامه برات مفید بوده باشه.به برنامه امروزت چه امتیازی میدی؟"
             onSubmit={rateHandler}
             isLoading={feedbackLoading}
+            isMan={true}
           />
         </>
       )}
@@ -81,4 +82,4 @@ const PairRoutinContainer = () => {
   );
 };
 
-export default PairRoutinContainer;
+export default PairRoutinPage;

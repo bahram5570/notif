@@ -3,4 +3,5 @@ export interface RadioButtonProps {
   isChecked: boolean;
   isDisable?: boolean;
   onClick?: () => void;
+  isMan?: boolean;
 }
