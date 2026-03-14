@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import PartnerRadioButton from '@repo/core/components/partner/PartnerRadioButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import PartnerRadioButton from '@components/pages/mainRoutes/__partner__/PartnerPage/PartnerModals/PartnerRadioButton';
 
 import useChangeType from './__hooks__/useChangeType';
 import { TypeRelationshipPropsType } from './type';
