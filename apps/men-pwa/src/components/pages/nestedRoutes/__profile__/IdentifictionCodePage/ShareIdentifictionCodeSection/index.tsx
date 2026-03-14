@@ -12,7 +12,7 @@ const ShareIdentifictionCodeSection = ({ interfaceShareText }: ShareIdentifictio
 
   const clickHandler = () => {
     callEvent('InviteFromShare');
-    handleShare('interfaceShareText');
+    handleShare(String(interfaceShareText));
   };
 
   return (

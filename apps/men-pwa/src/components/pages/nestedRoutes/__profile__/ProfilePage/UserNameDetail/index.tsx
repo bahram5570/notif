@@ -42,12 +42,12 @@ const UserNameDetail = ({ avatarImage, defaultAvatarImage, canDeleteAvatar, name
           <CustomImage src={avatarImage || defaultAvatarImage} width={90} height={90} className="!object-cover" />
         </div>
 
-        <div className="absolute top-[60%] left-3/4 z-30 select-none">
-          <div className="w-6 h-6 flex justify-center items-center rounded-full cursor-pointer bg-impo_Black opacity-50">
+        <div className="absolute top-[65%] left-3/4 z-30 select-none">
+          <div className="w-8 h-8 flex justify-center items-center rounded-full cursor-pointer bg-impo_Black">
             {canDeleteAvatar ? (
-              <EditIcon className="w-3 h-3 fill-impo_White" />
+              <EditIcon className="w-4 h-4 fill-impo_White" />
             ) : (
-              <UploadIcon className="w-3 h-3 fill-impo_White" />
+              <UploadIcon className="w-4 h-4 fill-impo_White" />
             )}
           </div>
         </div>

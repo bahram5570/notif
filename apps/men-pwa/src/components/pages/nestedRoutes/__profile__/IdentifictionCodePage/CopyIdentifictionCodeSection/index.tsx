@@ -14,7 +14,7 @@ const CopyIdentifictionCodeSection = ({ interfaceCode, copyToClipboard }: CopyId
         id="InviteFromCopyCode"
       >
         <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Title_Medium">
-          {'351351'}
+          {String(interfaceCode)}
         </CustomTypography>
         <CopyIcon className="w-8 h-8 stroke-impo_Surface_Outline" />
       </div>
