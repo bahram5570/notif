@@ -2,13 +2,13 @@ import { PartnerMemoryItem } from '@repo/core/components/partner/PartnerMemoryIt
 
 import { MemoryListPropsType } from './type';
 
-const MemoryList = ({ memories }: MemoryListPropsType) => {
+const MemoryList = ({ memories, partName }: MemoryListPropsType) => {
   return (
     <div>
       {memories.map((memory) => {
         return (
           <div key={memory.id} className="divide-y-2">
-            <PartnerMemoryItem {...memory} isMan={true} />
+            <PartnerMemoryItem {...memory} isMan={true} partName={partName} />
           </div>
         );
       })}

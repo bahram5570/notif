@@ -11,12 +11,17 @@ import MemoryContainerSkeleton from './MemoryContainerSkeleton';
 import MemoryData from './MemoryData';
 import NotData from './NotData';
 import useGetData from './__hooks__/useGetData';
+import useGetPartnerName from './__hooks__/useGetPartnerName';
 
 const MemoryPage = () => {
   const { isLoading, memoriesData, pageNo, totalCount, updatePageNo } = useGetData();
+  const { partnerDetail } = useGetPartnerName();
 
   const hasData = memoriesData && memoriesData.memories.length > 0;
   const containerRef = useRef<HTMLDivElement | null>(null);
+
+  const firstLoading = isLoading && pageNo === 0;
+
   return (
     <>
       <MainPageLayoutHeader rightElement="BackButton" rightElementScript="ثبت خاطره" leftElement1="Profile" />
@@ -25,7 +30,6 @@ const MemoryPage = () => {
         style={{ paddingTop: HEADER_HEIGHT }}
         ref={containerRef}
       >
-        {isLoading && <MemoryContainerSkeleton />}
         <InfiniteScrollContainer
           totalCount={totalCount}
           pageNo={pageNo}
@@ -33,7 +37,12 @@ const MemoryPage = () => {
           callBack={updatePageNo}
           scrollContainerRef={containerRef}
         >
-          {!hasData ? <NotData /> : <MemoryData memories={memoriesData.memories} />}
+          {firstLoading && <MemoryContainerSkeleton />}
+          {!hasData ? (
+            <NotData partName={partnerDetail?.name} />
+          ) : (
+            <MemoryData memories={memoriesData.memories} partName={partnerDetail?.name} />
+          )}
         </InfiniteScrollContainer>
       </div>
     </>

@@ -84,10 +84,10 @@ export const actionRouteConverter = async (serverLink: string) => {
     case '/diet/item':
       result = `/protected/routin/routinItem?searchData=${encodeURIComponent(queries)}`;
       break;
-    case '/pairRoutine':
+    case '/routine':
       result = `/protected/pairRoutin?searchData=${encodeURIComponent(queries)}`;
       break;
-    case '/pairRoutine/item':
+    case '/routine/item':
       result = `/protected/pairRoutin/pairRoutinItem?searchData=${encodeURIComponent(queries)}`;
       break;
     case '/weight':

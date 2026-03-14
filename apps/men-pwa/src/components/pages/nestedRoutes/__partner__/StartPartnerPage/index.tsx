@@ -35,6 +35,7 @@ const StartPartnerPage = () => {
             isLoading={isLoading}
             partnerCode={userCodeInfo.code}
             callBackHandler={userCodeInfoHandler}
+            isMan={true}
           />
           <SharePartnerCode shareText={userCodeInfo.shareText} text="ارسال کد برای همدل" isMan={true} />
         </div>

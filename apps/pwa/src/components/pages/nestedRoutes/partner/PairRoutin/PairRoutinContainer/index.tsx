@@ -71,7 +71,7 @@ const PairRoutinContainer = () => {
           )}
 
           <FeedbackModal
-            title=" امیدواریم این مرحله واست مفید باشه، به این مرحله از روتین پوستی چه امتیازی میدی؟"
+            title=" امیدواریم این مرحله واست مفید باشه، به این مرحله از روتین  چه امتیازی میدی؟"
             onSubmit={rateHandler}
             isLoading={feedbackLoading}
           />

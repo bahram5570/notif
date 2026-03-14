@@ -41,3 +41,31 @@ export const addCommas = (n: number | string) => {
 export const addZero = (n: number | string) => {
   return ('0' + n).slice(-2);
 };
+
+export function convertToPersianOrdinal(number: number) {
+  const persianOrdinals = [
+    '',
+    'اول',
+    'دوم',
+    'سوم',
+    'چهارم',
+    'پنجم',
+    'ششم',
+    'هفتم',
+    'هشتم',
+    'نهم',
+    'دهم',
+    'یازدهم',
+    'دوازدهم',
+    'سیزدهم',
+    'چهاردهم',
+    'پانزدهم',
+    'شانزدهم',
+    'هفدهم',
+    'هجدهم',
+    'نوزدهم',
+    'بیستم',
+  ];
+
+  return persianOrdinals[number] || number.toString();
+}

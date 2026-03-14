@@ -10,20 +10,15 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { gregorianFarsiScriptDate, jalaaliScriptDate } from '@repo/core/utils/dates';
 
 import { useCulture } from '@repo/core/hooks/useCulture';
-import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import moment from 'moment-jalaali';
 
-import { PartnerDetailResponsePropsType } from '../MemoryPage/__hooks__/useGetPartnerName/type';
 import Comment from './Comment';
 import useGetData from './__hooks__/useGetData';
 
 const MemoryDetailPage = () => {
-  const { getQuery } = useCustomReactQuery(['partnerDetail']);
-
-  const partnerDetail = getQuery<PartnerDetailResponsePropsType>({ queryKey: ['partnerDetail'] });
   const [currentDate, setCurrentDate] = useState('');
-  const { memoryData, resteMemory } = useGetData();
+  const { memoryData, resteMemory, partnerName } = useGetData();
   const { culture } = useCulture();
 
   useEffect(() => {
@@ -57,7 +52,7 @@ const MemoryDetailPage = () => {
             <CustomImage src={memoryImage} />
             <div className="rounded-md py-1 px-4 absolute bottom-0 m-3 bg-impo_Blue_50 dark:bg-impo_Blue_900">
               <CustomTypography fontSize="Lable_Medium" className="text-impo_PrimaryMan_PrimaryMan">
-                {`ایجاد شده توسط ${!memoryData.fromMan ? partnerDetail?.name : 'شما'}`}
+                {`ایجاد شده توسط ${!memoryData.fromMan ? partnerName : 'شما'}`}
               </CustomTypography>
             </div>
           </div>
@@ -75,11 +70,7 @@ const MemoryDetailPage = () => {
           </div>
           {memoryData.textPartner && (
             <div className=" p-3">
-              <Comment
-                textPartner={memoryData.textPartner}
-                fromMan={memoryData.fromMan}
-                partnerName={partnerDetail?.name}
-              />
+              <Comment textPartner={memoryData.textPartner} fromMan={memoryData.fromMan} partnerName={partnerName} />
             </div>
           )}
 

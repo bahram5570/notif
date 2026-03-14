@@ -2,7 +2,7 @@ import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-// import { ChallengeResponseType } from '../__hooks__/useGetData/type';
+import { ChallengeResponseType } from '../__hooks__/useGetPartnerData/type';
 import Inputs from './Inputs';
 import useAvatar from './__hooks__/useAvatar';
 import useDelete from './__hooks__/useDelete';
@@ -12,18 +12,18 @@ const UploadImageModal = () => {
   const { editHandler } = useAvatar();
   const { getQuery, updateQuery } = useCustomReactQuery(['partner']);
   const { getQueryParams } = useQueryParamsHandler();
-  const partnerInfo = getQuery<any>({ queryKey: ['partner'] });
+  const partnerInfo = getQuery<ChallengeResponseType>({ queryKey: ['partner'] });
   const { deleteHandler } = useDelete({
     api: `profile/image/?AppVersion=${APP_VERSION || ''}`,
     onSuccess: () =>
-      updateQuery({ queryKey: ['partner'], payload: { ...partnerInfo, womanAvatar: '', canDeleteProfile: false } }),
+      updateQuery({ queryKey: ['partner'], payload: { ...partnerInfo, canDeleteProfile: false, manAvatar: '' } }),
   });
 
   const canDeleteImage = getQueryParams('canDeleteProfile');
 
   const { fileDataHandler, uploadImageLoading } = useFileUpload({
     onSuccess: (v: string) => {
-      updateQuery({ queryKey: ['partner'], payload: { ...partnerInfo, womanAvatar: v, canDeleteProfile: true } });
+      updateQuery({ queryKey: ['partner'], payload: { ...partnerInfo, manAvatar: v, canDeleteProfile: true } });
       editHandler({ fileName: v });
     },
 

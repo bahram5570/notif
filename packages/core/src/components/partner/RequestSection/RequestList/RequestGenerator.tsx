@@ -6,7 +6,7 @@ import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-// import { PartnerModalNameEnums } from '../../PartnerModals/enums';
+import { PartnerModalNameEnums } from '../PartnerModals/enums';
 import { RequestGeneratorTypeProps } from './type';
 
 const RequestGenerator = ({ item, isMan }: RequestGeneratorTypeProps) => {
@@ -15,24 +15,24 @@ const RequestGenerator = ({ item, isMan }: RequestGeneratorTypeProps) => {
   const isLoading = pageNavigationLoading === item.name;
 
   const onAcceptClickHandler = () => {
-    // (newQueryParamsHandler({
-    //   [MODAL_QUERY_NAME]: 'true',
-    //   name: PartnerModalNameEnums.Accept,
-    //   partnerName: item.name,
-    //   id: item.id,
-    // }),
-    //   pageNavigationHandler({ showProgressBar: true, id: 'Accept' }));
+    (newQueryParamsHandler({
+      [MODAL_QUERY_NAME]: 'true',
+      name: PartnerModalNameEnums.Accept,
+      partnerName: item.name,
+      id: item.id,
+    }),
+      pageNavigationHandler({ showProgressBar: true, id: 'Accept' }));
   };
 
   const onRejectClickHandler = () => {
-    // (newQueryParamsHandler({
-    //   [MODAL_QUERY_NAME]: 'true',
-    //   name: PartnerModalNameEnums.Reject,
-    //   partnerName: item.name,
-    //   id: item.id,
-    //   isRecv: item.isRecv ? String(item.isRecv) : '',
-    // }),
-    //   pageNavigationHandler({ showProgressBar: true, id: 'Reject' }));
+    (newQueryParamsHandler({
+      [MODAL_QUERY_NAME]: 'true',
+      name: PartnerModalNameEnums.Reject,
+      partnerName: item.name,
+      id: item.id,
+      isRecv: item.isRecv ? String(item.isRecv) : '',
+    }),
+      pageNavigationHandler({ showProgressBar: true, id: 'Reject' }));
   };
 
   return (
