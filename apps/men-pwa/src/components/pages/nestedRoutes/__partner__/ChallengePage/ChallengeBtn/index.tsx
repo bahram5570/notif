@@ -10,6 +10,7 @@ const ChallengeBtn = ({ answerValue, btn, id, question }: ChallengeBtnPropsType)
   const { submitLoading, submitHandler } = useSubmit({ id: id, btn: btn });
 
   const onClick = () => {
+    if (!answerValue.trim()) return;
     submitHandler({ questionText: question, text: answerValue });
   };
 
