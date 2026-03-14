@@ -25,9 +25,8 @@ const DeletePartnerModal = () => {
           <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
             از حذف همدلت مطمئنی؟
           </CustomTypography>
-
           <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
-            بعد از حذف همدلی کلیه اطلاعاتت (تاریخچه چالش ها، خاطره بازی، پیام ها) پاک میشه{' '}
+            { `بعد از حذف همدلی کلیه اطلاعاتت (تاریخچه چالش ها، خاطره بازی، پیام ها) پاک میشه`}
           </CustomTypography>
         </div>
 
@@ -35,7 +34,7 @@ const DeletePartnerModal = () => {
           <CustomButton
             onClick={deleteHandler}
             isLoading={isLoading}
-            className="!text-white bg-blue-500 !border-none h-10"
+            className="!text-white !bg-blue-500 !border-none h-10"
             fontSize="Lable_Large"
           >
             مطمئنم

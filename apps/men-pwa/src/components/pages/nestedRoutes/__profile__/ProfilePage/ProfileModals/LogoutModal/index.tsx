@@ -41,7 +41,7 @@ const LogoutModal = () => {
           isLoading={isLoading}
           fontSize="Lable_Large"
           onClick={logoutHandler}
-          className="!text-impo_Error_Error !bg-impo_Error_ErrorContainer !border-impo_Error_ErrorContainer"
+          className="!text-impo_White !bg-impo_Blue_300 !border-none"
         >
           خروج
         </CustomButton>
