@@ -19,7 +19,7 @@ const Message = ({ createTime, side, text, partnerAvatar }: MessagePropsType) =>
           </div>
         )}
         <div
-          className={`max-w-[250px] h-auto rounded-2xl ${side === SideEnum.Partner ? ' mb-4 border border-impo_Surface_SurfaceVariant' : 'mb-2'}  ${side === SideEnum.Self ? 'bg-[linear-gradient(110.42deg,#FFCEDD_3.32%,#F24F7A_99.1%)]' : 'bg-impo_Surface_SurfaceVariant'}`}
+          className={`max-w-[250px] h-auto rounded-2xl ${side === SideEnum.Partner ? ' mb-4 border border-impo_Surface_SurfaceVariant' : 'mb-2'}  ${side === SideEnum.Self ? 'bg-[linear-gradient(110.42deg,#a8befa_3.32%,#2e65bf_99.1%)]' : 'bg-impo_Surface_SurfaceVariant'}`}
         >
           <div className="flex flex-col gap-1 p-2">
             <CustomTypography

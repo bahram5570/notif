@@ -34,7 +34,7 @@ const Input = ({ submitHandler, onChange }: InputPropsType) => {
     >
       <TextareaInput
         placeholder="اینجا تایپ کنید"
-        className="outline-impo_PrimaryMan_PrimaryMan w-full"
+        className="outline-impo_PrimaryMan_PrimaryMan w-full rounded-full"
         rows={1}
         value={messageValue.text}
         onChangeHandler={onChangeHandler}

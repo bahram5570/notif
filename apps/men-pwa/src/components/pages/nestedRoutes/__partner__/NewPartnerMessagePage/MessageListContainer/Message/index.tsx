@@ -14,7 +14,7 @@ const Message = ({ createTime, side, text }: MessagePropsType) => {
       <div className="flex gap-1">
         <div
           style={{
-            background: `${side === SideEnum.Self ? 'linear-gradient(110.42deg, #FFCEDD 3.32%, #F24F7A 99.1%)' : ''}`,
+            background: `${side === SideEnum.Self ? 'linear-gradient(110.42deg,#c9d6fb_3.32%,#2e65bf_99.1%)' : ''}`,
           }}
           className={`max-w-[250px] h-auto rounded-2xl ${side === SideEnum.Partner ? ' mb-4 border border-impo_Surface_SurfaceVariant !bg-impo_Surface_SurfaceVariant' : 'mb-2'}`}
         >

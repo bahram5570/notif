@@ -3,19 +3,20 @@ import { useState } from 'react';
 import FileIcon from '@assets/shared/icons/Paper.svg';
 import CameraIcon from '@assets/shared/icons/camera.svg';
 import GalleryIcon from '@assets/shared/icons/gallery.svg';
-import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import imageCompression from 'browser-image-compression';
 
+import { CustomSpinner } from '../ui/CustomSpinner';
+import { CustomTypography } from '../ui/CustomTypography';
 import { FileInputTypes } from './enum';
 import { FileInputHandlerTypes, FileInputManagerPropsType } from './type';
 
-const FileInputManager = ({
-  ShowGalleryInput = true,
-  ShowCameraInput = true,
+export const FileInputManager = ({
   uploadImageLoading,
   fileDataHandler,
   ShowFileInput,
+  ShowGalleryInput = true,
+  ShowCameraInput = true,
+  isMan = false,
 }: FileInputManagerPropsType) => {
   const [activeInput, setActiveInput] = useState<string | null>(null);
 
@@ -64,7 +65,10 @@ const FileInputManager = ({
 
               <div className="w-12 h-12 border-[1px] border-impo_Surface_SurfaceVariant rounded-full flex justify-center items-center">
                 {uploadImageLoading && activeInput === FileInputTypes.CAMERA ? (
-                  <CustomSpinner size={20} className="border-impo_Primary_Primary" />
+                  <CustomSpinner
+                    size={20}
+                    className={`${isMan ? 'border-impo_PrimaryMan_PrimaryMan' : 'border-impo_Primary_Primary'}`}
+                  />
                 ) : (
                   <CameraIcon className="w-10 h-10 stroke-impo_Surface_Outline" />
                 )}
@@ -91,7 +95,10 @@ const FileInputManager = ({
 
               <div className="w-12 h-12 border-[1px] border-impo_Surface_SurfaceVariant rounded-full flex justify-center items-center">
                 {uploadImageLoading && activeInput === FileInputTypes.GALLERY ? (
-                  <CustomSpinner size={20} className="border-impo_Primary_Primary" />
+                  <CustomSpinner
+                    size={20}
+                    className={`${isMan ? 'border-impo_PrimaryMan_PrimaryMan' : 'border-impo_Primary_Primary'}`}
+                  />
                 ) : (
                   <GalleryIcon className="w-5 h-5 stroke-impo_Surface_Outline" />
                 )}
@@ -112,7 +119,10 @@ const FileInputManager = ({
 
               <div className="w-12 h-12 border-[1px] border-impo_Surface_SurfaceVariant rounded-full flex justify-center items-center">
                 {uploadImageLoading && activeInput === FileInputTypes.FILE ? (
-                  <CustomSpinner size={20} className="border-impo_Primary_Primary" />
+                  <CustomSpinner
+                    size={20}
+                    className={`${isMan ? 'border-impo_PrimaryMan_PrimaryMan' : 'border-impo_Primary_Primary'}`}
+                  />
                 ) : (
                   <FileIcon className="w-5 h-5 stroke-impo_Surface_Outline" />
                 )}
@@ -124,5 +134,3 @@ const FileInputManager = ({
     </>
   );
 };
-
-export default FileInputManager;

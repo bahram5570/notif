@@ -11,7 +11,7 @@ const ChallengeBanner = ({ bannerText, bannerTitle }: ChallengeBannerPropsType) 
         <CustomTypography fontSize="Body_Medium" className="text-impo_Black">
           {bannerTitle}
         </CustomTypography>
-        <CustomTypography fontSize="Title_Small" className="dark:text-impo_Pink_50 text-impo_Blue_900">
+        <CustomTypography fontSize="Title_Small" className="dark:text-impo_Blue_50 text-impo_Blue_900">
           {bannerText}
         </CustomTypography>
       </div>

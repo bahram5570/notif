@@ -33,7 +33,7 @@ const HistoryItem = (props: HistoryItemPropsType) => {
                   <CustomImage src={props.manAvatar} className="w-full h-full !object-cover border border-impo_White" />
                 </div>
               </div>
-              <CustomTypography fontSize="Lable_Medium" className="text-impo_Primary_Primary w-full text-center">
+              <CustomTypography fontSize="Lable_Medium" className="text-impo_PrimaryMan_PrimaryMan w-full text-center">
                 {props.title}
               </CustomTypography>
             </div>
@@ -48,8 +48,8 @@ const HistoryItem = (props: HistoryItemPropsType) => {
             </div>
           </div>
 
-          <div className="w-10 h-10 flex justify-center items-center rounded-full bg-impo_Primary_PrimaryContainer dark:bg-impo_Pink_800">
-            <CaretLeftIcon className="w-6 h-6 stroke-impo_Primary_Primary" />
+          <div className="w-10 h-10 flex justify-center items-center rounded-full bg-impo_PrimaryMan_PrimaryContainerMan">
+            <CaretLeftIcon className="w-6 h-6  stroke-impo_PrimaryMan_PrimaryMan" />
           </div>
         </div>
         <div>

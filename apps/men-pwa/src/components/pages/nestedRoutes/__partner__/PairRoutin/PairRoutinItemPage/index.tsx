@@ -37,7 +37,7 @@ const PairRoutinItemPage = () => {
         className=" w-full flex relative z-0 flex-col  gap-6  h-[100dvh]  px-4  pb-6"
         style={{ paddingTop: HEADER_HEIGHT + 16 }}
       >
-        <div className="w-full h-[360px] absolute top-0 left-0 right-0 bg-gradient-to-b from-[#FEE8E6] to-[#FEE8E600] -z-10 dark:bg-none" />
+        <div className="w-full h-[360px] absolute top-0 left-0 right-0 bg-gradient-to-b from-[#c9d6fb] to-[#FEE8E600] -z-10 dark:bg-none" />
 
         {isLoading && <RoutinItemSkeleton />}
 
@@ -64,9 +64,9 @@ const PairRoutinItemPage = () => {
                     onClick={onSeenHandler}
                     isDisable={data.status === ProgramWidgetItemStatusEnum.Compelet}
                     isLoading={seenLoading}
-                    className="bg-impo_Primary_PrimaryContainer text-impo_Primary_Primary border-impo_Primary_PrimaryContainer"
+                    className="!bg-impo_PrimaryMan_PrimaryContainerMan  !border-impo_PrimaryMan_PrimaryContainerMan"
                   >
-                    <CustomTypography fontSize="Lable_Large" className="text-impo_Primary_Primary">
+                    <CustomTypography fontSize="Lable_Large" className="text-impo_PrimaryMan_PrimaryMan">
                       {data.compeletButtonLabel}
                     </CustomTypography>
                   </CustomButton>

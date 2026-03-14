@@ -15,7 +15,7 @@ const NotData = ({ partName }: NotDataPropsType) => {
 
   return (
     <div className="p-3 flex flex-col gap-4">
-      <CustomImage src="/assets/images/memory.webp" style={{ paddingTop: HEADER_HEIGHT }} />
+      <CustomImage src="/assets/images/memory.webp" style={{ paddingTop: HEADER_HEIGHT - 60 }} />
       <div className="flex flex-col p-3 items-center gap-1">
         <CustomTypography fontSize="Headline_Small" className="text-impo_Neutral_OnBackground text-center ">
           خاطره بازی روزهای زیبا

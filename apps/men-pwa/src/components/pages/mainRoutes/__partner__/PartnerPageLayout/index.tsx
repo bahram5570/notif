@@ -15,7 +15,7 @@ const PartnerPageLayout = ({ children, coverImage, isValid }: PartnerPageLayoutP
       <BackgroundImage isValid={isValid} coverImage={coverImage} />
       <div className={`relative flex flex-col px-4 ${coverImage ? 'gap-28' : 'gap-20'} z-10`}>
         <>
-          <ProfileButton />
+          <ProfileButton coverImage={coverImage} />
           {children}
         </>
       </div>

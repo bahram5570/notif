@@ -30,7 +30,10 @@ export const RefreshPartnerCode = (props: RefreshPartnerCodePropsType) => {
             </div>
           )}
           {!props.isLoading && props.partnerCode && (
-            <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground px-2">
+            <CustomTypography
+              fontSize="Title_Small"
+              className={`${props.isMan && 'text-impo_PrimaryMan_PrimaryMan'} text-impo_Neutral_OnBackground px-2`}
+            >
               {props.partnerCode}
             </CustomTypography>
           )}

@@ -23,7 +23,7 @@ const Avatar = ({ name, src, hasPreview, icon, onClick }: AvatarPropsType) => {
 
         {icon && (
           <div className="absolute top-[60%] left-3/4 z-30 select-none">
-            <div className="w-8 h-8 flex justify-center items-center rounded-full cursor-pointer opacity-50 dark:bg-impo_Neutral_Background bg-impo_Black dark:opacity-100">
+            <div className="w-8 h-8 flex justify-center items-center rounded-full cursor-pointer dark:bg-impo_Neutral_Background bg-impo_Black dark:opacity-100">
               {icon}
             </div>
           </div>

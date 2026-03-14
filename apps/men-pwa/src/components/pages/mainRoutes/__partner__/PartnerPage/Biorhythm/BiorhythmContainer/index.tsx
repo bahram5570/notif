@@ -1,3 +1,4 @@
+import ArrowIcon from '@assets/shared/icons/calendarArrow.svg';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
@@ -32,9 +33,10 @@ const BiorhythmContainer = ({ description, icon, title }: BiorhythmContainerProp
         <CustomImage src={icon} className="w-12 h-12" />
 
         <div className="flex flex-row-reverse gap-1">
-          <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+          <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground whitespace-nowrap">
             {title}
           </CustomTypography>
+          <ArrowIcon className="w-4 h-4 stroke-impo_Surface_Outline" />
         </div>
       </div>
     </div>

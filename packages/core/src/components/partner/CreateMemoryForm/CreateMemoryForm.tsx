@@ -42,7 +42,7 @@ export const CreateMemoryForm = ({ inputValue, onChangeHandler, isMan }: CreateM
         name="text"
       />
 
-      <UploadModal fileDataHandler={fileDataHandler} uploadImageLoading={uploadImageLoading} />
+      <UploadModal fileDataHandler={fileDataHandler} uploadImageLoading={uploadImageLoading} isMan={isMan} />
     </>
   );
 };

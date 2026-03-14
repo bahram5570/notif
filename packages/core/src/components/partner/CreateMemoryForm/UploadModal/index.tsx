@@ -1,9 +1,9 @@
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
-import FileInputManager from '../../../FileInputManager';
+import { FileInputManager } from '../../../FileInputManager';
 import { UploadModalPropsType } from './type';
 
-const UploadModal = ({ fileDataHandler, uploadImageLoading }: UploadModalPropsType) => {
+const UploadModal = ({ fileDataHandler, uploadImageLoading, isMan }: UploadModalPropsType) => {
   return (
     <CustomModal isSlidingMode>
       <div className=" flex flex-col gap-3">
@@ -11,6 +11,7 @@ const UploadModal = ({ fileDataHandler, uploadImageLoading }: UploadModalPropsTy
           ShowFileInput={false}
           fileDataHandler={fileDataHandler}
           uploadImageLoading={uploadImageLoading}
+          isMan={isMan}
         />
       </div>
     </CustomModal>

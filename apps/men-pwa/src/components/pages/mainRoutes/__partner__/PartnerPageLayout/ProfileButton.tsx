@@ -3,7 +3,9 @@ import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
-const ProfileButton = () => {
+import { ProfileButtonPropsType } from './type';
+
+const ProfileButton = ({ coverImage }: ProfileButtonPropsType) => {
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
   let path = '/protected/profile';
 
@@ -21,7 +23,9 @@ const ProfileButton = () => {
             {pageNavigationLoading === 'profile' ? (
               <CustomSpinner size={28} className="border-impo_Surface_Outline" />
             ) : (
-              <ProfileIcon className="w-8 h-full stroke-impo_Surface_Outline" />
+              <ProfileIcon
+                className={`w-8 h-full stroke-impo_Surface_Outline ${coverImage && 'stroke-impo_Neutral_OnBackground'}`}
+              />
             )}
           </div>
         </div>
