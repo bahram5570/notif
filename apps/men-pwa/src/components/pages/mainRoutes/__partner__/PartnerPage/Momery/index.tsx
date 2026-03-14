@@ -16,11 +16,12 @@ const Memory = ({ memory, valid }: MemeryPropsType) => {
   const link = valid ? '/protected/createMemory' : '/protected/startPartner';
 
   const onClick = () => {
+    if (!valid) return;
     pageNavigationHandler({ id: 'memoryList', showProgressBar: true, linkTo: '/protected/memory' });
   };
 
   return (
-    <div className="flex flex-col gap-4 py-4    items-end ">
+    <div className="flex flex-col gap-4    items-end ">
       <div className="flex justify-between items-end ">
         <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           {memory.cardTitle}

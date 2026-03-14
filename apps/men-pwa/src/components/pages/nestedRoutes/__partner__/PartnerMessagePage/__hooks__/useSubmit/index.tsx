@@ -15,6 +15,8 @@ const useSubmit = () => {
   });
 
   const submitHandler = (text: string) => {
+    if (text.trim() === '') return;
+
     const payload = {
       title: '',
       text,

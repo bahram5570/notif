@@ -1,6 +1,6 @@
 import { useRouter } from 'next/navigation';
 
-import TextareaInput from './TextareaInput';
+import { TextareaInput } from './TextareaInput';
 import UploadInput from './UploadInput';
 import UploadModal from './UploadModal';
 import useFileUpload from './__hooks__/useFileUpload';
@@ -42,7 +42,7 @@ export const CreateMemoryForm = ({ inputValue, onChangeHandler, isMan }: CreateM
         name="text"
       />
 
-      <UploadModal fileDataHandler={fileDataHandler} uploadImageLoading={uploadImageLoading} />
+      <UploadModal fileDataHandler={fileDataHandler} uploadImageLoading={uploadImageLoading} isMan={isMan} />
     </>
   );
 };

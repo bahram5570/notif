@@ -19,7 +19,7 @@ const NotRequestData = () => {
         link="/protected/startPartner"
         onClick={() => callEvent('Pair_From_List')}
         id="not-request-data-link"
-        className=" bg-impo_PrimaryMan_PrimaryMan text-impo_White"
+        className=" !bg-impo_PrimaryMan_PrimaryMan text-impo_White"
       />
     </div>
   );

@@ -8,7 +8,7 @@ const useChangeType = () => {
 
   const changeTypeHandler = (type: number) => {
     const payload = {
-      type,
+      distanceType: type,
     };
 
     callApi(payload);

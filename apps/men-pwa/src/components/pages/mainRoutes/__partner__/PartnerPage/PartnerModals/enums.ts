@@ -4,4 +4,5 @@ export enum PartnerModalNameEnums {
   UploadImage = 'UploadImage',
   UploadBackgroundImage = 'UploadBackgroundImage',
   TypeDistance = 'TypeDistance',
+  Biorhthm = 'Biorhthm',
 }

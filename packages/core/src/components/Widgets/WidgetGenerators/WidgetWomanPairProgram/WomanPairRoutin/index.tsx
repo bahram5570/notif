@@ -32,7 +32,7 @@ const WomanPairRoutin = (props: WomanPairRoutinPropsType) => {
       </div>
 
       <CustomButton
-        className="mt-auto"
+        className={`mt-auto ${props.isMan && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
         fontSize="Lable_Large"
         onClick={() => actionHandler(props.button.action)}
         isDisable={props.button?.action.actionType === ActionTypeEnum.None}

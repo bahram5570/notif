@@ -3,18 +3,19 @@ import { useEffect, useState } from 'react';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
-import { MEMORY_PAGE_SIZE } from './constants';
+import { MEMORY_PAGE_SIZE, PAGE_NO } from './constants';
 import { MemoriesDataType, ResponsePropsType } from './type';
 
 const useGetData = () => {
   const [pageNo, setPageNo] = useState(0);
   const [totalCount, setTotalCount] = useState(0);
 
-  const { newQuery, updateQuery, getQuery } = useCustomReactQuery(['meories']);
+  const { newQuery, updateQuery, getQuery, removeQuery } = useCustomReactQuery(['meories']);
 
   const memoriesData = getQuery<MemoriesDataType>({ queryKey: ['meories'] });
 
   const successHandler = (v: ResponsePropsType) => {
+    sessionStorage.setItem(PAGE_NO, JSON.stringify(pageNo));
     setTotalCount(v.count);
 
     if (memoriesData) {
@@ -39,6 +40,13 @@ const useGetData = () => {
       callApi();
     }
   }, [pageNo, apiLoading]);
+
+  useEffect(() => {
+    removeQuery({ queryKey: ['meories'] });
+    return () => {
+      sessionStorage.removeItem(PAGE_NO);
+    };
+  }, []);
 
   const updatePageNo = () => {
     setPageNo((prev) => prev + 1);

@@ -8,7 +8,7 @@ const PartnerCard = ({ partner, valid }: PartnerCardPropsType) => {
   const backgroundColor = partner.cycleCard?.gradient.length > 0 && generateLinearGradient(partner.cycleCard?.gradient);
 
   return (
-    <div className="flex flex-col gap-4 py-3  items-end ">
+    <div className="flex flex-col gap-4   items-end ">
       {partner.cycleTitle && (
         <div className="flex justify-between items-end ">
           <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
@@ -28,13 +28,13 @@ const PartnerCard = ({ partner, valid }: PartnerCardPropsType) => {
             <div className="flex flex-col gap-2 items-end">
               <CustomTypography
                 fontSize="Body_Medium"
-                className={` text-center ${valid ? 'text-impo_White' : 'text-impo_Black'}`}
+                className={` text-center ${!valid ? 'text-impo_White' : 'text-impo_Black'}`}
               >
                 {partner.cycleCard.title}
               </CustomTypography>
               <CustomTypography
                 fontSize="Headline_Small"
-                className={` text-center ${valid ? 'text-impo_White' : 'text-impo_Black'}`}
+                className={` text-center ${!valid ? 'text-impo_White' : 'text-impo_Black'}`}
               >
                 {partner.cycleCard.subTitle}
               </CustomTypography>

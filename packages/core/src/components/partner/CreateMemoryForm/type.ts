@@ -6,6 +6,7 @@ export type TextareaInputPropsType = {
   placeholder: string;
   rows: number;
   name: string;
+  className?: string;
 };
 
 export type InputValueType = {
