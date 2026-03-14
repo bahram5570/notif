@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import PartnerRadioButton from '@repo/core/components/partner/PartnerRadioButton';
+import { PartnerRadioButton } from '@repo/core/components/partner/PartnerRadioButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useChangeType from './__hooks__/useChangeType';
@@ -27,7 +27,7 @@ const TypeRelationship = ({ distanceType }: TypeRelationshipPropsType) => {
           </CustomTypography>
         </div>
 
-        <PartnerRadioButton onChange={changeValueHandler} value={distanceTypeValue} />
+        <PartnerRadioButton isMan={true} onChange={changeValueHandler} value={distanceTypeValue} />
       </div>
     </div>
   );
