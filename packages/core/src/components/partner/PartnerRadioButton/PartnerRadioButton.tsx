@@ -1,10 +1,10 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { CustomRadioButton } from '../../../../ui/CustomRadioButton';
+import { CustomRadioButton } from '../../ui/CustomRadioButton';
 import { LIST_LABEL } from './constants';
 import { PartnerRadioButtonPropsType } from './type';
 
-const PartnerRadioButton = ({ onChange, value, isMan }: PartnerRadioButtonPropsType) => {
+export const PartnerRadioButton = ({ onChange, value, isMan }: PartnerRadioButtonPropsType) => {
   return (
     <div className="flex flex-col gap-2 items-end ">
       {LIST_LABEL.map((item, index) => {
@@ -26,5 +26,3 @@ const PartnerRadioButton = ({ onChange, value, isMan }: PartnerRadioButtonPropsT
     </div>
   );
 };
-
-export default PartnerRadioButton;
