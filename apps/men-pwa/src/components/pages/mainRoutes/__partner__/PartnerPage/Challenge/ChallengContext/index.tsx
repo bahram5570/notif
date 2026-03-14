@@ -30,7 +30,7 @@ const ChallengContext = ({ card, valid }: ChallengContextPropsType) => {
           link={buttonLinkHandler(card.link)}
           onClick={() => callEvent('Pair_TAB')}
           id={`Challenge-${card.btnText}`}
-          className=" bg-impo_PrimaryMan_PrimaryMan text-impo_White"
+          className=" !bg-impo_PrimaryMan_PrimaryMan text-impo_White"
         />
       )}
     </div>

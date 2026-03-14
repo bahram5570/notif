@@ -17,7 +17,7 @@ const AvatarContainer = (props: AvatarContainerPropsType) => {
   const handleClick = () => {
     (newQueryParamsHandler({
       [MODAL_QUERY_NAME]: 'true',
-      name: PartnerModalNameEnums.UploadImage,
+      partnerModal: PartnerModalNameEnums.UploadImage,
       canDeleteProfile: String(canDeleteProfile),
     }),
       pageNavigationHandler({
@@ -35,9 +35,9 @@ const AvatarContainer = (props: AvatarContainerPropsType) => {
         hasPreview={valid}
         icon={
           canDeleteProfile ? (
-            <EditIcon className="w-3 h-3 !fill-impo_White" />
+            <EditIcon className="w-4 h-4 !fill-impo_White" />
           ) : (
-            <UploadIcon className="w-3 h-3 !fill-impo_White" />
+            <UploadIcon className="w-4 h-4 !fill-impo_White" />
           )
         }
         onClick={handleClick}

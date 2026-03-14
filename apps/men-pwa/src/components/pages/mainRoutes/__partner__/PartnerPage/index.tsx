@@ -5,6 +5,7 @@ import { RequestSection } from '@repo/core/components/partner/RequestSection';
 
 import PartnerPageLayout from '../PartnerPageLayout';
 import AvatarContainer from './AvatarContainer';
+import Biorhythm from './Biorhythm';
 import Challenge from './Challenge';
 import Memory from './Momery';
 import NotRequestData from './NotRequestData';
@@ -21,26 +22,32 @@ const PartnerPage = () => {
       {isLoading && !data && <PartnerContainerSkeleton />}
       {!isLoading && data && (
         <PartnerPageLayout coverImage={data.coverImage} isValid={data.valid}>
-          <div className=" rounded-3xl  relative bg-impo_Neutral_Background">
-            <AvatarContainer {...data} />
-            <Challenge button={data.button} card={data.card} valid={data.valid} />
+          <div className="flex flex-col gap-6">
+            <div className=" rounded-3xl  relative bg-impo_Neutral_Background">
+              <AvatarContainer {...data} />
+              <Challenge button={data.button} card={data.card} valid={data.valid} />
+            </div>
+
+            {!data.valid && <RequestSection element={<NotRequestData />} isMan={true} />}
+
+            {data.partner.cycleCard.title || data.partner.cycleCard.image ? (
+              <PartnerCard partner={data.partner} valid={data.valid} />
+            ) : null}
+
+            {data.valid && (
+              <>
+                <div className="flex flex-col">
+                  {data.manWidgets.map((widget, index) => (
+                    <WidgetGenerators {...widget} key={index} />
+                  ))}
+                </div>
+                {data.bioRhythemWidget && <Biorhythm bioRhythemWidget={data.bioRhythemWidget} />}
+              </>
+            )}
+
+            <Memory memory={data.memory} valid={data.valid} />
           </div>
 
-          {!data.valid && <RequestSection element={<NotRequestData />} isMan={true} />}
-
-          {data.partner.cycleCard.title || data.partner.cycleCard.image ? (
-            <PartnerCard partner={data.partner} valid={data.valid} />
-          ) : null}
-
-          {data.valid && (
-            <div className="flex flex-col">
-              {data.manWidgets.map((widget, index) => (
-                <WidgetGenerators {...widget} key={index} />
-              ))}
-            </div>
-          )}
-
-          <Memory memory={data.memory} valid={data.valid} />
           <PartnerModals />
         </PartnerPageLayout>
       )}

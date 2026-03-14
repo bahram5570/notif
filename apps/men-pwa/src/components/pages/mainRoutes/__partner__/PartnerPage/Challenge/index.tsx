@@ -23,7 +23,11 @@ const Challenge = ({ card, valid, button }: ChallengePropsType) => {
         <>
           <LinkButtonGroup button={button} valid={valid} />
           <div className=" mt-2">
-            <CustomButton fontSize="Lable_Large" onClick={clickHandler}>
+            <CustomButton
+              fontSize="Lable_Large"
+              className="!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan"
+              onClick={clickHandler}
+            >
               گفتگو با همدل
             </CustomButton>
           </div>

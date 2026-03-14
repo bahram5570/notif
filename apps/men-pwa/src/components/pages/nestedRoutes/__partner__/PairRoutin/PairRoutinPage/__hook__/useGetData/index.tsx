@@ -4,6 +4,7 @@ import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
+import { SEARCH_DATA } from '../../constant';
 import { PairRoutinResponsive } from './type';
 
 const useGetData = () => {
@@ -30,6 +31,7 @@ const useGetData = () => {
 
   useEffect(() => {
     if (api.length > 0) {
+      sessionStorage.setItem(SEARCH_DATA, JSON.stringify(searchData));
       callApi();
     }
   }, [api]);

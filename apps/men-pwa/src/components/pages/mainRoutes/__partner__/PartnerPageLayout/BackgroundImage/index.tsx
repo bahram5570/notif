@@ -17,7 +17,7 @@ const BackgroundImage = ({ isValid, coverImage }: BackgroundImagePropsType) => {
   const onClick = () => {
     (newQueryParamsHandler({
       [MODAL_QUERY_NAME]: 'true',
-      name: PartnerModalNameEnums.UploadBackgroundImage,
+      partnerModal: PartnerModalNameEnums.UploadBackgroundImage,
       canDeleteImage: String(canDeleteImage),
     }),
       pageNavigationHandler({ showProgressBar: true, id: 'UploadBackgroundImage' }));
