@@ -5,6 +5,7 @@ import { DOWNLOAD_APP_SECTION_ID } from '@components/DownloadApp/DownloadAppWome
 import CustomButton from '@components/ui/CustomButton';
 import CustomLink from '@components/ui/CustomLink';
 
+import BannerDlPair from '../BannerDlPair';
 import HeaderTheme from '../HeaderTheme';
 import HeaderDesktopLinks from './HeaderDesktopLinks';
 
@@ -15,6 +16,7 @@ const HeaderDesktop = () => {
 
   return (
     <>
+      <BannerDlPair mobile={false} />
       <div
         className="
                     relative 

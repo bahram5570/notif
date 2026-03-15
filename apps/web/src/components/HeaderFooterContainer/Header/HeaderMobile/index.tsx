@@ -7,6 +7,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 
 import CustomLink from '@components/ui/CustomLink';
 
+import BannerDlPair from '../BannerDlPair';
 import HeaderTheme from '../HeaderTheme';
 import HeaderMobileLInks from './HeaderMobileLInks';
 import useIsOpen from './__hooks__/useIsOpen';
@@ -17,6 +18,8 @@ const HeaderMobile = () => {
 
   return (
     <>
+      <BannerDlPair mobile={true} />
+
       <div
         style={{ height: HEADER_MOBILE_HEIGHT }}
         className="w-full pl-4 pr-6 flex items-center justify-between border-b-[1px] border-b-impo_Surface_SurfaceVariant bg-impo_OnBlack"

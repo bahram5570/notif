@@ -9,7 +9,7 @@ const HeaderFooterContainer = ({ children, className, isArticlePage, hasFooterLi
     <>
       <Header />
 
-      <div className={`relative w-full max-w-full min-h-[100dvh] pb-[200px] md:pb-[16px] ${className}`}>
+      <div className={`relative w-full max-w-full min-h-[100dvh] pb-[200px] md:pb-[16px] pt-[50px] ${className}`}>
         <main className="w-full flex flex-col items-center">
           <>{children}</>
         </main>
