@@ -13,10 +13,7 @@ const Message = ({ createTime, side, text }: MessagePropsType) => {
     <div className={`flex flex-col gap-4  ${side === SideEnum.Partner ? 'items-start ml-4' : 'items-end mr-4'}`}>
       <div className="flex gap-1">
         <div
-          style={{
-            background: `${side === SideEnum.Self ? 'linear-gradient(110.42deg,#c9d6fb_3.32%,#2e65bf_99.1%)' : ''}`,
-          }}
-          className={`max-w-[250px] h-auto rounded-2xl ${side === SideEnum.Partner ? ' mb-4 border border-impo_Surface_SurfaceVariant !bg-impo_Surface_SurfaceVariant' : 'mb-2'}`}
+          className={`max-w-[250px] h-auto rounded-2xl ${side === SideEnum.Partner ? ' mb-4 border border-impo_Surface_SurfaceVariant !bg-impo_Surface_SurfaceVariant' : 'mb-2'} ${side === SideEnum.Self ? 'bg-[linear-gradient(110.42deg,#a8befa_3.32%,#2e65bf_99.1%)]' : 'bg-impo_Surface_SurfaceVariant'}`}
         >
           <div className="flex flex-col gap-1 p-2">
             <CustomTypography
