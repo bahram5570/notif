@@ -29,6 +29,12 @@ type MemoryType = {
   title: string;
 };
 
+type HintType = {
+  buttonText: string;
+  link: string;
+  text: string;
+};
+
 type PartnerType = {
   cycleEnable: boolean;
   cycleTitle: string;
@@ -42,7 +48,7 @@ type PartnerType = {
   };
   hintTitle: string;
   hintEnable: boolean;
-  hints: [];
+  hints: HintType[];
 };
 
 type BioType = {

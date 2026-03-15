@@ -1,8 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
-
-import { MainPageLayoutHeader } from '@repo/core/components/MainPageLayout';
+import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
@@ -18,24 +16,23 @@ const MemoryPage = () => {
   const { partnerDetail } = useGetPartnerName();
 
   const hasData = memoriesData && memoriesData.memories.length > 0;
-  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const firstLoading = isLoading && pageNo === 0;
 
   return (
     <>
-      <MainPageLayoutHeader rightElement="BackButton" rightElementScript="ثبت خاطره" leftElement1="Profile" />
-      <div
-        className="flex flex-col gap-5 px-4 min-h-[100dvh] "
-        style={{ paddingTop: HEADER_HEIGHT }}
-        ref={containerRef}
+      <MainPageLayout
+        rightElement="BackButton"
+        rightElementScript="خاطره بازی"
+        paddingTop={!hasData ? 0 : HEADER_HEIGHT + 16}
+        leftElement1="Profile"
       >
         <InfiniteScrollContainer
           totalCount={totalCount}
           pageNo={pageNo}
           isLoading={isLoading}
           callBack={updatePageNo}
-          scrollContainerRef={containerRef}
+          height={'100dvh'}
         >
           {firstLoading && <MemoryContainerSkeleton />}
           {!hasData ? (
@@ -44,7 +41,7 @@ const MemoryPage = () => {
             <MemoryData memories={memoriesData.memories} partName={partnerDetail?.name} />
           )}
         </InfiniteScrollContainer>
-      </div>
+      </MainPageLayout>
     </>
   );
 };

@@ -43,7 +43,7 @@ const RequestGenerator = ({ item, isMan }: RequestGeneratorTypeProps) => {
         </CustomTypography>
 
         <CustomImage
-          src={item.image || '/assets/images/man.webp'}
+          src={item.image || '/assets/shared/images/avatar_partner_girl.webp'}
           width="48px"
           height="48px"
           className="rounded-full"

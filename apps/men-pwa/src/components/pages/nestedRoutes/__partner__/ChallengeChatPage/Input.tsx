@@ -10,7 +10,7 @@ import { MessageItemType } from './__hooks__/useMessageData/type';
 import { initailMessageValue } from './constants';
 import { InputPropsType } from './type';
 
-const Input = ({ submitHandler, onChange }: InputPropsType) => {
+const Input = ({ submitHandler, onChange, isLoading }: InputPropsType) => {
   const [messageValue, setMessageValue] = useState<MessageItemType>(initailMessageValue);
 
   const onClick = () => {
@@ -47,6 +47,7 @@ const Input = ({ submitHandler, onChange }: InputPropsType) => {
           cursor: !messageValue ? 'not-allowed' : 'pointer',
         }}
         onClick={onClick}
+        isDisable={isLoading}
       >
         <PaperPlaneRightIcon
           className={`w-6 h-6 ${!messageValue.text ? 'fill-impo_Surface_OutlineVariant' : 'fill-impo_PrimaryMan_OnPrimaryMan'}`}

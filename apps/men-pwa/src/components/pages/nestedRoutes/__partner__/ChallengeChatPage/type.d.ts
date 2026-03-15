@@ -1,6 +1,7 @@
 export type InputPropsType = {
   submitHandler: (text: string) => void;
   onChange: (v: ItemPropsType) => void;
+  isLoading: boolean;
 };
 
 export type ItemPropsType = {

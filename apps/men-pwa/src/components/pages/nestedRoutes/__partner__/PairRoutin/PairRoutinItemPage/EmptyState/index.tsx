@@ -14,7 +14,7 @@ const EmptyState = () => {
 
   return (
     <div className="p-4 flex flex-col gap-4">
-      <CustomImage src="/assets/images/empty state.webp" />
+      <CustomImage src="/assets/shared/images/empty state.webp" />
       <div className="flex justify-center items-center">
         <CustomButton
           onClick={onClick}

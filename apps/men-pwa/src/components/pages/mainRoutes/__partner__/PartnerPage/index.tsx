@@ -7,6 +7,7 @@ import PartnerPageLayout from '../PartnerPageLayout';
 import AvatarContainer from './AvatarContainer';
 import Biorhythm from './Biorhythm';
 import Challenge from './Challenge';
+import HintCard from './HintCard';
 import Memory from './Momery';
 import NotRequestData from './NotRequestData';
 import PartnerCard from './PartnerCard';
@@ -34,8 +35,13 @@ const PartnerPage = () => {
               <PartnerCard partner={data.partner} valid={data.valid} />
             ) : null}
 
+            {}
+
             {data.valid && (
               <>
+                {data.partner.hints.length > 0 && (
+                  <HintCard hintTitle={data.partner.hintTitle} hints={data.partner.hints} />
+                )}
                 <div className="flex flex-col">
                   {data.manWidgets.map((widget, index) => (
                     <WidgetGenerators {...widget} key={index} />

@@ -9,6 +9,7 @@ import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { gregorianFarsiScriptDate, jalaaliScriptDate } from '@repo/core/utils/dates';
 
+import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useCulture } from '@repo/core/hooks/useCulture';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import moment from 'moment-jalaali';
@@ -44,7 +45,12 @@ const MemoryDetailPage = () => {
   const memoryImage = memoryData?.fileName || '/assets/shared/images/partner.webp';
 
   return (
-    <MainPageLayout rightElement="BackButton" rightElementScript="مرور خاطرات" leftElement1="Profile">
+    <MainPageLayout
+      rightElement="BackButton"
+      rightElementScript="مرور خاطرات"
+      leftElement1="Profile"
+      paddingBottom={FOOTER_HEIGHT}
+    >
       {memoryData && (
         <>
           <DateHeaderSection currentDate={currentDate} />

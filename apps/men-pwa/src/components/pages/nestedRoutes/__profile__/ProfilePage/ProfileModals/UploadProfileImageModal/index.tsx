@@ -16,7 +16,6 @@ const UploadProfileImageModal = () => {
 
   const { fileDataHandler, uploadImageLoading } = useUploadProfileImage({
     onSuccess: (v: string) => {
-      //   updateQuery({ queryKey: ['partner'], payload: { ...partnerInfo, womanAvatar: v, canDeleteProfile: true } });
       editProfileImageHandler({ fileName: v });
     },
 

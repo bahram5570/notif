@@ -14,7 +14,8 @@ import useMessageData from './__hooks__/useMessageData';
 
 const ChallengeChatPage = () => {
   const messageListRef = useRef<HTMLDivElement>(null);
-  const { data, isLoading, messageList, messageListHandler, progressData, submitHandler } = useMessageData();
+  const { data, isLoading, messageList, messageListHandler, progressData, submitHandler, submitLoading } =
+    useMessageData();
 
   useEffect(() => {
     if (messageListRef.current) {
@@ -40,7 +41,7 @@ const ChallengeChatPage = () => {
             </div>
 
             <MessageListContainer items={messageList} partnerAvatar={data.partnerAvatar} />
-            <Input submitHandler={submitHandler} onChange={messageListHandler} />
+            <Input submitHandler={submitHandler} onChange={messageListHandler} isLoading={submitLoading} />
           </div>
         </>
       )}

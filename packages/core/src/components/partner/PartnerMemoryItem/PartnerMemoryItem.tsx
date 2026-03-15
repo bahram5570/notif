@@ -10,7 +10,7 @@ export const PartnerMemoryItem = (props: PartnerMemoryItemPropsType) => {
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { currentDate } = useCalendarDateFormat({ date: props.time });
 
-  const memoryImage = props.fileName || '/assets/images/partner.webp';
+  const memoryImage = props.fileName || '/assets/shared/images/partner.webp';
   const memoryText = textShorter(props.text, 150);
 
   const onClick = () => {

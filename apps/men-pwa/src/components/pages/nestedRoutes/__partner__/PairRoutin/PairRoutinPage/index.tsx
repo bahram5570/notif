@@ -36,6 +36,8 @@ const PairRoutinPage = () => {
     },
   });
 
+  const hasItemLength = data && data.items.length > 0;
+
   return (
     <MainPageLayout rightElement="BackButton" paddingTop={0}>
       <RoutinUnlockTost />
@@ -64,8 +66,7 @@ const PairRoutinPage = () => {
 
                   <RoutinDiets name={data.name} items={data.items} />
                 </div>
-
-                <RoutinFooter rate={data.rate} />
+                {hasItemLength && <RoutinFooter rate={data.rate} />}
               </div>
             </div>
           )}
