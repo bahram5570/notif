@@ -1,0 +1,17 @@
+.dlpairbannermobile {
+    display: none;
+}
+
+.dlpairbanner {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .dlpairbannermobile {
+        display: block;
+    }
+
+    .dlpairbanner {
+        display: none;
+    }
+}
