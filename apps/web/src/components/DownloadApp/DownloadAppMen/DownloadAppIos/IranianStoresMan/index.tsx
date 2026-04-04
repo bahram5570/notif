@@ -2,11 +2,11 @@
 
 import { Suspense } from 'react';
 
-import PwaIcon from '@assets/icons/downloads/pwa.svg';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+// import PwaIcon from '@assets/icons/downloads/pwa.svg';
+// import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import CustomLink from '@components/ui/CustomLink';
-import { PWA_LINK_MEN_URL } from '@constants/links.constants';
+// import CustomLink from '@components/ui/CustomLink';
+// import { PWA_LINK_MEN_URL } from '@constants/links.constants';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
 import IranianStoresDesktop from './IranianStoresDesktop';
@@ -14,11 +14,11 @@ import IranianStoresMobile from './IranianStoresMobile';
 
 const IranianStoresMan = () => {
   const { breakPoint } = useSystem();
-  const pwaId = 'men-pwa';
+  // const pwaId = 'men-pwa';
 
   return (
     <>
-      <div id="download_pwa_men">
+      {/* <div id="download_pwa_men">
         <CustomLink
           id={pwaId}
           target="_blank"
@@ -47,7 +47,7 @@ const IranianStoresMan = () => {
             نسخه وب اپ
           </CustomTypography>
         </CustomLink>
-      </div>
+      </div> */}
 
       {breakPoint.tablet && (
         <Suspense>
