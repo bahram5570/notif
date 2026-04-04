@@ -4,5 +4,4 @@ type ItemType = Pick<ChallengeFormResponseType, 'id' | 'btn' | 'question'>;
 
 export interface ChallengeBtnPropsType extends ItemType {
   answerValue: string;
-  btnTop: number | undefined;
 }

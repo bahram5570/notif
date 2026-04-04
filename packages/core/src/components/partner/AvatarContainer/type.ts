@@ -1,4 +1,4 @@
-export type AvatarPropsType = {
+export type AvatarContainerPropsType = {
   src: string;
   name: string;
   hasPreview?: boolean;

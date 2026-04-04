@@ -1,8 +1,8 @@
 import { useRouter } from 'next/navigation';
 
 import { TextareaInput } from './TextareaInput';
-import UploadInput from './UploadInput';
-import UploadModal from './UploadModal';
+import { UploadInput } from './UploadInput';
+import { UploadModal } from './UploadModal/UploadModal';
 import useFileUpload from './__hooks__/useFileUpload';
 import { CreateMemoryFormPropsType } from './type';
 

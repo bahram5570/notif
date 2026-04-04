@@ -1,9 +1,9 @@
 'use client';
 
 import { WidgetGenerators } from '@repo/core/components/Widgets/WidgetGenerators';
+import { PartnerPageLayout } from '@repo/core/components/partner/PartnerPageLayout';
 import { RequestSection } from '@repo/core/components/partner/RequestSection';
 
-import PartnerPageLayout from '../PartnerPageLayout';
 import AvatarContainer from './AvatarContainer';
 import Biorhythm from './Biorhythm';
 import Challenge from './Challenge';
@@ -22,7 +22,11 @@ const PartnerPage = () => {
     <>
       {isLoading && !data && <PartnerContainerSkeleton />}
       {!isLoading && data && (
-        <PartnerPageLayout coverImage={data.coverImage} isValid={data.valid}>
+        <PartnerPageLayout
+          coverImage={data.coverImage}
+          isValid={data.valid}
+          defaultCoverImage="/assets/images/hamdelBg.webp"
+        >
           <div className="flex flex-col gap-6">
             <div className=" rounded-3xl  relative bg-impo_Neutral_Background">
               <AvatarContainer {...data} />

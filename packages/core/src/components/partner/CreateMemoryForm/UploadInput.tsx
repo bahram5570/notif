@@ -12,7 +12,7 @@ import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { UploadInputPropsType } from './type';
 
-const UploadInput = ({ fileName, uploadImageLoading, onChangeHandler, isMan = false }: UploadInputPropsType) => {
+export const UploadInput = ({ fileName, uploadImageLoading, onChangeHandler, isMan = false }: UploadInputPropsType) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
   const [progress, setProgress] = useState(0);
@@ -107,5 +107,3 @@ const UploadInput = ({ fileName, uploadImageLoading, onChangeHandler, isMan = fa
     </>
   );
 };
-
-export default UploadInput;
