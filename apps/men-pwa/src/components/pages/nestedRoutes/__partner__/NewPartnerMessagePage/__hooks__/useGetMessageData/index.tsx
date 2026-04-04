@@ -36,7 +36,7 @@ const useGetMessageData = ({ chatToken }: UseGetMessageDataPropsType) => {
       // newMessageList.unshift(...messages);
     }
 
-    skip.current = newMessageList.length - 1;
+    skip.current = newMessageList.length;
 
     setMessageList(newMessageList);
   };

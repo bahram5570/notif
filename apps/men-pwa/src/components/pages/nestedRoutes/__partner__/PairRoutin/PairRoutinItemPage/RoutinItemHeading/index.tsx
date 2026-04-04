@@ -12,7 +12,7 @@ const RoutinItemHeading = ({ title, description, icon, status }: RoutinItemHeadi
       <div className="relative">
         <CustomImage src={icon} width={88} height={88} className={`${isLocked ? 'blur-[1px]' : ''} `} />
         {isLocked && (
-          <LockIcon className="w-8 h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-impo_Neutral_OnBackground" />
+          <LockIcon className="w-8 h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 stroke-impo_Surface_OutlineVariant" />
         )}
       </div>
 

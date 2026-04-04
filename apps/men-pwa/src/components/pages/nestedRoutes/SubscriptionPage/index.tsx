@@ -35,9 +35,14 @@ const SubscriptionPage = () => {
   };
 
   return (
-    <MainPageLayout rightElement="BackButton" paddingTop={0} headerClassName="bg-impo_Transparent !backdrop-blur-none">
+    <MainPageLayout
+      leftElement1="Profile"
+      rightElement={data?.hasSubscribtion ? 'BackButton' : undefined}
+      paddingTop={0}
+      headerClassName="bg-impo_Transparent !backdrop-blur-none [&_svg]:stroke-impo_White"
+    >
       <>
-        {isLoadingPage && !data && <CustomSpinner className="mx-auto mt-40" />}
+        {isLoadingPage && !data && <CustomSpinner className="mx-auto mt-40 " />}
 
         {!isLoadingPage && data && currentPackage && currentPackageId && (
           <div className="relative w-full h-[100dvh]">
@@ -56,7 +61,7 @@ const SubscriptionPage = () => {
                         "
             />
 
-            <div className="relative w-full h-full max-h-[140px] pb-4 flex flex-col items-center justify-end gap-1 z-20">
+            <div className="relative w-full h-full max-h-[140px] pb-4 flex flex-col items-center justify-end gap-1 z-20 ">
               <CustomTypography fontSize="Title_Small" className="text-impo_White">
                 برای مراقبت از خودت و رابطه‌ت
               </CustomTypography>

@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import TickIcon from '@assets/shared/icons/tick.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toPersianNumbers } from '@repo/core/utils/numbers';
@@ -6,8 +8,20 @@ import { SideEnum } from './constants';
 import { MessagePropsType } from './type';
 
 const Message = ({ createTime, side, text }: MessagePropsType) => {
-  const date = createTime ? new Date(createTime) : new Date();
-  const currentDate = `${date.getHours()}:${date.getMinutes()}`;
+  const [currentDate, setCurrentDate] = useState('');
+
+  useEffect(() => {
+    const updateTime = () => {
+      const date = createTime ? new Date(createTime) : new Date();
+      const time = `${date.getHours()}:${String(date.getMinutes()).padStart(2, '0')}`;
+      setCurrentDate(time);
+    };
+
+    updateTime();
+    const interval = setInterval(updateTime, 60000); // هر ۱ دقیقه
+
+    return () => clearInterval(interval);
+  }, [createTime]);
 
   return (
     <div className={`flex flex-col gap-4  ${side === SideEnum.Partner ? 'items-start ml-4' : 'items-end mr-4'}`}>

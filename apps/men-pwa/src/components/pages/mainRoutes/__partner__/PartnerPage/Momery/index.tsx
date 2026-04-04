@@ -30,7 +30,7 @@ const Memory = ({ memory, valid }: MemeryPropsType) => {
 
       <div className="w-full relative" onClick={onClick}>
         <CustomImage
-          src={memory.image || '/assets/images/partner.webp'}
+          src={memory.image || '/assets/shared/images/partner.webp'}
           className="w-full object-cover rounded-xl"
           style={{ aspectRatio: '16/9' }}
         />
@@ -43,7 +43,7 @@ const Memory = ({ memory, valid }: MemeryPropsType) => {
           </CustomTypography>
         )}
         <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
-          {textShorter(memory.description, 120)}
+          {textShorter(memory.description, 100)}
         </CustomTypography>
       </div>
 

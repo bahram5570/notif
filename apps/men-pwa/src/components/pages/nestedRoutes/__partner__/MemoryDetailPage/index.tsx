@@ -56,8 +56,13 @@ const MemoryDetailPage = () => {
           <DateHeaderSection currentDate={currentDate} />
           <div className="relative">
             <CustomImage src={memoryImage} />
-            <div className="rounded-md py-1 px-4 absolute bottom-0 m-3 bg-impo_Blue_50 dark:bg-impo_Blue_900">
-              <CustomTypography fontSize="Lable_Medium" className="text-impo_PrimaryMan_PrimaryMan">
+            <div
+              className={`rounded-md py-1 px-4 absolute bottom-0 m-3  ${memoryData.fromMan ? 'bg-impo_Blue_50 dark:bg-impo_Blue_900' : 'bg-impo_Pink_50 dark:bg-impo_Pink_900'}`}
+            >
+              <CustomTypography
+                fontSize="Lable_Medium"
+                className={`${memoryData.fromMan ? 'text-impo_PrimaryMan_PrimaryMan' : 'text-impo_Primary_Primary'}`}
+              >
                 {`ایجاد شده توسط ${!memoryData.fromMan ? partnerName : 'شما'}`}
               </CustomTypography>
             </div>

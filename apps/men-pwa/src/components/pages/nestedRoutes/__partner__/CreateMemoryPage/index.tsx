@@ -27,7 +27,7 @@ const CreateMemoryPage = () => {
   };
 
   const onClick = () => {
-    createMemoryHandler(inputValue);
+    if (inputValue.text.trim() !== '' || inputValue.title.trim() !== '') createMemoryHandler(inputValue);
   };
 
   return (
