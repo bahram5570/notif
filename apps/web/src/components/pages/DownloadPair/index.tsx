@@ -14,14 +14,11 @@ const DownloadPairPage = () => {
     <div className="w-full max-w-[500px] relative py-6 px-4 bg-gradient-to-b from-pink-100 to-white h-dvh dark:bg-none">
       <div className="grid">
         <CustomTypography className="!text-impo_Pink_500 text-center" fontSize="Headline_Medium">
-          پیام‌رسان جدید ایمپو برای
+          با امکان ارسال تصویر و صدا در پیام‌رسان ایمپو، دلتنگش نباش
         </CustomTypography>
-        <CustomTypography className="!text-impo_Pink_500 text-center" fontSize="Headline_Medium">
-          گفتگو با همدل
-        </CustomTypography>
+
         <CustomTypography className="!text-impo_Neutral_OnBackground text-center mt-2" fontSize="Body_Medium">
-          فقط کافیه هر دو نفر ایمپو مخصوص خودتون رو آپدیت کنید تا بتونید بدون محدودیت در قسمت گفتگو با همدل ایمپو با هم
-          صحبت کنید
+          این قابلیت فعلا فقط برای کاربران نسخه‌های اندروید قابل استفاده‌ست. فقط کافیه اپ مخصوص خودتون رو آپدیت کنین
         </CustomTypography>
         <div className="flex gap-x-3 mt-4">
           <CustomLink
@@ -42,11 +39,11 @@ const DownloadPairPage = () => {
           </CustomLink>
         </div>
         <div className="bg-impo_Neutral_Surface mt-4 rounded-xl py-4 px-3">
-          <CustomTypography className="!text-impo_Neutral_OnBackground text-center" fontSize="Lable_Medium">
-            نکته مهم:
+          <CustomTypography className="!text-impo_Neutral_OnBackground !text-center w-full" fontSize="Lable_Medium">
+            نکته مهم
           </CustomTypography>
           <CustomTypography className="!text-impo_Neutral_OnBackground text-center mt-1" fontSize="Body_Medium">
-            گفتگوی نامحدود با همدل فعلا برای گوشی‌های سیستم عامل IOS در دسترس نیست
+            کاربران نسخه‌های IOS هم، می‌تونن از قابلیت ارسال پیام و گفتگوی نامحدود استفاده کنن
           </CustomTypography>
         </div>
       </div>

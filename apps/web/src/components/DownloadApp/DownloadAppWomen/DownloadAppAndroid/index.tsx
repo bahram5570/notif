@@ -47,7 +47,7 @@ const DownloadAppAndroid = () => {
       <div className="w-full grid grid-cols-2 gap-2">
         <div id="download_myket">
           <DownloadAppLinkGenerator href={MYKET_LINK_WOMEN_URL} id="women-myket">
-            <div className="w-full flex items-center justify-center gap-1">
+            <div className="flex items-center justify-center gap-1">
               <MyKet1Icon className="w-6 min-w-6 h-auto" />
 
               <CustomTypography fontSize="Body_Medium" className="!text-impo_Surface_OnSurfaceVariant">
