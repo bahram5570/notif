@@ -62,7 +62,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
         style={{ maxWidth: MAX_SCREEN_WIDTH, width: '100%', height: '100dvh', margin: 'auto' }}
       >
         <main>
-          <SystemProvider>
+          <SystemProvider appName="MEN_PWA">
             <CultureProvider defaultValues={culture}>
               <ReactQueryProvider>
                 <ErrorProvider>

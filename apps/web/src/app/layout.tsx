@@ -169,7 +169,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         </Script>
 
         <DownloadLinksProvider>
-          <SystemProvider>
+          <SystemProvider appName="WEB">
             {/* <UserTrackingProvider> */}
             <MuiProvider>
               <ToastProvider>
