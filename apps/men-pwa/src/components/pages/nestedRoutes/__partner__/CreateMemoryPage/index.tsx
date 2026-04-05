@@ -22,8 +22,10 @@ const CreateMemoryPage = () => {
   const gregorianMoment = moment(new Date().toISOString(), 'YYYY-MM-DD');
   const { currentDate } = useCalendarDateFormat({ date: gregorianMoment.format('YYYY-MM-DD') });
 
-  const onChangeHandler = (v: string, name: string) => {
-    setInputValue({ ...inputValue, [name]: v });
+  const onChangeHandler = (v: string, name?: string) => {
+    if (name) {
+      setInputValue({ ...inputValue, [name]: v });
+    }
   };
 
   const onClick = () => {

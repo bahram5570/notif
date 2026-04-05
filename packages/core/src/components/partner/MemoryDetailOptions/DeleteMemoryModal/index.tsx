@@ -11,6 +11,10 @@ const DeleteMemoryModal = ({ memoryId, isMan }: DeleteMemoryModalPropsType) => {
   const router = useRouter();
   const { deleteHandler, isLoading } = useDelete({ memoryId });
 
+  const onClick = () => {
+    router.back();
+  };
+
   return (
     <CustomModal className="pb-0">
       <div className="w-[290px] flex flex-col items-center gap-4">
@@ -33,7 +37,7 @@ const DeleteMemoryModal = ({ memoryId, isMan }: DeleteMemoryModalPropsType) => {
 
           <CustomButton
             className="!text-impo_Neutral_OnSurface !bg-impo_Neutral_Surface !border-impo_Neutral_Surface"
-            onClick={() => router.back()}
+            onClick={onClick}
             fontSize="Lable_Large"
           >
             خیر

@@ -1,13 +1,4 @@
-type OnchangeHandlerType = (v: string, name: string) => void;
-
-export type TextareaInputPropsType = {
-  value: string;
-  onChangeHandler: OnchangeHandlerType;
-  placeholder: string;
-  rows: number;
-  name: string;
-  className?: string;
-};
+import { OnchangeHandlerType } from '../../ui/CustomTextareaInput/type';
 
 export type InputValueType = {
   text: string;

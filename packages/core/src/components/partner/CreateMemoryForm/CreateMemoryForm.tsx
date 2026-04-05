@@ -1,6 +1,6 @@
 import { useRouter } from 'next/navigation';
 
-import { TextareaInput } from './TextareaInput';
+import { CustomTextareaInput } from '../../ui/CustomTextareaInput';
 import { UploadInput } from './UploadInput';
 import { UploadModal } from './UploadModal/UploadModal';
 import useFileUpload from './__hooks__/useFileUpload';
@@ -27,19 +27,21 @@ export const CreateMemoryForm = ({ inputValue, onChangeHandler, isMan }: CreateM
         uploadImageLoading={uploadImageLoading}
         isMan={isMan}
       />
-      <TextareaInput
+      <CustomTextareaInput
         rows={1}
         placeholder="اسم خاطره‌ت رو اینجا بنویس"
         value={inputValue.title}
         onChangeHandler={onChangeHandler}
         name="title"
+        maxLength={400}
       />
-      <TextareaInput
+      <CustomTextareaInput
         rows={4}
         placeholder="متن خاطره‌ت رو اینجا بنویس"
         value={inputValue.text}
         onChangeHandler={onChangeHandler}
         name="text"
+        maxLength={400}
       />
 
       <UploadModal fileDataHandler={fileDataHandler} uploadImageLoading={uploadImageLoading} isMan={isMan} />

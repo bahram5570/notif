@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 
-import { TextareaInput } from '@repo/core/components/partner/CreateMemoryForm';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomTextareaInput } from '@repo/core/components/ui/CustomTextareaInput';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import ChallengeBtn from '../ChallengeBtn';
@@ -26,9 +26,8 @@ const ChallengeQuestion = ({ avatarUrl, helper, question, id, btn }: ChallengeQu
         <div className="flex w-full flex-row-reverse gap-1">
           <CustomImage src={avatarUrl} className="w-8 h-8 rounded-full !object-cover" />
           <div className="flex w-full ">
-            <TextareaInput
+            <CustomTextareaInput
               placeholder={helper}
-              name="answerValue"
               rows={2}
               value={answerValue}
               onChangeHandler={onChangeHandler}

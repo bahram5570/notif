@@ -3,8 +3,8 @@
 import { useState } from 'react';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
-import { TextareaInput } from '@repo/core/components/partner/CreateMemoryForm';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
+import { CustomTextareaInput } from '@repo/core/components/ui/CustomTextareaInput';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
@@ -42,9 +42,8 @@ const MemoryCommentPage = () => {
           </CustomTypography>
         </div>
 
-        <TextareaInput
+        <CustomTextareaInput
           placeholder="حست به این خاطره رو اینجا بنویس"
-          name="comment"
           rows={4}
           value={comment}
           onChangeHandler={onChangeHandler}

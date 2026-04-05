@@ -1,6 +1,6 @@
 import PaperPlaneRightIcon from '@assets/shared/icons/PaperPlaneRight.svg';
-import { TextareaInput } from '@repo/core/components/partner/CreateMemoryForm';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
+import { CustomTextareaInput } from '@repo/core/components/ui/CustomTextareaInput';
 
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
@@ -21,9 +21,8 @@ const PartnerMessageInput = ({ submitHandler, valueHandler, messageValue, submit
       className="mt-auto fixed bottom-0 left-0 right-0 flex items-center gap-2 h-20 p-3  mx-auto z-50 bg-impo_Neutral_Background"
       style={{ maxWidth: MAX_SCREEN_WIDTH }}
     >
-      <TextareaInput
+      <CustomTextareaInput
         placeholder="اینجا تایپ کنید"
-        name="answerValue"
         rows={1}
         value={messageValue}
         onChangeHandler={onChangeHandler}

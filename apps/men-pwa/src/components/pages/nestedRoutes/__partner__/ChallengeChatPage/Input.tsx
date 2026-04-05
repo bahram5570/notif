@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
 import PaperPlaneRightIcon from '@assets/shared/icons/PaperPlaneRight.svg';
-import { TextareaInput } from '@repo/core/components/partner/CreateMemoryForm';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
+import { CustomTextareaInput } from '@repo/core/components/ui/CustomTextareaInput';
 
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
@@ -32,7 +32,7 @@ const Input = ({ submitHandler, onChange, isLoading }: InputPropsType) => {
       className="mt-auto fixed bottom-0 left-0 right-0 flex items-center gap-2 h-20 p-3 backdrop-blur-md mx-auto z-50"
       style={{ maxWidth: MAX_SCREEN_WIDTH }}
     >
-      <TextareaInput
+      <CustomTextareaInput
         placeholder="اینجا تایپ کنید"
         className="outline-impo_PrimaryMan_PrimaryMan w-full rounded-full"
         rows={1}

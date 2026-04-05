@@ -23,12 +23,7 @@ export const ChallengeChatHeader = ({
       <div className="flex px-4 py-2 w-full justify-end">
         <div className="flex items-center gap-4 min-w-fit">
           <div className="flex flex-row-reverse gap-2 items-center">
-            <CustomImage
-              src={partnerAvatar || '/assets/images/man.webp'}
-              width={40}
-              height={40}
-              className="rounded-full !object-cover"
-            />
+            <CustomImage src={partnerAvatar} width={40} height={40} className="rounded-full !object-cover" />
             <div className="flex flex-col items-end justify-end">
               <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Title_Small">
                 {partnerName}
