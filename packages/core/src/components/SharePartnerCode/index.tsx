@@ -1,0 +1,1 @@
+export { SharePartnerCode } from './SharePartnerCode';

@@ -4,6 +4,7 @@ import { useState } from 'react';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
+import { CustomTextareaInput } from '@repo/core/components/ui/CustomTextareaInput';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
@@ -19,8 +20,8 @@ const CommentContainer = () => {
     submitHandler({ text: comment });
   };
 
-  const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setComment(e.target.value);
+  const onChangeHandler = (v: string) => {
+    setComment(v);
   };
 
   return (
@@ -41,12 +42,12 @@ const CommentContainer = () => {
           </CustomTypography>
         </div>
 
-        <textarea
+        <CustomTextareaInput
           placeholder="حست به این خاطره رو اینجا بنویس"
-          className="w-full text-end px-4 py-3 rounded-2xl focus-visible:outline-1 focus-visible:outline placeholder:text-sm bg-impo_Neutral_Surface text-impo_Neutral_OnSurface  placeholder:text-impo_Surface_OutlineVariant border border-impo_Neutral_Surface outline-impo_Primary_Primary"
           rows={4}
           value={comment}
-          onChange={onChangeHandler}
+          onChangeHandler={onChangeHandler}
+          className="!text-end !outline-impo_Primary_Primary"
         />
 
         <footer className="mt-auto">

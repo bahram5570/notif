@@ -132,6 +132,9 @@ export const WidgetGenerators = ({ data, type, isPdfDownloading = false }: Widge
     case WidgetsEnum.ProgramScrollWidget:
       result = <WidgetProgramScroll data={data} />;
       break;
+    case WidgetsEnum.ManProgramScrollWidget:
+      result = <WidgetWomanPairProgram data={data} isMan />;
+      break;
     case WidgetsEnum.WomanPairProgram:
       result = <WidgetWomanPairProgram data={data} />;
       break;

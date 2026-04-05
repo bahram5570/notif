@@ -1,0 +1,1 @@
+export { MessagerPartnerInput } from './MessagerPartnerInput';

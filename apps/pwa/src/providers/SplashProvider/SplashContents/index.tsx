@@ -14,7 +14,7 @@ const SplashContents = ({ splashStatus, splashStatushHandler }: SplashContentsPr
   return (
     <div
       style={{ maxWidth: MAX_SCREEN_WIDTH, direction: 'rtl' }}
-      className="fixed top-0 left-0 right-0 h-[100vh] mx-auto bg-impo_Primary_Primary z-[100] overflow-hidden"
+      className="fixed top-0 left-0 right-0 h-[100vh] mx-auto bg-impo_Primary_Primary dark:bg-impo_Surface_Outline z-[100] overflow-hidden"
     >
       <div className="relative h-full w-full flex flex-col items-center justify-center">
         <CustomImage

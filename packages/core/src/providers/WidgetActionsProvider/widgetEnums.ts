@@ -33,6 +33,7 @@ export enum WidgetsEnum {
   Media = 31,
   Biorhythm = 32,
   ProgramScrollWidget = 37,
+  ManProgramScrollWidget = 38,
   WomanPairProgram = 41,
   ShortcutWidget = 43,
   HintCardV2 = 44,

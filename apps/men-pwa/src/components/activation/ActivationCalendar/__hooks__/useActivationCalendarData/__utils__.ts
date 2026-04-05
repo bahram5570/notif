@@ -13,7 +13,7 @@ import {
 
 export const calendarIntervalMaker: CalendarIntervalMakerTypes = (start, end, calendarType) => {
   const resetStart = start.slice(0, 8) + '01';
-  const resetEnd = end.slice(0, 8) + '01';
+  const resetEnd = end.slice(0, 8) + '10';
   let dateSystem = 'jYYYY/jMM/jDD';
 
   switch (calendarType) {

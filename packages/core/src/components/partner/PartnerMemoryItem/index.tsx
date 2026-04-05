@@ -1,0 +1,1 @@
+export { PartnerMemoryItem } from './PartnerMemoryItem';

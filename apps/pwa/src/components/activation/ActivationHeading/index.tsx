@@ -36,7 +36,7 @@ const ActivationHeading = ({
   return (
     <>
       <div
-        className={`w-full flex justify-center pt-8 pointer-events-none z-10 ${isShowLogo ? 'pt-0' : 'pt-8'}`}
+        className={`w-full flex justify-center pointer-events-none z-10 ${isShowLogo ? 'pt-0' : 'pt-8'}`}
         style={{
           maxWidth,
           height: mainHeight,
@@ -55,7 +55,7 @@ const ActivationHeading = ({
 
           <div
             id={ACTIVATION_HEADING_SCRIPTS_ID}
-            className="w-full flex flex-col items-center gap-2 mt-4 px-4 duration-1000 z-10"
+            className="w-full flex flex-col items-center gap-2 px-4 duration-1000 z-10"
           >
             <CustomTypography
               fontSize="Body_Medium"

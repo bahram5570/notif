@@ -1,12 +1,12 @@
 import EditIcon from '@assets/icons/Gallery Edit.svg';
 import UploadIcon from '@assets/icons/upload.svg';
+import { Avatar } from '@repo/core/components/partner/AvatarContainer';
 
 import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { PartnerModalNameEnums } from '../PartnerModals/enums';
-import Avatar from './Avatar';
 import { AvatarContainerPropsType } from './type';
 
 const AvatarContainer = (props: AvatarContainerPropsType) => {
@@ -17,7 +17,7 @@ const AvatarContainer = (props: AvatarContainerPropsType) => {
   const handleClick = () => {
     (newQueryParamsHandler({
       [MODAL_QUERY_NAME]: 'true',
-      name: PartnerModalNameEnums.UploadImage,
+      partnerModal: PartnerModalNameEnums.UploadImage,
       canDeleteProfile: String(canDeleteProfile),
     }),
       pageNavigationHandler({
@@ -26,21 +26,19 @@ const AvatarContainer = (props: AvatarContainerPropsType) => {
       }));
   };
 
+  const womanAvatarSrc = womanAvatar || '/assets/images/defaultProfile.webp';
+
+  const womanIcon = canDeleteProfile ? (
+    <EditIcon className="w-3 h-3 !fill-impo_White" />
+  ) : (
+    <UploadIcon className="w-3 h-3 !fill-impo_White" />
+  );
+
   return (
-    <div className="flex gap-9 absolute top-[-38px] right-0 left-0 justify-center">
+    <div className="absolute top-[-38px] left-0 right-0 flex justify-center gap-9">
       <Avatar src={manAvatar} name={manName} hasPreview={valid} />
-      <Avatar
-        src={womanAvatar || '/assets/images/defaultProfile.webp'}
-        name={womanName}
-        onClick={handleClick}
-        icon={
-          canDeleteProfile ? (
-            <EditIcon className="w-3 h-3 !fill-impo_White" />
-          ) : (
-            <UploadIcon className="w-3 h-3 !fill-impo_White" />
-          )
-        }
-      />
+
+      <Avatar src={womanAvatarSrc} name={womanName} onClick={handleClick} icon={womanIcon} />
     </div>
   );
 };

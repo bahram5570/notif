@@ -1,4 +1,5 @@
 import { WomanPairProgramCardPropsPropsType } from '../types';
 
 type PairRoutinItemType = Pick<WomanPairProgramCardPropsPropsType, 'data'>['data']['items'][0];
-export interface WomanPairRoutinPropsType extends PairRoutinItemType {}
+type ItemType = Pick<WomanPairProgramCardPropsPropsType, 'isMan'>;
+export interface WomanPairRoutinPropsType extends PairRoutinItemType, ItemType {}

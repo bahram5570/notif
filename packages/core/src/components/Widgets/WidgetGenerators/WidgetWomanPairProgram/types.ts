@@ -2,4 +2,6 @@ import { WidgetWomanPairProgramTypes } from '../../../../providers/WidgetActions
 
 export interface WidgetWomanPairProgramCardProps extends Pick<WidgetWomanPairProgramTypes, 'data'> {}
 
-export interface WomanPairProgramCardPropsPropsType extends WidgetWomanPairProgramCardProps {}
+export interface WomanPairProgramCardPropsPropsType extends WidgetWomanPairProgramCardProps {
+  isMan?: boolean;
+}
