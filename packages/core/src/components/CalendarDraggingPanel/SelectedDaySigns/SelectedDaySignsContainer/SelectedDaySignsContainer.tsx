@@ -1,9 +1,8 @@
-import LinkIcon from '@assets/icons/calendarSignLink.svg';
+import LinkIcon from '../../../../../../assets/src/shared/icons/calendarSignLink.svg';
 
-import { useAnalytics } from '@repo/core/hooks/useAnalytics';
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import { useSignDateState } from '@repo/core/hooks/useSignDateState';
-
+import { useAnalytics } from '../../../../hooks/useAnalytics';
+import { usePageNavigationLoading } from '../../../../hooks/usePageNavigationLoading';
+import { useSignDateState } from '../../../../hooks/useSignDateState';
 import { CalendarInitialSelectedDateType } from '../../__hooks__/useCalendar/types';
 import { CalendarWidgetEnums } from '../../__hooks__/useCalendarGetData/CalendarEnums';
 import NoSigns from './NoSigns';

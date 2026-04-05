@@ -1,4 +1,4 @@
-import { WidgetCardContainer } from '@repo/core/components/Widgets/WidgetCardContainer';
+import { WidgetCardContainer } from '../../../components/Widgets/WidgetCardContainer';
 
 import { CalendarInitialSelectedDateType } from '../__hooks__/useCalendar/types';
 import { CalendarWidgetEnums } from '../__hooks__/useCalendarGetData/CalendarEnums';

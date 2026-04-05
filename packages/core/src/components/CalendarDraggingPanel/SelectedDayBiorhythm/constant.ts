@@ -1,6 +1,6 @@
-import BrainIcon from '@assets/icons/brain.svg';
-import EmotionlIcon from '@assets/icons/emotional.svg';
-import EnergyIcon from '@assets/icons/energy.svg';
+import BrainIcon from '../../../../../assets/src/shared/icons/brain.svg';
+import EmotionlIcon from '../../../../../assets/src/shared/icons/emotional.svg';
+import EnergyIcon from '../../../../../assets/src/shared/icons/energy.svg';
 
 import { BiorhythmStatusType } from './type';
 

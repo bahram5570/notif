@@ -1,4 +1,4 @@
-import CheckListIcon from '@assets/icons/checkList.svg';
+import CheckListIcon from '@assets/shared/icons/checkList.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@repo/core/utils/scripts';
 

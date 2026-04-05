@@ -1,8 +1,9 @@
-import InfoIcon from '@assets/icons/info.svg';
+import InfoIcon from '@assets/shared/icons/info.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { externalLink } from '@repo/core/utils/navigation';
 
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
+import { useSystem } from '@repo/core/hooks/useSystem';
 
 import { CalendarWidgetEnums } from '../__hooks__/useCalendarGetData/CalendarEnums';
 import { BiorhythmContainer } from './BiorhythmContainer/BiorhythmContainer';
@@ -12,6 +13,7 @@ import { SelectedDayBiorhythmProps } from './type';
 
 export const SelectedDayBiorhythm = ({ selectedDateInfo }: SelectedDayBiorhythmProps) => {
   const { inViewRef } = useAnalytics({ inView_eventName: 'BiorhythmSeenMoreThen5Secs' });
+  const { appName } = useSystem();
 
   const biorhythmInfo = selectedDateInfo.items.find((item) => item.type === CalendarWidgetEnums.Biorythem);
 
@@ -41,16 +43,20 @@ export const SelectedDayBiorhythm = ({ selectedDateInfo }: SelectedDayBiorhythmP
               return <BiorhythmContainer {...bio} percent={biorhythmPercent} key={index} />;
             })}
           </div>
-
           <div className="flex flex-row-reverse justify-center items-center gap-1 mt-3">
-            <InfoIcon className="w-[17px] h-auto stroke-impo_Primary_Primary" />
+            <InfoIcon
+              className={`w-[17px] h-auto stroke-${appName === 'PWA' ? 'impo_Primary_Primary' : 'impo_PrimaryMan_PrimaryMan'}`}
+            />
 
             <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
               درباره بیوریتم سوال داری؟
             </CustomTypography>
 
             <div onClick={() => externalLink(EXTRA_LINK, true)}>
-              <CustomTypography fontSize="Lable_Medium" className="text-impo_Primary_Primary">
+              <CustomTypography
+                fontSize="Lable_Medium"
+                className={`text-${appName === 'PWA' ? 'impo_Primary_Primary' : 'impo_PrimaryMan_PrimaryMan'}`}
+              >
                 جوابش رو اینجا ببین
               </CustomTypography>
             </div>

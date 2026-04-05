@@ -1,7 +1,7 @@
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
-
+import { MAX_SCREEN_WIDTH } from '../../constants/app.constants';
+import { useSystem } from '../../hooks/useSystem';
 import CalendarHandle from './CalendarHandle/CalendarHandle';
-import {SelectedDayBiorhythm} from './SelectedDayBiorhythm/SelectedDayBiorhythm';
+import { SelectedDayBiorhythm } from './SelectedDayBiorhythm/SelectedDayBiorhythm';
 import { SelectedDayNote } from './SelectedDayNote/SelectedDayNote';
 import { SelectedDaySigns } from './SelectedDaySigns/SelectedDaySigns';
 import { SelectedDayStatus } from './SelectedDayStatus/SelectedDayStatus';
@@ -13,6 +13,7 @@ import { CalendarDraggingPanelProps } from './types';
 export const CalendarDraggingPanel = ({ selectedDate, calendarData }: CalendarDraggingPanelProps) => {
   const { ref, isDragging, positionY } = useCalendarDrag();
   const { dayScript, monthNameScript, selectedDateInfo } = useSelectedDateInfo(selectedDate, calendarData);
+  const { appName } = useSystem();
 
   return (
     <div className="relative w-full h-[100dvh]" id={CALENDAR_DRAGGING_PANEL_ID}>
@@ -27,7 +28,7 @@ export const CalendarDraggingPanel = ({ selectedDate, calendarData }: CalendarDr
         >
           <CalendarHandle />
           <SelectedDayStatus day={dayScript} monthName={monthNameScript} selectedDateInfo={selectedDateInfo} />
-          <SelectedDaySigns selectedDateInfo={selectedDateInfo} />
+          {appName === 'PWA' && <SelectedDaySigns selectedDateInfo={selectedDateInfo} />}
           <SelectedDayNote selectedDateInfo={selectedDateInfo} />
           <SelectedDayBiorhythm selectedDateInfo={selectedDateInfo} />
         </div>

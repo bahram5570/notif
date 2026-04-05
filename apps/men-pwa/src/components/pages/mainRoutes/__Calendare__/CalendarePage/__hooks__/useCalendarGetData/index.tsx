@@ -40,7 +40,7 @@ const useCalendarGetData = ({ onValues, hasSigns }: UseGetDataProps) => {
 
   const { isLoading } = usePwaApi<InfoCalendarResponseTypes>({
     method: 'GET',
-    api: 'info/calendar',
+    api: 'info/man/calendar',
     onSuccess: successHandler,
     queryKey: ['infoCalendar'],
   });

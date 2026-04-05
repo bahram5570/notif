@@ -1,5 +1,5 @@
-import PenIcon from '@assets/icons/pen.svg';
 import ArrowIcon from '@assets/shared/icons/calendarArrow.svg';
+import PenIcon from '@assets/shared/icons/pen.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';

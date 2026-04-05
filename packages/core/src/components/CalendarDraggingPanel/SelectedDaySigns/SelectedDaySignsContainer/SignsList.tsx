@@ -1,5 +1,5 @@
-import { useSignIcon } from '@repo/core/components/SignGenerator';
-import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
+import { useSignIcon } from '../../../../components/SignGenerator';
+import { CustomSlider } from '../../../../components/ui/CustomSlider';
 
 import { SIGNS_LIST_SLIDER_ID } from './constants';
 import { SignsListProps } from './types';

@@ -34,7 +34,7 @@ const SubscriptionButton = ({ currentDayCount }: SubscriptionButtonProps) => {
 
         <div className="gap-1 lg:gap-2 flex flex-row items-center">
           <CustomTypography fontSize="Lable_Medium" className="text-impo_White">
-            {`${currentDayCount < 0 ? 0 : currentDayCount} روز مانده تا پایان اشتراک`}
+            {currentDayCount > 0 ? `${currentDayCount} روز مانده تا پایان اشتراک` : 'اشتراک فعالی ندارید'}
           </CustomTypography>
 
           <CrownIcon className="w-8 h-8 mb-2 fill-impo_White" />

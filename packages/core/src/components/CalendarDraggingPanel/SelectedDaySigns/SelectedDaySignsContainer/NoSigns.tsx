@@ -1,4 +1,4 @@
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { CustomTypography } from '../../../ui/CustomTypography';
 
 const NoSigns = () => {
   return (
