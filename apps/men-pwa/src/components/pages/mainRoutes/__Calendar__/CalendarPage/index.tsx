@@ -6,7 +6,7 @@ import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import CalendarSkeleton from './CalendarSkeleton';
 import useCalendar from './__hooks__/useCalendar';
 
-const CalendarePage = () => {
+const CalendarPage = () => {
   const { isLoading, calendarData, calendarGuideInfo, selectedDate, selectedDateHandler } = useCalendar();
 
   return (
@@ -21,4 +21,4 @@ const CalendarePage = () => {
   );
 };
 
-export default CalendarePage;
+export default CalendarPage;
