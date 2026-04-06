@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 
-import { CalendarWidgetEnums } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/CalendarEnums';
 import {
   BloodPressureType,
+  CalendarWidgetEnums,
   InfoCalendarResponseTypes,
   ItemsTypes,
-} from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
+} from '@repo/core/components/calendar';
+
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useSignDateState } from '@repo/core/hooks/useSignDateState';

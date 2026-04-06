@@ -1,7 +1,7 @@
 import CopyIcon from '@assets/shared/icons/Copy.svg';
 import Refresh from '@assets/shared/icons/refresh.svg';
 
-import useCopy from '../../../hooks/useCopy';
+import { useCopy } from '../../../hooks/useCopy';
 import { CustomSpinner } from '../../ui/CustomSpinner';
 import { CustomTypography } from '../../ui/CustomTypography';
 import useRefreshCode from './__hooks__/useRefreshCode';

@@ -1,10 +1,10 @@
 import InfoIcon from '@assets/icons/info.svg';
+import { CalendarWidgetEnums } from '@repo/core/components/calendar';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { externalLink } from '@repo/core/utils/navigation';
 
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
-import { CalendarWidgetEnums } from '../../__hooks__/useCalendarGetData/CalendarEnums';
 import BiorhythmContainer from './BiorhythmContainer';
 import BiorhythmModal from './BiorhythmModal';
 import { BIORHYTHM_STATUS, EXTRA_LINK } from './constant';

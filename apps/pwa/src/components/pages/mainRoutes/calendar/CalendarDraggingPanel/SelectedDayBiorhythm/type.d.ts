@@ -1,4 +1,4 @@
-import { BioType, SingleDateTypes, TextBioType } from '../../__hooks__/useCalendarGetData/types';
+import { BioType, SingleDateTypes, TextBioType } from '@repo/core/components/calendar';
 
 export type SelectedDayBiorhythmProps = {
   selectedDateInfo: SingleDateTypes;

@@ -1,4 +1,5 @@
-import { CalendarSignsType } from '../../../__hooks__/useCalendarGetData/types';
+import { CalendarSignsType } from '@repo/core/components/calendar';
+
 import { SelectedDaySignsProps } from '../types';
 
 export interface SelectedDaySignsContainerProps extends SelectedDaySignsProps {}

@@ -1,5 +1,5 @@
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import useRefetchChat from '@repo/core/hooks/useRefetchChat';
+import { useRefetchChat } from '@repo/core/hooks/useRefetchChat';
 
 import { ResponseMessageDataType } from '../../MessageListContainer/Message/type';
 import { UseGetNewMessageDataPropsType } from './type';

@@ -1,11 +1,11 @@
 import LinkIcon from '@assets/icons/calendarSignLink.svg';
+import { CalendarWidgetEnums } from '@repo/core/components/calendar';
 
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useSignDateState } from '@repo/core/hooks/useSignDateState';
 
 import { CalendarInitialSelectedDateType } from '../../../__hooks__/useCalendar/types';
-import { CalendarWidgetEnums } from '../../../__hooks__/useCalendarGetData/CalendarEnums';
 import NoSigns from './NoSigns';
 import SignsList from './SignsList';
 import { SelectedDaySignsContainerProps } from './types';

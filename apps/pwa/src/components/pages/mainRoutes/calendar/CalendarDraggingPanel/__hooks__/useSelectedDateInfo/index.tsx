@@ -1,11 +1,10 @@
 import { useMemo } from 'react';
 
+import { CalendarDataTypes, SingleDateTypes } from '@repo/core/components/calendar';
 import { gregorianFarsiMonthNames, jalaaliMonthNames } from '@repo/core/utils/dates';
 
 import { useCulture } from '@repo/core/hooks/useCulture';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
-
-import { CalendarDataTypes, SingleDateTypes } from '../../../__hooks__/useCalendarGetData/types';
 
 const useSelectedDateInfo = (selectedDate: string, calendarData: CalendarDataTypes) => {
   const { culture } = useCulture();

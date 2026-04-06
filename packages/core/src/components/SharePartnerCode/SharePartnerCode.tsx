@@ -1,6 +1,6 @@
 import ExportIcon from '@assets/shared/icons/Export.svg';
 
-import useShareNavigator from '../../hooks/useShareNavigator';
+import { useShareNavigator } from '../../hooks/useShareNavigator';
 import { CustomTypography } from '../ui/CustomTypography';
 import { SharePartnerCodePropsType } from './type';
 

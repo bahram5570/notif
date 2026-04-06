@@ -1,8 +1,8 @@
 import GalleryWideIcon from '@assets/icons/galleryWide.svg';
+import { FileInputManager } from '@repo/core/components/FileInputManager';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import FileInputManager from '@components/ui/FileInputManager';
 import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import useFileUpload from '@hooks/useFileUpload';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';

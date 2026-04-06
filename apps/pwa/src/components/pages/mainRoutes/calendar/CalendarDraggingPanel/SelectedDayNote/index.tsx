@@ -1,7 +1,7 @@
 import { WidgetCardContainer } from '@repo/core/components/Widgets/WidgetCardContainer';
+import { CalendarWidgetEnums } from '@repo/core/components/calendar';
 
 import { CalendarInitialSelectedDateType } from '../../__hooks__/useCalendar/types';
-import { CalendarWidgetEnums } from '../../__hooks__/useCalendarGetData/CalendarEnums';
 import SelectedDayNoNote from './SelectedDayNoNote';
 import SelectedDayNoteList from './SelectedDayNoteList';
 import { SelectedDayNotePropsType } from './type';
