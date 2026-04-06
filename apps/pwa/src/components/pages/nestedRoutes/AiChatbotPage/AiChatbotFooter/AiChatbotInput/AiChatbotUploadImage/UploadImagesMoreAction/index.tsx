@@ -2,10 +2,10 @@ import { useEffect } from 'react';
 
 import CameraIcon from '@assets/icons/Camera-1.svg';
 import GalleryIcon from '@assets/icons/gallery-1.svg';
+import { FileInputTypes } from '@repo/core/components/FileInputManager';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import imageCompression from 'browser-image-compression';
 
-import { FileInputTypes } from '@components/ui/FileInputManager/enum';
 import useAiFileManager from '@hooks/__aichatbot__/useAiFileManager';
 import { FOOTER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 

@@ -1,4 +1,4 @@
-import FileInputManager from '@components/ui/FileInputManager';
+import { FileInputManager } from '@repo/core/components/FileInputManager';
 
 import { UploadFileModalContainerPropsType } from './type';
 
