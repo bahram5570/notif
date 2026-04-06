@@ -1,10 +1,9 @@
-import PlusIcon from '@assets/shared/icons/plus.svg';
-import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import PlusIcon from '../../../../../../assets/src/shared/icons/plus.svg';
+import { CustomButton } from '../../../../components/ui/CustomButton';
+import { CustomTypography } from '../../../../components/ui/CustomTypography';
 
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import { useSignDateState } from '@repo/core/hooks/useSignDateState';
-
+import { usePageNavigationLoading } from '../../../../hooks/usePageNavigationLoading';
+import { useSignDateState } from '../../../../hooks/useSignDateState';
 import { CreateNewNoteBtnPropsType } from './type';
 
 const CreateNewNoteBtn = ({ date }: CreateNewNoteBtnPropsType) => {

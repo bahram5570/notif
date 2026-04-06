@@ -1,10 +1,10 @@
-import InfoIcon from '@assets/shared/icons/info.svg';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { externalLink } from '@repo/core/utils/navigation';
+import InfoIcon from '../../../../../assets/src/shared/icons/info.svg';
+import { CustomTypography } from '../../../components/ui/CustomTypography';
+import { externalLink } from '../../../utils/navigation';
 
-import { useAnalytics } from '@repo/core/hooks/useAnalytics';
-import { useSystem } from '@repo/core/hooks/useSystem';
+import { useSystem } from '../../../hooks/useSystem';
 
+import { useAnalytics } from '../../../hooks/useAnalytics';
 import { CalendarWidgetEnums } from '../__hooks__/useCalendarGetData/CalendarEnums';
 import { BiorhythmContainer } from './BiorhythmContainer/BiorhythmContainer';
 import { BiorhythmModal } from './BiorhythmModal/BiorhythmModal';

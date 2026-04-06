@@ -1,10 +1,10 @@
 import CancelIcon from '../../../../../../assets/src/shared/icons/cancel.svg';
-import { CustomModal } from '@repo/core/components/ui/CustomModal';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { CustomModal } from '../../../../components/ui/CustomModal';
+import { CustomTypography } from '../../../../components/ui/CustomTypography';
 
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
+import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
 import { BioType, TextBioType } from '../../__hooks__/useCalendarGetData/types';
 import { BIORHYTHM_STATUS } from '../constant';
 import { BiorhythmModalPropsType } from './type';

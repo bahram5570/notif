@@ -1,9 +1,8 @@
-import CheckListIcon from '@assets/shared/icons/checkList.svg';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { textShorter } from '@repo/core/utils/scripts';
+import CheckListIcon from '../../../../../../../assets/src/shared/icons/checkList.svg';
+import { CustomTypography } from '../../../../../components/ui/CustomTypography';
+import { textShorter } from '../../../../../utils/scripts';
 
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-
+import { usePageNavigationLoading } from '../../../../../hooks/usePageNavigationLoading';
 import { NoteItemPropsType } from './type';
 
 export const NoteItem = ({ noteItem, isNoteListPage }: NoteItemPropsType) => {

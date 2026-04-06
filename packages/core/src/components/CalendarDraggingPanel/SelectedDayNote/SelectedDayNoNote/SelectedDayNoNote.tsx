@@ -1,10 +1,9 @@
-import ArrowIcon from '@assets/shared/icons/calendarArrow.svg';
-import PenIcon from '@assets/shared/icons/pen.svg';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import ArrowIcon from '../../../../../../assets/src/shared/icons/calendarArrow.svg';
+import PenIcon from '../../../../../../assets/src/shared/icons/pen.svg';
+import { CustomTypography } from '../../../../components/ui/CustomTypography';
 
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import { useSignDateState } from '@repo/core/hooks/useSignDateState';
-
+import { usePageNavigationLoading } from '../../../../hooks/usePageNavigationLoading';
+import { useSignDateState } from '../../../../hooks/useSignDateState';
 import { SelectedDayNoNotePropsType } from './type';
 
 export const SelectedDayNoNote = ({ date }: SelectedDayNoNotePropsType) => {

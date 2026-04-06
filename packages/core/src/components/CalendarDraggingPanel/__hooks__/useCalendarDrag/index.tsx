@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
-import { useSystem } from '@repo/core/hooks/useSystem';
+import { HEADER_HEIGHT } from '../../../../constants/app.constants';
+import { useSystem } from '../../../../hooks/useSystem';
 
 import { SIGNS_LIST_SLIDER_ID } from '../../SelectedDaySigns/SelectedDaySignsContainer/constants';
 import { CALENDAR_DRAGGING_PANEL_ID } from '../../constants';

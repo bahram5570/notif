@@ -1,4 +1,4 @@
-import { DayTypeEnums } from '@repo/core/providers/WidgetActionsProvider';
+import { DayTypeEnums } from '../../../../providers/WidgetActionsProvider';
 
 import { CalendarWidgetEnums } from '../../__hooks__/useCalendarGetData/CalendarEnums';
 import { CalendarDayInfoTypes, UseCalendarDayInfoProps } from './types';
