@@ -77,7 +77,7 @@ export const actionRouteConverter = async (serverLink: string) => {
       result = `/protected/routinTabs${queries ? `?${queries}` : ''}`;
       break;
 
-    case '/diet':
+    case '/healthRoutine':
       result = `/protected/routin?searchData=${encodeURIComponent(queries)}`;
       break;
 

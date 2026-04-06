@@ -5,7 +5,7 @@ import { WidgetCardContainer } from '../../WidgetCardContainer';
 import WomanPairRoutin from './WomanPairRoutin';
 import { WomanPairProgramCardPropsPropsType } from './types';
 
-export const WidgetWomanPairProgram = ({ data, isMan = false }: WomanPairProgramCardPropsPropsType) => {
+export const WidgetWomanPairProgram = ({ data }: WomanPairProgramCardPropsPropsType) => {
   const { operatingSystem } = useSystem();
   const [containerWidth, setContainerWidth] = useState(0);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -39,7 +39,7 @@ export const WidgetWomanPairProgram = ({ data, isMan = false }: WomanPairProgram
               className={`rounded-2xl flex flex-col  justify-between bg-impo_Neutral_Surface p-4 ${hasOneItem ? 'w-full' : 'w-80'}`}
               style={{ width: containerWidth - 50 }}
             >
-              <WomanPairRoutin {...item} isMan={isMan} />
+              <WomanPairRoutin {...item} />
             </div>
           </div>
         ))}
