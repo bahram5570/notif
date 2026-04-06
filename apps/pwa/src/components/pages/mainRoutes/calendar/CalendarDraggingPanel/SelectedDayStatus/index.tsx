@@ -1,6 +1,6 @@
+import { useCalendarDayInfo } from '@repo/core/components/calendar/__hooks__/useCalendarDayInfo';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useCalendarDayInfo from '../../CalendarContainer/__hooks__/useCalendarDayInfo';
 import { SelectedDayStatusPorps } from './types';
 
 const SelectedDayStatus = ({ selectedDateInfo, monthName, day }: SelectedDayStatusPorps) => {
