@@ -1,6 +1,4 @@
-import { InfoCalendarResponseTypes } from '../type';
-
-export type CalendarGuideInfoTypes = Pick<InfoCalendarResponseTypes, 'haveBreastfeeding' | 'havePregnency'>;
+import { CalendarGuideInfoTypes } from '../type';
 
 export interface CalendarGuidesProps {
   calendarGuideInfo: CalendarGuideInfoTypes | null;

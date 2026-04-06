@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
+import { NoteType } from '@repo/core/components/calendar';
 import { currentDate, toJalaliData } from '@repo/core/utils/dates';
 
-import { NoteType } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useSignDateState } from '@repo/core/hooks/useSignDateState';
 import moment from 'moment-jalaali';

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { UseRefetchChatTypes } from './types';
 
-const useRefetchChat = ({ initialInterval, isLoading, onCallBack, lastMessageId }: UseRefetchChatTypes) => {
+export const useRefetchChat = ({ initialInterval, isLoading, onCallBack, lastMessageId }: UseRefetchChatTypes) => {
   const [interval, setInterval] = useState(initialInterval);
 
   useEffect(() => {
@@ -38,5 +38,3 @@ const useRefetchChat = ({ initialInterval, isLoading, onCallBack, lastMessageId 
 
   return { restHandler };
 };
-
-export default useRefetchChat;

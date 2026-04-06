@@ -1,3 +1,4 @@
+import { CalendarTypeEnum } from '../../providers/CultureProvider';
 import { BabyCheckTypeEnums, DayTypeEnums } from '../../providers/WidgetActionsProvider';
 import { CalendarWidgetEnums } from './CalendarEnums';
 
@@ -89,4 +90,37 @@ export type InfoCalendarResponseTypes = {
   days: {
     [key in string]: { items: ItemsTypes };
   };
+};
+
+export type CalendarGuideInfoTypes = Pick<InfoCalendarResponseTypes, 'haveBreastfeeding' | 'havePregnency'>;
+export type CalendarIntervalMakerTypes = (start: string, end: string, calendarType: CalendarTypeEnum) => number;
+
+export type OnValuesTypes = {
+  calendarGuideInfo: CalendarGuideInfoTypes;
+  calendarData: CalendarDataTypes;
+};
+
+export interface UseGetDataProps {
+  onValues: (v: OnValuesTypes) => void;
+  hasSigns: boolean;
+}
+
+export type CalendarMonthInfoMakerTypes = (
+  start: string,
+  currentMonth: number,
+  calendarType: CalendarTypeEnum,
+) => {
+  yearAndMonth: string;
+  beggingOfMonth: string;
+  totalDaysOfMonth: number;
+};
+
+export type CalendarDayInfoMakerTypes = (
+  start: string,
+  currentDay: number,
+  calendarType: CalendarTypeEnum,
+) => {
+  isToday: boolean;
+  jalaaliDate: string;
+  gregorianDate: string;
 };

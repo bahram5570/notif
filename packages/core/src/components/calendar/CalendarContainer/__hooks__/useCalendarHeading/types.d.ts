@@ -1,4 +1,4 @@
-import { MonthsListTypes } from '../../types';
+import { MonthsListTypes } from '../../type';
 
 export interface UseCalendarHeadingProps {
   monthsList: MonthsListTypes;

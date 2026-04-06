@@ -1,11 +1,11 @@
 import CancelIcon from '@assets/icons/cancel.svg';
+import { BioType, TextBioType } from '@repo/core/components/calendar';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
-import { BioType, TextBioType } from '../../../__hooks__/useCalendarGetData/types';
 import { BIORHYTHM_STATUS } from '../constant';
 import { BiorhythmModalPropsType } from './type';
 

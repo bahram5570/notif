@@ -1,6 +1,6 @@
 import { textShorter } from '../../../utils/scripts';
 
-import useCalendarDateFormat from '../../../hooks/useCalendarDateFormat';
+import { useCalendarDateFormat } from '../../../hooks/useCalendarDateFormat';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { CustomImage } from '../../ui/CustomImage';
 import { CustomTypography } from '../../ui/CustomTypography';

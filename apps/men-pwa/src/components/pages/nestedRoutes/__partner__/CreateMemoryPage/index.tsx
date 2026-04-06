@@ -9,7 +9,7 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
-import useCalendarDateFormat from '@repo/core/hooks/useCalendarDateFormat';
+import { useCalendarDateFormat } from '@repo/core/hooks/useCalendarDateFormat';
 import moment from 'moment-jalaali';
 
 import useSubmit from './__hooks__/useSubmit';

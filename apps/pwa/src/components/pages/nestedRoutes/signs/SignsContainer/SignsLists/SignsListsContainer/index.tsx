@@ -1,10 +1,10 @@
 import { Fragment } from 'react';
 
+import { KitTests } from '@repo/core/components/KitTests';
 import { SignCategoryGenerator } from '@repo/core/components/SignCategoryGenerator';
 import { SIGNS_LIST } from '@repo/core/components/SignGenerator';
-import { KitTests } from '@repo/core/components/KitTests';
+import { CalendarWidgetEnums } from '@repo/core/components/calendar';
 
-import { CalendarWidgetEnums } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/CalendarEnums';
 import { DayTypeEnums } from '@repo/core/providers/WidgetActionsProvider';
 
 import BloodPressureListContainer from '../BloodPressureListContainer';
