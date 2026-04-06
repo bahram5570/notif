@@ -1,6 +1,6 @@
 import { memo } from 'react';
 
-import GiveBirthIcon from '@assets/icons/calendarGiveBirth.svg';
+import GiveBirthIcon from '../../../../../../../assets/src/shared/icons/calendarGiveBirth.svg';
 
 import { CALENDAR_CELL_SIZE, DATE_SEPERATOR_REGEX } from '../../../../../constants/date.constants';
 import { CustomImage } from '../../../../ui/CustomImage';

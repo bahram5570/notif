@@ -2,12 +2,11 @@ import InfoIcon from '../../../../../assets/src/shared/icons/info.svg';
 import { CustomTypography } from '../../../components/ui/CustomTypography';
 import { externalLink } from '../../../utils/navigation';
 
-import { useSystem } from '../../../hooks/useSystem';
-
 import { useAnalytics } from '../../../hooks/useAnalytics';
-import { CalendarWidgetEnums } from '../__hooks__/useCalendarGetData/CalendarEnums';
-import { BiorhythmContainer } from './BiorhythmContainer/BiorhythmContainer';
-import { BiorhythmModal } from './BiorhythmModal/BiorhythmModal';
+import { useSystem } from '../../../hooks/useSystem';
+import { CalendarWidgetEnums } from '../../calendar/CalendarEnums';
+import { BiorhythmContainer } from './BiorhythmContainer';
+import { BiorhythmModal } from './BiorhythmModal';
 import { BIORHYTHM_STATUS, EXTRA_LINK } from './constant';
 import { SelectedDayBiorhythmProps } from './type';
 

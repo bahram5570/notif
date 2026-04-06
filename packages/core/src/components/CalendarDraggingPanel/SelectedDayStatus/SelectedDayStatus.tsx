@@ -1,7 +1,7 @@
 import { CustomTypography } from '../../../components/ui/CustomTypography';
 
 import { useSystem } from '../../../hooks/useSystem';
-import useCalendarDayInfo from '../__hooks__/useCalendarDayInfo';
+import { useCalendarDayInfo } from '../../calendar/__hooks__/useCalendarDayInfo';
 import { SelectedDayStatusPorps } from './types';
 
 export const SelectedDayStatus = ({ selectedDateInfo, monthName, day }: SelectedDayStatusPorps) => {

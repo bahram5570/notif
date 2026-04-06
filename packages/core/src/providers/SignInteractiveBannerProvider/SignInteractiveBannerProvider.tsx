@@ -6,7 +6,7 @@ import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 import { ActionTypes } from '@repo/core/providers/WidgetActionsProvider';
 import { usePathname, useRouter } from 'next/navigation';
 
-import { NEED_LOADING_SIGN_INTERACTIVE_BANNER_LIST } from '../../../constants/routes.constants';
+import { NEED_LOADING_SIGN_INTERACTIVE_BANNER_LIST } from '../../constants/routes.constants';
 import { SignInteractiveBannerContextType } from './type';
 
 export const SignInteractiveBannerContext = createContext<SignInteractiveBannerContextType>({

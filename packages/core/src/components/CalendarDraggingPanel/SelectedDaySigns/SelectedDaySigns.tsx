@@ -3,8 +3,8 @@ import { currentDate } from '../../../utils/dates';
 
 import moment from 'moment-jalaali';
 
-import { SelectedDaySignsContainer } from './SelectedDaySignsContainer/SelectedDaySignsContainer';
-import { SelectedDaySignsNotAllowed } from './SelectedDaySignsNotAllowed/SelectedDaySignsNotAllowed';
+import { SelectedDaySignsContainer } from './SelectedDaySignsContainer';
+import { SelectedDaySignsNotAllowed } from './SelectedDaySignsNotAllowed';
 import { SelectedDaySignsProps } from './types';
 
 const { gDate } = currentDate();

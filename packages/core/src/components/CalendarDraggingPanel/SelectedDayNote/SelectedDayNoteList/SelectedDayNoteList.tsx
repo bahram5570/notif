@@ -3,7 +3,7 @@ import { CustomTypography } from '../../../../components/ui/CustomTypography';
 import { usePageNavigationLoading } from '../../../../hooks/usePageNavigationLoading';
 import { useSignDateState } from '../../../../hooks/useSignDateState';
 import CreateNewNoteBtn from './CreateNewNoteBtn';
-import { NoteItem } from './NoteItem/NoteItem';
+import { NoteItem } from './NoteItem';
 import { SelectedDayNoteListPropsList } from './type';
 
 export const SelectedDayNoteList = ({ noteList, date }: SelectedDayNoteListPropsList) => {

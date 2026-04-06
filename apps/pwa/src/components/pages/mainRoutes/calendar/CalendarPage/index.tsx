@@ -1,10 +1,10 @@
+import { CalendarDraggingPanel } from '@repo/core/components/CalendarDraggingPanel';
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CalendarContainer } from '@repo/core/components/calendar/CalendarContainer';
 import { CalendarGuides } from '@repo/core/components/calendar/CalendarGuides';
 
 import { FOOTER_HEIGHT, HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
-import CalendarDraggingPanel from '../CalendarDraggingPanel';
 import CalendarSkeleton from '../CalendarSkeleton';
 // import SignsChangedToast from '../SignsChangedToast';
 import useCalendar from '../__hooks__/useCalendar';

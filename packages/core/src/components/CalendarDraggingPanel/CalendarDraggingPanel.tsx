@@ -1,12 +1,12 @@
 import { MAX_SCREEN_WIDTH } from '../../constants/app.constants';
 import { useSystem } from '../../hooks/useSystem';
-import CalendarHandle from './CalendarHandle/CalendarHandle';
-import { SelectedDayBiorhythm } from './SelectedDayBiorhythm/SelectedDayBiorhythm';
-import { SelectedDayNote } from './SelectedDayNote/SelectedDayNote';
-import { SelectedDaySigns } from './SelectedDaySigns/SelectedDaySigns';
-import { SelectedDayStatus } from './SelectedDayStatus/SelectedDayStatus';
-import useCalendarDrag from './__hooks__/useCalendarDrag';
-import useSelectedDateInfo from './__hooks__/useSelectedDateInfo';
+import { CalendarHandle } from './CalendarHandle';
+import { SelectedDayBiorhythm } from './SelectedDayBiorhythm';
+import { SelectedDayNote } from './SelectedDayNote';
+import { SelectedDaySigns } from './SelectedDaySigns';
+import { SelectedDayStatus } from './SelectedDayStatus';
+import { useCalendarDrag } from './__hooks__/useCalendarDrag';
+import { useSelectedDateInfo } from './__hooks__/useSelectedDateInfo';
 import { CALENDAR_DRAGGING_PANEL_ID } from './constants';
 import { CalendarDraggingPanelProps } from './types';
 

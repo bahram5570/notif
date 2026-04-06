@@ -5,7 +5,7 @@ import { CustomTypography } from '../../../../components/ui/CustomTypography';
 import { useRouter } from 'next/navigation';
 
 import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
-import { BioType, TextBioType } from '../../__hooks__/useCalendarGetData/types';
+import { BioType, TextBioType } from '../../../calendar/type';
 import { BIORHYTHM_STATUS } from '../constant';
 import { BiorhythmModalPropsType } from './type';
 

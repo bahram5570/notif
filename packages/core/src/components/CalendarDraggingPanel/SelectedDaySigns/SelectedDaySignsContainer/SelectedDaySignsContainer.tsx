@@ -3,8 +3,8 @@ import LinkIcon from '../../../../../../assets/src/shared/icons/calendarSignLink
 import { useAnalytics } from '../../../../hooks/useAnalytics';
 import { usePageNavigationLoading } from '../../../../hooks/usePageNavigationLoading';
 import { useSignDateState } from '../../../../hooks/useSignDateState';
-import { CalendarInitialSelectedDateType } from '../../__hooks__/useCalendar/types';
-import { CalendarWidgetEnums } from '../../__hooks__/useCalendarGetData/CalendarEnums';
+import { CalendarWidgetEnums } from '../../../calendar/CalendarEnums';
+import { CalendarInitialSelectedDateType } from '../../types';
 import NoSigns from './NoSigns';
 import SignsList from './SignsList';
 import { SelectedDaySignsContainerProps } from './types';

@@ -1,9 +1,9 @@
 import { WidgetCardContainer } from '../../../components/Widgets/WidgetCardContainer';
 
-import { CalendarInitialSelectedDateType } from '../__hooks__/useCalendar/types';
-import { CalendarWidgetEnums } from '../__hooks__/useCalendarGetData/CalendarEnums';
-import { SelectedDayNoNote } from './SelectedDayNoNote/SelectedDayNoNote';
-import { SelectedDayNoteList } from './SelectedDayNoteList/SelectedDayNoteList';
+import { CalendarWidgetEnums } from '../../calendar/CalendarEnums';
+import { CalendarInitialSelectedDateType } from '../types';
+import { SelectedDayNoNote } from './SelectedDayNoNote';
+import { SelectedDayNoteList } from './SelectedDayNoteList';
 import { SelectedDayNotePropsType } from './type';
 
 export const SelectedDayNote = ({ selectedDateInfo }: SelectedDayNotePropsType) => {

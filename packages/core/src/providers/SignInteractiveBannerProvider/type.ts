@@ -1,4 +1,4 @@
-import { ActionTypes } from '../../../providers/WidgetActionsProvider';
+import { ActionTypes } from '../../providers/WidgetActionsProvider';
 
 export type SignInteractiveBannerContextType = {
   isLoadedHandler: () => void;

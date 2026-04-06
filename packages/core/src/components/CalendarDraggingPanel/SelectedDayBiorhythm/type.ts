@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { BioType, SingleDateTypes, TextBioType } from '../__hooks__/useCalendarGetData/types';
+import { BioType, SingleDateTypes, TextBioType } from '../../calendar/type';
 
 export type SelectedDayBiorhythmProps = {
   selectedDateInfo: SingleDateTypes;

@@ -1,5 +1,5 @@
-import { NoteType } from '../../__hooks__/useCalendarGetData/types';
-import { CalendarInitialSelectedDateType } from '../../__hooks__/useCalendar/types';
+import { NoteType } from '../../../calendar/type';
+import { CalendarInitialSelectedDateType } from '../../types';
 
 export type SelectedDayNoteListPropsList = {
   noteList: NoteType[];

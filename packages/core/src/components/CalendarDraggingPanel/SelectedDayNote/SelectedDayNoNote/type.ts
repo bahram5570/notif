@@ -1,4 +1,4 @@
-import { CalendarInitialSelectedDateType } from '../../__hooks__/useCalendar/types';
+import { CalendarInitialSelectedDateType } from '../../types';
 
 export type SelectedDayNoNotePropsType = {
   date: CalendarInitialSelectedDateType;

@@ -1,4 +1,4 @@
-import { NoteType } from '../../../__hooks__/useCalendarGetData/types';
+import { NoteType } from '../../../../calendar/type';
 
 export type NoteItemPropsType = {
   noteItem: NoteType;

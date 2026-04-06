@@ -1,4 +1,4 @@
-import { CalendarBiorhythmType } from '../../__hooks__/useCalendarGetData/types';
+import { CalendarBiorhythmType } from '../../../calendar/type';
 
 export type BiorhythmModalPropsType = {
   biorhythmInfo: CalendarBiorhythmType;
