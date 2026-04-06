@@ -21,7 +21,7 @@ const Memory = ({ memory, valid }: MemeryPropsType) => {
   };
 
   return (
-    <div className="flex flex-col gap-4    items-end ">
+    <div className="flex flex-col gap-4    items-end pb-5 ">
       <div className="flex justify-between items-end ">
         <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           {memory.cardTitle}
