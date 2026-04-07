@@ -25,7 +25,7 @@ export const MessagerPartnerInput = ({
   return (
     <>
       <CustomTextareaInput
-        className={`!text-end  !text-impo_Neutral_OnBackground  ${isMan ? 'outline-impo_PrimaryMan_PrimaryMan' : 'outline-impo_Primary_Primary'} `}
+        className={`  !text-impo_Neutral_OnBackground  ${isMan ? 'outline-impo_PrimaryMan_PrimaryMan' : 'outline-impo_Primary_Primary'} `}
         placeholder={placeholder}
         rows={4}
         value={newMessage}
