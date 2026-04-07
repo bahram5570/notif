@@ -1,1 +1,0 @@
-export const SIGNS_LIST_SLIDER_ID = 'SIGNS_LIST_SLIDER_ID';
