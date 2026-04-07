@@ -2,11 +2,11 @@
 
 import { useEffect, useState } from 'react';
 
+import { NoteItem } from '@repo/core/components/CalendarDraggingPanel/SelectedDayNote/SelectedDayNoteList/NoteItem';
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { currentDate, gregorianFarsiScriptDate, jalaaliScriptDate } from '@repo/core/utils/dates';
 
-import NoteItem from '@components/pages/mainRoutes/calendar/CalendarDraggingPanel/SelectedDayNote/SelectedDayNoteList/NoteItem';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useCulture } from '@repo/core/hooks/useCulture';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';

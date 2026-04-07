@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 
+import { CalendarDataTypes, CalendarGuideInfoTypes, OnValuesTypes } from '@repo/core/components/calendar';
 import { currentDate } from '@repo/core/utils/dates';
 
 import { useCulture } from '@repo/core/hooks/useCulture';
@@ -9,7 +10,6 @@ import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import moment from 'moment-jalaali';
 
 import useCalendarGetData from '../useCalendarGetData';
-import { CalendarDataTypes, CalendarGuideInfoTypes, OnValuesTypes } from '../useCalendarGetData/types';
 import { SelectedDateHandlerTypes } from './types';
 
 const { jDate, gDate } = currentDate();

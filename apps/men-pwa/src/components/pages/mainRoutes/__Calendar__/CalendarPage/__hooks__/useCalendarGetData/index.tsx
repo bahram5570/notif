@@ -1,9 +1,13 @@
 import { calendarDayInfoMaker, calendarIntervalMaker, calendarMonthInfoMaker } from './__utils__';
+import {
+  CalendarDataTypes,
+  InfoCalendarResponseTypes,
+  SingleDateTypes,
+  UseGetDataProps,
+} from '@repo/core/components/calendar';
 
 import { useCulture } from '@repo/core/hooks/useCulture';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-
-import { CalendarDataTypes, InfoCalendarResponseTypes, SingleDateTypes, UseGetDataProps } from './types';
 
 const useCalendarGetData = ({ onValues, hasSigns }: UseGetDataProps) => {
   const { culture } = useCulture();

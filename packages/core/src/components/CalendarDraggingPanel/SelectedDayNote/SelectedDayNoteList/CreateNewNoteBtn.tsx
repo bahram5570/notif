@@ -4,9 +4,11 @@ import { CustomTypography } from '../../../../components/ui/CustomTypography';
 
 import { usePageNavigationLoading } from '../../../../hooks/usePageNavigationLoading';
 import { useSignDateState } from '../../../../hooks/useSignDateState';
+import { useSystem } from '../../../../hooks/useSystem';
 import { CreateNewNoteBtnPropsType } from './type';
 
 const CreateNewNoteBtn = ({ date }: CreateNewNoteBtnPropsType) => {
+  const { appName } = useSystem();
   const { changeCurrentDate } = useSignDateState();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
@@ -21,7 +23,10 @@ const CreateNewNoteBtn = ({ date }: CreateNewNoteBtnPropsType) => {
   };
 
   return (
-    <CustomButton onClick={linkToHandler}>
+    <CustomButton
+      onClick={linkToHandler}
+      className={`border-none ${appName === 'MEN_PWA' && '!bg-impo_PrimaryMan_PrimaryMan'}`}
+    >
       <div className="flex items-center justify-center gap-2 w-full">
         <CustomTypography fontSize="Lable_Large" className="text-impo_White">
           ثبت یادداشت جدید
