@@ -4,12 +4,12 @@ import { CalendarDataTypes, CalendarGuideInfoTypes, OnValuesTypes } from '@repo/
 import { currentDate } from '@repo/core/utils/dates';
 
 import useSignInteractiveBanner from '@hooks/__sign__/useSignInteractiveBanner';
+import { useCalendarGetData } from '@repo/core/hooks/useCalendarGetData';
 import { useCulture } from '@repo/core/hooks/useCulture';
 import { useSignDateState } from '@repo/core/hooks/useSignDateState';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import moment from 'moment-jalaali';
 
-import useCalendarGetData from '../useCalendarGetData';
 import { SelectedDateHandlerTypes } from './types';
 
 const { jDate, gDate } = currentDate();
