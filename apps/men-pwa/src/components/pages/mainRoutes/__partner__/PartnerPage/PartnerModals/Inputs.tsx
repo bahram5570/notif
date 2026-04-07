@@ -16,7 +16,6 @@ const Inputs = ({ fileDataHandler, canDeleteImage, deleteHandler, uploadImageLoa
           ShowFileInput={false}
           fileDataHandler={fileDataHandler}
           uploadImageLoading={uploadImageLoading}
-          isMan={true}
         />
 
         {canDeleteImage && JSON.parse(canDeleteImage) && (

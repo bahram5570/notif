@@ -53,7 +53,6 @@ const PartnerMessagePage = () => {
               isLoading={isLoading}
               placeholder="با ارسال یک پیام,همدلت رو خوشحال کن"
               submitHandler={submitHandler}
-              isMan={true}
             />
           )}
         </>

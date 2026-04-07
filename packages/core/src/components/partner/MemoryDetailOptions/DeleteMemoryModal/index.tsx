@@ -4,11 +4,13 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { useRouter } from 'next/navigation';
 
+import { useSystem } from '../../../../hooks/useSystem';
 import useDelete from './__hooks__/useDelete';
 import { DeleteMemoryModalPropsType } from './type';
 
-const DeleteMemoryModal = ({ memoryId, isMan }: DeleteMemoryModalPropsType) => {
+const DeleteMemoryModal = ({ memoryId }: DeleteMemoryModalPropsType) => {
   const router = useRouter();
+  const { appName } = useSystem();
   const { deleteHandler, isLoading } = useDelete({ memoryId });
 
   const onClick = () => {
@@ -27,7 +29,7 @@ const DeleteMemoryModal = ({ memoryId, isMan }: DeleteMemoryModalPropsType) => {
 
         <div className="w-full flex items-center justify-between gap-2">
           <CustomButton
-            className={` ${isMan ? '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan !text-impo_White' : '!text-impo_Error_Error  bg-impo_Primary_PrimaryContainer  border-impo_Primary_PrimaryContainer'}`}
+            className={` ${appName === 'MEN_PWA' ? '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan !text-impo_White' : '!text-impo_Error_Error  bg-impo_Primary_PrimaryContainer  border-impo_Primary_PrimaryContainer'}`}
             onClick={deleteHandler}
             fontSize="Lable_Large"
             isLoading={isLoading}

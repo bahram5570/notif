@@ -22,7 +22,7 @@ const StartPartnerPage = () => {
         <CustomTypography fontSize="Body_Large" className="text-center text-impo_Neutral_OnBackground">
           شماره موبایل، ایمیل یا کد همدلی پارتنرت رو اینجا وارد کن تا درخواست همدلیت براش ارسال بشه.
         </CustomTypography>
-        <StartPartnerInput createHandler={createHandler} isLoading={createLoading} isMan={true} />
+        <StartPartnerInput createHandler={createHandler} isLoading={createLoading} />
 
         <div className="border-t-[1px] border-t-impo_Surface_SurfaceVariant p-4">
           <CustomTypography fontSize="Body_Large" className="text-center text-impo_Neutral_OnBackground ">
@@ -35,9 +35,8 @@ const StartPartnerPage = () => {
             isLoading={isLoading}
             partnerCode={userCodeInfo.code}
             callBackHandler={userCodeInfoHandler}
-            isMan={true}
           />
-          <SharePartnerCode shareText={userCodeInfo.shareText} text="ارسال کد برای همدل" isMan={true} />
+          <SharePartnerCode shareText={userCodeInfo.shareText} text="ارسال کد برای همدل" />
         </div>
       </div>
     </MainPageLayout>

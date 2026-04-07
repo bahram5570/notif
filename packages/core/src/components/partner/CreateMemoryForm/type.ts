@@ -10,10 +10,9 @@ export type InputValueType = {
 export type CreateMemoryFormPropsType = {
   inputValue: InputValueType;
   onChangeHandler: OnchangeHandlerType;
-  isMan?: boolean;
 };
 
-export type UploadInputPropsType = Pick<CreateMemoryFormPropsType, 'isMan'> & {
+export type UploadInputPropsType = {
   onChangeHandler: OnchangeHandlerType;
   uploadImageLoading: boolean;
   fileName: string;

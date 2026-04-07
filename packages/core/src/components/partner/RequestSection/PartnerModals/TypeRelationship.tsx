@@ -6,12 +6,13 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
+import { useSystem } from '../../../../hooks/useSystem';
 import { PartnerRadioButton } from '../../PartnerRadioButton';
 import useAccept from './__hooks__/useAccept';
-import { CommanPropsType } from './type';
 
-const TypeRelationship = ({ isMan }: CommanPropsType) => {
+const TypeRelationship = () => {
   const { acceptHandler } = useAccept();
+  const { appName } = useSystem();
   const { getQueryParams } = useQueryParamsHandler();
   const [distanceTypeValue, setDistanceTypeValue] = useState<number>(0);
 
@@ -29,10 +30,10 @@ const TypeRelationship = ({ isMan }: CommanPropsType) => {
     <div className="flex flex-col gap-4">
       <div className="flex flex-col gap-2 justify-center items-center">
         <div
-          className={`w-11 h-11 flex justify-center items-center rounded-full  ${isMan ? 'bg-impo_PrimaryMan_PrimaryContainerMan' : 'bg-impo_Primary_PrimaryContainer'}`}
+          className={`w-11 h-11 flex justify-center items-center rounded-full  ${appName === 'MEN_PWA' ? 'bg-impo_PrimaryMan_PrimaryContainerMan' : 'bg-impo_Primary_PrimaryContainer'}`}
         >
           <Hamdel
-            className={`w-6 h-6   ${isMan ? 'stroke-impo_PrimaryMan_PrimaryMan' : 'stroke-impo_Primary_Primary'}`}
+            className={`w-6 h-6   ${appName === 'MEN_PWA' ? 'stroke-impo_PrimaryMan_PrimaryMan' : 'stroke-impo_Primary_Primary'}`}
           />
         </div>
         <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
@@ -43,11 +44,11 @@ const TypeRelationship = ({ isMan }: CommanPropsType) => {
         </CustomTypography>
       </div>
 
-      <PartnerRadioButton onChange={changeValueHandler} value={distanceTypeValue} isMan={isMan} />
+      <PartnerRadioButton onChange={changeValueHandler} value={distanceTypeValue} />
 
       <CustomButton
         onClick={onClick}
-        className={`${isMan && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
+        className={`${appName === 'MEN_PWA' && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
       >
         <CustomTypography fontSize="Lable_Large" className="text-impo_White">
           باشه

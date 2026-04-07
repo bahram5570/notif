@@ -5,21 +5,17 @@ import { FOOTER_HEIGHT, MAX_SCREEN_WIDTH } from '../../../constants/app.constant
 import { MODAL_QUERY_NAME } from '../../../constants/modal.constants';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
+import { useSystem } from '../../../hooks/useSystem';
 import { CustomTypography } from '../../ui/CustomTypography';
 import DeleteMemoryModal from './DeleteMemoryModal';
 import { MemoryDetailOptionsPropsType } from './type';
 
-export const MemoryDetailOptions = ({
-  fromMan,
-  memoryId,
-  validPartner,
-  callBack,
-  isMan = false,
-}: MemoryDetailOptionsPropsType) => {
+export const MemoryDetailOptions = ({ fromMan, memoryId, validPartner, callBack }: MemoryDetailOptionsPropsType) => {
+  const { appName } = useSystem();
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { newQueryParamsHandler } = useQueryParamsHandler();
 
-  const showCommentBtn = isMan ? (fromMan ? false : true) : fromMan ? true : false;
+  const showCommentBtn = appName === 'MEN_PWA' ? (fromMan ? false : true) : fromMan ? true : false;
 
   const deleteHandler = () => {
     pageNavigationHandler({ id: 'memoryDeleteModal', showProgressBar: true });
@@ -54,7 +50,7 @@ export const MemoryDetailOptions = ({
         <div onClick={onClick}>
           <div className="flex flex-row items-center gap-1 justify-center ">
             <div
-              className={`pl-6 pr-4 py-2 flex justify-end items-center rounded-full gap-1   ${isMan ? 'bg-impo_PrimaryMan_PrimaryMan' : 'bg-impo_Primary_Primary'}`}
+              className={`pl-6 pr-4 py-2 flex justify-end items-center rounded-full gap-1   ${appName === 'MEN_PWA' ? 'bg-impo_PrimaryMan_PrimaryMan' : 'bg-impo_Primary_Primary'}`}
             >
               <CustomTypography fontSize="Title_Small" className="text-impo_PrimaryMan_OnPrimaryMan">
                 نظرت چیه؟
@@ -66,7 +62,7 @@ export const MemoryDetailOptions = ({
         </div>
       )}
 
-      <DeleteMemoryModal memoryId={memoryId} isMan={isMan} callBack={callBack} />
+      <DeleteMemoryModal memoryId={memoryId} callBack={callBack} />
     </div>
   );
 };

@@ -5,6 +5,7 @@ import CameraIcon from '@assets/shared/icons/camera.svg';
 import GalleryIcon from '@assets/shared/icons/gallery.svg';
 import imageCompression from 'browser-image-compression';
 
+import { useSystem } from '../../hooks/useSystem';
 import { CustomSpinner } from '../ui/CustomSpinner';
 import { CustomTypography } from '../ui/CustomTypography';
 import { FileInputTypes } from './enum';
@@ -16,9 +17,10 @@ export const FileInputManager = ({
   ShowFileInput,
   ShowGalleryInput = true,
   ShowCameraInput = true,
-  isMan = false,
 }: FileInputManagerPropsType) => {
+  const { appName } = useSystem();
   const [activeInput, setActiveInput] = useState<string | null>(null);
+  const isMan = appName === 'MEN_PWA';
 
   const handleFileInput: FileInputHandlerTypes = (type) => async (e) => {
     setActiveInput(type);

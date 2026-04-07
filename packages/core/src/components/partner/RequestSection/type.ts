@@ -4,5 +4,4 @@ type ItemType = Pick<RequestPartnerResponseType, 'list'>;
 
 export interface RequestSectionPropsType {
   element: JSX.Element;
-  isMan?: boolean;
 }
