@@ -81,7 +81,7 @@ export const actionRouteConverter = async (serverLink: string) => {
       result = `/protected/routin?searchData=${encodeURIComponent(queries)}`;
       break;
 
-    case '/diet/item':
+    case '/healthRoutine/item':
       result = `/protected/routin/routinItem?searchData=${encodeURIComponent(queries)}`;
       break;
     case '/routine':
