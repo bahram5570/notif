@@ -6,6 +6,7 @@ import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { MODAL_FEEDBACK } from '../../../constants/modal.constants';
+import { useSystem } from '../../../hooks/useSystem';
 import FeedbackModalDescription from './FeedbackDescription';
 import FeedbackStars from './FeedbackStars';
 import useSubmitRate from './__hooks__/useSubmitRate';
@@ -13,7 +14,8 @@ import useValues from './__hooks__/useValues';
 import { RATING_FOOTER_HEIGHT } from './constants';
 import { FeedbackModalPropsType } from './type';
 
-export const FeedbackModal = ({ title, onSubmit, isLoading, isMan = false }: FeedbackModalPropsType) => {
+export const FeedbackModal = ({ title, onSubmit, isLoading }: FeedbackModalPropsType) => {
+  const { appName } = useSystem();
   const { getQueryParams } = useQueryParamsHandler();
 
   const valuesProps = useValues();
@@ -36,7 +38,7 @@ export const FeedbackModal = ({ title, onSubmit, isLoading, isMan = false }: Fee
             {title}
           </CustomTypography>
 
-          <FeedbackStars rate={valuesProps.rate} rateHandler={valuesProps.rateHandler} isMan={isMan} />
+          <FeedbackStars rate={valuesProps.rate} rateHandler={valuesProps.rateHandler} />
         </div>
 
         <div className="w-full h-[1px] my-2 bg-impo_Neutral_Surface" />
@@ -53,7 +55,7 @@ export const FeedbackModal = ({ title, onSubmit, isLoading, isMan = false }: Fee
             onClick={submitHandler}
             isLoading={isLoading}
             isDisable={!valuesProps.rate}
-            className={`${isMan && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
+            className={`${appName === 'MEN_PWA' && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
           >
             ثبت نظر
           </CustomButton>

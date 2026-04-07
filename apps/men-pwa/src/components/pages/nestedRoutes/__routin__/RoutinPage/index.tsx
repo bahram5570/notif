@@ -74,7 +74,6 @@ const RoutinPage = () => {
             title="امیدواریم این برنامه برات مفید بوده باشه.به برنامه امروزت چه امتیازی میدی؟"
             onSubmit={rateHandler}
             isLoading={feedbackLoading}
-            isMan={true}
           />
         </>
       )}
