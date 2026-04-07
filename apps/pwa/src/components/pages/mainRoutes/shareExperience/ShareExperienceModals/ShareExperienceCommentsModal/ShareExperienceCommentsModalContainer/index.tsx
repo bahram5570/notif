@@ -1,7 +1,7 @@
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
-import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
