@@ -53,7 +53,9 @@ const ArticleItem = (props: ArticleItemPropsType) => {
     <div className="flex flex-col gap-1" onClick={linkToHandler}>
       <CustomImage src={JSON.parse(props.description)} className="w-[200px] h-[112px] rounded-md" />
       <div className="flex flex-col items-end">
-        <CustomTypography fontSize="Lable_Medium">{props.title}</CustomTypography>
+        <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+          {props.title}
+        </CustomTypography>
         <CustomTypography fontSize="Body_Small" className="text-impo_Surface_Outline">
           {currentDate}
         </CustomTypography>
