@@ -14,6 +14,7 @@ import { useSignDateState } from '@repo/core/hooks/useSignDateState';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import moment from 'moment-jalaali';
 
+import { useSystem } from '../../../hooks/useSystem';
 import { NoteContainerListSkeleton } from './NoteContainerListSkeleton';
 import { useGetData } from './__hooks__/useGetData';
 
@@ -24,6 +25,7 @@ export const NoteContainerList = () => {
   const [currentDate, setCurrentDate] = useState('');
   const { isLoading, currentNoteList } = useGetData();
   const { calendarInitailSelectedDate } = useSignDateState();
+  const { appName } = useSystem();
 
   const { pageNavigationHandler } = usePageNavigationLoading();
   const selectedDate = calendarInitailSelectedDate ? calendarInitailSelectedDate : gDate;
@@ -96,7 +98,7 @@ export const NoteContainerList = () => {
             <div
               onClick={linkToHandler}
               data-testid={'new-note-link-btn'}
-              className="flex items-center justify-center gap-2 w-full px-6 py-3 rounded-full bg-impo_Primary_Primary select-none cursor-pointer"
+              className={`flex items-center justify-center gap-2 w-full px-6 py-3 rounded-full border-none ${appName === 'PWA' ? 'bg-impo_Primary_Primary' : 'bg-impo_PrimaryMan_PrimaryMan'} select-none cursor-pointer`}
             >
               <CustomTypography fontSize="Lable_Large" className="text-impo_White">
                 یادداشت جدید

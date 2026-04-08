@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 
-import NoteBtnModal from './NoteBtnModal';
+import { NoteBtnModal } from './NoteBtnModal';
 import { NoteTextarea } from './NoteTextarea';
 import { NOTE_INPUT_LIST } from './constants';
 import { NoteInputGeneratorPropsType } from './type';

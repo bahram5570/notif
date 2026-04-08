@@ -9,15 +9,17 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 
+import { useSystem } from '../../../hooks/useSystem';
 import DeleteNoteBtn from './DeleteNoteBtn';
 import { NoteContainerSkeleton } from './NoteContainerSkeleton';
 import { NoteInputGenerator } from './NoteInputGenerator';
-import NoteModal from './NoteModal';
+import { NoteModal } from './NoteModal';
 import { useGetData } from './__hooks__/useGetData';
 import { useSubmit } from './__hooks__/useSubmit';
 
 export const NoteContainer = () => {
   const { callEvent } = useAnalytics();
+  const { appName } = useSystem();
 
   const textareaConainerRef = useRef<HTMLDivElement | null>(null);
   const { noteValue, onChangeHandler, isLoading: getDataLoading } = useGetData();
@@ -61,7 +63,13 @@ export const NoteContainer = () => {
               className="fixed h-fit right-0 left-0 bottom-0 z-40 py-3 px-2 mx-auto"
               style={{ maxWidth: MAX_SCREEN_WIDTH }}
             >
-              <CustomButton isLoading={isLoading} isDisable={!noteValue.title} fontSize="Lable_Large" onClick={onClick}>
+              <CustomButton
+                isLoading={isLoading}
+                className={appName && '!bg-impo_PrimaryMan_PrimaryMan !border-none'}
+                isDisable={!noteValue.title}
+                fontSize="Lable_Large"
+                onClick={onClick}
+              >
                 {isEditMode ? 'ویرایش یادداشت' : 'ثبت یادداشت'}
               </CustomButton>
             </div>
