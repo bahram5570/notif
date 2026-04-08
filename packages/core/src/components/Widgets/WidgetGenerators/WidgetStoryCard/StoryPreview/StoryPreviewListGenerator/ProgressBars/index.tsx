@@ -5,9 +5,9 @@ import CrossIcon from '@assets/shared/icons/plus.svg';
 
 import { useRouter } from 'next/navigation';
 
+import { CustomTypography } from '../../../../../../ui/CustomTypography';
 import { STORY_PROGRESS_HEIGHT } from '../../../constants';
 import { ProgressBarsProps } from './types';
-import { CustomTypography } from '../../../../../../ui/CustomTypography';
 
 const ProgressBars = ({
   isCurrentStorySlide,
@@ -22,7 +22,7 @@ const ProgressBars = ({
   const [progressPercent, setProgressPercent] = useState(0);
 
   const currentSlide = stories[currentSlideIndex];
-  const isCallable = !currentSlide.isViewed && progressPercent > 50;
+  const isCallable = !currentSlide.isViewed && progressPercent >= 50;
 
   useEffect(() => {
     if (!isLoading && isCurrentStorySlide) {
