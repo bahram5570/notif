@@ -32,7 +32,7 @@ const RoutinPage = () => {
     onComplete: () => {
       route.back();
       const payload = { ...data, rate: feedbackData };
-      updateQuery({ queryKey: ['pairRoutinItems'], payload });
+      updateQuery({ queryKey: ['manHealthProgramItems'], payload });
     },
   });
 

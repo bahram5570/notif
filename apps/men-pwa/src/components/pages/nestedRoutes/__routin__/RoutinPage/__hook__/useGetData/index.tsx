@@ -9,7 +9,7 @@ import { PairRoutinResponsive } from './type';
 
 const useGetData = () => {
   const { getQueryParams } = useQueryParamsHandler();
-  const { getQuery, newQuery } = useCustomReactQuery();
+  const { getQuery, newQuery } = useCustomReactQuery(['manHealthProgramItems']);
 
   const searchData = getQueryParams('searchData');
 
@@ -27,7 +27,7 @@ const useGetData = () => {
     onSuccess: (v: PairRoutinResponsive) => successHandler(v),
   });
 
-  const data = getQuery<PairRoutinResponsive>({ queryKey: ['manHealthProgram'] });
+  const data = getQuery<PairRoutinResponsive>({ queryKey: ['manHealthProgramItems'] });
 
   useEffect(() => {
     if (api.length > 0) {

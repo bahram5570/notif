@@ -20,7 +20,7 @@ const useFeedback = ({ programId, onComplete }: UseFeedbackPropsType) => {
   };
 
   const { callApi, isLoading } = usePwaApi({
-    api: 'widgets/manprogram/rate',
+    api: 'widgets/manhealthprogram/rate',
     method: 'POST',
     onSuccess: successHandler,
   });
