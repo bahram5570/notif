@@ -6,6 +6,7 @@ import { CALENDAR_CELL_SIZE, DATE_SEPERATOR_REGEX } from '../../../../../constan
 import { CustomImage } from '../../../../ui/CustomImage';
 import { CustomTypography } from '../../../../ui/CustomTypography';
 import { useCalendarDayInfo } from '../../../__hooks__/useCalendarDayInfo';
+import HasNoteDot from './HasNoteDot';
 import HasSignDot from './HasSignDot';
 import { SingleDayProps } from './types';
 
@@ -31,6 +32,7 @@ const SingleDay = ({ isSelected, selectedDateHandler, day, dateType }: SingleDay
                 `}
     >
       <HasSignDot day={day} isSelected={isSelected} />
+      <HasNoteDot day={day} isSelected={isSelected} />
 
       {isBirthday && <CustomImage src={'/assets/images/birthdayCake.webp'} className="w-[18px] h-auto" />}
 

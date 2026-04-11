@@ -2,7 +2,6 @@ import { currentDate } from '@repo/core/utils/dates';
 
 import useSignInteractiveBanner from '@hooks/__sign__/useSignInteractiveBanner';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { useRouter } from 'next/navigation';
 
 import { ResponseType, useSignSelectedProps } from './types';
 
