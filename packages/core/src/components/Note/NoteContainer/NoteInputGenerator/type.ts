@@ -3,12 +3,10 @@ import { OnchangeHandlerType } from '../type';
 
 export type InputType = {
   label: string;
-  description: string;
   name: keyof ItemType;
 };
 
 export type FormDataType = {
-  btnModal: InputType[];
   textareaInput: InputType[];
 };
 

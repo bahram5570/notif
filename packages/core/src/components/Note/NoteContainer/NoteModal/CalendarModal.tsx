@@ -1,12 +1,19 @@
 import { CalendarContainer } from '@repo/core/components/calendar/CalendarContainer';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
+import { useRouter } from 'next/navigation';
+
 import { CalendarSkeleton } from './CalendarSkeleton';
 import { useCalendar } from './__hooks__/useCalendar';
 import { CalendarModalPropsType } from './type';
 
-const CalendarModal = ({ dateTime, onChangeHandler, onCloseModalHandler }: CalendarModalPropsType) => {
+const CalendarModal = ({ dateTime, onChangeHandler }: CalendarModalPropsType) => {
+  const router = useRouter();
   const { isLoading, calendarData, selectedDate, selectedDateHandler } = useCalendar({ dateTime });
+
+  const onCloseModalHandler = () => {
+    router.back();
+  };
 
   const applyHandler = () => {
     onChangeHandler(selectedDate, 'time');

@@ -1,5 +1,3 @@
-import { ItemType } from './__hooks__/useGetData/type';
-
 export type NoteValueType = {
   noteId?: string;
   // reminder: boolean;
@@ -8,4 +6,4 @@ export type NoteValueType = {
   dateTime: string;
 };
 
-export type OnchangeHandlerType = (v: string, name: keyof ItemType) => void;
+export type OnchangeHandlerType = (v: string, name?: string) => void;

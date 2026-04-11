@@ -9,8 +9,13 @@ import {
 import { useCulture } from '@repo/core/hooks/useCulture';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
+import { useSystem } from '../useSystem';
+
 export const useCalendarGetData = ({ onValues, hasSigns }: UseGetDataProps) => {
   const { culture } = useCulture();
+  const { appName } = useSystem();
+
+  const api = appName === 'PWA' ? 'info/calendar' : 'info/man/calendar';
 
   const successHandler = (v: InfoCalendarResponseTypes) => {
     let result: CalendarDataTypes = {};
@@ -44,7 +49,7 @@ export const useCalendarGetData = ({ onValues, hasSigns }: UseGetDataProps) => {
 
   const { isLoading } = usePwaApi<InfoCalendarResponseTypes>({
     method: 'GET',
-    api: 'info/calendar',
+    api,
     onSuccess: successHandler,
     queryKey: ['infoCalendar'],
   });

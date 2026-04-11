@@ -5,12 +5,14 @@ import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
+import { NoteModalNameEnums } from './NoteModal/enum';
+
 const DeleteNoteBtn = () => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const linkToHandler = () => {
-    newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true', name: 'deleteNote' });
+    newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true', name: NoteModalNameEnums.DeleteNote });
 
     pageNavigationHandler({
       showProgressBar: true,

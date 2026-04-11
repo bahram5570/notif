@@ -1,38 +1,31 @@
-import PenIcon from '../../../../../../../assets/src/shared/icons/Pen 2.svg';
-import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import PenIcon from '@assets/shared/icons/Pen 2.svg';
 
-import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { MODAL_QUERY_NAME } from '../../../../../constants/modal.constants';
+import { usePageNavigationLoading } from '../../../../../hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '../../../../../hooks/useQueryParamsHandler';
+import { CustomSpinner } from '../../../../ui/CustomSpinner';
+import { CustomTypography } from '../../../../ui/CustomTypography';
+import { NoteModalNameEnums } from '../../NoteModal/enum';
+import { NoteDateInputPropsType } from './type';
 
-import { NoteBtnModalPropsType } from './type';
-
-export const NoteBtnModal = ({ description, label, name, value }: NoteBtnModalPropsType) => {
+const NoteDateInput = ({ value }: NoteDateInputPropsType) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
-  const isLoading = pageNavigationLoading === name;
+  const isLoading = pageNavigationLoading === NoteModalNameEnums.DateTime;
   const displayDate = value ? value.replace(/-/g, '/') : 'تنظیم نشده';
 
   const linkToHandler = () => {
-    (newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true', name }),
-      pageNavigationHandler({ showProgressBar: false, id: name }));
+    (newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true', name: NoteModalNameEnums.DateTime }),
+      pageNavigationHandler({ showProgressBar: false, id: NoteModalNameEnums.DateTime }));
   };
-
   return (
     <div className="py-1  px-2 flex flex-col gap-2 ">
       <div className="flex items-center flex-row-reverse p-1">
         <div className="flex gap-1 flex-row-reverse ">
           <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
-            {label}
+            تاریخ
           </CustomTypography>
-
-          {description && (
-            <CustomTypography fontSize="Lable_Large" className="text-impo_Surface_Outline">
-              {description}
-            </CustomTypography>
-          )}
         </div>
 
         <div className="w-full flex  items-center" onClick={linkToHandler}>
@@ -52,3 +45,5 @@ export const NoteBtnModal = ({ description, label, name, value }: NoteBtnModalPr
     </div>
   );
 };
+
+export default NoteDateInput;
