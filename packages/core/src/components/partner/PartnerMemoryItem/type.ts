@@ -8,6 +8,5 @@ export type PartnerMemoryItemPropsType = {
   validPartner: boolean;
   textPartner: string;
   timePartner: string;
-  isMan?: boolean;
   partName: string | undefined;
 };

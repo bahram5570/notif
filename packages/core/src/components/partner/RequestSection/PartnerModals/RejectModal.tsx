@@ -2,13 +2,16 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useRouter } from 'next/navigation';
 
+import { useSystem } from '../../../../hooks/useSystem';
 import useReject from './__hooks__/useReject';
-import { ModalPropsType } from './type';
 
-const RejectModal = ({ onCloseModal, isMan }: ModalPropsType) => {
+const RejectModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
   const { rejectHandler, isLoading } = useReject();
+  const { appName } = useSystem();
+  const route = useRouter();
 
   const id = getQueryParams('id');
   const partnerName = getQueryParams('partnerName');
@@ -16,6 +19,10 @@ const RejectModal = ({ onCloseModal, isMan }: ModalPropsType) => {
 
   const onClick = () => {
     rejectHandler(id);
+  };
+
+  const onCloseHandler = () => {
+    route.back();
   };
 
   return (
@@ -30,7 +37,7 @@ const RejectModal = ({ onCloseModal, isMan }: ModalPropsType) => {
 
       <div className={`flex w-full justify-between gap-2 `}>
         <CustomButton
-          className={`${isMan && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
+          className={`${appName === 'MEN_PWA' && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
           onClick={onClick}
           isLoading={isLoading}
           fontSize="Lable_Large"
@@ -39,7 +46,7 @@ const RejectModal = ({ onCloseModal, isMan }: ModalPropsType) => {
         </CustomButton>
         <CustomButton
           className="!bg-impo_Neutral_Surface !text-impo_Neutral_OnSurface !border-impo_Neutral_Surface"
-          onClick={onCloseModal}
+          onClick={onCloseHandler}
           fontSize="Lable_Large"
         >
           !نه

@@ -6,12 +6,13 @@ import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
+import { useSystem } from '../../../../hooks/useSystem';
 import { PartnerModalNameEnums } from './enums';
-import { CommanPropsType } from './type';
 
-const AcceptModal = ({ isMan }: CommanPropsType) => {
+const AcceptModal = () => {
   const { getQueryParams, newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
+  const { appName } = useSystem();
 
   const id = getQueryParams('id');
   const partnerName = getQueryParams('partnerName');
@@ -28,9 +29,11 @@ const AcceptModal = ({ isMan }: CommanPropsType) => {
   return (
     <div className="flex flex-col justify-center items-center gap-4 max-w-xs">
       <div
-        className={`w-10 h-10 flex justify-center items-center rounded-full  ${isMan ? 'bg-impo_PrimaryMan_PrimaryContainerMan' : 'bg-impo_Primary_PrimaryContainer'}`}
+        className={`w-10 h-10 flex justify-center items-center rounded-full  ${appName === 'MEN_PWA' ? 'bg-impo_PrimaryMan_PrimaryContainerMan' : 'bg-impo_Primary_PrimaryContainer'}`}
       >
-        <Hamdel className={`w-6 h-6  ${isMan ? 'stroke-impo_PrimaryMan_PrimaryMan' : 'stroke-impo_Primary_Primary'}`} />
+        <Hamdel
+          className={`w-6 h-6  ${appName === 'MEN_PWA' ? 'stroke-impo_PrimaryMan_PrimaryMan' : 'stroke-impo_Primary_Primary'}`}
+        />
       </div>
       <div className="flex flex-col justify-center items-center gap-2">
         <CustomTypography fontSize="Title_Medium" className="text-center text-impo_Neutral_OnBackground">
@@ -43,7 +46,7 @@ const AcceptModal = ({ isMan }: CommanPropsType) => {
           </CustomTypography>
 
           <div className="flex flex-col justify-center items-center">
-            {!isMan && (
+            {appName === 'PWA' && (
               <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
                 .مشاهده وضعیت چرخه
               </CustomTypography>
@@ -60,7 +63,7 @@ const AcceptModal = ({ isMan }: CommanPropsType) => {
 
         <CustomButton
           onClick={onClickHandler}
-          className={`${isMan && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
+          className={`${appName === 'MEN_PWA' && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
         >
           <CustomTypography fontSize="Lable_Large" className="text-impo_White ">
             باشه

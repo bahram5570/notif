@@ -90,7 +90,6 @@ const MemoryDetailPage = () => {
             fromMan={memoryData.fromMan}
             validPartner={memoryData.validPartner}
             callBack={resteMemory}
-            isMan={true}
           />
         </>
       )}

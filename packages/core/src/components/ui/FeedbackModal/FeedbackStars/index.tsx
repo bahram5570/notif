@@ -1,17 +1,19 @@
 import StarIcon from '@assets/shared/icons/star.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
+import { useSystem } from '../../../../hooks/useSystem';
 import { RATING_LIST } from '../constants';
 import { FeedbackStarsPropsType } from './type';
 
-const FeedbackStars = ({ rate, rateHandler, isMan }: FeedbackStarsPropsType) => {
+const FeedbackStars = ({ rate, rateHandler }: FeedbackStarsPropsType) => {
+  const { appName } = useSystem();
   return (
     <div className="w-full flex flex-col items-center gap-2 py-4">
       <div className="flex items-center justify-between w-[220px] pb-2">
         {RATING_LIST.map((item) => (
           <StarIcon
             onClick={() => rateHandler(item.no)}
-            className={`w-8 h-auto cursor-pointer ${item.no <= rate ? (isMan ? 'stroke-impo_PrimaryMan_PrimaryMan fill-impo_PrimaryMan_PrimaryMan' : 'stroke-impo_Yellow fill-impo_Yellow') : 'stroke-impo_Surface_OutlineVariant fill-impo_Transparent'}`}
+            className={`w-8 h-auto cursor-pointer ${item.no <= rate ? (appName === 'MEN_PWA' ? 'stroke-impo_PrimaryMan_PrimaryMan fill-impo_PrimaryMan_PrimaryMan' : 'stroke-impo_Yellow fill-impo_Yellow') : 'stroke-impo_Surface_OutlineVariant fill-impo_Transparent'}`}
             key={item.no}
           />
         ))}

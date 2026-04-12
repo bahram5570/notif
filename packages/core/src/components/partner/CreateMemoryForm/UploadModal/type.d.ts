@@ -2,7 +2,7 @@ import { FileDataHandlerTypes } from '@hooks/useFileUpload/types';
 
 import { CreateMemoryFormPropsType } from '../type';
 
-export type UploadModalPropsType = Pick<CreateMemoryFormPropsType, 'isMan'> & {
+export type UploadModalPropsType = {
   fileDataHandler: FileDataHandlerTypes;
   uploadImageLoading: boolean;
 };

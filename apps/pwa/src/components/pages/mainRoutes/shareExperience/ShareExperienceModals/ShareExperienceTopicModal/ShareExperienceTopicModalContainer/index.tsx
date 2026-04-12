@@ -1,8 +1,7 @@
 import { useRef } from 'react';
 
-import styles from '../../../styles.module.css';
+import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
 
-import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';

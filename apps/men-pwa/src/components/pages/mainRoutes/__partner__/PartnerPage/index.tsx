@@ -33,7 +33,7 @@ const PartnerPage = () => {
               <Challenge button={data.button} card={data.card} valid={data.valid} />
             </div>
 
-            {!data.valid && <RequestSection element={<NotRequestData />} isMan={true} />}
+            {!data.valid && <RequestSection element={<NotRequestData />} />}
 
             {data.partner.cycleCard.title || data.partner.cycleCard.image ? (
               <PartnerCard partner={data.partner} valid={data.valid} />

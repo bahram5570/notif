@@ -7,7 +7,7 @@ import RequestListSkeleton from './RequestList/RequestListSkeleton';
 import useGetRequestData from './__hooks__/useGetRequestData';
 import { RequestSectionPropsType } from './type';
 
-export const RequestSection = ({ element, isMan }: RequestSectionPropsType) => {
+export const RequestSection = ({ element }: RequestSectionPropsType) => {
   const { data, getData, isLoading } = useGetRequestData();
   const hasRequestList = data && data.list.length > 0;
   const title = hasRequestList ? 'درخواست های همدلی' : ' درخواست ها';
@@ -24,8 +24,8 @@ export const RequestSection = ({ element, isMan }: RequestSectionPropsType) => {
       </div>
       {isLoading && <RequestListSkeleton />}
 
-      {!isLoading && hasRequestList ? <RequestList list={data.list} isMan={isMan} /> : element}
-      <PartnerModals isMan={isMan} />
+      {!isLoading && hasRequestList ? <RequestList list={data.list} /> : element}
+      <PartnerModals />
     </div>
   );
 };

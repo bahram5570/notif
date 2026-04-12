@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react';
 
 import { usePwaApi } from '../../../../../../../../hooks/usePwaApi';
+import { useSystem } from '../../../../../../../../hooks/useSystem';
 import { IsViewListTypes, UseIsViewProps, ViewStoryHandlerTypes } from './types';
 
 const useIsView = ({ list, isOpen }: UseIsViewProps) => {
+  const { appName } = useSystem();
   const [isUpdated, setIsUpdated] = useState(false);
   const [api, setApi] = useState<string | null>(null);
   const [updateList, setUpdateList] = useState<IsViewListTypes>([]);
@@ -32,7 +34,8 @@ const useIsView = ({ list, isOpen }: UseIsViewProps) => {
     if (!isInList) {
       setIsUpdated(true);
       newList.push(slideId);
-      setApi(`story/view/${slideId}`);
+      const api = appName === 'MEN_PWA' ? `manstory/view/${slideId}` : `story/view/${slideId}`;
+      setApi(api);
     }
 
     setUpdateList(newList);

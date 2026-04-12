@@ -2,6 +2,7 @@ import CopyIcon from '@assets/shared/icons/Copy.svg';
 import Refresh from '@assets/shared/icons/refresh.svg';
 
 import { useCopy } from '../../../hooks/useCopy';
+import { useSystem } from '../../../hooks/useSystem';
 import { CustomSpinner } from '../../ui/CustomSpinner';
 import { CustomTypography } from '../../ui/CustomTypography';
 import useRefreshCode from './__hooks__/useRefreshCode';
@@ -10,6 +11,8 @@ import { RefreshPartnerCodePropsType } from './type';
 export const RefreshPartnerCode = (props: RefreshPartnerCodePropsType) => {
   const { onRefreshCodeHandler, refreshLoading } = useRefreshCode({ callBackHandler: props.callBackHandler });
   const { copyToClipboard } = useCopy();
+  const { appName } = useSystem();
+
   const loading = props.isLoading || refreshLoading;
 
   const copyHandler = () => {
@@ -32,7 +35,7 @@ export const RefreshPartnerCode = (props: RefreshPartnerCodePropsType) => {
           {!props.isLoading && props.partnerCode && (
             <CustomTypography
               fontSize="Title_Small"
-              className={`${props.isMan && 'text-impo_PrimaryMan_PrimaryMan'} text-impo_Neutral_OnBackground px-2`}
+              className={`${appName === 'MEN_PWA' && 'text-impo_PrimaryMan_PrimaryMan'} text-impo_Neutral_OnBackground px-2`}
             >
               {props.partnerCode}
             </CustomTypography>

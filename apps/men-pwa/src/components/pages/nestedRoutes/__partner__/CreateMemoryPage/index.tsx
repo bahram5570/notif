@@ -44,7 +44,7 @@ const CreateMemoryPage = () => {
           </CustomTypography>
         </div>
         <DateHeaderSection currentDate={`امروز ${currentDate} `} />
-        <CreateMemoryForm inputValue={inputValue} onChangeHandler={onChangeHandler} isMan={true} />
+        <CreateMemoryForm inputValue={inputValue} onChangeHandler={onChangeHandler} />
 
         <div className="mt-auto">
           <CustomButton

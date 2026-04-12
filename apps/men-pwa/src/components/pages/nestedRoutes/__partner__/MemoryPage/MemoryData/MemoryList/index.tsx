@@ -10,7 +10,7 @@ const MemoryList = ({ memories, partName }: MemoryListPropsType) => {
       {memories.map((memory) => {
         return (
           <div key={memory.id} className="divide-y-2" style={{ paddingBottom: FOOTER_HEIGHT }}>
-            <PartnerMemoryItem {...memory} isMan={true} partName={partName} />
+            <PartnerMemoryItem {...memory} partName={partName} />
           </div>
         );
       })}

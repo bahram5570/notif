@@ -1,3 +1,4 @@
+import MainFooter from '@components/MainFooter';
 import { FIREBASE_CONFIG, FIREBASE_VAPID_KEY } from '@constants/app.constants';
 import { NEED_DATE_PATH_LIST, NEED_TOAST_PATH_LIST } from '@constants/routes.constants';
 import AddToHomeScreenProvider from '@providers/AddToHomeScreenProvider';
@@ -15,6 +16,7 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
         <ProfileProvider>
           <SignDateStateProvider dateRoutes={NEED_DATE_PATH_LIST} toastRoutes={NEED_TOAST_PATH_LIST}>
             <>{children}</>
+            <MainFooter />
           </SignDateStateProvider>
         </ProfileProvider>
       </SplashProvider>

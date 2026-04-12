@@ -4,7 +4,7 @@ import { CustomRadioButton } from '../../ui/CustomRadioButton';
 import { LIST_LABEL } from './constants';
 import { PartnerRadioButtonPropsType } from './type';
 
-export const PartnerRadioButton = ({ onChange, value, isMan }: PartnerRadioButtonPropsType) => {
+export const PartnerRadioButton = ({ onChange, value }: PartnerRadioButtonPropsType) => {
   return (
     <div className="flex flex-col gap-2 items-end ">
       {LIST_LABEL.map((item, index) => {
@@ -19,7 +19,7 @@ export const PartnerRadioButton = ({ onChange, value, isMan }: PartnerRadioButto
                 {item.name}
               </CustomTypography>
             </label>
-            <CustomRadioButton isChecked={value === item.value} onClick={() => onChange(item.value)} isMan={isMan} />
+            <CustomRadioButton isChecked={value === item.value} onClick={() => onChange(item.value)} />
           </div>
         );
       })}

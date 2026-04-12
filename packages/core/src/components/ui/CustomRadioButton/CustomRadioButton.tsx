@@ -1,6 +1,8 @@
+import { useSystem } from '../../../hooks/useSystem';
 import { RadioButtonProps } from './type';
 
-export const CustomRadioButton = ({ isChecked, onClick, isDisable, testId, isMan = false }: RadioButtonProps) => {
+export const CustomRadioButton = ({ isChecked, onClick, isDisable, testId }: RadioButtonProps) => {
+  const { appName } = useSystem();
   const clickHandler = () => {
     if (!isDisable && onClick) {
       onClick();
@@ -20,7 +22,7 @@ export const CustomRadioButton = ({ isChecked, onClick, isDisable, testId, isMan
                     rounded-full 
                     flex 
                     border-2
-                    ${isChecked ? (isMan ? 'border-impo_PrimaryMan_PrimaryMan' : 'border-impo_Primary_Primary') : 'border-impo_Surface_Outline'}
+                    ${isChecked ? (appName === 'MEN_PWA' ? 'border-impo_PrimaryMan_PrimaryMan' : 'border-impo_Primary_Primary') : 'border-impo_Surface_Outline'}
                   `}
       >
         {isChecked && (
@@ -30,7 +32,7 @@ export const CustomRadioButton = ({ isChecked, onClick, isDisable, testId, isMan
                         h-3 
                         rounded-full 
                         m-auto
-                        ${isChecked ? (isMan ? 'bg-impo_PrimaryMan_PrimaryMan' : 'bg-impo_Primary_Primary') : 'bg-impo_Surface_Outline'}
+                        ${isChecked ? (appName === 'MEN_PWA' ? 'bg-impo_PrimaryMan_PrimaryMan' : 'bg-impo_Primary_Primary') : 'bg-impo_Surface_Outline'}
                       `}
           />
         )}

@@ -1,11 +1,11 @@
 import RequestGenerator from './RequestGenerator';
 import { RequestListPropsType } from './type';
 
-const RequestList = ({ list, isMan }: RequestListPropsType) => {
+const RequestList = ({ list }: RequestListPropsType) => {
   return (
     <div className="divide-y">
       {list.map((part, index) => (
-        <RequestGenerator item={part} key={index} isMan={isMan} />
+        <RequestGenerator item={part} key={index} />
       ))}
     </div>
   );

@@ -6,10 +6,12 @@ import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
+import { useSystem } from '../../../../hooks/useSystem';
 import { PartnerModalNameEnums } from '../PartnerModals/enums';
 import { RequestGeneratorTypeProps } from './type';
 
-const RequestGenerator = ({ item, isMan }: RequestGeneratorTypeProps) => {
+const RequestGenerator = ({ item }: RequestGeneratorTypeProps) => {
+  const { appName } = useSystem();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
   const isLoading = pageNavigationLoading === item.name;
@@ -52,7 +54,7 @@ const RequestGenerator = ({ item, isMan }: RequestGeneratorTypeProps) => {
       <div className="flex items-center gap-3">
         {item.isRecv && (
           <CustomButton
-            className={`max-w-fit ${isMan && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'} `}
+            className={`max-w-fit ${appName === 'MEN_PWA' && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'} `}
             onClick={onAcceptClickHandler}
             isLoading={isLoading}
           >

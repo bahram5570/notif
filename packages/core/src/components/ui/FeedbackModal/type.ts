@@ -4,5 +4,4 @@ export type FeedbackModalPropsType = {
   title: string;
   onSubmit: onSubmitType;
   isLoading: boolean;
-  isMan?: boolean;
 };

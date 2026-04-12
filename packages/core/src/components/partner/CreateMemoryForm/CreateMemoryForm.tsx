@@ -6,7 +6,7 @@ import { UploadModal } from './UploadModal/UploadModal';
 import useFileUpload from './__hooks__/useFileUpload';
 import { CreateMemoryFormPropsType } from './type';
 
-export const CreateMemoryForm = ({ inputValue, onChangeHandler, isMan }: CreateMemoryFormPropsType) => {
+export const CreateMemoryForm = ({ inputValue, onChangeHandler }: CreateMemoryFormPropsType) => {
   const router = useRouter();
   const successHandler = (v: string) => {
     onChangeHandler(v, 'fileName');
@@ -25,7 +25,6 @@ export const CreateMemoryForm = ({ inputValue, onChangeHandler, isMan }: CreateM
         onChangeHandler={onChangeHandler}
         fileName={inputValue.fileName}
         uploadImageLoading={uploadImageLoading}
-        isMan={isMan}
       />
       <CustomTextareaInput
         rows={1}
@@ -44,7 +43,7 @@ export const CreateMemoryForm = ({ inputValue, onChangeHandler, isMan }: CreateM
         maxLength={400}
       />
 
-      <UploadModal fileDataHandler={fileDataHandler} uploadImageLoading={uploadImageLoading} isMan={isMan} />
+      <UploadModal fileDataHandler={fileDataHandler} uploadImageLoading={uploadImageLoading} />
     </>
   );
 };

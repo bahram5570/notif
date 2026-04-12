@@ -1,6 +1,4 @@
-import { FeedbackModalPropsType } from '../type';
-
-export type FeedbackStarsPropsType = Pick<FeedbackModalPropsType, 'isMan'> & {
+export type FeedbackStarsPropsType = {
   rate: number;
   rateHandler: (v: number) => void;
 };

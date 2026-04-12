@@ -27,7 +27,7 @@ const TypeRelationship = ({ distanceType }: TypeRelationshipPropsType) => {
           </CustomTypography>
         </div>
 
-        <PartnerRadioButton isMan={true} onChange={changeValueHandler} value={distanceTypeValue} />
+        <PartnerRadioButton onChange={changeValueHandler} value={distanceTypeValue} />
       </div>
     </div>
   );

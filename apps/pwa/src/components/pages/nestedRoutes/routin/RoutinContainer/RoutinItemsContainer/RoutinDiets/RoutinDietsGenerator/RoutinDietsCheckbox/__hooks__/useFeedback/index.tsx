@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import { onSubmitType } from '@components/FeedbackModal/type';
+import { onSubmitType } from '@repo/core/components/ui/FeedbackModal';
+
 import { RoutinResponseTypes } from '@components/pages/nestedRoutes/routin/RoutinContainer/__hooks__/useGetData/types';
 import { ProgramRateStatusEnum } from '@components/pages/nestedRoutes/routin/enum';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
