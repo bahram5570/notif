@@ -11,7 +11,7 @@ import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { useSystem } from '../useSystem';
 
-export const useCalendarGetData = ({ onValues, hasSigns }: UseGetDataProps) => {
+export const useCalendarGetData = ({ onValues, hasSigns, cacheTime }: UseGetDataProps) => {
   const { culture } = useCulture();
   const { appName } = useSystem();
 
@@ -52,6 +52,7 @@ export const useCalendarGetData = ({ onValues, hasSigns }: UseGetDataProps) => {
     api,
     onSuccess: successHandler,
     queryKey: ['infoCalendar'],
+    cacheTime: cacheTime,
   });
 
   return { isLoading };

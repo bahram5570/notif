@@ -26,7 +26,8 @@ const useGetData = () => {
     method: 'GET',
     api: 'info/calendar',
     onSuccess: successHandler,
-    queryKey: ['signsInfoCalendar'],
+    queryKey: ['infoCalendar'],
+    cacheTime: 5 * 1000,
   });
 
   return { isLoading, infoList };

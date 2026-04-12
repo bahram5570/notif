@@ -53,7 +53,7 @@ export type CalendarSignsType = {
     bloodPressures: BloodPressureType[];
     bloodSugers: BloodSugerType[];
     currentWeight: number;
-    weight: number;
+    weight: number | null;
   };
 };
 
@@ -103,6 +103,7 @@ export type OnValuesTypes = {
 export interface UseGetDataProps {
   onValues: (v: OnValuesTypes) => void;
   hasSigns: boolean;
+  cacheTime?: number;
 }
 
 export type CalendarMonthInfoMakerTypes = (

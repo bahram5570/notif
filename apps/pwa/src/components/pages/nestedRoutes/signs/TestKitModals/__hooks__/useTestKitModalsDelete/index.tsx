@@ -7,7 +7,7 @@ const useTestKitModalsDelete = () => {
   const { getQuery, updateQuery } = useCustomReactQuery();
 
   const deleteHandler = (v: { moduleType: KitTestModuleTypeEnums; index: number; createTime: string }) => {
-    const data = getQuery<InfoCalendarResponseTypes>({ queryKey: ['signsInfoCalendar'] });
+    const data = getQuery<InfoCalendarResponseTypes>({ queryKey: ['infoCalendar'] });
 
     if (data) {
       const date = v.createTime.slice(0, 10);
@@ -23,7 +23,7 @@ const useTestKitModalsDelete = () => {
           item.data.babyChecks = item.data.babyChecks.filter((_, index) => index !== v.index);
         }
 
-        updateQuery({ queryKey: ['signsInfoCalendar'], payload: data });
+        updateQuery({ queryKey: ['infoCalendar'], payload: data });
       }
     }
   };

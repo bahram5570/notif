@@ -17,7 +17,7 @@ const AddWeightContainer = () => {
   const weight = getQueryParams('currentWeight');
 
   const [currentWeight, setCurrentWeight] = useState<number>(Number(weight) || 20);
-  const { isLoading, submitHandler } = useSubmit();
+  const { isLoading, submitHandler } = useSubmit(currentWeight);
 
   const generateList = (start: number, end: number, step: number): { value: number; title: string }[] => {
     const list = [];
@@ -66,7 +66,7 @@ const AddWeightContainer = () => {
           isLoading={isLoading}
           fontSize="Lable_Large"
           navigationLoadingId="DatesContainer"
-          onClick={() => submitHandler(currentWeight)}
+          onClick={submitHandler}
         >
           ثبت اطلاعات
         </CustomButton>

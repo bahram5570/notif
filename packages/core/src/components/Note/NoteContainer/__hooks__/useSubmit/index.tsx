@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { toGregorianData } from '@repo/core/utils/dates';
 
 import { APP_VERSION } from '@repo/core/constants/app.constants';
@@ -6,18 +8,24 @@ import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import { useRouter } from 'next/navigation';
 
-import { useCustomReactQuery } from '../../../../../hooks/useCustomReactQuery';
 import { ItemType } from '../useGetData/type';
-import { UseSubmitPropsType } from './type';
+import useUpdateNoteList from '../useUpdateNoteList';
+import { NoteValueType, UseSubmitPropsType } from './type';
 
 export const useSubmit = ({ noteId }: UseSubmitPropsType) => {
   const router = useRouter();
+  const { updateNoteList } = useUpdateNoteList();
+  const [noteValue, setNotValue] = useState<NoteValueType>();
 
   const { culture } = useCulture();
 
   const isEditMode = noteId ? true : false;
 
   const successHandler = () => {
+    if (noteValue) {
+      updateNoteList({ ...noteValue });
+    }
+
     if (isEditMode) {
       router.push('/protected/calendar');
     } else {
@@ -41,7 +49,7 @@ export const useSubmit = ({ noteId }: UseSubmitPropsType) => {
       text,
       title,
     };
-
+    setNotValue(payload);
     callApi(payload);
   };
   return { submitHandler, isLoading };

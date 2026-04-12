@@ -12,7 +12,7 @@ const useGetData = ({ gregorianDate, moduleType }: UseGetDataProps) => {
   const [kitTestHistory, setKitTestHistory] = useState<KitTestHistoryTypes>(null);
 
   useEffect(() => {
-    const data = getQuery<InfoCalendarResponseTypes>({ queryKey: ['signsInfoCalendar'] });
+    const data = getQuery<InfoCalendarResponseTypes>({ queryKey: ['infoCalendar'] });
 
     const item = data?.days?.[gregorianDate].items.find((i) => i.type === CalendarWidgetEnums.Sign)?.data;
 

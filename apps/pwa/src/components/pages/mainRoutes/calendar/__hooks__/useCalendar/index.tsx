@@ -25,7 +25,7 @@ const useCalendar = () => {
     setCalendarData(v.calendarData);
   };
 
-  const { isLoading } = useCalendarGetData({ onValues: valuesHandler, hasSigns: true });
+  const { isLoading } = useCalendarGetData({ onValues: valuesHandler, hasSigns: true, cacheTime: 5 * 1000 });
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const { isLoadedHandler } = useSignInteractiveBanner();
 
