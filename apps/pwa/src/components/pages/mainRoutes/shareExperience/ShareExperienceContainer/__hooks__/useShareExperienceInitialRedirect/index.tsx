@@ -5,14 +5,17 @@ import { isDevelopeMode } from '@repo/core/utils/system';
 import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-import { SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE } from '../../../constants';
+import { SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE, SHARE_EXPERIENCE_VIEW_REPORT_PROFILE_ID } from '../../../constants';
+import useViewReportProfile from './useViewReportProfile';
 
-const useShareExperienceInitialRedirect = () => {
-  const searchParams = useSearchParams();
-  const isFirstTime1 = useRef(isDevelopeMode());
-  const { increaseZIndex } = useOverlayIndex();
-  const pathname = usePathname();
+const useShareExperienceInitialRedirect = (isLoaded: boolean) => {
   const router = useRouter();
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const { increaseZIndex } = useOverlayIndex();
+  const isFirstTime1 = useRef(isDevelopeMode());
+  const { profileIdHandler } = useViewReportProfile(isLoaded);
+
   // const isFirstTime2 = useRef(isDevelopeMode());
 
   const redirectStorage =
@@ -28,7 +31,13 @@ const useShareExperienceInitialRedirect = () => {
     if (isFirstTime1.current) {
       const params = new URLSearchParams(searchParams.toString());
 
-      params.forEach((_, key) => params.delete(key));
+      params.forEach((value, key) => {
+        if (key === SHARE_EXPERIENCE_VIEW_REPORT_PROFILE_ID && value) {
+          profileIdHandler(value);
+        }
+
+        params.delete(key);
+      });
 
       router.replace(pathname);
       isFirstTime1.current = false;

@@ -19,20 +19,20 @@ import useShareExperienceInitialRedirect from './__hooks__/useShareExperienceIni
 import useTopics from './__hooks__/useTopics';
 
 const ShareExperienceContainer = () => {
-  useShareExperienceInitialRedirect();
   const { isLoading, data, onSuccessNewHandler } = useShareExperienceGetData();
 
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const { categories, selectedCategoryId, selectedCategoryHandler, showAssociation } = useCategories(data?.categories);
   const { topics } = useTopics(data?.topics);
+  const scrollRef = useRef<HTMLDivElement>(null);
+  useShareExperienceInitialRedirect(Boolean(data));
+  const { categories, selectedCategoryId, selectedCategoryHandler, showAssociation } = useCategories(data?.categories);
 
   return (
     <>
       <MainPageLayoutHeader leftElement1="Profile" leftElement2="Notification" />
       <div
         ref={scrollRef}
-        className={`flex-1 overflow-y-auto ${isLoading ? 'pointer-events-none' : ''}`}
         style={{ height: '100dvh' }}
+        className={`flex-1 overflow-y-auto ${isLoading ? 'pointer-events-none' : ''}`}
       >
         {isLoading && !data && <ShareExperienceSkeleton />}
 
