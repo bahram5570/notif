@@ -31,7 +31,7 @@ export const NoteTextarea = ({ label, name, onchangeHandler, value }: NoteTextar
         name={name}
         rows={1}
         style={{ ...typographyFontStyles, direction: 'rtl' }}
-        className="w-full max-h-[100px] text-impo_Neutral_OnBackground text-right bg-impo_Transparent resize-none outline-none placeholder:text-impo_Surface_SurfaceVariant"
+        className="w-full max-h-[100px] !border-0 !outline-none text-impo_Neutral_OnBackground text-right bg-impo_Transparent resize-none"
       />
     </div>
   );
