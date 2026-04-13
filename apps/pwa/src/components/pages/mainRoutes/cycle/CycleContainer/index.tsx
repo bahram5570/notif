@@ -45,7 +45,7 @@ const CycleContainer = ({ data, customAppBar, children }: ContainerProps) => {
 
       <div
         style={{ paddingTop, backgroundColor: appBarBackground }}
-        className="relative h-full min-h-[100dvh] dark:!bg-impo_Neutral_Surface duration-300 z-0"
+        className="relative h-full min-h-[100dvh] pb-8 dark:!bg-impo_Neutral_Surface duration-300 z-0"
       >
         <div className="flex flex-col h-full">
           {widgetsListProps.currentCycleThemeEnum === CycleThemeEnum.Flat && (
