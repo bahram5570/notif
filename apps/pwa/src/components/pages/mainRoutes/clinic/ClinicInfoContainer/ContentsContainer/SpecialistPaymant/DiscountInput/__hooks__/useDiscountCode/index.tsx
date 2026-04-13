@@ -1,11 +1,12 @@
 import { useState } from 'react';
 
+import { ClinicInfoResponseTypes } from '@repo/core/components/clinic';
+
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useParams } from 'next/navigation';
 
-import { ClinicInfoResponseTypes } from '../../../../../__hooks__/useGetDataClinicInfo/types';
 import { ApplyDiscountResponseTypes, UseDiscountCodeProps } from './types';
 
 const useDiscountCode = ({ id, approvedCodeHandler }: UseDiscountCodeProps) => {

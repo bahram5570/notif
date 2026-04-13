@@ -1,5 +1,4 @@
-import { DrTypes } from '../../__hooks__/useGetDataClinicInfo/types';
-import { SelectedDoctorHandlerTypes } from '../__hooks__/useSelectSpecialist/types';
+import { DrTypes, SelectedDoctorHandlerTypes } from '@repo/core/components/clinic';
 
 type DoctorTypes = Pick<
   DrTypes,
@@ -16,5 +15,5 @@ export interface SpecialistCardSectionMakerProps {
   isSelected: boolean;
   value: string;
   title: string;
-  Icon: JSX;
+  Icon: React.ElementType;
 }

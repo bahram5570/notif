@@ -1,4 +1,4 @@
-import ChangeArrowsIcon from '@assets/icons/changeArrows.svg';
+import ChangeArrowsIcon from '@assets/shared/icons/changeArrows.svg';
 import { SPECIALISTS_LIST_QUERY_NAME } from '@repo/core/components/clinic';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
@@ -31,7 +31,7 @@ const ActiveSpecialist = ({ isMoreThanOne }: ActiveSpecialistProps) => {
               <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnSurface">
                 تغییر متخصص
               </CustomTypography>
-              <ChangeArrowsIcon className="w-4 h-auto fill-impo_Primary_Primary" />
+              <ChangeArrowsIcon className="w-4 h-auto fill-impo_Blue_900" />
             </div>
           </CustomButton>
         )}

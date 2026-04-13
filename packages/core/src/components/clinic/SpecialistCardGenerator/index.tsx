@@ -1,0 +1,1 @@
+export { SpecialistCardGenerator } from './SpecialistCardGenerator';

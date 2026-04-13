@@ -1,9 +1,8 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
+import { CustomImage } from '../../ui/CustomImage';
+import { CustomTypography } from '../../ui/CustomTypography';
 import { SpecialistInfoGeneratorProps } from './types';
 
-const SpecialistInfoGenerator = ({
+export const SpecialistInfoGenerator = ({
   nezamNumber,
   isSelected,
   speciliaty,
@@ -63,5 +62,3 @@ const SpecialistInfoGenerator = ({
     </div>
   );
 };
-
-export default SpecialistInfoGenerator;

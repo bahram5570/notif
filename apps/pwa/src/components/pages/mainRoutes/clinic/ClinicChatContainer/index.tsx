@@ -1,4 +1,5 @@
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+import { CHAT_HEADING_HEIGHT } from '@repo/core/components/clinic';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
@@ -10,7 +11,6 @@ import ChatSkeleton from './ChatSkeleton';
 import ChatsMessagesContainer from './ChatsMessagesContainer';
 import RatingContainer from './RatingContainer';
 import useGetData from './__hooks__/useGetData';
-import { CHAT_HEADING_HEIGHT } from './constants';
 
 const ClinicChatContainer = () => {
   const { isLoading, data } = useGetData();

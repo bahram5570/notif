@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { SPECIALIST_PAYMENT_QUERY_NAME } from '@repo/core/components/clinic';
 import { isDevelopeMode } from '@repo/core/utils/system';
 
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
-import { SPECIALIST_PAYMENT_QUERY_NAME } from '../../../constants';
 import { QuestionValuesHandlerTypes, QuestionValuesTypes } from './types';
 
 const useQuestionValues = () => {

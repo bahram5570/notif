@@ -20,16 +20,15 @@ const FileInput = ({ fileName, valuesHandler }: FileInputProps) => {
   const fileNameList = fileName.split('.');
   const fileNameScript = `${textShorter(fileNameList[0])} .${fileNameList[1]}`;
 
+  const onClick = () => {
+    newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true' });
+    pageNavigationHandler({ showProgressBar: false, id: 'specialistProblemModal' });
+  };
+
   return (
     <div className="w-full px-4 rounded-lg bg-impo_Neutral_Surface">
       {fileName === '' && (
-        <div
-          className="relative w-full flex items-center justify-center gap-2 py-2 cursor-pointer"
-          onClick={() => {
-            (newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true' }),
-              pageNavigationHandler({ showProgressBar: false, id: 'specialistProblemModal' }));
-          }}
-        >
+        <div className="relative w-full flex items-center justify-center gap-2 py-2 cursor-pointer" onClick={onClick}>
           <>
             <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground pointer-events-none">
               ارسال آزمایش یا گزارش (اختیاری)
