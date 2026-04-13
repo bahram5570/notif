@@ -27,15 +27,25 @@ const useShareExperienceInitialRedirect = (isLoaded: boolean) => {
     : '';
 
   useEffect(() => {
+    const params = new URLSearchParams(searchParams.toString());
+
+    // # Handles "view reported profile from panel" task
+    let profileId = '';
+    params.forEach((value, key) => {
+      if (key === SHARE_EXPERIENCE_VIEW_REPORT_PROFILE_ID && value) {
+        profileId = value;
+      }
+    });
+
+    if (profileId) {
+      profileIdHandler(profileId);
+      router.replace(pathname);
+      return;
+    }
+
     // # Navigates to desired comment, reply, etc that is strored in 'sessionStorage'
     if (isFirstTime1.current) {
-      const params = new URLSearchParams(searchParams.toString());
-
-      params.forEach((value, key) => {
-        if (key === SHARE_EXPERIENCE_VIEW_REPORT_PROFILE_ID && value) {
-          profileIdHandler(value);
-        }
-
+      params.forEach((_, key) => {
         params.delete(key);
       });
 
