@@ -6,6 +6,8 @@ import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ActiveSpecialist from './ActiveSpecialist';
 import SpecialistHint from './SpecialistHint';
+import SpecialistProblemInputs from './SpecialistProblemInputs';
+import useQuestionValues from './SpecialistProblemInputs/__hooks__/useQuestionValues';
 import useSelectSpecialist from './__hooks__/useSelectSpecialist';
 import { ContentsContainerProps } from './type';
 
@@ -14,14 +16,14 @@ const ContentsContainer = ({ data }: ContentsContainerProps) => {
   const dr = info.dr;
 
   const { selectedDoctor, selectedDoctorHandler } = useSelectSpecialist({ dr });
-  //   const { questionValues, questionValuesHandler } = useQuestionValues();
+  const { questionValues, questionValuesHandler } = useQuestionValues();
   const { getQueryParams } = useQueryParamsHandler();
 
   const isSpecialistsListOpen = getQueryParams(SPECIALISTS_LIST_QUERY_NAME) !== null;
   const isPaymentOpen = getQueryParams(SPECIALIST_PAYMENT_QUERY_NAME) !== null;
-
+  // style={{ paddingTop: HEADER_HEIGHT + 20, paddingBottom: 16 }}
   return (
-    <div className="flex flex-col min-h-[100dvh] px-4" style={{ paddingTop: HEADER_HEIGHT + 20, paddingBottom: 16 }}>
+    <div className="flex flex-col min-h-[100dvh] px-4">
       {/* {isSpecialistsListOpen && (
         <SpecialistsList dr={dr} selectedId={selectedDoctor.id} selectedDoctorHandler={selectedDoctorHandler} />
       )} */}
@@ -50,11 +52,12 @@ const ContentsContainer = ({ data }: ContentsContainerProps) => {
             <SpecialistHint />
           </div>
 
-          {/* <SpecialistProblemInputs
+          <SpecialistProblemInputs
             questionValuesHandler={questionValuesHandler}
             infoHelper={info.infoHelper}
             info={info.info}
-          /> */}
+            submit={info.submit}
+          />
           {/* 
           {isPaymentOpen && questionValues && (
             <SpecialistPaymant
