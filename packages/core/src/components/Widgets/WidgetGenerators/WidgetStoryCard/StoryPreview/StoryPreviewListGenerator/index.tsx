@@ -1,6 +1,7 @@
 import { colorFormatConverter } from '../../../../../../utils/scripts';
 import Image from 'next/image';
 
+import { useSystem } from '../../../../../../hooks/useSystem';
 import { useWidgetActions } from '../../../../../../hooks/useWidgetActions';
 import { WidgetStoryTypeEnum } from '../../../../../../providers/WidgetActionsProvider';
 import { CustomButton } from '../../../../../ui/CustomButton';
@@ -21,6 +22,7 @@ const StoryPreviewListGenerator = ({
   viewStoryHandler,
   storyItems,
 }: StoryPreviewListGeneratorProps) => {
+  const { appName } = useSystem();
   const isMoodTracker = storyItems.id === STORY_MOOD_TRACKER_NAME;
 
   const handleViewStory: ViewStoryHandlerTypes = (slideId) => {
@@ -101,7 +103,12 @@ const StoryPreviewListGenerator = ({
             </div>
           )}
 
-          <SaveStory isBookmarked={storyItems.isBookmarked} selectHandler={() => isBookmarkedHandler(storyItems.id)} />
+          {appName === 'PWA' && (
+            <SaveStory
+              isBookmarked={storyItems.isBookmarked}
+              selectHandler={() => isBookmarkedHandler(storyItems.id)}
+            />
+          )}
         </>
       )}
     </div>

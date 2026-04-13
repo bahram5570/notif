@@ -7,7 +7,6 @@ export interface FileInputManagerPropsType {
   uploadImageLoading: boolean;
   ShowGalleryInput?: boolean;
   ShowCameraInput?: boolean;
-  isMan?: boolean;
 }
 
 export type FileInputHandlerTypes = (type: FileInputTypes) => (e: React.ChangeEvent<HTMLInputElement>) => void;

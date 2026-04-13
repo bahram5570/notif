@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { CalendarWidgetEnums } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/CalendarEnums';
-import { InfoCalendarResponseTypes } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
+import { CalendarWidgetEnums, InfoCalendarResponseTypes } from '@repo/core/components/calendar';
+
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { KitTestModuleTypeEnums } from '@repo/core/providers/WidgetActionsProvider';
 
@@ -12,7 +12,7 @@ const useGetData = ({ gregorianDate, moduleType }: UseGetDataProps) => {
   const [kitTestHistory, setKitTestHistory] = useState<KitTestHistoryTypes>(null);
 
   useEffect(() => {
-    const data = getQuery<InfoCalendarResponseTypes>({ queryKey: ['signsInfoCalendar'] });
+    const data = getQuery<InfoCalendarResponseTypes>({ queryKey: ['infoCalendar'] });
 
     const item = data?.days?.[gregorianDate].items.find((i) => i.type === CalendarWidgetEnums.Sign)?.data;
 

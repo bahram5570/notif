@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 
-import InfiniteScrollContainer from '@components/infiniteScrollContainer';
+import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
+
 import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import ShareExperienceAssociationItemModal from '../../ShareExperienceModals/ShareExperienceAssociationItemModal';

@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
 import { signsDaysListMaker, signsItemsListMaker, sortedSignsListMaker } from './__utils__';
+import { InfoCalendarResponseTypes } from '@repo/core/components/calendar';
 
-import { InfoCalendarResponseTypes } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
 import { useCulture } from '@repo/core/hooks/useCulture';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
@@ -26,7 +26,8 @@ const useGetData = () => {
     method: 'GET',
     api: 'info/calendar',
     onSuccess: successHandler,
-    queryKey: ['signsInfoCalendar'],
+    queryKey: ['infoCalendar'],
+    cacheTime: 5 * 1000,
   });
 
   return { isLoading, infoList };

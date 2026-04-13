@@ -2,11 +2,13 @@ import { useState } from 'react';
 
 import { toEnglishNumbers, toPersianNumbers } from '../../../utils/numbers';
 
+import { useSystem } from '../../../hooks/useSystem';
 import { CustomButton } from '../../ui/CustomButton';
 import { CustomTypography } from '../../ui/CustomTypography';
 import { StartPartnerInputPropsType } from './type';
 
 export const StartPartnerInput = (props: StartPartnerInputPropsType) => {
+  const { appName } = useSystem();
   const [phoneNumber, setPhoneNumber] = useState<string>('');
 
   const changePhoneNumberHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -37,7 +39,7 @@ export const StartPartnerInput = (props: StartPartnerInputPropsType) => {
       </div>
       <div className="flex justify-center w-1/2 items-center">
         <CustomButton
-          className={`${props.isMan && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
+          className={`${appName === 'MEN_PWA' && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
           onClick={onClickHandler}
           isLoading={props.isLoading}
           isDisable={!phoneNumber}

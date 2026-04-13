@@ -1,8 +1,8 @@
 'use client';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
 
-import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import MemoryContainerSkeleton from './MemoryContainerSkeleton';

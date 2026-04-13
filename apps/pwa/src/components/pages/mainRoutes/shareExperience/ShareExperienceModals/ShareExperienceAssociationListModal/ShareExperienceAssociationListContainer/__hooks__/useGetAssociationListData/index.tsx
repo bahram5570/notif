@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { PAGE_SIZE } from '@components/infiniteScrollContainer/constatns';
+import { PAGE_SIZE } from '@components/pages/nestedRoutes/routin/RoutinContainer/RoutinItemsContainer/RoutinCommentList/__hooks__/useGetCommentData/constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 

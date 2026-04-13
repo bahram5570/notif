@@ -22,7 +22,7 @@ const StartPageContainer = () => {
         <CustomTypography fontSize="Body_Large" className="text-center text-impo_Neutral_OnBackground">
           شماره موبایل، ایمیل یا کد همدلی پارتنرت رو اینجا وارد کن تا درخواست همدلیت براش ارسال بشه.
         </CustomTypography>
-        <StartPartnerInput createHandler={createHandler} isLoading={createLoading} isMan={false} />
+        <StartPartnerInput createHandler={createHandler} isLoading={createLoading} />
         <div className="border-t-[1px] border-t-impo_Surface_SurfaceVariant p-4">
           <CustomTypography fontSize="Body_Large" className="text-center text-impo_Neutral_OnBackground ">
             روش دوم هم اینه که کد اختصاصیت رو برای پارتنرت بفرستی
@@ -35,7 +35,7 @@ const StartPageContainer = () => {
             partnerCode={userCodeInfo.code}
             callBackHandler={userCodeInfoHandler}
           />
-          <SharePartnerCode shareText={userCodeInfo.shareText} text="ارسال کد برای همدل" isMan={false} />
+          <SharePartnerCode shareText={userCodeInfo.shareText} text="ارسال کد برای همدل" />
         </div>
       </div>
     </MainPageLayout>

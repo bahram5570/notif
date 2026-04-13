@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
-import { PAGE_SIZE } from './constatns';
+import { PAGE_SIZE } from '../../constants/app.constants';
 import { InfiniteScrollContainerPropsType } from './type';
 
 export const InfiniteScrollContainer = ({

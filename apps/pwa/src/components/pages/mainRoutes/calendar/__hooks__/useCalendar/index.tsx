@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 
+import { CalendarDataTypes, CalendarGuideInfoTypes, OnValuesTypes } from '@repo/core/components/calendar';
 import { currentDate } from '@repo/core/utils/dates';
 
 import useSignInteractiveBanner from '@hooks/__sign__/useSignInteractiveBanner';
+import { useCalendarGetData } from '@repo/core/hooks/useCalendarGetData';
 import { useCulture } from '@repo/core/hooks/useCulture';
 import { useSignDateState } from '@repo/core/hooks/useSignDateState';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import moment from 'moment-jalaali';
 
-import useCalendarGetData from '../useCalendarGetData';
-import { CalendarDataTypes, CalendarGuideInfoTypes, OnValuesTypes } from '../useCalendarGetData/types';
 import { SelectedDateHandlerTypes } from './types';
 
 const { jDate, gDate } = currentDate();
@@ -25,7 +25,7 @@ const useCalendar = () => {
     setCalendarData(v.calendarData);
   };
 
-  const { isLoading } = useCalendarGetData({ onValues: valuesHandler, hasSigns: true });
+  const { isLoading } = useCalendarGetData({ onValues: valuesHandler, hasSigns: true, cacheTime: 5 * 1000 });
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const { isLoadedHandler } = useSignInteractiveBanner();
 

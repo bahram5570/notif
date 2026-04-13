@@ -1,6 +1,5 @@
+import { FileInputManager } from '@repo/core/components/FileInputManager';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
-
-import FileInputManager from '@components/ui/FileInputManager';
 
 import useFileValue from '../__hooks__/useFileValue';
 

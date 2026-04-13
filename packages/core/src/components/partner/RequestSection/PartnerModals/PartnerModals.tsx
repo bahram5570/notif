@@ -1,30 +1,23 @@
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-import { useRouter } from 'next/navigation';
 
 import AcceptModal from './AcceptModal';
 import RejectModal from './RejectModal';
 import TypeRelationship from './TypeRelationship';
 import { PartnerModalNameEnums } from './enums';
-import { PartnerModalsPropsType } from './type';
 
-export const PartnerModals = ({ isMan }: PartnerModalsPropsType) => {
+export const PartnerModals = () => {
   const { getQueryParams } = useQueryParamsHandler();
-  const route = useRouter();
 
   const modalName = getQueryParams('name') as PartnerModalNameEnums | null;
-
-  const onCloseModal = () => {
-    route.back();
-  };
 
   return (
     <CustomModal isSlidingMode={modalName === PartnerModalNameEnums.TypeDistance} className="!min-h-fit">
       <div>
-        {modalName === PartnerModalNameEnums.Accept && <AcceptModal isMan={isMan} />}
-        {modalName === PartnerModalNameEnums.Reject && <RejectModal onCloseModal={onCloseModal} isMan={isMan} />}
-        {modalName === PartnerModalNameEnums.TypeDistance && <TypeRelationship isMan={isMan} />}
+        {modalName === PartnerModalNameEnums.Accept && <AcceptModal />}
+        {modalName === PartnerModalNameEnums.Reject && <RejectModal />}
+        {modalName === PartnerModalNameEnums.TypeDistance && <TypeRelationship />}
       </div>
     </CustomModal>
   );

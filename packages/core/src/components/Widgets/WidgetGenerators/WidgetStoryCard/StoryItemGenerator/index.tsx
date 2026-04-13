@@ -2,6 +2,7 @@ import { STORY_MODAL_ID } from '../../../../../constants/modal.constants';
 import { useAnalytics } from '../../../../../hooks/useAnalytics';
 import { usePageNavigationLoading } from '../../../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../../../hooks/useQueryParamsHandler';
+import { useSystem } from '../../../../../hooks/useSystem';
 import { CustomImage } from '../../../../ui/CustomImage';
 import { CustomTypography } from '../../../../ui/CustomTypography';
 import { STORY_CIRCLE_WIDTH } from '../constants';
@@ -9,6 +10,7 @@ import { StoryItemGeneratorProps } from './types';
 
 export const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGeneratorProps) => {
   const { callEvent } = useAnalytics();
+  const { appName } = useSystem();
 
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
@@ -47,7 +49,7 @@ export const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItem
           }}
           className={`absolute top-0 left-0 right-0 bottom-0 border-[1.5px] rounded-full 
             ${isLoading ? 'animate-spin !border-t-transparent' : ''}
-            ${isViewed ? 'border-impo_Surface_Outline' : 'border-impo_Primary_Primary'}
+            ${isViewed ? 'border-impo_Surface_Outline' : `${appName === 'MEN_PWA' ? 'border-impo_PrimaryMan_PrimaryMan' : 'border-impo_Primary_Primary'}`}
           `}
         />
       </div>

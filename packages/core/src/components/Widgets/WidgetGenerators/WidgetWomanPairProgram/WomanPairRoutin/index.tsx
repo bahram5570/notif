@@ -1,5 +1,6 @@
 import { textShorter } from '../../../../../utils/scripts';
 
+import { useSystem } from '../../../../../hooks/useSystem';
 import { useWidgetActions } from '../../../../../hooks/useWidgetActions';
 import { ActionTypeEnum } from '../../../../../providers/WidgetActionsProvider';
 import { CustomButton } from '../../../../ui/CustomButton';
@@ -9,6 +10,7 @@ import { WomanPairRoutinPropsType } from './types';
 
 const WomanPairRoutin = (props: WomanPairRoutinPropsType) => {
   const { actionHandler } = useWidgetActions();
+  const { appName } = useSystem();
 
   return (
     <>
@@ -32,7 +34,7 @@ const WomanPairRoutin = (props: WomanPairRoutinPropsType) => {
       </div>
 
       <CustomButton
-        className={`mt-auto ${props.isMan && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
+        className={`mt-auto ${appName === 'MEN_PWA' && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
         fontSize="Lable_Large"
         onClick={() => actionHandler(props.button.action)}
         isDisable={props.button?.action.actionType === ActionTypeEnum.None}

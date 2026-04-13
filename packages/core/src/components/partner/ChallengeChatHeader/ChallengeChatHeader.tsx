@@ -1,5 +1,5 @@
 import { MAX_SCREEN_WIDTH } from '../../../constants/app.constants';
-import useCalendarDateFormat from '../../../hooks/useCalendarDateFormat';
+import { useCalendarDateFormat } from '../../../hooks/useCalendarDateFormat';
 import { CustomImage } from '../../ui/CustomImage';
 import { CustomTypography } from '../../ui/CustomTypography';
 import { BackButton } from './BackButton';

@@ -1,6 +1,6 @@
+import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
-import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import ShareExperienceBottomPart from '../../../ShareExperienceContainer/ShareExperienceExperiences/ShareExperienceBottomPart';

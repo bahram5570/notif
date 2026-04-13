@@ -10,12 +10,15 @@ import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
+import { useSystem } from '../../../hooks/useSystem';
 import { UploadInputPropsType } from './type';
 
-export const UploadInput = ({ fileName, uploadImageLoading, onChangeHandler, isMan = false }: UploadInputPropsType) => {
+export const UploadInput = ({ fileName, uploadImageLoading, onChangeHandler }: UploadInputPropsType) => {
+  const { appName } = useSystem();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
   const [progress, setProgress] = useState(0);
+  const isMan = appName === 'MEN_PWA';
 
   const onChange = () => {
     onChangeHandler('', 'fileName');

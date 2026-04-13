@@ -1,12 +1,14 @@
 import { textShorter } from '../../../utils/scripts';
 
-import useCalendarDateFormat from '../../../hooks/useCalendarDateFormat';
+import { useCalendarDateFormat } from '../../../hooks/useCalendarDateFormat';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
+import { useSystem } from '../../../hooks/useSystem';
 import { CustomImage } from '../../ui/CustomImage';
 import { CustomTypography } from '../../ui/CustomTypography';
 import { PartnerMemoryItemPropsType } from './type';
 
 export const PartnerMemoryItem = (props: PartnerMemoryItemPropsType) => {
+  const { appName } = useSystem();
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { currentDate } = useCalendarDateFormat({ date: props.time });
 
@@ -35,7 +37,7 @@ export const PartnerMemoryItem = (props: PartnerMemoryItemPropsType) => {
           </CustomTypography>
 
           <div
-            className={`w-2 h-2 rounded-full ${props.isMan ? 'bg-impo_PrimaryMan_PrimaryMan' : 'bg-impo_Primary_Primary'} `}
+            className={`w-2 h-2 rounded-full ${appName === 'MEN_PWA' ? 'bg-impo_PrimaryMan_PrimaryMan' : 'bg-impo_Primary_Primary'} `}
           />
         </div>
         <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground ">

@@ -53,6 +53,8 @@ export type WidgetsTypes = IsPdfDownloadingTypes &
     | WidgetProgramScrollType
     | WidgetWomanPairProgramTypes
     | ManProgramScrollWidgetType
+    | ManProgramHealthWidgetType
+    | WidgetMenStoryTypes
   );
 
 // # ----------------------------------------------------------
@@ -752,6 +754,18 @@ export type ManProgramScrollWidgetType = IsPdfDownloadingTypes & {
 };
 
 // # ----------------------------------------------------------
+export type ManProgramHealthWidgetType = IsPdfDownloadingTypes & {
+  type: WidgetsEnum.ManProgramHealthWidget;
+  data: {
+    backgroundColour: string;
+    description: string;
+    items: ProgramScrolltemType[];
+    title: string;
+    button: WidgetsButtonTypes;
+  };
+};
+
+// # ----------------------------------------------------------
 
 type WomanPairProgramItemType = {
   title: string;
@@ -788,5 +802,24 @@ export type WidgetShortcutWidgetTypes = IsPdfDownloadingTypes & {
     description: string;
     items: ShortcutItemType[];
     title: string;
+  };
+};
+// # ----------------------------------------------------------
+export type WidgetMenStoryTypes = IsPdfDownloadingTypes & {
+  type: WidgetsEnum.MenStory;
+  data: {
+    backgroundColour: string;
+    description: string;
+    title: string;
+    list: {
+      events: StoryEventsTypes[];
+      stories: StoriesTypes[];
+      isBookmarked: boolean;
+      coverImage: string;
+      isViewed: boolean;
+      text: string;
+      time: number;
+      id: string;
+    }[];
   };
 };
