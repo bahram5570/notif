@@ -6,6 +6,7 @@ import { WidgetAverageOfcycleLengths } from './WidgetAverageOfcycleLengths';
 import { WidgetBabyCheckHistoryCard } from './WidgetBabyCheckHistoryCard';
 import { WidgetBabyCheckKitCard } from './WidgetBabyCheckKitCard';
 import { WidgetClinicCard } from './WidgetClinicCard';
+import { WidgetClinicCardV2 } from './WidgetClinicCardV2';
 import { WidgetCycleDateCard } from './WidgetCycleDateCard';
 import { WidgetEmptyReportCard } from './WidgetEmptyReportCard';
 import { WidgetHintCard } from './WidgetHintCard';
@@ -152,6 +153,9 @@ export const WidgetGenerators = ({ data, type, isPdfDownloading = false, phase }
       break;
     case WidgetsEnum.AdvertiseCardList:
       result = <WidgetAdvertiseCardList data={data} />;
+      break;
+    case WidgetsEnum.ClinicCardV2:
+      result = <WidgetClinicCardV2 data={data} />;
       break;
   }
 

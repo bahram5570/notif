@@ -7,6 +7,7 @@ import { WidgetCardContainerProps } from './types';
 export const WidgetCardContainer = ({
   titleElement,
   classNameBtn,
+  description,
   className,
   children,
   buttonId,
@@ -29,12 +30,20 @@ export const WidgetCardContainer = ({
   return (
     <div className={`w-full px-4 pt-6 ${className}`}>
       <div className="w-full h-fit rounded-2xl p-4 bg-impo_Neutral_Background">
-        <div className="flex justify-between items-center border-b-[1px] pb-3 mb-3 border-impo_Neutral_Surface">
+        <div className="flex justify-between items-start gap-2 border-b-[1px] pb-3 mb-3 border-impo_Neutral_Surface">
           <div className="min-w-fit">{titleElement}</div>
 
-          <CustomTypography fontSize="Title_Small" className="!text-impo_Neutral_OnBackground">
-            {title}
-          </CustomTypography>
+          <div className="flex flex-col items-end gap-1">
+            <CustomTypography fontSize="Title_Small" className="!text-impo_Neutral_OnBackground">
+              {title}
+            </CustomTypography>
+
+            {description && (
+              <CustomTypography fontSize="Lable_Small" className="!text-impo_Surface_Outline">
+                {description}
+              </CustomTypography>
+            )}
+          </div>
         </div>
 
         <>{children}</>
