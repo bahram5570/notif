@@ -1,7 +1,8 @@
+import PatternIcon from '@assets/shared/icons/hintCardPattern.svg';
+
+import { CustomImage } from '../../../../ui/CustomImage';
 import { CustomTypography } from '../../../../ui/CustomTypography';
-import WidgetHintCardBookmark from './WidgetHintCardBookmark';
-import WidgetHintCardLinkTo from './WidgetHintCardLinkTo';
-import WidgetHintCardGeneratorWriterInfo from './WidgetHintCardWriterInfo';
+import WidgetHintCardHeading from './WidgetHintCardHeading';
 import useIsSeen from './__hooks__/useIsSeen';
 import { WidgetHintCardGeneratorProps } from './types';
 
@@ -15,25 +16,32 @@ const WidgetHintCardGenerator = (props: WidgetHintCardGeneratorProps) => {
   return (
     <div
       ref={ref}
-      className="w-full h-full flex flex-col gap-3 border-impo_Neutral_Surface"
-      style={{ direction: 'ltr' }}
+      className={`relative w-full h-full flex items-start gap-2 p-4 rounded-2xl overflow-hidden ${props.background}`}
     >
-      <WidgetHintCardGeneratorWriterInfo
-        writerName={props.writerName}
-        writerIcon={props.writerIcon}
-        writerSpeciality={props.writerSpeciality}
-      />
+      <div className="absolute -top-[40%] bottom-[10%] -right-[10%] aspect-square pointer-events-none opacity-70 z-0">
+        <PatternIcon className="w-full h-auto" />
+      </div>
 
-      <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground w-full">
-        {props.text}
-      </CustomTypography>
+      <div className="relative w-14 min-w-14 z-10">
+        <CustomImage src={props.writerIcon} objectFit="contain" />
+      </div>
 
-      <div className="w-full flex items-center gap-2 pt-1 mt-auto">
-        <div className="w-fit aspect-square rounded-full border-[1px] border-impo_Surface_OutlineVariant">
-          <WidgetHintCardBookmark isBookmarked={props.isBookmarked} id={props.id} />
-        </div>
+      <div className="relative w-full h-full z-10">
+        <WidgetHintCardHeading
+          id={props.id}
+          writerName={props.writerName}
+          externalLink={'props.externalLink'}
+          internalLink={props.internalLink}
+          isBookmarked={props.isBookmarked}
+          writerSpeciality={props.writerSpeciality}
+        />
 
-        <WidgetHintCardLinkTo externalLink={props.externalLink} internalLink={props.internalLink} />
+        <CustomTypography
+          fontSize="Body_Medium"
+          className="relative text-impo_Neutral_OnBackground dark:text-impo_Neutral_Background w-full z-10"
+        >
+          {props.text}
+        </CustomTypography>
       </div>
     </div>
   );

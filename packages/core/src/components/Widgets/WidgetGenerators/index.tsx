@@ -35,7 +35,7 @@ import { WidgetSubscriptionCard } from './WidgetSubscriptionCard';
 import { WidgetWomanPairProgram } from './WidgetWomanPairProgram';
 import { WidgetsBiorhythm } from './WidgetsBiorhythm';
 
-export const WidgetGenerators = ({ data, type, isPdfDownloading = false }: WidgetsTypes) => {
+export const WidgetGenerators = ({ data, type, isPdfDownloading = false, phase }: WidgetsTypes) => {
   let result: JSX.Element | null = null;
 
   switch (type) {
@@ -148,7 +148,7 @@ export const WidgetGenerators = ({ data, type, isPdfDownloading = false }: Widge
       result = <WidgetShortcut data={data} />;
       break;
     case WidgetsEnum.HintCardV2:
-      result = <WidgetHintCardV2 data={data} />;
+      result = <WidgetHintCardV2 data={data} phase={phase} />;
       break;
     case WidgetsEnum.AdvertiseCardList:
       result = <WidgetAdvertiseCardList data={data} />;
