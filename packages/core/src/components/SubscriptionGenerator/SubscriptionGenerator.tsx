@@ -10,6 +10,8 @@ import { CustomTypography } from '../ui/CustomTypography';
 import MarkDownText from './MarkDownText';
 import { SubscriptionGeneratorTypes } from './types';
 
+//todo change color of text in selected card  in dark mode
+
 export const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
   const isSelected = typeof props.isSelected === 'undefined' ? true : props.isSelected;
   const totalPayText = props.isFree ? 'رایگان' : `${props.amount}`;
