@@ -10,9 +10,10 @@ const PartnerModals = () => {
   const { getQueryParams } = useQueryParamsHandler();
 
   const modalName = getQueryParams('partnerModal') as PartnerModalNameEnums | null;
+  const isOpen = modalName !== null;
 
   return (
-    <CustomModal isSlidingMode className="!min-h-fit">
+    <CustomModal isSlidingMode className="!min-h-fit" isOpen={isOpen}>
       <div>
         {modalName === PartnerModalNameEnums.UploadImage && <UploadImageModal />}
         {modalName === PartnerModalNameEnums.UploadBackgroundImage && <UploadBackgroundImageModal />}

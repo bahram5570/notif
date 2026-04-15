@@ -11,9 +11,14 @@ export const PartnerModals = () => {
   const { getQueryParams } = useQueryParamsHandler();
 
   const modalName = getQueryParams('name') as PartnerModalNameEnums | null;
+  const isOpen = modalName !== null;
 
   return (
-    <CustomModal isSlidingMode={modalName === PartnerModalNameEnums.TypeDistance} className="!min-h-fit">
+    <CustomModal
+      isSlidingMode={modalName === PartnerModalNameEnums.TypeDistance}
+      className="!min-h-fit"
+      isOpen={isOpen}
+    >
       <div>
         {modalName === PartnerModalNameEnums.Accept && <AcceptModal />}
         {modalName === PartnerModalNameEnums.Reject && <RejectModal />}
