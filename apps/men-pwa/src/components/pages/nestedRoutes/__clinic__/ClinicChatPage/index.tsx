@@ -1,4 +1,9 @@
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+import { CHAT_HEADING_HEIGHT } from '@repo/core/components/clinic';
+
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+
+import ChatHeading from './ChatHeading';
 
 const ClinicChatPage = () => {
   return (
@@ -6,18 +11,18 @@ const ClinicChatPage = () => {
       paddingBottom={120}
       rightElement="BackButton"
       //   rightElementScript={data?.drName}
-      //   paddingTop={HEADER_HEIGH + CHAT_HEADING_HEIGHT + 16}
+      paddingTop={HEADER_HEIGHT + CHAT_HEADING_HEIGHT + 16}
     >
       <div></div>
-      {/* {isLoading && <ChatSkeleton />}
+      {/* {isLoading && <ChatSkeleton />} */}
 
-      {!isLoading && !isRateModalOpen && data && (
-        <>
-          <ChatHeading />
-          <ChatsMessagesContainer data={data} />
-          <ChatFooter isRate={data.isRate} state={data.state} />
-        </>
-      )} */}
+      {/* {!isLoading && !isRateModalOpen && data && ( */}
+      <>
+        <ChatHeading />
+        {/* <ChatsMessagesContainer data={data} />
+          <ChatFooter isRate={data.isRate} state={data.state} /> */}
+      </>
+      {/* )} */}
     </MainPageLayout>
   );
 };
