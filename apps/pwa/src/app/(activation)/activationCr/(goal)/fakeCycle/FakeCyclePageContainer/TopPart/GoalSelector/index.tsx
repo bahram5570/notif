@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import ArrowIcon from '@assets/icons/vector.svg';
+import ArrowIcon from '@assets/shared/icons/vector.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { GOALS_LIST, GOAL_SELECTOR_HEIGHT, GOAL_SELECTOR_WIDTH } from './constants';

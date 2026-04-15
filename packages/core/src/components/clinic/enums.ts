@@ -7,3 +7,8 @@ export enum ClinicStateEnums {
   NoPay,
   rejectBySuppoer,
 }
+
+export enum SideTypeEnum {
+  Patient,
+  Doctor,
+}

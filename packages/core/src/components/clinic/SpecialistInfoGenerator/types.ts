@@ -5,4 +5,5 @@ export interface SpecialistInfoGeneratorProps extends Pick<
   'nezamNumber' | 'speciliaty' | 'firstName' | 'lastName' | 'isOnline' | 'image'
 > {
   isSelected: boolean;
+  isActive?: boolean;
 }

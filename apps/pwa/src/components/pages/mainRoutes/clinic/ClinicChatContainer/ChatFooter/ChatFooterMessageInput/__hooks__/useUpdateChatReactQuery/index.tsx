@@ -1,9 +1,8 @@
+import { CHAT_PAGE_ID, ChatResponseTypes, SideTypeEnum } from '@repo/core/components/clinic';
+
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useDelayCallback } from '@repo/core/hooks/useDelayCallback';
 
-import { SideTypeEnum } from '../../../../__hooks__/useGetData/enums';
-import { ChatResponseTypes } from '../../../../__hooks__/useGetData/types';
-import { CHAT_PAGE_ID } from '../../../../constants';
 import { UpgateHandlerTypes } from './types';
 
 const useUpdateChatReactQuery = () => {

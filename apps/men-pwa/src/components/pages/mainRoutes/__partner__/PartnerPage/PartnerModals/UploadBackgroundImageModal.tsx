@@ -1,12 +1,12 @@
 import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useFileUpload } from '@repo/core/hooks/useFileUpload';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 // import { ChallengeResponseType } from '../__hooks__/useGetData/type';
 import Inputs from './Inputs';
 import useChangeImage from './__hooks__/useChangeImage';
 import useDelete from './__hooks__/useDelete';
-import useFileUpload from './__hooks__/useFileUpload';
 
 const UploadBackgroundImageModal = () => {
   const { editHandler } = useChangeImage();

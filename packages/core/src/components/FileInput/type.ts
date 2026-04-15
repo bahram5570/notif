@@ -1,5 +1,7 @@
+import { OnchangeHandlerTypeHasName } from '../ui/CustomTextareaInput';
+
 export interface FileInputProps {
-  valuesHandler: (name: string, value: string) => void;
+  valuesHandler: OnchangeHandlerTypeHasName;
   fileName: string;
   label: string;
 }

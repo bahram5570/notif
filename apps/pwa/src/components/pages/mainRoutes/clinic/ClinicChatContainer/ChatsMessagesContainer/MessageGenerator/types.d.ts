@@ -1,4 +1,4 @@
-import { ChatsTypes } from '../../__hooks__/useGetData/types';
+import { ChatsTypes } from '@repo/core/components/clinic';
 
 export interface MessageGeneratorProps extends ChatsTypes {}
 

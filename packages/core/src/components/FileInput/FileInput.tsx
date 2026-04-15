@@ -1,3 +1,4 @@
+import { chatFileTypeDetector } from './__utils__';
 import AttachIcon from '@assets/shared/icons/attach.svg';
 import DownloadedIcon from '@assets/shared/icons/downloaded.svg';
 import TrashIcon from '@assets/shared/icons/trash.svg';
@@ -15,7 +16,7 @@ export const FileInput = ({ fileName, valuesHandler, label }: FileInputProps) =>
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
-  // const { isImageType } = chatFileTypeDetecto(fileName);
+  const { isImageType } = chatFileTypeDetector(fileName);
   const fileNameList = fileName.split('.');
   const fileNameScript = `${textShorter(fileNameList[0])} .${fileNameList[1]}`;
 
@@ -38,7 +39,7 @@ export const FileInput = ({ fileName, valuesHandler, label }: FileInputProps) =>
         </div>
       )}
 
-      {/* {fileName !== '' && (
+      {fileName !== '' && (
         <div className="relative w-full flex items-center justify-between gap-5 py-3">
           <div className="flex items-center gap-2">
             {isImageType && <CustomImage src={fileName} width={48} height={48} className="rounded-md" />}
@@ -55,13 +56,13 @@ export const FileInput = ({ fileName, valuesHandler, label }: FileInputProps) =>
           </div>
 
           <div
-            onClick={() => valuesHandler({ name: 'fileName', value: '' })}
+            onClick={() => valuesHandler('', 'fileName')}
             className="w-10 h-10 min-w-10 min-h-10 rounded-full flex justify-center items-center bg-impo_Error_ErrorContainer cursor-pointer"
           >
             <TrashIcon className="w-5 h-auto stroke-impo_Black" />
           </div>
         </div>
-      )} */}
+      )}
     </div>
   );
 };

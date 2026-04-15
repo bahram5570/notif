@@ -1,13 +1,12 @@
 import { useEffect } from 'react';
 
 import { chatFileTypeDetector } from '../__utils__';
+import { CHAT_PAGE_ID, SideTypeEnum } from '@repo/core/components/clinic';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useDelayCallback } from '@repo/core/hooks/useDelayCallback';
 
-import { SideTypeEnum } from '../../__hooks__/useGetData/enums';
-import { CHAT_PAGE_ID } from '../../constants';
 import ChatContainerMaker from '../MessageGenerator/ChatContainerMaker';
 import { LoadingStatusTypes } from './types';
 

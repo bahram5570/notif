@@ -4,6 +4,8 @@ import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { ClinicCard } from '@repo/core/components/clinic/ClinicCard';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
+import ActiveTicketsHeading from './ActiveTicketsHeading';
+import ActiveTicketsList from './ActiveTicketsList';
 import ClinicSkeleton from './ClinicSkeleton';
 import useGetData from './__hooks__/useGetData';
 
@@ -19,11 +21,11 @@ const MainPageClinicPage = () => {
           <>
             {data && (
               <>
-                {/* <ActiveTicketsHeading
+                <ActiveTicketsHeading
                   tickets={data.tickets}
                   activeTicketsMore={data.activeTicketsMore}
                   activeTicketsOneTitle={data.activeTicketsOneTitle}
-                /> */}
+                />
 
                 <CustomTypography fontSize="Headline_Small" className="text-impo_Neutral_OnBackground">
                   {data.title}
@@ -37,6 +39,7 @@ const MainPageClinicPage = () => {
           </>
         )}
       </div>
+      <ActiveTicketsList tickets={data?.tickets} />
     </MainPageLayout>
   );
 };

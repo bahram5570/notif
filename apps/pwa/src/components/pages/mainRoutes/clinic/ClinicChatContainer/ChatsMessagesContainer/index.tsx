@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 
-import { CHAT_PAGE_ID } from '../constants';
+import { CHAT_PAGE_ID } from '@repo/core/components/clinic';
+
 import FileLoading from './FileLoading';
 import MessageGenerator from './MessageGenerator';
 import RatedMessageBanner from './RatedMessageBanner';

@@ -1,9 +1,8 @@
 import InfoIcon from '@assets/shared/icons/infoIcon.svg';
+import { CHAT_HEADING_HEIGHT } from '@repo/core/components/clinic';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
-
-import { CHAT_HEADING_HEIGHT } from '../constants';
 
 const ChatHeading = () => {
   return (

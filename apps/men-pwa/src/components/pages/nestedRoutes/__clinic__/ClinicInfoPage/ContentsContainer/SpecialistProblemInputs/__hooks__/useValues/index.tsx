@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { OnchangeHandlerTypeHasName } from '@repo/core/components/ui/CustomTextareaInput';
 
-import { ValuesHandlerTypes } from './types';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 const useValues = () => {
   const [values, setValues] = useState({ text: '', fileName: '' });
@@ -17,10 +17,8 @@ const useValues = () => {
     }
   }, []);
 
-  const valuesHandler: ValuesHandlerTypes = (value, name) => {
-    if (name) {
-      setValues({ ...values, [name]: value });
-    }
+  const valuesHandler: OnchangeHandlerTypeHasName = (value, name) => {
+    setValues({ ...values, [name]: value });
   };
 
   return { values, valuesHandler };

@@ -1,4 +1,4 @@
-import { ChatResponseTypes } from '../__hooks__/useGetData/types';
+import { ChatResponseTypes } from '@repo/core/components/clinic';
 
 export interface ChatsMessagesContainerProps {
   data: ChatResponseTypes;

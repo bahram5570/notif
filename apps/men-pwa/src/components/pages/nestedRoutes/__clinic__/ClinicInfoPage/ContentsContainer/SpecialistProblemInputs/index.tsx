@@ -5,10 +5,9 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
-// import useFileUpload from '@hooks/useFileUpload';
-
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
+import { useFileUpload } from '@repo/core/hooks/useFileUpload';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useSystem } from '@repo/core/hooks/useSystem';
 import { useRouter } from 'next/navigation';
@@ -33,9 +32,10 @@ const SpecialistProblemInputs = ({ info, infoHelper, questionValuesHandler, subm
     router.back();
   };
 
-  // const { fileDataHandler, uploadImageLoading } = useFileUpload({
-  //   onSuccess: (v) => onSuccessHandler(v),
-  // });
+  const { fileDataHandler, uploadImageLoading } = useFileUpload({
+    onSuccess: (v) => onSuccessHandler(v),
+    api: 'doctor/file',
+  });
 
   const paymentHandler = () => {
     callEvent('Clinic_Payment');
@@ -79,7 +79,7 @@ const SpecialistProblemInputs = ({ info, infoHelper, questionValuesHandler, subm
         </CustomButton>
       </div>
 
-      {/* <SpecialistProblemModal fileDataHandler={fileDataHandler} uploadImageLoading={uploadImageLoading} /> */}
+      <SpecialistProblemModal fileDataHandler={fileDataHandler} uploadImageLoading={uploadImageLoading} />
     </>
   );
 };

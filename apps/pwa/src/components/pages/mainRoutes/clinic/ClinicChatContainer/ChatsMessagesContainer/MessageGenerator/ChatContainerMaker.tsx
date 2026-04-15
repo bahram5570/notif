@@ -1,7 +1,7 @@
+import { SideTypeEnum } from '@repo/core/components/clinic';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { addZero } from '@repo/core/utils/numbers';
 
-import { SideTypeEnum } from '../../__hooks__/useGetData/enums';
 import { ChatContainerMakerProps } from './types';
 
 const ChatContainerMaker = ({ dateTime, children, sideType, width }: ChatContainerMakerProps) => {

@@ -1,7 +1,7 @@
-import { ClinicStateEnums } from './enums';
+import { ClinicStateEnums, SideTypeEnum } from './enums';
 
 // clinic-main page
-type ClinicTicketsTyes = {
+export type ClinicTicketsTyes = {
   drAcadimicCertificate: string;
   state: ClinicStateEnums;
   drSpeciality: string;
@@ -101,3 +101,34 @@ export type ClinicInfoResponseTypes = {
 
 //
 export type SelectedDoctorHandlerTypes = (id: string) => void;
+
+// clinic chat page
+
+export type ChatsTypes = {
+  text: string;
+  dateTime: string;
+  media: string | null;
+  sideType: SideTypeEnum;
+};
+
+export type FeedbacksTypes = {
+  positive: string[];
+  negative: string[];
+};
+
+export type ChatResponseTypes = {
+  rate: number;
+  drName: string;
+  drRate: string;
+  drImage: string;
+  isRate: boolean;
+  drValid: boolean;
+  description: string;
+  chats: ChatsTypes[];
+  drSpeciality: string;
+  state: ClinicStateEnums;
+  feedbacks: FeedbacksTypes;
+  feedbackPositive: string[];
+  feedbackNegative: string[];
+  acadimicCertificate: string;
+};

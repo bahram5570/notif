@@ -1,7 +1,7 @@
+import { ChatResponseTypes } from '@repo/core/components/clinic';
+
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-
-import { ChatResponseTypes } from './types';
 
 const useGetData = () => {
   const { getQueryParams } = useQueryParamsHandler();
