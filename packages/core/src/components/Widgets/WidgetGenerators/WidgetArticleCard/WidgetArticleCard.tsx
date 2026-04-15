@@ -14,6 +14,12 @@ export const WidgetArticleCard = ({ data }: WidgetArticleCardProps) => {
     externalLink('https://impo.app/blogs', true);
   };
 
+  const isEmpty = data.items.length === 0;
+
+  if (isEmpty) {
+    return <></>;
+  }
+
   const titleElement = (
     <div className="w-fit py-2 px-6 rounded-full bg-impo_Neutral_Surface" onClick={clickHandler}>
       <CustomTypography fontSize="Lable_Medium" className="!text-impo_Neutral_OnBackground">

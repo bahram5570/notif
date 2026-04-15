@@ -13,6 +13,11 @@ export const WidgetHintCardV2 = ({ data, phase }: WidgetHintCardV2Props) => {
   const { inViewRef } = useAnalytics({ inView_eventName: 'HintWidgetSeenMoreThan5Secs' });
 
   const hasTwoSlides = data.list.length === 2;
+  const isEmpty = data.list.length === 0;
+
+  if (isEmpty) {
+    return <></>;
+  }
 
   return (
     <div ref={inViewRef} className="w-full py-4">

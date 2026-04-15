@@ -30,7 +30,7 @@ const WidgetHintCardGenerator = (props: WidgetHintCardGeneratorProps) => {
         <WidgetHintCardHeading
           id={props.id}
           writerName={props.writerName}
-          externalLink={'props.externalLink'}
+          externalLink={props.externalLink}
           internalLink={props.internalLink}
           isBookmarked={props.isBookmarked}
           writerSpeciality={props.writerSpeciality}
