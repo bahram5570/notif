@@ -9,7 +9,6 @@ import { CommentsResponseTypes, UseGetDataProps } from './types';
 
 const useGetData = ({ clinicInfo, drId }: UseGetDataProps) => {
   const [data, setData] = useState<undefined | ClinicInfoResponseTypes>(undefined);
-  const { getQuery } = useCustomReactQuery();
 
   const { callApi, isLoading: doctorLoading } = usePwaApi<ClinicInfoResponseTypes>({
     method: 'POST',
@@ -18,13 +17,7 @@ const useGetData = ({ clinicInfo, drId }: UseGetDataProps) => {
   });
 
   useEffect(() => {
-    const initialData = getQuery<ClinicInfoResponseTypes>({ queryKey: ['clinicInfo'] });
-
-    if (initialData) {
-      setData(initialData);
-    } else {
-      callApi({ id: clinicInfo });
-    }
+    callApi({ type: clinicInfo });
   }, []);
 
   const doctorData = data?.info.dr.find((item) => item.id === drId);

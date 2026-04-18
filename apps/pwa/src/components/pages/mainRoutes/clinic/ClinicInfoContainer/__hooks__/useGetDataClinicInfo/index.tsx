@@ -4,10 +4,14 @@ import { ClinicInfoResponseTypes } from '@repo/core/components/clinic';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
+
+import { SELECTED_DOCTOR } from '../../../ClinicDoctorInfoContainer/constants';
 
 const useGetDataClinicInfo = (clinicInfo: string) => {
   const { newQuery, getQuery } = useCustomReactQuery(['clinicInfo']);
+  const { getQueryParams } = useQueryParamsHandler();
   const router = useRouter();
 
   const successHandler = (v: ClinicInfoResponseTypes) => {
@@ -34,7 +38,9 @@ const useGetDataClinicInfo = (clinicInfo: string) => {
     if (isCompletePayment) {
       payload = { id: id };
     } else {
-      payload = { type: Number(id) };
+      const doctorId = getQueryParams(SELECTED_DOCTOR);
+
+      payload = { type: Number(id), ...(doctorId ? { drId: doctorId } : {}) };
     }
 
     callApi(payload);
