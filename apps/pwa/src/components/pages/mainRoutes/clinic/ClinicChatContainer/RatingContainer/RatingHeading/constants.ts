@@ -1,1 +1,0 @@
-export const RATING_HEADING_HEIGHT = 90;

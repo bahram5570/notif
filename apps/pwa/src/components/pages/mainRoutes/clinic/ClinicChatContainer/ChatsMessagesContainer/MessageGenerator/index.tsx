@@ -1,6 +1,6 @@
+import { ChatContainerMaker } from '@repo/core/components/clinic/ClinicChatContainer';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import ChatContainerMaker from './ChatContainerMaker';
 import MessageGeneratorMedia from './MessageGeneratorMedia';
 import { MessageGeneratorProps } from './types';
 
@@ -9,7 +9,7 @@ const MessageGenerator = ({ dateTime, media, sideType, text }: MessageGeneratorP
     <>
       {text.trim() !== '' && (
         <ChatContainerMaker dateTime={dateTime} sideType={sideType} width={240}>
-          <CustomTypography fontSize="Body_Small" className="text-impo_Black">
+          <CustomTypography fontSize="Body_Small" className="text-impo_Black !whitespace-normal !break-words">
             {text}
           </CustomTypography>
         </ChatContainerMaker>

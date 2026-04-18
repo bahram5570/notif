@@ -5,18 +5,18 @@ import StarIcon from '@assets/shared/icons/star.svg';
 import { usePathname } from 'next/navigation';
 
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
-import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
 import { useSystem } from '../../../hooks/useSystem';
 import { CustomButton } from '../../ui/CustomButton';
 import { SpecialistInfoGenerator } from '../SpecialistInfoGenerator';
-import { CLINIC_DOCTOR_MODAL_QUERY_NAME } from '../constants';
 import SpecialistCardSectionMaker from './SpecialistCardSectionMaker';
+import useBackgroundColorFinder from './__hooks__/useBackgroundColorFinder';
 import { SpecialistCardGeneratorProps } from './types';
 
 export const SpecialistCardGenerator = (props: SpecialistCardGeneratorProps) => {
   const { appName } = useSystem();
+  const { backgroundColor } = useBackgroundColorFinder();
   const pathname = usePathname() || '';
-  const { newQueryParamsHandler } = useQueryParamsHandler();
+
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const selectHandler = () => {
@@ -29,15 +29,15 @@ export const SpecialistCardGenerator = (props: SpecialistCardGeneratorProps) => 
     const pathnameList = pathname.split('/');
     const clinicInfo = pathnameList[pathnameList.length - 1];
 
-    pageNavigationHandler({ id: props.id, showProgressBar: false });
-    newQueryParamsHandler({ [CLINIC_DOCTOR_MODAL_QUERY_NAME]: JSON.stringify({ drId: props.id, clinicInfo }) });
+    pageNavigationHandler({
+      id: props.id,
+      showProgressBar: false,
+      linkTo: `/protected/clinic/doctor/${clinicInfo}/${props.id}`,
+    });
   };
 
   const isSelected = props.selectedId === props.id;
   const isMan = appName === 'MEN_PWA';
-  const backgroundColor = isMan
-    ? 'bg-gradient-to-t from-[#233157] via-[#405387] to-[#415488]'
-    : 'bg-impo_Blue_100 dark:!bg-impo_Blue_800';
 
   return (
     <div

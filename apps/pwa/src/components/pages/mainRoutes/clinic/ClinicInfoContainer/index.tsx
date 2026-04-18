@@ -1,6 +1,5 @@
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 
-import ClinicDoctorModal from '../ClinicDoctorModal';
 import ClinicInfoSkeleton from './ClinicInfoSkeleton';
 import ContentsContainer from './ContentsContainer';
 import useGetDataClinicInfo from './__hooks__/useGetDataClinicInfo';
@@ -15,8 +14,6 @@ const ClinicInfoContainer = ({ clinicInfo }: ClinicInfoProps) => {
         {isLoading && <ClinicInfoSkeleton />}
         {!isLoading && data && <ContentsContainer data={data} />}
       </MainPageLayout>
-
-      <ClinicDoctorModal />
     </>
   );
 };

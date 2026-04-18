@@ -1,0 +1,1 @@
+export { ChatContainerMaker } from './ClinicChatContainer';

@@ -102,7 +102,7 @@ export type ClinicInfoResponseTypes = {
 //
 export type SelectedDoctorHandlerTypes = (id: string) => void;
 
-// clinic chat page
+// # clinic chat page
 
 export type ChatsTypes = {
   text: string;

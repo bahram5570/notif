@@ -2,7 +2,6 @@ import { RoutinCard } from '@repo/core/components/Routin/RoutinCard';
 import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { data } from '../../../constants';
 import { CategoryItemPropsType } from './type';
 
 const CategoryItem = ({ categoryTitle, programs }: CategoryItemPropsType) => {
@@ -15,7 +14,7 @@ const CategoryItem = ({ categoryTitle, programs }: CategoryItemPropsType) => {
 
         <CustomSlider gap={12}>
           {programs.map((program, index) => {
-            const hasOneItem = data.length === 1;
+            const hasOneItem = programs.length === 1;
             return (
               <div className="flex flex-row w-full" key={index}>
                 <RoutinCard data={program} showDescription={false} className={hasOneItem ? 'w-full' : 'w-80'} />

@@ -1,0 +1,69 @@
+import { useEffect, useRef } from 'react';
+
+import { toPersianNumbers } from '../../../../utils/numbers';
+import { typographyFontStylesMaker } from '../../../../utils/system';
+import AttachIcon from '@assets/shared/icons/attach.svg';
+import SendIcon from '@assets/shared/icons/ticketSend.svg';
+
+import { MODAL_QUERY_NAME } from '../../../../constants/modal.constants';
+import { usePageNavigationLoading } from '../../../../hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
+import { useSystem } from '../../../../hooks/useSystem';
+import { CustomSpinner } from '../../../ui/CustomSpinner';
+import ChatFooterModal from '../ChatFooterModal';
+import useTextValue from './__hooks__/useTextValue';
+
+const ChatFooterMessageInput = () => {
+  const { operatingSystem, appName } = useSystem();
+  const { getQueryParams } = useQueryParamsHandler();
+  const { newQueryParamsHandler } = useQueryParamsHandler();
+  const { pageNavigationHandler } = usePageNavigationLoading();
+  const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Large', operatingSystem });
+  const isMan = appName === 'MEN_PWA';
+
+  const ticketId = getQueryParams('ticketId') || '';
+
+  const { text, textHandler, submitTextHandler, textLoading } = useTextValue(ticketId);
+
+  const clickHandler = () => {
+    (newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true' }),
+      pageNavigationHandler({ showProgressBar: false, id: 'chatFooterModal' }));
+  };
+
+  return (
+    <div className="w-full flex items-center gap-2">
+      <div className="w-full  min-h-10 py-1 px-4 flex items-center justify-between gap-2 border-[1px] rounded-full border-impo_Neutral_Surface">
+        <div
+          className="relative w-6 h-6 min-w-6 min-h-6 flex items-center justify-center overflow-hidden"
+          onClick={clickHandler}
+        >
+          <AttachIcon
+            className={`w-4 h-auto rotate-45 pointer-events-none  ${isMan ? 'fill-impo_PrimaryMan_PrimaryMan' : 'fill-impo_Primary_Primary'} `}
+          />
+        </div>
+
+        <textarea
+          placeholder="پیامت رو بنویس"
+          value={toPersianNumbers(text)}
+          style={{ ...typographyFontStyles }}
+          className="border-none  outline-none w-full bg-impo_Neutral_Background !max-h-10 text-impo_Neutral_OnBackground placeholder:text-impo_Surface_SurfaceVariant"
+          onChange={(e) => textHandler(e.target.value)}
+          dir="rtl"
+        />
+      </div>
+
+      <div
+        onClick={submitTextHandler}
+        style={{ opacity: text.trim() === '' ? '0.5' : '1' }}
+        className={`w-12 h-12 min-w-12 min-h-12 rounded-full flex items-center justify-center cursor-pointer  ${isMan ? 'bg-impo_PrimaryMan_PrimaryMan' : 'bg-impo_Primary_Primary'}`}
+      >
+        {textLoading && <CustomSpinner size={20} className="border-impo_White" />}
+        {!textLoading && <SendIcon className="w-5 h-auto ml-1 fill-impo_White stroke-impo_White" />}
+      </div>
+
+      <ChatFooterModal ticketId={ticketId} />
+    </div>
+  );
+};
+
+export default ChatFooterMessageInput;

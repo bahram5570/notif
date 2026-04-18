@@ -1,1 +1,0 @@
-export const RATING_FOOTER_HEIGHT = 100;

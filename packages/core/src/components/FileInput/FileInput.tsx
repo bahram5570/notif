@@ -1,4 +1,4 @@
-import { chatFileTypeDetector } from './__utils__';
+import { chatFileTypeDetector } from '../../utils/fileType';
 import AttachIcon from '@assets/shared/icons/attach.svg';
 import DownloadedIcon from '@assets/shared/icons/downloaded.svg';
 import TrashIcon from '@assets/shared/icons/trash.svg';

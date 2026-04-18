@@ -6,7 +6,7 @@ export type CustomTextareaInputPropsType =
       value: string;
       placeholder: string;
       rows: number;
-      name: string; // وقتی name هست → handler باید name را بگیرد
+      name: string;
       onChangeHandler: OnchangeHandlerTypeHasName;
       className?: string;
       maxLength?: number;
@@ -16,7 +16,7 @@ export type CustomTextareaInputPropsType =
       value: string;
       placeholder: string;
       rows: number;
-      name?: undefined; // وقتی name نیست → handler هم optional
+      name?: undefined;
       onChangeHandler: OnchangeHandlerTypeOptionalName;
       className?: string;
       maxLength?: number;
