@@ -61,7 +61,6 @@ export const SpecialistCardGenerator = (props: SpecialistCardGeneratorProps) => 
           Icon={StarIcon}
           value={props.rate}
         />
-
         <SpecialistCardSectionMaker
           title="میانگین پاسخگویی"
           isSelected={isSelected}
