@@ -37,7 +37,7 @@ const WidgetHintCardGenerator = (props: WidgetHintCardGeneratorProps) => {
         />
 
         <CustomTypography
-          fontSize="Body_Medium"
+          fontSize="Body_Small"
           className="relative text-impo_Neutral_OnBackground dark:text-impo_Neutral_Background w-full z-10"
         >
           {props.text}

@@ -1,30 +1,22 @@
-import { useAnalytics } from '../../../../hooks/useAnalytics';
-import { CustomTypography } from '../../../ui/CustomTypography';
-import { WidgetCardContainer } from '../../WidgetCardContainer';
+import { FreeMode } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/react';
+
 import ClinicWidgetGenerator from './ClinicWidgetGenerator';
+import WidgetClinicCardV2Heading from './WidgetClinicCardV2Heading';
 import { WidgetClinicCardV2Props } from './types';
 
 export const WidgetClinicCardV2 = ({ data }: WidgetClinicCardV2Props) => {
-  const { callEvent } = useAnalytics();
-
   return (
-    <WidgetCardContainer
-      className="pb-6 bg-green-200"
-      title={data.title}
-      description={data.description}
-      classNameBtn="!text-impo_Neutral_OnSurface !bg-impo_Neutral_Surface !border-impo_Neutral_Surface"
-    >
-      <div className="flex flex-col items-end">
-        {/* <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
-          {data.description}
-        </CustomTypography>
+    <div dir="rtl" className="w-full py-8">
+      <WidgetClinicCardV2Heading title={data.title} description={data.description} cta={data.cta} />
 
-        <div className="w-full pt-5 flex flex-col gap-6">
-          {data.items.map((item, index) => (
-            <ClinicWidgetGenerator {...item} key={index} />
-          ))}
-        </div> */}
-      </div>
-    </WidgetCardContainer>
+      <Swiper slidesPerView={'auto'} freeMode={true} modules={[FreeMode]} spaceBetween={12} className="px-4">
+        {data.items.map((item, index) => (
+          <SwiperSlide className="w-[224px] h-auto" key={index}>
+            <ClinicWidgetGenerator {...item} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
 };

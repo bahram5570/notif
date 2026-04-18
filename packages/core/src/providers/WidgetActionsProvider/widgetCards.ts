@@ -285,8 +285,8 @@ export type WidgetClinicCardTypes = IsPdfDownloadingTypes & {
     description: string;
     title: string;
     items: {
-      action: ActionTypes[];
       doctorImage: string;
+      action: ActionTypes;
       ticketType: number;
       doctorId: string;
       subtitle: string;
@@ -311,11 +311,12 @@ export type WidgetClinicCardV2Types = IsPdfDownloadingTypes & {
       rate: number;
       image: string;
       badge: string;
+      isOnline: boolean;
       doctorName: string;
       speciality: string;
       featureName: string;
+      action: ActionTypes;
       reviewsCount: number;
-      action: ActionTypes[];
     }[];
   };
 };

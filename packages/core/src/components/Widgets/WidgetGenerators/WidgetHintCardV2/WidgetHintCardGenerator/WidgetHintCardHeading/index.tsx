@@ -25,14 +25,14 @@ const WidgetHintCardHeading = ({
           fontSize="Lable_Small"
           className="text-impo_Surface_Outline dark:text-impo_Surface_OutlineVariant"
         >
-          {writerName}
+          {writerSpeciality}
         </CustomTypography>
 
         <CustomTypography
           fontSize="Lable_Medium"
           className="text-impo_Neutral_OnBackground dark:text-impo_Neutral_Background"
         >
-          {writerSpeciality}
+          {writerName}
         </CustomTypography>
       </div>
 
