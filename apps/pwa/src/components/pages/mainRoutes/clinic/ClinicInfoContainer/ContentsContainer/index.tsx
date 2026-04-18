@@ -1,15 +1,16 @@
+import { SPECIALISTS_LIST_QUERY_NAME, SPECIALIST_PAYMENT_QUERY_NAME } from '@repo/core/components/clinic';
+import { SpecialistCardGenerator } from '@repo/core/components/clinic/SpecialistCardGenerator';
+
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ActiveSpecialist from './ActiveSpecialist';
 import SpecialistsList from './ActiveSpecialist/SpecialistsList';
-import SpecialistCardGenerator from './SpecialistCardGenerator';
 import SpecialistHint from './SpecialistHint';
 import SpecialistPaymant from './SpecialistPaymant';
 import SpecialistProblemInputs from './SpecialistProblemInputs';
 import useQuestionValues from './SpecialistProblemInputs/__hooks__/useQuestionValues';
 import useSelectSpecialist from './__hooks__/useSelectSpecialist';
-import { SPECIALISTS_LIST_QUERY_NAME, SPECIALIST_PAYMENT_QUERY_NAME } from './constants';
 import { ContentsContainerProps } from './types';
 
 const ContentsContainer = ({ data }: ContentsContainerProps) => {

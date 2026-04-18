@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 import { MainPageLayoutHeader } from '@repo/core/components/MainPageLayout';
+import { SpecialistInfoGenerator } from '@repo/core/components/clinic/SpecialistInfoGenerator';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { isDevelopeMode } from '@repo/core/utils/system';
@@ -9,7 +10,6 @@ import VpnText from '@components/ui/VpnText';
 import { HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useRouter } from 'next/navigation';
 
-import SpecialistInfoGenerator from '../SpecialistInfoGenerator';
 import DiscountInput from './DiscountInput';
 import InfoPayment from './InfoPayment';
 import InfoSupport from './InfoSupport';

@@ -6,4 +6,4 @@ export type NoteValueType = {
   dateTime: string;
 };
 
-export type OnchangeHandlerType = (v: string, name?: string) => void;
+export type OnchangeHandlerType = (v: string, name: string) => void;

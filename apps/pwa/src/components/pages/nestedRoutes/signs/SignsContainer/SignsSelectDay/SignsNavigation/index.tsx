@@ -1,4 +1,4 @@
-import ArrowIcon from '@assets/icons/vector.svg';
+import ArrowIcon from '@assets/shared/icons/vector.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { SignsNavigationProps } from './types';

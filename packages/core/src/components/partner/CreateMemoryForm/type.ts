@@ -1,4 +1,4 @@
-import { OnchangeHandlerType } from '../../ui/CustomTextareaInput/type';
+import { OnchangeHandlerTypeHasName } from '../../ui/CustomTextareaInput';
 
 export type InputValueType = {
   text: string;
@@ -9,11 +9,11 @@ export type InputValueType = {
 
 export type CreateMemoryFormPropsType = {
   inputValue: InputValueType;
-  onChangeHandler: OnchangeHandlerType;
+  onChangeHandler: OnchangeHandlerTypeHasName;
 };
 
 export type UploadInputPropsType = {
-  onChangeHandler: OnchangeHandlerType;
+  onChangeHandler: OnchangeHandlerTypeHasName;
   uploadImageLoading: boolean;
   fileName: string;
 };

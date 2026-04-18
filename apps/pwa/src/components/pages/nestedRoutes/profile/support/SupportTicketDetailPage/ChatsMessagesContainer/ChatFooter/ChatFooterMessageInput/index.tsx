@@ -1,5 +1,5 @@
-import AttachIcon from '@assets/icons/attach.svg';
-import SendIcon from '@assets/icons/ticketSend.svg';
+import AttachIcon from '@assets/shared/icons/attach.svg';
+import SendIcon from '@assets/shared/icons/ticketSend.svg';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';

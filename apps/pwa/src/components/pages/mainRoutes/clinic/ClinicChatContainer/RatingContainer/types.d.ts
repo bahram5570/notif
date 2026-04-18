@@ -1,4 +1,4 @@
-import { ChatResponseTypes, FeedbacksTypes } from '../__hooks__/useGetData/types';
+import { ChatResponseTypes, FeedbacksTypes } from '@repo/core/components/clinic';
 
 export interface RatingContainerProps {
   isLoading: boolean;

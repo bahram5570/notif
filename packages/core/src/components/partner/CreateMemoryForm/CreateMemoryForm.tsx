@@ -1,9 +1,9 @@
 import { useRouter } from 'next/navigation';
 
+import { useFileUpload } from '../../../hooks/useFileUpload';
 import { CustomTextareaInput } from '../../ui/CustomTextareaInput';
 import { UploadInput } from './UploadInput';
 import { UploadModal } from './UploadModal/UploadModal';
-import useFileUpload from './__hooks__/useFileUpload';
 import { CreateMemoryFormPropsType } from './type';
 
 export const CreateMemoryForm = ({ inputValue, onChangeHandler }: CreateMemoryFormPropsType) => {

@@ -3,7 +3,8 @@ import { useState } from 'react';
 import FileIcon from '@assets/shared/icons/Paper.svg';
 import CameraIcon from '@assets/shared/icons/camera.svg';
 import GalleryIcon from '@assets/shared/icons/gallery.svg';
-import imageCompression from 'browser-image-compression';
+
+// import imageCompression from 'browser-image-compression';
 
 import { useSystem } from '../../hooks/useSystem';
 import { CustomSpinner } from '../ui/CustomSpinner';
@@ -36,8 +37,8 @@ export const FileInputManager = ({
       };
 
       try {
-        const compressedFile = await imageCompression(file, options);
-        fileDataHandler({ e, file: compressedFile });
+        // const compressedFile = await imageCompression(file, options);
+        fileDataHandler({ e, file: file });
       } catch (error) {
         console.error('Image compression failed:', error);
       }

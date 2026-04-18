@@ -1,4 +1,5 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
+import { CustomTextareaInput } from '@repo/core/components/ui/CustomTextareaInput';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';

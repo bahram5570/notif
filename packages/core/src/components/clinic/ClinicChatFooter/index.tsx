@@ -1,0 +1,1 @@
+export { ClinicChatFooter } from './ClinicChatFooter';

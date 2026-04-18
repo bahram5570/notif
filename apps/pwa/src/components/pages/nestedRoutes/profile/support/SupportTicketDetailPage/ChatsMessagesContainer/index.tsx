@@ -1,8 +1,9 @@
 import { useRef } from 'react';
 
+import { CHAT_PAGE_ID } from '@repo/core/components/clinic';
+
 import FileLoading from '@components/pages/mainRoutes/clinic/ClinicChatContainer/ChatsMessagesContainer/FileLoading';
 import useChatInitialSetUp from '@components/pages/mainRoutes/clinic/ClinicChatContainer/ChatsMessagesContainer/__hooks__/useChatInitialSetUp';
-import { CHAT_PAGE_ID } from '@components/pages/mainRoutes/clinic/ClinicChatContainer/constants';
 
 import MessageGenerator from './MessageGenerator';
 import { ChatsMessagesContainerProps } from './type';

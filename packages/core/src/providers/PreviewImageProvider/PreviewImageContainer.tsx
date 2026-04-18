@@ -33,7 +33,7 @@ const PreviewImageContainer = ({ src, shape = 'full' }: PreviewImageContainerPro
     >
       <CrossIcon
         onClick={() => router.back()}
-        className="absolute top-9 left-4 w-10 h-auto fill-impo_White cursor-pointer z-10"
+        className="absolute top-9 right-4 w-10 h-auto fill-impo_White cursor-pointer z-10"
       />
 
       <div className="relative w-full h-full flex justify-center">

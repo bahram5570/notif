@@ -1,4 +1,4 @@
-import { FileDataHandlerTypes } from '../partner/CreateMemoryForm/__hooks__/useFileUpload/types';
+import { FileDataHandlerTypes } from '../../hooks/useFileUpload/type';
 import { FileInputTypes } from './enum';
 
 export interface FileInputManagerPropsType {
