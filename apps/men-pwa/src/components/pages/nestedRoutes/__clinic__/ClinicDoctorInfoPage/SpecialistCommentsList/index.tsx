@@ -1,4 +1,4 @@
-import StarIcon from '@assets/icons/star.svg';
+import StarIcon from '@assets/shared/icons/star.svg';
 import { SpecialistCommentsGenerator } from '@repo/core/components/clinic';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
@@ -32,12 +32,13 @@ const SpecialistCommentsList = ({ commentsData }: SpecialistCommentsListProps) =
           <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
             {item.descritpion}
           </CustomTypography>
-
-          <div className="w-full h-[1px] mt-3 mb-1 bg-impo_Neutral_OnBackground opacity-20" />
-
-          <SpecialistCommentsGenerator isPositive={true} scripts={item.positives} />
-
-          <SpecialistCommentsGenerator isPositive={false} scripts={item.negatives} />
+          {item.positives.length > 0 || item.negatives.length > 0 ? (
+            <>
+              <div className="w-full h-[1px] mt-3 mb-1 bg-impo_Neutral_OnBackground opacity-20" />
+              <SpecialistCommentsGenerator isPositive={true} scripts={item.positives} />
+              <SpecialistCommentsGenerator isPositive={false} scripts={item.negatives} />
+            </>
+          ) : null}
         </div>
       ))}
     </div>

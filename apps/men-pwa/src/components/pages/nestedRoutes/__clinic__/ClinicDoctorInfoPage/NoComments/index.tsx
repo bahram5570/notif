@@ -1,16 +1,16 @@
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-const EmptyList = () => {
+const NoComments = () => {
   return (
-    <div className="flex flex-col items-center gap-3 mt-[20dvh]">
-      <CustomImage src="/assets/shared/images/ticketsHistoryEmptyList.webp" width={105} />
+    <div className="w-full flex flex-col items-center gap-3 pt-36">
+      <CustomImage src="/assets/shared/images/noComments.webp" width={120} height={50} />
 
       <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
-        شما تا به حال مشاوره فعالی نداشته‌اید
+        نظری برای این دکتر ثبت نشده
       </CustomTypography>
     </div>
   );
 };
 
-export default EmptyList;
+export default NoComments;

@@ -32,7 +32,7 @@ const ActiveTicketsHeading = ({ activeTicketsOneTitle, activeTicketsMore, ticket
                 onClick={openHandler}
                 fontSize="Lable_Medium"
                 navigationLoadingId="ActiveTicketsHeading"
-                className="!w-fit !h-8  !bg-impo_PrimaryMan_PrimaryContainerMan !border-impo_PrimaryMan_PrimaryContainerMan  text-impo_PrimaryMan_PrimaryMan"
+                className="!w-fit !h-8  !bg-impo_PrimaryMan_PrimaryContainerMan !border-impo_PrimaryMan_PrimaryContainerMan !text-impo_PrimaryMan_PrimaryMan"
               >
                 {activeTicketsMore}
               </CustomButton>

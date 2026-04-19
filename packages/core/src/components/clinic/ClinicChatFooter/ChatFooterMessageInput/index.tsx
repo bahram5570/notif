@@ -46,7 +46,7 @@ const ChatFooterMessageInput = () => {
           placeholder="پیامت رو بنویس"
           value={toPersianNumbers(text)}
           style={{ ...typographyFontStyles }}
-          className="border-none  outline-none w-full bg-impo_Neutral_Background !max-h-10 text-impo_Neutral_OnBackground placeholder:text-impo_Surface_SurfaceVariant"
+          className="border-none  outline-none w-full bg-impo_Neutral_Background !max-h-10 text-impo_Neutral_OnBackground placeholder:text-impo_Surface_SurfaceVariant resize-none"
           onChange={(e) => textHandler(e.target.value)}
           dir="rtl"
         />
