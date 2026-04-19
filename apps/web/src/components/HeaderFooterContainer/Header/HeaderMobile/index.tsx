@@ -20,9 +20,9 @@ const HeaderMobile = () => {
 
   return (
     <>
-      <CustomLink href={'/dlpair'}>
+      {/* <CustomLink href={'/dlpair'}>
         <CustomImage alt="landing" src={dlpairbannermobile} className={style.dlpairbannermobile} />
-      </CustomLink>
+      </CustomLink> */}
 
       <div
         style={{ height: HEADER_MOBILE_HEIGHT }}

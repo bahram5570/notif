@@ -19,9 +19,10 @@ const HeaderDesktop = () => {
 
   return (
     <>
-      <CustomLink href={'/dlpair'}>
+      {/* <CustomLink href={'/dlpair'}>
         <CustomImage alt="landing" src={dlpairbanner} className={style.dlpairbanner} />
-      </CustomLink>
+      </CustomLink> */}
+
       <div
         className="
                     relative 
