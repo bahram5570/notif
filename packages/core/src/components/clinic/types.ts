@@ -1,6 +1,6 @@
 import { ClinicStateEnums, SideTypeEnum } from './enums';
 
-// clinic-main page
+// # clinic-main page
 export type ClinicTicketsTyes = {
   drAcadimicCertificate: string;
   state: ClinicStateEnums;
@@ -40,7 +40,7 @@ export type ClinicResponseTypes = {
   title: string;
 };
 
-//info page
+// # info page
 export type DrTypes = {
   academicCertificate: string;
   hasPrescription: boolean;
@@ -131,4 +131,23 @@ export type ChatResponseTypes = {
   feedbackPositive: string[];
   feedbackNegative: string[];
   acadimicCertificate: string;
+};
+
+//# comment
+export type CommentsResponseTypes = {
+  isValid: boolean;
+  comment: {
+    totalCount: number;
+    pageSize: number;
+    pageMax: number;
+    pageNo: number;
+    list: {
+      descritpion: string;
+      positives: string[];
+      negatives: string[];
+      userName: string;
+      rate: number;
+      time: string;
+    }[];
+  };
 };

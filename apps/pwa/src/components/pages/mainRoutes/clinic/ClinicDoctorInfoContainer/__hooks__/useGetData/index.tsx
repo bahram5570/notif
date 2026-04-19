@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 
-import { ClinicInfoResponseTypes } from '@repo/core/components/clinic';
+import { ClinicInfoResponseTypes, CommentsResponseTypes } from '@repo/core/components/clinic';
 
-import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
-import { CommentsResponseTypes, UseGetDataProps } from './types';
+import { UseGetDataProps } from './types';
 
 const useGetData = ({ clinicInfo, drId }: UseGetDataProps) => {
   const [data, setData] = useState<undefined | ClinicInfoResponseTypes>(undefined);
