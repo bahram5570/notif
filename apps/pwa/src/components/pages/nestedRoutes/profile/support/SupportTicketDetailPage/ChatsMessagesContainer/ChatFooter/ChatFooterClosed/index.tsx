@@ -8,6 +8,10 @@ const ChatFooterClosed = () => {
   const ticketId = useParams()?.ticketId;
   const { pageNavigationHandler } = usePageNavigationLoading();
 
+  const onClick = () => {
+    pageNavigationHandler({ id: 'ChatFooterClosed', showProgressBar: true });
+  };
+
   return (
     <div className="w-full flex-col flex items-center justify-center gap-2 p-3">
       <div className="flex flex-col justify-center items-center gap-2">
@@ -21,7 +25,7 @@ const ChatFooterClosed = () => {
 
       <Link
         href={`/protected/supportTicket/${ticketId}/rate`}
-        onClick={() => pageNavigationHandler({ id: 'ChatFooterClosed', showProgressBar: true })}
+        onClick={onClick}
         className="w-full flex justify-center items-center rounded-full py-3 px-6 bg-impo_Primary_Primary"
       >
         <CustomTypography fontSize="Title_Small" className="text-impo_PrimaryMan_OnPrimaryMan">

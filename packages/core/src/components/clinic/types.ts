@@ -151,3 +151,12 @@ export type CommentsResponseTypes = {
     }[];
   };
 };
+
+//# history
+
+type TicketsTypes = Omit<ClinicTicketsTyes, 'fileName' | 'ticketType' | 'clinicName'>;
+
+export type TicketsHistoryResponseTypes = {
+  tickets: TicketsTypes[];
+  totalCount: number;
+};
