@@ -5,7 +5,7 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
-const HamtapayPageLinkTo = () => {
+const Hamranj2PageLinkTo = () => {
   const { breakPoint } = useSystem();
 
   const clickHandler = () => {
@@ -37,4 +37,4 @@ const HamtapayPageLinkTo = () => {
   );
 };
 
-export default HamtapayPageLinkTo;
+export default Hamranj2PageLinkTo;

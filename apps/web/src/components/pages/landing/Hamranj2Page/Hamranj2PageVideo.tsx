@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import CustomImage from '@components/ui/CustomImage';
 
-const HamtapayVideo = () => {
+const Hamranj2PageVideo = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [showCover, setShowCover] = useState(true);
 
@@ -55,4 +55,4 @@ const HamtapayVideo = () => {
   );
 };
 
-export default HamtapayVideo;
+export default Hamranj2PageVideo;

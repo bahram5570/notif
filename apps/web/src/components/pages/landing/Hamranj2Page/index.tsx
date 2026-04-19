@@ -5,10 +5,10 @@ import HeaderFooterContainer from '@components/HeaderFooterContainer';
 import CustomImage from '@components/ui/CustomImage';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
-import HamtapayPageLinkTo from './HamtapayPageLinkTo';
-import HamtapayVideo from './HamtapayVideo';
+import Hamranj2PageLinkTo from './Hamranj2PageLinkTo';
+import Hamranj2PageVideo from './Hamranj2PageVideo';
 
-const HamtapayPage = () => {
+const Hamranj2Page = () => {
   return (
     <HeaderFooterContainer>
       <>
@@ -61,9 +61,9 @@ const HamtapayPage = () => {
             />
           </div>
 
-          <HamtapayVideo />
+          <Hamranj2PageVideo />
 
-          <HamtapayPageLinkTo />
+          <Hamranj2PageLinkTo />
         </div>
 
         <DownloadApp />
@@ -72,4 +72,4 @@ const HamtapayPage = () => {
   );
 };
 
-export default HamtapayPage;
+export default Hamranj2Page;
