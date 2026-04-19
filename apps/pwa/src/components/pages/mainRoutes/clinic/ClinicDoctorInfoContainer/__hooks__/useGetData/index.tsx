@@ -1,14 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { ClinicInfoResponseTypes } from '@repo/core/components/clinic';
+import { isDevelopeMode } from '@repo/core/utils/system';
 
-import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { CommentsResponseTypes, UseGetDataProps } from './types';
 
-const useGetData = ({ clinicInfo, drId }: UseGetDataProps) => {
+const useGetData = ({ clinicInfo, drId, isRedirected }: UseGetDataProps) => {
   const [data, setData] = useState<undefined | ClinicInfoResponseTypes>(undefined);
+  const isFirstTime = useRef(isDevelopeMode());
 
   const { callApi, isLoading: doctorLoading } = usePwaApi<ClinicInfoResponseTypes>({
     method: 'POST',
@@ -17,18 +18,27 @@ const useGetData = ({ clinicInfo, drId }: UseGetDataProps) => {
   });
 
   useEffect(() => {
-    callApi({ type: clinicInfo });
+    if (isFirstTime.current) {
+      isFirstTime.current = false;
+      return;
+    }
+
+    const payload = isRedirected ? { type: clinicInfo, redirectFrom: 'clinicWidget' } : { type: clinicInfo };
+    callApi(payload);
   }, []);
 
-  const doctorData = data?.info.dr.find((item) => item.id === drId);
+  const commentsApi = isRedirected
+    ? `advice/drComments/${drId}/0?redirectFrom=clinicWidget`
+    : `advice/drComments/${drId}/0`;
 
   const { isLoading: commentsLoading, data: commentsData } = usePwaApi<CommentsResponseTypes>({
-    api: `advice/drComments/${drId}/0`,
-    queryKey: ['comments'],
     method: 'GET',
+    api: commentsApi,
+    queryKey: ['comments'],
   });
 
   const isLoading = doctorLoading || commentsLoading;
+  const doctorData = data?.info.dr.find((item) => item.id === drId);
 
   return { isLoading, doctorData, commentsData: commentsData?.comment.list };
 };

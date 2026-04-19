@@ -1,8 +1,9 @@
 import { SpecialistCommentsProps } from '../../../ClinicDoctorModal/types';
 
 export interface UseGetDataProps {
-  clinicInfo: string;
   drId: string;
+  clinicInfo: string;
+  isRedirected: boolean;
 }
 
 export type CommentsResponseTypes = {
