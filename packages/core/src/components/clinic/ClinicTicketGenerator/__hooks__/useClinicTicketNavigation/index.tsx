@@ -1,7 +1,7 @@
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
-import { ClinicStateEnums } from '../../enums';
-import { ClinicTicketGeneratorProps } from '../types';
+import { ClinicStateEnums } from '../../../enums';
+import { ClinicTicketGeneratorProps } from '../../types';
 
 const useClinicTicketNavigation = (props: ClinicTicketGeneratorProps) => {
   const { pageNavigationHandler } = usePageNavigationLoading();
