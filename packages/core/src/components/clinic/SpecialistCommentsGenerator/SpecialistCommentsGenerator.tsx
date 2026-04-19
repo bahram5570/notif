@@ -1,8 +1,7 @@
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { CustomTypography } from '../../ui/CustomTypography';
+import { SpecialistCommentsGeneratorProps } from './type';
 
-import { SpecialistCommentsGeneratorProps } from './types';
-
-const SpecialistCommentsGenerator = ({ isPositive, scripts }: SpecialistCommentsGeneratorProps) => {
+export const SpecialistCommentsGenerator = ({ isPositive, scripts }: SpecialistCommentsGeneratorProps) => {
   return (
     <div className="flex flex-col gap-2 pt-1">
       {scripts.map((item, index) => (
@@ -24,5 +23,3 @@ const SpecialistCommentsGenerator = ({ isPositive, scripts }: SpecialistComments
     </div>
   );
 };
-
-export default SpecialistCommentsGenerator;

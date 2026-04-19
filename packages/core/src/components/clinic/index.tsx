@@ -1,3 +1,5 @@
+export { SpecialistCommentsGenerator } from './SpecialistCommentsGenerator/SpecialistCommentsGenerator';
+
 export { InfoPayment } from './InfoPayment/InfoPayment';
 export { SpecialistInfoGenerator } from './SpecialistInfoGenerator/SpecialistInfoGenerator';
 export { SpecialistCardSectionMaker } from './SpecialistCardGenerator/SpecialistCardSectionMaker';
