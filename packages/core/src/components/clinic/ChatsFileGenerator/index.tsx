@@ -1,1 +1,0 @@
-export { ChatsFileGenerator } from './ChatsFileGenerator';

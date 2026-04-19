@@ -1,5 +1,5 @@
 import { MainPageLayoutHeader } from '@repo/core/components/MainPageLayout';
-import { ClinicTicketGenerator } from '@repo/core/components/clinic/ClinicTicketGenerator';
+import { ClinicTicketGenerator } from '@repo/core/components/clinic';
 
 import { HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';

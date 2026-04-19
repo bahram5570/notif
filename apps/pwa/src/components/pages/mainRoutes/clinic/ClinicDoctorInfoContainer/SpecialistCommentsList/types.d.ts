@@ -1,4 +1,4 @@
-import { CommentsResponseTypes } from '../__hooks__/useGetData/types';
+import { CommentsResponseTypes } from '@repo/core/components/clinic';
 
 type ListTypes = Pick<CommentsResponseTypes, 'comment'>['comment']['list'];
 

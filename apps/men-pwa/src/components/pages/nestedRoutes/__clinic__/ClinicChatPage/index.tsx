@@ -1,8 +1,7 @@
 'use client';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
-import { CHAT_HEADING_HEIGHT, RATING_QUERY_NAME } from '@repo/core/components/clinic';
-import { ClinicChatFooter } from '@repo/core/components/clinic/ClinicChatFooter';
+import { CHAT_HEADING_HEIGHT, ClinicChatFooter, RATING_QUERY_NAME } from '@repo/core/components/clinic';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';

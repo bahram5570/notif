@@ -1,7 +1,6 @@
 import { useEffect } from 'react';
 
-import { CHAT_PAGE_ID, SideTypeEnum } from '@repo/core/components/clinic';
-import { ChatContainerMaker } from '@repo/core/components/clinic/ClinicChatContainer';
+import { CHAT_PAGE_ID, ChatContainerMaker, SideTypeEnum } from '@repo/core/components/clinic';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { chatFileTypeDetector } from '@repo/core/utils/fileType';
 

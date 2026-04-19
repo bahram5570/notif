@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { ClinicInfoResponseTypes } from '@repo/core/components/clinic';
+import { ClinicInfoResponseTypes, CommentsResponseTypes } from '@repo/core/components/clinic';
 import { isDevelopeMode } from '@repo/core/utils/system';
 
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
-import { CommentsResponseTypes, UseGetDataProps } from './types';
+import { UseGetDataProps } from './types';
 
 const useGetData = ({ clinicInfo, drId, isRedirected }: UseGetDataProps) => {
   const [data, setData] = useState<undefined | ClinicInfoResponseTypes>(undefined);

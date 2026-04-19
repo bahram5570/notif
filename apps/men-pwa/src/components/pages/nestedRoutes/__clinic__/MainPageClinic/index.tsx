@@ -1,7 +1,7 @@
 'use client';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
-import { ClinicCard } from '@repo/core/components/clinic/ClinicCard';
+import { ClinicCard } from '@repo/core/components/clinic';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import ActiveTicketsHeading from './ActiveTicketsHeading';

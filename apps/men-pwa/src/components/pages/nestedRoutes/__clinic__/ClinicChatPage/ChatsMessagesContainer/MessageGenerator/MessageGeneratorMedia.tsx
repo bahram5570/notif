@@ -1,5 +1,4 @@
-import { ChatsFileGenerator } from '@repo/core/components/clinic/ChatsFileGenerator';
-import { ChatContainerMaker } from '@repo/core/components/clinic/ClinicChatContainer';
+import { ChatContainerMaker, ChatsFileGenerator } from '@repo/core/components/clinic';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { VoiceMessagePlayer } from '@repo/core/components/ui/VoiceMessagePlayer';
 import { chatFileTypeDetector } from '@repo/core/utils/fileType';

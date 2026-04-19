@@ -1,5 +1,8 @@
-import { SPECIALISTS_LIST_QUERY_NAME, SPECIALIST_PAYMENT_QUERY_NAME } from '@repo/core/components/clinic';
-import { SpecialistCardGenerator } from '@repo/core/components/clinic/SpecialistCardGenerator';
+import {
+  SPECIALISTS_LIST_QUERY_NAME,
+  SPECIALIST_PAYMENT_QUERY_NAME,
+  SpecialistCardGenerator,
+} from '@repo/core/components/clinic';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';

@@ -1,8 +1,7 @@
 import { useEffect, useRef } from 'react';
 
 import { MainPageLayoutHeader } from '@repo/core/components/MainPageLayout';
-import { InfoPayment } from '@repo/core/components/clinic/InfoPayment';
-import { SpecialistInfoGenerator } from '@repo/core/components/clinic/SpecialistInfoGenerator';
+import { InfoPayment, SpecialistInfoGenerator } from '@repo/core/components/clinic';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { isDevelopeMode } from '@repo/core/utils/system';
