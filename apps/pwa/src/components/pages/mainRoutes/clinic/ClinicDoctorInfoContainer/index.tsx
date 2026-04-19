@@ -1,4 +1,5 @@
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
 import { SHOW_QUESTION_BTN } from '@constants/app.constants';
@@ -16,10 +17,11 @@ import { ClinicDoctorInfoContainerProps } from './type';
 
 const ClinicDoctorInfoContainer = ({ clinicInfo, doctorId }: ClinicDoctorInfoContainerProps) => {
   const { getQueryParams } = useQueryParamsHandler();
+  const { pageNavigationHandler } = usePageNavigationLoading();
+
   const showQuestionBtn = getQueryParams(SHOW_QUESTION_BTN) !== null;
 
-  const { pageNavigationHandler } = usePageNavigationLoading();
-  const { isLoading, doctorData, commentsData } = useGetData({
+  const { getComments, isPageLoading, isCommentsLoading, doctorData, commentsData, commentsPagination } = useGetData({
     clinicInfo,
     drId: doctorId,
     isRedirected: showQuestionBtn,
@@ -35,10 +37,19 @@ const ClinicDoctorInfoContainer = ({ clinicInfo, doctorId }: ClinicDoctorInfoCon
 
   return (
     <MainPageLayout rightElement="BackButton" rightElementScript="متخصص" paddingTop={0} paddingBottom={60}>
-      <div className="w-full h-[100dvh] overflow-y-auto pb-10" style={{ paddingTop: HEADER_HEIGHT }}>
-        {isLoading && <SpecialistCommentsSkeleton />}
+      <InfiniteScrollContainer
+        className="pb-10"
+        height={'100dvh'}
+        callBack={getComments}
+        isLoading={isCommentsLoading}
+        pageNo={commentsPagination.pageNo}
+        style={{ paddingTop: HEADER_HEIGHT }}
+        pageSize={commentsPagination.pageSize}
+        totalCount={commentsPagination.totalCount}
+      >
+        {isPageLoading && <SpecialistCommentsSkeleton />}
 
-        {!isLoading && doctorData && commentsData && (
+        {!isPageLoading && doctorData && commentsData && (
           <div className="relative px-4 pb-5 pt-5 z-0">
             <DoctorInfo
               image={doctorData.image}
@@ -51,19 +62,20 @@ const ClinicDoctorInfoContainer = ({ clinicInfo, doctorId }: ClinicDoctorInfoCon
             {commentsData.length === 0 && <NoComments />}
 
             {commentsData.length > 0 && <SpecialistCommentsList commentsData={commentsData} />}
+
             {showQuestionBtn && (
               <div
                 style={{ maxWidth: MAX_SCREEN_WIDTH }}
                 className=" fixed left-0 right-0 mx-auto bottom-0 flex flex-col w-full gap-2 p-4 bg-impo_Neutral_Background"
               >
-                <CustomButton isLoading={isLoading} onClick={submitHandler} id="Clinic_Payment_Press">
+                <CustomButton isLoading={isPageLoading} onClick={submitHandler} id="Clinic_Payment_Press">
                   ارسال سوال
                 </CustomButton>
               </div>
             )}
           </div>
         )}
-      </div>
+      </InfiniteScrollContainer>
     </MainPageLayout>
   );
 };

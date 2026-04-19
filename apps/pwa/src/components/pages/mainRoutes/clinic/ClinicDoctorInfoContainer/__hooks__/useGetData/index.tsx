@@ -5,16 +5,18 @@ import { isDevelopeMode } from '@repo/core/utils/system';
 
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
-import { UseGetDataProps } from './types';
+import { CommentsDataTypes, CommentsPaginationTypes, UseGetDataProps } from './types';
 
 const useGetData = ({ clinicInfo, drId, isRedirected }: UseGetDataProps) => {
-  const [data, setData] = useState<undefined | ClinicInfoResponseTypes>(undefined);
-  const isFirstTime = useRef(isDevelopeMode());
+  // # clinic info
 
-  const { callApi, isLoading: doctorLoading } = usePwaApi<ClinicInfoResponseTypes>({
+  const isFirstTime = useRef(isDevelopeMode());
+  const [clinicInfoData, setClinicInfoData] = useState<undefined | ClinicInfoResponseTypes>(undefined);
+
+  const { callApi: getClinicInfo, isLoading: doctorLoading } = usePwaApi<ClinicInfoResponseTypes>({
     method: 'POST',
     api: 'advice/ticketInfo',
-    onSuccess: (v) => setData(v),
+    onSuccess: (v) => setClinicInfoData(v),
   });
 
   useEffect(() => {
@@ -24,23 +26,51 @@ const useGetData = ({ clinicInfo, drId, isRedirected }: UseGetDataProps) => {
     }
 
     const payload = isRedirected ? { type: clinicInfo, redirectFrom: 'clinicWidget' } : { type: clinicInfo };
-    callApi(payload);
+    getClinicInfo(payload);
   }, []);
 
-  const commentsApi = isRedirected
-    ? `advice/drComments/${drId}/0?redirectFrom=clinicWidget`
-    : `advice/drComments/${drId}/0`;
+  const doctorData = clinicInfoData?.info.dr.find((item) => item.id === drId);
 
-  const { isLoading: commentsLoading, data: commentsData } = usePwaApi<CommentsResponseTypes>({
+  // # comments
+
+  const [commentsData, setCommentsData] = useState<undefined | CommentsDataTypes>(undefined);
+  const [commentsPagination, setCommentsPagination] = useState<CommentsPaginationTypes>({
+    pageNo: 0,
+    pageSize: 0,
+    totalCount: 0,
+  });
+
+  const commentsSuccessHandler = ({ isValid, comment }: CommentsResponseTypes) => {
+    if (!isValid) {
+      return;
+    }
+
+    if (commentsData === undefined) {
+      setCommentsData(comment.list);
+    } else {
+      setCommentsData([...commentsData, ...comment.list]);
+    }
+
+    const newPageNo = commentsPagination.pageNo + 1;
+
+    setCommentsPagination({ pageNo: newPageNo, pageSize: comment.pageSize, totalCount: comment.totalCount });
+  };
+
+  const commentsApi = isRedirected
+    ? `advice/drComments/${drId}/${commentsPagination.pageNo}?redirectFrom=clinicWidget`
+    : `advice/drComments/${drId}/${commentsPagination.pageNo}`;
+
+  const { callApi: getComments, isLoading: commentsLoading } = usePwaApi<CommentsResponseTypes>({
     method: 'GET',
     api: commentsApi,
     queryKey: ['comments'],
+    onSuccess: commentsSuccessHandler,
   });
 
-  const isLoading = doctorLoading || commentsLoading;
-  const doctorData = data?.info.dr.find((item) => item.id === drId);
+  const isPageLoading = doctorLoading || Boolean(commentsLoading && commentsData === undefined);
+  const isCommentsLoading = Boolean(commentsData && commentsLoading);
 
-  return { isLoading, doctorData, commentsData: commentsData?.comment.list };
+  return { getComments, isPageLoading, isCommentsLoading, doctorData, commentsData, commentsPagination };
 };
 
 export default useGetData;
