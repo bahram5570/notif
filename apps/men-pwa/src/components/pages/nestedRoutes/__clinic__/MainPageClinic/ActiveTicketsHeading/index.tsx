@@ -1,4 +1,4 @@
-import { ClinicTicketGenerator } from '@repo/core/components/clinic/ClinicTicketGenerator';
+import { ClinicTicketGenerator } from '@repo/core/components/clinic';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 

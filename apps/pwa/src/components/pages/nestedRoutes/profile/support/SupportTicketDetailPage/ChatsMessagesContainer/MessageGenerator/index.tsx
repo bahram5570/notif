@@ -1,5 +1,4 @@
-import { SideTypeEnum } from '@repo/core/components/clinic';
-import { ChatContainerMaker } from '@repo/core/components/clinic/ClinicChatContainer';
+import { ChatContainerMaker, SideTypeEnum } from '@repo/core/components/clinic';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import MessageGeneratorMedia from './MessageGeneratorMedia';

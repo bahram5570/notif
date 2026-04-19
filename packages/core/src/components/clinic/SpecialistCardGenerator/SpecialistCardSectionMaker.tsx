@@ -2,7 +2,7 @@ import { CustomTypography } from '../../ui/CustomTypography';
 import useCardThemeFinder from './__hooks__/useCardThemeFinder';
 import { SpecialistCardSectionMakerProps } from './types';
 
-const SpecialistCardSectionMaker = ({ isSelected, value, title, Icon }: SpecialistCardSectionMakerProps) => {
+export const SpecialistCardSectionMaker = ({ isSelected, value, title, Icon }: SpecialistCardSectionMakerProps) => {
   const { theme } = useCardThemeFinder();
 
   return (
@@ -25,5 +25,3 @@ const SpecialistCardSectionMaker = ({ isSelected, value, title, Icon }: Speciali
     </div>
   );
 };
-
-export default SpecialistCardSectionMaker;

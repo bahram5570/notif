@@ -1,6 +1,6 @@
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+import { ClinicTicketGenerator } from '@repo/core/components/clinic';
 
-import ClinicTicketGenerator from '../ClinicTicketGenerator';
 import ClinicTicketsHistorySkeleton from './ClinicTicketsHistorySkeleton';
 import EmptyList from './EmtpyList';
 import useGetData from './__hooks__/useGetData';

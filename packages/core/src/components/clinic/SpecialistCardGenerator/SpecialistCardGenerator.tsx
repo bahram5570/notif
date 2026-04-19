@@ -7,8 +7,8 @@ import { usePathname } from 'next/navigation';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useSystem } from '../../../hooks/useSystem';
 import { CustomButton } from '../../ui/CustomButton';
-import { SpecialistInfoGenerator } from '../SpecialistInfoGenerator';
-import SpecialistCardSectionMaker from './SpecialistCardSectionMaker';
+import { SpecialistInfoGenerator } from '../SpecialistInfoGenerator/SpecialistInfoGenerator';
+import { SpecialistCardSectionMaker } from './SpecialistCardSectionMaker';
 import useBackgroundColorFinder from './__hooks__/useBackgroundColorFinder';
 import { SpecialistCardGeneratorProps } from './types';
 

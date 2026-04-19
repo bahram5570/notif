@@ -1,1 +1,0 @@
-export { SpecialistInfoGenerator } from './SpecialistInfoGenerator';

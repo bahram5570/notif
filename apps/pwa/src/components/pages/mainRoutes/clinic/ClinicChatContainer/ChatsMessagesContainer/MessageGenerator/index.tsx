@@ -1,4 +1,4 @@
-import { ChatContainerMaker } from '@repo/core/components/clinic/ClinicChatContainer';
+import { ChatContainerMaker } from '@repo/core/components/clinic';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import MessageGeneratorMedia from './MessageGeneratorMedia';

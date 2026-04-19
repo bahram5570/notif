@@ -1,4 +1,4 @@
-import { SpecialistCardGenerator } from '@repo/core/components/clinic/SpecialistCardGenerator';
+import { SpecialistCardGenerator } from '@repo/core/components/clinic';
 
 import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useRouter } from 'next/navigation';

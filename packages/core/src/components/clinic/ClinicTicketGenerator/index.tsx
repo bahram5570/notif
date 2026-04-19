@@ -1,1 +1,0 @@
-export { ClinicTicketGenerator } from './ClinicTicketGenerator';
