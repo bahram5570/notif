@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+import CustomImage from '@components/ui/CustomImage';
+
 const HamtapayVideo = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [showCover, setShowCover] = useState(true);
@@ -34,15 +36,20 @@ const HamtapayVideo = () => {
   };
 
   return (
-    <div className="w-full px-4">
+    <div className="relative w-[calc(100%-32px)] aspect-[9/16] rounded-2xl my-6 bg-green-300">
+      {showCover && (
+        <div className="absolute top-0 left-0 right-0 bottom-0" onClick={playHandler}>
+          <CustomImage src="/assets/images/pregnancyVideoCover.webp" alt="" fill={true} className="object-contain" />
+        </div>
+      )}
+
       <video
         ref={videoRef}
         controls={true}
         autoPlay={false}
-        className="w-full h-auto object-cover rounded-[30px]"
-        webkit-playsinline="true"
+        className={`rounded-2xl ${showCover ? 'opacity-0' : 'opacity-100'}`}
       >
-        <source src="/assets/images/webView/sympathy/Comp 1_2.mov" />
+        <source src="/assets/test1.mov" />
       </video>
     </div>
   );
