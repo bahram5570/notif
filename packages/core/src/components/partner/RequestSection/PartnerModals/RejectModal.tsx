@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
@@ -25,6 +27,16 @@ const RejectModal = () => {
     route.back();
   };
 
+  const className = useMemo(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan';
+
+      default:
+        return '';
+    }
+  }, [appName]);
+
   return (
     <div className="flex flex-col items-center  gap-3 max-w-sm">
       <div className=" flex flex-col items-center p-2 w-full gap-2">
@@ -36,12 +48,7 @@ const RejectModal = () => {
       </div>
 
       <div className={`flex w-full justify-between gap-2 `}>
-        <CustomButton
-          className={`${appName === 'MEN_PWA' && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
-          onClick={onClick}
-          isLoading={isLoading}
-          fontSize="Lable_Large"
-        >
+        <CustomButton className={`${className}`} onClick={onClick} isLoading={isLoading} fontSize="Lable_Large">
           !آره
         </CustomButton>
         <CustomButton

@@ -9,7 +9,23 @@ import { TicketSmallLabelProps } from './types';
 
 const TicketSmallLabel = ({ state, stylingTypes, rate }: TicketSmallLabelProps) => {
   const { appName } = useSystem();
-  const isMan = appName === 'MEN_PWA';
+
+  const theme = useMemo<{ backgroundcolor: string; text: string }>(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return {
+          backgroundcolor: 'bg-impo_PrimaryMan_PrimaryContainerMan',
+          text: 'text-impo_PrimaryMan_PrimaryMan',
+        };
+
+      default:
+        return {
+          backgroundcolor: 'bg-impo_Primary_PrimaryContainer',
+          text: 'text-impo_Primary_Primary',
+        };
+    }
+  }, [appName]);
+
   const values = useMemo(() => {
     const result = { backgroundColor: '', textColor: '', script: '' };
 
@@ -23,13 +39,13 @@ const TicketSmallLabel = ({ state, stylingTypes, rate }: TicketSmallLabelProps) 
           result.backgroundColor = 'bg-impo_Error_ErrorContainer';
           result.textColor = 'text-impo_Error_Error';
         } else {
-          result.backgroundColor = `${isMan ? 'bg-impo_PrimaryMan_PrimaryContainerMan' : 'bg-impo_Primary_PrimaryContainer'}`;
-          result.textColor = `${isMan ? 'text-impo_PrimaryMan_OnPrimaryContainerMan' : 'text-Primary_OnPrimaryContainer'}`;
+          result.backgroundColor = theme.backgroundcolor;
+          result.textColor = theme.text;
         }
         break;
       default:
-        result.backgroundColor = `${isMan ? 'bg-impo_PrimaryMan_PrimaryContainerMan' : 'bg-impo_Primary_PrimaryContainer'}`;
-        result.textColor = `${isMan ? 'text-impo_PrimaryMan_OnPrimaryContainerMan' : 'text-Primary_OnPrimaryContainer'}`;
+        result.backgroundColor = theme.backgroundcolor;
+        result.textColor = theme.text;
         break;
     }
 

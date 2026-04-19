@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import EditIcon from '@assets/shared/icons/Edit.svg';
 import TrashIcon from '@assets/shared/icons/trash.svg';
 
@@ -30,6 +32,16 @@ export const MemoryDetailOptions = ({ fromMan, memoryId, validPartner, callBack 
     });
   };
 
+  const bg = useMemo(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return 'bg-impo_PrimaryMan_PrimaryMan';
+
+      default:
+        return 'bg-impo_Primary_Primary';
+    }
+  }, [appName]);
+
   return (
     <div
       className="fixed left-0 right-0 bottom-0 mx-auto px-4 pt-3 grid grid-flow-col bg-impo_Neutral_Background"
@@ -49,9 +61,7 @@ export const MemoryDetailOptions = ({ fromMan, memoryId, validPartner, callBack 
       {showCommentBtn && !validPartner && (
         <div onClick={onClick}>
           <div className="flex flex-row items-center gap-1 justify-center ">
-            <div
-              className={`pl-6 pr-4 py-2 flex justify-end items-center rounded-full gap-1   ${appName === 'MEN_PWA' ? 'bg-impo_PrimaryMan_PrimaryMan' : 'bg-impo_Primary_Primary'}`}
-            >
+            <div className={`pl-6 pr-4 py-2 flex justify-end items-center rounded-full gap-1   ${bg}`}>
               <CustomTypography fontSize="Title_Small" className="text-impo_PrimaryMan_OnPrimaryMan">
                 نظرت چیه؟
               </CustomTypography>

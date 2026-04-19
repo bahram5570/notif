@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { STORY_MODAL_ID } from '../../../../../constants/modal.constants';
 import { useAnalytics } from '../../../../../hooks/useAnalytics';
 import { usePageNavigationLoading } from '../../../../../hooks/usePageNavigationLoading';
@@ -26,6 +28,16 @@ export const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItem
     }
   };
 
+  const borderColor = useMemo(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return 'border-impo_PrimaryMan_PrimaryMan';
+
+      default:
+        return 'border-impo_Primary_Primary';
+    }
+  }, [appName]);
+
   return (
     <div
       onClick={selectHandler}
@@ -49,7 +61,7 @@ export const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItem
           }}
           className={`absolute top-0 left-0 right-0 bottom-0 border-[1.5px] rounded-full 
             ${isLoading ? 'animate-spin !border-t-transparent' : ''}
-            ${isViewed ? 'border-impo_Surface_Outline' : `${appName === 'MEN_PWA' ? 'border-impo_PrimaryMan_PrimaryMan' : 'border-impo_Primary_Primary'}`}
+            ${isViewed ? 'border-impo_Surface_Outline' : `${borderColor}`}
           `}
         />
       </div>

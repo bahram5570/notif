@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
@@ -37,6 +39,16 @@ const RequestGenerator = ({ item }: RequestGeneratorTypeProps) => {
       pageNavigationHandler({ showProgressBar: true, id: 'Reject' }));
   };
 
+  const className = useMemo(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan';
+
+      default:
+        return '';
+    }
+  }, [appName]);
+
   return (
     <div className="p-2">
       <div className="flex items-center justify-end gap-2">
@@ -53,11 +65,7 @@ const RequestGenerator = ({ item }: RequestGeneratorTypeProps) => {
       </div>
       <div className="flex items-center gap-3">
         {item.isRecv && (
-          <CustomButton
-            className={`max-w-fit ${appName === 'MEN_PWA' && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'} `}
-            onClick={onAcceptClickHandler}
-            isLoading={isLoading}
-          >
+          <CustomButton className={`max-w-fit ${className} `} onClick={onAcceptClickHandler} isLoading={isLoading}>
             <CustomTypography fontSize="Lable_Medium" className="text-impo_Primary_OnPrimary">
               قبول کردن
             </CustomTypography>

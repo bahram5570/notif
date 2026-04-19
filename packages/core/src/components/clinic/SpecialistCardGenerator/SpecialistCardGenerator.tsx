@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import ClockIcon from '@assets/shared/icons/clock1.svg';
 import PeopleIcon from '@assets/shared/icons/people.svg';
 import StarIcon from '@assets/shared/icons/star.svg';
@@ -37,7 +39,16 @@ export const SpecialistCardGenerator = (props: SpecialistCardGeneratorProps) => 
   };
 
   const isSelected = props.selectedId === props.id;
-  const isMan = appName === 'MEN_PWA';
+
+  const className = useMemo(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return '!bg-[#E2E2E233] !border-0 !text-impo_White';
+
+      default:
+        return '';
+    }
+  }, [appName]);
 
   return (
     <div
@@ -72,7 +83,7 @@ export const SpecialistCardGenerator = (props: SpecialistCardGeneratorProps) => 
       {props.hasCommentsButton && (
         <CustomButton
           onClick={selectDoctorHandler}
-          className={`rounded-lg my-2 ${isMan && '!bg-[#E2E2E233] !border-0 !text-impo_White'} `}
+          className={`rounded-lg my-2 ${className} `}
           navigationLoadingId={props.id}
         >
           نظرات کاربران

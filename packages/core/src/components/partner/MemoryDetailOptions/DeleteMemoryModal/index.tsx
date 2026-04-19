@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
@@ -17,6 +19,24 @@ const DeleteMemoryModal = ({ memoryId }: DeleteMemoryModalPropsType) => {
     router.back();
   };
 
+  const theme = useMemo<{ borderColor: string; backgroundcolor: string; textColor: string }>(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return {
+          borderColor: '!bg-impo_PrimaryMan_PrimaryMan',
+          backgroundcolor: '!border-impo_PrimaryMan_PrimaryMan',
+          textColor: '!text-impo_White',
+        };
+
+      default:
+        return {
+          borderColor: 'border-impo_Primary_PrimaryContainer',
+          backgroundcolor: 'bg-impo_Primary_PrimaryContainer',
+          textColor: '!text-impo_Error_Error',
+        };
+    }
+  }, [appName]);
+
   return (
     <CustomModal className="pb-0">
       <div className="w-[290px] flex flex-col items-center gap-4">
@@ -29,7 +49,7 @@ const DeleteMemoryModal = ({ memoryId }: DeleteMemoryModalPropsType) => {
 
         <div className="w-full flex items-center justify-between gap-2">
           <CustomButton
-            className={` ${appName === 'MEN_PWA' ? '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan !text-impo_White' : '!text-impo_Error_Error  bg-impo_Primary_PrimaryContainer  border-impo_Primary_PrimaryContainer'}`}
+            className={`${theme.backgroundcolor} ${theme.borderColor} ${theme.textColor}`}
             onClick={deleteHandler}
             fontSize="Lable_Large"
             isLoading={isLoading}

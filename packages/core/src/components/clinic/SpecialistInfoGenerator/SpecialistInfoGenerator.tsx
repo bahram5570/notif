@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { useSystem } from '../../../hooks/useSystem';
 import { CustomImage } from '../../ui/CustomImage';
 import { CustomTypography } from '../../ui/CustomTypography';
@@ -14,7 +16,22 @@ export const SpecialistInfoGenerator = ({
   isActive,
 }: SpecialistInfoGeneratorProps) => {
   const { appName } = useSystem();
-  const isMan = appName === 'MEN_PWA';
+
+  const theme = useMemo<{ backgroundcolor: string; textColor: string }>(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return {
+          backgroundcolor: '!bg-impo_PrimaryMan_PrimaryMan',
+          textColor: '!text-impo_White',
+        };
+
+      default:
+        return {
+          backgroundcolor: '',
+          textColor: `${isSelected ? 'text-impo_Black' : 'text-impo_Neutral_OnBackground'}`,
+        };
+    }
+  }, [appName]);
 
   return (
     <div
@@ -28,7 +45,7 @@ export const SpecialistInfoGenerator = ({
                   rounded-xl 
                   mt-2 
                   ${isSelected ? 'bg-impo_White' : 'bg-impo_Neutral_Surface '}
-                  ${isActive && isMan && '!bg-impo_PrimaryMan_PrimaryMan'}
+                  ${isActive && theme.backgroundcolor}
                 `}
     >
       <div className="relative w-12 h-12 min-w-12 min-h-12 rounded-full">
@@ -44,22 +61,22 @@ export const SpecialistInfoGenerator = ({
       <div className="flex flex-col items-end gap-1">
         <CustomTypography
           fontSize="Lable_Medium"
-          className={`${isSelected ? 'text-impo_Black' : 'text-impo_Neutral_OnBackground'}  ${isActive && isMan && '!text-impo_White'}`}
+          className={`${isSelected ? 'text-impo_Black' : 'text-impo_Neutral_OnBackground'}  ${isActive && theme.textColor}`}
         >{`${firstName} ${lastName}`}</CustomTypography>
 
         <div className="flex items-center gap-2">
           <CustomTypography
             fontSize="Lable_Small"
-            className={`${isSelected ? 'text-impo_Black' : 'text-impo_Surface_InverseSurface'}  ${isActive && isMan && '!text-impo_White'}`}
+            className={`${isSelected ? 'text-impo_Black' : 'text-impo_Surface_InverseSurface'}  ${isActive && theme.textColor}`}
           >
             {`ش.ن: ${nezamNumber}`}
           </CustomTypography>
 
-          <div className={`w-[1px] h-4 ${isSelected ? 'text-impo_Black' : 'bg-impo_Surface_OutlineVariant'} `} />
+          <div className="w-[1px] h-4 bg-impo_Surface_OutlineVariant" />
 
           <CustomTypography
             fontSize="Lable_Small"
-            className={`${isSelected ? 'text-impo_Black' : 'text-impo_Surface_InverseSurface'} ${isActive && isMan && '!text-impo_White'}`}
+            className={`${isSelected ? 'text-impo_Black' : 'text-impo_Surface_InverseSurface'} ${isActive && theme.textColor}`}
           >
             {speciliaty}
           </CustomTypography>

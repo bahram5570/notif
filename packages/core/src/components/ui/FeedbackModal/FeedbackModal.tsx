@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
@@ -27,6 +29,16 @@ export const FeedbackModal = ({ title, onSubmit, isLoading }: FeedbackModalProps
 
   const isOpenFeedbackModal = getQueryParams(MODAL_FEEDBACK) !== null;
 
+  const className = useMemo(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan';
+
+      default:
+        return '';
+    }
+  }, [appName]);
+
   return (
     <CustomModal isOpen={isOpenFeedbackModal} isSlidingMode>
       <div
@@ -55,7 +67,7 @@ export const FeedbackModal = ({ title, onSubmit, isLoading }: FeedbackModalProps
             onClick={submitHandler}
             isLoading={isLoading}
             isDisable={!valuesProps.rate}
-            className={`${appName === 'MEN_PWA' && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
+            className={className}
           >
             ثبت نظر
           </CustomButton>

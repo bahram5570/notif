@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
@@ -8,13 +10,22 @@ import { RATING_QUERY_NAME } from '../../constants';
 const ChatFooterRating = () => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { appName } = useSystem();
-  const isMan = appName === 'MEN_PWA';
+
+  const bg = useMemo(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan';
+
+      default:
+        return '';
+    }
+  }, [appName]);
 
   return (
     <>
       <CustomButton
         fontSize="Lable_Large"
-        className={`h-10 ${isMan && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
+        className={`h-10 ${bg}`}
         navigationLoadingId="ChatFooterRating"
         onClick={() => newQueryParamsHandler({ [RATING_QUERY_NAME]: 'true' })}
       >

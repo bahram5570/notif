@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 
 import { toPersianNumbers } from '../../../../utils/numbers';
 import { typographyFontStylesMaker } from '../../../../utils/system';
@@ -19,7 +19,6 @@ const ChatFooterMessageInput = () => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Large', operatingSystem });
-  const isMan = appName === 'MEN_PWA';
 
   const ticketId = getQueryParams('ticketId') || '';
 
@@ -30,6 +29,22 @@ const ChatFooterMessageInput = () => {
       pageNavigationHandler({ showProgressBar: false, id: 'chatFooterModal' }));
   };
 
+  const theme = useMemo<{ backgroundcolor: string; fill: string }>(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return {
+          backgroundcolor: 'bg-impo_PrimaryMan_PrimaryMan',
+          fill: 'fill-impo_PrimaryMan_PrimaryMan',
+        };
+
+      default:
+        return {
+          backgroundcolor: 'bg-impo_Primary_Primary',
+          fill: 'fill-impo_Primary_Primary',
+        };
+    }
+  }, [appName]);
+
   return (
     <div className="w-full flex items-center gap-2">
       <div className="w-full  min-h-10 py-1 px-4 flex items-center justify-between gap-2 border-[1px] rounded-full border-impo_Neutral_Surface">
@@ -37,9 +52,7 @@ const ChatFooterMessageInput = () => {
           className="relative w-6 h-6 min-w-6 min-h-6 flex items-center justify-center overflow-hidden"
           onClick={clickHandler}
         >
-          <AttachIcon
-            className={`w-4 h-auto rotate-45 pointer-events-none  ${isMan ? 'fill-impo_PrimaryMan_PrimaryMan' : 'fill-impo_Primary_Primary'} `}
-          />
+          <AttachIcon className={`w-4 h-auto rotate-45 pointer-events-none  ${theme.fill} `} />
         </div>
 
         <textarea
@@ -55,7 +68,7 @@ const ChatFooterMessageInput = () => {
       <div
         onClick={submitTextHandler}
         style={{ opacity: text.trim() === '' ? '0.5' : '1' }}
-        className={`w-12 h-12 min-w-12 min-h-12 rounded-full flex items-center justify-center cursor-pointer  ${isMan ? 'bg-impo_PrimaryMan_PrimaryMan' : 'bg-impo_Primary_Primary'}`}
+        className={`w-12 h-12 min-w-12 min-h-12 rounded-full flex items-center justify-center cursor-pointer  ${theme.backgroundcolor}`}
       >
         {textLoading && <CustomSpinner size={20} className="border-impo_White" />}
         {!textLoading && <SendIcon className="w-5 h-auto ml-1 fill-impo_White stroke-impo_White" />}
