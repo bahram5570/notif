@@ -5,8 +5,8 @@ import TicketBigLabel from './TicketBigLabel';
 import TicketDoctor from './TicketDoctor';
 import TicketSmallLabel from './TicketSmallLabel';
 import TicketTime from './TicketTime';
+import useClinicTicketNavigation from './__hooks__/useClinicTicketNavigation';
 import { ClinicTicketGeneratorProps } from './types';
-import useClinicTicketNavigation from './useClinicTicketNavigation';
 
 export const ClinicTicketGenerator = (props: ClinicTicketGeneratorProps) => {
   const { navigateTicketHandler } = useClinicTicketNavigation(props);

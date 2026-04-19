@@ -26,9 +26,9 @@ const ContentsContainer = ({ data }: ContentsContainerProps) => {
 
   const isSpecialistsListOpen = getQueryParams(SPECIALISTS_LIST_QUERY_NAME) !== null;
   const isPaymentOpen = getQueryParams(SPECIALIST_PAYMENT_QUERY_NAME) !== null;
-  // style={{ paddingTop: HEADER_HEIGHT + 20, paddingBottom: 16 }}
+
   return (
-    <div className="flex flex-col min-h-[100dvh] px-4">
+    <div className="flex flex-col min-h-[100dvh] px-4" style={{ paddingTop: HEADER_HEIGHT + 20, paddingBottom: 16 }}>
       {isSpecialistsListOpen && (
         <SpecialistsList dr={dr} selectedId={selectedDoctor.id} selectedDoctorHandler={selectedDoctorHandler} />
       )}
