@@ -12,7 +12,7 @@ const Hamranj2Page = () => {
   return (
     <HeaderFooterContainer>
       <>
-        <div
+        {/* <div
           className="relative w-full flex flex-col items-center pt-6 lg:pt-16"
           style={{ maxWidth: MAX_SCREEN_WIDTH }}
         >
@@ -66,7 +66,7 @@ const Hamranj2Page = () => {
           <Hamranj2PageLinkTo />
         </div>
 
-        <DownloadApp />
+        <DownloadApp /> */}
       </>
     </HeaderFooterContainer>
   );
