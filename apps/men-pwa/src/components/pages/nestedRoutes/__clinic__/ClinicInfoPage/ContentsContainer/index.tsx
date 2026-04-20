@@ -4,7 +4,6 @@ import {
   SpecialistCardGenerator,
 } from '@repo/core/components/clinic';
 
-import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ActiveSpecialist from './ActiveSpecialist';
@@ -28,7 +27,7 @@ const ContentsContainer = ({ data }: ContentsContainerProps) => {
   const isPaymentOpen = getQueryParams(SPECIALIST_PAYMENT_QUERY_NAME) !== null;
 
   return (
-    <div className="flex flex-col min-h-[100dvh] px-4" style={{ paddingTop: HEADER_HEIGHT + 20, paddingBottom: 16 }}>
+    <div className="flex flex-col min-h-[100dvh] px-4" style={{ paddingBottom: 16 }}>
       {isSpecialistsListOpen && (
         <SpecialistsList dr={dr} selectedId={selectedDoctor.id} selectedDoctorHandler={selectedDoctorHandler} />
       )}
