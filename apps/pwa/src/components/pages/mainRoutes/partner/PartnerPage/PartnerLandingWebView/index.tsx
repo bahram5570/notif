@@ -67,7 +67,7 @@ const PartnerLandingWebView = () => {
           onClick={linkTo}
         >
           <div className="w-full flex items-center justify-center h-12 rounded-[64px] z-10 bg-impo_Primary_Primary">
-            <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Title_Small" className="text-impo_White">
               شروع همدلی با پارتنرت
             </CustomTypography>
           </div>
