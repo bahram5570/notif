@@ -1,6 +1,7 @@
 'use client';
 
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { externalLink } from '@utils/navigation';
 
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useSystem } from '@repo/core/hooks/useSystem';
@@ -9,7 +10,7 @@ const Hamranj1PageLinkTo = () => {
   const { breakPoint } = useSystem();
 
   const clickHandler = () => {
-    //
+    externalLink('https://weareimpo.ir/referal?type=10');
   };
 
   return (

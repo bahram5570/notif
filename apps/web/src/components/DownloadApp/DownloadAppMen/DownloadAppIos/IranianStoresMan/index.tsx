@@ -2,6 +2,11 @@
 
 import { Suspense } from 'react';
 
+import PwaIcon from '@assets/icons/downloads/pwa.svg';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
+import DownloadAppLinkGenerator from '@components/DownloadApp/DownloadAppLinkGenerator';
+import { PWA_LINK_MEN_URL } from '@constants/links.constants';
 // import PwaIcon from '@assets/icons/downloads/pwa.svg';
 // import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
@@ -48,6 +53,18 @@ const IranianStoresMan = () => {
           </CustomTypography>
         </CustomLink>
       </div> */}
+
+      <div id="download_men_pwa">
+        <DownloadAppLinkGenerator href={PWA_LINK_MEN_URL} id="men-pwa">
+          <div className="flex items-center justify-center gap-1">
+            <PwaIcon className="w-6 min-w-6 h-auto fill-impo_Surface_OnSurfaceVariant" />
+
+            <CustomTypography fontSize="Lable_Medium" className="!text-impo_Surface_OnSurfaceVariant">
+              نسخه وب اپ
+            </CustomTypography>
+          </div>
+        </DownloadAppLinkGenerator>
+      </div>
 
       {breakPoint.tablet && (
         <Suspense>

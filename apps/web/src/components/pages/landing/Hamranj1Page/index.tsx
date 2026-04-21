@@ -12,7 +12,7 @@ const Hamranj1Page = () => {
   return (
     <HeaderFooterContainer>
       <>
-        {/* <div
+        <div
           className="relative w-full flex flex-col items-center pt-6 lg:pt-16"
           style={{ maxWidth: MAX_SCREEN_WIDTH }}
         >
@@ -57,7 +57,7 @@ const Hamranj1Page = () => {
               height={0}
               width={600}
               className="w-full object-cover"
-              src={'/assets/images/hampaPay.webp'}
+              src={'/assets/images/hamranjHeading.webp'}
             />
           </div>
 
@@ -66,7 +66,7 @@ const Hamranj1Page = () => {
           <Hamranj1PageLinkTo />
         </div>
 
-        <DownloadApp /> */}
+        <DownloadApp />
       </>
     </HeaderFooterContainer>
   );

@@ -36,10 +36,10 @@ const Hamranj1PageVideo = () => {
   };
 
   return (
-    <div className="relative w-[calc(100%-32px)] aspect-[9/16] rounded-2xl my-6 bg-green-300">
+    <div className="relative w-[calc(100%-32px)] aspect-[9/16] rounded-2xl overflow-hidden my-6">
       {showCover && (
         <div className="absolute top-0 left-0 right-0 bottom-0" onClick={playHandler}>
-          <CustomImage src="/assets/images/pregnancyVideoCover.webp" alt="" fill={true} className="object-contain" />
+          <CustomImage src="/assets/images/hamranj-video-cover.png" alt="" fill={true} className="object-contain" />
         </div>
       )}
 
@@ -47,9 +47,9 @@ const Hamranj1PageVideo = () => {
         ref={videoRef}
         controls={true}
         autoPlay={false}
-        className={`rounded-2xl ${showCover ? 'opacity-0' : 'opacity-100'}`}
+        className={`w-full rounded-2xl ${showCover ? 'opacity-0' : 'opacity-100'}`}
       >
-        <source src="/assets/test1.mov" />
+        <source src="https://s3.ir-tbz-sh1.arvanstorage.ir/impo/video/hamranj1.mp4" />
       </video>
     </div>
   );
