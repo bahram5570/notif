@@ -17,7 +17,7 @@ const RoutinItemHeading = ({ title, description, icon, status }: RoutinItemHeadi
       </div>
 
       <div className="flex flex-col items-end gap-2">
-        <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Lable_LargeProminet" className="text-impo_Neutral_OnBackground">
           {title}
         </CustomTypography>
         <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">

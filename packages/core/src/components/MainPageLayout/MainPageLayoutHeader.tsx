@@ -19,18 +19,23 @@ export const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
       className={`flex items-end w-full backdrop-blur-md bg-impo_Neutral_Background ${props.className}`}
     >
       <div className="flex px-4 py-2 w-full">
-        <div className="w-fit min-w-fit flex gap-4">
+        <div className="w-fit min-w-fit flex gap-2">
           <>
-            <div
-              className={`h-10 w-10 min-w-10 min-h-10 flex items-center justify-center ${hasBothLeftElements && 'bg-impo_Grey_50 rounded-full'}`}
-            >
-              <LeftElement1 />
-            </div>
-            <div
-              className={`h-10 w-10 min-w-10 min-h-10 flex items-center justify-center ${hasBothLeftElements && 'bg-impo_Grey_50 rounded-full'}`}
-            >
-              <LeftElement2 />
-            </div>
+            {props.leftElement1 && (
+              <div
+                className={`h-10 w-10 min-w-10 min-h-10 flex items-center justify-center bg-impo_Neutral_Surface rounded-full`}
+              >
+                <LeftElement1 />
+              </div>
+            )}
+
+            {props.leftElement2 && (
+              <div
+                className={`h-10 w-10 min-w-10 min-h-10 flex items-center justify-center  bg-impo_Neutral_Surface rounded-full`}
+              >
+                <LeftElement2 />
+              </div>
+            )}
           </>
         </div>
 
@@ -40,18 +45,19 @@ export const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
           </CustomTypography>
         </div>
 
-        <div className="flex items-center gap-4 min-w-fit">
+        <div className="flex items-center gap-1  min-w-fit">
           {props.rightElementScript && (
-            <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
+            <CustomTypography fontSize="Lable_MediumProminet" className="text-impo_Neutral_OnBackground">
               {props.rightElementScript || ''}
             </CustomTypography>
           )}
-
-          <div
-            className={`h-10 w-10 min-w-10 min-h-10 flex items-center justify-center ${hasBothLeftElements && 'bg-impo_Grey_50 rounded-full'}`}
-          >
-            <RightElement />
-          </div>
+          {props.rightElement && (
+            <div
+              className={`h-10 w-10 min-w-10 min-h-10 flex items-center justify-center ${hasBothLeftElements && 'bg-impo_Neutral_Surface rounded-full'}`}
+            >
+              <RightElement />
+            </div>
+          )}
         </div>
       </div>
     </div>

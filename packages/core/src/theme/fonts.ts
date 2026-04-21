@@ -55,6 +55,12 @@ export const FONTS_ANDROID = {
     lineHeight: '160%',
     letterSpacing: '-0.3px',
   },
+  Body_TINY: {
+    fontWeight: 400,
+    fontSize: 11,
+    lineHeight: '160%',
+    letterSpacing: '-0.3px',
+  },
 
   Lable_LargeProminet: {
     fontWeight: 700,
@@ -89,6 +95,12 @@ export const FONTS_ANDROID = {
   Lable_Small: {
     fontWeight: 600,
     fontSize: 11,
+    lineHeight: '130%',
+    letterSpacing: '-0.165px',
+  },
+  Lable_TINY: {
+    fontWeight: 600,
+    fontSize: 10,
     lineHeight: '130%',
     letterSpacing: '-0.165px',
   },
@@ -151,6 +163,12 @@ export const FONTS_IOS = {
     lineHeight: '160%',
     letterSpacing: '-0.3px',
   },
+  Body_TINY: {
+    fontWeight: 400,
+    fontSize: 10,
+    lineHeight: '160%',
+    letterSpacing: '-0.3px',
+  },
 
   Lable_LargeProminet: {
     fontWeight: 550,
@@ -185,6 +203,12 @@ export const FONTS_IOS = {
   Lable_Small: {
     fontWeight: 350,
     fontSize: 11,
+    lineHeight: '130%',
+    letterSpacing: '-0.165px',
+  },
+  Lable_TINY: {
+    fontWeight: 600,
+    fontSize: 10,
     lineHeight: '130%',
     letterSpacing: '-0.165px',
   },

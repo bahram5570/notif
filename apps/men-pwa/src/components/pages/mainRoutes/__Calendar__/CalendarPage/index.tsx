@@ -14,9 +14,15 @@ const CalendarPage = () => {
   const { isLoading, calendarData, calendarGuideInfo, selectedDate, selectedDateHandler } = useCalendar();
 
   return (
-    <MainPageLayout paddingTop={0} paddingBottom={0} leftElement1="Profile" className="bg-impo_Neutral_Background">
+    <MainPageLayout
+      paddingTop={0}
+      paddingBottom={0}
+      leftElement1="Profile"
+      className="bg-impo_Neutral_Background"
+      rightElementScript="تقویم"
+    >
       <div
-        style={{ paddingBottom: FOOTER_HEIGHT + 16, paddingTop: HEADER_HEIGHT + 16 }}
+        style={{ paddingBottom: FOOTER_HEIGHT + 16, paddingTop: 72 }}
         className="relative h-full min-h-[100dvh] max-h-[100dvh] overflow-hidden z-0"
       >
         {isLoading && <CalendarSkeleton />}

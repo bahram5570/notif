@@ -12,7 +12,9 @@ import { WidgetEmptyReportCard } from './WidgetEmptyReportCard';
 import { WidgetHintCard } from './WidgetHintCard';
 import { WidgetHintCardV2 } from './WidgetHintCardV2';
 import { WidgetList } from './WidgetList';
+import { WidgetManProgramHealth } from './WidgetManProgramHealth';
 import { WidgetMedia } from './WidgetMedia';
+import { WidgetMenStoryCard } from './WidgetMenStoryCard';
 import { WidgetMostRepeatedSigns } from './WidgetMostRepeatedSigns';
 import { WidgetMostRepeatedSignsEmpty } from './WidgetMostRepeatedSignsEmpty';
 import { WidgetMotivationCard } from './WidgetMotivationCard';
@@ -137,13 +139,13 @@ export const WidgetGenerators = ({ data, type, isPdfDownloading = false, phase }
       result = <WidgetWomanPairProgram data={data} />;
       break;
     case WidgetsEnum.ManProgramHealthWidget:
-      result = <WidgetWomanPairProgram data={data} />;
+      result = <WidgetManProgramHealth data={data} />;
       break;
     case WidgetsEnum.WomanPairProgram:
       result = <WidgetWomanPairProgram data={data} />;
       break;
     case WidgetsEnum.MenStory:
-      result = <WidgetStoryCard data={data} />;
+      result = <WidgetMenStoryCard data={data} />;
       break;
     case WidgetsEnum.ShortcutWidget:
       result = <WidgetShortcut data={data} />;

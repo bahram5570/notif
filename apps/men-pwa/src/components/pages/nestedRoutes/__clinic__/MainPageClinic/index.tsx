@@ -13,8 +13,13 @@ const MainPageClinicPage = () => {
   const { data, isLoading } = useGetData();
 
   return (
-    <MainPageLayout rightElement="BackButton" rightElementScript="کلینیک سلامت" leftElement1="TicketsHistory">
-      <div className="relative flex flex-col items-center gap-4 px-4 z-0">
+    <MainPageLayout
+      rightElement="BackButton"
+      rightElementScript="کلینیک سلامت"
+      leftElement1="TicketsHistory"
+      paddingBottom={80}
+    >
+      <div className="relative flex flex-col items-center gap-2 px-4 z-0">
         {isLoading && <ClinicSkeleton />}
 
         {!isLoading && (

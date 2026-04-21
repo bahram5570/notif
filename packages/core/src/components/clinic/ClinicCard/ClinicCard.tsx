@@ -20,14 +20,16 @@ export const ClinicCard = (props: ClinicCardProps) => {
       <div className="w-full h-fit px-3 py-4 rounded-xl flex items-center gap-2 bg-impo_Neutral_Surface pointer-events-none ">
         <CustomImage src={props.image} width={90} height={90} />
 
-        <div className="w-full flex flex-col items-end gap-1">
-          <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
-            {props.name}
-          </CustomTypography>
+        <div className="w-full flex flex-col items-end gap-4">
+          <div className="w-full flex flex-col items-end gap-1">
+            <CustomTypography fontSize="Lable_LargeProminet" className="text-impo_Neutral_OnBackground">
+              {props.name}
+            </CustomTypography>
 
-          <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
-            {props.description}
-          </CustomTypography>
+            <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
+              {props.description}
+            </CustomTypography>
+          </div>
 
           <CustomTypography fontSize="Lable_SmallProminet" className="text-impo_Neutral_OnBackground">
             {`${addCommas(props.price)} ${props.priceUnit}`}

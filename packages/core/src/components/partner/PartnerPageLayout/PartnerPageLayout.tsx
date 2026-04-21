@@ -1,24 +1,31 @@
 'use client';
 
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
+import { MainPageLayout } from '../../MainPageLayout';
 import { BackgroundImage } from './BackgroundImage/BackgroundImage';
 import { ProfileButton } from './ProfileButton';
 import { PartnerPageLayoutPropsType } from './type';
 
 export const PartnerPageLayout = ({ children, coverImage, isValid, defaultCoverImage }: PartnerPageLayoutPropsType) => {
   return (
-    <div
-      className="relative w-full min-h-[100dvh]  pb-[100px] dark:bg-impo_Neutral_Surface"
-      style={{ maxWidth: MAX_SCREEN_WIDTH }}
+    <MainPageLayout
+      className="dark:bg-impo_Neutral_Surface"
+      leftElement1="Profile"
+      headerClassName="!bg-[#ffffff50] dark:!bg-[#20202050]"
     >
+      {/* <div className="relative w-full    "> */}
       <BackgroundImage isValid={isValid} coverImage={coverImage} defaultCoverImage={defaultCoverImage} />
-      <div className={`relative flex flex-col px-4 ${coverImage ? 'gap-28' : 'gap-20'} z-10`}>
+      <div
+        className={`relative flex flex-col px-4 ${coverImage ? 'gap-28' : 'gap-20'} z-10`}
+        style={{ paddingTop: HEADER_HEIGHT + 20 }}
+      >
         <>
-          <ProfileButton coverImage={coverImage} />
+          {/* <ProfileButton coverImage={coverImage} /> */}
           {children}
         </>
       </div>
-    </div>
+      {/* </div> */}
+    </MainPageLayout>
   );
 };

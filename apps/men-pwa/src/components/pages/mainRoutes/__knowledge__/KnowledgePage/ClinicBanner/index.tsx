@@ -15,10 +15,10 @@ const ClinicBanner = () => {
     });
   };
   return (
-    <div className="bg-impo_Blue_100 dark:bg-impo_Blue_800 flex px-4 pt-4 rounded-md">
-      <CustomImage src="/assets/images/clinic.webp" className="mr-4" />
+    <div className="bg-impo_Blue_100 dark:bg-impo_Blue_800 flex  pt-4 rounded-xl ">
+      <CustomImage src="/assets/images/clinic.webp" className="mx-2" />
 
-      <div className="flex flex-col items-center gap-1">
+      <div className="flex flex-col items-end gap-1 pr-2">
         <div className="flex flex-col items-end gap-1">
           <CustomTypography fontSize="Lable_LargeProminet" className="whitespace-nowrap">
             همین الان سوالت رو بپرس!
@@ -31,7 +31,7 @@ const ClinicBanner = () => {
 
         <CustomButton
           fontSize="Lable_Large"
-          className="!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan !w-fit"
+          className="!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan !w-fit "
           onClick={clickHandler}
         >
           کلینیک ایمپو

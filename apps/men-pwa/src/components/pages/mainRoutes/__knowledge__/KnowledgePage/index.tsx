@@ -13,16 +13,20 @@ const KnowledgePage = () => {
   const { data, isLoading } = useGetKnowledgeData();
 
   return (
-    <MainPageLayout leftElement1="Profile">
+    <MainPageLayout leftElement1="Profile" rightElementScript="دانش">
       {isLoading && !data && <div></div>}
       {!isLoading && data && (
-        <div className="flex flex-col gap-6 min-h-[100dvh] px-4" style={{ paddingBottom: FOOTER_HEIGHT + 20 }}>
-          <ArticleList items={data.items} />
-          <ClinicBanner />
+        <div className="flex flex-col gap-4 min-h-[100dvh] " style={{ paddingBottom: FOOTER_HEIGHT + 20 }}>
           <div className="flex flex-col">
             {data.widgets.map((widget, index) => (
               <WidgetGenerators {...widget} key={index} />
             ))}
+          </div>
+          <div className="pr-4">
+            <div className="pl-4">
+              <ClinicBanner />
+            </div>
+            <ArticleList items={data.items} />
           </div>
         </div>
       )}

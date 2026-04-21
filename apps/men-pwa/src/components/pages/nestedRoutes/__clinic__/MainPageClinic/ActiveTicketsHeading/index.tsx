@@ -21,7 +21,7 @@ const ActiveTicketsHeading = ({ activeTicketsOneTitle, activeTicketsMore, ticket
   return (
     <>
       {hasTicket && (
-        <div className="w-full flex flex-col items-end gap-2 pb-7">
+        <div className="w-full flex flex-col items-end gap-2 pb-4">
           <div className="w-full flex flex-row-reverse items-center justify-between">
             <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
               {activeTicketsOneTitle}
