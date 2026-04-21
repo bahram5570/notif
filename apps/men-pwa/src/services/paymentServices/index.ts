@@ -29,7 +29,7 @@ export const paymentStatusService = async (queryParams: string, requestUrl: stri
 
     switch (result.paymentType) {
       case PaymentTypeQueryEnum.Subscription:
-        route = 'cycle';
+        route = 'partner';
         break;
 
       case PaymentTypeQueryEnum.Clinic:

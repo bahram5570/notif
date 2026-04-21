@@ -6,14 +6,12 @@ import { isDevelopeMode } from '@repo/core/utils/system';
 
 import { getPaymentCookie, removePaymentCookie } from '@actions/userCookies.actions';
 import { PAYMENT_QUERY_NAME } from '@repo/core/constants/payment.contants';
-import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { useRouter } from 'next/navigation';
 
 import { PaymentQueryTypes } from './types';
 
 const PaymentProvider = () => {
   const router = useRouter();
-  const { callEvent } = useAnalytics();
   const isFirstTime = useRef(isDevelopeMode());
 
   useEffect(() => {
@@ -38,7 +36,7 @@ const PaymentProvider = () => {
         if (!queryData.isSuccessful) {
           return;
         }
-        callEvent('SubscriptionPaymentComplete');
+
         router.push(data.route);
       } else {
         if (queryData) {
