@@ -11,34 +11,34 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#FFFFFF',
     icons: [
       {
-        src: '/assets/manifest/impo.webp',
+        src: '/assets/manifest/impo.png',
         type: 'image/png',
         sizes: '512x512',
         purpose: 'maskable',
       },
       {
-        src: '/assets/manifest/impo.webp',
+        src: '/assets/manifest/impo.png',
         type: 'image/png',
         sizes: '512x512',
         purpose: 'any',
       },
       {
-        src: '/assets/manifest/impo.webp',
+        src: '/assets/manifest/impo.png',
         type: 'image/png',
         sizes: '192x192',
       },
       {
-        src: '/assets/manifest/impo.webp',
+        src: '/assets/manifest/impo.png',
         type: 'image/png',
         sizes: '180x180',
       },
       {
-        src: '/assets/manifest/impo.webp',
+        src: '/assets/manifest/impo.png',
         type: 'image/png',
         sizes: '152x152',
       },
       {
-        src: '/assets/manifest/impo.webp',
+        src: '/assets/manifest/impo.png',
         type: 'image/png',
         sizes: '120x120',
       },
