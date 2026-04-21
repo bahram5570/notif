@@ -4,7 +4,7 @@ const ChallengeSkeleton = () => {
   return (
     <div
       className="w-full h-[100dvh] flex flex-col items-center gap-4 px-4 animate-skeleton"
-      style={{ paddingTop: HEADER_HEIGHT }}
+      style={{ paddingTop: HEADER_HEIGHT + 20 }}
     >
       <div className="w-full h-[55px] rounded-md bg-impo_Neutral_Surface" />
       <div className="w-full h-[55px] rounded-md bg-impo_Neutral_Surface" />

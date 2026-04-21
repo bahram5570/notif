@@ -1,4 +1,5 @@
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
@@ -10,14 +11,26 @@ import useGetData from './__hooks__/useGetData';
 import { ClinicDoctorInfoPageProps } from './type';
 
 const ClinicDoctorInfoPage = ({ clinicInfo, doctorId }: ClinicDoctorInfoPageProps) => {
-  const { isLoading, doctorData, commentsData } = useGetData({ clinicInfo, drId: doctorId });
+  const { commentsPagination, doctorData, commentsData, getComments, isCommentsLoading, isPageLoading } = useGetData({
+    clinicInfo,
+    drId: doctorId,
+  });
 
   return (
     <MainPageLayout rightElement="BackButton" rightElementScript="متخصص" paddingTop={0} paddingBottom={60}>
-      <div className="w-full h-[100dvh] overflow-y-auto pb-10" style={{ paddingTop: HEADER_HEIGHT }}>
-        {isLoading && <SpecialistCommentsSkeleton />}
+      <InfiniteScrollContainer
+        className="pb-10"
+        height={'100dvh'}
+        callBack={getComments}
+        isLoading={isCommentsLoading}
+        pageNo={commentsPagination.pageNo}
+        style={{ paddingTop: HEADER_HEIGHT }}
+        pageSize={commentsPagination.pageSize}
+        totalCount={commentsPagination.totalCount}
+      >
+        {isPageLoading && <SpecialistCommentsSkeleton />}
 
-        {!isLoading && doctorData && commentsData && (
+        {!isPageLoading && doctorData && commentsData && (
           <div className="relative px-4 pb-5 pt-5 z-0">
             <DoctorInfo
               image={doctorData.image}
@@ -32,7 +45,7 @@ const ClinicDoctorInfoPage = ({ clinicInfo, doctorId }: ClinicDoctorInfoPageProp
             {commentsData.length > 0 && <SpecialistCommentsList commentsData={commentsData} />}
           </div>
         )}
-      </div>
+      </InfiniteScrollContainer>
     </MainPageLayout>
   );
 };

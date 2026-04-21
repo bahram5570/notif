@@ -3,7 +3,7 @@
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { WidgetGenerators } from '@repo/core/components/Widgets/WidgetGenerators';
 
-import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGHT, HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import ArticleList from './ArticleList';
 import ClinicBanner from './ClinicBanner';
@@ -13,10 +13,13 @@ const KnowledgePage = () => {
   const { data, isLoading } = useGetKnowledgeData();
 
   return (
-    <MainPageLayout leftElement1="Profile" rightElementScript="دانش">
+    <MainPageLayout leftElement1="Profile" rightElementScript="دانش" paddingTop={0}>
       {isLoading && !data && <div></div>}
       {!isLoading && data && (
-        <div className="flex flex-col gap-4 min-h-[100dvh] " style={{ paddingBottom: FOOTER_HEIGHT + 20 }}>
+        <div
+          className="flex flex-col gap-4 min-h-[100dvh] "
+          style={{ paddingBottom: FOOTER_HEIGHT + 20, paddingTop: HEADER_HEIGHT + 10 }}
+        >
           <div className="flex flex-col">
             {data.widgets.map((widget, index) => (
               <WidgetGenerators {...widget} key={index} />

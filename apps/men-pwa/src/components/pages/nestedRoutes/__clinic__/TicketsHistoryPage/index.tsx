@@ -3,6 +3,8 @@
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { ClinicTicketGenerator } from '@repo/core/components/clinic';
 
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+
 import ClinicTicketsHistorySkeleton from './ClinicTicketsHistorySkeleton';
 import EmptyList from './EmtpyList';
 import useGetData from './__hooks__/useGetData';
@@ -13,7 +15,12 @@ const TicketsHistoryPage = () => {
   const isEmptyList = data?.tickets.length === 0;
 
   return (
-    <MainPageLayout rightElement="BackButton" rightElementScript="تاریخچه مشاوره ها" className="px-4 !pb-10">
+    <MainPageLayout
+      rightElement="BackButton"
+      rightElementScript="تاریخچه مشاوره ها"
+      className="px-4 !pb-10"
+      paddingTop={HEADER_HEIGHT + 16}
+    >
       <>
         {isLoading && <ClinicTicketsHistorySkeleton />}
 

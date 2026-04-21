@@ -79,7 +79,7 @@ export const ProfileTicketsHistory = () => {
       <IconComponentMaker
         loadingId="profileTicketHistory"
         path="/protected/supportTicketHistory"
-        iconElement={<HistoryIcon className="w-6" />}
+        iconElement={<HistoryIcon className="w-6 h-full stroke-impo_Surface_InverseSurface" />}
       />
     </div>
   );

@@ -42,7 +42,7 @@ const NewPartnerMessagePage = () => {
 
       <div
         className={`overflow-y-auto pb-20   bg-[url('/assets/images/bg-chat.webp')] bg-contain h-dvh  dark:bg-none ${styles.container} ${loading && 'pointer-events-none'}`}
-        style={{ paddingTop: HEADER_HEIGHT + 10 }}
+        style={{ paddingTop: HEADER_HEIGHT + 26 }}
         ref={messageListRef}
       >
         {showLoading && (
