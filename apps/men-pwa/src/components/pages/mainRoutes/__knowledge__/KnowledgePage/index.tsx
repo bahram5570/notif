@@ -25,7 +25,7 @@ const KnowledgePage = () => {
               <WidgetGenerators {...widget} key={index} />
             ))}
           </div>
-          <div className="pr-4">
+          <div className="pr-4 pl-1">
             <div className="pl-4">
               <ClinicBanner />
             </div>

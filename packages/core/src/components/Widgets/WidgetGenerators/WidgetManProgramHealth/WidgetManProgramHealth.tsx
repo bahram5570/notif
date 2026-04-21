@@ -30,7 +30,7 @@ export const WidgetManProgramHealth = ({ data }: WomanPairProgramCardPropsPropsT
 
   return (
     <div className="w-full px-0 pt-6 ">
-      <div className="w-full h-fit  py-4 pr-4 bg-impo_Neutral_Surface">
+      <div className="w-full h-fit  py-4 pr-4 pl-1 bg-impo_Neutral_Surface">
         <div className="flex justify-end items-start gap-2 border-b-[1px]  mb-2 border-impo_Neutral_Surface">
           <CustomTypography fontSize="Title_Small" className="!text-impo_Neutral_OnBackground">
             {data.title}

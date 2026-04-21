@@ -10,20 +10,20 @@ import useFileUpload from './__hooks__/useFileUpload';
 
 const UploadImageModal = () => {
   const { editHandler } = useAvatar();
-  const { getQuery, updateQuery } = useCustomReactQuery(['partner']);
+  const { getQuery, updateQuery } = useCustomReactQuery(['partnerKey']);
   const { getQueryParams } = useQueryParamsHandler();
-  const partnerInfo = getQuery<ChallengeResponseType>({ queryKey: ['partner'] });
+  const partnerInfo = getQuery<ChallengeResponseType>({ queryKey: ['partnerKey'] });
   const { deleteHandler } = useDelete({
     api: `profile/image/?AppVersion=${APP_VERSION || ''}`,
     onSuccess: () =>
-      updateQuery({ queryKey: ['partner'], payload: { ...partnerInfo, womanAvatar: '', canDeleteProfile: false } }),
+      updateQuery({ queryKey: ['partnerKey'], payload: { ...partnerInfo, womanAvatar: '', canDeleteProfile: false } }),
   });
 
   const canDeleteImage = getQueryParams('canDeleteProfile');
 
   const { fileDataHandler, uploadImageLoading } = useFileUpload({
     onSuccess: (v: string) => {
-      updateQuery({ queryKey: ['partner'], payload: { ...partnerInfo, womanAvatar: v, canDeleteProfile: true } });
+      updateQuery({ queryKey: ['partnerKey'], payload: { ...partnerInfo, womanAvatar: v, canDeleteProfile: true } });
       editHandler({ fileName: v });
     },
 

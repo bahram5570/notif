@@ -3,26 +3,26 @@ import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useFileUpload } from '@repo/core/hooks/useFileUpload';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-// import { ChallengeResponseType } from '../__hooks__/useGetData/type';
+import { ChallengeResponseType } from '../__hooks__/useGetPartnerData/type';
 import Inputs from './Inputs';
 import useChangeImage from './__hooks__/useChangeImage';
 import useDelete from './__hooks__/useDelete';
 
 const UploadBackgroundImageModal = () => {
   const { editHandler } = useChangeImage();
-  const { getQuery, updateQuery } = useCustomReactQuery(['partner']);
+  const { getQuery, updateQuery } = useCustomReactQuery(['partnerKey']);
   const { getQueryParams } = useQueryParamsHandler();
-  const partnerInfo = getQuery<any>({ queryKey: ['partner'] });
+  const partnerInfo = getQuery<ChallengeResponseType>({ queryKey: ['partnerKey'] });
   const { deleteHandler } = useDelete({
     api: `pair/cover/?AppVersion=${APP_VERSION || ''}`,
-    onSuccess: () => updateQuery({ queryKey: ['partner'], payload: { ...partnerInfo, coverImage: '' } }),
+    onSuccess: () => updateQuery({ queryKey: ['partnerKey'], payload: { ...partnerInfo, coverImage: '' } }),
   });
 
   const canDeleteImage = getQueryParams('canDeleteImage');
 
   const { fileDataHandler, uploadImageLoading } = useFileUpload({
     onSuccess: (v: string) => {
-      updateQuery({ queryKey: ['partner'], payload: { ...partnerInfo, coverImage: v } });
+      updateQuery({ queryKey: ['partnerKey'], payload: { ...partnerInfo, coverImage: v } });
       editHandler({ fileName: v });
     },
     api: 'pair/cover',

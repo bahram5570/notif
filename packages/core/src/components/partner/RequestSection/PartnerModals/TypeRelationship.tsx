@@ -60,7 +60,7 @@ const TypeRelationship = () => {
 
       <PartnerRadioButton onChange={changeValueHandler} value={distanceTypeValue} />
 
-      <CustomButton onClick={onClick} className={theme.backgroundColor}>
+      <CustomButton onClick={onClick} className={theme.className}>
         <CustomTypography fontSize="Lable_Large" className="text-impo_White">
           باشه
         </CustomTypography>

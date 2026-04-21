@@ -12,7 +12,7 @@ export const WidgetMenStoryCard = ({ data: originalStoryData }: WidgetStoryCardP
   }
 
   return (
-    <div className="flex flex-col items-end pr-4">
+    <div className="flex flex-col items-end pr-4 pl-1">
       <CustomSlider sidePadding={0} className="items-start">
         {data.list.map((item, index) => (
           <StoryItemGenerator

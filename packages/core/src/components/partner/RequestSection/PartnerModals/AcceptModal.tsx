@@ -78,7 +78,7 @@ const AcceptModal = () => {
         </div>
 
         <CustomButton onClick={onClickHandler} className={theme.className}>
-          <CustomTypography fontSize="Lable_Large" className="text-impo_White ">
+          <CustomTypography fontSize="Lable_Large" className="text-impo_White">
             باشه
           </CustomTypography>
         </CustomButton>

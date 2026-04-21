@@ -1,10 +1,12 @@
 'use client';
 
+import InfoIcon from '@assets/shared/icons/infoIcon.svg';
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { ClinicCard } from '@repo/core/components/clinic';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+import Link from 'next/link';
 
 import ActiveTicketsHeading from './ActiveTicketsHeading';
 import ActiveTicketsList from './ActiveTicketsList';
@@ -42,6 +44,15 @@ const MainPageClinicPage = () => {
                 {data.types.map((item, index) => (
                   <ClinicCard key={index} {...item} />
                 ))}
+
+                <Link
+                  href="https://impo.app/terms"
+                  target="_blank"
+                  className="flex rounded-full justify-center items-center gap-1 border border-impo_Grey_100 py-1 px-4"
+                >
+                  <CustomTypography fontSize="Lable_Medium">راهنما</CustomTypography>
+                  <InfoIcon className="w-5 h-full fill-impo_Surface_Outline" />
+                </Link>
               </>
             )}
           </>
