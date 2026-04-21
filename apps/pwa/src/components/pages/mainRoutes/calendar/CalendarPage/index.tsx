@@ -17,7 +17,7 @@ const CalendarPage = () => {
       {/* <SignsChangedToast /> */}
 
       <div
-        style={{ paddingBottom: FOOTER_HEIGHT + 16, paddingTop: HEADER_HEIGHT + 16 }}
+        style={{ paddingBottom: FOOTER_HEIGHT + 16, paddingTop: HEADER_HEIGHT + 26 }}
         className="relative h-full min-h-[100dvh] max-h-[100dvh] overflow-hidden z-0"
       >
         {isLoading && <CalendarSkeleton />}

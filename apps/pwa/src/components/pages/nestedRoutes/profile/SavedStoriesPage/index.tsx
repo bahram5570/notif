@@ -4,6 +4,8 @@ import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { StoryItemGenerator, StoryPreview } from '@repo/core/components/Widgets/WidgetGenerators/WidgetStoryCard';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+
 import SavedStoriesSkeleton from './SavedStoriesSkeleton';
 import useGetData from './__hooks__/useGetData';
 
@@ -17,6 +19,7 @@ const SavedStoriesPage = () => {
       rightElement="BackButton"
       rightElementScript="استوری‌های ذخیره شده"
       className="px-4 bg-impo_Neutral_Surface"
+      paddingTop={HEADER_HEIGHT + 16}
     >
       <div className="w-full p-4 rounded-xl bg-impo_Neutral_Background">
         <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">

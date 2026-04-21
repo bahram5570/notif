@@ -3,6 +3,8 @@
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { WidgetHintCardGenerator } from '@repo/core/components/Widgets/WidgetGenerators/WidgetHintCard';
 
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+
 import SavedHintsContainerSkeleton from './SavedHintsContainerSkeleton';
 import useGetData from './__hooks__/useGetData';
 
@@ -16,6 +18,7 @@ const SavedHintsPage = () => {
       rightElement="BackButton"
       rightElementScript="توصیه‌های ذخیره شده"
       className="px-4 bg-impo_Neutral_Surface"
+      paddingTop={HEADER_HEIGHT + 16}
     >
       {isLoading && <SavedHintsContainerSkeleton />}
 

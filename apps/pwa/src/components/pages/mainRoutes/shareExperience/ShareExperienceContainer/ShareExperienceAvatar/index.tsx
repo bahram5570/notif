@@ -29,11 +29,11 @@ const ShareExperienceAvatar = ({ profile }: ShareExperienceAvatarProps) => {
 
   return (
     <div
-      className="w-[100dvw] fixed top-7 left-0 right-6 bottom-0 flex justify-end mx-auto pr-4 pb-[100px] pointer-events-none z-40"
+      className="w-[100dvw] fixed top-2 left-0 right-6 bottom-0 flex justify-end mx-auto pr-4 pb-[100px] pointer-events-none z-40"
       style={{ maxWidth: MAX_SCREEN_WIDTH }}
     >
       <div className="h-fit pointer-events-auto" onClick={selectHandler}>
-        <CustomImage src={profile.avatarImage} width={48} className="rounded-full" />
+        <CustomImage src={profile.avatarImage} width={40} className="rounded-full" />
       </div>
     </div>
   );

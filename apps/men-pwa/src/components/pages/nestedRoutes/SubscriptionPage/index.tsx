@@ -39,7 +39,7 @@ const SubscriptionPage = () => {
       leftElement1="Profile"
       rightElement={data?.hasSubscribtion ? 'BackButton' : undefined}
       paddingTop={0}
-      headerClassName="bg-impo_Transparent !backdrop-blur-none [&_svg]:stroke-impo_White"
+      headerClassName="bg-impo_Transparent !backdrop-blur-none "
     >
       <>
         {isLoadingPage && !data && <CustomSpinner className="mx-auto mt-40 " />}

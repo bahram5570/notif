@@ -5,6 +5,8 @@ import { useEffect } from 'react';
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+
 import MessageContainerSkeleton from './MessageContainerSkeleton';
 import MessageList from './MessageList';
 import NewMessage from './NewMessage';
@@ -36,6 +38,7 @@ const MessageContainer = () => {
           rightElement="BackButton"
           rightElementScript="ارسال پیام"
           className="flex flex-col gap-5 px-4 min-h-[100dvh] "
+          paddingTop={HEADER_HEIGHT + 16}
         >
           <CustomTypography fontSize="Title_Small" className="text-center w-full text-impo_Neutral_OnBackground">
             ارسال پیام به همدل

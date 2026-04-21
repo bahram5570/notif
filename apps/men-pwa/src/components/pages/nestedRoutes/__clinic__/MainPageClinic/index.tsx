@@ -4,6 +4,8 @@ import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { ClinicCard } from '@repo/core/components/clinic';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+
 import ActiveTicketsHeading from './ActiveTicketsHeading';
 import ActiveTicketsList from './ActiveTicketsList';
 import ClinicSkeleton from './ClinicSkeleton';
@@ -18,6 +20,7 @@ const MainPageClinicPage = () => {
       rightElementScript="کلینیک سلامت"
       leftElement1="TicketsHistory"
       paddingBottom={80}
+      paddingTop={HEADER_HEIGHT + 16}
     >
       <div className="relative flex flex-col items-center gap-2 px-4 z-0">
         {isLoading && <ClinicSkeleton />}

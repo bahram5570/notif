@@ -11,6 +11,7 @@ const SupportTicketHistoryPage = () => {
   return (
     <MainPageLayout
       paddingBottom={96}
+      paddingTop={80}
       rightElement="BackButton"
       rightElementScript="سابقه تیکت ها"
       className="flex flex-col items-end p-3 gap-3 bg-impo_Neutral_Surface"

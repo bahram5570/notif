@@ -13,12 +13,14 @@ export const PartnerPageLayout = ({ children, coverImage, isValid, defaultCoverI
       className="dark:bg-impo_Neutral_Surface"
       leftElement1="Profile"
       headerClassName="!bg-[#ffffff50] dark:!bg-[#20202050]"
+      paddingTop={0}
+      paddingBottom={100}
     >
       {/* <div className="relative w-full    "> */}
       <BackgroundImage isValid={isValid} coverImage={coverImage} defaultCoverImage={defaultCoverImage} />
       <div
         className={`relative flex flex-col px-4 ${coverImage ? 'gap-28' : 'gap-20'} z-10`}
-        style={{ paddingTop: HEADER_HEIGHT + 20 }}
+        style={{ paddingTop: HEADER_HEIGHT + 100 }}
       >
         <>
           {/* <ProfileButton coverImage={coverImage} /> */}

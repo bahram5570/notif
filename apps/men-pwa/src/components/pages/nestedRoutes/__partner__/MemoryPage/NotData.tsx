@@ -1,7 +1,6 @@
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import { NotDataPropsType } from './type';
@@ -15,7 +14,7 @@ const NotData = ({ partName }: NotDataPropsType) => {
 
   return (
     <div className="p-3 flex flex-col gap-4">
-      <CustomImage src="/assets/images/memory.webp" style={{ paddingTop: HEADER_HEIGHT - 60 }} />
+      <CustomImage src="/assets/images/memory.webp" style={{ paddingTop: 20 }} />
       <div className="flex flex-col p-3 items-center gap-1">
         <CustomTypography fontSize="Headline_Small" className="text-impo_Neutral_OnBackground text-center ">
           خاطره بازی روزهای زیبا

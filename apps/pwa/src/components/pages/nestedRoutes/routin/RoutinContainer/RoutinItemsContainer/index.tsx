@@ -19,14 +19,14 @@ const RoutinItemsContainer = (props: RoutinItemsContainerPropsType) => {
   return (
     <>
       <div
-        className="fixed top-11 left-0 right-6 bottom-0  mx-auto pl-6 pb-[100px] z-40 pointer-events-none"
+        className="fixed top-3 left-0 right-6 bottom-0  mx-auto pl-6 pb-[100px] z-40 pointer-events-none"
         style={{ maxWidth: MAX_SCREEN_WIDTH }}
       >
         <RoutinBookmarked isBookmarked={props.isbookmarked} programId={props.programId} />
       </div>
       <div
         className="relative w-full  px-4 pb-6 overflow-y-auto"
-        style={{ paddingTop: HEADER_HEIGHT + 16, height: '100dvh' }}
+        style={{ paddingTop: HEADER_HEIGHT + 26, height: '100dvh' }}
         ref={scrollRef}
       >
         <div className="w-full h-[360px] absolute top-0 left-0 right-0 bg-gradient-to-b from-[#FEE8E6] to-[#FEE8E600] -z-10 dark:bg-none" />

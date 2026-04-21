@@ -53,7 +53,7 @@ const RoutinPage = () => {
             <OnboardingIntro list={data.wc.list} finalButton={data.wc.finalButton} submitHandler={finalStepHandler} />
           )}
           {!data.wc.isActive && (
-            <div className="relative w-full min-h-[100dvh] px-4 pb-6 z-0" style={{ paddingTop: HEADER_HEIGHT }}>
+            <div className="relative w-full min-h-[100dvh] px-4 pb-6 z-0" style={{ paddingTop: HEADER_HEIGHT + 24 }}>
               <div className="w-full h-[360px] absolute top-0 left-0 right-0 bg-gradient-to-b from-[#c9d6fb] to-[#FEE8E600] -z-10 dark:bg-none" />
 
               <div className="relative z-10">
