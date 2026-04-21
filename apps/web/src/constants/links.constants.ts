@@ -37,7 +37,7 @@ export const CAFEBAZAAR_LINK_MEN_URL = 'https://cafebazaar.ir/app/ir.duck.impome
 
 // # IOS download links
 export const APP_STORE_LINK_MEN_URL = 'https://apps.apple.com/us/app/impo-men/id6740815518';
-export const PWA_LINK_MEN_URL = '';
+export const PWA_LINK_MEN_URL = 'https://manpwa.impo.app';
 export const APP_STORE_LINK_WOMEN_URL = 'https://apps.apple.com/us/app/impo-health/id6736879093';
 
 export const PWA_LINK_WOMEN_URL = process.env.NEXT_PUBLIC_PWA_URL || '';
