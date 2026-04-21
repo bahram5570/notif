@@ -26,6 +26,7 @@ const UploadBackgroundImageModal = () => {
       editHandler({ fileName: v });
     },
     api: 'pair/cover',
+    method: 'PUT',
   });
 
   return (

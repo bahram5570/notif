@@ -38,6 +38,7 @@ const UploadImageModal = () => {
     },
 
     api: 'profile/image',
+    method: 'PUT',
   });
 
   return (

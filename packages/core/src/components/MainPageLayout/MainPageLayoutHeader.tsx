@@ -15,7 +15,7 @@ export const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
 
   const contents = (
     <div
-      style={{ height: HEADER_HEIGHT, ...props.style }}
+      style={{ height: 56, ...props.style }}
       className={`flex items-end w-full backdrop-blur-md bg-impo_Neutral_Background ${props.className}`}
     >
       <div className="flex px-4 py-2 w-full">
@@ -64,10 +64,7 @@ export const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
   );
 
   return (
-    <div
-      className={`fixed left-0 right-0 top-0 mx-auto flex z-40`}
-      style={{ maxWidth: MAX_SCREEN_WIDTH, height: HEADER_HEIGHT }}
-    >
+    <div className={`fixed left-0 right-0 top-0 mx-auto flex z-40`} style={{ maxWidth: MAX_SCREEN_WIDTH, height: 56 }}>
       {props.hasScalingAnimation ? <WidgetScaleModule>{contents}</WidgetScaleModule> : <>{contents}</>}
     </div>
   );
