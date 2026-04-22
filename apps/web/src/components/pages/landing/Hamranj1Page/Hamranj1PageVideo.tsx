@@ -36,7 +36,7 @@ const Hamranj1PageVideo = () => {
   };
 
   return (
-    <div className="relative w-[calc(100%-32px)] aspect-[9/16] rounded-2xl overflow-hidden my-6">
+    <div className="relative w-[calc(100%-32px)] aspect-[9/16] rounded-2xl overflow-hidden my-4">
       {showCover && (
         <div className="absolute top-0 left-0 right-0 bottom-0" onClick={playHandler}>
           <CustomImage src="/assets/images/hamranj-video-cover.png" alt="" fill={true} className="object-contain" />

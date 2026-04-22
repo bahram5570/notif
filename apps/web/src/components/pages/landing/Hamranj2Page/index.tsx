@@ -2,6 +2,7 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import DownloadApp from '@components/DownloadApp/DownloadAppWomen';
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
+import HomeFooter from '@components/pages/home/HomePageContainer/HomeFooter';
 import CustomImage from '@components/ui/CustomImage';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
@@ -11,7 +12,7 @@ import Hamranj2PageVideo from './Hamranj2PageVideo';
 const Hamranj2Page = () => {
   return (
     <HeaderFooterContainer>
-      <>
+      <div className="w-full flex flex-col items-center gap-4 pb-12">
         <div
           className="relative w-full flex flex-col items-center pt-6 lg:pt-16"
           style={{ maxWidth: MAX_SCREEN_WIDTH }}
@@ -51,6 +52,8 @@ const Hamranj2Page = () => {
             </CustomTypography>
           </div>
 
+          <Hamranj2PageVideo />
+
           <div className="relative w-full px-10">
             <CustomImage
               alt=""
@@ -61,13 +64,12 @@ const Hamranj2Page = () => {
             />
           </div>
 
-          <Hamranj2PageVideo />
-
           <Hamranj2PageLinkTo />
         </div>
 
         <DownloadApp />
-      </>
+        <HomeFooter />
+      </div>
     </HeaderFooterContainer>
   );
 };
