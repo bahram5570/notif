@@ -14,7 +14,7 @@ const Hamranj1Page = () => {
     <HeaderFooterContainer>
       <div className="w-full flex flex-col items-center gap-4 pb-12">
         <div
-          className="relative w-full flex flex-col items-center pt-6 lg:pt-16"
+          className="relative w-full flex flex-col items-center pt-[72px] lg:pt-[120px]"
           style={{ maxWidth: MAX_SCREEN_WIDTH }}
         >
           <div
