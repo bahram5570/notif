@@ -47,7 +47,9 @@ const PaymentProvider = () => {
       }
     };
 
-    handlePayment();
+    setTimeout(() => {
+      handlePayment();
+    }, 3000);
   }, []);
 
   return <></>;
