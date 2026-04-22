@@ -40,6 +40,7 @@ export enum WidgetsEnum {
   ShortcutWidget = 43,
   HintCardV2 = 44,
   AdvertiseCardList = 45,
+  ClinicCardV2 = 46,
 }
 
 export enum WidgetStoryTypeEnum {

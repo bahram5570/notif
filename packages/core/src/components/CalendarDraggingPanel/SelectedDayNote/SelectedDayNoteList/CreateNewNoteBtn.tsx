@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import PlusIcon from '../../../../../../assets/src/shared/icons/plus.svg';
 import { CustomButton } from '../../../../components/ui/CustomButton';
 import { CustomTypography } from '../../../../components/ui/CustomTypography';
@@ -22,11 +24,18 @@ const CreateNewNoteBtn = ({ date }: CreateNewNoteBtnPropsType) => {
     });
   };
 
+  const bg = useMemo(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return '!bg-impo_PrimaryMan_PrimaryMan';
+
+      default:
+        return '';
+    }
+  }, [appName]);
+
   return (
-    <CustomButton
-      onClick={linkToHandler}
-      className={`border-none ${appName === 'MEN_PWA' && '!bg-impo_PrimaryMan_PrimaryMan'}`}
-    >
+    <CustomButton onClick={linkToHandler} className={`border-none ${bg}`}>
       <div className="flex items-center justify-center gap-2 w-full">
         <CustomTypography fontSize="Lable_Large" className="text-impo_White">
           ثبت یادداشت جدید

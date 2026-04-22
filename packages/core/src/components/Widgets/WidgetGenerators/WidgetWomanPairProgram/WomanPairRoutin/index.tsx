@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { textShorter } from '../../../../../utils/scripts';
 
 import { useSystem } from '../../../../../hooks/useSystem';
@@ -11,6 +13,16 @@ import { WomanPairRoutinPropsType } from './types';
 const WomanPairRoutin = (props: WomanPairRoutinPropsType) => {
   const { actionHandler } = useWidgetActions();
   const { appName } = useSystem();
+
+  const className = useMemo(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan';
+
+      default:
+        return '';
+    }
+  }, [appName]);
 
   return (
     <>
@@ -34,7 +46,7 @@ const WomanPairRoutin = (props: WomanPairRoutinPropsType) => {
       </div>
 
       <CustomButton
-        className={`mt-auto ${appName === 'MEN_PWA' && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
+        className={`mt-auto ${className}`}
         fontSize="Lable_Large"
         onClick={() => actionHandler(props.button.action)}
         isDisable={props.button?.action.actionType === ActionTypeEnum.None}

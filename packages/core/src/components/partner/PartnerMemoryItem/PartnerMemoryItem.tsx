@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import { textShorter } from '../../../utils/scripts';
 
 import { useCalendarDateFormat } from '../../../hooks/useCalendarDateFormat';
@@ -23,6 +25,16 @@ export const PartnerMemoryItem = (props: PartnerMemoryItemPropsType) => {
     });
   };
 
+  const bg = useMemo(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return 'bg-impo_PrimaryMan_PrimaryMan';
+
+      default:
+        return 'bg-impo_Primary_Primary';
+    }
+  }, [appName]);
+
   return (
     <div onClick={onClick} className="flex flex-col justify-end items-end p-2 gap-2">
       <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-right w-full">
@@ -36,9 +48,7 @@ export const PartnerMemoryItem = (props: PartnerMemoryItemPropsType) => {
             {props.title}
           </CustomTypography>
 
-          <div
-            className={`w-2 h-2 rounded-full ${appName === 'MEN_PWA' ? 'bg-impo_PrimaryMan_PrimaryMan' : 'bg-impo_Primary_Primary'} `}
-          />
+          <div className={`w-2 h-2 rounded-full ${bg} `} />
         </div>
         <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground ">
           {memoryText}

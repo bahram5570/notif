@@ -1,3 +1,5 @@
+import { useMemo } from 'react';
+
 import CopyIcon from '@assets/shared/icons/Copy.svg';
 import Refresh from '@assets/shared/icons/refresh.svg';
 
@@ -20,6 +22,16 @@ export const RefreshPartnerCode = (props: RefreshPartnerCodePropsType) => {
     copyToClipboard(props.partnerCode);
   };
 
+  const textColor = useMemo(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return 'text-impo_PrimaryMan_PrimaryMan';
+
+      default:
+        return 'text-impo_Neutral_OnBackground';
+    }
+  }, [appName]);
+
   return (
     <div className="w-full">
       <div className="flex w-full justify-between p-1 items-center rounded-xl gap-2 border border-dashed border-impo_Surface_OutlineVariant">
@@ -33,10 +45,7 @@ export const RefreshPartnerCode = (props: RefreshPartnerCodePropsType) => {
             </div>
           )}
           {!props.isLoading && props.partnerCode && (
-            <CustomTypography
-              fontSize="Title_Small"
-              className={`${appName === 'MEN_PWA' && 'text-impo_PrimaryMan_PrimaryMan'} text-impo_Neutral_OnBackground px-2`}
-            >
+            <CustomTypography fontSize="Title_Small" className={`${textColor}  px-2`}>
               {props.partnerCode}
             </CustomTypography>
           )}

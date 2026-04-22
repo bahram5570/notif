@@ -1,5 +1,5 @@
 import { ActionTypes, WidgetsButtonTypes } from './widgetCommon';
-import { BabyCheckTypeEnums, WidgetStoryTypeEnum, WidgetsEnum } from './widgetEnums';
+import { BabyCheckTypeEnums, CyclePhaseEnum, WidgetStoryTypeEnum, WidgetsEnum } from './widgetEnums';
 
 type HasEyeIcon = {
   showEyeIcon: true;
@@ -12,9 +12,14 @@ type EyeIconTypes = HasEyeIcon | NotEyeIcon;
 
 type IsPdfDownloadingTypes = { isPdfDownloading?: boolean };
 
+type PhaseTypes = {
+  phase?: CyclePhaseEnum;
+};
+
 type SignTypes = { category: number; sign: number };
 
 export type WidgetsTypes = IsPdfDownloadingTypes &
+  PhaseTypes &
   (
     | WidgetCycleCardTypes
     | WidgetCirculeCycleCardTypes
@@ -28,6 +33,7 @@ export type WidgetsTypes = IsPdfDownloadingTypes &
     | WidgetShareExperienceCardTypes
     | WidgetSignCardTypes
     | WidgetClinicCardTypes
+    | WidgetClinicCardV2Types
     | WidgetSubscriptionCardTypes
     | WidgetPragnencyBreastfeedingCardTypes
     | WidgetEmptyReportCardTypes
@@ -153,25 +159,26 @@ export type WidgetHintCardTypes = IsPdfDownloadingTypes & {
 
 // # ----------------------------------------------------------
 
-export type WidgetHintCard2Types = IsPdfDownloadingTypes & {
-  type: WidgetsEnum.HintCardV2;
-  data: {
-    backgroundColour: string;
-    description: string;
-    title: string;
-    list: {
-      internalLink: null | string;
-      externalLink: null | string;
-      writerSpeciality: string;
-      isBookmarked: boolean;
-      writerIcon: string;
-      writerName: string;
-      isSeen: boolean;
-      text: string;
-      id: string;
-    }[];
+export type WidgetHintCard2Types = IsPdfDownloadingTypes &
+  PhaseTypes & {
+    type: WidgetsEnum.HintCardV2;
+    data: {
+      backgroundColour: string;
+      description: string;
+      title: string;
+      list: {
+        internalLink: null | string;
+        externalLink: null | string;
+        writerSpeciality: string;
+        isBookmarked: boolean;
+        writerIcon: string;
+        writerName: string;
+        isSeen: boolean;
+        text: string;
+        id: string;
+      }[];
+    };
   };
-};
 
 // # ----------------------------------------------------------
 
@@ -278,14 +285,38 @@ export type WidgetClinicCardTypes = IsPdfDownloadingTypes & {
     description: string;
     title: string;
     items: {
-      action: ActionTypes[];
       doctorImage: string;
+      action: ActionTypes;
       ticketType: number;
       doctorId: string;
       subtitle: string;
       tailing: string;
       title: string;
       image: string;
+    }[];
+  };
+};
+
+// # ----------------------------------------------------------
+
+export type WidgetClinicCardV2Types = IsPdfDownloadingTypes & {
+  type: WidgetsEnum.ClinicCardV2;
+  data: {
+    backgroundColour: string;
+    description: string;
+    cta: ActionTypes;
+    title: string;
+    items: {
+      drId: string;
+      rate: number;
+      image: string;
+      badge: string;
+      isOnline: boolean;
+      doctorName: string;
+      speciality: string;
+      featureName: string;
+      action: ActionTypes;
+      reviewsCount: number;
     }[];
   };
 };

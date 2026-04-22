@@ -5,6 +5,7 @@ import { WidgetScaleModule } from '@repo/core/components/Widgets/WidgetScaleModu
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 import { CycleThemeEnum } from '@services/loginServices/enum';
 
+import useProfileData from '@hooks/__profile__/useProfileData';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useWidgetOnMountActions } from '@repo/core/hooks/useWidgetOnMountActions';
 import { CycleLoadingStatusEnum } from '@repo/core/providers/WidgetActionsProvider';
@@ -16,6 +17,7 @@ import useWidgetsListMaker from './__hooks__/useWidgetsListMaker';
 import { ContainerProps } from './types';
 
 const CycleContainer = ({ data, customAppBar, children }: ContainerProps) => {
+  const { phase } = useProfileData();
   const widgetsListProps = useWidgetsListMaker({ widgets: data?.wigets });
   const { loadingStatus } = useCycleLoadingStatus({ hasData: data ? true : false });
 
@@ -45,7 +47,7 @@ const CycleContainer = ({ data, customAppBar, children }: ContainerProps) => {
 
       <div
         style={{ paddingTop, backgroundColor: appBarBackground }}
-        className="relative h-full min-h-[100dvh] dark:!bg-impo_Neutral_Surface duration-300 z-0"
+        className="relative h-full min-h-[100dvh] pb-8 dark:!bg-impo_Neutral_Surface duration-300 z-0"
       >
         <div className="flex flex-col h-full">
           {widgetsListProps.currentCycleThemeEnum === CycleThemeEnum.Flat && (
@@ -68,7 +70,7 @@ const CycleContainer = ({ data, customAppBar, children }: ContainerProps) => {
             <>
               <div className="flex flex-col">
                 {widgetsListProps.outsideCycleWidgetList.map((widget, index) => (
-                  <WidgetGenerators {...widget} key={index} />
+                  <WidgetGenerators {...widget} phase={phase} key={index} />
                 ))}
               </div>
 

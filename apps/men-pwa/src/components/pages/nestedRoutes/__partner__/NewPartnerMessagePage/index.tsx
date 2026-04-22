@@ -5,6 +5,8 @@ import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import styles from './styles.module.css';
 
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+
 import MessageListContainer from './MessageListContainer';
 import PartnerMessageInput from './PartnerMessageInput';
 import WarningMessage from './WarningMessage';
@@ -34,7 +36,7 @@ const NewPartnerMessagePage = () => {
 
   const showLoading = isLoading || loading;
   return (
-    <MainPageLayout rightElement="BackButton" rightElementScript="گفتگو با همدل">
+    <MainPageLayout rightElement="BackButton" rightElementScript="گفتگو با همدل" paddingTop={HEADER_HEIGHT + 16}>
       <div
         className={`overflow-y-auto pb-20 h-[100dvh]   bg-[url('/assets/shared/images/bg-chat.webp')] bg-contain  dark:bg-none ${styles.container} ${loading && 'pointer-events-none'}`}
         ref={messageListRef}

@@ -7,6 +7,12 @@ import { WidgetClinicCardProps } from './types';
 export const WidgetClinicCard = ({ data }: WidgetClinicCardProps) => {
   const { callEvent } = useAnalytics();
 
+  const isEmpty = data.items.length === 0;
+
+  if (isEmpty) {
+    return <></>;
+  }
+
   return (
     <WidgetCardContainer
       className="pb-6"

@@ -1,7 +1,7 @@
 import StarIcon from '@assets/icons/star.svg';
+import { RATING_LIST } from '@repo/core/components/clinic';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { RATING_LIST } from '../../RatingContainer/RatingStars/constants';
 import { RatedMessageBannerProps } from './types';
 
 const RatedMessageBanner = ({ rate, description }: RatedMessageBannerProps) => {

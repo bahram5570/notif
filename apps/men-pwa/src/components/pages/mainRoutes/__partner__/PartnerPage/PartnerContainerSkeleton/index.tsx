@@ -4,7 +4,7 @@ const PartnerContainerSkeleton = () => {
   return (
     <div
       className="w-full h-[100dvh] flex flex-col items-center gap-4 px-4 animate-skeleton"
-      style={{ paddingTop: HEADER_HEIGHT }}
+      style={{ paddingTop: HEADER_HEIGHT + 30 }}
     >
       <div className="flex gap-9 ">
         <div className="flex flex-col gap-5 justify-center items-center">

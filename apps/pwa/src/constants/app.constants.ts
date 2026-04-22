@@ -1,5 +1,6 @@
 export const IS_WELCOMING_IN_CHAT_BOT_TOPICS = 'isWelcoming';
 export const PORTAL_SPLASH_ID = 'portalSplashId';
+export const SHOW_QUESTION_BTN = 'showQuestionBtn';
 
 export const FIREBASE_CONFIG = {
   appId: '1:497330213206:web:538d02ea2d3155564086f7',

@@ -1,9 +1,7 @@
-import { chatFileTypeDetector } from '@components/pages/mainRoutes/clinic/ClinicChatContainer/ChatsMessagesContainer/__utils__';
+import { ChatContainerMaker, ChatsFileGenerator } from '@repo/core/components/clinic';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { chatFileTypeDetector } from '@repo/core/utils/fileType';
 
-import ChatsFileGenerator from '@components/pages/mainRoutes/clinic/ClinicChatContainer/ChatsMessagesContainer/ChatsFileGenerator';
-
-import ChatContainerMaker from './ChatContainerMaker';
 import { MessageGeneratorMediaProps } from './types';
 
 const MessageGeneratorMedia = ({ dateTime, sideType, media }: MessageGeneratorMediaProps) => {

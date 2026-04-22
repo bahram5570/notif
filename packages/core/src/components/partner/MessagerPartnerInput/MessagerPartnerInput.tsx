@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { useSystem } from '../../../hooks/useSystem';
 import { CustomButton } from '../../ui/CustomButton';
@@ -19,10 +19,26 @@ export const MessagerPartnerInput = ({ isLoading, submitHandler, placeholder }: 
     setNewMessage('');
   };
 
+  const theme = useMemo<{ outlineColor: string; className: string }>(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return {
+          outlineColor: 'outline-impo_PrimaryMan_PrimaryMan',
+          className: '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan',
+        };
+
+      default:
+        return {
+          outlineColor: 'outline-impo_Primary_Primary',
+          className: '',
+        };
+    }
+  }, [appName]);
+
   return (
     <>
       <CustomTextareaInput
-        className={`  !text-impo_Neutral_OnBackground  ${appName === 'MEN_PWA' ? 'outline-impo_PrimaryMan_PrimaryMan' : 'outline-impo_Primary_Primary'} `}
+        className={`  !text-impo_Neutral_OnBackground  ${theme.outlineColor} `}
         placeholder={placeholder}
         rows={4}
         value={newMessage}
@@ -32,7 +48,7 @@ export const MessagerPartnerInput = ({ isLoading, submitHandler, placeholder }: 
 
       <div className="flex justify-center items-center">
         <CustomButton
-          className={`px-6 py-2 max-w-fit ${appName === 'MEN_PWA' && ' !bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
+          className={`px-6 py-2 max-w-fit ${theme.className}`}
           onClick={onClick}
           isDisable={!newMessage}
           isLoading={isLoading}

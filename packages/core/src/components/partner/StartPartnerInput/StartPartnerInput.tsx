@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useMemo, useState } from 'react';
 
 import { toEnglishNumbers, toPersianNumbers } from '../../../utils/numbers';
 
@@ -25,6 +25,16 @@ export const StartPartnerInput = (props: StartPartnerInputPropsType) => {
     }
   };
 
+  const className = useMemo(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan';
+
+      default:
+        return '';
+    }
+  }, [appName]);
+
   return (
     <>
       <div className="w-full">
@@ -39,7 +49,7 @@ export const StartPartnerInput = (props: StartPartnerInputPropsType) => {
       </div>
       <div className="flex justify-center w-1/2 items-center">
         <CustomButton
-          className={`${appName === 'MEN_PWA' && '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan'}`}
+          className={className}
           onClick={onClickHandler}
           isLoading={props.isLoading}
           isDisable={!phoneNumber}

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { gregorianFarsiScriptDate, jalaaliScriptDate } from '@repo/core/utils/dates';
+import { textShorter } from '@repo/core/utils/scripts';
 
 import { useCulture } from '@repo/core/hooks/useCulture';
 import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
@@ -51,10 +52,10 @@ const ArticleItem = (props: ArticleItemPropsType) => {
 
   return (
     <div className="flex flex-col gap-1" onClick={linkToHandler}>
-      <CustomImage src={JSON.parse(props.description)} className="w-[200px] h-[112px] rounded-md" />
+      <CustomImage src={JSON.parse(props.description)} className="w-[200px] h-[112px] rounded-xl" />
       <div className="flex flex-col items-end">
         <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
-          {props.title}
+          {textShorter(props.title, 55)}
         </CustomTypography>
         <CustomTypography fontSize="Body_Small" className="text-impo_Surface_Outline">
           {currentDate}

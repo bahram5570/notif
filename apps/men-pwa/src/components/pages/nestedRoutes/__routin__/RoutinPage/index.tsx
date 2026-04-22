@@ -38,7 +38,12 @@ const RoutinPage = () => {
 
   const hasItemLength = data && data.items.length > 0;
   return (
-    <MainPageLayout rightElement="BackButton" paddingTop={0}>
+    <MainPageLayout
+      rightElement="BackButton"
+      paddingTop={0}
+      rightElementScript={data?.title}
+      headerClassName="!bg-[#ffffff50] dark:!bg-[#20202050]"
+    >
       <RoutinUnlockTost />
 
       {isLoading && <RoutinSkeleton />}
@@ -48,20 +53,20 @@ const RoutinPage = () => {
             <OnboardingIntro list={data.wc.list} finalButton={data.wc.finalButton} submitHandler={finalStepHandler} />
           )}
           {!data.wc.isActive && (
-            <div className="relative w-full min-h-[100dvh] px-4 pb-6 z-0" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
+            <div className="relative w-full min-h-[100dvh] px-4 pb-6 z-0" style={{ paddingTop: HEADER_HEIGHT + 24 }}>
               <div className="w-full h-[360px] absolute top-0 left-0 right-0 bg-gradient-to-b from-[#c9d6fb] to-[#FEE8E600] -z-10 dark:bg-none" />
 
               <div className="relative z-10">
                 <RoutinHeading image={data.image} description={data.description} title={data.title} />
 
-                <div className="w-full rounded-xl p-3 bg-impo_Neutral_Surface">
+                <div className="w-full rounded-2xl px-4 py-6 bg-impo_Neutral_Background  dark:bg-impo_Neutral_Surface">
                   <RoutinWriter
                     writerName={data.writerName}
                     writerIcon={data.writerIcon}
                     writerSpeciality={data.writerSpeciality}
                   />
 
-                  <div className="w-full h-[1px] my-3 bg-impo_Surface_SurfaceVariant" />
+                  <div className="w-full h-[1px] my-4 bg-impo_Surface_SurfaceVariant" />
 
                   <RoutinDiets name={data.name} items={data.items} />
                 </div>

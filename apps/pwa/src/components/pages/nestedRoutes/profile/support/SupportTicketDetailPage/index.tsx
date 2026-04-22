@@ -2,6 +2,8 @@
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+
 import ChatsMessagesContainer from './ChatsMessagesContainer';
 import ChatFooter from './ChatsMessagesContainer/ChatFooter';
 import SupportTicketDetailSkeleton from './SupportTicketDetailSkeleton';
@@ -12,7 +14,7 @@ const SupportTicketDetailPage = () => {
 
   return (
     <>
-      <MainPageLayout rightElement="BackButton" rightElementScript="تیکت به پشتیبانی">
+      <MainPageLayout rightElement="BackButton" rightElementScript="تیکت به پشتیبانی" paddingTop={HEADER_HEIGHT + 16}>
         {isLoading && <SupportTicketDetailSkeleton />}
         {!isLoading && (
           <>

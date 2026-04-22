@@ -1,3 +1,4 @@
+import { RATING_FOOTER_HEIGHT, RATING_HEADING_HEIGHT } from '@repo/core/components/clinic';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { Loading } from '@repo/core/components/ui/Loading';
@@ -7,9 +8,7 @@ import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import RatingDescription from './RatingDescription';
 import RatingFeedback from './RatingFeedback';
 import RatingFooter from './RatingFooter';
-import { RATING_FOOTER_HEIGHT } from './RatingFooter/constants';
 import RatingHeading from './RatingHeading';
-import { RATING_HEADING_HEIGHT } from './RatingHeading/constants';
 import RatingSkeleton from './RatingSkeleton';
 import RatingStars from './RatingStars';
 import useSubmitRate from './__hooks__/useSubmitRate';

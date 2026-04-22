@@ -6,12 +6,15 @@ import { WidgetAverageOfcycleLengths } from './WidgetAverageOfcycleLengths';
 import { WidgetBabyCheckHistoryCard } from './WidgetBabyCheckHistoryCard';
 import { WidgetBabyCheckKitCard } from './WidgetBabyCheckKitCard';
 import { WidgetClinicCard } from './WidgetClinicCard';
+import { WidgetClinicCardV2 } from './WidgetClinicCardV2';
 import { WidgetCycleDateCard } from './WidgetCycleDateCard';
 import { WidgetEmptyReportCard } from './WidgetEmptyReportCard';
 import { WidgetHintCard } from './WidgetHintCard';
 import { WidgetHintCardV2 } from './WidgetHintCardV2';
 import { WidgetList } from './WidgetList';
+import { WidgetManProgramHealth } from './WidgetManProgramHealth';
 import { WidgetMedia } from './WidgetMedia';
+import { WidgetMenStoryCard } from './WidgetMenStoryCard';
 import { WidgetMostRepeatedSigns } from './WidgetMostRepeatedSigns';
 import { WidgetMostRepeatedSignsEmpty } from './WidgetMostRepeatedSignsEmpty';
 import { WidgetMotivationCard } from './WidgetMotivationCard';
@@ -35,7 +38,7 @@ import { WidgetSubscriptionCard } from './WidgetSubscriptionCard';
 import { WidgetWomanPairProgram } from './WidgetWomanPairProgram';
 import { WidgetsBiorhythm } from './WidgetsBiorhythm';
 
-export const WidgetGenerators = ({ data, type, isPdfDownloading = false }: WidgetsTypes) => {
+export const WidgetGenerators = ({ data, type, isPdfDownloading = false, phase }: WidgetsTypes) => {
   let result: JSX.Element | null = null;
 
   switch (type) {
@@ -136,22 +139,25 @@ export const WidgetGenerators = ({ data, type, isPdfDownloading = false }: Widge
       result = <WidgetWomanPairProgram data={data} />;
       break;
     case WidgetsEnum.ManProgramHealthWidget:
-      result = <WidgetWomanPairProgram data={data} />;
+      result = <WidgetManProgramHealth data={data} />;
       break;
     case WidgetsEnum.WomanPairProgram:
       result = <WidgetWomanPairProgram data={data} />;
       break;
     case WidgetsEnum.MenStory:
-      result = <WidgetStoryCard data={data} />;
+      result = <WidgetMenStoryCard data={data} />;
       break;
     case WidgetsEnum.ShortcutWidget:
       result = <WidgetShortcut data={data} />;
       break;
     case WidgetsEnum.HintCardV2:
-      result = <WidgetHintCardV2 data={data} />;
+      result = <WidgetHintCardV2 data={data} phase={phase} />;
       break;
     case WidgetsEnum.AdvertiseCardList:
       result = <WidgetAdvertiseCardList data={data} />;
+      break;
+    case WidgetsEnum.ClinicCardV2:
+      result = <WidgetClinicCardV2 data={data} />;
       break;
   }
 

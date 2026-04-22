@@ -8,7 +8,7 @@ const MonthGenerator = ({ monthList, selectedDateHandler, selectedDate }: MonthG
 
   return (
     <div className="w-fit flex flex-col items-center mx-auto" style={{ direction: 'rtl' }}>
-      <div className="w-fit grid grid-cols-7 justify-center gap-x-4 gap-y-3 pt-1">
+      <div className="w-fit grid grid-cols-7 justify-center gap-x-3 gap-y-3 ">
         <EmptyCells firstDayOfMonth={monthList[0]} dateType={dateType} />
 
         {monthList.map((day, index) => {

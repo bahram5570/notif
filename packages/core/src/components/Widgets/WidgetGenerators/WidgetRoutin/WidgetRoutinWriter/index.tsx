@@ -6,7 +6,7 @@ const WidgetRoutinWriter = ({ writerName, writerSpeciality, writerIcon }: Widget
   return (
     <div className="w-full flex items-center justify-end gap-[10px]">
       <div className="flex flex-col items-end">
-        <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
+        <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">
           {writerName}
         </CustomTypography>
 

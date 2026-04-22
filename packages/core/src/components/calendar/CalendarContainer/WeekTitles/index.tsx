@@ -23,7 +23,7 @@ const WeekTitles = () => {
   }, [culture.calendarType]);
 
   return (
-    <div className="w-fit grid grid-cols-7 justify-center gap-4 pb-2 mx-auto">
+    <div className="w-fit grid grid-cols-7 justify-center gap-4  mx-auto">
       {weeksList.map((item) => (
         <div className="flex justify-center" style={{ width: CALENDAR_CELL_SIZE }} key={item}>
           <CustomTypography fontSize="Body_Small" className="text-impo_Surface_Outline">

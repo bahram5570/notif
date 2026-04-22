@@ -30,12 +30,17 @@ const RoutinItemPage = () => {
   });
 
   return (
-    <MainPageLayout rightElement="BackButton" paddingTop={0}>
+    <MainPageLayout
+      rightElement="BackButton"
+      paddingTop={0}
+      rightElementScript={data?.title}
+      headerClassName="!bg-[#ffffff50] dark:!bg-[#20202050]"
+    >
       <div
         className=" w-full flex relative z-0 flex-col  gap-6  h-[100dvh]  px-4  pb-6"
-        style={{ paddingTop: HEADER_HEIGHT + 16 }}
+        style={{ paddingTop: HEADER_HEIGHT + 24 }}
       >
-        <div className="w-full h-[360px] absolute top-0 left-0 right-0 bg-gradient-to-b from-[#c9d6fb] to-[#FEE8E600] -z-10 dark:bg-none" />
+        <div className="w-full h-[360px] absolute top-0 left-0 right-0 bg-gradient-to-b from-[#c9d6fb] to-[#FEE8E600] -z-10 dark:bg-none t" />
 
         {isLoading && <RoutinItemSkeleton />}
 

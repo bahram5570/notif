@@ -1,4 +1,4 @@
-import SupportPhoneIcon from '@assets/icons/supportPhone.svg';
+import SupportPhoneIcon from '@assets/shared/icons/supportPhone.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { InfoSupportProps } from './types';

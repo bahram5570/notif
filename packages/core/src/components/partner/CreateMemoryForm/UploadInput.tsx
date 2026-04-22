@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 
 import PaperClipIcon from '@assets/shared/icons/paperclip.svg';
 import TrashIcon from '@assets/shared/icons/trash.svg';
@@ -18,7 +18,6 @@ export const UploadInput = ({ fileName, uploadImageLoading, onChangeHandler }: U
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
   const [progress, setProgress] = useState(0);
-  const isMan = appName === 'MEN_PWA';
 
   const onChange = () => {
     onChangeHandler('', 'fileName');
@@ -50,6 +49,31 @@ export const UploadInput = ({ fileName, uploadImageLoading, onChangeHandler }: U
   const fileNameList = fileName.split('.');
   const fileNameScript = `${textShorter(fileNameList[0])} .${fileNameList[1]}`;
 
+  const theme = useMemo<{
+    stroke: string;
+    uploadBackground: string;
+    backgroundColor: string;
+    textColor: string;
+  }>(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return {
+          stroke: 'stroke-impo_PrimaryMan_PrimaryMan',
+          uploadBackground: 'bg-impo_PrimaryMan_PrimaryContainerMan',
+          backgroundColor: 'bg-impo_PrimaryMan_PrimaryMan',
+          textColor: 'text-impo_PrimaryMan_PrimaryMan',
+        };
+
+      default:
+        return {
+          stroke: 'stroke-impo_Primary_Primary',
+          uploadBackground: 'bg-impo_Primary_PrimaryContainer',
+          backgroundColor: 'bg-impo_Primary_Primary',
+          textColor: 'text-impo_Primary_Primary',
+        };
+    }
+  }, [appName]);
+
   return (
     <>
       {fileName !== '' && (
@@ -71,10 +95,7 @@ export const UploadInput = ({ fileName, uploadImageLoading, onChangeHandler }: U
           </div>
           {uploadImageLoading && (
             <div className="w-full h-1  rounded-full bg-impo_Grey_200">
-              <div
-                className={`h-full rounded-full ${isMan ? 'bg-impo_PrimaryMan_PrimaryMan' : 'bg-impo_Primary_Primary'} `}
-                style={{ width: `${progress}%` }}
-              ></div>
+              <div className={`h-full rounded-full ${theme.backgroundColor} `} style={{ width: `${progress}%` }}></div>
             </div>
           )}
         </div>
@@ -88,20 +109,15 @@ export const UploadInput = ({ fileName, uploadImageLoading, onChangeHandler }: U
 
           <div className=" p-2 flex  justify-center items-center ">
             <div
-              className={`flex  justify-center items-center gap-2 rounded-full pl-6 pr-4 py-3   ${isMan ? 'bg-impo_PrimaryMan_PrimaryContainerMan' : 'bg-impo_Primary_PrimaryContainer'}`}
+              className={`flex  justify-center items-center gap-2 rounded-full pl-6 pr-4 py-3   ${theme.uploadBackground}`}
               onClick={onClick}
             >
-              <CustomTypography
-                fontSize="Lable_Large"
-                className={`${isMan ? ' text-impo_PrimaryMan_PrimaryMan' : 'text-impo_Primary_Primary'}`}
-              >
+              <CustomTypography fontSize="Lable_Large" className={theme.textColor}>
                 آپلود عکس
               </CustomTypography>
 
               <div className="w-5 h-5 flex justify-center items-center">
-                <PaperClipIcon
-                  className={`w-5 h-5 ${isMan ? ' stroke-impo_PrimaryMan_PrimaryMan' : 'stroke-impo_Primary_Primary'} `}
-                />
+                <PaperClipIcon className={`w-5 h-5 ${theme.stroke} `} />
               </div>
             </div>
           </div>

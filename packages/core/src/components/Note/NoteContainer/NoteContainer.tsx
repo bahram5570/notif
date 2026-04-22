@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
@@ -31,6 +31,16 @@ export const NoteContainer = () => {
     isEditMode ? callEvent('NoteEdit') : callEvent('NoteAdd');
     submitHandler(noteValue);
   };
+
+  const className = useMemo(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return '!bg-impo_PrimaryMan_PrimaryMan !border-none';
+
+      default:
+        return '';
+    }
+  }, [appName]);
 
   return (
     <>
@@ -68,7 +78,7 @@ export const NoteContainer = () => {
               >
                 <CustomButton
                   isLoading={isLoading}
-                  className={appName === 'MEN_PWA' ? '!bg-impo_PrimaryMan_PrimaryMan !border-none' : ''}
+                  className={className}
                   isDisable={!noteValue.title}
                   fontSize="Lable_Large"
                   onClick={onClick}
