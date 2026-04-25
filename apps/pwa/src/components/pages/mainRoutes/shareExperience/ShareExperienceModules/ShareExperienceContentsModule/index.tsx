@@ -54,13 +54,14 @@ const ShareExperienceContentsModule = ({
           {text}
         </CustomTypography>
       </div>
+
       {hasTags &&
         tags.map((tag, index) => {
           return (
             <div
-              className="bg-impo_Grey_100 w-fit py-[6px] px-[10px] rounded-lg"
               key={index}
               onClick={() => clickHandler(tag)}
+              className="bg-impo_Grey_100 w-fit py-[6px] px-[10px] rounded-lg"
             >
               <CustomTypography fontSize="Lable_Small" className="text-impo_Neutral_OnBackground">
                 {tag.title}

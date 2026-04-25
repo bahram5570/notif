@@ -23,6 +23,7 @@ import ShareExperienceUnfollowModal from '../../ShareExperienceModals/ShareExper
 import ShareExperienceContentsModule from '../../ShareExperienceModules/ShareExperienceContentsModule';
 import ShareExperienceAssociation from '../ShareExperienceAssociation';
 import ShareExperienceBottomPart from './ShareExperienceBottomPart';
+import ShareExperienceInView from './ShareExperienceInView';
 import ShareExperienceTopPart from './ShareExperienceTopPart';
 import useExperiences from './__hooks__/useExperiences';
 import { ShareExperienceExperiencesProps } from './types';
@@ -71,7 +72,7 @@ const ShareExperienceExperiences = ({
         totalCount={totalCount}
         callBack={updatePageNo}
         scrollContainerRef={scrollRef}
-        className="flex flex-col  relative"
+        className="flex flex-col relative"
         style={{ paddingBottom: FOOTER_HEIGHT * 2 }}
       >
         {experiencesData?.expirences.map((item, index) => {
@@ -84,22 +85,24 @@ const ShareExperienceExperiences = ({
                 />
               )}
 
-              <div className="w-full border-t-[1px] border-t-impo_Neutral_Surface  pt-5 pb-4 z-0 px-4">
-                <ShareExperienceTopPart {...item} />
+              <ShareExperienceInView>
+                <div className="w-full border-t-[1px] border-t-impo_Neutral_Surface  pt-5 pb-4 z-0 px-4">
+                  <ShareExperienceTopPart {...item} />
 
-                <div className="w-full pr-10">
-                  <ShareExperienceContentsModule
-                    image={item.image}
-                    text={item.text}
-                    hasLinkTo={true}
-                    tags={item.tags}
-                    isSelf={false}
-                    id={item.id}
-                  />
+                  <div className="w-full pr-10">
+                    <ShareExperienceContentsModule
+                      image={item.image}
+                      text={item.text}
+                      hasLinkTo={true}
+                      tags={item.tags}
+                      isSelf={false}
+                      id={item.id}
+                    />
 
-                  <ShareExperienceBottomPart {...item} />
+                    <ShareExperienceBottomPart {...item} />
+                  </div>
                 </div>
-              </div>
+              </ShareExperienceInView>
             </Fragment>
           );
         })}

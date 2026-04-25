@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
 
-import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
-
 import { PAGE_SIZE } from '../../constants/app.constants';
+import { CustomSpinner } from '../ui/CustomSpinner';
 import { InfiniteScrollContainerPropsType } from './type';
 
 export const InfiniteScrollContainer = ({
   pageSize = PAGE_SIZE,
+  scrollContainerRef,
   totalCount,
   isLoading,
   className,
@@ -15,7 +15,6 @@ export const InfiniteScrollContainer = ({
   pageNo,
   height,
   style,
-  scrollContainerRef,
 }: InfiniteScrollContainerPropsType) => {
   const selfRef = useRef<HTMLDivElement>(null);
   const isFetchingRef = useRef(false);

@@ -39,12 +39,17 @@ const ShareExperienceContainer = () => {
         {!isLoading && data && (
           <>
             {data.failure && <ShareExperienceFailureModal error={data.error} />}
+
             {!data.failure && (
               <>
                 <ShareExperienceAvatar profile={data.profile} />
+
                 <ShareExperienceNewLink />
+
                 {topics && <ShareExperienceTopics topics={topics} />}
+
                 {data.bannerMedia && <ShareExperienceBanner bannerMedia={data.bannerMedia} />}
+
                 {categories && selectedCategoryId && (
                   <ShareExperienceCategories
                     categories={categories}
@@ -52,11 +57,13 @@ const ShareExperienceContainer = () => {
                     selectedCategoryHandler={selectedCategoryHandler}
                   />
                 )}
+
                 {data.toastText && (
                   <div className="px-4 pb-4">
                     <ShareExperienceToast toastMessage={data.toastText} showCloseBtn />
                   </div>
                 )}
+
                 {selectedCategoryId && (
                   <ShareExperienceExperiences
                     profile={data.profile}
