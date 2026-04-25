@@ -38,7 +38,10 @@ const PeriodSettingsPage = () => {
                   <PeriodSettingsLingthGenerator values={values} name="periodLength" />
                 </ProfileItemGenerator>
 
-                <ProfileItemGenerator title="طول دوره" description="معمولا هر چند روز یک بار پریود می‌شی؟">
+                <ProfileItemGenerator
+                  title="طول دوره"
+                  description="فاصله اولین روز خونریزی تا اولین روز خونریزی بعدیت چند روزه؟"
+                >
                   <PeriodSettingsLingthGenerator values={values} name="cycleLength" />
                 </ProfileItemGenerator>
               </ProfileContainerGenerator>

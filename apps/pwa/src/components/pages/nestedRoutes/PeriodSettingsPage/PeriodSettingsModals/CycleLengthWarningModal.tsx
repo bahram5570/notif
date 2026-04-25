@@ -4,11 +4,13 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { getUserInfoCookie } from '@actions/userCookies.actions';
+import { useRouter } from 'next/navigation';
 
 import { CycleLengthWarningModalType } from './types';
 
 const CycleLengthWarningModal = ({ acceptingChanges, values }: CycleLengthWarningModalType) => {
   const [userName, setUserName] = useState<string | null>(null);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -18,6 +20,11 @@ const CycleLengthWarningModal = ({ acceptingChanges, values }: CycleLengthWarnin
 
     fetchUser();
   }, []);
+
+  const onClick = () => {
+    acceptingChanges(values);
+    router.back();
+  };
   return (
     <div className="flex flex-col justify-center items-center gap-4">
       <div className="flex flex-col justify-center items-center gap-2">
@@ -33,11 +40,7 @@ const CycleLengthWarningModal = ({ acceptingChanges, values }: CycleLengthWarnin
           PMS و پریودت رو پیش‌بینی کنیم
         </CustomTypography>
       </div>
-      <CustomButton
-        fontSize="Lable_Large"
-        className="text-impo_Primary_OnPrimary mt-2"
-        onClick={() => acceptingChanges(values)}
-      >
+      <CustomButton fontSize="Lable_Large" className="text-impo_Primary_OnPrimary mt-2" onClick={onClick}>
         متوجه شدم
       </CustomButton>
     </div>
