@@ -34,6 +34,7 @@ const useLogin = ({ identity, password, otpStatusHandler, onSubmitLogin }: UseLo
     userInfoCookieValue = {
       cycleTheme: v.cycleTheme,
       installationPurpose: { periodStatus: v.periodStatus, status: v.status },
+      name: v.name,
     };
 
     cultureHandler('calendarType', v.calendarType);
