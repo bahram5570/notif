@@ -1,13 +1,29 @@
 import { colorFormatConverter } from '../../../../utils/scripts';
 import EyeIcon from '@assets/shared/icons/eye.svg';
 
+import { MODAL_QUERY_NAME } from '../../../../constants/modal.constants';
 import { useAnalytics } from '../../../../hooks/useAnalytics';
+import { usePageNavigationLoading } from '../../../../hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
+import { useSystem } from '../../../../hooks/useSystem';
 import { CustomImage } from '../../../ui/CustomImage';
 import { CustomTypography } from '../../../ui/CustomTypography';
+import PredictModal from './PredictModal';
 import { PredictGeneratorProps } from './types';
 
 const PredictGenerator = (props: PredictGeneratorProps) => {
   const { inViewRef } = useAnalytics({ inView_eventName: 'PredictionWidgetSeenMoreThan5Sec' });
+  const { newQueryParamsHandler } = useQueryParamsHandler();
+  const { pageNavigationHandler } = usePageNavigationLoading();
+  const { appName } = useSystem();
+
+  const onClick = () => {
+    (newQueryParamsHandler({
+      [MODAL_QUERY_NAME]: 'true',
+      name: 'predict',
+    }),
+      pageNavigationHandler({ showProgressBar: true, id: 'predict' }));
+  };
 
   return (
     <div
@@ -34,12 +50,23 @@ const PredictGenerator = (props: PredictGeneratorProps) => {
 
         {!props.showEyeIcon && (
           <>
-            <CustomTypography fontSize="Body_Small" className="text-impo_Grey_500 dark:text-impo_Grey_400">
-              {props.trailingDown}
-            </CustomTypography>
+            {!props.showMoreInfo && (
+              <CustomTypography fontSize="Body_Small" className="text-impo_Grey_500 dark:text-impo_Grey_400">
+                {props.trailingDown}
+              </CustomTypography>
+            )}
+
+            {props.showMoreInfo && (
+              <div onClick={onClick}>
+                <CustomTypography fontSize="Body_Small" className="text-impo_Primary_Primary">
+                  اطلاعات بیشتر
+                </CustomTypography>
+              </div>
+            )}
           </>
         )}
       </div>
+      {appName === 'PWA' && <PredictModal />}
     </div>
   );
 };

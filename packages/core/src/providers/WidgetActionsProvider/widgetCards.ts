@@ -205,6 +205,7 @@ type PredictWidgetItemsTypes = EyeIconTypes & {
   trailingUp: string;
   title: string;
   icon: string;
+  showMoreInfo: boolean;
 };
 
 export type WidgetPredictCardTypes = IsPdfDownloadingTypes & {

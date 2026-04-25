@@ -63,6 +63,7 @@ export const getUserCookie = async () => {
 export type UserInfoCookieTypes = {
   installationPurpose: { status: number; periodStatus: number };
   cycleTheme: CycleThemeEnum;
+  name: string;
 };
 
 export const setUserInfoCookie = async (props: UserInfoCookieTypes) => {
@@ -71,6 +72,7 @@ export const setUserInfoCookie = async (props: UserInfoCookieTypes) => {
   const value = JSON.stringify({
     installationPurpose: props.installationPurpose,
     cycleTheme: props.cycleTheme,
+    name: props.name,
   });
 
   cookies().set({ name: USER_INFO_COOKIE_NAME, value, httpOnly: false, path: '/', secure: false, expires });

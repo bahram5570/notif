@@ -45,6 +45,7 @@ const useRegister = (payload: ActivationPayloadTypes, onCallBack?: (v: OtpStatus
         userInfoCookie: {
           installationPurpose: { periodStatus: updatedPayload.periodStatus, status: updatedPayload.status },
           cycleTheme: v.cycleTheme,
+          name: v.name,
         },
       });
 

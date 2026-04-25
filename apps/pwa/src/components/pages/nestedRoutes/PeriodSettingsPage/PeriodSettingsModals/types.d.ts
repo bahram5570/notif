@@ -3,6 +3,7 @@ import { PeriodSettingsValuesHandlerTypes, PeriodSettingsValuesTypes } from '../
 export interface PeriodSettingsModalsTypes {
   values: PeriodSettingsValuesTypes;
   valuesHandler: PeriodSettingsValuesHandlerTypes;
+  acceptingChanges: (v: PeriodSettingsValuesTypes) => void;
 }
 
 export interface PeriodLengthModalTypes {
@@ -17,3 +18,5 @@ export interface CycleLengthModalTypes {
   onClose: () => void;
   valueHandler: (v: number) => void;
 }
+
+export type CycleLengthWarningModalType = Pick<PeriodSettingsModalsTypes, 'acceptingChanges' | 'values'>;
