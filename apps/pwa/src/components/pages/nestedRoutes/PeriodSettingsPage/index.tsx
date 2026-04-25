@@ -14,7 +14,8 @@ import useSubmit from './__hooks__/useSubmit';
 import useValues from './__hooks__/useValues';
 
 const PeriodSettingsPage = () => {
-  const { submitHandler, submitLoading } = useSubmit();
+  const { submitHandler, submitLoading, acceptingChanges } = useSubmit();
+
   const { fetchDataLoading, isModified, values, valuesHandler } = useValues();
 
   const isDisable = !isModified;
@@ -57,7 +58,7 @@ const PeriodSettingsPage = () => {
         </div>
       </MainPageLayout>
 
-      <PeriodSettingsModals values={values} valuesHandler={valuesHandler} />
+      <PeriodSettingsModals values={values} valuesHandler={valuesHandler} acceptingChanges={acceptingChanges} />
     </>
   );
 };
