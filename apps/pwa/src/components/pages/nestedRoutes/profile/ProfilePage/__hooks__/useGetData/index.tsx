@@ -4,9 +4,11 @@ import { LoginResponseTypes } from '@services/loginServices/types';
 
 import { getFirebaseTokenCookie, getUserCookie } from '@actions/userCookies.actions';
 import { APP_VERSION } from '@repo/core/constants/app.constants';
+import { usePhoneModel } from '@repo/core/hooks/usePhoneModel';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 const useGetData = () => {
+  const phoneModel = usePhoneModel();
   const [subscriptionLoading, setSubscriptionLoading] = useState(true);
 
   const subscriptionLoadingHandler = (b: boolean) => {
@@ -26,8 +28,8 @@ const useGetData = () => {
       const deviceToken = await getFirebaseTokenCookie();
 
       const payload = {
+        phoneModel,
         deviceToken,
-        phoneModel: '',
         channelVersion: '',
         version: APP_VERSION || '',
         identity: user?.identity || '',
