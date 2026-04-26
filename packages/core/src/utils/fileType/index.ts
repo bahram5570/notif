@@ -35,6 +35,7 @@ export const compressImageHandler = async (file: File, maxSizeKB: number) => {
   const maxSizeMB = maxSizeKB / 1024; // # According to MB;
   const maxWidthOrHeight = 1024;
 
-  const compressedFile = await imageCompression(file, { maxWidthOrHeight, maxSizeMB });
+  const blobFile = await imageCompression(file, { maxWidthOrHeight, maxSizeMB });
+  const compressedFile = new File([blobFile], blobFile.name, { type: blobFile.type });
   return compressedFile;
 };

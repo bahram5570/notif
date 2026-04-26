@@ -33,7 +33,6 @@ export const FileInputManager = ({
     try {
       const resultFile = await imageFormatHandler(file);
       const compressedFile = await compressImageHandler(resultFile, maxSizeKB);
-
       fileDataHandler({ e, file: compressedFile });
     } catch (error) {
       console.error(error);
