@@ -45,6 +45,7 @@ const ShareExperienceChangeAvatarModalContainer = ({
           ShowFileInput={false}
           fileDataHandler={fileDataHandler}
           uploadImageLoading={uploadImageLoading}
+          maxSizeKB={200}
         />
 
         <div

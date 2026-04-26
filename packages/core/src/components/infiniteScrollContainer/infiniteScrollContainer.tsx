@@ -50,13 +50,13 @@ export const InfiniteScrollContainer = ({
     <div
       ref={selfRef}
       id="infiniteScrollContainer"
-      className={`overflow-y-auto ${className}`}
+      className={`overflow-y-auto ${className} relative`}
       style={scrollContainerRef ? style : { height, overflowY: 'auto', ...style }}
     >
       {children}
 
       {isLoading && (
-        <div className="w-full h-full flex justify-center py-6 ">
+        <div className="w-full  flex justify-center py-6  absolute bottom-24">
           <CustomSpinner size={40} className="border-impo_Surface_Outline" />
         </div>
       )}
