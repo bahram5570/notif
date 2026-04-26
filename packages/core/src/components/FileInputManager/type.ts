@@ -1,12 +1,13 @@
 import { FileDataHandlerTypes } from '../../hooks/useFileUpload/type';
 import { FileInputTypes } from './enum';
 
-export interface FileInputManagerPropsType {
+export interface FileInputManagerTypes {
   fileDataHandler: FileDataHandlerTypes;
-  ShowFileInput: boolean;
   uploadImageLoading: boolean;
   ShowGalleryInput?: boolean;
   ShowCameraInput?: boolean;
+  ShowFileInput: boolean;
+  maxSizeKB?: number;
 }
 
 export type FileInputHandlerTypes = (type: FileInputTypes) => (e: React.ChangeEvent<HTMLInputElement>) => void;

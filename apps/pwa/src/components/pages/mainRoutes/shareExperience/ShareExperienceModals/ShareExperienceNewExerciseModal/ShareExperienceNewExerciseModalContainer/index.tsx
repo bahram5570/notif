@@ -75,6 +75,7 @@ const ShareExperienceNewExerciseModalContainer = ({
           {!configLoading && config && (
             <>
               <ShareExperienceNewTopPart avatarImage={avatarImage} text={text} username={username} />
+
               <div className="w-full pr-[48px]  flex flex-col gap-2 -translate-y-2" ref={conainerRef}>
                 <ShareExperienceNewText textHandler={textHandler} text={text} placeholder={config.placeholder} />
 
@@ -86,6 +87,7 @@ const ShareExperienceNewExerciseModalContainer = ({
                   onChangeBtnTop={onChangeBtnTop}
                 />
               </div>
+
               <ShareExperienceNewContinueBtn
                 text={text}
                 btnTop={btnTop}
@@ -101,6 +103,7 @@ const ShareExperienceNewExerciseModalContainer = ({
       </MainPageLayout>
 
       <UploadFileModal fileDataHandler={fileProps.fileDataHandler} uploadImageLoading={fileProps.uploadImageLoading} />
+
       <ShareExperienceNewTopics
         topicId={topicId}
         topicsData={topicsData}

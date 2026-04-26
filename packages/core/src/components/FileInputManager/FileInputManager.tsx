@@ -1,24 +1,24 @@
 import { useMemo, useState } from 'react';
 
+import { compressImageHandler, imageFormatHandler } from '../../utils/fileType';
 import FileIcon from '@assets/shared/icons/Paper.svg';
 import CameraIcon from '@assets/shared/icons/camera.svg';
 import GalleryIcon from '@assets/shared/icons/gallery.svg';
-
-// import imageCompression from 'browser-image-compression';
 
 import { useSystem } from '../../hooks/useSystem';
 import { CustomSpinner } from '../ui/CustomSpinner';
 import { CustomTypography } from '../ui/CustomTypography';
 import { FileInputTypes } from './enum';
-import { FileInputHandlerTypes, FileInputManagerPropsType } from './type';
+import { FileInputHandlerTypes, FileInputManagerTypes } from './type';
 
 export const FileInputManager = ({
-  uploadImageLoading,
-  fileDataHandler,
-  ShowFileInput,
   ShowGalleryInput = true,
   ShowCameraInput = true,
-}: FileInputManagerPropsType) => {
+  uploadImageLoading,
+  fileDataHandler,
+  maxSizeKB = 300,
+  ShowFileInput,
+}: FileInputManagerTypes) => {
   const { appName } = useSystem();
   const [activeInput, setActiveInput] = useState<string | null>(null);
 
@@ -26,23 +26,17 @@ export const FileInputManager = ({
     setActiveInput(type);
 
     const file = e.target.files?.[0];
-    if (!file) return;
+    if (!file) {
+      return;
+    }
 
-    if (type === FileInputTypes.CAMERA) {
-      const options = {
-        maxSizeMB: 1,
-        maxWidthOrHeight: 640,
-        useWebWorker: true,
-      };
+    try {
+      const resultFile = await imageFormatHandler(file);
+      const compressedFile = await compressImageHandler(resultFile, maxSizeKB);
 
-      try {
-        // const compressedFile = await imageCompression(file, options);
-        fileDataHandler({ e, file: file });
-      } catch (error) {
-        console.error('Image compression failed:', error);
-      }
-    } else {
-      fileDataHandler({ e });
+      fileDataHandler({ e, file: compressedFile });
+    } catch (error) {
+      console.error(error);
     }
   };
 
