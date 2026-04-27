@@ -1,4 +1,5 @@
-import { ShareExperienceStateEnum } from '../../../../ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/enum';
+import { ShareExperienceStateEnum } from '@repo/core/components/ShareExperience';
+
 import { ShareExperienceLikesModuleProps } from '../../types';
 
 export type UseLikesProps = ShareExperienceLikesModuleProps;

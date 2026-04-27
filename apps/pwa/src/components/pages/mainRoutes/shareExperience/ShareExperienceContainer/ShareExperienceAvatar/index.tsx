@@ -1,11 +1,11 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
-
 import {
   SHARE_EXPERIENCE_ORDER_QUERY_NAME,
   SHARE_EXPERIENCE_PROFILE_QUERY_NAME,
-} from '@components/pages/mainRoutes/shareExperience/constants';
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+} from '@repo/core/components/ShareExperience';
+import { CustomImage } from '@repo/core/components/ui/CustomImage';
+
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
@@ -19,12 +19,8 @@ const ShareExperienceAvatar = ({ profile }: ShareExperienceAvatarProps) => {
   const selectHandler = () => {
     pageNavigationHandler({ id: profile.userId, showProgressBar: true });
 
-    const paramsData = JSON.stringify({
-      id: profile.userId,
-      [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime(),
-    });
     increaseZIndex(SHARE_EXPERIENCE_PROFILE_QUERY_NAME, profile.userId);
-    newQueryParamsHandler({ [SHARE_EXPERIENCE_PROFILE_QUERY_NAME]: paramsData });
+    newQueryParamsHandler({ [SHARE_EXPERIENCE_PROFILE_QUERY_NAME]: profile.userId });
   };
 
   return (

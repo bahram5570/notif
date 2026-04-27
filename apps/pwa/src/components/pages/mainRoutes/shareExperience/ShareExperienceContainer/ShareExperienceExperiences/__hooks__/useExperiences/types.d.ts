@@ -1,7 +1,8 @@
+import { ShareExperienceStateEnum } from '../../../../../../../../../../../packages/core/src/components/ShareExperience/enum';
+
 import { ActionTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 import { ShareExperienceExperiencesProps } from '../../types';
-import { ShareExperienceStateEnum } from './enum';
 
 export type SelectedCategoryIdTypes = Pick<ShareExperienceExperiencesProps, 'selectedCategoryId'>['selectedCategoryId'];
 export type TagType = { title: string; action: ActionTypes | null };

@@ -14,7 +14,7 @@ const ShareExperienceScripts = ({ createTime, name, isPin, topicName }: ShareExp
         {isPin && <PinIcon className="w-[13px] fill-impo_Surface_OnSurfaceVariant" />}
 
         <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
-          {'name'}
+          {name}
         </CustomTypography>
 
         <CustomTypography fontSize="Lable_Small" className="text-impo_Grey_500">

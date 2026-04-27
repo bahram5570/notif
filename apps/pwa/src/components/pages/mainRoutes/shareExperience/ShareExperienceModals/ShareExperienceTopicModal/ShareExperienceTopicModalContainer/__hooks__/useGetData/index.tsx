@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { EXPERIENCES_PAGE_SIZE } from '@components/pages/mainRoutes/shareExperience/constants';
+import { EXPERIENCES_PAGE_SIZE } from '@repo/core/components/ShareExperience';
+
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 

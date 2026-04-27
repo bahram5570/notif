@@ -1,4 +1,4 @@
-import { ShareExperienceStateEnum } from '../../ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/enum';
+import { ShareExperienceStateEnum } from '@repo/core/components/ShareExperience';
 
 type ExperienceTypes = {
   type: 'experience';

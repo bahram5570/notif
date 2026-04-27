@@ -1,9 +1,9 @@
+import { SHARE_EXPERIENCE_ASSOCIATION_ITEM_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-import { SHARE_EXPERIENCE_ASSOCIATION_ITEM_QUERY_NAME } from '../../constants';
 import ShareExperienceAssociationItemContainer from './ShareExperienceAssociationItemContainer';
 
 const ShareExperienceAssociationItemModal = () => {

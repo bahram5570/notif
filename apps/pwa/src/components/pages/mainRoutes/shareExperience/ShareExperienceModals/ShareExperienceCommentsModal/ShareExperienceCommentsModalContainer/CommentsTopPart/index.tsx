@@ -1,9 +1,9 @@
+import { UserProfileIconModule } from '@repo/core/components/ShareExperience';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useShareExperiencePassedTime from '@components/pages/mainRoutes/shareExperience/__hooks__/useShareExperiencePassedTime';
 
 import ShareExperienceFollowModule from '../../../../ShareExperienceModules/ShareExperienceFollowModule';
-import ShareExperienceProfileIconModule from '../../../../ShareExperienceModules/ShareExperienceProfileIconModule';
 import { CommentsTopPartProps } from './types';
 
 const CommentsTopPart = (props: CommentsTopPartProps) => {
@@ -12,7 +12,7 @@ const CommentsTopPart = (props: CommentsTopPartProps) => {
   return (
     <div className="w-full flex justify-between" dir="rtl">
       <div className="flex gap-2">
-        <ShareExperienceProfileIconModule
+        <UserProfileIconModule
           size={40}
           id={props.userId}
           isSelf={props.self}

@@ -1,6 +1,6 @@
+import { UserProfileIconModule } from '@repo/core/components/ShareExperience';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import ShareExperienceProfileIconModule from '@components/pages/mainRoutes/shareExperience/ShareExperienceModules/ShareExperienceProfileIconModule';
 import useShareExperiencePassedTime from '@components/pages/mainRoutes/shareExperience/__hooks__/useShareExperiencePassedTime';
 
 import { CommentsGeneratorTopPartProps } from './types';
@@ -18,7 +18,7 @@ const CommentsGeneratorTopPart = (props: CommentsGeneratorTopPartProps) => {
         </CustomTypography>
       </div>
 
-      <ShareExperienceProfileIconModule
+      <UserProfileIconModule
         approvedProfile={props.approvedProfile}
         isSelf={props.selfComment}
         avatar={props.avatar}

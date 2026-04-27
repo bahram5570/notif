@@ -2,7 +2,7 @@ import {
   SHARE_EXPERIENCE_ASSOCIATION_ITEM_QUERY_NAME,
   SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME,
   SHARE_EXPERIENCE_TOPIC_MODAL_QUERY_NAME,
-} from '@components/pages/mainRoutes/shareExperience/constants';
+} from '@repo/core/components/ShareExperience';
 
 export const shareExperienceTopicQueryMaker = (id: string) => {
   const queryValue = JSON.stringify({ id });

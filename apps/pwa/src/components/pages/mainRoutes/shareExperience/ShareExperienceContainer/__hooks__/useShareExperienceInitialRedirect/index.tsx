@@ -1,11 +1,14 @@
 import { useEffect, useRef } from 'react';
 
+import {
+  SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE,
+  SHARE_EXPERIENCE_VIEW_REPORT_PROFILE_ID,
+} from '@repo/core/components/ShareExperience';
 import { isDevelopeMode } from '@repo/core/utils/system';
 
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-import { SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE, SHARE_EXPERIENCE_VIEW_REPORT_PROFILE_ID } from '../../../constants';
 import useViewReportProfile from './useViewReportProfile';
 
 const useShareExperienceInitialRedirect = (isLoaded: boolean) => {

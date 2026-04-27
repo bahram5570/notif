@@ -1,14 +1,13 @@
-import CommentsIcon from '@assets/icons/comment.svg';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import CommentsIcon from '@assets/shared/icons/comment.svg';
 
-import { SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useOverlayIndex } from '../../../hooks/useOverlayIndex';
+import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
+import { CustomTypography } from '../../ui/CustomTypography';
+import { SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME } from '../constants';
+import { CommentsCountLinkProps } from './type';
 
-import { ShareExperienceCommentsModuleProps } from './types';
-
-const ShareExperienceCommentsModule = (props: ShareExperienceCommentsModuleProps) => {
+export const CommentsCountLink = (props: CommentsCountLinkProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { increaseZIndex } = useOverlayIndex();
@@ -22,7 +21,6 @@ const ShareExperienceCommentsModule = (props: ShareExperienceCommentsModuleProps
       increaseZIndex(SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME, props.id);
     }
   };
-
   return (
     <>
       <div onClick={clickHandler} className="flex items-center justify-center gap-1 w-10">
@@ -35,5 +33,3 @@ const ShareExperienceCommentsModule = (props: ShareExperienceCommentsModuleProps
     </>
   );
 };
-
-export default ShareExperienceCommentsModule;

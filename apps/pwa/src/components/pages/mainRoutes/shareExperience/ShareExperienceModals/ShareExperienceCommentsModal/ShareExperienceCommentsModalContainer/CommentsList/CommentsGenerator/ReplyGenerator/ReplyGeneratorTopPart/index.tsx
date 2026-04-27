@@ -1,6 +1,6 @@
+import { UserProfileIconModule } from '@repo/core/components/ShareExperience';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import ShareExperienceProfileIconModule from '@components/pages/mainRoutes/shareExperience/ShareExperienceModules/ShareExperienceProfileIconModule';
 import useShareExperiencePassedTime from '@components/pages/mainRoutes/shareExperience/__hooks__/useShareExperiencePassedTime';
 
 import { ReplyGeneratorTopPartProps } from './types';
@@ -18,7 +18,7 @@ const ReplyGeneratorTopPart = (props: ReplyGeneratorTopPartProps) => {
         </CustomTypography>
       </div>
 
-      <ShareExperienceProfileIconModule
+      <UserProfileIconModule
         size={36}
         id={props.userId}
         avatar={props.avatar}

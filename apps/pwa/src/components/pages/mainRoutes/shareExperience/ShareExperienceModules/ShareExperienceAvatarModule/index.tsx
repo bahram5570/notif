@@ -1,9 +1,9 @@
 import UploadIcon from '@assets/icons/upload.svg';
+import { SHARE_EXPERIENCE_CHANGE_AVATAR_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 
-import { SHARE_EXPERIENCE_CHANGE_AVATAR_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
+import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 

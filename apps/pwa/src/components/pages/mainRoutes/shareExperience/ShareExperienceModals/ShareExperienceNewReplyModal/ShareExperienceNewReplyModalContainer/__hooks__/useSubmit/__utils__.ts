@@ -1,6 +1,5 @@
+import { ShareExperienceStateEnum } from '@repo/core/components/ShareExperience';
 import { currentDate } from '@repo/core/utils/dates';
-
-import { ShareExperienceStateEnum } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/enum';
 
 import { CommentsListTypes } from '../../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/__hooks__/useCommentsList/types';
 import { NewCommentMakerTypes } from './types';

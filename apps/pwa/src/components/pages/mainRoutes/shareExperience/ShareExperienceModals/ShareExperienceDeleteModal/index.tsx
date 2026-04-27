@@ -1,7 +1,7 @@
 import TrashIcon from '@assets/shared/icons/trash.svg';
+import { SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
 
-import { SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ShareExperienceApproveModalsModule from '../../ShareExperienceModules/ShareExperienceApproveModalsModule';

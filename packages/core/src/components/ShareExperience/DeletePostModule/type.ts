@@ -15,4 +15,4 @@ type ReplyTypes = {
 };
 type ItemsTypes = ExperienceTypes | CommentTypes | ReplyTypes;
 
-export type ShareExperienceDeleteModuleProps = ItemsTypes;
+export type DeletePostModuleProps = ItemsTypes;

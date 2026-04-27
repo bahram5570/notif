@@ -1,17 +1,17 @@
+import { CommentsCountLink, ReportButtonModule } from '@repo/core/components/shareExperience';
+
 import ShareExperienceBookmarkModule from '../../../../ShareExperienceModules/ShareExperienceBookmarkModule';
-import ShareExperienceCommentsModule from '../../../../ShareExperienceModules/ShareExperienceCommentsModule';
 import ShareExperienceLikesModule from '../../../../ShareExperienceModules/ShareExperienceLikesModule';
-import ShareExperienceReportModule from '../../../../ShareExperienceModules/ShareExperienceReportModule';
 import { CommentsBottomPartProps } from './types';
 
 const CommentsBottomPart = (props: CommentsBottomPartProps) => {
   return (
     <div className="w-full flex items-center justify-between">
-      {!props.self && <ShareExperienceReportModule id={props.id} />}
+      {!props.self && <ReportButtonModule id={props.id} />}
 
       {!props.self && <ShareExperienceBookmarkModule id={props.id} isBookmarked={props.isBookmarked} />}
 
-      <ShareExperienceCommentsModule isSelf={true} commentCount={props.commentCount} id={props.id} />
+      <CommentsCountLink isSelf={true} commentCount={props.commentCount} id={props.id} />
 
       <ShareExperienceLikesModule
         type="experience"

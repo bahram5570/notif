@@ -1,12 +1,12 @@
 import EditIcon from '@assets/icons/Pen 2.svg';
-import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
 import {
   SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME,
   SHARE_EXPERIENCE_ORDER_QUERY_NAME,
-} from '@components/pages/mainRoutes/shareExperience/constants';
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+} from '@repo/core/components/ShareExperience';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
+import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 

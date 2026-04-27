@@ -1,4 +1,4 @@
-export interface ShareExperienceProfileIconModuleProps {
+export interface UserProfileIconModuleProps {
   approvedProfile: boolean;
   isSelf: boolean;
   avatar: string;

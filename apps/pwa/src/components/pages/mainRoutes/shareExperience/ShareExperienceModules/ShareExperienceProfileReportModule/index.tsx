@@ -1,11 +1,11 @@
-import ThreeDotsIcon from '@assets/icons/threeDots.svg';
+import ThreeDotsIcon from '@assets/shared/icons/threeDots.svg';
+import { SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME } from '@repo/core/components/ShareExperience';
 
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-import { SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME } from '../../constants';
 import { ShareExperienceProfileReportModulePropsType } from './type';
 
 const ShareExperienceProfileReportModule = ({ userId }: ShareExperienceProfileReportModulePropsType) => {

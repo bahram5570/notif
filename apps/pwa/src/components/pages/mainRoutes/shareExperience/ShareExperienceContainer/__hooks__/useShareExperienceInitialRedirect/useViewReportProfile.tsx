@@ -1,10 +1,13 @@
 import { useEffect, useState } from 'react';
 
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import {
+  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
+  SHARE_EXPERIENCE_PROFILE_QUERY_NAME,
+} from '@repo/core/components/ShareExperience';
+
+import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-
-import { SHARE_EXPERIENCE_ORDER_QUERY_NAME, SHARE_EXPERIENCE_PROFILE_QUERY_NAME } from '../../../constants';
 
 const useViewReportProfile = (isLoaded: boolean) => {
   const [id, setId] = useState('');

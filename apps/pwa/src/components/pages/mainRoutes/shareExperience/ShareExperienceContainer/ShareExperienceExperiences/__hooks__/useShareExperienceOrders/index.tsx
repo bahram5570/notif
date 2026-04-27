@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import { queryDataHandler } from './__utils__';
+import { SHARE_EXPERIENCE_ORDER_QUERY_NAME } from '@repo/core/components/ShareExperience';
 
-import { SHARE_EXPERIENCE_ORDER_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
 import { useSearchParams } from 'next/navigation';
 
 import { MODAL_DEFAULT_Z_INDEX } from './constants';

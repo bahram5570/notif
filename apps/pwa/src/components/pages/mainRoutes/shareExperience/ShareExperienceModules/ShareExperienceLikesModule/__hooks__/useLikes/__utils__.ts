@@ -1,6 +1,5 @@
+import { ShareExperienceStateEnum } from '@repo/core/components/ShareExperience';
 import { pwaHttp } from '@repo/core/utils/pwaHttp';
-
-import { ShareExperienceStateEnum } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/enum';
 
 import {
   HandleLikeCountsTypes,

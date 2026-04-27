@@ -1,4 +1,4 @@
-import { ShareExperienceStateEnum } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/enum';
+import { ShareExperienceStateEnum } from '@repo/core/components/ShareExperience';
 
 import { CommentsListProps } from '../../types';
 

@@ -2,8 +2,8 @@ import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { shareExperienceCommentQueryMaker } from '@utils/shareExperience';
 
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
+import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';

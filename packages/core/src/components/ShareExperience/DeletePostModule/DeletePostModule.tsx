@@ -1,14 +1,13 @@
 import TrashIcon from '@assets/shared/icons/trash.svg';
 
-import { SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
-import { useAnalytics } from '@repo/core/hooks/useAnalytics';
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useAnalytics } from '../../../hooks/useAnalytics';
+import { useOverlayIndex } from '../../../hooks/useOverlayIndex';
+import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
+import { SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME } from '../constants';
+import { DeletePostModuleProps } from './type';
 
-import { ShareExperienceDeleteModuleProps } from './types';
-
-const ShareExperienceDeleteModule = (props: ShareExperienceDeleteModuleProps) => {
+export const DeletePostModule = (props: DeletePostModuleProps) => {
   const { callEvent } = useAnalytics();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
@@ -28,5 +27,3 @@ const ShareExperienceDeleteModule = (props: ShareExperienceDeleteModuleProps) =>
     </div>
   );
 };
-
-export default ShareExperienceDeleteModule;

@@ -1,8 +1,8 @@
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 

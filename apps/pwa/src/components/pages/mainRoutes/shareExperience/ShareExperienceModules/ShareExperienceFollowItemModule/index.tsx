@@ -1,7 +1,7 @@
+import { UserProfileIconModule } from '@repo/core/components/ShareExperience';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import ShareExperienceProfileIconModule from '../ShareExperienceProfileIconModule';
 import useFollowUser from './__hooks__/useFollowUser';
 import { ShareExperienceFollowItemModulePropsType } from './type';
 
@@ -25,7 +25,7 @@ const ShareExperienceFollowItemModule = ({
       className={`py-4  ${!isLastItem && 'border-b border-b-impo_Surface_SurfaceVariant'} flex flex-row-reverse justify-between items-center`}
     >
       <div className="flex flex-row-reverse items-center gap-2">
-        <ShareExperienceProfileIconModule
+        <UserProfileIconModule
           approvedProfile={false}
           avatar={item.image}
           size={48}

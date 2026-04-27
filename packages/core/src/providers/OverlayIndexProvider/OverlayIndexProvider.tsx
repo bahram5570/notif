@@ -2,7 +2,7 @@
 
 import { createContext, useState } from 'react';
 
-import { MODAL_DEFAULT_Z_INDEX } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useShareExperienceOrders/constants';
+import { MODAL_DEFAULT_Z_INDEX } from '../../components/ui/CustomModal/constants';
 
 import { GetZindexHandlerType, IncreaseZIndexHandlerType, OverlayIndexContextType } from './type';
 
@@ -11,7 +11,7 @@ export const OverlayIndexContext = createContext<OverlayIndexContextType>({
   getZIndex: () => MODAL_DEFAULT_Z_INDEX,
 });
 
-const OverlayIndexProvider = ({ children }: { children: React.ReactNode }) => {
+export const OverlayIndexProvider = ({ children }: { children: React.ReactNode }) => {
   const [modalZIndexes, setModalZIndexes] = useState<Record<string, number>>({});
 
   // use id for makes uniq key of modalZIndex object
@@ -47,5 +47,3 @@ const OverlayIndexProvider = ({ children }: { children: React.ReactNode }) => {
     </OverlayIndexContext.Provider>
   );
 };
-
-export default OverlayIndexProvider;

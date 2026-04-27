@@ -1,10 +1,10 @@
 import InfoIcon from '@assets/icons/dangerTriangle.svg';
+import { SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME } from '@repo/core/components/ShareExperience';
 
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ShareExperienceApproveModalsModule from '../../ShareExperienceModules/ShareExperienceApproveModalsModule';
-import { SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME } from '../../constants';
 import useShareExperienceProfileReport from './__hooks__/useShareExperienceProfileReport';
 
 const ShareExperienceProfileReportModal = () => {

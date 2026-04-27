@@ -1,11 +1,10 @@
 import ArrowRightIcon from '@assets/icons/ArrowRight.svg';
+import { SHARE_EXPERIENCE_ASSOCIATION_LIST_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-
-import { SHARE_EXPERIENCE_ASSOCIATION_LIST_QUERY_NAME } from '../../../constants';
 
 const ViewAllButton = () => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
