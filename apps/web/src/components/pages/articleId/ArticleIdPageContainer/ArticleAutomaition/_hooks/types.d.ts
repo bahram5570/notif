@@ -16,4 +16,3 @@ export type SendOtpTyps = {
   valid: boolean;
   id: string;
 };
-

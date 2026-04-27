@@ -3,6 +3,7 @@ import {
   BackToSubscriptionIconComponent,
   CalendarIconComponent,
   InfoIconComponent,
+  LinkToMainPageComponent,
   NotificationIconComponent,
   PregnancyCheckupBackButtonIconComponent,
   PrifileIconComponent,
@@ -12,13 +13,14 @@ import {
 import { HeaderIconEnums } from './enums';
 import { IconsListTypes } from './types';
 
-export const ICONS_SIZE = 32;
+export const HEADER_ELEMENT_SIZE = 40;
 
 export const iconsList: IconsListTypes = {
   [HeaderIconEnums.Info]: InfoIconComponent,
   [HeaderIconEnums.Profile]: PrifileIconComponent,
   [HeaderIconEnums.Calendar]: CalendarIconComponent,
   [HeaderIconEnums.BackButton]: BackButtonIconComponent,
+  [HeaderIconEnums.LinkToMainPage]: LinkToMainPageComponent,
   [HeaderIconEnums.Notification]: NotificationIconComponent,
   [HeaderIconEnums.TicketsHistory]: TicketsHistoryIconComponent,
   [HeaderIconEnums.ProfileSupportTicket]: ProfileTicketsHistory,

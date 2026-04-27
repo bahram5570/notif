@@ -11,31 +11,16 @@ export const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
   const LeftElement2 = props.leftElement2 ? iconsList[props.leftElement2] : () => <></>;
   const RightElement = props.rightElement ? iconsList[props.rightElement] : () => <></>;
 
-  const hasBothLeftElements = props.leftElement1 && props.leftElement2;
-
   const contents = (
     <div
-      style={{ height: 56, ...props.style }}
+      style={{ height: HEADER_HEIGHT, ...props.style }}
       className={`flex items-end w-full backdrop-blur-md bg-impo_Neutral_Background ${props.className}`}
     >
       <div className="flex px-4 py-2 w-full">
         <div className="w-fit min-w-fit flex gap-2">
           <>
-            {props.leftElement1 && (
-              <div
-                className={`h-10 w-10 min-w-10 min-h-10 flex items-center justify-center bg-impo_Neutral_Surface rounded-full`}
-              >
-                <LeftElement1 />
-              </div>
-            )}
-
-            {props.leftElement2 && (
-              <div
-                className={`h-10 w-10 min-w-10 min-h-10 flex items-center justify-center  bg-impo_Neutral_Surface rounded-full`}
-              >
-                <LeftElement2 />
-              </div>
-            )}
+            {props.leftElement1 && <LeftElement1 />}
+            {props.leftElement2 && <LeftElement2 />}
           </>
         </div>
 
@@ -51,20 +36,18 @@ export const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
               {props.rightElementScript || ''}
             </CustomTypography>
           )}
-          {props.rightElement && (
-            <div
-              className={`h-10 w-10 min-w-10 min-h-10 flex items-center justify-center ${hasBothLeftElements && 'bg-impo_Neutral_Surface rounded-full'}`}
-            >
-              <RightElement />
-            </div>
-          )}
+
+          {props.rightElement && <RightElement />}
         </div>
       </div>
     </div>
   );
 
   return (
-    <div className={`fixed left-0 right-0 top-0 mx-auto flex z-40`} style={{ maxWidth: MAX_SCREEN_WIDTH, height: 56 }}>
+    <div
+      className={`fixed left-0 right-0 top-0 mx-auto flex z-40`}
+      style={{ maxWidth: MAX_SCREEN_WIDTH, height: HEADER_HEIGHT }}
+    >
       {props.hasScalingAnimation ? <WidgetScaleModule>{contents}</WidgetScaleModule> : <>{contents}</>}
     </div>
   );

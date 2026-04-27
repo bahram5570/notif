@@ -10,100 +10,105 @@ import Link from 'next/link';
 
 import { usePageNavigationLoading } from '../../hooks/usePageNavigationLoading';
 import { CustomSpinner } from '../ui/CustomSpinner';
-import { ICONS_SIZE } from './constants';
+import { CustomTypography } from '../ui/CustomTypography';
+import { HEADER_ELEMENT_SIZE } from './constants';
 import { IconComponentMakerProps } from './types';
 
 export const BackButtonIconComponent = () => {
   return (
-    <IconComponentMaker
-      path="BACK"
-      loadingId="back"
-      iconElement={<ArrowIcon className="w-6 h-full stroke-2 stroke-impo_Surface_Outline" />}
-    />
+    <IconComponentMaker path="BACK" loadingId="back">
+      <ArrowIcon className="w-6 h-full stroke-2 stroke-impo_Surface_Outline" />
+    </IconComponentMaker>
   );
 };
 
 export const PregnancyCheckupBackButtonIconComponent = () => {
   return (
-    <IconComponentMaker
-      path="/"
-      loadingId="back"
-      iconElement={<ArrowIcon className="w-6 h-full stroke-2 stroke-impo_Surface_Outline" />}
-    />
+    <IconComponentMaker path="/" loadingId="back">
+      <ArrowIcon className="w-6 h-auto stroke-2 stroke-impo_Surface_Outline" />
+    </IconComponentMaker>
   );
 };
 
 export const BackToSubscriptionIconComponent = () => {
   return (
-    <IconComponentMaker
-      path="/protected/subscription"
-      loadingId="backToSubscription"
-      iconElement={<ArrowIcon className="w-6 h-full stroke-2 stroke-impo_Surface_Outline" />}
-    />
+    <IconComponentMaker path="/protected/subscription" loadingId="backToSubscription">
+      <ArrowIcon className="w-6 h-auto stroke-2 stroke-impo_Surface_Outline" />
+    </IconComponentMaker>
   );
 };
 
 export const PrifileIconComponent = () => {
   return (
-    <IconComponentMaker
-      loadingId="profile"
-      path="/protected/profile"
-      iconElement={<ProfileIcon className="w-6 h-full stroke-impo_Surface_InverseSurface" />}
-    />
+    <IconComponentMaker loadingId="profile" path="/protected/profile">
+      <ProfileIcon className="w-6 h-auto stroke-impo_Surface_InverseSurface" />
+    </IconComponentMaker>
   );
 };
 
 export const CalendarIconComponent = () => {
   return (
-    <IconComponentMaker
-      loadingId="calendar"
-      path="/protected/calendar"
-      iconElement={<CalendarIcon className="w-6 h-full stroke-impo_Surface_InverseSurface" />}
-    />
+    <IconComponentMaker loadingId="calendar" path="/protected/calendar">
+      <CalendarIcon className="w-6 h-auto stroke-impo_Surface_InverseSurface" />
+    </IconComponentMaker>
   );
 };
 
 export const TicketsHistoryIconComponent = () => {
   return (
-    <IconComponentMaker
-      loadingId="history"
-      path="/protected/clinic/ticketsHistory"
-      iconElement={<TicketsHistoryIcon className="w-8 h-full fill-impo_Surface_Outline" />}
-    />
+    <IconComponentMaker loadingId="history" path="/protected/clinic/ticketsHistory">
+      <TicketsHistoryIcon className="w-6 h-auto fill-impo_Surface_Outline" />
+    </IconComponentMaker>
   );
 };
 
 export const ProfileTicketsHistory = () => {
   return (
-    <div className="flex justify-center items-center w-12 h-12 border-[1px] border-impo_Neutral_Surface rounded-full">
-      <IconComponentMaker
-        loadingId="profileTicketHistory"
-        path="/protected/supportTicketHistory"
-        iconElement={<HistoryIcon className="w-6 h-full stroke-impo_Surface_InverseSurface" />}
-      />
-    </div>
+    <IconComponentMaker loadingId="profileTicketHistory" path="/protected/supportTicketHistory">
+      <HistoryIcon className="w-7 h-auto stroke-impo_Surface_InverseSurface" />
+    </IconComponentMaker>
   );
 };
 
 export const NotificationIconComponent = () => {
   return (
-    <IconComponentMaker
-      loadingId="notification"
-      path="/protected/notificationHistory"
-      iconElement={<BellIcon className="w-6 h-full stroke-impo_Surface_InverseSurface" />}
-    />
+    <IconComponentMaker loadingId="notification" path="/protected/notificationHistory">
+      <BellIcon className="w-6 h-auto stroke-impo_Surface_InverseSurface" />
+    </IconComponentMaker>
   );
 };
 
 export const InfoIconComponent = () => {
   return (
-    <Link href="https://impo.app/" target="_blank">
-      <InfoIcon className="w-7 h-full fill-impo_Surface_Outline" />
+    <Link
+      className="flex justify-center items-center rounded-full bg-impo_Neutral_Surface"
+      href="https://impo.app/"
+      target="_blank"
+      style={{
+        minHeight: HEADER_ELEMENT_SIZE,
+        minWidth: HEADER_ELEMENT_SIZE,
+        height: HEADER_ELEMENT_SIZE,
+        width: HEADER_ELEMENT_SIZE,
+      }}
+    >
+      <InfoIcon className="w-6 h-full fill-impo_Surface_InverseSurface" />
     </Link>
   );
 };
 
-const IconComponentMaker: IconComponentMakerProps = ({ iconElement, path, loadingId }) => {
+export const LinkToMainPageComponent = () => {
+  return (
+    <IconComponentMaker path="/" loadingId="LinkToMainPage">
+      <div style={{ height: HEADER_ELEMENT_SIZE - 8 }} className="w-fit px-5 flex items-center justify-center">
+        <CustomTypography fontSize="Lable_MediumProminet" className="!text-impo_Neutral_OnBackground">
+          بازگشت به صفحه اصلی
+        </CustomTypography>
+      </div>
+    </IconComponentMaker>
+  );
+};
+
+const IconComponentMaker = ({ path, loadingId, className, children }: IconComponentMakerProps) => {
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
   const id = `IconComponentMaker_${loadingId}`;
@@ -111,21 +116,30 @@ const IconComponentMaker: IconComponentMakerProps = ({ iconElement, path, loadin
   const clickHandler = () => {
     if (!pageNavigationLoading) {
       if (path === 'BACK') {
-        pageNavigationHandler({ showProgressBar: false, linkTo: -1, id });
+        pageNavigationHandler({ showProgressBar: false, id, linkTo: -1 });
       } else {
-        pageNavigationHandler({ showProgressBar: false, linkTo: path, id });
+        pageNavigationHandler({ showProgressBar: false, id, linkTo: path });
       }
     }
   };
 
   return (
     <div
-      className="cursor-pointer flex justify-center items-center"
-      style={{ width: ICONS_SIZE, height: ICONS_SIZE }}
+      className={`relative w-fit rounded-full bg-impo_Neutral_Surface cursor-pointer ${className}`}
+      style={{ height: HEADER_ELEMENT_SIZE, minHeight: HEADER_ELEMENT_SIZE, minWidth: HEADER_ELEMENT_SIZE }}
       onClick={clickHandler}
     >
-      {pageNavigationLoading === id && <CustomSpinner size={28} className="border-impo_Surface_Outline" />}
-      {pageNavigationLoading !== id && iconElement}
+      {pageNavigationLoading === id && (
+        <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center">
+          <CustomSpinner size={28} className="border-impo_Surface_Outline" />
+        </div>
+      )}
+
+      <div
+        className={`h-full flex justify-center items-center ${pageNavigationLoading === id ? 'opacity-0' : 'opacity-100'}`}
+      >
+        {children}
+      </div>
     </div>
   );
 };

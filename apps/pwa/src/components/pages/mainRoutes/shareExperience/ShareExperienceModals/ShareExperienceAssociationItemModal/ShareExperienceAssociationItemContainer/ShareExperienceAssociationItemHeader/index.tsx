@@ -54,7 +54,9 @@ const ShareExperienceAssociationItemHeader = (props: ShareExperienceAssociationI
 
       <div
         className={`origin-top transform-gpu will-change-[max-height,opacity,transform] ${
-          props.isScrolled ? 'opacity-0 -translate-y-2 scale-y-95 max-h-0' : 'opacity-100 translate-y-0 scale-y-100 max-h-[300px]'
+          props.isScrolled
+            ? 'opacity-0 -translate-y-2 scale-y-95 max-h-0'
+            : 'opacity-100 translate-y-0 scale-y-100 max-h-[300px]'
         }`}
         style={{
           overflow: 'hidden',

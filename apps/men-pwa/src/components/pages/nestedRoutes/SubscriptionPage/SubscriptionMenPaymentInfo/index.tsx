@@ -45,7 +45,7 @@ const SubscriptionMenPaymentInfo = (props: SubscriptionMenPaymentInfoTypes) => {
           >{`${props.vatText} ${unitText}`}</CustomTypography>
         </div>
 
-        <div className='w-full h-[1px] bg-impo_Grey_50 my-3' />
+        <div className="w-full h-[1px] bg-impo_Grey_50 my-3" />
 
         <div className="w-full flex items-center justify-between">
           <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">

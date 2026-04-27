@@ -26,7 +26,7 @@ const DeletePartnerModal = () => {
             از حذف همدلت مطمئنی؟
           </CustomTypography>
           <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
-            { `بعد از حذف همدلی کلیه اطلاعاتت (تاریخچه چالش ها، خاطره بازی، پیام ها) پاک میشه`}
+            {`بعد از حذف همدلی کلیه اطلاعاتت (تاریخچه چالش ها، خاطره بازی، پیام ها) پاک میشه`}
           </CustomTypography>
         </div>
 
