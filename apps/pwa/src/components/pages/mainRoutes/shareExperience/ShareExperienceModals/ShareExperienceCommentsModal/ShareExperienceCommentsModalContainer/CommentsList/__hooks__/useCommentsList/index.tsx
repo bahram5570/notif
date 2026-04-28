@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 
-import { EXPERIENCES_COMMENTS_PAGE_SIZE } from '@repo/core/components/ShareExperience';
+import { CommentsResponseTypes, EXPERIENCES_COMMENTS_PAGE_SIZE } from '@repo/core/components/ShareExperience';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import useShareExperiencePageNo from '../../../__hooks__/useShareExperiencePageNo';
-import { CommentsIdTypes, CommentsResponseTypes } from './types';
+import { UseCommentsListProps } from './types';
 
-const useCommentsList = (id: CommentsIdTypes) => {
+const useCommentsList = ({ id }: UseCommentsListProps) => {
   const [pageNo, setPageNo] = useState(0);
   const { updatePageNo: changePageNoHandler } = useShareExperiencePageNo(id);
   const { newQuery, updateQuery, getQuery } = useCustomReactQuery(['comments ' + id]);

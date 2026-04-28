@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 
+import { CommentsResponseTypes } from '@repo/core/components/ShareExperience';
+
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { QueryExperiencesDataTypes } from '../../../../ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
-import { CommentsResponseTypes } from '../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/__hooks__/useCommentsList/types';
 import { IdInfoTypes } from './types';
 
 const useCommentDelete = () => {

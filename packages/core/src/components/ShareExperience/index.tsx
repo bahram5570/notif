@@ -1,3 +1,8 @@
+export { ApproveModalsModule } from './ApproveModalsModule/ApproveModalsModule';
+export { SocialActions } from './SocialActions/SocialActions';
+
+export { ContentsSectionModule } from './ContentsSectionModule/ContentsSectionModule';
+
 export { UserProfileIconModule } from './UserProfileIconModule/UserProfileIconModule';
 export { CommentsCountLink } from './CommentsCountLink/CommentsCountLink';
 export { BookmarkButton } from './BookmarkButton/BookmarkButton';
@@ -8,3 +13,4 @@ export { LikeActionModule } from './LikeActionModule/LikeActionModule';
 
 export * from './constants';
 export * from './enum';
+export type * from './types';

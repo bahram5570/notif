@@ -1,3 +1,4 @@
+import { ContentsSectionModule } from '@repo/core/components/ShareExperience';
 import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
@@ -6,7 +7,6 @@ import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 import ShareExperienceBottomPart from '../../../ShareExperienceContainer/ShareExperienceExperiences/ShareExperienceBottomPart';
 import ShareExperienceTopPart from '../../../ShareExperienceContainer/ShareExperienceExperiences/ShareExperienceTopPart';
 import ShareExperienceNewLink from '../../../ShareExperienceContainer/ShareExperienceNewLink';
-import ShareExperienceContentsModule from '../../../ShareExperienceModules/ShareExperienceContentsModule';
 import EmptyState from './EmptyState';
 import ShareExperienceAssociationItemHeader from './ShareExperienceAssociationItemHeader';
 import useGetAssociationInfo from './__hooks__/useGetAssociationInfo';
@@ -68,7 +68,7 @@ const ShareExperienceAssociationItemContainer = ({
                       <ShareExperienceTopPart {...item} />
 
                       <div className="w-full pr-10">
-                        <ShareExperienceContentsModule
+                        <ContentsSectionModule
                           image={item.image}
                           text={item.text}
                           hasLinkTo={true}
@@ -77,7 +77,7 @@ const ShareExperienceAssociationItemContainer = ({
                           tags={item.tags}
                         />
 
-                        <ShareExperienceBottomPart {...item} />
+                        <ShareExperienceBottomPart {...item} type="experience" shareId={item.id} />
                       </div>
                     </div>
                   );

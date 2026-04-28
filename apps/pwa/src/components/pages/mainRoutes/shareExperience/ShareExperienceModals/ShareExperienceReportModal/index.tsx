@@ -1,10 +1,9 @@
 import InfoIcon from '@assets/icons/dangerTriangle.svg';
-import { SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
+import { ApproveModalsModule, SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
 
 import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-import ShareExperienceApproveModalsModule from '../../ShareExperienceModules/ShareExperienceApproveModalsModule';
 import useShareExperienceReport from './__hooks__/useShareExperienceReport';
 
 const ShareExperienceReportModal = () => {
@@ -25,7 +24,7 @@ const ShareExperienceReportModal = () => {
   );
   return (
     <>
-      <ShareExperienceApproveModalsModule
+      <ApproveModalsModule
         description="ایمپویی عزیز، از ریپورت کردن این پست مطمئنی؟"
         applyHandler={() => reportHandler(queryData || '')}
         isOpen={isOpen}

@@ -1,10 +1,9 @@
 import InfoIcon from '@assets/icons/dangerTriangle.svg';
-import { SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME } from '@repo/core/components/ShareExperience';
+import { ApproveModalsModule, SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME } from '@repo/core/components/ShareExperience';
 
 import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-import ShareExperienceApproveModalsModule from '../../ShareExperienceModules/ShareExperienceApproveModalsModule';
 import useShareExperienceProfileReport from './__hooks__/useShareExperienceProfileReport';
 
 const ShareExperienceProfileReportModal = () => {
@@ -24,7 +23,7 @@ const ShareExperienceProfileReportModal = () => {
   const zIndex = getZIndex(SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME, queryData?.id);
 
   return (
-    <ShareExperienceApproveModalsModule
+    <ApproveModalsModule
       description="ایمپویی عزیز، از ریپورت کردن این حساب کاربری مطمئنی؟"
       applyHandler={() => reportHandler(queryData?.id || '')}
       isOpen={queryParams !== null}

@@ -1,7 +1,6 @@
-import { ShareExperienceStateEnum } from '@repo/core/components/ShareExperience';
+import { CommentsListTypes, ShareExperienceStateEnum } from '@repo/core/components/ShareExperience';
 import { currentDate } from '@repo/core/utils/dates';
 
-import { CommentsListTypes } from '../../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/__hooks__/useCommentsList/types';
 import { NewCommentMakerTypes } from './types';
 
 export const newCommentMaker: NewCommentMakerTypes = ({ avatar, name, text, commentId, shareId }) => {

@@ -1,20 +1,20 @@
 import { useEffect, useState } from 'react';
 
-import { EXPERIENCES_PAGE_SIZE } from '@repo/core/components/ShareExperience';
+import { EXPERIENCES_PAGE_SIZE, TopicExperiencesResponseTypes } from '@repo/core/components/ShareExperience';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
-import { ExperiencesResponseTypes, useGetDataPropsType } from './type';
+import { useGetDataPropsType } from './type';
 
 const useGetData = ({ topicId }: useGetDataPropsType) => {
   const [pageNo, setPageNo] = useState(0);
 
   const { newQuery, updateQuery, getQuery, removeQuery } = useCustomReactQuery(['topicExperiences']);
 
-  const topicExperiencesData = getQuery<ExperiencesResponseTypes>({ queryKey: ['topicExperiences'] });
+  const topicExperiencesData = getQuery<TopicExperiencesResponseTypes>({ queryKey: ['topicExperiences'] });
 
-  const successHandler = (v: ExperiencesResponseTypes) => {
+  const successHandler = (v: TopicExperiencesResponseTypes) => {
     if (topicExperiencesData) {
       const list = { ...topicExperiencesData, expirences: [...topicExperiencesData.expirences, ...v.expirences] };
       updateQuery({ queryKey: ['topicExperiences'], payload: list });
@@ -25,7 +25,7 @@ const useGetData = ({ topicId }: useGetDataPropsType) => {
 
   const api = `shareeexperience/v3/topic/${topicId}/${pageNo}/${EXPERIENCES_PAGE_SIZE}`;
 
-  const { callApi, isLoading: apiLoading } = usePwaApi<ExperiencesResponseTypes>({
+  const { callApi, isLoading: apiLoading } = usePwaApi<TopicExperiencesResponseTypes>({
     api,
     method: 'GET',
     fetchOnMount: false,

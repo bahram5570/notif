@@ -1,29 +1,22 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { shareExperienceCommentQueryMaker } from '@utils/shareExperience';
+import { shareExperienceCommentQueryMaker } from '../../../utils/shareExperience';
 
-import { useCustomToast } from '@repo/core/hooks/useCustomToast';
-import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
+import { useCustomToast } from '../../../hooks/useCustomToast';
+import { useOverlayIndex } from '../../../hooks/useOverlayIndex';
+import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
+import { useWidgetActions } from '../../../hooks/useWidgetActions';
+import { CustomImage } from '../../ui/CustomImage';
+import { CustomTypography } from '../../ui/CustomTypography';
+import { TagType } from '../types';
+import { ContentsSectionModuleProps } from './type';
 
-import { TagType } from '../../ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
-import { ShareExperienceContentsModuleProps } from './types';
-
-const ShareExperienceContentsModule = ({
-  text,
-  image,
-  hasLinkTo,
-  isSelf,
-  id,
-  tags,
-}: ShareExperienceContentsModuleProps) => {
+export const ContentsSectionModule = (props: ContentsSectionModuleProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { increaseZIndex } = useOverlayIndex();
   const { actionHandler } = useWidgetActions();
   const toast = useCustomToast();
+  const { hasLinkTo, id, image, isSelf, text, tags } = props;
 
   const clickHandler = (tag: TagType) => {
     if (tag.action) {
@@ -81,5 +74,3 @@ const ShareExperienceContentsModule = ({
     </div>
   );
 };
-
-export default ShareExperienceContentsModule;

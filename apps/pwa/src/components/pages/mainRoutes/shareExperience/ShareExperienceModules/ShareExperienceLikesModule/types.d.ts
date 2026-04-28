@@ -15,6 +15,12 @@ type ReplyTypes = {
   replyId: string;
   commentId: string;
 };
+
+type AssociationTypes = {
+  type: 'association';
+  shareId: string;
+};
+
 type ItemsTypes = ExperienceTypes | CommentTypes | ReplyTypes;
 
 export type ShareExperienceLikesModuleProps = ItemsTypes & {

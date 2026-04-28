@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
 
+import { ProfileResponsePropsType } from '@repo/core/components/ShareExperience';
+
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import useShareExperenceProfileGetData from '../../../../ShareExperienceProfileModal/ShareExperienceProfileModalContainer/__hooks__/useGetData';
-import { ShareExperenceProfileResponsePropsType } from '../../../../ShareExperienceProfileModal/ShareExperienceProfileModalContainer/__hooks__/useGetData/type';
 
 const useGetData = (userId: string | undefined) => {
-  const [profileData, setProfileData] = useState<ShareExperenceProfileResponsePropsType>();
+  const [profileData, setProfileData] = useState<ProfileResponsePropsType>();
   const [loading, setLoading] = useState(true);
   const { getQuery } = useCustomReactQuery(['shareExperienceProfile'], { gcTime: 1000 * 60 * 5 });
-  const queryData = getQuery<ShareExperenceProfileResponsePropsType>({ queryKey: ['shareExperienceProfile'] });
+  const queryData = getQuery<ProfileResponsePropsType>({ queryKey: ['shareExperienceProfile'] });
   const { callApi } = useShareExperenceProfileGetData(userId);
 
   useEffect(() => {

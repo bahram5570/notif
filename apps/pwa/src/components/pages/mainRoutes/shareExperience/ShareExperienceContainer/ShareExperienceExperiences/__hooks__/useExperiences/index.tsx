@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
-import { EXPERIENCES_PAGE_SIZE } from '@repo/core/components/ShareExperience';
+import { EXPERIENCES_PAGE_SIZE, ExperiencesResponseTypes } from '@repo/core/components/ShareExperience';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
-import { ExperiencesResponseTypes, QueryExperiencesDataTypes, SelectedCategoryIdTypes } from './types';
+import { QueryExperiencesDataTypes, SelectedCategoryIdTypes } from './types';
 
 const useExperiences = (selectedCategoryId: SelectedCategoryIdTypes) => {
   const [pageNo, setPageNo] = useState(0);

@@ -1,6 +1,9 @@
 import { useRef } from 'react';
 
-import { SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
+import {
+  ContentsSectionModule,
+  SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME,
+} from '@repo/core/components/ShareExperience';
 import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
 
 import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
@@ -8,7 +11,6 @@ import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 
 import ShareExperienceBottomPart from '../../../ShareExperienceContainer/ShareExperienceExperiences/ShareExperienceBottomPart';
 import ShareExperienceTopPart from '../../../ShareExperienceContainer/ShareExperienceExperiences/ShareExperienceTopPart';
-import ShareExperienceContentsModule from '../../../ShareExperienceModules/ShareExperienceContentsModule';
 import ShareExperienceNewCommentFooterModule from '../../../ShareExperienceModules/ShareExperienceNewCommentFooterModule';
 import ShareExperienceTopicModalContainerLayout from './ShareExperienceTopicModalContainerLayout';
 import useGetData from './__hooks__/useGetData';
@@ -56,7 +58,7 @@ const ShareExperienceTopicModalContainer = ({
               <ShareExperienceTopPart {...item} />
 
               <div className="w-full pr-10">
-                <ShareExperienceContentsModule
+                <ContentsSectionModule
                   isSelf={item.selfExperience}
                   image={item.image}
                   text={item.text}
@@ -65,7 +67,7 @@ const ShareExperienceTopicModalContainer = ({
                   tags={item.tags}
                 />
 
-                <ShareExperienceBottomPart {...item} />
+                <ShareExperienceBottomPart {...item} type="experience" shareId={item.id} />
               </div>
             </div>
           ))}

@@ -1,7 +1,8 @@
+import { ContentsSectionModule } from '@repo/core/components/ShareExperience';
+
 import ShareExperienceBottomPart from '../../ShareExperienceContainer/ShareExperienceExperiences/ShareExperienceBottomPart';
 import ShareExperienceTopPart from '../../ShareExperienceContainer/ShareExperienceExperiences/ShareExperienceTopPart';
 import ShareExperenceProfileTabListEmpty from '../../ShareExperienceModals/ShareExperienceProfileModal/ShareExperienceProfileModalContainer/ShareExperenceProfileTabList/ShareExperenceProfileTabListEmpty';
-import ShareExperienceContentsModule from '../ShareExperienceContentsModule';
 import { ShareExperienceProfileDataPropsType } from './type';
 
 const ShareExperienceProfileData = ({ isSelf, experienceDataList, isLoading }: ShareExperienceProfileDataPropsType) => {
@@ -18,7 +19,7 @@ const ShareExperienceProfileData = ({ isSelf, experienceDataList, isLoading }: S
                 <ShareExperienceTopPart {...item} selfExperience={isSelf} />
 
                 <div className="w-full pr-10">
-                  <ShareExperienceContentsModule
+                  <ContentsSectionModule
                     isSelf={false}
                     image={item.image}
                     text={item.text}
@@ -27,7 +28,12 @@ const ShareExperienceProfileData = ({ isSelf, experienceDataList, isLoading }: S
                     tags={item.tags}
                   />
 
-                  <ShareExperienceBottomPart {...item} selfExperience={item.selfExperience} />
+                  <ShareExperienceBottomPart
+                    {...item}
+                    selfExperience={item.selfExperience}
+                    type="experience"
+                    shareId={item.id}
+                  />
                 </div>
               </div>
             );

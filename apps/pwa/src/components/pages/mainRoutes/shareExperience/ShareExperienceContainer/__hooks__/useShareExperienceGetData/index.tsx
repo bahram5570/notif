@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 
+import { ShareExperienceResponseTypes } from '@repo/core/components/ShareExperience';
+
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-
-import { ShareExperienceResponseTypes } from './types';
 
 const useShareExperienceGetData = () => {
   const [data, setData] = useState<ShareExperienceResponseTypes | undefined>(undefined);

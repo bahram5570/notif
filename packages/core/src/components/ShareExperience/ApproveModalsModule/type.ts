@@ -1,4 +1,4 @@
-export interface ShareExperienceApproveModalsModuleProps {
+export interface ApproveModalsModulepProps {
   applyHandler: () => void;
   cancelButtonText: string;
   applyButtonText: string;

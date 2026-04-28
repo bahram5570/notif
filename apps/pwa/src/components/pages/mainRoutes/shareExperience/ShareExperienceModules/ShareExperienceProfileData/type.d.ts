@@ -1,6 +1,6 @@
-import { ShareExperenceProfileResponsePropsType } from '../../ShareExperienceModals/ShareExperienceProfileModal/ShareExperienceProfileModalContainer/__hooks__/useGetData/type';
+import { ProfileResponsePropsType } from '@repo/core/components/ShareExperience';
 
-export type selfType = Pick<ShareExperenceProfileResponsePropsType, 'activities'>['activities'];
+export type selfType = Pick<ProfileResponsePropsType, 'activities'>['activities'];
 
 export type ShareExperienceProfileDataPropsType = {
   isSelf: boolean;

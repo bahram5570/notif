@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 
-import { SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
+import {
+  CommentsResponseTypes,
+  ProfileResponsePropsType,
+  SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME,
+} from '@repo/core/components/ShareExperience';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
@@ -10,9 +14,7 @@ import { useRouter } from 'next/navigation';
 
 import { QueryExperiencesDataTypes } from '../../../../ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
 import { AssociationExperiencesResponseType } from '../../../ShareExperienceAssociationItemModal/ShareExperienceAssociationItemContainer/__hooks__/useGetAssociationItemData/type';
-import { CommentsResponseTypes } from '../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/__hooks__/useCommentsList/types';
 import { SelfExperienceDataType } from '../../../ShareExperienceProfileModal/ShareExperienceProfileModalContainer/ShareExperenceProfileTabList/ShareExperienceProfileActivities/__hooks__/useActivitiesData/type';
-import { ShareExperenceProfileResponsePropsType } from '../../../ShareExperienceProfileModal/ShareExperienceProfileModalContainer/__hooks__/useGetData/type';
 import { ApiInfoTypes, FollowHandlerTypes } from './types';
 
 const useShareExperienceFollow = (experienceId?: string) => {
@@ -28,7 +30,7 @@ const useShareExperienceFollow = (experienceId?: string) => {
     const exitTopicExperienceData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['topicExperiences'] });
     const exitActivitiesData = getQuery<SelfExperienceDataType>({ queryKey: ['activities'] });
     const exitSelfExperienceData = getQuery<SelfExperienceDataType>({ queryKey: ['selfExperience'] });
-    const shareExperienceProfileData = getQuery<ShareExperenceProfileResponsePropsType>({
+    const shareExperienceProfileData = getQuery<ProfileResponsePropsType>({
       queryKey: ['shareExperienceProfileData'],
     });
 

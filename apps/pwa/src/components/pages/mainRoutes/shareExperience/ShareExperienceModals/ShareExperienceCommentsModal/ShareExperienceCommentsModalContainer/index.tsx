@@ -1,12 +1,14 @@
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
-import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
+import {
+  ContentsSectionModule,
+  SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME,
+} from '@repo/core/components/ShareExperience';
 import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 
-import ShareExperienceContentsModule from '../../../ShareExperienceModules/ShareExperienceContentsModule';
 import ShareExperienceNewCommentFooterModule from '../../../ShareExperienceModules/ShareExperienceNewCommentFooterModule';
 import CommentsBottomPart from './CommentsBottomPart';
 import CommentsList from './CommentsList';
@@ -17,7 +19,7 @@ import { ShareExperienceCommentsModalContainerProps } from './types';
 
 const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsModalContainerProps) => {
   const { newCommentQueries } = useNewCommentQueries(props.id);
-  const { isLoading, commentsData, updatePageNo, pageNo, isFirstLoad } = useCommentsList(props.id);
+  const { isLoading, commentsData, updatePageNo, pageNo, isFirstLoad } = useCommentsList({ id: props.id });
 
   useOverflowHandler(props.queryParam !== null);
 
@@ -43,7 +45,7 @@ const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsMod
           >
             <CommentsTopPart {...commentsData} id={props.id} />
 
-            <ShareExperienceContentsModule
+            <ContentsSectionModule
               isSelf={commentsData.self}
               image={commentsData.image}
               text={commentsData.text}

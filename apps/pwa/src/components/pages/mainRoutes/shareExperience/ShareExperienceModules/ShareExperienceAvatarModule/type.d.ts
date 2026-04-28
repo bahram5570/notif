@@ -1,6 +1,6 @@
-import { ShareExperenceProfileResponsePropsType } from '../../ShareExperienceModals/ShareExperienceProfileModal/ShareExperienceProfileModalContainer/__hooks__/useGetData/type';
+import { ProfileResponsePropsType } from '@repo/core/components/ShareExperience';
 
-export type ProfileType = Pick<ShareExperenceProfileResponsePropsType, 'profile'>['profile'];
+export type ProfileType = Pick<ProfileResponsePropsType, 'profile'>['profile'];
 type AvatarItemType = Pick<ProfileType, 'avatarImage' | 'id' | 'username'>;
 
 export interface ShareExperienceAvatarModulePropsType extends AvatarItemType {

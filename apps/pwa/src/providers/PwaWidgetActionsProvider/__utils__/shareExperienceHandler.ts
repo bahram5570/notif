@@ -3,7 +3,7 @@ import {
   shareExperienceAssociationQueryMaker,
   shareExperienceCommentQueryMaker,
   shareExperienceTopicQueryMaker,
-} from '@utils/shareExperience';
+} from '@repo/core/utils/shareExperience';
 
 export const shareExperienceHandler = (queries?: string) => {
   const params = new URLSearchParams(queries);

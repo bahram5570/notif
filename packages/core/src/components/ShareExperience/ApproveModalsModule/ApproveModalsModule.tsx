@@ -1,25 +1,25 @@
-import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { CustomModal } from '@repo/core/components/ui/CustomModal';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { Loading } from '@repo/core/components/ui/Loading';
-
-import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { useRouter } from 'next/navigation';
 
-import { ShareExperienceApproveModalsModuleProps } from './types';
+import { useAnalytics } from '../../../hooks/useAnalytics';
+import { CustomButton } from '../../ui/CustomButton';
+import { CustomModal } from '../../ui/CustomModal';
+import { CustomTypography } from '../../ui/CustomTypography';
+import { Loading } from '../../ui/Loading';
+import { ApproveModalsModulepProps } from './type';
 
-const ShareExperienceApproveModalsModule = ({
-  cancelButtonText,
-  applyButtonText,
-  applyHandler,
-  description,
-  isLoading,
-  isOpen,
-  title,
-  icon,
-  id,
-  zIndex = 76,
-}: ShareExperienceApproveModalsModuleProps) => {
+export const ApproveModalsModule = (props: ApproveModalsModulepProps) => {
+  const {
+    applyButtonText,
+    applyHandler,
+    cancelButtonText,
+    description,
+    isLoading,
+    isOpen,
+    title,
+    icon,
+    id,
+    zIndex = 70,
+  } = props;
   const { callEvent } = useAnalytics();
 
   const router = useRouter();
@@ -70,5 +70,3 @@ const ShareExperienceApproveModalsModule = ({
     </>
   );
 };
-
-export default ShareExperienceApproveModalsModule;

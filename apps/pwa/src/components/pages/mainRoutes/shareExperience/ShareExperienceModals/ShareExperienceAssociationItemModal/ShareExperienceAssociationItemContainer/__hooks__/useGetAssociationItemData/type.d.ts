@@ -1,4 +1,4 @@
-import { ExperienceType } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
+import { ExperienceType } from '@repo/core/components/ShareExperience';
 
 import { ShareExperienceAssociationItemContainerPropsType } from '../../type';
 

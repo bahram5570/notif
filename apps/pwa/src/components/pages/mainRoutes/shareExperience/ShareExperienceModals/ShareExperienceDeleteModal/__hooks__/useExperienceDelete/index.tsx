@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { ProfileResponsePropsType } from '@repo/core/components/ShareExperience';
+
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
@@ -8,7 +10,6 @@ import { QueryExperiencesDataTypes } from '../../../../ShareExperienceContainer/
 import { AssociationInfoResponseType } from '../../../ShareExperienceAssociationItemModal/ShareExperienceAssociationItemContainer/__hooks__/useGetAssociationInfo/type';
 import { AssociationExperiencesResponseType } from '../../../ShareExperienceAssociationItemModal/ShareExperienceAssociationItemContainer/__hooks__/useGetAssociationItemData/type';
 import { QuerySelfExperiencesDataTypes } from '../../../ShareExperienceProfileModal/ShareExperienceProfileModalContainer/ShareExperenceProfileTabList/ShareExperienceProfileSelfList/__hooks__/useSelfExperienceData/type';
-import { ShareExperenceProfileResponsePropsType } from '../../../ShareExperienceProfileModal/ShareExperienceProfileModalContainer/__hooks__/useGetData/type';
 
 const useExperienceDelete = () => {
   const router = useRouter();
@@ -47,7 +48,7 @@ const useExperienceDelete = () => {
       updateQuery({ queryKey: ['experiences'], payload });
     }
 
-    const exitProfileQueryKey = getQuery<ShareExperenceProfileResponsePropsType>({
+    const exitProfileQueryKey = getQuery<ProfileResponsePropsType>({
       queryKey: ['shareExperienceProfile'],
     });
 

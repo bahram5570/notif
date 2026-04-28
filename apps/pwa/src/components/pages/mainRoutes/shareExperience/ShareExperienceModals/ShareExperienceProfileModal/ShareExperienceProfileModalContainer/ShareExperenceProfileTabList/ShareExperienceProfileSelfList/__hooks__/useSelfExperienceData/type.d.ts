@@ -1,14 +1,12 @@
-import { ExperiencesResponseTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
+import { ExperiencesResponseTypes, ProfileResponsePropsType } from '@repo/core/components/ShareExperience';
 
-import { ShareExperenceProfileResponsePropsType } from '../../../../__hooks__/useGetData/type';
-
-export type ProfileType = Pick<ShareExperenceProfileResponsePropsType, 'profile'>['profile'];
+export type ProfileType = Pick<ProfileResponsePropsType, 'profile'>['profile'];
 export type IdType = Pick<ProfileType, 'id'>;
-export type SelfType = Pick<ShareExperenceProfileResponsePropsType, 'isSelf'>;
+export type SelfType = Pick<ProfileResponsePropsType, 'isSelf'>;
 
 export interface UseSelfExperienceDataPropsType extends IdType, SelfType {}
 
-export type selfType = Pick<ShareExperenceProfileResponsePropsType, 'activities'>['activities'];
+export type selfType = Pick<ProfileResponsePropsType, 'activities'>['activities'];
 
 export type QuerySelfExperiencesDataTypes = Pick<ExperiencesResponseTypes, 'expirences'>;
 

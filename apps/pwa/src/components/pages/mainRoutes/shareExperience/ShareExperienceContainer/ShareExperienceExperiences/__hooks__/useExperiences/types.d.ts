@@ -1,45 +1,8 @@
-import { ShareExperienceStateEnum } from '../../../../../../../../../../../packages/core/src/components/ShareExperience/enum';
-
-import { ActionTypes } from '@repo/core/providers/WidgetActionsProvider';
+import { ExperiencesResponseTypes } from '@repo/core/components/ShareExperience';
 
 import { ShareExperienceExperiencesProps } from '../../types';
 
 export type SelectedCategoryIdTypes = Pick<ShareExperienceExperiencesProps, 'selectedCategoryId'>['selectedCategoryId'];
-export type TagType = { title: string; action: ActionTypes | null };
-
-export type ExperienceType = {
-  state: ShareExperienceStateEnum;
-  approvedProfile: boolean;
-  selfExperience: boolean;
-  prohibtComment: boolean;
-  isBookmarked: boolean;
-  commentCount: number;
-  createTime: string;
-  isFollow: boolean;
-  topicName: string;
-  likeCount: number;
-  disliked: number;
-  isEdit: boolean;
-  userId: string;
-  avatar: string;
-  isPin: boolean;
-  image: string;
-  self: boolean;
-  text: string;
-  name: string;
-  id: string;
-  tags?: TagType[];
-};
-
-export type ExperiencesResponseTypes = {
-  groupsTitleText: string;
-  otherTitleText: string;
-  selfTitleText: string;
-  totalCount: number;
-  inputText: string;
-  text: string;
-  expirences: ExperienceType[];
-};
 
 export type QueryExperiencesDataTypes = Pick<ExperiencesResponseTypes, 'expirences'>;
 

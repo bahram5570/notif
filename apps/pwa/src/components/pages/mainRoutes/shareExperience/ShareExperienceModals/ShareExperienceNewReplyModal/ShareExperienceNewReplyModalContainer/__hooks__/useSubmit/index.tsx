@@ -1,4 +1,5 @@
 import { newCommentMaker } from './__utils__';
+import { CommentsResponseTypes } from '@repo/core/components/ShareExperience';
 
 import { QueryExperiencesDataTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
@@ -7,7 +8,6 @@ import { useRouter } from 'next/navigation';
 
 import { AssociationExperiencesResponseType } from '../../../../ShareExperienceAssociationItemModal/ShareExperienceAssociationItemContainer/__hooks__/useGetAssociationItemData/type';
 import { DataRepliesListTypes } from '../../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/CommentsGenerator/ReplyGenerator/__hooks__/useReplyList/types';
-import { CommentsResponseTypes } from '../../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/__hooks__/useCommentsList/types';
 import { NewCommentResponseTypes, NewReplyResponseTypes, UseSubmitProps } from './types';
 
 const useSubmit = ({ text, data }: UseSubmitProps) => {

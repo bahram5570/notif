@@ -1,5 +1,6 @@
 import { Fragment } from 'react';
 
+import { ContentsSectionModule } from '@repo/core/components/ShareExperience';
 import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
 
 import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
@@ -20,7 +21,6 @@ import ShareExperienceProfileReportModal from '../../ShareExperienceModals/Share
 import ShareExperienceReportModal from '../../ShareExperienceModals/ShareExperienceReportModal';
 import ShareExperienceTopicModal from '../../ShareExperienceModals/ShareExperienceTopicModal';
 import ShareExperienceUnfollowModal from '../../ShareExperienceModals/ShareExperienceUnfollowModal';
-import ShareExperienceContentsModule from '../../ShareExperienceModules/ShareExperienceContentsModule';
 import ShareExperienceAssociation from '../ShareExperienceAssociation';
 import ShareExperienceBottomPart from './ShareExperienceBottomPart';
 import ShareExperienceInView from './ShareExperienceInView';
@@ -90,7 +90,7 @@ const ShareExperienceExperiences = ({
                   <ShareExperienceTopPart {...item} />
 
                   <div className="w-full pr-10">
-                    <ShareExperienceContentsModule
+                    <ContentsSectionModule
                       image={item.image}
                       text={item.text}
                       hasLinkTo={true}
@@ -99,7 +99,7 @@ const ShareExperienceExperiences = ({
                       id={item.id}
                     />
 
-                    <ShareExperienceBottomPart {...item} />
+                    <ShareExperienceBottomPart {...item} type="experience" shareId={item.id} />
                   </div>
                 </div>
               </ShareExperienceInView>
