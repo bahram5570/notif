@@ -1,14 +1,14 @@
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useShareExperiencePassedTime from '@components/pages/mainRoutes/shareExperience/__hooks__/useShareExperiencePassedTime';
+import { usePassedTime } from '@repo/core/hooks/usePassedTime';
 import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 
 import { NotificationItemProps } from './type';
 
 const NotificationItem = (props: NotificationItemProps) => {
   const { actionHandler } = useWidgetActions();
-  const timeScript = useShareExperiencePassedTime(props.createTime);
+  const timeScript = usePassedTime(props.createTime);
 
   const onClick = () => {
     actionHandler(props.action);

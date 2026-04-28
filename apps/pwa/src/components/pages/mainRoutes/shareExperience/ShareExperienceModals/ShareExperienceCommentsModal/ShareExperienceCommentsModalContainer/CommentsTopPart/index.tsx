@@ -1,13 +1,13 @@
 import { UserProfileIconModule } from '@repo/core/components/ShareExperience';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useShareExperiencePassedTime from '@components/pages/mainRoutes/shareExperience/__hooks__/useShareExperiencePassedTime';
+import { usePassedTime } from '@repo/core/hooks/usePassedTime';
 
 import ShareExperienceFollowModule from '../../../../ShareExperienceModules/ShareExperienceFollowModule';
 import { CommentsTopPartProps } from './types';
 
 const CommentsTopPart = (props: CommentsTopPartProps) => {
-  const timeScript = useShareExperiencePassedTime(props.createTime);
+  const timeScript = usePassedTime(props.createTime);
 
   return (
     <div className="w-full flex justify-between" dir="rtl">

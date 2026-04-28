@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
 
-import { gregorianFarsiPassedTime, jalaaliPassedTime } from '@repo/core/utils/dates';
+import { gregorianFarsiPassedTime, jalaaliPassedTime } from '../../utils/dates';
 
-import { useCulture } from '@repo/core/hooks/useCulture';
-import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
+import { CalendarTypeEnum } from '../../providers/CultureProvider';
+import { useCulture } from '../useCulture';
 
-const useShareExperiencePassedTime = (createTime: string) => {
+export const usePassedTime = (createTime: string) => {
   const { culture } = useCulture();
 
   const result = useMemo(() => {
@@ -21,5 +21,3 @@ const useShareExperiencePassedTime = (createTime: string) => {
 
   return result;
 };
-
-export default useShareExperiencePassedTime;
