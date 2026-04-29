@@ -31,7 +31,7 @@ const useActivitiesData = ({ id }: UseActivitiesDataPropsType) => {
     method: 'GET',
     fetchOnMount: false,
     onSuccess: successHandler,
-    queryKey: [`shareExperienceActivitiesExperienceProfile-${id}`],
+    queryKey: [`ActivitiesExperienceProfile-${id}`],
   });
 
   useEffect(() => {

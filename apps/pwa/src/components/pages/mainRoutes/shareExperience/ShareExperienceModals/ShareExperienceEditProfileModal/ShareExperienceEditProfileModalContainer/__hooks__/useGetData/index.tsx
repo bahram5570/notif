@@ -8,8 +8,7 @@ import useShareExperenceProfileGetData from '../../../../ShareExperienceProfileM
 
 const useGetData = (userId: string | undefined) => {
   const [profileData, setProfileData] = useState<ProfileResponsePropsType>();
-  const [loading, setLoading] = useState(true);
-  const { getQuery } = useCustomReactQuery(['shareExperienceProfile'], { gcTime: 1000 * 60 * 5 });
+  const { getQuery } = useCustomReactQuery(['shareExperienceProfile']);
   const queryData = getQuery<ProfileResponsePropsType>({ queryKey: ['shareExperienceProfile'] });
   const { callApi } = useShareExperenceProfileGetData(userId);
 
@@ -21,7 +20,7 @@ const useGetData = (userId: string | undefined) => {
     }
   }, [queryData]);
 
-  return { profileData, loading };
+  return { profileData };
 };
 
 export default useGetData;

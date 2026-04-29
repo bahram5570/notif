@@ -1,6 +1,6 @@
 import { SocialActions } from '@repo/core/components/ShareExperience';
 
-import useLikes from './__hooks__/useLikes';
+import useLikes from './__hooks__/likeHandlers/useLikes';
 import useShareExperienceBookmark from './__hooks__/useShareExperienceBookmark';
 import { ShareExperienceBottomPartProps } from './types';
 

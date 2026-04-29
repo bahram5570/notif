@@ -1,7 +1,6 @@
 import {
   SHARE_EXPERIENCE_FOLLOWER_QUERY_NAME,
   SHARE_EXPERIENCE_FOLLOWING_QUERY_NAME,
-  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
 } from '@repo/core/components/ShareExperience';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
@@ -19,21 +18,18 @@ const ProfileInfo = ({ followCount, storyCount, userId }: ProfileInfoPropsType) 
   const followerSelectHandler = () => {
     pageNavigationHandler({ id: userId, showProgressBar: true });
 
-    const paramsData = JSON.stringify({ userId: userId, [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime() });
     increaseZIndex(SHARE_EXPERIENCE_FOLLOWER_QUERY_NAME, userId);
-    newQueryParamsHandler({ [SHARE_EXPERIENCE_FOLLOWER_QUERY_NAME]: paramsData });
+    newQueryParamsHandler({ [SHARE_EXPERIENCE_FOLLOWER_QUERY_NAME]: userId });
   };
 
   const followingSelectHandler = () => {
     pageNavigationHandler({ id: userId, showProgressBar: true });
 
-    const paramsData = JSON.stringify({ userId: userId, [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime() });
     increaseZIndex(SHARE_EXPERIENCE_FOLLOWING_QUERY_NAME, userId);
-    newQueryParamsHandler({ [SHARE_EXPERIENCE_FOLLOWING_QUERY_NAME]: paramsData });
+    newQueryParamsHandler({ [SHARE_EXPERIENCE_FOLLOWING_QUERY_NAME]: userId });
   };
 
   return (
-    //
     <div className="flex gap-4">
       <div className="flex flex-col justify-center items-center gap-1" onClick={followingSelectHandler}>
         <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">

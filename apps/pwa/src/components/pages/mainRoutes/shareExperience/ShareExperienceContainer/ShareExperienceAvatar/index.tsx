@@ -1,7 +1,4 @@
-import {
-  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
-  SHARE_EXPERIENCE_PROFILE_QUERY_NAME,
-} from '@repo/core/components/ShareExperience';
+import { SHARE_EXPERIENCE_PROFILE_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';

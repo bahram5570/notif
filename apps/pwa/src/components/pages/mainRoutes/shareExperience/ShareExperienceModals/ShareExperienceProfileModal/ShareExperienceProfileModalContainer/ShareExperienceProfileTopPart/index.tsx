@@ -1,8 +1,5 @@
 import EditIcon from '@assets/icons/Pen 2.svg';
-import {
-  SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME,
-  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
-} from '@repo/core/components/ShareExperience';
+import { SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
@@ -33,9 +30,8 @@ const ShareExperienceProfileTopPart = ({
     if (isSelf) {
       pageNavigationHandler({ id: profile.id, showProgressBar: true });
 
-      const paramsData = JSON.stringify({ id: profile.id, [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime() });
       increaseZIndex(SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME, profile.id);
-      newQueryParamsHandler({ [SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME]: paramsData });
+      newQueryParamsHandler({ [SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME]: profile.id });
     } else {
       followHandler({ userId: profile.id, isFollow, userName: profile.username });
     }

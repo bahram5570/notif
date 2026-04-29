@@ -1,9 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import {
-  SHARE_EXPERIENCE_ORDER_QUERY_NAME,
-  SHARE_EXPERIENCE_PROFILE_QUERY_NAME,
-} from '@repo/core/components/ShareExperience';
+import { SHARE_EXPERIENCE_PROFILE_QUERY_NAME } from '@repo/core/components/ShareExperience';
 
 import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
@@ -24,8 +21,7 @@ const useViewReportProfile = (isLoaded: boolean) => {
       setTimeout(() => {
         pageNavigationHandler({ id, showProgressBar: true });
 
-        const paramsData = JSON.stringify({ id, [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime() });
-        newQueryParamsHandler({ [SHARE_EXPERIENCE_PROFILE_QUERY_NAME]: paramsData });
+        newQueryParamsHandler({ [SHARE_EXPERIENCE_PROFILE_QUERY_NAME]: id });
         increaseZIndex(SHARE_EXPERIENCE_PROFILE_QUERY_NAME, id);
       }, 1000);
     }

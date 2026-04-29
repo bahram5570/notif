@@ -4,9 +4,12 @@ import { handleLikeInfo, replyLikeCallApi } from './__utils__';
 
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
+import useLikeActivitiesExperience from '../useLikeActivitiesExperience';
+import useLikeAssociationExperience from '../useLikeAssociationExperience';
 import useLikeComment from '../useLikeComment';
 import useLikeExeprience from '../useLikeExeprience';
 import useLikeReply from '../useLikeReply';
+import useLikeTopicExperiences from '../useLikeTopicExperience';
 import { ApiInfoTypes, LikeHandlerTypes, UseLikesProps } from './types';
 
 const useLikes = (props: UseLikesProps) => {
@@ -15,6 +18,9 @@ const useLikes = (props: UseLikesProps) => {
   const { updateExperienceHandler } = useLikeExeprience();
   const { updateCommentHandler } = useLikeComment();
   const { updateReplyHandler } = useLikeReply();
+  const { updateAssociationHandler } = useLikeAssociationExperience();
+  const { updateTopicHandler } = useLikeTopicExperiences();
+  const { updateActivitiesExperienceHandler } = useLikeActivitiesExperience();
 
   const likeHandler: LikeHandlerTypes = (v) => {
     const likeInfo = { state: props.state, disliked: props.disliked, likeCount: props.likeCount };
@@ -41,6 +47,21 @@ const useLikes = (props: UseLikesProps) => {
           commentId: props.commentId,
         });
         apiResult = `shareeexperience/v3/experience/${props.shareId}/comments/${props.commentId}/replies/${props.replyId}/${newApi.likeType}`;
+        break;
+
+      case 'association':
+        updateAssociationHandler({ ...newLikeInfo, shareId: props.shareId });
+        apiResult = `shareeexperience/v3/experience/${props.shareId}/${newApi.likeType}`;
+        break;
+
+      case 'topic':
+        updateTopicHandler({ ...newLikeInfo, shareId: props.shareId });
+        apiResult = `shareeexperience/v3/experience/${props.shareId}/${newApi.likeType}`;
+        break;
+
+      case 'activitiesExperienceType':
+        updateActivitiesExperienceHandler({ ...newLikeInfo, shareId: props.shareId });
+        apiResult = `shareeexperience/v3/experience/${props.shareId}/${newApi.likeType}`;
         break;
     }
 

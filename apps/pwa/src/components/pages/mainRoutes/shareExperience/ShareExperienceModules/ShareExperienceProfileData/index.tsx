@@ -31,7 +31,7 @@ const ShareExperienceProfileData = ({ isSelf, experienceDataList, isLoading }: S
                   <ShareExperienceBottomPart
                     {...item}
                     selfExperience={item.selfExperience}
-                    type="experience"
+                    type="activitiesExperienceType"
                     shareId={item.id}
                   />
                 </div>

@@ -21,5 +21,21 @@ type ReplyTypes = {
   commentId: string;
   replyId: string;
 };
-type ItemsTypes = ExperienceTypes | CommentTypes | ReplyTypes;
+
+type AssociationType = {
+  type: 'association';
+  shareId: string;
+};
+
+type TopicTypes = {
+  type: 'topic';
+  shareId: string;
+};
+
+type ActivitiesExperienceType = {
+  type: 'activitiesExperienceType';
+  shareId: string;
+};
+
+type ItemsTypes = ExperienceTypes | CommentTypes | ReplyTypes | AssociationType | TopicTypes | ActivitiesExperienceType;
 export type ShareExperienceBottomPartProps = ItemsTypes & DataTypes;

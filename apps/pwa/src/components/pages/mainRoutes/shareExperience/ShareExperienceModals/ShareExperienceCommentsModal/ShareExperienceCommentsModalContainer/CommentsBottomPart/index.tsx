@@ -10,7 +10,7 @@ const CommentsBottomPart = (props: CommentsBottomPartProps) => {
 
       {/* {!props.self && <ShareExperienceBookmarkModule id={props.id} isBookmarked={props.isBookmarked} />} */}
 
-      {/* <CommentsCountLink isSelf={true} commentCount={props.commentCount} id={props.id} /> */}
+      <CommentsCountLink isSelf={true} commentCount={props.commentCount} id={props.id} />
 
       <ShareExperienceLikesModule
         type="experience"

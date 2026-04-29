@@ -1,8 +1,10 @@
 import { ShareExperienceStateEnum } from '@repo/core/components/ShareExperience';
 
-import { ShareExperienceLikesModuleProps } from '../../types';
+import { ShareExperienceLikesModuleProps } from '@components/pages/mainRoutes/shareExperience/ShareExperienceModules/ShareExperienceLikesModule/types';
 
-export type UseLikesProps = ShareExperienceLikesModuleProps;
+import { ShareExperienceBottomPartProps } from '../../../types';
+
+export type UseLikesProps = ShareExperienceBottomPartProps;
 
 export type LikeInfoTypes = Pick<ShareExperienceLikesModuleProps, 'state' | 'likeCount' | 'disliked'>;
 

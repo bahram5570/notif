@@ -77,7 +77,7 @@ const ShareExperienceAssociationItemContainer = ({
                           tags={item.tags}
                         />
 
-                        <ShareExperienceBottomPart {...item} type="experience" shareId={item.id} />
+                        <ShareExperienceBottomPart {...item} type="association" shareId={item.id} />
                       </div>
                     </div>
                   );

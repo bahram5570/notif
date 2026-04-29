@@ -67,7 +67,7 @@ const ShareExperienceTopicModalContainer = ({
                   tags={item.tags}
                 />
 
-                <ShareExperienceBottomPart {...item} type="experience" shareId={item.id} />
+                <ShareExperienceBottomPart {...item} type="topic" shareId={item.id} />
               </div>
             </div>
           ))}
