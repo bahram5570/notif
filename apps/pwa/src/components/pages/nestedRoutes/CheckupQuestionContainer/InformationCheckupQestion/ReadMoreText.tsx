@@ -10,45 +10,40 @@ const ReadMoreText = ({ text, maxLines = 3 }: { text: string; maxLines: number }
 
   useEffect(() => {
     if (textRef.current) {
-      const lineHeight = parseInt(window.getComputedStyle(textRef.current).lineHeight);
-      const maxHeight = lineHeight * maxLines + 10;
+      const lineHeight = parseInt(window.getComputedStyle(textRef.current).lineHeight, 10);
+      const maxHeight = lineHeight * maxLines;
       setIsTruncated(textRef.current.scrollHeight > maxHeight);
     }
   }, [text]);
 
+  const collapsedStyle: React.CSSProperties = {
+    display: '-webkit-box',
+    WebkitBoxOrient: 'vertical' as const,
+    WebkitLineClamp: maxLines as unknown as string,
+    overflow: 'hidden',
+  };
+
+  const expandedStyle: React.CSSProperties = {
+    display: 'block',
+    WebkitBoxOrient: 'vertical' as const,
+    WebkitLineClamp: 'none',
+  };
+
   return (
     <div>
-      <div
-        ref={textRef}
-        style={{
-          display: '-webkit-box',
-          WebkitBoxOrient: 'vertical',
-          overflow: 'hidden',
-          WebkitLineClamp: isExpanded ? 'unset' : maxLines, // If expanded, show all text
-          transition: 'all 0.3s ease',
-          maxHeight: isExpanded
-            ? 'unset'
-            : textRef.current
-              ? `${parseInt(window.getComputedStyle(textRef.current).lineHeight) * maxLines}px`
-              : 'auto', // Ensure max height is applied
-        }}
-      >
+      <div ref={textRef} style={isExpanded ? expandedStyle : collapsedStyle}>
         <CustomTypography fontSize="Body_Medium" className="py-2 text-impo_Neutral_OnBackground">
           {text}
         </CustomTypography>
       </div>
 
       {isTruncated && (
-        <div onClick={() => setIsExpanded(!isExpanded)} id="PregnancyCheckupCardClick">
+        <div onClick={() => setIsExpanded(!isExpanded)}>
           <div className="flex flex-row-reverse gap-1 justify-end mt-3">
             <CustomTypography className="text-impo_Primary_Primary" fontSize="Lable_Small">
               {isExpanded ? 'بستن اطلاعات بیشتر ' : 'خواندن اطلاعات بیشتر'}
             </CustomTypography>
-            {isExpanded ? (
-              <ArrowDownIcon className="w-4 h-4 stroke-impo_Primary_Primary" />
-            ) : (
-              <ArrowDownIcon className="w-4 h-4 rotate-180 stroke-impo_Primary_Primary" />
-            )}
+            <ArrowDownIcon className={`w-4 h-4 stroke-impo_Primary_Primary ${!isExpanded ? 'rotate-180' : ''}`} />
           </div>
         </div>
       )}
