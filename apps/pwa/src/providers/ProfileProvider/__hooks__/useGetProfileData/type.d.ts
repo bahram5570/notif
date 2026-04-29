@@ -45,6 +45,7 @@ export type ProfileResponseTypes = {
   sexualStatus: SexualStatusEnum;
   calendarType: CalendarTypeEnum;
   periodStatus: PeriodStatusEnum;
+  hasTicketSupportActive: boolean;
   changeStatusBtns: ChangeStatusBtnsTypes[];
   updateInteraction: UpdateInteractionTypes;
 };

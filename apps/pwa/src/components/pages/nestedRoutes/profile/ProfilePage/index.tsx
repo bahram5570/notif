@@ -9,6 +9,7 @@ import { APP_VERSION, HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import InstallationPurpose from './InstallationPurpose';
 import LogOut from './Logout';
 import ProfileLinkList from './ProfileLinkList';
+import ProfileMainLinks from './ProfileMainLinks';
 import ProfileModals from './ProfileModals';
 import ProfileSkeleton from './ProfileSkeleton';
 import SubscriptionButton from './SubscriptionButton';
@@ -17,7 +18,7 @@ import UserNameDetail from './userNameDetail';
 
 const ProfilePage = () => {
   const { hasSubscribtion, subscriptionLoading } = useGetData();
-  const { profileData, isLoading } = useProfileData();
+  const { profileData, isLoading, phase } = useProfileData();
 
   const Loading = isLoading || subscriptionLoading;
 
@@ -36,11 +37,18 @@ const ProfilePage = () => {
           <div className="flex-grow gap-2">
             <UserNameDetail name={profileData.name} username={profileData.username} avatar={profileData.avatar} />
 
+            <ProfileMainLinks
+              hasTicketSupportActive={profileData.hasTicketSupportActive}
+              pregnancyDate={profileData.pregnancyDate}
+              isDelivery={profileData.isDelivery}
+              phase={phase}
+            />
+
             <SubscriptionButton remaindDays={profileData.remaindDays} />
 
             {hasSubscribtion && <InstallationPurpose changeStatusBtns={profileData.changeStatusBtns} />}
 
-            <ProfileLinkList {...profileData} hasSubscribtion={hasSubscribtion} />
+            <ProfileLinkList hasSubscribtion={hasSubscribtion} />
           </div>
         )}
 

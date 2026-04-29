@@ -1,6 +1,8 @@
 import EditIcon from '@assets/icons/Gallery Edit.svg';
 import UploadIcon from '@assets/icons/upload.svg';
+import ArrowIcon from '@assets/shared/icons/calendarArrow.svg';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
@@ -21,9 +23,9 @@ const UserNameDetail = ({ name, username, avatar }: UserNameDetailsProps) => {
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Title_Small', operatingSystem });
-  const typographyFontStyles1 = typographyFontStylesMaker({ fontSize: 'Lable_Medium', operatingSystem });
+  const typographyFontStyles1 = typographyFontStylesMaker({ fontSize: 'Body_Medium', operatingSystem });
 
-  const handleClick = () => {
+  const avatarHandler = () => {
     newQueryParamsHandler({
       [MODAL_QUERY_NAME]: 'true',
       [PROFILE_MODAL_QUERY_NAME]: ProfileModalNameEnums.EditProfileImage,
@@ -33,41 +35,48 @@ const UserNameDetail = ({ name, username, avatar }: UserNameDetailsProps) => {
     pageNavigationHandler({ showProgressBar: false, id: ProfileModalNameEnums.EditProfileImage });
   };
 
-  const preventIOSPhoneLink = (number: string) => {
-    return number.split('').join('\u200B');
+  const linkToEditProfileHandler = () => {
+    pageNavigationHandler({ showProgressBar: true, linkTo: '/protected/userInfo', id: 'linkToEditProfileHandler' });
+  };
+
+  const preventIOSPhoneLink = (v: string) => {
+    return v.split('').join('\u200B');
   };
 
   return (
-    <div className="flex flex-col justify-center items-center gap-5">
-      <div className="relative" onClick={handleClick}>
-        <div className="overflow-hidden rounded-full flex justify-center items-center bg-impo_White">
-          <CustomImage src={data?.womanAvatar || avatar} width={90} height={90} className="!object-cover" />
-        </div>
+    <div className="w-full flex justify-between items-center p-4">
+      <div className="w-fit flex items-center gap-1" onClick={linkToEditProfileHandler}>
+        <ArrowIcon className="w-4 h-auto stroke-impo_Surface_InverseSurface" />
 
-        <div className="absolute top-[60%] left-3/4 z-30 select-none">
-          <div
-            className="w-6 h-6 flex justify-center items-center rounded-full cursor-pointer bg-impo_Black"
-            style={{
-              opacity: 50,
-            }}
-          >
-            {data?.canDeleteProfile ? (
-              <EditIcon className="w-3 h-3 fill-impo_White" />
-            ) : (
-              <UploadIcon className="w-3 h-3 fill-impo_White" />
-            )}
-          </div>
+        <div className="rounded-full px-3 py-2 bg-impo_Neutral_Surface">
+          <CustomTypography fontSize="Lable_Small" className="text-impo_Neutral_OnBackground">
+            ویرایش اطلاعات کاربری
+          </CustomTypography>
         </div>
       </div>
 
-      <div className="flex flex-col items-center gap-1">
-        <p style={{ userSelect: 'none' }} className="text-impo_Neutral_OnBackground">
-          <span style={{ pointerEvents: 'none', ...typographyFontStyles }}>{name}</span>
-        </p>
+      <div className="flex items-center gap-2">
+        <div className="flex flex-col items-end gap-1">
+          <p style={{ userSelect: 'none' }} className="text-impo_Neutral_OnBackground">
+            <span style={{ pointerEvents: 'none', ...typographyFontStyles }}>{name}</span>
+          </p>
 
-        <p style={{ userSelect: 'none', ...typographyFontStyles1 }} className="text-impo_Neutral_OnBackground">
-          <span style={{ pointerEvents: 'none' }}>{preventIOSPhoneLink(toPersianNumbers(username))}</span>
-        </p>
+          <p style={{ userSelect: 'none', ...typographyFontStyles1 }} className="text-impo_Surface_Outline">
+            <span style={{ pointerEvents: 'none' }}>{preventIOSPhoneLink(toPersianNumbers(username))}</span>
+          </p>
+        </div>
+
+        <div className="relative w-14 h-14 min-w-14 min-h-14 rounded-full" onClick={avatarHandler}>
+          <CustomImage src={data?.womanAvatar || avatar} className="object-cover" />
+
+          <div className="absolute bottom-0 right-0 w-5 h-5 flex items-center justify-center p-1 bg-impo_Black rounded-full">
+            {data?.canDeleteProfile ? (
+              <EditIcon className="w-full h-auto fill-impo_White" />
+            ) : (
+              <UploadIcon className="w-full h-auto fill-impo_White" />
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
