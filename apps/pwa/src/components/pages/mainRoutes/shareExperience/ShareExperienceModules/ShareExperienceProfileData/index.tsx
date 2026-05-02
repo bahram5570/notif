@@ -1,8 +1,5 @@
-import { ContentsSectionModule } from '@repo/core/components/ShareExperience';
-
-import ShareExperienceBottomPart from '../../ShareExperienceContainer/ShareExperienceExperiences/ShareExperienceBottomPart';
-import ShareExperienceTopPart from '../../ShareExperienceContainer/ShareExperienceExperiences/ShareExperienceTopPart';
 import ShareExperenceProfileTabListEmpty from '../../ShareExperienceModals/ShareExperienceProfileModal/ShareExperienceProfileModalContainer/ShareExperenceProfileTabList/ShareExperenceProfileTabListEmpty';
+import ShareExperiencePostCardModules from '../ShareExperiencePostCardModules';
 import { ShareExperienceProfileDataPropsType } from './type';
 
 const ShareExperienceProfileData = ({ isSelf, experienceDataList, isLoading }: ShareExperienceProfileDataPropsType) => {
@@ -15,27 +12,14 @@ const ShareExperienceProfileData = ({ isSelf, experienceDataList, isLoading }: S
         <div className="flex flex-col p-4">
           {experienceDataList.map((item) => {
             return (
-              <div key={item.id} className="w-full border-b-[1px] border-b-impo_Neutral_Surface pt-5 pb-4 z-0">
-                <ShareExperienceTopPart {...item} selfExperience={isSelf} />
-
-                <div className="w-full pr-10">
-                  <ContentsSectionModule
-                    isSelf={false}
-                    image={item.image}
-                    text={item.text}
-                    hasLinkTo={true}
-                    id={item.id}
-                    tags={item.tags}
-                  />
-
-                  <ShareExperienceBottomPart
-                    {...item}
-                    selfExperience={item.selfExperience}
-                    type="activitiesExperienceType"
-                    shareId={item.id}
-                  />
-                </div>
-              </div>
+              <ShareExperiencePostCardModules
+                {...item}
+                key={item.id}
+                isSelf={isSelf}
+                className="border-b-[1px] border-b-impo_Neutral_Surface z-0"
+                type="activitiesExperienceType"
+                shareId={item.id}
+              />
             );
           })}
         </div>

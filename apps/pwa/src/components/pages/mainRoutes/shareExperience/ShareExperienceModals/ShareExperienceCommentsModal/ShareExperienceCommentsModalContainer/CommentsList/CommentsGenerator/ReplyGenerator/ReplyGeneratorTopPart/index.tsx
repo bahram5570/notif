@@ -1,4 +1,4 @@
-import { UserProfileIconModule } from '@repo/core/components/ShareExperience';
+import { SelectedProfileLink } from '@repo/core/components/ShareExperience';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { usePassedTime } from '@repo/core/hooks/usePassedTime';
@@ -18,7 +18,7 @@ const ReplyGeneratorTopPart = (props: ReplyGeneratorTopPartProps) => {
         </CustomTypography>
       </div>
 
-      <UserProfileIconModule
+      <SelectedProfileLink
         size={36}
         id={props.userId}
         avatar={props.avatar}

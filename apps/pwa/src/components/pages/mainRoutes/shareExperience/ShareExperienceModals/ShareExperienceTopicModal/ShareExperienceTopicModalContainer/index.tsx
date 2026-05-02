@@ -19,12 +19,12 @@ import { ShareExperienceTopicModalContainerPropsType } from './type';
 
 const ShareExperienceTopicModalContainer = ({
   avatarImage,
-  queryParam,
+
   topicId,
 }: ShareExperienceTopicModalContainerPropsType) => {
-  useOverflowHandler(queryParam !== null);
+  useOverflowHandler(topicId !== null);
   const { topicExperiencesData, isLoading, pageNo, updatePageNo, apiLoading } = useGetData({
-    topicId,
+    topicId: topicId || '',
   });
 
   const markerRef = useRef<HTMLDivElement>(null);

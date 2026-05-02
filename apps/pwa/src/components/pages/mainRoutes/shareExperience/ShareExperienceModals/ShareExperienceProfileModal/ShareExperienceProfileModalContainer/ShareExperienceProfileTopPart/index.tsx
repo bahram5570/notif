@@ -1,5 +1,5 @@
 import EditIcon from '@assets/icons/Pen 2.svg';
-import { SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME } from '@repo/core/components/ShareExperience';
+import { SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME, UserAvatarModule } from '@repo/core/components/ShareExperience';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
@@ -7,7 +7,6 @@ import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-import ShareExperienceAvatarModule from '../../../../ShareExperienceModules/ShareExperienceAvatarModule';
 import useShareExperienceFollow from '../../../ShareExperienceUnfollowModal/__hooks__/useShareExperienceFollow';
 import ProfileInfo from './ProfileInfo';
 import { ShareExperienceProfileTopPartPropsType } from './type';
@@ -41,7 +40,7 @@ const ShareExperienceProfileTopPart = ({
     <div className="flex flex-col gap-5">
       <div className="flex flex-row-reverse  items-start justify-evenly">
         <div className="flex flex-col justify-center gap-3 items-center">
-          <ShareExperienceAvatarModule
+          <UserAvatarModule
             avatarImage={profile.avatarImage}
             showChangeAvatarIcon={isSelf}
             username={profile.username}

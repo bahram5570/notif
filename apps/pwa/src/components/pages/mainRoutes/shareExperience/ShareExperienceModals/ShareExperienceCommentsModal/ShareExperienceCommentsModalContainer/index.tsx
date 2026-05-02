@@ -27,7 +27,7 @@ const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsMod
     <MainPageLayout rightElement="BackButton" paddingTop={0}>
       <InfiniteScrollContainer
         height="100dvh"
-        isLoading={isLoading}
+        isLoading={isLoading && !isFirstLoad}
         totalCount={commentsData?.commentCount || 10}
         pageNo={pageNo}
         callBack={updatePageNo}

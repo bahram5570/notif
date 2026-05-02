@@ -8,7 +8,7 @@ import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { SelfExperienceDataType, UseSelfExperienceDataPropsType } from './type';
 
-const useSelfExperienceData = ({ id, isSelf }: UseSelfExperienceDataPropsType) => {
+const useSelfExperienceData = ({ id }: UseSelfExperienceDataPropsType) => {
   const [pageNo, setPageNo] = useState(0);
   const { newQuery, updateQuery, getQuery } = useCustomReactQuery(['selfExperience']);
   const { updatePageNo: changePageNoHandler } = useShareExperiencePageNo(`${id}-selfExperience`);

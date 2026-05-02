@@ -1,4 +1,3 @@
 export type ShareExperienceFollowingModalContainerProps = {
-  userId: string | undefined;
-  queryParam: string | null;
+  userId: string | null;
 };

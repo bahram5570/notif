@@ -14,7 +14,7 @@ export const FollowActionModule = (props: FollowActionModuleProps) => {
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
   const { increaseZIndex } = useOverlayIndex();
 
-  const loadingId = `ShareExperienceFollowModule ${props.userId}`;
+  const loadingId = `ShareExperienceFollowModule ${props.userId} ${props.experienceId}`;
   const isLoading = props.isFollowLoading || pageNavigationLoading === loadingId;
 
   const clickHandler = () => {

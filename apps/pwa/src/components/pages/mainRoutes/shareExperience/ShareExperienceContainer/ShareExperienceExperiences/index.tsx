@@ -21,6 +21,7 @@ import ShareExperienceProfileReportModal from '../../ShareExperienceModals/Share
 import ShareExperienceReportModal from '../../ShareExperienceModals/ShareExperienceReportModal';
 import ShareExperienceTopicModal from '../../ShareExperienceModals/ShareExperienceTopicModal';
 import ShareExperienceUnfollowModal from '../../ShareExperienceModals/ShareExperienceUnfollowModal';
+import ShareExperiencePostCardModules from '../../ShareExperienceModules/ShareExperiencePostCardModules';
 import ShareExperienceAssociation from '../ShareExperienceAssociation';
 import ShareExperienceBottomPart from './ShareExperienceBottomPart';
 import ShareExperienceInView from './ShareExperienceInView';
@@ -86,7 +87,14 @@ const ShareExperienceExperiences = ({
               )}
 
               <ShareExperienceInView>
-                <div className="w-full border-t-[1px] border-t-impo_Neutral_Surface  pt-5 pb-4 z-0 px-4">
+                <ShareExperiencePostCardModules
+                  {...item}
+                  type="experience"
+                  shareId={item.id}
+                  isSelf={item.selfExperience}
+                  className=" border-t-[1px] border-t-impo_Neutral_Surface    z-0 px-4"
+                />
+                {/* <div className="w-full border-t-[1px] border-t-impo_Neutral_Surface  pt-5 pb-4 z-0 px-4">
                   <ShareExperienceTopPart {...item} />
 
                   <div className="w-full pr-10">
@@ -101,7 +109,7 @@ const ShareExperienceExperiences = ({
 
                     <ShareExperienceBottomPart {...item} type="experience" shareId={item.id} />
                   </div>
-                </div>
+                </div> */}
               </ShareExperienceInView>
             </Fragment>
           );

@@ -5,19 +5,16 @@ import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ShareExperienceDefultAvatarListModalContainer from './ShareExperienceDefultAvatarListModalContainer';
-import { QueryDataShareExperienceDefultAvatarListModal } from './type';
 
 const ShareExperienceDefultAvatarListModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
   const { getZIndex } = useOverlayIndex();
 
-  const isOpen = getQueryParams(SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME) !== null;
-
   const queryParams = getQueryParams(SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME);
-  const queryData =
-    queryParams === null ? null : (JSON.parse(queryParams) as QueryDataShareExperienceDefultAvatarListModal);
+  const queryData = queryParams === null ? null : (queryParams as string);
+  const isOpen = queryData !== null;
 
-  const zIndex = getZIndex(SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME, queryData?.id);
+  const zIndex = getZIndex(SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME, queryData || '');
 
   return (
     <CustomModal
@@ -27,7 +24,7 @@ const ShareExperienceDefultAvatarListModal = () => {
       zIndex={zIndex}
       isFullScreen
     >
-      <>{isOpen && <ShareExperienceDefultAvatarListModalContainer id={queryData?.id} />}</>
+      <>{isOpen && <ShareExperienceDefultAvatarListModalContainer id={queryData || ''} />}</>
     </CustomModal>
   );
 };

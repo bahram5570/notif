@@ -1,4 +1,4 @@
-import { UserProfileIconModule } from '@repo/core/components/ShareExperience';
+import { SelectedProfileLink } from '@repo/core/components/ShareExperience';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { usePassedTime } from '@repo/core/hooks/usePassedTime';
@@ -12,7 +12,7 @@ const CommentsTopPart = (props: CommentsTopPartProps) => {
   return (
     <div className="w-full flex justify-between" dir="rtl">
       <div className="flex gap-2">
-        <UserProfileIconModule
+        <SelectedProfileLink
           size={40}
           id={props.userId}
           isSelf={props.self}

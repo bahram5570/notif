@@ -1,20 +1,14 @@
 import UploadIcon from '@assets/icons/upload.svg';
-import { SHARE_EXPERIENCE_CHANGE_AVATAR_QUERY_NAME } from '@repo/core/components/ShareExperience';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
 
-import { useAnalytics } from '@repo/core/hooks/useAnalytics';
-import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useAnalytics } from '../../../hooks/useAnalytics';
+import { useOverlayIndex } from '../../../hooks/useOverlayIndex';
+import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
+import { CustomImage } from '../../ui/CustomImage';
+import { SHARE_EXPERIENCE_CHANGE_AVATAR_QUERY_NAME } from '../constants';
+import { UserAvatarModuleProps } from './type';
 
-import { ShareExperienceAvatarModulePropsType } from './type';
-
-const ShareExperienceAvatarModule = ({
-  showChangeAvatarIcon,
-  avatarImage,
-  username,
-  id,
-}: ShareExperienceAvatarModulePropsType) => {
+export const UserAvatarModule = ({ id, avatarImage, showChangeAvatarIcon, username }: UserAvatarModuleProps) => {
   const { callEvent } = useAnalytics();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
@@ -62,5 +56,3 @@ const ShareExperienceAvatarModule = ({
     </div>
   );
 };
-
-export default ShareExperienceAvatarModule;

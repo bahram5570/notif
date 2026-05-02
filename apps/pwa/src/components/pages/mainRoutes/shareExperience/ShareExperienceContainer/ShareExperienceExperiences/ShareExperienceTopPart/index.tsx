@@ -1,4 +1,4 @@
-import { UserProfileIconModule } from '@repo/core/components/ShareExperience';
+import { SelectedProfileLink } from '@repo/core/components/ShareExperience';
 
 import ShareExperienceFollowModule from '../../../ShareExperienceModules/ShareExperienceFollowModule';
 import ShareExperienceScripts from './ShareExperienceScripts';
@@ -8,7 +8,7 @@ const ShareExperienceTopPart = (props: ShareExperienceTopPartProps) => {
   return (
     <div className="w-full flex justify-between items-center" dir="rtl">
       <div className="flex gap-2">
-        <UserProfileIconModule
+        <SelectedProfileLink
           approvedProfile={props.approvedProfile}
           isSelf={props.selfExperience}
           avatar={props.avatar}
@@ -25,7 +25,12 @@ const ShareExperienceTopPart = (props: ShareExperienceTopPartProps) => {
       </div>
 
       {!props.selfExperience && (
-        <ShareExperienceFollowModule isFollow={props.isFollow} userId={props.userId} name={props.name} />
+        <ShareExperienceFollowModule
+          isFollow={props.isFollow}
+          userId={props.userId}
+          name={props.name}
+          experienceId={props.id}
+        />
       )}
     </div>
   );

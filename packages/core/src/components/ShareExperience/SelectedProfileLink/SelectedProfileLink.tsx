@@ -5,9 +5,9 @@ import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoadin
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
 import { CustomImage } from '../../ui/CustomImage';
 import { SHARE_EXPERIENCE_PROFILE_QUERY_NAME } from '../constants';
-import { UserProfileIconModuleProps } from './type';
+import { SelectedProfileLinkProps } from './type';
 
-export const UserProfileIconModule = (props: UserProfileIconModuleProps) => {
+export const SelectedProfileLink = (props: SelectedProfileLinkProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { increaseZIndex } = useOverlayIndex();

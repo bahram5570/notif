@@ -2,8 +2,9 @@ export { ApproveModalsModule } from './ApproveModalsModule/ApproveModalsModule';
 export { SocialActions } from './SocialActions/SocialActions';
 
 export { ContentsSectionModule } from './ContentsSectionModule/ContentsSectionModule';
+export { UserAvatarModule } from './UserAvatarModule/UserAvatarModule';
 
-export { UserProfileIconModule } from './UserProfileIconModule/UserProfileIconModule';
+export { SelectedProfileLink } from './SelectedProfileLink/SelectedProfileLink';
 export { CommentsCountLink } from './CommentsCountLink/CommentsCountLink';
 export { BookmarkButton } from './BookmarkButton/BookmarkButton';
 export { DeletePostModule } from './DeletePostModule/DeletePostModule';

@@ -1,4 +1,4 @@
-import { UserProfileIconModule } from '@repo/core/components/ShareExperience';
+import { SelectedProfileLink } from '@repo/core/components/ShareExperience';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { usePassedTime } from '@repo/core/hooks/usePassedTime';
@@ -18,7 +18,7 @@ const CommentsGeneratorTopPart = (props: CommentsGeneratorTopPartProps) => {
         </CustomTypography>
       </div>
 
-      <UserProfileIconModule
+      <SelectedProfileLink
         approvedProfile={props.approvedProfile}
         isSelf={props.selfComment}
         avatar={props.avatar}

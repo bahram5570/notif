@@ -3,12 +3,12 @@ import { useEffect, useRef, useState } from 'react';
 import EditIcon from '@assets/icons/Pen 2.svg';
 import InfoIcon from '@assets/icons/info.svg';
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+import { UserAvatarModule } from '@repo/core/components/ShareExperience';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
-import ShareExperienceAvatarModule from '../../../ShareExperienceModules/ShareExperienceAvatarModule';
 import useUpdateProfile from '../../ShareExperienceChangeAvatarModal/ShareExperienceChangeAvatarModalContainer/__hooks__/useUpdateProfile';
 import useGetData from './__hooks__/useGetData';
 import { ShareExperienceEditProfileModalContainerPropsType } from './type';
@@ -47,7 +47,7 @@ const ShareExperienceEditProfileModalContainer = ({ id }: ShareExperienceEditPro
           className="flex flex-col gap-6 min-h-[100dvh]"
           style={{ paddingTop: HEADER_HEIGHT, paddingBottom: HEADER_HEIGHT - 20 }}
         >
-          <ShareExperienceAvatarModule
+          <UserAvatarModule
             avatarImage={profileData.profile.avatarImage}
             username={profileData.profile.username}
             showChangeAvatarIcon={true}

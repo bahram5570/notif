@@ -25,7 +25,7 @@ const ShareExperienceProfileModal = () => {
         className="!py-0 overflow-y-auto !px-0"
         zIndex={zIndex}
       >
-        <>{isOpen && <ShareExperienceProfileModalContainer userId={queryData} queryParam={queryData} />}</>
+        <>{isOpen && <ShareExperienceProfileModalContainer userId={queryData} />}</>
       </CustomModal>
     </>
   );

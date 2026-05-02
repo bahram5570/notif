@@ -5,22 +5,17 @@ import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ShareExperienceTopicModalContainer from './ShareExperienceTopicModalContainer';
-import { QueryDataShareExperienceTopicModal, ShareExperienceTopicModalProps } from './type';
+import { ShareExperienceTopicModalProps } from './type';
 
 const ShareExperienceTopicModal = ({ avatarImage }: ShareExperienceTopicModalProps) => {
   const { getQueryParams } = useQueryParamsHandler();
   const { getZIndex } = useOverlayIndex();
 
-  const isOpen = getQueryParams(SHARE_EXPERIENCE_TOPIC_MODAL_QUERY_NAME) !== null;
+  const queryParams = getQueryParams(SHARE_EXPERIENCE_TOPIC_MODAL_QUERY_NAME);
+  const topicId = queryParams === null ? null : (queryParams as string);
+  const isOpen = topicId !== null;
 
-  const shareExperienceTopicParam = getQueryParams(SHARE_EXPERIENCE_TOPIC_MODAL_QUERY_NAME);
-  const queryData =
-    shareExperienceTopicParam === null
-      ? null
-      : (JSON.parse(shareExperienceTopicParam) as QueryDataShareExperienceTopicModal);
-
-  const zIndex = getZIndex(SHARE_EXPERIENCE_TOPIC_MODAL_QUERY_NAME, queryData?.id);
-
+  const zIndex = getZIndex(SHARE_EXPERIENCE_TOPIC_MODAL_QUERY_NAME, topicId || '');
   return (
     <>
       <CustomModal
@@ -30,15 +25,7 @@ const ShareExperienceTopicModal = ({ avatarImage }: ShareExperienceTopicModalPro
         isOpen={isOpen}
         zIndex={zIndex}
       >
-        <>
-          {isOpen && (
-            <ShareExperienceTopicModalContainer
-              topicId={queryData?.id}
-              avatarImage={avatarImage}
-              queryParam={shareExperienceTopicParam}
-            />
-          )}
-        </>
+        <>{isOpen && <ShareExperienceTopicModalContainer topicId={topicId || ''} avatarImage={avatarImage} />}</>
       </CustomModal>
     </>
   );
