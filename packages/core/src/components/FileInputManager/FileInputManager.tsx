@@ -21,6 +21,7 @@ export const FileInputManager = ({
 }: FileInputManagerTypes) => {
   const { appName } = useSystem();
   const [activeInput, setActiveInput] = useState<string | null>(null);
+  const [compressLoading, setCompressLoading] = useState(false);
 
   const handleFileInput: FileInputHandlerTypes = (type) => async (e) => {
     setActiveInput(type);
@@ -31,11 +32,14 @@ export const FileInputManager = ({
     }
 
     try {
+      setCompressLoading(true);
       const resultFile = await imageFormatHandler(file);
       const compressedFile = await compressImageHandler(resultFile, maxSizeKB);
       fileDataHandler({ e, file: compressedFile });
+      setCompressLoading(false);
     } catch (error) {
       console.error(error);
+      setCompressLoading(false);
     }
   };
 
@@ -49,6 +53,8 @@ export const FileInputManager = ({
     }
   }, [appName]);
 
+  const isLoading = compressLoading || uploadImageLoading;
+
   return (
     <>
       {ShowCameraInput && (
@@ -57,7 +63,7 @@ export const FileInputManager = ({
             type="file"
             accept="image/*"
             id="camera-input"
-            className="hidden"
+            style={{ opacity: 0, position: 'absolute', width: 0, height: 0 }}
             capture="environment"
             onChange={handleFileInput(FileInputTypes.CAMERA)}
           />
@@ -69,7 +75,7 @@ export const FileInputManager = ({
               </CustomTypography>
 
               <div className="w-12 h-12 border-[1px] border-impo_Surface_SurfaceVariant rounded-full flex justify-center items-center">
-                {uploadImageLoading && activeInput === FileInputTypes.CAMERA ? (
+                {isLoading && activeInput === FileInputTypes.CAMERA ? (
                   <CustomSpinner size={20} className={borderColor} />
                 ) : (
                   <CameraIcon className="w-10 h-10 stroke-impo_Surface_Outline" />
@@ -96,7 +102,7 @@ export const FileInputManager = ({
               </CustomTypography>
 
               <div className="w-12 h-12 border-[1px] border-impo_Surface_SurfaceVariant rounded-full flex justify-center items-center">
-                {uploadImageLoading && activeInput === FileInputTypes.GALLERY ? (
+                {isLoading && activeInput === FileInputTypes.GALLERY ? (
                   <CustomSpinner size={20} className={borderColor} />
                 ) : (
                   <GalleryIcon className="w-5 h-5 stroke-impo_Surface_Outline" />
@@ -117,7 +123,7 @@ export const FileInputManager = ({
               </CustomTypography>
 
               <div className="w-12 h-12 border-[1px] border-impo_Surface_SurfaceVariant rounded-full flex justify-center items-center">
-                {uploadImageLoading && activeInput === FileInputTypes.FILE ? (
+                {isLoading && activeInput === FileInputTypes.FILE ? (
                   <CustomSpinner size={20} className={borderColor} />
                 ) : (
                   <FileIcon className="w-5 h-5 stroke-impo_Surface_Outline" />
