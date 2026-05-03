@@ -1,6 +1,5 @@
 import { useMemo, useState } from 'react';
 
-import { compressImageHandler, imageFormatHandler } from '../../utils/fileType';
 import FileIcon from '@assets/shared/icons/Paper.svg';
 import CameraIcon from '@assets/shared/icons/camera.svg';
 import GalleryIcon from '@assets/shared/icons/gallery.svg';
@@ -16,10 +15,11 @@ export const FileInputManager = ({
   ShowCameraInput = true,
   uploadImageLoading,
   fileDataHandler,
-  maxSizeKB = 300,
   ShowFileInput,
+  maxSize,
 }: FileInputManagerTypes) => {
   const { appName } = useSystem();
+  const [compressLoading, setCompressLoading] = useState(false);
   const [activeInput, setActiveInput] = useState<string | null>(null);
 
   const handleFileInput: FileInputHandlerTypes = (type) => async (e) => {
@@ -30,13 +30,24 @@ export const FileInputManager = ({
       return;
     }
 
+    setCompressLoading(true);
+
     try {
-      const resultFile = await imageFormatHandler(file);
-      const compressedFile = await compressImageHandler(resultFile, maxSizeKB);
+      const formData = new FormData();
+      formData.append('file', file);
+
+      const response = await fetch(`/api/imageConverter?maxSize=${maxSize}`, { method: 'POST', body: formData });
+      const blob = await response.blob();
+
+      const compressedFileName = file.name.split('.')[0] + '.webp';
+      const compressedFile = new File([blob], compressedFileName, { type: 'image/webp' });
+
       fileDataHandler({ e, file: compressedFile });
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
+
+    setCompressLoading(false);
   };
 
   const borderColor = useMemo(() => {
@@ -49,6 +60,8 @@ export const FileInputManager = ({
     }
   }, [appName]);
 
+  const isLoading = compressLoading || uploadImageLoading;
+
   return (
     <>
       {ShowCameraInput && (
@@ -57,9 +70,9 @@ export const FileInputManager = ({
             type="file"
             accept="image/*"
             id="camera-input"
-            className="hidden"
             capture="environment"
             onChange={handleFileInput(FileInputTypes.CAMERA)}
+            style={{ opacity: 0, position: 'absolute', width: 0, height: 0 }}
           />
 
           <label htmlFor="camera-input">
@@ -69,7 +82,7 @@ export const FileInputManager = ({
               </CustomTypography>
 
               <div className="w-12 h-12 border-[1px] border-impo_Surface_SurfaceVariant rounded-full flex justify-center items-center">
-                {uploadImageLoading && activeInput === FileInputTypes.CAMERA ? (
+                {isLoading && activeInput === FileInputTypes.CAMERA ? (
                   <CustomSpinner size={20} className={borderColor} />
                 ) : (
                   <CameraIcon className="w-10 h-10 stroke-impo_Surface_Outline" />
@@ -96,7 +109,7 @@ export const FileInputManager = ({
               </CustomTypography>
 
               <div className="w-12 h-12 border-[1px] border-impo_Surface_SurfaceVariant rounded-full flex justify-center items-center">
-                {uploadImageLoading && activeInput === FileInputTypes.GALLERY ? (
+                {isLoading && activeInput === FileInputTypes.GALLERY ? (
                   <CustomSpinner size={20} className={borderColor} />
                 ) : (
                   <GalleryIcon className="w-5 h-5 stroke-impo_Surface_Outline" />
@@ -110,6 +123,7 @@ export const FileInputManager = ({
       {ShowFileInput && (
         <div className="p-2">
           <input type="file" id="file-input" className="hidden" onChange={handleFileInput(FileInputTypes.FILE)} />
+
           <label htmlFor="file-input">
             <div className="flex justify-end items-center gap-2">
               <CustomTypography fontSize="Body_Large" className="text-impo_Neutral_OnBackground">
@@ -117,7 +131,7 @@ export const FileInputManager = ({
               </CustomTypography>
 
               <div className="w-12 h-12 border-[1px] border-impo_Surface_SurfaceVariant rounded-full flex justify-center items-center">
-                {uploadImageLoading && activeInput === FileInputTypes.FILE ? (
+                {isLoading && activeInput === FileInputTypes.FILE ? (
                   <CustomSpinner size={20} className={borderColor} />
                 ) : (
                   <FileIcon className="w-5 h-5 stroke-impo_Surface_Outline" />

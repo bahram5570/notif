@@ -1,7 +1,3 @@
-import imageCompression from 'browser-image-compression';
-
-import heic2any from 'heic2any';
-
 export const chatFileTypeDetector = (fileName: string) => {
   const imageTypes = ['png', 'jpg', 'jpeg', 'webp'];
   const voiceTypes = ['mp3', 'wav', 'ogg', 'flac', 'aac'];
@@ -14,28 +10,4 @@ export const chatFileTypeDetector = (fileName: string) => {
   const isFileType = fileTypes.includes(typeName);
 
   return { isImageType, isVoiceType, isFileType };
-};
-
-export const imageFormatHandler = async (file: File) => {
-  const isHeicFile = file.name.toLowerCase().includes('.heic');
-
-  if (!isHeicFile) {
-    return file;
-  }
-
-  const conversionResult = await heic2any({ blob: file, toType: 'image/jpeg', quality: 1 });
-  const jpegBlob = Array.isArray(conversionResult) ? conversionResult[0] : conversionResult;
-  const filename = file.name.split('.')[0] + '.jpeg';
-
-  const convertedImage = new File([jpegBlob], filename, { type: jpegBlob.type });
-  return convertedImage;
-};
-
-export const compressImageHandler = async (file: File, maxSizeKB: number) => {
-  const maxSizeMB = maxSizeKB / 1024; // # According to MB;
-  const maxWidthOrHeight = 1024;
-
-  const blobFile = await imageCompression(file, { maxWidthOrHeight, maxSizeMB });
-  const compressedFile = new File([blobFile], blobFile.name, { type: blobFile.type });
-  return compressedFile;
 };

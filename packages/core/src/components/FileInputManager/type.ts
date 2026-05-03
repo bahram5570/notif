@@ -7,7 +7,7 @@ export interface FileInputManagerTypes {
   ShowGalleryInput?: boolean;
   ShowCameraInput?: boolean;
   ShowFileInput: boolean;
-  maxSizeKB?: number;
+  maxSize?: number;
 }
 
 export type FileInputHandlerTypes = (type: FileInputTypes) => (e: React.ChangeEvent<HTMLInputElement>) => void;

@@ -8,9 +8,9 @@ import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 import { ActionTypes } from '@repo/core/providers/WidgetActionsProvider';
 import { useRouter } from 'next/navigation';
 
-import { SupportMainTabContentsModalTypes } from './types';
+import { SupportActionsModalTypes } from './types';
 
-const SupportMainTabContentsModal = ({ supportSheets }: SupportMainTabContentsModalTypes) => {
+const SupportActionsModal = ({ supportSheets }: SupportActionsModalTypes) => {
   const router = useRouter();
   const { actionHandler } = useWidgetActions();
   const { getQueryParams } = useQueryParamsHandler();
@@ -54,4 +54,4 @@ const SupportMainTabContentsModal = ({ supportSheets }: SupportMainTabContentsMo
   );
 };
 
-export default SupportMainTabContentsModal;
+export default SupportActionsModal;

@@ -29,6 +29,7 @@ const ShareExperienceContainer = () => {
   return (
     <>
       <MainPageLayoutHeader leftElement1="Profile" leftElement2="Notification" />
+
       <div
         ref={scrollRef}
         style={{ height: '100dvh' }}

@@ -5,9 +5,9 @@ import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-import { SUPPORT_MAIN_FOOTER_HEIGHT } from './constants';
+import { SUPPORT_ACTIONS_FOOTER_HEIGHT } from './constants';
 
-const SupportMainTabContentsFooter = () => {
+const SupportActionsFooter = () => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
 
   const selectHandler = () => {
@@ -18,7 +18,7 @@ const SupportMainTabContentsFooter = () => {
     <>
       <div
         dir="rtl"
-        style={{ height: SUPPORT_MAIN_FOOTER_HEIGHT, maxWidth: MAX_SCREEN_WIDTH }}
+        style={{ height: SUPPORT_ACTIONS_FOOTER_HEIGHT, maxWidth: MAX_SCREEN_WIDTH }}
         className="
                     fixed 
                     bottom-0 
@@ -60,4 +60,4 @@ const SupportMainTabContentsFooter = () => {
   );
 };
 
-export default SupportMainTabContentsFooter;
+export default SupportActionsFooter;

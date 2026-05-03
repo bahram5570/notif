@@ -9,7 +9,7 @@ import { PopUpTimerInteractionContentPropsType } from './type';
 
 const PopUpTimerInteractionContent = ({ actionCompleteHandler, data }: PopUpTimerInteractionContentPropsType) => {
   const { actionHandler } = useWidgetActions();
-  const { jsonData, isJson } = useCheckJson({ icon: data.icon });
+  const { isJson } = useCheckJson({ icon: data.icon });
 
   const closeHandler = () => {
     actionCompleteHandler();

@@ -1,12 +1,12 @@
-import { HEIGHT, WIDTH } from '../constants';
 import { PopUpTimerInteractionStrokePropsType } from './type';
 
-const PopUpTimerInteractionStroke = ({ progress }: PopUpTimerInteractionStrokePropsType) => {
+const PopUpTimerInteractionStroke = ({ progress, sizes }: PopUpTimerInteractionStrokePropsType) => {
   const rx = 32;
-  const width = WIDTH;
-  const height = HEIGHT;
+  const width = sizes.width;
+  const height = sizes.height;
 
   const perimeter = 2 * (width + height);
+
   return (
     <svg
       fill="none"
@@ -16,11 +16,11 @@ const PopUpTimerInteractionStroke = ({ progress }: PopUpTimerInteractionStrokePr
       <rect
         x={1}
         y={1}
-        width={width - 2}
-        height={height - 8}
         rx={rx}
-        stroke={'#E640FF'}
         strokeWidth={2}
+        width={width - 2}
+        height={height - 2}
+        stroke={'#E640FF'}
         strokeDasharray={perimeter}
         strokeDashoffset={perimeter * (1 - progress / 100)}
         style={{ transition: 'stroke-dashoffset 0.05s linear' }}

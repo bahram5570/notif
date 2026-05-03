@@ -9,7 +9,6 @@ const UploadFileModalContainer = ({ fileDataHandler, uploadImageLoading }: Uploa
         ShowFileInput={false}
         fileDataHandler={fileDataHandler}
         uploadImageLoading={uploadImageLoading}
-        maxSizeKB={300}
       />
     </div>
   );

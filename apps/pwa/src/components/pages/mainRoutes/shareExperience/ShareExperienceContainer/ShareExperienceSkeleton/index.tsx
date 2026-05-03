@@ -1,9 +1,11 @@
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+
 const list = [1, 2, 3, 4, 5, 6, 7, 8];
 
 const ShareExperienceSkeleton = () => {
   return (
-    <div className="w-full px-4 animate-pulse" style={{ direction: 'rtl' }}>
-      <div className="w-[160px] h-[20px] rounded-md mb-6 bg-impo_Surface_SurfaceVariant" />
+    <div className="w-full px-4 animate-pulse" style={{ direction: 'rtl', paddingTop: HEADER_HEIGHT }}>
+      <div className="w-[100px] h-[20px] rounded-md mb-6 bg-impo_Surface_SurfaceVariant" />
 
       <div className="w-full max-w-full overflow-hidden flex gap-4">
         {list.map((i) => (
