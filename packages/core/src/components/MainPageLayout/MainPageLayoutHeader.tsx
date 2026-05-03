@@ -30,7 +30,7 @@ export const MainPageLayoutHeader = (props: MainPageLayoutHeaderProps) => {
           </CustomTypography>
         </div>
 
-        <div className="flex items-center gap-1  min-w-fit">
+        <div className="flex items-center gap-2 min-w-fit">
           {props.rightElementScript && (
             <CustomTypography fontSize="Lable_MediumProminet" className="text-impo_Neutral_OnBackground">
               {props.rightElementScript || ''}

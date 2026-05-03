@@ -1,7 +1,7 @@
-import SupportContainer from '@components/pages/nestedRoutes/profile/support/SupportPage';
+import SupportPage from '@components/pages/nestedRoutes/profile/Support/SupportPage';
 
 const Support = () => {
-  return <SupportContainer />;
+  return <SupportPage />;
 };
 
 export default Support;

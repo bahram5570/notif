@@ -60,6 +60,7 @@ export enum ActionTypeEnum {
   HandleByApp = 5,
   ExternalRout = 6,
   ActionList = 7,
+  CallPhone = 8,
 }
 
 export enum PopupTypeEnum {

@@ -25,15 +25,13 @@ export const MODALS = {
   // # profile
   USER_INFO: 'USER_INFO',
   USER_PERIOD_SETTINGS: 'USER_PERIOD_SETTINGS',
+  SUPPORT_SHEETS: 'SUPPORT_SHEETS',
 
   // # Feedback
   MODAL_FEEDBACK: 'MODAL_FEED_BACK',
 
   // # Question-onboarding
   ONBOARDING_QUESTION_REWARD: ' ONBOARDING_QUESTION_REWARD',
-
-  // # Question-onboarding
-
   MODALS_AI_CHAT: 'MODALS_AI_CHAT',
 };
 

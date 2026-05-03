@@ -4,6 +4,7 @@ import { findDefaultQuestionQuery } from '@utils/aiChatbot';
 import { clinicProfileHandler } from './clinicHandler';
 import { enterphaseHandler } from './enterphaseHandler';
 import { shareExperienceHandler } from './shareExperienceHandler';
+import { supportTicketChatHandler, supportTicketNewHandler } from './supportHandler';
 
 export const actionRouteConverter = async (serverLink: string) => {
   const baseRoute = serverLink.split('?')[0];
@@ -34,8 +35,10 @@ export const actionRouteConverter = async (serverLink: string) => {
       result = '/protected/supportTicket';
       break;
     case '/support/ticket/chat':
-      const id = queries.split('id=')[1];
-      result = `/protected/supportTicket/${id}`;
+      result = supportTicketChatHandler(queries);
+      break;
+    case '/support/ticket/new':
+      result = supportTicketNewHandler(queries);
       break;
 
     case '/partner/messenger':

@@ -10,7 +10,7 @@ export const MainPageLayout = (props: MainPageLayoutProps) => {
   delete headerProps.className;
   delete headerProps.children;
 
-  const paddingTop = typeof props.paddingTop === 'undefined' ? `${HEADER_HEIGHT - 8}px` : props.paddingTop;
+  const paddingTop = typeof props.paddingTop === 'undefined' ? HEADER_HEIGHT : props.paddingTop;
   const paddingBottom = typeof props.paddingBottom === 'undefined' ? 0 : props.paddingBottom;
 
   return (

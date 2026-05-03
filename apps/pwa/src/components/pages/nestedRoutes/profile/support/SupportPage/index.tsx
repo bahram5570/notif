@@ -2,22 +2,42 @@
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 
-import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
-
-import SupportLinkGenerator from './SupportLinkGenerator';
-import { SUPPORT_LINK_LIST } from './constants';
+import useGetCategoryData from '../__hooks__/useGetCategoryData';
+import useGetTicketsData from '../__hooks__/useGetTicketsData';
+import useSupportTabs from '../__hooks__/useSupportTabs';
+import { SupportTabsEnum } from '../__hooks__/useSupportTabs/Enum';
+import SupportMainTabContents from './SupportMainTabContents';
+import SupportPageSkeleton from './SupportPageSkeleton';
+import SupportTabs from './SupportTabs';
+import SupportTicketsTabContents from './SupportTicketsTabContents';
 
 const SupportPage = () => {
+  const { tab, supportTabHandler } = useSupportTabs();
+  const { categoryLoading, categoryData } = useGetCategoryData();
+  const { ticketsLoading, ticketsData, hadPendingTicket, pageNo, ticketsPageNoHandler } = useGetTicketsData();
+
+  const isLoading = categoryLoading || Boolean(ticketsLoading && !ticketsData);
+
   return (
-    <MainPageLayout
-      rightElement="BackButton"
-      rightElementScript="پشتیبانی"
-      className="flex flex-col gap-4 px-4 bg-impo_Neutral_Surface"
-      paddingTop={HEADER_HEIGHT + 16}
-    >
-      {SUPPORT_LINK_LIST.map((link, index) => {
-        return <SupportLinkGenerator {...link} key={index} />;
-      })}
+    <MainPageLayout rightElement="BackButton" rightElementScript="پشتیبانی" className="px-4">
+      {isLoading && <SupportPageSkeleton />}
+
+      {categoryData && ticketsData && (
+        <>
+          <SupportTabs tab={tab} supportTabHandler={supportTabHandler} hadPendingTicket={hadPendingTicket} />
+
+          {tab === SupportTabsEnum.Main && <SupportMainTabContents {...categoryData} />}
+
+          {tab === SupportTabsEnum.Tickets && (
+            <SupportTicketsTabContents
+              {...ticketsData}
+              pageNo={pageNo}
+              isLoading={ticketsLoading}
+              ticketsPageNoHandler={ticketsPageNoHandler}
+            />
+          )}
+        </>
+      )}
     </MainPageLayout>
   );
 };

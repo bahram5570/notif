@@ -1,0 +1,1 @@
+export const SUPPORT_MAIN_FOOTER_HEIGHT = 140;

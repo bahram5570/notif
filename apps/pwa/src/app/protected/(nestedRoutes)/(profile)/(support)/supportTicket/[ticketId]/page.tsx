@@ -1,7 +1,7 @@
-import SupportTicketDetailContainer from '@components/pages/nestedRoutes/profile/support/SupportTicketDetailPage';
+import SupportTicketIdPage from '@components/pages/nestedRoutes/profile/Support/SupportTicketIdPage';
 
-const TicketDetail = () => {
-  return <SupportTicketDetailContainer />;
+const SupportTicketId = () => {
+  return <SupportTicketIdPage />;
 };
 
-export default TicketDetail;
+export default SupportTicketId;
