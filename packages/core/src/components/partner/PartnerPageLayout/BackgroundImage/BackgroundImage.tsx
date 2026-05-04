@@ -1,11 +1,10 @@
 import EditIcon from '@assets/icons/Gallery Edit.svg';
 import UploadIcon from '@assets/icons/upload.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
 
-import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-
+import { MODAL_QUERY_NAME } from '../../../../constants/modal.constants';
+import { usePageNavigationLoading } from '../../../../hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
+import { CustomImage } from '../../../ui/CustomImage';
 import { BackgroundImagePropsType } from './type';
 
 export const BackgroundImage = ({ isValid, coverImage, defaultCoverImage }: BackgroundImagePropsType) => {
@@ -43,8 +42,8 @@ export const BackgroundImage = ({ isValid, coverImage, defaultCoverImage }: Back
           <CustomImage
             src={imageSrc}
             alt="background"
-            className={`!object-cover z-0 ${!canDeleteImage && 'dark:hidden'}`}
             style={{ width: '100%', height: 'auto' }}
+            className={`!object-cover z-0 ${!canDeleteImage && 'dark:hidden'}`}
           />
         </div>
 

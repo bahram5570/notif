@@ -1,4 +1,4 @@
-import { DrTypes, SelectedDoctorHandlerTypes } from '@repo/core/components/clinic';
+import { DrTypes, SelectedDoctorHandlerTypes } from '../types';
 
 type DoctorTypes = Pick<
   DrTypes,

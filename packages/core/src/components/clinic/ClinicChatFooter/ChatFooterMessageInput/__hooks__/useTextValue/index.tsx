@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
-import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-
+import { usePwaApi } from '../../../../../../hooks/usePwaApi';
 import useUpdateChatReactQuery from '../useUpdateChatReactQuery';
 
 const useTextValue = (ticketId: string) => {

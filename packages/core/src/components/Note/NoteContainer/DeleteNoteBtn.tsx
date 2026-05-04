@@ -1,10 +1,9 @@
 import TrashIcon from '@assets/shared/icons/trash.svg';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-
+import { MODAL_QUERY_NAME } from '../../../constants/modal.constants';
+import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
+import { CustomTypography } from '../../ui/CustomTypography';
 import { NoteModalNameEnums } from './NoteModal/enum';
 
 const DeleteNoteBtn = () => {

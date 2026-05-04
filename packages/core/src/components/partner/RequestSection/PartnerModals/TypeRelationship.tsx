@@ -1,18 +1,17 @@
 import { useMemo, useState } from 'react';
 
 import Hamdel from '@assets/shared/icons/hamdel.svg';
-import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-
+import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
 import { useSystem } from '../../../../hooks/useSystem';
+import { CustomButton } from '../../../ui/CustomButton';
+import { CustomTypography } from '../../../ui/CustomTypography';
 import { PartnerRadioButton } from '../../PartnerRadioButton';
 import useAccept from './__hooks__/useAccept';
 
 const TypeRelationship = () => {
-  const { acceptHandler } = useAccept();
   const { appName } = useSystem();
+  const { acceptHandler } = useAccept();
   const { getQueryParams } = useQueryParamsHandler();
   const [distanceTypeValue, setDistanceTypeValue] = useState<number>(0);
 
@@ -50,9 +49,11 @@ const TypeRelationship = () => {
         <div className={`w-11 h-11 flex justify-center items-center rounded-full  ${theme.backgroundColor}`}>
           <Hamdel className={`w-6 h-6   ${theme.stroke}`} />
         </div>
+
         <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
           نوع رابطه
         </CustomTypography>
+
         <CustomTypography fontSize="Body_Medium" className="text-impo_Surface_Outline">
           می‌تونی بعدا نوع رابطه رو در قسمت پروفایل ویرایش کنی
         </CustomTypography>

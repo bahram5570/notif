@@ -1,12 +1,11 @@
 import { useMemo } from 'react';
 
-import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { CustomModal } from '@repo/core/components/ui/CustomModal';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
 import { useRouter } from 'next/navigation';
 
 import { useSystem } from '../../../../hooks/useSystem';
+import { CustomButton } from '../../../ui/CustomButton';
+import { CustomModal } from '../../../ui/CustomModal';
+import { CustomTypography } from '../../../ui/CustomTypography';
 import useDelete from './__hooks__/useDelete';
 import { DeleteMemoryModalPropsType } from './type';
 
@@ -43,6 +42,7 @@ const DeleteMemoryModal = ({ memoryId }: DeleteMemoryModalPropsType) => {
         <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Title_Small">
           حذف خاطره
         </CustomTypography>
+
         <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Body_Medium">
           می‌خوای این خاطره رو حذف کنی؟
         </CustomTypography>

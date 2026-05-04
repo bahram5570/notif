@@ -3,10 +3,8 @@ import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 
-import ShareExperienceBottomPart from '../../../ShareExperienceContainer/ShareExperienceExperiences/ShareExperienceBottomPart';
-import ShareExperienceTopPart from '../../../ShareExperienceContainer/ShareExperienceExperiences/ShareExperienceTopPart';
 import ShareExperienceNewLink from '../../../ShareExperienceContainer/ShareExperienceNewLink';
-import ShareExperienceContentsModule from '../../../ShareExperienceModules/ShareExperienceContentsModule';
+import ShareExperiencePostCardModules from '../../../ShareExperienceModules/ShareExperiencePostCardModules';
 import EmptyState from './EmptyState';
 import ShareExperienceAssociationItemHeader from './ShareExperienceAssociationItemHeader';
 import useGetAssociationInfo from './__hooks__/useGetAssociationInfo';
@@ -61,25 +59,15 @@ const ShareExperienceAssociationItemContainer = ({
               {hasExperienceList &&
                 associationExperienceList?.experiences.map((item, index) => {
                   return (
-                    <div
-                      key={index}
-                      className={`w-full ${index !== 0 && 'border-t-[1px] border-t-impo_Neutral_Surface'}   pt-5 pb-4 `}
-                    >
-                      <ShareExperienceTopPart {...item} />
-
-                      <div className="w-full pr-10">
-                        <ShareExperienceContentsModule
-                          image={item.image}
-                          text={item.text}
-                          hasLinkTo={true}
-                          isSelf={false}
-                          id={item.id}
-                          tags={item.tags}
-                        />
-
-                        <ShareExperienceBottomPart {...item} />
-                      </div>
-                    </div>
+                    <ShareExperiencePostCardModules
+                      key={item.id}
+                      {...item}
+                      type="association"
+                      shareId={item.id}
+                      hasLinkTo={true}
+                      isSelf={item.selfExperience}
+                      className={` ${index !== 0 && 'border-t-[1px] border-t-impo_Neutral_Surface'}`}
+                    />
                   );
                 })}
             </div>

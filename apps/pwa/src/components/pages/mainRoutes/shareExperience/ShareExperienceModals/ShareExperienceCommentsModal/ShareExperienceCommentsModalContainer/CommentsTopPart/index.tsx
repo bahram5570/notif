@@ -1,18 +1,18 @@
+import { SelectedProfileLink } from '@repo/core/components/ShareExperience';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useShareExperiencePassedTime from '@components/pages/mainRoutes/shareExperience/__hooks__/useShareExperiencePassedTime';
+import { usePassedTime } from '@repo/core/hooks/usePassedTime';
 
 import ShareExperienceFollowModule from '../../../../ShareExperienceModules/ShareExperienceFollowModule';
-import ShareExperienceProfileIconModule from '../../../../ShareExperienceModules/ShareExperienceProfileIconModule';
 import { CommentsTopPartProps } from './types';
 
 const CommentsTopPart = (props: CommentsTopPartProps) => {
-  const timeScript = useShareExperiencePassedTime(props.createTime);
+  const timeScript = usePassedTime(props.createTime);
 
   return (
     <div className="w-full flex justify-between" dir="rtl">
       <div className="flex gap-2">
-        <ShareExperienceProfileIconModule
+        <SelectedProfileLink
           size={40}
           id={props.userId}
           isSelf={props.self}

@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
 import StarIcon from '@assets/shared/icons/star.svg';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { useSystem } from '../../../../hooks/useSystem';
+import { CustomTypography } from '../../CustomTypography';
 import { RATING_LIST } from '../constants';
 import { FeedbackStarsPropsType } from './type';
 
@@ -43,6 +43,7 @@ const FeedbackStars = ({ rate, rateHandler }: FeedbackStarsPropsType) => {
           <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
             {RATING_LIST[0].script}
           </CustomTypography>
+
           <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
             {RATING_LIST[4].script}
           </CustomTypography>

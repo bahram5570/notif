@@ -1,6 +1,5 @@
-import { CustomModal } from '@repo/core/components/ui/CustomModal';
-
 import { FileInputManager } from '../../../FileInputManager';
+import { CustomModal } from '../../../ui/CustomModal';
 import { UploadModalPropsType } from './type';
 
 export const UploadModal = ({ fileDataHandler, uploadImageLoading }: UploadModalPropsType) => {

@@ -1,23 +1,22 @@
 import { useState } from 'react';
 
-import { toGregorianData } from '@repo/core/utils/dates';
+import { toGregorianData } from '../../../../../utils/dates';
 
-import { APP_VERSION } from '@repo/core/constants/app.constants';
-import { useCulture } from '@repo/core/hooks/useCulture';
-import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import { useRouter } from 'next/navigation';
 
+import { APP_VERSION } from '../../../../../constants/app.constants';
+import { useCulture } from '../../../../../hooks/useCulture';
+import { usePwaApi } from '../../../../../hooks/usePwaApi';
+import { CalendarTypeEnum } from '../../../../../providers/CultureProvider';
 import { ItemType } from '../useGetData/type';
 import useUpdateNoteList from '../useUpdateNoteList';
 import { NoteValueType, UseSubmitPropsType } from './type';
 
 export const useSubmit = ({ noteId }: UseSubmitPropsType) => {
   const router = useRouter();
+  const { culture } = useCulture();
   const { updateNoteList } = useUpdateNoteList();
   const [noteValue, setNotValue] = useState<NoteValueType>();
-
-  const { culture } = useCulture();
 
   const isEditMode = noteId ? true : false;
 

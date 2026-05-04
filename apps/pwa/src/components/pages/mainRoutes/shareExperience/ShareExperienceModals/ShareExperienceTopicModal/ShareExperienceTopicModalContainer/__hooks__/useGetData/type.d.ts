@@ -1,49 +1,12 @@
-import { TagType } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
-import { ShareExperienceExperiencesProps } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceExperiences/types';
-import { ShareExperienceTopicsProps } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceTopics/type';
+import { TopicExperiencesResponseTypes } from '@repo/core/components/ShareExperience';
 
 export type useGetDataPropsType = {
   // ref: React.RefObject<HTMLDivElement>;
   topicId: string | undefined;
 };
 
-export type ExperiencesResponseTypes = {
-  totalCount: number;
-  id: string;
-  coverImage: string;
-  inputText: string;
-  bio: string;
-  prohibtShareExp: boolean;
-  name: string;
-  image: string;
-  expirences: {
-    topicName: string;
-    isEdit: boolean;
-    isPin: boolean;
-    text: string;
-    image: string;
-    id: string;
-    isDelete: boolean;
-    selfExperience: boolean;
-    self: boolean;
-    createTime: string;
-    avatar: string;
-    name: string;
-    prohibtComment: boolean;
-    approvedProfile: boolean;
-    likeCount: number;
-    disliked: number;
-    commentCount: number;
-    state: number;
-    userId: string;
-    isBookmarked: boolean;
-    isFollow: boolean;
-    tags?: TagType[];
-  }[];
-};
-
-export type QueryExperiencesDataTypes = Pick<ExperiencesResponseTypes, 'expirences'>;
+export type QueryExperiencesDataTypes = Pick<TopicExperiencesResponseTypes, 'expirences'>;
 
 export type ExperiencesDataTypes = QueryExperiencesDataTypes['expirences'];
 
-export type TopicInformationTypes = Pick<ExperiencesResponseTypes, 'coverImage' | 'name' | 'inputText' | 'bio'>;
+export type TopicInformationTypes = Pick<TopicExperiencesResponseTypes, 'coverImage' | 'name' | 'inputText' | 'bio'>;

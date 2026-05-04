@@ -1,5 +1,4 @@
-import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-
+import { usePwaApi } from '../../../../../hooks/usePwaApi';
 import { NotReadResponseType } from './type';
 
 const useGetNotReadMessage = ({ valid }: { valid: boolean }) => {

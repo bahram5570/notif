@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
-import { gregorianFarsiScriptDate, jalaaliScriptDate } from '@repo/core/utils/dates';
+import { gregorianFarsiScriptDate, jalaaliScriptDate } from '../../utils/dates';
 
-import { useCulture } from '@repo/core/hooks/useCulture';
-import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import moment from 'moment-jalaali';
 
+import { CalendarTypeEnum } from '../../providers/CultureProvider';
+import { useCulture } from '../useCulture';
 import { UseCalendarDateFormatPropsType } from './type';
 
 export const useCalendarDateFormat = ({ date }: UseCalendarDateFormatPropsType) => {
@@ -19,12 +19,11 @@ export const useCalendarDateFormat = ({ date }: UseCalendarDateFormatPropsType) 
 
     if (culture.calendarType === CalendarTypeEnum.Gregorian) {
       const gregorianFarsMonth = gregorianFarsiScriptDate(gregorianDate);
-
       setCurrentDate(gregorianFarsMonth);
     }
+
     if (culture.calendarType === CalendarTypeEnum.Jalali) {
       const jalaaliMonth = jalaaliScriptDate(jalaaliMoment);
-
       setCurrentDate(jalaaliMonth);
     }
   }, [culture.calendarType]);

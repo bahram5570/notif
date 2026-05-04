@@ -1,7 +1,7 @@
 import SupportIcon from '@assets/icons/support2.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { MODALS } from '@constants/modals.constants';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 

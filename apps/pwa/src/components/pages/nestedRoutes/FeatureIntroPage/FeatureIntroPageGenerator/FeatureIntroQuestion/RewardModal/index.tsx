@@ -2,7 +2,7 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { MODALS } from '@constants/modals.constants';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { RewardModalPropsType } from './type';

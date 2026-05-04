@@ -2,30 +2,30 @@
 
 import { useEffect, useState } from 'react';
 
-import { NoteItem } from '@repo/core/components/CalendarDraggingPanel/SelectedDayNote/SelectedDayNoteList/NoteItem';
-import { MainPageLayout } from '@repo/core/components/MainPageLayout';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { currentDate, gregorianFarsiScriptDate, jalaaliScriptDate } from '@repo/core/utils/dates';
+import { currentDate, gregorianFarsiScriptDate, jalaaliScriptDate } from '../../../utils/dates';
 
-import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
-import { useCulture } from '@repo/core/hooks/useCulture';
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import { useSignDateState } from '@repo/core/hooks/useSignDateState';
-import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import moment from 'moment-jalaali';
 
+import { HEADER_HEIGHT } from '../../../constants/app.constants';
+import { useCulture } from '../../../hooks/useCulture';
+import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
+import { useSignDateState } from '../../../hooks/useSignDateState';
 import { useSystem } from '../../../hooks/useSystem';
+import { CalendarTypeEnum } from '../../../providers/CultureProvider';
+import { NoteItem } from '../../CalendarDraggingPanel/SelectedDayNote/SelectedDayNoteList/NoteItem';
+import { MainPageLayout } from '../../MainPageLayout';
+import { CustomTypography } from '../../ui/CustomTypography';
 import { NoteContainerListSkeleton } from './NoteContainerListSkeleton';
 import { useGetData } from './__hooks__/useGetData';
 
 const { gDate } = currentDate();
 
 export const NoteContainerList = () => {
+  const { appName } = useSystem();
   const { culture } = useCulture();
   const [currentDate, setCurrentDate] = useState('');
   const { isLoading, currentNoteList } = useGetData();
   const { calendarInitailSelectedDate } = useSignDateState();
-  const { appName } = useSystem();
 
   const { pageNavigationHandler } = usePageNavigationLoading();
   const selectedDate = calendarInitailSelectedDate ? calendarInitailSelectedDate : gDate;

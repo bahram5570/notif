@@ -1,7 +1,5 @@
-import { CustomModal } from '@repo/core/components/ui/CustomModal';
-
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-
+import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
+import { CustomModal } from '../../../ui/CustomModal';
 import AcceptModal from './AcceptModal';
 import RejectModal from './RejectModal';
 import TypeRelationship from './TypeRelationship';

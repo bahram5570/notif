@@ -1,6 +1,5 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
+import { CustomImage } from '../../ui/CustomImage';
+import { CustomTypography } from '../../ui/CustomTypography';
 import { TicketDoctorProps } from './types';
 
 const TicketDoctor = ({ drName, drSpeciality, drImage, stylingTypes }: TicketDoctorProps) => {

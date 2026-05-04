@@ -1,8 +1,7 @@
 import ProfileIcon from '@assets/shared/icons/headerProfile.svg';
-import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-
+import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
+import { CustomSpinner } from '../../ui/CustomSpinner';
 import { ProfileButtonPropsType } from './type';
 
 export const ProfileButton = ({ coverImage }: ProfileButtonPropsType) => {

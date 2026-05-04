@@ -1,4 +1,4 @@
-import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { MODALS } from '@constants/modals.constants';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';

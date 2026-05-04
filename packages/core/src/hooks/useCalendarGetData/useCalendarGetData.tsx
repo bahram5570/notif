@@ -1,14 +1,13 @@
-import { calendarDayInfoMaker, calendarIntervalMaker, calendarMonthInfoMaker } from './__utils__';
 import {
   CalendarDataTypes,
   InfoCalendarResponseTypes,
   SingleDateTypes,
   UseGetDataProps,
-} from '@repo/core/components/calendar';
+} from '../../components/calendar';
+import { calendarDayInfoMaker, calendarIntervalMaker, calendarMonthInfoMaker } from './__utils__';
 
-import { useCulture } from '@repo/core/hooks/useCulture';
-import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-
+import { useCulture } from '../useCulture';
+import { usePwaApi } from '../usePwaApi';
 import { useSystem } from '../useSystem';
 
 export const useCalendarGetData = ({ onValues, hasSigns, cacheTime }: UseGetDataProps) => {
@@ -48,8 +47,8 @@ export const useCalendarGetData = ({ onValues, hasSigns, cacheTime }: UseGetData
   };
 
   const { isLoading } = usePwaApi<InfoCalendarResponseTypes>({
-    method: 'GET',
     api,
+    method: 'GET',
     onSuccess: successHandler,
     queryKey: ['infoCalendar'],
     cacheTime: cacheTime,

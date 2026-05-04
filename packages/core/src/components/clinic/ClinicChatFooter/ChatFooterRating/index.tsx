@@ -1,10 +1,8 @@
 import { useMemo } from 'react';
 
-import { CustomButton } from '@repo/core/components/ui/CustomButton';
-
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-
+import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
 import { useSystem } from '../../../../hooks/useSystem';
+import { CustomButton } from '../../../ui/CustomButton';
 import { RATING_QUERY_NAME } from '../../constants';
 
 const ChatFooterRating = () => {

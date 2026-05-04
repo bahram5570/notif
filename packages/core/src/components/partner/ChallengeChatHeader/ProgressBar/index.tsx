@@ -1,7 +1,7 @@
 import ArrowUpIcon from '@assets/shared/icons/Alt Arrow Up.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
+import { CustomImage } from '../../../ui/CustomImage';
+import { CustomTypography } from '../../../ui/CustomTypography';
 import { ProgressBarPropsType } from './type';
 
 export const ProgressBar = ({ progress, avatar, partnerAvatar, className }: ProgressBarPropsType) => {

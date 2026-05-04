@@ -1,8 +1,5 @@
-import { ShareExperenceProfileResponsePropsType } from '../__hooks__/useGetData/type';
+import { ProfileResponsePropsType } from '@repo/core/components/ShareExperience';
 
-type ProfileType = Pick<
-  ShareExperenceProfileResponsePropsType,
-  'profile' | 'followCount' | 'storyCount' | 'isSelf' | 'isFollow'
->;
+type ProfileType = Pick<ProfileResponsePropsType, 'profile' | 'followCount' | 'storyCount' | 'isSelf' | 'isFollow'>;
 
 export interface ShareExperienceProfileTopPartPropsType extends ProfileType {}

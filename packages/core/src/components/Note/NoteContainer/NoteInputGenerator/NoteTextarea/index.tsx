@@ -1,9 +1,8 @@
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { typographyFontStylesMaker } from '@repo/core/utils/system';
+import { typographyFontStylesMaker } from '../../../../../utils/system';
 
-import { useSystem } from '@repo/core/hooks/useSystem';
-
+import { useSystem } from '../../../../../hooks/useSystem';
 import { CustomTextareaInput } from '../../../../ui/CustomTextareaInput';
+import { CustomTypography } from '../../../../ui/CustomTypography';
 import { NoteTextareaPropsType } from './type';
 
 export const NoteTextarea = ({ label, name, onchangeHandler, value }: NoteTextareaPropsType) => {
@@ -24,6 +23,7 @@ export const NoteTextarea = ({ label, name, onchangeHandler, value }: NoteTextar
           </CustomTypography>
         )}
       </div>
+
       <CustomTextareaInput
         placeholder="اینجا بنویس"
         value={value ?? ''}

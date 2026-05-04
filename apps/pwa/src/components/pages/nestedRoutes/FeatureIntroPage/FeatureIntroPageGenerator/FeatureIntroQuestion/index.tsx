@@ -1,4 +1,4 @@
-import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { MODALS } from '@constants/modals.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 

@@ -1,6 +1,5 @@
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
 import { useSystem } from '../../../hooks/useSystem';
+import { CustomTypography } from '../../ui/CustomTypography';
 import { ClinicStateEnums } from '../enums';
 import { TicketBigLabelProps } from './types';
 

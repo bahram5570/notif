@@ -1,23 +1,22 @@
 import { useEffect, useMemo, useState } from 'react';
 
+import { textShorter } from '../../../utils/scripts';
 import PaperClipIcon from '@assets/shared/icons/paperclip.svg';
 import TrashIcon from '@assets/shared/icons/trash.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { textShorter } from '@repo/core/utils/scripts';
 
-import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-
+import { MODAL_QUERY_NAME } from '../../../constants/modal.constants';
+import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
 import { useSystem } from '../../../hooks/useSystem';
+import { CustomImage } from '../../ui/CustomImage';
+import { CustomTypography } from '../../ui/CustomTypography';
 import { UploadInputPropsType } from './type';
 
 export const UploadInput = ({ fileName, uploadImageLoading, onChangeHandler }: UploadInputPropsType) => {
   const { appName } = useSystem();
+  const [progress, setProgress] = useState(0);
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const [progress, setProgress] = useState(0);
 
   const onChange = () => {
     onChangeHandler('', 'fileName');
@@ -81,6 +80,7 @@ export const UploadInput = ({ fileName, uploadImageLoading, onChangeHandler }: U
           <div className="flex rounded-2xl justify-between items-center px-5 py-3 gap-3 bg-impo_Surface_SurfaceVariant">
             <div className="flex gap-3">
               <CustomImage src={fileName} width={48} height={48} className="rounded-md" />
+
               <CustomTypography fontSize="Body_Medium" className="break-all text-left text-impo_Neutral_OnBackground">
                 {fileNameScript}
               </CustomTypography>
@@ -93,6 +93,7 @@ export const UploadInput = ({ fileName, uploadImageLoading, onChangeHandler }: U
               <TrashIcon className="w-5 h-auto stroke-impo_Black" />
             </div>
           </div>
+
           {uploadImageLoading && (
             <div className="w-full h-1  rounded-full bg-impo_Grey_200">
               <div className={`h-full rounded-full ${theme.backgroundColor} `} style={{ width: `${progress}%` }}></div>

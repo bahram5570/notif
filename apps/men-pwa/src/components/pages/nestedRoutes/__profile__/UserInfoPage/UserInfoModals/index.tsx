@@ -1,7 +1,6 @@
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
-import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { MODALS } from '@constants/modals.constants';import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
 import { UserInfoValuesTypes } from '../__hooks__/useValues/types';

@@ -1,12 +1,12 @@
 import PinIcon from '@assets/icons/pin.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useShareExperiencePassedTime from '@components/pages/mainRoutes/shareExperience/__hooks__/useShareExperiencePassedTime';
+import { usePassedTime } from '@repo/core/hooks/usePassedTime';
 
 import { ShareExperienceScriptsProps } from './types';
 
 const ShareExperienceScripts = ({ createTime, name, isPin, topicName }: ShareExperienceScriptsProps) => {
-  const timeScript = useShareExperiencePassedTime(createTime);
+  const timeScript = usePassedTime(createTime);
 
   return (
     <div className="flex flex-col" dir="rtl">
@@ -14,7 +14,7 @@ const ShareExperienceScripts = ({ createTime, name, isPin, topicName }: ShareExp
         {isPin && <PinIcon className="w-[13px] fill-impo_Surface_OnSurfaceVariant" />}
 
         <CustomTypography fontSize="Lable_Medium" className="text-impo_Neutral_OnBackground">
-          {'name'}
+          {name}
         </CustomTypography>
 
         <CustomTypography fontSize="Lable_Small" className="text-impo_Grey_500">

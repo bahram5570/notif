@@ -1,12 +1,12 @@
+import { SelectedProfileLink } from '@repo/core/components/ShareExperience';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import ShareExperienceProfileIconModule from '@components/pages/mainRoutes/shareExperience/ShareExperienceModules/ShareExperienceProfileIconModule';
-import useShareExperiencePassedTime from '@components/pages/mainRoutes/shareExperience/__hooks__/useShareExperiencePassedTime';
+import { usePassedTime } from '@repo/core/hooks/usePassedTime';
 
 import { ReplyGeneratorTopPartProps } from './types';
 
 const ReplyGeneratorTopPart = (props: ReplyGeneratorTopPartProps) => {
-  const timeScript = useShareExperiencePassedTime(props.createTime);
+  const timeScript = usePassedTime(props.createTime);
 
   return (
     <div className="flex gap-2">
@@ -18,7 +18,7 @@ const ReplyGeneratorTopPart = (props: ReplyGeneratorTopPartProps) => {
         </CustomTypography>
       </div>
 
-      <ShareExperienceProfileIconModule
+      <SelectedProfileLink
         size={36}
         id={props.userId}
         avatar={props.avatar}

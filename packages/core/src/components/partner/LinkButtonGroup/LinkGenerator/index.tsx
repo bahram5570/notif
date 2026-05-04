@@ -1,9 +1,8 @@
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { typographyFontStylesMaker } from '@repo/core/utils/system';
+import { typographyFontStylesMaker } from '../../../../utils/system';
 
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import { useSystem } from '@repo/core/hooks/useSystem';
-
+import { usePageNavigationLoading } from '../../../../hooks/usePageNavigationLoading';
+import { useSystem } from '../../../../hooks/useSystem';
+import { CustomTypography } from '../../../ui/CustomTypography';
 import { PartnerLinkNameEnum } from './enum';
 import { LinkGeneratorPropsType } from './type';
 
@@ -37,8 +36,8 @@ const LinkGenerator = ({ Icon, link, name, MessageNumber }: LinkGeneratorPropsTy
       <div className="mx-1 flex flex-row items-center gap-1">
         <CustomTypography
           fontSize="Lable_Small"
-          className="text-impo_Neutral_OnBackground"
           style={{ whiteSpace: 'pre-line' }}
+          className="text-impo_Neutral_OnBackground"
         >
           {name}
         </CustomTypography>

@@ -1,8 +1,8 @@
 import ArrowIcon from '@assets/shared/icons/arrow.svg';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { useRouter } from 'next/navigation';
 
+import { CustomTypography } from '../../CustomTypography';
 import { OnboardingIntroFooterPropsType } from './type';
 
 const OnboardingIntroFooter = ({

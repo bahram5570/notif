@@ -5,6 +5,7 @@ type ItemsTypes = Pick<
   CommentsResponseTypes,
   'self' | 'isBookmarked' | 'commentCount' | 'state' | 'likeCount' | 'dislikeCount'
 >;
+
 export interface CommentsBottomPartProps extends ItemsTypes {
   id: string;
 }

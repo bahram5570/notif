@@ -1,14 +1,12 @@
 import { useMemo } from 'react';
 
-import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-
+import { MODAL_QUERY_NAME } from '../../../../constants/modal.constants';
+import { usePageNavigationLoading } from '../../../../hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
 import { useSystem } from '../../../../hooks/useSystem';
+import { CustomButton } from '../../../ui/CustomButton';
+import { CustomImage } from '../../../ui/CustomImage';
+import { CustomTypography } from '../../../ui/CustomTypography';
 import { PartnerModalNameEnums } from '../PartnerModals/enums';
 import { RequestGeneratorTypeProps } from './type';
 
@@ -16,6 +14,7 @@ const RequestGenerator = ({ item }: RequestGeneratorTypeProps) => {
   const { appName } = useSystem();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+
   const isLoading = pageNavigationLoading === item.name;
 
   const onAcceptClickHandler = () => {

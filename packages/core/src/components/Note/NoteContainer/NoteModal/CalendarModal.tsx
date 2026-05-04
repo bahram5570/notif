@@ -1,8 +1,7 @@
-import { CalendarContainer } from '@repo/core/components/calendar/CalendarContainer';
-import { CustomButton } from '@repo/core/components/ui/CustomButton';
-
 import { useRouter } from 'next/navigation';
 
+import { CalendarContainer } from '../../../calendar/CalendarContainer';
+import { CustomButton } from '../../../ui/CustomButton';
 import { CalendarSkeleton } from './CalendarSkeleton';
 import { useCalendar } from './__hooks__/useCalendar';
 import { CalendarModalPropsType } from './type';

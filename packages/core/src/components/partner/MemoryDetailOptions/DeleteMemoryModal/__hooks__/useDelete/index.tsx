@@ -1,6 +1,6 @@
-import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
+import { usePwaApi } from '../../../../../../hooks/usePwaApi';
 import { UseDeletePropsType } from './type';
 
 const useDelete = ({ memoryId, callBack }: UseDeletePropsType) => {
@@ -10,17 +10,18 @@ const useDelete = ({ memoryId, callBack }: UseDeletePropsType) => {
     if (callBack) {
       callBack();
     }
+
     router.back();
+
     setTimeout(() => {
       router.back();
     }, 0);
   };
+
   const { callApi, isLoading } = usePwaApi({ api: 'memory', method: 'POST', onSuccess: successHandler });
 
   const deleteHandler = () => {
-    const payload = {
-      id: memoryId,
-    };
+    const payload = { id: memoryId };
     callApi(payload);
   };
   return { deleteHandler, isLoading };

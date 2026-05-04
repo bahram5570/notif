@@ -1,5 +1,4 @@
-import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-
+import { usePwaApi } from '../../../../../hooks/usePwaApi';
 import { RequestPartnerResponseType } from './type';
 
 const useGetRequestData = () => {

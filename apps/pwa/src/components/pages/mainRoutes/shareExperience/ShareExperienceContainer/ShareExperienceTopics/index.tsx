@@ -1,10 +1,10 @@
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { shareExperienceTopicQueryMaker } from '@utils/shareExperience';
+import { shareExperienceTopicQueryMaker } from '@repo/core/utils/shareExperience';
 
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
@@ -13,7 +13,7 @@ import { ShareExperienceTopicsProps } from './type';
 const ShareExperienceTopics = ({ topics }: ShareExperienceTopicsProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useOverlayIndex();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
 
   const clickHandler = (id: string) => {
     pageNavigationHandler({ id, showProgressBar: true });

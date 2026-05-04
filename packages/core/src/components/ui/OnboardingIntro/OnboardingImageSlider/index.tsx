@@ -1,5 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
-
+import { CustomImage } from '../../CustomImage';
 import { OnboardingImageSliderPropsType } from './type';
 
 const OnboardingImageSlider = ({ list, currentIndex }: OnboardingImageSliderPropsType) => {
@@ -14,13 +13,7 @@ const OnboardingImageSlider = ({ list, currentIndex }: OnboardingImageSliderProp
       >
         {list.map((item, index) => {
           return (
-            <div
-              key={index}
-              className=" mx-3 flex-shrink-0  bg-white rounded-3xl "
-              style={{
-                width: '80%',
-              }}
-            >
+            <div key={index} className=" mx-3 flex-shrink-0  bg-white rounded-3xl " style={{ width: '80%' }}>
               <CustomImage src={item.image} alt={`Slide ${index + 1}`} className="w-full h-full object-cover" />
             </div>
           );

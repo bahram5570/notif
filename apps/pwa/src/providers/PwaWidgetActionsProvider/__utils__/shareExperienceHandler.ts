@@ -1,10 +1,9 @@
+import { SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE } from '@repo/core/components/ShareExperience';
 import {
   shareExperienceAssociationQueryMaker,
   shareExperienceCommentQueryMaker,
   shareExperienceTopicQueryMaker,
-} from '@utils/shareExperience';
-
-import { SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE } from '@components/pages/mainRoutes/shareExperience/constants';
+} from '@repo/core/utils/shareExperience';
 
 export const shareExperienceHandler = (queries?: string) => {
   const params = new URLSearchParams(queries);

@@ -1,10 +1,9 @@
 'use client';
 
-import { HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
-
+import { HEADER_HEIGHT } from '../../../constants/app.constants';
 import { MainPageLayout } from '../../MainPageLayout';
 import { BackgroundImage } from './BackgroundImage/BackgroundImage';
-import { ProfileButton } from './ProfileButton';
+// import { ProfileButton } from './ProfileButton';
 import { PartnerPageLayoutPropsType } from './type';
 
 export const PartnerPageLayout = ({ children, coverImage, isValid, defaultCoverImage }: PartnerPageLayoutPropsType) => {

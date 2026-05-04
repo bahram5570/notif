@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import { ShareExperienceResponseTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/__hooks__/useShareExperienceGetData/types';
+import { ShareExperienceResponseTypes } from '@repo/core/components/ShareExperience';
+
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import { TopicIdHandlerTypes, TopicIdTypes } from './types';

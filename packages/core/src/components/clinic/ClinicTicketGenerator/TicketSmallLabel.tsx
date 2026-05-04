@@ -1,8 +1,7 @@
 import { useMemo } from 'react';
 
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
 import { useSystem } from '../../../hooks/useSystem';
+import { CustomTypography } from '../../ui/CustomTypography';
 import { ClinicStateEnums } from '../enums';
 import TicketRate from './TicketRate';
 import { TicketSmallLabelProps } from './types';

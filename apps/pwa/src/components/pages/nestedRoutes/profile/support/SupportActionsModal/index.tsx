@@ -2,7 +2,7 @@ import ArrowIcon from '@assets/shared/icons/calendarArrow.svg';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { MODALS } from '@constants/modals.constants';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 import { ActionTypes } from '@repo/core/providers/WidgetActionsProvider';

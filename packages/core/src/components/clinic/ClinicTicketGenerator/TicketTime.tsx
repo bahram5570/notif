@@ -1,12 +1,11 @@
 import { useMemo } from 'react';
 
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { toJalaliData } from '@repo/core/utils/dates';
-import { addZero } from '@repo/core/utils/numbers';
+import { toJalaliData } from '../../../utils/dates';
+import { addZero } from '../../../utils/numbers';
 
-import { useCulture } from '@repo/core/hooks/useCulture';
-import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
-
+import { useCulture } from '../../../hooks/useCulture';
+import { CalendarTypeEnum } from '../../../providers/CultureProvider';
+import { CustomTypography } from '../../ui/CustomTypography';
 import { TicketTimeProps } from './types';
 
 const TicketTime = ({ createTime, stylingTypes }: TicketTimeProps) => {

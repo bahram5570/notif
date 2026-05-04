@@ -1,25 +1,20 @@
+import { SHARE_EXPERIENCE_PROFILE_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
-import { SHARE_EXPERIENCE_PROFILE_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ShareExperienceProfileModalContainer from './ShareExperienceProfileModalContainer';
-import { QueryDataShareExperienceProfileModal } from './type';
 
 const ShareExperienceProfileModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
-  const { getZIndex } = useOverlayIndex();
+  const { getZIndex } = useShareExperienceOverlayIndex();
 
-  const isOpen = getQueryParams(SHARE_EXPERIENCE_PROFILE_QUERY_NAME) !== null;
+  const queryParams = getQueryParams(SHARE_EXPERIENCE_PROFILE_QUERY_NAME);
+  const queryData = queryParams === null ? null : (queryParams as string);
+  const isOpen = queryData !== null;
 
-  const shareExperienceProfileParam = getQueryParams(SHARE_EXPERIENCE_PROFILE_QUERY_NAME);
-  const queryData =
-    shareExperienceProfileParam === null
-      ? null
-      : (JSON.parse(shareExperienceProfileParam) as QueryDataShareExperienceProfileModal);
-
-  const zIndex = getZIndex(SHARE_EXPERIENCE_PROFILE_QUERY_NAME, queryData?.id || '');
+  const zIndex = getZIndex(SHARE_EXPERIENCE_PROFILE_QUERY_NAME, queryData || '');
 
   return (
     <>
@@ -30,11 +25,7 @@ const ShareExperienceProfileModal = () => {
         className="!py-0 overflow-y-auto !px-0"
         zIndex={zIndex}
       >
-        <>
-          {isOpen && (
-            <ShareExperienceProfileModalContainer userId={queryData?.id} queryParam={shareExperienceProfileParam} />
-          )}
-        </>
+        <>{isOpen && <ShareExperienceProfileModalContainer userId={queryData} />}</>
       </CustomModal>
     </>
   );

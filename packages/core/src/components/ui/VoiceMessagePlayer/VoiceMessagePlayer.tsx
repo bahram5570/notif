@@ -1,8 +1,8 @@
 import { useMemo, useRef, useState } from 'react';
 
+import { textShorter } from '../../../utils/scripts';
 import PauseIcon from '@assets/shared/icons/Pause.svg';
 import PlayIcon from '@assets/shared/icons/Play.svg';
-import { textShorter } from '@repo/core/utils/scripts';
 
 import { useSystem } from '../../../hooks/useSystem';
 import useFetchAudio from './__hooks__/useFetchAudio';

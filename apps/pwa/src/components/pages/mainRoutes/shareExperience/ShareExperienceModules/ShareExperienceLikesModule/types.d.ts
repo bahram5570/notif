@@ -1,7 +1,11 @@
-import { ShareExperienceStateEnum } from '../../ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/enum';
+import { ShareExperienceStateEnum } from '@repo/core/components/ShareExperience';
 
 type ExperienceTypes = {
   type: 'experience';
+  shareId: string;
+};
+type ExperiencesTypes = {
+  type: 'experiences';
   shareId: string;
 };
 type CommentTypes = {
@@ -12,10 +16,33 @@ type CommentTypes = {
 type ReplyTypes = {
   type: 'reply';
   shareId: string;
-  replyId: string;
   commentId: string;
+  replyId: string;
 };
-type ItemsTypes = ExperienceTypes | CommentTypes | ReplyTypes;
+
+type AssociationType = {
+  type: 'association';
+  shareId: string;
+};
+
+type TopicTypes = {
+  type: 'topic';
+  shareId: string;
+};
+
+type ActivitiesExperienceType = {
+  type: 'activitiesExperienceType';
+  shareId: string;
+};
+
+type ItemsTypes =
+  | ExperienceTypes
+  | CommentTypes
+  | ReplyTypes
+  | AssociationType
+  | TopicTypes
+  | ActivitiesExperienceType
+  | ExperiencesTypes;
 
 export type ShareExperienceLikesModuleProps = ItemsTypes & {
   state: ShareExperienceStateEnum;

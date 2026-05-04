@@ -1,4 +1,4 @@
-import { useCustomToast } from '@repo/core/hooks/useCustomToast';
+import { useCustomToast } from '../useCustomToast';
 
 export const useCopy = () => {
   const toast = useCustomToast();

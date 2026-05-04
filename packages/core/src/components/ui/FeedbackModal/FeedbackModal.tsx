@@ -1,14 +1,12 @@
 import { useMemo } from 'react';
 
-import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { CustomModal } from '@repo/core/components/ui/CustomModal';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-
+import { MAX_SCREEN_WIDTH } from '../../../constants/app.constants';
 import { MODAL_FEEDBACK } from '../../../constants/modal.constants';
+import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
 import { useSystem } from '../../../hooks/useSystem';
+import { CustomButton } from '../CustomButton';
+import { CustomModal } from '../CustomModal';
+import { CustomTypography } from '../CustomTypography';
 import FeedbackModalDescription from './FeedbackDescription';
 import FeedbackStars from './FeedbackStars';
 import useSubmitRate from './__hooks__/useSubmitRate';

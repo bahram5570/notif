@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import { SHARE_EXPERIENCE_PROFILE_QUERY_NAME } from '@repo/core/components/ShareExperience';
+
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-import { SHARE_EXPERIENCE_ORDER_QUERY_NAME, SHARE_EXPERIENCE_PROFILE_QUERY_NAME } from '../../../constants';
-
 const useViewReportProfile = (isLoaded: boolean) => {
   const [id, setId] = useState('');
-  const { increaseZIndex } = useOverlayIndex();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
 
@@ -21,8 +21,7 @@ const useViewReportProfile = (isLoaded: boolean) => {
       setTimeout(() => {
         pageNavigationHandler({ id, showProgressBar: true });
 
-        const paramsData = JSON.stringify({ id, [SHARE_EXPERIENCE_ORDER_QUERY_NAME]: new Date().getTime() });
-        newQueryParamsHandler({ [SHARE_EXPERIENCE_PROFILE_QUERY_NAME]: paramsData });
+        newQueryParamsHandler({ [SHARE_EXPERIENCE_PROFILE_QUERY_NAME]: id });
         increaseZIndex(SHARE_EXPERIENCE_PROFILE_QUERY_NAME, id);
       }, 1000);
     }

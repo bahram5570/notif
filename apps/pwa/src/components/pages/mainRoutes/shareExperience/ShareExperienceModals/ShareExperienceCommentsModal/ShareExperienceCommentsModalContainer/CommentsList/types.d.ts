@@ -1,6 +1,7 @@
-import { ShareExperienceCommentsModalContainerProps } from '../types';
-import { CommentsResponseTypes } from './__hooks__/useCommentsList/types';
+import { CommentsResponseTypes } from '@repo/core/components/ShareExperience';
 
-export interface CommentsListProps extends Pick<CommentsResponseTypes, 'comments' | 'canSendReply'> {
+import { ShareExperienceCommentsModalContainerProps } from '../types';
+
+export interface CommentsListProps extends Pick<CommentsResponseTypes, 'comments' | 'canSendReply' | 'self'> {
   id: string;
 }

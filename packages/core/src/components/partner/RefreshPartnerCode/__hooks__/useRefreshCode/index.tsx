@@ -1,5 +1,4 @@
-import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-
+import { usePwaApi } from '../../../../../hooks/usePwaApi';
 import { PartnerCodeResponseType, UseRefreshCodePropsType } from './type';
 
 const useRefreshCode = ({ callBackHandler }: UseRefreshCodePropsType) => {

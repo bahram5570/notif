@@ -1,6 +1,5 @@
-import { FileInputManager } from '@repo/core/components/FileInputManager';
-import { CustomModal } from '@repo/core/components/ui/CustomModal';
-
+import { FileInputManager } from '../../../FileInputManager';
+import { CustomModal } from '../../../ui/CustomModal';
 import useFileValue from './__hooks__/useFileValue';
 import { ChatFooterModalProps } from './type';
 

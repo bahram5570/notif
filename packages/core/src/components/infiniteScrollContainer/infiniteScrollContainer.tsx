@@ -7,56 +7,58 @@ import { InfiniteScrollContainerPropsType } from './type';
 export const InfiniteScrollContainer = ({
   pageSize = PAGE_SIZE,
   scrollContainerRef,
-  totalCount,
-  isLoading,
-  className,
+  totalCount = 0,
+  isLoading = false,
+  className = '',
   children,
   callBack,
-  pageNo,
-  height,
-  style,
+  pageNo = 0,
+  height = 'auto',
+  style = {},
 }: InfiniteScrollContainerPropsType) => {
   const selfRef = useRef<HTMLDivElement>(null);
   const isFetchingRef = useRef(false);
 
   useEffect(() => {
-    if (!isLoading) {
-      isFetchingRef.current = false;
-    }
+    if (!isLoading) isFetchingRef.current = false;
   }, [isLoading]);
 
   useEffect(() => {
     const el = scrollContainerRef?.current ?? selfRef.current;
     if (!el) return;
 
-    const handleScroll = (e: Event) => {
-      const isNearBottom = el.scrollTop + el.clientHeight >= el.scrollHeight - 100;
+    const handleScroll = () => {
+      if (isFetchingRef.current) return;
+
+      const scrollPosition = el.scrollTop + el.clientHeight;
+      const bottomThreshold = el.scrollHeight - 100;
+      const isNearBottom = scrollPosition >= bottomThreshold;
 
       if (isNearBottom && !isLoading) {
         const currentItemsCount = (pageNo + 1) * pageSize;
-        if (currentItemsCount <= totalCount) {
-          isFetchingRef.current = true;
 
-          callBack();
+        if (currentItemsCount < totalCount) {
+          isFetchingRef.current = true;
+          callBack?.();
         }
       }
     };
 
     el.addEventListener('scroll', handleScroll);
     return () => el.removeEventListener('scroll', handleScroll);
-  }, [isLoading, pageNo, totalCount, scrollContainerRef]);
+  }, [isLoading, pageNo, pageSize, totalCount, callBack, scrollContainerRef]);
 
   return (
     <div
       ref={selfRef}
       id="infiniteScrollContainer"
-      className={`overflow-y-auto ${className} relative`}
-      style={scrollContainerRef ? style : { height, overflowY: 'auto', ...style }}
+      className={`overflow-y-auto relative ${className}`}
+      style={scrollContainerRef ? style : { height, overflowY: 'auto', position: 'relative', ...style }}
     >
       {children}
 
       {isLoading && (
-        <div className="w-full  flex justify-center py-6  absolute bottom-24">
+        <div className="w-full flex justify-center py-6 absolute bottom-0 left-0">
           <CustomSpinner size={40} className="border-impo_Surface_Outline" />
         </div>
       )}

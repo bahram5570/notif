@@ -1,13 +1,13 @@
-import { SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import { ApproveModalsModule, SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
+
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-import ShareExperienceApproveModalsModule from '../../ShareExperienceModules/ShareExperienceApproveModalsModule';
 import useShareExperienceFollow from './__hooks__/useShareExperienceFollow';
 
 const ShareExperienceUnfollowModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
-  const { getZIndex } = useOverlayIndex();
+  const { getZIndex } = useShareExperienceOverlayIndex();
 
   const queryParams = getQueryParams(SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME);
   const queryData = queryParams && JSON.parse(queryParams);
@@ -22,7 +22,7 @@ const ShareExperienceUnfollowModal = () => {
 
   return (
     <>
-      <ShareExperienceApproveModalsModule
+      <ApproveModalsModule
         description={queryData?.description}
         isOpen={queryParams !== null}
         id={queryData?.experienceId}

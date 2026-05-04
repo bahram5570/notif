@@ -1,5 +1,4 @@
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
+import { CustomTypography } from '../../CustomTypography';
 import { OnboardingContextPropsType } from './type';
 
 const OnboardingContext = ({ description, title }: OnboardingContextPropsType) => {
@@ -8,6 +7,7 @@ const OnboardingContext = ({ description, title }: OnboardingContextPropsType) =
       <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Headline_Small">
         {title}
       </CustomTypography>
+
       <CustomTypography className="text-impo_Surface_InverseSurface text-center" fontSize="Body_Medium">
         {description}
       </CustomTypography>

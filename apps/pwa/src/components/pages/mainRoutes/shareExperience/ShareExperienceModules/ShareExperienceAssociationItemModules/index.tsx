@@ -1,11 +1,11 @@
+import { SHARE_EXPERIENCE_ASSOCIATION_ITEM_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-import { SHARE_EXPERIENCE_ASSOCIATION_ITEM_QUERY_NAME } from '../../constants';
 import { ShareExperienceAssociationItemModulesPropsType } from './type';
 
 const ShareExperienceAssociationItemModules = ({
@@ -18,7 +18,7 @@ const ShareExperienceAssociationItemModules = ({
 }: ShareExperienceAssociationItemModulesPropsType) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useOverlayIndex();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
 
   const clickHandler = () => {
     pageNavigationHandler({ id, showProgressBar: true });

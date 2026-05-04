@@ -1,37 +1,36 @@
-import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
-import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
+import { useCustomReactQuery } from '../../../../../../hooks/useCustomReactQuery';
+import { usePwaApi } from '../../../../../../hooks/usePwaApi';
 import { AcceptResponseType } from './type';
 
 const useAccept = () => {
-  const { refetchQuery } = useCustomReactQuery();
   const route = useRouter();
+  const { refetchQuery } = useCustomReactQuery();
 
   const successHandler = (v: AcceptResponseType) => {
     if (v.canAccept) {
       refetchQuery({ queryKey: ['partnerKey'] });
 
       route.back();
+
       setTimeout(() => {
         route.back();
       }, 0);
     }
   };
 
-  const { data, callApi: accept } = usePwaApi({
+  const { callApi: accept } = usePwaApi({
     api: 'partner/accept',
     method: 'PUT',
     onSuccess: (v: AcceptResponseType) => successHandler(v),
   });
 
   const acceptHandler = (id: string | null, type: number) => {
-    const payload = {
-      id,
-      type,
-    };
+    const payload = { id, type };
     accept(payload);
   };
+
   return { acceptHandler };
 };
 

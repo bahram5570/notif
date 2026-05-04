@@ -1,7 +1,5 @@
-import { CustomModal } from '@repo/core/components/ui/CustomModal';
-
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-
+import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
+import { CustomModal } from '../../../ui/CustomModal';
 import CalendarModal from './CalendarModal';
 import DeleteNoteModal from './DeleteNoteModal';
 import { NoteModalNameEnums } from './enum';
@@ -15,7 +13,6 @@ export const NoteModal = ({ time, onChangeHandler }: NoteModalPropsType) => {
   return (
     <CustomModal isSlidingMode={modalName === NoteModalNameEnums.DateTime}>
       {modalName === NoteModalNameEnums.DateTime && <CalendarModal onChangeHandler={onChangeHandler} dateTime={time} />}
-
       {modalName === NoteModalNameEnums.DeleteNote && <DeleteNoteModal />}
     </CustomModal>
   );

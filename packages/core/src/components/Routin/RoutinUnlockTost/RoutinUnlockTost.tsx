@@ -1,12 +1,11 @@
 import { useEffect, useState } from 'react';
 
+import { convertToPersianOrdinal } from '../../../utils/numbers';
 import TickIcon from '@assets/shared/icons/tickIcon.svg';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { convertToPersianOrdinal } from '@repo/core/utils/numbers';
 
-import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
-import { useCountDown } from '@repo/core/hooks/useCountDown';
-
+import { MAX_SCREEN_WIDTH } from '../../../constants/app.constants';
+import { useCountDown } from '../../../hooks/useCountDown';
+import { CustomTypography } from '../../ui/CustomTypography';
 import { ROUTIN_STEP, SHOW_ROUTIN_UNLOCK_TOST } from './constants';
 
 export const RoutinUnlockTost = () => {
@@ -49,9 +48,7 @@ export const RoutinUnlockTost = () => {
       {showRoutinToast && routinStep && (
         <div
           className={`fixed left-0 right-0 bottom-0 px-5 w-full animate-routinUnlockToast mx-auto  mb-4  z-50 `}
-          style={{
-            maxWidth: MAX_SCREEN_WIDTH,
-          }}
+          style={{ maxWidth: MAX_SCREEN_WIDTH }}
         >
           <div className="flex justify-center items-center gap-3 rounded-lg p-4 border border-impo_Success_Success bg-impo_Success_SuccessContainer">
             <div className="border-r-[1px]">

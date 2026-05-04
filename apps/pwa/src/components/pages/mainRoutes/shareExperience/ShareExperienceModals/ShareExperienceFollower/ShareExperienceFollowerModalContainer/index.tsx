@@ -5,8 +5,8 @@ import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 import ShareExperienceFollowListModule from '../../../ShareExperienceModules/ShareExperienceFollowListModule';
 import { ShareExperienceFollowerModalContainerProps } from './type';
 
-const ShareExperienceFollowerModalContainer = ({ userId, queryParam }: ShareExperienceFollowerModalContainerProps) => {
-  useOverflowHandler(queryParam !== null);
+const ShareExperienceFollowerModalContainer = ({ userId }: ShareExperienceFollowerModalContainerProps) => {
+  useOverflowHandler(userId !== null);
 
   return (
     <>

@@ -1,4 +1,5 @@
-import { ShareExperienceResponseTypes } from '../../../../ShareExperienceContainer/__hooks__/useShareExperienceGetData/types';
+import { ShareExperienceResponseTypes } from '@repo/core/components/ShareExperience';
+
 import { TopicIdHandlerTypes, TopicIdTypes } from '../__hooks__/useTopics/types';
 
 type ItemsTypes = Pick<ShareExperienceResponseTypes, 'topics'>['topics'];

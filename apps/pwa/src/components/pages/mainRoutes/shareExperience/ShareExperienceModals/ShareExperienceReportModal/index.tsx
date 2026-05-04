@@ -1,34 +1,33 @@
 import InfoIcon from '@assets/icons/dangerTriangle.svg';
+import { ApproveModalsModule, SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
 
-import { SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-import ShareExperienceApproveModalsModule from '../../ShareExperienceModules/ShareExperienceApproveModalsModule';
 import useShareExperienceReport from './__hooks__/useShareExperienceReport';
 
 const ShareExperienceReportModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
-  const { getZIndex } = useOverlayIndex();
+  const { getZIndex } = useShareExperienceOverlayIndex();
   const { reportHandler, isLoading } = useShareExperienceReport();
 
   const queryParams = getQueryParams(SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME);
-  const queryData = queryParams && JSON.parse(queryParams);
+  const queryData = queryParams === null ? null : (queryParams as string);
+  const isOpen = queryData !== null;
+
+  const zIndex = getZIndex(SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME, queryData || '');
 
   const Icon = (
     <div className="flex items-center justify-center w-10 h-10 bg-impo_Error_ErrorContainer rounded-full">
       <InfoIcon className="w-7 fill-impo_Error_Error" />
     </div>
   );
-
-  const zIndex = getZIndex(SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME, queryData?.id);
-
   return (
     <>
-      <ShareExperienceApproveModalsModule
+      <ApproveModalsModule
         description="ایمپویی عزیز، از ریپورت کردن این پست مطمئنی؟"
-        applyHandler={() => reportHandler(queryData?.id || '')}
-        isOpen={queryParams !== null}
+        applyHandler={() => reportHandler(queryData || '')}
+        isOpen={isOpen}
         cancelButtonText="خیر"
         applyButtonText="بله"
         isLoading={isLoading}

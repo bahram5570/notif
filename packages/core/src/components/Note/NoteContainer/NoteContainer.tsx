@@ -2,14 +2,12 @@
 
 import { useMemo, useRef } from 'react';
 
-import { MainPageLayout } from '@repo/core/components/MainPageLayout';
-import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import { HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
-import { useAnalytics } from '@repo/core/hooks/useAnalytics';
-
+import { HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '../../../constants/app.constants';
+import { useAnalytics } from '../../../hooks/useAnalytics';
 import { useSystem } from '../../../hooks/useSystem';
+import { MainPageLayout } from '../../MainPageLayout';
+import { CustomButton } from '../../ui/CustomButton';
+import { CustomTypography } from '../../ui/CustomTypography';
 import DeleteNoteBtn from './DeleteNoteBtn';
 import { NoteContainerSkeleton } from './NoteContainerSkeleton/NoteContainerSkeleton';
 import { NoteInputGenerator } from './NoteInputGenerator';

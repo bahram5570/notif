@@ -2,12 +2,13 @@ import {
   CalendarDayInfoMakerTypes,
   CalendarIntervalMakerTypes,
   CalendarMonthInfoMakerTypes,
-} from '@repo/core/components/calendar';
-import { currentDate } from '@repo/core/utils/dates';
+} from '../../components/calendar';
+import { currentDate } from '../../utils/dates';
 
-import { DATE_SEPERATOR_REGEX } from '@repo/core/constants/date.constants';
-import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import moment from 'moment-jalaali';
+
+import { DATE_SEPERATOR_REGEX } from '../../constants/date.constants';
+import { CalendarTypeEnum } from '../../providers/CultureProvider';
 
 export const calendarIntervalMaker: CalendarIntervalMakerTypes = (start, end, calendarType) => {
   let dateSystem = 'jYYYY/jMM/jDD';

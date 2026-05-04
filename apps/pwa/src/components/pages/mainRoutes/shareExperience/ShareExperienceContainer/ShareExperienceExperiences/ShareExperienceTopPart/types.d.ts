@@ -12,5 +12,6 @@ type ItemsTypes = Pick<
   | 'topicName'
   | 'userId'
   | 'selfExperience'
+  | 'id'
 >;
 export interface ShareExperienceTopPartProps extends ItemsTypes {}

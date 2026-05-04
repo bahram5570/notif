@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
-import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
-import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
+import { useCustomReactQuery } from '../../../../../../hooks/useCustomReactQuery';
 import { useFileUpload } from '../../../../../../hooks/useFileUpload';
 import { FileDataHandlerTypes } from '../../../../../../hooks/useFileUpload/type';
+import { usePwaApi } from '../../../../../../hooks/usePwaApi';
 import useUpdateChatReactQuery from '../../../ChatFooterMessageInput/__hooks__/useUpdateChatReactQuery';
 
 const useFileValue = (ticketId: string) => {

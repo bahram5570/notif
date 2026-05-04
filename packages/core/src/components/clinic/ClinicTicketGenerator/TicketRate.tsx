@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
 import StarIcon from '@assets/shared/icons/star.svg';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { useSystem } from '../../../hooks/useSystem';
+import { CustomTypography } from '../../ui/CustomTypography';
 import { TicketRateProps } from './types';
 
 const TicketRate = ({ rate }: TicketRateProps) => {

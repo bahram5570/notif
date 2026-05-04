@@ -1,8 +1,7 @@
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { typographyFontStylesMaker } from '@repo/core/utils/system';
+import { typographyFontStylesMaker } from '../../../../utils/system';
 
-import { useSystem } from '@repo/core/hooks/useSystem';
-
+import { useSystem } from '../../../../hooks/useSystem';
+import { CustomTypography } from '../../CustomTypography';
 import { MAX_LETTERS_COUNT } from '../constants';
 import { FeedbackDescriptionPropsType } from './type';
 

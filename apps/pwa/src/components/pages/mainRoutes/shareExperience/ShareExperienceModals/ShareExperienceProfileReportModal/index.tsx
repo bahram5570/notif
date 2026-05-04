@@ -1,15 +1,14 @@
 import InfoIcon from '@assets/icons/dangerTriangle.svg';
+import { ApproveModalsModule, SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME } from '@repo/core/components/ShareExperience';
 
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-import ShareExperienceApproveModalsModule from '../../ShareExperienceModules/ShareExperienceApproveModalsModule';
-import { SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME } from '../../constants';
 import useShareExperienceProfileReport from './__hooks__/useShareExperienceProfileReport';
 
 const ShareExperienceProfileReportModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
-  const { getZIndex } = useOverlayIndex();
+  const { getZIndex } = useShareExperienceOverlayIndex();
   const { reportHandler, isLoading } = useShareExperienceProfileReport();
 
   const queryParams = getQueryParams(SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME);
@@ -24,7 +23,7 @@ const ShareExperienceProfileReportModal = () => {
   const zIndex = getZIndex(SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME, queryData?.id);
 
   return (
-    <ShareExperienceApproveModalsModule
+    <ApproveModalsModule
       description="ایمپویی عزیز، از ریپورت کردن این حساب کاربری مطمئنی؟"
       applyHandler={() => reportHandler(queryData?.id || '')}
       isOpen={queryParams !== null}

@@ -1,5 +1,6 @@
-import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
+
+import { usePwaApi } from '../../../../../../hooks/usePwaApi';
 
 export const useDelete = () => {
   const router = useRouter();
@@ -10,9 +11,7 @@ export const useDelete = () => {
   const { callApi, isLoading } = usePwaApi({ api: 'date/note', method: 'DELETE', onSuccess: successHandler });
 
   const deleteHandler = ({ noteId }: { noteId: string | null }) => {
-    const payload = {
-      noteId,
-    };
+    const payload = { noteId };
     callApi(payload);
   };
   return { deleteHandler, isLoading };

@@ -1,16 +1,17 @@
 import { useEffect, useState } from 'react';
 
+import { EXPERIENCES_PROFILE_PAGE_SIZE } from '@repo/core/components/ShareExperience';
+
 import useShareExperiencePageNo from '@components/pages/mainRoutes/shareExperience/ShareExperienceModals/ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/__hooks__/useShareExperiencePageNo';
-import { EXPERIENCES_PROFILE_PAGE_SIZE } from '@components/pages/mainRoutes/shareExperience/constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { SelfExperienceDataType, UseSelfExperienceDataPropsType } from './type';
 
-const useSelfExperienceData = ({ id, isSelf }: UseSelfExperienceDataPropsType) => {
+const useSelfExperienceData = ({ id }: UseSelfExperienceDataPropsType) => {
   const [pageNo, setPageNo] = useState(0);
   const { newQuery, updateQuery, getQuery } = useCustomReactQuery(['selfExperience']);
-  const { updatePageNo: changePageNoHandler } = useShareExperiencePageNo(`${id}-selfExperience`);
+  // const { updatePageNo: changePageNoHandler } = useShareExperiencePageNo(id);
 
   const selfExperienceData = getQuery<SelfExperienceDataType>({ queryKey: ['selfExperience'] });
 
@@ -41,7 +42,7 @@ const useSelfExperienceData = ({ id, isSelf }: UseSelfExperienceDataPropsType) =
 
   const updatePageNo = () => {
     setPageNo((prev) => prev + 1);
-    changePageNoHandler(pageNo + 1);
+    // changePageNoHandler(pageNo + 1);
   };
 
   return { isLoading, selfExperienceData, updatePageNo, pageNo };

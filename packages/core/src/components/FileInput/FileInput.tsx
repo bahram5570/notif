@@ -1,15 +1,14 @@
 import { chatFileTypeDetector } from '../../utils/fileType';
+import { textShorter } from '../../utils/scripts';
 import AttachIcon from '@assets/shared/icons/attach.svg';
 import DownloadedIcon from '@assets/shared/icons/downloaded.svg';
 import TrashIcon from '@assets/shared/icons/trash.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import { textShorter } from '@repo/core/utils/scripts';
 
-import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-
+import { MODAL_QUERY_NAME } from '../../constants/modal.constants';
+import { usePageNavigationLoading } from '../../hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '../../hooks/useQueryParamsHandler';
+import { CustomImage } from '../ui/CustomImage';
+import { CustomTypography } from '../ui/CustomTypography';
 import { FileInputProps } from './type';
 
 export const FileInput = ({ fileName, valuesHandler, label }: FileInputProps) => {

@@ -20,11 +20,9 @@ import ShareExperienceProfileReportModal from '../../ShareExperienceModals/Share
 import ShareExperienceReportModal from '../../ShareExperienceModals/ShareExperienceReportModal';
 import ShareExperienceTopicModal from '../../ShareExperienceModals/ShareExperienceTopicModal';
 import ShareExperienceUnfollowModal from '../../ShareExperienceModals/ShareExperienceUnfollowModal';
-import ShareExperienceContentsModule from '../../ShareExperienceModules/ShareExperienceContentsModule';
+import ShareExperiencePostCardModules from '../../ShareExperienceModules/ShareExperiencePostCardModules';
 import ShareExperienceAssociation from '../ShareExperienceAssociation';
-import ShareExperienceBottomPart from './ShareExperienceBottomPart';
 import ShareExperienceInView from './ShareExperienceInView';
-import ShareExperienceTopPart from './ShareExperienceTopPart';
 import useExperiences from './__hooks__/useExperiences';
 import { ShareExperienceExperiencesProps } from './types';
 
@@ -86,22 +84,14 @@ const ShareExperienceExperiences = ({
               )}
 
               <ShareExperienceInView>
-                <div className="w-full border-t-[1px] border-t-impo_Neutral_Surface  pt-5 pb-4 z-0 px-4">
-                  <ShareExperienceTopPart {...item} />
-
-                  <div className="w-full pr-10">
-                    <ShareExperienceContentsModule
-                      image={item.image}
-                      text={item.text}
-                      hasLinkTo={true}
-                      tags={item.tags}
-                      isSelf={false}
-                      id={item.id}
-                    />
-
-                    <ShareExperienceBottomPart {...item} />
-                  </div>
-                </div>
+                <ShareExperiencePostCardModules
+                  {...item}
+                  type="experiences"
+                  shareId={item.id}
+                  isSelf={item.selfExperience}
+                  hasLinkTo={true}
+                  className=" border-t-[1px] border-t-impo_Neutral_Surface z-0 px-4"
+                />
               </ShareExperienceInView>
             </Fragment>
           );

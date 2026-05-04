@@ -1,12 +1,11 @@
 import { useMemo } from 'react';
 
-import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
+import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
 import { useSystem } from '../../../../hooks/useSystem';
+import { CustomButton } from '../../../ui/CustomButton';
+import { CustomTypography } from '../../../ui/CustomTypography';
 import useReject from './__hooks__/useReject';
 
 const RejectModal = () => {
@@ -51,6 +50,7 @@ const RejectModal = () => {
         <CustomButton className={`${className}`} onClick={onClick} isLoading={isLoading} fontSize="Lable_Large">
           !آره
         </CustomButton>
+
         <CustomButton
           className="!bg-impo_Neutral_Surface !text-impo_Neutral_OnSurface !border-impo_Neutral_Surface"
           onClick={onCloseHandler}

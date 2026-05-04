@@ -1,9 +1,8 @@
-import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
+import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
+import { CustomButton } from '../../../ui/CustomButton';
+import { CustomTypography } from '../../../ui/CustomTypography';
 import { useDelete } from './__hooks__/useDelete';
 
 const DeleteNoteModal = () => {

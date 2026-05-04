@@ -1,10 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import { CalendarDataTypes, OnValuesTypes } from '@repo/core/components/calendar';
-import { currentDate } from '@repo/core/utils/dates';
+import { currentDate } from '../../../../../../utils/dates';
 
 import { useCalendarGetData } from '../../../../../../hooks/useCalendarGetData';
-import { SelectedDateHandlerTypes } from '../../../../../calendar';
+import { CalendarDataTypes, OnValuesTypes, SelectedDateHandlerTypes } from '../../../../../calendar';
 
 const { jDate } = currentDate();
 

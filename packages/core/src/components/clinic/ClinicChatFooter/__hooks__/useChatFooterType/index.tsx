@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { ClinicStateEnums } from '@repo/core/components/clinic';
-
+import { ClinicStateEnums } from '../../../enums';
 import { ChatFooterTypeTypes, UseChatFooterTypeProps } from './types';
 
 const useChatFooterType = ({ isRate, state }: UseChatFooterTypeProps) => {

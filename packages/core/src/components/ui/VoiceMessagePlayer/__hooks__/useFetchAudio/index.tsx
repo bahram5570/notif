@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { baseUrl } from '@repo/core/utils/pwaHttp';
+import { baseUrl } from '../../../../../utils/pwaHttp';
 
 import { UseFetchAudioPropsType } from './type';
 

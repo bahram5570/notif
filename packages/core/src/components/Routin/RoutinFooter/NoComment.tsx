@@ -1,9 +1,7 @@
-import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-
 import { MODAL_FEEDBACK } from '../../../constants/modal.constants';
+import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
+import { CustomButton } from '../../ui/CustomButton';
+import { CustomTypography } from '../../ui/CustomTypography';
 
 const NoComment = () => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
@@ -13,10 +11,12 @@ const NoComment = () => {
         <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Lable_Medium">
           هنوز نظرت رو ثبت نکردی؟
         </CustomTypography>
+
         <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
           نظرت راجع به برنامه برامون مهمه!
         </CustomTypography>
       </div>
+
       <CustomButton
         onClick={() => newQueryParamsHandler({ [MODAL_FEEDBACK]: 'true' })}
         className="max-w-fit !bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan"

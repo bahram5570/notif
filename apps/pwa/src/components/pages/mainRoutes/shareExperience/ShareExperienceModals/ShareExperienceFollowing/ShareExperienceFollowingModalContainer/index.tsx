@@ -5,11 +5,8 @@ import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 import ShareExperienceFollowListModule from '../../../ShareExperienceModules/ShareExperienceFollowListModule';
 import { ShareExperienceFollowingModalContainerProps } from './type';
 
-const ShareExperienceFollowingModalContainer = ({
-  queryParam,
-  userId,
-}: ShareExperienceFollowingModalContainerProps) => {
-  useOverflowHandler(queryParam !== null);
+const ShareExperienceFollowingModalContainer = ({ userId }: ShareExperienceFollowingModalContainerProps) => {
+  useOverflowHandler(userId !== null);
 
   return (
     <>
@@ -19,7 +16,7 @@ const ShareExperienceFollowingModalContainer = ({
         className="!bg-impo_Neutral_Surface"
       />
       <ShareExperienceFollowListModule
-        userId={userId}
+        userId={userId || ''}
         EmptyStateScript="هنوز کسی رو دنبال نکردی"
         pageType="following"
       />

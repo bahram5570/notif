@@ -2,11 +2,11 @@
 
 import { createContext, useEffect, useState } from 'react';
 
-import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
-import { ActionTypes } from '@repo/core/providers/WidgetActionsProvider';
 import { usePathname, useRouter } from 'next/navigation';
 
 import { NEED_LOADING_SIGN_INTERACTIVE_BANNER_LIST } from '../../constants/routes.constants';
+import { useWidgetActions } from '../../hooks/useWidgetActions';
+import { ActionTypes } from '../WidgetActionsProvider';
 import { SignInteractiveBannerContextType } from './type';
 
 export const SignInteractiveBannerContext = createContext<SignInteractiveBannerContextType>({

@@ -1,4 +1,4 @@
-import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+import { HEADER_HEIGHT } from '../../../../constants/app.constants';
 
 export const NoteContainerSkeleton = () => {
   return (

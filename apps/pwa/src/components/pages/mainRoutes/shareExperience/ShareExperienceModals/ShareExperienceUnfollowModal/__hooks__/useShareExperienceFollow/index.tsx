@@ -1,103 +1,42 @@
 import { useEffect, useState } from 'react';
 
-import { SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
+
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
-import { QueryExperiencesDataTypes } from '../../../../ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
-import { AssociationExperiencesResponseType } from '../../../ShareExperienceAssociationItemModal/ShareExperienceAssociationItemContainer/__hooks__/useGetAssociationItemData/type';
-import { CommentsResponseTypes } from '../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/__hooks__/useCommentsList/types';
-import { SelfExperienceDataType } from '../../../ShareExperienceProfileModal/ShareExperienceProfileModalContainer/ShareExperenceProfileTabList/ShareExperienceProfileActivities/__hooks__/useActivitiesData/type';
-import { ShareExperenceProfileResponsePropsType } from '../../../ShareExperienceProfileModal/ShareExperienceProfileModalContainer/__hooks__/useGetData/type';
 import { ApiInfoTypes, FollowHandlerTypes } from './types';
+import useUpdateActivitiesList from './updateHandlers/useUpdateActivitiesList';
+import useUpdateAssociationExperienceList from './updateHandlers/useUpdateAssociationExperienceList';
+import useUpdateCommentList from './updateHandlers/useUpdateCommentList';
+import useUpdateExperienceList from './updateHandlers/useUpdateExperienceList';
+import useUpdateProfile from './updateHandlers/useUpdateProfile';
+import useUpdateSelfExperienceList from './updateHandlers/useUpdateSelfExperienceList';
+import useUpdateTopicExperience from './updateHandlers/useUpdateTopicExperience';
 
 const useShareExperienceFollow = (experienceId?: string) => {
   const router = useRouter();
   const toast = useCustomToast();
   const { getQueryParams } = useQueryParamsHandler();
   const [apiInfo, setApiInfo] = useState<null | ApiInfoTypes>(null);
-  const { updateQuery, getQuery } = useCustomReactQuery(['experiences']);
+  const { updateExperienceListHandler } = useUpdateExperienceList();
+  const { updateCommentListHandler } = useUpdateCommentList();
+  const { updateTopicExperience } = useUpdateTopicExperience();
+  const { updateAssociationExperienceList } = useUpdateAssociationExperienceList();
+  const { updateProfileHandler } = useUpdateProfile();
+  const { updateActivitiesListHandler } = useUpdateActivitiesList();
+  const { updateSelfExperienceListHandler } = useUpdateSelfExperienceList();
 
   const successHandler = () => {
-    const experiencesData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['experiences'] });
-    const commentsData = getQuery<CommentsResponseTypes>({ queryKey: ['comments ' + experienceId] });
-    const exitTopicExperienceData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['topicExperiences'] });
-    const exitActivitiesData = getQuery<SelfExperienceDataType>({ queryKey: ['activities'] });
-    const exitSelfExperienceData = getQuery<SelfExperienceDataType>({ queryKey: ['selfExperience'] });
-    const shareExperienceProfileData = getQuery<ShareExperenceProfileResponsePropsType>({
-      queryKey: ['shareExperienceProfileData'],
-    });
-
-    const associationExperienceList = getQuery<AssociationExperiencesResponseType>({
-      queryKey: [`associationExperienceList`],
-    });
-
-    if (experiencesData) {
-      experiencesData.expirences.forEach((item) => {
-        if (item.userId === apiInfo?.userId) {
-          item.isFollow = !apiInfo.isFollow;
-        }
-      });
-
-      updateQuery({ queryKey: ['experiences'], payload: experiencesData });
-    }
-
-    if (associationExperienceList) {
-      associationExperienceList.experiences.forEach((item) => {
-        if (item.userId === apiInfo?.userId) {
-          item.isFollow = !apiInfo.isFollow;
-        }
-      });
-
-      updateQuery({ queryKey: ['associationExperienceList'], payload: associationExperienceList });
-    }
-
-    if (commentsData) {
-      updateQuery({
-        queryKey: ['comments ' + experienceId],
-        payload: { ...commentsData, isFollow: !commentsData.isFollow },
-      });
-    }
-
-    if (exitTopicExperienceData) {
-      exitTopicExperienceData.expirences.forEach((item) => {
-        if (item.userId === apiInfo?.userId) {
-          item.isFollow = !apiInfo.isFollow;
-        }
-      });
-
-      updateQuery({ queryKey: ['topicExperiences'], payload: exitTopicExperienceData });
-    }
-
-    if (exitActivitiesData) {
-      exitActivitiesData.list.forEach((item) => {
-        if (item.userId === apiInfo?.userId) {
-          item.isFollow = !apiInfo.isFollow;
-        }
-      });
-
-      updateQuery({ queryKey: ['activities'], payload: exitActivitiesData });
-    }
-
-    if (exitSelfExperienceData) {
-      exitSelfExperienceData.list.forEach((item) => {
-        if (item.userId === apiInfo?.userId) {
-          item.isFollow = !apiInfo.isFollow;
-        }
-      });
-
-      updateQuery({ queryKey: ['selfExperience'], payload: exitSelfExperienceData });
-    }
-
-    if (shareExperienceProfileData) {
-      updateQuery({
-        queryKey: ['shareExperienceProfileData'],
-        payload: { ...shareExperienceProfileData, isFollow: !shareExperienceProfileData.isFollow },
-      });
-    }
+    updateExperienceListHandler({ isFollow: apiInfo?.isFollow, userId: apiInfo?.userId });
+    updateTopicExperience({ isFollow: apiInfo?.isFollow, userId: apiInfo?.userId });
+    updateCommentListHandler({ isFollow: apiInfo?.isFollow, userId: apiInfo?.userId, experienceId: experienceId });
+    updateAssociationExperienceList({ isFollow: apiInfo?.isFollow, userId: apiInfo?.userId });
+    updateActivitiesListHandler({ isFollow: apiInfo?.isFollow, userId: apiInfo?.userId });
+    updateSelfExperienceListHandler({ isFollow: apiInfo?.isFollow, userId: apiInfo?.userId });
+    updateProfileHandler();
 
     const isModalOpen = getQueryParams(SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME);
     if (isModalOpen) {

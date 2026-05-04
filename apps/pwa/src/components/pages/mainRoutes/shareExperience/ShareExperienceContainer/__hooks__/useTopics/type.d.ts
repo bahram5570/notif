@@ -1,3 +1,3 @@
-import { ShareExperienceResponseTypes } from '../useShareExperienceGetData/types';
+import { ShareExperienceResponseTypes } from '@repo/core/components/ShareExperience';
 
 export type TopicsListTypes = Pick<ShareExperienceResponseTypes, 'topics'>['topics'] | undefined;
