@@ -6,6 +6,7 @@
     "copy:assets": "node copy-assets.js",
     "clear:web-assets": "rimraf ../../apps/web/public/assets/shared",
     "clear:pwa-assets": "rimraf ../../apps/pwa/public/assets/shared",
-    "build": "npm run clear:web-assets && npm run clear:pwa-assets && npm run copy:assets"
+    "clear:men-pwa-assets": "rimraf ../../apps/men-pwa/public/assets/shared",
+    "build": "npm run clear:web-assets && npm run clear:pwa-assets && npm run clear:men-pwa-assets && npm run copy:assets"
   }
 }

@@ -12,16 +12,11 @@ const useImageSrc = ({ src, imageApi = '/file', onError }: UseImageSrcProps) => 
     }
 
     try {
-      const req = await fetch(imageUrl);
-      const blob = await req.blob();
+      const payload = JSON.stringify({ imageUrl });
+      const response = await fetch('/api/CustomImage-heic-converter', { method: 'POST', body: payload });
+      const blob = await response.blob();
+      const result = URL.createObjectURL(blob);
 
-      // # Dynamically import heic2any to load it client-side only, avoiding 'window is not defined' errors.
-      const heic2any = (await import('heic2any')).default;
-      const convertedBlob = (await heic2any({
-        blob,
-        toType: 'image/jpeg',
-      })) as Blob;
-      const result = URL.createObjectURL(convertedBlob);
       setUpdatedSrc(result);
     } catch (error) {
       onError();
