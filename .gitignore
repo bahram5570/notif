@@ -2,12 +2,13 @@ node_modules
 .turbo
 .next
 *dist*
+
 .env.sentry-build-plugin
 
 apps/men-pwa/public/assets/shared
 apps/pwa/public/assets/shared
 apps/web/public/assets/shared
 
-apps/men-pwa/src/api/shared
-apps/pwa/src/api/shared
-apps/web/src/api/shared
+apps/men-pwa/src/app/api/shared
+apps/pwa/src/app/api/shared
+apps/web/src/app/api/shared

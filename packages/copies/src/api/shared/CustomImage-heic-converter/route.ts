@@ -18,7 +18,7 @@ export const POST = async (request: NextRequest) => {
     const updatedImage = (await sharp(buffer)
       .rotate()
       .resize({ width: maxSize, height: maxSize, fit: 'inside', withoutEnlargement: true })
-      .webp({ quality: 100 })
+      .webp()
       .toBuffer()) as unknown as ArrayBuffer;
 
     return new NextResponse(updatedImage, { headers: { 'Content-Type': 'image/webp' } });
