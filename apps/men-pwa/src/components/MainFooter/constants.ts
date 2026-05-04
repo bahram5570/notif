@@ -1,3 +1,5 @@
+import ShareExperienceActiveIcon from '@assets/icons/footer/ShareExperienceActiveIcon.svg';
+import ShareExperienceNotActiveIcon from '@assets/icons/footer/ShareExperienceNotActiveIcon.svg';
 import CalendarActiveIcon from '@assets/icons/footer/calendar-fill.svg';
 import CalendarNotActiveIcon from '@assets/icons/footer/calendar-stroke.svg';
 import PartnerActiveIcon from '@assets/icons/footer/hamdel-fill.svg';
@@ -7,14 +9,20 @@ import KnowledgeNotActiveIcon from '@assets/icons/footer/knowledge-stroke.svg';
 
 export const FOOTER_PAGES_LIST = [
   {
-    url: '/protected/knowledge',
-    icons: { Active: KnowledgeActiveIcon, NotActive: KnowledgeNotActiveIcon },
-    title: 'دانش',
+    url: '/protected/shareExperience',
+    icons: { Active: ShareExperienceActiveIcon, NotActive: ShareExperienceNotActiveIcon },
+    title: 'تجربه‌ها',
   },
+
   { url: '/protected/partner', icons: { Active: PartnerActiveIcon, NotActive: PartnerNotActiveIcon }, title: 'همدل' },
   {
     url: '/protected/calendar',
     icons: { Active: CalendarActiveIcon, NotActive: CalendarNotActiveIcon },
     title: 'تقویم',
+  },
+  {
+    url: '/protected/knowledge',
+    icons: { Active: KnowledgeActiveIcon, NotActive: KnowledgeNotActiveIcon },
+    title: 'خانه',
   },
 ];

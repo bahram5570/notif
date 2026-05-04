@@ -3,3 +3,8 @@ export enum ShareExperienceStateEnum {
   Like = 1,
   Dislike = 2,
 }
+
+export enum ShareExperienceProfileTabEnum {
+  Activities = 0,
+  Self = 1,
+}

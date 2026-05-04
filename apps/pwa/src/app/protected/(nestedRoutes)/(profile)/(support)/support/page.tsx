@@ -1,4 +1,4 @@
-import SupportPage from '@components/pages/nestedRoutes/profile/Support/SupportPage';
+import SupportPage from '@components/pages/nestedRoutes/profile/support/SupportPage';
 
 const Support = () => {
   return <SupportPage />;
