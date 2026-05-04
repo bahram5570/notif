@@ -14,7 +14,7 @@ const useImageSrc = (src: string | StaticImport) => {
         if (isHeic && isHttp) {
           try {
             const payload = JSON.stringify({ imageUrl: src });
-            const response = await fetch('/api/CustomImage-heic-converter', { method: 'POST', body: payload });
+            const response = await fetch('/api/shared/CustomImage-heic-converter', { method: 'POST', body: payload });
             const blob = await response.blob();
             const result = URL.createObjectURL(blob);
 

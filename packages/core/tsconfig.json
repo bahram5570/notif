@@ -8,7 +8,7 @@
     "types": ["./assets"],
     "emitDeclarationOnly": false,
     "paths": {
-      "@assets/*": ["../assets/src/*"]
+      "@assets/*": ["../copies/src/assets/*"]
     }
   },
   "include": ["src"],

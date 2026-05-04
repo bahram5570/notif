@@ -4,20 +4,16 @@ import sharp from 'sharp';
 
 export const POST = async (request: NextRequest) => {
   try {
-    const formData = await request.formData();
-    const file = formData.get('file') as File | null;
-    const maxSize = Number(request.nextUrl.searchParams.get('maxSize')) || 600;
+    const body = await request.json();
+    const maxSize = Number(body?.maxSize || 600);
+    const imageResponse = await fetch(body?.imageUrl);
 
-    if (!file) {
-      throw new Error('Invalid image format!');
+    if (!imageResponse.ok) {
+      return NextResponse.json('Failed to fetch the image!', { status: 500 });
     }
 
-    let buffer = Buffer.from(await file.arrayBuffer()) as unknown as ArrayBuffer;
-
-    const isHeicFormat = file.name.toLowerCase().includes('.heic') || file.name.toLowerCase().includes('.heif');
-    if (isHeicFormat) {
-      buffer = await heicConvert({ buffer, format: 'JPEG', quality: 1 });
-    }
+    let buffer = Buffer.from(await imageResponse.arrayBuffer()) as unknown as ArrayBuffer;
+    buffer = await heicConvert({ buffer, format: 'JPEG' });
 
     const updatedImage = (await sharp(buffer)
       .rotate()

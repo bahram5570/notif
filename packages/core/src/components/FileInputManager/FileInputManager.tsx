@@ -36,7 +36,11 @@ export const FileInputManager = ({
       const formData = new FormData();
       formData.append('file', file);
 
-      const response = await fetch(`/api/image-compressor?maxSize=${maxSize}`, { method: 'POST', body: formData });
+      const response = await fetch(`/api/shared/image-compressor?maxSize=${maxSize}`, {
+        method: 'POST',
+        body: formData,
+      });
+
       const blob = await response.blob();
 
       const compressedFileName = file.name.split('.')[0] + '.webp';

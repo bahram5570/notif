@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+import { isDevelopeMode } from '../../../../../utils/system';
 
 import { UseImageSrcProps } from './types';
 
 const useImageSrc = ({ src, imageApi = '/file', onError }: UseImageSrcProps) => {
+  const isFirstTime = useRef(isDevelopeMode());
   const [updatedSrc, setUpdatedSrc] = useState('');
 
   const convertHeic = async (imageUrl: string, isHeic: boolean) => {
@@ -13,7 +16,7 @@ const useImageSrc = ({ src, imageApi = '/file', onError }: UseImageSrcProps) => 
 
     try {
       const payload = JSON.stringify({ imageUrl });
-      const response = await fetch('/api/CustomImage-heic-converter', { method: 'POST', body: payload });
+      const response = await fetch('/api/shared/CustomImage-heic-converter', { method: 'POST', body: payload });
       const blob = await response.blob();
       const result = URL.createObjectURL(blob);
 
@@ -37,6 +40,11 @@ const useImageSrc = ({ src, imageApi = '/file', onError }: UseImageSrcProps) => 
   };
 
   useEffect(() => {
+    if (isFirstTime.current) {
+      isFirstTime.current = false;
+      return;
+    }
+
     const convertSrc = async () => {
       if (typeof src === 'string') {
         const result = urlMaker(src.trim());

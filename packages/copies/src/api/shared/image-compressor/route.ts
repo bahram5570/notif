@@ -16,7 +16,7 @@ export const POST = async (request: NextRequest) => {
 
     const isHeicFormat = file.name.toLowerCase().includes('.heic') || file.name.toLowerCase().includes('.heif');
     if (isHeicFormat) {
-      buffer = await heicConvert({ buffer, format: 'JPEG', quality: 1 });
+      buffer = await heicConvert({ buffer, format: 'JPEG' });
     }
 
     const updatedImage = (await sharp(buffer)
