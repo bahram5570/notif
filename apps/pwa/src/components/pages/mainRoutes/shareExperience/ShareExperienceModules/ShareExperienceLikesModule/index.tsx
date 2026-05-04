@@ -1,6 +1,6 @@
 import { LikeActionModule } from '@repo/core/components/ShareExperience';
 
-import useLikes from './__hooks__/useLikes';
+import useLikes from '../ShareExperiencePostCardModules/__hooks__/likeHandlers/useLikes';
 import { ShareExperienceLikesModuleProps } from './types';
 
 const ShareExperienceLikesModule = (props: ShareExperienceLikesModuleProps) => {

@@ -3,7 +3,7 @@ import { SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME, UserAvatarModule } from '@rep
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
@@ -21,7 +21,7 @@ const ShareExperienceProfileTopPart = ({
   const { followHandler, isFollowLoading } = useShareExperienceFollow();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useOverlayIndex();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
 
   const textBtn = isSelf ? 'ویرایش پروفایل' : isFollow ? 'دنبال شده' : 'دنبال کردن';
 

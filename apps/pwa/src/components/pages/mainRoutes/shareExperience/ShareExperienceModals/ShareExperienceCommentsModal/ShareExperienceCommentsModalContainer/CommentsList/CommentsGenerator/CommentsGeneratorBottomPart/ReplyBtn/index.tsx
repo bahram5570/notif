@@ -4,7 +4,7 @@ import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { NewReplyQueriesTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceModals/ShareExperienceNewReplyModal/types';
-import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
@@ -13,7 +13,7 @@ import { ReplyBtnProps } from './types';
 const ReplyBtn = ({ avatar, name, shareId, commentId, userId }: ReplyBtnProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
-  const { increaseZIndex } = useOverlayIndex();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
 
   const loadingId = `ReplyBtn ${shareId} ${commentId} ${userId}`;
   const isLoading = pageNavigationLoading === loadingId;

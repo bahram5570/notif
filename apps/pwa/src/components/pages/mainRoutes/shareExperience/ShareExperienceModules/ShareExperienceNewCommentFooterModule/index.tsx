@@ -2,7 +2,7 @@ import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
-import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
@@ -21,7 +21,7 @@ const ShareExperienceNewCommentFooterModule = ({
 }: ShareExperienceNewCommentFooterModuleProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useOverlayIndex();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
 
   const selectHandler = () => {
     newQueryParamsHandler(queries);

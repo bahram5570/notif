@@ -4,7 +4,7 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { shareExperienceTopicQueryMaker } from '@repo/core/utils/shareExperience';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
-import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
@@ -13,7 +13,7 @@ import { ShareExperienceTopicsProps } from './type';
 const ShareExperienceTopics = ({ topics }: ShareExperienceTopicsProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useOverlayIndex();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
 
   const clickHandler = (id: string) => {
     pageNavigationHandler({ id, showProgressBar: true });

@@ -19,6 +19,7 @@ const ShareExperienceProfileData = ({ isSelf, experienceDataList, isLoading }: S
                 className="border-b-[1px] border-b-impo_Neutral_Surface z-0"
                 type="activitiesExperienceType"
                 shareId={item.id}
+                hasLinkTo
               />
             );
           })}

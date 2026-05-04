@@ -1,7 +1,7 @@
 import { shareExperienceCommentQueryMaker } from '../../../utils/shareExperience';
 
 import { useCustomToast } from '../../../hooks/useCustomToast';
-import { useOverlayIndex } from '../../../hooks/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '../../../hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
 import { useWidgetActions } from '../../../hooks/useWidgetActions';
@@ -13,10 +13,10 @@ import { ContentsSectionModuleProps } from './type';
 export const ContentsSectionModule = (props: ContentsSectionModuleProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useOverlayIndex();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
   const { actionHandler } = useWidgetActions();
   const toast = useCustomToast();
-  const { hasLinkTo, id, image, isSelf, text, tags } = props;
+  const { hasLinkTo = true, id, image, text, tags } = props;
 
   const clickHandler = (tag: TagType) => {
     if (tag.action) {
@@ -30,13 +30,11 @@ export const ContentsSectionModule = (props: ContentsSectionModuleProps) => {
 
   const selectHandler = () => {
     if (hasLinkTo) {
-      if (!isSelf) {
-        pageNavigationHandler({ id, showProgressBar: true });
+      pageNavigationHandler({ id, showProgressBar: true });
 
-        const { queryKey, queryValue } = shareExperienceCommentQueryMaker(id);
-        increaseZIndex(queryKey, id);
-        newQueryParamsHandler({ [queryKey]: queryValue });
-      }
+      const { queryKey, queryValue } = shareExperienceCommentQueryMaker(id);
+      increaseZIndex(queryKey, id);
+      newQueryParamsHandler({ [queryKey]: queryValue });
     }
   };
 

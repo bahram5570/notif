@@ -8,6 +8,7 @@ import useLikeActivitiesExperience from '../useLikeActivitiesExperience';
 import useLikeAssociationExperience from '../useLikeAssociationExperience';
 import useLikeComment from '../useLikeComment';
 import useLikeExeprience from '../useLikeExeprience';
+import useLikeExepriences from '../useLikeExepriences';
 import useLikeReply from '../useLikeReply';
 import useLikeTopicExperiences from '../useLikeTopicExperience';
 import { ApiInfoTypes, LikeHandlerTypes, UseLikesProps } from './types';
@@ -15,6 +16,7 @@ import { ApiInfoTypes, LikeHandlerTypes, UseLikesProps } from './types';
 const useLikes = (props: UseLikesProps) => {
   const [apiInfo, setApiInfo] = useState<null | ApiInfoTypes>(null);
 
+  const { updateExperiencesHandler } = useLikeExepriences();
   const { updateExperienceHandler } = useLikeExeprience();
   const { updateCommentHandler } = useLikeComment();
   const { updateReplyHandler } = useLikeReply();
@@ -29,8 +31,14 @@ const useLikes = (props: UseLikesProps) => {
     const { newLikeInfo, newApi } = handleLikeInfo({ v, likeInfo });
 
     switch (props.type) {
+      case 'experiences':
+        updateExperiencesHandler({ ...newLikeInfo, shareId: props.shareId });
+
+        apiResult = `shareeexperience/v3/experience/${props.shareId}/${newApi.likeType}`;
+        break;
       case 'experience':
         updateExperienceHandler({ ...newLikeInfo, shareId: props.shareId });
+
         apiResult = `shareeexperience/v3/experience/${props.shareId}/${newApi.likeType}`;
         break;
 

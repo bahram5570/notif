@@ -1,4 +1,5 @@
-import { QueryExperiencesDataTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
+import { CommentsResponseTypes } from '@repo/core/components/ShareExperience';
+
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import { UpdateExercieseHandlerTypes } from './types';
@@ -7,20 +8,15 @@ const useLikeExeprience = () => {
   const { updateQuery, getQuery } = useCustomReactQuery();
 
   const updateExperienceHandler: UpdateExercieseHandlerTypes = (v) => {
-    const experiencesData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['experiences'] });
+    const experienceData = getQuery<CommentsResponseTypes>({ queryKey: ['comments ' + v.shareId] });
 
-    if (experiencesData) {
-      const index = experiencesData.expirences.findIndex((item) => item.id === v.shareId);
+    if (experienceData) {
+      experienceData.likeCount = v.likeCount;
+      experienceData.dislikeCount = v.disliked;
+      experienceData.state = v.state;
 
-      if (index > -1) {
-        const experience = experiencesData.expirences[index];
-        experience.likeCount = v.likeCount;
-        experience.disliked = v.disliked;
-        experience.state = v.state;
-
-        const payload = { ...experiencesData };
-        updateQuery({ queryKey: ['experiences'], payload });
-      }
+      const payload = { ...experienceData };
+      updateQuery({ queryKey: ['comments ' + v.shareId], payload });
     }
   };
 

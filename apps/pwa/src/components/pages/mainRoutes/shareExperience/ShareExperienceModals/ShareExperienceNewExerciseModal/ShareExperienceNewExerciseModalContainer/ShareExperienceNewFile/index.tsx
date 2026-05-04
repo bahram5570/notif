@@ -4,7 +4,7 @@ import { SHARE_EXPERIENCE_UPLOAD_FILE_MODAL_QUERY_NAME } from '@repo/core/compon
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
-import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { ShareExperienceNewFileProps } from './types';
@@ -17,7 +17,7 @@ const ShareExperienceNewFile = ({
   imageFile,
 }: ShareExperienceNewFileProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
-  const { increaseZIndex } = useOverlayIndex();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
   // const clickHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
   //   if (onChangeBtnTop) {
   //     onChangeBtnTop();

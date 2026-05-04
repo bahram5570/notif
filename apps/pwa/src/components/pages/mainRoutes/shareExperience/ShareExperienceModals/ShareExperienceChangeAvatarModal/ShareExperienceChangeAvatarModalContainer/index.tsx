@@ -4,7 +4,7 @@ import { SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME } from '@repo/core/compo
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useFileUpload from '@hooks/useFileUpload';
-import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
@@ -18,7 +18,7 @@ const ShareExperienceChangeAvatarModalContainer = ({
   const { onProfileChangeHandler } = useUpdateProfile();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useOverlayIndex();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
   const { fileDataHandler, uploadImageLoading } = useFileUpload({
     onSuccess: (v: string) => onProfileChangeHandler({ avatarImage: v, username: username }),
     api: 'shareeexperience/v3/file',
@@ -28,9 +28,8 @@ const ShareExperienceChangeAvatarModalContainer = ({
     if (id) {
       pageNavigationHandler({ id: id, showProgressBar: true });
 
-      const paramsData = JSON.stringify({ id });
       increaseZIndex(SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME, id);
-      newQueryParamsHandler({ [SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME]: paramsData });
+      newQueryParamsHandler({ [SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME]: id });
     }
   };
 

@@ -7,7 +7,7 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
-import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ShareExperienceNewTopicsGenerator from './ShareExperienceNewTopicsGenerator';
@@ -23,7 +23,7 @@ const ShareExperienceNewTopics = ({
 }: ShareExperienceNewTopicsProps) => {
   const { callEvent } = useAnalytics();
   const { getQueryParams } = useQueryParamsHandler();
-  const { getZIndex } = useOverlayIndex();
+  const { getZIndex } = useShareExperienceOverlayIndex();
   const isOpen = getQueryParams(SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME) !== null;
   useOverflowHandler(isOpen);
 

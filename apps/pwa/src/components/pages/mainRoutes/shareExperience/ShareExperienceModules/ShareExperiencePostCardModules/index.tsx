@@ -14,10 +14,9 @@ const ShareExperiencePostCardModules = (props: ShareExperiencePostCardModulesPro
       <ShareExperienceTopPart {...props} selfExperience={props.isSelf} />
       <div className="w-full pr-10">
         <ContentsSectionModule
-          isSelf={false}
           image={props.image}
           text={props.text}
-          hasLinkTo={true}
+          hasLinkTo={props.hasLinkTo}
           id={props.id}
           tags={props.tags}
         />

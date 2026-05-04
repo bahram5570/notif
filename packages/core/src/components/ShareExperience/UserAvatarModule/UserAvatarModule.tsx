@@ -1,7 +1,7 @@
 import UploadIcon from '@assets/icons/upload.svg';
 
 import { useAnalytics } from '../../../hooks/useAnalytics';
-import { useOverlayIndex } from '../../../hooks/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '../../../hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
 import { CustomImage } from '../../ui/CustomImage';
@@ -12,7 +12,7 @@ export const UserAvatarModule = ({ id, avatarImage, showChangeAvatarIcon, userna
   const { callEvent } = useAnalytics();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useOverlayIndex();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
 
   const selectProfileHandler = () => {
     callEvent('ShareExperienceSelfProfile');

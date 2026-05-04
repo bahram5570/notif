@@ -1,1 +1,1 @@
-export { OverlayIndexProvider } from './OverlayIndexProvider';
+export { OverlayIndexProvider as ShareExperienceOverlayIndexProvider } from './OverlayIndexProvider';

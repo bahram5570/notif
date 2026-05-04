@@ -5,8 +5,10 @@ import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 import { QueryExperiencesDataTypes } from '../../../../ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
+import useUpdateActivitiesList from '../useUpdateActivitiesList';
 import useUpdateAssociationInfo from '../useUpdateAssociationInfo';
 import useUpdateSelfExperienceList from '../useUpdateSelfExperienceList';
+import useUpdateTopicExperienceList from '../useUpdateTopicExperienceList';
 
 const useExperienceDelete = () => {
   const router = useRouter();
@@ -14,6 +16,8 @@ const useExperienceDelete = () => {
   const [shareId, setShareId] = useState<null | string>(null);
   const { updateAssociationInfoHandler } = useUpdateAssociationInfo();
   const { updateSelfExperienceListHandler } = useUpdateSelfExperienceList();
+  const { updateTopicExperienceListHandler } = useUpdateTopicExperienceList();
+  const { updateActivitiesListHandler } = useUpdateActivitiesList();
 
   const successHandler = () => {
     const experiencesData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['experiences'] });
@@ -26,6 +30,8 @@ const useExperienceDelete = () => {
 
     updateAssociationInfoHandler({ shareId });
     updateSelfExperienceListHandler({ shareId });
+    updateTopicExperienceListHandler({ shareId });
+    updateActivitiesListHandler({ shareId });
 
     setShareId(null);
     router.back();

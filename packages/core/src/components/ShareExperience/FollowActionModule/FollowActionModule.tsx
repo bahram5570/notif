@@ -1,5 +1,5 @@
 import { useAnalytics } from '../../../hooks/useAnalytics';
-import { useOverlayIndex } from '../../../hooks/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '../../../hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
 import { CustomSpinner } from '../../ui/CustomSpinner';
@@ -12,7 +12,7 @@ export const FollowActionModule = (props: FollowActionModuleProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
 
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
-  const { increaseZIndex } = useOverlayIndex();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
 
   const loadingId = `ShareExperienceFollowModule ${props.userId} ${props.experienceId}`;
   const isLoading = props.isFollowLoading || pageNavigationLoading === loadingId;

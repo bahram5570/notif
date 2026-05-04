@@ -1,7 +1,7 @@
 import { SHARE_EXPERIENCE_TOPIC_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
-import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ShareExperienceTopicModalContainer from './ShareExperienceTopicModalContainer';
@@ -9,7 +9,7 @@ import { ShareExperienceTopicModalProps } from './type';
 
 const ShareExperienceTopicModal = ({ avatarImage }: ShareExperienceTopicModalProps) => {
   const { getQueryParams } = useQueryParamsHandler();
-  const { getZIndex } = useOverlayIndex();
+  const { getZIndex } = useShareExperienceOverlayIndex();
 
   const queryParams = getQueryParams(SHARE_EXPERIENCE_TOPIC_MODAL_QUERY_NAME);
   const topicId = queryParams === null ? null : (queryParams as string);

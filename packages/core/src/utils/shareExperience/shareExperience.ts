@@ -5,7 +5,7 @@ import {
 } from '../../components/ShareExperience';
 
 export const shareExperienceTopicQueryMaker = (id: string) => {
-  const queryValue = JSON.stringify({ id });
+  const queryValue = id;
   const queryKey = SHARE_EXPERIENCE_TOPIC_MODAL_QUERY_NAME;
   return { queryKey, queryValue };
 };

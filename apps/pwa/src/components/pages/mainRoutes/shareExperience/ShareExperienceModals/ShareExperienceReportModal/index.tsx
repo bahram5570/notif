@@ -1,14 +1,14 @@
 import InfoIcon from '@assets/icons/dangerTriangle.svg';
 import { ApproveModalsModule, SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
 
-import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import useShareExperienceReport from './__hooks__/useShareExperienceReport';
 
 const ShareExperienceReportModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
-  const { getZIndex } = useOverlayIndex();
+  const { getZIndex } = useShareExperienceOverlayIndex();
   const { reportHandler, isLoading } = useShareExperienceReport();
 
   const queryParams = getQueryParams(SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME);

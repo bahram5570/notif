@@ -46,7 +46,6 @@ const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsMod
             <CommentsTopPart {...commentsData} id={props.id} />
 
             <ContentsSectionModule
-              isSelf={commentsData.self}
               image={commentsData.image}
               text={commentsData.text}
               hasLinkTo={false}
@@ -58,7 +57,12 @@ const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsMod
 
             <div className="w-full h-1 my-4 bg-impo_Neutral_Surface" />
 
-            <CommentsList id={props.id} comments={commentsData.comments} canSendReply={commentsData.canSendReply} />
+            <CommentsList
+              id={props.id}
+              comments={commentsData.comments}
+              canSendReply={commentsData.canSendReply}
+              self={commentsData.self}
+            />
           </div>
         )}
       </InfiniteScrollContainer>

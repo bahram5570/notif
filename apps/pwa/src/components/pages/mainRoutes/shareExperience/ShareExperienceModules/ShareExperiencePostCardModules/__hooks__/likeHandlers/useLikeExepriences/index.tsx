@@ -1,12 +1,12 @@
+import { QueryExperiencesDataTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
-import { QueryExperiencesDataTypes } from '../../../../__hooks__/useExperiences/types';
 import { UpdateExercieseHandlerTypes } from './types';
 
-const useLikeExeprience = () => {
+const useLikeExepriences = () => {
   const { updateQuery, getQuery } = useCustomReactQuery();
 
-  const updateExperienceHandler: UpdateExercieseHandlerTypes = (v) => {
+  const updateExperiencesHandler: UpdateExercieseHandlerTypes = (v) => {
     const experiencesData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['experiences'] });
 
     if (experiencesData) {
@@ -24,7 +24,7 @@ const useLikeExeprience = () => {
     }
   };
 
-  return { updateExperienceHandler };
+  return { updateExperiencesHandler };
 };
 
-export default useLikeExeprience;
+export default useLikeExepriences;

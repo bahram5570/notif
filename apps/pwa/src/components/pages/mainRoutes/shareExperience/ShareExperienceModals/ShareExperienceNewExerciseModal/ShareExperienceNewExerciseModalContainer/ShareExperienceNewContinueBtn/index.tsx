@@ -2,7 +2,7 @@ import { SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME } from '@repo/core/components/Sh
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
 import ShareExperienceToast from '@components/pages/mainRoutes/shareExperience/ShareExperienceModules/ShareExperienceToast';
-import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
@@ -19,7 +19,7 @@ const ShareExperienceNewContinueBtn = ({
 }: ShareExperienceNewContinueBtnProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
-  const { increaseZIndex } = useOverlayIndex();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
 
   const isDisable = text.trim().length < 1;
   const id = 'form';

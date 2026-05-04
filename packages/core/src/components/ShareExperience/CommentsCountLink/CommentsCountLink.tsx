@@ -1,6 +1,6 @@
 import CommentsIcon from '@assets/shared/icons/comment.svg';
 
-import { useOverlayIndex } from '../../../hooks/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '../../../hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
 import { CustomTypography } from '../../ui/CustomTypography';
@@ -10,7 +10,7 @@ import { CommentsCountLinkProps } from './type';
 export const CommentsCountLink = (props: CommentsCountLinkProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useOverlayIndex();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
 
   const clickHandler = () => {
     if (!props.isSelf) {

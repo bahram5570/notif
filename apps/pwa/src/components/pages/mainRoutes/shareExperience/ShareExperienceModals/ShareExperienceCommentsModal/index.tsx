@@ -1,7 +1,7 @@
 import { SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
-import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ShareExperienceCommentsModalContainer from './ShareExperienceCommentsModalContainer';
@@ -9,7 +9,7 @@ import { ShareExperienceCommentsModalProps } from './types';
 
 const ShareExperienceCommentsModal = ({ avatarImage }: ShareExperienceCommentsModalProps) => {
   const { getQueryParams } = useQueryParamsHandler();
-  const { getZIndex } = useOverlayIndex();
+  const { getZIndex } = useShareExperienceOverlayIndex();
 
   const ShareExperienceCommnetModalParms = getQueryParams(SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME);
   const queryData = ShareExperienceCommnetModalParms === null ? null : (ShareExperienceCommnetModalParms as string);

@@ -4,7 +4,7 @@ import {
 } from '@repo/core/components/ShareExperience';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { useOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
@@ -13,7 +13,7 @@ import { ProfileInfoPropsType } from './type';
 const ProfileInfo = ({ followCount, storyCount, userId }: ProfileInfoPropsType) => {
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { newQueryParamsHandler } = useQueryParamsHandler();
-  const { increaseZIndex } = useOverlayIndex();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
 
   const followerSelectHandler = () => {
     pageNavigationHandler({ id: userId, showProgressBar: true });

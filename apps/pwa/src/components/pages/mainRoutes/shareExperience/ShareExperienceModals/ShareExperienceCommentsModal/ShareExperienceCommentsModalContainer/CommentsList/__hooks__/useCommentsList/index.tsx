@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 import { CommentsResponseTypes, EXPERIENCES_COMMENTS_PAGE_SIZE } from '@repo/core/components/ShareExperience';
 
@@ -9,9 +9,9 @@ import useShareExperiencePageNo from '../../../__hooks__/useShareExperiencePageN
 import { UseCommentsListProps } from './types';
 
 const useCommentsList = ({ id }: UseCommentsListProps) => {
-  const [pageNo, setPageNo] = useState(0);
-  const { updatePageNo: changePageNoHandler } = useShareExperiencePageNo(id);
+  const { updatePageNo: changePageNoHandler, pageNoInfo } = useShareExperiencePageNo(id);
   const { newQuery, updateQuery, getQuery } = useCustomReactQuery(['comments ' + id]);
+  const pageNo = pageNoInfo ? pageNoInfo.pageNo : 0;
 
   const commentsData = getQuery<CommentsResponseTypes>({ queryKey: ['comments ' + id] });
 
@@ -33,13 +33,14 @@ const useCommentsList = ({ id }: UseCommentsListProps) => {
   });
 
   const updatePageNo = () => {
-    setPageNo((prev) => prev + 1);
     changePageNoHandler(pageNo + 1);
   };
 
   useEffect(() => {
-    callApi();
-  }, [pageNo, id]);
+    if (!isLoading) {
+      callApi();
+    }
+  }, [pageNo, id, isLoading]);
 
   const isFirstLoad = isLoading && !commentsData;
 

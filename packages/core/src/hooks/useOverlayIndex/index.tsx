@@ -1,1 +1,1 @@
-export { useOverlayIndex } from './useOverlayIndex';
+export { useOverlayIndex as useShareExperienceOverlayIndex } from './useOverlayIndex';
