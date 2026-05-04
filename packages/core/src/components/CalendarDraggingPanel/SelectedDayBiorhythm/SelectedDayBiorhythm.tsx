@@ -1,6 +1,6 @@
-import InfoIcon from '../../../../../assets/src/shared/icons/info.svg';
 import { CustomTypography } from '../../../components/ui/CustomTypography';
 import { externalLink } from '../../../utils/navigation';
+import InfoIcon from '@assets/shared/icons/info.svg';
 
 import { useAnalytics } from '../../../hooks/useAnalytics';
 import { useSystem } from '../../../hooks/useSystem';

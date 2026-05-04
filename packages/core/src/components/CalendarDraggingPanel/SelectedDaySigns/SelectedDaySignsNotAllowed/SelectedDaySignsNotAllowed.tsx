@@ -1,5 +1,5 @@
-import InfoIcon from '../../../../../../assets/src/shared/icons/infoIcon.svg';
 import { CustomTypography } from '../../../../components/ui/CustomTypography';
+import InfoIcon from '@assets/shared/icons/infoIcon.svg';
 
 export const SelectedDaySignsNotAllowed = () => {
   return (

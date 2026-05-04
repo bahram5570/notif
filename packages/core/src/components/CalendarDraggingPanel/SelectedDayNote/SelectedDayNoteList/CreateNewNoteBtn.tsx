@@ -1,8 +1,8 @@
 import { useMemo } from 'react';
 
-import PlusIcon from '../../../../../../assets/src/shared/icons/plus.svg';
 import { CustomButton } from '../../../../components/ui/CustomButton';
 import { CustomTypography } from '../../../../components/ui/CustomTypography';
+import PlusIcon from '@assets/shared/icons/plus.svg';
 
 import { usePageNavigationLoading } from '../../../../hooks/usePageNavigationLoading';
 import { useSignDateState } from '../../../../hooks/useSignDateState';

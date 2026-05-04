@@ -1,6 +1,6 @@
-import CheckListIcon from '../../../../../../../assets/src/shared/icons/checkList.svg';
 import { CustomTypography } from '../../../../../components/ui/CustomTypography';
 import { textShorter } from '../../../../../utils/scripts';
+import CheckListIcon from '@assets/shared/icons/checkList.svg';
 
 import { usePageNavigationLoading } from '../../../../../hooks/usePageNavigationLoading';
 import { NoteItemPropsType } from './type';

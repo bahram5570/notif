@@ -1,7 +1,7 @@
 import { useMemo } from 'react';
 
-import ResetIcon from '../../../../../../assets/src/shared/icons/calendarReset.svg';
 import { currentDate } from '../../../../utils/dates';
+import ResetIcon from '@assets/shared/icons/calendarReset.svg';
 
 import { useCulture } from '../../../../hooks/useCulture';
 import { CalendarTypeEnum } from '../../../../providers/CultureProvider';

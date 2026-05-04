@@ -1,4 +1,4 @@
-import LinkIcon from '../../../../../../assets/src/shared/icons/calendarSignLink.svg';
+import LinkIcon from '@assets/shared/icons/calendarSignLink.svg';
 
 import { useAnalytics } from '../../../../hooks/useAnalytics';
 import { usePageNavigationLoading } from '../../../../hooks/usePageNavigationLoading';

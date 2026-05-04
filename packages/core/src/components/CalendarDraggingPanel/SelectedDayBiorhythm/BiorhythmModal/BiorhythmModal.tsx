@@ -1,6 +1,6 @@
-import CancelIcon from '../../../../../../assets/src/shared/icons/cancel.svg';
 import { CustomModal } from '../../../../components/ui/CustomModal';
 import { CustomTypography } from '../../../../components/ui/CustomTypography';
+import CancelIcon from '@assets/shared/icons/cancel.svg';
 
 import { useRouter } from 'next/navigation';
 
