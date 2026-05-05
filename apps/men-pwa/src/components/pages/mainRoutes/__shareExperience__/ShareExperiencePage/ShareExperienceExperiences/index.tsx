@@ -4,6 +4,7 @@ import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollCon
 
 import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 
+import ShareExperienceCommentsModal from '../../ShareExperienceModals/ShareExperienceCommentsModal';
 import ShareExperienceDeleteModal from '../../ShareExperienceModals/ShareExperienceDeleteModal';
 import ShareExperienceNewExerciseModal from '../../ShareExperienceModals/ShareExperienceNewExerciseModal';
 import ShareExperienceProfileModal from '../../ShareExperienceModals/ShareExperienceProfileModal';
@@ -34,7 +35,7 @@ const ShareExperienceExperiences = ({
             avatarImage={profile.avatarImage}
             username={profile.username}
           />
-          {/* <ShareExperienceCommentsModal avatarImage={profile.avatarImage} /> */}
+          <ShareExperienceCommentsModal avatarImage={profile.avatarImage} />
           {/* <ShareExperienceUnfollowModal /> */}
           {/* <ShareExperienceNewReplyModal avatarImage={profile.avatarImage} username={profile.username} /> */}
           <ShareExperienceReportModal />

@@ -1,13 +1,17 @@
+import { useMemo } from 'react';
+
 import LikeEmptyIcon from '@assets/shared/icons/like.svg';
 import LikeFillIcon from '@assets/shared/icons/likeFill.svg';
 
 import { useAnalytics } from '../../../hooks/useAnalytics';
+import { useSystem } from '../../../hooks/useSystem';
 import { CustomTypography } from '../../ui/CustomTypography';
 import { ShareExperienceStateEnum } from '../enum';
 import { LikeActionModuleProps } from './type';
 
 export const LikeActionModule = (props: LikeActionModuleProps) => {
   const { callEvent } = useAnalytics();
+  const { appName } = useSystem();
 
   const selectHandler = (v: ShareExperienceStateEnum) => {
     if (!props.isSelf) {
@@ -15,8 +19,18 @@ export const LikeActionModule = (props: LikeActionModuleProps) => {
     }
   };
 
+  const fillColor = useMemo(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return 'fill-impo_PrimaryMan_PrimaryMan';
+
+      default:
+        return 'fill-impo_Primary_Primary';
+    }
+  }, [appName]);
+
   const iconsStyles = { opacity: props.isSelf ? 0.4 : 1, width: 20 };
-  const filledIcon = <LikeFillIcon className="fill-impo_Primary_Primary" style={{ ...iconsStyles }} />;
+  const filledIcon = <LikeFillIcon className={fillColor} style={{ ...iconsStyles }} />;
   const emptiedIcon = <LikeEmptyIcon className="fill-impo_Surface_InverseSurface" style={{ ...iconsStyles }} />;
 
   return (

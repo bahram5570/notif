@@ -1,9 +1,9 @@
-import ArrowIcon from '@assets/shared/cons/arrowElbowDown.svg';
+import ArrowIcon from '@assets/shared/icons/arrowElbowDown.svg';
 import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { NewReplyQueriesTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceModals/ShareExperienceNewReplyModal/types';
+import { NewReplyQueriesTypes } from '@components/pages/mainRoutes/__shareExperience__/ShareExperienceModals/ShareExperienceNewReplyModal/types';
 import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
