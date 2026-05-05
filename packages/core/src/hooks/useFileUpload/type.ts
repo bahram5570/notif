@@ -1,7 +1,7 @@
 export type OptionsTypes = {
   onSuccess?: (v: string) => void;
   onError?: () => void;
-  api?: 'profile/image' | 'pair/cover' | 'file/private/' | 'doctor/file';
+  api?: 'profile/image' | 'pair/cover' | 'file/private/' | 'doctor/file' | 'manshareeexperience/v3/file';
   method?: 'POST' | 'PUT';
 };
 
