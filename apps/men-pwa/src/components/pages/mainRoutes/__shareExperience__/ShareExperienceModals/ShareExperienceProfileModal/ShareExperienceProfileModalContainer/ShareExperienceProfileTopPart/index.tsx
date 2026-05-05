@@ -7,7 +7,7 @@ import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-// import useShareExperienceFollow from '../../../ShareExperienceUnfollowModal/__hooks__/useShareExperienceFollow';
+import useShareExperienceFollow from '../../../ShareExperienceUnfollowModal/__hooks__/useShareExperienceFollow';
 import ProfileInfo from './ProfileInfo';
 import { ShareExperienceProfileTopPartPropsType } from './type';
 
@@ -18,7 +18,7 @@ const ShareExperienceProfileTopPart = ({
   profile,
   isSelf,
 }: ShareExperienceProfileTopPartPropsType) => {
-  // const { followHandler, isFollowLoading } = useShareExperienceFollow();
+  const { followHandler, isFollowLoading } = useShareExperienceFollow();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { increaseZIndex } = useShareExperienceOverlayIndex();
@@ -32,7 +32,7 @@ const ShareExperienceProfileTopPart = ({
       increaseZIndex(SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME, profile.id);
       newQueryParamsHandler({ [SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME]: profile.id });
     } else {
-      // followHandler({ userId: profile.id, isFollow, userName: profile.username });
+      followHandler({ userId: profile.id, isFollow, userName: profile.username });
     }
   };
 
@@ -55,7 +55,7 @@ const ShareExperienceProfileTopPart = ({
       </div>
 
       <CustomButton
-        // isLoading={isFollowLoading}
+        isLoading={isFollowLoading}
         onClick={clickHandler}
         fontSize="Lable_Medium"
         className={`

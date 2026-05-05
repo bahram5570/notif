@@ -3,6 +3,7 @@ import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollCon
 
 import ShareExperiencePostCardModules from '@components/pages/mainRoutes/__shareExperience__/ShareExperienceModules/ShareExperiencePostCardModules';
 
+import ShareExperenceProfileTabListEmpty from '../ShareExperenceProfileTabListEmpty';
 import useSelfExperienceData from './__hooks__/useSelfExperienceData';
 import { ShareExperienceProfileSelfListPropsType } from './type';
 
@@ -18,7 +19,7 @@ const ShareExperienceProfileSelfList = ({ id, isSelf }: ShareExperienceProfileSe
         pageNo={pageNo}
         callBack={updatePageNo}
       >
-        {/* {!hasData && !isLoading && <ShareExperenceProfileTabListEmpty />} */}
+        {!hasData && !isLoading && <ShareExperenceProfileTabListEmpty />}
         {hasData && (
           <div className="flex flex-col p-4">
             {selfExperienceData.list.map((item) => {
@@ -28,7 +29,7 @@ const ShareExperienceProfileSelfList = ({ id, isSelf }: ShareExperienceProfileSe
                   key={item.id}
                   isSelf={isSelf}
                   className="border-b-[1px] border-b-impo_Neutral_Surface z-0"
-                  type="activitiesExperienceType"
+                  type="selfExperienceType"
                   shareId={item.id}
                   hasLinkTo
                 />

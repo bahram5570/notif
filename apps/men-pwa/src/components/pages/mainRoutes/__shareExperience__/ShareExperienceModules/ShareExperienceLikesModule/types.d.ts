@@ -35,6 +35,11 @@ type ActivitiesExperienceType = {
   shareId: string;
 };
 
+type SelfExperienceDataType = {
+  type: 'selfExperienceType';
+  shareId: string;
+};
+
 type ItemsTypes =
   | ExperienceTypes
   | CommentTypes
@@ -42,7 +47,8 @@ type ItemsTypes =
   | AssociationType
   | TopicTypes
   | ActivitiesExperienceType
-  | ExperiencesTypes;
+  | ExperiencesTypes
+  | SelfExperienceDataType;
 
 export type ShareExperienceLikesModuleProps = ItemsTypes & {
   state: ShareExperienceStateEnum;
