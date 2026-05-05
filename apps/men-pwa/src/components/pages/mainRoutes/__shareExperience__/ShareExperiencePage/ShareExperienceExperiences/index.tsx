@@ -4,10 +4,14 @@ import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollCon
 
 import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 
+import ShareExperienceChangeAvatarModal from '../../ShareExperienceModals/ShareExperienceChangeAvatarModal';
 import ShareExperienceCommentsModal from '../../ShareExperienceModals/ShareExperienceCommentsModal';
+import ShareExperienceDefultAvatarListModal from '../../ShareExperienceModals/ShareExperienceDefultAvatarListModal';
 import ShareExperienceDeleteModal from '../../ShareExperienceModals/ShareExperienceDeleteModal';
+import ShareExperienceEditProfileModal from '../../ShareExperienceModals/ShareExperienceEditProfileModal';
 import ShareExperienceNewExerciseModal from '../../ShareExperienceModals/ShareExperienceNewExerciseModal';
 import ShareExperienceProfileModal from '../../ShareExperienceModals/ShareExperienceProfileModal';
+import ShareExperienceProfileReportModal from '../../ShareExperienceModals/ShareExperienceProfileReportModal';
 import ShareExperienceReportModal from '../../ShareExperienceModals/ShareExperienceReportModal';
 import ShareExperienceTopicModal from '../../ShareExperienceModals/ShareExperienceTopicModal';
 import ShareExperiencePostCardModules from '../../ShareExperienceModules/ShareExperiencePostCardModules';
@@ -42,14 +46,14 @@ const ShareExperienceExperiences = ({
           <ShareExperienceDeleteModal />
           <ShareExperienceTopicModal avatarImage={profile.avatarImage} />
           <ShareExperienceProfileModal />
-          {/* <ShareExperienceChangeAvatarModal /> */}
-          {/* <ShareExperienceDefultAvatarListModal /> */}
-          {/* <ShareExperienceEditProfileModal /> */}
+          <ShareExperienceChangeAvatarModal />
+          <ShareExperienceDefultAvatarListModal />
+          <ShareExperienceEditProfileModal />
           {/* <ShareExperienceFollowerModal /> */}
           {/* <ShareExperienceFollowingModal /> */}
           {/* <ShareExperienceAssociationListModal /> */}
           {/* <ShareExperienceAssociationItemModal /> */}
-          {/* <ShareExperienceProfileReportModal /> */}
+          <ShareExperienceProfileReportModal />
         </>
       )}
 

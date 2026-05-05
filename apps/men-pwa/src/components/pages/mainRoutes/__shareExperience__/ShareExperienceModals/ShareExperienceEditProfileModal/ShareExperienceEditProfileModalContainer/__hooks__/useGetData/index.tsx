@@ -8,7 +8,6 @@ import useShareExperenceProfileGetData from '../../../../ShareExperienceProfileM
 
 const useGetData = (userId: string | undefined) => {
   const [profileData, setProfileData] = useState<ProfileResponsePropsType>();
-
   const { getQuery } = useCustomReactQuery(['shareExperienceProfile']);
   const queryData = getQuery<ProfileResponsePropsType>({ queryKey: ['shareExperienceProfile'] });
   const { callApi } = useShareExperenceProfileGetData(userId);

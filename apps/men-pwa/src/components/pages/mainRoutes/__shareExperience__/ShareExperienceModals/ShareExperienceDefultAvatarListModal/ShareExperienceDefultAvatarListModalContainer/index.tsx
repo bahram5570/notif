@@ -14,26 +14,15 @@ import { ShareExperienceDefultAvatarListModalContainerPropsType } from './type';
 const ShareExperienceDefultAvatarListModalContainer = ({
   id,
 }: ShareExperienceDefultAvatarListModalContainerPropsType) => {
-  const { profileData } = useGetData(id);
-  const avatarList: string[] = profileData?.profile.avatars ? profileData?.profile.avatars : [''];
-  const [selectedAvatar, setSelectedAvatar] = useState<string>('');
+  const { profileData, avatarList, onSelectedAvatarChange } = useGetData(id);
+
   const { onProfileChangeHandler } = useUpdateProfile();
   const router = useRouter();
 
   const onClick = () => {
-    onProfileChangeHandler({ avatarImage: selectedAvatar, username: profileData?.profile.username });
+    onProfileChangeHandler({ avatarImage: profileData?.profile.avatarImage, username: profileData?.profile.username });
     router.back();
   };
-
-  const onSelectedAvatarChange = (avatar: string) => {
-    setSelectedAvatar(avatar);
-  };
-
-  useEffect(() => {
-    if (profileData) {
-      setSelectedAvatar(profileData?.profile.avatarImage);
-    }
-  }, [profileData]);
 
   return (
     <div className="flex flex-col gap-5  relative">
@@ -61,7 +50,9 @@ const ShareExperienceDefultAvatarListModalContainer = ({
                 return (
                   <div key={index} className="relative" onClick={() => onSelectedAvatarChange(avatar)}>
                     <CustomImage src={avatar} />
-                    {selectedAvatar === avatar && <TickIcon className="w-7 h-7 absolute right-0 bottom-0" />}
+                    {profileData?.profile.avatarImage === avatar && (
+                      <TickIcon className="w-7 h-7 absolute right-0 bottom-0" />
+                    )}
                   </div>
                 );
               })}
@@ -71,7 +62,11 @@ const ShareExperienceDefultAvatarListModalContainer = ({
       </div>
 
       <div className="py-4 px-2 sticky bottom-0 w-full bg-impo_Neutral_Background">
-        <CustomButton fontSize="Lable_Large" className="w-full py-2" onClick={onClick}>
+        <CustomButton
+          fontSize="Lable_Large"
+          className="w-full py-2 !bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan"
+          onClick={onClick}
+        >
           انتخاب پروفایل
         </CustomButton>
       </div>

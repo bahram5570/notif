@@ -14,10 +14,8 @@ const ShareExperienceProfileReportModule = ({ userId }: ShareExperienceProfileRe
   const { increaseZIndex } = useShareExperienceOverlayIndex();
 
   const selectHandler = () => {
-    const queryData = JSON.stringify({ id: userId });
-
     increaseZIndex(SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME, userId);
-    newQueryParamsHandler({ [SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME]: queryData });
+    newQueryParamsHandler({ [SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME]: userId });
     pageNavigationHandler({ id: userId, showProgressBar: true });
   };
   return (
