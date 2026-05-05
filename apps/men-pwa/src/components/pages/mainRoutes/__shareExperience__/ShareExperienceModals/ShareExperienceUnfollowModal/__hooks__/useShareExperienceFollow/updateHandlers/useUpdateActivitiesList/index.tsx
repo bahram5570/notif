@@ -1,6 +1,6 @@
-import { SelfExperienceDataType } from '@components/pages/mainRoutes/__shareExperience__/ShareExperienceModals/ShareExperienceProfileModal/ShareExperienceProfileModalContainer/ShareExperenceProfileTabList/ShareExperienceProfileActivities/__hooks__/useActivitiesData/type';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
+import { SelfExperienceDataType } from '../../../../../ShareExperienceProfileModal/ShareExperienceProfileModalContainer/ShareExperenceProfileTabList/ShareExperienceProfileActivities/__hooks__/useActivitiesData/type';
 import { UpdateHandlerType } from '../../types';
 
 const useUpdateActivitiesList = () => {
@@ -13,6 +13,7 @@ const useUpdateActivitiesList = () => {
           item.isFollow = !v.isFollow;
         }
       });
+
       updateQuery({ queryKey: ['activities'], payload: exitActivitiesData });
     }
   };

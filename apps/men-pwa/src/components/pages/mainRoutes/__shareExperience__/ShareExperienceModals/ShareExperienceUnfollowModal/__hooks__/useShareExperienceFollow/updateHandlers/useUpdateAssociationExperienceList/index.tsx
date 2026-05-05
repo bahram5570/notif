@@ -1,6 +1,6 @@
-import { AssociationExperiencesResponseType } from '@components/pages/mainRoutes/__shareExperience__/ShareExperienceModals/ShareExperienceAssociationItemModal/ShareExperienceAssociationItemContainer/__hooks__/useGetAssociationItemData/type';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
+import { AssociationExperiencesResponseType } from '../../../../../ShareExperienceAssociationItemModal/ShareExperienceAssociationItemContainer/__hooks__/useGetAssociationItemData/type';
 import { UpdateHandlerType } from '../../types';
 
 const useUpdateAssociationExperienceList = () => {
@@ -16,6 +16,7 @@ const useUpdateAssociationExperienceList = () => {
           item.isFollow = !v.isFollow;
         }
       });
+
       updateQuery({ queryKey: ['associationExperienceList'], payload: associationExperienceList });
     }
   };

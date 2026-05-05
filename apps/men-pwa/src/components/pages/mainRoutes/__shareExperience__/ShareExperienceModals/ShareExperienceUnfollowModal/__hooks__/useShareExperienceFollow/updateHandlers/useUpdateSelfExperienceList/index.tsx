@@ -3,21 +3,23 @@ import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import { UpdateHandlerType } from '../../types';
 
-const useUpdateActivitiesList = () => {
+const useUpdateSelfExperienceList = () => {
   const { getQuery, updateQuery } = useCustomReactQuery();
-  const updateActivitiesListHandler: UpdateHandlerType = (v) => {
-    const exitActivitiesData = getQuery<SelfExperienceDataType>({ queryKey: ['activities'] });
-    if (exitActivitiesData) {
-      exitActivitiesData.list.forEach((item) => {
+  const updateSelfExperienceListHandler: UpdateHandlerType = (v) => {
+    const exitSelfExperienceData = getQuery<SelfExperienceDataType>({ queryKey: ['selfExperience'] });
+
+    if (exitSelfExperienceData) {
+      exitSelfExperienceData.list.forEach((item) => {
         if (item.userId === v?.userId) {
           item.isFollow = !v.isFollow;
         }
       });
-      updateQuery({ queryKey: ['activities'], payload: exitActivitiesData });
+
+      updateQuery({ queryKey: ['selfExperience'], payload: exitSelfExperienceData });
     }
   };
 
-  return { updateActivitiesListHandler };
+  return { updateSelfExperienceListHandler };
 };
 
-export default useUpdateActivitiesList;
+export default useUpdateSelfExperienceList;

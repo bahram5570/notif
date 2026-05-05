@@ -9,11 +9,14 @@ import ShareExperienceCommentsModal from '../../ShareExperienceModals/ShareExper
 import ShareExperienceDefultAvatarListModal from '../../ShareExperienceModals/ShareExperienceDefultAvatarListModal';
 import ShareExperienceDeleteModal from '../../ShareExperienceModals/ShareExperienceDeleteModal';
 import ShareExperienceEditProfileModal from '../../ShareExperienceModals/ShareExperienceEditProfileModal';
+import ShareExperienceFollowerModal from '../../ShareExperienceModals/ShareExperienceFollower';
+import ShareExperienceFollowingModal from '../../ShareExperienceModals/ShareExperienceFollowing';
 import ShareExperienceNewExerciseModal from '../../ShareExperienceModals/ShareExperienceNewExerciseModal';
 import ShareExperienceProfileModal from '../../ShareExperienceModals/ShareExperienceProfileModal';
 import ShareExperienceProfileReportModal from '../../ShareExperienceModals/ShareExperienceProfileReportModal';
 import ShareExperienceReportModal from '../../ShareExperienceModals/ShareExperienceReportModal';
 import ShareExperienceTopicModal from '../../ShareExperienceModals/ShareExperienceTopicModal';
+import ShareExperienceUnfollowModal from '../../ShareExperienceModals/ShareExperienceUnfollowModal';
 import ShareExperiencePostCardModules from '../../ShareExperienceModules/ShareExperiencePostCardModules';
 import ShareExperienceInView from './ShareExperienceInView';
 import useExperiences from './__hooks__/useExperiences';
@@ -40,7 +43,7 @@ const ShareExperienceExperiences = ({
             username={profile.username}
           />
           <ShareExperienceCommentsModal avatarImage={profile.avatarImage} />
-          {/* <ShareExperienceUnfollowModal /> */}
+          <ShareExperienceUnfollowModal />
           {/* <ShareExperienceNewReplyModal avatarImage={profile.avatarImage} username={profile.username} /> */}
           <ShareExperienceReportModal />
           <ShareExperienceDeleteModal />
@@ -49,8 +52,8 @@ const ShareExperienceExperiences = ({
           <ShareExperienceChangeAvatarModal />
           <ShareExperienceDefultAvatarListModal />
           <ShareExperienceEditProfileModal />
-          {/* <ShareExperienceFollowerModal /> */}
-          {/* <ShareExperienceFollowingModal /> */}
+          <ShareExperienceFollowerModal />
+          <ShareExperienceFollowingModal />
           {/* <ShareExperienceAssociationListModal /> */}
           {/* <ShareExperienceAssociationItemModal /> */}
           <ShareExperienceProfileReportModal />
