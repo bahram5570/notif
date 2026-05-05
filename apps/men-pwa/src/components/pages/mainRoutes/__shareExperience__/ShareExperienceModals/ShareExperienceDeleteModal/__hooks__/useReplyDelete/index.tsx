@@ -4,7 +4,8 @@ import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
-import { DataRepliesListTypes, IdInfoTypes } from './types';
+import { DataRepliesListTypes } from '../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/CommentsGenerator/ReplyGenerator/__hooks__/useReplyList/types';
+import { IdInfoTypes } from './types';
 
 const useReplyDelete = () => {
   const router = useRouter();
@@ -20,9 +21,9 @@ const useReplyDelete = () => {
     const repliesData = getQuery<DataRepliesListTypes>({ queryKey: repliesQueryKey });
 
     if (repliesData) {
-      // const newData = repliesData.repliesList.filter((item) => item.id !== idInfo?.replyId);
-      // repliesData.repliesList = newData;
-      // updateQuery({ queryKey: repliesQueryKey, payload: repliesData });
+      const newData = repliesData.repliesList.filter((item) => item.id !== idInfo?.replyId);
+      repliesData.repliesList = newData;
+      updateQuery({ queryKey: repliesQueryKey, payload: repliesData });
     }
 
     setIdInfo(null);

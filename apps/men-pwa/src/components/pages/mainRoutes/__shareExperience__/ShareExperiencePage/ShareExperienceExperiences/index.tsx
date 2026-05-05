@@ -4,6 +4,8 @@ import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollCon
 
 import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 
+import ShareExperienceAssociationItemModal from '../../ShareExperienceModals/ShareExperienceAssociationItemModal';
+import ShareExperienceAssociationListModal from '../../ShareExperienceModals/ShareExperienceAssociationListModal';
 import ShareExperienceChangeAvatarModal from '../../ShareExperienceModals/ShareExperienceChangeAvatarModal';
 import ShareExperienceCommentsModal from '../../ShareExperienceModals/ShareExperienceCommentsModal';
 import ShareExperienceDefultAvatarListModal from '../../ShareExperienceModals/ShareExperienceDefultAvatarListModal';
@@ -12,6 +14,7 @@ import ShareExperienceEditProfileModal from '../../ShareExperienceModals/ShareEx
 import ShareExperienceFollowerModal from '../../ShareExperienceModals/ShareExperienceFollower';
 import ShareExperienceFollowingModal from '../../ShareExperienceModals/ShareExperienceFollowing';
 import ShareExperienceNewExerciseModal from '../../ShareExperienceModals/ShareExperienceNewExerciseModal';
+import ShareExperienceNewReplyModal from '../../ShareExperienceModals/ShareExperienceNewReplyModal';
 import ShareExperienceProfileModal from '../../ShareExperienceModals/ShareExperienceProfileModal';
 import ShareExperienceProfileReportModal from '../../ShareExperienceModals/ShareExperienceProfileReportModal';
 import ShareExperienceReportModal from '../../ShareExperienceModals/ShareExperienceReportModal';
@@ -44,7 +47,7 @@ const ShareExperienceExperiences = ({
           />
           <ShareExperienceCommentsModal avatarImage={profile.avatarImage} />
           <ShareExperienceUnfollowModal />
-          {/* <ShareExperienceNewReplyModal avatarImage={profile.avatarImage} username={profile.username} /> */}
+          <ShareExperienceNewReplyModal avatarImage={profile.avatarImage} username={profile.username} />
           <ShareExperienceReportModal />
           <ShareExperienceDeleteModal />
           <ShareExperienceTopicModal avatarImage={profile.avatarImage} />
@@ -54,8 +57,8 @@ const ShareExperienceExperiences = ({
           <ShareExperienceEditProfileModal />
           <ShareExperienceFollowerModal />
           <ShareExperienceFollowingModal />
-          {/* <ShareExperienceAssociationListModal /> */}
-          {/* <ShareExperienceAssociationItemModal /> */}
+          <ShareExperienceAssociationListModal />
+          <ShareExperienceAssociationItemModal />
           <ShareExperienceProfileReportModal />
         </>
       )}

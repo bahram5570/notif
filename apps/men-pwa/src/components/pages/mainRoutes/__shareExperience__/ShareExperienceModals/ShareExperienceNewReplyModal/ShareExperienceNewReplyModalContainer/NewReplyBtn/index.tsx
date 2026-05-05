@@ -22,7 +22,12 @@ const NewReplyBtn = ({ text, isLoading, submitHandler, toast }: NewReplyBtnProps
         </div>
       )}
 
-      <CustomButton className="!w-fit" isDisable={isDisable} isLoading={isLoading} onClick={clickHandler}>
+      <CustomButton
+        className="!w-fit !bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan"
+        isDisable={isDisable}
+        isLoading={isLoading}
+        onClick={clickHandler}
+      >
         پست کردن
       </CustomButton>
     </div>
