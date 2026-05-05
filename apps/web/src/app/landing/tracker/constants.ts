@@ -1,16 +1,21 @@
 export const TRACKER_HEADING_DATA = {
-  title: 'برنامه پریودی؛ برای آشنایی با چرخه قاعدگی',
-  description:
-    'با ایمپو، چرخه قاعدگیت رو به راحتی مدیریت کن؛ از تاریخ شروع و پایان پریود گرفته تا دوره باروری، تخمک‌گذاری و حتی علائم PMS، همه‌چیز رو دقیق و به موقع دنبال کن!',
+  title: 'برنامه پریودی؛\n برای آشنایی با چرخه قاعدگی',
+  description: 'نرم‌ افزار پریودی ایمپو با تفسیر نشونه‌هات\n و ارسال روتین‌ها و توصیه‌های تخصصی  ازت مراقبت می‌کنه.',
   gradientFrom: '#FEF2F5',
   gradientTo: '#FFDDE6',
   image: '/assets/images/headingTracker.webp',
 };
 
-export const TRACKER_ACHIEVEMENTS_LIST = [
-  { title: '20000000 +', subTitle: 'چرخه ثبت شده' },
-  { title: '3000000 +', subTitle: 'نصب ایمپو' },
-  { title: '1000 +', subTitle: 'مقاله منتشر شده' },
+export const TRACKER_FAQ = [
+  {
+    title: 'برنامه پریودی برای آیفون ایمپو را از کجا دانلود کنم؟',
+    description: 'اپلیکیشن ایمپو، بهترین برنامه پریود فارسی برای آیفون، از اپ استور قابل‌دانلود است. ',
+  },
+  {
+    title: 'بهترین برنامه پریود فارسی برای اندروید چیست؟',
+    description:
+      'برنامه تاریخ پریودی ایمپو  کامل‌ترین اپلیکیشن سلامت بانوان در خاورمیانه است. کاربران اندروید می‌توانند ایمپو را از طریق استورهای بازار یا مایکت دانلود کنند. ',
+  },
 ];
 
 export const TRACKER_COMMENTS_LIST = [
@@ -68,57 +73,58 @@ export const TRACKER_FEATURES_INTRODUCTION_LIST = [
   {
     image: '/assets/images/featuresIntroduction/tracker/0.webp',
     imageDark: '/assets/images/featuresIntroduction/tracker/dark-0.webp',
-    title: 'اطلاعات روزانه چرخه قاعدگی',
-    description:
-      'تو ایمپو، اطلاعات دقیق هر روز از چرخه قاعدگیت رو بهت می‌دیم؛ از وضعیت باروری و علائم بدن گرفته تا راهکارهایی برای مدیریت بهتر روزهای خاصت!',
+    title: 'آگاهی کامل از چرخه',
+    description: 'چرخۀ همه یک شکل نیست. ایمپو کمک می‌کنه تا چرخۀ خودت رو بشناسی و بدونی که "نرمال" برای تو یعنی چی؟',
   },
   {
     image: '/assets/images/featuresIntroduction/tracker/1.webp',
     imageDark: '/assets/images/featuresIntroduction/tracker/dark-1.webp',
-    title: 'ثبت نشانه‌های روزانه سلامت و چرخه قاعدگی',
-    description:
-      'تو ایمپو می‌تونی نشانه‌های روزانه مثل تغییرات خلق‌وخو، علائم جسمی و وضعیت سلامتت رو ثبت کنی، تا الگوهای بدن خودت رو بهتر بشناسی و راحت‌تر مدیریت کنی!',
+    title: 'پیشگیری آگاهانه از بارداری',
+    description: 'ایمپو روزهای باروری رو یادآوری می‌کنه و روش‌های پیشگیری رو بهتون آموزش می‌ده.',
   },
   {
     image: '/assets/images/featuresIntroduction/tracker/2.webp',
     imageDark: '/assets/images/featuresIntroduction/tracker/dark-2.webp',
-    title: 'یادآوری و اطلاع‌رسانی تاریخ‌های مهم',
-    description:
-      'تو ایمپو، همه تاریخ‌های مهم مثل شروع پریود، روز تخمک‌گذاری، دوره باروری و حتی ویزیت‌های پزشکی رو یادت میاریم، تا هیچ چیزی رو از دست ندی و به موقع برنامه‌ریزی کنی!',
+    title: 'مراقبت متناسب با چرخه',
+    description: 'به کمک برنامه پریودی ایمپو می‌تونی روتین‌های شخصی متناسب با چرخه رو دریافت کنی.',
   },
   {
     image: '/assets/images/featuresIntroduction/tracker/3.webp',
     imageDark: '/assets/images/featuresIntroduction/tracker/dark-3.webp',
-    title: 'پیش‌بینی دقیق چرخه قاعدگی و پریود',
-    description:
-      'تو ایمپو، چرخه قاعدگیت رو به دقت پیش‌بینی می‌کنیم؛ از تاریخ شروع و پایان پریود گرفته تا روزهای خاص چرخه، تا بتونی برنامه‌ریزی بهتری برای خودت داشته باشی!',
+    title: 'شناخت علائم عادی،؛ اما هشداردهنده',
+    description: 'با تقویم قاعدگی ایمپو،  مشکلات زنانه رو خیلی سریع شناسایی می‌کنی تا به‌موقع پیگیری‌شون کنی.',
+  },
+];
+
+export const TRACKER_INTRODUCTION_LIST = [
+  {
+    image: '/assets/images/featuresIntroduction/tracker/introduction-0.webp',
+    title: 'روتین، به ریتم چرخه',
+    description: 'در هر فازی از چرخه قاعدگی می‌تونی از اپلیکیشن ایمپو،  روتین‌های اختصاصی خودت رو دریافت کنی.',
   },
   {
-    image: '/assets/images/featuresIntroduction/tracker/4.webp',
-    imageDark: '/assets/images/featuresIntroduction/tracker/dark-4.webp',
-    title: 'همدلی با شریک عاطفی',
-    description:
-      'با ایمپو، شریک عاطفیت می‌تونه از چرخه قاعدگیت و تغییرات جسمی و روحیت آگاه بشه، تا بهتر همراهت باشه و لحظات رو با درک و همدلی بیشتری سپری کنین.',
+    image: '/assets/images/featuresIntroduction/tracker/introduction-1.webp',
+    title: 'فراموشی بی فراموشی',
+    description: 'نرم افزار محاسبه سیکل قاعدگی ایمپو روزهای پریود، PMS و تخمک‌گذاری رو بهت یادآوری می‌کنه.',
   },
   {
-    image: '/assets/images/featuresIntroduction/tracker/5.webp',
-    imageDark: '/assets/images/featuresIntroduction/tracker/dark-5.webp',
-    title: 'گزارش سلامت از چرخه قاعدگی',
-    description:
-      'تو ایمپو، با تحلیل چرخه قاعدگیت یه گزارش کامل از وضعیت سلامتیت دریافت می‌کنی؛ از الگوهای پریود گرفته تا تغییرات مهم بدن، تا همیشه مراقب سلامت خودت باشی!',
+    image: '/assets/images/featuresIntroduction/tracker/introduction-2.webp',
+    title: 'بچرخ به ساز چرخت',
+    description: 'چرخۀ قاعدگی بالا و پایین زیاد داره. برنامه قاعدگی ایمپو کمک می‌کنه این چرخ‌وفلک رو بهتر بشناسی.',
   },
   {
-    image: '/assets/images/featuresIntroduction/tracker/6.webp',
-    imageDark: '/assets/images/featuresIntroduction/tracker/dark-6.webp',
-    title: 'کلینیک سلامت و ارتباط با متخصصان',
-    description:
-      'در کلینیک سلامت ایمپو، می‌تونی با متخصصان در ارتباط باشی، سوالاتت رو بپرسی و توصیه‌های مفید و علمی برای مراقبت از سلامتت دریافت کنی!',
+    image: '/assets/images/featuresIntroduction/tracker/introduction-3.webp',
+    title: 'اطلاع‌رسانی چرخه به پارتنر',
+    description: 'برنامه پریود فارسی ایمپو به پارتنرت خبر می‌ده تو چه فازی از چرخه‌ای و چی حالت رو بهتر می‌کنه.',
   },
   {
-    image: '/assets/images/featuresIntroduction/tracker/7.webp',
-    imageDark: '/assets/images/featuresIntroduction/tracker/dark-7.webp',
-    title: 'اشتراک تجربه',
-    description:
-      'با ایمپو می‌تونی تجربیاتت رو با دیگران به اشتراک بذاری و از نظرات و راهکارهای افراد دیگه برای مدیریت بهتر سلامت و زندگی خودت استفاده کنی!',
+    image: '/assets/images/featuresIntroduction/tracker/introduction-4.webp',
+    title: 'بدون خجالت، بدون قضاوت',
+    description: 'در تالار اشتراک تجربۀ ایمپو می‌تونی با کاربرهایی که تجربۀ مشابه تو دارن مشورت کنی و سوال بپرسی.',
+  },
+  {
+    image: '/assets/images/featuresIntroduction/tracker/introduction-5.webp',
+    title: 'مشاوره تخصصی، بدون معطلی',
+    description: 'هر جایی از چرخه که احساس کردی نیاز به مشاوره داری می‌تونی از متخصص‌های ایمپو کمک بگیری.',
   },
 ];
