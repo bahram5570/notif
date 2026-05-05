@@ -3,11 +3,10 @@
 import { useRef } from 'react';
 
 import { MainPageLayoutHeader } from '@repo/core/components/MainPageLayout';
+import { CategoriesSlider, ShareExperienceToast } from '@repo/core/components/ShareExperience';
 
 import ShareExperienceBanner from '../ShareExperienceModules/ShareExperienceBanner';
-import ShareExperienceToast from '../ShareExperienceModules/ShareExperienceToast';
 import ShareExperienceAvatar from './ShareExperienceAvatar';
-import ShareExperienceCategories from './ShareExperienceCategories';
 import ShareExperienceExperiences from './ShareExperienceExperiences';
 import ShareExperienceFailureModal from './ShareExperienceFailureModal';
 import ShareExperienceNewLink from './ShareExperienceNewLink';
@@ -16,12 +15,10 @@ import ShareExperienceTopics from './ShareExperienceTopics';
 import useCategories from './__hooks__/useCategories';
 import useShareExperienceGetData from './__hooks__/useShareExperienceGetData';
 import useShareExperienceInitialRedirect from './__hooks__/useShareExperienceInitialRedirect';
-import useTopics from './__hooks__/useTopics';
 
 const ShareExperienceContainer = () => {
   const { isLoading, data, onSuccessNewHandler } = useShareExperienceGetData();
 
-  const { topics } = useTopics(data?.topics);
   const scrollRef = useRef<HTMLDivElement>(null);
   useShareExperienceInitialRedirect(Boolean(data));
   const { categories, selectedCategoryId, selectedCategoryHandler, showAssociation } = useCategories(data?.categories);
@@ -47,12 +44,12 @@ const ShareExperienceContainer = () => {
 
                 <ShareExperienceNewLink />
 
-                {topics && <ShareExperienceTopics topics={topics} />}
+                {data.topics && <ShareExperienceTopics topics={data.topics} />}
 
                 {data.bannerMedia && <ShareExperienceBanner bannerMedia={data.bannerMedia} />}
 
                 {categories && selectedCategoryId && (
-                  <ShareExperienceCategories
+                  <CategoriesSlider
                     categories={categories}
                     selectedCategoryId={selectedCategoryId}
                     selectedCategoryHandler={selectedCategoryHandler}

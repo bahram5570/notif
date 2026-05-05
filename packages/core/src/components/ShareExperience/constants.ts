@@ -1,6 +1,7 @@
 export const EXPERIENCES_PAGE_SIZE = 10;
 export const EXPERIENCES_COMMENTS_PAGE_SIZE = 10;
 export const EXPERIENCES_PROFILE_PAGE_SIZE = 5;
+export const NEW_COMMENT_FOOTER_SIZE = 70;
 
 export const SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE = 'shareExperienceRedirectSessionStorage';
 

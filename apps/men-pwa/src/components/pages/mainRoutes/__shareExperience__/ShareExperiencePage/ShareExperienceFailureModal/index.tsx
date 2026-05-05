@@ -1,0 +1,26 @@
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+import { CustomModal } from '@repo/core/components/ui/CustomModal';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
+import { useRouter } from 'next/navigation';
+
+import { ShareExperienceFailureModalPropsType } from './type';
+
+const ShareExperienceFailureModal = ({ error }: ShareExperienceFailureModalPropsType) => {
+  const router = useRouter();
+
+  const onClick = () => {
+    router.push('/');
+  };
+
+  return (
+    <CustomModal isOpen className="!pb-0">
+      <div className="flex flex-col justify-center items-center gap-2 max-w-xs">
+        <CustomTypography className=" text-center text-impo_Neutral_OnBackground">{error?.message}</CustomTypography>
+        <CustomButton onClick={onClick}>{error?.btnLabel}</CustomButton>
+      </div>
+    </CustomModal>
+  );
+};
+
+export default ShareExperienceFailureModal;

@@ -23,8 +23,8 @@ const PageIcons = ({ icons, title, isSelected, url }: PageIconsProps) => {
       </>
 
       <CustomTypography
-        fontSize="Body_Small"
-        className={`${isSelected ? 'text-impo_Neutral_OnBackground opacity-100' : 'text-impo_Neutral_OnBackground opacity-40'}`}
+        fontSize={`${isSelected ? 'Lable_Small' : 'Body_Small'}`}
+        className={`${isSelected ? 'text-impo_PrimaryMan_PrimaryMan opacity-100' : 'text-impo_Surface_Outline'}`}
       >
         {title}
       </CustomTypography>

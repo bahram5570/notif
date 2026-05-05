@@ -1,6 +1,7 @@
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import {
   ContentsSectionModule,
+  NewPostLink,
   SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME,
 } from '@repo/core/components/ShareExperience';
 import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
@@ -9,7 +10,6 @@ import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 
-import ShareExperienceNewCommentFooterModule from '../../../ShareExperienceModules/ShareExperienceNewCommentFooterModule';
 import CommentsBottomPart from './CommentsBottomPart';
 import CommentsList from './CommentsList';
 import useCommentsList from './CommentsList/__hooks__/useCommentsList';
@@ -68,7 +68,7 @@ const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsMod
       </InfiniteScrollContainer>
 
       {typeof commentsData !== 'undefined' && (
-        <ShareExperienceNewCommentFooterModule
+        <NewPostLink
           queries={{ [SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME]: JSON.stringify(newCommentQueries) }}
           placeholder="نظرت رو درباره این تجربه بنویس"
           avatar={props.avatarImage}

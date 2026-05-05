@@ -1,13 +1,14 @@
-import { SelectedProfileLink } from '@repo/core/components/ShareExperience';
+import { FollowActionModule, SelectedProfileLink } from '@repo/core/components/ShareExperience';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { usePassedTime } from '@repo/core/hooks/usePassedTime';
 
-import ShareExperienceFollowModule from '../../../../ShareExperienceModules/ShareExperienceFollowModule';
+import useShareExperienceFollow from '../../../ShareExperienceUnfollowModal/__hooks__/useShareExperienceFollow';
 import { CommentsTopPartProps } from './types';
 
 const CommentsTopPart = (props: CommentsTopPartProps) => {
   const timeScript = usePassedTime(props.createTime);
+  const { followHandler, isFollowLoading } = useShareExperienceFollow(props.id);
 
   return (
     <div className="w-full flex justify-between" dir="rtl">
@@ -32,11 +33,13 @@ const CommentsTopPart = (props: CommentsTopPartProps) => {
       </div>
 
       {!props.self && (
-        <ShareExperienceFollowModule
-          name={props.name}
+        <FollowActionModule
+          isFollowLoading={isFollowLoading}
+          followHandler={followHandler}
           userId={props.userId}
           experienceId={props.id}
           isFollow={props.isFollow}
+          name={props.name}
         />
       )}
     </div>

@@ -1,13 +1,16 @@
 import { useEffect, useState } from 'react';
 
-import { SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
+import {
+  ApiInfoTypes,
+  FollowHandlerTypes,
+  SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME,
+} from '@repo/core/components/ShareExperience';
 
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useRouter } from 'next/navigation';
 
-import { ApiInfoTypes, FollowHandlerTypes } from './types';
 import useUpdateActivitiesList from './updateHandlers/useUpdateActivitiesList';
 import useUpdateAssociationExperienceList from './updateHandlers/useUpdateAssociationExperienceList';
 import useUpdateCommentList from './updateHandlers/useUpdateCommentList';
