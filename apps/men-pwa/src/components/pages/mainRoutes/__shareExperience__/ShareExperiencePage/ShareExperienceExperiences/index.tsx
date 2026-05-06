@@ -21,6 +21,7 @@ import ShareExperienceReportModal from '../../ShareExperienceModals/ShareExperie
 import ShareExperienceTopicModal from '../../ShareExperienceModals/ShareExperienceTopicModal';
 import ShareExperienceUnfollowModal from '../../ShareExperienceModals/ShareExperienceUnfollowModal';
 import ShareExperiencePostCardModules from '../../ShareExperienceModules/ShareExperiencePostCardModules';
+import ShareExperienceAssociation from '../ShareExperienceAssociation';
 import ShareExperienceInView from './ShareExperienceInView';
 import useExperiences from './__hooks__/useExperiences';
 import { ShareExperienceExperiencesProps } from './types';
@@ -75,12 +76,12 @@ const ShareExperienceExperiences = ({
         {experiencesData?.expirences.map((item, index) => {
           return (
             <Fragment key={index}>
-              {/* {index === 1 && showAssociation && associations.length > 0 && (
+              {index === 1 && showAssociation && associations.length > 0 && (
                 <ShareExperienceAssociation
                   associationSectionTitle={associationSectionTitle}
                   associations={associations}
                 />
-              )} */}
+              )}
 
               <ShareExperienceInView>
                 <ShareExperiencePostCardModules

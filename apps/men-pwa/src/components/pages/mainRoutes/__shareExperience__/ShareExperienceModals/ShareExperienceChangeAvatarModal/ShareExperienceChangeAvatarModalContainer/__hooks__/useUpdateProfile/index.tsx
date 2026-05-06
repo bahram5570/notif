@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { ShareExperienceResponseTypes } from '@repo/core/components/ShareExperience';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
@@ -12,11 +14,10 @@ const useUpdateProfile = () => {
   const route = useRouter();
   const { refetchQuery, updateQuery, getQuery } = useCustomReactQuery();
   const shareExperienceData = getQuery<ShareExperienceResponseTypes>({ queryKey: ['shareExperience'] });
-
-  let payload = {
+  const [userUpdated, setUserUpdated] = useState({
     username: shareExperienceData?.profile.username || '',
     avatarImage: shareExperienceData?.profile.avatarImage || '',
-  };
+  });
 
   const updateShareExperienceData = () => {
     if (shareExperienceData) {
@@ -26,8 +27,8 @@ const useUpdateProfile = () => {
           ...shareExperienceData,
           profile: {
             ...shareExperienceData.profile,
-            username: payload.username,
-            avatarImage: payload.avatarImage,
+            username: userUpdated.username,
+            avatarImage: userUpdated.avatarImage,
           },
         },
       });
@@ -53,9 +54,14 @@ const useUpdateProfile = () => {
       return;
     }
 
-    payload = {
+    setUserUpdated({
       username,
       avatarImage: avatarImage || '',
+    });
+
+    const payload = {
+      username,
+      avatarImage,
     };
 
     callApi(payload);

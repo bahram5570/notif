@@ -43,7 +43,7 @@ export const NewPostLink = ({
   }, [appName]);
 
   return (
-    <div style={{ maxWidth: MAX_SCREEN_WIDTH }} className="sticky left-0 right-0 bottom-0 flex flex-col gap-3 z-30">
+    <div style={{ maxWidth: MAX_SCREEN_WIDTH }} className="fixed  left-0 right-0 bottom-0 flex flex-col gap-3 z-30">
       {toast && (
         <div className="px-4">
           <ShareExperienceToast toastMessage={toast} />

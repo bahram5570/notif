@@ -1,12 +1,15 @@
 import { SelfExperienceDataType } from '@components/pages/mainRoutes/__shareExperience__/ShareExperienceModals/ShareExperienceProfileModal/ShareExperienceProfileModalContainer/ShareExperenceProfileTabList/ShareExperienceProfileActivities/__hooks__/useActivitiesData/type';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
+import useLikeExepriences from '../useLikeExepriences';
 import { UpdateActivitiesExperienceHandler } from './types';
 
 const useLikeActivitiesExperience = () => {
   const { updateQuery, getQuery } = useCustomReactQuery();
+  const { updateExperiencesHandler } = useLikeExepriences();
 
   const updateActivitiesExperienceHandler: UpdateActivitiesExperienceHandler = (v) => {
+    updateExperiencesHandler({ ...v, shareId: v.shareId });
     const selfExperienceData = getQuery<SelfExperienceDataType>({ queryKey: ['activities'] });
     if (selfExperienceData) {
       const index = selfExperienceData.list.findIndex((item) => item.id === v.shareId);

@@ -1,5 +1,5 @@
 import { newCommentMaker } from './__utils__';
-import { CommentsResponseTypes } from '@repo/core/components/ShareExperience';
+import { CommentsResponseTypes, TopicExperiencesResponseTypes } from '@repo/core/components/ShareExperience';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
@@ -31,6 +31,15 @@ const useSubmit = ({ text, data }: UseSubmitProps) => {
         if (experienceIndex > -1) {
           experiencesData.expirences[experienceIndex].commentCount++;
           updateQuery({ queryKey: ['experiences'], payload: experiencesData });
+        }
+      }
+
+      const topicExperiencesData = getQuery<TopicExperiencesResponseTypes>({ queryKey: ['topicExperiences'] });
+      if (topicExperiencesData) {
+        const experienceIndex = topicExperiencesData.expirences.findIndex((item) => item.id === data.shareId);
+        if (experienceIndex > -1) {
+          topicExperiencesData.expirences[experienceIndex].commentCount++;
+          updateQuery({ queryKey: ['topicExperiences'], payload: topicExperiencesData });
         }
       }
 
