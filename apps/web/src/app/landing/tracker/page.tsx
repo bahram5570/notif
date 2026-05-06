@@ -32,7 +32,7 @@ const Tracker = () => {
         <QrCode />
         <FeaturesIntruduction list={TRACKER_FEATURES_INTRODUCTION_LIST} mainTitle="شناخت چرخه، قدم اول آشتی با بدن" />
         <TrackerIntroduction />
-        <LandingFaq title="یک متن تست" list={TRACKER_FAQ} />
+        <LandingFaq title="سوالات متداول" list={TRACKER_FAQ} />
         <LandingArticles
           showAllArticlesLinkTo="/blogs"
           url="support/article/articles/category/64e9a587bd64be4a71068873/1/10"

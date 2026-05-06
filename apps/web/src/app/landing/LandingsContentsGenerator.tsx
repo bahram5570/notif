@@ -7,7 +7,12 @@ import { DOWNLOAD_APP_SECTION_ID } from '@components/DownloadApp/DownloadAppWome
 import CustomButton from '@components/ui/CustomButton';
 import { useSystem } from '@repo/core/hooks/useSystem';
 
-const LandingsContentsGenerator = (props: { title: string; description: string; bannerElement?: JSX.Element }) => {
+const LandingsContentsGenerator = (props: {
+  title: string;
+  description: string;
+  btnScript?: string;
+  bannerElement?: JSX.Element;
+}) => {
   const { breakPoint } = useSystem();
 
   return (
@@ -46,7 +51,7 @@ const LandingsContentsGenerator = (props: { title: string; description: string; 
                     !text-impo_Primary_OnPrimary
                   "
       >
-        دانلود ایمپو
+        {props.btnScript || 'دانلود ایمپو'}
       </CustomButton>
     </div>
   );
