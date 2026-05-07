@@ -1,4 +1,4 @@
-import { BookmarkButton, CommentsCountLink, ReportButtonModule } from '@repo/core/components/shareExperience';
+import { BookmarkButton, CommentsCountLink, ReportButtonModule } from '@repo/core/components/ShareExperience';
 
 import useShareExperienceBookmark from '@components/pages/mainRoutes/shareExperience/ShareExperienceModules/ShareExperiencePostCardModules/__hooks__/useShareExperienceBookmark';
 

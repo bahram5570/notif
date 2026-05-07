@@ -1,4 +1,4 @@
-import SupportTicketIdPage from '@components/pages/nestedRoutes/profile/Support/SupportTicketIdPage';
+import SupportTicketIdPage from '@components/pages/nestedRoutes/profile/support/SupportTicketIdPage';
 
 const SupportTicketId = () => {
   return <SupportTicketIdPage />;
