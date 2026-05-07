@@ -1,20 +1,20 @@
 import { useEffect, useRef } from 'react';
 
-import { PAGE_SIZE } from '../../constants/app.constants';
+import { FOOTER_HEIGHT, PAGE_SIZE } from '../../constants/app.constants';
 import { CustomSpinner } from '../ui/CustomSpinner';
 import { InfiniteScrollContainerPropsType } from './type';
 
 export const InfiniteScrollContainer = ({
   pageSize = PAGE_SIZE,
   scrollContainerRef,
-  totalCount = 0,
   isLoading = false,
+  height = 'auto',
+  totalCount = 0,
   className = '',
+  style = {},
+  pageNo = 0,
   children,
   callBack,
-  pageNo = 0,
-  height = 'auto',
-  style = {},
 }: InfiniteScrollContainerPropsType) => {
   const selfRef = useRef<HTMLDivElement>(null);
   const isFetchingRef = useRef(false);
@@ -58,7 +58,7 @@ export const InfiniteScrollContainer = ({
       {children}
 
       {isLoading && (
-        <div className="w-full flex justify-center py-6 absolute bottom-0 left-0">
+        <div style={{ bottom: FOOTER_HEIGHT + 16 }} className="w-full flex justify-center absolute left-0">
           <CustomSpinner size={40} className="border-impo_Surface_Outline" />
         </div>
       )}

@@ -67,7 +67,12 @@ const UserNameDetail = ({ name, username, avatar }: UserNameDetailsProps) => {
         </div>
 
         <div className="relative w-14 h-14 min-w-14 min-h-14 rounded-full" onClick={avatarHandler}>
-          <CustomImage src={data?.womanAvatar || avatar} className="object-cover" />
+          <CustomImage
+            width={56}
+            height={56}
+            src={data?.womanAvatar || avatar}
+            className="object-cover object-center rounded-full"
+          />
 
           <div className="absolute bottom-0 right-0 w-5 h-5 flex items-center justify-center p-1 bg-impo_Black rounded-full">
             {data?.canDeleteProfile ? (
