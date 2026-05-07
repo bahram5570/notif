@@ -17,7 +17,8 @@ export const pwaHttp = async <T>(props: PwaHttpTypes) => {
       const status = res.status;
 
       if (status === 401) {
-        await pwaHttpLogoutHandler();
+        // todo:
+        // await pwaHttpLogoutHandler();
       }
 
       throw new Error(res.statusText, { cause: status });

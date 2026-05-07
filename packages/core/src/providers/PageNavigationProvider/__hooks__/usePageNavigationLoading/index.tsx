@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 
 import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
+import { PAGE_NAVIGATION_LOADING_RESET_TIME } from '../../constants';
 import { LoadingStatesTypes, PageNavigationHandlerTypes } from '../../types';
 
 const usePageNavigationLoading = () => {
@@ -18,7 +19,7 @@ const usePageNavigationLoading = () => {
       timer.current = setTimeout(() => {
         setPogressBarLoading(false);
         setPageNavigationLoading(false);
-      }, 5000);
+      }, PAGE_NAVIGATION_LOADING_RESET_TIME * 1000);
     }
 
     return () => clearTimeout(timer.current);

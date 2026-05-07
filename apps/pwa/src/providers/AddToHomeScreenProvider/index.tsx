@@ -9,6 +9,7 @@ import { useSystem } from '@repo/core/hooks/useSystem';
 import AddToHomeScreenContents from './AddToHomeScreenContents';
 
 const AddToHomeScreenProvider = ({ children }: { children: React.ReactNode }) => {
+  // todo
   // const [showContent, setShowContent] = useState(false);
 
   // const { isAddToHome, operatingSystem, browserInfo } = useSystem();
