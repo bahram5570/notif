@@ -15,12 +15,23 @@ const useImageSrc = ({ src, imageApi = '/file', onError }: UseImageSrcProps) => 
     }
 
     try {
-      const payload = JSON.stringify({ imageUrl });
-      const response = await fetch('/api/shared/CustomImage-heic-converter', { method: 'POST', body: payload });
-      const blob = await response.blob();
-      const result = URL.createObjectURL(blob);
-
+      // todo: temporarily
+      const req = await fetch(imageUrl);
+      const blob = await req.blob();
+      const heic2any = (await import('heic2any')).default;
+      const convertedBlob = (await heic2any({
+        blob,
+        toType: 'image/jpeg',
+      })) as Blob;
+      const result = URL.createObjectURL(convertedBlob);
       setUpdatedSrc(result);
+
+      // const payload = JSON.stringify({ imageUrl });
+      // const response = await fetch('/api/shared/CustomImage-heic-converter', { method: 'POST', body: payload });
+      // const blob = await response.blob();
+      // const result = URL.createObjectURL(blob);
+
+      // setUpdatedSrc(result);
     } catch (error) {
       onError();
     }
