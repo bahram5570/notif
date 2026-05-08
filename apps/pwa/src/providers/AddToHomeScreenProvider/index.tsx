@@ -9,27 +9,26 @@ import { useSystem } from '@repo/core/hooks/useSystem';
 import AddToHomeScreenContents from './AddToHomeScreenContents';
 
 const AddToHomeScreenProvider = ({ children }: { children: React.ReactNode }) => {
-  // todo
-  // const [showContent, setShowContent] = useState(false);
+  const [showContent, setShowContent] = useState(false);
 
-  // const { isAddToHome, operatingSystem, browserInfo } = useSystem();
+  const { isAddToHome, operatingSystem, browserInfo } = useSystem();
 
-  // useEffect(() => {
-  //   if (isDevelopeMode()) {
-  //     setShowContent(false);
-  //     return;
-  //   }
+  useEffect(() => {
+    if (isDevelopeMode()) {
+      setShowContent(false);
+      return;
+    }
 
-  //   if (operatingSystem === 'windows' || isAddToHome !== false || browserInfo.browser === 'WebView') {
-  //     setShowContent(false);
-  //   } else {
-  //     setShowContent(true);
-  //   }
-  // }, [isAddToHome, operatingSystem, browserInfo]);
+    if (operatingSystem === 'windows' || isAddToHome !== false || browserInfo.browser === 'WebView') {
+      setShowContent(false);
+    } else {
+      setShowContent(true);
+    }
+  }, [isAddToHome, operatingSystem, browserInfo]);
 
-  // if (showContent) {
-  //   return <AddToHomeScreenContents browserInfo={browserInfo} operatingSystem={operatingSystem} />;
-  // }
+  if (showContent) {
+    return <AddToHomeScreenContents browserInfo={browserInfo} operatingSystem={operatingSystem} />;
+  }
 
   return <>{children}</>;
 };

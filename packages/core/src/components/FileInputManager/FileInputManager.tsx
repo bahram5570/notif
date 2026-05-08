@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 import FileIcon from '@assets/shared/icons/Paper.svg';
 import CameraIcon from '@assets/shared/icons/camera.svg';
 import GalleryIcon from '@assets/shared/icons/gallery.svg';
+import imageCompression from 'browser-image-compression';
 
 import { useSystem } from '../../hooks/useSystem';
 import { CustomSpinner } from '../ui/CustomSpinner';
@@ -23,36 +24,66 @@ export const FileInputManager = ({
   const [activeInput, setActiveInput] = useState<string | null>(null);
 
   const handleFileInput: FileInputHandlerTypes = (type) => async (e) => {
-    setActiveInput(type);
-
     const file = e.target.files?.[0];
     if (!file) {
       return;
     }
 
+    setActiveInput(type);
     setCompressLoading(true);
 
-    try {
-      const formData = new FormData();
-      formData.append('file', file);
+    if (type === FileInputTypes.CAMERA) {
+      const options = {
+        maxSizeMB: 300 / 1024,
+        maxWidthOrHeight: 600,
+        useWebWorker: true,
+      };
 
-      const response = await fetch(`/api/shared/image-compressor?maxSize=${maxSize}`, {
-        method: 'POST',
-        body: formData,
-      });
-
-      const blob = await response.blob();
-
-      const compressedFileName = file.name.split('.')[0] + '.webp';
-      const compressedFile = new File([blob], compressedFileName, { type: 'image/webp' });
-
-      fileDataHandler({ e, file: compressedFile });
-    } catch (error) {
-      console.log(error);
+      try {
+        const compressedFile = await imageCompression(file, options);
+        fileDataHandler({ e, file: compressedFile });
+      } catch (error) {
+        console.error('Image compression failed:', error);
+      }
+    } else {
+      fileDataHandler({ e });
     }
 
     setCompressLoading(false);
   };
+
+  // todo: temporarily
+  // const handleFileInput: FileInputHandlerTypes = (type) => async (e) => {
+  //   setActiveInput(type);
+
+  //   const file = e.target.files?.[0];
+  //   if (!file) {
+  //     return;
+  //   }
+
+  //   setCompressLoading(true);
+
+  //   try {
+  //     const formData = new FormData();
+  //     formData.append('file', file);
+
+  //     const response = await fetch(`/api/shared/image-compressor?maxSize=${maxSize}`, {
+  //       method: 'POST',
+  //       body: formData,
+  //     });
+
+  //     const blob = await response.blob();
+
+  //     const compressedFileName = file.name.split('.')[0] + '.webp';
+  //     const compressedFile = new File([blob], compressedFileName, { type: 'image/webp' });
+
+  //     fileDataHandler({ e, file: compressedFile });
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+
+  //   setCompressLoading(false);
+  // };
 
   const borderColor = useMemo(() => {
     switch (appName) {
