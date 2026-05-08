@@ -3,12 +3,12 @@ import FeaturesIntruduction from '@components/FeaturesIntruduction';
 import HeaderFooterContainer from '@components/HeaderFooterContainer';
 import LandingFaq from '@components/LandingFaq';
 import QrCode from '@components/QrCode';
+import SingleComment from '@components/SingleComment';
 
 import SympathyBanner from './SympathyBanner';
-import SympathyComment from './SympathyComment';
 import SympathyHeading from './SympathyHeading';
 import SympathyHeading2 from './SympathyHeading2';
-import { SYMPATHY_FAQ, SYMPATHY_FEATURES_INTRODUCTION_LIST } from './constants';
+import { SYMPATHY_COMMENT, SYMPATHY_FAQ, SYMPATHY_FEATURES_INTRODUCTION_LIST } from './constants';
 
 const SympathyPage = () => {
   return (
@@ -17,7 +17,7 @@ const SympathyPage = () => {
         <QrCode />
         <SympathyHeading />
         <SympathyHeading2 />
-        <SympathyComment />
+        <SingleComment {...SYMPATHY_COMMENT} />
         <FeaturesIntruduction list={SYMPATHY_FEATURES_INTRODUCTION_LIST} mainTitle="همدلی برای همراهی عاشقانه" />
         <SympathyBanner />
         <LandingFaq title="سوالات متداول" list={SYMPATHY_FAQ} />

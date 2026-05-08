@@ -1,8 +1,6 @@
 export const TRACKER_HEADING_DATA = {
   title: 'برنامه پریودی؛\n برای آشنایی با چرخه قاعدگی',
   description: 'نرم‌ افزار پریودی ایمپو با تفسیر نشونه‌هات\n و ارسال روتین‌ها و توصیه‌های تخصصی  ازت مراقبت می‌کنه.',
-  gradientFrom: '#FEF2F5',
-  gradientTo: '#FFDDE6',
   image: '/assets/images/headingTracker.webp',
 };
 

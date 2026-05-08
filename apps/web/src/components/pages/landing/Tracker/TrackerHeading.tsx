@@ -1,9 +1,9 @@
 import BlueTick from '@assets/icons/blueTick.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
+import LandingsContentsGenerator from '@app/landing/LandingsContentsGenerator';
 import LandingHeading from '@components/LandingHeading';
 
-import LandingsContentsGenerator from '../LandingsContentsGenerator';
 import { TRACKER_HEADING_DATA } from './constants';
 
 const TrackerHeading = () => {

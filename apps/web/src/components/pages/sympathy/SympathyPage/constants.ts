@@ -2,8 +2,6 @@ export const SYMPATHY_HEADING_DATA = {
   title: 'همدلی و شناخت بیشتر\n با برنامه پریودی برای پارتنر',
   description:
     'با ایمپو لازم نیست هر ماه حالت رو به پارتنرت توضیح بدی. همدل، زمان پریود، PMS و تخمک‌گذاریت رو به پارتنرت خبر می‌ده و بهش یاد می‌ده که چطور در روزهای حساس حمایتت کنه.',
-  gradientFrom: '#FEF2F5',
-  gradientTo: '#FFDDE6',
   image: '/assets/images/sympathyLandingImage.webp',
 };
 
@@ -19,6 +17,13 @@ export const SYMPATHY_FAQ = [
       'پس از نصب ایمپو می‌توانید شماره پارتنر خود را به‌عنوان همدل، اضافه کنید تا ایمپو با خبر پریودی به همسر، او را در جریان چرخۀ قاعدگی شما قرار دهد.',
   },
 ];
+
+export const SYMPATHY_COMMENT = {
+  userName: 'سارا خانم',
+  userImage: '/assets/images/comments/1.webp',
+  downloadPortIcon: '/assets/icons/bazar1.svg',
+  text: 'قبل از ایمپو، خیلی وقت‌ها خودم هم دقیق نمی‌دونستم چرا بعضی روزها حساس‌ترم یا انرژیم کمتره. فقط می‌دیدم بحث‌ها از یه موضوع کوچیک شروع می‌شه و یهو بزرگ می‌شه. با همدلی ایمپو الان همسرم از شرایط من مطلع تره تا خودم❤️',
+};
 
 export const TRACKER_INTRODUCTION_LIST = [
   {
