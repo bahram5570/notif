@@ -1,4 +1,4 @@
-import ArrowIcon from '@assets/icons/arrowElbowDown.svg';
+import ArrowIcon from '@assets/shared/icons/arrowElbowDown.svg';
 import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';

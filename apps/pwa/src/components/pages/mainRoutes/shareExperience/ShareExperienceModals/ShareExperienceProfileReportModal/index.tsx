@@ -1,4 +1,4 @@
-import InfoIcon from '@assets/icons/dangerTriangle.svg';
+import InfoIcon from '@assets/shared/icons/dangerTriangle.svg';
 import { ApproveModalsModule, SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME } from '@repo/core/components/ShareExperience';
 
 import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';

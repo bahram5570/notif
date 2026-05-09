@@ -1,4 +1,4 @@
-import GalleryWideIcon from '@assets/icons/galleryWide.svg';
+import GalleryWideIcon from '@assets/shared/icons/galleryWide.svg';
 import { FileInputManager } from '@repo/core/components/FileInputManager';
 import { SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';

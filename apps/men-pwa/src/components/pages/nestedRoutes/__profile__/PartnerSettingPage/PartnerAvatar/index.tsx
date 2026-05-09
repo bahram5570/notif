@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import HamdelIcon from '@repo/assets/src/shared/icons/hamdel.svg';
+import HamdelIcon from '@assets/shared/icons/hamdel.svg';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { gregorianFarsiScriptDate, jalaaliScriptDate } from '@repo/core/utils/dates';

@@ -1,6 +1,9 @@
 import { ActionTypes } from '../../providers/WidgetActionsProvider';
 import { ShareExperienceStateEnum } from './enum';
 
+export type SelectedCategoryHandlerTypes = (id: string, showAssociation: boolean) => void;
+export type ApiInfoTypes = { userId: string; isFollow: boolean; userName: string };
+export type FollowHandlerTypes = (props: ApiInfoTypes) => void;
 export type AssociationType = {
   id: string;
   title: string;

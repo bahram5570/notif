@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import TickIcon from '@assets/icons/CheckCircle-2.svg';
+import TickIcon from '@assets/shared/icons/CheckCircle-2.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';

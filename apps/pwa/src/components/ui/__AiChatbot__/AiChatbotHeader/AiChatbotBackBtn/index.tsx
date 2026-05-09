@@ -1,4 +1,4 @@
-import ArrowRightIcon from '@assets/icons/ArrowRight.svg';
+import ArrowRightIcon from '@assets/shared/icons/ArrowRight.svg';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';

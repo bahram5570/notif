@@ -19,8 +19,6 @@ const useShareExperienceInitialRedirect = (isLoaded: boolean) => {
   const isFirstTime1 = useRef(isDevelopeMode());
   const { profileIdHandler } = useViewReportProfile(isLoaded);
 
-  // const isFirstTime2 = useRef(isDevelopeMode());
-
   const redirectStorage =
     typeof sessionStorage === 'undefined' ? null : sessionStorage.getItem(SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE);
   const queryString = searchParams
@@ -70,21 +68,6 @@ const useShareExperienceInitialRedirect = (isLoaded: boolean) => {
       sessionStorage.removeItem(SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE);
     }
   }, [queryString]);
-
-  // useEffect(() => {
-  //   if (isFirstTime2.current) {
-  //     isFirstTime2.current = false;
-  //     return;
-  //   }
-
-  //   if (!redirectStorage) {
-  //     history.replaceState(null, '', '/protected/shareExperience');
-  //   }
-
-  //   return () => {
-  //     sessionStorage.removeItem(SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE);
-  //   };
-  // }, []);
 };
 
 export default useShareExperienceInitialRedirect;
