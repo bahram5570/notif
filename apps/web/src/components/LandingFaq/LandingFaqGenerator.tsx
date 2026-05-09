@@ -35,7 +35,7 @@ const LandingFaqGenerator = ({ title, description, isSelected, selectHandler }: 
                 `}
     >
       <div className="flex flex-col gap-1">
-        <CustomTypography fontSize="Lable_Medium" className="!text-impo_Neutral_OnBackground">
+        <CustomTypography tagType="h3" fontSize="Lable_Medium" className="!text-impo_Neutral_OnBackground">
           {title}
         </CustomTypography>
 

@@ -13,7 +13,7 @@ const LandingFaq = ({ title, list }: LandingFaqTypes) => {
   return (
     <div className="w-full md:w-11/12 lg:w-7/12 px-4 md:px-0 mx-auto flex flex-col items-center">
       {title && (
-        <CustomTypography fontSize="Title_Medium" className="text-impo_Neutral_OnBackground mb-4 lg:mb-6">
+        <CustomTypography tagType="h2" fontSize="Title_Medium" className="text-impo_Neutral_OnBackground mb-4 lg:mb-6">
           {title}
         </CustomTypography>
       )}

@@ -22,6 +22,7 @@ const TrackerIntroduction = () => {
             <CustomTypography
               fontSize={`${breakPoint.laptop ? 'Lable_Large' : 'Title_Medium'}`}
               className="text-impo_Neutral_OnBackground"
+              tagType="h3"
             >
               {item.title}
             </CustomTypography>
