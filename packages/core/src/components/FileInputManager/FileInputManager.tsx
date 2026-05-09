@@ -17,36 +17,47 @@ export const FileInputManager = ({
   uploadImageLoading,
   fileDataHandler,
   ShowFileInput,
-  maxSize,
 }: FileInputManagerTypes) => {
   const { appName } = useSystem();
   const [compressLoading, setCompressLoading] = useState(false);
   const [activeInput, setActiveInput] = useState<string | null>(null);
 
   const handleFileInput: FileInputHandlerTypes = (type) => async (e) => {
-    const file = e.target.files?.[0];
+    let file = e.target.files?.[0];
+
     if (!file) {
+      setActiveInput(null);
+      setCompressLoading(false);
       return;
     }
 
     setActiveInput(type);
     setCompressLoading(true);
 
-    if (type === FileInputTypes.CAMERA) {
-      const options = {
-        maxSizeMB: 300 / 1024,
-        maxWidthOrHeight: 600,
-        useWebWorker: true,
-      };
+    try {
+      let fileName = file.name;
+      const isHeic = fileName.toLowerCase().includes('.heic') || fileName.toLowerCase().includes('.heif');
 
-      try {
-        const compressedFile = await imageCompression(file, options);
-        fileDataHandler({ e, file: compressedFile });
-      } catch (error) {
-        console.error('Image compression failed:', error);
+      if (isHeic) {
+        const heic2any = (await import('heic2any')).default;
+        const convertedBlob = (await heic2any({ blob: file, toType: 'image/jpeg' })) as Blob;
+
+        fileName = fileName.split('.')[0] + '.jpg';
+        const convertedFile = new File([convertedBlob], fileName, { type: 'image/jpeg' });
+        file = convertedFile;
       }
-    } else {
-      fileDataHandler({ e });
+
+      const compressedFile = (await imageCompression(file, {
+        initialQuality: 0.8,
+        maxSizeMB: 300 / 1024,
+        maxWidthOrHeight: 1024,
+        alwaysKeepResolution: true,
+      })) as Blob;
+
+      file = new File([compressedFile], fileName, { type: compressedFile.type });
+      fileDataHandler({ e, file });
+    } catch (error) {
+      console.error('Image compression failed:', error);
     }
 
     setCompressLoading(false);

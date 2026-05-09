@@ -8,7 +8,6 @@ const SpecialistProblemModal = ({ fileDataHandler, uploadImageLoading }: Special
     <CustomModal isSlidingMode>
       <div className=" flex flex-col gap-3">
         <FileInputManager
-          maxSize={1024}
           ShowFileInput={true}
           fileDataHandler={fileDataHandler}
           uploadImageLoading={uploadImageLoading}
