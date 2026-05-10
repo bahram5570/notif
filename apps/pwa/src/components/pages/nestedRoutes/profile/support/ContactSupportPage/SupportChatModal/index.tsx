@@ -1,7 +1,7 @@
 import { FileInputManager } from '@repo/core/components/FileInputManager';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
-import useFileUpload from '@hooks/useFileUpload';
+import { useFileUpload } from '@repo/core/hooks/useFileUpload';
 import { useRouter } from 'next/navigation';
 
 import { SupportChatModalPropsType } from './type';
@@ -16,6 +16,8 @@ const SupportChatModal = ({ valuesHandler }: SupportChatModalPropsType) => {
 
   const { fileDataHandler, uploadImageLoading } = useFileUpload({
     onSuccess: (v: string) => successHandler(v),
+    method: 'PUT',
+    api: 'file/private/',
   });
 
   return (

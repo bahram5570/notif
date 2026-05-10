@@ -7,7 +7,7 @@ export type OptionsTypes = {
   onSuccess?: (v: string) => void;
 };
 
-export type FileDataHandlerTypes = (args: { e: React.ChangeEvent<HTMLInputElement>; file?: File }) => void;
+export type FileDataHandlerTypes = (args: { file: File }) => void;
 
 export type FileResponseTypes = { valid: boolean; name: string };
 

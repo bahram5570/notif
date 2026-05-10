@@ -12,18 +12,11 @@ import { ShareExperienceNewFileProps } from './types';
 const ShareExperienceNewFile = ({
   uploadImageLoading,
   removeFileHandler,
-  fileDataHandler,
   onChangeBtnTop,
   imageFile,
 }: ShareExperienceNewFileProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { increaseZIndex } = useShareExperienceOverlayIndex();
-  // const clickHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   if (onChangeBtnTop) {
-  //     onChangeBtnTop();
-  //     fileDataHandler({ e });
-  //   }
-  // };
 
   const clickHandler = () => {
     if (onChangeBtnTop) {
@@ -31,7 +24,6 @@ const ShareExperienceNewFile = ({
 
       increaseZIndex(SHARE_EXPERIENCE_UPLOAD_FILE_MODAL_QUERY_NAME);
       newQueryParamsHandler({ [SHARE_EXPERIENCE_UPLOAD_FILE_MODAL_QUERY_NAME]: 'true' });
-      // fileDataHandler({ e });
     }
   };
 
@@ -61,12 +53,6 @@ const ShareExperienceNewFile = ({
       {!imageFile && (
         <div className="relative ml-auto" onClick={clickHandler}>
           <UploadIcon className="w-5 h-auto stroke-impo_Surface_Outline" />
-
-          {/* <input
-            type="file"
-            onChange={clickHandler}
-            className="absolute top-0 left-0 right-0 bottom-0 opacity-0 select-none"
-          /> */}
         </div>
       )}
     </>

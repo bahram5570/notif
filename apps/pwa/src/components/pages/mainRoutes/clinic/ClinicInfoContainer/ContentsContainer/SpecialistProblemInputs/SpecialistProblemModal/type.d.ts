@@ -1,4 +1,4 @@
-import { FileDataHandlerTypes } from '@hooks/useFileUpload/types';
+import { FileDataHandlerTypes } from '@repo/core/hooks/useFileUpload';
 
 export interface SpecialistProblemModalPropsTypes {
   fileDataHandler: FileDataHandlerTypes;

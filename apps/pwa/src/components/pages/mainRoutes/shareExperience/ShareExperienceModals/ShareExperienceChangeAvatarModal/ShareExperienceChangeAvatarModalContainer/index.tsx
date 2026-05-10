@@ -3,7 +3,7 @@ import { FileInputManager } from '@repo/core/components/FileInputManager';
 import { SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import useFileUpload from '@hooks/useFileUpload';
+import { useFileUpload } from '@repo/core/hooks/useFileUpload';
 import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';

@@ -34,10 +34,8 @@ const useUploadFile = () => {
     callApi(fd);
   };
 
-  const fileDataHandler: FileDataHandlerTypes = ({ e, file }) => {
-    // if (hasMoreFile) return;
-
-    const selected = file ?? e.target.files?.[0];
+  const fileDataHandler: FileDataHandlerTypes = ({ file }) => {
+    const selected = file;
     if (!selected) return;
 
     if (selected.size > MAX_SIZE) {

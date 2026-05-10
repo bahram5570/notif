@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import useFileUpload from '@hooks/useFileUpload';
+import { useFileUpload } from '@repo/core/hooks/useFileUpload';
 import { useRouter } from 'next/navigation';
 
 const useImage = () => {
