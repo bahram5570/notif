@@ -1,19 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-import { CalendarWidgetEnums } from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/CalendarEnums';
 import {
   BloodPressureType,
+  CalendarWidgetEnums,
   InfoCalendarResponseTypes,
   ItemsTypes,
-} from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
-import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+} from '@repo/core/components/calendar';
+
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useSignDateState } from '@repo/core/hooks/useSignDateState';
 
 const useGetData = () => {
   const [initailPressureList, setInitailPressureList] = useState<BloodPressureType[]>([]);
-  const { getQuery } = useCustomReactQuery();
-  const queryData = getQuery<InfoCalendarResponseTypes>({ queryKey: ['signsInfoCalendar'] });
+
   const { calendarInitailSelectedDate } = useSignDateState();
 
   const findCurrentList = (data: InfoCalendarResponseTypes) => {
@@ -33,21 +32,12 @@ const useGetData = () => {
     }
   };
 
-  const { isLoading, callApi } = usePwaApi<InfoCalendarResponseTypes>({
+  const { isLoading } = usePwaApi<InfoCalendarResponseTypes>({
     method: 'GET',
     api: 'info/calendar',
     onSuccess: (v) => findCurrentList(v),
-    queryKey: ['signsInfoCalendar'],
-    fetchOnMount: false,
+    queryKey: ['infoCalendar'],
   });
-
-  useEffect(() => {
-    if (queryData) {
-      findCurrentList(queryData);
-    } else {
-      callApi();
-    }
-  }, [queryData]);
 
   return { initailPressureList, isLoading };
 };

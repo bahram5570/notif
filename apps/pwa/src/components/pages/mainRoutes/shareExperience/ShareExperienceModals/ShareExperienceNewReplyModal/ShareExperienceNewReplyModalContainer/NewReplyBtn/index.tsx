@@ -1,6 +1,6 @@
+import { ShareExperienceToast } from '@repo/core/components/ShareExperience';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
-import ShareExperienceToast from '@components/pages/mainRoutes/shareExperience/ShareExperienceModules/ShareExperienceToast';
 import OverlayBar from '@components/ui/OverlayBar';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 

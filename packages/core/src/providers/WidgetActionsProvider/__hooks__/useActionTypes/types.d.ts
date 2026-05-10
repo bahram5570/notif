@@ -3,7 +3,10 @@ import { ActionTypes } from '../../widgetCommon';
 import { IsCurrentNextStepFinishedHandlerTypes } from '../useIsCurrentNextStepFinished/types';
 import { PopUpHandlerTypes } from '../usePopUpHandlers/types';
 
-export interface UseActionTypesProps extends Pick<WidgetActionsProviderTypes, 'internalRoutesConverter'| 'onCallBack'> {
+export interface UseActionTypesProps extends Pick<
+  WidgetActionsProviderTypes,
+  'internalRoutesConverter' | 'onCallBack'
+> {
   isCurrentNextStepFinishedHandler: IsCurrentNextStepFinishedHandlerTypes;
   actionListValueHandler: (v: ActionTypes[] | null) => void;
   actionListIndexValueHandler: (v: number | null) => void;

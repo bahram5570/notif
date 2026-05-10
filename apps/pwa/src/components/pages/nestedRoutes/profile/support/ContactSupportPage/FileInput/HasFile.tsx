@@ -1,8 +1,8 @@
 import DownloadedIcon from '@assets/icons/downloaded.svg';
 import TrashIcon from '@assets/shared/icons/trash.svg';
-import { chatFileTypeDetector } from '@components/pages/mainRoutes/clinic/ClinicChatContainer/ChatsMessagesContainer/__utils__';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { chatFileTypeDetector } from '@repo/core/utils/fileType';
 import { textShorter } from '@repo/core/utils/scripts';
 
 import { HasFilePropsType } from './type';

@@ -64,7 +64,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
       >
         <main>
           {/* <AnalyticsProvider> */}
-          <SystemProvider>
+          <SystemProvider appName="PWA">
             <CultureProvider defaultValues={culture}>
               <ReactQueryProvider>
                 <ErrorProvider>

@@ -1,0 +1,82 @@
+import EditIcon from '@assets/shared/icons/Pen 2.svg';
+import { SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME, UserAvatarModule } from '@repo/core/components/ShareExperience';
+import { CustomButton } from '@repo/core/components/ui/CustomButton';
+import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
+import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+
+import useShareExperienceFollow from '../../../ShareExperienceUnfollowModal/__hooks__/useShareExperienceFollow';
+import ProfileInfo from './ProfileInfo';
+import { ShareExperienceProfileTopPartPropsType } from './type';
+
+const ShareExperienceProfileTopPart = ({
+  followCount,
+  storyCount,
+  isFollow,
+  profile,
+  isSelf,
+}: ShareExperienceProfileTopPartPropsType) => {
+  const { followHandler, isFollowLoading } = useShareExperienceFollow();
+  const { newQueryParamsHandler } = useQueryParamsHandler();
+  const { pageNavigationHandler } = usePageNavigationLoading();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
+
+  const textBtn = isSelf ? 'ویرایش پروفایل' : isFollow ? 'دنبال شده' : 'دنبال کردن';
+
+  const clickHandler = () => {
+    if (isSelf) {
+      pageNavigationHandler({ id: profile.id, showProgressBar: true });
+
+      increaseZIndex(SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME, profile.id);
+      newQueryParamsHandler({ [SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME]: profile.id });
+    } else {
+      followHandler({ userId: profile.id, isFollow, userName: profile.username });
+    }
+  };
+
+  return (
+    <div className="flex flex-col gap-5">
+      <div className="flex flex-row-reverse  items-start justify-evenly">
+        <div className="flex flex-col justify-center gap-3 items-center">
+          <UserAvatarModule
+            avatarImage={profile.avatarImage}
+            showChangeAvatarIcon={isSelf}
+            username={profile.username}
+            id={profile.id}
+          />
+          <CustomTypography fontSize="Lable_Small" className="text-impo_Neutral_OnBackground w-full text-right">
+            {profile.username}
+          </CustomTypography>
+        </div>
+
+        <ProfileInfo followCount={followCount} storyCount={storyCount} userId={profile.id} />
+      </div>
+
+      <CustomButton
+        isLoading={isFollowLoading}
+        onClick={clickHandler}
+        fontSize="Lable_Medium"
+        className={`
+                    w-full 
+                    py-2 
+                    ${
+                      isSelf
+                        ? '!bg-impo_Neutral_Surface !border-impo_Neutral_Surface !text-impo_Neutral_OnBackground'
+                        : '!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan !text-impo_Neutral_Background'
+                    }
+                  `}
+      >
+        <div
+          className={`flex flex-row gap-2  ${isSelf ? 'text-impo_Neutral_OnBackground' : 'text-impo_Primary_OnPrimary'}`}
+        >
+          {textBtn}
+          {isSelf && <EditIcon className={`w-5 h-5 rotate-[360] fill-impo_Neutral_OnBackground`} />}
+        </div>
+      </CustomButton>
+    </div>
+  );
+};
+
+export default ShareExperienceProfileTopPart;

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { PAGE_SIZE } from '@components/infiniteScrollContainer/constatns';
+import { PAGE_SIZE } from '@repo/core/constants/app.constants';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { ItemPropsType, ResponseMessageDataType } from '../../MessageListContainer/Message/type';

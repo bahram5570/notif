@@ -1,9 +1,9 @@
+import { LinkButtonGroup } from '@repo/core/components/partner/LinkButtonGroup';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 import ChallengContext from './ChallengContext';
-import LinkButtonGroup from './LinkButtonGroup';
 import { ChallengePropsType } from './type';
 
 const Challenge = ({ card, valid, button }: ChallengePropsType) => {

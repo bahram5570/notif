@@ -4,11 +4,13 @@ import { toEnglishNumbers } from '@repo/core/utils/numbers';
 
 import { getFirebaseTokenCookie } from '@actions/userCookies.actions';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
+import { usePhoneModel } from '@repo/core/hooks/usePhoneModel';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { SuccessHandlerTypes, UseCodeProps } from './types';
 
 const useCode = ({ identity, isRegister }: UseCodeProps) => {
+  const phoneModel = usePhoneModel();
   const { notifyToastHandler } = useCustomToast();
   const [payload, setPayload] = useState<object | null>(null);
 
@@ -17,7 +19,7 @@ const useCode = ({ identity, isRegister }: UseCodeProps) => {
 
     const result = {
       token: '',
-      phoneModel: '',
+      phoneModel,
       deviceToken: token,
       identity: toEnglishNumbers(identity || ''),
       otpTypes: otpTypes === undefined ? null : otpTypes,

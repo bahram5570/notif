@@ -1,8 +1,7 @@
 import { externalLink } from '../../../../utils/navigation';
 
 import { useAnalytics } from '../../../../hooks/useAnalytics';
-import { CustomButton } from '../../../ui/CustomButton';
-import { CustomSlider } from '../../../ui/CustomSlider';
+import { CustomTypography } from '../../../ui/CustomTypography';
 import { WidgetCardContainer } from '../../WidgetCardContainer';
 import ArticleGenerator from './ArticleGenerator';
 import { WidgetArticleCardProps } from './types';
@@ -15,23 +14,27 @@ export const WidgetArticleCard = ({ data }: WidgetArticleCardProps) => {
     externalLink('https://impo.app/blogs', true);
   };
 
-  return (
-    <WidgetCardContainer title={data.title}>
-      <div className="pb-4">
-        <CustomSlider>
-          {data.items.map((item, index) => (
-            <ArticleGenerator image={item.image} link={item.link} title={item.title} key={index} />
-          ))}
-        </CustomSlider>
-      </div>
+  const isEmpty = data.items.length === 0;
 
-      <CustomButton
-        className="!text-impo_Neutral_OnSurface  !bg-impo_Neutral_Surface !border-impo_Neutral_Surface"
-        onClick={clickHandler}
-        fontSize="Lable_Large"
-      >
-        {data.buttonText}
-      </CustomButton>
+  if (isEmpty) {
+    return <></>;
+  }
+
+  const titleElement = (
+    <div className="w-fit py-2 px-6 rounded-full bg-impo_Neutral_Surface" onClick={clickHandler}>
+      <CustomTypography fontSize="Lable_Medium" className="!text-impo_Neutral_OnBackground">
+        مشاهده همه
+      </CustomTypography>
+    </div>
+  );
+
+  return (
+    <WidgetCardContainer title={data.title} titleElement={titleElement}>
+      <div className="flex flex-col gap-4">
+        {data.items.map((item, index) => (
+          <ArticleGenerator image={item.image} link={item.link} title={item.title} key={index} />
+        ))}
+      </div>
     </WidgetCardContainer>
   );
 };

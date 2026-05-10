@@ -34,4 +34,3 @@ export const WidgetOvulationHistoryCardViewAll = ({ data }: WidgetOvulationHisto
     </CustomButton>
   );
 };
-

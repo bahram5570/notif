@@ -1,7 +1,6 @@
 import StarIcon from '@assets/icons/star.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import { RATING_LIST } from '@components/FeedbackModal/FeedbackStars/constants';
+import { RATING_LIST } from '@repo/core/components/ui/FeedbackModal';
 
 import { ReviewCommentPropsType } from './type';
 

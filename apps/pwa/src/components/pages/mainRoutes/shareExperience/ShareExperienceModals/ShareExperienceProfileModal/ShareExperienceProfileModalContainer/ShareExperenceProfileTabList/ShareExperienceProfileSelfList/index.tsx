@@ -1,6 +1,7 @@
-import InfiniteScrollContainer from '@components/infiniteScrollContainer';
+import { EXPERIENCES_PROFILE_PAGE_SIZE } from '@repo/core/components/ShareExperience';
+import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
+
 import ShareExperienceProfileData from '@components/pages/mainRoutes/shareExperience/ShareExperienceModules/ShareExperienceProfileData';
-import { EXPERIENCES_PROFILE_PAGE_SIZE } from '@components/pages/mainRoutes/shareExperience/constants';
 
 import useSelfExperienceData from './__hooks__/useSelfExperienceData';
 import { ShareExperienceProfileSelfListPropsType } from './type';

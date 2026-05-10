@@ -20,6 +20,7 @@ const useBottomPartData = () => {
           showEyeIcon: true,
           trailingDown: '',
           trailingUp: '',
+          showMoreInfo: false,
         },
         {
           backgroundColor: '#f2f7f8',
@@ -29,6 +30,7 @@ const useBottomPartData = () => {
           showEyeIcon: true,
           trailingDown: '',
           trailingUp: '',
+          showMoreInfo: false,
         },
         {
           backgroundColor: '#f7f3fe',
@@ -38,6 +40,7 @@ const useBottomPartData = () => {
           showEyeIcon: true,
           trailingDown: '',
           trailingUp: '',
+          showMoreInfo: false,
         },
       ],
     },
@@ -57,6 +60,7 @@ const useBottomPartData = () => {
           showEyeIcon: true,
           trailingDown: '',
           trailingUp: '',
+          showMoreInfo: false,
         },
         {
           backgroundColor: '#f2f7f8',
@@ -66,6 +70,7 @@ const useBottomPartData = () => {
           showEyeIcon: true,
           trailingDown: '',
           trailingUp: '',
+          showMoreInfo: false,
         },
         {
           backgroundColor: '#f7f3fe',
@@ -75,6 +80,7 @@ const useBottomPartData = () => {
           showEyeIcon: true,
           trailingDown: '',
           trailingUp: '',
+          showMoreInfo: false,
         },
       ],
     },

@@ -5,6 +5,7 @@ import { toEnglishNumbers } from '@repo/core/utils/numbers';
 import { UserCookieTypes, UserInfoCookieTypes, getFirebaseTokenCookie } from '@actions/userCookies.actions';
 import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { useCountDown } from '@repo/core/hooks/useCountDown';
+import { usePhoneModel } from '@repo/core/hooks/usePhoneModel';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { OTP_COUNT_DOWN_TIME } from '../../constants';
@@ -14,6 +15,7 @@ let userCookieValue: UserCookieTypes;
 let userInfoCookieValue: UserInfoCookieTypes;
 
 const useLogin = ({ identity, password, otpStatusHandler, onSubmitLogin }: UseLoginPros) => {
+  const phoneModel = usePhoneModel();
   const [isLoginSuccess, setIsLoginSuccess] = useState(false);
 
   const { startCounter } = useCountDown({
@@ -49,7 +51,7 @@ const useLogin = ({ identity, password, otpStatusHandler, onSubmitLogin }: UseLo
       callLoginApi({
         identity,
         password,
-        phoneModel: '',
+        phoneModel,
         deviceToken: token,
         version: APP_VERSION,
       });

@@ -1,6 +1,6 @@
+import { FileInputManager } from '@repo/core/components/FileInputManager';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
-import FileInputManager from '@components/ui/FileInputManager';
 import useFileUpload from '@hooks/useFileUpload';
 import { useRouter } from 'next/navigation';
 
@@ -21,7 +21,11 @@ const SupportChatModal = ({ valuesHandler }: SupportChatModalPropsType) => {
   return (
     <CustomModal isSlidingMode>
       <div className=" flex flex-col gap-3">
-        <FileInputManager ShowFileInput fileDataHandler={fileDataHandler} uploadImageLoading={uploadImageLoading} />
+        <FileInputManager
+          ShowFileInput={true}
+          fileDataHandler={fileDataHandler}
+          uploadImageLoading={uploadImageLoading}
+        />
       </div>
     </CustomModal>
   );

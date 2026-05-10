@@ -1,0 +1,1 @@
+export { PartnerCustomLink } from './PartnerCustomLink';

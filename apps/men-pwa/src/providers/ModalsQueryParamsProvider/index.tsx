@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 
 import { isDevelopeMode } from '@repo/core/utils/system';
 
-import { EXCLUDE_PAGES_MODALS, MODALS } from './modalsConstants';
+import { EXCLUDE_PAGES_MODALS, MODALS } from '@constants/modals.constants';
 
 // # Clear all modal query params (that mentioned in 'MODALS') on initial load/refresh by backing the history
 // # except the pages mentioned in 'EXCLUDE_PAGES_MODALS'

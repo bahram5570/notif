@@ -1,10 +1,10 @@
+import { CalendarDraggingPanel } from '@repo/core/components/CalendarDraggingPanel';
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+import { CalendarContainer } from '@repo/core/components/calendar/CalendarContainer';
+import { CalendarGuides } from '@repo/core/components/calendar/CalendarGuides';
 
 import { FOOTER_HEIGHT, HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
-import CalendarContainer from '../CalendarContainer';
-import CalendarDraggingPanel from '../CalendarDraggingPanel';
-import CalendarGuides from '../CalendarGuides';
 import CalendarSkeleton from '../CalendarSkeleton';
 // import SignsChangedToast from '../SignsChangedToast';
 import useCalendar from '../__hooks__/useCalendar';
@@ -17,7 +17,7 @@ const CalendarPage = () => {
       {/* <SignsChangedToast /> */}
 
       <div
-        style={{ paddingBottom: FOOTER_HEIGHT + 16, paddingTop: HEADER_HEIGHT + 16 }}
+        style={{ paddingBottom: FOOTER_HEIGHT + 16, paddingTop: HEADER_HEIGHT + 26 }}
         className="relative h-full min-h-[100dvh] max-h-[100dvh] overflow-hidden z-0"
       >
         {isLoading && <CalendarSkeleton />}

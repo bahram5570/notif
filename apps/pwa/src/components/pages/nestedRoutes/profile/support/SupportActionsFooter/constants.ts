@@ -1,0 +1,1 @@
+export const SUPPORT_ACTIONS_FOOTER_HEIGHT = 140;

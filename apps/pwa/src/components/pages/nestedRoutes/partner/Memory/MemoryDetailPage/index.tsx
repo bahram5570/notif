@@ -7,6 +7,7 @@ import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { gregorianFarsiScriptDate, jalaaliScriptDate } from '@repo/core/utils/dates';
 
+import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useCulture } from '@repo/core/hooks/useCulture';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
 import moment from 'moment-jalaali';
@@ -57,7 +58,7 @@ const MemoryDetailPage = () => {
     <MainPageLayout rightElement="BackButton" rightElementScript="مرور خاطرات">
       {isLoading && <MemoryDetailSkeleton />}
       {!isLoading && (
-        <div className="flex flex-col relative z-0  gap-3 pb-16">
+        <div className="flex flex-col relative z-0  gap-3 pb-16" style={{ paddingTop: 25 }}>
           <MemoryHeader currentDate={currentDate} />
 
           <div className="relative">

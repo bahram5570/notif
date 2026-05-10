@@ -1,0 +1,12 @@
+{
+  "name": "@repo/copies",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "handle:copies": "node handle-copies.js",
+    "clear:web-assets": "rimraf ../../apps/web/public/assets/shared",
+    "clear:pwa-assets": "rimraf ../../apps/pwa/public/assets/shared",
+    "clear:men-pwa-assets": "rimraf ../../apps/men-pwa/public/assets/shared",
+    "build": "npm run clear:web-assets && npm run clear:pwa-assets && npm run clear:men-pwa-assets && npm run handle:copies"
+  }
+}

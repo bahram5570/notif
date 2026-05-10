@@ -1,1 +1,0 @@
-export const PAYMENT_QUERY_NAME = 'PAYMENT_QUERY_NAME';

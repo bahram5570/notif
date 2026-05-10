@@ -23,7 +23,7 @@ export const CustomModal = ({
   const { isDelayPassed } = useModalRendered();
   const { isModalOpen, isSlidingModeTrue } = useModalStatus({ isOpen, isSlidingMode });
 
-  const borderRadius = isFullScreen ? '0' : isSlidingModeTrue ? '0' : '12px';
+  const borderRadius = isFullScreen ? '0' : isSlidingModeTrue ? ' 16px 16px 0 0' : '12px';
 
   useEffect(() => {
     const body = document.body;

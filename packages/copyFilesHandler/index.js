@@ -3,11 +3,11 @@ import fsp from 'fs/promises';
 import path from 'path';
 
 /**
- * @param {{ appName: string; port: number }}
+ * @param {{ appName: string; port: number, version: string }}
  * @returns {Promise<void>}
  */
-export const exportMaker = async ({ port, appName }) => {
-  const distName = `${appName}-dist-1`;
+export const exportMaker = async ({ port, appName, version }) => {
+  const distName = `${appName}-dist-${version}`;
 
   const rootDir = process.cwd();
   const distDir = path.join(rootDir, distName);

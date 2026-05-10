@@ -10,8 +10,6 @@
     "export": "node export-maker-file.js"
   },
   "dependencies": {
-    "@repo/core": "*",
-    "browser-image-compression": "^2.0.2",
-    "eventsource": "^4.0.0"
+    "@repo/core": "*"
   }
 }

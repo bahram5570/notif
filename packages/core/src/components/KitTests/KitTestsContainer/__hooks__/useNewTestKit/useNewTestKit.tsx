@@ -16,7 +16,7 @@ export const useNewTestKit = ({ moduleType, gregorianDate, onSuccess }: UseNewTe
   const successHandler = (v: NewTestResponseTypes) => {
     if (v.valid) {
       setResetKey(Math.random());
-      refetchQuery({ queryKey: ['signsInfoCalendar'] });
+      refetchQuery({ queryKey: ['infoCalendar'] });
 
       if (onSuccess) {
         onSuccess();

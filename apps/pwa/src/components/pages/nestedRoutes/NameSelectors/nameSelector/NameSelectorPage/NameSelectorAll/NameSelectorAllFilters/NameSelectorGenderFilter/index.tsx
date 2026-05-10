@@ -1,7 +1,7 @@
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
+import { MODALS } from '@constants/modals.constants';
 
 import NameSelectorFilters from '../../../../NameSelectorFilters';
 import useNameSelectorData from '../../../../__hooks__/useNameSelectorData';

@@ -1,13 +1,13 @@
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+import { SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import ShareExperienceNewTopicsGenerator from './ShareExperienceNewTopicsGenerator';
@@ -23,7 +23,7 @@ const ShareExperienceNewTopics = ({
 }: ShareExperienceNewTopicsProps) => {
   const { callEvent } = useAnalytics();
   const { getQueryParams } = useQueryParamsHandler();
-  const { getZIndex } = useOverlayIndex();
+  const { getZIndex } = useShareExperienceOverlayIndex();
   const isOpen = getQueryParams(SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME) !== null;
   useOverflowHandler(isOpen);
 

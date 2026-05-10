@@ -32,11 +32,12 @@ export const middleware = async (request: NextRequest) => {
 
   const userCookie = cookies().get(USER_COOKIE_NAME);
 
-  // # Set 'loginId' for Sentry
-  if (userCookie) {
-    const userData = JSON.parse(userCookie.value) as UserCookieTypes;
-    Sentry.setUser({ loginId: userData.loginId });
-  }
+  // // # Set 'loginId' for Sentry
+  // todo: temporarily
+  // if (userCookie) {
+  //   const userData = JSON.parse(userCookie.value) as UserCookieTypes;
+  //   Sentry.setUser({ loginId: userData.loginId });
+  // }
 
   // # Detects 'activationCrRegister' query params to identify users redirected from website with completed registration
   if (queryParams.includes(ACTIVATION_CR_REGISTER_QUERY_NAME)) {

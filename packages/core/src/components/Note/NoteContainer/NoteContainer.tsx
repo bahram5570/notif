@@ -1,0 +1,94 @@
+'use client';
+
+import { useMemo, useRef } from 'react';
+
+import { HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '../../../constants/app.constants';
+import { useAnalytics } from '../../../hooks/useAnalytics';
+import { useSystem } from '../../../hooks/useSystem';
+import { MainPageLayout } from '../../MainPageLayout';
+import { CustomButton } from '../../ui/CustomButton';
+import { CustomTypography } from '../../ui/CustomTypography';
+import DeleteNoteBtn from './DeleteNoteBtn';
+import { NoteContainerSkeleton } from './NoteContainerSkeleton/NoteContainerSkeleton';
+import { NoteInputGenerator } from './NoteInputGenerator';
+import { NoteModal } from './NoteModal';
+import { useGetData } from './__hooks__/useGetData';
+import { useSubmit } from './__hooks__/useSubmit';
+
+export const NoteContainer = () => {
+  const { callEvent } = useAnalytics();
+  const { appName } = useSystem();
+
+  const textareaConainerRef = useRef<HTMLDivElement | null>(null);
+  const { noteValue, onChangeHandler, isLoading: getDataLoading } = useGetData();
+  const { isLoading, submitHandler } = useSubmit({ noteId: noteValue.noteId });
+
+  const isEditMode = noteValue.noteId ? true : false;
+
+  const onClick = () => {
+    isEditMode ? callEvent('NoteEdit') : callEvent('NoteAdd');
+    submitHandler(noteValue);
+  };
+
+  const className = useMemo(() => {
+    switch (appName) {
+      case 'MEN_PWA':
+        return '!bg-impo_PrimaryMan_PrimaryMan !border-none';
+
+      default:
+        return '';
+    }
+  }, [appName]);
+
+  return (
+    <>
+      <MainPageLayout
+        paddingTop={0}
+        rightElement="BackButton"
+        rightElementScript="ثبت یادداشت"
+        className="bg-impo_Neutral_Surface"
+        headerClassName="bg-impo_Neutral_Surface"
+      >
+        {getDataLoading && !noteValue && <NoteContainerSkeleton />}
+        {!getDataLoading && noteValue && (
+          <>
+            <div className="flex flex-col min-h-[100dvh] gap-6 pb-6 px-4" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
+              <div className="flex flex-col justify-center items-center p-4 gap-2">
+                <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">
+                  میخوای به کارهات اولویت بدی؟
+                </CustomTypography>
+
+                {/* <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
+                  کارهات رو اینجا بنویس و در صورت لزوم میتونی یادآور هم براش تنظیم کنی
+                </CustomTypography> */}
+                <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
+                  کارهات رو اینجا بنویس
+                </CustomTypography>
+              </div>
+
+              <NoteInputGenerator noteValue={noteValue} onChangeHandler={onChangeHandler} ref={textareaConainerRef} />
+
+              {isEditMode && <DeleteNoteBtn />}
+
+              <div
+                className="fixed h-fit right-0 left-0 bottom-0 z-40 py-3 px-2 mx-auto"
+                style={{ maxWidth: MAX_SCREEN_WIDTH }}
+              >
+                <CustomButton
+                  isLoading={isLoading}
+                  className={className}
+                  isDisable={!noteValue.title}
+                  fontSize="Lable_Large"
+                  onClick={onClick}
+                >
+                  {isEditMode ? 'ویرایش یادداشت' : 'ثبت یادداشت'}
+                </CustomButton>
+              </div>
+            </div>
+            <NoteModal time={noteValue.time} onChangeHandler={onChangeHandler} />
+          </>
+        )}
+      </MainPageLayout>
+    </>
+  );
+};

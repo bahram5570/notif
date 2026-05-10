@@ -21,9 +21,9 @@ import useShowAll from './__hooks__/useShowAll';
 import { SUBSCRIPTION_SUBMIT_BUTTON_HEIGHT } from './constants';
 
 const SubscriptionPage = () => {
+  const [resetKey, setResetKey] = useState(0);
   const { showAll, showAllHandler } = useShowAll();
   const [approvedCode, setApprovedCode] = useState('');
-  const [resetKey, setResetKey] = useState(0);
   const { loadingPage, loadingResponse, callApi, data, currentPackage, currentPackageHandler } = useGetData();
 
   const handleReset = () => setResetKey((prev) => prev + 1);
@@ -36,7 +36,7 @@ const SubscriptionPage = () => {
       className="relative"
       leftElement1="Profile"
       paddingTop={HEADER_HEIGHT}
-      rightElement={data?.hasSubscribtion ? 'BackButton' : undefined}
+      rightElement={data?.hasSubscribtion ? 'LinkToMainPage' : undefined}
     >
       {loadingPage && !data && <SubscriptionSkeleton />}
 

@@ -4,10 +4,6 @@ export const actionRouteConverter = async (serverLink: string) => {
   let result = '';
 
   switch (baseRoute) {
-    case '/signs':
-      result = '/protected/signs';
-      break;
-
     case '/calendar':
       result = '/protected/calendar';
       break;
@@ -22,15 +18,6 @@ export const actionRouteConverter = async (serverLink: string) => {
 
     case '/support':
       result = '/protected/support';
-      break;
-
-    case '/support/category':
-      result = '/protected/supportTicket';
-      break;
-
-    case '/support/ticket/chat':
-      const id = queries.split('id=')[1];
-      result = `/protected/supportTicket/${id}`;
       break;
 
     case '/partner/messenger':
@@ -65,73 +52,22 @@ export const actionRouteConverter = async (serverLink: string) => {
       result = '/protected/healthReport';
       break;
 
-    case '/cycle':
-      result = '/protected/cycle';
-      break;
-
     case '/clinic':
       result = '/protected/clinic';
       break;
 
-    case '/routines':
-      result = `/protected/routinTabs${queries ? `?${queries}` : ''}`;
-      break;
-
-    case '/diet':
+    case '/healthRoutine':
       result = `/protected/routin?searchData=${encodeURIComponent(queries)}`;
       break;
 
-    case '/diet/item':
+    case '/healthRoutine/item':
       result = `/protected/routin/routinItem?searchData=${encodeURIComponent(queries)}`;
       break;
-    case '/pairRoutine':
+    case '/routine':
       result = `/protected/pairRoutin?searchData=${encodeURIComponent(queries)}`;
       break;
-    case '/pairRoutine/item':
+    case '/routine/item':
       result = `/protected/pairRoutin/pairRoutinItem?searchData=${encodeURIComponent(queries)}`;
-      break;
-    case '/weight':
-      result = `/protected/bmi/weight${queries ? `?${queries}` : ''}`;
-      break;
-
-    case '/weightbeforpregnancy':
-      result = `/protected/bmi/weightbeforpregnancy${queries ? `?${queries}` : ''}`;
-      break;
-
-    case '/height':
-      result = `/protected/bmi/height${queries ? `?${queries}` : ''}`;
-      break;
-
-    case '/pregnancyCare':
-      result = '/protected/pregnancyCheckup';
-      break;
-
-    case '/checkup':
-      result = `/protected/checkupQuestion?${queries}`;
-      break;
-
-    case '/completeActivation':
-      result = '/protected/phaseChange/updateOldUser/step1';
-      break;
-
-    case '/babyCheck':
-      result = '/protected/signs';
-      break;
-
-    case '/babyNames/activation':
-      result = '/protected/nameSelectorActivation/step1';
-      break;
-
-    case '/babyNames/selection':
-      result = `/protected/nameSelector?${queries}`;
-      break;
-
-    case '/chatbot/topics':
-      result = '/protected/aiChatbotTopics';
-      break;
-
-    case '/onboarding':
-      result = `/protected/featureIntro?searchData=${encodeURIComponent(queries)}`;
       break;
 
     case '/note':

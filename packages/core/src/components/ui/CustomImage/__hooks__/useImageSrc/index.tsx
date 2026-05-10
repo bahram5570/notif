@@ -1,8 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+
+import { isDevelopeMode } from '../../../../../utils/system';
 
 import { UseImageSrcProps } from './types';
 
 const useImageSrc = ({ src, imageApi = '/file', onError }: UseImageSrcProps) => {
+  const isFirstTime = useRef(isDevelopeMode());
   const [updatedSrc, setUpdatedSrc] = useState('');
 
   const convertHeic = async (imageUrl: string, isHeic: boolean) => {
@@ -12,10 +15,9 @@ const useImageSrc = ({ src, imageApi = '/file', onError }: UseImageSrcProps) => 
     }
 
     try {
+      // todo: temporarily
       const req = await fetch(imageUrl);
       const blob = await req.blob();
-
-      // # Dynamically import heic2any to load it client-side only, avoiding 'window is not defined' errors.
       const heic2any = (await import('heic2any')).default;
       const convertedBlob = (await heic2any({
         blob,
@@ -23,6 +25,13 @@ const useImageSrc = ({ src, imageApi = '/file', onError }: UseImageSrcProps) => 
       })) as Blob;
       const result = URL.createObjectURL(convertedBlob);
       setUpdatedSrc(result);
+
+      // const payload = JSON.stringify({ imageUrl });
+      // const response = await fetch('/api/shared/CustomImage-heic-converter', { method: 'POST', body: payload });
+      // const blob = await response.blob();
+      // const result = URL.createObjectURL(blob);
+
+      // setUpdatedSrc(result);
     } catch (error) {
       onError();
     }
@@ -42,6 +51,11 @@ const useImageSrc = ({ src, imageApi = '/file', onError }: UseImageSrcProps) => 
   };
 
   useEffect(() => {
+    if (isFirstTime.current) {
+      isFirstTime.current = false;
+      return;
+    }
+
     const convertSrc = async () => {
       if (typeof src === 'string') {
         const result = urlMaker(src.trim());

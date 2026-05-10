@@ -33,10 +33,14 @@ export enum WidgetsEnum {
   Media = 31,
   Biorhythm = 32,
   ProgramScrollWidget = 37,
+  ManProgramScrollWidget = 38,
+  ManProgramHealthWidget = 40,
   WomanPairProgram = 41,
+  MenStory = 42,
   ShortcutWidget = 43,
   HintCardV2 = 44,
   AdvertiseCardList = 45,
+  ClinicCardV2 = 46,
 }
 
 export enum WidgetStoryTypeEnum {
@@ -56,6 +60,7 @@ export enum ActionTypeEnum {
   HandleByApp = 5,
   ExternalRout = 6,
   ActionList = 7,
+  CallPhone = 8,
 }
 
 export enum PopupTypeEnum {

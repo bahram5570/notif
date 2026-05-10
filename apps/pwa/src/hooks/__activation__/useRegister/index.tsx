@@ -9,12 +9,14 @@ import { ActivationPayloadTypes } from '@providers/__activation__/types';
 import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { useCountDown } from '@repo/core/hooks/useCountDown';
 import { useCulture } from '@repo/core/hooks/useCulture';
+import { usePhoneModel } from '@repo/core/hooks/usePhoneModel';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { NotificationRewardTypes, RegisterResponseTypes } from './types';
 
 const useRegister = (payload: ActivationPayloadTypes, onCallBack?: (v: OtpStatusTypes) => void) => {
   const { culture } = useCulture();
+  const phoneModel = usePhoneModel();
   const { updatedPayload } = registerPayloadUpdater(payload, culture.calendarType);
 
   const [pair, setPair] = useState(false);
@@ -45,6 +47,7 @@ const useRegister = (payload: ActivationPayloadTypes, onCallBack?: (v: OtpStatus
         userInfoCookie: {
           installationPurpose: { periodStatus: updatedPayload.periodStatus, status: updatedPayload.status },
           cycleTheme: v.cycleTheme,
+          name: v.name,
         },
       });
 
@@ -64,7 +67,7 @@ const useRegister = (payload: ActivationPayloadTypes, onCallBack?: (v: OtpStatus
     time: 3,
     onCallBack: () => {
       const payload = {
-        phoneModel: '',
+        phoneModel,
         channelVersion: '',
         version: APP_VERSION || '',
         identity: updatedPayload.identity,

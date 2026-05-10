@@ -13,7 +13,7 @@ const FeaturesIntruduction = ({ mainTitle, list }: FeaturesIntruductionTypes) =>
           image={item.image}
           imageDark={item.imageDark}
           title={item.title}
-          isInverse={index % 2 === 0}
+          isInverse={index % 2 !== 0}
           description={item.description}
         />
       ))}

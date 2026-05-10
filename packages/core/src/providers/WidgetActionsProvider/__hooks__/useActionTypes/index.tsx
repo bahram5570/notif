@@ -3,6 +3,7 @@ import { ActionTypeEnum } from '../../widgetEnums';
 import { UseActionTypesProps } from './types';
 import useActionTypeActionList from './useActionTypeActionList';
 import useActionTypeApiCall from './useActionTypeApiCall';
+import useActionTypeCallPhone from './useActionTypeCallPhone';
 import useActionTypeDone from './useActionTypeDone';
 import useActionTypeExternalRout from './useActionTypeExternalRout';
 import useActionTypeHandleByApp from './useActionTypeHandleByApp';
@@ -22,6 +23,8 @@ const useActionTypes = (props: UseActionTypesProps) => {
   const { callActionList } = useActionTypeActionList(props.actionListHandler);
 
   const { callNone } = useActionTypeNone(props.actionCompleteHandler);
+
+  const { callPhone } = useActionTypeCallPhone(props.actionCompleteHandler);
 
   const { callDone } = useActionTypeDone(props.actionCompleteHandler);
 
@@ -88,6 +91,10 @@ const useActionTypes = (props: UseActionTypesProps) => {
 
       case ActionTypeEnum.ActionList:
         callActionList(action);
+        break;
+
+      case ActionTypeEnum.CallPhone:
+        callPhone(action.api);
         break;
     }
   };

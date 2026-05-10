@@ -1,22 +1,22 @@
 import { useEffect } from 'react';
 
+import { ProfileResponsePropsType } from '@repo/core/components/ShareExperience';
+
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-
-import { ShareExperenceProfileResponsePropsType } from './type';
 
 const useShareExperenceProfileGetData = (userId: string | undefined) => {
   const { getQuery, newQuery } = useCustomReactQuery(['shareExperienceProfileData']);
 
-  const shareExperienceProfileData = getQuery<ShareExperenceProfileResponsePropsType>({
+  const shareExperienceProfileData = getQuery<ProfileResponsePropsType>({
     queryKey: ['shareExperienceProfileData'],
   });
 
-  const successHandler = (v: ShareExperenceProfileResponsePropsType) => {
+  const successHandler = (v: ProfileResponsePropsType) => {
     newQuery({ queryKey: ['shareExperienceProfileData'], payload: v });
   };
 
-  const { callApi, isLoading } = usePwaApi<ShareExperenceProfileResponsePropsType>({
+  const { callApi, isLoading } = usePwaApi<ProfileResponsePropsType>({
     api: `shareeexperience/v3/profile/${userId}`,
     method: 'GET',
     queryKey: ['shareExperienceProfile'],

@@ -1,6 +1,5 @@
-import { useEffect } from 'react';
+import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
 
-import InfiniteScrollContainer from '@components/infiniteScrollContainer';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import CommentItem from './CommentItem';

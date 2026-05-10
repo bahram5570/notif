@@ -1,10 +1,10 @@
-import ArrowIcon from '@assets/icons/arrowElbowDown.svg';
+import ArrowIcon from '@assets/shared/icons/arrowElbowDown.svg';
+import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { NewReplyQueriesTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceModals/ShareExperienceNewReplyModal/types';
-import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
@@ -13,7 +13,7 @@ import { ReplyBtnProps } from './types';
 const ReplyBtn = ({ avatar, name, shareId, commentId, userId }: ReplyBtnProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
-  const { increaseZIndex } = useOverlayIndex();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
 
   const loadingId = `ReplyBtn ${shareId} ${commentId} ${userId}`;
   const isLoading = pageNavigationLoading === loadingId;

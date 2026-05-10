@@ -14,7 +14,8 @@ import useSubmit from './__hooks__/useSubmit';
 import useValues from './__hooks__/useValues';
 
 const PeriodSettingsPage = () => {
-  const { submitHandler, submitLoading } = useSubmit();
+  const { submitHandler, submitLoading, acceptingChanges } = useSubmit();
+
   const { fetchDataLoading, isModified, values, valuesHandler } = useValues();
 
   const isDisable = !isModified;
@@ -37,7 +38,10 @@ const PeriodSettingsPage = () => {
                   <PeriodSettingsLingthGenerator values={values} name="periodLength" />
                 </ProfileItemGenerator>
 
-                <ProfileItemGenerator title="طول دوره" description="معمولا هر چند روز یک بار پریود می‌شی؟">
+                <ProfileItemGenerator
+                  title="طول دوره"
+                  description="فاصله اولین روز خونریزی تا اولین روز خونریزی بعدیت چند روزه؟"
+                >
                   <PeriodSettingsLingthGenerator values={values} name="cycleLength" />
                 </ProfileItemGenerator>
               </ProfileContainerGenerator>
@@ -57,7 +61,7 @@ const PeriodSettingsPage = () => {
         </div>
       </MainPageLayout>
 
-      <PeriodSettingsModals values={values} valuesHandler={valuesHandler} />
+      <PeriodSettingsModals values={values} valuesHandler={valuesHandler} acceptingChanges={acceptingChanges} />
     </>
   );
 };

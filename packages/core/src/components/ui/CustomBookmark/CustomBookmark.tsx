@@ -5,7 +5,7 @@ import { CustomBookmarkTypes } from './types';
 
 export const CustomBookmark = ({ clickHandler, isBookmarked, id }: CustomBookmarkTypes) => {
   return (
-    <div className="w-8 h-8 flex items-center justify-center  pointer-events-auto" onClick={clickHandler} id={id}>
+    <div className="w-8 h-8 flex items-center justify-center pointer-events-auto" onClick={clickHandler} id={id}>
       {!isBookmarked && (
         <BookmarkEmptyIcon className="w-5 h-auto stroke-impo_Surface_InverseSurface dark:stroke-impo_Surface_InverseSurface" />
       )}

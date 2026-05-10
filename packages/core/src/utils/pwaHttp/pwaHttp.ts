@@ -1,4 +1,4 @@
-import { httpOptionsMaker, pwaHttpLogoutHandler } from './__utils__';
+import { httpOptionsMaker } from './__utils__';
 
 import { PwaHttpResultTypes, PwaHttpTypes } from './types';
 
@@ -17,7 +17,8 @@ export const pwaHttp = async <T>(props: PwaHttpTypes) => {
       const status = res.status;
 
       if (status === 401) {
-        await pwaHttpLogoutHandler();
+        // todo: temporarily
+        // await pwaHttpLogoutHandler();
       }
 
       throw new Error(res.statusText, { cause: status });

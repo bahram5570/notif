@@ -1,9 +1,9 @@
 'use client';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
+import { FeedbackModal } from '@repo/core/components/ui/FeedbackModal';
+import { OnboardingIntro } from '@repo/core/components/ui/OnboardingIntro';
 
-import FeedbackModal from '@components/FeedbackModal';
-import OnboardingIntro from '@components/ui/OnboardingIntro';
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useRouter } from 'next/navigation';
@@ -71,7 +71,7 @@ const PairRoutinContainer = () => {
           )}
 
           <FeedbackModal
-            title=" امیدواریم این مرحله واست مفید باشه، به این مرحله از روتین پوستی چه امتیازی میدی؟"
+            title=" امیدواریم این مرحله واست مفید باشه، به این مرحله از روتین  چه امتیازی میدی؟"
             onSubmit={rateHandler}
             isLoading={feedbackLoading}
           />

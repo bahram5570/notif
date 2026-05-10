@@ -1,16 +1,17 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
-import { EXPERIENCES_COMMENTS_PAGE_SIZE } from '@components/pages/mainRoutes/shareExperience/constants';
+import { CommentsResponseTypes, EXPERIENCES_COMMENTS_PAGE_SIZE } from '@repo/core/components/ShareExperience';
+
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import useShareExperiencePageNo from '../../../__hooks__/useShareExperiencePageNo';
-import { CommentsIdTypes, CommentsResponseTypes } from './types';
+import { UseCommentsListProps } from './types';
 
-const useCommentsList = (id: CommentsIdTypes) => {
-  const [pageNo, setPageNo] = useState(0);
-  const { updatePageNo: changePageNoHandler } = useShareExperiencePageNo(id);
+const useCommentsList = ({ id }: UseCommentsListProps) => {
+  const { updatePageNo: changePageNoHandler, pageNoInfo } = useShareExperiencePageNo(id);
   const { newQuery, updateQuery, getQuery } = useCustomReactQuery(['comments ' + id]);
+  const pageNo = pageNoInfo ? pageNoInfo.pageNo : 0;
 
   const commentsData = getQuery<CommentsResponseTypes>({ queryKey: ['comments ' + id] });
 
@@ -32,13 +33,14 @@ const useCommentsList = (id: CommentsIdTypes) => {
   });
 
   const updatePageNo = () => {
-    setPageNo((prev) => prev + 1);
     changePageNoHandler(pageNo + 1);
   };
 
   useEffect(() => {
-    callApi();
-  }, [pageNo, id]);
+    if (!isLoading) {
+      callApi();
+    }
+  }, [pageNo, id, isLoading]);
 
   const isFirstLoad = isLoading && !commentsData;
 

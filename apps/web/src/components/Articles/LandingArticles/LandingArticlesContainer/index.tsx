@@ -4,7 +4,6 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import ArticleCardGenerator from '@components/Articles/ArticleCardGenerator';
 import CustomLink from '@components/ui/CustomLink';
-import 'swiper/css/free-mode';
 import { FreeMode } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 

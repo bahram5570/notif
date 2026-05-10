@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="40px" height="40px" viewBox="0 0 40 40" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>dialogue-icon copy</title>
+    <defs>
+        <path d="M20,0 C31.045695,-3.55271368e-15 40,8.954305 40,20 C40,31.045695 31.045695,40 20,40 C8.954305,40 0,31.045695 0,20 C0,8.954305 8.954305,0 20,0 Z" id="path-1"></path>
+        <path d="M0,0 L24,0 L24,24 L0,24 L0,0 Z" id="path-2"></path>
+    </defs>
+    <g id="dialogue-icon-copy" stroke="none" fill="none" fill-rule="nonzero" xlink:href="#path-1">
+        <use fill="#34B288" xlink:href="#path-1"></use>
+        <g id="check" transform="translate(8, 8)" xlink:href="#path-2" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            <polyline id="Vector" points="20 7 10 17 5 12"></polyline>
+        </g>
+    </g>
+</svg>

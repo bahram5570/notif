@@ -5,7 +5,7 @@ import { FIREBASE_CONFIG, PORTAL_SPLASH_ID } from '@constants/app.constants';
 import ErrorProvider from '@providers/ErrorProvider';
 import MenPwaWidgetActionsProvider from '@providers/MenPwaWidgetActionsProvider';
 import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
-import { MAX_SCREEN_WIDTH, PORTAL_ID } from '@repo/core/constants/app.constants';
+import { MAX_SCREEN_WIDTH, PORTAL_FEEDBACK_TOAST_ID, PORTAL_ID } from '@repo/core/constants/app.constants';
 import { CultureProvider } from '@repo/core/providers/CultureProvider';
 import { PageNavigationProvider } from '@repo/core/providers/PageNavigationProvider';
 import { PreviewImageProvider } from '@repo/core/providers/PreviewImageProvider';
@@ -62,7 +62,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
         style={{ maxWidth: MAX_SCREEN_WIDTH, width: '100%', height: '100dvh', margin: 'auto' }}
       >
         <main>
-          <SystemProvider>
+          <SystemProvider appName="MEN_PWA">
             <CultureProvider defaultValues={culture}>
               <ReactQueryProvider>
                 <ErrorProvider>
@@ -75,6 +75,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
                           <PreviewImageProvider />
                           <div id={PORTAL_SPLASH_ID} />
                           <div id={PORTAL_ID} />
+                          <div id={PORTAL_FEEDBACK_TOAST_ID} />
                         </ServiceWorkerProvider>
                       </MenPwaWidgetActionsProvider>
                     </PageNavigationProvider>

@@ -1,8 +1,10 @@
 import { setWelcomingHandler } from '@utils/aiChatBotWelcoming';
 import { findDefaultQuestionQuery } from '@utils/aiChatbot';
 
+import { clinicProfileHandler } from './clinicHandler';
 import { enterphaseHandler } from './enterphaseHandler';
 import { shareExperienceHandler } from './shareExperienceHandler';
+import { supportTicketChatHandler, supportTicketNewHandler } from './supportHandler';
 
 export const actionRouteConverter = async (serverLink: string) => {
   const baseRoute = serverLink.split('?')[0];
@@ -29,34 +31,32 @@ export const actionRouteConverter = async (serverLink: string) => {
     case '/support':
       result = '/protected/support';
       break;
-
     case '/support/category':
       result = '/protected/supportTicket';
       break;
     case '/support/ticket/chat':
-      const id = queries.split('id=')[1];
-      result = `/protected/supportTicket/${id}`;
+      result = supportTicketChatHandler(queries);
+      break;
+    case '/support/ticket/new':
+      result = supportTicketNewHandler(queries);
       break;
 
     case '/partner/messenger':
       result = '/protected/partnerMessage';
       break;
-
     case '/partner/memory':
       result = '/protected/memory';
       break;
-
     case '/partner/challenge/daly':
       result = '/protected/challenge';
+      break;
+    case '/partner/challenge/archive':
+      result = '/protected/challengeHistory';
       break;
 
     // todo fix
     case '/chat':
       result = '/protected/challenge';
-      break;
-
-    case '/partner/challenge/archive':
-      result = '/protected/challengeHistory';
       break;
 
     // todo fix reminder
@@ -83,10 +83,14 @@ export const actionRouteConverter = async (serverLink: string) => {
     case '/clinic':
       result = '/protected/clinic';
       break;
+    case '/clinic/doctor/profile':
+      result = clinicProfileHandler(queries);
+      break;
 
     case '/enterphase':
       result = await enterphaseHandler(queries);
       break;
+
     case '/routines':
       result = `/protected/routinTabs${queries ? `?${queries}` : ''}`;
       break;
@@ -94,16 +98,17 @@ export const actionRouteConverter = async (serverLink: string) => {
     case '/diet':
       result = `/protected/routin?searchData=${encodeURIComponent(queries)}`;
       break;
-
     case '/diet/item':
       result = `/protected/routin/routinItem?searchData=${encodeURIComponent(queries)}`;
       break;
+
     case '/pairRoutine':
       result = `/protected/pairRoutin?searchData=${encodeURIComponent(queries)}`;
       break;
     case '/pairRoutine/item':
       result = `/protected/pairRoutin/pairRoutinItem?searchData=${encodeURIComponent(queries)}`;
       break;
+
     case '/weight':
       result = `/protected/bmi/weight${queries ? `?${queries}` : ''}`;
       break;
@@ -131,11 +136,9 @@ export const actionRouteConverter = async (serverLink: string) => {
     case '/babyCheck': // TODO: add this route
       result = '/protected/signs';
       break;
-
     case '/babyNames/activation':
       result = '/protected/nameSelectorActivation/step1';
       break;
-
     case '/babyNames/selection':
       result = `/protected/nameSelector?${queries}`;
       break;
@@ -144,7 +147,6 @@ export const actionRouteConverter = async (serverLink: string) => {
       findDefaultQuestionQuery(queries);
       result = `/protected/aiChatbot?${queries}`;
       break;
-
     case '/chatbot/welcoming':
       setWelcomingHandler();
       result = `/protected/aiChatbotTopics`;

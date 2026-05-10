@@ -25,9 +25,11 @@ const FeaturesIntruductionCardGenerator = ({
                   max-w-[360px] 
                   md:max-w-full 
                   2xl:max-w-[1400px] 
-                  h-[380px] 
+                  min-h-[380px] 
                   md:h-[400px] 
                   lg:h-[480px] 
+                  pt-4
+                  md:pt-0
                   grid 
                   grid-cols-1 
                   md:grid-cols-12 
@@ -41,13 +43,13 @@ const FeaturesIntruductionCardGenerator = ({
           src={imageDark}
           alt={title}
           fill={true}
-          className="w-full h-auto object-cover pointer-events-none !hidden dark:!block"
+          className="w-full h-auto object-contain md:object-cover pointer-events-none !hidden dark:!block"
         />
         <CustomImage
           src={image}
           alt={title}
           fill={true}
-          className="w-full h-auto object-cover pointer-events-none dark:!hidden !block"
+          className="w-full h-auto object-contain md:object-cover pointer-events-none dark:!hidden !block"
         />
       </div>
 

@@ -22,4 +22,9 @@ export type IconsListTypes = {
   [key in HeaderIconEnums]: any;
 };
 
-export type IconComponentMakerProps = (props: { loadingId: string; iconElement: any; path: string }) => any;
+export interface IconComponentMakerProps {
+  path: string;
+  loadingId: string;
+  className?: string;
+  children: React.ReactNode;
+}

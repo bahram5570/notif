@@ -1,19 +1,23 @@
 import { useEffect, useRef } from 'react';
 
+import {
+  SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE,
+  SHARE_EXPERIENCE_VIEW_REPORT_PROFILE_ID,
+} from '@repo/core/components/ShareExperience';
 import { isDevelopeMode } from '@repo/core/utils/system';
 
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
-import { SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE } from '../../../constants';
+import useViewReportProfile from './useViewReportProfile';
 
-const useShareExperienceInitialRedirect = () => {
-  const searchParams = useSearchParams();
-  const isFirstTime1 = useRef(isDevelopeMode());
-  const { increaseZIndex } = useOverlayIndex();
-  const pathname = usePathname();
+const useShareExperienceInitialRedirect = (isLoaded: boolean) => {
   const router = useRouter();
-  // const isFirstTime2 = useRef(isDevelopeMode());
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const isFirstTime1 = useRef(isDevelopeMode());
+  const { profileIdHandler } = useViewReportProfile(isLoaded);
 
   const redirectStorage =
     typeof sessionStorage === 'undefined' ? null : sessionStorage.getItem(SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE);
@@ -24,11 +28,27 @@ const useShareExperienceInitialRedirect = () => {
     : '';
 
   useEffect(() => {
+    const params = new URLSearchParams(searchParams.toString());
+
+    // # Handles "view reported profile from panel" task
+    let profileId = '';
+    params.forEach((value, key) => {
+      if (key === SHARE_EXPERIENCE_VIEW_REPORT_PROFILE_ID && value) {
+        profileId = value;
+      }
+    });
+
+    if (profileId) {
+      profileIdHandler(profileId);
+      router.replace(pathname);
+      return;
+    }
+
     // # Navigates to desired comment, reply, etc that is strored in 'sessionStorage'
     if (isFirstTime1.current) {
-      const params = new URLSearchParams(searchParams.toString());
-
-      params.forEach((_, key) => params.delete(key));
+      params.forEach((_, key) => {
+        params.delete(key);
+      });
 
       router.replace(pathname);
       isFirstTime1.current = false;
@@ -48,21 +68,6 @@ const useShareExperienceInitialRedirect = () => {
       sessionStorage.removeItem(SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE);
     }
   }, [queryString]);
-
-  // useEffect(() => {
-  //   if (isFirstTime2.current) {
-  //     isFirstTime2.current = false;
-  //     return;
-  //   }
-
-  //   if (!redirectStorage) {
-  //     history.replaceState(null, '', '/protected/shareExperience');
-  //   }
-
-  //   return () => {
-  //     sessionStorage.removeItem(SHARE_EXPERIENCE_REDIRECT_SESSION_STORAGE);
-  //   };
-  // }, []);
 };
 
 export default useShareExperienceInitialRedirect;

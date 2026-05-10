@@ -1,3 +1,5 @@
+import { paymentStatusService } from '@services/paymentServices';
+
 import { USER_COOKIE_NAME } from '@constants/cookie.constants';
 import { ACTIVATION_FIRST_PATH } from '@providers/__activation__/ActivationProvider/__constants__/activationContants';
 import { cookies } from 'next/headers';
@@ -6,6 +8,7 @@ import { type NextRequest, NextResponse } from 'next/server';
 export const middleware = async (request: NextRequest) => {
   const response = NextResponse.next();
   const pathname = request.nextUrl.pathname;
+  const queryParams = request.nextUrl.search?.slice(1) || '';
 
   // # // Skips middleware processing for non-page paths like Next.js assets, public files, favicon, or file extensions
   if (
@@ -36,6 +39,12 @@ export const middleware = async (request: NextRequest) => {
   // # JWT token cookie is present
   if (userCookie) {
     if (isEmptyPage) {
+      // # If bank-related query-params are present, handle redirect
+      const { paymentResponse } = await paymentStatusService(queryParams, request.url);
+      if (paymentResponse) {
+        return paymentResponse;
+      }
+
       return NextResponse.redirect(new URL('/protected/partner', request.url));
     }
 

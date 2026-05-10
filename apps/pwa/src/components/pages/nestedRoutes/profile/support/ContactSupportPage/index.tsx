@@ -68,7 +68,7 @@ const ContactSupportPage = () => {
                   fontSize="Lable_Large"
                   onClick={() => submitHandler({ fileName: values.fileName, text: values.text })}
                 >
-                  ثبت نظر
+                  ثبت تیکت
                 </CustomButton>
               </>
             )}

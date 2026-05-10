@@ -10,6 +10,8 @@ import { CustomTypography } from '../ui/CustomTypography';
 import MarkDownText from './MarkDownText';
 import { SubscriptionGeneratorTypes } from './types';
 
+//todo change color of text in selected card  in dark mode
+
 export const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
   const isSelected = typeof props.isSelected === 'undefined' ? true : props.isSelected;
   const totalPayText = props.isFree ? 'رایگان' : `${props.amount}`;
@@ -61,7 +63,7 @@ export const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
             {!props.isFree && (
               <CustomTypography
                 fontSize="Lable_Small"
-                className={`${isSelected ? 'text-impo_Neutral_Background' : 'text-impo_Neutral_OnBackground'}`}
+                className={`${isSelected ? 'text-impo_Neutral_Background  dark:text-impo_Neutral_OnBackground' : 'text-impo_Neutral_OnBackground'}`}
               >
                 {props.unit}
               </CustomTypography>
@@ -69,13 +71,13 @@ export const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
 
             <CustomTypography
               fontSize="Title_Small"
-              className={`${isSelected ? 'text-impo_Neutral_Background' : 'text-impo_Neutral_OnBackground'} mr-1`}
+              className={`${isSelected ? 'text-impo_Neutral_Background dark:text-impo_Neutral_OnBackground' : 'text-impo_Neutral_OnBackground'} mr-1`}
             >
               {totalPayText}
             </CustomTypography>
             <CustomTypography
               fontSize="Lable_Medium"
-              className={`${isSelected ? 'text-impo_Neutral_Background' : 'text-impo_Neutral_OnBackground'} opacity-90`}
+              className={`${isSelected ? 'text-impo_Neutral_Background dark:text-impo_Neutral_OnBackground' : 'text-impo_Neutral_OnBackground'} opacity-90`}
             >
               {props.subTitle}
             </CustomTypography>
@@ -99,7 +101,7 @@ export const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
           <div className="flex items-center gap-2">
             <CustomTypography
               fontSize={isSelected ? 'Title_Large' : 'Title_Small'}
-              className={`${isSelected ? 'text-impo_Neutral_Background' : 'text-impo_Neutral_OnBackground'} `}
+              className={`${isSelected ? 'text-impo_Neutral_Background dark:text-impo_Neutral_OnBackground' : 'text-impo_Neutral_OnBackground'} `}
             >
               {props.title}
             </CustomTypography>

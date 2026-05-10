@@ -1,16 +1,28 @@
 import { useEffect, useState } from 'react';
 
+import { ProfileResponsePropsType } from '@repo/core/components/ShareExperience';
+
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 
 import useShareExperenceProfileGetData from '../../../../ShareExperienceProfileModal/ShareExperienceProfileModalContainer/__hooks__/useGetData';
-import { ShareExperenceProfileResponsePropsType } from '../../../../ShareExperienceProfileModal/ShareExperienceProfileModalContainer/__hooks__/useGetData/type';
 
 const useGetData = (userId: string | undefined) => {
-  const [profileData, setProfileData] = useState<ShareExperenceProfileResponsePropsType>();
-  const [loading, setLoading] = useState(true);
-  const { getQuery } = useCustomReactQuery(['shareExperienceProfile'], { gcTime: 1000 * 60 * 5 });
-  const queryData = getQuery<ShareExperenceProfileResponsePropsType>({ queryKey: ['shareExperienceProfile'] });
+  const [profileData, setProfileData] = useState<ProfileResponsePropsType>();
+
+  const { getQuery } = useCustomReactQuery(['shareExperienceProfile']);
+  const queryData = getQuery<ProfileResponsePropsType>({ queryKey: ['shareExperienceProfile'] });
   const { callApi } = useShareExperenceProfileGetData(userId);
+
+  const avatarList: string[] = profileData?.profile.avatars ? profileData?.profile.avatars : [''];
+
+  const onSelectedAvatarChange = (avatar: string) => {
+    if (profileData) {
+      setProfileData({
+        ...profileData,
+        profile: { ...profileData.profile, avatarImage: avatar },
+      });
+    }
+  };
 
   useEffect(() => {
     if (queryData) {
@@ -20,7 +32,7 @@ const useGetData = (userId: string | undefined) => {
     }
   }, [queryData]);
 
-  return { profileData, loading };
+  return { profileData, avatarList, onSelectedAvatarChange };
 };
 
 export default useGetData;

@@ -1,10 +1,10 @@
 import UploadIcon from '@assets/icons/gallery.svg';
 import CrossIcon from '@assets/shared/icons/plus.svg';
+import { SHARE_EXPERIENCE_UPLOAD_FILE_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
-import { SHARE_EXPERIENCE_UPLOAD_FILE_MODAL_QUERY_NAME } from '@components/pages/mainRoutes/shareExperience/constants';
-import useOverlayIndex from '@hooks/__shareExperience__/useOverlayIndex';
+import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { ShareExperienceNewFileProps } from './types';
@@ -17,7 +17,7 @@ const ShareExperienceNewFile = ({
   imageFile,
 }: ShareExperienceNewFileProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
-  const { increaseZIndex } = useOverlayIndex();
+  const { increaseZIndex } = useShareExperienceOverlayIndex();
   // const clickHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
   //   if (onChangeBtnTop) {
   //     onChangeBtnTop();

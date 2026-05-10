@@ -1,10 +1,10 @@
 import ChangeArrowsIcon from '@assets/icons/changeArrows.svg';
+import { SPECIALISTS_LIST_QUERY_NAME } from '@repo/core/components/clinic';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
-import { SPECIALISTS_LIST_QUERY_NAME } from '../constants';
 import { ActiveSpecialistProps } from './types';
 
 const ActiveSpecialist = ({ isMoreThanOne }: ActiveSpecialistProps) => {

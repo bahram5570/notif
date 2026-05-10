@@ -1,9 +1,12 @@
 import { getFirebaseTokenCookie } from '@actions/userCookies.actions';
+import { usePhoneModel } from '@repo/core/hooks/usePhoneModel';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { SubmitHandlerTypes, SuccessHandlerTypes, UseValidationProps } from './types';
 
 const useValidation = ({ validationCompleteHandler, otpStatusHandler, isRegister, identity }: UseValidationProps) => {
+  const phoneModel = usePhoneModel();
+
   const successHandler: SuccessHandlerTypes = ({ result }) => {
     // # Check validity of the OTP
 
@@ -20,7 +23,7 @@ const useValidation = ({ validationCompleteHandler, otpStatusHandler, isRegister
 
   const submitHandler: SubmitHandlerTypes = async (code) => {
     const deviceToken = await getFirebaseTokenCookie();
-    const payload = { identity, deviceToken, code, phoneModel: '' };
+    const payload = { identity, deviceToken, code, phoneModel };
     callApi(payload);
 
     (document.activeElement as HTMLElement)?.blur();

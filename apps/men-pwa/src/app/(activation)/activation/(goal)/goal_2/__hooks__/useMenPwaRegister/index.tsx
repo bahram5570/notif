@@ -11,12 +11,14 @@ import { LoginSuccessHandlerTypes } from '@components/activation/pages/otp/Otp2C
 import useActivationPayload from '@providers/__activation__/ActivationProvider/__hooks__/useActivationPayload';
 import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { useCulture } from '@repo/core/hooks/useCulture';
+import { usePhoneModel } from '@repo/core/hooks/usePhoneModel';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useRouter } from 'next/navigation';
 
 const useMenPwaRegister = () => {
   const router = useRouter();
   const { culture } = useCulture();
+  const phoneModel = usePhoneModel();
   const { payload } = useActivationPayload();
 
   const loginSuccessHandler: LoginSuccessHandlerTypes = async (v) => {
@@ -50,7 +52,7 @@ const useMenPwaRegister = () => {
         password: payload.password,
         version: APP_VERSION,
         deviceToken: token,
-        phoneModel: '',
+        phoneModel,
       };
 
       callLoginApi(result);

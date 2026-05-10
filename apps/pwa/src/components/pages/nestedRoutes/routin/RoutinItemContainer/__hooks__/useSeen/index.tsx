@@ -1,5 +1,5 @@
+import { MODALS } from '@constants/modals.constants';
 import useCurrentRoutinIndex from '@hooks/__routin__/useCurrentRoutinIndex';
-import { MODALS } from '@providers/ModalsQueryParamsProvider/modalsConstants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';

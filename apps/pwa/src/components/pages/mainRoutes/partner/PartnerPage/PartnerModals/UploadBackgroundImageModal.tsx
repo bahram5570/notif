@@ -10,19 +10,19 @@ import useFileUpload from './__hooks__/useFileUpload';
 
 const UploadBackgroundImageModal = () => {
   const { editHandler } = useChangeImage();
-  const { getQuery, updateQuery } = useCustomReactQuery(['partner']);
+  const { getQuery, updateQuery } = useCustomReactQuery(['partnerKey']);
   const { getQueryParams } = useQueryParamsHandler();
-  const partnerInfo = getQuery<ChallengeResponseType>({ queryKey: ['partner'] });
+  const partnerInfo = getQuery<ChallengeResponseType>({ queryKey: ['partnerKey'] });
   const { deleteHandler } = useDelete({
     api: `pair/cover/?AppVersion=${APP_VERSION || ''}`,
-    onSuccess: () => updateQuery({ queryKey: ['partner'], payload: { ...partnerInfo, coverImage: '' } }),
+    onSuccess: () => updateQuery({ queryKey: ['partnerKey'], payload: { ...partnerInfo, coverImage: '' } }),
   });
 
   const canDeleteImage = getQueryParams('canDeleteImage');
 
   const { fileDataHandler, uploadImageLoading } = useFileUpload({
     onSuccess: (v: string) => {
-      updateQuery({ queryKey: ['partner'], payload: { ...partnerInfo, coverImage: v } });
+      updateQuery({ queryKey: ['partnerKey'], payload: { ...partnerInfo, coverImage: v } });
       editHandler({ fileName: v });
     },
     api: 'pair/cover',

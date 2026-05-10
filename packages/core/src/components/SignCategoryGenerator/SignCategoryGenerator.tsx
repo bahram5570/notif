@@ -2,7 +2,7 @@ import { useAnalytics } from '../../hooks/useAnalytics';
 import { SignGenerator } from '../SignGenerator';
 import { WidgetCardContainer } from '../Widgets/WidgetCardContainer';
 import useSelectedSigns from './__hooks__/useSelectedSigns';
-import { SignCategoryGeneratorProps, SelectedSignsHandlerTypes } from './types';
+import { SelectedSignsHandlerTypes, SignCategoryGeneratorProps } from './types';
 
 export const SignCategoryGenerator = ({
   updateSingSelectedList,

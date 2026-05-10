@@ -1,6 +1,6 @@
-import ShareExperienceDeleteModule from '@components/pages/mainRoutes/shareExperience/ShareExperienceModules/ShareExperienceDeleteModule';
+import { DeletePostModule, ReportButtonModule } from '@repo/core/components/ShareExperience';
+
 import ShareExperienceLikesModule from '@components/pages/mainRoutes/shareExperience/ShareExperienceModules/ShareExperienceLikesModule';
-import ShareExperienceReportModule from '@components/pages/mainRoutes/shareExperience/ShareExperienceModules/ShareExperienceReportModule';
 
 import ReplyBtn from './ReplyBtn';
 import { CommentsGeneratorBottomPartProps } from './types';
@@ -8,9 +8,9 @@ import { CommentsGeneratorBottomPartProps } from './types';
 const CommentsGeneratorBottomPart = (props: CommentsGeneratorBottomPartProps) => {
   return (
     <div className="w-full flex items-center justify-between py-4">
-      {props.selfComment && <ShareExperienceDeleteModule type="comment" shareId={props.id} commentId={props.shareId} />}
+      {props.selfComment && <DeletePostModule type="comment" shareId={props.id} commentId={props.shareId} />}
 
-      {!props.selfComment && <ShareExperienceReportModule id={props.id} />}
+      {!props.selfComment && <ReportButtonModule id={props.id} />}
 
       <ShareExperienceLikesModule
         likeCount={props.likeCount}

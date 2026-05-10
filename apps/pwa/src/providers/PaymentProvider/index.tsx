@@ -5,16 +5,16 @@ import { useEffect, useRef } from 'react';
 import { isDevelopeMode } from '@repo/core/utils/system';
 
 import { getPaymentCookie, removePaymentCookie } from '@actions/userCookies.actions';
+import { PAYMENT_QUERY_NAME } from '@repo/core/constants/payment.contants';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { useRouter } from 'next/navigation';
 
-import { PAYMENT_QUERY_NAME } from './constants';
 import { PaymentQueryTypes } from './types';
 
 const PaymentProvider = () => {
   const router = useRouter();
-  const isFirstTime = useRef(isDevelopeMode());
   const { callEvent } = useAnalytics();
+  const isFirstTime = useRef(isDevelopeMode());
 
   useEffect(() => {
     if (isFirstTime.current) {
@@ -47,7 +47,9 @@ const PaymentProvider = () => {
       }
     };
 
-    handlePayment();
+    setTimeout(() => {
+      handlePayment();
+    }, 3000);
   }, []);
 
   return <></>;

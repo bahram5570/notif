@@ -1,14 +1,12 @@
 import {
-  CalendarWidgetEnums,
-  DayTypeEnums,
-} from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/CalendarEnums';
-import {
   CalendarSignsType,
+  CalendarWidgetEnums,
   InfoCalendarResponseTypes,
   ItemsTypes,
-} from '@components/pages/mainRoutes/calendar/__hooks__/useCalendarGetData/types';
+} from '@repo/core/components/calendar';
+
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
-import { BabyCheckTypeEnums } from '@repo/core/providers/WidgetActionsProvider';
+import { BabyCheckTypeEnums, DayTypeEnums } from '@repo/core/providers/WidgetActionsProvider';
 
 export type InitialSelectedSignsTypes = Pick<CalendarSignsType, 'data'>['data']['signs'];
 export type InitailBloodPressureTypes = Pick<CalendarSignsType, 'data'>['data']['bloodPressures'];

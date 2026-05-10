@@ -1,0 +1,42 @@
+import { ChangeEvent, useEffect, useRef } from 'react';
+
+import { toPersianNumbers } from '@repo/core/utils/numbers';
+
+import styles from './styles.module.css';
+
+import { SHARE_EXPERIENCE_NEW_MAX_CHARACTERS } from '../constants';
+import { ShareExperienceNewTextProps } from './types';
+
+const ShareExperienceNewText = ({ text, textHandler, placeholder }: ShareExperienceNewTextProps) => {
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+
+  const valueHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    const value = e.target.value;
+
+    if (value.trim().length <= SHARE_EXPERIENCE_NEW_MAX_CHARACTERS) {
+      textHandler(toPersianNumbers(value));
+    }
+  };
+
+  useEffect(() => {
+    const textarea = textareaRef.current;
+
+    if (textarea) {
+      textarea.style.height = 'auto';
+      textarea.style.height = `${textarea.scrollHeight}px`;
+    }
+  }, [text]);
+
+  return (
+    <textarea
+      rows={2}
+      value={text}
+      ref={textareaRef}
+      onChange={valueHandler}
+      placeholder={placeholder}
+      className={`bg-impo_Neutral_Background text-impo_Neutral_OnBackground ${styles.textarea}`}
+    />
+  );
+};
+
+export default ShareExperienceNewText;

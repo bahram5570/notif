@@ -3,11 +3,10 @@
 import { useRef } from 'react';
 
 import { MainPageLayoutHeader } from '@repo/core/components/MainPageLayout';
+import { CategoriesSlider, ShareExperienceToast } from '@repo/core/components/ShareExperience';
 
 import ShareExperienceBanner from '../ShareExperienceModules/ShareExperienceBanner';
-import ShareExperienceToast from '../ShareExperienceModules/ShareExperienceToast';
 import ShareExperienceAvatar from './ShareExperienceAvatar';
-import ShareExperienceCategories from './ShareExperienceCategories';
 import ShareExperienceExperiences from './ShareExperienceExperiences';
 import ShareExperienceFailureModal from './ShareExperienceFailureModal';
 import ShareExperienceNewLink from './ShareExperienceNewLink';
@@ -16,47 +15,53 @@ import ShareExperienceTopics from './ShareExperienceTopics';
 import useCategories from './__hooks__/useCategories';
 import useShareExperienceGetData from './__hooks__/useShareExperienceGetData';
 import useShareExperienceInitialRedirect from './__hooks__/useShareExperienceInitialRedirect';
-import useTopics from './__hooks__/useTopics';
 
 const ShareExperienceContainer = () => {
-  useShareExperienceInitialRedirect();
   const { isLoading, data, onSuccessNewHandler } = useShareExperienceGetData();
 
   const scrollRef = useRef<HTMLDivElement>(null);
+  useShareExperienceInitialRedirect(Boolean(data));
   const { categories, selectedCategoryId, selectedCategoryHandler, showAssociation } = useCategories(data?.categories);
-  const { topics } = useTopics(data?.topics);
 
   return (
     <>
       <MainPageLayoutHeader leftElement1="Profile" leftElement2="Notification" />
+
       <div
         ref={scrollRef}
-        className={`flex-1 overflow-y-auto ${isLoading ? 'pointer-events-none' : ''}`}
         style={{ height: '100dvh' }}
+        className={`flex-1 overflow-y-auto ${isLoading ? 'pointer-events-none' : ''}`}
       >
         {isLoading && !data && <ShareExperienceSkeleton />}
 
         {!isLoading && data && (
           <>
             {data.failure && <ShareExperienceFailureModal error={data.error} />}
+
             {!data.failure && (
               <>
                 <ShareExperienceAvatar profile={data.profile} />
+
                 <ShareExperienceNewLink />
-                {topics && <ShareExperienceTopics topics={topics} />}
+
+                {data.topics && <ShareExperienceTopics topics={data.topics} />}
+
                 {data.bannerMedia && <ShareExperienceBanner bannerMedia={data.bannerMedia} />}
+
                 {categories && selectedCategoryId && (
-                  <ShareExperienceCategories
+                  <CategoriesSlider
                     categories={categories}
                     selectedCategoryId={selectedCategoryId}
                     selectedCategoryHandler={selectedCategoryHandler}
                   />
                 )}
+
                 {data.toastText && (
                   <div className="px-4 pb-4">
                     <ShareExperienceToast toastMessage={data.toastText} showCloseBtn />
                   </div>
                 )}
+
                 {selectedCategoryId && (
                   <ShareExperienceExperiences
                     profile={data.profile}

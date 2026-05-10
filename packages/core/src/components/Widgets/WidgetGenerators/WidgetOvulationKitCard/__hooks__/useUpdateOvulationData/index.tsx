@@ -3,8 +3,6 @@ import { useState } from 'react';
 import { usePwaApi } from '../../../../../../hooks/usePwaApi';
 import { WidgetsEnum } from '../../../../../../providers/WidgetActionsProvider';
 // import { CycleResponseTypes } from '@components/pages/mainRoutes/cycle/types';
-// import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-// import { WidgetsEnum } from '@repo/core/providers/WidgetActionsProvider';
 
 import { UpdateOvulationResponseTypes, UseUpdateOvulationDataData } from './types';
 

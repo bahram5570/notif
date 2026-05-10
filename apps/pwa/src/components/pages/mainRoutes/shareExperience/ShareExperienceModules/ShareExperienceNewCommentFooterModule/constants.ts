@@ -1,1 +1,0 @@
-export const NEW_COMMENT_FOOTER_SIZE = 70;

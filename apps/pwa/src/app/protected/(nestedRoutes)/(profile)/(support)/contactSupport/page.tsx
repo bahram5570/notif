@@ -1,7 +1,7 @@
-import SupportChatContainer from '@components/pages/nestedRoutes/profile/support/ContactSupportPage';
+import ContactSupportPage from '@components/pages/nestedRoutes/profile/support/ContactSupportPage';
 
 const ContactSupport = () => {
-  return <SupportChatContainer />;
+  return <ContactSupportPage />;
 };
 
 export default ContactSupport;

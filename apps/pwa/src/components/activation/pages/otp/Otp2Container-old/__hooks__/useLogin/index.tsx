@@ -6,6 +6,7 @@ import { UserCookieTypes, UserInfoCookieTypes, getFirebaseTokenCookie } from '@a
 import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { useCountDown } from '@repo/core/hooks/useCountDown';
 import { useCulture } from '@repo/core/hooks/useCulture';
+import { usePhoneModel } from '@repo/core/hooks/usePhoneModel';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 
 import { OTP_COUNT_DOWN_TIME } from '../../constants';
@@ -15,6 +16,7 @@ let userCookieValue: UserCookieTypes;
 let userInfoCookieValue: UserInfoCookieTypes;
 
 const useLogin = ({ identity, password, otpStatusHandler, onSubmitLogin }: UseLoginPros) => {
+  const phoneModel = usePhoneModel();
   const { cultureHandler } = useCulture();
   const [isLoginSuccess, setIsLoginSuccess] = useState(false);
 
@@ -34,6 +36,7 @@ const useLogin = ({ identity, password, otpStatusHandler, onSubmitLogin }: UseLo
     userInfoCookieValue = {
       cycleTheme: v.cycleTheme,
       installationPurpose: { periodStatus: v.periodStatus, status: v.status },
+      name: v.name,
     };
 
     cultureHandler('calendarType', v.calendarType);
@@ -56,7 +59,7 @@ const useLogin = ({ identity, password, otpStatusHandler, onSubmitLogin }: UseLo
       callLoginApi({
         identity,
         password,
-        phoneModel: '',
+        phoneModel,
         channelVersion: '',
         deviceToken: token,
         version: APP_VERSION,

@@ -1,7 +1,7 @@
 import StarIcon from '@assets/icons/star.svg';
+import { RATING_LIST } from '@repo/core/components/clinic';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { RATING_LIST } from './constants';
 import { RatingStarsProps } from './types';
 
 const RatingStars = ({ rate, rateHandler }: RatingStarsProps) => {

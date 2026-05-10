@@ -1,6 +1,5 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-
-import FeedbackModal from '@components/FeedbackModal';
+import { FeedbackModal } from '@repo/core/components/ui/FeedbackModal';
 
 import RoutinDietsGenerator from './RoutinDietsGenerator';
 import useFeedback from './RoutinDietsGenerator/RoutinDietsCheckbox/__hooks__/useFeedback';
