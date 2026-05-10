@@ -49,14 +49,13 @@ const useFileValue = (ticketId: string) => {
     }
   }, [uploadImageLoading, fileLoading]);
 
-  const fileDataHandler: FileDataHandlerTypes = ({ e }) => {
-    const fileName = e.target.files?.[0]?.name;
+  const fileDataHandler: FileDataHandlerTypes = ({ file }) => {
+    const finalFile = file;
+    if (!finalFile) return;
 
-    if (fileName) {
-      setUploadingFileType(fileName);
-    }
+    setUploadingFileType(finalFile.name);
 
-    uploadHandler({ e });
+    uploadHandler({ file: finalFile });
   };
 
   return { fileDataHandler, inputFileResetKey, uploadImageLoading };

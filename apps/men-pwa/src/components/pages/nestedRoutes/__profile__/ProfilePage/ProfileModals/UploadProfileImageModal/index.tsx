@@ -2,11 +2,11 @@ import TrashIcon from '@assets/shared/icons/trash.svg';
 import { FileInputManager } from '@repo/core/components/FileInputManager';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
+import { useFileUpload } from '@repo/core/hooks/useFileUpload';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import useDeleteProfileImage from './__hooks__/useDeleteProfileImage';
 import useEditProfileImage from './__hooks__/useEditProfileImage';
-import useUploadProfileImage from './__hooks__/useUploadProfileImage';
 
 const UploadProfileImageModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
@@ -14,12 +14,13 @@ const UploadProfileImageModal = () => {
   const { editProfileImageHandler } = useEditProfileImage();
   const canDeleteImage = getQueryParams('canDeleteProfile');
 
-  const { fileDataHandler, uploadImageLoading } = useUploadProfileImage({
+  const { fileDataHandler, uploadImageLoading } = useFileUpload({
     onSuccess: (v: string) => {
       editProfileImageHandler({ fileName: v });
     },
 
     api: 'profile/image',
+    method: 'PUT',
   });
 
   return (

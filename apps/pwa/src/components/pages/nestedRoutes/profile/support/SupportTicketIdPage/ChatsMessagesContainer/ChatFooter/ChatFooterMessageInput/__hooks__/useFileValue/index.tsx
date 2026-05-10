@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import useFileUpload from '@hooks/useFileUpload';
-import { FileDataHandlerTypes } from '@hooks/useFileUpload/types';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { FileDataHandlerTypes, useFileUpload } from '@repo/core/hooks/useFileUpload';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useParams, useRouter } from 'next/navigation';
 
@@ -37,6 +36,8 @@ const useFileValue = () => {
       callApi({ text: '', fileName: v });
       setStoredFileName(v);
     },
+    api: 'file/private/',
+    method: 'PUT',
   });
 
   useEffect(() => {
@@ -48,13 +49,13 @@ const useFileValue = () => {
     }
   }, [uploadImageLoading, fileLoading]);
 
-  const fileDataHandler: FileDataHandlerTypes = ({ e }) => {
-    const fileName = e.target.files?.[0]?.name;
+  const fileDataHandler: FileDataHandlerTypes = ({ file }) => {
+    const fileName = file?.name;
     if (fileName) {
       setUploadingFileType(fileName);
     }
 
-    uploadHandler({ e });
+    uploadHandler({ file });
   };
 
   return { fileDataHandler, uploadImageLoading };

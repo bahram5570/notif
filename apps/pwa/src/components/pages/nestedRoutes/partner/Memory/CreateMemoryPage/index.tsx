@@ -7,6 +7,7 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+import { useFileUpload } from '@repo/core/hooks/useFileUpload';
 import moment from 'moment-jalaali';
 import { useRouter } from 'next/navigation';
 
@@ -15,7 +16,6 @@ import MemoryHeader from './MemoryHeader';
 import TextareaInput from './TextareaInput';
 import UploadInput from './UploadInput';
 import UploadModal from './UploadModal';
-import useFileUpload from './__hooks__/useFileUpload';
 import useSubmit from './__hooks__/useSubmit';
 import { initialValue } from './constants';
 import { InputValueType } from './type';

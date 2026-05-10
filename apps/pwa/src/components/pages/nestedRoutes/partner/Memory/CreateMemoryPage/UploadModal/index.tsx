@@ -7,7 +7,11 @@ const UploadModal = ({ fileDataHandler, uploadImageLoading }: UploadModalPropsTy
   return (
     <CustomModal isSlidingMode>
       <div className=" flex flex-col gap-3">
-        <FileInputManager ShowFileInput fileDataHandler={fileDataHandler} uploadImageLoading={uploadImageLoading} />
+        <FileInputManager
+          fileDataHandler={fileDataHandler}
+          uploadImageLoading={uploadImageLoading}
+          ShowFileInput={false}
+        />
       </div>
     </CustomModal>
   );

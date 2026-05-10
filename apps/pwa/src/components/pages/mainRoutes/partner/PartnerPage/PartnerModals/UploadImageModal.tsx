@@ -1,12 +1,12 @@
 import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useFileUpload } from '@repo/core/hooks/useFileUpload';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 import { ChallengeResponseType } from '../__hooks__/useGetData/type';
 import Inputs from './Inputs';
 import useAvatar from './__hooks__/useAvatar';
 import useDelete from './__hooks__/useDelete';
-import useFileUpload from './__hooks__/useFileUpload';
 
 const UploadImageModal = () => {
   const { editHandler } = useAvatar();
@@ -26,7 +26,7 @@ const UploadImageModal = () => {
       updateQuery({ queryKey: ['partnerKey'], payload: { ...partnerInfo, womanAvatar: v, canDeleteProfile: true } });
       editHandler({ fileName: v });
     },
-
+    method: 'PUT',
     api: 'profile/image',
   });
 

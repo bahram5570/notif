@@ -2,17 +2,17 @@ import { useEffect } from 'react';
 
 import CameraIcon from '@assets/icons/Camera-1.svg';
 import GalleryIcon from '@assets/icons/gallery-1.svg';
-import { FileInputTypes } from '@repo/core/components/FileInputManager';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
-import imageCompression from 'browser-image-compression';
 
 import useAiFileManager from '@hooks/__aichatbot__/useAiFileManager';
 import { FOOTER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
+import { useOptimizeImageFile } from '@repo/core/hooks/useOptimizeImageFile';
 
 import { FileInputHandlerTypes, UploadImagesMoreActionPropsType } from './type';
 
 const UploadImagesMoreAction = ({ closeHandler, isOpen }: UploadImagesMoreActionPropsType) => {
   const { fileDataHandler } = useAiFileManager();
+  const { optimizeImageFile } = useOptimizeImageFile();
 
   useEffect(() => {
     const body = document.body;
@@ -29,26 +29,15 @@ const UploadImagesMoreAction = ({ closeHandler, isOpen }: UploadImagesMoreAction
     };
   }, [isOpen]);
 
-  const handleFileInput: FileInputHandlerTypes = (type) => async (e) => {
-    const file = e.target.files?.[0];
+  const handleFileInput: FileInputHandlerTypes = async (e) => {
+    let file = e.target.files?.[0];
     if (!file) return;
 
-    if (type === FileInputTypes.CAMERA) {
-      const options = {
-        maxSizeMB: 1,
-        maxWidthOrHeight: 640,
-        useWebWorker: true,
-      };
-
-      try {
-        const compressedFile = await imageCompression(file, options);
-
-        fileDataHandler({ e, file: compressedFile });
-      } catch (error) {
-        console.error('Image compression failed:', error);
-      }
-    } else {
-      fileDataHandler({ e });
+    try {
+      file = await optimizeImageFile(file);
+      fileDataHandler({ file });
+    } catch (error) {
+      console.error('Image compression failed:', error);
     }
 
     closeHandler();
@@ -80,7 +69,7 @@ const UploadImagesMoreAction = ({ closeHandler, isOpen }: UploadImagesMoreAction
               id="camera-input"
               className="hidden"
               capture="environment"
-              onChange={handleFileInput(FileInputTypes.CAMERA)}
+              onChange={handleFileInput}
             />
             <label htmlFor="camera-input">
               <div className="flex flex-row-reverse items-center gap-2">
@@ -95,13 +84,7 @@ const UploadImagesMoreAction = ({ closeHandler, isOpen }: UploadImagesMoreAction
           </>
           <div className="w-[133px] h-0 rotate-180 my-2  opacity-60 border border-impo_Surface_OutlineVariant" />
           <>
-            <input
-              type="file"
-              accept="image/*"
-              id="gallery-input"
-              className="hidden"
-              onChange={handleFileInput(FileInputTypes.GALLERY)}
-            />
+            <input type="file" accept="image/*" id="gallery-input" className="hidden" onChange={handleFileInput} />
             <label htmlFor="gallery-input">
               <div className="flex flex-row-reverse items-center gap-2">
                 <div className="flex justify-center items-center rounded-full w-8  h-8 bg-impo_Surface_OutlineVariant">

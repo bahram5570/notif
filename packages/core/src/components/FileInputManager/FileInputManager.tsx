@@ -3,8 +3,8 @@ import { useMemo, useState } from 'react';
 import FileIcon from '@assets/shared/icons/Paper.svg';
 import CameraIcon from '@assets/shared/icons/camera.svg';
 import GalleryIcon from '@assets/shared/icons/gallery.svg';
-import imageCompression from 'browser-image-compression';
 
+import { useOptimizeImageFile } from '../../hooks/useOptimizeImageFile';
 import { useSystem } from '../../hooks/useSystem';
 import { CustomSpinner } from '../ui/CustomSpinner';
 import { CustomTypography } from '../ui/CustomTypography';
@@ -19,6 +19,7 @@ export const FileInputManager = ({
   ShowFileInput,
 }: FileInputManagerTypes) => {
   const { appName } = useSystem();
+  const { optimizeImageFile } = useOptimizeImageFile();
   const [compressLoading, setCompressLoading] = useState(false);
   const [activeInput, setActiveInput] = useState<string | null>(null);
 
@@ -35,27 +36,8 @@ export const FileInputManager = ({
     setCompressLoading(true);
 
     try {
-      let fileName = file.name;
-      const isHeic = fileName.toLowerCase().includes('.heic') || fileName.toLowerCase().includes('.heif');
-
-      if (isHeic) {
-        const heic2any = (await import('heic2any')).default;
-        const convertedBlob = (await heic2any({ blob: file, toType: 'image/jpeg' })) as Blob;
-
-        fileName = fileName.split('.')[0] + '.jpg';
-        const convertedFile = new File([convertedBlob], fileName, { type: 'image/jpeg' });
-        file = convertedFile;
-      }
-
-      const compressedFile = (await imageCompression(file, {
-        initialQuality: 0.8,
-        maxSizeMB: 300 / 1024,
-        maxWidthOrHeight: 1024,
-        alwaysKeepResolution: true,
-      })) as Blob;
-
-      file = new File([compressedFile], fileName, { type: compressedFile.type });
-      fileDataHandler({ e, file });
+      file = await optimizeImageFile(file);
+      fileDataHandler({ file });
     } catch (error) {
       console.error('Image compression failed:', error);
     }

@@ -37,8 +37,8 @@ export const useFileUpload = (options?: OptionsTypes) => {
     method: options?.method || 'POST',
   });
 
-  const fileDataHandler: FileDataHandlerTypes = async ({ e, file }) => {
-    const finalFile = file ?? e.target.files?.[0];
+  const fileDataHandler: FileDataHandlerTypes = async ({ file }) => {
+    const finalFile = file;
 
     if (!finalFile) {
       return;
