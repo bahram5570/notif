@@ -1,87 +1,60 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { handleHttpImage, handleImageName, handleLocalImage } from './__utils__';
 import { isDevelopeMode } from '@repo/core/utils/system';
+
+import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 // !
 // import { isDevelopeMode } from '../../../../../utils/system';
 
 import { UseImageSrcProps } from './types';
 
-// const useImageSrc = ({ src, imageApi = '/file', onError }: UseImageSrcProps) => {
 const useImageSrc = ({ src, imageApi, onError }: UseImageSrcProps) => {
+  const [resetKey, setResetKey] = useState('');
   const isFirstTime = useRef(isDevelopeMode());
-  const [updatedSrc, setUpdatedSrc] = useState('');
+  const [updatedSrc, setUpdatedSrc] = useState<StaticImport | string>('');
+
+  const updateHandler = async () => {
+    try {
+      let result: StaticImport | string = '';
+
+      if (typeof src === 'string') {
+        // # Full url starts with 'http'
+        if (src.toLowerCase().startsWith('http')) {
+          result = await handleHttpImage(src);
+        }
+
+        // # Local images (in 'public' folder)
+        else if (src.toLowerCase().startsWith('/')) {
+          result = await handleLocalImage(src);
+        }
+
+        // # Just name of the image
+        else {
+          result = await handleImageName(src, imageApi);
+        }
+      } else {
+        result = src;
+      }
+
+      setResetKey(Math.random().toString());
+      setUpdatedSrc(result);
+    } catch (err) {
+      onError();
+    }
+  };
 
   useEffect(() => {
-    if (typeof src === 'string') {
-      //
-      const isHttp = src.toLowerCase().startsWith('http');
-      const isLocalFile = src.toLowerCase().startsWith('/_next');
+    if (isFirstTime.current) {
+      isFirstTime.current = false;
       return;
     }
 
-    src;
+    updateHandler();
   }, [src]);
 
-  // const convertHeicHandler = async (imageUrl: string, isHeic: boolean) => {
-  //   if (!isHeic) {
-  //     setUpdatedSrc(imageUrl);
-  //     return;
-  //   }
-
-  //   try {
-  //     const req = await fetch(imageUrl);
-  //     const blob = await req.blob();
-  //     const heic2any = (await import('heic2any')).default;
-  //     const convertedBlob = (await heic2any({ blob, toType: 'image/jpeg' })) as Blob;
-
-  //     const result = URL.createObjectURL(convertedBlob);
-  //     setUpdatedSrc(result);
-  //   } catch (error) {
-  //     onError();
-  //   }
-  // };
-
-  // const urlMaker = (fileSrc: string) => {
-  //   if (fileSrc.toLowerCase().includes('http')) {
-  //     return fileSrc;
-  //   }
-
-  //   if (fileSrc.slice(0, 1) === '/') {
-  //     return fileSrc;
-  //   }
-
-  //   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-  //   return `${baseUrl}${imageApi}/${src}`;
-  // };
-
-  // useEffect(() => {
-  //   if (isFirstTime.current) {
-  //     isFirstTime.current = false;
-  //     return;
-  //   }
-
-  //   const convertSrc = async () => {
-  //     const detectHeic = (url: string) => {
-  //       return url.toLowerCase().includes('.heic') || url.toLowerCase().includes('.heif');
-  //     };
-
-  //     if (typeof src === 'string') {
-  //       const result = urlMaker(src.trim());
-  //       const isHeic = detectHeic(result);
-  //       await convertHeicHandler(result, isHeic);
-  //       return;
-  //     }
-
-  //     const result = urlMaker((src?.image || '').trim());
-  //     const isHeic = detectHeic(result);
-  //     await convertHeicHandler(result, isHeic);
-  //   };
-
-  //   convertSrc();
-  // }, [src]);
-
-  return { updatedSrc };
+  return { updatedSrc, resetKey };
 };
 
 export default useImageSrc;

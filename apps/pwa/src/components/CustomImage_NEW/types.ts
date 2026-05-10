@@ -6,6 +6,5 @@ import { PreviewImageShapeTypes } from '../../../../../packages/core/dist/provid
 export interface CustomImage_NEWTypes extends ImageProps {
   imageApi?: string;
   hasPreviewImage?: boolean;
-  previewBackground?: string;
   previewImageShape?: PreviewImageShapeTypes;
 }
