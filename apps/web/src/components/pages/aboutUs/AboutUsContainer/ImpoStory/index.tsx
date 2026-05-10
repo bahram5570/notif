@@ -17,7 +17,7 @@ const ImpoStory = () => {
           fill={true}
           alt="aboutUs"
           src="/assets/images/aboutUs/2.jpg"
-          className="object-contain  w-full h-auto !relative rounded-lg"
+          className="object-contain w-full h-auto !relative rounded-lg"
         />
 
         <CustomTypography
