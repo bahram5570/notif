@@ -4,6 +4,7 @@ import { EXPERIENCES_PAGE_SIZE, ExperiencesResponseTypes } from '@repo/core/comp
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 
 import { QueryExperiencesDataTypes, SelectedCategoryIdTypes } from './types';
 
@@ -11,10 +12,18 @@ const useExperiences = (selectedCategoryId: SelectedCategoryIdTypes) => {
   const [pageNo, setPageNo] = useState(0);
   const [totalCount, setTotalCount] = useState(0);
   const { newQuery, updateQuery, getQuery, removeQuery } = useCustomReactQuery(['experiences']);
+  const { accessOptionHandler } = useShareExperienceHandlers();
 
   const experiencesData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['experiences'] });
 
   const successHandler = (v: ExperiencesResponseTypes) => {
+    if (v.access.isBan) {
+      return accessOptionHandler({
+        isBan: v.access.isBan,
+        textMessage: v.access.textMessage,
+        btnText: v.access.btnText,
+      });
+    }
     setTotalCount(v.totalCount);
 
     if (experiencesData) {

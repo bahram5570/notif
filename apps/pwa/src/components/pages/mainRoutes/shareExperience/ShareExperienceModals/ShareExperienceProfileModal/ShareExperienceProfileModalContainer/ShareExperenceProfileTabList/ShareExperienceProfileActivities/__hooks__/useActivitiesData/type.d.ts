@@ -1,4 +1,4 @@
-import { ProfileResponsePropsType } from '@repo/core/components/ShareExperience';
+import { AccessType, ProfileResponsePropsType } from '@repo/core/components/ShareExperience';
 
 import { ExperiencesResponseTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
 
@@ -12,7 +12,7 @@ export type selfType = Pick<ProfileResponsePropsType, 'activities'>['activities'
 
 export type QueryExperiencesDataTypes = Pick<ExperiencesResponseTypes, 'expirences'>;
 
-export type SelfExperienceDataType = {
+export type SelfExperienceDataType = AccessType & {
   totalCount: number;
   list: selfType;
 };

@@ -4,6 +4,7 @@ import { EXPERIENCES_PAGE_SIZE, TopicExperiencesResponseTypes } from '@repo/core
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 
 import { useGetDataPropsType } from './type';
 
@@ -11,10 +12,17 @@ const useGetData = ({ topicId }: useGetDataPropsType) => {
   const [pageNo, setPageNo] = useState(0);
 
   const { newQuery, updateQuery, getQuery, removeQuery } = useCustomReactQuery(['topicExperiences']);
-
+  const { accessOptionHandler } = useShareExperienceHandlers();
   const topicExperiencesData = getQuery<TopicExperiencesResponseTypes>({ queryKey: ['topicExperiences'] });
 
   const successHandler = (v: TopicExperiencesResponseTypes) => {
+    if (v.access.isBan) {
+      return accessOptionHandler({
+        isBan: v.access.isBan,
+        textMessage: v.access.textMessage,
+        btnText: v.access.btnText,
+      });
+    }
     if (topicExperiencesData) {
       const list = { ...topicExperiencesData, expirences: [...topicExperiencesData.expirences, ...v.expirences] };
       updateQuery({ queryKey: ['topicExperiences'], payload: list });
