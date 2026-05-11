@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 import { useRouter } from 'next/navigation';
 
 import { QueryExperiencesDataTypes } from '../../../../ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
@@ -9,6 +10,7 @@ import useUpdateActivitiesList from '../useUpdateActivitiesList';
 import useUpdateAssociationInfo from '../useUpdateAssociationInfo';
 import useUpdateSelfExperienceList from '../useUpdateSelfExperienceList';
 import useUpdateTopicExperienceList from '../useUpdateTopicExperienceList';
+import { SuccessResponseType } from './type';
 
 const useExperienceDelete = () => {
   const router = useRouter();
@@ -18,8 +20,16 @@ const useExperienceDelete = () => {
   const { updateSelfExperienceListHandler } = useUpdateSelfExperienceList();
   const { updateTopicExperienceListHandler } = useUpdateTopicExperienceList();
   const { updateActivitiesListHandler } = useUpdateActivitiesList();
+  const { accessOptionHandler } = useShareExperienceHandlers();
 
-  const successHandler = () => {
+  const successHandler = (v: SuccessResponseType) => {
+    if (v.access.isBan) {
+      return accessOptionHandler({
+        isBan: v.access.isBan,
+        textMessage: v.access.textMessage,
+        btnText: v.access.btnText,
+      });
+    }
     const experiencesData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['experiences'] });
 
     if (experiencesData) {
