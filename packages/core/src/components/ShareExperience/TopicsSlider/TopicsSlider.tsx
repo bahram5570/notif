@@ -1,8 +1,8 @@
 import { shareExperienceTopicQueryMaker } from '../../../utils/shareExperience';
 
-import { useShareExperienceOverlayIndex } from '../../../hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '../../../hooks/useShareExperienceHandlers/useShareExperienceHandlers';
 import { CustomImage } from '../../ui/CustomImage';
 import { CustomSlider } from '../../ui/CustomSlider';
 import { CustomTypography } from '../../ui/CustomTypography';
@@ -11,7 +11,7 @@ import { TopicsSliderProps } from './type';
 export const TopicsSlider = ({ topics }: TopicsSliderProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { increaseZIndex } = useShareExperienceHandlers();
 
   const clickHandler = (id: string) => {
     pageNavigationHandler({ id, showProgressBar: true });

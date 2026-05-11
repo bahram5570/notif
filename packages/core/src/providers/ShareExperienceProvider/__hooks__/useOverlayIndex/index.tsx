@@ -1,20 +1,11 @@
-'use client';
+import { useState } from 'react';
 
-import { createContext, useState } from 'react';
+import { MODAL_DEFAULT_Z_INDEX } from '../../../../components/ui/CustomModal/constants';
 
-import { MODAL_DEFAULT_Z_INDEX } from '../../components/ui/CustomModal/constants';
+import { GetZindexHandlerType, IncreaseZIndexHandlerType } from '../../type';
 
-import { GetZindexHandlerType, IncreaseZIndexHandlerType, OverlayIndexContextType } from './type';
-
-export const OverlayIndexContext = createContext<OverlayIndexContextType>({
-  increaseZIndex: () => {},
-  getZIndex: () => MODAL_DEFAULT_Z_INDEX,
-});
-
-export const OverlayIndexProvider = ({ children }: { children: React.ReactNode }) => {
+const useOverlayIndex = () => {
   const [modalZIndexes, setModalZIndexes] = useState<Record<string, number>>({});
-
-  // use id for makes uniq key of modalZIndex object
 
   const handleIncreaseZIndex: IncreaseZIndexHandlerType = (modalKey, value) => {
     let instanceKey;
@@ -41,9 +32,7 @@ export const OverlayIndexProvider = ({ children }: { children: React.ReactNode }
     return modalZIndexes[instanceKey] ?? MODAL_DEFAULT_Z_INDEX;
   };
 
-  return (
-    <OverlayIndexContext.Provider value={{ increaseZIndex: handleIncreaseZIndex, getZIndex }}>
-      {children}
-    </OverlayIndexContext.Provider>
-  );
+  return { handleIncreaseZIndex, getZIndex };
 };
+
+export default useOverlayIndex;

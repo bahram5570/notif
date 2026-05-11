@@ -3,9 +3,9 @@ import { SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME } from '@repo/core/compo
 
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
-import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 
 import { ShareExperienceNewLinkPropsType } from './type';
 
@@ -17,7 +17,7 @@ const ShareExperienceNewLink = ({
 }: ShareExperienceNewLinkPropsType) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { increaseZIndex } = useShareExperienceHandlers();
   const toast = useCustomToast();
 
   const clickHandler = () => {

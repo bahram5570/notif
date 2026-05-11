@@ -1,15 +1,15 @@
 import ThreeDotsIcon from '@assets/shared/icons/threeDots.svg';
 
-import { useShareExperienceOverlayIndex } from '../../../hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '../../../hooks/useShareExperienceHandlers/useShareExperienceHandlers';
 import { SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME } from '../constants';
 import { ReportButtonModuleProps } from './type';
 
 export const ReportButtonModule = ({ id }: ReportButtonModuleProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { increaseZIndex } = useShareExperienceHandlers();
 
   const selectHandler = () => {
     increaseZIndex(SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME, id);

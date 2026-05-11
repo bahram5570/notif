@@ -2,14 +2,14 @@ import ArrowRightIcon from '@assets/shared/icons/ArrowRight.svg';
 import { SHARE_EXPERIENCE_ASSOCIATION_LIST_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 
 const ViewAllButton = () => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { increaseZIndex } = useShareExperienceHandlers();
 
   const clickHandler = () => {
     pageNavigationHandler({ id: 'shareExperienceAssociation', showProgressBar: true });

@@ -1,8 +1,8 @@
 import BlueTick from '@assets/shared/icons/blueTick2.svg';
 
-import { useShareExperienceOverlayIndex } from '../../../hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '../../../hooks/useShareExperienceHandlers/useShareExperienceHandlers';
 import { CustomImage } from '../../ui/CustomImage';
 import { SHARE_EXPERIENCE_PROFILE_QUERY_NAME } from '../constants';
 import { SelectedProfileLinkProps } from './type';
@@ -10,7 +10,7 @@ import { SelectedProfileLinkProps } from './type';
 export const SelectedProfileLink = (props: SelectedProfileLinkProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { increaseZIndex } = useShareExperienceHandlers();
 
   const selectProfileHandler = () => {
     if (!props.isSelf) {

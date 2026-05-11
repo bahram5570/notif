@@ -1,9 +1,9 @@
 import { shareExperienceCommentQueryMaker } from '../../../utils/shareExperience';
 
 import { useCustomToast } from '../../../hooks/useCustomToast';
-import { useShareExperienceOverlayIndex } from '../../../hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '../../../hooks/useShareExperienceHandlers/useShareExperienceHandlers';
 import { useWidgetActions } from '../../../hooks/useWidgetActions';
 import { CustomImage } from '../../ui/CustomImage';
 import { CustomTypography } from '../../ui/CustomTypography';
@@ -13,7 +13,7 @@ import { ContentsSectionModuleProps } from './type';
 export const ContentsSectionModule = (props: ContentsSectionModuleProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { increaseZIndex } = useShareExperienceHandlers();
   const { actionHandler } = useWidgetActions();
   const toast = useCustomToast();
   const { hasLinkTo = true, id, image, text, tags } = props;

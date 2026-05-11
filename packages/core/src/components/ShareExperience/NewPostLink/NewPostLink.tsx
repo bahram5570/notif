@@ -1,9 +1,9 @@
 import { useMemo } from 'react';
 
 import { MAX_SCREEN_WIDTH } from '../../../constants/app.constants';
-import { useShareExperienceOverlayIndex } from '../../../hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '../../../hooks/useShareExperienceHandlers/useShareExperienceHandlers';
 import { useSystem } from '../../../hooks/useSystem';
 import { CustomImage } from '../../ui/CustomImage';
 import { CustomTypography } from '../../ui/CustomTypography';
@@ -22,7 +22,7 @@ export const NewPostLink = ({
 }: NewPostLinkProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { increaseZIndex } = useShareExperienceHandlers();
   const { appName } = useSystem();
 
   const selectHandler = () => {

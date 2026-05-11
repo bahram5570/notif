@@ -2,16 +2,16 @@ import ThreeDotsIcon from '@assets/shared/icons/threeDots.svg';
 import { SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME } from '@repo/core/components/ShareExperience';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
-import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 
 import { ShareExperienceProfileReportModulePropsType } from './type';
 
 const ShareExperienceProfileReportModule = ({ userId }: ShareExperienceProfileReportModulePropsType) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { increaseZIndex } = useShareExperienceHandlers();
 
   const selectHandler = () => {
     const queryData = JSON.stringify({ id: userId });

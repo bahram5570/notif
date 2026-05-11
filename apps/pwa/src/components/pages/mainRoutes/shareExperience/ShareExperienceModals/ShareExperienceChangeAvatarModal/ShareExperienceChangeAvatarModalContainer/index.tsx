@@ -4,9 +4,9 @@ import { SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME } from '@repo/core/compo
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { useFileUpload } from '@repo/core/hooks/useFileUpload';
-import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 
 import useUpdateProfile from './__hooks__/useUpdateProfile';
 import { ShareExperienceChangeAvatarModalContainerPropsType } from './type';
@@ -18,7 +18,7 @@ const ShareExperienceChangeAvatarModalContainer = ({
   const { onProfileChangeHandler } = useUpdateProfile();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { increaseZIndex } = useShareExperienceHandlers();
   const { fileDataHandler, uploadImageLoading } = useFileUpload({
     onSuccess: (v: string) => onProfileChangeHandler({ avatarImage: v, username: username }),
     api: 'shareeexperience/v3/file',
