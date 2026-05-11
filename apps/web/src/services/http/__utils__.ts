@@ -7,10 +7,15 @@ const cacheOptionsFinder = (props: HttpTypes) => {
   const cache = props.cache || 'no-store';
 
   if (props.cache === 'force-cache') {
+    props.tags;
     cacheOptions = { cache };
 
     if (typeof props.revalidate !== 'undefined') {
       cacheOptions = { ...cacheOptions, revalidate: props.revalidate };
+    }
+
+    if (typeof props.tags !== 'undefined') {
+      cacheOptions = { ...cacheOptions, tags: props.tags };
     }
   } else {
     cacheOptions = { cache };
@@ -51,7 +56,7 @@ export const applyOptions = async (props: HttpTypes) => {
 
   if (result.method === 'GET') {
     if (result.cache === 'force-cache') {
-      options = { ...options, next: { revalidate: result.revalidate } };
+      options = { ...options, next: { revalidate: result.revalidate, tags: result.tags } };
     } else if (result.cache === 'no-store') {
       options = { ...options, cache: 'no-store' };
     }

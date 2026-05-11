@@ -1,6 +1,7 @@
 type DoCacheTypes = {
   cache?: 'force-cache';
   revalidate?: number;
+  tags?: string[];
 };
 type NoCacheTypes = {
   cache?: 'no-store';

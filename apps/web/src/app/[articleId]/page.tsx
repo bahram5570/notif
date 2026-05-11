@@ -50,6 +50,7 @@ export default Article;
 const getArticleData = async (articleId: string) => {
   return await http<ArticleIdResponseTypes>({
     method: 'GET',
+    tags: [articleId],
     cache: 'force-cache',
     revalidate: CACHE_REVALIDATE_TIME,
     url: `support/article/sp/published/${articleId}`,
@@ -60,6 +61,7 @@ const revalidateArticleData = async (articleId: string) => {
   await http<ArticleIdResponseTypes>({
     method: 'GET',
     revalidate: 60,
+    tags: [articleId],
     cache: 'force-cache',
     url: `support/article/sp/published/${articleId}`,
   });
