@@ -1,6 +1,7 @@
 import ArrowUpIcon from '@assets/shared/icons/Alt Arrow Up.svg';
 
 import { CustomImage } from '../../../ui/CustomImage';
+import { CustomImage_NEW } from '../../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../../ui/CustomTypography';
 import { ProgressBarPropsType } from './type';
 
@@ -45,7 +46,7 @@ export const ProgressBar = ({ progress, avatar, partnerAvatar, className }: Prog
               left: `${milestone.isGold ? 0 : ''}%`,
             }}
           >
-            <CustomImage
+            <CustomImage_NEW
               src={milestone.img}
               width={32}
               height={32}

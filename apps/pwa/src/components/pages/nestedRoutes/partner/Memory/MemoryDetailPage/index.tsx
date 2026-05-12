@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { gregorianFarsiScriptDate, jalaaliScriptDate } from '@repo/core/utils/dates';
 
@@ -62,7 +62,10 @@ const MemoryDetailPage = () => {
           <MemoryHeader currentDate={currentDate} />
 
           <div className="relative">
-            <CustomImage src={memoryImage} />
+            <div className="relative w-full aspect-[16/9]">
+              <CustomImage_NEW src={memoryImage} className="w-full h-auto " fill />
+            </div>
+
             <div className="rounded-md py-1 px-4 absolute bottom-0 m-3 bg-impo_Pink_50 dark:bg-impo_Pink_900">
               <CustomTypography fontSize="Lable_Medium" className="text-impo_Primary_Primary">
                 {`ایجاد شده توسط ${memoryData.fromMan ? partnerName?.name : 'شما'}`}

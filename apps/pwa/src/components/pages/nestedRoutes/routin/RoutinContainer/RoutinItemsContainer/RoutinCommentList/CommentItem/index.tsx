@@ -1,4 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import RoutinWriter from '@components/pages/nestedRoutes/partner/PairRoutin/PairRoutinContainer/RoutinWriter';
@@ -11,7 +11,8 @@ const CommentItem = (props: CommentItemPropsType) => {
     <div className=" rounded-xl bg-impo_Neutral_Surface">
       <div className="px-3 py-4 flex flex-col justify-end items-end gap-4">
         <div className="flex flex-row-reverse justify-end items-center gap-2">
-          <CustomImage src={props.imageUrl} width={40} height={40} />
+          <CustomImage_NEW src={props.imageUrl} width={40} height={40} />
+
           <div className="flex flex-col items-end gap-1">
             <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
               {props.username}

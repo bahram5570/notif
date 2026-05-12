@@ -1,5 +1,5 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@repo/core/utils/scripts';
 
@@ -15,7 +15,9 @@ const TopicCardItem = (props: TopicCardItemPropsType) => {
       <div className="flex flex-col items-end gap-2">
         <div className="flex  justify-end items-end w-full">
           <div className="w-10 h-10 rounded-full bg-impo_Surface_SurfaceVariant flex justify-center items-center">
-            <CustomImage src={props.icon} className="min-w-6 min-h-6 " />
+            <div className="min-w-6 min-h-6  h-6 w-6">
+              <CustomImage_NEW src={props.icon} fill />
+            </div>
           </div>
         </div>
 

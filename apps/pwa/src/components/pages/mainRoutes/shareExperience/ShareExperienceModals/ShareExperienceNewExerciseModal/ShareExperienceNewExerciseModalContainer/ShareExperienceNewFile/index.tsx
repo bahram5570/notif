@@ -1,7 +1,7 @@
 import UploadIcon from '@assets/icons/gallery.svg';
 import CrossIcon from '@assets/shared/icons/plus.svg';
 import { SHARE_EXPERIENCE_UPLOAD_FILE_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
@@ -31,7 +31,10 @@ const ShareExperienceNewFile = ({
     <>
       {imageFile && (
         <div className="relative">
-          <CustomImage src={imageFile} className="rounded-xl" />
+          <div className=" w-full aspect-square ">
+            <CustomImage_NEW src={imageFile} fill className="rounded-xl" />
+          </div>
+          {/* <CustomImage src={imageFile} className="rounded-xl" /> */}
 
           {!uploadImageLoading && (
             <div

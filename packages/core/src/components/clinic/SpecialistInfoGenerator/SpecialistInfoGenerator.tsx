@@ -2,6 +2,7 @@ import { useMemo } from 'react';
 
 import { useSystem } from '../../../hooks/useSystem';
 import { CustomImage } from '../../ui/CustomImage';
+import { CustomImage_NEW } from '../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../ui/CustomTypography';
 import { SpecialistInfoGeneratorProps } from './types';
 
@@ -49,6 +50,7 @@ export const SpecialistInfoGenerator = ({
                 `}
     >
       <div className="relative w-12 h-12 min-w-12 min-h-12 rounded-full">
+        <CustomImage_NEW src={image} width={48} height={48} className="rounded-full" />
         <CustomImage src={image} width={48} height={48} className="rounded-full" />
 
         {isOnline && (

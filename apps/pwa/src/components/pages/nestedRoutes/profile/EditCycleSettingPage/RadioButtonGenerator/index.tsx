@@ -1,4 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import RadioButton from '@components/ui/RadioButton';
@@ -28,7 +28,7 @@ const RadioButtonGenerator = ({
           </CustomTypography>
         </div>
         <div className="flex justify-center items-center w-full  ">
-          <CustomImage src={imageUrl} className="mt-3" />
+          <CustomImage_NEW src={imageUrl} className="mt-3" width={372} height={444} />
         </div>
       </div>
     </div>

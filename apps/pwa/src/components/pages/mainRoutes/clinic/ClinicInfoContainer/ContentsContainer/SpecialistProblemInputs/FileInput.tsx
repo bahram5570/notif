@@ -1,7 +1,7 @@
 import AttachIcon from '@assets/icons/attach.svg';
 import DownloadedIcon from '@assets/icons/downloaded.svg';
 import TrashIcon from '@assets/shared/icons/trash.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { chatFileTypeDetector } from '@repo/core/utils/fileType';
 import { textShorter } from '@repo/core/utils/scripts';
@@ -42,7 +42,7 @@ const FileInput = ({ fileName, valuesHandler }: FileInputProps) => {
       {fileName !== '' && (
         <div className="relative w-full flex items-center justify-between gap-5 py-3">
           <div className="flex items-center gap-2">
-            {isImageType && <CustomImage src={fileName} width={48} height={48} className="rounded-md" />}
+            {isImageType && <CustomImage_NEW src={fileName} width={48} height={48} className="rounded-md" />}
 
             {!isImageType && (
               <div className="w-12 h-12 rounded-full flex items-center justify-center bg-impo_White">

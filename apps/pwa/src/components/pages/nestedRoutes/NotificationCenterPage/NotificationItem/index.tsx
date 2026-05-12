@@ -1,4 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { usePassedTime } from '@repo/core/hooks/usePassedTime';
@@ -19,7 +19,11 @@ const NotificationItem = (props: NotificationItemProps) => {
       className=" bg-impo_Neutral_Surface rounded-lg px-3 py-4 w-full flex flex-row-reverse gap-2 items-start"
       onClick={onClick}
     >
-      {props.icon && <CustomImage src={props.icon} className="w-8 h-8 min-w-8 min-h-8" />}
+      {props.icon && (
+        <div className="w-8 h-8 min-w-8 min-h-8">
+          <CustomImage_NEW src={props.icon} fill />
+        </div>
+      )}
 
       <div className="flex flex-col items-end gap-2 w-full">
         <div className="flex justify-between w-full flex-row-reverse">

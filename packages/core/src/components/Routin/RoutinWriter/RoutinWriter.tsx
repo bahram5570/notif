@@ -1,4 +1,4 @@
-import { CustomImage } from '../../ui/CustomImage';
+import { CustomImage_NEW } from '../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../ui/CustomTypography';
 import { WidgetRoutinWriterProps } from './types';
 
@@ -16,7 +16,7 @@ export const RoutinWriter = ({ writerIcon, writerName, writerSpeciality }: Widge
       </div>
 
       <div className="relative w-12 h-12 min-w-12 min-h-12 rounded-full">
-        <CustomImage src={writerIcon} />
+        <CustomImage_NEW fill src={writerIcon} />
       </div>
     </div>
   );

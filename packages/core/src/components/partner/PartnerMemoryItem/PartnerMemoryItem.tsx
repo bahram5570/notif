@@ -5,7 +5,7 @@ import { textShorter } from '../../../utils/scripts';
 import { useCalendarDateFormat } from '../../../hooks/useCalendarDateFormat';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useSystem } from '../../../hooks/useSystem';
-import { CustomImage } from '../../ui/CustomImage';
+import { CustomImage_NEW } from '../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../ui/CustomTypography';
 import { PartnerMemoryItemPropsType } from './type';
 
@@ -40,8 +40,10 @@ export const PartnerMemoryItem = (props: PartnerMemoryItemPropsType) => {
       <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-right w-full">
         {currentDate}
       </CustomTypography>
+      <div className="rounded-2xl w-full" style={{ height: 293 }}>
+        <CustomImage_NEW src={memoryImage} fill />
+      </div>
 
-      <CustomImage src={memoryImage} height={293} className="rounded-2xl w-full" />
       <div className="flex flex-col justify-end items-end">
         <div className="flex gap-2 items-center">
           <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground ">

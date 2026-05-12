@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTextareaInput } from '@repo/core/components/ui/CustomTextareaInput';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
@@ -24,7 +24,8 @@ const ChallengeQuestion = ({ avatarUrl, helper, question, id, btn }: ChallengeQu
         </CustomTypography>
 
         <div className="flex w-full flex-row-reverse gap-1">
-          <CustomImage src={avatarUrl} className="w-8 h-8 rounded-full !object-cover" />
+          <CustomImage_NEW width={32} height={32} src={avatarUrl} className=" rounded-full !object-cover" />
+
           <div className="flex w-full ">
             <CustomTextareaInput
               placeholder={helper}

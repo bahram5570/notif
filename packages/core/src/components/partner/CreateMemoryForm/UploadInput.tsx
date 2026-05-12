@@ -8,7 +8,7 @@ import { MODAL_QUERY_NAME } from '../../../constants/modal.constants';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
 import { useSystem } from '../../../hooks/useSystem';
-import { CustomImage } from '../../ui/CustomImage';
+import { CustomImage_NEW } from '../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../ui/CustomTypography';
 import { UploadInputPropsType } from './type';
 
@@ -79,7 +79,7 @@ export const UploadInput = ({ fileName, uploadImageLoading, onChangeHandler }: U
         <div className="flex flex-col gap-3">
           <div className="flex rounded-2xl justify-between items-center px-5 py-3 gap-3 bg-impo_Surface_SurfaceVariant">
             <div className="flex gap-3">
-              <CustomImage src={fileName} width={48} height={48} className="rounded-md" />
+              <CustomImage_NEW src={fileName} width={48} height={48} className="rounded-md" />
 
               <CustomTypography fontSize="Body_Medium" className="break-all text-left text-impo_Neutral_OnBackground">
                 {fileNameScript}

@@ -1,4 +1,4 @@
-import { CustomImage } from '../../ui/CustomImage';
+import { CustomImage_NEW } from '../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../ui/CustomTypography';
 import { AvatarContainerPropsType } from './type';
 
@@ -14,7 +14,7 @@ export const Avatar = (props: AvatarContainerPropsType) => {
     <div className={wrapperClass} onClick={props.onClick}>
       <div className="relative">
         <div className={avatarClass} style={{ border: '4px solid #f2eeee' }}>
-          <CustomImage
+          <CustomImage_NEW
             src={props.src}
             width={96}
             height={96}

@@ -1,5 +1,5 @@
 import { SHARE_EXPERIENCE_ASSOCIATION_ITEM_QUERY_NAME } from '@repo/core/components/ShareExperience';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
@@ -29,7 +29,13 @@ const ShareExperienceAssociationItemModules = ({
 
   return (
     <div className={className} onClick={clickHandler}>
-      <CustomImage src={image} width={imageWidth} height={imageHeight} className=" rounded-full" />
+      <div
+        style={{ width: imageWidth, height: imageHeight, maxWidth: imageWidth, maxHeight: imageHeight }}
+        className=" rounded-full"
+      >
+        <CustomImage_NEW src={image} className=" object-cover w-full h-full" fill />
+      </div>
+
       <CustomTypography
         className="text-impo_Neutral_OnBackground !whitespace-nowrap overflow-hidden"
         fontSize="Lable_SmallProminet"

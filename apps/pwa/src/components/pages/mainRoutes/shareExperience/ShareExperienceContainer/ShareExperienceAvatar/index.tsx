@@ -1,5 +1,5 @@
 import { SHARE_EXPERIENCE_PROFILE_QUERY_NAME } from '@repo/core/components/ShareExperience';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
@@ -26,7 +26,7 @@ const ShareExperienceAvatar = ({ profile }: ShareExperienceAvatarProps) => {
       style={{ maxWidth: MAX_SCREEN_WIDTH }}
     >
       <div className="h-fit pointer-events-auto" onClick={selectHandler}>
-        <CustomImage src={profile.avatarImage} width={40} className="rounded-full" />
+        <CustomImage_NEW src={profile.avatarImage} width={40} height={40} className="rounded-full" />
       </div>
     </div>
   );

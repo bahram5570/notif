@@ -1,6 +1,6 @@
 import { RoutinRatingStats } from '@repo/core/components/Routin/RoutinRatingStats';
 import { RoutinWriter } from '@repo/core/components/Routin/RoutinWriter';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { RoutinHeadingProps } from './types';
@@ -9,7 +9,7 @@ const RoutinHeading = (props: RoutinHeadingProps) => {
   return (
     <div className="flex flex-col gap-2 pb-4">
       <div className="w-full flex items-center justify-between gap-5 ">
-        <CustomImage src={props.image} width={88} height={88} />
+        <CustomImage_NEW src={props.image} width={88} height={88} />
 
         <div className="flex flex-col items-end gap-2">
           <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">

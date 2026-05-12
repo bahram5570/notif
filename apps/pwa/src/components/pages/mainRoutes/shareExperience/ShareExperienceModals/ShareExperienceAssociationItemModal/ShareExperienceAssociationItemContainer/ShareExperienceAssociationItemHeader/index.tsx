@@ -2,7 +2,7 @@ import { useRef } from 'react';
 
 import { CustomBackButton } from '@repo/core/components/ui/CustomBackButton';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
@@ -66,7 +66,7 @@ const ShareExperienceAssociationItemHeader = (props: ShareExperienceAssociationI
       >
         <div className="flex flex-col gap-2 items-end">
           <div className="flex flex-row-reverse items-center  gap-3">
-            <CustomImage src={props.cover} width={72} height={72} className="rounded-full" />
+            <CustomImage_NEW src={props.cover} width={72} height={72} className="rounded-full" />
             <AssociationItemHeaderInfo
               experienceCount={props.experienceCount}
               followerCount={props.followerCount}

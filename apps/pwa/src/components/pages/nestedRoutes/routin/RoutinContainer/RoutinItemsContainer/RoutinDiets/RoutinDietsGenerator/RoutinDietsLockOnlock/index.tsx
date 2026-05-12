@@ -1,6 +1,6 @@
 import LockIcon from '@assets/icons/LockKeyhole.svg';
 import TickIcon from '@assets/shared/icons/tickIcon.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@repo/core/utils/scripts';
 
@@ -25,7 +25,7 @@ const RoutinDietsLockOnlock = ({ item, onClick }: RoutinDietsLockOnlockPropsType
           <div
             className={`w-full h-full rounded-xl ${item.status === ProgramWidgetItemStatusEnum.locked ? 'blur-[1px]' : ''} overflow-hidden`}
           >
-            <CustomImage src={item.image} />
+            <CustomImage_NEW fill src={item.image} />
           </div>
         </div>
       </div>

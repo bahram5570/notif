@@ -1,4 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { NEW_REPLY_MAX_CHARACTERS } from '../constants';
@@ -22,7 +22,7 @@ const NewReplyTopPart = ({ name, avatar, text }: NewReplyTopPartProps) => {
           <div
             className={`w-10 h-10 rounded-full bg-impo_Neutral_Background border-[1px] border-impo_Neutral_Background overflow-hidden ml-0 relative `}
           >
-            <CustomImage src={avatar} className="!object-cover" />
+            <CustomImage_NEW src={avatar} className="!object-cover" fill />
           </div>
         </div>
       </div>

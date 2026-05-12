@@ -1,6 +1,6 @@
 import RefreshIcon from '@assets/icons/Restart.svg';
 import CancelIcon from '@assets/icons/cancel.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 
 import style from './styles.module.css';
 
@@ -46,7 +46,7 @@ const FilePreview = (props: FilePreviewPropsType) => {
         <CancelIcon className="w-4 h-auto stroke-impo_Neutral_OnBackground" />
       </div>
 
-      <CustomImage
+      <CustomImage_NEW
         width={116}
         height={116}
         src={props.url}

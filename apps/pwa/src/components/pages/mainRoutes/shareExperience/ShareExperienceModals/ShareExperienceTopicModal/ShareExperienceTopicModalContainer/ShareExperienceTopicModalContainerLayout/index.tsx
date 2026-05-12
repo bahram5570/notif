@@ -1,5 +1,5 @@
 import { CustomBackButton } from '@repo/core/components/ui/CustomBackButton';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
@@ -21,7 +21,11 @@ const ShareExperienceTopicModalContainerLayout = ({
       <div ref={scrollRef} className="h-full overflow-y-auto">
         {!isLoading && (
           <div className="relative w-full">
-            {coverImage && <CustomImage src={coverImage} className="w-full object-cover" />}
+            {coverImage && (
+              <div className="relative w-full aspect-square">
+                <CustomImage_NEW src={coverImage} className="w-full object-cover" fill />
+              </div>
+            )}
 
             <div className="absolute bottom-4 right-4">
               <CustomTypography fontSize="Title_Medium" className="text-impo_White">

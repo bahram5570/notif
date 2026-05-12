@@ -5,7 +5,7 @@ import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoadin
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
 import { useShareExperienceHandlers } from '../../../hooks/useShareExperienceHandlers/useShareExperienceHandlers';
 import { useWidgetActions } from '../../../hooks/useWidgetActions';
-import { CustomImage } from '../../ui/CustomImage';
+import { CustomImage_NEW } from '../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../ui/CustomTypography';
 import { TagType } from '../types';
 import { ContentsSectionModuleProps } from './type';
@@ -62,12 +62,15 @@ export const ContentsSectionModule = (props: ContentsSectionModuleProps) => {
         })}
 
       {image.trim().length > 0 && (
-        <CustomImage
-          src={image}
-          hasPreviewImage={true}
-          previewImageShape="full"
-          className="aspect-[16_/_9] rounded-xl object-cover"
-        />
+        <div className="overflow-hidden aspect-[16_/_9] rounded-xl object-cover ">
+          <CustomImage_NEW
+            src={image}
+            hasPreviewImage={true}
+            previewImageShape="full"
+            className="aspect-[16_/_9] rounded-xl object-cover w-full h-full"
+            fill
+          />
+        </div>
       )}
     </div>
   );

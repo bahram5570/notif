@@ -1,4 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { colorFormatConverter } from '@repo/core/utils/scripts';
 
@@ -7,14 +7,15 @@ import { SegmentGeneratorPropsType } from './type';
 
 const SegmentGenerator = (props: SegmentGeneratorPropsType) => {
   return (
-    <div className=" mt-2">
+    <div className="mt-4">
       <div
         style={{
           background: colorFormatConverter(props.backgroundColor),
         }}
         className="flex justify-between items-center px-3 rounded-tr-2xl rounded-tl-2xl"
       >
-        <CustomImage src={props.image} />
+        <CustomImage_NEW src={props.image} width={72} height={72} />
+
         <div className="flex flex-col justify-end items-end pr-2">
           <CustomTypography
             fontSize="Lable_LargeProminet"

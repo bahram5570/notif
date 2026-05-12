@@ -1,5 +1,5 @@
 import { ChatContainerMaker, ChatsFileGenerator } from '@repo/core/components/clinic';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { chatFileTypeDetector } from '@repo/core/utils/fileType';
 
 import { MessageGeneratorMediaProps } from './types';
@@ -11,7 +11,7 @@ const MessageGeneratorMedia = ({ dateTime, sideType, media }: MessageGeneratorMe
     <>
       <ChatContainerMaker dateTime={dateTime} sideType={sideType} width="fit-content">
         {isImageType && (
-          <CustomImage hasPreviewImage={true} src={media} width={260} className="rounded-xl" objectFit="cover" />
+          <CustomImage_NEW hasPreviewImage={true} src={media} width={260} className="rounded-xl object-cover" />
         )}
         {!isImageType && <ChatsFileGenerator media={media} />}
       </ChatContainerMaker>

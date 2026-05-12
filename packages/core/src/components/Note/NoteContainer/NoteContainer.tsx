@@ -58,9 +58,6 @@ export const NoteContainer = () => {
                   میخوای به کارهات اولویت بدی؟
                 </CustomTypography>
 
-                {/* <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
-                  کارهات رو اینجا بنویس و در صورت لزوم میتونی یادآور هم براش تنظیم کنی
-                </CustomTypography> */}
                 <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-center">
                   کارهات رو اینجا بنویس
                 </CustomTypography>

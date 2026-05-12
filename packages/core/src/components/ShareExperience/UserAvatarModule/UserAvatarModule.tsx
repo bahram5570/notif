@@ -4,7 +4,7 @@ import { useAnalytics } from '../../../hooks/useAnalytics';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
 import { useShareExperienceHandlers } from '../../../hooks/useShareExperienceHandlers/useShareExperienceHandlers';
-import { CustomImage } from '../../ui/CustomImage';
+import { CustomImage_NEW } from '../../ui/CustomImage_NEW';
 import { SHARE_EXPERIENCE_CHANGE_AVATAR_QUERY_NAME } from '../constants';
 import { UserAvatarModuleProps } from './type';
 
@@ -35,7 +35,7 @@ export const UserAvatarModule = ({ id, avatarImage, showChangeAvatarIcon, userna
           className="overflow-hidden rounded-full flex justify-center items-center"
           onClick={() => callEvent(showChangeAvatarIcon ? 'ShareExperienceSelfProfile' : 'ShareExperienceOtherProfile')}
         >
-          <CustomImage
+          <CustomImage_NEW
             width={88}
             height={88}
             src={avatarImage}

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 import CloseIcon from '@assets/shared/icons/plus.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 
 const ShareExperienceBanner = ({ bannerMedia }: { bannerMedia: string }) => {
   const [showBanner, setShowBanner] = useState(true);
@@ -17,7 +17,9 @@ const ShareExperienceBanner = ({ bannerMedia }: { bannerMedia: string }) => {
       >
         <CloseIcon className="w-4 h-auto rotate-45 stroke-impo_Grey_900 dark:stroke-impo_Grey_50" />
       </div>
-      <CustomImage src={bannerMedia} className="rounded-2xl pb-[2px] relative" />
+      <div className="relative w-full aspect-square ">
+        <CustomImage_NEW src={bannerMedia} className="w-full object-cover rounded-2xl pb-[2px] relative" fill />
+      </div>
     </div>
   );
 };

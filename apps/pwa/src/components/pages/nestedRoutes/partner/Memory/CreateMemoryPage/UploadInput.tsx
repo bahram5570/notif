@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import PaperClipIcon from '@assets/icons/paperclip.svg';
 import TrashIcon from '@assets/shared/icons/trash.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@repo/core/utils/scripts';
 
@@ -49,7 +49,7 @@ const UploadInput = ({ fileName, uploadImageLoading, valuesHandler }: UploadInpu
         <div className="flex flex-col gap-3">
           <div className="flex rounded-2xl justify-between items-center px-5 py-3 gap-3 bg-impo_Surface_SurfaceVariant">
             <div className="flex gap-3">
-              <CustomImage src={fileName} width={48} height={48} className="rounded-md" />
+              <CustomImage_NEW src={fileName} width={48} height={48} className="rounded-md" />
               <CustomTypography fontSize="Body_Medium" className="break-all text-left text-impo_Neutral_OnBackground">
                 {fileNameScript}
               </CustomTypography>
