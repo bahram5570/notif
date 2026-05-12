@@ -1,11 +1,9 @@
 import { useEffect, useState } from 'react';
 
-import { PREVIEW_IMAGE } from '@repo/core/constants/modal.constants';
-import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-
-import { PreviewImageTypes } from '../../../../../../../packages/core/dist/providers/PreviewImageProvider/types';
-// !
+import { PREVIEW_IMAGE } from '../../../../../constants/modal.constants';
+import { usePageNavigationLoading } from '../../../../../hooks/usePageNavigationLoading';
+import { useQueryParamsHandler } from '../../../../../hooks/useQueryParamsHandler';
+import { PreviewImageTypes } from '../../../../../providers/PreviewImageProvider/types';
 import { PreviewImageHandlerTypes } from './types';
 
 const usePreviewImage = () => {

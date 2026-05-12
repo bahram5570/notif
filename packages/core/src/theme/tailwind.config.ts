@@ -63,7 +63,7 @@ const preset: Config = {
         modalSlidingModeClose: 'modalSlidingModeClose 0.2s linear forwards',
         widgetCurculeContainer: 'widgetCurculeContainer 0.5s linear backwards',
         widgetCurculeCycle: 'widgetCurculeCycle 0.3s linear backwards',
-        skeleton: 'skeleton 1.5s linear infinite',
+        skeleton: 'skeleton 1s linear infinite',
       },
     },
     colors: {

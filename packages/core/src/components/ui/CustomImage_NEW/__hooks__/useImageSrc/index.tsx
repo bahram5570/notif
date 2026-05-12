@@ -1,17 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { isDevelopeMode } from '../../../../../utils/system';
 import { handleHttpImage, handleImageName, handleLocalImage } from './__utils__';
-import { isDevelopeMode } from '@repo/core/utils/system';
 
 import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
-// !
-// import { isDevelopeMode } from '../../../../../utils/system';
+import { UseImageSrcTypes } from './types';
 
-import { UseImageSrcProps } from './types';
-
-const useImageSrc = ({ src, imageApi, onError }: UseImageSrcProps) => {
-  const [resetKey, setResetKey] = useState('');
+const useImageSrc = ({ src, imageApi, onError }: UseImageSrcTypes) => {
   const isFirstTime = useRef(isDevelopeMode());
   const [updatedSrc, setUpdatedSrc] = useState<StaticImport | string>('');
 
@@ -38,7 +34,6 @@ const useImageSrc = ({ src, imageApi, onError }: UseImageSrcProps) => {
         result = src;
       }
 
-      setResetKey(Math.random().toString());
       setUpdatedSrc(result);
     } catch (err) {
       onError();
@@ -54,7 +49,7 @@ const useImageSrc = ({ src, imageApi, onError }: UseImageSrcProps) => {
     updateHandler();
   }, [src]);
 
-  return { updatedSrc, resetKey };
+  return updatedSrc;
 };
 
 export default useImageSrc;
