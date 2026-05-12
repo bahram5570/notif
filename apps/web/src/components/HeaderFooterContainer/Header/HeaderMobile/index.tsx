@@ -1,10 +1,13 @@
 'use client';
 
 import ImpoIcon from '@assets/icons/impoName.svg';
+import dlpairbannermobile from '@assets/images/dlpairbannermobile.webp';
 
+import style from '../style.module.css';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
 import MenuIcon from '@mui/icons-material/Menu';
 
+import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 
 import HeaderTheme from '../HeaderTheme';
@@ -17,6 +20,10 @@ const HeaderMobile = () => {
 
   return (
     <>
+      {/* <CustomLink href={'/dlpair'}>
+        <CustomImage alt="landing" src={dlpairbannermobile} className={style.dlpairbannermobile} />
+      </CustomLink> */}
+
       <div
         style={{ height: HEADER_MOBILE_HEIGHT }}
         className="w-full pl-4 pr-6 flex items-center justify-between border-b-[1px] border-b-impo_Surface_SurfaceVariant bg-impo_OnBlack"

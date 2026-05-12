@@ -1,7 +1,6 @@
 import http from '@services/http';
 
 import ArticleIdPageContainer from '@components/pages/articleId/ArticleIdPageContainer';
-import NotFoundPage from '@components/pages/notFound/NotFoundPage';
 import { CACHE_REVALIDATE_TIME } from '@constants/app.constants';
 import { HOST_URL } from '@constants/links.constants';
 import { Metadata } from 'next';
@@ -10,6 +9,7 @@ import ArticleSchema from '../../schema/ArticleSchema';
 import { ArticleIdResponseTypes } from './types';
 
 export const dynamic = 'force-static';
+export const revalidate = CACHE_REVALIDATE_TIME;
 
 export const generateMetadata = async (props: { params: { articleId: string } }): Promise<Metadata> => {
   const articleId = props.params.articleId;
@@ -33,8 +33,7 @@ const Article = async (props: { params: { articleId: string } }) => {
   const { data: metaData } = await getMetaData(articleId);
 
   if (!articleData || !metaData) {
-    await revalidateArticleData(articleId);
-    return <NotFoundPage />;
+    throw new Error('Fetch APIs failed!');
   }
 
   return (
@@ -50,17 +49,7 @@ export default Article;
 const getArticleData = async (articleId: string) => {
   return await http<ArticleIdResponseTypes>({
     method: 'GET',
-    cache: 'force-cache',
-    revalidate: CACHE_REVALIDATE_TIME,
-    url: `support/article/sp/published/${articleId}`,
-  });
-};
-
-const revalidateArticleData = async (articleId: string) => {
-  await http<ArticleIdResponseTypes>({
-    method: 'GET',
-    revalidate: 60,
-    cache: 'force-cache',
+    tags: [articleId],
     url: `support/article/sp/published/${articleId}`,
   });
 };

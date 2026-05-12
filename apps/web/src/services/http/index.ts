@@ -1,11 +1,9 @@
 import { applyOptions, clearCacheHandler } from './__utils__';
 
-import { SERVER_URL, SSL_STAGE_URL, STAGE_URL } from '@constants/links.constants';
+import { SERVER_URL } from '@constants/links.constants';
 
 import { HttpResultTypes, HttpTypes } from './types';
 
-// export const baseUrl = STAGE_URL;
-// export const baseUrl = SSL_STAGE_URL;
 export const baseUrl = SERVER_URL;
 
 export const articleImageUrl = baseUrl + '/support/article/panel/image/';
@@ -15,7 +13,7 @@ const http = async <T>(props: HttpTypes) => {
   const result: HttpResultTypes<T> = { data: undefined, error: undefined };
 
   try {
-    const { options } = await applyOptions(props);
+    const options = await applyOptions(props);
     const url = `${baseUrl}/${props.url}`;
     const res = await fetch(url, options);
 

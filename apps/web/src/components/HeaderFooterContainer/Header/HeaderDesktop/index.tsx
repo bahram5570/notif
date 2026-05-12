@@ -1,8 +1,12 @@
 import ImpoNameIcon from '@assets/icons/impoName.svg';
+import dlpairbanner from '@assets/images/dlpairbanner.webp';
 import { scrollToIdHandler } from '@utils/navigation';
+
+import style from '../style.module.css';
 
 import { DOWNLOAD_APP_SECTION_ID } from '@components/DownloadApp/DownloadAppWomen/constants';
 import CustomButton from '@components/ui/CustomButton';
+import CustomImage from '@components/ui/CustomImage';
 import CustomLink from '@components/ui/CustomLink';
 
 import HeaderTheme from '../HeaderTheme';
@@ -15,6 +19,10 @@ const HeaderDesktop = () => {
 
   return (
     <>
+      {/* <CustomLink href={'/dlpair'}>
+        <CustomImage alt="landing" src={dlpairbanner} className={style.dlpairbanner} />
+      </CustomLink> */}
+
       <div
         className="
                     relative 
