@@ -16,6 +16,7 @@ export { ReportButtonModule } from './ReportButtonModule/ReportButtonModule';
 export { FollowActionModule } from './FollowActionModule/FollowActionModule';
 export { LikeActionModule } from './LikeActionModule/LikeActionModule';
 export { ShareExperienceToast } from './ShareExperienceToast/ShareExperienceToast';
+export { PostInView } from './PostInView/PostInView';
 export { NewPostLink } from './NewPostLink/NewPostLink';
 
 export * from './constants';

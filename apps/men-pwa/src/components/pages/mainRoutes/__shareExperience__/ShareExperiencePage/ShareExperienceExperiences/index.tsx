@@ -22,7 +22,6 @@ import ShareExperienceTopicModal from '../../ShareExperienceModals/ShareExperien
 import ShareExperienceUnfollowModal from '../../ShareExperienceModals/ShareExperienceUnfollowModal';
 import ShareExperiencePostCardModules from '../../ShareExperienceModules/ShareExperiencePostCardModules';
 import ShareExperienceAssociation from '../ShareExperienceAssociation';
-import ShareExperienceInView from './ShareExperienceInView';
 import useExperiences from './__hooks__/useExperiences';
 import { ShareExperienceExperiencesProps } from './types';
 
@@ -83,16 +82,14 @@ const ShareExperienceExperiences = ({
                 />
               )}
 
-              <ShareExperienceInView>
-                <ShareExperiencePostCardModules
-                  {...item}
-                  type="experiences"
-                  shareId={item.id}
-                  isSelf={item.selfExperience}
-                  hasLinkTo={true}
-                  className=" border-t-[1px] border-t-impo_Neutral_Surface z-0 px-4"
-                />
-              </ShareExperienceInView>
+              <ShareExperiencePostCardModules
+                {...item}
+                type="experiences"
+                shareId={item.id}
+                isSelf={item.selfExperience}
+                hasLinkTo={true}
+                className=" border-t-[1px] border-t-impo_Neutral_Surface z-0 px-4"
+              />
             </Fragment>
           );
         })}
