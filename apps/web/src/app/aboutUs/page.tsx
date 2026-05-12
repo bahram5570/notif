@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     canonical: `${HOST_URL}/aboutUs`,
   },
 };
+
 const AboutUs = () => {
   return <AboutUsContainer />;
 };

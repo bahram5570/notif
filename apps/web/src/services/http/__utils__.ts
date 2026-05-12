@@ -1,36 +1,40 @@
 import Cookies from 'js-cookie';
 
-import { CacheTypes, HttpTypes, OptionsTypes } from './types';
+import { HttpTypes, OptionsTypes } from './types';
 
 const cacheOptionsFinder = (props: HttpTypes) => {
-  let cacheOptions: CacheTypes = {};
-  const cache = props.cache || 'no-store';
-
-  if (props.cache === 'force-cache') {
-    props.tags;
-    cacheOptions = { cache };
-
-    if (typeof props.revalidate !== 'undefined') {
-      cacheOptions = { ...cacheOptions, revalidate: props.revalidate };
-    }
-
-    if (typeof props.tags !== 'undefined') {
-      cacheOptions = { ...cacheOptions, tags: props.tags };
-    }
-  } else {
-    cacheOptions = { cache };
+  const isGetMethod = props.method === undefined || props.method === 'GET';
+  if (!isGetMethod) {
+    return {};
   }
 
-  return { cacheOptions };
+  let next = {};
+  let cacheOptions = {};
+
+  if (props.tags !== undefined) {
+    next = { ...next, tags: props.tags };
+  }
+
+  if (props.cache === 'force-cache') {
+    if (props.revalidate !== undefined) {
+      next = { ...next, revalidate: props.revalidate };
+    }
+  } else if (props.cache === 'no-store') {
+    cacheOptions = { cache: props.cache };
+  }
+
+  cacheOptions = { ...cacheOptions, next };
+
+  return cacheOptions;
 };
 
 export const applyOptions = async (props: HttpTypes) => {
-  const { cacheOptions } = cacheOptionsFinder(props);
+  const cacheOptions = cacheOptionsFinder(props);
 
-  let result: OptionsTypes = { method: props.method || 'GET' };
-  result = props.contentType === 'multipart/form-data' ? { ...result } : { ...result, ...cacheOptions };
+  let options: OptionsTypes = { method: props.method || 'GET' };
+  options = props.contentType === 'multipart/form-data' ? { ...options } : { ...options, ...cacheOptions };
 
-  let headers: object = {};
+  let headers: HeadersInit = {};
 
   if (props.method === 'POST' || props.method === 'PUT') {
     let body = undefined;
@@ -45,24 +49,12 @@ export const applyOptions = async (props: HttpTypes) => {
       body = JSON.stringify(props.payload);
     }
 
-    result = { ...result, body };
+    options = { ...options, body };
   }
 
-  let options: object = { method: result.method, headers };
+  options = { ...options, headers };
 
-  if (result.body) {
-    options = { ...options, body: result.body };
-  }
-
-  if (result.method === 'GET') {
-    if (result.cache === 'force-cache') {
-      options = { ...options, next: { revalidate: result.revalidate, tags: result.tags } };
-    } else if (result.cache === 'no-store') {
-      options = { ...options, cache: 'no-store' };
-    }
-  }
-
-  return { options };
+  return options as unknown as RequestInit;
 };
 
 export const clearCacheHandler = () => {

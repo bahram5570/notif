@@ -5,6 +5,7 @@ type DoCacheTypes = {
 };
 type NoCacheTypes = {
   cache?: 'no-store';
+  tags?: string[];
 };
 
 export type MethodNameTypes = 'GET' | 'DELETE' | 'POST' | 'PUT';
