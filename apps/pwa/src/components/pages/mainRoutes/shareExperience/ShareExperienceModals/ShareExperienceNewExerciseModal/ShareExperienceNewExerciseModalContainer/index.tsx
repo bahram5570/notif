@@ -80,7 +80,7 @@ const ShareExperienceNewExerciseModalContainer = ({
                 <ShareExperienceNewText textHandler={textHandler} text={text} placeholder={config.placeholder} />
 
                 <ShareExperienceNewFile
-                  imageFile={fileProps.imageFile}
+                  imageFile={fileProps.image}
                   removeFileHandler={fileProps.removeFileHandler}
                   uploadImageLoading={fileProps.uploadImageLoading}
                   onChangeBtnTop={onChangeBtnTop}

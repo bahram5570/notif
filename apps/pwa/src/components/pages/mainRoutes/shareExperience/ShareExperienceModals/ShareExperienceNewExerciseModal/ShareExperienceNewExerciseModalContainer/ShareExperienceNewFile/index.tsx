@@ -34,7 +34,6 @@ const ShareExperienceNewFile = ({
           <div className=" w-full aspect-square ">
             <CustomImage_NEW src={imageFile} fill className="rounded-xl" />
           </div>
-          {/* <CustomImage src={imageFile} className="rounded-xl" /> */}
 
           {!uploadImageLoading && (
             <div
