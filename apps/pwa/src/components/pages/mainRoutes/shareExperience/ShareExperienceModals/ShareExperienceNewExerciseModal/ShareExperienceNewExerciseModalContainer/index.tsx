@@ -14,6 +14,7 @@ import UploadFileModal from './ShareExperienceNewFile/UploadFileModal';
 import ShareExperienceNewText from './ShareExperienceNewText';
 import ShareExperienceNewTopPart from './ShareExperienceNewTopPart';
 import ShareExperienceNewTopics from './ShareExperienceNewTopics';
+import ShareExperienceRules from './ShareExperienceRules';
 import useConfigNewExperience from './__hooks__/useConfig';
 import useImage from './__hooks__/useImage';
 import useSubmit from './__hooks__/useSubmit';
@@ -74,28 +75,33 @@ const ShareExperienceNewExerciseModalContainer = ({
           )}
           {!configLoading && config && (
             <>
-              <ShareExperienceNewTopPart avatarImage={avatarImage} text={text} username={username} />
+              {config.showRegualtion && <ShareExperienceRules textRegualtion={config.textRegualtion} />}
+              {!config.showRegualtion && (
+                <>
+                  <ShareExperienceNewTopPart avatarImage={avatarImage} text={text} username={username} />
 
-              <div className="w-full pr-[48px]  flex flex-col gap-2 -translate-y-2" ref={conainerRef}>
-                <ShareExperienceNewText textHandler={textHandler} text={text} placeholder={config.placeholder} />
+                  <div className="w-full pr-[48px]  flex flex-col gap-2 -translate-y-2" ref={conainerRef}>
+                    <ShareExperienceNewText textHandler={textHandler} text={text} placeholder={config.placeholder} />
 
-                <ShareExperienceNewFile
-                  imageFile={fileProps.imageFile}
-                  removeFileHandler={fileProps.removeFileHandler}
-                  uploadImageLoading={fileProps.uploadImageLoading}
-                  onChangeBtnTop={onChangeBtnTop}
-                />
-              </div>
+                    <ShareExperienceNewFile
+                      imageFile={fileProps.imageFile}
+                      removeFileHandler={fileProps.removeFileHandler}
+                      uploadImageLoading={fileProps.uploadImageLoading}
+                      onChangeBtnTop={onChangeBtnTop}
+                    />
+                  </div>
 
-              <ShareExperienceNewContinueBtn
-                text={text}
-                btnTop={btnTop}
-                sendEnable={config.sendEnable}
-                toast={config.toast || toastMessage}
-                associationId={associationId}
-                isSubmitLoading={isSubmitLoading}
-                submitHandler={submitHandler}
-              />
+                  <ShareExperienceNewContinueBtn
+                    text={text}
+                    btnTop={btnTop}
+                    sendEnable={config.sendEnable}
+                    toast={config.toast || toastMessage}
+                    associationId={associationId}
+                    isSubmitLoading={isSubmitLoading}
+                    submitHandler={submitHandler}
+                  />
+                </>
+              )}
             </>
           )}
         </div>
