@@ -1,18 +1,13 @@
 import { FOOTER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
-import { useSystem } from '@repo/core/hooks/useSystem';
 
 import PageIcons from './PageIcons';
 import { FOOTER_PAGES_LIST } from './constants';
 import { MainFooterContainerProps } from './types';
 
 const MainFooterContainer = ({ pathName }: MainFooterContainerProps) => {
-  const { operatingSystem } = useSystem();
-
-  const height = operatingSystem === 'ios' ? FOOTER_HEIGHT + 16 : FOOTER_HEIGHT;
-
   return (
     <div
-      style={{ maxWidth: MAX_SCREEN_WIDTH, height }}
+      style={{ maxWidth: MAX_SCREEN_WIDTH, height: FOOTER_HEIGHT }}
       className="fixed left-0 right-0 bottom-0 mx-auto px-4 pt-2 grid grid-flow-col bg-impo_Neutral_Background z-10"
     >
       {FOOTER_PAGES_LIST.map((item, index) => (

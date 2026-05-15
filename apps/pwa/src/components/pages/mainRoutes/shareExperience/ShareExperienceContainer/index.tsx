@@ -5,6 +5,8 @@ import { useRef } from 'react';
 import { MainPageLayoutHeader } from '@repo/core/components/MainPageLayout';
 import { CategoriesSlider, ShareExperienceToast } from '@repo/core/components/ShareExperience';
 
+import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
+
 import ShareExperienceBanner from '../ShareExperienceModules/ShareExperienceBanner';
 import ShareExperienceAvatar from './ShareExperienceAvatar';
 import ShareExperienceExperiences from './ShareExperienceExperiences';
@@ -29,8 +31,12 @@ const ShareExperienceContainer = () => {
 
       <div
         ref={scrollRef}
-        style={{ height: '100dvh' }}
-        className={`flex-1 overflow-y-auto ${isLoading ? 'pointer-events-none' : ''}`}
+        style={{
+          height: '100dvh',
+          overflow: 'auto',
+          paddingBottom: FOOTER_HEIGHT + 16,
+          pointerEvents: isLoading ? 'none' : 'auto',
+        }}
       >
         {isLoading && !data && <ShareExperienceSkeleton />}
 
@@ -64,14 +70,14 @@ const ShareExperienceContainer = () => {
 
                 {selectedCategoryId && (
                   <ShareExperienceExperiences
+                    scrollRef={scrollRef}
                     profile={data.profile}
                     key={selectedCategoryId}
+                    associations={data.associations}
+                    showAssociation={showAssociation}
                     selectedCategoryId={selectedCategoryId}
                     onSuccessNewHandler={onSuccessNewHandler}
-                    scrollRef={scrollRef}
-                    showAssociation={showAssociation}
                     associationSectionTitle={data.associationSectionTitle}
-                    associations={data.associations}
                   />
                 )}
               </>

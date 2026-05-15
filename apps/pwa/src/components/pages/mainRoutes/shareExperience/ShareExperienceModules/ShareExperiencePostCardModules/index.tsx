@@ -11,7 +11,7 @@ const ShareExperiencePostCardModules = (props: ShareExperiencePostCardModulesPro
   const { likeHandler } = useLikes(props);
 
   return (
-    <div className={`w-full  pt-5 pb-4 ${props.className}`}>
+    <div className={`w-full pt-5 pb-4 ${props.className}`}>
       <HeaderPostSection
         {...props}
         selfExperience={props.isSelf}

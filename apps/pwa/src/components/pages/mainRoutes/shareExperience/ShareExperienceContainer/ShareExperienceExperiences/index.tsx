@@ -1,8 +1,8 @@
 import { Fragment } from 'react';
 
-import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
-
-import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
+import { InfiniteList } from '@repo/core/components/InfiniteList';
+import { EXPERIENCES_PAGE_SIZE } from '@repo/core/components/ShareExperience';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import ShareExperienceAssociationItemModal from '../../ShareExperienceModals/ShareExperienceAssociationItemModal';
 import ShareExperienceAssociationListModal from '../../ShareExperienceModals/ShareExperienceAssociationListModal';
@@ -22,23 +22,28 @@ import ShareExperienceTopicModal from '../../ShareExperienceModals/ShareExperien
 import ShareExperienceUnfollowModal from '../../ShareExperienceModals/ShareExperienceUnfollowModal';
 import ShareExperiencePostCardModules from '../../ShareExperienceModules/ShareExperiencePostCardModules';
 import ShareExperienceAssociation from '../ShareExperienceAssociation';
-import ShareExperienceInView from './ShareExperienceInView';
 import useExperiences from './__hooks__/useExperiences';
 import { ShareExperienceExperiencesProps } from './types';
 
 const ShareExperienceExperiences = ({
+  associationSectionTitle,
   onSuccessNewHandler,
   selectedCategoryId,
-  profile,
-  scrollRef,
   showAssociation,
-  associationSectionTitle,
   associations,
+  scrollRef,
+  profile,
 }: ShareExperienceExperiencesProps) => {
   const { isLoading, experiencesData, pageNo, totalCount, updatePageNo } = useExperiences(selectedCategoryId);
 
   return (
     <>
+      {isLoading && experiencesData === undefined && (
+        <div className="w-full flex justify-center items-end p-4">
+          <CustomSpinner size={40} className="border-impo_Surface_Outline" />
+        </div>
+      )}
+
       {!isLoading && experiencesData && (
         <>
           <ShareExperienceNewExerciseModal
@@ -64,39 +69,38 @@ const ShareExperienceExperiences = ({
         </>
       )}
 
-      <InfiniteScrollContainer
-        pageNo={pageNo}
-        isLoading={isLoading}
-        totalCount={totalCount}
-        callBack={updatePageNo}
-        scrollContainerRef={scrollRef}
-        className="flex flex-col relative"
-        style={{ paddingBottom: FOOTER_HEIGHT * 2 }}
-      >
-        {experiencesData?.expirences.map((item, index) => {
-          return (
+      {experiencesData?.expirences && (
+        <InfiniteList
+          parentRef={scrollRef}
+          list={experiencesData?.expirences}
+          pagination={{
+            pageNo,
+            isLoading,
+            totalCount,
+            callPagination: updatePageNo,
+            pageSize: EXPERIENCES_PAGE_SIZE,
+          }}
+          renderItem={(item, index) => (
             <Fragment key={index}>
               {index === 1 && showAssociation && associations.length > 0 && (
                 <ShareExperienceAssociation
-                  associationSectionTitle={associationSectionTitle}
                   associations={associations}
+                  associationSectionTitle={associationSectionTitle}
                 />
               )}
 
-              <ShareExperienceInView>
-                <ShareExperiencePostCardModules
-                  {...item}
-                  type="experiences"
-                  shareId={item.id}
-                  isSelf={item.selfExperience}
-                  hasLinkTo={true}
-                  className=" border-t-[1px] border-t-impo_Neutral_Surface z-0 px-4"
-                />
-              </ShareExperienceInView>
+              <ShareExperiencePostCardModules
+                {...item}
+                hasLinkTo={true}
+                shareId={item.id}
+                type="experiences"
+                isSelf={item.selfExperience}
+                className="border-t-[1px] border-t-impo_Neutral_Surface z-0 px-4"
+              />
             </Fragment>
-          );
-        })}
-      </InfiniteScrollContainer>
+          )}
+        />
+      )}
     </>
   );
 };

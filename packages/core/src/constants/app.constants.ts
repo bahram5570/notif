@@ -1,5 +1,5 @@
 export const MAX_SCREEN_WIDTH = 480;
-export const FOOTER_HEIGHT = 80;
+export const FOOTER_HEIGHT = 96;
 export const HEADER_HEIGHT = 56;
 export const PAGE_SIZE = 10;
 
