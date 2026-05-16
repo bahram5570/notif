@@ -1,10 +1,10 @@
 import React from 'react';
 
 export type InfiniteListPaginationTypes = {
-  pageNo: number;
-  pageSize: number;
+  pageNo?: number;
+  pageSize?: number;
   isLoading: boolean;
-  totalCount: number;
+  totalCount?: number;
   callPagination: () => void;
 };
 
