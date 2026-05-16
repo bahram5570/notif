@@ -4,7 +4,7 @@ import { ConfigResponseType } from './type';
 
 const useConfigNewExperience = () => {
   const { data, isLoading } = usePwaApi<ConfigResponseType>({
-    api: 'shareeexperience/v3/experience/config',
+    api: 'shareeexperience/v3/experience/config/v2',
     method: 'GET',
     queryKey: ['configNewExperience'],
   });
