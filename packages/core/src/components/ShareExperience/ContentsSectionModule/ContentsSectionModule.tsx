@@ -5,18 +5,19 @@ import { useShareExperienceOverlayIndex } from '../../../hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
 import { useWidgetActions } from '../../../hooks/useWidgetActions';
-import { CustomImage } from '../../ui/CustomImage';
+import { CustomImage_NEW } from '../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../ui/CustomTypography';
 import { TagType } from '../types';
 import { ContentsSectionModuleProps } from './type';
 
 export const ContentsSectionModule = (props: ContentsSectionModuleProps) => {
-  const { newQueryParamsHandler } = useQueryParamsHandler();
+  const { hasLinkTo = true, id, image, text, tags } = props;
+
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { newQueryParamsHandler } = useQueryParamsHandler();
   const { actionHandler } = useWidgetActions();
   const toast = useCustomToast();
-  const { hasLinkTo = true, id, image, text, tags } = props;
 
   const clickHandler = (tag: TagType) => {
     if (tag.action) {
@@ -62,12 +63,9 @@ export const ContentsSectionModule = (props: ContentsSectionModuleProps) => {
         })}
 
       {image.trim().length > 0 && (
-        <CustomImage
-          src={image}
-          hasPreviewImage={true}
-          previewImageShape="full"
-          className="aspect-[16_/_9] rounded-xl object-cover"
-        />
+        <div className="relative w-full aspect-[16_/_9] rounded-xl overflow-hidden">
+          <CustomImage_NEW src={image} fill={true} hasPreviewImage={true} className="object-cover" />
+        </div>
       )}
     </div>
   );

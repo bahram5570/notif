@@ -25,7 +25,7 @@ const useSplashProgress = ({ splashStatushHandler, splashStatus }: UseSplashProg
   useEffect(() => {
     timerRef.current = setInterval(() => {
       progressHandler();
-    }, 80);
+    }, 50);
 
     return () => {
       clearInterval(timerRef.current);

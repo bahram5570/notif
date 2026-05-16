@@ -1,13 +1,14 @@
 import imageCompression from 'browser-image-compression';
 
+import { heicConverter } from '@repo/core/lib/heicConverter';
+
 export const useOptimizeImageFile = () => {
   const optimizeImageFile = async (file: File) => {
     let fileName = file.name;
     const isHeic = fileName.toLowerCase().includes('.heic') || fileName.toLowerCase().includes('.heif');
 
     if (isHeic) {
-      const heic2any = (await import('heic2any')).default;
-      const convertedBlob = (await heic2any({ blob: file, toType: 'image/jpeg' })) as Blob;
+      const convertedBlob = await heicConverter(file);
 
       fileName = fileName.split('.')[0] + '.jpg';
       const convertedFile = new File([convertedBlob], fileName, { type: 'image/jpeg' });

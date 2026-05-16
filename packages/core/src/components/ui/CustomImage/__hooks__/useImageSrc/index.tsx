@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import { isDevelopeMode } from '../../../../../utils/system';
 
+import { heicConverter } from '@repo/core/lib/heicConverter';
+
 import { UseImageSrcProps } from './types';
 
 const useImageSrc = ({ src, imageApi = '/file', onError }: UseImageSrcProps) => {
@@ -18,11 +20,7 @@ const useImageSrc = ({ src, imageApi = '/file', onError }: UseImageSrcProps) => 
       // todo: temporarily
       const req = await fetch(imageUrl);
       const blob = await req.blob();
-      const heic2any = (await import('heic2any')).default;
-      const convertedBlob = (await heic2any({
-        blob,
-        toType: 'image/jpeg',
-      })) as Blob;
+      const convertedBlob = await heicConverter(blob);
       const result = URL.createObjectURL(convertedBlob);
       setUpdatedSrc(result);
 

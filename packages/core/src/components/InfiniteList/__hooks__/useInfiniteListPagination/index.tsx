@@ -1,29 +1,12 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 
-import { INFINITE_LIST_DELAY_LOADING } from '../../constants';
 import { UseInfiniteListPaginationTypes } from './types';
+import useIsInitialRendered from './useIsInitialRendered';
+import useLockRenderingRef from './useLockRenderingRef';
 
 const useInfiniteListPagination = ({ pagination, parentRef }: UseInfiniteListPaginationTypes) => {
-  const lockRenderingRef = useRef(false);
-  const [isInitialRendered, setIsInitialRendered] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsInitialRendered(true);
-    }, 500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    if (!pagination?.isLoading && lockRenderingRef.current) {
-      const timer = setTimeout(() => {
-        lockRenderingRef.current = false;
-      }, INFINITE_LIST_DELAY_LOADING);
-
-      return () => clearTimeout(timer);
-    }
-  }, [pagination?.isLoading]);
+  const isInitialRendered = useIsInitialRendered();
+  const lockRenderingRef = useLockRenderingRef(pagination?.isLoading);
 
   useEffect(() => {
     const el = parentRef.current;
@@ -32,14 +15,29 @@ const useInfiniteListPagination = ({ pagination, parentRef }: UseInfiniteListPag
     }
 
     const handleScroll = () => {
-      const reachEndOfPage = el.scrollTop + el.clientHeight >= el.scrollHeight - 50;
+      const pageNo = pagination?.pageNo;
+      const pageSize = pagination?.pageSize;
+      const totalCount = pagination?.totalCount;
+      const callPagination = pagination?.callPagination;
 
-      if (!reachEndOfPage || !isInitialRendered || !pagination?.callPagination || lockRenderingRef.current) {
+      const reachEndOfPage = el.scrollTop + el.clientHeight >= el.scrollHeight - 50;
+      const hasPageCalculation = pageNo !== undefined && pageSize !== undefined && totalCount !== undefined;
+
+      if (!reachEndOfPage || !isInitialRendered || !callPagination || lockRenderingRef.current) {
         return;
       }
 
-      lockRenderingRef.current = true;
-      pagination.callPagination();
+      if (hasPageCalculation) {
+        const hasNextPage = (pageNo + 1) * pageSize < totalCount;
+
+        if (hasNextPage) {
+          lockRenderingRef.current = true;
+          pagination.callPagination();
+        }
+      } else {
+        lockRenderingRef.current = true;
+        pagination.callPagination();
+      }
     };
 
     el.addEventListener('scroll', handleScroll);
