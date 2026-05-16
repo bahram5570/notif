@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ArrowUpIcon from '@assets/icons/Alt Arrow Up.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { ProgressBarPropsType } from './type';
@@ -37,7 +37,7 @@ const ProgressBar = ({ progress, avatar, partnerAvatar, className }: ProgressBar
               left: `${milestone.isGold ? 0 : ''}%`,
             }}
           >
-            <CustomImage
+            <CustomImage_NEW
               src={milestone.img}
               width={32}
               height={32}
@@ -61,10 +61,10 @@ const ProgressBar = ({ progress, avatar, partnerAvatar, className }: ProgressBar
         >
           <div className="flex items-center relative">
             <div className="w-6 h-6 rounded-full overflow-hidden ml-0 relative bg-impo_White border-2 border-impo_White">
-              <CustomImage src={partnerAvatar} className="w-full h-full !object-cover border border-impo_White" />
+              <CustomImage_NEW src={partnerAvatar} className="!object-cover border border-impo_White" fill />
             </div>
             <div className="w-6 h-6 rounded-full  overflow-hidden  ml-0 absolute left-4 bg-impo_White border-2 border-impo_White">
-              <CustomImage src={avatar} className="w-full h-full !object-cover border border-impo_White" />
+              <CustomImage_NEW src={avatar} className=" !object-cover border border-impo_White" fill />
             </div>
           </div>
 

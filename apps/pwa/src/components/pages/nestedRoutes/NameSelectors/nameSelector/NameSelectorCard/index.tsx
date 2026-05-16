@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer';
 
 import HeartEmptyIcon from '@assets/icons/heartEmpty.svg';
 import HeartFillIcon from '@assets/icons/heartFill.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
@@ -56,8 +56,10 @@ const NameSelectorCard = (props: NameSelectorCardProps) => {
           <>
             <div className="w-full flex justify-between">
               <div className="flex items-center gap-2">
-                <div className="relative min-w-10 min-h-10 rounded-full overflow-hidden bg-impo_White">
-                  <CustomImage src={image} className="absolute top-[1px] -left-[2px] w-[66px] h-[66px]" />
+                <div className="relative min-w-10 min-h-10 h-10 w-10 rounded-full overflow-hidden bg-impo_White">
+                  <div className="h-8 w-8 absolute top-[3px] left-[8px]">
+                    <CustomImage_NEW src={image} fill />
+                  </div>
                 </div>
 
                 <CustomTypography fontSize="Lable_Large" className="text-impo_Black">

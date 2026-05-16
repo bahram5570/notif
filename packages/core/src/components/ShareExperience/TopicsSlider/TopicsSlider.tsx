@@ -1,9 +1,9 @@
 import { shareExperienceTopicQueryMaker } from '../../../utils/shareExperience';
 
-import { useShareExperienceOverlayIndex } from '../../../hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
-import { CustomImage } from '../../ui/CustomImage';
+import { useShareExperienceHandlers } from '../../../hooks/useShareExperienceHandlers/useShareExperienceHandlers';
+import { CustomImage_NEW } from '../../ui/CustomImage_NEW';
 import { CustomSlider } from '../../ui/CustomSlider';
 import { CustomTypography } from '../../ui/CustomTypography';
 import { TopicsSliderProps } from './type';
@@ -11,7 +11,7 @@ import { TopicsSliderProps } from './type';
 export const TopicsSlider = ({ topics }: TopicsSliderProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { increaseZIndex } = useShareExperienceHandlers();
 
   const clickHandler = (id: string) => {
     pageNavigationHandler({ id, showProgressBar: true });
@@ -28,7 +28,9 @@ export const TopicsSlider = ({ topics }: TopicsSliderProps) => {
           return (
             <div key={index} onClick={() => clickHandler(item.id)}>
               <div className="flex flex-col gap-2 justify-center items-center">
-                <CustomImage src={item.image} width={64} height={64} className=" rounded-full" />
+                <div className="w-16 h-16 max-w-16 max-h-16 rounded-full">
+                  <CustomImage_NEW src={item.image} fill className="rounded-full" />
+                </div>
 
                 <CustomTypography
                   fontSize="Lable_Small"

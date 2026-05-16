@@ -1,14 +1,14 @@
 import { SHARE_EXPERIENCE_ASSOCIATION_LIST_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
-import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 
 import ShareExperienceAssociationListContainer from './ShareExperienceAssociationListContainer';
 
 const ShareExperienceAssociationListModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
-  const { getZIndex } = useShareExperienceOverlayIndex();
+  const { getZIndex } = useShareExperienceHandlers();
 
   const isOpen = getQueryParams(SHARE_EXPERIENCE_ASSOCIATION_LIST_QUERY_NAME) !== null;
 

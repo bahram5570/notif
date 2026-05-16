@@ -1,5 +1,5 @@
 import ArrowRightIcon from '@assets/shared/icons/ArrowRight.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { OptionListPropsType } from './type';
@@ -24,7 +24,9 @@ const OptionList = ({ optionList, resetCodeHandler, isValidateLoading, otpStatus
             onClick={() => onClick(option.type)}
           >
             <div className="flex flex-row-reverse items-center gap-1 w-full">
-              <CustomImage src={option.Icon} className="h-6 w-6 min-h-6 min-w-6" />
+              <div className="h-6 w-6 min-h-6 min-w-6">
+                <CustomImage_NEW src={option.Icon} fill />
+              </div>
 
               <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Body_Small">
                 {option.text}

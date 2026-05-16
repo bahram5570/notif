@@ -5,18 +5,28 @@ import { ShareExperienceResponseTypes } from '@repo/core/components/ShareExperie
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 import { useRouter } from 'next/navigation';
 
-import { onProfileChangeHandlerPropsType } from './type';
+import { SuccessResponseType, onProfileChangeHandlerPropsType } from './type';
 
 const useUpdateProfile = () => {
-  const [payloadShareExperienceData, setPayloadShareExperienceData] = useState<ShareExperienceResponseTypes>();
-  const { refetchQuery, updateQuery, getQuery } = useCustomReactQuery();
-  const shareExperienceData = getQuery<ShareExperienceResponseTypes>({ queryKey: ['shareExperience'] });
-  const toast = useCustomToast();
   const route = useRouter();
+  const toast = useCustomToast();
+  const { refetchQuery, updateQuery, getQuery } = useCustomReactQuery();
+  const { accessOptionHandler } = useShareExperienceHandlers();
+  const [payloadShareExperienceData, setPayloadShareExperienceData] = useState<ShareExperienceResponseTypes>();
+  const shareExperienceData = getQuery<ShareExperienceResponseTypes>({ queryKey: ['shareExperience'] });
 
-  const successHandler = () => {
+  const successHandler = (v: SuccessResponseType) => {
+    if (v.access.isBan) {
+      return accessOptionHandler({
+        isBan: v.access.isBan,
+        textMessage: v.access.textMessage,
+        btnText: v.access.btnText,
+      });
+    }
+
     refetchQuery({ queryKey: ['shareExperienceProfile'] });
 
     if (payloadShareExperienceData) {

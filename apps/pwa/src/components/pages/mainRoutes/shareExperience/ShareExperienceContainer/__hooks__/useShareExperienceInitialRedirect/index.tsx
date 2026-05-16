@@ -6,7 +6,7 @@ import {
 } from '@repo/core/components/ShareExperience';
 import { isDevelopeMode } from '@repo/core/utils/system';
 
-import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import useViewReportProfile from './useViewReportProfile';
@@ -15,7 +15,7 @@ const useShareExperienceInitialRedirect = (isLoaded: boolean) => {
   const router = useRouter();
   const pathname = usePathname();
   const searchParams = useSearchParams();
-  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { increaseZIndex } = useShareExperienceHandlers();
   const isFirstTime1 = useRef(isDevelopeMode());
   const { profileIdHandler } = useViewReportProfile(isLoaded);
 

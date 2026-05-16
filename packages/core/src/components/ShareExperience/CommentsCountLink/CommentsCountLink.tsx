@@ -1,8 +1,8 @@
 import CommentsIcon from '@assets/shared/icons/comment.svg';
 
-import { useShareExperienceOverlayIndex } from '../../../hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '../../../hooks/useShareExperienceHandlers/useShareExperienceHandlers';
 import { CustomTypography } from '../../ui/CustomTypography';
 import { SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME } from '../constants';
 import { CommentsCountLinkProps } from './type';
@@ -10,7 +10,7 @@ import { CommentsCountLinkProps } from './type';
 export const CommentsCountLink = (props: CommentsCountLinkProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { increaseZIndex } = useShareExperienceHandlers();
 
   const clickHandler = () => {
     if (!props.isSelf) {

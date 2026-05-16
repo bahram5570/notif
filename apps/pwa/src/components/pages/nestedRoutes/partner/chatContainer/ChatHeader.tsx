@@ -1,5 +1,5 @@
 import ArrowIcon from '@assets/shared/icons/arrow.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
@@ -26,7 +26,7 @@ const ChatHeader = ({ createTime, partnerAvatar, partnerName, progress, avatar }
       <div className="flex px-4 py-2 w-full justify-end">
         <div className="flex items-center gap-4 min-w-fit">
           <div className="flex flex-row-reverse gap-2 items-center">
-            <CustomImage
+            <CustomImage_NEW
               src={partnerAvatar || '/assets/images/man.webp'}
               width={40}
               height={40}

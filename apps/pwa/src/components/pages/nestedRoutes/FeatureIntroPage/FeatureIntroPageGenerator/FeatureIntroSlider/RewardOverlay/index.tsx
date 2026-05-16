@@ -1,4 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
@@ -18,7 +18,7 @@ const RewardOverlay = ({ initialReward }: RewardOverlayPropsType) => {
         src={'/assets/lottie/Confetti1.lottie'}
         className={`fixed left-0 right-0 bottom-[35%] w-full h-[50dvh]  mx-auto select-none pointer-events-none z-30`}
       />
-      <CustomImage src="/assets/images/reward.webp" className="object-cover z-40" width={100} height={100} />
+      <CustomImage_NEW src="/assets/images/reward.webp" className="object-cover z-40" width={100} height={100} />
       <CustomTypography fontSize="Title_Medium" className="text-impo_Neutral_Background text-center">
         {initialReward}
       </CustomTypography>

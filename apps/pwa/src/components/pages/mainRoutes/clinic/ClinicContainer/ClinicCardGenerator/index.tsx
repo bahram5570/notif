@@ -1,4 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { addCommas } from '@repo/core/utils/numbers';
 
@@ -19,7 +19,7 @@ const ClinicCardGenerator = ({ description, id, image, name, price, priceUnit }:
   return (
     <div onClick={clickHandler} className="cursor-pointer">
       <div className="w-full h-fit px-3 py-4 rounded-xl flex items-center gap-2 bg-impo_Neutral_Surface pointer-events-none ">
-        <CustomImage src={image} width={90} height={90} />
+        <CustomImage_NEW src={image} width={90} height={90} />
 
         <div className="w-full flex flex-col items-end gap-1">
           <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">

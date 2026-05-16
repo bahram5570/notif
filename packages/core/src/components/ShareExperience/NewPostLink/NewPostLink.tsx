@@ -1,11 +1,11 @@
 import { useMemo } from 'react';
 
 import { MAX_SCREEN_WIDTH } from '../../../constants/app.constants';
-import { useShareExperienceOverlayIndex } from '../../../hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '../../../hooks/useShareExperienceHandlers/useShareExperienceHandlers';
 import { useSystem } from '../../../hooks/useSystem';
-import { CustomImage } from '../../ui/CustomImage';
+import { CustomImage_NEW } from '../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../ui/CustomTypography';
 import { ShareExperienceToast } from '../ShareExperienceToast/ShareExperienceToast';
 import { NEW_COMMENT_FOOTER_SIZE } from '../constants';
@@ -22,7 +22,7 @@ export const NewPostLink = ({
 }: NewPostLinkProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { increaseZIndex } = useShareExperienceHandlers();
   const { appName } = useSystem();
 
   const selectHandler = () => {
@@ -69,8 +69,7 @@ export const NewPostLink = ({
             <CustomTypography fontSize="Body_Small" className="text-impo_Surface_OutlineVariant">
               {placeholder}
             </CustomTypography>
-
-            <CustomImage src={avatar} width={36} className="rounded-full" />
+            <CustomImage_NEW src={avatar} height={36} width={36} className="rounded-full" />
           </div>
         </div>
       )}

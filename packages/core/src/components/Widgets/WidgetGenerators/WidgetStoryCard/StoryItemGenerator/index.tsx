@@ -5,7 +5,7 @@ import { useAnalytics } from '../../../../../hooks/useAnalytics';
 import { usePageNavigationLoading } from '../../../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../../../hooks/useQueryParamsHandler';
 import { useSystem } from '../../../../../hooks/useSystem';
-import { CustomImage } from '../../../../ui/CustomImage';
+import { CustomImage_NEW } from '../../../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../../../ui/CustomTypography';
 import { STORY_CIRCLE_WIDTH } from '../constants';
 import { StoryItemGeneratorProps } from './types';
@@ -53,7 +53,9 @@ export const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItem
         }}
         className="relative p-[2px] rounded-full overflow-hidden flex items-center justify-center"
       >
-        <CustomImage src={coverImage} width={'100%'} height={'100%'} style={{ opacity: isViewed ? 0.5 : 1 }} />
+        <div className="w-full h-full">
+          <CustomImage_NEW style={{ opacity: isViewed ? 0.5 : 1 }} fill src={coverImage} />
+        </div>
 
         <div
           style={{

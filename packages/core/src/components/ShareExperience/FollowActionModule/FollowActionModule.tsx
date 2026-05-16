@@ -1,7 +1,7 @@
 import { useAnalytics } from '../../../hooks/useAnalytics';
-import { useShareExperienceOverlayIndex } from '../../../hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '../../../hooks/useShareExperienceHandlers/useShareExperienceHandlers';
 import { CustomSpinner } from '../../ui/CustomSpinner';
 import { CustomTypography } from '../../ui/CustomTypography';
 import { SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME } from '../constants';
@@ -12,7 +12,7 @@ export const FollowActionModule = (props: FollowActionModuleProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
 
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
-  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { increaseZIndex } = useShareExperienceHandlers();
 
   const loadingId = `ShareExperienceFollowModule ${props.userId} ${props.experienceId}`;
   const isLoading = props.isFollowLoading || pageNavigationLoading === loadingId;

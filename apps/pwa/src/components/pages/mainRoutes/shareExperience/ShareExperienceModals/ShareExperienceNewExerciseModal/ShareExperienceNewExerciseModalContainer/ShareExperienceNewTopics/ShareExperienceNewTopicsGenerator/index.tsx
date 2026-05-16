@@ -1,4 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import RadioButton from '@components/ui/RadioButton';
@@ -26,7 +26,7 @@ const ShareExperienceNewTopicsGenerator = ({
                   ${isFirstIndex ? 'border-t-impo_Transparent' : 'border-t-impo_Surface_SurfaceVariant'}
                 `}
     >
-      <CustomImage src={image} width={48} className="rounded-full" />
+      <CustomImage_NEW src={image} width={48} height={48} className="rounded-full" />
 
       <div className="flex items-center gap-2">
         <CustomTypography fontSize="Lable_Medium" className="text-impo_Surface_InverseSurface">

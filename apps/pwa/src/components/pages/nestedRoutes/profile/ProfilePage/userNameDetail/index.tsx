@@ -1,7 +1,7 @@
 import EditIcon from '@assets/icons/Gallery Edit.svg';
 import UploadIcon from '@assets/icons/upload.svg';
 import ArrowIcon from '@assets/shared/icons/calendarArrow.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
@@ -67,7 +67,7 @@ const UserNameDetail = ({ name, username, avatar }: UserNameDetailsProps) => {
         </div>
 
         <div className="relative w-14 h-14 min-w-14 min-h-14 rounded-full" onClick={avatarHandler}>
-          <CustomImage
+          <CustomImage_NEW
             width={56}
             height={56}
             src={data?.womanAvatar || avatar}

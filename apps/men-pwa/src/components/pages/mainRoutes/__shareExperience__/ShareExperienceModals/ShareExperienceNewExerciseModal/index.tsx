@@ -1,8 +1,8 @@
 import { SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
-import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 
 import ShareExperienceNewExerciseModalContainer from './ShareExperienceNewExerciseModalContainer';
 import { ShareExperienceNewExerciseModalProps } from './types';
@@ -13,7 +13,7 @@ const ShareExperienceNewExerciseModal = ({
   username,
 }: ShareExperienceNewExerciseModalProps) => {
   const { getQueryParams } = useQueryParamsHandler();
-  const { getZIndex } = useShareExperienceOverlayIndex();
+  const { getZIndex } = useShareExperienceHandlers();
 
   const newExperienceParms = getQueryParams(SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME);
   const queryData = newExperienceParms === null ? null : (JSON.parse(newExperienceParms) as { associationId: string });

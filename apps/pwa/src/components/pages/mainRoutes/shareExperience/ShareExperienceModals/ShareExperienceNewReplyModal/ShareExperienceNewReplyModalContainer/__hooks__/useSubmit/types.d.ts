@@ -1,3 +1,5 @@
+import { AccessType } from '@repo/core/components/ShareExperience';
+
 import {
   CommentsListTypes,
   CommentsRepliesTypes,
@@ -17,11 +19,11 @@ export type NewCommentMakerTypes = (props: {
   name: string;
 }) => CommentsListTypes[0];
 
-export type NewReplyResponseTypes = {
+export type NewReplyResponseTypes = AccessType & {
   reply: CommentsRepliesTypes[0];
 };
 
-export type NewCommentResponseTypes = {
+export type NewCommentResponseTypes = AccessType & {
   commentId: string;
   toast: string;
   valid: boolean;

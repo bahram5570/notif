@@ -1,5 +1,5 @@
 import TickIcon from '@assets/icons/tick.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { toPersianNumbers } from '@repo/core/utils/numbers';
@@ -16,7 +16,7 @@ const Message = ({ createTime, side, text, partnerAvatar, id }: MessagePropsType
       <div className="flex gap-1">
         {side === SideEnum.Partner && (
           <div className="flex items-end">
-            <CustomImage src={partnerAvatar} width={32} height={30} className="rounded-full !object-cover" />
+            <CustomImage_NEW src={partnerAvatar} width={32} height={30} className="rounded-full !object-cover" />
           </div>
         )}
         <div

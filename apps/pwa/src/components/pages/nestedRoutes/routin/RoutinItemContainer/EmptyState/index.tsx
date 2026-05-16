@@ -1,6 +1,6 @@
 import ArrowIcon from '@assets/shared/icons/arrow.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { useRouter } from 'next/navigation';
@@ -13,7 +13,8 @@ const EmptyState = () => {
   };
   return (
     <div className="p-4 flex flex-col gap-4">
-      <CustomImage src="/assets/images/empty state.webp" />
+      <CustomImage_NEW src="/assets/images/empty state.webp" width={366} height={307} />
+
       <div className="flex justify-center items-center">
         <CustomButton
           className="text-impo_Primary_OnPrimary !border-impo_Neutral_OnSurface !bg-impo_Neutral_OnSurface max-w-fit"

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
-const ShareExperienceInView = ({ children }: { children: React.ReactNode }) => {
+export const PostInView = ({ children }: { children: React.ReactNode }) => {
   const dataRef = useRef<HTMLDivElement>(null);
   const { ref: containerRef, inView } = useInView();
   const [elementHeight, setElementHeight] = useState<number | undefined>();
@@ -28,5 +28,3 @@ const ShareExperienceInView = ({ children }: { children: React.ReactNode }) => {
     </div>
   );
 };
-
-export default ShareExperienceInView;

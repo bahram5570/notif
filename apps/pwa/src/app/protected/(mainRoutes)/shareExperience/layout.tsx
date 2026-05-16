@@ -1,7 +1,7 @@
-import { ShareExperienceOverlayIndexProvider } from '@repo/core/providers/OverlayIndexProvider';
+import { ShareExperienceProvider } from '@repo/core/providers/ShareExperienceProvider';
 
 const Layout = async ({ children }: { children: React.ReactNode }) => {
-  return <ShareExperienceOverlayIndexProvider>{children}</ShareExperienceOverlayIndexProvider>;
+  return <ShareExperienceProvider>{children}</ShareExperienceProvider>;
 };
 
 export default Layout;

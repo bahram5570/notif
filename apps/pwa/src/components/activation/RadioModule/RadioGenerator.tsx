@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { RadioGeneratorProps } from './types';
@@ -41,7 +41,7 @@ const RadioGenerator = ({ option, selectedItem, selectedItemHandler }: RadioGene
       >
         {option.icon && (
           <div className="relative w-[84px] h-[84px] min-w-[84px] min-h-[84px]">
-            <CustomImage src={option.icon} />
+            <CustomImage_NEW src={option.icon} fill />
           </div>
         )}
 

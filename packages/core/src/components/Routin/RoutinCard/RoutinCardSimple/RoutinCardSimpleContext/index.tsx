@@ -1,4 +1,4 @@
-import { CustomImage } from '../../../../ui/CustomImage';
+import { CustomImage_NEW } from '../../../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../../../ui/CustomTypography';
 import { RoutinRatingStats } from '../../../RoutinRatingStats';
 import { RoutinWriter } from '../../../RoutinWriter';
@@ -9,7 +9,7 @@ const RoutinCardSimpleContext = ({ data }: RoutinCardSimpleContextPropsType) => 
     <div className="px-3 py-2">
       <div className="flex flex-row-reverse gap-3">
         <div className="w-14 h-14 ">
-          <CustomImage src={data.image} />
+          <CustomImage_NEW src={data.image} fill />
         </div>
 
         <div className="flex justify-end flex-col items-end gap-2 border-impo_Red_400">

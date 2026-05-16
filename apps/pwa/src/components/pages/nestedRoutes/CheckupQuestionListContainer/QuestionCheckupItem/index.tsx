@@ -1,6 +1,6 @@
 import { segmentActionHandler } from '../../PregnancyCheckup/PregnancyCheckupContainer/utils';
 import ArrowIcon from '@assets/shared/icons/calendarArrow.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
@@ -31,7 +31,7 @@ const QuestionCheckupItem = ({ icon, name, type, lastIndex }: QuestionCheckupIte
         <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground">
           {name}
         </CustomTypography>
-        <CustomImage src={icon} />
+        <CustomImage_NEW src={icon} width={32} height={32} />
       </div>
 
       <div className="flex flex-row-reverse items-center justify-between gap-3">

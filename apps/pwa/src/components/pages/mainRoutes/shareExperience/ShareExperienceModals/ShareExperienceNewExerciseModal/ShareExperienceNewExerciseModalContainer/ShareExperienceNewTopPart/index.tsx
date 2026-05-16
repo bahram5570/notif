@@ -1,4 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { SHARE_EXPERIENCE_NEW_MAX_CHARACTERS } from '../constants';
@@ -19,7 +19,7 @@ const ShareExperienceNewTopPart = ({ text, avatarImage, username }: ShareExperie
             {username}
           </CustomTypography>
 
-          <CustomImage src={avatarImage} width={40} className="rounded-full" />
+          <CustomImage_NEW src={avatarImage} height={40} width={40} className="rounded-full" />
         </div>
       </div>
     </>

@@ -4,6 +4,7 @@ import GiveBirthIcon from '@assets/shared/icons/calendarGiveBirth.svg';
 
 import { CALENDAR_CELL_SIZE, DATE_SEPERATOR_REGEX } from '../../../../../constants/date.constants';
 import { CustomImage } from '../../../../ui/CustomImage';
+import { CustomImage_NEW } from '../../../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../../../ui/CustomTypography';
 import { useCalendarDayInfo } from '../../../__hooks__/useCalendarDayInfo';
 import HasNoteDot from './HasNoteDot';
@@ -34,7 +35,7 @@ const SingleDay = ({ isSelected, selectedDateHandler, day, dateType }: SingleDay
       <HasSignDot day={day} isSelected={isSelected} />
       <HasNoteDot day={day} isSelected={isSelected} />
 
-      {isBirthday && <CustomImage src={'/assets/images/birthdayCake.webp'} className="w-[18px] h-auto" />}
+      {isBirthday && <CustomImage_NEW src={'/assets/images/birthdayCake.webp'} width={18} height={18} />}
 
       {!isBirthday && (
         <>

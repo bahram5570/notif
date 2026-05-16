@@ -3,7 +3,7 @@
 import { useState } from 'react';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
@@ -110,10 +110,10 @@ const SubscriptionPage = () => {
                 </CustomTypography>
               </a>
               {mediasData && (
-                <>
-                  <CustomImage src={data.medias[1]} className="pb-10" />
-                  <CustomImage src={data.medias[2]} />
-                </>
+                <div className=" relative w-full aspect-square">
+                  <CustomImage_NEW src={data.medias[1]} className="pb-10" fill />
+                  <CustomImage_NEW src={data.medias[2]} fill />
+                </div>
               )}
 
               <SubmitBtn

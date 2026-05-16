@@ -1,5 +1,5 @@
 import LockIcon from '@assets/icons/LockKeyhole.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { ProgramWidgetItemStatusEnum } from '../../enum';
@@ -10,7 +10,8 @@ const RoutinItemHeading = ({ title, description, icon, status }: RoutinItemHeadi
   return (
     <div className="w-full flex items-center justify-between gap-5 pb-4">
       <div className="relative">
-        <CustomImage src={icon} width={88} height={88} className={`${isLocked ? 'blur-[1px]' : ''} `} />
+        <CustomImage_NEW src={icon} width={88} height={88} className={`${isLocked ? 'blur-[1px]' : ''} `} />
+
         {isLocked && (
           <LockIcon className="w-8 h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 stroke-impo_Neutral_OnBackground" />
         )}

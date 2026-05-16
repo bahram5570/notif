@@ -1,10 +1,10 @@
 import UploadIcon from '@assets/icons/upload.svg';
 
 import { useAnalytics } from '../../../hooks/useAnalytics';
-import { useShareExperienceOverlayIndex } from '../../../hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
-import { CustomImage } from '../../ui/CustomImage';
+import { useShareExperienceHandlers } from '../../../hooks/useShareExperienceHandlers/useShareExperienceHandlers';
+import { CustomImage_NEW } from '../../ui/CustomImage_NEW';
 import { SHARE_EXPERIENCE_CHANGE_AVATAR_QUERY_NAME } from '../constants';
 import { UserAvatarModuleProps } from './type';
 
@@ -12,7 +12,7 @@ export const UserAvatarModule = ({ id, avatarImage, showChangeAvatarIcon, userna
   const { callEvent } = useAnalytics();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { increaseZIndex } = useShareExperienceHandlers();
 
   const selectProfileHandler = () => {
     callEvent('ShareExperienceSelfProfile');
@@ -35,7 +35,7 @@ export const UserAvatarModule = ({ id, avatarImage, showChangeAvatarIcon, userna
           className="overflow-hidden rounded-full flex justify-center items-center"
           onClick={() => callEvent(showChangeAvatarIcon ? 'ShareExperienceSelfProfile' : 'ShareExperienceOtherProfile')}
         >
-          <CustomImage
+          <CustomImage_NEW
             width={88}
             height={88}
             src={avatarImage}

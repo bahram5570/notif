@@ -15,6 +15,8 @@ const imageList = [
   'https://encrypted-tbn0.gstatic.com',
   'https://s3.ir-tbz-sh1.arvanstorage.ir',
   'https://impo.s3.ir-tbz-sh1.arvanstorage.ir',
+  'https://s3.ir-tbz-sh1.arvanstorage.com',
+  'https://s3.ir-thr-at1.arvanstorage.ir',
 ];
 
 const remotePatternMaker = (list) => {

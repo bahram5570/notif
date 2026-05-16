@@ -1,4 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { NameSelectorActivationRadioProps } from './types';
@@ -69,7 +69,7 @@ const NameSelectorActivationRadio = ({
 
         {image && (
           <div className="absolute top-0 left-2 ">
-            <CustomImage src={image} className="w-[72px] h-[54px]" />
+            <CustomImage_NEW width={72} height={54} src={image} />
           </div>
         )}
       </div>

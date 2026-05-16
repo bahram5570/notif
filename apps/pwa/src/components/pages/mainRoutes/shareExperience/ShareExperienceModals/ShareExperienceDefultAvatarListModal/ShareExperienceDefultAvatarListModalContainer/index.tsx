@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import TickIcon from '@assets/shared/icons/CheckCircle-2.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { useRouter } from 'next/navigation';
@@ -45,7 +45,7 @@ const ShareExperienceDefultAvatarListModalContainer = ({
             </CustomTypography>
 
             <div className="overflow-hidden rounded-full flex justify-center items-center">
-              <CustomImage src={profileData?.profile.avatarImage || ''} width={120} height={120} />
+              <CustomImage_NEW src={profileData?.profile.avatarImage || ''} width={120} height={120} />
             </div>
           </div>
         </div>
@@ -60,7 +60,10 @@ const ShareExperienceDefultAvatarListModalContainer = ({
               {avatarList.map((avatar, index) => {
                 return (
                   <div key={index} className="relative" onClick={() => onSelectedAvatarChange(avatar)}>
-                    <CustomImage src={avatar} />
+                    <div className="relative w-full  aspect-square">
+                      <CustomImage_NEW src={avatar} fill />
+                    </div>
+
                     {selectedAvatar === avatar && <TickIcon className="w-7 h-7 absolute right-0 bottom-0" />}
                   </div>
                 );

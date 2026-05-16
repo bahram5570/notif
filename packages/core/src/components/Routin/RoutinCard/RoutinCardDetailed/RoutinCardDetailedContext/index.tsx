@@ -1,6 +1,6 @@
 import { textShorter } from '../../../../../utils/scripts';
 
-import { CustomImage } from '../../../../ui/CustomImage';
+import { CustomImage_NEW } from '../../../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../../../ui/CustomTypography';
 import { RoutinRatingStats } from '../../../RoutinRatingStats';
 import { RoutinWriter } from '../../../RoutinWriter';
@@ -10,7 +10,7 @@ const RoutinCardDetailedContext = ({ data }: RoutinCardDetailedContextPropsType)
   return (
     <div className="p-3">
       <div className="flex flex-row-reverse gap-3 px-3">
-        <CustomImage src={data.image} width={56} />
+        <CustomImage_NEW src={data.image} width={56} height={56} />
 
         <div className="flex justify-center flex-col items-end gap-2 border-impo_Red_400">
           <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground">

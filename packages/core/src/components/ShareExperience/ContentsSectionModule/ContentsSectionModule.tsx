@@ -1,11 +1,11 @@
 import { shareExperienceCommentQueryMaker } from '../../../utils/shareExperience';
 
 import { useCustomToast } from '../../../hooks/useCustomToast';
-import { useShareExperienceOverlayIndex } from '../../../hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '../../../hooks/useShareExperienceHandlers/useShareExperienceHandlers';
 import { useWidgetActions } from '../../../hooks/useWidgetActions';
-import { CustomImage } from '../../ui/CustomImage';
+import { CustomImage_NEW } from '../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../ui/CustomTypography';
 import { TagType } from '../types';
 import { ContentsSectionModuleProps } from './type';
@@ -13,7 +13,7 @@ import { ContentsSectionModuleProps } from './type';
 export const ContentsSectionModule = (props: ContentsSectionModuleProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler } = usePageNavigationLoading();
-  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { increaseZIndex } = useShareExperienceHandlers();
   const { actionHandler } = useWidgetActions();
   const toast = useCustomToast();
   const { hasLinkTo = true, id, image, text, tags } = props;
@@ -62,12 +62,15 @@ export const ContentsSectionModule = (props: ContentsSectionModuleProps) => {
         })}
 
       {image.trim().length > 0 && (
-        <CustomImage
-          src={image}
-          hasPreviewImage={true}
-          previewImageShape="full"
-          className="aspect-[16_/_9] rounded-xl object-cover"
-        />
+        <div className="overflow-hidden aspect-[16_/_9] rounded-xl object-cover ">
+          <CustomImage_NEW
+            src={image}
+            hasPreviewImage={true}
+            previewImageShape="full"
+            className="aspect-[16_/_9] rounded-xl object-cover w-full h-full"
+            fill
+          />
+        </div>
       )}
     </div>
   );

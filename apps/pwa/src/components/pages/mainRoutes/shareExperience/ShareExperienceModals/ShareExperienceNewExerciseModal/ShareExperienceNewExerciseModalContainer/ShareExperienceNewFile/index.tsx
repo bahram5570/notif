@@ -1,11 +1,11 @@
 import UploadIcon from '@assets/icons/gallery.svg';
 import CrossIcon from '@assets/shared/icons/plus.svg';
 import { SHARE_EXPERIENCE_UPLOAD_FILE_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
-import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 
 import { ShareExperienceNewFileProps } from './types';
 
@@ -16,7 +16,7 @@ const ShareExperienceNewFile = ({
   imageFile,
 }: ShareExperienceNewFileProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
-  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { increaseZIndex } = useShareExperienceHandlers();
 
   const clickHandler = () => {
     if (onChangeBtnTop) {
@@ -31,7 +31,9 @@ const ShareExperienceNewFile = ({
     <>
       {imageFile && (
         <div className="relative">
-          <CustomImage src={imageFile} className="rounded-xl" />
+          <div className=" w-full aspect-square ">
+            <CustomImage_NEW src={imageFile} fill className="rounded-xl" />
+          </div>
 
           {!uploadImageLoading && (
             <div

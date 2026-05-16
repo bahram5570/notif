@@ -1,7 +1,7 @@
 'use client';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useGetData from '../__hooks__/useGetData';
@@ -18,7 +18,7 @@ const BabyCheckHistoryCardDetailsContainer = ({ detailsIndex }: BabyCheckHistory
       <>
         {data && (
           <div className="w-full flex flex-col items-center px-4">
-            <CustomImage src={data.icon} width={88} height={88} />
+            <CustomImage_NEW src={data.icon} width={88} height={88} />
 
             <CustomTypography
               fontSize="Body_Medium"

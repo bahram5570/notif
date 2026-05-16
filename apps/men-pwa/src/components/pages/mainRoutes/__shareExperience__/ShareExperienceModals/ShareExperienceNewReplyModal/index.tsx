@@ -1,15 +1,15 @@
 import { SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
-import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 
 import ShareExperienceNewReplyModalContainer from './ShareExperienceNewReplyModalContainer';
 import { NewReplyQueriesTypes, ShareExperienceNewReplyModalPropsType } from './types';
 
 const ShareExperienceNewReplyModal = ({ avatarImage, username }: ShareExperienceNewReplyModalPropsType) => {
   const { getQueryParams } = useQueryParamsHandler();
-  const { getZIndex } = useShareExperienceOverlayIndex();
+  const { getZIndex } = useShareExperienceHandlers();
 
   const queries = getQueryParams(SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME);
   const queriesData = queries === null ? null : (JSON.parse(queries) as NewReplyQueriesTypes);

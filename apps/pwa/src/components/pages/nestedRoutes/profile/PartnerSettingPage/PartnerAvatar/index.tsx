@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import HamdelIcon from '@assets/icons/hamdel.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { gregorianFarsiScriptDate, jalaaliScriptDate } from '@repo/core/utils/dates';
 
@@ -35,7 +35,8 @@ const PartnerAvatar = ({ name, profileUrl, jointime }: PartnerAvatarPropsType) =
 
   return (
     <div className="flex flex-col justify-center items-center gap-2">
-      <CustomImage src={profileUrl} width={96} height={96} className="rounded-full" />
+      <CustomImage_NEW src={profileUrl} width={96} height={96} className="rounded-full" />
+
       <div className="flex flex-col items-center gap-1">
         <CustomTypography className="text-impo_Neutral_OnBackground" fontSize="Title_Small">
           {name}

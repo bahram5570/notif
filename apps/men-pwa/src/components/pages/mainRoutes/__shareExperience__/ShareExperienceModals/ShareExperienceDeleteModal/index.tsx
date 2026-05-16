@@ -1,8 +1,8 @@
 import TrashIcon from '@assets/shared/icons/trash.svg';
 import { ApproveModalsModule, SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
 
-import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 
 import useCommentDelete from './__hooks__/useCommentDelete';
 import useExperienceDelete from './__hooks__/useExperienceDelete';
@@ -12,7 +12,7 @@ import { QueriesDataTypes } from './types';
 
 const ShareExperienceDeleteModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
-  const { getZIndex } = useShareExperienceOverlayIndex();
+  const { getZIndex } = useShareExperienceHandlers();
   const { replyApplyHandler, isReplyLoading } = useReplyDelete();
   const { commentApplyHandler, isCommentLoading } = useCommentDelete();
   const { experienceApplyHandler, isExperienceLoading } = useExperienceDelete();

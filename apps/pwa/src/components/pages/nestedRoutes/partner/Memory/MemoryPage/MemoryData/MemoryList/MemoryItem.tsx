@@ -1,4 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@repo/core/utils/scripts';
 
@@ -27,8 +27,11 @@ const MemoryItem = (props: MemoryItemPropsType) => {
       <CustomTypography fontSize="Body_Medium" className="text-impo_Neutral_OnBackground text-right w-full">
         {currentDate}
       </CustomTypography>
+      <div className="h-[293px] w-full rounded-2xl">
+        <CustomImage_NEW fill src={memoryImage} className="rounded-2xl object-cover" />
+      </div>
 
-      <CustomImage src={memoryImage} height={293} className="rounded-2xl w-full" />
+      {/* <CustomImage src={memoryImage} height={293} className="rounded-2xl w-full" /> */}
       <div className="flex flex-col justify-end items-end">
         <div className="flex gap-2 items-center">
           <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground ">

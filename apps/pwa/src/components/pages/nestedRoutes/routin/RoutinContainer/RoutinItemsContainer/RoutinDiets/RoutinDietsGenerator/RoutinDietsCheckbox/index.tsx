@@ -1,6 +1,6 @@
 import RadioFillIcon from '@assets/icons/Radio-fill.svg';
 import RadioIcon from '@assets/icons/Radio.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@repo/core/utils/scripts';
 
@@ -47,7 +47,7 @@ const RoutinDietsCheckbox = ({ item, programId, onClick, index }: RoutinDietsChe
             </div>
             <div className="relative w-12 h-12 min-w-12 min-h-12 rounded-full">
               <div className={`w-full h-full rounded-xl  overflow-hidden`}>
-                <CustomImage src={item.image} />
+                <CustomImage_NEW fill src={item.image} />
               </div>
             </div>
           </div>

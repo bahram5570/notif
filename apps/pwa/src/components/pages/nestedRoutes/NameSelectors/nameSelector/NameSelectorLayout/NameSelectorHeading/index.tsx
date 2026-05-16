@@ -1,7 +1,7 @@
 'use client';
 
 import { CustomBackButton } from '@repo/core/components/ui/CustomBackButton';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
@@ -31,12 +31,14 @@ const NameSelectorHeading = ({ description }: NameSelectorHeadingProps) => {
             className="relative w-[100dvw] mx-auto flex gap-2"
             style={{ height: NAME_SELECTOR_HEADING_HEIGHT, maxWidth: MAX_SCREEN_WIDTH }}
           >
-            <CustomImage
-              src={'/assets/images/selectNameHeartsMask.webp'}
-              className="absolute top-0 left-0 right-0 bottom-0 opacity-50 pointer-events-none dark:hidden"
-            />
+            <div className="absolute top-0 left-0 right-0 bottom-0 opacity-50 pointer-events-none dark:hidden">
+              <CustomImage_NEW src={'/assets/images/selectNameHeartsMask.webp'} fill />
+            </div>
 
-            <CustomImage src={'/assets/images/selectNameMom.webp'} width={120} height={190} className="mt-auto" />
+            <div style={{ width: 120, height: 190, minWidth: 120, minHeight: 190 }} className="mt-auto">
+              {' '}
+              <CustomImage_NEW src={'/assets/images/selectNameMom.webp'} fill />
+            </div>
 
             <div className="">
               <div className="w-12 h-12 flex justify-center items-center my-4 mr-4 ml-auto">

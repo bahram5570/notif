@@ -1,7 +1,7 @@
 'use client';
 
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import NameSelectorActivationMainModule from '../../NameSelectorActivationModules/NameSelectorActivationMainModule';
@@ -19,10 +19,9 @@ const NameSelectorActivationStep1Page = () => {
   return (
     <NameSelectorActivationMainModule>
       <div className="relative w-full h-[304px] flex justify-center pointer-events-none">
-        <CustomImage
-          src={'/assets/images/selectNameHollow.webp'}
-          className="w-[550px] h-[550px] min-w-[550px] min-h-[550px] -translate-y-[78px]"
-        />
+        <div className="w-[550px] h-[550px] min-w-[550px] min-h-[550px] -translate-y-[78px]">
+          <CustomImage_NEW src={'/assets/images/selectNameHollow.webp'} fill />
+        </div>
       </div>
 
       <div className="w-full flex flex-col items-center -translate-y-[40px]">

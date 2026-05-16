@@ -1,4 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 
 import { useSystem } from '@repo/core/hooks/useSystem';
 
@@ -29,12 +29,11 @@ const UserMessage = (props: UserMessagePropsType) => {
         >
           {props.media.map((image, index) => {
             return (
-              <CustomImage
+              <CustomImage_NEW
                 src={image}
                 width={120}
                 height={120}
-                className=" rounded-2xl"
-                objectFit="cover"
+                className=" rounded-2xl object-cover"
                 hasPreviewImage
                 key={index}
               />

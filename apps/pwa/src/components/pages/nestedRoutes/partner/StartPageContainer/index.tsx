@@ -4,7 +4,7 @@ import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { SharePartnerCode } from '@repo/core/components/SharePartnerCode';
 import { RefreshPartnerCode } from '@repo/core/components/partner/RefreshPartnerCode';
 import { StartPartnerInput } from '@repo/core/components/partner/StartPartnerInput';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import useCreate from './__hooks__/useCreate';
@@ -16,8 +16,11 @@ const StartPageContainer = () => {
 
   return (
     <MainPageLayout rightElement="BackButton" rightElementScript="شروع همدلی" paddingBottom={30}>
-      <CustomImage src="/assets/images/partner-start.webp" className="px-6 dark:hidden block" />
-      <CustomImage src="/assets/images/partner-start-dark.webp" className="px-6 hidden dark:block" />
+      <div className="relative w-full aspect-[16/9]">
+        <CustomImage_NEW src="/assets/images/partner-start.webp" className="px-6 dark:hidden block" fill />
+        <CustomImage_NEW src="/assets/images/partner-start-dark.webp" className="px-6 hidden dark:block" fill />
+      </div>
+
       <div className="flex flex-col gap-4 items-center justify-center py-5 px-6">
         <CustomTypography fontSize="Body_Large" className="text-center text-impo_Neutral_OnBackground">
           شماره موبایل، ایمیل یا کد همدلی پارتنرت رو اینجا وارد کن تا درخواست همدلیت براش ارسال بشه.

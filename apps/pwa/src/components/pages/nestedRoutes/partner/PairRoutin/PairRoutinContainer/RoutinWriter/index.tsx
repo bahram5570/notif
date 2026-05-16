@@ -1,4 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { RoutinWriterProps } from './types';
@@ -18,7 +18,7 @@ const RoutinWriter = ({ writerName, writerSpeciality, writerIcon }: RoutinWriter
 
       <div className="relative w-10 h-10 min-w-10 min-h-10 ">
         <div className="w-full h-full rounded-full overflow-hidden">
-          <CustomImage src={writerIcon} />
+          <CustomImage_NEW src={writerIcon} fill />
         </div>
       </div>
     </div>

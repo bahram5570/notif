@@ -1,4 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { DoctorInfoProps } from './types';
@@ -6,7 +6,7 @@ import { DoctorInfoProps } from './types';
 const DoctorInfo = ({ firstName, lastName, image, speciliaty, nezamNumber }: DoctorInfoProps) => {
   return (
     <div className="flex flex-col items-center">
-      <CustomImage src={image} width={120} height={120} className="rounded-full object-cover" />
+      <CustomImage_NEW src={image} width={120} height={120} className="rounded-full object-cover" />
 
       <CustomTypography
         fontSize="Headline_Small"

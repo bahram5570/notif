@@ -1,17 +1,17 @@
 import { SHARE_EXPERIENCE_PROFILE_QUERY_NAME } from '@repo/core/components/ShareExperience';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
-import { useShareExperienceOverlayIndex } from '@repo/core/hooks/useOverlayIndex';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 
 import { ShareExperienceAvatarProps } from './types';
 
 const ShareExperienceAvatar = ({ profile }: ShareExperienceAvatarProps) => {
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { newQueryParamsHandler } = useQueryParamsHandler();
-  const { increaseZIndex } = useShareExperienceOverlayIndex();
+  const { increaseZIndex } = useShareExperienceHandlers();
 
   const selectHandler = () => {
     pageNavigationHandler({ id: profile.userId, showProgressBar: true });
@@ -26,7 +26,7 @@ const ShareExperienceAvatar = ({ profile }: ShareExperienceAvatarProps) => {
       style={{ maxWidth: MAX_SCREEN_WIDTH }}
     >
       <div className="h-fit pointer-events-auto" onClick={selectHandler}>
-        <CustomImage src={profile.avatarImage} width={40} className="rounded-full" />
+        <CustomImage_NEW src={profile.avatarImage} width={40} height={40} className="rounded-full" />
       </div>
     </div>
   );

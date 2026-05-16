@@ -4,6 +4,8 @@ import { ShareExperienceStateEnum } from './enum';
 export type SelectedCategoryHandlerTypes = (id: string, showAssociation: boolean) => void;
 export type ApiInfoTypes = { userId: string; isFollow: boolean; userName: string };
 export type FollowHandlerTypes = (props: ApiInfoTypes) => void;
+
+export type AccessType = { access: { isBan: boolean; textMessage: string; btnText: string } };
 export type AssociationType = {
   id: string;
   title: string;
@@ -44,7 +46,7 @@ export type ErrorType = {
 
 //# response of
 
-export type ShareExperienceResponseTypes = {
+export type ShareExperienceResponseTypes = AccessType & {
   failure: boolean;
   error: ErrorType;
   groupsTitleText: string;
@@ -88,7 +90,7 @@ export type ExperienceType = {
   tags?: TagType[];
 };
 
-export type ExperiencesResponseTypes = {
+export type ExperiencesResponseTypes = AccessType & {
   groupsTitleText: string;
   otherTitleText: string;
   selfTitleText: string;
@@ -98,7 +100,7 @@ export type ExperiencesResponseTypes = {
   expirences: ExperienceType[];
 };
 
-export type TopicExperiencesResponseTypes = {
+export type TopicExperiencesResponseTypes = AccessType & {
   totalCount: number;
   id: string;
   coverImage: string;
@@ -146,7 +148,7 @@ export type CommentsListTypes = {
   state: ShareExperienceStateEnum;
 }[];
 
-export type CommentsResponseTypes = {
+export type CommentsResponseTypes = AccessType & {
   name: string;
   text: string;
   image: string;
@@ -174,7 +176,7 @@ type SelfTypes = ExperienceType & {
   biography: string;
 };
 
-export type ProfileResponsePropsType = {
+export type ProfileResponsePropsType = AccessType & {
   storyCount: number;
   isNotificationActive: boolean;
   notificationActivationMessage: string;

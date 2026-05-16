@@ -1,4 +1,4 @@
-import { CustomImage } from '../ui/CustomImage';
+import { CustomImage_NEW } from '../ui/CustomImage_NEW';
 import { CustomTypography } from '../ui/CustomTypography';
 import { BiorhythmItemsTypes } from './types';
 
@@ -14,7 +14,7 @@ export const BiorhythmItems = ({ items }: BiorhythmItemsTypes) => {
                   {item.title}
                 </CustomTypography>
 
-                <CustomImage src={item.icon} className="w-10 h-10" />
+                <CustomImage_NEW src={item.icon} width={40} height={40} />
               </div>
 
               <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">
