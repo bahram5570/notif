@@ -16,15 +16,15 @@ const useSubmit = ({ image, text, topicId, associationId, onSuccessNewHandler }:
   let toastMessage = '';
 
   const successHandler = (v: NewExperienceResponseType) => {
-    if (v.valid) {
-      if (v.access.isBan) {
-        return accessOptionHandler({
-          isBan: v.access.isBan,
-          textMessage: v.access.textMessage,
-          btnText: v.access.btnText,
-        });
-      }
+    if (v.access.isBan) {
+      return accessOptionHandler({
+        isBan: v.access.isBan,
+        textMessage: v.access.textMessage,
+        btnText: v.access.btnText,
+      });
+    }
 
+    if (v.valid) {
       router.back();
       if (!associationId) {
         setTimeout(() => {
