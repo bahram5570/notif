@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-import { EXPERIENCES_PAGE_SIZE, ExperiencesResponseTypes } from '@repo/core/components/ShareExperience';
+import { ExperiencesResponseTypes, PageInfoType } from '@repo/core/components/ShareExperience';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
@@ -9,12 +9,13 @@ import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceH
 import { QueryExperiencesDataTypes, SelectedCategoryIdTypes } from './types';
 
 const useExperiences = (selectedCategoryId: SelectedCategoryIdTypes) => {
-  const [pageNo, setPageNo] = useState(0);
-  const [totalCount, setTotalCount] = useState(0);
+  const [pageInfo, setPageInfo] = useState<PageInfoType | null>(null);
   const { newQuery, updateQuery, getQuery, removeQuery } = useCustomReactQuery(['experiences']);
   const { accessOptionHandler } = useShareExperienceHandlers();
-
-  const experiencesData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['experiences'] });
+  const requestLockRef = useRef(false);
+  const experiencesData = getQuery<QueryExperiencesDataTypes>({
+    queryKey: ['experiences'],
+  });
 
   const successHandler = (v: ExperiencesResponseTypes) => {
     if (v.access.isBan) {
@@ -24,45 +25,68 @@ const useExperiences = (selectedCategoryId: SelectedCategoryIdTypes) => {
         btnText: v.access.btnText,
       });
     }
-    setTotalCount(v.totalCount);
+
+    requestLockRef.current = false;
+    setPageInfo(v.page);
 
     if (experiencesData) {
-      const list = { expirences: [...experiencesData.expirences, ...v.expirences] };
-      updateQuery({ queryKey: ['experiences'], payload: list });
+      updateQuery({
+        queryKey: ['experiences'],
+        payload: {
+          expirences: [...experiencesData.expirences, ...v.expirences],
+        },
+      });
     } else {
-      newQuery({ payload: { expirences: v.expirences }, queryKey: ['experiences'] });
+      newQuery({
+        queryKey: ['experiences'],
+        payload: {
+          expirences: v.expirences,
+        },
+      });
     }
   };
 
-  const api = `shareeexperience/v3/category/${selectedCategoryId}/${pageNo}/${EXPERIENCES_PAGE_SIZE}`;
-
-  const { callApi, isLoading } = usePwaApi<ExperiencesResponseTypes>({
-    api,
+  const { callApi: getFirstPage, isLoading: loading } = usePwaApi<ExperiencesResponseTypes>({
+    api: `shareeexperience/v3/category/${selectedCategoryId}/first`,
     method: 'GET',
     fetchOnMount: false,
     onSuccess: successHandler,
-    queryKey: ['experiences' + pageNo],
+    queryKey: ['experiences-first'],
+  });
+
+  const { callApi: getNextPage, isLoading: nextPageLoading } = usePwaApi<ExperiencesResponseTypes>({
+    api: pageInfo?.lastId ? `shareeexperience/v3/category/${selectedCategoryId}/nextpage/${pageInfo.lastId}` : '',
+    method: 'GET',
+    fetchOnMount: false,
+    onSuccess: successHandler,
+    queryKey: ['experiences-next' + pageInfo?.lastId],
   });
 
   useEffect(() => {
-    // # Calls api on category change
     if (selectedCategoryId) {
-      callApi();
-      removeQuery({ queryKey: ['experiences'] });
+      removeQuery({
+        queryKey: ['experiences'],
+      });
+
+      getFirstPage();
     }
   }, [selectedCategoryId]);
 
-  useEffect(() => {
-    if (pageNo > 0 && !isLoading) {
-      callApi();
-    }
-  }, [pageNo, isLoading]);
+  const updateList = () => {
+    if (!pageInfo?.hasNext) return;
 
-  const updatePageNo = () => {
-    setPageNo((prev) => prev + 1);
+    if (requestLockRef.current) return;
+
+    requestLockRef.current = true;
+
+    getNextPage();
   };
-
-  return { isLoading, experiencesData, pageNo, totalCount, updatePageNo };
+  const isLoading = nextPageLoading || loading;
+  return {
+    isLoading,
+    experiencesData,
+    updateList,
+  };
 };
 
 export default useExperiences;

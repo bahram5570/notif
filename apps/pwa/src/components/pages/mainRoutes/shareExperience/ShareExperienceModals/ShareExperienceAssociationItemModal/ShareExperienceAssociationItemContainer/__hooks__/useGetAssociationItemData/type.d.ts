@@ -1,4 +1,4 @@
-import { AccessType, ExperienceType } from '@repo/core/components/ShareExperience';
+import { AccessType, ExperienceType, PageType } from '@repo/core/components/ShareExperience';
 
 import { ShareExperienceAssociationItemContainerPropsType } from '../../type';
 
@@ -7,7 +7,8 @@ export type useGetAssociationItemDataPropsType = Pick<
   'AssociationId'
 >;
 
-export type AssociationExperiencesResponseType = AccessType & {
-  totalCount: number;
-  experiences: ExperienceType[];
-};
+export type AssociationExperiencesResponseType = AccessType &
+  PageType & {
+    totalCount: number;
+    experiences: ExperienceType[];
+  };

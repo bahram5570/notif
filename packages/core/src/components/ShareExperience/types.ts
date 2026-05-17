@@ -6,6 +6,15 @@ export type ApiInfoTypes = { userId: string; isFollow: boolean; userName: string
 export type FollowHandlerTypes = (props: ApiInfoTypes) => void;
 
 export type AccessType = { access: { isBan: boolean; textMessage: string; btnText: string } };
+export type PageType = {
+  page: {
+    firstId: string;
+    lastId: string;
+    hasNext: boolean;
+  };
+};
+
+export type PageInfoType = Pick<PageType, 'page'>['page'];
 export type AssociationType = {
   id: string;
   title: string;
@@ -46,22 +55,23 @@ export type ErrorType = {
 
 //# response of
 
-export type ShareExperienceResponseTypes = AccessType & {
-  failure: boolean;
-  error: ErrorType;
-  groupsTitleText: string;
-  otherTitleText: string;
-  selfTitleText: string;
-  inputText: string;
-  text: string;
-  bannerMedia: string;
-  toastText: string;
-  associationSectionTitle: string;
-  topics: TopicsType[];
-  profile: ProfileType;
-  categories: CategoriesType[];
-  associations: AssociationType[];
-};
+export type ShareExperienceResponseTypes = AccessType &
+  PageType & {
+    failure: boolean;
+    error: ErrorType;
+    groupsTitleText: string;
+    otherTitleText: string;
+    selfTitleText: string;
+    inputText: string;
+    text: string;
+    bannerMedia: string;
+    toastText: string;
+    associationSectionTitle: string;
+    topics: TopicsType[];
+    profile: ProfileType;
+    categories: CategoriesType[];
+    associations: AssociationType[];
+  };
 
 export type TagType = { title: string; action: ActionTypes | null };
 
@@ -90,27 +100,29 @@ export type ExperienceType = {
   tags?: TagType[];
 };
 
-export type ExperiencesResponseTypes = AccessType & {
-  groupsTitleText: string;
-  otherTitleText: string;
-  selfTitleText: string;
-  totalCount: number;
-  inputText: string;
-  text: string;
-  expirences: ExperienceType[];
-};
+export type ExperiencesResponseTypes = AccessType &
+  PageType & {
+    groupsTitleText: string;
+    otherTitleText: string;
+    selfTitleText: string;
+    totalCount: number;
+    inputText: string;
+    text: string;
+    expirences: ExperienceType[];
+  };
 
-export type TopicExperiencesResponseTypes = AccessType & {
-  totalCount: number;
-  id: string;
-  coverImage: string;
-  inputText: string;
-  bio: string;
-  prohibtShareExp: boolean;
-  name: string;
-  image: string;
-  expirences: ExperienceType[];
-};
+export type TopicExperiencesResponseTypes = AccessType &
+  PageType & {
+    totalCount: number;
+    id: string;
+    coverImage: string;
+    inputText: string;
+    bio: string;
+    prohibtShareExp: boolean;
+    name: string;
+    image: string;
+    expirences: ExperienceType[];
+  };
 
 export type CommentsRepliesTypes = {
   id: string;
@@ -148,28 +160,29 @@ export type CommentsListTypes = {
   state: ShareExperienceStateEnum;
 }[];
 
-export type CommentsResponseTypes = AccessType & {
-  name: string;
-  text: string;
-  image: string;
-  self: boolean;
-  valid: boolean;
-  avatar: string;
-  userId: string;
-  likeCount: number;
-  topicName: string;
-  isFollow: boolean;
-  createTime: string;
-  dislikeCount: number;
-  commentCount: number;
-  isBookmarked: boolean;
-  approvedProfile: boolean;
-  comments: CommentsListTypes;
-  state: ShareExperienceStateEnum;
-  toast: string;
-  canSendComment: boolean;
-  canSendReply: boolean;
-};
+export type CommentsResponseTypes = AccessType &
+  PageType & {
+    name: string;
+    text: string;
+    image: string;
+    self: boolean;
+    valid: boolean;
+    avatar: string;
+    userId: string;
+    likeCount: number;
+    topicName: string;
+    isFollow: boolean;
+    createTime: string;
+    dislikeCount: number;
+    commentCount: number;
+    isBookmarked: boolean;
+    approvedProfile: boolean;
+    comments: CommentsListTypes;
+    state: ShareExperienceStateEnum;
+    toast: string;
+    canSendComment: boolean;
+    canSendReply: boolean;
+  };
 
 type SelfTypes = ExperienceType & {
   isDelete: boolean;

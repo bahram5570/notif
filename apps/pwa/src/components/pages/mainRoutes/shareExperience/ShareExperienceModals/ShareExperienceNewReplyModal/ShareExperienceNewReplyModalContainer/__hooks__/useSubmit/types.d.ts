@@ -3,7 +3,7 @@ import { AccessType } from '@repo/core/components/ShareExperience';
 import {
   CommentsListTypes,
   CommentsRepliesTypes,
-} from '../../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/__hooks__/useCommentsList/types';
+} from '../../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/__hooks__/useCommentsList/types';
 import { NewReplyQueriesTypes } from '../../../types';
 
 export interface UseSubmitProps {

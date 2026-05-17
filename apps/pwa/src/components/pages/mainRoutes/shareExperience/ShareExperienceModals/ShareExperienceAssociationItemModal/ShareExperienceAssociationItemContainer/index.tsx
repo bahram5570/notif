@@ -1,4 +1,4 @@
-import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
+import { InfiniteList } from '@repo/core/components/InfiniteList';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
@@ -16,10 +16,9 @@ const ShareExperienceAssociationItemContainer = ({
   AssociationId,
 }: ShareExperienceAssociationItemContainerPropsType) => {
   const { isScrolled, scrollRef } = useScroll();
-  const { associationExperienceList, pageNo, updatePageNo, experiencesLoading, resetPageNo } =
-    useGetAssociationItemData({
-      AssociationId,
-    });
+  const { associationExperienceList, experiencesLoading, updateList, loading } = useGetAssociationItemData({
+    AssociationId,
+  });
   const { associationInfoData, isLoading } = useGetAssociationInfo({ associationId: AssociationId });
 
   const hasExperienceList = associationExperienceList && associationExperienceList.experiences.length > 0;
@@ -37,28 +36,27 @@ const ShareExperienceAssociationItemContainer = ({
             associationId={AssociationId}
             fromAssociationSection={true}
             isFollowed={associationInfoData.isFollowed}
-            resetPageNo={resetPageNo}
           />
           <ShareExperienceAssociationItemHeader
             isScrolled={isScrolled}
             {...associationInfoData}
             associationId={AssociationId || ''}
           />
-          <InfiniteScrollContainer
-            pageNo={pageNo}
-            isLoading={experiencesLoading}
-            scrollContainerRef={scrollRef}
-            totalCount={associationExperienceList?.totalCount || 10}
-            callBack={updatePageNo}
-            className="flex-1 overflow-y-auto px-4"
-            style={{ paddingBottom: FOOTER_HEIGHT }}
-          >
-            <div style={{ paddingTop: isScrolled ? '80px' : '220px' }}>
-              {!hasExperienceList && !experiencesLoading && <EmptyState associationName={associationInfoData.title} />}
-
-              {hasExperienceList &&
-                associationExperienceList?.experiences.map((item, index) => {
-                  return (
+          <div style={{ paddingTop: isScrolled ? '80px' : '220px' }}>
+            {!hasExperienceList && !experiencesLoading && <EmptyState associationName={associationInfoData.title} />}
+            {hasExperienceList && (
+              <div className="flex-1 overflow-y-auto px-4" style={{ paddingBottom: FOOTER_HEIGHT }}>
+                <InfiniteList
+                  parentRef={scrollRef}
+                  list={associationExperienceList?.experiences}
+                  pagination={{
+                    pageNo: undefined,
+                    isLoading: loading,
+                    callPagination: updateList,
+                    pageSize: undefined,
+                    totalCount: undefined,
+                  }}
+                  renderItem={(item, index) => (
                     <ShareExperiencePostCardModules
                       key={item.id}
                       {...item}
@@ -68,10 +66,11 @@ const ShareExperienceAssociationItemContainer = ({
                       isSelf={item.selfExperience}
                       className={` ${index !== 0 && 'border-t-[1px] border-t-impo_Neutral_Surface'}`}
                     />
-                  );
-                })}
-            </div>
-          </InfiniteScrollContainer>
+                  )}
+                />
+              </div>
+            )}
+          </div>
         </>
       )}
     </div>

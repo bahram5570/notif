@@ -7,19 +7,17 @@ import { CommentsListProps } from './types';
 const CommentsList: React.FC<CommentsListProps> = ({ comments, id, canSendReply, self }) => {
   return (
     <div className="w-full h-full flex flex-col items-center">
-      <>
-        {comments.length === 0 && <CommentsListEmpty self={self} />}
+      {comments.length === 0 && <CommentsListEmpty self={self} />}
 
-        {comments.map((comment, index) => (
-          <CommentsGenerator
-            {...comment}
-            shareId={id}
-            isFirstIndex={index === 0}
-            key={index}
-            canSendComment={canSendReply}
-          />
-        ))}
-      </>
+      {comments.map((comment, index) => (
+        <CommentsGenerator
+          {...comment}
+          shareId={id}
+          isFirstIndex={index === 0}
+          key={index}
+          canSendComment={canSendReply}
+        />
+      ))}
     </div>
   );
 };

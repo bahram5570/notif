@@ -1,4 +1,4 @@
-import { CommentsResponseTypes } from '../CommentsList/__hooks__/useCommentsList/types';
+import { CommentsResponseTypes } from '../__hooks__/useCommentsList/types';
 import { ShareExperienceCommentsModalContainerProps } from '../types';
 
 type ItemsTypes = Pick<

@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-import { EXPERIENCES_PAGE_SIZE, TopicExperiencesResponseTypes } from '@repo/core/components/ShareExperience';
+import { PageInfoType, TopicExperiencesResponseTypes } from '@repo/core/components/ShareExperience';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
@@ -9,11 +9,11 @@ import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceH
 import { useGetDataPropsType } from './type';
 
 const useGetData = ({ topicId }: useGetDataPropsType) => {
-  const [pageNo, setPageNo] = useState(0);
-
+  const [pageInfo, setPageInfo] = useState<PageInfoType | null>(null);
   const { newQuery, updateQuery, getQuery, removeQuery } = useCustomReactQuery(['topicExperiences']);
   const { accessOptionHandler } = useShareExperienceHandlers();
   const topicExperiencesData = getQuery<TopicExperiencesResponseTypes>({ queryKey: ['topicExperiences'] });
+  const requestLockRef = useRef(false);
 
   const successHandler = (v: TopicExperiencesResponseTypes) => {
     if (v.access.isBan) {
@@ -23,6 +23,8 @@ const useGetData = ({ topicId }: useGetDataPropsType) => {
         btnText: v.access.btnText,
       });
     }
+    requestLockRef.current = false;
+    setPageInfo(v.page);
     if (topicExperiencesData) {
       const list = { ...topicExperiencesData, expirences: [...topicExperiencesData.expirences, ...v.expirences] };
       updateQuery({ queryKey: ['topicExperiences'], payload: list });
@@ -31,37 +33,41 @@ const useGetData = ({ topicId }: useGetDataPropsType) => {
     }
   };
 
-  const api = `shareeexperience/v3/topic/${topicId}/${pageNo}/${EXPERIENCES_PAGE_SIZE}`;
-
   const { callApi, isLoading: apiLoading } = usePwaApi<TopicExperiencesResponseTypes>({
-    api,
+    api: `shareeexperience/v3/topic/${topicId}/first`,
     method: 'GET',
     fetchOnMount: false,
     onSuccess: successHandler,
-    queryKey: ['topicExperiences' + pageNo],
+    queryKey: ['topicExperiences' + topicId],
+  });
+
+  const { callApi: getNextPage, isLoading: nextPageLoading } = usePwaApi<TopicExperiencesResponseTypes>({
+    api: pageInfo?.lastId ? `shareeexperience/v3/topic/${topicId}/nextpage/${pageInfo.lastId}` : '',
+    method: 'GET',
+    fetchOnMount: false,
+    onSuccess: successHandler,
+    queryKey: ['topicExperiences' + pageInfo?.lastId],
   });
 
   useEffect(() => {
     if (topicId) {
       removeQuery({ queryKey: ['topicExperiences'] });
-      setPageNo(0);
       callApi();
     }
   }, [topicId]);
 
-  useEffect(() => {
-    if (pageNo > 0 && !isLoading) {
-      callApi();
-    }
-  }, [pageNo, apiLoading]);
+  const updateList = () => {
+    if (!pageInfo?.hasNext) return;
 
-  const updatePageNo = () => {
-    setPageNo((prev) => prev + 1);
+    if (requestLockRef.current) return;
+
+    requestLockRef.current = true;
+
+    getNextPage();
   };
+  const isLoading = apiLoading || nextPageLoading;
 
-  const isLoading = apiLoading && pageNo === 0;
-
-  return { isLoading, topicExperiencesData, pageNo, updatePageNo, apiLoading };
+  return { isLoading, topicExperiencesData, updateList, apiLoading };
 };
 
 export default useGetData;

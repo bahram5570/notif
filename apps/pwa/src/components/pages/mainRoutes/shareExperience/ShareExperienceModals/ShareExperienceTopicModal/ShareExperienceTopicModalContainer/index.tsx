@@ -1,11 +1,7 @@
 import { useRef } from 'react';
 
 import { InfiniteList } from '@repo/core/components/InfiniteList';
-import {
-  EXPERIENCES_PAGE_SIZE,
-  NewPostLink,
-  SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME,
-} from '@repo/core/components/ShareExperience';
+import { NewPostLink, SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME } from '@repo/core/components/ShareExperience';
 
 import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
 
@@ -17,7 +13,7 @@ import { ShareExperienceTopicModalContainerPropsType } from './type';
 
 const ShareExperienceTopicModalContainer = ({ avatarImage, topicId }: ShareExperienceTopicModalContainerPropsType) => {
   useOverflowHandler(topicId !== null);
-  const { topicExperiencesData, isLoading, pageNo, updatePageNo, apiLoading } = useGetData({
+  const { topicExperiencesData, isLoading, apiLoading, updateList } = useGetData({
     topicId: topicId || '',
   });
 
@@ -31,7 +27,7 @@ const ShareExperienceTopicModalContainer = ({ avatarImage, topicId }: ShareExper
         coverImage={topicExperiencesData?.coverImage}
         topicName={topicExperiencesData?.name}
         bio={topicExperiencesData?.bio}
-        isLoading={isLoading}
+        isLoading={apiLoading}
         scrolled={scrolled}
         scrollRef={scrollRef}
         markerRef={markerRef}
@@ -41,11 +37,11 @@ const ShareExperienceTopicModalContainer = ({ avatarImage, topicId }: ShareExper
             parentRef={scrollRef}
             list={topicExperiencesData?.expirences}
             pagination={{
-              pageNo,
-              isLoading: apiLoading,
-              callPagination: updatePageNo,
-              pageSize: EXPERIENCES_PAGE_SIZE,
-              totalCount: topicExperiencesData.totalCount,
+              pageNo: undefined,
+              isLoading: isLoading,
+              callPagination: updateList,
+              pageSize: undefined,
+              totalCount: undefined,
             }}
             renderItem={(item) => (
               <ShareExperiencePostCardModules

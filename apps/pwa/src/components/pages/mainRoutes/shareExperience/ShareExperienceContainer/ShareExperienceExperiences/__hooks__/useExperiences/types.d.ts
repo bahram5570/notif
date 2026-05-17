@@ -1,4 +1,4 @@
-import { ExperiencesResponseTypes } from '@repo/core/components/ShareExperience';
+import { ExperiencesResponseTypes, PageType } from '@repo/core/components/ShareExperience';
 
 import { ShareExperienceExperiencesProps } from '../../types';
 

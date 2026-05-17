@@ -1,7 +1,6 @@
 import { Fragment } from 'react';
 
 import { InfiniteList } from '@repo/core/components/InfiniteList';
-import { EXPERIENCES_PAGE_SIZE } from '@repo/core/components/ShareExperience';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import ShareExperienceAssociationItemModal from '../../ShareExperienceModals/ShareExperienceAssociationItemModal';
@@ -34,7 +33,7 @@ const ShareExperienceExperiences = ({
   scrollRef,
   profile,
 }: ShareExperienceExperiencesProps) => {
-  const { isLoading, experiencesData, pageNo, totalCount, updatePageNo } = useExperiences(selectedCategoryId);
+  const { isLoading, experiencesData, updateList } = useExperiences(selectedCategoryId);
 
   return (
     <>
@@ -74,11 +73,11 @@ const ShareExperienceExperiences = ({
           parentRef={scrollRef}
           list={experiencesData?.expirences}
           pagination={{
-            pageNo,
+            pageNo: undefined,
             isLoading,
-            totalCount,
-            callPagination: updatePageNo,
-            pageSize: EXPERIENCES_PAGE_SIZE,
+            totalCount: undefined,
+            callPagination: updateList,
+            pageSize: undefined,
           }}
           renderItem={(item, index) => (
             <Fragment key={index}>
