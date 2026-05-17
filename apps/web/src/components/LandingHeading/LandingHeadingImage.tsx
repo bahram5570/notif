@@ -15,7 +15,6 @@ const LandingHeadingImage = ({ image, imageClassName, imagePosition }: LandingHe
           alt="impo"
           src={image}
           sizes="100vw"
-          quality={100}
           priority={true}
           style={{ width: '100%', height: 'auto' }}
         />
