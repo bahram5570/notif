@@ -6,7 +6,7 @@ const NameSelectionHeadingContent = () => {
       <CustomTypography
         tagType="h1"
         fontSize="Headline_Medium"
-        className="py-2 lg:pt-2 lg:pb-1 text-center md:text-left !text-impo_Neutral_OnBackground"
+        className="py-2 lg:pt-2 lg:pb-1 !text-impo_Neutral_OnBackground text-center md:text-right"
       >
         لیست کامل اسم پسر ایرانی بر اساس حروف الفبا
       </CustomTypography>

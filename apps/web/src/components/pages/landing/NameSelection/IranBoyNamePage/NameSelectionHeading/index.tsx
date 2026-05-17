@@ -21,7 +21,7 @@ const NameSelectionHeading = () => {
                         justify-center 
                         bg-cover 
                         bg-center
-                            dark:!bg-impo_Surface_InverseOnSurface dark:!from-inherit dark:!to-inherit
+                        dark:!bg-impo_Surface_InverseOnSurface dark:!from-inherit dark:!to-inherit
                         bg-gradient-to-b from-[#F3F5FE] to-[#C9D6FB]
                       "
           >
@@ -29,7 +29,8 @@ const NameSelectionHeading = () => {
               <LandingHeadingContents contentElement={contentElement} />
               <LandingHeadingImage
                 imagePosition={'bottom'}
-                image="/assets/images/heading-iranBoyNameSelection.webp"
+                alt="اسم پسر ایرانی اصیل لاکچری"
+                image="/assets/images/iran-boy-name-impo.app.webp"
                 imageClassName="lg:max-w-[580px] lg:max-h-[513px] max-w-[200px] w-full h-full"
               />
             </div>

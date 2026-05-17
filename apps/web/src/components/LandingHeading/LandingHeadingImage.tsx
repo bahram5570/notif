@@ -2,7 +2,7 @@ import CustomImage from '@components/ui/CustomImage';
 
 import { LandingHeadingImageTypes } from './types';
 
-const LandingHeadingImage = ({ image, imageClassName, imagePosition }: LandingHeadingImageTypes) => {
+const LandingHeadingImage = ({ image, imageClassName, imagePosition, alt }: LandingHeadingImageTypes) => {
   return (
     <div className="w-full h-full md:w-1/2 flex justify-center md:justify-start md:pl-5 xl:pr-[40px]">
       <div
@@ -12,10 +12,10 @@ const LandingHeadingImage = ({ image, imageClassName, imagePosition }: LandingHe
         <CustomImage
           width={0}
           height={0}
-          alt="impo"
           src={image}
           sizes="100vw"
           priority={true}
+          alt={`${alt || 'impo'}`}
           style={{ width: '100%', height: 'auto' }}
         />
       </div>
