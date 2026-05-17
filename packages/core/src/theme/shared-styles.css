@@ -88,3 +88,17 @@ textarea {
     max-height: var(--maxHight);
   }
 }
+
+.shimmer {
+  background: linear-gradient(90deg, var(--color-Grey_50) 25%, var(--color-Grey_200) 37%, var(--color-Grey_50) 63%);
+  background-size: 400% 100%;
+  animation: shimmerAnimation 1s ease-in-out infinite;
+}
+@keyframes shimmerAnimation {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
