@@ -18,6 +18,28 @@ const EditsCard = ({ phase, isDelivery, pregnancyDate }: EditsCardTypes) => {
     );
   }
 
+  if (phase === CyclePhaseEnum.PeriodIntention) {
+    return (
+      <CardGenerator
+        backgroundColor="#FDEFF1"
+        script="ویرایش اطلاعات چرخه"
+        linkTo="/protected/periodSettings"
+        Icon={<PeriodIcon className="w-7 h-auto" />}
+      />
+    );
+  }
+
+  if (phase === CyclePhaseEnum.PeriodPrevention) {
+    return (
+      <CardGenerator
+        backgroundColor="#FDEFF1"
+        script="ویرایش اطلاعات چرخه"
+        linkTo="/protected/periodSettings"
+        Icon={<PeriodIcon className="w-7 h-auto" />}
+      />
+    );
+  }
+
   if (phase === CyclePhaseEnum.Breastfeeding) {
     return (
       <CardGenerator

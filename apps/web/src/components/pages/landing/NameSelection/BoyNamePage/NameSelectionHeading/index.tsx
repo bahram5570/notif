@@ -28,8 +28,9 @@ const NameSelectionHeading = () => {
             <div className="h-full w-full flex flex-col md:flex-row gap-2 md:gap-10 xl:gap-14 pt-[100px] md:pt-[160px] lg:pt-[100px]">
               <LandingHeadingContents contentElement={contentElement} />
               <LandingHeadingImage
+                alt="اسم پسر خاص و تک"
                 imagePosition={'bottom'}
-                image="/assets/images/heading-boyNameSelection.webp"
+                image="/assets/images/boy-name-impo.app.webp"
                 imageClassName="lg:max-w-[580px] lg:max-h-[513px]  max-w-[200px] w-full h-full"
               />
             </div>

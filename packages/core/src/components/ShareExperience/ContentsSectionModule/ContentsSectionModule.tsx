@@ -11,12 +11,13 @@ import { TagType } from '../types';
 import { ContentsSectionModuleProps } from './type';
 
 export const ContentsSectionModule = (props: ContentsSectionModuleProps) => {
-  const { newQueryParamsHandler } = useQueryParamsHandler();
+  const { hasLinkTo = true, id, image, text, tags } = props;
+
   const { pageNavigationHandler } = usePageNavigationLoading();
   const { increaseZIndex } = useShareExperienceHandlers();
+  const { newQueryParamsHandler } = useQueryParamsHandler();
   const { actionHandler } = useWidgetActions();
   const toast = useCustomToast();
-  const { hasLinkTo = true, id, image, text, tags } = props;
 
   const clickHandler = (tag: TagType) => {
     if (tag.action) {
@@ -62,14 +63,8 @@ export const ContentsSectionModule = (props: ContentsSectionModuleProps) => {
         })}
 
       {image.trim().length > 0 && (
-        <div className="overflow-hidden aspect-[16_/_9] rounded-xl object-cover ">
-          <CustomImage_NEW
-            src={image}
-            hasPreviewImage={true}
-            previewImageShape="full"
-            className="aspect-[16_/_9] rounded-xl object-cover w-full h-full"
-            fill
-          />
+        <div className="relative w-full aspect-[16_/_9] rounded-xl overflow-hidden">
+          <CustomImage_NEW src={image} fill={true} hasPreviewImage={true} className="object-cover" />
         </div>
       )}
     </div>

@@ -4,7 +4,7 @@ import { NEED_DATE_PATH_LIST, NEED_TOAST_PATH_LIST } from '@constants/routes.con
 import PaymentProvider from '@providers/PaymentProvider';
 import ProfileProvider from '@providers/ProfileProvider';
 import RetentionEventProvider from '@providers/RetentionEventProvider';
-import SentryProvider from '@providers/SentryProvider';
+// import SentryProvider from '@providers/SentryProvider';
 import SplashProvider from '@providers/SplashProvider';
 import SignInteractiveBannerProvider from '@providers/__sign__/SignInteractiveBannerProvider';
 import { PermissionsProvider } from '@repo/core/providers/PermissionsProvider';

@@ -2,16 +2,15 @@ import BlueTick from '@assets/shared/icons/blueTick2.svg';
 
 import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
-import { useShareExperienceHandlers } from '../../../hooks/useShareExperienceHandlers/useShareExperienceHandlers';
-import { CustomImage } from '../../ui/CustomImage';
+import { useShareExperienceHandlers } from '../../../hooks/useShareExperienceHandlers';
 import { CustomImage_NEW } from '../../ui/CustomImage_NEW';
 import { SHARE_EXPERIENCE_PROFILE_QUERY_NAME } from '../constants';
 import { SelectedProfileLinkProps } from './type';
 
 export const SelectedProfileLink = (props: SelectedProfileLinkProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
-  const { pageNavigationHandler } = usePageNavigationLoading();
   const { increaseZIndex } = useShareExperienceHandlers();
+  const { pageNavigationHandler } = usePageNavigationLoading();
 
   const selectProfileHandler = () => {
     if (!props.isSelf) {
@@ -26,23 +25,11 @@ export const SelectedProfileLink = (props: SelectedProfileLinkProps) => {
     <div
       className="relative"
       onClick={selectProfileHandler}
-      style={{ width: props.size, minWidth: props.size, height: props.size, minHeight: props.size }}
+      style={{ minWidth: props.size, minHeight: props.size, maxWidth: props.size, maxHeight: props.size }}
     >
-      {/* <div className="w-full rounded-full">
-        <CustomImage_NEW
-          fill
-          src={props.avatar}
-          previewImageShape="circle"
-          className="rounded-full pointer-events-none !object-cover"
-        />
-      </div> */}
-      <CustomImage
-        src={props.avatar}
-        width={'100%'}
-        hasPreviewImage
-        previewImageShape="circle"
-        className="rounded-full pointer-events-none !object-cover"
-      />
+      <div className="relative w-full h-full rounded-full overflow-hidden">
+        <CustomImage_NEW src={props.avatar} fill={true} className="object-cover pointer-events-none" />
+      </div>
 
       {props.approvedProfile && <BlueTick className="w-4 absolute bottom-0 -left-1 pointer-events-none" />}
     </div>
