@@ -71,6 +71,7 @@ const ShareExperienceRules = ({ textRegualtion }: ShareExperienceRulesProps) => 
                 direction: 'rtl',
                 marginBottom: '6px',
               }}
+              target="_blank"
               className="text-impo_Primary_Primary underline"
               {...props}
             />

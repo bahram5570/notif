@@ -21,7 +21,7 @@ const useConfigNewExperience = () => {
     setConfig(v);
   };
   const { isLoading } = usePwaApi<ConfigResponseType>({
-    api: 'shareeexperience/v3/experience/config',
+    api: 'shareeexperience/v3/experience/config/v2',
     method: 'GET',
     queryKey: ['configNewExperience'],
     onSuccess: successHandler,

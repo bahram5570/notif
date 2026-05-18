@@ -6,7 +6,7 @@ import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { ConfigResponseType } from '../../../__hooks__/useConfig/type';
 
 const useSubmit = () => {
-  const [isCheckRule, setIsCheckRule] = useState(true);
+  const [isCheckRule, setIsCheckRule] = useState(false);
   const { getQuery, updateQuery } = useCustomReactQuery();
 
   const checkRuleHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
