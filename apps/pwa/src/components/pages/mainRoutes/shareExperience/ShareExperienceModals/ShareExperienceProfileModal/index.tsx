@@ -20,10 +20,10 @@ const ShareExperienceProfileModal = () => {
     <>
       <CustomModal
         isOpen={isOpen}
-        isSlidingMode={true}
-        isFullScreen={true}
-        className="!py-0 overflow-y-auto !px-0"
         zIndex={zIndex}
+        isFullScreen={true}
+        isSlidingMode={true}
+        className="!py-0 overflow-y-auto !px-0"
       >
         <>{isOpen && <ShareExperienceProfileModalContainer userId={queryData} />}</>
       </CustomModal>

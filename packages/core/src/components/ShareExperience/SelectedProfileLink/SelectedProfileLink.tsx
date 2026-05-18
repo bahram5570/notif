@@ -23,9 +23,16 @@ export const SelectedProfileLink = (props: SelectedProfileLinkProps) => {
 
   return (
     <div
-      className="relative"
       onClick={selectProfileHandler}
-      style={{ minWidth: props.size, minHeight: props.size, maxWidth: props.size, maxHeight: props.size }}
+      style={{
+        position: 'relative',
+        width: props.size,
+        minWidth: props.size,
+        maxWidth: props.size,
+        height: props.size,
+        minHeight: props.size,
+        maxHeight: props.size,
+      }}
     >
       <div className="relative w-full h-full rounded-full overflow-hidden">
         <CustomImage_NEW src={props.avatar} fill={true} className="object-cover pointer-events-none" />

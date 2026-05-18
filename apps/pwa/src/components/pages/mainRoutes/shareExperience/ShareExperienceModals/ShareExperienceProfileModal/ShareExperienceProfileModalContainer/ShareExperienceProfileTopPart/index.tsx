@@ -46,6 +46,7 @@ const ShareExperienceProfileTopPart = ({
             username={profile.username}
             id={profile.id}
           />
+
           <CustomTypography fontSize="Lable_Small" className="text-impo_Neutral_OnBackground w-full text-right">
             {profile.username}
           </CustomTypography>

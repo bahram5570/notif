@@ -34,7 +34,7 @@ const LogOut = () => {
           خروج از حساب کاربری
         </CustomTypography>
 
-        {isLoading && <CustomSpinner size={24} />}
+        {isLoading && <CustomSpinner className="border-impo_Neutral_OnBackground" size={24} />}
         {!isLoading && <LogoutIcon className="w-6 h-auto stroke-impo_Neutral_OnBackground" />}
       </div>
     </div>

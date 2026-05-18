@@ -3,7 +3,7 @@ import { memo } from 'react';
 import StarIcon from '@assets/icons/star2.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { SPLASH_MESSAGES_LIST } from './constants';
+import { SPLASH_MESSAGES_LIST } from '../constants';
 
 const SplashContentsMessages = () => {
   const randomIndex = Math.floor(Math.random() * SPLASH_MESSAGES_LIST.length);

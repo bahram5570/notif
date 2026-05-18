@@ -4,6 +4,7 @@ import { InfiniteList } from '@repo/core/components/InfiniteList';
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import {
   ContentsSectionModule,
+  Loading,
   NewPostLink,
   SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME,
 } from '@repo/core/components/ShareExperience';
@@ -20,24 +21,26 @@ import useNewCommentQueries from './__hooks__/useNewCommentQueries';
 import { ShareExperienceCommentsModalContainerProps } from './types';
 
 const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsModalContainerProps) => {
-  const { newCommentQueries } = useNewCommentQueries(props.id);
   const { isLoading, commentsData, updateList, isFirstLoad } = useCommentsList({ id: props.id });
+  const { newCommentQueries } = useNewCommentQueries(props.id);
   const containerRef = useRef<HTMLDivElement>(null);
 
   useOverflowHandler(props.queryParam !== null);
 
   return (
     <MainPageLayout rightElement="BackButton">
+      {isLoading && commentsData === undefined && <Loading />}
+
       {!isFirstLoad && typeof commentsData !== 'undefined' && (
         <div
-          className="relative flex flex-col px-4 h-dvh"
+          ref={containerRef}
+          className="relative flex flex-col px-4"
           style={{
             height: '100dvh',
             overflow: 'auto',
             paddingBottom: FOOTER_HEIGHT + 16,
             pointerEvents: isLoading ? 'none' : 'auto',
           }}
-          ref={containerRef}
         >
           <CommentsTopPart {...commentsData} id={props.id} />
 
@@ -46,7 +49,9 @@ const ShareExperienceCommentsModalContainer = (props: ShareExperienceCommentsMod
           <CommentsBottomPart {...commentsData} id={props.id} />
           <div className="px-4">
             <div className="w-full h-1 my-4 bg-impo_Neutral_Surface" />
+
             {commentsData.comments.length === 0 && <CommentsListEmpty self={commentsData.self} />}
+
             <InfiniteList
               parentRef={containerRef}
               list={commentsData.comments}

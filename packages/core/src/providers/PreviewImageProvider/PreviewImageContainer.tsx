@@ -31,10 +31,23 @@ const PreviewImageContainer = ({ src, shape = 'full' }: PreviewImageContainerPro
       style={{ maxWidth: MAX_SCREEN_WIDTH }}
       className="fixed top-0 left-0 right-0 bottom-0 mx-auto bg-impo_Black backdrop-blur-sm z-[500]"
     >
-      <CrossIcon
+      <div
         onClick={() => router.back()}
-        className="absolute top-9 right-4 w-10 h-auto fill-impo_White cursor-pointer z-10"
-      />
+        className="
+                    absolute 
+                    top-9 
+                    right-4 
+                    w-10 
+                    h-10 
+                    rounded-full 
+                    bg-impo_Surface_InverseSurface 
+                    dark:bg-impo_Surface_InverseOnSurface 
+                    cursor-pointer 
+                    z-10
+                  "
+      >
+        <CrossIcon className="w-full h-auto fill-impo_White" />
+      </div>
 
       <div className="relative w-full h-full flex justify-center">
         {shape === 'full' && <Image src={src} alt="" fill={true} className="object-contain" />}

@@ -68,8 +68,7 @@ const UserNameDetail = ({ name, username, avatar }: UserNameDetailsProps) => {
 
         <div className="relative w-14 h-14 min-w-14 min-h-14 rounded-full" onClick={avatarHandler}>
           <CustomImage_NEW
-            width={56}
-            height={56}
+            fill={true}
             src={data?.womanAvatar || avatar}
             className="object-cover object-center rounded-full"
           />
