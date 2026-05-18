@@ -1,6 +1,6 @@
-import { ShareExperienceTopPartProps } from '../types';
+import { HeaderPostSectionProps } from '../type';
 
 export interface ShareExperienceScriptsProps extends Pick<
-  ShareExperienceTopPartProps,
+  HeaderPostSectionProps,
   'name' | 'createTime' | 'isPin' | 'topicName'
 > {}
