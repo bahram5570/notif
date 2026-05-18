@@ -1,6 +1,8 @@
-import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
+import { useRef } from 'react';
 
-import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+import { InfiniteList } from '@repo/core/components/InfiniteList';
+
+import { FOOTER_HEIGHT, HEADER_HEIGHT, PAGE_SIZE } from '@repo/core/constants/app.constants';
 
 import ShareExperienceFollowItemModule from '../ShareExperienceFollowItemModule';
 import EmptyState from './EmptyState';
@@ -12,6 +14,7 @@ const ShareExperienceFollowListModule = ({
   EmptyStateScript,
   pageType,
 }: ShareExperienceFollowListModulePropsType) => {
+  const scrollRef = useRef<HTMLDivElement>(null);
   const { followQueryData, isLoading, pageNo, updatePageNo } = useGetFollowData({
     userId,
     pageType,
@@ -20,32 +23,44 @@ const ShareExperienceFollowListModule = ({
   const hasItem = followQueryData && followQueryData.items.length > 0;
 
   return (
-    <InfiniteScrollContainer
-      isLoading={isLoading}
-      pageNo={pageNo}
-      totalCount={followQueryData?.totalCount || 10}
-      callBack={updatePageNo}
-      height={'100dvh'}
+    <div
+      className="px-4"
+      ref={scrollRef}
+      style={{
+        height: '100dvh',
+        overflow: 'auto',
+        paddingBottom: FOOTER_HEIGHT + 16,
+        pointerEvents: isLoading ? 'none' : 'auto',
+        paddingTop: HEADER_HEIGHT + 10,
+      }}
     >
-      {followQueryData && (
-        <div className="flex flex-col px-4 h-full" style={{ paddingTop: HEADER_HEIGHT + 10 }}>
-          {!hasItem && <EmptyState EmptyStateScript={EmptyStateScript} />}
-          {hasItem &&
-            followQueryData.items.map((item, index) => {
-              const isLastItem = followQueryData.items.length - 1 === index;
-              return (
-                <ShareExperienceFollowItemModule
-                  isLastItem={isLastItem}
-                  item={item}
-                  key={index}
-                  pageType={pageType}
-                  userId={userId}
-                />
-              );
-            })}
-        </div>
+      {!hasItem && <EmptyState EmptyStateScript={EmptyStateScript} />}
+      {hasItem && (
+        <InfiniteList
+          parentRef={scrollRef}
+          list={followQueryData.items}
+          pagination={{
+            pageNo: pageNo,
+            isLoading: isLoading,
+            callPagination: updatePageNo,
+            pageSize: PAGE_SIZE,
+            totalCount: followQueryData.totalCount,
+          }}
+          renderItem={(item, index) => {
+            const isLastItem = followQueryData.items.length - 1 === index;
+            return (
+              <ShareExperienceFollowItemModule
+                isLastItem={isLastItem}
+                item={item}
+                key={index}
+                pageType={pageType}
+                userId={userId}
+              />
+            );
+          }}
+        />
       )}
-    </InfiniteScrollContainer>
+    </div>
   );
 };
 
