@@ -14,8 +14,8 @@ const usePreviewImage = () => {
   const hasQueryPreview = getQueryParams(PREVIEW_IMAGE);
   const isQueryLoading = pageNavigationLoading === PREVIEW_IMAGE;
 
-  const previewImageHandler: PreviewImageHandlerTypes = ({ shape, src, hasPreviewImage }) => {
-    if (hasPreviewImage && !isQueryLoading) {
+  const previewImageHandler: PreviewImageHandlerTypes = ({ shape, src }) => {
+    if (!isQueryLoading) {
       pageNavigationHandler({ showProgressBar: false, id: PREVIEW_IMAGE });
       setPreviewImageLoading(true);
 

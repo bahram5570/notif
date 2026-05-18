@@ -1,5 +1,5 @@
 import { InfiniteList } from '@repo/core/components/InfiniteList';
-import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
+import { Loading } from '@repo/core/components/ShareExperience';
 
 import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 
@@ -25,11 +25,8 @@ const ShareExperienceAssociationItemContainer = ({
 
   return (
     <div ref={scrollRef} className="h-full overflow-y-auto">
-      {isLoading && (
-        <div className="flex flex-col justify-center items-center h-full w-full">
-          <CustomSpinner size={30} className="border-impo_Primary_Primary" />
-        </div>
-      )}
+      {isLoading && <Loading />}
+
       {associationInfoData && !isLoading && (
         <>
           <ShareExperienceNewLink
@@ -44,6 +41,7 @@ const ShareExperienceAssociationItemContainer = ({
           />
           <div style={{ paddingTop: isScrolled ? '80px' : '220px' }}>
             {!hasExperienceList && !experiencesLoading && <EmptyState associationName={associationInfoData.title} />}
+
             {hasExperienceList && (
               <div className="flex-1 overflow-y-auto px-4" style={{ paddingBottom: FOOTER_HEIGHT }}>
                 <InfiniteList

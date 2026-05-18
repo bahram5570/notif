@@ -1,3 +1,4 @@
+import { Loading } from '@repo/core/components/ShareExperience';
 import { CustomBackButton } from '@repo/core/components/ui/CustomBackButton';
 import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
@@ -19,11 +20,7 @@ const ShareExperienceTopicModalContainerLayout = ({
 }: ShareExperienceTopicModalContainerLayoutPropsTypes) => {
   return (
     <div ref={scrollRef} className="h-[100dvh] overflow-auto" style={{ paddingBottom: FOOTER_HEIGHT + 16 }}>
-      {isLoading && (
-        <div className="w-full flex justify-center py-20">
-          <CustomSpinner size={40} className="border-impo_Surface_Outline" />
-        </div>
-      )}
+      {isLoading && <Loading />}
 
       {!isLoading && (
         <>

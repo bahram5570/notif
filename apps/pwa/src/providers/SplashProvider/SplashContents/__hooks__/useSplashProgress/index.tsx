@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
+import { SPLASH_TIMER_STEP_MS } from '@providers/SplashProvider/constants';
+
 import { UseSplashProgressTypes } from './types';
 
 const useSplashProgress = ({ splashStatushHandler, splashStatus }: UseSplashProgressTypes) => {
@@ -25,7 +27,7 @@ const useSplashProgress = ({ splashStatushHandler, splashStatus }: UseSplashProg
   useEffect(() => {
     timerRef.current = setInterval(() => {
       progressHandler();
-    }, 50);
+    }, SPLASH_TIMER_STEP_MS);
 
     return () => {
       clearInterval(timerRef.current);

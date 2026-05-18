@@ -1,18 +1,21 @@
 import { useRef } from 'react';
 
 import { InfiniteList } from '@repo/core/components/InfiniteList';
-import { EXPERIENCES_PROFILE_PAGE_SIZE } from '@repo/core/components/ShareExperience';
+import { EXPERIENCES_PROFILE_PAGE_SIZE, Loading } from '@repo/core/components/ShareExperience';
 
 import ShareExperiencePostCardModules from '@components/pages/mainRoutes/shareExperience/ShareExperienceModules/ShareExperiencePostCardModules';
+import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
 
 import ShareExperenceProfileTabListEmpty from '../ShareExperenceProfileTabListEmpty';
 import useActivitiesData from './__hooks__/useActivitiesData';
 import { ShareExperienceProfileActivitiesPropsType } from './type';
 
 const ShareExperienceProfileActivities = ({ id, isSelf }: ShareExperienceProfileActivitiesPropsType) => {
-  const { selfExperienceData, isLoading, pageNo, updatePageNo } = useActivitiesData({ id });
-  const hasData = selfExperienceData && selfExperienceData.list.length > 0;
   const scrollRef = useRef<HTMLDivElement>(null);
+  const { selfExperienceData, isLoading, pageNo, updatePageNo } = useActivitiesData({ id });
+
+  const hasData = selfExperienceData && selfExperienceData.list.length > 0;
+
   return (
     <>
       <div
@@ -20,10 +23,14 @@ const ShareExperienceProfileActivities = ({ id, isSelf }: ShareExperienceProfile
         style={{
           height: '100dvh',
           overflow: 'auto',
+          paddingBottom: FOOTER_HEIGHT,
           pointerEvents: isLoading ? 'none' : 'auto',
         }}
       >
+        {isLoading && selfExperienceData === undefined && <Loading />}
+
         {!hasData && !isLoading && <ShareExperenceProfileTabListEmpty />}
+
         {selfExperienceData && (
           <InfiniteList
             parentRef={scrollRef}

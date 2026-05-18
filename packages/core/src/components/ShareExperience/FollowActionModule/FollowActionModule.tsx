@@ -51,6 +51,7 @@ export const FollowActionModule = (props: FollowActionModuleProps) => {
                     flex 
                     justify-center 
                     h-fit 
+                    min-w-fit
                     border-[1px] 
                     border-impo_Neutral_Surface
                     rounded-full 

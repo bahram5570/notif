@@ -5,7 +5,7 @@ import { CustomTypography } from '../../../ui/CustomTypography';
 import { ShareExperienceScriptsProps } from './types';
 
 const ShareExperienceScripts = ({ createTime, name, isPin, topicName }: ShareExperienceScriptsProps) => {
-  const timeScript = usePassedTime(createTime);
+  const timeScript = `. ${usePassedTime(createTime)}`;
 
   return (
     <div className="flex flex-col" dir="rtl">
@@ -16,7 +16,9 @@ const ShareExperienceScripts = ({ createTime, name, isPin, topicName }: ShareExp
           {name}
         </CustomTypography>
 
-        <CustomTypography fontSize="Lable_Small" className="text-impo_Grey_500">{`. ${timeScript}`}</CustomTypography>
+        <CustomTypography fontSize="Lable_Small" className="text-impo_Grey_500 !min-w-fit">
+          {timeScript}
+        </CustomTypography>
       </div>
 
       <CustomTypography fontSize="Body_Small" className="text-impo_Surface_InverseSurface">

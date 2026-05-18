@@ -2,9 +2,9 @@ import { useRef } from 'react';
 
 import { InfiniteList } from '@repo/core/components/InfiniteList';
 import { MainPageLayoutHeader } from '@repo/core/components/MainPageLayout';
-import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
+import { Loading } from '@repo/core/components/ShareExperience';
 
-import { HEADER_HEIGHT, PAGE_SIZE } from '@repo/core/constants/app.constants';
+import { FOOTER_HEIGHT, HEADER_HEIGHT, PAGE_SIZE } from '@repo/core/constants/app.constants';
 
 import EmptyState from './EmptyState';
 import ShareExperienceAssociationItem from './ShareExperienceAssociationItem';
@@ -18,20 +18,19 @@ const ShareExperienceAssociationListContainer = () => {
   return (
     <>
       <MainPageLayoutHeader rightElement="BackButton" middleScript="پاتوق ها" className="bg-impo_Neutral_Surface" />
+
       <div
         ref={scrollRef}
         style={{
           height: '100dvh',
           overflow: 'auto',
+          paddingBottom: FOOTER_HEIGHT,
           pointerEvents: isLoading ? 'none' : 'auto',
           paddingTop: hasAssociationList ? HEADER_HEIGHT + 10 : 0,
         }}
       >
-        {firstLoading && !associationListData && (
-          <div className="flex justify-center items-center w-full h-full " style={{ paddingTop: HEADER_HEIGHT + 10 }}>
-            <CustomSpinner />
-          </div>
-        )}
+        {firstLoading && !associationListData && <Loading />}
+
         {!firstLoading && associationListData && (
           <>
             {!hasAssociationList && <EmptyState />}

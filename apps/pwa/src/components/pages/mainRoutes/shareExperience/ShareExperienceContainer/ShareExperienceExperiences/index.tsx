@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 
 import { InfiniteList } from '@repo/core/components/InfiniteList';
-import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
+import { Loading } from '@repo/core/components/ShareExperience';
 
 import ShareExperienceAssociationItemModal from '../../ShareExperienceModals/ShareExperienceAssociationItemModal';
 import ShareExperienceAssociationListModal from '../../ShareExperienceModals/ShareExperienceAssociationListModal';
@@ -37,11 +37,7 @@ const ShareExperienceExperiences = ({
 
   return (
     <>
-      {isLoading && experiencesData === undefined && (
-        <div className="w-full flex justify-center items-end p-4">
-          <CustomSpinner size={40} className="border-impo_Surface_Outline" />
-        </div>
-      )}
+      {isLoading && experiencesData === undefined && <Loading />}
 
       {!isLoading && experiencesData && (
         <>

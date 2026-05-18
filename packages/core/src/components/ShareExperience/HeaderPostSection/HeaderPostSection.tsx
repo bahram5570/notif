@@ -6,7 +6,7 @@ import { HeaderPostSectionProps } from './type';
 export const HeaderPostSection = (props: HeaderPostSectionProps) => {
   return (
     <div className="w-full flex justify-between items-center" dir="rtl">
-      <div className="flex gap-2">
+      <div className="flex gap-2 pl-1">
         <SelectedProfileLink
           approvedProfile={props.approvedProfile}
           isSelf={props.selfExperience}

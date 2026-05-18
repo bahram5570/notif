@@ -35,14 +35,15 @@ export const UserAvatarModule = ({ id, avatarImage, showChangeAvatarIcon, userna
           className="overflow-hidden rounded-full flex justify-center items-center"
           onClick={() => callEvent(showChangeAvatarIcon ? 'ShareExperienceSelfProfile' : 'ShareExperienceOtherProfile')}
         >
-          <CustomImage_NEW
-            width={88}
-            height={88}
-            src={avatarImage}
-            hasPreviewImage={true}
-            className="!object-cover"
-            previewImageShape="circle"
-          />
+          <div className="relative w-[88px] h-[88px] rounded-full overflow-hidden ">
+            <CustomImage_NEW
+              fill={true}
+              src={avatarImage}
+              hasPreviewImage={true}
+              className="!object-cover"
+              previewImageShape="circle"
+            />
+          </div>
         </div>
 
         {showChangeAvatarIcon && (

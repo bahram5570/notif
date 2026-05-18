@@ -1,6 +1,6 @@
 const ShareExperienceSkeleton = () => {
   return (
-    <div className="relative w-full px-4 animate-pulse z-50 " style={{ direction: 'rtl' }}>
+    <div className="relative w-full px-4 animate-pulse " style={{ direction: 'rtl' }}>
       <div className="w-full h-14 flex items-center justify-between">
         <div className="w-10 h-10 rounded-full shimmer" />
       </div>

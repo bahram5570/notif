@@ -1,6 +1,5 @@
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
-import { ShareExperienceProfileTabEnum } from '@repo/core/components/ShareExperience';
-import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
+import { Loading, ShareExperienceProfileTabEnum } from '@repo/core/components/ShareExperience';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
@@ -38,15 +37,8 @@ const ShareExperienceProfileModalContainer = ({ userId }: ShareExperienceProfile
 
   return (
     <MainPageLayout paddingTop={0} rightElement="BackButton" rightElementScript={rightElementScript}>
-      <div
-        className=" h-[100dvh] flex flex-col px-3"
-        style={{ paddingTop: HEADER_HEIGHT + 16, paddingBottom: HEADER_HEIGHT }}
-      >
-        {isLoading && (
-          <div className="w-full flex justify-center pb-10">
-            <CustomSpinner className="border-impo_Primary_Primary" />
-          </div>
-        )}
+      <div className=" h-[100dvh] flex flex-col px-3" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
+        {isLoading && <Loading />}
 
         {!isLoading && shareExperienceProfileData && (
           <>

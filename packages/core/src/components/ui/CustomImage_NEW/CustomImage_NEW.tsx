@@ -39,11 +39,11 @@ export const CustomImage_NEW = (props: CustomImage_NEWTypes) => {
   };
 
   const clickHandler = () => {
-    if (imageLoading || previewImageLoading || hasError) {
+    if (imageLoading || previewImageLoading || hasError || !hasPreviewImage) {
       return;
     }
 
-    previewImageHandler({ hasPreviewImage, src: updatedSrc, shape: previewImageShape });
+    previewImageHandler({ src: updatedSrc, shape: previewImageShape });
   };
 
   const isLoaded = updatedSrc !== '' && !hasError && !imageLoading;

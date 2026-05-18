@@ -14,13 +14,13 @@ const Btn = ({ button }: BtnProps) => {
                   absolute 
                   left-0 
                   right-0 
-                  bottom-12 
+                  bottom-10
                   w-full 
                   flex 
+                  flex-col
                   items-center 
                   justify-center 
                   gap-2 
-                  ${button.length > 1 ? 'scale-75' : 'scale-100'}
                 `}
     >
       {button.map((item, index) => (

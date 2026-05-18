@@ -11,8 +11,6 @@ const LogoutModal = () => {
   const router = useRouter();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
-  const isLoading = pageNavigationLoading === 'LogoutModal';
-
   const logoutHandler = async () => {
     localStorage.clear();
     sessionStorage.clear();
@@ -21,6 +19,8 @@ const LogoutModal = () => {
 
     pageNavigationHandler({ showProgressBar: false, id: 'LogoutModal', linkTo: '/' });
   };
+
+  const isLoading = pageNavigationLoading === 'LogoutModal';
 
   return (
     <div className="w-[290px] flex flex-col items-center gap-4">
@@ -41,6 +41,7 @@ const LogoutModal = () => {
           isLoading={isLoading}
           fontSize="Lable_Large"
           onClick={logoutHandler}
+          spinnerClassName="border-impo_Error_Error"
           className="!text-impo_Error_Error !bg-impo_Error_ErrorContainer !border-impo_Error_ErrorContainer"
         >
           خروج

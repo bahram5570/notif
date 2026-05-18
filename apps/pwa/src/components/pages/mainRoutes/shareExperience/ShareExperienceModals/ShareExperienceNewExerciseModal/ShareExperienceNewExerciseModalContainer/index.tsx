@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
-import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
+import { Loading } from '@repo/core/components/ShareExperience';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useOverflowHandler } from '@repo/core/hooks/useOverflowHandler';
@@ -29,19 +29,19 @@ const ShareExperienceNewExerciseModalContainer = ({
   queryParam,
   associationId,
 }: ShareExperienceNewExerciseModalContainerProps) => {
-  const { config, configLoading } = useConfigNewExperience();
   const { topicsData, topicId, topicIdHandler } = useTopics();
-  const { text, textHandler } = useText();
-  const fileProps = useImage();
-  const [btnTop, setBtnTop] = useState<number>(0);
+  const { config, configLoading } = useConfigNewExperience();
   const conainerRef = useRef<HTMLDivElement | null>(null);
+  const [btnTop, setBtnTop] = useState<number>(0);
+  const { text, textHandler } = useText();
   useOverflowHandler(queryParam !== null);
+  const fileProps = useImage();
 
   const { submitHandler, isSubmitLoading, toastMessage } = useSubmit({
     image: fileProps.image,
     topicId: topicId || '',
-    associationId,
     onSuccessNewHandler,
+    associationId,
     text,
   });
 
@@ -68,11 +68,8 @@ const ShareExperienceNewExerciseModalContainer = ({
     <>
       <MainPageLayout rightElement="BackButton" rightElementScript="تجربه جدید" paddingTop={0}>
         <div className="flex flex-col h-[100dvh] overflow-y-auto" style={{ paddingTop: HEADER_HEIGHT + 16 }}>
-          {configLoading && !config && (
-            <div className="flex justify-center items-cente w-full h-full">
-              <CustomSpinner size={20} className="border-impo_Primary_Primary  r" />
-            </div>
-          )}
+          {configLoading && !config && <Loading />}
+
           {!configLoading && config && (
             <>
               {config.showRegualtion && <ShareExperienceRules textRegualtion={config.textRegualtion} />}

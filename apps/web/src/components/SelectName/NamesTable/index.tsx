@@ -25,17 +25,17 @@ const NamesTable = ({ list, bgColor1, bgColor2, borderColor, titleBgColor, title
           {list.map((item, index) => (
             <tr key={index} className={`${index % 2 === 0 ? bgColor2 : bgColor1}`}>
               <td className={`py-3 px-4 border-[1px] ${borderColor}`}>
-                <CustomTypography fontSize="Body_Medium" className="!text-impo_Black">
+                <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground">
                   {item.title}
                 </CustomTypography>
               </td>
               <td className={`py-3 px-4 border-[1px] ${borderColor}`}>
-                <CustomTypography fontSize="Body_Medium" className="!text-impo_Black">
+                <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground">
                   {item.description}
                 </CustomTypography>
               </td>
               <td className={`py-3 px-4 border-[1px] ${borderColor}`}>
-                <CustomTypography fontSize="Body_Medium" className="!text-impo_Black">
+                <CustomTypography fontSize="Body_Medium" className="!text-impo_Neutral_OnBackground">
                   {item.rootName || '-'}
                 </CustomTypography>
               </td>

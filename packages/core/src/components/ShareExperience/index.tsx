@@ -18,6 +18,7 @@ export { LikeActionModule } from './LikeActionModule/LikeActionModule';
 export { ShareExperienceToast } from './ShareExperienceToast/ShareExperienceToast';
 export { PostInView } from './PostInView/PostInView';
 export { NewPostLink } from './NewPostLink/NewPostLink';
+export { Loading } from './Loading/Loading';
 
 export * from './constants';
 export * from './enum';
