@@ -26,7 +26,9 @@ const ShareExperienceNewTopicsGenerator = ({
                   ${isFirstIndex ? 'border-t-impo_Transparent' : 'border-t-impo_Surface_SurfaceVariant'}
                 `}
     >
-      <CustomImage_NEW src={image} width={48} height={48} className="rounded-full" />
+      <div className="w-12 h-12 min-h-12 min-w-12 rounded-full">
+        <CustomImage_NEW src={image} fill className="rounded-full" />
+      </div>
 
       <div className="flex items-center gap-2">
         <CustomTypography fontSize="Lable_Medium" className="text-impo_Surface_InverseSurface">
