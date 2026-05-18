@@ -20,7 +20,7 @@ const useInfiniteListPagination = ({ pagination, parentRef }: UseInfiniteListPag
       const totalCount = pagination?.totalCount;
       const callPagination = pagination?.callPagination;
 
-      const reachEndOfPage = el.scrollTop + el.clientHeight >= el.scrollHeight - 50;
+      const reachEndOfPage = el.scrollTop + el.clientHeight >= el.scrollHeight - 100;
       const hasPageCalculation = pageNo !== undefined && pageSize !== undefined && totalCount !== undefined;
 
       if (!reachEndOfPage || !isInitialRendered || !callPagination || lockRenderingRef.current) {
