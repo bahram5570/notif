@@ -1,6 +1,7 @@
 import { useRef } from 'react';
 
 import { InfiniteList } from '@repo/core/components/InfiniteList';
+import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import { FOOTER_HEIGHT, HEADER_HEIGHT, PAGE_SIZE } from '@repo/core/constants/app.constants';
 
@@ -34,31 +35,40 @@ const ShareExperienceFollowListModule = ({
         paddingTop: HEADER_HEIGHT + 10,
       }}
     >
-      {!hasItem && <EmptyState EmptyStateScript={EmptyStateScript} />}
-      {hasItem && (
-        <InfiniteList
-          parentRef={scrollRef}
-          list={followQueryData.items}
-          pagination={{
-            pageNo: pageNo,
-            isLoading: isLoading,
-            callPagination: updatePageNo,
-            pageSize: PAGE_SIZE,
-            totalCount: followQueryData.totalCount,
-          }}
-          renderItem={(item, index) => {
-            const isLastItem = followQueryData.items.length - 1 === index;
-            return (
-              <ShareExperienceFollowItemModule
-                isLastItem={isLastItem}
-                item={item}
-                key={index}
-                pageType={pageType}
-                userId={userId}
-              />
-            );
-          }}
-        />
+      {isLoading && !followQueryData && (
+        <div className="w-full flex justify-center items-end p-4">
+          <CustomSpinner size={40} className="border-impo_Surface_Outline" />
+        </div>
+      )}
+      {!isLoading && followQueryData && (
+        <>
+          {!hasItem && <EmptyState EmptyStateScript={EmptyStateScript} />}
+          {hasItem && (
+            <InfiniteList
+              parentRef={scrollRef}
+              list={followQueryData.items}
+              pagination={{
+                pageNo: pageNo,
+                isLoading: isLoading,
+                callPagination: updatePageNo,
+                pageSize: PAGE_SIZE,
+                totalCount: followQueryData.totalCount,
+              }}
+              renderItem={(item, index) => {
+                const isLastItem = followQueryData.items.length - 1 === index;
+                return (
+                  <ShareExperienceFollowItemModule
+                    isLastItem={isLastItem}
+                    item={item}
+                    key={index}
+                    pageType={pageType}
+                    userId={userId}
+                  />
+                );
+              }}
+            />
+          )}
+        </>
       )}
     </div>
   );
