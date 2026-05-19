@@ -1,4 +1,4 @@
-import { WidgetSubscriptionCardTypes } from '@repo/core/providers/WidgetActionsProvider';
+import { ActionTypes, WidgetSubscriptionCardTypes } from '@repo/core/providers/WidgetActionsProvider';
 
 type PackagesTypes = Pick<WidgetSubscriptionCardTypes, 'data'>['data']['package'];
 
@@ -28,4 +28,20 @@ export type ResponseTypes = {
   visibleCount: number;
   medias: string[];
   discount: { text: string; valid: boolean };
+  welcoming: {
+    show: boolean;
+    image: string;
+    title: string;
+    description: string;
+    items: {
+      title: string;
+      description: string;
+    }[];
+    button: {
+      backgroundColor: string;
+      foregroundColor: string;
+      text: string;
+      action: ActionTypes;
+    };
+  };
 };
