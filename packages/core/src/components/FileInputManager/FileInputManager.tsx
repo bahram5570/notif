@@ -45,39 +45,6 @@ export const FileInputManager = ({
     setCompressLoading(false);
   };
 
-  // todo: temporarily
-  // const handleFileInput: FileInputHandlerTypes = (type) => async (e) => {
-  //   setActiveInput(type);
-
-  //   const file = e.target.files?.[0];
-  //   if (!file) {
-  //     return;
-  //   }
-
-  //   setCompressLoading(true);
-
-  //   try {
-  //     const formData = new FormData();
-  //     formData.append('file', file);
-
-  //     const response = await fetch(`/api/shared/image-compressor?maxSize=${maxSize}`, {
-  //       method: 'POST',
-  //       body: formData,
-  //     });
-
-  //     const blob = await response.blob();
-
-  //     const compressedFileName = file.name.split('.')[0] + '.webp';
-  //     const compressedFile = new File([blob], compressedFileName, { type: 'image/webp' });
-
-  //     fileDataHandler({ e, file: compressedFile });
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-
-  //   setCompressLoading(false);
-  // };
-
   const borderColor = useMemo(() => {
     switch (appName) {
       case 'MEN_PWA':

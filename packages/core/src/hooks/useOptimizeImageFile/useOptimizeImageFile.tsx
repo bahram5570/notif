@@ -1,6 +1,6 @@
 import imageCompression from 'browser-image-compression';
 
-import { heicConverter } from '@repo/core/lib/heicConverter';
+import { heicConverter } from '../../lib/heicConverter';
 
 export const useOptimizeImageFile = () => {
   const optimizeImageFile = async (file: File) => {

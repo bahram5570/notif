@@ -14,7 +14,7 @@ import { ContinueBtnProps } from './types';
 const ContinueBtn = (props: ContinueBtnProps) => {
   const [btnTop, setBtnTop] = useState<number | null>(null);
   const { newQueryParamsHandler, getQueryParams } = useQueryParamsHandler();
-  const { resetKey, nextActivationHandler } = useContinueBtnNextActivation(props.onContinue);
+  const { nextActivationHandler } = useContinueBtnNextActivation(props.onContinue);
 
   const nextHandler: RewardBtnTypes = (v) => {
     if (v?.isBtn2) {
@@ -74,7 +74,6 @@ const ContinueBtn = (props: ContinueBtnProps) => {
             isLoading={props.isLoading}
             showBtn={props.showContinueBtn}
             navigationLoadingId={navigationLoadingId}
-            // todo key={resetKey + '1'}
           >
             ادامه
           </ActivationBtn>
