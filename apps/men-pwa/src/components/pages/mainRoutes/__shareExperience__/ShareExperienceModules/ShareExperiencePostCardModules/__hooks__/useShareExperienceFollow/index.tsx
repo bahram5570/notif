@@ -9,8 +9,10 @@ import {
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 import { useRouter } from 'next/navigation';
 
+import { SuccessResponseType } from './types';
 import useUpdateActivitiesList from './updateHandlers/useUpdateActivitiesList';
 import useUpdateAssociationExperienceList from './updateHandlers/useUpdateAssociationExperienceList';
 import useUpdateCommentList from './updateHandlers/useUpdateCommentList';
@@ -31,8 +33,16 @@ const useShareExperienceFollow = (experienceId?: string) => {
   const { updateProfileHandler } = useUpdateProfile();
   const { updateActivitiesListHandler } = useUpdateActivitiesList();
   const { updateSelfExperienceListHandler } = useUpdateSelfExperienceList();
+  const { accessOptionHandler } = useShareExperienceHandlers();
 
-  const successHandler = () => {
+  const successHandler = (v: SuccessResponseType) => {
+    if (v.access.isBan) {
+      return accessOptionHandler({
+        isBan: v.access.isBan,
+        textMessage: v.access.textMessage,
+        btnText: v.access.btnText,
+      });
+    }
     updateExperienceListHandler({ isFollow: apiInfo?.isFollow, userId: apiInfo?.userId });
     updateTopicExperience({ isFollow: apiInfo?.isFollow, userId: apiInfo?.userId });
     updateCommentListHandler({ isFollow: apiInfo?.isFollow, userId: apiInfo?.userId, experienceId: experienceId });

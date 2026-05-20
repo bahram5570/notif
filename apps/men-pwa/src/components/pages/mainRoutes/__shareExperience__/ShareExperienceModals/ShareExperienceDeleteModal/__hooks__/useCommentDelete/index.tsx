@@ -4,42 +4,57 @@ import { CommentsResponseTypes } from '@repo/core/components/ShareExperience';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 import { useRouter } from 'next/navigation';
 
 import { QueryExperiencesDataTypes } from '../../../ShareExperienceTopicModal/ShareExperienceTopicModalContainer/__hooks__/useGetData/type';
-import { IdInfoTypes } from './types';
+import { IdInfoTypes, SuccessResponseType } from './types';
 
 const useCommentDelete = () => {
   const router = useRouter();
   const { updateQuery, getQuery } = useCustomReactQuery();
+  const { accessOptionHandler } = useShareExperienceHandlers();
   const [idInfo, setIdInfo] = useState<null | IdInfoTypes>(null);
 
   const commentApplyHandler = ({ shareId, commentId }: IdInfoTypes) => {
     setIdInfo({ shareId, commentId });
   };
 
-  const successHandler = () => {
-    const experiencesData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['experiences'] });
-    if (experiencesData) {
-      const experienceIndex = experiencesData.expirences.findIndex((item) => item.id === idInfo?.shareId);
+  const successHandler = (v: SuccessResponseType) => {
+    if (v.isValid) {
+      const experiencesData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['experiences'] });
+      if (experiencesData) {
+        const experienceIndex = experiencesData.expirences.findIndex((item) => item.id === idInfo?.shareId);
 
-      if (experienceIndex > -1) {
-        experiencesData.expirences[experienceIndex].commentCount--;
-        updateQuery({ queryKey: ['experiences'], payload: experiencesData });
+        if (experienceIndex > -1) {
+          experiencesData.expirences[experienceIndex].commentCount--;
+          updateQuery({ queryKey: ['experiences'], payload: experiencesData });
+        }
+      }
+
+      const commentsData = getQuery<CommentsResponseTypes>({ queryKey: ['comments ' + idInfo?.shareId] });
+      if (commentsData) {
+        const filteredCommentsList = commentsData.comments.filter((item) => item.id !== idInfo?.commentId);
+        commentsData.comments = filteredCommentsList;
+        commentsData.commentCount = commentsData.commentCount - 1;
+
+        updateQuery({ queryKey: ['comments ' + idInfo?.shareId], payload: commentsData });
+      }
+
+      setIdInfo(null);
+      router.back();
+    } else {
+      if (v.access.isBan) {
+        setIdInfo(null);
+        router.back();
+
+        return accessOptionHandler({
+          isBan: v.access.isBan,
+          textMessage: v.access.textMessage,
+          btnText: v.access.btnText,
+        });
       }
     }
-
-    const commentsData = getQuery<CommentsResponseTypes>({ queryKey: ['comments ' + idInfo?.shareId] });
-    if (commentsData) {
-      const filteredCommentsList = commentsData.comments.filter((item) => item.id !== idInfo?.commentId);
-      commentsData.comments = filteredCommentsList;
-      commentsData.commentCount = commentsData.commentCount - 1;
-
-      updateQuery({ queryKey: ['comments ' + idInfo?.shareId], payload: commentsData });
-    }
-
-    setIdInfo(null);
-    router.back();
   };
 
   const errorHandler = () => {

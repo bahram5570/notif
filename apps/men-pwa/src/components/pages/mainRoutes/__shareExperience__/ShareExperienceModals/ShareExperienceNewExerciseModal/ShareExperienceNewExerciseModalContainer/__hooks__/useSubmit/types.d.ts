@@ -1,3 +1,5 @@
+import { AccessType } from '@repo/core/components/ShareExperience';
+
 import { ShareExperienceNewExerciseModalContainerProps } from '../../types';
 
 export interface UseSubmitProps extends Pick<
@@ -9,7 +11,7 @@ export interface UseSubmitProps extends Pick<
   text: string;
 }
 
-export type NewExperienceResponseType = {
+export type NewExperienceResponseType = AccessType & {
   toast: string;
   valid: boolean;
 };

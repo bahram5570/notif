@@ -2,14 +2,25 @@ import { useEffect, useState } from 'react';
 
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 import { useRouter } from 'next/navigation';
 
+import { SuccessResponseType } from './type';
+
 const useShareExperienceReport = () => {
+  const [api, setApi] = useState<null | string>(null);
   const router = useRouter();
   const toast = useCustomToast();
-  const [api, setApi] = useState<null | string>(null);
+  const { accessOptionHandler } = useShareExperienceHandlers();
 
-  const successHandler = () => {
+  const successHandler = (v: SuccessResponseType) => {
+    if (v.access.isBan) {
+      return accessOptionHandler({
+        isBan: v.access.isBan,
+        textMessage: v.access.textMessage,
+        btnText: v.access.btnText,
+      });
+    }
     toast.notifyToastHandler({ message: 'پست با موفقیت ریپورت شد' });
     router.back();
     setApi(null);
