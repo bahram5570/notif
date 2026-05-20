@@ -1,10 +1,10 @@
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { useRouter } from 'next/navigation';
 
 import { UseDeletePropsType } from './type';
 
 const useDelete = ({ api, onSuccess }: UseDeletePropsType) => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const successHandler = (v: boolean) => {
     if (v) {

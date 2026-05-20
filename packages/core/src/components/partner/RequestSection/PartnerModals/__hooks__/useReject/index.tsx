@@ -1,11 +1,10 @@
-import { useRouter } from 'next/navigation';
-
 import { useCustomReactQuery } from '../../../../../../hooks/useCustomReactQuery';
+import { useCustomRouter } from '../../../../../../hooks/useCustomRouter';
 import { usePwaApi } from '../../../../../../hooks/usePwaApi';
 
 const useReject = () => {
+  const route = useCustomRouter();
   const { refetchQuery } = useCustomReactQuery();
-  const route = useRouter();
 
   const successHandler = () => {
     refetchQuery({ queryKey: ['partnerRequest'] });

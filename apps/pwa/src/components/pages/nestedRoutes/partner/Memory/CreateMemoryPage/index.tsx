@@ -7,9 +7,9 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useFileUpload } from '@repo/core/hooks/useFileUpload';
 import moment from 'moment-jalaali';
-import { useRouter } from 'next/navigation';
 
 import useCalendarDateFormat from '../../__hooks__/useCalendarDateFormat';
 import MemoryHeader from './MemoryHeader';
@@ -21,7 +21,7 @@ import { initialValue } from './constants';
 import { InputValueType } from './type';
 
 const CreateMemoryPage = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const [inputValue, setInputValue] = useState<InputValueType>(initialValue);
   const { createMemoryHandler, isLoading } = useSubmit();
   const gregorianMoment = moment(new Date().toISOString(), 'YYYY-MM-DD');

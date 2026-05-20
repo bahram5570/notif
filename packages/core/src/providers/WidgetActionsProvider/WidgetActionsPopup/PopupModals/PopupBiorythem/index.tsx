@@ -2,12 +2,11 @@ import { BiorhythmItems } from '../../../../../components/BiorhythmItems/Biorhyt
 import { CustomTypography } from '../../../../../components/ui/CustomTypography';
 import CrossIcon from '@assets/shared/icons/plus.svg';
 
-import { useRouter } from 'next/navigation';
-
+import { useCustomRouter } from '../../../../../hooks/useCustomRouter';
 import { PopupBiorythemProps } from './type';
 
 const PopupBiorythem = ({ data }: PopupBiorythemProps) => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   return (
     <>

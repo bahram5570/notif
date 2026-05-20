@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { useRouter } from 'next/navigation';
 
 const useShareExperienceReport = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const toast = useCustomToast();
   const [api, setApi] = useState<null | string>(null);
 

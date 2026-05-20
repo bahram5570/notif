@@ -1,6 +1,5 @@
-import { useRouter } from 'next/navigation';
-
 import { useCustomReactQuery } from '../../../hooks/useCustomReactQuery';
+import { useCustomRouter } from '../../../hooks/useCustomRouter';
 import { BabyCheckTypeEnums, KitTestModuleTypeEnums } from '../../../providers/WidgetActionsProvider';
 import { Loading } from '../../ui/Loading';
 import { KitTestDigitalBabyCheck } from '../KitTestDigitalBabyCheck';
@@ -16,7 +15,7 @@ export const TestKitModalsBabyCheck = ({
   AnalytisId,
   onComplete,
 }: TestKitModalsBabyCheckProps) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { newQuery } = useCustomReactQuery();
 
   const successHandler = () => {

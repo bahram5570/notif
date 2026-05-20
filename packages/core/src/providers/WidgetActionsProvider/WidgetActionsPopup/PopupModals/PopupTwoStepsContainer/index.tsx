@@ -1,12 +1,11 @@
 import CrossIcon from '@assets/shared/icons/plus.svg';
 
-import { useRouter } from 'next/navigation';
-
+import { useCustomRouter } from '../../../../../hooks/useCustomRouter';
 import PopupTwoStepsContainerProgressBar from './PopupTwoStepsContainerProgressBar';
 import { PopupTwoStepsContainerProps } from './types';
 
 const PopupTwoStepsContainer = ({ children, currentStep }: PopupTwoStepsContainerProps) => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   return (
     <div className="relative w-full h-full flex flex-col items-center bg-impo_Neutral_Surface">

@@ -1,11 +1,11 @@
 import ArrowIcon from '@assets/shared/icons/calendarArrow.svg';
 
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import useNameSelectorActivationSteps from '../../__hooks__/useNameSelectorActivationSteps';
 
 const NameSelectorActivationProgressBar = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { stepInfo } = useNameSelectorActivationSteps();
 
   const progressPercent = stepInfo.progressPercent;

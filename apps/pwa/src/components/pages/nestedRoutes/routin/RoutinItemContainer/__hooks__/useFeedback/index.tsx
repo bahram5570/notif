@@ -2,14 +2,14 @@ import { useState } from 'react';
 
 import { onSubmitType } from '@repo/core/components/ui/FeedbackModal';
 
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { useRouter } from 'next/navigation';
 
 import { ProgramRateStatusEnum } from '../../../enum';
 import { FeedbackDataType, UseFeedbackPropsType } from './type';
 
 const useFeedback = ({ programId }: UseFeedbackPropsType) => {
-  const route = useRouter();
+  const route = useCustomRouter();
   const [feedbackData, setFeedbackData] = useState<FeedbackDataType>({
     description: '',
     rate: 0,

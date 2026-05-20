@@ -1,10 +1,10 @@
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { useRouter } from 'next/navigation';
 
 const useSubmit = () => {
   const toast = useCustomToast();
-  const route = useRouter();
+  const route = useCustomRouter();
   const onSuccessHandler = () => {
     toast.feedbackToastHandler({
       message: 'پیشنهادت با موفقیت ثبت شد ✅',

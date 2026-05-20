@@ -15,7 +15,7 @@ const useSplashProgress = ({ splashStatushHandler, splashStatus }: UseSplashProg
       return;
     }
 
-    if (splashStatus === 'pending' && progress >= 55) {
+    if (splashStatus === 'pending' && progress >= 45) {
       return;
     }
 
@@ -25,7 +25,7 @@ const useSplashProgress = ({ splashStatushHandler, splashStatus }: UseSplashProg
   useEffect(() => {
     timerRef.current = setInterval(() => {
       progressHandler();
-    }, 50);
+    }, 70);
 
     return () => {
       clearInterval(timerRef.current);

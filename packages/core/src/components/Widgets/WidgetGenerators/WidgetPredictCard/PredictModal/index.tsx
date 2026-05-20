@@ -2,8 +2,8 @@ import { useEffect, useState } from 'react';
 
 // @ts-ignore
 import * as actions from '@actions/userCookies.actions';
-import { useRouter } from 'next/navigation';
 
+import { useCustomRouter } from '../../../../../hooks/useCustomRouter';
 import { useQueryParamsHandler } from '../../../../../hooks/useQueryParamsHandler';
 import { CustomButton } from '../../../../ui/CustomButton';
 import { CustomModal } from '../../../../ui/CustomModal';
@@ -13,7 +13,8 @@ const PredictModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
   const modalName = getQueryParams('name') as string | null;
   const [userName, setUserName] = useState<string | null>(null);
-  const router = useRouter();
+  const router = useCustomRouter();
+
   const isOpen = modalName !== null;
 
   useEffect(() => {

@@ -1,13 +1,13 @@
 import { MODALS } from '@constants/modals.constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-import { useRouter } from 'next/navigation';
 
 import { IS_LAST_ROUTIN_ITEM, SHOW_ROUTIN_UNLOCK_TOST } from '../../../PairRoutinContainer/constant';
 
 const useSeen = () => {
-  const route = useRouter();
+  const route = useCustomRouter();
   const { getQueryParams } = useQueryParamsHandler();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { refetchQuery } = useCustomReactQuery();

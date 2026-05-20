@@ -4,11 +4,11 @@ import { toPersianNumbers } from '@repo/core/utils/numbers';
 import { typographyFontStylesMaker } from '@repo/core/utils/system';
 
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { useFileUpload } from '@repo/core/hooks/useFileUpload';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useSystem } from '@repo/core/hooks/useSystem';
-import { useRouter } from 'next/navigation';
 
 import FileInput from './FileInput';
 import SpecialistProblemModal from './SpecialistProblemModal';
@@ -16,7 +16,7 @@ import useValues from './__hooks__/useValues';
 import { SpecialistProblemInputsProps } from './types';
 
 const SpecialistProblemInputs = ({ info, infoHelper, questionValuesHandler }: SpecialistProblemInputsProps) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const toast = useCustomToast();
   const { callEvent } = useAnalytics();
   const { values, valuesHandler } = useValues();

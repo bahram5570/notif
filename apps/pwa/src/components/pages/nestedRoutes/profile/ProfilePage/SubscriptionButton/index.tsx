@@ -5,7 +5,6 @@ import { typographyFontStylesMaker } from '@repo/core/utils/system';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useSystem } from '@repo/core/hooks/useSystem';
-import Link from 'next/link';
 
 import { SubscriptionProps } from '../userNameDetail/type';
 
@@ -18,14 +17,13 @@ const SubscriptionButton = ({ remaindDays }: SubscriptionProps) => {
 
   const clickHandler = () => {
     callEvent('Subscription_From_HasSubscription');
-    pageNavigationHandler({ id: 'SubscriptionButton', showProgressBar: true });
+    pageNavigationHandler({ id: 'SubscriptionButton', showProgressBar: true, linkTo: '/protected/subscription' });
   };
 
   return (
     <div className=" px-4 py-2">
       <div className="flex flex-row justify-between items-center gap-1 lg:gap-8 p-4 rounded-lg bg-impo_Primary_Primary">
-        <Link
-          href="/protected/subscription"
+        <div
           className=" rounded-full  relative min-w-fit w-fit py-2 px-3 bg-impo_White text-impo_Primary_Primary"
           style={{ ...typographyFontStyles }}
           onClick={clickHandler}
@@ -33,7 +31,7 @@ const SubscriptionButton = ({ remaindDays }: SubscriptionProps) => {
           <CustomTypography fontSize="Lable_Medium" className="text-impo_Primary_Primary">
             تمدید اشتراک
           </CustomTypography>
-        </Link>
+        </div>
 
         <div className="gap-1 lg:gap-2 flex flex-row items-center">
           <CustomTypography fontSize="Lable_Medium" className="text-impo_White">

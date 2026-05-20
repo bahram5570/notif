@@ -1,11 +1,11 @@
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
 import { useCulture } from '@repo/core/hooks/useCulture';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
-import { useRouter } from 'next/navigation';
 
 const useCalendarTypeSubmit = (calendarType: CalendarTypeEnum) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { cultureHandler } = useCulture();
   const { data: profileData, updateProfileData } = useGetProfileData();
 

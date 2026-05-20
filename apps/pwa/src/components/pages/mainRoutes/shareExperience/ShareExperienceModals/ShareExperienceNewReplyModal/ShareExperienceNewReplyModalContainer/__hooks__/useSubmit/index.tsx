@@ -3,15 +3,15 @@ import { CommentsResponseTypes } from '@repo/core/components/ShareExperience';
 
 import { QueryExperiencesDataTypes } from '@components/pages/mainRoutes/shareExperience/ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { useRouter } from 'next/navigation';
 
 import { AssociationExperiencesResponseType } from '../../../../ShareExperienceAssociationItemModal/ShareExperienceAssociationItemContainer/__hooks__/useGetAssociationItemData/type';
 import { DataRepliesListTypes } from '../../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/CommentsGenerator/ReplyGenerator/__hooks__/useReplyList/types';
 import { NewCommentResponseTypes, NewReplyResponseTypes, UseSubmitProps } from './types';
 
 const useSubmit = ({ text, data }: UseSubmitProps) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { updateQuery, getQuery } = useCustomReactQuery();
   let toast: string = '';
 

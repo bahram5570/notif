@@ -1,10 +1,9 @@
-import { useRouter } from 'next/navigation';
-
+import { useCustomRouter } from '../../../../../../hooks/useCustomRouter';
 import { usePwaApi } from '../../../../../../hooks/usePwaApi';
 import { UseDeletePropsType } from './type';
 
 const useDelete = ({ memoryId, callBack }: UseDeletePropsType) => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const successHandler = () => {
     if (callBack) {

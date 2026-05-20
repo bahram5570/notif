@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import { SPECIALIST_PAYMENT_QUERY_NAME } from '@repo/core/components/clinic';
 import { isDevelopeMode } from '@repo/core/utils/system';
 
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-import { useRouter } from 'next/navigation';
 
 import { QuestionValuesHandlerTypes, QuestionValuesTypes } from './types';
 
@@ -12,7 +12,7 @@ const useQuestionValues = () => {
   const [questionValues, setQuestionValues] = useState<QuestionValuesTypes | null>(null);
   const { newQueryParamsHandler, getQueryParams } = useQueryParamsHandler();
   const firstTimeRef = useRef<{ firstTime: boolean }>({ firstTime: isDevelopeMode() });
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const questionValuesHandler: QuestionValuesHandlerTypes = (v) => {
     newQueryParamsHandler({ [SPECIALIST_PAYMENT_QUERY_NAME]: 'true' });

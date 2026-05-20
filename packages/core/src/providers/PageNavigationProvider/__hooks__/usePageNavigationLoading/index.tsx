@@ -1,15 +1,16 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
+import { useCustomRouter } from '../../../../hooks/useCustomRouter';
 import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
 import { PAGE_NAVIGATION_LOADING_RESET_TIME } from '../../constants';
 import { LoadingStatesTypes, PageNavigationHandlerTypes } from '../../types';
 
 const usePageNavigationLoading = () => {
-  const router = useRouter();
   const path = usePathname() || '';
   const timer = useRef<NodeJS.Timeout>();
+  const { push, back } = useCustomRouter();
   const { searchParams } = useQueryParamsHandler();
   const [progressBarLoading, setPogressBarLoading] = useState<LoadingStatesTypes>(false);
   const [pageNavigationLoading, setPageNavigationLoading] = useState<LoadingStatesTypes>(false);
@@ -53,9 +54,9 @@ const usePageNavigationLoading = () => {
   const pageNavigationHandler: PageNavigationHandlerTypes = ({ showProgressBar, linkTo, id }) => {
     if (linkTo) {
       if (linkTo === -1) {
-        router.back();
+        back();
       } else {
-        router.push(linkTo);
+        push(linkTo);
       }
     }
 

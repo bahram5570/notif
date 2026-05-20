@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 import { MESSAGE_PREGNANCY_CHECKUP_RESULT } from '@components/pages/nestedRoutes/PregnancyCheckup/constant';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-import { useRouter } from 'next/navigation';
 
 import { PregnancyQuestionTypeEnum } from '../../../enum';
 import { ResponsePropsType, SubmitHandlerPropsType } from './type';
@@ -12,7 +12,7 @@ const useSubmit = () => {
   const { getQueryParams } = useQueryParamsHandler();
   const pregnancyWeek = getQueryParams('week');
   const [api, setApi] = useState<string>('');
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const successHandler = (v: ResponsePropsType) => {
     sessionStorage.setItem(MESSAGE_PREGNANCY_CHECKUP_RESULT, JSON.stringify(v));

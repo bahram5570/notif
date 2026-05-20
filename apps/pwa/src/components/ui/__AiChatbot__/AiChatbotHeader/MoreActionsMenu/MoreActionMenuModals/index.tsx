@@ -1,8 +1,8 @@
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
 import { MODALS } from '@constants/modals.constants';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-import { useRouter } from 'next/navigation';
 
 import { AiChatModalNameEnums } from '../enum';
 import CommentChatModal from './CommentChatModal';
@@ -11,7 +11,7 @@ import SuggestionTopicChatModal from './SuggestionTopicChatModal';
 
 const MoreActionMenuModals = () => {
   const { getQueryParams } = useQueryParamsHandler();
-  const route = useRouter();
+  const route = useCustomRouter();
 
   const hasModal = getQueryParams(MODALS.MODALS_AI_CHAT) !== null;
   const aiChatModalQueryName = getQueryParams(MODALS.MODALS_AI_CHAT) as AiChatModalNameEnums;

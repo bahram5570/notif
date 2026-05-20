@@ -1,12 +1,12 @@
 import { ChildTypeEnum } from '@constants/activation.constants';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { useRouter } from 'next/navigation';
 
 import { SubmitHandlerPropsType } from './type';
 
 const useSubmit = ({ childBirthDate, childName, childType }: SubmitHandlerPropsType) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { updateProfileData } = useGetProfileData();
 
   const successHandler = () => {

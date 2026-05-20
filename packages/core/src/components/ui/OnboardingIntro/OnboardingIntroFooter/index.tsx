@@ -1,7 +1,6 @@
 import ArrowIcon from '@assets/shared/icons/arrow.svg';
 
-import { useRouter } from 'next/navigation';
-
+import { useCustomRouter } from '../../../../hooks/useCustomRouter';
 import { CustomTypography } from '../../CustomTypography';
 import { OnboardingIntroFooterPropsType } from './type';
 
@@ -11,7 +10,7 @@ const OnboardingIntroFooter = ({
   currentIndex,
   finalButton,
 }: OnboardingIntroFooterPropsType) => {
-  const route = useRouter();
+  const route = useCustomRouter();
 
   return (
     <div className="flex justify-center items-center mt-4">

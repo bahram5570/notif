@@ -1,12 +1,12 @@
 import { getUserInfoCookie, setUserInfoCookie } from '@actions/userCookies.actions';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { useRouter } from 'next/navigation';
 
 import { UserInfoValuesTypes } from '../useValues/types';
 
 const useSubmit = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { updateProfileDateByDellay } = useGetProfileData();
 
   const successHandler = () => {

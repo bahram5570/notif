@@ -1,9 +1,10 @@
 import { useEffect, useState } from 'react';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { FileDataHandlerTypes, useFileUpload } from '@repo/core/hooks/useFileUpload';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 
 import useUpdateChatReactQuery from '../useUpdateChatReactQuery';
 
@@ -12,7 +13,7 @@ const useFileValue = () => {
   const [storedFileName, setStoredFileName] = useState('');
   const { upgateHandler } = useUpdateChatReactQuery();
   const { updateQuery } = useCustomReactQuery();
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const ticketId = useParams()?.ticketId;
 

@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { useRouter } from 'next/navigation';
 
 import { DataRepliesListTypes } from '../../../ShareExperienceCommentsModal/ShareExperienceCommentsModalContainer/CommentsList/CommentsGenerator/ReplyGenerator/__hooks__/useReplyList/types';
 import { IdInfoTypes } from './types';
 
 const useReplyDelete = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { updateQuery, getQuery } = useCustomReactQuery();
   const [idInfo, setIdInfo] = useState<null | IdInfoTypes>(null);
 

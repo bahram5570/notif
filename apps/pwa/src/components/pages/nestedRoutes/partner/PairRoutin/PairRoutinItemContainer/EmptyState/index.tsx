@@ -3,10 +3,10 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomImage } from '@repo/core/components/ui/CustomImage';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 const EmptyState = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const onClick = () => {
     router.back();

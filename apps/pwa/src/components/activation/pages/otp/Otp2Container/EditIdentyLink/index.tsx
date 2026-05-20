@@ -1,11 +1,11 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import { EditIdentyLinkProps } from './types';
 
 const EditIdentyLink = ({ isPhone }: EditIdentyLinkProps) => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const backHandler = () => {
     router.back();

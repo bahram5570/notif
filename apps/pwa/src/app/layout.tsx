@@ -7,6 +7,7 @@ import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
 import PwaWidgetActionsProvider from '@providers/PwaWidgetActionsProvider';
 import { MAX_SCREEN_WIDTH, PORTAL_FEEDBACK_TOAST_ID, PORTAL_ID } from '@repo/core/constants/app.constants';
 import { CultureProvider } from '@repo/core/providers/CultureProvider';
+import { MonitoringProvider } from '@repo/core/providers/MonitoringProvider';
 import { PageNavigationProvider } from '@repo/core/providers/PageNavigationProvider';
 import { PreviewImageProvider } from '@repo/core/providers/PreviewImageProvider';
 import { ReactQueryProvider } from '@repo/core/providers/ReactQueryProvider';
@@ -64,29 +65,31 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
       >
         <main>
           {/* <AnalyticsProvider> */}
-          <SystemProvider appName="PWA">
-            <CultureProvider defaultValues={culture}>
-              <ReactQueryProvider>
-                <ErrorProvider>
-                  <ToastProvider>
-                    <PageNavigationProvider>
-                      <PwaWidgetActionsProvider>
-                        <ServiceWorkerProvider firebaseConfigs={FIREBASE_CONFIG}>
-                          <>{children}</>
-                          <ModalsQueryParamsProvider />
-                          <PreviewImageProvider />
-                          <div id={PORTAL_SPLASH_ID} />
-                          <div id={PORTAL_ID} />
-                          <div id={PORTAL_FEEDBACK_TOAST_ID} />
-                        </ServiceWorkerProvider>
-                      </PwaWidgetActionsProvider>
-                    </PageNavigationProvider>
-                  </ToastProvider>
-                </ErrorProvider>
-              </ReactQueryProvider>
-            </CultureProvider>
-          </SystemProvider>
-          {/* </AnalyticsProvider> */}
+          <MonitoringProvider>
+            <SystemProvider appName="PWA">
+              <CultureProvider defaultValues={culture}>
+                <ReactQueryProvider>
+                  <ErrorProvider>
+                    <ToastProvider>
+                      <PageNavigationProvider>
+                        <PwaWidgetActionsProvider>
+                          <ServiceWorkerProvider firebaseConfigs={FIREBASE_CONFIG}>
+                            <>{children}</>
+                            <ModalsQueryParamsProvider />
+                            <PreviewImageProvider />
+                            <div id={PORTAL_SPLASH_ID} />
+                            <div id={PORTAL_ID} />
+                            <div id={PORTAL_FEEDBACK_TOAST_ID} />
+                          </ServiceWorkerProvider>
+                        </PwaWidgetActionsProvider>
+                      </PageNavigationProvider>
+                    </ToastProvider>
+                  </ErrorProvider>
+                </ReactQueryProvider>
+              </CultureProvider>
+            </SystemProvider>
+            {/* </AnalyticsProvider> */}
+          </MonitoringProvider>
         </main>
       </body>
     </html>

@@ -4,13 +4,12 @@ import { CustomTypography } from '../../../../../components/ui/CustomTypography'
 import { colorFormatConverter } from '../../../../../utils/scripts';
 import CloseIcon from '@assets/shared/icons/plus.svg';
 
-import { useRouter } from 'next/navigation';
-
+import { useCustomRouter } from '../../../../../hooks/useCustomRouter';
 import { useWidgetActions } from '../../../../../hooks/useWidgetActions';
 import { PopupImageTextButtonProps } from './types';
 
 const PopupImageTextButton = ({ data }: PopupImageTextButtonProps) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { actionHandler } = useWidgetActions();
 
   return (

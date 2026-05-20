@@ -6,10 +6,10 @@ import {
   SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME,
 } from '@repo/core/components/ShareExperience';
 
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-import { useRouter } from 'next/navigation';
 
 import useUpdateActivitiesList from './updateHandlers/useUpdateActivitiesList';
 import useUpdateAssociationExperienceList from './updateHandlers/useUpdateAssociationExperienceList';
@@ -20,7 +20,7 @@ import useUpdateSelfExperienceList from './updateHandlers/useUpdateSelfExperienc
 import useUpdateTopicExperience from './updateHandlers/useUpdateTopicExperience';
 
 const useShareExperienceFollow = (experienceId?: string) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const toast = useCustomToast();
   const { getQueryParams } = useQueryParamsHandler();
   const [apiInfo, setApiInfo] = useState<null | ApiInfoTypes>(null);

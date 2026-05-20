@@ -9,11 +9,11 @@ import { OtpStatusTypes } from '@components/activation/pages/otp/Otp2Container/_
 import { OTP_COUNT_DOWN_TIME } from '@components/activation/pages/otp/Otp2Container/constants';
 import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import { useCountDown } from '@repo/core/hooks/useCountDown';
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 const Otp2 = () => {
   // # کد
-  const router = useRouter();
+  const router = useCustomRouter();
   const { callEventActivation } = useActivationAnalytics();
   const [isRegisterSuccess, setIsRegisterSuccess] = useState(false);
   const [applyOtpStatus, setApplyOtpStatus] = useState<OtpStatusTypes>(null);

@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 
-import { useRouter } from 'next/navigation';
-
 import { MAX_SCREEN_WIDTH, PORTAL_ID } from '../../../constants/app.constants';
+import { useCustomRouter } from '../../../hooks/useCustomRouter';
 import { useIsRendered } from '../../../hooks/useIsRendered';
 import useModalStatus from './__hooks__/useModalStatus';
 import { MODAL_BACKGROUND_ID, MODAL_DEFAULT_Z_INDEX, MODAL_MIN_SIZE } from './constants';
@@ -18,7 +17,7 @@ export const CustomModal = ({
   children,
   isOpen,
 }: CustomModalProps) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { isRendered } = useIsRendered();
   const { isDelayPassed } = useModalRendered();
   const { isModalOpen, isSlidingModeTrue } = useModalStatus({ isOpen, isSlidingMode });

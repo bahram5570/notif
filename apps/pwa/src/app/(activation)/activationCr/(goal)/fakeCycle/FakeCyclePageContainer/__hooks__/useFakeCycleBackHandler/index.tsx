@@ -1,12 +1,12 @@
 import { useEffect } from 'react';
 
 import { SAMPLE_CYCLE_STORAGE_NAME } from '@providers/__activation__/ActivationCrProvider/__constants__/activationCrContants';
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import { FAKE_CYCLE_QUESTIONS_NAME } from '../../constants';
 
 const useFakeCycleBackHandler = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   useEffect(() => {
     const queryList = window.location.search.slice(1).split('&');

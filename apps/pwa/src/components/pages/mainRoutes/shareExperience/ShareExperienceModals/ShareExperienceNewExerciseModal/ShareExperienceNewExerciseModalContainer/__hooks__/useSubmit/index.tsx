@@ -1,6 +1,6 @@
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { useRouter } from 'next/navigation';
 
 import { AssociationInfoResponseType } from '../../../../ShareExperienceAssociationItemModal/ShareExperienceAssociationItemContainer/__hooks__/useGetAssociationInfo/type';
 import { NewExperienceResponseType, UseSubmitProps } from './types';
@@ -10,7 +10,7 @@ const useSubmit = ({ image, text, topicId, associationId, onSuccessNewHandler }:
 
   const associationInfoData = getQuery<AssociationInfoResponseType>({ queryKey: [`associationInfoData`] });
 
-  const router = useRouter();
+  const router = useCustomRouter();
   let toastMessage = '';
 
   const successHandler = ({ toast, valid }: NewExperienceResponseType) => {

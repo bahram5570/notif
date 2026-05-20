@@ -4,13 +4,13 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { getUserInfoCookie } from '@actions/userCookies.actions';
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import { CycleLengthWarningModalType } from './types';
 
 const CycleLengthWarningModal = ({ acceptingChanges, values }: CycleLengthWarningModalType) => {
   const [userName, setUserName] = useState<string | null>(null);
-  const router = useRouter();
+  const router = useCustomRouter();
 
   useEffect(() => {
     const fetchUser = async () => {

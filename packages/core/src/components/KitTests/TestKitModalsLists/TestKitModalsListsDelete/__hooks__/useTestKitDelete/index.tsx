@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 
 import m from 'moment-jalaali';
-import { useRouter } from 'next/navigation';
 
+import { useCustomRouter } from '../../../../../../hooks/useCustomRouter';
 import { usePwaApi } from '../../../../../../hooks/usePwaApi';
 import { KitTestModuleTypeEnums } from '../../../../../../providers/WidgetActionsProvider';
 import { DeleteModalDataTypes } from '../../../__hooks__/useTestKitsDeleteModal/types';
 import { TestKitDeleteHandlerTypes, UseTestKitDeleteProps } from './types';
 
 const useTestKitDelete = ({ isDeleteModalOpen, onDelete }: UseTestKitDeleteProps) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const [apiInfo, setApiInfo] = useState<null | DeleteModalDataTypes>(null);
 
   useEffect(() => {

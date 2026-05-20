@@ -1,11 +1,10 @@
-import { useRouter } from 'next/navigation';
-
 import { useCustomReactQuery } from '../../../../../../hooks/useCustomReactQuery';
+import { useCustomRouter } from '../../../../../../hooks/useCustomRouter';
 import { usePwaApi } from '../../../../../../hooks/usePwaApi';
 import { AcceptResponseType } from './type';
 
 const useAccept = () => {
-  const route = useRouter();
+  const route = useCustomRouter();
   const { refetchQuery } = useCustomReactQuery();
 
   const successHandler = (v: AcceptResponseType) => {

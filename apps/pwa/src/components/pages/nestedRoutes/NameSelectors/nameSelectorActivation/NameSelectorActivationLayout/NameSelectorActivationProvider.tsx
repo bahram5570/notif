@@ -3,7 +3,7 @@
 import { createContext, useEffect, useState } from 'react';
 
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import {
   NameSelectorActivatioContextTypes,
@@ -21,7 +21,7 @@ export const NameSelectorActivatioContext = createContext<NameSelectorActivatioC
 });
 
 const NameSelectorActivationProvider = ({ children, initialData }: NameSelectorActivationProviderTypes) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const [data] = useState(initialData);
   useAnalytics({ pageView_eventName: 'BabyNameSelectionStartForNewUser' });
   useAnalytics({ mountTimer_eventName: 'BabyNameSelectionEndForNewUser' });
