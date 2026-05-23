@@ -2,9 +2,8 @@
 
 import { createContext, useEffect, useState } from 'react';
 
-import { useRouter } from 'next/navigation';
-
 import { STORY_MODAL_ID, WIDGET_POPUP } from '../../constants/modal.constants';
+import { useCustomRouter } from '../../hooks/useCustomRouter';
 import { useQueryParamsHandler } from '../../hooks/useQueryParamsHandler';
 import OnMountActionsProvider from './OnMountActionsProvider';
 import WidgetActionsPopup from './WidgetActionsPopup';
@@ -26,7 +25,7 @@ export const WidgetActionsProvider = ({
   onCallBack,
   children,
 }: WidgetActionsProviderTypes) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { getQueryParams } = useQueryParamsHandler();
   const { popUpHandler, popUp } = usePopUpHandlers();
 

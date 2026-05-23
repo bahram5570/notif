@@ -3,15 +3,15 @@ import { useEffect } from 'react';
 import CrossIcon from '@assets/shared/icons/cross.svg';
 import Image from 'next/image';
 
-import { useRouter } from 'next/navigation';
 
 import { MAX_SCREEN_WIDTH } from '../../constants/app.constants';
 import { useOverflowHandler } from '../../hooks/useOverflowHandler';
 import { PreviewImageContainerProps } from './types';
+import { useCustomRouter } from '../../hooks/useCustomRouter';
 
 const PreviewImageContainer = ({ src, shape = 'full' }: PreviewImageContainerProps) => {
   useOverflowHandler();
-  const router = useRouter();
+  const router = useCustomRouter();
 
   useEffect(() => {
     // # Disable touch events for IOS

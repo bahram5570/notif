@@ -1,11 +1,12 @@
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 
 import { ChatResponseTypes } from './type';
 
 const useGetData = () => {
   const ticketId = useParams()?.ticketId;
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const errorHandler = () => {
     router.replace('/not-found');

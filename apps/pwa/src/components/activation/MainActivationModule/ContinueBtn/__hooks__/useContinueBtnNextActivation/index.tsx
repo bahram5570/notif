@@ -1,10 +1,10 @@
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
-import { useRouter } from 'next/navigation';
 
 import { ContinueBtnNextActivationOnContinueTypes, NextActivationHandlerTypes } from './types';
 
 const useContinueBtnNextActivation = (onContinue: ContinueBtnNextActivationOnContinueTypes) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const toast = useCustomToast();
 
   const nextActivationHandler: NextActivationHandlerTypes = (v) => {

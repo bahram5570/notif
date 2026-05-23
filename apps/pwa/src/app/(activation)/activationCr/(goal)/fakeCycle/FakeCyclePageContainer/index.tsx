@@ -3,7 +3,7 @@ import { Suspense } from 'react';
 import ProgressCycleLoading from '@components/ProgressCycleLoading';
 import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import useGoalFinder from '@hooks/__activation__/useGoalFinder';
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import PageContainer from './PageContainer';
 import useCreateSample from './__hooks__/useCreateSample';
@@ -12,7 +12,7 @@ import { FakeCyclePageContainerProps } from './types';
 
 const FakeCyclePageContainer = ({ payload, payloadHandler }: FakeCyclePageContainerProps) => {
   useFakeCycleBackHandler();
-  const router = useRouter();
+  const router = useCustomRouter();
   const { callEventActivation } = useActivationAnalytics();
   const { goalInfo } = useGoalFinder({ status: payload.status, periodStatus: payload.periodStatus });
   const { createCycleLoading, callCreateSampleApi, createCycleSuccess } = useCreateSample({

@@ -1,12 +1,12 @@
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
-import { useRouter } from 'next/navigation';
 
 import { SuccessResponseType } from './type';
 
 const useShareExperienceProfileReport = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const toast = useCustomToast();
   const { accessOptionHandler } = useShareExperienceHandlers();
 

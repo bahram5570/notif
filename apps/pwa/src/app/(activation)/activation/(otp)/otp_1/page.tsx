@@ -7,13 +7,13 @@ import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics
 import { ACTIVATION_ROUTES_INFO } from '@providers/__activation__/ActivationProvider/__constants__/activationRoutesInfo';
 import useActivationData from '@providers/__activation__/ActivationProvider/__hooks__/useActivationData';
 import useActivationPayload from '@providers/__activation__/ActivationProvider/__hooks__/useActivationPayload';
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import Welcoming from './Welcoming';
 
 const Otp1 = () => {
   // # شماره همراه/ ایمیل
-  const router = useRouter();
+  const router = useCustomRouter();
   const activationData = useActivationData();
   const { callEventActivation } = useActivationAnalytics();
   const { payload, payloadHandler } = useActivationPayload();

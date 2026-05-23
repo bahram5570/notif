@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
-// import { useRouter } from 'next/navigation';
+// import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import { OtpInfoTypes } from '../../../Otp1Container/types';
 import { OTP_INFO_NAME } from '../../../constants';
 
 const useOtpInfo = () => {
-  // const router = useRouter();
+  // const router = useCustomRouter();
   const [otpInfo, setOtpInfo] = useState<null | OtpInfoTypes>(null);
 
   useEffect(() => {

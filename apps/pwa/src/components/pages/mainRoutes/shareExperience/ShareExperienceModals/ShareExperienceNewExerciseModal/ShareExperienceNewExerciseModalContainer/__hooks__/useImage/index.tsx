@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useFileUpload } from '@repo/core/hooks/useFileUpload';
-import { useRouter } from 'next/navigation';
 
 const useImage = () => {
   const [image, setImage] = useState('');
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const successHandler = (v: string) => {
     setImage(v);

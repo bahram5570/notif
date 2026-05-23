@@ -6,14 +6,15 @@ import {
 } from '@repo/core/components/ShareExperience';
 import { isDevelopeMode } from '@repo/core/utils/system';
 
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 
 import useViewReportProfile from './useViewReportProfile';
 
 const useShareExperienceInitialRedirect = (isLoaded: boolean) => {
-  const router = useRouter();
   const pathname = usePathname();
+  const router = useCustomRouter();
   const searchParams = useSearchParams();
   const { increaseZIndex } = useShareExperienceHandlers();
   const isFirstTime1 = useRef(isDevelopeMode());

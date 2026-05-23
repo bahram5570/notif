@@ -2,42 +2,39 @@ import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useTypographyMaker } from '@repo/core/hooks/useTypographyMaker';
-import Link from 'next/link';
 
 import { CustomLinkPropType } from './type';
 
 const CustomLink = (props: CustomLinkPropType) => {
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
   const { link, style, lable, id, fontSize = 'Lable_Large' } = props;
+
+  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
   const { typographyFontStyles, result } = useTypographyMaker({
     children: lable,
     fontSize: fontSize,
     numbersMode: 'persian',
   });
 
-  const isLoading = pageNavigationLoading === id;
-
   const clickHandler = () => {
     if (props.onClick) {
       props.onClick();
     }
-    pageNavigationHandler({ id: id, showProgressBar: false });
+
+    pageNavigationHandler({ id: id, showProgressBar: false, linkTo: link });
   };
 
+  const isLoading = pageNavigationLoading === id;
+
   return (
-    <Link
-      href={link}
-      style={{
-        ...style,
-        ...typographyFontStyles,
-      }}
+    <div
       dir="rtl"
-      className={` w-full h-10  rounded-full flex justify-center items-center text-impo_Primary_Primary bg-impo_Primary_PrimaryContainer ${props.className}`}
       onClick={clickHandler}
+      style={{ ...style, ...typographyFontStyles }}
+      className={` w-full h-10  rounded-full flex justify-center items-center text-impo_Primary_Primary bg-impo_Primary_PrimaryContainer ${props.className}`}
     >
       {isLoading && <CustomSpinner size={20} />}
       {!isLoading && result}
-    </Link>
+    </div>
   );
 };
 

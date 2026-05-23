@@ -1,15 +1,15 @@
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
 import { MODALS } from '@constants/modals.constants';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-import { useRouter } from 'next/navigation';
 
 import { UserInfoValuesTypes } from '../__hooks__/useValues/types';
 import BirthDateModal from './BirthDateModal';
 import { UserInfoModalsTypes } from './types';
 
 const UserInfoModals = ({ values, valuesHandler }: UserInfoModalsTypes) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { getQueryParams } = useQueryParamsHandler();
 
   const closeHandler = () => {

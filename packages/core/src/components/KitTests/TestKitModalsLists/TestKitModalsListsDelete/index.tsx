@@ -1,6 +1,5 @@
-import { useRouter } from 'next/navigation';
-
 import { TEST_KITS_LIST_DELETE } from '../../../../constants/modal.constants';
+import { useCustomRouter } from '../../../../hooks/useCustomRouter';
 import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
 import { KitTestModuleTypeEnums } from '../../../../providers/WidgetActionsProvider';
 import { CustomButton } from '../../../ui/CustomButton';
@@ -12,7 +11,7 @@ import useTestKitDelete from './__hooks__/useTestKitDelete';
 import { TestKitModalsListsDeleteProps } from './types';
 
 export const TestKitModalsListsDelete = ({ onDelete }: TestKitModalsListsDeleteProps) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { getQueryParams } = useQueryParamsHandler();
 
   const deleteQuery = getQueryParams(TEST_KITS_LIST_DELETE);

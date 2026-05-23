@@ -1,15 +1,15 @@
 import { MODAL_QUERY_NAME } from '@repo/core/constants/modal.constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-import { useRouter } from 'next/navigation';
 
 import { UseSubmitRateProps } from './types';
 
 const useSubmitRate = ({ rate, description, feedbackValues }: UseSubmitRateProps) => {
   const { getQueryParams } = useQueryParamsHandler();
   const { refetchQuery } = useCustomReactQuery();
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const ticketId = getQueryParams('ticketId');
 

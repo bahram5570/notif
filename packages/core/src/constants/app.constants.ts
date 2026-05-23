@@ -8,4 +8,6 @@ export const PORTAL_FEEDBACK_TOAST_ID = 'portalFeedBackToastId';
 
 export const STORED_NOTIFICATIONS_CACHE_NAME = 'storedNotification';
 
+export const MONITORING_BUFFER_DELAY = 30;
+
 export const APP_VERSION = process.env.NEXT_PUBLIC_APP_VERSION || '';

@@ -3,19 +3,20 @@ import { useState } from 'react';
 import { ShareExperienceResponseTypes } from '@repo/core/components/ShareExperience';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
-import { useRouter } from 'next/navigation';
 
 import { SuccessResponseType, onProfileChangeHandlerPropsType } from './type';
 
 const useUpdateProfile = () => {
-  const route = useRouter();
   const toast = useCustomToast();
-  const { refetchQuery, updateQuery, getQuery } = useCustomReactQuery();
+  const route = useCustomRouter();
   const { accessOptionHandler } = useShareExperienceHandlers();
+  const { refetchQuery, updateQuery, getQuery } = useCustomReactQuery();
   const [payloadShareExperienceData, setPayloadShareExperienceData] = useState<ShareExperienceResponseTypes>();
+
   const shareExperienceData = getQuery<ShareExperienceResponseTypes>({ queryKey: ['shareExperience'] });
 
   const successHandler = (v: SuccessResponseType) => {

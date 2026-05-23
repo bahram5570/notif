@@ -1,14 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
 
-import { useRouter } from 'next/navigation';
 import { Swiper as SwiperTypes } from 'swiper/types';
 
 import { STORY_MODAL_ID } from '../../../../../../../constants/modal.constants';
+import { useCustomRouter } from '../../../../../../../hooks/useCustomRouter';
 import { useQueryParamsHandler } from '../../../../../../../hooks/useQueryParamsHandler';
 import { NavigateStoryHandlerTypes, UseListStoryTypes } from './types';
 
 const useListStory = (list: UseListStoryTypes) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { getQueryParams } = useQueryParamsHandler();
   const swiperRef = useRef<SwiperTypes | null>(null);
   const [storyIndex, setCurrentStorySlide] = useState(-1);

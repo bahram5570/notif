@@ -3,15 +3,15 @@ import { CustomModal } from '@repo/core/components/ui/CustomModal';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MODALS } from '@constants/modals.constants';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 import { useWidgetActions } from '@repo/core/hooks/useWidgetActions';
 import { ActionTypes } from '@repo/core/providers/WidgetActionsProvider';
-import { useRouter } from 'next/navigation';
 
 import { SupportActionsModalTypes } from './types';
 
 const SupportActionsModal = ({ supportSheets }: SupportActionsModalTypes) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { actionHandler } = useWidgetActions();
   const { getQueryParams } = useQueryParamsHandler();
 

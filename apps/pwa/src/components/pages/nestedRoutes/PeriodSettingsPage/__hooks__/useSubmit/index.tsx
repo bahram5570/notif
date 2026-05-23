@@ -1,14 +1,14 @@
 import { MODALS } from '@constants/modals.constants';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-import { useRouter } from 'next/navigation';
 
 import { PeriodSettingsModalType } from '../../PeriodSettingsModals/enum';
 import { PeriodSettingsValuesTypes } from '../useValues/types';
 
 const useSubmit = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { updateProfileData } = useGetProfileData();
 

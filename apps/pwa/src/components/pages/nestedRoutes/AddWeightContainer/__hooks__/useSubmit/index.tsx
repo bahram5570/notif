@@ -2,13 +2,13 @@ import { CalendarSignsType, CalendarWidgetEnums, InfoCalendarResponseTypes } fro
 import { currentDate } from '@repo/core/utils/dates';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useSignDateState } from '@repo/core/hooks/useSignDateState';
-import { useRouter } from 'next/navigation';
 
 const { gDate } = currentDate();
 const useSubmit = (weight: number) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { calendarInitailSelectedDate } = useSignDateState();
   const { getQuery, updateQuery } = useCustomReactQuery();
 

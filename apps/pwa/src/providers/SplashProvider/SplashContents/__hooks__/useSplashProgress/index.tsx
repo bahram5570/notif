@@ -17,7 +17,7 @@ const useSplashProgress = ({ splashStatushHandler, splashStatus }: UseSplashProg
       return;
     }
 
-    if (splashStatus === 'pending' && progress >= 55) {
+    if (splashStatus === 'pending' && progress >= 45) {
       return;
     }
 

@@ -4,11 +4,11 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { clearUserCookiesHandler } from '@actions/userCookies.actions';
 import { STORED_NOTIFICATIONS_CACHE_NAME } from '@repo/core/constants/app.constants';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import { useRouter } from 'next/navigation';
 
 const LogoutModal = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
 
   const logoutHandler = async () => {

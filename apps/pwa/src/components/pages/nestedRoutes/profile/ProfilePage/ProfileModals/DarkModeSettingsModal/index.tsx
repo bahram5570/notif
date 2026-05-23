@@ -1,13 +1,13 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { themeHandler } from '@repo/core/theme/__utils__';
 
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { ThemeTypes } from '@repo/core/theme/types';
-import { useRouter } from 'next/navigation';
 
 import { DARK_MODE_ITEMS_LIST } from './constants';
 
 const DarkModeSettingsModal = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const selectHanadler = (v: ThemeTypes) => {
     themeHandler(v);

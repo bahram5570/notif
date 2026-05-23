@@ -5,11 +5,11 @@ import { Otp1CompleteHandlerTypes } from '@components/activation/pages/otp/Otp1C
 import { OTP_INFO_NAME } from '@components/activation/pages/otp/constants';
 import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import useActivationCrPayload from '@providers/__activation__/ActivationCrProvider/__hooks__/useActivationCrPayload';
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 const Otp1 = () => {
   // # شماره همراه/ ایمیل
-  const router = useRouter();
+  const router = useCustomRouter();
   const { payload, payloadHandler } = useActivationCrPayload();
   const { callEventActivation } = useActivationAnalytics();
 

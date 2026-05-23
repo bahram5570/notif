@@ -3,7 +3,6 @@ import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import Link from 'next/link';
 
 import { CustomContainerPropsType } from './type';
 
@@ -19,7 +18,7 @@ const CustomContainer = ({ allBtnLink, children, plusIconLink, title, showAllBtn
   };
 
   const showAllHandler = () => {
-    pageNavigationHandler({ showProgressBar: false, id: allBtnLink });
+    pageNavigationHandler({ showProgressBar: false, id: allBtnLink, linkTo: `${allBtnLink}` });
   };
 
   const isLoading = pageNavigationLoading === allBtnLink;
@@ -41,8 +40,7 @@ const CustomContainer = ({ allBtnLink, children, plusIconLink, title, showAllBtn
       </div>
 
       {showAllBtn && (
-        <Link
-          href={`${allBtnLink}`}
+        <div
           onClick={showAllHandler}
           className="
                       flex 
@@ -68,7 +66,7 @@ const CustomContainer = ({ allBtnLink, children, plusIconLink, title, showAllBtn
           )}
 
           {isLoading && <CustomSpinner size={20} className="border-impo_Neutral_OnBackground" />}
-        </Link>
+        </div>
       )}
     </div>
   );

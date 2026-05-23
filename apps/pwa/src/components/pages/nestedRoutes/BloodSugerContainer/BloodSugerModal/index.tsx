@@ -1,7 +1,7 @@
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-import { useRouter } from 'next/navigation';
 
 import ConditionModal from './ConditionModal';
 import ValueModal from './ValueModal';
@@ -11,7 +11,7 @@ import { ModalPropsType } from './type';
 const BloodSugerModal = ({ onChange, value }: ModalPropsType) => {
   const { getQueryParams } = useQueryParamsHandler();
 
-  const route = useRouter();
+  const route = useCustomRouter();
 
   const modalName = getQueryParams('name') as BloodSugerNameEnums | null;
 

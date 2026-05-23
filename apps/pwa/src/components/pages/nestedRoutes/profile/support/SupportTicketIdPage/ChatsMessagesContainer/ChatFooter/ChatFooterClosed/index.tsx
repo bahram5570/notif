@@ -1,7 +1,6 @@
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import Link from 'next/link';
 import { useParams } from 'next/navigation';
 
 const ChatFooterClosed = () => {
@@ -9,7 +8,11 @@ const ChatFooterClosed = () => {
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const onClick = () => {
-    pageNavigationHandler({ id: 'ChatFooterClosed', showProgressBar: true });
+    pageNavigationHandler({
+      id: 'ChatFooterClosed',
+      showProgressBar: true,
+      linkTo: `/protected/supportTicket/${ticketId}/rate`,
+    });
   };
 
   return (
@@ -23,15 +26,14 @@ const ChatFooterClosed = () => {
         </CustomTypography>
       </div>
 
-      <Link
-        href={`/protected/supportTicket/${ticketId}/rate`}
+      <div
         onClick={onClick}
         className="w-full flex justify-center items-center rounded-full py-3 px-6 bg-impo_Primary_Primary"
       >
         <CustomTypography fontSize="Title_Small" className="text-impo_PrimaryMan_OnPrimaryMan">
           ثبت نظر
         </CustomTypography>
-      </Link>
+      </div>
     </div>
   );
 };

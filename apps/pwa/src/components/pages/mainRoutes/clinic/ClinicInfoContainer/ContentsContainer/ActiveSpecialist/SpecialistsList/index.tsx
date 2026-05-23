@@ -1,12 +1,12 @@
 import { SpecialistCardGenerator } from '@repo/core/components/clinic';
 
 import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import { SpecialistsListProps } from './types';
 
 const SpecialistsList = ({ dr, selectedId, selectedDoctorHandler }: SpecialistsListProps) => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const selectHandler = (id: string) => {
     selectedDoctorHandler(id);

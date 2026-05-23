@@ -4,12 +4,12 @@ import { OVULATION_HISTORY_CARD_VIEW_ALL } from '@repo/core/components/Widgets/W
 import { isDevelopeMode } from '@repo/core/utils/system';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import { ResponseTypes } from './types';
 
 const useGetData = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { getQuery } = useCustomReactQuery();
   const isFirstTime = useRef(isDevelopeMode());
 

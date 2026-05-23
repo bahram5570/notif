@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import { UseActivationBackQueryProps } from './types';
 
 const useActivationBackQuery: UseActivationBackQueryProps = ({ queryName, onCallBack }) => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   useEffect(() => {
     const backHandler = () => {

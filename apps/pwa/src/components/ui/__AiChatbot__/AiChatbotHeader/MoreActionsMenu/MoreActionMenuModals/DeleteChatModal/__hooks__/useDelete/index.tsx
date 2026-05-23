@@ -1,12 +1,12 @@
 import useAichatbotHistoryManager from '@hooks/__aichatbot__/useAichatbotHistoryManager';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { useRouter } from 'next/navigation';
 
 const useDelete = () => {
   const { refetchQuery, removeQuery } = useCustomReactQuery();
   const { itemIdData, categoryIdData } = useAichatbotHistoryManager();
-  const route = useRouter();
+  const route = useCustomRouter();
 
   const successHandler = () => {
     route.back();

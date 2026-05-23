@@ -1,13 +1,13 @@
 import { FileInputManager } from '@repo/core/components/FileInputManager';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useFileUpload } from '@repo/core/hooks/useFileUpload';
-import { useRouter } from 'next/navigation';
 
 import { SupportChatModalPropsType } from './type';
 
 const SupportChatModal = ({ valuesHandler }: SupportChatModalPropsType) => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const successHandler = (v: string) => {
     valuesHandler({ name: 'fileName', value: v });

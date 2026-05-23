@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
 
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import { ACTIVATION_CR_FIRST_PATH } from '../../__constants__/activationCrContants';
 
 const useActivationCrRouteProtection = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   useEffect(() => {
     sessionStorage.clear();

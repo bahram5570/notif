@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { pwaHttp } from '../../../utils/pwaHttp';
 import { initialEnabledValue } from './__utils__';
@@ -6,19 +6,31 @@ import { initialEnabledValue } from './__utils__';
 import { useQuery } from '@tanstack/react-query';
 
 import { ERROR_403, ERROR_SERVER } from '../../../constants/scripts.constants';
+import { MonitoringApiTypes } from '../../../providers/MonitoringProvider';
 import { useCustomToast } from '../../useCustomToast';
+import { useMonitoring } from '../../useMonitoring';
 import { UseHelperQueryProps } from './types';
 
 const useHelperQuery = <T,>(props: UseHelperQueryProps<T>) => {
   // # Toggling the "enabled" by "callApi" will call the api
   const [enabled, setEnabled] = useState(initialEnabledValue(props.fetchOnMount));
+  const startingPoint = useRef<MonitoringApiTypes | null>(null);
   const { notifyToastHandler } = useCustomToast();
+  const { api } = useMonitoring();
 
   const callApi = () => {
     setEnabled(true);
   };
 
   const queryFn = async () => {
+    startingPoint.current = {
+      status: 0,
+      method: 'GET',
+      api: props.api,
+      duration: new Date().getTime(),
+      date: new Date().toLocaleString(),
+    };
+
     const res = await pwaHttp<T>({ url: props.api, method: 'GET' });
 
     if (res.error) {
@@ -46,6 +58,20 @@ const useHelperQuery = <T,>(props: UseHelperQueryProps<T>) => {
     queryFn,
   });
 
+  const handleMonitoringApi = (status: number) => {
+    const startingPointData = startingPoint.current;
+
+    if (startingPointData) {
+      api({
+        status,
+        api: startingPointData.api,
+        date: startingPointData.date,
+        method: startingPointData.method,
+        duration: new Date().getTime() - startingPointData.duration,
+      });
+    }
+  };
+
   const isLoading = isFetching || loading;
 
   useEffect(() => {
@@ -55,14 +81,20 @@ const useHelperQuery = <T,>(props: UseHelperQueryProps<T>) => {
   }, [enabled, isLoading]);
 
   useEffect(() => {
-    if (isSuccess && !isLoading && data && props.onSuccess) {
-      props.onSuccess(data);
+    if (isSuccess && !isLoading && data) {
+      handleMonitoringApi(200);
+
+      if (props.onSuccess) {
+        props.onSuccess(data);
+      }
     }
   }, [isSuccess, isLoading, data]);
 
   useEffect(() => {
     if (error && !isLoading) {
       const status = (error as unknown as { status: number }).status;
+
+      handleMonitoringApi(status);
 
       if (status === 403) {
         notifyToastHandler({ message: ERROR_403, type: 'error' });

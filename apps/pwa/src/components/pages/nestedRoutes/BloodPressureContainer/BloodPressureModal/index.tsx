@@ -1,12 +1,12 @@
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import InputModal from './InputModal';
 import { ModalPropsType } from './type';
 
 const BloodPressureModal = ({ onChange, value }: ModalPropsType) => {
-  const route = useRouter();
+  const route = useCustomRouter();
 
   const onCloseModal = () => {
     route.back();

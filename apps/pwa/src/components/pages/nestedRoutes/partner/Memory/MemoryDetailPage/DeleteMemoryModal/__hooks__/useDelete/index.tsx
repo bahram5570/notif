@@ -1,9 +1,9 @@
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-import { useRouter } from 'next/navigation';
 
 const useDelete = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { getQueryParams } = useQueryParamsHandler();
 
   const memoryId = getQueryParams('memoryId');

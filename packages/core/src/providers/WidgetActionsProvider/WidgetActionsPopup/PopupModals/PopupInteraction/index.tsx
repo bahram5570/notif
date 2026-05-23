@@ -5,14 +5,13 @@ import { CustomTypography } from '../../../../../components/ui/CustomTypography'
 import { colorFormatConverter } from '../../../../../utils/scripts';
 import CloseIcon from '@assets/shared/icons/plus.svg';
 
-import { useRouter } from 'next/navigation';
-
+import { useCustomRouter } from '../../../../../hooks/useCustomRouter';
 import { useWidgetActions } from '../../../../../hooks/useWidgetActions';
 import { LottieCanvas } from '../../../../../lib/LottieCanvas';
 import { ClickHandlerTypes, PopupInteractionProps } from './types';
 
 const PopupInteraction = ({ data }: PopupInteractionProps) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { actionHandler } = useWidgetActions();
 
   const clickHandler: ClickHandlerTypes = (name) => {

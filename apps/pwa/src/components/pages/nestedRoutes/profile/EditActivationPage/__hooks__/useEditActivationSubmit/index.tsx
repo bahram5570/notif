@@ -1,10 +1,10 @@
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { useRouter } from 'next/navigation';
 
 import { EditActivationPayloadTypes } from '../useEditActivationPayload/types';
 
 const useEditActivationSubmit = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const successHandler = () => {
     router.back();
