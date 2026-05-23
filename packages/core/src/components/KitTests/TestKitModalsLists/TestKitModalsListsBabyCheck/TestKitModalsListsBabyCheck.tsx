@@ -1,7 +1,7 @@
 import TrashIcon from '@assets/shared/icons/trash.svg';
 
 import { BabyCheckTypeEnums, KitTestModuleTypeEnums } from '../../../../providers/WidgetActionsProvider';
-import { CustomImage } from '../../../ui/CustomImage';
+import { CustomImage_NEW } from '../../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../../ui/CustomTypography';
 import { kitTestScripts } from '../../KitTestRange/constants';
 import TestKitModalsListRangeSVG from '../TestKitModalsListRangeSVG';
@@ -64,8 +64,9 @@ export const TestKitModalsListsBabyCheck = ({ data }: TestKitModalsListsBabyChec
 
               {item.type === BabyCheckTypeEnums.Digital && (
                 <>
-                  <CustomImage
+                  <CustomImage_NEW
                     width={56}
+                    height={56}
                     src={
                       item.result === 1
                         ? '/assets/images/digitalBabyCheckPositive.webp'

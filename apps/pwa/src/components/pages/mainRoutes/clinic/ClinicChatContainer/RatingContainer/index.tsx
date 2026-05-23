@@ -1,5 +1,5 @@
 import { RATING_FOOTER_HEIGHT, RATING_HEADING_HEIGHT } from '@repo/core/components/clinic';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { Loading } from '@repo/core/components/ui/Loading';
 
@@ -43,7 +43,9 @@ const RatingContainer = ({ isLoading, feedbacks, drImage, drName }: RatingContai
             className="relative w-full flex flex-col items-center rounded-xl px-2 pt-12 pb-6 mt-[40px] z-0 bg-impo_Neutral_Surface"
           >
             <div className="absolute left-0 right-0 -top-[40px] flex justify-center">
-              <CustomImage src={drImage} width={80} className="rounded-full" />
+              <div className="relative w-[80px] h-[80px] rounded-full overflow-hidden">
+                <CustomImage_NEW fill={true} className="object-cover object-top" src={drImage} />
+              </div>
             </div>
 
             <CustomTypography fontSize="Title_Small" className="text-impo_Neutral_OnBackground">

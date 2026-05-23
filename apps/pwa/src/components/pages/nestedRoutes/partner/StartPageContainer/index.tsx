@@ -16,9 +16,12 @@ const StartPageContainer = () => {
 
   return (
     <MainPageLayout rightElement="BackButton" rightElementScript="شروع همدلی" paddingBottom={30}>
-      <div className="relative w-full aspect-[16/9]">
-        <CustomImage_NEW src="/assets/images/partner-start.webp" className="px-6 dark:hidden block" fill />
-        <CustomImage_NEW src="/assets/images/partner-start-dark.webp" className="px-6 hidden dark:block" fill />
+      <div className="relative w-full aspect-[16/9] dark:hidden block">
+        <CustomImage_NEW src="/assets/images/partner-start.webp" className="object-cover px-6" fill={true} />
+      </div>
+
+      <div className="relative w-full aspect-[16/9] hidden dark:block">
+        <CustomImage_NEW src="/assets/images/partner-start-dark.webp" className="object-cover px-6" fill={true} />
       </div>
 
       <div className="flex flex-col gap-4 items-center justify-center py-5 px-6">

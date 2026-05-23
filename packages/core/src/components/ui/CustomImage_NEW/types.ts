@@ -8,5 +8,6 @@ export interface CustomImage_NEWTypes extends ItemsTypes {
   imageApi?: string;
   onLoad?: () => void;
   hasPreviewImage?: boolean;
+  containerClassName?: string;
   previewImageShape?: PreviewImageShapeTypes;
 }

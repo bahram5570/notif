@@ -1,4 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomSlider } from '@repo/core/components/ui/CustomSlider';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
@@ -14,7 +14,7 @@ const Slides = ({ slides }: SlidesProps) => {
       <CustomSlider gap={0}>
         {slides.map((item, index) => (
           <div className="pointer-events-none min-w-[290px] h-[320px] " key={index}>
-            <CustomImage src={item} width={'100%'} height={'100%'} objectFit="contain" />
+            <CustomImage_NEW src={item} fill={true} className="object-contain" />
           </div>
         ))}
       </CustomSlider>

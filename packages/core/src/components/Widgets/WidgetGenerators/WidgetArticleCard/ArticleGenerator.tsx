@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import { useAnalytics } from '../../../../hooks/useAnalytics';
-import { CustomImage } from '../../../ui/CustomImage';
+import { CustomImage_NEW } from '../../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../../ui/CustomTypography';
 import { ArticleGeneratorProps } from './types';
 
@@ -15,7 +15,9 @@ const ArticleGenerator = ({ image, link, title }: ArticleGeneratorProps) => {
       onClick={() => callEvent('Article')}
       className="flex flex-row-reverse items-start gap-2 w-full"
     >
-      <CustomImage src={image} width={88} height={75} objectFit="cover" className="rounded-lg" />
+      <div className="relative w-[88px] h-[75px] rounded-lg overflow-hidden">
+        <CustomImage_NEW src={image} fill={true} className="object-cover" />
+      </div>
 
       <CustomTypography className="text-impo_Neutral_OnBackground text-right" fontSize="Lable_Medium">
         {title}

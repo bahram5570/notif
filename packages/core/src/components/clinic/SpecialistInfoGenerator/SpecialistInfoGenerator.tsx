@@ -49,9 +49,10 @@ export const SpecialistInfoGenerator = ({
                   ${isActive && theme.backgroundcolor}
                 `}
     >
-      <div className="relative w-12 h-12 min-w-12 min-h-12 rounded-full">
-        <CustomImage_NEW src={image} width={48} height={48} className="rounded-full" />
-        <CustomImage src={image} width={48} height={48} className="rounded-full" />
+      <div className="relative w-12 h-12 min-w-12 min-h-12">
+        <div className="w-full h-full rounded-full overflow-hidden">
+          <CustomImage_NEW src={image} fill={true} className="object-cover" />
+        </div>
 
         {isOnline && (
           <div className="absolute right-0 bottom-0 w-[14px] h-[14px] p-[2px] rounded-full bg-impo_White z-10">

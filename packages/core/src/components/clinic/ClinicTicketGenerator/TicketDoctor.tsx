@@ -1,4 +1,3 @@
-import { CustomImage } from '../../ui/CustomImage';
 import { CustomImage_NEW } from '../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../ui/CustomTypography';
 import { TicketDoctorProps } from './types';
@@ -21,8 +20,10 @@ const TicketDoctor = ({ drName, drSpeciality, drImage, stylingTypes }: TicketDoc
           {drSpeciality}
         </CustomTypography>
       </div>
-      <CustomImage_NEW src={drImage} width={56} height={56} className="rounded-full" />
-      <CustomImage src={drImage} width={56} height={56} className="rounded-full" />
+
+      <div className="relative w-14 h-14 rounded-full overflow-hidden ">
+        <CustomImage_NEW src={drImage} fill={true} className="object-cover" />
+      </div>
     </div>
   );
 };

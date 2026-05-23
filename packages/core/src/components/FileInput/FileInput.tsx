@@ -7,7 +7,6 @@ import TrashIcon from '@assets/shared/icons/trash.svg';
 import { MODAL_QUERY_NAME } from '../../constants/modal.constants';
 import { usePageNavigationLoading } from '../../hooks/usePageNavigationLoading';
 import { useQueryParamsHandler } from '../../hooks/useQueryParamsHandler';
-import { CustomImage } from '../ui/CustomImage';
 import { CustomImage_NEW } from '../ui/CustomImage_NEW';
 import { CustomTypography } from '../ui/CustomTypography';
 import { FileInputProps } from './type';
@@ -42,8 +41,11 @@ export const FileInput = ({ fileName, valuesHandler, label }: FileInputProps) =>
       {fileName !== '' && (
         <div className="relative w-full flex items-center justify-between gap-5 py-3">
           <div className="flex items-center gap-2">
-            {isImageType && <CustomImage src={fileName} width={48} height={48} className="rounded-md" />}
-            {isImageType && <CustomImage_NEW src={fileName} width={48} height={48} className="rounded-md" />}
+            {isImageType && (
+              <div className="relative w-12 h-12 rounded-md overflow-hidden">
+                <CustomImage_NEW src={fileName} fill={true} className="object-cover" />
+              </div>
+            )}
 
             {!isImageType && (
               <div className="w-12 h-12 rounded-full flex items-center justify-center bg-impo_White">

@@ -13,7 +13,8 @@ import usePreviewImage from './__hooks__/usePreviewImage';
 import { CustomImage_NEWTypes } from './types';
 
 export const CustomImage_NEW = (props: CustomImage_NEWTypes) => {
-  const { hasPreviewImage, previewImageShape, src, alt, imageApi, className, ...imageProps } = props;
+  const { hasPreviewImage, previewImageShape, src, alt, imageApi, className, containerClassName, ...imageProps } =
+    props;
 
   const { previewImageLoading, previewImageHandler } = usePreviewImage();
   const [imageLoading, setImageLoading] = useState(true);
@@ -49,7 +50,7 @@ export const CustomImage_NEW = (props: CustomImage_NEWTypes) => {
   const isLoaded = updatedSrc !== '' && !hasError && !imageLoading;
 
   return (
-    <div className={`relative ${imageProps.fill ? 'w-full h-full' : 'w-fit h-fit'}`}>
+    <div className={`${imageProps.fill ? 'w-full h-full' : 'w-fit h-fit'} relative ${containerClassName || ''}`}>
       {hasError && <CustomImageError />}
       {imageLoading && <CustomImageLoading />}
       {previewImageLoading && <CustomImagePreviewLoading />}

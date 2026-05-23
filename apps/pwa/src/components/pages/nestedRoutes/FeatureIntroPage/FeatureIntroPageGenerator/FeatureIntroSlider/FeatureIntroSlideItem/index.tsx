@@ -21,12 +21,7 @@ const FeatureIntroSlideItem = ({ data, goToNext }: TrailonboardingSlideItemProps
   };
 
   return (
-    <div
-      className="w-full flex flex-col justify-center items-center gap-11 mt-12"
-      style={{
-        direction: 'rtl',
-      }}
-    >
+    <div style={{ direction: 'rtl' }} className="w-full flex flex-col justify-center items-center gap-11 mt-12">
       <SlideItemContext description={data.slides[currentIndex].description} title={data.slides[currentIndex].title} />
       <SlideItemSliderImage currentIndex={currentIndex} slides={data.slides} />
       <SlideItemFooter clickHandler={clickHandler} currentIndex={currentIndex} data={data} />

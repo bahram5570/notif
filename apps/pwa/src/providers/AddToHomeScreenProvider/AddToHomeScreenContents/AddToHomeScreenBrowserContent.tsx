@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 
 import AndroidIcon from '@assets/icons/android.svg';
 import AppleIcon from '@assets/icons/apple.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import AddToHomeScreenContainer from './AddToHomeScreenContainer';
@@ -69,9 +69,7 @@ const AddToHomeScreenBrowserContent = ({ browserInfo, operatingSystem }: AddToHo
             )}
 
             {item.image && (
-              <div className="px-4">
-                <CustomImage src={item.image} />
-              </div>
+              <CustomImage_NEW src={item.image} width={0} height={0} sizes="100vw" className="w-full h-auto px-4" />
             )}
           </div>
         ))}
