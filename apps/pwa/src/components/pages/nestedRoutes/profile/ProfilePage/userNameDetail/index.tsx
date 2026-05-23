@@ -32,11 +32,15 @@ const UserNameDetail = ({ name, username, avatar }: UserNameDetailsProps) => {
       canDeleteProfile: String(data?.canDeleteProfile),
     });
 
-    pageNavigationHandler({ showProgressBar: false, id: ProfileModalNameEnums.EditProfileImage });
+    pageNavigationHandler({ id: ProfileModalNameEnums.EditProfileImage });
   };
 
   const linkToEditProfileHandler = () => {
-    pageNavigationHandler({ showProgressBar: true, linkTo: '/protected/userInfo', id: 'linkToEditProfileHandler' });
+    pageNavigationHandler({
+      navigationType: 'logo',
+      linkTo: '/protected/userInfo',
+      id: 'linkToEditProfileHandler',
+    });
   };
 
   const preventIOSPhoneLink = (v: string) => {

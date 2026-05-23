@@ -25,8 +25,7 @@ const ChatFooterMessageInput = () => {
   const { text, textHandler, submitTextHandler, textLoading } = useTextValue(ticketId);
 
   const clickHandler = () => {
-    (newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true' }),
-      pageNavigationHandler({ showProgressBar: false, id: 'chatFooterModal' }));
+    (newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true' }), pageNavigationHandler({ id: 'chatFooterModal' }));
   };
 
   const theme = useMemo<{ backgroundcolor: string; fill: string }>(() => {

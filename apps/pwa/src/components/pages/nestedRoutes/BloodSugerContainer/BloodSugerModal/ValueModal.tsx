@@ -53,7 +53,7 @@ const ValueModal = ({ name, onChange, onCloseModal, value }: ValueModalPropsType
 
       <CustomButton
         onClick={() => {
-          (onChangeHandler(), pageNavigationHandler({ showProgressBar: true, id: name }));
+          (onChangeHandler(), pageNavigationHandler({ navigationType: 'logo', id: name }));
         }}
         fontSize="Lable_Large"
       >

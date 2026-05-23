@@ -15,7 +15,7 @@ export const SelectedDayNoteList = ({ noteList, date }: SelectedDayNoteListProps
 
     pageNavigationHandler({
       id: 'noteList',
-      showProgressBar: true,
+      navigationType: 'logo',
       linkTo: `/protected/note/noteList`,
     });
   };

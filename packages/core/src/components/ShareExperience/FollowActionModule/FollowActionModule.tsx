@@ -11,11 +11,11 @@ export const FollowActionModule = (props: FollowActionModuleProps) => {
   const { callEvent } = useAnalytics();
   const { newQueryParamsHandler } = useQueryParamsHandler();
 
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
   const { increaseZIndex } = useShareExperienceHandlers();
 
   const loadingId = `ShareExperienceFollowModule ${props.userId} ${props.experienceId}`;
-  const isLoading = props.isFollowLoading || pageNavigationLoading === loadingId;
+  const isLoading = props.isFollowLoading || navigationLoadingId === loadingId;
 
   const clickHandler = () => {
     callEvent(props.isFollow ? 'shareExperienceUserUnfollowed' : 'ShareExperienceUserFollowed');
@@ -33,7 +33,6 @@ export const FollowActionModule = (props: FollowActionModuleProps) => {
         newQueryParamsHandler({ [SHARE_EXPERIENCE_UNFOLLOW_MODAL_QUERY_NAME]: queryData });
 
         pageNavigationHandler({
-          showProgressBar: false,
           id: loadingId,
         });
       } else {

@@ -40,7 +40,7 @@ const ShareExperienceNewLink = ({
       increaseZIndex(SHARE_EXPERIENCE_NEW_EXERCISE_MODAL_QUERY_NAME);
     }
 
-    pageNavigationHandler({ showProgressBar: true, id: 'ShareExperienceNewLink' });
+    pageNavigationHandler({ navigationType: 'logo', id: 'ShareExperienceNewLink' });
   };
 
   return (

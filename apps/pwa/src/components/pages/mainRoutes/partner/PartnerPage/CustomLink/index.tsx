@@ -8,7 +8,7 @@ import { CustomLinkPropType } from './type';
 const CustomLink = (props: CustomLinkPropType) => {
   const { link, style, lable, id, fontSize = 'Lable_Large' } = props;
 
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
   const { typographyFontStyles, result } = useTypographyMaker({
     children: lable,
     fontSize: fontSize,
@@ -20,10 +20,10 @@ const CustomLink = (props: CustomLinkPropType) => {
       props.onClick();
     }
 
-    pageNavigationHandler({ id: id, showProgressBar: false, linkTo: link });
+    pageNavigationHandler({ id: id, linkTo: link });
   };
 
-  const isLoading = pageNavigationLoading === id;
+  const isLoading = navigationLoadingId === id;
 
   return (
     <div

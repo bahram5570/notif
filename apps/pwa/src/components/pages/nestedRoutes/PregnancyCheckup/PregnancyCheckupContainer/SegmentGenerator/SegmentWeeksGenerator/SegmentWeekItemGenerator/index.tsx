@@ -21,7 +21,7 @@ const SegmentWeekItemGenerator = ({ isCurrentWeek, items, label, needTest, week 
       actionHandler(action);
     } else {
       pageNavigationHandler({
-        showProgressBar: true,
+        navigationType: 'logo',
         linkTo: `/protected/checkupQuestionList?items=${encodeURIComponent(JSON.stringify(items))}&title=${label}&week=${week}`,
         id: 'checkupQuestionList',
       });

@@ -8,17 +8,17 @@ import { NameSelectorActivationPageNamesTypes } from '../../types';
 const useNameSelectorActivationSteps = () => {
   const { callEvent } = useAnalytics();
   const pageName = usePathname() || '';
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const stageName = pageName.replace('/protected/nameSelectorActivation/', '') as NameSelectorActivationPageNamesTypes;
   const stepInfo = NAME_SELECTOR_ACTIVATION_PAGES_INFO[stageName];
 
   const loadingId = stageName;
-  const isNextStepLoading = pageNavigationLoading === loadingId;
+  const isNextStepLoading = navigationLoadingId === loadingId;
 
   const nextStepNavigation = () => {
     callEvent(`BabyNameActivationStep${stepInfo.nextStep}`);
-    pageNavigationHandler({ showProgressBar: false, linkTo: stepInfo.nextStep || '', id: loadingId });
+    pageNavigationHandler({ linkTo: stepInfo.nextStep || '', id: loadingId });
   };
 
   return { stepInfo, nextStepNavigation, isNextStepLoading };

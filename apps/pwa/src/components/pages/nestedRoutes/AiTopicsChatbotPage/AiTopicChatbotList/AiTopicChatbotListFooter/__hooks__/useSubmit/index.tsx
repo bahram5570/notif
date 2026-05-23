@@ -4,12 +4,11 @@ import { SubmitHandlerType } from '@components/pages/nestedRoutes/AiChatbotPage/
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 const useSubmit = () => {
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
-  const isLoading = pageNavigationLoading === 'aiChatbotLink';
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
+  const isLoading = navigationLoadingId === 'aiChatbotLink';
 
   const submitHandler: SubmitHandlerType = ({ prompt }) => {
     pageNavigationHandler({
-      showProgressBar: false,
       id: 'aiChatbotLink',
       linkTo: '/protected/aiChatbot',
     });

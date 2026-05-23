@@ -22,7 +22,7 @@ const PredictGenerator = (props: PredictGeneratorProps) => {
       [MODAL_QUERY_NAME]: 'true',
       name: 'predict',
     }),
-      pageNavigationHandler({ showProgressBar: true, id: 'predict' }));
+      pageNavigationHandler({ navigationType: 'logo', id: 'predict' }));
   };
 
   return (

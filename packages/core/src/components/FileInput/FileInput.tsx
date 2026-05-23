@@ -21,7 +21,7 @@ export const FileInput = ({ fileName, valuesHandler, label }: FileInputProps) =>
 
   const onClick = () => {
     newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true' });
-    pageNavigationHandler({ showProgressBar: false, id: 'specialistProblemModal' });
+    pageNavigationHandler({ id: 'specialistProblemModal' });
   };
 
   return (

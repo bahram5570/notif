@@ -15,7 +15,7 @@ const SubscriptionButton = ({ currentDayCount }: SubscriptionButtonProps) => {
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Lable_Large', operatingSystem });
 
   const clickHandler = () => {
-    pageNavigationHandler({ id: 'SubscriptionButton', showProgressBar: true });
+    pageNavigationHandler({ id: 'SubscriptionButton', navigationType: 'logo' });
   };
 
   return (

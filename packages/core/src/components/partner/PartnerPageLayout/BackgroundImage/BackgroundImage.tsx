@@ -22,7 +22,7 @@ export const BackgroundImage = ({ isValid, coverImage, defaultCoverImage }: Back
     });
 
     pageNavigationHandler({
-      showProgressBar: true,
+      navigationType: 'logo',
       id: 'UploadBackgroundImage',
     });
   };

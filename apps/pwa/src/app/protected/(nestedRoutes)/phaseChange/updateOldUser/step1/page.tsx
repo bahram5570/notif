@@ -13,7 +13,7 @@ const loadingId = 'completeActionId';
 
 const Step1 = () => {
   const { payloadHandler } = usePhaseChangePayload();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const selectHandler = async () => {
     const user = await getUserInfoCookie();
@@ -25,22 +25,22 @@ const Step1 = () => {
         InstallationPurposeEnum.tracker.status === installationPurpose.status &&
         InstallationPurposeEnum.tracker.periodStatus === installationPurpose.periodStatus
       ) {
-        pageNavigationHandler({ id: loadingId, showProgressBar: false, linkTo: 'tracker_step1' });
+        pageNavigationHandler({ id: loadingId, linkTo: 'tracker_step1' });
         payloadHandler({ ...installationPurpose });
       } else if (
         InstallationPurposeEnum.intention.status === installationPurpose.status &&
         InstallationPurposeEnum.intention.periodStatus === installationPurpose.periodStatus
       ) {
-        pageNavigationHandler({ id: loadingId, showProgressBar: false, linkTo: 'intention_step1' });
+        pageNavigationHandler({ id: loadingId, linkTo: 'intention_step1' });
         payloadHandler({ ...installationPurpose });
       } else if (
         InstallationPurposeEnum.prevention.status === installationPurpose.status &&
         InstallationPurposeEnum.prevention.periodStatus === installationPurpose.periodStatus
       ) {
-        pageNavigationHandler({ id: loadingId, showProgressBar: false, linkTo: 'prevention_step1' });
+        pageNavigationHandler({ id: loadingId, linkTo: 'prevention_step1' });
         payloadHandler({ ...installationPurpose });
       } else if (InstallationPurposeEnum.pregnancy.status === installationPurpose.status) {
-        pageNavigationHandler({ id: loadingId, showProgressBar: false, linkTo: 'pregnancy_step1' });
+        pageNavigationHandler({ id: loadingId, linkTo: 'pregnancy_step1' });
         payloadHandler({ ...installationPurpose });
       }
     }
@@ -64,7 +64,7 @@ const Step1 = () => {
         fontSize="Lable_Large"
         onClick={selectHandler}
         className="mt-auto !w-[204px]"
-        isLoading={loadingId === pageNavigationLoading}
+        isLoading={loadingId === navigationLoadingId}
       >
         بزن بریم
       </CustomButton>

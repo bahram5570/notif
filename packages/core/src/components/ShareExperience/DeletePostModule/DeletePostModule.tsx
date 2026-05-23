@@ -18,7 +18,7 @@ export const DeletePostModule = (props: DeletePostModuleProps) => {
     const queryData = JSON.stringify({ ...props });
     newQueryParamsHandler({ [SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME]: queryData });
     increaseZIndex(SHARE_EXPERIENCE_DELETE_MODAL_QUERY_NAME, props.shareId);
-    pageNavigationHandler({ id: props.shareId, showProgressBar: true });
+    pageNavigationHandler({ id: props.shareId, navigationType: 'logo' });
   };
 
   return (

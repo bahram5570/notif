@@ -16,7 +16,7 @@ export const UserAvatarModule = ({ id, avatarImage, showChangeAvatarIcon, userna
 
   const selectProfileHandler = () => {
     callEvent('ShareExperienceSelfProfile');
-    pageNavigationHandler({ id: id, showProgressBar: true });
+    pageNavigationHandler({ id: id, navigationType: 'logo' });
 
     const paramsData = JSON.stringify({
       id: id,

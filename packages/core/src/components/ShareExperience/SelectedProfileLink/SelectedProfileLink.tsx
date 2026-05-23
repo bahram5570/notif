@@ -14,7 +14,7 @@ export const SelectedProfileLink = (props: SelectedProfileLinkProps) => {
 
   const selectProfileHandler = () => {
     if (!props.isSelf) {
-      pageNavigationHandler({ id: props.id, showProgressBar: true });
+      pageNavigationHandler({ id: props.id, navigationType: 'logo' });
 
       newQueryParamsHandler({ [SHARE_EXPERIENCE_PROFILE_QUERY_NAME]: props.id });
       increaseZIndex(SHARE_EXPERIENCE_PROFILE_QUERY_NAME, props.id);

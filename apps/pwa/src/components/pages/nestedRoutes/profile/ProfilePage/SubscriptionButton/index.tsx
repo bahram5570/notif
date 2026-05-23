@@ -17,7 +17,11 @@ const SubscriptionButton = ({ remaindDays }: SubscriptionProps) => {
 
   const clickHandler = () => {
     callEvent('Subscription_From_HasSubscription');
-    pageNavigationHandler({ id: 'SubscriptionButton', showProgressBar: true, linkTo: '/protected/subscription' });
+    pageNavigationHandler({
+      id: 'SubscriptionButton',
+      navigationType: 'logo',
+      linkTo: '/protected/subscription',
+    });
   };
 
   return (

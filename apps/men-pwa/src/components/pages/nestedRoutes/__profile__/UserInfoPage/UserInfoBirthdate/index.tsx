@@ -15,7 +15,7 @@ import { UserInfoBirthdateTypes } from './types';
 const UserInfoBirthdate = ({ value, valueHandler, name }: UserInfoBirthdateTypes) => {
   const { culture } = useCulture();
   const { newQueryParamsHandler } = useQueryParamsHandler();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const updatedValue = useMemo(() => {
     switch (culture.calendarType) {
@@ -32,10 +32,10 @@ const UserInfoBirthdate = ({ value, valueHandler, name }: UserInfoBirthdateTypes
 
   const selectHandler = () => {
     newQueryParamsHandler({ [MODALS.USER_INFO]: name });
-    pageNavigationHandler({ showProgressBar: false, id: name });
+    pageNavigationHandler({ id: name });
   };
 
-  const isLoading = pageNavigationLoading === name;
+  const isLoading = navigationLoadingId === name;
 
   return (
     <div onClick={selectHandler} className="w-full flex justify-end items-center">

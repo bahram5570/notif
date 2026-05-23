@@ -11,7 +11,7 @@ import { ProfileModalNameEnums } from '../ProfileModals/enum';
 
 const LogOut = () => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const selectHandler = () => {
     newQueryParamsHandler({
@@ -19,10 +19,10 @@ const LogOut = () => {
       [PROFILE_MODAL_QUERY_NAME]: ProfileModalNameEnums.Logout,
     });
 
-    pageNavigationHandler({ showProgressBar: false, id: ProfileModalNameEnums.Logout });
+    pageNavigationHandler({ id: ProfileModalNameEnums.Logout });
   };
 
-  const isLoading = pageNavigationLoading === ProfileModalNameEnums.Logout;
+  const isLoading = navigationLoadingId === ProfileModalNameEnums.Logout;
 
   return (
     <div className="flex justify-center">

@@ -7,21 +7,21 @@ import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoad
 import { CustomContainerPropsType } from './type';
 
 const CustomContainer = ({ allBtnLink, children, plusIconLink, title, showAllBtn }: CustomContainerPropsType) => {
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const newHandler = () => {
     pageNavigationHandler({
-      showProgressBar: true,
+      navigationType: 'logo',
       linkTo: `${plusIconLink}`,
       id: `cutomContainer${plusIconLink}`,
     });
   };
 
   const showAllHandler = () => {
-    pageNavigationHandler({ showProgressBar: false, id: allBtnLink, linkTo: `${allBtnLink}` });
+    pageNavigationHandler({ id: allBtnLink, linkTo: `${allBtnLink}` });
   };
 
-  const isLoading = pageNavigationLoading === allBtnLink;
+  const isLoading = navigationLoadingId === allBtnLink;
 
   return (
     <div className="bg-impo_Neutral_Background rounded-2xl p-2 flex flex-col">

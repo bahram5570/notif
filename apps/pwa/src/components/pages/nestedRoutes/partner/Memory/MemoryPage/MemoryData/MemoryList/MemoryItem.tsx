@@ -17,7 +17,7 @@ const MemoryItem = (props: MemoryItemPropsType) => {
   const onClick = () => {
     pageNavigationHandler({
       id: 'memoryItem',
-      showProgressBar: true,
+      navigationType: 'logo',
       linkTo: `/protected/memory/memoryDetail?memoryId=${props.id}`,
     });
   };

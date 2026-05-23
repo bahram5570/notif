@@ -33,7 +33,7 @@ export const SpecialistCardGenerator = (props: SpecialistCardGeneratorProps) => 
 
     pageNavigationHandler({
       id: props.id,
-      showProgressBar: false,
+
       linkTo: `/protected/clinic/doctor/${clinicInfo}/${props.id}`,
     });
   };

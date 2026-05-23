@@ -14,7 +14,7 @@ const ShareExperienceAvatar = ({ profile }: ShareExperienceAvatarProps) => {
   const { increaseZIndex } = useShareExperienceHandlers();
 
   const selectHandler = () => {
-    pageNavigationHandler({ id: profile.userId, showProgressBar: true });
+    pageNavigationHandler({ id: profile.userId, navigationType: 'logo' });
 
     increaseZIndex(SHARE_EXPERIENCE_PROFILE_QUERY_NAME, profile.userId);
     newQueryParamsHandler({ [SHARE_EXPERIENCE_PROFILE_QUERY_NAME]: profile.userId });

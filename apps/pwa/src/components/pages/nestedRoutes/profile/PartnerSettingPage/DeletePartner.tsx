@@ -14,7 +14,7 @@ const DeletePartner = () => {
       className="flex items-center justify-end gap-2 p-3"
       onClick={() => {
         (newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true', name: 'DeletePartnerModal' }),
-          pageNavigationHandler({ showProgressBar: true, id: 'DeletePartner' }));
+          pageNavigationHandler({ navigationType: 'logo', id: 'DeletePartner' }));
       }}
     >
       <CustomTypography fontSize="Lable_Large" className="text-impo_Error_Error">

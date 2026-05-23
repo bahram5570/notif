@@ -9,7 +9,7 @@ import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoad
 
 const LogoutModal = () => {
   const router = useCustomRouter();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const logoutHandler = async () => {
     localStorage.clear();
@@ -17,10 +17,10 @@ const LogoutModal = () => {
     await clearUserCookiesHandler();
     await caches.delete(STORED_NOTIFICATIONS_CACHE_NAME);
 
-    pageNavigationHandler({ showProgressBar: false, id: 'LogoutModal', linkTo: '/' });
+    pageNavigationHandler({ id: 'LogoutModal', linkTo: '/' });
   };
 
-  const isLoading = pageNavigationLoading === 'LogoutModal';
+  const isLoading = navigationLoadingId === 'LogoutModal';
 
   return (
     <div className="w-[290px] flex flex-col items-center gap-4">

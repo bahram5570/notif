@@ -9,9 +9,9 @@ import { useRouter } from 'next/navigation';
 
 const LogoutModal = () => {
   const router = useRouter();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
-  const isLoading = pageNavigationLoading === 'LogoutModal';
+  const isLoading = navigationLoadingId === 'LogoutModal';
 
   const logoutHandler = async () => {
     localStorage.clear();
@@ -19,7 +19,7 @@ const LogoutModal = () => {
     await clearUserCookiesHandler();
     await caches.delete(STORED_NOTIFICATIONS_CACHE_NAME);
 
-    pageNavigationHandler({ showProgressBar: false, id: 'LogoutModal', linkTo: '/' });
+    pageNavigationHandler({ id: 'LogoutModal', linkTo: '/' });
   };
 
   return (

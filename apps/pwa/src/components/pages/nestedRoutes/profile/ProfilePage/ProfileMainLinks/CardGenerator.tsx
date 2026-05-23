@@ -8,7 +8,7 @@ const CardGenerator = ({ script, backgroundColor, linkTo, Icon }: CardGeneratorT
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const linkToEditProfileHandler = () => {
-    pageNavigationHandler({ showProgressBar: true, linkTo: linkTo, id: linkTo });
+    pageNavigationHandler({ navigationType: 'logo', linkTo: linkTo, id: linkTo });
   };
 
   return (

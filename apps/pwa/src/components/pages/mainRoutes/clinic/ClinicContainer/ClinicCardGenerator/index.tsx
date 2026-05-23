@@ -13,7 +13,7 @@ const ClinicCardGenerator = ({ description, id, image, name, price, priceUnit }:
 
   const clickHandler = () => {
     callEvent('Clinic_Ticket');
-    pageNavigationHandler({ showProgressBar: true, linkTo: `clinic/doctor/${id}`, id: 'ClinicCardGenerator' });
+    pageNavigationHandler({ navigationType: 'logo', linkTo: `clinic/doctor/${id}`, id: 'ClinicCardGenerator' });
   };
 
   return (

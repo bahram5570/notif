@@ -6,10 +6,10 @@ import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
 const MessagerHeader = () => {
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const onClick = () => {
-    pageNavigationHandler({ showProgressBar: false, linkTo: -1, id: 'back' });
+    pageNavigationHandler({ linkTo: -1, id: 'back' });
   };
 
   return (
@@ -28,8 +28,8 @@ const MessagerHeader = () => {
           </div>
 
           <div className="cursor-pointer flex justify-center items-center w-8 h-8" onClick={onClick}>
-            {pageNavigationLoading === 'back' && <CustomSpinner className="border-impo_Surface_Outline" size={28} />}
-            {pageNavigationLoading !== 'back' && (
+            {navigationLoadingId === 'back' && <CustomSpinner className="border-impo_Surface_Outline" size={28} />}
+            {navigationLoadingId !== 'back' && (
               <ArrowIcon className="w-6 h-full stroke-2 stroke-impo_Surface_Outline" />
             )}
           </div>

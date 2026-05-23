@@ -10,7 +10,7 @@ const ChatFooterClosed = () => {
   const onClick = () => {
     pageNavigationHandler({
       id: 'ChatFooterClosed',
-      showProgressBar: true,
+      navigationType: 'logo',
       linkTo: `/protected/supportTicket/${ticketId}/rate`,
     });
   };

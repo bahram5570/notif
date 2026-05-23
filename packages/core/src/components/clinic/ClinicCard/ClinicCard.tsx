@@ -13,7 +13,7 @@ export const ClinicCard = (props: ClinicCardProps) => {
 
   const clickHandler = () => {
     callEvent('Clinic_Ticket');
-    pageNavigationHandler({ showProgressBar: true, linkTo: `clinic/doctor/${props.id}`, id: 'ClinicCard' });
+    pageNavigationHandler({ navigationType: 'logo', linkTo: `clinic/doctor/${props.id}`, id: 'ClinicCard' });
   };
 
   return (

@@ -8,7 +8,7 @@ const ProfileLinkGenerator = ({ Icon, link, name, isFirstItem }: ProfileGenerato
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const selectHandler = () => {
-    pageNavigationHandler({ linkTo: link, id: 'ProfileLinkGenerator', showProgressBar: true });
+    pageNavigationHandler({ linkTo: link, id: 'ProfileLinkGenerator', navigationType: 'logo' });
   };
 
   return (

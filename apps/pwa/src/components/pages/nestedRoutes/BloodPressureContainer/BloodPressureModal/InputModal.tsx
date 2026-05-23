@@ -75,7 +75,7 @@ const InputModal = ({ onChange, onCloseModal, value }: ConditionModalPropsType) 
 
       <CustomButton
         onClick={() => {
-          (onChangeHandler(), pageNavigationHandler({ showProgressBar: true, id: 'bloodPressure' }));
+          (onChangeHandler(), pageNavigationHandler({ navigationType: 'logo', id: 'bloodPressure' }));
         }}
         fontSize="Lable_Large"
       >

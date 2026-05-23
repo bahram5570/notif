@@ -16,13 +16,13 @@ const ChatbotNavbarMode = ({
   collapseText2,
 }: ChatbotNavbarModePropsType) => {
   const { actionHandler } = useWidgetActions();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
-  const isLoading = pageNavigationLoading === 'aiChatbot';
+  const isLoading = navigationLoadingId === 'aiChatbot';
 
   const onClick = () => {
     actionHandler(goToChatAction);
-    pageNavigationHandler({ id: 'aiChatbot', showProgressBar: false });
+    pageNavigationHandler({ id: 'aiChatbot' });
   };
   return (
     <div

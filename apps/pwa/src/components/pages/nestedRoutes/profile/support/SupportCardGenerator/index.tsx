@@ -9,7 +9,7 @@ const SupportCardGenerator = ({ id, title, isFirstChild }: SupportCardGeneratorT
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const selectHandler = () => {
-    pageNavigationHandler({ showProgressBar: true, id, linkTo: `/protected/support/category/${id}` });
+    pageNavigationHandler({ navigationType: 'logo', id, linkTo: `/protected/support/category/${id}` });
   };
 
   return (

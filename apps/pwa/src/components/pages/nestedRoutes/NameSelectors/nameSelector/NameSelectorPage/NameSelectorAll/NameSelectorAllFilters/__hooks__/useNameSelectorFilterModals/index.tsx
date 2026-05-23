@@ -3,15 +3,15 @@ import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
 
 const useNameSelectorFilterModals = (modalQueryName: string) => {
   const { newQueryParamsHandler, getQueryParams } = useQueryParamsHandler();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const isOpenHandler = () => {
     newQueryParamsHandler({ [modalQueryName]: 'true' });
-    pageNavigationHandler({ id: modalQueryName, showProgressBar: false });
+    pageNavigationHandler({ id: modalQueryName });
   };
 
   const isOpen = getQueryParams(modalQueryName) !== null;
-  const isLoading = pageNavigationLoading === modalQueryName;
+  const isLoading = navigationLoadingId === modalQueryName;
 
   return { isOpen, isOpenHandler, isLoading };
 };

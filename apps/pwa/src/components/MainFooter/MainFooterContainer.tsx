@@ -15,7 +15,7 @@ const MainFooterContainer = ({ pathName }: MainFooterContainerProps) => {
       return;
     }
 
-    pageNavigationHandler({ linkTo: url, id: 'PageIcons', showProgressBar: true });
+    pageNavigationHandler({ linkTo: url, id: 'PageIcons', navigationType: 'logo' });
   };
 
   return (

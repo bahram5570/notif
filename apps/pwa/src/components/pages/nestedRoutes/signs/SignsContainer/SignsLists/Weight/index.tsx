@@ -12,7 +12,7 @@ const Weight = ({ weight }: WeightPropsType) => {
   const linkToHandler = () => {
     pageNavigationHandler({
       id: 'addWeight',
-      showProgressBar: true,
+      navigationType: 'logo',
       linkTo: `/protected/addWeight?currentWeight=${weight}`,
     });
   };

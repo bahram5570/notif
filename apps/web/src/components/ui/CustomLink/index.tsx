@@ -7,7 +7,7 @@ import { CustomLinkTypes } from './types';
 
 const CustomLink = (props: CustomLinkTypes) => {
   const { children, className, style, color, ...linkProps } = props;
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const selectHandler = (event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
     if (linkProps.onClick) {
@@ -15,7 +15,7 @@ const CustomLink = (props: CustomLinkTypes) => {
     }
 
     if (location.pathname !== props.href && linkProps.target !== '_blank') {
-      pageNavigationHandler({ showProgressBar: true, id: '1' });
+      pageNavigationHandler({ navigationType: 'logo', id: '1' });
     }
   };
 

@@ -14,7 +14,7 @@ export const BiorhythmContainer = ({ Icon, percent, text, typeText, type }: Bior
   const selectHandler = () => {
     callEvent('BiorhythmClicked');
     newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true', typeText, type });
-    pageNavigationHandler({ showProgressBar: true, id: 'BiorhythmModal' });
+    pageNavigationHandler({ navigationType: 'logo', id: 'BiorhythmModal' });
   };
 
   return (

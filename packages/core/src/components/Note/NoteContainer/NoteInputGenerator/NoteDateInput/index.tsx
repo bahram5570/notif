@@ -10,14 +10,14 @@ import { NoteDateInputPropsType } from './type';
 
 const NoteDateInput = ({ value }: NoteDateInputPropsType) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
-  const isLoading = pageNavigationLoading === NoteModalNameEnums.DateTime;
+  const isLoading = navigationLoadingId === NoteModalNameEnums.DateTime;
   const displayDate = value ? value.replace(/-/g, '/') : 'تنظیم نشده';
 
   const linkToHandler = () => {
     (newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true', name: NoteModalNameEnums.DateTime }),
-      pageNavigationHandler({ showProgressBar: false, id: NoteModalNameEnums.DateTime }));
+      pageNavigationHandler({ id: NoteModalNameEnums.DateTime }));
   };
   return (
     <div className="py-1  px-2 flex flex-col gap-2 ">

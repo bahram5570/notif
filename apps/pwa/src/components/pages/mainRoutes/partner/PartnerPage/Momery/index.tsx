@@ -16,7 +16,7 @@ const Memory = ({ memory, valid }: MemeryPropsType) => {
   const link = valid ? '/protected/createMemory' : '/protected/partnerStart';
 
   const onClick = () => {
-    pageNavigationHandler({ id: 'memoryList', showProgressBar: true, linkTo: '/protected/memory' });
+    pageNavigationHandler({ id: 'memoryList', navigationType: 'logo', linkTo: '/protected/memory' });
   };
 
   return (

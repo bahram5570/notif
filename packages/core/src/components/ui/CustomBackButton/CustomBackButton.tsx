@@ -11,7 +11,7 @@ import { CustomBackButtonTypes } from './types';
 const loadingId = 'CustomBackButton';
 
 export const CustomBackButton = (props: CustomBackButtonTypes) => {
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const colors = useMemo(() => {
     const result = {
@@ -49,11 +49,11 @@ export const CustomBackButton = (props: CustomBackButtonTypes) => {
     return result;
   }, [props.color]);
 
-  const isLoading = props.isLoading || pageNavigationLoading === loadingId;
+  const isLoading = props.isLoading || navigationLoadingId === loadingId;
 
   const clickHandler = () => {
     if (!props.isDisable) {
-      pageNavigationHandler({ linkTo: -1, showProgressBar: false, id: loadingId });
+      pageNavigationHandler({ linkTo: -1, id: loadingId });
     }
   };
 

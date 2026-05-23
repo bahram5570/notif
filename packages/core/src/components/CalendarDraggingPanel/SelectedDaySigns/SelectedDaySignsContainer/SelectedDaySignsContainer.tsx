@@ -21,7 +21,7 @@ export const SelectedDaySignsContainer = ({ selectedDateInfo }: SelectedDaySigns
     changeCurrentDate(date);
 
     pageNavigationHandler({
-      showProgressBar: true,
+      navigationType: 'logo',
       linkTo: `/protected/signs`,
       id: 'SelectedDaySignsContainer',
     });

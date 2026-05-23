@@ -31,7 +31,7 @@ export const ContentsSectionModule = (props: ContentsSectionModuleProps) => {
 
   const selectHandler = () => {
     if (hasLinkTo) {
-      pageNavigationHandler({ id, showProgressBar: true });
+      pageNavigationHandler({ id, navigationType: 'logo' });
 
       const { queryKey, queryValue } = shareExperienceCommentQueryMaker(id);
       increaseZIndex(queryKey, id);

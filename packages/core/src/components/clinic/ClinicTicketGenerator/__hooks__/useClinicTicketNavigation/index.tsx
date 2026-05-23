@@ -17,7 +17,7 @@ const useClinicTicketNavigation = (props: ClinicTicketGeneratorProps) => {
         break;
     }
 
-    pageNavigationHandler({ id: 'useClinicTicketNavigation', showProgressBar: true, linkTo });
+    pageNavigationHandler({ id: 'useClinicTicketNavigation', navigationType: 'logo', linkTo });
   };
 
   return { navigateTicketHandler };

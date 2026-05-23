@@ -11,7 +11,7 @@ const HistoryItem = (props: HistoryItemPropsType) => {
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const onClick = () => {
-    pageNavigationHandler({ id: 'history', showProgressBar: true, linkTo: `/protected/challenge/${props.id}` });
+    pageNavigationHandler({ id: 'history', navigationType: 'logo', linkTo: `/protected/challenge/${props.id}` });
   };
 
   return (

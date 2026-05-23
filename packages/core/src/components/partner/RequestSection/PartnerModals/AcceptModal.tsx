@@ -24,7 +24,7 @@ const AcceptModal = () => {
       name: PartnerModalNameEnums.TypeDistance,
       id: id || '',
     }),
-      pageNavigationHandler({ showProgressBar: true, id: 'typeRelationShip' }));
+      pageNavigationHandler({ navigationType: 'logo', id: 'typeRelationShip' }));
   };
 
   const theme = useMemo<{ backgroundColor: string; className: string; stroke: string }>(() => {

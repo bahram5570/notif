@@ -21,7 +21,7 @@ const SpecialistProblemInputs = ({ info, infoHelper, questionValuesHandler }: Sp
   const { callEvent } = useAnalytics();
   const { values, valuesHandler } = useValues();
   const { operatingSystem } = useSystem();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Small', operatingSystem });
   const loadingId = 'SpecialistProblemInputs';
@@ -42,7 +42,7 @@ const SpecialistProblemInputs = ({ info, infoHelper, questionValuesHandler }: Sp
       toast.notifyToastHandler({ message: 'اول مشکلت بنویس و بعد ارسال کن' });
     } else {
       questionValuesHandler({ text: values.text, fileName: values.fileName });
-      pageNavigationHandler({ showProgressBar: false, id: loadingId });
+      pageNavigationHandler({ id: loadingId });
     }
   };
 
@@ -68,7 +68,7 @@ const SpecialistProblemInputs = ({ info, infoHelper, questionValuesHandler }: Sp
       </div>
 
       <div className="w-full mt-auto pt-5">
-        <CustomButton onClick={paymentHandler} isLoading={pageNavigationLoading === loadingId}>
+        <CustomButton onClick={paymentHandler} isLoading={navigationLoadingId === loadingId}>
           مرحله بعد
         </CustomButton>
       </div>

@@ -1,35 +1,33 @@
-import { useEffect, useRef, useState } from 'react';
-
-import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 
 import { useCustomRouter } from '../../../../hooks/useCustomRouter';
 import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
 import { PAGE_NAVIGATION_LOADING_RESET_TIME } from '../../constants';
-import { LoadingStatesTypes, PageNavigationHandlerTypes } from '../../types';
+import { LoadingStatesTypes, NavigationTypeTypes, PageNavigationHandlerTypes } from '../../types';
 
 const usePageNavigationLoading = () => {
-  const path = usePathname() || '';
-  const timer = useRef<NodeJS.Timeout>();
   const { push, back } = useCustomRouter();
-  const { searchParams } = useQueryParamsHandler();
-  const [progressBarLoading, setPogressBarLoading] = useState<LoadingStatesTypes>(false);
-  const [pageNavigationLoading, setPageNavigationLoading] = useState<LoadingStatesTypes>(false);
+  const { searchParams, pathname } = useQueryParamsHandler();
+  const [pageLoading, setPageLoading] = useState<NavigationTypeTypes>(undefined);
+  const [navigationLoadingId, setNavigationLoadingId] = useState<LoadingStatesTypes>(false);
 
   useEffect(() => {
-    if (pageNavigationLoading || progressBarLoading) {
-      timer.current = setTimeout(() => {
-        setPogressBarLoading(false);
-        setPageNavigationLoading(false);
+    let timer: NodeJS.Timeout;
+
+    if (navigationLoadingId || pageLoading) {
+      timer = setTimeout(() => {
+        setPageLoading(undefined);
+        setNavigationLoadingId(false);
       }, PAGE_NAVIGATION_LOADING_RESET_TIME * 1000);
     }
 
-    return () => clearTimeout(timer.current);
-  }, [pageNavigationLoading, progressBarLoading]);
+    return () => clearTimeout(timer);
+  }, [navigationLoadingId, pageLoading]);
 
   useEffect(() => {
     const body = document.body;
 
-    if (pageNavigationLoading || progressBarLoading) {
+    if (navigationLoadingId || pageLoading) {
       body.style.pointerEvents = 'none';
     } else {
       body.style.pointerEvents = 'auto';
@@ -38,20 +36,20 @@ const usePageNavigationLoading = () => {
     return () => {
       body.style.pointerEvents = 'auto';
     };
-  }, [pageNavigationLoading, progressBarLoading]);
+  }, [navigationLoadingId, pageLoading]);
 
   useEffect(() => {
     // # Disables loadings on changing of page or query param
-    setPogressBarLoading(false);
-    setPageNavigationLoading(false);
+    setPageLoading(undefined);
+    setNavigationLoadingId(false);
 
     return () => {
-      setPogressBarLoading(false);
-      setPageNavigationLoading(false);
+      setPageLoading(undefined);
+      setNavigationLoadingId(false);
     };
-  }, [path, searchParams]);
+  }, [pathname, searchParams]);
 
-  const pageNavigationHandler: PageNavigationHandlerTypes = ({ showProgressBar, linkTo, id }) => {
+  const pageNavigationHandler: PageNavigationHandlerTypes = ({ navigationType, linkTo, id }) => {
     if (linkTo) {
       if (linkTo === -1) {
         back();
@@ -60,14 +58,14 @@ const usePageNavigationLoading = () => {
       }
     }
 
-    if (showProgressBar) {
-      setPogressBarLoading(id);
+    if (navigationType) {
+      setPageLoading(navigationType);
     } else {
-      setPageNavigationLoading(id);
+      setNavigationLoadingId(id);
     }
   };
 
-  return { pageNavigationLoading, pageNavigationHandler, progressBarLoading };
+  return { navigationLoadingId, pageLoading, pageNavigationHandler };
 };
 
 export default usePageNavigationLoading;

@@ -19,7 +19,7 @@ const useViewReportProfile = (isLoaded: boolean) => {
   useEffect(() => {
     if (id && isLoaded) {
       setTimeout(() => {
-        pageNavigationHandler({ id, showProgressBar: true });
+        pageNavigationHandler({ id, navigationType: 'logo' });
 
         newQueryParamsHandler({ [SHARE_EXPERIENCE_PROFILE_QUERY_NAME]: id });
         increaseZIndex(SHARE_EXPERIENCE_PROFILE_QUERY_NAME, id);

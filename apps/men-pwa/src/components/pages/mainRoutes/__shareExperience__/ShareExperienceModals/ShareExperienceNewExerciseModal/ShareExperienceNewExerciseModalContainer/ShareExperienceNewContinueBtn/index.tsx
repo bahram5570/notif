@@ -17,18 +17,18 @@ const ShareExperienceNewContinueBtn = ({
   submitHandler,
 }: ShareExperienceNewContinueBtnProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
   const { increaseZIndex } = useShareExperienceHandlers();
 
   const isDisable = text.trim().length < 1;
   const id = 'form';
-  const isLoading = associationId ? isSubmitLoading : pageNavigationLoading === id;
+  const isLoading = associationId ? isSubmitLoading : navigationLoadingId === id;
 
   const clickHandler = () => {
     if (associationId) {
       return submitHandler();
     }
-    pageNavigationHandler({ id, showProgressBar: false });
+    pageNavigationHandler({ id });
 
     newQueryParamsHandler({ [SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME]: 'true' });
     increaseZIndex(SHARE_EXPERIENCE_NEW_TOPICS_QUERY_NAME);

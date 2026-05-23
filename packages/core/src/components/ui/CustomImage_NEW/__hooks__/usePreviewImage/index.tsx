@@ -7,16 +7,16 @@ import { PreviewImageTypes } from '../../../../../providers/PreviewImageProvider
 import { PreviewImageHandlerTypes } from './types';
 
 const usePreviewImage = () => {
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
   const { getQueryParams, newQueryParamsHandler } = useQueryParamsHandler();
   const [previewImageLoading, setPreviewImageLoading] = useState(false);
 
   const hasQueryPreview = getQueryParams(PREVIEW_IMAGE);
-  const isQueryLoading = pageNavigationLoading === PREVIEW_IMAGE;
+  const isQueryLoading = navigationLoadingId === PREVIEW_IMAGE;
 
   const previewImageHandler: PreviewImageHandlerTypes = ({ shape, src }) => {
     if (!isQueryLoading) {
-      pageNavigationHandler({ showProgressBar: false, id: PREVIEW_IMAGE });
+      pageNavigationHandler({ id: PREVIEW_IMAGE });
       setPreviewImageLoading(true);
 
       const result: PreviewImageTypes = { shape, src };

@@ -6,17 +6,16 @@ import { usePageNavigationLoading } from '../../../hooks/usePageNavigationLoadin
 import { BlockMessageToastProps } from './type';
 
 const BlockMessageToast = ({ textMessage, btnText }: BlockMessageToastProps) => {
-  const { pageNavigationLoading, pageNavigationHandler } = usePageNavigationLoading();
+  const { navigationLoadingId, pageNavigationHandler } = usePageNavigationLoading();
   const id = 'BlockMessageToast';
   const onClick = () => {
     pageNavigationHandler({
-      showProgressBar: false,
       id,
       linkTo: '/',
     });
   };
 
-  const isLoading = pageNavigationLoading === id;
+  const isLoading = navigationLoadingId === id;
 
   return (
     <div

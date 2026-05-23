@@ -15,7 +15,7 @@ const SupportLinkGenerator = (props: SupportLinkGeneratorType) => {
         <a
           className="p-4 rounded-lg bg-impo_Neutral_Background"
           href={`tel:${props.phone}`}
-          onClick={() => pageNavigationHandler({ id: 'SupportLinkGenerator', showProgressBar: true })}
+          onClick={() => pageNavigationHandler({ id: 'SupportLinkGenerator', navigationType: 'logo' })}
         >
           <div className="flex flex-col items-end gap-1">
             <CustomTypography fontSize="Lable_MediumProminet" className="text-impo_PrimaryMan_PrimaryMan">

@@ -15,7 +15,7 @@ const useActionTypeInternalRout = ({
       pageNavigationHandler({
         linkTo,
         id: Math.random(),
-        showProgressBar: true,
+        navigationType: 'logo',
       });
     };
 

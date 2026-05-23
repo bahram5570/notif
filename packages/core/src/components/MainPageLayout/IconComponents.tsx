@@ -109,16 +109,16 @@ export const LinkToMainPageComponent = () => {
 };
 
 const IconComponentMaker = ({ path, loadingId, className, children }: IconComponentMakerProps) => {
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const id = `IconComponentMaker_${loadingId}`;
 
   const clickHandler = () => {
-    if (!pageNavigationLoading) {
+    if (!navigationLoadingId) {
       if (path === 'BACK') {
-        pageNavigationHandler({ showProgressBar: false, id, linkTo: -1 });
+        pageNavigationHandler({ id, linkTo: -1 });
       } else {
-        pageNavigationHandler({ showProgressBar: false, id, linkTo: path });
+        pageNavigationHandler({ id, linkTo: path });
       }
     }
   };
@@ -129,14 +129,14 @@ const IconComponentMaker = ({ path, loadingId, className, children }: IconCompon
       style={{ height: HEADER_ELEMENT_SIZE, minHeight: HEADER_ELEMENT_SIZE, minWidth: HEADER_ELEMENT_SIZE }}
       onClick={clickHandler}
     >
-      {pageNavigationLoading === id && (
+      {navigationLoadingId === id && (
         <div className="absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center">
           <CustomSpinner size={28} className="border-impo_Surface_Outline" />
         </div>
       )}
 
       <div
-        className={`h-full flex justify-center items-center ${pageNavigationLoading === id ? 'opacity-0' : 'opacity-100'}`}
+        className={`h-full flex justify-center items-center ${navigationLoadingId === id ? 'opacity-0' : 'opacity-100'}`}
       >
         {children}
       </div>

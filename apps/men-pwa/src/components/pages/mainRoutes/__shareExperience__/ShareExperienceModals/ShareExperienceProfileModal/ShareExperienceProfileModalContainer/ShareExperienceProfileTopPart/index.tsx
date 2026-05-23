@@ -27,7 +27,7 @@ const ShareExperienceProfileTopPart = ({
 
   const clickHandler = () => {
     if (isSelf) {
-      pageNavigationHandler({ id: profile.id, showProgressBar: true });
+      pageNavigationHandler({ id: profile.id, navigationType: 'logo' });
 
       increaseZIndex(SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME, profile.id);
       newQueryParamsHandler({ [SHARE_EXPERIENCE_EDIT_PROFILE_QUERY_NAME]: profile.id });

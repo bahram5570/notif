@@ -13,12 +13,12 @@ import { ChatbotModalModePropsType } from './type';
 const ChatbotModalMode = ({ description, title, startChatText, goToChatAction }: ChatbotModalModePropsType) => {
   const { actionHandler } = useWidgetActions();
 
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
-  const isLoading = pageNavigationLoading === 'aiChatbot';
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
+  const isLoading = navigationLoadingId === 'aiChatbot';
 
   const onClick = () => {
     actionHandler(goToChatAction);
-    pageNavigationHandler({ id: 'aiChatbot', showProgressBar: false });
+    pageNavigationHandler({ id: 'aiChatbot' });
   };
 
   return (

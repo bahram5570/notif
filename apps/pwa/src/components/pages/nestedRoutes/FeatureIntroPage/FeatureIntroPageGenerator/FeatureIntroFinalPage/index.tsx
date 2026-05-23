@@ -11,7 +11,7 @@ const FeatureIntroFinalPage = ({ data }: FeatureIntroFinalPagePropsType) => {
 
   const onclick = () => {
     pageNavigationHandler({
-      showProgressBar: true,
+      navigationType: 'logo',
       linkTo: `/protected/cycle`,
       id: `trailonboarding-finalStep`,
     });

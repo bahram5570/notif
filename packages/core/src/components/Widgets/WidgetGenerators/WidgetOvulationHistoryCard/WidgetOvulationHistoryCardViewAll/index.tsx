@@ -18,7 +18,7 @@ export const WidgetOvulationHistoryCardViewAll = ({ data }: WidgetOvulationHisto
     newQuery({ queryKey: [OVULATION_HISTORY_CARD_VIEW_ALL], payload: data });
 
     pageNavigationHandler({
-      showProgressBar: true,
+      navigationType: 'logo',
       id: OVULATION_HISTORY_CARD_VIEW_ALL,
       linkTo: '/protected/ovulationHistoryCardViewAll',
     });

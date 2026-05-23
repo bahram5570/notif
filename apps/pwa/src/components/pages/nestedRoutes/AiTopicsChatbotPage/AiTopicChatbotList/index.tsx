@@ -20,7 +20,7 @@ const AiTopicChatbotList = () => {
   const onLinkHandler = (id: string) => {
     const categoryId = result?.id;
     pageNavigationHandler({
-      showProgressBar: true,
+      navigationType: 'logo',
       id: `chatbot-${id}`,
       linkTo: `/protected/aiChatbot?promptItemId=${id}&promptCategoryId=${categoryId}`,
     });

@@ -14,7 +14,7 @@ const LinkGenerator = ({ Icon, link, name, MessageNumber }: LinkGeneratorPropsTy
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const onClick = () => {
-    pageNavigationHandler({ id: 'PartnerLink', showProgressBar: true, linkTo: link });
+    pageNavigationHandler({ id: 'PartnerLink', navigationType: 'logo', linkTo: link });
   };
 
   return (

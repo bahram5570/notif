@@ -21,7 +21,7 @@ const ShareExperienceAssociationItemModules = ({
   const { increaseZIndex } = useShareExperienceHandlers();
 
   const clickHandler = () => {
-    pageNavigationHandler({ id, showProgressBar: true });
+    pageNavigationHandler({ id, navigationType: 'logo' });
 
     newQueryParamsHandler({ [SHARE_EXPERIENCE_ASSOCIATION_ITEM_QUERY_NAME]: id });
     increaseZIndex(SHARE_EXPERIENCE_ASSOCIATION_ITEM_QUERY_NAME, id);

@@ -25,7 +25,7 @@ const UserNameDetail = ({ avatarImage, defaultAvatarImage, canDeleteAvatar, name
       canDeleteProfile: String(canDeleteAvatar),
     });
 
-    pageNavigationHandler({ showProgressBar: false, id: ProfileModalNameEnums.UploadProfileImage });
+    pageNavigationHandler({ id: ProfileModalNameEnums.UploadProfileImage });
   };
 
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Title_Small', operatingSystem });
