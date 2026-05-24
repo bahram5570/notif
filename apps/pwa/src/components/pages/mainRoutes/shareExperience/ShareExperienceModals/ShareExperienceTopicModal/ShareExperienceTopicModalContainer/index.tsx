@@ -37,11 +37,8 @@ const ShareExperienceTopicModalContainer = ({ avatarImage, topicId }: ShareExper
             parentRef={scrollRef}
             list={topicExperiencesData?.expirences}
             pagination={{
-              pageNo: undefined,
               isLoading: isLoading,
               callPagination: updateList,
-              pageSize: undefined,
-              totalCount: undefined,
             }}
             renderItem={(item) => (
               <ShareExperiencePostCardModules
@@ -57,7 +54,7 @@ const ShareExperienceTopicModalContainer = ({ avatarImage, topicId }: ShareExper
           />
         )}
 
-        {!isLoading && (
+        {!apiLoading && (
           <NewPostLink
             avatar={avatarImage || ''}
             placeholder={topicExperiencesData?.inputText || ''}

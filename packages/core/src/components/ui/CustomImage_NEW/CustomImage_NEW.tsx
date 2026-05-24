@@ -63,7 +63,7 @@ export const CustomImage_NEW = (props: CustomImage_NEWTypes) => {
         onClick={clickHandler}
         key={updatedSrc ? 'k1' : 'k2'}
         src={updatedSrc || placeholderImage}
-        className={`${className} ${isLoaded ? 'animate-imageLoaded' : ''}`}
+        className={`${className} ${isLoaded ? 'animate-fadeIn' : ''}`}
       />
     </div>
   );

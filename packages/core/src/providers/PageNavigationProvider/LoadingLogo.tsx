@@ -21,10 +21,11 @@ const LoadingLogo = () => {
                   backdrop-blur-md 
                   mx-auto 
                   overflow-hidden 
+                  animate-fadeIn
                   z-[80]
                 "
     >
-      <div className="w-[200px] p-6 flex flex-col items-center bg-impo_White rounded-lg">
+      <div className="w-[220px] p-6 flex flex-col items-center bg-impo_White rounded-lg">
         <ImpoIcon className="w-20 h-auto" />
 
         <CustomTypography fontSize="Title_Large" className="text-impo_Black mt-2 mb-4">
