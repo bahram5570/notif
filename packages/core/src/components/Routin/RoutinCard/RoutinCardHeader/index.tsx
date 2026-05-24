@@ -63,6 +63,7 @@ const RoutinCardHeader = ({
       </div>
 
       <RoutinProgressBar completeRatio={completeRatio} completeTitle={completeTitle} />
+
       {showBookmark && (
         <div className="pointer-events-none w-12 h-12 flex justify-center items-center">
           <RoutinBookmarked isBookmarked={isBookmarked} programId={programId} />

@@ -30,15 +30,13 @@ const usePhaseFinder = ({ periodStatus, status }: UsePhaseFinderTypes) => {
       }
 
       if (
-        status === InstallationPurposeEnum.pregnancy.status &&
-        periodStatus === InstallationPurposeEnum.pregnancy.periodStatus
+        status === InstallationPurposeEnum.pregnancy.status
       ) {
         return CyclePhaseEnum.Pregnancy;
       }
 
       if (
-        status === InstallationPurposeEnum.breastfeeding.status &&
-        periodStatus === InstallationPurposeEnum.breastfeeding.periodStatus
+        status === InstallationPurposeEnum.breastfeeding.status
       ) {
         return CyclePhaseEnum.Breastfeeding;
       }

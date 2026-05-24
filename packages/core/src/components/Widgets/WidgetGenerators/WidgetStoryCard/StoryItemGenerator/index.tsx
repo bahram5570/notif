@@ -11,9 +11,8 @@ import { STORY_CIRCLE_WIDTH } from '../constants';
 import { StoryItemGeneratorProps } from './types';
 
 export const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItemGeneratorProps) => {
-  const { callEvent } = useAnalytics();
   const { appName } = useSystem();
-
+  const { callEvent } = useAnalytics();
   const { newQueryParamsHandler } = useQueryParamsHandler();
   const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
@@ -22,6 +21,7 @@ export const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItem
 
   const selectHandler = () => {
     callEvent('StoryClick');
+
     if (!isLoading) {
       newQueryParamsHandler({ [STORY_MODAL_ID]: id });
       pageNavigationHandler({ id: loadingId });
@@ -54,17 +54,21 @@ export const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItem
         className="relative p-[2px] rounded-full overflow-hidden flex items-center justify-center"
       >
         <div className="w-full h-full">
-          <CustomImage_NEW style={{ opacity: isViewed ? 0.5 : 1 }} fill src={coverImage} />
+          <CustomImage_NEW style={{ opacity: isViewed ? 0.5 : 1 }} fill={true} src={coverImage} />
         </div>
 
         <div
-          style={{
-            opacity: isViewed ? 0.2 : 1,
-          }}
-          className={`absolute top-0 left-0 right-0 bottom-0 border-[1.5px] rounded-full 
-            ${isLoading ? 'animate-spin !border-t-transparent' : ''}
-            ${isViewed ? 'border-impo_Surface_Outline' : `${borderColor}`}
-          `}
+          className={`
+                      absolute 
+                      top-0 
+                      left-0 
+                      right-0 
+                      bottom-0 
+                      border-[1.5px] 
+                      rounded-full 
+                      ${isLoading ? 'animate-spin !border-t-transparent' : ''}
+                      ${isViewed ? 'border-impo_Surface_Outline opacity-20' : `${borderColor} opacity-100`}
+                    `}
         />
       </div>
 

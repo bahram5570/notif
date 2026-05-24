@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useAnalytics } from '../../../../../hooks/useAnalytics';
 import { useWidgetActions } from '../../../../../hooks/useWidgetActions';
 import { LottieJson } from '../../../../../lib/LottieJson';
-import { CustomImage } from '../../../../ui/CustomImage';
+import { CustomImage_NEW } from '../../../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../../../ui/CustomTypography';
 import { ShortcutItemGeneratorProps } from './types';
 
@@ -45,8 +45,12 @@ const ShortcutItemGenerator = (props: ShortcutItemGeneratorProps) => {
       style={{ margin }}
       className="flex flex-col justify-start items-center gap-2 pointer-events-auto"
     >
-      <div className="w-12 h-12">
-        {isJson ? jsonData && <LottieJson animationData={jsonData} /> : <CustomImage src={props.icon} />}
+      <div className="relative w-12 aspect-square">
+        {isJson ? (
+          jsonData && <LottieJson animationData={jsonData} />
+        ) : (
+          <CustomImage_NEW src={props.icon} fill={true} className="object-cover" />
+        )}
       </div>
 
       <CustomTypography fontSize="Lable_SmallProminet" className="text-center text-impo_Neutral_OnBackground">

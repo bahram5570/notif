@@ -1,4 +1,4 @@
-const ShareExperienceSkeleton = () => {
+const ShareExperienceShimmer = () => {
   return (
     <div className="relative w-full px-4" style={{ direction: 'rtl' }}>
       <div className="w-full h-14 flex items-center justify-between">
@@ -41,4 +41,4 @@ const ShareExperienceSkeleton = () => {
   );
 };
 
-export default ShareExperienceSkeleton;
+export default ShareExperienceShimmer;

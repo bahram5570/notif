@@ -2,8 +2,9 @@
 
 import { createContext } from 'react';
 
-import LoadingLogo from './LoadingLogo';
-import LoadingProgressBar from './LoadingProgressBar';
+import LoadingContainer from './LoadingContainer';
+import { LoadingLogo } from './LoadingLogo';
+import { LoadingProgressBar } from './LoadingProgressBar';
 import usePageNavigationLoading from './__hooks__/usePageNavigationLoading';
 import usePageNavigationRouteSequence from './__hooks__/usePageNavigationRouteSequence';
 import { PageNavigationContextTypes } from './types';
@@ -21,8 +22,18 @@ export const PageNavigationProvider = ({ children }: { children: React.ReactNode
   return (
     <PageNavigationContext.Provider value={{ sequenceHandler, navigationLoadingId, pageNavigationHandler }}>
       <>
-        {pageLoading === 'progressBar' && <LoadingProgressBar />}
-        {pageLoading === 'logo' && <LoadingLogo />}
+        {pageLoading === 'progressBar' && (
+          <LoadingContainer>
+            <LoadingProgressBar />
+          </LoadingContainer>
+        )}
+
+        {pageLoading === 'logo' && (
+          <LoadingContainer>
+            <LoadingLogo />
+          </LoadingContainer>
+        )}
+
         <>{children}</>
       </>
     </PageNavigationContext.Provider>
