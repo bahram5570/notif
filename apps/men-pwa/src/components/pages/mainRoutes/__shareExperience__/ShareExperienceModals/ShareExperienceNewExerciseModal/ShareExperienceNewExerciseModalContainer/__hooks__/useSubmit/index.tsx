@@ -3,13 +3,13 @@ import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 import { useRouter } from 'next/navigation';
 
-// import { AssociationInfoResponseType } from '../../../../ShareExperienceAssociationItemModal/ShareExperienceAssociationItemContainer/__hooks__/useGetAssociationInfo/type';
+import { AssociationInfoResponseType } from '../../../../ShareExperienceAssociationItemModal/ShareExperienceAssociationItemContainer/__hooks__/useGetAssociationInfo/type';
 import { NewExperienceResponseType, UseSubmitProps } from './types';
 
 const useSubmit = ({ image, text, topicId, associationId, onSuccessNewHandler }: UseSubmitProps) => {
   const { refetchQuery, removeQuery, getQuery, updateQuery } = useCustomReactQuery();
   const { accessOptionHandler } = useShareExperienceHandlers();
-  // const associationInfoData = getQuery<AssociationInfoResponseType>({ queryKey: [`associationInfoData`] });
+  const associationInfoData = getQuery<AssociationInfoResponseType>({ queryKey: [`associationInfoData`] });
 
   const router = useRouter();
   let toastMessage = '';
@@ -30,12 +30,12 @@ const useSubmit = ({ image, text, topicId, associationId, onSuccessNewHandler }:
           onSuccessNewHandler();
         }, 0);
       } else {
-        // if (associationInfoData) {
-        //   const newData = { ...associationInfoData };
-        //   newData.experienceCount = newData.experienceCount + 1;
+        if (associationInfoData) {
+          const newData = { ...associationInfoData };
+          newData.experienceCount = newData.experienceCount + 1;
 
-        //   updateQuery({ queryKey: [`associationInfoData`], payload: newData });
-        // }
+          updateQuery({ queryKey: [`associationInfoData`], payload: newData });
+        }
         removeQuery({ queryKey: [`associationExperienceList`] });
         refetchQuery({ queryKey: [`associationExperiences${associationId}`] });
       }

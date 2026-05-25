@@ -3,16 +3,25 @@ import { useEffect, useState } from 'react';
 import { PAGE_SIZE } from '@repo/core/constants/app.constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 
 import { AssociationListResponseType } from './type';
 
 const useGetAssociationListData = () => {
   const [pageNo, setPageNo] = useState(0);
+  const { accessOptionHandler } = useShareExperienceHandlers();
   const { newQuery, updateQuery, getQuery, removeQuery } = useCustomReactQuery(['associationListData']);
 
   const associationListData = getQuery<AssociationListResponseType>({ queryKey: ['associationListData'] });
 
   const successHandler = (v: AssociationListResponseType) => {
+    if (v.access.isBan) {
+      return accessOptionHandler({
+        isBan: v.access.isBan,
+        textMessage: v.access.textMessage,
+        btnText: v.access.btnText,
+      });
+    }
     if (associationListData) {
       const list = { ...associationListData, items: [...associationListData.items, ...v.items] };
       updateQuery({ queryKey: ['associationListData'], payload: list });

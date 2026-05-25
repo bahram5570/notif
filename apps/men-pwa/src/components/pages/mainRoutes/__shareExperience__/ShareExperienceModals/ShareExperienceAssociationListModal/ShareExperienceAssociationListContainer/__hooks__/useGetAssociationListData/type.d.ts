@@ -1,3 +1,5 @@
+import { AccessType } from '@repo/core/components/ShareExperience';
+
 export type AssociationType = {
   id: string;
   title: string;
@@ -5,7 +7,7 @@ export type AssociationType = {
   cover: string;
 };
 
-export type AssociationListResponseType = {
+export type AssociationListResponseType = AccessType & {
   totalCount: number;
   items: AssociationType[];
 };

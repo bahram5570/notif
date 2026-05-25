@@ -5,21 +5,31 @@ import { ShareExperienceResponseTypes } from '@repo/core/components/ShareExperie
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 import { useRouter } from 'next/navigation';
 
-import { onProfileChangeHandlerPropsType } from './type';
+import { SuccessResponseType, onProfileChangeHandlerPropsType } from './type';
 
 const useUpdateProfile = () => {
   const toast = useCustomToast();
   const route = useRouter();
   const { refetchQuery, updateQuery, getQuery } = useCustomReactQuery();
+  const { accessOptionHandler } = useShareExperienceHandlers();
   const shareExperienceData = getQuery<ShareExperienceResponseTypes>({ queryKey: ['shareExperience'] });
   const [userUpdated, setUserUpdated] = useState({
     username: shareExperienceData?.profile.username || '',
     avatarImage: shareExperienceData?.profile.avatarImage || '',
   });
 
-  const updateShareExperienceData = () => {
+  const updateShareExperienceData = (v: SuccessResponseType) => {
+    if (v.access.isBan) {
+      return accessOptionHandler({
+        isBan: v.access.isBan,
+        textMessage: v.access.textMessage,
+        btnText: v.access.btnText,
+      });
+    }
+
     if (shareExperienceData) {
       updateQuery({
         queryKey: ['shareExperience'],
@@ -35,9 +45,9 @@ const useUpdateProfile = () => {
     }
   };
 
-  const successHandler = () => {
+  const successHandler = (v: SuccessResponseType) => {
     refetchQuery({ queryKey: ['shareExperienceProfile'] });
-    updateShareExperienceData();
+    updateShareExperienceData(v);
     route.back();
   };
 
