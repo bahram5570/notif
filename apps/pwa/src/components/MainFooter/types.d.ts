@@ -1,8 +1,8 @@
-export interface PageIconsProps {
+export interface MainFooterLinksProps {
   icons: { Dark: any; Light: any };
+  onSelect: () => void;
   isSelected: boolean;
   title: string;
-  url: string;
 }
 
 export interface MainFooterContainerProps {

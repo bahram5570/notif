@@ -2,10 +2,9 @@ import { useState } from 'react';
 
 import { toGregorianData } from '../../../../../utils/dates';
 
-import { useRouter } from 'next/navigation';
-
 import { APP_VERSION } from '../../../../../constants/app.constants';
 import { useCulture } from '../../../../../hooks/useCulture';
+import { useCustomRouter } from '../../../../../hooks/useCustomRouter';
 import { usePwaApi } from '../../../../../hooks/usePwaApi';
 import { CalendarTypeEnum } from '../../../../../providers/CultureProvider';
 import { ItemType } from '../useGetData/type';
@@ -13,7 +12,7 @@ import useUpdateNoteList from '../useUpdateNoteList';
 import { NoteValueType, UseSubmitPropsType } from './type';
 
 export const useSubmit = ({ noteId }: UseSubmitPropsType) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { culture } = useCulture();
   const { updateNoteList } = useUpdateNoteList();
   const [noteValue, setNotValue] = useState<NoteValueType>();

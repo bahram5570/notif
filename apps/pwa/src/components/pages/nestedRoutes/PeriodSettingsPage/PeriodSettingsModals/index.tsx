@@ -1,8 +1,8 @@
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
 import { MODALS } from '@constants/modals.constants';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-import { useRouter } from 'next/navigation';
 
 import CycleLengthModal from './CycleLengthModal';
 import CycleLengthWarningModal from './CycleLengthWarningModal';
@@ -11,7 +11,7 @@ import { PeriodSettingsModalType } from './enum';
 import { PeriodSettingsModalsTypes } from './types';
 
 const PeriodSettingsModals = ({ values, valuesHandler, acceptingChanges }: PeriodSettingsModalsTypes) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { getQueryParams } = useQueryParamsHandler();
 
   const closeHandler = () => {

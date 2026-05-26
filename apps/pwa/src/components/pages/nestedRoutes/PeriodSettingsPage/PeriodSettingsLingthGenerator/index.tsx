@@ -9,14 +9,14 @@ import { PeriodSettingsLingthGeneratorTypes } from './types';
 
 const PeriodSettingsLingthGenerator = ({ name, values }: PeriodSettingsLingthGeneratorTypes) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const selectHandler = () => {
     newQueryParamsHandler({ [MODALS.USER_PERIOD_SETTINGS]: name });
-    pageNavigationHandler({ showProgressBar: false, id: name });
+    pageNavigationHandler({ id: name });
   };
 
-  const isLoading = pageNavigationLoading === name;
+  const isLoading = navigationLoadingId === name;
   const valueScript = values[name].toString();
 
   return (

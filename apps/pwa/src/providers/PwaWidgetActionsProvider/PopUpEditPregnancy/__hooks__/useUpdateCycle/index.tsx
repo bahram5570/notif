@@ -3,14 +3,14 @@ import { toGregorianData } from '@repo/core/utils/dates';
 import useUpdateCycleCard from '@hooks/__cycle__/useUpdateCycleCard';
 import useGetProfileData from '@providers/ProfileProvider/__hooks__/useGetProfileData';
 import { useCulture } from '@repo/core/hooks/useCulture';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
-import { useRouter } from 'next/navigation';
 
 import { SubmitHandlerTypes } from './types';
 
 const useUpdateCycle = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { culture } = useCulture();
   const { cycleCardStatusHandler } = useUpdateCycleCard();
   const { updateProfileDateByDellay } = useGetProfileData();

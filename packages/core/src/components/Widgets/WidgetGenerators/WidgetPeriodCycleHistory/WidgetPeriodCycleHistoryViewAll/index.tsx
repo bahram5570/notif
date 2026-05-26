@@ -18,7 +18,7 @@ const WidgetPeriodCycleHistoryViewAll = ({ data }: WidgetPeriodCycleHistoryViewA
     newQuery({ queryKey: [PERIOD_CYCLE_HISTORY_VIEW_ALL], payload: data });
 
     pageNavigationHandler({
-      showProgressBar: true,
+      navigationType: 'logo',
       id: 'WidgetPeriodCycleHistoryViewAll',
       linkTo: '/protected/periodCycleHistoryViewAll',
     });

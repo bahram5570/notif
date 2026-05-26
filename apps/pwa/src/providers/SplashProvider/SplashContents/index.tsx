@@ -1,5 +1,5 @@
 import ImpoNameIcon from '@assets/icons/impoNameEnglish.svg';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
 
@@ -17,10 +17,13 @@ const SplashContents = ({ splashStatus, splashStatushHandler }: SplashContentsPr
       className="fixed top-0 left-0 right-0 h-[100vh] mx-auto bg-impo_Primary_Primary dark:bg-impo_Neutral_Surface z-[100] overflow-hidden"
     >
       <div className="relative h-full w-full flex flex-col items-center justify-center">
-        <CustomImage
-          src="/assets/images/heartShallow.webp"
-          className="absolute top-5 -left-5 !w-[100%] aspect-square"
-        />
+        <div className="absolute top-5 -left-5 w-full aspect-square">
+          <CustomImage_NEW
+            fill={true}
+            src="/assets/images/heartShallow.webp"
+            className="absolute top-5 -left-5 object-cover"
+          />
+        </div>
 
         <ImpoNameIcon className="w-[100px] h-auto fill-impo_White" />
 

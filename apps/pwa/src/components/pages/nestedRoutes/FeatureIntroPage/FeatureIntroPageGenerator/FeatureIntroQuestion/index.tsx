@@ -15,7 +15,7 @@ const FeatureIntroQuestion = ({ data, goToNext }: FeatureIntroQuestionPropsType)
   const { newQueryParamsHandler } = useQueryParamsHandler();
 
   const handleOpenModal = () => {
-    pageNavigationHandler({ showProgressBar: true, id: MODALS.ONBOARDING_QUESTION_REWARD });
+    pageNavigationHandler({ navigationType: 'logo', id: MODALS.ONBOARDING_QUESTION_REWARD });
     newQueryParamsHandler({ [MODALS.ONBOARDING_QUESTION_REWARD]: 'true' });
   };
 

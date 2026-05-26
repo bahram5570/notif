@@ -28,7 +28,7 @@ export const UploadInput = ({ fileName, uploadImageLoading, onChangeHandler }: U
       name: 'UploadMemoryImage',
     }),
       pageNavigationHandler({
-        showProgressBar: true,
+        navigationType: 'logo',
         id: 'UploadMemoryImage',
       }));
   };

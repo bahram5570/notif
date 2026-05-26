@@ -1,7 +1,7 @@
 import { colorFormatConverter } from '../../../../utils/scripts';
 import EyeIcon from '@assets/shared/icons/eye.svg';
 
-import { CustomImage } from '../../../ui/CustomImage';
+import { CustomImage_NEW } from '../../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../../ui/CustomTypography';
 import { PragnencyBreastfeedingGeneratorProps } from './types';
 
@@ -22,7 +22,9 @@ const PragnencyBreastfeedingGenerator = (props: PragnencyBreastfeedingGeneratorP
         {props.name}
       </CustomTypography>
 
-      <CustomImage src={props.icon} width={32} className="rounded-full bg-impo_Surface_SurfaceVariant" />
+      <div className="relative w-8 min-w-8 aspect-square rounded-full overflow-hidden bg-impo_Surface_SurfaceVariant">
+        <CustomImage_NEW src={props.icon} fill={true} className="object-cover" />
+      </div>
     </div>
   );
 };

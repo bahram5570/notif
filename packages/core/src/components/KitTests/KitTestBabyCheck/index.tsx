@@ -14,7 +14,7 @@ const KitTestBabyCheck = ({ moduleType, gregorianDate }: KitTestBabyCheckProps) 
 
   const applyHandler = () => {
     if (selectedBabyCheck !== null) {
-      pageNavigationHandler({ showProgressBar: true, id: TEST_KITS_BABYCHECK });
+      pageNavigationHandler({ navigationType: 'logo', id: TEST_KITS_BABYCHECK });
 
       newQueryParamsHandler({
         moduleType,

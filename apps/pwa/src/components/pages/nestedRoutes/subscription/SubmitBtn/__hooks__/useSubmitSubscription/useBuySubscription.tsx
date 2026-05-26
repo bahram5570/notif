@@ -10,7 +10,7 @@ import { BuySubscriptionResponseTypes } from './types';
 const loadingId = 'buySubscription';
 
 const useBuySubscription = () => {
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
   const toast = useCustomToast();
 
   const buySubscriptionSuccessHandler = async (v: BuySubscriptionResponseTypes) => {
@@ -34,10 +34,10 @@ const useBuySubscription = () => {
 
   const buySubscription = (payload?: object) => {
     callApi(payload);
-    pageNavigationHandler({ showProgressBar: false, id: loadingId });
+    pageNavigationHandler({ id: loadingId });
   };
 
-  const buyLoading = pageNavigationLoading === loadingId;
+  const buyLoading = navigationLoadingId === loadingId;
 
   return { buySubscription, buyLoading };
 };

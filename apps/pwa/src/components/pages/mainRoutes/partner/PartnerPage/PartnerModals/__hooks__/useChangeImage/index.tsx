@@ -1,11 +1,11 @@
 import { APP_VERSION } from '@repo/core/constants/app.constants';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { useRouter } from 'next/navigation';
 
 import { ResponseType } from './type';
 
 const useChangeImage = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const successHandler = () => {
     router.back();

@@ -3,15 +3,15 @@ import { useMemo } from 'react';
 import { toGregorianData } from '@repo/core/utils/dates';
 
 import { useCulture } from '@repo/core/hooks/useCulture';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { CalendarTypeEnum } from '@repo/core/providers/CultureProvider';
-import { useRouter } from 'next/navigation';
 
 import { SuccessHandlerTypes } from './types';
 
 const useSubmitFinishPeriod = (endTime: string) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { culture } = useCulture();
   const toast = useCustomToast();
 

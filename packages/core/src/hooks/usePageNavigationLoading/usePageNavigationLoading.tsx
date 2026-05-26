@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 
-import { PageNavigationContext } from '../../providers/PageNavigationProvider';
+import { PageNavigationContext } from '../../providers/PageNavigationProvider/PageNavigationProvider';
 
 export const usePageNavigationLoading = () => {
-  const { pageNavigationHandler, pageNavigationLoading } = useContext(PageNavigationContext);
-  return { pageNavigationHandler, pageNavigationLoading };
+  const { pageNavigationHandler, navigationLoadingId } = useContext(PageNavigationContext);
+  return { pageNavigationHandler, navigationLoadingId };
 };

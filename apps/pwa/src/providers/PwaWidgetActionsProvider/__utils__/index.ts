@@ -133,7 +133,7 @@ export const actionRouteConverter = async (serverLink: string) => {
       result = '/protected/phaseChange/updateOldUser/step1';
       break;
 
-    case '/babyCheck': // TODO: add this route
+    case '/babyCheck':
       result = '/protected/signs';
       break;
     case '/babyNames/activation':

@@ -6,7 +6,7 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { FeedbackModal } from '@repo/core/components/ui/FeedbackModal';
 
 import { FOOTER_HEIGHT, HEADER_HEIGHT } from '@repo/core/constants/app.constants';
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import { ProgramWidgetItemStatusEnum } from '../enum';
 import EmptyState from './EmptyState';
@@ -17,7 +17,7 @@ import useGetPairRoutinItemData from './__hooks__/useGetData';
 import useSeen from './__hooks__/useSeen';
 
 const PairRoutinItemContainer = () => {
-  const route = useRouter();
+  const route = useCustomRouter();
 
   const { isLoading, data, programId } = useGetPairRoutinItemData();
   const { onSeenHandler, isLoading: seenLoading } = useSeen();

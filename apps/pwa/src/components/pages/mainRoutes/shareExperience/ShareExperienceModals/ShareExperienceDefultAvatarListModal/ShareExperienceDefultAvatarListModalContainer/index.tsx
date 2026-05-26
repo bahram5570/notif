@@ -5,7 +5,7 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import useUpdateProfile from '../../ShareExperienceChangeAvatarModal/ShareExperienceChangeAvatarModalContainer/__hooks__/useUpdateProfile';
 import useGetData from '../../ShareExperienceEditProfileModal/ShareExperienceEditProfileModalContainer/__hooks__/useGetData';
@@ -18,7 +18,7 @@ const ShareExperienceDefultAvatarListModalContainer = ({
   const avatarList: string[] = profileData?.profile.avatars ? profileData?.profile.avatars : [''];
   const [selectedAvatar, setSelectedAvatar] = useState<string>('');
   const { onProfileChangeHandler } = useUpdateProfile();
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const onClick = () => {
     onProfileChangeHandler({ avatarImage: selectedAvatar, username: profileData?.profile.username });

@@ -14,7 +14,7 @@ const DeleteNoteBtn = () => {
     newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true', name: NoteModalNameEnums.DeleteNote });
 
     pageNavigationHandler({
-      showProgressBar: true,
+      navigationType: 'logo',
       id: 'deleteNote',
     });
   };

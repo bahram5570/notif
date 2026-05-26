@@ -5,12 +5,12 @@ import { CustomSpinner } from '../../ui/CustomSpinner';
 import { ProfileButtonPropsType } from './type';
 
 export const ProfileButton = ({ coverImage }: ProfileButtonPropsType) => {
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
   let path = '/protected/profile';
 
   const clickHandler = () => {
-    if (!pageNavigationLoading) {
-      pageNavigationHandler({ showProgressBar: false, linkTo: path, id: 'profile' });
+    if (!navigationLoadingId) {
+      pageNavigationHandler({ linkTo: path, id: 'profile' });
     }
   };
 
@@ -19,7 +19,7 @@ export const ProfileButton = ({ coverImage }: ProfileButtonPropsType) => {
       <div className="flex px-3 py-2 w-full">
         <div className="flex gap-4 items-center">
           <div className="cursor-pointer flex justify-center items-center w-8 h-8" onClick={clickHandler}>
-            {pageNavigationLoading === 'profile' ? (
+            {navigationLoadingId === 'profile' ? (
               <CustomSpinner size={28} className="border-impo_Surface_Outline" />
             ) : (
               <ProfileIcon

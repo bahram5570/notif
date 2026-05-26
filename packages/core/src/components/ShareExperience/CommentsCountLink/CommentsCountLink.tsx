@@ -14,7 +14,7 @@ export const CommentsCountLink = (props: CommentsCountLinkProps) => {
 
   const clickHandler = () => {
     if (!props.isSelf) {
-      pageNavigationHandler({ id: props.id, showProgressBar: true });
+      pageNavigationHandler({ id: props.id, navigationType: 'logo' });
 
       newQueryParamsHandler({ [SHARE_EXPERIENCE_COMMENTS_MODAL_QUERY_NAME]: props.id });
 

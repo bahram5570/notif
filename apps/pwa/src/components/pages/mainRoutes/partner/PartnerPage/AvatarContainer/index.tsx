@@ -21,7 +21,7 @@ const AvatarContainer = (props: AvatarContainerPropsType) => {
       canDeleteProfile: String(canDeleteProfile),
     }),
       pageNavigationHandler({
-        showProgressBar: true,
+        navigationType: 'logo',
         id: 'UploadProfileImage',
       }));
   };

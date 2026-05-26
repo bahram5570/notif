@@ -18,7 +18,7 @@ const ShareExperienceProfileReportModule = ({ userId }: ShareExperienceProfileRe
 
     increaseZIndex(SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME, userId);
     newQueryParamsHandler({ [SHARE_EXPERIENCE_PROFILE_REPORT_QUERY_NAME]: queryData });
-    pageNavigationHandler({ id: userId, showProgressBar: true });
+    pageNavigationHandler({ id: userId, navigationType: 'logo' });
   };
   return (
     <div style={{ height: HEADER_HEIGHT }} className=" fixed top-0 z-50 px-4">

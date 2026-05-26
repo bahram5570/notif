@@ -16,14 +16,14 @@ const ProfileInfo = ({ followCount, storyCount, userId }: ProfileInfoPropsType) 
   const { increaseZIndex } = useShareExperienceHandlers();
 
   const followerSelectHandler = () => {
-    pageNavigationHandler({ id: userId, showProgressBar: true });
+    pageNavigationHandler({ id: userId, navigationType: 'logo' });
 
     increaseZIndex(SHARE_EXPERIENCE_FOLLOWER_QUERY_NAME, userId);
     newQueryParamsHandler({ [SHARE_EXPERIENCE_FOLLOWER_QUERY_NAME]: userId });
   };
 
   const followingSelectHandler = () => {
-    pageNavigationHandler({ id: userId, showProgressBar: true });
+    pageNavigationHandler({ id: userId, navigationType: 'logo' });
 
     increaseZIndex(SHARE_EXPERIENCE_FOLLOWING_QUERY_NAME, userId);
     newQueryParamsHandler({ [SHARE_EXPERIENCE_FOLLOWING_QUERY_NAME]: userId });

@@ -3,6 +3,8 @@ node_modules
 .next
 *dist*
 
+monitoring_logs
+
 .env.sentry-build-plugin
 
 apps/men-pwa/public/assets/shared

@@ -2,12 +2,12 @@ import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import { ShareExperienceFailureModalPropsType } from './type';
 
 const ShareExperienceFailureModal = ({ error }: ShareExperienceFailureModalPropsType) => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const onClick = () => {
     router.push('/');

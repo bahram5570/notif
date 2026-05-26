@@ -26,7 +26,7 @@ const MoreActionsMenu = ({
     newQueryParamsHandler({
       [MODALS.MODALS_AI_CHAT]: moreActionMenuModalType,
     });
-    pageNavigationHandler({ showProgressBar: true, id: MODALS.MODALS_AI_CHAT });
+    pageNavigationHandler({ navigationType: 'logo', id: MODALS.MODALS_AI_CHAT });
   };
 
   const deleteClickHandler = () => {

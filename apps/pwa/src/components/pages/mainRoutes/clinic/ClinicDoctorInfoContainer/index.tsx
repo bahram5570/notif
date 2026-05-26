@@ -30,7 +30,7 @@ const ClinicDoctorInfoContainer = ({ clinicInfo, doctorId }: ClinicDoctorInfoCon
   const submitHandler = () => {
     pageNavigationHandler({
       id: clinicInfo,
-      showProgressBar: false,
+
       linkTo: `/protected/clinic/doctor/${clinicInfo}?${SELECTED_DOCTOR}=${doctorId}`,
     });
   };

@@ -13,6 +13,7 @@ const RoutinProgressBar = ({ completeRatio, completeTitle }: RoutinProgressBarPr
       >
         {completeTitle}
       </CustomTypography>
+
       <div
         style={{ transform: `rotate(180deg)` }}
         className="w-full rounded-full h-[6px] bg-impo_Neutral_Background dark:bg-impo_White"
@@ -20,7 +21,7 @@ const RoutinProgressBar = ({ completeRatio, completeTitle }: RoutinProgressBarPr
         <div
           style={{ width: `${percentage}%` }}
           className={` h-full rounded-full transition-all duration-300 ${isComplete ? 'bg-impo_Success_Success' : 'bg-impo_Warning_Warning'}`}
-        ></div>
+        />
       </div>
     </div>
   );

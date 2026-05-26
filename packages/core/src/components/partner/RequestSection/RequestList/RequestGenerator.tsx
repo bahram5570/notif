@@ -13,9 +13,9 @@ import { RequestGeneratorTypeProps } from './type';
 const RequestGenerator = ({ item }: RequestGeneratorTypeProps) => {
   const { appName } = useSystem();
   const { newQueryParamsHandler } = useQueryParamsHandler();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
-  const isLoading = pageNavigationLoading === item.name;
+  const isLoading = navigationLoadingId === item.name;
 
   const onAcceptClickHandler = () => {
     (newQueryParamsHandler({
@@ -24,7 +24,7 @@ const RequestGenerator = ({ item }: RequestGeneratorTypeProps) => {
       partnerName: item.name,
       id: item.id,
     }),
-      pageNavigationHandler({ showProgressBar: true, id: 'Accept' }));
+      pageNavigationHandler({ navigationType: 'logo', id: 'Accept' }));
   };
 
   const onRejectClickHandler = () => {
@@ -35,7 +35,7 @@ const RequestGenerator = ({ item }: RequestGeneratorTypeProps) => {
       id: item.id,
       isRecv: item.isRecv ? String(item.isRecv) : '',
     }),
-      pageNavigationHandler({ showProgressBar: true, id: 'Reject' }));
+      pageNavigationHandler({ navigationType: 'logo', id: 'Reject' }));
   };
 
   const className = useMemo(() => {

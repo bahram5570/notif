@@ -29,7 +29,7 @@ export const NewPostLink = ({
     newQueryParamsHandler(queries);
 
     increaseZIndex(queryName, id);
-    pageNavigationHandler({ id: 'ShareExperienceNewCommentFooterModule', showProgressBar: true });
+    pageNavigationHandler({ id: 'ShareExperienceNewCommentFooterModule', navigationType: 'logo' });
   };
 
   const bg = useMemo(() => {

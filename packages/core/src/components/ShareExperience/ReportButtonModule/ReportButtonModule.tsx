@@ -14,7 +14,7 @@ export const ReportButtonModule = ({ id }: ReportButtonModuleProps) => {
   const selectHandler = () => {
     increaseZIndex(SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME, id);
     newQueryParamsHandler({ [SHARE_EXPERIENCE_REPORT_MODAL_QUERY_NAME]: id });
-    pageNavigationHandler({ id: id, showProgressBar: true });
+    pageNavigationHandler({ id: id, navigationType: 'logo' });
   };
 
   return (

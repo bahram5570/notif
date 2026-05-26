@@ -2,8 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { isDevelopeMode } from '../../../../../utils/system';
 
-import { heicConverter } from '@repo/core/lib/heicConverter';
-
+import { heicConverter } from '../../../../../lib/heicConverter';
 import { UseImageSrcProps } from './types';
 
 const useImageSrc = ({ src, imageApi = '/file', onError }: UseImageSrcProps) => {
@@ -17,19 +16,11 @@ const useImageSrc = ({ src, imageApi = '/file', onError }: UseImageSrcProps) => 
     }
 
     try {
-      // todo: temporarily
       const req = await fetch(imageUrl);
       const blob = await req.blob();
       const convertedBlob = await heicConverter(blob);
       const result = URL.createObjectURL(convertedBlob);
       setUpdatedSrc(result);
-
-      // const payload = JSON.stringify({ imageUrl });
-      // const response = await fetch('/api/shared/CustomImage-heic-converter', { method: 'POST', body: payload });
-      // const blob = await response.blob();
-      // const result = URL.createObjectURL(blob);
-
-      // setUpdatedSrc(result);
     } catch (error) {
       onError();
     }

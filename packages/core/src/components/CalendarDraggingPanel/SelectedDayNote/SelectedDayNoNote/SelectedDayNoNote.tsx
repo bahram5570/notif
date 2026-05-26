@@ -14,7 +14,7 @@ export const SelectedDayNoNote = ({ date }: SelectedDayNoNotePropsType) => {
     changeCurrentDate(date || '');
 
     pageNavigationHandler({
-      showProgressBar: true,
+      navigationType: 'logo',
       id: 'SelectedDayNote',
       linkTo: '/protected/note/addNote',
     });

@@ -10,7 +10,7 @@ const MemoryData = ({ memories, partName }: HasDataMemoryPropsType) => {
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const onClick = () => {
-    pageNavigationHandler({ id: 'newMemory', showProgressBar: true, linkTo: '/protected/createMemory' });
+    pageNavigationHandler({ id: 'newMemory', navigationType: 'logo', linkTo: '/protected/createMemory' });
   };
 
   return (

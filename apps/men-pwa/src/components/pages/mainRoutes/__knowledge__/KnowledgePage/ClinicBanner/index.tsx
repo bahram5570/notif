@@ -10,7 +10,7 @@ const ClinicBanner = () => {
   const clickHandler = () => {
     pageNavigationHandler({
       id: 'newPartnerMessage',
-      showProgressBar: false,
+
       linkTo: '/protected/clinic',
     });
   };

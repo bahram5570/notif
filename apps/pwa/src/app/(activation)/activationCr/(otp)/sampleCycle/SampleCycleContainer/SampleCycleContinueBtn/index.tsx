@@ -2,12 +2,12 @@
 import ActivationBtn from '@components/activation/ActivationBtn';
 import useActivationAnalytics from '@hooks/__activation__/useActivationAnalytics';
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import { SAMPLE_CYCLE_CONTINUE_BTN_HEIGHT } from './constants';
 
 const SampleCycleContinueBtn = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { callEventActivation } = useActivationAnalytics();
 
   const nextHandler = () => {

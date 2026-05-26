@@ -2,9 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 
 import { isDevelopeMode } from '../../../utils/system';
 
-import { useRouter } from 'next/navigation';
-
 import { MODAL_QUERY_NAME } from '../../../constants/modal.constants';
+import { useCustomRouter } from '../../../hooks/useCustomRouter';
 import { useDelayCallback } from '../../../hooks/useDelayCallback';
 import { useQueryParamsHandler } from '../../../hooks/useQueryParamsHandler';
 
@@ -12,7 +11,7 @@ const useModalRendered = () => {
   const [isDelayPassed, setIsdelayPassed] = useState(false);
   const { getQueryParams } = useQueryParamsHandler();
   const firstTime = useRef(isDevelopeMode());
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const { startDelay } = useDelayCallback(() => setIsdelayPassed(true));
 

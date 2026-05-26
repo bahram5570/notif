@@ -15,14 +15,14 @@ const MemoryDetailBtn = ({ fromMan, memoryId, validPartner }: MemoryDetailBtnPro
   const { newQueryParamsHandler } = useQueryParamsHandler();
 
   const deleteHandler = () => {
-    pageNavigationHandler({ id: 'memoryDeleteModal', showProgressBar: true });
+    pageNavigationHandler({ id: 'memoryDeleteModal', navigationType: 'logo' });
     newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true', [MEMORY_ID]: memoryId });
   };
 
   const onClick = () => {
     pageNavigationHandler({
       id: 'memoryComment',
-      showProgressBar: true,
+      navigationType: 'logo',
       linkTo: `/protected/comment?memoryId=${memoryId}`,
     });
   };

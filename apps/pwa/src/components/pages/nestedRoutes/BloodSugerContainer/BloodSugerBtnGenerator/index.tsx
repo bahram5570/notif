@@ -10,14 +10,14 @@ import { BloodSugerBtnGeneratorPropsType } from './type';
 
 const BloodSugerBtnGenerator = ({ name, value, label, index }: BloodSugerBtnGeneratorPropsType) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const selectHandler = () => {
     newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true', ['name']: name });
-    pageNavigationHandler({ showProgressBar: false, id: name });
+    pageNavigationHandler({ id: name });
   };
 
-  const isLoading = pageNavigationLoading === name;
+  const isLoading = navigationLoadingId === name;
 
   const currentValue =
     name === 'condition'

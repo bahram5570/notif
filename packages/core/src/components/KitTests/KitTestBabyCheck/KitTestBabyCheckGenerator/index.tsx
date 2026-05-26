@@ -1,6 +1,6 @@
 import SelectedIcon from '@assets/shared/icons/selectedTick.svg';
 
-import { CustomImage } from '../../../ui/CustomImage';
+import { CustomImage_NEW } from '../../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../../ui/CustomTypography';
 import { KitTestBabyCheckGeneratorProps } from './types';
 
@@ -36,7 +36,7 @@ const KitTestBabyCheckGenerator = ({
 
         {isSelected && <SelectedIcon className="absolute right-0 bottom-0 w-6 h-6 " />}
 
-        <CustomImage src={icon} />
+        <CustomImage_NEW src={icon} fill={true} className="object-cover" />
       </div>
 
       <CustomTypography fontSize="Body_Small" className="text-impo_Neutral_OnBackground">

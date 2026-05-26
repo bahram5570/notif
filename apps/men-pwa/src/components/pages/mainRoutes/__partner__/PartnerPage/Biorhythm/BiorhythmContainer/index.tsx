@@ -24,7 +24,7 @@ const BiorhythmContainer = ({ description, icon, title }: BiorhythmContainerProp
       icon,
       title,
     });
-    pageNavigationHandler({ showProgressBar: true, id: 'BiorhythmModal' });
+    pageNavigationHandler({ navigationType: 'logo', id: 'BiorhythmModal' });
   };
 
   return (

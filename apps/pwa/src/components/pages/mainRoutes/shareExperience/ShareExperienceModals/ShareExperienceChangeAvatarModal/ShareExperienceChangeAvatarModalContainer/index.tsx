@@ -26,7 +26,7 @@ const ShareExperienceChangeAvatarModalContainer = ({
 
   const selectAvatarHandler = () => {
     if (id) {
-      pageNavigationHandler({ id: id, showProgressBar: true });
+      pageNavigationHandler({ id: id, navigationType: 'logo' });
 
       increaseZIndex(SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME, id);
       newQueryParamsHandler({ [SHARE_EXPERIENCE_DEFULT_AVATAR_LIST_QUERY_NAME]: id });

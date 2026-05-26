@@ -21,8 +21,7 @@ const EmptyState = ({ valuesHandler }: EmptyStatePropsType) => {
     <div
       className="relative w-full flex items-center justify-center gap-2 py-2 cursor-pointer"
       onClick={() => {
-        (newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true' }),
-          pageNavigationHandler({ showProgressBar: false, id: 'supportUploadChat' }));
+        (newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true' }), pageNavigationHandler({ id: 'supportUploadChat' }));
       }}
     >
       {uploadImageLoading && <CustomSpinner size={20} />}

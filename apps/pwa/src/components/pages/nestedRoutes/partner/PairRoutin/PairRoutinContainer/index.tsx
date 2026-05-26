@@ -6,7 +6,7 @@ import { OnboardingIntro } from '@repo/core/components/ui/OnboardingIntro';
 
 import { HEADER_HEIGHT } from '@repo/core/constants/app.constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import useFeedback from '../PairRoutinItemContainer/__hooks__/useFeedback';
 import RoutinDiets from './RoutinDiets';
@@ -19,7 +19,7 @@ import useFinalStepWelcoming from './__hook__/useFinalStepWelcoming';
 import useGetData from './__hook__/useGetData';
 
 const PairRoutinContainer = () => {
-  const route = useRouter();
+  const route = useCustomRouter();
   const { updateQuery } = useCustomReactQuery();
   const { data, isLoading } = useGetData();
   const { finalStepHandler } = useFinalStepWelcoming({ programId: data?.programId });

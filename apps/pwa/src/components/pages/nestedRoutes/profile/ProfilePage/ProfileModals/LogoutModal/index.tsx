@@ -4,12 +4,12 @@ import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { clearUserCookiesHandler } from '@actions/userCookies.actions';
 import { STORED_NOTIFICATIONS_CACHE_NAME } from '@repo/core/constants/app.constants';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
-import { useRouter } from 'next/navigation';
 
 const LogoutModal = () => {
-  const router = useRouter();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const router = useCustomRouter();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const logoutHandler = async () => {
     localStorage.clear();
@@ -17,10 +17,10 @@ const LogoutModal = () => {
     await clearUserCookiesHandler();
     await caches.delete(STORED_NOTIFICATIONS_CACHE_NAME);
 
-    pageNavigationHandler({ showProgressBar: false, id: 'LogoutModal', linkTo: '/' });
+    pageNavigationHandler({ id: 'LogoutModal', linkTo: '/' });
   };
 
-  const isLoading = pageNavigationLoading === 'LogoutModal';
+  const isLoading = navigationLoadingId === 'LogoutModal';
 
   return (
     <div className="w-[290px] flex flex-col items-center gap-4">

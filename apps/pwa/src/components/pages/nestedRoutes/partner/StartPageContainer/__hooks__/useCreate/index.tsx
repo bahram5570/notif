@@ -1,7 +1,7 @@
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { useRouter } from 'next/navigation';
 
 import { DataResponseType } from './type';
 
@@ -9,7 +9,7 @@ const useCreate = () => {
   const { refetchQuery } = useCustomReactQuery();
   const toast = useCustomToast();
 
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const successHandler = (data: DataResponseType) => {
     if (!data.valid) {

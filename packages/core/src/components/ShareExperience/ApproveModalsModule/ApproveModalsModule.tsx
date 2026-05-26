@@ -1,6 +1,5 @@
-import { useRouter } from 'next/navigation';
-
 import { useAnalytics } from '../../../hooks/useAnalytics';
+import { useCustomRouter } from '../../../hooks/useCustomRouter';
 import { CustomButton } from '../../ui/CustomButton';
 import { CustomModal } from '../../ui/CustomModal';
 import { CustomTypography } from '../../ui/CustomTypography';
@@ -20,9 +19,8 @@ export const ApproveModalsModule = (props: ApproveModalsModulepProps) => {
     id,
     zIndex = 70,
   } = props;
+  const router = useCustomRouter();
   const { callEvent } = useAnalytics();
-
-  const router = useRouter();
 
   const clickHandler = () => {
     applyHandler();

@@ -5,7 +5,7 @@ const useSelectedTest = () => {
 
   const linkToHandler = (i: number) => {
     pageNavigationHandler({
-      showProgressBar: true,
+      navigationType: 'logo',
       id: 'ovulationHistoryCardDetails',
       linkTo: `/protected/ovulationHistoryCardViewAll/${i}`,
     });

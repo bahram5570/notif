@@ -52,7 +52,7 @@ const preset: Config = {
           '50%': { opacity: '0.3' },
           '100%': { opacity: '1' },
         },
-        imageLoaded: {
+        fadeIn: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
@@ -68,7 +68,7 @@ const preset: Config = {
         widgetCurculeContainer: 'widgetCurculeContainer 0.5s linear backwards',
         widgetCurculeCycle: 'widgetCurculeCycle 0.3s linear backwards',
         skeleton: 'skeleton 0.8s linear infinite',
-        imageLoaded: 'imageLoaded 0.3s linear',
+        fadeIn: 'fadeIn 0.3s linear',
       },
     },
     colors: {

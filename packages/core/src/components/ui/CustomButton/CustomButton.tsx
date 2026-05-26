@@ -6,7 +6,7 @@ import { CustomSpinner } from '../CustomSpinner';
 import { CustomButtonTypes } from './types';
 
 export const CustomButton = forwardRef((props: CustomButtonTypes, ref: React.LegacyRef<HTMLButtonElement>) => {
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const { typographyFontStyles, result } = useTypographyMaker({
     numbersMode: props.numbersMode,
@@ -14,14 +14,14 @@ export const CustomButton = forwardRef((props: CustomButtonTypes, ref: React.Leg
     fontSize: props.fontSize,
   });
 
-  const isLoading = props.isLoading || pageNavigationLoading === props.navigationLoadingId;
+  const isLoading = props.isLoading || navigationLoadingId === props.navigationLoadingId;
 
   const clickHandler = () => {
     if (!props.isDisable && !isLoading) {
       props.onClick();
 
       if (props.navigationLoadingId) {
-        pageNavigationHandler({ showProgressBar: false, id: props.navigationLoadingId });
+        pageNavigationHandler({ id: props.navigationLoadingId });
       }
     }
   };

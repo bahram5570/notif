@@ -22,7 +22,7 @@ export const WidgetBabyCheckHistoryCardViewAll = ({ data }: WidgetBabyCheckHisto
     newQuery({ queryKey: [BABY_CHECK_HISTORY_CARD_VIEW_ALL], payload: data });
 
     pageNavigationHandler({
-      showProgressBar: true,
+      navigationType: 'logo',
       id: BABY_CHECK_HISTORY_CARD_VIEW_ALL,
       linkTo: '/protected/babyCheckHistoryCardViewAll',
     });

@@ -10,7 +10,7 @@ const loadingId = 'EditCycleContainer';
 
 const useSubmit = (selectedValue: CycleThemeEnum) => {
   const { updateProfileData } = useGetProfileData();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const successHandler = async () => {
     const user = await getUserInfoCookie();
@@ -22,7 +22,7 @@ const useSubmit = (selectedValue: CycleThemeEnum) => {
     }
 
     updateProfileData();
-    pageNavigationHandler({ showProgressBar: false, id: loadingId, linkTo: '/protected/cycle' });
+    pageNavigationHandler({ id: loadingId, linkTo: '/protected/cycle' });
   };
 
   const { callApi, isLoading: submitLoading } = usePwaApi({
@@ -35,7 +35,7 @@ const useSubmit = (selectedValue: CycleThemeEnum) => {
     callApi({ theme: selectedValue });
   };
 
-  const isLoading = submitLoading || pageNavigationLoading === loadingId;
+  const isLoading = submitLoading || navigationLoadingId === loadingId;
 
   return { submitHandler, isLoading };
 };

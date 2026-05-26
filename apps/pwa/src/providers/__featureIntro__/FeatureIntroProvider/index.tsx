@@ -44,7 +44,7 @@ const FeatureIntroProvider = ({ children }: { children: React.ReactNode }) => {
     if (currentStep + 1 < totalPages) {
       const nextIndex = currentStep + 1;
       pageNavigationHandler({
-        showProgressBar: true,
+        navigationType: 'logo',
         linkTo: `/protected/featureIntro?${searchData ? `searchData=${encodeURIComponent(searchData)}&step=${nextIndex}` : `step=${nextIndex}`}`,
         id: `featureIntro-${nextIndex}`,
       });

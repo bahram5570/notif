@@ -8,7 +8,7 @@ import { isDevelopeMode } from '@repo/core/utils/system';
 
 import VpnText from '@components/ui/VpnText';
 import { HEADER_HEIGHT, MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import DiscountInput from './DiscountInput';
 import InfoSupport from './InfoSupport';
@@ -16,7 +16,7 @@ import useBuy from './__hooks__/useBuy';
 import { SpecialistPaymantProps } from './types';
 
 const SpecialistPaymant = (props: SpecialistPaymantProps) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const isFirstTime = useRef(isDevelopeMode());
   const { approvedCodeHandler, submitHandler, isLoading } = useBuy({
     questionValues: props.questionValues,

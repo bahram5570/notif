@@ -1,13 +1,11 @@
 import { useAnalytics } from '../../../../hooks/useAnalytics';
-import { CustomImage } from '../../../ui/CustomImage';
+import { CustomImage_NEW } from '../../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../../ui/CustomTypography';
 import PragnencyBreastfeedingGenerator from './PragnencyBreastfeedingGenerator';
 import { WidgetPragnencyBreastfeedingCardProps } from './types';
 
 export const WidgetPragnencyBreastfeedingCard = ({ data }: WidgetPragnencyBreastfeedingCardProps) => {
   const { inViewRef } = useAnalytics({ inView_eventName: 'PregnancyWidgetSeenMoreThan5Sec' });
-
-  // const backgroundColor = colors.Neutral_Background.toLowerCase() + 'b3';
 
   return (
     <div className="px-4 pt-6">
@@ -29,7 +27,9 @@ export const WidgetPragnencyBreastfeedingCard = ({ data }: WidgetPragnencyBreast
             ))}
           </div>
 
-          <CustomImage src={data.image} width={150} objectFit="cover" />
+          <div className="relative w-[150px] min-w-[150px] aspect-square">
+            <CustomImage_NEW src={data.image} fill={true} className="object-cover" containerClassName="rounded-full" />
+          </div>
         </div>
 
         <div className="w-full h-[1px] block bg-impo_Neutral_Surface" />
@@ -39,7 +39,11 @@ export const WidgetPragnencyBreastfeedingCard = ({ data }: WidgetPragnencyBreast
             {data.trailing}
           </CustomTypography>
 
-          {data.trailingIcon && <CustomImage src={data.trailingIcon} width={56} className="rounded-full " />}
+          {data.trailingIcon && (
+            <div className="relative w-14 min-w-14 aspect-square rounded-full overflow-hidden">
+              <CustomImage_NEW src={data.trailingIcon} fill={true} className="object-cover" />
+            </div>
+          )}
         </div>
       </div>
     </div>

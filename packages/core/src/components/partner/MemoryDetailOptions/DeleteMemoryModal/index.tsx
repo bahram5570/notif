@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 
-import { useRouter } from 'next/navigation';
-
+import { useCustomRouter } from '../../../../hooks/useCustomRouter';
 import { useSystem } from '../../../../hooks/useSystem';
 import { CustomButton } from '../../../ui/CustomButton';
 import { CustomModal } from '../../../ui/CustomModal';
@@ -10,8 +9,8 @@ import useDelete from './__hooks__/useDelete';
 import { DeleteMemoryModalPropsType } from './type';
 
 const DeleteMemoryModal = ({ memoryId }: DeleteMemoryModalPropsType) => {
-  const router = useRouter();
   const { appName } = useSystem();
+  const router = useCustomRouter();
   const { deleteHandler, isLoading } = useDelete({ memoryId });
 
   const onClick = () => {

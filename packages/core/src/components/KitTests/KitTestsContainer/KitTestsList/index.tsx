@@ -23,7 +23,7 @@ const KitTestsList = ({ moduleType, data, gregorianDate }: KitTestsListProps) =>
   }, [data]);
 
   const clickHandler = () => {
-    pageNavigationHandler({ id: gregorianDate, showProgressBar: true });
+    pageNavigationHandler({ id: gregorianDate, navigationType: 'logo' });
 
     const modalName =
       moduleType === KitTestModuleTypeEnums.BabyCheck ? TEST_KITS_LIST_BABYCHECK : TEST_KITS_LIST_OVULATION;

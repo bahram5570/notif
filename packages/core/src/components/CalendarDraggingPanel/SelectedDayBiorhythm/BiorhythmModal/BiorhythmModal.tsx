@@ -2,15 +2,14 @@ import { CustomModal } from '../../../../components/ui/CustomModal';
 import { CustomTypography } from '../../../../components/ui/CustomTypography';
 import CancelIcon from '@assets/shared/icons/cancel.svg';
 
-import { useRouter } from 'next/navigation';
-
+import { useCustomRouter } from '../../../../hooks/useCustomRouter';
 import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
 import { BioType, TextBioType } from '../../../calendar/type';
 import { BIORHYTHM_STATUS } from '../constant';
 import { BiorhythmModalPropsType } from './type';
 
 export const BiorhythmModal = ({ biorhythmInfo }: BiorhythmModalPropsType) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { getQueryParams } = useQueryParamsHandler();
 
   const biorhythmText = biorhythmInfo.data.texts;

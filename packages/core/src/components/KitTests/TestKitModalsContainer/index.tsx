@@ -1,12 +1,11 @@
 import CloseIcon from '@assets/shared/icons/plus.svg';
 
-import { useRouter } from 'next/navigation';
-
+import { useCustomRouter } from '../../../hooks/useCustomRouter';
 import { CustomTypography } from '../../ui/CustomTypography';
 import { TestKitModalsContainerProps } from './types';
 
 export const TestKitModalsContainer = ({ title, children }: TestKitModalsContainerProps) => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   return (
     <div className="flex flex-col items-center">

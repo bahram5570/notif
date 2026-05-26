@@ -10,15 +10,15 @@ import { RatingDescriptionProps } from './types';
 
 const RatingDescription = ({ rate, description, descriptionHandler, onClick }: RatingDescriptionProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const commentTicketId = 'commentTicketId';
-  const isLoading = pageNavigationLoading === commentTicketId;
+  const isLoading = navigationLoadingId === commentTicketId;
 
   const openModalHandler = () => {
     if (!isLoading) {
       newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true' });
-      pageNavigationHandler({ showProgressBar: false, id: commentTicketId });
+      pageNavigationHandler({ id: commentTicketId });
     }
   };
 

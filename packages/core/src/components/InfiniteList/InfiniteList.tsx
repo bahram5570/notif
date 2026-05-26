@@ -1,5 +1,4 @@
-import { CustomSpinner } from '@repo/core/components/ui/CustomSpinner';
-
+import { CustomSpinner } from '../ui/CustomSpinner';
 import useInfiniteList from './__hooks__/useInfiniteList';
 import useInfiniteListPagination from './__hooks__/useInfiniteListPagination';
 import { INFINITE_LIST_LOADING_CONTAINER_HEIGHT } from './constants';

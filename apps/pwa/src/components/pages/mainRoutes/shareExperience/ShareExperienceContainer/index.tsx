@@ -11,23 +11,26 @@ import ShareExperienceBanner from '../ShareExperienceModules/ShareExperienceBann
 import ShareExperienceAvatar from './ShareExperienceAvatar';
 import ShareExperienceExperiences from './ShareExperienceExperiences';
 import ShareExperienceFailureModal from './ShareExperienceFailureModal';
+import ShareExperienceInitialLoading from './ShareExperienceInitialLoading';
 import ShareExperienceNewLink from './ShareExperienceNewLink';
-import ShareExperienceSkeleton from './ShareExperienceSkeleton';
+import ShareExperienceShimmer from './ShareExperienceShimmer';
 import ShareExperienceTopics from './ShareExperienceTopics';
 import useCategories from './__hooks__/useCategories';
+import useInitialRedirect from './__hooks__/useInitialRedirect';
 import useShareExperienceGetData from './__hooks__/useShareExperienceGetData';
-import useShareExperienceInitialRedirect from './__hooks__/useShareExperienceInitialRedirect';
 
 const ShareExperienceContainer = () => {
   const { isLoading, data, onSuccessNewHandler } = useShareExperienceGetData();
 
   const scrollRef = useRef<HTMLDivElement>(null);
-  useShareExperienceInitialRedirect(Boolean(data));
+  const { initialLoading } = useInitialRedirect(Boolean(data));
   const { categories, selectedCategoryId, selectedCategoryHandler, showAssociation } = useCategories(data?.categories);
 
   return (
     <>
       <MainPageLayoutHeader leftElement1="Profile" leftElement2="Notification" />
+
+      {initialLoading && <ShareExperienceInitialLoading />}
 
       <div
         ref={scrollRef}
@@ -38,7 +41,7 @@ const ShareExperienceContainer = () => {
           pointerEvents: isLoading ? 'none' : 'auto',
         }}
       >
-        {isLoading && !data && <ShareExperienceSkeleton />}
+        {isLoading && !data && <ShareExperienceShimmer />}
 
         {!isLoading && data && (
           <>

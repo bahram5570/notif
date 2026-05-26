@@ -18,7 +18,7 @@ const CreateNewNoteBtn = ({ date }: CreateNewNoteBtnPropsType) => {
     changeCurrentDate(date || '');
 
     pageNavigationHandler({
-      showProgressBar: true,
+      navigationType: 'logo',
       id: 'CreateNewNote',
       linkTo: `/protected/note/addNote`,
     });

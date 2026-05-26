@@ -3,15 +3,15 @@ import { useEffect, useState } from 'react';
 import { CommentsResponseTypes } from '@repo/core/components/ShareExperience';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
-import { useRouter } from 'next/navigation';
 
 import { QueryExperiencesDataTypes } from '../../../../ShareExperienceContainer/ShareExperienceExperiences/__hooks__/useExperiences/types';
 import { IdInfoTypes, SuccessResponseType } from './types';
 
 const useCommentDelete = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { updateQuery, getQuery } = useCustomReactQuery();
   const { accessOptionHandler } = useShareExperienceHandlers();
   const [idInfo, setIdInfo] = useState<null | IdInfoTypes>(null);

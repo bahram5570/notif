@@ -4,15 +4,16 @@ import { externalLink } from '@repo/core/utils/navigation';
 
 import { getUserCookie, setPaymentCookie } from '@actions/userCookies.actions';
 import { useAnalytics } from '@repo/core/hooks/useAnalytics';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { useParams, useRouter } from 'next/navigation';
+import { useParams } from 'next/navigation';
 
 import { ApprovedCodeHandlerTypes, BuyResponseTypes, UseBuyProps } from './types';
 
 const useBuy = ({ id, questionValues, type }: UseBuyProps) => {
-  const router = useRouter();
   const toast = useCustomToast();
+  const router = useCustomRouter();
   const { callEvent } = useAnalytics();
   const [approvedCode, setApprovedCode] = useState('');
 

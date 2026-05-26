@@ -38,17 +38,6 @@ const ContinueBtn = (props: ContinueBtnProps) => {
     }
   };
 
-  useEffect(() => {
-    // todo : Has problem in goal_1 page
-    // const el = document.getElementById(ACTIVATION_INPUT_MODULE_ID);
-    // if (el) {
-    //   const elTop = el.getBoundingClientRect().top;
-    //   const elHeight = el.offsetHeight;
-    //   const elPaddingTop = 20;
-    //   setBtnTop(elTop + elHeight + elPaddingTop);
-    // }
-  }, []);
-
   const navigationLoadingId = typeof props.nextActivation === 'string' ? 'MainActivationContinueBtn' : undefined;
   const positionStyle = btnTop === null ? { bottom: 0 } : { top: props.showContinueBtn ? btnTop : '100dvh' };
 

@@ -8,7 +8,7 @@ const useTestKitsDeleteModal = () => {
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const openDeleteModalHandler: OpenDeleteModalHandlerTypes = (v) => {
-    pageNavigationHandler({ showProgressBar: true, id: v.createTime });
+    pageNavigationHandler({ navigationType: 'logo', id: v.createTime });
     newQueryParamsHandler({ [TEST_KITS_LIST_DELETE]: JSON.stringify(v) });
   };
 

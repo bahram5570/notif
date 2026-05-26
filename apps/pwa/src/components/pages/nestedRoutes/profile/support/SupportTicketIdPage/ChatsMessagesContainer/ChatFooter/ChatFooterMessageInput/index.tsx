@@ -21,8 +21,7 @@ const ChatFooterMessageInput = () => {
   const { text, textHandler, submitTextHandler, textLoading } = useTextValue();
 
   const onClick = () => {
-    (newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true' }),
-      pageNavigationHandler({ showProgressBar: false, id: 'supportUploadChat' }));
+    (newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true' }), pageNavigationHandler({ id: 'supportUploadChat' }));
   };
 
   return (

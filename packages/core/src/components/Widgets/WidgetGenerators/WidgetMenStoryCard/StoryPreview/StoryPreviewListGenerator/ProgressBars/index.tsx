@@ -3,8 +3,7 @@ import { useEffect, useRef, useState } from 'react';
 import ImpoIcon from '@assets/shared/icons/impoLogo.svg';
 import CrossIcon from '@assets/shared/icons/plus.svg';
 
-import { useRouter } from 'next/navigation';
-
+import { useCustomRouter } from '../../../../../../../hooks/useCustomRouter';
 import { CustomTypography } from '../../../../../../ui/CustomTypography';
 import { STORY_PROGRESS_HEIGHT } from '../../../constants';
 import { ProgressBarsProps } from './types';
@@ -17,7 +16,7 @@ const ProgressBars = ({
   isLoading,
   stories,
 }: ProgressBarsProps) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const timer = useRef<NodeJS.Timeout>();
   const [progressPercent, setProgressPercent] = useState(0);
 

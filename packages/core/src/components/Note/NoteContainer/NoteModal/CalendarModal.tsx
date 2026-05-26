@@ -1,5 +1,4 @@
-import { useRouter } from 'next/navigation';
-
+import { useCustomRouter } from '../../../../hooks/useCustomRouter';
 import { CalendarContainer } from '../../../calendar/CalendarContainer';
 import { CustomButton } from '../../../ui/CustomButton';
 import { CalendarSkeleton } from './CalendarSkeleton';
@@ -7,7 +6,7 @@ import { useCalendar } from './__hooks__/useCalendar';
 import { CalendarModalPropsType } from './type';
 
 const CalendarModal = ({ dateTime, onChangeHandler }: CalendarModalPropsType) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { isLoading, calendarData, selectedDate, selectedDateHandler } = useCalendar({ dateTime });
 
   const onCloseModalHandler = () => {

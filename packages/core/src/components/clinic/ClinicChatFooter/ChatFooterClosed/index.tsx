@@ -1,4 +1,5 @@
 import CloseIcon from '@assets/shared/icons/plus.svg';
+
 import { CustomTypography } from '../../../ui/CustomTypography';
 
 const ChatFooterClosed = () => {

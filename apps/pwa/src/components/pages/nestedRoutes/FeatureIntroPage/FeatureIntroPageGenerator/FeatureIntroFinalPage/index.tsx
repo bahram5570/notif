@@ -1,4 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 
@@ -11,7 +11,7 @@ const FeatureIntroFinalPage = ({ data }: FeatureIntroFinalPagePropsType) => {
 
   const onclick = () => {
     pageNavigationHandler({
-      showProgressBar: true,
+      navigationType: 'logo',
       linkTo: `/protected/cycle`,
       id: `trailonboarding-finalStep`,
     });
@@ -19,7 +19,14 @@ const FeatureIntroFinalPage = ({ data }: FeatureIntroFinalPagePropsType) => {
 
   return (
     <TrailonboardingContainer description={data.description} title={data.title}>
-      <CustomImage src={data.media} className="w-full h-auto" />
+      <CustomImage_NEW
+        width={0}
+        height={0}
+        src={data.media}
+        className="w-full h-auto"
+        containerClassName="min-w-full"
+      />
+
       <FeatureIntroBtn onClick={onclick} textBtn={data.textBtn} />
     </TrailonboardingContainer>
   );

@@ -10,8 +10,6 @@ import { CustomTypography } from '../ui/CustomTypography';
 import MarkDownText from './MarkDownText';
 import { SubscriptionGeneratorTypes } from './types';
 
-//todo change color of text in selected card  in dark mode
-
 export const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
   const isSelected = typeof props.isSelected === 'undefined' ? true : props.isSelected;
   const totalPayText = props.isFree ? 'رایگان' : `${props.amount}`;
@@ -33,10 +31,15 @@ export const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
   return (
     <div
       onClick={selectHandler}
-      className={`w-full rounded-2xl border-[1px] relative ${props.specialText && 'mt-5'} ${!isSelected && 'border-impo_Surface_OutlineVariant !bg-impo_Neutral_Surface'}`}
-      style={{
-        background: isSelected ? 'linear-gradient(260.29deg, #E62A6F 3.07%, #7A1BFF 108.68%)' : '',
-      }}
+      style={{ background: isSelected ? 'linear-gradient(260.29deg, #E62A6F 3.07%, #7A1BFF 108.68%)' : '' }}
+      className={`
+                  relative 
+                  w-full 
+                  rounded-2xl 
+                  border-[1px] 
+                  ${props.specialText && 'mt-5'} 
+                  ${!isSelected && 'border-impo_Surface_OutlineVariant !bg-impo_Neutral_Surface'}
+                `}
     >
       {props.isSpecial && isSelected && (
         <LottieJson animationData={subscriptionbg} lottieRef={lottieRef} loop={true} className="absolute inset-0 z-0" />
@@ -49,6 +52,7 @@ export const SubscriptionGenerator = (props: SubscriptionGeneratorTypes) => {
           </CustomTypography>
         </div>
       )}
+
       {props.discountText && (
         <div className="flex justify-start w-fit px-2 py-2 rounded-ss-[14px]  rounded-ee-2xl bg-impo_Calendar_Period_Background">
           <CustomTypography fontSize="Lable_Medium" className="px-2 text-impo_Black">

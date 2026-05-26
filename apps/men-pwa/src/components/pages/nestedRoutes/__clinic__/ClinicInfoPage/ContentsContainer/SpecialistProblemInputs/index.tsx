@@ -22,7 +22,7 @@ const SpecialistProblemInputs = ({ info, infoHelper, questionValuesHandler, subm
   const { callEvent } = useAnalytics();
   const { values, valuesHandler } = useValues();
   const { operatingSystem } = useSystem();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const typographyFontStyles = typographyFontStylesMaker({ fontSize: 'Body_Small', operatingSystem });
   const loadingId = 'SpecialistProblemInputs';
@@ -43,7 +43,7 @@ const SpecialistProblemInputs = ({ info, infoHelper, questionValuesHandler, subm
       toast.notifyToastHandler({ message: 'اول مشکلت بنویس و بعد ارسال کن', type: 'warning' });
     } else {
       questionValuesHandler({ text: values.text, fileName: values.fileName });
-      pageNavigationHandler({ showProgressBar: false, id: loadingId });
+      pageNavigationHandler({ id: loadingId });
     }
   };
 
@@ -72,7 +72,7 @@ const SpecialistProblemInputs = ({ info, infoHelper, questionValuesHandler, subm
       <div className="w-full mt-auto py-5">
         <CustomButton
           onClick={paymentHandler}
-          isLoading={pageNavigationLoading === loadingId}
+          isLoading={navigationLoadingId === loadingId}
           className="!bg-impo_PrimaryMan_PrimaryMan !border-impo_PrimaryMan_PrimaryMan"
         >
           {submit}

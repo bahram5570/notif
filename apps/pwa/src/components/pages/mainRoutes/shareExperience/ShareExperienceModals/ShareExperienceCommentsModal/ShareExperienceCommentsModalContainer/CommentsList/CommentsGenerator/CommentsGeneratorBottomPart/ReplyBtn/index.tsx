@@ -12,11 +12,11 @@ import { ReplyBtnProps } from './types';
 
 const ReplyBtn = ({ avatar, name, shareId, commentId, userId }: ReplyBtnProps) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
   const { increaseZIndex } = useShareExperienceHandlers();
 
   const loadingId = `ReplyBtn ${shareId} ${commentId} ${userId}`;
-  const isLoading = pageNavigationLoading === loadingId;
+  const isLoading = navigationLoadingId === loadingId;
 
   const clickHandler = () => {
     if (!isLoading) {
@@ -32,7 +32,6 @@ const ReplyBtn = ({ avatar, name, shareId, commentId, userId }: ReplyBtnProps) =
       increaseZIndex(SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME, shareId);
       newQueryParamsHandler({ [SHARE_EXPERIENCE_NEW_REPLY_MODAL_QUERY_NAME]: queryData });
       pageNavigationHandler({
-        showProgressBar: false,
         id: loadingId,
       });
     }

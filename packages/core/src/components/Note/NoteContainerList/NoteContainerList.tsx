@@ -33,7 +33,7 @@ export const NoteContainerList = () => {
 
   const linkToHandler = () => {
     pageNavigationHandler({
-      showProgressBar: true,
+      navigationType: 'logo',
       id: 'CreateNewNote',
       linkTo: `/protected/note/addNote`,
     });

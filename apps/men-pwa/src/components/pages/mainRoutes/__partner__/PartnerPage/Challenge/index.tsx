@@ -12,7 +12,7 @@ const Challenge = ({ card, valid, button }: ChallengePropsType) => {
   const clickHandler = () => {
     pageNavigationHandler({
       id: 'newPartnerMessage',
-      showProgressBar: false,
+
       linkTo: '/protected/newPartnerMessage',
     });
   };

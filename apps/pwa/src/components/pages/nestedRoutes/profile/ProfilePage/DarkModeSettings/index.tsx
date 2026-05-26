@@ -18,7 +18,7 @@ const DarkModeSettings = () => {
       [PROFILE_MODAL_QUERY_NAME]: ProfileModalNameEnums.DarkModeSettings,
     });
 
-    pageNavigationHandler({ showProgressBar: true, id: ProfileModalNameEnums.Logout });
+    pageNavigationHandler({ navigationType: 'logo', id: ProfileModalNameEnums.Logout });
   };
 
   return (

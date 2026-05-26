@@ -1,9 +1,10 @@
-import { usePathname, useRouter, useSearchParams } from 'next/navigation';
+import { usePathname, useSearchParams } from 'next/navigation';
 
+import { useCustomRouter } from '../useCustomRouter';
 import { GetQueryTypes, newQueryParamsHandlerTypes, removeQueryParamsHandlerTypes } from './types';
 
 export const useQueryParamsHandler = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const pathname = usePathname() || '';
   const searchParams = typeof window === 'undefined' ? undefined : useSearchParams();
 
@@ -28,5 +29,5 @@ export const useQueryParamsHandler = () => {
     router.push(pathname + '?' + params);
   };
 
-  return { newQueryParamsHandler, removeQueryParamsHandler, getQueryParams, searchParams };
+  return { newQueryParamsHandler, removeQueryParamsHandler, getQueryParams, searchParams, pathname };
 };

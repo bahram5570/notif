@@ -10,7 +10,7 @@ export const NoteItem = ({ noteItem, isNoteListPage }: NoteItemPropsType) => {
 
   const linkToHandler = () => {
     pageNavigationHandler({
-      showProgressBar: true,
+      navigationType: 'logo',
       id: 'SelectedDayNote',
       linkTo: `/protected/note/addNote?noteId=${noteItem.noteId}`,
     });

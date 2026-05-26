@@ -32,8 +32,8 @@ export const middleware = async (request: NextRequest) => {
 
   const userCookie = cookies().get(USER_COOKIE_NAME);
 
-  // // # Set 'loginId' for Sentry
   // todo: temporarily
+  // // # Set 'loginId' for Sentry
   // if (userCookie) {
   //   const userData = JSON.parse(userCookie.value) as UserCookieTypes;
   //   Sentry.setUser({ loginId: userData.loginId });

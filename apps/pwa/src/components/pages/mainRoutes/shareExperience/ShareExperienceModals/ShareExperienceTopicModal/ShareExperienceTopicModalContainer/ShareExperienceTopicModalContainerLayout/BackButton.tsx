@@ -6,13 +6,13 @@ import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoad
 import { ICONS_SIZE } from './constant';
 
 const BackButton = () => {
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const id = `BackButton_ShareExperience`;
 
   const clickHandler = () => {
-    if (!pageNavigationLoading) {
-      pageNavigationHandler({ showProgressBar: false, linkTo: -1, id });
+    if (!navigationLoadingId) {
+      pageNavigationHandler({ linkTo: -1, id });
     }
   };
 
@@ -22,8 +22,8 @@ const BackButton = () => {
       style={{ width: ICONS_SIZE, height: ICONS_SIZE }}
       onClick={clickHandler}
     >
-      {pageNavigationLoading === id && <CustomSpinner size={28} className="border-impo_Surface_Outline" />}
-      {pageNavigationLoading !== id && <ArrowIcon className="w-6 h-full stroke-2 stroke-impo_Surface_Outline" />}
+      {navigationLoadingId === id && <CustomSpinner size={28} className="border-impo_Surface_Outline" />}
+      {navigationLoadingId !== id && <ArrowIcon className="w-6 h-full stroke-2 stroke-impo_Surface_Outline" />}
     </div>
   );
 };

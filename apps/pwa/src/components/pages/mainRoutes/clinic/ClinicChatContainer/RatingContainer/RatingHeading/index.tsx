@@ -3,10 +3,10 @@ import { RATING_HEADING_HEIGHT } from '@repo/core/components/clinic';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 const RatingHeading = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   return (
     <div

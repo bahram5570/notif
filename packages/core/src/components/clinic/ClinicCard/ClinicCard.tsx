@@ -13,14 +13,15 @@ export const ClinicCard = (props: ClinicCardProps) => {
 
   const clickHandler = () => {
     callEvent('Clinic_Ticket');
-    pageNavigationHandler({ showProgressBar: true, linkTo: `clinic/doctor/${props.id}`, id: 'ClinicCard' });
+    pageNavigationHandler({ navigationType: 'logo', linkTo: `clinic/doctor/${props.id}`, id: 'ClinicCard' });
   };
 
   return (
     <div onClick={clickHandler} className="cursor-pointer w-full">
       <div className="w-full h-fit px-3 py-4 rounded-xl flex items-center gap-2 bg-impo_Neutral_Surface pointer-events-none ">
-        <CustomImage_NEW src={props.image} width={90} height={90} />
-        <CustomImage src={props.image} />
+        <div className="relative w-[90px] h-[90px] rounded-full overflow-hidden">
+          <CustomImage_NEW src={props.image} fill={true} className="object-cover object-top" />
+        </div>
 
         <div className="w-full flex flex-col items-end gap-4">
           <div className="w-full flex flex-col items-end gap-1">

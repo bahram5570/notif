@@ -23,7 +23,7 @@ const UploadInput = ({ fileName, uploadImageLoading, valuesHandler }: UploadInpu
       name: 'UploadMemoryImage',
     }),
       pageNavigationHandler({
-        showProgressBar: true,
+        navigationType: 'logo',
         id: 'UploadMemoryImage',
       }));
   };

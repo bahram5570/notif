@@ -9,7 +9,7 @@ const PageIcons = ({ icons, title, isSelected, url }: PageIconsProps) => {
 
   const navigateHandler = () => {
     pageNavigationHandler({
-      showProgressBar: true,
+      navigationType: 'logo',
       id: 'PageIcons',
       linkTo: url,
     });

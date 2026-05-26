@@ -1,12 +1,12 @@
 import CancelIcon from '@assets/icons/cancel.svg';
 import ArrowIcon from '@assets/shared/icons/calendarArrow.svg';
 
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import { FeatureIntroPageHeaderPropsType } from './type';
 
 const FeatureIntroPageHeader = ({ IsLastItem, progress, totalPages }: FeatureIntroPageHeaderPropsType) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const progressPercent = Math.min(((progress + 1) / totalPages) * 100, 100);
 
   const cancelHandler = () => {

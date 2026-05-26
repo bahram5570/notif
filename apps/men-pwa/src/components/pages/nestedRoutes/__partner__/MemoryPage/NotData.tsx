@@ -9,7 +9,7 @@ const NotData = ({ partName }: NotDataPropsType) => {
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const onClick = () => {
-    pageNavigationHandler({ id: 'memory', showProgressBar: true, linkTo: '/protected/createMemory' });
+    pageNavigationHandler({ id: 'memory', navigationType: 'logo', linkTo: '/protected/createMemory' });
   };
 
   return (

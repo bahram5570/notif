@@ -2,9 +2,10 @@
 
 import { createContext, useEffect, useState } from 'react';
 
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 import { NEED_LOADING_SIGN_INTERACTIVE_BANNER_LIST } from '../../constants/routes.constants';
+import { useCustomRouter } from '../../hooks/useCustomRouter';
 import { useWidgetActions } from '../../hooks/useWidgetActions';
 import { ActionTypes } from '../WidgetActionsProvider';
 import { SignInteractiveBannerContextType } from './type';
@@ -15,7 +16,7 @@ export const SignInteractiveBannerContext = createContext<SignInteractiveBannerC
 });
 
 export const SignInteractiveBannerProvider = ({ children }: { children: React.ReactNode }) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const pathname = usePathname() || '';
   const { actionHandler } = useWidgetActions();
   const [currentAction, setCurrentAction] = useState<ActionTypes | null>(null);

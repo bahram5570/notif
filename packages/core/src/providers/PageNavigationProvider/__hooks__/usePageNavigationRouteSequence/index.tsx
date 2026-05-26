@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
 
-import { usePathname, useRouter } from 'next/navigation';
-
+import { useCustomRouter } from '../../../../hooks/useCustomRouter';
 import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
 import { RouteSequenceListTypes, SequenceHandlerTypes } from '../../types';
 
 const usePageNavigationRouteSequence = () => {
-  const router = useRouter();
-  const pathname = usePathname() || '';
-  const { searchParams } = useQueryParamsHandler();
+  const router = useCustomRouter();
+  const { searchParams, pathname } = useQueryParamsHandler();
   const [routesList, setRoutesList] = useState<RouteSequenceListTypes>(null);
 
   let currentSearchParams = '';

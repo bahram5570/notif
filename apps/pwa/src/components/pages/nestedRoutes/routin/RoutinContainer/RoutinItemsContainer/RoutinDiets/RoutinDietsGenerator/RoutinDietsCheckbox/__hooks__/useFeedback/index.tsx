@@ -5,13 +5,13 @@ import { onSubmitType } from '@repo/core/components/ui/FeedbackModal';
 import { RoutinResponseTypes } from '@components/pages/nestedRoutes/routin/RoutinContainer/__hooks__/useGetData/types';
 import { ProgramRateStatusEnum } from '@components/pages/nestedRoutes/routin/enum';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
-import { useRouter } from 'next/navigation';
 
 import { FeedbackDataType, UseFeedbackPropsType } from './type';
 
 const useFeedback = ({ programId }: UseFeedbackPropsType) => {
-  const route = useRouter();
+  const route = useCustomRouter();
   const { getQuery, updateQuery } = useCustomReactQuery();
 
   const [feedbackData, setFeedbackData] = useState<FeedbackDataType>({

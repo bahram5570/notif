@@ -1,7 +1,7 @@
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomModal } from '@repo/core/components/ui/CustomModal';
 
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 import useNameSelectorData from '../__hooks__/useNameSelectorData';
 import GenderFilterGenerator from './GenderFilterGenerator';
@@ -11,7 +11,7 @@ import useNameSelectorFiltersStyles from './__hooks__/useNameSelectorFiltersStyl
 import { NameSelectorFiltersProps } from './types';
 
 const NameSelectorFilters = (props: NameSelectorFiltersProps) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { applyFiltersHandler, setAllFilters } = useNameSelectorData();
   const { stylesValue, stylesValueHandler, isStylesDisable, stylesList } = useNameSelectorFiltersStyles(props.isOpen);
   const { genderValue, genderValuetHandler, isGenderDisable, genderList } = useNameSelectorFiltersGender(props.isOpen);

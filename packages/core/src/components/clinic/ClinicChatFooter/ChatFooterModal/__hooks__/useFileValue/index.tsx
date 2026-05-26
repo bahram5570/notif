@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
 
-import { useRouter } from 'next/navigation';
-
 import { useCustomReactQuery } from '../../../../../../hooks/useCustomReactQuery';
+import { useCustomRouter } from '../../../../../../hooks/useCustomRouter';
 import { useFileUpload } from '../../../../../../hooks/useFileUpload';
 import { FileDataHandlerTypes } from '../../../../../../hooks/useFileUpload/type';
 import { usePwaApi } from '../../../../../../hooks/usePwaApi';
@@ -14,7 +13,7 @@ const useFileValue = (ticketId: string) => {
   const [storedFileName, setStoredFileName] = useState('');
   const { upgateHandler } = useUpdateChatReactQuery();
   const { updateQuery } = useCustomReactQuery();
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const successHandler = () => {
     upgateHandler({ text: '', fileName: storedFileName });

@@ -7,7 +7,7 @@ const AddPartner = () => {
   const { pageNavigationHandler } = usePageNavigationLoading();
 
   const onClick = () => {
-    pageNavigationHandler({ id: 'PartnerProfile', showProgressBar: true, linkTo: '/protected/partnerStart' });
+    pageNavigationHandler({ id: 'PartnerProfile', navigationType: 'logo', linkTo: '/protected/partnerStart' });
   };
 
   return (

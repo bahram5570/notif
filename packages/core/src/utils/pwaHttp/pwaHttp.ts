@@ -14,14 +14,7 @@ export const pwaHttp = async <T>(props: PwaHttpTypes) => {
     const res = await fetch(url, { cache: 'no-store', ...(httpOptions as any) });
 
     if (!res.ok) {
-      const status = res.status;
-
-      if (status === 401) {
-        // todo: temporarily
-        // await pwaHttpLogoutHandler();
-      }
-
-      throw new Error(res.statusText, { cause: status });
+      throw new Error(res.statusText, { cause: res.status });
     }
 
     result.data = await res.json();

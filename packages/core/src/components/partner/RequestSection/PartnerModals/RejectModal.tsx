@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 
-import { useRouter } from 'next/navigation';
-
+import { useCustomRouter } from '../../../../hooks/useCustomRouter';
 import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
 import { useSystem } from '../../../../hooks/useSystem';
 import { CustomButton } from '../../../ui/CustomButton';
@@ -12,7 +11,7 @@ const RejectModal = () => {
   const { getQueryParams } = useQueryParamsHandler();
   const { rejectHandler, isLoading } = useReject();
   const { appName } = useSystem();
-  const route = useRouter();
+  const route = useCustomRouter();
 
   const id = getQueryParams('id');
   const partnerName = getQueryParams('partnerName');

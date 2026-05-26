@@ -15,16 +15,16 @@ export const StoryItemGenerator = ({ coverImage, isViewed, text, id }: StoryItem
   const { appName } = useSystem();
 
   const { newQueryParamsHandler } = useQueryParamsHandler();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const loadingId = `StoryItemGenerator-${id}`;
-  const isLoading = pageNavigationLoading === loadingId;
+  const isLoading = navigationLoadingId === loadingId;
 
   const selectHandler = () => {
     callEvent('StoryClick');
     if (!isLoading) {
       newQueryParamsHandler({ [STORY_MODAL_ID]: id });
-      pageNavigationHandler({ id: loadingId, showProgressBar: false });
+      pageNavigationHandler({ id: loadingId });
     }
   };
 

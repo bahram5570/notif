@@ -3,7 +3,7 @@ import ArrowIcon from '@assets/shared/icons/calendarArrow.svg';
 
 import { useAnalytics } from '../../../../../hooks/useAnalytics';
 import { useWidgetActions } from '../../../../../hooks/useWidgetActions';
-import { CustomImage } from '../../../../ui/CustomImage';
+import { CustomImage_NEW } from '../../../../ui/CustomImage_NEW';
 import { CustomTypography } from '../../../../ui/CustomTypography';
 import { PregnancyCheckupItemPropsTypes } from './type';
 
@@ -26,9 +26,7 @@ const PregnancyCheckupItem = ({
       className=" rounded-lg flex flex-row-reverse gap-2 p-3"
       onClick={linkTo}
     >
-      <div>
-        <CustomImage src={icon} className="w-8 h-8" />
-      </div>
+      <CustomImage_NEW src={icon} width={32} height={32} />
 
       <div className="flex flex-col gap-1">
         <div className="flex w-full justify-between pb-3 border-b border-b-black/15">

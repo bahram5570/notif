@@ -12,10 +12,10 @@ import { ChatHeaderPropsType } from './type';
 
 const ChatHeader = ({ createTime, partnerAvatar, partnerName, progress, avatar }: ChatHeaderPropsType) => {
   const { currentDate } = useCalendarDateFormat({ date: createTime });
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
   const onClick = () => {
-    pageNavigationHandler({ showProgressBar: false, linkTo: -1, id: 'back' });
+    pageNavigationHandler({ linkTo: -1, id: 'back' });
   };
 
   return (
@@ -43,8 +43,8 @@ const ChatHeader = ({ createTime, partnerAvatar, partnerName, progress, avatar }
           </div>
 
           <div className="cursor-pointer flex justify-center items-center w-8 h-8" onClick={onClick}>
-            {pageNavigationLoading === 'back' && <CustomSpinner size={28} className="border-impo_Surface_Outline" />}
-            {pageNavigationLoading !== 'back' && (
+            {navigationLoadingId === 'back' && <CustomSpinner size={28} className="border-impo_Surface_Outline" />}
+            {navigationLoadingId !== 'back' && (
               <ArrowIcon className="w-6 h-full stroke-2 stroke-impo_Surface_Outline" />
             )}
           </div>

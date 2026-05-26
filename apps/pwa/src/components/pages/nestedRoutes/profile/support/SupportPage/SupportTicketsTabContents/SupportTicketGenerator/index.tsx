@@ -48,7 +48,7 @@ const SupportTicketGenerator = ({
   }, [culture.calendarType, createTime]);
 
   const selectHandler = () => {
-    pageNavigationHandler({ showProgressBar: true, linkTo: `/protected/supportTicket/${id}`, id });
+    pageNavigationHandler({ navigationType: 'logo', linkTo: `/protected/supportTicket/${id}`, id });
   };
 
   return (

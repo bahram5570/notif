@@ -10,15 +10,14 @@ import { BloodPressureBtnPropsType } from './type';
 
 const BloodPressureBtn = ({ value }: BloodPressureBtnPropsType) => {
   const { newQueryParamsHandler } = useQueryParamsHandler();
-  const { pageNavigationHandler, pageNavigationLoading } = usePageNavigationLoading();
+  const { pageNavigationHandler, navigationLoadingId } = usePageNavigationLoading();
 
-  const isLoading = pageNavigationLoading === 'bloodPressureBtn';
+  const isLoading = navigationLoadingId === 'bloodPressureBtn';
 
   const currentValue = value.high !== undefined && value.low !== undefined ? `${value.high}/${value.low}` : null;
 
   const onClick = () => {
-    (newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true' }),
-      pageNavigationHandler({ showProgressBar: false, id: 'bloodPressureBtn' }));
+    (newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true' }), pageNavigationHandler({ id: 'bloodPressureBtn' }));
   };
 
   return (

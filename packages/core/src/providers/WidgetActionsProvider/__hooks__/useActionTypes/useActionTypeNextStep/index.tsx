@@ -17,7 +17,7 @@ const useActionTypeNextStep = ({
 
   const callNextStep: CallNextStepTypes = ({ nextStep }) => {
     if (nextStep.type !== PopupTypeEnum.TimerInteraction) {
-      pageNavigationHandler({ showProgressBar: true, id: Math.random() });
+      pageNavigationHandler({ navigationType: 'logo', id: Math.random() });
       pendingStatus.current.isCalled = true;
       isCurrentNextStepFinishedHandler(false);
     }

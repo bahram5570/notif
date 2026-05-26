@@ -1,12 +1,11 @@
-import { useRouter } from 'next/navigation';
-
+import { useCustomRouter } from '../../../../hooks/useCustomRouter';
 import { useQueryParamsHandler } from '../../../../hooks/useQueryParamsHandler';
 import { CustomButton } from '../../../ui/CustomButton';
 import { CustomTypography } from '../../../ui/CustomTypography';
 import { useDelete } from './__hooks__/useDelete';
 
 const DeleteNoteModal = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const { deleteHandler, isLoading } = useDelete();
   const { getQueryParams } = useQueryParamsHandler();
 

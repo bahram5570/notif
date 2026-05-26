@@ -1,9 +1,8 @@
-import { useRouter } from 'next/navigation';
-
+import { useCustomRouter } from '../../../../../../hooks/useCustomRouter';
 import { usePwaApi } from '../../../../../../hooks/usePwaApi';
 
 export const useDelete = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const successHandler = () => {
     router.push('/protected/calendar');

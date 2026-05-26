@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 
 import { PHASE_CHANGE_FIRST_PATH_NAME } from '@providers/PhaseChangeProvider/constants';
-import { useRouter } from 'next/navigation';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 
 const usePhaseChangeReloadProtection = () => {
-  const router = useRouter();
+  const router = useCustomRouter();
 
   useEffect(() => {
     const pathname = location.pathname;

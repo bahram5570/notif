@@ -3,16 +3,16 @@ import { useEffect } from 'react';
 import { ClinicInfoResponseTypes } from '@repo/core/components/clinic';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useQueryParamsHandler } from '@repo/core/hooks/useQueryParamsHandler';
-import { useRouter } from 'next/navigation';
 
 import { SELECTED_DOCTOR } from '../../../ClinicDoctorInfoContainer/constants';
 
 const useGetDataClinicInfo = (clinicInfo: string) => {
   const { newQuery, getQuery } = useCustomReactQuery(['clinicInfo']);
   const { getQueryParams } = useQueryParamsHandler();
-  const router = useRouter();
+  const router = useCustomRouter();
 
   const successHandler = (v: ClinicInfoResponseTypes) => {
     newQuery({ queryKey: ['clinicInfo'], payload: v });

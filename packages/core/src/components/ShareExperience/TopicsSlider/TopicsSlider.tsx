@@ -14,7 +14,7 @@ export const TopicsSlider = ({ topics }: TopicsSliderProps) => {
   const { increaseZIndex } = useShareExperienceHandlers();
 
   const clickHandler = (id: string) => {
-    pageNavigationHandler({ id, showProgressBar: true });
+    pageNavigationHandler({ id, navigationType: 'logo' });
 
     const { queryKey, queryValue } = shareExperienceTopicQueryMaker(id);
     newQueryParamsHandler({ [queryKey]: queryValue });

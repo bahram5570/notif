@@ -12,7 +12,7 @@ const ViewAllButton = () => {
   const { increaseZIndex } = useShareExperienceHandlers();
 
   const clickHandler = () => {
-    pageNavigationHandler({ id: 'shareExperienceAssociation', showProgressBar: true });
+    pageNavigationHandler({ id: 'shareExperienceAssociation', navigationType: 'logo' });
 
     newQueryParamsHandler({ [SHARE_EXPERIENCE_ASSOCIATION_LIST_QUERY_NAME]: 'true' });
     increaseZIndex(SHARE_EXPERIENCE_ASSOCIATION_LIST_QUERY_NAME);

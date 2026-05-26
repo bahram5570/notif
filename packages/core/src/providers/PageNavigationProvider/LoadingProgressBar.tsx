@@ -1,9 +1,8 @@
 import { useMemo } from 'react';
 
-import { MAX_SCREEN_WIDTH } from '../../constants/app.constants';
 import { useSystem } from '../../hooks/useSystem';
 
-const LoadingProgressBar = () => {
+export const LoadingProgressBar = () => {
   const { appName } = useSystem();
 
   const bg = useMemo(() => {
@@ -22,14 +21,5 @@ const LoadingProgressBar = () => {
     }
   }, [appName]);
 
-  return (
-    <div
-      style={{ maxWidth: MAX_SCREEN_WIDTH }}
-      className="fixed top-0 left-0 right-0 bottom-0 mx-auto overflow-hidden z-[80]"
-    >
-      <div className={`w-full h-[4px] mt-1 rounded-full animate-pageNavigation ${bg}`} />
-    </div>
-  );
+  return <div className={`w-full h-[4px] mt-1 rounded-full animate-pageNavigation ${bg}`} />;
 };
-
-export default LoadingProgressBar;

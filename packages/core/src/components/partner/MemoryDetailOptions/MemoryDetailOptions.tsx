@@ -20,14 +20,14 @@ export const MemoryDetailOptions = ({ fromMan, memoryId, validPartner, callBack 
   const showCommentBtn = appName === 'MEN_PWA' ? (fromMan ? false : true) : fromMan ? true : false;
 
   const deleteHandler = () => {
-    pageNavigationHandler({ id: 'memoryDeleteModal', showProgressBar: true });
+    pageNavigationHandler({ id: 'memoryDeleteModal', navigationType: 'logo' });
     newQueryParamsHandler({ [MODAL_QUERY_NAME]: 'true' });
   };
 
   const onClick = () => {
     pageNavigationHandler({
       id: 'memoryComment',
-      showProgressBar: true,
+      navigationType: 'logo',
       linkTo: `/protected/comment?memoryId=${memoryId}`,
     });
   };

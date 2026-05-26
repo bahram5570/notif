@@ -40,7 +40,7 @@ const ConditionModal = ({ name, onChange, onCloseModal, value }: ConditionModalP
 
       <CustomButton
         onClick={() => {
-          (onChangeHandler(), pageNavigationHandler({ showProgressBar: true, id: name }));
+          (onChangeHandler(), pageNavigationHandler({ navigationType: 'logo', id: name }));
         }}
         fontSize="Lable_Large"
       >

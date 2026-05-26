@@ -20,7 +20,7 @@ const PartnerLandingWebView = () => {
 
   const linkTo = () => {
     pageNavigationHandler({
-      showProgressBar: true,
+      navigationType: 'logo',
       id: 'startPartnerPage',
       linkTo: '/protected/partnerStart',
     });

@@ -1,19 +1,15 @@
-import { useState } from 'react';
-
+import { useCustomRouter } from '@repo/core/hooks/useCustomRouter';
 import { useCustomToast } from '@repo/core/hooks/useCustomToast';
-import { useRouter } from 'next/navigation';
 
 import { ContinueBtnNextActivationOnContinueTypes, NextActivationHandlerTypes } from './types';
 
 const useContinueBtnNextActivation = (onContinue: ContinueBtnNextActivationOnContinueTypes) => {
-  const router = useRouter();
+  const router = useCustomRouter();
   const toast = useCustomToast();
-  const [resetKey, setResetKey] = useState(Math.random().toString());
 
   const nextActivationHandler: NextActivationHandlerTypes = (v) => {
     if (v.invalidMessage) {
       toast.notifyToastHandler({ message: v.invalidMessage, type: 'error' });
-      setResetKey(Math.random().toString());
       return;
     }
 
@@ -30,7 +26,7 @@ const useContinueBtnNextActivation = (onContinue: ContinueBtnNextActivationOnCon
     }
   };
 
-  return { nextActivationHandler, resetKey };
+  return { nextActivationHandler };
 };
 
 export default useContinueBtnNextActivation;
