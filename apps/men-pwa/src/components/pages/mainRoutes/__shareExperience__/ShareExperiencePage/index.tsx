@@ -5,6 +5,8 @@ import { useRef } from 'react';
 import { MainPageLayoutHeader } from '@repo/core/components/MainPageLayout';
 import { CategoriesSlider } from '@repo/core/components/ShareExperience';
 
+import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
+
 import ShareExperienceBanner from '../ShareExperienceModules/ShareExperienceBanner';
 import ShareExperienceToast from '../ShareExperienceModules/ShareExperienceToast';
 import ShareExperienceAvatar from './ShareExperienceAvatar';
@@ -27,8 +29,12 @@ const ShareExperiencePage = () => {
 
       <div
         ref={scrollRef}
-        style={{ height: '100dvh' }}
-        className={`flex-1 overflow-y-auto ${isLoading ? 'pointer-events-none' : ''}`}
+        style={{
+          height: '100dvh',
+          overflow: 'auto',
+          paddingBottom: FOOTER_HEIGHT,
+          pointerEvents: isLoading ? 'none' : 'auto',
+        }}
       >
         {isLoading && !data && <ShareExperienceSkeleton />}
 

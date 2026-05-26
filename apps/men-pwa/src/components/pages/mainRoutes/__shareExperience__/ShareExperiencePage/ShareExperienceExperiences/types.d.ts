@@ -6,6 +6,6 @@ export interface ShareExperienceExperiencesProps extends Pick<
 > {
   selectedCategoryId: string | null;
   onSuccessNewHandler: () => void;
-  scrollRef: React.RefObject<HTMLElement>;
+  scrollRef: RefObject<HTMLDivElement>;
   showAssociation: boolean;
 }

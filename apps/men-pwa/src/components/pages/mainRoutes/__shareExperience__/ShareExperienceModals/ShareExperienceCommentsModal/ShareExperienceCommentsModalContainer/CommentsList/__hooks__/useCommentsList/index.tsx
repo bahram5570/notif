@@ -1,19 +1,18 @@
-import { useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-import { CommentsResponseTypes, EXPERIENCES_COMMENTS_PAGE_SIZE } from '@repo/core/components/ShareExperience';
+import { CommentsResponseTypes, PageInfoType } from '@repo/core/components/ShareExperience';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
 import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 
-import useShareExperiencePageNo from '../../../__hooks__/useShareExperiencePageNo';
 import { UseCommentsListProps } from './types';
 
 const useCommentsList = ({ id }: UseCommentsListProps) => {
-  const { updatePageNo: changePageNoHandler, pageNoInfo } = useShareExperiencePageNo(id);
+  const [pageInfo, setPageInfo] = useState<PageInfoType | null>(null);
   const { accessOptionHandler } = useShareExperienceHandlers();
   const { newQuery, updateQuery, getQuery } = useCustomReactQuery(['comments ' + id]);
-  const pageNo = pageNoInfo ? pageNoInfo.pageNo : 0;
+  const requestLockRef = useRef(false);
 
   const commentsData = getQuery<CommentsResponseTypes>({ queryKey: ['comments ' + id] });
 
@@ -25,6 +24,8 @@ const useCommentsList = ({ id }: UseCommentsListProps) => {
         btnText: v.access.btnText,
       });
     }
+    requestLockRef.current = false;
+    setPageInfo(v.page);
     if (commentsData) {
       const list = { ...v, comments: [...commentsData.comments, ...v.comments] };
       updateQuery({ queryKey: ['comments ' + id], payload: list });
@@ -33,27 +34,42 @@ const useCommentsList = ({ id }: UseCommentsListProps) => {
     }
   };
 
-  const { callApi, isLoading } = usePwaApi<CommentsResponseTypes>({
+  const { callApi, isLoading: loading } = usePwaApi<CommentsResponseTypes>({
     method: 'GET',
     fetchOnMount: false,
     onSuccess: successHandler,
-    queryKey: ['comments' + pageNo + id],
-    api: `manshareeexperience/v3/experience/${id}/comments/${pageNo}/${EXPERIENCES_COMMENTS_PAGE_SIZE}`,
+    queryKey: ['comments' + id],
+    api: `manshareeexperience/v3/experience/${id}/comments/first`,
   });
 
-  const updatePageNo = () => {
-    changePageNoHandler(pageNo + 1);
-  };
+  const { callApi: getNextPage, isLoading: nextPageLoading } = usePwaApi<CommentsResponseTypes>({
+    api: pageInfo?.lastId ? `manshareeexperience/v3/experience/${id}/comments/nextpage/${pageInfo.lastId}` : '',
+    method: 'GET',
+    fetchOnMount: false,
+    onSuccess: successHandler,
+    queryKey: ['comments' + pageInfo?.lastId],
+  });
 
   useEffect(() => {
-    if (!isLoading) {
+    if (id) {
       callApi();
     }
-  }, [pageNo, id, isLoading]);
+  }, [id]);
 
-  const isFirstLoad = isLoading && !commentsData;
+  const updateList = () => {
+    if (!pageInfo?.hasNext) return;
 
-  return { isLoading, commentsData, updatePageNo, pageNo, isFirstLoad };
+    if (requestLockRef.current) return;
+
+    requestLockRef.current = true;
+
+    getNextPage();
+  };
+
+  const isFirstLoad = loading && !commentsData;
+  const isLoading = nextPageLoading || loading;
+
+  return { isLoading, commentsData, updateList, isFirstLoad };
 };
 
 export default useCommentsList;

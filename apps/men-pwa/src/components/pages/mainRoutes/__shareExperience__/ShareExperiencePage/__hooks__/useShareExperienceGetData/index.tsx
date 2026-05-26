@@ -8,7 +8,7 @@ import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceH
 
 const useShareExperienceGetData = () => {
   const [data, setData] = useState<ShareExperienceResponseTypes | undefined>(undefined);
-  const { refetchQuery } = useCustomReactQuery();
+  const { removeQuery, refetchQuery } = useCustomReactQuery();
   const { accessOptionHandler } = useShareExperienceHandlers();
 
   const successHandler = (v: ShareExperienceResponseTypes) => {
@@ -24,15 +24,15 @@ const useShareExperienceGetData = () => {
 
   const { isLoading, callApi } = usePwaApi<ShareExperienceResponseTypes>({
     queryKey: ['shareExperience'],
-    api: 'manshareeexperience/v3/new',
+    api: 'manshareeexperience/v3/first',
     onSuccess: successHandler,
     fetchOnMount: false,
     method: 'GET',
   });
 
   const onSuccessNewHandler = () => {
-    refetchQuery({ queryKey: ['shareExperience'] });
-    setData(undefined);
+    removeQuery({ queryKey: ['experiences'] });
+    refetchQuery({ queryKey: ['experiences-first'] });
   };
 
   useEffect(() => {
