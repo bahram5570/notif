@@ -19,7 +19,7 @@ export const RoutinCta = ({ cta }: RoutinCtaPropsType) => {
     >
       <div className="px-4 py-4 flex flex-col items-end gap-2">
         <CustomTypography className="text-impo_Neutral_OnSurface" fontSize="Lable_Medium">
-          {cta.ctaBtnLabel}
+          {cta.ctaDescription}
         </CustomTypography>
 
         <div className="w-full flex justify-start">
