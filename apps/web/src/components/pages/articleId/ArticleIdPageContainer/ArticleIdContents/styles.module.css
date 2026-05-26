@@ -59,22 +59,28 @@
   font-size: 19px;
 }
 
-.container ul {
-  padding: 16px 8px 16px 0;
-  margin-right: 16px;
+.container ul,
+.container ol {
+  margin-right: 24px;
 }
 
-.container ul li {
+.container ul li,
+.container ol li {
   font-weight: 400;
   font-size: 13px;
   line-height: 280%;
   letter-spacing: -0.225px;
-  list-style-type: disc;
 }
 
-.container ul li strong {
+.container ul li strong,
+.container ol li strong {
   font-weight: 600;
   font-size: 15px;
+}
+
+.container ul li,
+.container ol li {
+  list-style-type: none;
 }
 
 .container table {
@@ -83,15 +89,7 @@
   margin: 16px 0;
 }
 
-.container table td {
-  background: transparent !important;
-  padding: 16px 8px !important;
-}
-
-.container table p {
-  font-size: 13px !important;
-}
-
+.container table p,
 .container table p span {
   font-size: 13px !important;
 }

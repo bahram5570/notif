@@ -1,6 +1,7 @@
 import { createElement } from 'react';
 
 import { ctaBannerListService } from '@services/ctaBannerServices';
+import { toPersianNumbers } from '@utils/numbers';
 
 import CtaBanner from '@components/CtaBanner';
 import * as cheerio from 'cheerio';
@@ -112,56 +113,88 @@ export const handleBodyUpdate = async (body: string) => {
 
   const $ = cheerio.load(result);
 
-  // # Making subjects list (table of contents - TOC)
-  let count = 1;
+  let olCount = 1;
+  let articleSubjectIdCount = 1;
   const articleSubjectList: ArticleSubjectListTypes = [];
 
-  $('h2, h3').each((_, element) => {
-    const title = $(element).text().trim();
-    const id = `article-subject-${count}-id`;
+  $('p, span, a, section, td, th, ol, ul, li, h1, h2, h3, h4, h5, h6').each((_, element) => {
+    const currentElement = $(element);
 
-    const isH2 = $(element).is('h2');
-    const isH3 = $(element).is('h3');
+    const isH2 = currentElement.is('h2');
+    const isH3 = currentElement.is('h3');
+    const isTd = currentElement.is('td');
+    const isTh = currentElement.is('th');
+    const isOl = currentElement.is('ol');
+    const isUl = currentElement.is('ul');
+    const isLink = currentElement.is('a');
+    const isImg = currentElement.is('img');
+    const is_ol_Li = currentElement.is('ol li');
+    const is_ul_Li = currentElement.is('ul li');
+    const isNoCheerioStyling = currentElement.attr('data-no-cheerio-styling');
 
-    if (isH2) {
-      articleSubjectList.push({ id, title, tagType: 'h2' });
+    // # Styling ul
+    if (is_ul_Li) {
+      const text = currentElement.text();
+      const bulletChar = '\u25CF';
+      const emptyChar = '\u2003';
+
+      const numberedText = ` ${bulletChar}${emptyChar}${text}`;
+      currentElement.text(numberedText);
     }
 
-    if (isH3) {
-      articleSubjectList.push({ id, title, tagType: 'h3' });
+    // # Styling ol
+    if (is_ol_Li) {
+      const text = currentElement.text();
+      const emptyChar = '\u2003';
+
+      const numberedText = `${olCount}.${emptyChar}${text}`;
+      currentElement.text(numberedText);
+      olCount++;
     }
 
-    $(element).attr('id', id);
-    count++;
-  });
+    // # Making subjects list (table of contents - TOC)
+    if (isH2 || isH3) {
+      const title = currentElement.text().trim();
+      const id = `article-subject-${articleSubjectIdCount}-id`;
 
-  // # Styling tables
-  $('td').each((_, element) => {
-    const el = $(element);
-    el.addClass('!border-impo_Neutral_OnBackground');
-  });
+      if (isH2) {
+        articleSubjectList.push({ id, title, tagType: 'h2' });
+      }
 
-  // # Styling images
-  $('img').each((_, element) => {
-    const el = $(element);
-    el.attr('loading', 'lazy');
-  });
+      if (isH3) {
+        articleSubjectList.push({ id, title, tagType: 'h3' });
+      }
 
-  // # Styling scripts
-  $('p, span, section, td, li, h1, h2, h3, h4, h5, h6').each((_, element) => {
-    const el = $(element);
+      currentElement.attr('id', id);
+      articleSubjectIdCount++;
+    }
+
+    // # Styling tables
+    if (isTd || isTh) {
+      currentElement.addClass('!border-[1px] !border-impo_Neutral_OnBackground !px-2 !py-4 !bg-transparent');
+    }
+
+    // # Styling images
+    if (isImg) {
+      currentElement.attr('loading', 'lazy');
+    }
+
+    // # Styling links
+    if (isLink) {
+      currentElement.addClass('!text-impo_Primary_Primary');
+    }
 
     // # Skip Cheerio styling for elements when `data-no-cheerio-styling` is present
-    const noCheerioStyling = el.attr('data-no-cheerio-styling');
-
-    if (!noCheerioStyling) {
-      el.addClass('!text-impo_Neutral_OnBackground');
+    if (!isNoCheerioStyling) {
+      currentElement.addClass('!text-impo_Neutral_OnBackground');
     }
-  });
 
-  $('a').each((_, element) => {
-    const el = $(element);
-    el.addClass('!text-impo_Primary_Primary');
+    // // # Convert english numbers to persian
+    if (!isLink && !isImg && !isOl && !isUl) {
+      const text = currentElement.text();
+      const persianText = text.replace(/\d/g, (d) => toPersianNumbers(d));
+      currentElement.text(persianText);
+    }
   });
 
   // # Separate article to before and after its abstract
@@ -184,6 +217,7 @@ export const handleBodyUpdate = async (body: string) => {
     firstImageBlock.remove();
   }
 
+  // # Final results
   abstractBody = $abstract.html();
   articleBody = $article.html();
 
