@@ -5,6 +5,7 @@ import { toPersianNumbers } from '@utils/numbers';
 
 import CtaBanner from '@components/CtaBanner';
 import * as cheerio from 'cheerio';
+import { ChildNode, Element } from 'domhandler';
 
 import { ArticleSubjectListTypes } from './types';
 
@@ -124,8 +125,6 @@ export const handleBodyUpdate = async (body: string) => {
     const isH3 = currentElement.is('h3');
     const isTd = currentElement.is('td');
     const isTh = currentElement.is('th');
-    const isOl = currentElement.is('ol');
-    const isUl = currentElement.is('ul');
     const isLink = currentElement.is('a');
     const isImg = currentElement.is('img');
     const is_ol_Li = currentElement.is('ol li');
@@ -188,14 +187,26 @@ export const handleBodyUpdate = async (body: string) => {
     if (!isNoCheerioStyling) {
       currentElement.addClass('!text-impo_Neutral_OnBackground');
     }
-
-    // // # Convert english numbers to persian
-    if (!isLink && !isImg && !isOl && !isUl) {
-      const text = currentElement.text();
-      const persianText = text.replace(/\d/g, (d) => toPersianNumbers(d));
-      currentElement.text(persianText);
-    }
   });
+
+  // # Convert english numbers to persian
+  const convertNumbersHandler = (node: Element | ChildNode) => {
+    const children = $(node).contents();
+
+    children.each((_, child) => {
+      if (child.type === 'text') {
+        const currentText = $(child).text();
+        $(child).replaceWith(toPersianNumbers(currentText));
+        return;
+      }
+
+      if (child.type === 'tag') {
+        convertNumbersHandler(child);
+      }
+    });
+  };
+
+  convertNumbersHandler($.root()[0]);
 
   // # Separate article to before and after its abstract
   const html = $.html();
