@@ -1,4 +1,4 @@
-export const SPLASH_TIMER_STEP_MS = 60;
+export const SPLASH_TIMER_STEP_MS = 70;
 
 export const SPLASH_MESSAGES_LIST = [
   `ناشنوا باش، وقتی همه از محال بودن آرزوهات حرف می‌زنن.`,

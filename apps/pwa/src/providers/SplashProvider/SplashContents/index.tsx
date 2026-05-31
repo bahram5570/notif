@@ -20,6 +20,7 @@ const SplashContents = ({ splashStatus, splashStatushHandler }: SplashContentsPr
         <div className="absolute top-5 -left-5 w-full aspect-square">
           <CustomImage_NEW
             fill={true}
+            hasImageLoading={false}
             src="/assets/images/heartShallow.webp"
             className="absolute top-5 -left-5 object-cover"
           />
