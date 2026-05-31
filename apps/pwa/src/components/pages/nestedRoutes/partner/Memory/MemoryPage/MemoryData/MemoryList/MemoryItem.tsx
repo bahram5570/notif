@@ -31,7 +31,6 @@ const MemoryItem = (props: MemoryItemPropsType) => {
         <CustomImage_NEW fill src={memoryImage} className="rounded-2xl object-cover" />
       </div>
 
-      {/* <CustomImage src={memoryImage} height={293} className="rounded-2xl w-full" /> */}
       <div className="flex flex-col justify-end items-end">
         <div className="flex gap-2 items-center">
           <CustomTypography fontSize="Lable_Large" className="text-impo_Neutral_OnBackground ">

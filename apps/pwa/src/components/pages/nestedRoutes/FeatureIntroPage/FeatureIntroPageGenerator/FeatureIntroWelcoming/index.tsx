@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
@@ -58,7 +58,14 @@ const FeatureIntroWelcoming = ({ data, goToNext }: FeatureIntroWelcomingPropsTyp
                 src={data.backgroundAnimation}
                 className={`fixed left-0 right-0 bottom-[35%] w-full h-[50dvh]  mx-auto select-none pointer-events-none `}
               />
-              <CustomImage src={data.footerContent} className="px-4 transition-opacity duration-700 ease-in-out z-10" />
+
+              <div className="relative w-full aspect-video">
+                <CustomImage_NEW
+                  src={data.footerContent}
+                  className="px-4 transition-opacity duration-700 ease-in-out z-10"
+                  fill
+                />
+              </div>
             </div>
             <FeatureIntroBtn onClick={goToNext} textBtn={data.textBtn} />
           </>
