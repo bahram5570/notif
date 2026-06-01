@@ -3,11 +3,13 @@ import { useEffect, useState } from 'react';
 import { PAGE_SIZE } from '@repo/core/constants/app.constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 
 import { AssociationExperiencesResponseType, useGetAssociationItemDataPropsType } from './type';
 
 const useGetAssociationItemData = ({ AssociationId }: useGetAssociationItemDataPropsType) => {
   const [pageNo, setPageNo] = useState(0);
+  const { accessOptionHandler } = useShareExperienceHandlers();
   const { newQuery, updateQuery, getQuery, removeQuery } = useCustomReactQuery([`associationExperienceList`]);
 
   const associationExperienceList = getQuery<AssociationExperiencesResponseType>({
@@ -15,6 +17,13 @@ const useGetAssociationItemData = ({ AssociationId }: useGetAssociationItemDataP
   });
 
   const successHandler = (v: AssociationExperiencesResponseType) => {
+    if (v.access.isBan) {
+      return accessOptionHandler({
+        isBan: v.access.isBan,
+        textMessage: v.access.textMessage,
+        btnText: v.access.btnText,
+      });
+    }
     if (associationExperienceList) {
       const list = {
         ...associationExperienceList,

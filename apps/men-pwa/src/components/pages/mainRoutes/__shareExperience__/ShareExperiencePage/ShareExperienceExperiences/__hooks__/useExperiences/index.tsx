@@ -1,21 +1,31 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-import { EXPERIENCES_PAGE_SIZE, ExperiencesResponseTypes } from '@repo/core/components/ShareExperience';
+import { ExperiencesResponseTypes, PageInfoType } from '@repo/core/components/ShareExperience';
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 
 import { QueryExperiencesDataTypes, SelectedCategoryIdTypes } from './types';
 
 const useExperiences = (selectedCategoryId: SelectedCategoryIdTypes) => {
-  const [pageNo, setPageNo] = useState(0);
-  const [totalCount, setTotalCount] = useState(0);
+  const [pageInfo, setPageInfo] = useState<PageInfoType | null>(null);
+  const { accessOptionHandler } = useShareExperienceHandlers();
   const { newQuery, updateQuery, getQuery, removeQuery } = useCustomReactQuery(['experiences']);
+  const requestLockRef = useRef(false);
 
   const experiencesData = getQuery<QueryExperiencesDataTypes>({ queryKey: ['experiences'] });
 
   const successHandler = (v: ExperiencesResponseTypes) => {
-    setTotalCount(v.totalCount);
+    if (v.access.isBan) {
+      return accessOptionHandler({
+        isBan: v.access.isBan,
+        textMessage: v.access.textMessage,
+        btnText: v.access.btnText,
+      });
+    }
+    requestLockRef.current = false;
+    setPageInfo(v.page);
 
     if (experiencesData) {
       const list = { expirences: [...experiencesData.expirences, ...v.expirences] };
@@ -25,35 +35,48 @@ const useExperiences = (selectedCategoryId: SelectedCategoryIdTypes) => {
     }
   };
 
-  const api = `manshareeexperience/v3/category/${selectedCategoryId}/${pageNo}/${EXPERIENCES_PAGE_SIZE}`;
-
-  const { callApi, isLoading } = usePwaApi<ExperiencesResponseTypes>({
-    api,
+  const { callApi: getFirstPage, isLoading: loading } = usePwaApi<ExperiencesResponseTypes>({
+    api: `manshareeexperience/v3/category/${selectedCategoryId}/first`,
     method: 'GET',
     fetchOnMount: false,
     onSuccess: successHandler,
-    queryKey: ['experiences' + pageNo],
+    queryKey: ['experiences-first'],
+  });
+
+  const { callApi: getNextPage, isLoading: nextPageLoading } = usePwaApi<ExperiencesResponseTypes>({
+    api: pageInfo?.lastId ? `manshareeexperience/v3/category/${selectedCategoryId}/nextpage/${pageInfo.lastId}` : '',
+    method: 'GET',
+    fetchOnMount: false,
+    onSuccess: successHandler,
+    queryKey: ['experiences-next' + pageInfo?.lastId],
   });
 
   useEffect(() => {
-    // # Calls api on category change
     if (selectedCategoryId) {
-      callApi();
-      removeQuery({ queryKey: ['experiences'] });
+      removeQuery({
+        queryKey: ['experiences'],
+      });
+
+      getFirstPage();
     }
   }, [selectedCategoryId]);
 
-  useEffect(() => {
-    if (pageNo > 0 && !isLoading) {
-      callApi();
-    }
-  }, [pageNo, isLoading]);
+  const updateList = () => {
+    if (!pageInfo?.hasNext) return;
 
-  const updatePageNo = () => {
-    setPageNo((prev) => prev + 1);
+    if (requestLockRef.current) return;
+
+    requestLockRef.current = true;
+
+    getNextPage();
   };
 
-  return { isLoading, experiencesData, pageNo, totalCount, updatePageNo };
+  const isLoading = nextPageLoading || loading;
+  return {
+    isLoading,
+    experiencesData,
+    updateList,
+  };
 };
 
 export default useExperiences;

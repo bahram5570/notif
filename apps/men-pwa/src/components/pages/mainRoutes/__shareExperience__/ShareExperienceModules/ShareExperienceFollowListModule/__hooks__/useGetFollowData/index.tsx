@@ -3,17 +3,25 @@ import { useEffect, useState } from 'react';
 import { PAGE_SIZE } from '@repo/core/constants/app.constants';
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 
 import { FollowQueryDataType, FollowResponseType, UseGetFollowingDataPropsType } from './type';
 
 const useGetFollowData = ({ userId, pageType }: UseGetFollowingDataPropsType) => {
   const [pageNo, setPageNo] = useState(0);
-
+  const { accessOptionHandler } = useShareExperienceHandlers();
   const { newQuery, updateQuery, getQuery } = useCustomReactQuery([`${pageType}Data${userId}`]);
 
   const followQueryData = getQuery<FollowQueryDataType>({ queryKey: [`${pageType}Data${userId}`] });
 
   const successHandler = (v: FollowResponseType) => {
+    if (v.access.isBan) {
+      return accessOptionHandler({
+        isBan: v.access.isBan,
+        textMessage: v.access.textMessage,
+        btnText: v.access.btnText,
+      });
+    }
     if (followQueryData) {
       const list = { ...followQueryData, items: [...followQueryData.items, ...v.items] };
       updateQuery({ queryKey: [`${pageType}Data${userId}`], payload: list });

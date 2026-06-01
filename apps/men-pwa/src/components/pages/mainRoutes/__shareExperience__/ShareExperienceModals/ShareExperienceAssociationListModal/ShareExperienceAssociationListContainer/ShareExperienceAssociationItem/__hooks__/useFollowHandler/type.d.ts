@@ -1,6 +1,8 @@
+import { AccessType } from '@repo/core/components/ShareExperience';
+
 export type UseFollowHandlerPropsType = {
   isFollow: boolean;
   associationId: string;
 };
 
-export type SuccessHandlerPropsType = { valid: boolean };
+export type SuccessHandlerPropsType = AccessType & { valid: boolean };

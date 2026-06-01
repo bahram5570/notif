@@ -1,3 +1,5 @@
+import { AccessType } from '@repo/core/components/ShareExperience';
+
 import { ReplyGeneratorProps } from '../../types';
 
 export interface UseReplyListProps extends Pick<
@@ -9,7 +11,7 @@ type RepliesListTypes = Pick<UseReplyListProps, 'replies'>['replies'];
 
 export type DataRepliesListTypes = { repliesList: RepliesListTypes };
 
-export type RepliesListResponseTypes = {
+export type RepliesListResponseTypes = AccessType & {
   valid: boolean;
   totalCount: number;
   replies: RepliesListTypes;

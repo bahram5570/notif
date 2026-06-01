@@ -1,8 +1,7 @@
 import { Fragment } from 'react';
 
-import { InfiniteScrollContainer } from '@repo/core/components/infiniteScrollContainer';
-
-import { FOOTER_HEIGHT } from '@repo/core/constants/app.constants';
+import { InfiniteList } from '@repo/core/components/InfiniteList';
+import { Loading } from '@repo/core/components/ShareExperience';
 
 import ShareExperienceAssociationItemModal from '../../ShareExperienceModals/ShareExperienceAssociationItemModal';
 import ShareExperienceAssociationListModal from '../../ShareExperienceModals/ShareExperienceAssociationListModal';
@@ -34,10 +33,11 @@ const ShareExperienceExperiences = ({
   associationSectionTitle,
   associations,
 }: ShareExperienceExperiencesProps) => {
-  const { isLoading, experiencesData, pageNo, totalCount, updatePageNo } = useExperiences(selectedCategoryId);
+  const { isLoading, experiencesData, updateList } = useExperiences(selectedCategoryId);
 
   return (
     <>
+      {isLoading && experiencesData === undefined && <Loading />}
       {!isLoading && experiencesData && (
         <>
           <ShareExperienceNewExerciseModal
@@ -63,37 +63,38 @@ const ShareExperienceExperiences = ({
         </>
       )}
 
-      <InfiniteScrollContainer
-        pageNo={pageNo}
-        isLoading={isLoading}
-        totalCount={totalCount}
-        callBack={updatePageNo}
-        scrollContainerRef={scrollRef}
-        className="flex flex-col relative"
-        style={{ paddingBottom: FOOTER_HEIGHT * 2 }}
-      >
-        {experiencesData?.expirences.map((item, index) => {
-          return (
+      {experiencesData?.expirences && (
+        <InfiniteList
+          parentRef={scrollRef}
+          list={experiencesData?.expirences}
+          pagination={{
+            pageNo: undefined,
+            isLoading,
+            totalCount: undefined,
+            callPagination: updateList,
+            pageSize: undefined,
+          }}
+          renderItem={(item, index) => (
             <Fragment key={index}>
               {index === 1 && showAssociation && associations.length > 0 && (
                 <ShareExperienceAssociation
-                  associationSectionTitle={associationSectionTitle}
                   associations={associations}
+                  associationSectionTitle={associationSectionTitle}
                 />
               )}
 
               <ShareExperiencePostCardModules
                 {...item}
-                type="experiences"
-                shareId={item.id}
-                isSelf={item.selfExperience}
                 hasLinkTo={true}
-                className=" border-t-[1px] border-t-impo_Neutral_Surface z-0 px-4"
+                shareId={item.id}
+                type="experiences"
+                isSelf={item.selfExperience}
+                className="border-t-[1px] border-t-impo_Neutral_Surface z-0 px-4"
               />
             </Fragment>
-          );
-        })}
-      </InfiniteScrollContainer>
+          )}
+        />
+      )}
     </>
   );
 };

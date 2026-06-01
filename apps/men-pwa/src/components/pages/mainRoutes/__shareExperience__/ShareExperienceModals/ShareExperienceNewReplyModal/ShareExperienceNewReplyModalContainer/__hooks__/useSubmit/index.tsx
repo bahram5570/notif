@@ -3,6 +3,7 @@ import { CommentsResponseTypes, TopicExperiencesResponseTypes } from '@repo/core
 
 import { useCustomReactQuery } from '@repo/core/hooks/useCustomReactQuery';
 import { usePwaApi } from '@repo/core/hooks/usePwaApi';
+import { useShareExperienceHandlers } from '@repo/core/hooks/useShareExperienceHandlers';
 import { useRouter } from 'next/navigation';
 
 import { AssociationExperiencesResponseType } from '../../../../ShareExperienceAssociationItemModal/ShareExperienceAssociationItemContainer/__hooks__/useGetAssociationItemData/type';
@@ -13,11 +14,20 @@ import { NewCommentResponseTypes, NewReplyResponseTypes, UseSubmitProps } from '
 const useSubmit = ({ text, data }: UseSubmitProps) => {
   const router = useRouter();
   const { updateQuery, getQuery } = useCustomReactQuery();
+  const { accessOptionHandler } = useShareExperienceHandlers();
   let toast: string = '';
 
   const successHandler = (v: unknown) => {
     if (data.type === 'comment') {
       const response = v as NewCommentResponseTypes;
+
+      if (response.access.isBan) {
+        return accessOptionHandler({
+          isBan: response.access.isBan,
+          textMessage: response.access.textMessage,
+          btnText: response.access.btnText,
+        });
+      }
 
       if (!response.valid) {
         toast = response.toast;
@@ -71,6 +81,14 @@ const useSubmit = ({ text, data }: UseSubmitProps) => {
       }
     } else if (data.type === 'reply') {
       const response = v as NewReplyResponseTypes;
+
+      if (response.access.isBan) {
+        return accessOptionHandler({
+          isBan: response.access.isBan,
+          textMessage: response.access.textMessage,
+          btnText: response.access.btnText,
+        });
+      }
 
       const queryKey: [string] = [`repliesList ${data.shareId} ${data.commentId}`];
       const repliesData = getQuery<DataRepliesListTypes>({ queryKey: queryKey });
