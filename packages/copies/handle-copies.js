@@ -23,8 +23,3 @@ await filesCopyMaker({
   packageName: 'pwa api',
   destination: '../../apps/pwa/src/app/api',
 });
-await filesCopyMaker({
-  source: 'src/api/shared',
-  packageName: 'men-pwa api',
-  destination: '../../apps/men-pwa/src/app/api',
-});
