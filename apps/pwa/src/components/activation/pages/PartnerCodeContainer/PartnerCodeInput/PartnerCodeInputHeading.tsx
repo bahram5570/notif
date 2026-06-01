@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 
 import ActivationBackBtn from '@components/activation/ActivationBackBtn';
 import ActivationHeading from '@components/activation/ActivationHeading';
@@ -39,10 +39,9 @@ const PartnerCodeInputHeading = ({ title, description, isLargeScreen }: PartnerC
 
       <ActivationHeading scripts={scripts} orderOfQuestionScripts={scriptsOrder} />
 
-      <CustomImage
-        src="/assets/images/partnerCode.webp"
-        className="absolute top-5 left-0 right-0 bottom-0 z-10 pointer-events-none"
-      />
+      <div className="absolute top-5 left-0 right-0 bottom-0 z-10 pointer-events-none">
+        <CustomImage_NEW fill={true} src="/assets/images/partnerCode.webp" className="object-cover" />
+      </div>
     </>
   );
 };

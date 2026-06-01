@@ -1,5 +1,5 @@
 import { generateLinearGradient } from './utils';
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { PartnerCardPropsType } from './type';
@@ -51,7 +51,11 @@ const PartnerCard = ({ partner, valid }: PartnerCardPropsType) => {
               />
             )} */}
           </div>
-          {partner.cycleCard.image && <CustomImage src={partner.cycleCard.image} className="min-w-[60px] " />}
+          {partner.cycleCard.image && (
+            <div className="w-full relative aspect-square">
+              <CustomImage_NEW src={partner.cycleCard.image} fill />
+            </div>
+          )}
         </div>
 
         {partner.cycleCard.trailing && (

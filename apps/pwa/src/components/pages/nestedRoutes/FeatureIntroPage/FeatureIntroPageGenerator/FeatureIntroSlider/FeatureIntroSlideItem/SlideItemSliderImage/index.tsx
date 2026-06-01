@@ -1,4 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 
 import { SlideItemSliderImagePropsType } from './type';
 
@@ -21,7 +21,9 @@ const SlideItemSliderImage = ({ currentIndex, slides }: SlideItemSliderImageProp
                 width: '80%',
               }}
             >
-              <CustomImage src={item.media} alt={`Slide ${index + 1}`} className="w-full h-full object-cover" />
+              <div className="w-full relative aspect-square">
+                <CustomImage_NEW src={item.media} alt={`Slide ${index + 1}`} fill />
+              </div>
             </div>
           );
         })}

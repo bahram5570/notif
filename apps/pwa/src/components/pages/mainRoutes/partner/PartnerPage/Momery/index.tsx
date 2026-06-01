@@ -1,4 +1,4 @@
-import { CustomImage } from '@repo/core/components/ui/CustomImage';
+import { CustomImage_NEW } from '@repo/core/components/ui/CustomImage_NEW';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 import { textShorter } from '@repo/core/utils/scripts';
 
@@ -27,11 +27,11 @@ const Memory = ({ memory, valid }: MemeryPropsType) => {
         </CustomTypography>
       </div>
 
-      <div className="w-full relative" onClick={onClick}>
-        <CustomImage
+      <div className="w-full relative aspect-video " onClick={onClick}>
+        <CustomImage_NEW
           src={memory.image || '/assets/images/partner.webp'}
           className="w-full object-cover rounded-xl"
-          style={{ aspectRatio: '16/9' }}
+          fill
         />
       </div>
 
