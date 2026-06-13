@@ -59,28 +59,19 @@
   font-size: 19px;
 }
 
-.container ul,
-.container ol {
-  margin-right: 24px;
-}
-
 .container ul li,
 .container ol li {
   font-weight: 400;
   font-size: 13px;
   line-height: 280%;
   letter-spacing: -0.225px;
+  list-style-type: none;
 }
 
 .container ul li strong,
 .container ol li strong {
   font-weight: 600;
   font-size: 15px;
-}
-
-.container ul li,
-.container ol li {
-  list-style-type: none;
 }
 
 .container table {
