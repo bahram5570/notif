@@ -59,6 +59,11 @@
   font-size: 19px;
 }
 
+.container ul,
+.container ol {
+  padding: 8px;
+}
+
 .container ul li,
 .container ol li {
   font-weight: 400;

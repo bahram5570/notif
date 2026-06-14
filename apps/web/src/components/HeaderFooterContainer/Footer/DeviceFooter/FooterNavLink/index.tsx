@@ -45,6 +45,7 @@ const FooterNavLink = ({ className }: FooterNavLinkTypes) => {
                   flex 
                   items-center 
                   justify-between 
+                  gap-2
                   px-4 
                   shadow-2xl 
                   z-10 
@@ -76,7 +77,7 @@ const FooterNavLink = ({ className }: FooterNavLinkTypes) => {
           style={{ background: backgroundHandler(findCurrentBanner.btnData.color) }}
           className="rounded-full w-fit px-4 py-3 h-[38px] flex items-center justify-center gap-2 relative z-10"
         >
-          <CustomTypography fontSize="Lable_Medium" className="!text-impo_White">
+          <CustomTypography fontSize="Lable_Medium" className="!text-impo_White !whitespace-nowrap">
             {findCurrentBanner.btnData.btnLabel}
           </CustomTypography>
         </CustomLink>

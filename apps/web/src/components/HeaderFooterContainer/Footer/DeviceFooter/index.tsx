@@ -18,7 +18,6 @@ import { DeviceFooterTypes } from './types';
 
 const DeviceFooter = ({ isArticlePage, hasFooterLink }: DeviceFooterTypes) => {
   const pathname = usePathname();
-  console.log(pathname);
 
   return (
     <>

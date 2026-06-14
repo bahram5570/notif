@@ -133,14 +133,16 @@ export const handleBodyUpdate = async (body: string) => {
 
     // # Styling ul
     if (is_ul_Li) {
-      const bullet = $('<span class="w-[6px] h-[6px] rounded ml-3 inline-block bg-impo_Neutral_OnBackground"></span>');
+      const bullet = $('<span class="w-[6px] min-w-[6px] aspect-square rounded ml-3 bg-impo_Neutral_OnBackground" />');
       currentElement.prepend(bullet);
+      currentElement.addClass('flex items-baseline');
     }
 
     // # Styling ol
     if (is_ol_Li) {
       const number = $(`<span class="ml-3 inline-block text-impo_Neutral_OnBackground">${olCount}.</span>`);
       currentElement.prepend(number);
+      currentElement.addClass('flex items-baseline');
       olCount++;
     }
 
