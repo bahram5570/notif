@@ -1,7 +1,7 @@
 import './globals.css';
 
 import { getCultureCookie } from '@actions/userCookies.actions';
-import { FIREBASE_CONFIG, PORTAL_SPLASH_ID } from '@constants/app.constants';
+import { FIREBASE_CONFIG, FIREBASE_VAPID_KEY, PORTAL_SPLASH_ID } from '@constants/app.constants';
 import ErrorProvider from '@providers/ErrorProvider';
 import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
 import PwaWidgetActionsProvider from '@providers/PwaWidgetActionsProvider';
@@ -9,6 +9,7 @@ import { MAX_SCREEN_WIDTH, PORTAL_FEEDBACK_TOAST_ID, PORTAL_ID } from '@repo/cor
 import { CultureProvider } from '@repo/core/providers/CultureProvider';
 import { MonitoringProvider } from '@repo/core/providers/MonitoringProvider';
 import { PageNavigationProvider } from '@repo/core/providers/PageNavigationProvider';
+import { PermissionsProvider } from '@repo/core/providers/PermissionsProvider';
 import { PreviewImageProvider } from '@repo/core/providers/PreviewImageProvider';
 import { ReactQueryProvider } from '@repo/core/providers/ReactQueryProvider';
 import { ServiceWorkerProvider } from '@repo/core/providers/ServiceWorkerProvider';
@@ -80,6 +81,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
                             <div id={PORTAL_SPLASH_ID} />
                             <div id={PORTAL_ID} />
                             <div id={PORTAL_FEEDBACK_TOAST_ID} />
+                            <PermissionsProvider firebaseConfigs={FIREBASE_CONFIG} vapidKey={FIREBASE_VAPID_KEY} />
                           </ServiceWorkerProvider>
                         </PwaWidgetActionsProvider>
                       </PageNavigationProvider>

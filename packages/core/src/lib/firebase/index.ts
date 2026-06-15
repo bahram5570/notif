@@ -27,17 +27,14 @@ export const firebaseTokenHandler = async (props: FirebaseTokenHandlerTypes) => 
       if (!token && messaging) {
         const registration = await navigator.serviceWorker.getRegistration();
 
-        const ft = await getToken(messaging, {
-          vapidKey: props.vapidKey,
-          serviceWorkerRegistration: registration,
-        });
+        if (registration) {
+          const ft = await getToken(messaging, {
+            vapidKey: props.vapidKey,
+            serviceWorkerRegistration: registration,
+          });
 
-        if (ft) {
-          await actions.setFirebaseTokenCookie(ft);
-
-          // # Reset the app to set the firebase token on user
-          const user = await actions.getUserCookie();
-          if (user) {
+          if (ft) {
+            await actions.setFirebaseTokenCookie(ft);
             props.onReload();
           }
         }

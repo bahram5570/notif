@@ -9,7 +9,7 @@ import { MessagePayload, onMessage } from 'firebase/messaging';
 
 import { STORED_NOTIFICATIONS_CACHE_NAME } from '../../constants/app.constants';
 import { useWidgetActions } from '../../hooks/useWidgetActions';
-// import { getFirebaseMessaging } from '../../lib/firebase';
+import { getFirebaseMessaging } from '../../lib/firebase';
 import { NotificationsDataTypes, ServiceWorkerProviderTypes } from './types';
 
 export const ServiceWorkerProvider = ({ children, firebaseConfigs }: ServiceWorkerProviderTypes) => {
@@ -51,13 +51,13 @@ export const ServiceWorkerProvider = ({ children, firebaseConfigs }: ServiceWork
         await navigator.serviceWorker.register('/serviceWorker.js').then(async () => {
           // # Initializes Firebase Messaging to handle push notifications when the app is open
 
-          // await getFirebaseMessaging(firebaseConfigs).then((messaging) => {
-          //   if (messaging) {
-          //     onMessage(messaging, (payload) => {
-          //       handleAppNotification(payload);
-          //     });
-          //   }
-          // });
+          await getFirebaseMessaging(firebaseConfigs).then((messaging) => {
+            if (messaging) {
+              onMessage(messaging, (payload) => {
+                handleAppNotification(payload);
+              });
+            }
+          });
 
           // # Handle notification action after the app is open by getting data from cache
 

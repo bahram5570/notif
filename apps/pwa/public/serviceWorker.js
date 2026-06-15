@@ -1,5 +1,5 @@
-// importScripts('https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js');
-// importScripts('https://www.gstatic.com/firebasejs/11.6.0/firebase-messaging-compat.js');
+importScripts('https://www.gstatic.com/firebasejs/11.6.0/firebase-app-compat.js');
+importScripts('https://www.gstatic.com/firebasejs/11.6.0/firebase-messaging-compat.js');
 
 const STORED_NOTIFICATION_CACHE_NAME = 'storedNotification';
 const OFFLINE_CACHE_NAME = 'offlinePage';
@@ -77,70 +77,70 @@ self.addEventListener('fetch', (event) => {
 
 // // # Firebase setup
 
-// const firebaseConfig = {
-//   appId: '1:497330213206:web:538d02ea2d3155564086f7',
-//   apiKey: 'AIzaSyDE0iz1eBW9Ku2do2kKmsJnUj6tvB4_Z2U',
-//   databaseURL: 'https://impo-53eb6.firebaseio.com',
-//   authDomain: 'impo-53eb6.firebaseapp.com',
-//   storageBucket: 'impo-53eb6.appspot.com',
-//   messagingSenderId: '497330213206',
-//   measurementId: 'G-ESJG2B6KLW',
-//   projectId: 'impo-53eb6',
-// };
+const firebaseConfig = {
+  appId: '1:497330213206:web:538d02ea2d3155564086f7',
+  apiKey: 'AIzaSyDE0iz1eBW9Ku2do2kKmsJnUj6tvB4_Z2U',
+  databaseURL: 'https://impo-53eb6.firebaseio.com',
+  authDomain: 'impo-53eb6.firebaseapp.com',
+  storageBucket: 'impo-53eb6.appspot.com',
+  messagingSenderId: '497330213206',
+  measurementId: 'G-ESJG2B6KLW',
+  projectId: 'impo-53eb6',
+};
 
-// firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
-// const messaging = firebase.messaging();
+const messaging = firebase.messaging();
 
-// messaging.onBackgroundMessage((payload) => {
-//   self.registration.showNotification(payload.data?.title || '', {
-//     icon: '/assets/shared/icons/impoLogo.svg',
-//     body: payload.data?.message || '',
-//     image: payload.data?.image || '',
-//     data: payload.data,
-//   });
-// });
+messaging.onBackgroundMessage((payload) => {
+  self.registration.showNotification(payload.data?.title || '', {
+    icon: '/assets/shared/icons/impoLogo.svg',
+    body: payload.data?.message || '',
+    image: payload.data?.image || '',
+    data: payload.data,
+  });
+});
 
-// self.addEventListener('message', (event) => {
-//   // # Gets notification that made in app
-//   const payload = event.data?.payload;
-//   if (event.data?.actionType !== 'APP_NOTIFICATION_CLICK' || !payload) {
-//     return;
-//   }
+self.addEventListener('message', (event) => {
+  // # Gets notification that made in app
+  const payload = event.data?.payload;
+  if (event.data?.actionType !== 'APP_NOTIFICATION_CLICK' || !payload) {
+    return;
+  }
 
-//   self.registration.showNotification(payload?.title || '', {
-//     icon: '/assets/shared/icons/impoLogo.svg',
-//     body: payload?.message || '',
-//     data: event.data,
-//   });
-// });
+  self.registration.showNotification(payload?.title || '', {
+    icon: '/assets/shared/icons/impoLogo.svg',
+    body: payload?.message || '',
+    data: event.data,
+  });
+});
 
-// self.addEventListener('notificationclick', (event) => {
-//   event.notification.close();
+self.addEventListener('notificationclick', (event) => {
+  event.notification.close();
 
-//   event.waitUntil(
-//     clients.matchAll({ type: 'window', includeUncontrolled: true }).then((allCliensts) => {
-//       const actionType = event.notification?.data?.actionType;
+  event.waitUntil(
+    clients.matchAll({ type: 'window', includeUncontrolled: true }).then((allCliensts) => {
+      const actionType = event.notification?.data?.actionType;
 
-//       // # Handle notification click if app is open
-//       if (actionType === 'APP_NOTIFICATION_CLICK') {
-//         allCliensts.forEach((client) => {
-//           client.postMessage(event.notification.data);
-//         });
+      // # Handle notification click if app is open
+      if (actionType === 'APP_NOTIFICATION_CLICK') {
+        allCliensts.forEach((client) => {
+          client.postMessage(event.notification.data);
+        });
 
-//         return;
-//       }
+        return;
+      }
 
-//       // # Open app when it's closed
-//       caches.open(STORED_NOTIFICATION_CACHE_NAME).then((cache) => {
-//         const res = new Response(JSON.stringify(event.notification.data), {
-//           headers: { 'Content-Type': 'application/json' },
-//         });
+      // # Open app when it's closed
+      caches.open(STORED_NOTIFICATION_CACHE_NAME).then((cache) => {
+        const res = new Response(JSON.stringify(event.notification.data), {
+          headers: { 'Content-Type': 'application/json' },
+        });
 
-//         return cache.put(STORED_NOTIFICATION_CACHE_NAME, res);
-//       });
+        return cache.put(STORED_NOTIFICATION_CACHE_NAME, res);
+      });
 
-//       clients.openWindow('/');
-//     }),
-//   );
-// });
+      clients.openWindow('/');
+    }),
+  );
+});
