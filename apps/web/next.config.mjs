@@ -28,6 +28,9 @@ const nextConfig = {
       {
         hostname: '195.88.208.143',
       },
+      {
+        hostname: '45.159.112.80',
+      },
     ],
   },
 

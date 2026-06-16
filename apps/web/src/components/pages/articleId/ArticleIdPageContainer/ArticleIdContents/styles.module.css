@@ -62,6 +62,19 @@
 .container ul,
 .container ol {
   padding: 8px;
+  margin-right: 16px;
+}
+
+.container ul {
+  list-style: disc;
+}
+
+@counter-style persian {
+  system: numeric;
+  symbols: '۰' '۱' '۲' '۳' '۴' '۵' '۶' '۷' '۸' '۹';
+}
+.container ol {
+  list-style: persian;
 }
 
 .container ul li,
@@ -70,7 +83,6 @@
   font-size: 13px;
   line-height: 280%;
   letter-spacing: -0.225px;
-  list-style-type: none;
 }
 
 .container ul li strong,

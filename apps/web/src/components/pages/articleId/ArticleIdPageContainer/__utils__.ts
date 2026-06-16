@@ -114,7 +114,6 @@ export const handleBodyUpdate = async (body: string) => {
 
   const $ = cheerio.load(result);
 
-  let olCount = 1;
   let articleSubjectIdCount = 1;
   const articleSubjectList: ArticleSubjectListTypes = [];
 
@@ -127,24 +126,7 @@ export const handleBodyUpdate = async (body: string) => {
     const isTh = currentElement.is('th');
     const isLink = currentElement.is('a');
     const isImg = currentElement.is('img');
-    const is_ol_Li = currentElement.is('ol li');
-    const is_ul_Li = currentElement.is('ul li');
     const isNoCheerioStyling = currentElement.attr('data-no-cheerio-styling');
-
-    // # Styling ul
-    if (is_ul_Li) {
-      const bullet = $(
-        '<p class="inline-block ml-3 bg-impo_Neutral_OnBackground w-[6px] min-w-[6px] aspect-square rounded" />',
-      );
-      currentElement.prepend(bullet);
-    }
-
-    // # Styling ol
-    if (is_ol_Li) {
-      const number = $(`<p class="inline-block ml-3 text-impo_Neutral_OnBackground">${olCount}.</p>`);
-      currentElement.prepend(number);
-      olCount++;
-    }
 
     // # Making subjects list (table of contents - TOC)
     if (isH2 || isH3) {

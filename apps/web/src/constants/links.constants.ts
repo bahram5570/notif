@@ -9,23 +9,6 @@ export const HOST_URL = process.env.NEXT_PUBLIC_HOST_URL || '';
 export const SERVER_URL = process.env.NEXT_PUBLIC_SERVER_URL || '';
 
 export const OLD_OPEN_APP_LINKS = ['/privacy.html', '/impoMenManual.html'];
-export const EXCLUDE_EXTENSIONS = [
-  'js',
-  'css',
-  'png',
-  'jpg',
-  'jpeg',
-  'webp',
-  'heic',
-  'gif',
-  'svg',
-  'ico',
-  'woff',
-  'woff2',
-  'ttf',
-  'eot',
-  'map',
-];
 
 // # Android download links
 export const MYKET_LINK_WOMEN_URL = 'https://myket.ir/app/ir.duck.impo';
