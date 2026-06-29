@@ -56,14 +56,22 @@ export const PermissionsProvider = ({ firebaseConfigs, vapidKey }: PermissionsPr
     accessHandler();
   }, [operatingSystem, isAddToHome]);
 
+  const requ = async () => {
+    await Notification.requestPermission();
+  };
+
   return (
     <div className="w-full p-4 bg-red-600 text-white flex flex-col gap-4">
-      <div>{`isAddToHome = ${JSON.stringify(isAddToHome)}`}</div>
-      <div>{`operatingSystem = ${JSON.stringify(operatingSystem)}`}</div>
-      <div>{`'Notification' in window = ${JSON.stringify('Notification' in window)}`}</div>
-      <div>{`notificationPermission = ${JSON.stringify(notificationPermission)}`}</div>
-      <div>{`ft = ${JSON.stringify(ft)}`}</div>
-      <div>{`list = ${JSON.stringify(list)}`}</div>
+      <div className="w-full h-10 bg-yellow-300 flex items-center justify-center" onClick={requ}>
+        Request
+      </div>
+
+      <div>{`isAddToHome ---> ${JSON.stringify(isAddToHome)}`}</div>
+      <div>{`operatingSystem ---> ${JSON.stringify(operatingSystem)}`}</div>
+      <div>{`'Notification' in window ---> ${JSON.stringify('Notification' in window)}`}</div>
+      <div>{`notificationPermission ---> ${JSON.stringify(notificationPermission)}`}</div>
+      <div>{`ft ---> ${JSON.stringify(ft)}`}</div>
+      <div>{`list ---> ${JSON.stringify(list)}`}</div>
     </div>
   );
 };
