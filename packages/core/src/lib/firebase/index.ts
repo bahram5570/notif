@@ -24,6 +24,10 @@ export const firebaseTokenHandler = async (props: FirebaseTokenHandlerTypes) => 
       const token = await actions.getFirebaseTokenCookie();
       const messaging = await getFirebaseMessaging(props.firebaseConfigs);
 
+      if (token) {
+        props.onFt(token);
+      }
+
       if (!token && messaging) {
         const registration = await navigator.serviceWorker.getRegistration();
 

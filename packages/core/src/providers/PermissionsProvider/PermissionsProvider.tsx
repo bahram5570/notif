@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { isDevelopeMode } from '../../utils/system';
 
@@ -12,10 +12,19 @@ export const PermissionsProvider = ({ firebaseConfigs, vapidKey }: PermissionsPr
   const isFirstTime = useRef(isDevelopeMode());
   const { operatingSystem, isAddToHome } = useSystem();
 
+  const [list, setList] = useState<number[]>([]);
+  const [notificationPermission, setNotificationPermission] = useState('');
+  const [ft, setFt] = useState('');
+
   const permissionHandler = async () => {
     await Notification.requestPermission().then(async (result) => {
+      setList((state) => [...state, 5]);
+      setNotificationPermission(result);
+
       if (result === 'granted') {
-        await firebaseTokenHandler({ firebaseConfigs, vapidKey });
+        setList((state) => [...state, 6]);
+        await firebaseTokenHandler({ firebaseConfigs, vapidKey, onFt: setFt });
+        setList((state) => [...state, 7]);
       }
     });
   };
@@ -28,12 +37,18 @@ export const PermissionsProvider = ({ firebaseConfigs, vapidKey }: PermissionsPr
 
     const accessHandler = async () => {
       if ('Notification' in window && isAddToHome !== null) {
+        setList((state) => [...state, 0]);
+
         if (operatingSystem === 'ios' && isAddToHome) {
+          setList((state) => [...state, 1]);
           await permissionHandler();
+          setList((state) => [...state, 2]);
         }
 
         if (operatingSystem === 'android' || operatingSystem === 'windows') {
+          setList((state) => [...state, 3]);
           await permissionHandler();
+          setList((state) => [...state, 4]);
         }
       }
     };
@@ -41,5 +56,14 @@ export const PermissionsProvider = ({ firebaseConfigs, vapidKey }: PermissionsPr
     accessHandler();
   }, [operatingSystem, isAddToHome]);
 
-  return <></>;
+  return (
+    <div className="w-full p-4 bg-red-600 text-white flex flex-col gap-4">
+      <div>{`isAddToHome = ${JSON.stringify(isAddToHome)}`}</div>
+      <div>{`operatingSystem = ${JSON.stringify(operatingSystem)}`}</div>
+      <div>{`'Notification' in window = ${JSON.stringify('Notification' in window)}`}</div>
+      <div>{`notificationPermission = ${JSON.stringify(notificationPermission)}`}</div>
+      <div>{`ft = ${JSON.stringify(ft)}`}</div>
+      <div>{`list = ${JSON.stringify(list)}`}</div>
+    </div>
+  );
 };

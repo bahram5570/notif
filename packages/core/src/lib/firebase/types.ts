@@ -10,6 +10,7 @@ export type FirebaseConfigsTypes = {
 };
 
 export interface FirebaseTokenHandlerTypes {
+  onFt: (v: string) => void;
   firebaseConfigs: FirebaseConfigsTypes;
   vapidKey: string;
 }
