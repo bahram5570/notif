@@ -58,7 +58,7 @@ export const PermissionsProvider = ({ firebaseConfigs, vapidKey }: PermissionsPr
 
   const requ = async () => {
     await Notification.requestPermission().then(async (result) => {
-      setNotificationPermission('click --- ' + result);
+      setNotificationPermission('click ' + result);
     });
   };
 
