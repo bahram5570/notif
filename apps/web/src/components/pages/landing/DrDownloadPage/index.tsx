@@ -1,4 +1,4 @@
-import InfoIcon from '@assets/icons/Info.svg';
+import InfoIcon from '@assets/icons/info.svg';
 import MockupDrDownload from '@assets/images/mockupDrDownload.webp';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
