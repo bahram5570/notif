@@ -11,6 +11,5 @@ export type FirebaseConfigsTypes = {
 
 export interface FirebaseTokenHandlerTypes {
   firebaseConfigs: FirebaseConfigsTypes;
-  onReload: () => void;
   vapidKey: string;
 }

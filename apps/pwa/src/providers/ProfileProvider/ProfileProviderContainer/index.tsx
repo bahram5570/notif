@@ -4,9 +4,9 @@ import { createContext } from 'react';
 
 import useSubscriptionGuard from '@hooks/useSubscriptionGuard';
 
-import useGetProfileData from './__hooks__/useGetProfileData';
-import usePhaseFinder from './__hooks__/usePhaseFinder';
-import { ProfileContextTypes } from './type';
+import useGetProfileData from '../__hooks__/useGetProfileData';
+import usePhaseFinder from '../__hooks__/usePhaseFinder';
+import { ProfileContextTypes } from '../type';
 
 export const ProfileContext = createContext<ProfileContextTypes>({
   phase: undefined,

@@ -3,6 +3,7 @@ import { pwaHttp } from '@repo/core/utils/pwaHttp';
 import { APP_VERSION } from '@repo/core/constants/app.constants';
 import { HydrationBoundary, QueryClient, dehydrate } from '@tanstack/react-query';
 
+import HandleLoginProvider from './HandleLoginProvider';
 import ProfileProviderContainer from './ProfileProviderContainer';
 import { ProfileResponseTypes } from './__hooks__/useGetProfileData/type';
 
@@ -26,6 +27,8 @@ const ProfileProvider = async ({ children }: { children: React.ReactNode }) => {
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
+      <HandleLoginProvider />
+
       <ProfileProviderContainer>
         <>{children}</>
       </ProfileProviderContainer>

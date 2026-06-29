@@ -12,14 +12,10 @@ export const PermissionsProvider = ({ firebaseConfigs, vapidKey }: PermissionsPr
   const isFirstTime = useRef(isDevelopeMode());
   const { operatingSystem, isAddToHome } = useSystem();
 
-  const reloadHandler = () => {
-    window.location.reload();
-  };
-
   const permissionHandler = async () => {
     await Notification.requestPermission().then(async (result) => {
       if (result === 'granted') {
-        await firebaseTokenHandler({ firebaseConfigs, vapidKey, onReload: reloadHandler });
+        await firebaseTokenHandler({ firebaseConfigs, vapidKey });
       }
     });
   };

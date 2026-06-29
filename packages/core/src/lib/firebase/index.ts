@@ -35,7 +35,6 @@ export const firebaseTokenHandler = async (props: FirebaseTokenHandlerTypes) => 
 
           if (ft) {
             await actions.setFirebaseTokenCookie(ft);
-            props.onReload();
           }
         }
       }

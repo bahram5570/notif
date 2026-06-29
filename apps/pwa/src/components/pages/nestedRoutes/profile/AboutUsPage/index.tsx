@@ -1,7 +1,11 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+
 import { MainPageLayout } from '@repo/core/components/MainPageLayout';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+
+import { getFirebaseTokenCookie } from '@actions/userCookies.actions';
 
 import LinkGenerator from './LinkGenerator';
 import { LINK_SOCIAL_LIST } from './constants';
@@ -54,9 +58,35 @@ const AboutUsPage = () => {
             return <LinkGenerator {...item} key={index} />;
           })}
         </div>
+
+        <Tem />
       </div>
     </MainPageLayout>
   );
 };
 
 export default AboutUsPage;
+
+const Tem = () => {
+  const [access, setAccess] = useState(false);
+  const [ft, setFt] = useState(false);
+
+  useEffect(() => {
+    const getData = async () => {
+      const token = await getFirebaseTokenCookie();
+      const acc = Notification.permission === 'granted';
+
+      setAccess(acc);
+      setFt(Boolean(token));
+    };
+
+    getData();
+  }, []);
+
+  return (
+    <div className="flex gap-2">
+      {access && <div className="w-1 h-1 bg-green-400" />}
+      {ft && <div className="w-1 h-1 bg-red-400" />}
+    </div>
+  );
+};
