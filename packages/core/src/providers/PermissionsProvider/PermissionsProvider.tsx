@@ -63,7 +63,7 @@ export const PermissionsProvider = ({ firebaseConfigs, vapidKey }: PermissionsPr
   };
 
   return (
-    <div className="w-full p-4 !pb-52 bg-red-600 text-white flex flex-col gap-4">
+    <div className="w-full p-4 !pb-80 bg-red-600 text-white flex flex-col gap-4">
       <div className="w-full h-10 bg-yellow-500 flex items-center justify-center" onClick={requ}>
         Request
       </div>

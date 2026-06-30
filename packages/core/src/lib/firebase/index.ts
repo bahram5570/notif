@@ -32,6 +32,8 @@ export const firebaseTokenHandler = async (props: FirebaseTokenHandlerTypes) => 
         const registration = await navigator.serviceWorker.getRegistration();
 
         if (registration) {
+          props.onFt('pending ...');
+
           try {
             const ft = await getToken(messaging, {
               vapidKey: props.vapidKey,
