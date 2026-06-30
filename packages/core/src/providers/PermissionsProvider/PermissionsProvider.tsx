@@ -44,35 +44,48 @@ export const PermissionsProvider = ({ firebaseConfigs, vapidKey }: PermissionsPr
     });
   };
 
-  useEffect(() => {
-    if (isFirstTime.current) {
-      isFirstTime.current = false;
-      return;
-    }
+  // useEffect(() => {
+  //   if (isFirstTime.current) {
+  //     isFirstTime.current = false;
+  //     return;
+  //   }
 
-    const accessHandler = async () => {
-      if ('Notification' in window && isAddToHome !== null) {
-        setList((state) => [...state, 0]);
+  //   const accessHandler = async () => {
+  //     if ('Notification' in window && isAddToHome !== null) {
+  //       setList((state) => [...state, 0]);
 
-        if (operatingSystem === 'ios' && isAddToHome) {
-          setList((state) => [...state, 1]);
-          await permissionHandler();
-          setList((state) => [...state, 2]);
-        }
+  //       if (operatingSystem === 'ios' && isAddToHome) {
+  //         setList((state) => [...state, 1]);
+  //         await permissionHandler();
+  //         setList((state) => [...state, 2]);
+  //       }
 
-        if (operatingSystem === 'android' || operatingSystem === 'windows') {
-          setList((state) => [...state, 3]);
-          await permissionHandler();
-          setList((state) => [...state, 4]);
-        }
-      }
-    };
+  //       if (operatingSystem === 'android' || operatingSystem === 'windows') {
+  //         setList((state) => [...state, 3]);
+  //         await permissionHandler();
+  //         setList((state) => [...state, 4]);
+  //       }
+  //     }
+  //   };
 
-    accessHandler();
-  }, [operatingSystem, isAddToHome]);
+  //   accessHandler();
+  // }, [operatingSystem, isAddToHome]);
 
   const requ = async () => {
-    await Notification.requestPermission();
+    await Notification.requestPermission().then(async (result) => {
+      if (result === 'granted') {
+        await firebaseTokenHandler({
+          firebaseConfigs,
+          vapidKey,
+          onFt: setFt,
+          onMessaging: setMess,
+          onRegister: setReg,
+          onPermission: setNotificationPermission,
+          onNotifInWindow: setNotifInWindow,
+          onIsServiceWorkerReady: setIsServiceWorkerReady,
+        });
+      }
+    });
 
     // await Notification.requestPermission().then(async (result) => {
     //   setNotificationPermission(result);
@@ -82,7 +95,7 @@ export const PermissionsProvider = ({ firebaseConfigs, vapidKey }: PermissionsPr
   return (
     <div className="w-full p-4 !pb-80 bg-red-600 text-white flex flex-col gap-4">
       <div className="w-full h-10 bg-yellow-500 flex items-center justify-center" onClick={requ}>
-        Request
+        Request - i
       </div>
 
       <div>{`isAddToHome ---> ${JSON.stringify(isAddToHome)}`}</div>

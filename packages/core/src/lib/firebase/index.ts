@@ -32,7 +32,7 @@ export const firebaseTokenHandler = async ({
   if ('Notification' in window && Notification.permission === 'granted') {
     const isServiceWorkerReady = await navigator.serviceWorker.ready;
 
-    onIsServiceWorkerReady(`${isServiceWorkerReady}`);
+    onIsServiceWorkerReady(`${Boolean(isServiceWorkerReady)}`);
 
     if (isServiceWorkerReady) {
       const token = await actions.getFirebaseTokenCookie();
