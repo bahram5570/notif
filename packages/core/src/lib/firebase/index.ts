@@ -32,14 +32,26 @@ export const firebaseTokenHandler = async (props: FirebaseTokenHandlerTypes) => 
         const registration = await navigator.serviceWorker.getRegistration();
 
         if (registration) {
-          const ft = await getToken(messaging, {
-            vapidKey: props.vapidKey,
-            serviceWorkerRegistration: registration,
-          });
+          try {
+            const ft = await getToken(messaging, {
+              vapidKey: props.vapidKey,
+              serviceWorkerRegistration: registration,
+            });
 
-          if (ft) {
             await actions.setFirebaseTokenCookie(ft);
+            props.onFt(ft);
+          } catch (error) {
+            props.onFt(JSON.stringify(error));
           }
+
+          // const ft = await getToken(messaging, {
+          //   vapidKey: props.vapidKey,
+          //   serviceWorkerRegistration: registration,
+          // });
+
+          // if (ft) {
+          //   await actions.setFirebaseTokenCookie(ft);
+          // }
         }
       }
     }
