@@ -22,14 +22,32 @@ export const firebaseTokenHandler = async (props: FirebaseTokenHandlerTypes) => 
 
     if (isServiceWorkerReady) {
       const token = await actions.getFirebaseTokenCookie();
-      const messaging = await getFirebaseMessaging(props.firebaseConfigs);
+      const messaging = await getFirebaseMessaging(props.firebaseConfigs)
+        .then((m) => {
+          props.onMessaging('ok');
+          return m;
+        })
+        .catch((err) => {
+          props.onMessaging(JSON.stringify(err));
+          return null;
+        });
 
       if (token) {
         props.onFt(token);
       }
 
       if (!token && messaging) {
-        const registration = await navigator.serviceWorker.getRegistration();
+        const registration = await navigator.serviceWorker
+          .getRegistration()
+          .then((re) => {
+            props.onRegister('true');
+            return re;
+          })
+          .catch((err) => {
+            console.log(err);
+            props.onRegister('false');
+            return undefined;
+          });
 
         if (registration) {
           props.onFt('pending ...');

@@ -15,6 +15,8 @@ export const PermissionsProvider = ({ firebaseConfigs, vapidKey }: PermissionsPr
   const [list, setList] = useState<number[]>([]);
   const [notificationPermission, setNotificationPermission] = useState('');
   const [ft, setFt] = useState('');
+  const [mess, setMess] = useState('');
+  const [reg, setReg] = useState('');
 
   const permissionHandler = async () => {
     await Notification.requestPermission().then(async (result) => {
@@ -23,7 +25,13 @@ export const PermissionsProvider = ({ firebaseConfigs, vapidKey }: PermissionsPr
 
       if (result === 'granted') {
         setList((state) => [...state, 6]);
-        await firebaseTokenHandler({ firebaseConfigs, vapidKey, onFt: setFt });
+        await firebaseTokenHandler({
+          firebaseConfigs,
+          vapidKey,
+          onFt: setFt,
+          onMessaging: setMess,
+          onRegister: setReg,
+        });
         setList((state) => [...state, 7]);
       }
     });
@@ -70,9 +78,11 @@ export const PermissionsProvider = ({ firebaseConfigs, vapidKey }: PermissionsPr
 
       <div>{`isAddToHome ---> ${JSON.stringify(isAddToHome)}`}</div>
       <div>{`operatingSystem ---> ${JSON.stringify(operatingSystem)}`}</div>
-      <div>{`'Notification' in window ---> ${JSON.stringify('Notification' in window)}`}</div>
-      <div>{`notificationPermission ---> ${JSON.stringify(notificationPermission)}`}</div>
-      <div>{`ft ---> ${JSON.stringify(ft)}`}</div>
+      <div>{`'Notification' in window ---> ${'Notification' in window}`}</div>
+      <div>{`notificationPermission ---> ${notificationPermission}`}</div>
+      <div>{`ft ---> ${ft}`}</div>
+      <div>{`messaging ---> ${mess}`}</div>
+      <div>{`registration ---> ${reg}`}</div>
       <div>{`list ---> ${JSON.stringify(list)}`}</div>
     </div>
   );
