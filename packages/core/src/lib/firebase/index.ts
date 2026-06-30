@@ -16,52 +16,67 @@ export const getFirebaseMessaging = async (firebaseConfig: FirebaseConfigsTypes)
   return getMessaging(fireBaseApp);
 };
 
-export const firebaseTokenHandler = async (props: FirebaseTokenHandlerTypes) => {
+export const firebaseTokenHandler = async ({
+  firebaseConfigs,
+  onFt,
+  onMessaging,
+  onPermission,
+  onRegister,
+  vapidKey,
+  onNotifInWindow,
+  onIsServiceWorkerReady,
+}: FirebaseTokenHandlerTypes) => {
+  onPermission(Notification.permission);
+  onNotifInWindow(`${'Notification' in window}`);
+
   if ('Notification' in window && Notification.permission === 'granted') {
     const isServiceWorkerReady = await navigator.serviceWorker.ready;
 
+    onIsServiceWorkerReady(`${isServiceWorkerReady}`);
+
     if (isServiceWorkerReady) {
       const token = await actions.getFirebaseTokenCookie();
-      const messaging = await getFirebaseMessaging(props.firebaseConfigs)
+
+      const messaging = await getFirebaseMessaging(firebaseConfigs)
         .then((m) => {
-          props.onMessaging('ok');
+          onMessaging('ok');
           return m;
         })
         .catch((err) => {
-          props.onMessaging(JSON.stringify(err));
+          onMessaging(JSON.stringify(err));
           return null;
         });
 
       if (token) {
-        props.onFt(token);
+        onFt(token);
       }
 
       if (!token && messaging) {
         const registration = await navigator.serviceWorker
           .getRegistration()
           .then((re) => {
-            props.onRegister('true');
+            onRegister('true');
             return re;
           })
           .catch((err) => {
             console.log(err);
-            props.onRegister('false');
+            onRegister('false');
             return undefined;
           });
 
         if (registration) {
-          props.onFt('pending ...');
+          onFt('pending ...');
 
           try {
             const ft = await getToken(messaging, {
-              vapidKey: props.vapidKey,
+              vapidKey: vapidKey,
               serviceWorkerRegistration: registration,
             });
 
             await actions.setFirebaseTokenCookie(ft);
-            props.onFt(ft);
+            onFt(ft);
           } catch (error) {
-            props.onFt(JSON.stringify(error));
+            onFt(JSON.stringify(error));
           }
 
           // const ft = await getToken(messaging, {

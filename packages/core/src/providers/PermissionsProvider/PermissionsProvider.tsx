@@ -17,21 +17,28 @@ export const PermissionsProvider = ({ firebaseConfigs, vapidKey }: PermissionsPr
   const [ft, setFt] = useState('');
   const [mess, setMess] = useState('');
   const [reg, setReg] = useState('');
+  const [notifInWindow, setNotifInWindow] = useState('');
+  const [isServiceWorkerReady, setIsServiceWorkerReady] = useState('');
 
   const permissionHandler = async () => {
     await Notification.requestPermission().then(async (result) => {
       setList((state) => [...state, 5]);
-      setNotificationPermission(result);
+      // setNotificationPermission(result);
 
       if (result === 'granted') {
         setList((state) => [...state, 6]);
+
         await firebaseTokenHandler({
           firebaseConfigs,
           vapidKey,
           onFt: setFt,
           onMessaging: setMess,
           onRegister: setReg,
+          onPermission: setNotificationPermission,
+          onNotifInWindow: setNotifInWindow,
+          onIsServiceWorkerReady: setIsServiceWorkerReady,
         });
+
         setList((state) => [...state, 7]);
       }
     });
@@ -65,9 +72,11 @@ export const PermissionsProvider = ({ firebaseConfigs, vapidKey }: PermissionsPr
   }, [operatingSystem, isAddToHome]);
 
   const requ = async () => {
-    await Notification.requestPermission().then(async (result) => {
-      setNotificationPermission('click ' + result);
-    });
+    await Notification.requestPermission();
+
+    // await Notification.requestPermission().then(async (result) => {
+    //   setNotificationPermission(result);
+    // });
   };
 
   return (
@@ -78,8 +87,9 @@ export const PermissionsProvider = ({ firebaseConfigs, vapidKey }: PermissionsPr
 
       <div>{`isAddToHome ---> ${JSON.stringify(isAddToHome)}`}</div>
       <div>{`operatingSystem ---> ${JSON.stringify(operatingSystem)}`}</div>
-      <div>{`'Notification' in window ---> ${'Notification' in window}`}</div>
+      <div>{`'Notification' in window ---> ${notifInWindow}`}</div>
       <div>{`notificationPermission ---> ${notificationPermission}`}</div>
+      <div>{`isServiceWorkerReady ---> ${isServiceWorkerReady}`}</div>
       <div>{`ft ---> ${ft}`}</div>
       <div>{`messaging ---> ${mess}`}</div>
       <div>{`registration ---> ${reg}`}</div>
