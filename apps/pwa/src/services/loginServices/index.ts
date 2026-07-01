@@ -1,8 +1,8 @@
 import { getExpireDate } from '@repo/core/utils/cookies';
 
 import { FetchedUserTypes } from '@components/activation/CompleteRegisterContainer/types';
-import { FIREBASE_COOKIE_NAME, USER_COOKIE_NAME, USER_INFO_COOKIE_NAME } from '@constants/cookie.constants';
 import { ACTIVATION_CR_REGISTER_QUERY_NAME } from '@constants/routes.constants';
+import { FIREBASE_COOKIE_NAME, USER_COOKIE_NAME, USER_INFO_COOKIE_NAME } from '@constants/storage.constants';
 import { NextResponse } from 'next/server';
 
 import { HandleActivationCrLogginTypes } from './types';

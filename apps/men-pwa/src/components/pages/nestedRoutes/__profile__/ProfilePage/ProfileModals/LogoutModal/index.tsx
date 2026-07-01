@@ -1,9 +1,9 @@
 import LogoutIcon from '@assets/icons/profile/logout.svg';
 import { CustomButton } from '@repo/core/components/ui/CustomButton';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
+import { handleClearStorages } from '@repo/core/utils/system';
 
-import { clearUserCookiesHandler } from '@actions/userCookies.actions';
-import { STORED_NOTIFICATIONS_CACHE_NAME } from '@repo/core/constants/app.constants';
+import { STORED_NOTIFICATIONS_CACHE_NAME } from '@repo/core/constants/storage.constants';
 import { usePageNavigationLoading } from '@repo/core/hooks/usePageNavigationLoading';
 import { useRouter } from 'next/navigation';
 
@@ -14,9 +14,7 @@ const LogoutModal = () => {
   const isLoading = navigationLoadingId === 'LogoutModal';
 
   const logoutHandler = async () => {
-    localStorage.clear();
-    sessionStorage.clear();
-    await clearUserCookiesHandler();
+    await handleClearStorages();
     await caches.delete(STORED_NOTIFICATIONS_CACHE_NAME);
 
     pageNavigationHandler({ id: 'LogoutModal', linkTo: '/' });

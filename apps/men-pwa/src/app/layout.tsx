@@ -6,6 +6,7 @@ import ErrorProvider from '@providers/ErrorProvider';
 import MenPwaWidgetActionsProvider from '@providers/MenPwaWidgetActionsProvider';
 import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
 import { MAX_SCREEN_WIDTH, PORTAL_FEEDBACK_TOAST_ID, PORTAL_ID } from '@repo/core/constants/app.constants';
+import { THEME_STORAGE_NAME } from '@repo/core/constants/storage.constants';
 import { CultureProvider } from '@repo/core/providers/CultureProvider';
 import { PageNavigationProvider } from '@repo/core/providers/PageNavigationProvider';
 import { PreviewImageProvider } from '@repo/core/providers/PreviewImageProvider';
@@ -44,7 +45,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
       <head>
         <Script id="theme-init" strategy="beforeInteractive">
           {`
-            const t = localStorage.getItem('theme');
+            const t = localStorage.getItem('${THEME_STORAGE_NAME}');
             if (t === 'dark') {
               document.documentElement.classList.add('dark');
             } else if (t === 'light') {
@@ -71,10 +72,12 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
                       <MenPwaWidgetActionsProvider>
                         <ServiceWorkerProvider firebaseConfigs={FIREBASE_CONFIG}>
                           <>{children}</>
-                          <ModalsQueryParamsProvider />
+
                           <PreviewImageProvider />
-                          <div id={PORTAL_SPLASH_ID} />
+                          <ModalsQueryParamsProvider />
+
                           <div id={PORTAL_ID} />
+                          <div id={PORTAL_SPLASH_ID} />
                           <div id={PORTAL_FEEDBACK_TOAST_ID} />
                         </ServiceWorkerProvider>
                       </MenPwaWidgetActionsProvider>

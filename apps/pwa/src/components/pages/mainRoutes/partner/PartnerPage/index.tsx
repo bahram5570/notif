@@ -26,7 +26,7 @@ const PartnerPage = () => {
       : !hasRequestList
         ? true
         : false
-    : true;
+    : false;
 
   return (
     <>

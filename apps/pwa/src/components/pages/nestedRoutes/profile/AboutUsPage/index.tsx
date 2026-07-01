@@ -67,6 +67,7 @@ const AboutUsPage = () => {
 
 export default AboutUsPage;
 
+// todo: Testing notification. Remove it!
 const Tem = () => {
   const [access, setAccess] = useState(false);
   const [ft, setFt] = useState(false);
@@ -85,8 +86,8 @@ const Tem = () => {
 
   return (
     <div className="flex gap-2">
-      {access && <div className="w-1 h-1 bg-green-400" />}
-      {ft && <div className="w-1 h-1 bg-red-400" />}
+      {access && <p className="text-[8px] text-green-400">access</p>}
+      {ft && <p className="text-[8px] text-red-400">token</p>}
     </div>
   );
 };

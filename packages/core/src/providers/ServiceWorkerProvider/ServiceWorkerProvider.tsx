@@ -7,13 +7,12 @@ import { notifHandlerActionMaker } from './__utils__';
 
 import { MessagePayload, onMessage } from 'firebase/messaging';
 
-import { STORED_NOTIFICATIONS_CACHE_NAME } from '../../constants/app.constants';
+import { STORED_NOTIFICATIONS_CACHE_NAME } from '../../constants/storage.constants';
 import { useWidgetActions } from '../../hooks/useWidgetActions';
 import { getFirebaseMessaging } from '../../lib/firebase';
 import { NotificationsDataTypes, ServiceWorkerProviderTypes } from './types';
 
 export const ServiceWorkerProvider = ({ children, firebaseConfigs }: ServiceWorkerProviderTypes) => {
-  const isFirstTime = useRef(isDevelopeMode());
   const { actionHandler } = useWidgetActions();
 
   const notifHandler = (data: NotificationsDataTypes) => {
@@ -38,6 +37,7 @@ export const ServiceWorkerProvider = ({ children, firebaseConfigs }: ServiceWork
     }
   };
 
+  const isFirstTime = useRef(isDevelopeMode());
   useEffect(() => {
     if (isFirstTime.current) {
       isFirstTime.current = false;

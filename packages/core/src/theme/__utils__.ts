@@ -1,7 +1,8 @@
+import { THEME_STORAGE_NAME } from '../constants/storage.constants';
 import { ThemeTypes } from './types';
 
 export const themeHandler = (mode: ThemeTypes) => {
-  localStorage.setItem('theme', mode);
+  localStorage.setItem(THEME_STORAGE_NAME, mode);
 
   if (mode === 'dark') {
     document.documentElement.classList.add('dark');
@@ -14,7 +15,7 @@ export const themeHandler = (mode: ThemeTypes) => {
 };
 
 export const getTheme = () => {
-  const storedTheme = localStorage.getItem('theme');
+  const storedTheme = localStorage.getItem(THEME_STORAGE_NAME);
   const mode = (storedTheme ? storedTheme : 'system') as ThemeTypes;
   return mode;
 };

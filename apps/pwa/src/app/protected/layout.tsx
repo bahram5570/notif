@@ -1,7 +1,7 @@
 import { NEED_DATE_PATH_LIST, NEED_TOAST_PATH_LIST } from '@constants/routes.constants';
-import AddToHomeScreenProvider from '@providers/AddToHomeScreenProvider';
 import PaymentProvider from '@providers/PaymentProvider';
 import ProfileProvider from '@providers/ProfileProvider';
+import PwaPermissionsProvider from '@providers/PwaPermissionsProvider';
 import RetentionEventProvider from '@providers/RetentionEventProvider';
 // import SentryProvider from '@providers/SentryProvider';
 import SplashProvider from '@providers/SplashProvider';
@@ -11,9 +11,8 @@ import { SignDateStateProvider } from '@repo/core/providers/SignDateStateProvide
 const Layout = async ({ children }: { children: React.ReactNode }) => {
   return (
     <>
-      {/* // todo: temporarily */}
-      <AddToHomeScreenProvider>
-        {/* <SentryProvider /> */}
+      {/* <SentryProvider /> */}
+      <PwaPermissionsProvider>
         <PaymentProvider />
         <RetentionEventProvider />
 
@@ -26,7 +25,7 @@ const Layout = async ({ children }: { children: React.ReactNode }) => {
             </SignDateStateProvider>
           </ProfileProvider>
         </SplashProvider>
-      </AddToHomeScreenProvider>
+      </PwaPermissionsProvider>
     </>
   );
 };

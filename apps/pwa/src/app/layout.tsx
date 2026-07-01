@@ -6,10 +6,10 @@ import ErrorProvider from '@providers/ErrorProvider';
 import ModalsQueryParamsProvider from '@providers/ModalsQueryParamsProvider';
 import PwaWidgetActionsProvider from '@providers/PwaWidgetActionsProvider';
 import { MAX_SCREEN_WIDTH, PORTAL_FEEDBACK_TOAST_ID, PORTAL_ID } from '@repo/core/constants/app.constants';
+import { THEME_STORAGE_NAME } from '@repo/core/constants/storage.constants';
 import { CultureProvider } from '@repo/core/providers/CultureProvider';
 import { MonitoringProvider } from '@repo/core/providers/MonitoringProvider';
 import { PageNavigationProvider } from '@repo/core/providers/PageNavigationProvider';
-import { PermissionsProvider } from '@repo/core/providers/PermissionsProvider';
 import { PreviewImageProvider } from '@repo/core/providers/PreviewImageProvider';
 import { ReactQueryProvider } from '@repo/core/providers/ReactQueryProvider';
 import { ServiceWorkerProvider } from '@repo/core/providers/ServiceWorkerProvider';
@@ -47,7 +47,7 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
       <head>
         <Script id="theme-init" strategy="beforeInteractive">
           {`
-            const t = localStorage.getItem('theme');
+            const t = localStorage.getItem('${THEME_STORAGE_NAME}');
             if (t === 'dark') {
               document.documentElement.classList.add('dark');
             } else if (t === 'light') {
@@ -76,12 +76,13 @@ const RootLayout = async ({ children }: { children: React.ReactNode }) => {
                         <PwaWidgetActionsProvider>
                           <ServiceWorkerProvider firebaseConfigs={FIREBASE_CONFIG}>
                             <>{children}</>
-                            <ModalsQueryParamsProvider />
+
                             <PreviewImageProvider />
-                            <div id={PORTAL_SPLASH_ID} />
+                            <ModalsQueryParamsProvider />
+
                             <div id={PORTAL_ID} />
+                            <div id={PORTAL_SPLASH_ID} />
                             <div id={PORTAL_FEEDBACK_TOAST_ID} />
-                            <PermissionsProvider firebaseConfigs={FIREBASE_CONFIG} vapidKey={FIREBASE_VAPID_KEY} />
                           </ServiceWorkerProvider>
                         </PwaWidgetActionsProvider>
                       </PageNavigationProvider>

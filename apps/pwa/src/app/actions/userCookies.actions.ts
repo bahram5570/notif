@@ -10,7 +10,7 @@ import {
   PAYMENT_COOKIE_NAME,
   USER_COOKIE_NAME,
   USER_INFO_COOKIE_NAME,
-} from '@constants/cookie.constants';
+} from '@constants/storage.constants';
 import { CalendarTypeEnum, CultureTypes } from '@repo/core/providers/CultureProvider';
 import { cookies } from 'next/headers';
 

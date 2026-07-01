@@ -100,13 +100,13 @@ const ActivationHeading = ({
           <div className="absolute bottom-10 flex justify-center align-middle">
             <img
               alt="hollow"
-              src="/assets/images/coverHollow.png"
+              src="/assets/shared/images/men-cover-hollow.png"
               className={`w-[100vw] max-w-[${MAX_SCREEN_WIDTH}] h-auto scale-[2] z-0 block dark:hidden`}
             />
 
             <img
               alt="hollow"
-              src="/assets/images/coverHollow_noBackground.png"
+              src="/assets/shared/images/men-cover-hollow_noBackground.png"
               className={`w-[100vw] max-w-[${MAX_SCREEN_WIDTH}] h-auto scale-[2.5] z-0 hidden dark:block`}
             />
           </div>
@@ -133,13 +133,13 @@ const ActivationHeading = ({
               <div className="absolute bottom-10 flex justify-center align-middle">
                 <img
                   alt="hollow"
-                  src="/assets/images/coverHollow.png"
+                  src="/assets/shared/images/men-cover-hollow.png"
                   className={`w-[100vw] max-w-[${maxWidth}] h-auto scale-[2.5] z-0 block dark:hidden`}
                 />
 
                 <img
                   alt="hollow"
-                  src="/assets/images/coverHollow_noBackground.png"
+                  src="/assets/shared/images/men-cover-hollow_noBackground.png"
                   className={`w-[100vw] max-w-[${maxWidth}] h-auto scale-[2.5] z-0 hidden dark:block`}
                 />
               </div>

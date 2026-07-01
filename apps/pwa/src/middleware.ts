@@ -2,12 +2,12 @@ import { handleActivationCrLoggin } from '@services/loginServices';
 import { paymentStatusService } from '@services/paymentServices';
 import { handleReferralLinksService } from '@services/referralLinksServices';
 
-import { UserCookieTypes } from '@actions/userCookies.actions';
+// import { UserCookieTypes } from '@actions/userCookies.actions';
 import { PARTNER_CODE_SHOW_INPUT_QUERY_NAME } from '@components/activation/pages/PartnerCodeContainer/constants';
-import { USER_COOKIE_NAME } from '@constants/cookie.constants';
 import { ACTIVATION_CR_REGISTER_QUERY_NAME } from '@constants/routes.constants';
+import { USER_COOKIE_NAME } from '@constants/storage.constants';
 import { ACTIVATION_FIRST_PATH } from '@providers/__activation__/ActivationProvider/__constants__/activationContants';
-import * as Sentry from '@sentry/nextjs';
+// import * as Sentry from '@sentry/nextjs';
 import { cookies } from 'next/headers';
 import { type NextRequest, NextResponse } from 'next/server';
 

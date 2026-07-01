@@ -1,4 +1,4 @@
-import InfoIcon from '@assets/icons/info.svg';
+import InfoIcon from '@assets/icons/Info.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 const Warning = () => {
