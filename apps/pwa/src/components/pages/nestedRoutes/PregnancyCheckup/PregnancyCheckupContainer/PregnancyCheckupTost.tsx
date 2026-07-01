@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import CheckCircleIcon from '@assets/icons/checkCircle.svg';
-import InfoIcon from '@assets/icons/Info.svg';
+import InfoIcon from '@assets/icons/info.svg';
 import { CustomTypography } from '@repo/core/components/ui/CustomTypography';
 
 import { MAX_SCREEN_WIDTH } from '@repo/core/constants/app.constants';
